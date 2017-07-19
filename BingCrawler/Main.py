@@ -1,4 +1,4 @@
-
+import pandas as pd
 from BingCrawlerSelenium import courseEmbedding
 
 for course in list(pd.read_json("CourseName", typ='series')):
