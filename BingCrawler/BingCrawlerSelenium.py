@@ -9,7 +9,8 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
 #Query = input("請輸入查詢關鍵字: ")
 
     url = "https://www.bing.com/"
-    driver = webdriver.Chrome()
+    #driver = webdriver.Chrome()
+    driver = webdriver.PhantomJS()
     driver.get(url)
     elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
     #elem.send_keys(Query + " 概述")
