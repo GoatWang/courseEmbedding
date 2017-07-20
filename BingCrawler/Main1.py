@@ -6,10 +6,10 @@ from BingCrawler import courseEmbedding
 flag = False
 count = 0
 for course in list(pd.read_json("CourseName", typ='series', encoding='utf8')):
-    if course == "交通控制":
-        flag = True
+    #if course == "交通控制":
+    #    flag = True
     if count >10000:
-        flag = False
+        flag = True
     if flag:
         TargetDirectory = "CourseEmbedding"
         Query = course
