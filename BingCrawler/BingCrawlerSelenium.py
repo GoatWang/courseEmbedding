@@ -3,17 +3,13 @@ import time
 from bs4 import BeautifulSoup
 from langconv import *
 
-def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
-#TargetDirectory = "CourseEmbeddingSelenium"
-#TargetDirectory = input("請輸入目標資料夾: ")
-#Query = input("請輸入查詢關鍵字: ")
+def courseEmbeddingSelenium(Query, TargetDirectory = "CourseEmbedding"):
 
+    driver = webdriver.Chrome()
+    #driver = webdriver.PhantomJS()
     url = "https://www.bing.com/"
-    #driver = webdriver.Chrome()
-    driver = webdriver.PhantomJS()
     driver.get(url)
     elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
-    #elem.send_keys(Query + " 概述")
     elem.send_keys(Query)
     elem = driver.find_element_by_xpath('//*[@id="sb_form_go"]')
     elem.submit()
@@ -58,7 +54,9 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
         yahooBid = "tw.bid.yahoo.com" in url and "category" in url
         googleDoc = "docs.google.com" in url
         pdfFile = url.endswith(".pdf")
-        if not pdfFile and not googleDoc and not yahooBid:  ##I can't get information from pdf and google doc
+        docFile = url.endswith(".doc")
+        pptFile = url.endswith(".ppt")
+        if not pdfFile and not docFile and not pptFile and not googleDoc and not yahooBid:  ##I can't get information from pdf and google doc
             try:
                 driver.get(url)
                 driver.implicitly_wait(2)
@@ -96,8 +94,8 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
             except:
                 print("Fail")
 
-    driver.close()
 
+    driver.close()
 
     return pagesStr
     #savePath = TargetDirectory + "//" + Query;

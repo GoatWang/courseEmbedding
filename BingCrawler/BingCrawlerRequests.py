@@ -1,28 +1,20 @@
 import requests
 from langconv import *
 from bs4 import BeautifulSoup
-from selenium import webdriver
 
 
-def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
+def courseEmbeddingRequests(Query, TargetDirectory = "CourseEmbedding"):
 
+    #TargetDirectory = "CourseEmbedding"
+    #TargetDirectory = input("請輸入目標資料夾: ")
+    #Query = input("請輸入查詢關鍵字: ")
 
-    #url = "https://www.bing.com/search?q=" + Query + "+簡介"
-    #re = requests.get(url, headers=headers)
-    #re.encoding = 'utf8'
-    #html = re.text
+    url = "https://www.bing.com/search?q=" + Query + "+簡介"
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
+    re = requests.get(url, headers=headers)
+    re.encoding = 'utf8'
 
-    #driver = webdriver.Chrome()
-    driver = webdriver.PhantomJS()
-    url = "https://www.bing.com/"
-    driver.get(url)
-    elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
-    elem.send_keys(Query)
-    elem = driver.find_element_by_xpath('//*[@id="sb_form_go"]')
-    elem.submit()
-    html = driver.page_source
-    driver.close()
-
+    html = re.text
     soup = BeautifulSoup(html, 'lxml')
     Links = soup.find_all('a')
 
@@ -49,7 +41,6 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
         pptFile = url.endswith(".ppt")
         if not pdfFile and not docFile and not pptFile and not googleDoc and not yahooBid:  ##I can't get information from pdf and google doc
             try:
-                headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
                 re = requests.get(url, headers=headers, timeout=5)
                 charset = 'utf8'
                 re.encoding = charset
