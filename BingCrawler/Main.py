@@ -1,15 +1,12 @@
 import pandas as pd
 from BingCrawlerSelenium import courseEmbeddingSelenium
 from BingCrawlerRequests import courseEmbeddingRequests
-from BingCrawler import courseEmbedding
+from BingCrawler import courseEmbedding 
 
-flag = False
-count = 0
+flag = True
 for course in list(pd.read_json("CourseName", typ='series', encoding='utf8')):
-    if course == "交通控制":
+    if course == "邏輯思考概論":
         flag = True
-    if count >5000:
-        flag = False
     if flag:
         TargetDirectory = "CourseEmbedding"
         Query = course
@@ -25,4 +22,3 @@ for course in list(pd.read_json("CourseName", typ='series', encoding='utf8')):
         file = open(savePath, 'w', encoding='utf8')
         file.write(pagesStr)
         file.close()
-    count +=1

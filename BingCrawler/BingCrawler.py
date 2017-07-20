@@ -14,7 +14,7 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
     html = re.text
 
     #driver = webdriver.Chrome()
-    #driver = webdriver.PhantomJS(executable_path="C:\\Program Files\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe")
+    #driver = webdriver.PhantomJS()
     #url = "https://www.bing.com/"
     #driver.get(url)
     #elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
@@ -29,27 +29,12 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
 
     Goodlinks = []
     for link in Links:
-        if (
-    not 'search' in str(link) and not 'Bing' in str(link) and not 'images' in str(link) and not 'maps' in str(link) 
-    and not '喜好設定' in str(link) and not '地區' in str(link) and not '語言' in str(link) and not '日期' in str(link)
-    and not '設定檔圖片' in str(link) and not '登入' in str(link) and not '網路' in str(link) and not '我儲存的項目' in str(link)
-    and not '隱私權和' in str(link) and not '法律聲明' in str(link) and not '關於我們的廣告' in str(link) 
-    and not '意見反應' in str(link) and not '廣告' in str(link) and not '說明' in str(link) and not 'sb_pagS' in str(link) 
-           ):
+        linkstr = str(link)
+        if (('http' in linkstr) and ('href' in linkstr) and (not 'href="#"' in linkstr) and (not 'href="http://go.microsoft' in linkstr)and (not 'microsofttranslator' in linkstr)):
             Goodlinks.append(link)
 
     urls = [link['href'] for link in Goodlinks]
     print(Query, "Good links have been found!")
-    print(urls)
-    
-    def Simplified2Traditional(sentence):
-        '''
-        将sentence中的简体字转为繁体字
-        :param sentence: 待转换的句子
-        :return: 将句子中简体字转换为繁体字之后的句子
-        '''
-        sentence = Converter('zh-hant').convert(sentence)
-        return sentence
 
     pagesStr = ""
     for url in urls:
@@ -82,8 +67,15 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
                 [x.extract() for x in soup.findAll('nav')]
                 [x.extract() for x in soup.findAll('footer')]
 
+                def Simplified2Traditional(sentence):
+                    '''
+                    将sentence中的简体字转为繁体字
+                    :param sentence: 待转换的句子
+                    :return: 将句子中简体字转换为繁体字之后的句子
+                    '''
+                    sentence = Converter('zh-hant').convert(sentence)
+                    return sentence
 
-            
                 if not soup.text.startswith("%PDF") and url.split("/")[2] != "24h.pchome.com.tw":
                     pagesStr += Simplified2Traditional(soup.text)
 
