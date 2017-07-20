@@ -7,21 +7,22 @@ from selenium import webdriver
 def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
 
 
-    #url = "https://www.bing.com/search?q=" + Query + "+簡介"
-    #re = requests.get(url, headers=headers)
-    #re.encoding = 'utf8'
-    #html = re.text
+    url = "https://www.bing.com/search?q=" + Query+"&setlang=zh-tw"
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
+    re = requests.get(url, headers=headers)
+    re.encoding = 'utf8'
+    html = re.text
 
     #driver = webdriver.Chrome()
-    driver = webdriver.PhantomJS()
-    url = "https://www.bing.com/"
-    driver.get(url)
-    elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
-    elem.send_keys(Query)
-    elem = driver.find_element_by_xpath('//*[@id="sb_form_go"]')
-    elem.submit()
-    html = driver.page_source
-    driver.close()
+    #driver = webdriver.PhantomJS(executable_path="C:\\Program Files\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe")
+    #url = "https://www.bing.com/"
+    #driver.get(url)
+    #elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
+    #elem.send_keys(Query)
+    #elem = driver.find_element_by_xpath('//*[@id="sb_form_go"]')
+    #elem.submit()
+    #html = driver.page_source
+    #driver.close()
 
     soup = BeautifulSoup(html, 'lxml')
     Links = soup.find_all('a')
@@ -39,6 +40,16 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
 
     urls = [link['href'] for link in Goodlinks]
     print(Query, "Good links have been found!")
+    print(urls)
+    
+    def Simplified2Traditional(sentence):
+        '''
+        将sentence中的简体字转为繁体字
+        :param sentence: 待转换的句子
+        :return: 将句子中简体字转换为繁体字之后的句子
+        '''
+        sentence = Converter('zh-hant').convert(sentence)
+        return sentence
 
     pagesStr = ""
     for url in urls:
@@ -71,14 +82,7 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
                 [x.extract() for x in soup.findAll('nav')]
                 [x.extract() for x in soup.findAll('footer')]
 
-                def Simplified2Traditional(sentence):
-                    '''
-                    将sentence中的简体字转为繁体字
-                    :param sentence: 待转换的句子
-                    :return: 将句子中简体字转换为繁体字之后的句子
-                    '''
-                    sentence = Converter('zh-hant').convert(sentence)
-                    return sentence
+
             
                 if not soup.text.startswith("%PDF") and url.split("/")[2] != "24h.pchome.com.tw":
                     pagesStr += Simplified2Traditional(soup.text)

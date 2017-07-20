@@ -31,12 +31,8 @@ def courseEmbeddingSelenium(Query, TargetDirectory = "CourseEmbedding"):
             Goodlinks.append(link)
 
     urls = [link['href'] for link in Goodlinks]
-    print("Good links have been found!")
+    print(Query, "Good links have been found!")
 
-    #file = open("links", 'w', encoding = 'utf8')
-    #for url in urls:
-    #    file.write(url + "\n")
-    #file.close()
 
     ## 簡轉繁
     def Simplified2Traditional(sentence):
