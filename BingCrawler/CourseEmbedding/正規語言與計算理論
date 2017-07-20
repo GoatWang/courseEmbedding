@@ -1,0 +1,3475 @@
+
+
+
+
+正規語言概論 | 交資夢想 – moved to http://shaform.com/csdream/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+交資夢想 – moved to http://shaform.com/csdream/
+
+
+交大資工，交織夢想。
+
+
+
+
+
+Skip to content
+
+主頁文章彙整
+關於
+
+
+
+
+
+
+
+
+← 離散數學
+密碼學概論 →
+
+
+正規語言概論
+
+Posted on 十二月 10, 2011 by Shaform  
+
+前言
+正規語言概論是交大資工大三上的必修課程。這門課的課題是基礎的計算理論，研究什麼是電腦的能力和極限。介紹各種計算模型，例如 DFA, NFA, PDA, Turing machines 等等，以及其相對應的正規語言，如 regular languages, context free languages, Turing-decidable languages 等等。也會探討問題間的 Reduction 以及問題的 Complexity 等等。
+繫上使用的教科書主要是《Introduction to the Theory of Computation》不過也有老師使用《Introduction to Automata Theory, Languages, and Computation》。
+簡介
+透過計算模型，我們可以對計算定下明確的數學定義。而一旦有了明確的定義，便可以研究什麼是可計算的、什麼是不可計算的，而對於可計算的問題，必須花費多少時間和空間才可能計算。
+Church–Turing thesis 指出，所有演算法可解的問題，都可透過 Turing machines 求解，也因此，藉由研究 Turing machines 我們得以探討電腦的極限，以及對各種問題的難度訂出明確的界線。
+這是一門非常理論與數學的課，需要非常清晰的邏輯思考。老師曾說，資訊界日新月異，許多課程可能幾年後就不見了，或者教的東西大幅改變。但你幾乎可以確定，正規語言這門課還是會一直存在。從哲學的角度來說，計算理論在電腦科學裡佔了十分核心的地位。
+正規語言課程所學的東西其實也有很多延伸的應用，以至於很多讀者很可能早已接觸過某些部份，但直到這門課，才真正以嚴謹的方式學習背後的來歷。像是如果有接觸像 Python 等語言或者用過 Vim 等編輯器的搜尋功能的讀者，很有可能有接觸過正規表示式。而 CFG 和程式語言的設計以及編譯器等課程有密切相關，你或許會曾在程式語言的文件上看過他。如果在演算法等課程聽過 NP、P 等名詞，在這堂課裡，你可以學到這些名詞到底有什麼含意。而對什麼是演算法，時間複雜度、問題的可計算性等等，都會在這堂課得到更深的理解。
+學習小指引
+課本本身寫的很好，建議將《Introduction to the Theory of Computation》研讀數遍，並配合書中練習題。
+參考
+
+Computability and Complexity
+Automata, Computability, and Complexity
+Regular Expression (RegExp) in JavaScript
+
+ 
+
+廣告
+
+
+
+
+
+
+Share this:點擊分享到 Google+(在新視窗中開啟)分享到 Facebook(在新視窗中開啟)分享到 Twitter(在新視窗中開啟)Click to email(在新視窗中開啟)請按讚：喜歡 載入中...
+
+相關
+ 
+
+												本篇發表於 交大課程 並標籤為 計算理論, 資工, 正規語言, 交大課程, 交大資工。將永久鏈結加入書籤。											
+
+
+← 離散數學
+密碼學概論 →
+
+
+One Response to 正規語言概論
+
+
+引用通告： 正規語言概論 – 交大修課心得 | 一座島
+
+
+
+發表迴響 取消回覆 
+
+
+
+在此輸入你的回應…
+
+
+
+
+在下方填入你的資料或按右方圖示以社群網站登入：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+電子郵件 (必) （電子郵件地址不會被公開）
+
+
+
+名稱 (必)
+
+
+
+個人網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 WordPress.com 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Twitter 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Facebook 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Google+ 帳號。 ( 登出 / 變更 )
+
+
+
+
+取消
+連結到 %s
+
+
+
+
+ 透過電子郵件通知我後續回應。
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+搜尋：
+
+
+
+  最近文章 
+
+資夢
+
+
+Timus Online Judge 教學
+
+
+資訊工程專題
+
+
+交大資工相關獎學金、競賽、工讀與實習機會
+
+
+程式語言
+
+
+ 熱門文章 
+
+						資工系開放式課程資源					
+
+
+
+						正規語言概論					
+
+
+
+						基礎程式設計					
+
+
+
+						組合語言與系統程式					
+
+
+
+						數位電路實驗					
+
+
+
+						離散數學					
+
+文章存檔 
+2014 年 五月
+2013 年 六月
+2012 年 十月
+2012 年 七月
+2012 年 六月
+2012 年 三月
+2012 年 二月
+2011 年 十二月
+2011 年 十一月
+2011 年 十月
+2011 年 八月
+2011 年 七月
+2011 年 四月
+
+分類 
+學習資源
+
+實用技能
+
+教學
+
+交大生活
+
+交大課程
+
+
+8051
+ACM
+Arduino
+C
+Google
+Haskell
+HDL
+Java
+microcontroller
+MIT
+OCW
+online judge
+problem solving
+Prolog
+Python
+RSA
+Timus
+Verilog
+交大
+交大課程
+交大資工
+交資夢想
+大學
+學習資源
+密碼學
+實習
+專題
+打工
+搜尋
+教科書
+數學
+正規語言
+獎學金
+程式設計
+競賽
+組合語言
+英語
+計算理論
+資工
+開放式課程其它 
+註冊 登入
+文章 RSS 訂閱
+迴響 RSS 訂閱
+WordPress.com 
+ 
+
+
+
+
+
+
+					交資夢想 – moved to http://shaform.com/csdream/				
+
+
+在 WordPress.com 建立免費網站或網誌.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+傳送到電子郵件地址
+
+你的姓名
+
+你的Email
+
+
+
+
+
+
+取消
+
+				文章沒有送出-請確認你的Email位置			
+
+				Email確認失敗,請稍後再試.			
+
+				抱歉，你的網誌無法透過電子郵件分享			
+
+
+
+
+
+ 
+ 
+%d 位部落客按了讚：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+正規語言 (Formal Language) - 教科書：系統程式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wikidot.com
+
+
+
+.wikidot.com
+    
+
+
+Share on
+
+
+
+
+
+
+
+
+Edit
+History
+Tags
+Source
+
+Explore »
+
+ 
+
+
+
+
+
+教科書：系統程式
+陳鍾誠著，旗標出版
+
+
+
+
+
+
+
+
+文章列表
+
+最近修改
+所有網頁
+標記
+
+
+相關網站
+
+陳鍾誠的網站
+系統程式
+打造電腦
+C# 程式設計
+Blender 動畫設計
+Linux 程式設計
+Android 手機程式
+HTML5 技術體系
+
+
+陳鍾誠
+
+陳鍾誠的信箱
+陳鍾誠的留言板
+陳鍾誠的網站
+陳鍾誠在金門大學
+陳鍾誠的手機網
+陳鍾誠的簡歷
+陳鍾誠的 Facebook
+陳鍾誠的 Twitter
+陳鍾誠的 Diigo
+陳鍾誠的 Scribd
+陳鍾誠的 ping
+陳鍾誠的 Youtube
+陳鍾誠的 GAE
+
+
+旗標出版社
+
+旗標首頁
+信箱
+留言板
+教師服務
+購書服務
+讀者服務
+
+
+Wikidot
+
+網站管理
+本站成員
+標記
+加入本站?
+頂欄
+側欄
+樣版
+Wikidot 文件
+Wikidot 語法
+Wikidot Module
+Wikidot Embedding
+Wikidot Template
+Wikidot Layout
+
+
+
+
+Create account or Sign in 
+
+
+
+
+內容
+前言
+目錄
+1. 系統軟體
+2. 電腦的硬體結構
+3. 組合語言
+4. 組譯器
+5. 連結與載入
+6. 巨集處理器
+7. 高階語言
+8. 編譯器
+9. 虛擬機器
+10. 作業系統
+11. 嵌入式系統
+12. 系統軟體實作
+附錄
+補充教材
+教學錄影
+家庭作業
+版本管理
+相關資源
+投影片
+下載
+參考文獻
+相關文章
+相關資源
+錯誤更正
+購買本書
+手機版網站
+問題與回答
+
+rating: 0+x
+
+
+
+
+
+                            正規語言 (Formal Language)
+                        
+
+
+
+
+
+
+
+
+文章
+評論
+授權
+
+
+
+在資訊系的相關課程當中，與高階語言相關的課程，包含程式語言 (Programming Language)、正規語言 (Formal Language)、以及編譯器 (Compiler) 等等。這些課程的核心是語法理論，我們可以利用生成規則 (例如：BNF, EBNF 等) 描述程式的語法。一但能正確的描述某個程式語言，就能撰寫剖析該語言的剖析程式，將這些語法轉換成語法樹 (或稱剖析樹)。
+高階語言所使用的語法，大致上分為兩個層次，在單詞的語法上會使用正規語法 (Regular Grammar)，而句法結構上則使用與上下文無關的文法 (Context-Free Grammar，簡稱 CFG)，這兩個語法都可以使用近代語言學之父的喬姆斯基 (Chomsky) 的生成語法 (Generative Grammar) 描述。在程式語言的領域，我們通常用 BNF 與 EBNF 語法描述這些程式的語法。
+Chomsky 是個語言學家，提出的生成語法主要也是為了描述人類所說的語言，這在資訊科學的領域被稱為自然語言，以便與程式設計時所用的程式語言區分開來。然而，生成語法雖然主要為了描述自然語言而提出，但卻同樣適用於程式語言的語法上，甚至在程式語言的設計上造成了相當大的影響，這或許是當初 Chomsky 所沒有想到的。
+語法的概念或許並非 Chomsky 所第一個提出的，但以正規的遞迴結構，有系統的描述英文的文法，則應歸功於 Chomsky，當初 Chomsky 看出了英文文法當中具有強烈的結構性，可以利用生成語法規則描述。透過有限的 (甚至是只有很少的幾條) 語法規則，就可以描述變化無窮的英文語句，這導至語言學研究的重要革命。同樣的，在程式語言上，也能利用規則，產生變化無窮的程式組合，這可以說是一個意外的收穫。
+有關喬姆斯基語法階層的理論，是正規語言課程的主題，甚至牽涉到進階的計算理論主題，在此我們僅簡單的列出各型語法於表格 7.1當中，詳細內容請參考正規語言與計算理論課程的教科書。
+表格 7.1 喬姆斯基語法階層
+
+
+文法
+語言
+自動機
+產生式規則
+
+
+0-型
+遞迴可枚舉語言 (Recursively Enumerable)
+圖靈機 (Turing Machine)
+α-> β
+
+
+1-型
+上下文相關語言 (Context Sensitive Grammar)
+線性有界非確定圖靈機 (Linear Bounded Automata)
+αAβ -> αγβ
+
+
+2-型
+上下文無關語言 (Context Free Grammar)
+非確定下推自動機(Push Down Automata)
+A -> γ
+
+
+3-型
+正規語言 (Regular Grammar)
+有限狀態自動機 (Finite State Automata)
+A -> aB A -> a
+
+
+
+
+
+Show Comments
+
+
+
+
+
+Add a New Comment
+
+
+Post preview:
+
+
+Close preview
+
+
+
+
+
+
+
+
+or Sign in as Wikidot user
+
+
+
+(will not be published)
+
+
+
+
+-
++
+
+
+                    Help: wiki text quick reference 
+
+
+
+
+
+
+
+
+
+
+
+Permanent Link
+Edit
+Delete
+
+
+
+
+
+本網頁的作者、授權與引用方式
+
+
+作者
+陳鍾誠，於金門大學資訊工程系，電子郵件：wt.ude.uqn|ccc#wt.ude.uqn|ccc，網站：http://ccckmit.wikidot.com。
+授權
+本文採用創作共用 (Creative Common) 3.0 版的 姓名標示─非商業性─相同方式分享 授權條款，歡迎轉載或修改使用，但若做為商業使用時必須取得授權，引用本文時請參考下列格式。
+中文版 (APA格式)
+陳鍾誠 (1270527286|%Y年%m月%d日)，(網頁標題) 正規語言 (Formal Language)，(網站標題) 教科書：系統程式，1270527286|%Y年%m月%d日，取自 http://sp1.wikidot.com/formallanguage ，網頁修改第 1 版。
+英文版 (APA格式)
+Chung-Chen Chen (1270527286|%Y,%b%e), Retrieved 1270527286|%b %e,%Y from http://sp1.wikidot.com/formallanguage, Page Revision 1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+page revision: 1, last edited: 10 Jun 2010 07:46
+
+Edit
+Tags
+Discuss (0)
+History
+Files
+Print
+Site tools
++ Options
+
+
+Edit Sections
+Append
+Edit Meta
+Watchers
+Backlinks
+Page Source
+Parent
+Lock Page
+Rename
+Delete
+
+
+
+
+
+
+
+
+
+Help
+     |
+    Terms of Service
+     |
+    Privacy
+     |
+    Report a bug
+     |
+    Flag as objectionable
+
+Powered by Wikidot.com
+
+
+                    Unless otherwise stated, the content of this page is licensed under Creative Commons Attribution-ShareAlike 3.0 License
+
+
+
+
+
+Other interesting sites
+
+
+
+
+
+
+Borderlands Modding Resource
+
+
+
+
+
+
+
+
+
+Splinterverse
+          
+              Ezboard Yuku Splinterverse Wiki
+            
+
+
+
+
+
+
+
+Developer Help
+
+
+
+
+
+
+
+
+
+International Translation Archive
+          
+              of the SCP Foundation
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Click here to edit contents of this page.    
+
+
+
+        Click here to toggle editing of individual sections of the page (if possible).         Watch headings for an "edit" link when available.    
+
+        Append content without editing the whole page source.    
+
+        Check out how this page has evolved in the past.    
+
+        If you want to discuss contents of this page - this is the easiest way to do it.    
+
+        View and manage file attachments for this page.    
+
+        A few useful tools to manage this Site.    
+
+        See pages that link to and include this page.    
+
+        Change the name (also URL address, possibly the category) of the page.    
+
+        View wiki source for this page without editing.    
+  
+        View/set parent page (used for creating breadcrumbs and structured layout).    
+
+            Notify administrators if there is objectionable content in this page.        
+
+            Something does not work as expected? Find out what you can do.        
+
+            General Wikidot.com documentation and help section.        
+
+            Wikidot.com Terms of Service - what you can, what you should not etc.        
+
+            Wikidot.com Privacy Policy.          
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[系列文目錄] 正規語言 Formal Language | Mr. Opengate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pages
+
+
+
+Home
+
+
+About
+
+
+Contact
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skip to main  |
+      skip to sidebar
+
+
+
+
+
+
+
+Mr. Opengate
+
+
+
+
+Work hard, play harder, love hardest.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2015年6月14日 星期日
+
+
+
+
+
+
+
+
+[系列文目錄] 正規語言 Formal Language
+
+
+
+
+
+於
+
+6/14/2015 11:08:00 下午
+
+
+
+
+
+標籤：
+Computer Science-Formal Language,
+featured
+
+
+ 
+
+
+
+
+
+
+序 - 計算理論是計算機科學的靈魂
+
+我就讀大一、大二時，其實對資訊科學並沒有非常的喜歡，而比較喜歡數學和物理這種用「單純」且「優雅」的理論就能解釋許多現象的學科。一直到大三學到了正規語言概論，才感覺到自己真正初步瞭解「電腦」的能力與極限，讓我有一種豁然開朗的感覺，而開始對資訊科學感興趣。
+
+上了研究所後，又因修課仔細的研讀了一次正規語言，感觸十分深刻，因此，寫下了這些正規語言的介紹和整理。我的介紹整理秉持盡量以中文撰寫英文為輔為原則，期望有更多人能參透正規語言這個有趣的學門：）
+
+
+
+
+
+目錄
+
+一、正則語言 Regular Languages
+
+Ch1    決定性有限自動機 Deterministic Finite automata, DFA
+Ch2    非決定性有限自動機 Nondeterminism Finite automata, NFA
+Ch3    正則表達式 Regular Expression, RE
+Ch3.5  常用的正則表示式 Regular Expression in Application
+Ch4    泵引理 Pumping Lemma
+Ch5    邁希爾－尼羅德定理 Myhill-Nerode Theorem
+
+
+
+二、上下文無關語言 Context-Free Languages
+
+Ch6    上下文無關語言 Context-free language, CFLs
+Ch7    下推自動機 Pushdown automaton, PDAs
+Ch8    上下文無關語言泵引理 Pumping lemma for context free languages
+
+
+
+三、邱奇－圖靈論題 Church–Turing Thesis
+
+Ch9    圖靈機 Turing Machines
+Ch10   變種圖靈機 Variants of Turing Machines
+
+
+
+四、決定性問題 Decidability
+
+Ch11   決定性問題 Decidability
+Ch12   不可決定問題與圖靈可識別語言 Undecidable Problem and Turing-recognizable language
+Ch12.5 決定與不可決定問題相關習題
+
+
+
+五、歸約 Reducibility
+
+Ch13   可歸約性 Reducibility
+Ch14   多一歸約 Mapping Reducibility
+Ch14.5 歸約相關習題 Exercises for Reducibility
+
+
+
+六、時間複雜度 Time Complexity
+
+Ch15   複雜度P和NP Time Complexity, P and NP
+Ch16   NP完全 NP-Complete, NPC
+Ch16.5 Cook-Levin理論與卡普的二十一個NP-完全問題
+
+
+
+
+
+
+
+前言
+
+正規語言概論是交大資工大三上的必修課程。這門課的課題是基礎的計算理論，研究什麼是電腦的能力和極限。介紹各種計算模型，例如 DFA, NFA, PDA, Turing machines 等等，以及其相對應的正規語言，如 regular languages, context free languages, Turing-decidable languages 等等。也會探討問題間的 Reduction 以及問題的 Complexity 等等。
+
+通常使用的教科書主要是《Introduction to the Theory of Computation》不過也有老師使用《Introduction to Automata Theory, Languages, and Computation》。
+
+
+
+
+
+簡介
+
+透過計算模型，我們可以對計算定下明確的數學定義。而一旦有了明確的定義，便可以研究什麼是可計算的、什麼是不可計算的，而對於可計算的問題，必須花費多少時間和空間才可能計算。
+
+Church–Turing thesis 指出，所有演算法可解的問題，都可透過 Turing machines 求解，也因此，藉由研究 Turing machines 我們得以探討電腦的極限，以及對各種問題的難度訂出明確的界線。
+
+這是一門非常理論與數學的課，需要非常清晰的邏輯思考。老師曾說，資訊界日新月異，許多課程可能幾年後就不見了，或者教的東西大幅改變。但你幾乎可以確定，正規語言這門課還是會一直存在。從哲學的角度來說，計算理論在電腦科學裡佔了十分核心的地位。
+
+正規語言課程所學的東西其實也有很多延伸的應用，以至於很多讀者很可能早已接觸過某些部份，但直到這門課，才真正以嚴謹的方式學習背後的來歷。像是如果有接觸像 Python 等語言或者用過 Vim 等編輯器的搜尋功能的讀者，很有可能有接觸過正規表示式。而 CFG 和程式語言的設計以及編譯器等課程有密切相關，你或許會曾在程式語言的文件上看過他。如果在演算法等課程聽過 NP、P 等名詞，在這堂課裡，你可以學到這些名詞到底有什麼含意。而對什麼是演算法，時間複雜度、問題的可計算性等等，都會在這堂課得到更深的理解。
+
+
+
+
+
+學習小指引
+
+課本本身寫的很好，建議將《Introduction to the Theory of Computation》研讀數遍，並配合書中練習題。
+
+
+
+
+
+
+References
+
+交資夢想 - 正規語言概論
+https://nctucs.wordpress.com/2011/12/10/formal-languages/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+較新的文章
+
+
+較舊的文章
+
+首頁
+
+
+
+
+
+
+
+技術提供：Blogger.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Me
+
+
+
+
+Hi! I'm Mr. Opengate.
+
+
+
+喜歡做很酷的事，和睡覺；
+
+相信品味與信念的不朽價值。
+
+希望有更多的機會感受這個世界：）
+
+
+第一次來記得看一下本站簡介喔！ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Facebook
+
+Mr. Opengate
+
+
+
+
+
+
+
+
+
+
+
+Contents
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Popular Posts
+
+
+
+
+
+
+
+
+
+臺大資工研究所畢業心得：怪咖、凡人和藝術家
+
+
+
+
+
+
+
+
+
+
+臺北信義行：信義商圈、Taipei 101、四四南村
+
+
+
+
+
+
+
+
+
+
+C/C++ - Vector (STL) 用法與心得完全攻略
+
+
+
+
+
+
+
+
+
+
+科技業常見的職務縮寫 SA SD RD PG PM DBA MIS QA Sales
+
+
+
+
+
+
+
+
+
+
+猴子都會寫的Makefile - makefile簡易教學 (1)
+
+
+
+
+
+
+
+
+
+
+C/C++ - String 用法與心得完全攻略
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RSS
+
+
+
+
+
+
+
+發表文章
+
+
+
+
+
+
+
+
+
+
+                  Atom
+                
+
+
+
+
+
+
+
+
+
+
+發表文章
+
+
+
+
+
+
+
+
+
+
+
+
+留言
+
+
+
+
+
+
+
+
+
+
+                  Atom
+                
+
+
+
+
+
+
+
+
+
+
+留言
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pageviews
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Contact Me
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ying-ping Chen's Courses & Projects
+
+
+
+
+
+[Home
+ | Academic Publications
+ | Courses and Projects
+ | Back]
+
+Courses & Projects
+
+|
+Courses |
+Research Projects |
+Open Source Projects |
+Curriculum Projects |
+
+Courses
+
+正規語言與計算理論 (Formal Languages and Theory of Computation)
+
+2017-Fall, 2017-Spring, 2016-Fall, 2016-Spring, 2015-Spring, 2014-Fall, 2013-Fall, 2012-Fall
+
+
+正規語言概論 (Introduction to Formal Languages)
+
+2018-Spring, 2017-Spring, 2016-Spring, 2014-Spring, 2013-Fall, 2012-Fall, 2011-Fall, 2010-Fall, 2009-Fall, 2008-Fall, 2007-Fall
+
+
+演化計算 (Evolutionary Computation)
+
+2018-Spring, 2015-Fall, 2014-Fall, 2013-Spring, 2010-Fall, 2008-Fall, 2008-Spring, 2007-Spring, 2005-Fall, 2004-Fall
+
+
+機率 (Probability)
+
+2012-Spring, 2009-Spring
+
+
+人工智慧概論 (Introduction to Artificial Intelligence)
+
+2011-Spring, 2010-Spring
+
+
+人工智慧 (Artificial Intelligence)
+
+2010-Spring
+
+
+嵌入式系統程式設計 (Embedded System Programming)
+
+2007-Fall, 2005-Fall
+
+
+計算機概論 (Introduction to Computer Science)
+
+2006-Fall
+
+
+正規語言 (Formal Languages)
+
+2006-Fall, 2006-Spring, 2005-Spring
+
+
+嵌入式系統設計 (Embedded System Design) [joint class]
+
+2006-Spring
+
+
+
+Research Projects
+
+以增進 LT codes 暨 MCLT codes 之效能為方法探究 Multifactorial
+Optimization 演算架構 (Investigation on Multifactorial Optimization by Improving
+Performance of LT codes and MCLT codes)
+
+主持人
+
+08/01/2016 ~ 07/31/2017
+
+
+虛擬 MapReduce 叢集暨 Hadoop YARN 之排班機制與效能分析 (Scheduling and Performance Analysis for Virtual MapReduce Clusters and Hadoop YARN)
+
+主持人
+
+08/01/2015 ~ 07/31/2016
+
+
+MapReduce 架構之可靠性、延展性暨能源效率之提升研究 (Toward a highly reliable, scalable, and energy-efficient MapReduce framework)
+
+主持人
+
+08/01/2012 ~ 07/31/2015
+
+
+應用泛用型最佳化演算架構於無線網路傳輸技術最佳化問題之研究 (Studies on the Application of General Optimization Frameworks to the Optimization Problems in Wireless Networking Technologies)
+
+主持人
+
+08/01/2010 ~ 07/31/2012
+
+
+硬體惡意行為檢測技術研究 (Detection of Hardware Trojan)
+
+主持人
+
+01/01/2011 ~ 12/31/2011
+
+
+研究與發展專為無線網路系統客製化之最佳化演算架構 (Study and Development of a Customized Optimization Framework for Wireless Networking Systems)
+
+主持人
+
+08/01/2009 ~ 07/31/2010
+
+
+於 XCS 分類系統中導入容錯機制: 實務影響與理論分析 (Introducing Fault Tolerance into XCS: Practical Impact and Theoretical Analysis) 
+
+主持人
+
+08/01/2007 ~ 07/31/2008
+
+
+整合型計畫: 生物系統從序列到結構與功能之計算研究 (Computational study on the sequence-structure-function relationship in biological systems)
+
+子計畫: 生物系統中分子交互作用之研究 (An integrated analysis of molecular structures and interactions in biological systems)
+共同主持人
+
+
+
+08/01/2005 ~ 07/31/2008
+
+
+{大專學生參與專題研究計畫} 以隨選分割配合機率建模基因演算法處理多維度實數連續域中之最佳化問題 (Split on Demand with Probabilistic Model Building Genetic Algorithms for Solving Continuous Optimization Problems)
+
+主持人
+
+參與學生: 劉浚頡
+07/01/2007 ~ 02/28/2008
+
+
+發展導引式演化策略演算法以處理實數參數之全域最佳化問題 (Particle Swarm Guided Evolution Strategy for Real-Parameter Optimization) 
+
+主持人
+
+08/01/2006 ~ 07/31/2007
+
+
+{大專學生參與專題研究計畫} 以機率建模遺傳演算法的離散化解決連續域中之最佳化問題 (Discretization for Probabilistic Model Building Genetic Algorithms in Solving Optimization Problem in Continuous Domain) 
+
+主持人
+
+參與學生: 陳昭宏
+07/01/2006 ~ 02/28/2007
+
+
+利用前置式區域搜尋技術增強機率模型構建式基因演算法之執行效能研究 (Performance Speed-up for Probabilistic Model Building Genetic Algorithms by Using Prefix Local Searchers) 
+
+主持人
+
+08/01/2005 ~ 07/31/2006
+
+
+院內急救通報系統之建制與成效評估 (Building an in-hospital resuscitation reporting system)
+
+協同主持人
+
+01/26/2005 ~ 12/31/2005
+
+
+鏈結學習型基因演算法之設計改進研究 (Design Enhancement of Linkage Learning Genetic Algorithms)
+
+主持人
+
+10/01/2004 ~ 07/31/2005
+
+
+
+Open Source Projects
+
+
+
+			proof.generator
+		
+
+		    
+		Paper:
+			Proving Theorems by Using Evolutionary Search with Human Involvement
+	
+
+
+			starcraft.asga
+		
+
+		    
+		Paper:
+		
+			Learning to Select Actions in StarCraft with Genetic Algorithms
+		
+
+
+
+			ea.prover
+		
+
+		    
+		Paper:
+		
+			Automatically Proving Mathematical Theorems with Evolutionary Algorithms and Proof Assistants
+		
+
+
+
+			ca_ea.aip
+		
+
+		    
+		Paper:
+		
+			Artistic Image Processing with Cellular Automata and Evolutionary Algorithms
+		
+
+
+
+			pso.evac
+		
+
+		    
+		Paper:
+		
+			PSO-Based Evacuation Simulation Framework
+		
+
+
+
+			ASP OAI 2.0 Data Provider for Database
+		
+
+		    
+		A sample implementation of an
+		OAI
+		2.0 data provider service for database only architecture.
+		I had maintained this project until version 1.4
+		while I was working in the Grainger Engineering library of UIUC
+		as a graduate assistant.
+	
+
+
+			ASP OAI 2.0 Data Provider for File/Database Hybrid
+		
+
+		    
+		A sample implementation of an
+		OAI
+		2.0 data provider service for file system/database hybrid architecture.
+		I had maintained this project until version 1.4
+		while I was working in the Grainger Engineering library of UIUC
+		as a graduate assistant.
+	
+
+
+			ASP OAI 2.0 Data Provider for File System
+		
+
+		    
+		A sample implementation of an
+		OAI
+		2.0 data provider service for file system.
+		I had maintained this project until version 1.4
+		while I was working in the Grainger Engineering library of UIUC
+		as a graduate assistant.
+	
+
+
+			ASP OAI 2.0 Static Repository Gateway
+		
+
+		    
+		A sample implementation of an
+		OAI
+		2.0
+		static repository gateway.
+		I had maintained this project until version 1.11
+		while I was working in the Grainger Engineering library of UIUC
+		as a graduate assistant.
+	
+
+
+			OP-yc in C
+		
+
+		    
+		This project provides an implementation of a chatroom robot running as an operator for moderating a chatroom for bulletin board systems (BBS).
+	
+
+
+			OPycT in Expect Script
+		
+
+		    
+		OPycT is a robot written in "expect" mainly for keep the topic of the chat room from being changed by unauthorized people.
+	
+
+Curriculum Projects
+
+大專校院資訊人才培育計畫---嵌入式軟體課程推廣計畫
+
+課程計畫成員
+08/01/2005 ~ 07/31/2006
+
+
+大專校院資訊人才培育計畫---聯盟發展計畫
+
+課程計畫成員
+11/01/2004 ~ 12/31/2005
+
+
+
+
+[Home
+ | Academic Publications
+ | Courses and Projects
+ | Back]
+
+
+
+
+
+
+
+
+
+
+
+Updated: April 20, 2017
+
+
+
+
+自動機理論與正規語言 -課程概述
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+　
+　  
+
+
+
+:::
+迴首頁 | 
+網站導覽 | 
+快速鍵 | 
+English | 
+行事曆 | 
+緊急聯絡電話  | 
+臉書粉絲專頁
+
+
+
+
+
+
+
+
+
+ :::快速選單 
+訪客身份‧
+考生身份‧
+學生身份‧
+教職身份‧
+系友身份‧
+考古題
+
+
+
+
+
+
+
+
+
+
+
+
+ :::
+
+1電機簡介
+
+
+                    　　1-1系所介紹
+                    　　1-2中長計畫
+                    　　1-3歷屆主任
+                    　　1-4規章辦法
+                    　　1-5位置空間
+                    　　1-6捐款興學
+
+
+2公告事項
+
+
+　                    　2-1全部公告 
+                    　　2-2一般公告
+                    　　2-3學術活動
+                    　　2-4招生簡訊
+                    　　2-5相關規定
+                    　　2-6獎助學金
+                    　　2-7榮譽獎項
+
+
+3繫上成員
+
+ 
+                    　　3-1師資陣容
+                    　　3-2學生資訊
+                    　　3-3行政同仁
+                    　　3-4傑出校友
+                    　　3-5傑出系友
+
+4研究概況
+
+
+                    　　4-1研究計畫                      
+                    　4-2研究室
+                    　4-3實驗室
+
+
+5課程資訊
+
+
+                    　　5-1課程標準
+                    　　5-2課程概述
+                    　　5-3課程流程
+
+
+6就業資訊
+
+
+                    　　6-1廠商甄才
+                    　　6-2最後一哩
+                    　6-3替代役
+                    　　6-4產碩專班
+
+
+7相關連結
+
+
+                    　7-1系友會
+                    　　7-2本校首頁
+                    　　7-3網路電話
+                    　　7-4臉書專頁
+                    　　7-5其它連結
+
+
+8表單下載
+
+
+                    　　8-1學生相關
+                    　　8-2教師相關
+                    　　8-3其它表單
+
+
+9ｅ化系辦
+
+
+                    　　9-1學生相關
+                    　　9-2教師相關
+                    　　9-3網頁管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::首頁 > 
+                        課程資訊 >
+                      課程概述 > 
+                       自動機理論與正規語言                 
+
+
+
+
+:::
+                  自動機理論與正規語言                   
+
+                     3學分3小時
+                  
+
+
+
+
+
+課程名稱
+                    自動機理論與正規語言                 
+ 英文課程名稱
+                    Automata Theory and Formal Language                 
+ 中文課程概要
+                    這門課程主要的目的是提供學生們有關於正規語言、自動機理論、計算複雜度等內容，詳細內容如下： 1. 自動機 2. 有限自動機 3. 常規表示式與語言 4. 常規語言的特性 5. 前後文無關性語法與語言 6. Pushdown自動機 7. 前後文無關性語法的特性 8. Turing機器的介紹 9. 不可決定性問題 10. Intractable問題 
+
+ 英文課程概要
+                    The purpose of this course is to provide students with the concepts of formal languages, automata theory, and computational complexity. The topic is as follows: 1. Automata: The Methods and the Madness 2. Finite Automata 3. Regular Expressions and Languages 4. Properties of Regular Languages 5. Context-Free Grammars and Languages 6. Pushdown Automata 7. Properties of Context-Free Languages 8. Introduction to Turing Machines 9. Undecidability 10. Intractable Problems 
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+
+10608臺北市忠孝東路三段1號　電話:(02)27712171 #2100　傳真:(02)27317187
+Copyright © 2017 國立臺北科技大學電機工程系  All Rights Reserved.
+如對網頁內容有任何建議,請與我們聯絡
+
+
+Visits since May 26, 2003.
+
+
+
+
+
+
+
+
+正規表示式 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+正規表示式
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+本條目存在以下問題，請協助改善本條目或在討論頁針對議題發表看法。
+
+
+
+
+
+
+本條目內容疑欠準確，有待查證。（2013年11月22日） 
+請在討論頁討論問題所在及加以改善，若本條目仍有爭議及準確度欠佳，會被提出存廢討論。 
+
+
+
+
+
+
+
+本條目需要補充更多來源。（2013年11月22日） 
+請協助添加多方面可靠來源以改善這篇條目，無法查證的內容可能會因為異議提出而移除。 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+「regular expression」的各地常用譯名
+
+
+中國大陸
+正則表達式
+
+
+臺灣
+正規表示式、規則運算式、正規表示法
+常規表示式、正規運算式
+常規表示法、正規表式
+
+
+香港
+正則表達式
+
+
+正規表示式，又稱正則表達式、正規表示法、正規運算式、規則運算式、常規表示法（英語：Regular Expression，在代碼中常簡寫為regex、regexp或RE），是電腦科學的一個概念。正規表示式使用單個字串來描述、符合一系列符合某個句法規則的字串。在很多文字編輯器裡，正則運算式通常被用來檢索、替換那些符合某個模式的文字。
+許多程式設計語言都支援利用正則運算式進行字串操作。例如，在Perl中就內建了一個功能強大的正則運算式引擎。正則運算式這個概念最初是由Unix中的工具軟體（例如sed和grep）普及開的。正規表示式通常縮寫成「regex」，單數有regexp、regex，複數有regexps、regexes、regexen。
+
+
+
+目錄
+
+
+1 譯名問題
+2 歷史
+3 理論
+4 基本語法
+5 運算式全集
+6 優先權
+7 範例
+8 相關條目
+9 外部連結
+10 註釋
+
+
+
+譯名問題[編輯]
+Regular Expression的「Regular」一般被譯為「正則」、「正規」、「常規」。此處的「Regular」即是「規則」、「規律」的意思，Regular Expression即「描述某種規則的表達式」之意。
+歷史[編輯]
+最初的正規表示式出現於理論電腦科學的自動控制理論和形式化語言理論中。在這些領域中有對計算（自動控制）的模型和對形式化語言描述與分類的研究。
+1940年，沃倫·麥卡洛克與Walter Pitts（英語：Walter Pitts）將神經系統中的神經元描述成小而簡單的自動控制元。
+1950年代，數學家史蒂芬·科爾·克萊尼利用稱之為「正則集合」的數學符號來描述此模型。肯·湯普遜將此符號系統引入編輯器QED（英語：QED (text editor)），隨後是Unix上的編輯器ed（英語：ed(text editor)），並最終引入grep。自此以後，正則運算式被廣泛地應用於各種Unix或類Unix系統的工具中。
+Perl的正規表示式源自於Henry Spencer（英語：Henry Spencer）於1986年1月19日發布的regex，它已經演化成了pcre（Perl相容正規表示式，Perl Compatible Regular Expressions（英語：PCRE），一個由Philip Hazel（英語：Philip Hazel）開發的，為很多現代工具所使用的庫。
+各電腦語言之間的正則運算式的整合目前[何時？]開展得很差。Perl6的子專案Apocalypse的設計中已考慮到了這點。
+理論[編輯]
+正規表示式可以用形式化語言理論的方式來表達。正規表示式由常量和算子組成，它們分別指示字串的集合和在這些集合上的運算。給定有限字母表Σ定義了下列常量：
+
+（「空集」）∅指示集合∅
+（「空串」）ε指示集合{ε}
+（「文字字元」）在Σ中的a指示集合{a}
+
+定義了下列運算：
+
+（「串接」）RS指示集合{ αβ | α ∈ R，β ∈ S }。例如：{"ab","c"}{"d","ef"} = {"abd", "abef", "cd", "cef"}。
+（「選擇」）R|S指示R和S的並集。例如：{"ab", "c"}|{"ab", "d", "ef"}= {"ab", "c", "d", "ef"}
+（「Kleene星號」）R* 指示包含ε並且閉合在字串串接下的R的最小超集。這是可以通過R中的零或多個字串的串接得到所有字串的集合。例如，{"ab", "c"}* = {ε, "ab", "c", "abab", "abc", "cab", "cc", "ababab", ... }。
+
+上述常量和算子形成了克萊尼代數。
+很多課本使用對選擇使用符號∪, +或∨替代豎槓。
+為了避免括弧，假定Kleene星號有最高優先級，接著是串接，接著是並集。如果沒有歧義則可以省略括弧。例如，(ab)c可以寫為abc而a|(b(c*))可以寫為a|bc*。
+例子：
+
+a|b*指示{a, ε, b, bb, bbb, ...}。
+(a|b)*指示由包括空串、任意數目個a或b字元組成的所有字串的集合。
+ab*(c|ε)指示開始於一個a接著零或多個b和最終可選的一個c的字串的集合。
+
+正規表示式的定義非常精簡，避免多餘的量詞?和+，它們可以被表達為：a+ = aa*和a? = (a|ε)。有時增加補算子~；~R指示在Σ*上的不在R中的所有字串的集合。補算子是多餘的，因為它使用其他算子來表達（儘管計算這種表示的過程是複雜的，而結果可能以指數增大）。
+這種意義上的正規表示式可以表達正則語言，精確的是可被有限狀態自動機接受的語言類。但是在簡潔性上有重要區別。某類正則語言只能用大小指數增長的自動機來描述，而要求的正規表示式的長度只線性的增長。
+正規表示式對應於喬姆斯基層級的類型-3文法。在另一方面，在正規表示式和不導致這種大小上的爆炸的非確定有限狀態自動機（NFA）之間有簡單的對映；為此NFA經常被用作正規表示式的替代表示。
+我們還要在這種形式化中研究表達力。如下麵例子所展示的，不同的正規表示式可以表達同樣的語言：這種形式化中存在著冗餘。
+有可能對兩個給定正規表示式寫一個演算法來判定它們所描述的語言是否本質上相等，簡約每個運算式到極小確定有限自動機，確定它們是否同構（等價）。
+這種冗餘可以消減到什麼程度?我們可以找到仍有完全表達力的正規表示式的有趣的子集嗎? Kleene星號和並集明顯是需要的，但是我們或許可以限制它們的使用。這提出了一個令人驚奇的困難問題。因為正規表示式如此簡單，沒有辦法在語法上把它重寫成某種規範形式。過去公理化的缺乏導致了星號高度問題。最近Dexter Kozen用克萊尼代數公理化了正規表示式。
+很多現實世界的「正規表示式」引擎實現了不能用正規表示式代數表達的特徵。[來源請求]
+基本語法[編輯]
+一個正規表示式通常被稱為一個模式（pattern），為用來描述或者符合一系列符合某個句法規則的字串。例如：Handel、Händel和Haendel這三個字串，都可以由「H(a|ä|ae)ndel」這個模式來描述。大部分正規表示式的形式都有如下的結構：
+
+選擇
+|豎直分隔符代表選擇。例如「gray|grey」可以符合grey或gray。
+
+
+數量限定
+某個字元後的數量限定符用來限定前面這個字元允許出現的個數。最常見的數量限定符包括「+」、「?」和「*」（不加數量限定則代表出現一次且僅出現一次）：
+
+
++加號代表前面的字元必須至少出現一次。（1次、或多次）。例如，「goo+gle」可以符合google、gooogle、goooogle等;
+
+
+?問號代表前面的字元最多只可以出現一次。（0次、或1次）。例如，「colou?r」可以符合color或者colour;
+
+
+*星號代表前面的字元可以不出現，也可以出現一次或者多次。（0次、或1次、或多次）。例如，「0*42」可以符合42、042、0042、00042等。
+
+
+符合
+圓括弧可以用來定義操作符的範圍和優先度。例如，「gr(a|e)y」等價於「gray|grey」，「(grand)?father」符合father和grandfather。
+
+上述這些構造子都可以自由組合，因此，「H(ae?|ä)ndel」和「H(a|ae|ä)ndel」是相同的。
+精確的語法可能因不同的工具或程式而異。
+運算式全集[編輯]
+正規表示式有多種不同的風格。下表是在PCRE（英語：Perl_Compatible_Regular_Expressions）中元字元及其在正規表示式上下文中的行為的一個完整列表，適用於Perl或者Python程式語言（grep或者egrep的正規表示式文法是PCRE的子集）：
+
+
+字元
+描述
+
+
+\
+將下一個字元標記為一個特殊字元(File Format Escape)、或一個原義字元（Identity Escape)、或一個向後參照(backreferences)、或一個八進位轉義符。例如，「n」符合字元「n」。「\n」符合一個換行符。序列「\\」符合「\」而「\(」則符合「(」。
+
+
+^
+符合輸入字串的開始位置。如果設定了RegExp物件的Multiline屬性，^也符合「\n」或「\r」之後的位置。
+
+
+$
+符合輸入字串的結束位置。如果設定了RegExp物件的Multiline屬性，$也符合「\n」或「\r」之前的位置。
+
+
+*
+符合前面的子運算式零次或多次。例如，zo*能符合「z」、「zo」以及「zoo」。*等價於{0,}。
+
+
++
+符合前面的子運算式一次或多次。例如，「zo+」能符合「zo」以及「zoo」，但不能符合「z」。+等價於{1,}。
+
+
+?
+符合前面的子運算式零次或一次。例如，「do(es)?」可以符合「do」或「does」中的「do」。?等價於{0,1}。
+
+
+{n}
+n是一個非負整數。符合確定的n次。例如，「o{2}」不能符合「Bob」中的「o」，但是能符合「food」中的兩個o。
+
+
+{n,}
+n是一個非負整數。至少符合n次。例如，「o{2,}」不能符合「Bob」中的「o」，但能符合「foooood」中的所有o。「o{1,}」等價於「o+」。「o{0,}」則等價於「o*」。
+
+
+{n,m}
+m和n均為非負整數，其中n<=m。最少符合n次且最多符合m次。例如，「o{1,3}」將符合「fooooood」中的前三個o。「o{0,1}」等價於「o?」。請註意在逗號和兩個數之間不能有空格。
+
+
+?
+非貪心量化（Non-greedy quantifiers）：當該字元緊跟在任何一個其他重複修飾詞（*,+,?，{n}，{n,}，{n,m}）後面時，符合模式是非貪婪的。非貪婪模式儘可能少的符合所搜尋的字串，而預設的貪婪模式則儘可能多的符合所搜尋的字串。例如，對於字串「oooo」，「o+?」將符合單個「o」，而「o+」將符合所有「o」。
+
+
+.
+符合除「\n」之外的任何單個字元。要符合包括「\n」在內的任何字元，請使用像「(.|\n)」的模式。
+
+
+(pattern)
+符合pattern並取得這一符合的子字串。該子字串用於向後參照。所取得的符合可以從產生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中則使用$0…$9屬性。要符合圓括號字元，請使用「\(」或「\)」。
+
+
+(?:pattern)
+符合pattern但不取得符合的子字串（shy groups)，也就是說這是一個非取得符合，不儲存符合的子字串用於向後參照。這在使用或字元「(|)」來組合一個模式的各個部分是很有用。例如「industr(?:y|ies)」就是一個比「industry|industries」更簡略的運算式。
+
+
+(?=pattern)
+正向肯定預查（look ahead positive assert），在任何符合pattern的字串開始處符合尋找字串。這是一個非取得符合，也就是說，該符合不需要取得供以後使用。例如，「Windows(?=95|98|NT|2000)」能符合「Windows2000」中的「Windows」，但不能符合「Windows3.1」中的「Windows」。預查不消耗字元，也就是說，在一個符合發生後，在最後一次符合之後立即開始下一次符合的搜尋，而不是從包含預查的字元之後開始。
+
+
+(?!pattern)
+正向否定預查(negative assert)，在任何不符合pattern的字串開始處符合尋找字串。這是一個非取得符合，也就是說，該符合不需要取得供以後使用。例如「Windows(?!95|98|NT|2000)」能符合「Windows3.1」中的「Windows」，但不能符合「Windows2000」中的「Windows」。預查不消耗字元，也就是說，在一個符合發生後，在最後一次符合之後立即開始下一次符合的搜尋，而不是從包含預查的字元之後開始
+
+
+(?<=pattern)
+反向(look behind)肯定預查，與正向肯定預查類似，只是方向相反。例如，「(?<=95|98|NT|2000)Windows」能符合「2000Windows」中的「Windows」，但不能符合「3.1Windows」中的「Windows」。
+
+
+(?<!pattern)
+反向否定預查，與正向否定預查類似，只是方向相反。例如「(?<!95|98|NT|2000)Windows」能符合「3.1Windows」中的「Windows」，但不能符合「2000Windows」中的「Windows」。
+
+
+x|y
+符合x或y。例如，「z|food」能符合「z」或「food」。「(?:z|f)ood」則符合「zood」或「food」。
+
+
+[xyz]
+字元集合（character class）。符合所包含的任意一個字元。例如，「[abc]」可以符合「plain」中的「a」。特殊字元僅有反斜線\保持特殊含義，用於跳脫字元。其它特殊字元如星號、加號、各種括弧等均作為普通字元。脫字元^如果出現在首位則表示負值字元集合；如果出現在字串中間就僅作為普通字元。連字元 - 如果出現在字串中間表示字元範圍描述；如果如果出現在首位則僅作為普通字元。
+
+
+[^xyz]
+排除型字元集合（negated character classes）。符合未列出的任意字元。例如，「[^abc]」可以符合「plain」中的「plin」。
+
+
+[a-z]
+字元範圍。符合指定範圍內的任意字元。例如，「[a-z]」可以符合「a」到「z」範圍內的任意小寫字母字元。
+
+
+[^a-z]
+排除型的字元範圍。符合任何不在指定範圍內的任意字元。例如，「[^a-z]」可以符合任何不在「a」到「z」範圍內的任意字元。
+
+
+[:name:]
+增加命名字元類（named character class）[註 1]中的字元到運算式。只能用於方括弧運算式。
+
+
+[=elt=]
+增加當前locale下排序（collate）等價於字元「elt」的元素。例如，[=a=]可能會增加ä、á、à、ă、ắ、ằ、ẵ、ẳ、â、ấ、ầ、ẫ、ẩ、ǎ、å、ǻ、ä、ǟ、ã、ȧ、ǡ、ą、ā、ả、ȁ、ȃ、ạ、ặ、ậ、ḁ、ⱥ、ᶏ、ɐ、ɑ 。只能用於方括弧運算式。
+
+
+[.elt.]
+增加排序元素（collation element）elt到運算式中。這是因為某些排序元素由多個字元組成。例如，29個字母表的西班牙語， "CH"作為單個字母排在字母C之後，因此會產生如此排序「cinco, credo, chispa」。只能用於方括弧運算式。
+
+
+\b
+符合一個單詞邊界，也就是指單詞和空格間的位置。例如，「er\b」可以符合「never」中的「er」，但不能符合「verb」中的「er」。
+
+
+\B
+符合非單詞邊界。「er\B」能符合「verb」中的「er」，但不能符合「never」中的「er」。
+
+
+\cx
+符合由x指明的控制字元。例如，\cM符合一個Control-M或Enter符。x的值必須為A-Z或a-z之一。否則，將c視為一個原義的「c」字元。
+
+
+\d
+符合一個數字字元。等價於[0-9]。
+
+
+\D
+符合一個非數字字元。等價於[^0-9]。
+
+
+\f
+符合一個換頁符。等價於\x0c和\cL。
+
+
+\n
+符合一個換行符。等價於\x0a和\cJ。
+
+
+\r
+符合一個Enter符。等價於\x0d和\cM。
+
+
+\s
+符合任何空白字元，包括空格、製表符、換頁符等等。等價於[ \f\n\r\t\v]。
+
+
+\S
+符合任何非空白字元。等價於[^ \f\n\r\t\v]。
+
+
+\t
+符合一個製表符。等價於\x09和\cI。
+
+
+\v
+符合一個垂直製表符。等價於\x0b和\cK。
+
+
+\w
+符合包括底線的任何單詞字元。等價於「[A-Za-z0-9_]」。
+
+
+\W
+符合任何非單詞字元。等價於「[^A-Za-z0-9_]」。
+
+
+\ck
+符合控制跳脫字元。k代表一個字元。等價於「Ctrl-k」。用於ECMA語法。
+
+
+\xnn
+十六進位跳脫字元序列。符合兩個十六進位數字nn表示的字元。例如，「\x41」符合「A」。「\x041」則等價於「\x04&1」。正則運算式中可以使用ASCII編碼。.
+
+
+\num
+向後參照（back-reference）一個子字串（substring），該子字串與正規表示式的第num個用括弧圍起來的捕捉群（capture group）子運算式（subexpression）符合。其中num是從1開始的十進位正整數，其上限可能是9[註 2]、31、[註 3]99甚至無限。[註 4]例如：「(.)\1」符合兩個連續的相同字元。
+
+
+\n
+標識一個八進位轉義值或一個向後參照。如果\n之前至少n個取得的子運算式，則n為向後參照。否則，如果n為八進位數字（0-7），則n為一個八進位轉義值。
+
+
+\nm
+3位八進位數字，標識一個八進位轉義值或一個向後參照。如果\nm之前至少有nm個獲得子運算式，則nm為向後參照。如果\nm之前至少有n個取得，則n為一個後跟文字m的向後參照。如果前面的條件都不滿足，若n和m均為八進位數字（0-7），則\nm將符合八進位轉義值nm。
+
+
+\nml
+如果n為八進位數字（0-3），且m和l均為八進位數字（0-7），則符合八進位轉義值nml。
+
+
+\un
+Unicode跳脫字元序列。其中n是一個用四個十六進位數字表示的Unicode字元。例如，\u00A9符合版權符號（©）。
+
+
+優先權[編輯]
+
+
+ 優先權
+符號
+
+
+最高
+\
+
+
+高
+( )、(?: )、(?= )、[ ]
+
+
+中
+*、+、?、{n}、{n,}、{m,n}
+
+
+低
+^、$、中介字元
+
+
+最低
+|
+
+
+範例[編輯]
+
+以下是以PHP的語法所寫的範例
+
+
+驗證字串是否只含數字與英文，字串長度並在4~16個字元之間
+
+
+
+<?php
+$str = 'a1234';
+if (preg_match("/^[a-zA-Z0-9]{4,16}$/", $str)) {
+    echo "驗證成功";
+} else {
+    echo "驗證失敗";
+}
+?>
+
+
+簡易的台灣身分證字號驗證
+
+
+
+<?php
+$str = 'a1234';
+if (preg_match("/^[A-Za-z]\d{9}$/", $str)) {
+    echo "驗證成功";
+} else {
+    echo "驗證失敗";
+}
+?>
+
+
+以下範例是用Perl語言寫的，與上面的範例功能相同
+
+
+
+print $str = "a1234" =~ m:^[a-zA-Z0-9]{4,16}$: ? "COMFIRM" : "FAILED";
+
+
+
+print $str = "a1234" =~ m"^\w[12]\d{8}$" ? "COMFIRM" : "INVALID";
+
+相關條目[編輯]
+
+Perl
+PHP
+Python
+Ruby
+
+外部連結[編輯]
+
+
+您可以在維基教科書中尋找此百科條目的相關電子教程：
+:en:Regular Expressions
+
+
+
+
+
+參見維基數據有有關P1793的屬性，正規表示式格式（參見用法）
+
+
+
+RegExp (PCRE) and grep, （德文）
+Comparison of regular expression engines（英語：Comparison of regular expression engines）（英文）
+各種語言或工具軟體的不同風格的正規表示式文法規定
+正規表示式30分鐘入門教程（簡體中文）
+MSDN正規表示式語法介紹（簡體中文）
+正規表示式應用範例
+正規化表示法-ProgWiki（繁體中文）
+一個線上正則驗證器
+另一個正規表示式的網頁線上偵錯/驗證器，用狀態機圖解輸入的正規表示式的語意，並可檢測輸入的測試字串是否符合該正規表示式
+Regexper
+RegExr: Learn, Build, & Test RegEx，公式上的懸浮氣泡UI解釋該規則符合的字串；符合結果有對應的解釋；右側邊欄有正規表示式的詳細規範及圖中的小抄
+
+註釋[編輯]
+
+
+^ 命名字元類。對於C++11的regex_traits::lookup_classname，預設返回字元類的名字："alnum","apha","blank","cntrl","digit","graph","lower","print","punct","space","upper","xdigit","d","s","w"
+^ 命名字元類 BRE與grep最多只能向後參照到9
+^ Visual C++的regex庫最多只能向後參照到31
+^ ECMAScript不限向後參照的上限
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4506116-6
+NDL: 01121341
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+字串
+
+
+
+
+
+
+String metric
+
+
+
+字串近似符合
+Bitap演算法
+Damerau–Levenshtein距離
+編輯距離
+漢明距離
+Jaro–Winkler距離
+Lee距離
+Levenshtein自動機
+Levenshtein距離
+Wagner–Fischer演算法
+
+
+
+
+
+
+
+
+字串搜尋演算法
+
+
+
+Apostolico–Giancarlo演算法
+Boyer-Moore字串搜尋演算法
+Boyer–Moore–Horspool演算法
+Knuth–Morris–Pratt演算法
+Rabin–Karp演算法
+
+
+
+
+
+
+
+
+多字串搜尋
+
+
+
+AC自動機
+Commentz-Walter演算法
+Rabin–Karp演算法
+
+
+
+
+
+
+
+
+正規表示式
+
+
+
+正規表示式引擎比較
+Regular tree grammar
+Thompson構造法
+非確定有限狀態自動機
+
+
+
+
+
+
+
+
+序列比對
+
+
+
+Hirschberg's algorithm
+Needleman–Wunsch演算法
+史密斯-沃特曼演算法
+
+
+
+
+
+
+
+
+資料結構
+
+
+
+DAFSA
+字尾陣列
+Suffix automaton
+字尾樹
+Generalized suffix tree
+Rope
+三元搜尋樹
+Trie
+
+
+
+
+
+
+
+
+其它
+
+
+
+語法分析器
+模式符合
+Compressed pattern matching
+最長公共子序列
+最長公共子串
+Sequential pattern mining
+排序
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=正則表達式&oldid=45228095"					
+3 個分類：編譯原理形式語言程序設計語言隱藏分類：自2013年11月準確性有爭議的作品拒絕當選首頁新條目推薦欄目的條目自2013年11月需補充來源的條目含有多個問題的條目含有英語的條目有非常模稜兩可或者十分空泛語句的條目有未列明來源語句的條目包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源維基教科書 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaБългарскиCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEuskaraفارسیSuomiFrançaisGalegoעבריתहिन्दीHrvatskiMagyarՀայերենÍslenskaItaliano日本語ქართული한국어КыргызчаLatviešuМакедонскиMirandésNederlandsNorsk bokmålPolskiPortuguêsRomânăРусскийSimple EnglishSlovenčinaShqipСрпски / srpskiSvenskaதமிழ்ไทยTürkçeУкраїнськаاردوTiếng ViệtWalon 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年7月16日 (週日) 14:57。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+正規語言概論 | 資夢
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+                        Introduction
+                    
+
+
+
+
+1.
+                        
+                        開始
+                    
+
+
+
+
+1.1.
+                        
+                        搜尋資源
+                    
+
+
+
+
+1.2.
+                        
+                        認識同好
+                    
+
+
+
+
+1.3.
+                        
+                        取得書籍
+                    
+
+
+1.4. 使用工具
+
+
+
+
+1.5.
+                        
+                        學習英文
+                    
+
+
+
+
+
+
+2.
+                        
+                        學習程式語言
+                    
+
+
+2.1. Python
+
+
+2.2. JavaScript
+
+
+2.3. C/C++
+
+
+2.4. Ruby
+
+
+2.5. Java
+
+
+
+
+3. 程式開發實務
+
+
+3.1. 網站開發
+
+
+3.2. 遊戲開發
+
+
+3.3. 手機程式開發
+
+
+
+
+4. 課題
+
+
+4.1. 基礎知識
+
+
+
+
+4.2.
+                        
+                        程式解題
+                    
+
+
+4.3. 資安攻防
+
+
+4.4. 數學
+
+
+4.5. 計算機工程
+
+
+4.6. 計算機科學
+
+
+
+
+5. 前方的道路
+
+
+5.1. 參與公益行動
+
+
+5.2. 參與開放原始碼專案
+
+
+5.3. 創業
+
+
+
+
+5.4.
+                        
+                        當個軟體工程師
+                    
+
+
+5.5. 讀資工系
+
+
+
+
+6. 附錄：資源
+
+
+
+
+6.1.
+                        
+                        資工系開放式課程資源
+                    
+
+
+
+
+6.2.
+                        
+                        交大資工相關獎學金、競賽、工讀與實習機會
+                    
+
+
+
+
+6.3.
+                        
+                        Timus Online Judge 教學
+                    
+
+
+
+
+7. 附錄：資工課程
+
+
+
+
+7.1.
+                        
+                        組合語言與系統程式
+                    
+
+
+
+
+7.2.
+                        
+                        數位電路實驗
+                    
+
+
+
+
+7.3.
+                        
+                        計算機概論與程式設計
+                    
+
+
+
+
+7.4.
+                        
+                        離散數學
+                    
+
+
+
+
+7.5.
+                        
+                        正規語言概論
+                    
+
+
+
+
+7.6.
+                        
+                        密碼學概論
+                    
+
+
+
+
+7.7.
+                        
+                        微處理機系統實驗
+                    
+
+
+
+
+7.8.
+                        
+                        程式語言
+                    
+
+
+
+
+7.9.
+                        
+                        資訊工程專題
+                    
+
+
+
+
+
+
+                Published with GitBook
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A
+A
+
+
+Serif
+Sans
+
+
+White
+Sepia
+Night
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Share on Twitter
+                
+
+                    Share on Google
+                
+
+                    Share on Facebook
+                
+
+                    Share on Weibo
+                
+
+                    Share on Instapaper
+                
+
+
+
+
+
+
+
+
+
+資夢
+
+
+
+
+
+正規語言概論
+前言
+正規語言概論是交大資工大三上的必修課程。這門課的課題是基礎的計算理論，研究什麼是電腦的能力和極限。介紹各種計算模型，例如 DFA, NFA, PDA, Turing machines 等等，以及其相對應的正規語言，如 regular languages, context free languages, Turing-decidable languages 等等。也會探討問題間的 Reduction 以及問題的 Complexity 等等。
+繫上使用的教科書主要是《Introduction to the Theory of Computation》不過也有老師使用《Introduction to Automata Theory, Languages, and Computation》。
+簡介
+透過計算模型，我們可以對計算定下明確的數學定義。而一旦有了明確的定義，便可以研究什麼是可計算的、什麼是不可計算的，而對於可計算的問題，必須花費多少時間和空間才可能計算。
+Church–Turing thesis 指出，所有演算法可解的問題，都可透過 Turing machines 求解，也因此，藉由研究 Turing machines 我們得以探討電腦的極限，以及對各種問題的難度訂出明確的界線。
+這是一門非常理論與數學的課，需要非常清晰的邏輯思考。老師曾說，資訊界日新月異，許多課程可能幾年後就不見了，或者教的東西大幅改變。但你幾乎可以確定，正規語言這門課還是會一直存在。從哲學的角度來說，計算理論在電腦科學裡佔了十分核心的地位。
+正規語言課程所學的東西其實也有很多延伸的應用，以至於很多讀者很可能早已接觸過某些部份，但直到這門課，才真正以嚴謹的方式學習背後的來歷。像是如果有接觸像 Python 等語言或者用過 Vim 等編輯器的搜尋功能的讀者，很有可能有接觸過正規表示式。而 CFG 和程式語言的設計以及編譯器等課程有密切相關，你或許會曾在程式語言的文件上看過他。如果在演算法等課程聽過 NP、P 等名詞，在這堂課裡，你可以學到這些名詞到底有什麼含意。而對什麼是演算法，時間複雜度、問題的可計算性等等，都會在這堂課得到更深的理解。
+學習小指引
+課本本身寫的很好，建議將《Introduction to the Theory of Computation》研讀數遍，並配合書中練習題。
+參考
+
+Computability and Complexity
+Automata, Computability, and Complexity
+Regular Expression (RegExp) in JavaScript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+邏輯、語言與計算暑期研習營  (FLOLAC) - 簡介 | Facebook
+
+
+
+
+
+
+
+
+
+Facebook郵箱或手機號密碼忘記帳戶？註冊首頁簡介照片網志帖子社群創建主頁簡介編輯建議使命本課程希望推廣程式驗證的重要性、知識與相關技能與學生，將講授與型式驗證領域之入門理論與知識，包含基礎邏輯(Logics)、計算理論(Theory of Computation)，以及各類常見的驗證主題，如字串程式(String-manipulating programs)驗證、時序邏輯(Temporal Logics)...驗證、以自動機(Automata)為基礎之模型檢查(Model Checking)，並探討硬體合成(Hardware Synthesis)與軟體模型上的SMT驗證應用等等。希望透過一系列課程，培養學生以正規邏輯進行清晰思考的能力，瞭解邏輯與程式驗證的密切關係，以及計算理論與各類工具在驗證中扮演的角色，使學生能理解並解決程式驗證問題，能運用軟體工具輔助邏輯推理並證明程式之正確性，並具備在相關領域進行研究的能力。 展開聯繫方式@flolac.tw發消息http://flolac.iis.sinica.edu.tw更多信息簡介「邏輯、語言與計算」暑期研習營希望培養學員獨立進行基礎計算科學研究之能力。從第二年起，本研習營在兩大主題 — 程式語言與正規驗證之間輪替。今年（奇數年）之主題為正規驗證。categories教育商家故事「邏輯、語言與計算」暑期研習營希望培養學員獨立進行基礎計算科學研究之能力，今年為第九屆。從第二年起，本研習營在兩大主題 — 程式語言(Programming Language)與正規驗證(Formal Verification)之間輪替。今年（奇數年）之主題為正規驗證，正式學分班課程名稱為「自動化正規驗證」。  本課程希望推廣程式驗證的重要性、知識與相關技能與學生，將講授與型式驗證領域之入門理論與知識，包含基礎邏輯(Logics)、計算理論(Theory of Computation)，以及各類常見的驗證主題，如字串程式(String-manipulating programs)驗證、時序邏輯(Temporal Logics)驗證、以自動機(Automata)為基礎之模型檢查(Model Checking)，並探討硬體合成(Hardware Synthesis)與軟體模型上的SMT驗證應用等等。希望透過一系列課程，培養學生以正規邏輯進行清晰思考的能力，瞭解邏輯與程式驗證的密切關係，以及計算理論與各類工具在驗證中扮演的角色，使學生能理解並解決程式驗證問題，能運用軟體工具輔助邏輯推理並證明程式之正確性，並具備在相關領域進行研究的能力。  自 2012 年起，本研習營正式成為台灣大學暑修課程，針對大學部學生開課，但亦歡迎研究生選修。 台灣大學學生可透過國立台灣大學暑期課程網選課，有學籍之其他學校學生可透過校際選修選課。無學籍之社會人士也可旁聽。（詳見報名資訊頁。） 中文(簡體)English (US)日本語한국어Français (France)Bahasa IndonesiaPolskiEspañolPortuguês (Brasil)DeutschItalianoMessengerFacebook Lite用戶地點游戲位置名人二手市場小組食譜彩色氣球Instagram公司簡介創建廣告創建主頁開發者招聘信息隱私權政策Cookie廣告選項條款設置活動日誌 Facebook © 2017
+
+

@@ -15,6 +15,7 @@ for course in list(pd.read_json("CourseName", typ='series', encoding='utf8')):
             #pagesStr = courseEmbeddingSelenium(Query, TargetDirectory)
             pagesStr = courseEmbedding(Query, TargetDirectory)
         except:
+            print(course, "Fail")
             continue
 
         savePath = TargetDirectory + "//" + Query;

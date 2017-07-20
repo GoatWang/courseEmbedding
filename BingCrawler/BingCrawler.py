@@ -7,34 +7,30 @@ from selenium import webdriver
 def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
 
 
-    #url = "https://www.bing.com/search?q=" + Query + "+簡介"
-    #re = requests.get(url, headers=headers)
-    #re.encoding = 'utf8'
-    #html = re.text
+    url = "https://www.bing.com/search?q=" + Query+"&setlang=zh-tw"
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
+    re = requests.get(url, headers=headers)
+    re.encoding = 'utf8'
+    html = re.text
 
     #driver = webdriver.Chrome()
-    driver = webdriver.PhantomJS()
-    url = "https://www.bing.com/"
-    driver.get(url)
-    elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
-    elem.send_keys(Query)
-    elem = driver.find_element_by_xpath('//*[@id="sb_form_go"]')
-    elem.submit()
-    html = driver.page_source
-    driver.close()
+    #driver = webdriver.PhantomJS()
+    #url = "https://www.bing.com/"
+    #driver.get(url)
+    #elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
+    #elem.send_keys(Query)
+    #elem = driver.find_element_by_xpath('//*[@id="sb_form_go"]')
+    #elem.submit()
+    #html = driver.page_source
+    #driver.close()
 
     soup = BeautifulSoup(html, 'lxml')
     Links = soup.find_all('a')
 
     Goodlinks = []
     for link in Links:
-        if (
-    not 'search' in str(link) and not 'Bing' in str(link) and not 'images' in str(link) and not 'maps' in str(link) 
-    and not '喜好設定' in str(link) and not '地區' in str(link) and not '語言' in str(link) and not '日期' in str(link)
-    and not '設定檔圖片' in str(link) and not '登入' in str(link) and not '網路' in str(link) and not '我儲存的項目' in str(link)
-    and not '隱私權和' in str(link) and not '法律聲明' in str(link) and not '關於我們的廣告' in str(link) 
-    and not '意見反應' in str(link) and not '廣告' in str(link) and not '說明' in str(link) and not 'sb_pagS' in str(link) 
-           ):
+        linkstr = str(link)
+        if (('http' in linkstr) and ('href' in linkstr) and (not 'href="#"' in linkstr) and (not 'href="http://go.microsoft' in linkstr)and (not 'microsofttranslator' in linkstr)):
             Goodlinks.append(link)
 
     urls = [link['href'] for link in Goodlinks]
@@ -79,7 +75,7 @@ def courseEmbedding(Query, TargetDirectory = "CourseEmbedding"):
                     '''
                     sentence = Converter('zh-hant').convert(sentence)
                     return sentence
-            
+
                 if not soup.text.startswith("%PDF") and url.split("/")[2] != "24h.pchome.com.tw":
                     pagesStr += Simplified2Traditional(soup.text)
 
