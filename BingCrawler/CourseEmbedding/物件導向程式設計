@@ -1,0 +1,5607 @@
+
+
+
+物件導向程式設計 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+物件導向程式設計
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+中國大陸
+面向對象程序設計
+
+
+臺灣
+物件導向程式設計
+
+
+港澳
+物件導向程式設計
+
+
+物件導向程式設計（英語：Object-oriented programming，縮寫：OOP）是種具有物件概念的程式編程典範，同時也是一種程式開發的抽象方針。它可能包含資料、屬性、程式碼與方法。物件則指的是類別的例項。它將物件作為程式的基本單元，將程式和資料封裝其中，以提高軟體的重用性、靈活性和擴充功能性，物件裡的程式可以存取及經常修改物件相關連的資料。在物件導向程式編程裡，電腦程式會被設計成彼此相關的物件[1][2]。
+物件導向程式設計可以看作一種在程式中包含各種獨立而又互相呼叫的物件的思想，這與傳統的思想剛好相反：傳統的程式設計主張將程式看作一系列函式的集合，或者直接就是一系列對電腦下達的指令。物件導向程式設計中的每一個物件都應該能夠接受資料、處理資料並將資料傳達給其它物件，因此它們都可以被看作一個小型的「機器」，即物件。目前已經被證實的是，物件導向程式設計推廣了程式的靈活性和可維護性，並且在大型專案設計中廣為應用。此外，支持者聲稱物件導向程式設計要比以往的做法更加便於學習，因為它能夠讓人們更簡單地設計並維護程式，使得程式更加便於分析、設計、理解。反對者在某些領域對此予以否認。
+當我們提到物件導向的時候，它不僅指一種程式設計方法。它更多意義上是一種程式開發方式。在這一方面，我們必須瞭解更多關於物件導向系統分析和物件導向設計（Object Oriented Design，簡稱OOD）方面的知識。許多流行的程式語言是物件導向的,它們的風格就是會透由物件來創出實例。
+重要的物件導向程式語言包含Common Lisp、Python、C++、Objective-C、Smalltalk、Delphi、Java、Swift、C#、Perl、Ruby 與 PHP等。
+
+
+
+目錄
+
+
+1 特徵
+
+1.1 分享非物件導向程式前身語言
+1.2 類別與物件
+1.3 動態配置與訊息傳遞機制
+1.4 封裝性
+1.5 繼承
+1.6 多型
+1.7 抽象性
+
+
+2 歷史
+3 物件導向編程語言
+
+3.1 腳本中的OOP
+
+
+4 參見
+5 參考文獻
+6 延伸閱讀
+7 外部連結
+
+
+
+特徵[編輯]
+物件導向程式編程的定義是使用「物件」來做設計，但並非所有的程式語言都直接支援「物件導向程式編程」相關技術與結構。對於OOP的準確定義及其本意存在著不少爭論。通常，OOP被理解為一種將程式分解為封裝資料及相關操作的模組而進行的編程方式。有別於其它編程方式，OOP中的與某資料類別型相關的一系列操作都被有機地封裝到該資料類別型當中，而非散放於其外，因而OOP中的資料類別型不僅有著狀態，還有著相關的行為。
+OOP理論，及與之同名的OOP實踐相結合創造出了新的一個編程架構；OOP思想被廣泛認為是非常有用的，以致一套新的編程典範被創造了出來。（其它的編程典範例如函數語言程式設計或程序式編程專註於程式執行的過程，而邏輯編程專註於引發程式代碼執行的斷言）。對面向模擬系統的語言（如：SIMULA 67）的研究及對高可靠性系統架構（如：高效能作業系統和CPU的架構）的研究最終導致了OOP的誕生。其中由Deborah J. Armstrong進行的長達40年之久的電腦著作調查中，顯示出了一系列物件導向程式設計的基本理論。物件導向程式特徵被條列如下[3][4][5][6]
+分享非物件導向程式前身語言[編輯]
+物件導向程式設計通常共享高階編程語言的低階功能。可用於建構一個程式的基本工具包括：
+
+變數 能儲存一些內建型態的資訊如整數與字元，也有些是資料結構像是字串、串列與雜湊表等包含內建或複合的變數如指標。
+程式：也稱為函式、方法或常式，是指輸入資料產生輸出結果，現代語言還包含結構化編程結構如程式迴圈與條件。
+
+類別與物件[編輯]
+支援物件導向編程語言通常利用繼承其他類別達到代碼重用和可擴展性的特性。而類別有兩個主要的概念：
+
+類別（Class）：定義了一件事物的抽象特點。類別的定義包含了資料的形式以及對資料的操作。
+物件：是類別的實例。
+
+其中類別別（Class）定義了一件事物的抽象特點。類別的定義包含了資料的形式以及對資料的操作。舉例來說，「狗」這個類別會包含狗的一切基礎特徵，即所有「狗」都共有的特徵或行為，例如它的孕育、毛皮顏色和吠叫的能力。類別可以為程式提供模版和結構。一個類別的方法和屬性被稱為「成員」。 我們來看一段虛擬碼：
+
+類別 狗
+開始
+    公有成員:
+        吠叫():
+    私有成員:
+        毛皮顏色:
+        孕育:
+結束
+
+
+在這串代碼中，我們聲明瞭一個類別，這個類別具有一些狗的基本特徵。關於公有成員和私有成員，請參見下麵的繼承性一節。
+物件（Object）是類別的例項。物件有時會對應到現實世界中的事物，舉例來說，一個圖形程式可能有圓形、矩形與畫面等物件，一個線上購物系統可能有購物車、顧客與產品等類別。[7]。有時物件會表示更抽象的實體，比如一個被開啟的檔案或是一個提供美國慣用量測轉換的服務。每個物件就是一個特定類別的實例（例如，名稱是「瑪麗」的物件可能是類別雇員的一個實例）。程式在物件導向編程當中被視為方法，變數被視為成員或屬性。例如，「狗」這個類別列舉狗的特點，從而使這個類別定義了世界上所有的狗。而萊絲這個物件則是一條具體的狗，它的屬性也是具體的。狗有皮毛顏色，而萊絲的皮毛顏色是棕白色的。因此，萊絲就是狗這個類別的一個例項。一個具體物件屬性的值被稱作它的「狀態」。（系統給物件分配記憶體空間，而不會給類別分配記憶體空間。這很好理解，類別是抽象的系統不可能給抽象的東西分配空間，而物件則是具體的。）
+假設我們已經在上面定義了狗這個類別，我們就可以用這個類別來定義物件：
+
+定義萊絲是狗
+萊絲.毛皮顏色:棕白色
+萊絲.吠叫()
+
+我們無法讓狗這個類別去吠叫，但是我們可以讓物件「萊絲」去吠叫，正如狗可以吠叫，但沒有具體的狗就無法吠叫。
+類別和物件就好比是「實型」和「1.23」，「實型」是一種資料的類別型，而「1.23」是一個真正的「實數」（即物件）。所有的「實數」都具有「實型」所描訴的特徵，如「實數的大小」，系統則分配記憶體給「實數」儲存具體的數值。
+動態配置與訊息傳遞機制[編輯]
+定義上動態配置是指方法會隨著實例動態的改變。而訊息傳遞機制（Message Passing）是指一個物件通過接受訊息、處理訊息、傳出訊息或使用其他類別的方法來實作一定功能。如：萊絲可以通過吠叫引起人的註意，從而導致一系列的事發生。
+封裝性[編輯]
+具備封裝性（Encapsulation）的物件導向程式設計隱藏了某一方法的具體執行步驟，取而代之的是通過訊息傳遞機制傳送訊息給它。封裝是通過限制只有特定類別的物件可以存取這一特定類別的成員，而它們通常利用介面實作訊息的傳入傳出。舉個例子，介面能確保幼犬這一特徵只能被賦予狗這一類別。通常來說，成員會依它們的存取權限被分為3種：公有成員、私有成員以及保護成員。有些語言更進一步：Java可以限制同一包內不同類別的存取；C#和VB.NET保留了為類別的成員聚集準備的關鍵字：internal（C#）和Friend（VB.NET）；Eiffel語言則可以讓使用者指定哪個類別可以存取所有成員。
+具備封裝性（Encapsulation）的物件導向程式設計隱藏了某一方法的具體執行步驟，取而代之的是通過訊息傳遞機制傳送訊息給它。因此，舉例來說，「狗」這個類別有「吠叫()」的方法，這一方法定義了狗具體該通過什麼方法吠叫。但是，萊絲的朋友並不知道它到底是如何吠叫的。
+從例項來看：
+
+/* 一個程序導向的程式會這樣寫： */
+定義萊絲
+萊絲.設定音調(5)
+萊絲.吸氣()
+萊絲.吐氣()
+
+/* 而當狗的吠叫被封裝到類別中，任何人都可以簡單地使用： */
+定義萊絲是狗
+萊絲.吠叫()
+
+繼承[編輯]
+繼承性（Inheritance）是指，在某種情況下，一個類別會有「子類別」。子類別比原本的類別（稱為父類別）要更加具體化。例如，「狗」這個類別可能會有它的子類別「牧羊犬」和「吉娃娃犬」。在這種情況下，「萊絲」可能就是牧羊犬的一個例項。子類別會繼承父類別的屬性和行為，並且也可包含它們自己的。我們假設「狗」這個類別有一個方法（行為）叫做「吠叫()」和一個屬性叫做「毛皮顏色」。它的子類別（前例中的牧羊犬和吉娃娃犬）會繼承這些成員。這意味著程式設計師只需要將相同的代碼寫一次。
+在虛擬碼中我們可以這樣寫：
+
+類別牧羊犬:繼承狗
+
+定義萊絲是牧羊犬
+萊絲.吠叫()    /* 註意這裡呼叫的是狗這個類別的吠叫方法。*/
+
+回到前面的例子，「牧羊犬」這個類別可以繼承「毛皮顏色」這個屬性，並指定其為棕白色。而「吉娃娃犬」則可以繼承「吠叫()」這個方法，並指定它的音調高於平常。子類別也可以加入新的成員，例如，「吉娃娃犬」這個類別可以加入一個方法叫做「顫抖()」。設若用「牧羊犬」這個類別定義了一個例項「萊絲」，那麼萊絲就不會顫抖，因為這個方法是屬於吉娃娃犬的，而非牧羊犬。事實上，我們可以把繼承理解為「是」或「屬於」。萊絲「是」牧羊犬，牧羊犬「屬於」狗類別。因此，萊絲既得到了牧羊犬的屬性，又繼承了狗的屬性。 我們來看虛擬碼：
+
+類別吉娃娃犬:繼承狗
+開始
+   公有成員:
+      顫抖()
+結束
+類別牧羊犬:繼承狗
+
+定義萊絲是牧羊犬
+萊絲.顫抖()    /* 錯誤：顫抖是吉娃娃犬的成員方法。 */
+
+當一個類別從多個父類別繼承時，我們稱之為「多重繼承」。如一隻狗既是吉娃娃犬又是牧羊犬（雖然事實上並不合邏輯）。多重繼承並不總是被支援的，因為它很難理解，又很難被好好使用。
+多型[編輯]
+多型（Polymorphism）是指由繼承而產生的相關的不同的類別，其物件對同一訊息會做出不同的回應[8]。例如，狗和雞都有「叫()」這一方法，但是呼叫狗的「叫()」，狗會吠叫；呼叫雞的「叫()」，雞則會啼叫。 我們將它體現在虛擬碼上：
+
+類別狗
+開始
+   公有成員:
+       叫()
+       開始
+          吠叫()
+       結束
+結束
+
+類別雞
+開始
+   公有成員:
+       叫()
+       開始
+          啼叫()
+       結束
+結束
+
+定義萊絲是狗
+定義魯斯特是雞
+萊絲.叫()
+魯斯特.叫()
+
+這樣，雖然同樣是做出叫這一種行為，但萊絲和魯斯特具體做出的表現方式將大不相同。多型性的概念可以用在運算子過載上，本文不再贅述。
+抽象性[編輯]
+抽象（Abstraction）是簡化複雜的現實問題的途徑，它可以為具體問題找到最恰當的類別定義，並且可以在最恰當的繼承級別解釋問題。舉例說明，萊絲在大多數時候都被當作一條狗，但是如果想要讓它做牧羊犬做的事，你完全可以呼叫牧羊犬的方法。如果狗這個類別還有動物的父類別，那麼你完全可以視萊絲為一個動物。
+歷史[編輯]
+物件導向程式設計的雛形，早在1960年的Simula語言中即可發現，當時的程式設計領域正面臨著一種危機：在軟硬體環境逐漸複雜的情況下，軟體如何得到良好的維護？物件導向程式設計在某種程度上通過強調可重複性解決了這一問題。20世紀70年代的Smalltalk語言在物件導向方面堪稱經典——以至於30年後的今天依然將這一語言視為物件導向語言的基礎。
+電腦科學中物件和例項概念的最早萌芽可以追溯到麻省理工學院的PDP-1系統。這一系統大概是最早的基於容量架構（capability based architecture）的實際系統。另外1963年Ivan Sutherland的Sketchpad應用中也蘊含了同樣的思想。物件作為編程實體最早是於1960年代由Simula 67語言引入思維。Simula這一語言是奧利-約翰·達爾和克利斯登·奈加特在挪威奧斯陸電腦中心為模擬環境而設計的。（據說，他們是為了模擬船隻而設計的這種語言，並且對不同船隻間屬性的相互影響感興趣。他們將不同的船隻歸納為不同的類別，而每一個物件，基於它的類別，可以定義它自己的屬性和行為。）這種辦法是分析式程式的最早概念體現。在分析式程式中，我們將真實世界的物件對映到抽象的物件，這叫做「模擬」。Simula不僅引入了「類別」的概念，還應用了例項這一思想——這可能是這些概念的最早應用。
+20世紀70年代全錄PARC研究所發明的Smalltalk語言將物件導向程式設計的概念定義為，在基礎運算中，對物件和訊息的廣泛應用。Smalltalk的建立者深受Simula 67的主要思想影響，但Smalltalk中的物件是完全動態的——它們可以被建立、修改並銷毀，這與Simula中的靜態物件有所區別。此外，Smalltalk還引入了繼承性的思想，它因此一舉超越了不可建立例項的程式設計模型和不具備繼承性的Simula。此外，Simula 67的思想亦被應用在許多不同的語言，如Lisp、Pascal。
+物件導向程式設計在80年代成為了一種主導思想，這主要應歸功於C++——C語言的擴充版。在圖形化使用者介面（GUI）日漸崛起的情況下，物件導向程式設計很好地適應了潮流。GUI和物件導向程式設計的緊密關聯在Mac OS X中可見一斑。Mac OS X是由Objective-C語言寫成的，這一語言是一個仿Smalltalk的C語言擴充版。物件導向程式設計的思想也使事件處理式的程式設計更加廣泛被應用（雖然這一概念並非僅存在於物件導向程式設計）。一種說法是，GUI的引入極大地推動了物件導向程式設計的發展。
+蘇黎世聯邦理工學院的尼克勞斯·維爾特和他的同事們對抽象資料和模組化程式設計進行了研究。Modula-2將這些都包括了進去，而Oberon則包括了一種特殊的物件導向方法——不同於Smalltalk與C++。
+物件導向的特性也被加入了當時較為流行的語言：Ada、BASIC、Lisp、Fortran、Pascal以及種種。由於這些語言最初並沒有物件導向的設計，故而這種糅合常常會導致相容性和維護性的問題。與之相反的是，「純正的」物件導向語言卻缺乏一些程式設計師們賴以生存的特性。在這一大環境下，開發新的語言成為了當務之急。作為先行者，Eiffel成功地解決了這些問題，並成為了當時較受歡迎的語言。
+在過去的幾年中，Java語言成為了廣為應用的語言，除了它與C和C++語法上的近似性。Java的可移植性是它的成功中不可磨滅的一步，因為這一特性，已吸引了龐大的程式設計師群的投入。
+在最近的電腦語言發展中，一些既支援物件導向程式設計，又支援程序導向程式設計的語言悄然浮出水面。它們中的佼佼者有Python、Ruby等等。
+正如程序導向程式設計使得結構化程式設計的技術得以提升，現代的物件導向程式設計方法使得對設計模式的用途、契約式設計和建模語言（如UML）技術也得到了一定提升。
+物件導向編程語言[編輯]
+支援部分或絕大部分物件導向特性的語言即可稱為基於物件的或物件導向的語言。Simula (1967)被視為第一個具有物件導向特性的語言。早期，完全物件導向的語言主要包括Smalltalk等語言，目前較為流行的語言中有Java、C#、Eiffel等。隨著軟體工業的發展，比較早的程序導向的語言在近些年的發展中也紛紛吸收了許多物件導向的概念，比如C→C++，C→Objective-C，BASIC→Visual Basic→Visual Basic .NET，Pascal→Object Pascal，Ada→Ada95。「純粹」的物件導向語言, 因為所有的東西都是由物件所組成，例如: Eiffel, Emerald,[9] JADE, Obix, Ruby, Scala, Smalltalk, Self.
+腳本中的OOP[編輯]
+近年來，物件導向的程式設計越來越流行於手稿語言中。Python和Ruby是建立在OOP原理的指令碼語言，Perl和PHP亦分別在Perl 5和PHP 4時加入物件導向特性。
+參見[編輯]
+
+一次且僅一次（once and only once，OAOO）
+Distributed Component Object Model
+UML
+
+參考文獻[編輯]
+
+
+^ Kindler, E.; Krivy, I. Object-Oriented Simulation of systems with sophisticated control. International Journal of General Systems: 313–343. 2011. 
+^ Lewis, John; Loftus, William. Java Software Solutions Foundations of Programming Design 6th ed. Pearson Education Inc. 2008. ISBN 0-321-53205-8. , section 1.6 "Object-Oriented Programming"
+^ Deborah J. Armstrong. The Quarks of Object-Oriented Development. A survey of nearly 40 years of computing literature which identified a number of fundamental concepts found in the large majority of definitions of OOP, in descending order of popularity: Inheritance, Object, Class, Encapsulation, Method, Message Passing, Polymorphism, and Abstraction.
+^ John C. Mitchell, Concepts in programming languages, Cambridge University Press, 2003, ISBN 0-521-78098-5, p.278. Lists: Dynamic dispatch, abstraction, subtype polymorphism, and inheritance.
+^ Michael Lee Scott, Programming language pragmatics, Edition 2, Morgan Kaufmann, 2006, ISBN 0-12-633951-1, p. 470. Lists encapsulation, inheritance, and dynamic dispatch.
+^ Pierce, Benjamin. Types and Programming Languages. MIT Press. 2002. ISBN 0-262-16209-1. , section 18.1 "What is Object-Oriented Programming?" Lists: Dynamic dispatch, encapsulation or multi-methods (multiple dispatch), subtype polymorphism, inheritance or delegation, open recursion ("this"/"self")
+^ Booch, Grady. Software Engineering with Ada. Addison Wesley. 1986: 220. ISBN 978-0805306088. Perhaps the greatest strength of an object-oriented approach to development is that it offers a mechanism that captures a model of the real world. 
+^ 譚浩強：《C++物件導向程式設計》，清華大學出版社，2006年1月第一版。ISBN 978-7-302-12315-6
+^ The Emerald Programming Language. 2011-02-26. 
+
+
+延伸閱讀[編輯]
+
+Abadi, Martin; Luca Cardelli. A Theory of Objects. Springer Verlag. 1998. ISBN 0-387-94775-2. 
+Abelson, Harold; Gerald Jay Sussman. Structure and Interpretation of Computer Programs. MIT Press. 1997. ISBN 0-262-01153-0. 
+Armstrong, Deborah J. The Quarks of Object-Oriented Development. Communications of the ACM. February 2006, 49 (2): 123–128 [8 August 2006]. ISSN 0001-0782. doi:10.1145/1113034.1113040. 
+Booch, Grady. Object-Oriented Analysis and Design with Applications. Addison-Wesley. 1997. ISBN 0-8053-5340-2. 
+Eeles, Peter; Oliver Sims. Building Business Objects. John Wiley & Sons. 1998. ISBN 0-471-19176-0. 
+Gamma, Erich; Richard Helm, Ralph Johnson, John Vlissides. Design Patterns: Elements of Reusable Object Oriented Software. Addison-Wesley. 1995. ISBN 0-201-63361-2.  引文使用過時參數coauthors (幫助)
+Harmon, Paul; William Morrissey. The Object Technology Casebook - Lessons from Award-Winning Business Applications. John Wiley & Sons. 1996. ISBN 0-471-14717-6. 
+Jacobson, Ivar. Object-Oriented Software Engineering: A Use Case-Driven Approach. Addison-Wesley. 1992. ISBN 0-201-54435-0. 
+Kay, Alan. The Early History of Smalltalk. 
+Meyer, Bertrand. Object-Oriented Software Construction. Prentice Hall. 1997. ISBN 0-13-629155-4. 
+Pecinovsky, Rudolf. OOP - Learn Object Oriented Thinking & Programming. Bruckner Publishing. 2013. ISBN 978-80-904661-8-0. 
+Rumbaugh, James; Michael Blaha; William Premerlani; Frederick Eddy; William Lorensen. Object-Oriented Modeling and Design. Prentice Hall. 1991. ISBN 0-13-629841-9. 
+Schach, Stephen. Object-Oriented and Classical Software Engineering, Seventh Edition. McGraw-Hill. 2006. ISBN 0-07-319126-4. 
+Schreiner, Axel-Tobias. Object oriented programming with ANSI-C. Hanser. 1993. ISBN 3-446-17426-5. hdl:1850/8544.  參數|id=值左起第40位存在刪除符 (幫助)
+Taylor, David A. Object-Oriented Information Systems - Planning and Implementation. John Wiley & Sons. 1992. ISBN 0-471-54364-0. 
+Weisfeld, Matt. The Object-Oriented Thought Process, Third Edition. Addison-Wesley. 2009. ISBN 0-672-33016-4. 
+West, David. Object Thinking (Developer Reference). Microsoft Press. 2004. ISBN 0735619654. 
+
+外部連結[編輯]
+
+
+
+維基語錄上的相關摘錄：Object-orientation
+
+
+
+
+
+維基學院中的Topic:Object-Oriented Programming相關學習資源：
+
+物件導向程式設計
+
+
+
+
+
+
+您可以在維基教科書中尋找此百科條目的相關電子教程：
+Object Oriented Programming
+
+
+
+開放式目錄計劃中和Object-oriented programming相關的內容
+Introduction to Object Oriented Programming Concepts (OOP) and More by L.W.C. Nirosh
+Discussion about the flaws of OOD
+OOP Concepts (Java Tutorials)
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+電腦科學
+
+
+
+
+
+
+數學基礎
+
+數理邏輯 · 集合論 · 數論 · 圖論 · 類別型論 · 範疇論 · 數值分析 · 資訊理論
+
+
+
+
+
+
+計算理論
+
+自動機 · 可計算性理論 · 計算複雜性理論 · 量子計算 · 數值計算方法
+
+
+
+
+
+
+演算法和資料結構
+
+演算法分析 · 演算法設計 · 計算幾何
+
+
+
+
+
+
+程式語言和編譯器
+
+語法分析器 · 直譯器 · 編程典範（程序化編程 · 物件導向程式編程 · 函數語言程式設計 · 邏輯編程等）
+
+
+
+
+
+
+並行、並列和分散式系統
+
+多處理器 · 網格計算 · 並行控制
+
+
+
+
+
+
+軟體工程
+
+需求分析 · 軟體設計 · 程式設計 · 形式化方法 · 軟體測試 · 軟體開發過程
+
+
+
+
+
+
+系統架構
+
+電腦系統架構 · 微處理器體系結構 · 作業系統
+
+
+
+
+
+
+電信與網路
+
+路由 · 網路拓撲 · 密碼學
+
+
+
+
+
+
+資料庫
+
+資料庫管理系統 · 關聯式資料庫 · 結構化查詢語言 · NoSQL · 事務處理 · 資料庫索引 · 資料探勘
+
+
+
+
+
+
+人工智慧
+
+自動推理 · 計算語言學 · 電腦視覺 · 進化計算 · 專家系統 · 機器學習 · 自然語言處理 · 機器人學
+
+
+
+
+
+
+電腦圖形學
+
+視覺化 · 電腦動畫 · 圖像處理
+
+
+
+
+
+
+人機互動
+
+電腦輔助功能 · 使用者介面 · 可穿戴電腦 · 普適計算 · 虛擬現實 · 聊天機器人
+
+
+
+
+
+
+科學計算
+
+人工生命 · 生物資訊學 · 認知科學 · 計算化學 · 計算神經科學 · 計算物理學 · 數值演算法 · 符號計算
+
+
+
+
+
+
+
+註：電腦科學領域也可根據ACM-2012分類別系統進行分類別。
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+LCCN: sh87007503
+GND: 4233947-9
+BNF: cb12115131k（資料）
+NDL: 00937980
+BNE: XX537453
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=面向對象程序設計&oldid=43533641"					
+2 個分類：編程典範物件導向的程式設計隱藏分類：使用ISBN魔術連結的頁面含有英語的條目含有過時參數的參照的頁面引文格式1錯誤：不可見字元包含規範控制資訊的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+AfrikaansالعربيةAzərbaycancaБеларускаяБеларуская (тарашкевіца)‎БългарскиবাংলাBosanskiCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEestiEuskaraفارسیSuomiFrançaisGalegoעבריתहिन्दीHrvatskiMagyarՀայերենBahasa IndonesiaIlokanoIdoÍslenskaItaliano日本語ქართულიҚазақша한국어КыргызчаLatinaLietuviųLatviešuМакедонскиമലയാളംМонголBahasa Melayuမြန်မာဘာသာNorsk nynorskNorsk bokmålPolskiPortuguêsRomânăРусскийРусиньскыйSicilianuScotsSrpskohrvatski / српскохрватскиSimple EnglishSlovenčinaShqipСрпски / srpskiSvenskaதமிழ்ไทยTürkçeУкраїнськаاردوTiếng Việt吳語粵語 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年3月8日 (週三) 22:43。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+﻿
+
+
+
+
+
+
+
+
+國立交通大學開放式課程(OpenCourseWare, OCW)
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 交大首頁  |  聯絡我們  |  網站導覽  |  常見問答  |  相關連結  |  English 
+
+
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+物件導向程式設計 Object-Oriented Programming
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+課程首頁
+ 
+本課程是由交通大學電機工程學系提供。 
+
+
+ 
+
+
+
+
+
+授課教師
+電機工程學系 溫宏斌老師
+
+
+
+課程學分
+3
+
+
+
+授課年度
+100學年度
+
+
+
+授課對象
+大學一年級學生
+
+
+
+預備知識
+Introduction to Computer Science and Programming (in C/C++) 
+
+
+本課程提供
+
+課程影音　
+    課程講義  　   Lecture Source Code　 
+         課程綱要　 
+         實作課程　 
+         課程行事曆　 
+            
+
+
+
+
+
+個人評分：
+
+ 
+ 
+ 
+
+ 
+
+評論分數：
+ 
+
+
+
+
+
+ (共
+              81              人評分)
+點閱數：
+              93628              
+
+
+
+
+
+
+
+
+請提供任何對本課程之意見，作為後續改進之參考。
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+課程首頁
+
+
+課程影音
+
+
+課程講義
+
+
+Lecture Source Code
+
+
+課程綱要
+
+
+實作課程
+
+
+課程行事曆
+
+
+
+
+
+
+
+
+
+
+ 
+
+所有課程
+
+
+
+
+ 
+                  理學院                   
+
+
+
+
+ 
+                  工學院                   
+
+
+
+
+ 
+                  電機學院                   
+
+
+
+
+ 
+                  管理學院                   
+
+
+
+
+ 
+                  資訊學院                   
+
+
+
+
+ 
+                  生物科技學院                   
+
+
+
+
+ 
+                  人文社會學院                   
+
+
+
+
+ 
+                  客家文化學院                   
+
+
+
+
+ 
+                  通識課程                   
+
+
+
+
+ 
+                  華語中心                   
+
+
+
+
+ 
+                  經典通識教育講座                  
+
+
+
+
+ 
+                  經典名著選讀                   
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+本網站內容僅供學術使用，嚴禁任何商業行為。
+Copyright © 2006-2015 National Chiao Tung University. All rights reserved.　 
+諮詢單位：交通大學開放教育推動中心(OEO)/理學院 E-learning推動小組　E-Mail：nctuocw@gmail.com
+諮詢專線：03-5712121轉56072
+
+
+
+
+
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+物件導向程式設計 Object-Oriented Programming
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+物件導向程式設計 -- 使用 C# 語言 - 免費電子書：C# 程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wikidot.com
+
+
+
+.wikidot.com
+    
+
+
+Share on
+
+
+
+
+
+
+
+Join this site
+
+Edit
+History
+Tags
+Source
+
+Explore »
+
+ 
+
+
+
+
+
+免費電子書：C# 程式設計
+作者：陳鍾誠
+
+
+
+
+
+
+
+
+文章列表
+
+最近修改
+所有網頁
+標記
+
+
+相關網站
+
+陳鍾誠的網站
+系統程式
+打造電腦
+C# 程式設計
+Blender 動畫設計
+Linux 程式設計
+Android 手機程式
+HTML5 技術體系
+
+
+陳鍾誠
+
+陳鍾誠的信箱
+陳鍾誠的留言板
+陳鍾誠的網站
+陳鍾誠在金門大學
+陳鍾誠的手機網
+陳鍾誠的簡歷
+陳鍾誠的 Facebook
+陳鍾誠的 Twitter
+陳鍾誠的 Diigo
+陳鍾誠的 Scribd
+陳鍾誠的 ping
+陳鍾誠的 Youtube
+陳鍾誠的 GAE
+
+
+Wikidot
+
+網站管理
+本站成員
+標記
+加入本站?
+頂欄
+側欄
+樣版
+Wikidot 文件
+Wikidot 語法
+Wikidot Module
+Wikidot Embedding
+Wikidot Template
+Wikidot Layout
+
+
+
+
+Create account or Sign in 
+
+
+
+
+基礎篇
+C＃ 簡介
+開發環境
+變數與運算
+流程控制
+陣列
+函數
+物件
+例外處理
+函式庫篇
+Thread
+資料結構
+變數與運算
+檔案處理
+正規表達式
+例外處理
+應用篇
+視窗程式
+網路程式
+遊戲程式
+手機程式
+資料庫
+雲端運算
+特殊功能
+委派
+擴展方法
+序列化
+
+網路資源
+教學影片
+教學文章
+軟體下載
+
+
+
+
+
+                            物件導向程式設計 -- 使用 C# 語言
+                        
+
+
+
+
+
+
+
+
+基礎篇
+C＃ 簡介
+開發環境
+變數與運算
+流程控制
+陣列
+函數
+物件
+例外處理
+函式庫篇
+檔案處理
+資料結構
+正規表達式
+Thread
+應用篇
+視窗程式
+媒體影音
+網路程式
+遊戲程式
+手機程式
+資料庫
+雲端運算
+特殊功能
+委派
+擴展方法
+序列化
+LinQ
+WPF
+網路資源
+教學影片
+投影片
+教學文章
+軟體下載
+考題解答
+101習題
+
+
+
+
+文章
+評論
+授權
+
+
+
+
+物件的基礎
+封裝
+繼承
+多型
+物件導向技巧
+
+最新習題
+
+向量物件
+
+習題1：加上內積的函數，並寫出呼叫範例。
+習題2：寫出矩陣物件 (有加法、乘法) (方法一：用二維陣列、方法二：用 Vector)。
+
+
+矩形物件
+矩形與圓形物件
+形狀、矩形與圓形 — 封裝、繼承、多型的概念整合。
+形狀、矩形與圓形與可列印物件 — 介面 (interface) 與封裝、繼承、多型的概念整合。
+
+舊版習題
+
+向量物件
+矩陣物件
+人、學生與老師
+
+
+
+
+Show Comments
+
+
+
+
+
+Add a New Comment
+
+
+Post preview:
+
+
+Close preview
+
+
+
+
+
+
+
+
+or Sign in as Wikidot user
+
+
+
+(will not be published)
+
+
+
+
+-
++
+
+
+                    Help: wiki text quick reference 
+
+
+
+
+
+
+
+
+
+
+
+Permanent Link
+Edit
+Delete
+
+
+
+
+
+本網頁的作者、授權與引用方式
+
+
+作者
+陳鍾誠，於金門大學資訊工程系，電子郵件：wt.ude.uqn|ccc#wt.ude.uqn|ccc，網站：http://ccckmit.wikidot.com。
+授權
+本文採用創作共用 (Creative Common) 3.0 版的 姓名標示─非商業性─相同方式分享 授權條款，歡迎轉載或修改使用，但若做為商業使用時必須取得授權，引用本文時請參考下列格式。
+中文版 (APA格式)
+陳鍾誠 (19 Oct 2010 00:14)，(網頁標題) 物件導向程式設計 — 使用 C# 語言，(網站標題) 免費電子書：C# 程式設計，19 Oct 2010 00:14，取自 http://cs0.wikidot.com/object ，網頁修改第 10 版。
+英文版 (APA格式)
+Chung-Chen Chen (19 Oct 2010 00:14), Retrieved 19 Oct 2010 00:14 from http://cs0.wikidot.com/object, Page Revision 10.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+page revision: 10, last edited: 04 Oct 2011 03:51
+
+Edit
+Tags
+Discuss (0)
+History
+Files
+Print
+Site tools
++ Options
+
+
+Edit Sections
+Append
+Edit Meta
+Watchers
+Backlinks
+Page Source
+Parent
+Lock Page
+Rename
+Delete
+
+
+
+
+
+
+
+
+
+Help
+     |
+    Terms of Service
+     |
+    Privacy
+     |
+    Report a bug
+     |
+    Flag as objectionable
+
+Powered by Wikidot.com
+
+
+                    Unless otherwise stated, the content of this page is licensed under Creative Commons Attribution-ShareAlike 3.0 License
+
+
+
+
+
+Other interesting sites
+
+
+
+
+
+
+RedAQ Oficial
+          
+              RedAQ Oficial
+            
+
+
+
+
+
+
+
+Pandora Saga Online Wiki
+          
+              NYANICORN!!!!!!
+            
+
+
+
+
+
+
+
+My Pride
+
+
+
+
+
+
+
+
+
+Share Coke Codes
+          
+              Sharing happiness by sharing Coke rewards codes.
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Click here to edit contents of this page.    
+
+
+
+        Click here to toggle editing of individual sections of the page (if possible).         Watch headings for an "edit" link when available.    
+
+        Append content without editing the whole page source.    
+
+        Check out how this page has evolved in the past.    
+
+        If you want to discuss contents of this page - this is the easiest way to do it.    
+
+        View and manage file attachments for this page.    
+
+        A few useful tools to manage this Site.    
+
+        See pages that link to and include this page.    
+
+        Change the name (also URL address, possibly the category) of the page.    
+
+        View wiki source for this page without editing.    
+  
+        View/set parent page (used for creating breadcrumbs and structured layout).    
+
+            Notify administrators if there is objectionable content in this page.        
+
+            Something does not work as expected? Find out what you can do.        
+
+            General Wikidot.com documentation and help section.        
+
+            Wikidot.com Terms of Service - what you can, what you should not etc.        
+
+            Wikidot.com Privacy Policy.          
+        
+
+
+
+
+
+
+
+
+
+
+ VB.NET-物件導向語言程式設計 - VidInfo 
+
+
+
+
+
+
+
+
+
+  × Sign up            By clicking on Sign up, you agree with our Privacy Policy.    × Login         Keep me logged in Don't have an account? Click here to sign up.   Login Sign upExploreMenu  VB.NET-物件導向語言程式設計   Follow       4.2 / 5    Write a Comment    OVERVIEW  Published By: GjunInformation Views: 3,994 Likes: 5 Dislikes: 1   Est. Revenue: $7 Online Since: May, 30 2011 Dimensions: 480 x 360 YouTube URL: https://youtu.be/oYChPV38_ds   ACHIEVEMENTS AVIDEO GRADE   USER SATISFACTION   SIX YEARS ONLINE    REVENUE   $7 EST. TOTAL REVENUE   $0 - $0 EST. MONTHLY REVENUE   $1 - $2 EST. YEARLY REVENUE     GROWTH  Exclusive Access Start following this video and watch its growth, daily.  Follow    VIDEO  VB.NET-物件導向語言程式設計     GjunInformation  GjunInformation's YouTube Channel    
+微軟Visual Studio 2010開發工具，可在最新的微軟作業平臺上快速建立應用程式。新技術可以讓開發人員­建立高效率、互動式及企業網站應用程式。目前各大企業已經大量利用.NET平臺開發所­需的商業應用程式，學習本課程可以讓學員瞭解Visual Studio 2010開發工具並透過使用VB.NET語言，熟悉所需具備基本物件導向程式語言基礎­，並進而獲得相關認證的考試所需具備的基礎知識。更多的實用線上教學就在巨匠電腦數位學院http://www.pcschool.tv  Read more »    COMMENTS  Be the first to comment on this video!  You need to sign in to comment on this video. Sign in here      SOCIAL ACTIVITY 13 SHARES0 TWEETS2 +1's0 PINS0 SHARES   WEB AND NEWS    網頁設計,程式設計-網繹數位科技網頁設計公司 -資訊與知 … 網繹數位科技網頁設計主要服務為網頁設計、程式設計 ... 相容語言開發ASP.NET，包括Visual Basic ... 化和物件導向 ... http://www.eki.com.tw/news/20080610155930.htm   VB.NET物件導向與資料庫程式設計-金石堂網路書店 VB.NET物件導向與資料庫程式設計－金石堂網路書店歡迎您加入博客和facebook 臉書粉絲團！The largest retail books store chains in Taiwan! http://www.kingstone.com.tw/book/book_page.asp?kmcode=2014712432392   天瓏網路書店 | VB.NET 程式設計典範 語言: 繁體中文; ISBN: ... 學到VB.NET的基礎技術，如Visual Studio.NET的使用、VB.NET的物件導向、Winodws程式設計 ... 之後，VB.NET ... http://www.tenlong.com.tw/items/9867844149?item_id=13235   Visual Basic 程式設計範例教本 Title: Visual Basic 程式設計範例教本 Author: 陳會安 Last modified by: Joe Chen Created Date: 2/8/2001 6:27:07 PM Document presentation format http://web.nuu.edu.tw/~carlu/prgLan/VB2005/VB2005-01.ppt   程式簡介、VB、物件導向 - 水綠部落格 Title: 程式簡介、VB、��件導向 Author: user Last modified by: cshs Created Date: 4/21/2007 8:25:36 AM Document presentation format: 如螢幕大小 http://blog.cshs.kh.edu.tw/files/1/1-2756.ppt   HTML網頁基礎語言 Title: HTML網頁基礎語言 Author: NB1 Last modified by: Joe Chen Created Date: 2/8/2001 6:27:07 PM Document presentation format: 如螢幕大小 http://www2.nkfust.edu.tw/~wenh/2008/oo/ppt/P785_JavaSE06.ppt   VB.NET程式設計範例教本-金石堂網路書店 VB.NET程式設計範例教本－金石堂網路書店歡迎您加入博客和facebook 臉書粉絲團！The largest retail books store chains in Taiwan! http://www.kingstone.com.tw/book/book_page.asp?kmcode=2014712487637   VB.NET 物件導向程式設計$｜1111進修課程 1.讓學習者熟悉物件導向程式設計方法。 2.視窗應用程式的基礎(物件導向觀念基礎) http://www.1111edu.com.tw/advancedStudies_courseContent.php?autono=78063   怎麼用VB.Net寫出非vb6，有物件導向的感覺?- 藍色小舖 … 怎麼用VB.Net寫出非vb6，有物件導向的感覺? 價值 : 0 QP 點閱數:2575 回應數:14 http://www.blueshop.com.tw/board/FUM200410061532262QU/BRD20090715124039EKZ.html   格子樑 | 艾倫 郭 | AllenKuo.com : ASP.NET 電子書 第一步 掌握一種物件導向程式設計語言 學習一種物件導向的程式語言，c#或者vb.net，我選了c#，因為沒有任何程式設計的基礎 ... http://www.allenkuo.com/EBook5/view.aspx?TreeNodeID=7&id=184   Chapter Visual Basic.NET程式設計概論 Chapter 3-1 Visual Basic.NET 語言的發展 3-2 Visual Basic.NET 軟硬體需求 3-3 Visual Basic.NET 語言的簡介 3-4 檢定 VB 程式設計過程 http://ms1.hcvs.kh.edu.tw/ccy/vb/xc12020vb/丙設-3S.pdf   什麼是VB.NET？ | 電腦不難 VB.NET是VB6的下一個版本，雖然都是VB ... 讓Basic語言擁有強大的圖形化操作介面，也使得 ... 什麼是.NET Framework？ 程式設計 ... http://it-easy.tw/what-vb-net/   開始學習VB - Study-Area 你想多瞭解程式設計嗎?這裡 ... 分兩個方向來學習Visual Basic語言，一是物件導向 ... 物件導向 Visual Basic的設計理念較 ... http://www.study-area.org/coobila/tutorial_210.html   VB程式語言 - 06/02/2011 01:38:26 pm +0800 - en US.UTF-8 Visual Basic 程式語言 ... 結構化程式設計 ... VB 的物件導向設計，控制項(Control)－物件(Object)之一、屬性 ... http://mail.cyvs.cy.edu.tw/~chunwen/vb/vb94/   ASP.NET OOP-物件導向程式設計篇-共 100 篇(全集) - 衛斯 … Visual Basic (2) 最新回應. re: ASP ... ASP.NET OOP-物件導向程式設計篇-共 100 篇(全集) 感謝您的分享。 ... 這不叫oop吧 這只是語言 ... http://www.dotblogs.com.tw/wesley0917/archive/2013/04/20/102007.aspx?fid=71486   TQC+物件導向視窗及資料庫程式設計認證指南Visual Basic … 電腦技能基金會根據微軟軟體開發平臺Visual Studio 2010中的VB.NET人才需求及培育狀況，邀集各界專家學者，共同擬訂「TQC+ VB.NET ... http://www.gotop.com.tw/waweb2004/main/home.aspx?pg=HM010X2007&bn=AEY027500   情境式程式教學 - CH05 VB.NET物件導向- 藍色小舖 … 台灣最大程式設計 ... 其他語言; 行動裝置開發 ... 情境式程式教學 - ch05 vb.net物件導向 價值 : 0 qp 點閱數:720 回應數:1: http://www.blueshop.com.tw/board/FUM20050124191756KKC/BRD201111162207581LC.html   物件導向程式設計 (C# 與 Visual Basic) .NET Framework 中的所有 Managed 語言 (如 Visual Basic 和 C#) 都提供完整的物件導向程式設計支援，包括封裝、繼承和多型。 https://msdn.microsoft.com/zh-tw/library/dd460654.aspx   2-1 Class與物件導向 - Study-Area 上次介紹的struct是在C語言就已經有的保留字. ... 如果使用物件導向的理念來設計, ... 物件導向程式設計 ... http://www.study-area.org/coobila/tutorial_423.html   [下載 / 文件]VB語法的 使用物件(OOP)設計程式：使用類別 - ASP.NET … 物件導向程式設計 (C# 與 Visual Basic) ... 中的所有 Managed 語言 (如 Visual Basic 和 C#) ... ASP.NET 4.5 專題實務 I 入門實戰篇(VB) http://www.dotblogs.com.tw/mis2000lab/archive/2010/05/28/vb_oop_class_20100529.aspx Show More   RELATED VIDEOS哇 ! 超有效的英文學習法(1)by Hans LeeC# 視窗程式：設計飲料店點菜系統 (2/2) -- CSharpPOS2.aviby 陳鍾誠職場達人秀 程式設計師 Part1by 游舒帆生涯規劃－程式設計師by paandkoVB6 自製簡易帳密登入的程式by 葉豐豪C-1 機器碼與程式語言by Wei-Chang Shann程式設計（ＶＢ）_第1講by 華視教學頻道Visual Basic 2010 輕鬆學，簡易製作我的按鈕應用程式by 張子謙CH1_1 Java物件導向概念與物件導向的基本語法by Eric YangVisual Studio 2010 新功能-1by Huanlin TsaiVB教學-二維陣列.aviby chih661300的頻道物件導向的教學by coldollsheep
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ VB.NET-物件導向語言程式設計 - VidInfo 
+
+
+
+
+
+
+
+
+
+  × Sign up            By clicking on Sign up, you agree with our Privacy Policy.    × Login         Keep me logged in Don't have an account? Click here to sign up.   Login Sign upExploreMenu  VB.NET-物件導向語言程式設計   Follow       4.2 / 5    Write a Comment
+
+
+    OVERVIEW  Published By: GjunInformation Views: 3,994 Likes: 5 Dislikes: 1   Est. Revenue: $7 Online Since: May, 30 2011 Dimensions: 480 x 360 YouTube URL: https://youtu.be/oYChPV38_ds   ACHIEVEMENTS AVIDEO GRADE   USER SATISFACTION   SIX YEARS ONLINE    REVENUE   $7 EST. TOTAL REVENUE   $0 - $0 EST. MONTHLY REVENUE   $1 - $2 EST. YEARLY REVENUE     GROWTH  Exclusive Access Start following this video and watch its growth, daily.  Follow    VIDEO  VB.NET-物件導向語言程式設計     GjunInformation  GjunInformation's YouTube Channel    
+微軟Visual Studio 2010開發工具，可在最新的微軟作業平臺上快速建立應用程式。新技術可以讓開發人員­建立高效率、互動式及企業網站應用程式。目前各大企業已經大量利用.NET平臺開發所­需的商業應用程式，學習本課程可以讓學員瞭解Visual Studio 2010開發工具並透過使用VB.NET語言，熟悉所需具備基本物件導向程式語言基礎­，並進而獲得相關認證的考試所需具備的基礎知識。更多的實用線上教學就在巨匠電腦數位學院http://www.pcschool.tv  Read more »    COMMENTS  Be the first to comment on this video!  You need to sign in to comment on this video. Sign in here      SOCIAL ACTIVITY 13 SHARES0 TWEETS2 +1's0 PINS0 SHARES   WEB AND NEWS    網頁設計,程式設計-網繹數位科技網頁設計公司 -資訊與知 … 網繹數位科技網頁設計主要服務為網頁設計、程式設計 ... 相容語言開發ASP.NET，包括Visual Basic ... 化和物件導向 ... http://www.eki.com.tw/news/20080610155930.htm   VB.NET物件導向與資料庫程式設計-金石堂網路書店 VB.NET物件導向與資料庫程式設計－金石堂網路書店歡迎您加入博客和facebook 臉書粉絲團！The largest retail books store chains in Taiwan! http://www.kingstone.com.tw/book/book_page.asp?kmcode=2014712432392   天瓏網路書店 | VB.NET 程式設計典範 語言: 繁體中文; ISBN: ... 學到VB.NET的基礎技術，如Visual Studio.NET的使用、VB.NET的物件導向、Winodws程式設計 ... 之後，VB.NET ... http://www.tenlong.com.tw/items/9867844149?item_id=13235   Visual Basic 程式設計範例教本 Title: Visual Basic 程式設計範例教本 Author: 陳會安 Last modified by: Joe Chen Created Date: 2/8/2001 6:27:07 PM Document presentation format http://web.nuu.edu.tw/~carlu/prgLan/VB2005/VB2005-01.ppt   程式簡介、VB、物件導向 - 水綠部落格 Title: 程式簡介、VB、��件導向 Author: user Last modified by: cshs Created Date: 4/21/2007 8:25:36 AM Document presentation format: 如螢幕大小 http://blog.cshs.kh.edu.tw/files/1/1-2756.ppt   HTML網頁基礎語言 Title: HTML網頁基礎語言 Author: NB1 Last modified by: Joe Chen Created Date: 2/8/2001 6:27:07 PM Document presentation format: 如螢幕大小 http://www2.nkfust.edu.tw/~wenh/2008/oo/ppt/P785_JavaSE06.ppt   VB.NET程式設計範例教本-金石堂網路書店 VB.NET程式設計範例教本－金石堂網路書店歡迎您加入博客和facebook 臉書粉絲團！The largest retail books store chains in Taiwan! http://www.kingstone.com.tw/book/book_page.asp?kmcode=2014712487637   VB.NET 物件導向程式設計$｜1111進修課程 1.讓學習者熟悉物件導向程式設計方法。 2.視窗應用程式的基礎(物件導向觀念基礎) http://www.1111edu.com.tw/advancedStudies_courseContent.php?autono=78063   怎麼用VB.Net寫出非vb6，有物件導向的感覺?- 藍色小舖 … 怎麼用VB.Net寫出非vb6，有物件導向的感覺? 價值 : 0 QP 點閱數:2575 回應數:14 http://www.blueshop.com.tw/board/FUM200410061532262QU/BRD20090715124039EKZ.html   格子樑 | 艾倫 郭 | AllenKuo.com : ASP.NET 電子書 第一步 掌握一種物件導向程式設計語言 學習一種物件導向的程式語言，c#或者vb.net，我選了c#，因為沒有任何程式設計的基礎 ... http://www.allenkuo.com/EBook5/view.aspx?TreeNodeID=7&id=184   Chapter Visual Basic.NET程式設計概論 Chapter 3-1 Visual Basic.NET 語言的發展 3-2 Visual Basic.NET 軟硬體需求 3-3 Visual Basic.NET 語言的簡介 3-4 檢定 VB 程式設計過程 http://ms1.hcvs.kh.edu.tw/ccy/vb/xc12020vb/丙設-3S.pdf   什麼是VB.NET？ | 電腦不難 VB.NET是VB6的下一個版本，雖然都是VB ... 讓Basic語言擁有強大的圖形化操作介面，也使得 ... 什麼是.NET Framework？ 程式設計 ... http://it-easy.tw/what-vb-net/   開始學習VB - Study-Area 你想多瞭解程式設計嗎?這裡 ... 分兩個方向來學習Visual Basic語言，一是物件導向 ... 物件導向 Visual Basic的設計理念較 ... http://www.study-area.org/coobila/tutorial_210.html   VB程式語言 - 06/02/2011 01:38:26 pm +0800 - en US.UTF-8 Visual Basic 程式語言 ... 結構化程式設計 ... VB 的物件導向設計，控制項(Control)－物件(Object)之一、屬性 ... http://mail.cyvs.cy.edu.tw/~chunwen/vb/vb94/   ASP.NET OOP-物件導向程式設計篇-共 100 篇(全集) - 衛斯 … Visual Basic (2) 最新回應. re: ASP ... ASP.NET OOP-物件導向程式設計篇-共 100 篇(全集) 感謝您的分享。 ... 這不叫oop吧 這只是語言 ... http://www.dotblogs.com.tw/wesley0917/archive/2013/04/20/102007.aspx?fid=71486   TQC+物件導向視窗及資料庫程式設計認證指南Visual Basic … 電腦技能基金會根據微軟軟體開發平臺Visual Studio 2010中的VB.NET人才需求及培育狀況，邀集各界專家學者，共同擬訂「TQC+ VB.NET ... http://www.gotop.com.tw/waweb2004/main/home.aspx?pg=HM010X2007&bn=AEY027500   情境式程式教學 - CH05 VB.NET物件導向- 藍色小舖 … 台灣最大程式設計 ... 其他語言; 行動裝置開發 ... 情境式程式教學 - ch05 vb.net物件導向 價值 : 0 qp 點閱數:720 回應數:1: http://www.blueshop.com.tw/board/FUM20050124191756KKC/BRD201111162207581LC.html   物件導向程式設計 (C# 與 Visual Basic) .NET Framework 中的所有 Managed 語言 (如 Visual Basic 和 C#) 都提供完整的物件導向程式設計支援，包括封裝、繼承和多型。 https://msdn.microsoft.com/zh-tw/library/dd460654.aspx   2-1 Class與物件導向 - Study-Area 上次介紹的struct是在C語言就已經有的保留字. ... 如果使用物件導向的理念來設計, ... 物件導向程式設計 ... http://www.study-area.org/coobila/tutorial_423.html   [下載 / 文件]VB語法的 使用物件(OOP)設計程式：使用類別 - ASP.NET … 物件導向程式設計 (C# 與 Visual Basic) ... 中的所有 Managed 語言 (如 Visual Basic 和 C#) ... ASP.NET 4.5 專題實務 I 入門實戰篇(VB) http://www.dotblogs.com.tw/mis2000lab/archive/2010/05/28/vb_oop_class_20100529.aspx Show More   RELATED VIDEOS哇 ! 超有效的英文學習法(1)by Hans LeeC# 視窗程式：設計飲料店點菜系統 (2/2) -- CSharpPOS2.aviby 陳鍾誠職場達人秀 程式設計師 Part1by 游舒帆生涯規劃－程式設計師by paandkoVB6 自製簡易帳密登入的程式by 葉豐豪C-1 機器碼與程式語言by Wei-Chang Shann程式設計（ＶＢ）_第1講by 華視教學頻道Visual Basic 2010 輕鬆學，簡易製作我的按鈕應用程式by 張子謙CH1_1 Java物件導向概念與物件導向的基本語法by Eric YangVisual Studio 2010 新功能-1by Huanlin TsaiVB教學-二維陣列.aviby chih661300的頻道物件導向的教學by coldollsheep
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JavaScript 物件導向介紹 - JavaScript | MDN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MDN wants to talk to developers like you: https://qsurvey.mozilla.com/s3/a3e7b5301fea
+
+
+
+跳到主要內容
+選擇語言
+跳到搜尋
+
+
+
+
+mozilla
+
+
+Mozilla Developer Network
+
+
+
+
+            登入
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+語言
+
+
+
+English (US) (en-US)
+عربي (ar)
+Català (ca)
+Čeština (cs)
+Deutsch (de)
+Español (es)
+Français (fr)
+Italiano (it)
+日本語 (ja)
+한국어 (ko)
+Melayu (ms)
+မြန်မာဘာသာ (my)
+Polski (pl)
+Português (do Brasil) (pt-BR)
+Русский (ru)
+中文 (簡體) (zh-CN)
+
+
+
+
+編輯
+進階
+
+
+
+進階
+
+歷史紀錄
+列印此文件
+
+
+
+
+
+
+
+
+
+
+
+
+
+cwlin0416
+
+
+
+fscholz
+
+
+
+jackblackevo
+
+
+
+nightsnow0918
+
+
+
+irvinfly
+
+
+
+sailplaneTW
+
+
+
+JavaScript 物件導向介紹
+
+
+
+
+
+
+
+
+
+在這篇文章
+
+複習 JavaScript物件導向程式設計專門用語以雛型為基礎 (Prototype-based) 的程式設計JavaScript 物件導向程式設計命名空間標準內建物件自訂物件類別 (Class)物件 (Object) - 類別的實例 (Instance)建構子 (Constructor)屬性 (Property) - 物件的屬性方法 (Method)繼承封裝抽象化多型註意參考文獻相關資料
+
+
+
+
+
+
+
+
+深入淺出物件導向，JavaScript 支援強大、彈性的物件導向程式設計 (OOP)。本篇文章會先介紹物件導向程式設計，然後複習 JavaScript 物件模型，最後示範在 JavaScript 物件導向程式設計的概念。本篇文章並不會介紹 在 ECMAScript 6 的物件導向程式設計 的新語法。
+複習 JavaScript
+若您對 JavaScript 變數、型態、函數及作用範圍的觀念並不是很有信心，您可以閱讀 重新膫解 JavaScript 中相關的主題。您也可以參考 JavaScript 指南。
+物件導向程式設計
+物件導向程式設計 (Object-oriented programming, OOP) 是一種使用 abstraction 概念表達現實世界的程式設計方式。物件導向程式設計運用數個先前所建立的技術所組成，包含模組化 (modularity)、多型 (polymorphism) 以及封裝 (encapsulation) 。直到今天許多主流的程式語言 (如 Java, JavaScript, C#, C++, Python, PHP, Ruby 與 Objective-C) 也都支援物件導向程式設計。
+物件導向程式設計是將軟體想像成由一群物件交互合作所組成，而非以往以函數 (Function) 或簡單的指令集交互合作所組成。在物件導向的架構中，每個物件都具有接收訊息，處理資料以及發送訊息給其他物件的能力。每個物件都可視為獨一無二的個體，他們扮演不同的角色並有不同的能力及責任。
+物作導向程式設計提出了一個一個更有彈性且易於維護的設計方法，且廣泛被許多大型軟體工程所採用。由於物件導向程式設計強調模組化，因為物件導向的程式碼變的較為容易開發且易於理解。與較少模組化的程式設計技術相比，物件導向的程式碼更能更直接分析、編寫、理解複雜的情況與程序。1
+JavaScript 是一個以雛型為基礎 (Prototype-based) 的程式設計語言 (或更準確的說是以雛型為基礎的腳本語言)，它採用了複製的模式而非繼承。以雛型為基礎的程式設計語言是一種物件導向程式設計，使用了函數來當做類別 (Class) 的建構子 (Constructor)，儘管 JavaScript 擁有類別 (Class) 的關鍵字，但它沒有類別敘述，當要拿 JavaScript 與其他物件導向程式語言相比時，這是很重要的區別。
+專門用語
+
+Namespace
+可讓開發人員包裝所有功能到一個獨一無二、特定應用程式名稱的容器。
+Class
+用來定義物件的特徵，類別 (Class) 是物件屬性與方法的藍圖。
+Object
+類別 (Class) 的實際案例。
+Property
+物件 (Object) 的特徵，例如：顏色。
+Method
+物件 (Object) 的功能，例如：行走。它是與類別相關的子程序或函數。
+Constructor
+一個在物件產生時會被呼叫的方法。通常會使用與其所在類別 (Class) 相同的名稱。
+Inheritance
+一個類別 (Class) 可以繼承另一個類別的特徵與功能。
+Encapsulation
+可以將資料與方法包裝在一起使用的技術。
+Abstraction
+結合物件的複雜繼承關係、方法與屬性來充分反映現實的模型。
+Polymorphism
+Poly 指的是 "多" 而 Morphism 指的是 "型"。是指不同的類別可以定義相同的方法或屬性。
+
+要瞭解物件導向程式設計更廣泛的說明，請參考維基百科的  Object-oriented programming。
+以雛型為基礎 (Prototype-based) 的程式設計
+以雛型為基礎的程式設計是一種不使用類別的物件導向程式設計模式，但它是第一個透過修改 (或者擴充) 既有的 prototype 來達到類別的功能並可重複使用 (等同在以類別為基礎的程式語言中的繼承)。 又稱作無類別 (Classless)、雛型導向 (Prototype-oriented) 或以實例為基的程式語言 (Instance-based programming)。
+最早 (最典型) 以雛型為基礎的程式語言的典範是由 David Ungar 與 Randall Smith 所開發的 Self。近年來無類別 (Class-less) 的程式設計風格越來越流行，並且被 JavaScript, Cecil, NewtonScript, Io, MOO, REBOL, Kevo, Squeak (在使用 Viewer 框架來處理 Morphic 元件時)，還有許多其他程式語言所採用。2
+JavaScript 物件導向程式設計
+命名空間
+命名空間是一個可讓開發人員包裝所有功能到一個獨一無二、特定應用程式名稱的容器。在 JavaScript 中命名空間其實是另一個包含方法、屬性及物件的物件。
+
+註意，在 JavaScript 中一般物件與命名空間並無語法上的差異，這於其他許多物件導向的語言並不相同，可能是初學 JavaScript 的程式設計師容易混淆的地方。
+
+在 JavaScript 建立一個命名空間背後的概念非常的簡單：建立一個全域的物件，然後將所有的變數、方法及函數設為該物件的屬性。使用命名空間可以減少應用程式中名稱衝突發生的機率，由於每個應用程式的物件皆會是應用程式定義的全域物件的屬性。
+讓我們來建立一個叫做 MYAPP 全域物件：
+// 全域命名空間
+var MYAPP = MYAPP || {};
+在上述程式範例，我們會先檢查 MYAPP 是否已經定義過 (不論是定義在同一檔案或在其他檔案)。若已定義過，便會使用現有的 MYAPP 全域物件，否則會建一個稱作 MYAPP 的空物件來包裝方法、函數、變數及物件。
+我們也可以建立子命名空間 (要註意，全域物件必須已事先定義)：
+// 子命名空間
+MYAPP.event = {};
+以下的程式碼會建立一個命名空間並加入變數、函數以及一個方法：
+// 建立一個稱作 MYAPP.commonMethod 的容器來存放常用方法與屬性
+MYAPP.commonMethod = {
+  regExForName: "", // define regex for name validation
+  regExForPhone: "", // define regex for phone no validation
+  validateName: function(name){
+    // Do something with name, you can access regExForName variable
+    // using "this.regExForName"
+  },
+ 
+  validatePhoneNo: function(phoneNo){
+    // do something with phone number
+  }
+}
+
+// 物件與方法宣告
+MYAPP.event = {
+    addListener: function(el, type, fn) {
+    // code stuff
+    },
+    removeListener: function(el, type, fn) {
+    // code stuff
+    },
+    getEvent: function(e) {
+    // code stuff
+    }
+  
+    // 可以加入其他方法與屬性
+}
+
+// 使用 addListener 方法的語法：
+MYAPP.event.addListener("yourel", "type", callback);
+標準內建物件
+ JavaScript 的核心內建了許多物件，例如有 Math, Object, Array 以及 String。以下範例將示範如何使用 Math 物件中的 random() 方法來取得一個隨機的數字。
+console.log(Math.random());
+
+註意：這個例子及之後的例子會假設全域已經有定義名稱為 console.log() 的函數。console.log() 函數並不算是 JavaScript 的一部份，但是有許多瀏覽器會實作這個功能來協助除錯使用。
+請參考 JavaScript 參考: 標準內建物件 來取得在 JavaScript 中所有核心物件的清單。
+每個在 JavaScript 中的物件均為物件 Object 的實例 (Instance)，因此會繼承其所有的屬性與方法。
+自訂物件
+類別 (Class)
+JavaScript 是以雛形為基礎的程式語言，並沒有像在 C++ 或 Java 中看以到的 class 敘述句，這有時會讓習慣使用有 class 敘述句的程式設計師混淆。JavaScript 使用函數來作為類別 (Class) 的建構子 (Constructor)，要定義一個類別 (Class) 如同定義一個函數 (Function)一樣簡單，以下例子中我們使用空的建構子來定義了一個新的 Person 類別。
+var Person = function () {};
+
+物件 (Object) - 類別的實例 (Instance)
+要建立物件 obj 的新實例，我們可以使用 new obj 敘述句，並將結果 (型態為 obj) 指派 (Assign) 到一個變數方便之後存取。
+在先前翻例中我們定義了一個名稱為 Person 的類別 (Class)。在以下的例子我們會建立兩個實例 (person1 與 person2)。
+var person1 = new Person();
+var person2 = new Person();
+
+
+請參考 Object.create() 來瞭解建立未初始化實例的實例化新方法。
+
+建構子 (Constructor)
+建構子會在實例化 (Instantiation) 時被呼叫 (建立物件實例被建立時)。建構子是類別的一個方法，在 JavaScript 中會以函數來當做物件的建構子，因此無須明確的定義建構子方法，而每個在類別中宣告的動作均會在實例化時被執行。
+建構子會用來設定物件的屬性 (Property) 或是呼叫要準備讓物件可以使用的方法 (Method)。增加類別的方法及定義會使用另一種語法，在本文稍後會說明。
+在以下例之中，類別 Person 的建構子在 Person 實例化時會記錄下一個訊息。
+var Person = function () {
+  console.log('instance created');
+};
+
+var person1 = new Person(); // 會記錄 "instance created"
+var person2 = new Person(); // 會記錄 "instance created"
+
+屬性 (Property) - 物件的屬性
+屬性即為在類別中的變數，每個物件的實例都會有同樣的屬性。屬性會在類別的建構子 (函數) 中設定，所以屬性在每個實例產生時才會產生。
+關鍵字 this 可以引用目前的物件，讓您使用在該類別中的其他屬性。存取 (讀寫或寫入) 一個在類別之外的屬性可以用語法：InstanceName.Property，如同在 C++, Java 以及其他語言。 (在類別內會使用語法 this.Property 來取得或設定屬性的數值。)
+在以下例子中，我們會在實例化時定義 Person 類別的 firstName 屬性：
+var Person = function (firstName) {
+  this.firstName = firstName;
+  console.log('Person instantiated');
+};
+
+var person1 = new Person('Alice'); // 會記錄 "Person instantiated"
+var person2 = new Person('Bob'); // 會記錄 "Person instantiated"
+
+// 顯示物件的 firstName 屬性
+console.log('person1 is ' + person1.firstName); // 會記錄 "person1 is Alice"
+console.log('person2 is ' + person2.firstName); // 會記錄 "person2 is Bob"
+
+方法 (Method)
+方法即為函數 (也如同函數般定義)，但是依照屬性的邏輯來運作，呼叫一個方法如同存取一個屬性，但您需要在函數名稱後加上 () ，並有可能會有參數。要定義一個方法，只需將函數指定 (Assign) 給類別的 prototype 屬性中一個已命名的屬性，接著，您便可用剛指定的屬性名稱來呼叫該物件的方法。
+以下範例中，我們為 Person  類別定義了方法 sayHello() 並使用。
+var Person = function (firstName) {
+  this.firstName = firstName;
+};
+
+Person.prototype.sayHello = function() {
+  console.log("Hello, I'm " + this.firstName);
+};
+
+var person1 = new Person("Alice");
+var person2 = new Person("Bob");
+
+// 呼叫 Person sayHello 方法。
+person1.sayHello(); // 會記錄 "Hello, I'm Alice"
+person2.sayHello(); // 會記錄 "Hello, I'm Bob"
+
+在 JavaScript 中，方法其實是一般的函數物件 (Function object) 連結到一個物件的屬性，這意謂著您可以在  "物件之外" 呼叫方法。請看以下範例程式碼：
+var Person = function (firstName) {
+  this.firstName = firstName;
+};
+
+Person.prototype.sayHello = function() {
+  console.log("Hello, I'm " + this.firstName);
+};
+
+var person1 = new Person("Alice");
+var person2 = new Person("Bob");
+var helloFunction = person1.sayHello;
+
+// 會記錄 "Hello, I'm Alice"
+person1.sayHello();
+
+// 會記錄 "Hello, I'm Bob"
+person2.sayHello();
+
+// 會記錄 "Hello, I'm undefined" (或在 Strict 
+// 模式會出現 TypeError)
+helloFunction();                                    
+
+// 會記錄 true
+console.log(helloFunction === person1.sayHello);
+
+// 會記錄 true
+console.log(helloFunction === Person.prototype.sayHello);
+
+// 會記錄 "Hello, I'm Alice"
+helloFunction.call(person1);
+如範例中所示，我們讓所有的參考均指向 sayHello 函數 — 一個在 person1、一個在 Person.prototype、另一個在 helloFunction 變數 — 這些均參考相同的函數。在呼叫的過程中 this 的值會根據我們如何呼叫來決定，最常見的地方是：我們取得函數的物件屬性所在，在表示法中呼叫 this — person1.sayHello()— 會設定 this 為我們取得函數的地方 (person1)，這也是 person1.sayHello() 顯示的名稱為 "Alice" 以及 person2.sayHello() 顯示的名稱為 "Bob" 的原因。但如果我們以其他的方式來呼叫，那麼 this 結果將截然不同：在變數中呼叫 this — helloFunction()— 會設定 this 為所在的全域物件 (在瀏覽器即為 window)。由於物件 (可能) 並沒有 firstName 屬性，因此會得到 "Hello, I'm undefined" 這樣的結果 (在 Loose 模式才有這樣的結果，若在 strict mode 則會不同 [會出現錯誤]，為了避免混淆，此處將不會再詳述)。 或者我們可以像最後一個例子使用 call (或 apply) 來明確的設定 this。
+註意：請參考 call 及 apply 來取得更多有關 this 的資訊
+繼承
+繼承是一種用一個或多個類別建立一個特殊版本類別的方式 (JavaScript 僅支援單一繼承)。這個特殊的類別通常稱做子類別，而其引用的類別則通常稱作父類別。在 JavaScript 您可以指定父類別的實例到子類別來做到這件事。在最近的瀏覽器中您也可以使用 Object.create 來實作繼承。
+
+註意：JavaScript 不會偵測子類別的 prototype.constructor (請參考 Object.prototype)，所以我們必須手動處理。請參考在 Stackoverflow 的問題 "為什麼一定要設定 prototype 的建構子?"。
+
+於以下範例，我們會定義類別 Student 做為 Person 的子類別。然後我們會重新定義 sayHello() 方法然後加入 sayGoodBye() 方法。
+// 定義 Person 建構子
+var Person = function(firstName) {
+  this.firstName = firstName;
+};
+
+// 加入兩個方法到 Person.prototype
+Person.prototype.walk = function(){
+  console.log("I am walking!");
+};
+
+Person.prototype.sayHello = function(){
+  console.log("Hello, I'm " + this.firstName);
+};
+
+// 定義 Student 建構子
+function Student(firstName, subject) {
+  // Call the parent constructor, making sure (using call)
+  // that "this" is set correctly during the call
+  Person.call(this, firstName);
+
+  // Initialize our Student-specific properties
+  this.subject = subject;
+}
+
+// 建立 Student.prototype 物件來繼承 Person.prototype。
+// 註意: 在此處經常見的錯誤是使用 "new Person()" 來建立
+// Student.prototype。不正確的原因許多個，尤其是
+// 我們沒有給予 Person 任何 "firstName" 的參數。
+// 呼叫 Person 的正確位置在上方，也就是我們呼叫 Student 
+// 的地方。
+Student.prototype = Object.create(Person.prototype); // 詳見以下說明
+
+// 設定 "constructor" 屬性參考 Student
+Student.prototype.constructor = Student;
+
+// 替換 "sayHello" 方法
+Student.prototype.sayHello = function(){
+  console.log("Hello, I'm " + this.firstName + ". I'm studying "
+              + this.subject + ".");
+};
+
+// 加入"sayGoodBye" 方法
+Student.prototype.sayGoodBye = function(){
+  console.log("Goodbye!");
+};
+
+// 範例用法:
+var student1 = new Student("Janet", "Applied Physics");
+student1.sayHello();   // "Hello, I'm Janet. I'm studying Applied Physics."
+student1.walk();       // "I am walking!"
+student1.sayGoodBye(); // "Goodbye!"
+
+// 檢查 instanceof 可正常運作
+console.log(student1 instanceof Person);  // true 
+console.log(student1 instanceof Student); // true
+
+於 Student.prototype = Object.create(Person.prototype); 一行：在舊版的 JavaScript 引擎沒有 Object.create，可以使用 "polyfill" (又稱 "shim"，請參考以下文章連結) 或使用函數來達到同樣的效果，如：
+function createObject(proto) {
+    function ctor() { }
+    ctor.prototype = proto;
+    return new ctor();
+}
+
+// 用法:
+Student.prototype = createObject(Person.prototype);
+
+註意： 請參考 Object.create 來瞭解其功能與舊引擎使用的 shim。
+要在不管物件如何實例化的情況下確保 this 指向正確的地方並不簡單，儘管如此，這裡仍有一個簡單的習慣用法讓這件事變的較簡單。
+var Person = function(firstName) {
+  if (this instanceof Person) {
+    this.firstName = firstName;
+  } else {
+    return new Person(firstName);
+  }
+}
+
+封裝
+於上述例子中 Student 並不需要知道 Person 類別的 walk() 方法實作的方式，但仍可以使用該方法，除非我們想要更改該函數，否則 Student 類別並不需要明確的定義該函數。這樣的概念稱就叫作封裝 (Encapsulation)，透過將每個類別的資料與方法包裝成一個單位。
+隱藏資訊在其他語言是常見的功能，通當會使用私有 (Private) 與保護 (Protected) 方法/屬性。既使如此，您仍可在 JavaScript 模擬類似的操作，這並不是物件導向程式設計必要的功能。3
+抽象化
+抽象化是一個機制能讓您將工作問題的目前部份進行建立模型，不論是用繼承 (特殊化) 或是組合的方式。JavaScript 可以透過繼承達到特殊化 (Specialization)，並可讓類別實例成為其他物件的屬性來達到組合 (Composition)。
+JavaScript 的 Function 類別繼承 Object 類別 (這示範了模型的特殊化) 而 Function.prototype 屬性是 Object 的實例 (這示範了組合)。
+var foo = function () {};
+
+// 會記錄 "foo is a Function: true"
+console.log('foo is a Function: ' + (foo instanceof Function));
+
+// 會記錄 "foo.prototype is an Object: true"
+console.log('foo.prototype is an Object: ' + (foo.prototype instanceof Object));
+多型
+如同所有方法與屬性會定義在 prototype 之中，不同的類別可以定義相同名稱的方法，而這些方法的有效範圍其所在的類別之中，除非兩個類別之間有父子關係 (例如，其中一個類別是繼承另一個類別而來)。
+註意
+在 JavaScript 並不是只有這些方式可以實作物件導向程式設計，JavaScript 在這方面非常有彈性。另外，在此處示範的方法並沒有使用任何語言特殊技巧，也沒有模仿其他語言的物件理論來實作。
+在 JavaScript 也有其他的方式可以做更進階的物件導向程式設計，但已超出本篇簡介的範圍。
+參考文獻
+
+Wikipedia - Object-oriented programming
+Wikipedia - Prototype-based programming
+Wikipedia - Encapsulation (object-oriented programming)
+
+相關資料
+
+Function.prototype.call()
+Function.prototype.apply()
+Object.create()
+嚴謹模式 (Strict mode)
+
+
+這份文件有幫助嗎？
+
+
+
+是
+
+
+
+否
+
+
+
+感謝您！
+
+
+
+
+
+文件標籤與貢獻者
+
+
+標籤: 
+    
+中階
+命名空間
+封裝
+建構子
+成員
+物件
+物件導向
+物件導向程式設計
+
+
+
+ 此頁面的貢獻者:
+cwlin0416, 
+    
+        fscholz, 
+    
+        jackblackevo, 
+    
+        nightsnow0918, 
+    
+        irvinfly, 
+    
+        sailplaneTW
+
+
+ 最近更新:
+cwlin0416,
+                      Dec 29, 2016, 12:07:39 AM
+
+
+
+
+
+
+瞭解網頁開發精華
+發送最新最棒的 MDN 新聞到您的信件匣中。
+電子報目前僅有英文版。
+
+
+
+
+
+
+電子郵件
+
+
+
+
+
+                我同意 Mozilla 依照 隱私權保護政策 當中描述的方式處理我的資訊。
+                
+
+
+立即註冊
+
+
+
+
+感謝您！請到信箱收信確認訂閱。
+若您先前沒有確認訂閱過 Mozilla 電子報，現在可能需要確認。請到信箱收信，或到垃圾信件匣中看看有沒有來自我們的訊息。
+        
+
+隱藏註冊電子報
+
+
+
+
+
+
+
+詳見
+
+JavaScript
+Tutorials:
+JavaScript Guide
+
+Introduction
+Grammar and types
+Control flow and error handling
+Loops and iteration
+Functions
+Expressions and operators
+Numbers and dates
+Text formatting
+Regular expressions
+Indexed collections
+Keyed collections
+Working with objects
+Details of the object model
+Iterators and generators
+Meta programming
+
+
+Introductory
+
+JavaScript basics
+JavaScript technologies overview
+Introduction to Object Oriented JavaScript
+
+
+Intermediate
+
+A re-introduction to JavaScript
+JavaScript data structures
+Equality comparisons and sameness
+Closures
+
+
+Advanced
+
+Inheritance and the prototype chain
+Strict mode
+JavaScript typed arrays
+SIMD types
+Memory Management
+Concurrency model and Event Loop
+
+
+References:
+Built-in objects
+ArrayArrayBuffer AsyncFunction [Translate] Atomics [Translate]Boolean [Translate]DataViewDateErrorEvalError [Translate]Float32Array [Translate]Float64Array [Translate]FunctionGenerator [Translate]GeneratorFunction [Translate]InfinityInt16Array [Translate]Int32Array [Translate]Int8Array [Translate]InternalError [Translate]Intl [Translate]Intl.Collator [Translate]Intl.DateTimeFormat [Translate]Intl.NumberFormat [Translate] Iterator [Translate]JSONMap [Translate]MathNaNNumberObject ParallelArray [Translate]PromiseProxy [Translate]RangeError [Translate]ReferenceError [Translate]Reflect [Translate]RegExp [Translate] SIMD [Translate] SIMD.Bool16x8 [Translate] SIMD.Bool32x4 [Translate] SIMD.Bool64x2 [Translate] SIMD.Bool8x16 [Translate] SIMD.Float32x4 [Translate] SIMD.Float64x2 [Translate] SIMD.Int16x8 [Translate] SIMD.Int32x4 [Translate] SIMD.Int8x16 [Translate] SIMD.Uint16x8 [Translate] SIMD.Uint32x4 [Translate] SIMD.Uint8x16 [Translate]Set [Translate] SharedArrayBuffer [Translate] StopIteration [Translate]字串Symbol [Translate]SyntaxError [Translate]TypeError [Translate]TypedArrayURIError [Translate]Uint16Array [Translate]Uint32Array [Translate]Uint8Array [Translate]Uint8ClampedArray [Translate]WeakMap [Translate]WeakSet [Translate]decodeURI() [Translate]decodeURIComponent() [Translate]encodeURI() [Translate]encodeURIComponent() [Translate] escape() [Translate]eval() [Translate]isFinite() [Translate]isNaN() [Translate]nullparseFloat() [Translate]parseInt()undefined unescape() [Translate]uneval() [Translate]
+
+Expressions & operators
+Arithmetic operators [Translate] Array comprehensions [Translate]Assignment operators [Translate]Bitwise operators [Translate]Comma operator [Translate]Comparison operators [Translate]Conditional (ternary) Operator [Translate]Destructuring assignmentExpression closures [Translate] Generator comprehensions [Translate]Grouping operator [Translate]Legacy generator function expression [Translate]Logical Operators [Translate]Object initializer [Translate]運算子優先等級Property accessors [Translate]Spread syntax [Translate] async function expression [Translate] await [Translate]class expression [Translate]delete operator [Translate]function expression [Translate]function* expression [Translate]in operator [Translate]instanceof [Translate]new operator [Translate]new.target [Translate]super [Translate]thistypeofvoid operator [Translate]yield [Translate]yield* [Translate]
+
+Statements & declarations
+Legacy generator function [Translate] async function [Translate]區塊breakclass [Translate]const [Translate]continue [Translate]debugger [Translate]default [Translate]do...while [Translate]empty [Translate]export [Translate]for [Translate]  for each...in [Translate]for...infor...of [Translate]function [Translate]function*if...else [Translate]import [Translate]label [Translate]letreturn [Translate]switch [Translate]throw [Translate]try...catch [Translate]varwhile [Translate] with [Translate]
+
+Functions
+Arguments 物件的使用箭頭函數 (Arrow Function)Default parameters [Translate]Method definitions [Translate]Rest parameters [Translate]getter [Translate]setter [Translate]
+
+Classes
+constructor [Translate]extends [Translate]static
+
+Errors
+Error: Permission denied to access property "x" [Translate]InternalError: too much recursionRangeError: argument is not a valid code point [Translate]RangeError: invalid array length [Translate]RangeError: precision is out of range [Translate]RangeError: radix must be an integer [Translate]RangeError: repeat count must be less than infinity [Translate]RangeError: repeat count must be non-negative [Translate]ReferenceError: "x" is not definedReferenceError: assignment to undeclared variable "x" [Translate]ReferenceError: deprecated caller or arguments usage [Translate]ReferenceError: invalid assignment left-hand side [Translate]ReferenceError: reference to undefined property "x" [Translate]SyntaxError: "use strict" not allowed in function with non-simple parameters [Translate]SyntaxError: "x" is not a legal ECMA-262 octal constant [Translate]SyntaxError: JSON.parse: bad parsing [Translate]SyntaxError: Malformed formal parameter [Translate]SyntaxError: Unexpected token [Translate]SyntaxError: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead [Translate]SyntaxError: missing ) after argument list [Translate]SyntaxError: missing ; before statement [Translate]SyntaxError: missing ] after element list [Translate]SyntaxError: missing } after property list [Translate]SyntaxError: redeclaration of formal parameter "x" [Translate]SyntaxError: return not in functionSyntaxError: test for equality (==) mistyped as assignment (=)? [Translate]SyntaxError: unterminated string literal [Translate]TypeError: "x" has no properties [Translate]TypeError: "x" is (not) "y" [Translate]TypeError: "x" is not a constructor [Translate]TypeError: "x" is not a functionTypeError: "x" is read-only [Translate]TypeError: More arguments needed [Translate]TypeError: invalid Array.prototype.sort argument [Translate]TypeError: property "x" is non-configurable and can't be deleted [Translate]TypeError: variable "x" redeclares argument [Translate]Warning: -file- is being assigned a //# sourceMappingURL, but already has one [Translate]Warning: JavaScript 1.6's for-each-in loops are deprecated [Translate]Warning: unreachable code after return statement [Translate]
+
+Misc
+
+Lexical grammar
+JavaScript data structures
+Enumerability and ownership of properties
+Iteration protocols
+Strict mode
+Transitioning to strict mode
+Template literals
+Deprecated features
+
+
+New in JavaScript
+ECMAScript 5 support in Mozilla [Translate]ECMAScript 6 support in Mozilla [Translate]ECMAScript Next support in Mozilla [Translate]Firefox JavaScript changelog [Translate]New in JavaScript 1.1New in JavaScript 1.2New in JavaScript 1.3New in JavaScript 1.4New in JavaScript 1.5JavaScript 1.6 新鮮事JavaScript 1.7 新鮮事JavaScript 1.8 新鮮事JavaScript 1.8.1 新鮮事New in JavaScript 1.8.5
+
+Documentation:
+Useful lists
+
+All pages index
+Methods index
+Properties index
+Pages tagged "JavaScript"
+
+
+Contribute
+
+JavaScript doc status
+The MDN project
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JavaScript | MDN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MDN wants to talk to developers like you: https://qsurvey.mozilla.com/s3/a3e7b5301fea
+
+
+
+跳到主要內容
+選擇語言
+跳到搜尋
+
+
+
+
+mozilla
+
+
+Mozilla Developer Network
+
+
+
+
+            登入
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+語言
+
+
+
+English (US) (en-US)
+عربي (ar)
+Bamanankan (bm)
+বাংলা (বাংলাদেশ) (bn-BD)
+বাংলা (ভারত) (bn-IN)
+Català (ca)
+Čeština (cs)
+Deutsch (de)
+Ελληνικά (el)
+Español (es)
+فارسی (fa)
+Français (fr)
+עברית (he)
+हिन्दी (भारत) (hi-IN)
+magyar (hu)
+Bahasa Indonesia (id)
+Italiano (it)
+日本語 (ja)
+ქართული (ka)
+Taqbaylit (kab)
+한국어 (ko)
+Melayu (ms)
+မြန်မာဘာသာ (my)
+Nederlands (nl)
+Polski (pl)
+Português (do Brasil) (pt-BR)
+Português (Europeu) (pt-PT)
+Română (ro)
+Русский (ru)
+Shqip (sq)
+Српски (sr)
+Svenska (sv-SE)
+தமிழ் (ta)
+ไทย (th)
+Türkçe (tr)
+Українська (uk)
+Tiếng Việt (vi)
+中文 (簡體) (zh-CN)
+
+
+
+
+編輯
+進階
+
+
+
+進階
+
+歷史紀錄
+列印此文件
+
+
+
+
+
+
+
+
+
+
+
+
+
+iigmir
+
+
+
+cwlin0416
+
+
+
+thomasaria
+
+
+
+dolphinlin
+
+
+
+pa-da
+
+
+
+jackblackevo
+
+
+
+mai7855
+
+
+
+Shiyou
+
+
+
+wildsky
+
+
+
+teoli
+
+
+
+steely.wing
+
+
+
+ethertank
+
+
+
+sycheng
+
+
+
+sailplaneTW
+
+
+
+linhomeyeu
+
+
+
+happysadman
+
+
+
+Mgjbot
+
+
+
+BobChao
+
+
+
+Kourge
+
+
+
+JavaScript
+
+
+
+
+
+
+
+
+
+
+
+JavaScript (簡稱 JS) 是具有一級函數 (First-class functions) 的輕量級、直譯式或即時編譯（JIT-compiled）的程式語言。它因為用作網頁的腳本語言而大為知名，但也用於許多非瀏覽器的環境，像是 node.js、Apache CouchDB。JavaScript 是一個基於原型的 (Prototype-based)、多典範的、動態語言，支援物件導向、指令式以及宣告式 (如函數式程式設計) 風格。 閱讀關於 JavaScript 以取得更多資訊。
+
+
+本章節主要說明 JavaScript，不涉及網頁特有項目或主機環境。有關網頁特有的 APIs ，請參考 Web API 和 DOM。
+JavaScript 所採用的標準是 ECMAScript，自 2012 年起，所有現代的瀏覽器均已全面支援 ECMAScript 5.1。較老舊的瀏覽器最少也會支援 ECMAScript 3。ECMA International 於 2015 年 6 月 17 日發布第六版的 ECMAScript，其正式名稱是 ECMAScript 2015，原先被稱作 ECMAScript 6 或 ES6。從那時起， ECMAScript 標準的發布週期是一年，本文件參考了最新的草稿版本，也就是目前的 ECMAScript 2017。
+別搞混了 JavaScript 和 Java 程式語言。雖然 "Java" 和 "JavaScript" 都是 Oracle 公司在美國和其他國家的商標或註冊商標，但兩個語言有著非常不同的語法、語意和用途。
+
+
+
+教學
+透過指南和教學來學習編寫 JavaScript。
+給完全新手
+如果你想學習 JavaScript 但過去沒有 JavaScript 或程式設計經驗，請前往 Learning Area JavaScript topic。該處完整單元如下：
+
+JavaScript 入門
+說明一些基本問題像是「什麼是 JavaScript？」、「它看來像什麼？」、「它能做什麼？」，也討論 JavaScript 的主要特色，例如變數、字串、數值以及陣列。
+JavaScript 組成元素
+繼續我們對 JavaScript 主要基本特色的說明，焦點轉向經常碰到的程式碼區塊類型，像是條件式陳述、迴圈、函數以及事件。
+介紹 JavaScript 物件
+如果你想加深對 JavaScript 語言的認識並撰寫更有效率的程式，理解 JavaScript 的物件導向特質是件重要的事。
+
+JavaScript 指南
+
+ 
+JavaScript 指南
+更為詳細的 JavaScript 語言指南，供過去有 JavaScript 或其他語言的程式設計經驗的人看。
+
+
+
+中等
+
+重新介紹 JavaScript
+為了那些以為他們懂 JavaScript 的人寫的簡介。
+
+
+JavaScript 資料結構
+簡介在 JavaScript 可用的資料結構。
+比較
+JavaScript 提供了三種不同的數值比較方式：嚴謹的相等用 ===，寬鬆的相等用 ==，以及 Object.is() 方法。
+
+進階
+
+繼承與原型鍊
+對於原型繼承的常見的迷思和誤解。
+嚴謹模式
+嚴謹模式會禁止您使用未初始化過的變數。這樣的限制源自於 ECMAScript 5 的規範，為了提高效率和簡化偵錯。
+JavaScript 型別陣列
+JavaScript 類型陣列提供一個存取二進制數據的機制。
+記憶體管理
+JavaScript 的記憶體生命週期和垃圾回收機制。
+併行模組和事件循環
+JavaScript 具有基於「事件循環」的併行模組。
+
+
+
+參考
+瀏覽完整的 JavaScript 參考文件。
+
+標準內建物件
+瞭解標準內建物件： Array、 Boolean、 Date、 Error、 Function、 JSON、 Math、 Number、 Object、 RegExp、 String、 Map、 Set、 WeakMap、 WeakSet 等等。
+表式法與運算子
+瞭解更多 JavaScript 運算子的行為：instanceof、 typeof、 new、 this、運算子優先序等等。
+敘述和宣告
+瞭解 do-while、for-in、 for-of、 try-catch、let、 var、 const、 if-else、 switch 和其他 JavaScript 敘述和關鍵字的運作方式。
+函數
+瞭解如何運用函數來開發你的應用程式。
+
+工具與資源
+有用的工具和資源幫助你更好的撰寫 JavaScript。
+
+Firefox 開發工具
+Scratchpad、Web Console、JavaScript Profiler、Debugger 等等。
+JavaScript Shell
+JavaScript Shell 讓你更快的測試片段的 JavaScript。
+TogetherJS
+合作更簡單了。藉著在你的網站增加 TogetherJS，你的用戶們能在網站上互助 in real time！
+Stack Overflow
+Stack Overflow 上有關 JavaScript 的問題。
+JavaScript 版本和發行說明
+瀏覽 JavaScript 的功能歷史和兼容狀態。
+JSFiddle
+編輯 JavaScript、CSS、HTML 並取得及時結果。可以使用外部資源和與在線上與你的夥伴協作。
+
+
+
+
+
+Join the JavaScript community
+
+Choose your preferred method for joining the discussion:
+
+ 郵件討論
+ Google 群組
+ feed 消息來源
+
+
+
+IRC: #js (learn more)ES discuss: esdiscuss.orgSpiderMonkey: Project pageTwitter: @SpiderMonkeyJS
+
+
+ 
+
+這份文件有幫助嗎？
+
+
+
+是
+
+
+
+否
+
+
+
+感謝您！
+
+
+
+
+
+文件標籤與貢獻者
+
+
+標籤: 
+    
+JavaScript
+入口
+學習
+所有類別
+
+
+
+ 此頁面的貢獻者:
+iigmir, 
+    
+        cwlin0416, 
+    
+        thomasaria, 
+    
+        dolphinlin, 
+    
+        pa-da, 
+    
+        jackblackevo, 
+    
+        mai7855, 
+    
+        Shiyou, 
+    
+        wildsky, 
+    
+        teoli, 
+    
+        steely.wing, 
+    
+        ethertank, 
+    
+        sycheng, 
+    
+        sailplaneTW, 
+    
+        linhomeyeu, 
+    
+        happysadman, 
+    
+        Mgjbot, 
+    
+        BobChao, 
+    
+        Kourge
+
+
+ 最近更新:
+iigmir,
+                      Apr 10, 2017, 1:25:58 AM
+
+
+
+
+
+
+瞭解網頁開發精華
+發送最新最棒的 MDN 新聞到您的信件匣中。
+電子報目前僅有英文版。
+
+
+
+
+
+
+電子郵件
+
+
+
+
+
+                我同意 Mozilla 依照 隱私權保護政策 當中描述的方式處理我的資訊。
+                
+
+
+立即註冊
+
+
+
+
+感謝您！請到信箱收信確認訂閱。
+若您先前沒有確認訂閱過 Mozilla 電子報，現在可能需要確認。請到信箱收信，或到垃圾信件匣中看看有沒有來自我們的訊息。
+        
+
+隱藏註冊電子報
+
+
+
+
+
+
+
+詳見
+
+JavaScript
+Tutorials:
+Complete beginners
+
+JavaScript basics
+JavaScript first steps
+JavaScript building blocks
+Introducing JavaScript objects
+
+
+JavaScript Guide
+
+Introduction
+Grammar and types
+Control flow and error handling
+Loops and iteration
+Functions
+Expressions and operators
+Numbers and dates
+Text formatting
+Regular expressions
+Indexed collections
+Keyed collections
+Working with objects
+Details of the object model
+Iterators and generators
+Meta programming
+
+
+Intermediate
+
+A re-introduction to JavaScript
+JavaScript data structures
+Equality comparisons and sameness
+Closures
+
+
+Advanced
+
+Inheritance and the prototype chain
+Strict mode
+JavaScript typed arrays
+SIMD types
+Memory Management
+Concurrency model and Event Loop
+
+
+References:
+Built-in objects
+ArrayArrayBuffer AsyncFunction [Translate] Atomics [Translate]Boolean [Translate]DataViewDateErrorEvalError [Translate]Float32Array [Translate]Float64Array [Translate]FunctionGenerator [Translate]GeneratorFunction [Translate]InfinityInt16Array [Translate]Int32Array [Translate]Int8Array [Translate]InternalError [Translate]Intl [Translate]Intl.Collator [Translate]Intl.DateTimeFormat [Translate]Intl.NumberFormat [Translate] Iterator [Translate]JSONMapMathNaNNumberObject ParallelArray [Translate]PromiseProxy [Translate]RangeError [Translate]ReferenceError [Translate]Reflect [Translate]RegExp [Translate] SIMD [Translate] SIMD.Bool16x8 [Translate] SIMD.Bool32x4 [Translate] SIMD.Bool64x2 [Translate] SIMD.Bool8x16 [Translate] SIMD.Float32x4 [Translate] SIMD.Float64x2 [Translate] SIMD.Int16x8 [Translate] SIMD.Int32x4 [Translate] SIMD.Int8x16 [Translate] SIMD.Uint16x8 [Translate] SIMD.Uint32x4 [Translate] SIMD.Uint8x16 [Translate]Set [Translate] SharedArrayBuffer [Translate] StopIteration [Translate]字串Symbol [Translate]SyntaxError [Translate]TypeError [Translate]TypedArrayURIError [Translate]Uint16Array [Translate]Uint32Array [Translate]Uint8Array [Translate]Uint8ClampedArray [Translate]WeakMap [Translate]WeakSet [Translate] WebAssembly [Translate]decodeURI() [Translate]decodeURIComponent() [Translate]encodeURI() [Translate]encodeURIComponent() [Translate] escape() [Translate]eval() [Translate]isFinite() [Translate]isNaN()nullparseFloat() [Translate]parseInt()undefined unescape() [Translate]uneval() [Translate]
+
+Expressions & operators
+Arithmetic operators [Translate] Array comprehensions [Translate]Assignment operators [Translate]Bitwise operators [Translate]逗號運算子比較運算子Conditional (ternary) Operator [Translate]解構賦值Expression closures [Translate] Generator comprehensions [Translate]Grouping operator [Translate]Legacy generator function expression [Translate]Logical Operators [Translate]Object initializer [Translate]運算子優先等級Property accessors [Translate]Spread syntax [Translate] async function expression [Translate] awaitclass expression [Translate]delete operator [Translate]function expression [Translate]function* expression [Translate]in operator [Translate]instanceof [Translate]new operator [Translate]new.target [Translate]super [Translate]thistypeofvoid operator [Translate]yield [Translate]yield* [Translate]
+
+Statements & declarations
+Legacy generator function [Translate] async function區塊breakclass [Translate]const [Translate]continue [Translate]debugger [Translate]default [Translate]do...while [Translate]empty [Translate]exportfor [Translate]  for each...in [Translate]for...infor...of [Translate]function declaration [Translate]function*if...else [Translate]importlabel [Translate]letreturn [Translate]switch [Translate]throwtry...catch [Translate]varwhile [Translate] with [Translate]
+
+Functions
+Arguments 物件的使用箭頭函數 (Arrow Function)預設參數( Default parameters )Method definitions [Translate]Rest parameters [Translate]getter [Translate]setter [Translate]
+
+Classes
+建構子extends [Translate]static
+
+Errors
+Error: Permission denied to access property "x" [Translate]InternalError: too much recursionRangeError: argument is not a valid code point [Translate]RangeError: invalid array length [Translate]RangeError: invalid date [Translate]RangeError: precision is out of range [Translate]RangeError: radix must be an integer [Translate]RangeError: repeat count must be less than infinity [Translate]RangeError: repeat count must be non-negative [Translate]ReferenceError: "x" is not definedReferenceError: assignment to undeclared variable "x" [Translate]ReferenceError: deprecated caller or arguments usage [Translate]ReferenceError: invalid assignment left-hand side [Translate]ReferenceError: reference to undefined property "x" [Translate]SyntaxError: "0"-prefixed octal literals and octal escape seq. are deprecated [Translate]SyntaxError: "use strict" not allowed in function with non-simple parameters [Translate]SyntaxError: "x" is a reserved identifier [Translate]SyntaxError: JSON.parse: bad parsing [Translate]SyntaxError: Malformed formal parameter [Translate]SyntaxError: Unexpected token [Translate]SyntaxError: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead [Translate]SyntaxError: a declaration in the head of a for-of loop can't have an initializer [Translate]SyntaxError: applying the 'delete' operator to an unqualified name is deprecated [Translate]SyntaxError: for-in loop head declarations may not have initializers [Translate]SyntaxError: function statement requires a name [Translate]SyntaxError: identifier starts immediately after numeric literal [Translate]SyntaxError: illegal character [Translate]SyntaxError: invalid regular expression flag "x" [Translate]SyntaxError: missing ) after argument list [Translate]SyntaxError: missing ) after condition [Translate]SyntaxError: missing : after property id [Translate]SyntaxError: missing ; before statement [Translate]SyntaxError: missing = in const declaration [Translate]SyntaxError: missing ] after element list [Translate]SyntaxError: missing formal parameter [Translate]SyntaxError: missing name after . operator [Translate]SyntaxError: missing variable name [Translate]SyntaxError: missing } after function body [Translate]SyntaxError: missing } after property list [Translate]SyntaxError: redeclaration of formal parameter "x" [Translate]SyntaxError: return not in functionSyntaxError: test for equality (==) mistyped as assignment (=)? [Translate]SyntaxError: unterminated string literal [Translate]TypeError: "x" has no properties [Translate]TypeError: "x" is (not) "y"TypeError: "x" is not a constructor [Translate]TypeError: "x" is not a functionTypeError: "x" is not a non-null object [Translate]TypeError: "x" is read-only [Translate]TypeError: More arguments needed [Translate]TypeError: can't access dead object [Translate]TypeError: can't define property "x": "obj" is not extensible [Translate]TypeError: can't redefine non-configurable property "x" [Translate]TypeError: cyclic object value [Translate]TypeError: invalid 'in' operand "x" [Translate]TypeError: invalid Array.prototype.sort argument [Translate]TypeError: invalid arguments [Translate]TypeError: invalid assignment to const "x" [Translate]TypeError: property "x" is non-configurable and can't be deleted [Translate]TypeError: setting getter-only property "x" [Translate]TypeError: variable "x" redeclares argument [Translate]URIError: malformed URI sequence [Translate]Warning: -file- is being assigned a //# sourceMappingURL, but already has one [Translate]Warning: 08/09 is not a legal ECMA-262 octal constant [Translate]Warning: Date.prototype.toLocaleFormat is deprecated [Translate]Warning: JavaScript 1.6's for-each-in loops are deprecated [Translate]Warning: String.x is deprecated; use String.prototype.x instead [Translate]Warning: expression closures are deprecated [Translate]Warning: unreachable code after return statement [Translate]
+
+Misc
+
+JavaScript technologies overview
+Lexical grammar
+JavaScript data structures
+Enumerability and ownership of properties
+Iteration protocols
+Strict mode
+Transitioning to strict mode
+Template literals
+Deprecated features
+
+
+New in JavaScript
+ECMAScript 2015 support in Mozilla [Translate]ECMAScript 5 support in Mozilla [Translate]ECMAScript Next support in Mozilla [Translate]Firefox JavaScript changelog [Translate]New in JavaScript 1.1New in JavaScript 1.2New in JavaScript 1.3New in JavaScript 1.4New in JavaScript 1.5JavaScript 1.6 新鮮事JavaScript 1.7 新鮮事JavaScript 1.8 新鮮事JavaScript 1.8.1 新鮮事New in JavaScript 1.8.5
+
+Documentation:
+Useful lists
+
+All pages index
+Methods index
+Properties index
+Pages tagged "JavaScript"
+
+
+Contribute
+
+JavaScript doc status
+The MDN project
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+物件導向程式設計 (C# 與 Visual Basic)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer Network
+Developer Network
+Developer
+
+
+
+
+登入
+
+
+
+
+MSDN 訂閱
+
+
+
+
+取得工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+Visual Studio 語言
+Visual Basic 和 C#
+
+程式設計概念
+
+
+
+
+
+程式設計概念
+物件導向程式設計 (C# 與 Visual Basic)
+
+
+
+
+物件導向程式設計 (C# 與 Visual Basic)
+
+
+
+
+物件導向程式設計 (C# 與 Visual Basic)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+新的逐步解說 (C# 和 Visual Basic) 
+
+應用程式定義域 (C# 和 Visual Basic) 
+
+組件和全域組件快取 (C# 和 Visual Basic) 
+
+屬性 (C# 和 Visual Basic) 
+
+共變數和反變數 (C# 和 Visual Basic) 
+
+運算式樹狀架構 (C# 和 Visual Basic) 
+
+LINQ (Language-Integrated Query) 
+
+物件導向程式設計 (C# 與 Visual Basic) 
+
+效能 (C# 和 Visual Basic) 
+
+反映 (C# 和 Visual Basic) 
+
+序列化 (C# 和 Visual Basic) 
+
+執行緒 (C# 和 Visual Basic) 
+
+
+
+TOC
+
+ 
+摺疊目錄
+展開目錄
+
+
+
+
+本文件已封存並已停止維護。
+
+
+
+
+
+
+
+若要檢視英文版的文章，請選取 [原文] 核取方塊。您也可以將滑鼠指標移到文字上，即可在快顯視窗顯示英文原文。
+
+
+
+譯文
+
+
+原文
+
+
+
+
+
+本文件已封存並已停止維護。
+
+物件導向程式設計 (C# 與 Visual Basic)
+
+
+
+                Visual Studio 2010
+            
+
+
+
+
+
+
+                        其他版本
+                    
+
+
+
+
+
+
+
+Visual Studio 2015 
+
+
+Visual Studio 2013 
+
+
+Visual Studio 2012
+
+
+
+
+
+
+
+
+ .NET Framework 中的所有 Managed 語言 (如 Visual Basic 和 C#) 都提供完整的物件導向程式設計支援，包括封裝、繼承和多型。「封裝」指的是將一組相關的屬性、方法和其他成員，視為單一單位或物件。「繼承」則是描述依據現有類別來建立新類別的能力。「多型」指的是您可以有多個交替使用的類別，即使每個類別是以不同的方式來實作相同的屬性或方法。本節將說明下列概念：類別與物件類別成員屬性與欄位方法建構函式解構函式事件巢狀類別存取修飾詞與存取層級執行個體化類別靜態 (共用) 類別與成員匿名型別繼承覆寫成員介面泛型委派類別與物件「類別」(Class) 和「物件」(Object) 一詞有時會交換使用，但事實上，類別說的是物件的「型別」(Type)，而物件則是類別之可使用的「執行個體」(Instance)。 因此，建立物件的動作稱為「執行個體化」(Instantiation)。 再以藍圖作比喻，若類別是藍圖，物件就是根據藍圖所蓋的建築物。 若要定義類別：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+class SampleClass
+{
+}
+
+
+
+
+Visual Basic 和 C# 都會提供輕量版的類別，稱為「結構」(Structure)，當您必須建立龐大物件陣列而不想要使用太多記憶體時，這個結構會很有用。若要定義結構：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+struct SampleStruct
+{
+}
+
+
+
+
+如需詳細資訊，請參閱：Visual BasicClass 陳述式 (Visual Basic)Structure 陳述式C#類別 (C# 參考)struct (C# 參考)類別成員每個類別都有不同的「類別成員」(Class Member)，包括描述類別資料的屬性、定義類別行為的方法，以及提供不同類別與物件之間通訊的事件。屬性與欄位欄位和屬性表示物件包含的資訊。 欄位就像是變數，可直接讀取或設定。 若要定義欄位：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+Class SampleClass
+{
+    public string sampleField;
+}
+
+
+
+
+屬性具有取得和設定程序，讓您更容易控制設定與傳回數值的方式。C# 和 Visual Basic 都允許您建立私用欄位來儲存屬性值，或是使用所謂的自動實作屬性，自動在幕後建立此欄位並提供屬性程序的基本邏輯。若要定義自動實作屬性：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+class SampleClass
+{
+    public int SampleProperty { get; set; }
+}
+
+
+
+
+如果您需要執行某些額外作業來讀取和寫入屬性值，請定義用來儲存屬性值的欄位，並提供儲存和擷取這個欄位的基本邏輯：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+class SampleClass
+{
+    private int _sample;
+    public int Sample
+    {
+        // Return the value stored in a field.
+        get { return _sample; }
+        // Store the value in the field.
+        set { _sample = value; }
+    }
+}
+
+
+
+
+大部分屬性都具有方法或程序，可以設定及取得屬性值。 但是您可以建立唯讀或唯寫屬性來限制不得修改或讀取。 在 Visual Basic 中，您可以使用 ReadOnly 和 WriteOnly 關鍵字。 在 C# 中，則可以省略 get 或 set 屬性方法。 不過，在 Visual Basic 和 C# 中，自動實作的屬性都不可以是唯讀或唯寫。 如需詳細資訊，請參閱：Visual BasicProperty 陳述式Get 陳述式Set 陳述式 (Visual Basic)ReadOnly (Visual Basic)WriteOnly (Visual Basic)C#get (C# 參考)set (C# 參考)方法「方法」(Method) 是物件可執行的動作。註意事項在 Visual Basic 中，有兩個建立方法的方式：如果方法沒有傳回值，即使用 Sub 陳述式；如果有傳回值，則使用 Function 陳述式。若要定義類別的方法：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+class SampleClass
+{
+    public int sampleMethod(string sampleParam)
+    {
+        // Insert code here
+    }
+}
+
+
+
+
+類別可以有同一個方法的多個實作或「多載」(Overload)，但是這些實作的參數個數和參數型別並不相同。若要多載方法：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+public int sampleMethod(string sampleParam) {};
+public int sampleMethod(int sampleParam) {}
+
+
+
+
+在多數情況下，您是在類別定義中宣告方法。 不過，Visual Basic 和 C# 也都支援「擴充方法」(Extension Method)，允許您在現有類別的實際定義之外將方法加入至類別。 如需詳細資訊，請參閱：Visual BasicFunction 陳述式 (Visual Basic)Sub 陳述式 (Visual Basic)Overloads (Visual Basic)擴充方法 (Visual Basic)C#方法 (C# 程式設計手冊)擴充方法 (C# 程式設計手冊)建構函式建構函式是類別方法，會在建立指定型別的物件時自動執行。 建構函式通常用來初始化新物件的資料成員， 而且只能在建立類別時執行一次。 此外，建構函式中的程式碼永遠會在類別中的任何其他程式碼執行之前執行。 不過，就和其他任何方法一樣，您可以建立多個建構函式多載。 若要定義類別的建構函式：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+public class SampleClass
+{
+    public SampleClass()
+    {
+        // Add code here
+    }
+}
+
+
+
+
+如需詳細資訊，請參閱：Visual BasicSub New物件存留期：物件的建立和終結 (Visual Basic)C#建構函式 (C# 程式設計手冊)解構函式解構函式是用來解構類別的執行個體。 在 .NET Framework 中，記憶體回收行程會自動管理應用程式中 Managed 物件的記憶體配置及釋放。 不過，您可能仍然需要解構函式來清除應用程式建立的任何 Unmanaged 資源。 一個類別只能有一個解構函式。 如需 .NET Framework 中有關解構函式和記憶體回收行程的詳細資訊，請參閱記憶體回收。事件事件可讓類別或物件在某些相關的事情發生時，告知其他類別或物件。 傳送 (或引發) 事件的類別稱為「發行者」(Publisher)，而接收 (或處理) 事件的類別則稱為「訂閱者」(Subscriber)。 如需事件以及如何引發和處理事件的詳細資訊，請參閱處理和引發事件。 Visual Basic若要宣告事件，請使用 Event 陳述式。若要引發事件，請使用 RaiseEvent 陳述式。若要以宣告的方式指定事件處理常式，請使用 WithEvents (Visual Basic) 陳述式和 Handles 子句 (Visual Basic) 子句。若要能夠動態地加入、移除及變更與事件相關聯的事件處理常式，請將 AddHandler 陳述式和 RemoveHandler 陳述式與 AddressOf 運算子 (Visual Basic)搭配使用。C#若要宣告類別中的事件，請使用 event (C# 參考) 關鍵字。要引發事件，請叫用事件委派。若要訂閱事件，請使用 += 運算子；若要取消訂閱事件，則使用 -= 運算子。巢狀類別在類別中定義的另一個類別即稱為「巢狀」(Nested) 類別。 巢狀類別預設為私用。 
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+class Container
+{
+    class Nested
+    {
+        // Add code here.
+    }
+}
+
+
+
+
+若要建立巢狀類別的執行個體，請使用容器類別名稱，後面加上點號，再接著巢狀類別名稱，如下所示：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+Container.Nested nestedInstance = new Container.Nested()
+
+
+
+
+存取修飾詞與存取層級所有類別及類別成員都可以使用「存取修飾詞」(Access Modifier)，指定要提供給其他類別的存取層級。下列為可用的存取修飾詞：Visual Basic 修飾詞C# 修飾詞定義Public (Visual Basic)public型別或成員可由相同組件或參考該組件的另一個組件中的任何其他程式碼存取。Private (Visual Basic)private型別或成員只能由相同類別中的程式碼存取。Protected (Visual Basic)protected型別或成員只能由相同類別中，或是衍生類別中的程式碼存取。Friend (Visual Basic)internal型別或成員可由相同組件中的任何程式碼存取，但是不包括其他組件中的程式碼。Protected Friendprotected internal型別或成員可由相同組件中的任何程式碼，或是其他組件中的任何衍生類別存取。如需詳細資訊，請參閱 Visual Basic 中的存取層級和存取修飾詞 (C# 程式設計手冊)。執行個體化類別若要建立物件，您必須將類別執行個體化，或是建立類別執行個體。
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+SampleClass sampleObject = new SampleClass();
+
+
+
+
+將類別執行個體化之後，您就可以將值指派給執行個體的屬性和欄位，並叫用類別方法。
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+// Set a property value.
+sampleObject.sampleProperty = "Sample String";
+// Call a method.
+sampleObject.sampleMethod();
+
+
+
+
+若要在類別執行個體化期間將值指派給屬性，請使用物件初始設定式：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+// Set a property value.
+SampleClass sampleObject = new SampleClass 
+    { FirstProperty = "A", SecondProperty = "B" };
+
+
+
+
+如需詳細資訊，請參閱：Visual BasicNew 運算子 (Visual Basic)物件初始設定式：具名和匿名型別 (Visual Basic)C#new 運算子 (C# 參考)物件和集合初始設定式 (C# 程式設計手冊)靜態 (共用) 類別與成員類別的靜態成員 (在 Visual Basic 中為共用成員) 是類別所有執行個體共用的屬性、程序或欄位。若要定義靜態 (共用) 成員：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+static class SampleClass
+{
+    public static string SampleString = "Sample String";
+}
+
+
+
+
+若要存取靜態 (共用) 成員，請使用類別的名稱，但不要建立這個類別的物件：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+Console.WriteLine(SampleClass.SampleString);
+
+
+
+
+C# 中的靜態 (共用) 類別及 Visual Basic 中的模組只有靜態 (共用) 成員，而且無法執行個體化。 靜態 (共用) 成員也無法存取非靜態 (非共用) 屬性、欄位或方法 如需詳細資訊，請參閱：Visual BasicShared (Visual Basic)Module 陳述式C#static (C# 參考)匿名型別使用匿名型別建立物件時，您不需要撰寫資料型別的類別定義， 編譯器 (Compiler) 會自動幫您建立類別 (Class)。 這個類別沒有可使用的名稱，但是包含您在宣告物件時指定的屬性。 若要建立匿名型別的執行個體：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+// sampleObject is an instance of a simple anonymous type.
+var sampleObject = 
+    new { FirstProperty = "A", SecondProperty = "B" };
+
+
+
+
+如需詳細資訊，請參閱：Visual Basic：匿名型別 (Visual Basic)C#: 匿名型別 (C# 程式設計手冊)繼承繼承可讓您建立新類別以重複使用、擴充和修改其他類別中定義的行為。 成員被繼承的類別稱為「基底類別」(Base Class)，而繼承這種成員的類別即稱為「衍生類別」(Derived Class)。 不過，C# 及 Visual Basic 中的所有類別都隱含繼承自 Object 類別，這個類別支援 .NET 類別階層架構，並為所有類別提供低階服務。 註意事項.NET Framework 中的 Managed 語言不支援多重繼承，也就是說， 您只能為衍生類別指定一個基底類別。 若要繼承基底類別：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+class DerivedClass:BaseClass{}
+
+
+
+
+所有類別預設都可以被繼承。 不過，您可以指定類別是否不得當做基底類別，或是建立只能當做基底類別的類別。 若要指定類別不得當做基底類別使用：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+public sealed class A { }
+
+
+
+
+若要指定類別只能當做基底類別且無法執行個體化：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+public abstract class B { }
+
+
+
+
+如需詳細資訊，請參閱：Visual BasicInherits 陳述式NotInheritable (Visual Basic)MustInherit (Visual Basic)C#sealed (C# 參考)abstract (C# 參考)覆寫成員衍生類別預設會從其基底類別繼承所有成員。 如果想要變更所繼承成員的行為，您必須覆寫這個成員。 也就是說，您可以定義衍生類別中方法、屬性或事件的新實作。 下列修飾詞是用來控制如何覆寫屬性及方法：Visual Basic 修飾詞C# 修飾詞定義Overridable (Visual Basic)virtual (C# 參考)允許在衍生類別中覆寫類別成員。Overrides (Visual Basic)override (C# 參考)覆寫在基底類別中定義的虛擬 (可覆寫) 成員。NotOverridable (Visual Basic)不支援防止在繼承的類別中覆寫成員。MustOverride (Visual Basic)abstract (C# 參考)要求在衍生類別中覆寫類別成員。Shadows (Visual Basic)new 修飾詞 (C# 參考)隱藏繼承自基底類別的成員。介面介面就像類別，可定義屬性、方法和事件集。 但與類別不同的是，介面並不提供實作。 介面是由類別實作，並定義為與類別不同的實體。 介面就代表著一種合約，因為實作介面的類別必須完全依介面的定義來實作這個介面的各個方面。 若要定義介面：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+interface ISampleInterface
+{
+    void doSomething();
+}
+
+
+
+
+若要在類別中實作介面：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+class SampleClass : ISampleInterface
+{
+    void ISampleInterface.SampleMethod()
+    {
+        // Method implementation.
+    }
+}
+
+
+
+
+如需詳細資訊，請參閱：Visual Basic介面 (Visual Basic)Interface 陳述式 (Visual Basic)Implements 陳述式C#介面 (C# 程式設計手冊)interface (C# 參考)泛型.NET Framework 中的類別、結構、介面和方法可以具有「型別參數」(Type Parameter)，這些參數會定義可儲存或使用之物件的型別。 泛型最常見的範例是集合，您可以在其中指定要儲存於集合之物件的型別。 若要定義泛型類別：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+Public class SampleGeneric<T> 
+{
+    public T Field;
+}
+
+
+
+
+若要建立泛型類別的執行個體：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+SampleGeneric<string> sampleObject = new SampleGeneric<string>();
+sampleObject.Field = "Sample string";
+
+
+
+
+如需詳細資訊，請參閱：.NET Framework 中的泛型Visual Basic 中的泛型型別 (Visual Basic)泛型 (C# 程式設計手冊)委派「委派」(Delegate) 是定義方法簽章的型別，可以提供任何具有相容簽章之方法的參考。 您可以透過委派叫用 (Invoke) 或呼叫方法。 委派可以用來將方法當做引數傳遞給其他方法。 註意事項事件處理常式就是透過委派叫用的方法。 如需將委派用於事件處理的詳細資訊，請參閱事件和委派。 若要建立委派：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+public delegate void SampleDelegate(string str);
+
+
+
+
+若要建立與委派所指定簽章相符之方法的參考：
+
+
+C#VB
+
+
+
+
+複製
+
+
+
+
+class SampleClass
+{
+    // Method that matches the SampleDelegate signature.
+    public static void sampleMethod(string message)
+    {
+        // Add code here.
+    }
+    // Method that instantiates the delegate.
+    void SampleDelegate()
+    {
+        SampleDelegate sd = sampleMethod;
+        sd("Sample string");
+    }
+}
+
+
+
+
+如需詳細資訊，請參閱：Visual Basic委派 (Visual Basic)Delegate 陳述式AddressOf 運算子 (Visual Basic)C#委派 (C# 程式設計手冊)delegate (C# 參考)請參閱概念C# 程式設計手冊其他資源Visual Basic 程式設計手冊
+
+
+
+
+
+
+社群新增項目
+
+
+                        新增
+                    
+
+
+
+
+
+
+
+
+顯示:
+
+受繼承
+        
+
+受保護
+        
+
+
+
+
+
+
+
+列印
+
+匯出 (0)
+            
+
+
+
+
+
+
+
+列印
+
+分享
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+本文內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本頁對您有幫助嗎？
+是
+否
+
+
+
+
+
+其他意見反應？
+
+
+剩餘 1500 個字元
+
+提交
+略過此項
+
+
+
+
+
+
+
+謝謝！
+我們非常感謝您提供的意見反應。
+
+
+
+
+
+
+
+
+
+
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+	物件導向程式設計 | 南臺科技大學南臺開放式課程平臺
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+網站導覽
+
+
+迴首頁
+
+
+南臺首頁
+
+
+教學發展中心
+
+
+繁
+    ⇌
+    簡
+
+
+RSS
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+
+最新消息
+
+
+商管學院
+
+
+工學院
+
+
+人文社會學院
+
+
+數位設計學院
+
+
+通識教育課程
+
+
+證照培訓區 
+
+
+留言板
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+
+工學院
+
+
+
+
+物件導向程式設計
+
+
+Copy Constructor and Assignment Operator
+
+
+Operator Overloading 運算元重載
+
+
+Virtual Function
+
+
+2D Array and Pointer
+
+
+Exception Handling
+
+
+Standard Template Libraries
+
+
+
+電子學
+
+電子學一
+
+電子學二
+
+物理二
+
+微積分一
+
+工程數學一
+
+微積分二
+
+材料力學
+
+工程數學二
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+目前位置：主選單>工學院>物件導向程式設計
+
+
+
+物件導向程式設計
+ 任課老師     資訊工程系 林泓宏 老師 學 期 別     103學年度 第一學期 課程介紹    [物件導向程式設計] 此課程以 C/C++ 程式語言的教學為主，佐以 C++ 裡頭物件導向程式設計的概念介紹，期望讓同學們對於物件導向程式設計建立基本的認識與實作能力。 課程目標    使學生能熟悉 C++ 物件類別與繼承。   使學生能瞭解 C/C++ 指標運作以及虛擬函數。   使學生能建立 C++ 應用程式。   使學生能養成良好程式撰寫習慣。   課程大綱    [C++] Copy Constructor。   [C++] Operator Overloading 運算元重載。   [C++] Virtual Function。   [C++] 2D Array and Pointer。   [C++] Exception Handling。   [C++] Standard Template Libraries。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+快速連結
+
+
+
+南臺科技大學MOOCs學習平臺
+
+
+南臺科技大學遠距教學網
+
+
+OpenCourseWare Consortium
+
+
+台灣開放式課程聯盟
+
+
+國立交通大學開放式課程
+
+
+雲嘉南區域教學資源中心
+
+
+教育部創用CC資訊網
+
+
+智慧財產權--宣導專區
+
+
+開放式課程問捲調查
+
+
+
+
+
+
+
+
+
+
+
+                  南臺開放式課程QRcode
+
+
+
+
+
+
+
+
+熱門課程
+
+
+
+
+
+
+
+
+:::
+
+COPYRIGHT ©2014 南臺科技大學 計算機與資訊網路中心 ALL RIGHTS RESERVED.  本網頁由計網中心維護 分機：2605  計網中心信箱:center@mail.stust.edu.tw   本網站所有內容僅供學術使用，嚴禁任何商業與重製行為
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+物件導向程式設計 - 程式設計俱樂部
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+討論區快速選單
+
+
+
+討論區快速選單
+= Programming =
+- 
+                                ASP
+- 
+                                Assembly
+- 
+                                C++
+- 
+                                C++ Builder
+- 
+                                COBOL
+- 
+                                Delphi
+- 
+                                Director
+- 
+                                Flash
+- 
+                                Fortran
+- JavaScript
+- J2SE
+- J2ME
+- J2EE/Servlet/JSP
+- JBuilder
+- Java入門一般區
+- 
+                                Kylix
+- 
+                                Mac
+- 
+                                Palm
+- 
+                                Perl
+- 
+                                PHP
+- 
+                                Power Builder
+- 
+                                UNIX/Linux
+- 
+                                Visual Basic/VBA
+- 
+                                VBScript
+- 
+                                Visual C++
+- 
+                                WinCE/eVB
+- 
+                                WinCE/eVC
+- 
+                                WML
+- 
+                                XML
+= Mobile Programming =
+- Android
+- Intel AppUp
+- iPhone
+- Windows Phone 7
+= Database =
+- 
+                                資料庫設計與應用
+- 
+                                SQL Language
+- 
+                                Access
+- 
+                                DB2
+- 
+                                SQL Server 2008
+- 
+                                SQL Server 2005
+- 
+                                SQL Server 7/2K
+- 
+                                MySQL
+- 
+                                Visual Foxpro
+- 
+                                Oracle
+- 
+                                Informix
+= .NET =
+- Visual Studio 2010
+- Visual Studio 2008
+- Silverlight技術
+- 
+                                .NET Framework
+- 
+                                ADO.NET
+- 
+                                ASP.NET
+- 
+                                C#
+- 
+                                VB.NET/VB 2005
+- 
+                                VC++.NET
+= Game =
+- 
+                                遊戲人的天空
+- 
+                                遊戲程式設計
+- Microsoft XNA
+- 
+                                DirectX
+- 
+                                OpenGL
+= Web Server =
+- 
+                                IIS
+- 
+                                Apache Server
+= 資訊工程與科學 =
+- 
+                                資訊工程與科學一般區
+- 
+                                資訊類系所入學考試
+- 
+                                影像處理與機算機圖學
+= General =
+- 
+                                一般討論區
+- 
+                                COM/DCOM
+- 
+                                驅動程式
+- 
+                                嵌入式系統(Embedded System)
+- 微軟系列認證考試區
+- Java系列認證考試區
+- 教育訓練與專業認證一般區
+- 我的職涯規劃
+-程式設計甘苦談
+- 
+                                HTML
+- 
+                                網路技術漫談
+- 
+                                新手入門
+- 
+                                物件導向
+- 
+                                系統分析與設計
+- 
+                                資訊類作業
+= Windows =
+- 
+                                Windows 7
+- 
+                                Windows Vista
+- 
+                                Windows XP
+- 
+                                Win2K Sevrer
+- 
+                                Win2K Pro.
+- 
+                                Windows NT
+= IT硬話題 =
+- 電腦核心組件
+- 電腦顯示週邊
+- 電腦儲存裝置
+- Notebook
+- 網路技術與產品
+- 電腦綜合討論區
+= Jobs =
+- 
+                                外包接案經驗談
+- 
+                                個人工作室登錄
+- 
+                                企業人力需求
+- 
+                                企業外包案件
+= Others =
+- 
+                                高手過招區
+- 
+                                科學園區停看聽
+- 
+                                二手電腦書
+- 
+                                好書推薦
+- 
+                                上班族哈拉園地
+- 
+                                通訊網路
+- 關於Web 2.0
+- IT 類研討會
+- 
+                                電腦相關笑話
+- 
+                                站務討論區
+- 
+                                資訊軟體產業討論
+- 
+                                關於Google的兩三事
+= 熱門元件 =
+- 
+                                熱門元件一般區
+- 
+                                Crystal Reports
+
+
+
+
+知識庫快速選單
+
+
+
+知識庫快速選單
+= Programming =
+- 
+                                ASP
+- 
+                                Assembly
+- 
+                                C++
+- 
+                                C++ Builder
+- 
+                                COBOL
+- 
+                                Delphi
+- 
+                                Director
+- 
+                                Flash
+- 
+                                Fortran
+- JavaScript
+- J2SE
+- J2ME
+- J2EE/Servlet/JSP
+- JBuilder
+- Java入門一般區
+- 
+                                Kylix
+- 
+                                Mac
+- 
+                                Palm
+- 
+                                Perl
+- 
+                                PHP
+- 
+                                Power Builder
+- 
+                                UNIX/Linux
+- 
+                                Visual Basic/VBA
+- 
+                                VBScript
+- 
+                                Visual C++
+- 
+                                WinCE/eVB
+- 
+                                WinCE/eVC
+- 
+                                WML
+- 
+                                XML
+= Mobile Programming =
+- Android
+- Intel AppUp
+- iPhone
+- Windows Phone 7
+= Database =
+- 
+                                資料庫設計與應用
+- 
+                                SQL Language
+- 
+                                Access
+- 
+                                DB2
+- 
+                                SQL Server 2008
+- 
+                                SQL Server 2005
+- 
+                                SQL Server 7/2K
+- 
+                                MySQL
+- 
+                                Visual Foxpro
+- 
+                                Oracle
+- 
+                                Informix
+= .NET =
+- Visual Studio 2010
+- Visual Studio 2008
+- Silverlight技術
+- 
+                                .NET Framework
+- 
+                                ADO.NET
+- 
+                                ASP.NET
+- 
+                                C#
+- 
+                                VB.NET/VB 2005
+- 
+                                VC++.NET
+= Game =
+- 
+                                遊戲人的天空
+- 
+                                遊戲程式設計
+- Microsoft XNA
+- 
+                                DirectX
+- 
+                                OpenGL
+= Web Server =
+- 
+                                IIS
+- 
+                                Apache Server
+= 資訊工程與科學 =
+- 
+                                資訊工程與科學一般區
+- 
+                                資訊類系所入學考試
+- 
+                                影像處理與機算機圖學
+= General =
+- 
+                                一般討論區
+- 
+                                COM/DCOM
+- 
+                                驅動程式
+- 
+                                嵌入式系統(Embedded System)
+- 微軟系列認證考試區
+- Java系列認證考試區
+- 教育訓練與專業認證一般區
+- 我的職涯規劃
+-程式設計甘苦談
+- 
+                                HTML
+- 
+                                網路技術漫談
+- 
+                                新手入門
+- 
+                                物件導向
+- 
+                                系統分析與設計
+- 
+                                資訊類作業
+= Windows =
+- 
+                                Windows 7
+- 
+                                Windows Vista
+- 
+                                Windows XP
+- 
+                                Win2K Sevrer
+- 
+                                Win2K Pro.
+- 
+                                Windows NT
+= IT硬話題 =
+- 電腦核心組件
+- 電腦顯示週邊
+- 電腦儲存裝置
+- Notebook
+- 網路技術與產品
+- 電腦綜合討論區
+= Jobs =
+- 
+                                外包接案經驗談
+- 
+                                個人工作室登錄
+- 
+                                企業人力需求
+- 
+                                企業外包案件
+= Others =
+- 
+                                高手過招區
+- 
+                                科學園區停看聽
+- 
+                                二手電腦書
+- 
+                                好書推薦
+- 
+                                上班族哈拉園地
+- 
+                                通訊網路
+- 關於Web 2.0
+- IT 類研討會
+- 
+                                電腦相關笑話
+- 
+                                站務討論區
+- 
+                                資訊軟體產業討論
+- 
+                                關於Google的兩三事
+= 熱門元件 =
+- 
+                                熱門元件一般區
+- 
+                                Crystal Reports
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+l 開發技術
+
+程式語言
+
+ASP
+Assembly
+C
+C++ Builder
+COBOL
+Delphi
+Director/Lingo
+Flash/ActionScript
+Fortran
+Java入門一般區
+JavaScript
+J2SE
+J2ME
+J2EE
+Kylix
+Jbuilder
+Perl
+PHP
+Power Builder
+Visual Basic 6.0/VBA
+Visual C++
+VB Script
+WinCE/eVB
+WinCE/eVC
+WML
+XML
+
+
+行動裝置
+
+Android
+iPhone
+MeeGo
+Windows Phone 7
+
+
+Database
+
+資料庫設計與應用
+Access
+DB2
+SQL Server 7/2000
+SQL Server 2005
+SQL Server 2008
+mySQL
+Visual Foxpro
+Oracle
+SQL Language
+Informix
+
+
+.NET
+
+VS2008
+VS2010
+.NET Framework
+ADO.NET
+ASP.NET
+C#
+VB.NET
+VC++.NET
+
+
+Game
+
+遊戲人的天空
+遊戲程式設計
+DirectX
+OpenGL
+MS XNA
+
+
+OS
+
+Palm OS程式設計
+Mac程式設計
+Windows Vista
+Windows XP
+Win2k Server
+Windows 2000 pro
+Windows NT 4.0
+
+
+Web Server
+
+Apache Server
+IIS Server
+
+
+HTML/DHTML
+COM/DCOM
+驅動程式
+嵌入式系統
+
+
+l IT熱門話題
+
+資訊工程與科學
+資訊類系所入學考試
+影像處理與計算機圖學
+資訊類作業
+
+教育訓練與專業認證一般區
+微軟認證
+Java認證
+
+新手入門
+程式設計甘苦談
+我的職涯規劃
+
+物件導向程式設計
+系統分析與設計
+IT研討會
+
+
+l 輕鬆話題
+
+一般不分類區
+關於Google的兩三事
+高手過招區
+二手電腦書買賣交換
+好書推薦
+上班族的哈拉園地
+外包接案經驗談
+關於Web 2.0
+電腦相關笑話
+通訊網路
+資訊軟體產業
+站務留言板
+
+
+l 知識庫
+l 部落格
+l 外包案件
+l 接案人才
+l 找工作
+l IT研討會
+l 職涯規劃
+l 初學入門
+l 好書票選
+l 會員中心 l
+
+
+
+
+
+
+
+
+
+
+
+
+政府補助!學嵌入式+物聯網
+
+
+
+
+Python成為最適合新手學習的語言
+
+
+
+
+網路投保旅行平安險
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 物件導向程式設計
+
+物件導向程式設計 - OOP(Object Oriented Programming)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+企業商業智慧只要學通Excel就搞定！
+
+
+      [ 討論區發言規則 ]
+      
+
+
+
+
+
+
+
+頁次 1/6 , 共640篇文章, 163個主題 發起新主題
+
+| 
+
+第一頁 
+
+| 
+上一頁 
+
+| 
+下一頁 |
+
+
+最末頁 | 
+　
+至第
+1 2 3 4 5 6
+
+頁	
+	
+
+
+
+
+
+
+
+
+
+
+				
+				評價
+				
+				
+標　題
+
+
+回應點閱
+
+作者/最後更新時間
+
+ 要如何學習物件導向式資料庫 25968
+
+暗夜鬼	
+
+2015/8/23 下午 04:37:37 txt 轉access 問題(求解) 0708
+
+babeyaya	
+
+2015/7/20 下午 11:03:24 分享軟體 物件導向的設計原則 他適用於敏捷開發或是各種方式的開發方式 0651
+
+James Hsieh	
+
+2015/5/23 上午 10:03:14 懇請本版版友幫忙填寫程式設計俱樂部問捲, 抽禮劵! 0935
+
+Lily	
+
+2013/12/1 下午 12:58:58 template如何在UML裡畫出來? 43611
+
+Jeff	
+
+2013/1/4 上午 11:43:43 operator= 放在哪個含式庫? 11629
+
+JacobSyu	
+
+2013/1/3 上午 08:28:28 Overload算是Polymorphism的機制嗎??? 1311008
+
+吉	
+
+2012/9/23 下午 06:46:4610 資料庫欄位與物件屬性的關係 32743
+
+3維POM模式>	
+
+2012/8/20 上午 09:44:4450 請問物件導向有哪三大精神? 611248
+
+費歐娜	
+
+2011/11/5 下午 04:57:5730 JAVA問題  求大大們幫忙解題 23948
+
+JamesZhan	
+
+2011/10/18 下午 09:28:28 Visitor object的意思是什麼 26530
+
+Akira	
+
+2011/8/25 下午 02:05:0580 vb可用oo的觀念來寫嗎 2113432
+
+渴望	
+
+2011/8/25 下午 01:43:4310 物件導向程式設計好處在哪 39791
+
+鍾齊	
+
+2011/2/10 上午 03:33:33 Android手機程式開發-免費線上教學分享影片 15505
+
+20100410	
+
+2010/10/5 下午 07:23:23
+
+
+ 
+ 請教一個有關於template, vector, const, 與指標的問? 36248
+
+YO	
+
+2010/7/8 上午 11:08:08 請問 系統程式  死結 14710
+
+小哲	
+
+2010/4/28 下午 11:32:32 一個Singleton design pattern的問題! 89846
+
+scliu	
+
+2009/10/12 下午 06:52:5210 請問design pattern中的delegation的觀念 1812890
+
+神谷篤司	
+
+2009/10/12 下午 05:51:51 請教關於物件的表現方式! 24145
+
+littlenew	
+
+2009/9/3 下午 10:26:26 類別陣列如何初始化 27207
+
+鍾齊	
+
+2009/9/3 下午 03:06:0650 OOP到底是什麼? 434415
+
+吉	
+
+2009/9/3 下午 03:05:05 "求助高手" 74393
+
+阿Q	
+
+2009/4/18 下午 07:32:32 轉貼物件導向工具 04022
+
+jonay	
+
+2009/4/14 下午 02:08:22 請問有人有datawindow的使用規則說明嗎？ 03472
+
+amber2530	
+
+2008/11/7 下午 03:51:57 物件導向如何去學呢 25486
+
+鍾齊	
+
+2008/4/11 下午 11:46:4630 c++問題 25662
+
+鍾齊	
+
+2008/1/14 上午 08:08:08 不要從程式語言學習「物件導向」！ 1116013
+
+矇矇	
+
+2007/12/13 下午 04:29:29100 何處可有UML分析與設計完整範例圖? 815466
+
+只想好好過生活	
+
+2007/12/7 下午 03:14:14 object associative是? 15010
+
++o	
+
+2007/9/2 上午 01:33:3350 OOP 中對 "多型" 的理解 1615591
+
+linfox	
+
+2007/7/5 下午 07:18:18
+
+
+
+
+
+
+
+
+
+
+
+
+
+頁次 1/6 , 共640篇文章, 163個主題 發起新主題
+
+
+
+
+到頁 
+
+
+
+
+
+
+
+
+ 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                         >  物件導向程式設計 - 討論區
+
+
+
+
+
+
+
+
+
+
+ - 最近熱門問答精華集
+
+
+
+ - 全部歷史問答精華集
+
+
+
+
+ - 
+								                    
+物件導向程式設計 - 知識庫
+
+
+
+
+
+　 ■ 全站最新Post列表
+
+
+
+
+
+　 ■ 我的文章收藏
+
+
+　 ■ 我最愛的作者
+
+
+　 ■ 全站文章收藏排行榜
+
+
+　 ■ 全站最愛作者排行榜
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+　 ■ 
+          
+月熱門主題
+
+
+　 ■ 
+          季熱門主題
+
+
+　 ■ 
+          熱門主題Top 20
+
+
+　 ■ 
+          
+本區Post排行榜
+
+
+　 ■ 
+          
+本區評價排行榜
+
+
+
+
+
+　 ■ 
+          全站專家名人榜
+
+
+　 ■ 
+          
+全站Post排行榜
+
+
+　 ■ 
+          
+全站評價排行榜
+
+
+　 ■ 
+          
+全站人氣排行榜
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 請輸入關鍵字  
+
+
+
+ 
+							
+
+
+
+
+ 
+							
+標題
+內文
+
+文章ID
+作者暱稱
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+ 板主 : 
+Clark
+
+
+
+
+
+
+
+Top 10 評價排行
+
+物件導向程式設計
+
+
+
+
+
+
+
+
+
+1
+
+Arthur
+180 
+
+
+
+2
+
+藍色LED
+150 
+
+
+
+3
+
+長長
+100 
+
+
+
+4
+
+Linkin
+100 
+
+
+
+5
+
+love seeker
+100 
+
+
+
+6
+
+Raymond
+90 
+
+
+
+7
+
+Nets
+80 
+
+
+
+8
+
+nop
+70 
+
+
+
+9
+
+Huah
+70 
+
+
+
+10
+
+矇矇
+60 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+物件導向程式設計
+
+
+
+
+
+
+
+　
+專家等級
+評價
+　
+
+
+　
+一代宗師
+10000
+　
+
+
+　
+曠世奇才
+5000
+　
+
+
+　
+頂尖高手
+3000
+　
+
+
+　
+卓越專家
+1500
+　
+
+
+　
+優秀好手
+750
+　
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+迴首頁│本站大事記│得獎記錄│站長的話│本站板主群│贊助本站│意見信箱│板主登入│2006研討會│2005研討會│認識本站│廣告刊登
+
+
+
+
+
+
+Microsoft Internet Explorer 
+                  6.0. Screen 1024x768 pixel. High Color (16 bit).
+                  2000-2017 程式設計俱樂部 http://www.programmer-club.com.tw/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+物件導向程式設計 - Crsintro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+物件導向程式設計
+
+出自Crsintro
+
+跳轉到: 導航, 搜尋 
+
+
+
+ 物件導向程式設計
+
+
+ OBJECT-ORIENTED SOFTWARE DESIGN
+
+
+ 課程編號
+ 902 10730
+
+
+ 學分數
+ 3
+
+
+ 必選修
+ 必帶
+
+
+ 修課年級
+ 學士班 1 年級
+
+
+ 修課學期
+ 下學期
+
+
+ 課程長度
+ 半年
+
+
+ 目前授課教授
+ 林軒田
+
+
+ 擋修課程
+
+
+
+ 建議先修
+ 計算機程式設計
+
+
+ 上課時間
+ [Mon: 234 (單班)]
+[Tue: 678 (雙班)]
+
+
+
+在物件導向程式設計這門課當中，我們將學習以物件的角度來設計一個程式、組織我們的程式碼。我們會學到類別(class)、物件(object)、方法(method)、封裝(encapsulation)、繼承(inheritance)等重要的「物件導向程式設計」的概念。除此之外，課程還會提到一些和 Java 程式語言有關的語法。
+
+目錄
+
+1 課程內容
+2 指定教科書
+3 額外參考書
+4 歷年課程網頁
+
+
+  課程內容 
+在上學期的計算機程式設計當中，我們學到瞭如何寫一個程式與如何告訴電腦該怎麼去工作。在該課程當中，我們的想法都會是「該怎麼去做一件事情」，所以我們的程式的組識方式十之八九就是會有數個函式，每一個函式就負責一些工作。我們稱這種程式設計典範(Programming Paradigm)為程序導向程式設計(Procedural-oriented Programming)，遵從這個設計典範的程序員，在撰寫程式或者資訊系統的時候，會把大工作分解成數個小工作，直到工作變得夠簡單，就直接寫一個函式去處理它。
+然而在實際情況中，程序導向程式設計在一個很大的資訊系統當中是不敷使用的。過去的經驗告訴我們，若只採用程序導向程式設計，即便每一個函式都設計得很好（功能明確簡單），我們的程式碼的重複利用率(Code reuse)還是很有限。更不用說程序導向程式設計本身帶有一些藝術的成份。不是每個人都寫得出容易閱讀、容易維護的程式碼。
+經過數十年的演進，有一套方法在激烈的競爭中脫穎而出，那就是「物件導向程式設計」。他主張我們應該要從「物件」的角度去設計一個系統、去寫我們的程式。而「物件導向程式設計」這門課就是要教我們從物件的角度去設計程式，教我們一些物件導向程式設計背後的想法。
+本課程將會教授 Java 程式語言。做為一個物件導向的程式語言，Java 提供了一些語法構件，如 class, extends, implements, public, private 等等，讓我們可以更容易地處理物件。
+以下是本課程的相關主題：
+
+ 如何撰寫 Java 程式 這一部分通常會介紹 Javac (Java 的編譯器)、Javadoc (Java 特有的文件生成器)、Java (JVM，Java 的執行環境) 等 Java 環境的工具鏈(Toolchain)。
+ Class、Object 介紹「類別」的概念。告訴我們如何把現實中的物件分門別類、如何從現實的物件中提取有用的性質、如何把一個具體的物件變成一個抽象的類別。例如：我手上有一臺 MP3 Player，你也有一臺，我想要寫一個程式模擬這二個 MP3 Player 的行為我們該怎麼做？
+ Method 介紹物件的「方法」。和我們在 C 程式語言中學到的函式很像，都是一大堆表達式、述句、指令的集合，用以實作某個「功能」。不過和 C 程式語言中的函式不同，Method 是以物件為中心，我們設計 Method 的時候考量的是一個物件可以做什麼事，例如像是 MP3 Player 可以有一個 "Play" Method，用來撥放音樂。
+ Encapsulation 介紹類別的「封裝」。也就是每一個類別對外只提供必要的介面、隱藏內部的實作。一個封裝完善的類別，可以讓我們隨意地修改其內部實作，而且不必更新類別的使用者(其他的類別)。例如我們的 MP3 Player 只會提供播放、暫停、關機等介面，我們不會也不需要知道它內部的電路是長什麼樣子。
+ Inheritance介紹類別與類別之間的「繼承」。在物件導向程式設計當中，我們有「繼承」語意可以幫助我們重覆利用我們現有的程式碼。例如：我們如果要寫一個新的 MP3 Player Touched 類別，為我的 MP3 Player 加上觸控的功能，我們的新類別 MP3 Player Touched 可以繼承 MP3 Player，然後再加上自己的 touch method。
+ Polymorphism介紹「多型」的概念。當我們同時有二個子類別繼承同一個父類別時，二個子類別的 Method 的實作可能有所不同，但是我們可以用同樣的函式名稱去呼叫他們，我們稱之為多型。例如：我們可能有 MP3 Player Touched、MP3 Player Cellphone 二個子類別皆繼承自 MP3 Player。我們只要知道它是一個 MP3 Player 的物件，我們就可以用 Play 來播放音樂，而且當我們呼叫 Play 的時候，透過 Virtual Method Invocation 機制，程式會自動找出正確的子類別的 Play Method。
+ Interface介紹「介面」的概念。當我們傳遞物件的時候，通常我們儘可能使用父類別的 Reference 來接收物件，可是有時候我們沒有辦法同時滿足繼承的要求（例如：有時候我們可能必需使用 Java 禁止的多重繼承），在這樣的情況下，我們可以使用 Interface。例如：Home Theatre 與 MP3 Player 都有 Play 功能，可是他們沒有共同的父類別，我們可以寫一個函式同時接收二種物件嗎？我們可以讓這二個類別同時實作 Playable Interface，然後函式就可以使用 Playable 的 Reference 來接收二者的物件。
+ Exception例外處理機制。在物件導向程式設計當中，因為例外處理遠較過去程序導向程式設計複雜，所以我們有截然不同的例外處理機制。我們改用 try-catch 敘句來攔截例外，而使用 throw 敘句來拋出例外。
+ Generic泛型，讓我們的容器(Container)可以裝載不同型別的資料，而不必重寫我們的容器。
+ SynchronizeJava 在多執行緒之下，用以管控資料完整性的機制。
+
+  指定教科書 
+ W. Savitch, Absolute Java, 4th Ed., Pearson, 2009.
+
+  額外參考書 
+ Ken Arnold, James Gosling, David Holmes, The Java Programming Language, 4th edition, Addison-Wesley, 2006.
+ Kathy Sierra, Bert Bates, Sierra Kathy, Bates Bert, Head First Java, 2nd edition, O'Reilly, 2005.
+
+  歷年課程網頁 
+
+
+ 年度  季節  班別  教授  網址
+
+
+ 2010  春季  單雙  林軒田  http://ceiba.ntu.edu.tw/982oop http://www.csie.ntu.edu.tw/~htlin/course/oop10spring/
+
+
+ 2009  春季  單  陳俊良  http://ceiba.ntu.edu.tw/972oop
+
+
+ 2009  春季  雙  林軒田  http://ceiba.ntu.edu.tw/972oop_even http://www.csie.ntu.edu.tw/~htlin/course/oop09spring/
+
+
+
+
+
+取自"https://council.csie.ntu.edu.tw/crsintro/index.php/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88"
+3個分類: 學士班 1 年級課程 | 必修課程 | 學士班 1 年級必修課程 
+
+
+
+
+
+
+檢視
+
+
+頁面
+討論
+原始碼
+歷史 
+
+
+
+個人工具
+
+
+登入
+
+
+
+
+
+
+
+
+搜尋
+
+
+
+
+ 
+				
+
+
+
+
+導航
+
+
+首頁
+現行課綱
+必修課程分類
+選修課程分類
+課程列表
+近期變動
+
+
+
+
+工具箱
+
+
+鏈入頁面
+相關頁面修訂記錄
+特殊頁面
+可列印版 永久連結 
+
+
+
+
+
+
+
+
+ 本頁最後更動時間在 2010年4月27日 (星期二) 12:43。
+本頁面已經被瀏覽11,392次。
+本站的文字內容除另有聲明外，全部以 Attribution-Noncommercial 3.0 Unported 條款授權使用。
+隱私政策
+關於Crsintro
+免責聲明
+
+
+
+
+

@@ -1,0 +1,1371 @@
+
+
+
+
+
+
+
+
+
+結構方程模式教學網站
+
+
+
+
+
+
+
+作業一：休閒娛樂區                       
+結構方程模式教學網站
+作業二：英文文法教學            
+（Structure Equation Modeling）
+一、結構方程模式基本概念... 1
+二、應用結構方程模式之理由... 1
+三、模式驗證之前提假設... 2
+四、模式架構與理論... 2
+五、SEM建構流程... 3
+六、軟體應用相關規則... 5
+七、分析結果的評估... 5
+ 
+一、結構方程模式基本概念
+一般線性模式乃是假定每一對變數間存在者線性關係，並且兩者間的關係可以直線方程式來表示，而結構方程模式則是基於線性關係的假設來建構變數間的結構關係。結構方程模式結合了多元回歸與因素分析，可以同時分析一堆互為關連之依變數間的關係，步驟簡述如下：
+(一)發展研究之理論基礎模式。
+(二)建構變數間之因果關係的路徑圖。
+(三)將路徑圖轉化成一套結構模式，並且指定其衡量模式。
+(四)選擇輸入矩陣類型為相關矩陣（Correlation Matrix）或變異共變異數矩陣（Variance-Covariance
+Matrix），並對所提出的理論模式進行鑑定與研究假設驗證。
+結構方程模式的最大的功用為探討多變數與單變數之間的因果關係，在其基本理論中認為潛在變項是無法直接量測的，必須藉由觀察變數來間接推測得知，所以理論架構包含結構模式與衡量模式兩個部份。結構模式為用來界定潛在自變數與潛在依變數間的線性關係，而衡量模式則是用來界定變數與觀察變數間的線性關係。結構方程模式家族的成員包含共變異數結構分析（Covariance structure analysis）、潛在變數分析(Latent
+variable analysis)、驗證行因素分析以及線性結構關係分析。
+二、應用結構方程模式之理由
+由於本研究在驗證因果模式，因此必須利用有關因果分析的統計分析方法與程序，有關多個變數關係架構的分析方法，基本上屬於路徑分析。路徑分析是一種將觀察變項間的關係以模型化的方式來進行分析的一種統計技術。傳統的路徑分析是由一系列的迴歸分析所組成的，將不同的方程式加以組合，形成結構化的模式。傳統的路徑分析與結構模型路徑分析的不同處:
+(一)傳統的路徑分析無法處理潛在變項的問題；結構模型路徑分析則可以處理潛在變項的同時，也進行因果關係的檢測。
+(二)傳統的路徑分析用來解釋或預測其他變項的解釋性變項，通常被假設是沒有測量誤差，或其測量誤差可以被忽略，僅有被解釋或被預測的變相的被解釋殘差可以被估計出來；結構模型路徑分析則可以處理測量誤差的控制。
+(三)傳統的路徑分析多為遞迴模型(Recursive Model) (殘差並未存在有意義的殘差相關)；結構模型路徑分析可為非遞迴模型(Nonrecursive Model)(有相關的殘差假設，或是變項間具有回溯關係)
+三、模式驗證之前提假設
+在應用驗證性因素分析時，Hatcher指出有一些必要條件是需要註意的，這些必要條件包括：
+(一)所有的指標變數必須是等距尺度（Interval-level）或比率尺度（Ratio-level）的方式衡量。
+(二)所有的指標變數必須為連續且至少有四個數值。
+(三)資料必須為常態分配。
+(四)變數間的關係為線性與附加的（Additive）。若為非線性關係則需要另外假設關係函數。
+(五)變數間避免多重共線性。
+(六)模式內應包含所有重要的因果關係。
+(七)模式必須為過度鑑定。
+(八)最小可接受的樣本數至少要超過150，或者五倍的估計參數個數。
+(九)每一個潛在變數至少要有三個指標變數。
+(十)指標變數最多不可超過30個。
+四、模式架構與理論
+一個完整結構方程模式包含了結構模式與衡量模式兩個部份，為測量模式實際測量變項與潛在特質的相互關係，而結構模式為說明潛在變項間的關係如圖1所示:
+圖中測量變項V1、V2、V3受到同一個潛在變項F1的影響，形成獨立的測量模式，同樣的量變項V4、V5、V6受到另一個潛在變項F2的影響，形成另一個獨立的測量模式，並且兩潛在變項間有因果關係假設，以單向的箭頭來表示。而F1到F2則是一個結構模式，D(Disturbance)為內衍潛在變項在F2無法被F1解釋的乾擾部份。
+
+
+
+
+
+
+
+
+E6
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+E4
+
+
+
+
+ 
+
+
+ SHAPE  \* MERGEFORMAT 
+圖1 典型的SEM模型圖示
+在SEM中若僅是使用測量模式，也就是說只有測量模式沒有結構模式的迴歸關係假設，則是驗證性因素分析(Confirmatory Factor Analysis)，其檢測的內容為測量題目的因素結構(Factorial Structure)與測驗誤差；若僅是結構模式，就數一個傳統的路徑分析(Path Analysis)模型，以多元迴歸的概念來解釋變項間的因果或預測關係。
+(一)結構模式
+結構模型為描述眾多潛在變項與潛在變數間的因果關係模式，模式中所假定的「因」即外生（Exogenous）潛在變項，「果」為內生（Endogenous）潛在變項，變項間之結構模式為：
+η=Bη+γξ+ζ
+其中η(eta) 為潛在之內生變項；ξ(xi) 為潛在之外生變項；B(beta) 為η對其他η之影響效果關係矩陣；γ(gamma) 為η和其他ξ之影響效果關係矩陣；ζ(zeta) 為殘餘誤差向量。
+此處γ為外生變項對內生變數之因果關係，B表示內生變項對內生變數間之因果關係，因此B之對角線皆為0，而I－B為非特異（non-singular）矩陣，且各變項皆以離均差分數（deviation scores）代表，亦即平均數為0，並假設ζ與ξ不相關。
+(二)衡量模式
+衡量模型一般由兩種方程式組成，分別說明瞭內生潛在變項η與內生觀察變項y間之關係，以及外生潛在變項ε與外生觀察變項x 間之關係，其表示分別如下：
+y =Λyη+ε 
+其中，y為觀察之內生變項；Λy(lambda y)為 y
+與η之關係係數矩陣；ε(epsilon)為 y的衡量誤差；
+x = Λxξ+δ
+其中，x為觀察之外生變項；Λx(lambda x)為 x
+與ξ之關係係數矩陣；δ(delta)為 x 之衡量誤差。Λy與Λx相當於迴歸分析的迴歸係數。
+衡量模式的基本假定為衡量誤差η、ξ或ζ無相關，但η、ξ與ζ之間容許相關，且殘餘誤差ζ與衡量誤差ε和δ之間均不相關。
+五、SEM建構流程
+關於SEM建構流程本研究主要參考Hair 等人【40】所提出的七個步驟，流程如圖2所示:
+(一)發展理論基礎模型，設定其因果關係，並避免設定上的錯誤。
+(二)建立路徑圖，定義內生與外生變數，連結路徑途中各變數的關係。 
+(三)將路徑圖轉換為一組結構與衡量模式(結構方程模式)，說明衡量模式(決定指標數量與說明構念信度)，以及鑑定構念與指標間的相關性。
+(四)選擇輸入矩陣的類型(相關係數矩陣或共變異係數矩陣)與估計所提出的模式，還需考量SEM的假設、遺漏值處理、決定樣本數大小與模式估計方法的選擇。
+(五)進行模式的鑑定
+探討因果分析模式(路徑分析與結構方程模式)基本原理是依假設限制條件將相關矩陣（或共變異數矩陣）再製，若原來的矩陣與再製矩陣相差（殘差矩陣）經評估很小，在兩個標準差之內（±1.96），表示所提出的研究架構是可接受的，表示資料擬合不錯。計算路徑係數過程中造成無意義或不正確的結果，便是模式的鑑定(Identification)問題，並可分為剛好鑑定(Just Identified)、過度鑑定(Over Identified)與不足鑑定(Under Identified)三種，如下表所示:
+表1 三種鑑定比較表
+
+
+
+鑑定種類
+
+
+自由度K=1/2(p+q)(p+q+1)－t
+
+
+解的種類
+
+
+
+
+剛好鑑定
+
+
+=0
+
+
+有唯一解
+
+
+
+
+過度鑑定
+
+
+>0
+
+
+有唯一解
+
+
+
+
+不足鑑定
+
+
+<0
+
+
+無解
+
+
+
+註: p為外生顯性變數個數、q為內生顯性變數個數、t為自由的參數個數
+若為剛好鑑定模式(飽和模式，Saturated Model)其自由度=0卡方值=0，會無法判斷模式好壞。若為過度鑑定時，透過卡方值是否小於，若小於表示模式合適（與飽和模式相比），即模式可接受，但仍需要評估是否可以再做簡化（刪除幾條路徑）；若大於表示模式不合適，則要增加路徑。不足鑑定則是方程式個數少於自由參數個數，模式必定不能被鑑定。
+(六)評估適度(Goodness-of-fit)的標準，包含不合理估計(Offending Estimate)的鑑定與修正與整體模式、衡量模式及結構模式適合度的測量與比較。
+不合理估計(Offending Estimate)的鑑定包含任何構面不可有負的或不顯著的誤差變異、標準化係數超過或非常接近1或任何估計係數的標準誤非常大。
+(七)解釋和修正模式，檢查標準化殘差矩陣與修正指標(Modification
+Indices)鑑定模式是否還需要改變。一般來說若標準化殘差矩陣中若有值絕對值大於2，便可視為有問題。一般來說最常用的兩種修正方式為解放估計參數（增加新的因果路徑或共變異數）或使參數為0（刪除因果路徑或共變異數）。
+第一種Lagrang multiplier test為利用增加新的路徑或共變異數到所提出的理論架構中來改善χ2值，其原理為每增加一路徑或共變異數共變異數便減少一個自由度，而每一個自由度的χ2值為3.84，若所增加的路徑能造成χ2值變化大於3.84，則表示能顯著地改善模式契合度（Model’s fit）。第二種Wald test為刪除某一因果路徑或共變異數可造成χ2值很小並且不顯著的增加。
+
+圖 SEM分析流程圖
+六、軟體應用相關規則
+Hatcher建議使用SAS軟體進行衡量模式與結構模式分析時，需考慮下列規則，雖然以下內容為針對SAS軟體應用所撰寫的，但其內容與模式分析時所需考量的限制有關，其提出的規則如下所示：
+(一)一般來說，只有外生變數間允許有共變異數。
+(二)模式中每個內生變數都有殘差項。
+(三)外生變數沒有殘差項。
+(四)模式中每個外生變數都需要估計其變異數，包含殘差項。
+(五)在大部分的案例中，外生變數兩兩間的共變異數都必須要估計，但內生變數不用。
+(六)在簡單遞迴模式（Simple Recursive Model）中，殘差項的共變異書不需要估計。
+(七)每個內生變數需要有個別的方程式，且外生變數名稱在等號左邊。
+(八)列於等號右邊的變數對內生變數有直接的影響。
+(九)外生變數（包含殘差項）不可出現在等號左邊。
+(十)對估計已知獨立變數之路徑係數，應給予待估計之路徑係數一獨立變數名稱。
+(十一)將內生變數的殘差項列於各方程式的最後一項。
+(十二)為所有估計參數命名。
+(十三)當參數給定一數值時將參數固定，並將數值取代為參數名稱。
+(十四)限制兩個或多個參數相等時，這些參數需使用相同的名稱。
+七、分析結果的評估
+在判斷模式配適度時，首先要先對整個模式作配適度的判斷，接者在做衡量模式與結構模式的配適度判斷。在整體模式方面提供了一些模型評鑑指標，這些指標可分為三種型態：絕對擬合指標、增量擬合指標與精簡擬合指標。絕對擬合指標只評估整體模式但不對過程擬合作修正；增量擬合指標是以提出模式與研究者指定的對比模式做比較；精簡擬合指標則是對自由度作調整。由於沒有一個或一組指標事功認最好的，所以最好就這三種類型各選ㄧ個或兩個作為指標。以下依序分別說明整體模式、衡量模式與結構模式的結果評估標準。
+(一)對整個模式的評估一般常用之評估指標包括：
+1.卡方檢定（χ2 test）
+卡方值越小表示模式的適合情形越好，但在運算中卡方值對樣本大小極為敏感，較大的樣本容易產生較大的卡方值。為了彌補這項缺失，於是產生卡方自由度比。
+
+2.卡方自由度比（χ2/df）
+卡方自由度比越小，表示模式配適度越高；一般而言，卡方自由度比小於5時，表示模型具有理想之配適度，最好小於3。
+3.配適度指標（Goodness of Fit Index, GFI）
+GFI 類似迴歸分析中的可解釋變異量（R2），其表示假設模型可解釋觀察變數資料之變異數與共變數的比例。GFI值越接近1，表示模式配適度越高；反之，則表示模式配適度越低。通常採用GFI＞0.9。
+4.調整之配適度指標（adjusted-goodness-of-fit index, AGFI）
+AGFI 則類似於迴歸分析中的調整後可解釋變異量（adjusted R2），在計算GFI 時，將自由度納入考慮之後所設計出來的模型配適度指數，當參數越多時，AGFI 指數數值將越大，越有利得到理想之配適度。通常採用AGFI＞0.9。
+5.比較性配適指標（Comparative Fit Index, CFI）
+CFI 可反映出假設模型與無任何共變關係的獨立模型之差異程度，同時亦考慮到被檢驗模型與中央卡方分配的離散性。CFI 指數越接近1 代表模型契合度越理想，表示能夠有效改善中央性的程度。通常採用CFI＞0.9。
+6.標準配適度指標（Normed-fit index,
+NFI）
+NFI 指標的原理是計算假設模型的卡方值與虛無假設的卡方值的差異量，可視為是某個假設模型與最差模型之改善情形。通常採用NFI＞0.9。
+7.殘差均方根指數（Root Mean square Residual, RMR）
+係用來反應理論假設模型的整體殘差。當RMR＜0.05表示模型配適度佳。
+8.模型契合指標（Parsimonious Goodness-Fit-Index, PGFI）
+PGFI指數考慮到了模型當中估計參數的多寡，可以用來反應SEM假設模型的簡約程度（degree of parsimony）。PGFI指數越接近1，顯示模型越簡單，Mulaik等人（1989）指出，一個良好的模型，PGFI指數大約在0.5以上都是可能的。
+表2 模式配適度指標彙整表
+
+
+
+
+指標類型
+
+
+指標名稱
+
+
+判斷值
+
+
+適用情形
+
+
+
+
+絕對擬合指標
+
+
+χ2/df
+
+
+＜5
+
+
+不受模式複雜度影響
+
+
+
+
+絕對擬合指標
+
+
+GFI
+
+
+＞0.9
+
+
+說明模式解釋能力
+
+
+
+
+增量擬合指標
+
+
+AGFI
+
+
+＞0.9
+
+
+不受模式複雜度影響
+
+
+
+
+增量擬合指標
+
+
+CFI
+
+
+＞0.9
+
+
+說明模式較虛無模型的改善程度
+
+
+
+
+增量擬合指標
+
+
+NFI
+
+
+＞0.9
+
+
+說明模式較虛無模型的改善程度
+
+
+
+
+絕對擬合指標
+
+
+RMR
+
+
+＜0.05
+
+
+瞭解殘差特性
+
+
+
+
+精簡擬合指標
+
+
+PGFI
+
+
+＞0.5
+
+
+反應SEM假設模型的簡約程度
+
+
+
+
+(二)測量模式的評估
+測量模式分析係基於檢定模式中兩種重要的建構效度：收斂效度（convergent
+validity）及區別效度（discriminant validity）。本研究根據Hair建議的三項指標來評鑑測量模式，各指標分述如下：
+因素負荷量（Factor Loadings）：此指標是評估每個負荷量是否具有統計顯著性，並要大於0.5。
+潛在變項的組成信度（composite reliability）：以CR表示，潛在變項的CR值為測量變項信度的組成，表示構念指標的內部一致性，信度愈高顯示這些指標的一致性愈高，在0.6和0.7之間的信度是可接受的，代表研究模式內部一致性良好。測量誤差為1－指標標準化負荷量的平方。
+
+一般要求構面信度最好超過0.7以上（但至少要超過0.6）。
+潛在變項的變異抽取量（variance extracted）：以VE表示，VE值是計算潛在變項各測量變項對該潛在變項的變異解釋力。若VE值愈高，則表示潛在變項有愈高的信度與收斂效度，【41】建議其標準值須大於0.5。
+
+而在區別效度的部份，本研究以χ2 差異檢定法與t檢定進行檢定。首先，進行χ2差異檢定法（chi-square different test）需將欲檢視的潛在變項間之相關係數設為1，稱為受限模型（constrained model），接著檢視兩模型自由度之差距，若χ2差值大於顯著水準之χ2 值，則表示檢視的潛在變數間具有區別效度。t檢定法為1減去未受限模式兩個成對因素間相關係數的估計除以標準誤。當|t|＞2，就表示構面間不是完全相關，也就是兩構面是有區別的。
+(三)結構模式的評估
+即求解釋能力，評估方式如同複相關係數平方R2為指標，值越大越好，對每一個方程試作的個別評估與對整體結構的評估。
+ 
+
+
+
+
+
+
+Linear Structural Relations Model - 線性結構關係模式
+
+
+
+
+
+
+
+
+
+
+迴首頁
+網站地圖
+關於我們
+聯絡我們
+
+
+
+
+
+國家教育研究院雙語詞彙、學術名詞暨辭書資訊網
+
+
+
+
+詞彙查詢
+下載專區
+詞彙建議
+審譯會
+
+
+
+
+
+
+ ×
+請輸入您的使用者帳號密碼
+
+
+
+
+帳號
+
+請輸入註冊的 email。
+        
+密碼
+
+密碼英文字母有分大小寫 。
+      
+
+登入
+離開
+
+
+
+
+
+
+
+
+
+釋義
+翻譯
+
+
+
+  回簡目列表 
+             修訂/勘誤建議
+ 單筆輸出
+
+
+
+
+ / 4筆
+            
+
+
+
+>
+»
+
+
+
+
+
+
+
+線性結構關係模式
+Linear Structural Relations Model
+詹志禹
+蔡坤宏
+
+            2000年12月
+            教育大辭書
+
+
+名詞解釋:　　線性結構關係模式是結合因素模式(factor model)及結構方程模式(structural equation model)的一種統計模式。其目的主要在驗證建構(construct)間的理論關係。由於模式設定上相當具有彈性，在實證應用上相當廣泛。
+　　理論上，一般皆將模式寫為：
+ 　　 
+　　（測量模式，處理觀察變項與潛在變項之間的關係）
+ 　　 
+　　（結構模式，處理潛在變項之間的結構關係）式中，x與y表示測量指標向量；ξ及η表示x及y之因素向量；Λx, 和Λy則是因素係數矩陣；B及Γ表示結構係數矩陣；δ與ε是測量誤差向量；ζ是結構誤差向量。這個模式包含許多特殊子模式，如因素分析模式、路徑模式、多元迴歸模式、結構方程模式等等；其中，因素分析模式帶有潛在變項，其餘三種模式則皆處理觀察變項之間的關係，不假定潛在變項的存在。
+　　參數估計上，一般而言，有未加權最小平方法(unweighted least square, ULS)、一般化最小平方法(generalized least square, GLS)、最大概率法(maximum likelihood, ML)及加權最小平方法(weighted least square, WLS)等四種。其中，最常用的是ML及GLS，但這兩種估計法需假定常態母群分佈。ULS及WLS雖然不假定母群為常態，但卻需要較大的樣本。
+　　評估有推論性統計量及描述性統計量等兩類指標。前者是樣本數減1與配適值的乘積，虛無假設下，這個乘積近似卡方分佈。但要註意的是，當分析的矩陣不是共變矩陣時，這乘積並不近似卡方分佈。而且，如果母群峰度過高，ML及GLS產生的乘積亦不近似卡方分佈。此外，推論性統計量是樣本大小的函數，故實務上常同時輔以描述性統計量進行評估。常見的描述統計量有配適度指標(goodness of fit index, GFI)、調整配適度指標(adjusted goodness of fit index, AGFI)及均方誤差根(root of mean of square error, RMSE)等。
+　　由於線性結構關係模式的應用電腦套裝程式當中，以尤拉斯哥(Jöreskog)及索本(Sörbom)所發展的LISREL最為流行，故線性結構關係模式又常被稱為「LISREL模式」，但實際上可用的電腦程式不止於此，班特勒(Bentler)所發展的EQS就是另外一例。
+
+
+
+線性結構關係模式
+Linear Structural Relations Model
+
+
+
+
+
+                    以 Linear Structural Relations Model 進行詞彙精確檢索結果
+                
+
+
+
+
+出處/學術領域
+英文詞彙
+中文詞彙
+
+
+
+
+
+                    以 線性結構關係模式 進行詞彙精確檢索結果
+                
+
+
+
+
+出處/學術領域
+中文詞彙
+英文詞彙
+
+
+
+
+
+
+引用網址:
+
+
+
+
+
+ / 4筆
+            
+
+
+
+>
+»
+
+
+
+
+
+推文
+評分
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            評分
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+相關詞彙
+詞彙建議
+
+
+
+
+
+辭書
+
+
+            線性結構關係模式 
+            Linear Structural Relations Model
+        
+
+
+
+
+
+
+        
+        暫無建議訊息
+        
+        
+
+
+
+
+
+
+
+
+
+
+        
+Copyright © 2012國家教育研究院 版權所有 建議最佳瀏覽螢幕解析度1024×768 三峽總院區 地址：23703新北市三峽區三樹路2號 電話：(02)7740-7890 傳真：(02)7740-1170 臺北院區 地址：10644臺北市大安區和平東路一段179號 電話：(02)7740-7890 傳真：(02)7740-7849 臺中院區 地址：42081臺中市豐原區師範街67號 電話：(02)7740-7890 傳真：(04)7740-7949 網站服務：臺北院區編譯發展中心
+        
+
+
+
+                瀏覽人次: 1794627
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：虛擬社群線上行為模式之實證研究－線性結構模式之交叉效度檢定
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+校內出版品
+交大管理學報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 虛擬社群線上行為模式之實證研究－線性結構模式之交叉效度檢定An Empirical Research into the Online Behavior Model in a Virtual Community-the Case of Cross Validation in Causal Modeling
+作者: 餘泰魁Tai-Kuei YuDepartment of Management Science管理科學學系
+關鍵字: 虛擬社群;結構方程式模型;交叉效度;virtual community;structural equation modeling;cross validity
+公開日期: 2005
+摘要: 隨著網路科技的普及，網路使用者的技術門檻需求大幅降低，改變了傳統的人際關係溝通模式，形成許多新的網路社群。虛擬社群經營者必需滿足網友間的互動，網友於社群間和他人溝通獲得滿足，進而加深其參與程度，社群經營者要如何吸引人潮、留住人潮也格外值得我們思考。本研究提出一「虛擬社群線上行為模式」因果模式，採問捲調查模式以臺南市東區網咖店為樣本母體，有效問捲回收516份，並依亂數分類成二組樣本資料，經結構化方程式模型之建構與實證，並得致下列研究結果：(1)研究模式中各潛在依變項對整體模式的變異解釋力(R^2)分別為：行為(0.881)、行為傾向(0.386)、態度(0.691)，顯示本研究所提的修正計畫行為模式在關係型虛擬社群，為一可接受的模式。(2)在雙交叉驗証方面，以基準樣本為基礎模式時交叉效度指標(Cross validation index, CVI)為10.87，落在顯著水準α=0.05信賴區間(10.13~11.64)中；反之，以校準樣本為基礎模式時交叉效度指標為8.32，落在顯著水準α=0.05信賴區問(7.77~8.89)中；顯示研究二組樣本具有交叉效度，研究量表與研究模式之接受性相當高。With the simplification of internet technology, the technical requirements necessary for internet users have drastically declined. This has changed the traditional communication model of interpersonal relationships and created many internet communities. A virtual community has to satisfy the desire for interaction among its visitors, fulfill their need to communicate with others in the community and furthermore deepen their degree of participation. How a virtual community attracts and keeps its visitors is worth pondering. This study presents a causal model of ”the online behavior model in a virtual community.” The questionnaires were filled out at internet cafes located in the east district of Tainan, 516 valid of questionnaires were returned and were divided into two groups according to random numbers. Through structural equation modeling, the results came out as follows: (1) In the research model, the variation R^2 of each latent dependent variable to the holistic model rated as behavior (0.881), behavioral intention (0.386) and attitude (0.691) respectively, which shows that the revised theory of planned behavior is an acceptable model in the relevant online virtual community. (2) In respect of the double cross test, the cross validation index (CVI) read as 10.87 and fell between a significant level (α=0.05) and a confidence interval (10.13~11.64) when the calibration sample was taken as the basic model; conversely, the cross validation index (CVI) read as 8.32 and fell between a significant level (α=0.05) and a confidence interval (7.77~8.89) as the validation sample was the basic model. The two sets of samples present cross validity; the research questionnaire and model are highly acceptable.
+URI: http://hdl.handle.net/11536/128986
+期刊: 交大管理學報Chiao Da Mangement Review
+Volume: 1
+起始頁: 67
+結束頁: 95
+顯示於類別：交大管理學報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文件中的檔案：存到雲端
+
+
+
+
+2005066795.pdf
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef台灣虛擬社群服務發展策略分析 / 李品青;Lee, Pin-Ching;徐作聖;Shyu, Joseph Z.社群銷售商業模式創新與建構之個案研究 / 彭彥勳;Peng, Yen-Hsun;李永銘;Li, Yung-Ming虛擬社群形成之意義及其衡量指標之探討：以網路書店為例 / 萬榮水;梁瑞文;Rurng-Shueei Wahn;Jul-Wen Liang帶給台灣結婚市場創新動能的媒介 —以非常婚禮網站為例 / 黃妃儀;Huang, Fei-Yi;韓復華;Han, Anthony F.虛擬社群中的組織公民行為之研究：以線上遊戲團隊為例 / 游佳萍;陳妍伶;Chia-Ping Yu;Yen-Ling Chen社會資本、個人特質、虛擬社群意識與線上社會支持之關係探討 / 張又翔;Chang, Yu-Hsiang;林介鵬;Lin, Chieh-Peng虛擬社群參與者之市場區隔與經營模式之研究 / 廖文智;Wen-Zi Liao;林君信;Gin-Shin Lin南臺科技大學 - 線性結構模式交叉效度檢定－以虛擬社群線上行為模式為例 / 餘泰魁; 黃識銘;劉彩鳳 南臺科技大學 - 線性結構模式交叉效度檢定－以虛擬社群線上行為模式為例 / 餘泰魁; 黃識銘;劉彩鳳 南臺科技大學 - 金門觀光客旅遊行為意向實證研究—以線性結構模式交叉效度檢定 / 餘泰魁; 李能慧;吳桂森 南臺科技大學 - 金門觀光客旅遊行為意向實證研究—以線性結構模式交叉效度檢定 / 餘泰魁; 李能慧;吳桂森 南臺科技大學 - 金門觀光客旅遊行為意向實證研究—以線性結構模式交叉效度驗證 / 餘泰魁; 李能慧;吳桂森 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：校內出版品
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+校內出版品
+: [1514]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+交大出版社
+
+交大管理學報
+
+交大資訊人
+
+全球客家研究
+
+數理人文
+
+新客家人群像
+
+犢：傳播與科技
+
+科技法學評論
+
+管理與系統
+
+資訊社會研究
+
+
+
+
+探索
+
+
+作者
+23 
+編輯室15 
+李泰祥11 
+Shyh-Rong Fang11 
+方世榮9 
+丘成桐9 
+張維安8 
+曾淑芬7 
+朱博湧7 
+翁秉仁6 
+Shu-Fen Tseng.
+下一步 >
+
+關鍵字
+255 
+新客家人群像93 
+數理人文30 
+Hakka30 
+客家20 
+Internet18 
+網際網路15 
+樂理14 
+導讀14 
+文化傳承13 
+客家新女性.
+下一步 >
+
+公開日期
+954 
+2010 - 2017514 
+2001 - 2009
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：交大管理學報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+校內出版品
+
+
+
+
+
+
+交大管理學報
+: [147]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 147 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2015The Effect of Herding Behavior and the Sentiments of Investors on Taiwan Stock Index Futures張巧宜; 陳香蘭; 楊馥嫣; Chiao-Yi Chang; Hsiang-Lan Chen; Fu-Yen Yang; Department of Management Science; 管理科學學系
+2015The Relationships among Emotional Capital, Job Satisfaction and Organizational Citizenship Behavior: A Cross-Level Analysis劉仲矩; 陳秀育; 廖智宏; Chung-Chu Liu; Shiou-Yu Chen; Chin-Hung Liao; Department of Management Science; 管理科學學系
+2015The Media Effect on Stock Market Overreaction詹家昌; 許月瑜; 陳麗如; Chia-Chung Chan; Yueh-Yu Hsu; Li-Lu Chen; Department of Management Science; 管理科學學系
+2015Does Banking Relationship Matter in Financial Distress Spillover?﻿"紀麗秋"; Li-Chiu Chi; Department of Management Science; 管理科學學系
+2015Resolving Partial-Viewpoint Paradoxes of Innovation Strategies: Toward an Integrative Framework洪新民; Department of Management Science; 管理科學學系
+2015The Effect of Directors’ and Officers’ Liability Insurance on Stock Investors’ Perceptions of Earning Quality廖秀梅; 湯麗芬; 李建然; Department of Management Science; 管理科學學系
+2015How Does Face Consciousness Affect Purchase Intention of Cosmetic Surgery?葉晶雯; Department of Management Science; 管理科學學系
+2015Earnings Management of Firms Just Meeting Zero-earnings Thresholds: The Stakeholders’ Perspective李淑華; 簡雪芳; 蔡彥卿; 張玲玲; Department of Management Science; 管理科學學系
+2014The Value Relevance of Fair Value Accounting Information during Financial Crisis葉金成; 游輝城; Chin-Chen Yeh; Hui-Cheng Yu; Department of Management Science; 管理科學學系
+2014The Real-Option Value Contained in Consumers' Initial Purchase羅烈明; 楊宜興; 李慧慈; 蔡偉澎; Lieh-Ming Luo; Phil Yi-Hsing Yang; Sandra H. T. Lee; Wei-Pen Tsai; Department of Management Science; 管理科學學系
+2014Is Corporate Governance Effective in Earnings Management in Asian Emerging Markets?黃俊閎; 林鳳儀; 吳勝富; 黃仁伯; Chun-Hung Huang; Feng-Yi Lin; Sheng-Fu Wu; Jen-Bor Huang; Department of Management Science; 管理科學學系
+2014Establishing a Value-Creation Model on Mergers and Acquisitions: An Integrated Strategy Approach徐蕙萍; Stacy Huey-Pyng Shyu; Department of Management Science; 管理科學學系
+2014The Moral Decision-Making Process of Corporate Internal Auditors盧正宗; 祝道松; 張允文; Cheng-Tsung Lu; Dauw-Song Zhu; Yeun-Wen Chang; Department of Management Science; 管理科學學系
+2014Group Dynamics in Collocated and Virtual Teams周惠文; 林裕勛; 許榮隆; 郭蕙瑜; Huey-Wen Chou; Yu-Hsun Lin; Jung-Lung Hsu; Hui-Yu Kuo; Department of Management Science; 管理科學學系
+2014The Relationship between Pre-trade Transparency, Order Imbalance and Investors' Behavioral Biases林雅玲; 馬黛; Ya-Ling Lin; Tai Ma; Department of Management Science; 管理科學學系
+2014Adjusting Minimal Maintenance Margin Requirement When Price Limits Widening王明昌; 鄭揚耀; 陳宥榤; Ming-Chang Wang; Lee-Young Cheng; You-Jie Chen; Department of Management Science; 管理科學學系
+2014Development of the Comprehensive Training Design Competencies for Human Resource Professionals in Taiwan林怡君; 範凱棠; 陳心懿; 李鬱澄; Yi-Chun Lin; Kai-Tang Fan; Angela Shin-Yih Chen; Yu-Cheng Lee; Department of Management Science; 管理科學學系
+2014Combining Demand Forecasts in a Newsboy Problem Using an Unequally Weighted Method李智明; 萬文隆; Chih-Ming Lee; Wen-Lung Wan; Department of Management Science; 管理科學學系
+2013Inter-Industry Financial Contagion and Reorganization Filings紀麗秋; Li-Chiu Chi; Department of Management Science; 管理科學學系
+2013The Study on Brand Personality of Automobile Advertisements and the Communication of Brand Personality蔡佳靜; 何佳蓁; Chia-Ching Tsai; Chia-Chen Ho; Department of Management Science; 管理科學學系
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 147 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+5 
+朱博湧4 
+Chin-Tien Hsu4 
+Tser-Yieth Chen4 
+徐蕙萍4 
+許金田4 
+陳澤義3 
+Chia-Chung Chan3 
+Chih-Jen Huang3 
+Ching-Wen Wang3 
+Hsiu-Hua Hu.
+下一步 >
+
+關鍵字
+6 
+信任6 
+公司績效5 
+Corporate governance5 
+Trust4 
+公司治理4 
+知識分享3 
+Earnings management3 
+Firm performance3 
+Herding behavior3 
+Knowledge Sharing.
+下一步 >
+
+公開日期
+61 
+2010 - 201586 
+2004 - 2009
+
+
+
+
+
+
+
+
+線性組織結構- 台灣Wiki 首頁百科圖片百科分類TwWiki台灣Wiki>百科分類>機構>產業經濟>線性組織結構評論（0）分享到：分享到Facebook分享到Twitter分享到Google+分享到噗浪線性組織結構 標籤： 暫無標籤 線性組織結構來自於軍事組織系統。是指按照縱向關係逐級安排責、權的組織方式。在線性組織結構中，每一個工作部門只有一個指令源，避免了由於矛盾的指令而影響組織系統的運行。但在一個大的組織系統中，由於線性組織系統的指令路徑過長，會造成組織系統運行的困難。項目化組織結構與職能化組織結構完全相反，其系統中的部門全部是按項目進行設置的，每一個項目部門均有項目經理，負責整個項目的實施。系統中的成員也是以項目進行分配與組合，接受項目經理的領導。目錄1. 優缺點2. 特點及應用3. 現像規律4. 非平衡態5. 同類比較回目錄1 線性組織結構 -優缺點 線性組織方式的優點責權清楚，相對穩定性較大，易於保持良好的紀律，不易發生責權混亂的現象。 　　線性組織方式的缺點可能導致管理方式死板僵化，工作作風武斷甚至獨裁；某一位領導人負擔過重，而其他人員又閑著無事；可能有的部門會強調局部目標和局部利益而忽視整體目標與整體利益；可能因某位領導離職或調離工作崗位而影響整個工作。回目錄2 線性組織結構 -特點及應用 線性結構材料的組織在線性組織結構中，每一個工作部門只能對其直接的下屬部門下達工作指令，每一個工作部門也只有一個直接的上級部門，因此，每一個工作部門只有唯一一個指令源，避免了由於矛盾的指令而影響組織系統的運行。在國際上，線性組織結構模式是建設項目管理組織系統的一種常用模式，線性組織結構模式可確保工作指令的唯一性。但在一個特大的組織系統中，由於線性組織結構模式的指令路徑過長，有可能會造成組織系統在一定程度上運行的困難。回目錄3 線性組織結構 -現像規律 職能型組織結構圖在該組織結構中，每一個工作部門的指令源都是唯一的。一、線性組織結構應具有開放性耗散結構論告訴人們，任何系統要求得發展，從無序發展為有序，或從低級的有序發展為更高級的有序，都必須首先使系統開放，開放是系統有序化的前提，是耗散結構得以形成、維持和發展的首要條件。只有對外開放，從外界吸收負熵流來抵消自身的熵產生，才能使系統的總熵逐步減少，從而維持其有序或從無序到有序的演化。組織需要與環境進行物質、能量和信息的交換才能維持，所以它也屬於耗散結構。一個良好的組織系統，必然是個有序的自組織系統，必然要求對環境開放，只有對外界開放，組織系統才能新陳代謝，才能有適應環境的能力和旺盛的生命力。現代組織系統開放的程度如何，直接決定著管理效能的大小。例如，組織在其運作過程中就必須與外部環境進行人員、材料、資金等方面的交流，才能保持其線性組織結構的不斷地壯大和發展。具體地說，在對人員管理中，對其組織人員應不斷進行成員更新，以便把那些不稱職的成員清除出去，同時把組織中德才兼備的管理人才及時吸收到管理者隊伍中來。新員工會帶來不同的價值觀和新觀點、新方法。從外部招募來的員工對現有的組織文化有一種嶄新的、大膽的視角，而較少有感情的依戀。典型的內部員工已經徹底地被組織文化同化了，受慣性思維影響，既看不出企業有待改進之處，也沒有進行變革、自我提高的意識和動力，整個組織缺乏競爭的意識和氛圍，呈現出一潭死水的局面。通過從外部招募優秀的技術人才和管理專家，就可以在無形中給組織原有員工施加壓力，激發鬥志，從而產生「鯰魚效應」。在資金與材料的管理中，組織與環境不斷進行資金交流，一方面可以從環境中獲取資金，以保證管理活動的正常開支；另一方面，通過支出一部分資金可以改善管理環境或購進各種設備。而組織不斷從環境中引進各種先進技術和設備，可以使原有的技術和設備得到更新，從而使組織能夠隨著生產力和社會的不斷發展而發展。實踐表明，建立相對穩定的開放性系統乃是保證組織不斷適應新的環境的必要條件。二、線性組織結構應遠離平衡態一個系統如果處於無差異的平衡狀態，就意味著系統內不存在勢能差。耗散結構論告訴我們，無勢能差的平衡系統服從勢能最小原則，因而它必然是一個低功能的系統。任何一個具有內在活力的社會系統，必定是一個有差異的、非均勻的、非平衡的系統。因為在平衡態下，系統內部混亂度最大，無序性最高，組織最簡單，信息量最小。而且，系統一旦進入這種「死」結構的平衡態，便維持這種狀態不變，很難取得前進和發展。這種從錶面上看來的平衡，實際上會對現代管理起到極大的阻礙作用和窒息作用，使組織系統變得死氣沉沉沒有差異，缺乏競爭，陷入一種低功率、低效益的局面，這實際上就是官僚主義的來源，是現代管理之大忌。所以，「活」的動態的平衡是現代組織系統機制完善的根本標誌，是現代管理者力求達到的目標。組織中的人員、結構、權力等都必須遵循遠離平衡態原則。這也就是說，構成管理系統的人員必須具有各不相同的能力和水平，尤其是作為管理者系統的第一把手應具備把握全局的能力和權力，而其他成員則不必具備把握全局的能力和權力，只需具備把握某一方面全局的能力和權力即可。如果一個管理者系統的所有成員在能力、權力和專業知識方面相差無幾，則勢必出現互相扯皮、議而不決的局面，從而影響管理系統功能的發揮。在組織權力的組成上，一個人不能掌握所有的權力，管理系統的權力分配分散、均衡、相互制約。為適應現代經濟和社會發展的要求，要由集中的、等級式的權力結構逐步演變到分散的、網路式的權力結構。構成組織的各個子系統的「大而全」和「小而全」的現象，都應該剋服。遠離平衡態是組織系統高效運作的又一必要條件，欲建立高度有效的組織管理系統，也必須遵循之。三、線性組織結構內部應適應非線形調節開放和非平衡為組織朝著有序的耗散結構發展提供了必要的條件。但組織要從無序向有序發展並使系統重新穩定到新的平衡狀態還必須通過組織內部構成要素非線性相互作用來完成，即通過系統內部非線性機制的調節獲得自我完善。也就是說，構成管理系統的成員之間依—定規則或程序而相互制約和相互監督，使該系統的每一個成員(包括第一把手)不至於做出超越管理許可權的行為而破壞組織性。目前，有些組織的管理者之所以會發生貪污腐敗行為，一個重要原因是系統成員之間缺少這種相互制約和監督的機制，結果使掌握大權的主要管理者可以不受任何約束地為所欲為，使整個管理系統的正常結構與功能遭到破壞。根據組織要素包括管理主體和管理客體，線性組織結構可以分為管理系統和業務系統，管理系統指揮、協調業務系統，業務系統完成組織的目標，管理系統和業務系統組成一個耦合系統，它們組成非線形的關係，它們之間相互作用共同實現組織的目標。管理系統又可繼續細分為決策部門、執行部門、監督部門和反饋部門。這些部門在組織中相互聯繫，構成一個系統，從而使組織管理過程成為一個有始有終、不斷周轉和不斷更新的完整過程。決策系統是現代化線性組織結構的核心，它的主要任務是對各種預選方案進行比較、鑒別、分析，權衡利弊得失。回目錄4 線性組織結構 -非平衡態 線性組織結構任何一個組織都擁有自身的結構，線性組織結構既是組織的存在形式，又是組織的關係模式。線性組織結構反映了它與環境之間的關係，同時又會反映到功能上。組織賦予群體以結構，使人們能夠有序化地開展集體行動。一個群體只有被組織起來並擁有一定的結構，才能確立起其組織目標，才能把組織成員每一個人的目標轉化為這個群體的共同目標，才能把不同的要求整合到一個共同的方向上去，在行為上實現協調併產生合力。也就是說，一定的線性組織結構把組織功能分解和分配到不同的層級和不同的崗位上，使每一個層級、每一個崗位以及每一個崗位上的組織成員都能按照線性組織結構的要求去完成自己的任務，而線性組織結構又反過來整合了它（他）們的工作成果，使每一個層級、崗位和人員的工作成果聯為一體，並以組織整體功能的形式出現。在耗散結構論看來，非平衡態結構也是系統的一種非飽和結構，是一種遠離平衡的狀態，它意味著系統內部具有較大的變化空間，能夠不斷地與環境之間進行物質的和能量的交換。正如埃里克·詹奇所指出的：「只有當系統的內部狀態處於非平衡態時，與環境的交換才能由系統本身來維持，否則交換過程將趨於停止。」根據這一理論來考察組織，就會看到，任何一個組織都會存在著兩種傾向：一種是朝著平衡態的方向發展；另一種是朝著非平衡態的方向而作出安排。組織的非平衡態也就是組織擁有一種有序結構的狀態，而平衡態則是一種「混沌」狀態。在常規組織的運行和發展中，總是有著一種莫名的動力驅使它朝著平衡態的方向運動，即走向結構「硬化」的方向，以致於出現了可能產生組織無序的危機。這個時候，組織自身生存下去的需要就可能會佔居上風，因而出現一種打破組織平衡態的力量，把組織重新拉回到一種非平衡態的狀態中來。這就是組織自身非平衡態的「漲」「落」，也是組織內部力量以及外部功能的「漲」「落」。一切常規組織都難以避免這樣的命運，都在重複的「漲」「落」中去描繪組織的生命過程。回目錄5 線性組織結構 -同類比較 矩陣組織結構項目的職能組織結構是指一個系統的組織，是按職能組織結構設立，當採用職能組織結構進行項目管理時，項目的管理班子並不作明確的組織界定，因此有關項目的事務則在職能部門的負責人這一層次上進行協調。項目的職能組織結構是指在這種情況下，項目管理實施班子的組織並不十分明確，各職能部門均承擔項目的部分工作，而涉及職能部門之間的項目事務和問題由各個部門負責人負責處理和解決，在職能部門經理層進行協調。項目的矩陣組織結構是各取項目的職能組織結構和項目的線性組織結構的特徵，將各自的特點混合而成的一種項目的組織結構。按從兩種組織結構中取自一種組織特徵的大小，項目的矩陣組織又可分為弱矩陣組織結構、中矩陣組織結構和強矩陣組織結構。弱矩陣組織結構基本保留項目的職能組織結構的大部分主要特徵，但在組織系統中為更好地實施項目，建立相應明確的項目管理班子。項目班子由各職能部門屬下的職能人員或職能組所組成，這樣針對某一項目就有對項目總體負責的項目管理班子。然而，在弱矩陣組織結構中並未明確對項目目標負責的項目經理，即使有項目負責人，他的角色只不過是一個項目協調者或項目監督者，而不是一個管理者。上一篇[國際壟斷資本主義]    下一篇 [威廉·E·康奈爾二世]相關評論同義詞：暫無同義詞收藏到：收藏到Facebook收藏到Twitter收藏到Google+收藏到噗浪詞條信息瀏覽次數: 67 次更新時間: 2013-09-21相關詞條精彩詞條More>《最後的氣宗》尼策pan紅外測硫儀塑料擠出生產線三星 SGH-E848分享到分享到Facebook分享到Twitter分享到Google+分享到噗浪1優缺點2特點及應用3現像規律4非平衡態5同類比較
+柏際公司－軟體代理的專家－Lisrel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國外軟體
+
+
+
+
+			12月銷售軟體排行
+
+
+1.
+
+
+
+
+
+					MindManager 視覺化思考繪圖軟體
+
+
+2.
+
+
+
+
+
+					EViews 預測分析計量軟體
+
+
+3.
+
+
+
+
+					LISREL 線性結構分析軟體
+
+
+
+
+4.
+
+
+
+
+					ATLAS.ti 定性量化分析軟體
+
+
+5.
+
+
+
+
+
+
+					EndNote 參考書目軟體
+
+
+6.
+
+
+
+
+
+
+					Stata 資料管理統計繪圖軟體
+
+
+7.
+
+
+
+
+					See5/C5.0  資料探勘軟體
+
+
+8.
+
+
+
+
+
+					HLM 階層分析軟體
+
+
+9.
+
+
+
+
+
+Expert Choice  AHP專家決策分析軟體
+
+
+10.
+
+
+
+
+
+					Grapher 3D科學繪圖軟體
+
+
+ 
+
+ 
+
+
+
+
+柏際股份有限公司
+			TEL 02-2592-3171
+			FAX 02-2592-3172
+			info@bockytech.com.tw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**提供各式軟.硬體代訂服務! **
+
+
+
+
+
+如有未列於網站之產品需求，
+			請來電或來信詢問!  
+
+info@bockytech.com.tw
+
+
+ 
+
+
+
+
+
+
+
+LISREL 
+			9.3線性結構分析軟體
+LISREL 
+
+9.3(Linear Structural Relations 線性結構關係) 
+特色包含
+			組織潛在的曲線模型(Structured latent curve models)、順序的變量的要素分析(Factor analysis 
+			of ordinal variables) 、對於多層的數據的綜合線性模型(GLIMs) 
+			(Generalized linear models (GLIMs) for multilevel data)、觀測殘餘(Observational 
+			residuals)、轉換成圖形用戶界面(GUI)及Writing parameter estimates, standard 
+			error estimates and measures of fit to a PSF。 
+　
+
+由於LISREL在探討多變項因果關係上的強力優勢，使得LISREL在社會學研究上似乎有愈來愈受重視的趨勢，LISREL係屬於「結構等式模式(structural equation modeling，SEM)」家族的一員，因此LISREL的最大能耐亦在於探討多變項或單變項之間的因果關係。SEM一族的成員包含「共變數結構分析(covariance structure analysis)」、「潛在變項分析(latent variable analysis)」、「驗證性因素分析(comfirmatory factor analysis)」、以及「LISREL分析(LISREL analysis)」等等，SEM結合了多元迴歸與因素分析，可以同時分析一堆互為關連之依變項間的關係。SEM之使用步驟如下：
+
+1.發展研究者之理論基礎模式。
+
+
+2.建構變項間之因果關係的徑路圖。
+
+
+3.將徑路圖轉化為一套結構等式，並指定其測量模式。
+
+
+4.選擇輸入矩陣類型(相關矩陣或變異數－共變數矩陣)，並對研究者假設之理論模式進行測量與驗證。
+
+
+SSI has developed LISREL 9.3, 
+				which is on the cutting edge of current technology. The program 
+				has been tested extensively on the Microsoft Windows platform 
+				with Windows7, Vista and XP operating systems.
+　
+
+LISREL 
+				9.3 supports Structural Equation Modeling for a mixture of 
+				ordinal and continuous variables for simple random samples and 
+				complex survey data.
+				The LISREL implementation allows for the use of design weights 
+				to fit SEM models to a mixture of continuous and ordinal 
+				manifest variables with or without missing values with optional 
+				specification of stratum and/or cluster variables. It also deals 
+				with the issue of robust standard error estimation and the 
+				adjustment of the chi-square goodness of fit statistic.
+				This method is based on adaptive quadrature and a user can 
+				specify any one of the following four link functions:
+				o Logit
+				o Probit
+				o Complementary Log-log
+o Log-Log
+　
+
+Today, however, LISREL 
+			for Windows is no longer limited to SEM. The latest LISREL for 
+			Windows includes the following statistical applications. 
+
+ ● LISREL for structural equation modeling. 
+ ● PRELIS for data manipulations and basic statistical analyses. 
+ ● MULTILEV for hierarchical linear and non-linear modeling. 
+ ● SURVEYGLIM for generalized linear modeling. 
+ ● CATFIRM for formative inference-based recursive modeling for   
+			categorical response variables. 
+ ● CONFIRM for formative inference-based recursive modeling for 
+			continuous response variables. 
+ ● MAPGLIM for generalized linear modeling for multilevel data. New!
+			請填寫你的資料以便寄送產品相關訊息：公司：部門：姓名：職稱：電話：EMAIL：請選取您所要的產品訊息：Lisrel 軟體資料Lisrel 軟體報價如有其他需要請填寫在底下空格內：
+  
+
+
+
+
+
+
+
+
+

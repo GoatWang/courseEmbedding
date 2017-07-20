@@ -1,0 +1,6224 @@
+
+
+
+
+
+
+
+
+量子化學計算軟體Gaussian簡介與應用(I):介紹Gaussian輸入檔格式與執行
+
+
+
+
+
+│ 
+			編輯室 │ 
+			臺大首頁 │ 
+			計中首頁 │
+
+第0037期•2016.06.20 發行ISSN 2077-8813
+
+
+
+歷史回顧
+訂閱/取消
+校務服務
+專題報導
+技術論壇
+推薦刊物
+
+
+
+首頁 > 技術論壇
+
+量子化學計算軟體Gaussian簡介與應用(I):介紹Gaussian輸入檔格式與執行
+				作者：許達稔、鄭原忠* / *臺灣大學化學系副教授
+
+
+
+量子化學方法利用量子力學原理計算原子、分子的各式性質，在化學、物理、材料、光電工程等等領域都有著重要的應用，讓科學家得以利用電腦軟體計算預測許多化學性質，如分子的能量、最佳化結構、振動頻率、光譜、熱化學性質等等，在眾多的計算化學軟體之中，Gaussian應該是最多人使用，而且功能極為強大的一套軟體。我們計畫分四篇文章為您介紹Gaussian的計算執行以及應用。本文是第一篇，將為讀者做最基本的簡介，我們將會介紹執行Gaussian計算的方法，特別是在臺大計資中心的高效能叢集電腦系統上面執行Gaussian計算的環境，以及Gaussian輸出的基本資訊解讀。
+量子化學計算簡介
+化學這一學科，與人類的生活息息相關。自古以來，人們利用身邊取得的材料，燒製陶器、提煉金屬、萃取藥物、製備肥皂、煮食、釀酒，無一不與化學有關。自波義耳及拉瓦節提出元素概念、道爾頓提出原子論、門得列夫提出元素週期表後，化學成為一門研究物性與變化的學科。到了二十世紀，物理界出現量子力學這一分支，海森堡建立了矩陣力學，而薛丁格了建立波動力學。這些理論被應用到化學系統，其名為量子化學。
+早期的量子化學應用，侷限在簡單的系統。例如在量子化學課堂中見到的離散能階particle in a box及其延伸應用於有機分子共軛π軌域系統的Huckel theory，進階一些的分子振動模型quantum harmonic oscillator和分子轉動模型rigid rotor等，皆是有解析解的模型。然而，大部分的多體系統都無法以解析解處理，只能以Hartree-Fock等方法做迭代、近似解，以計算多電子分子體系的各式分子性質而言，其計算量極大，以人工根本無法完成，因此一直要到電腦系統問世，才出現通往解答的小徑，而Gaussian軟體的問世，則為量子化學開拓了一條大道。
+在眾多的計算化學軟體之中，Gaussian是一個非常受到歡迎而且功能極為強大的軟體，它最早是由約翰．波普爵士(1998年諾貝爾化學獎得主)與他在卡內基梅隆大學的研究團隊發展出的一套程式，這個程式利用高斯函數近似軌域，大幅降低了求解所需的計算量，允許使用者得到以前無法求得的許多結果，因此受到歡迎，很快的便商業化，轉由私人公司經營維護 (http://www.gaussian.com)。Gaussian被廣泛應用在各式化學系統中，計算並預測許多化學性質，如分子的能量、最佳化結構、振動頻率、光譜、熱化學性質等等。Gaussian自1970年推出以來，不斷更新至今，最新版本為Gaussian 09，已經包含齊全的理論計算方法(註1)。Gaussian軟體目前主要應用於Unix-like系統，雖然有推出Windows版本的G09W，卻尚未完全支援64位元系統，也無法達到平行運算效果。Gaussian並非免費軟體，須與該公司購買授權，才能使用；在台灣大學，則可以聯絡計資中心，以高速運算系統應用此軟體。
+在這一系列的文章裡面，我們計畫分四篇文章為您介紹Gaussian的計算執行以及應用。本文是第一篇，將為讀者做最基本的簡介，我們將會介紹執行Gaussian計算的方法，特別是在臺大計資中心的高效能叢集電腦系統上面執行Gaussian計算的環境，以及Gaussian輸出的基本資訊。接下來的三篇將分別介紹圖形介面的輸入檔製作以及計算結果分析程式、化學反應路徑計算與中間體分析、分子激發態性質計算等等應用。這一系列文章裡，我們將會專註於基於第一原理(first principle, ab initio)的電子結構方法，用來計算分子的性質以及反應特性，由於篇幅的限制，在這一系列文章之中我們將不會談到這些計算的原理以及計算方法的使用範圍與優缺點，這些資訊可以在網路上面找到(註2)。此外，我們也假設讀者已經有基本的叢集系統操作能力，包含在系統上面編輯檔案以及管理排程系統的能力。希望透過這四篇文章，讓就算不是理論化學背景的讀者，也可以利用Gaussian這個工具來解決在研究上面碰到的問題。
+進行g09計算
+臺大計中g09環境簡介
+雖然Gaussian是一個非常複雜的程式，而且它應用的理論十分艱深，不過使用Gaussian的邏輯卻十分簡易：只用者只要以Gaussian指定的格式將輸入檔做好，接下來只要執行Gaussian的可執行檔(或由工作主機中的排程系統呼叫Gaussian)，計算此輸入檔，再等待輸出即可。目前臺大計資中心的叢集電腦上都有支援Gaussian計算，安裝的是Gaussian09的Linux版本，可執行檔是g09。我們以i90叢集為例，g09是安裝在/opt/gaussian的位置，因此使用者在登入後，只要執行下列指令便能使用g09:
+
+執行 g09 時常用 “g09 < jobfile.com > jobfile.log 2>&1” 的指令格式來讀入 jobfile.com 這個檔案裡面的Gaussian指令，並且將計算結果存到jobfile.log這個輸出檔裡面 (註3)。這個語法的計算會在登入的主機上直接進行，只適用於測試輸入檔或是比較小的計算。一般在計算時必須丟到排程系統中，由排程系統在計算節點上呼叫g09 執行，在臺大計資中心的 i90 叢集系統上這個過程可以用 /opt/gaussian/rung09 這支程式很簡單地完成，稍後我們會用一個實際的例子來展示這個過程。
+g09 輸入檔格式
+Gaussian是依據使用者給的輸入檔裡面的指令進行計算，因此在執行 Gaussian計算的時候，準備適當的輸入檔是最重要的工作，在學習使用Gaussian的時候，直接從輸入檔的例子學習重要的語法是最有效的(註4)，下麵便是一個利用Gaussian計算水分子(見右圖) 性質的輸入檔範例：
+
+從這個輸入檔裡可以看出一個 Gaussian 計算的輸入檔必須要提供的三項基本資訊：第一行用 “#” 開頭的部分稱之為 route section，這部份使用者以關鍵字指定運算資源需求、使用的理論方法、基底函數 (用以描述分子軌域的一組函數) 、計算的種類以及程式要輸出的資訊等等關於程式控制的要求，在這個範例裡 “B3LYP/6-31G(d)” 表示要用 B3LYP 密度泛函 (DFT) 方法以及 6-31G(d) 這組基底函數進行計算，“SP” 表示要做一個單點計算，“Pop=Full” 則是要 Gaussian 輸出所有軌域相關資料 (預設是印出 10 個前沿軌域)，空一行以後的第二個部分是計算的標題，使用者可以填入任何資訊，再空一行以後的第三個部分則描述分子的性質以及所有原子的座標，在這個例子裡面， “0 1” 表示分子是電中性 (電荷為 0) 而且分子的自旋多重性為 1，接下來便是分子的結構，每一行的開頭為原子種類，接著是該原子的 XYZ 座標，預設是以 A 為單位，這個例子裡面指定了水的結構。註意每一個部分後面的空白行是不能省略的，包含最後的一行。
+這邊有一個重要的基本觀念，在進行量子化學計算的時候，使用者必須要給定一個理論模型化學 (model chemistry)，程式便使用給定的模型化學進行計算，求得使用者所要求的分子性質，而一個理論模型化學包含了兩個部分，第一個是所要使用的計算方法，第二是計算時所要用到的基底函數，如上面的例子裡， B3LYP/6-31G(d) 便是一個常用的模型化學，這個模型裡面 B3LYP 在很多化學問題上都有不錯的表現，而 6-31G(d) 是一個中等大小的基底函數，是個適合作為開始點的組合。簡單的來說，一個理論模型化學決定了要進行計算時所使用的近視方法，而進行理論計算的時候從低階到高階可以選用許多不同的計算方法，考量的重點主要是系統的大小，做比較多近似的低階方法所需使用的計算量比較少，因此使用者可以比較快得到結果，也可以計算較大的分子，但是就得犧牲準確性。較高階的計算需要使用較多的計算機資源，所以只能應用在小分子。此外，還有基底函數的考慮，使用小的基底計算會比較快，然而計算結果一般而言也會較不準確。在進行模擬的時候想要得到正確並且可以信賴的計算結果，化學模型的選擇非常重要，而要選擇適當的模型化學，就需要靠研究者的經驗以及從文獻裡面找尋驗證過的結果了。總而言之，Gaussian運算的效率與正確性，有很高比重取決於使用者的化學智識，視其能否匹配欲計算的化學系統，使用恰當的模型化學而定。以目前的發展，在含有一百個重原子 (不含氫) 大小的分子用 DFT 方法計算基態，已經可以普遍得到接近化學精確度 (誤差 ~ 1 kcal/mol) 的相對能量結果了。
+在第一個例子裡面我們用 XYZ 座標輸入分子結構，這有時候不太方便，因此 Gaussian 另外提供了使用 Z-matrix 輸入分子座標的方式，下麵便是一個使用 Z-matrix 的例子：
+
+在這個例子裡，分子結構的第一行標示 “O” 是第一個原子，它會被標號為 1 號原子，下一行表示 2 號原子為 “H”，而且它跟 1 號原子的距離為 0.9584 A，接下來 3 號原子為 “H”，它跟 1 號原子的距離為 0.9584 A，而且 ∠3-1-2 為 104.45°，可以清楚看出，這些資訊指定了原子之間的相對座標，可以直接從分子結構中讀出。水只有三個原子，在超過三個原子的系統裡，第四個原子及其以後的所有原子除了標示距離與角度外，還要標示一個兩面角，用以決定一個點在三維空間中真正的位置，後面用到的甲醛例子便有用到兩面角的設定。
+執行 g09 計算與檢視計算結果
+將上面的範例在 i90 上輸入並存成 “h2o.com” 這個輸入檔以後，便可以呼叫 g09 執行計算了，下麵的指令便是一個用 g09sub 進行計算的例子：
+
+2. 啟用資料節點服務
+  sudo /usr/local/mysql/bin/ndbd --initial
+執行 g09sub 以後，便可以持續用 qstat 指令檢查，當你沒看到剛剛丟出去的工作時，表示計算跑完了，這時候若用 ls 看一下目前目錄底下的檔案，你會發現 g09sub 幫你用輸入檔的名稱以及目前時間新建了一個目錄，這目錄底下會有一個附加檔名是 .log 的檔案，裡面存有 g09 的計算結果:
+
+現在進入 g09sub 產生的目錄裡面並且看一下輸出檔，例如可以用以下的 less 指令看內容 (請註意你的目錄名稱會因為執行 g09sub 的時間而有所不同)：
+
+“h2o.log” 是可以直接閱讀的純文字檔，建議讀者把它從頭到尾看一遍。以下我們列出單點計算裡面比較常用到的資訊，首先找到 “SCF Done:” 開頭的一行：
+
+這一行顯示在完成單點計算以後得到的能量結果，在 E(RB3LYP) 後面的數字便是這個分子在這個結構的單點能量，而能量零點是所有電子與原子核皆完全分離的能量，能量單位是原子單位 (Hartree)，一個 Hartree 相當於 627.5 kcal/mol，是相當大的能量 (註 5)。接下來找到描述分子軌域 (MO) 的部分，還可以看到 MO  的相關計算結果:
+
+在這個例子裡面，前面五個軌域是填滿電子的 (occupied orbital)，後面則是未填電子的軌域 (virtual orbital)，因此計算結果水的 HOMO 能量為 -0.19167 A.U. 而 LUMO 能量為 0.06556 A.U.。要註意在密度泛函計算裡面得到的 Kohn-Sham orbital 嚴格來講並不符合 Koopmans’ theorem，因此從 MO 能量預測的游離能並不準確。在這幾行計算結果的後面還有所有 MO 的係數。此外，在單點計算中還可以得到分子內各原子核的電荷分佈，找到 “Mulliken” 開頭的部分：
+
+Gaussian 預設是輸出 Mulliken 的原子電荷分析結果，這個結果顯示水分子中的氧帶部分正電而氫帶部分正電，符合我們的預期。不過，Mulliken 分析方式是純粹從 MO 在基底函數的原子軌域分佈去求得電子的分佈，這樣子的計算雖然直觀但是卻沒有考慮到電子在空間中的分佈情形，因此經常不能妥善的表示原子上的部分電荷性質，應用的時候應該非常小心，Gaussian 因此還提供了更多分析電子分佈的方法可以使用 (註6)。最後還有偶極矩相關的計算結果：
+
+這個例子算出水在真空中的偶極矩為 2.08 Debye，實驗值約為 1.85 Debye，B3LYP 在這邊表現比較不好，但是也在 10% 誤差範圍之內了。
+分子結構計算
+上一節我們用最簡單的單點計算當例子，得到分子在一個固定結構底下的性質。但是更多時候我們並沒有分子的結構，或者想用理論計算方法預測分子的三度空間結構，這個時候我們可以利用 “Opt” 這個關鍵字，要求 g09 進行結構優化的計算，找出一個分子系統的穩定結構。在這個計算中，使用者需要提供一個猜測的初始結構， g09 便會計算出這個結構附近的分子局域穩定結構 (local minimal energy structure)。下麵的例子是對甲醛分子 (H2CO) 進行結構優化的計算輸入檔，我們特意用 “%Mem=1GB” 指定每一執行緒使用的記憶體大小為 1GB， “%NProcShare-8” 指定要在單機上用八個執行緒做平行運算，這個設定對甲醛分子是殺雞用牛刀，但是使用者在做比較大分子的計算的時候將會需要設定記憶體及平行運算。初始結構部分我們設定 C=O 鍵長為 1.2 A，C-H 鍵長為 1.1 A，鍵角皆為 120° 的平面分子。
+
+把這個輸入檔存成 h2co.com 並執行計算，在計算結果裡面可以找到 “Optimization completed” 的話表示 g09 成功的找到了穩定的結構，如下：
+
+這個計算結果我們得到C=O 鍵長為 1.21 A，C-H 鍵長為 1.11 A，且 ∠H-C-H 約為 115° ，與實驗值非常接近。一般而言， DFT 計算可以給出頗為準確的分子結構。
+備註
+1. Gaussian 09 的完整功能: http://www.gaussian.com/g_prod/g09_glance.htm
+2. 例如，可以參考臺大開放式課程中的量子化學課程 (http://ocw.aca.ntu.edu.tw/ntu-ocw/index.php/ocw/cou/101S212)，特別是單元 20-23 的部分。
+3. 此處使用的檔名並無限制，但是一般習慣 Gaussian 輸入檔用 .com 結尾，輸出檔則用.log。
+4. 在 i90 上的 /opt/Gaussian/g09/tests/com 目錄下可以找到 Gaussian 提供的許多範例檔案，是非常有用的學習參考。
+5. 關於能量單位轉換可以參考 http://users.mccammon.ucsd.edu/~dzhang/energy-unit-conv-table.html
+6. 請參考 http://www.gaussian.com/g_tech/g_ur/k_population.htm
+
+
+
+				版權所有 © 國立台灣大學計算機及資訊網路中心 All
+				Rights Reserved. 
+				Copyrightc Computer & Information Networking
+				  Center, NTU 電話：02-33665022 或 3366-5023 傳真： 02-23637204
+				  讀者意見信箱： ntuccepaper@ntu.edu.tw 
+
+				  地址：10617 臺北市羅斯福路四段一號
+				建議最佳螢幕解析度 1024*768
+		
+
+
+
+
+
+量子化學 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+量子化學
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+氨氣分子的HOMO，用量子化學ab Initio方法計算獲得
+
+
+量子化學是應用量子力學的規律和方法來研究化學問題的一門學科。將量子理論應用於原子體系還是分子體系是區分量子物理學與量子化學的標準之一。目前認為最早的量子化學計算是1927年布勞（Ø.Burrau）對H+
+2離子[1]以及同年沃爾特·海特勒（英語：Walter Heitler）和弗里茨·倫敦（英語：Fritz London）對H2分子的計算[2]，開創量子化學這一個交叉學科。經過近八十年發展之後，量子化學已經成為化學家們廣泛應用的一種理論方法。
+
+
+
+目錄
+
+
+1 量子化學發展史
+2 量子化學理論方法
+3 量子化學研究內容
+
+3.1 分子結構
+3.2 化學反應
+3.3 分子性質
+
+
+4 量子化學計算軟體
+5 參考文獻
+6 外部連結
+7 參見
+
+
+
+量子化學發展史[編輯]
+1925年和1926年，物理學家維爾納·海森伯和埃爾溫·薛丁格各自建立了矩陣力學和波動力學，標誌著量子力學的誕生，同時也為化學家提供了認識物質化學結構的新理論工具。1927年物理學家沃爾特·海特勒（英語：Walter Heitler）和弗里茨·倫敦（英語：Fritz London）將量子力學處理原子結構的方法應用於氫氣分子，成功地定量闡釋了兩個中性原子形成化學鍵的過程，他們的成功標誌著量子力學與化學的交叉學科——量子化學的誕生。
+在海特勒和倫敦之後，化學家們也開始應用量子力學理論，並且在兩位物理學家對氫氣分子研究的基礎上建立了三套闡釋分子結構的理論。萊納斯·鮑林在最早的氫分子模型基礎上發展了價鍵理論，並且因為這一理論獲得了1954年度的諾貝爾化學獎；1928年，物理化學家羅伯特·S·馬利肯提出了最早的分子軌道理論，1931年，埃里希·休克爾（E. Hückel）發展了馬利肯的分子軌道理論，並將其應用於對苯分子等共軛體系的處理；漢斯·貝特於1931年提出了配位場理論並將其應用於過渡金屬元素在配位場中能級裂分狀況的理論研究，後來，配位場理論與分子軌道理論相結合發展出了現代配位場理論。價鍵理論、分子軌道理論以及配位場理論是量子化學描述分子結構的三大基礎理論。早期，由於計算手段非常有限，計算量相對較小，且較為直觀的價鍵理論在量子化學研究領域占據著主導地位，1950年代之後，隨著計算機的出現和飛速發展，以及高斯函數的引進，海量計算已經是可以輕鬆完成的任務，分子軌道理論的優勢在這樣的背景下凸現出來，逐漸取代了價鍵理論的位置，目前在化學鍵理論中占主導地位。
+1928年道格拉斯·哈特裡（英語：Douglas Hartree）提出了哈特裡方程，方程將每一個電子都看作是在其餘的電子所提供的平均勢場中運動的，通過疊代法給出每一個電子的運動方程。1930年，弗拉基米爾·福克（英語：Vladimir Fock）對哈特裡方程補充了泡利原理，提出哈特裡-福克方程，進一步完善了由哈特裡發展的哈特裡方程。為了求解哈特裡-福克方程，1951年克萊門斯·C·J·羅特漢（英語：Clemens C.J. Roothaan）進一步提出將方程中的分子軌道用組成分子的原子軌道線性展開，發展出了著名的RHF方程，這個方程以及在這個方程基礎上進一步發展的方法是現代量子化學處理問題的主要方法。
+雖然量子力學以及量子化學的基本理論早在1930年代就已經基本成型，但是所涉及的多體薛丁格方程形式非常複雜，至今仍然沒有精確解法，而即便是近似解，所需要的計算量也是驚人的，例如：一個擁有100個電子的小分子體系，在求解RHF方程的過程中僅僅雙電子積分一項就有1億個之巨。這樣的計算顯然是人力所不能完成的，因而在此後的數十年中，量子化學進展緩慢，甚至為從事實驗的化學家所排斥。1953年美國的帕里瑟（Parise）、帕爾（R. Parr）和英國的約翰·波普使用手搖計算器分別獨立地實現了對氮氣分子的RHF自洽場計算，雖然整個計算過程耗時整整兩年，但是這一成功向試驗化學家證明瞭量子化學理論確實可以準確地描述分子的結構和性質，並且為量子化學打開了計算機時代的大門，因而這一計算結果有著劃時代的意義。
+1952年日本化學家福井謙一提出了前線軌道理論，1965年美國有機化學家羅伯特·伯恩斯·伍德沃德和量子化學家羅阿爾德·霍夫曼聯手提出了有機反應中的分子軌道對稱守恆原理。福井、伍德瓦爾德和霍夫曼的理論使用簡單的模型，以簡單分子軌道理論為基礎，迴避那些高深的數學運算而以一種直觀的形式將量子化學理論應用於對化學反應的定性處理，通過他們的理論，實驗化學家得以直觀地窺探分子軌道波函數等抽象概念。福井和霍夫曼憑藉他們這一貢獻獲得了1981年度的諾貝爾化學獎。
+在計算方法方面，隨著計算機的發展，量子化學計算方法也飛速發展，在1920年代至今的數十年內，湧現出了組態相互作用方法（CI）、多體微擾理論（MP）、密度泛函理論（DFT）以及數量眾多形式不一的旨在減少計算量的半經驗計算方法，由於量子化學家們的工作，現在已經有大量商用量子化學計算軟體出現，其中很多都能夠在普通PC機上實現化學精度的量化計算，昔日神秘的量子化學理論，已經成為化學家常用的理論工具。約翰·波普與瓦爾特·科恩分別因為發展首個普及的量子化學軟體（Gaussian）和提出密度泛函理論 （Density Functional Theory）而獲得1998年諾貝爾化學獎。2009年日本山口大學堀憲次教授和行政法人科技振興機構聯合成立過渡狀態科技公司，開拓量子化學於製藥業的實用商用化。
+量子化學理論方法[編輯]
+
+分子軌道理論：分子體系中的電子用單電子波函數滿足Pauli不相容原理的直積（如Slater行列式）來描述，其中每個單電子波函數通常由原子軌道線性組合得到（類似於原子體系中的原子軌道），被稱作分子軌道，分子軌道理論是目前應用最為廣泛的量子化學理論方法。
+
+HF方法：Hartree-Fock方法，用單個Slater行列式構造近似的波函數，通過對該行列式形式的波函數變分極小來確定據確定具體的波函數形式，是其他高級分子軌道理論方法的基礎。
+CI方法：組態相互作用（Configuration Interaction）方法。用HF自洽場方法計算獲得的波函數和各級激發的波函數為基展開體系波函數。完全的組態相互作用（Full-CI）是指定基組下最精確的方法，但其計算量約以基函數的階乘規模增加，目前僅限於對小分子作為Benchmark以檢測其他方法的可靠性，在實際應用中常採用截斷CI方法，如DCI、SDCI等。由於截斷CI不滿足體積加合性（size-extensive），雖然有一些經驗方法校正（如Davidson correction），仍然限制了其應用。
+MP方法：多體微擾方法，將多電子體系的總哈密頓算符與Fock算符的差作為體系的微擾項，應用Rayleigh-Schroedinger微擾方法計算。一級微擾等價於HF，二級微擾可以達到甚至超過DCI方法的精度水平，但計算量（N^5）小於DCI（N^6）。一般不適用於能級接近簡併的體系。任意階的MP都是size-extensive的。
+多組態自洽場方法：同時對組態和展開係數進行優化，恰當地應用可以剋服截斷CI不滿足體積加合性的缺點，並比較地準確處理能級近簡併的體系。
+半經驗計算方法：Extended Huckel method, AM1, PM3等方法。在計算過程中根據實驗數據，將一些波函數積分用經驗常數替代，可以上千倍地減少計算量，採用的經驗常數不同，半經驗算法的應用範圍也不同，應用時需要根據研究體系的具體情況進行選擇。
+密度泛函理論：當分子體系各原子核空間位置確定後，電子密度在空間中的分佈也確定，可以將體系的能量表示為電子密度的泛函，密度泛函分析變分法求出能量最低時的電子密度分佈和體系能量。
+
+
+價鍵理論
+
+量子化學研究內容[編輯]
+分子結構[編輯]
+通過計算不同分子結構的體系能量，量子化學方法可以找到分子勢能面上的能量最低點，從而確定分子在某一電子態的穩定構型
+化學反應[編輯]
+化學反應的過程可以看做分子體系在勢能面上滑動的過程，通過量子化學的計算，可以找到勢能面上的「駐點」：處於最低點的反應物和產物以及處於鞍點的過渡態，對比所有可能的反應途徑極其相對應的反應活化能，可以找到最有可能的反應途徑。
+分子性質[編輯]
+量子化學計算可以獲得分子體系的電子波函數，通過這些電子波函數可以求算偶極矩、極化率等分子性質的計算，但是由於數學方法的局限，量子化學計算方法只能從上方逼近真實的分子體系能量，是一種近似計算，雖然能量的計算可以獲得較好的結果，但是獲得的電子波函數質量卻很差，因而分子性質計算的精度遠遠不及分子體系能量的計算。另一方面改進量子化學計算方法以獲得質量更好的電子波函數也是量子化學家目前面臨的挑戰之一。
+量子化學計算軟體[編輯]
+
+
+
+
+Gaussian03
+
+
+
+Gaussian[1] ：量子化學領域最著名和應用最廣泛的軟體之一，由量子化學家約翰·波普的實驗室開發，可以應用從頭算方法、半經驗計算方法等進行分子能量和結構；過渡態能量和結構；化學鍵及反應能量；分子軌道；偶極矩；多極矩；紅外光譜和拉曼光譜，核磁共振，極化率和超極化率，熱力學性質，反應路徑等分子相關計算。可以運行在Windows、Linux、Mac作業系統中運行，目前最新版本為Gaussian 09。但由於Gaussian Inc.（Gaussian的發展者）排斥其他軟體發展者的行為，而引來不少批評；其行為包括逐使原開發者約翰·波普離開Gaussian Inc.（因而成為學術界其中一件為人齒冷的事件）；禁止其他開發者（包括約翰波普）使用Gaussian（引發起Banned By Gaussian運動[3]）和禁止任何使用者發表比較Gaussian與其他量子化學軟體效能的報告等。
+Gamess-US[2] ：由於免費與開放源碼，成為除Gaussian以外，最廣泛應用的量子化學軟體，目前由Iowa State Uinversity的Mark Gorden教授的研究組主理。
+Q-Chem[3] ：由一群隨約翰·波普離開Gaussian Inc.的學者創立的一個商業量子化學軟體。
+Spartan[4] ：提供一個十分優良的圖形介面作量子化學計算，尤其適合非從事量子化學研究的學者使用。此軟體中有很大部的電子相關方法的計算程序實源自Q-Chem，所以當使用到該些計算方法而作出報告時，應同時於文獻參考中引述Spartan與Q-Chem。
+CASTEP[5] ：為一量子力學為基礎的週期性固態材料化學計算的套裝軟體，此程式由英國劍橋大學卡文迪許實驗室（Cavendish Laboratory）的凝態物理理論組所共同研究開發。CASTEP是由密度泛函理論為基礎的計算程式所組成，同時採用平面波（plane wave）為基底處理波函數，可針對具有週期性的固態材料錶面進行化學模擬計算，而此軟體更具有高精準度以及高效能計算能力的表現。
+MOLPRO[6] ：應用廣泛的量子化學計算軟體，軟體長於高精度計算，用多參考CI，耦合簇等方法處理電子相關問題能夠對較大的分子體系進行準確的從頭計算。
+MOPAC[7] ：應用最廣泛的半經驗量子化學計算軟體，能夠以AM1，AM1-d，PM3，MNDO，MNDO-d，MINDO/3等半經驗計算方法計算分子體系的自由能，活化能，反應路徑，偶極矩，非線性光學特性以及紅外光譜等性質。MOPAC 7以前的版本為免費軟體，自MOPAC 7開始轉為商業軟體，目前最新版本為MOPAC2007。
+MOLCAS[8] ：是一套包含各種量子化學計算方法的軟體，可以進行分子結構計算，鍵能，化學反應的能壘，激發能（包括自旋-軌道耦合），振動分辨吸收光譜，以及各種分子特性的計算，並且可以產生分子間的作用力，用於分子動力學的計算。目前最新版本為MOLCAS 7。
+其他量子化學計算軟體目前，除了上面提到的幾版著名量子化學計算軟體之外，還有大量商業和免費的量子化學計算軟體，其中絕大部分是從事量子化學或計算化學研究的實驗室自行開發的，此外，一些著名的大型化學軟體如HyperChem、Chem3D、Sybyl等，也包含有量子化學計算包。
+
+參考文獻[編輯]
+
+
+^ Ø. Burrau, Kgl. Danske Videnskab. Selskab, Mat. Fys. Medd., 7, 14 (1927)
+^ W. Heitler and F. London, Z. Physik., 44, 455 (1927)
+^ http://www.bannedbygaussian.org/
+
+
+外部連結[編輯]
+
+Early Ideas in the History of Quantum Chemistry
+
+參見[編輯]
+
+
+化學主題
+物理學主題
+物理化學主題
+
+
+
+計算化學
+波恩-奧本海默近似
+密度泛函理論
+多體微擾理論
+Hartree-Fock方程
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+化學
+
+
+
+
+
+
+
+生物分子列表 · 無機化合物列表 · 有機化合物列表 · 元素周期表
+
+
+
+
+
+
+物理化學
+
+
+
+電化學
+光化學
+熱化學
+飛秒化學
+地球化學
+固體化學
+量子化學
+錶面科學
+化學熱力學
+化學動力學
+化學物理學
+光譜學
+立體化學
+
+
+
+
+
+
+
+
+有機化學
+
+
+
+生物化學
+生物有機化學
+生物物理化學（英語：Biophysical chemistry）
+化學生物學
+臨床化學
+藥物化學
+神經化學
+藥學
+物理有機化學（英語：Physical organic chemistry）
+高分子化學
+富勒烯化學
+
+
+
+
+
+
+
+
+無機化學
+
+
+
+生物無機化學
+金屬有機化學
+原子簇化學
+配位化學
+材料科學
+核化學
+放射化學
+
+
+
+
+
+
+
+
+分析化學
+
+
+
+分析化學
+儀器分析
+光譜法
+電化學分析
+色譜法
+質譜法
+聯用技術
+其他分析方法
+
+
+
+
+
+
+
+
+其他化學
+
+
+
+錒系化學（英語：Actinide chemistry）
+天體化學
+化學教育（英語：Chemistry education）
+點擊化學
+計算化學
+環境化學
+食品化學
+法醫化學（英語：Forensic chemistry）
+綠色化學
+超分子化學
+理論化學
+組合化學
+溼化學
+
+
+
+
+
+
+
+
+
+化學分類 · 化學主題 ·  共享資源 · 專題
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4047979-1
+NDL: 00569867
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=量子化學&oldid=44849829"					
+2 個分類：量子化學物理化學隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةБеларускаяБългарскиCatalàČeštinaЧӑвашлаDanskDeutschΕλληνικάEnglishEspañolEestiEuskaraفارسیSuomiFrançaisGalegoעבריתहिन्दीՀայերենBahasa IndonesiaItaliano日本語Қазақша한국어КыргызчаLëtzebuergeschLumbaartLietuviųNederlandsNorsk bokmålPolskiPortuguêsRomânăРусскийSicilianuScotsSrpskohrvatski / српскохрватскиSlovenčinaСрпски / srpskiBasa SundaSvenskaதமிழ்TagalogУкраїнськаاردوTiếng ViệtWinaray 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年6月20日 (週二) 13:06。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+友環專業軟體 | 化學軟體 | 友環股份有限公司
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ +886-2-2221-2155
+    
+
+ info@linksoft.com.tw
+    
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+0
+
+
+
+已加入詢價收藏車:
+
+0筆
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+產品目錄
+
+
+
+
+                    商務工具
+                
+
+
+
+
+
+專案管理
+
+
+文檔管理
+
+
+自動排程
+
+
+流程管理
+
+
+條碼製作
+
+
+列印管理
+
+
+
+
+
+
+
+
+                    應用軟體
+                
+
+
+
+
+
+行事管理
+
+
+桌面管理
+
+
+翻譯軟體
+
+
+傳真伺服器
+
+
+英語學習
+
+
+其他應用
+
+
+光碟工具
+
+
+
+
+
+
+
+
+                    開發及程式工具
+                
+
+
+
+
+
+資料庫開發管理
+
+
+Java & XML
+
+
+程式碼編輯
+
+
+程式碼檢查
+
+
+虛擬裝置
+
+
+終端機與伺服器
+
+
+軟體封裝
+
+
+開發追蹤檢測
+
+
+ASP 工具
+
+
+PHP 工具
+
+
+C++ 工具
+
+
+日誌分析
+
+
+電路板設計
+
+
+開發整合工具
+
+
+驅動程式開發
+
+
+OPC 工具
+
+
+圖表開發程式
+
+
+
+
+
+
+
+
+                    系統工具
+                
+
+
+
+
+
+作業系統
+
+
+磁碟工具
+
+
+系統優化
+
+
+效能測試
+
+
+裝置分析
+
+
+壓縮工具
+
+
+
+
+
+
+
+
+                    傳輸.遠控.郵件
+                
+
+
+
+
+
+FTP伺服器/傳輸
+
+
+網路通訊
+
+
+檔案傳輸
+
+
+遠端控制
+
+
+網域管理
+
+
+郵件軟體
+
+
+
+
+
+
+
+
+                    資訊安全工具
+                
+
+
+
+
+
+還原備份
+
+
+網路監控
+
+
+系統安全
+
+
+電腦防毒
+
+
+資料保護
+
+
+網路安全
+
+
+網路分析
+
+
+USB 監控
+
+
+
+
+
+
+
+
+                    文書處理
+                
+
+
+
+
+
+文書管理
+
+
+文書編輯
+
+
+文書轉檔
+
+
+方程式編輯
+
+
+說明文製作
+
+
+論文編輯
+
+
+
+
+
+
+
+
+                    PDF 應用
+                
+
+
+
+
+
+PDF 編輯
+
+
+PDF 轉檔
+
+
+PDF 加解密
+
+
+Acrobat 插件
+
+
+
+
+
+
+
+
+                    網頁相關
+                
+
+
+
+
+
+網頁設計
+
+
+網頁瀏覽
+
+
+網頁安全
+
+
+網頁分析
+
+
+網頁打包及管理
+
+
+
+
+
+
+
+
+                    圖表編輯
+                
+
+
+
+
+
+圖表開發程式
+
+
+圖表製作
+
+
+圖像編輯
+
+
+3D 繪圖
+
+
+圖檔轉換
+
+
+影像擷取
+
+
+流程圖製作
+
+
+
+
+
+
+
+
+                    簡報排版
+                
+
+
+
+
+
+字型設計
+
+
+排版設計
+
+
+地圖繪製
+
+
+簡報及電子書
+
+
+
+
+
+
+
+
+                    影音軟體
+                
+
+
+
+
+
+樂曲製作
+
+
+視頻編碼
+
+
+影像錄製
+
+
+Flash 製作
+
+
+動畫製作
+
+
+影像圖庫
+
+
+影音分析
+
+
+影音播放
+
+
+影音編輯
+
+
+錄音軟體
+
+
+字幕軟體
+
+
+
+
+
+
+
+
+                    統計分析軟體
+                
+
+
+
+
+
+統計分析
+
+
+結構分析
+
+
+時間序列分析
+
+
+計量分析
+
+
+統計流程控制
+
+
+社會網絡分析
+
+
+
+
+
+
+
+
+                    數值分析軟體
+                
+
+
+
+
+
+決策分析
+
+
+數值運算
+
+
+人工智慧
+
+
+質性分析
+
+
+生命週期評估
+
+
+
+
+
+
+
+
+                    學術研究軟體
+                
+
+
+
+
+
+化學軟體
+
+
+IRT 應用
+
+
+生物軟體
+
+
+水利軟體
+
+
+視覺思考
+
+
+數學軟體
+
+
+互動教學
+
+
+醫學軟體
+
+
+物理分析
+
+
+認知心理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+產品目錄
+
+
+
+依照推薦排列
+
+
+
+
+ 分格列表
+ 詳細列表
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            ChemDraw 化學結構繪圖軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            CrystalMaker 晶體結構建模分析軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            CRYSTAL 固態晶體結構計算軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            WIEN2k 第一原理材料計算引擎
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            LaboTex 織構分析軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            AOMix 量子化學軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            Spartan'16 化學繪圖軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            Q-Chem 量子化學計算軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            HyperChem 化學分析軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            Gaussian 量子化學軟體 
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            DIAMOND  分子結構形象化軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            Bio-Rad KnowItAll ChemWindow 化學分子繪圖軟體
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+
+
+2
+
+
+Next
+
+
+
+
+
+                                Showing 12 of 15 results
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            ChemDraw 化學結構繪圖軟體
+                                                                            
+
+
+
+                                                                            ChemDraw 優秀的化學生物軟體
+
+集強大的應用功能於一身，為您提供優秀的化學生物輔助系統，您的研究工作將達到一個新的高度
+
+
+	可以快速、有效、準確地使用豐富的生物模板繪圖，編輯出引人註目化學圖形。
+	可以建立和編輯各類分子式、方程式、結構式、立體圖形、對稱圖形、軌道等，並能對圖形進行翻轉、旋轉、縮放、儲存、複製、貼上等多種操作。
+	提高了數據的準確性，能預測性能、產生光譜、構建正確的IUPAC名稱、計算化學計量。
+	更快、更準確的搜索，讓您花更少的時間搜索結果，以創造更多科學研究時間。
+
+
+ChemDraw是世界領先的科學繪圖程序。它易於使用，擁有高品質的輸出、強大的化學情報，這一套豐富的生物工具使得數十萬的用戶受益。最新版本所涉及的範圍包括化學作圖、分子模型生成、化學資料庫資訊管理等，並附有線上功能表和多頁檔特點演示，增加ChemNMR、光譜 化學工具等功能。包括Struct⇔Name、ChemDraw / Excel和ChemNMR。它能從化學名稱建立正確的立體化學結構，並為此結構得到準確的IUPAC名稱。除此，它還能利用原子與光譜間的直接相關性， 從ChemDraw結構來估計核磁共振(NMR)光譜。此ChemDraw ActiveX /插件會在您的瀏覽器上添加”化學情報”功能，可用於查詢數據庫並顯示訊息。 
+
+最新版 ChemDraw® 和  ChemOffice ® 16 全新推出
+
+ChemDraw Cloud 相當於網頁版本的ChemDraw, 但功能較簡單，從電腦上的ChemDraw畫好的圖可以保存為直接上傳至ChemDraw Cloud的檔案格式，以便大家在網頁端共用。購買ChemOffice Professional16 和ChemDraw Professional 16 的用戶均可獲得一年的免費使用權限。另外，ChemDraw Enotebook (Elements) 屬於雲端電子實驗記錄本，購買ChemOffice Professional 可獲得一年的免費使用權限。
+
+新版特色 ChemDraw® Professional 16.0 Suite
+
+
+	ChemDraw Cloud 雲端能將您最喜愛的化學結構圖帶到任何Web瀏覽器，加上方便的ChemDraw檔案管理，只需點擊一下，您隨即可藉由雲端分享功能與同事分享設計作圖。
+	增強的Retrosynthesis 逆合成工具，用於分析分子以鑑定產生從單個原子發出的鍵或鍵的鍵所需的反應。
+	增強Mac支持，功能包括：自動儲存、版本控制，增強的UI設計，Unicode支持，加強的文本呈現，多監控和視網膜（HiDPI）顯示支持。
+	增強的Stereochemistry 以及 Stereochemical支持。
+	改善生物分子的處理MOPAC 2016。
+	整合和支持微軟MS Office 2016（Mac / Win）。
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+系統需求
+
+Windows® 8.1 and Windows® 10 and the Microsoft® Office 2013 (32 bit) suite, Office 365.
+ChemDraw Prime and Professional for Macintosh are compatible with Mac OS® 10.9 (Mavericks). 10.10 (Yosemite) and 10.11 (El Capitan), Microsoft® Office 2016 and with Retina Display.
+
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            CrystalMaker 晶體結構建模分析軟體
+                                                                            
+
+
+
+                                                                            探索奧妙的晶體世界
+
+從金屬到沸石、苯環到蛋白質：CrystalMaker是最方便的一套分子建模工具，用以建構、視覺化、並瞭解晶體與分子結構。
+
+
+
+快速建構晶體與分子模型
+
+CrystalMaker內建的對稱性演算，助您跨越晶體學的艱澀，由程式自動生成所有的鍵結與多面體。
+
+分子建構更為簡單：點擊滑鼠，自行加入原子與鍵結；使用程式中的"Relax"指令做熱力學演算，以最適化您建構的分子結構。
+
+
+
+動畫化
+
+CrystalMaker是第一個突破靜態結構框架、以動畫方式呈現結構變化的化學繪圖軟體。拖曳複數檔案進視窗、依時間軸排列它們的順序，即可存成影片。
+
+ 
+
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            CRYSTAL 固態晶體結構計算軟體
+                                                                            
+
+
+
+                                                                            CRYSTAL
+
+CRYSTAL是研究固態晶體結構的計算軟體，可以用來研究分子、多聚物、錶面和晶體的物理性質和化學性質。 例如：幾何結構、振動性質、電子態結構、磁學性質、介電性質、彈性等。自1988年第一個版本以來，CRYSTAL發布了92、95、98、03、06、09六個版本。 CRYSTAL程序使用Hartree-Fock、密度泛函或各種混合近似方法計算週期體系的電子態結構，所用的周期體系的Bloch函數用以原子為中心的高斯函數的線性組合展開。 程序還使用了屏蔽技術以充分利用實空間的局域化特性。 程序使用全電子基組或者價電子基組（有效核勢）進行限制性閉殼層，限制性開殼層，或者非限制性計算。 程序可以正確處理空間對稱性（230個空間群，80個平面群，99個柱形群，45個點群）。 點群對稱性與平移對稱性可以在分子體繫上兼容。 CRYSTAL的輸入工具可以從三維晶體結構產生層狀結構（二維體系）或者團簇（零維體系），創建缺陷體系的超晶胞，還可以從一個單層結構（二維體系）創建納米管（一維體系）。 
+
+新版特色：
+
+
+
+	Static first- and second-hyperpolarizability and the corresponding electric susceptibilities tensors through a Coupled Perturbed HF/KS scheme
+	Improved phonon dispersion calculation (phonon band structure and DOSs, ADPs and Debye-Waller factors, ...)
+	Raman and IR intensities through a CPHF/KS approach
+	Automated calculation of the piezoelectric and photoelastic tensors of crystalline systems
+	New DFT functionals: mGGA, Range-separated hybrids and Double-hybrids
+	Automatic generation of fullerene-like structures
+	New tools to model low-dimensionality systems (nanorods, nanoparticles, ...)
+	New tools for the treatment of solid solutions
+	Improved Massive-parallel version (MPPcrystal - distributed memory)
+	Internal interface to CRYSCOR for electronic structure calculations of 1D,- 2D- and 3D-periodic non-conducting systems at the L-MP2 correlated level and Double-Hybrids
+	Internal interface to TOPOND for topological analysis of the charge density
+
+
+
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            WIEN2k 第一原理材料計算引擎
+                                                                            
+
+
+
+                                                                            WIEN2K 套裝軟體是目前使用密度泛函理論計算週期性體系的電子結構的最精確的計算程式之一。它在密度泛函理論框架下使用局域 (自旋)密度近似 (L(S)DA) 或廣義梯度近似 (GGA)，採用全勢 (Full Potential, FP) 方法和 (線性)增廣平面波 ((L)APW)+ 局域軌道 (lo) 基組。WIEN2K套裝程式計算中對芯層電子考慮完全相對論效應，對價層電子考慮標量相對論效應。
+
+
+WIEN2k-Update information:
+
+Current version: WIEN2k_13.1
+
+Version 13.1 is a very important update. Besides several new small features and bug fixes, particular important changes are:
+
+►There is a new package for the calculation of NMR chemical shifts.   
+
+►Experienced users will love makestruct_lapw, an interactive script to create case.struct (for small to medium sized cells, for large ones I would recommend cif2struct or xyz2struct).
+
+►new mixer (developed by L.Marks). improved convergence behavior for MSR1 and MSR1a.
+
+►new tetra can sum up several partial DOS
+
+►At http://www.wien2k.at/reg_user/unsupported you can find various new or updated utilities.
+
+To update from previous versions you can either download and install the complete package (highly recommended when upgrading from a rather old version) or download and update only individual packages (the ones which have been changed according to the list given below):    
+
+►SRC_w2web: just expand: gunzip SRC_w2web.tar.gz;tar -xvf SRC_w2web.tar
+
+►SRC: expand and cp the respective shell-script to $WIENROOT: gunzip SRC.tar.gz;tar -xvf SRC.tar;cp SRC/CORRECTED_SCRIPT_lapw.    
+
+►For all other packages (Fortran programs) use the "update" option of siteconfig_lapw.
+
+
+The following updates have been made:
+
+VERSION_13.1: 25.6.2013   
+
+►filenames up to 180 characters are now supported in all programs
+
+►W2kutils.c and W2kinit.F updated (for Apple Mac)
+
+►SRC: in all scripts (-s filename) was replaced by (-e and !-z)
+
+
+	addjoint-updn_lapw; dstartpara_lapw (mpi-parallel dstart for core-superposition); init_lapw (support for dstart in parallel, patchsymm for consistency check of case.struct); initso_lapw; makescratch_lapw (creates scratch directory, used together with the new -scratch switch in run and x scripts); min_lapw; opticpara_lapw; restore_lapw (HF-files); run_kgenhf_lapw (uses automatically identical meshes for IBZ and FBZ); run_bandplothf_lapw; runeece_lapw (bug-fix for runsp_c); runsp_c_lapw (fix for -eece); runfsm_lapw; runafm_lapw;
+	create_add_atom_clmsum_lapw (experimental script, which needs further improvements. It creates a starting density not solely from init_lapw, but uses the density from a "similar" converged case. "Similar" means that the cases are "identical" except that ONE atoms has been added (or removed). Usefull for "difficult to converge, big cases";
+	dosplot2_lapw (support for "combined SUM-DOS", default layout);
+	dosplot_all_lapw (plots all partial DOS of case.int in a default way);
+	prepare_xsf_lapw (ge...
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            LaboTex 織構分析軟體
+                                                                            
+
+
+
+                                                                            LaboTex 軟體是複雜和詳細地分析晶體紋理的 Windows 工具。這個軟體界面友好，在取向分佈函數（ ODF ）， 極圖（ PFs ）和逆極圖（ IPFs ）這些不同的計算和圖形分析中表現卓越。
+
+           
+
+
+	利用 ghost 校正的 ADC 方法進行 ODF 計算；
+	在強質地物質極圖取向分佈函數的重繪中，通過比較幾種方法， F.Caleyo 、 T.Baudin 、 MHMathon 以及R.Penelle 有如下觀點：“通過檢驗每一種方法的優點和缺點，在當今情形下，我們得知離散迭代的方法（ ADC和 WIMV ）能更好地適用於紋理函數的重繪。而比較這兩種離散的方法，有證據表明， ADC 方法無論在實驗還是人造紋理函數的重繪上，考慮到整個紋理，都更精確。” —Eur.Phys.J.AP15(2001), P85-9 。 
+	    
+	ODF 從系列誤差的截取中解放出來
+	ODF 用兩種實驗數據類型計算：
+
+
+       ◆ 極圖；
+       ◆ 系列個人取向。
+
+
+	在線定性和定量紋理分析；
+	在寬泛的網格單元中，進行 ODF 、 PF 以及 IPF 數據的測量、計算和表達；
+	所有對稱樣本的紋理分析；
+	 
+
+
+     
+
+
+	所有對稱晶格類型物質的紋理分析；
+	ODFs 、 PFs 以及 IPFs 的二維和三維圖形表達；
+	簡單的在線取向確定，給出它的參數歐拉角度和米勒指數；
+	附加極圖和逆極圖的創造；
+	實驗極圖的旋轉和對稱變換；
+	以 ASCII 文件形式，輸出 ODF 、 PF 以及 IPF ；
+	通過剪貼板把圖形目標傳給其它的 Windows 應用程序，或者以位圖形式（ BMP 、 TIF 格式）輸出二維和三維圖像；
+	針對用戶，對稱操作，工程，樣本以及任務，進行數據管理與結果採集；
+	光纖紋理分析；
+	ODF 模型。
+	 
+
+
+           
+
+ 
+
+ 
+
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            AOMix 量子化學軟體
+                                                                            
+
+
+
+                                                                            AOMix
+  AOMix為一套專門為分子軌道(Molecular Orbital)研究者設計的專業軟體，使用介面人性化、容易上手。量子化學研究的一個重要過程即為從定性上闡述結果，這套軟體開發正是為了用於分析分子體系的化學鍵性，以及追蹤處於電子激發狀態的電子密度分佈的改變。
+  AOMix能在分子或原子中，以組成的化學片段的方式來計算分子軌道(Molecular Orbital)成分，並可以進階設定不同的片段：原子、原子群、原子軌道、片段分子軌道、原子軌道群等。並可以自動處理多種量子化學套裝軟體的輸出文件，也可以使用重疊布居、兩中心、三中心鍵級、電荷分解分析、CDA以及濃縮的Fukui函數，允許使用者分析體系的化學結構。
+
+
+Site License
+  Site License 使用對象為一般大專院校、研究實驗室、公司行號等，購買對象可在機構內，容許無上限的使用者連線使用。
+
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            Spartan'16 化學繪圖軟體
+                                                                            
+
+
+
+                                                                            Spartan'16 for Windows/Macintosh/Linux
+Spartan是目前提供版本裡最先進成熟的。最新Spartan'16版本提供所有的功能和方法，這些都包括在Spartan Essential版，並且與Q-Chem合作，提供了一個全方位的post-Hartree-Fock方法，包括密度功能、Moller Plesset，Theremochemistry訣竅（包括新的T1程序），以及相關類別的先進做法。 Spartan'16 在學術界、政府單位以及商業研究都具備相當的指標功能。
+
+最新公佈的終端桌面應用程序，專為工業和學術界的化學研究所設計。一個全方位的理論模型現在是提供的，是業界裡最直觀的用戶界面。不斷地加強、改進和更有效率。現在可用於並行版本（Windows和Macintosh）。現在運行在HF及DFT（Linux）。
+
+前所未有的化學計算
+Spartan是最新發布了波函數旗艦Spartan線。除了性能，穩定性以及提供了超過17年的專業軟件開發功能，以下更添加了新的功能。
+
+ 
+
+點選圖片可放大觀賞
+
+
+	
+		
+			Equilibrium Geometry Structures
+			
+			Molecular Properties
+			
+		
+		
+			Calculated Electronic Surfaces
+			
+			Conformational Analysis
+			
+		
+		
+			3D Alignment & Superposition
+			
+			3D Similarity Analysis
+			
+		
+	
+
+
+ 
+
+Spartan'16 功能
+
+New Graphical User Interface Features:
+
+
+	
+		
+			 
+			Extensions to 2D builder, now includes Periodic Table, Common Groups, and collection of Ligands, for support of building inorganic and organometallic systems in 2D.
+		
+		
+			
+			Transition state searching is now supported in the 2D/Sketch builder.
+		
+		
+			
+			3D builder is now able to fuse rings.
+		
+		
+			
+			Import/Export of experimental IR, Raman (.dx format).
+		
+		
+			
+			Import/Export of experimental NMR (.cml format).
+		
+		
+			
+			When saving as .sdf file, optionally include all data posted into the Spartan spreadsheet.
+		
+		
+			
+			Spreadsheet "Add" button accesses the same properties as the Molecule Properties dialog.
+		
+		
+			
+			Reactions Dialog now includes a "Balance" reaction button.
+		
+		
+			
+			Enhanced biopolymer visualization styles.
+		
+		
+			
+			Access/Search ChemSpider site data via InChi search for any molecule.
+		
+		
+			
+			Improved Help tool offering automatic suggestions for common calculation issues.
+		
+		
+			
+			Automatic R/S Chiral Center Inversion feature (Now an icon)
+		
+		
+			
+			IUPAC names and 2D drawings for all molecules in the SSPD.
+		
+		
+			
+			Display User-defined annotations.
+		
+		
+			
+			Optionally view graphical property maps on red-white-blue color scale.
+		
+		
+			
+			Toggle between default and absolute property ranges for property maps.
+		
+		
+			
+			Improved/refined program icons in GUI and Spectra pane.
+		
+	
+
+
+ 
+
+ 
+
+
+	
+		
+		
+	
+	
+		
+			List processing
+			Spartan automatically processes files comprising lists of molecules. In general, operations applicable to a single molecule may be applied to lists of molecules. Spartan is optimized to operate on lists of hundreds of molecules (not thousands or tens of thousands).
+		
+		
+			NOEs
+			NOE data can be applied to conformational s...
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            Q-Chem 量子化學計算軟體
+                                                                            
+
+
+
+                                                                            Q-Chem 是一個綜合性化學量子計算程序。它的功能範圍，從最高性能的DFT /高頻的計算，以高層次後心力衰竭的相關性的方法。 調Q化學處理了範圍廣泛的問題，在商業，學術和政府實驗室，其中包括：分子結構、化學反應、分子振動 、電子光譜、核磁共振譜、溶劑化效應。
+
+Q-CHEM 是由遍及全球的多個研究機構共同開發的從頭計算量子化學軟體包，涉及的科研機構有35家，分佈在美國、英國、德國、澳大利亞、中國和中國臺灣地區等國家和地區。它包含了當前流行的各種最先進量子化學理論方法和工具，由美國的 Q-Chem，Inc公司進行生產、銷售以及發佈和維護工作。
+
+Q-CHEM 的特點是與當前最先進的量子化學理論和計算方法結合的非常緊密。不同於其他擁有了較長發展歷史的軟體，Q-CHEM在1993年的設計之初就採用了全新的方法理論、最先進的算法和現代編程技術，系統地將各種計算方法和工具集成到了一個工具包中，極大地提高了計算速度和準確性，並且能夠高精度地計算較大的分子體系。在可視化方面，它是化學計算可視化軟體SPARTAN（www.wavefun.com）的後臺計算程序。SPARTAN可安裝到Windows、Linux、Macintosh、IRIX等操作系統上，它以波函數的圖形界面為前端，以Q-CHEM為後端計算程序，可以很方便的實現分子設計、計算和結果可視化等的一系列流程。另外，Q-CHEM也支持WEBMO和MOLDEN等分子圖形顯示工具。
+
+
+	基於快速DFT計算的包括色散、雙雜化和範圍修正的新泛函
+	較強功能的用於自由基和激發態計算的EOM-CCSD方法
+	用於強相關計算的一系列有效活化空間方法
+	TDDFT的解析梯度計算模塊和世界首創的TDDFT的解析Hessian計算
+	多種計算電荷遷移和激發態的新方法
+	用於大體系計算的QM/MM方法和溶劑化方案
+	 
+
+
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            HyperChem 化學分析軟體
+                                                                            
+
+
+
+                                                                            Hyperchem 是一款以高品質、靈活易操作而聞名的分子類比軟體。HyperChem 是複雜分子模型的建立環境，它以品質、彈性和容易使用著稱。HyperChem 以3D的圖形和動畫來顯示量子化學的計算、分子力學和力學。比起其他應用程式，HyperChem 有更多建立分子模型的工具。通過3D對量子化學計算，分子力學及動力學進行模擬。Hyperchem為您提供比其他Windows軟體更多的類比工具：圖形介面，半經驗計算方法（AM1，PM3等），UHF，RHF和密度泛函。可進行單點能，幾何優化，分子軌道分析，蒙特卡羅和分子力學計算，預測可見-紫外光譜。 
+
+HyperChem Release 8.0 incorporates even more powerful computational chemistry tools than ever before, as well as supporting multiple third-party applications. Its drawing and rendering capabilities and ease of use are standards for the industry.
+
+ In spite of the fact that HyperChem has extensive and elegant number crunching capabilities, it can’t be all things to all computational chemists. With Release 8, an effort to enable HyperChem as a universal component in computational chemistry begins. Release 8 includes an interface to six third-party packages that are in common use in computational chemistry. None of these packages includes a native graphical user interface. Each benefits from the capabilities of HyperChem and each set of users now has capabilities never imagined before. Now PC Gamess, WinGamess, PQS, Q-Chem, Gaussian, and Mopac2007 can all be transparently executed by HyperChem. Now each of these can act as a computational engine for HyperChem. They add to the large number of native omputational engines already in HyperChem, such as HyperGauss, HyperDFT, etc. The world just got easier.
+
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            Gaussian 量子化學軟體 
+                                                                            
+
+
+
+                                                                            GAUSSIAN是一個量子化學軟體，它是目前應用最廣泛的計算化學軟體之一，其代碼最初由理論化學家、1998年諾貝爾化學獎得主約翰·波普爵士編寫，其名稱來自於波普在軟體中所使用的高斯型基組。使用高斯型基組是波普為簡化計算過程縮短計算時間所引入的一項重要近似。Gaussian軟體的出現降低了量子化學計算的門檻，使得從頭計算方法可以廣泛使用，從而極大地推動了其在方法學上的進展。
+
+基本功能
+可用來預測氣相和液相條件下，分子和化學反應的許多性質，包括：分子的能量和結構；過渡態的能量和結構；振動頻率；紅外和拉曼光譜（包括預共振拉曼）；熱化學性質；成鍵和化學反應能量；化學反應路徑；分子軌道；原子電荷；電多極矩；NMR 遮罩和磁化係數；自旋-自旋耦合常數；振動圓二色性強度；電子圓二色性強度；g張量和超精細光譜的其他張量；光性；振動-轉動耦合；非諧性的振動分析和振動-轉動耦合；電子親和能和電離勢；極化和超極化率（靜態的和含頻的）；各向異性超精細耦合常數；靜電勢和電子密度。
+
+基本演算法
+可對任何一般收縮的gaussian 函數計算單電子和雙電子積分。這些基函數可以是笛卡爾高斯函數或純角動量函數，並且有多種基組存儲於程式中，可以通過名稱調用。積分可儲存在記憶體和外接記憶體上，或在用到時重新計算。對於確定類型的計算，計算的花費可以使用快速多極方法(FMM)和稀疏矩陣技術實現線性化。將原子軌道(AO)積分轉換成分子軌道基的計算，可用的方法有“in-core”（將AO 積分全部存在記憶體裏），“直接”（不需儲存積分），“半直接”（用磁片儲存部分積分），或“傳統”方法（把所有AO 積分儲存在磁片上）。使用密度擬合，加速純DFT計算的庫侖部分。數值求積分，計算DFT的XC能量及其微分。 
+
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            DIAMOND  分子結構形象化軟體
+                                                                            
+
+
+
+                                                                             
+
+Diamond 軟體的開發公司 Crystal Impact Gbr，成立於 1997年，其成立的目的是要開發優質的化學軟體；即使不是專家的使用者都能上手。Diamond 主要具有以下功能：晶體結構的求解、視覺化、材料資料庫和材料設計。全球有五十個國家以上的化學家和材料科學家（包含學術界和產業界）都在使用Diamond 來決定、視覺化和瞭解他們所在研究的化合物。
+
+Diamond 是 Windows平臺上用來觀察和繪製晶體結構的軟體，能處理的資料容量高、功能多（從開始的分子產生到複雜的無機結構）。Diamond 是分子、固體化學、錶面和材料學家不可或缺的工具。
+
+ 
+
+特色
+
+ 
+
+
+	
+		
+		
+		
+		
+		
+		
+	
+	
+		
+			　
+			New Features
+			　
+			Enhanced Functions
+			　
+		
+		
+			◆
+			The new POV-Ray interface lets you prepare photorealistic graphics containing sky spheres, multip lelight sources, textures and shadows.
+			◆
+			Structures with no cell and symmetry given are
+			now supported directly. These can be converted into crystal structures and vice versa.
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+			　
+		
+		
+			◆
+			Best or hkl planes and lines are available for both display and evaluation of geometric information like distances or angles between planes, lines and points.
+			◆
+			Additional molecular file formats and an optional data import assistant to confirm the (automatically detected) file format.
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+			　
+		
+		
+			◆
+			Vectors can be assigned to atoms e.g. to indicate a magnetic moment.
+			◆
+			The models ball-and-stick, wire, space-filling, and ellipsoid can now be assigned to individual atoms or groups of atoms rather than defined globally, which allows to mix different models within one structure picture.
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+			　
+			　
+			　
+		
+		
+			◆
+			Video sequences can be recorded to create e.g. AVI files.
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+			　
+		
+		
+			◆
+			An optional assistant helps you to create a (new) structure picture. A variant of this assistant, the Auto-Builder, can create pictures automatically or according to a user-defined strategy. This is helpful when you frequently change the structural parameters or browse through data sets from crystal structure databases.
+			◆
+			ORTEP-like styles, such as open octants, are not more limited to flat mode but also available in rendering mode.
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+			　
+		
+		
+			◆
+			Improved layout mode for printout pages, new layout format for fixed-sized bitmaps. Improved automatic adjustment and placement of objects in the window or on the page, rsp.
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+			　
+		
+		
+			　
+		
+		
+			　
+		
+		
+			　
+			　
+		
+		
+			◆
+			A Diamond 3 document may contain multiple structural parameter sets and multiple pictures for every structure in a document. You can copy or shift structures or pictures betwee...
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                            Bio-Rad KnowItAll ChemWindow 化學分子繪圖軟體
+                                                                            
+
+
+
+                                                                            ChemWindow 軟體主要功能是能繪出各種結構和形狀的化學分子結構式及化學圖形，具有其它繪圖軟體所不具備的化學分子圖形編輯功能。 ChemWindow 版提供完整的、統一的系統，讓您可以繪製、修改、儲存、搜索和檢索的化學結構和其他有關資料。現在，研究人員將可以把所有數據和軟件解決方案結合在一起，包含了：
+
+
+	結構繪圖及報告
+	化學資訊管理
+	數據搜索與分析
+
+
+ 
+
+如何工作
+
+ChemWindow 具有的友好使用者介面和便利的切換功能，使得其資料可共用於各軟體之間，並而無需離開主介面或打開另一個程式。也就是多重任務進行邏輯分組的“工具箱”。因為所有工具都坐落在單一、整合的環境中，使用這個系統，將會節省時間和提高工作流程。該軟體在繪製化學專業圖形方面使用方便且功能強大，可免去許多人工手繪化學分子圖形之苦，為日常的教學和科研帶來許多方便，該軟體與Microsoft Word、Power Point 等軟體搭配使用，可出色地完成一般化學科技論文的編印及製作出漂亮的專業幻燈片，為化學工作者帶來極大便利。
+
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+
+
+2
+
+
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+×
+會員登入
+
+
+
+
+Email
+
+
+
+
+
+密碼
+
+
+
+
+
+
+
+登入
+忘記密碼
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+會員註冊
+
+
+
+
+Email
+
+
+
+
+
+密碼
+
+
+
+
+
+確認密碼
+
+
+
+
+
+
+
+註冊
+
+
+
+
+
+    Linksoft友環專業軟體代理網站服務，不論會員或非會員均可享受產品詢價和訂購服務。
+    欲加入會員，可以點選「註冊」成為會員。
+  
+加入會員的好處：
+
+  1. 您可以隨時登入會員，查詢產品詢價記錄，更新您的會員資料。
+  2. 系統將自動帶出您的會員資料，免去資料重複繕打的麻煩。
+  3. 只需填寫基本的聯絡資料，不會要求您留下身份證字號等個人機密性資料。
+  4. 掌握最新的產品資訊及最新好康，享受完整的客戶服務，註冊的聯繫Email可立即收到通知，再也不用怕漏失重要訊息。
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+忘記密碼
+
+
+
+
+Email
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+友環專業軟體 | ChemDraw 化學結構繪圖軟體化學軟體 | 友環股份有限公司
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ +886-2-2221-2155
+    
+
+ info@linksoft.com.tw
+    
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+0
+
+
+
+已加入詢價收藏車:
+
+0筆
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ChemDraw 化學結構繪圖軟體
+
+
+
+
+
+
+        本公司皆販售最新版本,目前版本僅供參考
+        最新版 ChemOffice Professional / ChemDraw Prime / ChemDraw Professional 16 更新於 2016/11/15   
+    
+
+
+
+
+
+
+
+
+加入詢價收藏車 
+
+
+
+直接詢價
+
+
+
+
+
+
+
+
+
+
+
+ChemDraw
+
+
+ChemDraw Professional
+
+
+ChemOffice Professional 
+
+
+產品比較
+
+
+
+
+ChemDraw 優秀的化學生物軟體
+集強大的應用功能於一身，為您提供優秀的化學生物輔助系統，您的研究工作將達到一個新的高度
+
+可以快速、有效、準確地使用豐富的生物模板繪圖，編輯出引人註目化學圖形。
+可以建立和編輯各類分子式、方程式、結構式、立體圖形、對稱圖形、軌道等，並能對圖形進行翻轉、旋轉、縮放、儲存、複製、貼上等多種操作。
+提高了數據的準確性，能預測性能、產生光譜、構建正確的IUPAC名稱、計算化學計量。
+更快、更準確的搜索，讓您花更少的時間搜索結果，以創造更多科學研究時間。
+
+ChemDraw是世界領先的科學繪圖程序。它易於使用，擁有高品質的輸出、強大的化學情報，這一套豐富的生物工具使得數十萬的用戶受益。最新版本所涉及的範圍包括化學作圖、分子模型生成、化學資料庫資訊管理等，並附有線上功能表和多頁檔特點演示，增加ChemNMR、光譜 化學工具等功能。包括Struct⇔Name、ChemDraw / Excel和ChemNMR。它能從化學名稱建立正確的立體化學結構，並為此結構得到準確的IUPAC名稱。除此，它還能利用原子與光譜間的直接相關性， 從ChemDraw結構來估計核磁共振(NMR)光譜。此ChemDraw ActiveX /插件會在您的瀏覽器上添加”化學情報”功能，可用於查詢數據庫並顯示訊息。 
+最新版 ChemDraw® 和  ChemOffice ® 16 全新推出
+ChemDraw Cloud 相當於網頁版本的ChemDraw, 但功能較簡單，從電腦上的ChemDraw畫好的圖可以保存為直接上傳至ChemDraw Cloud的檔案格式，以便大家在網頁端共用。購買ChemOffice Professional16 和ChemDraw Professional 16 的用戶均可獲得一年的免費使用權限。另外，ChemDraw Enotebook (Elements) 屬於雲端電子實驗記錄本，購買ChemOffice Professional 可獲得一年的免費使用權限。
+新版特色 ChemDraw® Professional 16.0 Suite
+
+ChemDraw Cloud 雲端能將您最喜愛的化學結構圖帶到任何Web瀏覽器，加上方便的ChemDraw檔案管理，只需點擊一下，您隨即可藉由雲端分享功能與同事分享設計作圖。
+增強的Retrosynthesis 逆合成工具，用於分析分子以鑑定產生從單個原子發出的鍵或鍵的鍵所需的反應。
+增強Mac支持，功能包括：自動儲存、版本控制，增強的UI設計，Unicode支持，加強的文本呈現，多監控和視網膜（HiDPI）顯示支持。
+增強的Stereochemistry 以及 Stereochemical支持。
+改善生物分子的處理MOPAC 2016。
+整合和支持微軟MS Office 2016（Mac / Win）。
+
+ 
+
+
+
+ 
+系統需求
+Windows® 8.1 and Windows® 10 and the Microsoft® Office 2013 (32 bit) suite, Office 365.
+ChemDraw Prime and Professional for Macintosh are compatible with Mac OS® 10.9 (Mavericks). 10.10 (Yosemite) and 10.11 (El Capitan), Microsoft® Office 2016 and with Retina Display.
+
+
+ChemDraw® Professional
+應用化學繪圖程式除了可以出版工程圖，讓化學家可以節省時間，並提高了數據的準確性，化學家可以透過使用ChemDraw Professional 軟體進行預報性能、計算化學計量、搜索資料庫和更多。
+
+
+ActiveX Control/Plugin可以在查詢及發布在網路上的化學數據庫。
+Gel Electrophoresis Plate Tool提供任意調整路徑標籤、拖動標籤，從Excel粘貼數據或其他資料來源，以及複製和粘貼路徑之間
+
+ 
+ChemDraw® Prime
+提供科學化的應用程式用以作為化學結構繪圖和分析，並結合生物學繪圖。
+
+計算 pKa*, LogP and LogS*讓科學家得以探索生物利用的重要屬性，如酸解離，分佈和水溶性假定的化合物。
+Gel Electrophoresis Plate Tool提供任意調整路徑標籤、拖動標籤，從Excel粘貼數據或其他資料來源，以及複製和粘貼路徑之間
+黏貼縮氨酸、DNA和RNA序列，並讓它們的可以重新排列
+生物聚合物的工具欄包括二硫化碳和內酰胺橋、β-和D-氨基酸、DNA、RNA、保護基團和連接基
+剪切和粘貼CDXML和molfile文本，並可從剪貼簿讀取這些格式的其他應用程序的數據，以便交流。
+可以利用SciFinder直接從ChemBioDraw Ultra 進行搜尋，無須費時剪切和粘貼
+
+
+ 
+
+
+
+
+ 
+
+
+ChemDraw
+
+
+ChemDraw Professional
+
+
+
+
+功能
+
+
+
+直接讀取ChemDraw數種化學結構式
+可輸出PS,EPS,GIF,SMIILES輸出成網頁或海報
+LabArt：高品質的實驗室儀器圖庫，可讓您搭配ChemDraw使用。
+化學期刊常用Style模板
+可與Chem3D,ChemFinder,ChemInfo,E-Notebook,MS Office 相容 LabArt glassware圖庫
+
+
+
+
+化學結構自動重整功能Clean Up
+直接讀取ISIS Base,可跨平臺Win,Mac
+查詢功能
+ChemSpec：可讓您輸入JCAMP及SPC頻譜資料，以比較ChemNMR預測的結果。
+右鍵加速功能
+化學智慧自動判別功能含價,鍵,原子數
+
+
+
+
+
+應用程式
+
+
+
+ChemDraw
+
+
+
+
+ChemDraw Professional
+ChemDraw ActiveX/Plugin Professional
+
+
+
+
+
+ChemDraw 系統需求
+Windows® 8.1 and Windows® 10 and the Microsoft® Office 2013 (32 bit) suite, Office 365.
+ChemDraw Prime and Professional for Macintosh are compatible with Mac OS® 10.9 (Mavericks). 10.10 (Yosemite) and 10.11 (El Capitan), Microsoft® Office 2016 and with Retina Display.
+ 
+
+
+ChemOffice Professional 
+ChemOffice Professional 是生物學家和化學家全功能的生產力解決方案。包括ChemDraw Cloud、ChemDraw E-Notebook、Chem3D 以及 ChemFinder Ultra 應用程式和功能都包含在這個科學智慧套裝軟體中，其可以建立化學和生物出版、建模，並發展成資料庫工作站
+ 
+ChemFinder
+化學信息搜尋整合系統，可以建立化學數據庫、儲存及搜索，或搭配ChemDraw、Chem3D使用，也可以使用現成的化學數據庫。ChemFinder是一個智能型的快速化學搜尋引擎，所提供的ChemInfo是目前世界上最豐富的數據庫之一，包含ChemACX、ChemINDEX、ChemRXN、ChemMSDX，並不斷有新的數據庫加入。ChemFinder可以從本機或網上搜尋Word，Excel，Powerpoint，ChemDraw，ISIS格式的分子結構文件。還可以與微軟的Excel結合，可連結的關連式數據庫包括Oracle及Access，輸入的格式包括ChemDraw、MDL ISIS SD及RD文件。
+
+ChemOffice Professional 包含以下強大的應用程式：
+ChemOffice Professional includes the following applications:
+
+ChemDraw Professional is used by more than a million scientists around the world to quickly and effectively draw molecules, reactions and biological entities and pathways for use in documents and electronic lab notebooks. What’s more, you can now search databases like SciFinder directly in ChemDraw Professional to generate accurate names from structures and predict properties and spectra.
+ChemDraw Cloud brings your favorite structure drawing (plus easy access to your ChemDraw files) to any web browser. You can also collaborate with colleagues, no matter where they are.
+ChemDraw E-Notebook is the electronic lab notebook of the future, designed to streamline the way you capture data, organize your research, collaborate with colleagues, and evaluate results. Featuring minimal IT overhead, user-centric design, and a customizable platform design, ChemDraw E- Notebook is the low-risk, high-impact way to get on the fast track to your next discovery.
+ChemDraw for Excel adds chemical intelligence to Excel spreadsheets, equipping chemists with Excel’s analysis, sorting and organization tools with ChemDraw’s structural drawing tools. Combining Excel with the power of ChemDraw enables scientists to further manipulate and enrich sets of compounds and data and explore structure-activity relationships.
+Chem3D is the easiest, most powerful way for chemists to view their compounds in three dimensions. Chem3D’s visualization tools makes it easy to assess shape and properties to maximize activity or specificity. Chem3D also includes GAMESS and interfaces to other computational tools including Gaussian, MOPAC, Conflex and Autodock.
+ChemFinder makes organizing a personal compound database a snap. With the ability to search for and correlate structures with properties and to transform data into easy to understand visualizations, ChemFinder accelerates the process of profiling ideal compounds and makes it easy to discern structure-activity relationships.
+ChemFinder for Office pairs your structures with your documents. Simply let ChemFinder for Office scan files and directories for chemical structures and search documents by structure to locate compounds of interest.
+The ChemScript scripting language exposes the underlying chemical structure processing power of ChemOffice to developers who want to manipulate structures and automate processes.
+
+ 
+系統需求
+Windows® 8.1 and Windows® 10 and the Microsoft® Office 2013 (32 bit) suite, Office 365.
+ChemDraw Prime and Professional for Macintosh are compatible with Mac OS® 10.9 (Mavericks). 10.10 (Yosemite) and 10.11 (El Capitan), Microsoft® Office 2016 and with Retina Display.
+
+
+ChemBio3D Ultra
+ChemBio3D is a powerful desktop modeling program that enables synthetic chemists and biologists to generate 3D models of small molecules and biochemical compounds and to perform a variety of calculations and actions on the models to explore properties and interactions.
+• Extensive capabilities for 3D modeling, visualization and calculations enable scientists to make better, faster decisions on where to focus their research in order to enhance their productivity and achieve their research goals sooner.
+• Students can use ChemBio3D to achieve a better understanding of the 3D nature of molecules and how their shapes influence their properties
+• ChemBio3D is a cost effective solution that meets the majority of scientists’ needs while providing an interface to other applications when more advanced capabilities are needed
+• Runs on modest desktop systems and does not require high performance computing and high end graphics. 
+
+Strcut=Name Pro 
+Struct=Name is a desktop application for chemists that takes the tedium out of generating correct systematic names for structures and quickly generates accurate structures from a variety of input chemical names.
+• Struct=Name saves chemists time and increases accuracy by rapidly converting drawn structures to systematic names (Struct>Name) and names to structures (Name>Struct).
+• Struct>Name uses industry-leading technology to generate correct IUPAC names from a wide variety of chemical structures including tetrahedral stereochemistry.
+• Name>Struct interprets a wide range of systematic and semi-systematic names in IUPAC and CAS formats, and includes typo and ambiguity detection.
+
+ChemScript Ultra
+ChemScript is a chemical programming environment that provides access to Ensemble for Chemistry’s underlying chemical intelligence enabling organizations to automate operations such as enforcing preferred structure orientation, normalizing structures, stripping salts, generating molecular fingerprints, and converting file formats.
+Organizations can utilize the easy-to-use scripting language to create their own chemistry business rules and execute those rules on their data in a batch mode to ensure data consistency and adherence to corporate standards. Examples include:
+• Enforce standard orientation of structures based on the preferred orientation of a common scaffold; standard representations of functional group structures in chemical data; and removal of salts from a compound based on a pre-defined list of salt fragments.
+• Use ChemDraw-based algorithms to generate high quality structure diagrams from scratch or after programmatic modification of chemical data.
+• Read and write supported file formats (CDX, CDXML, MOL, CHM, SKC, SMILES, etc.) and generate chemical structures from chemical names, and chemical names from chemical structures
+
+
+ChemBioOffice Ultra
+ChemOffice Pro
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+產品目錄
+
+
+
+
+                    商務工具
+                
+
+
+
+
+
+專案管理
+
+
+文檔管理
+
+
+自動排程
+
+
+流程管理
+
+
+條碼製作
+
+
+列印管理
+
+
+
+
+
+
+
+
+                    應用軟體
+                
+
+
+
+
+
+行事管理
+
+
+桌面管理
+
+
+翻譯軟體
+
+
+傳真伺服器
+
+
+英語學習
+
+
+其他應用
+
+
+光碟工具
+
+
+
+
+
+
+
+
+                    開發及程式工具
+                
+
+
+
+
+
+資料庫開發管理
+
+
+Java & XML
+
+
+程式碼編輯
+
+
+程式碼檢查
+
+
+虛擬裝置
+
+
+終端機與伺服器
+
+
+軟體封裝
+
+
+開發追蹤檢測
+
+
+ASP 工具
+
+
+PHP 工具
+
+
+C++ 工具
+
+
+日誌分析
+
+
+電路板設計
+
+
+開發整合工具
+
+
+驅動程式開發
+
+
+OPC 工具
+
+
+圖表開發程式
+
+
+
+
+
+
+
+
+                    系統工具
+                
+
+
+
+
+
+作業系統
+
+
+磁碟工具
+
+
+系統優化
+
+
+效能測試
+
+
+裝置分析
+
+
+壓縮工具
+
+
+
+
+
+
+
+
+                    傳輸.遠控.郵件
+                
+
+
+
+
+
+FTP伺服器/傳輸
+
+
+網路通訊
+
+
+檔案傳輸
+
+
+遠端控制
+
+
+網域管理
+
+
+郵件軟體
+
+
+
+
+
+
+
+
+                    資訊安全工具
+                
+
+
+
+
+
+還原備份
+
+
+網路監控
+
+
+系統安全
+
+
+電腦防毒
+
+
+資料保護
+
+
+網路安全
+
+
+網路分析
+
+
+USB 監控
+
+
+
+
+
+
+
+
+                    文書處理
+                
+
+
+
+
+
+文書管理
+
+
+文書編輯
+
+
+文書轉檔
+
+
+方程式編輯
+
+
+說明文製作
+
+
+論文編輯
+
+
+
+
+
+
+
+
+                    PDF 應用
+                
+
+
+
+
+
+PDF 編輯
+
+
+PDF 轉檔
+
+
+PDF 加解密
+
+
+Acrobat 插件
+
+
+
+
+
+
+
+
+                    網頁相關
+                
+
+
+
+
+
+網頁設計
+
+
+網頁瀏覽
+
+
+網頁安全
+
+
+網頁分析
+
+
+網頁打包及管理
+
+
+
+
+
+
+
+
+                    圖表編輯
+                
+
+
+
+
+
+圖表開發程式
+
+
+圖表製作
+
+
+圖像編輯
+
+
+3D 繪圖
+
+
+圖檔轉換
+
+
+影像擷取
+
+
+流程圖製作
+
+
+
+
+
+
+
+
+                    簡報排版
+                
+
+
+
+
+
+字型設計
+
+
+排版設計
+
+
+地圖繪製
+
+
+簡報及電子書
+
+
+
+
+
+
+
+
+                    影音軟體
+                
+
+
+
+
+
+樂曲製作
+
+
+視頻編碼
+
+
+影像錄製
+
+
+Flash 製作
+
+
+動畫製作
+
+
+影像圖庫
+
+
+影音分析
+
+
+影音播放
+
+
+影音編輯
+
+
+錄音軟體
+
+
+字幕軟體
+
+
+
+
+
+
+
+
+                    統計分析軟體
+                
+
+
+
+
+
+統計分析
+
+
+結構分析
+
+
+時間序列分析
+
+
+計量分析
+
+
+統計流程控制
+
+
+社會網絡分析
+
+
+
+
+
+
+
+
+                    數值分析軟體
+                
+
+
+
+
+
+決策分析
+
+
+數值運算
+
+
+人工智慧
+
+
+質性分析
+
+
+生命週期評估
+
+
+
+
+
+
+
+
+                    學術研究軟體
+                
+
+
+
+
+
+化學軟體
+
+
+IRT 應用
+
+
+生物軟體
+
+
+水利軟體
+
+
+視覺思考
+
+
+數學軟體
+
+
+互動教學
+
+
+醫學軟體
+
+
+物理分析
+
+
+認知心理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+×
+會員登入
+
+
+
+
+Email
+
+
+
+
+
+密碼
+
+
+
+
+
+
+
+登入
+忘記密碼
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+會員註冊
+
+
+
+
+Email
+
+
+
+
+
+密碼
+
+
+
+
+
+確認密碼
+
+
+
+
+
+
+
+註冊
+
+
+
+
+
+    Linksoft友環專業軟體代理網站服務，不論會員或非會員均可享受產品詢價和訂購服務。
+    欲加入會員，可以點選「註冊」成為會員。
+  
+加入會員的好處：
+
+  1. 您可以隨時登入會員，查詢產品詢價記錄，更新您的會員資料。
+  2. 系統將自動帶出您的會員資料，免去資料重複繕打的麻煩。
+  3. 只需填寫基本的聯絡資料，不會要求您留下身份證字號等個人機密性資料。
+  4. 掌握最新的產品資訊及最新好康，享受完整的客戶服務，註冊的聯繫Email可立即收到通知，再也不用怕漏失重要訊息。
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+忘記密碼
+
+
+
+
+Email
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+有關暨南大學應用化學系的幾個問題 | Yahoo奇摩知識+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+   ⌂首頁信箱新聞股市名人娛樂氣象運動App下載購物中心商城拍賣更多⋁知識+汽車機車電影字典遊戲旅遊理財房地產時尚美妝折扣城   Yahoo 奇摩知識+                        👤 登入    ✉ 信箱     ⚙ 服務說明    帳號資料 服務說明 意見回報        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yahoo奇摩知識+ 首頁
+
+
+
+
+
+
+
+
+
+
+
+所有分類
+ 
+健康
+ 
+商業與財經
+ 
+娛樂與音樂
+ 
+家居與園藝
+ 
+家庭與人際關係
+ 
+寵物
+ 
+懷孕與育兒
+ 
+政治與政府
+ 
+教育與參考
+ 
+新聞與活動
+ 
+旅遊
+ 
+汽車與交通
+ 
+消費電子產品
+ 
+環境
+ 
+社會科學
+ 
+社會與文化
+ 
+科學
+ 
+美容與造型
+ 
+藝術與人文
+ 
+遊戲與休閒活動
+ 
+運動
+ 
+電腦與網際網路
+ 
+食品與飲料
+ 
+餐廳與小吃
+ 
+
+
+
+
+
+世界Yahoo 
+
+
+
+
+
+
+
+
+阿根廷
+
+
+
+
+
+澳洲
+
+
+
+
+
+巴西
+
+
+
+
+
+加拿大
+
+
+
+
+
+法國
+
+
+
+
+
+德國
+
+
+
+
+
+印度
+
+
+
+
+
+印尼
+
+
+
+
+
+義大利
+
+
+
+
+
+馬來西亞
+
+
+
+
+
+墨西哥
+
+
+
+
+
+
+
+紐西蘭
+
+
+
+
+
+菲律賓
+
+
+
+
+
+魁北克
+
+
+
+
+
+新加坡
+
+
+
+
+
+香港
+
+
+
+
+
+西班牙
+
+
+
+
+
+泰國
+
+
+
+
+
+英國與愛爾蘭
+
+
+
+
+
+美國
+
+
+
+
+
+越南
+
+
+
+
+
+西班牙文
+
+
+
+
+
+
+
+關於
+
+
+
+
+
+關於 Yahoo奇摩知識+
+社群指南
+排行榜
+點數與等級
+部落格
+如何安全地使用 Yahoo奇摩
+
+ 
+
+
+
+
+
+
+
+
+ 教育與參考
+
+ 其他：教育
+
+
+ 看另一則問題 
+
+
+
+
+
+
+
+
+
+
+            有關暨南大學應用化學系的幾個問題
+        
+
+
+1.請問暨南大學畢業後出路好嗎?    我現在猶豫是否要考指考     
+
+2.有關應用化學系   主要是學什麼    哪些科目要很好? 
+
+3.我才考57級分  英11  數9   自12    是不是不容易進去? 
+
+先問這些    有想到在補充    感謝!
+
+更新: 
+補充:    
+
+1. 今年的數學頗難  去年的最低數學是10   會不會有機會到9?   如果分數很危險  是不是面試和備審資料要做得好? 
+
+2.我的化學在班上算是蠻不錯的   有什麼建議我在大學前先瞭解的?   我目前是想說要在七月前看完曾國輝的化學 
+
+3.所謂的夢幻科系  是指?? 
+
+拜託解答  感謝X2!!!
+
+
+
+
+
+ 
+追蹤 
+
+
+ 
+ 1 個解答 
+1
+
+
+檢舉不當使用
+
+
+
+
+
+
+
+
+
+您確定要刪除此解答嗎？
+是
+否
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+抱歉，似乎發生一些問題。
+
+
+
+Trending Now
+
+
+
+
+
+ 
+
+解答
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳解答: 
+             1.請問暨南大學畢業後出路好嗎?  我現在猶豫是否要考指考     
+
+還OK，畢竟是國立的 
+
+暨大應化系未來出路 
+
+公職考試/證照： 
+
+1.國營事業：台電；中油；自來水  
+
+2.高考：高考環境檢驗、商品檢驗  
+
+3.特考：公務人員特種考試關務人員四等考試：化學工程  
+
+4.公務人員特種考試法務部調查局調查人員：化學鑑識組 
+
+或是繼續深造研究所碩士班，或從事教職、化學及生技產業界、公民營之研究機構、電子產業界、醫藥產業界等。 
+
+2.有關應用化學系  主要是學什麼  哪些科目要很好? 
+
+顧名思義，化學相關的科目得要不錯 
+
+必修之專業課程　 
+
+第1學年 
+微積分, 2-2 學分 
+普通物理, 3-3 學分 
+普通物理實驗, 1-1 學分 
+普通化學, 3-3 學分 
+普通化學實驗, 1-1 學分 
+
+第2學年 
+有機化學, 4-4 學分 
+有機化學實驗, 2-2 學分 
+分析化學, 3-3 學分 
+分析化學實驗, 1-1 學分 
+
+第3學年 
+無機化學, 3-3 學分 
+物理化學, 3-3 學分 
+物理化學實驗, 1-1 學分 
+儀器分析, 3-3 學分 
+儀器分析實驗, 1-1 學分 
+
+第4學年 
+選修課程為主　 
+例如化妝品、環境科學...... 
+
+3.我才考57級分 英11 數9  自12    是不是不容易進去? 
+
+預估今年通過一篩標準為英11自11數10 
+
+您可能在數學倍率3時被刷掉 
+
+但可進夢幻科系 
+
+
+加油 
+
+祝金榜題名 
+
+
+
+
+
+ 參考資料： 
+ 
+
+
+泰國男人
+ · 4 年前 
+
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  發問者的評分
+                
+
+
+
+
+
+
+
+ 
+
+檢舉不當使用
+
+ 我認為此問題違反社群指南 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此問題違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此解答違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此解答違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此意見違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此意見違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+ 
+
+你可能對以下搜尋感興趣：
+
+
+陽光沙灘的浪漫島嶼渡假
+
+海外留學開啟全球新視野
+
+說走就走泰國輕鬆GO!
+
+為自己拓展視野豐富人生經驗
+
+
+
+
+
+
+
+
+
+
+
+
+發問問題
+通常可在幾分鐘內獲得解答！
+
+
+
+
+
+
+
+展開»
+
+
+
+
+
+
+詳細資料
+
+
+
+詳細資料
+
+
+
+
+
+
+現有問題
+
+
+
+
+更多
+
+
+
+
+
+請多詳述您的問題
+上傳處理中
+
+
+
+
+上傳失敗。 請上傳大於 100x100 像素的檔案
+目前發生問題，請再試一次。
+您只能上傳 PNG、JPG 或 JPEG 等類型的檔案。
+您只能上傳 3GP、3GPP、MP4、MOV、AVI、MPG、MPEG 或 RM 等類型的檔案。
+您只能上傳不超過 5 MB 的相片。
+您只能上傳不超過 600 MB 的影片。
+您只能上傳相片 (png, jpg, jpeg) 或影片 (3gp, 3gpp, mp4, mov, avi, mpg, mpeg, rm)。
+您只能上傳相片或影片。
+影片不應超過 <b>600mb/5 分鐘</b>
+相片不應超過 <b>5mb</b>
+影片不應超過 <b>600mb/5 分鐘</b>相片不應超過 <b>5mb</b>
+  
+
+
+
+
+
+
+
+解答問題
+
+
+三民家商有游泳課嗎?
+
+
+
+ 
+
+英語家教班課程 觀音?
+
+
+
+ 
+
+急急急！最近土城廣福附設幼兒園的學費大約是多少? 最近搬去臺北生活 想大概瞭解一下幼兒園的收費?
+
+
+
+ 
+
+各位大大
+我想問南護學姊們學校的問題
+新生入學指南上面說9/12要體檢9/13要新生始業式9/14.9/15要新生課業輔導，那9/11的時候可以搬到學校宿舍嗎？
+還有學校有什麼特別的規定嗎？
+例如頭髮，襪子，書包，鞋子
+求解?
+
+
+
+ 
+
+
+發燒問題
+
+
+
+
+學習電腦技能真的沒有限年齡嗎，那哪邊有再教美工軟體的?
+
+                  9 個解答
+              
+
+ 
+
+想問一下從事室內設計方面，公司都會看是不是本科系媽還是不會，最近想轉職，所以想去學?
+
+                  4 個解答
+              
+
+ 
+
+最近看到新聞都在報物聯網及智慧機器人，想知道現在外面知名補習班都有再教這方面的課嗎?
+
+                  5 個解答
+              
+
+ 
+更多問題
+
+
+
+
+
+因為畢業有門檻，除了要有MOS證照外，還要有中打證照，想問哪邊有相關考場?
+
+             3 個解答
+         
+
+ 
+
+高中生不做服務學習會怎樣嗎???????????????????????????????????????????????????????????
+
+             6 個解答
+         
+
+ 
+
+會考結束後，可以做些甚麼呢?
+
+             7 個解答
+         
+
+ 
+
+  
+
+
+
+
+
+
+
+
+服務條款
+
+
+隱私權
+
+
+RSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+化學一的摘要
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+跳到主要內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+行動Apps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學化學一教師: 李大偉2016/07/01 ~ 2016/08/3136小時/8週 (報名結束)       摘要本課程可分為兩大部分：「微觀化學世界」及「巨觀化學世界 -- 基礎篇」。
+
+「微觀化學世界」這部分課程內容是以量子力學的觀點出發去探討探索原子與分子活性的本質，包括瞭解如何利用原子軌域的特性如何影響原子的週期性及認識化學鍵的三個重要理論，與如何利用這三個理論解釋分子的特性，包括極性、化學活性、磁性甚至導電性。
+
+「巨觀化學世界 -- 基礎篇」這部分課程內容是在探討當一莫爾（6×10^23）為單位聚集在一起的系統時到底與與一個分子單獨存在的最大差異在哪裡。此部分的課程就是在介紹物質三態與這三種形態轉變時（或是化學反應）中能量交換的基本理論 -- 熱力學。熱力學不但涵蓋能量守恆原理，更重要的是預測物理化學變化是否能自然發生？我們從物質三態談起，最後希望讓大家能瞭解科學家如何預測化學反應的自發性。課程目標「微觀化學世界」的課程目標：
+
+瞭解電子在原子中運動的幾何形狀，並能計算不同運動的電子能量。
+瞭解電子的運動狀態如何影響原子的活性，並能清楚解釋週期表上原子的特性。
+瞭解古典分子模式的化學鍵模型（包括離子鍵與共價鍵），並能清楚繪製路易士結構（Lewis Structure）。
+瞭解分子的共振結構，並能清楚計算Formal Charge來辨別其穩定性。
+瞭解利用「電子對排斥理論」從 Lewis Structure預測此分子的3D立體結構。
+瞭解「價鍵理論」如何在 Lewis Structure模式下，將原子軌域與古典分子模行進行完美的混成。
+瞭解「分子軌域理論」建立出化學鍵的新模型。
+利用「分子軌域理論」解釋分子顏色、導電性與磁性的由來。
+
+
+「巨觀化學世界 -- 基礎篇」的課程目標：
+
+清楚瞭解「分子動力學」的來龍去脈 -- 溫度其實就是分子平均動能的巨觀表現。
+可以清楚說明理想氣體與真實氣體定性上的差異，並利用狀態方程式精準計算定量上的差異。
+清楚瞭解液體結構的特性。
+清楚瞭解固體結晶結構的特性，包括：金屬結晶、鹽類結晶與共價鍵結晶
+熱力學第1定律能量守恆 -- 內能及熱焓的守恆
+熱力學第2定律自發性的判別 -- 熵與自由能
+
+授課教師李大偉老師國立交通大學 應用化學系本課程授課教師為李大偉博士。學歷：國立清華大學化工學士。羅徹斯特大學化工博士。經歷：中央研究院化學所博士後研究。國立交通大學應用化學系助理教授。專長領域：統計熱力學、分子動力的MC及MD電腦模擬及計算化學模擬軟體。教學經驗：15年教學經驗，教過的課程包括普通化學、化學資訊、計算機概論、生活化學、化工熱力學及工程數學。教學獎勵獲獎記錄：國立交通大學97學年優良教學獎及100學年傑出教學獎。課程進度表第1週:量子的世界《7月1日起開放》第2週:多電子原子與週期表《7月1日起開放》第3週:化學鍵《7月15日起開放》第4週:分子結構與作用力《7月15日起開放》第5週:氣體性質《7月29日起開放》第6週:液體與固體《7月29日起開放》第7週:熱力學第一定律《8月12日起開放》第8週:熱力學第二及三定律《8月12日起開放》第9週:期中考準備與應考區《7月15日起開放》第10週:期末考準備與應考區《7月15日起開放》上課形式課程進度：
+第一週 7/4（週一）第一次師生會面（可自由參加）
+
+上課時間：下午1：20~3：00
+上課地點：交通大學資訊服務中心（即為舊的計算機中心）PC4教室。
+上課內容：
+
+解釋交大新生學院上課的形式：「免費自由學習」與「學分學習班」（包括交大校內課程：「霹靂優化學一」與「暑修化學一」）
+
+
+
+
+第一週 7/1~7/7 「量子的世界」課程內容包括：
+
+第 1 章課程的網路影音約6小時
+第 1 章網路實戰小考（每次網路實戰小考時間30分鐘，兩次機會取最高分） 
+
+第二週 7/8~7/14 「多電子原子與週期表」課程內容包括：
+
+第 2 章課程的網路影音約6小時
+第 2 章網路實戰小考（每次網路實戰小考時間30分鐘，兩次機會取最高分）
+
+第三週 7/15~7/21 「化學鍵」課程內容包括：
+
+第 3 章課程的網路影音約6小時
+第 3 章網路實戰小考（每次網路實戰小考時間30分鐘，兩次機會取最高分）
+
+第四週 7/22~7/28 「分子結構與作用力 」課程內容包括：
+
+第 4 章課程的網路影音約6小時
+第 4 章網路實戰小考（每次網路實戰小考時間30分鐘，兩次機會取最高分）
+
+
+期中考分為兩種形式：
+
+「免費自由學習」：網路實戰期中考（每次網路實戰小考時間60分鐘，三次機會取最高分）
+「學分學習班」（包括交大校內課程：「霹靂優化學一」與「暑修化學一」）：
+
+考試時間：7/29（週五）下午1：20~3：20
+考試地點：交通大學科二館210教室，考卷為英文試題。請務必攜帶工程型計算機。 
+考試內容：第1、2、3及4章
+
+
+
+
+第五週 7/29~8/4 「氣體性質」課程內容包括：
+
+第 5 章課程的網路影音約6小時
+第 5 章網路實戰小考（每次網路實戰小考時間30分鐘，兩次機會取最高分） 
+
+第六週 8/5~8/11 「液體與固體」課程內容包括：
+
+第 6 章課程的網路影音約6小時
+第 6 章網路實戰小考（每次網路實戰小考時間30分鐘，兩次機會取最高分）
+
+第七週 8/12~8/18 「熱力學第一定律 」課程內容包括：
+
+第 7 章課程的網路影音約6小時
+第 7 章網路實戰小考（每次網路實戰小考時間30分鐘，兩次機會取最高分）
+
+第八週 8/19~8/25 「熱力學第二及三定律 」課程內容包括：
+
+第 8 章課程的網路影音約6小時
+第 8 章網路實戰小考（每次網路實戰小考時間30分鐘，兩次機會取最高分）
+
+
+期末考分為兩種形式：
+
+「免費自由學習」：網路實戰期中考（每次網路實戰小考時間60分鐘，三次機會取最高分）
+「學分學習班」（包括交大校內課程：「霹靂優化學一」與「暑修化學一」）：
+
+考試時間：8/26（週五）下午1：20~3：20
+考試地點：交通大學科二館210教室，考卷為英文試題。請務必攜帶工程型計算機。 
+考試內容：第5、6、7及8章
+
+
+評分標準
+每次小考最高分為100分。此堂課總共有8次小考，所有小考的平均佔總成績20%。
+期中考最高分為100分佔總成績的40%。
+期末考最高分為100分佔總成績的40%。
+通過標準課程及格標準:60分滿分：100分先修科目或先備能力
+高一化學
+熟悉三角函數的基本計算與其圖形，同時也需瞭解三角函數的微積分運算。
+熟悉指數與對數函數的基本計算與其圖形，同時也需瞭解指數與對數函數的微積分運算。
+建議參考書目"University Chemistry" by Brian B. Laird, McGraw-Hill, 2009. 東華書局新月圖書代理。常見問答集(1)  問：何謂「免費自由學習」？      答：在ewant平臺的「新生學院」的「化學一」課程首頁（http://www.ewant.org/admin/tool/mooccourse/mnetcourseinfo.php?hostid=5&id=381）報名學習就是「免費自由學習」的學生。「化學一」課程提供8次網路實戰小考、網路期中考及網路期末考。此課程要求完成下列測驗：
+
+8次網路實戰小考（8次小考的平均佔總成績20%）
+網路實戰期中考（佔總成績40%）
+網路實戰期末考（佔總成績40%）
+
+學習者可以藉由網路測驗評估自己學習成果，如總成績超過（含） 60分者，即可免費獲得電子版線上課程修課通過證明，雖然無法換取大學之學分證書，但仍是肯定自我的鼓勵。
+(2)  問：何謂「學分學習班」？      答：在交大課務組註冊選修暑修課程中的「化學一」與在交大推廣教育中心註冊選修「霹靂優化學一」的學生。此課程要求完成下列測驗：
+
+8次網路實戰小考（8次小考的平均佔總成績20%）
+實體期中考（佔總成績40%）
+實體期末考（佔總成績40%）
+
+總成績超過（含） 60分者，將可獲得交大教務處認可「化學一」3學分。
+
+交大暑修課程請參考交大課務組的暑修課程網頁：https://summercourse.nctu.edu.tw/
+交大霹靂優課程請參考交大推廣教育中心的交大 霹靂優學園課程資訊網頁：http://ccet.nctu.edu.tw/pre-u/classinfor.php?id=1
+
+ 
+
+
+
+
+
+化學化工常用軟體實例教程- 台灣Wiki 首頁百科圖片百科分類TwWiki台灣Wiki>百科分類>化學化工常用軟體實例教程評論（0）分享到：分享到Facebook分享到Twitter分享到Google+分享到噗浪化學化工常用軟體實例教程 標籤： 暫無標籤 目錄1. 基本信息2. 內容簡介3. 目錄回目錄1 化學化工常用軟體實例教程 -基本信息 　　作　者：彭智，陳悅 編出 版 社：化學工業出版社ISBN：9787502578275出版時間：2010-09-01版　次：1頁　數：244裝　幀：平裝開　本：16開所屬分類：圖書 > 科技 > 化學工業 回目錄2 化學化工常用軟體實例教程 -內容簡介 　　本書選用最新的化學、化工數據處理軟體為平臺進行講解，包括數據處理軟體Origin，化學辦公軟體chemoffice以及示意圖繪製軟體Visio。所選的實例都是與化學、化工數據處理密切相關的。讀者只要按照實例一步一步做，就能快速掌握常見的化學、化工數據處理方法。考慮到各種數據處理結果最終要形成文本輸出或做成幻燈片展示，本書還專門講了Word高級應用以及Powerpoint應用技巧方面的內容。　　這是一本非常實用的「傻瓜書」，簡潔實用是本書之最大特色。書中選用的應用軟體均是目前市場上的最新版本。全書共5章，分別介紹了word軟體的高級應用、PPT演示文稿的製作、化學辦公軟體Chem0ffice的應用、數據處理軟體Origin的應用等內容。實例豐富、典型，敘述準確、精鍊，層次分明，圖文並茂。即使是只有初級計算機知識的讀者，只要按照書中的實例操作，也會迅速掌握十分專業的化學、化工常用軟體應用技能。回目錄3 化學化工常用軟體實例教程 -目錄 　　第1章 Word軟體應用進階 4 　　1.1 Word編輯排版中常見問題 4 　　1.2 插入圖片 12 　　1.3 公式編輯器 15 　　1.4 Word中的樣式 22 　　1.5 使用宏 30 　　1.6 模板 35 　　1.6.1 保存模板 35 　　1.6.2 模板的存放地點 36 　　1.6.3 使用模板 36 　　1.7 小結 37 　　第2章 PPT演示文稿製作 38 　　2.1 基本操作 38 　　2.1.1 基本概念 38 　　2.1.2 製作第一張幻燈片 38 　　2.1.3 添加新幻燈片 39 　　2.1.4 添加圖片 40 　　2.1.5 添加表格 42 　　2.1.6 添加視頻、音頻 43 　　2.1.7 應用設計模板 44 　　2.1.8 設置動畫效果 45 　　2.1.9 更換幻燈片版式 46 　　2.1.10 添加、刪除佔位符 47 　　2.1.11 製作幻燈片的註意事項 47 　　2.2 常用技巧 48 　　2.3 音頻視頻功能 54 　　2.4 幻燈片發布 60 　　2.5 小結 62 　　第3章 化學辦公軟體ChemOffice 63 　　3.1 初識ChemDraw 63 　　3.1.1 主界面 63 　　3.1.2 模板 64 　　3.2 ChemDraw繪圖實例 67 　　3.3 Chem3D繪圖實例 80 　　3.3.1 Chem3D簡介 80 　　3.3.2 建立3D模型 81 　　3.3.3 ChemDraw結構式與3D模型間的轉換 86 　　3.3.4 整理結構與簡單優化 87 　　3.3.5 顯示3D模型信息 87 　　3.3.6 改變元素序號與替換元素 89 　　3.3.7 原子和分子的大小 90 　　3.3.8 計算內旋轉勢能 93 　　3.3.9 Huckel分子軌道 95 　　3.3.10 MOPAC量子力學計算 96 　　3.4 ChemFinder 98 　　3.4.1 ChemFinder簡介 98 　　3.4.2 根據結構式檢索 98 　　3.4.3 根據分子式檢索 100 　　3.4.4 根據化學名稱檢索 101 　　3.4.5 根據相對分子質量檢索 102 　　3.4.6 使用化學反應資料庫 103 　　3.4.7 查找免費網路資源 105 　　3.5 小結 109 　　第4章 數據處理軟體Origin 110 　　4.1 Origin 7.0界面 110 　　4.1.1 主界面 110 　　4.1.2 菜單欄 111 　　4.1.3 工具欄 116 　　4.2 Worksheet窗口 118 　　4.2.1 自鍵盤輸入數據 119 　　4.2.2 自文件導入數據 119 　　4.2.3 列操作 120 　　4.2.4 數值計算 121 　　4.2.5 數據統計與篩選 123 　　4.3 Origin繪圖 126 　　4.3.1 繪製最簡單的X-Y圖形 127 　　4.3.2 定製圖形 127 　　4.3.3 定製坐標軸 130 　　4.3.4 添加文本、箭頭等註釋 134 　　4.3.5 讀取圖中數據 135 　　4.3.6 數據屏蔽和移除 135 　　4.3.7 保存項目文件和模板 136 　　4.3.8 使用模板繪圖 136 　　4.4 2D繪圖實例 137 　　4.4.1 繪製紅外光譜圖 137 　　4.4.2 多條曲線疊加對比圖 141 　　4.4.3 繪製X射線衍射圖 146 　　4.4.4 線性回歸 148 　　4.4.5 多項式回歸 153 　　4.4.6 非線性回歸 154 　　4.4.7 扣除基線 157 　　4.4.8 數值積分 159 　　4.4.9 拾取峰值 161 　　4.4.10 分峰 162 　　4.4.11 雙坐標圖 165 　　4.4.12 多層圖 169 　　4.4.13 數據平滑與濾波 174 　　4.5 3D繪圖實例 179 　　4.5.1 工作錶轉換為矩陣 179 　　4.5.2 三維錶面圖 180 　　4.5.3 圖層屬性設置 181 　　4.5.4 其他3D圖形 182 　　4.6 小結 183 　　第5章 繪製示意圖軟體Visio 184 　　5.1 Visio功能簡介 184 　　5.2 初識Visio 185 　　5.2.1 主界面 185 　　5.2.2 菜單欄 187 　　5.2.3 工具欄 187 　　5.2.4 形狀、模具與模板 188 　　5.3 基本文件與頁面操作 189 　　5.3.1 文件操作 189 　　5.3.2 設置頁面 190 　　5.3.3 標尺與網格 192 　　5.3.4 背景頁 193 　　5.4 基本圖形操作 193 　　5.4.1 基本圖形 194 　　5.4.2 圖形的各種手柄 194 　　5.4.3 繪製圖形 195 　　5.4.4 複製形狀 196 　　5.4.5 刪除形狀 196 　　5.4.6 查找形狀 196 　　5.4.7 移動圖形 196 　　5.4.8 調整形狀的大小 197 　　5.4.9 連接形狀 197 　　5.4.10 堆疊形狀 198 　　5.4.11 對齊形狀 198 　　5.4.12 形狀組合 199 　　5.4.13 形狀的聯合 199 　　5.4.14 形狀的拆分 200 　　5.4.15 形狀的相交操作 200 　　5.4.16 形狀的剪除 200 　　5.4.17 形狀旋轉與翻轉 201 　　5.4.18 形狀格式化 202 　　5.5 基本文字操作 203 　　5.5.1 向形狀添加文本 204 　　5.5.2 添加獨立文本 204 　　5.5.3 設置文本格式 204 　　5.5.4 改變文字方向 205 　　5.5.5 特殊符號 205 　　5.6 將圖形添加到Word文檔 205 　　5.6.1 將Visio圖形添加到Word文檔 206 　　5.6.2 在Word文檔中修改Visio圖表 206 　　5.7 Visio繪圖實例 206 　　5.7.1 組織結構圖 206 　　5.7.2 程序流程圖 211 　　5.7.3 工藝流程示意圖 216 　　5.7.4 化工廠平面圖 228 　　5.7.5 辦公室平面佈置圖 233 　　5.7.6 網路結構圖 237 　　5.7.7 製作網頁 242 　　5.8 小結 244上一篇[化學計量學在分析化學中的應用]    下一篇 [歸獸]相關評論同義詞：暫無同義詞收藏到：收藏到Facebook收藏到Twitter收藏到Google+收藏到噗浪詞條信息瀏覽次數: 216 次更新時間: 2013-08-25相關詞條精彩詞條More>《那女人很可怕》郭春美《嗜血判官》《愛情與舞蹈》周期盤點軍人保障卡分享到分享到Facebook分享到Twitter分享到Google+分享到噗浪1基本信息2內容簡介3目錄
+
+
+
+
+
+
+Origin - 工程及科學應用繪圖軟體 - 昊青公司--專業軟體代理商
+
+
+
+
+
+
+
+
+
+Citrix, Mathematica, Stata, Minitab, Eviews, dSPACE, Symantec.cloud, 昊青股份有限公司迴首頁│繁體版│簡體版│English│FB關於昊青產品系列影音專區最新消息電子報聯絡我們首頁 > 產品系列 >工程應用軟體以A~Z排序網路及通訊軟體CitrixEkahauNetwork InstrumentsOPNET ModelerPowerPlug ProTesting TechnologiesWRQ Reflection雲端運算解決方案BitdefenderSymantec.cloud統計與經濟分析軟體Crystal BallEQSEViewsGAUSSLIMDEPLISREL / HLMMinitabNWANVivoRATS/CATSSCAShazamStataTableau數學與管理決策軟體APO/AMI@RISKConceptDrawFinToolsFrontier AnalystGAMSGeometry ExpressionsLINDO / LINGOMathematicaMathtypeVanguard System化學應用軟體ChemOfficeGaussianHypercubeSPARTAN工程應用軟體20-SimDiffpackFilterShopOriginParticleworksSKMSurfer, GrapherWasp-NetXFdtd其他應用軟體EndNoteLahey FortranOnePagerPCTeXScientific WorkplaceSimscript硬體及周邊dSPACEHumusoftK-Team工程應用軟體依產品系列Origin- 工程及科學應用繪圖軟體Origin 是一套易學易用的軟體，提供科學家與工程師所需的強大的數據分析能力與印刷品等級的繪圖功能。OriginPro 除了 Origin 所有功能外，還額外提供如峰值擬合、曲面擬合、統計、訊號處理以及影像處理(image processing)等多種分析工具。OriginPro 是一套結合數據分析與資料繪圖的最佳解決方案。最新發佈版本為Origin 2017。>> 前往原廠網站我要洽詢產品介紹Origin/OriginProOrigin2016新功能Origin2017新功能Origin Developer KitOrigin OEMOrigin Viewer版本比較Origin 新舊版本 比較表Origin 及 OriginPro 比較表圖表簡介Origin繪圖功能Origin主題與模板Origin匯出圖表蜘蛛圖／雷達圖圓餅圖和長條圖曲線或符號圖多坐標軸與多屏面圖三元圖極座標圖瀑布圖輪廓圖 等高線圖向量圖3D 立體圖一般(專業)影像資料處理統計圖表Profile Plots專業領域圖表客製化圖表成功案例聚合物材料光電特性研究慢性肺病研究心臟產生能量的原理愛滋病疫苗的研發Origin 對肌肉組織活動的研究分子式資料視覺化尖端電池技術研發功能概述ORIGIN 功能一覽一般分析功能曲線擬合功能峰值分析與擬合工具參數化函式繪圖(Parametric Function Plots )多變量分析(Multivariate Analysis)集群分析(Cluster Analysis)積分非線性擬合(Nonlinear Fitting with Integral)下載專區下載Origin 2017 手冊軟體試用網路版安裝與設定單人版序號啟用說明知名客戶全球財富500強企業航太軍事工業汽車與重工業生技與醫藥產業化學業電腦與電子軟硬體消費性產品與醫療電子、科學、影像等工業設備財經與顧問業金屬，建材與紙類石油、能源與工程公司電信業台灣知名客戶所有客戶Origin應用範圍在舉凡工程或自然科學之類的硬科學領域，或者是社會科學與金融、顧問之類的軟科學領域，專業人士和數字的關係也越來越密切，除了紀錄和計算之外，資料的視覺化和表達，還有後處理和分析也越來越重要，從簡單的簡報製作和資訊分享到複雜的資料採礦(Data Mining)、決策支援(Decision Support)、知識管理(Knowledge Management，KM)、知識發掘(Knowledge Development，KD)等先進複雜對於一個企業或是商務模式有關鍵性影響的領域，都逐漸扮演越來越重要的角色。Origin和OriginPro是設計給和數字資料關係密切的專業人士的貼心工具，以往只有當事人能理解的大量數據，經由Origin和OriginPro的協助能夠視覺化，讓所有需要資訊的人都可以無障礙的理解。Origin系列產品優異的血統，讓數字不再冰冷，從使用者的觀點出發設計的使用者介面讓Origin擁有友善的特色諸如：◎       操作直觀，容易上手，專業人士有該領域中基本所需的數學背景或數字觀念就可以輕鬆上手，不需要花很長的重新學習。◎       在統計、曲線擬合(curve fitting)、峰值分析(peak analysis)各種數值資料分析上有著卓越的表現，並且易於使用。◎       Origin即點即到(point-and-click)的操作介面在2D、3D繪圖、等高線繪圖上具有極高的便利性。◎       針對工程和自然科學領域的應用，Origin在訊號處理和影像處理上也有強大的功能，讓使用者可以輕易地從影像和各種的訊號資料裡面截取或比較所需的資訊。◎       Origin有客製化的選項，使用者可制定模板(Templates™)當數據或母數改變時，會自動改變圖表和資料結果。◎       Origin在做圖和出圖的表現上，也可以達到專業出版品的水準，專業人士只需要基礎的文書處理技巧，就可以產出專業的簡報資訊。 Origin和OriginPro共有的優異特性能普遍的協助專業人士在這些工作上：Data Analysis (一般資料分析)                         liner curve fittingOrigin系列的產品能提供使用者從基礎到進階的資料分析工具以滿足不同層面或層次的需求，最常見的功能包括了峰值分析(peak analysis), 曲線擬合(curve fitting),以及一般統計功能和訊號處理。 由於資料分析是承接前一個工作階段的成果，所以Origin可以支援許多不同的資料格式，讓資料匯入沒有障礙，同時分析的結果也會是下一階段工作甚至是決策的資料來源，所以Origin也支援許多不同格式的資料輸出(Export)。並且資料可能會來自許多不同專案的產出，同時也可能要提供給不同專案使用，所以Origin也提供諸如多頁工作簿(Multi-sheet workbooks) 以及Project Explorer 讓使用者可以組織和管理不同專案，並且可以把這些工作簿存成各種的樣板(analysis templates) 以便於日後重複使用。 Graphing (基礎到進階的繪圖功能)                            General graphing畫甚麼圖和怎麼畫這些圖常常是專業人士製作簡報和做資料分析的一項重要工作，甚至是因為難以決定或是不好製作而產生困擾，Origin內建了跨各專業領域70種以上的製圖樣板，讓製圖繪圖變成非常簡單直觀，讓專業人士不再面臨為了方法耽擱目的的困擾又可以產出專業出版品品質的圖表。從基礎、常見的輪廓圖(contour), 2D平面圖或是3D立體圖到科學工程或是財金專業領域使用的諸如極座標圖(windrose，Polar Chart), 股價走勢圖stock (OHLC), 三元圖(ternary，including ternary-contour), 2D向量圖(2D vector) and 3D向量圖(3D vector),以及其他多種專業統計圖表。     NASDAQ graph by done Origin Programming (編程設計)對於熟練的使用者想要把Origin的環境和功能更進一步的特殊化和自動化，Origin支援兩種程式語言給他們使用除了內建的以C語言為基礎發展的Origin C之外，也支援 LabTalk™。使用者可以用這些工具把繪圖和分析的工作自動化。Origin也包含了 整合式程式發展環境( Integrated Development Environment，IDE),以及程式編譯器Code Builder ,讓使用者可以很容易的撰寫程式並且除錯。同時Origin也可以做為其他程式語言諸如VB, C++, C# and LabVIEW™ 的Automation Server 在工程和資訊領與上有更有彈性的發揮。 OriginPro 更進一步的提供了許多進階的功能，對於一般的使用者，OriginPro可以額外提供的分析工具諸如:Peak Fitting(峰值擬合)Surface Fitting(錶面或曲面擬合)Statistics(一般統計)Signal Processing(訊號處理)Image Handling(影像處理) Peak Fitting (峰值擬合)                      General Peak fittingOriginPro的峰值分析工具( Peak Analyzer tool)讓客戶可以在光譜或是頻譜(spectra)上找到一個到多個峰值並且加以擬合。基準線(Baseline)的錨點可以根據擬合公式的特性做設定，並且基準線的擬合也可以被包括在整個擬合過程之中。OriginPro提供了Fit Control的功能讓客戶可以全盤的控制包括各種混合的峰值算式( mixed peak functions),峰值中心與寬度(peak centers and widths),共用參數(sharing parameters),以及硬性設定邊界( imposing bounds )或訂立線性的參數限制等功能(linear constraints on parameters).圖形和表格也會一同呈現在完成的報告產出裡。Surface Fitting (錶面或曲面擬合)OriginPro可以用3維的XYZ資料點來擬合和逼近立體的平面或曲面，相關的資料可以一併顯示，包括擬合的資料點到被擬合的平面之間的dropline都可以一併顯示。Statistics (進階統計功能)OriginPro較一般版本的提供了更多更深入的統計分析工具包括◎ Descriptive Statistics                     ◎Discrete Frequency counting◎ Normality tests                           ◎ Correlation analysis◎ One-way and two-way Repeated Measures◎ ANOVA and Friedman ANOVA◎ Two-Sample Kolmogorov-Smirnov Test and Mann-Whitney Test◎Survival Analysis tools including Weibull Fit and Cox Proprotional Hazard Model,◎ROC Curves                                ◎ Power and Sample Size tests.Signal Processing (訊號處理)                           STFT graph done in Origin對於電機與電子或是通訊相關產業和工程領域OriginPro提供了◎ Short-Time FFT (STFT)◎ Hilbert Transform◎ Coherence◎ 2D FFT and 2D FFT-based Filtering◎ 2D Correlation◎ Wavelet analysis. Image Handling (影像處理)      General Image handlingOriginPro提供了更多專業的工具讓客戶處理影像資料諸如：◎ Alpha blending◎ Pixel logic◎ Morphological filtering◎Interpolated background subtraction. 進一步的詳情可以參考本公司網站的專頁，或是原廠網站，有興趣的客戶也可以洽詢本公司。我要洽詢關於昊青  |  產品系列  |  影音專區  |  最新消息  |  電子報  |  聯絡我們  |  網站地圖Scientific Formosa Inc 2017 All Rights Reserved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Merck PTE HD v1.2.4.1《化學元素週期表》繁體中文版!!-Android 軟體下載-Android 遊戲/軟體/繁化/交流-Android 台灣中文網 -  APK.TW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+設為首頁收藏本站快捷導航
+登錄
+◆◆
+
+
+
+
+帳號
+
+ 密碼
+
+
+自動登錄
+找回密碼
+登錄
+
+
+
+
+
+
+註冊
+
+
+
+
+
+
+
+
+
+請 登錄 後使用快捷導航沒有帳號？註冊
+
+
+
+
+ 
+
+
+討論區BBS部落格Space群組Group專題Collection應用中心金豆儲值懸賞任務鑽石商城Auction
+
+
+
+
+
+
+
+
+
+
+
+
+綜合
+
+綜合
+本版
+帖子
+用戶
+
+搜尋
+
+
+
+
+
+
+熱搜
+line
+燒餅
+白貓
+root
+怪物彈珠
+rangers
+超註音
+旅遊大亨
+line主題
+主題
+鈦備份寶可夢外掛
+pokemon go 外掛
+臺灣綜合
+necrobot
+toptoon頂通破解
+妖怪百姬修改
+逍遙安
+怪物彈珠外掛
+
+ 便捷搜索 1 小時以內的新帖 4 小時以內的新帖 8 小時以內的新帖 24 小時以內的新帖 1 週內帖子 1 月內帖子 6 月內帖子 1 年內帖子 
+
+
+
+
+
+
+
+
+
+
+遊戲交流遊戲下載軟體交流軟體下載
+手機影視桌布主題漫畫小說手機鈴聲
+水族館手機音樂二手市場新手專區
+HTCSonySamsungTWMHuaweiMOTO
+應用中心安全檢測解密技術繁化技術
+
+
+
+
+
+
+
+
+
+
+ Android 台灣中文網»討論區 › Android 遊戲/軟體/繁化/交流 › Android 軟體下載 › Merck PTE HD v1.2.4.1《化學元素週期表》繁體中文版!! ... 
+
+
+
+
+
+
+
+
+
+123 / 3 頁下一頁
+返回列表
+
+
+
+
+
+
+
+
+
+  
+
+[行業軟體]
+Merck PTE HD v1.2.4.1《化學元素週期表》繁體中文版!!
+ 
+               
+               
+               
+               
+               
+[複製連結]
+查看: 4428|回覆: 28|好評: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ MyStyle星月
+當前離線
+
+
+積分118
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+
+電梯直達
+
+ 
+  
+       
+       
+      樓主 
+       
+       
+       
+
+
+
+
+
+
+MyStyle星月
+|
+收聽TA
+
+|
+只看該作者
+
+|倒序瀏覽
+|閱讀模式
+
+
+
+
+發表於 2014-5-7 18:28
+
+
+
+
+
+
+
+
+下載
+
+手機型號:
+紅米機 
+
+
+作業系統:
+Android 4.X  
+
+
+
+
+
+
+
+
+
+馬上加入Android 台灣中文網，立即免費下載應用遊戲。
+您需要 登錄 才可以下載或查看，沒有帳號？註冊 
+
+x
+
+ 本帖最後由 MyStyle星月 於 2014-5-7 18:28 編輯 
+
+前言:小弟最近才來到此論壇,有如來到美洲新大陸一樣,超多實用的軟體啦 
+剛好升上國二,開始教理化之後,元素的陰影一直無法消散...
+直到看到某大大發了這軟體~~超讚的啦!
+可是一直沒看到人發繁體中文版... 心一狠 就直接自己來繁化了 
+
+Merck PTE HD v1.2.4.1《化學元素週期表》
+
+
+
+
+
+登錄/註冊後可看大圖
+
+
+
+
+Merck PTE HD v1.2.4.1.png (9.61 KB, 下載次數: 0)
+
+下載附件
+
+
+ 保存到相冊
+
+2014-5-7 18:01 上傳
+
+【語　　言】英文、其他
+【軟體名稱】Merck PTE HD
+【版本信息】v1.2.4.1
+【文件大小】6.37 MB
+【更新日期】2013-02-22
+【系統要求】Android 2.1 以上
+【使用權限】免費
+【軟體介紹】「Merck PTE HD」是一款化學元素週期表的應用程式，這個軟體可提供中學與大學的師生們，作為化學課程的輔助工具，或化學專業領域的人士們使用，以幫助他們獲得更多的化學元素知識——從元素的分類、屬性到發現史等等。
+
+ 　　強大的多語言設置，方便讀者閱讀豐富的文章：憑借其結構合理且安排簡潔的元素組合週期表，以及每個元素的詳細頁面，智能控制和眾多的排序與篩選選項，Merck android PSE應用程序向客戶提供了快速和全面的信息。
+
+ 　　化學元素週期表是研究化學最重要的工具之一。在這裡您將找到諸如相對原子質量，密度或外觀熔點與沸點到電子配置的詳盡數據。
+
+【更新內容】
+★ Minor adjustments for Nexus 7 ★
+ Stay tuned for further updates.
+【程式截圖】
+
+
+
+
+
+登錄/註冊後可看大圖
+
+
+
+
+Screenshot_2014-05-07-18-04-15.png (214.83 KB, 下載次數: 1)
+
+下載附件
+
+
+ 保存到相冊
+
+2014-5-7 18:17 上傳
+
+
+
+
+
+
+登錄/註冊後可看大圖
+
+
+
+
+Screenshot_2014-05-07-18-04-23.png (298.12 KB, 下載次數: 0)
+
+下載附件
+
+
+ 保存到相冊
+
+2014-5-7 18:17 上傳
+
+
+
+
+
+
+登錄/註冊後可看大圖
+
+
+
+
+Screenshot_2014-05-07-18-04-58.png (152.98 KB, 下載次數: 0)
+
+下載附件
+
+
+ 保存到相冊
+
+2014-5-7 18:17 上傳
+
+
+
+
+
+
+登錄/註冊後可看大圖
+
+
+
+
+Screenshot_2014-05-07-18-05-15.png (182.29 KB, 下載次數: 0)
+
+下載附件
+
+
+ 保存到相冊
+
+2014-5-7 18:17 上傳
+
+【附件下載】
+
+
+
+Merck PTE HD v1.2.4.1.apk
+(6.38 MB, 下載次數: 676)
+
+
+
+2014-5-7 18:19 上傳
+點擊文件名下載附件
+
+
+您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+Facebook
+Twitter
+Google
+LINE
+
+
+
+「用Android 就來APK.TW」，快來加入粉絲吧！Android 台灣中文網（APK.TW）
+javascript, 中文版, 英文, 元素, 信息
+
+
+
+評分
+
+
+
+
+
+ 參與人數 33碎鑽 +22
+經驗 +3
+幫助 +33
+
+收起
+理由
+
+
+
+
+ linda5431
+
+
+ + 1
+偶像，看完你的內容，讓我找到了活著的意義.
+
+
+
+ Chihhao.Chang
+ + 1
+
+ + 1
+非常讃
+
+
+
+ tab_boy
+ + 1
+ + 1
+ + 1
+讚一個!
+
+
+
+ liu32489
+ + 1
+
+ + 1
+非常讃
+
+
+
+ koalabear168
+ + 1
+
+ + 1
+非常讃
+
+
+
+ iceatapk
+ + 1
+
+ + 1
+非常讚
+
+
+
+ earseyes
+ + 1
+
+ + 1
+非常讚
+
+
+
+ wu6491
+
+
+ + 1
+讚
+
+
+
+ jtchen61
+ + 1
+
+ + 1
+讚一個!
+
+
+
+ lmo320
+
+
+ + 1
+讚
+
+
+
+
+查看全部評分
+
+
+
+
+
+
+
+
+
+
+收藏8
+分享
+專題0
+
+
+
+
+
+
+
+
+
+
+
+
+
+相關帖子
+
+• [付費完整][免鑽] Old Man’s Journey (回憶之旅) V1.2.2 (英文 TAPK)
+• 0717 扁平化網站元素
+• 0717 JavaScript 隨書光碟
+• 為了誰的鍊金術師 中文版的修改
+• 攻殼機動隊 2017([email protected]@[email protected]@官方繁/簡/粵字幕)
+• 《修改版》波可龍迷宮 (日文版) V5.0.3
+• 天才的禮物 Gifted 2017([email protected]@[email protected]@[email protected]@繁中...
+• 新木乃伊 The Mummy 2017([email protected]@[email protected]@完整繁英字幕)
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+
+
+
+
+
+ 
+回覆
+
+
+使用道具
+
+舉報
+
+
+提升卡
+變色卡
+排首位
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ jimhs1
+當前離線
+
+
+積分30
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+  
+       
+       
+      沙發 
+       
+       
+       
+
+
+
+
+
+
+jimhs1
+|
+收聽TA
+
+|
+只看該作者
+
+
+
+
+發表於 2014-5-7 18:34
+
+
+
+
+
+
+週期表
+很遙遠的東西您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+
+
+
+
+
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+
+
+
+
+
+ 
+回覆
+支持  反對 
+
+
+使用道具
+
+舉報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ dollar
+當前離線
+
+
+積分537
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+  
+       
+       
+      板凳 
+       
+       
+       
+
+
+
+
+
+
+dollar
+|
+收聽TA
+
+|
+只看該作者
+
+
+
+
+發表於 2014-5-7 19:17
+
+
+
+
+
+
+好用的工具
+值得推薦喔您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+
+
+
+
+
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+
+
+
+
+
+ 
+回覆
+支持  反對 
+
+
+使用道具
+
+舉報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ blueman
+當前離線
+
+
+積分51
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+  
+       
+       
+      地板 
+       
+       
+       
+
+
+
+
+
+
+blueman
+|
+收聽TA
+
+|
+只看該作者
+
+
+
+
+發表於 2014-5-7 21:34
+
+
+
+
+
+
+新版的元素週期表, 下載更新了您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+
+
+
+
+
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+
+
+
+
+
+ 
+回覆
+支持  反對 
+
+
+使用道具
+
+舉報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ key3600rpm
+當前離線
+
+
+積分84
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+ 
+5樓 
+       
+       
+       
+
+
+
+
+
+
+key3600rpm
+|
+收聽TA
+
+|
+只看該作者
+
+
+
+
+發表於 2014-5-8 01:24
+
+
+
+
+
+
+可以來復習國中的理化課程!
+也順便背一下元素週期表!
+考考自己的記憶力!您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+
+
+
+
+
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+推廣攻略大公開，一天100多顆寶石不再難
+
+
+
+
+ 
+回覆
+支持  反對 
+
+
+使用道具
+
+舉報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ jgw
+當前離線
+
+
+積分238
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+ 
+6樓 
+       
+       
+       
+
+
+
+
+
+
+jgw
+|
+收聽TA
+
+|
+只看該作者
+
+
+
+
+發表於 2014-5-8 07:34
+
+
+
+
+
+
+以前國中上理化課都要背，現在來重溫一下舊夢，感恩分享您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+
+
+
+
+
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+
+
+
+
+
+ 
+回覆
+支持  反對 
+
+
+使用道具
+
+舉報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ fatty123
+當前離線
+
+
+積分0
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+ 
+7樓 
+       
+       
+       
+
+
+
+
+
+
+fatty123
+|
+收聽TA
+
+|
+只看該作者
+
+
+
+
+發表於 2014-5-8 09:57
+
+
+
+
+
+
+週期表
+表週期
+元素圍繞你我
+你我應用元素
+週期表
+表週期
+您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+
+
+
+
+
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+
+
+
+
+
+ 
+回覆
+支持  反對 
+
+
+使用道具
+
+舉報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ ling72
+當前離線
+
+
+積分12
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+ 
+8樓 
+       
+       
+       
+
+
+
+
+
+
+ling72
+|
+收聽TA
+
+|
+只看該作者
+
+
+
+
+發表於 2014-5-8 11:11
+
+
+
+
+
+
+很實用的東西,雖然我沒用到,或許正念國中的兒子有用到吧!!
+謝謝分享~~~您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+
+
+
+
+
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+
+
+
+
+
+ 
+回覆
+支持  反對 
+
+
+使用道具
+
+舉報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ brmw
+當前離線
+
+
+積分34
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+ 
+9樓 
+       
+       
+       
+
+
+
+
+
+
+brmw
+|
+收聽TA
+
+|
+只看該作者
+
+
+
+
+發表於 2014-5-8 13:31
+
+
+
+
+
+
+有這樣好的 轉換 軟體 樓主一定用了很多的時間 
+謝謝樓主的分享您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+
+
+
+
+
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+
+
+
+
+
+ 
+回覆
+支持  反對 
+
+
+使用道具
+
+舉報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加好友
+發消息
+
+
+ vicgaga
+當前離線
+
+
+積分84
+ 鑽石 顆
+幫助 
+ 碎鑽 個
+經驗 
+ 金豆 個
+技術 
+
+聽眾
+收聽
+
+
+
+
+
+
+
+
+ 
+10樓 
+       
+       
+       
+
+
+
+
+
+
+vicgaga
+|
+收聽TA
+
+|
+只看該作者
+
+
+
+
+發表於 2014-5-8 13:54
+
+
+
+
+
+
+下載收藏內容，感謝提供這麼好的應用謝謝分享您好！您暫時不能瀏覽帖子的全部內容，請 登錄 | 沒有帳號？ 註冊
+
+
+
+
+
+
+
+
+
+
+用Android 就來Android 台灣中文網（https://apk.tw）
+
+
+
+
+
+ 
+回覆
+支持  反對 
+
+
+使用道具
+
+舉報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+今日熱門文章
+
+
+
+
+
+2017/7/20 官方副主題 史努比★單寧風 上架發文辛苦,不要吝嗇自己的碎鑽喔 !! (別客氣疑問? 這到底是遊戲討論區還是 外掛商專區?7/20【天堂2Angel 助手】使用心得分享(給沒2017/7/20【LINE 聊天新功能】來囉！藝術家的想像力，裝得下整個宇宙～～20170720_史努比★單寧風修改_7.6.3黃乙玲-台日語精選輯([email protected]@123MB)
+ 
+
+
+
+
+
+今日熱門遊戲
+
+
+1323天堂 2：革命6953鎖鏈戰記301548精靈寶可夢 Pokémon GO3481石器時代：起源1226陰陽師2491時空之門 Chronos Gate6492LINE Tsum Tsum70鋼鐵王者 EvilBane271有殺氣童話5326戰鬥女子高校 
+
+
+
+熱門免費兌換
+
+
+
+
+
+5鑽石
+競拍︰550 碎鑽
+
+
+20鑽石
+競拍︰2200 碎鑽
+
+
+5鑽石
+競拍︰550 碎鑽
+
+
+MyCard LINE 60點
+競拍︰60 鑽石
+
+
+100鑽石
+競拍︰12000 碎鑽
+
+ 
+
+
+
+
+
+
+廣告版
+ 
+
+
+
+
+
+
+
+
+
+
+
+下一頁 »
+ 123 / 3 頁下一頁 返回列表
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+高級模式
+
+
+B
+Color
+Image
+Link
+Quote
+Code
+Smilies
+
+
+
+您需要登錄後才可以回帖 登錄 | 註冊
+
+
+
+
+
+
+
+
+
+
+
+本版積分規則
+發表回覆
+回帖後跳轉到最後一頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+警告：您的Adblck已啟用我們檢測到您已開啟了Adblck影響到部分功能使用，為了討論區的發展及功能的正常展現，還請您將APK.tw列入廣告屏蔽軟體的白名單中。APK.net全體人員感謝您的支持。或您可以 點我購買無廣告功能《綠色證書》勳章同意關閉忽略它
+
+
+
+
+
+聯繫我們|小黑屋|手機版|Archiver|Android 台灣中文網
+
+
+
+
+
+
+
+
+
+
+GMT+8, 2017-7-21 01:50
+, Processed in 0.206320 second(s), 50 queries
+, Gzip On, Memcache On.
+
+
+
+
+Powered by APK.TW v2.0
+© 2013 APK.TW
+
+
+
+
+
+

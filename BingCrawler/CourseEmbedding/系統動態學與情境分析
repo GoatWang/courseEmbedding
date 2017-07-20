@@ -1,0 +1,2132 @@
+
+
+
+
+企業總體經濟環境決策支援之研究-以系統動力學為建模方法
+
+
+
+
+Nov    
+2000, 中華管理評論   
+Vol.3, No.4, pp.67∼82
+
+企業總體經濟環境決策支援之研究以系統動力學為建模方法
+
+Decision Support of Macroeconomic Environment in Enterprises    
+A System Dynamics Modeling Approach
+
+
+
+
+
+王怡舜
+Yi-Shun Wang
+政治大學資訊管理學系博士班生
+keynes@mis.nccu.edu.tw
+湯宗益  
+        Michael T. Tang
+政治大學資訊管理學系教授
+mtang@nccu.edu.tw
+
+
+
+
+
+
+
+
+
+摘 
+ 要
+
+　　良好的管理決策，必須以企業外部的經濟環境分析為基礎。然而，真實經濟中的變數關係是屬於動態性的複雜問題，傳統經濟學若欲分析此類問題必須藉重高等數學，因此，企業管理者若想要對經濟環境作長期動態的分析與決策則是非常困難。本研究運用系統動力學的方法,並結合經濟學的理論，建構一個總體經濟環境的電腦模擬模式，並分析不同情境之下經濟變數的長期動態行為;其中包括不同貨幣政策與財政政策的動態模擬。本模式若結合方便的使用者介面，亦可成為一個分析總體經濟環境的決策支援系統，其可以用來支援企業的外部環境分析，作為財務、生產、以及行銷決策之基礎，進而改善其決策品質。
+關鍵詞：總體經濟環境、系統動力學、模擬模式、決策支援
+Abstract
+
+　　The analysis of economic environment is the basis of well managerial decisions for enterprises. However, the relationship among economic variables in the real world is a kind of dynamic complexity problem. Economics usually take advantage of mathematics to solve this kind of problem. Therefore, it will be very difficult for business administrators to analyze the long-term economic dynamics. This study integrated system dynamics and economics to build a quantitative simulation model of macroeconomic environment, which can be used to analyze the long-term dynamics of economic variables under different scenarios, including the dynamic simulations of monetary and fiscal policies. Linked with convenient user interface, the model will become a decision support system of macroeconomic analysis, which can provide business administrators with the analytic tool of macroeconomic environment to improve their decision qualities concerning finance, production, and marketing.
+Keyword: macroeconomic environment, system dynamics, simulation model, decision support
+
+
+
+
+
+
+
+
+壹、前
+言  
+
+　　隨著企業的國際化、金融與貿易的自由化，企業必須在這詭譎多變的環境下求生存，無論在財務、行銷或生產方面的決策都需要先對經濟環境做一評估，以掌握總體經濟中各重要指標的趨勢，例如：國民所得、利率、物價、匯率、工資等等；如此才可能做出較佳的決策。然而，企業管理者雖可運用傳統經濟學上的知識，來分析總體經營環境，但經濟系統甚為複雜，而各變數之間的相互影響是屬於動態性的複雜問題(Dynamic Complexity)，若無有效的管理工具或資訊系統，是無法分析真實經濟中若干變數同時或長期變化所產生的結果。如此一來，便無法做出正確有效的管理決策。
+　　本研究將以系統動力學的方法與工具結合經濟學中的基本理論，提出一個總體經濟環境的模擬模式，以協助企業分析各種不同情境之下的經濟變動趨勢，並改善管理者的決策品質。 
+
+
+貳、文獻探討
+一、系統動力學方法
+
+　　「系統動力學」是由美國麻省理工學院Jay W. Forrester教授所發展出來的一套有關社會系統的新管理概念與方法。其透過動態系統的思考(Systems Thinking)，分析瞭解系統的因果回饋關係(Causal Feedback)，並利用計算機的模擬，使我們可以在實驗室中，觀察分析真實社會系統對於政策、方案所產生的行為，並學習系統內部所隱含的因果回饋關係。是故，「系統動力學」不只可以建構一個「政策實驗室」，亦可用來建立「學習實驗室」。由於此方法常被用於模擬組織或企業系統的結構、政策、延擱如何交互影響組織或企業系統的成長與變動(楊秦怡,1991),因此系統動力學實際上可以用來建構「管理實驗室」。利用此實驗室，管理者可以預擬各種組織或經營政策的情境，然後藉實驗模擬來增進其管理決策能力。 
+　　系統動力學常被用於組織管理或政策分析上；如汪維揚(1996)曾以動態性複雜環境探討組織資訊系統策略規畫方法之因應對策;楊秦怡(1991)曾運用系統動力學研究企業科技管理之決策問題；陳志光(1988)於1988年則對財務決策系統中投資決策與融資決策之交互影響作系統動態模擬；Gupta, Yash P.與Gupta, Mahesh(1989)曾建構一個系統動態模式以分析即時生產系統(JIT)的產能問題。此外，在政策分析方面，系統動力學於1980年代常被用於不動產市場之需求或週期循環方面的研究，如羅世輝(1991)，王思峰(1989)，田文德(1986)與餘坤東(1986)等。近來則有E. R. Lasen(1997)等人曾研究利用系統動態方法建構一模式,探討企業的管理政策如何影響公司之成長率及組織如何達成獲利目標。在模擬產業波動方面，J. W. Forrester (1961)曾採用"Beer Game"模擬簡易的後勤系統運作情形；模擬中可看出局部運作的要求最佳化，卻造成整體產業的波動行為。此外，還有Meadows(1970)模擬農產品波動情形;T. Bui與C. Loebbecke(1996)在通訊產業中運用系統動力學方法,建構決策支援系統(DSS),預測行動電話市場之供需。在經濟領域的研究中，MIT的System Dynamics Group則利用微觀的建模角度構建國家模型(System Dynamics National Model, SDNM) (Graham, 1984) (Forrester,1989)，模式中將系統結構分為政府(Government)部門、財政(Financial)部門、家戶(Household)部門、資本(Capital) 部門、消費產品及勞務(Consumer Good and Service)部門以及勞工(Labor)部門等，其以微觀上個體決策間之互動關係，來探討巨觀上產業經濟之問題，而有效地解釋了景氣循環與長波理論(Long Wave Theory)。Elhance, Arun P.與Lakshmanan, T.R.(1988)於1988年利用印度的國家與區域資料模擬公共建設與生產的關係。Davidsen-PI、Bjurklo-M與Wikstrom-H(1993)則運用系統動力學來輔助經濟學之教學活動。J. Buongiorno(1996)則利用系統動力學建構數量與經濟模式,同時預測農產品市場需求及波動情形。由上述的探討可以瞭解系統動力學運用在解釋長期社會與企業行為上,獲致一定的研究成果。本研究則嘗試運用此方法來建構數量化的模式,並模擬真實世界的經濟情境。 
+二、一般經濟分析方法
+　　經濟學研究領域包含個體經濟學(Microeconomics)與總體經濟學(Macroeconomics)，其方法有靜態分析與動態分析，前者是專門研究均衡狀態的經濟分析，後者則是考慮及分析失衡狀態的變動情形。「靜態分析」是探討當外生因素改變而使均衡位置發生變動時，兩個以上均衡狀態下的經濟變數變動情形；反之，「動態分析」是在討論經濟變數如何趨向均衡，即如何從一個均衡位置調整至另一個均衡，或失衡狀態的動態調整過整。在動態分析中，較常使用數學的差分方程式或微分方程式。動態經濟學也就是在研究經濟體系內，本期變數如何受其他同期或前期變數的影響。在總體經濟中，所有變數交錯影響，且在連續時間序列中，隨時有新變數加入體系中，我們藉著動態分析可以看出其調整過程。就是因為總體經濟體系變數繁多，且常瞬間立即改變；彼此之間交互影響，若同時加入數個外生變數的改變，則往往須藉助複雜的數學模式與運算工具。在此情況下，企業管理者若想運用動態經濟學，對經濟環境作有效且立即的反應與判斷，則是非常困難。因此，本研究利用系統動力學的模式建構與電腦模擬，不僅能彌補以往動態分析只能討論有限變數變動之不足，也能減少複雜的計算程序；對企業管理者而言，更能有效地預測經濟的波動，進而提昇其決策品質。
+
+參、模
+式 建
+構   
+
+一、基本假設
+　　在總體經濟學上，包括凱因斯學派(Keynesian)及以古典學派(Classical School)為首的新古典學派、貨幣學派及理性預期學派等。兩者雖然基於相同的模式，但是因為其基本假設不同，而有不同的結論。為避免政策有效性的爭議及符合總體現象，本研究所建構的模式是採用「一般均衡下的總體經濟模型」，將市場分為財貨市場、貨幣市場、債捲市場、勞動市場與外匯市場，但基於瓦拉斯法則(Walas Law)，在均衡情形之下，可以忽略債捲市場；本模式的基本假設如下：
+
+
+本國為小國開放型經濟 
+
+社會對於政策並無理性預期 
+
+市場自由運作，所有價格可以自由調整
+
+資本自由移動 
+
+二、一般經濟體系之因果回饋分析
+
+　　開放型的經濟系統，基本上是一個資訊回饋系統，而因果回饋環路(Causal Feedback Loops)則為資訊回饋系統的基礎(謝長宏,1991)。為了能夠建立完整的總體經濟系統動態模式，在此有必要先分析經濟社會的因果回饋關係。然而，總體經濟中，各經濟變數之間的因果關係是相當的複雜，有些更為經濟學派間互相爭論的焦點。本研究並非要爭論或探討各學派之間的基本假設與政策主張，而是要擷取經濟理論中的基本觀念，利用系統動力學的方法與工具，以提出對於經濟社會分析的另一種可行方法，使管理者更能有效地掌握外部資訊，做出較佳的決策。 
+　　因此，以下的經濟體系因果回饋分析，需求面基本上是採凱因斯學派(Keynesian)的論點，供給面則引用古典學派的概念，且在不互相衝突的條件下，儘可能使本研究的模式融合各家的論點。 
+　　一個封閉的總體經濟體系，包括支出部門，貨幣部門及生產部門，而可同時分析所得、利率、物價水準及就業量決定與變動(郭婉容,1987)。然而開放性經濟比封閉性經濟多了一外匯市場，其主要是調節一國的國際收支(謝登隆、徐繼達,1993)。茲將各個部門變數之間的因果回饋關係，表示如圖3-1。   
+
+三、系統動力學之數量模式
+
+　　上述以因果回饋環路，來說明經濟體系中各變數的因果回饋關係，並表達整個系統的基本結構。然而，因果回饋環路並不能顯示變數間的計量關係(謝長宏,1991)。因此，本研究必須進一步利用系統動力學中的積量與率量概念，以建構一個可以進行數量化模擬的動態模式。 
+　　由於本研究之模式屬於雛形階段,因此本研究儘可能運用蒐集到的資料，並假設一些模式中的原始數據與經濟參數，使本系統更能接近真實經濟社會的運作。 
+　　依據圖3-1的開放型經濟體系因果回饋圖，本研究建立一包含貨幣、商品、勞動與外匯市場的模式流程圖，如附錄一所示。以下則分別對於此系統中重要變數的數量模式加以說明。
+(一)商品市場 
+１.消費(CON_IN)
+　　消費是一率量變數，其是由自發性消費(Co)加上邊際消費傾向(MPC)與國民生產毛額(GNP_QTY)的乘積而得，至於GNP_IN與GNP_OUT之定義則是建模技巧上的安排。因此，消費的數量模式如下： 
+R CON_IN = Co + MPC * GNP_QTY
+C Co = 16000
+C MPC = 0.2
+L GNP_QTY = GNP_QTY + dt * (GNP_IN - GNP_OUT)
+N INIT(GNP_IN) = 35000
+CON_IN：消費量(億元/年)
+Co：自發性消費(億元/年)
+MPC：邊際消費傾向 
+GNP_QTY：國民生產毛額(億元/年)    
+
+說明1："L"符號是代表積量變數(Level)之義；"N"表示該積量之起始值(Initial value)；"C"表示常數之義；"R"表示率量變數(Rate)。    
+
+
+圖３   
+１：開放型經濟系統之因果回饋圖
+
+２.投資(INVEST)
+R INVEST = ((lo - 10000 * R) + (GNP_QTY * INVEST_ELA) + (ENV * 10)) / DELAY_I
+C lo = 10000
+L R = R + dt * (R_ADJ)
+C INVEST_ELA = 0.02
+C DELAY_I = 5
+A ENV = graph(PERI)
+(1,90),(2,90),(3,90),(4,90),(5,90),(6,90),(7,90),
+(8,90),(9,90),(10,90),(11,90),(12,90),(13,90)
+INVEST：投資額(億元/年)
+lo：自發性投資(億元/年)
+INVEST_ELA：投資需求的所得彈性 
+ENV：投資環境(指標變數)
+DELAY_I：投資滯延(年)
+說明2："A"代表輔助變數(Auxiliary)；graph是一非線性方程式，"()"內的數字，左邊代表年代，右邊代表此年所定義的對應值。 
+３.政府支出(GOVERNMENT)
+A GOVERNMENT = graph(PERI)
+(1,5652),(2,6000),(3,7000),(4,8000),(5,10000), (6,11000),(7,10000),(8,10000),(9,10000),(10,10000),(11,10000),(12,10000), (13,10000)
+４.出口量(X)
+A X = 5000 * YF + (E_PF_PD / 26) * 5000
+R E_PF_PD = (EXCH_RATE * PF) / PRICE
+L EXCH_RATE = EXCH_RATE + dt * (E_ADJ)
+N INIT(EXCH_RATE) = 26.17
+L PRICE = PRICE + dt * (P_ADJ)
+N INIT(PRICE) = 106.3
+YF：外國所得水準(指標變數)
+EXCH_RATE：匯率(台幣/美元)
+PRICE：國內物價水準(指標變數)
+５.進口量(M)
+A M = GNP_QTY * 0.025 + (E_PF_PD/26) * (-1000) + 52000
+６.總需求(AD)
+A AD = CONSUME + INVEST + GOVERNMENT + X_M
+A X_M = ((X_QTY - M_QTY) * EXCH_RATE) / 100
+X_M：出超(億元/年)
+７.政府稅收存量(TAX)
+L TAX = TAX + dt * (T_QTY - TAX_USE)
+N INIT(TAX) = 300
+R T_QTY = To * T_RATE * GNP 
+C To = 10
+C T_RATE = 14%
+R TAX_USE = IF GOVERNMENT > TAX THEN TAX ELSE GOVERNMENT
+TAX_USE：動用稅額(億元/年)
+TAX_RATE：稅率(%)
+To：定額稅(億元/年)
+(二)貨幣市場 
+１.實質貨幣供給(MS_P)
+L MS_P = MS_P + dt * (MS_ADJ)
+N INIT(MS_P) = 20687
+A ADD_M = graph(PERIOD)
+(1,0.12),(2,0.12),(3,0.12),(4,0.12),(5,0.12),
+(6,0.12),(7,0.12),(8,0.12),(9,0.12),(10,0.12),
+(11,0.12),(12,0.12),(13,0.12)
+MS_P：實質貨幣供給(億元/年)
+ADD_M：貨幣供給年增率 
+
+
+２.交易性貨幣需求(LT)
+L LT = LT + dt * (LT_ADJ)
+N INIT(LT) = 10000
+R LT_ADJ = GNP * LT_ELA
+C LT_ELA = 0.105
+３.投機性貨幣需求(LS)
+L LS = LS + dt * (LS_ADJ)
+N INIT(LT) = 10000
+R R_ADJ = DIFF * R_ELA
+C R_ELA = 0.0000025
+C LS_ELA = -100000
+A DIFF = MD_P - MS_P
+４.實質貨幣需求(MD_P)
+A MD_P = LT + LS
+　
+(三)勞動市場 
+１.總供給(AS)
+A AS = CAPITAL * B + MIN(NS,ND) * 6 + RESOURCE * 10000 + 10 * PRODUCTIVITY + 10 * TECH_LEVEL
+L CAPITAL = CAPITAL + dt * (G_K_RATE + INVEST)
+N INIT(CAPITAL) = 500000
+L TECH_LEVEL = TECH_LEVEL + dt * (TECH_INC)
+N INIT(TECH_LEVEL) = 250
+A RESOURCE = graph(TIM)
+(1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,1),
+(9,1),(10,1), (11,1),(12,1),(13,1)
+NS﹕勞動供給(萬人)
+ND﹕勞動需求(萬人)
+CAPITAL：資本存量(億元)
+TECH_LEVEL：科技水準(指標變數)
+RESOURCE：自然資源(指標變數)
+說明3:MIN()函數是取兩變數中較小之值為其輸出值。
+
+
+(四)外匯市場 
+１.外匯供給(IN_X)
+A IN_X = INFLOW + X_QTY
+A INFLOW = R_RF * 100000 + POLITIC * 46
+A R_RF = R - RF
+A RF = graph(T)
+A POLITIC = graph(T)
+(1,70),(2,70),(3,70),(4,70),(5,70),(6,70),(7,70),(8,70),(9,70),(10,70),(11,70),(12,70),(13,70)
+INFLOW：資本流入量(億元)
+R_RF：國內外利差(%)
+RF：國外利率(%)
+POLITIC：政治環境(指標變數)
+２.外匯需求 
+A OUT_M = M_QTY + OUTFLOW    
+
+A OUTFLOW = graph(TIM)    
+
+(1,7510),(2,9500),(3,13000),(4,15000),    
+
+(5,15000),(6,15000),(7,12000),(8,11000),    
+
+(9,11000),(10,11000),(11,11000),(12,11000),    
+
+(13,11000)    
+
+OUTFLOW：資本流出量(億元)    
+
+３.國外物價水準(PF)    
+
+A PF = graph(T)    
+
+(1,106),(2,108),(3,110),(4,112),(5,114),(6,116),    
+
+(7,118),(8,120),(9,122),(10,124),(11,126),    
+
+(12,128),(13,130)    
+
+４.外國所得水準(YF)    
+
+A YF = graph(TIM)    
+
+(1,1),(2,1.01),(3,1.02),(4,1.03),(5,1.04),(6,1.05)    
+
+,(7,1.06),(8,1.07),(9,1.08),(10,1.09),(11,1.1),    
+
+(12,1.11),(13,1.12)    
+
+
+肆、模擬結果
+一、模式測試分析
+
+模式建構之後，必須判定模式是否具有效度(Validity)，經過效度判定之後的模式，才可作為分析處理問題的工具。Hermann(1967)將效度分為五類： 
+
+
+內部效度(Internal Validity)
+
+錶面效度(Face Validity)
+
+變數 參數效度(Variable-Parameter Validity)
+
+事件效度(Event Validity)
+
+假說效度(Hypothesis Validity)
+
+此外，謝長宏(1991)認為鑑定動態模式的效度，必須檢驗模式之穩定性(Stability)、振盪形態(Pattern of Oscillation)、時相(Time Phase )關係和週期的長短是否符合真實系統的行為趨勢，以此來評估模式的效度。本研究的動態模式，經過下列幾項測試方法，以確保其具信度及效度： 
+(1)除錯測試(Debug Test)：預設值代入模式中，並執行足夠的模擬時間，觀察各變數值是否超出正常範圍，如果是，即代表某些關係式中的參數、係數或正負因果之設定有誤，必須再修正及測試模式。 
+(2)健全性測試(Robustness Test)：即代入某極端值(Extreme value )或利用脈衝(Pulse)函數，測試模式是否在此極端狀況中出現異常的行為，並觀察模式是否可恢復穩定狀態。 
+(3)時間序列測試分析(Time Series Test)：利用預設資料執行模式，並調整相關的參數或係數，使模式符合預期之行為型態。 
+以下則說明本模式所進行的除錯測試(Debug Test)。首先將模式中的表格變數設定如下： 
+A EDUCATION=graph(perid)
+(1,1),(2,1),(3,1)......................................(51,1)
+A ENV=graph(peri)
+(1,100),(2,100),(3,100)......................(51,100)
+A OUTFLOW=graph(TIM)
+(1,11000),(2,11000),(3,11000)......(51,11000)
+A POLITIC=graph(T)
+(1,70),(2,70),(3,70)..............................(51,70)
+A RESOURCE=graph(TIM)
+(1,1),(2,1),(3,1)......................................(51,1)
+A RF=graph(T)
+(1,0.08),(2,0.08),(3,0.08)..................(51,0.08)
+A PF=graph(T)
+(1,106),(2,108),(3,110)......................(51,206)
+A YF=graph(TIM)
+(1,1),(2,1.01),(3,1.02).........................(51,1.5)
+　　此外,政府支出(GOVERNMENT)每年以500單位增加；經過以上的設定之後執行五十年，觀察各變數值是否出現異常，不斷地進行修正模式中的參數與係數，最後執行的結果發現主要變數皆呈現穩定狀態，且模擬的結果亦與預期的模式行為差距不大，這亦顯示模式具有相當可靠的錶面效度。圖4-1與圖4-2顯示了測試分析所得的結果。 
+
+單位時間：年
+圖４１：模式測試分析模擬結果之一
+
+單位時間：年
+圖４   
+２：模式測試分析模擬結果之二
+二、情境分析(Scenario Analysis)
+　　本研究於模式建構與測試完成之後，假設四種不同的情境，即改變具政策涵義或非政策性的外生變數，觀察並探討在特定情境之下的經濟系統行為變化，其目的在支援企業管理者，分析不同情境之下可能發生的經濟變動趨勢。
+(一)情境分析一 
+　　在情境分析中，本研究假設政府持續採取擴張性的財政政策，也就是將GOVERNMENT變數設定如下： 
+A GOVERNMENT = graph(PERI)
+(1,5652),(2,6000),(3,7000),(4,8000),(5,10000),
+(6,11000),(7,11000),(8,12000),(8,12000),
+(7,12000),(8,12000),(9,13000),(10,13000),
+(11,13000),(12,13000),(13,14000)
+此情境模擬的結果，如圖4-3與圖4-4所示。 
+
+單位時間：年
+圖４   
+３：情境分析一模擬結果之一
+
+單位時間：年
+圖４ ４：情境分析一模擬結果之二
+
+　　由上圖可以得知，在此情境之下，物價與利率將持續上升，於第13年時利率約為7%，物價水準約為149；由於利率走高，民間投資在第5年至第9年左右低迷不振，有排擠效果(Crowding out effect)出現，出超於第6年左右跌至最低，以後則逐漸上升。 
+(二)情境分析二 
+　　此情境是假設政府緊縮貨幣政策四年並持續地採取擴張性的財政政策，即比情境分析一多改變「貨幣供給年增率」(ADD_M)變數如下： 
+A ADD_M = graph(PERI)    
+
+(1,0.1),(2,0.1),(3,0.1),(4,0.1),(5,0.1),(6,0.12),    
+
+(7,0.12),(8,0.12),(9,0.12),(10,0.12),(11,0.12),    
+
+(12,0.12),(13,0.12)    
+
+　　其模擬結果，如圖4-5及圖4-6所示。   
+
+
+單位時間：年
+圖４   
+５：情境分析二模擬結果之一
+
+　　由圖4-5可以發現，在情境分析二，利率上升的幅度比情境分析一還大，最高達到約10%，但由於採緊縮貨幣政策，物價水準上升則比情境分析一少，於第13年時約為148。
+
+單位時間：年
+圖４   
+６：情境分析二模擬結果之二
+
+　　如圖4-5所示，匯率大致上是呈現升值的趨勢，於第13年時升值到24.97，顯然升值的幅度比情境分析一的25.35還大。由於緊縮貨幣並擴張財政，造成利率的大幅上升，所以投資大幅減少，排擠效果比情境分析一更強，出超則更少。值得一提的，此情境分析的名目工資於第13年時上升至138.07，顯然上升的幅度大於情境分析一的127.61。 
+(三
+) 情 境
+分 析
+三
+此情境為假設政府採取擴張性貨幣政策四年並持續地採取擴張性的財政政策，模擬經濟系統可能的動態行為；茲將ADD_M變數設定如下： 
+A ADD_M = graph(PERI)
+(1,0.15),(2,0.15),(3,0.15),(4,0.15),(5,0.12),
+(6,0.12),(7,0.12),(8,0.12),(9,0.12),(10,0.12),
+(11,0.12),(12,0.12),(13,0.12)
+其模擬結果，如圖4-7與圖4-8所示。 
+
+單位時間：年
+圖４ ７：情境分析三模擬結果之一
+
+由上圖可知，利率在此情境呈波動走勢，其最高點約在第7年左右，為6.62%。比前二項情境分析都還低；匯率則持續貶值到第8年左右，然後才緩慢升值，至第13年時達到25.59，升值的幅度皆小於前二項情境。 
+
+單位時間：年
+圖４８：情境分析三模擬結果之二
+
+在此情境之下，由於利率不高，投資呈上升走勢，不過因為政府擴張財政，仍存在排擠效果，故投資額於第8年之後才有較大幅度的上升。另外，出超額皆大於前二項情境分析所得的結果。 
+(四)情境分析四 
+此情境為假定本國政府持續擴張財政並緊縮貨幣，而外國採取緊縮的財政政策、提高法定準備率﹐並且全球發生了石油危機；即設定各變數如下： 
+A YF = graph(TIM)
+(1,1),(2,0.8),(3,0.7),(4,0.6),(5,0.7),(6,0.8),
+(7,0.9),(8,1),(9,1.1),(10,1.2),(11,1.3),(12,1.3),
+(13,1.4)
+A PF = graph(T)
+(1,106.3),(2,111),(3,115),(4,117),(5,120),
+(6,125),(7,127),(8,130),(9,133),(10,138),
+(11,141),(12,144),(13,147)
+A RF = graph(T)
+(1,0.06),(2,0.05),(3,0.04),(4,0.04),(5,0.07),
+(6,0.07),(7,0.08),(8,0.08),(9,0.08),(10,0.08),
+(11,0.08),(12,0.08),(13,0.08)
+A RESOURCE = graph(TIM)
+(1,1),(1,1),(3,1),(84,1),(5,0.5),(6,0.5),(7,0.5),
+(8,0.6),(9,0.8),(10,1),(11,1),(12,1),(13,1)
+此情境之模擬結果，如圖4-9以及圖4-10所示。 
+
+單位時間：年
+圖４ ９：情境分析四模擬結果之一
+
+　　由上圖可以發現，在此情境之下，經濟狀況將非常差，國民生產毛額(GNP)於第6年左右呈現負成長，之後才緩慢上升。另外，利率與物價水準皆大幅上升，其幅度為四項情境分析之冠；值得一提的是，由這些情境分析得知，若物價水準上升幅度大，則利率上升幅度也大，或可說明費雪效果(Fisher effect)的存在。 
+
+單位時間：年
+圖４１０：情境分析四模擬結果之二
+
+由於國民生產毛額的負成長，使消費成長緩慢，甚至停滯。出超與投資皆比前三項情境還低。此外，由上圖可以發現，名目工資於第5至第9年有下跌的走勢。 
+
+
+
+伍、結論與建議
+經由上述的研究可以瞭解，系統動力學的經濟分析方式確實可行，透過系統動態模式的建構與情境分析，可以支援企業管理者評估總體經濟環境的趨勢，以作為財務、生產、行銷決策之基礎，故本系統若能結合方便的使用者介面(User Interface)，亦可成為一個分析總體經營環境的決策支援系統(DSS)。值得一提的是，本模式可以觀察數個經濟變數同時或非同時，以同向或反向變動所導致的長期動態行為，此為一般企業管理者之能力所不能及。是故，本研究主的要貢獻在於提供學術界及實務界一個建構總體經濟環境決策支援的模式及方法。
+然而，本研究只限於系統的雛型(Prototype)開發，模式之數據設定不無可議之處。是故，對於後續的研究者可以朝以下的方向著手： 
+
+
+將實証所得之經濟資料或係數，加入模式中，使模式模擬的行為更能符合現實經濟社會的運作。 
+
+擴大與修正現有的模式，即加入不同的理論觀點、經濟變數與假設，使系統內部的模式更為完整。 
+
+結合使用者介面，或透過與其他生產或財務分析系統的溝通，成為一完整的決策支援系統(DSS)或主管資訊系統(EIS)。 
+
+非數值變數量化問題之研究，即如何量化定性變數，才可使模式的行為不致大幅扭曲。
+
+動態模式效度判定之研究，使模式建構更為結構化。 
+
+
+
+參 考 文 獻
+
+
+
+王思峰，投機行為在住宅價格系統中運作之系統動態模式(中山大學企管所碩士論文，民國78年6月)。
+
+
+王聰義譯，R.G.D. Allen著，總體經濟理論(臺北市:幼獅，民國69年)。
+
+田文德，臺北都會區住宅系統動態模式之研究(中興大學都計所碩士論文，民國75年7月)。
+
+
+汪維揚，從組織分析探討資訊系統規畫方法之研究(中山大學資管所碩士論文，民國86年7月)。
+
+餘坤東，高雄市國民住宅市場需求系統動態模式之建立(中山大學企研所碩士論文，民國75年6月)。
+
+
+許南弘、潘永堂譯，R.F. Harrod著，經濟動態學(臺北市:聯經，民國70年)。
+
+張慶輝著，總體經濟學(臺北市:三民，民國76年)。
+
+
+陳志光，財務決策系統中投資決策與融資決策交互影響之系統動態研究(中山大學企管所碩士論文，民國77年7月)。
+
+
+楊秦怡，企業科技管理決策支援系統動態模式之研究(中山大學資管所碩士論文，民國80年6月)。
+
+
+謝登隆、徐繼達，總體經濟學--理論與政策(臺北市:智勝文化，民國82年)。
+
+謝長宏，系統動態學--理論、方法與應用(臺北市:中興管理顧問公司，民國80年)。
+
+羅世輝，以系統動力學探討台灣不動產市場週期循環之研究(中山大學企管所碩士論文，民國80年5月)。
+
+
+Bui, T., & Loebbecke, C., “ Supporting Cognitive Feedback Using System Dynamics: A Demand Model of the Global System of Mobile Telecommunication, ” Decision Support Systems, Vol 17, (May 1996), PP. 83-98.    
+
+Buongiorno, J., “ Forest Sector Modeling: A Synthesis of Econometrics, Mathematical Programing, and System Dynamics methods,” International Journal of Forecasting, Vol 12, (Sep. 1996), PP. 329-343.
+
+Davidsen-PI, Bjurklo-M, & Wikstrom-H, " Introducing System Dynamics in Schools-The Nordic Experience, " System Dynamics Review, Vol 9, (1993), PP. 165-181.
+
+Elhance, Arun P. & Lakshmanan, T. R., " Infrastructure-Production System Dynamics in National and Regional Systems: An Econometric Study of the Indian Economy, " Regional Science & Urban Economics, Vol 18, (Nov. 1988), PP. 551-531.
+
+Forrester, J. W., " The System Dynamics National Model: Macrobehavior from Microstructure, " Working paper D-4020, (1989) System Dynamics Group, M.I.T.
+
+Forrester, J. W., Industrial Dynamics, The M.I.T. Press, (1991) Mass: Cambridge, U.S.A.
+
+Graham, A. K., " Introduction to The System Dynamics National Model Structure, " Working paper D-3573, (1984) System Dynamics Group, M.I.T.
+
+Gupta, Yash P., & Gupta, Mahesh, " A System Dynamics Model of a JIT-Kanban System, " Engineering Costs & Production Economics, Vol 18, (Dec. 1989), PP. 117-130.
+
+Hermann, C. F., “ Validation Problems in Games and Simulations with Special Reference to Models of International Policies,” Behavior Science, Vol. 12, (1967) , PP. 219-224.
+
+Larsen, E. R., van Ackere, A., & Warren, K., “ The Growth of Service and the Service of Growth: Using System Dynamics to Understand Service quality and Capital Allocation, ” Decision Support Systems, Vol 19, (Apr. 1997), PP. 271-287.
+
+Mass, Nathaniel J., Economics Cycles: An Analysis of Underlying Causes, M.I.T. Press, (1975).     
+Meadows, Dennis L., Dynamics of Commodity Production Cycles, Wright Allen Press Inc., (1970) Mass: Cambridge, U.S.A., Vol 19, (Apr. 1997), PP. 271-287.
+
+Mass, Nathaniel J., Economics Cycles: An Analysis of Underlying Causes, M.I.T. Press, (1975).     
+Meadows, Dennis L., Dynamics of Commodity Production Cycles, Wright Allen Press Inc., (1970) Mass: Cambridge, U.S.A.
+
+[ 回目錄
+| Top ]
+
+
+
+
+
+
+
+成功大學電子學位論文服務
+    
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+進階搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+學院別     	 
+                  	 	 	> 
+                    成功大學  	 
+                  	 	 	> 
+                    規劃與設計學院  	 
+                  	 	 	> 
+                    都市計劃學系
+
+
+
+
+
+
+
+   
+                        
+
+
+
+
+
+系統識別號
+U0026-0812200910381835
+
+
+論文名稱(中文)
+都市房價變動影響因素之系統動態模擬
+—臺北市之實證研究
+
+
+論文名稱(英文)
+Using System Dynamics to Simulate the Urban Housing Price in Taipei City
+
+
+校院名稱
+成功大學
+
+
+系所名稱(中)
+都市計劃學系碩博士班
+
+
+系所名稱(英)
+Department of Urban Planning
+
+
+學年度
+91
+
+
+學期
+2
+
+
+出版年
+92
+
+
+研究生(中文)
+陳幸宜
+
+
+研究生(英文)
+Shing-Yi Chen
+
+
+學號
+p2690107
+
+
+學位類別
+碩士
+
+
+語文別
+中文
+
+
+論文頁數
+103頁
+
+
+口試委員
+指導教授-陳彥仲口試委員-張金鶚口試委員-詹秋貴
+
+
+中文關鍵字
+
+都市房價        
+                      
+                  系統動態學        
+                      
+                  政策分析        
+                
+              
+
+
+英文關鍵字
+
+Urban Housing Price        
+                        
+                    System Dynamics        
+                        
+                    Policy Analysis        
+                  
+                
+
+
+學科別分類
+
+
+
+中文摘要
+
+                  影響房價的因素概可歸納為六大類：（一）為經濟因素，如所得、利率等。（二）為社會文化因素，如人口成長率。（三）為住宅區條件，如交通便利性。（四）為政治因素，政局穩定與否，將影響社會大眾購置不動產之決策。（五）為房屋本身特質，如坪數、建材、樓層等。（六）則為政府政策因素，如都市計劃管制等。從過去的研究中，可以瞭解都市發展程度對於房價的影響力，然而，許多對於房價變動與都市發展相關因素的探討，僅在與個別經濟、政治、與社會因素或是多變數間的相關性分析，較少研究是以動態觀點來看待都市房價影響變數間之因果變動情形，此即為本研究欲以系統動態學方法探討過去研究尚未觸及之處，亦為研究之目的。本研究以系統動態學之理論方法為基礎，使用Vensim軟體為工具，以臺北市為實證地區，建立都市房價變動系統模式，進行影響都市房價之動態模擬。透過系統動態模式之模擬，探究供給、需求與價格間環環相扣的關係下，改變都市住宅價格造成不動產市場波動之因素及效果，進而找出穩定房價之政策介入點。此外，藉由系統模擬，評估當前之住宅政策，例如「青年購屋低利貸款」方案對都市房價的影響，進而發展出政策管理實驗室。本研究之實證結果認為，當前政府所提出之各類短期優惠低利貸款，對去化空餘屋而言，為具立即可見成效之政策。但此階段性政策將為導致長期價格上漲之因素。從模擬結果可知，短期的政策實施可能對長期的價格變動趨勢造成負面影響，因此當決策者在研擬相關政策時，應以系統思考方式分析問題，畢竟住宅供需與價格變動間存在環環相扣的因果關係，政策實施不應著眼於短期效果為其評估績效之標準，除應同時考量長短期之政策效果外，亦需有配套措施之配合。
+                
+
+
+英文摘要
+
+                  The factors may change the housing price are as follows: 1st, the economic factor, such as the interest rate of loans.2nd, the social and cultural factor, such as demographic growth rate.3rd, the conditions of location. 4th, the political factor, 5th, housing qualities, and the last one is the intervention by government policies. From the past studies, we learned that how the factors discussed above to effect housing price, but most of them do not focus on the interrelations between determinants. This study applies the system dynamics methodology to construct a housing price system to explore how urban housing price may change under the effects of all factors, which is also the purpose of the study. Through the simulation process we set up, we can find the efficient ways to adjust housing price under the effect of each sub-system and improve the system behavior.
+                
+
+
+論文目次
+
+                第一章  緒論......................................1  第一節	研究動機...............................1  第二節	研究目的...............................2  第三節	研究方法與研究架構.....................3  第四節	研究內容...............................6第二章  文獻回顧..................................7  第一節	影響房地產變動之因素...................7  第二節	系統動態學理論........................15第三章  都市住宅結構分析及政策探討...............29  第一節	都市住宅市場結構分析..................29  第二節	政策探討—「青年購屋低利貸款」........44第四章  都市房價系統動態模式.....................45  第一節	系統範圍界定..........................45  第二節	人口次系統............................46  第三節	住宅需求次系統........................48  第四節	住宅供給次系統........................53  第五節	住宅價格次系統........................56  第六節	整體都市房價變動系統..................59第五章  模式模擬與政策試驗.......................62  第一節	模式驗證與基本模擬....................62  第二節	情境模擬與政策試驗....................73第六章  結論與建議...............................96  第一節	結論..................................96  第二節	建議.................................100參考文獻........................................101附錄  動態方程式..................................i
+              
+
+
+參考文獻
+
+                一、中文部分1.	王思峰，投機行為在住宅價格系統中運作之系統動態模式，國立中山大學企業管理研究所碩士論文，1989。2.	田文德，臺北都會區住宅系統動態模式之研究，國立中興大學都市計畫研究所碩士論文，1986。3.	李政道，台灣不動產景氣與政府政策之研究，國立成功大學政治經濟研究所碩士論文，2000。4.	吳錦碧，臺北市與高雄市成屋價格影響因素比較之研究，朝陽科技大學企業管理研究所碩士論文，2002。5.	吳修廉，房地產景氣及其影響因素之研究--以臺中都會區為例，東海大學企業管理研究所碩士論文，1993。6.	林淑萍，住戶換屋行為與住宅福祉變遷解析，中原大學建築研究所碩士論文，2002。7.	林勝益，房地產景氣預測探討，國立成功大學企業管理研究所碩士論文，1992。8.	姚德彥，不動產市場模擬演練-微觀決策互動與巨觀波動行為，國立中山大學企業管理研究所碩士論文，1992。9.	陶在樸，系統動態學，五南出版社，1999。10.	高斐蘭，臺灣地區房地產景氣與經濟、金融變數之共整合研究，國立中山大學財務管理研究所碩士論文，1995。11.	陳明吉，房地產變動價格及其變動因素之研究，國立政治大學地政研究所碩士論文，1989。12.	陳力維，台灣房地產價格變動因素之研究，淡江大學財務金融管理研究所碩士論文，2001。13.	張慈佳，政治景氣循環現象對房地產價格影響之研究，國立政治大學地政研究所博士論文，2001。14.	張金鶚，房地產景氣指標之研究，行政院國家科學委員會，1989。15.	張金鶚，住宅問題與住宅政策之研究，內政部營建署，1990。16.	張金鶚，建築投資業與建築經理公司管理制度之研究，內政部營建署，1991。17.	張金鶚，台灣地區房地產景氣指標電腦輔助系統之建立與應用，內政部建築研究所，1997。18.	黃佩玲，住宅價格與總體經濟變數關係之研究—以向量自我迴歸模式進行實證分析，國立政治大學地政研究所碩士論文，1994。19.	彭建文，台灣房地產景氣循環之研究-生產時間落差、宣告效果、總體經濟之影響，國立政治大學地政研究所博士論文，2000。20.	詹秋貴，我國主要武器系統發展的政策探討，國立交通大學經營管理研究所博士論文，2000。21.	廖晉楷，以系統動力學探討土地增值稅及地價稅政策變動效果之研究，中山大學公共事務管理研究所碩士論文，2001。22.	賴逸芳，人口結構、住宅價格與強迫儲蓄─台灣儲蓄現象之實證分析，國立政治大學經濟學研究所碩士論文，1992。23.	賴怡誠，房地產景氣預測之研究，國立中央大學土木工程研究所碩士論文，1998。24.	謝長宏，系統動態學—理論、方法與應用，中興管理顧問公司，1980。25.	蔡佳桓，政府介入不動產市場有效性之研究，長榮管理學院土地管理與開發學研究所碩士論文，2001。26.	謝文盛，公共支出、租稅收入與住宅市場之研究，國立政治大學經濟研究所博士論文，2000。27.	戴鎰家，影響建築業房地產投資決策因素之研究(以新竹地區為例)，中華大學工業研究所碩士論文，1995。28.	羅世輝，以系統動力學探討臺灣不動產市場週期循環之研究，國立中山大學企業管理研究所碩士論文，1990。29.	蘇懋康，系統動力學原理及應用，上海交通大學出版社，1988。二、西文部分1.	Barlas, Y., & Carpenter, S ” Philosophical Root of Model Validation: Two Paradigm.” System Dynamics Review, Vol.6, p.148-166,, 1990.2.	Barlas, Y., “Model Validation in System dynamics”, System Dynamics and the Analysis of Chang: Proceedings of International Conference on System Dynamics. The M.I.T. Press, 1994.3.	Coyle, R.G., System Dynamics Modeling: A Practical Approach, London, 1996.4.	Darrat, A. F. & Glasock, J. L.,“ On the Real Estate Market Efficiency”, The Journal of Real Finance Economics, Vol.7, p.55-72, 1993.5.	Forrester, J.W., Industrial Dynamics, The M.I.T. Press, 1961.6.	Forrester, J.W., Urban Dynamics, The M.I.T. Press, 1969.7.	Forrester, J.W. & Senge, P.M., “Tests for Building in System Dynamics Models”, Studies in the Management Science, Vol.14, p.209-228, 1980.8.	Legasto A. A., & Maciariello J., “System Dynamics: A Critical Review”, Studies in the Management Science, Vol.14, p.23-43, 1980.9.	McCue, T. E. & Kling J. L.,“Real Estate Returns & the Macro Economy: Some Empirical Evidence from Real Estate Investment Trust Date, 1972-1991,” The Journal of Real Estate Research, Vol.9, p.277-288, 1994.10.	Pyhrr, S. A. & Cooper, J. R., Real Estate Investme: Strategy Analysis, Decisions, p.485, 1982.11.	Roberts, E. B., (ed.), Managerial Applications of System Dynamics, Waltham, MA: Pegasus Communications, U.S.A, pp.3-35, 1978.12.	Stave, K. A.,”Using System Dynamics to Improve Public Participation in Environmental Decisions”, System Dynamics Review, Vol.18, p.139-167, 2002.13.	Sterman, J. D., Business Dynamics: Systems Thinking and Modeling for a Complex World, Boston, 2000.
+              
+
+
+論文全文使用權限
+同意授權校內瀏覽/列印電子全文服務，於2003-07-09起公開。同意授權校外瀏覽/列印電子全文服務，於2003-07-09起公開。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+            如您有疑問，請聯絡圖書館 聯絡電話：(06)2757575#65773 聯絡E-mail：etds@email.ncku.edu.tw
+
+
+
+
+
+
+
+
+
+
+
+
+
+Welcome to::::朝陽科技大學設計學院建築及都市設計研究所::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本所簡介　師資介紹　課程規劃　辦法規章　師生作品　論文摘要　表單下載　碩博士生　專題討論　特色計畫　相關連結
+
+
+
+
+作者: 王賢吉  論文題目: 主題遊樂園永續經營系統動態模擬與分析－以劍湖山世界為例
+【摘                要】
+
+                    　　近年來，在國內掀起一股觀光休閒熱潮後，充滿多元化、科技化、驚險刺激性等等的主題式遊樂園相繼林立。由於主題式遊樂觀光產品的生命周期相對較短暫，經常 不得不面對經營慘淡的情況。在旅遊業管理者及決策者中，對於主題式遊樂觀光產品的多變性往往無法掌握，只能被動地從經驗法則中學習與瞭解，造成許多投資上的錯誤決策，同時也造成了環境與經濟上的雙重浪費，而無法達到永續經營之願景。因此，能夠全面總覽主題遊樂園各向度之成功經營因素，並瞭解旅遊市場中遊客 量的非線性變化，即成為旅遊業決策者所必定需要瞭解學習的重點工作，從被動地關註每年的遊客量轉為主動地去體認主題遊樂市場以創造高重遊率。主題遊樂園中許多經營與投資決策的有效性都取決於對旅遊產品的周期特性是否把握，如能理解主題遊樂園周期中的階段特性，則必然可減低投資上的錯誤決策。本研究的目的即 以永續經營與發展的理論思考觀光旅遊產品上做投資決策的問題，並以系統動態學(System Dynamics)為基礎，利用電腦軟體STELLA為工具，從系統思考的宏觀角度，以模糊德爾菲法篩選系統因子，建構出劍湖山世界永續經營系統動態學模型，模擬與分析旅遊產品市場的動態情境，瞭解企業經濟發展對於環境所造成的衝擊，試圖提出利於經營與管理之策略供劍湖山世界主題遊樂區經營管理業者參考，助其作出正確的發展決策。
+關鍵字：系統動態學、主題遊樂園、永續經營
+
+【ABSTRACT】
+
+                    　　After a great fervour of tourism swept over, diversified, technological, adventurous, and …etc, various kinds of theme park come out and entertained out lift. Due to the passion to theme park is a relatively short, owner of theme park usually experienced difficulties to attract tourists to revisit and that result deficiency of profits. It is also hard to control variant unpredictable situations happen. The only way to avoid every kind of negative situation happen is to learn from the past. However, if any bad situation happened, it could cost great economic and geographical damages, consequently, bankruptcy would occur and the park would discontinue from operating.Therefore, in order to increase the percentage of revisiting, from passively concentrating on observing the statistic of tourist flow to actively understanding the tourism market, executives of theme park should study every essential element which can successfully help to operate and comprehend the non-linear flow of visitors. A lot operation and investment decisions are determined depended on assurance of periodical characteristic of tourist products. Once decision makers can understand the gradation of characteristic in each period, they can surely reduce mistakes during investment.This study is based on theoretical thought of continuing operating and development of tourist product to solve problems on investment decisions. 　　The study uses System Dynamics as basis, software “STELLA” as tool and from the system point of view build a continuing operation model to simulate and analyst the movement in the tourist market. Janfusun fancyworld theme park, for instance, uses Fuzzy Delphi to choice the variable and create a dynamic system model to explain operating and managing strategy for owner of Janfusun fancyworld theme park to make the right developing decision.
+
+
+
+
+
+
+網頁維護人：吳宏基　TEL：+886-4-23323000-7156　FAX：+886-4-23742373　E-MAIL：dcollege@cyut.edu.tw
+
+
+
+
+
+
+
+
+
+ 策略動態學 Workshop -免費名額3位 | 台灣亞太產業分析專業協進會
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+迴首頁 │ 聯絡我們 │ 加入最愛
+
+
+
+
+
+
+
+
+協會簡介協會沿革協會組織理監事委員會分析師道德規範協會章程簡則會議紀錄
+
+常見問題會員問題電子報問題
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+初級產業分析師認證第一梯次報名至7/...<詳全文>　會員享有認證報名優惠價,請上網申請入...<詳全文>　有用證照在手變身搶手人才-初級產業分...<詳全文>　106年產業分析師檢核認證7/15開...<詳全文>　『資深產業分析師』&『產業顧問』認證...<詳全文>　                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+帳號：
+
+
+
+
+密碼：
+
+
+
+
+
+ 
+
+
+
+
+
+
+忘記密碼
+
+加入會員
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+會員招生
+
+
+
+
+
+
+
+
+
+立即加入會員
+
+
+
+
+
+
+
+
+
+會籍延續
+
+
+
+
+
+
+
+
+
+最新訊息
+
+
+
+
+
+
+
+
+
+認證資格延續
+
+
+
+
+
+
+
+
+
+申請簡章
+
+
+
+
+
+
+
+
+
+年度時程表
+
+
+
+
+
+
+
+
+
+通過名單
+
+
+
+
+
+
+
+
+
+補發申請
+
+
+
+
+
+
+
+
+
+各級產業分析認證
+
+
+
+
+
+
+
+
+
+各級時程表
+
+
+
+
+
+
+
+
+
+認證報考簡章
+
+
+
+
+
+
+
+
+
+認證簡章附件
+
+
+
+
+
+
+
+
+
+榜單公佈
+
+
+
+
+
+
+
+
+
+歷年試題
+
+
+
+
+
+
+
+
+
+參考書籍
+
+
+
+
+
+
+
+
+
+認證程序
+
+
+
+
+
+
+
+
+
+認證成果
+
+
+
+
+
+
+
+
+
+應考建議
+
+
+
+
+
+
+
+
+
+活動資訊
+
+
+
+
+
+
+
+
+
+活動新訊
+
+
+
+
+
+
+
+
+
+活動集錦
+
+
+
+
+
+
+
+
+
+研討會資料
+
+
+
+
+
+
+
+
+
+專題報導
+
+
+
+
+
+
+
+
+
+理監事介紹
+
+
+
+
+
+
+
+
+
+院士介紹
+
+
+
+
+
+
+
+
+
+資深產業顧問
+
+
+
+
+
+
+
+
+
+顧問專欄
+
+
+
+
+
+
+
+
+
+媒體報導
+
+
+
+
+
+
+
+
+
+產業報告
+
+
+
+
+
+
+
+
+
+電子專文
+
+
+
+
+
+
+
+
+
+教育訓練
+
+
+
+
+
+
+
+
+
+志工園區
+
+
+
+
+
+
+
+
+
+匯款資訊
+
+
+
+
+
+
+
+
+
+聯絡我們
+
+
+
+
+
+
+
+
+
+聯絡我們
+
+
+
+
+
+
+
+
+
+意見諮詢 	
+
+
+
+
+
+
+
+
+
+留言諮商
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+您的位置：首頁 > 活動資訊 > 活動新訊
+
+
+
+
+
+
+
+
+
+活
+動新訊
+
+Activity
+
+
+ 
+
+
+
+
+
+
+
+
+ 策略動態學 Workshop -免費名額3位
+
+
+
+
+
+						                        【活動時間】：2015/06/02，10:20 ~ 17:30【報名費】：免費                        
+
+
+各位產業顧問及資深產業分析師您們好:
+本會今年與文化大學合辦第一場次的會員分享會 (5/29; 企業架構與系統動態學研討會)，並針對所有會員進行邀請，以達成本會跨領域學習和交流之目的。
+ 
+此外，為有效針對產業顧問及資深產業分析師提供對等的訓練課程，經與文化大學討論後，額外爭取到 6/2(二) 以 策略動態(Strategy dyamics) 為題的 6小時的workshop(從早上10:20到下午5:30，於文大推廣大夏館B207教室)，聚焦於介紹一套結合策略管理、電腦模擬、情境分析的「策略動態學」方法論。
+ 
+其中，講師Dr. Kim Warren曾任教於英國倫敦商學院的MBA Program，也當過國際「系統動態學」協會理事長，非常歡迎各位報名參加，一同學習研討！
+惟受限本場次的場地與講師要求等限制，本會僅有三個免費名額，因此，請有興趣的顧問及資深產業分析師盡速利用 e-mail至secretary@apiaa.org.tw 報名，並提供您的簡要 CV 供授課老師參考。
+ 
+APIAA 秘書處 / 活動公關委員會敬邀
+
+
+
+♥ 我要收藏 ▲ TOP ◇ 回列表頁
+
+
+
+
+
+
+相關連結＆檔案下載
+
+ 
+
+
+
+
+
+相關連結：策略動態學簡介 、講者簡介 
+
+
+
+檔案下載：
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+【 顧問專欄 】借鏡北歐無現金社會發展經驗，思考數位支付政策
+
+
+【陳信宏、戴志言／台灣亞太產業分析專業協進會院士&中經院國際經濟所長、中經院國際經濟副研究員】為共同作者為加速提...more
+
+
+
+
+
+
+
+
+【 顧問專欄 】《名家觀點》中國新型全球化…G20峰會大戲
+
+
+台灣亞太產業分析專業協進會院士劉孟俊中華經濟研究院第一研究所所長第12次G20高峰會將於7-8日於德國漢堡舉行，會議主題...more
+
+
+
+
+
+
+
+
+【 顧問專欄 】台商拚南向 揪團打群架
+
+
+台灣亞太產業分析專業協進會院士/理事長蘇孟宗工業技術研究院產業經濟與趨勢研究中心(IEK)主任政府力推「新南向」，希望改...more
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+ 
+
+
+repliques
+
+
+版權所有 © 2012 台灣亞太產業分析專業協進會
+          尊重智慧財產權 請勿任意轉載網站內容
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：建構臺灣半導體產業動態模式－以晶圓代工業為例
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 建構臺灣半導體產業動態模式－以晶圓代工業為例Building a Dynamic Model of Taiwan's Semiconductor Industry - an Example of the Foundry Industry
+作者: 陳建宏Chen, Joseph朱博湧, 陳安斌Chu Po-Young, Chen An-Pin資訊管理研究所
+關鍵字: 半導體產業;晶圓代工;系統動態學;模擬;semiconductor industry;foundry;system dynamics;simulation
+公開日期: 1997
+摘要: 本論文嘗試採用系統動態學方法，針對台灣半導體產業建立動態
+模式。電子與資訊產業是台灣近年來成長快速以及深具國際競爭力的產業
+，其中半導體製造業更在台灣發展出全球獨特的產業垂直分工生態，展現
+出強韌的生命力。由於半導體產業對我國未來的經濟發展以及產業升級日
+益重要，而傳統的產業研究方法在面對該產業快速變動以及規模激增的情
+況下難以掌握產業成長之動態行為。本研究採用系統動態學方法論，針對
+國內成功之半導體製造公司建立動態模式，透過產業相關決策者的心智模
+式瞭解產業內部的結構與互動關係，並據以建立因果迴饋模式，將所構建
+之產業模式進行模擬分析，裨利決策者得以掌握產業變化之關鍵。
+半導體產業主要的關鍵在人、技術、資金以及產能四個部份的互動關係上
+，一家公司必須過長時間的努力才能在這四個因素上累積足夠的能量繼續
+成長。從模擬的結果可以知道，無論是資本、產能以及人力資源都需要靠
+時間來累積，一家晶圓代工廠的體質大約需要十年的時間來養成才能有第
+一流的競爭力。本模式分別以DRAM製造廠轉型進入晶圓代工業、在目前環
+境下投資新晶圓代工廠、生產導向轉換至服務導向以及資金不足之限制四
+個情境來模擬產業發展情形，結果顯示DRAM製造廠轉入晶圓代工業後需要
+數年的調整期才能具備足夠的競爭力，在市場不會飽和的前提下，目前新
+投資的晶圓廠仍然有機會成功，服務導向策略可以提高公司的獲利，並降
+低財務槓桿減輕風險，資金供應不足對代工廠的獲利能力、成長速度以及
+競爭力的提昇都會有負面的影響。
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT860396015http://hdl.handle.net/11536/62969
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef半導體產業晶圓代工MRO系統建構之研究- 以A公司為例 / 張增麒;Chang, Zen-Chi;黃仁宏;Huang, Jen-Hung半導體晶圓代工與IDM之競合關係分析台灣晶圓代工產業之競爭優勢與策略 / 陳奇奕;Chen, Chih-Yee;鍾惠民;Chung, Huimin利用社群媒體增進企業協同合作提昇競爭力-以T個案公司為例 / 李益青;Lee, Yi-Ching;陳安斌;Chen, An-Pin晶圓代工研究與未來發展分析 / 張惠林;Chang, Hui-Lin;王文傑;陳安斌;Wang, Wen-Chieh半導體晶圓代工業之經營策略分析-以V公司為例 / 古嘉智;黃仁宏;Huang, Jen-Hung從IDM 與晶圓代工的消長分析台灣半導體產業之競爭優勢與策略 / 吳奇明;鍾惠民從SWOT及五力分析理論探討台灣晶圓代工的競爭策略- 以T個案公司為例 / 陳怡旭;Chen, Yi-Hsu;陳安斌;Chen, An-Pin義守大學 - 台灣半導體產業外移之研究－以晶圓代工為焦點 / 呂哲豪 國立政治大學 - 創造公司價值因素之探討—以半導體晶圓代工產業為例 / 江玠寬; Chiang, Chieh Kuan 國立政治大學 - 簡明三維供應鏈規劃整合模型：以半導體晶圓代工業為例 / 陳奕光; Chen, Yi-Kuang 國立政治大學 - 簡明三維供應鏈規劃整合模型：以半導體晶圓代工業為例 / 陳奕光; Chen, Yi-Kuang 國立政治大學 - 簡明三維供應鏈規劃整合模型：以半導體晶圓代工業為例 / 陳奕光; Chen, Yi-Kuang 國立清華大學 - 建構商業生態系統之動態產業分析架構-以台灣新竹科學園區半導體產業為例 / 蔡宜珍 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+[評價] 100-2 系統動態學 餘峻瑜 江炯聰 - 看板 NTUcourse - 批踢踢實業坊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+批踢踢實業坊
+›
+看板 NTUcourse
+關於我們
+聯絡資訊
+
+
+
+
+返回看板
+
+
+分享
+
+
+
+
+
+
+
+作者andrewlback (jackathy)看板NTUcourse標題[評價] 100-2 系統動態學 餘峻瑜 江炯聰時間Fri Jul 27 16:02:37 2012
+※ 本文是否可提供臺大同學轉作其他非營利用途？（須保留原作者 ID）
+         （是／否／其他條件）：是
+
+      哪一學年度修課：
+        100-2
+      ψ 授課教師 (若為多人合授請寫開課教師，以方便收錄)
+        餘峻瑜 江炯聰
+      δ 課程大概內容
+       本課程旨在將 MIT Sloan School of Management之System Dynamics Group的重要
+       研究教學方法與成果加以有系統地精要傳授，課程內容聚焦於如何運用其系統性思
+       考方法來處理複雜系統。本課程首先教授如何定義系統範圍與解構複雜問題，繼而
+       發展行為與現象的結構與程序之因果關係模型並進行模擬，最後建立關鍵決策之規
+       則與定律，以供面對不同情境條件時下達可行或最適決策。
+       在主題選擇方面，本課程將著重企業經營的價值鏈分析以及跨功能與創新成長的決
+       策模型。（以上是課程大綱）
+
+       上課主題
+       Modeling Process
+       Structure and Behavior of Dynamic Systems
+       Causal Loop Diagram
+       Stocks and Flows
+       Dynamics of Stocks and Flows
+       Closing the Loop: Dynamics of Simple Structures
+       Growth Dynamics
+       Delays
+       Coflows and Aging Chains
+       Human Behavior and Expectation Formation
+       Supply Chains and the Origin of Oscillations
+       Manufacturing and Labor Supply Chains
+
+      Ω 私心推薦指數(以五分計) ★★★★★
+       4.5顆
+      η 上課用書(影印講義或是指定教科書)
+       1.老師講義(老師會上傳，自行影印)
+       2.Business Dynamics:System Thinking and Modeling for a Complex World
+           Sterman, 1st ed., McGraw-Hill, 2000
+      μ 上課方式(投影片、團體討論、老師教學風格)
+       老師以投影片搭配講解，個人覺得講得滿清楚的。
+      σ 評分方式(給分甜嗎？是紮實分？)
+       作業：25% 期中考：25% 學期報告：50%
+       個人最後學期成績A，大概是被用力調分過吧XD
+      ρ 考題型式、作業方式
+       1.期中考好像不知道成績（？），考題應該不算太難，主要都是有教過的觀念，
+       多為簡答題。
+       2.作業有6次，一次2~4題不等，通常都需要使用Vensim軟體來協助完成(老師上課
+       會教使用方法，而且使用自然語言，使用起來不困難)。
+       我做比較慢，自己一份作業大概要花到6小時甚至以上。
+       老師有說作業沒有標準答案，而到後面幾次作業就比較需要小組討論。
+       3.學期報告是數人一組，以本學期所學的系統動態觀念與Vensim操作，寫一篇
+       學期報告(包括系統模擬結果)，除了書面外，在最後一堂課要上臺報告。
+      ω 其它(是否註重出席率？如果為外系選修，需先有什麼基礎較好嗎？老師個性？
+加簽習慣？嚴禁遲到等…)
+       不點名，但一次上課就是一個章節(主題)，寫作業會用到該週所教的內容。
+       本課程大綱寫"若具備基本的數學、統計學、微積分、程式設計、作業管理、
+       決策分析、組織行為等概念，或有助於吸收本課程之教材。"個人只修過前四種
+       相關課程，後三種都是本學期自己看書。我覺得有這幾種課程的基本能力應該就
+       還上得下去，當然如果這些課程都很熟絕對是有幫助，尤其是在寫作業時。
+       這門課可能因為是在大學裡第二次開(不算EMBA的話)的緣故，比較沒有簽不到
+       的問題，課堂上有商研、工工、會計、生工以及其他系所的學生。
+       上課需準時(遲到進來會比較尷尬)。課堂進行中不能飲食，需關閉手機。
+      Ψ 總結
+       老師有提過，系統動態學這門課，並不是很好學、也不是很好教。儘管如此，
+       如果能有同學或好組員一起討論，那麼作業、報告應該也不會太難以完成。
+       而本課堂中主要是教授基本概念，背後還有很多更精深微妙的學問，同學可以自行
+       深入研究。
+       課堂上主要由餘老師講授課程，江老師上課時常會請別的學長來做專題報告。
+
+--
+※ 發信站: 批踢踢實業坊(ptt.cc) 
+◆ From: 140.112.214.139
+
+
+
+
+
+
+
+

@@ -1,0 +1,6913 @@
+
+
+
+機率 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+機率
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+確定性
+
+
+
+
+虛無主義
+不可知論
+不確定性
+機率
+近似
+信念
+知識論
+確定
+決定論
+偶然性
+必然性
+懷疑
+假說
+理由
+科學理論
+理論
+真理
+宿命論
+可謬論
+懷疑論
+唯我論
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+
+
+
+概率，舊稱幾率[註 1]，又稱或然率、機會率或機率、可能性，是數學機率論的基本概念，是一個在0到1之間的實數，是對隨機事件發生之可能性的度量[1]。
+機率常用來量化對於某些不確定命題的想法[2]，命題一般會是以下的形式：「某個特定事件會發生嗎？」，對應的想法則是：「我們可以多確定這個事件會發生？」。確定的程度可以用0到1之間的數值來表示，這個數值就是機率[3]。因此若事件發生的機率越高，表示我們越認為這個事件可能發生。像丟銅板就是一個簡單的例子，正面朝上及背面朝上的兩種結果看來機率相同，每個的機率都是1/2，也就是正面朝上及背面朝上的機率各有50%。
+這些概念可以形成機率論中的數學公理（參考機率公理），在像數學、統計學、金融、博弈論、科學（特別是物理）、人工智慧/機器學習、電腦科學及哲學等學科中都會用到。機率論也可以描述複雜系統中的內在機制及規律性[4]。
+
+
+
+目錄
+
+
+1 歷史
+2 概念
+3 理論
+4 應用
+5 數學處理
+
+5.1 表示機率
+5.2 分佈
+5.3 機率計算總結
+
+
+6 和隨機的關係
+7 參考文獻
+
+7.1 引用
+7.2 來源
+7.3 引用
+
+
+8 外部連結
+9 參見
+
+
+
+歷史[編輯]
+第一個系統地推算機率的人是16世紀的卡爾達諾[5]。記載在他的著作Liber de Ludo Aleae中。書中關於機率的內容是由Gould從拉丁文翻譯出來的。
+Cardano的數學著作中有很多給賭徒的建議。這些建議都寫成短文。例如：《誰，在什麼時候，應該賭博？》、《為什麼亞里士多德譴責賭博？》、《那些教別人賭博的人是否也擅長賭博呢？》等。
+然而，首次提出系統研究機率的是在帕斯卡和費馬來往的一系列信件中。這些通信最初是由帕斯卡提出的，他想找費馬請教幾個關於由Chevalier de Méré提出的問題。Chevalier de Méré是一知名作家，路易十四宮廷的顯要，也是一名狂熱的賭徒。問題主要是兩個：擲骰問題和比賽獎金應分配問題。
+
+
+
+
+印度各地天災風險機率
+
+
+概念[編輯]
+在日常生活中，我們常常會遇到一些涉及可能性或發生機會等概念的事件（event）。一個事件的可能性或一個事件的發生機會是與數學有關的。例如：
+「從一班40名學生中隨意選出一人，這人是男生嗎？」
+事實上，人們問「……可能會發生嗎？」時，他們是在關註這個事件發生的機會。在數學上，事件發生的機會可用一個數來表示。我們稱該數為機率（Probability）。
+我們日常所見所聞的事件大致可分為兩種：
+一種是確定性事件。確定性事件包含必然事件和不可能事件。 如太陽從東方升起，或者在標準大氣壓下，水在100℃時會沸騰。我們稱這些事件為必然事件。 如擲一個普通的骰子，向上一面的數字是7。我們稱這些事件為不可能事件。
+此外，有大量事件在一定條件下是否發生，是無法確定的。如明天的氣溫比今天低、擲一枚硬幣得正面向上，又或者在下一年度的NBA比賽中，芝加哥公牛隊會奪得全年總冠軍。像以上可能發生也可能不會發生的事件稱為隨機事件。
+理論[編輯]
+主條目：機率論
+機率論是一種用正式的用語表達機率概念的方式，這些詞語可以用數學及邏輯的規則處理，結果再轉換到和原來問題有關的領域。
+至少有兩種成功的將機率公式化的理論，分別是柯爾莫哥洛夫公式化以及考克斯（英語：Cox）公式化。在柯爾莫哥洛夫公式化（參考機率空間）中，用集合代表事件，機率則是對集合的測度。在考克斯定理（英語：Cox's theorem）中，機率是不能再進一步分析的基元，強調在機率值及命題之間建立一致性的關係。在二種公式化方法中，機率公理都相同，只有一些技術細節不同。
+有其他量度不確定性的方式，例如Dempster-Shafer理論（英語：Dempster–Shafer theory）或是可能性理論（英語：possibility theory），但兩者都有本質上的不同，無法和一般瞭解的機率論相容。
+應用[編輯]
+機率的概念常常應用在生活中，例如風險評估及以金融市場的交易等。政府也在環境法中應用機率，稱為路徑分析（pathway analysis）。例如中東衝突可能會對油價有某程度的影響，而油價對世界經濟可能會有漣漪效應的影響。某個油品交易商認為中東衝突會使油價上昇或下降，並將他的意見提供給其他交易商。因此機率不是各自獨立的進行評估，評估的過程也不一定合理。行為經濟學就是描述團體迷思對定價、政策甚至和平或衝突的影響[6]。
+有關機率評估及組合的嚴謹方式也改變了社會。對大部份的社會大眾而言，重要的是瞭解機率評估的方式以及機率和決策之間的關係。
+機率理論另一個明顯的應用是可靠度理論（英語：Reliability theory）。像汽車及消費性產品會在產品開發時應用可靠度理論來減少產品失效的機率。失效機率會影響廠商在產品保用證上的決策[7]。
+像自然語言處理中用的快取語言模型（英語：cache language model）及其他語言模型等也屬於是機率理論的應用。
+數學處理[編輯]
+主條目：機率公理
+事件A的機率一般會寫成P(A)、p(A)或Pr(A)[8]。機率的數學概念可延伸到無限的樣本空間甚至不可數的樣本空間，但需要用上機率測度的概念。
+機率的公理化定義將機率的相關範疇從具體問題中抽象出來，從而可以在數學意義下考察機率的相關概念和由之引出的問題。以下給出機率的公理化定義：
+設隨機事件的樣本空間為Ω，Ω的一個子集稱為事件。對於Ω中的每一個事件A，都有實函數P(A)，滿足：
+
+非負性：
+
+
+
+P
+(
+A
+)
+≥
+0
+
+
+{\displaystyle P(A)\geq 0}
+
+；
+規範性：
+
+
+
+P
+(
+Ω
+)
+=
+1
+
+
+{\displaystyle P(\Omega )=1}
+
+
+可數可加性：對可數個兩兩互斥事件{Ai}i∈N有：
+
+
+
+
+
+
+∑
+
+i
+=
+1
+
+
+∞
+
+
+P
+(
+
+A
+
+i
+
+
+)
+=
+P
+
+(
+
+⋃
+
+i
+=
+1
+
+
+∞
+
+
+
+A
+
+i
+
+
+)
+
+
+
+
+
+{\displaystyle {\displaystyle \sum _{i=1}^{\infty }P(A_{i})=P\left(\bigcup _{i=1}^{\infty }A_{i}\right)}}
+
+
+
+任意一個滿足上述條件的函數P都可以作為樣本空間Ω的機率函數，稱函數值P(A)為Ω中事件A的機率。
+表示機率[編輯]
+一個事件的機率值通常以一個介於0到1的實數表示。一個不可能事件其機率值為0，而確定事件其機率值則為1。 但反推並不一定成立，也就是說機率值為0的事件不表示它就是一個不可能事件，同理，機率值為1的事件不表示它就一定發生。例如，在一個正方形內作一條線段，由於這條線段的面積是0，所以一個點落在這條線段上的機率就是0，但它並不是不可能事件。
+實際上大多數的機率值都是介於0與1之間的數，這個數示代表事件在'不可能發生'與'確定發生'之間的相對位置。事件的機率值越接近1，事件發生的機會就越高。
+舉例來說，假設兩個事件有相同的發生機率，就像被拋擲而落地的銅板不是正面向上就是反面向上一樣，但是我們不能說：每2次拋擲會出現1次，只能說事件發生的機率是平均每2次出現一次，或說是 "50%" 或 "1/2"。
+分佈[編輯]
+機率分佈函數是一個把機率分配給事件或者命題的函數。對於任何一個事件或者命題，總有很多分配機率的方法，所以選擇不同的分佈等同於對一個問題中的事件或者命題作出不同的假設。
+分佈還可分為「離散」和「連續」的。
+機率計算總結[編輯]
+
+機率計算總結
+
+事件
+機率
+
+
+A
+
+
+
+
+P
+(
+A
+)
+∈
+[
+0
+,
+1
+]
+
+
+
+{\displaystyle P(A)\in [0,1]\,}
+
+
+
+
+非A
+
+
+
+
+P
+(
+
+A
+
+c
+
+
+)
+=
+1
+−
+P
+(
+A
+)
+
+
+
+{\displaystyle P(A^{c})=1-P(A)\,}
+
+
+
+
+A或B
+
+
+
+
+
+
+
+
+P
+(
+A
+∪
+B
+)
+
+
+
+=
+P
+(
+A
+)
++
+P
+(
+B
+)
+−
+P
+(
+A
+∩
+B
+)
+
+
+
+
+P
+(
+A
+∪
+B
+)
+
+
+
+=
+P
+(
+A
+)
++
+P
+(
+B
+)
+
+
+if A and B are mutually exclusive
+
+
+
+
+
+
+
+{\displaystyle {\begin{aligned}P(A\cup B)&=P(A)+P(B)-P(A\cap B)\\P(A\cup B)&=P(A)+P(B)\qquad {\mbox{if A and B are mutually exclusive}}\\\end{aligned}}}
+
+
+
+
+A和B
+
+
+
+
+
+
+
+
+P
+(
+A
+∩
+B
+)
+
+
+
+=
+P
+(
+A
+
+|
+
+B
+)
+P
+(
+B
+)
+=
+P
+(
+B
+
+|
+
+A
+)
+P
+(
+A
+)
+
+
+
+
+P
+(
+A
+∩
+B
+)
+
+
+
+=
+P
+(
+A
+)
+P
+(
+B
+)
+
+
+if A and B are independent
+
+
+
+
+
+
+
+{\displaystyle {\begin{aligned}P(A\cap B)&=P(A|B)P(B)=P(B|A)P(A)\\P(A\cap B)&=P(A)P(B)\qquad {\mbox{if A and B are independent}}\\\end{aligned}}}
+
+
+
+
+B的情況下A的機率
+
+
+
+
+P
+(
+A
+∣
+B
+)
+=
+
+
+
+P
+(
+A
+∩
+B
+)
+
+
+P
+(
+B
+)
+
+
+
+=
+
+
+
+P
+(
+B
+
+|
+
+A
+)
+P
+(
+A
+)
+
+
+P
+(
+B
+)
+
+
+
+
+
+
+{\displaystyle P(A\mid B)={\frac {P(A\cap B)}{P(B)}}={\frac {P(B|A)P(A)}{P(B)}}\,}
+
+
+
+
+和隨機的關係[編輯]
+參見：隨機
+在牛頓力學的概念中，決定論的世界中，若所有條件都是已知，都沒有任何機率性的成份在內（拉普拉斯的惡魔），不過有可能一些系統對初始條件敏感，敏感程度甚至到超過可能量測的範圍。以俄羅斯輪盤為例，若手的施力，出力的時間等資訊已知，輪盤最後停止的位置是可以計算而得的，不過此時需要知道輪盤的慣量及摩擦係數，球的質量、光滑度及圓度，出力過程中手速度的變化等。此時，相較於用牛頓力學的方式分析，機率性的描述可能更適合描述重覆玩數次俄羅斯輪盤的結果。科學家發現在氣體動力論中也有類似的情形，系統理論上是確定的，但因為氣體分子個數約和阿伏伽德羅常數6.02·1023量級相當，因此也只能用機率性的描述。
+在描述量子理論時一定會用到機率論[9]。二十世紀初期，物理學界有一個革命性發現，所有次原子層級的物理過程有隨機性，依循量子力學。物理的波函數是確定的，是數個狀態的疊加，但根據哥本哈根詮釋，觀察會帶來波函數塌縮，因此只能觀察到其中一個狀態。不過這種缺乏決定論的觀點未受到所有人的同意。愛因斯坦在給馬克斯·玻恩的信上提到「我相信上帝不會玩骰子。」[10]。而發現波函數的埃爾溫·薛丁格認為量子力學只是內部決定論狀態的統計近似[11]。在近代的詮釋中，量子退相干有相當的機率性質。
+參考文獻[編輯]
+引用[編輯]
+
+
+^ "Probability". Webster's Revised Unabridged Dictionary. G & C Merriam, 1913
+^ "Kendall's Advanced Theory of Statistics, Volume 1: Distribution Theory", Alan Stuart and Keith Ord, 6th Ed, (2009), ISBN 978-0-534-24312-8
+^ William Feller, "An Introduction to Probability Theory and Its Applications", (Vol 1), 3rd Ed, (1968),Wiley ,ISBN 978-0-471-25708-0
+^ Probability Theory The Britannica website
+^ 機率空間 (1)機率論的誕生. 國科會高瞻自然科學教學資源平臺. 2011-06-07 [2014-10-21] （中文）. 
+^ Singh, Laurie (2010) "Whither Efficient Markets? Efficient Market Theory and Behavioral Finance". The Finance Professionals' Post, 2010.
+^ Gorman, Michael (2011) "Management Insights". Management Science [需要完整來源]
+^ Olofsson (2005) Page 8.
+^ Burgi, Mark (2010) "Interpretations of Negative Probabilities", p. 1. arXiv:1008.1287v1
+^ Jedenfalls bin ich überzeugt, daß der Alte nicht würfelt. Letter to Max Born, 4 December 1926, in: Einstein/Born Briefwechsel 1916-1955.
+^ Moore, W.J. Schrödinger: Life and Thought. Cambridge University Press. 1992: 479. ISBN 0-521-43767-9. 
+
+
+來源[編輯]
+
+書籍
+
+
+Olofsson, Peter (2005). Probability, Statistics, and Stochastic Processes, Wiley-Interscience. p. 504. ISBN 978-0-471-67969-1
+
+引用[編輯]
+
+
+^ 「幾」字表示數量意義，即「若干、多少」。但因為「幾」字的義項較多，有人誤以為「幾率」的含義是指「機會」（英語為opportunity）的多少，進而誤寫成「機率」，數學界就另外取一個名「概率」。
+
+
+外部連結[編輯]
+
+
+
+維基語錄上的相關摘錄：機率
+
+
+
+
+您可以在維基教科書中查找此百科條目的相關電子教程：
+Probability
+
+
+
+
+關於Probability
+的圖書館資源
+
+
+
+
+
+Resources in your library
+
+
+
+
+
+機率筆記
+出現字的實驗
+亂數出現可被整除的機率實驗
+Virtual Laboratories in Probability and Statistics (Univ. of Ala.-Huntsville)
+Probability and Statistics EBook
+Edwin Thompson Jaynes. Probability Theory: The Logic of Science. Preprint: Washington University, (1996). — HTML index with links to PostScript files and PDF (first three chapters)
+People from the History of Probability and Statistics (Univ. of Southampton)
+Probability and Statistics on the Earliest Uses Pages (Univ. of Southampton)
+Earliest Uses of Symbols in Probability and Statistics on Earliest Uses of Various Mathematical Symbols
+A tutorial on probability and Bayes' theorem devised for first-year Oxford University students
+[1] pdf file of An Anthology of Chance Operations (1963) at UbuWeb
+Introduction to Probability - eBook, by Charles Grinstead, Laurie Snell Source (GNU Free Documentation License)
+（英文） （義大利文） Bruno de Finetti, Probabilità e induzione, Bologna, CLUEB, 1993. ISBN 978-88-8091-176-0 (digital version)
+
+參見[編輯]
+
+
+數學主題
+統計學主題
+
+
+
+機率論
+貝葉斯機率
+伯努利過程
+考克斯定理（英語：Cox's theorem）
+決策理論
+機會遊戲
+資訊理論
+平均法則
+大數法則
+測度論
+常態分佈
+隨機場
+隨機變量
+統計學
+隨機過程
+Wiener過程
+排隊理論
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+邏輯
+
+
+
+
+
+
+
+
+
+
+ 
+概要
+
+
+
+
+
+
+
+
+
+
+學術領域
+
+
+
+辯論法
+價值論
+審辯式思維
+可計算性理論
+形式語義學
+邏輯史
+非形式邏輯
+計算器邏輯
+數理邏輯
+數學
+元邏輯
+元數學
+模型論
+哲學邏輯
+哲學
+邏輯哲學
+數學哲學
+證明論
+集合論
+
+
+
+
+
+
+
+
+基礎概念
+
+
+
+溯因推理
+分析真理
+二律背反
+先驗
+演繹推理
+定義
+描述
+薀涵
+歸納推理
+推論
+邏輯結論
+邏輯形式
+邏輯薀涵
+邏輯真理
+名稱
+充分條件
+意義
+悖論
+可能世界
+假定
+機率
+理智
+推理
+指涉
+語義學
+語句
+嚴格條件
+交換區
+語法學
+真理
+真值
+有效性
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+哲學邏輯
+
+
+
+
+
+
+
+
+
+
+審辯式思維
+和非形式邏輯
+
+
+
+分析
+歧義性
+論證
+信仰
+偏見
+公信力
+證據
+解釋
+解釋力
+事實
+謬論
+探究
+意見
+奧卡姆剃刀
+前提
+政治宣傳
+審慎
+推理
+關聯
+修辭學
+嚴格
+含糊
+
+
+
+
+
+
+
+
+演繹理論
+
+
+
+結構主義
+雙面真理說
+虛構主義
+有限主義
+形式主義
+直覺主義
+邏輯原子論
+邏輯主義
+唯名論
+柏拉圖唯實論
+實用主義
+唯實論
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+元邏輯和元數學
+
+
+
+
+
+
+
+
+
+康托爾定理
+可判定性
+邱奇-圖靈論題
+兼容性
+有效方法
+數學基礎
+哥德爾完備性定理
+哥德爾不完備定理
+可靠性
+完備性
+可判定性
+解釋
+勒文海姆–斯科倫定理
+元定理
+可滿足性
+獨立性
+類型-記號區別
+使用-提及區別
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+數理邏輯
+
+
+
+
+
+
+
+
+
+
+一般
+
+
+
+形式語言
+形成規則
+形式系統
+演繹系統
+形式證明
+形式語義學
+合式公式
+集合
+元素
+類
+經典邏輯
+公理
+自然演繹
+推理規則
+關係
+定理
+邏輯結論
+公理系統
+類型論
+符號
+語法學
+定律
+
+
+
+
+
+
+
+
+傳統邏輯
+
+
+
+命題
+推論
+論證
+有效性
+說服力
+直言三段論
+對立四邊形
+文氏圖
+
+
+
+
+
+
+
+
+命題邏輯
+和邏輯代數
+
+
+
+布爾函數
+命題邏輯
+命題公式
+邏輯聯結詞
+真值表
+
+
+
+
+
+
+
+
+謂詞邏輯
+
+
+
+一階邏輯
+量化
+謂詞
+二階邏輯
+一元謂詞演算
+
+
+
+
+
+
+
+
+集合論
+
+
+
+集合
+空集
+枚舉法
+外延性
+有限集合
+函數
+子集
+冪集
+可數集
+遞迴集合
+定義域
+值域
+有序對
+不可數集
+
+
+
+
+
+
+
+
+模型論
+
+
+
+模型
+解釋
+非標準模型
+有限模型論
+真值
+有效性
+
+
+
+
+
+
+
+
+證明論
+
+
+
+形式證明
+演繹系統
+形式系統
+定理
+邏輯結論
+推理規則
+語法學
+
+
+
+
+
+
+
+
+可計算性理論
+
+
+
+遞迴
+遞迴集合
+遞迴可枚舉集合
+決定性問題
+邱奇-圖靈論題
+可計算函數
+原始遞迴函數
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+非傳統邏輯
+
+
+
+
+
+
+
+
+
+
+模態邏輯
+
+
+
+真性邏輯
+價值邏輯
+道義邏輯
+信念邏輯
+認識邏輯
+時間邏輯
+
+
+
+
+
+
+
+
+直覺主義
+
+
+
+直覺主義邏輯
+結構分析
+海廷算術
+直覺類型論
+結構集合論
+
+
+
+
+
+
+
+
+模糊邏輯
+
+
+
+真實度
+模糊規則
+模糊集
+模糊有限元素
+模糊集合運算
+
+
+
+
+
+
+
+
+亞結構邏輯
+
+
+
+結構規則
+相干邏輯
+線性邏輯
+
+
+
+
+
+
+
+
+次協調邏輯
+
+
+
+雙面真理說
+
+
+
+
+
+
+
+
+描述邏輯
+
+
+
+本體論
+本體語言
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+邏輯學家
+
+
+
+
+
+
+
+
+
+安德遜
+亞裡斯多德
+魯世德
+西那
+貝恩
+巴威斯
+博內斯
+布爾
+布勒斯
+康托爾
+卡爾納普
+邱奇
+克呂西波
+加里
+德摩根
+弗雷格
+吉奇
+根岑
+哥德爾
+希爾伯特
+克萊尼
+克裡普克
+萊布尼茲
+勒文海姆
+皮亞諾
+皮爾士
+普特南
+奎因
+羅素
+施洛德
+司各脫
+斯科倫
+史慕揚
+塔斯基
+圖靈
+懷特黑德
+奧卡姆的威廉
+維根斯坦
+策梅洛
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+列表
+
+
+
+
+
+
+
+
+
+
+主題
+
+
+
+邏輯概要
+數理邏輯
+布爾代數
+集合論
+
+
+
+
+
+
+
+
+其它
+
+
+
+邏輯學家
+推理規則
+悖論
+謬論
+邏輯符號
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+常見邏輯符號
+
+
+
+
+
+
+
+
+
+&    ∨    ¬    ~    →    ⊃    ≡    |    ∀    ∃    ⊤    ⊥    ⊢    ⊨    ∴    ∵
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+分類
+
+
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4137007-7
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=概率&oldid=45102286"					
+3 個分類：機率機率與統計無量綱隱藏分類：有未列明來源語句的條目使用ISBN魔術連結的頁麵包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源維基教科書 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+AfrikaansAlemannischአማርኛAragonésالعربيةAsturianuAzərbaycancaتۆرکجهБашҡортсаBoarischБеларускаяБеларуская (тарашкевіца)‎БългарскиবাংলাBosanskiCatalàНохчийнکوردیČeštinaCymraegDanskDeutschΕλληνικάEnglishEsperantoEspañolEestiEuskaraفارسیSuomiFrançaisGaeilge贛語Galegoעבריתहिन्दीHrvatskiՀայերենBahasa IndonesiaIlokanoIdoÍslenskaItaliano日本語PatoisქართულიҚазақшаಕನ್ನಡ한국어LatinaLëtzebuergeschLietuviųLatviešuМакедонскиമലയാളംBahasa MelayuMaltiမြန်မာဘာသာNederlandsNorsk bokmålOccitanਪੰਜਾਬੀPicardPolskiPiemontèisپنجابیPortuguêsRomânăРусскийSicilianuScotsSrpskohrvatski / српскохрватскиSimple EnglishSlovenčinaSlovenščinaSoomaaligaShqipСрпски / srpskiBasa SundaSvenskaKiswahiliதமிழ்ไทยTagalogTürkçeТатарча/tatarçaУкраїнськаاردوOʻzbekcha/ўзбекчаVènetoTiếng ViệtWinarayייִדישBân-lâm-gú粵語 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年7月7日 (週五) 20:49。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+機率概念
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+主題名稱(按可看PowerPoint檔案，可看Java互動式範例)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 機率的定義與性質
+
+
+
+ 機率空間
+
+
+
+
+ 
+條件機率
+
+
+
+
+隨機獨立
+
+
+
+
+
+
+
+期望值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Flash專區
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+襪子大戰
+
+
+快問快答
+
+俄羅斯輪盤
+
+
+
+
+
+
+
+
+
+
+
+
+
+猜獎大作戰
+
+過五關
+
+骰子遊戲
+
+
+
+
+
+
+
+
+
+
+
+
+
+Powerpoint專區
+(提供兩種檔案格式：可看PowerPoint檔案，可看PDF檔案)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+組合分析
+
+
+
+機率公理
+ 
+
+
+條件機率與獨立性
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+自 2002 / 01 /                                         
+              10 起
+
+
+
+
+訪客人數
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+機率學習館首頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本學習館由國科會研究計畫支持   
+              執行期限：89年8月1日至93年7月31日  主持人：羅夢娜教授
+自2000 /            
+              10 / 10 起第              
+                    
+              位訪客    Copyright©2001版權所有宣告     
+              國立中山大學應用數學系製    
+              
+
+
+
+
+
+
+
+��h t m l > h e a d > t i t l e > _j�s, q}�/ t i t l e > / h e a d >  
+ b o d y   b g c o l o r = # E E E E E E >  
+ h 1 > f o n t   c o l o r = # 3 3 3 3 3 3 > a   n a m e = " t o p " > _j�s,   q}�/ a > / f o n t > / h 1 >  
+ l i > a   h r e f = " # _j�s!|�N" > _j�s!|�N/ a > p >  
+ u l >  
+ l i > a   h r e f = " # ��_jf�W�" > ��_jf�W�/ a > p >  
+ u l >  
+ l i > a   h r e f = " # #j,gzz��" > #j,gzz��/ a > ;   a   h r e f = " # �N�N" > �N�N/ a > p > / u l >  
+ l i > a   h r e f = " # _j�s" > _j�s/ a > p >  
+ u l >    
+ l i > a   h r e f = " # j:y>eAm�l" > j:y>eAm�l/ a > p >  
+ l i > a   h r e f = " # _j�s��{�lGR" > _j�s��{�lGR/ a > p >  
+ l i > a   h r e f = " # �h�N_j�s" > �h�N_j�s/ a > p >  
+ l i > a   h r e f = " # hs�z�N�N" > hs�z�N�N/ a > p >  
+ l i > a   h r e f = " # �v�O�N�N" > �v�O�N�N/ a > p >  
+ u l >  
+ l i > a   h r e f = " # L a w   o f   t o t a l   p r o b a b i l i t y " > L a w   o f   t o t a l   p r o b a b i l i t y / a > ;   a   h r e f = " # T h e   B a y e s   f o r m u l a " > T h e   B a y e s   f o r m u l a / a > p >  
+ / u l > / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ l i > a   h r e f = " # ��_j��xe" > ��_j��xe/ a > :       a   h r e f = " # �ce�W��_j��xe" > �ce�W��_j��xe/ a > ;   a   h r e f = " # #��~�W��_j��xe" > #��~�W��_j��xe/ a > p >  
+ l i > a   h r e f = " # p r o b a b i l i t y   d i s t r i b u t i o n   o f   X " > ��_j��xeKN_j�sR^/ a > :   &n b s p   a   h r e f = " # �ce�W" > �ce�W/ a > ;   &n b s p   a   h r e f = " # #��~�W" > #��~�W/ a > p >  
+ u l >  
+ l i > a   h r e f = " # /}MzRHO�Qxe" > /}MzRHO�Qxe/ a >   ( c d f ) ;   a   h r e f = " # _j�s�[�^�Qxe" > _j�s�[�^�Qxe/ a >   ( p d f ) p >  
+ l i > a   h r e f = " # gg> gg/ a > ;   &n b s p   a   h r e f = " # ��puxe" > ��puxe/ a > ;   &n b s p   a   h r e f = " # j�n�]" > j�n�]/ a > ;   &n b s p   a   h r e f = " # c o v a r i a n c e   a n d   c o r r e l a t i o n " > c o v a r i a n c e   a n d   c o r r e l a t i o n / a > p >  
+ l i > a   h r e f = " # 8^KaRHO" > 8^KaRHO/ a > p >  
+ / u l > / u l > / u l >  
+ l i > a   h r e f = " # q}�!|�N" > q}�!|�N/ a > p >  
+ u l >  
+ l i > a   h r e f = " # ��_j#j,g" > ��_j#j,g/ a > p >  
+ u l >  
+ l i > a   h r e f = " # #j,gs^GW> #j,gs^GW/ a > ;   a   h r e f = " # #j,g��puxe" > #j,g��puxe/ a > ;   a   h r e f = " # �O�@S��" > �O�@S��/ a > p >  
+ / u l >  
+ l i > a   h r e f = " # q}��j�[" > q}��j�[/ a > p >  
+ / u l > / u l > / u l >  
+ l i > a   h r e f = " # Q 1 " > Q 1 / a > ;   a   h r e f = " # Q 2 " > Q 2 / a > . p >  
+ / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ h r   a l i g n = " l e f t "   s i z e = " 8 "   w i d t h = " 1 0 0 % "   n o s h a d e >  
+ f o n t   c o l o r = # 0 0 0 0 0 0 >  
+ b > h 1 > f o n t   c o l o r = # 8 8 8 8 8 8 > a   n a m e = " _j�s!|�N" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / i n d e x . h t m l " > _j�s!|�N/ a > / h 1 > / b > / f o n t > p >  
+ l i > f o n t   c o l o r = " # 3 3 9 9 0 0 " > b > _j�s�Q�s�v4Xof/ f o n t > / b > / a > :   N��(u�V�g֊�O�c�e, n�ˑBf.   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / R e s o u r c e s . h t m l " > �S��fɅ/ ǌ�n/ a > ) p >  
+ �O.   p >  
+ u l >  
+ l i > �d NP��P[�vP}�g. p >  
+ l i > P[sYz��P�6r�k�v�W�Vh��s. p >  
+ / u l > / u l >  
+ l i > f o n t   c o l o r = " # 3 3 9 9 0 0 " > b > ̀of�� ���f/ b > / f o n t > . p >  
+ u l >  
+ l i > b > a   n a m e = " ��_jf�W�" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / p r o b / E x p e r i m e n t s . h t m l " > ��_jf�W�/ a >   &n b s p   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 1 5 e / f r a m e s 6 _ 1 g . h t m l " > r a n d o m   e x p e r i m e n t / a > ) / b > : p >  
+ �S͑��d\O,   N�k!k�d\O�vP}�g( o u t c o m e ) 	g N.z�N
+NKN�S��'`�vf�W�.   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / p r o b / E x p e r i m e n t s . h t m l " > �S�/ a > ) p >  
+ l i > b > a   n a m e = " #j,gzz��" > a   h r e f = " h t t p : / / w w w . m a t h g o o d i e s . c o m / l e s s o n s / v o l 6 / s a m p l e _ s p a c e s . h t m l " > #j,gzz��/ a > ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 1 5 e / f r a m e s 6 _ 1 . h t m l " > s a m p l e   s p a c e / a > ) / b > : p >  
+ \ N�V�[�v��_jf�W�,   @b	g�S���Q�s�vP}�g@bb�vƖT. p >  
+ 8^(u&{_�:   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > . p >  
+ l i > b > a   n a m e = " �N�N" > �N�N/ a > ( e v e n t s ) / b > : p >  
+  N�N  o u t c o m e   �vƖT.   -�  A ,   B   �p�N�N,   A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B :   A ,   B   ��|vu.   A   I M G   S R C = " m e a s u r e 2 0 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B :   A   b  B   |vu.   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / a p p s / V e n n G a m e . h t m l " > �S�/ a > ) p >    
+ l i > b > a   n a m e = " _j�s" > _j�s/ a > ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 1 5 e / f r a m e s 7 _ 3 g . h t m l " > p r o b a b i l i t y / a > ) / b > : p >  
+  NPa   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 1 5 e / f r a m e s 6 _ 2 . h t m l " > �[�(W�N�N/ a > 
+N,   N�n��NR	N�h�N�v�[xe�Qxe  P ,   1z�p Na   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / p r o b / P r o b a b i l i t y . h t m l . h t m l " > _j�s�Qxe/ a > . p >  
+ ( 1 ) \�N N�N�N  A ,   0   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   P   ( A )   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   1 . p >  
+ ( 2 )   P   ( I M G   S R C = " m e a s u r e 1 8 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > )   =   0 . p >  
+ ( 3 )   傋N�N  A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B   =   I M G   S R C = " m e a s u r e 1 8 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   GR  P   ( A   I M G   S R C = " m e a s u r e 2 0 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B )   =   P ( A )   +   P ( B ) .   p >  
+ / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ l i > �O. p >  
+ u l >  
+ l i > �d��g.   ck( H ) �S( T ) b��Q�s_jgGWI{  ( o u t c o m e s   a r e   e q u a l l y   l i k e l y ) . p >  
+ u l >  
+ l i > f�W�:   a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / a p p s / C o i n S a m p l e E x p e r i m e n t . h t m l " > f o n t   c o l o r = " # 3 3 9 9 0 0 " > �d N��g/ f o n t > / a > .   p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { H ,   T } .   p >  
+ �N�N  ( E ) :   p`�Q�s N!kckb�.   E   =   { H } .   P ( E )   =   1 / 2 .   p >  
+ �N�N  ( F ) :   p`�Q�s N!k�Sb�.   F   =   { T } .   P ( F )   =   1 / 2 .   p >  
+ �N�N- p`�Q�s N!kckb�N�Q�s N!k�Sb�:   E   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   F   =   I M G   S R C = " m e a s u r e 1 8 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > .   P ( E   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   F )   =   0 .     p >  
+ l i > f�W�:   a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / a p p s / C o i n S a m p l e E x p e r i m e n t . h t m l " > f o n t   c o l o r = " # 3 3 9 9 0 0 " >  N!k�d�N��g/ f o n t > / a > .   p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { H H ,   H T ,   T T } . p >  
+ �N�N  ( E ) :   p`�Q�s N!kckb�.   E   =   { H T } .   P ( E )   =   1 / 2 .   p >  
+ �N�N  ( F ) :   p`�Q�s N!k�Sb�.   F   =   { H T } .   P ( F )   =   1 / 2 .   p >  
+ �N�N- p`�Q�s N!kckb�N�Q�s N!k�Sb�:   E   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   F   =   { H T } .   P ( E   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   F )   =   1 / 2 .   p >  
+ l i > f�W�:   f o n t   c o l o r = " # 3 3 9 9 0 0 " > #��~�d N��giQ!k/ f o n t > .   p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { H H ,   H T ,   T H ,   T T } . p >  
+ �N�N  ( E ) :   p`�Q�s N!kckb�.   E   =   { H T ,   T H } .   P ( E )   =   1 / 4   +   1 / 4   =   1 / 2 .   p >  
+ �N�N  ( F ) :   p`�Q�s N!k�Sb�.   F   =   { H T ,   T H } .   P ( F )   =   1 / 4   +   1 / 4   =   1 / 2 .   p >  
+ �N�N- p`�Q�s N!kckb�N�Q�s N!k�Sb�:   E   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   F   =   { H T ,   T H } .   P ( E   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   F )   =   1 / 2 .   p >  
+ �N�N  ( A ) :   HQckb��_�Sb�.   A   =   { H T } .   P ( A )   =   1 / 4 .   p >  
+ l i > f�W�:   f o n t   c o l o r = " # 3 3 9 9 0 0 " > #��~�d N��g	N!k/ f o n t > .   p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { H H H ,   H H T ,   H T H ,   H T T ,   T T T ,   T T H ,   T H T ,   T H H } . p >  
+ �N�N  ( E ) :   p`�Q�s N!kckb�.   E   =   { H T T ,   T T H ,   T H T } .   P ( E )   =   3 / 8 .   p >  
+ �N�N  ( F ) :   p`�Q�s N!k�Sb�.   F   =   { H H T ,   H T H ,   T H H } .   P ( F )   =   3 / 8 .   p >  
+ �N�N- p`�Q�s N!kckb�N�Q�s N!k�Sb�:   E   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   F   =   I M G   S R C = " m e a s u r e 1 8 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > .   P ( E   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   F )   =   0 .   p >  
+ / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ l i > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / a p p s / B a l l U r n E x p e r i m e n t . h t m l " > ��-N	gj:y  1   ~   5   _��vtT NP.   Tt���S�Q_j�s/ a > GWI{.   p >  
+ u l >  
+ l i > f�W�:   f o n t   c o l o r = " # 3 3 9 9 0 0 " > �k!k�S Nt,   N>e�V�S,   �Q�S Nt/ f o n t > . p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { ( i ,   j )   |   1   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   i   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   5 ,   1   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   j   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   5 ,   i   I M G   S R C = " m e a s u r e 1 6 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   j } .   p >  
+ �N�N  ( A ) :   ,{ N!k�Q�s  3 .   A   =   { ( 3 ,   1 ) ,   ( 3 ,   2 ) ,   ( 3 ,   4 ) ,   ( 3 ,   5 ) } .   P ( A )   =   1 / 5 .   p >    
+ �N�N  ( E ) :   ( p`) �Q�s(  N!k) 3 .   E   =   { ( 3 ,   1 ) ,   ( 3 ,   2 ) ,   ( 3 ,   4 ) ,   ( 3 ,   5 ) ,   ( 1 ,   3 ) ,   ( 2 ,   3 ) ,   ( 4 ,   3 ) ,   ( 5 ,   3 ) } .   p >  
+ P ( E )   =   1 / 5   +   ( 4 / 5 ) ( 1 / 4 )   =   2 / 5 .   p >  
+ l i > f�W�:   f o n t   c o l o r = " # 3 3 9 9 0 0 " > �k!k�S Nt,   >e�V�S,   �Q�S Nt/ f o n t > . p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { ( i ,   j )   |   1   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   i   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   5 ,   1   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   j   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   5 } .   p >  
+ �N�N  ( A ) :   ,{ N!k�Q�s  3 .   A   =   { ( 3 ,   1 ) ,   ( 3 ,   2 ) ,   ( 3 ,   3 ) ,   ( 3 ,   4 ) ,   ( 3 ,   5 ) } .   P ( A )   =   1 / 5 .   p >  
+ �N�N  ( B ) :   iQ!k��/f  3 .   B   =   { ( 3 ,   3 ) } .   P ( B )   =   1 /   2 5 .     p >    
+ �N�N  ( E ) :   ( p`) �Q�s(  N!k) 3 .   E   =   { ( 3 ,   1 ) ,   ( 3 ,   2 ) ,   ( 3 ,   4 ) ,   ( 3 ,   5 ) ,   ( 1 ,   3 ) ,   ( 2 ,   3 ) ,   ( 4 ,   3 ) ,   ( 5 ,   3 ) } .   p >  
+ P ( E )   =   ( 1 / 5 ) ( 4 / 5 )   +   ( 4 / 5 ) ( 1 / 5 )   =   8 / 2 5 .     p >  
+ / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ l i > a   h r e f = " h t t p : / / 1 6 3 . 2 0 . 1 0 . 2 3 / a w k / 6 b / % E 9 % 8 1 % B A % E 5 % 8 2 % B 3 / i n h e r i t _ r u l e / i n h e r i t _ r u l e . h t m # L�F��[W�" > L�F���r�v s z��P�[�_/ a > . p >  
+ a   h r e f = " h t t p : / / b i o t e c h . n s t m . g o v . t w / 1 1 / 1 1 2 . a s p ? s t r = _[�_>r" > M e n d e l / a > \Oܖ�N�[W��vL�F�i*h	g��+}���}v��iQ.z.   F�*h��r�1u�gr�Ԛ
+Nyr�[MOnKN\vP�W�V( a l l e l e ) zl�[,   dk\vP�W�V��p  P ,   p .   �V�pF�P[/fٖ�gr�ԚD}T~,   1u���Nz��P��O�v�S���W�Vb_Ka	g  P P ,   P p ,   p p �v�S��'`.   vQ-N  P P ,   P p   g��+}��,   p p   g��}v��.   p >  
+ a   h r e f = " h t t p : / / b i o t e c h . n s t m . g o v . t w / 0 1 / 0 1 6 . a s p " > z��P�[�_/ a > :   �W�Vz��P�v_j�sGWI{. p >  
+ u l >  
+ l i > f�W�:   \iQ*h��r��W�V�WKaGW�p  P p   �vF�P[M�.z.   p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { ( P ,   P ) ,   ( P ,   p ) ,   ( p ,   P ) ,   ( p ,   p ) } .   p >  
+ �N�N  ( E ) - N N�N��+}��:   E   =   { ( P ,   P ) ,   ( P ,   p ) ,   ( p ,   P ) } .   P ( E )   =   3 / 4 .   p >  
+ l i > a   h r e f = " h t t p : / / 1 4 0 . 1 2 2 . 1 4 3 . 1 4 3 / N S C / b i o n e t w o r k / b i o r e l a t i v e / M e n d e l . h t m l " > _[�_>r(W'Yx[Bf�SN�irt�Sxex[�v��}/ a > , O�N��(uq}���ޞR�gz��Pyr'`, �^�z�Na   h r e f = " h t t p : / / d n a . y m . e d u . t w / a l l . h t m " > �SxQz��Px[/ a > �W,g�g�i, �Vdk��1z�pz��Px[KN6r. p >  
+ / u l >      
+ / u l > / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ h r >  
+ u l >  
+ l i > a   n a m e = " j:y>eAm�l" > a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / M a r k _ a n d _ r e c a p t u r e " > j:y>eAm�l/ a > ( a   h r e f = " h t t p : / / e d u c a t i o n . n a t i o n a l g e o g r a p h i c . c o m / e d u c a t i o n / a c t i v i t y / f i s h - t a g g i n g - a n d - m o n i t o r i n g / ? a r _ a = 1 " > m a r k - r e c a p t u r e   m e t h o d / a > ;   a   h r e f = " h t t p : / / w w w . b i o l o g y c o r n e r . c o m / f l a s h / m a r k _ r e c a p . s w f " > g a m e / a > ) . p >  
+ u l >  
+ l i > �v�v:   0O�uir�e�xeϑ. p >  
+ l i > ̀of:   ( Z�) =~xe  N   ( 0O�\a�) .   p >  
+ l i > �R\O:   ( 1 )   UcIc  K   �hZ�,   �R�Nj:y�_>e�V.   ( 2 )    N�kBf���_,   UcIc  n   �hZ�,   nޞ�_qQ	g  k   �h	gj:y.   p >  
+ l i > P}֊:   0O�  k / n   ~   K / N .   �Vdk  N   ~   K ( n / k ) .   p >  
+ u l >  
+ l i > P}֊�O�d. p >  
+ f�W�:   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { n   �hZ�} .   ( R	gj:y,   !qj:y.   ^�t) p >  
+ �N�N( A ) :   n   �h-Np`	g  k   �h	gj:y.     �S�w  P   ( A )   =   ( #   A )   /   ( #   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ) ,   #   A   : =   A   -NCQ }�vPxe. p >  
+ -�j:yxe�v  K   �V�[,   GR  #   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   �  P ( A )   �v�S) g��  N   9e��.   p >  
+ vu  N   =   K   ( n / k )   Bf,   P ( A ) g'Y.   �Vdk(udk�=~xeϑ. p >  
+ dk  N   1z�p  a   h r e f = " h t t p : / / s t a t g e n . i o p . k c l . a c . u k / b g i m / m l e / s s l i k e _ 1 . h t m l " > b > m a x i m u m   l i k e h o o d   e s t i m a t e / b > / a > .   p >    
+ / u l > / u l >  
+ l i > a   h r e f = " h t t p : / / e - i n f o . o r g . t w / n o d e / 7 1 7 7 " > +}v�ԏ	��ku/ a > . p >  
+ l i > dk�e�l�S0O�AmL�'`�u�ua�g�Nxe;   a   h r e f = " h t t p : / / w w w . s i a m . o r g / c a r e e r s / p d f / p o p u l a t i o n . p d f " > FU�T��.Uxe/ a > . p >  
+ l i > a   n a m e = " Q 1 " > b > f o n t   c o l o r = " # 3 3 6 6 0 0 " > Q 1 / f o n t > / b > :   	� NP�OP[(uj:y>eAm�l�0O�g N.zFU�T�v��.Uϑ. p >  
+ l i > �N!k'Y0bg��,   (udk�la   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / G e r m a n _ t a n k _ p r o b l e m " > 0O��_͎�� �fWKQxeϑ/ a > ,   `��k��܊0O��p�n. p >  
+ u l >  
+ l i > 1 9 4 0 t^6 g,   fWKQ�Q4X���p1 2 2 �S,   (udk�l0O�1 6 9 �S,   ��܊�c�_1 0 0 0 �S. p >  
+ 1 9 4 1 t^6 g,   fWKQ�Q4X���p2 7 1 �S,   (udk�l0O�2 4 4 �S,   ��܊�c�_1 5 5 0 �S. p >  
+ 1 9 4 2 t^8 g,   fWKQ�Q4X���p3 4 2 �S,   (udk�l0O�3 2 7 �S,   ��܊�c�_1 5 5 0 �S. p >  
+ / u l > / u l > / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ h r   a l i g n = " l e f t "   s i z e = " 4 "   w i d t h = " 1 0 0 % "   n o s h a d e >  
+ l i > a   n a m e = " _j�s��{�lGR" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / p r o b / P r o b a b i l i t y . h t m l " > b > _j�s��{�lGR/ b > / a >   &n b s p   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / a p p s / P r o b a b i l i t y E x p e r i m e n t . h t m l " > �}�I / a > ;   &n b s p   a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 1 5 e / f r a m e s 7 _ 3 b g . h t m l " > �}�I I / a > ) .   -�  A ,   B   �p�N�N.   p >  
+ P ( A   I M G   S R C = " m e a s u r e 2 0 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B )   =   P ( A )   +   P ( B )   -   P ( A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B ) .   p >  
+ P ( A s u p > c / s u p > )   ( A   �v�ƖT)   =   1   -   P ( A ) .   p >  
+ / u l >  
+ u l >  
+ l i > b > a   n a m e = " �h�N_j�s" > �h�N_j�s/ a > ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / p r o b / C o n d i t i o n a l . h t m l " > c o n d i t i o n a l l y   p r o b a b i l i t y / a > ) / b > p >  
+ A ,   B   �p�N�N.   (W  B   �]|vu�v�`�lN,   |vu  A   �v_j�s,   1z�pa   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 1 5 e / f r a m e s 7 _ 5 g . h t m l " > �h�N_j�s/ a > . p >  
+ &{_�:   P ( A   |   B ) .   p >  
+ lQ_:   P ( A   |   B )   =   P   ( A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B )   /   P ( B ) .   &n b s p   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / a p p s / C o n d i t i o n a l P r o b a b i l i t y E x p e r i m e n t . h t m l " > �h�N_j�sf�W�/ a > ;   &n b s p   a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 1 5 e / f r a m e s 7 _ 5 B . h t m l " > t r e e s   ��h�N_j�s/ a > ) p >  
+ u l >  
+ l i > �O:   iQ*h��r��W�V�WKaGW�p  P p   �vF�P[M�.z.   �]�wM�.z�_���v/f+}��,   GRdk+}���v�W�V�W/f  P P   �v_j�s/fY\?   p >  
+ -��N�N  A :   �W�V�W/f  P P .   �N�N  B :   M�.z�_���v/f+}��.   A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B   =   A .   p >  
+ A n s w e r :   P ( A   |   B )   =   P   ( A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B )   /   P ( B )   =   ( 1 / 4 )   /   ( 3 / 4 )   =   1 / 3 .   p >  
+ / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ l i > a   n a m e = " hs�z�N�N" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / p r o b / I n d e p e n d e n c e . h t m l " > b > hs�z�N�N/ a >   &n b s p   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 1 5 e / f r a m e s 7 _ 5 C g . h t m l " > i n d e p e n d e n t   e v e n t s / a > ) / b > p >  
+ �N�N  A ,   B   �N�phs�z�Y�g:   P ( A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B )   =   P ( A )   P ( B ) . p >  
+ u l >  
+ l i > �O:   �_  5 2   5_Lr-N�b N5_.   p >  
+ #j,gzz��:   a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / P o k e r . p h p " > 5 2   5_Lr�vƖT/ a > . p >  
+ -��N�N  A :   { dk5_/f�eJX} .   B :   { dk5_/f2 } ,   A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B   =   { dk5_/f�eJX  2 } .   p >  
+ P ( A )   =   1 3 / 5 2   =   1 / 4 ,   P ( B )   =   4 / 5 2   =   1 / 1 3 ,   P ( A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B )   =   1 / 5 2 .   p >  
+ P ( A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B )   =   P ( A )   P ( B ) . p >  
+ �Vdk  A ,   B   /fhs�z�N�N. p >  
+ l i > �O:   iQ*h��r��W�Vb_KaGW�p  P p   �vF�P[M�.z.   P[�N�W�V�W/f  p p   �v_j�s/fY\?   p >  
+ -��N�N  A :   { P[�N�_�Ė*h�W�V/f  p } ,   B :   { P[�N�_�̖*h�W�V/f  p } .     A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B   =   { P[�N�W�V�W/f  p p } .   p >  
+ �V�p  A ,   B   /fhs�z�N�N,   EeP[�N�W�V�W/f  p p   �v_j�s/f  P ( A )   P ( B )   =   ( 1 / 2 ) ( 1 / 2 )   =   1 / 4 .   p >  
+ / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >    
+ l i > a   n a m e = " �v�O�N�N" > a   h r e f = " h t t p : / / w w w . m a t h g o o d i e s . c o m / l e s s o n s / v o l 6 / d e p e n d e n t _ e v e n t s . h t m l " > b > �v�O�N�N/ b > / a > p >  
+ �N�N  A ,   B �Y�gN/fhs�z�N�N,   GR1z�p�v�O�N�N. p >  
+ u l >  
+ l i > �O:   �_  5 2   5_Lr-N�b N5_�_,   N>e�V�S,   �Q�b N5_. p >  
+ l i > a   h r e f = " h t t p : / / w w w . m a t h g o o d i e s . c o m / l e s s o n s / v o l 6 / m u t u a l l y _ e x c l u s i v e . h t m l " > b > �N�e�N�N/ b > / a >   ( a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / 9 _ M u t u a l l y - e x c l u s i v e - e v e n t s . p h p " > m u t u a l l y   e x c l u s i v e   e v e n t s / a > )   p >  
+ �Y�g�N�N  A ,   B KN N|vu,   �S NP N�[Ng|vu,   GR1z�N�N  A ,   B �p�N�e�N�N.   �Y  A :   N�,   B :   NN�.   p >  
+ A ,   B   �p�N�e�N�N�vxex[h�:y�p:   P   ( A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   B )   =   0 . p >    
+ / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ u l >    
+ l i > a   n a m e = " L a w   o f   t o t a l   p r o b a b i l i t y " > b > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / p r o b / C o n d i t i o n a l . h t m l " > l a w   o f   t o t a l   p r o b a b i l i t y / a > ;   &n b s p   a   h r e f = " h t t p : / / p e o p l e . r e e d . e d u / ~ j o n e s / C o u r s e s / P 0 2 . p d f " > L a w   o f   t o t a l   p r o b a b i l i t y / b > / a > ( =~�T_j�s�lGR) / a > .   p >  
+ u l >  
+ l i >  
+ �Y�g�N�N  I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > ,   . . . ,   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > n / s u b >   |_dk!q�NƖ,   NvQo�Ɩ�p  I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   GR1z  { I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > i / s u b > }   �p  I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   �v NP  p a r t i t i o n . p >  
+ u l >  
+ l i > �O:   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   {   hQW	g�bhyǌ�} .   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b >   =   { ChP[��T} ,   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 2 / s u b >   =   { NgP[��T} ,   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 3 / s u b >   =   { !q�} .   GR  { I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > ,   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 2 / s u b > ,   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 3 / s u b > }   �pI M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   �v NP  p a r t i t i o n .   p >  
+ / u l >  
+ l i > b > f o n t   c o l o r = " # 3 3 6 6 F F " > L a w : / f o n t > / b >   -�  I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > ,   . . . ,   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > n / s u b >   �pI M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > �v NP  p a r t i t i o n .   GR  p >  
+ P ( A )   =   P   ( A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > )   +   . . .   +     P   ( A   I M G   S R C = " m e a s u r e 2 1 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > n / s u b > )   bp >  
+ P ( A )   =   P ( A   |   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > )   P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > )   +   P ( A   |   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 2 / s u b > )   P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 2 / s u b > )   +   . . .   +   P ( A   |   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > n / s u b > )   P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "     a l i g n = " m i d d l e " > s u b > n / s u b > ) .   p >  
+ u l >  
+ l i > b
+N�O.   A   =   { �S\�cؚ�hP[R�z�s�} .   -�hQW	g�bhyǌ�-NChP[��TTO  6 0 % ,   NgP[��TTO  3 0 % ,   !q�TO  1 0 % .     4 0 % ChP[��T�S\�cؚ�hP[R�z�s,   6 5 % NgP[��T�S\�cؚ�hP[R�z�s,   5 5 % !q��T�S\�cؚ�hP[R�z�s.   p >  
+ GR�Na�bx� N�N/f�S\�cؚ�hP[R�z�s��v_j�s/f  P ( A )   =   ( 0 . 4 ) ( 0 . 6 )   +   ( 0 . 6 5 ) ( 0 . 3 )   +   ( 0 . 5 5 ) ( 0 . 1 )   =   0 . 4 9 .   p >  
+ / u l > / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ l i > a   n a m e = " T h e   B a y e s   f o r m u l a " > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / p r o b / C o n d i t i o n a l . h t m l " > b > B a y e s '   T h r o r e m / b > / a >   &n b s p   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 3 / f r a m e s 6 _ 6 . h t m l " > �S�- b > T h e   B a y e s   f o r m u l a / b > / a > )   (   a   h r e f = " h t t p : / / w w w - g r o u p s . d c s . s t - a n d . a c . u k / ~ h i s t o r y / M a t h e m a t i c i a n s / B a y e s . h t m l " > T h o m a s   B a y e s / a > ,   1 7 0 2 - 1 7 6 1 )     ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t o r i a l s f 3 / f r a m e s 6 _ 6 . h t m l " > �S�/ a > ) p >  
+ -�  I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > ,   . . . ,   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > n / s u b >   �pI M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > �v NP  p a r t i t i o n ,   A   �p N�N�N;   N\@b	g  i ,   f o n t   c o l o r = " # 3 3 6 6 F F " >   P ( A   |   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > i / s u b > ) / f o n t >   �p�]�w.   p >  
+ lQ_:   P   ( f o n t   c o l o r = " # 3 3 6 6 F F " > I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > i / s u b >   |   A )   / f o n t > =   [ P   ( A   |   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > i / s u b > )   P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > i / s u b > ) ]   /   [ I M G   S R C = " m e a s u r e 1 6 9 . g i f "   h e i g h t = " 1 9 "   w i d t h = " 1 5 "   a l i g n = " m i d d l e " > s u b > j / s u b >   P   ( A   |   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > j / s u b > )   P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > j / s u b > ) ]   p >  
+ u l >  
+ l i > b
+N�O.   �Nx� N�S\�cؚ�hP[R�z�s�/fNgP[��T�v_j�s/f  p >  
+ P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 2 / s u b >   |   A )   =   ( 0 . 6 5 ) ( 0 . 3 )   /   [ ( 0 . 4 ) ( 0 . 6 )   +   ( 0 . 6 5 ) ( 0 . 3 )   +   ( 0 . 5 5 ) ( 0 . 1 ) ]   =   0 . 1 9 5 / 0 . 4 9   ~   0 . 3 9 8 .   p >  
+ l i > P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > i / s u b > ) h��NMR_j�s( p r i o r   p r o b a b i l i t y ) . p >  
+ P ( A   |   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > i / s u b > ) h�#j,g_j�s( s a m p l e   p r o p a b i l i t y ) . p >  
+ P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > i / s u b > %A ) h��N�__j�s( p o s t e r i o r i   p r o b a b i l i t y ) . p >  
+ / u l >  
+ l i > �O.   H I V   �u�k�jW�.   p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { �S,n�} .   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b >   =   { a�g�} ,   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 2 / s u b >   =   { �l	ga�g�} .   p >  
+ A   =   { �jW�P}�g}�'`} ,   A s u p > c / s u p >   =   { �jW�P}�gp�'`} .   p >  
+ ǌ�e:   P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > )   =   1 / 2 0 0 ,   P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 2 / s u b > )   =   1 9 9 / 2 0 0 ;   }Pp�'`_j�s  =   P ( A s u p > c / s u p >   |   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > )   =   0 . 0 1 ,   }P}�'`_j�s  =   P ( A   |   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 2 / s u b > )   =   0 . 0 5 .   p >  
+ GR  P ( A )   =   ( 0 . 9 9 ) ( 1 / 2 0 0 )   +   ( 0 . 0 5 )   ( 1 9 9 / 2 0 0 )   =   0 . 0 5 4 7   ( l a w   o f   t o t a l   p r o b a b i l i t y ) .   p >  
+ P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b >   |   A )   =   0 . 0 9 0 .   ( �jW�}�'`-Nwck�g�u�v_j�s)   ( t h e   B a y e s   f o r m u l a )   p >  
+ u l >  
+ l i > ,nf�}�'`N�x�[�g�u�v_j�sNO,   /f�V�p  p   =   P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > )   =   1 / 2 0 0 ,   �_\.   xex[
+N�SI�f, �Y�g  p �X�R,     ,nf�}�'`N�x�[�g�u�v_j�s_Ng�X�R. p >  
+ l i > FO  P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b >   |   A   )   /   P ( I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u b > 1 / s u b > )   =   1 8 . 1 .   �Vdk,nf�}�'`N�x�[�g�u�v_j�s\�k��_j�b#j�g�u�vPxe/fؚ�v. p >  
+ / u l > / u l >  
+ l i > a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / N a i v e _ B a y e s _ c l a s s i f i e r " > N a � v e   B a y e s   C l a s s i f i e r / a >   ( a   h r e f = " h t t p : / / w w w . b i m e . n t u . e d u . t w / j o u r n a l / 6 - 1 - 4 . h t m " > ��lR^��l/ a > ) . p >  
+ / u l > / u l > / u l > / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ h r   a l i g n = " l e f t "   s i z e = " 6 "   w i d t h = " 1 0 0 % "   n o s h a d e >  
+ h 1 > f o n t   c o l o r = # 8 8 8 8 8 8 > a   n a m e = " ��_j��xe" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / p r o b / E v e n t s . h t m l " > r a n d o m   v a r i a b l e s / a >   &n b s p   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 1 . h t m l " > ��_j��xe/ a > / f o n t > ) / h 1 > p >  
+ a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / 1 1 _ P r o b a b i l i t y - d i s t r i b u t i o n s - c o n c e p t s . p h p # d e f i n i t i o n s " > b > ��_j��xe/ a >   ( r a n d o m   v a r i a b l e s )   X / b > :   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   I M G   S R C = " m e a s u r e 1 5 . g i f "   h e i g h t = " 1 3 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " > f o n t   f a c e = " C a s t e l l a r " > R / f o n t > .   1z  X   �pb > �[��_j��xe/ b > . p >  
+ " r a n d o m   v a r i a b l e " 	gBf_N��p" s t o c h a s t i c   v a r i a b l e "   b  " c h a n c e   v a r i a b l e " .   " s t o c h a s t i c "  NW[,   J o k o b   B e r n o u l l i _U(u,   �n�^؁W[" c h a n c e " .   p >  
+ l i > a   n a m e = " �ce�W��_j��xe" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / d i s t / D i s c r e t e . h t m l " > f o n t   c o l o r = " # 3 3 9 9 0 0 " > b > d i s c r e t e   r a n d o m   v a r i a b l e s / b > / f o n t > / a >   &n b s p   ( f o n t   c o l o r = " # 3 3 9 9 0 0 " > b > �ce�W��_j��xe/ f o n t > / b > ) :   X   �v  p >  
+ u l >  
+ l i > �O.   a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / a p p s / D i c e S a m p l e E x p e r i m e n t . h t m l " >  N!k�d�N��P[/ a > ,   X : �N!kޞxe�v�T. p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { ( 1 , 1 ) ,   ( 1 , 2 ) ,   ( 1 , 3 ) ,   . . . . . ,   ( 6 , 6 ) } .   p >  
+ X ( 1 , 1 )   =   2 ,   X ( 1 , 2 )   =   3 ,   X ( 1 , 3 )   =   4 ,   . . . , X ( 6 , 6 )   =   1 2 .   p >    
+ u l >  
+ l i > b > { X   =   x }   _N/f�N�N/ b >   :   1u  X   �O�c���v�N�N.   b > ��_j��xe�S(uϑS�O�c���N�N/ b > . p >      
+ / u l > / u l >  
+ l i > a   n a m e = " #��~�W��_j��xe" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / d i s t / C o n t i n u o u s . h t m l " > f o n t   c o l o r = " # 3 3 9 9 0 0 " > b > c o n t i n u o u s   r a n d o m   v a r i a b l e s / b > / f o n t > / a >   &n b s p   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / c p r o b / c p r o b 1 . h t m l " > f o n t   c o l o r = " # 3 3 9 9 0 0 " > b > #��~�W��_j��xe/ f o n t > / b > / a > ) :   X   �v\�a�W�p�[xe
+N N@S��[ a ,   b ] . p >  
+ u l >  
+ l i > b > �O. / b > �g�S_jhV(W N)Y_U�R1 2 \Bf�Ee��Bf��=~w��p��_j��xe  X �  X   �v�S��T�p  [ 0 ,   1 2 ] . p >    
+ / u l >  
+ l i > a   n a m e = " Q 2 " > b > f o n t   c o l o r = " # 3 3 6 6 0 0 " > Q 2 / f o n t > / b > :   1\`O�v( �|) ��W-NT	� N�ce�W�#��~�W��_j��xe�v�OP[.   p >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ h r   a l i g n = " l e f t "   s i z e = " 4 "   w i d t h = " 1 0 0 % "   n o s h a d e >  
+ l i > a   n a m e = " p r o b a b i l i t y   d i s t r i b u t i o n   o f   X " > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / d i s t / i n d e x . h t m l " > h 2 > b > ��_j��xeKN_j�sR^. / h 2 > / b > / a > p >  
+ u l >  
+ l i > a   n a m e = " /}MzRHO�Qxe" > f o n t   c o l o r = " # 3 3 9 9 0 0 " > b > X �v/}MzRHO�Qxe/ b > / f o n t > / a >   ( a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / C u m u l a t i v e _ d i s t r i b u t i o n _ f u n c t i o n " > c u m u l a t i v e   d i s t r i b u t i o n   f u n c t i o n / a >   -   f o n t   c o l o r = " # 3 3 9 9 0 0 " > b > C D F / b > / f o n t > ) . p >  
+ F ( x )   : =   P ( X   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   x ) .   1z  a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / I m a g e : D i s c r e t e _ p r o b a b i l i t y _ d i s t r i b u t i o n _ i l l u s t r a t i o n . p n g " >   F ( x ) / a >   �p��_j��xe  X   �v( /}Mz) RHO�Qxe.   p >  
+ l i > a   n a m e = " �ce�W" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / d i s t / D i s c r e t e . h t m l " > �ce�W_j�sR^/ a > :   &n b s p   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 1 . h t m l " > �}�/ a > ) p >  
+ p ( x )   =   P ( X   =   x )   1z�p  X   KN_j�sRHO( p r o b a b i l i t y   d i s t r i b u t i o n   o f   X ) :   �Y
+N�O.   p ( 2 )   =   P ( X   =   2 )   =   P ( { ( 1 , 1 ) } )   =   1 / 3 6 ,   . . . ,   p ( 1 2 )   =   1 / 3 6 .     p >  
+ _N1z�pa   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / P r o b a b i l i t y _ m a s s _ f u n c t i o n " > p r o b a b i l i t y   m a s s   f u n c t i o n / a >   o f   X . p >  
+ l i > a   n a m e = " #��~�W" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / d i s t / C o n t i n u o u s . h t m l " > b > #��~�W_j�sRHO/ b > / a > :   b > _j�s�[�^�Qxe  ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / c p r o b / c p r o b 2 . h t m l " > p d f / a > ) / b > / a > p >  
+ -�  X :   #��~�W��_j��xe.   F   ( x ) :   X �vb > /}MzRHO�Qxe/ b > .   p >  
+ �N  f ( x )   =   F   '   ( x )   b  F ( x )   =   I M G   S R C = " m e a s u r e 1 3 5 . g i f "   h e i g h t = " 4 6 "   w i d t h = " 5 7 "   a l i g n = " m i d d l e " > ,   GR  f ( x )   1z�p  X   �v_j�s�[�^�Qxe  ( a   h r e f = " h t t p : / / r e l i a w i k i . o r g / i n d e x . p h p / B a s i c _ S t a t i s t i c a l _ B a c k g r o u n d " >   b > p d f / b >   / a >   )   &n b s p   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / d i s t / C o n t i n u o u s . h t m l " > �S�- 3 / a > ;   &n b s p   a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / e x p e c t / I n t e g r a l . h t m l " > 2����S�- T h e   R a d o n - N i k o d y m   T h e o r e m / a > ) .   p >  
+ u l >  
+ l i > a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / 1 1 _ P r o b a b i l i t y - d i s t r i b u t i o n s - c o n c e p t s . p h p # d i s t r i b u t i o n " > P / a >   ( a     x   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   b )   =   I M G   S R C = " m e a s u r e 3 . g i f "   h e i g h t = " 2 9 "   w i d t h = " 4 1 "   a l i g n = " m i d d l e " > .   p >  
+ / u l > / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ h r >    
+ l i > b > �O:   �ce�W( d i s c r e t e ) ��_j��xe/ b > p >  
+ u l >  
+ l i > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / b e r n o u l l i / B i n o m i a l . h t m l " > b > B i n o r m i a l   r a n d o m   v a r i a b l e   X / b > / a > :   X   �p(W#��~\OB e r n o u l l i   t r i a l   n   !k-Nb�R�v!kxe. &n b s p   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 2 . h t m l " > �}�/ a > ;   &n b s p   a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / a p p s / B i n o m i a l C o i n E x p e r i m e n t . h t m l " > b i n o m i a l   c o i n   e x p e r i m e n t / a > )   p >  
+ u l >  
+ l i > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / b e r n o u l l i / B i n o m i a l . h t m l " > b > B e r n o u l l i   t r i a l / b > / a > :   I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { S ,   F } ,   dkU�  S   �Nh�b�R,   F   �Nh�1YWe.   &n b s p   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 2 . h t m l " > �}�/ a > ) p >  
+ l i > �(WB e r n o u l l i   t r i a l -Nb�R�v_j�s�p  P ( S )   =   p ,   1YWe�v_j�s�p  P ( F )   =   q   =   1 - p ,   GR�v\�a�vB i n o r m i a l   r a n d o m   v a r i a b l e   X KN_j�sRHO�pp >  
+   P ( X   =   x )   =   C ( n , x ) p s u p > x / s u p > q s u p > n - x / s u p > . p >  
+ / u l >  
+ l i > f�W�:   #��~�d N��g	N!k.   p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   { H H H ,   H H T ,   H T H ,   H T T ,   T T T ,   T T H ,   T H T ,   T H H } . p >  
+ X   =   �kP  o u t c o m e   ckb��v!kxe.   p >  
+ P ( 0 )   =   P ( X   =   0 )   =   P ( { T T T } )   =   1 / 8 .   p >  
+ P ( 1 )   =   P ( X   =   1 )   =   P ( { H T T ,   T H T ,   T T H } )   =   3 / 8 .   p >  
+ P ( 2 )   =   P ( X   =   2 )   =   P ( { H H T ,   H T H ,   T H H } )   =   3 / 8 .   p >  
+ P ( 3 )   =   P ( X   =   3 )   =   P ( { H H H } )   =   1 / 8 .   p >  
+ X �v( /}Mz) RHO�Qxe  F ( x ) : p >  
+ �  x     0 ,   F ( x )   =   0 .   �  0   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   x     1 ,   F ( x )   =   1 / 8 .     �  1   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   x     2 ,   F ( x )   =   1 / 2 .   �  2   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   x     3 ,   F ( x )   =   7 / 8 .   �  x   I M G   S R C = " m e a s u r e 1 3 3 . g i f "   h e i g h t = " 1 8 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   3 ,   F ( x )   =   1 .   p >  
+ �Y:   F ( - 1 )   =   0 ,   F ( 0 )   =   1 / 8 ,   F ( 1 / 4 )   =   1 / 8 ,   F ( 1 )   =   1 / 2 ,   F ( 2 )   =   7 / 8 ,   F ( 3 )   =   F ( 4 )   =   . . .   =   1 .   p >  
+ / u l >  
+ l i > b > �O:   #��~�W( c o n t i n u o u s ) ��_j��xe/ b > p >  
+ #��~�W��_j��xe(u  a   h r e f = " h t t p : / / w w w . i t l . n i s t . g o v / d i v 8 9 8 / h a n d b o o k / e d a / s e c t i o n 3 / e d a 3 6 2 . h t m " > b > X   �v( /}Mz) RHO�Qxe/ b > / a > �Oa   h r e f = " h t t p : / / w w w . s t a t l e c t . c o m / g l o s s a r y / p r o b a b i l i t y _ d e n s i t y _ f u n c t i o n . h t m " > ��f_j�s/ a >   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / c p r o b / c p r o b 2 . h t m l " > �S�/ a > ) .   p >  
+ u l >  
+  
+ l i > a   h r e f = " h t t p : / / s h e l l . s i n i c a . e d u . t w / c h i n e s e / s h e l l p i c _ T . p h p ? s c i e n c e _ n o = 2 4 6 7 " > a�]�>\�/ a > ( a   h r e f = " h t t p : / / c a t a l o g . d i g i t a l a r c h i v e s . t w / i t e m / 0 0 / 1 1 / 2 f / 2 0 . h t m l " > A f r o c a r d i u m   e b a r a n u m / a > ) w��^.   p >  
+ I M G   S R C = " m e a s u r e 8 5 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   �pdk.z�^��vƖT. p >  
+ X :   �kP䆄vw��^  ( �la0Rw��^�S�N/f�gP�{WgQ�NUO  �Vdk�p#��~�W) p >  
+ W:yw��^R^�v�r�l:   a   h r e f = " h t t p : / / m a t h w o r l d . w o l f r a m . c o m / F r e q u e n c y D i s t r i b u t i o n . h t m l " > h i s t o g r a m   f o r   t h e   f r e q u e n c y   d i s t r i b u t i o n / a > . p >  
+ u l >  
+ l i > �vvu�e�^�i  p d f ,   FO ���te0R��˄b�Mz�p  1 ,   b��(u�v\;��s�Oh�:y,   �S�Wb_N�eh�  p >  
+ l i > dkW_N�S���[0R/}MzR^�v�r�l:   �Wb_��˄b�Mz�vvu,   b > FO����tehQ�b�Mz�vϑ�p  1   ( �S�Wb_N�eh�/ b > . p >  
+ / u l >  
+ l i > a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / s t a t s / h i s t o g r a m . h t m l " > a p p l e t   f o r   h i s t o g r a m / a > ;   &n b s p   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / a p p s / H i s t o g r a m G a m e . h t m l " > h i s t o g r a m   g a m e / a > ) ;   &n b s p   ( a   h r e f = " h t t p : / / w w w . c a m b r i d g e i n c o l o u r . c o m / t u t o r i a l s / h i s t o g r a m s 1 . h t m " > i m a g e   h i s t o g r a m / a > ) p >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ h r >  
+ l i > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / e x p e c t / i n d e x . h t m l " > gg��puxe, j�n��], c o v a r i a n c e   a n d   c o r r e l a t i o n / a >   &n b s p   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / c p r o b / c p r o b 3 . h t m l " > �}�/ a > ) p >  
+ l i > a   n a m e = " gg> X   �vgg/ a >   ( E X   - a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / e x p e c t / P r o p e r t i e s . h t m l " > e x p e c t e d   v a l u e / a >   o r   m e a n   o f   X ) p >  
+ u l >  
+ l i > X :   �ce�W��_j��xe.   �[�:   a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 3 . h t m l " >   E X / a >   =   I M G   S R C = " m e a s u r e 1 6 9 . g i f "   h e i g h t = " 1 9 "   w i d t h = " 1 5 "   a l i g n = " m i d d l e " >   x s u b > i / s u b >   P ( X   =   x s u b > i / s u b > ) .   p >  
+ u l >  
+ l i > b > �O. / b >   f�W�:   #��~�d N��g	N!k.   �k Nckb��_  5   CQ.   Blgg  p >  
+ M�T
+N�O,   X   =   �kP  o u t c o m e   ckb��v!kxe.   -���_j��xe  Y   =   5   X   ( CQ) .   ( sS:   P ( Y   =   0 )   =   P ( Y   =   1 5 )   =   1 / 8 ,     P ( Y   =   5 )   =   P ( Y   =   1 0 )   =   3 / 8 ) ) .   p >  
+ E Y   =   ( 0   +   1 5 )   ( 1 / 8 )   +   ( 5   +   1 0 )   ( 3 / 8 )   =   7 . 5   p >  
+ b > asS/ b > \OY!kf�W�,   �S���k!k�_  7 . 5   CQ( s^GW���]�_\) .   p >        
+ / u l >  
+ l i > X :   #��~�W��_j��xe.   f   �p  X   KN  p d f ,   �[�  E X   =   I M G   S R C = " m e a s u r e 1 7 7 . g i f "   h e i g h t = " 3 6 "   w i d t h = " 7 8 "   a l i g n = " m i d d l e " > . p >  
+ u l >  
+ l i > b > �O. / b >   f�W�:   a�]�>\�w��^. p >  
+ M�T
+N�O,   X   =   �kP�w��^.   p >  
+ �b'Yϑ�ϑw��^,   �S��ϑ�vw��^�p  E X   ( s^GW���]�_\) . p >  
+ l i > ( �S��yx[�Nv o l . 1 1 9 - 2 0 1 2 / 0 1 ,   p . 9 7 ) )Y6q#l}��c:   �}N� N�N0Wtirt,n�R�e�l, �_0Wh��c�R0W�^�v�i �, x$R�S��wQ	g�[}�� YY)Y6q#l�v0Wd\P}�iBf, 1\g�beQ�fY�}��}��N�c,n. }� N�S�N�vb,gя�e�Sc^ NQCQ, �Ob > b�R_j�s�Sgg/ b > 0O�, �\��a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / H y d r o c a r b o n _ e x p l o r a t i o n " > U�0O/ a > r�U�0W�^+T	g�Pb,gxeP�v)Y6q#l, Mbp >  
+ / u l > / u l >  
+ l i > a   n a m e = " ��puxe" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / e x p e c t / V a r i a n c e . h t m l " > X   �v��puxe/ a >   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 4 B . h t m l " > v a r i a n c e   o f   X / a > ) p >  
+ v a r ( X )   =   E ( X   -   E X ) s u p > 2 / s u p > . p >  
+ l i > a   n a m e = " j�n�]" > j�n�]/ a >   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 4 . h t m l " > s t a n d a r d   d e v i a t i o n / a > ) p >  
+ s . d .   =   I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   [ v a r   ( X ) ] s u p > 1 / 2 / s u p > p >  
+ l i > a   n a m e = " c o v a r i a n c e   a n d   c o r r e l a t i o n " > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / e x p e c t / C o v a r i a n c e . h t m l " > b > c o v a r i a n c e   a n d   c o r r e l a t i o n / b > / a > p >  
+ / u l >  
+ u l >  
+ l i > a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g t r a n s f . h t m " > ��{�lGR/ a > p >  
+ / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ h r   a l i g n = " l e f t "   s i z e = " 4 "   w i d t h = " 1 0 0 % "   n o s h a d e >  
+ l i > a   n a m e = " 8^KaRHO" > f o n t   c o l o r = " # 3 3 9 9 0 0 " > b > 8^KaRHO/ b > / f o n t >   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / s p e c i a l / N o r m a l . h t m l " > n o r m a l   d i s t r i b u t i o n / a > ) p >  
+ u l >  
+ l i > ( (WN�w_j�sRHO�v�`�lN) (u8^KaRHO\O�p_j�sRHO�v-��[,   xex[t֊( a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g c l t h e o . h t m " > -N.YuiP��[t/ a > - a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / s a m p l e / C L T . h t m l " > t h e   c e n t r a l   l i m i t   T h e o r e m / a > ) �SI�f/fwQTt'`�v.   &n b s p   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / s a m p l e / L L N . h t m l " > 'Yxe�lGR/ a > ;   &n b s p   a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 3 . h t m l " > �S�/ a > ) p >  
+ l i > -�8^KaRHO�vggI M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   j�n��]�p  I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   GRvQ  p d f   �v�QxeWb_\1z�e  x   =   I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / 1 4 _ N o r m a l - p r o b a b i l i t y - d i s t r i b u t i o n . p h p # p e r c e n t " > N/ a >   p >  
+ P   ( I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   -   I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   +   I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > )   =   0 . 6 8 ;   P   (   I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   -   2   I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   +   2   I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > )   =   0 . 9 5 ;   P   (   I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   -   3   I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   +   3   I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > )   =   0 . 9 9 .   p >  
+ l i > �SKN,   b > �wS�  I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   �  I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   8^KaRHO_N1\/U Nzl�[�N( sS:   a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / 1 4 _ N o r m a l - p r o b a b i l i t y - d i s t r i b u t i o n . p h p " > p d f   /U Nzl�[/ a > ) / b > . p >  
+ l i > \ONb�I��c:   I M G   S R C = " m e a s u r e 1 5 8 . g i f "   h e i g h t = " 4 5 "   w i d t h = " 1 4 8 "   a l i g n = " m i d d l e " > ,   "uu N��_j��xe  Z ,   Z �N6qwQ	g8^KaRHO  ( 1z�pb > j�n8^KaRHO/ b > a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / 1 4 _ N o r m a l - p r o b a b i l i t y - d i s t r i b u t i o n . p h p # s t a n d a r d - n o r m a l " > s t a n d a r d   n o r m a l   d i s t r i b u t i o n / a > ) :   I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   0 ,   �  I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   =   1 .   p >  
+ u l >  
+ l i > a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g z s c o r e . h t m " > X   �  Z   KN���vܕ�O/ a > :   P (   x s u b > 1 / s u b >     x     x s u b > 2 / s u b >   )   =   P   (   z s u b > 1 / s u b >     z     z s u b > 2 / s u b >   ) .   p >  
+ l i > �Vdk�S���wS�j�n8^KaRHO�v_j�s,   @b	g8^KaRHO�v_j�s_N1\�_0R�N. p >  
+ l i > j�n8^KaRHO�v_j�s�N  a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / z - t a b l e . p h p " > b > z - t a b l e / b > / a > HT�s. p >  
+ / u l > / u l >  
+ l i > �O:   a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / 1 4 _ N o r m a l - p r o b a b i l i t y - d i s t r i b u t i o n . p h p # s t o c k s " > ��hy/ a > . p >  
+ / u l >  
+ l i > a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / c p r o b / c p r o b 2 b . h t m l " > vQ�N_j�s( /}Mz) RHO/ a >   &n b s p   ( a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / d i s t / C o n t i n u o u s . h t m l " > �S�- e x a m p l e s / a > ;   &n b s p   a   h r e f = " h t t p : / / w w w . m a t h w o r k s . c o m / h e l p / s t a t s / c d f . h t m l " > �S�/ a > - m a t h w o r k s ) p >  
+ u l >  
+ l i > �ce�W  a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / I m a g e : B i n o m i a l _ d i s t r i b u t i o n _ p m f . s v g " > b i n o r m i a l   d i s t r i b u t i o n / a >   ( a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / 1 2 _ B i n o m i a l - p r o b a b i l i t y - d i s t r i b u t i o n s . p h p " > �N�RHO/ a > ) p >  
+ l i > !qP��ce�W  a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / I m a g e : P o i s s o n _ d i s t r i b u t i o n _ P M F . p n g " > P o i s s o n   d i s t r i b u t i o n / a >   ( a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / C o u n t i n g - p r o b a b i l i t y / 1 3 _ P o i s s o n - p r o b a b i l i t y - d i s t r i b u t i o n . p h p " > P o i s s o n   RHO/ a > ) p >  
+ l i > a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / I m a g e : B e t a _ d i s t r i b u t i o n _ p d f . p n g " > B e t a   d i s t r i b u t i o n / a > p >  
+ l i > a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / I m a g e : U n i f o r m _ d i s t r i b u t i o n _ P D F . p n g " > u n i f o r m   d i s t r i b u t i o n / a > p >  
+ l i > a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / I m a g e : C h i - s q u a r e _ d i s t r i b u t i o n P D F . p n g " > c h i - s q u a r e   d i s t r i b u t i o n / a > p >  
+ l i > a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / I m a g e : E x p o n e n t i a l _ d i s t r i b u t i o n _ p d f . p n g " > e x p o n e n t i a l   d i s t r i b u t i o n / a > p >  
+ l i > a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / I m a g e : G a m m a _ d i s t r i b u t i o n _ p d f . p n g " > g a m m a   d i s t r i b u t i o n / a > p >  
+ / u l >  
+ l i >  N,�a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / c p r o b / c p r o b 4 . h t m l " > �a(u/ a > �Na   h r e f = " h t t p : / / e p i s t e . m a t h . n t u . e d u . t w / a r t i c l e s / s m / s m _ 1 6 _ 0 6 _ 1 / " > �N�RHO/ a > ,   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 2 . h t m l " > �S�/ a > ) ,   a   h r e f = " h t t p : / / e p i s t e . m a t h . n t u . e d u . t w / a r t i c l e s / s m / s m _ 1 6 _ 0 7 _ 1 / i n d e x . h t m l " > P o i s s o n   RHO/ a > ,   8^KaRHOE\Y. p >  
+ / u l >    
+ a   h r e f = " # t o p " > t o p / a > p >  
+ h r   a l i g n = " l e f t "   s i z e = " 8 "   w i d t h = " 1 0 0 % "   n o s h a d e >  
+ b > h 1 > f o n t   c o l o r = # 8 8 8 8 8 8 > a   n a m e = " q}�!|�N" > a   h r e f = " h t t p : / / e p i s t e . m a t h . n t u . e d u . t w / a r t i c l e s / m m / m m _ 0 3 _ 3 _ 0 7 / i n d e x . h t m l " > q}�!|�N/ a > / h 1 > / b > / f o n t > p >  
+ ( a   h r e f = " h t t p : / / w w w . s o c r . u c l a . e d u / " > �RKb/ a > ) ;   &n b s p   ( a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s t a t g l o s . h t m " > �S�I / a > ;   &n b s p   a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / s a m p l e / i n d e x . h t m l " > r a n d o m   s a m p l e s / a > )   p >  
+ u l >  
+ l i > a   n a m e = " ��_j#j,g" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / s a m p l e / I n t r o d u c t i o n . h t m l " > r a n d o m   s a m p l e s / a >   &n b s p   ( a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g r a n d s a . h t m " > ��_j#j,g/ a > ) p >  
+ @b	g#j,g�v���[��/fhs�zN�_�vTRHO�v�e�  ( a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g p o p u l a . h t m " > p o p u l a t i o n / a > )   -N�S�Q.   p >  
+ b > ek_�/ b > :   ��_j�S#j  I M G   S R C = " m e a s u r e 1 5 . g i f "   h e i g h t = " 1 3 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g r e l a t e . h t m " > �����[ϑ/ a >   I M G   S R C = " m e a s u r e 1 5 . g i f "   h e i g h t = " 1 3 "   i d t h = " 2 1 "   a l i g n = " m i d d l e " >   >e�V#j,g  I M G   S R C = " m e a s u r e 1 5 . g i f "   h e i g h t = " 1 3 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   ,{�N!k�S#j  I M G   S R C = " m e a s u r e 1 5 . g i f "   h e i g h t = " 1 3 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   ͑�K�\O�v0Rc�[�v!kxe.   p >  
+ l i > �S  n   !k�v#j,g:   X s u b > 1 / s u b > ,   X s u b > 2 / s u b > ,   . . . , X s u b > n / s u b > ,   dkU�  X s u b > k / s u b > �p,{  k   !k���[p >    
+ �_���[a   h r e f = " h t t p : / / e n . w i k i p e d i a . o r g / w i k i / H i s t o g r a m " >   h i s t o g r a m / a > ) -N@b�_( o r   ��{�Q) �vϑ1z�p  b > s t a t i s t i c / b > .   p >  
+ u l >  
+ l i > ͑���va   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g s t a t i s . h t m " > s t a t i s t i c / a > :   p >  
+ u l >  
+ l i > -NMOxe( a   h r e f = " h t t p s : / / e n . w i k i p e d i a . o r g / w i k i / M e d i a n " > s a m p l e   m e d i a n / a > ) .   p >  
+ \���[  -N���v�Y�g	gvPxeP���[  GR�S-N���N��vs^GW  1z�p-NMOxe  ( m e d i a n ) .   p >    
+ l i > a   n a m e = " #j,gs^GW> a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / s a m p l e / M e a n . h t m l " > t h e   s a m p l e   m e a n / a >   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 3 . h t m l " > #j,gs^GW/ a > )   &n b s p   ( a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g x b a r . h t m " > W�:   s a m p l e   m e a n / a > ) :   I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " > .     p >  
+ I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   =   I M G   S R C = " m e a s u r e 1 7 9 . g i f "   h e i g h t = " 4 6 "   w i d t h = " 5 8 "   a l i g n = " m i d d l e " > .   p >  
+ l i > a   n a m e = " #j,g��puxe" > a   h r e f = " h t t p : / / w w w . m a t h . u a h . e d u / s t a t / s a m p l e / V a r i a n c e . h t m l " > s a m p l e   v a r i a n c e / a >   ( a   h r e f = " h t t p : / / w w w . z w e i g m e d i a . c o m / R e a l W o r l d / t u t s t a t s / f r a m e s 8 _ 4 . h t m l " > #j,g��puxe/ a > )   ( a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g s s q u a r . h t m " > W�:   s a m p l e   v a r i a n c e / a > ) :   I M G   S R C = " m e a s u r e 1 8 0 . g i f "   h e i g h t = " 2 7 "   w i d t h = " 2 7 "   a l i g n = " m i d d l e " > .   p >  
+ I M G   S R C = " m e a s u r e 1 8 0 . g i f "   h e i g h t = " 2 7 "   w i d t h = " 2 7 "   a l i g n = " m i d d l e " >   =   I M G   S R C = " m e a s u r e 1 8 1 . g i f "   h e i g h t = " 4 6 "   w i d t h = " 1 3 3 "   a l i g n = " m i d d l e " > .   p >  
+ l i > �O.   mQGr}r[r��I�
+N�v���xe�p:   1 2 ,   2 7 ,   1 7 ,   3 5 ,   1 4 ,   1 8 .   p >  
+   -NMOxe:   1 7 . 5 .   #j,gs^GW  2 0 . 5 .   #j,g��puxe:   7 7 . 1 .   p >  
+ / u l > / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ l i > (  N,�) GP-��k�HT�sa   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g n o r m d i . h t m " > 8^KaRHO/ a > ( FON�w  I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > �  I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ) .   p >  
+ )R(u#j,g�v���[  ^g\�_0R�v#j,gs^GWI M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   �#j,g��puxe  I M G   S R C = " m e a s u r e 1 8 0 . g i f "   h e i g h t = " 2 7 "   w i d t h = " 2 7 "   a l i g n = " m i d d l e " >   ( a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g s a m p d s . h t m " > s a m p l e   d i s t r i b u t i o n / a > )   \O�p�k�I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > �  I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u p > 2 / s u p >   �vяp >  
+ l i > #j,gs^GWI M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   �#j,g��puxe  I M G   S R C = " m e a s u r e 1 8 0 . g i f "   h e i g h t = " 2 7 "   w i d t h = " 2 7 "   a l i g n = " m i d d l e " >   a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g s a m p d s . h t m " > _N/f��_j��xe/ a > .   p >  
+ u l >  
+ l i > �jW��[��vTt'`:   -��k N  E   X s u b > k / s u b >   =   I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   v a r   ( X s u b > k / s u b > )   =   I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u p > 2 / s u p > .   p >  
+ �}��{:   E   ( I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " > )   =   I M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > ,   E   ( I M G   S R C = " m e a s u r e 1 8 0 . g i f "   h e i g h t = " 2 7 "   w i d t h = " 2 7 "   a l i g n = " m i d d l e " > )   =   I M G   S R C = " m e a s u r e 2 7 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > s u p > 2 / s u p > .   �Vdk�wS�#j,gs^GW�a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g d e g r e e . h t m " > #j,g��puxe�v�[�/ a > /fTt�v. p >  
+ / u l >  
+ l i > �[�:   I M G   S R C = " m e a s u r e 1 8 4 . g i f "   h e i g h t = " 4 6 "   w i d t h = " 3 1 "   a l i g n = " m i d d l e " >   �p  b > s a m p l e   s t a n d a r d   d e v i a t i o n   o f   t h e   s a m p l e   m e a n / b > ,   ��p  b > S . E .   ( a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g s d e r r o . h t m " > s t a n d a r d   e r r o r / a > ) / b > .   p >  
+ ( �[�̀ofKN���[:   v a r   ( I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " > )   =   I M G   S R C = " m e a s u r e 1 8 2 . g i f "   h e i g h t = " 4 6 "   w i d t h = " 3 1 "   a l i g n = " m i d d l e " > ) .   p >    
+ l i > �O.   mQGr}r[r��I�
+N�v���xe�p:   1 2 ,   2 7 ,   1 7 ,   3 5 ,   1 4 ,   1 8 .   p >  
+ S . E .   :   3 . 5 8 .   p >  
+ / u l >  
+ l i > S . E .   KNa��p:   �k��vggI M G   S R C = " m e a s u r e 1 1 4 . g i f "   h e i g h t = " 2 0 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " > :   p >  
+ (W  [   I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   -   S . E ,   I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   +   S . E .   ]   �v_j�s/f  0 . 6 8 ;   p >  
+ (W  [   I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   -   1 . 9 6   S . E ,   I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   +   1 . 9 6   S . E .   ]   �v_j�s/f  0 . 9 5 ;   p >  
+ (W  [   I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   -   2 . 5 8   S . E ,   I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   +   2 . 5 8   S . E .   ]   �v_j�s  /f  0 . 9 9 .   p >  
+ l i > �Y:   [   I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   -   1 . 9 6   S . E ,   I M G   S R C = " m e a s u r e 1 7 8 . g i f "   h e i g h t = " 2 5 "   w i d t h = " 2 1 "   a l i g n = " m i d d l e " >   +   1 . 9 6   S . E .   ]   1z�p  b > 9 5 %   a   n a m e = " �O�@S��" > �O�@S��/ a >   ( a   h r e f = " h t t p : / / w w w . r u f . r i c e . e d u / ~ l a n e / s t a t _ s i m / c o n f _ i n t e r v a l / " > c o n f i d e n c e   i n t e r v a l / a > ) / b > .   p >  
+ u l >  
+ l i > �S�V:   vu  n    Y'YBf,   Z   =   I M G   S R C = " m e a s u r e 1 8 3 . g i f "   h e i g h t = " 6 9 "   w i d t h = " 5 7 "   a l i g n = " m i d d l e " >   ~^яj�n8^KaRHO.   p >  
+ N�]�w:   p >  
+ P (   - 1   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   Z   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   1 )   =   0 . 6 8 ;   P (   - 1 . 9 6   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   Z   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   1 . 9 6 )   =   0 . 9 5 ;   P (   - 2 . 5 8   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   Z   I M G   S R C = " m e a s u r e 1 0 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 8 "   a l i g n = " m i d d l e " >   2 . 5 8 )   =   0 . 9 9 .   p >  
+ / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ l i > a   n a m e = " q}��j�[" > b > h 2 > f o n t   c o l o r = # 8 8 8 8 8 8 > a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g s t t e s t . h t m " > q}��j�[/ a > / b > / h 2 > / f o n t > p >  
+ u l >  
+ l i > a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g n u l l h y . h t m " > n u l l   h y p e r t h e s i s / a > p >  
+ l i > a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g _ a n o v a . h t m " > A N O V A / a > p >  
+ l i > a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g a l p h a . h t m " > I M G   S R C = " m e a s u r e 1 7 1 . g i f "   h e i g h t = " 1 7 "   w i d t h = " 1 9 "   a l i g n = " m i d d l e " > / a > . p >  
+ l i > a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g b e t a . h t m " > I M G   S R C = " m e a s u r e 1 7 2 . g i f "   h e i g h t = " 2 2 "   w i d t h = " 1 9 "   a l i g n = " m i d d l e " > / a > . p >  
+ l i > a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g s t a t _ t . h t m " > q}�ϑ:   t / a > .   a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g t t e s t . h t m " > t - t e s t / a > . p >  
+ l i > a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g s t a t _ f . h t m " > q}�ϑ:   F / a > .   a   h r e f = " h t t p : / / w w w . a n i m a t e d s o f t w a r e . c o m / s t a t g l o s / s g f t e s t . h t m " > F - t e s t / a > .   p >  
+ l i > a   h r e f = " h t t p : / / w w w . e s . n c k u . e d u . t w / ~ l e e h h / T a g u c h i / T a g u c h i _ C o u r s e 1 / C h 3 _ Q u a l i t y / O b j e c t i v e s . h t m " > �a(u�O/ a > p >    
+ / u l > / u l > / u l > / u l >  
+ a   h r e f = " # t o p " > t o p / a > p >  
+ a   h r e f = " h t t p : / / w w w . i n t m a t h . c o m / M o n e y - M a t h / M o n e y - M a t h s . p h p " > m o n e y   m a t h / a > p >  
+ / b o d y >  
+ / h t m l > 
+
+
+機率論 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+機率論
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+本條目需要補充更多來源。（2010年9月21日） 
+請協助添加多方面可靠來源以改善這篇條目，無法查證的內容可能會因為異議提出而移除。 
+
+
+
+
+部分的統計學系列
+
+
+機率論
+
+
+
+
+
+
+
+機率公理
+
+
+
+
+
+
+機率空間
+樣本空間
+基本事件
+事件
+隨機變量
+機率測量
+
+
+
+
+
+
+對立事件
+聯合分佈
+邊緣分佈
+條件機率
+
+
+
+
+
+
+統計獨立性
+條件獨立
+全機率公式
+大數定律
+貝葉斯定理
+布爾不等式
+
+
+
+
+
+
+文氏圖
+樹形圖
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+
+
+
+
+
+
+
+典型的機率問題：「擲一顆公正的骰子，出現3點的機率是多少？」
+
+
+機率論（英語：Probability theory）是集中研究機率及隨機現象的數學分支，是研究隨機性或不確定性等現象的數學。機率論主要研究對象為隨機事件、隨機變量以及隨機過程。對於隨機事件是不可能準確預測其結果的[1]，然而對於一系列的獨立隨機事件——例如擲骰子、扔硬幣、抽撲克牌以及輪盤等，會呈現出一定的、可以被用於研究及預測的規律[2]，兩個用來描述這些規律的最具代表性的數學結論分別是大數定律和中心極限定理。
+作為統計學的數學基礎，機率論對諸多涉及大量數據定量分析的人類活動極為重要[3]，機率論的方法同樣適用於其他方面，例如是對只知道系統部分狀態的複雜系統的描述——統計力學，而二十世紀物理學的重大發現是以量子力學所描述的原子尺度上物理現象的機率本質[4]。
+數學家和精算師認為機率是在0至1閉區間內的數字，指定給一發生與失敗是隨機的「事件」。機率
+
+
+
+P
+(
+A
+)
+
+
+{\displaystyle P(A)}
+
+根據機率公理來指定給事件
+
+
+
+A
+
+
+{\displaystyle A}
+
+。
+一事件
+
+
+
+A
+
+
+{\displaystyle A}
+
+在一事件
+
+
+
+B
+
+
+{\displaystyle B}
+
+確定發生後會發生的機率稱為
+
+
+
+B
+
+
+{\displaystyle B}
+
+給之
+
+
+
+A
+
+
+{\displaystyle A}
+
+的條件機率；其數值為
+
+
+
+
+
+
+P
+(
+B
+∩
+A
+)
+
+
+P
+(
+B
+)
+
+
+
+
+
+{\displaystyle {P(B\cap A) \over P(B)}}
+
+。若
+
+
+
+B
+
+
+{\displaystyle B}
+
+給之
+
+
+
+A
+
+
+{\displaystyle A}
+
+的條件機率和
+
+
+
+A
+
+
+{\displaystyle A}
+
+的機率相同時，則稱
+
+
+
+A
+
+
+{\displaystyle A}
+
+和
+
+
+
+B
+
+
+{\displaystyle B}
+
+為獨立事件。且
+
+
+
+A
+
+
+{\displaystyle A}
+
+和
+
+
+
+B
+
+
+{\displaystyle B}
+
+的此一關係為對稱的，這可以由一同價敘述：「當
+
+
+
+A
+
+
+{\displaystyle A}
+
+和
+
+
+
+B
+
+
+{\displaystyle B}
+
+為獨立事件時，
+
+
+
+P
+(
+A
+∩
+B
+)
+=
+P
+(
+A
+)
+P
+(
+B
+)
+
+
+{\displaystyle P(A\cap B)=P(A)P(B)}
+
+。」中看出。
+機率論中的兩個重要概念為隨機變數和隨機變數的機率分佈兩種。
+
+
+
+目錄
+
+
+1 生活例子
+2 歷史
+3 事件
+
+3.1 單位事件、事件空間、隨機事件
+3.2 事件的計算
+
+
+4 機率的定義
+
+4.1 傳統機率 (古典機率)( 拉普拉斯機率 )
+4.2 統計機率
+4.3 現代機率論
+
+
+5 機率公理
+6 機率的計算
+
+6.1 定理 1 (互補法則)
+6.2 定理 2
+6.3 定理 3
+6.4 定理 4
+6.5 定理 5 (任意事件加法法則)
+6.6 定理 6 (乘法法則)
+6.7 定理 7 (無關事件乘法法則)
+
+
+7 完全機率
+8 貝葉斯定理
+9 機率分佈
+10 機率論的應用
+11 參見
+12 參考文獻
+
+
+
+生活例子[編輯]
+人們對機率總是有一點觸摸不清的感覺，而事實上也有很多看似奇異的結果：
+
+1; 六合彩：在六合彩（49選6）中，一共有13,983,816種可能性（參閱組合數學），
+
+如果每周都買一組不相同的號，一年有52周，則在實驗越多次（一直買直到中獎算一次）之後，平均中獎所花的時間會越接近
+
+
+
+
+
+13983816
+52
+
+
+=
+268919
+
+
+{\displaystyle {\frac {13983816}{52}}=268919}
+
+。 事實上，即使每周買相同的號，獲得頭獎的機率也是相同的。 但假設每周實際中獎的組合都不重複，268919年的算術推論是正確的，這說明機率和其他數學理論可能導出不同的結論。
+
+2; 六合彩：仍然是六合彩。買5, 17, 19, 24, 33, 49中奬機率高還是買1,2,3,4,5,6的中奬機率高?
+
+古典機率論說：一樣。
+但實際上機械或彩球製造上都有些微小的差異，所以每組機率不一定完全相同，但必須累積多期開獎結果後才看得出來。
+
+3; 生日悖論：在一個足球場上有23個人（2×11個運動員和1個裁判員），
+
+不可思議的是，在這23人當中至少有兩個人的生日是在同一天的機率要大於50％。 如果這23人都沒有相同的生日也不違反機率，只是小於50％。
+
+4; 輪盤遊戲：在遊戲中玩家可能認為，在連續出現多次紅色後，出現黑色的機率會越來越大。
+
+這種判斷也是錯誤的，即出現黑色的機率每次是相等的，因為球本身並沒有「記憶」， 它不會意識到以前都發生了什麼，其機率始終是
+
+
+
+
+
+18
+37
+
+
+
+
+{\displaystyle {\frac {18}{37}}}
+
+。
+但輪盤的前後期開獎數字形成時間序列（可能存在自迴歸模型）。
+
+5; 贏取電視節目裡的名車：在參賽者面前有三扇關閉的門，其中只有一扇後面有名車，而其餘的後面是山羊。
+
+遊戲規則是，參賽者先選取一扇門，但在他打開之前，主持人在其餘兩扇門中打開了一扇有山羊的門， 並詢問參賽者是否改變主意選擇另一扇門，以使贏得名車的機率變大。
+正確的分析結果是，假如不管開始哪一扇門被選，主持人都打開其餘兩扇門中有山羊的那一扇並詢問參賽者是否改變主意， 則改變主意會使贏得汽車的機率增加一倍；（「標準」的三門問題情況。）
+
+假如主持人只在有名車那扇門被選中時勸誘參賽者打開其它門，則改變主意必輸。(資訊不對稱)
+歷史[編輯]
+作為數學統計基礎的機率論的創始人分別是法國數學家帕斯卡和費馬，其可追溯到公元17世紀。當時的法國宮廷貴族裡盛行著擲骰子遊戲，遊戲規則是玩家連續擲4次骰子，如果其中沒有6點出現，玩家贏，如果出現一次6點，則莊家（相當於現在的賭場）贏。按照這一遊戲規則，從長期來看，莊家扮演贏家的角色，而玩家大部分時間是輸家，因為莊家總是要靠此為生的，而當時人們也接受了這種現象。
+後來為了使遊戲更刺激，遊戲規則發生了些許變化，玩家這回用2個骰子連續擲24次，不同時出現2個6點，玩家贏，否則莊家贏。當時人們普遍認為，2次出現6點的機率是一次出現6點的機率的1 / 6，因此6倍於前一種規則的次數，也既是24次贏或輸的機率與以前是相等的。然而事實卻並非如此，從長期來看，這回莊家處於輸家的狀態，於是他們去請教當時的數學家帕斯卡，求助其對這種現象作出解釋。
+其他對機率論的發展作出重要貢獻的人還有荷蘭物理、數學家惠更斯，瑞士物理、數學家伯努利，法國數學家棣莫弗，法國數學、天文學家拉普拉斯，德國數學家高斯，法國物理、數學家泊松，義大利數學、醫學家卡爾達諾以及蘇聯數學家柯爾莫哥洛夫。
+事件[編輯]
+單位事件、事件空間、隨機事件[編輯]
+在一次隨機試驗中可能發生的不能再細分的結果被稱為基本事件，或者稱為單位事件，用 
+
+
+
+E
+
+
+{\displaystyle E}
+
+ 表示。在隨機試驗中可能發生的所有單位事件的集合稱為事件空間，用 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ 來表示。例如在一次擲骰子的隨機試驗中，如果用獲得的點數來表示單位事件，那麼一共可能出現 6 個單位事件，則事件空間可以表示為 
+
+
+
+S
+=
+{
+1
+,
+2
+,
+3
+,
+4
+,
+5
+,
+6
+}
+
+
+{\displaystyle S=\{1,2,3,4,5,6\}}
+
+。
+上面的事件空間是由可數有限單位事件組成，事實上還存在著由可數無限以及不可數單位事件組成的事件空間，比如在一次獲得正面朝上就停止的隨機擲硬幣試驗中，其事件空間由可數無限單位事件組成，表示為：
+
+
+
+S
+=
+
+
+{\displaystyle S=}
+
+{ 正，反正，反反正，反反反正，反反反反正，···}，註意到在這個例子中"反反反正"是單位事件。將兩根筷子隨意扔向桌面，其靜止後所形成的交角假設為 
+
+
+
+α
+
+
+{\displaystyle \alpha }
+
+，這個隨機試驗的事件空間的組成可以表示為 
+
+
+
+S
+=
+{
+α
+
+|
+
+
+0
+
+∘
+
+
+≤
+α
+<
+
+180
+
+∘
+
+
+}
+
+
+{\displaystyle S=\{\alpha |0^{\circ }\leq \alpha <180^{\circ }\}}
+
+。
+隨機事件是事件空間 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ 的子集，它由事件空間 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ 中的單位元素構成，用大寫字母 
+
+
+
+A
+,
+B
+,
+C
+⋯
+
+
+{\displaystyle A,B,C\cdots }
+
+ 表示。例如在擲兩個骰子的隨機試驗中，設隨機事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ = 「獲得的點數和大於10」，則 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 可以由下麵 3 個單位事件組成：
+
+
+
+A
+=
+{
+(
+5
+,
+6
+)
+,
+(
+6
+,
+5
+)
+,
+(
+6
+,
+6
+)
+}
+
+
+{\displaystyle A=\{(5,6),(6,5),(6,6)\}}
+
+。
+如果在隨機試驗中事件空間中的所有可能的單位事件都發生，這個事件被稱為 必然事件，表示為 
+
+
+
+S
+⊂
+S
+
+
+{\displaystyle S\subset S}
+
+ ；相應的如果事件空間裡不包含任何一個單位事件，則稱為不可能事件，表示為 
+
+
+
+∅
+⊂
+S
+
+
+{\displaystyle \varnothing \subset S}
+
+ 。
+事件的計算[編輯]
+因為事件在一定程度上是以集合的含義定義的，因此可以把集合計算方法直接應用於事件的計算，也就是說，在計算過程中，可以把事件當作集合來對待。
+
+
+
+
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 的補集
+不屬於 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 的事件發生
+
+並集 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ ∪ 
+
+
+
+B
+
+
+{\displaystyle B}
+
+
+或者
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 或者 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 或者 
+
+
+
+A
+,
+B
+
+
+{\displaystyle A,B}
+
+ 同時發生
+
+交集 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ ∩ 
+
+
+
+B
+
+
+{\displaystyle B}
+
+
+事件 
+
+
+
+A
+,
+B
+
+
+{\displaystyle A,B}
+
+ 同時發生
+
+
+
+差集 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ \ 
+
+
+
+B
+
+
+{\displaystyle B}
+
+
+不屬於 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 的 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 事件發生
+
+空集 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ ∩ 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ = ∅
+
+
+
+
+A
+,
+B
+
+
+{\displaystyle A,B}
+
+ 事件不同時發生
+
+子集 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ ⊆ 
+
+
+
+A
+
+
+{\displaystyle A}
+
+
+如 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 發生，則 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 也一定發生
+
+
+在輪盤遊戲中假設 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 代表事件「球落在紅色區域」，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 代表事件"球落在黑色區域"，因為事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 和 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 沒有共同的單位事件，因此可表示為
+
+
+
+
+A
+∩
+B
+=
+∅
+
+
+{\displaystyle A\cap B=\varnothing }
+
+
+註意到事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 和 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 並不是互補的關係，因為在整個事件空間 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ 中還有一個單位事件「零」，其即不是紅色也不是黑色，而是綠色，因此 
+
+
+
+A
+,
+B
+
+
+{\displaystyle A,B}
+
+ 的補集應該分別表示如下：
+
+
+
+
+
+
+
+A
+¯
+
+
+
+=
+S
+∖
+A
+=
+B
+∪
+
+{
+0
+}
+
+
+
+{\displaystyle {\bar {A}}=S\setminus A=B\cup \left\{0\right\}}
+
+
+
+
+
+
+
+
+
+B
+¯
+
+
+
+=
+S
+∖
+B
+=
+A
+∪
+
+{
+0
+}
+
+
+
+{\displaystyle {\bar {B}}=S\setminus B=A\cup \left\{0\right\}}
+
+
+機率的定義[編輯]
+傳統機率 (古典機率)( 拉普拉斯機率 )[編輯]
+傳統機率的定義是由法國數學家拉普拉斯 ( Laplace ) 提出的。如果一個隨機試驗所包含的單位事件是有限的，且每個單位事件發生的可能性均相等，則這個隨機試驗叫做拉普拉斯試驗。在拉普拉斯試驗中，事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 在事件空間 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ 中的機率 
+
+
+
+P
+(
+A
+)
+
+
+{\displaystyle P(A)}
+
+ 為：
+
+
+
+例如，在一次同時擲一個硬幣和一個骰子的隨機試驗中，假設事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 為獲得國徽面且點數大於 4 ，那麼事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 的機率應該有如下計算方法：
+
+
+
+S
+=
+
+
+{\displaystyle S=}
+
+ { ( 國徽，1 點 )，( 數字，1 點 )，( 國徽，2 點 )，( 數字，2 點 )，( 國徽，3 點 )，( 數字，3 點 )，( 國徽，4 點 )，( 數字，4 點 )，( 國徽，5 點 )，( 數字，5 點 )，( 國徽，6 點 )，( 數字，6 點 ) }，
+
+
+
+A
+
+
+{\displaystyle A}
+
+＝{( 國徽，5 點 )，( 國徽，6 點 )}，按照拉普拉斯定義，
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 的機率為，
+
+
+
+
+
+P
+(
+A
+)
+=
+
+
+2
+12
+
+
+=
+
+
+1
+6
+
+
+
+
+{\displaystyle P(A)={\frac {2}{12}}={\frac {1}{6}}}
+
+
+
+註意到在拉普拉斯試驗中存在著若干的疑問，在現實中是否存在著其單位事件的機率具有精確相同的機率值的試驗? 因為我們不知道，硬幣以及骰子是否完美，即骰子製造的是否均勻，其重心是否位於正中心，以及輪盤是否傾向於某一個數字。 儘管如此，傳統機率在實踐中被廣泛應用於確定事件的機率值，其理論根據是： 如果沒有足夠的論據來證明一個事件的機率大於另一個事件的機率，那麼可以認為這兩個事件的機率值相等。
+如果仔細觀察這個定義會發現拉普拉斯用機率解釋了機率，定義中用了相同的可能性 ( 原文是 également possible )一詞，其實指的就是"相同的機率"。這個定義也並沒有說出，到底什麼是機率，以及如何用數字來確定機率。在現實生活中也有一系列問題，無論如何不能用傳統機率定義來解釋，比如，人壽保險公司無法確定一個 50 歲的人在下一年將死去的機率。
+統計機率[編輯]
+繼傳統機率論之後，英國邏輯學家約翰·維恩和奧地利數學家理察提出建立在頻率理論基礎上的統計機率。他們認為，獲得一個事件的機率值的唯一方法是通過對該事件進行 100 次，1000 次或者甚至 10000 次的前後相互獨立的 
+
+
+
+n
+
+
+{\displaystyle n}
+
+ 次隨機試驗，針對每次試驗均記錄下絕對頻率值
+
+
+
+
+h
+
+n
+
+
+
+
+{\displaystyle h_{n}}
+
+(A)和相對頻率值 
+
+
+
+
+f
+
+n
+
+
+
+
+{\displaystyle f_{n}}
+
+(A)，隨著試驗次數 
+
+
+
+n
+
+
+{\displaystyle n}
+
+ 的增加，會出現如下事實，即相對頻率值會趨於穩定，它在一個特定的值上下浮動，也即是說存在著一個極限值 
+
+
+
+P
+(
+A
+)
+
+
+{\displaystyle P(A)}
+
+，相對頻率值趨向於這個極限值。這個極限值被稱為統計機率，表示為：
+
+
+
+
+
+P
+(
+A
+)
+=
+
+lim
+
+n
+→
+∞
+
+
+
+f
+
+n
+
+
+(
+A
+)
+
+
+{\displaystyle P(A)=\lim _{n\to \infty }f_{n}(A)}
+
+
+
+例如，若想知道在一次擲骰子的隨機試驗中獲得 6 點的機率值可以對其進行 3000 次前後獨立的扔擲試驗，在每一次試驗後記錄下出現 6 點的次數，然後通過計算相對頻率值可以得到趨向於某一個數的統計機率值。
+
+
+扔擲數
+獲得 6 點的絕對頻率
+獲得 6 點的相對頻率
+
+
+1
+1
+1.00000
+
+
+2
+1
+0.50000
+
+
+3
+1
+0.33333
+
+
+4
+1
+0.25000
+
+
+5
+2
+0.40000
+
+
+10
+2
+0.20000
+
+
+20
+5
+0.25000
+
+
+100
+12
+0.12000
+
+
+200
+39
+0.19500
+
+
+300
+46
+0.15333
+
+
+400
+72
+0.18000
+
+
+500
+76
+0.15200
+
+
+600
+102
+0.17000
+
+
+700
+120
+0.17143
+
+
+1000
+170
+0.17000
+
+
+2000
+343
+0.17150
+
+
+3000
+506
+0.16867
+
+
+上面提到的這個有關相對頻率的經驗規律是大數定律在現實生活中的反映，大數定律是初等機率論的基礎。統計機率在今天的實踐中依然具有重要意義，特別是在初等機率論及數理統計等學科中。
+現代機率論[編輯]
+與初等機率論相對的，是「現代機率論」。因「測度論」的研究與發展，現代機率論得以建立公理化系統。 一些曾經無法用初等機率論解釋的概念因此得以用公理化的語言進行解釋。 可以說現代機率論以測度論為理論基礎終於得以完善，完成了其現代化進程。 現代機率論由前蘇聯數學家柯爾莫哥洛夫於1933年建立公理化！
+機率公理[編輯]
+主條目：機率公理
+如果一個函數
+
+
+
+P
+:
+S
+→
+
+R
+
+,
+ 
+A
+↦
+P
+(
+A
+)
+
+
+{\displaystyle P:S\to \mathbb {R} ,\ A\mapsto P(A)}
+
+指定給每一個事件空間 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ 中的事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 一個實數 
+
+
+
+P
+(
+A
+)
+
+
+{\displaystyle P(A)}
+
+，並且其滿足下麵的 3 個公理，那麼函數 
+
+
+
+P
+
+
+{\displaystyle P}
+
+ 叫做機率函數，相應的 
+
+
+
+P
+(
+A
+)
+
+
+{\displaystyle P(A)}
+
+ 叫做事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 的機率。
+
+
+公理 1： 
+
+
+
+0
+≤
+P
+(
+A
+)
+≤
+1
+ 
+(
+A
+∈
+S
+)
+
+
+{\displaystyle 0\leq P(A)\leq 1\ (A\in S)}
+
+
+
+
+
+事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 的機率 
+
+
+
+P
+(
+A
+)
+
+
+{\displaystyle P(A)}
+
+ 是一個0與1之間（包含0與1）的非負實數。
+
+
+
+
+
+
+公理 2： 
+
+
+
+P
+(
+S
+)
+=
+1
+
+
+{\displaystyle P(S)=1}
+
+
+
+
+
+事件空間的機率值為 1 。
+
+
+
+
+
+
+公理 3： 
+
+
+
+P
+(
+A
+∪
+B
+)
+=
+P
+(
+A
+)
++
+P
+(
+B
+)
+
+
+{\displaystyle P(A\cup B)=P(A)+P(B)}
+
+，如果 
+
+
+
+A
+∩
+B
+=
+∅
+
+
+{\displaystyle A\cap B=\varnothing }
+
+
+
+
+
+互斥事件的加法法則。這裡需註意：公理3可以推廣到可數個互斥事件的聯集。
+
+
+
+
+
+
+機率的計算[編輯]
+需要提及的是下麵將要介紹的 9 個計算機率的定理與上面已經提及的事件的計算沒有關係，所有關於機率的定理均由機率的 3 個公理得來，同時適用於包括拉普拉斯機率和統計機率在內的所有機率理論。
+定理 1 (互補法則)[編輯]
+與 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 互補事件的機率始終是
+
+
+
+
+
+P
+(
+
+
+
+A
+¯
+
+
+
+)
+=
+1
+−
+P
+(
+A
+)
+,
+∈
+S
+
+
+{\displaystyle P({\bar {A}})=1-P(A),\in S}
+
+
+
+
+
+證明：
+事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 和 
+
+
+
+
+
+A
+¯
+
+
+
+
+{\displaystyle {\overline {A}}}
+
+ 是互補關係，由公理 3 和公理 2 可得
+
+
+
+
+
+P
+(
+A
+)
++
+P
+(
+
+
+
+A
+¯
+
+
+
+)
+=
+P
+(
+S
+)
+=
+1
+
+
+{\displaystyle P(A)+P({\bar {A}})=P(S)=1}
+
+
+
+
+
+
+⇒
+P
+(
+
+
+
+A
+¯
+
+
+
+)
+=
+1
+−
+P
+(
+A
+)
+
+
+{\displaystyle \Rightarrow P({\bar {A}})=1-P(A)}
+
+
+
+
+
+
+利用互補法則，可以解決下麵這個問題，在兩次連續旋轉的輪盤遊戲中，至少有一次是紅色的機率是多少？
+第一次旋轉紅色不出現的機率是 19/37 ，按照乘法法則，第二次也不出現紅色的機率是 (19/37)2 = 0.2637，因此在這裡互補機率就是指在兩次連續旋轉中至少有一次是紅色的機率，
+
+
+
+
+P
+=
+1
+−
+
+
+(
+
+
+19
+37
+
+
+)
+
+
+2
+
+
+=
+0.7363
+
+
+{\displaystyle P=1-\left({\frac {19}{37}}\right)^{2}=0.7363}
+
+
+定理 2[編輯]
+不可能事件的機率為零：
+
+
+
+
+
+P
+(
+∅
+)
+=
+0
+
+
+{\displaystyle P(\varnothing )=0}
+
+
+
+
+證明：
+
+
+
+
+∅
+
+
+{\displaystyle \varnothing }
+
+ 和 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ 是互補事件，按照公理 2 有
+
+
+
+
+
+P
+(
+S
+)
+=
+1
+
+
+{\displaystyle P(S)=1}
+
+，再根據上面的定理 1 得到
+
+
+
+
+P
+(
+∅
+)
+=
+1
+−
+1
+=
+0
+
+
+{\displaystyle P(\varnothing )=1-1=0}
+
+
+
+
+定理 3[編輯]
+如果若干事件 
+
+
+
+
+A
+
+1
+
+
+,
+
+A
+
+2
+
+
+,
+⋯
+
+A
+
+n
+
+
+∈
+S
+
+
+{\displaystyle A_{1},A_{2},\cdots A_{n}\in S}
+
+ 每兩兩之間是空集關係，那麼這些所有事件集合的機率等於單個事件的機率的和。
+
+
+
+
+
+P
+(
+
+A
+
+1
+
+
+∪
+⋯
+∪
+
+A
+
+n
+
+
+)
+=
+
+∑
+
+j
+=
+1
+
+
+n
+
+
+P
+(
+
+A
+
+j
+
+
+)
+
+
+{\displaystyle P(A_{1}\cup \cdots \cup A_{n})=\sum _{j=1}^{n}P(A_{j})}
+
+
+
+註意針對這一定理有效性的決定因素是 
+
+
+
+
+A
+
+1
+
+
+⋯
+
+A
+
+n
+
+
+
+
+{\displaystyle A_{1}\cdots A_{n}}
+
+ 事件不能同時發生。例如，在一次擲骰子中，得到 5 點或者 6 點的機率是：
+
+
+
+
+
+P
+=
+P
+(
+
+A
+
+5
+
+
+)
++
+P
+(
+
+A
+
+6
+
+
+)
+=
+
+
+{\displaystyle P=P(A_{5})+P(A_{6})=}
+
+ 
+
+
+
+=
+
+
+2
+6
+
+
+=
+
+
+1
+3
+
+
+
+
+{\displaystyle ={\frac {2}{6}}={\frac {1}{3}}}
+
+
+
+定理 4[編輯]
+如果事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 是差集關係，則有，
+
+
+
+
+
+P
+(
+A
+∖
+B
+)
+=
+P
+(
+A
+)
+−
+P
+(
+A
+∩
+B
+)
+
+
+{\displaystyle P(A\setminus B)=P(A)-P(A\cap B)}
+
+
+
+
+
+證明：
+事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 由下麵兩個事件組成：
+
+
+
+
+
+A
+∖
+B
+
+
+{\displaystyle A\setminus B}
+
+ 和 
+
+
+
+A
+∩
+B
+
+
+{\displaystyle A\cap B}
+
+
+由公理 3 得，
+
+
+
+
+P
+(
+A
+)
+=
+P
+(
+A
+∖
+B
+)
++
+P
+(
+A
+∩
+B
+)
+
+
+{\displaystyle P(A)=P(A\setminus B)+P(A\cap B)}
+
+
+
+
+定理 5 (任意事件加法法則)[編輯]
+對於事件空間 
+
+
+
+S
+
+
+{\displaystyle S}
+
+ 中的任意兩個事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 和 
+
+
+
+B
+
+
+{\displaystyle B}
+
+，有如下定理：
+
+
+
+
+
+P
+(
+A
+∪
+B
+)
+=
+P
+(
+A
+)
++
+P
+(
+B
+)
+−
+P
+(
+A
+∩
+B
+)
+
+
+{\displaystyle P(A\cup B)=P(A)+P(B)-P(A\cap B)}
+
+
+
+
+證明：
+事件 
+
+
+
+A
+∪
+B
+
+
+{\displaystyle A\cup B}
+
+ 由下麵三個事件組成：
+
+
+
+
+A
+∪
+B
+=
+(
+A
+∖
+B
+)
+∪
+(
+A
+∩
+B
+)
+∪
+(
+B
+∖
+A
+)
+
+
+{\displaystyle A\cup B=(A\setminus B)\cup (A\cap B)\cup (B\setminus A)}
+
+
+首先根據定理 4 有：
+
+
+
+
+
+
+
+
+P
+(
+A
+∖
+B
+)
+
+
+=
+
+
+P
+(
+A
+)
+−
+P
+(
+A
+∩
+B
+)
+
+
+
+
+P
+(
+B
+∖
+A
+)
+
+
+=
+
+
+P
+(
+B
+)
+−
+P
+(
+A
+∩
+B
+)
+
+
+
+
+
+
+{\displaystyle {\begin{array}{lcr}P(A\setminus B)&=&P(A)-P(A\cap B)\\P(B\setminus A)&=&P(B)-P(A\cap B)\end{array}}}
+
+
+再根據定理 3 得：
+
+
+
+
+
+
+
+
+P
+(
+A
+∪
+B
+)
+
+
+
+=
+P
+(
+A
+∖
+B
+)
++
+P
+(
+A
+∩
+B
+)
++
+P
+(
+B
+∖
+A
+)
+
+
+
+
+
+
+=
+P
+(
+A
+)
+−
+P
+(
+A
+∩
+B
+)
++
+P
+(
+A
+∩
+B
+)
++
+P
+(
+B
+)
+−
+P
+(
+A
+∩
+B
+)
+
+
+
+
+
+
+=
+P
+(
+A
+)
++
+P
+(
+B
+)
+−
+P
+(
+A
+∩
+B
+)
+
+
+
+
+
+
+{\displaystyle {\begin{aligned}P(A\cup B)&=P(A\setminus B)+P(A\cap B)+P(B\setminus A)\\&=P(A)-P(A\cap B)+P(A\cap B)+P(B)-P(A\cap B)\\&=P(A)+P(B)-P(A\cap B)\end{aligned}}}
+
+
+
+例如，在由一共 32 張牌構成的斯卡特撲克牌中隨機抽出一張，其或者是"方片"或者是"
+
+
+
+
+
+A
+
+
+
+
+{\displaystyle {\mathcal {A}}}
+
+"的機率是多少？
+事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 是或者的關係，且可同時發生，就是說抽出的這張牌即可以是"方片"，又可以是"
+
+
+
+
+
+A
+
+
+
+
+{\displaystyle {\mathcal {A}}}
+
+"，
+
+
+
+A
+
+
+{\displaystyle A}
+
+ ∩ 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ ( 既發生 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 又發生 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ ) 的值是 1 / 32，( 從示意圖上也可以看出，即是方片又是
+
+
+
+
+
+A
+
+
+
+
+{\displaystyle {\mathcal {A}}}
+
+只有一張，即機率是 1 / 32 )，因此有如下結果：
+
+
+
+
+P
+(
+A
+∪
+B
+)
+=
+
+
+8
+32
+
+
++
+
+
+4
+32
+
+
+−
+
+
+1
+32
+
+
+=
+
+
+11
+32
+
+
+
+
+{\displaystyle P(A\cup B)={\frac {8}{32}}+{\frac {4}{32}}-{\frac {1}{32}}={\frac {11}{32}}}
+
+
+註意到公理 3 是定理 5 的特殊情況，即 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 不同時發生，相應的 P(A∩B)=0。
+定理 6 (乘法法則)[編輯]
+
+
+
+
+輪盤遊戲示意圖 2
+
+
+事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 同時發生的機率是：
+
+
+
+
+
+P
+(
+A
+∩
+B
+)
+=
+P
+(
+A
+)
+⋅
+P
+(
+B
+|
+A
+)
+=
+P
+(
+B
+)
+⋅
+P
+(
+A
+|
+B
+)
+
+
+{\displaystyle P(A\cap B)=P(A)\cdot P(B\vert A)=P(B)\cdot P(A\vert B)}
+
+
+
+公式中的 
+
+
+
+P
+(
+A
+
+|
+
+B
+)
+
+
+{\displaystyle P(A|B)}
+
+ 是指在 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 條件下 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 發生的機率，又稱作條件機率。回到上面的斯卡特遊戲中，在 32 張牌中隨機抽出一張，即是方片又是
+
+
+
+
+
+A
+
+
+
+
+{\displaystyle {\mathcal {A}}}
+
+的機率是多少呢？現用 
+
+
+
+P
+(
+A
+)
+
+
+{\displaystyle P(A)}
+
+ 代表抽出方片的機率，用 
+
+
+
+P
+(
+B
+)
+
+
+{\displaystyle P(B)}
+
+ 代表抽出
+
+
+
+
+
+A
+
+
+
+
+{\displaystyle {\mathcal {A}}}
+
+的機率，很明顯，
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 之間有一定聯繫，即 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 里包含有 
+
+
+
+B
+
+
+{\displaystyle B}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 里又包含有 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，在 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 的條件下發生 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 的機率是 P(B | A)=1/8，則有：
+
+
+
+
+P
+(
+A
+∩
+B
+)
+=
+P
+(
+A
+)
+⋅
+P
+(
+B
+|
+A
+)
+=
+
+
+8
+32
+
+
+⋅
+
+
+1
+8
+
+
+=
+
+
+1
+32
+
+
+
+
+{\displaystyle P(A\cap B)=P(A)\cdot P(B\vert A)={\frac {8}{32}}\cdot {\frac {1}{8}}={\frac {1}{32}}}
+
+
+或者，
+
+
+
+P
+(
+A
+∩
+B
+)
+=
+P
+(
+B
+)
+⋅
+P
+(
+A
+|
+B
+)
+=
+
+
+4
+32
+
+
+⋅
+
+
+1
+4
+
+
+=
+
+
+1
+32
+
+
+
+
+{\displaystyle P(A\cap B)=P(B)\cdot P(A\vert B)={\frac {4}{32}}\cdot {\frac {1}{4}}={\frac {1}{32}}}
+
+
+從上面的圖中也可以看出，符合條件的只有一張牌，即方片
+
+
+
+
+
+A
+
+
+
+
+{\displaystyle {\mathcal {A}}}
+
+。
+另一個例子，在 32 張斯卡特牌里連續抽兩張 ( 第一次抽出的牌不放回去 )，連續得到兩個
+
+
+
+
+
+A
+
+
+
+
+{\displaystyle {\mathcal {A}}}
+
+的機率是多少呢？
+設 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 分別為連續發生的這兩次事件，我們看到，
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 之間有一定聯繫，即 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 的機率由於 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 發生了變化，屬於條件機率，按照公式有：
+
+
+
+P
+(
+A
+∩
+B
+)
+=
+P
+(
+A
+)
+⋅
+P
+(
+B
+|
+A
+)
+=
+
+
+4
+32
+
+
+⋅
+
+
+3
+31
+
+
+=
+
+
+3
+248
+
+
+
+
+{\displaystyle P(A\cap B)=P(A)\cdot P(B\vert A)={\frac {4}{32}}\cdot {\frac {3}{31}}={\frac {3}{248}}}
+
+
+定理 7 (無關事件乘法法則)[編輯]
+兩個不相關聯的事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 同時發生的機率是：
+
+
+
+
+
+P
+(
+A
+∩
+B
+)
+=
+P
+(
+A
+)
+⋅
+P
+(
+B
+)
+
+
+{\displaystyle P(A\cap B)=P(A)\cdot P(B)}
+
+
+
+註意到這個定理實際上是定理 6 (乘法法則) 的特殊情況，如果事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 沒有聯繫，則有 P(A|B)=P(A)，以及 P(B|A)=P(B)。現在觀察一下輪盤遊戲中兩次連續的旋轉過程，
+
+
+
+P
+(
+A
+)
+
+
+{\displaystyle P(A)}
+
+ 代表第一次出現紅色的機率，
+
+
+
+P
+(
+B
+)
+
+
+{\displaystyle P(B)}
+
+ 代表第二次出現紅色的機率，可以看出，
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 與 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 沒有關聯，利用上面提到的公式，連續兩次出現紅色的機率為：
+
+
+
+
+P
+(
+A
+∩
+B
+)
+=
+
+
+18
+37
+
+
+⋅
+
+
+18
+37
+
+
+=
+0.2367
+
+
+{\displaystyle P(A\cap B)={\frac {18}{37}}\cdot {\frac {18}{37}}=0.2367}
+
+
+忽視這一定理是造成許多玩家失敗的根源，普遍認為，經過連續出現若干次紅色後，黑色出現的機率會越來越大，事實上兩種顏色每次出現的機率是相等的，之前出現的紅色與之後出現的黑色之間沒有任何聯繫，因為球本身並沒有「記憶」，它並不「知道」以前都發生了什麼。同理，連續 10 次出現紅色的機率為 P=(18/37)10 =0.0007
+完全機率[編輯]
+
+
+
+
+n
+
+
+{\displaystyle n}
+
+ 個事件 
+
+
+
+
+H
+
+1
+
+
+,
+
+H
+
+2
+
+
+,
+.
+.
+.
+
+H
+
+n
+
+
+
+
+{\displaystyle H_{1},H_{2},...H_{n}}
+
+ 互相間獨立，且共同組成整個事件空間 
+
+
+
+S
+
+
+{\displaystyle S}
+
+，即
+
+
+
+
+
+H
+
+i
+
+
+∩
+
+H
+
+j
+
+
+=
+∅
+
+
+{\displaystyle H_{i}\cap H_{j}=\varnothing }
+
+，
+
+
+
+(
+i
+≠
+j
+)
+
+
+{\displaystyle (i\neq j)}
+
+ 以及
+
+
+
+
+
+H
+
+1
+
+
+∪
+
+H
+
+2
+
+
+∪
+.
+.
+.
+∪
+
+H
+
+n
+
+
+=
+S
+
+
+{\displaystyle H_{1}\cup H_{2}\cup ...\cup H_{n}=S}
+
+
+這時 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 的機率可以表示為，
+
+
+
+
+
+P
+(
+A
+)
+=
+
+∑
+
+j
+=
+1
+
+
+n
+
+
+P
+(
+A
+
+|
+
+
+H
+
+j
+
+
+)
+⋅
+P
+(
+
+H
+
+j
+
+
+)
+
+
+{\displaystyle P(A)=\sum _{j=1}^{n}P(A|H_{j})\cdot P(H_{j})}
+
+
+
+
+證明：
+
+
+
+
+A
+=
+(
+A
+∩
+
+H
+
+1
+
+
+)
+∪
+(
+A
+∩
+
+H
+
+2
+
+
+)
+∪
+…
+∪
+(
+A
+∩
+
+H
+
+n
+
+
+)
+
+
+{\displaystyle A=(A\cap H_{1})\cup (A\cap H_{2})\cup \ldots \cup (A\cap H_{n})}
+
+
+按照公理 3 ，有
+
+
+
+
+P
+(
+A
+)
+=
+P
+(
+A
+∩
+
+H
+
+1
+
+
+)
++
+P
+(
+A
+∩
+
+H
+
+2
+
+
+)
++
+…
++
+P
+(
+A
+∩
+
+H
+
+n
+
+
+)
+
+
+{\displaystyle P(A)=P(A\cap H_{1})+P(A\cap H_{2})+\ldots +P(A\cap H_{n})}
+
+
+根據乘法法則，
+
+
+
+P
+(
+A
+∩
+
+H
+
+j
+
+
+)
+=
+P
+(
+A
+
+|
+
+
+H
+
+j
+
+
+)
+⋅
+P
+(
+
+H
+
+j
+
+
+)
+
+
+{\displaystyle P(A\cap H_{j})=P(A|H_{j})\cdot P(H_{j})}
+
+
+因此有，
+
+
+
+
+P
+(
+A
+)
+=
+P
+(
+A
+
+|
+
+
+H
+
+1
+
+
+)
+⋅
+P
+(
+
+H
+
+1
+
+
+)
++
+…
++
+P
+(
+A
+
+|
+
+
+H
+
+n
+
+
+)
+⋅
+P
+(
+
+H
+
+n
+
+
+)
+
+
+{\displaystyle P(A)=P(A|H_{1})\cdot P(H_{1})+\ldots +P(A|H_{n})\cdot P(H_{n})}
+
+
+
+
+
+
+P
+(
+A
+)
+=
+
+∑
+
+j
+=
+1
+
+
+n
+
+
+P
+(
+A
+
+|
+
+
+H
+
+j
+
+
+)
+⋅
+P
+(
+
+H
+
+j
+
+
+)
+
+
+{\displaystyle P(A)=\sum _{j=1}^{n}P(A|H_{j})\cdot P(H_{j})}
+
+
+
+例如，一個隨機試驗工具由一個骰子和一個柜子中的三個抽屜組成，抽屜 1 里有 14 個白球和 6 個黑球，抽屜 2 里有 2 個白球和 8 個黑球，抽屜 3 里有 3 個白球和 7 個黑球，試驗規則是首先擲骰子，如果獲得小於 4 點，則抽屜 1 被選擇，如果獲得 4 點或者 5 點，則抽屜 2 被選擇，其他情況選擇抽屜 3 。然後在選擇的抽屜里隨機抽出一個球，最後抽出的這個球是白球的機率是：
+P(白)=P(白|抽1)·P(抽1)+P(白|抽2)·P(抽2)＋P(白|抽3)·P(抽3)
+
+
+
+=(14/20)·(3/6)+(2/10)·(2/6)+(3/10)·(1/6)
+=28/60=0.4667
+
+
+
+從例子中可看出，完全機率特別適合於分析具有多層結構的隨機試驗的情況。
+貝葉斯定理[編輯]
+主條目：貝葉斯定理
+貝葉斯定理由英國數學家托馬斯·貝葉斯 ( Thomas Bayes 1702-1761 ) 發展，用來描述兩個條件機率之間的關係，比如 P(A|B) 和 P(B|A)。按照定理 6 的乘法法則，P(A∩B)=P(A)·P(B|A)=P(B)·P(A|B)，可以立刻導出貝葉斯定理：
+
+
+
+
+
+P
+(
+A
+|
+B
+)
+=
+
+
+
+P
+(
+B
+|
+A
+)
+⋅
+P
+(
+A
+)
+
+
+P
+(
+B
+)
+
+
+
+
+
+{\displaystyle P(A\vert B)={\frac {P(B\vert A)\cdot P(A)}{P(B)}}}
+
+
+
+
+例如：一座別墅在過去的 20 年裡一共發生過 2 次被盜，別墅的主人有一條狗，狗平均每周晚上叫 3 次，在盜賊入侵時狗叫的機率被估計為 0.9，問題是：在狗叫的時候發生入侵的機率是多少？
+我們假設 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 事件為狗在晚上叫，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 為盜賊入侵，則 
+
+
+
+P
+(
+A
+)
+=
+3
+
+/
+
+7
+
+
+{\displaystyle P(A)=3/7}
+
+，
+
+
+
+P
+(
+B
+)
+
+
+{\displaystyle P(B)}
+
+=2/(20·365.25)=2/7305，P(A | B) = 0.9，按照公式很容易得出結果：
+
+
+
+
+P
+(
+B
+|
+A
+)
+=
+0.9
+⋅
+
+
+2
+7305
+
+
+⋅
+
+
+7
+3
+
+
+=
+0.0005749486653...
+
+
+{\displaystyle P(B\vert A)=0.9\cdot {\frac {2}{7305}}\cdot {\frac {7}{3}}=0.0005749486653...}
+
+
+另一個例子，現分別有 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 兩個容器，在容器 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 里分別有 7 個紅球和 3 個白球，在容器 
+
+
+
+B
+
+
+{\displaystyle B}
+
+ 里有 1 個紅球和 9 個白球，現已知從這兩個容器里任意抽出了一個球，且是紅球，問這個紅球是來自容器 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 的機率是多少?
+假設已經抽出紅球為事件 
+
+
+
+B
+
+
+{\displaystyle B}
+
+，從容器 
+
+
+
+A
+
+
+{\displaystyle A}
+
+ 里抽出球為事件 
+
+
+
+A
+
+
+{\displaystyle A}
+
+，則有：
+
+
+
+P
+(
+B
+)
+
+
+{\displaystyle P(B)}
+
+ = 8 / 20，
+
+
+
+P
+(
+A
+)
+
+
+{\displaystyle P(A)}
+
+ = 1 / 2，
+
+
+
+P
+(
+B
+
+|
+
+A
+)
+
+
+{\displaystyle P(B|A)}
+
+ = 7 / 10，按照公式，則有：
+
+
+
+
+P
+(
+A
+|
+B
+)
+=
+
+
+7
+10
+
+
+⋅
+
+
+1
+2
+
+
+⋅
+
+
+20
+8
+
+
+=
+
+
+7
+8
+
+
+
+
+{\displaystyle P(A\vert B)={\frac {7}{10}}\cdot {\frac {1}{2}}\cdot {\frac {20}{8}}={\frac {7}{8}}}
+
+
+機率分佈[編輯]
+主條目：機率分佈
+機率論的應用[編輯]
+雖然機率論最早產生於17世紀，然而其公理體系只在20世紀的20至30年代才建立起來並得到迅速發展，在過去的半個世紀裡機率論在越來越多的新興領域顯示了它的應用性和實用性，例如：物理、化學、生物、醫學、心理學、社會學、政治學、教育學，經濟學以及幾乎所有的工程學等領域。特別值得一提的是，機率論是今天數理統計的基礎，其結果被用做問捲調查的分析資料或者對經濟前景進行預測。
+參見[編輯]
+
+
+數學主題
+
+
+
+
+機率
+大數定律
+中心極限定理
+貝葉斯定理
+統計
+機率分佈
+組合數學
+隨機變量
+機率邏輯
+機率論及統計學術語彙編
+預測模擬
+模糊測度論
+機率公理
+期望值
+概似函數
+樣本空間
+方差
+統計獨立
+
+
+參考文獻[編輯]
+
+
+^ Bayes
+^ Dice Rolls are Not Completely Random | Inside Science
+^ Inferring From Data
+^ Why is quantum mechanics based on probability theory?. StackExchange. July 1, 2013. 
+
+
+
+
+
+
+（德文） 彼得 缺菲爾 ( Peter Zoefel )：《統計和經濟學家》 PEASON Studium 出版社 2003 年 ISBN 3-8273-7062-0
+（德文） 約瑟夫 西拉 ( Josef Schira )：《統計理論與企業管理》 PEASON Studium 出版社 2003 年 ISBN 3-8273-7041-8
+（德文） 漢斯－底特 黑伯曼 ( Hans-Dieter Hippmann )：《統計學》 SCHAEFFER POESCHEL 出版社 2003 年 ISBN 3-7910-2119-2
+（德文） 里波舒爾茨 ( Seymour Lipschutz )：《機率計算－理論和應用》 McGRAW-HILL BOOK COMPANY GmbH 出版社 1980 年 ISBN 0-07-084361-9
+（德文） 貝爾等 ( Beyer，Hackel，Pieper，Tiedge )《機率計算和數學統計》 Harri Deutsch 出版社 1980 年 ISBN 3-87144-433-2
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+數學領域
+
+
+
+
+
+
+
+註釋：數學的領域也可根據「MSC分類標準」或「中國學科分類國家標準」進行分類。
+
+
+
+
+
+
+領域
+
+
+
+數理邏輯
+集合論
+範疇論
+代數
+
+初等
+線性
+多重線性
+抽象
+
+
+數論
+分析/微積分
+微分方程/動態系統
+數學物理
+數理統計
+幾何
+
+離散（英語：Discrete geometry）
+代數
+解析
+微分
+有限
+
+
+拓撲
+動力系統
+組合
+泛函分析
+博弈論
+資訊理論
+圖論
+數學教育
+數理邏輯
+數學物理
+數值分析
+最優化
+序理論
+數學哲學
+趣味數學
+計算
+機率
+表示
+統計
+三角
+
+
+
+
+
+
+
+
+分支
+
+
+
+純粹數學
+應用數學
+離散數學
+計算數學
+元數學
+
+
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4079013-7
+NDL: 00564753
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=概率論&oldid=44825796"					
+3 個分類：機率與統計機率論應用數學隱藏分類：自2010年9月需補充來源的條目拒絕當選首頁新條目推薦欄目的條目包含規範控制信息的維基百科條目使用ISBN魔術連結的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+AfrikaansالعربيةAzərbaycancaБеларускаяБеларуская (тарашкевіца)‎БългарскиCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEestiEuskaraفارسیSuomiFrançaisGaeilgeGalegoעבריתहिन्दीHrvatskiMagyarՀայերենBahasa IndonesiaÍslenskaItaliano日本語Basa JawaქართულიQaraqalpaqshaҚазақша한국어LatinaLietuviųLatviešuМакедонскиМонголBahasa MelayuNederlandsNorsk nynorskNorsk bokmålИронਪੰਜਾਬੀPolskiPortuguêsRomânăРусскийScotsSrpskohrvatski / српскохрватскиසිංහලSimple EnglishSlovenčinaSlovenščinaShqipСрпски / srpskiBasa SundaSvenskaதமிழ்ТоҷикӣไทยTürkmençeTürkçeУкраїнськаاردوOʻzbekcha/ўзбекчаTiếng Việtייִדיש 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年6月18日 (週日) 22:25。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+機率 - Yahoo奇摩字典 搜尋結果Yahoo奇摩字典 網頁搜尋  首頁信箱新聞股市名人娛樂氣象運動App下載購物中心商城拍賣更多知識+汽車機車電影字典遊戲旅遊理財房地產時尚美妝折扣城        登入   信箱    服務說明      帳號資料      Yahoo查詢詞網頁 字典 知識+ 圖片 影片 部落格 購物 在地生活 新聞 食譜 汽車 較少 更多 依字典語言顯示 漢英字典 (3) 日英字典 (0) 英漢字典 (0) 英英字典 (0) 機率 |||||ZHUYIN[ㄐㄧㄌㄩˋ] PINYIN[jilV]{"image_sprite":"url(https://s.yimg.com/pv/i/all/vertical/dictionary/tw_srp_metro_dictionary_201404171929.png)","width":"17px","height":"16px","position":"-21px -140px","src":["Dr.eye","CEDict","Dr.eye"],"source":["Dr.eye 譯典通","CEDict","Dr.eye 譯典通"],"intl":"tw","device":"desktop","offset":"0","docid":"","sourceLang":"zh-hant","targetLang":"en","sound_type_1":[],"sound_url_1":[],"sound_type_2":[],"sound_url_2":[],"provider_selector":".searchCenterMiddle .DictionaryResults .compTitle","End":"true"}1. [Mathematics] probability 機率 probabilityodds 查看更多內容 » CEDict 機率誤差 P.E. (probable error)Dr.eye 譯典通 知識+ ｜約 1229 之 1-3 筆請問數學好的人!!!(機率) ... 0.9, B is 0.7, and C is 0.4 -- A 答對的機率有 90%, B 則是 70%, C 運氣不好前一天沒抱好佛腳, 只有 40% 的機率... GRE 機率 第一句是定義 odd=會發生機率/不發生機率 第二句是狀況 odd of the pat win the prize = 4/3 贏的機率=X...1 X / Y = 4/3 解聯立 得(X,Y) = (4/7, 3/7) 所以贏的機率是4/7   2006-06-27 14:20:59 補充： 哇..糟糕..題目沒看清楚他問沒贏的機率所以... 機率的考古題 ...或6,第二顆一定只能有一個配合(例如4和6, 5和5, 6和4),所以只有三種組合.機率是3/26=1/12. 要加起來是六,第一顆篩子可以是1到5(不可能是6,因為第二顆不會... 更多機率相關知識 3 個搜尋結果刪除所有記錄最近查詢字詞機率X沒有記錄熱門關鍵字 韓文翻譯西班牙語遊學全民英檢多益補習班輕鬆學英文線上學英文翻譯 美語教學 美語 美國留學 留學資訊 短期遊學 紐西蘭遊學 學英文查詢詞Yahoo 奇摩服務中心建議隱私權政策服務條款廣告Powered by Bing™
+
+機率與統計 -- 簡介 - 陳鍾誠的網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wikidot.com
+
+
+
+.wikidot.com
+    
+
+
+Share on
+
+
+
+
+
+
+
+
+Edit
+History
+Tags
+Source
+
+Explore »
+
+ 
+
+
+
+
+
+陳鍾誠的網站
+金門大學：免費電子書、教材、程式、動畫
+
+
+
+
+
+
+
+
+文章列表
+
+最近修改
+所有網頁
+標記
+
+
+相關網站
+
+陳鍾誠的網站
+系統程式
+C# 程式設計
+
+
+陳鍾誠
+
+關於陳鍾誠
+陳鍾誠的信箱
+陳鍾誠的 Facebook
+陳鍾誠的網站
+陳鍾誠的手機網
+陳鍾誠的簡歷
+陳鍾誠的 Diigo
+陳鍾誠的 Youtube
+
+
+Wikidot
+
+網站管理
+本站成員
+標記
+加入本站?
+頂欄
+側欄
+樣版
+Wikidot 文件
+Wikidot 語法
+Wikidot Module
+Wikidot Embedding
+Wikidot Template
+Wikidot Layout
+
+
+
+
+Create account or Sign in 
+
+
+
+
+課程
+兩岸產業
+網路資源
+網路程式
+開放原碼
+動畫設計
+研究專題
+書籍
+系統程式
+C# 程式設計
+Blender 動畫設計
+作品
+程式
+論文
+動畫
+文章
+新詩
+故事
+歷史
+研究
+研究
+衛星遊戲
+人工智慧
+網路出版
+機器翻譯
+興趣
+閱讀
+寫作
+影片
+關註
+學習
+常用
+生活
+網站
+手機版
+手機最愛
+Diigo
+Twitter
+Facebook
+Scribd
+Youtube
+Kmit
+ping
+GAE
+金門不動產
+手機入口網
+大學課程網
+
+
+rating: 0+x
+
+
+
+
+
+                            機率與統計 -- 簡介
+                        
+
+
+
+
+
+
+
+
+機率統計
+教學錄影
+數學符號
+數學基礎
+排列組合
+機率統計簡介
+機率
+機率公理
+隨機變數
+連續測度
+單一分佈
+條件機率
+聯合分佈
+貝氏定理
+動差生成函數
+特徵函數
+機率法則匯總
+離散分佈
+二項分佈
+多項分佈
+負二項分佈
+幾何分佈
+超幾何分佈
+布瓦松分佈
+連續分佈
+均勻分佈
+常態分佈
+Gamma 分佈
+指數分佈
+卡方分佈
+柯西分佈
+Weibull 分佈
+T 分佈
+F 分佈
+Beta 分佈
+多維分佈
+統計
+抽樣
+敘述統計
+推論統計
+中央極限定理
+估計方法
+單組樣本估計
+兩組樣本估計
+檢定方法
+單組樣本檢定
+兩組樣本檢定
+平均値的推論
+變異數的推論
+無母數推論
+迴歸分析
+變異數分析
+實驗設計
+因子實驗
+品質管制
+時間序列
+數據分類
+統計定理匯總
+統計情況分類
+計算統計
+蒙地卡羅法
+最大似然法則
+假說與學習
+EM 算法
+簡單貝氏分類
+貝氏網路
+隨機過程
+馬可夫鏈
+蒙地卡羅馬可夫
+資源
+範例
+投影片
+教學錄影
+練習題
+考題解答
+訊息
+相關網站
+參考文獻
+最新修改
+簡體版
+English
+
+
+
+
+
+文章
+留言
+授權
+
+
+
+機率的解讀
+1. 個人方式：(personal approach) ：主觀的意見與猜測。
+2. 相對頻率：(relative frequency) ： 基於實驗，得到的機率只是一種近似值。
+(1)
+\begin{align} P(A) = \frac{f}{n} = \frac{事件 A 的出現的次數}{實驗進行的次數} \end{align}
+3. 古典方式 (classical approach) ： 等可能出像 (equally likely) 的假設。
+(2)
+\begin{align} P(A) = \frac{n(A)}{n(S)} = \frac{事件 A 的可能出現次數}{實驗可能進行的次數} \end{align}
+4. 幾何方式： 等幾何出像的假設 (geometric probability)。
+當樣本點為有限可數時，可用古典的方法，但是當有無限的樣本點，特別是連續無限的情況時，就無法採用古典方式解讀 (因為每一點的機率都是 0)。
+若樣本空間是一個包含無限個點的區域 S（一維，二維，三維或n維），樣本點是區域中的一個點。此時「等可能性」可以理解為「對任意兩個區域，當它們的測度 (Measure) (長度、面積、體積) 相等時，樣本點落在這兩個區域上的概率相等，與形狀與位置都無關。
+如果定義事件 $A_g ={任取一個樣本點，它落在區域 g \in S }$ ，則 $A_g$ 的概率定義為
+(3)
+\begin{align} P(A_g) = \frac{g 的測度}{S 的測度} \end{align}
+這樣定義的概率稱為幾何概率(geometric probability)。
+名詞定義
+
+隨機試驗 (Random Experiment)
+舉凡觀察、實驗、調查、檢驗、抽樣等，皆可稱為隨機試驗。隨機試驗會產生一連串的樣本點，通常我們用符號 $x_1 x_2 .... x_n$ 代表這種實驗產生的樣本串列。
+樣本空間 (Sample Space)
+一個隨機試驗之各種可能結果的集合，稱為樣本空間，數學上通常以大寫字母，像是 S, X, Y 等符號表示。
+樣本點 (Sample Point)
+樣本空間內的一個元素，稱為樣本點，或稱樣本 (Sample)，數學上通常以小寫字母，像是 s, x, y 等符號表示。
+母體 (Population)
+產生樣本的機率來源，乃是在樣本空間中的一個完整機率分部，通常無法直接描述，必須透過統計方法推論出母體的大概樣貌。
+事件 (Event)
+乃是樣本空間的子集合，包含單一樣本的事件稱為簡單事件，包含兩個以上樣本的事件稱為複合事件。
+隨機變數 (Random Variable)
+隨機變數是以樣本空間為定義域的實數值函數，舉例而言，如果我們用隨機變數 X 代表投擲兩次銅板時正面 (1) 出現的次數，那麼隨機變數 X 的函數定義如下 X(00) = 0, X(01) = 1, X(10) = 1, X(11) = 2。
+機率分佈 (Probability Distribution)
+機率分佈乃是針對某些隨機變數之可能值，求其機率所得到的機率函數。通常我們用符號 P 代表機率分配，P(X=x) 代表 x 樣本出現的機率。
+機率源 (Probability Source)
+一個產生某隨機變數之樣本點的隨機產生器，稱為機率源，像是我們所生活的世界就是個複雜的機率源，而電腦的亂數產生器也是一種機率源。這是一個從整數領域映射到樣本點的函數 $X(1..n) = [x_1,...,x_n]$，代表產生該隨機實驗的系統或函數 (在機率的書籍中我還沒有看過機率源這個名詞，這個名詞是筆者為了方便而定義的)。
+
+機率與統計 — 兩種不同的觀察角度
+
+機率：母體 => 樣本
+
+模型：(Modeling) 機率模型是以精確的數學描述某個的機率來源的方法。
+抽樣：(Sampling) 從已知的母體抽取出樣本，稱為抽樣或取樣。
+
+蒙地卡羅法：從已知的「機率模型」產生一系列樣本，這種方法通常被稱為「蒙地卡羅法」。
+
+
+
+
+統計：樣本 => 母體
+
+推論統計：從樣本推論母體的大概模樣的數學方法，稱為「推論統計」。
+敘述統計：描述樣本集合本身特性的數學方法，稱為「敘述統計」。
+
+
+
+
+參考圖形
+
+下圖來自「文文的統計園地」，是很好的參考資料。
+
+網址：http://tw.myblog.yahoo.com/wen-statistics/article?mid=21&prev=23&next=18&l=a&fid=5
+
+
+
+
+Facebook
+
+
+
+Facebook
+
+Wikidot
+
+
+Show Comments
+
+
+
+
+
+Add a New Comment
+
+
+Post preview:
+
+
+Close preview
+
+
+
+
+
+
+
+
+or Sign in as Wikidot user
+
+
+
+(will not be published)
+
+
+
+
+-
++
+
+
+                    Help: wiki text quick reference 
+
+
+
+
+
+
+
+
+
+
+
+Permanent Link
+Edit
+Delete
+
+
+
+
+
+本網頁的作者、授權與引用方式
+
+
+作者
+陳鍾誠，於金門大學資訊工程系，電子郵件：wt.ude.uqn|ccc#wt.ude.uqn|ccc，網站：http://ccckmit.wikidot.com。
+授權
+本文採用創作共用 (Creative Common) 3.0 版的 姓名標示─非商業性─相同方式分享 授權條款，歡迎轉載或修改使用，但若做為商業使用時必須取得授權，引用本文時請參考下列格式。
+中文版 (APA格式)
+陳鍾誠 (24 Aug 2011 07:29)，(網頁標題) 機率與統計 — 簡介，(網站標題) 陳鍾誠的網站，取自 http://ccckmit.wikidot.com/st:introduction ，網頁修改第 31 版。
+英文版 (APA格式)
+Chung-Chen Chen (24 Aug 2011 07:29), Retrieved from http://ccckmit.wikidot.com/st:introduction , Page Revision 31.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+page revision: 31, last edited: 31 Oct 2011 08:09
+
+Edit
+Rate (0)
+Tags
+Discuss (0)
+History
+Files
+Print
+Site tools
++ Options
+
+
+Edit Sections
+Append
+Edit Meta
+Watchers
+Backlinks
+Page Source
+Parent
+Lock Page
+Rename
+Delete
+
+
+
+
+
+
+
+
+
+Help
+     |
+    Terms of Service
+     |
+    Privacy
+     |
+    Report a bug
+     |
+    Flag as objectionable
+
+Powered by Wikidot.com
+
+
+                    Unless otherwise stated, the content of this page is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
+
+
+
+
+
+Other interesting sites
+
+
+
+
+
+
+Smallworld GIS Wiki
+          
+              Help and references for the Smallworld Community
+            
+
+
+
+
+
+
+
+Energy Club
+          
+              University of Alberta
+            
+
+
+
+
+
+
+
+Captain Barefoot
+          
+              The naturist guide to the Greek Islands
+            
+
+
+
+
+
+
+
+SCP Vakfı
+          
+              Güvence Altına Al, Muhafaza Et, Koru
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Click here to edit contents of this page.    
+
+
+
+        Click here to toggle editing of individual sections of the page (if possible).         Watch headings for an "edit" link when available.    
+
+        Append content without editing the whole page source.    
+
+        Check out how this page has evolved in the past.    
+
+        If you want to discuss contents of this page - this is the easiest way to do it.    
+
+        View and manage file attachments for this page.    
+
+        A few useful tools to manage this Site.    
+
+        See pages that link to and include this page.    
+
+        Change the name (also URL address, possibly the category) of the page.    
+
+        View wiki source for this page without editing.    
+  
+        View/set parent page (used for creating breadcrumbs and structured layout).    
+
+            Notify administrators if there is objectionable content in this page.        
+
+            Something does not work as expected? Find out what you can do.        
+
+            General Wikidot.com documentation and help section.        
+
+            Wikidot.com Terms of Service - what you can, what you should not etc.        
+
+            Wikidot.com Privacy Policy.          
+        
+
+

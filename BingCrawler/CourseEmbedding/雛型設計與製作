@@ -1,0 +1,1836 @@
+
+
+
+
+Prototyping：雛型方法
+
+
+
+Prototyping：雛型方法
+The materials in this page are adopted from 季延平與郭鴻志，系統分析與設計，
+華泰書局，1995。
+
+
+Prototyping（雛型方法）是在1980年代初期興起的一種軟體發展模式，其動機是希
+望能在限定期限內，以最經濟而快速的方法開發出系統的原型，以便即早澄清或驗證
+不明確的系統需求。
+
+雛型方法的優點有：
+
+ 增進用戶與分析師之間的溝通－document is hard to read
+ user-oriented (用戶互導) analysis and design
+ identify 衍生式之用戶需求－大部份時間，使用者並不清楚他要的是什麼
+ 降低風險
+
+雛型方法的種類
+雛型方法的種類：
+
+ 腳本法(Scenario)：依照使用者的使用腳本，利用傳統的非電腦媒體來模擬或
+敘述系統的使用情形。
+ 摹仿式(Mock-ups)：指先製作系統的部份用戶界面，針對一些需求不確定的系統
+功能，預先設定固定的輸入與輸出資料，然後以作假的方式來模擬該特定的系統功能。
+ 示範式(Demonstration)：指實際開發一部份的關鍵功能，並製作相當的完整的
+用戶界面，讓使用者有限度的實際操作，並從實際演練的過程中去確定系統是否滿足
+重要的功能需求。
+ 遞增式(Incremental)：將整個系統分為多個子系統，定義各個子系統之間的
+界面關係，然後由最關鍵的子系統開始雛型的工作，在確定了該子系統的需求之後，
+完成該子系統的開發，並先將該子系統交付客戶上線使用。隨後以同樣方法逐步開
+發其他子系統，直到系統完整為止。
+ 螺旋式(Spiral)：是指由系統的核心功能開始，先製作系統的第一版本，交付
+給客戶使用，並收集使用者之經驗及回饋，將原係統加以修改、擴充，為次一版本。每
+個版本都是一完整系統，功能與品質逐漸趨於完整。
+
+另一種分類方式：
+
+ 丟棄式 (Throwaway)：品質較佳
+ 演進式 (Evolutionary)：減短SDLC
+
+開發雛型之步驟
+依 Connell and Shafer(1989)之方法，開發雛型之步驟可分為三大步驟或七小驟。
+前三個小步驟又稱為開發初始雛型；第四個到第六個小步驟也稱
+示範評估雛型；最後一個小步驟稱為完善規格需求書。
+
+ Step1：快速規劃 (Rapid Planning)
+產生物為「雛型計劃書」(prototype statement)
+雖不列入正式的系統文件，但去是整個雛型過程的依據，大約5頁，而抱括以下項目：
+
+ 雛型目的：必要性及目標
+ 雛型範圍：系統功能的範圍及原因
+ 使用方法：方法及原因
+ 使用工具：工具及原因
+ 用戶責任：明確規定用戶在參與人員、資料提供與溝通之責任與義務
+ 交付項目：工作完成後必須交付之項目，通常抱括雛型本身，評估意見彙整，使用手冊初稿以及修正後之需求規格書 (software requirement specification)
+ 時程規劃：GANTT chart
+
+
+ Step2：快速分析 (Rapid Analysis)
+在幾天或幾星期內，完成功能分析，資料模式分析，與用戶界面分析
+
+ Step3：快速開發 (Rapid Development)
+一般在兩週內完成。由於時間壓力，對結構化及文件的要求不高，通常會使用非常
+高階的軟體工具（因此工具的使用與選擇非常重要，其要求為高速且易於修改）。
+開發的步驟分為：
+
+ 建立資料結構庫：統一規定共用資料的結構
+ 製作用戶界面：
+  
+ 界面的風格與佈局
+   重要的選單內容、按鈕
+   重要信息提示
+   基本錯誤信息
+  
+ 撰寫功能程式：開發關鍵部分，並與 (1)、(2) 銜接起來
+ 整合與測試
+
+
+雛型的開發工具：
+
+ user-interface management system (用戶界面管理系統)
+Visual Basic, Powerbuilder, ToolBook 與 Java & HTML 之 FORM
+ 第四代語言：dBase
+ 資料庫系統：Access
+ 可執行之高階語言 (Executable Specification Languages)
+
+
+ Step4：示範與評估 (Demonstration & Evaluation)
+由於雛型方法的目標是要即早確定不確定性，因此這個步驟和
+下一個步驟（Prototype Revision）是雛型發展最重要的步驟。
+
+ Step5：雛型修改 (Prototype Revision)
+針對step4的結果，進行修改
+
+ Step6：確定需求 (Requirement Approval)
+將 step 5 之成果再次給使用者確認「是否已將上次的缺點與問題解決了」，若發現
+新問題，需不斷進行修改，直到滿意為止。
+（分析師需特別註意，前一次被接受的功能，是不是在修改過程中被破壞了？？）
+
+ Step7：完善規格需求書
+
+
+
+軟體工程師要心理建設：
+
+ 不習慣與使用者一起工作
+ 與使用者非敵對的，認認需求
+
+
+第二個大步驟所需要進行的工作項目整理如下表：
+
+
+
+步驟工作項目備註
+
+1.準備雛型示範 辨認不同使用者角色
+                            募集示範對象
+                            選定示範的範圍
+                            準備示範腳本與講義 
+
+2.示範趨型描述示範的目的解釋示範內容及範圍開始示範開發者示範用戶自由操作 
+
+3.收集與分析使用者回饋收集使用者回饋記錄並分類回饋信息分析區分主要與次要需求解決有衝突之需求(避免現場解決）
+主要的四項問題那些功能不符需求？還缺那些功能？上次的問題是否修改？修改後，是否產生新問題？
+
+4.修改雛型決定修改範圍修改雛型適時停止遞迴應有預估時間，以避免無止境的繼續下去
+
+5.核定需求使用者逐步核定系統需求完成正式之需求規格書 
+
+
+
+管理上應註意的問題
+雛型方法在管理上應註意的問題：
+
+ 錶面上，似乎增加了工作，可是實際上 Prototype 可減短 SDLC，提高系統正確性
+與可用性，也因此降低了開發及維護成本。
+ 人員組成約三至五位，及這些人員須兼具分析師與程式員的專長（這方面的人
+員很少，專案經理須註重人才之培訓）
+ User-Oriented，因此使用者之參與及其投入之時間須列入專案成本。
+
+雛型之困難
+雛型之困難：
+
+ 缺乏prototyping之自動化工具。
+ 雛型系統缺乏一個有效的評估準則。
+ 雛型開發人在修改雛型的過程容易偏離目標。
+ 雛型需要大量用戶的參與，易使客戶方面的管理人卻步。
+ 專案經理人常有直接將雛型轉換成最終產品之傾向。
+ 專案經理人常有直接將雛型轉換成最終產品之傾向，犧牲的產品品質。
+
+雛型不適用之範圍
+雛型不適用之範圍：
+
+ 系統軟體 (OS or DB) 因無特定之使用群
+ 即時性控制系統 (realtime control system) (如捷運控制系統及航空控制系統)
+ Embeded System (嵌入式系統) 因沒有直接的用戶界面 (AWT,PACKAGE,API)
+
+
+
+
+
+國立交通大學機構典藏：軟體快速雛型使用者介面產生器之設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 軟體快速雛型使用者介面產生器之設計Design of User Interface Generator for Rapid Prototyping
+作者: 邱展鴻Chiou-Jaan Horng鍾乾癸Chyan-Goei Chung資訊科學與工程研究所
+關鍵字: 軟體快速雛型;使用者介面產生器;Rapid Prototyping; User Interface Generator
+公開日期: 1994
+摘要: 快速軟體雛型（Software Rapid Prototyping）是驗證需求規格一個好方
+法，透過軟體雛型規格之執行，可容易使客戶及分析師判斷功能規格之正
+確性。但目前之大多數軟體雛形工具，其使用者介面設計功能粗糙，因此
+其所設計出來的軟體雛型之畫面客戶並不熟悉，造成操作軟體雛型之困難
+。本論文設計與製作一個人機介面產生器（User Interface Generator
+- UIG），以配合物件導向快速軟體雛形環境（An Object-Oriented
+Prototyping Environment) AOORPE使用。此介面產生器提供一些標準畫
+面及元件模式供分析師組合及定義使用者所欲之畫面 ，且自動產生畫面
+規格程式，分析師在軟體規格程式插入呼叫敘述，當規格程式執行即可自
+動在適當時機提供使用者所欲之輸出入畫面，當畫面經使用者肯定後，將
+自動產生相對應之C程式供設計師使用。此系統已在IBM PC╱Window 上以
+Borland C語言及APOC個體導向資料庫製作完成。
+Software Rapid Prototyping has been convinced to be an
+effective and efficient approach to verify the requirement
+specification. It's easier to distiguish the correctness of
+function specification by the execution of software prototype.
+However, the most of the proposed software rapid prototyping
+tools cannot provide the capability of specifing user interface
+specifications really needed. That is, the end users may be
+unfamiliar with these user interfaces and thus feel hard to
+execute software prototype. In this paper, a UIG (User
+Interface Generator) for the AOORPE (An Object-Oriented
+Prototyping Environment) is proposed. This user interface
+generator provids a set of standard panel and components to
+assist analyst designing the user interface in a graphic-
+editing manner. In addition, it will transform the graphic-
+formatted user interface into the user interface specification
+program automatically. The analysts can insert the user
+interface calling statement into the prototype specification
+when the user interface is needed in prototype execution.
+Finally, once the user interface specifications are complete
+valided, this generator can also produce the corresponding C
+language code for continuous software developement phases. So
+UIG includes an editor, an interpreter, and a code generator.
+This user inetrface generator has been designed and implemented
+on the IBM PC Windows Environment by using the Borland C
+language and the APOC Object_Oriented Database Management
+System.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT830392085http://hdl.handle.net/11536/59014
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefGenerating user interface for mobile phone devices using template-based approach and generic software framework / Tsai, Ming-Jyh;Chen, Deng-Jyi電動巴士抬頭顯示器之介面設計 / 林欣瑩;Lin, Sin-Ying;張永佳;Chang, Yung-Chia利用視覺化使用者介面建構方法產生行動電話裝置使用者介面 / 蔡明志;Ming-Jyh Tsai;陳登吉;Deng-Jyi ChenWiki-based rapid prototyping for teaching-material design in e-Learning grids / Shih, Wen-Chung;Tseng, Shian-Shyong;Yang, Chao-TungImplementation of a Human-Centric GUI for Next-Generation Intensive Care Unit / Lu, Tsung-Che;Hsu, Shang-Hwa;Tzeng, Sing-Jia;Chang, Che-Ming;Van, Lan-Da應用於圖書館導覽的行動遊戲式學習系統之介面設計與評鑑 / 陳羿介;Chen, Yi-Chieh;陳昭秀;Chen, Chao-Hsiu淡江大學 - 多媒體教學軟體使用者介面之教材設計與發展 / 何政興; Ho, Cheng-hsing 國立臺灣科技大學 - 使用者導向圖形介面之多視窗軟體分析與設計 / 林華川; 楊鍵樵 國立臺北科技大學 - 供通道用之穿刺編解碼SIP產生器及視窗介面自由軟體設計 / 李文達 國立臺灣科技大學 - 行動多媒體通訊產品使用者介面設計之研究 / 徐瑜卿 國立臺灣科技大學 - 行動多媒體通訊產品使用者介面設計之研究 / 徐瑜卿 亞洲大學 - 以通用設計發展適用於高齡使用者之行動服務軟體介面 / 吳銜容;Wu, Hsien-Jung Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：一個設計邏輯資料庫的雛型專家系統之設計與製作
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 一個設計邏輯資料庫的雛型專家系統之設計與製作A prototype expert system for logical database design
+作者: 沈勤芳李素瑛楊維邦資訊科學與工程研究所
+公開日期: 1987
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT762392009http://hdl.handle.net/11536/53376
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefAn expert system for selecting and sequencing wastewater treatment processes / Yang, CT;Kao, JJ放電加工即時專家系統雛型之研製 / 施建伸;Shy, Jiann-Shin;唐佩忠;Tang, Pei-Chong一個安全控制系統的設計與應用 / 鄭東仁;Cheng Tung Jen;黃景彰;王丕承;Dr. Jing-Jang Hwang;Dr. PeCheng Wang模糊邏輯於品質管制圖診斷之應用 / 劉美利;M. L. Liou;許錫美;H. M. Hsu原型建築設計思考-原形系統構築 / 楊博輔;Yang, Po-Fu;曾成德;Tseng,Chun-TeiThe design of a JADE-based autonomous workflow management system for collaborative SoC design / Trappey, Charles V.;Trappey, Amy J. C.;Huang, Ching-Jen;Ku, C. C.A rule-based CBR approach for expert finding and problem diagnosis / Tung, Yuan-Hsin;Tseng, Shian-Shyong;Weng, Jui-Feng;Lee, Tsung-Ping;Liao, Anthony Y. H.用與關係式資料庫設計之專家系統 / 李東燦;LI, DONG-CAN;賈玉輝;杜敏文;JIA, YU-HUI中原大學 - 「神奇寶貝」---一個另類專家系統的設計與製作 / 夏延德;洪英伸 中原大學 - 一個自動化程式測試系統雛型的設計 / 林宏達; LIN, HONG-DA 國立臺灣科技大學 - 比喻設計邏輯資料庫之建構與初步應用 / 陳易廷 國立臺灣科技大學 - 比喻設計邏輯資料庫之建構與初步應用 / 陳易廷 國立臺灣科技大學 - 多資料庫系統網要與查詢轉換之設計與製作 / 呂永和 國立臺灣科技大學 - 多資料庫系統網要與查詢轉換之設計與製作 / 呂永和 元智大學 - 結構化文件資料庫設計與資料萃取之雛型探討 / 陳應傑; Yin-Jei Chen Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-網頁設計- 用Visio設計網站版面雛型::設計分享::荷斯特數位網頁設計::www.ideahost.com.tw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENGLISH
+簡體中文
+繁體中文
+網站導覽
+客戶登入
+首頁
+
+
+
+
+
+
+
+
+關於荷斯特
+最新訊息
+
+荷斯特公告
+設計分享
+
+
+設計作品
+
+企業網站
+購物網站
+入口平臺
+近期專案
+
+
+製作流程
+
+網站製作流程
+網站製作階段
+
+
+線上諮詢
+
+連絡我們
+網站製作諮詢
+常見問題
+
+
+留言版
+
+
+
+
+
+
+
+
+
+
+
+設計分享列表設計分享
+
+
+
+-網頁設計- 用Visio設計網站版面雛型
+        
+
+
+		time : 2009/4/5 下午 06:25:14    瀏覽次數：8224
+
+網站雛型這個名詞好像是最近才開始流行起來的，但對於行走在網頁設計業的企劃們應該不陌生。
+之前我都稱為首頁示意圖或是網站版面架構圖，這張圖代表著網站首頁、內頁的雛型規劃
+內容大概包括主導覽列、次導覽列、最新消息、圖片展示或是聯絡資訊。
+我想對於網站企劃來說，最難的是怎麼把網站的重點濃縮、視覺考量呈現於首頁。
+接下來，我以香蕉王的網站(製作網站企劃書)為範例，並使用Visio 2007 設計網頁示意圖，請大家參考看看
+ 
+1. 新增繪圖
+點選 "檔案>新增>新增繪圖" 或是 "Ctrl + N" ，接著選取元件圖形，基本上我只會選取基本流程圖形來用。
+雖然它有概念性網站圖形可以用，但是我覺得很醜，所以我只用基本流程圖形，這就是所謂的一招半式走江湖啦
+下一步，你可以在工具列選取 "圖形"  或是選取 "檔案>圖形"，然後再選取你要的元件圖形。
+ 
+
+ 
+2. 改變區塊外型
+將右側元件導覽列的程序，點選拖曳出來放在繪圖區，並選擇你要的區塊大小。
+點選 "右鍵>格式>線條"，改變區塊的線條粗細與顏色，粗細選 "9" 、 圓角 "2mm" 、 顏色 "黑色濃淡25%"
+ 
+
+ 
+
+ 
+3. 版面配置
+設定完成後就先配置網站首頁的版面位置(可參考網頁版面設計)，大小形狀會視規劃情況而調整。
+ 
+
+先將網站區分為三大區塊，網站識別區、頁面資料區、資訊聯絡區，每個區域適合放置功能大概如下：   
+#1：網站識別區，適合放置主導覽列、次導覽列、AD廣告、文字廣告等。
+#2：頁面資料區，適合放置分類導覽列、最新消息、熱門商品、FLASH主視覺動畫、會員登入區等等。
+#3：資訊聯絡區，適合放企業聯絡資料、文字分類連結(有助於Spider程式搜尋)。
+
+
+4. 規劃內容
+主導覽列包含，香蕉王簡介、運動訊息、商品情報、香蕉留言板、聯絡香蕉王。
+次導覽列包含，加入香蕉會員、登入、Sitemap、電子報、迴首頁。
+ 
+
+編輯文字，選擇工具列的 "文字工具" ，即可編輯。
+若在要區塊裡面編輯文字，也只要在該區塊點選兩下即可編輯，接著將圖形"Ctrl+A" 全選、"Ctrl+C" 複製。
+"Ctrl+V" 貼上WORD就可以了，完成的頁面和註解說明如下
+
+A：網站識別區，此區域放置，網站Logo、主導覽列、次導覽列。
+B：FLASH動畫區，此區域放置FLASH動畫，
+C：最新消息區，顯示近期運動訊息或是優惠活動等資訊。
+D：AD廣告區，可由後端管理系統控制，並支援.swf、.jpg、.gif格式。
+E：商品展示區，設定為當季新品圖片播放，可左右輪播。
+F：版權資訊區，內容包含分類文字連結頁面，版權宣告等資訊。
+ 
+製作首頁示意圖的最大優點莫過於縮減首頁的設計時間，並可以減少客戶對於首頁的認定差距。
+雖然 剛開始發想是很辛苦，但是對於一個專業的網站企劃來說 這個過程是很重要的
+在這個什麼都要求快的網頁設計行業裡，什麼都可以快，但是唯獨這個過程不能快
+當設計與程式拿到首頁示頁圖的時候，立刻瞭解首頁頁面需要怎麼設計，要寫什麼功能
+所以 這一張圖的功用遠比一張簡單的報價單或是一堆廢話文字來的更有意義。
+ 
+關聯文章：
+-網頁設計- 網址、伺服器、網站頻寬和內容製作 | 荷斯特數位網頁設計
+-網頁設計- 登錄你的網站、部落格 | 荷斯特數位網頁設計                
+
+----------------------------------------------------------------------------------------------------------------------------
+標籤：網頁設計
+ 
+相關連結：http://sony1708.pixnet.net/blog/post/24682853
+
+ 
+
+
+ 
+
+
+ 
+
+
+迴首頁 | 關於荷斯特 | 荷斯特公告 | 設計分享 | 設計作品 | 製作流程 | 聯絡我們 | 網站製作諮詢 | 常見問題 | 留言板 | 客戶登錄 | 網站導覽 | TOP
+
+
+Tel:臺中網頁設計專線-(04)-2310-7606，高雄網頁設計專線-(07)-741-3722 / Fax:臺中-(04)-2310-7606，高雄-(07)-741-0220 Email:services@ideahost.com.tw 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 成功簡報的第一步：畫張心智圖，轉換為簡報初稿！｜經理人
+TOP50每日一句職場英文課程活動雜誌Top50祕技專欄管理辭典每日一句職場SOS專題經理人商學院雜誌活動追蹤我們 Follow us！ Facebook Line slideshare 訂閱電子報個人成長工作效率思考方法成功學人際溝通簡報技巧學習方法情緒管理心靈勵志數位工作術會議技巧領導帶人的技術領導特質團隊建立決策力職場生涯職涯規劃職場生存術求職晉升目標管理觀念態度銷售與行銷業務銷售行銷公關客戶服務社群經營品牌人力資源管理選人用人薪資獎酬人才培育績效管理組織管理策略專案管理創新創業科技與趨勢財務與風險管理企業文化企業社會責任產品與生產管理職場英文實用祕技商管選書專欄職場 SOS管理辭典Manager's Life精選專題課程活動雜誌100MVP經理人影響力品牌市場情報RSS關於我們關於經理人月刊廣告刊登加入我們客服信箱 首頁個人成長工作效率思考方法成功學人際溝通簡報技巧學習方法情緒管理心靈勵志數位工作術會議技巧領導帶人的技術領導特質團隊建立決策力職場生涯職涯規劃職場生存術求職晉升目標管理觀念態度銷售與行銷業務銷售行銷公關客戶服務社群經營品牌人力資源管理選人用人薪資獎酬人才培育績效管理組織管理策略專案管理創新創業科技與趨勢財務與風險管理企業文化企業社會責任產品與生產管理職場英文實用祕技商管選書專欄職場 SOS管理辭典Manager's Life精選專題課程活動雜誌100MVP經理人影響力品牌市場情報RSS關於我們關於經理人月刊廣告刊登加入我們客服信箱首頁個人成長成功簡報的第一步：畫張心智圖，轉換為簡報初稿！簡報心智圖設計簡報Prototype高橋徵義  2015-02-17 16:00
+合作轉載
+簡報。小學堂
+ 297 在設計簡報時，若以線性方式逐張製作，很可能會在一開始花費過多時間處理前面幾張幻燈片的視覺效果，導致後面的幻燈片反而來不及製作。為了避免造成簡報頭重腳輕，或幻燈片前後風格不一致的狀況，您可以使用Prototype的設計方法來完成簡報的初稿。雛型（Prototype）簡單來說就是作品完成前的初胚，有可能是草圖，或是簡單的模型。而雛型設計法強調的是，以快速且低成本的方法來完成作品初胚，再透過不斷地修正與改良，來讓作品更加完美。雛型設計一直存在於我們生活週遭，蓋房子就是一個很好的例子，要蓋一棟房子前，建築師一定會先設計結構藍圖，並製作出模型屋，這就是房子的雛型。蓋房子是一個無中生有的過程，預先建構模型屋的好處，是讓所有人有實際想像與溝通的標的物，建築師可以透過它快速取得相關人員的意見回饋，並加以修正。簡報設計也是相同的道理，運用心智圖所發想的簡報架構，其實就是整場演說的設計藍圖。我們可以利用雛型設計法，快速地將它轉換成第一版簡報初稿，也就是「模型屋」。簡報雛型，讓您可以用全局的視野來作整體檢視，避免陷入見樹不見林的窘境。接下來將實際示範，如何將心智圖轉換成第一版簡報初稿。如果簡報是一場表演，那麼心智圖上的每一個「節點」就是劇本上的場景，它可以是一張幻燈片，也可以是一個重點項目。利用以下四個雛型設計步驟，就可以將心智圖轉換成簡報初稿。步驟一：確認完成的心智圖，每一個節點上的文字概念都已明確，如下圖。步驟二：接著請依照「一個節點，一張幻燈片」的原則，依序將每個節點上的文字內容，以巨大的文字標題放到每張幻燈片中，如下圖。步驟三：建立完所有幻燈片後，如果您的簡報軟體是Keynote，請切換到 光桌顯示模式 ；如果您的簡報軟體是PowerPoint，請切換到 投影片瀏覽模式，並對所有幻燈片進行整體檢視，如下圖。步驟四：檢視的原則有下列幾項，如下。幻燈片的位置是否合乎邏輯？單張幻燈片是否要拆成多張才清楚？幻燈片間是否要再補過場幻燈片來增加流暢度？哪些幻燈片可以省略？您可以任意更動幻燈片內容或位置、加入新幻燈片或移除不必要的項目，最後的目標就是設計出流暢的簡報劇本。簡報整體的流暢度，遠比單張幻燈片的精緻度來得重要。當完成第一版的簡報初稿，如果還有多餘的時間，就可以再為每張幻燈片進行美術設計。如果沒有多餘的時間進行細部設計呢？其實運用這份雛型並勤加練習，您也能上臺完成相當水準的簡報！簡報界知名的 高橋徵義 就是一個成功的例子。高橋徵義是日本的程式設計師。有一次他被指派隔天上臺簡報，但發現時間不夠再為幻燈片進行額外的美術設計，因此，索性將每張幻燈片的字型放到超大。高橋徵義上臺時以快速切換且流暢的方式進行簡報，意外收到不錯的效果。後來他把這個方法分享到網路上，結果大獲好評並廣為流傳，甚至這個簡報方式後來被網友稱為「高橋流」。「高橋流」不僅受到簡報專家的推崇，也影響了許多人對於簡報的觀點與做法。Chris 就曾經使用高橋流來準備一場簡報，只花了兩個小時就完成第一份簡報初稿。後來將這份簡報初稿分享至世界最大的簡報網站 Slideshare，結果當天就收到不錯的點閱率，一下就進入了排行榜，如下圖。只要願意不斷地嘗試與練習，相信您也可以！（本文出自於「簡報。小學堂」，原文請點此）@@ACTIVITYID:342@@From:: 104.199.203.235 《經理人》歡迎您投稿，分享職場心得及管理心法，共同探索企業管理新思維！
+加入我們FacebookGoogle+訂閱日報今日熱門文章一週熱門文章1「普通」不是 so-so，「給你」不是 give you！8句台式英文，你說錯了幾個？2你的薪資合理嗎？關於薪資，這些事你一定要知道...3拜訪 5000 位客戶後我才懂的事：頂尖業務 vs. 平凡業務，就在這 5 個差異！4Excel的高效秘訣！超好用的公式VLOOKUP，不同表單也能快速整合5上臺簡報、提案，穿著愈正式愈好？TED 內容總監的 4 個建議1柯文哲輔大演講給我的啟示：換了一個CEO，真的能改變一家公司嗎？2誠品創辦人吳清友驟逝！連虧15年，卻堅持一輩子做喜歡的書店3為何台灣人一聽到「絕對報酬」跟「保證有效」就嗨了？因為學校把我們「馴化」，卻沒教我們應付「變化」！4CEO 的真誠告白：面試過 1000 人後，我才發現這 4 件重要的事5「普通」不是 so-so，「給你」不是 give you！8句台式英文，你說錯了幾個？延伸閱讀 不懂這 10 個溝通技巧，簡報再有說服力也沒用！向 TED 學說話的技術
+ 18.04K 個人成長 千萬別一上臺就道歉、講笑話！絕對搞砸簡報、演講開場的6大錯誤
+ 18.46K 實用祕技 簡報高手的2個小技巧！再複雜的表格都能一看就懂
+ 10.59K 個人成長 如何把簡報上的字，做成專業的圖表？6 張圖，一次學會「資料視覺化」
+ 11.56K 個人成長 簡報圖表的 3 種「小心機」！報告這樣呈現，讓老闆看見你的優秀
+ 7.33K 個人成長 人生就是一場賽局！10張心智圖拆解《思辨賽局》，幫助你做出正確決策
+ 10.30K 專欄今日熱門文章一週熱門文章1「普通」不是 so-so，「給你」不是 give you！8句台式英文，你說錯了幾個？2你的薪資合理嗎？關於薪資，這些事你一定要知道...3拜訪 5000 位客戶後我才懂的事：頂尖業務 vs. 平凡業務，就在這 5 個差異！4Excel的高效秘訣！超好用的公式VLOOKUP，不同表單也能快速整合5上臺簡報、提案，穿著愈正式愈好？TED 內容總監的 4 個建議6每生氣 1 分鐘，就會失去 60 秒的快樂！3 個「抗負」習慣，幫你找回好心情7CEO 的真誠告白：面試過 1000 人後，我才發現這 4 件重要的事8誠品創辦人吳清友驟逝！連虧15年，卻堅持一輩子做喜歡的書店9人在公司，心卻不在？員工沒投入工作，是老闆這 4 件事沒做好10成功者每天都充滿動力的秘密！他們用這 12 個方法，激勵自己1柯文哲輔大演講給我的啟示：換了一個CEO，真的能改變一家公司嗎？2誠品創辦人吳清友驟逝！連虧15年，卻堅持一輩子做喜歡的書店3為何台灣人一聽到「絕對報酬」跟「保證有效」就嗨了？因為學校把我們「馴化」，卻沒教我們應付「變化」！4CEO 的真誠告白：面試過 1000 人後，我才發現這 4 件重要的事5「普通」不是 so-so，「給你」不是 give you！8句台式英文，你說錯了幾個？6工作的意義，不是為了施展抱負、追求更好的生活！執行長教會我的職場哲學7你的薪水算是高還是低？ 主計總處「薪情平臺」上線，一眼看出你是不是高薪族8想領高薪？先問自己有沒有「這項能力」9與其轉身離開，不如正視自己！工作越換越好，你要有的認知10滔滔不絕的口才，是銷售員最重要的武器？好業務絕不會這樣想！精選專題超級店長學，成為領導門市部隊的關鍵人物！叫你們店長出來，我想謝謝他！店長要懂銷售，更要會帶人！好店長該具備的7個角色會做、會賣、還要會帶人！具備這 5 力，你也能晉升超級店長怎麼讓員工覺得上班不無聊，業績還倍數成長？金牌店長的帶人筆記本2017超級店長學好評加開班│9/11、10/2 裝備你的領導力與業務力課程活動0725GOVSEC 2017 資己資彼 建構關鍵防護力(臺北場、高雄場)0726帶人的技術 | 從歷史學領導0802保健消費市場全解析0803引爆數位行銷力｜O2O行銷 ‧ 社群經營 ‧ 品牌共鳴08032017 SAMSUNG │未來商務力論壇本期雜誌特刊NO.1522017-07-01向TED學說話的技術如果你看過TED的演講，可能會以為，站在舞臺上的人都是說故事高手。其實那些感動你的話語，都經過不斷地調整、修正、演練，這表示，說話不是天賦，而是可改善的技巧。雜誌訂閱購買本期本期目錄電子雜誌您已閒置超過３分鐘了，為您推薦其他文章！或點擊空白處回到網頁熱門文章
+
+
+
+  閱讀型簡報的設計3部曲 – (二) 雛型階段 | 簡報。小學堂：簡報技巧, PowerPoint, Keynote, 圖像思考與表達
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pages Menu 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+Categories Menu 
+ 
+ 
+
+
+
+
+
+Home »
+授課歷程 » 閱讀型簡報的設計3部曲 – (二) 雛型階段					 
+
+Posted  on 九月 3, 2015 in 授課歷程, 簡報技巧 | 0 comments
+
+閱讀型簡報的設計3部曲 – (二) 雛型階段
+  上一篇文章 介紹的是「閱讀型簡報」設計的 (一)構思階段，最後的成果是一份文案初稿，如下圖。而本文將以《簡報化妝術》公開班文宣簡報為案例，針對 (二)雛型階段 做進一步說明，分享在 雛型階段 的設計心得與註意事項，以及你如何運用。 
+
+
+( 點選可看大圖 )   
+ 
+ 
+ 在第一篇文章中有提到「閱讀型簡報」只提供對方閱讀，講者沒有當面講解，所以設計重點會更註重在「如何掌握觀眾的註意力」。上篇文章提到，在構思階段是利用「問題設計」來「吸引觀眾註意力」，接下來困難點則是如何「維持觀眾註意力」？維持觀眾註意力的方式有很多，我用的是：透問題與解答的鋪陳，營造出一種對話效果。但你可能會好奇：「營造對話的效果會很難嗎？」回想一下，在生活中跟某些人對話很順暢，但是跟某些人對話就是卡卡的，差異在哪？就在對話的內容是否 有脈絡、合邏輯，「閱讀型簡報」的設計也是如此。如果簡報就像是一場電影，文案 就像 劇本，投影片 就像 電影畫面，將文案轉換成投影片，就像是導演將劇本拍攝成電影。導演在開拍之前一定會先製作「分鏡腳本」，它的用途是構思電影畫面是否有脈絡、合邏輯的工具，例如下圖就是《魔戒》電影的分鏡腳本。簡報也跟電影一樣，可以在製作投影片前先設計「分鏡腳本」，也就是所謂的「雛型簡報」。  但你可能會好奇問：「不是文案出來後直接做投影片比較快嗎？為何還要花時間做雛型簡報？」回到簡報實務，如果一拿到文案就開始設計投影片，就好像導演跳過「分鏡腳本」直接進入拍攝，因此常會遇到以下狀況：(1) 太註重畫面的細節，而忘記整體的脈絡，投影片很漂亮，但前後邏輯不對(2) 有可能前面花很多時間設計投影片，導致後面沒有時間思考結尾，頭重腳輕(3) 花了很多時間「刻畫」投影片，但後來發現這張投影片與目的無關，但卻捨不得刪掉，造成目的不清所以，雛型簡報 是幫助你用最低的成本先將整體脈絡構思清楚，以減少邏輯錯誤所浪費的時間。就好比蓋房子前一定先要有「藍圖」，等設計圖確認後再將它轉換成「雛型」，最後進行才進行施工。所以，簡報製作一樣可以分為三個階段：「筆記文案」→「雛型簡報」→「投影片」，而我通常會花80%心思在前面二個階段。無論是 藍圖 或 雛型，他們的目的只有三個：「溝通、溝通、再溝通」，跟業主、執行者、客戶溝通，有效降低彼此的落差與犯錯成本。雛型簡報 在工作實務相當實用，例如：主管交代做一份簡報，往往只知道大概的方向，如果過程中少了與主管的溝通與確認，因邏輯錯誤被修改的機會相對很高，甚至打掉重練。如果你願意花一點時間將 文案 轉換成 雛型簡報，透過雛型簡報來跟主管確認簡報的脈絡與重點，將幫助你有效降低修改成本，提高工作效率，當你可以準確完成主管交代的工作，在主管心中的價值自然會提升！另外，在簡報實務也會發生一種狀況，就是這份簡報需要多個人一起完成。過去做法很可能是由一個人統籌分配，大家再分頭進行，最後再由統籌者彙整，但人算不如天算，往往會發生 (1) 組合不起來、(2) 脈絡不順暢、(3) 風格不統一 的問題。如果大家願意花一點時間將目標、想法、脈絡先溝通清楚，並完成 雛型簡報，接著再分工執行，一定可以大大提升團隊的工作效率，成員輕鬆，統籌者也省事！關於更多如何設計 雛型簡報 的方法，大家可以參考我過去寫的一篇文章《將心智圖轉換成簡報初稿》，裡面有簡單的實務操作說明。而下圖就是《簡報化妝術》文宣的雛形簡報，這份雛型簡報有個特色，就是利用投影片的背景色來進行架構設計，顏色越深的投影片就是越上層架構，色彩分類的好處是容易看出內容層級，提高思考效率。 
+
+
+( 點選可看大圖 )   
+ 
+ 
+ 將 雛型簡報 完成後，(二)雛型階段 就告一段落。《下一篇文章》將針對 (三)設計階段 做最後說明。 
+ 相關文章閱讀型簡報的設計3部曲 – (三) 設計階段閱讀型簡報的設計3部曲 – (一) 構思階段2016年《簡報化妝術》公開班2017年《簡報化妝術》公開課非生活化簡報，讓外行聽懂，讓內行更懂Comments comments
+相關文章：
+閱讀型簡報的設計3部曲 – (一) 構思階段
+閱讀型簡報的設計3部曲 – (三) 設計階段
+《經理人月刊》決勝簡報力
+2017年《簡報化妝術》公開課
+
+
+ 
+ 
+
+
+
+
+
+  
+
+ 
+Popular
+Recent
+Random
+
+
+
+
+
+週日02
+同理心地圖，瞭解聽眾的好工具（下）
+Posted by Chris Lin in 圖像思考與表達, 簡報技巧
+ 
+週四02
+邁向卓越教學的五大簡報「心、技、巧」
+Posted by Chris Lin in 授課歷程, 簡報技巧
+ 
+週四03
+2016年《簡報化妝術》公開班
+Posted by Chris Lin in 授課歷程, 簡報技巧
+ 
+週二11
+簡報，我的感恩之旅
+Posted by Chris Lin in 授課歷程, 簡報技巧
+ 
+ 
+
+
+
+週一13
+2017年《簡報化妝術》公開課
+Posted by Chris Lin in PowerPoint, 授課歷程, 簡報技巧
+ 
+週日12
+2017年《簡報實戰班》公開課
+Posted by Chris Lin in 授課歷程, 簡報技巧
+ 
+週五03
+2017年《簡報五力全開》公開課
+Posted by Chris Lin in 授課歷程, 簡報技巧
+ 
+週六05
+閱讀型簡報的設計3部曲 – (三) 設計階段
+Posted by Chris Lin in 授課歷程, 簡報技巧
+ 
+ 
+
+
+
+週五21
+動人的文字，精簡而通俗
+Posted by Chris Lin in 簡報技巧
+ 
+週三12
+【簡報設計工作坊】第1期招生中！
+Posted by Chris Lin in 授課歷程, 簡報技巧
+ 
+週日16
+學王文華，體貼您的聽眾
+Posted by Chris Lin in 簡報技巧
+ 
+週三16
+簡報中「結構、簡化與強調」的實際運用
+Posted by Chris Lin in 簡報技巧
+ 
+ 
+ 
+ 文章分類 
+Keynote
+
+PowerPoint
+
+圖像思考與表達
+
+授課歷程
+
+教學方法
+
+生命故事
+
+簡報技巧
+
+
+ Facebook 粉絲頁 
+
+
+   
+ 
+ 
+ 
+ 
+
+
+Home
+
+Designed by Elegant Themes | Powered by WordPress
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	ProgrammerXDB Blog | 使用Sketch Flow專案設計WPF應用程式雛型(一)
+
+
+
+ProgrammerXDB Blog
+恆逸講師與您分享NET/JAVA/DB技術學習
+
+
+
+登入
+
+
+首頁
+封存
+聯絡
+訂閱
+以APML過濾
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<< 瞭解WPF觸發程序、動作與行為 | 
+      這樣的 SQL如何寫 (二)  >>
+
+
+使用Sketch Flow專案設計WPF應用程式雛型(一)
+by vivid
+5. 十月 2011 01:00
+.NET Magazine國際中文電子雜誌      作 者：許薰尹       審 稿：張智凱       文章編號：N111011701       出刊日期：2011/10/05 Sketch Flow內建於Expression 4設計工具中，提供一些指導原則，以便快速地建立Windows Presentation Foundation或 Silverlight類型的應用程式之雛型，並提供一些互動的機制，讓使用者藉以瞭解未來開發出的真正應用程式之長像。 Sketch Flow製作出的圖型，外觀看起來像是手繪的，客戶可以就應用程式的功能提供開發上的建議。本篇文章將介紹適用於Windows Presentation Foundation的Sketch Flow專案，讓讀者瞭解它的用途和基本功能。 設計Sketch Flow專案 Sketch Flow主要目地是提供使用者能夠對未來開發的應用程式介面，在操作方面的體驗，通常在開發應用程式的前期，可以先利用Sketch Flow描繪未來程式畫面，便於和客戶或使用者討論應用程式的細節，而不需寫程式來開發一個真正應用程式的雛型。 你可以在Expression Blend 4工具中設計Sketch Flow專案，當你建立此類型專案時，在Expression Blend 4工具會多出「Sketch Flow Feedback」、「Sketch Flow Animation」與「Sketch Flow Map」面版，便於設計應用程式的雛型。 目前在Expression Blend 4工具中，可以建立適用於Silverlight或Windows Presentation Foundation類型的Sketch Flow專案，為了展示，請參考圖1所示，在Expression Blend 4「New Project」視窗中，選取「WPF」->「WPF Sketch Flow Application」項目，來建立一個Windows Presentation Foundation類型的專案，並將名稱命名為「MyPrototype」。  圖 1：建立一個Windows Presentation Foundation類型的MyPrototype專案 當你按下「OK」按扭之後，Expression Blend 4便會自動建立兩個專案 ：一個是Windows Presentation Foundation類型的應用程式 (名稱為MyPrototype)；另一個是Sketch Flow專案 (名稱為MyPrototypeScreens)。 使用SketchFlow Map面版 Expression Blend 4設計工具底下有一個「SketchFlow Map」面版，「SketchFlow Map」面版用來定義應用程式未來將會有的畫面，並讓你定義畫面與畫面之間的操作流程。應用程式中的每一個畫面，在「Sketch Flow Map」面版中會以一個藍色底的矩型來表示，例如圖2顯示預設的Screen1節點。 圖 2 ：使用「SketchFlow Map」面版。 在「Sketch Flow Map」面版中要加入一個新畫面的步驟很簡單，你可以在「Sketch Flow Map」面版中空白地方按滑鼠右鍵，然後選取突顯式選單中的「Create a Screen」選項來建立畫面，參考圖3所示。 圖 3：「Create a Screen」選項。 畫面建立之後，只要雙擊代表畫面的藍色矩型方塊，就可以重新命名，或點選藍色矩型方塊按滑鼠右鍵，然後選取突顯式選單中的「Rename」選項來重新命名。 不過，本文範例要使用另一種變更名稱的作法。請參考以下步驟，將Screen1重新命名，先選取「Sketch Flow Map」面版中的Screen1節點，參考圖4所示： 圖 4：重新命名。 將游標停在Screen1節點上方，雙擊Screen1矩型方塊，就會進入編輯畫面，您就可以將其重新命名，本範例將名稱變更為「Main Window」，參考圖5所示。 圖 5：將名稱變更為「Main Window」。 新增畫面與設定畫面瀏覽 在「Sketch Flow Map」面版中，可以新增連結的畫面，並設定畫面與畫面之間的瀏覽順序。回到本文的範例專案，我們要建立一個新畫面(名稱為BookShelf)，並和Main Window畫面建立連結。請點選「Sketch Flow Map」面版中要連結的Main Window節點圖示 (有一個+號)，參考圖6所示。 圖 6：使用「Create a connected screen」項目新增畫面。 然後便會自動產生一個新畫面，預設的名稱為「New Screen」，你可以使用拖曳方式將其移動到適當位置，參考圖7所示。 圖 7：使用拖曳方式將節點移動到適當位置。 接著只要雙擊新產生出的「New Screen」節點，進入編輯模式後直接變更名稱為「BookShelf」，參考圖8所示： 圖 8：變更名稱為「BookShelf」。 利用相同的技巧，請自行利用拖曳方式產生一個連結到BookShelf的新畫面，並將名稱設定為「Book」，參考圖9所示。 圖 9：利用拖曳方式產生一個連結到BookShelf的Book畫面。 在「Sketch Flow Map」面版中，有一個綠色三角型的藍色矩型節點代表的是應用程式的起始畫面。若畫面有多個，您可以選取任一代表畫面的矩型節點，按滑鼠右鍵，然後選取突顯式選單中的「Set as Start」選項來改變起始畫面，參考圖10所示。 圖 10：使用「Set as Start」選項設定起始畫面。 使用者在操作Book畫面時，可能會想到回到BookShelf畫面，這時你可以設定雙向的連結。回到本文範例專案，請將滑鼠移動到「Sketch Flow Map」面版中選取Book節點，然後拖曳此節點到BookShelf節點的上方之後放開滑鼠，參考圖11所示。 圖 11：設定雙向的連結。 這樣就建立BookShelf與Book畫面之間的雙向連結，參考圖12所示。 圖 12：雙向連結。 新增視覺化標籤(Visual Tag) 在「Sketch Flow Map」面版中你可以針對其中的節點新增視覺化標籤(Visual Tag)，為不同的節點設定不同的背景顏色，藉此將節點進行分類的動作。只要在節點上按滑鼠右鍵，然後選取突顯式選單中的「Visual Tag」就會有一個表列顏色的顯示選單出現，你可以選擇其中的選項來變更顏色。回到本文範例專案，進行以下設定步驟，在「Exit」節點上，點選「Change Visual Tag」圖示，將範例專案中Exit節點的背景顏色設定為紅色的，參考圖13所示。 圖 13：使用「Change Visual Tag」選項變更背景顏色。  新增Sketch Flow控制項 在Sketch Flow專案設計畫面中，新加控制項的動作就和設計一般的Expression Blend 4程式差不多。在Expression Blend 4的「Assets」面版中，你可以看到許多後綴Sketch字串的控制項，這些就是為Sketch Flow專門設計的控制項，例如下圖所示的BasicTextBlock-Sketch、BasicTextBox-Sketch等等，參考圖14所示。 圖 14:加入Sketch Flow控制項。 回到本文的範例專案，為了展示我們在Sketch Flow的Main Window設計畫面中加入一個Button - Sketch，請從「Tools」-> 「Button - Sketch」，將「Button - Sketch」拖曳到Main Window設計畫面。參考圖15所示，按鈕的外框線條看起來彎彎的，不是垂直線條，這是由Expression Blend 4自動產生的，但看起來就像是手繪的一樣，這是Sketch Flow的特殊設計，用意是在提醒使用者，這只是應用程式的介面的草圖，這個設計出的畫面只是用來幫助製作應用程式的雛型，而不是設計應用程式最終使用的畫面，未來在程式開發階段，你可以將Button代換成WPF真正的控制項。 圖 15：加入一個Sketch Flow Button - Sketch。 若Sketch Flow控制項不敷所需，在必要時，仍可以將標準的Silverlight或Windows Presentation Foundation控制項加到設計畫面中使用。 回到本文範例專案，參考圖16所示，再加入一個TextBlock-Sketch控制項到「Main Window」設計畫面，並利用屬性視窗，設定Text屬性為「WPF Sketch flow Book Shelf展示」字串： 圖 16：加入一個TextBlock-Sketch控制項，並設定Text屬性。 您可以利用相同的技巧，為應用程式中的其它畫面，加上文字性的描述，在此不再敘述。 使用SKETCHFLOW PLAYER執行 當Sketch Flow專案設計完成後，你可以按F5按鈕來執行。執行時會利用一個SKETCHFLOW PLAYER程式來進行撥放。這個播放程式提供瀏覽工具列，讓使用者檢視應用程式的不同畫面，或應用程式未來將要呈現的動畫效果。 參考圖17所示，檢視Expression Blend 4設計工具的左方，有一個「SKETCHFLOW PLAYER」區塊可以進行撥放。在「SKETCHFLOW PLAYER」中有一個像房子造型的圖示便是應用程式的第一個畫面，也就是首頁，以本例而言便是Main Window。 圖 17：利用一個SKETCHFLOW PLAYER來進行撥放。 左方的「Navigate」區塊中列出Sketch Flow專案中所有的畫面，你可以任意點選瀏覽之，因為目前停留在Main Window的緣故，「Navigate」區塊跟據「Sketch Flow Map」面版中節點之間定義的連結關係，自動列出可以瀏覽到BookShelf與Exit畫面。 而點選「Map」後方的按鈕則可以在「Sketch Flow Player」的右下方Prototype Area畫面上顯示出整個Sketch Flow Map，如圖18的灰色區塊，你也可以直接點選Sketch Flow Map上的圖示來瀏覽到不同畫面。 圖 18：顯示出整個Sketch Flow Map。 設定畫面控制項的瀏覽規則 若要設定畫面控制項的瀏覽規則，例如按下畫面上的按鈕後，想要瀏覽到BookShelf視窗，設定步驟很簡單，回到本文範例專案，參考圖19所示，將滑鼠停留在Button上方，選取「Navigate to」->「BookShelf」，這樣就可以了。 圖 19：設定畫面控制項的瀏覽規則。 完成這個動作後，你可以觀察一下「Objects and Timeline」面版，在Button的下方將會自動建立一個NavigateToScreenAction項目，參考圖20所示。 圖 20：自動建立一個NavigateToScreenAction項目控制瀏覽。 若從屬性視窗中觀察NavigateToScreenAction的屬性，參考圖21所示，可以看到當Source Object (Button)觸發了Click事件時，便根據TargetScreen的設定切換到BookShelf： 圖 21：NavigateToScreenAction項目的設定。 設計Component Screen 你可以將Sketch Flow中的控制項包在同一個群組，成為一個Component Screen，這樣就可以重複的使用它。例如，當每個畫面都需要有一個選單列來進行瀏覽動作時，Component Screen就是一個不錯的選擇，可以節省你在每一個畫面中都拉一模一樣的控制項來組成選單的時間。在「Sketch Flow Map」面版中，Component Screen是一個綠色的橢圓型圖示，你可以為Component Screen加上動畫或特效。 回到本文範例專案，在「Sketch Flow Map」面版中修改一下BookShelf節點，新增連結畫面，讓BookShelf節點擁有四個子畫面，分別為Programming、Photography、Cooking與Comics，並建立雙向連結。接下來我們要產生一個選單，可以瀏覽到這四個子畫面，參考圖22所示： 圖 22：新增BookShelf子畫面。 請回到BookShelf設計畫面，從「Tools」->「Button - Sketch」，拖曳按扭到畫面，請在畫面中加入四個按鈕，分別利用屬性視窗設定它們的Content屬性為Programming、Photography、Cooking與Comics字串，並設好喜愛的背景顏色(Background屬性)或樣式，參考圖23所示： 圖 23：在畫面中加入四個按鈕。 接著利用前文提及的「Navigate to」功能，分別設定點選BookShelf畫面中的Programming 、Photography、Cooking與Comics按鈕後，將會瀏覽到Programming、Photography、Cooking與Comics畫面，參考圖24所示。 圖 24：設定「Navigate to」。 完成之後，使用滑鼠同時選取BookShelf畫面中的Programming 、Photography、Cooking與Comics按鈕，按下滑鼠右鍵，從突顯示選單中，選取「Make Into Component Screen」項目，參考圖25所示： 圖 25：選取「Make Into Component Screen」項目封裝成User Control。 接著便會出現一個「Make Into Component Screen」對話盒，你可以為Component Screen命名，本範例將其命為「myMenu」，Expression Blend 4便會自動將選取的按鈕包成一個User Control以便重複使用，參考圖26所示。 圖 26：設定名稱。 當你按下「OK」按鈕之後，專案中將會出現一個myMenu.xaml檔案，參考圖27所示。 圖 27：myMenu.xaml。 參考myMenu.xaml檔案的內容如下：  <UserControl         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"     mc:Ignorable="d"          x:Class="MyPrototypeScreens.myMenu"          x:Name="UserControl"          d:DesignWidth="524.262" d:DesignHeight="64" Height="64" Width="524.262">     <Grid x:Name="LayoutRoot">             <Button x:Name="btnProgramming" Content="Programming" HorizontalAlignment="Left" Style="{DynamicResource Button-Sketch}" Width="122.754">                  <Button.Background>                      <RadialGradientBrush>                          <GradientStop Color="#FFF7FBFB" Offset="0"/>                          <GradientStop Color="#FF20978F" Offset="1"/>                      </RadialGradientBrush>                  </Button.Background>                  <i:Interaction.Triggers>                      <i:EventTrigger EventName="Click">                          <pi:NavigateToScreenAction TargetScreen="MyPrototypeScreens.Screen_1_2"/>                      </i:EventTrigger>                  </i:Interaction.Triggers>              </Button>              <Button x:Name="btnPhotography" Content="Photography" Margin="126.754,0,253.508,0" Style="{DynamicResource Button-Sketch}" RenderTransformOrigin="-0.019,0.5">                  <i:Interaction.Triggers>                      <i:EventTrigger EventName="Click">                          <pi:NavigateToScreenAction TargetScreen="MyPrototypeScreens.Screen_1_3"/>                      </i:EventTrigger>                  </i:Interaction.Triggers>                  <Button.Background>                      <RadialGradientBrush>                          <GradientStop Color="#FFF7FBFB" Offset="0"/>                          <GradientStop Color="#FFBBD814" Offset="1"/>                      </RadialGradientBrush>                  </Button.Background>              </Button>              <Button x:Name="btnCooking" Content="Cooking" Margin="0,0,126.754,0" Style="{DynamicResource Button-Sketch}" HorizontalAlignment="Right" Width="122.754">                  <i:Interaction.Triggers>                      <i:EventTrigger EventName="Click">                          <pi:NavigateToScreenAction TargetScreen="MyPrototypeScreens.Screen_1_4"/>                      </i:EventTrigger>                  </i:Interaction.Triggers>                  <Button.Background>                      <RadialGradientBrush>                          <GradientStop Color="#FFF7FBFB" Offset="0"/>                          <GradientStop Color="#FFE7892A" Offset="1"/>                      </RadialGradientBrush>                  </Button.Background>              </Button>              <Button x:Name="btnComics" Content="Comics" Style="{DynamicResource Button-Sketch}" HorizontalAlignment="Right" Width="122.754">                  <i:Interaction.Triggers>                      <i:EventTrigger EventName="Click">                          <pi:NavigateToScreenAction TargetScreen="MyPrototypeScreens.Screen_1_5"/>                      </i:EventTrigger>                  </i:Interaction.Triggers>                  <Button.Background>                      <RadialGradientBrush>                          <GradientStop Color="#FFF7FBFB" Offset="0"/>                          <GradientStop Color="#FFA028A7" Offset="1"/>                      </RadialGradientBrush>                  </Button.Background>              </Button>          </Grid>      </UserControl>    另外Sketch Flow Map畫面上會出現一個綠色、橢圓型的myMenu圖示，並且有一個綠色的箭頭，以及虛線來指向BookShelf節點，參考圖28所示。 圖 28：Component Screen。 回到本文範例，你可以利用「Sketch Flow Map」面版，將Component Screen加到其它畫面，只要點選Component Screen的「Insert a Component screen」圖示，然後使用拖曳的方式，拖曳箭頭到代表畫面的節點上方放開滑鼠就行了，參考圖29所示。 圖 29：Insert a Component screen」。 因為本範例的情境設定Programming、Photography、Cooking與Comics畫面都需要myMenu，你需為這幾個畫面加上Component Screen，參考圖30所示。 圖 30：重複使用Component Screen。 若開啟Programming、Photography、Cooking與Comics對應的XAML設計畫面，畫面的上方會自動出現選單，參考圖31所示。 圖 31：在視窗中使用Component Screen。 參考Screen_1_4.xaml檔案，XAML會自動引用選單的UserControl命名空間，並在Grid之中加入一個myMenu控制項：  <UserControl         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:MyPrototypeScreens" x:Name="Screen_1_4_Name"          mc:Ignorable="d"          x:Class="MyPrototypeScreens.Screen_1_4"          Width="640" Height="480">     <Grid x:Name="LayoutRoot" Background="White">             <local:myMenu Margin="0,0,115.738,0" VerticalAlignment="Top" Width="Auto" d:IsPrototypingComposition="True"/>              <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="40" Margin="48,96,0,0" Style="{DynamicResource BasicTextBlock-Sketch}" VerticalAlignment="Top" Width="168" FontSize="29.333"><Run Language="zh-tw" Text="Cooking"/></TextBlock>          </Grid>      </UserControl>      未來若修改Component Screen的設計，要記得重新編譯你的專案，異動的部分才可以更新到每個使用到它的畫面，否則畫面上就會出現一個橘色的驚嘆號圖示。在看到此圖示時，只要選取Expression Blend 的「Project」選單->「Build Project」，當編譯的動作正確完成時，這個橘色的驚嘆號圖示便會自動消失，參考圖32所示。 圖 32：橘色的驚嘆號圖示表尚未編譯。 總結 Sketch Flow內建在Expression Blend 4設計工具之中，能夠快速建立Windows Presentation Foundation與Silverlight類型的應用程式之雛型。利用Sketch Flow建立應用程式的雛型後，可以便於和客戶討論應用程式的架構，讓客戶能夠想像出未來應用程式的長像，客戶也可以提供一些設計上的回饋。 將Sketch Flow製作出的雛型提供給客戶時，可以利用內建Sketch Flow撥放程式(Sketch Flow Player) 來瀏覽應用程式的不同畫面，並可以利用互動式的介面，提供評論、意見或加上註解。Sketch Flow Map面版用來定義應用程式雛型的結構。 Component Screen是一個可以重複使用的單位，您可以將畫面中的控制項包在同一個Component Screen，以便在多個畫面中重複使用。
+
+f7844e0c-5cc5-40e8-a8ff-3959061a1b34|5|4.0
+Tags: 
+Expression Blend | 許薰尹Vivid Hsu | WPF | .NET Magazine國際中文電子雜誌
+
+
+
+
+
+Permalink |
+    評論 (0)
+
+
+
+
+
+
+
+
+
+新增評論
+
+取消評論的回應
+名字*
+
+ 必填
+ 請選擇另一個名字
+E-mail*
+
+
+必填請輸入正確的 E-mail
+網站
+請輸入正確的網址
+國家
+
+[Not specified]
+Afghanistan
+Albania
+Algeria
+Argentina
+Armenia
+Australia
+Austria
+Azerbaijan
+Bahrain
+Bangladesh
+Belarus
+Belgium
+Belize
+Bolivia
+Bosnia and Herzegovina
+Brazil
+Brunei Darussalam
+Bulgaria
+Cambodia
+Canada
+Caribbean
+Chile
+Colombia
+Costa Rica
+Croatia
+Czech Republic
+Denmark
+Dominican Republic
+Ecuador
+Egypt
+El Salvador
+Estonia
+Ethiopia
+Faroe Islands
+Finland
+France
+Georgia
+Germany
+Greece
+Greenland
+Guatemala
+Honduras
+Hong Kong S.A.R.
+Hungary
+Iceland
+India
+Indonesia
+Iran
+Iraq
+Ireland
+Islamic Republic of Pakistan
+Israel
+Italy
+Jamaica
+Japan
+Jordan
+Kazakhstan
+Kenya
+Korea
+Kuwait
+Kyrgyzstan
+Lao P.D.R.
+Latvia
+Lebanon
+Libya
+Liechtenstein
+Lithuania
+Luxembourg
+Macao S.A.R.
+Macedonia (FYROM)
+Malaysia
+Maldives
+Malta
+Mexico
+Mongolia
+Montenegro
+Morocco
+Nepal
+Netherlands
+New Zealand
+Nicaragua
+Nigeria
+Norway
+Oman
+Panama
+Paraguay
+People's Republic of China
+Peru
+Philippines
+Poland
+Portugal
+Principality of Monaco
+Puerto Rico
+Qatar
+Republic of the Philippines
+Romania
+Russia
+Rwanda
+Saudi Arabia
+Senegal
+Serbia
+Serbia and Montenegro (Former)
+Singapore
+Slovakia
+Slovenia
+South Africa
+Spain
+Sri Lanka
+Sweden
+Switzerland
+Syria
+Taiwan
+Tajikistan
+Thailand
+Trinidad and Tobago
+Tunisia
+Turkey
+Turkmenistan
+U.A.E.
+Ukraine
+United Kingdom
+United States
+Uruguay
+Uzbekistan
+Venezuela
+Vietnam
+Yemen
+Zimbabwe
+ 
+	  
+biuquote
+必填
+
+評論
+線上預覽
+
+
+評論
+
+
+
+
+
+
+
+有評論時通知我
+
+5+5 = The captcha value you provided is incorrect.
+
+
+
+
+
+
+
+
+
+
+
+
+			.NET Magazine由恆逸教育訓練中心發行，部落格相關內容非經書面授權，請勿轉載或翻印使用。
+.NET Magazine服務信箱
+
+
+
+
+
+
+
+
+Search搜尋範圍包括讀者評論
+
+
+
+
+        NET Magazine國際中文電子雜誌
+
+NET Magazine國際中文電子版雜誌，由恆逸資訊創立於2000，自發刊日起迄今已發行超過500篇.NET相關技術文章，擁有超過40000名註冊讀者群。NET Magazine國際中文電子版雜誌希望藉於電子雜誌與NET Developer達到共同學習與技術新知分享，歡迎每一位對.NET 技術有興趣的朋友們多多支持本雜誌，讓作者群們可以有持續性的動力繼續爬文。<請加入免費訂閱>
+
+
+
+
+        作者群與技術分類
+
+.NET Framework (7).NET Magazine國際中文電子雜誌 (164)ASP.NET (32)ASP.NET MVC (28)ASP.NET Web API (6)ASP.NET Web Pages (1)Bootstrap (11)C# (13)Entity Framework (16)Expression Blend (8)HTML (18)ITSM行銷管理 (3)Java (3)JavaScript (18)jQuery (7)jQuery Mobile (4)jQuery UI (9)Knockout (1)MongoDB (3)NET 開發 (16)NoSQL (2)Oracle資料庫 (3)PowerShell (1)Responsive Web Design (3)SQL Server資料庫 (20)SQLite (2)Visual Basic (2)Visual Studio (22)WCF (6)WCF Web API (5)Windows Store App (7)WindowsAzure (4)WindowsPhone (7)WPF (13)XAML (5)王俊城Anderson Wang (2)申建忠Frank Shen (1)吳修福Hugh Wu (1)吳翠鳳Linda Wu (1)林國龍Bill Lin (1)胡百敬Byron Hu (2)徐重光Jim Hsu (1)高光弘 Ray Kao (2)張宏義Alan Chang (1)許明治Meiji Hsu (2)許薰尹Vivid Hsu (152)陳俊宇Derrick Chen (17)曾道隆Jack Tseng (1)楊先民Adonis Young (3)網路管理與通訊應用 (7)鄭淑芬Sophie Cheng (1)戴玉佩Patty Tai (1)戴谷州Ken Tai (1)職念文Dalen Chih (1)羅慧真Anita Lo (8)羅駿紘Benson Lo (1)
+
+
+
+
+        月分類Month List
+
+
+七月 2017 (1)六月 2017 (2)五月 2017 (3)四月 2017 (2)三月 2017 (3)二月 2017 (4)一月 2017 (3)十二月 2016 (2)十一月 2016 (3)十月 2016 (2)九月 2016 (2)八月 2016 (2)七月 2016 (2)六月 2016 (4)五月 2016 (3)四月 2016 (2)三月 2016 (3)二月 2016 (3)十二月 2015 (4)十一月 2015 (2)十月 2015 (3)九月 2015 (3)八月 2015 (2)七月 2015 (3)六月 2015 (2)五月 2015 (2)四月 2015 (3)三月 2015 (2)二月 2015 (2)一月 2015 (4)十二月 2014 (4)十一月 2014 (2)十月 2014 (2)九月 2014 (3)八月 2014 (3)七月 2014 (4)六月 2014 (3)五月 2014 (3)四月 2014 (3)三月 2014 (2)二月 2014 (3)一月 2014 (5)十二月 2013 (3)十一月 2013 (3)十月 2013 (3)九月 2013 (4)八月 2013 (4)七月 2013 (4)六月 2013 (3)五月 2013 (3)四月 2013 (3)三月 2013 (3)二月 2013 (4)一月 2013 (5)十二月 2012 (3)十一月 2012 (4)十月 2012 (4)九月 2012 (4)八月 2012 (4)七月 2012 (4)六月 2012 (4)五月 2012 (4)四月 2012 (5)三月 2012 (3)二月 2012 (4)一月 2012 (2)十二月 2011 (4)十一月 2011 (6)十月 2011 (4)九月 2011 (3)八月 2011 (3)七月 2011 (2)六月 2011 (4)五月 2011 (7)四月 2011 (3)三月 2011 (4)二月 2011 (2)一月 2011 (5)十二月 2010 (1)十一月 2010 (2)十月 2010 (2)
+
+
+
+
+
+        相關連結
+
+恆逸教育訓練中心
+
+
+
+
+        Blogroll
+
+
+恆逸IT管理學院
+
+Download OPML file 
+
+
+
+
+        Tag cloud
+
+ITSM ; ITIL; IT服務管理 Java;  web server java; Servlet ; ocpjwcd ; scwcd microsoft; .net ; TableAdapte microsoft; asp .net microsoft; exchange server 2010 microsoft; sharepoint 2010 microsoft; window server 2008 microsoft; window server 2008 ; hyper-v ; SCVMM Oracle ; optimizer_dynamic_sampling Oracle ; SQL PMP red hat ; linux ; red hat ; rhel6 ; rhce ; rhca 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

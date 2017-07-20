@@ -1,0 +1,3333 @@
+
+
+
+
+
+
+
+
+
+電腦視覺
+   
+
+
+
+
+
+
+
+高等電腦視覺 Advanced
+Computer Vision  (922
+U3910) 
+
+
+
+
+授課教授: 傅楸善教授
+email: fuh@csie.ntu.edu.tw
+web: http://www.csie.ntu.edu.tw/~fuh
+Tel: (02)23625336 轉 327
+上課時間: 週二下午789節 (2:20PM
+~ 5:20PM) 
+上課地點: 資訊工程系新館(德
+田館)R105
+辦公室時間: 週二上午11:00AM~12:00PM
+
+
+助教: 陳弘毅
+email:  r04922099@ntu.edu.tw
+辦公室時間: 週二下午3:00PM~5:00PM
+
+
+
+
+ 
+
+
+
+
+
+Textbook
+
+
+[1] Richard Szeliski, Computer Vision:
+Algorithms and Applications, 2010.
+
+
+
+
+References
+
+
+[2] Trevor Darrell's CS
+280 Computer Vision class at Berkeley
+
+
+
+[3] Antonio Torralba's 6.869
+Advances in Computer Vision class at MIT 
+
+
+[4] Michael Black's CS 143
+Introduction to Computer Vision class at Brown
+
+
+[5] Kristen Grauman's CS
+378 Computer Vision class at UT Austin
+
+
+
+[6] Alyosha Efros' 15-463
+Computational Photography and 16-721
+Learning-Based Methods in Vision classes at Carnegie Mellon
+
+
+
+
+
+[News]
+[Homeworks]
+[Class Materials] [Reference
+Materials]
+
+News
+Instructor
+of each chapter:
+CH1:
+   傅楸善
+
+
+
+
+
+
+
+
+
+
+
+
+
+CH2:    翁丞世
+
+
+
+
+
+
+
+
+
+
+
+
+
+CH3:    陳弘毅
+
+
+
+
+
+
+
+
+
+
+
+
+
+CH4:  
+  董子嘉
+
+
+
+
+
+
+
+
+
+
+
+
+
+CH5:     楊至柔
+
+
+
+
+
+
+
+
+
+
+
+
+
+CH6:      高咸培
+
+
+CH7:      曾子嘉
+
+
+CH8:    謝尊安
+
+
+
+
+
+
+
+
+
+
+
+
+
+CH9:    董子嘉
+CH10    楊至柔  
+CH11    高咸培  
+CH12    曾子家  
+Midterm
+2017/4/18(二) 2:20PM~5:20PM (範圍:期中考前上到的章節)
+德田105室
+Final Exam
+2017/6/20(二) 2:20PM~5:20PM (範圍:期中考後上到的章節) 德田105室
+作業分數
+
+Homeworks
+
+
+
+
+Regulations
+
+
+1. 
+
+
+Homeworks are to be
+turned in ON TIME by FTP(site: 140.112.31.83,
+username: 2017cv2,
+password: cv22017, port: 12000)before class starts! Late
+homeworks will be subjected to grade penalties (20% off)! Please
+compress the homework files to a rar or zip file. The filename format
+is Rxxxxxxxx_HWx.rar(ex. R97922160_HW1.rar). 
+
+
+
+
+2.
+
+
+Only electronic
+submissions are allowed! The homework should include two parts, the
+report and source code. File formats are restricted to Microsoft Word
+and Adobe PDF format. Failure to fulfill the file formats when
+submitting your homework will result with no grades. Also, please take
+note of the fields for submission.
+
+
+
+
+3.
+
+
+Your homework report
+should include the following contents: a description of your homework,
+the algorithm you used, your parameters (if any), your principal code
+fragment, and the resulting images (please paste the images in your
+report file). 
+
+
+
+
+
+
+ 
+
+
+
+4.
+
+
+Do not copy homeworks from others. Copying is
+cheating, and cheating is shameful. You and the person who let you copy
+his/her homework will both get a 0. In addition, you could be subjected
+to an on site demonstration for the following assignments.
+
+
+
+
+
+
+
+
+
+Homework
+1
+
+
+Image
+Matching (Detecting Motion Vectors)
+
+
+
+
+
+
+
+Detect motions vectors
+between trucka.im and truckb.im. 
+
+
+
+
+
+
+
+Use
+trucka.im as the basis, sample it by an 8x8, 11x11, 15x15, 21x21, 31x31
+block.
+
+
+
+
+
+
+
+Threshold
+of search range: 50 pixels. (This is a reference value only!)
+
+
+
+
+ 
+
+
+
+Images
+      trucka.im
+truckb.im
+
+
+
+
+
+
+
+Bitmap
+version of truck: trucka.bmp
+truckb.bmp
+
+
+
+
+ 
+
+
+Dimension
+of truck is 386x386 with 216 bytes of
+leading header.
+
+
+
+
+
+
+
+You
+must not use any available libraries beyond image I/O (reading or
+writing image files from/to the disk/memory). You must do all the
+requirements by writing your own code (called hardcore programming). 
+
+
+
+
+
+
+
+Due
+date: 2017/3/21
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+Homework
+2
+
+
+Camera
+Calibration
+
+
+
+
+
+
+
+Calculate
+the equivalent distance of the real world in 1 pixel of the digital
+camera.
+
+
+
+
+
+
+
+You
+may have to find the parameters of the digital camera you are using.
+
+
+
+
+
+
+
+Please
+specify the parameters you are using, i.e., focal lenght, object
+length, etc.
+
+
+
+
+
+
+
+Please
+tabulate your result in your report, there may be error between the
+true "theoretical" value and the value you measured, but don't worry.
+
+
+
+ 
+ If
+you have no camera, you can borrow the camera and take photo at room
+328.  
+
+
+
+
+
+
+Due
+date:2017/03/28 
+提供Sample照片作業可以直接使用 http://goo.gl/pWBNN0
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+Homework
+3
+
+
+Calculating
+Optical Flow
+
+
+
+
+ 
+
+
+Due
+date: 2017/6/6
+see handouts ch8 Chapter 8 (including HW3)
+
+
+
+
+ 
+
+
+
+
+Term
+Project
+
+
+Tentative
+term project problems: Exercises in textbook, (30%) total grade:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Submit one page in English explaining method, steps, expected results 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Submit report in a month: 2017/04/11
+
+
+
+
+
+
+
+
+
+
+
+
+
+Report progress every other week
+
+
+
+
+
+
+
+
+
+
+
+
+
+All right to be the same problem with Master's thesis
+
+
+
+
+
+
+
+
+
+
+
+
+
+Objective: a working prototype with new, original, novel ideas
+
+
+
+
+
+
+
+
+
+
+
+
+
+Objective: not just literature survey
+
+
+
+
+
+
+
+
+
+
+
+
+
+Objective: not just straightforward implementation of existing
+algorithms
+
+
+
+
+
+
+
+
+
+
+
+
+
+Objective: all right to modify existing algorithms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Class Materials
+
+
+
+
+ 
+
+
+Text
+
+
+
+
+ 
+
+
+Here it is!
+
+
+
+
+ 
+
+
+Handouts
+(PPT Format). 
+
+
+
+
+
+Chapter
+1a: Introduction  2017版 
+
+   Chapter 1b: Introduction&nbsp  &nbsp 2017版  
+
+
+
+
+ 
+
+
+
+Chapter 2:
+Image formation   2012版    2013版   2016版   2017版
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+Chapter
+3: Image Processing(1)    2013版
+
+
+
+
+Chapter
+3: Image Processing(2)    2013版
+2016版  2017版
+
+
+
+
+Chapter 4: Feature detection and matching;   2016版
+  2017版 
+
+
+
+
+Chapter 5: Segmentation    2013版     2016版
+  2017版 
+
+
+
+
+Chapter 6
+     2016版 2017版
+
+
+
+
+Chapter 7     2016版 2017版
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+Chapter 8  |  2016版  |  2017版 (including HW3)
+
+
+
+
+Chapter 9 |  2016版
+
+
+
+Chapter 10 | 2013版 | 2016版 | 2017版
+
+
+
+Chapter 11 | 2016版 
+
+
+
+
+ 
+
+
+ 
+
+
+ Chapter 12 | 2016版
+ Chapter 13
+
+
+
+
+Reference Materials
+
+
+
+
+ 
+
+
+
+
+  
+  
+
+
+
+
+
+高等電腦視覺 -課程概述
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+　
+　  
+
+
+
+:::
+迴首頁 | 
+網站導覽 | 
+快速鍵 | 
+English | 
+行事曆 | 
+緊急聯絡電話  | 
+臉書粉絲專頁
+
+
+
+
+
+
+
+
+
+ :::快速選單 
+訪客身份‧
+考生身份‧
+學生身份‧
+教職身份‧
+系友身份‧
+考古題
+
+
+
+
+
+
+
+
+
+
+
+
+ :::
+
+1電機簡介
+
+
+                    　　1-1系所介紹
+                    　　1-2中長計畫
+                    　　1-3歷屆主任
+                    　　1-4規章辦法
+                    　　1-5位置空間
+                    　　1-6捐款興學
+
+
+2公告事項
+
+
+　                    　2-1全部公告 
+                    　　2-2一般公告
+                    　　2-3學術活動
+                    　　2-4招生簡訊
+                    　　2-5相關規定
+                    　　2-6獎助學金
+                    　　2-7榮譽獎項
+
+
+3繫上成員
+
+ 
+                    　　3-1師資陣容
+                    　　3-2學生資訊
+                    　　3-3行政同仁
+                    　　3-4傑出校友
+                    　　3-5傑出系友
+
+4研究概況
+
+
+                    　　4-1研究計畫                      
+                    　4-2研究室
+                    　4-3實驗室
+
+
+5課程資訊
+
+
+                    　　5-1課程標準
+                    　　5-2課程概述
+                    　　5-3課程流程
+
+
+6就業資訊
+
+
+                    　　6-1廠商甄才
+                    　　6-2最後一哩
+                    　6-3替代役
+                    　　6-4產碩專班
+
+
+7相關連結
+
+
+                    　7-1系友會
+                    　　7-2本校首頁
+                    　　7-3網路電話
+                    　　7-4臉書專頁
+                    　　7-5其它連結
+
+
+8表單下載
+
+
+                    　　8-1學生相關
+                    　　8-2教師相關
+                    　　8-3其它表單
+
+
+9ｅ化系辦
+
+
+                    　　9-1學生相關
+                    　　9-2教師相關
+                    　　9-3網頁管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::首頁 > 
+                        課程資訊 >
+                      課程概述 > 
+                       高等電腦視覺                 
+
+
+
+
+:::
+                  高等電腦視覺                   
+
+                     3學分3小時
+                  
+
+
+
+
+
+課程名稱
+                    高等電腦視覺                 
+ 英文課程名稱
+                    Advanced Computer Vision                 
+ 中文課程概要
+                    電腦視覺簡介及其應用 影像形成 偵測與配對 影像分割 以特徵為基礎的定位 運動推論結構 運動估計 影像縫合 計算攝影學 立體對應 三維重建 影像辨識 
+
+ 英文課程概要
+                    Introduction and Applications of Computer Vision Image Formation Detection and Matching Segmentation Feature-Based Alignment Structure from Motion Motion Estimation Image Stitching Computational Photography Stereo Correspondence 3D Reconstruction Recognition 
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+
+10608臺北市忠孝東路三段1號　電話:(02)27712171 #2100　傳真:(02)27317187
+Copyright © 2017 國立臺北科技大學電機工程系  All Rights Reserved.
+如對網頁內容有任何建議,請與我們聯絡
+
+
+Visits since May 26, 2003.
+
+
+
+
+
+
+
+
+
+高等電腦視覺心得 | Mr.pojenlai
+
+
+高等電腦視覺心得 – Mr.pojenlai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+Primary Menu
+
+
+
+
+Mr.pojenlai
+
+
+
+Articles in this blog 
+AMMAI (17)
+
+Entrepreneurship (17)
+
+Observation (40)
+
+Practical (26)
+
+Robotics (23)
+
+ROS (52)
+
+
+網誌統計 
+78,985 點擊次數
+
+ 
+
+
+Skip to content
+
+
+
+
+Mr.pojenlai
+
+Baby steps to Giant strides.
+
+
+
+
+
+
+
+Observation 高等電腦視覺心得 Posted on March 19, 2015March 25, 2015 by pojenlai in Observation
+
+
+
+這學期修高等電腦視覺我覺得是個不錯的選擇(雖然因為seminar衝到不能修VFX有點可惜)，一方面是可以對整個電腦視覺領域重新go through一次，另一方面是笑話很紓壓(?)。
+這學期修這門課的目標就是要讓自己對傳統電腦視覺的方法有完整的概念，因為做研究常會需要用到很多種方法的混搭，如果能有完整的基礎，之後做起研究才會順，總是需要的時候才學其實挺痛苦的。所以上課的時候我其實不太在意助教講得是不是夠深入，因為我的重點是要讓自己對這個領域有一次完整的overview。另外，我有事先掃過投影片來設定一些我希望自己這學期能夠學會的問題，所以如果助教有講到、或是他講到一些我沒先設定好但重要的觀念，我就會想辦法問清楚，所以我覺得上課的過程滿輕鬆愉快的，而且經過幾周，一周都可以學到幾個我覺得不錯的新觀念(包含把之前不太懂的重新想一次，突然就會了)，算是很超值。
+另外我覺得笑話也挺不錯的，有些笑話是很紓壓、有些可以開我眼界、讓我知道原來世界上還有這麼有趣的東西，像是Zach King的特效就超酷的啊~讓我也很想在未來也學更多VFX和CG的東西(不過重點還是機器人的視覺啦)。
+ 
+
+Advertisements
+
+
+
+
+
+
+Share this:TwitterFacebookLike this:Like Loading...
+
+Related
+ 
+
+
+
+
+
+
+Leave a Reply Cancel reply 
+
+
+
+Enter your comment here...
+
+
+
+
+Fill in your details below or click an icon to log in:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+Email (required) (Address never made public)
+
+
+
+Name (required)
+
+
+
+Website
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ You are commenting using your WordPress.com account. ( Log Out / Change )
+
+
+
+
+
+
+
+
+
+
+
+
+ You are commenting using your Twitter account. ( Log Out / Change )
+
+
+
+
+
+
+
+
+
+
+
+
+ You are commenting using your Facebook account. ( Log Out / Change )
+
+
+
+
+
+
+
+
+
+
+
+
+ You are commenting using your Google+ account. ( Log Out / Change )
+
+
+
+
+Cancel
+Connecting to %s
+
+
+
+
+ Notify me of new comments via email.
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+%d bloggers like this:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 高等電腦視覺|電腦視覺介紹10筆-癮科技書籤
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+搜尋：高等電腦視覺網站相關資料
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+【希平方英文報】電腦盯整天雙眼乾澀？五個小動作改善眼睛疲勞
+
+4月 23, 2014
+希平方
+科技生活
+
+
+
+
+
+
+→觀賞完整字幕影片←現代人工作往往離不開電腦，在緊盯螢幕一整天後，常有 eyestrain（眼睛疲勞）的現象，在醫學上稱為 Computer Vision Syndrome（電腦視覺癥候群）。為幫助廣大電腦族保護靈魂之窗，美國科技網站CNET傳授以下5種舒緩眼睛疲勞的小撇步： 1. Adjust y...
+
+
+
+
+
+
+ 
+
+
+
+
+亞馬遜第一紅牌監視器創辦人獨家告白：軟體才是未來趨勢，硬體只是陪襯！
+
+7月 15, 2013
+news
+business
+
+
+
+
+
+
+ Dropcam的創辦人Greg Duffy以及Aamir Virani。 Photo: Dropcam.   靈感有時就存在於生活中的大小事，誰想得到新創網路攝影機公司DropCam（編按：一款可以用手機、平板電腦遠端操控的高畫質無線監視器，是亞馬遜監視類暢銷產品）概念竟是源自一隻隨地大便的狗？ ...
+
+
+
+
+
+
+ 
+
+
+
+
+Google 將電腦視覺與機器學習技術運用到 Google+ 中去，無需輸入標籤便能完成照片分類
+
+5月 24, 2013
+engadget中文
+google
+
+
+
+
+
+
+ 都 2013 年了，標籤（Tag）這種東西是不是有些過時了？在 Google 看來情況可能就是這樣（不過圈人又是另一回事了）。於是他們決定把電腦視覺與機器學習技術（computer vision and machine learning）運用到 Google+ 的照片自動分類功能中去，無需使用者手...
+
+
+
+
+
+
+ 
+
+
+
+
+德州儀器宣佈成爲嵌入式視覺聯盟創始會員
+
+6月 8, 2011
+news.tw
+科科來文
+
+
+
+
+
+
+   最新產業組織展現推動視覺技術的承諾，促進產業間關係爲工程人員開發創新視覺應用提供所需資訊與工具  德州儀器 (TI) 宣佈加入嵌入式視覺聯盟 (EVA，Embedded Vision Alliance)，不僅加強了其對視覺技術的一貫承諾，並且幫助客戶開發業界最具創新的硬體、開發工具與軟體，以簡...
+
+
+
+
+
+
+ 
+
+
+
+
+【希平方英文報】電腦盯整天雙眼乾澀？五個小動作改善眼睛疲勞
+
+4月 23, 2014
+希平方
+科技生活
+
+
+
+
+
+
+→觀賞完整字幕影片←現代人工作往往離不開電腦，在緊盯螢幕一整天後，常有 eyestrain（眼睛疲勞）的現象，在醫學上稱為 Computer Vision Syndrome（電腦視覺癥候群）。為幫助廣大電腦族保護靈魂之窗，美國科技網站CNET傳授以下5種舒緩眼睛疲勞的小撇步： 1. Adjust y...
+
+
+
+
+
+
+ 
+
+
+
+
+亞馬遜第一紅牌監視器創辦人獨家告白：軟體才是未來趨勢，硬體只是陪襯！
+
+7月 15, 2013
+news
+business
+
+
+
+
+
+
+ Dropcam的創辦人Greg Duffy以及Aamir Virani。 Photo: Dropcam.   靈感有時就存在於生活中的大小事，誰想得到新創網路攝影機公司DropCam（編按：一款可以用手機、平板電腦遠端操控的高畫質無線監視器，是亞馬遜監視類暢銷產品）概念竟是源自一隻隨地大便的狗？ ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+音效裝置 - 追求更好的遊戲體驗 CORSAIR SP2500 2.1聲道電腦喇叭分享 - 電腦 - Mobile01
+
+7月 18, 2017
+
+
+
+
+
+
+許多Gamer大都是使用遊戲機或是電腦來進行玩遍眾多遊戲的目的 對於慣用PC玩Game的使用者來說，在3D遊戲中的影音效果表現就顯得相當重要 首先對於影像方面需要能夠順暢運行的VGA再加上大螢幕LCD，讓視覺效果更好...
+
+
+
+
+
+
+
+
+
+
+
+
+
+電腦螢幕 - 享受3D新樂趣 - 華碩VG236H 3D螢幕套件開箱體驗 - 電腦 - Mobile01
+
+7月 20, 2017
+
+
+
+
+
+
+3D顯示技術從去年開始，在市場上就一直有著相當大的話題性，特別是在電影領域，"阿凡達"精彩緊湊的劇情加上驚人的3D特效，不僅為其創下電影史上的銷售佳績，也帶動後續3D電影的熱潮。而在今（2010）年的臺北國際電腦展期間，大會在信義區的世貿一 ......
+
+
+
+
+
+
+
+
+
+
+
+
+
+營業項目 - Coating-Glass‧全光武玻璃科技有限公司
+
+7月 16, 2017
+
+
+
+
+
+
+何謂夾紗玻璃： 夾紗玻璃是由兩片玻璃夾上下安全膠膜中間一層素材放置高溫爐內進行加溫烘烤使膠膜溶解成液化，將玻璃與素材結合再進行冷卻所製成的，此玻璃製品裝潢上美感不但加分又當其有所破損時整片玻璃不會散落以致割傷人。...
+
+
+
+
+
+
+
+
+
+
+
+
+
+電腦和網際網路 @ 香醇咖啡 :: 痞客邦 PIXNET ::
+
+7月 15, 2017
+
+
+
+
+
+
+交換機和路由器的應用，在網絡中是必不可少的，相對來說容易出現故障的機率也是比較大。尤其是交換機接口的問題也時將出現。大部分交換機都會有自我診斷的功能。當交換機或者交換機端口由於某些原因出現故障的時候，都會通過指示燈來告知 ......
+
+
+
+
+
+
+
+
+
+
+
+
+
+臺北市電腦商業同業公會 Taipei Computer Association
+
+7月 16, 2017
+
+
+
+
+
+
+編按：臺北國際電腦展的官方評選獎項-Best Choice Award，展期間不僅是海外買主的必看亮點，得獎產品也是最佳採購指南。這次本會編輯部特別採訪了今年30家得獎廠商，期望透過訪談，讓讀者們能夠更進一步瞭解...
+
+
+
+
+
+
+
+
+
+
+
+
+
+台灣日本 仿賽車 - #視覺係 - 無限狂熱# - PChome 個人新聞台
+
+7月 19, 2017
+
+
+
+
+
+
+YAMAHA FZR150‧FZ150‧FZ150N 上市至今，歷經十六年，雖可以說是歷久不衰，但無奈任何一種車，總會面臨停產的命運，自從1997年停止生產新車的那一刻起，FZ/R車主就開始面臨零件部品日漸稀少的窘境，直至今日，許多重要零件...
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yahoo!奇摩購物中心
+
+7月 20, 2017
+
+
+
+
+
+
+Yahoo奇摩購物中心提供3C,女生流行時尚,男生流行時尚,名牌精品,生活日用品,數位家電,美容保養,美食生鮮等50萬項以上商品讓您隨時享受購物服務,免運費,享有十天鑑賞期,快速到貨和超商取貨,搭配每日好康推薦,提供您網路購物第一好選擇!...
+
+
+
+
+
+
+
+
+
+
+
+
+
+白內障 - FAQ (常見問答) - 瑞光眼科
+
+7月 20, 2017
+
+
+
+
+
+
+白內障 是水晶體老化混濁，白內障手術必須裝一個人工晶體來取代原本的水晶體，白內障手術目前以超音波晶體乳化術是最先進的，技術純熟的醫生手術後遺症很少，成功率達98% ......
+
+
+
+
+
+
+
+
+
+
+
+
+
+3dWoo 大學簡體電腦書店
+
+7月 19, 2017
+
+
+
+
+
+
+3dWoo 大學簡繁體電腦書店,臺北市辛亥路二段171巷6弄8號(臺大側門星巴克巷子進入左轉),02-27328055 星期一~日：AM 12:00 ~ PM 9:00...
+
+
+
+
+
+
+
+
+
+
+
+
+
+高點研究所:教育研究所簡介
+
+7月 14, 2017
+
+
+
+
+
+
+教育研究所簡介,提供臺大,政大,交大,成大,中山,中央,中正大學等各校研究所最及時考情資訊!高點研究所:商管 財經 會計 法律 資訊 教育 社會 政治,第一等名師執教!輔考成績全國第一!...
+
+
+
+
+
+
+1 
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+最新文章
+
+
+全國統一教材古詩文增幅80 （附2018中大學聯考新增必背篇目）
+
+
+【國信宏觀固收】高收益債周報：上周行業利差較高的行業中，上中遊行業的表現明顯優於下遊
+
+
+重磅！這些腫瘤靶向藥進醫保瞭！藥價降幅最高超六成
+
+
+《我的前半生》：母親的格局，影響著女兒的婚姻
+
+
+You Are What You Wear: How To Dress For Management
+
+
+
+
+網友正在看
+
+
+又酷又實用的MP3頭帶
+
+
+Kindle Fire 即將把螢幕升級迎戰 Nexus 7
+
+
+LG 將在 9 月發表自主的手機用四核應用處理器 L9 ？
+
+
+
+
+熱門文章
+
+
+Office for iPad 終於要來了嗎？「傳說」會是明年...
+
+
+100年資訊月：Asus ZenBook UX21 筆電
+
+
+100年資訊月：RICOH GR DIGITAL IV （GRD4） 相機
+
+
+
+
+精選文章
+
+
+主流掰掰 一起進入獨立音樂的新時代！
+
+
+[文末有抽獎]熱門電影線上看，家庭娛樂影音體驗更升級~ myVideo 與 Chromecast 的
+
+
+【美國．西雅圖】Alki Bike Tour 吃這麼多，騎車都消耗不了卡路里
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[求救] 二678高等電腦視覺 - 看板 NTUcourse - 批踢踢實業坊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+批踢踢實業坊
+›
+看板 NTUcourse
+關於我們
+聯絡資訊
+
+
+
+
+返回看板
+
+
+分享
+
+
+
+
+
+
+
+作者nickchu35 (尼克祝爺)看板NTUcourse標題[求救] 二678高等電腦視覺時間Tue Mar  3 13:03:25 2015
+想請問同學
+我是有選到課的
+不過上禮拜二在上吐下瀉所以沒去聽第一堂
+聽說上課模式是同學互相準備投影片教學這樣嗎?
+還有聽說有作業
+想請問一下作業跟project的形式是如何
+然後ceiba上沒有課程網頁
+那是不是有老師自己的課程網站咧??
+先謝過各位大大~~~
+
+--
+※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 140.112.25.100
+※ 文章網址: https://www.ptt.cc/bbs/NTUcourse/M.1425359008.A.118.html
+推 cuteSquirrel:  http://cv2.csie.ntu.edu.tw/CV/cv2.htm 03/03 13:15
+→ nickchu35: 感謝強者救援, 不過還是不太懂project是怎麼回事~~?? 03/03 13:39
+推 cuteSquirrel: 選一個題目(可以從課本習題、或者論文reference找) 03/03 14:49
+→ cuteSquirrel: 提proposal,讓大TA或者老師同意，接下來就是 03/03 14:49
+→ cuteSquirrel: 每隔兩周 report一下進度或者心得。 03/03 14:50
+→ cuteSquirrel: 最後期末向老師登記時間，Demo給老師 or 大TA 看。 03/03 14:50
+→ nickchu35: 感恩感恩~~~結果我剛剛才發現這門課有考試....不知道老 03/03 15:49
+→ nickchu35: 師有沒有講到這部分...? 03/03 15:50
+推 cuteSquirrel: 會有一次 Midterm，一次 Final.都是紙筆測驗閉書考. 03/03 16:02
+
+
+
+
+
+
+
+
+
+
+
+[求救] 二678高等電腦視覺 | PTT 好讀
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+Ntucourse
+
+
+
+
+
+
+
+
+
+
+
+
+[求救] 二678高等電腦視覺
+作者 nickchu35
+看板 Ntucourse
+時間
+            
+                2015-03-03 13:03:25
+            
+        
+https://www.ptt.cc/bbs/NTUcourse/M.1425359008.A.118.html
+想請問同學
+我是有選到課的
+不過上禮拜二在上吐下瀉所以沒去聽第一堂
+聽說上課模式是同學互相準備投影片教學這樣嗎?
+還有聽說有作業
+想請問一下作業跟project的形式是如何
+然後ceiba上沒有課程網頁
+那是不是有老師自己的課程網站咧??
+先謝過各位大大~~~
+
+--
+※ 發信站: 批踢踢實業坊(ptt.cc), 來自: 140.112.25.100
+※ PTT 文章網址: https://www.ptt.cc/bbs/NTUcourse/M.1425359008.A.118.html
+
+
+
+
+
+
+1F推cuteSquirrel: http://cv2.csie.ntu.edu.tw/CV/cv2.htm 03/03 13:15
+2F→nickchu35:感謝強者救援, 不過還是不太懂project是怎麼回事~~?? 03/03 13:39
+3F推cuteSquirrel:選一個題目(可以從課本習題、或者論文reference找) 03/03 14:49
+4F→cuteSquirrel:提proposal,讓大TA或者老師同意，接下來就是 03/03 14:49
+5F→cuteSquirrel:每隔兩周 report一下進度或者心得。 03/03 14:50
+6F→cuteSquirrel:最後期末向老師登記時間，Demo給老師 or 大TA 看。 03/03 14:50
+7F→nickchu35:感恩感恩~~~結果我剛剛才發現這門課有考試....不知道老 03/03 15:49
+8F→nickchu35:師有沒有講到這部分...? 03/03 15:50
+9F推cuteSquirrel:會有一次 Midterm，一次 Final.都是紙筆測驗閉書考. 03/03 16:02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Re: [情報] 幻滅時刻預覽
+
+
+
+
+
+[新聞] 劉在錫樸明洙等再入軍營 拍攝《無挑》版
+
+
+
+
+
+[新聞] 被說大嬸很受傷 Yura在意顴骨想整形
+
+
+
+
+
+[新聞] 《大力女》在台首播破《太陽》紀錄
+
+
+
+
+
+[新聞] 乾淨街道不見了！中國人住進日本社區變這
+
+
+
+
+
+[分享] 圖畫出差廣州的生活紀錄
+
+
+
+
+
+[閒聊] Jayson Tatum 的身高有 6'9"  傑倫也長高
+
+
+
+
+
+[新聞] 向華強夫婦待蕭敬騰如自家人　蕭駕千萬名
+
+
+
+
+
+[新聞] 反年改群眾包圍立院爆發衝突 1員警送醫
+
+
+
+
+
+[新聞] 實測OPPO R11 自拍超清晰
+
+
+
+
+
+[情報] 爆料大神們討論的Galaxy Note8情報
+
+
+
+
+
+[新聞] 防彈少年團與川普並列 《時代》前25名最
+
+
+
+
+
+[問題] 為什麼高位的討論相比低位少很多
+
+
+
+
+
+[新聞] 伊賀跟甲賀大和解 握手言和
+
+
+
+
+
+
+
+
+
+
+
+
+[新聞] 4歲孩亂畫菜單被店員斥 老主顧：嚇到不敢
+
+
+
+
+
+[新聞] 一蘭第二間分店要開在哪？ 他點名竹科：
+
+
+
+
+
+[情報] TWICE JAPAN DEBUT BEST ALBUM『#TWICE』
+
+
+
+
+
+[新聞]  回歸中國20年 香港人熱衷移民台灣
+
+
+
+
+
+[新聞]2千字心路歷程！Dinter發聲明上大師仍是
+
+
+
+
+
+Re: [新聞] 建中生問蔣介石銅像 柯文哲直呼：你的題
+
+
+
+
+
+[0629] 聖獸覺醒.星寶 / 關銀屏.輝夜姬.始龍女.時龍契
+
+
+
+
+
+[情報] iPhone 8 dummy機上手影片
+
+
+
+
+
+[LIVE] 170629 日本デビュー記念 スペシャル生配
+
+
+
+
+
+[新聞] 結婚6月生3500克寶寶 優格姐姐挨轟說謊
+
+
+
+
+
+[新聞] 美軍艦停靠台灣港口 國防部：樂觀其成
+
+
+
+
+
+Re: [新聞] 結婚6月生3500克寶寶 優格姐姐挨轟說謊
+
+
+
+
+
+[歐洲] 七月置底曬卡區
+
+
+
+
+
+[情報] Red Velvet 7/9回歸 更新WENDY
+
+
+
+
+
+[新聞] Red Velvet發布充滿水果氣息的回歸照片
+
+
+
+
+
+[新聞] 「秋天就想到台灣」樸信惠笑容美炸：想多
+
+
+
+
+
+[情報] 170630 WINGS TOUR日本札幌場 南俊不參與舞蹈部分演出
+
+
+
+
+
+Re: [問卦] 為什麼共產主義在舊俄失敗，在中國成功
+
+
+
+
+
+[新聞] 葉毓蘭：向元首丟鞋法院認可無罪 勿侵害
+
+
+
+
+
+[新聞] 防彈Rap Monster受傷了！　「腳指甲掀起
+
+
+
+
+
+Re: [新聞] 南市「瘦身」大減逾100里 最快9月底定
+
+
+
+
+
+七月置底
+
+
+
+
+
+[問卦] 今年師大錄取分數會降嘛?
+
+
+
+
+
+[ＣＧ]7/3是依田芳乃的生日でしてー
+
+
+
+
+
+[閒聊] METHOD過了化身了
+
+
+
+
+
+Fw: [新聞] 直行遭救護車撞！　駕駛求260萬國賠敗訴
+
+
+
+
+
+Fw: [新聞] 烈陽無處躲 高市擬增設機車停等遮陽棚
+
+
+
+
+
+[新聞] 微博名「今天宋仲基宋慧喬結婚了嗎」每
+
+
+
+
+
+[新聞]警員托腮慢慢來 單親媽下跪救不回愛女外孫
+
+
+
+
+
+[創作] SKT板繪
+
+
+
+
+
+[新聞] 悚！胡志強一夕蒼老嘴歪 出院逞強開直播
+
+
+
+
+
+Re: [新聞] 免簽國167個勝中國　馬英九歸功台人行善
+
+
+
+
+
+[新聞] 悲！準新娘搭直升機給驚喜..竟婚禮成葬禮
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	National ChiNan University, Department of Computer Science and Information Engineering
+
+
+
+
+
+
+
+
+�I�W�U
+
+
+�����q����ı 
+			Spring 2008
+
+
+
+�Ǹ�
+�t��
+�Ǹ�
+�m�W
+
+MP1
+
+MP2
+
+MP3
+
+������
+				(in class)
+
+������
+				(take home)
+
+�������i
+				(�f�Y)
+
+�������i
+				(�ѭ�)
+
+�Ǵ����Z
+
+
+1 
+���� 
+96753002 
+���F�g
+85
+90
+92
+34
+38
+�@
+�@
+�@
+
+
+2 
+���� 
+96753004 
+���a�t 
+
+					100
+100
+
+					100
+46
+40
+�@
+�@
+�@
+
+
+3 
+���� 
+96753006 
+�����
+
+					100
+100
+
+					100
+48
+40
+�@
+�@
+�@
+
+
+4 
+���� 
+96753015 
+���綧
+80
+90
+�@
+19
+38
+�@
+�@
+�@
+
+
+5 
+���� 
+96753020 
+���f�o
+95
+95
+85
+47
+35
+�@
+�@
+�@
+
+
+6 
+���� 
+96753025 
+�E�߱j
+95
+95
+96
+34
+35
+�@
+�@
+�@
+
+
+7 
+���� 
+96753028 
+�L����
+95
+
+					100
+100
+41
+40
+�@
+�@
+�@
+
+
+8 
+���� 
+96753031 
+�d�[�H 
+80
+80
+92
+23
+37
+�@
+�@
+�@
+
+
+9 
+���� 
+96753033 
+�Ť�?? 
+
+					100
+85
+95
+45
+34
+�@
+�@
+�@
+
+
+10 
+���� 
+96753501 
+��Ͱa
+
+					100
+100
+
+					100
+44
+40
+�@
+�@
+�@
+
+
+11 
+���� 
+95753040 
+�Z����
+90
+95
+92
+32
+37
+�@
+�@
+�@
+
+
+12 
+��M�@ 
+96971006 
+���F��
+
+					100
+100
+
+					100
+52
+40
+�@
+�@
+�@
+
+
+13 
+��M�G 
+95971003 
+���]�o
+
+					100
+100
+
+					100
+44
+40
+�@
+�@
+�@
+
+
+
+
+ 
+
+
+
+
+ 高等計算機網路|網路計算機介紹|線上計算機下載資訊|線上計算機|計算機20筆-癮科技書籤
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+搜尋：高等計算機網路網站相關資料
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+文本直送科技新聞: 《星艦迷航記》寇克船長的指揮椅
+
+12月 17, 2016
+Twelve
+新奇搞笑
+
+
+
+
+
+
+想要過過指揮聯邦飛船的癮嗎？那得先準備一張船長寶座才行。這個坐起來十分舒服的豆袋沙發外型正是參考寇克船長那張有點像按摩椅的寶坐。        扶手的部分也忠實呈現劇中有按鍵的設計，不過在按的時候你可能要自己配個音…。    
+    售價89.99美元這裡有賣。    你或許會喜歡    4K ...
+
+
+
+
+
+
+ 
+
+
+
+
+【希平方英文報】電腦盯整天雙眼乾澀？五個小動作改善眼睛疲勞
+
+4月 23, 2014
+希平方
+科技生活
+
+
+
+
+
+
+→觀賞完整字幕影片←現代人工作往往離不開電腦，在緊盯螢幕一整天後，常有 eyestrain（眼睛疲勞）的現象，在醫學上稱為 Computer Vision Syndrome（電腦視覺癥候群）。為幫助廣大電腦族保護靈魂之窗，美國科技網站CNET傳授以下5種舒緩眼睛疲勞的小撇步： 1. Adjust y...
+
+
+
+
+
+
+ 
+
+
+
+
+亞馬遜第一紅牌監視器創辦人獨家告白：軟體才是未來趨勢，硬體只是陪襯！
+
+7月 15, 2013
+news
+business
+
+
+
+
+
+
+ Dropcam的創辦人Greg Duffy以及Aamir Virani。 Photo: Dropcam.   靈感有時就存在於生活中的大小事，誰想得到新創網路攝影機公司DropCam（編按：一款可以用手機、平板電腦遠端操控的高畫質無線監視器，是亞馬遜監視類暢銷產品）概念竟是源自一隻隨地大便的狗？ ...
+
+
+
+
+
+
+ 
+
+
+
+
+Google 將電腦視覺與機器學習技術運用到 Google+ 中去，無需輸入標籤便能完成照片分類
+
+5月 24, 2013
+engadget中文
+google
+
+
+
+
+
+
+ 都 2013 年了，標籤（Tag）這種東西是不是有些過時了？在 Google 看來情況可能就是這樣（不過圈人又是另一回事了）。於是他們決定把電腦視覺與機器學習技術（computer vision and machine learning）運用到 Google+ 的照片自動分類功能中去，無需使用者手...
+
+
+
+
+
+
+ 
+
+
+
+
+德州儀器宣佈成爲嵌入式視覺聯盟創始會員
+
+6月 8, 2011
+news.tw
+科科來文
+
+
+
+
+
+
+   最新產業組織展現推動視覺技術的承諾，促進產業間關係爲工程人員開發創新視覺應用提供所需資訊與工具  德州儀器 (TI) 宣佈加入嵌入式視覺聯盟 (EVA，Embedded Vision Alliance)，不僅加強了其對視覺技術的一貫承諾，並且幫助客戶開發業界最具創新的硬體、開發工具與軟體，以簡...
+
+
+
+
+
+
+ 
+
+
+
+
+【希平方英文報】電腦盯整天雙眼乾澀？五個小動作改善眼睛疲勞
+
+4月 23, 2014
+希平方
+科技生活
+
+
+
+
+
+
+→觀賞完整字幕影片←現代人工作往往離不開電腦，在緊盯螢幕一整天後，常有 eyestrain（眼睛疲勞）的現象，在醫學上稱為 Computer Vision Syndrome（電腦視覺癥候群）。為幫助廣大電腦族保護靈魂之窗，美國科技網站CNET傳授以下5種舒緩眼睛疲勞的小撇步： 1. Adjust y...
+
+
+
+
+
+
+
+
+
+
+
+
+
+順發3C - 電腦字典
+
+7月 17, 2017
+
+
+
+
+
+
+網站內容版權取自『2002最新電腦字典』。著作人 黃匡庸。著作財產權人 黃匡庸。發行人 施威銘 。發行所 ... A/D converter( 類比至數位轉換器) AA( 自動接聽)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+臺灣高等法院
+
+7月 14, 2017
+
+
+
+
+
+
+最高法院 最高行政法院 公務員懲戒委員會 臺灣高等法院 臺北高等行政法院 臺中高等行政法院 高雄高等行政法院 智慧財產法院 臺灣高等法院臺中分院 臺灣高等法院臺南分院 臺灣高等法院臺南分院...
+
+
+
+
+
+
+
+
+
+
+
+
+
+Network Optiminization Research Group
+
+7月 17, 2017
+
+
+
+
+
+
+2013/11/01 資訊安全 參考題目解答 請至Course下載 2013/5/03 高等計算機網路 課程投影片: - Network Planning & Capacity Management - Queueing Theory 請至Course下載 2013/4/25 高等計算機網路 Cloud Computing 影片共6部 連結請至Course...
+
+
+
+
+
+
+
+
+
+
+
+
+
+如何防制網路犯罪 - 如何防制網路犯罪 - 臺灣高等法院臺南分院檢察署
+
+7月 17, 2017
+
+
+
+
+
+
+一、傳播迅速： 網際網路具有無遠弗屆、迅速廣泛散佈的特性，其影響極大。 二、隱藏身分： 網際網路的來源網址可以假造，如阻斷服務攻擊極難追查。 三、蒐證不易： 電腦犯罪可能沒有現場、兇刀、血跡、槍彈、血衣等實體的跡證。...
+
+
+
+
+
+
+
+
+
+
+
+
+
+HKU SPACE - Advanced Diploma in Business Information Technology 商業資訊科技高等文憑 - Business Soft Skills, N
+
+7月 16, 2017
+
+
+
+
+
+
+HKU SPACE offers the Advanced Diploma in Business Information Technology -- This programme equips students with core theoretical and technical IT knowledge as well as skills to develop business applications and carry out IT supporting tasks for organisati...
+
+
+
+
+
+
+
+
+
+
+
+
+
+中華民國考選部(Ministry of Examination,R.O.C(Taiwan))全球資訊網 - 考政焦點快報（含最新消息）
+
+7月 20, 2017
+
+
+
+
+
+
+日期 103/2/18 上午 12:00 標題 103年專門職業及技術人員高等考試驗船師、第一次食品技師考試、高等暨普通考試消防設備人員考試、普通考試地政士、專責報關人員、保險代理人保險經紀人及保險公證人考試...
+
+
+
+
+
+
+
+
+
+
+
+
+
+中華民國考選部(Ministry of Examination,R.O.C(Taiwan))全球資訊網 - 考政焦點快報（含最新消息）
+
+7月 16, 2017
+
+
+
+
+
+
+日期 103/10/3 上午 12:00 標題 104年第一次專門職業及技術人員高等暨普通考試航海人員考試【舊案補考】 內容 考選部 公告 發文日期：中華民國103年10月3日 發文字號：選專四字第1033301784號...
+
+
+
+
+
+
+
+
+
+
+
+
+
+教室上課--國立嘉義大學電子計算機中心
+
+7月 16, 2017
+
+
+
+
+
+
+103學年度第1學期電算中心電腦教室進修部課表(A31-219教室) 節 次 星期一 星期二 星期三 星期四 星期五 18:30 A 19:15 資工進四 無線及寛頻網路 （王皓立） 資工進四 網路管理與維護 （楊慶裕） 19:20 B 20:05 資工進四...
+
+
+
+
+
+
+
+
+
+
+
+
+
+博客來-高等會計學新論(上冊)(7版)
+
+7月 15, 2017
+
+
+
+
+
+
+書名：高等會計學新論(上冊)(7版)，語言：繁體中文，ISBN：9789867473677，頁數：816，出版社：証業出版，作者：林蕙真、劉嘉雯、幸世間，出版日期：2013/08/29，類別 ......
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立高雄第一科技大學電腦與通訊工程系
+
+7月 17, 2017
+
+
+
+
+
+
+迴首頁 本系介紹 教育目標 歷史沿革 系所特色 本繫系徽 歷屆系主任 師資陣容 師資總表 資訊領域 徐偉智 教授 吳介騫 副教授 吳大鈞 副教授 蔡碩仁 副教授 江傳文 副教授 通訊領域 郝敏忠 教授 楊新雄 副教授 萬欽德 副教授...
+
+
+
+
+
+
+12 » 
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+最新文章
+
+
+全國統一教材古詩文增幅80 （附2018中大學聯考新增必背篇目）
+
+
+【國信宏觀固收】高收益債周報：上周行業利差較高的行業中，上中遊行業的表現明顯優於下遊
+
+
+重磅！這些腫瘤靶向藥進醫保瞭！藥價降幅最高超六成
+
+
+《我的前半生》：母親的格局，影響著女兒的婚姻
+
+
+You Are What You Wear: How To Dress For Management
+
+
+
+
+網友正在看
+
+
+又酷又實用的MP3頭帶
+
+
+Kindle Fire 即將把螢幕升級迎戰 Nexus 7
+
+
+LG 將在 9 月發表自主的手機用四核應用處理器 L9 ？
+
+
+
+
+熱門文章
+
+
+Office for iPad 終於要來了嗎？「傳說」會是明年...
+
+
+100年資訊月：Asus ZenBook UX21 筆電
+
+
+100年資訊月：RICOH GR DIGITAL IV （GRD4） 相機
+
+
+
+
+精選文章
+
+
+主流掰掰 一起進入獨立音樂的新時代！
+
+
+[文末有抽獎]熱門電影線上看，家庭娛樂影音體驗更升級~ myVideo 與 Chromecast 的
+
+
+【美國．西雅圖】Alki Bike Tour 吃這麼多，騎車都消耗不了卡路里
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

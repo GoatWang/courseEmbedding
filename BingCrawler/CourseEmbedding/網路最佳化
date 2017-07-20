@@ -1,0 +1,5021 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網路卸載和最佳化技術 | Microsoft Docs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網路卸載和最佳化技術
+
+
+2017/7/15
+2 分鐘可讀完
+
+
+
+
+適用於︰ Windows Server 2016
+
+您可以使用的是適用於 Windows Server 2016 的網路卸載和最佳化技術簡介本主題。
+註意此主題中，除了下列網路卸載和最佳化技術文件使用。
+
+交集的網路介面卡 (NIC) 設定指南
+資料中心橋接 (DCB)
+
+
+節目表卸載網路與 Windows Server 2016 最佳化技術現在已可供下載字格式 TechNet 主題館從每個技術和本主題，上述功能提供額外的詳細資料並將告訴您如何這些功能，協助讓網路更有效率。
+這些技術包括軟體只（...）功能和技術，軟體和硬體 (SH) 整合功能和技術和硬體只（哈）的功能和技術。
+重要讓功能和技術就可以在所有的硬體架構，無論 NIC 速度或 NIC 功能，在 SH 和哈功能在您的網路介面卡的支援的功能或技術時，才會出現。
+
+以下是詳細資訊的等 SH，且哈功能和技術適用於 Windows Server 2016。
+軟體只（...）功能和技術
+下列因此功能和技術適用於「Windows Server 2016 和所述網路卸載和最佳化技術指南。
+
+存取控制清單 (ACLs)。 存取控制清單是 HYPER-V 和軟體定義網路 (SDN) 第 1 版 (v1) 功能 vm 管理安全性。
+延伸 Acl。 HYPER-V Virtual 切換延伸 Acl 可讓您設定您的 HYPER-V Virtual 切換擴充連接埠存取控制清單防護防火牆並執行的承租人虛擬機器 (VMs) 能源的安全性原則。 擴充連接埠存取控制清單這個媒體櫃中的相關資訊，請查看建立與擴充連接埠存取控制清單的安全性原則。
+NIC 小組。 NIC 小組是彙總的多個 NIC 連接埠插入實體主機感知為單一 NIC 連接埠。 這提供的防護單一 NIC 連接埠失敗 \（或已連接到 it\ 電纜）。 它也彙總流量輸送網路。 適用於 NIC 聯合這個媒體櫃中的相關資訊，請查看NIC 聯合。
+軟體定義網路 (SDN) Acl。 在 Windows Server 2016 SDN 擴充功能有新的改進支援 Acl 方式。 Windows Server 2016 SDN v2 堆疊 SDN Acl Acl 與其延伸 Acl 使用。 您可以使用 Network Controller 管理 SDN Acl。
+服務 (QoS) SDN 品質。 在 Windows Server 2016 的 SDN 擴充功能有新的改進的方式，提供頻寬控制 \（輸出晚餐、出口限制，以及輸入 limits\）有序 5 元組個人檔案。 一般而言，這些原則已經套用 vNIC 或級 vmNIC，但他們可以更特定進行。 在 Windows Server 2016 SDN v2 堆疊，而不是 vmQoS 使用 SDN QoS。 您可以使用 Network Controller 管理 SDN QoS。
+切換 Embedded 小組 (SET)。 設定為替代 NIC 小組方案，您可以使用在 Windows Server 2016 包含 HYPER-V 和軟體定義網路 (SDN) 堆疊的環境中。 設定整合 NIC 小組的某些功能 HYPER-V Virtual 開關切換至。 切換 Embedded 小組此媒體櫃中的相關資訊，請查看遠端直接記憶體的存取 (RDMA) 並切換 Embedded 小組（設定）。
+軟體 virtual 收到側邊縮放比例 (vRSS)。 將在 VM 中的多個處理器邏輯 (LPs) vm 收到流量用於軟體 vRSS。  這可讓 VM 處理多個網路交通比單一 LP 來處理。 如需詳細資訊，請查看虛擬 Receive-side 縮放比例，在 Windows Server 2012 R2。
+服務 (vmQoS) 一樣品質。 一樣品質服務是 HYPER-V 功能，讓切換到上的 [交通由每個 VM 設定限制。 它也可讓 VM 預約頻寬外接式網路上的數量，如此一 VM 無法挨餓另一個 VM 頻寬。 在 Windows Server 2016 SDN v2 堆疊 vmQoS 會取代 SDN QoS。 
+
+軟體和硬體 (SH) 整合功能和技術
+下列 SH 功能和技術適用於「Windows Server 2016 和所述網路卸載並最佳化技術指南。
+
+匯集 NIC。 交集的 NIC 是一種技術，讓 virtual Nic HYPER-V 主機公開 RDMA 服務主機處理程序。 Windows Server 2016 年，在不同的 Nic 不再需要的 RDMA。 匯集 NIC」功能可 Virtual Nic 主機磁碟分割 (vNICs) 公開 RDMA 至主機的磁碟分割，並分享的 RDMA 交通和 VM 和其他 TCP 月 UDP 交通之間 Nic 頻寬相當且更容易管理的方式。   
+資料中心橋接 (DCB)。 DCB 是一套美國電子工程師 (IEEE) 標準，可讓匯集結構，在 [儲存空間、資料網路、叢集 Inter\ 處理通訊 (IPC) 和管理交通所有共用相同的乙太網路基礎結構資料中心]。 如需詳細資訊，請查看資料中心橋接 (DCB)。
+HYPER-V 網路模擬-v1 (HNVv1)。 HYPER-V 網路模擬 (HNV) 引進了 Windows Server 2012」中，可讓共用實體網路的基礎結構推移客戶網路的模擬。 使用實體網路 fabric 需要變更降到最低，HNV 提供服務提供者敏捷性部署與承租人工作負載移轉上的三個 cloud 的任何位置點一下︰ 雲端服務提供者、私人雲端，或是公用 Microsoft Azure 雲端。 
+HYPER-V 網路模擬-v2 NVGRE (HNVv2 NVGRE)。 在 Windows Server 2016 和系統中心一樣管理員] 中，Microsoft 會提供包含 RAS 閘道、軟體載入平衡、Network Controller and 多終端-網路模擬方案。 如需詳細資訊，請查看在 Windows Server 2016 的 HYPER-V 網路模擬概觀。
+HYPER-V 網路模擬-v2 VxLAN (HNVv2 VxLAN)。 查看先前的資訊。
+IPsec 工作卸載 (IPsecTO)。 IPsec 工作卸載是 NIC 功能可讓 IPsec 加密工作而使用處理器的作業系統。
+
+重要IPsec 工作卸載是一個過時的技術。 建議您不要使用 IPsec 工作卸載因為它可能不支援 Microsoft 未來。
+
+
+私人當地的區域網路 virtual (PVLAN)。 PVLANs 允許只有之間虛擬相同模擬伺服器上的電腦的通訊。 實體網路介面卡未結合私人 virtual 網路。 分開模擬伺服器，以及任何網路傳輸管理作業系統和外部網路上的所有外接式網路傳輸私人 virtual 網路。 這種類型的網路時，您需要建立隔離網路環境] 中的，例如隔離的測試網域。 HYPER-V 和 SDN 堆疊支援只 PVLAN 隔離式連接埠模式。
+遠端直接記憶體存取 (RDMA)。 RDMA 是網路的技術，提供了高輸送量、低延遲 cpu 最小化的通訊。 適用於 RDMA 此媒體櫃中的相關資訊，請查看遠端直接記憶體的存取 (RDMA) 並切換 Embedded 小組（設定）。
+收到縮放比例 (RSS) 側邊。 收到側邊的縮放比例是一個 NIC 功能，隔離，並串流的不同的設定，並傳送到不同的處理器進行處理。 這 parallelizes 處理，讓 [非常高資料率縮放主機網路功能。 如需詳細資訊，請查看收到側邊縮放比例 (RSS)。
+單根 Input\ 輸出模擬 (SR-IOV)。 SR-IOV 可讓您直接從而移動到 VM 不通過 HYPER-V 主機 VM 傳輸。 SR-IOV 是一項無與倫比 vm 效能改進。  它有，但是缺乏主機管理的管道的能力。  SR-IOV 只能使用時工作負載機種、，信任的網站，通常只有在主機中的 VM。 
+TCP Chimney 承載。 TCP Chimney 卸載，也就是 TCP 引擎卸載（配備），是一種技術，可讓卸載所有 TCP 處理 NIC 主機 因為 Windows Server TCP 堆疊幾乎更有效率比配備引擎，TCP Chimney 卸載不建議使用。
+
+重要TCP Chimney 卸載是一個過時的技術。 建議您不要使用 TCP Chimney 卸載因為它可能不支援 Microsoft 未來」。
+
+
+Virtual 的區域網路 (VLAN)。 VLAN 是延伸模組乙太網路畫面標頭，若要使用的區域網路分割多個 Vlan，每個使用自己位址的空間。  如需詳細資訊，請查看NIC 小組與區域網路 (Vlan)。
+一樣佇列 (VMQ)。 一樣佇列是針對每個 VM 配置佇列 NIC 功能。 而會收到交通分為適當佇列。  每個佇列中斷對應到不同的處理器。
+一樣 Multi\ 佇列 (VMMQ)。 一樣多佇列 NIC 功能可讓 vm 多個佇列將分散的資料傳輸，每個處理的其他實體處理器。 流量再傳送到 VM 中的多個 LPs 就和 vRSS 中。  如此一來非常大網路頻寬 vm 的形式傳遞。
+
+硬體只（哈）功能和技術
+下列哈功能和技術適用於「Windows Server 2016 和所述網路卸載和最佳化技術節目表。
+
+地址檢查值卸載。 地址檢查值卸載是 NIC 卸載的地址總和檢查 IP、TCP（UDP）NIC 硬體計算的兩個傳送和接收的功能。
+使用地址檢查值卸載秘訣。 地址檢查值卸載永遠應該不論了哪些工作負載或情況支援。  這所有最 basic 卸載技術會永遠改善您的網路效能。 檢查值承載也是需要其他無卸載運作包括收到側邊縮放比例 (RSS)、接收區段聯合 (RSC)，以及大型傳送卸載 (LSO)。
+中斷的仲裁（我是）。 我是緩衝多個收到封包之前中斷作業系統。 當 NIC 收到一封包開始計時器。  當緩衝已滿或計時器終止端視何者先，而中斷作業系統。
+巨大框架。 巨大畫面是讓應用程式將傳送更大的預設 1500 位元組畫面的網路介面卡、網路功能。
+大傳送卸載 (LSO)。 LSO 允許大片的資料，而和 NIC 休息而不將資料傳送至封包符合中最大值傳輸單元 (MTU) 之網路的應用程式。
+收到聯合 (RSC) 區段。 接收區段聯合，也就是大型收到卸載，NIC 功能都需要封包的相同串流到達之間網路中斷與之前將它們傳送給作業系統成單一封包聯合它們。 RSC 不適用於 Nic 結合 HYPER-V Virtual 切換。 如需詳細資訊，請查看收到區段聯合 (RSC)。
+
+如需詳細資訊，您可以下載節目表卸載網路與 Windows Server 2016 最佳化技術從 TechNet 中心。
+
+
+
+
+
+
+
+
+
+
+編輯										
+
+
+共用
+
+Twitter
+Facebook
+
+
+|
+
+佈景主題
+
+
+淺色
+深色
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳化您的網路用 Skype Online 企業版 - Skype for Business
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+試用 Microsoft Edge
+專為 Windows 10 設計、快速且安全的瀏覽器
+
+
+不，謝謝
+開始使用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft
+
+
+
+Office
+
+
+
+
+
+
+
+
+
+ 無結果
+
+
+
+
+0
+ 個項目在購物車中
+
+
+
+
+登入
+
+
+
+
+
+
+
+
+Office
+
+
+購買 Office 365
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+支援
+
+
+
+
+
+
+
+應用程式
+
+
+
+Access
+Excel
+OneDrive
+OneNote
+Outlook
+PowerPoint
+SharePoint
+商務用 Skype
+Visio
+Word
+
+
+
+安裝
+
+
+帳戶
+
+
+訓練
+
+
+系統管理
+
+
+
+
+
+
+
+
+
+
+最佳化您的網路用 Skype Online 企業版
+
+
+
+
+適用對象: 
+商務用 Skype Online
+更多...
+更少
+
+
+
+
+
+
+
+重要: 
+本文係由機器翻譯而成，請參閱免責聲明。本文的英文版本請見這裡，以供參考。
+
+
+下列需求是以確保所有的 skype，您會為您的組織設定的商務用 Online 功能的長期健康狀況和成功非常重要。 部分您非常技術-這份文件時，但是有一些您不知道。如果您需要協助設定商務用 Online 的 Skype，您應該瞭解熟悉您需要考慮的事項這份文件。Iit 也可讓您可在使用Microsoft FastTrack 中心、 Microsoft 服務與帳戶小組，或找出您可以在如何符合這些需求的Microsoft 合作夥伴談。
+
+
+快速概觀
+商務用 Skype 可讓您與公司內部或全世界的同事或商務夥伴進行連線。
+
+
+使用商務用 Skype，您可以︰
+
+
+使用立即訊息 (IM)、語音或視訊通話開始交談。
+
+
+查看您的連絡人上線有空、會議中或簡報中的狀態。
+
+
+為會議設定業界強度的安全性。
+
+
+在線上向廣大觀眾進行廣播。
+
+
+ 在會議期間使用您的螢幕進行簡報，或授與他人控制權。
+
+
+在其他 Office 程式中使用商務用 Skype 進行交談、通話或按一下即可加入會議。
+
+
+
+
+為什麼這是很重要？
+Voip 即時媒體 （音訊、 視訊及應用程式共用） 的品質大幅受到端對端網路連線的品質。商務用 Online 媒體品質的最佳的 skype，很重要，以確定是您的公司內部網路和商務用 Skype Online 之間高品質的連線。完成這項工作的最佳方式是網路的設定您的內部網路和雲端根據您容量，以容納尖峰流量的 skype 商務用 Online 的所有連線之間的連線。
+使用Microsoft 合作夥伴，您可以將各種不同的 Office 365 應用程式，包括 Skype 商務用 Online 在您的網路和即時語音雲端的連線，與商務用 Skype 的視訊通訊功能需要網路服務必須特別是設定為支援這些 Office 365 的即時工作負載。這包含有足夠的頻寬，可以執行需要的大量的流量與能夠為您的使用者支援服務品質 (QoS) 提供商務課程經驗的網路。
+以下資訊，以及有其他可協助您順利規劃及部署 Skype 商務線上服務和功能，並確定您的網路服務的符合這些需求的資源︰
+
+
+
+呼叫流程使用 ExpressRoute
+
+
+
+
+ExpressRoute 和 QoS 在商務用 Skype Online
+
+
+
+
+媒體品質及 skype Online 的商務用的網路連線效能
+
+
+
+
+
+商務用實作品質 skype 服務 (QoS)
+日前 skype 的商務用 Online，您應該看看您的網路容量處理音訊、 視訊及共用工作階段流量。 為適用於 Microsoft 已與其他 Office 365 服務，下載商務頻寬計算機用 Skype用來決定所需的網路流量的每個您公司的網站。 計算流量音量和分析資料如何影響您的整體網路，您應該執行使用模型，包括模型即時通訊流量媒體和公司的位置，每商務流量 Skype 金額。 完成後，此資料分析應提供建議您的網路位置需要改善和建議佇列大小，才能提供最佳的使用者體驗。
+即時流量的商務用 Skype 會區分封包遺失、 延遲和抖動，頻繁壅塞網路中的項目。 受管理的外部 Wan、 受管理的內部 Lan，以及企業架構 WiFi 網路也必須部署的服務 (QoS)-有時稱為 「 類別的服務的品質。 這是為了正確排列其優先順序 Skype 音訊和視訊等的商務即時流量的區域網路上其他非即時流量和上 WAN，為使用者建立更好的體驗。
+必須在 （加速轉接-DSCP 46） EF 部署音訊商務用 Skype 中 AF41，則必須部署佇列和影片商務用 Skype （確保轉接-DSCP 34） 佇列。 這是對等和會議的流量，無論是否要部署雲端 PBX 或其他電話語音功能是否也適用。
+在現有的服務品質原則可能是在已上 LAN 和 WAN 其他 IP 電話語音產品、 商務用 Skype 」 可讓使用者行動裝置，然後使用服務時移動不同位置。 因此，QoS 原則必須標記 LAN、 WAN 和無線網路上才能確定商務流量的所有 Skype 會被都優先順序受管理的網路。
+若要協助您將會調整您的網路，下載商務頻寬計算機用 Skype。
+如需媒體品質及 QoS 相關資訊，請參閱媒體品質及網路連線商務用 Skype Online 的效能。
+如需設定及管理 QoS 相關資訊，請參閱管理服務的品質。
+
+
+略過 proxy 和 WAN 最佳化裝置
+所有的 Office 365 的商務用 Online 包括 Skype 已加密，通常是無法檢查 proxy 的裝置。 基於下列原因建議略過 proxy 的所有 Office 365 的網路流量以連線至Office 365 Url 與 IP 位址範圍，讓您的使用者定義的裝置。由於 proxy 裝置可能會導致延遲的商務用 Online 媒體資料流即時 Skype 我們強烈建議略過 proxy 裝置最小的流量。
+Microsoft 建議排除將 Office 365 流量傳送至防火牆使用 PAC 檔案的 Office 365 Url。
+以下是可用資源，也可以幫助︰
+
+
+
+Office 365 效能調整使用比較基準和效能歷程記錄
+
+
+
+
+網路與移轉規劃 Office 365
+
+
+
+
+Office 365 Proxy Pac 產生器
+
+
+
+
+使用 WAN 最佳化控制器或流量/檢查裝置並使用 Office 365
+
+
+
+
+Office 365 的網路流量管理
+
+
+
+
+
+
+略過雙加密
+最佳可能的音訊及視訊體驗，請提供使用者，您必須執行防止 Skype 商務媒體 （音訊和視訊） 通過虛擬私人網路 (VPN) 通道的解決方案。 商務流量的所有 Skype 已都加密與傳輸層安全性 (TLS) 和媒體負載都加密與安全即時通訊協定 (SRTP)。 訊號使用 TLS 加密，並使用 SRTP 加密媒體負載。 傳送此流量透過 VPN 通道新增額外的加密與其他網路躍點之間的用戶端和 Office 365，這兩種可能會導致降級工作階段因為它會增加抖動封包遺失與延遲。
+若要防止 Skype 商務流量通過 VPN 通道的其中一個選項是分割通道。  若要執行分割通道，客戶應與 VPN 廠商上執行此動作軟體中的特定內容。
+
+
+附註: 這只是必要的商務媒體負載 skype，無法用於其他 Office 365 服務。
+
+其他資源：
+
+
+
+啟用 Lync 媒體略過 VPN 通道
+
+
+
+
+直接存取，需分割通道，並強制通道
+
+
+
+
+啟用直接存取
+
+
+
+
+
+確定已開啟的正確的連接埠和通訊協定
+客戶必須確定的 Url 與 IP 性所需的 O365 服務的地址。所有的 IP 位址和 Url 的商務用 Skype Online 的完整清單，請參閱Office 365 Url 與 IP 位址範圍。
+適用於商務用戶端的 Skype 使用各種不同的連接埠和通訊協定。 方向和商務工作階段 Skype 網路流量的流量會根據互動 （多方對等與） 的類型而有所不同因使用的內容共用及語音和視訊。 您必須檢閱，並開啟清單連接埠與通訊協定，尤其要註意的來源與目的地連接埠。 例如音訊的流量會在用戶端，使用只 20 連接埠 (50000 50019 TCP/UDP)，但目的地連接埠 10 K 連接埠範圍 (50000-59999 TCP/UDP) 服務旁的任何位置可能是。這也包括防火牆上開啟 TCP 443 和 UDP 3478。
+支援線上商務用 Skype 也可能需要額外的網路設定。
+您可以從您的用戶端執行 FastTrack Cloudapp 測試，以驗證項目已設定權限的電腦︰
+
+
+
+於北美︰
+
+
+
+
+Office 365 的快速入門網路分析 （北美）
+
+
+
+
+https://137.117.72.96
+
+
+
+
+
+
+針對 EMEA:
+
+
+
+
+Office 365 的快速入門網路分析 (EMEA)
+
+
+
+
+https://137.116.212.202
+
+
+
+
+
+
+針對 APAC:
+
+
+
+
+Office 365 的快速入門網路分析 （亞太地區）
+
+
+
+
+https://168.63.169.67
+
+
+
+
+
+您也可以查看，設定您的網路的商務用 Skype Online
+
+
+使用電話和裝置最佳化商務用 Skype
+媒體即時工作階段，媒體裝置所使用的耳機等網頁 cams 所有參與者會有大幅整體音訊及視訊品質。低品質裝置或裝置並不正確的裝置驅動程式使用會產生音訊和下方圖像視訊品質較低的整體音效的品質。認證裝置或高品質的裝置，相反地，協助取消雜音篩選、 視訊的解析度並降低延遲。
+電話和裝置讓使用者實在太多了不同的音訊及視訊品質。 商務用 Skype 憑證計畫 」 Lync 相容 」 的程式演變，而驗證的裝置符合 Microsoft 標準的音訊和視訊。 有幾個 IP 電話、 USB 音訊及視訊裝置、 電腦和會議的測試，由 Microsoft 限定會議室裝置。 您組織中，您應該檢閱適用於商務用 Skype，並工作提供不同的裝置，就需要不同的裝置的清單及個人的喜好設定的使用者。
+支援和通過認證的裝置上，請參閱下列內容以取得詳細資訊︰
+
+
+
+設定商務用 Skype Online 的電話
+
+
+
+
+電話和裝置的商務用 Skype
+
+
+
+
+個人的周邊解決方案目錄
+
+
+
+
+Microsoft lync 適用的電話和裝置
+
+
+
+環境及使用者的會議及使用音訊及視訊裝置周圍的區域是另一個顯示較大的因素音訊及視訊的品質。從雜訊環境撥號的使用者會有回應，muffled 與語意不明音訊。深灰色或低精簡環境中的使用者將無法產生明亮、 清除影像視訊的品質。在會議空間設定中，麥克風和視訊裝置的位置，會有在參與者會收到的音效和圖像品質直接的影響。
+若要取得更清楚的使用者的音訊及視訊體驗使用圖片 Skype 商務應用程式的工具>選項>音訊裝置或視訊裝置中使用的裝置中進行變更，並自訂的設定。您也可以按一下 [檢查通話品質檢查通話的音訊品質。如果，按一下 [檢查通話品質] 時，他們可以然後報告的品質及測試通話中找到的問題。
+
+
+ 
+
+
+
+附註: 機器翻譯免責聲明︰本文係以電腦系統翻譯而成，未經人為介入。Microsoft 提供此等機器翻譯旨在協助非英語系使用者輕鬆閱讀 Microsoft 產品、服務及技術相關內容。基於本文乃由機器翻譯而成，因此文中可能出現詞辭、語法、文法上之錯誤。
+
+
+
+
+請參閱
+
+ExpressRoute 和 QoS 在商務用 Skype Online
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									擴展您的技能
+								
+探索訓練
+
+
+
+									優先取得新功能
+								
+加入 Office 測試人員
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+這項資訊有幫助嗎？
+
+
+是
+否
+
+
+
+
+太好了! 還有其他意見反應嗎?
+我們應該如何改進?
+
+
+
+傳送​​
+不，謝謝
+
+
+
+
+感謝您的意見反應!
+
+
+感謝您的意見反應! 我們將協助您與其中一位 Office 支援專員連絡以深入瞭解您的意見。
+
+連絡客戶支援
+
+
+
+
+
+×
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+暴雪客服支援
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+《鬥陣特攻》職業電競聯賽《鬥陣特攻》世界盃《爐石戰記》全球巡迴賽《暴雪英霸》全球冠軍賽《星海爭霸II》世界盃聯賽《魔獸世界》競技場世界盃聯賽
+登入帳號設定建立免費帳號%USER_BATTLETAG%%USER_BATTLETAG_CODE%%USER_EMAIL%帳號設定登出
+登入客服支援0帳號設定建立免費帳號%USER_BATTLETAG%%USER_BATTLETAG_CODE%%USER_EMAIL%客服支援0帳號設定登出
+
+
+
+首頁遊戲商店最新消息電子競技客服支援帳號工作機會公司介紹
+
+
+
+
+
+
+
+
+%PROMO_LABEL%%PROMO_TEXT%%PROMO_LINK_TEXT%
+
+
+
+
+
+
+
+
+                    客服支援
+                
+
+
+
+
+                    聯絡客服支援
+                
+
+
+
+
+                        我的回報單
+                
+
+
+
+
+
+
+
+客服支援
+
+
+
+
+我的回報單
+
+
+
+
+                    聯絡我們
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+最新消息 JCB卡付費系統維護
+			
+
+
+
+
+
+
+
+
+
+找不到此網頁。
+我們找不到此網頁。
+暴雪客服支援首頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+繁體中文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+區域
+
+美洲與東南亞
+
+
+
+
+
+
+
+歐洲
+
+
+
+
+
+
+
+韓國
+
+
+
+
+
+
+
+台灣
+
+
+
+
+
+
+
+中國大陸
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+語言
+
+
+
+English (US)
+
+
+
+
+
+
+
+Español (AL)
+
+
+
+
+
+
+
+Português (AL)
+
+
+
+
+
+
+
+ภาษาไทย
+
+
+
+
+
+
+
+日本
+
+
+
+
+
+
+
+
+
+
+
+Deutsch
+
+
+
+
+
+
+
+English (EU)
+
+
+
+
+
+
+
+Español (EU)
+
+
+
+
+
+
+
+Français
+
+
+
+
+
+
+
+Italiano
+
+
+
+
+
+
+
+Português (EU)
+
+
+
+
+
+
+
+Polski
+
+
+
+
+
+
+
+Русский
+
+
+
+
+
+
+
+
+
+
+
+한국어
+
+
+
+
+
+
+
+
+
+
+
+繁體中文
+
+
+
+
+
+
+
+
+
+
+
+簡體中文
+
+
+
+
+
+
+
+
+
+
+
+
+
+工作機會關於客服支援建議媒體報導API©2017 美商暴雪娛樂股份有限公司（Blizzard Entertainment, Inc.）版權所有。隱私條款
+
+
+
+
+
+
+
+
+
+
+
+
+
+  SEO搜尋引擎最佳化，揭開成功秘訣的真相                         首頁 » 網路行銷手法大揭密 » SEO搜尋引擎最佳化，成功秘訣一次備齊        SEO搜尋引擎最佳化，成功秘訣一次備齊作者： 林傑銘 Jay Lin通識課程＿網路行銷工具  SEO搜尋引擎最佳化雖然不是什麼走潮流尖端的行銷手法，但如果你真的想透過網路獲取曝光、銷售產品、發展事業，它依然是一個有效並強力的行銷方式。 時常有人問我這一個問題：我要如何找到潛在客戶？我則會反問：為什麼你無法讓潛在客戶主動找到你？ 這也是我創業初期反思自己的問題，透過分析研究後，我得出能解決此問題的答案：一定要做好SEO！ 某些情況之下，相對於關鍵字廣告，SEO是另一個更美好的選擇（因為預算門檻低），而且是既有效又長期的行銷手法，同時還能整合其他種類的行銷技巧、建立品牌認知度、提升銷售轉換率…等優勢。 而且如果你現在處於創建新網站的規劃階段，那麼這對你其實也是好事一件，因為你能夠從一開始就避免愚蠢錯誤，做對的決定。 確定的是，現代人們已習慣使用搜尋引擎找尋資訊，儘管你不應該完全依賴於免費搜尋流量，但你的網路行銷策略中理當考慮搜尋行銷。因為Google可是滿滿的大平臺阿！ 我將搜尋引擎最佳化拆分成多個重要步驟，其中有些步驟不是一次性的工作，你會需要不斷重複一遍又一遍地做或調整優化。然而，這篇文章只是一個簡短的介紹，讓對SEO尚未有充分經驗和知識的人可以一窺全貌。 同時，你也必須知道SEO不是魔法，它是一個長期的行銷投資與策略，這是一個必經過程，也是成功的關鍵。 成功關鍵1、網頁設計與開發修復可能是比建立更麻煩的工程，所以請務必在實際建站之前就考慮、規劃對搜尋引擎友好的設計與架構，這不僅更有利於日後的SEO，也將為你節省時間和金錢。當你這麼做的時候，大多數情況之下，你已經領先許多競爭對手了。構建網站時，一定要有利於被爬行、抓取，使搜尋機器人可以很容易理解網站內容和主題。相信我，只要做到這一點，那麼你已經能贏過許多對手網站了。搜尋引擎友好架構往往就是為了提升使用者體驗，因此盡可能地讓網站使用變得容易、簡單、方便，任何步驟都不要造成他們的麻煩與阻礙。請記住，網站不是只有首頁漂漂亮亮就夠了，每個頁面可能都會是訪客的網站入口，請重視每一個頁面並一視同仁。 成功關鍵2、做好關鍵字研究關鍵字研究是做好SEO優化最重要的第一步，這同時也是投放關鍵字廣告前的重要環節，因為搜尋引擎只是關鍵字和目標受眾之間的連結橋梁，以便快速、容易找到你的網站或提供的產品，並確保有更高的轉換可能性。SEO最大的錯誤往往也是選擇錯誤的關鍵字進行排名，他們以為、覺得這可能是潛在客戶會使用的字詞，但它們往往不是。這部分有許多工具和技巧可以協助你進行研究和調查，最知名的免費又好用工具莫過於Google 關鍵字規劃工具。我們可以在關鍵字規劃工具中導出數字和估計出搜尋情況，它還會提供相關和類似關鍵字群組。雖然它不是100%正確的搜尋情況，但已經能充分知道該關鍵字是否具有使用度了，這也是進行研究調查的主要目標之一。 成功關鍵3、掌握競爭者情報俗話說：知己知彼，百戰不殆。這句話用於搜尋引擎最佳化身上一樣受用無窮，因為你要做的事情往往跟競爭對手做了什麼、做得如何有極大關係。你所面對的競爭數量和能力高低將會影響你所需要的投入程度，更會大幅影響成果，因為SEO就是你死我活，每一頁的搜尋數量結果就是超限量：十個名額。在進行競爭者研究時，你將可能會遇到與你競爭相同關鍵字的網站或部落格，但卻不是你的直接對手。 那些其實可以是你的潛在合作夥伴，因此在研究過程中請記錄保留相關資訊，未來將可以派上用場。 成功關鍵4、被搜尋引擎收錄有很多非常便宜的服務和工具，幫助你的網站提交給搜尋引擎或目錄平臺，在某些情況下甚至會給予排名保證（都2017年了，還是有人會信）。我並不建議把提交網站作為告訴搜尋引擎的主要方式，但這由你決定。網站由搜尋引擎自然找到是最理想的情況，尤其是你的網址被放置於已經在被索引的頁面或好網站中更是容易。為什麼？因為這有利於搜尋引擎的運作機制，細節在此就不加以討論了。一旦網站已經做好上線了，執行SEO前的首要工作是讓網站被搜尋引擎收錄，也就是能被搜尋得到。假如連找都找不到，何來更好的搜尋排名呢。 成功關鍵5、製作網站地圖Google允許網站經營者通過Search Console向他們提交網站地圖，這比單純的網站提交有效多了，藉此還能獲取相關報告和有用訊息，例如：網站是否有技術問題。即使你沒有製作網站地圖可以提交，我依然強烈建議你創建Console帳號並完成網站驗證，這對於獲取搜尋報告和數據非常有幫助，而非只是提交網站地圖的功用。假如你還沒使用過這項網路工具，可以查看這篇文章：Search Console九大功能介紹一旦你註意到搜尋機器人已經自行找到你的網站、知道你的網站，並能在Google被搜尋得到，提交網站地圖將可以更有利於機器人的爬行抓取。 成功關鍵6、內容發想與創造廣告投放一直是行銷推廣的主流方式之一，但隨著時間和情況的改變，成本是越來越高的。這是適應市場變化的自然過程，但如果你的銷量、利潤並沒有隨之增長，單一倚賴付費流量也是非常不健康的。提供相關優質內容不僅有助於獲取更多流量和分享，並且也是SEO優化過程中不可或缺的一環，更是能有效增加銷量的最佳方式。因為大多數人在搜尋時都不是在找產品，而是找資訊，但藉此可以知道你的品牌、產品並信任你。網站完成之後並不是結束，而是經營的開始，否則你的網站就會像一灘死水。內容發想與創造也應當永不停止，因為好內容可以造就網站保持活躍度、好的搜尋排名與流量。內容不單純只是為了直接增加銷售為目的，更多時候是為了達成其他目的，但最終會對銷售和利潤產生影響。 成功關鍵7、搭建內外部連結內部連結和外部反向連結對於使用者來說都很重要，因為使用者可以藉由點擊這些連結進入網站，同時這對於搜尋引擎最佳化也很重要，而且對每個搜尋引擎中都起著關鍵作用。搭建內、外部連結是一個永無止境的過程，但不要把焦點只放在數量上，而是品質。不幸的是，市面上有許多服務或工具，試圖說服人們獲得更多外部反向連結就是對的，他們畫大餅塑造成功的假象讓人們掏錢購買。短期提升排名和流量當然是可能的，只是往往不是長久的明智方式。老實地說，數量是有幫助的，但短期大量的情況通常都是低劣的連結來源，往往也容易被視為作弊。搜尋引擎花費相當多的時間和精力來對付這些鑽漏洞的人，並且一旦發現了就會撤除好排名，甚至會屏蔽給予懲罰。如果你想長期經營企業和發展，你應該徹底避免這種行為，因為總究傷害的是你自己。或許你無法明確地判斷連結品質的好壞，請換另一種思維想一想，如果這對搜尋排名毫無幫助，建立這個連結對你有什麼價值，如果毫無價值和用處，那麼請不要這麼做。 成功關鍵8、建立社群提高參與、信任近幾年的變化，搜尋引擎已經不是唯一的流量來源，廣告媒體也不是流量之王，而社群媒體的使用和應用性正在不斷增長。建立社群可以和客戶或潛在客戶建立信任和更深層次的關係，你更能聽他們的心聲、瞭解他們的需求和慾求，特別是對他們的批評和建議。社群媒體不僅僅是一種數位行銷工具，它對SEO的影響也是非常顯著的，某些情況下，也有機會佔據搜尋結果頁不錯的排名。當然，你自己本身的網站或部落格也是能建立社群的一種方式，因此請不要把社群跟Facebook或Line畫上等號，這亦是為什麼內容創造是SEO的重要過程，因為內容是經營社群不可或缺的糧食。 成功關鍵9、追蹤關鍵字排名提高排名對於SEO很重要，但比排名更重要的是它所帶來的流量和價值。你所期望的流量排名是否得到了改善？是否有帶來實際的訂單？無論你採用哪一種數位行銷方式，不做任何數據收集和追蹤分析其有效性，你都很難確定行銷活動的成敗。所以，收集數據並分析對於SEO來說也是同等重要的事情。做好網站分析可幫助你瞭解何處需要改進，並將資源投入到需要的工作中，而不是用感覺判斷。這部分你可以藉由Search Console協助你輕鬆收集關鍵字排名數據，包含：點擊次數、曝光次數、點擊率、排名。 成功關鍵10、轉換分析和優化無論你短期或長期目標是什麼，一切的關鍵因素可能還是賺錢或虧錢，對吧？短期內由於戰略原因而虧損，有時候是可以接受並合理的，但從長遠來看，虧損是失敗的，也會讓老闆真的跳樓大拍賣。網站分析應該做的不僅僅是知道每月有多少獨立訪客和頁面瀏覽量，你需要的是更深入地分析並知道哪些有效和不起作用。如此一來，才知道哪裡需要調整或停止。透過結合Console和Analytics（Analytics基礎功能教學），你便能掌握各別關鍵字所帶來的流量數據和購買轉換率，得來完全不費吹灰之力。 這只是搜尋引擎最佳化的導覽，如果你還沒開始有任何行動，這是很好的開始指南，也能夠幫助你更瞭解SEO到底需要做什麼，並從中獲得更多搜尋曝光、流量與創造更好的行銷效益！ P.S. 假如你想學會更完整的SEO知識與優化技巧，歡迎參加兩日訓練實戰課程：SEO贏家解密攻略 文章標籤： SEO, 搜尋引擎最佳化我猜你可能也會喜歡以下這些文章...15一月20174 fotojet：超簡易線上圖片編輯工具 20十一月20160 7個SEO初心者一定要知道的網路行銷工具 10十月20161 3種小資老闆必會的影片製作術，這樣做超簡單 目前有1 則留言 Ray  2017/03/31 － 14:34真的是受益良多，正在籌備自建官網中 回覆 請在下方留下你的訊息吧...點這裡取消回覆  您的稱呼(必填)  您的Email (必填)  您的網站請填寫留言訊息... 請輸入你的名字... 請輸入正確的Email... 請輸入留言訊息 我要留言給 Jay...       0Subscribe to our mailing list * indicates required	您的Email  *	                   請回到你的索取Email信箱中完成訂閱步驟...   訂閱免費電子報，掌握網路行銷資訊、行銷技巧與趨勢脈動  學會如何吸引更多潛在客戶 我保證我會誓死捍衛你的個資隱私請回到你的索取Email信箱中完成訂閱步驟...   訂閱免費電子報，掌握網路行銷資訊、行銷技巧與趨勢脈動 我保證我會誓死捍衛你的個資隱私請回到你的索取Email信箱中完成訂閱步驟...   訂閱免費電子報，掌握網路行銷資訊、行銷技巧與趨勢脈動    我保證我會誓死捍衛你的個資隱私熱門文章推薦文章最新文章全球7 大最受歡迎的免費網頁製作平臺 2014/02/2742facebook 臉書粉絲專頁必學應用技巧 2014/05/0737Instagram廣告投放七步驟，第一次就快速上手 2015/10/0430拆解FB廣告審核因素，三分鐘讓你快速掌握重點 2015/11/02273種化解Facebook廣告無法運行的解決之道 2016/02/0123SEO搜尋引擎最佳化，成功秘訣一次備齊 2017/03/3013種化解Facebook廣告無法運行的解決之道 2016/02/0123沒扎穩這四個基礎功，千萬別經營fb粉絲團 2015/07/2920不想再燒fb廣告費，就別再把廣告當彩券一樣買 2015/07/0820網路行銷案例分析：10 個你應該要朝聖的超讚網站 2015/01/275如何降低購物車遺棄率，提升結帳成交率 2017/07/1106個會讓你自毀FB廣告錢途的錯誤，你中槍了嗎？ 2017/06/210社群行銷關鍵步驟，新手也能精準掌握訣竅 2017/06/091FB廣告新手易犯的4個錯誤，從此擺脫無感投放 2017/05/252創業微訪談：玩轉傳統布料，手作幸福再升級！ 2017/05/082課堂分類總覽必修課程＿搜尋引擎優化必修課程＿網路流量技巧必修課程＿網路行銷概念必修課程＿臉書廣告技巧通識課程＿網路創業訪談通識課程＿網路行銷工具通識課程＿網路行銷趨勢選修課程＿影片行銷秘訣選修課程＿社群行銷手法選修課程＿網站優化方式選修課程＿網路行銷案例選修課程＿行銷策略剖析           網路行銷手法大揭密｜網路超微型創業教練                                2017/07/11如何降低購物車遺棄率，提升結帳成交率選修課程＿網站優化方式0  閱讀完整文章        2017/06/216個會讓你自毀FB廣告錢途的錯誤，你中槍了嗎？必修課程＿臉書廣告技巧0  閱讀完整文章        2017/06/09社群行銷關鍵步驟，新手也能精準掌握訣竅必修課程＿網路行銷概念 , 選修課程＿社群行銷手法1  閱讀完整文章        2017/05/25FB廣告新手易犯的4個錯誤，從此擺脫無感投放必修課程＿臉書廣告技巧2  閱讀完整文章        2017/05/08創業微訪談：玩轉傳統布料，手作幸福再升級！通識課程＿網路創業訪談2  閱讀完整文章        2017/04/28一次搞懂Facebook廣告收費準則，突破觀念盲點必修課程＿臉書廣告技巧5  閱讀完整文章        2017/04/13重新設計網站的關鍵考量，全面升級再進化！選修課程＿網站優化方式2  閱讀完整文章  123...23下一頁 »      
+
+
+
+
+寬頻網路最佳化
+
+
+
+
+
+
+    寬頻網路最佳化 (轉貼)
+
+寬頻網路最佳化 
+    建議: 只適用於你向ISP公司申請的速度有到1Mb以上(下載部分)的速率
+
+    我為了加快網路速度用了多少個軟體 可是全都沒用 根本不像這些軟體所講的神話那樣 安裝之後可以增加幾%的速度 直到我發現這個網站http://www.speedguide.net 
+    你不用安裝什麼軟體程式在你的電腦 
+
+    我是目前在美國的臺灣留生
+
+    在美國用COX communications公司 的cable modem雙向寬頻網路
+
+    我也用這個網站來修改微軟Windows 作業系統的 registry ﹐或是修改 MTU 達到最佳化的設定
+
+    我已經幫不下50個用cable modem的留學生或是老外加快他們的網路連線速度
+
+    成功率達100% 國內不論用和信雙向(速率6Mb/256Kb)Cable Internet / 東森雙向Cable Internet 
+    或是任何一家ADSL(速率1.5Mb) , 而且都有明顯增加連線速度
+
+    我都是到這個網站測試速度http://www.speed411.com
+
+    加快後離峰時間都有4000多KBPS
+
+    可能從臺灣連美國不準確不客觀 , 你們可參照其他測速網站(主機在臺灣的) , 應該有明顯的差別
+
+    或是用下載加速軟體時如 DAP, FlashGet or NetAnts , Getright , Godzilla也有明顯增快的感覺
+
+    但是我是推薦雙向cable modem(非陽春型)的寬頻網路 ,最好是下載能有超過1MB的寬頻網路
+
+    如果是用ADSL下載不到1MB的或是雙向cable modem陽春型(128kb/64kb)或是實用型 , (700kb/100kb)的就沒什麼用處
+
+    因為我相信你們現在大多數用ADSL 大部分的人下載的速度都是1MB以下 , 不是512KBPS就是786KBPS , 
+    其實微軟Windows作業系統的registry和MTU預設值下載的最大值都有1MB
+    如(98, Me) (Windows XP 有時候已幫你網路速度最佳化了)
+
+    所以在我實際的例子中 Windows 98, Me 加速的空間最大 , 但是你的ISP提供給你的速度下載不到1MB 你即使最佳化也沒用
+
+    就像你最佳化後電腦的設定值變成你的電腦可以達到連線速度5000KBPS
+    你的ISP給你的下載最高速度是512KBPS或是786KBPS 你的連線速度也只能有512KBPS或是786KBPS
+
+    我在臺灣住高雄市三民區用和信雙向超值型cable modem（下載6MB上傳256KBPS）
+    最佳化後連到 
+    
+    www.speed411.com這個測速網站
+    非尖峰時段都有2000KBPS到3000KBPS 離峰時段偶而可到5000KBPS
+
+    我要好好的鄭重強力的和大家推薦一下http://www.speedguide.net(和阿土推薦一樣)
+    這個網站是美國很有名的更改微軟Windows作業系統的registry和MTU的網站以達到各種速度的最佳化
+
+    教學做法如下
+
+    首先 你的電腦一定要有Winzip8.0以上版本的壓縮軟體
+
+    連到http://www.speedguide.net
+
+
+    第一步驟:Windows 98, Windows Me, Windows 2000, Windows XP皆適用
+
+
+    後往左看第二個選項Patches點下去:
+
+    Windows 98 的需要的檔案:
+    mtupatch98.zip 
+    sguide_tweak_98_ME 
+    sguide_tweak_98_ME_PPPoE 
+    SpeedGuide Web Patch
+
+    Windows Me 的需要的檔案: 
+    sguide_tweak_98_ME 
+    sguide_tweak_98_ME_PPPoE 
+    SpeedGuide Web Patch
+
+    Windows 2000/XP 的需要的檔案: 
+    sguide_tweak_2k.zip 
+    sguide_tweak_2k_pppoe.zip 
+    SpeedGuide_2k Web Patch
+    winxp_dnscache.reg 
+    以上的程式解壓縮後
+    當副檔名是.reg 就用滑鼠左鍵直接點它
+    當副檔名是.inf 請用滑鼠右鍵點它 , 會出現下拉式的視窗 如果你是用Winzip中文版選 “安裝” 如果你是用Winzip英文版選 
+    “Install”
+
+    當你解壓縮後同時發現 有副檔名是.reg的檔案 也有副檔名是.inf的檔案 切記只要執行副檔名是.reg的檔案即可 , 不要去安裝副檔名是.inf的檔案還有其他的檔案也不要碰它們
+    只有winxp_dnscache.reg不用解壓縮 直接用滑鼠左鍵點它
+
+
+    第二步驟 Windows 98, Windows Me, Windows 2000, Windows XP皆適用
+
+    請到http://www.speedguide.net主頁去 
+    
+    看到TCP/IP Analyzer 點下去 分析你的網路一些設定值
+    查一下你的 Default Receive Window (RWIN) = 256960 , 有沒有達到256960這個數值 
+    如果沒有 請按TCP/IP Analyzer 旁的 TCP/IP Optimizer 下載這個修正程式 , 然後執行它
+
+    它會出來一個視窗 , 視窗上面顯示你是哪種類型上網勾你上網的方式
+    視窗中間勾Modify All Network Adapters
+    視窗下麵 勾Optimal settings 最後按 Apply changes
+
+    然後重新開機 把這個修正程式刪掉 , 再按TCP/IP Analyzer測試一下
+    應該Default Receive Window (RWIN) = 256960 的值會是256960 才對
+
+    如果不是256960 這通常會出現在Windows 98裡 應為它少一個程式
+    所以如果你的作業系統是Windows 98 請在第一步驟 相同網頁的中間位置下載MS Vtcp.386 fix for Windows 
+    98這個程式解壓縮後執行 再重新開機
+
+    第三個步驟 只適用於Windows XP 
+    中文版 ,如下 
+
+    “開始” 選 “執行” 打入 “gpedit.msc”
+
+    本機電腦原則─電腦設定---系統管理範本---網路---QoS封包排程器---限制可保留的頻寬---設定
+
+    勾選 “已啟用” 
+    頻寬限制(%): 0
+    “套用” “確定” 再重新開機
+
+    英文版如下
+
+    “start” click “Run” enter “gpedit.msc”
+    Local Computer Policy---Computer Configuration─Administrative Templates
+    ---Network---QoS Packet Scheduler---Limit reservable bandwidth---setting
+    Make sure check box on “Enabled” is selected 
+    Bandwidth limit (%):0
+    “Apply” “OK” then restart computer
+
+    只要按照這三個步驟 , 包準你的網路連線速度 , 嚇嚇叫 , 但是我再重申一次這是適合寬頻網路的最佳化 , 如果你是用撥接上網 , 
+    那很抱歉不會有什麼差別
+
+    如果你的ISP給你的下載速度沒有超過1MB 基本上也沒什麼改變 所以不要期望太大 不過你可以試試看
+
+    以上文章所提的單位是B=Bit 
+
+    ==============分格線================
+    Default Receive Window (RWIN) = 64xx...  >>>修改前
+    Default Receive Window (RWIN) = 256960 >>>修改後
+　
+
+
+
+
+ 
+
+國立交通大學資訊學院 - 網路最佳化實驗室
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2014 NOL 畢業生
+
+
+
+2014 NOL 出遊 - 東北角&宜蘭
+
+
+
+2013 NOL 謝師宴
+
+
+
+2013 NOL 聚餐&歡送會
+
+
+
+2014 NOL 成員
+
+
+
+
+
+
+
+
+
+
+Professor
+
+
+
+
+易志偉 Chih-Wei Yi
+yi@cs.nctu.edu.tw
++886-3-5712121 #31346
+EC432
+
+
+Associate Professor, Department of Compute Science, National Chiao Tung University, Taiwan
+Ph.D. in Computer Science, Illinois Institute of Technology, USA
+Research Interests
+Algorithm design and analysis
+Wireless ad hoc and sensor networks
+Vehicular ad hoc networks
+Network coding
+Sensor-aided navigation systems
+
+
+
+
+
+
+
+
+
+
+
+
+Our Team
+
+
+
+
+
+博士班 Ph.D
+
+
+
+
+
+碩士班 Master
+
+
+
+
+
+畢業生 Alumni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×Close
+博士班 Ph.D
+
+
+
+
+
+
+
+莊宜達 Yi-Ta Chuang
+izeki.cs96g@nctu.edu.tw
+Wireless Optimization
+                  Data Mining
+
+
+
+
+
+
+
+
+
+
+
+
+
+×Close
+碩士班 Master
+
+
+
+
+
+
+
+
+林彥勳
+linyenhsuan@gmail.com
+
+
+
+
+
+
+
+
+邱司傑
+chez0929@gmail.com
+
+
+
+
+
+
+
+
+黃小紅
+siauhong100@hotmail.com
+
+
+
+
+
+
+
+
+薛丞宏
+ihcaoe@gmail.com
+
+
+
+
+ 
+
+
+
+
+
+
+翁子婷
+ymjh11436@gmail.com
+
+
+
+
+
+
+
+
+蔡馨璽
+cc79128@gmail.com
+
+
+
+
+
+
+
+
+吳琮祥
+aplmnbvcxz@gmail.com
+
+
+
+
+
+
+
+
+紀瑋婷
+WTChi.Sue@gmail.com
+
+
+
+
+ 
+
+
+
+
+
+
+張家偉
+ghg071@gmail.com
+
+
+
+
+
+
+
+
+彭翊碩
+exorcist0807@livemail.tw
+
+
+
+
+
+
+
+
+張雅嵐
+lovingkpp@gmail.com
+
+
+
+
+
+
+
+
+林東弘
+xup60438@gmail.com
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+×Close
+畢業生 Alumni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+博士
+
+
+
+林巨益 Ju-Yi Lin juyi520@gmail.com
+蘇釗民 Vodka Chao-Min Suvodkasu@gmail.com
+
+
+尤喜夫 Yousef-Awwaf Daraghmi tubassi@gmail.com“基於負二項模型之短期都市交通流量預測”, 102.
+
+
+
+
+
+碩士
+
+
+
+林彥勳 Yen-Hsuan Lin linyenhsuan@gmail.com"智慧型手機穿戴位置及行動狀態辨識, 103."
+薛丞宏ihcaoe@gmail.com"漢語間統計式機器翻譯語料處理-用台灣閩南語示範, 103."
+
+
+黃小紅 Ng Siau Hong siauhong100@hotmail.com"應用分群法於眾源行車震動事件採探路面異常點", 103.
+邱司傑 Szu-Chieh Chiu chez0929@gmail.com"基於實價登錄的房價模型研究", 103.
+
+
+陳盈秀 Ying-Siou Chen amy780617@gmail.com“智能型路面品質監測系統”, 102.
+經嘉豪 Chia-Hao Ching a4s5d6999@gmail.com“從眾源停走資料擷取時序資訊之演算法”, 102.
+
+
+黃怡箴 Yi-Chen Huang somorari@gmail.com“iGolf : 一個基於體感網路與雲端服務之高爾夫球揮桿學習系統”, 102.
+邱柏蓉 Po-Jung Chiu skyforpo1112@gmail.com“實作整合式室內定位”, 102.
+
+
+施佩良 Pei-Liang Shih angelashih0401@gmail.com“基於低取樣頻率慣性感測器之行人軌跡系統”, 101.
+藍啟瑞 Chi-Jui Lan ray19861015@gmail.com“應用停走衝擊波模型於遍佈式都會交通偵測”, 101.
+
+
+陳宗隆 Tsung-Long Chen chenzolon@gmail.com“高爾夫球揮桿訓練系統雛形”, 100.
+粘家盛 Chia-Sheng Nian frank750526@gmail.com“用於路面異常偵測之智慧型手機探偵車系統”, 100.
+
+
+鄭淵舟 Yuan-Chou Cheng colorhaake@gmail.com“智慧行動裝置上之擴增實境定位技術”, 100.
+楊凱全 Kai-Chuan Yang kyc1023@gmail.com“以車載感性感測元件與全球定位系統量測道路高度與坡度之方法”, 100.
+
+
+邱柏鈞 Bo-Chun Chiu amdaria@gmail.com“基於體感網路的高爾夫揮桿分析”, 100.
+柯承孝“以行動應用程式為對象的效能導向流量排程演算法”, 100.
+
+
+呂孝恆 Hsiao-Heng Lu“限制延遲時間的點對點即時影音串流系統”, 99.
+黃辰少 Chen-Shao Huang“建立以肢體感測網路為基礎之虛擬社群應用服務平臺”, 99.
+
+
+周家偉 Jia-Wei Chou knaced@hotmail.com“以慣性感測元件輔助之個人導航系統”, 98.
+楊邵軒 Shau-Shiuan Yang shiuan.cs97g@nctu.edu.tw“以頻寬整合縮短行動裝置之檔案傳輸時間”, 98.
+
+
+陳大方 Ta-Fang Chen jeelyjeely@gmail.com“使用網路編碼技術做檔案傳輸之效能評估”, 98.
+蔡宗達 Tsung-Ta Tsai dayan.cs95g@nctu.edu.tw“即時交通資訊廣播車載網路系統之雛形”, 98.
+
+
+蔡文添 Wen-Tien Tsai“用於物體追蹤的加速度計星群”, 97.
+葉侯亨 Hou-Heng Yeh hhyeh.cs96g@g2.nctu.edu.tw“Streetcast-車用網路街道廣播協定”, 97.
+
+
+王湘博 Hsiang-Po Wang kingpo.cs96g@g2.nctu.edu.tw“使用網路編碼技術之機會型非同步資訊傳播演算法”, 97.
+呂哲彥 Che-Yen Lu chaos.cis92@nctu.edu.tw“無線感測網路之自動燈光控制系統”, 97.
+
+
+朱瑞浩 Jui-Hao Chu ranger31011@hotmail.com“應用於2.5D環境以粒子過濾演算法與感測元件輔助的無線定位系統”, 97.
+陳依廷 Yi-Ting Chen blade_fallen@hotmail.com“手持裝置行人追蹤系統”, 97.
+
+
+甘效原 Hsiao-Yuan Kan u1502020@cc.ncu.edu.tw“利用網路編碼增進網格網路的效能”, 97.
+郭哲瑋 Zhe-Wei Kuo caballero.cs94g@nctu.edu.tw“在廣用無線通道模型上無線網路內的孤立節點數”, 97.
+
+
+林育萱 Yu-Hsuan Lin“在無線感測網路中針對分散式多重資料源與多重目的地資料傳輸的行動代理人模型”, 97.
+
+
+
+游騰葦 Teng-Wei Yu yutengwei.cs94@nctu.edu.tw“用智慧型家庭環境中的無線感測網路雛形”, 96.
+劉芳君 Fang-Chun Liu vict.cs94g@nctu.edu.tw“以最小區域圓覆蓋集合為基礎用於異質無線隨意網路之廣播”, 96.
+
+
+黃承威 Chen-Wei Huang chenweih@cs.nctu.edu.tw“在無線隨意網路中格狀繞境之臨界格子大小及傳輸半徑”, 95.
+林國維 Kuo-Wei Lin alec.cs94g@nctu.edu.tw“無線隨意網路在具不可靠節點與連線環境中之網路連通性”, 95.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Researches
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+車載網路
+利用智慧型手機行動感測技術執行眾源資料收集，由資料探勘技術採擷路面異常 點資訊，建立智能型道路品質監測系統，以協助道路養護單位即時維修與監督，並結合車載導航 系統，即時提醒用路人前方異常路面，以避免危險事故。
+
+
+感測裝置
+透過手機感測裝置收集數據，判別使用者行為模式，使手機成為更智慧的貼心生活助手。
+結合穿戴式的小型感測裝置收集相關運動資料，透過手機App並結合雲端服務來提供運動學習記錄及判斷錯誤體態及過度疲勞狀態，提供適時的貼身提醒，以達到運動傷害預防的目的。
+
+
+房價分析
+整理統計實價登錄資料和其他房仲網資料，提供一個視覺化呈現網站呈現台灣房地產市場，以及做多源資料的比較分析，同時建立特徵價格模型以預測房價。
+
+
+
+
+
+
+
+
+
+
+
+
+Achievements
+
+
+Journal Papers
+Conference Papers
+Patents
+Tecnical Reports
+Book Chapters
+
+
+
+
+
+
+
+
+
+
+×Close
+Journal Papers
+
+
+
+
+Y.-T. Chuang, C.-W. Yi*, Y.-C. Tseng, C.-S. Nian, and C.-H. Ching, 
+            "Discovering phase timing information of traffic light systems by stop-go shockwaves," 
+            accepted by the IEEE Transactions on Mobile Computing. 
+            (SCI, EI) 
+Y. A. Daraghmi, C.-W. Yi*, and T.-C. Chiang, 
+            "Negative binomial additive models for short-term traffic flow forecasting in urban areas," 
+            IEEE Transactions on Intelligent Transportation Systems, vol. 15, no. 2, pp. 784-793, April 2014. 
+            (SCI, EI; MoTC Grant No. MOTC-STAO-101-02; Sinica Grant No. AS-102-TP-A06; 
+            NSC Grant No. NSC101-2628-E-009-014-MY3, NSC101-2219-E-009-028; 
+            ITRI Grant No. 101-EC-17-A-05-01-1111, 101-EC-17-A-03-01-0619, B352BW1100, B301EA3300;
+            MoE ATU Plan; D-Link, Inc.; HTC, Inc.) 
+
+Y. A. Daraghmi, I. Stojmenovic, and C.-W. Yi*, 
+            "Forwarding methods in data dissemination and routing protocols for vehicular ad hoc networks," 
+            IEEE Network, vol. 27, no. 6, pp.74-79, November 2013. 
+            (SCI, EI) 
+Y. Wang*, C.-W. Yi, M. Huang, and F. Li, 
+            "Three-dimension greedy routing in large-scale random wireless sensor networks," 
+            Ad Hoc Networks, vol. 11, no. 4, pp. 1331–1344, June 2013.
+            (SCI, EI; NSC Grant No. NSC97-2221-E-009-052-MY3, NSC98-2218-E-009-023; 
+            ITRI Grant No. 9365C52200; MoE ATU plan)
+C.-M. Su, C.-W. Yi*, and P.-J. Wan, 
+            "The number of isolated nodes in a wireless networks with a generic probabilistic channel model," 
+             IEICE Transactions on Communications, vol. E96-B, No. 2, pp. 595-604, February 2013. 
+            (SCI, EI; Sinica Grant No. AS-102-TP-A06;
+            NSC Grant No. NSC101-2628-E-009-014-MY3, NSC100-2218-E-009-002;
+            ITRI Grant No. 101-EC-17-A-05-01-1111, 101-EC-17-A-03-01-0619, B352BW1100, B301EA3300;
+            MoE ATU plan; D-Link Inc.) 
+
+T.-X. Yu, C.-W. Yi, and S.-L. Tsao*, 
+            "Rank-based network coding for content distribution in vehicular networks,"
+            IEEE Wireless Communication Letters, vol. 1, no. 4, pp. 368-371, August 2012. 
+            (IEEE; Sinica Grant No. AS-102-TP-A06; NSC Grant No. NSC100-2218-E-009-002; 
+            ITRI Grant No. 101-EC-17-A-05-01-1111, 101-EC-17-A-03-01-0619;
+            MoE ATU plan; D-Link Inc.)
+G. Chen*, C.-W. Yi, M.-T. Sun, F.-C. Liu, and W.-C. Lan, 
+            "Minimum local disk cover sets for broadcasting in heterogeneous multihop wireless networks," 
+            International Journal of Foundations of Computer Science (IJFCS), vol. 23, no. 5, pp. 1147-1172, August 2012. 
+            (SCI, EI) 
+
+C.-W. Yi*, P.-J. Wan, C.-M. Su, and C.-W. Huang, 
+            "The critical grid size and transmission radius for local-minimum-free grid routing in wireless ad hoc and sensor networks," 
+            Computer Journal, vol. 53, no. 10, pp. 1621-1631, October 2010. 
+            (SCI, EI; NSC Grant No. NSC97-2221-E-009-052-MY3, NSC98-2218-E-009-023;
+            MoEA Grant No. 98-EC-17-A-02-S2-0048; ITRI Grant No. 99-EC-17-A-05-01-0626; MoE ATU plan)
+P.-J. Wan, C.-W. Yi*, and L. Wang, 
+            "Asymptotic critical transmission radius for k-connectivity in wireless ad hoc networks," 
+            IEEE Transactions on Information Theory, vol. 56, no. 6, pp. 2867-2874, June 2010. 
+            (SCI, EI; NSC Grant No. NSC97-2221-E-009-052-MY3, NSC98-2218-E-009-023;
+            MoEA Grant No. 98-EC-17-A-02-S2-0048; ITRI Grant No. 99-EC-17-A-05-01-0626; MoE ATU plan)
+L.-W. Yeh*, C.-Y. Lu, C.-W. Kuo, Y.-C. Tseng, and C.-W. Yi, 
+            "Autonomous light control by wireless sensor and actuator networks," 
+            IEEE Sensors Journal, vol, 10, no. 6, pp. 1029-1041, June 2010. 
+            (SCI, EI)
+C.-W. Yi, P.-J. Wan*, C.-M. Su, K.-W. Lin, and S. Huang, 
+            "Asymptotic distribution of the number of isolated nodes in wireless ad hoc networks with unreliable nodes and links," 
+            Discrete Mathematics, Algorithms and Applications, vol. 2, no. 1, pp. 107-124, March 2010. 
+            (NSC Grant No. NSC97-2221-E-009-052-MY3, NSC98-2218-E-009-023, MoEA Grant No. 98-EC-17-A-02-S2-0048, 
+            ITRI Grant No. 99-EC-17-A-05-01-0626, MoE ATU plan)
+C.-W. Yi*, P.-J. Wan, L. Wang, and C.-M. Su, 
+            "Sharp thresholds for relative neighborhood graphs in wireless ad hoc networks," 
+            IEEE Transactions on Wireless Communications, vol. 9, no. 2, pp. 614-623, February 2010. 
+            (SCI, EI; NSC Grant No. NSC97-2221-E-009-052-MY3, ITRI Grant No. 8352BA4124, MoEA Grant No. 98-EC-17-A-02-S2-0048, MoE ATU plan)
+
+C.-W. Yi*, 
+            "A unified analytic framework based on minimum scan statistics for wireless ad hoc and sensor networks,"
+            IEEE Transactions on Parallel and Distributed Systems, vol. 20, no. 9, pp. 1233-1245, September 2009.
+            (SCI, EI; NSC Grant No. NSC95-2221-E-009-059-MY3 and NSC97-2221-E-009-052-MY3, ITRI Grant No. 8352BA2N3A, MoE ATU plan)
+P.-J. Wan, C.-W. Yi*, L. Wang, F. Yao, and X. Jia, 
+            "Asymptotic critical transmission radius for greedy forward routing in wireless ad hoc networks,"
+            IEEE Transactions on Communications, vol. 57, no. 5, pp. 1433-1443, May 2009. 
+            (SCI, EI; NSC Grant No. NSC95-2221-E-009-059-MY3 and NSC97-2221-E-009-052-MY3, ITRI Grant No. 7352B12100, MoE ATU plan)
+C.-W. Yi*, 
+            "Maximum scan statistics and channel assignment problems in homogeneous wireless networks," 
+            Theoretical Computer Science, vol. 410, no. 21-23, pp. 2223-2233, 17 May 2009. 
+            (SCI, EI; NSC Grant No. NSC95-2221-E-009-059-MY3 and NSC97-2221-E-009-052-MY3, ITRI Grant No. 8352BA4124, MoE ATU plan)
+P.-J. Wan*, L. Wang, F. Yao, and C.-W. Yi, 
+            "On the longest RNG edge of wireless ad hoc networks," 
+            Discrete Mathematics, Algorithms and Applications, vol. 1, no. 1, pp. 25-43, March 2009. 
+            (NSC Grant No. NSC95-2221-E-009-059-MY3 and NSC97-2221-E-009-052-MY3, ITRI Grant No. 83522N2000, MoE ATU plan)
+
+M.-T. Sun*, C.-W. Yi, C.-K. Yang, and T. H. Lai, 
+            "An optimal algorithm for the minimum disc cover problem," 
+            Algorithmica, vol. 50, no. 1, pp. 58-71, January 2008. 
+            (SCI, EI)
+
+H. Liu*, X. Jia, P.-J. Wan, C.-W. Yi, S. K. Makki, and N. Pissinou, 
+            "Maximizing lifetime of sensor surveillance systems," 
+            IEEE/ACM Transactions on Networking, vol. 15, no. 2, pp. 334-345, April 2007. 
+            (SCI, EI)
+P.-J. Wan and C.-W. Yi*, 
+            "On the longest edge of Gabriel graphs in wireless ad hoc networks," 
+            IEEE Transactions on Parallel and Distributed Systems, vol. 18, no. 1, pp.111-125, January 2007. 
+            (SCI, EI; NSC Grant No. NSC94-2218-E-009-030 and NSC95-2221-E-009-059-MY3, MoE ATU plan, Intel JRP)
+
+P.-J. Wan and C.-W. Yi*, 
+            "Coverage by randomly deployed wireless sensor networks," 
+            IEEE Transactions on Information Theory, vol. 52, no. 6, pp. 2658- 2669, June 2006.
+            (SCI, EI; NSC Grant No. NSC94-2218-E-009-030, Intel JRP)
+P.-J. Wan*, C.-W. Yi, X. Jia, and D. Kim, 
+            "Approximation algorithms for conflict-free channel assignment in wireless ad hoc networks,"
+            Wireless Communications and Mobile Computing, vol. 6, no. 2, pp. 201-211, March 2006. 
+            (SCI, EI)
+C.-W. Yi*, P.-J. Wan, X.-Y. Li, and O. Frieder, 
+            "Asymptotic distribution of the number of isolated nodes in wireless ad hoc networks with Bernoulli nodes,"
+            IEEE Transactions on Communications, vol. 54, no. 3, pp. 510-517, March 2006. 
+            (SCI, EI; Intel JRP)
+
+P.-J. Wan* and C.-W. Yi, 
+            "Max-life power schedule for connectivity and biconnectivity in wireless ad hoc networks,"
+            Mobile Networks and Applications, vol. 10, no. 6, pp. 997-1004, December 2005. 
+            (SCI, EI)
+Y. Li, M. T. Thai, F. Wang, C.-W. Yi, P.-J. Wan, and D.-Z. Du, 
+            "On greedy construction of connected dominating sets in wireless networks," 
+            Wireless Communications and Mobile Computing, vol. 5, no. 8, pp. 927-932, December 2005. 
+            (SCI, EI)
+X. Jia, D. Kim, S. Makki, P.-J. Wan, and C.-W. Yi, 
+            "Power assignment for k-connectivity in wireless ad hoc networks," 
+            Journal of Combinatorial Optimization, vol. 9, no. 2, pp. 213-222, March 2005. 
+            (SCI, EI)
+
+P.-J. Wan*, G. Calinescu, and C.-W. Yi, 
+            "Minimum-power multicast routing in static ad hoc wireless networks," 
+            IEEE/ACM Transactions on Networking, vol. 12, no. 3, pp. 507-514, June 2004. 
+            (SCI, EI)
+X.-Y. Li*, Y. Wang, P.-J. Wan, and C.-W. Yi, 
+            "Fault tolerant deployment and topology control in wireless ad hoc networks," 
+            Wireless Communications and Mobile Computing, vol. 4, no. 1, pp. 109-125, February 2004. 
+            (SCI, EI)
+
+
+
+
+
+
+
+
+
+
+×Close
+Conference Papers
+
+
+
+
+Y.-T. Chuang, C.-W. Yi, Y.-C. Lu, and P.-C. Tsai,
+          "iTraffic: a smartphone-based traffic information system," 
+          in Proceedings of the 42st International Conference on Parallel Processing Workshops (ICPPW 2013), 
+          pp. 925-930, Lyon, France, 1-4 October 2013. (EI)
+J.-Y. Lin, C.-W. Yi*, and Y.-C. Tseng,
+          "Augmented reality assisted photo positioning for mobile devices," 
+          in Proceedings of the 2013 IEEE Wireless Communications and Networking Conference (IEEE WCNC 2013), 
+          pp. 4806-4811, Shanghai, China, 7-10 April 2013. (EI)
+Y.-T. Chuang and C.-W. Yi*, 
+          "Shockwave models for crowdsourcing-based traffic information mining," 
+          in Proceedings of the 2013 IEEE Wireless Communications and Networking Conference (IEEE WCNC 2013), 
+          pp. 4706-4711, Shanghai, China, 7-10 April 2013.
+          (EI; Sinica Grant No. AS-102-TP-A06; 
+          NSC Grant No. NSC101-2628-E-009-014-MY3, NSC101-2219-E-009-028; 
+          MoTC Grant No. MOTC-STAO-101-02; 
+          ITRI Grant No. 101-EC-17-A-05-01-1111, 101-EC-17-A-03-01-0619, B352BW1100, B301EA3300; 
+          MoE ATU plan; D-Link, Inc.; HTC, Inc.)
+T.-H. Ho, C.-W. Yi*, and C.-C. Tseng,
+          "Group access control with blacklist for data dissemination in mobile opportunistic networks," 
+          in Proceedings of the 2013 IEEE Wireless Communications and Networking Conference (IEEE WCNC 2013), 
+          pp. 4457-4462, Shanghai, China, 7-10 April 2013.
+          (EI; Sinica Grant No. AS-102-TP-A06; 
+          NSC Grant No. NSC101-2628-E-009-014-MY3, NSC101-2219-E-009-028, NSC100-2221-E-009-072-MY3; 
+          MoTC Grant No. MOTC-STAO-101-02; 
+          ITRI Grant No. 101-EC-17-A-05-01-1111, 101-EC-17-A-03-01-0619, B352BW1100, B301EA3300; 
+          MoE ATU plan; D-Link, Inc.; HTC, Inc.)
+Y.-A. Daraghmi, C.-W. Yi*, and T.-C. Chiang, 
+          "Mining overdispersed and autocorrelated vehicular traffic volume," 
+          in Proceedings of the 5th International Conference on Computer Science and Information Technology (CSIT 2013), 
+          pp. 194-200, Amman, Jordan, 27-29 March 2013.
+          (EI; Sinica Grant No. AS-102-TP-A06; 
+          NSC Grant No. NSC101-2628-E-009-014-MY3, NSC101-2219-E-009-028; 
+          ITRI Grant No. 101-EC-17-A-05-01-1111, 101-EC-17-A-03-01-0619, B352BW1100, B301EA3300; 
+          MoE ATU plan; D-Link, Inc.; HTC, Inc.)
+
+Y.-A. Daraghmi, C.-W. Yi*, and T.-C. Chiang, 
+          "Space-time multivariate negative binomial regression for urban short-term traffic volume prediction," 
+          in Proceedings of the 12th International Conference on ITS Telecommunications (ITST 2012), 
+          pp. 35-40, Taipei, Taiwan, 5-8 November 2012.
+          (EI, Best Paper Award; Sinica Grant No. AS-102-TP-A06; 
+          NSC Grant No. NSC100-2218-E-009-002, NSC101-2628-E-009-014-MY3;
+          ITRI Grant No. 101-EC-17-A-05-01-1111, 101-EC-17-A-03-01-0619; 
+          MoE ATU plan; D-Link, Inc.)
+Y.-C. Huang, T.-L. Chen, B.-C. Chiu, C.-W. Yi*, C.-W. Lin, Y.-J. Yeh, and L.-C. Kuo, 
+          "Calculate golf swing trajectories from IMU sensing data," 
+          in Proceedings of the 41st International Conference on Parallel Processing Workshops (ICPPW 2012), 
+          pp. 505-513, Pittsburgh, PA, USA, 10-13 September 2012. 
+          (EI; Sinica Grant No. AS-102-TP-A06, 
+          NSC Grant No. NSC100-2218-E-009-002 and NSC101-2628-E-009-014-MY3,
+          ITRI Grant No. 101-EC-17-A-05-01-1111 and 101-EC-17-A-03-01-0619, 
+          MoE ATU plan, and D-Link, Inc.)
+P.-L. Shih, P.-J. Chiu, Y.-C. Cheng, J.-Y. Lin, and C.-W. Yi*, 
+          "Energy-aware pedestrian trajectory system," 
+          in Proceedings of the 41st International Conference on Parallel Processing Workshops (ICPPW 2012), 
+          pp. 514-523, Pittsburgh, PA, USA, 10-13 September 2012. 
+          (EI; Sinica Grant No. AS-102-TP-A06, 
+          NSC Grant No. NSC100-2218-E-009-002 and NSC101-2628-E-009-014-MY3,
+          ITRI Grant No. 101-EC-17-A-05-01-1111 and 101-EC-17-A-03-01-0619, 
+          MoE ATU plan, and D-Link, Inc.)
+
+Y.-C. Cheng, J.-Y. Lin, C.-W. Yi, Y.-C. Tseng, L.-C. Kuo, Y.-J. Yeh, and C.-W. Lin, 
+          "AR-based positioning for mobile devices," 
+          in Proceedings of the 40th International Conference on Parallel Processing Workshops(ICPPW 2011), 
+          pp. 63-70, Taipei, Taiwan, 13-16 September 2011. 
+          (EI; NSC Grant No. NSC97-2221-E-009-052-MY3 and NSC99-2218-E-009-005,
+          ITRI Grant No. A352BA4113, MoE ATU plan, and D-Link, Inc.)
+Z.-L. Chen, C.-W. Yi, and C.-M. Su, 
+          "Validate vehicle motion reconstruction by IMUs," 
+          in the 7th Workshop on Wireless, Ad Hoc and Sensor Networks (WASN 2011),
+          Hsinchu, Taiwan, 1-2 September 2011. 
+          (in Chinese; NSC Grant No. NSC97-2221-E-009-052-MY3 and NSC99-2218-E-009-005,
+          ITRI Grant No. A352BA4113, MoE ATU plan, and D-Link, Inc.) 
+C.-H. Hsueh, Y.-J. Cheng, C.-W. Yi, and C.-M. Su, 
+          "Bumps on Roads," 
+          in the 7th Workshop on Wireless, Ad Hoc and Sensor Networks (WASN 2011),
+          Hsinchu, Taiwan, 1-2 September 2011. 
+          (in Chinese; NSC Grant No. NSC97-2221-E-009-052-MY3 and NSC99-2218-E-009-005,
+          ITRI Grant No. A352BA4113, MoE ATU plan, and D-Link, Inc.)
+C.-W. Yi,  
+          "Hybrid random network coding," 
+          in Proceedings of the 6th International Conference on Wireless Algorithms, Systems, and Applications (WASA 2011), 
+          pp. 201-210, Chengdu, China, 11-13 August 2011. 
+          (SCI, EI; NSC Grant No. NSC97-2221-E-009-052-MY3 and NSC99-2218-E-009-005,
+          ITRI Grant No. A352BA4113, MoE ATU plan, and D-Link, Inc.)
+C.-R. Lan, H.-H. Lu, C.-W. Yi and C.-C. Tseng, 
+          "A P2P HD live video streaming system," 
+          in Proceedings of the 2nd International Conference on Multimedia Technology (ICMT 2011), 
+          pp. 475-478, Hangzhou, China, 26-28 July 2011.  
+          (EI; NSC Grant No. NSC97-2221-E-009-052-MY3 and NSC99-2218-E-009-005,
+          ITRI Grant No. A352BA4113, MoE ATU plan, and D-Link, Inc.)
+
+C.-M. Su, J.-W. Chou, C.-W. Yi, Y.-C. Tseng, and D.-C. Chang, 
+          "Sensor-aided personal navigation systems for handheld devices," 
+          in Proceedings of the 39th International Conference on Parallel Processing Workshops (ICPPW 2010), 
+          pp. 533-541, San Diego, CA, USA, 16 September 2010. 
+          (EI; NSC Grant No. NSC97-2221-E-009-052-MY3, NSC98-2218-E-009-023;
+          ITRI Grant No. 99-EC-17-A-05-01-0626; MoE ATU plan; 
+          III Innovative and Prospective Technologies Project)
+C.-W. Yi, S.-S. Yang, Y.-B. Lin, Y.-T. Chuang, and P.-C. Liu, 
+          "File transfer for mobile devices with heterogeneous radio networks," 
+          in the 2010 IEEE 71st Vehicular Technology Conference (VTC 2010-Spring),
+          Taipei, Taiwan, 16-19 May 2010. 
+          (IEEE, IE; NSC Grant No. NSC97-2221-E-009-052-MY3, NSC98-2218-E-009-023; 
+          MoEA Grant No. 98-EC-17-A-02-S2-0048; ITRI Grant No. 99-EC-17-A-05-01-0626; 
+          MoE ATU plan)
+C.-W. Yi, Y.-T. Chuang, H.-H. Yeh, Y.-C. Tseng, and P.-C. Liu, 
+          "Streetcast: an urban broadcast protocol for vehicular ad-hoc networks," 
+          in the 2010 IEEE 71st Vehicular Technology Conference (VTC 2010-Spring),
+          Taipei, Taiwan, 16-19 May 2010. 
+          (IEEE, IE; NSC Grant No. NSC97-2221-E-009-052-MY3, NSC98-2218-E-009-023; 
+          MoEA Grant No. 98-EC-17-A-02-S2-0048; ITRI Grant No. 99-EC-17-A-05-01-0626; 
+          MoE ATU plan)
+C.-W. Yi, C.-M. Su, W.-T. Chai, J.-L. Huang, and T.-C. Chiang, 
+          "G-Constellations: g-sensor motion tracking systems," 
+          in the 2010 IEEE 71st Vehicular Technology Conference (VTC 2010-Spring),
+          Taipei, Taiwan, 16-19 May 2010. 
+          (IEEE, IE; NSC Grant No. NSC97-2221-E-009-052-MY3, NSC98-2218-E-009-023; 
+          MoEA Grant No. 98-EC-17-A-02-S2-0048; ITRI Grant No. 99-EC-17-A-03-01-0809; 
+          MoE ATU plan)
+P.-C. Liu, C.-W. Yi, Y.-T. Chuang, H.-H. Lu, J.-S. Leu, and W.-K. Shih, 
+          "On the capacity of tree-based P2P streaming systems," 
+          in the 6th International Workshop on Mobile Peer-to-Peer Computing (MP2P 2010) 
+          in conjunction with the Eighth Annual IEEE International Conference on 
+          Pervasive Computing and Communications (PerCom 2010), 
+          pp. 117-122, Mannheim, Germany, 29 March-2 April 2010. 
+          (IEEE, IE; NSC Grant No. NSC97-2221-E-009-052-MY3, NSC98-2218-E-009-023; 
+          MoEA Grant No. 98-EC-17-A-02-S2-0048; ITRI; MoE ATU plan)
+
+H.-P. Wang, Y.-T. Chuang, C.-W. Yi, Y.-C. Tseng, and P.-C. Liu, 
+          "XOR-forwarding for wireless networks," 
+          in the 2009 IEEE Global Communications Conference (IEEE Globecom 2009),
+          Hawaii, USA, 30 November-4 December 2009. 
+          (NSC Grant No. NSC97-2221-E-009-052-MY3, ITRI Grant No. 8352BA4124, 
+          MoEA Grant No. 98-EC-17-A-02-S2-0048, MoE ATU plan)
+G. Xing, R. Tan, B. Liu, J. Wang, X. Jia, and C.-W. Yi, 
+          "Data fusion improves the coverage of wireless sensor networks," 
+          in Proceedings of the 15th Annual International Conference on Mobile Computing and Networking (ACM MobiCom 2009), 
+          pp. 157-168, Beijing, China, 20-25 September 2009.
+J.-S. Leu, C.-W. Tsai, and C.-W. Yi, 
+          "Improving adaptive streaming service across wired/wireless network", 
+          in the International Workshop on Mobile Media Retrieval (MMR) in conjunction with MDM 2009, 
+          pp. 614-618, Taipei, Taiwan, May 18-20, 2009. (EI)
+L.-W. Yeh, C.-Y. Lu, Y.-H. Lin, J.-L. Liao, Y.-C. Tseng, C. Chen, and C.-W. Yi,
+          "iLamp: A sensor-enhanced lamp with surface-tracking capability based on light intensity," 
+          in the Seventh Annual IEEE International Conference on Pervasive Computing and Communications (IEEE PerCom 2009),
+          pp. 1-3, Galveston, Texas, 9-13 March 2009. 
+
+Y. Wang*, C.-W. Yi, and F. Li, 
+          "Delivery guarantee of greedy routing in three dimensional wireless networks," 
+          in the International Conference on Wireless Algorithms, Systems and Applications (WASA 2008), 
+          pp. 4-16, Dallas, TX, USA, 26-28 October 2008. 
+          (EI; NSC95-2221-E-009-059-MY3, ITRI 7301XS2220, MoE ATU plan)
+P.-J. Wan*, L. Wang, F. Yao, and C.-W. Yi, 
+          "On the longest RNG edge of wireless ad hoc networks," 
+          in the 28th International Conference on Distributed Computing Systems (ICDCS 2008), 
+          pp. 327-334, Beijing, China, 17-20 June 2008. 
+          (EI; NSC95-2221-E-009-059-MY3, MoE ATU plan)
+L. Wang*, C.-W. Yi, and F. Yao, 
+          "Improved asymptotic bounds on critical transmission radius for greedy forward routing in wireless ad hoc networks," 
+          in the 9th ACM International Symposium on Mobile Ad Hoc Networking and Computing (MobiHoc 2008), 
+          pp. 131-137, Hong Kong SAR, China, 26-30 May 2008. 
+          (EI; NSC95-2221-E-009-059-MY3, MoE ATU plan)
+
+C.-W. Yi*, F.-C. Liu, and M.-T. Sun, 
+          "Minimum local disk cover sets for broadcasting in heterogeneous wireless ad hoc networks," 
+          in Proceedings of the 2007 International Conference on Parallel Processing Workshops (ICPPW 2007), 
+          Xian, China, 10 September 2007. 
+          (EI; NSC95-2221-E-009-059-MY3, MoE ATU plan, Intel JRP)
+
+C.-W. Yi*, P.-J. Wan, K.-W. Lin, and C.-H. Huang, 
+          "Asymptotic distribution of the number of isolated nodes in wireless ad hoc networks with unreliable nodes and links," 
+          in the 49th Annual IEEE GLOBECOM Technical Conference (IEEE GLOBECOM 2006), 
+          San Francisco, CA, USA, 27 November - 1 December 2006. (EI)
+P.-J. Wan, C.-W. Yi*, F. Yao, and X. Jia, 
+          "Asymptotic critical transmission radius for greedy forward routing in wireless ad hoc networks," 
+          in the 7th ACM international symposium on mobile ad hoc networking & computing (MobiHoc 2006), 
+          pp. 25-36, Florence, Italy, 22-25 May 2006. 
+          (EI; NSC94-2218-E-009-030, Intel JRP)
+
+M.-T. Sun*, X. Ma, C.-W. Yi, C.-K. Yang, and T. H. Lai, 
+          "Minimum disc cover set construction in mobile ad hoc networks," 
+          in the 2005 International Conference on Computer Networks and Mobile Computing (ICCNMC'05), 
+          Zhangjiajie, China, 2-4 August 2005. 
+          Lecture Notes in Computer Science (LNCS), vol. 3619, pp. 712-721, August 2005. (SCI, EI)
+P.-J. Wan and C.-W. Yi*, 
+            "Coverage by randomly deployed wireless sensor networks," 
+            in Proceedings of the Fourth IEEE International Symposium on Network Computing and Applications (NCA 2005), 
+            Cambridge, Massachusetts, USA, 27-29 July 2005. (EI)
+P.-J. Wan and C.-W. Yi*, 
+          "Asymptotic critical transmission ranges for connectivity in wireless ad hoc networks with Bernoulli nodes," 
+          in the 2005 IEEE Wireless Communications and Networking Conference (WCNC 2005), 
+          New Orleans, Louisiana, USA, 13-17 March 2005. (EI)
+X. Jia, D. Kim, P.-J. Wan, and C.-W. Yi, 
+            "Power assignment for k-connectivity in wireless ad hoc networks," 
+            in the 24th Annual Joint Conference of the IEEE Computer and Communications Societies (INFOCOM 2005),
+            pp. 2206-2211, Miami, Florida, USA, 13-17 March 2005. (EI)
+H. Liu*, P.-J. Wan, C.-W. Yi, X. Jia, S. Makki, and N. Pissinou, 
+          "Maximal lifetime scheduling in sensor surveillance networks," 
+          in the 24th Annual Joint Conference of the IEEE Computer and Communications Societies (INFOCOM 2005), 
+          pp. 2482-2491, Miami, Florida, USA, 13-17 March 2005. (EI)
+
+C.-W. Yi* and P.-J. Wan, 
+            "Asymptotic distribution of the number of isolated nodes in wireless ad hoc networks with Bernoulli nodes and links," 
+            in Proceedings of the International Workshop on Theoretical Aspects of Wireless Ad Hoc, Sensor, and Peer-to-Peer Networks, 
+            Chicago, IL, USA, 11-12 June 2004.
+P.-J. Wan and C.-W. Yi*, 
+            "Asymptotic critical transmission radius and critical neighbor number for k-connectivity in wireless ad hoc networks," 
+            in Proceedings of the 5th ACM International Symposium on Mobile Ad Hoc Networking & Computing (MobiHoc 2004), 
+            pp. 1-8, Roppongi Hills, Tokyo, Japan, 24-26 May 2004. (EI)
+
+X.-Y. Li*, P.-J. Wan, Y. Wang, and C.-W. Yi, 
+          "Fault tolerant deployment and topology control in wireless networks," 
+          in Proceedings of the 4th ACM International Symposium on Mobile Ad Hoc Networking & Computing (MobiHoc 2003), 
+          pp. 117-128, Annapolis, Maryland, USA, 1-3 June 2003. (EI)
+X.-Y. Li*, Y. Wang, P.-J. Wan, C.-W. Yi, and O. Frieder, 
+          "Robust wireless ad hoc networks," 
+          in Proceedings of the 38th annual IEEE International Conference on Communications (ICC 2003),
+          vol. 1, pp. 453-457, Anchorage, Alaska, USA, 11-15 May 2003. (EI)
+C.-W. Yi*, P.-J. Wan, X.-Y. Li, and O. Frieder, 
+            "Asymptotic distribution of the number of isolated nodes in wireless ad hoc networks with Bernoulli nodes," 
+            in the 2003 IEEE Wireless Communications and Networking Conference (WCNC 2003), 
+            New Orleans, Louisiana, USA, 16-20 March 2003.
+
+
+
+
+
+
+
+
+
+
+×Close
+Patents
+
+
+
+
+
+藍啟瑞, 呂孝恆, 易志偉, 曾建超, 
+          "A streaming, buffering and playback scheme of tree-based P2P live streaming systems 
+          (適用於樹狀點對點網路即時影音串流應用之串流與緩衝播放機制),"
+          TW Patent (pending), owned by D-Link, 2011.
+葉承溱, 劉嘯烈, 陳鴻祥, 易志偉, 曾煜棋, 陳依廷, 葉侯亨, 王湘博, 
+          " Step-counting processing system and method thereof (計步處理系統及方法)," 
+          TW Patent (pending), owned by MiTAC. 
+J. Y.-B. Lin, C.-W. Yi, Y.-T. Chuang, and C.-S. Nien, 
+          "Real-time POI suggesting method and apparatus and computer readable
+          storage medium with computer program to execute the method 
+          (即時地點推薦方法、系統以及儲存其之電腦可讀取紀錄媒體),"
+          TW Patent I439673 (granted June 1, 2014), U.S. Patent (pending), owned by III.
+C.-W. Yi, P.-C. Liu, H.-H. Lu, 
+          "Hybrid codec apparatus and method for data transferring and broadcasting
+          (資料傳送的混合式編解碼裝置與方法)," 
+          U.S. Patent # 8,719,657 (granted May 6, 2014), TW Patent (pending), owned by ITRI.
+Y.-T. Chuang, H.-P. Wang, C.-W. Yi, and J.-S. Hwu, 
+            "Method and apparatus for transmitting and receiving messages in wireless network 
+            (應用於無線網路之訊息收發裝置及其方法)," 
+            TW Patent # I413383 (granted October 21, 2013), owned by ITRI. 
+C.-M. Su, T.-C. Chiang, C.-W. Yi, W.-T. Chai, P.-C. Liu, J.-L. Huang, 
+          "Method and system for motion tracking (運動追蹤方法與系統),"
+          CN Patent # ZL200910151299.X (granted January 02, 2013), 
+          U.S. Patent # 8,396,684 (granted March 20, 2013), 
+          TW Patent # I402506 (granted July 21, 2013), owned by ITRI.
+
+
+
+
+
+
+
+
+
+
+×Close
+Tecnical Reports
+
+
+
+
+C.-W. Yi et al.,
+          "使用網路編碼之多路徑資料傳送及P2P資料串流技術 
+          (Multipath Data Transfer and P2P Streaming by Network Coding)", 工研院學研合作研究計畫期末執行報告, 
+          99-EC-17-A-05-01-0626, December 2010.
+
+          Y.-B. Lin et al., "以AR為基礎之自行車導覽系統架構與商業模式之研究", 財團法人資訊工業策進會, 
+          December 2010.
+
+C.-W. Yi et al., "
+          Eco-Community：以感測網路建構一個虛境及實境互動式智慧型社區(1/3)", 
+          行政院國家科學委員會補助專題研究計畫期中進度報告, NSC98-2218-E-009-023, 
+          October 2010.
+
+          Y.-C. Tseng et al., "V-Tour：運用車載資通訊技術於旅遊導覽服務計畫 
+          (V-Tour: Travel Guiding Services Based on Telematics Technology)", 經濟部學研聯合研究計畫, 
+          98-EC-17-A-02-S2-0048, May 2010.
+
+C.-W. Yi et al., 
+          "異質網路環境之行動搜尋關鍵技術-子計畫四：以感測系統為基礎之整合式室內及室外定位系統(2/3)", 
+          行政院國家科學委員會補助專題研究計畫期中進度報告, NSC97-2221-E-009-052-MY3, May 2010.
+
+C.-W. Yi et al.,
+          "在車載網路中用網路編碼技術傳送訊息 (Efficient Message Distribution by Network Coding in VANETs)", 
+          工研院學研合作研究計畫期末執行報告, 8352BA4124, December 2009.
+
+C.-W. Yi et al., 
+          "Scan Statistics and Its Applications in Outdoor Wireless 
+          Sensor Networks", 行政院國家科學委員會補助專題研究計畫成果報告, NSC95-2221-E-009-059-MY3, 
+          October 2009.
+
+C.-W. Yi et al., 
+          "MobiPositioning --- Sensor-Based Integrated Indoor and 
+          Outdoor Positioning Systems (I)(II)(III)", 
+          行政院國家科學委員會補助專題研究計畫期中進度報告, NSC97-2221-E-009-052-MY3, May 2009.
+
+C.-W. Yi et al., 
+          "Scan Statistics and Its Applications in Outdoor Wireless 
+          Sensor Networks", 行政院國家科學委員會補助專題研究計畫期中進度報告, NSC95-2221-E-009-059-MY3, May 
+          2008.
+
+C.-W. Yi et al., 
+          "Scan Statistics and Its Applications in Outdoor Wireless 
+          Sensor Networks", 行政院國家科學委員會補助專題研究計畫期中進度報告, NSC95-2221-E-009-059-MY3, May 
+          2007.
+
+C.-W. Yi et al., 
+          "Critical Transmission Radius for Topology Control in Large-Scale Wireless Ad Hoc Networks", 
+          行政院國家科學委員會補助專題研究計畫成果報告, NSC94-2218-E-009-030,
+          October 2006.
+
+C.-W. Yi, 
+          "Probabilistic Aspects of Wireless Ad Hoc Networks", Ph.D. Thesis, 
+          Advisor: Prof. Peng-Jun Wan, Department of Computer Science, Illinois Institute of Technology, 
+          Chicago, IL, USA, May 2005.
+
+C.-W. Yi, 
+          "Wavelet Transform, Wavelet Packet and Applications",
+          Master Thesis, Advisor: Prof. Mu-Shieung Liu and Prof. Jyh-Hao Lee,
+          Department of Computer Science and Information Engineering, National Taiwan University, 
+          Taipei, Taiwan, June 1993.
+
+
+
+
+
+
+
+
+
+
+×Close
+Book Chapters
+
+
+
+Y.-A. Daraghmi*, I. Stojmenovic, and C.-W. Yi, 
+    "A taxonomy of data communication protocols for vehicular ad hoc networks," 
+    Mobile Ad Hoc Networking: The Cutting Edge Directions, 2nd Edition, 
+  Editors: S. Basagni, M. Conti, S. Giordano, and I. Stojmenovic, 
+  Wiley-IEEE Press, March 2013. 
+C.-W. Yi*, 
+    "Critical range for wireless networks," 
+    Encyclopedia of Algorithms, Editor: M.-Y. Kao, pp. 207-210, 
+  Springer-Verlag, New York, NY, USA, 6 August 2008.
+M.-S. Pan, C.-W. Yi, and Y.-C. Tseng, 
+  "Wireless sensor networks," 
+  McGraw-Hill Yearbook of Science & Technology 2008, 
+  pp. 379-381, 21 December 2007.
+
+
+
+
+
+
+
+
+
+Contact
+
+
+
+新竹市大學路 1001 號光復校區工程三館234室 EC234
++886-3-5712121 #56680
+
+
+
+
+
+
+
+
+
+
+Map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網路軟體架構最佳化速成班 －ALPHA Camp Blog                                         Menu       February 23, 2016July 11, 2017  網路軟體架構最佳化速成班科技創業在許多人的印象中講究快捷、靈活和精簡的工作環境和開發模式；因此在思考科技新創的需求時，我們常常忽略了創業很重要的一環：Scale-up 以及最佳化。科技新創公司的創辦人以及團隊一般來說較其他產業年輕，不管是產品設計、專案管理還是工程，新創公司團隊（尤其是第一次創業的團隊）都偏資淺，十之八九都沒有開發高流量、高負載產品的經驗。沒有最佳化的經驗，那碰到網站、App 流量大增怎麼辦？通常有點規模的新創公司會請所謂的 DevOps 工程師 （Development Operations Engineer），而 DevOps 的工作就是在於配置和建置公司的軟體架構。而在大型公司中，DevOps 通常又會再將資料庫管理、作業系統管理、程式碼管理等職務再細分。別慌，其實網路軟體架構最佳化基本功並不難上手，讓我們來聊聊。 下藥前先把脈網頁（或 App）慢原因有很多種：有可能是多媒體內容體積太大、可能是外部 API 回應時間過長、可能是資料庫搜尋時間太長，當然也有可能是網頁伺服器超載無法支撐流量。因此在做任何動作前，最好是先為你的軟體架構把把脈，看到底瓶頸是在客戶端還是在伺服端。以下小弟會先討論各種前端和後端的把脈工具，然後再根據每種工具偵測的問題討論最佳化技巧。首先，如果你的軟體架構是以網頁為主，第一步我會建議你先試試用 Google PageSpeed Insights 去偵測你的網站使用的前端資源的載入速度和效率。 Google PageSpeed 偵測的前端載入效率問題大致上可以分為幾類：圖片最佳化Javascript 與 CSS 最小化內容傳輸壓縮瀏覽器快取如果這些基本問題修正後，網頁的載入速度應該會有基本的提升。接著，第二步小弟會建議個人看官使用 Chrome 瀏覽器的除錯 Console（註：開啟 Chrome 以後按下 F12 鍵即可開啟）來測量資源的載入速度與效率。相較起 PageSpeed，Chrome Console 偵測的問題是屬於比較全面性的。前者專註於瀏覽器載入資源的最佳化，後者則是可幫助我們將網頁的整體載入速度（資料庫、伺服器端 Script、網路傳輸、瀏覽器載入）視覺化。上圖是 Youtube 首頁的載入圖，我們可以清楚看到資源的載入順序、載入方式（序列還是平行）、資源的載入耗時以及整體載入時間。這些資訊可以幫助我們瞭解如何將資源分散至不同的伺服器或合併成為單一檔案來增進載入效率。第三步，我們可以透過載量測試（Load Testing）來探討網路和伺服器端的瓶頸。通常載量測試會告訴我們目前的軟體架構整體而言可以服務多少使用者。筆者個人喜歡 Blitz.io。由於載量測試的原理就是透過許多用戶端同時嘗試連接伺服主機（其實跟 DDOS攻擊的原理相同），這種測試方法除了通知我們伺服主機是否能夠服務使用者外，並沒有辦法告訴我們到底瓶頸是出在路由器、資料庫、網頁伺服器還是其他資源主機。因此，第四步我們可以透過如 NewRelic 的伺服器監管服務來測量我們的網頁伺服器、資料庫主機等的回應速度和 CPU、記憶體、硬碟使用狀況。接下來，小弟會將問題分為前端和後端兩大塊進行最佳化技巧的討論。 前端（瀏覽器端）的最佳化技巧在思考網頁載入的時候，我們要先思考網頁的載入順序以及網路連線的開關成本。當你在瀏覽器中輸入網址，瀏覽器下載完網頁原始碼後會逐一下載網頁中使用的圖片、樣式檔（CSS檔）、Script 檔、影片等。由於現代網頁使用的外部資源通常不下數十個檔案，若逐一下載一定會花上不少時間，若能夠把資源用平行的方式下載，將能夠節省很多時間。由於瀏覽器和伺服器連線需要時間和多次傳輸對話才能夠達成（註：有興趣者可以閱讀 TCP 的連線方式），因此檔案在同一伺服器上，瀏覽器會維持根伺服器的連線，等到所有同伺服器上的檔案都下載完畢後才會關閉連線。瞭解了瀏覽器和網路連線的以上基本概念，我們可以討論 PageSpeed 幫我們抓出的一些問題。 圖片最佳化（圖片整合）網頁上的圖片除了大小以外，就是類型：PNG 是不失真壓縮格式，JPEG 是失真壓縮格式。因此，圖片最佳化前置作業就是將相片等可容忍失真的圖片用 JPEG 壓縮來減少檔案大小。圖片最佳化的概念其實跟前面提到的瀏覽器與網路連線概念息息相關。瀏覽器下載多個圖檔若不是開啟多個連線不然就是需要維持連線以完成多個下載作業。若你將你使用的圖片（如按鈕圖片）全部合併成為單一圖檔，如下：然後利用 CSS 的位移（offset）來顯示個別圖檔，那瀏覽器只需要下載一個檔案就可以完成載入圖片，可以有效地縮小載入序列，有時甚至可以將所有圖片的載入時間縮減數倍。這種最佳化技巧稱為圖片合併（Image Spriting）。 網域名切割（平行化）先前提到的圖片合併技巧可以有效減少圖片的數量，但這樣不是讓下載的圖片體積變大嗎？那如果合併之後還是有數個圖檔，有沒有辦法繼續最佳化？當然有！有種作法就是利用網域名切割（Domain Sharding）來增進平行載入的效果。假設你有十個大小相當的圖檔，在目前的情況各需要五十微秒才能完成載入。而跟伺服器連線需要一百微秒。那若圖檔都在同一伺服器上（假設伺服器限制客戶端一次只能開通一條線），那你總共需要六百微秒才能夠完成下載所有圖檔。若你將十個圖檔合併成兩個各需兩百微秒下載的圖檔，那在同一伺服器上你只需要五百微秒就可以載入，你成功地減少了一百微秒的載入時間，也就是增加了圖片 100/600 = 0.16666… = 16.66% 的載入效率。有趣的地方在這邊：若你的伺服器名稱為 testserver.com，而你去設定一新網域名 testserver2.com 或是設定 CNAME web1.testserver.com，即使這些網域名通通都指向同一臺伺服器，瀏覽器還是會將他們認作不同的伺服端而各自開啟新連線。因此，若你的兩個合併後的圖檔其中一個被搬到第二個網域名，現在瀏覽器會開啟兩條不同的連線，故能夠（理論上）平行下載兩個合併圖檔，因此下載的時間被縮短到 100 + 200 = 300微秒而已。你因此改善了載入效率 300 / 600 = 0.5 = 50%！而在網域名上動手腳的作法，可以用在任何檔案上來增加載入速度。但講到這邊值得註意的一點：開啟連線＂理論上＂可以將載入時間砍半，但是開啟新連線也意味著瀏覽器必須吃更多的 CPU 時間和記憶體，因此實際的效益往往不如預期。通常網域名切割的做法在分成兩、三個網域名後效果就會打折扣。故此：究竟是要將小檔案用網域名切割平行化，還要要將檔案合併起來減少連線數量？這是沒有標準答案的。你必須視你網站的檔案大小和連線情況去使用不同最佳化技巧來達到最大效益。 Javascript 與 CSS 最小化檔案最小化（Minification）的作法可能很多人都已知道，因此小弟在此簡單複習以免贅述。現在不管你是用甚麼開發環境，都有很多現成的minifier可以使用。Javascript 和 CSS 最小化的原理很簡單，假設你有以下 Javascript 程式碼：var num1 = 5;var num2 = 10;  var num3 = num1 + num2;alert(num3);以上總共62字元，其功能上與以下程式碼是相同的：var a=5;var b=10;var c=a+b;alert(c);但是第二段程式碼卻只有36字元，也就是減少了將近42%的大小！因此，若利用 minifier 去把開發中的程式碼轉成最小化的 Javascript 和 CSS 後，可以大大減少網頁資源載入所需的時間。 合併 Javascript 與 CSS合併程式碼的概念跟合併圖檔一樣，只是為了減少連線和檔案的數量。合併程式碼通常用動態的方式在執行時期將已經最小化的檔案合併起來，然後加入伺服端的快取。打個比方：若你的網站上有 a, b, c, d 四個已經最小化的 Javascript 檔案，第一張網頁使用 a, b，第二張網頁使用 c, d，第三網頁使用 a,b,c，第四網頁使用 b,d等。因為使用的組合不一樣，你沒有辦法事先將所有的檔案合併起來，否則會造成許多網頁浪費頻寬和 CPU 時間載入額外的資源。故此，你可以使用一伺服器端的 script 去動態將檔案組合起來，比如說：testdomain.com/combine=a,btestdomain.com/combine=c,dtestdomain.com/combine=a,b,ctestdomain.com/combine=b,d  這支 script 會將組合過的檔案放進快取，如此能夠進一步減少下載的檔案數量。順帶一提，使用快取時記得要設定版本管理，才不會造成更新程式碼後伺服器還繼續使用舊的合併程式碼的窘境。 內容傳輸壓縮你如果用 Chrome Console 去分析一網頁，在 Network 頁下選取網頁本身，再選取 Header，即可瞭解該網頁所在之伺服器是否有開啟內容壓縮功能，請見下圖：內容壓縮原理跟電腦上的檔案壓縮一樣，基本上就是瀏覽器若連上伺服器時在標頭中加入 gzip 壓縮的選項，那伺服器就會先將網頁檔壓縮後再傳到客戶端以節省頻寬。若 Chrome Console 沒有顯示 gzip 字樣，你可以參考這篇文章來在伺服器端開啟壓縮功能。 瀏覽器快取在網頁上你可以用：<meta http-equiv=”Cache-Control” content=”no-store” />來關閉快取功能，小弟我會建議你設定快取時間以避免重複下載鮮少更新的內容。請參考這篇文章來設定瀏覽器快取。 後端（伺服器端）的最佳化技巧在最佳化瀏覽器載入和網路傳輸效率後，當使用者不斷增加，最後伺服端還是會發生超載的情形。一般而言，大部分的新創公司一開始的軟體架構都不會太複雜，大致上應該分為：負載平衡管理、網頁伺服器（Web Server）和資料儲存三大塊。而絕大部分的時候，使用者連接伺服端都會先碰上負載平衡器（Load Balancer），而平衡器會根據背後的伺服器的CPU、網路流量或其他資源使用量來決定要由哪一臺伺服器來服務該使用者，以達到平衡流量的目的。可惜的是，雖然大部分小公司的軟體架構中有多台網頁伺服器在負載平衡器後面執行各種程式碼，但是存取資料卻還是連接到單一資料庫主機。因此將資料庫（與資料儲存媒介）最佳化對新創公司來講常常比增加程式執行效率更重要。 選取資料庫相較起第一次達康泡沫前後，今天的新創公司可選擇的資料庫多了很多種。過去資料庫多以 SQL 為主，但自從 MongoDB、CouchDB、Cassandra 等 NoSQL（就是＂不是 SQL＂的意思）資料庫在2010後成熟且大流行，資料儲存的選擇成了一非常重要的議題。SQL 由於是採取樹狀式目錄查詢，當資料量一大，增加、查詢、合併資料等作業耗時都會成比例增加。而 NoSQL 呢？目前 NoSQL 資料庫大致上分為以下幾種：Key-Value Store，字典式查詢資料庫，理論上可保證用鑰碼即時查詢數值Document Store，文件式資料庫，理論上可以即時調閱文件（但一般來說不能查詢、分析或合併文件內容）Graph，圖式資料庫（節點、鍵結），理論上可以即時尋找互相連結的節點（其他 NoSQL 資料庫類型可參考這裡）一般而言，SQL 的資料格式和檢索方式雖然較 NoSQL 更有彈性，但資料量大時儲存和檢索的彈性反而成了效能瓶頸。NoSQL 基本上就是將儲存和檢索功能精簡，使檢索效能（理論上）不受資料量影響。 SQL 資料目錄（Indexing）由於 SQL 還是資料儲存主流，在此小弟還是針對SQL最佳化稍微講解一下。從資料結構的角度來看，絕大多數的 SQL 資料庫都是以 B-Tree 的方式儲存。B-tree 簡單來說是二元樹的概化版本，其好處就是可以相對快速（註：logN 時間內）地增加、檢索和刪除資料，也可以快速進行所有結果的排序。相對於一般的 Hash Table，B-tree 的功能更彈性，但是同時也犧牲了一部份的效能（註：Hash table 理論上能在固定時間內完成增加、刪除、檢索而不受資料量影響，但 Hash Table 無法快速進行排序）。由此可見，B-tree 要達到相對快速地檢索，其中資料必須以使用者搜尋的欄位來組織搜尋用的樹狀圖，B-tree 用來整理資料的欄位就是所謂的 Clustered Index。但今天假設你的使用者資料中可能有電子郵件、有姓名、有 Twitter 帳號等資料，總不可能只用單一欄位尋找使用者吧？為了不讓不是 Clustered Index 的欄位變成線性查詢（註：檢索效率與資料量成反比），你必須適時根據資料庫中用來檢索的欄位增加所謂的 Non-clustered Index 來大幅提升檢索效率。由於 Non-clustered Index 的結構並非資料的真實結構，每增加一Non-clustered Index 都會使用更多的儲存空間，也會增加新資料的作業時間。意思就是不是每個欄位都加上 Index 就萬事 OK 了啦！要適可而止。好在的是，許多 SQL 資料庫（尤其是企業用資料庫）都有所謂的查詢效率分析工具（Query Performance Analyzer） ，只要你把你的 SQL 查詢語法全部打進去，該工具就會告訴你，你現在資料庫有那些檢索用欄位沒有對應的 Index。完成加入 Non-clustered Index 後，你的資料庫已經完成了第一步最佳化。 用硬碟陣列提升資料庫效率有自己組裝過電腦或是做過 IT 的朋友可能對磁碟陣列（RAID）不陌生。然而，由於雲端太方便，很多人可能都忘記了雲端的硬碟服務是虛擬化的，其讀寫效能很不穩定。因此不管你今天是要架 SQL 還是 NoSQL 資料庫，為了確保資料庫的讀寫速率，你可以使用RAID 10（1+0）來合併多個雲端硬碟來提升和穩定讀寫速率。RAID 1（理論上）硬碟數量和讀寫效能是呈正比的。 SQL 資料庫檔和 Log 檔分開放SQL 資料庫最佳化一小撇步就是當 SQL 內的資料更新時，SQL 除了修改資料庫檔外，還會（理論上同時）修改 Log 檔。因此，若將資料庫檔和 Log 檔放在兩個不同的硬碟，即可提升資料庫的寫入速度。 SQL 資料庫複製（Replication）與鏡象（Mirroring）除卻一些 NewSQL 和平臺雲 SQL 資料庫（如微軟的 SQL Azure）能夠完全採取分散式的方式建置外，一般來說 SQL 資料庫的讀寫還是以伺服器主機為單位。這意味著當單一主機的流量過大（而你已經無法再增加更多處理器和記憶體時），你必須要讓多台主機能夠同時服務使用者。與網頁伺服器一樣，多台資料庫主機也能夠放置於負載平衡器後來分攤資料流量。一般來說 SQL 有兩種方式能夠將資料讀取分攤給多台主機：複製與鏡象。複製（Replication）基本上就是把一臺資料庫主機的內容發布給多台備用資料庫主機，而透過負載平衡後，使用者可以從任何一臺資料庫主機上讀取資料。鏡象（Mirroring）嚴格上來講並不是用來分攤資料量，而是將資料庫主機上的資料備份到第二台主機上，以便第一臺主機當機時上線接手。由於複製會創造多個資料庫主機實體，此技巧有助於分攤流量，但是卻無法對資料庫內的資料進行分散管理。因此，當資料庫體積過大時，各主機實體仍可能出現效能問題。另外值得註意的一點就是使用複製和鏡象時，主機實體之間同步多少都會有些許延遲。故此，兩技巧並不適合分散寫入流量，而只適用於分散讀取流量。 SQL資料庫切割（Database Sharding）先前提到了當資料庫的讀取流量太大可以使用多個資料庫主機來分攤流量，但若今天資料庫體積過大，各自的主機實體還是會出現效能問題。此時，我們可以利用資料庫切割（Sharding）的技巧將資料庫切割成為數個小資料庫。資料庫切割的概念就是將資料表依照欄位數值去分割，比如說一欄位含有數字1~20，我們可能將該欄位含有1~5、6~10、11~15和16~20的資料列分割成為四個不同的小資料表，這樣一來對使用者來說雖然還是一完整的資料表，其中的資料（理論上最佳狀況）已分割成四個體積只有原先四分之一的資料表。此資料庫最佳化技巧除了有助於減少單一資料庫主機的資料量，更可以減少單一資料庫主機主機和資料區塊所分配到的讀寫流量。但是，資料庫分割由於必須將多個資料庫主機的資料表串聯起來，這代表資料表檢索的延遲時間增長。除此外，由於一資料庫分為多台主機管理，若其中一臺主機當機離線，就會造成資料庫功能受損。因此，究竟資料庫主機應該要複製還是要切割（有些 SQL 資料庫支援切割後再複製或鏡象），都要看資料庫其中的資料量、讀流量、寫流量等因素，才能依照使用需求找到最合適的最佳化組合。 效能監控最後，最重要的最佳化工作就是要長期監控所有伺服器和瀏覽器端的效能，才能在問題發生前（或問題發生時）在最快的時間反應。說到監控伺服器，小弟個人偏愛 New Relic：如上圖所示，New Relic 可以幫助你分析使用者進入網頁時所耗費的時間之間到底多少是花在瀏覽器端的文件處理、圖像顯示，又有多少時間花在網路傳輸和伺服器端的應用程式執行。除此外還可以分析資料庫各檢索語法的效能。相較起很多他牌的監控平臺，New Relic 在資訊整合上可圈可點，很適合新創團隊。 結語前面提到這麼多最佳化技巧，其實最佳化工作有如科學實驗，必須根據自己公司的軟體架構和使用者習慣進行測量、測試後再檢討，並沒有絕對的＂必勝秘笈＂。比如說影音串流公司的瓶頸可能是網路頻寬和內容伺服器、語音辨識公司的瓶頸可能是 CPU，而數位行銷公司可能是資料庫的效能和多樣化。在對於網路軟體架構最佳化技巧有了基本的認識後，多數新創公司應該能夠在不擴編人事的情況下解決大部分的效能問題。未來可等到公司業務成長可負擔專職的 DevOps 和資料庫工程師後再投入更多資源和時間去深入研究。 作者介紹 最新文章About ALPHA CampALPHA Camp － 台灣 Startup 人才培育第一站。期待培育新時代的創業家與新創人才。集結美國、香港與台灣跨國菁英師資與顧問群，針對 Startup 創業家與新創產業的需要，以新創事業實戰營 Bootcamp 的形式，提供完整的培訓與實戰體驗，助你在十週內打造網站開發/iOS開發/數位行銷/產品設計的核心能力，幫助你實現創業或轉職網路新創公司的夢想！課程筆記分享：【2017 紫牛學校 x ALPHA Camp】 #1 產品戰爭 – 移動互聯網下半場，產品經理該如何應對？ - June 9, 2017Minerva — 一所顛覆高等教育的新型態大學 - March 21, 2017【ALPHA Camp 校友聚焦】 不想上班有限公司共同創辦人梁多多專訪 - March 7, 2017ALPHA Camp 國際學生系列 — 香港人在台灣 - February 17, 2017如何讓你的 App 成為蘋果 App Store 的精選項目? - January 18, 2017ALPHA Camp 第十二屆 Demo Day：你的名字，人生最該追求的標籤 - January 12, 2017【ALPHA Camp 校友聚焦】將程式寫入飲食：科技迷的餐飲夢—吃義燉飯創辦人魏昭寧專訪 - January 11, 2017如何使用數據思考產品開發與行銷 — 以電商為例 - December 20, 2016免費 App 如何提醒使用者升級為付費版？ - December 8, 2016【ALPHA Camp 校友聚焦】 iCHEF 香港營運經理高克瑋專訪 - December 1, 2016 四大特質，讓你晉升網路新創A咖人才 UX 實務經驗談：教育與科技SharePost tagsweb網站開發 Leave a comment Cancel replyYour commentName* E-mail* Website Math Captcha 9 + 1 =   訂閱部落格Startup人才需要的觀點與技能，課程資訊與交流活動，每週直達你的信箱       ALPHA Camp 貼文分類Bernard Cafe (24)Startup Skills 技能 (165)技術力 (63)數據力 (3)行銷力 (45)設計力 (23)軟實力 (48)Startup World 觀點 (95)人物專訪 (12)新創案例 (29)新創職涯 (10)新創趨勢 (28)活動直擊 (12) 近期貼文    課程筆記分享：【2017 紫牛學校 x ALPHA Camp】 #1 產品戰爭 - 移動互聯網下半場，產品經理該如何應對？ Jun 9th, 2017     Minerva --- 一所顛覆高等教育的新型態大學 Mar 21st, 2017     【ALPHA Camp 校友聚焦】 不想上班有限公司共同創辦人梁多多專訪 Mar 7th, 2017     4 個預告你的 Prototype 將會失敗的重要跡象 Mar 4th, 2017     拿到用戶資料以後該怎麼做？--- 行銷應用案例分享 Feb 23rd, 2017     創業家何時該決定放棄？ Feb 21st, 2017                                       
+ 
+                   ★★★★★寬頻網路最佳化★★★★★ - PCZONE 討論區                 PCZONE 討論區 > ▲ ADSL_CABLE_FTTH 寬 頻 上 網 討 論 > -- ADSL 寬 頻 專 區 > ---- ADSL 精 華 版     
+
+	 ★★★★★寬頻網路最佳化★★★★★
+
+
+             會員名稱  記住密碼   密碼                  聯絡我們             通知            ---- ADSL 精 華 版 ADSL各版有參考價值的文章，不定期會移到精華版版面，可以多到精華版找文章!!       轉到網頁...                   第1頁，共4頁 1 2 3 > 最後一頁 »                    chih_haohung  -停權中-   寬頻網路最佳化  建議: 只適用於你向ISP公司申請的速度有到1Mb以上(下載部分)的速率 
+撰文: 賣個共 
+我為了加快網路速度用了多少個軟體   可是全都沒用  根本不像這些軟體所講的神話那樣  安裝之後可以增加幾%的速度   直到我發現這個網站http://www.speedguide.net 你不用安裝什麼軟體程式在你的電腦  
+我是目前在美國的台灣留生 
+在美國用COX communications公司 的cable modem雙向寬頻網路 
+我也用這個網站來修改微軟Windows 作業系統的 registry ，或是修改 MTU  達到最佳化的設定 
+我已經幫不下50個用cable modem的留學生或是老外加快他們的網路連線速度 
+成功率達100% 國內不論用和信雙向(速率6Mb/256Kb)Cable Internet / 東森雙向Cable Internet 或是任何一家ADSL(速率1.5Mb) , 而且都有明顯增加連線速度 
+我都是到這個網站測試速度http://www.speed411.com 
+加快後離峰時間都有4000多KBPS 
+可能從台灣連美國不準確不客觀 , 你們可參照其他測速網站(主機在台灣的) , 應該有明顯的差別 
+或是用下載加速軟體時如 DAP, FlashGet or NetAnts , Getright , Godzilla也有明顯增快的感覺 
+但是我是推薦雙向cable modem(非陽春型)的寬頻網路 ,最好是下載能有超過1MB的寬頻網路 
+如果是用ADSL下載不到1MB的或是雙向cable modem陽春型(128kb/64kb)或是實用型 , (700kb/100kb)的就沒什麼用處 
+因為我相信你們現在大多數用ADSL 大部分的人下載的速度都是1MB以下 , 不是512KBPS就是786KBPS , 其實微軟Windows作業系統的registry和MTU預設值下載的最大值都有1MB
+如(98, Me) (Windows XP 有時候已幫你網路速度最佳化了) 
+所以在我實際的例子中 Windows 98, Me 加速的空間最大 , 但是你的ISP提供給你的速度下載不到1MB 你即使最佳化也沒用 
+就像你最佳化後電腦的設定值變成你的電腦可以達到連線速度5000KBPS
+你的ISP給你的下載最高速度是512KBPS或是786KBPS 你的連線速度也只能有512KBPS或是786KBPS 
+我在台灣住高雄市三民區用和信雙向超值型cable modem（下載6MB上傳256KBPS）
+最佳化後連到 www.speed411.com這個測速網站
+非尖峰時段都有2000KBPS到3000KBPS  離峰時段偶而可到5000KBPS 
+我要好好的鄭重強力的和大家推薦一下http://www.speedguide.net(和阿土推薦一樣)
+這個網站是美國很有名的更改微軟Windows作業系統的registry和MTU的網站以達到各種速度的最佳化 
+教學做法如下 
+首先 你的電腦一定要有Winzip8.0以上版本的壓縮軟體 
+連到http://www.speedguide.net  
+第一步驟:Windows 98, Windows Me, Windows 2000, Windows XP皆適用  
+後往左看第二個選項Patches點下去: 
+Windows 98 的需要的檔案:
+mtupatch98.zip   
+sguide_tweak_98_ME 
+sguide_tweak_98_ME_PPPoE  
+SpeedGuide Web Patch 
+Windows Me 的需要的檔案: 
+sguide_tweak_98_ME 
+sguide_tweak_98_ME_PPPoE 
+SpeedGuide Web Patch 
+Windows 2000/XP 的需要的檔案: 
+sguide_tweak_2k.zip   
+sguide_tweak_2k_pppoe.zip    
+SpeedGuide_2k Web Patch
+winxp_dnscache.reg 
+以上的程式解壓縮後
+當副檔名是.reg 就用滑鼠左鍵直接點它
+當副檔名是.inf 請用滑鼠右鍵點它 , 會出現下拉式的視窗  如果你是用Winzip中文版選 “安裝”  如果你是用Winzip英文版選 “Install” 
+當你解壓縮後同時發現 有副檔名是.reg的檔案  也有副檔名是.inf的檔案  切記只要執行副檔名是.reg的檔案即可 , 不要去安裝副檔名是.inf的檔案還有其他的檔案也不要碰它們
+只有winxp_dnscache.reg不用解壓縮  直接用滑鼠左鍵點它  
+第二步驟  Windows 98, Windows Me, Windows 2000, Windows XP皆適用 
+請到http://www.speedguide.net主頁去 
+看到TCP/IP Analyzer 點下去  分析你的網路一些設定值
+查一下你的  Default Receive Window (RWIN) = 256960 , 有沒有達到256960這個數值  
+如果沒有  請按TCP/IP Analyzer  旁的 TCP/IP Optimizer 下載這個修正程式 , 然後執行它 
+它會出來一個視窗 , 視窗上面顯示你是哪種類型上網勾你上網的方式
+視窗中間勾Modify All Network Adapters
+視窗下麵 勾Optimal settings  最後按 Apply changes 
+然後重新開機  把這個修正程式刪掉 , 再按TCP/IP Analyzer測試一下
+應該Default Receive Window (RWIN) = 256960 的值會是256960 才對 
+如果不是256960  這通常會出現在Windows 98裡 應為它少一個程式
+所以如果你的作業系統是Windows 98 請在第一步驟 相同網頁的中間位置下載MS Vtcp.386 fix for Windows 98這個程式解壓縮後執行 再重新開機 
+第三個步驟 只適用於Windows XP 
+中文版 ,如下  
+“開始”   選 “執行”  打入 “gpedit.msc” 
+本機電腦原則—電腦設定---系統管理範本---網路---QoS封包排程器---限制可保留的頻寬---設定 
+勾選 “已啟用” 
+頻寬限制(%): 0
+“套用” “確定”     再重新開機 
+英文版如下 
+“start”  click “Run”  enter “gpedit.msc”
+Local Computer Policy---Computer Configuration—Administrative Templates
+---Network---QoS Packet Scheduler---Limit reservable bandwidth---setting
+Make sure check box on “Enabled” is selected 
+Bandwidth limit (%):0
+“Apply” “OK”   then restart computer 
+只要按照這三個步驟 , 包準你的網路連線速度 , 嚇嚇叫 , 但是我再重申一次這是適合寬頻網路的最佳化 , 如果你是用撥接上網 , 那很抱歉不會有什麼差別 
+如果你的ISP給你的下載速度沒有超過1MB  基本上也沒什麼改變  所以不要期望太大 不過你可以試試看 
+以上文章所提的單位是B=Bit                          LucAngel  會員      謝謝分享，如果晚點有時間的話會去試試看。
+我之前曾經試過其他人公佈的修改法，也是說能加快寬頻網路的速度。可是修改了registry後，速度不升反降。例如：原本用cuteftp可以下降到150k的網站，一經修改後就只剩下70k，而且這個70k是很平均的70k，不像之前可能一下子是150k，然後跳到180k後又跳回140k，速度是很不穩定的，所以我就叫isp派人來修。
+工程師來看了之後，就說這可能是我安裝了什麼軟體或是改到了registry，所以才會很穩定地在70k上下，叫我要自己把軟體移除。很神奇地，在我把電腦重新恢復成原始狀態後，就真的恢復正常了。
+所以我現在看到有人說如何修改registry來加快傳輸速度的時候，都還是會怕怕的，不知道該不該嘗試......                     阿 土  校長兼撞鐘      感謝 , 你寫的很詳細 , 應該會有很多人受益 
+(我沒什麼多餘時間整理相關資訊) 
+幫你加上很多文字段落 , 以利閱讀 
+若有圖片的話會更容易說明                     msjakpo  會員      感謝說喔,真的很感謝,整理的很棒,我會跟我朋友介紹喔~~~~~~~                     LEE366  朝天一柱香     有變快，現在開網首的速度有很明顯的差異，沒試之前進來開網首與試過之後開網首的速度差了快2∼3秒，下載也是差了約2∼3秒（我去下載NU的病毒更新檔約6MB左右）。
+作業系統WINDOWS 2000 AD SERVER, ADSL 華信1.5M ADSL，測試時間5/24 pm10:05                          盼盼  會員      我用了∼有一點點變快的感覺∼因為本來就速度很好了∼
+可是請問那下載的那些安裝完可以刪掉嗎？(我不想一直丟在桌面上)
+謝謝                     chih_haohung  -停權中-       引用:    最初由 盼盼 發表 我用了∼有一點點變快的感覺∼因為本來就速度很好了∼
+可是請問那下載的那些安裝完可以刪掉嗎？(我不想一直丟在桌面上)
+謝謝      首先 感謝阿土幫我加上標點符號  使段落更加分明  閱讀更加清楚
+(我個人太懶了,所以偷懶沒加上標點符號,請大家多多包函) 
+還有圖片及數據,因為都是指導他人如何網路加速,沒有圖片或實際數據可以提供給大家 
+那些程式下載到你的電腦後當然可以刪除    
+還有如果你是使用WindowsXP的作業系統 , 你的ISP公司給你的速率也有到1MB以上
+WindowsXP的作業系統"有時候"已經幫你的網路速度調到最佳化了 , 但這個原因我到現在還搞不懂 
+以我在美國的例子 , 我的同學的網路速度很慢 - 300Kbps
+(我自己的PC加速後 , 正常一般時段可到3000 Kbps) 
+她用Windows 98 , 連ISP(雙向cable Internet)公司都袖手無策 , 找技術工人檢查線路都確定線路沒問題 
+我之前幫很多人網路加速 , 有太多人用Windows 98或Me , 我指導他們加速前的速率 , 不是300~400 Kbps 就是 700~800 Kbps , 因為都是用同樣一家ISP(雙向cable Internet)公司 
+沒有道理我可以跑到 3000 Kbps 她只能跑到 300 Kbps
+但是往往用 Windows 98或Me 加速完後 , 反而平常時段可以跑到4000Kbps
+這就是我所說的用Windows 98或Me 加速空間最大的原因
+至於為什麼用Windows 98或 Me 他們加速前的速率不是300,400Kbps就是 700,800Kbps
+我也一直不知道為什麼  只是把我實際上的經驗告知給大家  
+還有不一定要到www.speed411.com 去測試你的網路速度 , 這個網站只是個參考 , 你可以到任何一個你信賴的測速網站去測試    
+還有不少人跟我抱怨他們的速度根本沒有變快 , 我一問才知道原來他們是用512Kb或768Kb
+真讓我哭笑不得 
+所以我再次申明 : 若你的ISP公司如果給你的速率不到1MB , 請別期望使用這些修正程式後會產生加速的變化 
+而那些用ADSL 1.5M.b 或是用和信雙向cable Internet 6Mb 或是東森雙向cable Internet的用戶 
+請建立一個基本觀念 , ISP公司給你多少速率 , 上限速率就是多少
+不會因為使用這些修正程式 , 導致原本的ADSL 1.5M.b 就可以跑到 2Mb
+和信雙向cable Internet6Mb 就可以跑到7Mb , 若有的話只是瞬間的暴衝值
+這些都是不可能的事情 , 否則ISP為什麼還要分速率和價格呢??                     jackyiou  JC      我的是98的~請問是不是第一個步驟闔第二個步驟都要用ㄋ?
+還有他不是說副檔名是.inf的檔案 切記只要執行副檔名是.reg的檔案即可 , 不要去安裝副檔名是.inf的檔案還有其他的檔案也不要碰它們,那為什麼還要說.inf 請用滑鼠右鍵點它 , 會出現下拉式的視窗 如果你是用Winzip中文版選 “安裝” 如果你是用Winzip英文版選 “Install”呢?有點不知道,可以教我一下嗎?謝謝...                     chih_haohung  -停權中-       引用:    最初由 jackyiou 發表 我的是98的~請問是不是第一個步驟闔第二個步驟都要用ㄋ?
+還有他不是說副檔名是.inf的檔案 切記只要執行副檔名是.reg的檔案即可 , 不要去安裝副檔名是.inf的檔案還有其他的檔案也不要碰它們,那為什麼還要說.inf 請用滑鼠右鍵點它 , 會出現下拉式的視窗 如果你是用Winzip中文版選 “安裝” 如果你是用Winzip英文版選 “Install”呢?有點不知道,可以教我一下嗎?謝謝...      
+是的, 第一個步驟闔第二個步驟都要用  
+可能我表達的不太清楚  很抱歉 
+副檔名是.reg的檔案副執行方式: 直接用滑鼠左鍵點它
+副檔名是.inf的檔案副執行方式: 用滑鼠右鍵點他 會出現下拉式的視窗 選"安裝(Install)"
+###因為我不知道你們每一個人到底是使用Winzip中文版 還是Winzip英文版  我只好兩個版本都說明### 
+下列三種情況中如果不是 副檔名是.reg的檔案或副檔名是.inf的檔案  都不要管它們     
+情況一: 解 壓縮後   只有看到副檔名是.reg的檔案  而沒有看到副檔名是.inf的檔案 時
+        執行副檔名是.reg的檔案    
+情況二: 解 壓縮後   同時看到副檔名是.reg的檔案和副檔名是.inf的檔案 時
+        只要執行副檔名是.reg的檔案 
+情況三: 解 壓縮後   只有看到副檔名是.inf的檔案  而沒有看到副檔名是.reg的檔案    
+        執行副檔名是.inf的檔案  
+另外一提  善用DAP,FlashGet,GetRight  等下載加速軟體                        jackyiou  JC      恩~我懂了~謝謝!我已經用好!真的明顯變快了喔!!                            第1頁，共4頁 1 2 3 > 最後一頁 »               主題工具    顯示可列印版本    郵寄本頁給好友                            XML   RSS 2.0   RSS  本站使用 vBulletin 合法版權程式站務信箱 : www@pczone.com.tw本論壇所有文章僅代表留言者個人意見，並不代表本站之立場，討論區以「即時留言」方式運作，故無法完全監察所有即時留言，若您發現文章可能有異議，請 email :www@pczone.com.tw 處理。          
+
+  ﻿
+
+
+
+ 
+
+
+網路加速，網路環境最佳化 - SG TCP Optimizer | 中文化天地網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+中文化天地網 
+台灣免費軟體下載、綠色/可攜式/免安裝軟體及軟體中文化下載、中文版軟體下載網站 – 中文化天地網，專門提供免費/免安裝軟體下載、軟體中文化/中文版軟體下載，所提供的中文化軟體大多為「丹楓」所中文化。聯絡信箱：zhtwnet.com [at] gmail.com
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+27九月 2016 
+
+
+網路加速，網路環境最佳化 – SG TCP Optimizer
+
+丹楓 ⋅ 2 則評論 
+
+
+
+
+SG TCP Optimizer 是一款小巧、強大的網路加速工具，TCP Optimizer 可透過調整系統的 TTL、TCP/IP、寬頻延遲、MTU、接收緩衝區(RWIN)、最大傳輸單元(MTU)、瀏覽器(IE)併發連接數、功能變數名稱解析優先順序、功能變數名稱解析錯誤暫存時間等重要參數來有效最佳化網路環境，提升上網速度！並可檢測網路允許的最大傳輸單元大小和網路延遲，計算合適的接收緩衝區，並提供網路參數相關的登錄檔編輯功能。無論您是網路高手還是普通菜鳥，都可以透過 TCP Optimizer 輕輕鬆鬆地設定最佳化網速，加速上網。
+
+ 
+
+【軟體名稱】：SG TCP Optimizer 4.0.6 – 網路加速，網路環境最佳化
+【軟體大小】：680 KB
+【作業系統】：Windows All
+【官方網站】：http://www.speedguide.net/
+【語言種類】：英文
+The TCP Optimizer is a free, easy Windows program that provides an intuitive interface for tuning and optimizing your Internet connection. There is no installation required, just download and run as administrator. The program can aid both the novice and the advanced user in tweaking related TCP/IP parameters in Windows, making it easy to tune your system to the type of Internet connection used. The tool uses advanced algorithms, and the bandwidth*delay product to find the best TCP Window for your specific connection speed. It provides for easy tuning of all related TCP/IP parameters, such as MTU, RWIN, and even advanced ones like QoS and ToS/Diffserv prioritization.
+官方下載連結：
+最新版→ [4.0.6]
+
+
+
+
+
+如果您喜歡這篇文章，請考慮留下迴響或訂閱RSS 更新通知， 以獲得更多更新的資訊。
+
+相關
+ 
+
+網站分類: 系統相關優化 ⋅ 標籤: SG TCP Optimizer, TCP, 免安裝免費軟體下載, 網路加速, 網路最佳化, 網路速度 
+
+
+
+
+
+
+
+
+鬼雨魅雪
+
+
+
+希望能有中文版的
+
+
+
+
+
+
+Danfong
+
+
+
+您好：
+有空我再試試看，感謝您的回覆。
+
+
+
+
+
+
+
+
+
+文章導覽
+
+← 上一篇 
+
+下一篇 → 
+
+
+
+
+
+捐贈贊助「中文化天地網」網站 軟體中文化是極度枯燥乏味且耗時、傷眼力的苦差事，基於個人對於中文化的熱忱才會持續發表中文化軟體供網友免費使用，在無其他廣告收入來源的情況下是難以支撐租用網站等相關的支出，為了讓「中文化天地網」網站能永續經營，誠摯期盼熱心的網友能捐贈贊助「中文化天地網」網站。
+詳情請點選底下連結：
+捐贈贊助「中文化天地網」網站
+
+BloggerAds 
+站內搜尋
+Search for:
+
+
+
+Facebook 粉絲團 
+
+Facebook 粉絲團
+
+網站人氣 
+
+
+
+
+ 
+
+
+
+
+
+
+ 近期文章 
+
+NetworkTrafficView 中文版 – 網路流量監控工具
+
+
+SunsetScreen 中文版 – 電腦螢幕抗藍光過濾器
+
+
+開啟網頁速度最快的瀏覽器 – Vivaldi 中文版
+
+
+Windows 惡意軟體移除工具 – Microsoft Malicious Software Removal Tool
+
+
+病毒掃描、清除工具 – McAfee Labs Stinger
+
+
+  
+
+ 
+
+熱門文章︰ 
+
+						Youtube Downloader HD 中文版 - 幫您輕鬆下載 YouTube 影片					
+
+
+
+						Core Temp 中文版 - CPU 溫度監控軟體					
+
+
+
+						顯示卡驅動程式移除工具 - Display Driver Uninstaller 中文版					
+
+
+
+						mUsbFixer 2.0 移除隨身碟、SD 卡防寫保護與格式化工具					
+
+
+
+						CPU-Z 中文版 - CPU 檢測軟體					
+
+ 
+
+網站分類網站分類
+選擇分類
+其他軟體  (5)
+教學文章  (4)
+未分類  (2)
+生活雜記  (2)
+硬體相關文章  (1)
+統一發票中獎號碼  (3)
+網站服務  (2)
+軟體分享  (587)
+   中文化相關工具  (4)
+   修復軟體  (21)
+   其它軟體  (85)
+   圖檔工具  (4)
+   壓縮封裝  (2)
+   多媒體工具  (25)
+   安全與隱私  (24)
+   微軟相關  (19)
+   效能測試  (2)
+   文書相關  (7)
+   更新相關  (2)
+   桌面相關  (6)
+   檔案資料夾管理  (11)
+   清理工具  (7)
+   燒錄程式  (1)
+   破解相關  (11)
+   硬體測試  (56)
+   磁碟相關  (30)
+   移除軟體  (98)
+   系統相關優化  (37)
+   網路工具  (84)
+   資料救援復原  (6)
+   防毒相關  (38)
+   驅動程式相關  (7)
+防毒相關軟體  (39)
+電腦相關知識分享  (2)
+   防毒相關  (1)
+
+
+訂閱最新文章
+
+免費訂閱最新文章，好文不錯過！
+ 
+
+							電子郵件位址						
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Copyright © 2015-2017. 中文化天地網 All Rights Reserved.
+版權聲明：本站所有文章或本人中文化的軟體轉載前請先取得授權，並需註明出處及加上超連結。 
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+如何最佳化 Skype for Business 網路架構 | TechDays Taiwan 2015 | Channel 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip Navigation
+
+
+
+
+
+
+
+
+
+
+
+TechDays Taiwan 2015
+
+如何最佳化 Skype for Business 網路架構
+
+
+
+							Sep 24, 2015 at 10:34AM
+					
+
+						by Tom Charng
+
+
+
+
+
+
+
+
+					Average of 0 out of 5 stars
+				
+
+0 ratings
+
+		
+
+Sign in to rate
+
+
+						Close
+					
+
+
+
+
+
+215 views
+						
+
+
+
+
+
+
+
+
+
+
+Play 如何最佳化 Skype for Business 網路架構
+01:11:08
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in to queue
+
+
+						Sorry, an error occurred.
+						
+
+								Close
+							
+
+
+
+
+
+
+Description
+
+企業內部網絡基礎設施的整合是部署即時語音和視訊成功的關鍵。從考慮採取 WiFi 優勢的軟體定義網絡架構，本課程將提供您如何確保企業網絡上的用戶提供最佳的服務品質。
+
+
+Download:
+Slides
+
+
+Day: 
+2
+
+
+Level:
+300
+
+
+Track:
+[OFC] 協同生產力
+
+
+Session Type:
+Breakout
+
+
+Code: 
+									OFC301
+								
+
+
+
+
+Share
+
+
+
+Twitter
+
+
+Facebook
+
+
+Reddit
+
+
+
+
+Share Link
+
+
+
+
+
+
+
+Embed
+
+
+
+Download
+
+
+
+Download this episode
+
+
+
+													MP3
+												 (65.1 MB)
+											
+
+
+													Low Quality MP4
+												 (119.1 MB)
+											
+
+
+													High Quality MP4
+												 (1.4 GB)
+											
+
+
+													Mid Quality MP4
+												 (845.3 MB)
+											
+
+
+
+Download:
+
+
+Slides
+
+
+
+
+
+
+
+
+
+
+
+
+More episodes in this series
+
+
+
+TechDays Taiwan 2015
+
+
+Windows 10 安全性功能全覽
+
+
+
+
+01:07:08
+
+
+
+
+
+TechDays Taiwan 2015
+
+
+微軟自助式商業智慧的躍進
+
+
+
+
+01:10:10
+
+
+Related episodes
+
+
+
+TechDays Taiwan 2015
+
+
+深入探討如何防禦垃圾郵件與郵件攻擊 - 微軟自身治理經驗與作法
+
+
+
+
+01:07:05
+
+
+
+
+
+TechDays Taiwan 2015
+
+
+從視訊到語音，Skype for Business 最佳實例分享
+
+
+
+
+01:12:53
+
+
+
+
+
+TechDays Taiwan 2014
+
+
+Future Look at Microsoft Exchange Server
+
+
+
+
+01:06:56
+
+
+
+
+
+Techdays Taiwan 2013
+
+
+如何以Lync Server 建置企業撥入式語音會議(ACP)及 互動式語音應答系統(IVR)
+
+
+
+
+01:13:31
+
+
+
+
+
+Techdays Taiwan 2013
+
+
+Microsoft IT 如何部署微軟內部Lync 2013 及使用企業語音實例分享
+
+
+
+
+01:11:20
+
+
+
+
+
+
+
+
+
+
+The Discussion
+
+
+
+
+
+Add Your 2 Cents
+
+
+Are you human? If so, leave this field blank.
+
+
+
+
+Name
+
+
+
+
+Email
+
+
+
+
+Or
+Sign In
+
+
+Comment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+如何最佳化 Skype for Business 網路架構 | TechDays Taiwan 2015 | Channel 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip Navigation
+
+
+
+
+
+
+
+
+
+
+
+TechDays Taiwan 2015
+
+如何最佳化 Skype for Business 網路架構
+
+
+
+							Sep 24, 2015 at 10:34AM
+					
+
+						by Tom Charng
+
+
+
+
+
+
+
+
+					Average of 0 out of 5 stars
+				
+
+0 ratings
+
+		
+
+Sign in to rate
+
+
+						Close
+					
+
+
+
+
+
+215 views
+						
+
+
+
+
+
+
+
+
+
+
+Play 如何最佳化 Skype for Business 網路架構
+01:11:08
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in to queue
+
+
+						Sorry, an error occurred.
+						
+
+								Close
+							
+
+
+
+
+
+
+Description
+
+企業內部網絡基礎設施的整合是部署即時語音和視訊成功的關鍵。從考慮採取 WiFi 優勢的軟體定義網絡架構，本課程將提供您如何確保企業網絡上的用戶提供最佳的服務品質。
+
+
+Download:
+Slides
+
+
+Day: 
+2
+
+
+Level:
+300
+
+
+Track:
+[OFC] 協同生產力
+
+
+Session Type:
+Breakout
+
+
+Code: 
+									OFC301
+								
+
+
+
+
+Share
+
+
+
+Twitter
+
+
+Facebook
+
+
+Reddit
+
+
+
+
+Share Link
+
+
+
+
+
+
+
+Embed
+
+
+
+Download
+
+
+
+Download this episode
+
+
+
+													MP3
+												 (65.1 MB)
+											
+
+
+													Low Quality MP4
+												 (119.1 MB)
+											
+
+
+													High Quality MP4
+												 (1.4 GB)
+											
+
+
+													Mid Quality MP4
+												 (845.3 MB)
+											
+
+
+
+Download:
+
+
+Slides
+
+
+
+
+
+
+
+
+
+
+
+
+More episodes in this series
+
+
+
+TechDays Taiwan 2015
+
+
+Windows 10 安全性功能全覽
+
+
+
+
+01:07:08
+
+
+
+
+
+TechDays Taiwan 2015
+
+
+微軟自助式商業智慧的躍進
+
+
+
+
+01:10:10
+
+
+Related episodes
+
+
+
+TechDays Taiwan 2015
+
+
+深入探討如何防禦垃圾郵件與郵件攻擊 - 微軟自身治理經驗與作法
+
+
+
+
+01:07:05
+
+
+
+
+
+TechDays Taiwan 2015
+
+
+從視訊到語音，Skype for Business 最佳實例分享
+
+
+
+
+01:12:53
+
+
+
+
+
+TechDays Taiwan 2014
+
+
+Future Look at Microsoft Exchange Server
+
+
+
+
+01:06:56
+
+
+
+
+
+Techdays Taiwan 2013
+
+
+如何以Lync Server 建置企業撥入式語音會議(ACP)及 互動式語音應答系統(IVR)
+
+
+
+
+01:13:31
+
+
+
+
+
+Techdays Taiwan 2013
+
+
+Microsoft IT 如何部署微軟內部Lync 2013 及使用企業語音實例分享
+
+
+
+
+01:11:20
+
+
+
+
+
+
+
+
+
+
+The Discussion
+
+
+
+
+
+Add Your 2 Cents
+
+
+Are you human? If so, leave this field blank.
+
+
+
+
+Name
+
+
+
+
+Email
+
+
+
+
+Or
+Sign In
+
+
+Comment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳化網路設定Ashampoo Internet Accelerator＠steve112｜PChome 個人新聞台
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ PChome | 說明 |  
+登入 
+
+
+
+
+
+
+
+
+
+預防急性椎間盤突出！這...
+夏日輕鬆瘦 狼牙棒滾輪這麼多藥物難道是要用來…
+好萊塢性感男星傑森摩幕...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+steve112
+這裡是私人收集倉庫
+以更新版本為主要收藏處
+
+
+http://mypaper.pchome.com.tw/news/steve113/
+http://mypaper.pchome.com.tw/news/steve114/
+
+
+173愛的鼓勵
+4訂閱站台
+
+ 
+
+
+
+
+首頁
+活動3
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+                            2009-05-11 18:34:36 
+                            | 人氣(567) 
+                            | 回應(0) 
+                
+                            | 上一篇
+                            | 下一篇 
+
+
+
+
+
+
+
+
+
+                
+                                        最佳化網路設定Ashampoo Internet Accelerator
+                                    
+
+推薦
+                                        0
+                                        
+收藏
+                                        0
+                                        
+轉貼0
+訂閱站台
+
+
+
+
+
+
+                最佳化網路設定Ashampoo Internet Accelerator 2 v2.0, 06繁中.綠化免裝版
+
+
+
+【軟體名稱】Ashampoo Internet Accelerator 2【軟體版本】v2.0, 06【語言介面】多國語言/繁體中文【軟體分類】提升網速【檔案格式】rar【檔案大小】1.77 MB【繁化作者】asuryu【解壓密碼】無 快樂分享【圖片預覽】
+
+【軟體簡介】:   Ashampoo Internet Accelerator 是一款用來最佳化網路設定及還原 Windows 預設網路設定的軟體，提供了手動或自動的兩種操作模式，該軟體稱可以提升 15~30% 的網路速度。Step on the accelerator: and enjoy faster internet surfingA slow internet connection costs time and gets on your nerves. For this reason, taking the time to optimise the settings is almost considered a must – particularly since an optimisation in terms of speed doesn’t come with any additional cost, neither for a hardware extension nor for the software, as the Ashampoo Internet Accelerator 2 can be used completely free of charge.The program allows a fully automatic setting of the most important parameters. To achieve this, communicating the method used for internet access to the Ashampoo Internet Accelerator 2 on the part of the user is sufficient: ●Analogue modem ●ISDN ●DSL via LAN cable or cable modem ●DSL via wireless LAN ●Other LAN connections (no DSL) This system means that the program gets the very last drop of performance out of the internet connection. When using a modem and an ISDL connection, the improvements in performance are particularly noticeable – a reason for celebration. With a DSL connection, the tuning result isn’t quite as impressive, as there are fewer things which need adjusting in order to provide an optimisation. Nonetheless, it is still the case here that every percentage of extra performance means better internet surfing. http://www.badongo.com/file/7498507
+
+
+文章定位：
+
+
+
+我要檢舉
+
+
+
+
+
+
+
+
+
+
+                                        台長：
+                        Vega
+
+
+
+
+
+您可能對以下文章有興趣
+2008年最強之 Norton 2009 系列 [正式版][繁中版]
+                            
+
+O&O CleverCache Pro v6.0
+                            
+
+Nero Burning Rom v9.2.5.0
+                            
+
+PDFCreator 1.2.1 - 選擇列印文件輕鬆轉換成PDF
+                            
+
+
+
+
+
+
+
+                人氣(567) | 回應(0)| 推薦 (0)| 收藏 (0)| 轉寄
+
+                                    全站分類: 不分類 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+回應(0)
+
+
+推薦(0)
+
+
+收藏(0)
+
+
+
+
+我要回應
+
+
+
+
+
+
+
+
+我要回應
+
+
+
+* 回應人：
+
+
+
+E-mail：
+
+
+
+個人網頁：
+
+
+
+悄悄話：
+
+否
+                              是 (若未登入"個人新聞台帳號"則看不到回覆唷!)
+                            
+
+
+回應內容：
+
+
+
+
+
+* 請輸入識別碼：
+
+
+
+
+
+
+請輸入圖片中算式的結果(可能為0) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+(有*為必填)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+自我介紹
+
+
+
+
+
+
+Vega
+
+
+
+
+
+
+
+無
+
+
+
+
+關於本站
+留言板
+地圖
+加入好友
+
+
+愛的鼓勵：173
+文章篇數：685
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+熱搜關鍵字
+
+
+
+臺中日本料理,新北市美食,六福村渡假村,拼圖咖啡因,臺北韓國美食,公豆咖啡,日光咖啡館,淡水老街介紹,
+              
+
+
+
+
+站方公告
+
+
+【公告】個人新聞台服務認證公告【公告】第五批 40款底圖將下線【公告】第四批 52款底圖將下線【公告】第三批 45款底圖將下線【公告】第二批 60款底圖將下線
+贊助商
+
+
+
+
+好友列表
+
+
+
+
+
+好友的新聞台Blog
+
+
+
+
+
+
+
+
+
+
+站內搜尋
+
+
+
+
+
+
+
+
+標題
+                                    內容
+                                    標籤
+                                
+
+
+
+
+
+最新文章
+
+
+Kingtel 西陵 來電顯示有線電話 KT-9900F (說明書)windows 10weathereyeGOM Player 2.1.33.5071Kaspersky Anti-Virus 2013CCleaner 3.19.1721 Professional / Business (系統清道夫) 增強綠色版AppLocale，專門搞定大陸軟體亂碼現象[播放軟體]Windows Media Player 12IE8 XP Yahoo最佳化版本Process Lasso Pro破解(系統優化工具) 3.891 32Bit 多語言安裝版
+
+
+
+
+
+文章分類
+
+
+
+
+
+
+
+ 本臺最新標籤
+
+
+
+
+
+
+
+
+
+最新回應
+
+
+windows 10, (vega)GOM Player 2.1.33.5071, (veag)weathereye, (vega)GOM Player 2.1.33.5071, (vega)下載各種正版軟體 的序號產生器 的軟體, (小沈)[播放軟體]Windows Media Player 12, (悄悄話)PC Booster v5.0 英文正式版+繁體中文化, (wang)PC Booster v5.0 英文正式版+繁體中文化, (alex)PC Booster v5.0 英文正式版+繁體中文化, (3q)下載各種正版軟體 的序號產生器 的軟體, (mars)
+
+
+
+
+
+我在開講發表的話題
+
+
+
+
+更多>>
+
+
+
+
+
+
+我在開講回應的話題
+
+
+
+
+更多>>
+
+
+
+
+ 
+
+
+
+
+
+
+
+站台人氣
+
+
+
+
+累積人氣：1,295,835
+當日人氣：7
+
+
+
+
+
+
+
+訂閱本站
+
+
+
+
+RSS訂閱 
+                            (如何使用RSS)
+                        
+
+加入訂閱
+
+
+
+
+
+
+
+
+
+                  Kaza
+                
+
+
+
+
+
+
+
+
+最新留言
+
+
+
+
+ 2015-08-17：
+yhchang2
+
+
+ 2013-08-17：
+aaaaa
+
+
+ 2013-03-08：
+112
+
+
+ 2012-12-28：
+林勳
+
+
+ 2012-12-28：
+林勳
+
+
+ 2011-04-14：
+芝麻
+
+
+ 2010-01-21：
+阿明
+
+
+ 2009-09-15：
+彈頭張
+
+
+
+
+
+
+ 連結書籤 
+
+
+目前沒有資料
+
+
+
+
+
+編輯每週一推
+
+
+推薦:食記、夏威夷、聖誕大餐、年菜、長灘島、伴手禮、泡湯、溫泉美食、自助旅行、美食推薦
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ford FORD KUGA 85.8萬 FORD KUGA 68.8萬 FORD KUGA 83.8萬 FORD KUGA 73.8萬 FORD KUGA 78.8萬 FORD KUGA 65.8萬 FORD KUGA 81.8萬 FORD KUGA 79.9萬 FORD KUGA 80.8萬 AUDI AUDI A4 25.8萬 AUDI A4 27.8萬 AUDI A4 18.8萬 AUDI A4 28.8萬 AUDI A4 42萬 AUDI A4 28萬 AUDI A4 29.9萬 AUDI A4 46.8萬 AUDI A4 32萬 SUBARU FORESTER 79.8萬 FORESTER 86.8萬 FORESTER 61.8萬 FORESTER 79.8萬 FORESTER 79.8萬 FORESTER 79.8萬 FORESTER 65萬 FORESTER 75.9萬 FORESTER 108萬 BMW BMW 5 SERIES 155.5萬 BMW 5 SERIES 29.8萬 BMW 5 SERIES 145萬 BMW 5 SERIES 75萬 BMW 5 SERIES 23.8萬 BMW 5 SERIES 105萬 BMW 5 SERIES 105萬 BMW 5 SERIES 143萬 BMW 5 SERIES 168萬 VW露營車 CADDY MAXI 36.8萬 CADDY MAXI 73.9萬 CADDY MAXI 72.8萬 CADDY MAXI 86.8萬 VW GOLF 59.8萬 VW GOLF 63.8萬 VW GOLF 37.8萬 CADDY MAXI 65萬 CADDY MAXI 65.8萬 TOYOTA TOYOTA ALTIS 49.8萬 TOYOTA ALTIS 45萬 TOYOTA ALTIS 49萬 TOYOTA ALTIS 55.8萬 TOYOTA ALTIS 55.8萬 TOYOTA ALTIS 53.8萬 TOYOTA ALTIS 39萬 TOYOTA ALTIS 50.8萬 TOYOTA ALTIS 18萬 
+
+
+
+
+TOP
+
+
+．廣告刊登
+．消費者保護 
+．兒童網路安全 
+．About PChome 
+．徵才  
+ 網路家庭版權所有、轉載必究  Copyright© 
+ PChome Online 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳化網路設定Ashampoo Internet Accelerator＠steve112｜PChome 個人新聞台
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ PChome | 說明 |  
+登入 
+
+
+
+
+
+
+
+
+
+國衛院研究：腸道感染，...
+超限量1000台十萬元二手車如何在股市上創造驚人財富
+蔦屋發表新菜色 明年新...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+steve112
+這裡是私人收集倉庫
+以更新版本為主要收藏處
+
+
+http://mypaper.pchome.com.tw/news/steve113/
+http://mypaper.pchome.com.tw/news/steve114/
+
+
+173愛的鼓勵
+4訂閱站台
+
+ 
+
+
+
+
+首頁
+活動3
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+                            2009-05-11 18:34:36 
+                            | 人氣(568) 
+                            | 回應(0) 
+                
+                            | 上一篇
+                            | 下一篇 
+
+
+
+
+
+
+
+
+
+                
+                                        最佳化網路設定Ashampoo Internet Accelerator
+                                    
+
+推薦
+                                        0
+                                        
+收藏
+                                        0
+                                        
+轉貼0
+訂閱站台
+
+
+
+
+
+
+                最佳化網路設定Ashampoo Internet Accelerator 2 v2.0, 06繁中.綠化免裝版
+
+
+
+【軟體名稱】Ashampoo Internet Accelerator 2【軟體版本】v2.0, 06【語言介面】多國語言/繁體中文【軟體分類】提升網速【檔案格式】rar【檔案大小】1.77 MB【繁化作者】asuryu【解壓密碼】無 快樂分享【圖片預覽】
+
+【軟體簡介】:   Ashampoo Internet Accelerator 是一款用來最佳化網路設定及還原 Windows 預設網路設定的軟體，提供了手動或自動的兩種操作模式，該軟體稱可以提升 15~30% 的網路速度。Step on the accelerator: and enjoy faster internet surfingA slow internet connection costs time and gets on your nerves. For this reason, taking the time to optimise the settings is almost considered a must – particularly since an optimisation in terms of speed doesn’t come with any additional cost, neither for a hardware extension nor for the software, as the Ashampoo Internet Accelerator 2 can be used completely free of charge.The program allows a fully automatic setting of the most important parameters. To achieve this, communicating the method used for internet access to the Ashampoo Internet Accelerator 2 on the part of the user is sufficient: ●Analogue modem ●ISDN ●DSL via LAN cable or cable modem ●DSL via wireless LAN ●Other LAN connections (no DSL) This system means that the program gets the very last drop of performance out of the internet connection. When using a modem and an ISDL connection, the improvements in performance are particularly noticeable – a reason for celebration. With a DSL connection, the tuning result isn’t quite as impressive, as there are fewer things which need adjusting in order to provide an optimisation. Nonetheless, it is still the case here that every percentage of extra performance means better internet surfing. http://www.badongo.com/file/7498507
+
+
+文章定位：
+
+
+
+我要檢舉
+
+
+
+
+
+
+
+
+
+
+                                        台長：
+                        Vega
+
+
+
+
+
+您可能對以下文章有興趣
+Wise Registry Cleaner 4.2.1 Build 179 登錄檔清理工具
+                            
+
+最佳化記憶體控制軟體 (O&O CleverCache Pro v6.0) 繁體中文
+                            
+
+PC Washer 2.2.5 系統清理大師有效提高系統運行速度~免安裝
+                            
+
+Windows優化大師大改版!V8免安裝
+                            
+
+
+
+
+
+
+
+                人氣(568) | 回應(0)| 推薦 (0)| 收藏 (0)| 轉寄
+
+                                    全站分類: 不分類 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+回應(0)
+
+
+推薦(0)
+
+
+收藏(0)
+
+
+
+
+我要回應
+
+
+
+
+
+
+
+
+我要回應
+
+
+
+* 回應人：
+
+
+
+E-mail：
+
+
+
+個人網頁：
+
+
+
+悄悄話：
+
+否
+                              是 (若未登入"個人新聞台帳號"則看不到回覆唷!)
+                            
+
+
+回應內容：
+
+
+
+
+
+* 請輸入識別碼：
+
+
+
+
+
+
+請輸入圖片中算式的結果(可能為0) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+(有*為必填)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+自我介紹
+
+
+
+
+
+
+Vega
+
+
+
+
+
+
+
+無
+
+
+
+
+關於本站
+留言板
+地圖
+加入好友
+
+
+愛的鼓勵：173
+文章篇數：685
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+熱搜關鍵字
+
+
+
+日本餐廳設計,咖啡包裝袋,素食 板橋,臺塑 素食,素食西餐,素食網站,素食咖哩,頂級咖啡豆,
+              
+
+
+
+
+站方公告
+
+
+【公告】個人新聞台服務認證公告【公告】第五批 40款底圖將下線【公告】第四批 52款底圖將下線【公告】第三批 45款底圖將下線【公告】第二批 60款底圖將下線
+贊助商
+
+
+
+
+好友列表
+
+
+
+
+
+好友的新聞台Blog
+
+
+
+
+
+
+
+
+
+
+站內搜尋
+
+
+
+
+
+
+
+
+標題
+                                    內容
+                                    標籤
+                                
+
+
+
+
+
+最新文章
+
+
+Kingtel 西陵 來電顯示有線電話 KT-9900F (說明書)windows 10weathereyeGOM Player 2.1.33.5071Kaspersky Anti-Virus 2013CCleaner 3.19.1721 Professional / Business (系統清道夫) 增強綠色版AppLocale，專門搞定大陸軟體亂碼現象[播放軟體]Windows Media Player 12IE8 XP Yahoo最佳化版本Process Lasso Pro破解(系統優化工具) 3.891 32Bit 多語言安裝版
+
+
+
+
+
+文章分類
+
+
+
+
+
+
+
+ 本臺最新標籤
+
+
+
+
+
+
+
+
+
+最新回應
+
+
+windows 10, (vega)GOM Player 2.1.33.5071, (veag)weathereye, (vega)GOM Player 2.1.33.5071, (vega)下載各種正版軟體 的序號產生器 的軟體, (小沈)[播放軟體]Windows Media Player 12, (悄悄話)PC Booster v5.0 英文正式版+繁體中文化, (wang)PC Booster v5.0 英文正式版+繁體中文化, (alex)PC Booster v5.0 英文正式版+繁體中文化, (3q)下載各種正版軟體 的序號產生器 的軟體, (mars)
+
+
+
+
+
+我在開講發表的話題
+
+
+
+
+更多>>
+
+
+
+
+
+
+我在開講回應的話題
+
+
+
+
+更多>>
+
+
+
+
+ 
+
+
+
+
+
+
+
+站台人氣
+
+
+
+
+累積人氣：1,295,836
+當日人氣：8
+
+
+
+
+
+
+
+訂閱本站
+
+
+
+
+RSS訂閱 
+                            (如何使用RSS)
+                        
+
+加入訂閱
+
+
+
+
+
+
+
+
+
+                  Kaza
+                
+
+
+
+
+
+
+
+
+最新留言
+
+
+
+
+ 2015-08-17：
+yhchang2
+
+
+ 2013-08-17：
+aaaaa
+
+
+ 2013-03-08：
+112
+
+
+ 2012-12-28：
+林勳
+
+
+ 2012-12-28：
+林勳
+
+
+ 2011-04-14：
+芝麻
+
+
+ 2010-01-21：
+阿明
+
+
+ 2009-09-15：
+彈頭張
+
+
+
+
+
+
+ 連結書籤 
+
+
+目前沒有資料
+
+
+
+
+
+編輯每週一推
+
+
+推薦:食記、夏威夷、聖誕大餐、年菜、長灘島、伴手禮、泡湯、溫泉美食、自助旅行、美食推薦
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ford FORD KUGA 85.8萬 FORD KUGA 68.8萬 FORD KUGA 83.8萬 FORD KUGA 73.8萬 FORD KUGA 78.8萬 FORD KUGA 65.8萬 FORD KUGA 81.8萬 FORD KUGA 79.9萬 FORD KUGA 80.8萬 VW露營車 CADDY MAXI 36.8萬 CADDY MAXI 73.9萬 CADDY MAXI 72.8萬 CADDY MAXI 86.8萬 VW GOLF 59.8萬 VW GOLF 63.8萬 VW GOLF 37.8萬 CADDY MAXI 65萬 CADDY MAXI 65.8萬 SUBARU FORESTER 79.8萬 FORESTER 86.8萬 FORESTER 61.8萬 FORESTER 79.8萬 FORESTER 79.8萬 FORESTER 79.8萬 FORESTER 65萬 FORESTER 75.9萬 FORESTER 108萬 TOYOTA TOYOTA ALTIS 49.8萬 TOYOTA ALTIS 45萬 TOYOTA ALTIS 49萬 TOYOTA ALTIS 55.8萬 TOYOTA ALTIS 55.8萬 TOYOTA ALTIS 53.8萬 TOYOTA ALTIS 39萬 TOYOTA ALTIS 50.8萬 TOYOTA ALTIS 18萬 BMW BMW 5 SERIES 155.5萬 BMW 5 SERIES 29.8萬 BMW 5 SERIES 145萬 BMW 5 SERIES 75萬 BMW 5 SERIES 23.8萬 BMW 5 SERIES 105萬 BMW 5 SERIES 105萬 BMW 5 SERIES 143萬 BMW 5 SERIES 168萬 AUDI AUDI A4 25.8萬 AUDI A4 27.8萬 AUDI A4 18.8萬 AUDI A4 28.8萬 AUDI A4 42萬 AUDI A4 28萬 AUDI A4 29.9萬 AUDI A4 46.8萬 AUDI A4 32萬 
+
+
+
+
+TOP
+
+
+．廣告刊登
+．消費者保護 
+．兒童網路安全 
+．About PChome 
+．徵才  
+ 網路家庭版權所有、轉載必究  Copyright© 
+ PChome Online 
+
+
+
+
+
+
+
+
+
+
+

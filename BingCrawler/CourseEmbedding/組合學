@@ -1,0 +1,6236 @@
+
+
+
+組合數學 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+組合數學
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+本條目需要編修，以確保文法、用詞、語氣、格式、標點等使用恰當。（2012年12月7日） 
+請按照校對指引，幫助編輯這個條目。（幫助、討論） 
+
+
+
+
+
+
+
+本條目需要精通或熟悉數學的編者參與及協助編輯。 
+請邀請適合的人士改善本條目。更多的細節與詳情請參見討論頁。
+另見其他需要數學專家關註的頁面。 
+
+
+廣義的組合數學（英語：Combinatorics）就是離散數學，狹義的組合數學是組合計數、圖論、代數結構、數理邏輯等的總稱。但這只是不同學者在叫法上的區別。總之，組合數學是一門研究可數或離散對象的科學。隨著計算機科學的日益發展，組合數學的重要性也日漸凸顯，因為計算機科學的核心內容是使用算法處理離散數據。
+狹義的組合數學主要研究滿足一定條件的組態（也稱組合模型）的存在、計數以及構造等方面的問題。 組合數學的主要內容有組合計數、組合設計、組合矩陣、組合優化（最佳組合）等。
+
+
+
+目錄
+
+
+1 發展歷程
+2 組合數學中的著名問題
+3 基本計數原理
+4 排列
+5 組合
+6 總結
+7 參見
+8 參考文獻
+9 外部連結
+
+
+
+發展歷程[編輯]
+雖然數數始於結繩計數的遠古時代，由於那時社會的生產水平的發展尚處於低級階段，談不上有什麼技巧。隨著人們對於數的瞭解和研究，在形成與數密切相關的數學分支的過程中，如數論、代數、函數論以至泛函的形成與發展，逐步地從數的多樣性發現數數的多樣性，產生了各種數數的技巧。
+同時，人們對數有了深入的瞭解和研究，在形成與形密切相關的各種數學分支的過程中，如幾何學、拓撲學以至範疇論的形成與發展，逐步地從形的多樣性也發現了數形的多樣性，產生了各種數形的技巧。近代的集合論、數理邏輯等反映了潛在的數與形之間的結合。而現代的代數拓撲和代數幾何等則將數與形密切地聯繫在一起了。這些，對於以數的技巧為中心課題的近代組合學的形成與發展都產生了而且還將會繼續產生深刻的影響。
+於11和12世紀間，賈憲就發現了二項式係數，楊輝將它整理記載在他的《續古抉奇法》一書中。這就是中國通常稱的楊輝三角。事實上，於12世紀印度的婆什迦羅第二也發現了這種組合數。13世紀波斯的哲學家曾講授過此類三角。而在西方，布萊士·帕斯卡發現這個三角形是在17世紀中期。這個三角形在其他數學分支的應用也是屢見不鮮的。同時，帕斯卡和費馬均發現了許多與機率論有關的經典組合學的結果。因此，西方人認為組合學開始於17世紀。組合學一詞是德國數學家萊布尼茨在數學的意義下首次應用。也許，在那時他已經預感到了其將來的蓬勃發展。然而只有到了18世紀歐拉所處時代，組合學才可以說開始了作為一門科學的發展，因為那時，他解決了柯尼斯堡七橋問題，發現了多面體（首先是凸多面體，即平面圖的情形）的頂點數、邊數和麵數之間的簡單關係，被人們稱為歐拉公式。甚至，當今人們所稱的哈密頓圈的首創者也應該是歐拉。這些不但使歐拉成為組合學的一個重要組成部分——圖論而且也成為占據現代數學舞臺中心的拓撲學發展的先驅。同時，他對導致當今組合學中的另一個重要組成部分——組合設計中的拉丁方的研究所提出的猜想，人們稱為歐拉猜想，直到1959年才得到完全的解決。
+於19世紀初，高斯提出的組合係數，今稱高斯係數，在經典組合學中也占有重要地位。同時，他還研究過平面上的閉曲線的相交問題，由此所提出的猜想稱為高斯猜想，它直到20世紀才得到解決。這個問題不僅貢獻於拓撲學，而且也貢獻於組合學中圖論的發展。同在19世紀，由喬治·布爾發現且被當今人們稱為布爾代數的分支已經成為組合學中序理論的基石。當然，在這一時期，人們還研究其他許多組合問題，它們中的大多數是娛樂性的。
+20世紀初期，龐加萊聯繫多面體問題發展了組合學的概念與方法，導致了近代拓撲學從組合拓撲學到代數拓撲學的發展。於20世紀的中、後期，組合學發展之迅速也許是人們意想不到的。首先，於1920年費希爾（Fisher，R.A.）和耶茨（Yates，F.）發展了實驗設計的統計理論，其結果導致後來的資訊理論，特別是編碼理論的形成與發展.於1939年，坎托羅維奇（Канторович，Л.В.）發現了線性規劃問題並提出解乘數法。於1947年丹齊克（Dantzig，G.B.）給出了一般的線性規劃模型和理論，他所創立的單純形方法奠定了這一理論的基礎，闡明瞭其解集的組合結構。直到今天它仍然是應用得最廣泛的數學方法之一。這些又導致以網絡流為代表的運籌學中的一系列問題的形成與發展。開拓了人們目前稱為組合最優化的一個組合學的新分支。在20世紀50年代，中國也發現並解決了一類稱為運輸問題的線性規劃的圖上作業法，它與一般的網絡流理論確有異曲同工之妙。在此基礎上又出現了國際上通稱的中國郵遞員問題。
+近20年來，用組合學中的方法已經解決了一些即使在整個數學領域也是具有挑戰性的難題。例如，範·德·瓦爾登（Van der Waerden，B.L.）於1926年提出的關於雙隨機矩陣積和式猜想的證明；希伍德（Heawood，P.J.）於1890年提出的曲面地圖著色猜想的解決;著名的四色定理的計算機驗證和扭結問題的新組合不變量發現等。在數學中已經或正在形成著諸如組合拓撲、組合幾何、組合數論、組合矩陣論、組合群論等與組合學密切相關的交叉學科。此外，組合學也正在滲透到其他自然科學以及社會科學的各個方面，例如，物理學、力學、化學、生物學、遺傳學、心理學以及經濟學、管理學甚至政治學等。
+根據組合學研究與發展的現狀，它可以分為如下五個分支：經典組合學、組合設計、組合序、圖與超圖和組合多面形與最優化.由於組合學所涉及的範圍觸及到幾乎所有數學分支，也許和數學本身一樣不大可能建立一種統一的理論.然而，如何在上述的五個分支的基礎上建立一些統一的理論，或者從組合學中獨立出來形成數學的一些新分支將是對21世紀數學家們提出的一個新的挑戰。
+在中國當代的數學家中，較早地在組合學中的不同方面作出過貢獻的有 華羅庚、 吳文俊、 柯召、 萬哲先、 張里千和 陸家羲等.其中，萬哲先和他領導的研究組在有限幾何方面的系統工作不僅對於組合設計而且對於圖的對稱性的研究都有影響.陸家羲的有關不交斯坦納三元系大集的一系列的文章不僅解決了組合設計方面的一個難題，而且他所創立的方法對於其後的研究者也產生了和正產生著積極的作用。
+組合數學中的著名問題[編輯]
+
+計算一些物品在特定條件下分組的方法數目。這些是關於排列、組合和整數分拆的。
+地圖著色問題：對世界地圖著色，每一個國家使用一種顏色。如果要求相鄰國家的顏色相異，是否總共只需四種顏色？這是圖論的問題。
+船夫過河問題：船夫要把一匹狼、一隻羊和一棵白菜運過河。只要船夫不在場，羊就會吃白菜、狼就會吃羊。船夫的船每次只能運送一種東西。怎樣把所有東西都運過河？這是線性規劃的問題。
+中國郵差問題：由中國組合數學家管梅谷教授提出。郵遞員要穿過城市的每一條路至少一次，怎樣行走走過的路程最短？這不是一個NP完全問題，存在多項式複雜度算法：先求出度為奇數的點，用匹配算法算出這些點間的連接方式，然後再用歐拉路徑算法求解。這也是圖論的問題。
+任務分配問題（也稱分配問題）：有一些員工要完成一些任務。各個員工完成不同任務所花費的時間都不同。每個員工只分配一項任務。每項任務只被分配給一個員工。怎樣分配員工與任務以使所花費的時間最少？這是線性規劃的問題。
+如何構造幻方。 幻方為一方陣，填入不重複之自然數，並使其中每一縱列、橫列、對角線內數字之總和皆相同。
+
+基本計數原理[編輯]
+
+加法原理和分類計數法
+
+
+  1.加法原理
+
+做一件事，完成它可以有n類辦法，在第一類辦法中有
+
+
+
+
+m
+
+1
+
+
+
+
+{\displaystyle m_{1}}
+
+種不同的方法，在第二類辦法中有
+
+
+
+
+m
+
+2
+
+
+
+
+{\displaystyle m_{2}}
+
+種不同的方法，
+
+
+
+⋯
+
+
+{\displaystyle \cdots }
+
+，在第
+
+
+
+n
+
+
+{\displaystyle n}
+
+類辦法中有
+
+
+
+
+m
+
+n
+
+
+
+
+{\displaystyle m_{n}}
+
+種不同的方法，那麼完成這件事共有
+
+
+
+N
+=
+
+m
+
+1
+
+
++
+
+m
+
+2
+
+
++
+
+m
+
+3
+
+
++
+⋯
++
+
+m
+
+n
+
+
+
+
+{\displaystyle N=m_{1}+m_{2}+m_{3}+\cdots +m_{n}}
+
+種不同方法。
+
+  2.分類的要求
+每一類中的每一種方法都可以獨立地完成此任務；兩類不同辦法中的具體方法，互不相同（即分類不重）；完成此任務的任何一種方法，都屬於某一類（即分類不漏）。
+
+
+乘法原理和分步計數法
+
+
+   1.乘法原理：
+
+做一件事，完成它需要分成n個步驟，做第一步有
+
+
+
+
+m
+
+1
+
+
+
+
+{\displaystyle m_{1}}
+
+種不同的方法，做第二步有
+
+
+
+
+m
+
+2
+
+
+
+
+{\displaystyle m_{2}}
+
+種不同的方法，
+
+
+
+⋯
+
+
+{\displaystyle \cdots }
+
+，做第
+
+
+
+n
+
+
+{\displaystyle n}
+
+步有
+
+
+
+
+m
+
+n
+
+
+
+
+{\displaystyle m_{n}}
+
+種不同的方法，那麼完成這件事共有
+
+
+
+N
+=
+
+m
+
+1
+
+
+∗
+
+m
+
+2
+
+
+∗
+
+m
+
+3
+
+
+∗
+⋯
+∗
+
+m
+
+n
+
+
+
+
+{\displaystyle N=m_{1}*m_{2}*m_{3}*\cdots *m_{n}}
+
+種不同的方法。
+
+   2. 合理分步的要求：
+
+任何一步的一種方法都不能完成此任務，必須且只須連續完成這n步才能完成此任務；各步計數相互獨立；只要有一步中所採取的方法不同，則對應的完成此事的方法也不同。
+排列[編輯]
+主條目：排列
+從
+
+
+
+n
+
+
+{\displaystyle n}
+
+個元素中取出
+
+
+
+k
+
+
+{\displaystyle k}
+
+個元素，
+
+
+
+k
+
+
+{\displaystyle k}
+
+個元素的排列數量為：
+
+
+
+
+
+
+P
+
+k
+
+
+n
+
+
+=
+
+
+
+n
+!
+
+
+(
+n
+−
+k
+)
+!
+
+
+
+
+
+{\displaystyle P_{k}^{n}={\frac {n!}{(n-k)!}}}
+
+
+
+以賽馬為例，有8匹馬參加比賽，玩家需要在彩票上填入前三勝出的馬匹的號碼，從8匹馬中取出3匹馬來排前3名，排列數量為：
+
+
+
+
+
+
+P
+
+3
+
+
+8
+
+
+=
+
+
+
+8
+!
+
+
+(
+8
+−
+3
+)
+!
+
+
+
+=
+8
+×
+7
+×
+6
+=
+336
+
+
+{\displaystyle P_{3}^{8}={\frac {8!}{(8-3)!}}=8\times 7\times 6=336}
+
+
+
+因為一共存在336種可能性，因此玩家在一次填入中中獎的機率應該是：
+
+
+
+
+
+P
+=
+
+
+1
+336
+
+
+=
+0.00298
+
+
+{\displaystyle P={\frac {1}{336}}=0.00298}
+
+
+
+不過，中國大陸的教科書則是把從n取k的情況記作
+
+
+
+
+P
+
+n
+
+
+k
+
+
+
+
+{\displaystyle P_{n}^{k}}
+
+或
+
+
+
+
+A
+
+n
+
+
+k
+
+
+
+
+{\displaystyle A_{n}^{k}}
+
+（A代表Arrangement，即排列）。
+上面的例子是建立在取出元素不重複出現狀況。
+從
+
+
+
+n
+
+
+{\displaystyle n}
+
+個元素中取出
+
+
+
+k
+
+
+{\displaystyle k}
+
+個元素，
+
+
+
+k
+
+
+{\displaystyle k}
+
+個元素可以重複出現，這排列數量為：
+
+
+
+
+
+
+U
+
+k
+
+
+n
+
+
+=
+
+n
+
+k
+
+
+
+
+{\displaystyle U_{k}^{n}=n^{k}}
+
+[1]
+
+以四星彩為例，10個數字取4個數字，因可能重複所以排列數量為：
+
+
+
+
+
+
+U
+
+4
+
+
+10
+
+
+=
+
+10
+
+4
+
+
+=
+10000
+
+
+{\displaystyle U_{4}^{10}=10^{4}=10000}
+
+
+
+這時的一次性添入中獎的機率就應該是：
+
+
+
+
+
+P
+=
+
+
+1
+10000
+
+
+=
+0.0001
+
+
+{\displaystyle P={\frac {1}{10000}}=0.0001}
+
+
+
+組合[編輯]
+主條目：組合
+和排列不同的是，組合取出元素的順序不考慮。
+從
+
+
+
+n
+
+
+{\displaystyle n}
+
+個元素中取出
+
+
+
+k
+
+
+{\displaystyle k}
+
+個元素，
+
+
+
+k
+
+
+{\displaystyle k}
+
+個元素的組合數量為：
+
+
+
+
+
+
+C
+
+k
+
+
+n
+
+
+=
+
+
+
+(
+
+
+n
+k
+
+
+)
+
+
+
+=
+
+
+
+P
+
+k
+
+
+n
+
+
+
+k
+!
+
+
+
+=
+
+
+
+n
+!
+
+
+k
+!
+(
+n
+−
+k
+)
+!
+
+
+
+
+
+{\displaystyle C_{k}^{n}={n \choose k}={\frac {P_{k}^{n}}{k!}}={\frac {n!}{k!(n-k)!}}}
+
+
+
+以六合彩為例。在六合彩中從49顆球中取出6顆球的組合數量為：
+
+
+
+
+
+
+C
+
+6
+
+
+49
+
+
+=
+
+
+
+(
+
+
+49
+6
+
+
+)
+
+
+
+=
+
+
+
+49
+!
+
+
+6
+!
+43
+!
+
+
+
+=
+13983816
+
+
+{\displaystyle C_{6}^{49}={49 \choose 6}={\frac {49!}{6!43!}}=13983816}
+
+
+
+如同排列，上面的例子是建立在取出元素不重複出現狀況。
+從
+
+
+
+n
+
+
+{\displaystyle n}
+
+個元素中取出
+
+
+
+k
+
+
+{\displaystyle k}
+
+個元素，
+
+
+
+k
+
+
+{\displaystyle k}
+
+個元素可以重複出現，這組合數量為：
+
+
+
+
+
+
+H
+
+k
+
+
+n
+
+
+=
+
+C
+
+k
+
+
+n
++
+k
+−
+1
+
+
+
+
+{\displaystyle H_{k}^{n}=C_{k}^{n+k-1}}
+
+
+
+以取色球為例，每種顏色的球有無限多顆，從8種色球中取出5顆球，這組合數量為：
+
+
+
+
+
+
+H
+
+5
+
+
+8
+
+
+=
+
+C
+
+5
+
+
+8
++
+5
+−
+1
+
+
+=
+
+C
+
+5
+
+
+12
+
+
+=
+
+
+
+12
+!
+
+
+5
+!
+7
+!
+
+
+
+=
+792
+
+
+{\displaystyle H_{5}^{8}=C_{5}^{8+5-1}=C_{5}^{12}={\frac {12!}{5!7!}}=792}
+
+
+
+因為組合數量公式特性，重複組合轉換成組合有另一種公式為：
+
+
+
+
+
+
+H
+
+k
+
+
+n
+
+
+=
+
+C
+
+k
+
+
+n
++
+k
+−
+1
+
+
+=
+
+
+
+(
+n
++
+k
+−
+1
+)
+!
+
+
+k
+!
+(
+n
+−
+1
+)
+!
+
+
+
+=
+
+C
+
+n
+−
+1
+
+
+n
++
+k
+−
+1
+
+
+
+
+{\displaystyle H_{k}^{n}=C_{k}^{n+k-1}={\frac {(n+k-1)!}{k!(n-1)!}}=C_{n-1}^{n+k-1}}
+
+
+
+另外
+
+
+
+
+H
+
+k
+
+
+n
+
+
+
+
+{\displaystyle H_{k}^{n}}
+
+也可以記為
+
+
+
+
+F
+
+k
+
+
+n
+
+
+
+
+{\displaystyle F_{k}^{n}}
+
+[2]
+
+
+
+
+
+
+F
+
+k
+
+
+n
+
+
+=
+
+H
+
+k
+
+
+n
+
+
+
+
+{\displaystyle F_{k}^{n}=H_{k}^{n}}
+
+
+
+總結[編輯]
+
+
+
+
+
+
+n
+
+
+{\displaystyle n}
+
+中取
+
+
+
+k
+
+
+{\displaystyle k}
+
+
+直線排列
+（考慮順序）
+環狀排列
+組合
+（不考慮順序）
+
+
+不重複出現
+（不放回去）
+
+
+
+
+
+P
+
+k
+
+
+n
+
+
+=
+
+
+
+n
+!
+
+
+(
+n
+−
+k
+)
+!
+
+
+
+
+
+{\displaystyle P_{k}^{n}={\frac {n!}{(n-k)!}}}
+
+
+（OEIS中的數列A008279）
+
+
+
+
+
+
+
+n
+!
+
+
+k
+⋅
+(
+n
+−
+k
+)
+!
+
+
+
+
+
+{\displaystyle {\frac {n!}{k\cdot (n-k)!}}}
+
+
+（OEIS中的數列A111492）
+
+
+
+
+
+C
+
+k
+
+
+n
+
+
+=
+
+
+
+n
+!
+
+
+k
+!
+⋅
+(
+n
+−
+k
+)
+!
+
+
+
+
+
+{\displaystyle C_{k}^{n}={\frac {n!}{k!\cdot (n-k)!}}}
+
+
+（OEIS中的數列A007318）
+
+
+可重複出現
+（再放回去）
+
+
+
+
+
+U
+
+k
+
+
+n
+
+
+=
+
+n
+
+k
+
+
+
+
+{\displaystyle U_{k}^{n}=n^{k}}
+
+
+（OEIS中的數列A004248）
+
+
+
+
+
+
+
+
+∑
+
+r
+
+|
+
+k
+
+
+(
+r
+⋅
+φ
+(
+r
+)
+⋅
+
+n
+
+
+k
+r
+
+
+
+)
+
+k
+
+
+
+
+{\displaystyle {\frac {\sum _{r|k}(r\cdot \varphi (r)\cdot n^{\frac {k}{r}})}{k}}}
+
+
+（OEIS中的數列A075195）
+
+
+
+
+
+H
+
+k
+
+
+n
+
+
+=
+
+
+
+(
+n
++
+k
+−
+1
+)
+!
+
+
+k
+!
+⋅
+(
+n
+−
+1
+)
+!
+
+
+
+
+
+{\displaystyle H_{k}^{n}={\frac {(n+k-1)!}{k!\cdot (n-1)!}}}
+
+
+（OEIS中的數列A097805）
+
+
+參見[編輯]
+
+排列組合符號
+階乘
+階乘符號
+排列
+
+參考文獻[編輯]
+
+
+^ 組合數學 ─算法與分析─. 九章出版社. : 29.  OCLC:44527392
+^ 組合數學 ─算法與分析─. 九章出版社. : 33.  OCLC:44527392
+
+
+外部連結[編輯]
+
+The Combinatorics Net
+Electronic Journal of Combinatorics
+點算的奧秘
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=組合數學&oldid=44646118"					
+2 個分類：組合數學離散數學隱藏分類：自2012年12月需要校對的頁面需要數學專家關註的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+አማርኛالعربيةAzərbaycancaŽemaitėškaБеларускаяБеларуская (тарашкевіца)‎БългарскиBosanskiCatalàČeštinaЧӑвашлаDanskDeutschΕλληνικάEnglishEsperantoEspañolEestiEuskaraفارسیSuomiFrançais贛語Galegoעבריתहिन्दीHrvatskiMagyarՀայերենBahasa IndonesiaIdoÍslenskaItaliano日本語Patoisქართული한국어LatinaLietuviųLatviešuМакедонскиBahasa Melayuမြန်မာဘာသာNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsRomânăРусскийСаха тылаSrpskohrvatski / српскохрватскиSimple EnglishSlovenčinaSlovenščinaShqipСрпски / srpskiSvenskaதமிழ்ไทยTürkmençeTagalogTürkçeТатарча/tatarçaУкраїнськаاردوOʻzbekcha/ўзбекчаTiếng Việt吳語粵語 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年6月6日 (週二) 06:46。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+組合學漫談
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+首頁 | 搜尋
+
+    ．原載於數學傳播第一卷第四期
+    ．作者當時任職於美國貝爾實驗室
+•註釋
+
+
+
+ 
+
+組合學漫談
+黃光明
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+我們先舉一個典例的組合學問題來瞭解組合學探討的到底是什麼：「拿一張白紙；任意把它劃分成 n 個區域，而且兩個鄰近的區域必須共邊而不僅共點。
+每一個區域著上一種顏色，條件是相鄰的兩區域不能同色，問如果給你四種顏色的話是否一定夠？」組合學的問題常常是如此。
+先規定了一件要做的事，像以四種顏色給區域著色，這件事多半都是很容易做的而且有各種各樣的做法，但我們同時加上了一些條件，像鄰近的區域不得同色。
+現在有些做法合於條件有些不合條件，我們問合於條件的做法有多少種，或者問有沒有合於條件的做法（如所舉例題），或者要找出一種好的做法。
+
+上面所舉的例題雖屬典型卻並不平凡，它是有名的「四色」問題，相傳是數學當今三大難題之一（另外兩個是「Riemann假設」和「Fermat最後猜測
+註1
+」）。
+一百多年來，不知多少數學家為之絞盡心血，一直到今年七月間才得到了肯定的解答，相信大家都已在報章上讀到有關的報導，這�堣ㄕA重複。
+但我們還要借四色問題來介紹一個有用的觀念-「圖形」。圖形學是組合學�堳D常重要的一支。
+
+一個圖形是一個點的集合和一個定義在兩點上的線的集合，（因此任何兩元性的關係都可以用圖形來表示，這就是為什麼圖形學之應用如此廣泛。）
+譬如在四色問題�堙A把每一個區域當成一點，如果兩個區域相鄰則對應的兩點間連一條線（如不相鄰，則無線），則 n 個區域即可以一圖形表示，而且因為在四色的問題�堙A區域的大小，形狀，相隔的遠近等等都和問題沒有關係，
+唯一有關係的是兩區域是否相鄰，而這一個關係表現在我們的圖形�堙C因此以圖形代表原圖，並沒有失去任何價值。
+原來的問題也可改在圖形上問：如給每一點著色，有線相連的兩點不得同色，四種顏色夠不夠？
+
+因為在原題中，紙上的兩個區域不會互交；因此化為圖形後，也一定可以使線和線間互不相交，這樣的圖形叫做平面圖。
+有的圖形雖然有兩線相交（圖一），但若換一種畫法（圖二）就可不相交，而線的集合不變，則也算是平面圖。
+
+
+
+
+
+圖一
+
+
+
+
+
+
+
+
+
+圖二
+
+
+
+
+
+但如圖三和圖四的圖形無論怎麼畫，都一定有線相交，故不是平面圖。
+
+
+
+
+
+圖三
+
+
+
+
+
+
+
+
+
+圖四
+
+
+
+
+
+我們怎樣分辨那些是平面圖，那些不是呢？Koratowski 證明瞭，如果一個圖形�堣ㄖt圖三或圖四則為平面圖，反之則不是平面圖。看！這是一個多漂亮的定理，數學的美就在這些「巧」和「妙」上。
+
+一個圖形如果是平面圖，則四種顏色一定夠著色；如果不是平面圖則一定不夠。近二十年來組合學上另有三大疑案被破獲。
+第一是流傳了近二百年的 Euler 在拉丁方陣上的猜測被證為非。第二是也有一百多年歷史的「Kirkman 女學生問題」被證有解，先說前者。
+
+一個序 (order) 為 n 的拉丁方陣是一個 n x n 的方陣，每一行每一列所含的元素都構成 
+ 這個集合。
+如圖五和圖六是兩個序為三的拉丁方陣：
+
+
+
+
+
+
+如把圖五的方陣疊在圖六的方陣上，然後唸出每一格內上下的兩個元素，我們發現 
+(1,1), (1,2), (1,3),…,(3,3) 九種搭配各都出現一次，有這樣性質的兩個拉丁方陣我們稱為互相正交。
+
+當 n 大於一時 Euler 發現，除了 n 是 4k+2，k=0,1,2,… 這一型數字外，正交的拉丁方陣都存在。
+於是他猜測當 n=4k+2，k=0,1,2,… 時沒有正交的拉丁方陣存在。在二十世紀初葉，有一個人把所有序為六的拉丁方陣都列出試著搭配，果然找不到互相正交的兩個，更增加了 Euler 猜測的可靠性。
+
+約二十年前，兩個印度人 Bose 和 Shrikhande 和一個美國佬 Parkor 分別找到了序為十的正交拉丁方陣。
+不久後他們又攜手合作找到了一個方法可以造所有 n=4k+2 的正交方陣，只要 n 大於 6，徹底地摧毀了 Euler 的猜測。他們的發現據說是紐約時報第一次在頭版上刊發有關數學的報導。
+
+Kirkman 女學生問題是這樣的：有 6k+3 個女學生，每天三個一排地出去散步。所以每天每個人有二個同排的伴侶。
+如果我們希望每兩個女學生都同排一次，則最少需要 3k+1 天。
+問題是否一定有一個排法在 3k+1 天內任何兩個女學生都同排一次，圖七是一個 k=1 時的排法：
+
+
+
+
+
+
+
+
+
+
+
+圖七
+
+
+
+有不少人為不同的 k 值做出了排法，但俄亥俄州立大學的博士班學生 Wilson 和他的導師 Chauduri（印度人）在1971年串上了最後的一鏈而證明瞭 Kirkman 女學生問題對所有的 k 都有解。
+一百多年來的猜疑至此塵埃落定。
+
+拉丁方陣問題和 Kirkman 女學生問題在組合學上都屬於叫做「數學設計」的一門學問。數學設計中最基本而廣泛應用的一種叫做「區間設計」。
+假設我們有一個含 v 元素的集合 S。
+另外有一個含 b 區間的族 F，F 族�堥C一區間都是 S 的一個 k 元素的子集合。且 S 中任二元素
+都在 F 中出現於 r 個區間�堙AS 中任二元素都同時出現於 F 中 λ 個區間�堙A滿足這樣條件的 F 稱為一個 
+ 區間設計。
+
+圖八是一個 (9,12,4,3,1) 的區間設計：
+
+
+
+
+
+
+
+
+
+
+
+圖八
+
+
+
+S �堛漱葛嬰b F �堣@共出現多少次？有兩個答案：S 共有 v 元素，每一個元素出現 r 次，故共出現 vr 次；但同時 F 有 b 區間，每一區間含 k 元素，故共出現 bk 次，所以 vr=bk。
+
+再問 S �堛漱@對元素同時出現在 F �堛漱@個區間共有多少次呢？也有兩個答案：S 共有 
+ 對元素，每一對出現 λ 次，故其出現 
+ 次；但同時 F 有 b 區間，每一區間含 
+ 對元素（k 中任取二），故其出現 
+ 次，故得 
+
+
+以上兩個方程式是一個區間設計必需滿足的條件，但是不是充分條件呢？Hanani（以色列人）證明瞭當 k=3 或 4 時，它們是充分條件，而當  時則否。
+當  時，什麼是區間設計的充分必要條件還是一個謎。通常用來構造區間設計的方法是「有限幾何」，「差數集合」，「Galois 域理論」等。
+
+下麵我們介紹組合學上兩個有趣且有用的定理。
+
+世界上任意選六個人，以六點代表之，然後問每兩個人彼此是否認識，如果認識則讓兩點間達一線，如不認識則無線。
+則下列兩者必有一為真：
+
+
+(1)某三點間彼此有線，
+(2)某三點間彼此無線。
+
+
+如果選比六個人多時，也必定會有以上結果（因為只要看其中任六點間的圖形就夠了），但選比六點少時，則沒有這種結果。譬如圖九中的五點既無三點彼此間有線也沒有三點彼此間無線：
+
+
+
+
+
+
+圖九
+
+
+
+
+
+我們也可以利用以上的結果做一個兩人的遊戲。先在紙上畫下六角形的六頂點，然後兩人輪流在頂點間連線，連線時可以任意用一支紅筆或一支藍筆，誰在連線後造成了一個三邊同色的三角形者為輸家。
+根據以上結果，在所有的線都被連完後必定有一個同色三角形出現（可以把紅色三角形當成三點間彼此有線，藍色三角形當成三點間彼此無線），故必定有一輸家。
+
+廣義的Ramsey定理說：
+現有一個 N 點的集合 S、把 S 中所含 r 點的子集合分成互不相
+交的 k 組 S1,…,Sk。設 l1,l2,…,lk 為 k 個不小於 r 的數，則當N不小於 nr (l1,l2,…,lk)（後者稱為一個 Ramsey 數）時，下列的陳述對於某一個 i 而言，i=1,…,k, 必為真：
+
+
+
+「S 中有某 li 個元素的集合 
+，其任意 r 點的子集合都在 Si 這一組內。」
+
+
+
+這個定理有點不容易瞭解，回到原例題，S 是一個 N 點的集合，所有二點的子集合可分成有線和無線的兩組 (r=2,k=2)。
+l1=l2=3，n2(3,3)=6，當  時（例題中 n=6），必有三點其中任兩點間都有線或必有三點其間任兩點間都無線。
+
+Ramsey 定理祇說 Ramsey 數一定存在，卻不告訴 Ramsey 數是多少。譬如我們知道
+n2(3,4)=9, n2(4,4)=18, n2(4,5) 以上即不知道了。
+
+著名的數論家和組合學家 Erdös 和 Turan（皆匈牙利人）在四十年前研究一個形式上很不一樣但實質上和 Ramsey 定理頗有關的數論問題：設R為任意一個正整數所成的無限集合且 R 的密度大於零，即對任意 n，
+
+
+
+
+
+
+則無論 k 多大，他們猜測 R 中必有一個含 k 元素的算術級數。Erdös 且提供美金一仟元給能解出此題的人（在當時一仟元是 Erdös 的最高獎金，其他題目自五元至數百元不等）。二十年後 Roth 證明此猜測在 k=3 時正確，再過了十年又一個匈牙利人 Szemeredi 證明 k=4 也成立。Szemeredi 對這問題鍥而不捨，又面壁十年，終於證明瞭 Erdös-Turan 的猜測，對所有 k 都正確。證明非常繁複，據 Erdös 推許為人類腦力所能達到的極限。
+
+其次我們介紹 Hall 定理。我們要把 n 個女孩和 n 個男孩配成舞伴，我們問每一個女孩那幾個男孩她願意接受為舞伴。設 S 為男孩的集合，則每一個女孩的回答是一個 S 的子集合。現在我們要在每一個子集合�堿D出一個元素（即選出一男孩作該女孩的伴），但是 n 個子集合所挑出的元素必需不重覆（一個男孩不能作兩個女孩的舞伴）。問在什麼情形下挑選可以成功。首先我們看看成功的必要條件。如果有某 k 個子集合的聯集其所包含的元素少於 k 則顯然挑選不能成功，因為找不到 k 個男孩分配給這 k 個女孩。Hall 證明瞭這個必要條件也是充分條件。Hall 定理有各種態式的表現方式和條件略異的變形，它被應用在作業研究的分派問題上，電話交換網路的操作上及很多其他地方。
+
+下麵我們介紹兩個圖形學上的未解題，這兩個問題和四色問題曾被圖形學大師 Hardy 合稱為圖形學上當今三大難題。
+
+第一個問題是問一個圖形是否含有一個 Hamiliton 圈，這個圈的定義我們等一下再給。先談一個有關的，但已在二百年前被解決的問題。就是一個圖形是否有一個 Euler 圈，這也是歷史上第一個圖形的問題。
+
+
+
+
+
+圖十
+
+
+
+
+
+Königsberg 這個區域被河流劃分為 A,B,C,D 四區（見圖十），有七座橋溝通區際的交通。問能否從某一區出發，每一座橋經過一次且僅一次而回到原區。
+
+把每一個區以一點表示，每一座橋以一條線表示，則得圖十一。如果從任一點出發，每條線經過一次且僅一次回到原點，稱為一個 Euler 圈。
+
+
+
+
+
+圖十一
+
+
+
+
+
+與一個點相接的線的數目稱為該點的度數，很顯明的，如果有任一點它的度數是奇數，則 Euler 圈不可能存在。Euler 證明瞭這一個必要條件也是充分條件。
+
+如果從一點出發，每一點經過一次且僅一次而回到原點稱為一個 Hamilton 圈。
+一個圖形含有Hamilton圈的充分必要條件還是未知。原則上線越多，Hamilton圈存在的機會越大。
+到現在為止最好的充分條件是：
+
+
+
+
+1.圖形必須為一連接圖形，即沒有孤立部分。
+
+
+
+
+2.如果每個點的度數照大小次序排列為
+
+
+
+
+
+
+則 d1 需不小於 2，且對所有不大於 n/2 的 i，不是 ，就得 
+。
+
+
+
+第二個問題叫做「Ulam 猜測」。一個圖形�堳袧え� 1 的點叫做終點。設圖形 G 中有 k 個終點，令 Gi 為從 G 中拿走第 i 個終點及接它的線所得之圖，從 G 當然很容易得到 (G1, G2,…,Gk)。
+Ulam 猜測說從 (G1,G2,…,Gk)，G 可以被唯一決定。當圖形 G 是一棵「樹」時，即 G 中任意兩點只有一條路線連接（這路線可以經過別的點），Ulam 猜測已被證為真，但對一般的圖形還是一個未解題。
+
+
+
+
+
+
+1.Marshall Hall, Jr.《Combinatorial Theory》,1967（臺北市新月圖書公司）。
+
+
+2.Frank Harary,《Graph Theory》,1971,Addison-wesley.
+
+
+
+
+
+
+
+
+
+ 
+
+對外搜尋關鍵字：．Riemann假設．Fermat最後猜測．Euler．拉丁方陣．Ramsey定理．Ramsey數．Erdos．四色問題
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+（若有指正、疑問……，可以在此 留言 或 寫信 給我們。）
+ 
+
+
+
+
+
+
+EpisteMath (c) 2000 中央研究院數學所、臺大數學系
+各網頁文章內容之著作權為原著作人所有
+
+
+
+
+編輯：李渭天 ／ 繪圖：簡立欣
+最後修改日期：4/30/2002
+
+
+
+
+
+
+代數組合學 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+代數組合學
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+代數組合學是組合數學中與抽象代數相關的分支，它可以意指解決組合問題的抽象代數方法，或涉及代數問題的組合學方法。相關的數學課題包括了
+
+擬陣
+多胞體
+有限幾何
+組合交換代數
+格 (數學)
+
+相關書目[編輯]
+
+Takayuki Hibi, Algebraic combinatorics on convex polytopes, Carslaw Publications, Glebe, Australia, 1992
+Melvin Hochster, Cohen-Macaulay rings, combinatorics, and simplicial complexes. Ring theory, II (Proc. Second Conf., Univ. Oklahoma, Norman, Okla., 1975), pp. 171--223. Lecture Notes in Pure and Appl. Math., vol. 26, Dekker, New York, 1977.
+Ezra Miller, Bernd Sturmfels, Combinatorial commutative algebra, Graduate Texts in Mathematics, vol. 227, Springer-Verlag, New York, NY, 2005. ISBN 0-387-22356-8
+Richard Stanley, Combinatorics and commutative algebra. Second edition, Progress in Mathematics, vol. 41. Birkhäuser, Boston, MA, 1996. ISBN 0-8176-3836-9
+Bernd Sturmfels, Gröbner bases and convex polytopes, University Lecture Series, vol. 8, American Mathematical Society, Providence, RI, 1996. ISBN 0-8218-0487-1
+
+
+
+
+這是一篇與數學相關的小作品。你可以透過編輯或修訂擴充其內容。
+
+
+閱
+論
+編
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=代數組合學&oldid=25487659"					
+2 個分類：組合數學抽象代數隱藏分類：全部小作品數學小作品使用ISBN魔術連結的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+EnglishFrançaisItalianoРусский 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2013年3月13日 (週三) 03:01。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+組合學- 台灣Wiki 首頁百科圖片百科分類TwWiki台灣Wiki>百科分類>組合學評論（0）分享到：分享到Facebook分享到Twitter分享到Google+分享到噗浪組合學標籤：演算法枚舉組合數學組合學簡稱組態的數學分支，也稱組合數學，它研究的是滿足各種附加條件的有限個對象的集合。組合學所研究的問題有：計數問題、存在性問題、枚舉、構造和演算法問題、優化問題等。組合學分為幾大部分：圖論、組合計數、組合設計、組合最優化和組合幾何等。目錄1. 由來2. 歷史發展3. 發展現狀回目錄1由來組合學研究的是數(shǔ)的技巧.雖然數(shǔ)數始於以結計數的遠古時代，由於那時人的智力的發展尚處於低級階段，談不上有什麼技巧.隨著人們對於數的瞭解和研究，在形成與數密切相關的數學分支的過程中，如數論、代數、函數論以至泛函的形成與發展，逐步地從數的多樣性發現數(shǔ)的多樣性，產生了各種數(shǔ)數的技巧.同時，在人們對於形有了深入的瞭解和研究的基礎上，在形成與形密切相關的各種數學分支的過程中，如幾何學、拓撲學以至範疇論的形成與發展，逐步地從形的多樣性也發現了數(shǔ)形的多樣性，產生了各種數(shǔ)形的技巧.近代的集合論、數理邏輯等反映了潛在的數與形之間的結合.而現代的代數拓撲和代數幾何等則將數與形密切地聯繫在一起了.這些，對於以數(shǔ)的技巧為中心課題的近代組合學的形成與發展都產生了而且還將會繼續產生深刻的影響.回目錄2歷史發展由此觀之，組合學與其他數學分支有著必然的密切聯繫.它的一些研究內容與方法來自各個分支也應用於各個分支.當然，組合學與其他數學分支一樣也有其獨特的研究問題與方法，它源於人們對於客觀世界中存在的數與形及其關係的發現和認識.例如，中國古代的《易經》中用十個天乾和十二個地支以六十為周期來記載月和年，以及在洛書河圖中關於幻方的記載，是人們至今所瞭解的最早發現的組合問題.於11和12世紀間，賈憲就發現了二項式  楊輝三角係數，楊輝將它整理記載在他的《續古抉奇法》一書中.這就是中國通常稱的楊輝三角.事實上，於12世紀印度的婆什迦羅第二(Bhāskara，Ⅱ)也發現了這種組合數.13世紀波斯的哲學家曾講授過此類三角.而在西方，帕斯卡(Pascal，B.)發現這個三角形是在17世紀中期.這個三角形在其他數學分支的應用也是屢見不鮮的.同時，帕斯卡和費馬均發現了許多與概率論有關的經典組合學的結果.因此，西方人認為組合學開始於17世紀.組合學一詞是德國數學家萊布尼茨(Leibniz，G.W.)在數學的意義下首次應用.也許，在那時他已經預感到了其將來的蓬勃發展.然而只有到了18世紀歐拉(Euler，L.)所處時代，組合學才可以說開始了作為一門科學的發展，因為那時，他解決了哥尼斯堡七橋問題，發現了多面體(首先是凸多面體，即平面圖的情形)的頂點數、邊數和麵數之間的簡單關係.已被人們稱為歐拉公式.甚至，當今人們所稱的哈密頓圈的首創者也應該是歐拉.這些不但使歐拉成為組合學的一個重要組成部分——圖論而且也成為佔據現代數學舞臺中心的拓撲學發展的先驅.同時，他對導致當今組合學中的另一個重要組成部分——組合設計中的拉丁方的研究所提出的猜想，人們稱為歐拉猜想，直到1959年才得到完全的解決.於19世紀初，高斯(Gauss，C.F.)提出的組合係數，今稱高斯係數，在經典組合學中也佔有重要地位.同時，他還研究過平面上的閉曲線的相交問題，由此所提出的猜想稱為高斯猜想，它直到20世紀才得到解決.這個問題不僅貢獻於拓撲學，而且也貢獻於組合學中圖論的發展.同在19世紀，由布爾(Boole，G.)發現且被當今人們稱為布爾代數的分支已經成為組合學中序理論的基石.當然，在這一時期，人們還研究其他許多組合問題，它們中的大多數是娛樂性的.20世紀初期，龐加萊(Poincaré，(J.-)H.)聯繫多面體問題發展了組合學的概念  法國數學家龐加萊與方法，導致了近代拓撲學從組合拓撲學到代數拓撲學的發展.於20世紀的中、後期，組合學發展之迅速也許是人們意想不到的.首先，於1920年費希爾(Fisher，R.A.)和耶茨(Yates，F.)發展了實驗設計的統計理論，其結果導致後來的資訊理論，特別是編碼理論的形成與發展.於1939年，坎托羅維奇(Канторович，Л.В.)發現了線性規劃問題並提出解乘數法.於1947年丹齊克(Dantzig，G.B.)給出了一般的線性規劃模型和理論，他所創立的單純形方法奠定了這一理論的基礎，闡明瞭其解集的組合結構.直到今天它仍然是應用得最廣泛的數學方法之一.這些又導致以網路流為代表的運籌學中的一系列問題的形成與發展.開拓了人們目前稱為組合最優化的一個組合學的新分支.在20世紀50年代，中國也發現並解決了一類稱為運輸問題的線性規劃的圖上作業法，它與一般的網路流理論確有異曲同工之妙.在此基礎上又出現了國際上通稱的中國郵遞員問題.另一方面，自1940年以來，生於英國的塔特(Tutte，W.T.)在解決拼方問題中取得了一系列有關圖論的結果，這些不僅開闢了現今圖論發展的許多新研究領域，而且對於20世紀30年代，惠特尼(Whitney，H.)提出的擬陣論以及人們稱之為組合幾何的發展都起到了核心的推動作用.應該特別提到的是在這一時期，隨著電子技術和計算機科學的發展愈來愈顯示出組合學的潛在力量.同時，也為組合學的發展提出了許多新的研究課題.例如，以大規模和超大規模集成電路設計為中心的計算機輔助設計提出了層出不窮的問題.其中一些問題的研究與發展正在形成一種新的幾何，人們稱之為組合計算幾何.關於演算法複雜性的研究，自1961年庫克(Cook，S.A.)提出NP完全性理論以來，已經將這一思想滲透到組合學的各個分支以至數學和計算機科學中的一些分支.  四色猜想已被證明近20年來，用組合學中的方法已經解決了一些即使在整個數學領域也是具有挑戰性的難題.例如，範·德·瓦爾登(Van der Waerden，B.L.)於1926年提出的關於雙隨機矩陣積和式猜想的證明;希伍德(Heawood，P.J.)於1890年提出的曲面地圖著色猜想的解決;著名的四色定理的計算機驗證和扭結問題的新組合不變數發現等.在數學中已經或正在形成著諸如組合拓撲、組合幾何、組合數論、組合矩陣論、組合群論等與組合學密切相關的交叉學科.此外，組合學也正在滲透到其他自然科學以及社會科學的各個方面，例如，物理學、力學、化學、生物學、遺傳學、心理學以及經濟學、管理學甚至政治學等.回目錄3發展現狀根據組合學研究與發展的現狀，它可以分為如下五個分支：經典組合學、組合設計、組合序、圖與超圖和組合多面形與最優化.由於組合學所涉及的範圍觸及到幾乎所有數學分支，也許和數學本身一樣不大可能建立一種統一的理論.然而，如何在上述的五個分支的基礎上建立一些統一的理論，或者從組合學中獨立出來形成數學的一些新分支將是對21世紀數學家們提出的一個新的挑戰.數學家在中國當代的數學家中，較早地在組合學中的不同方面作出過貢獻的有華羅庚、吳文俊、柯召、萬哲先、張里千和陸家羲等.其中，萬哲先和他領導的研究組在有限幾何方面的系統工作不僅對於組合設計而且對於圖的對稱性的研究都有影響.陸家羲的有關不交斯坦納三元系大集的一系列的文章不僅解決了組合設計方面的一個難題，而且他所創立的方法對於其後的研究者也產生了和正產生著積極的作用.上一篇[膠艾安胎散]    下一篇 [腳癬粉]相關評論同義詞：暫無同義詞收藏到：收藏到Facebook收藏到Twitter收藏到Google+收藏到噗浪詞條信息瀏覽次數: 60 次更新時間: 2013-08-28相關詞條精彩詞條More>鉛筆芯《陳風·東門之池》人格體質類型說加德士小龍鎮帕麗斯·希爾頓香水分享到分享到Facebook分享到Twitter分享到Google+分享到噗浪1由來2歷史發展3發展現狀
+
+
+Combinatorics - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Combinatorics
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+Not to be confused with combinatoriality.
+Combinatorics is a branch of mathematics concerning the study of finite or countable discrete structures. Aspects of combinatorics include counting the structures of a given kind and size (enumerative combinatorics), deciding when certain criteria can be met, and constructing and analyzing objects meeting the criteria (as in combinatorial designs and matroid theory), finding "largest", "smallest", or "optimal" objects (extremal combinatorics and combinatorial optimization), and studying combinatorial structures arising in an algebraic context, or applying algebraic techniques to combinatorial problems (algebraic combinatorics).
+Combinatorial problems arise in many areas of pure mathematics, notably in algebra, probability theory, topology, and geometry,[1] and combinatorics also has many applications in mathematical optimization, computer science, ergodic theory and statistical physics. Many combinatorial questions have historically been considered in isolation, giving an ad hoc solution to a problem arising in some mathematical context. In the later twentieth century, however, powerful and general theoretical methods were developed, making combinatorics into an independent branch of mathematics in its own right. One of the oldest and most accessible parts of combinatorics is graph theory, which also has numerous natural connections to other areas. Combinatorics is used frequently in computer science to obtain formulas and estimates in the analysis of algorithms.
+A mathematician who studies combinatorics is called a combinatorialist or a combinatorist.
+
+
+
+Contents
+
+
+1 History
+2 Approaches and subfields of combinatorics
+
+2.1 Enumerative combinatorics
+2.2 Analytic combinatorics
+2.3 Partition theory
+2.4 Graph theory
+2.5 Design theory
+2.6 Finite geometry
+2.7 Order theory
+2.8 Matroid theory
+2.9 Extremal combinatorics
+2.10 Probabilistic combinatorics
+2.11 Algebraic combinatorics
+2.12 Combinatorics on words
+2.13 Geometric combinatorics
+2.14 Topological combinatorics
+2.15 Arithmetic combinatorics
+2.16 Infinitary combinatorics
+
+
+3 Related fields
+
+3.1 Combinatorial optimization
+3.2 Coding theory
+3.3 Discrete and computational geometry
+3.4 Combinatorics and dynamical systems
+3.5 Combinatorics and physics
+
+
+4 See also
+5 Notes
+6 References
+7 External links
+
+
+
+History[edit]
+
+
+
+
+An example of change ringing (with six bells), one of the earliest nontrivial results in Graph Theory.
+
+
+Main article: History of combinatorics
+Basic combinatorial concepts and enumerative results appeared throughout the ancient world. In the 6th century BCE, ancient Indian physician Sushruta asserts in Sushruta Samhita that 63 combinations can be made out of 6 different tastes, taken one at a time, two at a time, etc., thus computing all 26 − 1 possibilities. Greek historian Plutarch discusses an argument between Chrysippus (3rd century BCE) and Hipparchus (2nd century BCE) of a rather delicate enumerative problem, which was later shown to be related to Schröder–Hipparchus numbers.[2][3] In the Ostomachion, Archimedes (3rd century BCE) considers a tiling puzzle.
+In the Middle Ages, combinatorics continued to be studied, largely outside of the European civilization. The Indian mathematician Mahāvīra (c. 850) provided formulae for the number of permutations and combinations,[4][5] and these formulas may have been familiar to Indian mathematicians as early as the 6th century CE.[6] The philosopher and astronomer Rabbi Abraham ibn Ezra (c. 1140) established the symmetry of binomial coefficients, while a closed formula was obtained later by the talmudist and mathematician Levi ben Gerson (better known as Gersonides), in 1321.[7] The arithmetical triangle— a graphical diagram showing relationships among the binomial coefficients— was presented by mathematicians in treatises dating as far back as the 10th century, and would eventually become known as Pascal's triangle. Later, in Medieval England, campanology provided examples of what is now known as Hamiltonian cycles in certain Cayley graphs on permutations.[8]
+During the Renaissance, together with the rest of mathematics and the sciences, combinatorics enjoyed a rebirth. Works of Pascal, Newton, Jacob Bernoulli and Euler became foundational in the emerging field. In modern times, the works of J. J. Sylvester (late 19th century) and Percy MacMahon (early 20th century) helped lay the foundation for enumerative and algebraic combinatorics. Graph theory also enjoyed an explosion of interest at the same time, especially in connection with the four color problem.
+In the second half of the 20th century, combinatorics enjoyed a rapid growth, which led to establishment of dozens of new journals and conferences in the subject.[9] In part, the growth was spurred by new connections and applications to other fields, ranging from algebra to probability, from functional analysis to number theory, etc. These connections shed the boundaries between combinatorics and parts of mathematics and theoretical computer science, but at the same time led to a partial fragmentation of the field.
+Approaches and subfields of combinatorics[edit]
+Enumerative combinatorics[edit]
+
+
+
+
+Five binary trees on three vertices, an example of Catalan numbers.
+
+
+Main article: Enumerative combinatorics
+Enumerative combinatorics is the most classical area of combinatorics and concentrates on counting the number of certain combinatorial objects. Although counting the number of elements in a set is a rather broad mathematical problem, many of the problems that arise in applications have a relatively simple combinatorial description. Fibonacci numbers is the basic example of a problem in enumerative combinatorics. The twelvefold way provides a unified framework for counting permutations, combinations and partitions.
+Analytic combinatorics[edit]
+Main article: Analytic combinatorics
+Analytic combinatorics concerns the enumeration of combinatorial structures using tools from complex analysis and probability theory. In contrast with enumerative combinatorics, which uses explicit combinatorial formulae and generating functions to describe the results, analytic combinatorics aims at obtaining asymptotic formulae.
+Partition theory[edit]
+
+
+
+
+A plane partition.
+
+
+Main article: Partition theory
+Partition theory studies various enumeration and asymptotic problems related to integer partitions, and is closely related to q-series, special functions and orthogonal polynomials. Originally a part of number theory and analysis, it is now considered a part of combinatorics or an independent field. It incorporates the bijective approach and various tools in analysis and analytic number theory, and has connections with statistical mechanics.
+Graph theory[edit]
+
+
+
+
+Petersen graph.
+
+
+Main article: Graph theory
+Graphs are basic objects in combinatorics. The questions range from counting (e.g., the number of graphs on n vertices with k edges) to structural (e.g., which graphs contain Hamiltonian cycles) to algebraic questions (e.g., given a graph G and two numbers x and y, does the Tutte polynomial TG(x,y) have a combinatorial interpretation?). It should be noted that while there are very strong connections between graph theory and combinatorics, these two are sometimes thought of as separate subjects.[10] This is due to the fact that while combinatorial methods apply to many graph theory problems, the two are generally used to seek solutions to different problems.
+Design theory[edit]
+Main article: Combinatorial design
+Design theory is a study of combinatorial designs, which are collections of subsets with certain intersection properties. Block designs are combinatorial designs of a special type. This area is one of the oldest parts of combinatorics, such as in Kirkman's schoolgirl problem proposed in 1850. The solution of the problem is a special case of a Steiner system, which systems play an important role in the classification of finite simple groups. The area has further connections to coding theory and geometric combinatorics.
+Finite geometry[edit]
+Main article: Finite geometry
+Finite geometry is the study of geometric systems having only a finite number of points. Structures analogous to those found in continuous geometries (Euclidean plane, real projective space, etc.) but defined combinatorially are the main items studied. This area provides a rich source of examples for design theory. It should not be confused with discrete geometry (combinatorial geometry).
+Order theory[edit]
+
+
+
+
+Hasse diagram of the powerset of {x,y,z} ordered by inclusion.
+
+
+Main article: Order theory
+Order theory is the study of partially ordered sets, both finite and infinite. Various examples of partial orders appear in algebra, geometry, number theory and throughout combinatorics and graph theory. Notable classes and examples of partial orders include lattices and Boolean algebras.
+Matroid theory[edit]
+Main article: Matroid theory
+Matroid theory abstracts part of geometry. It studies the properties of sets (usually, finite sets) of vectors in a vector space that do not depend on the particular coefficients in a linear dependence relation. Not only the structure but also enumerative properties belong to matroid theory. Matroid theory was introduced by Hassler Whitney and studied as a part of order theory. It is now an independent field of study with a number of connections with other parts of combinatorics.
+Extremal combinatorics[edit]
+Main article: Extremal combinatorics
+Extremal combinatorics studies extremal questions on set systems. The types of questions addressed in this case are about the largest possible graph which satisfies certain properties. For example, the largest triangle-free graph on 2n vertices is a complete bipartite graph Kn,n. Often it is too hard even to find the extremal answer f(n) exactly and one can only give an asymptotic estimate.
+Ramsey theory is another part of extremal combinatorics. It states that any sufficiently large configuration will contain some sort of order. It is an advanced generalization of the pigeonhole principle.
+Probabilistic combinatorics[edit]
+
+
+
+
+Self-avoiding walk in a square grid graph.
+
+
+Main article: Probabilistic method
+In probabilistic combinatorics, the questions are of the following type: what is the probability of a certain property for a random discrete object, such as a random graph? For instance, what is the average number of triangles in a random graph? Probabilistic methods are also used to determine the existence of combinatorial objects with certain prescribed properties (for which explicit examples might be difficult to find), simply by observing that the probability of randomly selecting an object with those properties is greater than 0. This approach (often referred to as the probabilistic method) proved highly effective in applications to extremal combinatorics and graph theory. A closely related area is the study of finite Markov chains, especially on combinatorial objects. Here again probabilistic tools are used to estimate the mixing time.
+Often associated with Paul Erdős, who did the pioneering work on the subject, probabilistic combinatorics was traditionally viewed as a set of tools to study problems in other parts of combinatorics. However, with the growth of applications to analysis of algorithms in computer science, as well as classical probability, additive and probabilistic number theory, the area recently grew to become an independent field of combinatorics.
+Algebraic combinatorics[edit]
+
+
+
+
+Young diagram of a partition (5,4,1).
+
+
+Main article: Algebraic combinatorics
+Algebraic combinatorics is an area of mathematics that employs methods of abstract algebra, notably group theory and representation theory, in various combinatorial contexts and, conversely, applies combinatorial techniques to problems in algebra. Algebraic combinatorics is continuously expanding its scope, in both topics and techniques, and can be seen as the area of mathematics where the interaction of combinatorial and algebraic methods is particularly strong and significant.
+Combinatorics on words[edit]
+
+
+
+
+Construction of a Thue–Morse infinite word.
+
+
+Main article: Combinatorics on words
+Combinatorics on words deals with formal languages. It arose independently within several branches of mathematics, including number theory, group theory and probability. It has applications to enumerative combinatorics, fractal analysis, theoretical computer science, automata theory and linguistics. While many applications are new, the classical Chomsky–Schützenberger hierarchy of classes of formal grammars is perhaps the best-known result in the field.
+Geometric combinatorics[edit]
+
+
+
+
+An icosahedron.
+
+
+Main article: Geometric combinatorics
+Geometric combinatorics is related to convex and discrete geometry, in particular polyhedral combinatorics. It asks, for example, how many faces of each dimension a convex polytope can have. Metric properties of polytopes play an important role as well, e.g. the Cauchy theorem on the rigidity of convex polytopes. Special polytopes are also considered, such as permutohedra, associahedra and Birkhoff polytopes. We should note that combinatorial geometry is an old fashioned name for discrete geometry.
+Topological combinatorics[edit]
+
+
+
+
+Splitting a necklace with two cuts.
+
+
+Main article: Topological combinatorics
+Combinatorial analogs of concepts and methods in topology are used to study graph coloring, fair division, partitions, partially ordered sets, decision trees, necklace problems and discrete Morse theory. It should not be confused with combinatorial topology which is an older name for algebraic topology.
+Arithmetic combinatorics[edit]
+Main article: Arithmetic combinatorics
+Arithmetic combinatorics arose out of the interplay between number theory, combinatorics, ergodic theory and harmonic analysis. It is about combinatorial estimates associated with arithmetic operations (addition, subtraction, multiplication, and division). Additive combinatorics refers to the special case when only the operations of addition and subtraction are involved. One important technique in arithmetic combinatorics is the ergodic theory of dynamical systems.
+Infinitary combinatorics[edit]
+Main article: Infinitary combinatorics
+Infinitary combinatorics, or combinatorial set theory, is an extension of ideas in combinatorics to infinite sets. It is a part of set theory, an area of mathematical logic, but uses tools and ideas from both set theory and extremal combinatorics.
+Gian-Carlo Rota used the name continuous combinatorics[11] to describe geometric probability, since there are many analogies between counting and measure.
+Related fields[edit]
+
+
+
+
+Kissing spheres are connected to both coding theory and discrete geometry.
+
+
+Combinatorial optimization[edit]
+Combinatorial optimization is the study of optimization on discrete and combinatorial objects. It started as a part of combinatorics and graph theory, but is now viewed as a branch of applied mathematics and computer science, related to operations research, algorithm theory and computational complexity theory.
+Coding theory[edit]
+Coding theory started as a part of design theory with early combinatorial constructions of error-correcting codes. The main idea of the subject is to design efficient and reliable methods of data transmission. It is now a large field of study, part of information theory.
+Discrete and computational geometry[edit]
+Discrete geometry (also called combinatorial geometry) also began as a part of combinatorics, with early results on convex polytopes and kissing numbers. With the emergence of applications of discrete geometry to computational geometry, these two fields partially merged and became a separate field of study. There remain many connections with geometric and topological combinatorics, which themselves can be viewed as outgrowths of the early discrete geometry.
+Combinatorics and dynamical systems[edit]
+Combinatorial aspects of dynamical systems is another emerging field. Here dynamical systems can be defined on combinatorial objects. See for example graph dynamical system.
+Combinatorics and physics[edit]
+There are increasing interactions between combinatorics and physics, particularly statistical physics. Examples include an exact solution of the Ising model, and a connection between the Potts model on one hand, and the chromatic and Tutte polynomials on the other hand.
+See also[edit]
+
+
+Discrete mathematics portal
+
+
+
+Combinatorial biology
+Combinatorial chemistry
+Combinatorial data analysis
+Combinatorial game theory
+Combinatorial group theory
+List of combinatorics topics
+Phylogenetics
+
+Notes[edit]
+
+
+
+^ Björner and Stanley, p. 2
+^ Stanley, Richard P.; "Hipparchus, Plutarch, Schröder, and Hough", American Mathematical Monthly 104 (1997), no. 4, 344–350.
+^ Habsieger, Laurent; Kazarian, Maxim; and Lando, Sergei; "On the Second Number of Plutarch", American Mathematical Monthly 105 (1998), no. 5, 446.
+^ O'Connor, John J.; Robertson, Edmund F., "Combinatorics", MacTutor History of Mathematics archive, University of St Andrews .
+^ Puttaswamy, Tumkur K. (2000), "The Mathematical Accomplishments of Ancient Indian Mathematicians", in Selin, Helaine, Mathematics Across Cultures: The History of Non-Western Mathematics, Netherlands: Kluwer Academic Publishers, p. 417, ISBN 978-1-4020-0260-1 
+^ Biggs, Norman L. (1979). "The Roots of Combinatorics". Historia Mathematica. 6: 109–136. doi:10.1016/0315-0860(79)90074-0. 
+^ Maistrov, L. E. (1974), Probability Theory: A Historical Sketch, Academic Press, p. 35, ISBN 9781483218632 . (Translation from 1967 Russian ed.)
+^ White, Arthur T.; "Ringing the Cosets", American Mathematical Monthly, 94 (1987), no. 8, 721–746; White, Arthur T.; "Fabian Stedman: The First Group Theorist?", American Mathematical Monthly, 103 (1996), no. 9, 771–778.
+^ See Journals in Combinatorics and Graph Theory
+^ Sanders, Daniel P.; 2-Digit MSC Comparison Archived 2008-12-31 at the Wayback Machine.
+^ Continuous and profinite combinatorics
+
+
+
+References[edit]
+
+Björner, Anders; and Stanley, Richard P.; (2010); A Combinatorial Miscellany
+Bóna, Miklós; (2011); A Walk Through Combinatorics (3rd Edition). ISBN 978-981-4335-23-2, ISBN 978-981-4460-00-2(pbk)
+Graham, Ronald L.; Groetschel, Martin; and Lovász, László; eds. (1996); Handbook of Combinatorics, Volumes 1 and 2. Amsterdam, NL, and Cambridge, MA: Elsevier (North-Holland) and MIT Press. ISBN 0-262-07169-X
+Lindner, Charles C.; and Rodger, Christopher A.; eds. (1997); Design Theory, CRC-Press; 1st. edition (October 31, 1997). ISBN 0-8493-3986-3.
+Riordan, John (1958); An Introduction to Combinatorial Analysis, New York, NY: Wiley & Sons (republished)
+Stanley, Richard P. (1997, 1999); Enumerative Combinatorics, Volumes 1 and 2, Cambridge University Press. ISBN 0-521-55309-1, ISBN 0-521-56069-1
+van Lint, Jacobus H.; and Wilson, Richard M.; (2001); A Course in Combinatorics, 2nd Edition, Cambridge University Press. ISBN 0-521-80340-3
+
+External links[edit]
+
+Find more aboutCombinatoricsat Wikipedia's sister projects
+
+Definitions from Wiktionary
+Media from Commons
+Quotations from Wikiquote
+
+
+
+Hazewinkel, Michiel, ed. (2001), "Combinatorial analysis", Encyclopedia of Mathematics, Springer, ISBN 978-1-55608-010-4 
+Combinatorial Analysis – an article in Encyclopædia Britannica Eleventh Edition
+Combinatorics, a MathWorld article with many references.
+Combinatorics, from a MathPages.com portal.
+The Hyperbook of Combinatorics, a collection of math articles links.
+The Two Cultures of Mathematics by W. T. Gowers, article on problem solving vs theory building.
+"Glossary of Terms in Combinatorics"
+List of Combinatorics Software and Databases
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Areas of mathematics
+
+
+
+
+
+
+outline
+topic lists
+
+
+
+
+
+Areas
+
+
+
+Algebra
+
+elementary
+linear
+multilinear
+abstract
+
+
+Arithmetic / Number theory
+Calculus / Analysis
+Category theory
+Combinatorics
+Group theory
+Computation
+Control theory
+Differential equations / Dynamical systems
+Functional analysis
+Game theory
+Geometry
+
+discrete
+algebraic
+analytic
+differential
+finite
+
+
+Graph theory
+History of mathematics
+Information theory
+Lie theory
+Mathematics and art
+Mathematics education
+Mathematical logic
+Mathematical physics
+Mathematical statistics
+Numerical analysis
+Optimization
+Order theory
+Philosophy of mathematics
+Philosophy of mathematics education
+Probability
+Recreational mathematics
+Representation theory
+Set theory
+Statistics
+Topology
+Trigonometry
+
+
+
+
+
+Divisions
+
+
+
+Pure
+Applied
+Discrete
+Computational
+
+
+
+
+
+
+
+
+ Category
+ Portal
+Commons
+WikiProject
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Major fields of computer science
+
+
+
+
+Note: This template roughly follows the 2012 ACM Computing Classification System.
+
+
+
+Hardware
+
+
+
+Printed circuit board
+Peripheral
+Integrated circuit
+Very-large-scale integration
+Energy consumption
+Electronic design automation
+
+
+
+
+
+Computer systems
+organization
+
+
+
+Computer architecture
+Embedded system
+Real-time computing
+Dependability
+
+
+
+
+
+Networks
+
+
+
+Network architecture
+Network protocol
+Network components
+Network scheduler
+Network performance evaluation
+Network service
+
+
+
+
+
+Software organization
+
+
+
+Interpreter
+Middleware
+Virtual machine
+Operating system
+Software quality
+
+
+
+
+
+Software notations
+and tools
+
+
+
+Programming paradigm
+Programming language
+Compiler
+Domain-specific language
+Modeling language
+Software framework
+Integrated development environment
+Software configuration management
+Software library
+Software repository
+
+
+
+
+
+Software development
+
+
+
+Software development process
+Requirements analysis
+Software design
+Software construction
+Software deployment
+Software maintenance
+Programming team
+Open-source model
+
+
+
+
+
+Theory of computation
+
+
+
+Model of computation
+Formal language
+Automata theory
+Computational complexity theory
+Logic
+Semantics
+
+
+
+
+
+Algorithms
+
+
+
+Algorithm design
+Analysis of algorithms
+Randomized algorithm
+Computational geometry
+
+
+
+
+
+Mathematics
+of computing
+
+
+
+Discrete mathematics
+Probability
+Statistics
+Mathematical software
+Information theory
+Mathematical analysis
+Numerical analysis
+
+
+
+
+
+Information
+systems
+
+
+
+Database management system
+Information storage systems
+Enterprise information system
+Social information systems
+Geographic information system
+Decision support system
+Process control system
+Multimedia information system
+Data mining
+Digital library
+Computing platform
+Digital marketing
+World Wide Web
+Information retrieval
+
+
+
+
+
+Security
+
+
+
+Cryptography
+Formal methods
+Security services
+Intrusion detection system
+Hardware security
+Network security
+Information security
+Application security
+
+
+
+
+
+Human–computer
+interaction
+
+
+
+Interaction design
+Social computing
+Ubiquitous computing
+Visualization
+Accessibility
+
+
+
+
+
+Concurrency
+
+
+
+Concurrent computing
+Parallel computing
+Distributed computing
+Multithreading
+Multiprocessing
+
+
+
+
+
+Artificial
+intelligence
+
+
+
+Natural language processing
+Knowledge representation and reasoning
+Computer vision
+Automated planning and scheduling
+Search methodology
+Control method
+Philosophy of artificial intelligence
+Distributed artificial intelligence
+
+
+
+
+
+Machine learning
+
+
+
+Supervised learning
+Unsupervised learning
+Reinforcement learning
+Multi-task learning
+Cross-validation
+
+
+
+
+
+Graphics
+
+
+
+Animation
+Rendering
+Image manipulation
+Graphics processing unit
+Mixed reality
+Virtual reality
+Image compression
+Solid modeling
+
+
+
+
+
+Applied
+computing
+
+
+
+E-commerce
+Enterprise software
+Computational mathematics
+Computational physics
+Computational chemistry
+Computational biology
+Computational social science
+Computational engineering
+Computational healthcare
+Digital art
+Electronic publishing
+Cyberwarfare
+Electronic voting
+Video game
+Word processing
+Operations research
+Educational technology
+Document management
+
+
+
+
+
+
+
+
+ Computer science portal
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Combinatorics&oldid=790293995"					
+Categories: CombinatoricsHidden categories: Webarchive template wayback links 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikimedia CommonsWikibooksWikiquote 
+
+
+
+Languages
+
+
+አማርኛالعربيةAzərbaycancaБеларускаяБеларуская (тарашкевіца)‎БългарскиBosanskiCatalàЧӑвашлаČeštinaDanskDeutschEestiΕλληνικάEspañolEsperantoEuskaraفارسیFrançaisGalego贛語한국어Հայերենहिन्दीHrvatskiIdoBahasa IndonesiaÍslenskaItalianoעבריתქართულიLatinaLatviešuLietuviųMagyarМакедонскиBahasa Melayuမြန်မာဘာသာNederlands日本語Norsk bokmålNorsk nynorskOʻzbekcha/ўзбекчаPatoisPolskiPortuguêsRomânăРусскийСаха тылаShqipSimple EnglishSlovenčinaSlovenščinaСрпски / srpskiSrpskohrvatski / српскохрватскиSuomiSvenskaTagalogதமிழ்Татарча/tatarçaไทยTürkçeTürkmençeУкраїнськаاردوTiếng Việt吳語粵語Žemaitėška中文 
+Edit links 
+
+
+
+
+
+ This page was last edited on 12 July 2017, at 20:10.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Combinatorics - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Combinatorics
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+Not to be confused with combinatoriality.
+Combinatorics is a branch of mathematics concerning the study of finite or countable discrete structures. Aspects of combinatorics include counting the structures of a given kind and size (enumerative combinatorics), deciding when certain criteria can be met, and constructing and analyzing objects meeting the criteria (as in combinatorial designs and matroid theory), finding "largest", "smallest", or "optimal" objects (extremal combinatorics and combinatorial optimization), and studying combinatorial structures arising in an algebraic context, or applying algebraic techniques to combinatorial problems (algebraic combinatorics).
+Combinatorial problems arise in many areas of pure mathematics, notably in algebra, probability theory, topology, and geometry,[1] and combinatorics also has many applications in mathematical optimization, computer science, ergodic theory and statistical physics. Many combinatorial questions have historically been considered in isolation, giving an ad hoc solution to a problem arising in some mathematical context. In the later twentieth century, however, powerful and general theoretical methods were developed, making combinatorics into an independent branch of mathematics in its own right. One of the oldest and most accessible parts of combinatorics is graph theory, which also has numerous natural connections to other areas. Combinatorics is used frequently in computer science to obtain formulas and estimates in the analysis of algorithms.
+A mathematician who studies combinatorics is called a combinatorialist or a combinatorist.
+
+
+
+Contents
+
+
+1 History
+2 Approaches and subfields of combinatorics
+
+2.1 Enumerative combinatorics
+2.2 Analytic combinatorics
+2.3 Partition theory
+2.4 Graph theory
+2.5 Design theory
+2.6 Finite geometry
+2.7 Order theory
+2.8 Matroid theory
+2.9 Extremal combinatorics
+2.10 Probabilistic combinatorics
+2.11 Algebraic combinatorics
+2.12 Combinatorics on words
+2.13 Geometric combinatorics
+2.14 Topological combinatorics
+2.15 Arithmetic combinatorics
+2.16 Infinitary combinatorics
+
+
+3 Related fields
+
+3.1 Combinatorial optimization
+3.2 Coding theory
+3.3 Discrete and computational geometry
+3.4 Combinatorics and dynamical systems
+3.5 Combinatorics and physics
+
+
+4 See also
+5 Notes
+6 References
+7 External links
+
+
+
+History[edit]
+
+
+
+
+An example of change ringing (with six bells), one of the earliest nontrivial results in Graph Theory.
+
+
+Main article: History of combinatorics
+Basic combinatorial concepts and enumerative results appeared throughout the ancient world. In the 6th century BCE, ancient Indian physician Sushruta asserts in Sushruta Samhita that 63 combinations can be made out of 6 different tastes, taken one at a time, two at a time, etc., thus computing all 26 − 1 possibilities. Greek historian Plutarch discusses an argument between Chrysippus (3rd century BCE) and Hipparchus (2nd century BCE) of a rather delicate enumerative problem, which was later shown to be related to Schröder–Hipparchus numbers.[2][3] In the Ostomachion, Archimedes (3rd century BCE) considers a tiling puzzle.
+In the Middle Ages, combinatorics continued to be studied, largely outside of the European civilization. The Indian mathematician Mahāvīra (c. 850) provided formulae for the number of permutations and combinations,[4][5] and these formulas may have been familiar to Indian mathematicians as early as the 6th century CE.[6] The philosopher and astronomer Rabbi Abraham ibn Ezra (c. 1140) established the symmetry of binomial coefficients, while a closed formula was obtained later by the talmudist and mathematician Levi ben Gerson (better known as Gersonides), in 1321.[7] The arithmetical triangle— a graphical diagram showing relationships among the binomial coefficients— was presented by mathematicians in treatises dating as far back as the 10th century, and would eventually become known as Pascal's triangle. Later, in Medieval England, campanology provided examples of what is now known as Hamiltonian cycles in certain Cayley graphs on permutations.[8]
+During the Renaissance, together with the rest of mathematics and the sciences, combinatorics enjoyed a rebirth. Works of Pascal, Newton, Jacob Bernoulli and Euler became foundational in the emerging field. In modern times, the works of J. J. Sylvester (late 19th century) and Percy MacMahon (early 20th century) helped lay the foundation for enumerative and algebraic combinatorics. Graph theory also enjoyed an explosion of interest at the same time, especially in connection with the four color problem.
+In the second half of the 20th century, combinatorics enjoyed a rapid growth, which led to establishment of dozens of new journals and conferences in the subject.[9] In part, the growth was spurred by new connections and applications to other fields, ranging from algebra to probability, from functional analysis to number theory, etc. These connections shed the boundaries between combinatorics and parts of mathematics and theoretical computer science, but at the same time led to a partial fragmentation of the field.
+Approaches and subfields of combinatorics[edit]
+Enumerative combinatorics[edit]
+
+
+
+
+Five binary trees on three vertices, an example of Catalan numbers.
+
+
+Main article: Enumerative combinatorics
+Enumerative combinatorics is the most classical area of combinatorics and concentrates on counting the number of certain combinatorial objects. Although counting the number of elements in a set is a rather broad mathematical problem, many of the problems that arise in applications have a relatively simple combinatorial description. Fibonacci numbers is the basic example of a problem in enumerative combinatorics. The twelvefold way provides a unified framework for counting permutations, combinations and partitions.
+Analytic combinatorics[edit]
+Main article: Analytic combinatorics
+Analytic combinatorics concerns the enumeration of combinatorial structures using tools from complex analysis and probability theory. In contrast with enumerative combinatorics, which uses explicit combinatorial formulae and generating functions to describe the results, analytic combinatorics aims at obtaining asymptotic formulae.
+Partition theory[edit]
+
+
+
+
+A plane partition.
+
+
+Main article: Partition theory
+Partition theory studies various enumeration and asymptotic problems related to integer partitions, and is closely related to q-series, special functions and orthogonal polynomials. Originally a part of number theory and analysis, it is now considered a part of combinatorics or an independent field. It incorporates the bijective approach and various tools in analysis and analytic number theory, and has connections with statistical mechanics.
+Graph theory[edit]
+
+
+
+
+Petersen graph.
+
+
+Main article: Graph theory
+Graphs are basic objects in combinatorics. The questions range from counting (e.g., the number of graphs on n vertices with k edges) to structural (e.g., which graphs contain Hamiltonian cycles) to algebraic questions (e.g., given a graph G and two numbers x and y, does the Tutte polynomial TG(x,y) have a combinatorial interpretation?). It should be noted that while there are very strong connections between graph theory and combinatorics, these two are sometimes thought of as separate subjects.[10] This is due to the fact that while combinatorial methods apply to many graph theory problems, the two are generally used to seek solutions to different problems.
+Design theory[edit]
+Main article: Combinatorial design
+Design theory is a study of combinatorial designs, which are collections of subsets with certain intersection properties. Block designs are combinatorial designs of a special type. This area is one of the oldest parts of combinatorics, such as in Kirkman's schoolgirl problem proposed in 1850. The solution of the problem is a special case of a Steiner system, which systems play an important role in the classification of finite simple groups. The area has further connections to coding theory and geometric combinatorics.
+Finite geometry[edit]
+Main article: Finite geometry
+Finite geometry is the study of geometric systems having only a finite number of points. Structures analogous to those found in continuous geometries (Euclidean plane, real projective space, etc.) but defined combinatorially are the main items studied. This area provides a rich source of examples for design theory. It should not be confused with discrete geometry (combinatorial geometry).
+Order theory[edit]
+
+
+
+
+Hasse diagram of the powerset of {x,y,z} ordered by inclusion.
+
+
+Main article: Order theory
+Order theory is the study of partially ordered sets, both finite and infinite. Various examples of partial orders appear in algebra, geometry, number theory and throughout combinatorics and graph theory. Notable classes and examples of partial orders include lattices and Boolean algebras.
+Matroid theory[edit]
+Main article: Matroid theory
+Matroid theory abstracts part of geometry. It studies the properties of sets (usually, finite sets) of vectors in a vector space that do not depend on the particular coefficients in a linear dependence relation. Not only the structure but also enumerative properties belong to matroid theory. Matroid theory was introduced by Hassler Whitney and studied as a part of order theory. It is now an independent field of study with a number of connections with other parts of combinatorics.
+Extremal combinatorics[edit]
+Main article: Extremal combinatorics
+Extremal combinatorics studies extremal questions on set systems. The types of questions addressed in this case are about the largest possible graph which satisfies certain properties. For example, the largest triangle-free graph on 2n vertices is a complete bipartite graph Kn,n. Often it is too hard even to find the extremal answer f(n) exactly and one can only give an asymptotic estimate.
+Ramsey theory is another part of extremal combinatorics. It states that any sufficiently large configuration will contain some sort of order. It is an advanced generalization of the pigeonhole principle.
+Probabilistic combinatorics[edit]
+
+
+
+
+Self-avoiding walk in a square grid graph.
+
+
+Main article: Probabilistic method
+In probabilistic combinatorics, the questions are of the following type: what is the probability of a certain property for a random discrete object, such as a random graph? For instance, what is the average number of triangles in a random graph? Probabilistic methods are also used to determine the existence of combinatorial objects with certain prescribed properties (for which explicit examples might be difficult to find), simply by observing that the probability of randomly selecting an object with those properties is greater than 0. This approach (often referred to as the probabilistic method) proved highly effective in applications to extremal combinatorics and graph theory. A closely related area is the study of finite Markov chains, especially on combinatorial objects. Here again probabilistic tools are used to estimate the mixing time.
+Often associated with Paul Erdős, who did the pioneering work on the subject, probabilistic combinatorics was traditionally viewed as a set of tools to study problems in other parts of combinatorics. However, with the growth of applications to analysis of algorithms in computer science, as well as classical probability, additive and probabilistic number theory, the area recently grew to become an independent field of combinatorics.
+Algebraic combinatorics[edit]
+
+
+
+
+Young diagram of a partition (5,4,1).
+
+
+Main article: Algebraic combinatorics
+Algebraic combinatorics is an area of mathematics that employs methods of abstract algebra, notably group theory and representation theory, in various combinatorial contexts and, conversely, applies combinatorial techniques to problems in algebra. Algebraic combinatorics is continuously expanding its scope, in both topics and techniques, and can be seen as the area of mathematics where the interaction of combinatorial and algebraic methods is particularly strong and significant.
+Combinatorics on words[edit]
+
+
+
+
+Construction of a Thue–Morse infinite word.
+
+
+Main article: Combinatorics on words
+Combinatorics on words deals with formal languages. It arose independently within several branches of mathematics, including number theory, group theory and probability. It has applications to enumerative combinatorics, fractal analysis, theoretical computer science, automata theory and linguistics. While many applications are new, the classical Chomsky–Schützenberger hierarchy of classes of formal grammars is perhaps the best-known result in the field.
+Geometric combinatorics[edit]
+
+
+
+
+An icosahedron.
+
+
+Main article: Geometric combinatorics
+Geometric combinatorics is related to convex and discrete geometry, in particular polyhedral combinatorics. It asks, for example, how many faces of each dimension a convex polytope can have. Metric properties of polytopes play an important role as well, e.g. the Cauchy theorem on the rigidity of convex polytopes. Special polytopes are also considered, such as permutohedra, associahedra and Birkhoff polytopes. We should note that combinatorial geometry is an old fashioned name for discrete geometry.
+Topological combinatorics[edit]
+
+
+
+
+Splitting a necklace with two cuts.
+
+
+Main article: Topological combinatorics
+Combinatorial analogs of concepts and methods in topology are used to study graph coloring, fair division, partitions, partially ordered sets, decision trees, necklace problems and discrete Morse theory. It should not be confused with combinatorial topology which is an older name for algebraic topology.
+Arithmetic combinatorics[edit]
+Main article: Arithmetic combinatorics
+Arithmetic combinatorics arose out of the interplay between number theory, combinatorics, ergodic theory and harmonic analysis. It is about combinatorial estimates associated with arithmetic operations (addition, subtraction, multiplication, and division). Additive combinatorics refers to the special case when only the operations of addition and subtraction are involved. One important technique in arithmetic combinatorics is the ergodic theory of dynamical systems.
+Infinitary combinatorics[edit]
+Main article: Infinitary combinatorics
+Infinitary combinatorics, or combinatorial set theory, is an extension of ideas in combinatorics to infinite sets. It is a part of set theory, an area of mathematical logic, but uses tools and ideas from both set theory and extremal combinatorics.
+Gian-Carlo Rota used the name continuous combinatorics[11] to describe geometric probability, since there are many analogies between counting and measure.
+Related fields[edit]
+
+
+
+
+Kissing spheres are connected to both coding theory and discrete geometry.
+
+
+Combinatorial optimization[edit]
+Combinatorial optimization is the study of optimization on discrete and combinatorial objects. It started as a part of combinatorics and graph theory, but is now viewed as a branch of applied mathematics and computer science, related to operations research, algorithm theory and computational complexity theory.
+Coding theory[edit]
+Coding theory started as a part of design theory with early combinatorial constructions of error-correcting codes. The main idea of the subject is to design efficient and reliable methods of data transmission. It is now a large field of study, part of information theory.
+Discrete and computational geometry[edit]
+Discrete geometry (also called combinatorial geometry) also began as a part of combinatorics, with early results on convex polytopes and kissing numbers. With the emergence of applications of discrete geometry to computational geometry, these two fields partially merged and became a separate field of study. There remain many connections with geometric and topological combinatorics, which themselves can be viewed as outgrowths of the early discrete geometry.
+Combinatorics and dynamical systems[edit]
+Combinatorial aspects of dynamical systems is another emerging field. Here dynamical systems can be defined on combinatorial objects. See for example graph dynamical system.
+Combinatorics and physics[edit]
+There are increasing interactions between combinatorics and physics, particularly statistical physics. Examples include an exact solution of the Ising model, and a connection between the Potts model on one hand, and the chromatic and Tutte polynomials on the other hand.
+See also[edit]
+
+
+Discrete mathematics portal
+
+
+
+Combinatorial biology
+Combinatorial chemistry
+Combinatorial data analysis
+Combinatorial game theory
+Combinatorial group theory
+List of combinatorics topics
+Phylogenetics
+
+Notes[edit]
+
+
+
+^ Björner and Stanley, p. 2
+^ Stanley, Richard P.; "Hipparchus, Plutarch, Schröder, and Hough", American Mathematical Monthly 104 (1997), no. 4, 344–350.
+^ Habsieger, Laurent; Kazarian, Maxim; and Lando, Sergei; "On the Second Number of Plutarch", American Mathematical Monthly 105 (1998), no. 5, 446.
+^ O'Connor, John J.; Robertson, Edmund F., "Combinatorics", MacTutor History of Mathematics archive, University of St Andrews .
+^ Puttaswamy, Tumkur K. (2000), "The Mathematical Accomplishments of Ancient Indian Mathematicians", in Selin, Helaine, Mathematics Across Cultures: The History of Non-Western Mathematics, Netherlands: Kluwer Academic Publishers, p. 417, ISBN 978-1-4020-0260-1 
+^ Biggs, Norman L. (1979). "The Roots of Combinatorics". Historia Mathematica. 6: 109–136. doi:10.1016/0315-0860(79)90074-0. 
+^ Maistrov, L. E. (1974), Probability Theory: A Historical Sketch, Academic Press, p. 35, ISBN 9781483218632 . (Translation from 1967 Russian ed.)
+^ White, Arthur T.; "Ringing the Cosets", American Mathematical Monthly, 94 (1987), no. 8, 721–746; White, Arthur T.; "Fabian Stedman: The First Group Theorist?", American Mathematical Monthly, 103 (1996), no. 9, 771–778.
+^ See Journals in Combinatorics and Graph Theory
+^ Sanders, Daniel P.; 2-Digit MSC Comparison Archived 2008-12-31 at the Wayback Machine.
+^ Continuous and profinite combinatorics
+
+
+
+References[edit]
+
+Björner, Anders; and Stanley, Richard P.; (2010); A Combinatorial Miscellany
+Bóna, Miklós; (2011); A Walk Through Combinatorics (3rd Edition). ISBN 978-981-4335-23-2, ISBN 978-981-4460-00-2(pbk)
+Graham, Ronald L.; Groetschel, Martin; and Lovász, László; eds. (1996); Handbook of Combinatorics, Volumes 1 and 2. Amsterdam, NL, and Cambridge, MA: Elsevier (North-Holland) and MIT Press. ISBN 0-262-07169-X
+Lindner, Charles C.; and Rodger, Christopher A.; eds. (1997); Design Theory, CRC-Press; 1st. edition (October 31, 1997). ISBN 0-8493-3986-3.
+Riordan, John (1958); An Introduction to Combinatorial Analysis, New York, NY: Wiley & Sons (republished)
+Stanley, Richard P. (1997, 1999); Enumerative Combinatorics, Volumes 1 and 2, Cambridge University Press. ISBN 0-521-55309-1, ISBN 0-521-56069-1
+van Lint, Jacobus H.; and Wilson, Richard M.; (2001); A Course in Combinatorics, 2nd Edition, Cambridge University Press. ISBN 0-521-80340-3
+
+External links[edit]
+
+Find more aboutCombinatoricsat Wikipedia's sister projects
+
+Definitions from Wiktionary
+Media from Commons
+Quotations from Wikiquote
+
+
+
+Hazewinkel, Michiel, ed. (2001), "Combinatorial analysis", Encyclopedia of Mathematics, Springer, ISBN 978-1-55608-010-4 
+Combinatorial Analysis – an article in Encyclopædia Britannica Eleventh Edition
+Combinatorics, a MathWorld article with many references.
+Combinatorics, from a MathPages.com portal.
+The Hyperbook of Combinatorics, a collection of math articles links.
+The Two Cultures of Mathematics by W. T. Gowers, article on problem solving vs theory building.
+"Glossary of Terms in Combinatorics"
+List of Combinatorics Software and Databases
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Areas of mathematics
+
+
+
+
+
+
+outline
+topic lists
+
+
+
+
+
+Areas
+
+
+
+Algebra
+
+elementary
+linear
+multilinear
+abstract
+
+
+Arithmetic / Number theory
+Calculus / Analysis
+Category theory
+Combinatorics
+Group theory
+Computation
+Control theory
+Differential equations / Dynamical systems
+Functional analysis
+Game theory
+Geometry
+
+discrete
+algebraic
+analytic
+differential
+finite
+
+
+Graph theory
+History of mathematics
+Information theory
+Lie theory
+Mathematics and art
+Mathematics education
+Mathematical logic
+Mathematical physics
+Mathematical statistics
+Numerical analysis
+Optimization
+Order theory
+Philosophy of mathematics
+Philosophy of mathematics education
+Probability
+Recreational mathematics
+Representation theory
+Set theory
+Statistics
+Topology
+Trigonometry
+
+
+
+
+
+Divisions
+
+
+
+Pure
+Applied
+Discrete
+Computational
+
+
+
+
+
+
+
+
+ Category
+ Portal
+Commons
+WikiProject
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Major fields of computer science
+
+
+
+
+Note: This template roughly follows the 2012 ACM Computing Classification System.
+
+
+
+Hardware
+
+
+
+Printed circuit board
+Peripheral
+Integrated circuit
+Very-large-scale integration
+Energy consumption
+Electronic design automation
+
+
+
+
+
+Computer systems
+organization
+
+
+
+Computer architecture
+Embedded system
+Real-time computing
+Dependability
+
+
+
+
+
+Networks
+
+
+
+Network architecture
+Network protocol
+Network components
+Network scheduler
+Network performance evaluation
+Network service
+
+
+
+
+
+Software organization
+
+
+
+Interpreter
+Middleware
+Virtual machine
+Operating system
+Software quality
+
+
+
+
+
+Software notations
+and tools
+
+
+
+Programming paradigm
+Programming language
+Compiler
+Domain-specific language
+Modeling language
+Software framework
+Integrated development environment
+Software configuration management
+Software library
+Software repository
+
+
+
+
+
+Software development
+
+
+
+Software development process
+Requirements analysis
+Software design
+Software construction
+Software deployment
+Software maintenance
+Programming team
+Open-source model
+
+
+
+
+
+Theory of computation
+
+
+
+Model of computation
+Formal language
+Automata theory
+Computational complexity theory
+Logic
+Semantics
+
+
+
+
+
+Algorithms
+
+
+
+Algorithm design
+Analysis of algorithms
+Randomized algorithm
+Computational geometry
+
+
+
+
+
+Mathematics
+of computing
+
+
+
+Discrete mathematics
+Probability
+Statistics
+Mathematical software
+Information theory
+Mathematical analysis
+Numerical analysis
+
+
+
+
+
+Information
+systems
+
+
+
+Database management system
+Information storage systems
+Enterprise information system
+Social information systems
+Geographic information system
+Decision support system
+Process control system
+Multimedia information system
+Data mining
+Digital library
+Computing platform
+Digital marketing
+World Wide Web
+Information retrieval
+
+
+
+
+
+Security
+
+
+
+Cryptography
+Formal methods
+Security services
+Intrusion detection system
+Hardware security
+Network security
+Information security
+Application security
+
+
+
+
+
+Human–computer
+interaction
+
+
+
+Interaction design
+Social computing
+Ubiquitous computing
+Visualization
+Accessibility
+
+
+
+
+
+Concurrency
+
+
+
+Concurrent computing
+Parallel computing
+Distributed computing
+Multithreading
+Multiprocessing
+
+
+
+
+
+Artificial
+intelligence
+
+
+
+Natural language processing
+Knowledge representation and reasoning
+Computer vision
+Automated planning and scheduling
+Search methodology
+Control method
+Philosophy of artificial intelligence
+Distributed artificial intelligence
+
+
+
+
+
+Machine learning
+
+
+
+Supervised learning
+Unsupervised learning
+Reinforcement learning
+Multi-task learning
+Cross-validation
+
+
+
+
+
+Graphics
+
+
+
+Animation
+Rendering
+Image manipulation
+Graphics processing unit
+Mixed reality
+Virtual reality
+Image compression
+Solid modeling
+
+
+
+
+
+Applied
+computing
+
+
+
+E-commerce
+Enterprise software
+Computational mathematics
+Computational physics
+Computational chemistry
+Computational biology
+Computational social science
+Computational engineering
+Computational healthcare
+Digital art
+Electronic publishing
+Cyberwarfare
+Electronic voting
+Video game
+Word processing
+Operations research
+Educational technology
+Document management
+
+
+
+
+
+
+
+
+ Computer science portal
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Combinatorics&oldid=790293995"					
+Categories: CombinatoricsHidden categories: Webarchive template wayback links 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikimedia CommonsWikibooksWikiquote 
+
+
+
+Languages
+
+
+አማርኛالعربيةAzərbaycancaБеларускаяБеларуская (тарашкевіца)‎БългарскиBosanskiCatalàЧӑвашлаČeštinaDanskDeutschEestiΕλληνικάEspañolEsperantoEuskaraفارسیFrançaisGalego贛語한국어Հայերենहिन्दीHrvatskiIdoBahasa IndonesiaÍslenskaItalianoעבריתქართულიLatinaLatviešuLietuviųMagyarМакедонскиBahasa Melayuမြန်မာဘာသာNederlands日本語Norsk bokmålNorsk nynorskOʻzbekcha/ўзбекчаPatoisPolskiPortuguêsRomânăРусскийСаха тылаShqipSimple EnglishSlovenčinaSlovenščinaСрпски / srpskiSrpskohrvatski / српскохрватскиSuomiSvenskaTagalogதமிழ்Татарча/tatarçaไทยTürkçeTürkmençeУкраїнськаاردوTiếng Việt吳語粵語Žemaitėška中文 
+Edit links 
+
+
+
+
+
+ This page was last edited on 12 July 2017, at 20:10.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Combinatorics - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Combinatorics
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+Not to be confused with combinatoriality.
+Combinatorics is a branch of mathematics concerning the study of finite or countable discrete structures. Aspects of combinatorics include counting the structures of a given kind and size (enumerative combinatorics), deciding when certain criteria can be met, and constructing and analyzing objects meeting the criteria (as in combinatorial designs and matroid theory), finding "largest", "smallest", or "optimal" objects (extremal combinatorics and combinatorial optimization), and studying combinatorial structures arising in an algebraic context, or applying algebraic techniques to combinatorial problems (algebraic combinatorics).
+Combinatorial problems arise in many areas of pure mathematics, notably in algebra, probability theory, topology, and geometry,[1] and combinatorics also has many applications in mathematical optimization, computer science, ergodic theory and statistical physics. Many combinatorial questions have historically been considered in isolation, giving an ad hoc solution to a problem arising in some mathematical context. In the later twentieth century, however, powerful and general theoretical methods were developed, making combinatorics into an independent branch of mathematics in its own right. One of the oldest and most accessible parts of combinatorics is graph theory, which also has numerous natural connections to other areas. Combinatorics is used frequently in computer science to obtain formulas and estimates in the analysis of algorithms.
+A mathematician who studies combinatorics is called a combinatorialist or a combinatorist.
+
+
+
+Contents
+
+
+1 History
+2 Approaches and subfields of combinatorics
+
+2.1 Enumerative combinatorics
+2.2 Analytic combinatorics
+2.3 Partition theory
+2.4 Graph theory
+2.5 Design theory
+2.6 Finite geometry
+2.7 Order theory
+2.8 Matroid theory
+2.9 Extremal combinatorics
+2.10 Probabilistic combinatorics
+2.11 Algebraic combinatorics
+2.12 Combinatorics on words
+2.13 Geometric combinatorics
+2.14 Topological combinatorics
+2.15 Arithmetic combinatorics
+2.16 Infinitary combinatorics
+
+
+3 Related fields
+
+3.1 Combinatorial optimization
+3.2 Coding theory
+3.3 Discrete and computational geometry
+3.4 Combinatorics and dynamical systems
+3.5 Combinatorics and physics
+
+
+4 See also
+5 Notes
+6 References
+7 External links
+
+
+
+History[edit]
+
+
+
+
+An example of change ringing (with six bells), one of the earliest nontrivial results in Graph Theory.
+
+
+Main article: History of combinatorics
+Basic combinatorial concepts and enumerative results appeared throughout the ancient world. In the 6th century BCE, ancient Indian physician Sushruta asserts in Sushruta Samhita that 63 combinations can be made out of 6 different tastes, taken one at a time, two at a time, etc., thus computing all 26 − 1 possibilities. Greek historian Plutarch discusses an argument between Chrysippus (3rd century BCE) and Hipparchus (2nd century BCE) of a rather delicate enumerative problem, which was later shown to be related to Schröder–Hipparchus numbers.[2][3] In the Ostomachion, Archimedes (3rd century BCE) considers a tiling puzzle.
+In the Middle Ages, combinatorics continued to be studied, largely outside of the European civilization. The Indian mathematician Mahāvīra (c. 850) provided formulae for the number of permutations and combinations,[4][5] and these formulas may have been familiar to Indian mathematicians as early as the 6th century CE.[6] The philosopher and astronomer Rabbi Abraham ibn Ezra (c. 1140) established the symmetry of binomial coefficients, while a closed formula was obtained later by the talmudist and mathematician Levi ben Gerson (better known as Gersonides), in 1321.[7] The arithmetical triangle— a graphical diagram showing relationships among the binomial coefficients— was presented by mathematicians in treatises dating as far back as the 10th century, and would eventually become known as Pascal's triangle. Later, in Medieval England, campanology provided examples of what is now known as Hamiltonian cycles in certain Cayley graphs on permutations.[8]
+During the Renaissance, together with the rest of mathematics and the sciences, combinatorics enjoyed a rebirth. Works of Pascal, Newton, Jacob Bernoulli and Euler became foundational in the emerging field. In modern times, the works of J. J. Sylvester (late 19th century) and Percy MacMahon (early 20th century) helped lay the foundation for enumerative and algebraic combinatorics. Graph theory also enjoyed an explosion of interest at the same time, especially in connection with the four color problem.
+In the second half of the 20th century, combinatorics enjoyed a rapid growth, which led to establishment of dozens of new journals and conferences in the subject.[9] In part, the growth was spurred by new connections and applications to other fields, ranging from algebra to probability, from functional analysis to number theory, etc. These connections shed the boundaries between combinatorics and parts of mathematics and theoretical computer science, but at the same time led to a partial fragmentation of the field.
+Approaches and subfields of combinatorics[edit]
+Enumerative combinatorics[edit]
+
+
+
+
+Five binary trees on three vertices, an example of Catalan numbers.
+
+
+Main article: Enumerative combinatorics
+Enumerative combinatorics is the most classical area of combinatorics and concentrates on counting the number of certain combinatorial objects. Although counting the number of elements in a set is a rather broad mathematical problem, many of the problems that arise in applications have a relatively simple combinatorial description. Fibonacci numbers is the basic example of a problem in enumerative combinatorics. The twelvefold way provides a unified framework for counting permutations, combinations and partitions.
+Analytic combinatorics[edit]
+Main article: Analytic combinatorics
+Analytic combinatorics concerns the enumeration of combinatorial structures using tools from complex analysis and probability theory. In contrast with enumerative combinatorics, which uses explicit combinatorial formulae and generating functions to describe the results, analytic combinatorics aims at obtaining asymptotic formulae.
+Partition theory[edit]
+
+
+
+
+A plane partition.
+
+
+Main article: Partition theory
+Partition theory studies various enumeration and asymptotic problems related to integer partitions, and is closely related to q-series, special functions and orthogonal polynomials. Originally a part of number theory and analysis, it is now considered a part of combinatorics or an independent field. It incorporates the bijective approach and various tools in analysis and analytic number theory, and has connections with statistical mechanics.
+Graph theory[edit]
+
+
+
+
+Petersen graph.
+
+
+Main article: Graph theory
+Graphs are basic objects in combinatorics. The questions range from counting (e.g., the number of graphs on n vertices with k edges) to structural (e.g., which graphs contain Hamiltonian cycles) to algebraic questions (e.g., given a graph G and two numbers x and y, does the Tutte polynomial TG(x,y) have a combinatorial interpretation?). It should be noted that while there are very strong connections between graph theory and combinatorics, these two are sometimes thought of as separate subjects.[10] This is due to the fact that while combinatorial methods apply to many graph theory problems, the two are generally used to seek solutions to different problems.
+Design theory[edit]
+Main article: Combinatorial design
+Design theory is a study of combinatorial designs, which are collections of subsets with certain intersection properties. Block designs are combinatorial designs of a special type. This area is one of the oldest parts of combinatorics, such as in Kirkman's schoolgirl problem proposed in 1850. The solution of the problem is a special case of a Steiner system, which systems play an important role in the classification of finite simple groups. The area has further connections to coding theory and geometric combinatorics.
+Finite geometry[edit]
+Main article: Finite geometry
+Finite geometry is the study of geometric systems having only a finite number of points. Structures analogous to those found in continuous geometries (Euclidean plane, real projective space, etc.) but defined combinatorially are the main items studied. This area provides a rich source of examples for design theory. It should not be confused with discrete geometry (combinatorial geometry).
+Order theory[edit]
+
+
+
+
+Hasse diagram of the powerset of {x,y,z} ordered by inclusion.
+
+
+Main article: Order theory
+Order theory is the study of partially ordered sets, both finite and infinite. Various examples of partial orders appear in algebra, geometry, number theory and throughout combinatorics and graph theory. Notable classes and examples of partial orders include lattices and Boolean algebras.
+Matroid theory[edit]
+Main article: Matroid theory
+Matroid theory abstracts part of geometry. It studies the properties of sets (usually, finite sets) of vectors in a vector space that do not depend on the particular coefficients in a linear dependence relation. Not only the structure but also enumerative properties belong to matroid theory. Matroid theory was introduced by Hassler Whitney and studied as a part of order theory. It is now an independent field of study with a number of connections with other parts of combinatorics.
+Extremal combinatorics[edit]
+Main article: Extremal combinatorics
+Extremal combinatorics studies extremal questions on set systems. The types of questions addressed in this case are about the largest possible graph which satisfies certain properties. For example, the largest triangle-free graph on 2n vertices is a complete bipartite graph Kn,n. Often it is too hard even to find the extremal answer f(n) exactly and one can only give an asymptotic estimate.
+Ramsey theory is another part of extremal combinatorics. It states that any sufficiently large configuration will contain some sort of order. It is an advanced generalization of the pigeonhole principle.
+Probabilistic combinatorics[edit]
+
+
+
+
+Self-avoiding walk in a square grid graph.
+
+
+Main article: Probabilistic method
+In probabilistic combinatorics, the questions are of the following type: what is the probability of a certain property for a random discrete object, such as a random graph? For instance, what is the average number of triangles in a random graph? Probabilistic methods are also used to determine the existence of combinatorial objects with certain prescribed properties (for which explicit examples might be difficult to find), simply by observing that the probability of randomly selecting an object with those properties is greater than 0. This approach (often referred to as the probabilistic method) proved highly effective in applications to extremal combinatorics and graph theory. A closely related area is the study of finite Markov chains, especially on combinatorial objects. Here again probabilistic tools are used to estimate the mixing time.
+Often associated with Paul Erdős, who did the pioneering work on the subject, probabilistic combinatorics was traditionally viewed as a set of tools to study problems in other parts of combinatorics. However, with the growth of applications to analysis of algorithms in computer science, as well as classical probability, additive and probabilistic number theory, the area recently grew to become an independent field of combinatorics.
+Algebraic combinatorics[edit]
+
+
+
+
+Young diagram of a partition (5,4,1).
+
+
+Main article: Algebraic combinatorics
+Algebraic combinatorics is an area of mathematics that employs methods of abstract algebra, notably group theory and representation theory, in various combinatorial contexts and, conversely, applies combinatorial techniques to problems in algebra. Algebraic combinatorics is continuously expanding its scope, in both topics and techniques, and can be seen as the area of mathematics where the interaction of combinatorial and algebraic methods is particularly strong and significant.
+Combinatorics on words[edit]
+
+
+
+
+Construction of a Thue–Morse infinite word.
+
+
+Main article: Combinatorics on words
+Combinatorics on words deals with formal languages. It arose independently within several branches of mathematics, including number theory, group theory and probability. It has applications to enumerative combinatorics, fractal analysis, theoretical computer science, automata theory and linguistics. While many applications are new, the classical Chomsky–Schützenberger hierarchy of classes of formal grammars is perhaps the best-known result in the field.
+Geometric combinatorics[edit]
+
+
+
+
+An icosahedron.
+
+
+Main article: Geometric combinatorics
+Geometric combinatorics is related to convex and discrete geometry, in particular polyhedral combinatorics. It asks, for example, how many faces of each dimension a convex polytope can have. Metric properties of polytopes play an important role as well, e.g. the Cauchy theorem on the rigidity of convex polytopes. Special polytopes are also considered, such as permutohedra, associahedra and Birkhoff polytopes. We should note that combinatorial geometry is an old fashioned name for discrete geometry.
+Topological combinatorics[edit]
+
+
+
+
+Splitting a necklace with two cuts.
+
+
+Main article: Topological combinatorics
+Combinatorial analogs of concepts and methods in topology are used to study graph coloring, fair division, partitions, partially ordered sets, decision trees, necklace problems and discrete Morse theory. It should not be confused with combinatorial topology which is an older name for algebraic topology.
+Arithmetic combinatorics[edit]
+Main article: Arithmetic combinatorics
+Arithmetic combinatorics arose out of the interplay between number theory, combinatorics, ergodic theory and harmonic analysis. It is about combinatorial estimates associated with arithmetic operations (addition, subtraction, multiplication, and division). Additive combinatorics refers to the special case when only the operations of addition and subtraction are involved. One important technique in arithmetic combinatorics is the ergodic theory of dynamical systems.
+Infinitary combinatorics[edit]
+Main article: Infinitary combinatorics
+Infinitary combinatorics, or combinatorial set theory, is an extension of ideas in combinatorics to infinite sets. It is a part of set theory, an area of mathematical logic, but uses tools and ideas from both set theory and extremal combinatorics.
+Gian-Carlo Rota used the name continuous combinatorics[11] to describe geometric probability, since there are many analogies between counting and measure.
+Related fields[edit]
+
+
+
+
+Kissing spheres are connected to both coding theory and discrete geometry.
+
+
+Combinatorial optimization[edit]
+Combinatorial optimization is the study of optimization on discrete and combinatorial objects. It started as a part of combinatorics and graph theory, but is now viewed as a branch of applied mathematics and computer science, related to operations research, algorithm theory and computational complexity theory.
+Coding theory[edit]
+Coding theory started as a part of design theory with early combinatorial constructions of error-correcting codes. The main idea of the subject is to design efficient and reliable methods of data transmission. It is now a large field of study, part of information theory.
+Discrete and computational geometry[edit]
+Discrete geometry (also called combinatorial geometry) also began as a part of combinatorics, with early results on convex polytopes and kissing numbers. With the emergence of applications of discrete geometry to computational geometry, these two fields partially merged and became a separate field of study. There remain many connections with geometric and topological combinatorics, which themselves can be viewed as outgrowths of the early discrete geometry.
+Combinatorics and dynamical systems[edit]
+Combinatorial aspects of dynamical systems is another emerging field. Here dynamical systems can be defined on combinatorial objects. See for example graph dynamical system.
+Combinatorics and physics[edit]
+There are increasing interactions between combinatorics and physics, particularly statistical physics. Examples include an exact solution of the Ising model, and a connection between the Potts model on one hand, and the chromatic and Tutte polynomials on the other hand.
+See also[edit]
+
+
+Discrete mathematics portal
+
+
+
+Combinatorial biology
+Combinatorial chemistry
+Combinatorial data analysis
+Combinatorial game theory
+Combinatorial group theory
+List of combinatorics topics
+Phylogenetics
+
+Notes[edit]
+
+
+
+^ Björner and Stanley, p. 2
+^ Stanley, Richard P.; "Hipparchus, Plutarch, Schröder, and Hough", American Mathematical Monthly 104 (1997), no. 4, 344–350.
+^ Habsieger, Laurent; Kazarian, Maxim; and Lando, Sergei; "On the Second Number of Plutarch", American Mathematical Monthly 105 (1998), no. 5, 446.
+^ O'Connor, John J.; Robertson, Edmund F., "Combinatorics", MacTutor History of Mathematics archive, University of St Andrews .
+^ Puttaswamy, Tumkur K. (2000), "The Mathematical Accomplishments of Ancient Indian Mathematicians", in Selin, Helaine, Mathematics Across Cultures: The History of Non-Western Mathematics, Netherlands: Kluwer Academic Publishers, p. 417, ISBN 978-1-4020-0260-1 
+^ Biggs, Norman L. (1979). "The Roots of Combinatorics". Historia Mathematica. 6: 109–136. doi:10.1016/0315-0860(79)90074-0. 
+^ Maistrov, L. E. (1974), Probability Theory: A Historical Sketch, Academic Press, p. 35, ISBN 9781483218632 . (Translation from 1967 Russian ed.)
+^ White, Arthur T.; "Ringing the Cosets", American Mathematical Monthly, 94 (1987), no. 8, 721–746; White, Arthur T.; "Fabian Stedman: The First Group Theorist?", American Mathematical Monthly, 103 (1996), no. 9, 771–778.
+^ See Journals in Combinatorics and Graph Theory
+^ Sanders, Daniel P.; 2-Digit MSC Comparison Archived 2008-12-31 at the Wayback Machine.
+^ Continuous and profinite combinatorics
+
+
+
+References[edit]
+
+Björner, Anders; and Stanley, Richard P.; (2010); A Combinatorial Miscellany
+Bóna, Miklós; (2011); A Walk Through Combinatorics (3rd Edition). ISBN 978-981-4335-23-2, ISBN 978-981-4460-00-2(pbk)
+Graham, Ronald L.; Groetschel, Martin; and Lovász, László; eds. (1996); Handbook of Combinatorics, Volumes 1 and 2. Amsterdam, NL, and Cambridge, MA: Elsevier (North-Holland) and MIT Press. ISBN 0-262-07169-X
+Lindner, Charles C.; and Rodger, Christopher A.; eds. (1997); Design Theory, CRC-Press; 1st. edition (October 31, 1997). ISBN 0-8493-3986-3.
+Riordan, John (1958); An Introduction to Combinatorial Analysis, New York, NY: Wiley & Sons (republished)
+Stanley, Richard P. (1997, 1999); Enumerative Combinatorics, Volumes 1 and 2, Cambridge University Press. ISBN 0-521-55309-1, ISBN 0-521-56069-1
+van Lint, Jacobus H.; and Wilson, Richard M.; (2001); A Course in Combinatorics, 2nd Edition, Cambridge University Press. ISBN 0-521-80340-3
+
+External links[edit]
+
+Find more aboutCombinatoricsat Wikipedia's sister projects
+
+Definitions from Wiktionary
+Media from Commons
+Quotations from Wikiquote
+
+
+
+Hazewinkel, Michiel, ed. (2001), "Combinatorial analysis", Encyclopedia of Mathematics, Springer, ISBN 978-1-55608-010-4 
+Combinatorial Analysis – an article in Encyclopædia Britannica Eleventh Edition
+Combinatorics, a MathWorld article with many references.
+Combinatorics, from a MathPages.com portal.
+The Hyperbook of Combinatorics, a collection of math articles links.
+The Two Cultures of Mathematics by W. T. Gowers, article on problem solving vs theory building.
+"Glossary of Terms in Combinatorics"
+List of Combinatorics Software and Databases
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Areas of mathematics
+
+
+
+
+
+
+outline
+topic lists
+
+
+
+
+
+Areas
+
+
+
+Algebra
+
+elementary
+linear
+multilinear
+abstract
+
+
+Arithmetic / Number theory
+Calculus / Analysis
+Category theory
+Combinatorics
+Group theory
+Computation
+Control theory
+Differential equations / Dynamical systems
+Functional analysis
+Game theory
+Geometry
+
+discrete
+algebraic
+analytic
+differential
+finite
+
+
+Graph theory
+History of mathematics
+Information theory
+Lie theory
+Mathematics and art
+Mathematics education
+Mathematical logic
+Mathematical physics
+Mathematical statistics
+Numerical analysis
+Optimization
+Order theory
+Philosophy of mathematics
+Philosophy of mathematics education
+Probability
+Recreational mathematics
+Representation theory
+Set theory
+Statistics
+Topology
+Trigonometry
+
+
+
+
+
+Divisions
+
+
+
+Pure
+Applied
+Discrete
+Computational
+
+
+
+
+
+
+
+
+ Category
+ Portal
+Commons
+WikiProject
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Major fields of computer science
+
+
+
+
+Note: This template roughly follows the 2012 ACM Computing Classification System.
+
+
+
+Hardware
+
+
+
+Printed circuit board
+Peripheral
+Integrated circuit
+Very-large-scale integration
+Energy consumption
+Electronic design automation
+
+
+
+
+
+Computer systems
+organization
+
+
+
+Computer architecture
+Embedded system
+Real-time computing
+Dependability
+
+
+
+
+
+Networks
+
+
+
+Network architecture
+Network protocol
+Network components
+Network scheduler
+Network performance evaluation
+Network service
+
+
+
+
+
+Software organization
+
+
+
+Interpreter
+Middleware
+Virtual machine
+Operating system
+Software quality
+
+
+
+
+
+Software notations
+and tools
+
+
+
+Programming paradigm
+Programming language
+Compiler
+Domain-specific language
+Modeling language
+Software framework
+Integrated development environment
+Software configuration management
+Software library
+Software repository
+
+
+
+
+
+Software development
+
+
+
+Software development process
+Requirements analysis
+Software design
+Software construction
+Software deployment
+Software maintenance
+Programming team
+Open-source model
+
+
+
+
+
+Theory of computation
+
+
+
+Model of computation
+Formal language
+Automata theory
+Computational complexity theory
+Logic
+Semantics
+
+
+
+
+
+Algorithms
+
+
+
+Algorithm design
+Analysis of algorithms
+Randomized algorithm
+Computational geometry
+
+
+
+
+
+Mathematics
+of computing
+
+
+
+Discrete mathematics
+Probability
+Statistics
+Mathematical software
+Information theory
+Mathematical analysis
+Numerical analysis
+
+
+
+
+
+Information
+systems
+
+
+
+Database management system
+Information storage systems
+Enterprise information system
+Social information systems
+Geographic information system
+Decision support system
+Process control system
+Multimedia information system
+Data mining
+Digital library
+Computing platform
+Digital marketing
+World Wide Web
+Information retrieval
+
+
+
+
+
+Security
+
+
+
+Cryptography
+Formal methods
+Security services
+Intrusion detection system
+Hardware security
+Network security
+Information security
+Application security
+
+
+
+
+
+Human–computer
+interaction
+
+
+
+Interaction design
+Social computing
+Ubiquitous computing
+Visualization
+Accessibility
+
+
+
+
+
+Concurrency
+
+
+
+Concurrent computing
+Parallel computing
+Distributed computing
+Multithreading
+Multiprocessing
+
+
+
+
+
+Artificial
+intelligence
+
+
+
+Natural language processing
+Knowledge representation and reasoning
+Computer vision
+Automated planning and scheduling
+Search methodology
+Control method
+Philosophy of artificial intelligence
+Distributed artificial intelligence
+
+
+
+
+
+Machine learning
+
+
+
+Supervised learning
+Unsupervised learning
+Reinforcement learning
+Multi-task learning
+Cross-validation
+
+
+
+
+
+Graphics
+
+
+
+Animation
+Rendering
+Image manipulation
+Graphics processing unit
+Mixed reality
+Virtual reality
+Image compression
+Solid modeling
+
+
+
+
+
+Applied
+computing
+
+
+
+E-commerce
+Enterprise software
+Computational mathematics
+Computational physics
+Computational chemistry
+Computational biology
+Computational social science
+Computational engineering
+Computational healthcare
+Digital art
+Electronic publishing
+Cyberwarfare
+Electronic voting
+Video game
+Word processing
+Operations research
+Educational technology
+Document management
+
+
+
+
+
+
+
+
+ Computer science portal
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Combinatorics&oldid=790293995"					
+Categories: CombinatoricsHidden categories: Webarchive template wayback links 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikimedia CommonsWikibooksWikiquote 
+
+
+
+Languages
+
+
+አማርኛالعربيةAzərbaycancaБеларускаяБеларуская (тарашкевіца)‎БългарскиBosanskiCatalàЧӑвашлаČeštinaDanskDeutschEestiΕλληνικάEspañolEsperantoEuskaraفارسیFrançaisGalego贛語한국어Հայերենहिन्दीHrvatskiIdoBahasa IndonesiaÍslenskaItalianoעבריתქართულიLatinaLatviešuLietuviųMagyarМакедонскиBahasa Melayuမြန်မာဘာသာNederlands日本語Norsk bokmålNorsk nynorskOʻzbekcha/ўзбекчаPatoisPolskiPortuguêsRomânăРусскийСаха тылаShqipSimple EnglishSlovenčinaSlovenščinaСрпски / srpskiSrpskohrvatski / српскохрватскиSuomiSvenskaTagalogதமிழ்Татарча/tatarçaไทยTürkçeTürkmençeУкраїнськаاردوTiếng Việt吳語粵語Žemaitėška中文 
+Edit links 
+
+
+
+
+
+ This page was last edited on 12 July 2017, at 20:10.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Combinatorics - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Combinatorics
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+Not to be confused with combinatoriality.
+Combinatorics is a branch of mathematics concerning the study of finite or countable discrete structures. Aspects of combinatorics include counting the structures of a given kind and size (enumerative combinatorics), deciding when certain criteria can be met, and constructing and analyzing objects meeting the criteria (as in combinatorial designs and matroid theory), finding "largest", "smallest", or "optimal" objects (extremal combinatorics and combinatorial optimization), and studying combinatorial structures arising in an algebraic context, or applying algebraic techniques to combinatorial problems (algebraic combinatorics).
+Combinatorial problems arise in many areas of pure mathematics, notably in algebra, probability theory, topology, and geometry,[1] and combinatorics also has many applications in mathematical optimization, computer science, ergodic theory and statistical physics. Many combinatorial questions have historically been considered in isolation, giving an ad hoc solution to a problem arising in some mathematical context. In the later twentieth century, however, powerful and general theoretical methods were developed, making combinatorics into an independent branch of mathematics in its own right. One of the oldest and most accessible parts of combinatorics is graph theory, which also has numerous natural connections to other areas. Combinatorics is used frequently in computer science to obtain formulas and estimates in the analysis of algorithms.
+A mathematician who studies combinatorics is called a combinatorialist or a combinatorist.
+
+
+
+Contents
+
+
+1 History
+2 Approaches and subfields of combinatorics
+
+2.1 Enumerative combinatorics
+2.2 Analytic combinatorics
+2.3 Partition theory
+2.4 Graph theory
+2.5 Design theory
+2.6 Finite geometry
+2.7 Order theory
+2.8 Matroid theory
+2.9 Extremal combinatorics
+2.10 Probabilistic combinatorics
+2.11 Algebraic combinatorics
+2.12 Combinatorics on words
+2.13 Geometric combinatorics
+2.14 Topological combinatorics
+2.15 Arithmetic combinatorics
+2.16 Infinitary combinatorics
+
+
+3 Related fields
+
+3.1 Combinatorial optimization
+3.2 Coding theory
+3.3 Discrete and computational geometry
+3.4 Combinatorics and dynamical systems
+3.5 Combinatorics and physics
+
+
+4 See also
+5 Notes
+6 References
+7 External links
+
+
+
+History[edit]
+
+
+
+
+An example of change ringing (with six bells), one of the earliest nontrivial results in Graph Theory.
+
+
+Main article: History of combinatorics
+Basic combinatorial concepts and enumerative results appeared throughout the ancient world. In the 6th century BCE, ancient Indian physician Sushruta asserts in Sushruta Samhita that 63 combinations can be made out of 6 different tastes, taken one at a time, two at a time, etc., thus computing all 26 − 1 possibilities. Greek historian Plutarch discusses an argument between Chrysippus (3rd century BCE) and Hipparchus (2nd century BCE) of a rather delicate enumerative problem, which was later shown to be related to Schröder–Hipparchus numbers.[2][3] In the Ostomachion, Archimedes (3rd century BCE) considers a tiling puzzle.
+In the Middle Ages, combinatorics continued to be studied, largely outside of the European civilization. The Indian mathematician Mahāvīra (c. 850) provided formulae for the number of permutations and combinations,[4][5] and these formulas may have been familiar to Indian mathematicians as early as the 6th century CE.[6] The philosopher and astronomer Rabbi Abraham ibn Ezra (c. 1140) established the symmetry of binomial coefficients, while a closed formula was obtained later by the talmudist and mathematician Levi ben Gerson (better known as Gersonides), in 1321.[7] The arithmetical triangle— a graphical diagram showing relationships among the binomial coefficients— was presented by mathematicians in treatises dating as far back as the 10th century, and would eventually become known as Pascal's triangle. Later, in Medieval England, campanology provided examples of what is now known as Hamiltonian cycles in certain Cayley graphs on permutations.[8]
+During the Renaissance, together with the rest of mathematics and the sciences, combinatorics enjoyed a rebirth. Works of Pascal, Newton, Jacob Bernoulli and Euler became foundational in the emerging field. In modern times, the works of J. J. Sylvester (late 19th century) and Percy MacMahon (early 20th century) helped lay the foundation for enumerative and algebraic combinatorics. Graph theory also enjoyed an explosion of interest at the same time, especially in connection with the four color problem.
+In the second half of the 20th century, combinatorics enjoyed a rapid growth, which led to establishment of dozens of new journals and conferences in the subject.[9] In part, the growth was spurred by new connections and applications to other fields, ranging from algebra to probability, from functional analysis to number theory, etc. These connections shed the boundaries between combinatorics and parts of mathematics and theoretical computer science, but at the same time led to a partial fragmentation of the field.
+Approaches and subfields of combinatorics[edit]
+Enumerative combinatorics[edit]
+
+
+
+
+Five binary trees on three vertices, an example of Catalan numbers.
+
+
+Main article: Enumerative combinatorics
+Enumerative combinatorics is the most classical area of combinatorics and concentrates on counting the number of certain combinatorial objects. Although counting the number of elements in a set is a rather broad mathematical problem, many of the problems that arise in applications have a relatively simple combinatorial description. Fibonacci numbers is the basic example of a problem in enumerative combinatorics. The twelvefold way provides a unified framework for counting permutations, combinations and partitions.
+Analytic combinatorics[edit]
+Main article: Analytic combinatorics
+Analytic combinatorics concerns the enumeration of combinatorial structures using tools from complex analysis and probability theory. In contrast with enumerative combinatorics, which uses explicit combinatorial formulae and generating functions to describe the results, analytic combinatorics aims at obtaining asymptotic formulae.
+Partition theory[edit]
+
+
+
+
+A plane partition.
+
+
+Main article: Partition theory
+Partition theory studies various enumeration and asymptotic problems related to integer partitions, and is closely related to q-series, special functions and orthogonal polynomials. Originally a part of number theory and analysis, it is now considered a part of combinatorics or an independent field. It incorporates the bijective approach and various tools in analysis and analytic number theory, and has connections with statistical mechanics.
+Graph theory[edit]
+
+
+
+
+Petersen graph.
+
+
+Main article: Graph theory
+Graphs are basic objects in combinatorics. The questions range from counting (e.g., the number of graphs on n vertices with k edges) to structural (e.g., which graphs contain Hamiltonian cycles) to algebraic questions (e.g., given a graph G and two numbers x and y, does the Tutte polynomial TG(x,y) have a combinatorial interpretation?). It should be noted that while there are very strong connections between graph theory and combinatorics, these two are sometimes thought of as separate subjects.[10] This is due to the fact that while combinatorial methods apply to many graph theory problems, the two are generally used to seek solutions to different problems.
+Design theory[edit]
+Main article: Combinatorial design
+Design theory is a study of combinatorial designs, which are collections of subsets with certain intersection properties. Block designs are combinatorial designs of a special type. This area is one of the oldest parts of combinatorics, such as in Kirkman's schoolgirl problem proposed in 1850. The solution of the problem is a special case of a Steiner system, which systems play an important role in the classification of finite simple groups. The area has further connections to coding theory and geometric combinatorics.
+Finite geometry[edit]
+Main article: Finite geometry
+Finite geometry is the study of geometric systems having only a finite number of points. Structures analogous to those found in continuous geometries (Euclidean plane, real projective space, etc.) but defined combinatorially are the main items studied. This area provides a rich source of examples for design theory. It should not be confused with discrete geometry (combinatorial geometry).
+Order theory[edit]
+
+
+
+
+Hasse diagram of the powerset of {x,y,z} ordered by inclusion.
+
+
+Main article: Order theory
+Order theory is the study of partially ordered sets, both finite and infinite. Various examples of partial orders appear in algebra, geometry, number theory and throughout combinatorics and graph theory. Notable classes and examples of partial orders include lattices and Boolean algebras.
+Matroid theory[edit]
+Main article: Matroid theory
+Matroid theory abstracts part of geometry. It studies the properties of sets (usually, finite sets) of vectors in a vector space that do not depend on the particular coefficients in a linear dependence relation. Not only the structure but also enumerative properties belong to matroid theory. Matroid theory was introduced by Hassler Whitney and studied as a part of order theory. It is now an independent field of study with a number of connections with other parts of combinatorics.
+Extremal combinatorics[edit]
+Main article: Extremal combinatorics
+Extremal combinatorics studies extremal questions on set systems. The types of questions addressed in this case are about the largest possible graph which satisfies certain properties. For example, the largest triangle-free graph on 2n vertices is a complete bipartite graph Kn,n. Often it is too hard even to find the extremal answer f(n) exactly and one can only give an asymptotic estimate.
+Ramsey theory is another part of extremal combinatorics. It states that any sufficiently large configuration will contain some sort of order. It is an advanced generalization of the pigeonhole principle.
+Probabilistic combinatorics[edit]
+
+
+
+
+Self-avoiding walk in a square grid graph.
+
+
+Main article: Probabilistic method
+In probabilistic combinatorics, the questions are of the following type: what is the probability of a certain property for a random discrete object, such as a random graph? For instance, what is the average number of triangles in a random graph? Probabilistic methods are also used to determine the existence of combinatorial objects with certain prescribed properties (for which explicit examples might be difficult to find), simply by observing that the probability of randomly selecting an object with those properties is greater than 0. This approach (often referred to as the probabilistic method) proved highly effective in applications to extremal combinatorics and graph theory. A closely related area is the study of finite Markov chains, especially on combinatorial objects. Here again probabilistic tools are used to estimate the mixing time.
+Often associated with Paul Erdős, who did the pioneering work on the subject, probabilistic combinatorics was traditionally viewed as a set of tools to study problems in other parts of combinatorics. However, with the growth of applications to analysis of algorithms in computer science, as well as classical probability, additive and probabilistic number theory, the area recently grew to become an independent field of combinatorics.
+Algebraic combinatorics[edit]
+
+
+
+
+Young diagram of a partition (5,4,1).
+
+
+Main article: Algebraic combinatorics
+Algebraic combinatorics is an area of mathematics that employs methods of abstract algebra, notably group theory and representation theory, in various combinatorial contexts and, conversely, applies combinatorial techniques to problems in algebra. Algebraic combinatorics is continuously expanding its scope, in both topics and techniques, and can be seen as the area of mathematics where the interaction of combinatorial and algebraic methods is particularly strong and significant.
+Combinatorics on words[edit]
+
+
+
+
+Construction of a Thue–Morse infinite word.
+
+
+Main article: Combinatorics on words
+Combinatorics on words deals with formal languages. It arose independently within several branches of mathematics, including number theory, group theory and probability. It has applications to enumerative combinatorics, fractal analysis, theoretical computer science, automata theory and linguistics. While many applications are new, the classical Chomsky–Schützenberger hierarchy of classes of formal grammars is perhaps the best-known result in the field.
+Geometric combinatorics[edit]
+
+
+
+
+An icosahedron.
+
+
+Main article: Geometric combinatorics
+Geometric combinatorics is related to convex and discrete geometry, in particular polyhedral combinatorics. It asks, for example, how many faces of each dimension a convex polytope can have. Metric properties of polytopes play an important role as well, e.g. the Cauchy theorem on the rigidity of convex polytopes. Special polytopes are also considered, such as permutohedra, associahedra and Birkhoff polytopes. We should note that combinatorial geometry is an old fashioned name for discrete geometry.
+Topological combinatorics[edit]
+
+
+
+
+Splitting a necklace with two cuts.
+
+
+Main article: Topological combinatorics
+Combinatorial analogs of concepts and methods in topology are used to study graph coloring, fair division, partitions, partially ordered sets, decision trees, necklace problems and discrete Morse theory. It should not be confused with combinatorial topology which is an older name for algebraic topology.
+Arithmetic combinatorics[edit]
+Main article: Arithmetic combinatorics
+Arithmetic combinatorics arose out of the interplay between number theory, combinatorics, ergodic theory and harmonic analysis. It is about combinatorial estimates associated with arithmetic operations (addition, subtraction, multiplication, and division). Additive combinatorics refers to the special case when only the operations of addition and subtraction are involved. One important technique in arithmetic combinatorics is the ergodic theory of dynamical systems.
+Infinitary combinatorics[edit]
+Main article: Infinitary combinatorics
+Infinitary combinatorics, or combinatorial set theory, is an extension of ideas in combinatorics to infinite sets. It is a part of set theory, an area of mathematical logic, but uses tools and ideas from both set theory and extremal combinatorics.
+Gian-Carlo Rota used the name continuous combinatorics[11] to describe geometric probability, since there are many analogies between counting and measure.
+Related fields[edit]
+
+
+
+
+Kissing spheres are connected to both coding theory and discrete geometry.
+
+
+Combinatorial optimization[edit]
+Combinatorial optimization is the study of optimization on discrete and combinatorial objects. It started as a part of combinatorics and graph theory, but is now viewed as a branch of applied mathematics and computer science, related to operations research, algorithm theory and computational complexity theory.
+Coding theory[edit]
+Coding theory started as a part of design theory with early combinatorial constructions of error-correcting codes. The main idea of the subject is to design efficient and reliable methods of data transmission. It is now a large field of study, part of information theory.
+Discrete and computational geometry[edit]
+Discrete geometry (also called combinatorial geometry) also began as a part of combinatorics, with early results on convex polytopes and kissing numbers. With the emergence of applications of discrete geometry to computational geometry, these two fields partially merged and became a separate field of study. There remain many connections with geometric and topological combinatorics, which themselves can be viewed as outgrowths of the early discrete geometry.
+Combinatorics and dynamical systems[edit]
+Combinatorial aspects of dynamical systems is another emerging field. Here dynamical systems can be defined on combinatorial objects. See for example graph dynamical system.
+Combinatorics and physics[edit]
+There are increasing interactions between combinatorics and physics, particularly statistical physics. Examples include an exact solution of the Ising model, and a connection between the Potts model on one hand, and the chromatic and Tutte polynomials on the other hand.
+See also[edit]
+
+
+Discrete mathematics portal
+
+
+
+Combinatorial biology
+Combinatorial chemistry
+Combinatorial data analysis
+Combinatorial game theory
+Combinatorial group theory
+List of combinatorics topics
+Phylogenetics
+
+Notes[edit]
+
+
+
+^ Björner and Stanley, p. 2
+^ Stanley, Richard P.; "Hipparchus, Plutarch, Schröder, and Hough", American Mathematical Monthly 104 (1997), no. 4, 344–350.
+^ Habsieger, Laurent; Kazarian, Maxim; and Lando, Sergei; "On the Second Number of Plutarch", American Mathematical Monthly 105 (1998), no. 5, 446.
+^ O'Connor, John J.; Robertson, Edmund F., "Combinatorics", MacTutor History of Mathematics archive, University of St Andrews .
+^ Puttaswamy, Tumkur K. (2000), "The Mathematical Accomplishments of Ancient Indian Mathematicians", in Selin, Helaine, Mathematics Across Cultures: The History of Non-Western Mathematics, Netherlands: Kluwer Academic Publishers, p. 417, ISBN 978-1-4020-0260-1 
+^ Biggs, Norman L. (1979). "The Roots of Combinatorics". Historia Mathematica. 6: 109–136. doi:10.1016/0315-0860(79)90074-0. 
+^ Maistrov, L. E. (1974), Probability Theory: A Historical Sketch, Academic Press, p. 35, ISBN 9781483218632 . (Translation from 1967 Russian ed.)
+^ White, Arthur T.; "Ringing the Cosets", American Mathematical Monthly, 94 (1987), no. 8, 721–746; White, Arthur T.; "Fabian Stedman: The First Group Theorist?", American Mathematical Monthly, 103 (1996), no. 9, 771–778.
+^ See Journals in Combinatorics and Graph Theory
+^ Sanders, Daniel P.; 2-Digit MSC Comparison Archived 2008-12-31 at the Wayback Machine.
+^ Continuous and profinite combinatorics
+
+
+
+References[edit]
+
+Björner, Anders; and Stanley, Richard P.; (2010); A Combinatorial Miscellany
+Bóna, Miklós; (2011); A Walk Through Combinatorics (3rd Edition). ISBN 978-981-4335-23-2, ISBN 978-981-4460-00-2(pbk)
+Graham, Ronald L.; Groetschel, Martin; and Lovász, László; eds. (1996); Handbook of Combinatorics, Volumes 1 and 2. Amsterdam, NL, and Cambridge, MA: Elsevier (North-Holland) and MIT Press. ISBN 0-262-07169-X
+Lindner, Charles C.; and Rodger, Christopher A.; eds. (1997); Design Theory, CRC-Press; 1st. edition (October 31, 1997). ISBN 0-8493-3986-3.
+Riordan, John (1958); An Introduction to Combinatorial Analysis, New York, NY: Wiley & Sons (republished)
+Stanley, Richard P. (1997, 1999); Enumerative Combinatorics, Volumes 1 and 2, Cambridge University Press. ISBN 0-521-55309-1, ISBN 0-521-56069-1
+van Lint, Jacobus H.; and Wilson, Richard M.; (2001); A Course in Combinatorics, 2nd Edition, Cambridge University Press. ISBN 0-521-80340-3
+
+External links[edit]
+
+Find more aboutCombinatoricsat Wikipedia's sister projects
+
+Definitions from Wiktionary
+Media from Commons
+Quotations from Wikiquote
+
+
+
+Hazewinkel, Michiel, ed. (2001), "Combinatorial analysis", Encyclopedia of Mathematics, Springer, ISBN 978-1-55608-010-4 
+Combinatorial Analysis – an article in Encyclopædia Britannica Eleventh Edition
+Combinatorics, a MathWorld article with many references.
+Combinatorics, from a MathPages.com portal.
+The Hyperbook of Combinatorics, a collection of math articles links.
+The Two Cultures of Mathematics by W. T. Gowers, article on problem solving vs theory building.
+"Glossary of Terms in Combinatorics"
+List of Combinatorics Software and Databases
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Areas of mathematics
+
+
+
+
+
+
+outline
+topic lists
+
+
+
+
+
+Areas
+
+
+
+Algebra
+
+elementary
+linear
+multilinear
+abstract
+
+
+Arithmetic / Number theory
+Calculus / Analysis
+Category theory
+Combinatorics
+Group theory
+Computation
+Control theory
+Differential equations / Dynamical systems
+Functional analysis
+Game theory
+Geometry
+
+discrete
+algebraic
+analytic
+differential
+finite
+
+
+Graph theory
+History of mathematics
+Information theory
+Lie theory
+Mathematics and art
+Mathematics education
+Mathematical logic
+Mathematical physics
+Mathematical statistics
+Numerical analysis
+Optimization
+Order theory
+Philosophy of mathematics
+Philosophy of mathematics education
+Probability
+Recreational mathematics
+Representation theory
+Set theory
+Statistics
+Topology
+Trigonometry
+
+
+
+
+
+Divisions
+
+
+
+Pure
+Applied
+Discrete
+Computational
+
+
+
+
+
+
+
+
+ Category
+ Portal
+Commons
+WikiProject
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Major fields of computer science
+
+
+
+
+Note: This template roughly follows the 2012 ACM Computing Classification System.
+
+
+
+Hardware
+
+
+
+Printed circuit board
+Peripheral
+Integrated circuit
+Very-large-scale integration
+Energy consumption
+Electronic design automation
+
+
+
+
+
+Computer systems
+organization
+
+
+
+Computer architecture
+Embedded system
+Real-time computing
+Dependability
+
+
+
+
+
+Networks
+
+
+
+Network architecture
+Network protocol
+Network components
+Network scheduler
+Network performance evaluation
+Network service
+
+
+
+
+
+Software organization
+
+
+
+Interpreter
+Middleware
+Virtual machine
+Operating system
+Software quality
+
+
+
+
+
+Software notations
+and tools
+
+
+
+Programming paradigm
+Programming language
+Compiler
+Domain-specific language
+Modeling language
+Software framework
+Integrated development environment
+Software configuration management
+Software library
+Software repository
+
+
+
+
+
+Software development
+
+
+
+Software development process
+Requirements analysis
+Software design
+Software construction
+Software deployment
+Software maintenance
+Programming team
+Open-source model
+
+
+
+
+
+Theory of computation
+
+
+
+Model of computation
+Formal language
+Automata theory
+Computational complexity theory
+Logic
+Semantics
+
+
+
+
+
+Algorithms
+
+
+
+Algorithm design
+Analysis of algorithms
+Randomized algorithm
+Computational geometry
+
+
+
+
+
+Mathematics
+of computing
+
+
+
+Discrete mathematics
+Probability
+Statistics
+Mathematical software
+Information theory
+Mathematical analysis
+Numerical analysis
+
+
+
+
+
+Information
+systems
+
+
+
+Database management system
+Information storage systems
+Enterprise information system
+Social information systems
+Geographic information system
+Decision support system
+Process control system
+Multimedia information system
+Data mining
+Digital library
+Computing platform
+Digital marketing
+World Wide Web
+Information retrieval
+
+
+
+
+
+Security
+
+
+
+Cryptography
+Formal methods
+Security services
+Intrusion detection system
+Hardware security
+Network security
+Information security
+Application security
+
+
+
+
+
+Human–computer
+interaction
+
+
+
+Interaction design
+Social computing
+Ubiquitous computing
+Visualization
+Accessibility
+
+
+
+
+
+Concurrency
+
+
+
+Concurrent computing
+Parallel computing
+Distributed computing
+Multithreading
+Multiprocessing
+
+
+
+
+
+Artificial
+intelligence
+
+
+
+Natural language processing
+Knowledge representation and reasoning
+Computer vision
+Automated planning and scheduling
+Search methodology
+Control method
+Philosophy of artificial intelligence
+Distributed artificial intelligence
+
+
+
+
+
+Machine learning
+
+
+
+Supervised learning
+Unsupervised learning
+Reinforcement learning
+Multi-task learning
+Cross-validation
+
+
+
+
+
+Graphics
+
+
+
+Animation
+Rendering
+Image manipulation
+Graphics processing unit
+Mixed reality
+Virtual reality
+Image compression
+Solid modeling
+
+
+
+
+
+Applied
+computing
+
+
+
+E-commerce
+Enterprise software
+Computational mathematics
+Computational physics
+Computational chemistry
+Computational biology
+Computational social science
+Computational engineering
+Computational healthcare
+Digital art
+Electronic publishing
+Cyberwarfare
+Electronic voting
+Video game
+Word processing
+Operations research
+Educational technology
+Document management
+
+
+
+
+
+
+
+
+ Computer science portal
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Combinatorics&oldid=790293995"					
+Categories: CombinatoricsHidden categories: Webarchive template wayback links 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikimedia CommonsWikibooksWikiquote 
+
+
+
+Languages
+
+
+አማርኛالعربيةAzərbaycancaБеларускаяБеларуская (тарашкевіца)‎БългарскиBosanskiCatalàЧӑвашлаČeštinaDanskDeutschEestiΕλληνικάEspañolEsperantoEuskaraفارسیFrançaisGalego贛語한국어Հայերենहिन्दीHrvatskiIdoBahasa IndonesiaÍslenskaItalianoעבריתქართულიLatinaLatviešuLietuviųMagyarМакедонскиBahasa Melayuမြန်မာဘာသာNederlands日本語Norsk bokmålNorsk nynorskOʻzbekcha/ўзбекчаPatoisPolskiPortuguêsRomânăРусскийСаха тылаShqipSimple EnglishSlovenčinaSlovenščinaСрпски / srpskiSrpskohrvatski / српскохрватскиSuomiSvenskaTagalogதமிழ்Татарча/tatarçaไทยTürkçeTürkmençeУкраїнськаاردوTiếng Việt吳語粵語Žemaitėška中文 
+Edit links 
+
+
+
+
+
+ This page was last edited on 12 July 2017, at 20:10.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+國立交通大學應用數學系 Department of Applied Mathematics, NCTU
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .:: 迴首頁 | 交通大學 | 意見回饋 | 網站地圖 | 手機板 |  English  ::.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+研究簡介
+研究計畫GRB
+研究領域
+數學建模與科學計算
+財務工程與機率
+微分方程與動態系統
+離散數學與最優化
+數論、幾何與分析
+學術活動
+歷年學術演講
+歷年學術研討會
+
+
+
+相關學術網站
+交通大學
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+研究領域．離散數學與最優化
+快速連結
+
+一、離散數學簡介
+二、老師的研究興趣
+三、相關選修課程
+
+
+一、「離散數學」簡介
+
+
+「離散數學」是什麼？
+&nbsp&nbsp「離散數學」亦稱「組合數學」。自遠古數學活動肇始之初，算術與幾何便分別代表了離散與連續觀念的源頭。兩種思維方式相互的辯證發展，造就了內容繽紛的數學世界。但自牛頓開創微積分以後，以分析為首的連續性數學獨領風騷近三百年之久。今日所謂離散數學的若干題材，雖然可在數論、代數、機率、初等幾何等學科中，發現其萌芽之跡，但終未能成氣候。甚至有局限於益智遊戲形式，是理論深度未被辨識的研究課題。
+&nbsp&nbsp本世紀以來，離散的工具與方法，逐漸在廣泛的學科中，被發展及使用起來。因此慢慢產生出新的焦點，以及新的科學意識。一些彼此關連掛鉤的研究領域，開始匯聚在離散數學(或稱組合數學)這張大傘之下。特別自三十年代以後，計算科學在理論與實用上都有突破性的發展。電子計算機這種能力巨大的資訊處裡工具，把人類文明帶入一個嶄新的階段。它不僅提供了生活的方便，更深深影響人的思惟方式與知識發展的進步。計算機必須通過離散的表徵才能處裡資訊，古典連續數學經由它的離散化，反而產生了深刻的離散問題，同時彰顯了離散現象的重要性。此外，計算機幫助人處理極大量的有限數及有限結構，踏入前人無法想像的天地，更開展了新意義、新層次的問題以供研究。
+
+「組合數學」這個領域包含了什麼？
+組合數學這個名詞只是一個通稱，其中包羅了許多學域，比較居樞紐地位的包括下列幾種：
+
+由古典計算問題一脈相傳而下，包括有限集合族上的各類組合問題；
+以代數、拓樸方法建立組合學體系的研究；
+以群論、有限幾何為主要工具的設計理論(Design Theory)；
+群作用所產生的組合現象；
+圖形、網路與超圖的理論(Hypergraphs)；
+最佳化、運籌學(Operation Research)與賽局理論(Game Theory)；
+編碼(Coding Theory)與密碼理論(Cryptography)；
+擬陣(Matroid)、廣義擬陣論(Greedoid)；
+離散與計算幾何學；
+演算法則的設計與分析；
+離散機率方法的應用；
+利用微積分、複變方法進行演算分析；
+特徵值估計及其應用。
+
+
+Top
+「組合數學」這個領域有些什麼應用？
+&nbsp&nbsp在應用方面，最大的市場之一是計算機科學，已成為該領域的必修課程。所有數位化的產物，如雷射唱盤、光碟、大哥大、衛星通訊等等都仰賴錯誤糾正碼(Error Correcting Code)的設計以增加它們的可靠性；提款卡、簽帳卡等也是密碼學的附產品；少了這些，人類的生活都不知道要如何繼續下去!另外，DNA的定序問題，選舉權力的分析，生物食物網的平衡，實驗設計的安排，處處可見組合數學應用的例子。由此可預見，非數學科系對組合數學的需求將日漸增高，甚至已經有人呼籲，以「組合數學」取代微積分，作為大一的基礎數學課程。
+
+本系與「組合數學領域」之關連？
+&nbsp&nbsp本系在組合數學方面的師資充實，其人數之多，在台灣各大學數學系所稱冠，研究領域亦涵蓋各主要方向。分述如下：
+
+傅恆霖教授：圖論、組合設計
+陳秋媛教授：演算法、圖論、離散數學
+翁志文教授：代數組合學、矩陣理論
+符麥克教授：賦距數論(Metric Number Theory)、演算分析
+
+
+Top
+
+二、老師的研究興趣
+傅恆霖 老師 （組合設計、圖論及其應用）
+
+
+我目前研究的方向有下列幾個方向:
+
+建立群試模型以應用於計算分子生物學中的實驗設計。
+利用特殊建構的數列以加權的配對概念來建構比較好的避免衝突碼。
+在代數圖論方面則致力於探討二分圖的最大及次大的特徵值。
+在密碼分散型系統的研究方面， 發展出一個核心聚集的概念， 然後利用它來計算出最優的平均資訊比例。
+對於隱藏圖或超圖的尋找方面， 提供出更有效的序列式演算法; 這個結果對於DNA序列排序的研究有具體的貢獻。
+建構優良的辨識碼來解決多媒體盜版的問題。
+對於通訊網路的設計與傳遞， 經由有策略的傳送規劃(Global Packing)， 找到最好的方法。
+在圖的消圈數的研究， 提供最優化的成果。
+
+
+Top
+
+
+陳秋媛 老師 （圖論、演算法、連接網路及無線網路）
+
+
+近年研究計劃
+(1)圖論在無線感測網路的定位及訊息傳送等問題上的應用
+						(2)無線感測網路的連接圖的二步著色問題
+						(3)圖論在無線感測網路中的應用(資料匯集以及定位問題等)
+					(4)圖論在無線網路上之應用
+
+
+
+Top
+
+"翁志文 老師 （距離正則圖、群試設計、代數示表與表示理論、組合矩陣理論、圖論）
+
+
+Yu-pei Huang, Yeh-jong Pan and Chih-wen Weng,  Nonexistence of a Class of Distance-Regular Graphs,  the electronic journal of combinatorics, Volume 22, Issue 2 (2015), #P2.37
+					(證明一類距離正則圖不存在)
+Jun Guo, Kaishun Wang, Chih-wen Weng, Pooling semilattices and non-adaptive pooling designs, Discrete Mathematics 320(2014), 64-72 
+					(在半格中建構群試設計)
+Chia-an Liu, Chih-wen Weng, Spectral radius of bipartite graphs, Linear Algebra and its Applications, 474(2015), 30–43 
+				(給二部圖一個緊緻的圖譜上界)
+Yen-Jen Cheng, Feng-lei Fan, Chih-wen Weng, An extending result on spectral radius of bipartite graphs, arXiv:1509.07586 
+			(給孿生質數一個圖譜刻畫)
+http://jupiter.math.nctu.edu.tw/~weng/weng.htm
+
+
+Top
+
+符麥克 老師 （解析組合、 離散機率、 演算分析、 生物數學、 賦距數論）
+
+
+我的研究工作涉及到數個離散數學子領域的互動，像是組合數學、離散型機率論以及數論。我近幾年所處理的問題大多數是來自理論計算機科學或是生物學(以下兩張圖展示一個與 演算法及資料結構 相關的研究主題)。一個我感興趣的應用數學問題通常含有以下3個層面中的至少2個，分別是(一)組合上的、(二)機率的或是(三)分析方面的。另一方面，如同純數的問題，我主要對組合計數的問題以及來自丟番圖逼近中矩陣分析的問題感到興趣。
+
+
+Top
+
+
+三、相關選修課程
+&nbsp&nbsp本系歷年開授之組合數學課程包括下列各科目，其中研究所課程以兩年開一次為原則，目的是在讓碩士班同學，於兩年就學期間有機會修到較多的課程：
+
+離散數學(一)(大學部必修)，
+編碼理論(研究所及大學部)，
+組合編碼(研究所)，
+密碼學(研究所及大學部)，
+離散數學專題(研究所必修)，
+圖論(研究所必修)，
+組合學導論(研究所必修)，
+設計理論(研究所)，
+代數組合學(研究所)，
+代數圖論(研究所)，
+機率圖論(研究所)，
+演算法(研究所及大學部)，
+圖論演算法(研究所及大學部)，
+演算分析(研究所)，
+組合最優化(研究所及大學部)，
+連接網路(研究所)，
+群試理論(研究所)，
+最優分割(研究所)。
+
+Top
+&nbsp&nbsp組合數學為本系碩士班兩組之一。每年招收的碩士班學生，由早年的五名到現在增為十三名。博士班招生視情況而定，截至目前為止，畢業的博士班學生超過三十位，分別在全國各大專院校任教，極受肯定。
+本校其他系所與「組合數學領域」之關連：
+&nbsp&nbsp本校各系所亦開設極多組合數學相關課程，舉例如下：
+
+離散數學(電控系大學部，資工系大學部、資科系大學部)
+組合數學(資科系大學部)
+作業研究(經管所、管科系大學部、運管系大學部、工工系大學部)
+線性規劃(資工系大學部)
+圖論(資工系研究所、資科系研究所、資科系大學部)
+連結網路(資工系研究所、資科系研究所)
+密碼方法(資工系研究所、資科系研究所)
+密碼學與理論簡介(資工系研究所、資科系研究所)
+高等密碼學(資科系研究所)
+通道編碼(電工系研究、電工系大學部)
+編碼理論(電信系研究所、電信系大學部)
+消息理論(電信系研究所)
+演算法(資工系大學部、資工系研究所、資科系研究所)
+演算法概論(資工系大學部)
+演算法與架構(資工系研究所、資工系大學部)
+分散式演算法(資工系研究所、資科系研究所)
+基因演算法(資科系研究所)
+
+
+Top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+　　　English Version|
+意見回饋|
+Go Top
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+本網站著作權屬於國立交通大學 應用數學系  © 2010地址: 300 新竹市大學路1001號 科學一館2樓
+電話 (03) 5722088 傳真 (03) 5724679 校內分機 (03)5712121-56401 電子郵件：chenii@mail.nctu.edu.tw 最後更新:2016-10-15 12:39:55 PM (CST)
+
+
+
+
+
+
+
+
+
+
+點算的奧秘：排列和組合基本公式
+
+
+
+
+點算的奧秘：排列和組合基本公式
+
+
+
+在本節中，筆者將介紹「排列」(Permutation)和「組合」(Combination)的基本概念和兩個基本公式。請註意
+「點算組合學」中的很多概念都可以從不同角度解釋為日常生活中的不同事例，因此筆者亦會引導讀者從不同
+角度理解「排列」和「組合」的意義。
+
+先從「排列」開始。「排列」的最直觀意義，就是給定n個「可區別」(Distinguishable，亦作「相
+異」)的物件，現把這n個物件的全部或部分排次序，「排列」問題就是求不同排列方式的總數。為了區別這些
+物件，我們可不妨給每個物件一個編號：1、2 ... n，因此「排列」問題實際等同於求把數字1、2 ... n的全
+部或部分排次序的方式總數。「排列」問題可分為「全排列」和「部分排列」兩種，當我們把給定的n個數字1
+、2 ... n全部排次序，求有多少種排法時，就是「全排列」問題。我們可以把排序過程分解為n個程
+序：第一個程序決定排於第一位的數字，第二個程序決定排於第二位的數字...第n個程序決定排於第n位的數字
+。在進行第一個程序時，有n個數字可供選擇，因此有n種選法。在進行第二個程序時，由於在前一程序已選定
+了一個數字，現在可供選擇的數字只剩下n − 1個，因此有n − 1種選法。在進行第三個程序時，
+由於在前一程序已選定了一個數字，現在可供選擇的數字只剩下n − 2個，因此有n − 2種選法。
+如是者直至第n個程序，這時可供選擇的數字只剩下1個，因此只有1種選擇。由於以上各程序是「各自獨立」的
+，我們可以運用「乘法原理」求得答案為n × (n − 1) × (n − 2) × ... 2 
+× 1。在數學上把上式簡記為n!，讀作「n階乘」(n-factorial)。
+
+例題1：把1至3這3個數字進行「全排列」，共有多少種排法？試列出所有排法。
+
+答1：共有3! = 3 × 2 × 1 = 6種排法，這6種排法為1-2-3；1-3-2；2-1-3；2-3-1；
+3-1-2；3-2-1。□
+
+當然，給定n個數字，我們不一定非要把全部n個數字排序不可，我們也可只抽取部分數字(例如r個，r < n)來
+排序，並求有多少種排法，這樣的問題就是「部分排列」問題。我們可以把「部分排列」問題理解成
+抽東西的問題。設在某袋中有n個球，每個球都標了編號1、2 ... n。現從袋中抽r個球出來(抽出來之後不得再
+放回袋中)，並把球上的數字按被抽出來的順序記下，這r個數字的序列實際便等同於一個排序。「部分排列」
+問題的解答跟「全排列」問題非常相似，只不過現在我們是把排序過程分解為r個而非n個步驟。進行第一個程
+序時，有n個數字可供選擇，因此有n種選法。在進行第二個程序時，由於在前一程序已選定了一個數字，現在
+可供選擇的數字只剩下n − 1個，因此有n − 1種選法。在進行第三個程序時，由於在前一程序已
+選定了一個數字，現在可供選擇的數字只剩下n − 2個，因此有n − 2種選法。如是者直至第r個程
+序，這時可供選擇的數字只剩下n − r + 1個，因此只有n − r + 1種選擇。最後，運用「乘法原
+理」求得答案為n × (n − 1) × (n − 2) × ... (n − r + 1)。
+
+我們可以把上式改寫為更簡的形式n! / (n − r)!，為甚麼可以這樣改寫？這要用到n!的定義和乘法的結
+合律。舉一個簡單的例子，由於5! = 5 × 4 × 3 × 2 × 1 = 5 × (4 × 
+3 × 2 × 1) = 5 × 4!。同樣由於5 × 4 × 3 × 2 × 1 = 5 
+× 4 × (3 × 2 × 1)，我們又可得5! = 5 × 4 × 3!。抽象地看，我們
+可以把n!改寫為n × (n − 1)!，也可以改寫為n × (n − 1) × (n − 
+2)!照此類推，我們可以把n!改寫為n × (n − 1) × (n − 2) × ... (n 
+− r + 1) × (n − r)!。由此得n! / (n − r)! = n × (n − 1) 
+× (n − 2) × ... (n − r + 1)。在「點算組合學」上，一般把上述「部分排列」的
+解記為P(n, r)。至此我們求得「排列」問題的一條基本公式：
+
+P(n, r) = n! / (n − r)!
+
+例題2：從1至4這4個數字中抽2個出來排序，共有多少種排法？試列出所有排法。
+
+答2：共有P(4, 2) = 4! / 2! = (4 × 3 × 2!) / 2! = 4 × 3 = 12種排法。這
+12種排法是1-2；1-3；1-4；2-1；2-3；2-4；3-1；3-2；3-4；4-1；4-2；4-3。□
+
+請註意只要我們定義0! = 1 (註1)，那麼上述公式便也適用於「全排列」的情況。「全排列」其實就是r = n的
+情況，因此如果把r = n代入以上公式，便得P(n, n) = n! / (n − n)! = n! / 0! = n! / 1 = n!，正
+與前面討論的結果吻合。
+
+接下來筆者介紹「組合」問題。設在某袋中有n個球，每個球都標了編號1、2 ... n。現從袋中抽r個
+球出來(抽出來之後不得再放回袋中)，並把球上的數字記下，但無須理會球被抽出的先後次序。由此可見，「
+組合」問題與「排列」問題的主要區別是，前者只關心被抽出來的包含哪些數字，而不管這些數字的順序；而
+後者則既關心被抽出來的包含哪些數字，也關心這些數字的順序。
+
+惟請註意，「排列」和「組合」雖然是兩種很不相同的問題，但兩者卻並非絕然對立，而是有著非常密切的聯
+繫。日常生活中很多點算問題往往同時包含著「排列」和「組合」的因素，如能瞭解其中奧妙，很多點算問題
+便容易解決。事實上，我們正可利用「排列」和「組合」的這種微妙關係找出「組合」問題的公式。我們把從n
+個球中抽r個出來的組合數記為C(n, r)。以下我們利用「排列」和「組合」之間的關係以及「排列」的公式來
+推導出C(n, r)的公式。
+
+前面提過，「部分排列」問題可以理解成從n個標了編號的球中抽r個出來，並把球上的數字按被抽出來的順序
+記下。其實我們可以把上述過程分解為兩個程序，第一個程序就是從n個球中抽r個出來，先不理會它們被抽出
+來的順序，此即前面所定義的「組合」問題。第二個程序則是把這r個被抽出來的球全部排次序，並求有多少種
+排法，此即前面介紹過的「全排列」問題。換句話說，我們可以把「部分排列」問題分解為一個「組合」問題
+和一個「全排列」問題(由此可見「排列」和「組合」並非絕然對立)。由於上述兩個程序是「各自獨立」的，
+根據「乘法原理」，「部分排列」問題的解應等於「組合」問題的解乘以「全排列」問題的解，即P(n, r) = 
+C(n, r) × r!，由此得C(n, r) = P(n, r) / r!。代入前面P(n, r)的公式，應得
+
+C(n, r) = n! / ((n − r)! × r!)
+
+正如前面的「排列」公式適用於「全排列」的情況，上述「組合」公式也適用於「全組合」的情況，即求
+C(n, n)的問題。根據上述公式，C(n, n) = n! / ((n − n)! × r!) = n! / (0! × r!) = 
+1。這一結果是完全合理的，因為從n個球中抽取所有n個出來，當然只有1種方法。
+
+例題3：從1至4這4個數字中抽2個出來(不考慮次序)，共有多少種組合？試列出所有組合。
+
+答3：共有C(4, 2) = 4! / (2! × 2!) = (4 × 3 × 2!) / (2! × 2!) = 
+(4 × 3) / 2 = 6種組合。這6種組合是1,2；1,3；1,4；2,3；2,4；3,4。請註意如果我們把上述6種組合
+的每一種排序，由於每一組合均包含兩個數字，所以每一組合各有兩種排序方式(例如從1,2可得到1-2和2-1兩
+種排序方式)，這樣從4個數字中抽2個出來排序的排法便有6 × 2 = 12種，這正與例題2的解答完全一致
+。□
+
+請註意在上述C(n, r)的公式中，如果我們把r換成n − r，我們將得到
+
+C(n, n − r) = n! / (r! × (n − r)!)
+
+其結果與C(n, r)相同，由此我們得到C(n, r) = C(n, n − r)。這一點是容易理解的，可以用一個簡單
+的例子來說明箇中原理。假設我們要求從5個人(假設為A、B、C、D、E)中選出4個人的組合數，此即C(5, 4)。
+這個問題其實可以從另一個角度去理解。由於只要我們知道哪一個是「落選者」，便自然知道哪些人是「入選
+者」，因此從5個人中選出4個人(入選者)的組合數其實就等同於從5個人中選出1個人(落選者)的組合數，即
+C(5, 4) = C(5, 5 − 4) = C(5, 1) = 5。把上述結果推廣到一般情況，便得到上述的等式。
+
+前面提過，「排列」和「組合」並非絕然對立，有時同一個問題可以從不同角度理解為「排列」或「組合」的
+問題，而轉換角度往往可以令本來難解的問題變得容易。以下筆者將舉出兩個例題，說明如何利用這種轉換角
+度的方法解答問題。
+
+例題4：用1和2這兩個數字可以構造多少個包含3個1的八位整數？
+
+答4：本題初看似應理解為一個「排列」問題，可不是嗎？11122222跟22222111是兩個不同的八位整
+數，由此可見，本題必須考慮八位整數中1和2的次序，因此似乎應運用「排列公式」。可是想深一層，本題其
+實已規定了所求的八位整數必須包括3個1和5個2，因此我們已無須考慮這些八位整數應包含哪些數字，而只須
+考慮這些數字的位置。而且由於這些八位整數只包含兩種數字，我們只需確定其中一種數字(例如1)的位置便確
+定了整個八位整數，例如如果我們確定那3個1位於第1、第3和第5位，我們便確定這個八位整數是12121222。因
+此確定本題的八位整數便等同於從8個位置中選出3個位置來安放那3個1，而且由於把代表位置的數字列出來無
+所謂誰先誰後(註2)，因此本題其實應理解為一個「組合」問題，所求答案是C(8, 3) = 8! / (5! × 3!) 
+= (8 × 7 × 6 × 5!) / (5! × 3!) = (8 × 7 × 6) / (3 × 2) = 56。□
+
+本例題說明瞭一點，對於一個具體問題，我們不能一概而論地把它歸類為「排列」問題還是「組合」問題，因
+為這要看我們是在點算甚麼。就本例題而言，由於我們點算的對象是那3個1的「位置」，而這些位置的先後次
+序不影響點算結果，所以本題是「組合」問題而非「排列」問題。
+
+例題5：設有5個可區別的木星人和3個可區別的火星人，現在要安排他們坐在一排共8個座位上，問有
+多少種不同坐法？
+
+答5：由於這8個外星人是可區別的，不妨把他們命名為A、B、C、D、E、F、G和H。本題其實相當於把
+這8個字母排次序，並求有多少種排法，因此本題是一個「全排列」問題，答案是8! = 40320。
+
+有些人可能覺得奇怪，為何本題的答案如此簡單？既然本題涉及兩類數目各不相同的外星人，似乎應對這兩類
+人分別處理。現在就讓我們從另一個角度解本題，看看答案是否相同。首先，我們可以把排座位的過程分解為
+三個程序：第一個程序是先從那8個座位選5個出來給木星人坐，這是一個「組合」問題，應有C(8, 5)種選法。
+第二個程序則是安排那5個木星人(假設為A、B、C、D和E)坐這5個已選定的座位，這是一個「全排列」問題，共
+有5!種排法。第三個程序則是安排那3個火星人(假設為F、G和H)坐餘下的座位，這也是一個「全排列」問題，
+共有3!種排法。最後運用「乘法原理」求得本題答案為C(8, 5) × 5! × 3! = (8! × 5! 
+× 3!) / (3! × 5!) = 8!，所得結果跟前面的完全相同。□
+
+比較上述兩種解題方法，當然是第一種簡潔得多。而這種簡潔的解題法之所以能成立，是因為本題所給予的有
+兩類外星人的信息是多餘的。由於本題對兩類外星人的坐法完全不加限制，因此不論這兩類外星人的比例如何
+，也不論有多少類外星人，只要外星人的總數是8，答案都是一樣的。當然，如果對外星人的坐法有所限制，例
+如不容許兩個火星人坐在相鄰的位置，情況將大為不同。此一情況在以後還將討論到。
+
+
+註1：有些人可能難以理解為何0!等於1而不是等於0，因為0乘以任何數都是0。請註意n! = n × (n 
+− 1) × ... 2 × 1這個定義只適用於當n是正整數的情況，當n = 0時，便不能再運用上式
+來定義0!。至於為何要定義0! = 1，這完全是為了使上述的「排列」公式也適用於「全排列」的情況，並且使
+0!的定義能與「排列」的公式相協調。這一點就正如定義n0 = 1 (當n為正實數)一樣，是為了使n
+a的定義也適用於當a = 0的情況，並且使n0的定義能與指數的運算法則(例如na 
+− b = na / nb)相協調。
+
+註2：例如，當我們說「那3個1位於第1、第3和第5位」，跟說「那3個1位於第5、第1和第3位」是沒有分別的。
+
+
+
+
+返回數學專題
+
+
+
+
+
+組合學 - 維基大典
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+組合學
+
+文出維基大典
+今本（此為底本，未經審校）
+
+
+					往：					嚮、					尋
+
+組合學，派自離散數學。所研究之物，均可別而數之者，謂之離散。離散之物，各有異同，原理討則，此組合之學也。
+昔者是學，以組合及順列為主。組合者，類別不分先後次序；順列者反是。設黑白二丸，先後分予一人。則或先黑後白，或先白後黑，其人均得二丸，故為一組合。以黑白先後有別，爲二順列也。推而廣之，橋牌各面之現也，其機率可以算矣。
+今是學也，拓宇於圖論、偏序集論等。各點之間，用綫相連而成，乃用綫段表其繫屬，此數學之模也，謂之圖。偏序集者，亦數學之模也。言各集之間次第而成者。是學所原之理，不復限於組合與次列。
+組合之名，和譯也，織綜之義。
+
+
+
+
+ 
+						取自"https://zh-classical.wikipedia.org/w/index.php?title=組合學&oldid=267687"					
+一類：數學 
+
+
+
+導
+
+
+家私
+
+尚未登簿議績增簿籍名 
+
+
+
+名集
+
+文
+議
+
+
+
+
+變字
+
+
+
+
+
+
+
+
+
+覽
+
+閱
+纂
+誌
+
+
+
+益多
+
+
+
+
+
+
+
+尋
+
+
+
+ 
+
+
+
+
+
+
+
+導覽
+
+
+捲首市集世事近易絕妙好文清風翻書貢獻品物 
+
+
+
+凡例
+
+
+凡例會館全典燕語捐助 
+
+
+
+諸策
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+多寶
+
+
+取佐援引進獻特查付梓恆通文訊維基數據 項目引文 
+
+
+
+他山
+
+
+AfrikaansአማርኛالعربيةAzərbaycancaБеларускаяБългарскиবাংলাČeštinaDeutschΕλληνικάEnglishEsperantoEestiEuskaraفارسیSuomiFrançaisहिन्दीMagyarՀայերենBahasa IndonesiaItaliano日本語ಕನ್ನಡ한국어LietuviųLatviešuМакедонскиNederlandsNorsk nynorskPolskiPortuguêsRomânăРусскийSrpskohrvatski / српскохрватскиSimple EnglishSlovenčinaSlovenščinaShqipСрпски / srpskiSvenskaதமிழ்ไทยTürkçeУкраїнськаاردوTiếng Việt中文 
+纂鏈 
+
+
+
+
+
+ 此頁二〇一七年三月一六日 （週四）〇四時二〇分方易。
+凡我維基之文，悉為共享創意授權。翻印增刪，皆須引據，並同道為之。然條款繁多，不一而足。請閱全文，以得其詳。
+
+
+隱私通例
+述維基大典
+免責宣
+造紙者
+Cookie 聲明
+掌中捲
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+            組合學與圖論 -華人百科                       組合學與圖論  《組合學與圖論》是清華大學出版社出版的圖書，作者是林翠琴  出版社 清華大學出版社 ISBN 9787302192220 定    價 24.00元 作    者 林翠琴      基本信息裝幀:平裝印刷日期:2009年3月18日 圖書簡介本書是在多次講授"組合學與圖論"課程的講義基礎上修改而成的.許多教科書將組合學和圖論分開寫成兩本.考慮到大多數專業的教學學時的實際情況，本書將組合學和圖論合寫成一本，以方便教與學.本書對基本概念的敘述力求深入淺出，清晰準確;對定理的證明力求簡明易懂而又嚴謹;對例題的選擇力求典型、充實.本書的重點是使學生理解套用組合學和圖論的知識去分析和處理問題的思想和方法，並通過豐富多樣的例題使學生更好地掌握課程的基本內容，註重培養學生分析和解決實際問題的能力.為了便於學生自學，對書中配置的難易程度不同的三百多道習題，給出答案或提示或簡明的解答(證明)過程.本書可作為套用數學系、計算機系的本科生以及相關專業的研究生"組合學與圖論"課程的教科書，也可作為"離散數學"課程的參考書. 圖書目錄第1章 組合學與圖論中若干著名的古典問題11.1 Konigsberg七橋問題與中國郵遞員問題11.2 Hamilton問題與旅行商問題21.3 幻方問題31.4 棋盤覆蓋問題31.5 36軍官問題41.6 鴿籠原理和Ramsey數41.7 四色問題51.8 平面圖與網路5第2章 排列組合佈置62.1 映射的個數、排列與組合62.2 多項式係數與Gauss係數152.3 組合恆等式18習題23第3章 生成函式和遞推公式253.1 生成函式法253.1.1 生成函式的一般概念253.1.2 形式冪級數的運算273.1.3 生成函式的套用293.2 遞推關係式303.2.1 Fibonacci數列的解法和性質303.2.2 生成函式法解常係數線性遞推關係式343.2.3 特徵根法解常係數線性遞推關係式353.3 二重序列、Bernoulli多項式和Euler多項式423.3.1 二重序列423.3.2 Bernoulli多項式和Euler多項式43習題45目錄目錄第4章 包含與排斥原理484.1 包含與排斥原理484.2 包含與排斥原理的若干套用514.2.1 Eulerφ-函式514.2.2 錯排問題534.2.3 夫婦對入座問題(Menage問題)554.2.4 滿射函式的個數584.2.5 依賴於所有變數的Boolean函式的個數584.2.6 重數限定的可重組合數594.2.7 矩陣的恆久量和相異代表組61習題64第5章 鴿籠原理和Ramsey數665.1 鴿籠原理665.2 Ramsey數695.2.1 Ramsey數的概念695.2.2 Ramsey數的性質705.2.3 Ramsey數的上下界70習題71第6章 Stirling數 劃分與分拆736.1 正規多項式列和差分運算元736.1.1 正規多項式列的概念736.1.2 幾個常用的正規多項式列736.1.3 差分運算元和移位運算元746.2 Stirling數786.3 集的劃分846.4 Bell數、Lah數876.4.1 Bell數876.4.2 Lah數896.5 自然數的分拆和Ferrers圖906.5.1 自然數分拆的定義906.5.2 Ferrers圖和分拆的共軛性916.5.3 分拆的性質92習題99第7章 反演公式與M?bius函式1027.1 第一反演公式1027.2 佈置的格式數1047.3 偏序關係與Mobius函式1077.3.1 偏序關係1077.3.2 Mobius函式1107.3.3 Hasse圖1117.4 Mobius反演的一個套用--環狀字的計數115習題116第8章 Polya計數理論1198.1 置換群的循環指標與軌道1198.2 Polya定理1228.3 群的循環指標的計算1258.4 賦權的Polya計數定理及其套用1288.4.1 賦權的Polya計數定理1288.4.2 Polya計數定理的套用1298.4.3 Polya計數定理的一個推廣131習題133第9章 圖與子圖1369.1 圖的定義1369.2 圖的同構1379.3 圈、完全圖、二部圖、補圖1379.4 頂點的度、正則圖1389.5 子圖與圖的運算1399.6 路、迴路與圖的連通性1409.7 鄰接矩陣與關聯矩陣，圖的譜141習題142第10章 樹14510.1 樹的特徵14510.2 連通圖的生成樹與Cayley定理14710.3 根樹與樹形圖15210.4 最小樹156習題156第11章 Euler圖和Hamilton圖15911.1 Euler圖15911.2 偶圖及其計數16011.3 有向Euler圖與高效率磁鼓設計16111.4 無向圖的Hamilton路與Hamilton圈16211.5 韌度、連通度與獨立數16411.6 H-圖的若干等價條件和充分條件16611.7 中國郵路問題和旅行售貨問題169習題170第12章 圖的匹配與因子分解17312.1 圖的匹配與覆蓋17312.1.1 圖的匹配17312.1.2 圖的覆蓋17412.2 圖的因子分解175習題178第13章 圖的平面性和著色18013.1 圖的平面性18013.2 圖的點、邊和麵著色18313.2.1 圖的色數和色臨界圖18313.2.2 圖的邊著色(僅對無自環圖而言)18413.2.3 圖的點著色18413.2.4 平面圖的點、邊和麵著色18613.3 平面圖的著色與四色定理18713.4 圖的色多項式188習題190習題答案與提示193主要參考資料209            組合學與圖論 @ 華人百科  勵志人生 國語字典辭典 詩詞大全 小語 腦筋急轉彎    
+
+
+
+
+
+數學專題
+
+
+
+
+數學專題
+
+
+
+本網頁提供的連結為本人對某些數學專題的學習筆記或研究心得。
+
+數學軟件及遊戲
+
+電腦的發明為數學學習及研究提供了廣闊的應用前景。以下是筆者以往學習過及研究過的數學專題，筆者曾就這些專題編寫電腦程式，現透過互聯網公諸於世，與廣大瀏覽者分享交流。
+
+
+無限循環小數
+凸包(Convex Hull)
+爆炸彈遊戲
+神算卡
+
+
+點算的奧秘
+
+點算(Counting)是每個人在孩提時代便開始學習的技巧，有誰不懂得數1、2、3 ...？但我們有否想過，點算其實可以發展為一門學問，甚至成為「組合數學」(Combinatorics)的一個重要分支－「點算組合學」(Enumerative Combinatorics，亦作「計數組合學」)。一個個的去數固然是再容易不過的事，但也是最沒有效率的點算方法，它只能解決數目不大的問題。對於涉及較大數目的問題，我們就不能再這樣列出具體的事物然後一個個的去數，而必須訴諸抽象的數學推理，這就是「點算組合學」的價值所在。
+
+「點算組合學」是本人喜愛的數學分支之一，本專題將以循序漸進，由淺入深的方式介紹「點算組合學」的基本知識和解題技巧。由於本人學識有限，本專題只擬介紹該學科最基礎的知識，包括「排列和組合」、「容斥原理」、「母函數」、「遞歸關係」等題目。
+
+本專題旨在介紹筆者所認識的「點算組合學」的有趣知識，因此著重對該學科最基礎定理的直觀理解，而無意包羅該學科的所有定理，亦無意進行嚴謹的數學推導。讀者如欲對該學科有更深入的認識，可參閱相關的教科書。以下是本專題的目錄。
+
+
+乘法原理和加法原理
+排列和組合基本公式
+無限重覆的排列組合問題
+有限重覆的排列組合問題
+二項式定理和多項式定理
+容斥原理基本公式
+帶上、下限的排列組合問題
+廣義容斥原理
+含不動點或繼續點的排列問題
+集合劃分問題
+分配問題
+普通母函數
+指數母函數
+列舉型母函數
+整數分割問題
+費雷爾斯圖
+二元母函數
+集合劃分問題的母函數
+帶複雜條件的集合劃分問題
+著色問題的基礎知識
+伯恩賽德-波利亞定理
+著色方案的母函數
+對稱群的循環式
+著色問題的推廣應用
+點算問題的遞歸關係
+齊次遞歸關係的解
+非齊次遞歸關係的解
+含複數解的遞歸關係
+遞歸關係的母函數解題法
+
+參考資料
+
+C.A. Charalambides, Enumerative Combinatorics, Boca Raton: Chapman & Hall / CRC, 2002
+R. Johnsonbaugh, Discrete Mathematics, Upper Saddle River: Prentice-Hall, Inc., 2001
+G.E. Martin, Counting: the Art of Enumerative Combinatorics, New York: Springer-Verlag New York, Inc. 2001
+夏宗匯，《組合數學中的生成函數》，《數學傳播》第一卷第三期
+
+
+群論與魔方
+
+「魔方」(Rubik's Cube，有些人直譯作「魯比克立方體」，在香港又稱「扭計骰」)是筆者中學時代風靡一時的智力玩具，至今仍是十分暢銷的玩具。筆者當年沒有學懂如何破解(又稱還原)魔方，直至2009年在外遊時買了一個2 × 2 × 2魔方作為手信送給我當時未滿四歲的兒子，為了教他玩，才開始認真學習破解魔方的攻略。學懂破解之道後，便開始探尋這些攻略背後的原理，獲得了一些心得，這些心得(包括2 × 2 × 2魔方的攻略以及對其背後原理的解釋)現載於本人的網誌中(見《三步破解2×2×2扭計骰(魔方)》和《2×2×2扭計骰(魔方)攻略揭秘(上)、(中)、(下))。
+
+魔方與抽象代數學中的「群論」(Group Theory)存在密切關係。不過由於2 × 2 × 2魔方較為簡單，無需使用很多群論的知識，所以上述網誌中的文章沒有闡述這種關係。完成上述網誌後，我便開始嘗試把以往學得的群論知識應用於3 × 3 × 3魔方，終於弄明白了3 × 3 × 3魔方攻略中每一步背後的數學原理，並發覺可以把原理推廣至其他魔方，魔方遂成為繼Mastermind之後我最感興趣的智力遊戲。本專題旨在介紹群論與魔方的密切關係，特別著重介紹如何用群論的知識解釋各種魔方技法，包括製造魔方花式、還原各種階的普通魔方和還原各種階的超級魔方等，以下是本專題的目錄。
+
+
+魔方的基本概念
+群論基礎知識
+排列的表示法與運算
+魔方操作的表示與運算
+Dan Knights攻略解析(上)
+Dan Knights攻略解析(下)
+魔方花式(上)
+魔方花式(下)
+二階魔方及其還原攻略
+高階魔方的結構與操作
+高階魔方的性質與公式
+五階魔方及其還原攻略
+四階魔方及其還原攻略
+更高階魔方的還原攻略
+超級魔方的性質與操作(上)
+超級魔方的性質與操作(下)
+奇數階超級魔方的還原攻略
+偶數階超級魔方的還原攻略
+超級魔方還原的補充說明(上)
+超級魔方還原的補充說明(下)
+Tutorial on Supercube Solving (1) (Basic Notions)
+Tutorial on Supercube Solving (2) (Solving Odd-Order Supercubes)
+Tutorial on Supercube Solving (3) (Solving Even-Order Supercubes)
+Tutorial on Supercube Solving (4) (Some Additional Tricks)
+
+參考資料及網頁
+
+The best links about the Rubik's cube
+Rubik's Official Online Site
+吳鶴齡，《魅力魔方》，北京：科學出版社，2009年9月
+Fun with Rubik's Cube
+
+
+珠算解難
+
+珠算是中國的「國粹」。在沒有計數機和電腦的時代，算盤是非常了不起的計算工具。根據資料，算盤不僅可用來進行基本的整數四則運算，還可用來進行開方、分數四則運算、求最大公約數、求最小公倍數，乃至某些「數論」、「方程式論」和「線性代數」中的運算，例如求連分數、解不定方程、同餘式、綜合除法、因式分解、矩陣運算、解線性方程組等。
+
+在今天這個「電腦時代」，這項「國粹」已日漸被遺忘。即使是學過珠算的人，大多也只懂得最基本的加、減和乘法，而不懂除法(尤其是傳統的「歸除法」)，更遑論開方等更複雜的運算了。本專題的目的是介紹珠算中一些較難也較少人認識的傳統運算方法，以除法為主，旁及開方。至於與「數論」、「方程式論」和「線性代數」有關的運算技巧，這些一般都是以珠算結合近現代數學知識的結果，已超出「傳統」的範疇，故不在本專題涵蓋範圍內。以下是本專題的目錄。
+
+
+珠算的加、減、乘法
+九歸歌與單歸法
+歸除法
+退商法
+撞歸法
+商除法
+珠算開平方
+珠算開立方
+珠算開高次方
+
+參考資料
+
+餘寧旺等，《中國珠算大全》，天津：天津科學技術出版社，1990年5月
+
+
+
+返回周家發的數學網頁
+
+
+
+
+

@@ -1,0 +1,2553 @@
+
+
+
+生醫光學影像技術簡介
+
+
+
+
+
+ 生醫光學影像技術簡介  
+
+
+ 擴散光學斷層掃瞄術 (Diffuse Optical Tomography; DOT)  
+
+
+ 擴散光學斷層掃描技術在生醫光學領域是一項非常有潛力的造影技術，它是利用近紅外光來量測生物體中正常與不正常組織之散射與吸收的程度不同，藉此來重建影像，主要的應用方面為大腦功能性檢測以及乳癌偵測。目前不論在光學系統架構相關參數（例如：光源與檢測器相對位置、光源與檢測器數目、光源波段等，如圖一所示）或是核心的影像重建演算法以及空間解析度(special resolution)方面都還有很大的進步空間。在硬體架構方面，光源與檢測器分佈之相對位置將會影響到檢測範圍、深度，而組織散射係數(scattering coefficient)與吸收係數(absorption coefficient)也將影響到影像重建演算法推導。
+
+
+
+圖1： 光源與光檢測器相關位置所造成之光在組織中行進路徑的差異
+
+
+然而在系統建構之前，由於生物組織與光之間的交互作用相當複雜，因此本研究首先將藉由3D蒙地卡羅方法(3D Monte Carlo simulation)來模擬並深入探討組織光學各參數之間（吸收係數μa、散射係數μs、非均向係數g、光源與檢測器幾何位置）的關係，從中找出最佳化的參數來輔助系統的建構。
+在組織模型重建方面，我們使用3D-MRI影像來重建我們的3D乳房組織與大腦組織模型，這樣一來可以讓模擬結果更接近真實上光打入我們人體乳房與大腦組織時之分佈情況，如圖二所示，透過這樣的模擬我們將可得到更精確的光在組織中的分佈情形以及相關的光學參數，對於將來的DOT系統建構以及臨床上的量測都可提供更多的訊息來幫助我們得到更好的臨床診斷資訊。
+
+
+
+
+圖二：藉由3D-MRI影像重建3D乳房與3D大腦模型
+
+
+ 近紅外光重症醫學診斷輔助系統 (Diffusion optical spectroscopic imaging) 
+
+
+ 臨床上為瞭解患者病況，需監控患者的心跳、血壓、SpO2等生理參數，為提供醫療人員更多關於病人的生理資訊，我們透過使用DOSI(Diffusion optical spectroscopic imaging)量測病人在靜脈束縛下四肢的血氧變化，期盼此參數在未來能成為臨床醫師在治療與診斷的有效輔助工具。
+    人體組織中的主要物質如血紅素、水與脂質等，會對不同波長的光有不同的吸收係數(圖一)，這些物質對近紅外波段的光吸收較小且吸收係數變化也較明顯。因此利用此波段的光源，可以進行非侵入量測局部組織的物質濃度。
+
+
+
+
+圖一、血紅素、水分與脂肪在近紅外光波段的吸收光譜
+
+近紅外光光譜學便是利用多波段光源，取光檢測
+器對應不同光源的光通量，來計算組織物質濃度的一種技術，相較於傳統近紅外光譜學的單點量測，在本研究中我們使用的是連續波(continuous wave)的DOSI系統，使用四組兩個不同波段的進紅外光(780nm、850nm)雷射二極體，將光導入組織中，經由九個光二極體偵測透過組織後的擴散光子強度，再將訊號傳回電腦的訊號擷取卡(data acquisition card)，由已知的入射光、量測到的擴散光強度和各項組織特性參數，透過modified Beer-Lambert law便可利用電腦計算出含氧血紅素(oxy-hemoglobin)和去氧血紅素(deoxy-hemoglobin)的濃度變化量，而透過多點的光源和光偵測器的組合便可建立局部組織的血氧變化影像(圖二)。
+
+
+
+
+圖二、含氧血紅素變化影像
+
+
+ 光學同調斷層掃描術 (Optical Coherence Tomography; OCT) 
+
+
+  光學同調斷層掃描術   是一種的光學成像技術。此技術是測量光進入物質或生物組織後所產生的背向散射光而得到的組織影像。與現有的非侵入式測量技術如超音波比較，OCT具有優異的空間解析度(<20μm)，可得到清楚的組織影像資訊。傳統的OCT主要構築於麥克森干涉儀(Michelson Interferometer)之上，基本的架構圖如圖1所示。經過分光片之後，用來干涉的兩道光分別經過參考端(reference arm)和樣品端(sample arm)後於光偵測器處產生干涉。參考光為通過一反射平面鏡後射之光束，而樣品光的部分則是光打入樣品後反射回來的光束。由於組織特性的差異，光在組織內會產生散射(scattering)或吸收 (absorption) 的情況。OCT主要收集背向散(反)射的光子來進行成像。值得一提的是，與一般的光學儀器不同，OCT會刻意的選擇低同調長度(low coherent length)的光源。光源同調長度可等同於干涉可發生的範圍，亦即有反應訊號的範圍，只有參考端與樣本端之光程差在同調長度之內才會有干涉發生，這也就代表空間上的解析能力，當兩端之光程差差距很遠時，高同調性光源依然可以有很好的干涉性，低同調性光源則只在光程差差距很短的情形下才會有干涉發生。而在光源波長的選擇方面，雖然理論上波長越長的光穿透深度將越深(這也是我們所樂見的)，但事實上並非如此。由於生物體中(以人體為例)約有70%的水分，水分子對於1400nm~2600nm的光有強大的吸收能力，故此波段的光源其實是不適合用於生物體組織探測的。另外紫外光容易造成組織損傷，故也不適合用於生物組織，現今一般大多選在近紅外光(near infra ray)的波段(約700nm~1300nm)來作為光源。隨著應用於不同組織的需求，各種功能性的OCT也陸陸續續被開發出來，例如都普勒OCT(Doppler OCT)、極化敏感OCT(Polarization Sensitive OCT)等等，都已分別的用在不同的醫學領域之中，如眼科，口腔外科，牙科，腸胃科(配合內視鏡)等等。
+
+
+
+圖1. 傳統OCT架構圖，OCT使用低同調長度之光源以增加軸向解析度[2]
+
+
+
+圖2.OCT下之視網膜成像[3]
+
+
+
+圖3. 3D大腸黏膜OCT圖[4]
+
+參考資料  
+
+
+
+[1].B. E. Bouma and G. J. Tearney, “Hand book of Optical Coherence Tomography”, Marcel Dekker, Inc., New York, 2003.
+[2].J. G. Fujimoto, “Optical Coherence Tomography”, Applied Physics, vol.2, issue 8, pp.1099~1111, 12,OCT, 2001.
+[3]. R. Huber, D. C. Adler, V. J. Srinivasan, and J. G. Fujimoto, “Fourier domain mode locking at 1050 nm for ultra-high-speed optical coherence tomography of the human retina at 236,000 axial scans per second”, Optics Letters, Vol. 32, Issue 14, pp. 2049-2051, 2007.
+[4]. Desmond C. Adler, Chao Zhou, Tsung-Han Tsai, Joe Schmitt, Qin Huang, Hiroshi Mashimo, and James G. Fujimoto, “Three-dimensional endomicroscopy of the human colon using optical coherence tomography”, Optics Express, vol. 17, Issue 2, pp. 784-796, 2009.
+
+
+
+
+
+
+
+
+無標題文件
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+眼睛也會得糖尿病
+
+
+視網膜剝離及裂孔
+
+
+ 
+
+
+
+老年性黃斑部退化
+
+
+
+
+
+
+眼部光學同調斷層掃描
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+  
+
+
+ 
+眼部光學同調斷層掃描
+ 
+
+
+ 
+         眼部光學同調斷層掃描（optical coherence tomography, OCT）是利用雷射及光學的原理，可檢查眼睛的精細部分，瞭解眼角膜、視網膜、視神經之解剖及病理構造。
+    本院之眼部光學同調斷層掃描為新ㄧ代之高解析度機型（spectral-domain OCT），比傳統之機型（time-domain OCT），解析度高，影像較清楚，且檢查時間快，減少病患等待及不適。
+ 
+
+ 視網膜及黃斑部掃描：
+
+
+
+
+幫助黃斑部疾病之診斷
+測量黃斑部體積及厚度
+
+ 
+視神經及神經纖維掃描：
+
+
+
+幫助青光眼之診斷
+測量神經纖維厚度
+
+ 
+  眼角膜掃描：
+
+
+幫助眼角膜疾病之診斷
+測量眼角膜厚度及前房深度
+
+ 
+ 
+    三度空間（3D）掃描：
+
+
+
+進ㄧ步幫助視網膜及視神經疾病之診斷
+
+
+
+
+
+ 
+ 
+
+
+  
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+ 
+
+
+眼科門診、手術服務專線：02-89667000轉分機   4271 or 4272 近視雷射手術諮詢專線：02-77386051
+
+
+ 
+
+
+
+
+
+
+
+
+光學相干斷層掃描 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+光學相干斷層掃描
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+ 維基百科中的醫療相關內容僅供參考，詳見醫學聲明。如需專業意見請諮詢專業人士。
+
+
+
+
+指尖的光學相干斷層掃描圖像。
+
+
+光學相干斷層掃描（英文: Optical coherence tomography，簡稱OCT）是一種光學信號獲取與處理的方式。它可以對光學散射介質如生物組織等進行掃描，獲得的三維圖像解析度可以達到微米級。光學相干斷層掃描技術利用了光的干涉原理，通常採用近紅外光進行拍照。由於選取的光線波長較長，可以穿過掃描介質的一定深度。另一種類似的技術，共焦顯微技術，穿過樣品的深度不如光學相干斷層掃描。
+光學相干斷層掃描使用的光源包括超輻射發光二極體與超短脈衝雷射。根據光源性質的不同，這種掃描方式甚至可以達到亞微米級的解析度，這時需要光源的頻譜非常寬，波長的變化範圍在100奈米左右。
+光學相干斷層掃描技術是光學斷層掃描技術的一種。目前比較先進的一種光學相干斷層掃描技術為頻域光學相干斷層掃描，這種掃描方式的信噪比較高，獲得信號的速度也比較快。商用的光學相干斷層掃描系統有多種應用，包括藝術品保存和診斷設備，尤其是在眼科中，這種斷層掃描系統可以獲取視網膜的細節圖像。最近，這種技術也被用於心臟病學的研究，以對冠狀動脈的疾病進行診斷 [1]。
+
+
+
+目錄
+
+
+1 簡介
+2 原理
+3 理論細節
+
+3.1 時域光學相干斷層掃描
+3.2 頻域光學相干斷層掃描
+
+3.2.1 空間編碼頻域光學相干斷層掃描
+3.2.2 時間編碼頻域光學相干斷層掃描
+
+
+
+
+4 掃描方式
+
+4.1 單點（共焦）光學相干斷層掃描
+4.2 並行（全場）光學相干斷層掃描
+
+4.2.1 時域光學相干斷層掃描智能陣列探測器
+
+
+
+
+5 應用場合
+6 另見
+7 參考文獻
+
+
+
+簡介[編輯]
+
+
+
+
+一個肉瘤的光學相干斷層掃描圖像。
+
+
+在全世界範圍內，有數個研究組織從採用白光干涉對活體內人眼進行測量開始[2][3]對人體組織，尤其是眼睛的成像進行研究。1990年的 ICO-15 SAT 會議上，首先展示了一張基於白光干涉深度掃描原理的對活體內人眼眼底沿眼水平子午線的二維圖像[4]。1990年，丹野直弘對這個方案進行了進一步的研究[5][6]，隨後日本山形大學的一位教授也對此展開了研究[7]。這些研究使得光學相干斷層掃描技術擁有了微米級的解析度和毫米級的穿透深度，還擁有產生截面圖像的能力，因此它成為一種重要的生物組織成像技術[8]。1993年，首次採用光學相干斷層掃描技術對活體內的視網膜結構成像[9][10] 。 光學相干斷層掃描也被應用於許多藝術品保護的項目中，它被用來分析繪畫作品的不同層次。與其他醫學圖像系統相比，光學相干斷層掃描有很大的優勢。醫用超聲成像和核磁共振成像由於解析度不夠，無法用於形態組織成像，而共焦顯微技術則缺少毫米級的穿透能力[11][12]。
+光學相干斷層掃描是基於弱相干干涉學理論發展的[13][14][15]。在傳統的干涉學中需要使用相干長度很長的光源，因此通常選用雷射作為干涉光源，相干長度通常達到數米。而在光學相干斷層掃描技術中，由於使用了寬帶光源，相干長度被縮短到了幾個微米。寬帶光源通常可以使用超輻射發光二極體或超短脈衝的雷射（飛秒雷射器）來實現。白光也是一種功率較低的寬帶光源。
+光學相干斷層掃描系統中的光束被分成兩部分：一部分稱為樣品光臂，照射在樣品上；一部分被稱為參考光臂，通常照在鏡子上。樣品產生的反射光和參考光臂產生的反射光會發生干涉，而僅僅當兩條光路的長度相同（差距小於相干長度）時，會產生穩定的干涉圖樣。通過調整參考光臂的鏡子，可以得到樣品的反射輪廓，這種技術被稱為時域光學相干斷層掃描。樣品反射能力較強的區域會產生較強的干涉，而超出干涉長度的反射光將不會產生干涉。這樣產生的反射輪廓被稱為A掃描，包含有我們觀察的樣品內部結構的空間大小與位置的信息。截面斷層掃描B掃描可以通過結合不同深度的A掃描結果來重建。根據使用的成像引擎的能力，還可以實現在給定深度上的C掃描。
+原理[編輯]
+光學相干斷層掃描可以獲得透明或者不透明物質的錶面以及次錶面圖像，圖像的解析度與小型顯微鏡相同。它可以認為是一種類似超聲成像的光學技術，通過組織對光線的反射來提供截面圖像。與其它成像技術相比，光學相干斷層掃描可以提供擁有微米級解析度的活體組織形態圖像，因此，在醫學界，它是一種非常具有吸引力的技術。
+光學相干斷層掃描的主要優點是
+
+對活體組織成像，解析度可達微米級
+對組織形態迅速、直接的成像
+不需要製備樣品
+不需要離子輻射
+
+由於光學相干斷層掃描採用了波長很短的光波作為探測手段，它可以達到很高的解析度。首先將一束光波照在組織上，一小部分光被樣品錶面反射，然後被收集起來。大部分的光線被樣品散射掉了，這些散射光失去了遠視的方向信息，因此無法形成圖像，只能形成耀斑。散射光形成的耀斑會引起光學散射物質（如生物組織、蠟、特定種類的塑料等等）看起來不透明或者透明，儘管他們並不是強烈吸收光的材料。採用光學相干斷層掃描技術，散射光可以被濾除，因此可以消除耀斑的影響。即使僅僅有非常微小的反射光，也可以被採用顯微鏡的光學相干斷層掃描設備檢測到並形成圖像。
+光學相干是濾除散射光的物理機制。反射光可以作為相干光，而由於散射光散射的位置不同，造成光路長度的差異，再加上光源的相干長度極短，使得散射光失去了相干的性質。在光學相干斷層掃描設備中，光學干涉儀被用來檢測相干光。從原理上說，干涉儀可以將散射光從反射光中濾除，以得到生成圖像的信號。在信號處理過程中，可以得到從某一次錶面反射的反射光深度和強度。三維圖像可以通過類似聲納和雷達的掃描來構建。
+在已經引入醫學研究的無創三維成像技術中，光學相干斷層掃描技術與超聲成像都採用了回波處理技術，因此他們的原理相似。其他的醫學成像技術如計算機斷層掃描、核磁共振成像以及正電子發射斷層掃描都沒有利用回聲定位的原理。
+光學相干斷層掃描的局限性是僅能掃描生物組織錶面下1-2毫米的深度。這是由於深度越大，光線無散射的射出錶面的比例就越小，以至於無法檢測到。但是在檢測過程中不需要樣品製備過程，成像過程也不需要接觸被成像的組織。更重要的是，設備產生的雷射是對人眼安全的近紅外線，因此幾乎不會對組織造成傷害。
+理論細節[編輯]
+光學相干斷層掃描的基礎理論是白光或低相干光的干涉。在這種技術中，光學設備包括一個干涉儀（在圖.1中，使用了典型的邁克耳孫干涉儀），和低相干的寬帶光源。光線被分成兩束，分別稱為參考光臂和樣品光臂，然後又將這兩束光合併以產生干涉圖樣。
+
+
+
+
+圖2. 典型的單點光學相干斷層掃描的光學設備。通過掃描照射在樣品上的光束可以以微米級的解析度以無損的方式重建樣品的截面圖，深度最深可達3mm。
+
+
+
+
+
+
+
+
+
+圖1. 全場相干斷層掃描的光學設備。主要結構的名稱：超輻射發光二極體（SLD），凸透鏡（L1），50/50分光器（BS），照相機物鏡（CO），CMOS-DSP照相機（CAM），參考平面（REF）和樣品（SMP）。照相機的功能是一個二維探測器陣列。當該設備對深度掃描的時候，可以以無損的方式重建樣品的三維圖像。
+
+
+
+
+
+
+
+
+
+圖4. 採用頻域光學相干斷層掃描技術來鑑別頻譜。主要結構名稱：低相干光源（LCS），分光器（BS），參考鏡面（REF），樣品（SMP），衍射光柵（DG），作為光譜儀的全場探測器（CAM）以及數位訊號處理模塊（DSP）。
+
+
+
+
+
+
+
+
+
+圖3. 採用光源掃頻相干斷層掃描技術來鑑別頻譜。主要結構名稱：掃頻光源或可調雷射器（SS），分光器（BS），參考鏡面（REF），樣品（SMP），光子探測器（PD）以及數位訊號處理模塊（DSP）。
+
+
+
+
+
+時域光學相干斷層掃描[編輯]
+在時域光學相干斷層掃描中，參考光臂的光路長度可以轉換為時間。低相干光源干涉的一個重要特徵是相干圖樣，也就是明暗相間的條紋，僅當光路的長度差小於光源的相干長度時才會發生。這種干涉稱為對稱干涉儀中的自相關（兩個光臂具有相同的反射性）。在光路長度差發生變化的時候，調製的包絡也發生改變，而包絡的峰值對應著光路的匹配。
+兩束部分相干的光線的干涉可以用光強的變化來表達
+
+
+
+
+
+I
+=
+
+k
+
+1
+
+
+
+I
+
+S
+
+
++
+
+k
+
+2
+
+
+
+I
+
+S
+
+
++
+2
+
+
+
+(
+
+k
+
+1
+
+
+
+I
+
+S
+
+
+)
+
+⋅
+
+(
+
+k
+
+2
+
+
+
+I
+
+S
+
+
+)
+
+
+
+⋅
+R
+e
+
+[
+γ
+
+(
+τ
+)
+
+]
+
+
+(
+1
+)
+
+
+{\displaystyle I=k_{1}I_{S}+k_{2}I_{S}+2{\sqrt {\left(k_{1}I_{S}\right)\cdot \left(k_{2}I_{S}\right)}}\cdot Re\left[\gamma \left(\tau \right)\right]\qquad (1)}
+
+
+
+其中，
+
+
+
+
+I
+
+S
+
+
+
+
+{\displaystyle I_{S}}
+
+代表光強，
+
+
+
+
+k
+
+1
+
+
++
+
+k
+
+2
+
+
+<
+1
+
+
+{\displaystyle k_{1}+k_{2}<1}
+
+表示相干光線分離比例，
+
+
+
+γ
+(
+τ
+)
+
+
+{\displaystyle \gamma (\tau )}
+
+被稱為相干度，這個函數是一個複數，它是依賴於參考光臂掃描（時間延遲
+
+
+
+τ
+
+
+{\displaystyle \tau }
+
+）的干涉的包絡與載波的比例。在光學相干斷層掃描中，主要的工作就是計算相干度的大小。由於相干的門控效應，相干度可以表示為一個高斯函數[15]
+
+
+
+
+
+γ
+
+(
+τ
+)
+
+=
+exp
+⁡
+
+[
+−
+
+
+(
+
+
+
+π
+Δ
+ν
+τ
+
+
+2
+
+
+ln
+⁡
+2
+
+
+
+
+
+)
+
+
+2
+
+
+]
+
+⋅
+exp
+⁡
+
+(
+−
+j
+2
+π
+
+ν
+
+0
+
+
+τ
+)
+
+
+
+(
+2
+)
+
+
+{\displaystyle \gamma \left(\tau \right)=\exp \left[-\left({\frac {\pi \Delta \nu \tau }{2{\sqrt {\ln 2}}}}\right)^{2}\right]\cdot \exp \left(-j2\pi \nu _{0}\tau \right)\qquad \quad (2)}
+
+
+
+其中，
+
+
+
+Δ
+ν
+
+
+{\displaystyle \Delta \nu }
+
+表示光源的頻譜寬度，
+
+
+
+
+ν
+
+0
+
+
+
+
+{\displaystyle \nu _{0}}
+
+是光源的中心頻率。在等式（2）中，高斯函數包絡是光載波調製後的幅度，包絡的峰值表示樣品被測試的微結構的位置，而幅度則依賴於樣品錶面的反射性。光載波的頻率會受到掃描時干涉儀的光臂移動而產生都卜勒效應，其頻率可以由掃描的速度來控制。這樣，干涉儀臂的移動有兩個作用，通過改變光路長度來實現深度掃描和帶有都卜勒頻移的光載波。在光學相干斷層掃描中，都卜勒頻移可以表達為
+
+
+
+
+時域和頻域的光學相干斷層掃描的干涉信號。
+
+
+
+
+
+
+
+
+f
+
+D
+o
+p
+p
+
+
+=
+
+
+
+2
+⋅
+
+ν
+
+0
+
+
+⋅
+
+v
+
+s
+
+
+
+c
+
+
+
+
+
+
+
+
+
+
+(
+3
+)
+
+
+{\displaystyle f_{Dopp}={\frac {2\cdot \nu _{0}\cdot v_{s}}{c}}\qquad \qquad \qquad \qquad \qquad \qquad \qquad \quad (3)}
+
+
+
+其中 
+
+
+
+
+ν
+
+0
+
+
+
+
+{\displaystyle \nu _{0}}
+
+ 為光源的中心頻率，
+
+
+
+
+v
+
+s
+
+
+
+
+{\displaystyle v_{s}}
+
+為光路變化的掃描速度，而
+
+
+
+c
+
+
+{\displaystyle c}
+
+ 代表光速。
+光學干涉斷層掃描的軸向和側向解析度是彼此獨立的；前者是光源的相干長度，而後者是光學的函數。光源的相干長度，也就是斷層掃描的軸向解析度為
+
+
+
+
+
+
+
+
+
+
+
+l
+
+c
+
+
+
+
+
+{\displaystyle \,{l_{c}}}
+
+
+
+
+
+
+=
+
+
+
+2
+ln
+⁡
+2
+
+π
+
+
+⋅
+
+
+
+λ
+
+0
+
+
+2
+
+
+
+Δ
+λ
+
+
+
+≈
+0.44
+⋅
+
+
+
+λ
+
+0
+
+
+2
+
+
+
+Δ
+λ
+
+
+
+
+
+
+
+
+(
+4
+)
+
+
+{\displaystyle ={\frac {2\ln 2}{\pi }}\cdot {\frac {\lambda _{0}^{2}}{\Delta \lambda }}\approx 0.44\cdot {\frac {\lambda _{0}^{2}}{\Delta \lambda }}\qquad \qquad \qquad \qquad \qquad (4)}
+
+
+
+
+
+
+頻域光學相干斷層掃描[編輯]
+在頻域光學相干斷層掃描中，寬帶干涉的信號通過頻域分離的探測器來獲取，分離的方式可以通過使用可變頻率光源在不同時刻的頻率的時間編碼或者使用如光柵和線性探測器陣列的色散探測器。根據傅立葉變換中的維納-辛欽定理，信號的自相關函數與其功率譜密度互為傅立葉變換對，因此深度掃描可以通過對獲得的頻譜進行傅立葉變換立即得到，而不必移動參考光臂[16][17]。這個特點可以極大提高成像的速度，而且可以增強信噪比。然而對多種波長的並行檢測限制了掃描的範圍，光源的頻譜寬度也限定了軸向的解析度。
+空間編碼頻域光學相干斷層掃描[編輯]
+空間編碼的頻域光學相干斷層掃描通過將不同光學頻率的光線分散透射在探測器陣列上來提取空間信息（參見圖4）。這樣，僅僅通過一次照射就可完成一次對深度的掃描。雖然理論上空間編碼頻域掃描所獲取的信號信噪比較高，但由於探測器的動態範圍與光敏二極體相比較小，會造成信噪比的損失。在使用1300奈米波長工作的時候，由於在這個波長區域動態範圍的問題並不嚴重，因此信噪比的損失尚可接受。
+這種方法的缺點是信噪比會出現嚴重下降的情況，信噪比的下降和零延遲的距離成正比。由於探測器的波長受限，信噪比依賴於深度以sinc函數的形式衰減。這是由於一個像素其實探測到的是光學頻譜區域的一段，而不是單一的頻率，對其進行傅立葉變換就會產生sinc函數。另外，頻譜探測器中的色散元件一般也無法將光線依其頻率線性投射在探測器上，而通常是按照頻率的倒數投射，這種非線性效應會進一步的降低信號的質量。但是隨著具有更多像素的新一代的CCD元件或光敏二極體陣列，信噪比的下降並不是一個嚴重的問題。此外，合成陣列外差檢測可以作為解決這一問題的另一個手段，而不需要使用高色散的元件。
+時間編碼頻域光學相干斷層掃描[編輯]
+時間編碼頻域光學相干斷層掃描試圖將時域掃描和空間編碼頻域掃描的優點結合起來。在這種技術中，頻譜中的不同成分不是在空間上區分的而是在時間上區分。通過濾波或者調節生成波的頻率可以產生連續頻率的光波，而頻譜可以在進行傅立葉變換之前重建出來。通過使用掃頻光源（例如頻率掃描雷射），採用的光學設備會比空間編碼頻域掃描的方式更簡單，如圖3所示，而掃描的問題則由光源頻率的變化來解決。這種掃描方法的主要優勢是可以提供高信噪比的信號，而掃頻雷射光源的瞬時帶寬很小，通常只有20千赫-200千赫，它的缺點則是波長的非線性，這個問題在掃描頻率較高的時候尤其嚴重。在高頻率下的帶寬展寬會使其對掃描時的運動或樣品的運動高度敏感。
+掃描方式[編輯]
+將光線聚集在待測樣品錶面上，並將反射光與參考光混合會產生關於樣品信息的干涉圖樣，這個干涉圖樣對應於簡單的A掃描，因為它僅僅掃描了Z軸。對樣品的掃描可以通過移動照射在樣品上的光線或者移動樣品來實現。線式掃描會產生一個二維的數據集，對應於樣品的一個截面（X-Z軸掃描），而面積掃描會得到三維數據集，對應於一個立體的圖像（X-Y-Z軸掃描），這也被稱為全場光學相干斷層掃描。
+單點（共焦）光學相干斷層掃描[編輯]
+基於單點光學相干斷層掃描的系統必須對樣品從兩個維度進行掃描，然後使用掃描時通過參考光臂軸向掃描的相干門控效應所得到的深度信息來重建三維圖像。二維的側面掃描通過使用電子機械手段移動樣品來實現[17] 。這種電子機械系統一般使用一個平移平臺和一個微機電掃描系統[18]。
+並行（全場）光學相干斷層掃描[編輯]
+在並行光學相干斷層掃描系統中，樣品採用全場照明的方式，使用電荷耦合器件（CCD）照相機將樣品的像記錄下來，因此不必使用機電方式來進行側面掃描。通過移動參考鏡面來記錄連續的正面圖像，隨後可以重建出三維的圖像。這種利用照相機的三維光學相干斷層掃描曾經使用多種技術實現，包括相位步進技術[19]、林尼克干涉儀測量幾何相位移動技術[20]、雙照相機外差檢測技術[21]、以及使用晶振參考鏡面和軸向平移平臺的林尼克干涉儀[22]等不同技術。這種並行掃描方式的核心必須使用非常快速的CCD照相機，或者採用高頻振動參考鏡面的方式來跟蹤斷層掃描載波的高頻變化。
+時域光學相干斷層掃描智能陣列探測器[編輯]
+有人曾經使用一個二維的智能探測器陣列來演示全場光學相干斷層掃描的技術。這個探測器陣列採用了2微米互補金屬氧化物半導體（CMOS）工藝[23]。採用了這個探測器陣列的光學設備與圖3相似，相對來說比較簡單。這個智能探測器陣列中有58x58 個像素，每個像素都可以作為一個單獨的光敏二極體，包含了自己的硬體解調電路。
+應用場合[編輯]
+光學相干斷層掃描是一種已經成熟的醫學成像技術。它被廣泛的應用於獲得視網膜和眼前段的高解析度圖像，可以提供直接評估多發性硬化中的軸突完整性的手段[24]。研究人員還試圖尋找一種利用頻域光學相干斷層掃描技術來拍攝冠狀動脈的方法，以檢測脆弱的富脂斑塊。
+光學相干斷層掃描也被廣泛的應用於工業界，如無損檢測、材料厚度測量、錶面粗糙度測量、錶面和截面成像[25] 以及體積損耗測量。帶有反饋的光學相干斷層掃描系統可以用於控制製造過程。由於獲取速度高和其微米級的解析度，光學斷層掃描可以在線上或者離線運行。基於光纖的光學斷層掃描更加適用於工業環境。它們可以進入並掃描通常手段難於進入的空間內部[26] ，也可以在有害的環境中進行操作，例如放射性環境、低溫高溫環境等場合[27]。
+另見[編輯]
+
+干涉
+干涉儀
+斷層掃描
+角分辨低相干干涉
+彈道光子
+光學外差檢測
+
+參考文獻[編輯]
+
+
+^ Hiram G. Bezerra, MD, PhD*, Marco A. Costa, MD, PhD*,*, Giulio Guagliumi, MD, Andrew M. Rollins, PhD, Daniel I. Simon, MD*. "Intracoronary Optical Coherence Tomography: A Comprehensive Review: Clinical and Research Applications". JACC Cardiological Interventions . VOL. 2, NO. 11, 2009 p.1035-1046. Web. http://interventions.onlinejacc.org/cgi/reprint/2/11/1035.
+^ A. F. Fercher and E. Roth, 「Ophthalmic laser interferometry. Proc. SPIE vol. 658, pp. 48-51. 1986.
+^ Fercher, AF; Mengedoht, K; Werner, W. Eye-length measurement by interferometry with partially coherent light.. Optics letters. 1988, 13 (3): 186–8. PMID 19742022. doi:10.1364/OL.13.000186. 
+^ A. F. Fercher, 「Ophthalmic interferometry,」 Proceedings of the International Conference on Optics in Life Sciences, Garmisch-Partenkirchen, Germany, 12–16 August 1990. Ed. G. von Bally and S. Khanna, pp. 221-228. ISBN 0-444-89860-3.
+^ Naohiro Tanno, Tsutomu Ichikawa, Akio Saeki: 「Lightwave Reflection Measurement,」 Japanese Patent # 2010042 (1990) (Japanese Language)
+^ Shinji Chiba, Naohiro Tanno 「Backscattering Optical Heterodyne Tomography」, prepared for the 14th Laser Sensing Symposium (1991) (in Japanese)
+^ Huang, D; Swanson, EA; Lin, CP; Schuman, JS; Stinson, WG; Chang, W; Hee, MR; Flotte, T; Gregory, K. Optical coherence tomography.. Science. 1991, 254 (5035): 1178–81. PMID 1957169. 
+^ Zysk, AM; Nguyen, FT; Oldenburg, AL; Marks, DL; Boppart, SA. Optical coherence tomography: a review of clinical development from bench to bedside.. Journal of biomedical optics. 2007, 12 (5): 051403. PMID 17994864. doi:10.1117/1.2793736. 
+^ A. F. Fercher, C. K. Hitzenberger, W. Drexler, G. Kamp, and H. Sattmann, 「 In Vivo Optical Coherence Tomography,」 Am. J. Ophthalmol., vol. 116, no. 1, pp. 113-114. 1993.
+^ Swanson, E. A.; Izatt, J. A.; Hee, M. R.; Huang, D.; Lin, C. P.; Schuman, J. S.; Puliafito, C. A.; Fujimoto, J. G. In vivo retinal imaging by optical coherence tomography. Optics Letters. 1993, 18 (21): 1864. PMID 19829430. doi:10.1364/OL.18.001864. 
+^ Drexler, Wolfgang; Morgner, Uwe; Ghanta, Ravi K.; Kärtner, Franz X.; Schuman, Joel S.; Fujimoto, James G. Ultrahigh-resolution ophthalmic optical coherence tomography.. Nature Medicine. 2001, 7 (4): 502. PMC 1950821. PMID 11283681. doi:10.1038/86589. 
+^ Kaufman, S; Musch, DC; Belin, MW; Cohen, EJ; Meisler, DM; Reinhart, WJ; Udell, IJ; Van Meter, WS. Confocal microscopy*1A report by the American Academy of Ophthalmology. Ophthalmology. 2004, 111 (2): 396. PMID 15019397. doi:10.1016/j.ophtha.2003.12.002. 
+^ Riederer, S.J. Current technical development of magnetic resonance imaging. IEEE Engineering in Medicine and Biology Magazine. 2000, 19: 34. doi:10.1109/51.870229. 
+^ M. Born and E. Wolf. Principles of Optics: Electromagnetic Theory of Propagation, Interference and Diffraction of Light. Cambridge University Press. 2000. ISBN 0521784492. 
+^ 15.0 15.1 Fercher, A. F.; Mengedoht, K.; Werner, W. Eye-length measurement by interferometry with partially coherent light. Optics Letters. 1988, 13 (3): 186. PMID 19742022. doi:10.1364/OL.13.000186. 
+^ Schmitt, J.M. Optical coherence tomography (OCT): a review. IEEE Journal of Selected Topics in Quantum Electronics. 1999, 5: 1205. doi:10.1109/2944.796348. 
+^ 17.0 17.1 Fercher, A. Measurement of intraocular distances by backscattering spectral interferometry. Optics Communications. 1995, 117: 43. doi:10.1016/0030-4018(95)00119-S. 
+^ Micromachined 2-D scanner for 3-D optical coherence tomography. Sensors and Actuators A: Physical. 2005, 117: 331. doi:10.1016/j.sna.2004.06.021. 
+^ Dunsby, C; Gu, Y; French, P. Single-shot phase-stepped wide-field coherencegated imaging.. Optics express. 2003, 11 (2): 105–15. PMID 19461712. doi:10.1364/OE.11.000105. 
+^ Roy, M. Geometric phase-shifting for low-coherence interference microscopy. Optics and Lasers in Engineering. 2002, 37: 631. doi:10.1016/S0143-8166(01)00146-4. 
+^ Akiba, M.; Chan, K. P.; Tanno, N. Full-field optical coherence tomography by two-dimensional heterodyne detection with a pair of CCD cameras. Optics Letters. 2003, 28 (10): 816. PMID 12779156. doi:10.1364/OL.28.000816. 
+^ Dubois, A; Vabre, L; Boccara, AC; Beaurepaire, E. High-resolution full-field optical coherence tomography with a Linnik microscope.. Applied optics. 2002, 41 (4): 805–12. PMID 11993929. doi:10.1364/AO.41.000805. 
+^ Bourquin, S.; Seitz, P.; Salathé, R. P. Optical coherence topography based on a two-dimensional smart detector array. Optics Letters. 2001, 26 (8): 512. PMID 18040369. doi:10.1364/OL.26.000512. 
+^ Saidha S, Eckstein C, and Ratchford JN. (2010). "Optical Coherence Tomography for the Detection of Axonal Damage in Multiple Sclerosis". CML – Ophthalmology 2010;20(3):77–88.
+^ Guss, G.; Bass, I.; Hackel, R.; Mailhiot, C.; Demos, S.G. High-resolution 3-D imaging of surface damage sites in fused silica with Optical Coherence Tomography (PDF). Lawrence Livermore National Laboratory UCRL-PROC-236270. November 6, 2007 [December 14, 2010]. 
+^ Dufour, Marc; Lamouche, G.; Gauthier, B.; Padioleau, C.; Monchalin, J.P. Inspection of hard-to-reach industrial parts using small diameter probes (PDF). SPIE - The International Society for Optical Engineering. 2006 [December 15, 2010]. doi:10.1117/2.1200610.0467. 
+^ Dufour, M. L.; Lamouche, G.; Detalle, V.; Gauthier, B.; Sammut, P. Low-Coherence Interferometry, an Advanced Technique for Optical Metrology in Industry (PDF). Industrial Materials Institute, National Research Council (Canada). 2004 [December 20, 2010]. doi:10.1.1.159.5249 請檢查|doi=值 (幫助). 
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+醫學影像 (ICD-9-CM V3 87–88, ICD-10-PCS B（英語：ICD-10 Procedure Coding System）, CPT（英語：Current Procedural Terminology） 70010–79999)
+
+
+
+
+
+
+X射線/
+放射攝影技術（英語：Radiography）
+
+
+
+
+2D（英語：Projectional radiography）
+
+
+
+
+醫用：
+
+
+
+氣腦造影成像（英語：Pneumoencephalography）
+牙科放射攝影（英語：Dental radiography）
+Sialography（英語：Sialography）
+Myelography（英語：Myelography）
+CXR（英語：Chest radiograph）
+
+Bronchography（英語：Bronchography）
+
+
+AXR（英語：Abdominal x-ray）
+KUB（英語：Kidneys, ureters, and bladder x-ray）
+DXA（英語：Dual-energy X-ray absorptiometry）/DXR（英語：Digital X-ray radiogrammetry）
+Upper gastrointestinal series（英語：Upper gastrointestinal series）/Small-bowel follow-through（英語：Small-bowel follow-through）/大腸鋇劑灌腸造影
+Cholangiography（英語：Cholangiography）/Cholecystography（英語：Cholecystography）
+乳房攝影術
+Pyelogram（英語：Pyelogram）
+Cystography（英語：Cystography）
+Arthrogram（英語：Arthrogram）
+Hysterosalpingography（英語：Hysterosalpingography）
+Skeletal survey（英語：Skeletal survey）
+血管攝影
+
+Angiocardiography（英語：Angiocardiography）
+Aortography（英語：Aortography）
+
+
+靜脈成像
+Lymphogram（英語：Lymphogram）
+
+
+
+
+
+
+
+
+商用：
+
+
+
+Radiographic testing（英語：Radiographic testing）
+
+
+
+
+
+
+
+
+
+
+
+3D / XCT
+
+
+
+
+醫用：
+
+
+
+CT pulmonary angiogram（英語：CT pulmonary angiogram）
+Computed tomography of the heart（英語：Computed tomography of the heart）
+Computed tomography of the abdomen and pelvis（英語：Computed tomography of the abdomen and pelvis）
+
+Virtual colonoscopy（英語：Virtual colonoscopy）
+
+
+CT angiography
+Computed tomography of the head（英語：Computed tomography of the head）
+Quantitative computed tomography（英語：Quantitative computed tomography）
+Spiral computed tomography（英語：Spiral computed tomography）
+High resolution CT（英語：High resolution CT）
+Whole body imaging（英語：Whole body imaging）
+
+Full-body CT scan（英語：Full-body CT scan）
+
+
+X-ray microtomography（英語：X-ray microtomography）
+Electron beam tomography（英語：Electron beam tomography）
+
+
+
+
+
+
+
+
+商用：
+
+
+
+Industrial computed tomography（英語：Industrial computed tomography）
+
+
+
+
+
+
+
+
+
+
+
+其他
+
+
+
+螢光鏡檢查（英語：Fluoroscopy）
+X-ray motion analysis（英語：X-ray motion analysis）
+
+
+
+
+
+
+
+
+
+
+
+核磁共振
+
+
+
+MRI of the brain（英語：Magnetic resonance imaging of the brain）
+MR neurography（英語：Magnetic resonance neurography）
+心血管磁共振成像/Cardiac MRI perfusion（英語：Cardiac MRI perfusion）
+MR angiography（英語：Magnetic resonance angiography）
+MR cholangiopancreatography（英語：Magnetic resonance cholangiopancreatography）
+Breast MRI（英語：Breast MRI）
+功能性磁共振成像
+擴散磁振造影
+Synthetic MRI（英語：Synthetic MRI）
+
+
+
+
+
+
+
+
+醫學超聲檢查
+
+
+
+超聲心動圖
+Doppler echocardiography（英語：Doppler echocardiography）
+
+TTE（英語：Transthoracic echocardiogram）
+TEE（英語：Transesophageal echocardiogram）
+
+
+Intravascular（英語：Intravascular ultrasound）
+Gynecologic（英語：Gynecologic ultrasonography）
+Obstetric（英語：Obstetric ultrasonography）
+Echoencephalography（英語：Echoencephalography）
+Transcranial Doppler（英語：Transcranial Doppler）
+Abdominal ultrasonography（英語：Abdominal ultrasonography）
+Transrectal（英語：Transrectal ultrasonography）
+Breast ultrasound（英語：Breast ultrasound）
+Transscrotal ultrasound（英語：Transscrotal ultrasound）
+Carotid ultrasonography（英語：Carotid ultrasonography）
+超聲造影成像
+3D ultrasound（英語：3D ultrasound）
+Endoscopic ultrasound（英語：Endoscopic ultrasound）
+Emergency ultrasound（英語：Emergency ultrasound）
+
+FAST（英語：Focused assessment with sonography for trauma）
+Pre-hospital ultrasound（英語：Pre-hospital ultrasound）
+
+
+Duplex（英語：Duplex ultrasonography）
+
+
+
+
+
+
+
+
+核醫學
+
+
+
+
+2D / 閃爍顯象術（英語：scintigraphy）
+
+
+
+
+
+
+
+Cholescintigraphy（英語：Cholescintigraphy）
+Scintimammography（英語：Scintimammography）
+Ventilation/perfusion scan（英語：Ventilation/perfusion scan）
+Radionuclide ventriculography（英語：Radionuclide ventriculography）
+Radionuclide angiography（英語：Radionuclide angiography）
+Radioisotope renography（英語：Radioisotope renography）
+Sestamibi parathyroid scintigraphy（英語：Sestamibi parathyroid scintigraphy）
+Radioactive iodine uptake test（英語：Radioactive iodine uptake test）
+Bone scintigraphy（英語：Bone scintigraphy）
+Immunoscintigraphy（英語：Immunoscintigraphy）
+
+
+
+
+
+
+
+
+全身：
+
+
+
+Octreotide scan（英語：Octreotide scan）
+Gallium 67 scan（英語：Gallium 67 scan）
+Indium-111 WBC scan（英語：Indium-111 WBC scan）
+
+
+
+
+
+
+
+
+
+
+
+3D / ECT（英語：emission computed tomography）
+
+
+
+
+
+
+
+SPECT（英語：Single-photon emission computed tomography）
+
+gamma ray: Myocardial perfusion imaging（英語：Myocardial perfusion imaging）
+
+
+
+
+
+
+
+
+
+
+PET（正電子）：
+
+
+
+Brain PET（英語：Brain positron emission tomography）
+Cardiac PET（英語：Cardiac PET）
+PET mammography（英語：Positron emission mammography）
+PET-CT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+光學（英語：Optical imaging）雷射
+
+
+
+Optical tomography（英語：Optical tomography）
+
+光學相干斷層掃描
+
+
+共聚焦顯微鏡
+Endomicroscopy（英語：Endomicroscopy）
+
+
+
+
+
+
+
+
+熱成像儀
+
+
+
+non-contact thermography（英語：non-contact thermography）
+contact thermography
+dynamic angiothermography（英語：dynamic angiothermography）
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=光學相干斷層掃描&oldid=44374675"					
+4 個分類：醫學成像醫療設備眼科光學隱藏分類：引文格式1錯誤：DOI使用ISBN魔術連結的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+CatalàČeštinaDanskDeutschEnglishEspañolEestiفارسیFrançaisעבריתBahasa IndonesiaItaliano日本語한국어NederlandsPolskiРусскийСрпски / srpski 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年5月16日 (週二) 03:19。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+﻿
+
+
+:::::Welcome to Optical Imaging Lab.:::::
+
+
+
+
+
+
+
+
+
+光學影像實驗室 Optical Imaging Lab.
+Novel imaging technologies for biomedical applications.
+
+
+
+
+
+首頁
+研究領域
+成果發表
+研究資源
+研究成員
+課程
+
+ 
+ 
+
+ 
+
+
+
+
+
+Technologies of Optical Coherence Tomography (OCT)
+光學同調斷層掃描術
+光學同調斷層掃瞄技術所得到的影像結果，如同一般病理切片所得到的結果，所以又被稱做光學病理切片。此技術是利用一光學干涉儀作為主要架構，再搭配光束掃瞄機制，來重建組織的二維或三維結構，加上軟體的影像處理技術，可將掃瞄影像以3D立體方式成像，便於觀察者以任意方向針對結果作判讀。其影像解析度取決於所使用的光源頻寬、波長及光學元件。對於不同光源及光學元件，縱向及橫向解析度可從幾十um到um等級。另外在掃瞄深度方面，受限於生物組織內的水分子及黑色素吸收，不同的組織會有不同的掃瞄深度，一般而言，可達到幾百um至幾個mm左右。
+在早期光學同調斷層掃瞄技術，著重於時域技術發展，其掃瞄速度最快可達到10 frames/s的輸出，漸漸隨著CCD及光源技術的發展，近年來著重於頻域光學同調斷層掃瞄技術，主要優於時域技術的好處是，造影速度的提升以及系統靈敏度也大幅的獲得改善。因此，就頻域光學同調斷層掃瞄技術而言，造影速度可達40 frames/s，使得成像可以以vedio-rate方式成像，提供醫師更及時的掃瞄及判斷。
+除了一般二維或三維的造影方式，光學同調斷層掃瞄技術也提供了其他更有力的分析，例如Doppler-OCT可以用來量測血流並及時造影，觀看血流速度及血管厚度; Polarization-Sensitive OCT是針對某些組織具有光的雙折射性，如肌肉組織，肝組織等，可以分析在組織中其他物質的成分及厚度，本實驗室也利用此方法，與臺大醫院合作，針對脂肪肝來作分析研究，並有相當不錯的結果;Second- Harmonic OCT是針對某些組織部位具有二倍頻效果，此方法可應用於一些組織介面變異的研究。Spectroscopic OCT乃利用不同波段的光源來針對相同的組織作研究，根據不同波段的光源針對同一組織具有不同的散射及吸收係數，由此可以分析組織的結構及成分。
+
+
+Development of functional optical coherence tomography for dermatology study
+Abstract:
+We demonstrated a portable, functional optical coherence tomography (OCT) system for dermatology study. 
+To miniaturize the size of the scanning probe for the OCT system and to scan arbitrary locations of skin, 
+we used SolidWorks software to design the mechanical components of probe and to use 3D printer to fabricate mechanical components to integrate the electrical devices and optical components. 
+In addition, the developed OCT system can reconstruct 3D structural OCT images and 3D vascular patterns of skin, simultaneously. 
+This system can be implemented for diagnoses of skin diseases and for studies on cosmetics. Also, the developed system was used for the study on hair follicles and papilla of facial skin. From the results, the sizes and distribution of follicles and papilla can be identified, which can be used as the indicators for diagnosis of skin diseases.
+  
+
+Figure 1. Photos of the probe for skin scanning and In vivo OCT images of human skin.
+
+Meng-Tsan Tsai*,  and Feng-Yu Chang, “Visualization of hair follicles using high-speed optical coherence tomography based on a Fourier domain mode locking laser,” Laser physics 22, 791-796 (2012).
+Meng-Tsan Tsai*,  Chih Hsun Yang, Su-Chin Shen, Feng-Yu Chang, Je-Yun Yi, and Cheng-Hiang Fan, “Noninvasive characterization of fractional photothermolysis induced by ablative and non-ablative lasers with optical coherence tomography,” Laser Physics 23, 075604 (2013).
+Meng-Tsan Tsai,  Chih-Hsun Yang, Su-Chin Shen, Ya-Ju Lee, Feng-Yu Chang, and Cheng-Shin Feng, “Monitoring of wound healing process of human skin after fractional laser treatments with optical coherence tomography,: Biomed. Opt. Express 4, 2362-2375 (2013).
+Meng-Tsan Tsai,  Jeng-Jie Hung, and Ming-Che Chan, “Ultrahigh resolution optical coherence tomography with LED-Phosphor-based broadband light source, Appl. Phys. Express 6, 122502 (2013).
+Meng-Tsan Tsai,  and Ming-Che Chan, “Simultaneous 0.8, 1.0, and 1.3 μm multi-spectral and common-path broadband source for optical coherence tomography,” Optics Letters 39(4), 865-868 (2013).
+Cheng-Kuang Lee, Meng-Tsan Tsai*,  Feng-Yu Chang, Chih-Hsun Yang, Su-Chin Shen, Ouyang Yuan, and Chih-He Yang, “Evaluation of moisture-related attenuation coefficient and water diffusion velocity in human skin using optical coherence tomography,” Sensors 13, 4041-4050 (2013)
+
+
+Observation of drug delivery with speckle-variance optical coherence tomography
+Abstract:
+Transdermal drug delivery systems (TDDS) have been an attracting field in drug delivery because of its benefit over parenteral and oral administration. 
+In this study, we used OCT to observe the dissolution process of MNs and to investigate the temporal effects on mouse skin induced by MNs, 
+including the morphological and vascular changes. To observe the dissolving process of polymer MNs, 
+time-series OCT images were acquired to estimate the sizes of MNs at different skin depth. Moreover,
+ the changes in skin morphology and vessels can be studied with OCT imaging as well as the recovery process of skin.
+ Here, we proposed a new method to evaluate the cross-correlation relationship between sequential 2D OCT images obtained at same skin location to observe the variation of the backscattered intensities in OCT images due to the diffusion of Rhodamine. From the results, 
+Rhodamine diffusion process from MNs into surrounding skin can be quantitatively evaluated. 
+
+Figure 2. 
+ Upper figures: Time-series en-face images at three different depths of the mouse ear skin obtained after the insertion of MN patch for (a), (f), (k) 20 mins, (b), (g), (l) 60 mins, (c), (h), (m) 100 mins, and (d), (i), (n) 140 mins, and (e), (j), (o) 180 mins. 
+Lower figures: (a)-(f) Projection view of OCT angiography obtained (a) before insertion of MN patch and after removing the MN patch for (b) 0 hr, (c) 12 hrs, (d) 24 hrs, (e) 36 hrs, and (f) 48 hrs. (g) the photo of mouse ear before insertion of MN patch, and (h) the photo of mouse ear after insertion of MN patch by using Evans blue as a contrast agent for identification of blood leakage.
+
+
+I.-Chi Lee, Jheng-Siou He, Meng-Tsan Tsai*,  and Kai-Che Lin, “Fabrication of a novel partially dissolving polymer microneedle patch for transdermal drug delivery,” Journal of Materials Chemistry B, 3, 276-285 (2015).
+Chih-Hsun Yang, Meng-Tsan Tsai*,  Su-Chin Shen, Chau Yee Ng, and Shih-Ming Jung, “Feasibility of ablative fractional laser-assisted drug delivery with optical coherence tomography,” Biomedical Optical Express 5(11) 3949–3959 (2014).
+
+OCT-guided laser microsurgery for blood coagulation and tissue ablation
+Abstract:
+In this study, we proposed a method to develop an integrated system that combines optical coherence tomography (OCT) 
+and laser microsurgery for blood coagulation. Also, an algorithm for positioning of the treatment location from OCT images was developed. 
+Instead of high-cost pulsed lasers, continuous-wave laser diodes (CW-LDs) with the central wavelengths of 450 nm and 532 nm are used for blood coagulation, corresponding to higher absorption coefficients of oxyhemoglobin and deoxyhemoglobin. 
+Experimental results showed that the location of laser exposure can be accurately controlled with the proposed approach of imaging-based feedback positioning.
+Moreover, blood coagulation can be efficiently induced by CW-LDs and the coagulation process can be monitored in real-time with OCT. 
+
+
+Figure 3. Depth-encoded projection view of OCT angiography, top view of 3D OCT images, 
+and 3D OCT images recorded (a, g, m) before blood leakage was induced by a needle, (b, h, n) during blood leakage, 
+(c, I, p) after exposure to 532-nm laser for 5 s, (d, j, p) after exposure to 532-nm laser for 10 s, 
+(d, j, p) after exposure to 532-nm laser for 15 s, (e, k, q) after exposure to 532-nm laser for 20 s, 
+and (f, l, r) after exposure to 532-nm laser for 25 s. The white arrows represent the region of leaked blood. 
+
+
+Feng-Yu Chang, Meng-Tsan Tsai*,  Zu-Yi Wang, Chun-Kai Chi, Cheng-Kuang Lee, Chih-Hsun Yang, and Ming-Che Chan, “Optical coherence tomography-guided laser microsurgery for blood coagulation with continuous-wave laser diode,” Scientific Reports 2015 (Revised).
+
+
+Using Drosophila as an experimental model for the study on heart diseases with optical coherence tomography
+Abstract:
+To study cardiovascular diseases, we use Drosophilae as an experiment model, which has a high degree of similarity of human genes. In this study, we use swept-source optical coherence tomography (SS-OCT) to observe the cardiac dynamics of Drosophilae, due to the advantages of high resolution, high sensitivity and real-time imaging. With OCT, the entire heart chambers of fly including conical chamber and four ostia portions can be observed. In addition, to remove the motion artifact resulting from heart contraction and body movement, a motion-corrected algorithm for OCT images was proposed. Then, such OCT system with the motion-corrected algorithm was used for investigation of age-associated heart dysfunction. In our experiments, three groups with different ages were included including 2-week-old, 4-week-old, and 6-week-old flies. Finally, three indicators are proposed to evaluate the heart function, heart beating rate, time delay between chambers, and the ratio of diastolic and systolic dimension (D/S ratio).
+
+Figure 4. 
+Upper figures: beating pattern of four heart chambers after motion correction. 
+Lower figures: statistical results of beat rate and beating delay of three groups (2-week-old, 4-week-old, and 6-week-old).
+
+
+ Meng-Tsan Tsai*,  et al., “Observations of Cardiac Beating Behaviors of Wild-type and Mutant Drosophilae with Optical Coherence Tomography,” Journal of Biophotonics 4, 610-618 (2011).
+Meng-Tsan Tsai*,  Cheng-Kuang Lee, Feng-Yu Chang, June-Tai Wu, Chung-Pu Wu, Ting-Ta Chi, and Chih-Chung Yang, “Noninvasive imaging of heart chamber in Drosophila with dual-beam optical coherence tomography,” J. Biophotonics.6, 708-717 (2013). (Selected as the journal cover page)
+
+Investigation of Focused ultrasound-induced temporal effects on vessels with optical coherence tomography
+Abstract:
+ Focused ultrasound (FUS) can be used to locally and temporally enhance vascular permeability, improving the efficiency of drug delivery from the blood vessels into the surrounding tissue. However, it is difficult to evaluate in real time the effect induced by FUS and to noninvasively observe the permeability enhancement. In this study, speckle-variance optical coherence tomography (SVOCT) was implemented for the investigation of temporal effects on vessels induced by FUS treatment. With OCT scanning, the dynamic change in vessels during FUS exposure can be observed and studied. Moreover, the vascular effects induced by FUS treatment with and without the presence of microbubbles were investigated and quantitatively compared. Additionally, 2D and 3D speckle variance images were used for quantitative observation of blood leakage from vessels due to the permeability enhancement caused by FUS, which could be an indicator that can be used to determine the influence of FUS power exposure. In conclusion, SVOCT can be a useful tool for monitoring FUS treatment in real time, facilitating the dynamic observation of temporal effects and helping to determine the optimal FUS power.
+
+
+Figure 5. 
+Upper figures: FA images of the mouse ear obtained using various exposure powers of 1, 4, and 10 W. The images were captured 2 min after the injection of fluorescence images. 
+Central figures: Projection view of SVOCT images of the mouse ear, which were obtained (a) before FUS exposure and after FUS exposures of (b) 1 W, (c) 5 W, (d) 10 W, and (e) 15 W in the presence of microbubbles. Media 1 demonstrate the 3D animation of SVOCT images before and after FUS exposure of 15 W.
+Lower figures: 3D OCT angiographies obtained (a) before and after FUS exposure for (b) 5, (c) 10, and (d) 15 s, respectively.
+
+
+ Meng-Tsan Tsai*,   Ting-Da Chi, Hao-Li Liu, Feng-Yu Chang, Chih-Hsun Yang, Cheng-Kuang Lee, and C. C. Yang, “Microvascular imaging using swept-source optical coherence tomography,” Appl. Phys. Express 4, 097001 (2011).
+ Meng-Tsan Tsai,  Cheng-Kuang Lee, Kung-Min Lin, Yu-Xiang Lin, Tzu-Han Lin, Ting-Chia Chang, Jiann-Der Lee, and Hao-Li Liu, “Quantitative observation of focused ultrasound induced vascular leakage and deformation via fluorescein angiography and optical coherence tomography,” Journal of Biomedical Optics 18(10), 101307 (2013).
+ Meng-Tsan Tsai,   Feng-Yu Chang, Cheng-Kuang Lee, Cihun-Siyong Alex Gong, Yu-Xiang Lin, Jiann-Der Lee, Chih-Hsun Yang, and Hao-Li Liu, “Investigation of temporal vascular effects induced by focused ultrasound treatment with speckle-variance optical coherence tomography,” Biomed. Opt. Express 5(7), 2009–2022 (2014). 
+
+Diagnostics of oral precancer with functional optical coherence tomography
+Abstract:
+An OCT system was used to clinically scan oral lesions in different oral carcinogenesis stages, including normal oral mucosa control, mild dysplasia (MiD), moderate dysplasia (MoD), early-stage squamous cell carcinoma (ES-SCC), and well-developed SCC (WD-SCC), for diagnosis purpose. On the basis of the analyses of the SS-OCT images, the stages of dysplasia (MiD and MoD) and SCC (ES-SCC and WD-SCC) can be differentiated.
+
+Figure 6. 
+Upper figures: 2D OCT images of buccal mucosa obtained from a 24-year-old male. 
+Lower figures: 3D OCT images and vascular images at various depths obtained from a 25-year-old male.
+
+
+ Meng-Tsan Tsai,  et al., “Effective indicators for diagnosis of oral cancer using optical coherence tomography,” Opt. Express 16, pp. 15847-15862 (2008).
+ Meng-Tsan Tsai,  et al., “Differentiating Oral lesions in Different Carcinogenesis stages with Optical Coherence Tomography.” J. Biomed. Opt., Vol. 14, No. 4, 044028 (2009).
+Cheng-Kuang Lee, Meng-Tsan Tsai,  Hsiang-Chieh Lee, Yih-Ming Wang, Hsin-Ming Chen, Chun-Pin Chiang, and C. C. Yang, “Diagnosis of Oral Submucous Fibrosis with Optical Coherence Tomography.” J. Biomed. Opt., Vol. 14, No. 5, September/October 2009 (2009).
+ Meng-Tsan Tsai,   et al., “Delineation of an Oral Cancer Lesion with Swept-source Optical Coherence Tomography,” J. Biomed. Optics, Vol. 13, No. 4, 044012 (2008). 
+ Meng-Tsan Tsai*,  et al., “Differentiation of oral precancerous stages with optical coherence tomography based on the evaluation of optical scattering property,” Laser Physics 12 (2012). 
+
+Optical inspection of industrial products with optical coherence tomography
+Abstract:
+
+Figure 7. 
+(a) The scanning electron microscope (SEM) image of the solar cell. The white bar and the stripe feature represent 100 μm in length and the electrode structure, respectively. (b) The optical coherence tomography (OCT) phase image of the solar cell. The white bar and the stripe feature represent 300 μm in length and the electrode structure, respectively. (c) The magnified image from the region marked by the red square in (b). (d) and (e) The cross-section SEM image and OCT phase image of the same solar cell. The corresponding location of (e) is indicated by the red-dash line in (c). 
+
+
+ Meng-Tsan Tsai*,  et al., “ Defect detection and property evaluation of indium tin oxide conducting glass using optical coherence tomography,” Opt. Express 19, 7559-7566 (2011).
+ Meng-Tsan Tsai,  et al., “Quantitative phase imaging with swept-source optical coherence tomography for optical measurement,” IEEE Photonics Technology Letters 24, 640-642 (2012). 
+ Meng-Tsan Tsai,  Feng-Yu Chang, Yung-Chi Yao, Jie Mei, and Ya-Ju Lee, “Optical inspection of solar cells with phase-sensitive optical coherence tomography,” Solar Energy Materials and Solar Cells 136, 193-199, 2015.
+
+
+ 
+
+
+ 
+
+ 
+ 
+
+
+
+333 桃園縣龜山鄉文化一路259號 長庚大學電機工程研究所 工學大樓7F 光學影像實驗室 Tel:   03-2118800 Ext.3796
+Copyright © 2009-2014 Optical Imaging Laboratory, Chang Gung University EE, Tao-Yuan,Taiwan. 
+ 
+
+ 
+
+
+
+交大光電 生醫光學影像實驗室
+
+
+
+
+
+
+交大光電 生醫光學影像實驗室
+
+
+
+ 
+ 
+
+
+ 生醫光學影像實驗室（BOIL）簡介
+      BOIL以開發臨床醫學所需之光學影像技術為目的，目前以擴散光學影像及光同調斷層掃瞄術為主，應用於重症加護醫學、腦功能影像量測、乳癌影像、大腸癌早期診斷、口腔醫學等臨床研究，期能成功發展出臨床光學影像診斷系統。
+ 生醫光學影像技術簡介
+1.時間解析擴散光學影像系統 (Time-resolved diffuse optical imaging (TRDOI) system)
+
+                           
+      此系統為本實驗室開發，台灣唯一目前使用”時間解析”的擴散光學系統，系統架構主要由短脈衝雷射二極體(picosecond  diode lasers)、光檢測器(fast-gated  single-photon avalanche diode)、光子計數器(single-photon  counting electronics)組成，下圖為系統示意圖。此系統可用於檢測人體組織血氧變化，檢測人體微循環功能，且由於本系統利用短脈衝雷射及光子計數器得到時間解析的訊號，能進行人體組織深度解析，判別出異常組織或組織不尋常之位置，並可檢測組織光學參數變化，可應用於檢測癌症、大腦功能性、血液循環功能等。  
+2.近紅外光重症醫學診斷輔助 (Near-infrared spectroscopic imaging)
+                        
+	      由於近紅外光波段( NIR )對於人體有較好的穿透性並且含氧血與缺氧血的吸收係數在此區間內有一相交點，利用上述光特性在經由數學計算便可得照射區域內含氧血和缺氧血的濃度變化量，實驗室運用此量測技術並照射遠紅外光刺激血氧擴張比較正常男女在末梢循環上的變化，未來進入臨床將監控病人並作為生理資訊的重要參數 
+3.光學同調斷層掃描術 (Optical Coherence Tomography; OCT) 
+                            
+	   OCT是一種可做三維影像造影的光學技術，利用麥克森干涉儀(Michelson Interferometer)，組織樣本端的光剛參考光互相做干涉得到光資訊，光學同調斷層掃描的影像解析度可達次微米等級，較電腦斷層和核磁共振的精密度更高。它能以每秒2000次的速率完成體內活細胞的動態影像，可以發覺單一細胞病變，更早期診斷出癌組織。
+
+ BOIL近年技術研究成果
+￭    以光學拓撲造影術(optical topography)進行人體大腦前額葉靜態(resting-state)神經網路聯結性量測分析，找出了兩性之間在神經網路的分佈差異。此研究是國際間首次以光學影像對於男女大腦網路特徵的探討，未來亦有潛力應用於多樣神經－精神臨床診斷研究，文章發表於Biomedical Optics Express。 ￭    利用光學偵測阿茲海默大腦結構萎縮特徵，並以組織光學模擬計算證實其可行性，此光學腦體積造影方法為國際首次提出，發表於IEEE Journal of Selected Topics in Quantum Electronics。在研究中我們利用核磁共振影像發展病人導向之蒙地卡羅模擬技術，發表於BioMedical Engineering Online，並提出該法在模擬大腦中光子遷移的準確性，發表於Journal of Biophotonics。 ￭    BOIL和日本精神．神經醫療研究中心合作，量測思覺失調症(schizophrenia)患者在接受語言測試時前額葉光學功能性造影，並以區別分析找出患者和正常人明顯相異的區間，研究成果發表於Journal of Biomedical Optics。 ￭    開發出擴散片輔助近紅外光擴散造影技術(diffuser-aided diffuse optical imaging; DADOI)，並以理論模擬驗證該技術在乳房癌症組織影像量測之可行性，該技術亦為國際首次提出，發表於IEEE Transactions on Biomedical Engineering。接著透過假體實驗，將DADOI系統建立並成功得到紊亂介質之假體影像，發表於Journal of Biomedical Optics。 
+      ￭    以史托克﹣米勒分析法量化牙齒琺瑯質﹣牙本質介面特性，發表於Journal of Biomedical Optics。
+￭    開發連續波擴散光學多點式影像系統原型，並成功在臨床量測中以血管束縛測試得到血氧動態生理訊號以判別重症加護病房患者之生理狀態。本技術發表於IEEE Transactions on Biomedical Engineering。為了改善血管束縛法對病人造成的傷害以及不適感，我們於國際上首次提出遠紅外光生理乾預法，可有效應用於臨床人體微循環系統之光學生理監測，發表於Journal of Biophotonics。另外在造影方法上，我們採收斂係數計算法於同步疊代影像重建技術演算法中，使該法能有效應用於臨床擴散光學斷層掃描之影像重建，發表於Optics Communications。 
+￭    以光學同調斷層掃瞄術進行牙齦下牙結石的診斷量測，並將牙結石做光學特性分析和影像特徵化。此應用將提供牙醫在牙周疾病臨床診斷一個無痛的非侵入非輻射影像量測工具，此結果發表於Journal of Biomedical Optics。我們進一步利用偏振態分析法，找出了琺瑯質﹣牙本質介面區域，結果亦發表於Journal of Biomedical Optics。 ￭    採用擴散光學量測和雷射光紺技術，找出組織血氧變化能力和血球的彈性係數的相關性，該結果為利用生醫光電技術於生理學研究之一大突破，發表於Journal of Biophotonics。 
+
+
+
+
+
+
+
+國立交通大學機構典藏：可見光頻段超高解析度光學同調斷層掃描術
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 可見光頻段超高解析度光學同調斷層掃描術Ultrahigh resolution optical coherence tomography in the visible regime
+作者: 洪政傑Hung, Jeng-Jie詹明哲Chan, Ming-Che照明與能源光電研究所
+關鍵字: 可見光;光學同調斷層掃描;寬頻光源;釔鋁石榴石螢光粉;頻域光學同調斷層掃描;有機溶劑;螢光粉;超高解析度;縱向解析度;低同調光源;visible light;optical coherence tomography;broadband light source;YAG;spectral domain OCT;organic solution;phosphor;ultrahigh resolution;longitudinal resolution;low coherenct light source
+公開日期: 2012
+摘要: 光學同調斷層掃描術(Optical  Coherence Tomography, OCT)，是近二十年迅速發展起來的生物組織掃描技術，此技術可獲得高解析度的微觀橫截面影像。在光學同調斷層掃描術之中最重要的兩個參數為縱向解析度以及掃描速度，縱向解析度與光源頻寬有關，而掃描速度與系統掃描方式有關。在本論文中我們提出了兩種新穎寬頻光源，分別為混合有機溶液和螢光粉光源，並且架設一套頻域光學同調斷層掃描術(Spectral domain OCT)快速掃描系統。此系統光源是使用可見光光源釔鋁石榴石螢光粉Y3Al2(AlO4)3 : Ce^(3+)，架設出來的解析度，在空氣中為 1.7 micron，而line scan rate最快為 1000 lines/second. 此系統昭示了此新穎光源在未來光學同調斷層掃描術的優越性。Optical Coherence Tomography (OCT), is a biological tissue scanning technology that which allows high resolution cross sections images of biological tissues. Two most important parameters in OCT are longitudinal resolution and scanning speed. The major factors that affect the longitudinal resolution are the bandwidth and central wavelength of the light source. And the scanning speed is determined by the system scanning method. In this thsis, we present two new kinds of broadband light sources: 1. a mixture of organic solutions 2. LED phosphor. In addition, we set up a spectral domain OCT system that performs high speed scanning. In the experiment, Y3Al2(AlO4)3 : Ce^(3+) phosphors is used to provide visible light source, which the system has a longitudinal resolution of about 1.7µm in air, and a maximum line scan rate of 1000 lines / second. This work demonstrates the superiority of the new light source in the future optical coherence tomography.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT079905527http://hdl.handle.net/11536/72160
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef超高解析度頻域光學同調斷層掃瞄術－使用混合有機溶液 / 詹仲皓;Chan, Chung-Hao;詹明哲;Chan, Ming-CheUltrahigh-Resolution Optical Coherence Tomography with LED-Phosphor-Based Broadband Light Source / Tsai, Meng-Tsan;Hung, Jeng-Jie;Chan, Ming-Che啁啾式多層堆疊量子點雷射之特性暨其適用於光學同調斷層掃描系統之可行性分析研究 / 黃俊仁;Huang, Chun-Jen;林國瑞;Lin, GrayDental Optical Coherence Tomography / Hsieh, Yao-Sheng;Ho, Yi-Ching;Lee, Shyh-Yuan;Chuang, Ching-Cheng;Tsai, Jui-cheSimultaneous 0.8, 1.0, and 1.3 mu m multispectral and common-path broadband source for optical coherence tomography / Tsai, Meng-Tsan;Chan, Ming-Che半導體量子點寬頻光源 / 林國瑞;Lin Kuo-Jui (Gray)國立臺灣大學 - 摻鉻釔鋁石榴石光源之高解析度光學同調斷層掃描系統 / 許博凱; Hsu, Po-Kai 國立成功大學 - 子計畫二:探針式高解析度光學同調斷層掃描系統 / 羅裕龍 國立成功大學 - 周邊神經修復組織工程整合先期研究---子計畫二：探針式高解析度光學同調斷層掃描系統 / Lo, Yu-Lung; 羅裕龍 國立成功大學 - 利用正交極化光學同調斷層掃描術之快速量測 / 王乃立; Wang, Nai-Li 國立成功大學 - 寬頻光干涉應用於近場光學與光學同調斷層掃描之研究 / 廖佳麒; Liao, Chia-Chi 國立成功大學 - 利用光學同調斷層掃描術量測樣本折射率與厚度之研究 / 劉益誠; Liu, Yi-Cheng Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+
+視網膜剝離 術後留意積液影響視力 - 生活 - 自由時報電子報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+為達最佳瀏覽效果，建議使用 Chrome、Firefox 或 Internet Explorer 10(含) 以上版本的瀏覽器。
+
+
+請至IE官網下載
+請至FireFox官網下載
+請至Google官網下載
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+爆
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+即時新聞
+
+政治
+社會
+生活
+國際
+財經
+地方
+
+北部 | 
+基隆市
+臺北市
+新北市
+桃園市
+新竹市
+新竹縣
+苗慄縣
+宜蘭縣
+花蓮縣
+金門縣
+連江縣
+
+中部 | 
+臺中市
+彰化縣
+南投縣
+雲林縣
+嘉義市
+嘉義縣
+
+南部 | 
+臺南市
+高雄市
+屏東縣
+臺東縣
+澎湖縣
+
+
+
+評論
+體育
+娛樂
+時尚
+3C
+汽車
+
+
+報紙總覽
+
+焦點
+政治
+社會
+生活
+國際
+財經
+文化週報
+評論
+體育
+影視
+消費
+副刊
+
+
+
+影音
+娛樂
+汽車
+時尚
+體育
+3C
+評論
+食譜
+健康
+地產
+週報
+專區
+TAIPEI TIMES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+親民黨副秘書長劉文雄一度命危 緊急手術搶救中
+聯合公園主唱查斯特上吊自盡 享年41歲
+法國女歌手 舞臺上表演疑觸電猝死
+
+
+
+
+
+
+
+首頁 > 報紙 >	生活
+
+
+視網膜剝離 術後留意積液影響視力				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2012-12-18
+圖．文／林純如在成功的裂孔性視網膜剝離術後，有些病人會抱怨視力恢復不佳，或有視物扭曲、變小、色調偏暗等情形，但經視網膜醫師仔細的眼底鏡檢查，明明網膜復位了，並未發現嚴重的問題，而很難與病患有效的溝通解釋。近年針對波及黃斑部（視網膜中央）的裂孔性視網膜剝離手術後的追蹤研究發現，術後視網膜都成功復位的眼睛，接受光學同調斷層掃描檢查，2.3%到9.3%發現有視網膜下積液存在，直到術後2至11個月（平均6.3個月）才吸收。視網膜下積液有時會影響術後視力的進步，但針對有視網膜下積液的病患安排螢光眼底攝影，並未觀察到血管滲漏與管壁著染現象。視網膜下積液之延緩吸收，可能與冷凍治療的使用及視網膜下的沈積物有關係，因為冷凍治療會破壞血液視網膜屏障，使色素蛋白凝聚在視網膜下，引發滲透效應逆轉，促使積水由脈絡膜微血管叢流向視網膜下的空間，導致視網膜下積水延緩吸收。最新發表論文已利用電子顯微鏡證明，視網膜下積液中存在豐富的蛋白質。鞏膜扣壓也被觀察到會影響脈絡膜的血流，改變視網膜色素上皮層的極性，造成液體滲漏。術後發炎也可能導致視網膜液體堆積，彰基眼科部的研究發現術後服用類固醇因控制發炎，可減少視網膜下積液的發生率，並且有助吸收。此外，年輕人的玻璃體較黏稠，所以視網膜下積液的吸收較年長者慢些，甚至持續至術後6個月到1年。自從光學同調斷層掃描廣泛應用於眼科檢查後，陸續有關於成功裂孔性視網膜剝離術後持續視網膜下積液的報告，但對於是否會影響最後視力仍未有定論。因為光學同調斷層掃描能偵測出以眼底鏡檢查與螢光眼底攝影所不能發現的視網膜下積液，所以建議可應用於術後視力延遲恢復的病患檢查，以幫助良好的醫病溝通。成功裂孔性視網膜剝離術後持續視網膜下積液，除文獻報告的雷射或服用類固醇等藥物可嘗試外，大多不需特別治療，以時間換取進步，但視網膜醫師必須耐心說明，使病患安心等待。（作者為彰化基督教醫院眼科部主治醫師）
+
+
+
+▲術後四個月，接受光學同調斷層掃描追蹤檢查，發現黃斑部視網膜下積液已吸收，視力也進步。（照片提供／林純如）
+
+
+
+
+▲術後視網膜已成功復位，接受光學同調斷層掃描檢查，發現黃斑部有視網膜下積液（紅圈處）存在。（照片提供／林純如）
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+新聞送上來！快加入自由電子報APP、LINE好友
+
+
+iOS
+Android
+APP下載QR Code
+L I N E加入好友
+
+
+
+
+
+
+
+
+
+網友回應
+
+
+
+
+
+
+
+
+
+
+
+
+
+生活今日熱門
+
+
+
+你絕對想不到！韓國人來台灣必敗「三寶」是它們													
+
+
+
+百公斤女搭廉航遭拒還不退票 經協調3個月後退費											
+
+
+極端高溫恐再現  2熱低壓最快今、明天轉為颱風											
+
+
+辦吃到飽卻被氣飽 女奧客狂點握壽司只吃料、飯疊成山											
+
+
+你在看我嗎?》議員每天在街頭做這件事 感動好多人....											
+
+
+外神亂入馬公烏崁靖海宮？原來是烏龍一場											
+
+
+陽台隔間5000元出租 房東被罵翻後這麼做...											
+
+
+車只是工具！暖爸愛車讓女兒塗鴉背後有洋蔥											
+
+
+
+
+
+限制級
+
+您即將進入之新聞內容 需滿18歲 方可瀏覽。
+
+
+未滿18歲或不同意本條款離開
+我同意我已年滿18歲進入
+
+
+				根據「電腦網路內容分級處理辦法」修正條文第六條第三款規定，已於網站首頁或各該限制級網頁，依台灣網站分級推廣基金會規定作標示。 台灣網站分級推廣基金會（TICRF）網站：http://www.ticrf.org.tw
+			
+
+
+
+
+
+
+ 2017年7月21日‧星期五‧丁酉年六月廿八日
+
+
+
+
+註目新聞
+
+
+1被拍到了！羅致政二度與女助理摩鐵開房間
+2逢甲氣爆身亡 正妹陳冠伶命運多舛
+3尼斯湖水怪傳說80年 首次爬上陸地被直擊？
+4蔡正元00:50戴銬上囚車 送往臺北看守所
+5羅致政緋聞對象酷似謝金燕 地方人稱「發電機 」
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+市場動態
+
+ODM「心」型態 充滿人情味的創業夢工廠
+
+遠傳鎖定老幼毛 推BoBee創新定位服務
+
+板橋江翠北重劃區 水岸住宅超吸睛
+
+海綿寶寶FUN暑假！這＂夏＂好玩了
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+熱門關鍵字
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+此網頁已閒置超過5分鐘，請點擊透明黑底或右下角 Ｘ 鈕。
+
+熱門推播
+
+
+
+狂瘦13公斤從沒復胖過！41歲日模靠「走路」練出逆天鉛筆腿 
+
+
+明晴朗炎熱午後有雷雨 第5號颱風將誕生 
+
+
+Luxgen 全新跨界 U5 台灣第三季上市！官網搶先曝光配備細節 
+
+
+蔡依林爆乳開唱  面對酸民留言「直接刪除+封鎖」 
+
+
+蘋果發布 iOS 10.3.3 正式版 ！意味將不再支援這幾款產品更新 
+
+
+車主貼罰單要大家評評理！網友眼尖一語點破罰單裡的「眉角」 
+
+
+立院發函水球、蛋、麵粉…禁入議場！ 確保人身安全 
+
+
+獨家》黃培閎讓世界看見台灣！ 國內企業冠名贊助其義超球隊 
+
+
+諾基亞真的準備好了？ Nokia 8快閃現身官網還是被網友截圖 
+
+
+京城銀行理專涉嫌盜用存款 20客戶被盜領2600萬 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+光學同調斷層掃描 診斷心血管阻塞新武器 - Yahoo奇摩新聞首頁信箱新聞股市氣象運動名人娛樂App下載購物中心商城拍賣更多Yahoo奇摩搜尋搜尋新聞搜尋網頁光學同調斷層掃描 診斷心血管阻塞新武器健康醫療網健康醫療網／記者林怡亭報導2017年4月1日轉貼分享分享留言(健康醫療網／記者林怡亭報導)一名73歲老翁，因急性胸痛緊急就醫治療，經由心電圖檢查為急性心肌梗塞，立即接受緊急心導管檢查和血管支架置放術，透過新引進的光學同調斷層掃描確認患者血管大小，以及支架和血管的密合情況，順利打通患者阻塞心血管，且一併也將將血管和支架修整至最佳狀態。光學同調斷層掃瞄 提高醫師術前評估治療心血管疾病，先前需詳細評估血管狀況，避免血管支架內再次狹窄；成大醫院心臟血管內科醫師陳柏偉指出，包括冠狀動脈造影檢查最為關鍵，可幫助醫師判斷血管是否有狹窄問題，及時介入治療，目前已使用血管內超音波和較新的光學同調斷層掃瞄，提高心血管狹窄程度的判斷、病變性質等評估。光學同調斷層掃描 解析度高降低復發陳柏偉醫師進一步說明，其中較新的光學同調斷層掃描檢查，和超音波相似，但影像解析度比超音波清晰至少十倍，包括血管的分層和斑塊的內含物等都能獲得詳細評估，另外，血管壁剝離、斑塊穩定度等，也能助醫師獲得清楚的影像，尤其血管支架是否擴張或貼近血管壁都可能引起復發關鍵，透過良好的影像品質，更能提供最佳的診斷依據。心血管阻塞檢查新利器 助醫師介入治療像在氣球擴張或支架置放前審慎評估血管狀態，包括在支架內狹窄、支架血栓及併發症等都可能出現潛在風險，這時就能透過光學同調斷層掃描，做更好的預防準備；陳柏偉醫師提醒，透過目前光學同調斷層影像的檢查新利器，有助於心臟血管內科醫師及時介入治療，更能提升整體療效，降低患者出現併發症等風險。看更多：急性心肌梗塞陳柏偉健康醫療網心電圖檢查心導管檢查光學同調斷層掃描留言轉貼分享分享相關內容你可能還想看九月接閣揆？  賴清德指報導有誤新頭殼情定四年男友！吳怡霈宣告明年當人妻三立新聞網 setn.com女性減不了肥 研究：另一半不夠帥三立新聞網 setn.com瘤大到擠爆雙眼！他靠觸覺生活22年三立新聞網 setn.com愛紗曾訪豪宅探視麻衣 未見王泉仁鏡週刊小林嘉欣車禍咬斷舌 母親不幸喪命三立新聞網 setn.com老婆外遇了⋯對象竟然是自己老爸三立新聞網 setn.com【三房危機處理】最像王永慶的女兒王瑞華 連大阿哥都讓她三分鏡週刊林子偉3A敲首安 最快這天回大聯盟三立新聞網 setn.com颱風趕進度！十天內恐接二連三報到三立新聞網 setn.com韓國遊客來台必買 竟然是這「三寶」三立新聞網 setn.com躺著也中槍！兆豐銀：蔡正元侵佔款項非流向兆豐帳戶風傳媒【正元就是狂】祕書到正宮 馬尾妹深獲器重鏡週刊嬰兒踢前座椅背 一家五口竟被趕下機三立新聞網 setn.com哪個離島CP值最高？網友卻說去這地方不如出國今日新聞NOWnews難過震驚！聯合公園主唱查斯特上吊自殺Y名人娛樂 X 簡立言
+
+
+
+
+
+

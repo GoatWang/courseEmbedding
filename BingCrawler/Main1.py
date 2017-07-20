@@ -10,6 +10,8 @@ for course in list(pd.read_json("CourseName", typ='series', encoding='utf8')):
     #    flag = True
     if count >10000:
         flag = True
+    if count > 20000:
+        flag =False
     if flag:
         TargetDirectory = "CourseEmbedding"
         Query = course

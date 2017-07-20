@@ -1,0 +1,2109 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+科技報導: 新世代定序結果分析與解讀
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網頁
+
+
+
+首頁
+
+
+科學月刊
+
+
+科月Blog
+
+
+科月FB
+
+
+生命科學論壇
+
+
+關於我們
+
+
+稿約
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+新世代定序結果分析與解讀
+
+
+
+
+
+作者／黃彥華（任職陽明大學系統與合成生物學研究中心）
+
+新世代定序技術，可以使我們快速獲得基因序列，但是定序結果和參考序的比對，或是完整基因體序列的組裝，都只是第一步，後續的「進階分析」及「資料解讀」，才是重點所在，才能有效地由這「大數據」之中，萃取出隱藏的生物醫學意義。
+
+
+NGS的發展　將加速研究
+
+過去十年來，新世代定序技術（next generation sequencing technologies, NGS）突飛猛進，隨著
+不同的商業化技術服務問市，如Roche 454 pyrosequencing、Illumina Solexa、Life Technologies
+SOLiD，使得基因體及轉錄體定序效率大為提高、價格快速下降，也讓過去受限於定序成本及效率的各種生物醫學研究，得到了很大的幫助。例如由美國國家基因體研究所（NHGRI）所資助的ENCODE計畫（ENCyclopedia Of DNA Elements），即為其中最令人印象深刻的一個例子。因為NGS技術的發展，ENCODE計畫大量的引用「以新世代定序技術為基礎」的各種研究方法，如染色質免疫沉澱–測序（ChIP-sequencing）的技術，來研究轉錄因子的在各種不同的組織，在染色體上的結合位置。由於ENCODE計畫對基因體調控區、基因表現調控機制、組織特異性（tissue-specificity）的諸多發現，對各種生醫研究具有重大意義，因此被Nature期刊選為2012年的十大科研新聞之一。我們可以預期，如果ENCODE計畫之中，還是採用費時、精確度不高的前一代研究方法，是不可能得到如此良好的結果。
+
+新世代定序技術， 除了在基礎研究上提供了前所未有的豐富資料外，在轉譯醫學方面，因為利用高通量的NGS技術，對於遺傳及基因體變異疾病的致病因子及其機制，也有了許多重大的發現。目前醫學上有記錄的單基因遺傳疾病約有7000種，對於其中50％的疾病，已有若干致病基因變異被發現。有樂觀的研究人員，預測在2020年左右，因為定序技術的顯著改善，將可以破解餘下大部分單基因疾病的致病基因變異。
+
+此外，對於「癌症」這種已被認為是「基因體的疾病」而言，國際上的大型計畫，如美國國家衛生院資助的「癌症基因體圖譜計畫」（The Cancer Genome Atlas, TCGA）、國際合作的「國際癌症基因體聯盟」（International Cancer Genome Consortium, ICGC）對各種人類癌症展開了大規模的定序計畫。TCGA預計在2015年底，要對25種癌症、超過一萬份來自病人的癌組織樣本，進行外顯子（exon）甚至是全基因體定序。我們可以預期，利用新世代定序技術的所得到的研究成果，將為人類提供大量的「致病的基因變異」及相關的「基因表現調控變化」的資料，為藥物基因體學（pharmacogenomics）奠定良好的基礎。研究人員將可以為不同的致病機制，設計不同的治療方法。也許在未來，醫療的目標，將會由「對症下藥」，變成「對人下藥」，也就是「針對不同的個人，其致病的不同基因變異，選用適當治療方式」。
+
+有鑑於現今各種高通量技術在生醫產業應用的高度潛力，特別是在實現個人化醫療上、提供了造福全人類之健康的新希望。美國食品藥物管理局（FDA），於2013年10月，發佈了一份宣言《為個人化醫療鋪路，食藥局在這個新世代中對醫療產品發展所擔當的角色》（Paving the way for personalized medicine, FDA’s role in a new era of medical Product Development）。在這個宣言中，明確指出，新世代定序技術、計算生物學（生物資訊學）等領域快速進展，帶給了「個人化醫療」光明的前景。此外，FDA也在同一年11月，首次認證了NGS可以做為醫療診斷之用途。
+
+NGS技術仍在快速進步之中，今年初（2014）Illumina公司已宣稱，使用該公司最新的HiSeq X Ten定序儀，可以在不到一天的時間內，以美金1000元的成本，定出個人的基因體全序列。以上這些事件，都指出同一個事實：各種高通量實驗技術，特別是新世代定序技術相關的應用，已經漸趨成熟穩定，將成為生醫產業之應用上的可以信賴的工具。我們可以預期，在可以預見的未來，應用NGS技術，將使得和人類疾病相關的基因體變異、基因表現之調控等資料，快速累積，此外，NGS技術也可應用於農林漁牧等領域上，加速對於生物多樣性、特殊表現型的相關研究。最後這些知識，將會應用於轉譯研究，造福人類的生活。
+
+成功關鍵　在於「解讀」
+
+目前可以應用NGS技術的生醫研究領域，若是依研究的對象，基本上可以略分為，一、人類基因體研究及基因流行病學研究；二、模式物種、或是特有品系的基因體註解及比較基因體研究。欲進行這些研究，需要下列三類生物序列及資訊處理分析能力：
+
+（1）基因體（或表現序列）定序結果與參考基因體序列之快速比對
+（2）將基因體定序結果快速組合為基因體全序列（de novo sequence assembly）
+（3）解讀上述分析的結果，以回答該研究計畫，最初想要回答的問題
+
+以目前臺灣來說， 已有很多學研團隊、定序服務公司、甚至對大資料之分析有興趣的個別研究者，可以做到第（1）、（2）類的新世代定序結果分析。但是針對生物醫學的研究計畫目的，解決生物醫學的問題，則不是上述單純的、定型化的技術操作，可以達到的目的。在以下的介紹，為了能讓讀者可以比較瞭解第（3）類資料解讀，和第（1）、（2）類的分析（以下將簡稱為「基本分析」）之間的差別，首先以「人類基因體研究及基因流行病學研究」為例，分別討論「基本分析」與「解讀」意義之時，所牽涉到的不同工作內容及特性。其次，關於進行「模式物種或是特有品系的全基因體註解和比較基因體研究」，所涉及的分析種類繁多，解讀之過程必須整合各種不同的分析及實驗結果，和人類基因體相關研究之間具有相當的差異，因此也於此另分段落提出我們個人的看法。
+
+人類基因體及基因流行病學
+
+NGS 定序結果的「基本分析」將成為實驗室常規
+NGS技術的價格繼續下降及產能不斷提升，我們可以預期在不久的未來，NGS技術將會被一般規模的生物醫學實驗室大量採用，不會再是大型整合性計畫才能買單的高貴技術。另外，在定序結果的分析方面，不具生物資訊專才的研究人員，也可以很容易且可以在短時間之內，便完成上述第（1）、（2）類的分析。以一人份的外顯子定序結果而言，原始資料量可能是10 Giga bytes，分析過程產生的資料，可能會有30~50 Giga bytes。雖然看起來NGS的資料量很大，但是經過了過去數年的發展，現在不論是開源（open-source）或是商用軟體，都已經有良好而且方便的整合流程可以利用。如果偏好使用開源軟體來進行資料分析，想要「自行」找到病人基因體或是外顯子區域（exome）和參考序列不同之處，並不是十分困難的工作。比如說，在臺灣的生醫研究人員，可以考慮使用國家高速網路與計算中心所提供的Galaxy系統，參考生物資訊核心設施所提供的教育訓練材料；此外，也可以使用商用軟體，如CLC Bio來進行上述的定序比對分析、或是全基因體組裝的工作。
+
+挑戰—有效地解讀資料
+但是以上的步驟完成之後，並不意味著隱藏在新世代定序結果之中的生物醫學意義，可以被順利解讀。這種資料解讀的工作，是在新世代定序數據分析之中，最困難的一個環節，也是決定研究計畫成敗的關鍵。以加拿大的經驗為例，應用新世代定序結果分析，來尋找單基因致病變異，只有66％的成功率（Finding of Rare Disease Genes Canada, FORGE Canada）。很明顯的，在NGS被廣泛使用的今天，得到大量序列、並進行初步的分析，是相對的容易，但是進一步「解讀」結果，是具有挑戰性的。
+
+舉例而言，在應用NGS技術於尋找致病基因變異時，最常見的一種困難，是得到數以萬計的候選變異位點，使得研究人員，無法直接以實驗方式，對各別的變異位點，逐一驗證和欲研究之生物現象之間的關聯性。要解決這樣的困境，必須要針對研究的目的，客製化資料分析的策略，將初始的序列比對結果，配合已有的各種生物知識，包含基因體註解、基因表現、生物路徑等等各種資料庫，進行進階分析。比如在尋找單基因遺傳疾病之致病變異時，由數以千計的候選位點之中，過濾出少於50個、最有可能造成疾病的基因變異，可能要配合各種人類基因體變異資料庫，如dbSNP、The 1000 Genomes Project、ClinVar、COSMIC、LSDB、HGMD等，來對候選的致病變異來進行過濾。
+
+此外，在找到比較確定的致病基因變異位點後，為了預測基因變異對於細胞及組織的影響，以建議可能的致病機制並協助後續的實驗設計，此時就會要設計更進階的異質資料整合策略。舉例而言，若是發現和某特定疾病相關的基因體變化，是座落於非蛋白質轉譯區域（non-protein-coding region），在致病機制的研究上，在過去會造成很大的困擾。
+
+因此，在解讀定序結果時，研究人員必須要考慮其它的可能性，如致病的基因體變異，是不是會影響轉錄因子和該變異區域的結合、或是改變了基因正常的剪接型式的調控。此時，一種可能的研究方式，是利用ENCODE已分析的實驗結果，來查詢是否和我們有興趣的區域重疊。換言之，我們在分析新世代定序數據時，很可能會利用其它研究所產生的大數據，來輔助解讀自己手上的新世代定序結果。
+
+特有物種及比較基因體研究
+
+NGS之技術，應用範圍不只是針對人類遺傳或是基因體疾病之研究而已，還可以用來研究病原致病之機制，以及新穎物種（品系）之特有的表現型調控機制等等。這種型式的資料分析，和一般已有參考序列（如人類基因體）之分析目的不同，因為前者的目的，是要研究特定物種之所以會有特別的表現型，其在基因層次的調控機制。比如榮陽團隊的靈芝基因體及表現體定序計畫，其中一個很重要的目的，是要藉由基因表現的資訊，註解生物反應路徑的啟動狀況，以明確指出「靈芝的菌絲體及子實體，皆可以產生可以調節哺乳類免疫功能的三帖類」。
+
+（三帖類：一種化學物質，普遍存在於菌菇類植物當中。）
+
+乍看之下，有了特定物種的定序結果，得到了組合序列或是完整的基因體全序列後，要想達到上述目的，似乎只需兩個步驟而已：使用NCBI BLAST進行序列資料庫比對，再使用京都基因與基因體百科全書（Kyoto Encyclopedia of Genes and Genome, KEGG）資料庫與相關工具，輔助註解新物種的生物反應路徑。但是，一個具前瞻性的新物種或是品系的基因體定序計畫，是具有開創該領域新的研究方向的作用，如人類基因體計畫的完成，對於各種生醫研究，都有著巨大的影響。因此，在進行基因體註解之時，為了能確實達到新物種定序計畫，所期望達到的生醫研究目的，有許多值得考慮的品管及進階分析議題。而類似的發想，也可以適用於其它物種的基因體定序計畫。例如在完成經濟物種的定序計畫後，經由註解，所得到的精確的基因體功能區及調控區的資料，可以應用於進階的實驗設計，有助於日後品系之鑑定、品種改良、育種等生技產業應用。以下我們將針對全基因體定序計畫之中，所包含的品質控管及多樣性的分析項目，進行討論。
+
+NCBI BLAST（NCBI Basic Local Alignment Search Tool）
+美國國家生物技術資訊中心（National Center for Biotechnology Information, NCBI）隸屬於美國國衛院（NIH）。BLAST為在NCBI網站所提供資料庫搜尋的工具，主要在做生物序列如DNA、蛋白質序列的比對。
+
+品質管控
+在基因體序列的獲得及註解之中，全基因體定序及組合序列的品質評估，是一個相對被輕視的項目，最常見的評估，一般只有序列組合長度分佈（如N50）。但是，如果定序結果、或是組合序列的品質沒有達到一定的水準，後續的基因體註解，甚至是比較基因體學分析，既使做得再好，也無法彌補原始資料的誤失。換言之，新物種的註解，不只是比對序列資料庫而已，必須要重視所有處理資料及步驟的品質，對每個步驟所產生的衍生性資料，都要確實檢驗，是否有達到品管的要求，以確保最後的結果，是可以作為後續研究的基礎。比如說，具國際水準的生物資訊核心設施，在進行新物種之全基因體註解之前，除上述的序列組合長度分佈外，還會用原始定序讀序（reads）的再比對率（remapping ratio）、是否有外來物種污染定序結果、基因預測之狀況 （如基因數目、基因長度、及外顯子數量分佈、與相近物種之基因的差別大小、新穎基因的數量、基因的鹼基比例偏向、不含「已知基因」之區域的長度及分佈等），來對全基因體定序及組合之成果，進行進階的精細的評估。以上的這些結果，若與預期之範圍，有很大的出入，可能表示定序的結果或是序列組合的狀況，並不理想。以下舉出兩種經常會發生的意外狀況：
+
+．在定序結果之中，有高比例的讀序（reads），其末端序列呈現不正常的鹼基偏向，這有可能是定序時插入序列的長度太短，以致於在定序時，對3’端點的讀序過程中，包含了轉接子（adaptor）區域。
+
+．預測的基因數量，遠遠超過預期，比如和類似物種的註解結果相比，具有兩倍以上的基因。這種狀況，可以意味著組合序列的完整性低於預期，以致於有相當多的基因，被截成兩段，分在不同的接合序列（contigs）上。
+
+除了以上的兩種狀況之外，還有更多的全基因體組合的品管問題，值得在進行全基因體的註解過程之中，加以考慮。
+
+多樣性分析
+一個具有國際水準的基因體定序計畫，一定包含一個完整的「基因體註解」、以及「比較基因體分析」。在新基因體定序計畫之中，序列的獲得、組合、與註解，是為了達到生物學研究上預先設定的目的，期望由定序結果的分析及比對，可以告訴我們一些本來不知道的資訊，並期望能由於這些知識，指引未來的研究方向及實驗設計。因此，完整的基因體註解，所涵蓋的分析項目，可能是超乎一般人想像的多，可以進行的分析種類，不是只有用區域性序列比對工具如BLAST進行序列資料庫的相似性比對而已。以英國劍橋桑格研究所（The Wellcome Trust Sanger Institute）與歐洲分子生物實驗室（EMBL）的歐洲生物資訊研究中心（EBI）合作的Ensembl計畫為例，對人類基因體的基本註解流程，就超過了50種以上的不同的基本分析項目，除了預測並註解基因的位置及結構外，還要再預測蛋白質功能區域、蛋白質修飾位點、基因家族（gene family）、預測外泌蛋白之特徵、基因啟動子預測、非蛋白質基因（noncoding RNA genes，如tRNA、miRNA、lncRNA）、在不同組織之中表現體分析、基因結構比對、重複性序列註解等等（可參見Ensembl網站）。此外，因為近年來在公開領域（public-domain）高通量資料之累積，Ensembl也加入了大量的基因表現、調控實驗結果，特別是來自於ENCODE的資料。
+
+DNA定序技術
+傳統定序→新世代定序→資料的解讀與分析→
+
+傳統定序可分為「Sanger定序法」及「化學斷裂法」。將待定序的基因序列切成小片段，接入細菌質體，利用細菌生長繁殖快速的特性，大量複製待測質體片段，再利用電泳分析讀出DNA序列。適用於較長的DNA片段，但傳統定序法費工繁瑣，且十分昂貴。
+
+新世代定序常見的儀器有Roche 454、Illumina Solexa及Life Technologies SOLiD，大幅提高效率、價格快速下降。先解讀各小片段基因序列，再運用資訊科技協助進行片段接合，不需進行質體複製，減少錯誤發生。
+
+另外一個重要的基因體定序結果的分析項目：跨物種的基因體比對。這種分析，是利用演化所提供的線索，比較不同基因體間序列層次亦或是基因層次的異同。這種研究方法，除了應用於人類致病基因變異的研究之外，尚有其它多種應用的可能性：比如對於新定序的物種而言，可以借用相近的模式物種已有的基因體定序及註解結果，來加速對這個物種的基因結構、基因功能、及生物反應路徑的註解，找出新物種所具有的新穎表現型的調控機制；在流行病學方面，可以從病原菌間基因體相似程度推測，在不同時間地點發生的傳染病之間是否有相關性，藉此找出可能的病源、進而達到對傳染病的監控。
+
+資料之整合　是未來的趨勢
+
+隨著NGS技術的進步，在未來的研究與應用之中，基因體序列將快速累積，在這種情況下，若再考慮人類族群基因體研究或是比較眾多物種基因體研究，則需要整合的定序結果的資料筆數（如人次）可能高達數十乃至於上千。近兩年來，在國際生醫研究領域，針對少量（如小於10位）病人或是物種品系的定序結果分析，已不再被視為是新穎之事，目前在國際一流生醫期刊上，已經可以看到基於數千份、甚至是上萬份定序結果的研究。如沃克（David H Walker）等人於2013年發表於The Lancet infectious diseases期刊的流行病學研究，針對了390株結核桿菌，進行了全基因體定序及分析；另外珀塞爾米（Shaun M. Purcell）等人 於2014年2月，發表於Nature期刊，關於思覺失調症（schizophrenia）的致病變異研究之中，對2536位病人及2543位正常人，進行了外顯子定序（exome-sequencing）分析。
+
+此外，近年來國際大型研究計畫的趨勢，走向了多樣性異質資料的收集。如ENCODE及TCGA等國際計畫，所開放的相關定序資料，涵蓋了基因體、轉譯體、附基因體、微小核醣核酸等等，另外，TCGA還收集了相當完整的臨床資料。這些計畫，已經將大部份的資料公開，如上述的The 1000 Genomes Project以及ENCODE都已經將資料公開，供各方自由下載使用。這些資料和以往最大的不同，在於其巨大的資料份數，以及分析時必須進行的複雜資料整合。
+
+對於臺灣一般規模的生醫實驗室而言，面對高度的國際競爭，我們可以參考國際上已有之範例：其一，我們應善加利用各種國際大型研究計畫所產生的成果。利用資料探勘的技術，由這些龐大的、多樣性的異質資料之中，整合解讀出其中隱藏的意義，協助產生假說、並進而設計小型實驗予以驗證。其二，是各個團隊之間共享定序結果，甚至加入國際團隊，以群體的力量，來達到單一團隊所無法達到的目的。
+
+
+致謝
+本文作者黃彥華博士，目前任職於陽明大學系統與合成生物學研究中心，同時是科技部生技類核心設施 E3「臺灣生物資訊聯盟」的成員之一。作者感謝本中心主任楊永正老師、蔡毓舜博士、邱艦瑩先生，及國家高速網路與計算中心雲端小組王聿泰博士所提供的寶貴意見。
+
+
+
+延伸閱讀
+1. Mardis, E.R., The impact of next-generation sequencing technology on genetics, Trends Genet, Vol. 24: 133-141, 2008.
+2. Birney, E. et al., Identification and analysis of functional elements in 1% of the human genome by the ENCODE pilot project, Nature, Vol. 447:799-816, 2007.
+3. Raney, B.J. et al., ENCODE whole-genome data in the UCSC genome browser (2011 update), Nucleic Acids Res, Vol. 39: D871-875, 2011.
+4. Boycott, K.M. et al., Rare-disease genetics in the era of next-generation sequencing: discovery to translation, Nat Rev Genet, Vol. 14: 681-691, 2013.
+5. Cancer Genome Atlas Research, N. et al., The Cancer Genome Atlas Pan-Cancer analysis project, Nature genetics, Vol. 45: 1113-1120, 2013.
+6. Huang, Y.H. et al., Generation and analysis of the expressed sequence tags from the mycelium of Ganoderma lucidum, PLoS One, Vol. 8: e61127, 2013.
+7. Durbin, R.M. et al., A map of human genome variation from population-scale sequencing, Nature, Vol. 467: 1061-1073, 2010.
+8. Li, H. et al., The Sequence Alignment/Map format and SAMtools, Bioinformatics, Vol. 25: 2078-2079, 2009.
+9. Flicek, P. et al., Ensembl 2011, Nucleic Acids Res, Vol. 39: D800-806, 2011.
+
+
+
+
+
+
+張貼者：
+
+
+
+科學月刊／科技報導
+
+
+
+
+
+
+
+
+
+反應： 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標籤：
+201409-393期,
+科技產業
+
+
+
+
+
+
+
+
+
+
+沒有留言:
+
+
+
+
+
+
+
+張貼留言
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+較新的文章
+
+
+較舊的文章
+
+首頁
+
+
+
+
+訂閱：
+張貼留言 (Atom)
+
+
+
+
+
+
+
+
+
+
+網站啟事
+
+科技報導電子版平臺由ISSUU網站提供，瀏覽器的廣告阻擋功能可能會阻擋電子書內容。若在本站看不到電子書畫面，請確認您的瀏覽器是否有開啟廣告阻擋功能。於版權問題如有任何疑慮，請洽編輯部。為尊重著作權，本網站內容請勿任意轉載，若需引用圖文請先與我們連繫。
+
+
+
+
+
+
+
+
+
+
+
+站內搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+科報檔案櫃
+
+
+
+
+科報檔案櫃
+七月 2017 (1)
+六月 2017 (1)
+五月 2017 (19)
+四月 2017 (32)
+三月 2017 (1)
+二月 2017 (1)
+一月 2017 (4)
+十二月 2016 (1)
+十一月 2016 (3)
+八月 2016 (3)
+七月 2016 (14)
+六月 2016 (6)
+五月 2016 (72)
+三月 2016 (2)
+一月 2016 (1)
+十二月 2015 (4)
+十一月 2015 (22)
+十月 2015 (21)
+九月 2015 (15)
+八月 2015 (12)
+七月 2015 (4)
+六月 2015 (21)
+五月 2015 (27)
+四月 2015 (17)
+三月 2015 (11)
+二月 2015 (20)
+一月 2015 (22)
+十二月 2014 (17)
+十一月 2014 (3)
+十月 2014 (92)
+九月 2014 (4)
+八月 2014 (4)
+七月 2014 (5)
+六月 2014 (7)
+五月 2014 (4)
+四月 2014 (10)
+三月 2014 (8)
+二月 2014 (2)
+十二月 2013 (21)
+十一月 2013 (17)
+十月 2013 (17)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+科技報導
+
+
+
+201504-400期
+
+
+201505-401期
+
+
+201506-402期
+
+
+201507-403期
+
+
+201508-404期
+
+
+201509-405期
+
+
+201510-406期
+
+
+201511-407期
+
+
+201512-408期
+
+
+201601-409期
+
+
+201602-410期
+
+
+201603-411期
+
+
+201604-412期
+
+
+201605-413期
+
+
+201606-414期
+
+
+201607-415期
+
+
+201608-416期
+
+
+201609-417期
+
+
+201610-418期
+
+
+201611-419期
+
+
+201612-420期
+
+
+201701-421期
+
+
+201702-422期
+
+
+201703-423期
+
+
+201704-424期
+
+
+201705-425期
+
+
+201706-426期
+
+
+201707-427期
+
+
+
+
+
+
+
+
+
+
+
+
+
+專欄
+
+
+
+目錄
+
+
+科技產業
+
+
+科技與人文
+
+
+科學文摘
+
+
+時事評析
+
+
+張昭鼎逝世二十周年紀念研討會專輯
+
+
+產官學研
+
+
+焦點話題
+
+
+新儒林外史系列
+
+
+
+
+
+
+
+
+
+
+
+
+
+生命科學論壇電子雙週報訂閱
+
+在此輸入Email：訂閱取消 送出
+
+
+
+
+
+
+
+
+
+
+
+
+追蹤者
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本站流量
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學基因體醫學中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學基因體醫學中心
+
+
+
+迴首頁
+最新消息
+中心簡介
+研究概況
+討論區
+聯絡我們
+
+相關連結
+
+
+
+
+
+
+次世代高通量定序
+核酸自動定序分子檢驗及分析微生物快速鑑定細胞株基因型鑑定生物資訊分析表單下載
+
+
+
+
+
+:::　首頁>服務項目>生物資訊分析
+
+
+生物資訊分析簡介
+簡介
+
+基因組研究已經從單一細胞的研究擴大到整個生物系統的研究。同時高通量全基因體定序的技術（如：NGS）也已經把定序流程的瓶頸由產生實驗數據轉到以資訊為基礎的大量計算分析。由於這些新技術的發展成功的推動了許多在生物網路中的大規模定量之研究，我們預期在未來的幾年中，以大規模數據為基礎進行的系統生物運算將會成為主流。
+然而NGS的功能雖然強大，並且可以應用在許多的臨床醫藥上，但NGS數據的解讀是非常複雜的。想要將NGS所產生的資料成功且精確的應用，需要同時具有分子生物及生物資訊的專業能力及經驗來支援這個工作。成功大學基因體醫學中心的團隊成員包括分子生物學家、遺傳學家、病理學家、資訊科學和結構工程師，我們的專業領域涵蓋了分子生物學、生理學和內分泌學、病理學、腫瘤生物學、遺傳學、資料庫及資料探勘、網路安全及工程學等等。因此，我們的團隊在這個領域中是處於領先的地位，也有足夠的資源及知識來執行如此先進的工作。依據我們過去傑出的研究紀錄和經驗，提供完整且完善的新一代生物資訊服務是可預期的。因應生物資訊的需求，本中心除提供專業諮詢外，也提供以下各項客製化的服務：
+基因組註解：基因組序列的功能性描述是許多基因體研究計畫的首要目標。我們的服務將提供各種基因體基因及區域之預測和註解。微陣列數據分析：生物晶片（Microarray）平臺在用於檢測已知序列變異和量化表現的變化上，至今仍被認為是最可靠的技術。我們將提供客製化服務，並根據GO及KEGG項目、轉錄因子和基因表現圖譜和基因叢集分析的資訊，提供豐富的功能分析結果。新一代定序（NGS）序列分析：由NGS技術所得到的序列片段，需要大量計算能力和特殊演算法技術進行組合與分析。除了由定序儀應用軟體提供之基本的分析外，我們另外將建構軟體系統及流程來提供分析序列資料及改進重組序列的品質。此外我們亦將利用商業或自有開發的軟體提供後續的應用分析，這包含了找出序列變異點、量化基因表現量及特有序列模組的辨識等等。資料庫設計和開發：由於新興技術的發展，許多在生物網路中的大規模定量之研究產生出大量的數據為基礎。如何儲存資料及演繹出之資訊是一個重要的課題。本中心的研究人員在過去參與過許多生物資料庫的設計和開發的計畫，因此經驗豐富。未來我們將提供我們的專業知識來協助研究人員發展他們自己的資料庫。
+生物資訊分析收費標準 (收費標準更新，自2014年5月1日起生效)
+微陣列數據分析*
+ (Gene Expression, Copy Number Variation, miRNA Expression, and ChIP-on-chip analysis)﹣NT$5,000元/片 (by Partek)
+NGS序列分析**
+基礎分析：Convert XSQ to CSFASTA+QV or Fastq – free (by LifeScope)
+進階分析：
+
+Whole genome resequencing﹣10,000元/樣品/分析 (by LifeScope)
+
+Single nucleotide polymorphism finding
+Single nucleotide variant analysis
+Small Indel analysis
+Large Indel analysis (paired-end library only)
+Copy number variation (human only)
+Exome sequencing﹣10,000元/樣品/分析 (by LifeScope)
+
+Single nucleotide polymorphism finding
+Single nucleotide variant analysis
+Small Indel analysis
+Enrichment analysis
+RNA sequencing Package﹣25,000元/ 一組樣品/分析 (by LifeScope and Partek)
+
+2 samples /1 set (result files: 2 profile + 1 comparison ；含mapping*2 )
+Identify gene/exon/transcript expression levels
+Identify differentially expressed gene/exon/transcript
+Identify alternative spliced transcipts
+RNA sequencing and lncRNA Package﹣40,000元/ㄧ組樣品/分析 (by LifeScope and Partek)
+
+2 samples /1 set (result files: 4 profile + 2 comparison ，含mapping*2)
+Identify gene/exon/transcript expression levels 
+Identify alternative spliced transcripts
+Identify differentially expressed gene/exon/transcript 
+Identify lncRNA expression levels 
+Identify differentially expressed lncRNA 
+ChIP sequencing Package﹣20,000元/一組樣品/分析 (by LifeScope and CLC bio)
+
+2 samples (treatment vs control)/1 set (result files: 5 files) ，含mapping*2
+o	Apply different procedures to identify binding region
+
+miRNA sequencing Package﹣25,000元/一組樣品/分析(by LifeScope and Partek)
+2 samples /1 set (result files: 2 profile + 1 comparison) ，含mapping*2 
+Identify known microRNAs and other type of small non-coding RNAs
+Profile differentially expressed miRNA
+Methylation-specific sequencing﹣20,000元/序列/分析(by LifeScope and Partek)
+
+Identify genome methylated regions
+Identify differentially methylated regions
+
+專案分析：
+
+Whole genome resequencing﹣依專案討論內容而定
+Sequence variant calling against 1000 Genome, and COSMIC databases (or other user provided database)
+Sequence variant calling against Chinese Han population SNV database
+Sequence variant prediction by SIFT and PolyPhen2
+Biological Interpretation : GO enrichment
+Biological Interpretation : Pathway analysis
+User demanded analysis
+Exome sequencing﹣依專案討論內容而定
+Sequence variant calling against dbSNP, 1000 Genome, and COSMIC databases (or other user provided database)
+Sequence variant calling against Chinese Han population SNV database
+Sequence variant prediction by SIFT and PolyPhen2
+Biological Interpretation : GO enrichment
+Biological Interpretation : Pathway analysis
+User demanded analysis
+De novo assembling﹣依專案討論內容而定 (by LifeScope and Denovo2)
+Assemble genomes, which reference sequences are not available, from short reads
+RNA sequencing﹣依專案討論內容而定 (by LifeScope and Partek)
+Single nucleotide variant analysis
+Single nucleotide polymorphism finding
+Allele-specific expression
+Cluster by gene expression
+Biological Interpretation : GO enrichment
+Biological Interpretation : Pathway analysis
+User demanded analysis
+ChIP sequencing﹣依專案討論內容而定
+Binding motif finding
+De novo motif identification
+Biological Interpretation : GO enrichment
+Biological Interpretation : Pathway analysis
+User demanded analysis
+miRNA sequencing﹣依專案討論內容而定 (by Partek)
+Target gene prediction
+Finding Overrepresented microRNA Target Sets
+Correlating microRNA and mRNA Data
+User demanded analysis
+Methylation-specific sequencing﹣依專案討論內容而定 (by Partek)
+Integrated with gene expression profile
+Biological Interpretation : GO enrichment
+Biological Interpretation : Pathway analysis
+User demanded analysis
+
+生物路徑分析(Pathway Analysis, 使用MetaCore? 進行分析)﹣5,000元/dataset
+
+
+Analysis includes Pathway Maps, Process Networks, Diseases(by Biomarkers), Metabolic Networks, and GO Processes 
+Network objects in MetaCore? are: proteins, protein complexes or groups, peptides, RNA species, compounds, EC numbers (function), or reactions.
+Default summary exported from MetaCore including short description and representative figures of analysis results.
+
+資料庫設計和開發﹣依專案討論內容決定
+
+
+
+
+
+
+© 2011 國立成功大學基因體醫學中心　版權所有｜E-mail : em72620@email.ncku.edu.tw｜最佳建議瀏覽為1024X768px地址：臺南市北區勝利路367號3樓3107室｜TEL : 06-2353535 #3614、#3632｜傳真號碼 : 06-2389894｜
+
+
+
+
+
+
+
+國立交通大學機構典藏：建立一個新穎的生物資訊平臺來預測與驗證做為早期診斷的microRNA 生物標記組合
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+研究計畫
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 建立一個新穎的生物資訊平臺來預測與驗證做為早期診斷的microRNA 生物標記組合Establishing a Novel Discovery and Validation Platform for Identifying Combinations of Early Detection and Diagnostic microRNA Biomarkers
+作者: 黃憲達Huang Hsien-Da國立交通大學生物科技學系（所）
+公開日期: 2015
+摘要: 微小核醣核酸〔microRNA/miRNA〕為一段長約由22個核苷酸組成的非編碼核醣核酸分子，廣泛地研究 miRNA在基因表現調控的角色。近年來研究發現，微小核醣核酸在血清、血漿等體液中穩定存在，循 環血液中的miRNA表現圖譜被應用於癌症、心血管、免疫及各種疾病。miRNA生物標記〔miRNA biomarker〕為非侵入性的診斷，具有極大的潛能成為疾病及癌症診斷與預測的工具。因此，發展 miRNA生物標記分析及驗證平臺極為重要。在此研究計晝中，我們感興趣於大腸直腸癌〔colon cancer〕、冠狀動脈疾病〔coronary artery disease〕、肝癌〔liver cancer〕及妊娠毒血症〔preeclampsia〕的早 期檢測與診斷。
+
+本研究將發展一個早期檢測和診斷miRNA生物標記〔miRNA biomarker〕s的分析及驗證平臺，結 合資料庫、高通量定序實驗〔Next-generation sequencing〕與序列分析技術、生物資訊〔Bioinformatics〕、 統計分析與多重miRNA定量技術。研究目標如下：
+
+〔a〕建立miRNA生物標記分析平臺，包含miRNA生物標記知識庫建立、miRNA的功能註解、分析 miRNA表現圖譜找到及驗證新的miRNA生物標記及挑選表現及功能獨立的miRNA〔第一年〜 第三年〕。
+
+〔b〕發展多重miRNA定量技術，同時測定多個miRNA生物標記基因表現〔第二年〜第四年〕。
+
+〔c〕結合臨床檢體來驗證miRNA生物標記組，第一〜二年為妊娠毒血症，第三年為肝細胞癌和冠狀 動脈疾病，第四年為肝細胞癌。
+
+本研究特色在於，我們將整合計算與實驗方法來挑選早期檢測及診斷miRNA生物標記，建立多重 miRNA定量技術同時測定多個miRNA生物標記基因表現。為了挑選出最佳的miRNA生物標記組合 一個最好的生物標記模組，利用表現及功能獨立的miRNA生物標記來最小化生物標記及最大化疾病 診斷的分別。我們將產出妊娠毒血症、肝癌、冠狀動脈疾病及大腸直腸癌的早期診斷miRNA生物標 記組將被發展及驗證。每個疾病的miRNA生物標記組，將利用至少200以上的臨床檢體來驗證，我 們將運用Area under the curve〔AUC〕、敏感性〔Sensitivity〕及特異性〔Specificity〕等指標來衡量疾病預測 模型的準確度。本研究成果將可對於所提出疾病之早期偵測及診斷做出很好的貢獻。亦可針對所提出 的miRNA生物標記之生物功能探討，做深入的分析。MicroRNAs are 22-nucleotide-long non-coding RNA molecules. The crucial role of different miRNAs in gene-expression regulation has been widely studied. Recently, miRNAs have been detected in serum, plasma, and other body fluids, and circulating miRNA profiles have now been associated with the pathogenesis of cancer, along with cardiac- and immune-related diseases. Circulating miRNAs have great potential for use as clinical biomarkers in various diseases, including cancer, because noninvasive detection in various medical conditions is possible. Therefore, it is necessary to develop a discovery and validation platform for the systematic identification of miRNA biomarkers. Besides, in this project we are interested in early detection and diagnostics of colon cancer, liver cancer, coronary artery disease (CAD) and preeclampsia.
+
+In this project, we plan to construct an integrative miRNA biomarker discovery and validation platform for early detection and diagnostics. We propose a bioinformatics-driven approach combining database, high-throughput sequencing, computational pipelines and a multiplex miRNA quantification method. The major aims of this project are summarized as follows:
+
+(a)	Establishing miRNA biomarker discovery platform including the construction of miRNA biomarker repository, functional annotations of miRNAs, identification of novel miRNA biomarkers using circulating miRNA expression profiles, and the selection of expressional and functionally-independent miRNA biomarkers (1st year 〜3rd year).
+
+(b)	Developing a multiplex miRNA quantification method for simultaneously detecting the expression levels of miRNAs in a diagnostic panel (2nd year 〜4th year).
+
+(c)	Incorporating clinical samples to validate the constructed miRNA biomarker panels for Preeclampsia (1st and 2nd year), colon cancer (3rd year), coronary artery disease (CAD) (3rd year and 4th year), and hepatocellular carcinoma (HCC) (4th year)
+
+We will develop an integrative approach for selecting circulating miRNA biomarkers for early detection. A multiplex circulating miRNA quantification method will be developed for determining the expression levels of several miRNA biomarkers. As to select the best circulating miRNA biomarker for constructing a panel, we will develop a method for minimizing number of miRNA biomarkers and maximizing disease discrimination based on expressional and functional independence.
+
+Panels of circulating miRNA biomarkers for early diagnostics of preeclampsia, hepatocellular carcinoma, Coronary artery disease, and colorectal cancer will be developed and validated, respectively. These panels will be validated by at least 200 samples of independent cohorts for each disease. Predictive models will be devised and the Area under the curve (AUC), sensitivity, and specificity will be assessed. The major contribution of this work is to establish an integrated platform for circulating miRNA biomarkers discovery and validation. Accurate predictive models comprising mRNA biomarkers of the four diseases can provide an alternative solution for early detection and diagnostics.
+官方說明文件#: MOST103-2628-B009-001-MY3
+URI: http://hdl.handle.net/11536/130384https://www.grb.gov.tw/search/planDetail?id=11279532&docId=457467
+顯示於類別：研究計畫
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef建立一個新穎的生物資訊平臺來預測與驗證做為早期診斷的microRNA 生物標記組合 / 黃憲達;Huang Hsien-Da建立一個新穎的生物資訊平臺來預測與驗證做為早期診斷的microRNA 生物標記組合 / 黃憲達;Huang Hsien-DaA systematic review of microRNA expression profiling studies in human gastric cancer / Shrestha, Sirjana;Hsu, Sheng-Da;Huang, Wei-Yun;Huang, Hsi-Yuan;Chen, WenLiangmicroRNA: A Master Regulator of Cellular Processes for Bioengineering Systems / Sun, Wei;Li, Yi-Shuan Julie;Huang, Hsien-Da;Shyy, John Y-J.;Chien, ShumiRTar: an integrated system for identifying miRNA-target interactions in human / Hsu, Justin Bo-Kai;Chiu, Chih-Min;Hsu, Sheng-Da;Huang, Wei-Yun;Chien, Chia-Hung中國醫藥大學 - 以蛋白質體學分析唾液運鐵蛋白作為口腔癌早期診斷的生物標記 / 黃家昌(Chia-Chang Huang); 林嘉德(Chia-Der Lin); 周於楨; 賴志河(Chih-Ho Lai); 林振文(Lin Cheng Wen) 中國醫藥大學 - 以蛋白質體學分析HAPTOGLOBIN為早期診斷口腔癌的可能血漿生物標記 / 張明璋(Ming-Chang Chang); 賴志河(Chih-Ho Lai); 張乃文(Nai-Wen Chang); 林錦芬(Lin, Chin-Fen); 林嘉德(Chia-Der Lin) 國立高雄應用科技大學 - 建構新穎的原核生物操作組預測方法及分析平臺 / 楊正宏, 張學偉,莊麗月 國立高雄應用科技大學 - 建構新穎的原核生物操作組預測方法及分析平臺 / 楊正宏, 莊麗月,張學偉 臺北醫學大學 - 於痰液及血漿樣本中檢測遺傳和表遺傳生物分子指標做為肺癌早期診斷依據的探討 / 洪千惠; Chien-Hui Hung Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：研究計畫
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+研究計畫
+: [16504]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 16504 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2017單層碳與Weyl半金屬的電動力學性質儒森斯坦 ; 國立交通大學電子物理學系（所） 
+2016微波電漿氮化金屬氧化物及化學氣相沉積鑽石張立; CHANG LI; 國立交通大學材料科學與工程學系（所）
+2016功能性新穎螢光體之研製、特性鑑定及能量傳遞之研究與其在節能、生化檢測與綠能元件之應用陳登銘; CHEN TENG-MING; 國立交通大學應用化學系（所）
+2016新穎矽量子點薄膜之開發與其在太陽能電池之應用李柏璁; Lee Po-Tsung; 國立交通大學光電工程學系（所）
+2016分子設計與元件工程於高分子太陽能電池許千樹; HSU CHAIN-SHU; 國立交通大學應用化學系（所）
+2016結合非揮發性之多核心系統與記憶體架構陳添福; Chen Tien-Fu; 國立交通大學資訊工程學系（所）
+2016數位鑑識應用於多國文字的印刷來源辨識及掃瞄印刷偽造文件的偵測蔡銘箴; TSAI MIN-JEN; 國立交通大學資訊管理與財務金融學系
+2016補助國內大專院校購置「 Datastream 財經資訊」資料庫專案戴天時; Dai Tian-Shyr; 國立交通大學資訊管理與財務金融學系
+2016具非揮發性記憶體之多核心處理器電源與記憶體管理曹孝櫟; Tsao Shiao-Li; 國立交通大學資訊工程學系（所）
+2016R-1234 系列冷媒熱流特性與系統研究開發王啟川; WANG CHI-CHUAN; 國立交通大學機械工程學系（所）
+2016克雷白氏肺炎桿菌CG43反應膜外壓力的雙分子系統CpxAR 的功能性探討彭慧玲; PENG HWEI-LING; 國立交通大學生物科技學系（所）
+2016探討大腦語音神經編碼之機制與長期聲音處理對其之影響曲在雯; Chiu Tzai-Wen; 國立交通大學生物科技學系（所）
+2016設計合成新穎P型與N型有機共軛分子應用於溶液製程之有機光電元件鄭彥如; Cheng Yen-Ju; 國立交通大學應用化學系（所）
+2016指定機組之流線型生產排程：複雜度分析與文獻綜覽林妙聰; Lin Bertrand  Miao-T; 國立交通大學資訊管理與財務金融學系
+2016利用果蠅中樞神經系統發育系統性探討神經幹細胞的典型分化模式及分子機制高智飛; Kao Chih-Fei; 國立交通大學生物科技學系（所）
+2016利用溶液製程之鈣鈦礦材料製作新穎光電元件-子計畫二：可溶液製程之有機金屬鹵化鈣鈦礦光電材料特性研究與其發光元件的開發陳方中; Chen Fang-Chung; 國立交通大學光電工程學系（所）
+2016台灣左翼思想口述計畫（1970年代至1980年代）陳光興; CHEN KUAN-HSING; 國立交通大學社會與文化研究所
+2016族群傳播與客家蔡欣怡; 國立交通大學傳播與科技學系
+2016新穎磁性複合型介晶體材料之研製與應用朱英豪; Chu Ying-Hao; 國立交通大學材料科學與工程學系（所）
+2016結合傳統金屬與新穎類金屬材料發展錶面電漿之垂直整合元件進行生物粒子捕獲與感測之前瞻性研究李柏璁; Lee Po-Tsung; 國立交通大學光電工程學系（所）
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 16504 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+88 
+吳重雨88 
+蔡春進77 
+林進燈75 
+LIN CHIN-TENG75 
+黃志彬74 
+許千樹73 
+HSU CHAIN-SHU71 
+張良正71 
+李鎮宜69 
+LEE CHEN-YI.
+下一步 >
+
+關鍵字
+408 
+ 114 
+類神經網路79 
+客家71 
+Neural network58 
+量子點54 
+虛擬實境53 
+Hakka48 
+網際網路47 
+氮化鎵45 
+Virtual reality.
+下一步 >
+
+公開日期
+5169 
+2010 - 20177869 
+2000 - 20093466 
+1993 - 1999
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：運用高通量定序分析陰道微生物菌相與陰道炎之相關性和精液菌相與不孕症之關聯性
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 運用高通量定序分析陰道微生物菌相與陰道炎之相關性和精液菌相與不孕症之關聯性Using high-throughput sequencing technology and bioinformatics analysis to discover the association between vaginal microbiota and bacterial vaginosis and the correlation between semen microbiota and infertility
+作者: 翁順隆Weng, Shun-Long黃憲達HUANG, HSIEN- DA生物科技學系
+關鍵字: 高通量定序;生物菌相;陰道炎;精液;不孕症;NGS;Microbiota;Semen;Vagina;Infertility
+公開日期: 2015
+摘要: 人體的各部位中存在著許多細菌，部分對人體有益，而部份則可能會傷害及影響人
+體健康。目前已有研究發現，細菌不僅是造成陰道炎的主因，更與女性不孕症有關，此
+外男性精菌症也與男性不孕症息息相關。根據衛生署的資料，台灣生育年齡的夫妻約有
+15%有不孕的問題，不孕症儼然已成為一項嚴重的問題，而分析男女生殖道菌相與不孕
+症之關聯性，將有助於找出不孕症之成因，提供未來診斷與治療的依據，因此是一相當
+重要之研究。然而，過去細菌菌相(bacterial flora)之研究，大多使用培養(culture)或 PCR
+方式進行分析，但上述方法只能針對數種細菌進行分析，且有許多細菌難以在人工培養
+環境中存活，因此造成研究上之瓶頸。近年來隨著高通量定序(high‐throughput
+sequencing)技術快速發展，利用細菌 16S 宏觀基因體(Metagenomics)之分析方法提高
+菌相證實的準確度，可大幅改善傳統菌相檢測之侷限性。
+本研究將運用高通量定序技術，結合生物資訊分析，探討陰道菌相與細菌性陰道炎
+的關係及精液菌相與男性不孕症之關聯性。本研究第一個主題是收集停經前與停經後婦
+女之陰道檢體，運用高通量定序與生物資訊分析技術，建立台灣婦女陰道菌相資料庫，
+並配合臨床特徵之診斷(Nugent Score、Amsel’s criteria 等)，將樣本分為陰道炎與健康兩
+類，藉此分析停經前與停經後婦女之陰道菌相組成與差異，並找出造成不同年齡層婦女
+ii
+
+之細菌性陰道炎的主要菌種與菌相特徵，研究結果發現細菌菌相與陰道檢體臨床特徵有
+顯著之關聯性，研究成果不僅可作為細菌性陰道炎判斷與分類的依據，更可進一步作為
+各年齡層細菌性陰道炎病患用藥之參考。
+本研究第二個研究主題是運用高通量定序與生物資訊分析精液檢體，建立台灣男性
+精液菌相資料庫，並配合臨床特徵之診斷(精蟲數量、活動力、型態與精蟲抗體等)，將
+樣本分為正常品質與低品質精液兩類，分析兩者菌相之差異，找出造成臨床特徵值差異
+之菌種，研究結果顯示精液菌相可分為三種類型，且細菌菌相與精液品質有顯著之關聯
+性，研究成果將有助於未來對男性不孕症的預防及治療。本研究成果可提供未來不孕症
+夫妻檢測與治療的新方向。Abstract
+The human body plays host to a vast array of bacteria which are harmful or beneﬁcial.
+It  has  been  know  that  vaginal  microbiota  is  related  to  bacterial  vaginosis  and
+bateriospermia is correlated to male infertility. Most of the previous studies used culture
+method  or  PCR  to  analyze  bacteria  flora.  Those  methods  could  only  focus  on  several
+bacteria. Moreover, most bacteria could not be cultured. Thus, it becomes a bottleneck of
+bacterial flora study. In recent years, limitation of traditional bacterial flora identification
+is improved as fast development of high‐throughput sequencing technology because of
+accuracy in identifying bacteria.
+In  this  study,  we  use  high-throughput  sequencing  technology  and  bioinformatics
+analysis  to  investigate  the  relationship  between  vaginal  bacterial  flora  and  bacterial
+vaginosis and the correlations between semen bacterial flora and male infertility. The first
+aim of this study is to find the relationship between vaginal disorders and vaginal bacterial
+flora.  The  specimens  were  collected  from  pre‐menopause  and  menopause  women.  In
+order  to  find  causes  of  vaginal  disorders  from  different  ages,  we  combine  clinical
+iv
+
+examination criteria, such as Nugent Score and Amsel's criteria, to separate specimens
+into case and control group. The analysis results show that the specific patterns of vaginal
+flora are different in women from different age with bacterial vaginosis, and it could be
+used in prescription in bacterial vaginosis treatment.
+The secondary aim of this study is to analyze the relationship between semen flora,
+semen  quality  and  male  infertility.  Here  we  present  an  analysis  approach  using  next-
+generation  sequencing  technology  and  bioinformatics  analysis  to  investigate  the
+associations between bacterial communities and semen quality. The results suggest that
+the most abundant genera among all samples are Lactobacillus (19.9%), Pseudomonas
+(9.85%), Prevotella (8.51%) and Gardnerella (4.21%). The proportion of Lactobacillus
+and Gardnerella was significantly higher in the normal samples, while that of Prevotella
+was significantly higher in the low quality samples. The analysis results suggest seminal
+bacteria  community  types  are  highly  associated  with  semen  quality.  The  study
+significantly contributes to the current understanding of the etiology of male fertility.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT070187015http://hdl.handle.net/11536/125776
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefBacterial Communities in Semen from Men of Infertile Couples: Metagenomic Sequencing Reveals Relationships of Seminal Microbiota to Semen Quality / Weng, Shun-Long;Chiu, Chih-Min;Lin, Feng-Mao;Huang, Wei-Chih;Liang, ChaoSystematic Analysis of the Association between Gut Flora and Obesity through High-Throughput Sequencing and Bioinformatics Approaches / Chiu, Chih-Min;Huang, Wei-Chih;Weng, Shun-Long;Tseng, Han-Chi;Liang, ChaoSuperoxide dismutase activities of spermatozoa and seminal plasma are not correlated with male infertility / Hsieh, YY;Sun, YL;Chang, CC;Lee, YS;Tsai, HDDynamic change of surface microbiota with different environmental cleaning methods between two wards in a hospital / Chen, Chang-Hua;Tu, Chi-Chao;Kuo, Han-Yueh;Zeng, Rong-Fong;Yu, Cheng-Sheng中原大學 - 非相關性與相關性MIMO通道之容量估測與分析 / 莊國樑;劉大勇 長庚科技大學 - 非相關性與相關性MIMO通道之容量估測與分析 / 莊國梁;劉大勇;Kuo-Liang Chuang;Ta-Yung Liu 元智大學 - 以大腸桿菌為主的腸道菌相關之噬菌體致病性基因分析與比較 / 蔡鬱偉; Yu-Wei TSAY 東吳大學 - 台灣黑熊成長時期腸道菌相多樣性與熊科動物腸道菌相相關性分析 / 劉正康,; Liu, Cheng-Kang 國立中興大學 - 不孕族群精液參數和體外受精率相關性之研究 / 蔡宜庭; Yi-Ting Tsai 國立中興大學 - 不孕族群精液參數和體外受精率相關性之研究 / 蔡宜庭; Yi-Ting Tsai 中山醫學大學 - 台灣中部某醫學中心醫療照護相關之Methicillin抗藥性金黃色葡萄球菌感染率預測方法之探討－趨勢、抗生素使用量與抗藥性相關性及時間序列分析和分子生物分型 / 李原地; Yuan-Ti Lee Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+國立中興大學基因體暨生物資訊學研究所
+
+
+
+
+
+
+
+國立中興大學基因體暨生物資訊學研究所
+
+中興大學
+生命科學院
+
+ENGLISH
+
+
+
+迴首頁 
+
+
+迴首頁  聯絡信箱  網站地圖 
+
+
+
+
+
+
+			﻿			
+系所簡介
+行政人員
+相關法規
+申請表格
+師資陣容
+課程規劃
+修業規定
+招生訊息
+相關連結
+活動花絮
+畢業資訊
+產學合作
+
+
+
+
+
+
+首頁 > 系所簡介
+
+
+
+
+
+系所簡介 
+
+
+簡介
+一、民國97年8月1日正式成立『生物資訊研究所』。
+二、民國98年8月1日更名為『基因體暨生物資訊學研究所』。
+ 
+本校生物科技相關系所，經過多年來的發展後，在研究上多有顯著的成果。有鑒於電腦及網際網路資源所衍生之生物資訊學，對於近代分子生物科學的研究上所能提供的支持與應用愈來愈不可忽視，因此，在大學生命科學教育中，教導學生進入生物資訊的世界，整合並善用蘊含於其中的豐盛資源和資訊，並培養生物資訊之專才，然而，為因應後基因體時代，大量知識快速的產出與累積，基因體學和生物資訊學，事實上是密不可分。因此為整合並充分分析及量化這些大量的知識，同時將基因體學和生物資訊學作教學暨研究上之結合，因此將原生物資訊研究所擴大其研究領域範圍，並更名為基因體暨生物資訊學研究所。 
+招生特色說明
+本所結合生物與資訊專長的教師，透過跨領域整合型研究計畫，培養學生具備基因體及生物資訊學實用之產業和學術研發能力，應用於個人化醫療生技產業和資訊工業，進而邁向生醫資訊科技(BIO-IT)產業發展，成為生物科技、生物資訊、程式設計及大數據研究之菁英。
+ 教育目標
+一、培育專精基因體學暨生物資訊學領域之人才
+二、培育具邏輯推理、數理分析與解決問題能力及發展創新精神之人才
+三、培育具生物科技及資訊科技跨領域整合能力之人才
+四、重視專業倫理、培養學生獨立研究及領導能力
+本所發展方向與重點
+為配合國家生物科技發展，達成尖端水準的基礎研究目標和學術創新，本所研究發展重點如下：
+一、系統生物與醫學資訊：
+整合不同層次的生物資訊，發展出一個全生物系統的定量模型為系統生物學的主要精神。此模型可讓我們對生物系統的運作有更深的瞭解，可應用在農業、環保、疾病預防、醫學診斷、藥物研究等領域上。由於所有生物系統都極端複雜，本領域的研究性質，在於瞭解一個複雜系統的高層次的一些特性，並探討如何會經由一群沒有這種特性的子系統之間的相互作用而浮現。系統生物學多採用高通量的技術，如基因晶片、蛋白質體技術、二維電泳法、基因體定序等大數據並以此建構基因、蛋白質及生物功能網路，進而建立其相關路徑與循環的模型。在後基因時代，本所利用基因體研究以及蛋白體研究大量解讀生物表現的特性，結合本所生物和資訊學專長的師資，藉由生物資料的獲取和迅速電腦推算的優勢，整合出一套能詳細解釋生物機制的調節與影響的研究策略，可應用的範圍包括細胞內生理調控路徑及癌症細胞生理反應等研究。舉例而言，有越來越多不同物種的高通量轉錄體組 (transcriptome)的解序資料與轉錄因子相關的ChIP-chip 和 ChIP-seq 資料可被利用。我們正在發展一個新的方法，利用這些公開的資料在每個感興趣的模式物種中鑑別出一組可信的微RNA上游調控因子和蛋白質作用網路。本所已架構完整可供系統生物學研究之基因體與蛋白質體之相關軟硬體設施及核心實驗室，其中重點研究計畫包括:
+1. 利用序列資料和 haplotype 基因體來尋找染色質特徵。
+2. 利用RNA-seq技術研究 蛋白質作用網絡。
+3. 利用GWAS、OMIM和基因表現資料研究疾病相關基因作用網絡。
+4. 微RNA (microRNAs)上游調控網路的演化。
+二、基因體醫學：
+基因體學是研究生物基因組成和如何利用基因序列來解決生物、醫學和工業領域的重大問題的一門學問。該學門提供基因組信息以及相關數據系統利用。近十年來，高通量的基因定序與電腦分析演算技術促成了多種生物的基因體解碼。生物基因體資料數量快速增加，已遠非人力所能處理，有效率的生物資訊建構與分析已成大數據實用化之關鍵。而目前本所積極進行重要生物之基因體定序計畫，亦產生大量之序列資訊並建立相關資料庫。其中重要微生物之序列解碼更是重點。歷經了35億年的演化，微生物不僅成功地生長在地球的每個有生命的角落，也支持著整個生物圈的生存。不管是從演化的時間，還是生存的範圍來說，微生物的基因庫其實可說是生命在地球生存的一部百科全書。因為他們通常有著較小的基因體，所以很適合被來系統性的探討各種生命的基礎現象。微生物的世界雖然龐大複雜無所不在，但是真正被人類瞭解的其實還很少。即便是在人類的身體上，裡裡外外都有數千種的微生物與我們共存，這些微生物中，估計有九成其實是從來沒有成功地在實驗室中被培養出來的。高通量核酸定序技術的發展使我們得以發現並且研究這些微生物。微生物基因體學在近幾年蓬勃的發展。越來越多的微生物基因體被定序出來，使得人類科學能在醫療、農業、廢棄污染處理、新能源開發、工業製程、乃至於太空科技上有更多新的啓發與突破。雖然說在核酸定序的科技發展過程中，從細菌首次被完整定序開始，人類全基因體定序的完成曾是一個重要的里程碑，我相信核酸定序的大未來，將會再次聚焦到微生物基因體的研究上。我們的研究興趣聚焦在臨床上重要的致病微生物和藥用植物的基因體學和分子演化學上。利用本所基因體組合、自動註解與分析等生物資訊技術專長的師資協助此方面之工作，已架構完整可供基因體學研究之相關軟硬體設施及核心實驗室，並與國內其他重要研究單位;如中研院和國衛院;有密切的合作關係，其中重點基因體解序的研究計畫包括:
+1. 致病菌的動基因體學和比較基因體學。
+2. 高通量定序在臨床微生物學的應用。
+3. 流行病的演化與疫苗的預測。
+4. 藥用植物基因體學與代謝體的應用。
+三、醫學及生物資訊系統開發：
+本所利用大數據技術，輔以生物及醫學科技之知識，進行「醫學及生物資訊之知識探索」、「醫學診斷及生物資訊工具開發」和「醫學與生物關聯資料庫之建立」等主題之研究，以加速醫學及生物大數據是應用。除了基於資料探勘、機器學習、人工智慧，研發創新、精確、有效率的資訊科技演算法，以發展在醫學生物上有意義、正確的分析工具，並建構充足、有用的相關資料庫及輔助醫學診斷系統為目標，目的在於加速醫學生物科學之發展，以利全民身心健康之福祉。其中重點研究畫包括：
+1. 發展應用於醫學生物大數據之預測及分析工具。
+2. 建置個人化醫學資料庫。
+3. 輔助醫學診斷系統之開發。
+四、結構生物資訊與藥物開發：
+生物分子結構解析後，如何由這些生物分子所扮演的生物功能，並據以設計相關專一性藥物，來治療疾病，為目前本所研究計劃中的焦點項目。分子結構模擬可大幅縮短實際實驗時間，降低研究成本，且再配合理論藥物設計研究，可迅速開發新藥，解決人類緊急問題；另外利用結構的觀點和蛋白質工程的技術來提升現有酵素的活性更能在工業和醫學上的應用有所貢獻。本所已建構完善之基因體與結構蛋白質體之相關軟硬體設施及核心實驗室，並陸續獲得科技部和教育部追求卓越大型計畫之補助與肯定。本所延攬從事結構生物資訊及蛋白質工程學的師資，藉由蛋白質體學中心之成立。在研究上，利用生物物理的技術包含X-光繞射、核磁共振、螢光及超高速離心機等分析利器之利用，針對重要的蛋白質和酵素的機制和功能進行深入的研究和探討，發掘具有潛力的研究標的。其中重點研究計畫包括:
+1. 酵母菌染色質重塑複合體 RSC結構與功能的探討。
+2. 果蠅 JAK/STAT 訊息傳遞途徑。
+3. 工業用酵素的穩定度提升。
+4. 感冒病毒之核殼蛋白功能和結構探討。
+5. 抗癌藥物之研發與抗癌機制之探討。
+6. 脂肪酶∕酯酶之結構、功能與生物技術領域之探討。
+
+
+師生人數 
+
+
+師生人數
+
+
+學年度   教師
+學生
+
+
+97       4
+5
+
+
+98       6
+15
+
+
+99       7
+20
+
+
+100      7
+25
+
+
+101      7
+23
+
+
+102      7
+24
+
+
+103      7
+27
+
+
+104      7
+20
+
+
+ 
+
+
+地理位置 
+
+
+基資所校內位置圖
+
+放大檢視
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+訪客人數: 035722
+|| Since 2009.08.01
+
+
+國立中興大學基因體暨生物資訊學研究所 Copyright©2008 All Rights Reserved
+通訊地址：402臺中市南區興大路145號 國立中興大學基因體暨生物資訊學研究所(防檢疫大樓7樓)
+(145 Xingda Rd., South Dist., Taichung City 402)
+聯絡電話：+886-4-22840338 傳真：+886-4-22859329    聯絡信箱 隱私聲明
+
+
+
+
+
+
+
+
+

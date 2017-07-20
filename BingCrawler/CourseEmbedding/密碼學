@@ -1,0 +1,3630 @@
+
+
+
+密碼學 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+密碼學
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+本條目需要補充更多來源。（2014年1月24日） 
+請協助添加多方面可靠來源以改善這篇條目，無法查證的內容可能會因為異議提出而移除。 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+德國的洛倫茲密碼機（英語：Lorenz cipher），所使用的二次世界大戰加密機密郵件。
+
+
+密碼學（英語：Cryptography）可分為古典密碼學和現代密碼學。在西歐語文中，密碼學一詞源於希臘語kryptós「隱藏的」，和gráphein「書寫」。古典密碼學主要關註資訊的保密書寫和傳遞，以及與其相對應的破譯方法。而現代密碼學不只關註資訊保密問題，還同時涉及資訊完整性驗證（訊息驗證碼）、資訊發布的不可抵賴性（數位簽章）、以及在分散式計算中產生的來源於內部和外部的攻擊的所有資訊保安問題。古典密碼學與現代密碼學的重要區別在於，古典密碼學的編碼和破譯通常依賴於設計者和敵手的創造力與技巧，作為一種實用性藝術存在，並沒有對於密碼學原件的清晰定義。而現代密碼學則起源於20世紀末出現的大量相關理論，這些理論使得現代密碼學成為了一種可以系統而嚴格地學習的科學。
+密碼學是數學和電腦科學的分支，同時其原理大量涉及資訊理論。著名的密碼學者羅納德·李維斯特解釋道：「密碼學是關於如何在敵人存在的環境中通訊」，自工程學的角度，這相當於密碼學與純數學的差異。密碼學的發展促進了電腦科學，特別是在於電腦與網路安全所使用的技術，如存取控制與資訊的機密性。密碼學已被應用在日常生活：包括自動櫃員機的晶片卡、電腦使用者存取密碼、電子商務等等。
+
+
+
+目錄
+
+
+1 術語
+
+1.1 對稱金鑰加密
+1.2 公開金鑰加密
+1.3 數位簽章
+
+
+2 密碼學與密碼分析的歷史
+
+2.1 經典密碼學
+2.2 中世紀至第二次世界大戰
+
+2.2.1 蘇格蘭的瑪麗女王
+2.2.2 第一次世界大戰
+2.2.3 第二次世界大戰
+
+
+2.3 現代密碼學
+
+
+3 現代密碼學
+
+3.1 公鑰密碼學
+3.2 密碼分析
+3.3 密碼學原型
+3.4 密碼協定
+
+
+4 與密碼學有關的法律議題
+
+4.1 禁令
+4.2 出口管制
+4.3 美國國家安全局介入
+4.4 數位智慧財產權管理
+
+
+5 參考文獻
+6 外部連結
+7 參見
+
+
+
+術語[編輯]
+直到現代以前，密碼學幾乎專指加密演算法：將普通訊息（明文）轉換成難以理解的資料（密文）的過程；解密演算法則是其相反的過程：由密文轉換回明文；加解密包含了這兩種演算法，一般加密即同時指稱加密與解密的技術。
+加解密的具體運作由兩部分決定：一個是演算法，另一個是金鑰。金鑰是一個用於加解密演算法的秘密參數，通常只有通訊者擁有。歷史上，金鑰通常未經認證或完整性測試而被直接使用在加解密上。
+密碼協定是使用密碼技術的通訊協定。近代密碼學者多認為除了傳統上的加解密演算法，密碼協定也一樣重要，兩者為密碼學研究的兩大課題。在英文中，「cryptography」和「cryptology」都可代表密碼學，前者又稱密碼術。但更嚴謹地說，前者（cryptography）指密碼技術的使用，而後者（cryptology）指研究密碼的學門，包含密碼術與破密學。破密學是研究如何破解密碼學的學門。但在實際使用中，通常都稱密碼學（即cryptography），而不具體區分其含義。
+口語上，編碼常意指加密或隱藏訊息的各種方法。然而，在密碼學中，編碼有更特定的意義：它意指以碼字（英語：code word）取代特定的明文。例如，以『蘋果派』（apple pie）替換『拂曉攻擊』（attack at dawn）。編碼已經不再被使用在嚴謹的密碼學，它在資訊理論或通訊原理上有更明確的意義。
+在漢語口語中，電腦系統或網路使用的個人帳戶通行碼也常被以密碼代稱，雖然通行碼亦屬密碼學研究的範圍，但學術上通行碼與密碼學中所稱的金鑰並不相同，即使兩者間常有密切的關連。
+對稱金鑰加密[編輯]
+對稱金鑰加密是密碼學中的一種加密法，是以轉換其中一個數字、字母或僅字串隨機字母，一個秘密金鑰會以特定的方式變更訊息裡面的文字或字母，例如更換字母的字母順序的位置（例如hello變成lohel）。只要寄件者與收件者知道秘密金鑰，他們可以加密和解密並使用這個資料。
+公開金鑰加密[編輯]
+公開金鑰加密（也稱為非對稱加密）是密碼學中的一種加密法，非對稱金鑰，是指一對加密金鑰與解密金鑰，某使用者使用加密金鑰加密後所獲得的資料，只能用該使用者的解密金鑰才能夠解密。如果知道了其中一個，並不能計算出另外一個。因此如果公開了其中一個金鑰，並不會危害到另外一個。因此公開的金鑰為公鑰；不公開的密鑰為私鑰。
+數位簽章[編輯]
+數位簽章（又稱公鑰數位簽章、電子簽章）是一種類似寫在紙上的簽名，但是使用了公鑰加密領域的技術實現，用於鑒別數位資訊的方法。在網路上，我們可以使用「數位簽章」來進行身分確認。數位簽章是一個獨一無二的數值，若公鑰能通過驗證，那我們就能確定對應的公鑰的正確性，數位簽章兼具這兩種雙重屬性："可確認性"及"不可否認性（不需要筆跡專家驗證）"。
+密碼學與密碼分析的歷史[編輯]
+主條目：密碼學歷史
+許多物理裝置被用來輔助加密，例如古希臘斯巴達的密碼棒，這是一個協助置換法的圓柱體，可將資訊內字母的次序調動，利用了字條纏繞木棒的方式，把字母進行位移，收信人要使用相同直徑的木棒才能得到還原的資訊。在歐洲中世紀時期，密碼欄（英語：cipher grille）用在某類隱寫術上。
+多字元加密法出現後，更多樣的輔助工具出現，如阿伯提發明的密碼盤、特裡特米烏斯發明的表格法、以及美國總統湯瑪斯·傑佛遜發明的傑弗遜圓盤（英語：Jefferson disk）（巴澤里（英語：Bazeries）約在1900年再次獨立發明改進）。
+二十世紀早期，多項加解密機械被發明且被註冊專利，包括最有名的轉輪機（英語：rotor machines），第二次世界大戰德軍所用，別名『謎』式密碼機（恩尼格瑪密碼機），其加密法是在第一次世界大戰後針對當時破密術所做最好的設計。
+二十世紀早期的密碼學本質上主要考慮語言學上的模式。從此之後重心轉移，現在密碼學使用大量的數學，包括資訊理論、計算複雜性理論、統計學、組合學、抽象代數以及數論。密碼學同時也是工程學的分支，但卻是與別不同，因為它必須面對有智慧型且惡意的對手，大部分其他的工程僅需處理無惡意的自然力量。檢視密碼學問題與量子物理間的關連也是目前熱門的研究。
+經典密碼學[編輯]
+主條目：經典密碼
+在近代以前，密碼學只考慮到訊息的機密性：如何將可理解的訊息轉換成難以理解的訊息，並且使得有秘密訊息的人能夠逆向回復，但缺乏秘密訊息的攔截者或竊聽者則無法解讀。近數十年來，這個領域已經擴展到涵蓋身分認證（或稱鑒權）、訊息完整性檢查、數位簽章、互動證明、安全多方計算等各類技術。
+古中國周朝兵書《六韜．龍韜》記載了密碼學的運用，其中的《陰符》和《陰書》便記載了周武王問姜子牙關於徵戰時與主將通訊的方式：
+
+太公曰：「主與將，有陰符，凡八等。有大勝克敵之符，長一尺。破軍擒將之符，長九寸。降城得邑之符，長八寸。卻敵報遠之符，長七寸。警眾堅守之符，長六寸。請糧益兵之符，長五寸。敗軍亡將之符，長四寸。失利亡士之符，長三寸。諸奉使行符，稽留，若符事聞，泄告者，皆誅之。八符者，主將祕聞，所以陰通言語，不泄中外相知之術。敵雖聖智，莫之能識。」 武王問太公曰：「…符不能明；相去遼遠，言語不通。為之奈何？」 太公曰：「諸有陰事大慮，當用書，不用符。主以書遺將，將以書問主。書皆一合而再離，三發而一知。再離者，分書為三部。三發而一知者，言三人，人操一分，相參而不相知情也。此謂陰書。敵雖聖智，莫之能識。」
+
+陰符是以八等長度的符來表達不同的訊息和指令，可算是密碼學中的替代法（英語：substitution），把資訊轉變成敵人看不懂的符號。至於陰書則運用了移位法，把書一分為三，分三人傳遞，要把三份書重新拼合才能獲得還原的資訊。
+進入宋朝，有字驗的加密方法。
+其實在公元前，秘密書信已用於戰爭之中。西洋「史學之父」希羅多德的《歷史》當中記載了一些最早的秘密書信故事。公元前5世紀，希臘城邦為對抗奴役和侵略，與波斯發生多次衝突和戰爭。於西元前480年，波斯秘密結了強大的軍隊，準備對雅典和斯巴達發動一次突襲。希臘人狄馬拉圖斯（英語：Demaratus）在波斯的蘇薩城裏看到了這次集結，便利用了一層蠟把木板上的字遮蓋住，送往並告知了希臘人波斯的圖謀。最後，波斯海軍覆沒於雅典附近的沙拉米斯灣（英語：Salamis Bay）。
+據說，斯巴達司令派人給前線送一條這樣的腰帶：[1]
+KGDEINPKLRIJLFGOKLMNISOJNTVWG
+指揮官拿到後，把它纏在一條木棍上，得到明文「Kill King」，如下：
+KGDEINPKLRIJLFGOKLMNISOJNTVWG
+即每4位元取一個字母。其他字母是乾擾的。但次傳說並未得到證實，因為故事發生的地點在希臘和波斯，但密文卻是英文。
+由於古時多數人並不識字，最早的秘密書寫的形式只用到紙筆或等同物品，隨著識字率提高，就開始需要真正的密碼學了。最古典的兩個加密技巧是：
+
+轉置密碼（英語：Transposition cipher）：將字母順序重新排列，例如『help me』變成『ehpl em』；與
+替換式密碼：有系統地將一組字母換成其他字母或符號，例如『fly at once』變成『gmz bu podf』（每個字母用下一個字母取代）。
+
+這兩種單純的方式都不足以提供足夠的機密性。凱撒密碼是最經典的替代法，據傳由古羅馬帝國的皇帝凱撒所發明，用在與遠方將領的通訊上，每個字母被往後位移三格字母所取代。
+加密旨在確保通訊的秘密性，例如間諜、軍事將領、外交人員間的通訊，同時也有宗教上的應用。舉例來說，早期基督徒使用密碼學模糊他們寫作的部份觀點以避免遭受迫害。666年或部分更早期的手稿上的616年是新約聖經啟示錄所指的野獸的數字，常用來暗指專迫害基督徒的古羅馬皇帝尼祿。史上也有部份希伯來文密碼的記載。古印度慾經中也提及愛侶可利用密碼來通訊。隱寫術也出現在古代，希羅多德記載將訊息刺青在奴隸的頭皮上，較近代的隱寫術使用隱形墨水、縮影術或數位浮水印來隱藏訊息。
+除了應用於軍事外，西元四世紀婆羅門學者伐蹉衍那（英語：Vatsyayana）所書的《慾經》4中曾提及到用代替法加密資訊。書中第45項是秘密書信（英語：mlecchita-vikalpa），用以幫助婦女隱瞞她們與愛郞之間的關係。其中一種方法是把字母隨意配對互換，如套用在羅馬字母中，可有得出下表：
+
+
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+
+
+Z
+Y
+X
+W
+V
+U
+T
+S
+R
+Q
+P
+O
+N
+
+
+由經典加密法產生的密碼文很容易洩漏關於明文的統計資訊，以現代觀點其實很容易被破解。阿拉伯人津帝便提及到如果要破解加密資訊，可在一篇至少一頁長的文章中數算出每個字母出現的頻率，在加密信件中也數算出每個符號的頻率，然後互相對換，這是頻率分析的前身，此後幾乎所有此類的密碼都馬上被破解。但經典密碼學現在仍未消失，經常出現在謎語之中（見密碼圖（英語：Cryptogram））。這種分析法除了被用在破解密碼法外，也常用於考古學上。在破解古埃及象形文字時便運用了這種解密法。
+中世紀至第二次世界大戰[編輯]
+本質上所有的密碼仍然受到上述的破密法的危害，直到阿伯提約在1467年發明瞭多字母加密法（英語：polyalphabetic cipher），阿伯提的創新在於對訊息的不同部分使用不同的代碼，他同時也發明瞭可能是第一個自動加密器，一個實現他部分想法的轉輪。多字元加密法最典型的例子是維吉尼亞加密法：加密重複使用到一個關鍵字，用哪個字母取代端視輪替到關鍵字的哪個字母而定。儘管如此，多字母加密法仍然受到頻率分析法的部分危害，不過這直到十九世紀中期才被查爾斯·巴貝奇發現。
+比較近代的著名的例子可數中世紀蘇格蘭的瑪麗女王、第一次世界大戰德國的齊默爾曼電報和第二次世界大戰的「恩尼格瑪」。
+蘇格蘭的瑪麗女王[編輯]
+西元1578年，瑪麗女王被伊莉莎白女王軟禁。在1586年1月6日瑪麗收到一批秘密信件，得悉了安東尼·貝平頓（Anthony Babington）的計劃。安東尼和幾個同黨在密謀營救瑪麗，並計劃行刺伊莉莎白女王。他們的信件被轉成密碼，並藏在啤酒桶的木塞以掩人耳目。但卻被英格蘭大臣華興翰（Walsingham）的從中截獲、複製、還信入塞，並由菲力普·馬尼斯（Philip van Marnix）破解信件。信件破解後，華興翰使菲力普摹擬瑪麗的筆跡引誘安東尼行動，把叛逆者一網成擒，審判並處死瑪麗女王。問題在於錯誤地使用脆弱的加密法會製造虛假的安全錯覺：安東尼對他們的通訊方式太過有信心，令他的加密方法過於簡單，輕易被敵人破解。
+第一次世界大戰[編輯]
+1914年8月25日德國的馬格德堡巡洋艦（Magdeburg）在芬蘭灣（Gulf of Finland）擱淺，俄國搜出多份德國的檔案及兩本電碼本，一本被送往英國的「40號房間」（Room 40）進行密碼分析。同時，無線電的發明亦使得截獲密信易如反掌。由於德國通往美國的電纜在大戰開始時被剪斷了，德國借用了美國的海底電纜發電報到華盛頓，但電纜經過了英國，1917年1月17日齊默爾曼電報被「40號房間」截獲。同年2月23日，密電內容揭開了，內容指德國將在1917年2月1日開始『無限制潛艇戰』，用潛艇攻擊戰時包括中立國在內的海上商運船。為了阻止美國因此參戰，德國建議墨西哥入侵美國，並承諾幫助墨西哥從美國手中奪回德克薩斯、新墨西哥和亞利桑那三州。德國還要墨西哥說服日本共同進攻美國，德國將提供軍事和資金援助。密電內容揭開後，美國在4月16日向德國宣戰。
+第二次世界大戰[編輯]
+德國汲取了第一次大戰的教訓，發展出以機械代替人手的加密方法。雪畢伍斯（Arthur Scherbius）發明瞭「謎」（ENIGMA，恩尼格瑪密碼機），用於軍事和商業上。「謎」主要由鍵盤、編碼器和燈板組成。三組編碼器合、加上接線器和其他配件，合共提供了種一億億種編碼的可能性。1925年，「謎」開始有系列生產，在20年間，德國軍方購入了3萬多台「謎」，亦難倒了「40號房」，成為德國在二次大戰的重要工具。波蘭位於德國東面，俄國的西面，一直受到威脅，故成立了波蘭密碼局（Biuro Szyfrow）以獲取情報。波蘭從漢斯-提羅·施密德（Hans-Thilo Schmidt）處得到諜報，由年輕的數學家馬里安·雷耶夫斯基（Marian Rejewski）解譯，用了一年時間編纂目錄，並在1930年代製造了「炸彈」（bomba），漸漸掌握瞭解「謎」的技術。
+1938年12月德國加強了「謎」的安全性，令波蘭失去了情報。「謎」成為了希特勒（Hitler）閃電戰略的核心，每天更改的加密排列維繫了強大快速的攻擊。1939年4月27日德國撤銷與波蘭的互不侵犯條約，波蘭才不得不決定把「炸彈」這個構想與英、法分享，合力破解新的「謎」。1939年9月1日，德國侵擊波蘭，大戰爆發。英國得到了波蘭的解密技術後，40號房間除了原有的語言和人文學家，還加入了數學家和科學家，後來更成立了政府代碼曁密碼學校（Government code and Cipher School），5年內人數增至7000人。1940至1942年是加密和解密的拉鋸戰，成功的解碼提供了很多寶貴的情報。例如在1940年得到了德軍進攻丹麥和挪威的作戰圖，以及在不列顛戰役（Battle of Britain）事先獲得了空襲情報，化解了很多危機。但「謎」卻並未被完全破解，加上「謎」的網路很多，令德國一直在大西洋戰役中佔上風。最後英國在「順手牽羊」的行動中在德國潛艇上俘獲「謎」的密碼簿，破解了「謎」。英國以各種虛假手段掩飾這件事，免得德國再次更改密碼，並策劃摧毀了德國的補給線，縮短了大西洋戰役的持續時間。
+現代密碼學[編輯]
+第二次世界大戰後計算機與電子學的發展促成了更複雜的密碼，而且計算機可以加密任何二進位形式的資料，不再限於書寫的文字，以語言學為基礎的破密術因此失效。多數計算機加密的特色是在二進位字串上操作，而不像經典密碼學那樣直接地作用在傳統字母數字上。然而，計算機同時也促進了破密分析的發展，抵消了某些加密法的優勢。不過，優良的加密法仍保持領先，通常好的加密法都相當有效率（快速且使用少量資源），而破解它需要許多級數以上的資源，使得破密變得不可行。
+雖然頻率分析是很有效的技巧，實際上加密法通常還是有用的。不使用頻率分析來破解一個訊息需要知道目前是使用何種加密法，因此才會促成了諜報、賄賂、竊盜或背叛等行為。直到十九世紀學者們才體認到加密法的演算法並非理智或實在的防護。實際上，適當的密碼學機制（包含加解密法）應該保持安全，即使敵人知道了使用何種演算法。對好的加密法來說，金鑰的秘密性理應足以保障資料的機密性。這個原則首先由奧古斯特·柯克霍夫（Auguste Kerckhoffs）提出並被稱為柯克霍夫原則（Kerckhoffs' principle）。資訊理論始祖克勞德·艾爾伍德·香農（Claude Shannon）重述：「敵人知道系統。」
+大量的公開學術研究出現，是現代的事，這起源於一九七零年代中期，美國國家標準局（National Bureau of Standards, NBS；現稱國家標準技術研究所，National, NIST）制定數位加密標準（DES），惠特菲爾德·迪菲和Hellman（英語：Hellman）提出的開創性論文，以及公開釋出RSA。從那個時期開始，密碼學成為通訊、電腦網路、電腦安全等上的重要工具。許多現代的密碼技術的基礎依賴於特定基算問題的困難度，例如因數分解問題或是離散對數問題。許多密碼技術可被證明為只要特定的計算問題無法被有效的解出，那就安全。除了一個著名的例外：一次性密碼本（one-time pad，OTP），這類證明是偶然的而非決定性的，但是是目前可用的最好的方式。
+密碼學演算法與系統設計者不但要留意密碼學歷史，而且必須考慮到未來發展。例如，持續增加計算機處理速度會增進窮舉法（brute-force attacks）的速度。量子計算的潛在效應已經是部份密碼學家的焦點。
+現代密碼學[編輯]
+現代密碼學大致可被區分為數個領域。對稱金鑰密碼學指的是傳送方與接收方都擁有相同的金鑰。直到1976年這都還是唯一的公開加密法。
+現代的研究主要在區塊加密法與串流加密法（stream cipher）及其應用。區塊加密法在某種意義上是阿伯提的多字元加密法的現代化。區塊加密法取用明文的一個區塊和金鑰，輸出相同大小的密文區塊。由於訊息通常比單一區塊還長，因此有了各種方式將連續的區塊編織在一起。DES和AES是美國聯邦政府核定的區塊加密法標準（AES將取代DES）。儘管將從標準上廢除，DES依然很流行（三重資料加密演算法變形仍然相當安全），被使用在非常多的應用上，從自動交易機、電子郵件到遠端存取。也有許多其他的區塊加密被發明、釋出，品質與應用上各有不同，其中不乏被破解者。
+串流加密法，相對於區塊加密，製造一段任意長的金鑰原料，與明文依位元或字元結合，有點類似一次一密密碼本（one-time pad）。輸出的串流根據加密時的內部狀態而定。在一些串流加密法上由金鑰控制狀態的變化。RC4是相當有名的串流加密法。
+密碼雜湊函式（有時稱作訊息摘要函式，雜湊函式又稱雜湊函式或雜湊函式（Hash））不一定使用到金鑰，但和許多重要的密碼演算法相關。它將輸入資料（通常是一整份檔案）輸出成較短的固定長度雜湊值，這個過程是單向的，逆向操作難以完成，而且碰撞（兩個不同的輸入產生相同的雜湊值）發生的機率非常小。
+訊息認證碼或押碼（Message authentication codes, MACs）很類似密碼雜湊函式，除了接收方額外使用秘密金鑰來認證雜湊值。
+公鑰密碼學[編輯]
+主條目：公鑰密碼學
+公開金鑰密碼學，簡稱公鑰密碼學，又稱非對稱金鑰密碼學，相對於對稱金鑰密碼學，最大的特點在於加密和解密使用不同的金鑰。
+在對稱金鑰密碼學中，加密和解密使用相同的金鑰，也許對不同的訊息使用不同的金鑰，但都面臨金鑰管理的難題。由於每對通訊方都必須使用異於他組的金鑰，當網路成員的數量增加時，金鑰數量成二次方增加。更尷尬的難題是：當安全的通道不存在於雙方時，如何建立一個共有的金鑰以利安全的通訊？如果有通道可以安全地建立金鑰，何不使用現有的通道。這個「雞生蛋、蛋生雞」的矛盾是長年以來密碼學無法在真實世界應用的阻礙。
+1976年，惠特菲爾德·迪菲與馬丁·赫爾曼發表開創性的論文，提出公開金鑰密碼學的概念：一對不同值但數學相關的金鑰，公開金鑰（公鑰, public key）與私密金鑰（私鑰, private key or secret key）。在公鑰系統中，由公開金鑰推算出配對的私密金鑰於計算上是不可行的。歷史學者David Kahn（英語：David Kahn）這樣描述公開金鑰密碼學；「從文藝復興的多字元取代法後最革命性的概念。」
+在公鑰系統中，公鑰可以隨意流傳，但私鑰只有該人擁有。典型的用法是，其他人用公鑰來加密給該接受者，接受者使用自己的私鑰解密。Diffie與Hellman也展示瞭如何利用公開金鑰密碼學來達成迪菲-赫爾曼密鑰交換金鑰交換協定。
+1978年，麻省理工學院的羅納德·李維斯特、阿迪·薩莫爾和倫納德·阿德曼發明另一個公開金鑰系統，RSA。
+直到1997年的公開檔案中大眾才知道，早在1970年代早期，英國情報機構政府通訊總部的數學家James H. Ellis（英語：James H. Ellis）便已發明非對稱金鑰密碼學，而且Diffie-Hellman與RSA都曾被Malcolm J. Williamson（英語：Malcolm J. Williamson）與Clifford Cocks（英語：Clifford Cocks）分別發明於前。這兩個最早的公鑰系統提供優良的加密法基礎，因而被大量使用。其他公鑰系統還有Cramer-Shoup（英語：Cramer-Shoup）、El Gamal、以及橢圓曲線密碼學等等。
+除了加密外，公開金鑰密碼學最顯著的成就是實現了數位簽章。數位簽章名副其實是普通簽章的數位化，他們的特性都是某人可以輕易製造簽章，但他人卻難以仿冒。數位簽章可以永久地與被簽署訊息結合，無法自訊息上移除。數位簽章大致包含兩個演算法：一個是簽署，使用私密金鑰處理訊息或訊息的雜湊值而產生簽章；另一個是驗證，使用公開金鑰驗證簽章的真實性。RSA和DSA是兩種最流行的數位簽章機制。數位簽章是公開金鑰基礎建設（public key infranstructures, PKI）以及許多網路安全機制（SSL/TLS, 虛擬私人網路等）的基礎。
+公開金鑰演算法大多基於計算複雜度上的難題，通常來自於數論。例如，RSA源於整數因數分解問題；DSA源於離散對數問題。近年發展快速的橢圓曲線密碼學則基於和橢圓曲線相關的數學難題，與離散對數相當。由於這些底層的問題多涉及模數乘法或指數運算，相對於區塊加密法需要更多計算資源。因此，公開金鑰系統通常是複合式的，內含一個高效率的對稱金鑰演算法，用以加密訊息，再以公開金鑰加密對稱金鑰系統所使用的金鑰，以增進效率。
+密碼分析[編輯]
+主條目：密碼分析
+密碼分析又稱破密術。密碼分析的目的是發現密碼機制的弱點，從事者可能是意圖顛覆系統惡意的攻擊者或評估系統弱點的設計人。在現代，密碼演算法與協定必須被仔細檢查和測試，確定其保證的安全性。
+大眾普遍誤解認為所有加密法都可以被破解。香農在二戰時的工作就已證明只要金鑰是完全隨機，不重覆使用，對外絕對保密，與訊息等長或比訊息更長的一次一密是不可能破解的。除了一次一密以外的多數加密法都可以以暴力攻擊法破解，但是破解所需的努力可能是金鑰長度的指數成長。
+密碼分析的方式有很多，因此有數個分類。一個常見的分別法則是攻擊者知曉多少資訊。在唯密文攻擊中，密碼分析者只能存取密文，好的現代密碼系統對這種情況通常是免疫的。在已知明文攻擊中，密碼分析者可以存取多個明文、密文對。在選擇明文攻擊中，密碼分析者可以自選任意明文，並被賦予相對應的密文，例如二戰時布列顛所使用的園藝法。最後，選擇密文攻擊中，密碼分析者可以自選任意密文，並被賦予相對應的明文
+對稱金鑰加密的密碼分析通常旨在尋找比已知最佳破解法更有效率的方式。例如，以最簡單的暴力法破解DES需要一個已知明文與255解密運算，嘗試近半數可能的金鑰。線性分析攻擊法對DES需要243已知明文與243 DES運算，顯然比暴力法有效。
+公開金鑰演算法則基於多種數學難題，其中最有名的是整數分解和離散對數問題。許多公開金鑰密碼分析在研究如何有效率地解出這些計算問題的數值演算法。例如，已知解出基於橢圓曲線的離散對數問題比相同金鑰大小的整數因數分解問題更困難。因此，為了達到相等的安全強度，基於因數分解的技術必須使用更長的金鑰。由於這個因素，基於橢圓曲線的公開金鑰密碼系統從1990年代中期後逐漸流行。
+當純粹的密碼分析著眼於演算法本身時，某些攻擊則專註於密碼裝置執行的弱點，稱為副通道攻擊。如果密碼分析者可以存取到裝置執行加密或回報通行碼錯誤的時間，它就可能使用時序攻擊法破解密碼。攻擊者也可能研究訊息的模式與長度，得出有用的資訊，稱為流量分析，對機敏的敵人這相當有效。當然，社會工程與其它針對人事、社交的攻擊與破密術一併使用時可能是最有力的攻擊法。
+密碼學原型[編輯]
+多數的密碼學理論研究在探討密碼學原型：具備基本密碼學特質的演算法以及和其他問題的關連。例如，容易正向運算卻難以逆向運算的單向函式。通常而言，密碼應用如果要安全，就必須保證單向函式存在。然而，如果單向函式存在，就表示P ≠ NP。既然目前P與NP問題仍是未解，我們就無從得知單向函式是否存在。如果單向函式存在，那安全的準亂數產生器與準亂數函式就存在。 目前已知的密碼學原型僅提供基本的機能。通常是機密、訊息完整、認證、和不可否認。任何其他機能都是基本演算法的組合與延伸，這類組合稱為密碼系統。例如PGP、SSH、SSL/TLS、公開金鑰基礎建設和數位簽章等。其他密碼原型還有加密演算法本身、單向排列、暗門排列等。
+密碼協定[編輯]
+主條目：密碼協定
+在許多狀況，密碼技術涉及通訊的雙方或多方（例如公司總部與分部）或是跨越時間（例如保護備份資料）。密碼協議已經擴展到涵蓋多種議題，像是互動證明、秘密分享與零知識，更複雜的有電子鈔票和安全多方計算。
+當一個好的密碼系統的安全失效時，很少是密碼學原型出現漏洞。大部分的弱點都發生於協定設計、系統實作、或是某些人為錯誤。許多密碼學協定都在非系統化的過程中發展出來，很少有安全上的証明。一些正規分析協定安全的方式都本於數學邏輯（例如BAN（英語：BAN）邏輯）或近期的具體安全原則，這些都是數十年來研究人員的主題。很不幸的，這些工具都相當的笨重也無法用於複雜的設計。如何實現與整合密碼學的應用本身是截然不同的領域，參見密碼學工程與安全工程。
+與密碼學有關的法律議題[編輯]
+禁令[編輯]
+密碼學長期以來都是情報或司法機構的興趣。由於這些單位的隱密性以及禁令後個人隱私的減少，密碼學也是人權支持者關心的焦點。環繞密碼學的法律議題已有很長的歷史，特別是在可以執行高品質密碼的廉價計算機問世後。
+在某些國家甚至本國性的密碼學也受限制。直到1999年，法國仍然限制國內密碼學的使用。許多國家有更嚴格的限制，例如白俄羅斯、哈薩克、蒙古、巴基斯坦、俄羅斯、新加坡、突尼西亞、委內瑞拉和越南。
+在美國，國內的使用是合法的，但仍然有許多法律衝突。一個特別重要的議題是密碼軟體與硬體的出口管制。由於密碼分析在二戰時期扮演的重要角色，也期待密碼學可以持續在國家安全上效力，許多西方國家政府嚴格規範密碼學的出口。二戰之後，在美國散佈加密科技到國外曾是違法的。事實上，加密技術曾被視為軍需品，就像坦克與核武。直到個人電腦和網際網路問世後情況才改變。好的密碼學與壞的密碼學對絕大部分使用者來說是沒有差別的，其實多數情況下，大部分現行密碼技術普遍緩慢而且易出錯。然而當網際網路與個人電腦日益成長，優良的加密技術逐漸廣為人知。可見出口管制將成為商務與研究上的阻礙。
+出口管制[編輯]
+在1990年代發生了數件挑戰美國出口規範的事件。其中一件是Phillip Zimmermann的PGP加密程式，於1991年6月在美國連原始碼一併釋出於網際網路。在RSA Security（英語：RSA Security）公司提出抗議後，Zimmermann被商務部和聯邦調查局偵訊達數年。接著，柏克萊加州大學的研究生Daniel Bernstein（英語：Daniel Bernstein）發起了對美國政府的法律訴訟，以言論自由挑戰禁令的某些觀點。1995年的Bernstein v. United States（英語：Bernstein v. United States）案例促成了在1999年判決印出密碼演算法的原始碼屬美國憲法言論自由保障範圍內。在1996年，39個國家簽訂處理軍武出口的華沙公約。該公約約定使用短金鑰長度（對稱金鑰56位元；RSA　512位元）的密碼學不再受到出口管制。從2000年後，美國出口密碼學已經寬鬆許多。現在，幾乎所有的網際網路使用者都可存取到優良的密碼學，就在瀏覽器內建的傳輸層安全性（TLS）或安全介面層（SSL）。Mozilla Thunderbird和微軟Outlook電子郵件用戶端程式可以用TLS連結至IMAP或Pop伺服器，並以S/MIME收送加密的電子郵件。許多網路用戶並不知曉他們的基本應用內含大量的密碼系統。這些瀏覽器與郵件程式如此普及，甚至試圖規範市民使用密碼學使用的政府單位也無力從事有效的限制。
+美國國家安全局介入[編輯]
+另一個密碼學的爭議點是美國國家安全局（美國國家安全局）在加密法發展的介入。國家安全局考量到將其制訂為國家表準局的聯邦標準，曾介入於IBM發展的DES。DES是NSA與IBM為了剋制強力的差分分析法而制定，這個攻擊直到1980年代晚期才公開。根據Steven Levy（英語：Steven Levy）所說，IBM曾重新發現差分分析法，但被NSA下禁口令。這個攻擊法直到Biham與Shamir（英語：Shamir）在數年後再次發現才公開。這些事情顯示了決定攻擊者擁有哪些資源或知識的困難。還有1993年，NSA涉入用在Capstone（英語：Capstone）計劃的加密微晶片Clipper chip（英語：Clipper chip）。Clipper飽受密碼學者的批評，其一是因為其加密演算法被列為機密，NSA可能蓄意設計較弱的加密法以達成情報目的；其二是整個計畫案違反柯克霍夫原則，由於這機制使用到一個特別的只有政府才有的委任金鑰，難保沒有竊聽的可能。
+數位智慧財產權管理[編輯]
+數位智慧財產權管理又稱數位智財權（Digital rights management, DRM） 密碼學是數位智慧財產權的核心，有許多技術被應用在保障版權資料的使用。1998年，美國總統比爾·柯林頓（Bill Clinton）簽署了數位千禧年版權法案（數字千年版權法, DMCA），明定特定破密技術的重製或散佈屬犯罪行為，特別是某些迴避DRM者。這對密碼學研究社群造成了相當嚴重的潛在衝擊，因為任何逆向解碼技術都可以被用於破解DRM從而被認定為違反DMCA。考慮到這些爭議，美國聯邦調查局與司法部並未嚴格執行DMCA。一位密碼學者Niels Ferguson（英語：Niels Ferguson）曾公開陳述受DMCA的影響，他將不會釋出部分研究給英特爾安全設計。Linux核心的第二號發展人物艾倫·考克斯與普林斯頓大學教授Edward Felten（英語：Edward Felten）都曾受到這法案的相關困擾。Dmitry Sklyarov（英語：Dmitry Sklyarov）在從俄羅斯到美國存取時曾因違反該法案被監禁達數月，但違反DMCA的作品實際上發生於俄羅斯，而且在俄羅斯是合法行為。類似的事情發生在許多國家。例如歐盟所制定的Copyright Directive（英語：Copyright Directive）。在2007年，負責數碼多功能影音光碟與HD DVD防偽的金鑰被發現且是出在網際網路上，同時，美國電影協會發出多個違DMCA的告示，導致大量網際網路使用者回擊，也引出了公平使用與言論自由的議題。
+參考文獻[編輯]
+
+
+^ 王樹禾. 《數學演義》. 科學出版社. : P187. ISBN 9787030218377. 
+
+
+外部連結[編輯]
+
+Helger's cryptography pointers
+RSA Laboratories' FAQ About today's cryptography essentially elementary coverage
+The sci.crypt FAQ extensive and detailed; in 'traditional FAQ' format
+sci.crypt mini-FAQ (more recent)
+The sci.crypt newsgroup
+Savard's glossary an extensive and detailed view of cryptographic history with emphasis on crypto devices
+The Beginner's Guide to Cryptography - An elementary overview of a few basic areas of cryptography.
+An Introduction to the Use of Encryption - A fairly non-technical introduction to the subject.
+Encryption and Privacy
+
+參見[編輯]
+
+密碼學主題列表
+密碼學家列表
+密碼學領域重要出版物
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+密碼學
+
+
+
+
+
+
+
+
+
+密碼學歷史
+破密學
+密碼體制
+密碼學主題列表
+
+
+
+
+
+
+
+
+
+
+
+對稱密鑰加密
+區塊加密法
+流加密
+公開金鑰加密
+密碼雜湊函式
+訊息鑑別碼
+亂數
+隱寫術
+
+
+
+
+
+
+
+
+
+
+
+語意安全
+完善保密性
+資訊理論安全性
+
+
+
+
+
+
+
+
+
+
+
+分類
+主題
+專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+諜報鬥爭
+
+
+
+
+
+
+情報搜集
+
+
+
+
+人力情報（英語：Intelligence collection management）
+
+間諜 · 黑色行動（英語：Black operation） · 黑袋行動（英語：Black bag operation） · 密碼學 · 死信箱（英語：Dead drop） · 監視 · 竊聽 · 假旗行動 · 工業間諜（英語：Industrial espionage） · 審問（英語：Interrogation） · 數字電台 · 官方掩護（英語：Official cover） · 非官方掩護 · 隱寫術
+
+
+
+
+
+
+訊號情報
+
+密碼學 · 訊號情報機構列表（英語：Signals intelligence by alliances, nations and industries）
+
+
+
+
+
+
+測量與特徵識別情報（英語：Measurement and signature intelligence）
+
+核情報（英語：Nuclear MASINT） · 地球物理情報（英語：Geophysical MASINT）
+
+
+
+
+
+
+其它情報
+
+公開來源情報 · 圖像情報（英語：Imagery intelligence） · 地理空間情報（英語：Geospatial intelligence） · 金融情報（英語：Financial intelligence） · 技術情報（英語：Technical intelligence） · 市場情報（英語：Market intelligence）
+
+文化情報（英語：Cultural intelligence）
+
+
+
+
+
+
+
+
+
+情報分析
+
+情報分析
+
+
+
+
+
+
+反間諜
+
+反間諜 · 反情報機構列表（英語：List of counterintelligence organizations）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+電腦科學
+
+
+
+
+
+
+數學基礎
+
+數理邏輯 · 集合論 · 數論 · 圖論 · 類型論 · 範疇論 · 數值分析 · 資訊理論
+
+
+
+
+
+
+計算理論
+
+自動機 · 可計算性理論 · 計算複雜性理論 · 量子計算 · 數值計算方法
+
+
+
+
+
+
+演算法和資料結構
+
+演算法分析 · 演算法設計 · 計算幾何
+
+
+
+
+
+
+程式語言和編譯器
+
+語法分析器 · 直譯器 · 編程典範（程序化編程 · 物件導向程式編程 · 函數語言程式設計 · 邏輯編程等）
+
+
+
+
+
+
+並行、並列和分散式系統
+
+多處理器 · 網格計算 · 並行控制
+
+
+
+
+
+
+軟體工程
+
+需求分析 · 軟體設計 · 程式設計 · 形式化方法 · 軟體測試 · 軟體開發過程
+
+
+
+
+
+
+系統架構
+
+電腦系統架構 · 微處理器體系結構 · 作業系統
+
+
+
+
+
+
+電信與網路
+
+路由 · 網路拓撲 · 密碼學
+
+
+
+
+
+
+資料庫
+
+資料庫管理系統 · 關聯式資料庫 · 結構化查詢語言 · NoSQL · 事務處理 · 資料庫索引 · 資料探勘
+
+
+
+
+
+
+人工智慧
+
+自動推理 · 計算語言學 · 電腦視覺 · 進化計算 · 專家系統 · 機器學習 · 自然語言處理 · 機器人學
+
+
+
+
+
+
+電腦圖形學
+
+視覺化 · 電腦動畫 · 圖像處理
+
+
+
+
+
+
+人機互動
+
+電腦輔助功能 · 使用者介面 · 可穿戴電腦 · 普適計算 · 虛擬現實 · 聊天機器人
+
+
+
+
+
+
+科學計算
+
+人工生命 · 生物資訊學 · 認知科學 · 計算化學 · 計算神經科學 · 計算物理學 · 數值演算法 · 符號計算
+
+
+
+
+
+
+
+註：電腦科學領域也可根據ACM-2012分類系統進行分類。
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=密碼學&oldid=44432675"					
+3 個分類：密碼學數學科學職業理論計算機科學隱藏分類：自2014年1月需補充來源的條目拒絕當選首頁新條目推薦欄目的條目含有希臘語的條目含有英語的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+AfrikaansالعربيةAzərbaycancaBoarischБеларускаяБеларуская (тарашкевіца)‎БългарскиবাংলাBosanskiCatalàکوردیČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEestiEuskaraفارسیSuomiFrançaisGaeilge贛語Galegoગુજરાતીעבריתहिन्दीHrvatskiMagyarՀայերենBahasa IndonesiaÍslenskaItaliano日本語PatoisBasa JawaქართულიҚазақшаಕನ್ನಡ한국어КыргызчаLatinaLumbaartLietuviųLatviešuОлык марийМакедонскиമലയാളംМонголBahasa MelayuनेपालीNederlandsNorsk nynorskNorsk bokmålDiné bizaadOccitanPiemontèisPortuguêsRomânăРусскийSicilianuSrpskohrvatski / српскохрватскиSimple EnglishSlovenščinaShqipСрпски / srpskiSvenskaதமிழ்తెలుగుТоҷикӣไทยTagalogTürkçeУкраїнськаاردوOʻzbekcha/ўзбекчаTiếng ViệtWinarayייִדישBân-lâm-gú粵語 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年5月20日 (週六) 17:16。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+楊中皇老師「密碼學」參考資料
+
+
+楊中皇老師 一百零五學年度 第二學期 (Spring 2017)                                                   
+「密碼學研究」參考資料 :                                            
+                   
+
+
+ 
+
+課程大綱 
+      (Syllabus)
+  
+    國立高雄師範大學行事曆
+
+
+高雄師範大學開課資料查詢系統
+ 
+學校選課學生名單
+ 期中報告(軟體功能與安裝): 4月27日，5月11日前繳交報告。
+ 5月18日不上課，調課到4月20日、4月27日、5月4日。
+ 6月8日不上課，調課。
+ 6月15日不上課，調課。
+ 期末報告(軟體操作使用): 
+6月1日、6月22日。6月22日前繳交報告。
+
+
+
+　
+
+姓名
+
+
+
+軟體功能、安裝:  
+			4月27日
+
+軟體使用: 
+6月1日、6月22日
+
+　相關網址
+
+
+
+
+1
+
+
+唐劍飛
+
+
+OpenKeychain
+
+
+
+
+
+		https://github.com/open-keychain/open-keychain
+
+
+
+
+2
+
+
+李孟樵
+
+
+ECDH-Curve25519-Mobile
+
+
+
+
+		https://github.com/duerrfk/ecdh-curve25519-mobile 
+
+
+
+
+3
+
+
+沈瑞琳
+
+
+			FIPS Library and Android
+
+
+ https://wiki.openssl.org/index.php/FIPS_Library_and_Android
+
+
+
+
+
+4
+
+林紀睿
+
+
+ECDH key 
+			exchange on Android
+
+
+ https://github.com/nelenkov/ecdh-kx 
+
+
+
+
+			　
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+論文研讀，6月1日前繳交報告: 
+
+
+
+   林紀睿  5/25 
+
+
+
+(1)
+			Performance Evaluation of Primitives for Privacy-Enhancing 
+			Cryptography
+
+
+
+
+   
+			唐劍飛  5/25  
+
+(2)
+			Evaluation of Cryptographic Capabilities for the Android Platform
+			
+
+
+
+
+
+
+
+   李孟樵  
+			5/25 
+
+(3)
+			An Empirical Study of Cryptographic Misuse in Android Applications
+
+
+
+
+   沈瑞琳  
+			5/25 
+
+(4)
+			Evaluation of Cryptography Usage in Android Applications
+			 
+
+
+
+
+	　
+
+微軟Windows
+		Cryptographic 
+				Primitives
+
+
+
+
+Android設備
+Cryptographic 
+				Primitives
+
+
+維基解密2017年3月：Android 
+	Vault 7
+
+Dan Boneh, Cryptography: From 
+	Mathematical Magic to Secure Communication,
+	
+	https://www.youtube.com/watch?v=4M8_Oo7lpiA
+
+
+
+Christopher Soghoian, Encryption 
+	used on Apple and Android devices,
+	
+	https://www.youtube.com/watch?v=SO9-rlrOXOA
+
+
+
+Application Signing,
+	
+	https://www.youtube.com/watch?v=P_jHoAsIzKI
+
+Generating a Signed APK Using 
+	Android Studio, 
+	https://www.youtube.com/watch?v=YWRLxgZej6s
+
+
+
+Encryption on Android,
+	
+	https://source.android.com/security/encryption/
+
+Application Signing on Android,
+	
+	https://source.android.com/security/apksigning/ 
+
+Bruce Schneier,
+	Applied 
+	Cryptography: Protocols, Algorithms and Source Code in C
+
+
+
+
+  	Steve Jobs 賈伯斯 - 
+	史丹佛大學畢業典禮演說
+
+斯諾登效應的前因解讀
+
+
+
+	Android 7.1 密碼學算法原始碼
+
+2017年3月Android擊敗Windows，正式成為全球第一大作業系統。Android超越Windows成互聯網用戶最常用操作系統。
+
+
+	中國信息安全博士網
+
+We need hackers 我們需要駭客，https://www.ted.com/talks/rodrigo_bijou_governments_don_t_understand_cyber_warfare_we_need_hackers?language=zh-tw
+
+
+Everyday cybercrime，網路犯罪無所不在，https://www.ted.com/talks/james_lyne_everyday_cybercrime_and_what_you_can_do_about_it?language=zh-tw
+
+
+
+The 1s and 0s behind cyber warfare，網路戰爭背後的1與0，https://www.ted.com/talks/chris_domas_the_1s_and_0s_behind_cyber_warfare?language=zh-tw
+
+
+
+  	LEST WE REMEMBER: COLD BOOT ATTACKS ON ENCRYPTION KEYS,
+	
+	https://citp.princeton.edu/research/memory/ 
+
+	微信支付的安全規範
+
+
+
+	 (local 
+	copy)   
+
+
+
+	Android 7.1
+	
+	Security Model Compatibility
+
+
+
+
+SM2橢圓曲線公鑰密碼算法、SM3密碼雜湊算法、SM4分組密碼算法
+
+
+
+智慧型手機市場銷售
+(2016)
+
+
+
+
+強迫召回 三星將讓美Note 7不能用
+
+
+安�琚B威努特、滴滴出行招聘安全人員
+
+
+太極信息安全招聘十大類安全人才
+
+
+	加拿大Certicom Corp.
+
+
+	大陸國家信息安全產品認證，http://www.isccc.gov.cn/zxyw/cprz/gjxxaqcprz/ 
+
+
+	A Brief Overview of Cryptography,
+	
+	https://www.youtube.com/watch?v=Wgw3HNuKIN8 
+
+
+	Elliptic Curve Cryptography,
+	
+	https://www.youtube.com/results?search_query=elliptic+curve+cryptography 
+
+
+	Android Security State Of The Union,
+	
+	https://www.youtube.com/watch?v=aBWh7izacqg
+
+
+	What's new in Android security (M and N Version) - Google I/O 2016,
+	
+	https://www.youtube.com/watch?v=XZzLjllizYs 
+
+
+	Android security architecture (by Nikolay Elenkov),
+	
+	https://www.youtube.com/watch?v=3asW-nBU-JU 
+
+
+	Nikolay Elenkov, 
+	Android Security Internals, 2014.
+
+
+
+  	Android Full-disk 
+	encryption
+
+	Android
+	
+	基於文件的加密
+
+
+
+
+
+
+
+	橢圓曲線公式繪圖 EccDraw.exe
+
+
+A.J. Menezes, et al, Handbook 
+      of Applied Cryptography  (CRC Press Series on Discrete 
+      Mathematics and Its Applications), 1996. 參閱http://www.cacr.math.uwaterloo.ca/hac/有PDF電子檔
+
+
+Android Security,
+	
+	https://source.android.com/security/ 
+
+
+	Audun Jøsang, "Trust 
+	and Identity Management for Internet and Mobile Computing, " IET 
+	Information Security - Special Issue on Trust and Identity Management in 
+	Mobile and Internet Computing and Communications, 2012.
+
+
+	HwanJin Lee, DongHoon Shin, and Hyun-Chul Jung, "Implementations 
+	of Block Cipher SEED on Smartphone Operating Systems, "
+	Proceedings of the Fifth International Conference on Emerging Security 
+	Information, Systems and Technologies (SECURWARE 2011).
+
+
+	Nico Golde, 
+
+	SMS Vulnerability Analysis on Feature Phones,  M.S. Thesis, 
+	Technische Universität Berlin, Germany, 2011.
+
+
+	Christian Hansen, 
+
+	A Framework for Identity and Privacy Management on Mobile Devices,  
+	M.S. Thesis, University of Agder, Norway, 2010.
+
+
+	Adrian Visoiu and Silvia Trif, "Open 
+	Source Security Components for Mobile Applications," Open Source 
+	Science Journal, Vol. 2, No. 2, 2010.
+
+
+	Marco Bonetti, "Mobile 
+	privacy: Tor on the iPhone and other unusual devices, " DEFCON 18, 
+	2010.
+
+
+	Johannes Winter, "Trusted 
+	Computing Building Blocks for Embedded Linux-based ARM TrustZone Platforms,"
+	Proceedings of the 3rd ACM workshop on Scalable Trusted Computing, 
+	2008.
+
+
+	Murat Y. Kubilay, 
+Security on 
+	Mobile Phones with Lightweight Cryptographic Message Syntax, M.S. 
+	Thesis, Middle East Technical University, Turkey, 2007.
+
+
+	Florian Eisl, 
+Smart 
+	Card Security Services for an Open Application Environment used in Mobile 
+	Phones, M.S. Thesis, Lund University, Sweden, 2004.
+
+
+	Johnny L. Lo, 
+
+	A framework for cryptography algorithms on mobile devices, M.S. 
+	Thesis, University of Pretoria, South Africa, 2007.
+
+線上課程Coursera.org網站，密碼學-I，    
+       
+	密碼學-II 
+
+
+
+SELinux
+
+
+Android javax.crypto
+
+
+Android java.security
+Android Software Development Kit (SDK)
+
+Android Native Development Kit (NDK)
+
+Java Development Kit (JDK)
+Eclipse Downloads
+
+
+手機市場佔有率
+Android Market
+
+Open Handset Alliance
+Android-x86
+
+密碼學常見問題集 (FAQ)
+
+
+美國國立密碼博物館 (National Cryptologic Museum)
+
+
+
+國家圖書館 全國博碩士論文資訊網
+
+Right triangles and elliptic curves,
+	http://math.uci.edu/~krubin/lectures/sumo/
+
+
+GuardKey (MyGuard) 保密碟,
+	http://www.guardkey.com.tw/tw/
+
+
+Sun 
+	(Oracle)的密碼學演算法:https://docs.oracle.com/middleware/1213/idm/sec-app-dev-tools/crypto.htm#SDTRG002
+
+
+日本政府Cryptrec計畫
+
+
+
+
+Cryptrec 2007報告書 (local 
+	copy)   
+
+
+
+中國密碼學會,
+	http://www.cacrnet.org.cn/
+
+國家實驗研究院科技政策研究與資訊中心之大陸資訊安全機構名錄
+
+
+大陸信息安全國家重點實驗室(The 
+      State Key Laboratory of Information Security,SKLOIS)
+
+西安電子科技大學李暉教授：信息安全專業學生實踐能力培養的探索 
+	(local copy)
+
+西安電子科技大學王育民教授：資訊理論等專業的建設和參與建設的體會 
+	(local copy)
+
+西安電子科技大學王育民教授：訊息論專業發展的幾個片段 
+	(local copy)
+
+西安電子科技大學王育民教授：我與西電圖書館 
+	世界圖書日有感 (local copy)
+
+2009年西安電子科技大學通信工程學院工程碩士指導教師名單 
+	(local copy)
+
+
+
+密碼學常見問題集 (FAQ)
+
+
+大數分解有獎徵
+	答
+
+
+線上大數分解
+
+密碼學相關免費工具軟體：(1) 
+      木田祐司之UBASIC
+
+
+密碼學相關免費工具軟體：(2) 
+	
+LiDIA  
+
+密碼學相關免費工具軟體：(3) 
+      
+MIRACL 
+
+
+密碼學相關免費工具軟體：(4) 
+      
+GMP 
+
+
+密碼學相關免費工具軟體：(5) 
+      
+PARI-GP 
+
+
+密碼學相關免費工具軟體：(6) 
+      NTL
+ 
+
+密碼學相關免費工具軟體：(7) 
+      Crypto++
+
+
+密碼學相關免費工具軟體：(8) 
+      
+NUI Crypto
+
+
+Darrel Hankerson, Alfred Menezes, and Scott Vanstone,
+	Guide to Elliptic Curve 
+	Cryptography, 2004.
+
+
+
+
+
+2004年5月中國密碼年會與2004年8月美國Crypto年會的Rump 
+    Session，山東大學王小雲教授破解MD5和其他幾個one-way 
+    hash function (local copy)。NIST宣佈將於2010年淘汰SHA1 (local copy)
+
+
+
+日本IPA資訊安全現狀,
+	2001年 
+	(local copy)
+
+
+
+
+Claude E. Shannon, "Communication 
+    Theory of Secrecy Systems", Bell System Technical Journal, 
+    vol.28-4, page 656-715, 1949. (local copy)
+
+
+
+A 
+      Layman's Guide to a Subset of ASN.1, BER, and DER: 
+	MS-Word, 
+      PostScript
+
+
+
+
+PKCS #1: RSA 
+      Cryptography Standard　
+
+PKCS #3: 
+      Diffie-Hellman Key Agreement Standard　
+
+PKCS #5: 
+      Password-Based Cryptography Standard　
+
+PKCS #6: 
+      Extended-Certificate Syntax Standard　
+
+PKCS #7: 
+      Cryptographic Message Syntax Standard　
+
+PKCS #8: 
+      Private-Key Information Syntax Standard　
+
+PKCS #9: 
+      Selected Attribute Types　
+
+PKCS #10: 
+      Certification Request Syntax Standard　
+
+PKCS #11: 
+      Cryptographic Token Interface Standard　
+
+PKCS #12: 
+      Personal Information Exchange Syntax Standard　
+
+PKCS #13: 
+      Elliptic Curve Cryptography Standard　
+
+PKCS #15: 
+      Cryptographic Token Information Format Standard
+
+
+
+
+Certicom公司橢圓曲線密碼系統介紹
+
+
+
+FIPS 
+      186-2，Digital Signature Standard 
+      (DSS) ，January 2000，http://csrc.nist.gov/publications/fips/fips186-2/fips186-2.pdf, 
+      http://csrc.nist.gov/publications/drafts/dss_recommendation.pdf
+
+
+
+NIST，Elliptic 
+      Curves Recommended for Federal Government Use，July 
+      1999，  
+	 
+	 
+	 
+	
+http://csrc.nist.gov/groups/ST/toolkit/documents/dss/NISTReCur.pdf
+
+
+
+
+
+D. 
+      B. Johnson and A. J. Menezes, 
+	Elliptic 
+      
+
+Curve 
+      DSA (ECDSA): An Enhanced DSA, 
+      1999.
+
+
+
+日本高知工業高等専門學校 高木和久(Kazuhisa Takagi) 橢圓曲線密碼系統介紹
+
+
+
+NIST，Draft 
+      
+FIPS 
+      180-2，Secure Hash Standard (SHS)，SHA-256/SHA-384/SHA-512，May 
+      2001.
+
+
+日本密碼產品之輸出管制
+
+
+
+一天內破解DES報導： (1). 
+
+RSA公司 
+      (2). 
+
+CNN公司  
+      （1999年1月） 
+
+
+破解512位元RSA
+(1999年8月） 
+
+D. M. Gordon, 
+    "A 
+    Survey of Fast Exponentiation Methods," J. Algorithms, 1998,pp. 129-146.
+
+
+T. Garefalakis, 
+    "Primality 
+    Testing, Integer Factorization, and Discrete Logarithms," 2000. 
+
+
+破解109位元ECC 
+    (2002年11月） (mirror)
+
+
+Advanced 
+      Encryption Standard, FIPS 197, November 26, 2001.
+
+
+
+
+AES 
+      (Advanced Encryption Standard): October 
+      2, 2000 - NIST announces that Rijndael has been selected as the proposed 
+      AES.
+
+
+
+
+RIJNDAEL 
+      (pronounced Rhine-doll)加解密演算法
+
+
+
+
+AES 
+      (Advanced Encryption Standard) 原始碼 
+
+
+
+人類目前已知最大的質數: 230402457-1 
+      (9,152,052  decimal digits ) =
+	?  
+
+
+
+逐年找到的大質數
+
+
+
+大數分解紀錄
+
+
+
+One-Way 
+      Hash MD5原始碼(RFC1321)
+
+
+FIPS 180-2，Secure 
+      Hash Standard (SHS)，NIST，2002年8月。
+
+
+
+Block 
+      Cipher Modes of Operation，SP 
+      800-38A，NIST，2001年12月。
+
+
+
+
+Arjen 
+      K. Lenstra and Eric R. Verheul, "Selecting 
+      Cryptographic Key Sizes", 1999.
+
+
+密碼學技術評價報告書，IPA，2001年3月（日文）。
+
+
+
+密碼學應用技術手冊，ECOM，2000年3月（日文）。
+
+
+
+
+Tamper 
+	Resistant密碼學演算法報告書，日本標準協會JSA，2004年3月（日文）。(local 
+	copy)
+
+
+於根正志、岡本龍明，最近數位簽章之理論研究，日本銀行金融研究所，1999年11月（日文）。
+
+
+
+Sneakers 
+      (神鬼尖兵)
+
+
+微軟公司CryptoAPI2.0
+
+
+
+搜索引擎 
+       
+	 
+	 
+	 
+	AltaVista
+
+
+
+搜索引擎 
+       
+	 
+	 
+	 
+	All the Web 
+
+
+Windows 
+      2000 Security Services
+
+
+
+微軟公司視窗2000安全性服務 
+      （中文）
+
+
+Claude 
+      E. Shannon, "Communication 
+      Theory of Secrecy Systems,"  Bell System Technical Journal,  
+      Vol. 28, 1949, pp. 656-715.
+
+
+
+
+Claude 
+      E. Shannon, "A 
+      Mathematical Theory of Communication,"  Bell System Technical 
+      Journal,  vol. 27, pp. 379-423 and 623-656, July and October, 1948.
+
+
+
+National 
+      Institute of Standards and Technology (NIST), Federal Information Processing 
+      Standard (FIPS) 46-3, Data Encryption Standard 
+      (DES),  October 25, 1999.
+
+
+Eli 
+      Biham and Adi Shamir, Differential cryptanalysis of 
+      DES-like cryptosystems, Technical report CS90-16, Weizmann Institute 
+      of Science, 1990.
+
+J. 
+      L. Massey, "An Introduction to Contemporary Cryptology," Proc. 
+      IEEE,  Vol. 76, May 1988, pp. 533-549.
+
+W. 
+      Diffie and M. Hellman, "New Directions in Cryptography," IEEE 
+      Transactions on Information Theory, November 1976, pp. 644-654.
+
+W. 
+      Diffie, "The First Ten Years of Public-Key Cryptography," Proc. 
+      IEEE,   Vol. 76, No. 5, May 1988, pp. 560-577.
+
+T. 
+      Okamoto and E. Fujisaki, "On Comparison of Practical Digital Signature 
+      Schemes," NTT Review, Vol. 5, No. 1, January 1993, pp. 75-81.
+
+
+
+
+Specification 
+      of ESIGN Signature, 
+      Self Evaluation of ESIGN Signature.
+
+
+
+T. 
+      Okamoto, E. Fujisaki, and H. Morita, "TSH-ESIGN: Efficient Digital 
+      Signature Scheme Using Trisection Size Hash," submitted to IEEE P1363a, 
+      1998. (pdf or 
+      zipped PostScript or PostScript format)
+
+
+
+
+Tatsuaki 
+      Okamoto, Shigenori Uchiyama and Eiichiro Fujisaki, "EPOC: 
+      Efficient Probabilistic Public-Key Encryption," 
+submitted 
+      to IEEE P1363a, 
+November 
+      1998.  
+
+Specification 
+      of EPOC, 
+    Self 
+      Evaluation of EPOC. 
+
+
+Camallia加解密演算法(Techniques 
+      Specifications,  Self Evaluation Reports)
+
+
+
+Encrypting 
+      File System for Windows 2000
+
+
+
+RFC 
+      2630, Cryptographic Message Syntax. R. Housley. 
+      June 1999.
+
+
+
+RFC 
+      2628, Simple Cryptographic Program Interface (Crypto API). V. Smyslov. 
+      June 1999.
+
+
+
+RFC 
+      2612,  The CAST-256 Encryption Algorithm. 
+      C. Adams, J. Gilchrist. June 1999.
+
+
+
+RFC 
+      2437, PKCS #1: RSA Cryptography Specifications Version 2.0. B. Kaliski, 
+      J. Staddon. October 1998.
+
+
+
+RFC 
+      2315, PKCS 7: Cryptographic Message Syntax Version 1.5. B. Kaliski. 
+      March 1998.
+Call for Papers: 
+IACR Calendar of Events 
+      in Cryptology
+UCL 
+      Crypto Group - Call for papers 
+
+Security 
+      & Privacy Calendar
+
+　
+　
+
+
+
+
+密碼分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+密碼分析
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+密碼分析（英語：cryptanalysis，來源於希臘語kryptós，即「隱藏」，以及analýein，即「解開」），是一門研究在不知道通常解密所需要的秘密信息的情況下對加密的信息進行解密的學問。通常，這需要尋找一個秘密的鑰匙。用不是很正規的話來說，這就是所謂的破解密碼。
+密碼分析這個詞有時也被用來指廣義上的繞開某個密碼學算法或密碼協議的嘗試，而不僅僅是針對加密算法。但是，密碼分析通常不包括並非主要針對密碼算法或協議的攻擊，如賄賂、拷打、入室搶劫、鍵盤記錄器，等等。儘管這些攻擊方式是計算機安全領域裡的重要考慮因素，而且通常比傳統的密碼分析更加有效。
+雖然密碼分析的目標在密碼學的歷史上從古至今都一樣，但是實際使用的方法和技巧則隨著密碼學變得越來越復雜而日新月異。密碼學算法和協議從古代只利用紙筆等工具，發展到第二次世界大戰時的恩尼格瑪密碼機（又稱「謎」，德語：Enigma），直到目前的基於電子計算機的方案。而密碼分析也隨之改變了。無限制地成功破解密碼已經不再可能。事實上，只有很少的攻擊是實際可行的。在上個世紀70年代中期，公鑰密碼學作為一個新興的密碼學分支發展起來了。而用來破解這些公鑰系統的方法則和以住完全不同，通常需要解決精心構造出來的純數學問題。其中最著名的就是大數的質因數分解。
+
+
+
+目錄
+
+
+1 密碼分析的歷史
+
+1.1 經典密碼分析
+1.2 現代密碼分析
+1.3 密碼分析的後果
+
+
+2 攻擊類型
+
+2.1 先驗知識：密碼分析中的情形
+2.2 成功密碼分析的類別
+2.3 複雜度
+
+
+3 非對稱密碼學的密碼分析
+4 量子計算在密碼分析中的應用
+5 密碼分析的方法
+6 參考文獻
+7 參見
+
+
+
+密碼分析的歷史[編輯]
+主條目：密碼學史
+密碼分析和密碼學是共同演化的。這從密碼學史中可以看得很明顯。總是有新的密碼機被設計出來並取代已經被破解的設計，同時也總是有新的密碼分析方法被發明出來以破解那些改進了的方案。事實上，密碼和密碼分析是同一枚硬幣的正反兩面：為了創建安全的密碼，就必須考慮到可能的密碼分析。
+經典密碼分析[編輯]
+儘管「密碼分析」這個詞是晚近出現的（1920年由William Friedman（英語：William_Friedman）確立），但破解密碼和密碼機的方法卻已經存在很久了。世界上最早的破解密碼方法的文字記錄可以追溯到九世紀阿拉伯通才Al Kindi（英語：Abu_Yusuf_Yaqub_ibn_Ishaq_al-Sabbah_Al-Kindi）所著《破解密碼信息》（A Manuscript on Deciphering Cryptographic Messages），這篇文章論述了一個頻率分析的方法。
+頻率分析是破解經典密碼的一個基本方法。在自然語言裡，字母表裡的有些字母比其它的字母出現得更頻繁。例如，在英語裡，字母E很有可能是在任何文字樣本裡出現頻率都最高的字母。同樣的，TH這兩個字母連起來是最有可能出現的字母對。頻率分析法假設密碼沒有隱藏這樣的統計信息。例如，在簡單的替換密碼中，每個字母只是簡單地被替換成另一個字母，那麼在密文中出現頻率最高的字母就最有可能是E。
+頻率分析法除了需要用到統計學外，也需要用到語言學。但隨著密碼算法的日漸複雜，密碼分析也漸漸變得主要依賴數學方法。這個改變在第二次世界大戰時最為明顯。那時，為了破解軸心國的密碼，需要發展更加複雜的數學方法。而且，自動計算也頭一次被應用到密碼分析中，如密碼炸彈（英語：Bomba_(cryptography)）以及最早的計算機之一，巨人計算機（英語：Colossus_computer）。
+現代密碼分析[編輯]
+儘管第二次世界大戰時計算機的運用使得密碼分析更加容易，這同時也使得新的密碼學方案的復雜程度上升了好幾個數量級。總體來說，破解密碼在現代比起只用紙和筆的年代來說要困難得多了。現在看來，似乎密碼學對純密碼分析來說已經佔了上風。美國歷史學家卡恩（David Kahn（英語：David_Kahn））這樣說道：「今天，由數百個商家提供的很多密碼系統都不能被已知的密碼分析方法來破解。確實，在這樣的密碼系統中，即使用選擇明文攻擊，也就是攻擊者可以選擇明文並比對相應的密文，也不能找出可以用來解開其它加密信息的鑰匙。從某種意義上來說，密碼分析已經死了。但是，故事還沒有結束。密碼分析也許是死了，但是，打個不恰當的比方，其實條條大道通羅馬。」（2002年11月1日在美國國家安全局50周年紀念會上的講話）。卡恩接著又提到，其它的攻擊方式的可能性增加了。例如攔截攻擊，竊聽，邊信道攻擊，以及用量子電腦來代替傳統計算機做密碼分析[1]。
+卡恩對於密碼分析所作的論斷也許還為時過早。不安全的密碼並沒有絕跡，美國國家情報機構的密碼分析方法也沒有公開過。在學術界，新的密碼在不斷地被設計出來，也經常地被破解。1984年，Madryga（英語：Madryga） 分組密碼被一種唯密文攻擊破解。1998年，原本提出來要取代DES標準加密算法的分組密碼 FEAL-4（英語：FEAL），也因為被學術界發現了很多類似而且實際可行的攻擊而消亡。在工業界，很多密碼也被發現有漏洞。例如，在手機中使用的A5/1（英語：A5/1），A5/2（英語：A5/2）以及CMEA（英語：CMEA_(cipher)）算法，用一般的計算工具可以在幾小時，幾分鐘內，甚至是實時地被破解。2001年，用來保護無線Wi-Fi網絡的有線等效加密協議（或稱無線加密協議，即WEP）也可以用相關鑰匙攻擊來破解。
+密碼分析的後果[編輯]
+無疑，成功的密碼分析影響了歷史的進程。能夠看懂別人本以為是秘密的想法或計劃，這種能力可以成為決定性的優勢。在戰爭期間尤其如此。例如，在第一次世界大戰中，成功地破解齊默爾曼電報是促使美國參戰的直接原因。在第二次世界大戰中，對德國密碼的成功破解，包括恩尼格瑪密碼機（Enigma）和洛侖茲密碼機（Lorenz Cipher），其後果從使歐洲戰場早幾個月結束，到對整個戰爭起決定性作用，各種說法都有（參見ULTRA（英語：Ultra））。美國也從對日本的PURPLE（英語：PURPLE）密碼的密碼分析中受益（參見MAGIC（英語：Magic_(cryptography)））。
+一些國家的政府很早就已經意識到了密碼分析對於情報收集的重要性，不管是對於軍事還是外交都一樣。這些國家還建立了專門破解密碼的機構，如英國政府通訊總部（GCHQ），以及美國國家安全局（NSA）。這些機構在當今都非常活躍。2004年，有報道說美國成功破解了伊朗的密碼。但這是純粹的密碼分析還是有其它因素，目前還不清楚 [2]。
+攻擊類型[編輯]
+不同的密碼分析攻擊有不同的效力，對於實際的密碼系統的威脅也不盡相同。有的時候，對於某個密碼系統的攻擊只是停留在理論上，對於任何實際的密碼系統可能並不適用。這就是所謂的「證書式弱點」（certificational weakness）。現代密碼分析的學術研究結果大部分都屬於這一類。從根本上說，某種攻擊方式在實際中的有效性取決於它對於以下幾個問題給出的答案：
+
+這個攻擊需要何種知識及能力？
+通過攻擊可獲得多少新的秘密信息？
+這個攻擊需要花多少工夫？（它的計算復雜度為何？）
+
+先驗知識：密碼分析中的情形[編輯]
+在攻擊中，通過觀察或研究目標系統，多少會獲得關於這個系統的信息。隨著能夠獲得信息多少的假設不同，密碼分析的方法也不盡相同。在密碼分析中最基本的一點，就是假設攻擊者能夠知道系統所用的算法。這也就是「敵人瞭解系統」的所謂柯克霍夫原則。這個假設在實際中是合理的。從古至今，有無數的秘密算法最後終為人所知，而其途徑多種多樣，包括間諜，叛變，以及逆向工程。在一些不多見的情況下，密碼機也能夠通過純粹的推演而被重建。例如德國的洛侖茲密碼機（Lorenz Cipher）和日本的PURPLE密碼機，以及其它很多經典密碼。
+另外，我們通常用攻擊模式來描述攻擊者可以獲得關於系統信息的方式。攻擊模式包括以下幾種：
+
+唯密文攻擊：攻擊者僅能獲得一些加密過的密文。
+已知明文攻擊：攻擊者有一些密文並且知道相對應的明文。
+選擇明文攻擊：攻擊者在開始攻擊之前可以選擇一些明文並從系統中獲得相對應的密文。如果攻擊者在攻擊中途可以根據已經獲得的信息選擇新的明文並獲得對應的密文，則稱為適應性選擇明文攻擊。
+選擇密文攻擊：攻擊者在開始攻擊之前可以選擇一些密文並從系統中獲得相對應的明文。如果攻擊者在攻擊中途可以根據已經獲得的信息選擇新的密文並獲得對應的明文，則稱為適應性選擇密文攻擊。
+相關鑰匙攻擊：與選擇明文（或密文）攻擊類似。不同的是，攻擊者可以得到被兩個不同的鑰匙所加密（或解密）得到的密文（或明文）。攻擊者不知道這兩個鑰匙的數值，但知道這兩個鑰匙之間的關係，比如兩個鑰匙之間相差一個位元。
+
+顯然，這些不同種類的攻擊在實際中可能出現的機會也大不相同。儘管有些攻擊比其它的較為常見，密碼學家在設計算法時通常會採取保守的方式看待安全問題，總是假設最壞的情形。理由是，如果一個算法連不現實的攻擊都可以承受，那麼它自然也可以抵抗實際可行的密碼分析。
+事實上，這些假設雖然初看上去不切實際，但其實不然。例如在已知明文攻擊中，密碼分析者很有可能能夠知道或猜出明文的一部分。比方說，一封加密過的信有可能是以「敬啟者」開頭，而一個電腦會話則有可能以「用戶名：」開頭。選擇明文攻擊在密鑰密碼中較為少見，但也並非不可能。而在公鑰密碼中，選擇明文攻擊人人都可做到，因為加密用的鑰匙通常是公開或已知的。相關鑰匙攻擊通常只是在理論上的討論，但在實際中也會被用到，例如對WEP的攻擊。
+成功密碼分析的類別[編輯]
+對於密碼分析的結果來說，其有用的程度也各有不同。密碼學家Lars Knudsen（英語：Lars_Knudsen）於1998年將對於分組密碼的攻擊按照獲得的秘密信息的不同分為以下幾類：
+
+完全破解 -- 攻擊者獲得秘密鑰匙。
+全局演繹 -- 攻擊者獲得一個和加密和解密相當的算法，儘管可能並不知道鑰匙。
+實例（局部）演繹 -- 攻擊者獲得了一些攻擊之前並不知道的明文（或密文）。
+信息演繹 -- 攻擊者獲得了一些以前不知道的關於明文或密文的香農信息。
+分辨算法 -- 攻擊者能夠區別加密算法和隨機排列。
+
+對於其它類型的密碼學算法，也可以做出類似的分類。
+複雜度[編輯]
+
+
+
+本章節未有任何內容。（2017年4月23日）
+
+
+非對稱密碼學的密碼分析[編輯]
+
+
+
+本章節未有任何內容。（2017年4月23日）
+
+
+量子計算在密碼分析中的應用[編輯]
+
+
+
+本章節未有任何內容。（2017年4月23日）
+
+
+密碼分析的方法[編輯]
+
+
+
+本章節未有任何內容。（2017年4月23日）
+
+
+參考文獻[編輯]
+
+參見[編輯]
+
+Ophcrack
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+古典密碼學
+
+
+
+
+
+
+密碼
+
+
+
+ADFGVX
+仿射
+阿伯提
+阿特巴希
+自動密鑰
+博福特
+二分
+書本
+凱撒
+四方
+偉大
+希爾
+鍵詞
+虛無主義者
+一次性密碼本
+交換字
+豬圈
+波雷費
+多字符
+波利比奧斯
+籬笆
+Rasterschlüssel 44
+Reihenschieber
+Reservehandverfahren
+ROT13
+運動密鑰
+密碼棒
+史密斯加密
+紙牌
+散列板
+替換
+點字碼
+轉置
+三分
+二方
+VIC密碼
+維吉尼亞
+
+
+
+
+
+
+
+
+密碼分析
+
+
+
+頻率分析
+巧合索引
+卡西斯基試驗
+
+
+
+
+
+
+
+
+其他
+
+
+
+密碼
+培根
+密碼棒
+散列板
+表格法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+密碼學
+
+
+
+
+
+
+
+
+
+密碼學歷史
+密碼分析
+密碼體制
+密碼學主題列表
+
+
+
+
+
+
+
+
+
+
+
+對稱密鑰加密
+分組密碼
+流加密
+公開密鑰加密
+密碼雜湊函數
+訊息鑑別碼
+隨機數
+隱寫術
+
+
+
+
+
+
+
+
+
+
+
+語義安全
+完善保密性
+資訊理論安全性
+
+
+
+
+
+
+
+
+
+
+
+分類
+主題
+專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4830502-9
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=密碼分析&oldid=44107052"					
+分類：密碼分析隱藏分類：含有希臘語的條目含有德語的條目自2017年4月擴充中的條目擴充中的條目包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةБългарскиBosanskiCatalàČeštinaDanskDeutschΕλληνικάEnglishEspañolEuskaraفارسیSuomiFrançaisGaeilgeGalegoעבריתHrvatskiBahasa IndonesiaItaliano日本語Bahasa MelayuNederlandsNorsk bokmålPortuguêsRomânăРусскийSimple EnglishSlovenščinaСрпски / srpskiSvenskaTürkçeУкраїнськаTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年4月23日 (週日) 15:54。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Booklife圓神書活網-一銀提款機盜領、電影模仿遊戲、蜘蛛網中的女孩，看解密加密的密碼學鬥爭！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  │
+會員登入 │ 加入會員 │ 企業團體方案 │ 
+
+Hi，Welcome to Booklife圓神書活網
+ 
+
+( 0 ) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關鍵字：
+
+被討厭的勇氣
+星謎檔案
+Matty解毒棒
+
+
+
+
+
+
+
+
+
+全國最多圓神‧心靈活動
+
+話題新知
+編輯筆記
+分享大募集
+請問愛讀小書靈
+精選影音
+
+
+
+
+
+
+
+
+
+《被討厭的勇氣》繼續稱霸2017上半年度日本Amazon！保護個人資訊安全最關鍵，從良好習慣開始日本書店店員記名票選本屋大賞得主《鹿王》，同獲台灣書店青睞！博客來、誠品、金石堂一致選書推薦一致口碑！《三個朋友的人生智慧大哉問：僧侶、醫師與哲學家的對談》獲博客來、誠品、金石堂同時選書推薦
+
+
+
+
+
+男性
+女性
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  編輯筆記 > 好故事
+ 〉 讀者聚樂部 〉 編輯筆記
+
+
+
+一銀提款機盜領、電影模仿遊戲、蜘蛛網中的女孩，看解密加密的密碼學鬥爭！
+好故事小書靈　Booklife
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+一銀ATM盜領案揭曉，這並不是超能力，也不需要內神通外鬼，而是系統被駭之後的指令。
+
+
+沒有一家銀行的資料會大辣辣的儲放，就跟保險箱要上鎖、開鎖必須有鑰匙一樣，網路資料上的鎖頭愈來愈多層，金鑰形狀愈來愈奇怪，道高與魔高並不在於絕對保證的加密，但是也要延長破解的時間。解密與加密的鬥爭，即使你在閱讀文章的此時，都在進行著。
+
+
+早就讀過《龍紋身的女孩》系列小說的讀者，看著這位全球知名的女駭客莎蘭德，從個人電腦、銀行帳戶，到最新《蜘蛛網中的女孩》駭入美國國安系統，更加鉅細靡遺的呈現她的路徑。
+
+
+
+
+
+
+
+
+
+你可能也看了電影「模仿遊戲」。為什麼少年圖靈看著好友那寫滿無意義英文字母的紙條，卻一筆筆的轉譯出有意義的英文，而知道好友是與他行前告別？這個動作，就在加密／解密了。
+
+
+你不用是高技駭客，也能享有加密的生活。現在來看看這一段：
+
+
+「88  8179  7954  88179  8437  94320  0506  1.181  1.91817  88520」
+
+
+天才圖靈因為不懂中文，你才能容易猜出這段密碼文的第一句88是「爸爸」、結尾是88520「爸爸我愛你」。因應B.B. call （說了真是暴露年齡）或簡訊而生的1314、530這樣的數字密碼，這當然也是經過了「加密」喔，加密方式就是你要懂中文，最好還帶一點方言感。所以，多念幾遍試看看吧。
+
+
+電影「模仿遊戲」中，青少年圖靈跟摯友克裡斯多夫在課堂上傳紙條，在老師的眼裡只是一堆不合理的字母組合（加了密的「密文」），但是經由兩人約定好的加密原則，可以還原出真實的情感（解密後解密前真正要傳遞的訊息，也就是「明文」）。
+
+
+共同約定的表達法就可以是一種密碼。例如由星戰7導演J.J.亞伯拉罕寫作、紅了兩年的超級小說《S.》，在第一章出現的加密方式，就是將每個註釋中首、末兩字的註音頭尾，組合成一個字，字字相連後，竟然拼湊出通訊息的兩人在每個月19號的晚上7點會面的地點。（這當然還加上了中文譯者花白頭髮的轉化功力）
+
+
+儘管小說主角已經解密出來，相信許多讀者們都會忍不住照著註釋也畫葫蘆走一次。
+
+
+
+
+
+
+密碼學早就悄悄走入你我的日常生活。例如「結繩記事」，不知情的人就當是繩子打結啦？知情的人知道那是在數數兒。古時候的阿拉伯數字寫法，與「角度」有一定的規則，一個角度是1，兩個角度是2，以此類推。0很明顯的是沒有角度。
+
+
+
+
+
+
+圖：出自《認識密碼學的第一本書》，從故事中認識密碼學。
+
+
+至於為什麼少年圖靈知道哪個字母對應出哪個字母呢？這就是他和克裡斯多夫的祕密約定。你的日記可以約定每個字母往後推三個，讓 F 變成 I，爸媽就看不懂了。西元前一世紀的凱撒大帝曾經使用的凱撒密碼（Caesar Cipher）加密法就是讓字母往後推五個。
+
+
+要如何找出傳遞訊息的雙方，用的是哪一種約定的加密方式呢？電影最後，圖靈是以重複出現的訊息和人們的慣性來大膽假設。同樣的狀況，福爾摩斯破解「跳舞的小人」圖像，他則是先大膽假設訊息中出現特別多次的符號，是英文單字中符號最多的E。藉此嘗試並且拓展開來。
+
+
+   　
+
+
+左圖：由Jeremy Brett演出經典的夏洛克．福爾摩斯，1984年於英國首播，魅力非凡。
+右圖：《認識密碼學的第一本書》中，說明福爾摩斯如何拆解小人密碼的步驟。
+
+
+為了避免人性的加密方式萬一常用女友的名字開場，也可以用雙方特有的機器來加密。往前推西元前五世紀，斯巴達人為了傳遞軍事訊息用，就是使用「斯巴達密碼棒」加密。訊息的兩邊人馬，都要有那根斯巴達密碼棒。就像德軍各站都要有一臺恩尼格瑪機。
+
+
+
+
+
+
+
+
+
+圖：出自《認識密碼學的第一本書》
+
+
+或者電影「國家寶藏」「星際效應」，以及紙本小說《S.》，都運用了實際存在的加密法來增加懸疑性。其實，只要是想要保密溝通的兩人，有自己約定的方式，都是一門獨到的密碼法則。
+
+
+從圖靈拿著訊息在「克裡斯多夫」機器和恩尼格瑪機（Enigma）中間跑來跑去的輸出輸入；或是你登入網路銀行轉帳、上網購物，都是不斷的加密解密過程。隨著「便利性」「安全性」的兩種目的都日漸升高，世界就變成一場解密者和加密者的拉鋸戰。
+
+
+
+
+
+圖：電影中設定了原本活在自己小世界的圖靈，後來還能跟隊友把酒言歡。
+
+
+「模仿遊戲」中強化了圖靈的社交困難，暫不論這與實際的圖靈是否吻合，這同樣貫穿了圖靈企圖「理解」「解密」的經驗，人類也在做一種模仿。
+
+
+在電影中，年少的他覺得密碼學有甚麼稀奇，因為人們日常對話就已經是拐彎抹角！他不懂「我們要去吃中飯了」這種直述句為什麼同時也會代表「你要不要一起來？」的問句，電影藉此呈現，他學著理解（模仿）對方的言語、動作、社交習慣，像是瞭解人際之間常用共用的密碼。
+
+
+回到本文開頭，孩子寫給父親的那封信。當父親對於阿拉伯數字只停留在表達數字的功能，並不知道在這數碼時代，人們已經將數字做為同音中文表達的加密法，他當然無法理解孩子要對他說：
+
+
+「88  8179  7954  88179  8437  94320  0506  1.181  1.91817  88520」
+
+
+
+「爸爸：
+
+
+不要吃酒，吃酒誤事，爸爸一吃酒，不是傷妻，就是傷兒女，動武動怒，一點也不要，一點酒也不要吃。
+
+
+爸爸我愛你。」（出自《認識密碼學的第一本書》開場故事。）
+
+
+想起十幾年前剛認識一位同事，每回他的email末句是688。當時我也才剛知道886（bye-bye囉）是什麼，但是竟然還有688是要怎麼辦（李組長也要眉頭一皺）。硬著頭皮問了才知道，因為他姓劉，又剛當了爸爸，很高興地到處署名他是「劉爸爸」。
+
+
+密碼經驗可容易可簡單，當銀行拜託你不要把密碼寫在存摺上，你也可以用《認識密碼學的第一本書》親身試驗或發想一下加密法，換個數字再來一次，稍微阻擋宵小破解的時間。但是可不要連自己也忘記加密規則啊。
+
+
+
+
+
+
+－－本文參考《認識密碼學的第一本書》，中央警大教授、ICCL資訊密碼暨建構研究室主持教授王旭正親自解密，帶領大家從故事中認識密碼學。尤其有鑑於「滑世代」形同以個人的隱私當作貨幣，交換網路的免費服務，認為迫切需要瞭解數位時代的課題，本書特別以故事、電影做為場景來說明，被稱為現代公民必讀的密碼學故事書。
+
+
+
+
+
+
+
+
+
+．高技駭客入侵國家安全局！全球矚目駭客女孩，瑞典傳奇小說系列成功接班！
+
+
+
+
+
+．最用腦的小說《S.》！23組配件怎麼放？順序怎麼讀？主編獨家開箱
+
+
+
+
+
+　
+
+
+
+
+
+
+
+
+相關作品
+
+
+
+
+認識密碼學的第一本書
+
+
+
+建構這樣的團隊，多大的夢想都能實現：跟單打獨鬥的日子說再見
+
+
+
+被討厭的勇氣：自我啟發之父「阿德勒」的教導
+
+
+
+【牛津博士】同理心優勢：6個習慣，讓你擁有脫穎而出的溫柔競爭力
+
+
+
+
+
+
+
+
+
+
+御用奶油簾紋紙是什麼？可以吃嗎？山茶花小編踩點鎌倉，尋找《山茶花文具店》代筆實物
+
+
+
+說出真相！一定要看《星謎檔案》的10個理由
+
+
+
+超狂小說來自一個瘋得可行的夢 。《星謎檔案》作者專訪
+
+
+
+啊讀《星謎檔案》是哪裡有問題？你日常生活不就是在讀各種文件？
+
+
+
+沒有最狂只有更狂《星謎檔案》，限量三重贈品，真相正式曝光。
+
+
+
+世上竟然存在比《S.》更令編輯崩潰的紙本書！新品種小說《星謎檔案》猛烈來襲 !!!!
+
+
+
+來人啊，把這頁給我撕了！翻譯《星謎檔案》就像是搭上了雲霄飛車，難以預料下一頁會遇到什麼挑戰！
+
+
+
+《小屋》作者談「破碎的靈魂」：為什麼每個人都應該說出自己最黑暗的秘密
+
+
+
+星謎檔案──狂到難以定義，紙本書最新進化型態！
+
+
+
+是書店職人的愛，讓紙本書綻放獨特姿態
+
+
+
+
+
+
+ 
+
+
+心靈/勵志
+商管/理財
+文學/小說
+知識/學習
+健康/塑身
+生活/親子
+電子書
+
+
+
+
+
+
+
+書是活的，我們是你打造美好生活的提案家
+圓神．方智．先覺．究竟．如何．寂寞出版社／叩應發行
+地址：105臺北市南京東路4段50號6樓之1
+讀者服務專線：02-2579-8800 / 02-2579-6600
+Email：reader@mail.eurasian.com.tw
+歡迎多利用 線上客服。	    
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最新消息　　異業合作
+品牌故事　　誠徵人才
+六社書目　　本站聲明
+得獎紀錄　　隱私條款
+投稿出版
+
+
+常見問題　　國外訂購說明
+訂單查詢　　客服信箱
+會員權益　　友好連結
+購物須知　　網站導覽
+非會員購物
+
+
+
+
+
+
+ 
+
+
+
+
+
+密碼學 - Yahoo奇摩字典 搜尋結果Yahoo奇摩字典 網頁搜尋  首頁信箱新聞股市名人娛樂氣象運動App下載購物中心商城拍賣更多知識+汽車機車電影字典遊戲旅遊理財房地產時尚美妝折扣城        登入   信箱    服務說明      帳號資料      Yahoo查詢詞網頁 字典 知識+ 圖片 影片 部落格 購物 在地生活 新聞 食譜 汽車 較少 更多 依字典語言顯示 漢英字典 (2) 日英字典 (0) 英漢字典 (0) 英英字典 (0) 密碼學 |||||ZHUYIN[ㄇㄧˋㄇㄚˇㄒㄩㄝˊ] PINYIN[mimaxue]{"image_sprite":"url(https://s.yimg.com/pv/i/all/vertical/dictionary/tw_srp_metro_dictionary_201404171929.png)","width":"17px","height":"16px","position":"-21px -140px","src":["Dr.eye","CEDict"],"source":["Dr.eye 譯典通","CEDict"],"intl":"tw","device":"desktop","offset":"0","docid":"","sourceLang":"zh-hant","targetLang":"en","sound_type_1":[],"sound_url_1":[],"sound_type_2":[],"sound_url_2":[],"provider_selector":".searchCenterMiddle .DictionaryResults .compTitle","End":"true"}1. cryptography; cryptology 密碼學 cryptographyCEDict 知識+ ｜約 6 之 1-3 筆密碼學有分哪些? 不知道你有沒有興趣看看  http://fish7750601.pixnet.net/blog                  尛轟磊掱雦眾   2014-06-09 01:54:27 補充： 到下麵的網址看看吧  ▶▶http://candy5660601.pixnet.net/blog 密碼學的幾句中文要翻譯成英文 He used Euler's theorem to derive RSA's Public key and private key, re-use of JAVA to write a Basic program of the RSA; in the classroom successfully demonstrated encryption and decryption functions.    He... 幫忙看一下這段英文，我翻的連我的都看不懂@@ Distributed cryptography:  分散式的的密碼學      This scheme enables network managers to centrally define... 更多密碼學相關知識 Life Time - Claim Your Guest Pass Today Top programs & classes, resort-like amenities and more. Experience the finest in fitness.Life Time Fitness SponsoredHealing Communities, One Family at a TimeBoys Town has been saving children, healing families and strengthening communities for 100 years. With your donation, we’ll do it for 100 more.Uber SponsoredHandsome Affordable Tungsten Rings - Free ShippingLifetime Warranty - Free Shipping - Just $49.99Tungsten Fashions.com Sponsored2 個搜尋結果刪除所有記錄最近查詢字詞密碼學X沒有記錄熱門關鍵字 韓文翻譯西班牙語遊學全民英檢多益補習班輕鬆學英文線上學英文翻譯 美語教學 美語 美國留學 留學資訊 短期遊學 紐西蘭遊學 學英文查詢詞Yahoo 奇摩服務中心建議隱私權政策服務條款廣告Powered by Bing™We're fetching your file...Please wait a moment while we retrieve your file from its home on the internet
+
+
+
+
+
+
+密碼學 | 金石堂網路書店 - Yahoo奇摩超級商城
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+   首頁 購物中心 拍賣 中古車 折扣城 信箱 App下載 
+
+
+  Yahoo!奇摩超級商城        自然科學    全部分類      自然科學                
+          我的商城     購物車清單 我的最愛 收藏商品 超贈點 折價券 我的專屬優惠 商店客服 超級商城公告    | 登入     訂單查詢     出貨進度 退換申請 發票查詢 新手上路 常見問題      
+   商品分類 逛商店    漢神百貨  流行館  型男館  熱銷榜  折扣城  聯名卡  超贈點         登入後可收藏最愛商店    
+
+
+     服飾服飾   分類  漢神百貨品牌服飾 漢神百貨內睡衣 流行女裝 中大尺碼女裝(M-7L) 女性內睡衣 品牌/潮流男裝  本類推薦  ★ 夏日玩色穿搭5折起 ★ 質 感 女 裝 推 薦 LIST ★ ★MOMA旗艦館：新品上市 ★a la sha：滿2000現折200 ★cantwo：網路獨家均一價 網友熱搜TOP1．洋裝 網友熱搜TOP2．背心 網友熱搜TOP3．寬褲 7/25前抽渡邊直美代言淨味劑 機能內衣超值★專區5折up 型男夏日穿搭★均一價199up    人氣商店  糖罐子►超取99元免運費 Miu-Star►50元券現領現折 東京著衣►100元券現領現折 設計家 原創風格►全店69折 TMH 好評女裝►全店88折 LAMECHIC►5折回饋專區 Life8►居家系列5折 OB大尺碼►襯衫均一價269 Peach Love►全店5折  新進商店  金安德森►萊爾富99免運 新時尚►萊爾富99免運 MOMA►萊爾富99免運         美妝美妝   分類  漢神百貨美妝保養 專櫃美妝/香水 開架美妝/藥妝 美體/私密/手足保養 香氛沐浴/髮品/假髮  本類推薦  2017防曬大集合►看更多 專櫃美妝香水►滿1500打88折 代購超紅►The saem遮瑕膏免運 beautyblender►15周年限定 口紅鎖色神器►怎麼吃喝都不掉色 ★薇佳100元現領現折★ =====本週熱搜關鍵字===== 熱搜No.1 ♥ SOFINA妝前乳 熱搜No.2 ♥ 香水 熱搜No.3 ♥ 法婡雅    人氣商店  86小舖►萊爾富99免運 屈臣氏►現折$50 康是美►滿千折百 小三美日►萊爾富99免運 寶拉珍選►專區79折 薇姿VICHY►滿千折百 巴黎萊雅►彩妝85折 無印良品►滿700折50 巴黎草莓►萊爾富99免運  新進商店  三原水►萊爾富99免運 純淨佳人►去角質買一送一免運 聯合利華►開幕慶現折50元         鞋包/精品/配飾鞋包/精品/配飾   分類  漢神百貨精品珠寶 漢神百貨鞋包配飾 國際精品 品牌鞋包 流行女包/皮夾 流行女鞋 型男鞋包配件 手錶 珠寶/ 飾品/配件  本類推薦  ☀質感穿搭真皮鞋包5折起 ☀新鮮人好感度up穿搭特輯 ☀放暑出遊鞋包全攻略 ☀玩色夏日！50%off 年終優選．潮流時尚單品 ★夏日配飾★新品299起 ★施華洛世奇★開幕慶限時超贈點5倍送 ★型男配件↘精選店家五折起    人氣商店  Pixy►全店任2件79折 天藍小舖►任選2件398 Ann'S►涼鞋季9折 Sophie&Sam►兩雙1500 MAGY瑪格►開幕慶百款$990 FOSSIL►熱銷男夾7折 大新莊鐘錶►MK錶享87折 施華洛世奇►超贈點5倍送+獨家滿額贈 周大福►小小兵黃金現折388  新進商店  Kwoomi►萊爾富99免運 時光鐘錶►萊爾富99免運 OSEWAYA►萊爾富99免運         媽咪寶貝媽咪寶貝   分類  漢神百貨媽咪寶貝 童裝/媽咪裝 寶貝媽咪用品  本類推薦  ▶尿布特賣最低800up ▶新手媽咪懶人包特搜 ▶寶貝玩水必備79折up ＝＝＝夏季熱搜榜＝＝＝ 熱搜推薦 ▶ 涼鞋 熱搜推薦 ▶ 泳裝 熱搜推薦 ▶ 地墊 熱搜推薦 ▶ 費雪 熱搜推薦 ▶ 學步鞋 熱搜推薦 ▶ 親子裝 熱搜推薦 ▶ 哺乳衣 熱搜推薦 ▶ 帽子    人氣商店  AIB小舖☛限時任2件69折 米妮希望屋☛新品79折 QB allshine☛童裝均一價$99 美國派☛新品折後$166/件 baby童衣☛人氣童裝任選65折 拍手童裝☛全館滿699現折100 母嬰同室☛涼感包巾第二件5折 哈韓孕媽咪☛哺乳衣任選79折 橘魔法☛涼鞋第二件76折  新進商店  魔幻甜心►萊爾富99免運 時尚寶貝►萊爾富99免運 UNICO-LIFE►萊爾富99免運         電腦/週邊電腦/週邊   分類  Apple 專區 平板/NB/PC 週邊設備/零組件  本類推薦  【爆殺】微軟藍芽滑鼠↘990 全新SurfacePro↘31888 iPad 9.7吋 WIFI↘10300 ZENBOOK雙碟版↘129990 小米智能攝影機↘1049 4G獨顯i7電競筆電↘36900 EPSON三合一印表機↘4190 128G金屬防水隨身碟↘249 SanDisk雙用隨身碟↘1090 Intuos創意觸控繪圖板↘3400 華碩雙頻IP分享器↘2290 NEW! 小學堂♥雷射印表機    人氣商店  三井3C►買品牌印表機送咖啡券 每家比電子►全館結帳2%回饋! 紐頓e世界►買顯卡送Rocket遊戲 浩昇科技►EPSON原廠匣95折 台灣奇茂購物►全館最高折200 PC PARTY►雷蛇煉獄奎蛇7折 office24列印►綠犀牛下殺88折 科大電腦►全館滿2千折150元 彩虹3C►專區滿3千折300元  新進商店  Luminee►萊爾富99免運 嗨殼F巷►萊爾富99免運 達墨精品3C►萊爾富99免運         家電/視聽家電/視聽   分類  生活/廚房家電 電視/影音/耳機 冷氣/冰箱/洗衣機  本類推薦  強檔▶父親節採購指南討爹歡心 強檔▶揪感心空調讓老爸超涼爽 送88☛B&Q影音劇院現正特價 送88☛你可以讓爸爸學會追劇 送88☛這節怎麼能沒刮鬍刀呢 送88☛學老媽抓住爸爸的口味 好康☛買移動式空調送電風扇 好康☛湯姆森直流扇五折對殺 好康☛無法想像LG冰箱這麼低 好康☛東元洗衣機瘋狂特價中 新奇☛鬼怪男孔劉代言清淨機 新奇☛日本首創水過濾吸塵器    人氣商店  封館殺9折+狂賀開店60年：德昌 現折1,500+日立空調它殺：愛買 滿額折300+電漿除菌清淨：臻淨 滿額折300+代購小家電：樂魔派 滿額折300+米家機器人夯：靂昂 全館!88折+米家影音任挑：牧晨 滿額折300+藍芽耳機夯：夏露奇 滿額折300+潮牌無線耳機：炫燁 滿額折300+藍芽影音喇叭：無線  新進商店  滿額折300+夏普大電它俗：永鴻 滿額折300+南臺灣家電王：秀翔 滿額折300+空調兩天快裝：佳瑩         相機/手機/玩具相機/手機/玩具   分類  單眼相機/鏡頭 數位相機/拍立得 相機週邊 手機 手機配件/通訊 電玩/玩具  本類推薦  ☞新鮮人應援▼滿3千折350元!! ☞新品NEW²報首刊▼幾何手機殼 ★小米夜視攝影↘1100免運 ★SONY運動攝影↘10900免運 ★DJI  SPARK↘15500現貨! ★血氧血壓智能手環↘849起 ★小米1000mah電源↘499 ★暑假瘋玩 熱銷桌遊↘299 ★bitplayd照相手機殼↘1280 ★NOKIA 5 現貨↘5390 ★夏日戲水用玩具↘79起 ★暑假瘋玩 熱銷桌遊↘299    人氣商店  東菱數位科技➤GH5現貨零利率 WL數碼達人➤蔡司鏡頭現折8800元 SG➤全館配件滿6百現折100 一手流通➤手機滿3千現折350 帝谷通信➤OPPO A57$6988 GOSHOP➤小米手環現折$50 數位風潮➤美肌自拍桿買1送1 龐奇桌遊➤滿千折百 再送桌遊 funbox➤全館滿888送$100禮券  新進商店  放肆購►萊爾富99免運 Nydus►萊爾富99免運 亞果元素►全館免運         美食/纖體/保健美食/纖體/保健   分類  漢神百貨美食街 美顏美體/營養保健 冷凍/生鮮/甜點 小吃熟食/糕餅/零食 飲料/食材/雜貨 有機食品  本類推薦  oh爸男神★美食x保健滿千88折! 健康美麗迎夏日★保健熱銷榜 異國零食特搜No1★限時87折! 閨月表達孝心★豬腳麵線No.1 ★網友熱搜=88節蛋糕早鳥預購 ★網友熱搜=小小兵起司拉麵 ★網友熱搜=曾粉 海味叻沙 ★網友熱搜=芒果青冰 ★網友熱搜=愛文芒果 ★網友熱搜=亞培安素2箱立即送 ★網友熱搜=辣炒年糕點心麵 ★網友熱搜=老協珍滴雞精    人氣商店  亞尼克★現領現折50元 愛買★好友週任2件88折 每日優果★全館滿千88折 夢甜屋★生乳捲任2條699免運 大樂購物中心★全館滿千折百 煲好湯★全館滿千88折 飲食生活家★亞培成人系列95折 Double手法式甜點★全館8折 橙姑娘★梅精買五送一  新進商店  青鳥旅行►萊爾富99免運 甜園小舖►萊爾富99免運 豆嫂的零食►萊爾富99免運         醫療/日用品/寵物醫療/日用品/寵物   分類  醫療用品/器材 生活百貨/日用品 寵物/水族用品  本類推薦  ▶一點絕！領券後＄922 ▶開幕慶～熊寶貝買1送6 ▶Durex旗艦店 $ 50領折 ▶愛康衛生棉～再也回不去 熱搜字 ❤ 梅雨季_除濕防霉 熱搜字 ❤ 防蚊 熱搜字 ❤ 液體衛生棉 熱搜字 ❤ 保險套 寵物熱搜❤ 涼墊 寵物熱搜❤推車 寵物熱搜❤ 除臭吸水尿布 寵物熱搜❤ 低粉塵貓砂    人氣商店  ★屈臣氏指定商品75折 ★ASAP天天領50折券 ★康是美＄50領折 ★雙寶醫療 ＄100領折 ★康諾醫療＄100領折 ★維康醫療護具88折 寵物夢工廠►全店滿千折百 King Wang 精品館►滿額送贈品 培菓平價寵物網►全店95折  新進商店  快意生活►萊爾富99免運 木酢達人►萊爾富99免運 派對盒►萊爾富99免運         居家/寢具/傢具居家/寢具/傢具   分類  漢神百貨居家生活 居家/雜貨/園藝 寢具/家飾 傢俱/收納/床墊 廚房鍋具/餐具/用品 衛浴設備/浴室用品 五金/照明工具  本類推薦  酷涼冰沙杯★ 居家好物5折up 蛋黃哥玻璃杯★ 88折＆免運 涼夏消暑首選★ 冰沙杯$63/瓶 涼夏杯具組★ 任選62折 晴雨小幫手★ 遮陽傘↘6折 熱搜字 ❤  鞋櫃 熱搜字 ❤  衣櫃 熱搜字 ❤ 沙發床 熱搜字 ❤  毯/被子 熱搜字 ❤ 天絲（床組）    人氣商店  H&D東稻家居 ♥ 專區86折 翔仔居家 ♥ 新品享85折 完美主義 ♥ 收納盒系列2件79折 棉床本舖 ♥ 滿990送德國兔 收納專科 ♥ 專區最高折1000 戀家小舖 ♥ 簡約素色款9折 Modern Deco ♥ 全館79折 HOLA ♥ 全館滿千折100 特力屋 ♥ 全館滿千折100  新進商店  漫生活居家►萊爾富99免運 OH!Show►萊爾富99免運 易奇寶居家►萊爾富99免運         運動/戶外/交通運動/戶外/交通   分類  漢神百貨休閒運動 腳踏車/汽機車精品 運動器材/用品 運動鞋/服飾/包包 戶外用品/行李箱 樂器 18禁專區  本類推薦  ►Summer趴～IG拍照打卡特輯 ►女孩粉粉運動風折188 ►女人節目●Puma緞帶鞋均一價 ►戶外超大傘●３秒帳專區 ►夏季露營趣●Coleman78折up 熱搜關鍵字 ❤ 比基尼 熱搜關鍵字 ❤ FUN暑假全攻略 熱搜關鍵字 ❤ 防曬穿搭 熱搜關鍵字 ❤ 行李箱 熱搜關鍵字 ❤ 腳踏車    人氣商店  ★SKECHER旗艦店最低55折 ★TheNorthFace新品2件85折 ★A PLUS全店NIKE5折up ★UV100防曬 $99免運 ★運動世界＄150領折 ★宅神也健身小物＄99免運 ★native shoes藝人最愛朝聖拖 ★Pump306最高折188 ★喬依比基尼 滿599送手機套  新進商店  INDULGENCE►萊爾富99免運 IronSteel安全鞋►萊爾富99免運 Juniper 朱尼博►萊爾富99免運         餐券/娛樂/旅遊餐券/娛樂/旅遊   分類  美食餐券 娛樂/生活/服務券 旅遊住宿券  本類推薦  📣  吃喝玩樂暑期全攻略 📣 『限量』饗食天堂餐券免運 『VIP』義大買1送7+快速通關 『預購』丹堤父親節蛋糕88折 『推薦』六福萬怡酒店下午茶 『搶先』六福水樂園299元 『熱賣』騎士堡3小時親子券 『FUN』劍湖山王子飯店住宿 激推品 ►遊樂園門票 激推品 ►親子住宿 激推品 ►高CP吃到飽 超贈點折抵首選★天仁/翰林    人氣商店  農場美食/田園1日遊 ►全台任選 奧塞美術館大展 ►門票即買即用 品花苑午晚餐吃到飽  ►599起 東森海洋4人住宿  ►25折 便利商店24H洗衣服 ► 3件369 日月潭碼頭水沙連飯店►湖景房 冷氣空調清洗►下殺55折 東森海洋4人住宿  ►25折 耐斯王子大飯店4人住宿►44折  新進商店  ♥指舞春秋 舒壓放鬆 ♥台灣農場趴趴走  體驗小小農夫 ♥葛洛莉spa萊爾富99免運         圖書/文具/影音圖書/文具/影音   分類  書籍/雜誌期刊 二手書專區 音樂/電影/影集 文具/辦公用品  本類推薦  ▶珍藏齊柏林 ►關西親子遊-金石堂滿700送70元 ►30色彩筆文具/手藝↘39 ►NORNS-迪士尼文具小物 ►3M生活-文具超值選$18起 ►DATABANK文具-第2件8折 ❤熱搜NO.1~紙膠帶 ❤熱搜NO.2~萬寶龍鋼筆 ❤熱搜NO.3~療癒小物 ❤熱搜NO.4~迪士尼 ❤熱搜NO.5~文創小物    人氣商店  ★讀冊5折up/萊爾富$99免運 ★金石堂-滿700送70元 ★城邦-滿499現折50元 ★大創萊爾富$99免運 ★bluecat萊爾富$99免運 ★書立得童書7折起 ★時報文化69折起 ★麥克英文有聲書78折起 ★今周刊全店免運  新進商店  芮菲客筆►萊爾富99免運 文禮學院►萊爾富99免運 易撕貼本鋪►萊爾富99免運       
+
+
+
+
+
+
+
+
+
+
+
+超級商城
+ > 
+圖書/文具/影音
+ > 
+書籍/雜誌期刊
+ > 
+自然科學
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+金石堂網路書店金石堂網路書店★中文新書79折起｛超商取貨滿350免運｝★ 
+
+
+
+
+
+
+
+
+
+
+
+本店購物車
+ 加入最愛店家
+
+
+
+訂閱電子報
+
+
+
+
+
+
+
+
+
+
+
+
+商店首頁
+商店滿意度
+ 商店介紹
+購物須知
+商店客服
+限時促銷活動(1)
+
+
+
+
+
+
+
+
+
+
+特惠活動
+
+運動塑身
+
+現代文學
+
+心理勵志
+
+手作甜點
+
+影視娛樂
+
+親子教養
+
+童書繪本
+
+手作設計
+
+暢銷旅遊
+
+錢流進來
+
+語言工具
+
+電影原著
+
+國家考試
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+分享到Facebook
+
+
+
+ 分享到Plurk
+
+
+
+
+
+
+加入收藏清單
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+商品編號：p0337104967677
+店家貨號：2014480810286
+購買人次：0
+銷售件數：0
+
+
+
+本店促銷活動
+
+
+
+★金石堂網路書店暑期閱讀★全館滿700元送70元折價券★第二波
+
+
+
+
+
+
+
+
+
+熱賣相關品
+
+                        更多
+                    
+
+
+
+
+
+
+
+                        網路價 
+                        
+                        元
+                    
+購買
+
+
+
+
+
+ 
+
+
+
+
+
+
+密碼學
+作者:霍安琪出版日:2003/10/21ISBN:9789576032387
+
+
+
+
+
+
+網路價
+
+
+120元 95元
+消費滿100元可得超贈點：1點 
+
+
+
+
+
+付款方式
+
+
+網購必備筆筆享3%．辦卡送威秀電影票
+
+
+刷卡最有利筆筆享2%最高送2400刷卡金
+刷卡紅利折抵 
+      接受20家銀行
+
+信用卡 
+ATM轉帳 
+全家付款取貨 
+7-11付款取貨 
+
+
+
+
+
+
+
+交貨方式
+
+
+萊爾富純取貨 (購物滿99元免運費) 、貨運 / 宅配 (購物滿1000元免運費) 、7-11取貨付款 (購物滿350元免運費) 、全家取貨付款 (購物滿350元免運費)  
+
+
+
+
+
+
+
+
+
+
+
+
+服務承諾
+
+
+七日鑑賞期內退貨免運費
+ 
+
+
+
+
+
+
+
+
+
+        立即購買    
+
+
+加入購物車
+
+
+
+
+
+
+
+
+
+
+
+
+
+商品詳細說明
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+分級標示普級 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+9.6
+店家滿意度
+
+
+1.1
+出貨天數
+
+
+0.7
+回信天數
+
+
+1.9
+缺貨率%
+
+
+ 
+
+
+
+
+
+        立即購買
+    
+
+
+加入購物車
+
+
+
+
+
+
+
+
+
+
+
+
+
+消費者滿意度：9.6
+
+
+
+
+
+平均服務品質
+
+                    出貨速度：1.1 天
+                    回信速度：0.7 天
+                    缺貨率：1.9 %
+
+
+
+                近一週瀏覽次數：58065            
+
+
+
+
+
+
+本店商品搜尋
+
+
+
+
+
+
+商品名稱
+        	店家貨號
+        
+價格範圍
+ ~ 
+
+
+
+
+
+
+
+
+本店全部分類
+
+
+全部商品(129980)
+      
+新書推薦(910)文學(204)心理勵志(78)飲食料理(100)財經企管(86)醫療保健(73)語言／考試書(83)生活風格／旅遊(142)教育／親子／童書(144)中文書(129004)文學(13352)旅行飲食／自然文學(265)圖文繪本(837)現代華文創作(2969)現代詩(447)世界古典文學(597)中國古典文學(436)國學／古詩詞(395)文學總論(429)現代翻譯文學(2175)奇幻／科幻小說(1295)推理／犯罪小說(1235)恐怖／驚悚小說(1078)歷史／武俠小說(1168)其他文學(21)簡體版-文學小說(5)財經企管(5555)經濟／金融(372)全球趨勢(233)國際／兩岸經貿(99)投資理財(1289)創業／開店(200)行銷／業務(608)電子商務(145)企業案例分享(401)企業經營(942)管理實務(270)求職(67)職場工作術(921)其他財經企管(8)生活風格(4021)手作設計(1190)文具／雜貨／紙(329)影視娛樂(293)美妝／時尚(502)運動(309)戶外活動(130)品味／指南(228)休閒／嗜好(664)武術(375)其他生活風格(1)飲食料理(3255)鍋具／家電料理(146)中式料理(284)各國料理(424)主題料理(364)食材料理(530)烘培／點心(834)茶／酒／飲品(341)飲食生活(332)心理勵志(4813)自我成長(1765)勵志小品(987)家庭／兩性(514)人性／人際(707)心理學(244)心理諮商／治療(321)學習／潛能開發(257)其他心理勵志(18)醫療保健(4983)懷孕／育兒(141)健康觀念(777)疾病百科(987)醫療人文(332)其他醫療保健(6)中醫養生(829)舒壓養生(706)健康飲食(752)減重／塑身(453)旅遊(2497)日本(618)亞洲(318)台灣旅遊(514)旅遊遊記(235)世界旅遊(110)中國(178)歐洲(319)美洲(96)大洋洲(55)非洲(17)台灣地圖(24)世界地圖(10)其他旅遊(3)宗教命理(3981)新時代(454)基督教(439)佛教(1195)占星／血型(156)占卜(245)命理(741)曆書(51)靈異／神秘(230)道教(36)台灣民間信仰(173)其他宗教(205)宗教總論(47)其他宗教命理(9)教育/親子教養(1856)教育/教學現場(543)0-3歲嬰幼兒(271)親子教養(981)親子生活(61)童書(13142)寶寶書(0-3)(993)學前幼兒(4-6)(2065)遊戲教具(762)繪本／圖畫書(2966)兒童故事／小說(3098)歷史／傳記(599)寫作／語文學習(510)科普／百科(958)生活／學習(289)知識學習漫畫(895)其他童書(7)羅曼史(6337)古代羅曼史(4925)現代羅曼史(1258)世界羅曼史(113)原創小說（簡體）(41)輕小說(15821)華文奇幻／科幻輕小說(2492)華文推理／神怪輕小說(843)華文玄幻／仙俠輕小說(6375)華文戀愛輕小說(936)華文其他輕小說(18)日系奇幻／神怪輕小說(2381)日系推理／神怪輕小說(600)日系戀愛輕小說(1425)日系其他輕小說(18)週邊精品(694)其他輕小說(3)簡體版-輕小說(36)漫畫(23688)戀愛關係(7737)魔幻冒險(5204)武俠／格鬥(618)推理／驚悚(2203)職場／運動(2549)輕鬆生活(2563)社會歷史(1117)電玩／攻略(324)歐美漫畫(20)畫冊／週邊(470)其他漫畫(60)國人漫畫(667)韓系漫畫(156)語言／字辭典(5078)英語學習(1963)英語檢定(574)留學／留學考(36)英語辭典(60)日語學習(923)韓語學習／檢定(310)日語檢定考試(389)日語辭典(25)外語學習／辭典(239)其他語言／字辭典(4)中文學習(288)中文字辭典(79)華語學習(135)地方方言(53)藝術設計(4453)攝影(570)繪畫(1205)建築／空間設計(685)音樂／樂譜(336)設計(355)藝術／美學(382)電影(202)藝術投資／收藏(213)中國書畫(272)工藝／雕塑(53)表演藝術(170)其他藝術設計(8)簡體版-藝術設計(2)電腦資訊(2290)3C數位生活(220)網頁設計(211)繪圖／影音／多媒體(476)辦公軟體／應用軟體(332)作業系統(101)程式設計(328)資料庫(72)網路／安全／概論(249)APPLE專區(79)認證考試(215)其他電腦資訊(7)自然科普(2366)普及科學(266)數學(208)化學(59)物理(98)生命科學(224)動物／寵物(500)植物／花草生活(471)地球生態／天文(151)科技／應用科學(381)其他自然科普(8)人文歷史(3433)世界史地(390)西洋史地(341)亞洲史地(389)中國史地(1574)台灣史地(732)其他史地(7)社會哲思(3569)各國觀察(349)社會議題(440)哲學／當代思潮(245)西方哲學(136)東方哲學(404)法律(447)政治／國際情勢(631)環境／飲食(157)社會科學研究(71)社會學(182)戰爭／軍事(321)語言學(78)書店／出版／傳播(104)其他社會哲思(4)考試書／政府出版品(4514)大學教科用書(954)公務人員／高普考(947)考試秘笈(134)就業考試(313)軍警消考試(176)教師甄試／檢定(48)證券／金融證照(138)職訓檢定(304)專技人員考試(151)其它考試用書(1)銀行招考(7)領隊導遊(98)國中會考(87)升科大四技(327)升大學／插大(316)政府出版品(404)研究所考試(109)設計文具(317)2017吉卜力年曆(3)2017手帳(12)書寫用品(22)中性筆(5)原子筆(17)黏貼修正(195)膠帶(台)(124)橡皮擦(71)事務週邊(41)量測用品(3)裝訂文具(20)事務針夾(1)會議／留言／投影片(17)書畫美術(41)彩色筆(18)色鉛筆(23)精緻名筆(3)觸控筆(3)
+
+ 
+
+平臺說明
+
+
+
+開創新客群，同時擁有電腦版、手機版&APP商店！專人輔導立即開店！
+
+
+服務說明
+購物須知
+常見問題
+
+
+
+ 
+
+
+
+
+
+熱賣相關品
+（購買這件商品的人，通常也會購買下列商品。）
+TOP
+
+
+
+
+ » 更多商品 
+
+
+
+
+
+
+商品促銷區TOP
+
+
+
+
+
+
+
+科學氣功：李嗣涔博士30年親身實證，每天10...
+網路價：300元
+
+
+
+
+
+東北 日本鐵道、巴士自由行 背包客系列12
+網路價：316元
+
+
+
+
+
+平民股神蘇松泙系列２：不蝕本實戰操作(增強版...
+網路價：300元
+
+
+
+
+
+男生小雞雞(精裝)(附CD) 性別小繪本
+網路價：96元
+
+
+
+
+
+Brick Taiwan：積木臺灣經典建築，...
+網路價：473元
+
+
+
+
+» 更多商品
+
+
+
+
+
+
+
+
+
+
+
+[x]
+
+
+
+
+
+[x]
+
+
+
+
+
+
+
+
+
+
+手機逛超級商城
+加入超級商城粉絲團
+退貨辦法
+服務說明
+我要開店
+
+
+服務條款
+隱私權
+
+
+
+
+
+
+加入收藏清單
+
+
+
+
+
+商品名稱：
+
+
+
+標籤：(非必填)
+
+
+ 
+你還可新增  個標籤 (每次新增限輸入一個，每次限10個字)您可自訂標籤，方便資料分類與管理 
+常用的標籤：
+
+
+
+
+
+
+
+
+資料傳輸中.
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+書籍/雜誌期刊 (文學, 動/漫畫, 親子童書, 生活娛樂) - Yahoo奇摩超級商城 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   首頁 購物中心 拍賣 中古車 折扣城 信箱 App下載 
+
+
+  Yahoo!奇摩超級商城        書籍/雜誌期刊    全部分類      書籍/雜誌期刊                
+          我的商城     購物車清單 我的最愛 收藏商品 超贈點 折價券 我的專屬優惠 商店客服 超級商城公告    | 登入     訂單查詢     出貨進度 退換申請 發票查詢 新手上路 常見問題          商品分類 逛商店    漢神百貨  流行館  型男館  熱銷榜  折扣城  聯名卡  超贈點         登入後可收藏最愛商店    
+ 
+
+
+
+
+
+
+     服飾服飾   分類  漢神百貨品牌服飾 漢神百貨內睡衣 流行女裝 中大尺碼女裝(M-7L) 女性內睡衣 品牌/潮流男裝  本類推薦  ★ 夏日玩色穿搭5折起 ★ 質 感 女 裝 推 薦 LIST ★ ★MOMA旗艦館：新品上市 ★a la sha：滿2000現折200 ★cantwo：網路獨家均一價 網友熱搜TOP1．洋裝 網友熱搜TOP2．背心 網友熱搜TOP3．寬褲 7/25前抽渡邊直美代言淨味劑 機能內衣超值★專區5折up 型男夏日穿搭★均一價199up    人氣商店  糖罐子►超取99元免運費 Miu-Star►50元券現領現折 東京著衣►100元券現領現折 設計家 原創風格►全店69折 TMH 好評女裝►全店88折 LAMECHIC►5折回饋專區 Life8►居家系列5折 OB大尺碼►襯衫均一價269 Peach Love►全店5折  新進商店  金安德森►萊爾富99免運 新時尚►萊爾富99免運 MOMA►萊爾富99免運         美妝美妝   分類  漢神百貨美妝保養 專櫃美妝/香水 開架美妝/藥妝 美體/私密/手足保養 香氛沐浴/髮品/假髮  本類推薦  2017防曬大集合►看更多 專櫃美妝香水►滿1500打88折 代購超紅►The saem遮瑕膏免運 beautyblender►15周年限定 口紅鎖色神器►怎麼吃喝都不掉色 ★薇佳100元現領現折★ =====本週熱搜關鍵字===== 熱搜No.1 ♥ SOFINA妝前乳 熱搜No.2 ♥ 香水 熱搜No.3 ♥ 法婡雅    人氣商店  86小舖►萊爾富99免運 屈臣氏►現折$50 康是美►滿千折百 小三美日►萊爾富99免運 寶拉珍選►專區79折 薇姿VICHY►滿千折百 巴黎萊雅►彩妝85折 無印良品►滿700折50 巴黎草莓►萊爾富99免運  新進商店  三原水►萊爾富99免運 純淨佳人►去角質買一送一免運 聯合利華►開幕慶現折50元         鞋包/精品/配飾鞋包/精品/配飾   分類  漢神百貨精品珠寶 漢神百貨鞋包配飾 國際精品 品牌鞋包 流行女包/皮夾 流行女鞋 型男鞋包配件 手錶 珠寶/ 飾品/配件  本類推薦  ☀質感穿搭真皮鞋包5折起 ☀新鮮人好感度up穿搭特輯 ☀放暑出遊鞋包全攻略 ☀玩色夏日！50%off 年終優選．潮流時尚單品 ★夏日配飾★新品299起 ★施華洛世奇★開幕慶限時超贈點5倍送 ★型男配件↘精選店家五折起    人氣商店  Pixy►全店任2件79折 天藍小舖►任選2件398 Ann'S►涼鞋季9折 Sophie&Sam►兩雙1500 MAGY瑪格►開幕慶百款$990 FOSSIL►熱銷男夾7折 大新莊鐘錶►MK錶享87折 施華洛世奇►超贈點5倍送+獨家滿額贈 周大福►小小兵黃金現折388  新進商店  Kwoomi►萊爾富99免運 時光鐘錶►萊爾富99免運 OSEWAYA►萊爾富99免運         媽咪寶貝媽咪寶貝   分類  漢神百貨媽咪寶貝 童裝/媽咪裝 寶貝媽咪用品  本類推薦  ▶尿布特賣最低800up ▶新手媽咪懶人包特搜 ▶寶貝玩水必備79折up ＝＝＝夏季熱搜榜＝＝＝ 熱搜推薦 ▶ 涼鞋 熱搜推薦 ▶ 泳裝 熱搜推薦 ▶ 地墊 熱搜推薦 ▶ 費雪 熱搜推薦 ▶ 學步鞋 熱搜推薦 ▶ 親子裝 熱搜推薦 ▶ 哺乳衣 熱搜推薦 ▶ 帽子    人氣商店  AIB小舖☛限時任2件69折 米妮希望屋☛新品79折 QB allshine☛童裝均一價$99 美國派☛新品折後$166/件 baby童衣☛人氣童裝任選65折 拍手童裝☛全館滿699現折100 母嬰同室☛涼感包巾第二件5折 哈韓孕媽咪☛哺乳衣任選79折 橘魔法☛涼鞋第二件76折  新進商店  魔幻甜心►萊爾富99免運 時尚寶貝►萊爾富99免運 UNICO-LIFE►萊爾富99免運         電腦/週邊電腦/週邊   分類  Apple 專區 平板/NB/PC 週邊設備/零組件  本類推薦  【爆殺】微軟藍芽滑鼠↘990 全新SurfacePro↘31888 iPad 9.7吋 WIFI↘10300 ZENBOOK雙碟版↘129990 小米智能攝影機↘1049 4G獨顯i7電競筆電↘36900 EPSON三合一印表機↘4190 128G金屬防水隨身碟↘249 SanDisk雙用隨身碟↘1090 Intuos創意觸控繪圖板↘3400 華碩雙頻IP分享器↘2290 NEW! 小學堂♥雷射印表機    人氣商店  三井3C►買品牌印表機送咖啡券 每家比電子►全館結帳2%回饋! 紐頓e世界►買顯卡送Rocket遊戲 浩昇科技►EPSON原廠匣95折 台灣奇茂購物►全館最高折200 PC PARTY►雷蛇煉獄奎蛇7折 office24列印►綠犀牛下殺88折 科大電腦►全館滿2千折150元 彩虹3C►專區滿3千折300元  新進商店  Luminee►萊爾富99免運 嗨殼F巷►萊爾富99免運 達墨精品3C►萊爾富99免運         家電/視聽家電/視聽   分類  生活/廚房家電 電視/影音/耳機 冷氣/冰箱/洗衣機  本類推薦  強檔▶父親節採購指南討爹歡心 強檔▶揪感心空調讓老爸超涼爽 送88☛B&Q影音劇院現正特價 送88☛你可以讓爸爸學會追劇 送88☛這節怎麼能沒刮鬍刀呢 送88☛學老媽抓住爸爸的口味 好康☛買移動式空調送電風扇 好康☛湯姆森直流扇五折對殺 好康☛無法想像LG冰箱這麼低 好康☛東元洗衣機瘋狂特價中 新奇☛鬼怪男孔劉代言清淨機 新奇☛日本首創水過濾吸塵器    人氣商店  封館殺9折+狂賀開店60年：德昌 現折1,500+日立空調它殺：愛買 滿額折300+電漿除菌清淨：臻淨 滿額折300+代購小家電：樂魔派 滿額折300+米家機器人夯：靂昂 全館!88折+米家影音任挑：牧晨 滿額折300+藍芽耳機夯：夏露奇 滿額折300+潮牌無線耳機：炫燁 滿額折300+藍芽影音喇叭：無線  新進商店  滿額折300+夏普大電它俗：永鴻 滿額折300+南臺灣家電王：秀翔 滿額折300+空調兩天快裝：佳瑩         相機/手機/玩具相機/手機/玩具   分類  單眼相機/鏡頭 數位相機/拍立得 相機週邊 手機 手機配件/通訊 電玩/玩具  本類推薦  ☞新鮮人應援▼滿3千折350元!! ☞新品NEW²報首刊▼幾何手機殼 ★小米夜視攝影↘1100免運 ★SONY運動攝影↘10900免運 ★DJI  SPARK↘15500現貨! ★血氧血壓智能手環↘849起 ★小米1000mah電源↘499 ★暑假瘋玩 熱銷桌遊↘299 ★bitplayd照相手機殼↘1280 ★NOKIA 5 現貨↘5390 ★夏日戲水用玩具↘79起 ★暑假瘋玩 熱銷桌遊↘299    人氣商店  東菱數位科技➤GH5現貨零利率 WL數碼達人➤蔡司鏡頭現折8800元 SG➤全館配件滿6百現折100 一手流通➤手機滿3千現折350 帝谷通信➤OPPO A57$6988 GOSHOP➤小米手環現折$50 數位風潮➤美肌自拍桿買1送1 龐奇桌遊➤滿千折百 再送桌遊 funbox➤全館滿888送$100禮券  新進商店  放肆購►萊爾富99免運 Nydus►萊爾富99免運 亞果元素►全館免運         美食/纖體/保健美食/纖體/保健   分類  漢神百貨美食街 美顏美體/營養保健 冷凍/生鮮/甜點 小吃熟食/糕餅/零食 飲料/食材/雜貨 有機食品  本類推薦  oh爸男神★美食x保健滿千88折! 健康美麗迎夏日★保健熱銷榜 異國零食特搜No1★限時87折! 閨月表達孝心★豬腳麵線No.1 ★網友熱搜=88節蛋糕早鳥預購 ★網友熱搜=小小兵起司拉麵 ★網友熱搜=曾粉 海味叻沙 ★網友熱搜=芒果青冰 ★網友熱搜=愛文芒果 ★網友熱搜=亞培安素2箱立即送 ★網友熱搜=辣炒年糕點心麵 ★網友熱搜=老協珍滴雞精    人氣商店  亞尼克★現領現折50元 愛買★好友週任2件88折 每日優果★全館滿千88折 夢甜屋★生乳捲任2條699免運 大樂購物中心★全館滿千折百 煲好湯★全館滿千88折 飲食生活家★亞培成人系列95折 Double手法式甜點★全館8折 橙姑娘★梅精買五送一  新進商店  青鳥旅行►萊爾富99免運 甜園小舖►萊爾富99免運 豆嫂的零食►萊爾富99免運         醫療/日用品/寵物醫療/日用品/寵物   分類  醫療用品/器材 生活百貨/日用品 寵物/水族用品  本類推薦  ▶一點絕！領券後＄922 ▶開幕慶～熊寶貝買1送6 ▶Durex旗艦店 $ 50領折 ▶愛康衛生棉～再也回不去 熱搜字 ❤ 梅雨季_除濕防霉 熱搜字 ❤ 防蚊 熱搜字 ❤ 液體衛生棉 熱搜字 ❤ 保險套 寵物熱搜❤ 涼墊 寵物熱搜❤推車 寵物熱搜❤ 除臭吸水尿布 寵物熱搜❤ 低粉塵貓砂    人氣商店  ★屈臣氏指定商品75折 ★ASAP天天領50折券 ★康是美＄50領折 ★雙寶醫療 ＄100領折 ★康諾醫療＄100領折 ★維康醫療護具88折 寵物夢工廠►全店滿千折百 King Wang 精品館►滿額送贈品 培菓平價寵物網►全店95折  新進商店  快意生活►萊爾富99免運 木酢達人►萊爾富99免運 派對盒►萊爾富99免運         居家/寢具/傢具居家/寢具/傢具   分類  漢神百貨居家生活 居家/雜貨/園藝 寢具/家飾 傢俱/收納/床墊 廚房鍋具/餐具/用品 衛浴設備/浴室用品 五金/照明工具  本類推薦  酷涼冰沙杯★ 居家好物5折up 蛋黃哥玻璃杯★ 88折＆免運 涼夏消暑首選★ 冰沙杯$63/瓶 涼夏杯具組★ 任選62折 晴雨小幫手★ 遮陽傘↘6折 熱搜字 ❤  鞋櫃 熱搜字 ❤  衣櫃 熱搜字 ❤ 沙發床 熱搜字 ❤  毯/被子 熱搜字 ❤ 天絲（床組）    人氣商店  H&D東稻家居 ♥ 專區86折 翔仔居家 ♥ 新品享85折 完美主義 ♥ 收納盒系列2件79折 棉床本舖 ♥ 滿990送德國兔 收納專科 ♥ 專區最高折1000 戀家小舖 ♥ 簡約素色款9折 Modern Deco ♥ 全館79折 HOLA ♥ 全館滿千折100 特力屋 ♥ 全館滿千折100  新進商店  漫生活居家►萊爾富99免運 OH!Show►萊爾富99免運 易奇寶居家►萊爾富99免運         運動/戶外/交通運動/戶外/交通   分類  漢神百貨休閒運動 腳踏車/汽機車精品 運動器材/用品 運動鞋/服飾/包包 戶外用品/行李箱 樂器 18禁專區  本類推薦  ►Summer趴～IG拍照打卡特輯 ►女孩粉粉運動風折188 ►女人節目●Puma緞帶鞋均一價 ►戶外超大傘●３秒帳專區 ►夏季露營趣●Coleman78折up 熱搜關鍵字 ❤ 比基尼 熱搜關鍵字 ❤ FUN暑假全攻略 熱搜關鍵字 ❤ 防曬穿搭 熱搜關鍵字 ❤ 行李箱 熱搜關鍵字 ❤ 腳踏車    人氣商店  ★SKECHER旗艦店最低55折 ★TheNorthFace新品2件85折 ★A PLUS全店NIKE5折up ★UV100防曬 $99免運 ★運動世界＄150領折 ★宅神也健身小物＄99免運 ★native shoes藝人最愛朝聖拖 ★Pump306最高折188 ★喬依比基尼 滿599送手機套  新進商店  INDULGENCE►萊爾富99免運 IronSteel安全鞋►萊爾富99免運 Juniper 朱尼博►萊爾富99免運         餐券/娛樂/旅遊餐券/娛樂/旅遊   分類  美食餐券 娛樂/生活/服務券 旅遊住宿券  本類推薦  📣  吃喝玩樂暑期全攻略 📣 『限量』饗食天堂餐券免運 『VIP』義大買1送7+快速通關 『預購』丹堤父親節蛋糕88折 『推薦』六福萬怡酒店下午茶 『搶先』六福水樂園299元 『熱賣』騎士堡3小時親子券 『FUN』劍湖山王子飯店住宿 激推品 ►遊樂園門票 激推品 ►親子住宿 激推品 ►高CP吃到飽 超贈點折抵首選★天仁/翰林    人氣商店  農場美食/田園1日遊 ►全台任選 奧塞美術館大展 ►門票即買即用 品花苑午晚餐吃到飽  ►599起 東森海洋4人住宿  ►25折 便利商店24H洗衣服 ► 3件369 日月潭碼頭水沙連飯店►湖景房 冷氣空調清洗►下殺55折 東森海洋4人住宿  ►25折 耐斯王子大飯店4人住宿►44折  新進商店  ♥指舞春秋 舒壓放鬆 ♥台灣農場趴趴走  體驗小小農夫 ♥葛洛莉spa萊爾富99免運         圖書/文具/影音圖書/文具/影音   分類  書籍/雜誌期刊 二手書專區 音樂/電影/影集 文具/辦公用品  本類推薦  ▶珍藏齊柏林 ►關西親子遊-金石堂滿700送70元 ►30色彩筆文具/手藝↘39 ►NORNS-迪士尼文具小物 ►3M生活-文具超值選$18起 ►DATABANK文具-第2件8折 ❤熱搜NO.1~紙膠帶 ❤熱搜NO.2~萬寶龍鋼筆 ❤熱搜NO.3~療癒小物 ❤熱搜NO.4~迪士尼 ❤熱搜NO.5~文創小物    人氣商店  ★讀冊5折up/萊爾富$99免運 ★金石堂-滿700送70元 ★城邦-滿499現折50元 ★大創萊爾富$99免運 ★bluecat萊爾富$99免運 ★書立得童書7折起 ★時報文化69折起 ★麥克英文有聲書78折起 ★今周刊全店免運  新進商店  芮菲客筆►萊爾富99免運 文禮學院►萊爾富99免運 易撕貼本鋪►萊爾富99免運       
+
+
+
+
+書籍/雜誌期刊  文學(142125) 心理勵志(34278) 生活娛樂(55566) 自然科學(9887) 藝術設計(24301) 動/漫畫(67510) 親子童書(64178) 語言學習/字辭典(15627) 財經企管/商業理財(35875) 醫療保健(24893)   電腦資訊(5616) 人文歷史(28560) 社會科學(21523) 考試書/政府出版品(17661) 中外文雜誌期刊(5188) 原文書/外文書籍(675) 簡體書籍(90) 中文電子書(0) 原文電子書(0) 中文電子雜誌(2) 其他圖書(30145) 限制級書籍/寫真@(9352)     更多 
+ 二手書專區(201922) 音樂/電影/影集(79432) 文具/辦公用品(184239) 
+
+ 人氣店家  讀冊生活網路書店 金石堂網路書店 城邦讀書花園 時報文化 麥克兒童外文書店   書立得童書城 國考王 書寶二手書店 零國界二店     更多 
+
+ 熱門分類活動排行榜    1   愛閱節 滿499折50 滿888折100 城邦讀書花園     2   【教養X閱讀都是花時間的事】任選2書再95折！ TAAZE 讀冊生活網路書店     3   夏日閱讀季，全館滿千折百大放送~! 書立得童書城     4   【暑假最夏趴】全館滿千送兔子收納式跳棋！ 玩得購網通購物生活館     5   【滿件贈】購物滿8件送小禮物1份 購潮8     6   ★贈送滿額禮~ mama-papa親子網     7   購物滿999元，贈螢石半拋原礦 聖哲曼魔法屋     8   正版卡通文具童書~5件75折 日月星媽咪寶貝館     9   時報超級商城給您最輕鬆的雜誌閱讀 時報文化     10   6月新書上市特價！ 臺北童書城網路書店     11   鼎文公職助您掌握"先"機，即日起各類課程再享96折優惠 國考王     12   K's Kids滿兩件折5% 伯澄國際     13   夏季充電! 全館購書滿999.急降5%優惠 麥克兒童外文書店     14   精選雜誌★現折500元！ 逗點生活市集     15   線上特賣季~週末下殺四折起 麗翔親子館   
+
+
+    超級商城開店說明會臺北場：7/12(星期三) 超級商城開店說明會臺中場：7/18 (星期二) 超級商城開店說明會高雄場：7/26 (星期三)  
+
+
+
+
+
+
+     首頁        圖書/文具/影音       書籍/雜誌期刊       二手書專區   音樂/電影/影集   文具/辦公用品     
+
+                 $ 237  教室裡的阿德勒         $ 300  走到哪玩到哪         $ 182  你不可以隨便摸我！         $ 316  跟著王宏哲，早期教育so easy！         $ 395  天天在家玩創藝                 $ 237  關西親子遊         $ 236  和雅菲一起做卡片         $ 300  經典不敗台式麵包         $ 284  我們都會好好的         $ 237  教室裡的阿德勒                 $ 314  白金數據         $ 291  教孩子學規矩         $ 299  來貘新定義         $ 276  第二次誕生         $ 235  學上當                 $ 60  書立得童書城         $ 315  粉紅豬小妹水洗書         $ 1,138  小雞妙妙的成長日記         $ 236  動物王國向前衝         $ 537  毛毛蟲嘉年華         第1頁，共4頁     
+
+ 促銷優惠        滿額    全館滿一千五再打9折!   9折  書立得童書城     好物    靈界的譯者   TOP  金石堂網路書店     好物    情緒勒索：那些在伴侶、親子、職場間，最讓   TOP  城邦讀書花園     好物    教養的秘密：無效管教Out ，科學育兒   TOP  TAAZE 讀冊生活網路書店     好物    如果有一天，我們說再見   TOP  金石堂網路書店     好物    1張瑜伽墊練肌力，成功瘦50公斤：過量運   TOP  TAAZE 讀冊生活網路書店         我要曝光｜第1頁，共1頁   
+
+ 註目推薦                       1 2 3          MUJI無印良品/書寫生活 MUJI無印良品      英文繪本說故事 麥克兒童外文書店      4~6歲童書 １６８幼福童書網‧童書嬰兒用品童裝      威利在哪裡？繽紛樂套書（共5冊 城邦讀書花園      哈哈英單7000：諧音、圖像記 金石堂網路書店      做工的人 TAAZE 讀冊生活網路書店      教養的秘密：無效管教Out ， 時報文化      《算股高手》的驚人財富翻倍術！ 城邦讀書花園      【今周特刊】省稅大作戰 今周刊網路商店      寫字書專區 TAAZE 讀冊生活網路書店            室內設計手繪製圖必學1 平面、天花、剖立面圖：詳細解說輕重線條運用、人體工學、... $355  活動 $322起  城邦讀書花園      你的善良必須有點鋒芒：36則讓你有態度、不委曲，深諳世故卻不世故的世道智慧 $221 TAAZE 讀冊生活網路書店      情緒勒索：那些在伴侶、親子、職場間，最讓人窒息的相處 $245 TAAZE 讀冊生活網路書店      讓體脂肪及癌細胞消失的生酮飲食：只要多吃好肉及大量蔬菜、菇類，讓體內生酮，再.. $253 TAAZE 讀冊生活網路書店      教養的秘密：無效管教Out ，科學育兒 In，兒童發展專家王宏哲的新世代教養術（隨書... $314  活動 $281起  城邦讀書花園      棉花糖女孩的逆襲：擊退33kg肥肉！改變飲食+超省錢簡單運動+顯瘦穿搭的小甜甜平民瘦身法 $308 金石堂網路書店      知識大富翁(DIY手作桌遊） $236 TAAZE 讀冊生活網路書店      情緒勒索：那些在伴侶、親子、職場間，最讓人窒息的相處 $244  活動 $219起  城邦讀書花園      解憂雜貨店 $276  活動 $251起  城邦讀書花園      神奇的肌筋膜酸痛自療法〔增訂版〕：鬆開10個關鍵點，解決難治性疼痛 $299  活動 $266起  城邦讀書花園      終生瘦用 211全平衡瘦身法 $299  活動 $266起  城邦讀書花園      棉花糖女孩的逆襲：擊退33kg肥肉！改變飲食＋超省錢簡單運動＋顯瘦穿搭的小甜甜平... $307  活動 $274起  城邦讀書花園                           第1頁，共20頁   
+
+ 品牌主打          城邦讀書花園 提供全國圖書的詳細介紹，為您提供全方位閱讀方案的網路書店。        麥克兒童外文書店 專營英文繪本.幼兒童書.英文書+CD.培養孩子的英語耳朵.        金石堂網路書店 金石堂網路書店★中文新書79折起｜每日66折｜暢銷排行榜｜雜誌            TAAZE 讀冊生活網路書店 新書79折！二手書1折起！宅配滿千免運｜超商取貨350免運費        NG書城 本館提供讀者尋書及購買新書的服務~購物滿489元，一律免收運費        書立得童書城 擁有豐富童書各類兒童、親子教養類書籍，歡迎參觀選購!          我要曝光｜第1頁，共2頁    
+ 發燒速遞      超人氣小雞幸福書包(5冊合售)  $1,098   活動$989起  書立得童書城      猜猜我在比什麼？  $188   活動$170起  書立得童書城      【今周刊1058期】會填息的股票這樣挑  $ 80  今周刊網路商店      生活玩樂套書（全2書）+ LivePen智慧點讀筆 + 7-11禮券500元  $ 2,900  時報文化      女演員  $ 237  金石堂網路書店      TIME 時代雜誌 36 期  $ 3,325  時報文化       我要曝光  
+
+ 銷售排行    ★人氣熱銷分類★  美體★瘦身就是美 理財★這樣變有錢 暢銷★冠軍勵志書 超實用★保健知識 親子★童書時光 國考★必勝秘笈            1    室內設計手繪製圖必學1 平面、天花、剖立面圖：詳細解說輕重線條運用、人體工學、... $ 355 城邦讀書花園     2    你的善良必須有點鋒芒：36則讓你有態度、不委曲，深諳世故卻不世故的世道智慧 $ 221 TAAZE 讀冊生活網路書店     3    情緒勒索：那些在伴侶、親子、職場間，最讓人窒息的相處 $ 245 TAAZE 讀冊生活網路書店     4    讓體脂肪及癌細胞消失的生酮飲食：只要多吃好肉及大量蔬菜、菇類，讓體內生酮，再.. $ 253 TAAZE 讀冊生活網路書店     5    教養的秘密：無效管教Out ，科學育兒 In，兒童發展專家王宏哲的新世代教養術（隨書... $ 314 城邦讀書花園         6    棉花糖女孩的逆襲：擊退33kg肥肉！改變飲食+超省錢簡單運動+顯瘦穿搭的小甜甜平民瘦身法 $ 308 金石堂網路書店     7    知識大富翁(DIY手作桌遊） $ 236 TAAZE 讀冊生活網路書店     8    神奇的肌筋膜酸痛自療法〔增訂版〕：鬆開10個關鍵點，解決難治性疼痛 $ 299 城邦讀書花園     9    終生瘦用 211全平衡瘦身法 $ 299 城邦讀書花園     10    棉花糖女孩的逆襲：擊退33kg肥肉！改變飲食＋超省錢簡單運動＋顯瘦穿搭的小甜甜平... $ 307 城邦讀書花園         11    英語每日一滴：IG最夯，學校不教，聊天、搭訕、吐槽都有戲 $ 252 城邦讀書花園     12    被討厭的勇氣：自我啟發之父「阿德勒」的教導 $ 237 TAAZE 讀冊生活網路書店     13    情緒勒索：那些在伴侶、親子、職場間，最讓人窒息的相處 $ 245 金石堂網路書店     14    我們都會好好的：不安沒關係，脆弱與寂寞也沒關係，今天的你會很好，明天也是 $ 283 城邦讀書花園     15    從土地到餐桌上的恐慌：揭露與理解我們的食品安全到底哪裡出了錯 $ 237 城邦讀書花園         16    ETF煉金術：狠賺全球波段財 $ 236 城邦讀書花園     17    我可以心甘情願，但你不能理所當然 $ 261 金石堂網路書店     18    每天3行，寫小日記練出好英文：天天寫短句，訓練用「英文思考」的大腦，程度突飛猛進.. $ 253 TAAZE 讀冊生活網路書店     19    黑白猜不猜 $ 220 城邦讀書花園     20    (現貨/正版) 房思琪的初戀樂園  華文創作小說書 作者林奕含 游擊文化 (OS小舖) $ 226 OS 小舖         21    MONEY錢特刊：籌碼K線滾錢術5 $ 134 TAAZE 讀冊生活網路書店     22    高手的養成：股市新手必須知道的3個祕密 $ 394 城邦讀書花園     23    (許又天姓名學)算算您的職場運勢! $ 99 DESiRAY黛絲芮     24    1000種常見食物醣量&熱量速查圖典：列出含醣量‧卡路里‧鹽分‧蛋白質‧膳食纖維，教.. $ 277 TAAZE 讀冊生活網路書店     25    你的善良必須有點鋒芒：36則讓你有態度、不委曲，深諳世故卻不世故的世道智慧 $ 220 城邦讀書花園         26    你的善良必須有點鋒芒：36則讓你有態度、不委曲，深諳世故卻不世故的世道智慧 $ 221 金石堂網路書店     27    教室裡的阿德勒：人生三角柱裡的處世智慧 $ 237 TAAZE 讀冊生活網路書店     28    美好的愛，是先給自己幸福 $ 292 金石堂網路書店     29    科學氣功：李嗣涔博士30年親身實證，每天10分鐘，通經絡袪百病（超值收錄30分鐘科... $ 299 城邦讀書花園     30    只買4支股，年賺18％ $ 253 金石堂網路書店         第1頁，共6頁         親子陪伴不能等  繪本/圖畫書 遊戲書 有聲書 啟蒙成長            1    教養的秘密：無效管教Out ，科學育兒 In，兒童發展專家王宏哲的新世代教養術（隨書... $ 314 城邦讀書花園     2    知識大富翁(DIY手作桌遊） $ 236 TAAZE 讀冊生活網路書店     3    蒙特梭利專家親授！教孩子學規矩一點也不難：淡定面對0～6歲孩子的情緒勒索，不用... $ 291 城邦讀書花園     4    謝謝你來當我的寶貝 $ 198 TAAZE 讀冊生活網路書店     5    詩魂：仙靈傳奇（1） $ 300 TAAZE 讀冊生活網路書店         6    原來科普這麼有趣套書（共2冊）：原來科學這麼好玩/原來數學這麼漂亮 $ 552 TAAZE 讀冊生活網路書店     7    屁屁偵探  噗噗！世紀怪盜現身！ $ 221 TAAZE 讀冊生活網路書店     8    繪本123，用五感玩出寶寶的英語好感度 $ 334 TAAZE 讀冊生活網路書店     9    在家玩蒙特梭利：掌握0～6歲九大敏感期，48個感覺統合遊戲，全方位激發孩子潛能 $ 237 TAAZE 讀冊生活網路書店     10    媽媽，我記得你：超神奇「胎內記憶」，觸動百萬媽媽的心 $ 221 TAAZE 讀冊生活網路書店         11    每天15分鐘，動出孩子的專註力 $ 237 TAAZE 讀冊生活網路書店     12    青春修鍊40堂課 $ 198 TAAZE 讀冊生活網路書店     13    小王子 $ 221 TAAZE 讀冊生活網路書店     14    風車童書-寶貝故事機-FOOD超人【TwinS伯澄】 $ 799 伯澄國際     15    風車童書-波波熊學穿衣 $ 295 伯澄國際         16    奇蹟男孩 $ 284 TAAZE 讀冊生活網路書店     17    兒歌歡唱繪本 風車童書  (購潮8) $ 250 購潮8     18    男生小雞雞 $ 90 TAAZE 讀冊生活網路書店     19    幾何魔術棒(收納箱) $ 236 １６８幼福童書網‧童書嬰兒用品童裝     20    屁屁偵探讀本 紫衣夫人的暗號事件 $ 221 TAAZE 讀冊生活網路書店         21    新生兒父母手冊（新世代增訂版）：0~12個月寶寶的學習發展與健康照顧 $ 474 TAAZE 讀冊生活網路書店     22    美國【GALT】Water Magic 神奇水畫冊-精靈/機器人 $ 290 Beauty Baby     23    不會作文怎麼辦：名師搶救作文18套祕笈大公開（下） $ 221 TAAZE 讀冊生活網路書店     24    給孩子的希臘羅馬神話故事（諸神創世紀＋英雄大冒險上下2冊書盒．超值收藏【與天神... $ 419 城邦讀書花園     25    讓孩子成長的阿德勒名言 $ 189 城邦讀書花園         26    名著大家讀 世界著名故事70篇(經典故事、偉人傳記、星座神話、知名故事，共4冊) $ 952 １６８幼福童書網‧童書嬰兒用品童裝     27    5分鐘玩出專註力遊戲書4 $ 197 城邦讀書花園     28    戒吃、戒抓，告別異位性皮膚炎：臺大過敏免疫風濕科權威醫師＆商業周刊百大良醫的... $ 220 城邦讀書花園     29    小雨麻的副食品全紀錄(2015增修版)：158道寶寶超愛的當令食譜，過敏兒這樣吃也沒問... $ 315 城邦讀書花園     30    教出情緒不暴走的孩子暢銷修訂版：人氣諮商心理師的36堂高效能情緒教養課，幫助父... $ 268 城邦讀書花園         第1頁，共6頁         美容保養控  零失敗眼妝技巧 拯救！3C惡視力 吃出好氣色好體質 逆齡美顏按摩            1    精油圖鑑——150種最佳芳療精油圖解指南 $ 356 城邦讀書花園     2    In Red 7月號2017【附嚕嚕米×Adam et Rope Le Magasin聯名小不點涼風托特包.保冷拉鍊袋】 $ 317 金石堂網路書店     3    COMME des GARCONS研究 $ 237 金石堂網路書店     4    sweet 7月號2017【附snidel 迷你波士頓包】 $ 317 金石堂網路書店     5    神奇的提拉美溫感石 每天3分鐘U臉變V臉，去斑除皺消浮腫，還能重現全身顯瘦線條.. $ 284 TAAZE 讀冊生活網路書店         6    零橘皮組織按摩：只要伸展+揉壓，4週剷除多餘脂肪，不必運動就能瘦 $ 252 城邦讀書花園     7    (二手書)彩妝天王Kevin美妝寶典 $ 50 TAAZE 讀冊生活網路書店     8    超人氣面膜首選DIY $ 39 １６８幼福童書網‧童書嬰兒用品童裝     9    韓系，美麗塑身1001種(彩色精裝書272頁) $ 236 １６８幼福童書網‧童書嬰兒用品童裝     10    SPA香薰首選彼拉提斯(彩色書+DVD) $ 119 １６８幼福童書網‧童書嬰兒用品童裝         11    15分鐘完美塑身 $ 55 １６８幼福童書網‧童書嬰兒用品童裝     12    脂肪燃燒 UP！激瘦365天 $ 133 １６８幼福童書網‧童書嬰兒用品童裝     13    瑜珈美體舞 $ 142 １６８幼福童書網‧童書嬰兒用品童裝     14    蔬果美人纖體驗 $ 133 １６８幼福童書網‧童書嬰兒用品童裝     15    美容塑身飲食宜忌 $ 174 １６８幼福童書網‧童書嬰兒用品童裝         16    美麗聖經 $ 253 １６８幼福童書網‧童書嬰兒用品童裝     17    國際時尚造型彩妝百科 $ 632 １６８幼福童書網‧童書嬰兒用品童裝     18    孕期40週不同階段的幸福按摩法 $ 379 １６８幼福童書網‧童書嬰兒用品童裝     19    全圖解彩妝大師化妝術 $ 277 １６８幼福童書網‧童書嬰兒用品童裝     20    別拿妳的臉做實驗 $ 174 １６８幼福童書網‧童書嬰兒用品童裝         21    魅惑28天！肚皮舞纖腰術（隨書附贈舞步教學DVD） $ 198 １６８幼福童書網‧童書嬰兒用品童裝     22    國際時尚造型美髮百科 $ 632 １６８幼福童書網‧童書嬰兒用品童裝     23    享瘦奇肌 $ 174 １６８幼福童書網‧童書嬰兒用品童裝     24    75款零負擔的溫和親膚保養品DIY $ 221 １６８幼福童書網‧童書嬰兒用品童裝     25    姊姊的妝一定是對的：36款全臉妝容大公開， 讓你變身正韓妞 $ 237 １６８幼福童書網‧童書嬰兒用品童裝         26    直擊！短髮x中長髮x長髮，註目度100%的不敗變髮：日韓女孩都在學的41款編髮造型 $ 157 １６８幼福童書網‧童書嬰兒用品童裝     27    女孩一生一定要學會的閃亮彩妝術 $ 132 １６８幼福童書網‧童書嬰兒用品童裝     28    女孩一生一定要學會的5分鐘打造日韓最in髮型 $ 190 １６８幼福童書網‧童書嬰兒用品童裝     29    女生一定要會的50種絲巾打法 $ 198 １６８幼福童書網‧童書嬰兒用品童裝     30    廖苑利醫生教你變白變美變年輕 $ 221 １６８幼福童書網‧童書嬰兒用品童裝         第1頁，共6頁         旅遊/運動休閒  日本!最愛旅遊勝地 第1次自助遊超簡單 吃遍美食玩透透 最夯懶人食譜DIY            1    棉花糖女孩的逆襲：擊退33kg肥肉！改變飲食+超省錢簡單運動+顯瘦穿搭的小甜甜平民瘦身法 $ 308 金石堂網路書店     2    1張瑜伽墊練肌力，成功瘦50公斤：過量運動不會瘦，養肌肉才會一直瘦下去！每天堅持.. $ 300 TAAZE 讀冊生活網路書店     3    史蒂芬．柯瑞：無所不能的NBA神射手 $ 299 城邦讀書花園     4    1082萬次轉動 $ 300 TAAZE 讀冊生活網路書店     5    航海環球夢：花小錢也能享受郵輪生活環遊世界！ $ 315 城邦讀書花園         6    練肌力就是練心，線條證明我可以：當我徒手撐起身體，我的人生我做主！28招肌力訓.. $ 315 TAAZE 讀冊生活網路書店     7    澳洲東岸(2017 18 最新版) $ 299 金石堂網路書店     8    東京近郊旅遊全攻略（第2刷） $ 387 TAAZE 讀冊生活網路書店     9    遊樂園：親子旅遊團長小禎最強樂園攻略！機票、門票一起撿便宜，嗨玩16座世界樂園... $ 307 城邦讀書花園     10    沖繩 地球步方MOOK 2017-18最新版 $ 252 城邦讀書花園         11    克羅埃西亞．斯洛維尼亞．蒙特內哥羅 $ 331 城邦讀書花園     12    搭地鐵玩遍上海（新第六版） $ 277 TAAZE 讀冊生活網路書店     13    東京旅遊全攻略(2017 18年版)第64刷 $ 387 金石堂網路書店     14    秘魯自助全攻略 $ 299 TAAZE 讀冊生活網路書店     15    不多走冤枉路！不多花一毛錢！－跟著小氣少年自由行大阪．神戶．奈良（附行動地圖集.. $ 315 TAAZE 讀冊生活網路書店         16    大首爾攻略完全制霸2017-2018 $ 332 NG書城     17    走進英雄島：金門戰地巡禮之旅 $ 334 TAAZE 讀冊生活網路書店     18    妳的身體就是最好的健身房．90天挑戰計畫（附自我挑戰成功日誌） $ 221 金石堂網路書店     19    福岡九州.自由旅行精品書（2016升級第10版） $ 291 TAAZE 讀冊生活網路書店     20    搭地鐵玩遍首爾（全新增訂版） $ 379 NG書城         21    史蒂芬．柯瑞：無所不能的NBA神射手 $ 300 金石堂網路書店     22    小錢玩大曼谷：捷運自助遊超值玩到瘋，泰好吃X泰好住X泰好買(2017全新版) $ 284 NG書城     23    開始在關西自助旅行 $ 308 TAAZE 讀冊生活網路書店     24    開始在土耳其自助旅行 $ 315 TAAZE 讀冊生活網路書店     25    街頭徒手健身聖經：極限單槓 $ 316 TAAZE 讀冊生活網路書店         26    新加坡 $ 253 TAAZE 讀冊生活網路書店     27    首爾地鐵地圖快易通2017 2018 $ 253 金石堂網路書店     28    跟著老錢遊曼谷不踩雷！：玩到掛，爽到翻 $ 299 城邦讀書花園     29    小公主的奇幻旅程 $ 422 TAAZE 讀冊生活網路書店     30    沖繩(2017年全新上市)JTB Publishing  Inc. $ 236 金石堂網路書店         第1頁，共6頁         文青最愛現代文學  網友爆笑按讚！ HOT電影相關書籍 總裁~愛情文藝小說 人氣動/漫畫            1    黑白猜不猜 $ 220 城邦讀書花園     2    房思琪的初戀樂園 $ 253 金石堂網路書店     3    (現貨/正版) 房思琪的初戀樂園  華文創作小說書 作者林奕含 游擊文化 (OS小舖) $ 226 OS 小舖     4    白金數據 $ 314 城邦讀書花園     5    解憂雜貨店 $ 277 金石堂網路書店         6    房思琪的初戀樂園 $ 252 城邦讀書花園     7    花甲男孩（增訂新版） $ 237 TAAZE 讀冊生活網路書店     8    有個秘密，叫初戀 $ 141 城邦讀書花園     9    【現貨免運】房思琪的初戀樂園 華文創作小說書 (購潮8) $ 253 購潮8     10    轉學生的惡作劇：穿越時空找回勇氣的成長冒險旅程 $ 221 TAAZE 讀冊生活網路書店         11    小王子 【70周年精裝紀念版】 $ 198 TAAZE 讀冊生活網路書店     12    安妮日記【獨家授權‧70週年紀念典藏版】 $ 253 TAAZE 讀冊生活網路書店     13    水問 $ 202 TAAZE 讀冊生活網路書店     14    天橋上的魔術師 $ 221 TAAZE 讀冊生活網路書店     15    妖怪公館的新房客（10） $ 194 TAAZE 讀冊生活網路書店         16    最好別想起 $ 299 城邦讀書花園     17    剪刀石頭布 $ 212 城邦讀書花園     18    迫害效應 $ 221 城邦讀書花園     19    人生複本 $ 307 城邦讀書花園     20    三生三世枕上書【終篇】 $ 236 金石堂網路書店         21    #愛過以後忘記的事 $ 237 TAAZE 讀冊生活網路書店     22    房思琪的初戀樂園 $ 253 TAAZE 讀冊生活網路書店     23    迷路天堂 $ 197 城邦讀書花園     24    紙星星 $ 220 城邦讀書花園     25    艾西莫夫機器人短篇全集（全新修訂版） $ 513 城邦讀書花園         26    基地與帝國（紀念書衣版） $ 220 城邦讀書花園     27    基地（紀念書衣版） $ 220 城邦讀書花園     28    基地前奏（紀念書衣版） $ 331 城邦讀書花園     29    第二基地（紀念書衣版） $ 220 城邦讀書花園     30    湖岸邊的黑天鵝 $ 190 TAAZE 讀冊生活網路書店         第1頁，共6頁         考試書/政府出版品  國家考試 升學考試 教科書/參考書 資格檢定/證照            1    國考申論式空白作答紙(6份) $ 31 三民輔考資訊有限公司     2    這是一本社會學解題書 $ 450 TAAZE 讀冊生活網路書店     3    照顧服務員單一級檢定學術科應試指南 $ 475 TAAZE 讀冊生活網路書店     4    【105年全新適用版】土地法規(地政士考試適用)(贈地政士專業科目模擬試捲) $ 282 TAAZE 讀冊生活網路書店     5    【105年全新適用版】土地稅法規(含房地合一稅)(地政士考試適用)(贈地政士專業科.. $ 317 TAAZE 讀冊生活網路書店         6    國中會考滿分祕笈（英語閱讀）第2版 $ 260 TAAZE 讀冊生活網路書店     7    會計事務丙級檢定學科試題解析 $ 186 TAAZE 讀冊生活網路書店     8    大學化學實驗一暨實驗二（第四版） $ 308 TAAZE 讀冊生活網路書店     9    行政法‧寶 終極十講-2015秋冬版-各類科適用 $ 540 TAAZE 讀冊生活網路書店     10    乙級電腦輔助機械設計製圖學科題庫必通解析：2015年（附贈OTAS題測系統） $ 270 TAAZE 讀冊生活網路書店         11    高中7000字隨身背 $ 162 TAAZE 讀冊生活網路書店     12    【105年全新適用版】民法與信託法概要(地政士考試適用)(贈地政士專業科目模擬試.. $ 405 TAAZE 讀冊生活網路書店     13    乙級汽車修護技能檢定學科題庫整理與分析（2015最新版） $ 190 TAAZE 讀冊生活網路書店     14    深入淺出零件設計SolidWorks 2012（附動態影音教學光碟） $ 694 TAAZE 讀冊生活網路書店     15    必備國中單字片語隨身讀 $ 131 TAAZE 讀冊生活網路書店         16    丙級會計事務(人工記帳)術科通關寶典含解析本-第四版 $ 216 TAAZE 讀冊生活網路書店     17    【鼎文公職】6W11中華電信工務類:工務類：專業職(四)第二類專員（線路維護）套書 $ 1,050 國考王     18    丙級電腦軟體應用學科題庫工作項目解析 2017年版(附贈OTAS題測系統) $ 113 金石堂網路書店     19    【106年全新改版】自來水評價人員共同科目20天上榜速成(年年銷售冠軍，上榜生口碑推薦)(Q009E17-1) $ 411 三民輔考資訊有限公司     20    國貿業務丙級學術科技能檢定考照秘笈 $ 513 金石堂網路書店         21    搶救國中小教甄國語文分類試題[教師甄試] $ 466 TAAZE 讀冊生活網路書店     22    高普特考2017試題大補帖【文化資產概論與法規】(97~105年試題)三等 $ 255 金石堂網路書店     23    【106年最新版】郵政三法搶分小法典(含重點標示+精選試題747題)(中華郵政(郵局)考試適用) $ 198 三民輔考資訊有限公司     24    社會福利服務 搶分題庫（五版） $ 277 TAAZE 讀冊生活網路書店     25    文化行政類專業科目(五)歷屆試題精闢新解【藝術概論】 $ 308 TAAZE 讀冊生活網路書店         26    【鼎文公職‧國考直營】1U43- 消防設備士歷屆試題精解 $ 413 國考王     27    國中會考作文高分挑戰（第3版） $ 209 TAAZE 讀冊生活網路書店     28    【鼎文公職】6D11-國營事業招考(台電、中油、台水)新進職員【機械】套書（贈題庫網帳號） $ 1,628 國考王     29    106年臺灣銀行[一般金融人員][專業科目]套書(S056F17-1) $ 1,051 三民輔考資訊有限公司     30    丙級飲料調製學術科通關寶典-2017年（附贈OTAS題測系統） $ 405 TAAZE 讀冊生活網路書店         第1頁，共6頁     
+
+              
+
+
+ 
+
+
+
+付款方式
+
+超商取貨付款
+信用卡分期
+信用卡紅利折抵
+ATM
+
+
+
+會員專區
+
+我的帳戶
+折價券查詢
+電子報訂閱/取消
+如何獲得超贈點
+
+
+
+客戶服務
+
+新手上路
+常見問題
+退貨辦法
+註冊
+
+
+
+
+
+
+
+
+交易安全
+金流代收最安心
+
+
+
+7日鑑賞
+退貨免運費
+
+
+
+優良商店
+商店評核制度
+
+
+
+
+B 0 0 0 0 1 0 ( 0 1 )
+
+
+
+
+
+
+
+  關閉
+
+
+ga conf
+
+
+
+
+
+
+    手機逛超級商城 加入超級商城粉絲團 退貨辦法 服務說明 我要開店     服務條款 隱私權   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+自然科學 (書籍/雜誌期刊) - Yahoo奇摩超級商城 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   首頁 購物中心 拍賣 中古車 折扣城 信箱 App下載 
+
+
+  Yahoo!奇摩超級商城        自然科學    全部分類      自然科學                
+          我的商城     購物車清單 我的最愛 收藏商品 超贈點 折價券 我的專屬優惠 商店客服 超級商城公告    | 登入     訂單查詢     出貨進度 退換申請 發票查詢 新手上路 常見問題          商品分類 逛商店    漢神百貨  流行館  型男館  熱銷榜  折扣城  聯名卡  超贈點         登入後可收藏最愛商店    
+ 
+
+
+
+
+
+
+     服飾服飾   分類  漢神百貨品牌服飾 漢神百貨內睡衣 流行女裝 中大尺碼女裝(M-7L) 女性內睡衣 品牌/潮流男裝  本類推薦  ★ 夏日玩色穿搭5折起 ★ 質 感 女 裝 推 薦 LIST ★ ★MOMA旗艦館：新品上市 ★a la sha：滿2000現折200 ★cantwo：網路獨家均一價 網友熱搜TOP1．洋裝 網友熱搜TOP2．背心 網友熱搜TOP3．寬褲 7/25前抽渡邊直美代言淨味劑 機能內衣超值★專區5折up 型男夏日穿搭★均一價199up    人氣商店  糖罐子►超取99元免運費 Miu-Star►50元券現領現折 東京著衣►100元券現領現折 設計家 原創風格►全店69折 TMH 好評女裝►全店88折 LAMECHIC►5折回饋專區 Life8►居家系列5折 OB大尺碼►襯衫均一價269 Peach Love►全店5折  新進商店  金安德森►萊爾富99免運 新時尚►萊爾富99免運 MOMA►萊爾富99免運         美妝美妝   分類  漢神百貨美妝保養 專櫃美妝/香水 開架美妝/藥妝 美體/私密/手足保養 香氛沐浴/髮品/假髮  本類推薦  2017防曬大集合►看更多 專櫃美妝香水►滿1500打88折 代購超紅►The saem遮瑕膏免運 beautyblender►15周年限定 口紅鎖色神器►怎麼吃喝都不掉色 ★薇佳100元現領現折★ =====本週熱搜關鍵字===== 熱搜No.1 ♥ SOFINA妝前乳 熱搜No.2 ♥ 香水 熱搜No.3 ♥ 法婡雅    人氣商店  86小舖►萊爾富99免運 屈臣氏►現折$50 康是美►滿千折百 小三美日►萊爾富99免運 寶拉珍選►專區79折 薇姿VICHY►滿千折百 巴黎萊雅►彩妝85折 無印良品►滿700折50 巴黎草莓►萊爾富99免運  新進商店  三原水►萊爾富99免運 純淨佳人►去角質買一送一免運 聯合利華►開幕慶現折50元         鞋包/精品/配飾鞋包/精品/配飾   分類  漢神百貨精品珠寶 漢神百貨鞋包配飾 國際精品 品牌鞋包 流行女包/皮夾 流行女鞋 型男鞋包配件 手錶 珠寶/ 飾品/配件  本類推薦  ☀質感穿搭真皮鞋包5折起 ☀新鮮人好感度up穿搭特輯 ☀放暑出遊鞋包全攻略 ☀玩色夏日！50%off 年終優選．潮流時尚單品 ★夏日配飾★新品299起 ★施華洛世奇★開幕慶限時超贈點5倍送 ★型男配件↘精選店家五折起    人氣商店  Pixy►全店任2件79折 天藍小舖►任選2件398 Ann'S►涼鞋季9折 Sophie&Sam►兩雙1500 MAGY瑪格►開幕慶百款$990 FOSSIL►熱銷男夾7折 大新莊鐘錶►MK錶享87折 施華洛世奇►超贈點5倍送+獨家滿額贈 周大福►小小兵黃金現折388  新進商店  Kwoomi►萊爾富99免運 時光鐘錶►萊爾富99免運 OSEWAYA►萊爾富99免運         媽咪寶貝媽咪寶貝   分類  漢神百貨媽咪寶貝 童裝/媽咪裝 寶貝媽咪用品  本類推薦  ▶尿布特賣最低800up ▶新手媽咪懶人包特搜 ▶寶貝玩水必備79折up ＝＝＝夏季熱搜榜＝＝＝ 熱搜推薦 ▶ 涼鞋 熱搜推薦 ▶ 泳裝 熱搜推薦 ▶ 地墊 熱搜推薦 ▶ 費雪 熱搜推薦 ▶ 學步鞋 熱搜推薦 ▶ 親子裝 熱搜推薦 ▶ 哺乳衣 熱搜推薦 ▶ 帽子    人氣商店  AIB小舖☛限時任2件69折 米妮希望屋☛新品79折 QB allshine☛童裝均一價$99 美國派☛新品折後$166/件 baby童衣☛人氣童裝任選65折 拍手童裝☛全館滿699現折100 母嬰同室☛涼感包巾第二件5折 哈韓孕媽咪☛哺乳衣任選79折 橘魔法☛涼鞋第二件76折  新進商店  魔幻甜心►萊爾富99免運 時尚寶貝►萊爾富99免運 UNICO-LIFE►萊爾富99免運         電腦/週邊電腦/週邊   分類  Apple 專區 平板/NB/PC 週邊設備/零組件  本類推薦  【爆殺】微軟藍芽滑鼠↘990 全新SurfacePro↘31888 iPad 9.7吋 WIFI↘10300 ZENBOOK雙碟版↘129990 小米智能攝影機↘1049 4G獨顯i7電競筆電↘36900 EPSON三合一印表機↘4190 128G金屬防水隨身碟↘249 SanDisk雙用隨身碟↘1090 Intuos創意觸控繪圖板↘3400 華碩雙頻IP分享器↘2290 NEW! 小學堂♥雷射印表機    人氣商店  三井3C►買品牌印表機送咖啡券 每家比電子►全館結帳2%回饋! 紐頓e世界►買顯卡送Rocket遊戲 浩昇科技►EPSON原廠匣95折 台灣奇茂購物►全館最高折200 PC PARTY►雷蛇煉獄奎蛇7折 office24列印►綠犀牛下殺88折 科大電腦►全館滿2千折150元 彩虹3C►專區滿3千折300元  新進商店  Luminee►萊爾富99免運 嗨殼F巷►萊爾富99免運 達墨精品3C►萊爾富99免運         家電/視聽家電/視聽   分類  生活/廚房家電 電視/影音/耳機 冷氣/冰箱/洗衣機  本類推薦  強檔▶父親節採購指南討爹歡心 強檔▶揪感心空調讓老爸超涼爽 送88☛B&Q影音劇院現正特價 送88☛你可以讓爸爸學會追劇 送88☛這節怎麼能沒刮鬍刀呢 送88☛學老媽抓住爸爸的口味 好康☛買移動式空調送電風扇 好康☛湯姆森直流扇五折對殺 好康☛無法想像LG冰箱這麼低 好康☛東元洗衣機瘋狂特價中 新奇☛鬼怪男孔劉代言清淨機 新奇☛日本首創水過濾吸塵器    人氣商店  封館殺9折+狂賀開店60年：德昌 現折1,500+日立空調它殺：愛買 滿額折300+電漿除菌清淨：臻淨 滿額折300+代購小家電：樂魔派 滿額折300+米家機器人夯：靂昂 全館!88折+米家影音任挑：牧晨 滿額折300+藍芽耳機夯：夏露奇 滿額折300+潮牌無線耳機：炫燁 滿額折300+藍芽影音喇叭：無線  新進商店  滿額折300+夏普大電它俗：永鴻 滿額折300+南臺灣家電王：秀翔 滿額折300+空調兩天快裝：佳瑩         相機/手機/玩具相機/手機/玩具   分類  單眼相機/鏡頭 數位相機/拍立得 相機週邊 手機 手機配件/通訊 電玩/玩具  本類推薦  ☞新鮮人應援▼滿3千折350元!! ☞新品NEW²報首刊▼幾何手機殼 ★小米夜視攝影↘1100免運 ★SONY運動攝影↘10900免運 ★DJI  SPARK↘15500現貨! ★血氧血壓智能手環↘849起 ★小米1000mah電源↘499 ★暑假瘋玩 熱銷桌遊↘299 ★bitplayd照相手機殼↘1280 ★NOKIA 5 現貨↘5390 ★夏日戲水用玩具↘79起 ★暑假瘋玩 熱銷桌遊↘299    人氣商店  東菱數位科技➤GH5現貨零利率 WL數碼達人➤蔡司鏡頭現折8800元 SG➤全館配件滿6百現折100 一手流通➤手機滿3千現折350 帝谷通信➤OPPO A57$6988 GOSHOP➤小米手環現折$50 數位風潮➤美肌自拍桿買1送1 龐奇桌遊➤滿千折百 再送桌遊 funbox➤全館滿888送$100禮券  新進商店  放肆購►萊爾富99免運 Nydus►萊爾富99免運 亞果元素►全館免運         美食/纖體/保健美食/纖體/保健   分類  漢神百貨美食街 美顏美體/營養保健 冷凍/生鮮/甜點 小吃熟食/糕餅/零食 飲料/食材/雜貨 有機食品  本類推薦  oh爸男神★美食x保健滿千88折! 健康美麗迎夏日★保健熱銷榜 異國零食特搜No1★限時87折! 閨月表達孝心★豬腳麵線No.1 ★網友熱搜=88節蛋糕早鳥預購 ★網友熱搜=小小兵起司拉麵 ★網友熱搜=曾粉 海味叻沙 ★網友熱搜=芒果青冰 ★網友熱搜=愛文芒果 ★網友熱搜=亞培安素2箱立即送 ★網友熱搜=辣炒年糕點心麵 ★網友熱搜=老協珍滴雞精    人氣商店  亞尼克★現領現折50元 愛買★好友週任2件88折 每日優果★全館滿千88折 夢甜屋★生乳捲任2條699免運 大樂購物中心★全館滿千折百 煲好湯★全館滿千88折 飲食生活家★亞培成人系列95折 Double手法式甜點★全館8折 橙姑娘★梅精買五送一  新進商店  青鳥旅行►萊爾富99免運 甜園小舖►萊爾富99免運 豆嫂的零食►萊爾富99免運         醫療/日用品/寵物醫療/日用品/寵物   分類  醫療用品/器材 生活百貨/日用品 寵物/水族用品  本類推薦  ▶一點絕！領券後＄922 ▶開幕慶～熊寶貝買1送6 ▶Durex旗艦店 $ 50領折 ▶愛康衛生棉～再也回不去 熱搜字 ❤ 梅雨季_除濕防霉 熱搜字 ❤ 防蚊 熱搜字 ❤ 液體衛生棉 熱搜字 ❤ 保險套 寵物熱搜❤ 涼墊 寵物熱搜❤推車 寵物熱搜❤ 除臭吸水尿布 寵物熱搜❤ 低粉塵貓砂    人氣商店  ★屈臣氏指定商品75折 ★ASAP天天領50折券 ★康是美＄50領折 ★雙寶醫療 ＄100領折 ★康諾醫療＄100領折 ★維康醫療護具88折 寵物夢工廠►全店滿千折百 King Wang 精品館►滿額送贈品 培菓平價寵物網►全店95折  新進商店  快意生活►萊爾富99免運 木酢達人►萊爾富99免運 派對盒►萊爾富99免運         居家/寢具/傢具居家/寢具/傢具   分類  漢神百貨居家生活 居家/雜貨/園藝 寢具/家飾 傢俱/收納/床墊 廚房鍋具/餐具/用品 衛浴設備/浴室用品 五金/照明工具  本類推薦  酷涼冰沙杯★ 居家好物5折up 蛋黃哥玻璃杯★ 88折＆免運 涼夏消暑首選★ 冰沙杯$63/瓶 涼夏杯具組★ 任選62折 晴雨小幫手★ 遮陽傘↘6折 熱搜字 ❤  鞋櫃 熱搜字 ❤  衣櫃 熱搜字 ❤ 沙發床 熱搜字 ❤  毯/被子 熱搜字 ❤ 天絲（床組）    人氣商店  H&D東稻家居 ♥ 專區86折 翔仔居家 ♥ 新品享85折 完美主義 ♥ 收納盒系列2件79折 棉床本舖 ♥ 滿990送德國兔 收納專科 ♥ 專區最高折1000 戀家小舖 ♥ 簡約素色款9折 Modern Deco ♥ 全館79折 HOLA ♥ 全館滿千折100 特力屋 ♥ 全館滿千折100  新進商店  漫生活居家►萊爾富99免運 OH!Show►萊爾富99免運 易奇寶居家►萊爾富99免運         運動/戶外/交通運動/戶外/交通   分類  漢神百貨休閒運動 腳踏車/汽機車精品 運動器材/用品 運動鞋/服飾/包包 戶外用品/行李箱 樂器 18禁專區  本類推薦  ►Summer趴～IG拍照打卡特輯 ►女孩粉粉運動風折188 ►女人節目●Puma緞帶鞋均一價 ►戶外超大傘●３秒帳專區 ►夏季露營趣●Coleman78折up 熱搜關鍵字 ❤ 比基尼 熱搜關鍵字 ❤ FUN暑假全攻略 熱搜關鍵字 ❤ 防曬穿搭 熱搜關鍵字 ❤ 行李箱 熱搜關鍵字 ❤ 腳踏車    人氣商店  ★SKECHER旗艦店最低55折 ★TheNorthFace新品2件85折 ★A PLUS全店NIKE5折up ★UV100防曬 $99免運 ★運動世界＄150領折 ★宅神也健身小物＄99免運 ★native shoes藝人最愛朝聖拖 ★Pump306最高折188 ★喬依比基尼 滿599送手機套  新進商店  INDULGENCE►萊爾富99免運 IronSteel安全鞋►萊爾富99免運 Juniper 朱尼博►萊爾富99免運         餐券/娛樂/旅遊餐券/娛樂/旅遊   分類  美食餐券 娛樂/生活/服務券 旅遊住宿券  本類推薦  📣  吃喝玩樂暑期全攻略 📣 『限量』饗食天堂餐券免運 『VIP』義大買1送7+快速通關 『預購』丹堤父親節蛋糕88折 『推薦』六福萬怡酒店下午茶 『搶先』六福水樂園299元 『熱賣』騎士堡3小時親子券 『FUN』劍湖山王子飯店住宿 激推品 ►遊樂園門票 激推品 ►親子住宿 激推品 ►高CP吃到飽 超贈點折抵首選★天仁/翰林    人氣商店  農場美食/田園1日遊 ►全台任選 奧塞美術館大展 ►門票即買即用 品花苑午晚餐吃到飽  ►599起 東森海洋4人住宿  ►25折 便利商店24H洗衣服 ► 3件369 日月潭碼頭水沙連飯店►湖景房 冷氣空調清洗►下殺55折 東森海洋4人住宿  ►25折 耐斯王子大飯店4人住宿►44折  新進商店  ♥指舞春秋 舒壓放鬆 ♥台灣農場趴趴走  體驗小小農夫 ♥葛洛莉spa萊爾富99免運         圖書/文具/影音圖書/文具/影音   分類  書籍/雜誌期刊 二手書專區 音樂/電影/影集 文具/辦公用品  本類推薦  ▶珍藏齊柏林 ►關西親子遊-金石堂滿700送70元 ►30色彩筆文具/手藝↘39 ►NORNS-迪士尼文具小物 ►3M生活-文具超值選$18起 ►DATABANK文具-第2件8折 ❤熱搜NO.1~紙膠帶 ❤熱搜NO.2~萬寶龍鋼筆 ❤熱搜NO.3~療癒小物 ❤熱搜NO.4~迪士尼 ❤熱搜NO.5~文創小物    人氣商店  ★讀冊5折up/萊爾富$99免運 ★金石堂-滿700送70元 ★城邦-滿499現折50元 ★大創萊爾富$99免運 ★bluecat萊爾富$99免運 ★書立得童書7折起 ★時報文化69折起 ★麥克英文有聲書78折起 ★今周刊全店免運  新進商店  芮菲客筆►萊爾富99免運 文禮學院►萊爾富99免運 易撕貼本鋪►萊爾富99免運       
+
+
+
+
+自然科學  
+
+
+
+   商品評價         以上  價格    -     100元~200元 (3256) 200元~300元 (2974) 300元~400元 (1338)  付款方式   0利率 可分期 可刷卡 超商付款  運送方式   超商取貨  商品狀況   有現貨 有影音  店家資格   優良商店 
+  
+ 符合商店  TAAZE 讀冊生活網路書店(7517) 金石堂網路書店(1607) 城邦讀書花園(323) 臺北童書城網路書店(80) 教材王數位文創(79) 書立得童書城(52)   逗點生活市集(43) NG書城(36) 麥克兒童外文書店(34) １６８幼福童書網‧童書嬰兒用品童裝(27) 大衛書坊(25) 時報文化(20) 姚小鳳育兒網(9) Amuzinc酷比樂玩具(6) 玉山最低比價網(6) 奇買親子購物網(6) 小幼龍幼教用品社(5) 零國界二店(2) 玩得購網通購物生活館(2) mama-papa親子網(2) 配件王(1) 台灣香椿購物網(1) 魔法CoCo傢飾禮品生活館(1) JOYBUS 玩具百貨‧樂高積木(1) 書寶二手書店(1) ABC美麗醫學(1)     更多 
+
+ 熱門分類活動排行榜    1   FUN暑假，找回屬於小朋友的童心‧童樂 時報文化     2   文房兒童閱讀展 書立得童書城     3   【三採童書展】單書79折，任選3書再95折 TAAZE 讀冊生活網路書店   
+
+
+    超級商城開店說明會臺北場：7/12(星期三) 超級商城開店說明會臺中場：7/18 (星期二) 超級商城開店說明會高雄場：7/26 (星期三)  
+
+
+
+
+
+
+     首頁        圖書/文具/影音       書籍/雜誌期刊       二手書專區   音樂/電影/影集   文具/辦公用品        自然科學       文學   心理勵志   生活娛樂   藝術設計   動/漫畫   親子童書   語言學習/字辭典   財經企管/商業理財   醫療保健   電腦資訊   人文歷史   社會科學   考試書/政府出版品   中外文雜誌期刊   原文書/外文書籍   簡體書籍   中文電子書   原文電子書   中文電子雜誌   其他圖書   限制級書籍/寫真@       共 9887 項商品 
+
+     最高人氣   價格低至高   價格高至低   評價高至低   評論數多至少              
+
+    我發瘋的那段日子：抗NMDA受體腦炎倖存者自傳（電影書衣版）       $ 316   	TAAZE 讀冊生活網路書店     (二手書)微積分－企管所財金所       $ 299   	TAAZE 讀冊生活網路書店     (二手書)微積分好好玩：1小時學會微分和積分       $ 138   	TAAZE 讀冊生活網路書店     (二手書)冥王星吃起來是什麼味道？       $ 196   	TAAZE 讀冊生活網路書店     (二手書)穿越時空的隧道－世界科學未解之謎       $ 40   	TAAZE 讀冊生活網路書店     (二手書)觀念物理（Ⅴ）電磁學核物理       $ 89   	TAAZE 讀冊生活網路書店     30秒搞懂解剖學：人體構造沒你想的那麼難       $ 284   	金石堂網路書店     自然解剖書：關於地球上各種有趣的大自然現象       $ 277   	TAAZE 讀冊生活網路書店     (二手書)化學元素王國之旅       $ 88   	TAAZE 讀冊生活網路書店     (二手書)看漫畫，學化學       $ 125   	TAAZE 讀冊生活網路書店     氣味的奇幻力量：撩撥情緒慾望，左右行為反應的神祕第五感官（暢銷修訂版）       $ 299   	TAAZE 讀冊生活網路書店     《哆啦A夢科學任意門》（11-15集）       $ 924   	逗點生活市集     魚類觀察入門       $ 413   	TAAZE 讀冊生活網路書店     國家地理 火星零距離－好奇號任務全紀錄：人類史上最偉大的探險故事       $ 703   	TAAZE 讀冊生活網路書店     (二手書)認識Fuzzy：第三版       $ 245   	TAAZE 讀冊生活網路書店     台灣原生植物全圖鑑第二捲：蘭科（恩普莎蘭屬）──燈心草科       $ 1,422   	TAAZE 讀冊生活網路書店     (二手書)新聞中的科學—大學指考搶分大補帖       $ 231   	TAAZE 讀冊生活網路書店     圖解半導體製造裝置       $ 225   	TAAZE 讀冊生活網路書店     基礎統計學：觀念與應用（附學生學習光碟）（三版）       $ 586   	TAAZE 讀冊生活網路書店     (二手書)觀念物理第一部       $ 190   	TAAZE 讀冊生活網路書店     (二手書)我在MIT燃燒物理魂       $ 200   	TAAZE 讀冊生活網路書店     機車族必看！不要再花冤枉錢！（彩圖）維修師傅不會跟你說的秘密       $ 300   	TAAZE 讀冊生活網路書店     戰勝愛滋：一段永遠改變醫療科學的故事       $ 284   	金石堂網路書店     (二手書)地球的怒吼       $ 69   	TAAZE 讀冊生活網路書店     劉炯朗不一樣的邏輯課【全二冊】       $ 357   	TAAZE 讀冊生活網路書店     《哆啦A夢科學任意門》（1-5集）       $ 924   	逗點生活市集     雁爸爸       $ 194   	TAAZE 讀冊生活網路書店     (二手書)電力電子學（第三版）       $ 348   	TAAZE 讀冊生活網路書店     (二手書)商用微積分(第二版)       $ 95   	TAAZE 讀冊生活網路書店     驚人的數學魔術：18堂課，輕鬆變身數學Ａ咖       $ 264   	TAAZE 讀冊生活網路書店     如果這樣，會怎樣？胡思亂想的搞怪趣問  正經認真的科學妙答       $ 300   	TAAZE 讀冊生活網路書店     Make：國際中文版（30 ）       $ 205   	TAAZE 讀冊生活網路書店     (二手書)英漢對照材料科學與工程辭典（軟精裝）       $ 200   	TAAZE 讀冊生活網路書店     名師這樣教 物理秒懂：國中沒聽懂、高中變天書，圖解基礎觀念，一次救回來     (1)   $ 284   	金石堂網路書店     (二手書)電路板機械加工技術       $ 1,050   	TAAZE 讀冊生活網路書店     生物學       $ 174   	TAAZE 讀冊生活網路書店     (二手書)數理統計上課講義書       $ 336   	TAAZE 讀冊生活網路書店     (二手書)恐怖的食品添加物       $ 50   	TAAZE 讀冊生活網路書店     新時間簡史       $ 221   	TAAZE 讀冊生活網路書店     生物之書       $ 406   	金石堂網路書店     (二手書)貓的足跡—貓如何走入人類的歷史？       $ 89   	TAAZE 讀冊生活網路書店     (二手書)【化工與材料概論】       $ 150   	TAAZE 讀冊生活網路書店     (二手書)世界第一簡單電路學       $ 180   	TAAZE 讀冊生活網路書店     野性時刻：國家地理自然攝影新經典       $ 598   	TAAZE 讀冊生活網路書店     葉丙成的機率驚豔：當數學遇上文學，學生考不好也會笑著離開       $ 229   	金石堂網路書店     (二手書)數學之書       $ 406   	TAAZE 讀冊生活網路書店     物理奇遇記：湯普金斯先生的相對論及量子力學之旅       $ 252 活動$227起   	城邦讀書花園     (二手書)看漫畫瞭解腦神經科學       $ 150   	TAAZE 讀冊生活網路書店     (二手書)圖解化學辭典       $ 270   	TAAZE 讀冊生活網路書店     一花一世界：你所不知的植物故事       $ 213   	金石堂網路書店       
+
+ 
+
+
+
+付款方式
+
+超商取貨付款
+信用卡分期
+信用卡紅利折抵
+ATM
+
+
+
+會員專區
+
+我的帳戶
+折價券查詢
+電子報訂閱/取消
+如何獲得超贈點
+
+
+
+客戶服務
+
+新手上路
+常見問題
+退貨辦法
+註冊
+
+
+
+
+
+
+
+
+交易安全
+金流代收最安心
+
+
+
+7日鑑賞
+退貨免運費
+
+
+
+優良商店
+商店評核制度
+
+
+
+
+B 0 0 0 0 1 0 ( 0 1 )
+
+
+
+
+
+
+
+  關閉
+
+
+ga conf
+
+
+
+
+
+
+    手機逛超級商城 加入超級商城粉絲團 退貨辦法 服務說明 我要開店     服務條款 隱私權   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

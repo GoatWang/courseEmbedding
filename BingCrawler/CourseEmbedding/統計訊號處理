@@ -1,0 +1,4119 @@
+
+
+
+
+[新竹] 交通大學 統計訊號處理及通訊導論 - 看板 Refresh - 批踢踢實業坊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+批踢踢實業坊
+›
+看板 Refresh
+關於我們
+聯絡資訊
+
+
+
+
+返回看板
+
+
+分享
+
+
+
+
+
+
+
+作者suehung001 (suehung)看板Refresh標題[新竹] 交通大學 統計訊號處理及通訊導論時間Mon Jul 15 16:50:33 2013
+課程名稱        (S102114) 統計訊號處理與通訊導論
+上課費用        一般價$6,000元
+優惠價$5,000元(優惠價適用對象為特約商或3人(含)以上團報, 特約商加入請至敝中心網
+站首頁「加入特約商」處加入)
+學生價$4,000元(請出示學生證)
+開課日期        102年7月23日至8月20日(週二、四)18:30~21:30，共計24小時。
+開課地點        國立交通大學工程四館教室(新竹市大學路1001號)
+發證    本課程期末不實施考試，結訓標準為學員出席率(以簽到表計算)須達80%(含)以上，
+達到結訓標準者，由開班單位發給結訓證明。
+課程概述與大綱  本課程旨在為統計訊號處理及通訊領域之基礎知識提供一宏觀的介紹，
+特別針對具工程背景、但未必修習過專精課程之從業人士設計，期能於短期內建立從事相
+關研發工作所需的基本能力。本課程除了快速但詳細地介紹若干重要議題外，更大的特色
+在於我們希望揭示各種常用方法背後隱藏的洞見、以及理論與工程問題之間的深刻連結，
+我們認為這種訓練對實際運用工具面對問題的能力有極大幫助。本課程涵蓋範圍廣泛，因
+此規劃兩位講員，就各專精領域授課，期能收到最佳效果。
+大綱：
+1.      Random Processes
+●Probability Basics
+●Definition of a Random Process
+●Stationary and Wide-Sense Stationary (WSS) Random Processes
+●WSS Processes in Linear Systems
+●Power Spectral Density
+●White Noise Processes
+●Jointly Gaussian Random Variables
+●Gaussian Processes
+●Examples
+2.      Estimation Theory
+●Minimum Variance Unbiased Estimator
+●Cramer-Rao Lower Bound
+●Sufficient Statistics
+●Best Linear Unbiased Estimator
+●Maximum Likelihood Estimator
+●Moments Estimator
+●Least Squares Estimator
+●Minimum Mean Square Error Estimator
+●Maximum A Posteriori Estimator
+3.      Detection Theory
+●Statistical Detection Theory
+●Neyman-Pearson Theorem
+●Maximum Likelihood Detector
+●Maximum Likelihood Detector
+●Bayes Risk
+●Composite Hypothesis Testing
+4.Basic digital communication
+●Linear Systems
+●Signal Space
+●Modulation
+●Optimal Receiver
+●Performance Analysis
+●Pass-band Systems
+●Channel Effects and Equalization
+5.Information Theory and Channel Coding
+●Measure of Information
+●Channel Model and Channel Capacity
+●Shannon’s Information Theory
+●Linear Block Codes
+●Convolutional Codes
+●Advanced Coding
+6.Fading Channels
+●Channel Characterization
+●Time Selective Fading
+●Frequency Selective Fading
+●Slow/Fast Fading
+7.Selected Topics
+●OFDM
+●MIMO
+課程師資        簡鳳村教授
+現職國立交通大學電子工程系特
+經歷美國南加州大學電機工程博士
+專長無線通訊 / 數位訊號處理
+
+桑梓賢 教授
+現職國立交通大學電子工程系助理教授
+經歷Systems Engineer, ExcessBandwidth Corp. / Senior Research Engineer,
+Virata Corp. / Senior Research Engineer, GlobespanVirata  / Senior Design
+Engineer, Avance Logic
+專長寬頻通訊系統設計 /訊號處理 /訊號處理器晶片設計
+
+
+課程網站:http://submic.ee.nctu.edu.tw/curriculum/curriculum.php?Sn=412
+
+--
+※ 發信站: 批踢踢實業坊(ptt.cc) 
+◆ From: 140.113.11.227
+
+
+
+
+
+
+
+
+
+
+
+量化 (訊號處理) - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+量化 (訊號處理)
+
+維基百科，自由的百科全書
+(已重新導向自 量化 (信號處理))
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+本條目部分連結不符合格式手冊規範。跨語言連結及章節標題等處的連結可能需要清理。（2015年12月12日） 
+請協助改善此條目。參見WP:LINKSTYLE、WP:MOSIW以瞭解細節。突出顯示跨語言連結可以便於檢查。 
+
+
+
+
+
+
+
+
+
+
+
+
+
+量化訊號
+
+
+
+
+
+
+數位訊號
+
+
+在數位訊號處理領域，量化指將訊號的連續取值（或者大量可能的離散取值）近似為有限多個（或較少的）離散值的過程。量化主要應用於從連續訊號到數位訊號的轉換中。連續訊號經過採樣成為離散訊號，離散訊號經過量化即成為數位訊號。註意離散訊號並不需要經過量化的過程。訊號的採樣和量化通常都是由ADC實現的。
+例如CD音訊訊號就是按照44110Hz的頻率採樣，按16位元量化為有著65536（=
+
+
+
+
+2
+
+16
+
+
+
+
+{\displaystyle 2^{16}}
+
+）個可能取值的數位訊號。
+量化就是將類比聲音的波形轉換為數位，表示採樣值的二進位位數決定了量化的精度。量化的過程是先將整個振幅劃分成有限個小振幅（量化階距）的集合，把落入某個階距內的樣值歸為一類，並賦予相同的量化值。
+
+
+
+目錄
+
+
+1 數學描述
+2 忽略熵約束：Lloyd–Max量化
+3 量化與資料壓縮
+4 自然界中的量子化
+5 相關條目
+6 參考文獻
+7 外部連結
+
+
+
+數學描述[編輯]
+最簡單最易懂的量化是純量（有別於多維向量）量化，開始純量量化之前先要給出輸入資料。 通常，一個純量量化操作可以給出下麵的描述
+
+
+
+
+
+Q
+(
+x
+)
+=
+g
+(
+⌊
+f
+(
+x
+)
+⌋
+)
+
+
+{\displaystyle Q(x)=g(\lfloor f(x)\rfloor )}
+
+
+
+其中
+
+
+
+
+
+x
+
+
+{\displaystyle x}
+
+是實數，
+
+
+
+
+⌊
+x
+⌋
+
+
+{\displaystyle \lfloor x\rfloor }
+
+是下取整函式，生成整數
+
+
+
+i
+=
+⌊
+f
+(
+x
+)
+⌋
+
+
+{\displaystyle i=\lfloor f(x)\rfloor }
+
+
+
+
+
+
+f
+(
+x
+)
+
+
+{\displaystyle f(x)}
+
+和
+
+
+
+g
+(
+i
+)
+
+
+{\displaystyle g(i)}
+
+是任意的實值函式。
+
+整數
+
+
+
+i
+
+
+{\displaystyle i}
+
+是表示的數值，它通常被儲存或者傳輸，然後在後來需要解釋的時候使用
+
+
+
+g
+(
+i
+)
+
+
+{\displaystyle g(i)}
+
+進行最終的解釋重建。整數
+
+
+
+i
+
+
+{\displaystyle i}
+
+有時也稱作量化指數。
+在電腦或者其它應用，一個已知的量化方法均勻量化（en:uniform quantization）。在均勻量化方法裡共有兩個變數，叫mid-rise和mid-tread。
+如果
+
+
+
+x
+
+
+{\displaystyle x}
+
+是一個－1到1之間的數，一個mid-rise uniform量化操作，可以用"M"bit來表示量化的精度。
+
+
+
+
+
+Q
+(
+x
+)
+=
+
+
+
+
+⌊
+
+2
+
+M
+−
+1
+
+
+x
+⌋
+
++
+0.5
+
+
+2
+
+M
+−
+1
+
+
+
+
+
+
+{\displaystyle Q(x)={\frac {\left\lfloor 2^{M-1}x\right\rfloor +0.5}{2^{M-1}}}}
+
+.
+
+在這個例子中
+
+
+
+f
+(
+x
+)
+
+
+{\displaystyle f(x)}
+
+和
+
+
+
+g
+(
+i
+)
+
+
+{\displaystyle g(i)}
+
+運算子都是乘以比例因子（其中一個是另外一個的逆），並且在g（i）中帶有一個偏移量以使得每個量化表示都位於輸入區域的中間位置。
+
+
+
+
+2
+
+−
+(
+M
+−
+1
+)
+
+
+
+
+{\displaystyle 2^{-(M-1)}}
+
+經常稱為量化步長。按照這個量化定律，假定在整個量化步長上量化雜訊大致是均勻分佈的，並且假定量化的輸入訊號
+
+
+
+x
+
+
+{\displaystyle x}
+
+在整個-1到1的區間大致均勻分佈，量化的訊號雜訊比（SNR）可以用下麵的公式計算，
+
+
+
+
+
+
+
+S
+
+N
+
+q
+
+
+
+
+≈
+20
+
+log
+
+10
+
+
+⁡
+(
+
+2
+
+M
+
+
+)
+=
+6.0206
+M
+ 
+dB
+
+
+{\displaystyle {\frac {S}{N_{q}}}\approx 20\log _{10}(2^{M})=6.0206M\ \operatorname {dB} }
+
+.
+
+根據這個等式，人們常說SNR大約是每位6 dB。
+在mid-tread一致量化中，偏移0.5將加在下取整函式內部而不是外部。
+有時候，mid-rise量化使用時不加偏移0.5。這將訊號與雜訊比減小了大約6.02 dB，但是當步距小的時候為了簡化這是可接受的。
+在數位電話系統中，兩個流行的量化機制是'A-law'（在歐洲占據主導地位）和'μ-law'（在北美和日本占據主導地位）。這些機制將離散的類比數值對映到8位元尺度，在小值的時候近似線性隨著振幅增長按照對數增加。由於人耳對於音量的感知近似對數曲線，這就使用一定的位數在可聽見的聲音強度範圍提供了更高的訊號雜訊比。
+忽略熵約束：Lloyd–Max量化[編輯]
+在上面的陳述中，若令 
+
+
+
+λ
+
+
+{\displaystyle \lambda }
+
+ 等於 0，從而忽略掉位元率約束，或等價地假設要用定長碼（FLC）而非用變長碼（英語：variable-length code）（或其他熵編碼法，如算術編碼在率失真上就比定長碼好）來表示量化資料，這個最佳化問題就簡化為了只需最小化失真 
+
+
+
+D
+
+
+{\displaystyle D}
+
+ 的問題了。
+
+
+
+
+M
+
+
+{\displaystyle M}
+
+ 級量化器產生的索引可以用 
+
+
+
+R
+=
+⌈
+
+log
+
+2
+
+
+⁡
+M
+⌉
+
+
+{\displaystyle R=\lceil \log _{2}M\rceil }
+
+ 位元/符號的定長碼。例如當 
+
+
+
+M
+=
+
+
+{\displaystyle M=}
+
+256 階時，定長碼的位元率 
+
+
+
+R
+
+
+{\displaystyle R}
+
+ 為 8 位元/符號。由於這個原因，這樣的量化器有時稱作8位元量化器。不過使用定長碼消除了壓縮改進，但可以通過更好的熵編碼來改善。
+假設 
+
+
+
+M
+
+
+{\displaystyle M}
+
+ 階定長碼，率失真最小化問題可以簡化為失真最小化問題。 簡化的問題可以陳述為：給定一個機率密度函式為 
+
+
+
+f
+(
+x
+)
+
+
+{\displaystyle f(x)}
+
+ 的信源 
+
+
+
+X
+
+
+{\displaystyle X}
+
+ ，並約束量化器必須僅使用 
+
+
+
+M
+
+
+{\displaystyle M}
+
+ 個分類區域，求得決策邊界 
+
+
+
+{
+
+b
+
+k
+
+
+
+}
+
+k
+=
+1
+
+
+M
+−
+1
+
+
+
+
+{\displaystyle \{b_{k}\}_{k=1}^{M-1}}
+
+ 與重建層級 
+
+
+
+{
+
+y
+
+k
+
+
+
+}
+
+k
+=
+1
+
+
+M
+
+
+
+
+{\displaystyle \{y_{k}\}_{k=1}^{M}}
+
+ 來最小化得到的失真
+
+
+
+
+
+D
+=
+E
+[
+(
+x
+−
+Q
+(
+x
+)
+
+)
+
+2
+
+
+]
+=
+
+∫
+
+−
+∞
+
+
+∞
+
+
+(
+x
+−
+Q
+(
+x
+)
+
+)
+
+2
+
+
+f
+(
+x
+)
+d
+x
+=
+
+∑
+
+k
+=
+1
+
+
+M
+
+
+
+∫
+
+
+b
+
+k
+−
+1
+
+
+
+
+
+b
+
+k
+
+
+
+
+(
+x
+−
+
+y
+
+k
+
+
+
+)
+
+2
+
+
+f
+(
+x
+)
+d
+x
+=
+
+∑
+
+k
+=
+1
+
+
+M
+
+
+
+d
+
+k
+
+
+
+
+{\displaystyle D=E[(x-Q(x))^{2}]=\int _{-\infty }^{\infty }(x-Q(x))^{2}f(x)dx=\sum _{k=1}^{M}\int _{b_{k-1}}^{b_{k}}(x-y_{k})^{2}f(x)dx=\sum _{k=1}^{M}d_{k}}
+
+.
+
+對上述問題求最優解得到的量化器有時叫做MMSQE（最小均方量化誤差）解，而得到的機率密度函式最佳化的（非均勻）量化器叫做Lloyd–Max量化器，是用獨立發現疊代方法[1][2][3]從 
+
+
+
+
+∂
+D
+
+/
+
+∂
+
+b
+
+k
+
+
+
+=
+0
+
+
+{\displaystyle {\partial D/\partial b_{k}}=0}
+
+ 和 
+
+
+
+
+∂
+D
+
+/
+
+∂
+
+y
+
+k
+
+
+
+=
+0
+
+
+{\displaystyle {\partial D/\partial y_{k}}=0}
+
+ 求解兩組聯立方程的兩個人來命名的，如下：
+
+
+
+
+
+
+
+
+∂
+D
+
+
+∂
+
+b
+
+k
+
+
+
+
+
+=
+0
+⇒
+
+b
+
+k
+
+
+=
+
+
+
+
+y
+
+k
+
+
++
+
+y
+
+k
++
+1
+
+
+
+2
+
+
+
+
+{\displaystyle {\partial D \over \partial b_{k}}=0\Rightarrow b_{k}={y_{k}+y_{k+1} \over 2}}
+
+,
+
+會將閾值置於每對重建值的中點，而
+
+
+
+
+
+
+
+
+∂
+D
+
+
+∂
+
+y
+
+k
+
+
+
+
+
+=
+0
+⇒
+
+y
+
+k
+
+
+=
+
+
+
+
+∫
+
+
+b
+
+k
+−
+1
+
+
+
+
+
+b
+
+k
+
+
+
+
+x
+f
+(
+x
+)
+d
+x
+
+
+
+∫
+
+
+b
+
+k
+−
+1
+
+
+
+
+
+b
+
+k
+
+
+
+
+f
+(
+x
+)
+d
+x
+
+
+
+=
+
+
+1
+
+p
+
+k
+
+
+
+
+
+∫
+
+
+b
+
+k
+−
+1
+
+
+
+
+
+b
+
+k
+
+
+
+
+x
+f
+(
+x
+)
+d
+x
+
+
+{\displaystyle {\partial D \over \partial y_{k}}=0\Rightarrow y_{k}={\int _{b_{k-1}}^{b_{k}}xf(x)dx \over \int _{b_{k-1}}^{b_{k}}f(x)dx}={\frac {1}{p_{k}}}\int _{b_{k-1}}^{b_{k}}xf(x)dx}
+
+
+
+會讓重建值位於其相關分類區間的質心（條件期望值）。
+Lloyd方法I演算法（英語：Lloyd's algorithm），最初於1957提出，並可以直接推廣到用於向量資料。這個推廣會得到Linde–Buzo–Gray（LBG）（英語：Linde–Buzo–Gray algorithm）或K-平均分類器最佳化方法。此外，此方法還可以進一步推廣到對向量資料包含一個熵約束。[4]
+量化與資料壓縮[編輯]
+量化在有損資料壓縮中起著相當重要的作用。很多情況下，量化可以被當作將有損資料壓縮同無失真資料壓縮相區別的標誌之一。量化的目的通常是為了減少資料量。一些壓縮演算法，例如MP3和Vorbis，以有選擇地丟棄部分資料作為壓縮的一種方法，這種手段可以被認為是量化的過程也可以被看作是一種失真壓縮的形式。
+JPEG是一種利用了量化的圖像失真壓縮。JPEG的編碼過程對原始的圖像資料作離散餘弦變換，然後對變換結果進行量化並作熵編碼。通過量化可以降低變換值的精度，從而減少圖像的資料量。當然，精度的損失意味著圖像品質的下降。然而圖像的品質可以通過量化位數的選擇加以控制。例如，JPEG在每像素3位元的精度下得到的圖像品質還讓人可以接受的，相對於PCM抽樣得到的每個像素24位元的原始圖像來說，資料量大大下降了。
+現代壓縮技術通常以量化輸出的資訊熵，而不是輸出值集合的大小度量資訊量的多少。
+自然界中的量子化[編輯]
+從最基本的意義上來說，所有的物理量都是量子化的，這是量子力學的結論。為了數學上的明晰性，在宏觀的尺度上可以將量子的性質忽略，因此訊號可以表示為連續的形式。
+在實際應用中，這種內在的量子或量化的性質並不需要考慮。首先，量子效應會被訊號的雜訊淹沒，因為任何觀察物件在實際系統中總會伴隨有其他物理現象。其次，測量儀器不可能絕對精確，被測的訊號必然會被測量雜訊污染。
+相關條目[編輯]
+
+模-數轉換器，數-模轉換器
+量化誤差, 量化雜訊
+離散訊號，數位訊號
+抖動
+資訊理論
+率失真
+向量量化
+
+參考文獻[編輯]
+
+
+^ 參照錯誤：沒有為名為GrayNeuhoff的參考文獻提供內容
+^ Stuart P. Lloyd, "Least Squares Quantization in PCM", IEEE Transactions on Information Theory（英語：IEEE Transactions on Information Theory）, Vol. IT-28, pp. 129–137, No. 2, March 1982 doi:10.1109/TIT.1982.1056489 (work documented in a manuscript circulated for comments at Bell Laboratories with a department log date of 31 July 1957 and also presented at the 1957 meeting of the Institute of Mathematical Statistics, although not formally published until 1982).
+^ Joel Max, "Quantizing for Minimum Distortion", IRE Transactions on Information Theory（英語：IEEE Transactions on Information Theory）, Vol. IT-6, pp. 7–12, March 1960. doi:10.1109/TIT.1960.1057548
+^ Philip A. Chou, Tom Lookabaugh, and Robert M. Gray（英語：Robert M. Gray）, "Entropy-Constrained Vector Quantization", IEEE Transactions on Acoustics, Speech, and Signal Processing, Vol. ASSP-37, No. 1, Jan. 1989. doi:10.1109/29.17498
+
+
+外部連結[編輯]
+
+Paper on mathematical theory and analysis of quantization
+Quantization threads in Comp.DSP
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+數位訊號處理
+
+
+
+
+
+
+理論
+
+
+
+訊號檢測理論
+離散訊號
+估計理論
+取樣定理
+
+
+
+
+
+
+
+
+子領域
+
+
+
+音訊訊號處理
+數位圖像處理
+語音處理
+統計訊號處理（英語：Statistical signal processing）
+
+
+
+
+
+
+
+
+方法
+
+
+
+高階Z變換（英語：Advanced Z-transform）
+雙線性轉換
+離散傅立葉變換（DFT）
+離散分數傅立葉轉換（DFFT）
+離散時間傅立葉變換（DTFT）
+衝激不變法
+符合Z變換方法（英語：Matched Z-transform method）
+Z轉換
+Zak變換（英語：Zak transform）
+
+
+
+
+
+
+
+
+取樣
+
+
+
+混疊
+抗混疊濾波器
+降採樣
+奈奎斯特率（英語：Nyquist rate） / 頻率
+過採樣
+量化
+取樣率
+欠採樣（英語：Undersampling）
+升採樣
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=量化_(信號處理)&oldid=44516598"					
+分類：信號處理隱藏分類：有參考文獻錯誤的頁面自2015年12月連結格式不正確的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+БългарскиCatalàČeštinaDanskDeutschEnglishEspañolSuomiFrançaisעבריתHrvatskiMagyarItaliano한국어NederlandsPolskiPortuguêsРусскийBasa SundaSvenskaதமிழ்УкраїнськаTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年5月26日 (週五) 22:33。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+數位訊號處理 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+數位訊號處理
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+數位訊號處理（英語：DSP, Digital Signal Process）是將訊號以數位方式表示並處理的理論和技術。數位訊號處理與類比訊號處理是訊號處理的子集。
+數位訊號處理的目的是對真實世界的連續類比訊號進行測量或濾波。因此在進行數位訊號處理之前需要將訊號從類比域轉換到數位域，這通常通過模數轉換器實現。而數位訊號處理的輸出經常也要轉換到類比域，這是通過數模轉換器實現的。
+數位訊號處理的算法需要利用計算機或專用處理設備如數位訊號處理器和專用積體電路等。數位訊號處理技術及設備具有靈活、精確、抗乾擾強、設備尺寸小、造價低、速度快等突出優點，這些都是類比訊號處理技術與設備所無法比擬的。
+
+
+
+目錄
+
+
+1 數位訊號處理的域
+2 數位系統
+3 時域和空域
+4 頻域
+5 應用
+6 相關理論方法
+7 相關領域
+8 註釋
+9 參考文獻
+10 外部連結
+
+
+
+數位訊號處理的域[編輯]
+
+
+
+
+
+數位訊號處理系統
+
+
+
+在數位訊號處理領域，工程師們常常在以下的一些特定域中研究數位訊號：時域（一維的訊號）、空間域（多維訊號）、頻域、自相關域和小波域。他們基於有根據的猜測來選擇不同的域來研究訊號（或者是為了嘗試不同的可能性），以找到能最佳表達訊號特徵的域。從測量儀器得到的取樣序列表現為時域和空間域的訊號，然後通過離散傅立葉轉換產生頻域訊號，這就是所謂的頻譜。自相關被定義為對訊號本身在變化的時間和空間坐標上做互相關處理。
+數位系統[編輯]
+更多資訊：取樣
+真實世界的訊號一般是連續的類比訊號，相應的系統為類比系統。為了在類比系統中應用數位訊號處理，必須在類比系統和數位系統之間進行轉換。通常將類比系統的輸入數位化，即訊號取樣，將此數位訊號作為數位系統的輸入。類似的，在數位訊號處理的輸出端，將輸出的數位訊號轉換為類比訊號即為類比系統的輸出。
+對類比訊號的取樣必須滿足取樣定理以避免頻譜混疊。也就是說，取樣頻率必須大於被取樣訊號帶寬的兩倍。為了保證被取樣的類比訊號是帶限的，通常在取樣之前要對它進行適當的帶通或低通濾波。訊號取樣包括兩個步驟：即將變量和值都連續的類比訊號先後轉換為在變量上離散的的離散訊號和值上也離散的數位訊號（量化）。
+時域和空域[編輯]
+在時域和空域最常用的處理方法是使用稱為濾波的方法增強輸入訊號強度。濾波大體上包括對於目前輸入或者輸出訊號周圍一些環境樣本的轉換。有不同方法表示濾波器的特點；例如：
+
+「線性」濾波器是對於輸入取樣的線性轉換；其它濾波器則是「非線性的」。線性濾波器滿足重疊條件，例如，如果一個輸入訊號是不同權重訊號的組合，輸出就是同等權重的對應輸出訊號的線性組合。
+「因果」濾波器僅僅使用前面輸入或者輸出訊號的取樣；一個「非因果」濾波器使用未來的輸入取樣。有些非因果濾波器可以在上面添加一個延時轉換成因果濾波器；反之，因果濾波器可以通過引入延時單元獲得非因果濾波器的某些特性。
+「非時變」濾波器有不隨時間變化的恆定屬性；其它諸如自適應濾波器隨著時間變化。
+一些濾波器是「穩定的」，另外一些則是「不穩定的」。一個穩定濾波器隨著時間延長輸出逐漸匯聚到一點或者在一個有限時間段內在一個範圍內波動。一個不穩定濾波器產生髮散的輸出。
+「無限脈波響應」（IIR）濾波器含有反饋結構，因此它的輸出不但與之前的輸入訊號有關，還與之前的輸出訊號有關。而「有限脈波響應」（FIR）濾波器沒有反饋結構，它的輸出僅僅與之前的輸入訊號有關。同樣因為有無反饋的關係，IIR濾波器可能是不穩定的，而FIR總是穩定的。
+
+多數濾波器能夠在Z域（頻域的一個超集）用它們的傳遞函數描述。一個數位濾波器可以表示為一個差分方程、零點和極點集合。或者，如果是FIR濾波器的話，可以表示為脈波響應或者階梯響應。FIR濾波器對應一個輸入的輸出可以用輸入訊號和脈波響應的摺積來計算。濾波器也可以使用系統框圖表示，它們然後就可以用於派生出一個處理算法示例使用硬體實現這個濾波器。
+頻域[編輯]
+訊號通常通過傅立葉轉換從時域或者空間域轉換到頻域。傅立葉轉換將訊號資訊轉換成每個成份頻率上的振幅和相位。傅立葉轉換經常轉換成功率譜，功率譜是每個成份頻率振幅的平方。
+在頻域分析訊號的最常見目的是分析訊號屬性。工程師通過分析頻譜就可以知道輸入訊號中有那些頻率的訊號沒有那些頻率的訊號。
+有一些通用的頻域轉換方法，例如倒頻譜通過傅立葉轉換將訊號轉換到頻域、取對數、然後再進行傅立葉轉換。這種方法加強了振幅較小的成份頻率但是保留了成份頻率振幅的順序。
+應用[編輯]
+DSP的主要應用是音訊訊號處理、音訊壓縮、數位圖像處理、視訊壓縮、語音處理、語音識別和數位通訊等。明確的例子有數位行動電話中的語音壓縮和傳輸、高保真音響設備中聲音均衡、天氣預報、經濟預測、地震數據處理、工業過程的分析和控制、電影中的計算機動畫、如X射線斷層成像和MRI這樣的醫學影像、圖像處理以及用於電吉他功放的數位音效。另外的應用還有PC音效卡的超低頻接收。[1]
+相關理論方法[編輯]
+
+線性非時變系統
+
+傳遞函數
+
+
+傅立葉轉換
+
+離散傅立葉轉換
+離散時間傅立葉轉換
+Z轉換
+小波轉換
+
+
+濾波器設計
+
+IIR數位濾波器
+雙線性轉換
+巴特沃斯濾波器
+切比雪夫濾波器
+橢圓濾波器
+FIR數位濾波器
+
+
+最小相位
+
+相關領域[編輯]
+
+FPGA
+自動控制
+計算機科學
+數據壓縮
+電氣工程
+資訊理論
+地震訊號處理
+通訊
+
+註釋[編輯]
+
+
+^ [1]
+
+
+參考文獻[編輯]
+
+Alan V. Oppenheim, Ronald W. Schafer, John R. Buck : Discrete-Time Signal Processing, Prentice Hall, ISBN 0-13-754920-2
+Richard G. Lyons: Understanding Digital Signal Processing, Prentice Hall, ISBN 0131089897
+Sen M. Kuo, Woon-Seng Gan: Digital Signal Processors: Architectures, Implementations, and Applications, Prentice Hall, ISBN 0130352144
+Bernard Mulgrew, Peter Grant, John Thompson: Digital Signal Processing - Concepts and Applications, Palgrave Macmillan, ISBN 0-333-96356-3
+Steven W. Smith: Digital Signal Processing - A Practical Guide for Engineers and Scientists, Newnes, ISBN 0-7506-7444-X
+Paul A. Lynn, Wolfgang Fuerst: Introductory Digital Signal Processing with Computer Applications, John Wiley & Sons, ISBN 0-471-97984-8
+James D. Broesch: Digital Signal Processing Demystified, Newnes, ISBN 1878707167
+John Proakis, Dimitris Manolakis: Digital Signal Processing - Principles, Algorithms and Applications, Pearson, ISBN 0133942899
+Hari Krishna Garg: Digital Signal Processing Algorithms, CRC Press, ISBN 0849371783
+P. Gaydecki: Foundations Of Digital Signal Processing: Theory, Algorithms And Hardware Design, Institution of Electrical Engineers, ISBN 0852964315
+Paul M. Embree, Damon Danieli: C++ Algorithms for Digital Signal Processing, Prentice Hall, ISBN 0131791443
+Anthony Zaknich: Neural Networks for Intelligent Signal Processing, World Scientific Pub Co Inc, ISBN 9812383050
+Vijay Madisetti, Douglas B. Williams: The Digital Signal Processing Handbook, CRC Press, ISBN 0849385725
+Stergios Stergiopoulos: Advanced Signal Processing Handbook: Theory and Implementation for Radar, Sonar, and Medical Imaging Real-Time Systems, CRC Press, ISBN 0849336910
+Joyce Van De Vegte: Fundamentals of Digital Signal Processing, Prentice Hall, ISBN 0130160776
+Ashfaq Khan: Digital Signal Processing Fundamentals, Charles River Media, ISBN 1584502819
+Jonathan M. Blackledge, Martin Turner: Digital Signal Processing: Mathematical and Computational Methods, Software Development and Applications, Horwood Publishing, ISBN 1898563489
+Bimal Krishna, K. Y. Lin, Hari C. Krishna: Computational Number Theory & Digital Signal Processing, CRC Press, ISBN 0849371775
+Doug Smith: Digital Signal Processing Technology: Essentials of the Communications Revolution, American Radio Relay League, ISBN 0872598195
+Henrique S. Malvar: Signal Processing with Lapped Transforms, Artech House Publishers, ISBN 0890064679
+Charles A. Schuler: Digital Signal Processing: A Hands-On Approach, McGraw-Hill, ISBN 0078297443
+James H. McClellan, Ronald Schafer, Mark A. Yoder: Signal Processing First, Prentice Hall, ISBN 0130909998
+Artur Krukowski, Izzet Kale: DSP System Design: Complexity Reduced Iir Filter Implementation for Practical Applications, Kluwer Academic Publishers, ISBN 1402075588
+John G. Proakis: A Self-Study Guide for Digital Signal Processing, Prentice Hall, ISBN 0131432397
+
+外部連結[編輯]
+
+Microcontroller.com
+The Scientist and Engineer's Guide to Digital Signal Processing
+DSP related discussion groups
+FPGA based DSP dev kit
+Digital Signal Processing Tutorial
+FAQ on Digital Signal Processing
+Introduction to Digital Signal Processing
+CDSP - Center for Digital Signal Processing
+Music DSP Source Code Archive
+DSP links
+Yet another good DSP tutorial (bores)
+Spectrum Analysis Tutorials
+TRAXMOD dsPIC MOD music player
+DeviceTools - Tools and silicon for embedded device developers
+Free digital filter design software
+Some free books on DSP (in English and in Russian)
+How an AMC DSP Farm Can Simplify and Accelerate Your Development Efforts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+數位系統
+
+
+
+
+
+
+組件
+
+邏輯閘 · 數位電路 · 積體電路 (IC)
+
+
+
+
+
+
+理論
+
+布爾邏輯 · 數位訊號處理 · 計算機系統結構
+
+
+
+
+
+
+應用
+
+數位音訊 · 數位攝影 · 數位影像
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+數位訊號處理
+
+
+
+
+
+
+理論
+
+
+
+訊號檢測理論
+離散訊號
+估計理論
+取樣定理
+
+
+
+
+
+
+
+
+子領域
+
+
+
+音訊訊號處理
+數位圖像處理
+語音處理
+統計訊號處理（英語：Statistical signal processing）
+
+
+
+
+
+
+
+
+方法
+
+
+
+高級Z轉換（英語：Advanced Z-transform）
+雙線性轉換
+離散傅立葉轉換（DFT）
+離散分數傅立葉轉換（DFFT）
+離散時間傅立葉轉換（DTFT）
+脈衝不變法
+匹配Z轉換方法（英語：Matched Z-transform method）
+Z轉換
+Zak轉換（英語：Zak transform）
+
+
+
+
+
+
+
+
+取樣
+
+
+
+混疊
+抗混疊濾波器
+降取樣
+奈奎斯特率（英語：Nyquist rate） / 頻率
+過取樣
+量化
+取樣率
+欠取樣（英語：Undersampling）
+升採樣
+
+
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4113314-6
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=數字信號處理&oldid=38602988"					
+分類：數位訊號處理隱藏分類：包含規範控制信息的維基百科條目使用ISBN魔術連結的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةCatalàDanskDeutschΕλληνικάEnglishEspañolEestiفارسیSuomiFrançaisעבריתहिन्दीMagyarBahasa IndonesiaItaliano日本語Қазақша한국어МонголBahasa MelayuNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSimple EnglishSlovenščinaSvenskaไทยTürkçeУкраїнськаTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2015年12月30日 (週三) 05:51。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+課程大綱
+
+
+
+
+
+
+
+
+
+
+統計訊號處理STATISTICAL SIGNAL PROCESSING
+
+
+
+
+
+
+開課系所 Department/Institute:  系統所          Systems and Naval Mechatronic Engineering
+開課教師 Instructor:   李坤洲 Lee, Kun-Chou                 
+開課學年 Academic Year:   0102
+開課學期 Semester:    1
+開課序號 Serial Number:   148
+
+課程屬性碼 Attribute Code:   SYS 7105 
+課程碼 Course Number:   P180300 
+分班碼 Class Code: 
+學分數 No. of Credits:           3
+課程語言 Medium of Instruction:   中文
+
+
+課程網址 Course Website:         Please visit NCKU Moodel.	
+
+先修課程或先備能力 Prerequisite Course(s):   無      
+
+教師聯絡資訊 Contact with Teacher
+  	    e-mail：kclee@mail.ncku.edu.tw
+
+電話：手機0910-426536      
+
+助教資訊 Contact with Tutor
+       系館 Rm#616, Tel: (06)2747018 # 233      
+
+學習規範 Course Policy
+	    Please visit NCKU Moodel.      
+
+評量方式 Grading
+
+
+方法百分比%
+
+於開學第一次上課宣佈，修課學生請務必出席。 
+100
+
+
+
+
+教學方法 Teaching Strategies
+      本課程是統計學與系統訊號處理的整合，每個主題都是先由統計學方法出發，進而推展到訊號處理。一開始先由基礎的統計方法來探討系統訊號處理，接著再推展到高階統計方法來探討系統訊號處理，最後再推廣到Noise-reduction (降低雜訊)、Fingerprinting (指紋法)、Classification(分類)、Regression(迴歸)等在工程訊號處理方面的應用    
+
+		※請遵守智慧財產權觀念  不得不法影印
+		 Please follow the Intellectual Property instruction and No illegal copy
+	
+
+課程教材 Course Material
+	    於開學第一次上課宣佈，修課學生請務必出席。    
+
+參考書目 References
+	    於開學第一次上課宣佈，修課學生請務必出席。    
+
+備註 Remarks
+     Please visit NCKU Moodel.
+
+
+
+
+基本素養 Basic Literacy
+        無    
+
+核心能力 Competence
+■ 具備系統、船舶及機電工程的高階專業知識與創新之能力
+ Possessing the ability of advance specialized knowledge and innovation in the system of naval architecture and marine technology, as well as mechatronic engineering
+□ 具備策劃及執行專題研究之能力。
+ Possessing the ability to scheme and execute research projects
+□ 具備整合、表達、呈現研究成果之能力。
+ Possessing the ability to integrate, express and present the research achievement
+■ 思考及獨立解決問題之能力
+ Possessing the ability of innovated ideas, and independently solving problems
+□ 跨領域人員協調整合之能力
+ Possessing the ability to coordinate and integrate multidisciplinary
+□ 具備領導、管理及規劃之能力。
+ Possessing the ability of leadership, management, and schematization
+□ 具備良好的國際觀與終身自我學習成長之能力。
+ Possessing the ability of global view and lifelong learning
+□ 具備會議發表論文之能力。
+ Possessing the ability to present conference paper
+ 
+
+課程概述 Course Description
+       課程是統計學與系統訊號處理的整合，每個主題都是先由統計學方法出發，進而推展到訊號處理。一開始先由基礎的統計方法來探討系統訊號處理，接著再推展到高階統計方法來探討系統訊號處理，最後再推廣到Noise-reduction (降低雜訊)、Fingerprinting (指紋法)、Classification(分類)、Regression(迴歸)等在工程訊號處理方面的應用。 
+
+課程學習目標 Course Objectives    
+	    系統及船舶機電工程學系強調系統整合，因所有的工程量測實驗值都是隨機的，都無可避免地包含雜訊及來自環境的不確定性，因此有必要以統計學的方法，來做系統訊號處理，才能得到合乎物理特性的特徵訊號。「統計訊號處理」可說是所有領域的工程量測實驗之基礎，本課程希望培養修課學生利用統計訊號處理的技巧來處理工程量測訊號的能力。    
+
+課程進度 Course Outline
+
+
+週次 Week進度說明 Progress Description
+1Introduction (簡介)2Introduction (簡介)3Introduction (簡介)4Statistical Techniques (統計方法)5Statistical Techniques (統計方法)6Statistical Techniques (統計方法)7Noise-reduction (降低雜訊)8Noise-reduction (降低雜訊)9Noise-reduction (降低雜訊)10Fingerprinting (指紋法)11Fingerprinting (指紋法)12Fingerprinting (指紋法)13Pattern Classification (分類)14Pattern Classification (分類)15Pattern Classification (分類)16Application to Communication Engineering (通訊工程的應用)17Application to Communication Engineering (通訊工程的應用)18Application to Communication Engineering (通訊工程的應用) 
+
+　以上每週進度教師可依上課情況做適度調整。The schedule may be subject to change.
+
+
+課程學習融入下列議題或具有下列內涵的程度 Immersing the Following Issues or Contents
+議題或內容 Issues or Contents關聯性 Correlation生命教育 Life Education
+無相關 No correlation服務學習 Service Learning
+間接相關 Indirect correlation性別平等 Gender Equity
+無相關 No correlation環境安全 Environmental Safety
+無相關 No correlation環境保護 Environmental Protection
+間接相關 Indirect correlation智慧財產權 Intellectual Property
+間接相關 Indirect correlation法治教育 Law-Related Education
+無相關 No correlation人權教育 Human Rights Education
+無相關 No correlation 
+
+有關課程其他調查 Other Surveys of Courses
+                   1.本課程是否規劃業界教師參與教學或演講?   否            
+Is there any industry specialist invited in this course? How many times? No
+			
+           2.本課程是否規劃內含校外實習 (並非參訪)?   否		   
+Is there any in (out of) school practicum involved in this course? How many hours?  No
+
+
+
+
+
+
+
+
+
+
+
+Origin - 工程及科學應用繪圖軟體 - 昊青公司--專業軟體代理商
+
+
+
+
+
+
+
+
+
+Citrix, Mathematica, Stata, Minitab, Eviews, dSPACE, Symantec.cloud, 昊青股份有限公司迴首頁│繁體版│簡體版│English│FB關於昊青產品系列影音專區最新消息電子報聯絡我們首頁 > 產品系列 >工程應用軟體以A~Z排序網路及通訊軟體CitrixEkahauNetwork InstrumentsOPNET ModelerPowerPlug ProTesting TechnologiesWRQ Reflection雲端運算解決方案BitdefenderSymantec.cloud統計與經濟分析軟體Crystal BallEQSEViewsGAUSSLIMDEPLISREL / HLMMinitabNWANVivoRATS/CATSSCAShazamStataTableau數學與管理決策軟體APO/AMI@RISKConceptDrawFinToolsFrontier AnalystGAMSGeometry ExpressionsLINDO / LINGOMathematicaMathtypeVanguard System化學應用軟體ChemOfficeGaussianHypercubeSPARTAN工程應用軟體20-SimDiffpackFilterShopOriginParticleworksSKMSurfer, GrapherWasp-NetXFdtd其他應用軟體EndNoteLahey FortranOnePagerPCTeXScientific WorkplaceSimscript硬體及周邊dSPACEHumusoftK-Team工程應用軟體依產品系列Origin- 工程及科學應用繪圖軟體Origin 是一套易學易用的軟體，提供科學家與工程師所需的強大的數據分析能力與印刷品等級的繪圖功能。OriginPro 除了 Origin 所有功能外，還額外提供如峰值擬合、曲面擬合、統計、訊號處理以及影像處理(image processing)等多種分析工具。OriginPro 是一套結合數據分析與資料繪圖的最佳解決方案。最新發佈版本為Origin 2017。>> 前往原廠網站我要洽詢產品介紹Origin/OriginProOrigin2016新功能Origin2017新功能Origin Developer KitOrigin OEMOrigin Viewer版本比較Origin 新舊版本 比較表Origin 及 OriginPro 比較表圖表簡介Origin繪圖功能Origin主題與模板Origin匯出圖表蜘蛛圖／雷達圖圓餅圖和長條圖曲線或符號圖多坐標軸與多屏面圖三元圖極座標圖瀑布圖輪廓圖 等高線圖向量圖3D 立體圖一般(專業)影像資料處理統計圖表Profile Plots專業領域圖表客製化圖表成功案例聚合物材料光電特性研究慢性肺病研究心臟產生能量的原理愛滋病疫苗的研發Origin 對肌肉組織活動的研究分子式資料視覺化尖端電池技術研發功能概述ORIGIN 功能一覽一般分析功能曲線擬合功能峰值分析與擬合工具參數化函式繪圖(Parametric Function Plots )多變量分析(Multivariate Analysis)集群分析(Cluster Analysis)積分非線性擬合(Nonlinear Fitting with Integral)下載專區下載Origin 2017 手冊軟體試用網路版安裝與設定單人版序號啟用說明知名客戶全球財富500強企業航太軍事工業汽車與重工業生技與醫藥產業化學業電腦與電子軟硬體消費性產品與醫療電子、科學、影像等工業設備財經與顧問業金屬，建材與紙類石油、能源與工程公司電信業台灣知名客戶所有客戶Origin應用範圍在舉凡工程或自然科學之類的硬科學領域，或者是社會科學與金融、顧問之類的軟科學領域，專業人士和數字的關係也越來越密切，除了紀錄和計算之外，資料的視覺化和表達，還有後處理和分析也越來越重要，從簡單的簡報製作和資訊分享到複雜的資料採礦(Data Mining)、決策支援(Decision Support)、知識管理(Knowledge Management，KM)、知識發掘(Knowledge Development，KD)等先進複雜對於一個企業或是商務模式有關鍵性影響的領域，都逐漸扮演越來越重要的角色。Origin和OriginPro是設計給和數字資料關係密切的專業人士的貼心工具，以往只有當事人能理解的大量數據，經由Origin和OriginPro的協助能夠視覺化，讓所有需要資訊的人都可以無障礙的理解。Origin系列產品優異的血統，讓數字不再冰冷，從使用者的觀點出發設計的使用者介面讓Origin擁有友善的特色諸如：◎       操作直觀，容易上手，專業人士有該領域中基本所需的數學背景或數字觀念就可以輕鬆上手，不需要花很長的重新學習。◎       在統計、曲線擬合(curve fitting)、峰值分析(peak analysis)各種數值資料分析上有著卓越的表現，並且易於使用。◎       Origin即點即到(point-and-click)的操作介面在2D、3D繪圖、等高線繪圖上具有極高的便利性。◎       針對工程和自然科學領域的應用，Origin在訊號處理和影像處理上也有強大的功能，讓使用者可以輕易地從影像和各種的訊號資料裡面截取或比較所需的資訊。◎       Origin有客製化的選項，使用者可制定模板(Templates™)當數據或母數改變時，會自動改變圖表和資料結果。◎       Origin在做圖和出圖的表現上，也可以達到專業出版品的水準，專業人士只需要基礎的文書處理技巧，就可以產出專業的簡報資訊。 Origin和OriginPro共有的優異特性能普遍的協助專業人士在這些工作上：Data Analysis (一般資料分析)                         liner curve fittingOrigin系列的產品能提供使用者從基礎到進階的資料分析工具以滿足不同層面或層次的需求，最常見的功能包括了峰值分析(peak analysis), 曲線擬合(curve fitting),以及一般統計功能和訊號處理。 由於資料分析是承接前一個工作階段的成果，所以Origin可以支援許多不同的資料格式，讓資料匯入沒有障礙，同時分析的結果也會是下一階段工作甚至是決策的資料來源，所以Origin也支援許多不同格式的資料輸出(Export)。並且資料可能會來自許多不同專案的產出，同時也可能要提供給不同專案使用，所以Origin也提供諸如多頁工作簿(Multi-sheet workbooks) 以及Project Explorer 讓使用者可以組織和管理不同專案，並且可以把這些工作簿存成各種的樣板(analysis templates) 以便於日後重複使用。 Graphing (基礎到進階的繪圖功能)                            General graphing畫甚麼圖和怎麼畫這些圖常常是專業人士製作簡報和做資料分析的一項重要工作，甚至是因為難以決定或是不好製作而產生困擾，Origin內建了跨各專業領域70種以上的製圖樣板，讓製圖繪圖變成非常簡單直觀，讓專業人士不再面臨為了方法耽擱目的的困擾又可以產出專業出版品品質的圖表。從基礎、常見的輪廓圖(contour), 2D平面圖或是3D立體圖到科學工程或是財金專業領域使用的諸如極座標圖(windrose，Polar Chart), 股價走勢圖stock (OHLC), 三元圖(ternary，including ternary-contour), 2D向量圖(2D vector) and 3D向量圖(3D vector),以及其他多種專業統計圖表。     NASDAQ graph by done Origin Programming (編程設計)對於熟練的使用者想要把Origin的環境和功能更進一步的特殊化和自動化，Origin支援兩種程式語言給他們使用除了內建的以C語言為基礎發展的Origin C之外，也支援 LabTalk™。使用者可以用這些工具把繪圖和分析的工作自動化。Origin也包含了 整合式程式發展環境( Integrated Development Environment，IDE),以及程式編譯器Code Builder ,讓使用者可以很容易的撰寫程式並且除錯。同時Origin也可以做為其他程式語言諸如VB, C++, C# and LabVIEW™ 的Automation Server 在工程和資訊領與上有更有彈性的發揮。 OriginPro 更進一步的提供了許多進階的功能，對於一般的使用者，OriginPro可以額外提供的分析工具諸如:Peak Fitting(峰值擬合)Surface Fitting(錶面或曲面擬合)Statistics(一般統計)Signal Processing(訊號處理)Image Handling(影像處理) Peak Fitting (峰值擬合)                      General Peak fittingOriginPro的峰值分析工具( Peak Analyzer tool)讓客戶可以在光譜或是頻譜(spectra)上找到一個到多個峰值並且加以擬合。基準線(Baseline)的錨點可以根據擬合公式的特性做設定，並且基準線的擬合也可以被包括在整個擬合過程之中。OriginPro提供了Fit Control的功能讓客戶可以全盤的控制包括各種混合的峰值算式( mixed peak functions),峰值中心與寬度(peak centers and widths),共用參數(sharing parameters),以及硬性設定邊界( imposing bounds )或訂立線性的參數限制等功能(linear constraints on parameters).圖形和表格也會一同呈現在完成的報告產出裡。Surface Fitting (錶面或曲面擬合)OriginPro可以用3維的XYZ資料點來擬合和逼近立體的平面或曲面，相關的資料可以一併顯示，包括擬合的資料點到被擬合的平面之間的dropline都可以一併顯示。Statistics (進階統計功能)OriginPro較一般版本的提供了更多更深入的統計分析工具包括◎ Descriptive Statistics                     ◎Discrete Frequency counting◎ Normality tests                           ◎ Correlation analysis◎ One-way and two-way Repeated Measures◎ ANOVA and Friedman ANOVA◎ Two-Sample Kolmogorov-Smirnov Test and Mann-Whitney Test◎Survival Analysis tools including Weibull Fit and Cox Proprotional Hazard Model,◎ROC Curves                                ◎ Power and Sample Size tests.Signal Processing (訊號處理)                           STFT graph done in Origin對於電機與電子或是通訊相關產業和工程領域OriginPro提供了◎ Short-Time FFT (STFT)◎ Hilbert Transform◎ Coherence◎ 2D FFT and 2D FFT-based Filtering◎ 2D Correlation◎ Wavelet analysis. Image Handling (影像處理)      General Image handlingOriginPro提供了更多專業的工具讓客戶處理影像資料諸如：◎ Alpha blending◎ Pixel logic◎ Morphological filtering◎Interpolated background subtraction. 進一步的詳情可以參考本公司網站的專頁，或是原廠網站，有興趣的客戶也可以洽詢本公司。我要洽詢關於昊青  |  產品系列  |  影音專區  |  最新消息  |  電子報  |  聯絡我們  |  網站地圖Scientific Formosa Inc 2017 All Rights Reserved
+
+
+
+
+
+
+
+
+
+
+
+
+
+數位訊號處理 - 陳鍾誠的網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wikidot.com
+
+
+
+.wikidot.com
+    
+
+
+Share on
+
+
+
+
+
+
+
+
+Edit
+History
+Tags
+Source
+
+Explore »
+
+ 
+
+
+
+
+
+陳鍾誠的網站
+金門大學：免費電子書、教材、程式、動畫
+
+
+
+
+
+
+
+
+文章列表
+
+最近修改
+所有網頁
+標記
+
+
+相關網站
+
+陳鍾誠的網站
+系統程式
+C# 程式設計
+
+
+陳鍾誠
+
+關於陳鍾誠
+陳鍾誠的信箱
+陳鍾誠的 Facebook
+陳鍾誠的網站
+陳鍾誠的手機網
+陳鍾誠的簡歷
+陳鍾誠的 Diigo
+陳鍾誠的 Youtube
+
+
+Wikidot
+
+網站管理
+本站成員
+標記
+加入本站?
+頂欄
+側欄
+樣版
+Wikidot 文件
+Wikidot 語法
+Wikidot Module
+Wikidot Embedding
+Wikidot Template
+Wikidot Layout
+
+
+
+
+Create account or Sign in 
+
+
+
+
+課程
+兩岸產業
+網路資源
+網路程式
+開放原碼
+動畫設計
+研究專題
+書籍
+系統程式
+C# 程式設計
+Blender 動畫設計
+作品
+程式
+論文
+動畫
+文章
+新詩
+故事
+歷史
+研究
+研究
+衛星遊戲
+人工智慧
+網路出版
+機器翻譯
+興趣
+閱讀
+寫作
+影片
+關註
+學習
+常用
+生活
+網站
+手機版
+手機最愛
+Diigo
+Twitter
+Facebook
+Scribd
+Youtube
+Kmit
+ping
+GAE
+金門不動產
+手機入口網
+大學課程網
+
+
+rating: 0+x
+
+
+
+
+
+                            數位訊號處理
+                        
+
+
+
+
+
+
+
+
+統計軟體 R
+簡介
+安裝
+操作方式
+變數與運算
+有序數列
+向量
+矩陣
+多維陣列
+複數
+因子
+串列
+資料框
+時間數列
+流程控制
+輸出入
+呼叫
+函數
+2D 繪圖
+3D 繪圖
+互動介面
+套件列表
+其他語言呼叫
+R 的應用
+集合
+邏輯推論
+模糊邏輯
+機率邏輯
+檢定
+搜尋
+優化算法
+線性代數
+決策樹
+人工智慧
+分群分類
+SVM 向量機
+神經網路
+遺傳演算法
+資料採礦
+訊號處理
+影像處理
+語音處理
+自然語言
+機器學習
+機器人
+生物統計
+數位訊號處理
+方程式求解
+數值分析
+微積分
+微分方程
+線性規劃
+圖形理論
+統計推論
+字串處理
+正規表示式
+視窗程式
+網頁程式
+文件格式
+貝氏網路
+訊息
+機率統計書
+相關網站
+參考文獻
+最新修改
+簡體版
+English
+
+
+
+
+文章
+評論
+授權
+
+
+
+參考文獻
+
+signal: Signal processing
+
+http://cran.r-project.org/web/packages/signal/index.html
+
+
+Package ‘signal’ February 15, 2012
+
+http://cran.r-project.org/web/packages/signal/signal.pdf
+
+
+
+
+
+
+
+
+Show Comments
+
+
+
+
+
+Add a New Comment
+
+
+Post preview:
+
+
+Close preview
+
+
+
+
+
+
+
+
+or Sign in as Wikidot user
+
+
+
+(will not be published)
+
+
+
+
+-
++
+
+
+                    Help: wiki text quick reference 
+
+
+
+
+
+
+
+
+
+
+
+Permanent Link
+Edit
+Delete
+
+
+
+
+
+本網頁的作者、授權與引用方式
+
+
+作者
+陳鍾誠 (部分網頁改寫來源為：徐俊曉 「統計學與R讀書筆記第五版」)，於金門大學資訊工程系，電子郵件：wt.ude.uqn|ccc#wt.ude.uqn|ccc，網站：http://ccckmit.wikidot.com。
+授權
+本文採用 GFDL 授權條款 (GNU Free Documentation License)。
+引用方式
+陳鍾誠, 「免費電子書：R 統計軟體」， (網站) 陳鍾誠的網站 (網頁標題) 數位訊號處理，取自 http://ccckmit.wikidot.com/r:digital ，網頁修改第 0 版 (24 Jun 2012 09:13)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+page revision: 0, last edited: 24 Jun 2012 09:13
+
+Edit
+Rate (0)
+Tags
+Discuss (0)
+History
+Files
+Print
+Site tools
++ Options
+
+
+Edit Sections
+Append
+Edit Meta
+Watchers
+Backlinks
+Page Source
+Parent
+Lock Page
+Rename
+Delete
+
+
+
+
+
+
+
+
+
+Help
+     |
+    Terms of Service
+     |
+    Privacy
+     |
+    Report a bug
+     |
+    Flag as objectionable
+
+Powered by Wikidot.com
+
+
+                    Unless otherwise stated, the content of this page is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
+
+
+
+
+
+Other interesting sites
+
+
+
+
+
+
+Alfamedia
+          
+              Alfabetización mediática para educadores
+            
+
+
+
+
+
+
+
+WikiRMAPhil
+          
+              Community Site for UU RMA Philosophy Students
+            
+
+
+
+
+
+
+
+Forteana: The Fortean Wiki
+          
+              The World of Strange Phenomena
+            
+
+
+
+
+
+
+
+Fondazione SCP
+          
+              Branca Italiana della SCP Foundation
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Click here to edit contents of this page.    
+
+
+
+        Click here to toggle editing of individual sections of the page (if possible).         Watch headings for an "edit" link when available.    
+
+        Append content without editing the whole page source.    
+
+        Check out how this page has evolved in the past.    
+
+        If you want to discuss contents of this page - this is the easiest way to do it.    
+
+        View and manage file attachments for this page.    
+
+        A few useful tools to manage this Site.    
+
+        See pages that link to and include this page.    
+
+        Change the name (also URL address, possibly the category) of the page.    
+
+        View wiki source for this page without editing.    
+  
+        View/set parent page (used for creating breadcrumbs and structured layout).    
+
+            Notify administrators if there is objectionable content in this page.        
+
+            Something does not work as expected? Find out what you can do.        
+
+            General Wikidot.com documentation and help section.        
+
+            Wikidot.com Terms of Service - what you can, what you should not etc.        
+
+            Wikidot.com Privacy Policy.          
+        
+
+
+
+
+國立交通大學機構典藏：無線定位追蹤訊號處理技術
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 無線定位追蹤訊號處理技術Signal Processing for Mobile Location Estimation and Tracking in Wireless Networks
+作者: 曾柏軒Tseng, Po-Hsuan方凱田Feng, Kai-Ten電信工程研究所
+關鍵字: 統計訊號處理;位置估測;位置追蹤;第四代行動通訊系統;合作式定位;卡曼濾波器;粒子濾波器;statistical signal processing;location estimation;location tracking;fourth generation telecommunication system;cooperative localization;Kalman filter;particle filter
+公開日期: 2010
+摘要: 隨著位基服務商用價值俱增，即時定位演算法如何根據不同網路環境提升精準度是位基服務應用關鍵技術。本論文旨由統計訊號處理觀點提出適用於即時建置的無線定位追蹤演算法，並考慮以下無線環境：1)室外衛星定位系統；2)室內無線感測網路；3)手機蜂巢式系統。衛星定位系統在未被阻隔的室外環境中擁有較佳的效能。在衛星訊號微弱的環境中，無線感測網路適用於室內小範圍傳輸；手機蜂巢式系統可涵蓋前兩者訊號被遮掩或傳輸半徑不足的問題，並提供手機系統在資源管理中所需的基本精準度要求。本論文先以 4G 網路候選 IEEE 802.16m 系統討論定位精準度與其限制，作為如何在不同網路中啓動定位機制的範例。
+
+為提供即時服務所需的定位資訊，本論文探討具封閉解特性、低演算複雜度的二階段最小方差法及卡曼濾波器。針對線性最小方差法推導其線性 Cramer-Rao lower bound (CRLB)，歸結出三項影響精準度的因素：1)幾何效應；2)訊號模型及雜訊變異性；3)定位訊號源數目。透過線性 CRLB 的分析，發現線性最小方差演算法手持裝置在訊號源所圍成幾何區域外的精準度因線性化產生偏差。本論文提出一幾何輔助線性定位演算(Geometry-assisted linearized localization, GALL) 彌補源於定位裝置與訊號的幾何效應所造成定位精準度差異。
+
+以衛星及蜂巢式系統為例，考量兩系統不同的訊號模型及雜訊變異所提出的混合式定位架構來增進定位精準度。融合式 (Fusion-based hybrid, FH) 混合定位可有效整合兩系統定位結果，統一式(Unified-hybrid, UH) 混合定位架構包含混合訊號選擇及混合線性最小方差定位估測器，可採納異質網路訊號於單一估測器中。兩系統訊號結合可針對以下狀況增進精準度：1)市區：手機訊號密集但衛星訊號被阻隔；2)郊區：手機基地台訊號不足但衛星訊號品質佳。
+
+當定位訊號源數目不足時，傳統定位追蹤演算法會因訊號源小於待估測參數的維度而導致無法定位的問題。針對行動裝置移動模型及透過速度與加速度的追蹤，以預測資訊作為幾何限制設計幾何輔助式預測性定位追蹤演算法 (Geometry-assisted predictive location tracking, GPLT)，在訊號源不足狀況下增進精準度。
+
+根據合作式偵測，探討在混合直徑與非直徑環境中定位追蹤的問題。本論文提出一考量結合位置和通道狀況估測的自我導航演算法 (Cooperative self-navigation, CSN)，可有效結合其他行動裝置的量測訊號解決訊號源不足的問題，亦可在通道狀況追蹤有效整合不同訊號模型及雜訊變異。With rising interests in location-based services (LBS) over the past decade, real-time localization algorithms with enhanced precision become critical for various applications under potentially challenging circumstances. Based on statistical signal processing theory, this dissertation solves the location estimation and tracking problems by incorporating the methods suitable for real-time implementation in different wireless network scenarios: 1) Global positioning system (GPS); 2) Wireless sensor network (WSN) system; and 3) Cellular-based positioning system. GPS is popular in commercial system and accurate in unobstructed outdoor environments. In environment where GPS coverage is either weak or absent, WSN can operate in a short-range indoor environment with high accuracy. On the other hand,cellular-based positioning based on the densely deployed base stations (BSs) in the city can cover the areas with  weak GPS signal to maintain the LBS for resource management purpose. Note that the system level simulation of the fourth generation telecommunication system, e.g., IEEE 802.16m WiMAX system is first evaluated to discuss how to enable LBS and the performance limitation using the cellular system as an example.
+
+In order to employ the location estimation and tracking for real-time services, closed-form signal processing techniques such as two-step least squares estimator and Kalman filter are adopted due to their lower computation complexities. Through the study of Cramer-Rao lower bound (CRLB), the limiting factors affecting the estimation accuracy include: 1) Geometric effect; 2) Signal model or noise variance; and 3) Number of signal sources. This dissertation first characterizes the linearization effect by the proposed linearized location estimation problem based CRLB (L-CRLB). As further suggested by the L-CRLB, higher estimation accuracy can be achieved if the mobile station (MS) is located inside the geometry confined by the BSs compared to the case that the MS is situated outside of the geometric layout. This result motivates the design of geometry-assisted linearized localization (GALL) algorithm in order to compensate the linearization lost from the geometric effect.
+
+Hybrid location estimation schemes, which combine both the satellite- and cellular-based signal, are proposed to deal with the location estimation and tracking problem under various signal models or noise variances. The proposed fusion-based hybrid (FH) architecture integrates the estimation results acquired from both the satellite- and cellular-based systems. On the other hand, the unified hybrid (UH) architecture employs the proposed hybrid signal selection scheme and the hybrid least squares estimator, which is capable of conducting location estimation within a selected set of signal sources from the heterogeneous networks. The proposed hybrid location architectures can provide accurate location estimation by adapting themselves under different environments, e.g., urban or rural area.
+
+The location estimator associated with the Kalman filter, known as the two-stage location tracking architecture, is exploited in this dissertation to acquire location estimation and tracking for the MS. However, most of the existing schemes become inapplicable for location tracking due to insufficient number of signal sources. The proposed predictive location tracking (PLT) scheme utilizes the predictive information obtained from the Kalman filter to provide additional signal inputs for location estimator. Furthermore, the geometry-assisted PLT (GPLT) scheme incorporates the geometric dilution of precision (GDOP) information into algorithm design to achieve persistent accuracy for location tracking.
+
+The problem of cooperative localization for MSs in the mixed line-of-sight/non-line-of-sight (LOS/NLOS) environment is investigated based on cooperative sensing. The proposed cooperative self-navigation (CSN) with joint position and channel tracking takes advantage over the noncooperative methods with the extra cooperative measurements to overcome the insufficient number of signal sources problem and over the methods without LOS/NLOS channel tracking to consider the effect of different signal models or noise variances.
+
+To summarize, the main contribution of this dissertation is to investigate the mobile location estimation and tracking problem. The methods suitable for real-time implementation is applied and analyzed based on statistical signal processing theory. In this dissertation, we have improved the estimation accuracy for real-time methods under three limiting factors as follows: 1) Geometric effect; 2) Signal model or noise variance; and 3) Number of signal sources.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT079413599http://hdl.handle.net/11536/40749
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文件中的檔案：存到雲端
+
+
+
+
+359901.pdf
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef結合M2M相遇機制的室內定位技術 / 林立民;Lin, Li-Min;曾煜棋;Tseng , Yu-Chee基於適應性區域搜尋粒子濾波器之無線行動定位系統暨其整合應用於機器人導航及行人追蹤跟隨 / 任正隆;Jen, Cheng-Lung;吳炳飛;Wu, Bing-FeiHybrid Unified Kalman Tracking Algorithms for Heterogeneous Wireless Location Systems / Chiang, Cheng-Tse;Tseng, Po-Hsuan;Feng, Kai-Ten在信號源不足環境下手機的定位和軌跡追蹤演算法 / 林育群;Yu-Chun Lin;方凱田;Kai-Ten FengHybrid TOA/TDOA Based Unified Kalman Tracking Algorithm for Wireless Networks / Chiang, Cheng-Tse;Tseng, Po-Hsuan;Feng, Kai-TenAn unified Kalman tracking technique for wireless location systems / Tseng, Po-Hsuan;Chen, Chao-Lin;Feng, Kai-Ten運用粒子濾波器以及慣性與視覺感測器為輔助之穿戴式定位科技 / 黃思頻;Huang, Sz-Pin;曾煜棋;Tseng, Yu-Chee國立成功大學 - 軟體無線電技術於GPS訊號追蹤之應用 / 陳育暄; Chen, Yu-Syuan 國立清華大學 - 無線感測網路之定位與追蹤技術 / 王勝弘 國立清華大學 - 無線感測網路之定位與追蹤技術 / 王勝弘; Sheng-Hung Wang 國立臺灣大學 - 整合視訊追蹤及無線定位技術以增進定位精準度之研究 / 趙懿柳; Chao, Yi-Liu 國立清華大學 - 無線感測網路之分散式適應性定位與追蹤技術 / 吳東興; Wu, Dong-Shing 亞洲大學 - : 應用Wi-Fi無線通訊技術於位置追蹤之研究 / 楊淑芳; wang chü wei 亞洲大學 - 應用Wi-Fi 無線通訊技術於位置追蹤之研究 / 洪哲勝;王居尉;陳榮燊 亞洲大學 - 應用Wi-Fi無線通訊技術於位置追蹤之研究 / 洪哲勝 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced Analysis and Signal Processing Libraries - National Instruments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced Analysis and Signal Processing Libraries
+
+
+
+
+
+
+
+
+
+       Measurement Studio provides powerful analysis classes in Visual Basic .NET and Visual C# to convert raw data into meaningful information. Choose from over 500 analysis functions such as curve fitting, spectral analysis, statistics, and visualization to better understand your data. By performing analysis inside your application, you can integrate more intelligent data processing before storing or presenting the information.
+    
+
+
+
+
+
+
+         Table of Contents
+      
+
+
+
+Key Features of Advanced Analysis Libraries
+
+
+Additional Resources
+
+
+
+
+
+            Analysis Feature Comparison
+        
+
+
+
+
+Analysis Library
+
+
+Measurement Studio Standard Edition
+
+
+Measurement Studio Professional Edition
+
+
+Measurement Studio Enterprise Edition
+
+
+
+
+              Measurements
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+              Signal Generation
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+              Windowing
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+              Filters
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+              Signal Processing
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+              Linear Algebra
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+              Array and Numeric Operations
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+              Curve Fitting
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+              Statistics
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+              Special Functions
+            
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+                 
+              
+
+
+
+
+
+  No functionality
+          
+
+  Little functionality
+          
+
+  Most functionality
+          
+
+  All functionality
+          
+
+
+
+
+
+See a full list of functions
+
+
+
+
+
+
+         Key Features of Advanced Analysis Libraries
+      
+
+
+
+         With Measurement Studio analysis functions, you have everything you need to perform the following types of operations:
+      
+
+
+          Use advanced signal measurement functions such as peak detection, harmonic analysis, pulse analysis, and spectral analysis.
+        
+
+          Perform statistical analysis of your data, including one, two, and three-way analysis of variance (ANOVA), histograms, and common statistical functions.
+        
+
+          Generate complex composite signals for simulation or generation using sine, triangle, square, and sawtooth signals; Gaussian, white, and uniform noise; and arbitrary wavetables.
+        
+
+          Digitally filter your data using versatile, configurable filters for all common filter designs.
+        
+
+          Perform time-domain signal processing such as convolution, deconvolution, correlation, decimation, integration, and differentiation.
+        
+
+          Perform frequency-domain signal processing, such as windowing, and forward and inverse fast Fourier transform (FFT), Hartley, Hilbert, and Laplace transforms.
+        
+
+          Perform linear algebra operations such as solving equation systems, computing eigenvalues and eigenvectors, decomposition, factorization, and vector and matrix algebra.
+        
+
+          Fit your data to linear, polynomial, exponential, and arbitrary nonlinear equations.
+        
+
+          Compute important mathematical functions such as probability distributions, error function, and complementary error function. 
+        
+
+
+
+
+         Additional Resources
+      
+
+
+
+Other Features in Measurement Studio
+
+
+Compare Measurement Studio Packages
+
+
+Measurement Studio Home Page
+
+
+
+
+Next Steps
+
+
+Previous: Data Management
+Next: Hardware Communication
+
+
+
+
+
+
+All Products and Services
+
+
+
+Learn					
+							
+							
+
+
+Measurement Studio
+
+
+
+
+What Is Measurement Studio?
+
+
+
+
+
+Engineering UI Controls
+
+
+
+
+Extensibility and Customization
+
+
+
+
+Data Management
+
+
+
+
+Advanced Analysis Libraries
+
+
+
+
+Hardware Communication
+
+
+
+
+Support Tools in Visual Studio
+
+
+
+
+Compatibility With NI TestStand
+
+
+
+
+
+Legacy Support
+
+
+
+
+
+
+Life Cycle Policy
+
+
+
+
+
+
+
+
+What's New
+
+
+
+
+Download Measurement Studio
+
+
+
+
+Buy Measurement Studio
+
+
+
+
+Support Resources
+
+
+
+
+Community
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This site uses cookies to offer you a better browsing experience.  Learn more about our privacy policy.
+
+
+OK
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：基於高階統計量之韋納（Wiener）濾波處理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 基於高階統計量之韋納（Wiener）濾波處理Cumulant Based Wiener Filtering
+作者: 馮治軍Chih-Chun Feng祁忠勇；吳文榕Chong-Yung Chi; Wen-Rong Wu電信工程研究所
+關鍵字: 平均平方誤差；韋納濾波器；垂直原理；廣泛投影定理;Mean-square-error (MSE); Wiener filter; Orthogonality principle; Generalized projection theorem
+公開日期: 1993
+摘要: 本篇論文提出了一個用高階統計量之平均平方誤差準則來設計韋納濾波器
+的方法；此方法可適用於當廣義穩態隨機訊號x(n)及期望之訊號d(n)都是
+非高斯分佈且受高斯雜訊污染時。在本文中，我們理論上證明根據所提出
+的準則設計之韋納濾波器與當訊號未受污染時依據二階統計量所設計之傳
+統韋納濾波器完全相同；而且就像後者一樣，前者亦可以由解一個基於
+高階統計量的）垂直原理所得之Wiener-Hopf方程式來獲得。此外，本文
+更進一步地提出了一個基於高階統計量之廣泛投影定理；此定理包括本文
+所提之準則以及Delopoulos與Giannakis所提基於高階統計量之平均平方
+誤差準則相關的投影原理為特例，其中相關的投影原理為將高階統計量投
+影至二階統計量。再者，當統計量階數M=3時，本文所提之準則會等效於
+Delopoulos與Giannakis所提之準則。本文中亦將所提的基於高階統計量
+之韋納濾波器應用於時間延遲估計與系統鑑別，並且提供一些相關的模擬
+結果來驗證本文所提方法之優越性能。最後，我們並做了一些討論及結論
+。
+This thesis proposes a cumulant (higher-order statistics) based
+mean-square-error (MSE) criterion for the design of Wiener
+filters when both the given wide-sense stationary random signal
+x(n) and the desired signal d(n) are non-Gaussian and contami-
+nated by Gaussian noise sources. It is shown that the designed
+cumulant based Wiener filter associated with the proposed cri-
+terion is identical to the conventional correlation (second-
+order statistics) based Wiener filter as if both x(n) and d(n)
+were noise-free measurements. As the latter, the former can be
+also obtained by solving a cumulant based Wiener-Hopf equation
+associated with a (cumulant based) orthogonality principle.
+Then a generalized cumulant based projection theorem is
+proposed which includes the projection of cumulants to
+correlations as- sociated with the proposed cumulant based MSE
+criterion and that associated with Delopoulos and Giannakis'
+cumulant based MSE criterion as special cases. Moreover, the
+proposed cumulant based criterion and Delopoulos and Giannakis'
+cumulant based MSE criterion are equivalent for cumulant order
+M = 3. The proposed cumulant based Wiener filter is then
+applied to time delay esti- mation and system identification.
+Some simulation results are then provided to demonstrate the
+good performance of the pro- posed cumulant based Wiener
+filter. Finally, we draw some con- clusions.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT820436036http://hdl.handle.net/11536/58165
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefOptimal biorthogonal transform for colored noise suppression with subband Wiener filtering / Phoong, SM;Lin, YPIEEE 802.16e OFDMA 多輸入輸出通道估測技術之探討與數位訊號處理器實現 / 餘光中;Yu, Kuang-Chung;林大衛;David W. LinSPECTRO-TEMPORAL SUBBAND WIENER FILTER FOR SPEECH ENHANCEMENT / Hsu, Chung-Chien;Lin, Tse-En;Chen, Jian-Hueng;Chi, Tai-Shih運用代數化簡及係數外差之時域最小均方差適應性濾波演算法 / 高永安;Kao, Yung-An;陳紹基;Chen Sau-GeeQuantization noise reduction for DCT coded images / Kuo, CC;Chang, WTRecursive wiener filter for motion parameter estimation in three-parameter motion model / Liu, PC;Chang, WT國立清華大學 - 基於高階統計量之信號處理及應用 / 祁忠勇 國立清華大學 - 基於高階統計量之信號處理及應用(I) / 祁忠勇 國立清華大學 - 基於高階統計量之信號處理及應用(II) / 祁忠勇 國立臺灣海洋大學 - 魏格納-韋立分佈應用於水中聲波訊號即時處理之研究 / 呂福生 國立清華大學 - 使用基於高階統計量之反濾波器準則於非同步多重速率之直接序列/分碼多工系統的空-時盲蔽等化 / 林俊偉 國立清華大學 - 使用基於高階統計量之反濾波器準則於非同步多重速率之直接序列/分碼多工系統的空-時盲蔽等化 / 林俊偉; Chun-Wei Lin Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+

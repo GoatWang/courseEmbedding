@@ -1,0 +1,5625 @@
+
+
+
+廣義線性模型 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+廣義線性模型
+
+維基百科，自由的百科全書
+(已重新導向自 廣義線性模式)
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+本條目部分連結不符合格式手冊規範。跨語言連結及章節標題等處的連結可能需要清理。（2015年12月11日） 
+請協助改善此條目。參見WP:LINKSTYLE、WP:MOSIW以瞭解細節。突出顯示跨語言連結可以便於檢查。 
+
+
+
+
+
+
+
+
+
+統計學系列條目
+
+
+迴歸分析
+
+
+
+
+
+模型
+
+
+
+
+線性回歸
+簡單回歸（英語：Simple linear regression）
+普通最小平方法（英語：Ordinary least squares）
+多項式回歸（英語：Polynomial regression）
+一般線性模型
+
+
+
+
+
+
+廣義線性模式
+離散選擇（英語：Discrete choice）
+邏輯迴歸
+多項羅吉特（英語：Multinomial logit）
+混合羅吉特
+波比（英語：Probit model）
+多項式波比（英語：Multinomial probit）
+排序性模型（英語：Ordered logit）
+有序波比（英語：Ordered probit）
+泊松回歸
+
+
+
+
+
+
+等級線性模型
+固定效應（英語：Fixed effects model）
+隨機效應（英語：Random effects model）
+混合模型（英語：Mixed model）
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+非參數（英語：Nonparametric regression）
+半參數（英語：Semiparametric regression）
+穩健（英語：Robust regression）
+分位數迴歸
+保序回歸
+主成分（英語：Principal component regression）
+最小角
+局部（英語：Local regression）
+分段（英語：Segmented regression）
+
+
+
+
+
+
+含誤差變量（英語：Errors-in-variables models）
+
+
+
+
+估計
+
+
+
+
+最小平方法
+普通最小平方法（英語：Ordinary least squares）
+線性
+偏最小平方回歸
+總體（英語：Total least squares）
+廣義（英語：Generalized least squares）
+加權
+非線性（英語：Non-linear least squares）
+非負（英語：Non-negative least squares）
+重複再加權（英語：Iteratively reweighted least squares）
+嶺回歸（英語：Tikhonov regularization）
+LASSO
+
+
+
+
+
+
+最小絕對值導數法（英語：Least absolute deviations）
+貝葉斯（英語：Bayesian linear regression）
+貝葉斯多元（英語：Bayesian multivariate linear regression）
+
+
+
+
+背景
+
+
+
+
+回歸模型檢驗（英語：Regression model validation）
+平均響應和預測響應（英語：Mean and predicted response）
+誤差和殘差
+擬合優度（英語：Goodness of fit）
+學生化殘差（英語：Studentized residual）
+高斯－馬可夫定理
+
+
+
+
+
+
+ 機率與統計主題
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+
+
+
+在統計學上， 廣義線性模型 (Generalized linear model) 是一種受到廣泛應用的線性迴歸模式。此模式假設實驗者所量測的隨機變數的分佈函數與實驗中系統性效應(即非隨機的效應)可經由一鏈結函數(link function)建立起可資解釋其相關性的函數。
+John Nelder與Peter McCullagh在1989年出版，被視為廣義線性模式的代表性文獻中提綱挈領地說明瞭廣義線性模式的原理、計算(如最大概似估計量)及其實務應用。
+
+
+
+目錄
+
+
+1 概說
+2 模式組成
+
+2.1 指數族
+2.2 線性預測子
+2.3 鏈結函數
+
+
+3 範例
+
+3.1 一般線性模式
+3.2 線性迴歸
+3.3 二元資料
+3.4 計次資料
+
+
+4 參考文獻
+
+
+
+概說[編輯]
+廣義線性模型（generalized linear model, GLM)是簡單最小平方回歸（OLS)的擴展,在廣義線性模式中，假設每個資料的觀測值
+
+
+
+
+Y
+
+
+
+{\displaystyle \mathbf {Y} }
+
+來自某個指數族分佈。 該分佈的平均數 
+
+
+
+
+μ
+
+
+
+{\displaystyle {\boldsymbol {\mu }}}
+
+ 可由與該點獨立的X解釋：
+
+
+
+
+
+E
+⁡
+(
+
+y
+
+)
+=
+
+μ
+
+=
+
+g
+
+−
+1
+
+
+(
+
+X
+
+
+β
+
+)
+
+
+{\displaystyle \operatorname {E} ({\boldsymbol {y}})={\boldsymbol {\mu }}=g^{-1}(\mathbf {X} {\boldsymbol {\beta }})}
+
+
+
+其中
+
+
+
+E
+(
+
+y
+
+)
+
+
+{\displaystyle E({\boldsymbol {y}})}
+
+為
+
+
+
+
+y
+
+
+
+{\displaystyle {\boldsymbol {y}}}
+
+的期望值，
+
+
+
+
+X
+
+
+β
+
+
+
+{\displaystyle \mathbf {X} {\boldsymbol {\beta }}}
+
+是由未知待估計參數
+
+
+
+
+β
+
+
+
+{\displaystyle {\boldsymbol {\beta }}}
+
+與已知變數
+
+
+
+
+X
+
+
+
+{\displaystyle \mathbf {X} }
+
+構成的線性估計式，
+
+
+
+g
+
+
+{\displaystyle g}
+
+則為鏈結函數。
+在此模式下，
+
+
+
+
+y
+
+
+
+{\displaystyle {\boldsymbol {y}}}
+
+的變異數
+
+
+
+V
+
+
+{\displaystyle V}
+
+可表示為：
+
+
+
+
+
+Var
+⁡
+(
+
+y
+
+)
+=
+V
+⁡
+(
+
+μ
+
+)
+=
+V
+⁡
+(
+
+g
+
+−
+1
+
+
+(
+
+X
+
+
+β
+
+)
+)
+.
+
+
+{\displaystyle \operatorname {Var} ({\boldsymbol {y}})=\operatorname {V} ({\boldsymbol {\mu }})=\operatorname {V} (g^{-1}(\mathbf {X} {\boldsymbol {\beta }})).}
+
+
+
+一般假設
+
+
+
+V
+
+
+{\displaystyle V}
+
+可視為一指數族隨機變數的函數。
+未知參數
+
+
+
+
+β
+
+
+
+{\displaystyle {\boldsymbol {\beta }}}
+
+通常會以最大概似估計量, 殆最大概似估計量, 或以貝氏方法來估計。
+模式組成[編輯]
+廣義線性模式包含了以下主要部份：
+
+1. 來自指數族的分佈函數
+
+
+
+f
+
+
+{\displaystyle f}
+
+。
+2. 線性預測子 
+
+
+
+
+η
+
+=
+
+X
+
+
+β
+
+
+
+{\displaystyle {\boldsymbol {\eta }}=\mathbf {X} {\boldsymbol {\beta }}}
+
+。
+3. 鏈結函數
+
+
+
+g
+
+
+{\displaystyle g}
+
+使得 
+
+
+
+E
+(
+
+y
+
+)
+=
+
+μ
+
+=
+
+g
+
+−
+1
+
+
+(
+
+η
+
+)
+
+
+{\displaystyle E({\boldsymbol {y}})={\boldsymbol {\mu }}=g^{-1}({\boldsymbol {\eta }})}
+
+。
+
+指數族[編輯]
+指數族隨機變數意指其具參數θ與τ的機率密度函數, f (在論離散型隨機變數時，則為機率質量函數)可表為：
+
+
+
+
+
+
+f
+
+Y
+
+
+(
+y
+;
+θ
+,
+τ
+)
+=
+exp
+⁡
+
+
+(
+
+
+
+a
+(
+y
+)
+b
+(
+θ
+)
++
+c
+(
+θ
+)
+
+
+h
+(
+τ
+)
+
+
+
++
+d
+(
+y
+,
+τ
+)
+)
+
+
+.
+
+
+
+
+{\displaystyle f_{Y}(y;\theta ,\tau )=\exp {\left({\frac {a(y)b(\theta )+c(\theta )}{h(\tau )}}+d(y,\tau )\right)}.\,\!}
+
+
+
+τ稱之為變異參數，通常用以解釋變異數。函數a、b、c、d 及h為已知。許多（不包含全部）型態的隨機變數可歸類為指數族
+θ與該隨機變數的期望值有關。若a為恆等函數，則稱該分佈屬於 正則型式。 另外，若b為恆等而τ已知，則θ稱為正則參數，其與期望值的關係可表為：
+
+
+
+
+
+μ
+=
+E
+⁡
+(
+Y
+)
+=
+−
+
+c
+′
+
+(
+θ
+)
+.
+
+
+
+
+{\displaystyle \mu =\operatorname {E} (Y)=-c'(\theta ).\,\!}
+
+
+
+一般情形下，該分佈的變異數可表為：
+
+
+
+
+
+Var
+⁡
+(
+Y
+)
+=
+−
+
+c
+″
+
+(
+θ
+)
+h
+(
+τ
+)
+.
+
+
+
+
+{\displaystyle \operatorname {Var} (Y)=-c''(\theta )h(\tau ).\,\!}
+
+
+
+線性預測子[編輯]
+線性預測子是用將獨立變數經由線性組合來尋模式所能提供之資訊的計量變數。符號η (希臘字母 "Η")通常用來表示線性預測子。它與資料的期望值的鏈結函數值有關(故稱"預測子")。
+η表為未知參數β的線性組合(故為"線性")。X則為獨立變數所組合而成的觀測矩陣。如此一來，η可表示為
+
+
+
+
+
+η
+=
+
+X
+
+
+β
+
+.
+
+
+
+{\displaystyle \eta =\mathbf {X} {\boldsymbol {\beta }}.\,}
+
+
+
+X的元素通常為模式設計時可觀測的資料或為實驗時所得的數據。
+鏈結函數[編輯]
+鏈結函數解釋了線性預測子與分佈期望值的關係。鏈結函數的選擇可視情形而定。通常只要符合鏈結函數的值域有包含分佈期望值的條件即可。
+當使用具正則參數θ的分佈時，鏈結函數需符合XTY 為β的充份統計量此一條件。這在θ與線性預測子的鏈結函數值相等時方成立。下麵列出若干指數族分佈的典則鏈結函數及其反函數(有時稱為均值函數)：
+
+典則鏈結函數
+
+Y的分佈
+名稱
+鏈結函數
+均值函數
+
+
+正態
+恆等
+
+
+
+
+
+X
+
+
+β
+
+=
+μ
+
+
+
+
+{\displaystyle \mathbf {X} {\boldsymbol {\beta }}=\mu \,\!}
+
+
+
+
+
+
+μ
+=
+
+X
+
+
+β
+
+
+
+
+
+{\displaystyle \mu =\mathbf {X} {\boldsymbol {\beta }}\,\!}
+
+
+
+
+指數
+倒數
+
+
+
+
+
+X
+
+
+β
+
+=
+
+μ
+
+−
+1
+
+
+
+
+
+
+{\displaystyle \mathbf {X} {\boldsymbol {\beta }}=\mu ^{-1}\,\!}
+
+
+
+
+
+
+μ
+=
+(
+
+X
+
+
+β
+
+
+)
+
+−
+1
+
+
+
+
+
+
+{\displaystyle \mu =(\mathbf {X} {\boldsymbol {\beta }})^{-1}\,\!}
+
+
+
+
+Gamma
+
+
+逆高斯
+二次倒數
+
+
+
+
+
+X
+
+
+β
+
+=
+
+μ
+
+−
+2
+
+
+
+
+
+
+{\displaystyle \mathbf {X} {\boldsymbol {\beta }}=\mu ^{-2}\,\!}
+
+
+
+
+
+
+μ
+=
+(
+
+X
+
+
+β
+
+
+)
+
+−
+1
+
+/
+
+2
+
+
+
+
+
+
+{\displaystyle \mu =(\mathbf {X} {\boldsymbol {\beta }})^{-1/2}\,\!}
+
+
+
+
+卜瓦松
+自然對數
+
+
+
+
+
+X
+
+
+β
+
+=
+ln
+⁡
+
+(
+μ
+)
+
+
+
+
+
+{\displaystyle \mathbf {X} {\boldsymbol {\beta }}=\ln {(\mu )}\,\!}
+
+
+
+
+
+
+μ
+=
+exp
+⁡
+
+(
+
+X
+
+
+β
+
+)
+
+
+
+
+
+{\displaystyle \mu =\exp {(\mathbf {X} {\boldsymbol {\beta }})}\,\!}
+
+
+
+
+二項式
+Logit
+
+
+
+
+
+X
+
+
+β
+
+=
+ln
+⁡
+
+
+(
+
+
+μ
+
+1
+−
+μ
+
+
+
+)
+
+
+
+
+
+
+{\displaystyle \mathbf {X} {\boldsymbol {\beta }}=\ln {\left({\frac {\mu }{1-\mu }}\right)}\,\!}
+
+
+
+
+
+
+μ
+=
+
+
+
+exp
+⁡
+
+(
+
+X
+
+
+β
+
+)
+
+
+
+1
++
+exp
+⁡
+
+(
+
+X
+
+
+β
+
+)
+
+
+
+
+
+
+
+
+{\displaystyle \mu ={\frac {\exp {(\mathbf {X} {\boldsymbol {\beta }})}}{1+\exp {(\mathbf {X} {\boldsymbol {\beta }})}}}\,\!}
+
+
+
+
+多項式
+
+
+在指數分佈與Gamma分佈中，其典則鏈結函數的值域並不包含分佈均值，另外其線性預測子亦可能出現負值，此兩種分佈絕無均值為負的可能。當進行極大似然估計進行計算時需避免上述情形出現，這時便需要使用到非典則鏈結函數。
+範例[編輯]
+一般線性模式[編輯]
+有些人可能會把一般線性模式和廣義線性模式給弄混了。一般線性模式可視為廣義線性模式的一個鏈結函數為恆等的特例。一般線性模式有著悠長的發展歷史。廣義線性模式具非恆等鏈結函數者有著漸近一致的結果。
+線性迴歸[編輯]
+廣義線性模式最簡單的例子便是線性迴歸。此例中分佈函數為常態分佈而鏈結函數為恆等函數在變異數已知的條件下並符合正規式。 這個例子具有廣義線性模式罕有的最大概似估計量的解析解
+二元資料[編輯]
+在討論二元反應結果(如有跟沒有)時，通常以二項式分佈建模。其期望值'μi通常解釋為樣本Yi發生事件的機率p
+二項式分佈有許多常用的鏈結函數，最常用的鏈結函數是logit：
+
+
+
+
+
+g
+(
+p
+)
+=
+ln
+⁡
+
+(
+
+
+p
+
+1
+−
+p
+
+
+
+)
+
+.
+
+
+{\displaystyle g(p)=\ln \left({p \over 1-p}\right).}
+
+
+
+以此建模的廣義線性模式通常稱為logistic迴歸模式。
+另外，任何連續型機率分配累積函數(CDF)的反函數皆可使用此模式，因為其值域為[0,1]，包含了二項式分佈期望值的可能值域。常態機率分配累積函數
+
+
+
+Φ
+
+
+{\displaystyle \Phi }
+
+是一個廣受應用於probit模式的選擇。其鏈結函數為
+
+
+
+
+
+g
+(
+p
+)
+=
+
+Φ
+
+−
+1
+
+
+(
+p
+)
+.
+
+
+
+
+{\displaystyle g(p)=\Phi ^{-1}(p).\,\!}
+
+
+
+有時恆等函數也會被用為二項式分佈的鏈結函數，其缺點為預測值可能超出合理範圍。經過若干修正可以避免上述問題，但會在解釋上造成困難。此模式通常適用於p接近0.5的情形。 此種建模很接近logit及probit的線性轉換，有時計量經濟學家會稱其為Harvard模式。
+二元資料的廣義線性模式變異函數可寫為
+
+
+
+
+
+Var
+⁡
+(
+
+Y
+
+i
+
+
+)
+=
+τ
+
+μ
+
+i
+
+
+(
+1
+−
+
+μ
+
+i
+
+
+)
+
+
+
+
+{\displaystyle \operatorname {Var} (Y_{i})=\tau \mu _{i}(1-\mu _{i})\,\!}
+
+
+
+其中變異參數
+
+
+
+τ
+
+
+{\displaystyle \tau }
+
+通常等於1，若非，則該模式稱為溢變異或殆二元。
+計次資料[編輯]
+另一個常用的例子為用於計次的卜瓦松分佈。此例的鏈結函數為自然對數，為正規鏈結。 變異數函數與均值成等比
+
+
+
+
+
+var
+⁡
+(
+
+Y
+
+i
+
+
+)
+=
+τ
+
+μ
+
+i
+
+
+,
+
+
+
+{\displaystyle \operatorname {var} (Y_{i})=\tau \mu _{i},\,}
+
+
+
+其中變異參數
+
+
+
+τ
+
+
+{\displaystyle \tau }
+
+通常為1。 若非，此模式通常稱為溢變異或似卜瓦松。
+參考文獻[編輯]
+
+McCullagh, Peter; John Nelder. Generalized Linear Models. London: Chapman and Hall. 1989. ISBN 0-412-31760-5.  引文使用過時參數coauthors (幫助)
+
+
+Dobson, A.J. Introduction to Generalized Linear Models, Second Edition. London: Chapman and Hall/CRC. 2001. 
+
+
+Hardin, James; Joseph Hilbe. Generalized Linear Models and Extensions. College Station: Stata Press. 2001, 2007.  引文使用過時參數coauthors (幫助); 請檢查|date=中的日期值 (幫助)
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+統計學
+
+
+
+
+
+
+描述統計學
+
+
+
+
+
+連續變數機率分佈
+
+
+
+
+
+
+集中趨勢
+
+
+平均數（平方 · 算術 · 幾何 · 調和 · 算術-幾何 · 幾何-調和 · 希羅|平均數不等式） · 中位數 · 眾數
+
+
+
+
+
+
+
+離散程度
+
+
+全距 · 標準差 · 變異係數 · 百分位數 · 四分差 · 四分位數 · 變異數 · 標準分數 · 切比雪夫不等式
+
+
+
+
+
+
+
+分佈形態（英語：Shape of the distribution）
+
+
+偏態 · 峰態
+
+
+
+
+
+
+
+
+
+
+離散變數機率分佈
+
+
+次數（英語：Count data） · 列聯表（英語：Contingency table）
+
+
+
+
+
+
+
+
+
+
+
+
+推論統計學
+和 假設檢定
+
+
+
+
+
+推論統計學
+
+
+置信區間 · 區間估計（英語：Interval estimation） · 顯著性差異 · 元分析 · 貝氏推論
+
+
+
+
+
+
+
+實驗設計
+
+
+統計總量 · 抽樣 · 重複（英語：Replication (statistics)） · 阻礙 · 特敏度 · 區集（英語：Blocking (statistics)）
+
+
+
+
+
+
+
+樣本量（英語：Sample size）
+
+
+統計功效 · 效應值 · 標準誤 · 虛無假設 · 對立假設（英語：Alternative hypothesis） · 第一型和第二型誤差 · 統計檢定力
+
+
+
+
+
+
+
+常規估計
+
+
+貝葉斯推論 · 區間估計（英語：Interval estimation） · 最大似然估計 · 最小距離估計（英語：Minimum distance estimation） · 矩量法 · 最大間距
+
+
+
+
+
+
+
+特效檢驗
+
+
+Z檢驗 · 學生t檢驗 · F檢驗 · 卡方檢驗 · Wald檢驗（英語：Wald test） · 曼-惠特尼檢驗（英語：Mann–Whitney U test） · 秩和檢驗
+
+
+
+
+
+
+
+生存分析
+
+
+生存函數 · 乘積極限估計量 · 對數秩和檢定 · 失效率 · 危險比例模式
+
+
+
+
+
+
+
+
+
+相關及
+回歸分析
+
+
+
+
+
+相關性
+
+
+混淆變項（英語：Confounding） · 皮爾森積差相關係數 · 等級相關（英語：Rank correlation） (史匹曼等級相關係數 · 肯德等級相關係數（英語：Kendall tau rank correlation coefficient）)
+
+
+
+
+
+
+
+線性回歸
+
+
+線性模式（英語：Linear model） · 一般線性模式 · 廣義線性模式 · 變異數分析 · 協變異數分析（英語：Analysis of covariance）
+
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+
+
+非參數回歸模型（英語：Nonparametric regression） · 半參數回歸模型（英語：Semiparametric regression） · Logit模型
+
+
+
+
+
+
+
+
+
+統計圖形
+
+圓餅圖 · 長條圖 · 雙標圖 · 箱形圖 · 管制圖 · 森林圖（英語：Forest plot） · 直方圖 · QQ圖 · 趨勢圖 · 散佈圖（英語：Scatter plot） · 莖葉圖（英語：Stem-and-leaf display） · 雷達圖（英語：Radar chart） · 示意地圖
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+專題
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=廣義線性模型&oldid=45235051"					
+2 個分類：統計學回歸分析隱藏分類：自2015年12月連結格式不正確的條目含有過時參數的引用的頁面引文格式1錯誤：日期 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةDeutschEnglishEspañolفارسیSuomiFrançaisItaliano日本語Português 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年7月17日 (週一) 05:13。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+廣義線性模式Generalized Linear Model - 統計學習網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				Home
+			
+
+
+
+				About
+			
+
+
+
+				課程 Course
+			
+
+
+
+
+
+			迴歸分析 Regression Analysis
+		>
+
+
+
+
+
+
+			作業
+		
+
+
+
+
+
+			投影片
+		
+
+
+
+
+
+			統計表
+		
+
+
+
+
+
+
+
+
+			統計學 Statistics
+		>
+
+
+
+
+
+
+			統計學一 Statistics I
+		>
+
+
+
+
+
+
+			作業
+		
+
+
+
+
+
+			MOOCs
+		>
+
+
+
+
+
+
+			教學影片單元1-10
+		
+
+
+
+
+
+			教學影片單元11-20
+		
+
+
+
+
+
+			教學影片單元21-30
+		
+
+
+
+
+
+			教學影片單元31-40
+		
+
+
+
+
+
+			教學影片單元41-50
+		
+
+
+
+
+
+
+
+
+			教學影片
+		>
+
+
+
+
+
+
+			教學影片單元1-10
+		
+
+
+
+
+
+			教學影片單元11-20
+		
+
+
+
+
+
+			教學影片單元21-30
+		
+
+
+
+
+
+			教學影片單元31-40
+		
+
+
+
+
+
+			教學影片單元41-50
+		
+
+
+
+
+
+
+
+
+
+
+
+			統計學二 Statistics II
+		>
+
+
+
+
+
+
+			MOOCs
+		>
+
+
+
+
+
+
+			教學影片單元1-10
+		
+
+
+
+
+
+			教學影片單元11-20
+		
+
+
+
+
+
+			教學影片單元21-30
+		
+
+
+
+
+
+			教學影片單元31-41
+		
+
+
+
+
+
+
+
+
+
+
+
+			SPSS教學影片
+		
+
+
+
+
+
+
+
+
+			研究方法 Research Methodology
+		
+
+
+
+
+
+			市場調查與分析 Marketing Survey and Analysis
+		>
+
+
+
+
+
+
+			投影片
+		
+
+
+
+
+
+			SPSS教學影片
+		
+
+
+
+
+
+
+
+
+			商用軟體應用 Commercial Software Application
+		
+
+
+
+
+
+			類別資料分析 Categorical Data Analysis
+		>
+
+
+
+
+
+
+			課程投影片
+		
+
+
+
+
+
+			SPSS教學影片
+		
+
+
+
+
+
+
+
+
+			數理統計(一) Mathematical Statistics I
+		
+
+
+
+
+
+			數理統計(二) Mathematical Statistics II
+		
+
+
+
+
+
+			應用多變量分析Applied Multivariate Analysis
+		>
+
+
+
+
+
+
+			教學影片
+		
+
+
+
+
+
+
+
+
+			廣義線性模式Generalized Linear Model
+		>
+
+
+
+
+
+
+			教學影片
+		
+
+
+
+
+
+
+
+
+			Big Data
+		>
+
+
+
+
+
+
+			區別分析
+		
+
+
+
+
+
+			迴歸與分類樹
+		
+
+
+
+
+
+			集群分析
+		
+
+
+
+
+
+
+
+
+			R 語言與資料分析 R Language and Data Analysis
+		>
+
+
+
+
+
+
+			R 教學影片
+		
+
+
+
+
+
+			R 講義
+		
+
+
+
+
+
+			R 實例練習
+		
+
+
+
+
+
+			R 作業
+		
+
+
+
+
+
+
+
+
+			R 書籍, 文獻與網站
+		
+
+
+
+
+
+			Weebly 教學
+		
+
+
+
+
+
+
+
+				Links
+			
+
+
+
+				 研討會
+			
+
+
+
+				Contact
+			
+
+
+
+				問捲
+			
+
+
+
+				R 教學影片
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+廣義線性模式 Generalized linear Model
+
+教課書A Introduction to Generalized Linear Models (3rd Edition), 2008, by Annette J. Dobson and Adrian Barnett.課程大綱/uploads/3/1/3/6/31364275/103下_廣義線性模式_課程大綱.doc
+
+
+
+教學影片
+
+
+課本pdf檔(2nd edition).
+
+ an_introduction_to_generalized_linear_models,_annette_j._dobson.pdfFile Size:  1527 kbFile Type:   pdfDownload File
+
+
+
+
+
+
+
+
+
+
+作業
+
+ glm_hw1.docxFile Size:  13 kbFile Type:   docxDownload File
+
+
+
+ glm_hw2.docxFile Size:  11 kbFile Type:   docxDownload File
+
+
+
+ glm_hw3.docxFile Size:  11 kbFile Type:   docxDownload File
+
+
+ 
+電腦講義一
+
+ lab1.pdfFile Size:  12 kbFile Type:   pdfDownload File
+
+
+
+ lab1.rnwFile Size:  1 kbFile Type:   rnwDownload File
+
+
+ 
+
+
+
+
+
+
+
+ 第四章羅吉斯迴歸6-15.pdfFile Size:  663 kbFile Type:   pdfDownload File
+
+
+
+
+
+
+
+
+
+Create a free website
+
+			Powered by 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+✕
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBM Knowledge Center
+
+
+
+
+
+
+
+
+United States
+
+
+
+IBM®
+IBM Knowledge Center
+
+Site map
+
+
+
+
+搜尋
+
+
+
+Search in IBM Knowledge Center
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBM Knowledge Center uses JavaScript. Scripting appears to be disabled or not supported for your browser. Enable JavaScript use, and try again.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目錄
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目錄
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+上一頁
+下一頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Beta] Download this page
+[Beta] Download this section
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us
+Contact IBM
+Comment on this content
+
+Tell us about this content or about IBM Knowledge Center
+
+General IBM Support
+
+Email feedback to IBM Support
+1-800-IBM-7378 (USA)
+Directory of Worldwide Contacts
+
+
+
+
+
+
+
+
+
+
+
+一般線性模型精華篇：迴歸,變異數分析,共變數分析的整合工具 統雄-統計神掌 Statistics/SPSS Canon: General Linear Model,GML_An Integrated Modeling Tool for Regression, ANOVA, and ANCOVA, By Sean TX Wu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+統雄-統計神掌 一般線性模型篇
+
+
+GLM: 迴歸,變異數,共變數分析的整合工具
+General Linear Model 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+研究方法講義目錄
+資訊管理講義目錄
+數位文創/數位內容講義目錄
+數位音樂講義目錄
+產學合作-就業進修講義目錄
+人文素養-人與社會講義目錄 
+人類行為+資訊管理研究目錄
+網路使用/電子商務研究目錄
+網路教育研究目錄
+數位音樂作品目錄
+
+
+
+
+
+
+
+An Integrated Modeling Tool for 
+Regression, ANOVA, and ANCOVA
+
+神掌打通任督二脈‧易筋經以簡馭繁
+
+多變項-多因子分析常用模型簡介
+
+一般線性模型特色
+
+一般線性模型發展
+
+當前一般線性模型定義
+
+迴歸與變異數分析的整合
+
+迴歸與共變數分析的整合
+
+調節模型迴歸線法之視覺輔助
+
+廣義線性模型  
+ 
+Generalized Linear Model, GLM/GLZ
+
+統計模型的發展與統計史觀的分界 
+
+
+一般線性模型特色
+
+一般線性模型(General linear model, GLM)又稱為「多變項線性迴歸(Multivariate 
+
+linear regression, MLR)」,是整合各種資料型態、各種建構變項（如交互作用項）、各種理論類型檢定的基礎線性模型；在統計軟體上，則是可以檢定各種多變項模型：調節模型、共變模型、中介模型、因徑分析/結構方程模型、其他多應變項模型的單一分析與建模工具。
+
+一般線性模型也可以檢定多元迴歸模型，不過實務上，通常習慣分開使用。
+
+一般線性模型包括處理積項、二次曲線的能力，但還是稱為線性模型。
+
+註意：一般線性模型與多元迴歸模型這兩者差別的定義-即使是科普級的定義，對不是非常喜歡統計的人，讀來大概是一頭霧水。
+
+ 統雄老師建議：由實務應用角度理解：多元迴歸的自變項必須是連續資料，而 
+
+GLM可以是類別資料。多元迴歸的應變項必須為單一個，而 
+
+GLM可以是兩個以上。
+
+ 亦即，
+一般線性模型包含多元迴歸模型。
+
+
+
+
+
+理論概念模型
+
+
+分析方法與其說明
+
+
+
+
+
+一般線性模型
+ 
+包括：
+
+多元迴歸模型
+
+調節模型
+
+共變模型
+
+
+中介模型
+
+因徑分析/結構方程模型
+
+其他多應變項模型
+
+
+目的
+整合各種資料型態、各種建構變項（如交互作用項）、各種理論類型檢定的基礎線性模型。SPSS 
+工具
+不分資料型態
+一般線性模型 General Linear Model。
+人為轉換資料的型態
+譬如連續資料可以轉換為「高、中、低」的類別資料。而二元類別資料（如性別），也可以轉換為「1、2」具有方向性的連續「虛擬資料(dummy data)」。
+
+
+
+
+一般線性模型發展
+
+一般線性模型的發展歷程，文獻上有2種論述：
+
+ 一、由多元迴歸分析發展
+
+ 經由對多元迴歸的研究，發展出對自變項為類別資料的分析方法，但沒有明確命名者的記載。
+
+ 二、因資訊系統的協助而發展
+
+ 在資訊系統問世之前，古典高等統計有三大領域：迴歸分析、變異數分析、和共變數分析，且各有各的運算程序。
+
+ 在統計軟體誕生之初，也是分別開發以上3種分析工具。但就「數學運算」而言，這三者並無基礎上的不同，所以統計資訊系統開發者，在1960年代就推出了整合分析的工具，並命名為： 
+
+GLM。
+
+當前一般線性模型定義
+
+ The general linear model can be expressed as
+
+ YM = Xb + e
+
+ Here Y, X, b, and e are as described for the multivariate regression model and 
+ M is an m x s matrix of coefficients defining s linear transformation of the 
+ dependent variables. The normal equations are
+
+ X'Xb = X'YM
+
+ and a solution for the normal equations is given by
+
+ b = (X'X)-X'YM Here the inverse of X'X is a generalized inverse if X'X contains 
+ redundant columns.
+
+ Add a provision for analyzing linear combinations of multiple dependent 
+ variables, add a method for dealing with redundant predictor variables and 
+ recoded categorical predictor variables, and the major limitations of multiple 
+ regression are overcome by the general linear model.
+
+ 這個定義對統計沒有高度興趣的人，大概是天書。
+
+ 其簡單的意義，就是以矩陣為係數的聯立線性方程式，也就是自變項、應變項都可以為多變項的線性模型。
+
+
+ 迴歸與變異數分析的整合
+
+連續資料與類別資料的通用處理 
+
+ 文獻上都提到GLM可以整合迴歸與變異數分析，但大多沒有說明原因，因為傳統的數學證明太複雜了。
+
+ 統雄老師則提供以下簡潔的解說：
+
+ 先看迴歸與相關分析之定義公式：
+
+
+
+再比較統雄老師的變異數分析概念解說：
+
+
+
+ 
+相關分析右邊第一項（樣本-估計）的誤差變異數，就是變異數分析右邊第一項（樣本-組內平均數）的組內變異數。
+相關分析右邊第二項(估計-總平均) 的迴歸變異數，就是變異數分析右邊第二項(組內平均數-總平均數)的組間變異數。
+相關分析的目的，就是求，使Y與的距離為最小。
+而在變異數分析中，組內各X，與固定點距離為最小的那一點，就是。
+所以，迴歸分析和變異數分析在數學運算方法上，求和求其實相同。
+從幾何學上看，就是不連續的點狀線。 
+以上特性，使得連續資料與類別資料，可以同以GLM工具，作通用處理分析。 
+
+
+
+統雄神掌系列的目的是：快懂、易學、打通思想脈絡，不是抄寫教科書，很多地方和教科書不一樣。
+		不一樣是為了簡化、概念化的教學目的，而非否定教科書。對外的一般考試、作標準運算，還是要遵循一般規則，統雄老師的變異數分析概念表現式也是如此。
+這項概念表現式，可協助學生更容易瞭解：為何GLM可以整合變異數分析與相關分析、合併處理類別資料與連續資料。
+
+
+
+
+ 單因子變異數分析之視覺輔助圖
+
+ 單因子變異數分析時，如把自變項作X軸，自變項的水準數，就是X軸上的點數，每個水準的組內平均數，就是Y軸上的估計值(Y 
+ hat)，各
+點形成不連續的線性圖形。如下圖：
+
+
+
+ 多因子變異數分析法之視覺輔助圖
+
+ 多因子變異數分析時，則是以1個因子為X軸，而其他因子為「水準數」的不連續線性圖形。如以下圖形為：1個有4水準的因子為X軸，而另1個因子有2「水準」，所以有2條不連續線性圖形。
+
+
+
+迴歸與共變數分析的整合
+
+ 	   GLM 之迴歸分析與變異數分析，基礎相同，多因子變異數分析法之視覺輔助圖，強調各平均數（圓點）的呈現，而迴歸分析方法之視覺輔助圖，強調連續線的呈現。
+
+迴歸分析法之視覺輔助圖
+
+ 	   本例亦稱混合模型(Mixed Models)，即包括類別資料與連續資料。
+
+ 	   	 各群組迴歸線與總迴歸線（黑色線），呈現如下。
+
+
+
+
+廣義線性模型  
+  
+Generalized 
+
+ Linear Model, GLM/GLZ
+
+另外還有廣義線性模式 
+
+(generalized 
+
+linear model)，縮寫早期同樣是GLM，這個術語，是統計史上最容易混淆的案例之一，所以，近來已有將縮寫改為GLZ的趨勢。
+
+
+
+
+管理研究統計課程-問捲
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		 
+
+
+統雄數學神掌系列目錄
+
+分享意見反映
+統計教學的內涵與取向
+高考統計考題的解析
+微積分精華篇
+微積分思想篇
+微積分進階精華篇
+統計/數學符號與其英語讀法
+資料型態與視覺呈現
+敘述統計
+機率論與機率分配
+推論統計學精華篇
+t分配與 t檢定
+推論統計‧理論建構
+資料分析程序與SPSS基礎
+SPSS 資料清理
+
+SPSS 轉換:Recode 重新編碼
+
+SPSS 轉換:Compute 建構新變項
+SPSS 選擇觀察值_SPSS 
+資料庫管理
+
+樣本代表性檢定
+單變項:類別_二元資料/詮釋
+單變項:類別_二元資料/應用
+單變項分析:連續資料
+
+單變項連續資料視覺檢視與清理
+卡方分析（雙向）
+多向卡方分析
+單向卡方分析
+變異數分析（單因子）：詮釋
+變異數分析（單因子）：應用
+簡單迴歸/相關分析：詮釋
+簡單迴歸/相關分析：應用
+對數/邏輯相關分析
+
+測量工具信度/效度分析
+
+量表信度 檢定
+量表效標關聯效度 檢定
+
+探索式因素分析 (EFA)：詮釋與實作
+探索式因素分析 (EFA)：應用進階
+
+因素效度分析_CFA：詮釋
+
+因素效度分析_CFA：應用
+多變項分析精華篇
+多元迴歸分析：詮釋
+多元迴歸分析：應用
+一般線性模型精華篇
+廣義線性模型
+
+雙因子/多因子變異數分析
+調節模型與交互作用詮釋
+調節模型分析與建構
+SPSS 統計圖應用:調節模型檢定
+共變數分析/詮釋
+共變模型建構/應用
+因果模型與因果邏輯
+中介模型分析
+
+因徑/SEM:模型詮釋與因果邏輯
+
+因徑/SEM:探索式因徑模型建構
+
+因徑/SEM:驗證式結構方程解析
+
+多變項分析實例SEM篇
+
+多變項分析實例SEM+調節篇
+
+因徑/結構方程SEM：反省
+無母數統計
+統計研討篇
+專題-卜豐投針實驗
+專題-機率與統計悖論
+第1類知識計量工具
+第2類知識計量工具
+第3類知識計量工具
+
+非等機率知識體系建構
+TX空時座標建構
+一般取用測量
+信仰取用測量
+
+研究方法/民調市調系列
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TX取用行為一般模式篇
+
+TX取用行為進階模式篇
+人類取用行為模式 應用系列
+調查知識管理系統 應用系列
+資訊系統與資訊管理 系列
+
+多元學習‧獨立好問
+教改與快樂學習
+自主式學習成就評鑑方案
+核心理念-全人教育
+網路無邊界教室
+國際化雙語互動
+人格與群己教育
+虛擬平等校園
+孔子的杏壇六藝
+亞理斯多德的學園漫步
+腦半球的偽科學與真知識
+教育與社經地位
+知識創新與知識光譜
+接龍實驗：創新就是與眾不同
+Google排行榜實驗：科學創新就是一再與眾不同
+學習的金字塔
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Apache Tomcat (TomEE)/8.5.6 (7.0.2) - Error report HTTP Status 404 - /SPSS/IBMSPSSAdvancedStatistics.asptype Status reportmessage /SPSS/IBMSPSSAdvancedStatistics.aspdescription The requested resource is not available.Apache Tomcat (TomEE)/8.5.6 (7.0.2)
+
+
+
+SPSS 廣義線性模型篇：線性與指數分析的整合工具 統雄-統計神掌 Statistics/SPSS Canon: Generalized Linear Model, GLM/GLZ_An Integrated Modeling Tool for Linear and Exponential Analysis, By Sean TX Wu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+統雄-統計神掌 廣義線性模型篇
+
+
+線性與指數模型的整合工具
+Generalized Linear Model, GLM/GLZ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+研究方法講義目錄
+資訊管理講義目錄
+數位文創/數位內容講義目錄
+數位音樂講義目錄
+產學合作-就業進修講義目錄
+人文素養-人與社會講義目錄 
+人類行為+資訊管理研究目錄
+網路使用/電子商務研究目錄
+網路教育研究目錄
+數位音樂作品目錄
+
+
+
+
+
+
+
+An Integrated Modeling Tool for 
+Linear and Exponential Analysis
+
+神掌打通任督二脈‧易筋經以簡馭繁
+
+多變項-多因子分析常用模型簡介
+
+廣義線性模型特色
+
+廣義線性模型與一般線性模型比較
+
+統計模型的發展與統計史觀的分界
+
+統計模型的重要發展點
+
+
+
+廣義線性模型特色
+
+廣義線性模式
+(generalized 
+
+linear model)，縮寫早期同樣是GLM，這個術語，是統計史上最容易混淆的案例之一，所以，近來已有將縮寫改為GLZ的趨勢。
+
+廣義線性模型的定義，簡單說：
+範圍比一般線性模型更大，可包括指數、與對數迴歸，處理更多元的機率分配問題。
+
+廣義線性模型與一般線性模型比較 
+GLM vs. GLZ
+
+
+
+
+ 
+
+
+
+General linear model
+
+
+
+Generalized linear model
+
+
+
+
+
+Typical estimation method
+
+
+
+Least squares, best linear unbiased prediction
+
+
+
+Maximum likelihood or Bayesian
+
+
+
+
+
+Special cases
+
+
+
+ANOVA, ANCOVA, MANOVA, MANCOVA, ordinary linear regression, mixed model, 
+t-test, F-test
+
+
+
+linear regression, logistic regression, Poisson regression
+
+
+
+
+
+統計模型的發展與統計史觀的分界
+
+
+GLZ是由Nelder & Wedderburn (1972)所提出的，名稱還叫做線性模型，但已經能夠處理非線性的問題了；同時，(Nelder, 
+1966)也提出了Gamma 分配，以整合卡方分配、與F分配…等，在知識論上，提供了更整合性基礎（脫離原始框架）的觀照。
+
+（其實，一般線性模型也能處理二次曲線，此細節在此不論。）
+
+統雄老師-似乎零星西文文獻也有此議-感到，似可作為畫分「古典統計」與當代統計的界限。
+
+同時，統雄老師也認為非線性分析，才是人類行為研究計量法的方向，不過，與GLZ 
+在基礎思想上又大不相同了。
+
+統計模型的重要發展點
+
+以下是由Lindsey, McCullagh, Nelder, Stiegler所建議的統計模型的重要發展點：
+
+‧Multiple linear regression — normal distribution & identity
+link (Legendre, Guass: early 19th century).
+‧ANOVA — normal distribution & identity link (Fisher: 1920』s
+– 1935).
+‧Likelihood function — a general approach to inference about
+any statistical model (Fisher, 1922).
+‧Dilution assays — a binomial distribution with
+complementary log-log link (Fisher, 1922).
+‧Exponential family — class of distributions with sufficient
+statistics for parameters (Fisher, 1934).
+‧Probit analysis — binomial distribution & probit link (Bliss,
+1935).
+‧Logit for proportions — binomial distribution & logit link
+(Berkson, 1944; Dyke & Patterson, 1952)
+Item analysis — Bernoulli distribution & logit link (Rasch,
+1960).
+‧Log linear models for counts — Poisson distribution & log
+link (Birch, 1963).
+‧Regressions for survival data — exponential distribution &
+reciprocal or log link (Feigl & Zelen, 1965; Zippin & Armitage,
+1966; Glasser, 1967).
+‧Inverse polynomials — Gamma distribution & reciprocal link
+(Nelder, 1966).
+‧Nelder & Wedderburn (1972): provided unification. They
+showed "All the previously mentioned models are special cases of
+a general model, 「Generalized Linear Models」 The MLE for all these models could be obtained using
+same algorithm.
+‧All of the models listed have distributions in the
+"Exponential Dispersion Family」
+
+
+
+
+管理研究統計課程-問捲
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		 
+
+
+統雄數學神掌系列目錄
+
+分享意見反映
+統計教學的內涵與取向
+高考統計考題的解析
+微積分精華篇
+微積分思想篇
+微積分進階精華篇
+統計/數學符號與其英語讀法
+資料型態與視覺呈現
+敘述統計
+機率論與機率分配
+推論統計學精華篇
+t分配與 t檢定
+推論統計‧理論建構
+資料分析程序與SPSS基礎
+SPSS 資料清理
+
+SPSS 轉換:Recode 重新編碼
+
+SPSS 轉換:Compute 建構新變項
+SPSS 選擇觀察值_SPSS 
+資料庫管理
+
+樣本代表性檢定
+單變項:類別_二元資料/詮釋
+單變項:類別_二元資料/應用
+單變項分析:連續資料
+
+單變項連續資料視覺檢視與清理
+卡方分析（雙向）
+多向卡方分析
+單向卡方分析
+變異數分析（單因子）：詮釋
+變異數分析（單因子）：應用
+簡單迴歸/相關分析：詮釋
+簡單迴歸/相關分析：應用
+對數/邏輯相關分析
+
+測量工具信度/效度分析
+
+量表信度 檢定
+量表效標關聯效度 檢定
+
+探索式因素分析 (EFA)：詮釋與實作
+探索式因素分析 (EFA)：應用進階
+
+因素效度分析_CFA：詮釋
+
+因素效度分析_CFA：應用
+多變項分析精華篇
+多元迴歸分析：詮釋
+多元迴歸分析：應用
+一般線性模型精華篇
+廣義線性模型
+
+雙因子/多因子變異數分析
+調節模型與交互作用詮釋
+調節模型分析與建構
+SPSS 統計圖應用:調節模型檢定
+共變數分析/詮釋
+共變模型建構/應用
+因果模型與因果邏輯
+中介模型分析
+
+因徑/SEM:模型詮釋與因果邏輯
+
+因徑/SEM:探索式因徑模型建構
+
+因徑/SEM:驗證式結構方程解析
+
+多變項分析實例SEM篇
+
+多變項分析實例SEM+調節篇
+
+因徑/結構方程SEM：反省
+無母數統計
+統計研討篇
+專題-卜豐投針實驗
+專題-機率與統計悖論
+第1類知識計量工具
+第2類知識計量工具
+第3類知識計量工具
+
+非等機率知識體系建構
+TX空時座標建構
+一般取用測量
+信仰取用測量
+
+研究方法/民調市調系列
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TX取用行為一般模式篇
+
+TX取用行為進階模式篇
+人類取用行為模式 應用系列
+調查知識管理系統 應用系列
+資訊系統與資訊管理 系列
+
+多元學習‧獨立好問
+教改與快樂學習
+自主式學習成就評鑑方案
+核心理念-全人教育
+網路無邊界教室
+國際化雙語互動
+人格與群己教育
+虛擬平等校園
+孔子的杏壇六藝
+亞理斯多德的學園漫步
+腦半球的偽科學與真知識
+教育與社經地位
+知識創新與知識光譜
+接龍實驗：創新就是與眾不同
+Google排行榜實驗：科學創新就是一再與眾不同
+學習的金字塔
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+邏輯斯迴歸與複迴歸均屬於廣義線性模式的一種，此兩模式的基本假 | Yahoo奇摩知識+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+   ⌂首頁信箱新聞股市名人娛樂氣象運動App下載購物中心商城拍賣更多⋁知識+汽車機車電影字典遊戲旅遊理財房地產時尚美妝折扣城   Yahoo 奇摩知識+                        👤 登入    ✉ 信箱     ⚙ 服務說明    帳號資料 服務說明 意見回報        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yahoo奇摩知識+ 首頁
+
+
+
+
+
+
+
+
+
+
+
+所有分類
+ 
+健康
+ 
+商業與財經
+ 
+娛樂與音樂
+ 
+家居與園藝
+ 
+家庭與人際關係
+ 
+寵物
+ 
+懷孕與育兒
+ 
+政治與政府
+ 
+教育與參考
+ 
+新聞與活動
+ 
+旅遊
+ 
+汽車與交通
+ 
+消費電子產品
+ 
+環境
+ 
+社會科學
+ 
+社會與文化
+ 
+科學
+ 
+美容與造型
+ 
+藝術與人文
+ 
+遊戲與休閒活動
+ 
+運動
+ 
+電腦與網際網路
+ 
+食品與飲料
+ 
+餐廳與小吃
+ 
+
+
+
+
+
+世界Yahoo 
+
+
+
+
+
+
+
+
+阿根廷
+
+
+
+
+
+澳洲
+
+
+
+
+
+巴西
+
+
+
+
+
+加拿大
+
+
+
+
+
+法國
+
+
+
+
+
+德國
+
+
+
+
+
+印度
+
+
+
+
+
+印尼
+
+
+
+
+
+義大利
+
+
+
+
+
+馬來西亞
+
+
+
+
+
+墨西哥
+
+
+
+
+
+
+
+紐西蘭
+
+
+
+
+
+菲律賓
+
+
+
+
+
+魁北克
+
+
+
+
+
+新加坡
+
+
+
+
+
+香港
+
+
+
+
+
+西班牙
+
+
+
+
+
+泰國
+
+
+
+
+
+英國與愛爾蘭
+
+
+
+
+
+美國
+
+
+
+
+
+越南
+
+
+
+
+
+西班牙文
+
+
+
+
+
+
+
+關於
+
+
+
+
+
+關於 Yahoo奇摩知識+
+社群指南
+排行榜
+點數與等級
+部落格
+如何安全地使用 Yahoo奇摩
+
+ 
+
+
+
+
+
+
+
+
+ 科學
+
+ 數學
+
+
+ 看另一則問題 
+
+
+
+
+
+
+
+
+
+
+            邏輯斯迴歸與複迴歸均屬於廣義線性模式的一種，此兩模式的基本假
+        
+
+
+題目是關於多變量分析的問題~ 
+
+邏輯斯迴歸與複迴歸均屬於廣義線性模式的一種，此兩模式的基本假設有何不同? 
+
+因為課本介紹的太過複雜，所以不是很瞭解，有人可以幫我簡單的說明嗎?但是要清楚~感謝^^
+
+更新: 
+TO:yhliu2k 
+不好意思~邏輯斯迴歸的部分有點不是很懂^^"~
+
+
+
+
+
+ 
+2 個人正在追蹤 
+
+
+ 
+ 3 個解答 
+3
+
+
+檢舉不當使用
+
+
+
+
+
+
+
+
+
+您確定要刪除此解答嗎？
+是
+否
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+抱歉，似乎發生一些問題。
+
+
+
+Trending Now
+
+
+
+
+
+ 
+
+解答
+
+
+評分
+
+
+最新
+最舊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳解答: 
+             廣義線模有下列元素: 
+(1) 隨機成分: 觀測值 Y_1,....,Y_n.  
+     在簡單情形, Y_1,...,Y_n 假設是相互獨立. E[Y_i] = μ_i. 
+(2) 系統成分: 線性預測元 
+      η_i = β_0+β_1 x_{1i}+...+β_p x_{pi} 
+(3) 連結函數: η_i = L(μ_i). 
+
+Logistic regression, 是 link function 為 L(t) = ln(t/(1-t)), 且隨機成分通常是 
+Bernoulli; 或隨機成分是 binomial(n_i,π_i), μ_i = n_i π_i, 而 link function 
+為 L(μ_i) = ln(μ_i/(n_i-μ_i)) = ln(π_i/(1-π_i)). 
+
+在廣義線模中, 連結函數 L(t)=t, 即得一般線模: 
+      Y_i = μ_i + ε_i 
+             = β_0+β_1 x_{1i}+...+β_p x_{pi} + ε_i 
+而若再假設 Y_i 都是常態分佈, 且變異數是常數, 就是普通複迴歸. 
+
+當然, 複迴歸也可以放棄常態性條件, 允許非常數變異數, 甚至允許觀 
+測值間有相關. 但通常這算是 "一般線性模型"(general linear model). 
+
+另一方面, 廣義線模(generalized linear model)也可擴充而允許 Y_i 間不 
+獨立. 
+
+ 2006-05-29 20:48:07 補充： 
+關於回答中有不足的. 建議到 telnet://bs2.twbbs.org 或 telnet://bbs.ncku.edu.tw 的 Statistics 版討論. 
+
+我現在對這裡很感冒! 發文者或系統管理者可以任意移除問題, 導致我看不到自己回答的文章. 所謂敝帚自珍, 我的回答即使旁人看來沒甚麼價值, 即使有些只是短短幾句話, 也是經過思考後的慎重回答. 我無法轉寄我回答的文評以保存, 卻又無預警地被移. 這種地方, 我不想來! 
+
+ 2006-05-31 11:35:28 補充： 
+有更進一步的疑問還是到上列 bbs 的統計版談吧! 文字的討論, bbs 比這裡方便多了! 而且, 那邊有很多也許你會有興趣的統計方法、應用與學理的討論, 你也可很方便地將文章寄回自己的信箱. 
+
+
+
+
+ 參考資料： 
+ 
+
+
+老怪物
+ · 11 年前 
+
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  發問者的評分
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 到下麵的網址看看吧 
+
+▶▶http://qoozoo09260.pixnet.net/blog
+
+
+
+
+
+ 匿名使用者 
+ · 3 年前 
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 希望你別氣餒~畢竟網路世界有太多人了!!不過你的答案對我來說是很重要的阿~^^
+
+
+
+
+
+xz7793bow
+ · 11 年前 
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+檢舉不當使用
+
+ 我認為此問題違反社群指南 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此問題違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此解答違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此解答違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此意見違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此意見違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+ 
+
+你可能對以下搜尋感興趣：
+
+
+專業服務搬家免煩惱
+
+說走就走泰國輕鬆GO!
+
+熱門遊戲立即開打
+
+緊緻拉提告別嘴邊肉
+
+
+
+
+
+
+
+
+
+
+
+
+發問問題
+通常可在幾分鐘內獲得解答！
+
+
+
+
+
+
+
+展開»
+
+
+
+
+
+
+詳細資料
+
+
+
+詳細資料
+
+
+
+
+
+
+現有問題
+
+
+
+
+更多
+
+
+
+
+
+請多詳述您的問題
+上傳處理中
+
+
+
+
+上傳失敗。 請上傳大於 100x100 像素的檔案
+目前發生問題，請再試一次。
+您只能上傳 PNG、JPG 或 JPEG 等類型的檔案。
+您只能上傳 3GP、3GPP、MP4、MOV、AVI、MPG、MPEG 或 RM 等類型的檔案。
+您只能上傳不超過 5 MB 的相片。
+您只能上傳不超過 600 MB 的影片。
+您只能上傳相片 (png, jpg, jpeg) 或影片 (3gp, 3gpp, mp4, mov, avi, mpg, mpeg, rm)。
+您只能上傳相片或影片。
+影片不應超過 <b>600mb/5 分鐘</b>
+相片不應超過 <b>5mb</b>
+影片不應超過 <b>600mb/5 分鐘</b>相片不應超過 <b>5mb</b>
+  
+
+
+
+
+
+
+
+解答問題
+
+
+貴金屬除咗係原材料之外,仲有咩用?
+
+
+
+ 
+
+綜援其實係為咗咩而設立?
+
+
+
+ 
+
+咩情況下層樓會被釘契?
+
+
+
+ 
+
+高一數學
+若x,y均為正數,且xy=50,求x+2y的最小值=?
+並求x,y之值？
+
+
+
+ 
+
+
+發燒問題
+
+
+
+
+請問:1cmx1cm=1平方公分 那0.1cmx0.1cm=是0.01平方公分嗎? 還是0.1平方公分呢?
+
+                  7 個解答
+              
+
+ 
+
+我現在是國小六年級生，求平方類且簡單的公式 例 a平方-b平方=a-b×a+b
+或是 a平方+(a+1)=a×(a+1)×2+1
+之類的
+謝謝！?
+
+                  4 個解答
+              
+
+ 
+
+7又五分之一怎麼換小數?
+
+                  6 個解答
+              
+
+ 
+更多問題
+
+
+
+
+
+正四面體共有幾個邊？若各個邊的總和為180公分，它的一個邊長是幾公分？
+
+             5 個解答
+         
+
+ 
+
+有一個三角形底（2x-8)cm，高16cm，且面積不大於30平方公分，若x是整數，則x=？
+
+             4 個解答
+         
+
+ 
+
+18度怎麼平分成3等份，成每等份為9度？？
+
+             4 個解答
+         
+
+ 
+
+  
+
+
+
+
+
+
+
+
+服務條款
+
+
+隱私權
+
+
+RSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+﻿
+
+
+
+
+
+
+
+
+
+廣義線性模式 : definition of 廣義線性模式 and synonyms of 廣義線性模式 (Chinese)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Chinese ▼
+ » 
+Chinese ▼
+↔
+
+
+
+
+
+ search
+
+
+
+
+
+
+Arabic
+Bulgarian
+Chinese
+Croatian
+Czech
+Danish
+Dutch
+English
+Estonian
+Finnish
+French
+German
+Greek
+Hebrew
+Hindi
+Hungarian
+Icelandic
+Indonesian
+Italian
+Japanese
+Korean
+Latvian
+Lithuanian
+Malagasy
+Norwegian
+Persian
+Polish
+Portuguese
+Romanian
+Russian
+Serbian
+Slovak
+Slovenian
+Spanish
+Swedish
+Thai
+Turkish
+Vietnamese
+
+
+
+Arabic
+Bulgarian
+Chinese
+Croatian
+Czech
+Danish
+Dutch
+English
+Estonian
+Finnish
+French
+German
+Greek
+Hebrew
+Hindi
+Hungarian
+Icelandic
+Indonesian
+Italian
+Japanese
+Korean
+Latvian
+Lithuanian
+Malagasy
+Norwegian
+Persian
+Polish
+Portuguese
+Romanian
+Russian
+Serbian
+Slovak
+Slovenian
+Spanish
+Swedish
+Thai
+Turkish
+Vietnamese
+
+ 
+
+
+ 
+
+
+
+ wikipedia 
+ Ebay 
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+ definition - 廣義線性模式
+ definition of Wikipedia
+    Advertizing ▼
+ 
+ 
+Wikipedia
+廣義線性模式
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+在 統計學上， 廣義線性模式 (Generalized linear model) 是一種受到廣泛應用的線性迴歸模式。此模式假設實驗者所量測的隨機變數的分佈函數與實驗中系統性效應(即非隨機的效應)可經由一鏈結函數(link function)建立起可資解釋其相關性的函數。
+John Nelder與Peter McCullagh在1989年出版，被視為廣義線性模式的代表性文獻中提綱挈領地說明瞭廣義線性模式的原理、計算(如最大概似估計量)及其實務應用。
+
+
+
+
+目錄
+
+
+1 概說
+2 模式組成
+
+2.1 指數族
+2.2 線性預測子
+2.3 鏈結函數
+
+
+3 範例
+
+3.1 一般線性模式
+3.2 線性迴歸
+3.3 二元資料
+3.4 計次資料
+
+
+4 參考文獻
+
+
+
+
+  概說
+廣義線性模型（generalized linear model, GLM)是簡單最小二乘回歸（OLS)的擴展,在廣義線性模式中，假設每個資料的觀測值來自某個指數族分佈。 該分佈的平均數  可由與該點獨立的X解釋：
+
+
+
+其中為的期望值，是由未知待估計參數與已知變數構成的線性估計式，則為鏈結函數。
+在此模式下，的變異數 可表示為：
+
+
+
+一般假設可視為一指數族隨機變數的函數。
+未知參數通常會以最大概似估計量, 殆最大概似估計量, 或以貝氏方法來估計。
+  模式組成
+廣義線性模式包含了以下主要部份：
+
+1. 來自指數族的分佈函數。
+2. 線性預測子 。
+3. 鏈結函數使得 。
+
+  指數族
+指數族隨機變數意指其具參數θ與τ的機率密度函數, f (在論離散型隨機變數時，則為概率質量函數)可表為：
+
+
+
+τ稱之為變異參數，通常用以解釋變異數。函數a、b、c、d 及h為已知。許多（不包含全部）型態的隨機變數可歸類為指數族
+θ與該隨機變數的期望值有關。若a為恆等函數，則稱該分佈屬於 正則型式。 另外，若b為恆等而τ已知，則θ稱為正則參數，其與期望值的關係可表為：
+
+
+
+一般情形下，該分佈的變異數可表為：
+
+
+
+  線性預測子
+線性預測子是用將獨立變數經由線性組合來尋模式所能提供之資訊的計量變數。符號η (希臘字母 "Η")通常用來表示線性預測子。它與資料的期望值的鏈結函數值有關(故稱"預測子")。
+η表為未知參數β的線性組合(故為"線性")。X則為獨立變數所組合而成的係數矩陣。如此一來，η可表示為
+
+
+
+X的元素通常為模式設計時可觀測的資料或為實驗時所得的數據。
+  鏈結函數
+鏈結函數解釋了線性預測子與分佈期望值的關係。鏈結函數的選擇可視情形而定。通常只要符合鏈結函數的值域有包含分佈期望值的條件即可。
+當使用具正則參數θ的分佈時，鏈結函數需符合XTY 為β的充份統計量此一條件。這在θ與線性預測子的鏈結函數值相等時方成立。下麵列出若干指數族分佈的典則鏈結函數及其反函數(有時稱為均值函數)：
+
+典則鏈結函數
+
+分佈
+名稱
+鏈結函數
+均值函數
+
+
+正態
+恆等
+
+
+
+
+指數
+倒數
+
+
+
+
+Gamma
+
+
+逆高斯
+二次倒數
+
+
+
+
+卜瓦松
+自然對數
+
+
+
+
+二項式
+Logit
+
+
+
+
+多項式
+
+
+在指數分佈與Gamma分佈中，其典則鏈結函數的值域並不包含分佈均值，另外其線性預測子亦可能出現負值，此兩種分佈絕無均值為負的可能。當進行極大似然估計進行計算時需避免上述情形出現，這時便需要使用到非典則鏈結函數。
+  範例
+  一般線性模式
+有些人可能會把一般線性模式和廣義線性模式給弄混了。一般線性模式可視為廣義線性模式的一個鏈結函數為恆等的特例。一般線性模式有著悠長的發展歷史。廣義線性模式具非恆等鏈結函數者有著漸近一致的結果。
+  線性迴歸
+廣義線性模式最簡單的例子便是線性迴歸。此例中分佈函數為常態分佈而鏈結函數為恆等函數在變異數已知的條件下並符合正規式。 這個例子具有廣義線性模式罕有的最大概似估計量的閉合解
+  二元資料
+在討論二元反應結果(如有跟沒有)時，通常以二項式分佈建模。其期望值'μi通常解釋為樣本Yi發生事件的機率p
+二項式分佈有許多常用的鏈結函數，最常用的鏈結函數是logit：
+
+
+
+以此建模的廣義線性模式通常稱為logistic迴歸模式。
+另外，任何連續型機率分配累積函數(CDF)的反函數皆可使用此模式，因為其值域為[0,1]，包含了二項式分佈期望值的可能值域。常態機率分配累積函數是一個廣受應用於probit模式的選擇。其鏈結函數為
+
+
+
+有時恆等函數也會被用為二項式分佈的鏈結函數，其缺點為預測值可能超出合理範圍。經過若干修正可以避免上述問題，但會在解釋上造成困難。此模式通常適用於p接近0.5的情形。 此種建模很接近logit及probit的線性轉換，有時計量經濟學家會稱其為Harvard模式。
+二元資料的廣義線性模式變異函數可寫為
+
+
+
+其中變異參數通常等於1，若非，則該模式稱為溢變異或殆二元。
+  計次資料
+另一個常用的例子為用於計次的卜瓦松分佈。此例的鏈結函數為自然對數，為正規鏈結。 變異數函數與均值成等比
+
+
+
+其中變異參數通常為1。 若非，此模式通常稱為溢變異或似卜瓦松。
+  參考文獻
+
+McCullagh, Peter; John Nelder. Generalized Linear Models. London: Chapman and Hall. 1989. ISBN 0-412-31760-5. 
+
+
+Dobson, A.J.. Introduction to Generalized Linear Models, Second Edition. London: Chapman and Hall/CRC. 2001. 
+
+
+Hardin, James; Joseph Hilbe. Generalized Linear Models and Extensions. College Station: Stata Press. 2001, 2007. 
+
+
+
+
+
+
+
+
+查 · 論 · 編
+統計學
+
+
+
+
+
+
+描述統計學
+
+
+
+
+
+連續概率
+
+
+
+
+
+
+集中趨勢
+
+
+平均數（平方、算術、幾何、調和、算術-幾何、希羅|平均數不等式） · 中位數 · 眾數
+
+
+
+
+
+
+
+離散程度
+
+
+全距 · 標準差 · 變異係數 · 百分位數 · 四分差 · 四分位數 · 方差 · 標準分數 · 切比雪夫不等式
+
+
+
+
+
+
+
+分佈形態
+
+
+偏態 · 峰態
+
+
+
+
+
+
+
+
+
+
+離散概率
+
+
+次數 · 列聯表
+
+
+
+
+
+
+
+
+
+
+
+
+推論統計學
+和 假設檢定
+
+
+
+
+
+推論統計學
+
+
+置信區間 · 區間估計 · 顯著性差異 · 元分析 · 貝氏分析
+
+
+
+
+
+
+
+實驗設計
+
+
+統計總量 · 抽樣 · 重覆 · 阻礙 · 特敏度 · 區集
+
+
+
+
+
+
+
+樣本量
+
+
+統計功效 · 效應值 · 標準誤 · 虛無假設 · 對立假設 · 第一型和第二型誤差 · 統計檢定力
+
+
+
+
+
+
+
+常規估計
+
+
+貝葉斯估計算法 · 區間估計 · 最大似然估計 · 最小距離估計 · 矩量法 · 最大間距
+
+
+
+
+
+
+
+特效檢驗
+
+
+Z檢驗 · 學生t檢驗 · F檢驗 · 卡方檢驗 · Wald檢驗 · 曼-惠特尼檢驗 · 秩和檢驗
+
+
+
+
+
+
+
+生存分析
+
+
+生存函數 · 乘積極限估計量 · 對數秩和檢定 · 失效率 · 危險比例模式
+
+
+
+
+
+
+
+
+
+相關及
+回歸分析
+
+
+
+
+
+相關性
+
+
+混淆變項 · 皮爾森積差相關係數 · 等級相關 (史匹曼等級相關係數、肯德等級相關係數)
+
+
+
+
+
+
+
+線性回歸
+
+
+線性模式 · 一般線性模式 · 廣義線性模式 · 方差分析 · 協方差分析
+
+
+
+
+
+
+
+非線性回歸
+
+
+非參數回歸模型 · 半參數回歸模型 · Logit模型
+
+
+
+
+
+
+
+
+
+統計圖形
+
+餅圖 · 條形圖 · 雙標圖 · 箱形圖 · 管制圖 · 森林圖 · 直方圖 · QQ圖 · 趨勢圖 · 散佈圖 · 莖葉圖
+
+
+
+
+
+
+ 
+ 
+  
+ 
+
+				來自“http://zh.wikipedia.org/w/index.php?title=廣義線性模式&oldid=18340343”				
+ 
+ 
+2個分類：統計學回歸分析  
+ 
+ 
+ This entry is from Wikipedia, the leading user-contributed encyclopedia. It may not have been reviewed by professional editors (see full disclaimer)Donate to Wikimedia
+
+ 
+
+
+All translations of 廣義線性模式
+
+
+
+ 
+ 
+ 
+
+sensagent
+
+sensagent's content 
+
+definitionssynonymsantonymsencyclopedia
+
+定義
+ 
+ 同義詞
+ 
+ 
+
+
+   Advertising ▼
+
+
+
+
+
+
+Webmaster Solution
+Alexandria 
+A windows (pop-into) of information (full-content of Sensagent) triggered by double-clicking any word on your webpage. Give contextual explanation and translation from your sites !
+Try here  or   get the code
+SensagentBox
+With a SensagentBox, visitors to your site can access reliable information on over 5 million pages provided by Sensagent.com. Choose the design that fits your site. 
+
+
+
+Business solution
+Improve your site content
+Add new content to your site from Sensagent by XML.
+Crawl products or adds
+Get XML access to reach the best products.
+Index images and define metadata
+Get XML access to fix the meaning of your metadata.
+Please, email us to describe your idea.
+
+
+
+WordGame
+The English word games are:
+ ○   Anagrams
+○   Wildcard, crossword
+○   Lettris
+○   Boggle.
+
+
+
+Lettris
+
+
+
+
+
+
+Lettris is a curious tetris-clone game where all the bricks have the same square shape but different content. Each square carries a letter. To make squares disappear and save space for other squares you have to assemble English words (left, right, up, down) from the falling squares. 
+
+
+
+boggle
+Boggle gives you 3 minutes to find as many words (3 letters or more) as you can in a grid of 16 letters. You can also try the grid of 16 letters. Letters must be adjacent and longer words score better. See if you can get into the grid Hall of Fame !
+
+
+
+English dictionary Main references
+
+  Most English definitions are provided by WordNet .
+  English thesaurus is mainly derived from The Integral Dictionary (TID).
+  English Encyclopedia is licensed by Wikipedia (GNU).
+
+
+
+
+Copyrights
+
+  The wordgames anagrams, crossword, Lettris and Boggle are provided by Memodata.
+  The web service Alexandria is granted from Memodata for the Ebay search.
+  The SensagentBox are offered by sensAgent.
+ 
+
+
+
+Translation
+
+  Change the target language to find translations.
+  Tips: browse the semantic fields (see From ideas to words) in two languages to learn more.
+
+
+
+ 
+4748 online visitors
+computed in 0.047s
+
+ 
+
+
+
+
+
+Contact Us
+    | 
+   Company Information
+    | 
+   Privacy policy
+
+    | Last modifications
+
+Copyright © 2012 sensagent Corporation: Online Encyclopedia, Thesaurus, Dictionary definitions and more. All rights reserved.
+
+synonym -   
+   definition -
+   dictionary -
+   define -
+   translation -
+   translate -
+   translator -
+   conjugation -
+   anagram
+
+
+ 
+ 
+ 
+
+I would like to report:
+ section : 
+in the definition above
+in the definition section
+in the synonyms section
+in the translation section
+
+
+
+
+
+  a spelling or a grammatical mistake
+  an offensive content(racist, pornographic, injurious, etc.)
+  a copyright violation
+  an error
+  a missing statement
+  other
+please precise:
+ 
+
+
+
+
+
+
+
+
+
+Advertize
+Partnership
+Company informations
+
+
+
+
+My account
+login
+registration
+
+
+   Advertising ▼
+
+
+
+
+
+
+
+
+
+
+
+Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+ 
+Find out more
+
+
+
+
+
+
+雲端資料分析暨導引系統
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁  |  
+					網站導覽  |  
+				會員登入  |  					
+新手使用者
+初階使用者
+專家使用者
+
+
+
+
+
+
+
+
+
+
+初階導引
+資料處理
+
+管理資料檔
+
+上傳資料檔
+資料檔列表
+
+使用者個人資料檔
+範例資料檔(資料處理)
+範例資料檔(分析方法)
+
+
+儲存模式列表
+
+
+新變數建立
+資料分組
+資料篩選
+資料排序
+資料檔合併
+
+資料檔(垂直)合併
+資料檔水平合併(無共同變數)
+資料檔水平合併(以共同變數串聯)
+
+
+字串擷取
+日期時間處理
+同性質資料加總
+加權指標計算
+樣本資料抽取
+
+樣本資料抽取-方法簡介
+隨機抽樣
+分層抽樣
+分群抽樣
+
+
+資料標準化
+
+
+分析方法
+
+摘要統計
+平均數檢定
+
+單一樣本
+(獨立)雙樣本
+(成對)雙樣本
+(獨立)多樣本(或稱變異數分析)
+
+
+中位數檢定
+
+單一樣本(Wilcoxon符號等級檢定)
+(獨立)雙樣本(Wilcoxon等級和檢定)
+(成對)雙樣本(Wilcoxon符號等級檢定)
+(獨立)多樣本(Kruskal-Wallis檢定)
+
+
+變異數(標準差)檢定
+
+單一樣本
+(獨立)雙樣本
+(獨立)多樣本(Levene檢定)
+
+
+比例檢定
+
+單一樣本
+(獨立)雙樣本
+
+
+相關暨列聯表分析
+
+皮爾生相關係數
+斯皮爾曼等級相關係數
+卡方獨立性(或稱齊一性)檢定
+費雪精確檢定
+McNemar檢定
+勝算比與相對風險
+
+
+迴歸模式
+
+迴歸分析
+邏輯斯迴歸分析
+
+
+無母數方法
+
+中位數檢定
+
+單一樣本(Wilcoxon符號等級檢定)
+(獨立)雙樣本(Wilcoxon等級和檢定)
+(成對)雙樣本(Wilcoxon符號等級檢定)
+(獨立)多樣本(Kruskal-Wallis檢定)
+
+
+單一樣本連檢定
+單一樣本機率分配檢定
+(獨立)雙樣本機率分配差異檢定
+卡方適合度檢定
+
+
+
+
+圖表繪製
+
+
+
+
+次數分配表
+列聯表
+莖葉圖
+散佈圖
+
+2D散佈圖
+
+一般散佈圖
+散佈圖矩陣
+條件散佈圖
+
+
+3D散佈圖
+
+
+曲線(面)圖
+
+二維曲線圖
+三維曲面圖
+
+
+直方圖
+長條圖
+圓餅圖
+盒鬚圖
+常態機率圖
+經驗累積分配函數圖
+互動式圖表
+
+
+機率分配
+
+分配機率函數
+分配百分位數
+分配累積機率
+生成隨機樣本
+機率分配圖形
+
+
+輸出結果
+自創巨集
+ 
+
+
+
+
+
+
+
+首頁
+		 » 分析方法 » 使用自然對數(ln)連結函數的廣義線性模式		
+
+
+
+
+
+使用自然對數(ln)連結函數的廣義線性模式Generalized Linear Model with nature log link
+
+
+方法簡介
+範例F-4(1)
+範例F-8(1)
+影音教學
+維基百科(英文)
+
+
+
+				本方法係GLM的一種特例；係當連結函數用自然對數(ln)I連結函數時經常用的分析方法。假設依變數的期望值為μ，則ln連結函數為g(μ)=ln(μ)，使用此種連結函數的GLM有卜瓦松迴歸模式(Poisson regression model)與對數線性模式(log-linear model)。
+				兩者的差異主要在資料服從的分配與解釋變數上，卜瓦松迴歸模式假設服從卜瓦松分配，
+				解釋變數型態沒有限制，而對數線性模式則可服從卜瓦松分配或是多項式分配(依據資料抽樣的方法而定)，
+				解釋變數必須為類別變數時，常見的列聯表(contingency table)資料即適用此模式，此種資料稱為記數(count)資料II。
+				(使用本方法前請先行參考資料型態說明)
+				
+				I：自然對數ln係指log以指數(exponential)為底數的情況，故有人會簡稱為log轉換。
+				II：記數資料係指在不同的條件(變數值)下計算發生次數的資料型態，常以列聯表形態表現，表的左邊及上面為不同的條件(變數值)，表內則是在各條件下的發生次數。
+				
+				廣義線性模式-方法簡介
+
+				本方法使用之R相關套件與參考文獻：
+相關套件：stats、base、MASS、speedglm
+參考文獻：(依套件名稱排序)
+
+R Core Team (2013). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL：http://www.R-project.org/.
+Venables, W. N. & Ripley, B. D. (2002) Modern Applied Statistics with S. Fourth Edition. Springer, New York. ISBN 0-387-95457-0
+					Marco ENEA (2013). speedglm: Fitting Linear and Generalized Linear Models to large data sets.. R package version 0.2.  URL：http://CRAN.R-project.org/package=speedglm  
+
+
+
+範例F-4：
+根據警政署統計，近十年的交通事故中死亡人數達二千人以上，其中酒駕肇事致死人數達三百人以上，為所有肇事原因中的首位。某交通研究部門想瞭解影響道安的重要因素，第一個考慮的就是酒駕，此外仍有其他影響因素，例如乘客是否繫上安全帶。研究員收集了去年12個月某大城市發生的交通事故傷亡人數資料，共有278人，整理後的資料列於下表
+
+表：交通事故肇事因素與傷亡資料
+
+
+
+
+
+傷亡狀況
+
+
+是否酒駕
+是否繫安全帶
+死亡
+受傷
+
+
+是
+是
+15
+40
+
+
+
+否
+43
+66
+
+
+否
+是
+3
+37
+
+
+
+否
+22
+52
+
+
+
+
+Q1：研究員想瞭解交通事故發生時傷亡狀況與是否酒駕及繫安全帶的關聯性，哪些因素有較大的影響?
+問題解析：此份資料可使用的分析方法不僅一種，其一種看法為將傷亡情形視為依變數，酒駕及繫安全帶視為解釋變數，以邏輯斯迴歸分析。另一種則視所有變數皆為類別變數，故資料呈現方式為列聯表型態，此類資料分析方式適合對數線性模式，此處以廣義線性模式(使用自然對數(ln)連結函數)中的對數線性模式分析。
+統計方法：此問題中的資料為列聯表型態，假設列聯表中在不同條件(變數值)下的記數(count)資料服從卜瓦松分配並使用自然對數(ln)連結函數。可採用的分析方法：使用自然對數(ln)連結函數的廣義線性模式。
+
+
+廣義線性模式 - 分析結果
+
+分析方法：廣義線性模式
+	
+資料名稱：範例F-4	
+連結函數：自然對數(ln)
+	
+依變數名稱：個數	
+自變數名稱：酒駕, 安全帶, 傷亡	
+計算時間：0.245秒
+	
+變數訊息I：
+
+數值變數(numerical)
+
+
+變數名稱Variable
+樣本數Count
+平均數Mean
+中位數Median
+最小值Minimum
+最大值Maximum
+標準差Std. dev.
+個數834.7538.536620.4782
+類別變數(categorical)
+
+
+變數名稱Variable
+變數值Value
+編碼Coded
+個數Count
+酒駕n04y14安全帶n04y14傷亡n04y14
+			I：變數訊息皆不包含遺失值
+列聯表獨立性卡方檢定
+
+
+虛無假設：自變數無相關性
+
+
+卡方統計量Chi-square statistic
+自由度d.f.
+p-值p-value
+
+
+14.8828
+4
+0.005
+
+
+			表內總個數：278
+			表內自變數個數：3 
+模型效用分析：
+
+
+
+變數名稱Variable
+自由度d.f.
+離差Deviance
+殘差自由度Resid. d.f.
+殘差離差Resid. Deviance
+p-值p-value
+
+NULL7100.7965< 1e-04酒駕19.0419691.75450.0026安全帶128.341563.4135< 1e-04傷亡146.4299416.9836< 1e-04 
+
+
+變數選取：
+
+			變數選取方法：Stepwise AIC法
+			變數選取準則：min AIC(Akaike Information Criterion)
+			使用者指定模式：個數 = (截距項) + 酒駕 + 安全帶 + 傷亡
+			AIC準則選取之較佳模式：個數 = (截距項) + 酒駕 + 安全帶 + 傷亡
+			模式選取I,II,III：
+
+
+變數
+自由度
+Deviance
+
+AIC值
+
+
+僅含截距項模式
+7
+100.7965
+
+143.6914
+
+
+系統選取較佳模式
+4
+16.9836
+
+65.8786
+
+
+			I：AIC與Deviance欄位中數值越小表示模式越佳
+			II：由Deviance比較兩模式，P值(< 1e-04) < 0.05，表示系統選取較佳模式較為合適
+			III：在飽和模式(Saturated model)下的參數個數會隨樣本數而改變的情況下，模式中的P值將可能不正確，不建議使用 
+模式適合度檢定：
+
+
+
+檢定方法method
+卡方統計量Chi-square statistic
+自由度d.f.
+p-值p-value
+
+
+概似比(Likelihood Ratio)
+16.9836
+4
+0.0019
+
+
+皮爾生(Pearson)
+14.8828
+4
+0.005
+
+
+
+
+使用者指定模式係數估計I：
+
+
+
+係數coefficient
+估計值estimation
+標準差std. err.
+Z檢定統計量z-statistic
+p-值IIp-value
+(截距項)3.96340.110335.927<2e-16 ***酒駕(y)0.36370.12192.98230.0029 **安全帶(是)-0.65560.1265-5.1846<2e-16 ***傷亡(1)-0.85420.1311-6.5174<2e-16 ***
+			I：依變數為個數
+			II：顯著性代碼：‘***’ : < 0.001, ‘**’ : < 0.01, ‘*’ : < 0.05, ‘#’ : < 0.1
+		 
+AIC準則選取之較佳模式係數估計I：
+
+
+
+係數coefficient
+估計值estimation
+標準差std. err.
+Z檢定統計量z-statistic
+p-值IIp-value
+
+(截距項)3.96340.110335.927< 2.22e-16 ***酒駕(y)0.36370.12192.98230.0028605 **安全帶(是)-0.65560.1265-5.18462.1653e-07 ***傷亡(1)-0.85420.1311-6.51747.1536e-11 *** 
+			I：依變數為個數
+			II：顯著性代碼：‘***’ : < 0.001, ‘**’ : < 0.01, ‘*’ : < 0.05, ‘#’ : < 0.1		
+
+
+[重新分析]
+
+
+範例F-8：
+紅豆是一種具有高營養價值的豆類食品富含鐵質、蛋白質、膳食纖維及多樣維生素，為了培育出更好的紅豆，某一農業機構委託植物學家研究不同的土壤、肥料、
+氣候及地區下對於紅豆發芽的影響。植物學家設計了一個實驗，考量了六種不同性質的土壤(編號1至6)，使用兩家市面上大廠牌肥料或是不使用肥料(編號1、2，不使用肥料編號為0)，氣候則紀錄當地當月所測得月均溫度(攝氏)，並選擇於宜蘭及屏東兩地栽種來瞭解氣候差異的影響。兩地各選了50處符合六種土壤條件的農地栽種，每塊農地播種數目依農地大小不一會有差異，研究執行後資料記錄於下表中。
+
+
+表：
+
+
+編號 發芽數	 土壤 肥料 溫度 氣候 播種數  
+1	 1756	 	1 1	 18	 宜蘭 2300  
+2	 1505	 	1 1	 21.3 宜蘭 2150  
+3	 1344	 	2 3	 19.4 宜蘭 1820  
+.	 .		 	. .	 .	 .	 .  
+98	 2847	 	1 3	 28.1 屏東 3550  
+99	 2666	 	6 2	 26.7 屏東 3200  
+100	 2467	 	6 2	 30.9 屏東 2800  
+
+
+
+Q1：想瞭解紅豆發芽比率的高低是否受土壤、肥料、溫度及氣候的影響，哪些因素有較大的影響呢?
+統計方法：此問題中的資料為想瞭解土壤、肥料、溫度及氣候對於紅豆發芽比率的影響，依變數可用發芽數(為記數資料I)或是發芽比例(發芽數/播種數)，此類型依變數適合使用自然對數(ln)連結函數的卜瓦松迴歸。可採用分析方法：使用自然對數(ln)連結函數的廣義線性模式。 
+I：以此形態資料為依變數，因資料可能取出的樣本數不同，須考慮補償值(offset)，此處補償值變數即為播種數。
+
+
+	
+廣義線性模式 - 分析結果
+
+分析方法：廣義線性模式
+	
+資料名稱：範例F-8	
+連結函數：自然對數(ln)
+	
+依變數名稱：發芽數	
+自變數名稱：土壤, 肥料, 溫度, 氣候	
+補償值(offset)：播種數	
+計算時間：1.185秒
+	
+變數訊息I：
+
+數值變數(numerical)
+
+
+變數名稱Variable
+樣本數Count
+平均數Mean
+中位數Median
+最小值Minimum
+最大值Maximum
+標準差Std. dev.
+發芽數1001418.121364.58002510316.7212溫度10024.09923.516.430.74.8587補償值(offset)1002257.932302.514583550396.3562
+類別變數(categorical)
+
+
+變數名稱Variable
+變數值Value
+編碼Coded
+個數Count
+土壤101421193215431554196518肥料102721423231氣候宜蘭050屏東150
+			I：變數訊息皆不包含遺失值
+列聯表獨立性卡方檢定
+
+
+虛無假設：自變數無相關性
+
+
+卡方統計量Chi-square statistic
+自由度d.f.
+p-值p-value
+
+
+3160174.0076
+2127
+0
+
+
+			表內總個數：141812
+			表內自變數個數：4 
+模型效用分析：
+
+
+
+變數名稱Variable
+自由度d.f.
+離差Deviance
+殘差自由度Resid. d.f.
+殘差離差Resid. Deviance
+p-值p-value
+
+NULL992156.6594< 1e-04氣候12035.932598120.7269< 1e-04 
+
+
+變數選取：
+
+			變數選取方法：Stepwise AIC法
+			變數選取準則：min AIC(Akaike Information Criterion)
+			使用者指定模式：發芽數 = (截距項) + 土壤 + 肥料 + 溫度 + 氣候
+			AIC準則選取之較佳模式：發芽數 = (截距項) + 氣候
+			模式選取I,II,III：
+
+
+變數
+自由度
+Deviance
+
+AIC值
+
+
+僅含截距項模式
+99
+6739.5487
+
+7648.7184
+
+
+系統選取較佳模式
+98
+120.7269
+
+1031.8967
+
+
+			I：AIC與Deviance欄位中數值越小表示模式越佳
+			II：由Deviance比較兩模式，P值(< 1e-04) < 0.05，表示系統選取較佳模式較為合適
+			III：在飽和模式(Saturated model)下的參數個數會隨樣本數而改變的情況下，模式中的P值將可能不正確，不建議使用 
+模式適合度檢定：
+
+
+
+檢定方法method
+卡方統計量Chi-square statistic
+自由度d.f.
+p-值p-value
+
+
+概似比(Likelihood Ratio)
+847184.5659
+2127
+0
+
+
+皮爾生(Pearson)
+3160174.0076
+2127
+0
+
+
+
+
+使用者指定模式係數估計I：
+
+
+
+係數coefficient
+估計值estimation
+標準差std. err.
+Z檢定統計量z-statistic
+p-值IIp-value
+(截距項)-0.61420.0428-14.3624<2e-16 ***土壤(2)0.0050.00960.51830.6042 土壤(3)0.00580.01040.55540.5787 土壤(4)-0.01480.0104-1.43340.1517 土壤(5)-4e-040.0099-0.03640.9710 土壤(6)0.01250.011.25010.2113 肥料(2)-0.00170.0069-0.24920.8032 肥料(3)0.00440.00720.61410.5392 溫度0.0010.00220.44910.6534 氣候(屏東)0.23070.021110.9082<2e-16 ***
+			I：依變數為發芽數
+			II：顯著性代碼：‘***’ : < 0.001, ‘**’ : < 0.01, ‘*’ : < 0.05, ‘#’ : < 0.1
+		 
+AIC準則選取之較佳模式係數估計I：
+
+
+
+係數coefficient
+估計值estimation
+標準差std. err.
+Z檢定統計量z-statistic
+p-值IIp-value
+
+(截距項)-0.59290.004-147.9346< 2.22e-16 ***氣候(屏東)0.24050.005444.9547< 2.22e-16 *** 
+			I：依變數為發芽數
+			II：顯著性代碼：‘***’ : < 0.001, ‘**’ : < 0.01, ‘*’ : < 0.05, ‘#’ : < 0.1		
+
+
+[重新分析]
+
+
+
+
+
+
+			影音教學內容為本系統資料處理與分析方法之操作說明，可供使用者即時參考及線上自學，輕鬆上手「雲端資料分析暨導引系統」!
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+步驟一：資料匯入
+
+
+
+
+
+
+
+							選擇要進行分析的資料檔或上傳檔案
+
+
+
+
+
+== 請選擇一個資料夾 ==
+																範例資料檔 (資料處理)
+								範例資料檔 (分析方法)
+																							
+
+
+
+
+
+
+
+
+
+
+
+
+== 請選擇一個資料夾 ==
+							
+
+
+
+
+							您所選擇的資料檔為：
+						
+
+
+
+
+
+
+
+
+
+
+
+				請輸入資料檔密碼:
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+雲端資料分析暨導引系統 © 2013 All Rights Reserved
+最佳瀏覽解析度 1280*800 以上 / Chrome、FF
+
+
+
+
+
+
+

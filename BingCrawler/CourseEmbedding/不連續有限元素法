@@ -1,0 +1,2945 @@
+
+
+CAE與有限元素法問題~~~急 | Yahoo奇摩知識+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+   ⌂首頁信箱新聞股市名人娛樂氣象運動App下載購物中心商城拍賣更多⋁知識+汽車機車電影字典遊戲旅遊理財房地產時尚美妝折扣城   Yahoo 奇摩知識+                        👤 登入    ✉ 信箱     ⚙ 服務說明    帳號資料 服務說明 意見回報        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yahoo奇摩知識+ 首頁
+
+
+
+
+
+
+
+
+
+
+
+所有分類
+ 
+健康
+ 
+商業與財經
+ 
+娛樂與音樂
+ 
+家居與園藝
+ 
+家庭與人際關係
+ 
+寵物
+ 
+懷孕與育兒
+ 
+政治與政府
+ 
+教育與參考
+ 
+新聞與活動
+ 
+旅遊
+ 
+汽車與交通
+ 
+消費電子產品
+ 
+環境
+ 
+社會科學
+ 
+社會與文化
+ 
+科學
+ 
+美容與造型
+ 
+藝術與人文
+ 
+遊戲與休閒活動
+ 
+運動
+ 
+電腦與網際網路
+ 
+食品與飲料
+ 
+餐廳與小吃
+ 
+
+
+
+
+
+世界Yahoo 
+
+
+
+
+
+
+
+
+阿根廷
+
+
+
+
+
+澳洲
+
+
+
+
+
+巴西
+
+
+
+
+
+加拿大
+
+
+
+
+
+法國
+
+
+
+
+
+德國
+
+
+
+
+
+印度
+
+
+
+
+
+印尼
+
+
+
+
+
+義大利
+
+
+
+
+
+馬來西亞
+
+
+
+
+
+墨西哥
+
+
+
+
+
+
+
+紐西蘭
+
+
+
+
+
+菲律賓
+
+
+
+
+
+魁北克
+
+
+
+
+
+新加坡
+
+
+
+
+
+香港
+
+
+
+
+
+西班牙
+
+
+
+
+
+泰國
+
+
+
+
+
+英國與愛爾蘭
+
+
+
+
+
+美國
+
+
+
+
+
+越南
+
+
+
+
+
+西班牙文
+
+
+
+
+
+
+
+關於
+
+
+
+
+
+關於 Yahoo奇摩知識+
+社群指南
+排行榜
+點數與等級
+部落格
+如何安全地使用 Yahoo奇摩
+
+ 
+
+
+
+
+
+
+
+
+ 科學
+
+ 工程學
+
+
+ 看另一則問題 
+
+
+
+
+
+
+
+
+
+
+            CAE與有限元素法問題~~~急
+        
+
+
+1.有限元素法中什麼是網格與節點? 
+2.什麼是幾何邊界條件跟力邊界條件? 
+3.von mises應力在結構強度分析扮演何種角色?
+
+更新: 
+to shentc大  
+假設將此未知連續體分割成有限個「局部」，稱之為元素 
+元素是不是等於網格? 
+還是兩個不是同一個東西?
+
+
+
+
+
+ 
+追蹤 
+
+
+ 
+ 1 個解答 
+1
+
+
+檢舉不當使用
+
+
+
+
+
+
+
+
+
+您確定要刪除此解答嗎？
+是
+否
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+抱歉，似乎發生一些問題。
+
+
+
+Trending Now
+
+
+
+
+
+ 
+
+解答
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳解答: 
+             有限元素法(Finite element method, FEM)的基本觀念是任何連續量均可用一不連續函數的型式作近似表示。此型式乃為有限區域的集合分段連續函數所組成。使用連續量的值，以定義分段連續函數將整個結構視為次區域，即有限元素之組合，做為整個結構解析之模擬。 
+在每一個次區域內之結構行為，可以用一假設函數來表示該區域內之應力或應變。這個假設函數通常必須能夠保持整個連體結構行為的連續性。 
+凡是牽涉到複雜之幾何、負載與材料性質之問題，通常都無法得到其分析數學解，因此對一被分析之未知連續體而言，分析解由分析對象「局部」之數學式求得，而分析對象包含無限個這種「局部」。 
+FEM假設將此未知連續體分割成有限個「局部」，稱之為元素（element），元素之邊界點稱之為節點（node），每個節點上攜帶一條數學方程式，稱之為內插函數方程式（interpolation equation），藉由有限個內插函數方程式表達該連續體之分析行為，此群有限個方程式之解稱為內插近似解（interposition approximation）。 
+只要連續體之場變數（位移、速度、應變、應力、溫度、電磁場、聲場、族群分佈、化學濃度、…）與各條件（幾何條件、起始條件、邊界條件、材料性質、成本要求、…）假設正確，則在誤差容忍度之內，近似解可視為取代精確解之可信賴結果。 
+http://cbl.be.cycu.edu.tw/fem_introduce.htm 
+
+邊界條件 : 分析模型不可能是無限大 , 模型外部邊界以一組函數結束模擬稱之 . 
+力邊界條件 : 外力加載也是一組函數加於模型邊界上稱之 . 
+
+網格建模說明 
+http://www.apic.com.tw/support/ideas_data/Meshing/mesh_cut.pdf 
+
+畸變能理論(Von Mises 理論或稱Mises Hencky理論) : 用在須考慮材料疲勞之模擬設計詳以下網頁 
+http://www.me.hwh.edu.tw/tea-www/tea24/pdf_files/CHAPTER5_02.pdf 
+
+
+
+ 2009-04-13 09:16:51 補充： 
+無論元素是什麼形狀 , 三角型 , 四方形 , 三角錐形 , 四方體形 等等...如何知道元素形狀?  這些元素在其邊界折角處一定有"節點" , 連接這些節點就看出元素的形狀, 各元素間靠節點彼此接合 , 接合完成的圖形上仍然留有各元素的形狀線條 , 這些線條形成"網格". 
+
+ 2009-04-13 09:20:33 補充： 
+所以進行有限元素分析時第一個動作"分割元素" , 打上網格後 , 每一格子就是一個元素 , 每個元素折角上必有"節點" . 
+
+
+
+
+ 參考資料： 
+ 
+
+
+shentc
+ · 8 年前 
+
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  發問者的評分
+                
+
+
+
+
+
+
+
+ 
+
+檢舉不當使用
+
+ 我認為此問題違反社群指南 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此問題違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此解答違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此解答違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此意見違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此意見違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+ 
+
+你可能對以下搜尋感興趣：
+
+
+專業服務搬家免煩惱
+
+熱門遊戲立即開打
+
+說走就走泰國輕鬆GO!
+
+防毒軟體為您抵擋病毒攻擊
+
+
+
+
+
+
+
+
+
+
+
+
+發問問題
+通常可在幾分鐘內獲得解答！
+
+
+
+
+
+
+
+展開»
+
+
+
+
+
+
+詳細資料
+
+
+
+詳細資料
+
+
+
+
+
+
+現有問題
+
+
+
+
+更多
+
+
+
+
+
+請多詳述您的問題
+上傳處理中
+
+
+
+
+上傳失敗。 請上傳大於 100x100 像素的檔案
+目前發生問題，請再試一次。
+您只能上傳 PNG、JPG 或 JPEG 等類型的檔案。
+您只能上傳 3GP、3GPP、MP4、MOV、AVI、MPG、MPEG 或 RM 等類型的檔案。
+您只能上傳不超過 5 MB 的相片。
+您只能上傳不超過 600 MB 的影片。
+您只能上傳相片 (png, jpg, jpeg) 或影片 (3gp, 3gpp, mp4, mov, avi, mpg, mpeg, rm)。
+您只能上傳相片或影片。
+影片不應超過 <b>600mb/5 分鐘</b>
+相片不應超過 <b>5mb</b>
+影片不應超過 <b>600mb/5 分鐘</b>相片不應超過 <b>5mb</b>
+  
+
+
+
+
+
+
+
+解答問題
+
+
+DoMe 高精度防震防塵防潑水雷射測距儀 (100米).促銷價?
+
+
+
+ 
+
+高空作業車遙控器
+公司承租的高空自走車遙控器在工地被人拿走了.請問哪裡有賣中古的遙控器 作業車的型號是:GS-1930?
+
+
+
+ 
+
+高空作業車遙控器
+公司承租的高空自走車遙控器在工地被人拿走了.請問哪裡有賣中古的遙控器 作業車的型號是:GS-1930?
+
+
+
+ 
+
+NFB無熔絲開關 選用 我有一個機台 機台主要有兩個馬達都是2KW 連續輸出電流8.3Arms 還有一個電源供應器4.0A 請問要選多大的無熔絲開關 要多少A 有簡單公式或算法 @@? 有無簡單公式或算法
+有無簡單公式或算法
+有無簡單公式或算法
+有無簡單公式或算法?
+
+
+
+ 
+
+
+發燒問題
+
+
+
+
+不會產生任何副作用的豐胸方法?
+
+                  4 個解答
+              
+
+ 
+
+小弟因一時失慎，不小心將電線拉斷了。
+愚蠢的過程暫不討論，現在的狀況是電管內沒有電線，我要如何走內管拉一條網路線？
+我已嘗試用導線器，可是到了轉彎處都過不去，不知道還有沒有別的方式可以拉呢？
+
+                  10 個解答
+              
+
+ 
+
+如附圖所示,當A線路中可變電阻的接點C往下移動時,B線路中的感應電流方向為何?
+(A) 順時鐘方向 (B)逆時鐘方向
+(C)無感應電流?
+
+                  7 個解答
+              
+
+ 
+更多問題
+
+
+
+
+
+電線桿、電塔是鐵的材質吧?為什麼都不會生鏽?
+
+             7 個解答
+         
+
+ 
+
+美國黑金與黑金剛有區別嗎?
+
+             6 個解答
+         
+
+ 
+
+減手臂的好方法-手臂轉圈?
+
+             4 個解答
+         
+
+ 
+
+  
+
+
+
+
+
+
+
+
+服務條款
+
+
+隱私權
+
+
+RSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+課程大綱
+
+
+
+
+
+
+
+
+
+
+不連續有限元素法DISCONTINUOUS GALERKIN FINITE ELEMENT METHODS
+
+
+
+
+
+
+開課系所 Department/Institute:  應數所          Applied Mathematics
+開課教師 Instructor:   陳旻宏 Chen, Min-Hung                
+開課學年 Academic Year:   0102
+開課學期 Semester:    1
+開課序號 Serial Number:   029
+
+課程屬性碼 Attribute Code:   MATH6509 
+課程碼 Course Number:   L182200 
+分班碼 Class Code: 
+學分數 No. of Credits:           3
+課程語言 Medium of Instruction:   中文
+
+
+課程網址 Course Website:         moodle	
+
+先修課程或先備能力 Prerequisite Course(s):   數值分析
+       
+
+教師聯絡資訊 Contact with Teacher
+  	    chen0499@mail.ncku.edu.tw      
+
+助教資訊 Contact with Tutor
+
+
+學習規範 Course Policy
+
+
+評量方式 Grading
+
+
+方法百分比%
+
+Homework 
+25平時成績 
+25期中考 Midterm Exam
+25期末報告 
+25
+
+
+
+
+教學方法 Teaching Strategies
+      課堂講演以及電腦上機    
+
+		※請遵守智慧財產權觀念  不得不法影印
+		 Please follow the Intellectual Property instruction and No illegal copy
+	
+
+課程教材 Course Material
+
+A short essay on discontinuous Galerkin methods: 
+	Discontinuous Galerkin methods, ZAMM. Z. Angew. Math. Mech. 83 (2003), no. 11, 731-754.
+Lecture Notes by Bernardo Cockburn: 
+	"An Introduction to the Discontinuous Galerkin method for Convection-Dominated Problems"
+
+
+
+參考書目 References
+
+
+備註 Remarks
+     原定週二第六節課因與數學領域教材教法衝堂，擬調整時間。
+
+
+
+
+基本素養 Basic Literacy
+        無    
+
+核心能力 Competence
+■ 掌握連續與逼進的能力
+ Ability to handle continuity phenomena and approximations.
+■ 處理數字及符號運算的能力
+ Ability to operate with symbols and digits.
+□ 透視形像與空間的能力
+ Ability to visualize space, shape, and images.
+■ 利用計算機處理數學的能力
+ Ability of computer to do mathematics.
+□ 應用隨機理論的能力
+ Ability to apply stochastic mathematics.
+□ 處理大量數據的能力
+ Ability to handle large amount of data.
+■ 處理離散型數學的能力
+ Ability to do mathematics relating to discrete models.
+■ 獨立研究與撰寫論文的能力
+ Ability to do independent researches and to write thesis.
+■ 使用計算機的能力
+ Abilities to use computer as a tool.
+ 
+
+課程概述 Course Description
+       本課程目的在簡介以不連續有限元方法(Discontinuous Galerkin Methods)解偏微分方程。不連續有限元方法是有限元素法的一種，但是他同時擁有限體積法的一些特色。和傳統的連續有限元素法不同，不連續有限元方法使用的函數空間在每個元素中是連續的，但是元素間是不連續的，因此以DG離散得到的方程式是局部的。這個特性，使得不連續有限元方法非常適合在非結構性網格上發展高精度數值方法，同時也非常適合平行計算。
+這門課程，我們會先給數值偏微分方程以及有限元素法簡短的介紹，接著介紹如何使用不連續有限元方法對不同類型偏微分方程求解，討論數值穩定性、一致性、收斂性以及誤差估計。實做部分主要以MATLAB範例程式讓學生瞭解方法的效果。
+This course gives an introduction to the Discontinuous Galerkin methods. The discontinuous Galerkin method is a special class of the finite element methods and the method combines features of the finite element and finite volume methods. Unlike traditional continuous Galerkin method, the DG method works over a trial space of functions that are continuous in each element but discontinuous across edges and thus the resulting equations are local to the generating element. The method provides a practical framework for the development of high-order accurate methods using unstructured grids and is well suited for parallel computing.
+We will give a short introduction to the numerical partial differential equations and finite element methods, and introduce discontinuous Galerkin methods for equations of various types and discuss how these discrete problems can be solved efficiently. We will address mathematical questions related to the concepts of consistency, stability, convergence, and error estimation. Programs written in MATLAB will be used to demonstrate examples.
+    
+
+課程學習目標 Course Objectives    
+	    學習將偏微分方程以不連續有限元方法(Discontinuous Galerkin Methods)離散化，使用數值求解。    
+
+課程進度 Course Outline
+
+
+週次 Week進度說明 Progress Description
+1Introduction to Finite Element Methods2Finite Element Methods (cont'd)3Discontinuous Galerkin Methods for Ordinary dierential equations4Discontinuous Galerkin Methods for The Transport Equations5Discontinuous Galerkin Methods for The Transport Equations(cont'd)6RKDG methods for The Transport Equations7Discontinuous Galerkin Methods for The wave equation 8RKDG methods for The wave equation9Midterm10RKDG methods for The wave equation (cont'd)11The RKDG method for multimensional systems12Discontinuous Galerkin Methods for The Elliptic problems 13Discontinuous Galerkin Methods for The Elliptic problems (cont'd)14RKDG methods for the one-dimensional nonlinear equation15RKDG methods for the one-dimensional nonlinear equation (cont'd)16Special Topics17Special Topics18Final Project 
+
+　以上每週進度教師可依上課情況做適度調整。The schedule may be subject to change.
+
+
+課程學習融入下列議題或具有下列內涵的程度 Immersing the Following Issues or Contents
+議題或內容 Issues or Contents關聯性 Correlation生命教育 Life Education
+無相關 No correlation服務學習 Service Learning
+無相關 No correlation性別平等 Gender Equity
+無相關 No correlation環境安全 Environmental Safety
+無相關 No correlation環境保護 Environmental Protection
+無相關 No correlation智慧財產權 Intellectual Property
+無相關 No correlation法治教育 Law-Related Education
+無相關 No correlation人權教育 Human Rights Education
+無相關 No correlation 
+
+有關課程其他調查 Other Surveys of Courses
+                   1.本課程是否規劃業界教師參與教學或演講?   否            
+Is there any industry specialist invited in this course? How many times? No
+			
+           2.本課程是否規劃內含校外實習 (並非參訪)?   否		   
+Is there any in (out of) school practicum involved in this course? How many hours?  No
+
+
+
+
+
+
+
+
+
+課程大綱
+
+
+
+
+
+
+
+
+
+
+不連續有限元素法DISCONTINUOUS GALERKIN FINITE ELEMENT METHODS
+
+
+
+
+
+
+開課系所 Department/Institute:  應數所          Applied Mathematics
+開課教師 Instructor:   陳旻宏 Chen, Min-Hung                
+開課學年 Academic Year:   0105
+開課學期 Semester:    2
+開課序號 Serial Number:   012
+
+課程屬性碼 Attribute Code:   MATH6509 
+課程碼 Course Number:   L182200 
+分班碼 Class Code: 
+學分數 No. of Credits:           3
+課程語言 Medium of Instruction:   中文
+
+
+課程網址 Course Website:         moodle	
+
+先修課程或先備能力 Prerequisite Course(s):   數值分析
+       
+
+教師聯絡資訊 Contact with Teacher
+  	    chen0499@mail.ncku.edu.tw      
+
+助教資訊 Contact with Tutor
+
+
+學習規範 Course Policy
+
+
+評量方式 Grading
+
+
+方法百分比%
+
+作業 Assignments
+30個人書面報告 Projects
+30其他 others:平時成績
+40
+
+
+
+
+教學方法 Teaching Strategies
+
+
+方法百分比%
+講授 Lecture
+100
+
+
+
+
+		※請遵守智慧財產權觀念  不得不法影印
+		 Please follow the Intellectual Property instruction and No illegal copy
+	
+
+課程教材 Course Material
+
+A short essay on discontinuous Galerkin methods: 
+	Discontinuous Galerkin methods, ZAMM. Z. Angew. Math. Mech. 83 (2003), no. 11, 731-754.
+Lecture Notes by Bernardo Cockburn: 
+	"An Introduction to the Discontinuous Galerkin method for Convection-Dominated Problems"
+
+
+
+參考書目 References
+
+
+備註 Remarks
+     請上網填寫問捲(作為課程規劃參考)
+https://goo.gl/forms/tr7XcWJK7RVBf2F63
+
+
+
+
+基本素養 Basic Literacy
+        無    
+
+核心能力 Competence
+■ 掌握連續與逼進的能力
+ Ability to handle continuity phenomena and approximations.
+■ 處理數字及符號運算的能力
+ Ability to operate with symbols and digits.
+□ 透視形像與空間的能力
+ Ability to visualize space, shape, and images.
+■ 利用計算機處理數學的能力
+ Ability of computer to do mathematics.
+□ 應用隨機理論的能力
+ Ability to apply stochastic mathematics.
+□ 處理大量數據的能力
+ Ability to handle large amount of data.
+■ 處理離散型數學的能力
+ Ability to do mathematics relating to discrete models.
+■ 獨立研究與撰寫論文的能力
+ Ability to do independent researches and to write thesis.
+■ 使用計算機的能力
+ Abilities to use computer as a tool.
+ 
+
+課程概述 Course Description
+       本課程目的在簡介以不連續有限元方法(Discontinuous Galerkin Methods)解偏微分方程。不連續有限元方法是有限元素法的一種，但是他同時擁有限體積法的一些特色。和傳統的連續有限元素法不同，不連續有限元方法使用的函數空間在每個元素中是連續的，但是元素間是不連續的，因此以DG離散得到的方程式是局部的。這個特性，使得不連續有限元方法非常適合在非結構性網格上發展高精度數值方法，同時也非常適合平行計算。
+這門課程，我們會先給數值偏微分方程以及有限元素法簡短的介紹，接著介紹如何使用不連續有限元方法對不同類型偏微分方程求解，討論數值穩定性、一致性、收斂性以及誤差估計。實做部分主要以MATLAB範例程式讓學生瞭解方法的效果。
+This course gives an introduction to the Discontinuous Galerkin methods. The discontinuous Galerkin method is a special class of the finite element methods and the method combines features of the finite element and finite volume methods. Unlike traditional continuous Galerkin method, the DG method works over a trial space of functions that are continuous in each element but discontinuous across edges and thus the resulting equations are local to the generating element. The method provides a practical framework for the development of high-order accurate methods using unstructured grids and is well suited for parallel computing.
+We will give a short introduction to the numerical partial differential equations and finite element methods, and introduce discontinuous Galerkin methods for equations of various types and discuss how these discrete problems can be solved efficiently. We will address mathematical questions related to the concepts of consistency, stability, convergence, and error estimation. Programs written in MATLAB will be used to demonstrate examples.
+    
+
+課程學習目標 Course Objectives
+學習將偏微分方程以不連續有限元方法(Discontinuous Galerkin Methods)離散化。推導離散化後的算則穩定性與精確度將算則改寫為程式 
+
+課程進度 Course Outline
+
+
+週次 Week進度說明 Progress Description
+1Introduction to Finite Element Methods2Finite Element Methods (cont'd)3Discontinuous Galerkin Methods for Ordinary dierential equations4Discontinuous Galerkin Methods for The Transport Equations5Discontinuous Galerkin Methods for The Transport Equations(cont'd)6RKDG methods for The Transport Equations7Discontinuous Galerkin Methods for The wave equation 8RKDG methods for The wave equation9Midterm10RKDG methods for The wave equation (cont'd)11The RKDG method for multimensional systems12Discontinuous Galerkin Methods for The Elliptic problems 13Discontinuous Galerkin Methods for The Elliptic problems (cont'd)14RKDG methods for the one-dimensional nonlinear equation15RKDG methods for the one-dimensional nonlinear equation (cont'd)16Special Topics17Special Topics18Final Project 
+
+　以上每週進度教師可依上課情況做適度調整。The schedule may be subject to change.
+
+
+有關課程其他調查 Other Surveys of Courses
+                   1.本課程是否規劃業界教師參與教學或演講?   否            
+Is there any industry specialist invited in this course? How many times? No
+			
+           2.本課程是否規劃內含校外實習 (並非參訪)?   否		   
+Is there any in (out of) school practicum involved in this course? How many hours?  No
+
+
+
+
+
+中大機構典藏-博碩士論文 972201003 詳細資訊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+博碩士論文 972201003 詳細資訊
+
+
+
+
+以作者查詢圖書館館藏
+、以作者查詢臺灣博碩士
+、以作者查詢全國書目
+、勘誤回報
+、線上人數：10
+、訪客IP：104.199.203.235
+
+
+
+
+姓名
+
+      	  鄭庭蓁(Ting-Zhen Zheng)  
+		      查詢紙本館藏  
+畢業系所
+數學系
+
+論文名稱
+
+      	  數種不連續有限元素法求解對流佔優問題之數值研究(A Numerical Study of Various Discontinuous Finite Element Methods for Solving Convection-Dominated Problems)
+      	   
+
+檔案
+
+[Endnote RIS 格式]   
+		      [Bibtex 格式]     
+      [檢視]  [下載]本電子論文使用權限為同意立即開放。已達開放權限電子全文僅授權使用者為學術研究之目的，進行個人非營利性質之檢索、閱讀、列印。請遵守中華民國著作權法之相關規定，切勿任意重製、散佈、改作、轉貼、播送，以免觸法。
+
+
+摘要(中)
+在本文中，我們研究數種以不同數值通量為基礎的不連續有限元素法求解對流佔優情況下之對流-擴散問題。我們比較了數種不連續有限元素法在Galerkin與Petrov-Galerkin形式下的數值效率，其中所有的不連續Petrov-Galerkin方法皆經由多尺度基函數取代Q1試驗函數而產生，而該多尺度基函數源自於求解各有限單元上具合適邊界條件之局部微分方程式。我們經由兩個具有解析解的數值實例來闡明這些不同方法的效能。我們發現使用Q1試驗函數的不連續有限元素法在擴散係數較小時效率會變差，然而除了Baumann-Oden方法外，其他多尺度不連續Petrov-Galerkin方法都比不連續的有限元素法更能精確捕獲問題解在邊界層的結構性質。
+
+
+摘要(英)
+In this thesis, we study various discontinuous finite element methods based on different numerical fluxes for solving convection-diffusion problems with emphasis on the convection-dominated case. We compare numerically the efficiency of various discontinuous finite element methods in the Galerkin and the Petrov-Galerkin formulations. All the discontinuous Petrov-Galerkin methods are formulated by replacing the Q1 trial functions with the multiscale basis functions, which are designed by solving a series of local differential equations on each elements with proper boundary conditions. Numerical simulations of two examples with analytic solutions are presented to illustrate the effectiveness of the various methods. We find that for a small diffusivity, the discontinuous Galerkin methods using Q1 finite elements show a rather poor performance. However, except the Baumann-Oden method, all the other multiscale discontinuous Petrov-Galerkin methods are much better able to capture the nature of boundary layer structure in the solution than the discontinuous Galerkin methods.
+
+
+關鍵字(中)
+
+      	  ★ 不連續Petrov-Galerkin方法★ 不連續有限元素法★ 多尺度有限元素法★ 邊界層★ 對流佔優問題★ 數值通量★ 對流-擴散方程
+關鍵字(英)
+
+      	  ★ discontinuous Petrov-Galerkin methods★ discontinuous Galerkin methods★ boundary layers★ multiscale finite element methods★ convection-dominated problems★ numerical fluxes★ convection-diffusion equations
+
+論文目次
+Abstract…………………………………………………………………………………………………………1
+
+1.Introduction…………………………………………………………………………………………2
+
+2.The discontinuous Galerkin methods………………………………4
+
+3.The discontinuous Petrov-Galerkin methods……………11
+
+4.Numerical experiments…………………………………………………………………13
+
+5.Summary and conclusions……………………………………………………………25
+
+References……………………………………………………………………………………………………26
+
+Appendix A……………………………………………………………………………………………………29
+
+Appendix B……………………………………………………………………………………………………36
+
+
+參考文獻
+[1] D. Arnold, F. Brezzi, B. Cockburn, and D. Marini, Discontinuous Galerkin methods for ellip-
+
+tic problems, in Discontinuous Galerkin Methods: Theory, Computation and Applications,
+
+B. Cockburn, G. E. Karniadakis, and C.-W. Shu, eds., Lecture Notes in Computational
+
+Science and Engineering, Springer-Verlag, New York, 11 (2000), pp. 89-101.
+
+[2] D. N. Arnold, F. Brezzi, B. Cockburn, and D. Marini, Uni¯ed analysis of discontinuous
+
+Galerkin methods for elliptic problems, SIAM Journal on Numerical Analysis, 39 (2002), pp.
+
+1749-1779.
+
+[3] I. Babuska and M. Zlamal, Nonconforming elements in the ¯nite element method with
+
+penalty, SIAM Journal on Numerical Analysis, 10 (1973), pp. 863-875.
+
+[4] F. Bassi and S. Rebay, A high-order accurate discontinuous ¯nite element method for the
+
+numerical solution of the compressible Navier-Stokes equations, Journal of Computational
+
+Physics, 131 (1997), pp. 267-279.
+
+[5] F. Bassi and S. Rebay, Numerical evaluation of two discontinuous Galerkin methods for
+
+the compressible Navier-Stokes equations, International Journal for Numerical Methods in
+
+Fluids, 40 (2002), pp. 197-207.
+
+[6] F. Bassi, S. Rebay, G. Mariotti, S. Pedinotti, and M. Savini, A high-order accurate discon-
+
+tinuous ¯nite element method for inviscid and viscous turbomachinery °ows, in Proceedings
+
+of 2nd European Conference on Turbomachinery, Fluid Dynamics and Thermodynamics,
+
+Antwerpen, Belgium (1997), Technologisch Instituut, pp. 99-108.
+
+[7] C. E. Baumann and J. T. Oden, A discontinuous hp ¯nite element method for convection-
+
+diRusion problems, Computer Methods in Applied Mechanics and Engineering, 175 (1999),
+
+pp. 311-341.
+
+[8] F. Brezzi, G. Manzini, D. Marini, P. Pietra, and A. Russo, Discontinuous galerkin approxima-
+
+tions for diRusion problems, in Atti Convegno in onore di F. Brioschi (Milan,1997) Instituto
+
+Lombardo, Accademia di Scienze e Lettere, Milan, Italy, 1999, pp. 197-217.
+
+[9] F. Brezzi, G. Manzini, D. Marini, P. Pietra, and A. Russo, Discontinuous Galerkin ap-
+
+proximations for elliptic problems, Numerical Methods for Partial DiRerential Equations, 16
+
+(2000), pp. 365-378.
+
+[10] B. Cockburn, S. Hou, and C.-W. Shu, The Runge-Kutta local projection discontinuous
+
+Galerkin ¯nite element method for conservation laws, IV. The multidimensional case, Math-
+
+ematics of Computation, 54 (1990), pp. 545-581.
+
+[11] B. Cockburn, G. E. Karniadakis, and C.-W. Shu, The development of discontinuous Galerkin
+
+methods, in Discontinuous Galerkin Methods, Lecture Notes in Computational Science and
+
+Engineering, Springer, Berlin, 11 (2000), pp. 3-50.
+
+[12] B. Cockburn, S. Y. Lin, and C.-W. Shu, The Runge-Kutta local projection discontinuous
+
+Galerkin ¯nite element method for conservation laws, III. One-dimensional systems, Journal
+
+of Computational Physics, 84 (1989), pp. 90-113.
+
+[13] B. Cockburn and C.-W. Shu, The Runge-Kutta local projection discontinuous Galerkin ¯nite
+
+element method for conservation laws, II. General framework, Mathematics of Computation,
+
+52 (1989), pp. 411-435.
+
+[14] B. Cockburn and C.-W. Shu, The Runge-Kutta local projection P1-discontinuous-Galerkin
+
+¯nite element method for scalar conservation laws, RAIRO. Modelisation Mathematique et
+
+Analyse Numerique, 25 (1991), pp. 337-361.
+
+[15] B. Cockburn and C.-W. Shu, The Runge-Kutta discontinuous Galerkin method for conser-
+
+vation laws, V. Multidimensional systems, Journal of Computational Physics, 141 (1998),
+
+pp. 199-224.
+
+[16] B. Cockburn and C.-W. Shu, The local discontinuous Galerkin method for time-dependent
+
+convection-diRusion systems, SIAM Journal on Numerical Analysis, 35 (1998), pp. 2440-2463.
+
+[17] B. Cockburn and C.-W. Shu, Runge-Kutta discontinuous Galerkin methods for convection
+
+dominated problems, Journal of Scienti¯c Computing, 16 (2001), pp. 173-261.
+
+[18] B. Cockburn, Discontinuous Galerkin methods for convection-dominated problems, in High
+
+order Methods for Computational Physics, Lecture Notes in Computational Science and
+
+Engineering, Springer, Berlin, 9 (1999), pp. 69-224.
+
+[19] J. Douglas and T. Dupont, Interior penalty procedures for elliptic and parabolic Galerkin
+
+methods, Computer Methods in Applied Sciences, 58 (1976), pp. 207-216.
+
+[20] L. P. Franca, J. V. A. Ramalho, and F. Valentin, Multiscale and residual-free bubble func-
+
+tions for reaction-advection-diRusion problems, International Journal for Multiscale Compu-
+
+tational Engineering, 3 (2005), pp. 297-312.
+
+[21] T. Y. Hou and X.-H. Wu, A multiscale ¯nite element method for elliptic problems in compos-
+
+ite materials and porous media, Journal of Computational Physics, 134 (1997), pp.169-189.
+
+[22] W. H. Reed and T. R. Hill, Triangular mesh methods for the neutron transport equation,
+
+Technical report LA-UR-73-479, Los Alamos Scienti¯c Laboratory, Los Alamos, NM, 1973.
+
+[23] B. Riviere, M. F. Wheeler, and V. Girault, Improved energy estimates for interior penalty,
+
+constrained and discontinuous Galerkin methods for elliptic problems I, Computational Geo-
+
+sciences, 3 (1999), pp. 337-360.
+
+[24] J. J. Sudirham, J. J. W. van der Vegt, and R. M. J. van Damme, A study on discontinuous
+
+Galerkin ¯nite element methods for elliptic problems, Memorandum, Department of Applied
+
+Mathematics, University of Twente, Enschede, The Netherland, 1690 (2003).
+
+[25] S. K. Tomar and J. J. W. van der Vegt, A Runge-Kutta discontinuous Galerkin method for
+
+linear free-surface gravity waves using high order velocity recovery, Computer Methods in
+
+Applied Mechanics and Engineering, 196 (2007), pp. 1984-1996.
+
+
+指導教授
+
+      	  楊肅煜(Suh-Yuh Yang)
+      	 
+審核日期
+2011-7-12
+
+推文
+
+facebook   plurk   twitter   funp   google   live   udn   HD   myshare   reddit   netvibes   friend   youpush   delicious   baidu   
+      	 
+
+網路書籤
+
+Google bookmarks   del.icio.us   hemidemi   myshare   
+      	 
+
+
+
+
+
+
+
+若有論文相關問題，請聯絡國立中央大學圖書館推廣服務組 TEL:(03)422-7151轉57407，或E-mail聯絡
+	       - 隱私權政策聲明
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學機構典藏:Item 987654321/125043
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English
+
+ | 
+正體中文
+ | 
+簡體中文
+
+ | 
+
+
+
+
+	全文筆數/總筆數 : 79667/116599 (68%)
+
+
+	
+
+
+
+	造訪人次 : 11379717
+
+    
+
+	線上人數 : 41
+
+                  	
+
+
+
+
+
+
+
+
+
+
+
+RC Version 6.0 © Powered By DSPACE, MIT. Enhanced by NTU Library IR team. ReEnhanced by NCKU Library IR team. 
+
+
+
+
+
+
+
+
+
+
+
+              搜尋範圍
+              
+
+
+
+全部NCKUR
+理學院
+   數學系
+      --博碩士論文
+
+
+
+查詢小技巧：您可在西文檢索詞彙前後加上"雙引號"，以獲取較精準的檢索結果若欲以作者姓名搜尋，建議至進階搜尋限定作者欄位，可獲得較完整資料
+
+
+
+
+進階搜尋 
+
+
+
+
+
+
+
+
+
+
+主頁
+	                  ‧
+	      
+          
+          	登入
+          
+          ‧
+          上傳
+ 	‧
+          說明
+         ‧
+          關於NCKUR
+            
+         ‧
+          管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學機構典藏 >
+
+理學院 >
+
+數學系 >
+
+博碩士論文 >
+
+
+
+ Item 987654321/125043
+
+
+
+
+
+
+
+
+
+資料載入中.....
+
+
+
+
+
+
+
+
+
+
+書目資料匯出
+
+
+
+
+
+Endnote RIS 格式資料匯出
+
+
+
+
+
+
+Bibtex 格式資料匯出
+
+
+
+
+
+
+
+
+引文資訊
+
+
+                資料載入中.....
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+請使用永久網址來引用或連結此文件:
+                http://ir.lib.ncku.edu.tw/handle/987654321/125043
+
+
+
+
+
+
+
+
+
+題名: 以不連續有限元素法解單域心電波方程
+其他題名: Discontinuous Galerkin Methods for Monodomain Electrocardiac Wave Equations
+作者: 何家豪Ho, Chia-Hao
+貢獻者: 數學系應用數學碩博士班陳旻宏Chen, Min-Hung
+關鍵詞: 單域心電波方程擴散反應方程不連續有限元素法半顯隱 Runge-Kutta方法monodomain electrocardiac wave equationreaction-diffusion equationdiscontinuous Galerkin methodimplicit-explicit Runge-Kutta methods
+日期: 2012-08-29
+上傳時間: 2013-01-14 11:46:29  (UTC+8)
+摘要: 本篇論文主要在建構一維數值格式來模擬心臟細胞上之波傳問題。我們考慮的單域心電波方程為一條擴散反應方程式，在反應項的部分包含了?多條常微分方程式。在建構數值格式來解這問題時，我們先用不連續有限元素法將方程式於空間上半離散化，接著將空間離散後的常微分方程用時間積分的方法來解。基於單域心電波方程的一些數學性質，我們將考慮使用 implicit-explicit Runge-Kutta方法。在解決主要問題之前，我們先對建構出來的數值格式做測試問題，並且得到我們預期的數值解收斂結果。最後將本計算格式在於解單域心電波方程的結果和其他研究結果比較並獲得一致的結果。In this thesis we construct a one-dimensional scheme to simulate the electrocardiac wave propagating in excitable ventricular cells  The monodomain electrocardiac wave equation is a reaction-diffusion equation whose reaction term consists of six ordinary differential equations and those equations are discretized in space into a set of semi-discrete equations by the discontinuous Galerkin method  The resulting ordinary differential equations system can be solved using time-integration methods  Due to the nature of the problem  we consider the implicit-explicit Runge-Kutta methods  The performances of the scheme are illustrated through numerical experiment  The numerical solution to the diffusion equation and the reaction-diffusion equation converge with the expected rates  The result of the monodomain equation with Luo-Rudy phase 1 model is also presented
+顯示於類別:[數學系] 博碩士論文
+
+文件中的檔案:
+檔案
+描述
+大小格式瀏覽次數
+index.html0KbHTML296檢視/開啟
+
+
+
+
+
+
+
+在NCKUR中所有的資料項目都受到原著作權保護.
+
+
+
+
+
+ -
+
+
+
+              回饋
+              
+
+
+
+
+
+
+
+
+
+
+
+Airiti Library華藝線上圖書館
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+													篇名
+												
+
+
+數種不連續有限元素法求解對流佔優問題之數值研究
+
+
+
+
+
+
+														並列篇名
+													
+
+
+															A Numerical Study of Various Discontinuous Finite Element Methods for Solving Convection-Dominated Problems
+														
+
+
+
+
+														作者
+													
+
+
+															鄭庭蓁
+
+														
+
+
+
+
+													關鍵字
+												
+
+
+
+														不連續Petrov-Galerkin方法 ； 不連續有限元素法 ； 多尺度有限元素法 ； 邊界層 ； 對流佔優問題 ； 數值通量 ； 對流-擴散方程 ； discontinuous Petrov-Galerkin methods ； discontinuous Galerkin methods ； boundary layers ； multiscale finite element methods ； convection-dominated problems ； numerical fluxes ； convection-diffusion equations
+													
+
+
+
+
+													出版品名稱
+												
+
+
+														中央大學數學系學位論文
+													
+
+
+
+
+													捲期/出版年月
+												
+
+
+碩士													
+
+
+
+
+														學位類別
+													
+
+碩士
+
+
+
+
+														指導教授
+													
+
+楊肅煜
+
+
+
+
+													內容語文
+												
+
+英文
+
+
+
+
+														中文摘要
+													
+
+在本文中，我們研究數種以不同數值通量為基礎的不連續有限元素法求解對流佔優情況下之對流-擴散問題。我們比較了數種不連續有限元素法在Galerkin與Petrov-Galerkin形式下的數值效率，其中所有的不連續Petrov-Galerkin方法皆經由多尺度基函數取代Q1試驗函數而產生，而該多尺度基函數源自於求解各有限單元上具合適邊界條件之局部微分方程式。我們經由兩個具有解析解的數值實例來闡明這些不同方法的效能。我們發現使用Q1試驗函數的不連續有限元素法在擴散係數較小時效率會變差，然而除了Baumann-Oden方法外，其他多尺度不連續Petrov-Galerkin方法都比不連續的有限元素法更能精確捕獲問題解在邊界層的結構性質。
+
+
+
+
+														英文摘要
+													
+
+In this thesis, we study various discontinuous finite element methods based on different numerical fluxes for solving convection-diffusion problems with emphasis on the convection-dominated case. We compare numerically the efficiency of various discontinuous finite element methods in the Galerkin and the Petrov-Galerkin formulations. All the discontinuous Petrov-Galerkin methods are formulated by replacing the Q1 trial functions with the multiscale basis functions, which are designed by solving a series of local differential equations on each elements with proper boundary conditions. Numerical simulations of two examples with analytic solutions are presented to illustrate the effectiveness of the various methods. We find that for a small diffusivity, the discontinuous Galerkin methods using Q1 finite elements show a rather poor performance. However, except the Baumann-Oden method, all the other multiscale discontinuous Petrov-Galerkin methods are much better able to capture the nature of boundary layer structure in the solution than the discontinuous Galerkin methods.
+
+
+
+
+													主題分類
+													
+
+基礎與應用科學													> 
+數學													
+理學院													> 
+數學系													
+
+
+
+
+														參考文獻
+													
+
+
+
+																[1] D. Arnold, F. Brezzi, B. Cockburn, and D. Marini, Discontinuous Galerkin methods for ellip-  連結：
+
+
+																tic problems, in Discontinuous Galerkin Methods: Theory, Computation and Applications,  連結：
+
+
+																B. Cockburn, G. E. Karniadakis, and C.-W. Shu, eds., Lecture Notes in Computational  連結：
+
+
+																[4] F. Bassi and S. Rebay, A high-order accurate discontinuous ¯nite element method for the  連結：
+
+
+																numerical solution of the compressible Navier-Stokes equations, Journal of Computational  連結：
+
+
+																[5] F. Bassi and S. Rebay, Numerical evaluation of two discontinuous Galerkin methods for  連結：
+
+
+																[7] C. E. Baumann and J. T. Oden, A discontinuous hp ¯nite element method for convection-  連結：
+
+
+																diRusion problems, Computer Methods in Applied Mechanics and Engineering, 175 (1999),  連結：
+
+
+																Galerkin ¯nite element method for conservation laws, IV. The multidimensional case, Math-  連結：
+
+
+																ematics of Computation, 54 (1990), pp. 545-581.  連結：
+
+
+																[11] B. Cockburn, G. E. Karniadakis, and C.-W. Shu, The development of discontinuous Galerkin  連結：
+
+
+																methods, in Discontinuous Galerkin Methods, Lecture Notes in Computational Science and  連結：
+
+
+																Galerkin ¯nite element method for conservation laws, III. One-dimensional systems, Journal  連結：
+
+
+																element method for conservation laws, II. General framework, Mathematics of Computation,  連結：
+
+
+																¯nite element method for scalar conservation laws, RAIRO. Modelisation Mathematique et  連結：
+
+
+																Analyse Numerique, 25 (1991), pp. 337-361.  連結：
+
+
+																[15] B. Cockburn and C.-W. Shu, The Runge-Kutta discontinuous Galerkin method for conser-  連結：
+
+
+																[16] B. Cockburn and C.-W. Shu, The local discontinuous Galerkin method for time-dependent  連結：
+
+
+																[17] B. Cockburn and C.-W. Shu, Runge-Kutta discontinuous Galerkin methods for convection  連結：
+
+
+																[18] B. Cockburn, Discontinuous Galerkin methods for convection-dominated problems, in High  連結：
+
+
+																order Methods for Computational Physics, Lecture Notes in Computational Science and  連結：
+
+
+																[19] J. Douglas and T. Dupont, Interior penalty procedures for elliptic and parabolic Galerkin  連結：
+
+
+																methods, Computer Methods in Applied Sciences, 58 (1976), pp. 207-216.  連結：
+
+
+																[21] T. Y. Hou and X.-H. Wu, A multiscale ¯nite element method for elliptic problems in compos-  連結：
+
+
+																[22] W. H. Reed and T. R. Hill, Triangular mesh methods for the neutron transport equation,  連結：
+
+
+																Technical report LA-UR-73-479, Los Alamos Scienti¯c Laboratory, Los Alamos, NM, 1973.  連結：
+
+
+																[23] B. Riviere, M. F. Wheeler, and V. Girault, Improved energy estimates for interior penalty,  連結：
+
+
+																constrained and discontinuous Galerkin methods for elliptic problems I, Computational Geo-  連結：
+
+
+																[24] J. J. Sudirham, J. J. W. van der Vegt, and R. M. J. van Damme, A study on discontinuous  連結：
+
+
+																Science and Engineering, Springer-Verlag, New York, 11 (2000), pp. 89-101.
+															
+
+																[2] D. N. Arnold, F. Brezzi, B. Cockburn, and D. Marini, Uni¯ed analysis of discontinuous
+															
+
+																Galerkin methods for elliptic problems, SIAM Journal on Numerical Analysis, 39 (2002), pp.
+															
+
+																1749-1779.
+															
+
+																[3] I. Babuska and M. Zlamal, Nonconforming elements in the ¯nite element method with
+															
+
+																penalty, SIAM Journal on Numerical Analysis, 10 (1973), pp. 863-875.
+															
+
+																Physics, 131 (1997), pp. 267-279.
+															
+
+																the compressible Navier-Stokes equations, International Journal for Numerical Methods in
+															
+
+																Fluids, 40 (2002), pp. 197-207.
+															
+
+																[6] F. Bassi, S. Rebay, G. Mariotti, S. Pedinotti, and M. Savini, A high-order accurate discon-
+															
+
+																tinuous ¯nite element method for inviscid and viscous turbomachinery °ows, in Proceedings
+															
+
+																of 2nd European Conference on Turbomachinery, Fluid Dynamics and Thermodynamics,
+															
+
+																Antwerpen, Belgium (1997), Technologisch Instituut, pp. 99-108.
+															
+
+																pp. 311-341.
+															
+
+																[8] F. Brezzi, G. Manzini, D. Marini, P. Pietra, and A. Russo, Discontinuous galerkin approxima-
+															
+
+																tions for diRusion problems, in Atti Convegno in onore di F. Brioschi (Milan,1997) Instituto
+															
+
+																Lombardo, Accademia di Scienze e Lettere, Milan, Italy, 1999, pp. 197-217.
+															
+
+																[9] F. Brezzi, G. Manzini, D. Marini, P. Pietra, and A. Russo, Discontinuous Galerkin ap-
+															
+
+																proximations for elliptic problems, Numerical Methods for Partial DiRerential Equations, 16
+															
+
+																(2000), pp. 365-378.
+															
+
+																[10] B. Cockburn, S. Hou, and C.-W. Shu, The Runge-Kutta local projection discontinuous
+															
+
+																Engineering, Springer, Berlin, 11 (2000), pp. 3-50.
+															
+
+																[12] B. Cockburn, S. Y. Lin, and C.-W. Shu, The Runge-Kutta local projection discontinuous
+															
+
+																of Computational Physics, 84 (1989), pp. 90-113.
+															
+
+																[13] B. Cockburn and C.-W. Shu, The Runge-Kutta local projection discontinuous Galerkin ¯nite
+															
+
+																52 (1989), pp. 411-435.
+															
+
+																[14] B. Cockburn and C.-W. Shu, The Runge-Kutta local projection P1-discontinuous-Galerkin
+															
+
+																vation laws, V. Multidimensional systems, Journal of Computational Physics, 141 (1998),
+															
+
+																pp. 199-224.
+															
+
+																convection-diRusion systems, SIAM Journal on Numerical Analysis, 35 (1998), pp. 2440-2463.
+															
+
+																dominated problems, Journal of Scienti¯c Computing, 16 (2001), pp. 173-261.
+															
+
+																Engineering, Springer, Berlin, 9 (1999), pp. 69-224.
+															
+
+																[20] L. P. Franca, J. V. A. Ramalho, and F. Valentin, Multiscale and residual-free bubble func-
+															
+
+																tions for reaction-advection-diRusion problems, International Journal for Multiscale Compu-
+															
+
+																tational Engineering, 3 (2005), pp. 297-312.
+															
+
+																ite materials and porous media, Journal of Computational Physics, 134 (1997), pp.169-189.
+															
+
+																sciences, 3 (1999), pp. 337-360.
+															
+
+																Galerkin ¯nite element methods for elliptic problems, Memorandum, Department of Applied
+															
+
+																Mathematics, University of Twente, Enschede, The Netherland, 1690 (2003).
+															
+
+																[25] S. K. Tomar and J. J. W. van der Vegt, A Runge-Kutta discontinuous Galerkin method for
+															
+
+																linear free-surface gravity waves using high order velocity recovery, Computer Methods in
+															
+
+																Applied Mechanics and Engineering, 196 (2007), pp. 1984-1996.
+															
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		客戶服務專線
+		0800-000-747 
+	
+
+		傳真
+		02-2926-6016 
+	
+
+		客服信箱
+		：
+		lib@airiti.com
+	
+
+		服務時間：週一～五
+		9:00~18:00 
+	
+
+		地址：234台灣新北市永和區成功路一段80號18樓
+	
+
+		© 2011airiti Inc. All rights reserved.
+		華藝數位股份有限公司
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學機構典藏:Item 987654321/22045
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English
+
+ | 
+正體中文
+ | 
+簡體中文
+
+ | 
+
+
+
+
+	全文筆數/總筆數 : 79667/116599 (68%)
+
+
+	
+
+
+
+	造訪人次 : 11379717
+
+    
+
+	線上人數 : 41
+
+                  	
+
+
+
+
+
+
+
+
+
+
+
+RC Version 6.0 © Powered By DSPACE, MIT. Enhanced by NTU Library IR team. ReEnhanced by NCKU Library IR team. 
+
+
+
+
+
+
+
+
+
+
+
+              搜尋範圍
+              
+
+
+
+全部NCKUR
+理學院
+   數學系
+      --博碩士論文
+
+
+
+查詢小技巧：您可在西文檢索詞彙前後加上"雙引號"，以獲取較精準的檢索結果若欲以作者姓名搜尋，建議至進階搜尋限定作者欄位，可獲得較完整資料
+
+
+
+
+進階搜尋 
+
+
+
+
+
+
+
+
+
+
+主頁
+	                  ‧
+	      
+          
+          	登入
+          
+          ‧
+          上傳
+ 	‧
+          說明
+         ‧
+          關於NCKUR
+            
+         ‧
+          管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學機構典藏 >
+
+理學院 >
+
+數學系 >
+
+博碩士論文 >
+
+
+
+ Item 987654321/22045
+
+
+
+
+
+
+
+
+
+資料載入中.....
+
+
+
+
+
+
+
+
+
+
+書目資料匯出
+
+
+
+
+
+Endnote RIS 格式資料匯出
+
+
+
+
+
+
+Bibtex 格式資料匯出
+
+
+
+
+
+
+
+
+引文資訊
+
+
+                資料載入中.....
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+請使用永久網址來引用或連結此文件:
+                http://ir.lib.ncku.edu.tw/handle/987654321/22045
+
+
+
+
+
+
+
+
+
+題名: 不連續有限元素法解橢圓問題的數值研究
+其他題名: Numerical Study for Elliptic Problems by Discontinuous Galerkin Methods
+作者: 柯承頤Ke, Cheng-Yi
+貢獻者: 數學系應用數學碩博士班陳旻宏Chen, Min-Hung
+關鍵詞: LDGeigenvalue problemelliptic problemnone
+日期: 2008-07-08
+上傳時間: 2009-05-07 15:59:52  (UTC+8)
+摘要: noneIn this paper  we study the Discontinuous Galerkin methods for elliptic boundary value problems and Laplace eigenvalue problems  And at last  numerical experiments for poisson's equation and laplace eigenproblems are presented to study the performance of the DG methods
+顯示於類別:[數學系] 博碩士論文
+
+文件中的檔案:
+檔案
+大小格式瀏覽次數
+0KbUnknown437檢視/開啟
+
+
+
+
+
+
+
+在NCKUR中所有的資料項目都受到原著作權保護.
+
+
+
+
+
+ -
+
+
+
+              回饋
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+  有限元素法講義|最夯有限元素法講義介紹百變恰吉元素魔法杖(共30筆1|1頁)與四元素法-癮科技App
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+不能錯過
+
+地質照片Luxgen Turbo Club脫出おっさん夏祭り忍者爆撃 Ninja explosionIMoNi Notifier for Smart Extra 
+
+
+
+ 
+
+
+
+癮科技App
+
+
+
+ 
+
+
+
+
+
+
+
+
+首頁 / 
+                    有限元素法講義網站相關資料
+
+
+有限元素法講義網站相關資料
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+四大元素
+
+10月 29, 2012
+Vostu Ltd.
+休閒
+203
+
+
+
+FEM一個類似於數獨的游戲，將水、氣、土火四種元素放置如相應格子里，其中同一個格子、橫豎同一行里不能放相同元素，有數獨基礎的人可以玩的很順利，不過小編就覺得這游戲確實需要一點時間上手了！【免費APP-四大元素 APP試玩不用錢】休閒APP試玩-四大元素四大元素 APP LOGO四大元素 APP QRCod有限元素法簡介 有限元素法(Finite element method, FEM)的基本觀念是任何連續量均可用一不連續函數的型式 ......
+
+
+
+ 
+
+
+
+在元素週期表
+
+1月 1, 1970
+Szymon Wójtowicz
+教育
+682
+
+
+
+有限元素法 - 國立臺灣大學生物產業機電工程系元素週期表。交互式演示化學元素的特性。的材料，物理，原子，熱力學，電磁，反應性，元件的發現名稱和年份。表溶解度 - ，鹽，離子。【免費APP-在元素週期表 APP試玩不用錢】教育APP試玩-在元素週期表在元素週期表 APP LOGO在元素週期表 APP QRCode分佈國家支援APP系統版本歷程APHuebner and Thornton 原著．王至勤譯．1985．有限元素法 曉園． 2. 上課補充講義 成績計算：作業： 40% 期 ......
+
+
+
+ 
+
+
+
+靜音它！
+
+1月 1, 1970
+NOS Microsystems Ltd
+工具
+322
+
+
+
+計算力學實驗室: 有限元素法 教學資料與單點觸摸，禁用手機上的鈴聲和其他聲音，然後將它們重新打開，當你想要的！選擇您想要的手機保持靜音。什麼時間框架 您還可以禁用通知。【免費APP-靜音它！ APP試玩不用錢】工具APP試玩-靜音它！靜音它！ APP LOGO靜音它！ APP QRCode分佈國家支援APP系統版本歷程APP費用APP評... 本課程內容為結構力學和彈性力學的有限元素法, 以講解有限元素理論和其矩陣運算為主, 包括 truss ... ......
+
+
+
+ 
+
+
+
+Ecards LoveNotes 提示信差+
+
+1月 1, 1970
+NOS Microsystems Ltd
+通訊
+252
+
+
+
+第一章 有限元素法的基礎概念 (Basic Concepts of the Finite Element Method)傳送窩心的便箋及電子賀卡給你的Facebook好友吧﹗可以透過電郵傳送，亦可在Twitter上分享。你的留言使便箋及電子賀卡更具個人特色。我們有大量設計獨特的便箋讓你選擇，更可加入相片或將相片加入相框內。關鍵字：Love Notes、電子賀卡、賀卡、個人留言、黏貼便條、post it、記事本、畫冊、9 1.5 有限元素法的發展歷史 • 追本朔源要從解析解的近似解法開始 – Lord Rayleigh and Ritz [1870, 1909] ......
+
+
+
+ 
+
+
+
+Set Language
+
+1月 1, 1970
+Simple App Factory
+工具
+468
+
+
+
+1 第九章 有限元素分析 - 元智大學最佳化設計實驗室Optimal Design Laboratory of YZUSet your Android device to any language.If your device doesn't support the language (locale) that you want to use, you can set it with this applic有限元素法 模型的建立– 一維彈簧系統 1 2 3 u 1 u 2 u 3 F 1 2 u 1 u 2 u 3 F 6 一個典型的彈簧元素 = (− ......
+
+
+
+ 
+
+
+
+Ecards LoveNotes 提示信差
+
+1月 1, 1970
+NOS Microsystems Ltd
+通訊
+483
+
+
+
+有限元素法簡介 - Share and Discover Knowledge on LinkedIn SlideShare傳送窩心的便箋及電子賀卡給你的Facebook好友吧﹗可以透過電郵傳送，亦可在Twitter上分享。你的留言使便箋及電子賀卡更具個人特色。我們有大量設計獨特的便箋讓你選擇，更可加入相片或將相片加入相框內。關鍵字：Love Notes、電子賀卡、賀卡、個人留言、黏貼便條、post it、記事本、畫冊、有限元素法簡介 電腦輔助工程（ CAE ） 有限元素法 （ FEM ） 電腦所扮演的角色 有限元素法的優勢 有限元素 ......
+
+
+
+
+
+
+
+FEM
+
+7月 14, 2017
+
+
+有限元素法簡介 有限元素法(Finite element method, FEM)的基本觀念是任何連續量均可用一不連續函數的型式 ......
+
+
+
+
+
+
+
+有限元素法 - 國立臺灣大學生物產業機電工程系
+
+7月 19, 2017
+
+
+Huebner and Thornton 原著．王至勤譯．1985．有限元素法 曉園． 2. 上課補充講義 成績計算：作業： 40% 期 ......
+
+
+
+
+
+
+
+計算力學實驗室: 有限元素法 教學資料
+
+7月 18, 2017
+
+
+... 本課程內容為結構力學和彈性力學的有限元素法, 以講解有限元素理論和其矩陣運算為主, 包括 truss ... ......
+
+
+
+
+
+
+
+第一章 有限元素法的基礎概念 (Basic Concepts of the Finite Element Method)
+
+7月 13, 2017
+
+
+9 1.5 有限元素法的發展歷史 • 追本朔源要從解析解的近似解法開始 – Lord Rayleigh and Ritz [1870, 1909] ......
+
+
+
+
+
+
+
+1 第九章 有限元素分析 - 元智大學最佳化設計實驗室Optimal Design Laboratory of YZU
+
+7月 13, 2017
+
+
+有限元素法 模型的建立– 一維彈簧系統 1 2 3 u 1 u 2 u 3 F 1 2 u 1 u 2 u 3 F 6 一個典型的彈簧元素 = (− ......
+
+
+
+
+
+
+
+有限元素法簡介 - Share and Discover Knowledge on LinkedIn SlideShare
+
+7月 20, 2017
+
+
+有限元素法簡介 電腦輔助工程（ CAE ） 有限元素法 （ FEM ） 電腦所扮演的角色 有限元素法的優勢 有限元素 ......
+
+
+
+
+
+
+
+微系統有限元素法
+
+7月 20, 2017
+
+
+微系統有限元素法 (Finite Element for Micro System) 課程簡介 上課用書 課程講義 檔案下載 請至中興大學 ......
+
+
+
+
+
+
+
+L03. 有限元素法/邊界元素法 - 台灣CAD/CAE/CAM/CAID交流論壇 - Powered by Discuz!
+
+7月 16, 2017
+
+
+高等有限元素法講義-結構非線性分析 (附件) ...2 3 S-Y.Chen 2009-10-1 30505 SamHuang 2016-1-5 12:06:16 ......
+
+
+
+
+
+
+
+有限元素法的簡介 20點 | Yahoo奇摩知識+
+
+7月 20, 2017
+
+
+有限元素法已成功地用於“阿波羅”號登月飛船、波音 747 旅客機等大型複雜的飛行器結構分析。除了線彈性問題 ......
+
+
+
+
+
+
+
+有限元素法在骨科與牙科的應用
+
+7月 13, 2017
+
+
+國立陽明大學 有限元素法在骨科與牙科的應用 研習班 參加此會議，可登陸～ 中華民國骨科醫學會教育積分： 2 ......
+
+
+
+
+
+
+
+
+
+熱門APP分類
+
+
+
+
+娛樂教育冒險拼字書籍紙牌工具街機天氣生產應用交通運輸運動博奕射擊 
+
+
+
+
+App精選
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+熱門搜尋
+
+
+
+
+四元素法元素週期表背法百變恰吉元素魔法杖四元素魔法書元素表背法dhc 輕盈元素食用方法御上堂淨元素吃法繁體中文輸入法下載變音app美國慣用語廣播線上收聽合音app新聞購物教育部國語字典 
+
+
+
+
+
+
+
+ 
+
+
+
+最新App消息網友最愛App熱門App 
+
+ 
+
+
+
+圖片拼接
+9月 5, 2014
+攝影
+
+
+
+
+
+自考題庫解答
+8月 21, 2014
+教育
+
+
+
+
+
+爵士舞入門視頻
+9月 15, 2014
+書籍
+
+
+
+
+
+番茄時鐘
+9月 16, 2014
+工具
+
+ 
+
+
+
+日本視圖壁紙
+1月 1, 1970
+娛樂
+
+
+
+
+
+碎碎念壁紙
+1月 1, 1970
+娛樂
+
+
+
+
+
+花卉壁紙
+1月 1, 1970
+娛樂
+
+
+
+
+
+卡通聖誕壁紙
+1月 1, 1970
+娛樂
+
+ 
+
+
+
+飛行模擬器3D
+1月 1, 1970
+模擬
+
+
+
+
+
+ガリゲル for docomo
+1月 1, 1970
+娛樂
+
+
+
+
+
+dアニメストア
+1月 1, 1970
+娛樂
+
+
+
+
+
+millmo for SH widget docomo
+1月 1, 1970
+娛樂
+
+ 
+
+
+Facebook粉絲團關註 
+
+
+Fiiser App Search
+癮科技
+
+
+ 
+
+
+
+高評價APP
+
+賽車遊戲出租停車場暴力摩托公路狂飆3D速度的摩托車游戲赤色要塞飛行空戰靶心實戰炫光飛行防禦大射擊帝王三國網游RPG猛將無雙部落戰爭攻略基情西游01大樂透歷史熱門版路拖牌組合【試用版】 
+
+
+ 
+
+
+
+© Copyright 2017, All Rights Reserved. | Powered by Fiiser飛搜 | 聯絡我們 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+

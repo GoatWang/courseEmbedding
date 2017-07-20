@@ -1,0 +1,2045 @@
+
+
+
+文字知識探勘 與 自動化資訊組織- 研究成果
+
+
+
+
+文字知識探勘 與 自動化資訊組織 研究成果
+
+
+
+曾元顯, 
+  
+	< samtseng@ntnu.edu.tw >
+
+
+
+緣由與目的：
+
+
+
+
+近十幾年來，由於通訊網路與資訊科技普遍運用之故，
+    數位文件的生產與累積的速度極為快速，
+    產生了大量數位文件的管理、組織、存取與利用的各種問題與需求。
+        
+
+
+為解決這些問題、滿足使用上的需求，筆者近來從事
+    「自動化資訊組織與主題分析」、「文字知識探勘」的研究，
+    運用的技術主要為：
+    
+資訊檢索 (Information Retrieval)
+    自然語言處理 (Natural Language Processing)
+    機器學習 (machine Learning)
+    
+    等橫跨圖書館學、資訊科學、資訊工程的方法與理論。
+    
+
+
+「知識探勘」（knowledge discovery, KD）是擷取隱晦、
+    有用、未被發掘、有潛在價值的規則、資訊或知識的一種過程。 
+    (Usama Fayyad, Gregory Piatetsky-Shapiro, Padhraic Smyth, 
+    and Ramasamy Uthurasamy, 
+    Advances in Knowledge Discovery and Data Mining, 
+    AAAI Press/ The MIT Press, 1996.)
+在實務上，
+    此過程需要運用資訊組織與分析等探勘技術，透過與使用者的互動，
+    來反覆探索資料庫或文件庫，以發現新的、有趣的訊息或規律，
+    再經由人工解讀結果，讓發現的規律訊息變成有用的資訊或知識。
+    
+
+
+根據資料特性的不同，「知識探勘」可分為
+    「資料探勘」（data mining, DM）與「文字探勘」
+    （text mining, TM）。
+    前者處理結構化（structured）資料，即每筆資料有共同欄位可記錄於資料庫者，
+    而後者處理非結構化（unstructured）資料，即每筆資料沒有共通的結構性可言，
+    經常為長短不一、記載訊息的自由文字。
+    
+
+
+知識探勘的步驟大致分為：
+    
+資料蒐集
+    資料清理
+    資料轉換
+    探勘技術運用
+    結果呈現與解讀
+    
+    而知識探勘採用的方法，主要有：
+    
+關聯分析（association）
+    分類（classification）
+    歸類（clustering）
+    摘要（summarization）
+    預測（prediction）
+    序列分析（sequence analysis）
+    
+    由於資料特性的不同，資料探勘（DM）與文字探勘（TM）在
+    步驟與方法的技術細節上都有所差異。    
+    
+    TM 運用的技術，幾乎都跟詞彙的頻率與出現篇數有關，
+    但這兩項資訊在 DM 中極少用到。
+    
+    DM 主要運用於大型資料庫上，提供資料庫管理系統額外的資料分析與統計功能；
+    而 TM 主要運用在大量的文件庫上，供作資訊搜尋、訊息過濾、事件關聯、
+    趨勢預測、犯罪分析、案例追蹤、知識萃取、知識管理、決策輔助等之用。
+    
+    DM 在傳統資料庫的運用上已算相當成熟， TM 最近才在各領域受到重視。
+    
+
+
+圖書館學在資訊組織與主題分析的理論與實務上，
+    有長期而重要的貢獻。
+    以專利文獻而言，其資訊組織與主題分析採用的步驟大致如下：
+    
+選題：確立研究主題之專利分析範圍及目的
+    篩選：選定專利資料庫、建立檢索策略、下載相關專利
+    轉換：分欄擷取、資料整備，對結構化欄位資訊進行量化分析與圖表製作
+    摘要：依照目的、方法、效用等分項製作專利閱讀分析摘要表，進行專利文字的內容分析
+    歸類：對專利領域做主題歸類、對專利文件分類
+    呈現：以多重分類表交叉分析，製作技術功效分佈矩陣或專利地圖
+    解讀：判讀量化圖表與專利地圖，進行技術分析與趨勢預測
+    
+    其方法主要有：
+    
+特徵詞彙擷取
+    資訊檢索
+    權威控制
+    詞彙關聯
+    內容摘要
+    主題歸類
+    文件分類
+    
+    就步驟與方法而言，
+    「資訊組織與主題分析」與「文字探勘」有很多不謀而合之處。
+    因此，文字探勘跟資訊組織與主題分析，幾乎可說是同義詞，只是
+    圖書館學較重視一般目的、標準化的作業與架構；
+    知識探勘較重視特殊目的、自動化技術的運用。
+    
+
+
+本文摘錄了筆者近年的研究成果，以便傳播、交流心得。
+    歡迎各方惠賜意見或建議。
+    
+
+
+
+研究成果與開發之系統 / Research Results and Developed Systems
+
+
+
+    	關鍵詞自動擷取 / key-phrase extraction
+
+    	中文OCR錯字更正檢索系統 / IR-based Chinese OCR error correction
+
+    	關聯詞自動分析 / thesaurus generation
+
+    	文件自動分類 / document categorization
+
+	音樂內容檢索系統 / Content-Based Music Retrieval System 
+
+	圖書館書目資料模糊檢索系統
+and other systems such as: 	
+    
+
+資訊過濾 / information filtering
+全文影像 OCR 文字檢索系統 
+		/ Full-text images, OCR text retrieval system 
+多媒體電子佈告欄 / Web Board System 
+		(wbs.tar.gz, 
+		wbs2.tar.gz) 
+
+
+
+
+
+相關著作：
+
+
+Yuen-Hsien Tseng, Yeong-Ming Wang, Yu-I Lin, Chi-Jen Lin and Dai-Wei Juang, 
+  "Patent Surrogate Extraction and Evaluation in the Context of Patent Mapping", 
+  accepted for publication in Journal of Information Science, 2007 
+  (SSCI and SCI)
+     
+
+Yuen-Hsien Tseng, Chi-Jen Lin, and Yu-I Lin, 
+  "Text Mining Techniques for Patent Analysis", 
+  Information Processing and Management, Vol. 43, No. 5, 2007, pp. 1216-1247. 
+  (SCI, SSCI, EI)
+     
+
+ Yuen-Hsien Tseng, Yu-I Lin, Chun-Hsien Kuo, and Yi-Yang Lee, 
+  "Verification of Increasing Trend Detection," Proceedings of the
+  11th International Conference of the International Society for 
+  Scientometrics and Informetrics, June 25-27, 2007, Madrid, Spain, pp.942-943.
+      
+ Yuen-Hsien Tseng, Chen-Yang Tsai, and Ze-Jing, Chuang, 
+  "On the Robustness of Document Re-Ranking Techniques: 
+  A Comparison of Label Propagation, KNN, and Relevance Feedback," 
+  Proceedings of the Sixth NTCIR Workshop on Evaluation of Information Access Technologies: 
+  Information Retrieval, Question Answering, and Cross-Lingual Information Access, 
+  May 15-18, 2007, Tokyo, Japan, pp.129-132.
+      
+ Yuen-Hsien Tseng, Chen-Yang Tsai, and Da-Wei Juang, 
+  "Invalidity Search for USPTO Patent Documents 
+   Using Different Patent Surrogates," 
+  Proceedings of the Sixth NTCIR Workshop on Evaluation of Information Access Technologies: 
+  Information Retrieval, Question Answering, and Cross-Lingual Information Access, 
+  May 15-18, 2007, Tokyo, Japan, pp. 390-392.
+      
+曾元顯, 林瑜一, 
+  	"文字探勘技術在教育評鑑研究發展趨勢分析之應用",  
+  	教育評鑑國際學術研討會, 臺北, 國立台灣師範大學, 
+  	2006 年 11 月 11 日, 頁 519-533.
+     
+
+Yuen-Hsien Tseng, Chi-Jen Lin, Hsiu-Han Chen and Yu-I Lin, 
+  "Toward Generic Title Generation for Clustered Documents," 
+  Proceedings of Asia Information Retrieval Symposium, Oct. 16-18, Singapore, 
+  pp. 145-157, 2006. (Lecture Notes in Computer Science, Vol. 4182, SCI)
+      
+曾元顯, "分類不一致對文件自動分類效果的影響", 
+	「大學圖書館」, 第 9 捲第 1 期, 2005 年 3 月, 頁2-19.
+     
+
+曾元顯, "專利文字之知識探勘：技術與挑戰",  
+  	現代資訊組織與檢索研討會, 
+  	臺北, 淡江大學, 2004 年 11 月 19 日.
+     
+
+曾元顯, "數位文件之資訊組織與主題分析自動化之技術與應用",
+「臺北市立圖書館館訊」, 2002 年 12 月, 第 20 捲, 第 2 期, 頁 23-35. 
+     
+
+Yuen-Hsien Tseng, "Automatic Thesaurus Generation for Chinese
+Documents", Journal of the American Society for Information Science  and
+Technology, Vol. 53, No. 13, Nov. 2002, pp. 1130-1138. 
+     
+
+曾元顯, "文件主題自動分類成效因素探討", 
+  「中國圖書館學會會報」, 2002 年 6 月,   第 68 期, 頁 62-83.
+     
+
+Yuen-Hsien Tseng, "Automatic Cataloguing and Searching for
+Retrospective Data by Use of OCR Text", Journal of the American Society
+for Information Science   and Technology (Previously known as Journal of
+the American Society for   Information Science, JASIS), Vol. 52, No. 5,
+April 2001, pp. 378-390. 
+     
+
+曾元顯, "中文手機新聞簡訊自動摘要",  
+  	第十六屆自然語言與語音處理研討會, 
+  	臺北, 2004 年 9 月 2-3 日, 頁 177-189.
+     
+
+Yuen-Hsien Tseng and William John Teahan, 
+  "Verifying a Chinese Collection for Text Categorization," 
+  Proceedings of the 27th International ACM SIGIR Conference 
+  on Research and Development in Information Retrieval - 
+  SIGIR '04, July 25 - 29 Sheffield, U.K., 2004, pp.556-557.
+     
+Yuen-Hsien Tseng, Da-Wei Juang and, Shiu-Han Chen 
+  "Global and Local Term Expansion for Text Retrieval," 
+  Proceedings of the Fourth NTCIR Workshop on Evaluation of Information Retrieval,
+Automatic Text Summarization and Question Answering, June 2-4, 2004,
+Tokyo, Japan.
+     
+
+曾元顯, 莊大衛, "文件自我擴展於自動分類之應用",  
+  	第十五屆計算機語言學研討會, 2003 年 9 月 18-19 日, 
+  	頁 129-141.
+     
+
+Yuen-Hsien Tseng and Da-Wei Juang, "Document-Self Expansion for
+Text Categorization," Proceedings of the 26th
+International ACM SIGIR Conference   on Research and Development in
+Information Retrieval - SIGIR '03, July 28 -   Aug. 1, Toronto, Canada,
+2003, pp.399-400.
+     
+
+Da-Wei Juang and Yuen-Hsien Tseng, "Uniform Indexing and
+Retrieval Scheme for Chinese, Japanese, and Korean," Proceedings of
+the Third NTCIR Workshop   on Evaluation of Information Retrieval,
+Automatic Text Summarization and   Question Answering, Oct. 8-10, 2002,
+Tokyo, Japan, pp.137-141.
+     
+
+曾元顯, 數字文件關鍵特徵的自動擷取方法, 
+	中華人民共和國發明專利，專利號：ZL 00 1 22602.9.
+	(Yuen-Hsien Tseng, "Automatic Key Feature Extraction from Digital
+	Documents", PRC Patent No: ZL 00 1 22602.9. 
+	Application date: August 4, 2000.
+	Effective from April 26, 2006 to August 4, 2020.)
+     
+
+曾元顯, 數位文件關鍵特徵之自動擷取方法, 
+	中華民國發明專利第 153789 號.
+	(Yuen-Hsien Tseng, "Automatic Key Feature Extraction from Digital
+	Documents", ROC Patent No: 153789, Effective from April 11, 2002 to
+	January 14, 2020.)
+     
+
+
+
+
+相關計畫：
+
+
+ 
+曾元顯, 「專利主題萃取之研究開發」研究計畫,   
+	財團法人工業技術研究院, 2007/07/01-2007/11/30, 準備中。
+   
+曾元顯, 「文字探勘之視覺化模式與系統的研發」,   
+	國科會95學年度提升產業技術及人才培育研究計畫報告, NSC 95-2622-E-003-009-CC3, 
+	2006/11/01-2007/10/31, 準備中。
+   
+曾元顯, 「農業創新研究前沿分析方法之開發」研究計畫,   
+	財團法人國家實驗研究院 科技政策研究與資訊中心, 2006/08-2006/12。
+   
+曾元顯, 「文字探勘技術之發展與其在科學與技術文獻分析之應用」,   
+	國科會95學年度專題研究計畫報告, NSC 95-2221-E-003 -016 -, 準備中。
+   
+曾元顯, 「引用網路分析等先進資訊工具於政策研究分析之應用」研究計畫,   
+	財團法人國家實驗研究院 科技政策研究與資訊中心, 2005/12-2006/07。
+   
+曾元顯, 「分類不一致對文件自動分類影響的研究」,   
+	國科會94學年度專題研究計畫報告, NSC 94-2213-E-003 -012 -。
+   
+ 
+曾元顯, 「手機新聞簡訊自動摘要之研究」,   
+	國科會93學年度研究計畫報告, NSC 93-2213-E-030-007-。
+   
+曾元顯, 「少量訓練文件之自動分類研究」,   
+	國科會92學年度研究計畫報告, NSC 92-2213-E-030-017-。
+     
+
+曾元顯, 「中文索引典之自動建構及其應用」,   
+	國科會91學年度研究計畫報告, NSC 91-2413-H-030-012-。
+     
+
+曾元顯, 「中文OCR文件錯誤詞彙之自動偵測與更正及其在資訊檢索上的應用」,   
+	國科會90學年度研究計畫報告, NSC 90-2413-H-030-004- .
+     
+
+曾元顯, 「多模態音樂檔案快速關鍵旋律自動擷取及其應用」, 
+	國科會89學年度研究計畫報告,   NSC 89-2413-H-030-016- .
+     
+
+曾元顯, 「多國語文OCR文件之資訊擷取與檢索」, 
+	國科會89學年度研究計畫報告,   NSC 89-2413-H-030-006- .
+     
+
+曾元顯, 「雜訊文件關鍵詞自動擷取及應用」, 
+	國科會88學年度研究計畫報告,   NSC 88-2413-H-030-017- .
+     
+
+
+
+ Established on June 1, 1997, last modified on Sep. 1, 2007 by 
+Yuen-Hsien Tseng
+	<samtseng@ntnu.edu.tw>
+
+
+
+
+
+
+
+國立交通大學機構典藏：資訊處理觀點的組織設計模式之研究
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 資訊處理觀點的組織設計模式之研究A Study of Organization Design Model in Information Processing Approach
+作者: 洪銘賜Houng, Ming-Shy張苙雲Jang, Li-Yun管理科學系所
+關鍵字: 資訊處理;組織設計
+公開日期: 1981
+摘要: 本文旨在應用資訊處理觀點的組織設計理論模式，探討國內-R&D組織的工作性質與單位溝通結構間的權變關係。兩以資訊處理觀點水解釋傳統權變學派所研究的配合關係。
+資訊處理觀點基本上視組織為一以資訊處理活動為主體的系統。組織面臨的工作特性與工作環境產生不確定性及資訊處理需求，而組織本身的結構具有某種程度的資訊處理能力。組織的績效即是資訊處理能力配合資訊處理需求所產生的效果。
+本文依Tushman和Nadler的研究，認為資訊處理需求來自工作特性、工作環境與工作相依性等三個工作性貸變項；而在R&D組織中，單位的溝通結構則是決定資訊處理能力的重要因素。因此在實證研究部分，本研究以問捲蒐集資料，探討工作性質與溝通結構之權變關係。
+依實證資料的分析，本文獲得一大致與資訊處理觀點所推演的假設相一致的結論。即工作環境與工作相依性造成工作不確定性高，需以資訊處理能力較高的分散型溝通結構相配合才能有高績效。最後，本文亦依此結論分別對組織設計者與研究者提出建議。
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT703457001http://hdl.handle.net/11536/51603
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef推動省轄都會區捷運建設之組織架構研究 / 蕭淑蕙;Hsiao, Shu-Hui;黃台生;Tai-Shen HuangNII下的多媒體電腦新聞系統設計與資料處理模式研究 / 馬惠寧NII下的多媒體電腦新聞系統設計與資料處理模式研究 (I) / 馬惠寧設計人性化組織之芻議 / 李禮孟;LI, LI-MENG;楊孟晉;YANG, MENG-JIN電腦自動化、生產策略與組織設計 / 王耀德從指向反應與處理模式探討人如何處理電視新聞中的多資訊成分 / 鄭博文;Cheng, Po-Wen;陶振超;Tao, Chen-Chao醫療器材產品購買行為中之資訊處理之研究 / 黃偉邦;Wei-Bang Huang;張保隆;Pao-Long Chang資訊處理、極端性選項與時間觀點差異之互動關係 ─ 為何ㄧ個選項可以在不同的情況下顯得比另一個選項更好以及更差 / 葉芳伶;Yeh, Fang-Ling Tammy;張家齊;Chang, Chia-Chi元培科技大學 - 以組織資訊處理的觀點探討賦能與資訊分享之觀念性架構 / 陳翠綾; 沈佩蒂; 盧俊成 國立高雄第一科技大學 - ERP實現後的效益分析-----組織資訊處理理論的觀點 / 洪憶華; Hung I-Hua 國立臺北商業技術學院 - 資訊安全成熟度之校園實證研究–科技接受模式與組織協調觀點 / 劉維宗 中原大學 - 以建構整合觀點探討服務業組織設計模式之研究 / 顧志遠 國立高雄第一科技大學 - ERP整體性效益分析：組織資訊處理的觀點 / 周斯畏;張又介;洪憶華; S.W.Chou;Chang, Y.C 東海大學 - 會計資訊處理模式之個案研究 / 陳寶寶; Chen, Pao-Pao Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+ - One News Page VIDEO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Edition:  Global  
+One News Page“Probably the fastest-access news portal in the world”
+
+
+HOMEWORLDSPORTSPOLITICSBUSINESSPEOPLESCITECH
+Top Stories • Video • Live TV newStaff StoriesMost PopularFront Page NewsAll LatestOne News Page  > News Videos > 巨型麥哲倫望遠鏡組織專案在智利破
+
+
+
+
+巨型麥哲倫望遠鏡組織專案在智利破
+
+
+
+Published: on November 13, 2015< > Embed
+加州帕薩迪納--(BUSINESS WIRE)--(美國商業資訊)--今天，由大學和研究機構組成之國際集團的權威科學家、高層官員和支持者齊聚智利安第斯山脈一處偏遠的山頂，慶祝巨型麥哲倫望遠鏡(GMT)破土動工。該儀式代表巨型麥哲倫望遠鏡及其支撐地基的現場施工正式啟動。巨型麥哲倫望遠鏡將於2021年投入早期運行，屆時將成為全球最大的望遠鏡。它產生的影像清晰度將為哈伯太空望遠鏡(Hubble Space Telescope)影像的10倍，而且將解決宇宙學、天文物理學和太陽系外行星研究方面的主要問題。 德州大學奧斯汀分校麥克唐納天文臺(McDonald Observatory)董事長兼台長Taft Armandroff博士表示：「很高興能夠在這樣一個令天文學界無比振奮的時刻對巨型麥哲倫望遠鏡場地破土動工。借助其前所未有的尺寸和解析度，巨型麥哲倫望遠鏡將使當前和未來幾代的天文學家能夠繼續宇宙探索之旅。」 巨型麥哲倫望遠鏡將位於智利阿塔卡馬沙漠(Atacama Desert)拉斯坎帕納斯天文臺(Las Campanas Observatory)。拉斯坎帕納斯以其湛藍的天空和卓越的天文影像清晰度
+
+
+
+
+
+
+
+
+
+
+
+
+0sharesShare onFacebookShare onTwitterPost on RedditShare byEmail 
+
+You Might Like
+
+
+
+Facebook Page
+
+
+PeopleJohn McCainDonald TrumpO. J. SimpsonDavid PhelpsRyan SeacrestCurrent TopicsO J  SimpsonTillersonJeff SessionsAmerican Idol
+Spotlight📺 Live TV
+Movie Reviews
+
+
+
+Staff Stories
+How To Avoid Spoilers - A Really Quick Guide
+Nintendo Switch Fans Rejoice - These Hugely Popular Party Games Are Headed Your Way
+Amazon Enters The Messaging Game - What To Expect
+Are ATARI Back In The Console Wars?
+Will THIS Banana Save Lives?
+Why Has Nokia's Health App Acquisition Left Users Feeling Out Of Breath?
+MOVIE REVIEW: Cars 3
+This Week In History: July 17 - July 23
+
+
+
+
+
+
+
+ 
+Environmentally friendly: One News Page is hosted on servers powered solely by renewable energy
+© 2017 One News Page Ltd. All Rights Reserved.  |  About us  |  Disclaimer  |  Press Room  |  Terms & Conditions  |  Privacy Policy  |  Content Accreditation
+ RSS  |  News for my Website  |  Free news search widget  |  Help  |  Contact us  |  DMCA / Content Removal
+How are we doing? Send us your feedback  |   LIKE us on Facebook   FOLLOW us on Twitter   FIND us on Google+
+
+
+
+
+
+
+
+
+
+ - One News Page VIDEO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Edition:  Global  
+One News Page“Probably the fastest-access news portal in the world”
+
+
+HOMEWORLDSPORTSPOLITICSBUSINESSPEOPLESCITECH
+Top Stories • Video • Live TV newStaff StoriesMost PopularFront Page NewsAll LatestOne News Page  > News Videos > 巨型麥哲倫望遠鏡組織專案在智利破
+
+
+
+
+巨型麥哲倫望遠鏡組織專案在智利破
+
+
+
+Published: on November 13, 2015< > Embed
+加州帕薩迪納--(BUSINESS WIRE)--(美國商業資訊)--今天，由大學和研究機構組成之國際集團的權威科學家、高層官員和支持者齊聚智利安第斯山脈一處偏遠的山頂，慶祝巨型麥哲倫望遠鏡(GMT)破土動工。該儀式代表巨型麥哲倫望遠鏡及其支撐地基的現場施工正式啟動。巨型麥哲倫望遠鏡將於2021年投入早期運行，屆時將成為全球最大的望遠鏡。它產生的影像清晰度將為哈伯太空望遠鏡(Hubble Space Telescope)影像的10倍，而且將解決宇宙學、天文物理學和太陽系外行星研究方面的主要問題。 德州大學奧斯汀分校麥克唐納天文臺(McDonald Observatory)董事長兼台長Taft Armandroff博士表示：「很高興能夠在這樣一個令天文學界無比振奮的時刻對巨型麥哲倫望遠鏡場地破土動工。借助其前所未有的尺寸和解析度，巨型麥哲倫望遠鏡將使當前和未來幾代的天文學家能夠繼續宇宙探索之旅。」 巨型麥哲倫望遠鏡將位於智利阿塔卡馬沙漠(Atacama Desert)拉斯坎帕納斯天文臺(Las Campanas Observatory)。拉斯坎帕納斯以其湛藍的天空和卓越的天文影像清晰度
+
+
+
+
+
+
+
+
+
+
+
+
+0sharesShare onFacebookShare onTwitterPost on RedditShare byEmail 
+
+You Might Like
+
+
+
+Facebook Page
+
+
+PeopleJohn McCainDonald TrumpO. J. SimpsonDavid PhelpsRyan SeacrestCurrent TopicsO J  SimpsonTillersonJeff SessionsAmerican Idol
+Spotlight📺 Live TV
+Movie Reviews
+
+
+
+Staff Stories
+How To Avoid Spoilers - A Really Quick Guide
+Nintendo Switch Fans Rejoice - These Hugely Popular Party Games Are Headed Your Way
+Amazon Enters The Messaging Game - What To Expect
+Are ATARI Back In The Console Wars?
+Will THIS Banana Save Lives?
+Why Has Nokia's Health App Acquisition Left Users Feeling Out Of Breath?
+MOVIE REVIEW: Cars 3
+This Week In History: July 17 - July 23
+
+
+
+
+
+
+
+ 
+Environmentally friendly: One News Page is hosted on servers powered solely by renewable energy
+© 2017 One News Page Ltd. All Rights Reserved.  |  About us  |  Disclaimer  |  Press Room  |  Terms & Conditions  |  Privacy Policy  |  Content Accreditation
+ RSS  |  News for my Website  |  Free news search widget  |  Help  |  Contact us  |  DMCA / Content Removal
+How are we doing? Send us your feedback  |   LIKE us on Facebook   FOLLOW us on Twitter   FIND us on Google+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：組織引進資訊新科技的個案研究
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 組織引進資訊新科技的個案研究
+作者: 楊棋材YANG, GI-CAI毛治國MAO, ZHI-GUO管理科學系所
+關鍵字: 資訊科技;硬體;企業組織;復興工業公司;強性製造系統;電腦整合製體;個案研究;CASE-STUDY
+公開日期: 1988
+摘要: 自微電子革命以來，資訊科技以一日千里的速度，不斷推陳出新。其硬體設備成本不
+斷下降而功能卻逐漸增強。這些資訊科技提供了企業組織處理大量資訊能力，使本質
+上就是資訊處理的企業組織，在經營上造成很大的影響，整個社會也引起很大的變化
+。而有「資訊革命」、「資訊時代來臨」的說法。
+但是一些研究指出，企業組織在面對如此眾多且功能強大的新科技所提供的改善經營
+機會，其接受資訊新科技的情形並不如想像中那麼普遍。而且引進新科技的企業失敗
+的情形亦常有所聞。對於這種現象已逐漸引起實務界與學術界的關切，但相關的研究
+卻不多，而且都是採用「調查」（Survey）廣度式的研究方法。對於這種動態而且了
+解不多的現象，個案研究（Case Study）深度式的研究方法是很適當的選擇。
+針對上述之現象，本研究以個案研究，探討企業組織如何引進資訊新科技。之前先從
+文獻中找出相關的研究，整理成三個觀點：１．組織採購行為的觀點，２．資訊系統
+實施的觀點，３．科技吸收的觀點。以此三個觀點做為解釋個案的競爭觀點，再從事
+個案資料的收集與分析。
+本研究所選之個案─復盛工業公司，是國內空氣壓縮機產業的領導者。該公司對於資
+訊科技的引進不遺餘力，而且成效卓著，是國內機械業的先鋒。最近該公司更引進國
+內最大規模之彈性製造系統（FMS） ，並宣稱往電腦整合製造（CIM） 的境界邁進。
+本研究以此專案為主要對象。並對該公司之背景以及技術演進作一歷史回顧之研究。
+根據這些資料，分就文獻中所整理出的三個觀點，逐一分析，歸納比較其適用與不適
+用之處。經由比較研究以及個案中的發現，本研究提出一個組織引進資訊新科技過程
+的概念模式。
+最後，從研究結果作者亦對未來之研究方向提出一些建議，並對有意引進資訊新科技
+的業者提出一些建議。
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT772457031http://hdl.handle.net/11536/54018
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef企業導入ERP系統之個案研究 / 房佳緯;Chia-Wei Fang;劉敦仁;Duen-Ren Liu大三學生圖論概念學習之個案研究 / 陳麗玲;Li-Lin Chen;陳秋媛;袁媛;Dr. Chiuyuan Chen以人力資源角度探討製造價值延展之研究 / 袁建中;YUAN BENJAMIN J.C.我國創業投資公司投資行為之個案研究 / 劉亮君;Liu, Liang Chun;王克陸;Keh luh Wang台灣資訊通路產業代理商對客戶信用評等流程模式之研究 / 李國慶;陳穆臻哈佛商業評論通覽法 / 施耀翔;Shih, Yao-Hsiang;黎漢林;Li, Han-Lin台灣企業發展先行者優勢的困境-個案研究 / 潘玉樹;Pan, Yu-Shu;楊千;Yang, Chyan企業公共關係與形象重塑之研究-以R集團為例 / 周冠印;楊千組織研究發展成效之評估--以中油探採研究所為個案 / 林勝益;Lin ,Sheng Yea;張保隆;Chang Pao Long國立政治大學 - 運用資訊科技建構一個全新的組織 / 管康彥 國立中山大學 - 科技引進組織變格管理策略之研究-以資訊系統研究為例 / 林東清;朱彩馨 國立嘉義大學 - 科技引進組織變革管理策略之研究－以資訊系統為例 / 林東清,朱彩馨 中國文化大學 - 影響國際觀光旅館業引進資訊科技之組織因素研究 / 廖怡華 國立政治大學 - 組織智慧資本的累積與互動：科技驅動型服務組織個案研究 / 侯勝宗; 許牧彥; Hou, Sheng-Tsung;Hsu, Mu-Yen 淡江大學 - 資訊科技組織結構的影響-以惠康超市為個案 / 趙慕芬 中原大學 - 電信公司發展資訊通信科技之個案研究：組織變革觀點 / 歐陽良泓; Liang-Hong OuYang Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+
+2017國際資訊安全組織台灣高峰會
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tweet
+
+
+
+
+
+2017國際資訊安全組織台灣高峰會
+
+
+
+
+
+2017/07/11(二) 09:00(+0800)
+                             ~ 2017/07/13(四) 18:00(+0800)
+( iCal/Outlook, Google 日曆 )
+
+
+集思臺大會議中心 / 臺北市106大安區羅斯福路四段85號B1
+
+
+
+台灣雲端安全聯盟聯絡主辦單位
+
+
+
+
+
+下一步
+
+
+
+
+智慧聯網的時代來臨，許多應用都與資訊安全相關，資訊安全的議題早已跨越了國境的邊界，近來幾次大型網路攻擊事件，不論國內外都引起了許多人的憂心，不論是近來經常發生的勒索攻擊威脅，或是網站遭到資料的竊取，這些都已成為全球性的資安問題，如何因應新興的資安問題所帶來的資安風險，成為我們所關註的話題。
+今年的國際資訊安全組織台灣高峰會，由Cloud Security Alliance台灣分會、The Honeynet Project台灣分會以及OWASP台灣分會共同主辦，同步接軌Cloud Security Alliance、The Honeynet Project以及OWASP等國際資訊安全組織最新研究，來自國內外的專業講師帶來的精彩分享，提供與會人員掌握全球資訊安全發展脈動與趨勢，有別於其它國內區域型或市場導向的資訊安全會議，會議內容涵蓋雲端服務安全、誘捕資安技術、事件掌握與應變，結合國際組織帶來全方位的全球國際資安視野。
+
+
+
+
+主辦單位
+
+
+
+台灣雲端安全聯盟
+聯絡主辦單位
+
+
+
+
+活動地圖
+
+
+
+
+
+                            
+                            檢視較大的地圖
+                            
+                            
+
+
+
+
+
+
+活動票券
+
+
+
+
+票種
+販售時間
+售價
+
+
+
+
+【一般】7/11 OWASP Taiwan Day 2017
+
+
+2017/07/06 14:20(+0800)
+                                             ~
+                                            2017/07/06 20:00(+0800)
+
+結束販售
+
+
+
+TWD$1,800
+
+
+
+
+【一般】7/12 HoneyCon Conference 2017
+
+
+2017/07/06 14:20(+0800)
+                                             ~
+                                            2017/07/06 20:00(+0800)
+
+結束販售
+
+
+
+TWD$1,000
+
+
+
+
+【一般】7/13 CSA Taiwan Summit 2017
+
+
+2017/07/06 14:20(+0800)
+                                             ~
+                                            2017/07/06 22:00(+0800)
+
+結束販售
+
+
+
+TWD$1,000
+
+
+
+
+【一般】7/11-13 高峰會聯票
+
+
+2017/07/06 14:20(+0800)
+                                             ~
+                                            2017/07/06 20:00(+0800)
+
+結束販售
+
+
+
+TWD$3,600
+
+
+
+
+【Sponsor area】7/11 HoneyCon Workshop A-資料分析
+
+
+2017/07/07 10:30(+0800)
+                                             ~
+                                            2017/07/07 12:00(+0800)
+
+結束販售
+
+
+
+免費
+
+
+
+
+【Sponsor area】7/11 HoneyCon Workshop C-誘捕技術
+
+
+2017/07/07 10:30(+0800)
+                                             ~
+                                            2017/07/07 19:00(+0800)
+
+結束販售
+
+
+
+免費
+
+
+
+
+【Sponsor area】7/11-13 高峰會
+
+
+2017/07/07 10:30(+0800)
+                                             ~
+                                            2017/07/07 12:00(+0800)
+
+結束販售
+
+
+
+免費
+
+
+
+
+【推廣專區】7/11-13 高峰會
+
+
+2017/07/07 10:30(+0800)
+                                             ~
+                                            2017/07/07 12:00(+0800)
+
+結束販售
+
+
+
+免費
+
+
+
+
+
+
+下一步
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+臺灣資訊組織與Metadata教育之研究 | Mei-Ling Wang | 圖書館學與資訊科學
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+語言(Language)
+
+
+English
+繁體中文
+
+
+
+
+
+線上投審稿
+
+
+
+使用者
+
+
+
+帳號
+
+
+
+
+
+密碼
+
+
+
+
+
+ 記住我的帳號
+
+
+
+
+
+
+
+
+投稿須知
+徵稿辦法
+文稿體例
+審稿辦法
+表格和寫作版式下載
+
+
+審稿須知
+審稿作業
+審查要點
+審查倫理
+審稿作業與倫理
+
+
+著作權與隱私
+著作權聲明
+隱私權聲明
+出版聲明
+
+
+索引單位
+臺灣人文及社會科學引文索引資料庫(TCI-HSS) 
+DOAJ 
+
+LISA 
+PAIS 
+Ulrich's 
+
+
+編輯委員會
+編輯委員
+設置辦法
+
+
+引導資訊
+
+給讀者 給作者 
+
+
+
+
+
+
+首頁
+關於本刊
+當期期刊
+各期目錄
+查詢
+登入
+註冊
+聯絡資訊
+
+
+
+首頁 >
+	第 33 捲 第 1 期　2007年 04月 >	Mei-Ling Wang
+
+
+
+
+臺灣資訊組織與Metadata教育之研究
+王梅玲 Mei-Ling Wang 
+
+
+摘要
+
+網路時代，圖書館員需要具備專業能力以有效執行資訊組織工作及整理網路與數位資源，圖書資訊學校需因應時代變遷與圖書館期許調整資訊組織與數位資源組織課程以培養資訊組織專家。本研究旨在探討我國資訊組織與Metadata教育現況及是否符合圖書館需求，研究目的包括：(1)調查我國圖書資訊學系所提供資訊組織課程現況。(2)調查我國圖書資訊學系所提供網路與數位資源組織課程現況。(3)探討Metadata課程與編目課程的關係。(4)探討我國資訊組織課程是否符合圖書館員的專業能力需求。本研究利用問捲調查輔以網站內容分析，調查我國圖書資訊學系所資訊組織課程與Metadata課程現況，並探討Metadata與編目課程關係，以及資訊組織供應與圖書館需求之平衡。研究結果顯示臺灣9所圖書資訊學校開設22門基礎資訊組織課程、46門進階課程、6門網路與數位資源組織課程，共74門，平均每校開設8.2門課，其中有2門Metadata課程。 頁次：103-122
+
+
+
+關鍵詞
+
+資訊組織;資訊組織教育;專業能力;編目教育;後設資料;後設資料教育;課程設計
+
+
+詳細資料
+
+
+標題
+臺灣資訊組織與Metadata教育之研究
+
+
+作者
+王梅玲 Mei-Ling Wang 
+
+
+學門領域
+
+
+
+關鍵詞
+資訊組織;資訊組織教育;專業能力;編目教育;後設資料;後設資料教育;課程設計
+
+
+摘要
+網路時代，圖書館員需要具備專業能力以有效執行資訊組織工作及整理網路與數位資源，圖書資訊學校需因應時代變遷與圖書館期許調整資訊組織與數位資源組織課程以培養資訊組織專家。本研究旨在探討我國資訊組織與Metadata教育現況及是否符合圖書館需求，研究目的包括：(1)調查我國圖書資訊學系所提供資訊組織課程現況。(2)調查我國圖書資訊學系所提供網路與數位資源組織課程現況。(3)探討Metadata課程與編目課程的關係。(4)探討我國資訊組織課程是否符合圖書館員的專業能力需求。本研究利用問捲調查輔以網站內容分析，調查我國圖書資訊學系所資訊組織課程與Metadata課程現況，並探討Metadata與編目課程關係，以及資訊組織供應與圖書館需求之平衡。研究結果顯示臺灣9所圖書資訊學校開設22門基礎資訊組織課程、46門進階課程、6門網路與數位資源組織課程，共74門，平均每校開設8.2門課，其中有2門Metadata課程。 頁次：103-122
+
+
+期刊名稱
+圖書館學與資訊科學
+
+
+捲期
+第 33 捲 第 1 期　2007年 04月
+
+
+出版日期
+
+					2007-04-01
+		         (YYYY-MM-DD)
+	
+
+
+語言
+zh (English=en; 繁體中文=zh)
+
+
+類型
+
+
+
+URI
+http://jlis.glis.ntnu.edu.tw/ojs/index.php/jlis/article/view/492
+
+
+
+		全文
+    
+
+全文檔案下載
+
+
+檔案格式
+
+					PDF			
+
+
+
+
+
+
+
+
+
+ 
+Copyright© 國立臺灣師範大學圖書資訊學研究所
+              地址： 10610 臺北市大安區和平東路一段162號
+              電話：(02)7734-5427 E-mail：jlis@ntnu.edu.tw
+
+

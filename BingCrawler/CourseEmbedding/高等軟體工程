@@ -1,0 +1,2926 @@
+高等軟體工程(Software Engineering;SE)
+
+
+
+
+
+
+
+
+簡介
+
+1968年秋，NATO（北約）科技委員會召集計算機科學家、程式設計師、和工業界巨頭，討論“軟體危機”的對策。會議上第一次提出軟體工程（software 
+  engineering）概念。 
+  大多數軟體開發項目的失敗，並不是由於軟體開發技術方面的原因。它們的失敗是由於不適當的管理造成的。遺憾的是，盡管人們對軟體項目管理重要性的認識有所提高，但在軟體管理方面的進步遠比在設計方法學和實現方法學上的進步小，至今還提不出一套管理軟體開發的通用指導原則。 
+
+  會寫程式沒什麼了不起，畢竟程式語言越來越高階，API 
+  越來越多，開發工具越來越好用，寫程式的門檻自然就大大地降低了。想要開發出有價值的中大型系統，軟體工程就很重要。這麼比喻好了，你可以隨便找一兩個工人用磚或木材來蓋一棟矮房，但是如果想蓋一百多層樓的紐約世貿雙星大樓，你非得有良好的工程規劃不可，軟體不也是如此？程式員名片上的頭銜都是工程師，雖然和建築工程師、機械工程師 
+  ... 一樣都被稱為工程師，但比較起來，軟體產業的工程師卻是最不工程導向的 
+軟體工程內容：
+
+軟體開發技術包括軟體開發方法學、軟體工具和軟體工程環境。 
+  軟體項目管理包括軟體度量、項目估算、進度控制、人員組織、配置管理、項目計畫等。 
+  開發流程由強調直線式流程(waterfall)轉為強調往覆式流程(iterative)。 
+  往覆式流程的主要精神是分析一些，設計一些，實作一些，執行一些，也就是將整個開發流程切割成數個週期(iteration)，每個週期都是一個叫小型的直線式流程，並且強調週期結束時都有可以執行的結果，而每個週期都是以前一週期的結果為基礎，在新增需求的方式進行，直到所有的軟體需求都滿足為止。 
+  
+SA -> SD -> coding -> test -> maintenance 
+process
+
+Quality Assurance 
+  Configuration Management 
+  Project Management 
+  CMMI
+software system
+
+Business application 
+  web application 
+  real-time 
+  safety-critical : 常用的formal工具為 Petri Nets
+
+Petri Nets 的 reachability graph 常因可能的狀況太多而不可能分析，所以有許多論文會討論如何簡化它 
+  
+　
+軟體架構
+隨著Internet的興起，分散式系統的環境日趨成熟，要將整個Internet視為區域網路般的存取資源與交換資料，程式設計上就必須考慮到所謂的3層式架構 
+
+
+展示層(Presentation Tier) 
+  將UI的部分獨立出來，除了可讓專業的美工處理之外，還要考慮到程式邏輯的變動不會影響到畫面，或是畫面的變動不會影響到程式邏輯 
+  商業邏輯層(Business Logic Tier) 
+  將企業運作的邏輯獨立成元件，以方便更新程式碼時只需要異動相關的元件即可 
+  資料層(Data Tier) 
+  將關於資料存取的部分獨立出來，如此一來在變動資料庫架構時便不需要更改程式邏輯或畫面 
+
+單機架構(1-Tier)
+展示層，商業邏輯層，資料層都在單機上處理，適用於文字處理，個人資料處理(PIM)等單機架構，其瓶頸為
+
+檔案型的資料有傳輸浪費頻寬與異動需鎖定等問題 
+  商業邏輯或使用者介面改變，需重新部署 
+主從架構(Client/Server , 2-Tier)
+將資料層分離出來，儲存到資料庫伺服器，適用於多人存取資料的環境，其瓶頸為
+
+商業邏輯或使用者介面改變，需重新部署 
+  資料庫伺服器容易成為效率的瓶頸，例如Client端的連線數會增加伺服器connection紀錄負擔 //因此我們應該只在取用資料與將資料回存時才進行connection
+商業邏輯應該放在client或server端的問題 
+  
+放在前端，資料庫可不受限制的抽換，但商業邏輯改變，需重新部署 
+    放在後端，通常是利用Stored Procedure，但這樣就不易抽換資料庫軟體 
+分散式架構(N-Tier)
+將展示層，商業邏輯層(放在AP Server)，資料層(放在Database 
+Server)都各自獨立，適用於平臺不同，網際網路的環境。若展示層以一般開發工具開發稱為Rich 
+Client，若利用動態網頁技術運作於瀏覽器上則稱之為Thin Client。其瓶頸為
+
+AP Server 與 Database Server除了穩定運作的需求外，也易成為效率的瓶頸 
+  需要能將商業邏輯包裝成元件的技術，門檻較高 
+網路服務(Web Service)
+將整個網際網路視為區域網路甚或是作業系統般，徹底實踐分散式系統的美麗新天地，使用網際網路上的資源就如同取用單機資源一般容易，主要是利用XML作為資料轉換的標準，透過SOAP通訊協定穿過防火牆，打破網際網路的隔閡目前有Sun 
+的Java One架構與Microsoft的.NET架構可供參考。
+　
+系統分析與設計(System Analysis and Design)
+資訊系統的種類
+
+交易處理系統(Transaction Processing System;TPS) 
+  管理資訊系統(Management Information system;MIS) 
+  決策支援系統(Decision Support System;DSS) 
+  高階主管資訊系統(Executive Information System,EIS) 
+  專家系統(Expert System;ES) 
+  
+使用者介面 
+    推理機 
+    知識庫 
+作業系統(Operational Systems) 
+  辦公室自動化系統(Office Automation Systems;OA) 
+資訊系統的建置策略
+
+公司內部獨力完成 
+  
+使用者自建(End User Development;EUD) 
+    資訊部門發展 
+公司外部取得 
+  
+委外開發(Outsourcing) 
+    套裝軟體(Application Package) 
+其他方式 
+  
+與軟體公司合作等 
+系統開發模式(Software Process)
+
+編碼與修正模式(Code-and fix Model) 
+瀑布模式(Waterfall Model)：Royce(1970)  
+   系統發展生命週期(System Development Life Cycle; SDLC) 
+  
+特徵 
+    
+適用於需求明確，領域知識(Domain Know-How)容易取得的專案 
+      強調開發過程需有完整的規劃，分析，設計，測試及文件等管理控制 
+      前一階段完成後進入下一階段 
+      沒有明確規定要劃分成多少個階段，每一階段皆有文件產出 
+通常劃分5~7階段不等( 
+    
+初步調查 (Preliminary Investigation) 
+      系統分析 (System Analysis) 
+      系統設計 (System Design) 
+      系統開發 (System Development) 
+      系統實施與評估 (System Implementation and Evaluation) 
+漸增模式(Incremental Model)：Mills(1971) 
+  
+強調需求可分成幾個部分 
+    開發週期可反覆進行 
+雛形模式(Prototyping Model)：Bally(1977) 
+  
+適用於需求不明確，專案小，應用領域不熟悉或高風險之專案 
+    強調雛形之快速開發，以雛形作為使用者與資訊人員溝通之工具，使用者高度參與等 
+    雛形策略 
+    
+演進式雛形(Evolutionary Prototyping) 
+      用後丟棄式雛形(Rapid Throwaway Prototyping)：因成本較高，故適用於風險最高的情形 
+
+螺旋模式(Spiral Model)：Boehm(1988) 
+  
+強調「風險分析」結合了SDLC與雛形模式 
+    螺旋模式的4個步驟 
+    
+找出系統目標，可行方案與限制 
+      依目標與限制評估方案 
+      開發雛形 
+      使用者評估，決定下一步驟 
+
+需求擷取與分析
+使用者需求的分類
+
+巨觀需求：欲電腦化的環境，作業程序與範圍，輸出與輸入所需之資訊或表單及系統目標，限制，主要功能等，盡可能在需求分析階段中釐清與確定。 
+  細部需求：使用者介面之要求，例外狀況之處理，錯誤及輔助訊息之顯示，通常到設計階段處理。 
+需求的擷取方式
+
+查閱文件 
+  實地觀察(Observation) 
+  訪談(Interview) 
+  
+開放式訪談(Open Interview)：類似交談 
+    結構化訪談(Structured Interview)：類似詢問 
+問捲 
+  
+簡單隨機抽樣 
+    分層抽樣 
+    便利抽樣 
+    
+開會討論 
+  聯合開發(Joint Application Development) 
+  
+範圍界定 
+    關鍵人員的熟悉 
+    會議準備 
+    會議進行 
+    文件產生 
+設計準則良好的設計希望達到模組的內聚力為功能內聚力，耦合力為資料耦合力 
+內聚力(Cohesion)：衡量模組完成一件工作的程度
+
+功能內聚力(Function Cohesion)：單獨處理一件工作 
+  順序內聚力(Sequential 
+  Cohesion)：模組順序執行，一個模組的輸出會成為下一組的輸入 
+  溝通內聚力(Communication Cohesion)：使用相同的資料 
+  程序內聚力(Procedural Cohesion)：按照順序執行而不共用資料 
+  邏輯內聚力(Logical Cohesion)：根據上層模組傳來的參數決定執行的功能 
+  
+耦合力(Coupling)：衡量模組間相互關連的程度
+
+資料耦合力(Data Coupling)：模組間藉由資料傳遞參數 
+  控制耦合力(Control Coupling)：A模組傳遞旗標控制B模組 
+  共同耦合力(Common Coupling)：兩模組使用相同的資料區 
+  內容耦合力(Content Coupling)：A模組可使用B模組的程式碼或改變其變數 
+物件導向技術(Object-Oriented Technique)
+
+針對日趨複雜之軟體需求的挑戰，軟體業界發展出了物件導向 的軟體發展模式，作為針對「軟體危機」的對策。 
+  物件導向之觀念起源於模擬語言(1966, Simula 語言)，以物件模式來描述真實系統，並將資料抽象化(Data 
+  Abstraction)、封裝、繼承與同名異式的觀念融入於物件系統開發中。 
+  第一個純粹的OOP語言：1980全錄(Xerox)公司的PARC研究中心所開發的Smalltalk-80 
+OOP的先驅 Brad Cox 曾提出Software-IC的概念，而要達到軟體IC的概念，則需要下列特性
+
+物件 & Message 
+  繼承性(inheritance) 
+  封裝性(encapsulation) 
+  動態連結(dynamic binding) 
+抽象化(Abstraction) 
+
+抽象化所描述的過程，就是由許多物件中抽離出重要的特性來，而這些特性，足以讓被抽象化的物件，與別的物件分別開來。同時，對於物件抽象化的結果，也因我們的需要不同，而有所變化。 
+
+  所有的抽象化都是系統的發展，為了維繫存在，必須適應變化的唯一路途。 
+  抽象化的目標與物件導向一樣，就是『讓我們更容易模擬世界，並加以處理』。 
+物件(Object)=案例(Instance)
+
+由一群具有相同資料結構與相同行為的物件所描述的集合中，某一個特定且存在的物件。 
+  物件是一個具有狀態(State)、行為(Behavior)與識別(Identity)的實體或抽象化概念(Abstract 
+  Concept)，且其行為會影響其狀態。 
+  物件是一個封包，包括了名稱(name)、屬性(attribute)及操作(operation)3部分。 
+  
+在C++中稱為資料成員(Data Member)與成員函式(Member Function)在Java中稱為欄位(Field)與方法(Method)
+
+每一個物件都是一個被class所分類的instance (Every object is an instance of a class) 
+
+類別(Class)=物件類型(Object 
+Type)=抽象化資料型態(Abstract Data Type; ADT)
+
+由一群具相同資料結構與行為的物件，所形成的集合，經由抽象化(Abstraction)後稱之為類別。 
+  類別是一種定義(Definition)、描述(Description)、樣版(Template)，故可以類別建立新的物件。 
+封裝(Encapsulation)
+
+將資料與操作此資料的方法包裝成一個物件稱之為封裝。 
+  封裝後物件的結構分為2部分 1.介面(Interface) 2.實作(Implementation) 
+  封裝將物件的實作細節隱藏，使其與外界環境隔離，只允許該物件所包含之操作修改其資訊，稱之為資訊隱藏(information hiding)。 
+  
+繼承(Inheritance)
+
+所謂繼承就是從基底類別(base class)，建立衍生類別(derived 
+  class)。衍生類別除了繼承基底類別的所有特性外，可依據需求建立新的功能或修改，其基底類別不會受任何影響。繼承可提升程式碼的重複使用性(reusability)。 
+
+  
+多重繼承(multiple inheritance)：一個類別可以直接繼承多個基底類別─網路結構。 
+    多重繼承最常引發的麻煩便是「模稜兩可」(ambiguity) 。 
+    簡單繼承(single inheritance)：一個類別最多只能直接繼承一個基底類別─樹結構。 
+類別間的層級關係 
+  
+父類別(Superclass)、一般化(Generalization)：萃取類別的相同屬性與操作所成的上層類別。 
+    子類別(Subclass)、繼承、特殊化(Specialization)：在既存類別，加上專門的特性所成的下層類別。 
+    「is a」的關係：子類別 is a 父類別，如鋼琴是樂器。 
+Polymorphism 多型, 動態繫結(Dynamic binding)
+
+定義相同名稱的操作，以不同的方式處理不同類型的資料。 
+  多型在程式執行期利用動態連結(Dynamic Binding)方式判斷訊息參數的類型與個數來決定運作的方法。 
+  達到物件導向中「多型」的方法 
+  
+抽象類別 (abstract 
+    class)：抽象類別是為了讓方法的使用更多樣化，物件轉換型別為抽象類別後，即使方法名稱相同，其實作的內容與執行結果卻不同。 
+
+物件導向的系統開發方法
+物件導向的系統開發是一個反覆(Iterative)的過程，包括了三個階段 
+
+需求分析 ->(需求模式) 主要以使用個案圖、活動圖、藍圖、資料詞彙、介面元件等作為表達工具。 
+  系統分析與設計 -> (分析模式) 將需求模式中的系統表達成一個物件架構，包括了物件圖與類別圖 (設計模式) 
+  將物件架構至現況之實施環境，包括了循序圖、合作圖、狀態圖、活動圖。 
+  實施與測試 ->(實施模式)元件圖、部署圖。(測試模式) 
+物件導向的塑模
+軟體開發如同建築設計，過程中須將需求、分析、設計、實作、佈署等各項工作流程之不同觀點予以呈現，即軟體系統之塑模(Modeling)。 
+
+Booch等人 / Rational Software 提出可從4+1觀點(4+1 view)來看軟體系統架構(凸顯使用個案的重要性)
+
+使用個案觀點(Use Case View)：以使用個案充分表達軟體功能需求 
+  設計觀點(Design View)：以物件的觀念，表達出軟體設計結果 (Logical View) 
+  流程觀點(Process View)： 
+  實施觀點(Implementation View) 
+  佈署觀點(Deployment View) 
+根據上述5個觀點我們可以整理出6種塑模 
+
+使用個案塑模：使用個案圖 
+  物件資料結構塑模：類別圖、物件圖 
+  物件互動行為塑模：互動圖(包含了循序圖、合作圖) 
+  作業行為塑模：活動圖、狀態圖 
+  使用者介面塑模： 
+  系統元件與組織結構塑模：元件圖、部署圖 
+物件導向的軟體維護
+
+軟體的維護就是軟體的再生，維護較開發而言要花更多的金錢與時間 
+  軟體維護的思維上就是要考慮到可維護性(Maintainability)與可複用性(Reusability)
+傳統的複用方案並無法兼顧可維護性與可複用性的目標，物件導向設計的複用方式可在含有宏觀商業邏輯的抽象層次的上層結構來考量，以達到可維護與可複用的目標。 
+
+  物件導向類別設計的法則
+
+開閉原則(Open-Closed Principle ; OCP) 
+    Liskov代換原則(Liskov Substitution Principle ; LSP) 
+    依賴倒轉原則(Dependency Inversion Principle ; DIP) 
+    介面隔離原則(Interface Segregation Principle ; ISP) 
+    
+開閉原則(Open-Closed Principle ; OCP)
+
+模組應當敞開擴充大門，但關閉修改之窗。 
+  如何達成開閉原則，關鍵在抽象化。 
+  不允許更改的是系統的抽象層，允許擴充的是系統的實作層。 
+  OCP的另一個角度是對可變性的封裝原則(Principle of Encapsulation of 
+  Variation)即找到一個系統的可變因素，並將之封裝起來。 
+  可變性必須被封裝，那不同的可變性呢？應用繼承來處理，因此繼承應被視為封裝變化的方法，但繼承的層數避免超過2層以免不同的可變性混和。 
+  應避免將單純的流程控制轉移語句改寫成多型，除非內含了某種商務邏輯。 
+  所有的設計樣式(Design Pattern)都是針對不同的可變性封裝，使系統在不同的角度上達到開閉原則。 
+Liskov代換原則(Liskov Substitution Principle ; LSP)
+
+子類別應該可以使用其基礎類別替代。 
+  Liskov代換原則是繼承複用的基石，只有當衍生類別可以替換掉基礎類別，且軟體的功能不受影響時，其類別才算真正的被複用，而衍生類別也才能夠在基礎類別的基礎上增加新的行為。 
+
+  Liskov代換原則要求凡是基礎類別使用的地方，衍生類別一定適用，故衍生類別必須包含全部基礎類別的介面 
+  針對違反LSP設計時可行的重構(Refactoring)方式 
+  
+當類別A錯誤的繼承類別B時，可建構一個新的抽象類別C，作為2個具體類別A,B的父類別 
+    當類別A錯誤的繼承類別B時，可重構為類別B委派(Delegate)類別A 
+依賴倒轉原則(Dependency Inversion Principle ; DIP)
+
+要依賴於抽象，而不要依賴於具體。 
+  依賴倒轉原則的策略是依賴介面或抽象方法及類別，而不是具體方法或類別，包括了下列情況都得遵循DIP 
+  
+變數的類別宣告 
+    參數的類別宣告 
+    方法的傳回型態宣告 
+    型態的轉換 
+抽象層級含有宏觀和重要的商務邏輯，具體層級含有與實作有關的演算法語次要的商業邏輯，而傳統的程序性設計或錯誤的類別規劃會讓抽象層級依賴於具體層級，因此依賴倒轉原則可倒轉此一現象，讓實作改變時，商業邏輯無須變動。 
+
+  一個具體Java類別應當只實作Java介面和抽象Java類別中宣告的方法，而不應當給出多餘的方法。 
+  若Java程式要參照一個物件，若此物件有一個抽象型態，則應使用此抽象型態作為靜態型態(Static Type) 
+  
+靜態型態(Static Type) = 實際型態(Apparent Type)：變數被宣告時的類別 
+    實際型態(Actual Type)：變數所參照的物件真實型態 
+若一個物件存在其抽象類別，就應當在任何參照此物件的地方使用抽象類別 
+  Java語言中建構一個物件的程式是違背OCP與DIP的，但可在此類別被建構出來後過多型性使得使用端依賴於其抽象類別。 
+  
+List employees = new Vector(); 
+DIP是最難實作的原則，因為會使用到物件工廠就會產生大量的類別。 
+  DIP假定所有的具體類別都是會變化的並不完全正確，因為某些具體類別是相當的穩定因此並不需要為此發明一個抽象型態。 
+介面隔離原則(Interface Segregation Principle ; ISP)
+
+由客戶端指定的許多介面比一個一般用途的介面好。 
+  使用多個專門的介面比使用單一的總介面要好，否則會造成對介面的污染(Interface Contamination)。 
+  一個類別對另一個類別的依賴性應當是建立在最小的介面上的。 
+統一模塑語言(Unified Modeling Language, UML)
+
+由Rational software 
+  corporation融合了物件導向三劍客的方法論，統一了以物件導向分析與設計的表示法，於1997年11月由OMG(Object Management 
+  Group)公佈為物件導向視覺化塑模的標準 
+  UML是一種塑模語言，而非方法論，它並沒有規範符號的使用時機與次序僅利用符號來達到溝通的目的，從分析，設計到實作都可以使用同一套符號來表達，因此應用時可以搭配適合的方法論。 
+
+  UML之所以重要，就是因為他有助於軟體開發人員之間的溝通。我們必須在某種程度上使用他以協助溝通，而非阻礙溝通。 
+  UML設計的理念 
+  
+使用個案導向(強調以使用者的角度來定義功能需求) 
+    軟體架構設計(強調系統開發要有藍圖) 
+    往覆，漸增式流程(強調降低專案風險) 
+使用個案圖(Use Case Diagram)
+
+以OO技術開發系統時在需求分析時常利用典型的情節(Scenario)來進行需求塑模，這種個案模式一直沒有統一的表達方式直到Ivar 
+  Jacobson等人(1996) 才將使用個案的表達正式化。 
+  使用個案圖表示從使用者之觀點描述系統的行為者與系統間之互動行為與關係，包含了行為者和使用個案二個元件，此法在資料與展示格式上僅利用文字描述，若能搭配結構化中的藍圖與資料詞彙則可補強其不足之處。 
+
+  使用案例是專業分工的依據，是專案進度評量的重要因素。 
+行為者(Actor) = 參與者
+
+環境中與系統有互動關係的人或事物，有該使用個案的啟動者即主要行為者(Primary 
+  Actor)與其他參與者即次要行為者(Secondary Actor)。 
+  參與者被繪製成一個火柴棒形狀的小人並將名稱置其下方。 
+使用個案(Use Case)
+
+使用者透過介面要求系統所做一系列相關的事件流，包含了最主要的事件即基本路徑(Basic 
+  Course)與其他衍生事件或可能發生的錯誤即替代路徑(Alternative 
+  Courses)。 
+  使用案例被繪製成橢圓形並將名稱置於圖形內部或底部來表示 
+  使用個案間的關係： 
+  
+關聯(association)：使用個案與行為者之間的關係，以實線段表示。 
+    包含(Include)：一個使用個案會用到另一個使用個案，二個或以上的使用個案具有相同的行為模式時，可將該段行為模式獨立出來成為一個新的使用個案，再建立包含的關係， 
+    用一個虛線實心箭頭的線段並含有關鍵字 <<include>> 。 
+    延伸(Extend)：在某情況下，使用個案會插入另一使用個案的定義中，用一個虛線實心箭頭的線段並含有關鍵字 
+    <<extend>> 。 
+    一般化(Generalization)：一個使用個案繼承另一個使用個案的行為， 
+    用一個實線空心箭頭表示的線段從子使用個案指向父使用個案，且箭頭朝向父使用個案端 。 
+情節、劇本(Scenario)
+使用個案中的某一個單一執行路徑，可能是基本路徑也可能是替代路徑。
+建構使用個案圖的步驟
+
+找出行為者：從環境圖找 
+  找出使用個案：由行為者找出使用個案 
+  描述使用個案：可用自然語言或事件條列式 
+  找出使用個案間的關係： 
+  繪製使用個案圖 
+類別圖(Class Diagram)
+
+表示系統存在之類別、介面及它們間之靜態資料結構與邏輯關係 
+  通常以三層表示 
+  
+類別名：正體字：具體類別，斜體字：抽象類別，介面：<interface> 
+    屬性層： 
+    方法層： 
+屬性與方法有四種封裝方式 
+  
+public:以符號 + 表示 
+    private:以符號 - 表示 
+    protected:以符號 # 表示 
+    static:以符號 _ 表示 
+描述介面的類別圖：沒有private的封裝 
+  描述物件的類別圖：描述類別的實體，名稱下需加底線 
+關係
+類別間的關係包括
+
+依賴 / 相依(Dependency) 
+  
+使用的關係，表達一個類別會用到另一個類別 
+    另一個類別的改變會影響到使用他的類別，但反之不必然 
+    一類別的區域變數，方法參數，方法返回值，對靜態方法呼叫時是另一個類別時稱之 
+    以虛線開箭頭表示。-------> 
+一般化(Generalization) 
+  
+繼承的關係，包括了類別間的繼承，介面間的繼承，類別對介面的實作等 
+    以實線空心箭頭表示。 
+關聯/結合(Association) 
+  
+同一層級的類別間靜態的結構關係 
+    Java語言中是使用實體屬性實作的 
+    其關係有雙向與單向，建議多用單向 
+    關係有基數(Multiplicity)，關係有名稱，但通常均予以省略 
+    以實線段表示。 — 
+    
+依關聯的類別個數來分 
+      
+二元關聯(Binary Association) 
+        多元關聯(n-ary Association) 
+依描述整體與部分的關係來分(不同層級的類別) 
+      
+聚合 / 聚集(Aggregation)：以實線且整體端加一個空心的菱形表示。◇— 
+        合成 / 組合(Composition)：整體物件需負責部分物件的生命週期，以實線且整體端加一個實心的菱形表示。◆— 
+      
+實現化(Realization) 
+  
+以介面實現其他類別之描述 
+    以虛線空心箭頭表示。 
+基數(Multiplicity) =物件的數量關係 
+在類別連線上與類別之旁以數字標示與之關聯的數量。
+物件圖(Object Diagram)
+
+描述系統於某一時間點的靜態結構，也稱為案例圖，包含了物件與連線二個元件。 
+  物件間的關係稱為連線(Link)。 
+循序圖(Sequence Diagram)
+
+以時間發生之先後順序來表達物件間的訊息傳遞與處理之程序，包含了類別之物件、訊息、操作、生命線與控制焦點等元件。 
+  循序圖有2個象線 
+  
+垂直象線依照訊息呼叫發生的時間順序，來描述訊息呼叫的先後次序。 
+    水平象線描述一個物件實體傳送訊息給哪一個物件實體。 
+訊息(Message) =刺激(Stimuli)
+由某一物件傳送訊息至另一物件以啟動操作，以上下位置表示順序。
+生命線(Lifeline)
+表達物件再某時段的存在，以物件下與物件垂直之虛線表示。
+控制焦點 (Focus of Control) =啟動條(Activation Bar)
+表達物件執行某動作之時段，與生命線重疊且以高瘦的矩形表示。
+系統邊界 (System Border) 
+系統與外界溝通之介面，通常放置在循序圖的最左側。
+建構循序圖的步驟
+
+確認物件 
+  描述操作 
+  描述訊息 
+  繪製循序圖 
+合作圖(Collaboration Diagram)
+
+著重表達物件間之連結結構，並能同時展現物件間的訊息傳遞與處理之程序，包含了類別之物件、連結、訊息與操作等元件。 
+  Rational Rose可將循序圖直接轉換成合作圖。 
+  合作圖與循序圖相比較，少了物件生命線與焦點控制，多了路徑與序數 
+連結(Link)
+以直線連接二個物件也就是物件間的路徑(Path)。
+訊息(Message)
+訊息發生順序以自然數或杜威數等編號來表達。
+活動圖(Activity Diagram)
+狀態圖(State Diagram)
+元件圖(Component Diagram)
+部署圖(Deployment Diagram)
+設計樣式(Design Patterns)
+
+建築設計學家 亞歷山大 Christopher Alexander提出 
+  
+無名之質(The Quality Without a Name ; QWAN) 
+    門(The Gate) 
+    道(The Way)：又稱作「永恆之道」(The Timeless Way) 
+Alexander認為 透過追尋「道」，可以通過「門」到達「質」是任何一種工程設計的發展過程 
+  「樣式是某外在背景環境 (Context) 下﹐對特定問題 (Problem) 的慣用解決 (Solution) 」 
+  。 
+  樣式是不斷的重複發生，而有其重複性。但重複的不是問題的本身，而是問題的本質，所以要把不同問題以相同的樣式來處理，勢必要擷取其本質，也就是『抽象』。所以研究樣式必須重視問題本質而非問題的表象。同樣的問題的背景環境及解決之道也是抽象的。 
+  
+設計樣式是對軟體設計模型進行不斷追求完善的使用工具，但樣式的使用無絕對的公式，需要經過大量的個人實踐才能熟練掌握。 
+  重構(Re-factory)是對不滿意的程式碼進行彌補的時候所需要的技術，因此重構的存在證明瞭樣式並非軟體設計的銀彈(Silver 
+  Bullet) 
+  樣式的要素 
+  
+名字(Name) 
+    問題(Problem) 
+    解答(Solution) 
+    舉例(Examples) 
+    相關樣式(Related Patterns) 
+    已知應用(Known Uses) 
+樣式的種類 
+  
+設計樣式(Design Patterns)： GoF提出 
+    
+建構型樣式(Creational Pattern) 
+      結構型樣式(Structural Pattern) 
+      行為樣式(Behavioral Pattern) 
+架構樣式(Architecture Patterns) 
+    分析樣式(Analysis Patterns)： Martin Fowler提出 
+    反樣式(Anti-Patterns) 
+物件導向樣式的經典：四人幫(Gang of Four ; GoF) 即Erich Gamma、Richard Helm、Ralph 
+  Johnson、John Vlissides等四人，於1995年出版之 Design Patterns - 
+  Elements of Reusable Object-Oriented Software這本經典著作，包含23種軟體設計樣式。 
+  
+軟體能力成熟度模型(Capability Maturity Model 
+Integrated, CMMI)
+美國國防部對於軟體的策略是希望外包(outsourcing)的，但為了掌握軟體 產品的品質與進度，希望開發過程能夠透明化，因此於1980 
+年時，提出對軟體承包商的軟體開發能力進行評估的要求。於是美國國防部與卡內基美隆大學(Carnegie-Melon University ; 
+CMU)共同設立了軟體工程研究所(Software Engineering Institute; SEI)。SEI於1988年研究發佈了軟體開發程序成熟度框架(CMM)，提供了軟體開發程序評估和軟體能力評價兩種評估方法和軟體成熟度提問單，來自產官學的技術和管理專家陸續進駐該機構，開始對工、商、政府提供產品和服務。 
+1991年，SEI將軟體開發程序成熟度框架 提升為軟體能力成熟度模型(Capability Maturity Model For 
+Software，簡稱SW-CMM)，並發佈了最早的SW-CMM 1.0版。2000年底SEI發表了CMMI，整合軟體工程(Software Engineeing ; 
+SW)、系統工程(Systems Engineering ; SE)、產品與流程發展(Integrated Product and Procss 
+development , IPPD)與供應商來源管理 (Supplier Sourcing ; SS)的整合模式。從此以後，CMMI就與CMM並行。
+CMMI的成熟等級
+SEI 試圖在軟體界建立一套工程般的制度，讓個人和組織在軟體開發上能有改進的依據。SEI 的 Capability Maturity Model 
+(CMM) for Software 已經成為許多軟體公司所採行的標準，用作為改進公司內部軟體工程的依據。根據 CMM 
+的定義，軟體工程的成熟度分成五個等級，簡單介紹如下： 
+
+Level 1（initial）：軟體程序漫無章法，程序未被定義。專案流程無統一程序，專案計劃的成功仰賴於工作人員個別的努力。 
+  Level 2（repeatable）：已建立基本的管理與分析的程序(Measurement and 
+  Analysis ; 
+  MA)，對成本、時程、和職務權責能加以追蹤、查詢。已有作業程序所須具有的紀律，所以有能力重覆使用相類似的專案成功的案例與經驗。 
+  
+流程重點：需求管理(Requirements Management) 
+Level 
+  3（defined）：屬於管理和工程的活動都已設計、定義好，並且文件化，完整地整合成組織內的標準作業程序。各個專案計劃延用標準程序或被認可的標準程序修改程序。 
+
+  
+流程重點：需求發展(Requirements 
+    Development;REQD)，驗證(Verification;VER)，確認(Validation;VAL) 
+Level 
+  4（managed）：組織可收集詳細的軟體程序以及軟體產品的量測資料。軟體作業程序和產品都有一組量測的數據，可讓工程師和經理們瞭解程序和產品的狀況。 
+  
+流程重點：Quantitative Project Management(QPM) 
+Level 5（optimized）：評估革新性的新技術，做反省與提升，有規則地依序導入採用，以持續不斷地改進程序。 
+  
+流程重點：Causal Analysis and Resolution(CAR) 
+CMMI實施
+CMM是一種軟體開發的流程標準，可說是種軟體開發的品質保 証，就像ISO是組織管理的品質保証一樣。細分之下，CMM/CMMI分成五級，從第一級（level 
+1）到第五級（level 
+5），分別標示軟體公司流程管理的競爭力程度，第四級可做質量管理，第五級則為最佳化，可預防缺陷。
+軟體先進國家都已體認到CMM/CMMI的重要性。其中最難的四、五兩級公司，多數集中在美國及印度。我國行政院於91年11月院頒之『行政院所屬各機關資訊業務委外服務作業參考原則』中，亦明訂通過CMMI 評鑑得列為採購加分項目。
+Reference
+
+http://www2.cyut.edu.tw/~s9154610/se.htmlSoftware Engineering 6th Edition; SOMMERVILLE; addison 
+  wesley
+
+
+
+
+
+課程大綱
+
+
+
+
+
+
+
+
+
+
+高等軟體工程ADVANCED SOFTWARE ENGINEERING
+
+
+
+
+
+
+開課系所 Department/Institute:  電通所          Computer and Communication Engineering
+開課教師 Instructor:   焦惠津 Jiau, Hewi-Jin                
+開課學年 Academic Year:   0103
+開課學期 Semester:    1
+開課序號 Serial Number:   041
+
+課程屬性碼 Attribute Code:   CCE 8540 
+課程碼 Course Number:   Q361600 
+分班碼 Class Code: 
+學分數 No. of Credits:           3
+課程語言 Medium of Instruction:   中文
+
+
+課程網址 Course Website: 
+
+先修課程或先備能力 Prerequisite Course(s):   無      
+
+教師聯絡資訊 Contact with Teacher
+  	    焦惠津
+Email: jiauhjc@mail.ncku.edu.tw
+Office: 92515      
+
+助教資訊 Contact with Tutor
+
+
+學習規範 Course Policy
+
+
+評量方式 Grading
+
+
+方法百分比%
+
+平時測驗 Quizzes
+30期中考 Midterm Exam
+30小組報告 Group Projects
+40
+
+
+
+
+教學方法 Teaching Strategies
+      論文研讀及討論    
+
+		※請遵守智慧財產權觀念  不得不法影印
+		 Please follow the Intellectual Property instruction and No illegal copy
+	
+
+課程教材 Course Material
+	    學術論文及講義    
+
+參考書目 References
+
+
+備註 Remarks
+
+
+
+
+
+基本素養 Basic Literacy
+        無    
+
+核心能力 Competence
+■ 具電腦與通信工程相關領域之專業知識。
+ To possess professional knowledge in the field of computer and communication engineering.
+□ 策劃及執行專題研究之能力。
+ The ability to plan and carry out a research project.
+■ 撰寫專業論文之能力。
+ To write a professional-quality dissertation.
+□ 創新思考及獨立解決問題之能力。
+ Innovative thinking and the ability to solve problems independently.
+□ 跨領域人員協調整合之能力。
+ Multidisciplinary coordination and integration capabilities.
+□ 良好的國際觀以及實踐專業倫理與理解社會責任之能力。
+ A solid international outlook and the ability to understand professional ethics and social responsibility.
+□ 領導、管理及規劃之能力。
+ Leadership, management and planning abilities.
+□ 終身自我學習成長之能力。
+ The ability to learn and develop throughout life.
+ 
+
+課程概述 Course Description
+       課程概述
+        Focuses on developing working software that solves real problems. Covers design and implementation of software systems, using web applications as the platform. Emphasizes the role of conceptual design in achieving clarity, simplicity, and modularity Software development, management, and maintenance. Project and configuration management, collaborative development models, software quality assurance, interoperability domain engineering and software reuse, and software re-engineering,
+Compare & Contrast different software engineering and development processes. Students complete open-ended individual assignments and a major team project. Students will also work in teams on a substantial programming project. Enrollment may be limited.
+
+ 
+
+課程學習目標 Course Objectives    
+	    提升學生軟體視野，加強軟體工程進階知識。    
+
+課程進度 Course Outline
+
+
+週次 Week進度說明 Progress Description
+1簡介2論文研討3論文研討4論文研討5論文研討6論文研討7論文研討8論文研討9期中考/報告10論文研討11論文研討12論文研討13論文研討14論文研討15論文研討16論文研討17論文研討18結論 
+
+　以上每週進度教師可依上課情況做適度調整。The schedule may be subject to change.
+
+
+課程學習融入下列議題或具有下列內涵的程度 Immersing the Following Issues or Contents
+議題或內容 Issues or Contents關聯性 Correlation性別平等 Gender Equity
+無相關 No correlation法治教育 Law-Related Education
+無相關 No correlation人權教育 Human Rights Education
+無相關 No correlation服務學習 Service Learning
+間接相關 Indirect correlation生命教育 Life Education
+間接相關 Indirect correlation智慧財產權 Intellectual Property
+直接相關 Direct correlation環境安全 Environmental Safety
+間接相關 Indirect correlation環境保護 Environmental Protection
+間接相關 Indirect correlation文創產業 Cultural and creative Industry
+間接相關 Indirect correlation健康醫療照護產業 Health,Medical Treatment, Nursing Industry
+間接相關 Indirect correlation精緻農業產業 Advanced Agriculture
+無相關 No correlation生物科技產業 Biotechnology Industry
+間接相關 Indirect correlation觀光旅遊產業 Tourism
+間接相關 Indirect correlation綠色能源產業 Green Energy Industry
+間接相關 Indirect correlation強化工業基礎技術方案 Advancing basic industry technology program
+直接相關 Direct correlation學術研究取向 Academic Orientation
+直接相關 Direct correlation工作實務取向 Pragmatic Orientation
+直接相關 Direct correlation 
+
+有關課程其他調查 Other Surveys of Courses
+                   1.本課程是否規劃業界教師參與教學或演講?   否            
+Is there any industry specialist invited in this course? How many times? No
+			
+           2.本課程是否規劃內含校外實習 (並非參訪)?   否		   
+Is there any in (out of) school practicum involved in this course? How many hours?  No
+
+
+
+
+﻿
+
+
+育達科技大學-資訊管理系暨研究所
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+
+
+ 
+ 
+
+
+課程介紹
+ 
+ 
+
+
+ 
+ 
+ 
+
+
+
+
+► 研究所課程名稱
+
+
+ 
+
+
+
+
+人力資源管理
+
+ 
+資訊需求與資源分析
+
+
+
+生產管理自動化
+
+ 
+資管專題論文研討Ⅰ
+
+
+
+全球運籌管理
+
+ 
+資管專題論文研討Ⅱ
+
+
+
+行銷管理
+
+ 
+資管專題論文研討Ⅲ
+
+
+
+物件導向技術
+
+ 
+資管專題論文研討Ⅳ
+
+
+
+空間資訊系統
+
+ 
+管理資訊系統研究
+
+
+
+研究方法論
+
+ 
+管理資訊系統專題
+
+
+
+英文論文寫作
+
+ 
+辦公室自動化
+
+
+
+高等作業系統
+
+ 
+決策理論與分析
+
+
+
+高等軟體工程
+
+ 
+科技管理
+
+
+
+高等資料庫管理
+
+ 
+銷售自動化
+
+
+
+高等資訊理論
+
+ 
+高等電子商務
+
+
+
+高等網路管理
+
+ 
+高等電腦圖學
+
+
+
+組織行為
+
+ 
+模式與模擬
+
+
+
+資料倉儲
+
+ 
+企業再造工程
+
+
+
+資料探勘
+
+ 
+高等專家系統
+
+
+
+資訊系統專案管理
+
+ 
+組織行為
+
+
+
+資訊系統績效評估
+
+ 
+ 
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+► 四技系必修課程名稱
+
+
+
+
+
+
+JAVA程式設計
+
+ 
+資訊網路
+
+
+
+Linux作業系統操作
+
+ 
+資訊網路管理與應用
+
+
+
+生產管理資訊系統
+
+ 
+管理數學
+
+
+
+企業資源規劃
+
+ 
+網路程式設計
+
+
+
+伺服器安裝與管理
+
+ 
+數位內容產業分析
+
+
+
+財務管理資訊系統
+
+ 
+JAVA程式設計(一)
+
+
+
+專案管理
+
+ 
+行銷管理資訊系統
+
+
+
+無線網路
+
+ 
+商業應用軟體
+
+
+
+會計管理資訊系統
+
+ 
+進階程式設計
+
+
+
+資料庫管理系統(應用)
+
+ 
+資料庫管理系統(管理)
+
+
+
+資訊安全技術
+
+ 
+JAVA程式設計(二)
+
+
+
+
+
+ 
+
+
+
+
+► 四技系選修課程名稱
+
+
+
+
+
+
+CCNA(初階)
+
+ 
+電腦軟體應用乙級
+
+
+
+FLASH設計製作
+
+ 
+電腦軟體應用丙級
+
+
+
+TQC資訊管理工程師
+
+ 
+電腦繪圖
+
+
+
+VB程式設計
+
+ 
+管理心理學
+
+
+
+人工智慧與專家系統導論
+
+ 
+網路規劃
+
+
+
+中小企業資訊管理
+
+ 
+離散數學
+
+
+
+分散式資料庫管理系統
+
+ 
+專題報告寫作
+
+
+
+企業概論
+
+ 
+資訊安全與交易機制
+
+
+
+企業網路與資訊管理
+
+ 
+進階電子商務平臺建制
+
+
+
+多媒體網路
+
+ 
+電子商務行銷策略與經營模式
+
+
+
+行動定位服務導論
+
+ 
+電腦軟體應用丙級(二)
+
+
+
+作業系統
+
+ 
+MCDBA
+
+
+
+攻擊偵測與病毒防治
+
+ 
+影音特效處理與整合
+
+
+
+決策支援系統
+
+ 
+供應鍊管理
+
+
+
+物件導向程式設計
+
+ 
+商用資料庫程式設計
+
+
+
+國際化資訊管理
+
+ 
+基礎電子商務平臺建置(一)
+
+
+
+專業認證輔導
+
+ 
+嵌入式系統設計
+
+
+
+軟體工程
+
+ 
+對等式網路服務
+
+
+
+資料庫套裝軟體應用
+
+ 
+網站經營與管理
+
+
+
+資料探勘導論
+
+ 
+網路行銷
+
+
+
+資訊安全導論
+
+ 
+數位內容專案企劃
+
+
+
+資訊倫理與法規
+
+ 
+顧客關係管理
+
+
+
+資訊管理實務專題Ⅲ
+
+ 
+視窗程式設計
+
+
+
+電子商務經營規劃
+
+ 
+電子商務流程分析與訂價策略
+
+
+
+電子商務實務
+
+ 
+ 
+ 
+
+
+
+
+ 
+
+
+
+
+► 四技共同課程名稱
+
+
+
+
+
+
+              多媒體與遊戲概論
+
+ 
+經濟學
+
+
+
+系統分析
+
+ 
+資料庫管理系統(設計)
+
+
+
+計算機概論
+
+ 
+資料結構
+
+
+
+專業英文
+
+ 
+資訊管理實務專題Ⅰ
+
+
+
+專業認證
+
+ 
+資訊管理實務專題Ⅱ
+
+
+
+專題企畫寫作
+
+ 
+資訊管理導論
+
+
+
+專題實務競賽
+
+ 
+電子商務導論
+
+
+
+程式設計
+
+ 
+網路概論
+
+
+
+微積分
+
+ 
+統計學
+
+
+
+會計學
+
+ 
+管理學
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+      36143 苗慄縣造橋鄉談文村學府路168號　TEL：037-651188#5521、5522　FAX：037-651215
+      No. 168, Hsueh-fu Rd., Tanwen Village, Chaochiao Township, Miaoli County, 361 Taiwan, (R.O.C)
+    Coypright © 2012 育達科技大學 資訊管理系暨研究所
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+軟體工程師(南投高等研究園區/臺北總公司)_Allion_百佳泰股份有限公司 - 104人力銀行
+
+
+
+
+
+
+
+
+
+
+
+
+                        軟體工程師(南投高等研究園區/臺北總公司)                        
+Allion_百佳泰股份有限公司
+本公司其他工作
+
+
+
+我要應徵
+處理中...
+儲存工作
+處理中...
+
+
+0~5人應徵
+FB 分享
+轉寄
+檢舉
+
+
+
+
+
+
+
+
+
+
+
+工作內容
+
+1. 軟體應用程式開發/測試/debug2. 開發自動化測試工具和系統3. New technology survey
+
+職務類別：
+
+軟體設計工程師、韌體設計工程師、其他資訊專業人員 
+
+
+
+
+
+
+認識「」職務
+
+詳細職類分析(工作內容、薪資分佈..)
+更多相關工作
+
+
+
+
+工作待遇：
+面議
+工作性質：
+全職
+上班地點：
+
+	                                    南投縣南投市中興路9號(中興新村南投高等研究園區)
+
+
+
+
+
+
+
+地圖找工作
+
+
+
+
+管理責任：
+不需負擔管理責任
+出差外派：
+需出差，一年累積時間未定
+上班時段：
+日班，09:00-18:00
+休假制度：
+週休二日
+可上班日：
+一個月內
+需求人數：
+1至2 人
+
+
+
+
+條件要求
+
+
+接受身份：
+上班族、外籍人士
+工作經歷：
+2年以上
+學歷要求：
+大學、碩士
+科系要求：
+電機電子工程相關、資訊管理相關、資訊工程相關
+語文條件：
+
+英文 -- 聽 /中等、說 /中等、讀 /中等、寫 /中等
+
+擅長工具：
+不拘
+工作技能：
+系統維護操作、軟體工程系統開發、韌體工程開發、網路資料傳輸、功能測試(function test)、使用者測試(Usability test)、問題追蹤處理(Bug tracking)、軟體整合測試、軟體程式設計、系統架構規劃與維護、網路系統配置、網頁軟體操作
+具備駕照：
+普通重型機車
+其他條件：
+1. 兩年以上程式開發寫作經驗，具備Linux或Mac OS平臺軟體開發經驗者佳。2. 熟悉TCP/IP網路概念，具備Client/Server socket programing開發經驗者。3. 熟悉任一種程式語言以上及其IDE開發環境。(C++, C#, Java, object-C,python,LabVIEW)4. 有參與多人合作開發專案的經驗，具備良好的co-work溝通能力與工作熱誠。5. 有設計開發軟體架構的專案經驗者尤佳。
+
+
+
+
+公司福利
+
+Allion全職員工，得享有以下福利：(1) 符合規定之休假制度。 (2) 享勞、健、團保與年度健康檢查。 (3) 保障年薪十四個月，年終並依據個人績效表現提供績效獎金。 (4) 員工分紅配股制度。 (5) 定期依員工績效調薪。 (6) 通暢的升遷管道，並提供海外輪調培植機會。（包括深圳、上海等分公司據點）(7) 員工旅遊、社團活動、尾牙聚餐。 (8) 完善的退休制度。 (9) 婚喪喜慶及生育補助津貼。 (10) 設有員工福利委員會，專責員工福利相關事宜。（如飲料機補助、按摩小站、電影欣賞活動等）
+
+
+
+聯絡方式
+
+
+聯絡人：
+Mark Ni
+電洽：
+
+
+
+
+
+
+更新日期：2017-07-14
+
+
+與軟體工程師(南投高等研究園區/臺北總公司)相關的工作
+
+推薦工作
+104 智能管家依據您平常儲存、應徵工作的喜好，為您推薦工作！請先登入My104 會員中心
+
+
+
+看過此工作的人也看以下工作
+推薦課程
+
+
+
+
+瀏覽工作紀錄
+清除
+
+
+
+
+
+
+
+104提醒：
+求職應徵請準時赴約並註意安全。如有公司要求您交付提款卡及密碼、信用卡、銀行郵局帳號、身分證，及要求繳費、購買服務或產品等情事，請勿進行並速與警方反詐騙專線165聯繫。看更多>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+課程說明 - 軟體工程碩士學程
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+軟體工程碩士學程搜尋這個協作平臺
+
+
+
+
+
+
+
+
+
+
+
+
+逢甲大學 軟體工程碩士學程簡介開課狀況課程說明
+報名方式
+
+
+
+ 
+
+
+
+課程說明
+
+
+
+高等軟體工程- 瞭解專案管理的觀念、原則與工作項目。- 瞭解需求工程的觀念、原則與方法。- 瞭解軟體設計的內涵。- 瞭解軟體測試的觀念、原則與方法。- 瞭解目前軟體工程相關研究議題。個人軟體程序程式- 瞭解如何依據PSP的方法正確的紀錄軟體工程的流程資料。- 瞭解如何利用過去的歷史資料預估程式的大小。- 瞭解如何規劃工作並建立時程。- 瞭解程式碼審查與設計審查的觀念、原則與方法。- 瞭解目前軟體度量相關研究議題。軟體品質管理- 學習瞭解軟體品質的重要性與基本概念與架構。- 學習瞭解軟體測試的理論。- 學習如何設計測試計畫與進行測試。- 學習如何操作軟體測試工具。- 學習如何規劃品質保證計畫。軟體元件設計- 瞭解軟體設計的概念- 瞭解物件導向軟體設計與軟體元件之間的關係- 瞭解軟體元件設計的基本概念- 瞭解並應用目前軟體元件的標準軟體專案管理- 解釋軟體專案管理的觀念和主要功用。- 使用專案管理的技術與方法，配合軟體特性，使軟體專案在預期的時程、品質、預算下完成預定目標。- 理解軟體專案管理的標準、工具和最佳實務典範。- 養成軟體工程的學理及應用上的統合能力，進而探討未來在軟體專案管理的新發展。軟體正規方法- 學習各種數理邏輯系統。- 學習各種程式語言的語意模型。- 瞭解程式正確性的証明和驗證。- 學習使用軟體正規方法以推導程式。知識管理與創新- 解釋知識管理的觀念和主要功用，並且瞭解無形資產和智慧財產權的重要性。- 利用知識的建立、應用、轉化和整合有效的知識管理活動來進行創新。- 理解知識管理和創新的典範。- 知道有創新力的組織如何管理知識工作者的策略。- 使用知識管理系統。- 指出知識管理和創新在道德、隱私權、和權力的相關議題，以及未來知識管理和創新方面的發展。
+
+
+
+ 
+
+
+
+Comments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in|Recent Site Activity|Report Abuse|Print Page|Powered By Google Sites
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+國際碩士班 103 年課規 – 國立東華大學｜資訊工程學系暨研究所
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Menu
+
+
+ 
+
+Connect
+
+
+
+
+Search
+
+
+
+Search
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+國立東華大學｜資訊工程學系暨研究所
+ndhucsie
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  Home    > 課程資訊 > 國際碩士班 > 國際碩士班 103 年課規 
+
+
+
+國際碩士班 103 年課規
+
+Posted on 2016-07-24  by  admin 
+
+
+103學年度 資訊工程學系碩士班 課程規劃表
+ 
+一、最低畢業學分數：
+畢業學分：28.0學分
+專業必修：4.0學分
+專業選修：24.0學分
+二、重要相關規定：
+
+碩士生應修習本系開設之專業選修科目至少二分之一，且英語授課課程必須達專業選修課程二分之一(含)以上。
+碩士生修習資訊工程學系碩博士班之專業選修科目均得列入畢業學分。
+申請抵免學分以專業選修課程學分數二分之一為限。抵免時程以學校規定辦理。
+研二(含)以上學生必須修習通過專題討論(三)、(四)及論文研究(一)、(二)等課程；修業未滿二年者不在此限。
+碩士生需通過英文資格認定方可畢業。相關英文課程之認定，請參考「資訊工程學系研究生英語能力畢業規定」。( 已更名為「國立東華大學資訊工程學系研究生英語能力畢業標準實施辦法要點 」)。
+碩士生需通過基本程式能力方可畢業。相關程式能力之認定，請參考「資訊工程學系基本程式能力畢業規定」。( 已更名為「國立東華大學資訊工程學系基本程式能力畢業標準實施辦法要點 」)。
+
+ 
+
+
+
+
+科目名稱
+英文科目名稱
+科目代碼
+學分
+*先修科目或#背景科目
+備註
+
+
+專業必修
+
+
+引導研究(一)
+Independent Study（I）
+CSIEM0010
+1.0
+
+
+
+
+引導研究(二)
+Independent Study（Ⅱ）
+CSIEM0100
+1.0
+
+
+
+
+專題討論(一)
+Seminar（I）
+CSIEM0020
+1.0
+
+
+
+
+專題討論(二)
+Seminar（Ⅱ）
+CSIEM0080
+1.0
+
+
+
+
+專業選修
+
+
+行動計算系統
+Mobile Computing Systems
+CSIE@0920
+3.0
+
+
+
+
+下一代網際網路
+Next Generation Internets
+CSIEM0120
+3.0
+
+
+
+
+雲端計算
+Cloud Computing
+CSIEM0060
+3.0
+
+100學年度新增
+
+
+高等計算機結構
+Advanced Computer Architecture
+CSIE@0930
+3.0
+
+
+
+
+密碼學
+Cryptography
+CSIE@0940
+3.0
+
+
+
+
+影像處理
+Image Processing
+CSIE@0950
+3.0
+
+
+
+
+高等計算機圖學
+Advanced Computer Graphics
+CSIE@0960
+3.0
+
+
+
+
+圖型識別
+Pattern Recognition
+CSIE@0970
+3.0
+
+
+
+
+虛擬實境
+Virtual Reality
+CSIE@0980
+3.0
+
+
+
+
+分散式系統
+Distributed Systems
+CSIEM0140
+3.0
+
+
+
+
+高等資料庫系統
+Advanced Database System
+CSIEM0070
+3.0
+
+
+
+
+資料探勘
+Data Mining
+CSIE@0990
+3.0
+
+
+
+
+計算理論
+Theory of Computation
+CSIE@1000
+3.0
+
+
+
+
+機器學習
+Machine Learning
+CSIE@1010
+3.0
+
+
+
+
+柔性計算
+Soft Computing
+CSIEM0130
+3.0
+
+
+
+
+最佳化與決策專題
+Topics on optimization and decision making
+CSIEM0050
+3.0
+
+
+
+
+類神經網路
+Neural Networks
+CSIE@1020
+3.0
+
+
+
+
+網路效能評估
+Computer Network Performance Evaluation
+CSIE@1030
+3.0
+
+
+
+
+電腦網路與通訊
+Computer Networks and Communications
+CSIE@1040
+3.0
+
+原名個人通訊網路
+
+
+數位訊號處理
+Digital Signal Processing
+CSIE@1050
+3.0
+
+
+
+
+高等程式語言
+Advanced Programming Languages
+CSIEM0150
+3.0
+
+
+
+
+高等演算法
+Advanced Algorithms
+CSIE@1060
+3.0
+
+
+
+
+資料與知識庫系統
+Data and Knowledge Base Systems
+CSIE@1070
+3.0
+
+
+
+
+物件導向式軟體工程
+Object-Oriented Software Engineering
+CSIE@1080
+3.0
+
+
+
+
+人工智慧
+Artifical Intelligence
+CSIE@1090
+3.0
+
+
+
+
+高等影像壓縮
+Advanced Image Compression
+CSIE@1100
+3.0
+
+
+
+
+高等編譯理論
+Advanced Compiler Theory
+CSIE@1110
+3.0
+
+
+
+
+計算生物學
+Computational Biology
+CSIE@1120
+3.0
+
+
+
+
+高等軟體工程
+Advanced Software Engineering
+CSIE@1130
+3.0
+
+
+
+
+高等圖形理論
+Advanced Graph Theory
+CSIE@1140
+3.0
+
+
+
+
+高等電腦繪圖系統設計
+Advanced Computer Graphics System Design
+CSIE@1150
+3.0
+
+
+
+
+高等電腦視覺
+Advanced Computer Vision
+CSIE@1160
+3.0
+
+
+
+
+智慧型系統設計
+Intelligent System Design
+CSIE@1170
+3.0
+
+
+
+
+專案管理
+Project Management
+CSIE@1180
+3.0
+
+
+
+
+高等資訊檢索
+Advanced Information Retrieval
+CSIE@1190
+3.0
+
+
+
+
+特殊用途超大型積體電路設計
+Application-Specific Integrated Circuits Design
+CSIE@1200
+3.0
+
+
+
+
+影像式描繪技術
+Image-based Rendering
+CSIE@1210
+3.0
+
+
+
+
+系統晶片設計專題
+Special Topics on System-on-Chip Design
+CSIE@1220
+3.0
+
+
+
+
+立體電腦視覺
+Three-Dimensional Computer Vision
+CSIE@1230
+3.0
+
+
+
+
+嵌入式系統軟體設計
+Software Development for Embedded Systems
+CSIE@1240
+3.0
+
+
+
+
+無線網際網路
+Wireless Internet
+CSIEM0160
+3.0
+
+
+
+
+錯誤控制碼理論
+Error Control Coding
+CSIE@1250
+3.0
+
+
+
+
+普及計算
+Pervasive Computing
+CSIE@1260
+3.0
+
+
+
+
+語音處理與辨識
+Speech Processing and Recognition
+CSIE@1270
+3.0
+
+
+
+
+高等資料結構
+Advanced Data Structures
+CSIE@1280
+3.0
+
+
+
+
+同儕計算
+Peer-to-peer Computing
+CSIE@1290
+3.0
+
+
+
+
+編譯程式實務與應用
+Compiler Practice and Application
+CSIE@1300
+3.0
+
+
+
+
+數位遊戲與人工智慧
+Artificial Intelligence in Digital Games (Game AI)
+CSIE@1310
+3.0
+
+
+
+
+車載資料分析與服務
+Telematics data analysis and Services
+CSIE@1320
+3.0
+
+98新增
+
+
+平行計算
+Introduction to Parallel Computing
+CSIE@1330
+3.0
+
+98新增
+
+
+容錯計算
+Fault-Tolerant Computing
+CSIE@1340
+3.0
+
+98更名；原名為錯誤診斷與應用
+
+
+資訊流控制
+Information flow control
+CSIE@1350
+3.0
+
+99新增
+
+
+連結網路專題
+Special topics on Interconnection Networks
+CSIE@1360
+3.0
+
+99新增
+
+
+車載資料庫管理系統與應用
+Vehicular Database Management System and Application
+CSIE@1370
+3.0
+
+99新增
+
+
+旅遊導向服務技術
+Travel Oriented Service Technologies
+CSIE@1380
+3.0
+
+100學年度新增
+
+
+其他
+
+
+論文研究(一)
+Thesis (I)
+CSIEM0030
+2.0
+
+
+
+
+論文研究(二)
+Thesis (II)
+CSIEM0110
+2.0
+
+
+
+
+專題討論（三）
+Seminar (III)
+CSIEM0040
+1.0
+
+
+
+
+專題討論（四）
+Seminar (IV)
+CSIEM0090
+1.0
+
+
+
+
+科技英文寫作
+Science and Technical Writing
+CSIE@1390
+3.0
+
+
+
+
+
+
+(Visited 32 times, 1 visits today) 
+
+
+
+
+
+
+
+熱門搜尋
+
+師資陣容 186 views 
+十問東華資工Q&A 69 views 
+學士班 105 年課規 60 views 
+東華資工優勢 8.東華特色 49 views 
+歡迎同學轉繫到資工系就讀 (有資工組及國際組可選擇喔!)，至 106年7月7日止 48 views 
+105-2 碩、博生學位考試申請流程及報帳註意事項 35 views 
+系所組織 33 views 
+105學年度畢業典禮照片分享 28 views 
+資工系轉系審查辦法 23 views 
+2017 行政及教學單位暑休公告 23 views 
+
+
+
+ 近期文章 
+
+105學年度畢業典禮照片分享
+2017-07-17
+
+
+歡迎同學轉繫到資工系就讀 (有資工組及國際組可選擇喔!)，至 106年7月7日止
+2017-07-05
+
+
+2017 行政及教學單位暑休公告
+2017-06-30
+
+
+105-2 學士班同學離校問捲(必填)
+2017-06-23
+
+
+105-2 研究所同學離校問捲(必填)
+2017-06-22
+
+
+ 
+
+
+
+ 
+ 
+
+新生報到
+
+ 
+
+ 
+
+未來學生
+
+ 
+
+ 
+
+基本程式能力檢定
+
+ 
+
+ 
+
+程式設計競賽
+
+ 
+
+ 
+
+五年一貫學碩士直升
+
+ 
+
+ 
+
+認證與評鑑
+
+ 
+
+ 
+
+國合會獎學金
+
+ 
+
+ 
+
+大學部專題
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+軟體工程實驗室 - 國立高雄第一科技大學電腦與通訊工程系 
+
+
+
+
+Your browser does not support JavaScript!
+
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立高雄第一科技大學電腦與通訊工程系
+
+國立高雄第一科技大學電腦與通訊工程系  Department of Computer and Communication Engineering, NKFUST.
+
+
+
+
+
+
+
+
+
+
+迴首頁
+本系介紹
+教育目標
+歷史沿革
+系所特色
+本繫系徽
+歷屆系主任
+
+師資陣容
+師資總表
+資訊領域
+徐偉智 教授
+吳介騫 副教授
+吳大鈞 副教授
+蔡碩仁 副教授
+江傳文 副教授
+
+通訊領域
+郝敏忠 教授
+楊新雄 副教授
+萬欽德 副教授
+彭康峻 副教授
+林壽煦 助理教授
+陳慶永 助理教授
+
+多媒體領域
+曾建誠 教授
+魏清煌 副教授
+賴玟杏 助理教授
+汪桓生 助理教授
+黃世勳 助理教授
+
+晶片設計
+洪金車 教授
+陳寶龍 副教授
+謝瑞鴻 助理教授
+
+系辦行政
+退休教授
+
+教學設備
+實驗室總表
+基礎實驗室
+電子電路實驗室
+基本電學實驗室
+多媒體實驗室
+微處理器實驗室
+基本通訊實驗室
+
+研究型實驗室
+高等多媒體實驗室
+訊號處理實驗室
+先進通訊晶片實驗室
+數位傳輸實驗室
+高等通訊實驗室
+無線元件設計實驗室
+雛形系統整合實驗室
+電腦系統實驗室
+VLSI設計實驗室
+軟體工程實驗室
+DSP應用實驗室
+網際網路實驗室
+
+
+課程資訊
+課程結構
+課程總覽
+課程時間表
+五大學習路程圖
+歷年開課資料查詢
+
+系務相關
+辦法規章
+學習輔導
+表單下載
+
+English
+Introduction
+Programs
+Graduate Course
+Under Graduate Course
+Faculty
+Facilities
+Contact Us
+Research Topics
+Multimedia
+Signal Processing
+Communication
+Chip Design
+Network
+Software
+Others
+
+
+網站地圖
+第一科大
+
+
+
+
+
+
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+ > 
+教學設備 
+ > 
+研究型實驗室 
+ > 
+軟體工程實驗室 
+
+
+
+
+
+
+
+
+
+
+軟體工程實驗室
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 軟體工程實驗室 
+ 
+
+
+
+
+
+
+
+[ 軟體工程實驗室 ]
+地點:F460-1
+分機:2043
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+研究群師資：
+江傳文 副教授
+
+研究主題：
+
+人工智慧
+軟體工程
+網際網路計算與應用
+
+
+
+實驗室設備：
+
+
+
+NO.
+設備名稱
+件(套)數
+
+
+1
+最佳化系統平臺
+1
+
+
+2
+中階伺服器
+1
+
+
+3
+On-line遊戲軟體開發系統
+1
+
+
+4
+高階繪圖伺服器
+1
+
+
+5
+伺服器
+1
+
+
+6
+軟體代理人視覺化模組平臺
+1 
+
+
+7
+車輛動態追蹤系統
+1
+
+
+8
+網際網路巡邏勤務規劃系統開發平臺
+1
+
+
+9
+APP應用程式開發平臺
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Copyright © 2008 Department of Computer and Communication Engineering, NKFUST.
+地址:811高雄市楠梓區卓越路2號 工學院三樓 · TEL:(07)6011000 Ext:2001~4 FAX:(07)6011012
+隱私保護聲明           個資保護聯絡窗口               負責人：黃永政 技士      管理區
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+

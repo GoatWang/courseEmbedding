@@ -1,0 +1,1327 @@
+
+
+
+
+
+Statistics and SAS Package, NTUPT
+
+
+
+
+
+
+
+
+
+前一頁
+           
+
+
+迴首頁
+           
+
+ 下一頁
+
+重複量測變異數分析
+
+
+
+重複量測變異數分析的概念  ｜  資料鍵入格式  ｜ 
+proc GLM univariate test  ｜ 
+其他 proc NLIN 相關的統計：  ｜ 
+
+
+
+本練習題將學習
+
+將 SAS 資料檔 (*.sas7bdat) 輸出至 output 視窗
+    輸出版面的各參數的設定
+
+
+重複量測變異數分析的概念
+　
+使用狀況
+
+如果在不同時間點 (different times) 或同時間點不同狀況 (different conditions)，量測同一個事件或物體，且其對應值是連續 
+(continuous)，則採用重複量測變異數分析。因兩兩量測間具有非獨立事件 (dependent) 的特性，會相互影響，故不可以使用變異數分析 
+(ANOVA)。 例如：
+練習一的不同方向前伸研究，對同一受試者而言，
+有四個不同前伸方向的最大前伸距離，若要分析四個方向的最大前伸距離是否具有差異，則採用重複量測變異數分析。
+　
+檢測假說 (Hypothesis testing)
+
+重複量測變異數分析檢測假說在於比較受試者間差異與受試者內差異。
+
+
+受試者間效應 (between-subject effects) 指得是對同一受試者而言不會改變的變數，如身高、性別等。
+    受試者內效應 (within-subject effects) 則是指同一受試者的不同量測時間或狀況下所產生的差異，如不同前伸方向或治療前後時間。
+    有時候也會比較二者間的交互作用 
+        (within-subject-by-between-subject-interaction effect)，如性別´時間。
+
+　
+前提假設
+
+檢測受試者內效應 (within-subject effect) 的變數須符合 Type H covariance structure
+    
+Sphericity test：測試數據資料是否符合 Type H covariance structure。若是受試者內效應只有二級，則不需要進行 Sphericity test。
+        若資料不符合 Type H covariance structure 的前提假設，則顯著水準的自由度 (degree of freedom) 須以 
+            Box's e 做調整。Greenhouse and Geisser 最早提出 Box's e 的最大可能估計值是
+            Greenhouse-Geisser e。在 SAS 的結果即參考 adjusted G-G 的數值。
+        但 Huynh and Feldt (1976) 則認為在小樣本數的研究時，Greenhouse-Geisser Epsilon 較易低估顯著水準，故提出
+            Huynh-Feldt e。在 SAS 的結果即參考 adjusted H-F 的數值。
+    
+
+　
+統計模型 (Statistical model)
+
+相依變數 ＝ 常數 + (受試者間差異的變數) + (受試者內差異的變數) + 交互作用
+
+y = a0 + a1x1 + a2x2 + 
+...+ anxn
+　
+共變數結構 (Covariance Structure)
+由於不同時間或不同狀況下獲得的兩個量測間具有相關性 
+(correlation)，重複量測變異數分析必須考量此相關性的影響。因此受試者間的 covariance structure 
+必須選擇正確，以確保其對平均值的影響是有效的。常用的有三種：
+
+
+compound symmetric： 不管量測間的時間有多長，同一受試者的任二量測皆有相同的 covariance，且每一量測的 variance 是相同的
+    first-order autoregressive： 隨著時間變長，兩個量測間的相關性呈等比級數的下降 (decreases exponentially)
+    unstructured： 兩兩量測間的 covariance 是不同的
+
+
+可比較二個相同固定效應但不同共變數結構的統計模型之 Akaike's Information Criteria (AIC) 與 Schwarz's Bayesian Criterion (SBC)，
+以具有較高值的統計模型為較適當的統計模型。
+
+
+
+
+
+　
+相關資訊
+
+　SAS 的非線性迴歸分析報告通常不含 R2，其記算方式如下：
+     
+         R2 = SSreg / SStotal_corrected
+         = 1- (SSres / SStotal_corrected)
+     
+相當於 SPSS 之 NLR procedure
+
+
+ 
+back to top
+
+
+資料鍵入格式
+　
+
+由於重複量測變異數分析的依變項間是存在相關，故資料鍵入時，應視為不同的變項；不可以視為單一變項的不同狀況資料。如範例一的 
+4 個前伸方向的最大前伸距離，須當作 4 個變項來鍵入資料，亦即每一列均含有同一受試者的 4 組方向的資料。
+
+
+
+
+重複量測變異數分析的資料鍵入基本格式及 SAS 語法如下(詳細語法請參考下一節）：
+
+
+SAS 程式
+說明
+
+
+
+data lib名稱.sas7bdat檔名; 
+     input id  y1 y2 ... yn ;
+     title '';
+
+
+
+id 為不同受試者之代碼
+y1 ...... yn為重複量測的變項，下標表示不同時間或狀況的量測
+
+
+
+
+proc glm data=lib名稱.sas7bdat檔名; 
+     model y1-yn = / nouni;
+     repeated y;
+
+
+
+
+y1-yn 為重複量測的變項，下標表示不同時間或狀況的量測
+nouni 參數將使結果輸出時不會呈現 y1 ... yn 的個別變異數分析表
+repeated y 則表示重複量測的變項合稱為 y，一共有 n 級
+
+
+
+
+  
+back to top
+
+
+Proc GLM Univariate Test
+　
+
+語法：
+
+
+SAS 程式
+範例一
+
+
+
+proc sort data=lib名稱.SD2檔名; 
+     by 分組變數 ;
+
+proc glm data=libary名.SD2檔名; 
+     class 分組變數;
+     model y1-yn = x1/ nouni;
+     repeated y 重複次數/ summary printe;
+
+
+
+proc sort data=ok.reach;
+     by gender;
+     
+proc glm data=ok.reach;
+     class gender;
+     model hfrd1-hfrd4=gender/nouni;
+     repeated direction 4/ summary printe;
+
+
+
+
+
+
+proc sort data=lib名稱.SD2檔名; by 分組變數; 先以分組變數來加以排序。
+          nouni 指不會列出每一相依變數 y 的個別變異數分析表。
+          printe 表示進行 Sphericity test。
+
+
+結果： 範例一所呈現之結果如下：
+
+
+
+
+分組狀況：
+        受試者間分組 (between-subject measures) 為 gender，一共有兩級： female 與 male
+        
+        受試者內分組 (within-subject repeated measures) 為 direction，一共有四級： 1 = hfrd1
+                        
+                2 = hfrd2
+                        
+                 3 = hfrd3
+                      
+                  4 = hfrd4
+        
+        受試者一共是 14 名，但有一名含遺漏值，故僅有 13 名進入分析。
+        
+
+
+
+受試者間差異：
+        由於 gender 之 F1,11 = 1.78, p > 0.05，故再不考量前伸方向下，受試者在不同性別間
+    的最大前伸距離並無統計學上顯著的差異，亦即無論男性或女性，其能達到的最大前伸距離很相近。
+
+
+
+
+受試者內差異：
+        由於 direction´gender 之 F3,33 = 
+        1.78, p > 0.05，故二變項不存在交互作用，亦即無論男性或女性，其能達到的最大前伸距離在各方向之表現很一致。
+        
+        由於 direction 之 F3,33 = 
+        16.43, p < 0.0001，故同一受試者在不同方向的最大前伸距離具統計學上顯著的差異，亦即
+        同一受試者在不同方向所能達到的最大前伸距離明顯的不同。
+        
+
+
+
+
+Spericity Test：
+        由於 direction´gender 之 F3,33 = 
+        1.78, p > 0.05，故二變項不存在交互作用，亦即無論男性或女性，其能達到的最大前伸距離在各方向之表現很一致。
+        
+        由於 direction 之 F3,33 = 
+        16.43, p < 0.0001，故同一受試者在不同方向的最大前伸距離具統計學上顯著的差異，亦即
+        同一受試者在不同方向所能達到的最大前伸距離明顯的不同。
+        
+
+
+
+  back to top 
+
+Proc GLM Univariate Test
+　
+
+語法：
+
+
+SAS 程式
+範例一
+
+
+
+proc sort data=lib名稱.SD2檔名; 
+     by 分組變數 ;
+
+proc glm data=libary名.SD2檔名; 
+     class 分組變數;
+     model y1-yn = x1/ nouni;
+     repeated y 重複次數 contrast(1)/ short summary;
+     repeated y 重複次數 contrast(2)/ short summary;
+     ....
+     repeated y 重複次數 contrast(n)/ short summary;
+
+
+
+proc sort data=ok.reach;
+     by gender;
+     
+proc glm data=ok.reach;
+     class gender;
+     model hfrd1-hfrd4=gender/nouni;
+     repeated direction 4 contrast (1)/ short summary;
+
+
+
+
+
+
+proc sort data=lib名稱.SD2檔名; by 分組變數; 先以分組變數來加以排序。
+          nouni 指不會列出每一相依變數 y 的個別變異數分析表。
+
+
+結果： 範例一所呈現之結果如下：
+
+
+
+
+分組狀況：
+        受試者間分組 (between-subject measures) 為 gender，一共有兩級： female 與 male
+        
+        受試者內分組 (within-subject repeated measures) 為 direction，一共有四級： 1 = hfrd1
+                        
+                2 = hfrd2
+                        
+                 3 = hfrd3
+                      
+                  4 = hfrd4
+        
+        受試者一共是 14 名，但有一名含遺漏值，故僅有 13 名進入分析。
+        
+
+
+
+受試者間差異：
+        由於 gender 之 F1,11 = 1.78, p > 0.05，故再不考量前伸方向下，受試者在不同性別間
+    的最大前伸距離並無統計學上顯著的差異，亦即無論男性或女性，其能達到的最大前伸距離很相近。
+
+
+
+
+受試者內差異：
+        由於 direction´gender 之 F3,33 = 
+        1.78, p > 0.05，故二變項不存在交互作用，亦即無論男性或女性，其能達到的最大前伸距離在各方向之表現很一致。
+        
+        由於 direction 之 F3,33 = 
+        16.43, p < 0.0001，故同一受試者在不同方向的最大前伸距離具統計學上顯著的差異，亦即
+        同一受試者在不同方向所能達到的最大前伸距離明顯的不同。
+        
+
+
+
+
+Spericity Test：
+        由於 direction´gender 之 F3,33 = 
+        1.78, p > 0.05，故二變項不存在交互作用，亦即無論男性或女性，其能達到的最大前伸距離在各方向之表現很一致。
+        
+        由於 direction 之 F3,33 = 
+        16.43, p < 0.0001，故同一受試者在不同方向的最大前伸距離具統計學上顯著的差異，亦即
+        同一受試者在不同方向所能達到的最大前伸距離明顯的不同。
+        
+
+
+
+  back to top 
+
+
+
+
+本網頁於 04/17/2003 製作，並於 
+05/18/2005更新
+
+© 2003 版權為柴惠敏所有，如需引用請先告知
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+重複測量統計方法的探討與應用 無母數統計／GEE／LMM之深入分析 | iThome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+移至主內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+重複測量統計方法的探討與應用 無母數統計／GEE／LMM之深入分析
+ 
+ 
+
+
+
+
+
+
+ 
+按讚加入iThome粉絲團
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+文/iThome
+|
+2009-02-18發表
+  
+
+ 
+
+
+
+
+
+
+
+
+
+ 重複測量統計方法在生物醫學研究上是重要的分析工具。以往重複測量資料會以GLM(General Linear Model )來解決，其分析方法種類也很多元。GLM可同時處理連續及類別的預測變數，也可分析組內變異及組間變異。如利用前、後測資料做2組相依樣本t檢定，確認是否達到統計顯著差異，此方法單純且易操作，但卻忽略了疾病與危險因子在觀察期間變化的相關資訊；或者應用ANOVA(The Analysis of Variance)分析重複測量資料，但不論是相依樣本t檢定或ANOVA，均有諸多假設前提，常無法套用於醫療領域的樣本，讓研究者過去在使用上受到很多限制。SPSS Taiwan－宏德國際特別舉辦本次研討會，為您詳加比較這些重複測量統計方法的使用時機及功能介紹，您可以不須瞭解背後的統計演算法過程，即可得到您的統計結果，而由於名額有限，歡迎您踴躍上網報名參加。 高雄2/24 (二) 14:00 ~ 16:30 高雄市中正二路175號17樓之3(維士比大樓) 臺北( 已額滿! )2/25 (三) 14:00 ~ 16:30 臺北市南京東路四段126號11樓(世界大樓)臺北( 加開場次) 3/11 (三) 14:00 ~ 16:30 臺北市南京東路四段126號11樓(世界大樓)臺中2/26 (四) 14:00 ~ 16:30 臺中市公益路二段51號10樓B1(國泰公益大樓)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ Advertisement
+
+
+ 
+
+ 
+
+更多 iThome相關內容
+
+
+  
+ 展望2013  Check Point全球資安趨勢預測 
+
+ 甲骨文推出Oracle Audit Vault and Database Firewall 
+
+ UPMOST DVB193 HD數位電視棒 
+
+ 甲骨文推出最新版Oracle RightNow CX Cloud Service 
+
+ 1/13艾鍗學院讓你真正學會韌體設計的精隨 
+
+ 中華數位科技企業資料保護研究小組  協助企業人資部門面對個資法 
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+熱門新聞
+
+
+
+
+
+
+ 
+
+
+英國Wi-Fi業者使壞，讓2.2萬名用戶無意中同意去掃流動廁所
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+Google 兩步驟驗證將以手機提示取代簡訊
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+【AI關鍵技術】三大熱門深度學習框架新進展
+
+2017-07-19
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+硬體不相容，部份英特爾Atom裝置無法升級Windows 10 Creators Update
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+災難！CoinDash首度發行貨幣當天就被駭，損失近700萬美元
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+微軟亞洲研究院院長洪小文：越複雜越不管用，AI最適合封閉型的高重複性任務
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+安撫使用者不滿情緒，Skype聯絡人狀態顯示功能回來了!
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+南韓代管業者Nayana遭勒索軟體攻擊，與駭客達成協議將支付110萬美元贖金
+
+2017-06-21
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+2017年AI開始普及化，技術競賽白熱化
+
+2017-07-15
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+國際警方聯手關閉暗網市集AlphaBay
+
+2017-07-17
+ 
+ 
+
+
+
+ 
+
+專題報導
+
+
+
+
+企業行動化管理解決方案採購大特輯 
+
+
+AI 100（上） 
+
+
+公有雲儲存服務大盤點 
+
+
+富士通AI新戰略 
+
+
+企業身分驗證雲端服務採購特輯 
+
+更多專題報導
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+重複測量變異數分析 RM-ANOVA | 婷's space
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+婷's space
+
+
+Just another WordPress.com site
+
+
+
+
+
+Skip to content
+
+HomeAbout
+
+
+
+
+
+
+
+
+← 變異數分析 analysis of variance
+簡單線性迴歸分析 Simple Linear Regression →
+
+
+重複測量變異數分析 RM-ANOVA
+
+Posted on August 11, 2015 by moonknight2aka  
+
+來自：http://zh.scribd.com/doc/23108229/RepeatedmeasureANOVA#scribd
+可採用多變量方法（multivariate approach）或單變量方法（univariate approach）來執行重複測量變異數分析。應註意不同統計軟體對數據輸入的要求。
+多變量方法的優點是不要求數據符合球型假設。Pillai’s Trace, Wilks’ Lambda, Hotelling’s Trace, Roy’s Largest Root均是採多變量方法 計算得到統計檢定量。
+單變量方法的重複測量變異數分析要求數據符合球型假設。可採用Mauchly球型檢定來測驗待分析的數據是否符合球型假設。如果符合，則F檢定不需要作校正。如果不符合，F檢定需要作校正。當球型假設不符合時，F檢定應以epsilon作校正。包括Greenhouse-Geisser (G-G)及Huynh-Feldt (H-F)值，又建議採用H-F值來校正F檢定。
+當F檢定達統計顯著意義時，可採用多重比較（multiple comparison）找出哪些地方有差異。當受試者內因子或交互作用有顯著意義，很多統計軟體並不提供多重比較的計算。可自行使用非重複變異數分析的多重比較方法，其中MSE的選擇應特別註意，是使用對應F檢定中的分母作MSE，得到的多重比較結果才正確。
+ 
+
+Advertisements
+
+
+
+
+
+
+Like this:Like Loading...
+
+Related
+ 
+
+												This entry was posted in quantitative and tagged ANOVA. Bookmark the permalink.											
+
+
+← 變異數分析 analysis of variance
+簡單線性迴歸分析 Simple Linear Regression →
+
+
+
+Leave a Reply Cancel reply 
+
+
+
+Enter your comment here...
+
+
+
+
+Fill in your details below or click an icon to log in:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+Email (required) (Address never made public)
+
+
+
+Name (required)
+
+
+
+Website
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ You are commenting using your WordPress.com account. ( Log Out / Change )
+
+
+
+
+
+
+
+
+
+
+
+
+ You are commenting using your Twitter account. ( Log Out / Change )
+
+
+
+
+
+
+
+
+
+
+
+
+ You are commenting using your Facebook account. ( Log Out / Change )
+
+
+
+
+
+
+
+
+
+
+
+
+ You are commenting using your Google+ account. ( Log Out / Change )
+
+
+
+
+Cancel
+Connecting to %s
+
+
+
+
+ Notify me of new comments via email.
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Search for:
+
+
+
+  Recent Posts 
+
+Lumia 死機黑屏
+
+
+自助海淘
+
+
+自由行路線規劃網站
+
+
+fully mediate
+
+
+Quasi Simplex Model單純型模型
+
+
+ Recent Comments 
+Mr WordPress on Hello world!婷 on 中國翻譯史2（馬建麗老師） 
+Archives 
+May 2017
+March 2017
+September 2016
+August 2016
+July 2016
+May 2016
+April 2016
+March 2016
+February 2016
+January 2016
+December 2015
+November 2015
+October 2015
+September 2015
+August 2015
+July 2015
+August 2013
+January 2013
+December 2012
+October 2012
+September 2012
+September 2011
+July 2011
+April 2011
+March 2011
+December 2010
+November 2010
+October 2010
+September 2010
+August 2010
+May 2010
+April 2010
+March 2010
+February 2010
+January 2010
+December 2009
+November 2009
+October 2009
+September 2009
+August 2009
+July 2009
+June 2009
+May 2009
+
+Categories 
+10K Hours
+
+Academic Writing
+
+Books
+
+Course in 2009 Summer
+
+Current Events
+
+daily life
+
+DTP
+
+Educational theories
+
+Expressions
+
+計算機與 Internet
+
+Fragments of antique expressions
+
+Glittering diamonds of wisdom
+
+Idiomatic Expressions
+
+Japanese
+
+Legal English
+
+Medical Terms
+
+Methodology
+
+Minds of my interest
+
+psychology
+
+quantitative
+
+sociology
+
+Terms
+
+Terms from Chinese Culture
+
+Trivial
+
+Typing Problems
+
+Uncategorized
+
+whim / 腦洞
+
+X200 Troubleshooting
+
+
+Meta 
+Register Log in
+Entries RSS
+Comments RSS
+WordPress.com 
+ 
+
+
+
+
+
+
+					婷's space				
+
+
+Create a free website or blog at WordPress.com.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+%d bloggers like this:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+重複測量統計分析 | CrossLink 臺大、臺科大、臺師大選課模擬
+
+
+
+
+
+CrossLink 臺大、臺科大、臺師大選課模擬重複測量統計分析Statistical Analysis for Repeated Measurements課程資料學校臺灣大學學年1022代碼28989學分2上課時間週五 - 13:20-14:10週五 - 14:20-15:10上課地點公衛214教師林菀俞上課對象公共衛生學院 流預所生物醫學統計組修課人數0課程網站前往預覽課表
+
+
+
+
+

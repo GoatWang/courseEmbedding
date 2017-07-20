@@ -1,0 +1,2343 @@
+
+
+
+
+
+金融商品創新與評價final
+
+
+
+
+目錄
+
+前言
+摘要
+研究動機
+商品簡介
+研究方法
+實驗結果
+PPT與實例操作
+結語
+參考資料
+
+前言
+	
+            近年來，全球暖化日益嚴重，極端氣候事件頻傳。不穩定的天氣狀況是各國逐漸關心的議題，雖然人類已從原始的農業社會進步至工業社會，再進展到現在的科技社會，生產活動已不再如以前仰賴氣候，可是，無法預期的極端天氣現象還是常常造成一些生產危機及威脅人類生存，因此，準確的氣象預測一直是各國試圖達成的目標，但完美的預測畢竟不容易，所以，有些國家陸續發展了以氣候因子為標的物的衍生性商品，試圖規避巨災所造成的重大損失與風險。天氣風險管理的概念最早出現在1997年的美國，之後瑞士、日本等國也陸續推出與天氣有關的衍生性商品，由此，可知此衍生性商品的市場頗具潛力。
+    台灣位處熱帶氣旋旺盛的地帶，每年梅雨季與颱風季帶來的可觀雨量，若沒做好相對應的防災措施，容易造成重大災害，以2009年八八風災為例，莫拉克颱風讓許多山區單日累積雨量破千，創下許多氣象站單日最大雨量記錄，除了造成農業產物估計損失及民間設施毀損共192.17億元，甚至因大雨導致多處土石坍方，其中，高雄縣甲仙鄉的小林村更慘遭滅村，統計全台共計678人死亡。因此，若有一套能為雨量損失做補償的機制，將能受惠許多為風災、水災所苦的人們。因此，本篇報告針對台灣部分地區雨量做了分析研究，並試圖評價出適合台灣地區的天氣選擇權。
+        
+回目錄
+摘要
+
+    台灣由於地理位置的緣故，每年的五、六月梅雨季與七、八月颱風季總是帶來豐沛雨量，甚至造成災害。因此希望設計出一項補償企業、農家因為暴雨而產生之損失的選擇權，採用回顧的形式，即在月底時將本月份某日的最大降雨量作為標的物，如此一來將能使買家獲得最大報償。
+本研究使用文獻指出每日降雨量呈現Gamma分配的依據，假設歷史降雨量服從Gamma分配，並從中求得兩參數α、β，經由MATLAB函式模擬出十萬筆一個月的降雨量，履約水準則採用氣象局大豪雨標準之豪雨標準，於是得出雨量回顧買權的價格。
+最後再使用文獻中的避險方法，實際操作應購買多少口數的雨量回顧買權以達到避險效果。
+    
+回目錄
+研究動機
+	
+            氣候變化對產業影響相當廣泛，從農、工、商，甚至服務業無不受其影響。市場上的氣候衍生性商品為了緩和氣候變化對產業損失而生，數量不多的氣候選擇權中以天氣選擇權交易最為普遍。但考慮到台灣年年遭受梅雨、颱風襲擊，損失慘重，並且隨著氣候變遷加劇，雨季為台灣各大產業造成不確定的因素將更為顯著。從民國85年賀伯颱風襲台造成農林漁牧約199億損失，至98年的八八風災造成約142億的損失、觀光產業約27億損失，可看出雨量選擇權具有潛在龐大的市場，故我們這組研究一以減小上述產業在雨季所承受的損失為主要目的之衍生性金融商品。
+        
+回目錄
+商品簡介
+
+
+
+商品名稱
+歐式雨量回顧買權
+
+
+合約月份
+五月、七月
+
+
+雨量觀測站
+臺北、臺中、臺南、花蓮、澎湖
+
+
+標的物
+五月(梅雨季)與七月(颱風季)
+            月中最大雨量
+
+
+合約起始日
+5月1日與7月1日0時0分
+
+
+合約終止日
+5月31日與7月31日23時59分
+
+
+結算日與交割方式
+合約終止後第一個工作天以現金交割
+
+
+履約水準
+氣象局大豪雨標準:
+            大雨:24小時累積雨量達50公釐
+            豪雨: 24小時累積雨量達130公釐
+            大豪雨: 24小時累積雨量達200公釐
+            超大豪雨: 24小時累積雨量達350公釐
+
+
+履約方式
+歐式
+
+
+跳動單位
+1公釐 (累積雨量下限為0)
+
+
+契約乘數
+100元/公釐
+
+
+
+回目錄
+研究方法
+
+
+
+
+
+回目錄
+實驗結果
+
+
+
+
+
+回目錄
+PPT與實例操作
+
+
+
+
+
+回目錄
+結語
+
+        本組所粗略設定的雨量選擇權與天氣保險之不同處為天氣保險是當真的損害發生之時，才能去要求申請賠償，而雨量選擇權則是只要超過了設定的標準就可以執行選擇權。
+這樣的商品是否真的能切中農民與需要此商品以多一層的保護之客戶的需求是還須評估，因為假使執行選擇權後所獲得的金額比天氣保險補償的少，就與農民與期望這層保護的客戶的需求相牴觸。
+因此，在這商品真正實行之前，客戶們的需求因也需要多一點的調查，訂定出更加合乎需求的補償價格。此外，雨量的估計之難處也許是使雨量選擇權在定價上面比較難客觀定價的一個因素之一。
+
+        
+回目錄
+參考資料
+
+
+淡江大學產業經濟所黃建樹，「天氣衍生性商品-雨量選擇權評價模式的研究」
+Ison,N,T.,Feyerherm,A.M. and Bark,L.D.,(1971),"wet period precipitation and the gamma distribution",journal of applied meteorology,10,pp658-665
+「描述日雨型態的三種機率分佈模式；以阿裡山為例」http://sgo.pccu.edu.tw/geog/chi/A6/24/24-3%20.pdf
+八八水災損失統計https://zh.wikipedia.org/wiki/%E5%85%AB%E5%85%AB%E6%B0%B4%E7%81%BD
+國外氣候選擇權發展http://www.esunbank.com.tw/about/902.essay
+中央氣象局雨量分級定義 http://www.cwb.gov.tw/V7/observe/rainfall/define.htm
+GAMMA 分佈介紹 http://www.stat.nuk.edu.tw/prost/Web/pdf9.htm
+
+
+回目錄
+
+
+
+
+
+
+
+
+
+
+教師授課計劃表(學生課表查詢部份)
+
+東吳大學教師授課計劃表
+
+
+一、課程基本資料 Course Information
+
+
+科目名稱 Course Title：(中文)金融商品創新與評價
+		(英文)THE PRICING AND INNOVATIONS OF FINANCIALINSTRUMENTS
+開課學期 Semester：99學年度第2學期開課班級 Class：財精專二
+
+
+授課教師 Instructor：詹芳書
+		
+
+
+科目代碼 Course Code：WBM66701
+單全學期 Semester/Year：單
+分組組別 Section：
+
+
+人數限制 Class Size：
+必選修別 Required/Elective：選
+學分數 Credit(s)：3
+
+
+星期節次 Day/Session：  四ABC　
+上課教室 Classroom：
+		  2313 
+前次異動時間 Time Last Edited：100年02月23日17時17分
+
+
+二、指定教科書及參考資料 Textbooks and Reference(請修課同學遵守智慧財產權，不得非法影印)
+
+
+●指定教科書 Required Texts陳松男，金融工程學：金融商品創新與選擇權理論，三版（或四版），新路書局經銷。
+		●參考書資料暨網路資源 Reference Books and Online ResourcesRejda, George E.（2011）, Principles of Risk Management and Insurance, 11th ed., (Addison Wesley), 華泰文化代理．
+
+
+三、教學目標 Objectives
+
+
+本課程將選擇權在保險商品的新興評價與應用介紹給碩士專班的學生。由於學生背景的差異，我們將先依序介紹選擇權定價理論、人壽保險商品、年金保險商品等議題。待學生具備基礎的評價技術與商品知識後，我們將透過文獻導讀與討論的方式，介紹保險商品的創新評價方法與應用，期望學生能夠瞭解未來保險商品財務訂價的趨勢與方向。　
+
+
+四、課程內容 Course Description
+
+
+●整體敘述 Overall Description授課內容包含：1. 選擇權理論介紹2. 保險商品介紹（傳統精算方法概述）3. 財務方法在保險商品訂價的應用（期刊論文導讀與討論）
+
+
+●分週敘述 Weekly Schedule
+
+
+
+
+
+		五、考評及成績核算方式 Grading
+
+
+
+
+
+配分項目 Items
+次數 Times
+配分比率 Percentage
+配分標準說明 Grading Description
+
+出席 20% 報告 40% 課堂討論 40% 
+
+配分比率加總
+100%
+ 
+
+
+
+
+六、授課教師課業輔導時間和聯絡方式 Office Hours And Contact Info
+
+
+●課業輔導時間 Office Hour請以電子郵件預約討論時間。
+
+
+●聯絡方式 Contact Info
+		
+
+研究室地點 Office：R2334
+EMAIL：linuschan@scu.edu.tw
+
+
+聯絡電話 Tel：校內分機3628
+其他 Others：
+
+
+
+
+
+
+七、教學助理聯絡方式 TA’s Contact Info
+
+
+
+
+
+教學助理姓名 Name
+連絡電話 Tel
+EMAIL
+其他 Others
+
+
+
+
+八、建議先修課程 Suggested Prerequisite Course
+
+
+
+
+
+九、課程其他要求 Other Requirements
+
+
+
+十、學校教材上網及教師個人網址 University’s Web Portal And Teacher's Website
+
+學校教材上網網址 University’s Teaching Material Portal：http://elearn.scu.edu.tw(於99.09.啟用）
+
+教師個人網址 Teacher's Website：
+
+其他 Others：
+
+
+十一、計畫表公佈後異動說明 Changes Made After Posting Syllabus
+
+
+
+
+��ࡱ�                >  ��	               T          V      ����    S   �������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������� q`	  �R�             @   bjbjqPqP                   9H  : : �      %                      ��         ��         ��                 �     �      �  �      �      �  &4     @             T      X      X      X  8   �     �  L   T      &f          "   &      &      &                        �%     �%      �%      �%      �%      �%      �%  $   w'  h  �)  �   �%  !                   �     �                                 �      �      �%              �      �      &              &  �   �%     �      �      �      �  �  �      &      �      &      �%              �                                                      �      �%              �      �  �   �#  �   �      �                                                              �$      &      �     ��        X      �  b  t$             �$  �   �%  0   &�$     �*        ^   �*  ,   �$                                                                              �*              "     �$                �      '     3  �                                                     �%      �%                                      v                                                       &�      �      �      �              T      T      T    X      T      T      T      X      T      T      T      �      �      �      �      �      �      ����                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       �ScpI�8R�Nf@b]NAS�Nt^�^xvz1XJT�c��h� kXh��N��q�X�g kXh��eg�]NAS�Nt^AS�Ng�NASmQ�e  xvz��v I�8RFU�_�NM�u'`FU�T�NfKN����xvz��_g��c2��U��PU��g  xvz�UMO �S�N�T �q�X�g  I���s xvzBf�� �]NAS�Nt^   Ng N�e �]NAS�Nt^AS Ng	NAS  �e  1X 0 0 0 0 0JT 0 0 0 0 0gQ 0 0 0 0 0�[ 0 0 0 0 0�c 0 0 0 0 0��   ǌ,g^4XhQtS�T���Rё��uR�e��no�9h,g9e���NOmi\�{t���w�ё��FU�TKNU��P�0����0�0lQs^�P 0��W�?e�^ё��?eV{��>e�ǌ,g^4X�e�v�mS�I�8RFU����KN�{W��ܖ�^��KN�d'Y0я�Nt^�O�;N�{_jܕ�R���>eI�8RFU�_�NM�u'`FU�Tmi�R�S^4XMzuixp�ё��FU�TuR�e�6q�bW\ё��FU�T��R�a�ϑKNg�U�t\!q N�'`�nGR�O�_�vMR\I�8RFU�_�NM�u'`FU�TKNg��c2��U��P�"uu���R1Xh� N�'`��k�'`KNOUL��q_��g�ǌ
+��T���N�_�W��g��nGR�c̎0   N0xvzgQ�[͑ޞ  ,gxvzVf�\�sL���>eI�8RFU�S�_�NM�u'`FU�T.z^�0�vܕ�l��0S�b|vL�0���0c	g�MO���[�P�6R0g�U�t0�	gǌ,gi����k�s���[I{\O NY_te�TBf�N��fb����gq}�I�8RFU���R1Xh�\ё��FU�TKN�c2��`b_�SOUwS���g�vMR�^n�����{t_j6R�s�l��N��sL�I�8RFU�_�NM�u'`FU�T�[���WL�KNOUL���V��2���c�Q*g�Oi�(ulQs^�Pa���S�YUO	gHe�{tM�u'`FU�T�Nf����KN�^p��M�WY�c�e0  ,gxvzqQRmQ�z�d�,{ N�z�p0�}֊00,{mQ�z�p0�^p��P}֊0Y�T�zgQ�[Xd��Xe���YN� ,{�N�z�Xe���vMR��>eI�8RFU�S�_�NKNM�u'`FU�T�SvQǌ�&Nq}��sL�I�8RFU�_�NM�u'`FU�T�NfKN�[xe0 ,{	N�z�Y_te�sL�	gܕM�u'`FU�T�Nfǌ
+��c2�0|vL�0����c	g�MOKN�vܕ���[��S�vMR\M�u'`FU�T�	gǌ,gi����k�s��{KN���[��c��sL����{-N��R�N��te07_S�teT�R��Q1\�sL�M�u'`FU�TKNg�U�t���{�R�N��f�ݑ\g�U��P�e_KNN N�0d�v1Yw0�Nf�[ꌍ��[I{OUL���c�QI�8RFUg�U�t�[�ROUL�KNU��g0 ,{�V�z��}�k�M�u'`FU�TKNg�U��P�e_0W����Wg��nGRlQ1X�vܕU��P���[�2���c�I�8RFU�sL��e���R1XJTKN�c2��`b_��N�SlQs^�PbWI�8RFUI{OUL�0 ,{�N�z�HQL��N㉨����{tKNa�m0����KN�O�n�SI�8RFU�����{tKN�s�l�_�Vf��c�Q\I�8RFUteԚ�����{t_j6RKN�g�i͑ޞ0  �N0P}֊�S�^p��N�  ,gxvz�_�vܕ�l��KN6R�[0I�8RFU�	gǌ,gi����k�s��{0g�U��P��c2��SI�8RFU�����{t_j6RI{�ib�\ObP}֊�&NM�T
+N���VޞP}֊��Q�_mi�R��>e0����ϑS0�cL�lQs^�P07_S���R1Xh��c2�4l�n�S�^�zI�8RFUteԚ�����{t_j6RI{�eb��c�Q�^p��&N|Tr|�aMzui�_�^�i NP�[�U�vU��P�Wy�]z�t�X�S\mi�NMbKNYe����W
+�W�Kb��e��wck�_9h,g�mi�������_��������{tb�pI�8RFU8h�_�z-r�R09�Y_te,gxvzKNP}֊��^p��YN�  P}֊� (  N) �vܕ�l��KN6R�[=��_�e�[�R|vU\��_MzuiteT��X�O �vMR�v�{�UMO�k�e��>e N�FU�TsS��[ NWY�c�{j�nKN�e_��Y�T^4XR%RO(uNTKN��{�Wy�O�c�{M��^0NT^4X�SNTM�u'`FU�TR%R��{M��^��MO0�_�NM�u'`FU�T�Nf�MO����'`FU�T�MO�c�{�e_��UMONTI{�O�_I�8RFU!q�l\ǌё2�L�	gHeK�(u��NT�b gsOǌ"uM�n0 �sL�I�8R��qFUǌёKNK�(u�N֊WY)Rb����v�v��SP��e�l��*ghQb���>e�!q�lEQR(WbWI�8R�fg��^4X2�L�T.z�NfV{eu��YdkNFOP�.~I�8RFU(W�NMb�W
+��FU�Tx|v0L����eb�KN|vU\�N\ǌ,g^4Xui�W��SKNX�of�b_b;��R�dk�_�vt�UMO���N^4X�f��>e�g�i��_��BlI�8RFU�^�z NP�����{t�g�i�D}T~!j_�O�ϑ�\����\O	gHe�va�ϑ0U��P��c6R��_�Pq}�v���{\T�vt�gT����\T�vt0TBf�[�OI�8RFU�����{t_j6RK�\OKNo��z��cNT�]I{S�{t�N�P	g�RI�8RFUmi�RYCQS|vU\�TBf*g�O���RgT�bǌ��L�|vU\�fwQ�z-r�R0  ( �N) I�8RFU�	gǌ,gi����k�s��{*g���V�a����yr'`08RFU�}�qyr'`��c�SNTU�0O�W�n 1u�eё��uR�e�ǌ
+��bS�KN2�ek�M�u'`FU�Tx|v\���O��Y0���O���ܖ�vQ-N�N�����d\OV{eu��R'Yǌ"u�������N�b�vHe�g�Ee�YUO�|�x�vUcIc0RM�u'`FU�T@bb�聄v������[^��vMRj�n�l@b���N�N0O�{��a��RI�8RFU�L���|v�����{t�|q}���I�8RFU�N�����a�ϑ!j�W\�����ǌ,g\O	gHeKN#�P}��NgZP0Rwck�����c�{�v�v�v0  ( 	N) g�U��PN N���c2�ǌ
+�N YEQ���"uu���R1Xh� N�'`��k�'`KNOUL��g�ǌ
+��T�	g�_�cf �sL�I�8RFU\ё��FU�T�c(uKNg�U��P�e_R%R�pb,g�l0b,g�^�Pp[NO�l�SlQs^�P�\�NRKNOUL�� ��U��P�e_N N��q_�����R1Xh�d�vKN8eܕ'` ��I�8RFU\0�qmiI�8R0	cb,g�^�Pp[NO�lU��PKNhTgN N�� �b���R1Xh��k�'`KNOUL� ���R�����FU�T�����]wQ!q�l�eTg��Rd�v�q_�����He�gKNh�T� ��\!qq} N���{KN���g��M�u�f�p�ܖKNg�U�t ��g��y�v�[�R�NteT����R1Xh��f�^	g�_�R7_  ( �V) I�8RFU�����{t_j6R\(Ww�ek-N�teԚ�����eS	g�_Mzui�^�z �}���gq}���s	g2 1 �[I�8RFU-��z\��N\�N����KN�����{t�UMO�o�:yWgQ'Y�WI�8RFU��U�����KN�n-���vvu͑��ꁫ������{t���R0�e�R�N�P�_�N�s���NfKNI�8R��qFU��S�pxe>wY�v,gW-N0\�WI�8RFU��N�N�Pq}�} }mi�R�p;N����NI�8RFU\-��zhs�zKN�����{t�UMO0K�(u����V a R ) �Oa�ϑ����0�^n�����{tǌ
+��|q}I{������'Yϑb,g�^nKN��v��wggQ\!q�R ����aX��Ee(W�^�zI�8RFUteԚ�����{t_j6R
+N��[/f NPHe�sNH_'`�v_j6R�M�TI�8RFUmi�RYCQS0W��SKN �Bl��ek�[b�^n0  �^p�� (  N) c�~��>eI�8RFU�_�NM�u'`FU�Tmi�R%0ckb�h�R0gT0��b�h�R0 1u�eM�u'`FU�TwQ	gWY)R0����S�P��pO�_^4X�fwQHe�s�Y#jS�;N�{_jܕ�[c�~��>eI�8RFU�_�NM�u'`FU�Tmi�R.z^��S!|S\Omi09 2 t^1 1 g2 1 �e�]FUBf1X
+R	��;N�{_jܕ�p�R��S���W���c̎�\(W�sL�I�8R�l�N���[�\I�8RFUAQ1��v�}�qmi�R�{W�1u�N�_0ckb�h�R0�9e�c0��b�h�R0�|^y���f( 9 3 ) t^CQ�e���Y�[�e�dkN{U/f�pI�8R^4X�v|vU\6^�O NGr�iof0  ( �N) ��RI�8RFU�c����V a R )   KNgQ�!j�W�l��{�	gǌ,gi����k�s%0j�n�l0gT0gQ�!j�W�l0 \I�8RFU   Z  \  �  �  �   	  @	  B	  �	  �	    $  �  �  �  �  �    �  �    $  (  .  0  d  f  �  R  V  �  �  �  4  6  �  �    ������������㻲����㲚����p����©��c    h.� CJ OJ PJ QJ o("h.� CJ PJ fHo(q�
+���    �  h.� 5�CJ PJ o( h.� 5�@� CJ PJ o( h.� 5�@� CJ OJ PJ o( h.� 5�CJ o( h.� CJ PJ o(h.� CJ o(h.� 5�CJ OJ PJ o( &j    h.� 0J �@� CJ OJ PJ U h.� CJ OJ PJ o(h.� CJ  PJ  h.� CJ  PJ o( &  (  8  Z  \  f  �  �            �            �            �            x            �                                                                                                                                                    $dH�  $If   a$ q  kd    $$If   � 4�            ���0 ���!�6��!            ������    ����        �0   �     �     �     �     �     �  �  �   �   ��   ������   �   ������   �4� 
+ a�  f4	  dH�  $If       �?  @  @  ���                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         �  �  �  �  �  �  �  �  �            �            �            x            l            x            x                                                                                                           $dH�  $If   a$	  dH�  $If     $dH�  $If   a$ q  kd�   $$If   � 4�            ���0 ���6�4                ��0                �0   �     �     �     �     �     �  �  �   �   ��   �   ��   �   ��   �   �4� 
+ a�  f4 �   	  @	  j            ^                                                                                                                                                                    $dH�  $If   a$ �  kdr  $$If   � �            ��\ ��� �#�6�4                ��                ��                �                �0   �     �     �     �     �     �  �  �   �   �   �   ��   �   �   �   ��   �   �   �   ��   �   �   �   �4� 
+ a�   @	  B	  D	      $  &  �  �  �  P  z    �            �            �            �            �            �            �            �            {            m            m            m                        �����$If   ^��`���
+  �H$If   `�H
+  �� $If   `��   �� �X$If   ^�� `�X  $If    [  kdC  $$If   � �            �5� ���6��6                �0   �     �     �     �     �     �  �  �   ��   ��   ��   �4� 
+ a�     �  �  �  �  &  (  0  f  h  T  V  �  �            �            �            �            �            �            �            �            �            �            �            ~                                                        
+  �h$If   `�h  $If     �H�X$If   ^�H`�X  $�hd��  $If   `�ha$  $
+&F �� �d��  $If   ^�a$  $�h��d��  $If   ^�h`��a$
+ �h$If   `�h  $�7d��  $If   `�7a$  �����$If   ^��`��� �  �  �  6  �  �    b  �  �  �    �  �  �  .  �  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                              $
+&F �� �d��  $If   ^�a$  $If     $�Hd��  $If   `�Ha$
+  �H$If   `�H �H��$If   ^�H`��
+  �h$If   `�h  $�7d��  $If   `�7a$  �H��$If   ^�H`��     `  b  �  �  �  �  �    "  r  �  �  �  �  ,  �  �  �      0  �1  �1  3  3  f3  �5  �5  �5  �5  �6  <7  �7  �7  �7  �7  >8  �8  �8  �8  �8  H9  X9  n9  v9  �9  �9  �9  :  :  
+;  ;  ;  �����������Ʒ������Ƶƫ�������ƛƔ�������������Ƈ��� h.� CJ OJ PJ QJ o(h.� CJ o(h.� B*CJ OJ PJ o(ph     h.� CJ OJ PJ  Uh.� 5�@� CJ OJ PJ o( h.� CJ OJ PJ o(h.� 5�CJ OJ PJ o( h.� 5�CJ PJ o( h.� CJ OJ PJ QJ o(h.� CJ PJ o( 5�  �  �  3  3  f3  �5  �5  �5  �7  �7  @8  
+;  ;  2;  >=  @=  \=  d?  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                                                      $�H��d��  $If   ^�H`��a$  �����$If   ^��`���  $�7d��  $If   `�7a$  �H��$If   ^�H`��
+  �h$If   `�h  $If    ^4X����KN��{��S�S�c�e,gI�8RFU,{�N!k�	gǌ,gi����k�s���{�AQ1�^4X����1\0j�n�l0b0gQ�!j�W�l0-N�d N��{�N�e,gI�8RFU�	gǌ,gi����k�s���{-N\�e0gQ�!j�W�l0-NV a R ��{KN0�ϑ!j�W0�S0�Sxe0O�0	gf�x���{�d�dkKNY��S�Q��N�V�n,nf���j�������&N2�L��X�R,nf���N�MQ�����ɅdkL_܈����t_j6R�vN��0�e�O(u����a�ϑ�R�(WbW�s���kNfϑS�O(u�����`�lN��N�NU��[�Nf\Kb����z�^�O-��[�����Oxe��`�s���k\�eI�8R�} }FU�Nf\Kb��{�Wy��c(u0/}�	NP�qmi�e��2�b�NёM��R
+N/}��NP�qmi�e��Qb�NёM�0�d�N&{T�sL��NrRg�p8R�cT + 1 �e�S>k��cT + 2 �e6R�^��a9e�p0/}��NP�qmi�e��2�b�NёM��R
+N/}� NP�qmi�e��Qb�NёM�0Y��O�}W��lGR�\�es^�e�S������'Y��hyKNI�8RFU��YhQM��NrR���S�Sf�:y��hyI{��[�cNT�����Oxe�N�N�]I{S0O�{0  ( 	N) I�8RFU\0�qmiI�8R0KNU��PHQL��W��g��nGR�c̎%0wk�Sb,g0gT0lQs^�PlQs^�Pg� g�p8eܕKNǌ
+���]/fwk�Sb,g@b!q�l�f�N�v�W����Wg��nGRGW�]�c(u�\�ebWё��FU�Tp�T�NlQs^�P0�c2�KN���]/f�_6q���RKN�N00lQs^�P�֖6q\�e�sL�g�U�tKN��YOUL��_�N�zl�6qbW���Rg��nGRlQ1X,{3 4 _���[�e�N( 9 2 ) t^�^lQJT���\	g�Nt^�}]�g���vMRI�8RFU3^R0�qmiI�8R0�M�u'`FU�TU��P�e_N N�OUL���]�V͑q_��d�v��R�O�_I�8RFU�_�N�vܕmi�R����NMR�d��  ;N�{_jܕMzui��>emi�R�zàS������fN)Rǌ,g^4Xw�`�|vU\0Ee�^p��asS�O�0I�8RFU���R1XJT�}���nGR0�HQL�\0�qmiI�8R09e�clQs^�P��N�S fI�8RFUw�[�}�qP}�g�	gHe�cf���R1Xh��f�^0  ( �V) 7_SteԚ���R1XJT�c2�4l�n��N�cfǌ
+��f�^ Q��eI�8RFUN�P�pM�u'`FU�TKN gB}O(u���N�p�NfFU�S �^��(WT^4XN�e�c�QM�u'`FU�TKN����Nf�e��;ma}�d��a=��[bW���Rg��nGRlQ1X,{2 7 _����{KN�c2��N���NEQR1X\I�8RFU�_�NM�u'`FU�T�Nf�vw�[�`b_0���Rg��nGRlQ1X,{3 4 _��[�e�_�\�N0lQs^�P0ё�����P�N�S���g�I{�N�����[�a�OvQ͑��^�%RR%R�c2�͑��ǌ
+���N�a��Bl�x�[�c2�gQ�[��e�S�cfI�8RFUteԚ���R1XJTǌ
+��f�^0�[�U�vǌ
+��c2�d��S�c�O�bǌ�2�L��bǌzlV{�k^�R�vt�UMO	gHe�{tI�8RFU��fq_��I�8RFUKN^4XU��P0  ( �N) �^�zI�8RFUteԚ�����{t_j6R%0P%R����0gT0teԚ����0�{t00���{\T0gT0����\T0�vt (W�pxe>wY�v,gW-N0\�WI�8RFU��N�N�Pq}�} }b��q�s��mi�R�p;N��wggQ\!q�R ����^�zteԚ�����{t_j6R�Ee�YUO�vt'Y\NTKNI�8RFU��vt�UMO ����[��KN\mi�NMb0mi��vꁋ_�|^y��O�^�i NPo��U�vǌ,g^4X�t�X��ek�cfI�8RFUKN�z-r�R��NT�W��SKN�v�v0\�eI�8RFUKN�vt�;N�{_jܕ/fgT0����\T�vt0|vU\��vMRck1u�j��-N�_�����SƖ���ƖI��N@b0g�N@b0�SwQ�PteԚ�����{t_j6RKNI�8RFUb�z\Hh\D}�Mzui��[0I�8RFU�����{t_j6R gsO�[�R�nGR0( T1z�f�[) ��S0I�8RFU�����{t_j6RU��[I{}j�n0( T1z�f�[) ���[f( 9 3 ) t^R�[b��[sS/f NPHe�sNH_'`�v�nGR������{tKNo��z!qܕNN�}�q>~He}Y�X�(W�eU�0O����À}�SUcIc����d1YKN�|�x��N�S�WL��c�{KN=��[�&T�r��nGRgg�c�OI�8RFU NP�n�d��POI�8RFU�ek�^nteԚ�����{t_j6R0  ( mQ) �^�i NP�[�U�vU��P�Wy�]z�t�X bW�sL�\�_�^�i NP�[�U�vU��P�Wy�]z�t�X�S�b�k)R�s�f�}KN��{�WgQ�vMR&N�l	g NP)R�scj��kj�w��w)Yg��[te��{�Q�k)R�s�f�}�TI�8RFU�OFU�Tl\'`�b�cW��ǌ
+�>y( ��>y0m_ZSǌ
+�>y0�o�>y) �b�cWgQ�vC P 0B A 0I R S I{T)Yg1X�P���w� N/f��SbW�O(uU�I{6R�^\*gnf�S��vMR�SU�lQ�S�Pё��_j�i�S|vL�lQ�S�Nf�^�z�O(u����-N������4l��Nf\KbKN�vܕǌ�eI{��Qdk.z.z(Wa�ϑ�U��PBf� ��^nKN^4Xǌ�e�bW\U�Rgxd"}0�^�i�teT-N�1u�e
+N��U��P�Wy�]zǌ
+�\����a�ϑP}�g�	g͑'Yq_���	g�mi���vܕ�UMOqQTMzuiM�T�[b0  ( N) \mi�NMbKNYe����W
+� g��e�lKN��R0a�ϑ�W���c̎��S�����{t_j6RKN�^�z�_�wck�v�V��c0bMb\���Y�*g�O\�e����a�ϑ0�Nf�[ꌍ��[�lQs^�P�$R�e�vb�N\�8o�R͑�g�0�[������\mi�N�T�vYe����}_N�_�͑�e�[MO0�Y�R7_�vܕ�y�|x[u\W��ǌ,g^4X0ё��FU�T�SU��P�eb��v�Wy��}�7_S*g�O\�}�o�[��lQs^�P\mi$R�e�\�eё��FU�T�v���w�T�Nb,g�Wya�ϑ�v�Pq}g����_�GW��R�N͑�e`�0\�e�](Wǌ,g^4XKN�_mi�N�T�/U	g�N�(Ww���}KN
+�b�N�eEQ�[�e�w�	gܕI�gq6R�^�7_6R��}Bfxe�N1Y�p=��[
+N���NMb�W�KN�e�l��S�p�vܕ;N�N�KN�S�c0  D�;�� N01XJTgQ�[�c���aS�bNR�N�R� xvzgQ�[͑ޞ P}֊��^p��N� �N0,g�c��h��D���P[�j              P A G E          P A G E      1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;  0;  2;  B;  @=  F=  Z=  \=  &>  �>  b?  d?  f?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  @  @  @  @  
+@  @  @  @  @  ����������ǿ�������������������������                                                                       j    h.� 0J Uh�: 0J mH nH u
+h.� 0J  j    h.� 0J Uh.�  j    h.� U	h.� o(h.� PJ o(h.� CJ  PJ  h.� CJ PJ o(h.� 5�CJ PJ o( h.� CJ OJ PJ QJ o(h.� CJ OJ PJ o(h.� 5�CJ OJ PJ o(%d?  f?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �?  �            �            �            �            �            �            �            �            �            �            �            �            �                                                       ��d��  ^��   
+&F �h �V�d��  `�V�   d��   [  kd�  $$If   � �            �� � ���6��6                �0   �     �     �     �     �     �  �  �   ��   ��   ��   �4� 
+ a�   �?  �?  �?  �?  
+@  @  @  @  @  @  @  �            �            �            �            �            �            �            �            �            �                                                                                                                                                                                                                                                             ��d��  ^��    �I?����w&�#$/��:D      �h]�h  ��������&�#$/��:D  
+7 &P	 1�h2P 0��A ��.!��"��#��$�n%�  �S����                                                                                                                                                                                                                                                                                                                                                                                                                                                                       � $$If   �  !v h5� �!5��#v �!#v�:V � 4���0   �     �     �     �     �     �  �  �   ,� 5� �!5��/� ��������/���������4�    4� 
+ f4� $$If   �  !v h5� 45��0#v 4#v�0:V � 4���0   �     �     �     �     �     �  �  �   ,� 5� 45��04�    4� 
+ f4� $$If   �  !v h5� 45��5��5�#v 4#v�#v�#v:V � ��0   �     �     �     �     �     �  �  �   ,� 5� 45��5��5�4�    4� 
+ � $$If   �  !v h5� �6#v �6:V � �5�0   �     �     �     �     �     �  �  �   ,� 5� �64�    4� 
+ � $$If   �  !v h5� �6#v �6:V � �� �0   �     �     �     �     �     �  �  �   ,� 5� �64�    4� 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                �   �                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @  @�� @           gQ�e     1$   CJ KH _HmH	nHsH	tH                  $ A@��� $          �-��k=�W[�W    F i@��� F          h�  :V �  4�   4� 
+l a�        k@���             !qn�U        2  @ � 2           �>\    G$ � 9r  CJ  )@�            ��x    2   2           ���    G$ � 9r  CJ ( '@� !(          ;���Sgq   CJ aJ $ @ 2$          ;�㉇eW[      H C@ BH           ,g�e.~�c    $�7d��  `�7a$ @� CJ  OJ PJ T R  RT           ,g�e.~�c  2     $��/�d��  ^�`�/�a$ @� CJ OJ PJ T S  bT           ,g�e.~�c  3     $�p�P�d��  ^�p`�P�a$ @� CJ OJ PJ , B@ r,           ,g�e     CJ OJ PJ ,   �,          ;�s��eW[    G$   CJ $ &� �$          ;�s��Sgq   H* 8 �@ �8          ;�㉹eJX�eW[     CJ OJ QJ aJ  ؚ�      ؚ                      ����                                    H    ����          -   .   3   P   Q   V   Z   b   g   r      �   �   �   �   �  �  �  �  I  J  u  �  =  �  �  �  �  �  �  �  �  �  4  *  +  T  �  �    M  d  �  �  �  �  �    �  �  �  	  �	  �	  �	  �  �  �  �  �  �  �  �     �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �        
+    �    0       �   �         �    0       �   �       � �    0       �   �       � �    0       �   �      � �    0       �   �       � �    0       �   �       � �    0       �   �      � �    0       �   �       � �    0       �   �       � �    0       �   �       � �    0       �   �       � �    0       �   �       � �    0       �   �       � �    0       �   �      � �    0       �   �       � �    0       �   �      � �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �   0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �   0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �   0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �   0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �  �      �    0       �   �          �   0       �   �          �   0      �   �          �    0       �   �          I� 0                     �I� 0                     �I� 0                     �I� 0                     �I� 0                 `��@  0       �   �        �@  0       �   �          I� 0                   �I� 0                   �                  0                   	                  $   $   $   '        ;  @        !      �  �  @	    �  �  d?  �?  @                       "   #      @                     '   !� !����  �8     �                    @ �   ��    � ��� �    �    �         �0    �(    	�                    
+�          �B    
+�        S �   �   �    �   	   ?    �        ��    (>e   m          q            ;      *�urn:schemas-microsoft-com:office:smarttags�chsdate �  �{�
+   �1�2008�Day�False�IsLunarDate	�IsROCDate�Month�Year                                                    ,   .   2   Z   ]   ^   a   b   f   g   l   m   q   r   |   }   ~   �   �   �   �   �   �  �  �  �  H  J  t  u  �  �    =  �  �  �  �  �  �  �  �  �  �  �  �  �  �  3  4  )  ,  -  .  S  T  �  �  �  �      L  M  c  d  �  �  �  �  �  �  �  �  �  �          �  �  �  �  �  �  �  �  �  �  	  	  Y	  [	  \	  ^	  _	  a	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  S
+  V
+    "  '  *  �  �  �  �  �  �  ,  .  3  7  �  �  �  �  �  �  �  �  <  >  g  i  �  �  �  �       �  �  �  �               �  �  �  �  �  �  �  �  �  �             	  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �                                                                                                                                                                                                                        B   H       %  &  �  �      �  �  �  �      �  �  �  �  �  �  `  a  �  �  �  �  	  	  �	  �	  �	  �	  �	  �	  
+
+  
+  4
+  5
+      &  '  n  r  w  x  �  �  �  �  �  �  �  �  �  �  v  x  �  �  �  �  9  :  o  p  �  �  �  �  �  �  �  �     #  _  c  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �         3  3  s  s  s  3  s  s  3  s  s  s  3  s  s  s  s  s  s  s  s  s  3  s  s  s  3  s  s  s  s  3  s  s  s  s  s  s  3  3  s  3  s                    �  �  �  �  �  �  �  �  �  �  �  �                           �        4F������������� �M] 	�                 � �&��r���������� .�*4��                 �yK3����������� G9M��,)��������� %Xxj
+���                 � 	�                    #                    ���4�� �^��`�4�o( �  	�                        ���W�� �^��`�W�OJ QJ o(  l�   #                    �h�h�� h^�h`�h�o( (   )    �                    ��� �� �^��`� �  0   �                    �p� �� p^�p`� �  .     �                    �P
+� �� P
+^�P
+`� �  .    �                    �0� �� 0^�0`� �  0   �                    �� �� ^�`� �  .     �                    ��� �� �^��`� �  .    �                    ��� �� �^��`� �  0   �                    ��� �� �^��`� �  .    #                    ��� �� �^��`� �o(   0   #                    ��0�� ^�`�0�o(   0   �                    ��� �� �^��`� �  0   �                    ��� �� �^��`� �  .     �                    ��	� �� �	^��	`� �  .    �                    ��� �� �^��`� �  0   �                    �w� �� w^�w`� �  .     �                    �W� �� W^�W`� �  .    �                    �7� �� 7^�7`� �  0   �                    �� �� ^�`� �  .    #                    ���0�� �^��`�0�o(   0   �                    ��� �� �^��`� �  0   �                    ��� �� �^��`� �  .     �                    ��� �� �^��`� �  .    �                    �`	� �� `	^�`	`� �  0   �                    �@� �� @^�@`� �  .     �                    � � ��  ^� `� �  .    �                    � � ��  ^� `� �  0   �                    ��� �� �^��`� �  .                         �� �L�� � ^�� `�L�o(   .                         ���W�� �^��`�W�OJ QJ o(  l�   4F�            .            %Xxj            �yK3            G9M            � �&��M]            ����������������������������������                   ��                            �          �: .�        -   .   3   P   Q   Z   b   g      �   �   �   �  �  �  �  �  �  �      
+                                                          �@   3   O   (�;  O       O               
+    @      @  0    ��    U n k n o w n ��            ��     ��   ��    ��   ��       G�  �z     �       �      T i m e s   N e w   R o m a n   5�                   �    S y m b o l   3&�  �z     �       �      A r i a l   /E��  	           .             jwiԚ  C��            .             �e0}fԚ  P M i n g L i U   ;�                            �    W i n g d i n g s      1�  2   h    ����J���|&    �  8   	        �  8   	           �       ?  ! ) , . : ; ? ] } � �     " % & ' 2 t%00	00000000�1�3�4�6�8�:��@�B�D�O�P�Q�R�T�U�V�W�Z�\�^��	������\�]�d�                                                                            ( [ { � �   5 0
+0000005�7�9�;�=�?�A�C�Y�[�]��[�                                              ��x � ��    d      �  �                                                                        2�    ��                           HP    �� ?  �  ����������������������:     2                 ��        I�8RFU�_�NM�u'`FU�T�NfKN����xvz��_g��c2��U��PU��g I�8RFU�_�NM�u'`FU�T�NfKN����xvz��_g��c2��U��PU��g I�8RFU�_�NM�u'`FU�T�NfKN����xvz��_g��c2��U��PU��g   L�?eb�ё���vcw�{t�Y�TgI�8Rg��@\ N S                     ,                                                                                                                                                                                                                                                                                       ��                      �����Oh�� +'��0   x        �      �      �      (     T     �     �     �  	   �       
+   (     4     @     L     X     `     h     p     �     �Ҩ�ӱq�ƭl�ͩʰӫ~��������I��s�бq�|�p���S�P�������R       �Ҩ�ӱq�ƭl�ͩʰӫ~��������I��s�бq�|�p���S�P�������R       $   ��F�|���ĺʷ��޲z�e���|�Ҩ���f��     �Ҩ�ӱq�ƭl�ͩʰӫ~��������I��s�бq�|�p���S�P�������R       �Ҩ�ӱq�ƭl�ͩʰӫ~��������I��s�бq�|�p���S�P�������R          Normal.dot        NS        6         Microsoft Office Word   @    �Ik    @    �P3���@    ���@    0�혁�         �     8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ��                      ��՜.�� +,��0            h      p      �      �      �      �      �      �      �      �      �      �      �        540;481;822           ��F�|���ĺʷ��޲z�e���|           367020000D           	      �     �                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     	   
+                                                                      !   "   #   $   ����&'   (   )   *   +   ,   ����.   /   0   1   2   3   4   5   6   7   8   9   :   ;   =   >   ?   @   A   B   ����D   E   F   G   H   I   J   ����L   M   N   O   P   Q   R   ��������U   ����������������������������������������������������������������������������������������������������������������������������������������������������������������������������R o o t   E n t r y                                              ��������   	     �      F             ���W   �       D a t a                                                         
+ ������������                                    %          1 T a b l e                                                            ����                                    -   +      W o r d D o c u m e n t                                                ����                                        9H       S u m m a r y I n f o r m a t i o n                           ( ������������                                    C           D o c u m e n t S u m m a r y I n f o r m a t i o n           8    ��������                                    K           C o m p O b j                                                   ������������                                        m                                                                           ������������                                                   ���������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������� ��
+  ����	     �      F   Microsoft Office Word ��� 
+   MSWordDoc    Word.Document.8 �9�q                                                                                                                                                                                                                                                                                                                                                                                                                               We're fetching your file...Please wait a moment while we retrieve your file from its home on the internet
+
+
+
+
+
+
+
+
+資通電腦舉辦金融商品分析活動 市場風險輕鬆理 - 資通電腦股份有限公司
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+﻿		
+｜利害人專區
+｜菁英招募
+｜免費諮詢
+｜公司簡介
+｜網站地圖
+｜首頁
+｜簡體中文
+｜English
+｜ภาษาไทย｜
+
+
+
+
+關於資通
+
+
+公司簡介
+經營理念
+里程碑
+
+客戶及合作夥伴
+企業社會責任
+聯絡我們
+資源下載
+利害關係人專區
+
+
+
+
+菁英招募
+隱私權聲明
+員工園地
+
+
+
+
+消息與活動
+
+
+2017
+2016
+2015
+2014
+2013
+2012
+2011
+2010
+2009
+2008
+2007
+2006
+2005
+2004
+2003
+2002
+2001
+2000
+1999
+
+
+
+
+專業服務
+
+
+資通專業服務
+資通委外服務
+應用資訊顧問服務
+資通商業智慧服務
+政府專案服務
+
+
+
+
+
+產品介紹
+
+
+
+製造服務業
+
+ArgoERP
+ciMes
+CMO
+GCRS
+GD-CRM
+NHMS
+PowerBudget
+Analyzer
+
+
+
+人力資源管理系統
+
+HCP
+
+
+
+
+
+銀行金融業
+
+AFEIS
+eAresBank
+
+ ARES Nuntio
+
+Ares Smart Core Banking System
+ARES Treasury System
+ARES Portfolio System
+Visual Pricing Tool
+
+
+
+
+
+ORACLE
+
+Oracle ERP / CRM
+PLM
+eGUI / GV / NM / GIB / 十號公報
+
+
+
+資訊安全
+
+uPKI
+ARES Privacy Protector
+Fortify
+
+
+
+
+
+
+Ares電子報
+
+
+成功案例
+
+
+投資人專區
+
+
+公司治理
+股東服務
+
+重大訊息
+營收報告
+財務報表
+股東會資訊
+
+
+
+
+客戶專區
+
+
+ARES Portfolio System
+Visual Pricing Tool
+
+
+
+
+
+
+
+
+ 
+   
+
+
+
+
+
+
+
+首頁
+					 > 消息與活動 > 資通電腦舉辦金融商品分析活動 市場風險輕鬆理
+                
+
+
+
+消息與活動
+
+«
+消息清單
+					»
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+«
+消息清單
+					»
+				
+ 
+
+ 
+
+
+
+
+
+2017
+2016
+2015
+2014
+2013
+2012
+2011
+2010
+2009
+2008
+2007
+2006
+2005
+2004
+2003
+2002
+2001
+2000
+1999
+
+
+免費諮詢
+聯絡我們
+
+Email：jenny@ares.com.tw
+電話：(02)25221351
+傳真：(02)25601735
+各辦公室地址
+隱私權聲明
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+資通、資通電腦、e資通、ARES、皆為資通電腦(股)公司之註冊商標。　版權所有 2010-2017 資通電腦股份有限公司。
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Findbook > 商品簡介 > 結構型金融商品之設計及創新首頁搜尋地圖今日 66 折結構型金融商品之設計及創新作者：陳松男, 出版社：高雄復文, 出版日期：2003-10-01定價 700 元, 最低 665 元起... 博客來 完整列出比價資訊...商品條碼：9789574113538, ISBN：9574113531分類標籤：中文書 » 財經企管 » 財經投資 » 商業 » 投資理財簡介比價部落格貼紙向好友推薦此書將本書加入收藏回報錯誤資訊   內容簡介 
+
+　　真正瞭解結構型商品的各種特徵，諸如設計與創新、評價、淺在風險、發行商成本分析與避險策略，以及投資人淺在獲利的可能性等重要特徵甚少為人所知。
+　　因此，本書為提供投資人、證券及銀行從業人員、發行商以及在校學生欲瞭解結構式金融商品而精心設計。
+　　其內容適用對象如下：
+　　1.投資人可從本書瞭解各類型金融商品的設計特徵、淺在風險及淺在獲利的可能性，從而選取適合本身所要的風險與報酬之金融商品。
+　　2.證券商、銀行及相關金融機構的從業人員更應該瞭解各類金融商品的設計特徵、淺在風險及獲利淺利。
+　　3.發行商的新金融商品設計職員及金融工程專業人員更應理解本書內容各類型新商品設計及創新的分析、新商品的評價與利潤分析以及新商品的避險策略。
+　　4.在校生可採用本書作為結構型金融商品之個案分析。對於金融工程專修的學生更應瞭解各類型金融商品的評價與利潤分析以及發行新商品的避險策略。本書都有詳細的介紹與分析。
+　　因此本書很適用於欲對結構型金融商品擁有全盤瞭解的投資人、證券與銀行從業人員、財務工程專業人士及在校學生。
+
+商品簡介由 博客來 所提供 相關書籍  新奇結構式債券產品案例：分析與創新(簡體版)  金融創新-財務工程的實務奧秘  【結構型商品及基金之特性報酬與風險之研究】  結構型商品理論與實務 翻書客專區還沒加入翻書客？免費註冊 | 登入最近瀏覽過的書籍結構型金融商品之設計及創新贊助商連結© 2005-2008 Findbook, Ecowork Inc. 關於我們 | 新手上路 | 常見問題 | 聯絡我們 | 部落格 | 行動版網頁
+
+
+
+
+MATLAB �]�Ȫ��ľ�X�ѨM��� ���ά�Q�|
+
+
+
+
+����r�j�M :  
+	 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+���q²��
+���~��T
+�Ш|�V�m
+���ʸ�T
+�g��Ѻ�
+�޳N�䴩
+�u�{�v�Ѽֳ�
+�|���n�J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+��Ӫ��İӫ~���]�p�U�ͦh�������B�l�ͩʪ��İӫ~�]���k�o�i�A���]���������Ҫ���t�ܤơA���y�]�Ȫ��ľ��c���Ȼݫغc�������겣�����ҫ��A���������I���ިt�Τ]���i�ίʡF�ƦܡA���{�������������ĥ�������A�p��}�o�@�M�����������ҫ��A�󦨬����ıM�~�H�������n�P������C��z�U�����z�A�O�_�w�g�ǳƦn�ﱵ�o�������U�ܥB�j�q��T�R�������ĥ����H
+MATLAB ���]�ȼҫ��ѨM��סA�N�����z�@���ѨM�Ҧ������D�I�ѥ��y�}�o����޹B��u�{��o�v�� The MathWorks ���q�Ҭ�o�� MATLAB ���~�a�ڡA���U�]�ȶ}�o�u�{�v�B�p�q���R�v�B���I���R�v�B���g�z�H���]�g�M�a�i��U�ذ]�ȸ�Ƥ��R�B�ҫ��}�o�غc�B��Ƶ�ı�Ƥu�@�A�ï�P Excel�BC/C++�BVB�B.NET �Ψ�L�]�g�M�~�n�����ҧ�����X�A���P�o�i�T�w���q�B���I�޲z�B�l�ͩʪ��İӫ~�B�v�q�겣�t�m���ҫ��A�Ʀܥi�`�٤C���H�W���{���}�o�ɶ��A�i�Ӧb�Ĥ@�ɶ����w�̨ε����B���t�^����´���ݨD�P�~���������ܰʡC
+���F���z�`�J�F�� MATLAB ��]����줧�ѨM��סA�ڭ̱N�S�O�|��iUsing MATLAB to Develop Financial Models �� MATLAB �]�Ȫ��ľ�X�ѨM��סj���ά�Q�|�C�|���N�S�O�ܽХ]�A��ڲ���B���H�Ҩ鵥�h���`�M�a�A���z���� MATLAB ��x�W���ĥ����W��������ΡC�ۼ��ܽбz�Y�{�A�P�h��]�g�M�a�@�P��Q MATLAB ���j�j�\��C
+
+
+
+
+
+���ʵJ�I�G 
+
+
+ 
+ 
+
+
+ 
+�p��B��MATLAB �ѨM�ثe���ĥ��������D
+
+
+
+ 
+�B�� MATLAB �إߴ��f�B����v��������ҫ�
+
+
+
+ 
+�T�w���q�겣����ҫ��غc�X�ϥΪ̸g�����
+
+
+
+ 
+���I���޼ҫ��غc--�ϥΪ̸g�����
+
+
+
+ 
+MATLAB �PVB�B.NET ��C# ����X�B��
+
+
+
+ 
+�B�� MATLAB ���������B��[�t�X�a�dù����
+
+
+
+
+
+
+
+
+
+
+�O�ΡG 
+
+
+  
+  �K�O
+
+ 
+
+
+�A�X��H�G 
+
+
+ 
+ �]�g�u�{�v�B�p�q���R�v�B��s���R�v�B���v�B���f������B����g�z�H�B�s���~�Ʒ~���H���B���I�޲z���H���B�Ũ鱤���H���B��T�����H��/�D��  
+
+
+
+
+
+�ɶ��G 
+
+
+ 
+ 2006�~6��6�� (�g�G) 13:00~17:00 
+
+
+
+
+
+�a�I�G
+
+
+ 
+�x�W���Ĭ�V�|�G�ӵ׷~�� (�x�_��������ù���ָ��T�q62��)
+
+
+
+
+ 
+                                                                 
+                                                                 ��q��T:
+                                                                
+
+
+���Ĭ�V�|��q��
+�����樮���u��
+
+
+
+
+ 
+
+
+����ĳ�{�G 
+
+
+
+
+
+Time
+Description
+
+
+13:00-13:30
+Registration
+
+
+13:30-14:20
+Using MATLAB® to Develop Financial Models
+
+MATLAB ��]�Ȫ��Ĥ�����
+�B��MATLAB�إߴ��f�B����v��������ҫ�
+Demo
+
+
+�����p �Ʋz
+                                                                           �g���� �~�Ⱥ[�u�{��
+
+
+
+14:20-15:10
+���c�Ť��зs�P����
+
+
+�ꤺ�Ũ飫�����p
+���c�Ū����ĳзs�P�o�i
+�Q�v�ҫ��^�U�P�Ũ����
+MATLAB�B�Ω󵲺c�Ť������P���R
+
+ ���˩v ���z
+                                                                                 ��ڲ��� �������ߥ�q�j�� �޲z��Ǭ�s�� �դh�Կ�H
+
+�L�h�X�~�Ӧb�ꤺ��������e�P�����ҤU�A�l�y�F�Ũ髬��������k�o�i�A�Ӧ��H�ꤺ�Q�v�ӫ~���}��P�ۥѤơA���c�ťi���O���ĳзs�U�������A���ѩ�Ũ髬����v�۪����Z�ıƦW�����O�U�A�n���R�J���c�Ũçᦱ�@�����欰�A�ϱo�Ũ髬������H���S�b�@Ĳ�Y�o���t�Ωʭ��I�A�H�P�󥫳��̫�X�G�����c�Ŭ��x���r�~�A�פ��߮����ΡC�ӳo�˪��L�P���άO�Ӧ۩�g�z�H���P���H��󵲺c�Ū����ȻP�S�ʯʥF�������A�ѻP���I�N�ѡC
+                                                                                 
+�ꤺ���~�ӧ��Ȧ����P�O�󵲺c�ų]�p�A�ӫ�b���ť��������s�]�˶R��A������U�ѨM�Ũ髬������ᦱ�@�������İ��D���A�q��������֧Q���C�ӳo�ǧ��Ȧ榨�\������]���b��ﵲ�c�Ū����������I���R����O�C
+�󦹡A��ڲ���չϧQ��MATALB�@���}�o���c�Ū������ҫ����u��A�ھھǲz�WLIBOR Market Model�����z�סA�äj�q�ϥ�MATLAB����Toolbox������ǦC�禡�H���t�p��ҹ������{���y�q����A�A�Q�ΧQ�v�������c�����禡����s���Q�v���u�B�����Q�v���u�B�������v���׶i�ӹﵲ�c�ŵ����A���R�̥i�H�[��c�Ū����C�Ӳ{���y�q�鱡�p�A�@�X�R��M���A�Ʀܥi�H�������P���Q�v���c�U������A�o��󵲺c�Ū����H�B�ӫ~�]�p�H���A�������ѤF�ѨM�������D�����Ĥu��A�äj�T���ɵ����P���I���R���Ĳv�C
+
+
+15:10-15:30
+Coffee Break
+
+
+15:30-16:20
+MATLAB ���I�޲z�����Ρ�MATLAB Excel Solution 
+
+���T�� ��`�Ʋz
+                                                                           ���H�Ҩ� ���I�޲z��
+����F ���űM��
+                                                                          ���H�Ҩ� ���I�޲z��
+
+�H�۰]�ȷ|�p�ǫh������34 ���u���İӫ~���|�p�B�z�ǫh�v(²�٬���34 ������)����I�A�Ϥ������Ȥ��i���ҩʬ����I�޲z��ȤW�@�ӭ��n�����D�C�D�޾�����~�Ӥw����}��U�ة��Y�����l�ͩʪ��İӫ~�A�]�t�Q�v�B���v�������c���ӫ~�Υ���A���ȷs�ӫ~�h�X���a�A�B��P�p���t�Τ]�U�ν����C����U�o��ӻP�������ӫ~�A�p���X�@�M�ѨM��ׯ��X�h�ذ]�Ȥ��R�P�귽���@�u��A�ï�ŦX��Ȥ��B�z�B���ɰ]�����z���סA�L�ìO���e���I�޲z�ΰ]�ȳ����������ݨD�C
+                                                                          ���`�N�Ѥ��H�Ҩ魷�I�޲z���A���Ѧp��ѥ���ΰ]�|�W�s�x�ϥΤ�Excel �u��ɤJMALTAB Excel Solution�A�ǥ�MATLAB���Ѥ��j�j�]�ȭp��\��ξ�X�u��A�Ϥ@��ϥΪ̩����H�z�Ѫ��l�Ͱӫ~�����ҫ���PExcel �@�@���Ī���X�A�ѨϥΪ̨ӳ]�p��ȤW�i�ϥΪ����Y���l�Ͱӫ~�����έ��I�޲z�p��u��C
+
+
+16:20-16:50
+Algorithm Deployment and Distributed Computing
+MATLAB �{���X���ɤu��Τ������B�⤧���Τ���
+
+Deployment Application Introduction 
+MATLAB Compiler 
+MATLAB Builder for .Net
+Demo: C# , VB.Net
+Distributed Computing 
+
+ ������ �u�{�v
+                                                                                                                                                    �g���� �~�Ⱥ[�u�{��
+
+
+
+16:50-17:00
+Q & A
+
+
+*�D����O�dĳ�D�κt�����e�ܧ��v�Q
+
+
+
+
+
+���W�覡�G
+
+
+
+�������W�G 
+
+
+
+
+                            �u�W���W���� ( �Х� �n�J�g��|�� )
+
+
+
+
+
+
+
+
+
+
+����Q�|�w�꺡�����I�z�i�H��� �U����������C
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+�� �ߧY�K�O�[�J�g��|��
+  (�[�J�g��|���A�i�H�ɤW���n�����W��Q�|�B�Ш|�V�m�B���������޳N�峹�B���СA�çY�ɱo��U�����ʬ����T��) 
+
+
+�ǯu���W�G
+ �U���ö����W�����A�ǯu�ܡ]02�^2346-5758
+
+
+
+e-mail���W�G
+�U���ö����W�����Ae-mail ��jocelyn@terasoft.com.tw 
+
+
+�q�ܳ��W�G 
+�q���]02�^2346-5598#22 ������� �d�p�j 
+
+
+
+Free�I�����ʧ����K�O�A�кɳt���W�A�H�T�O�z���u���I
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2008結構型金融商品個案之設計、收益與風險分析
+
+
+
+
+
+
+
+
+
+
+最近更新日期
+
+2008/07/14
+
+
+2008結構型金融商品個案之設計、收益與風險分析
+
+
+
+      　
+
+      　
+
+
+
+
+
+一、
+目的
+
+
+促進瞭解結構型商品的各項特徵，諸如設計及創新、評價（合理價格）、潛在風險、發行商成本分析與避險策略，
+以及投資人潛在獲利的可能性等重要特徵。提供投資人、銀行、證券公司、投信、投顧及理財從業人員，以及在校
+學生欲瞭解結構型金融商品而精心設計。
+
+
+
+二、參加對象
+
+
+◎證券、期貨、銀行、保險、理財等各金融相關從業人員。
+◎大專院校財務、金融、企管、數學等相關科系研究生。
+
+
+
+三、參加資格
+
+大專畢業。
+
+
+
+四、
+主講人
+
+
+陳松男博士
+
+國立政治大學金融系教授
+
+台灣金融工程師學會榮譽理事長（原創會理事長）
+曾任美國馬里蘭大學財務金融博士研究所主任七年
+
+
+
+五、
+課程特色
+
+
+
+			1.詳細介紹各類型金融商品的設計特徵、潛在風險及潛在獲利的可能性，從而選取適合本身所要求的風險與
+
+			報酬之金融商品。促進證券商、銀行及相關金融機構的從業人員更應該瞭解各類型金融商品的設計特徵、潛
+在風險及獲利潛力。
+2. 
+
+			發行商的新金融商品設計職員及財務工程專業人士更能夠學習到各類型新商品的設計及創新的分析、新商品的
+
+			評價（成本評估）與利潤分析以及新商品的避險策略。
+　
+
+
+
+六、
+上課時間
+
+
+97/5/07~97/6/13（晚間18:30∼21:30）
+每週三及五上課，共計12
+			次，36
+			小時。缺課時數未超過9
+			小時者本會將發給中英文結業證書。
+
+
+
+七、
+上課地點
+
+
+政大公企中心C-B01
+教室 臺北市金華街187
+			號
+
+
+
+八、
+課程內容
+
+
+教材為「結構型金融商品之設計與創新（一）」（書籍由本會提供）。
+
+
+
+           
+	壹、股權連結金融商品篇
+
+                   
+	1.華邦電價差型保本票券之設計及分析（第二章）
+
+                          
+	一、價差型保本票券介紹
+                         
+	二、價差型保本票券商品實例
+                         
+	三、價差型保本票券評價公式
+                         
+	四、華邦電保本型票券評價及利潤分析
+                         
+	五、華邦電保本型票券之弊顯參數與敏感度分析
+                         
+	六、發行商避險策略
+
+                        
+	2.二年期台股連動高年息債券之設計及分析：彩虹選擇權（連結五檔台股）（第三章）
+
+                        
+	
+	一、最小值選擇權與最小值保息連動債券之介紹
+	                         
+	二、最小值保息連動債券的拆解
+                         
+	三、最小值保息連動債券商品實例
+                         
+	四、最小值保息連動債券評價                         
+	
+                         
+	五、兩年期台股連動債券評價與利潤分析
+
+                        
+	3.高收益票券之設計與分析：富邦銀台積電ADR 連結收益債券（第四章）                        
+	
+
+                        
+	一、高收益票券
+	                         
+	二、看好高收益票券
+                         
+	三、看好高收益票券實例                         
+	
+                         
+	四、發行商避險策略
+                         
+	五、投資人高收益票券投資策略及分析
+
+                        
+	4.『看好』高收益票券之設計及分析：寶來NASDAQ100 高收益票券（第五章）
+
+                       
+	 一、寶來NASDAQ100 
+	高收益票券
+	                         
+	二、評價方法
+                         
+	三、避險參數及敏感度分析
+                         
+	四、發行商避險策略
+                         
+	五、投資人高收益票券投資策略與分析
+
+                   
+	5.投資人定存之設計與分析：花旗銀行FTSE 全球生化製藥指數投資型外幣定期存款（第六章）
+
+                         
+	一、投資型定存
+                         
+	二、亞洲式保本型票券
+                         
+	三、Cliquet 保本型票券
+                         
+	四、亞洲式保本型票券實例                         
+	
+                         
+	五、各種不同條款之下的投資型定存之評價
+                         
+	六、風險分析
+
+
+                    
+	    
+	6.法商興業雙收益連動債券之設計與分析：彩虹選擇權（連結15 檔國際個股）（第七章）
+	
+                         
+	一、雙收益連動債券契約內容
+                         
+	二、產品特色
+                         
+	三、資料蒐集
+                         
+	四、每年債息的計算
+                         
+	五、參數計算
+                         
+	六、雙收益債券評價結果分析
+
+
+                  
+	貳、利率連結金融商品篇
+
+                        
+	7.荷蘭銀行三年期超反浮動LIBOR 利率連動債券之設計與分析（第十一章）
+	
+                        
+	一、計息方式
+	                         
+	二、評價方式
+                         
+	三、解拆解
+                         
+	四、發行收益分析
+
+                      
+	  
+	8.第一銀行五年期美元反浮動利率連動債券之設計及分析（第十二章）
+	
+                      
+	  一、計息方式
+	                         
+	二、評價方式
+                         
+	三、解拆解
+                         
+	四、發行收益分析
+
+                      
+	  
+	9.路徑相依評利率連動債券之設計與分析荷蘭銀行七年期配息鎖定連動債券（第十五章）
+	
+                         
+	一、利率連動債券
+                         
+	二、路徑相依利率連動債券
+                         
+	三、路相衣利率連動債券商品實例                         
+	
+                         
+	四、荷蘭銀行七年期配息鎖定連動債券之敏感度分析與避險參數
+                         
+	五、發行商避險策略
+                         
+	六、投資人投資策略與分析
+
+                  
+	10.報酬修改型利率連動債券之設計與分析三年半期美元計價利率連動債券（第十六章）      
+	                  
+	
+
+
+                     
+	   
+	一、報酬修改型利率連動債券
+	                         
+	二、報酬修改型利率連動債券之商品實例
+                         
+	三、臺北國際商銀利率連動債券之避險參數與敏感度分析                         
+	
+                         
+	四、發行商避險策略
+                         
+	五、投資人投資策略與分析
+
+
+                  
+	參、「匯率連結金融商品篇」
+
+                        
+	
+	11.保本型票券之設計及分析：荷蘭銀行日圓兌美元定期存款（第十七章）
+	                 
+	 一、保本型票券
+                         
+	二、觸及生效保本型票券
+                         
+	三、觸及失效保本型票券實例
+                         
+	四、發行商避險策略
+                         
+	五、投資人投資策略與分析
+                  
+	12.中國信託商銀三個月期美元理財專案（第十八章）
+                 
+	一、外幣投資型定存介紹
+                         
+	二、投資型定存之風險
+                         
+	三、投資型定存之實例解析
+                  
+	13. 中國信託商銀六個月期歐元理財專案（第十九章）
+                
+	 一、外幣投資型定存介紹
+                       
+	二、投資型定存之風險
+                       
+	三、投資型定存之實例解析
+
+
+
+
+
+九、參加費用
+
+ 每人新台幣23,000元
+			（含稅、講義、教材、茶水等）。
+
+
+
+
+十、優惠辦法
+
+　
+1. 
+本會會員一律八折優惠，實收18,400 元/人。
+			2. 
+
+舊生回班享九折 (20,700 元/人) 
+			優惠，不得與其他優惠併用。
+			3. 
+
+學生（應屆畢業可，但不含EMBA 
+			學生），報名檢附學生證影本，實收13,000 元/人。
+			4. 
+			二人同時報名（不含學生），享九折(20,700 元/人)優待，
+			   三人同時報名（不含學生），八五折(19,550 元/人)優待，
+			   四人同時報名（不含學生），享八折(18,400 
+			元/人)優待。
+			
+
+   同時報名係指使用同一張報名錶。
+　
+
+
+
+
+十一、每班名額
+
+
+20人開班，班級人數以40人為限(欲報名請從速)。
+
+
+
+十二、報名辦法
+
+			填妥報名錶後，以傳真或 
+E-mail報名。
+傳真：（02）8661-0401  E-mail：cafie@nccu.edu.tw。
+
+
+
+十三、繳費方式
+
+
+1.支票—開立即期支票郵寄至本會。
+2.匯款—臺北富邦銀行
+敦南分行
+
+737-102-001-233 抬頭：中華金融創新與財務工程學會
+★  
+名額有限，報名同時請完成繳費手續，否則不予保留。
+★ 繳費後(未開課前)臨時退出，扣除行政作業費三千元，餘款以匯款退還；開課後恕不退款。
+
+
+
+十四、相關事宜
+
+電洽：（02）8661-7079 
+信箱：cafie@nccu.edu.tw
+
+
+
+
+
+★報名錶格下載
+
+
+★報名簡章下載
+
+
+
+
+
+結構式金融商品之設計及創新(簡體版)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    	    歡迎光臨！您可以 登入 或 成為會員使用完整功能	    	  
+
+首頁
+書籍備忘簿 (0)
+會員中心
+購物車
+結帳
+
+
+購物車
+0 件商品 NT. 0
+
+您的購物車沒有加入任何商品
+
+
+
+
+
+
+
+
+新台幣
+
+USD
+人民幣
+新台幣
+港幣
+
+
+
+
+
+
+
+
+
+搜尋全部
+書名
+書碼
+作者或譯者
+關鍵字
+ISBN
+
+
+
+
+
+
+
+
+
+
+
+
+
+財管類
+
+金融類
+
+金融科技
+
+經濟類
+
+會計類
+
+數學類
+
+稅法類
+
+保險類
+
+管理類
+
+行銷類
+
+國貿類
+
+統計類
+
+通識類
+
+
+
+
+
+
+Menu
+
+
+財管類
+金融類
+金融科技
+經濟類
+會計類
+數學類
+稅法類
+保險類
+管理類
+行銷類
+國貿類
+統計類
+通識類
+
+
+
+
+
+
+
+
+《稅務法規》8S 最新版，挾雷霆萬鈞之勢上市囉！歡迎加入｢稅務法規理論與應用｣粉絲團   | 
+
+等了好久! 最新《期貨與選擇權》全新上市   | 
+
+《人際關係與溝通》3版讓學習更扎實精進   | 
+
+股海寶典─《證券投資分析~選股標準作業》   | 
+
+《中級會計學》上冊、下冊、全一冊，採用最新IFRSs準則／EAS，轟動出版！   | 
+
+《銷售與顧客關係管理》兩大王牌聯手出擊，廣受好評！   | 
+
+參展考試必備~會展管理概論，登場～～   | 
+
+等了這麼久！還是這一本！《實用會計學概要》最~新~版~   | 
+
+《資料採礦之技術及應用》由Excel進入大數據的世界~   | 
+
+
+
+
+
+
+最新書籍
+
+
+
+
+
+
+金融機構管理：實務與新論
+
+NT. 690 NT. 621
+
+加入購物車
+
+
+
+
+
+
+
+財務管理
+
+NT. 580 NT. 522
+
+加入購物車
+
+
+
+
+
+
+
+程式交易－－平臺開發方法與實務
+
+NT. 690 NT. 621
+
+加入購物車
+
+
+
+
+
+
+
+EZ經濟學
+
+NT. 480 NT. 432
+
+加入購物車
+
+
+
+
+
+
+
+金融市場：全球的觀點
+
+NT. 690 NT. 621
+
+加入購物車
+
+
+
+
+
+
+
+金融機構管理
+
+NT. 480 NT. 432
+
+加入購物車
+
+
+
+
+
+
+
+稅務法規-理論與應用8S
+
+NT. 620 NT. 558
+
+加入購物車
+
+
+
+
+
+
+
+管理學
+
+NT. 620 NT. 558
+
+加入購物車
+
+
+
+
+
+
+
+國際財務管理
+
+NT. 620 NT. 558
+
+加入購物車
+
+
+
+
+
+
+
+企業倫理
+
+NT. 530 NT. 477
+
+加入購物車
+
+
+
+
+
+
+
+Corporate Finance, Global Edition
+
+NT. 1,359 NT. 1,223
+
+加入購物車
+
+
+
+
+
+
+
+財務管理案例分析
+
+NT. 480 NT. 432
+
+加入購物車
+
+
+
+
+
+ 
+首頁
+         » 結構式金融商品之設計及創新(簡體版)
+
+
+
+
+
+
+Zoom
+
+
+
+結構式金融商品之設計及創新(簡體版)
+
+
+價格:
+NT. 700 NT. 630 
+
+
+
+書   碼:  V189
+庫存狀況: 尚有庫存
+作者: 陳松男 版次: 第1版 年 2011 ISBN 10碼: 9574113531 格式: 平裝 
+
+ 
+
+
+
+
+索書
+
+
+           加入商品備忘   
+          加入商品比較
+
+
+
+分享   
+
+
+
+
+
+
+本書介紹
+本書內容
+作者簡介
+索書
+
+真正瞭解結構型商品的各種特徵，諸如設計與創新、評價、淺在風險、發行商成本分析與避險策略，以及投資人淺在獲利的可能性等重要特徵甚少為人所知。
+因此，本書為提供投資人、證券及銀行從業人員、發行商以及在校學生欲瞭解結構式金融商品而精心設計。
+其內容適用對象如下：
+1.投資人可從本書瞭解各類型金融商品的設計特徵、淺在風險及淺在獲利的可能性，從而選取適合本身所要的風險與報酬之金融商品。
+2.證券商、銀行及相關金融機構的從業人員更應該瞭解各類金融商品的設計特徵、淺在風險及獲利淺利。
+3.發行商的新金融商品設計職員及金融工程專業人員更應理解本書內容各類型新商品設計及創新的分析、新商品的評價與利潤分析以及新商品的避險策略。
+4.在校生可採用本書作為結構型金融商品之個案分析。對於金融工程專修的學生更應瞭解各類型金融商品的評價與利潤分析以及發行新商品的避險策略。本書都有詳細的介紹與分析。
+因此本書很適用於欲對結構型金融商品擁有全盤瞭解的投資人、證券與銀行從業人員、財務工程專業人士及在校學生。
+
+第一章 結構型商品導論
+第二章 華邦電價差型保本票券之設計及分析
+第三章 二年期台股連動高年息債券之設計及分析：彩虹選擇權
+第四章 高收益票券之設計與分析：富邦銀台機電ADR連結收益債券
+第五章 『看好』高收益票券之設計與分析：寶來NASDAQ100高收益票券
+第六章 投資型定存之設計與分析：花旗銀行FTSE全球生化製藥指數投資型外幣定期存款
+第七章 法商興業雙收益連動債券之設計與分析：彩虹選擇權
+第八章 法商興業高收益鎖定配息債券之設計與分析：彩虹選擇權
+第九章 連結逆浮動利率債券的結構及分析
+第十章 利率選擇權評價模型與參數分析
+第十一章 荷蘭銀行三年期超反浮動LIBOR利率連動債券之設計與分析
+第十二章 第一銀行五年期美元反浮力率連動債券之設計及分析
+第十三章 逆浮動利率商品之避險策略
+第十四章 Hull&White利率路徑相依評價方法
+第十五章 路徑相依利率連動債券之設計與分析：荷蘭銀行七年期配息鎖定連動債券
+第十六章 報償修改型利率連動債券之設計與分析：三年半期美元計畫利率連動債券
+第十七章 保本型票券之設計及分析：荷蘭銀行日圓兌美元定期存款
+第十八章 中國信託商銀三個月期美元理財項目
+第十九章 中國信託商銀六個月歐元理財專案
+第二十章 荷銀110%保證回報金價連動債券
+參考文獻
+附錄一
+附錄二
+附錄三
+附錄四
+附錄五
+附錄六
+附錄七
+附錄八
+附錄九
+附錄十
+附錄十一
+附錄十二
+附錄十三
+
+陳松男 博士(Dr. Son-Nan Chen)
+
+現任:
+國立政治大學金融系教授
+上海復旦大學特聘教授
+政大商學院財務工程研究中心主任
+中華金融創新與財務工程學會理事長
+台灣合格證券分析師
+
+經歷：
+美國馬里蘭大學管理學院教授評審委員會主席
+美國馬里蘭大學財務經理培訓教授與中國生產力 中心財務管理培訓教授
+
+專業領域：
+1.金融工程及金融商品分析
+2.期貨與選擇權投資交易策略：實務操作
+3.投資組合及資產配置理論與實務
+4.風險管理與涉險值分析
+5.國際金融管理
+6.國際籌資決策:流動資金管理決策
+
+
+
+
+
+
+推薦商品
+
+
+
+
+
+
+
+
+
+
+
+
+
+財務軟體應用
+
+NT. 530 NT. 477
+
+加入購物車
+
+
+
+
+
+
+
+資料採礦 之技術及應用（Excel 實例演練）
+
+NT. 689 NT. 620
+
+加入購物車
+
+
+
+
+
+
+
+人際關係與溝通
+
+NT. 530 NT. 477
+
+加入購物車
+
+
+
+
+
+
+
+管理心理學
+
+NT. 530 NT. 477
+
+加入購物車
+
+
+
+
+
+
+
+國際金融與匯兌
+
+NT. 620 NT. 558
+
+加入購物車
+
+
+
+
+
+
+
+財務工程－財務評價與風險管理的科學及技巧
+
+NT. 480 NT. 432
+
+加入購物車
+
+
+
+
+
+
+
+期貨與選擇權原理
+
+NT. 480 NT. 432
+
+加入購物車
+
+
+
+
+
+
+
+公司治理
+
+NT. 530 NT. 477
+
+加入購物車
+
+
+
+
+
+
+
+財務管理 休閒時尚產業
+
+NT. 530 NT. 477
+
+加入購物車
+
+
+
+
+
+
+
+中級會計學（上冊）
+
+NT. 690 NT. 621
+
+加入購物車
+
+
+
+
+
+
+
+銷售與顧客關係管理
+
+NT. 480 NT. 432
+
+加入購物車
+
+
+
+
+
+
+
+保險學：風險管理與保險
+
+NT. 550 NT. 495
+
+加入購物車
+
+
+
+
+
+
+
+企業評價實務
+
+NT. 580 NT. 522
+
+加入購物車
+
+
+
+
+
+
+
+金融市場：全球的觀點
+
+NT. 690 NT. 621
+
+加入購物車
+
+
+
+
+
+
+
+管理學 修訂版
+
+NT. 620 NT. 558
+
+加入購物車
+
+
+
+
+
+
+
+財富管理：基礎入門與案例實作
+
+NT. 530 NT. 477
+
+加入購物車
+
+
+
+
+
+
+
+證券投資分析：選股標準作業
+
+NT. 380 NT. 342
+
+加入購物車
+
+
+
+
+
+
+
+醫學美容與健康管理
+
+NT. 489 NT. 440
+
+加入購物車
+
+
+
+
+
+
+
+財務管理個案：策略與分析（系列３）
+
+NT. 530 NT. 477
+
+加入購物車
+
+
+
+
+
+
+
+投資學：基礎與應用
+
+NT. 550 NT. 495
+
+加入購物車
+
+
+
+
+
+
+
+會計資訊系統  cloud、IFRS、big data 
+
+NT. 760 NT. 684
+
+加入購物車
+
+
+
+
+
+
+
+國際財務管理
+
+NT. 620 NT. 558
+
+加入購物車
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+書店訊息
+
+關於我們
+全省經銷商據點
+配送說明
+隱私權聲明
+政策 & 條款
+
+
+
+客戶服務
+
+連絡我們
+商品退換貨
+網站總導覽
+
+
+
+其他服務
+
+
+最新特賣書籍
+
+
+
+會員中心
+
+會員中心
+訂購記錄
+書籍備忘簿
+訂閱書籍快報
+
+
+
+(02)2351-2587
+[email protected]
+臺北市重慶南路一段47號
+
+
+
+
+
+Facebook
+
+福懋出版社 © 
+		2017   |   
+		新陸文化
+
+
+
+
+
+
+創新與創業管理學程--活動花絮--新金融商品創新之評價-CDS
+
+
+
+
+
+
+
+
+
+
+
+最新消息設置及修習辦法設置目標創新特色考核指標預期成效課程架構各式表格活動花絮相關連結連絡我們
+
+
+
+首頁 » 活動花絮 » 新金融商品創新之評價-CDS--照片
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			最佳瀏覽解析：1024*768
+			500彰化市師大路二號 寶山校區 國立彰化師範大學商業教育學系 
+			電話:04-7232105 分機:7302、7305 ; 傳真:04-7211290 ; 電子郵件信箱: beoffice@cc.ncue.edu.tw
+
+
+

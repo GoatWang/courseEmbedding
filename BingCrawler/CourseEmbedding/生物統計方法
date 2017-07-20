@@ -1,0 +1,8771 @@
+
+
+
+
+
+生物統計學重點複習
+
+
+97學年度2nd  
+Semester生物統計學教學大綱
+
+
+教師：李   
+炎   學分/每週時數：3/3  
+上課地點：電腦教室
+
+
+評分：每週平時測驗累積       
+課程：教師自編講義
+
+
+ 教學大綱：
+
+
+第1週：第1章
+序     
+言（生統定義、抽樣方法、）。第2章 統計圖表
+第2週：第3章
+集中趨勢測定值（Measures    
+of Central Tendency）。分配曲線（Distribution    
+curve）。平均數（mean）。中位數（median）。眾數（mode）。偏態（skew）。變異數（variance）。標準差（Standard deviation）。�Z異係數（coefficient    
+of variance—C.V.）。
+
+
+第3週：第4章
+機      
+率。第5章
+機率分配。超幾何分配、二項分配。Poisson分配。
+第4週：常態分配。
+第5週：第6章
+單1母群體平均數的估計及檢定。中央極限定理。信賴區間（Cofidence    
+Interval-CI）。信賴水準（cofidence    
+level）。
+第6週：t分配或學生分配。
+
+
+第7週：第7章 假設檢定。
+第8週：Chi-test、F-test、t-test。
+第9週：樣本大小之決定。
+第10週：期中考。
+
+
+第11週：第8章 �O個母群體平均數差的估計與檢定。
+
+
+第12週：第9章    
+卡方檢定（Chi-square Test）。
+
+
+第13週：第10章    
+母群體變異數的估計與檢定。
+
+
+第14週：第11章    
+迴歸（regression）與相關（Correlation）。
+
+
+第15週：第12章    
+無母數統計（Nonparametric Methods）。
+
+
+第16週：實驗設計
+
+
+第17週：變異數分析
+
+
+第18週：期末考
+   
+
+　
+生物統計學重點複習（Biostatistics   
+Overview）
+
+
+李    
+炎
+編
+
+
+�謔珚禤ヾG
+
+
+1.楊志良,2002.生物統計學新論.   
+藝軒圖書出版社.臺北.
+2.張念臺,   
+2001.是誰將數字變得有意義了？.藝軒圖書出版社.臺北.
+3.彭游，吳水丕,   
+1991. 生物統計學.合記圖書出版社.   
+4th edition. 臺北.
+4.陳凱爾譯.   
+Meehan AM, Warner CB,著.   
+2001. Excel 在統計學上的應用.   
+五南圖書出版有限公司.   
+臺北.
+5.王文中,   
+1998. Excel於資料分析與統計學上的應用.   
+博碩文化.   
+臺北.
+6.
+HyperStat Online Textbook 
+：http://davidmlane.com/hyperstat/index.html
+。
+7. Visual   
+Statistics with Multimedia: An On-Line Textbook ：http://www.visualstatistics.net/Visual%20Statistics%20Multimedia/Outline%20of%20Visual%20Statistics.htm
+。
+8.. George Mason University, 
+School 
+of Management ：Managerial Statistics
+[ Primers and Practice Problems ]     
+by Dr. Sid Das.
+
+
+http://mason.gmu.edu/~sdas/stats600/content1.htm
+。
+
+
+ 
+
+
+第1章 序    
+言
+
+
+含義：運用統計方法、研究工具等，從事生命科學的研究---生物統計學
+
+�躑z統計（descriptive   
+statistics）：著重如何收集、整理、描述、分析、及解釋現有數據。
+推理統計（inferential   
+statistics）：以部份來推測全體。面對不確定問題，如何下決定。
+Types of data：
+
+
+
+ Examples   
+      of types of data
+
+
+
+
+
+
+Quantitative
+
+
+
+
+
+
+Continuous
+
+
+
+
+Discrete
+
+
+
+
+
+
+Blood 
+      pressure, height, weight, age 
+
+
+
+
+Number of 
+      children
+      Number of attacks of asthma per week
+
+
+
+
+
+
+Categorical
+
+
+
+
+
+
+Ordinal 
+      (Ordered categories) 序位
+
+
+
+
+Nominal   
+      (Unordered categories)類別
+
+
+
+
+
+
+Grade of   
+      breast cancer  
+      Better, same, worse  
+      Disagree, neutral, agree
+
+
+
+
+Sex 
+      (male/female)
+      Alive or dead
+      Blood group O, A, B, AB
+
+
+
+
+
+ 
+
+
+資料轉換（Data   
+transformation）：
+ 
+
+
+如5人身高為（cm）：176 168 173 180 169；可轉換為1 2 3 4 5；1代表180，2代表176，3代表173，…..。或反過來，1代表168，2代表169，…….。
+又如：
+
+
+
+Results   
+      fom pain score on seven patients (mm) 
+
+
+
+
+
+
+Original 
+      scale:
+
+
+
+
+1, 
+      1, 2, 3, 3, 6, 56
+
+
+
+
+
+
+Loge 
+      scale:
+
+
+
+
+0, 
+      0, 0.69, 1.10, 1.10, 1.79, 4.03
+
+
+
+
+
+ 
+
+
+群體與抽樣
+
+
+「母群體」（population）：所研究事物對象之全體。
+由於經費、時間、人力、所限，常難以普查（census），故常用抽樣（sampling）。
+抽樣：隨機抽樣（random   
+sampling）--又分：
+簡單隨機抽樣（Simple   
+random sampling）：群體中每1個體被抽的機會相同。可用隨機亂數表（http://www.ccm.edu/stw/witcookie/npd2rnt.htm
+）協助。彩捲中獎號、鈔票號等有時也可用。
+ 
+
+
+分層隨機抽樣（Stratified   
+random sampling）：先將樣本歸類分層（strata），再由各層中隨機抽樣。如健保局調查全民健康情形，抽樣，分1-5、6-10、……歲，各抽幾人。
+ 
+
+
+研究題：設某高中三年級，有男生250人，女生120人，今做身高調查，測男生50人，得平均身高173.5cm，女生30人，平均身高162.3cm，求該校三年級男女生平均身高。
+173.5 x 250/370 + 162.3 x 120/370 ＝170.88（cm）
+ 
+
+
+集群隨機抽樣（Cluster   
+random sampling）：將母群體之個體分群，再隨機抽出若干群，並對所抽到各群之個體全面調查。如教育部看不同學校生近視情形。先抽大、中、小�a，抽到之校全面調查。
+ 
+
+
+系統隨機抽樣（Systematic   
+random sampling）：規則地由母群體中每隔一定「距離」抽取1個樣本。
+抽樣時亦當考慮：
+樣本數大小、放回不放回（含破壞性取樣）、游動樣本（野生動物、魚….等以某區域內所見為準）等問題。
+抽樣方式與實驗設計有關。
+ 
+
+
+測驗題：若想瞭解全國小6年級男學生，跑百米的平均時間，將各�鐘狴咱H上�艦哄A抽出10個，再由其中各抽5所小學，每校各抽10人測驗，此抽樣調查方式，是否良好？（若外島�艦咱憬漼魽H…..）2%
+ 
+
+
+討論題：2100全民開講的call in電話來源人，是否隨機？1%
+ 
+
+
+第2章 統計圖表
+
+
+使資料簡化易懂。
+（將Microsoft 
+Excel 打開，點選「工具」欄，再將pull 
+down window拉下，至「增益集」，點選其中「資料分析」項）
+做班員基本資料搜集[hight, 
+arm length, ....]。填入Excel   
+Spreadsheet 中（Book1）。
+直的為「欄」，橫的為「列」。
+1.        
+用「班員基本資料」中任1項，以Microsoft Excel做次數分配圖表。（見Excel   
+Test-2，Sheet1說明）
+2.        
+用「班員基本資料」中任1項，以Microsoft Excel做1種分析圖。（見Excel   
+Test-2，Sheet2及Chart2說明）
+3.        
+用「班員基本資料」中任1項，以Microsoft Excel做1種分析圖。（見Excel   
+Test-2，Sheet3說明）
+由http://www.economics.pomona.edu/statsite/SSP.html
+下載免費統計軟體，並熟�堥銌峟p圖表製作（用所收集之資料），列述步驟及結果。3%。
+ 
+
+
+第3章 集中趨勢測定值（Measures   
+of Central Tendency）
+
+
+分配曲線（Distribution   
+curve）：
+
+
+若觀測值很多，將角次觀測值做成直方圖，將各直方圖頂端中心連起，則成1條光滑曲線，稱為分配曲線。
+ 
+
+
+�謔牷Ghttp://www.visualstatistics.net/Visual%20Statistics%20Multimedia/measures_of_central_tendency.htm
+平均數（mean）：
+
+
+母群體平均數=>μ＝
+Σxi/N
+式中，Σ為希臘字因sigma的大寫，意為「summation   
+of=>總和」。N為
+
+
+母群體中之個體數。
+樣本平均數=>   
+＝
+Σxi/n，n為樣本數。
+
+
+另有幾何、加權、調和、平均數。
+
+
+中位數（median）：
+
+
+
+      
+
+
+眾數（mode）：
+
+
+在1組統計資料中出現次數最多的數值。商業上用的多。1組統計資料中可能沒有眾數或不只1個眾數。有1個眾數的稱為單�腄]unimodal），2個眾數的稱為雙�腄]bimodal），2個以上眾數的稱為多�腄]multimodal）。如社�N流行迷你及迷底�ヾA不可用平均值而生產「迷膝」裝，沒人買。
+ 
+
+
+偏態（skew）：
+
+
+右偏：mean   
+– median >0
+左偏：mean   
+– median <0
+
+
+
+
+ 
+
+
+Relationships   
+of the Mean, Median, and Mode in Symmetrical and Skewed Distributions
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+The   
+Theoretical Normal Distribution
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+資料的差異情況，可由變異數（variance）顯示。母群體變異數，用希臘字母sigma小寫的平方代表, 
+。
+
+
+ 樣本變異數以S2代表。（M代表mean）  
+若用樣本變異數代表母群體之 s2,則需用，
+
+
+（）否則會低估。而此n-1被稱為自由度（degrees of Freedom），以df 或 n, (希臘字母nu)代表。 （http://davidmlane.com/hyperstat/desc_univ.html
+）
+原因是，樣本變異數會小於母群體變異數（可用1、2、3、4、5、6、7、8及2、3、4、5、6、7兩組數來試求比較之）。只好調小分母以補救。但n>30時可不計。
+
+
+標準差（Standard   
+deviation）就是�Z異數的平方根。即σ代表母群體標準差，s代表樣本標準差。
+
+
+
+
+
+
+�Z異係數（coefficient   
+of variance—C.V.）：標準差除以平均數。
+
+
+練習：
+
+
+用Microsoft   
+Excel將Book1中各組數據之平均數、�Z異數、標準差算出。4%。
+
+
+第4章 機     
+率                     
+
+
+
+在一次實驗中所有可能出現的結果稱為樣本空間（sample space）。以S代表。其中的每1個結果稱為事件（event）。以Ei或Xi代表。
+
+
+P（A）=   
+S/N（Probability of A   
+= S/N，N為總實驗次數）
+
+
+有關機率的定理：
+
+
+1.      
+互斥事件：P（A or B）=   
+P（A）+ P（B）
+
+
+2.      
+非互斥事件：P（A or B）=   
+P（A）+ P（B）－ P（AB）
+
+
+3.      
+獨立事件：P（A and B）=   
+P（A）x P（B）
+
+
+4.      
+相依事件：P（A and B）=   
+P（A）x P（B∣A）
+
+
+所謂P（B∣A）為條件機率，情形不一，例：
+
+
+在同一副撲克牌（共52張）中抽1張，抽出不放回，連2張均為黑桃之機率為：P（A）x   
+P（B∣A）＝ 
+13/52 x 12/51＝156/2652
+
+
+又例：
+
+
+假設查美國人之生命表（Life Table），發現任1美國人活到25歲的機率為0.96716，活到65歲的機率為0.79529，求1個25歲的美國人可以再活到65歲的機率。
+
+
+P（B∣A）＝ P（A   
+and B）/P（A）＝ 
+0.79529/0.96716＝0.8223
+
+
+可用工具：http://www-stat.stanford.edu/~naras/jsm/examplebot.html
+
+
+
+第5章 機率分配
+
+
+分佈（Distribution）就是各個數值出現的次數或頻率。
+
+
+凡隨機�Z數為機率，其出現機率與樣本空間之函數對映關係，稱為機率分配函數。
+
+
+若為非連續性、只有2種類別的有限母群體，抽出不放回方式重複抽取樣本，可用超幾何分配計算：
+
+
+N所有樣本數（母群體）;   
+R含某種性質樣本數;   
+k 被抽出的樣本數；x為抽出樣本中含某性質的樣本數；
+「C代表組合函數，算法為C（R,x）＝R！/x！【R-X】！」則：
+
+
+f(x) = C(R,x)*C(N-R,   
+k-x) / C(N,k)
+例：假設某袋內有10個球，8白2黑，若由其中抽出5個，抽到1個黑球的機率為何？
+N＝10，R＝2，k＝5，x＝1，
+可以用計算機算，或用Microsoft   
+Excel。
+選Microsoft   
+Excel中f（x）項之HYPGEOMDIST函數，在Sample_s項（樣本中成功之個數），填1；在Number_sample（所抽樣本總數）項，填5；在Populations項（母體中含此黑色特性之個體總數），填2；在Number_pop項（母體共有多少個體總數），填10。則答案立即算出為0.555555556。
+練習用Excel以外之任1免費軟體計算此題，並將步驟、結果以e-mail至教師信箱。2%
+若實驗的結果只有2種類別（男、女；正、反；合格、不合格；…），由1個無限母群體中抽取N個樣本， r為成功次數。則可用二項分配求其機率為：其中π代表任何1次實驗中事件成功的機率。
+若乃以前例：假設某袋內有10個球，8白2黑，若採抽出放回方式，由其中抽出5個，抽到1個黑球的機率為何？
+由於抽出放回，故母群體為∞。且每次抽到黑球的機率π＝2/10＝0.2；N＝5；r＝1；
+可以用計算機算，或用Microsoft   
+Excel。
+選Microsoft   
+Excel中f（x）項之BINOMDIST函數，在Number_s項（實驗成功之次數），填1；在trials（實驗次數）項，填5；在Probability_s項（每次實驗成功之機率），填0.2；在Cumulative項（代表是否要連續成功，是則填True，否則填false），因只要1有次成即可，即使超過1次也無關連續與否，故填false。則答案立即算出為0.4096。
+練習用Excel以外之任1免費軟體計算此題，並將步驟、結果以e-mail至教師信箱。2%
+或用：Exact   
+Binomial Probability Calculator：
+http://faculty.vassar.edu/lowry/webtext.html
+
+
+在N項填5，K項填1，P項填0.2，再點Calculate即得結果。
+
+若是二項分配每次實驗成功之機率很小時，法國數學家S.D.   
+Poisson研究出Poisson分配：（ http://episte.math.ntu.edu.tw/articles/sm/sm_16_07_1/index.html 
+, http://rockem.stat.sc.edu/prototype/calculators/index.php3?dist=Poisson 
+, http://www.anesi.com/poisson.htm 
+, http://www.changbioscience.com/stat/prob.html  
+）
+若m代表某1特定時空內事件隨機發生的平均數（為1個期望值，即機率乘總個體數），a為實�拑o生次數，e為自然對數之底（e   
+＝2.718）則
+：
+
+
+
+
+例：註射某疫苗有不良反應的機率為0.001，求2000人中（A）恰有3人，（B）超過2人，註射該疫苗後有不良反應之機率。
+（A）     
+a＝3；m＝0.001 x 2000＝2
+用Microsoft   
+Excel：選Poisson：
+在x項（實際發生數），填3；在Mean項（即m值），填2；在Cumulative項填false，即得0.1804。
+（B）     
+a>2『即求1-P（0）-P（1）-P（2）之值』
+比照（A）計算。
+練習用Excel以外之任1免費軟體計算此題，並將步驟、結果以e-mail至教師信箱。2%
+練習：5選1的選擇題，答對2分，答錯倒扣1分，對不會做的題目，猜或不猜？2%
+而自然界連續隨機變數，則多近似常態分配：
+
+式中
+
+ 為母群體平均數，
+
+為母群體�Z異數，π是圓周率＝3.1416，e是自然對數底，y是連續隨機變數。由於每1組μ及σ就有1條常態分配曲線，很複雜，故常用標準常態分配：
+標準常態分配：
+
+
+將常態分配以0點為中心，標準差為1的，定為標準常態分配。
+常態分配可換算為標準常態分配：令
+
+
+
+
+Z的意義為，原變數y距誰平均數μ有幾個標準差。
+
+
+看動畫：http://huizen.dds.nl/~berrie/normal.html
+在常態分配圖中
+μ+/- 1σ
+占68.27%面積
+
+
+μ+/- 2σ
+占95.45%面積
+
+
+μ+/- 3σ
+占99.73%面積
+
+
+例：假設成年女子身高呈常態分配，μ＝160cm，σ＝5cm，試求（A）身高矮於165cm者占？%？（B）身高高於165cm者占？%？
+
+
+（A）.使用Microsoft Excel；用Standardize函數；在X項填165，在Mean項填160，在Standard_dev項填5，得Z值為1。然後，再用NORMSDIS函數，在Z項填入1，得值0.8413。
+
+
+（B）.1-0.8413＝0.1587
+
+
+ 
+
+
+
+
+或用z   
+to P Calculator ：
+http://faculty.vassar.edu/lowry/ch6apx.html  
+ 
+
+練習：假設某校某班的普通生物學成績如下：
+
+
+趙79 錢86   
+孫45 李66 鄭90   
+吳54 周77 主83   
+馮76 陳69 呂74   
+衛89 張65 柳72   
+宋98 馬37 劉88   
+公孫47 關80 何70   
+楊57
+
+
+請以標準化常態分配，將此班同學成績換算為A、A-、B+、B、B-、C+、C、C-、D+、D、D-、…的成績，並說明之。並請論在同校中，使用此種評分制，與百分制之優劣？在不同校中比較又如何？（要列述出演算過程，或利用Excel或其它免費軟體之步驟）。2%。
+
+
+練習：假設臺東大學20歲同學平均舒張血壓為80mmHg，標準差為8mmHg，若隨機由臺東大學20歲同學中抽64人為樣本，求：
+
+
+1.      
+樣本平均數的標準差為何？
+
+
+2.      
+樣本平均數大於82mmHg之機率？
+
+
+3.      
+如樣本改為16人，其樣本平均數大於82mmHg之機率？
+
+
+4.      
+若隨機由臺東大學20歲同學中抽1人為樣本，其血壓大於82mmHg之機率？
+
+
+5.      
+在抽64人為樣本時，理論上有多少人血壓大於82mmHg？2%。（要列述出演算過程，或利用Excel或其它免費軟體之步驟）
+
+
+ 
+
+
+練習：1種全身麻醉劑，能達成外科麻醉所需劑量因人而異，其分配為常態，μ1＝50mg，σ1＝10mg，此麻醉劑致死量也近常態，μ2＝120mg，σ2＝20mg。若某1劑量恰能使95%患者麻醉，請問，會有多少百分比患者可能因過量而死亡？2%。（要列述出演算過程，或利用Excel或其它免費軟體之步驟）
+
+
+測驗題：設SARS死亡率為0.002，求2000人中少於5人因此疾死亡之機率。2%
+
+
+測驗題：某�W院某一年內共接生100活產嬰兒，其中53名男嬰平均體重3,250g，標準差250g，47名女嬰，平均體重3,080g，標準差240g，在95%信賴水準，請估全國男女新生嬰兒之平均體重。2%
+
+
+第6章
+單1母群體平均數的估計及檢定
+
+
+抽樣分配是統計推論的基礎。可用樣本統計量來推論母群體的�趧ヾC
+在某一信賴程度內，由樣本統計量所求出預期可包括母群體�趧う瑤d圍，稱為信賴區間（Cofidence   
+Interval-CI）。
+信賴水準（cofidence   
+level），指推論者有？%（如95%、99%）的信心，所推論的母群體的�趧ヾA會在某信賴區間內。
+ 
+
+
+在大多數研究中，大樣本不經濟，多以小樣本（n<30）資料推估出母群體資料。英國學者Gosset研究出推估母群體標準差之法，並以Student筆名發表，將�Z量設為t。故稱t分配或學生分配。（http://mathworld.wolfram.com/Studentst-Distribution.html
+）
+
+ 式中，n代表樣本數，μ代表母群體平均數，
+
+ 代表樣本平均數， s
+代表樣本標準差，它的自由度為n-1。
+t分配與常態分配的關係，可�謔牷Ghttp://www.econtools.com/jevons/java/Graphics2D/tDist.html
+。
+當n>30時，t分配已接近常態分配，可用常態分配推估。
+ 
+
+
+t分配與母群體平均數μ的信賴區間推估：
+令α為1-信賴水準（即1-0.95或1-0.99），若母群體標準差σ已知則：
+樣本平均數-tα/2σ<μ<樣本平均數+   
+tα/2σ
+若母群體標準差σ未知，則用σ＝s/√n
+
+
+樣本平均數-tα/2 
+s/√n 
+<μ<樣本平均數+ tα/2 
+s/√n
+
+
+ 
+
+
+例：
+某�W師給16位嬰兒吃某新添加食品，1個月後，體重增加量為448、229、316、105、516、496、130、242、470、195、389、97、458、347、340、212（g）。求95%信心水準下之嬰兒體重增加量的信賴區間。
+先用Microsoft   
+Excel求出平均數為311.9g，及標準差s＝142.8g
+α＝0.05，
+用Microsoft   
+Excel之TINV選項。在Probability項，填0.05；在Deg_Freedom項，填15，得2.131。此為t值。
+再用公式：樣本平均數-tα/2 
+s/√n 
+<μ<樣本平均數+ tα/2 
+s/√n
+
+
+s/√n＝142.8/√16＝76.1（可用http://www.df.lth.se/~mikaelb/pocketcalc.shtml
+之網上計算機算）代入上式得：
+311.9-76.1＜μ<   
+311.9+76.1è235.8＜μ＜388.0（g）
+ 
+
+
+各種機率分配值，亦可�謔牷Ghttp://stat-www.berkeley.edu/~stark/SticiGui/Text/index.htm
+ 
+
+
+ 
+
+
+ 
+
+
+第7章 假設檢定
+
+
+以樣本資料來對母群體下決策。
+
+
+要下決策，需先對母群體做假設。並設法推翻此假設。由於此假設有被否定的命運，故稱虛無假設（Null Hypothesis），以H0代表。另1對立假設（Alternative Hypothesis），則為H1。
+
+
+對對單1樣本而言，若假設為H0：μ＝μ0 （http://www.cas.lancs.ac.uk/glossary_v1.1/hyptest.html#hypothtest）
+
+
+則有3種可能：
+
+
+
+
+第I及II型錯誤，可�謔牷Ghttp://www.pinkmonkey.com/studyguides/subjects/stats/chap8/img11.gif
+
+
+第I型（α）錯誤為H0為真卻拒絕假設。第II型（β）錯誤為H0為做卻接受假設。
+
+
+顯著水準（Significant Level）為決策者願冒犯第I型錯誤的機率。通常用α表示。如α＝0.05即100次中有可能5次犯錯。
+
+
+統計上有2種計算方式，��尾檢定，或單尾檢定，依狀�G而定。
+
+
+�謔牷Ghttp://www.stat.sc.edu/~ogden/javahtml/power/power.html 
+
+
+若檢定虛無假說為假，用雙尾檢定（各尾占α/2）。若檢定虛無假說在某一方向假，用單尾檢定（α）。可是Chi-test、F-test、t-test常用單尾。
+ 
+
+
+例：假設正常人血蛋白含量平均為7.25（太高太低均不宜），某人連續8天，測得其血蛋白含量為7.23、7.25、7.28、7.29、7.32、7.26、7.27、7.24，以0.01顯著水準，判斷該員血蛋白含量是否正常。
+小樣本，故用t分配。
+
+
+先用Microsoft Excel，算出樣本平均數為7.2675，樣本標準差為0.0292，s/√n＝0.0292/√8＝0.0103
+
+
+再用公式：
+求出t0值為（7.2675-7.25）/0.0103＝1.7
+
+
+立假設：
+
+
+H0：μ＝7.25
+
+
+H1：μ≠7.25
+
+
+因檢定≠或＝，故為��尾檢定。但為t-test（屬Chi、F、t、3者多用單邊），乃以α計算。
+
+
+df＝8-1＝7
+
+
+用Microsoft   
+Excel之TINV選項。在Probability項，填0.01（α）；在Deg_Freedom項，填7，得±3.499。此為t值。
+經比較3.499＞1.7，故不能拒絕假設。表示，該員可判為正常。
+ 
+
+
+練習：
+假設養殖池中，每ml之平均含菌量在70個以下時，方為合格。現於某養殖池中抽取9處樣本，含菌數為：69   
+74 75 70 72 73 71 73 68，在α＝0.05下，該池是否合格？
+假設    
+H0：μ≦70
+
+
+H1：μ＞70
+
+
+只有9個樣本，用t分配，單邊檢定，
+
+
+df＝8
+
+
+用Microsoft   
+Excel，TDIS，在X項將9個樣本值輸入，再填入df＝8，並選單邊＝1，得p值為1.21735E-12（1.21735 x 10-12），此機率太小，表示μ≦70的機率太小，不成立。
+ 
+
+
+例：學生20人生物某次測驗成績為：72     69     98     87    78     76     78     6685     97     84     8688     76     79     8282     91     69     74教師想知道，此成績與全校學生生物之平均76有無差異？
+
+
+ 
+
+
+
+
+
+
+
+
+
+1. The first   
+      step in hypothesis testing is to specify the null   
+      hypothesis and an alternative   
+      hypothesis. When testing hypotheses about µ, the null hypothesis   
+      is an hypothesized value of µ. In this example, the null hypothesis   
+      is µ = 76. The alternative hypothesis is: µ   
+      76.
+2. The second 
+      step is to choose a significance 
+      level. Assume the .05 level is chosen.
+3. The third 
+      step is to compute the mean. 
+      For this example, M = 80.85.
+4. The fourth   
+      step is to compute p, the probability (or probability   
+      value) of obtaining a difference between M and the hypothesized value   
+      of µ (76) as large or larger than the difference obtained in the   
+      experiment. Applying the general   
+      formula to this problem, 
+      .   
+      The estimated standard error of the mean (sM) was computed   
+      using the formula: sM = s/=   
+      8.87/4.47=1.984 where s is the estimated standard   
+      deviation and N is the sample   
+      size. The probability value for t can be determined using a t   
+      table.
+
+
+
+The degrees of freedom for t is equal to the degrees of 
+freedom for the estimate of 
+which 
+is N-1 = 20 - 1 = 19. A t 
+table can be used to calculate that the two-tailed probability value of a t 
+of 2.44 with 19 df is .025.
+5. 
+The probability computed in Step 4 is compared to the significance level stated 
+in Step 2. Since the probability value (.025) is less than the significance 
+level (.05) the effect is statistically significant.
+6. 
+Since the effect is significant, the null hypothesis is rejected. It is 
+concluded that the mean reading achievement score of children in the city in 
+question is higher than the population mean.
+7. 
+A report of this experimental result might be as follows:
+The mean   
+reading-achievement score of fifth grade children in the sample (M = 80.85) was   
+significantly higher than the mean reading-achievement score nationally (µ   
+= 76), t(19) = 2.44, p = .025.
+The expression 
+"t(19) = 2.44" means that a t test with 19 degrees of freedom was 
+equal to 2.44. The probability value is given by "p = .025." Since it 
+was not mentioned whether the test was one- 
+or two- tailed, a two-tailed test is assumed.
+
+
+
+ 
+
+
+
+
+Summary of Computations  
+      1. Specify the null hypothesis and an alternative hypothesis.
+      2. Compute M = s X/N.  
+      3. Compute 
+        
+      4. Compute sM = s/.  
+      5. Compute 
+      where   
+      µ is the hypothesized value of the population mean.  
+      6. Compute df = N -1.  
+      7. Use a t table   
+      to compute p from t and df. 
+
+
+
+
+
+ 
+
+
+ 
+
+
+樣本大小之決定：
+
+
+令誤差值為±d，誤差即為信賴區間，故±d＝±Zα/2σ/√nè 
+n＝（Zα/2σ/d）2
+
+
+ 
+
+
+例：假設某國5年前調查成年女子平均身高為155cm，標準差為5cm，現以95%信賴水準，想再調查成年女子平均身高，且希望誤差在±1cm內，要抽多少樣本？
+σ＝5，d＝±1，α＝1-0.95＝0.05，
+使用Microsoft   
+Excel之NORMSINV項，在Probability項，填α/2＝>即0.025，得Zα/2＝-1.96，採正值。
+
+
+n＝「（1.96x   
+5）/1」2＝96.04è97（人）
+
+
+ 
+
+
+練習：某減肥廣號稱「4個月減20公斤」，經抽取25個顧客，發現平均減15公斤，標準差為5.5公斤，此廣告是否可靠？2%
+
+
+ 
+
+
+ 
+
+
+第8章 �O個母群體平均數差的估計與檢定
+
+
+可分獨立樣本與成對樣本2類。依樣本大小（30以上或以下）直接用常態分配或t分配來估檢。
+
+
+ 
+
+
+例：2組老鼠，分別飼以不同品牌飼料，並於第84天分別量體重，如下：
+
+
+甲牌組：134 146 104 119 124 161 107 83 113 129 97 123
+
+
+乙牌組：70 118 101 85 107 132 94
+
+
+若以95%顯著水準，比較此2品牌飼料有無差異？
+
+
+獨立樣本。
+
+
+立假設：
+
+
+H0：μ0＝μ1
+
+
+H1：μ0 ≠μ1
+
+
+使用Microsoft Excel，在工具項，選「資料分析」，再選「t檢定：2個母群體平均數差的檢定，假設變異數相等」項，再將上述甲、乙組體重填入Test-2之Sheet6格中，再將變數1、2的範圍填入，在假設的均數差項填0（因H0：μ0＝μ1），在α項，填0.05，並指定輸出位置，再點確定即得Sheet6之結果如下：
+
+
+
+
+
+t   
+      檢定：兩個母體平均數差的檢定，假設變異數相等
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+　
+
+
+
+
+變數 
+      1
+
+
+
+
+變數 
+      2
+
+
+
+
+
+
+平均數
+
+
+
+
+120
+
+
+
+
+101
+
+
+
+
+
+
+變異數
+
+
+
+
+457.4545455
+
+
+
+
+425.3333333
+
+
+
+
+
+
+觀察值個數
+
+
+
+
+12
+
+
+
+
+7
+
+
+
+
+
+
+Pooled 變異數
+
+
+
+
+446.1176471
+
+
+
+
+ 
+
+
+
+
+
+
+假設的均數差
+
+
+
+
+0
+
+
+
+
+ 
+
+
+
+
+
+
+自由度
+
+
+
+
+17
+
+
+
+
+ 
+
+
+
+
+
+
+t 統計
+
+
+
+
+1.891436397
+
+
+
+
+ 
+
+
+
+
+
+
+P(T<=t) 單尾
+
+
+
+
+0.037865063
+
+
+
+
+ 
+
+
+
+
+
+
+臨界值：單尾
+
+
+
+
+2.109818524
+
+
+
+
+ 
+
+
+
+
+
+
+P(T<=t) 雙尾
+
+
+
+
+0.075730127
+
+
+
+
+ 
+
+
+
+
+
+
+臨界值：雙尾
+
+
+
+
+2.458054951
+
+
+
+
+　
+
+
+
+
+
+ 
+
+
+df＝2組個數和-2
+
+
+由於2.1098＞1.8914，故接受假設，即2品牌無差異。
+
+
+ 
+
+
+試用另1種免費軟體做此題。例出步驟2%。
+
+
+ 
+
+
+例：5位病人至�W院註射某藥後低血壓�Z化如下：
+
+
+註射前mmHg 97 85 87 97 71
+
+
+註射後        
+100 94 98 96 88
+
+
+若以99%顯著水準，此些病人註射前後，血壓有無改變？
+
+
+成對資料。
+
+
+立假設：
+
+
+H0：μ0＝μ1
+
+
+H1：μ0 ≠μ1
+
+
+以Microsoft Excel；資料分析；用「t   
+檢定：成對母體平均數差異檢定」，將資料填入，得：
+
+
+ 
+
+
+
+
+
+t 檢定：成對母體平均數差異檢定
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+　
+
+
+
+
+97
+
+
+
+
+100
+
+
+
+
+
+
+平均數
+
+
+
+
+85
+
+
+
+
+94
+
+
+
+
+
+
+變異數
+
+
+
+
+114.6666667
+
+
+
+
+18.66666667
+
+
+
+
+
+
+觀察值個數
+
+
+
+
+4
+
+
+
+
+4
+
+
+
+
+
+
+皮耳森相關係數
+
+
+
+
+0.835766106
+
+
+
+
+ 
+
+
+
+
+
+
+假設的均數差
+
+
+
+
+0
+
+
+
+
+ 
+
+
+
+
+
+
+自由度
+
+
+
+
+3
+
+
+
+
+ 
+
+
+
+
+
+
+t 統計
+
+
+
+
+-2.405351177
+
+
+
+
+ 
+
+
+
+
+
+
+P(T<=t) 單尾
+
+
+
+
+0.04770724
+
+
+
+
+ 
+
+
+
+
+
+
+臨界值：單尾
+
+
+
+
+5.840847734
+
+
+
+
+ 
+
+
+
+
+
+
+P(T<=t) 雙尾
+
+
+
+
+0.095414479
+
+
+
+
+ 
+
+
+
+
+
+
+臨界值：雙尾
+
+
+
+
+7.453199942
+
+
+
+
+　
+
+
+
+
+
+由於5.8408＞2.4054，故接受假設，即血壓無差異。
+
+
+df＝1組之個數-2（因成對資料）
+
+
+
+
+練習：2位同�a分別計算同一批細菌培養皿上菌群數，得下列結果：
+
+
+甲 
+139 121 39 163 191 61 179 218 297 165 91 92
+
+
+乙 
+191 181 67 143 234 80 250 239 289 201 80 99
+
+
+若以99%信賴範圍計，此2人之結果有無差別？3%。
+
+
+ 
+
+
+測驗：
+
+
+某減肥法�\稱，平均每2週可減體重5公斤，7位婦女�諝[2週後，體重記錄為：
+
+
+前 
+58.5 60.3 61.7 69 64 62.6 56.7（kg）
+
+
+後 
+60 54.9 58.1 62.1 58.5 59.5 54.4
+
+
+假設體重近常態分配，請用5%顯著水準檢定此減肥法是否如其所稱之有效？3%
+
+
+測驗：某醫生�\稱發明治SARS新藥，並以某種動物實驗，結果動物存活月數為：
+
+
+接受新藥治療者    
+2.1   5.3    
+1.4   4.6   
+0.9
+
+
+未接受新藥治療者  
+1.9    0.5    
+2.8    3.1
+
+
+請問，此藥效如何？3%。
+
+
+The question is whether the difference between the means   
+of these two groups of subjects is statistically significant.
+1. The first 
+step is to specify the null 
+hypothesis and an alternative hypothesis. 
+For experiments testing differences between means, the null hypothesis is that 
+the difference between means is some specified value. Usually the null 
+hypothesis is that the difference is zero.
+For this example, the null and alternative hypotheses are:
+Ho:   
+µ1 - µ2 = 0  
+H1: µ1 - µ2
+0
+2. The second 
+step is to choose a significance 
+level. Assume the .05 level is chosen.
+3. The third 
+step is to compute the difference between sample means (Md). In 
+this example, Mt = , MN = and Md = MT - MN 
+= .
+4. The fourth 
+step is to compute p, the probability (or probability 
+value) of obtaining a difference between and the value specified by the null 
+hypothesis (0) as large or larger than the difference obtained in the 
+experiment. Applying the general formula,
+
+
+where Md is   
+the difference between sample means, µ1 - µ2   
+is the difference between population means specified by the null hypothesis   
+(usually zero), and 
+is   
+the estimated standard   
+error of the difference between means.
+The estimated standard error, 
+, 
+is computed assuming that the variances in the two populations are equal. 
+If the two sample sizes are equal (n1 = n2) then the 
+population variance s2 
+(it is the same in both populations) is estimated by using the following 
+formula:
+MSE = ( 
++ 
+)/2
+where MSE (which 
+stands for mean square error) is an estimate of s2. 
+Once MSE is calculated, 
+can 
+be computed as follows:
+
+
+where n = n1 
+= n2. This formula is derived from the formula for the standard error 
+of the difference between means when the variance is known.
+5. The probability computed in Step 4 is compared to the   
+significance level stated in Step 2. If the probability value (    
+) is less than the significance level (.05) the effect is significant.
+6. 
+Science the effect is significant, the null hypothesis is rejected. It is 
+concluded that the mean memory score for experts is higher than the mean memory 
+score for novices.
+7. 
+A report of this experimental result might be as follows:
+The mean   
+number of pieces recalled by tournament players (Mt =      
+) was significantly higher than the mean number of pieces recalled by   
+novices (Mt =    ), t(      
+) =    , p =       
+.
+The expression "t(      
+) =     "   
+means that a t test with    degrees   
+of freedom was equal to     .   
+The probability value is given by "p =      
+." Since it was not mentioned whether the test was one- or   
+two-tailed, it is assumed the test was two tailed.
+Unequal Sample Sizes
+The calculations in Step 4 are slightly more complex when n1
+n2. 
+The first difference is that MSE is computed differently. If the two values of s2 
+were simply averaged as they are for equal sample sizes, then the estimate based 
+on the smaller sample size would count as much as the estimate based on the 
+larger sample size. Instead the formula for MSE is:
+MSE = 
+SSE/df
+where df is the 
+degrees of freedom (n1 - 1 + n2 - 1) and SSE is: SSE = SSE1 
++ SSE2
+SSE1 = 
+(X 
+- M1)2 where the X's are from the first group (sample) and 
+M1 is the mean of the first group. Similarly, SSE2= 
+(X- 
+M2)2 where the X's are from the second group and M2 
+is the mean of the second group.
+The fomula: MSE = ( 
++ 
+)/2 
+cannot be used without modification since there is not one value of n but two: 
+(n1 and n2). The solution is to use the harmonic 
+mean of the two sample sizes. The harmonic mean (nh) of n1 
+and n2 is: 
+
+The formula for the estimated standard error of the difference between means 
+becomes:
+
+
+The hypothetical 
+data shown below are from an experimental group and a control group.
+
+
+
+Experimental
+
+
+
+
+Control
+
+
+
+
+
+35778
+3467
+
+
+
+n1 = 5, n2 = 4, M1 = 6, M2 = 5, SSE1 
+= (3-6)2 + (5-6)2 + (7-6)2 + (7-6)2 
++ (8-6)2 = 16, SSE2 = (3-5)2 + (4-5)2 
++ (6-5)2 + (7-5)2 = 10
+SSE = SSE1 + SSE2 = 16 + 10 = 26
+df = n1 - 1 + n2 - 1 = 7
+MSE = SSE/df = 26/7 = 3.71
+
+
+
+
+
+The p value associated with a t of 0.77 with 7 df is .47. Therefore, the 
+difference between groups is not significant.
+Summary of 
+Computations
+1. Specify the null hypothesis and an alternative hypothesis.
+2. Compute Md = M1 - M2
+3. Compute SSE1 = 
+(X 
+- M1)2 for Group 1 and SSE2 = 
+(X 
+- M2)2 for Group 2
+4. Compute SSE = SSE1 + SSE2
+5. Compute df = N - 2 where N = n1 + n2
+6. Compute MSE = SSE/df
+7. Compute: 
+(If 
+the sample sizes are equal then nh = n1 = n2).
+8. Compute: 
+
+9. Compute: 
+
+where µ1 - µ2 is the   
+difference between population means specified by the null hypothesis.  
+10. Use a t table to   
+compute p from t (step 9) and df (step 5).
+Assumptions
+1. The populations are normallly   
+distributed.
+2. Variances in the two populations are   
+equal.
+3. Scores are independent   
+(Each subject provides only one score)  
+See also: Confidence   
+interval on µ1 - µ2, independent groups, s   
+estimated
+信賴區間：
+Following the general   
+formula for a confidence   
+interval, the formula for a confidence interval on the difference between   
+means ( M1 - M2) is:  
+Md
+(t)()  
+where Md = M1 - M2 is the statistic and 
+is   
+an estimate of 
+(the   
+standard error of the 
+difference between means). t   
+depends on the level of confidence desired and on the degrees   
+of freedom. The estimated standard error, 
+,   
+is computed assuming that the variances   
+in the two populations are equal. If the two sample sizes are equal (n1   
+= n2) then the population variance s2   
+(it is the same in both populations) is estimated by using the following 
+formula:
+MSE = ()/2
+where MSE (which stands for mean square error) is an estimate of s2. 
+Once MSE is calculated, 
+can 
+be computed as follows:
+= 
+
+A concrete example should make the procedure for computing 
+the confidence interval clearer. Assume that an experimenter were interested in 
+computing the 99% confidence interval on the difference between the memory spans 
+of seven- and nine-year old children. Four children at each age level are tested 
+
+and   
+their memory spans are shown below:
+The first step is to compute the means of each group: MAge 7 = 3.75 
+and MAge 9 = 6.00. Therefore, Md = 3.75 - 6.00 = -2.25. To 
+obtain a value of t, one must first compute the degrees 
+of freedom (df). The degrees of freedom is equal to the degrees of freedom 
+for MSE (MSE is used to estimate s2). 
+Since MSE is made up of two estimates of s2 
+(one for each sample), the df for MSE is the sum of the df for these two 
+estimates. Therefore, the df for MSE is (n -1) + (n - 1) = 3 + 3 = 6.
+the df for MSE is (n -1) + (n - 1) = 3 + 3 = 6. A t 
+table shows that the value of t for a 99% confidence interval for 6 df is 
+3.707. The only remaining term is sMd .
+The first step is to compute 
+and 
+:
+= 
+.917 and 
+= 
+.667.
+MSE = (.917 + .667)/2 = .792. From the formula:
+== 
+
+
+= .629
+
+All the terms needed to construct the confidence interval have now been 
+computed. The lower limit (LL) of the interval is:
+LL = Md - 
+t
+= -2.25 - (3.707)(.629)
+= -4.58.
+
+UL = -2.25 + (3.707)(.629) = .09.
+Therefore -4.58 ≤ m1 
+- m2 
+≤ 0.09.
+The calculations are only slightly more complicated when 
+the sample sizes are different (n1 does not equal n2). The 
+first difference in the calculations is that MSE is computed differently. If the 
+two values of s2 were simply averaged as they are in the case of 
+equal sample sizes, then the estimate based on the smaller sample size would 
+count as much as the estimate based on the larger sample size. Instead the 
+formula for MSE is:
+MSE = SSE/df
+where df is the degrees of freedom and SSE is the sum of 
+squares error and is defined as:
+
+SSE = SSE1 + SSE2
+SSE1 = 
+
+where the X's are from the first group (sample) and M1 
+is the mean of the first group. Similarly,
+SSE2= 
+
+
+where the X's are from the second group and M2 is the mean of the 
+second group.
+The formula 
+=cannot 
+be used without modification since there is not one value of n but two: (n1 
+and n2).
+The solution is to use the harmonic 
+mean of the two sample sizes for n. The harmonic mean (nh) of n1 
+and n2 is:
+
+
+Therefore the formula for the estimated standard error of the difference between 
+means is:
+
+
+
+For the example of the confidence interval on the difference between memory 
+spans of seven-year olds and nine-year olds, assume that one more seven year old 
+was tested and the resulting memory span score was 3. For these data, M1 
+= 3.6, M2 = 6.0, and Md = -2.4
+SSE1 = (3-3.6)2+(3-3.6)2+(3 - 3.6)2 
++ (4 - 3.6)2 + (5 - 3.6)2 = 3.2.
+SSE2 = (5-6)2+(6-6)2+(6-6)2+(7-6)2= 
+2.0.
+
+
+Therefore SSE = 3.2 + 2.0 = 5.2. The df are equal to the 
+sum of the df for 
+and 
+which 
+is 4 + 3 = 7. Since MSE = SSE/df,
+
+MSE = 5.2/7 = .743.
+The harmonic mean of the n's is:
+
+
+= 2/(.2 + .25) = 4.4444.
+
+
+= .578.
+
+Finally, a t table 
+can be used to find that the value of t (with 7 df) to be used for the 99% 
+confidence interval is 3.499.
+The confidence interval is therefore:
+LL = -2.4 - (3.499)(.578) = -4.42 UL = -2.4 +   
+(3.499)(.578) = -0.38  
+-4.42 
+µ1   
+- µ2
+-.38
+Summary of Computations
+1. Compute Md = M1 - M2
+2. Compute SSE1 = 
+(X   
+- M1 )2 for Group 1 and SSE2 = 
+(X   
+- M2 )2 for Group 2  
+3. Compute SSE = SSE1 + SSE2  
+4. Compute df = N - 2 where N = n1 + n2  
+5. Compute MSE = SSE/df  
+6. Find t from a t table.  
+7. Compute 
+(If   
+the sample sizes are equal then nh = n1 = n2).  
+8. Compute 
+  
+9. Lower limit = Md - t 
+  
+10. Upper limit = Md + t 
+  
+11. Lower limit 
+µ1-   
+µ2
+Upper   
+limit
+
+
+Assumptions:
+1. The populations each are normally distributed.  
+2. 
+(Homogeneity   
+of variance)  
+3. Scores are sampled randomly and independently from 2 different populations
+第9章   
+卡方檢定（Chi-square Test）
+
+
+常用於檢測2間斷變數間的關�m性。即實際次數與理論次數是否相同。
+
+
+例：用3種藥分別各對咳嗽病人治療，3天後結果如下：
+
+
+藥品          
+甲       乙       
+丙
+
+
+有效          
+70      160      
+168（人）398
+
+
+無效        
+30       40       32      
+102
+
+
+合計        
+100      200      
+200      500
+
+
+在α＝0.01下，檢定3種藥效果是否相同？
+
+
+398/500＝0.796為期望比，用此比求出期望值：
+
+
+藥品          
+甲       乙       
+丙
+
+
+有效          
+79.6      159.2     159.2人）398
+
+
+無效        
+20.4      40.8      40.8      
+102
+
+
+合計        
+100      200      
+200      500
+
+
+df＝（行數-1）x（列數-1）
+
+
+用Microsoft   
+Excel，由fx選CHITEST項，分別將實�怑�與期望值表填入，即得。見Test-2之Sheet7。值為0.0176＞0.01，故接受3種藥效果相同。
+
+
+試用不同軟體做此題（如http://graphpad.com/quickcalcs/index.cfm 
+），列出步驟。2%
+
+
+Empirical 
+Approximation of a Chi-Square Sampling Distribution
+
+   
+
+
+
+
+Theoretical   
+Sampling Distribution of Chi-Square (df=2)
+
+   
+
+
+Chi-Square   
+Sampling Distributions for df=2, 3, and 4
+
+   
+
+
+
+
+ 
+
+
+第10章   
+母群體變異數的估計與檢定
+
+
+前曾在「兩個母體平均數差的檢定時，假設變異數相等」。但兩個母體變異數是否相等，要用F分配加以檢定。
+
+
+F＝「（Chi1）2/df1」÷「（Chi2）2/df2」
+
+
+而棄卻區為：
+
+
+H0          
+H1          
+棄卻區
+
+
+σ12＝σ22   σ12≠σ22              
+ F＝S12/   
+S22 ＞Fα/2，n1－1，n2－1
+
+
+                          
+or F＝S12/ S22＜Fα/2，n1－1，n2－1
+
+
+σ12≦σ22   σ12＞σ22              
+ F＝S12/   
+S22 ＞F1－α，n1－1，n2－1
+
+
+σ12≧σ22   σ12＜σ22              
+ F＝S12/   
+S22 ＜Fα，n1－1，n2－1
+
+
+可用Microsoft   
+Excel 中fx之FTEST項。亦可�謔牷Ghttp://darwin.eeb.uconn.edu/simulations/jdk1.0/wahlund.html
+
+
+例：某藥廠擬購裝瓶機，每瓶內之�Z異乃機器良窳之重要因素，今由A牌機器抽30瓶產品，得SA2＝0.027，由B牌機器SB2＝0.065，若α＝0.05，可否認為A牌機器優於B牌機器？
+
+
+假設H0  
+： σ12≦σ22   
+H1  ： σ12＞σ22            
+F＝S12/ S22 ＞F1－α，n1－1，n2－1
+
+
+F＝（0.027/29）   
+÷（0.065/9）＝1.29
+
+
+由Excel之FINV項，將Probability項填0.95，df1項填29，df2項填9，得0.4499，而1.29＞0.4499，故接受假設。即認為A牌機器優於B牌機器。
+
+
+有時必須檢定2個以上母群體之平均數是否相等，可用變異數分析（Analysis   
+of Variance--ANOVA）。
+
+
+又分單因子變異數分析（Single   
+factor analysis of varance）、2因子變異數分析（Two factor analysis of   
+varance）（又分不考慮2因子間交互影�遄A與考慮2因子間交互影�鉞�2種「在本課不述」）、及多因子變異數分析（Multi-   
+factor analysis of varance）（在本課不述）。
+
+
+單因子變異數分析之例；25位病人，分5組，每人服用1種廠牌退燒藥後，之退燒時數：
+
+
+藥       
+A    B    
+C    D    E
+
+
+5      
+9    3    
+2    7
+
+
+4      
+7    5    
+3    6
+
+
+8      
+8    2    
+4    9
+
+
+6      
+6    3    
+1    4
+
+
+3      
+9    7    
+4    7
+
+
+Total     
+26   39   
+20   14   33
+
+
+平均   
+5.2  7.8   
+4.0   2.8  
+6.6
+
+
+在0.05顯著水準，用變異數分析法檢定5種廠牌退燒藥，持續退燒時間相等的假設。（註意：資料偶有缺亦可算）
+
+
+假設：H0 
+：μ1＝μ2＝μ3＝μ4＝μ5           
+H1 ：至少有2個μ不相等 
+
+
+        
+而F＝S12/ S22
+
+
+用Excel，在工具項，選資料分析，再選單因子變異數分析，再將資料填入，即得：
+
+
+
+
+
+單因子變異數分析
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+摘要
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+組
+
+
+
+
+個數
+
+
+
+
+總和
+
+
+
+
+平均
+
+
+
+
+變異數
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+欄 
+      1
+
+
+
+
+5
+
+
+
+
+26
+
+
+
+
+5.2
+
+
+
+
+3.7
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+欄 
+      2
+
+
+
+
+5
+
+
+
+
+39
+
+
+
+
+7.8
+
+
+
+
+1.7
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+欄 
+      3
+
+
+
+
+5
+
+
+
+
+20
+
+
+
+
+4
+
+
+
+
+4
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+欄 
+      4
+
+
+
+
+5
+
+
+
+
+14
+
+
+
+
+2.8
+
+
+
+
+1.7
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+欄 
+      5
+
+
+
+
+5
+
+
+
+
+33
+
+
+
+
+6.6
+
+
+
+
+3.3
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ANOVA
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+變源
+
+
+
+
+SS
+
+
+
+
+自由度
+
+
+
+
+MS
+
+
+
+
+F
+
+
+
+
+P-值
+
+
+
+
+臨界值
+
+
+
+
+
+
+組間
+
+
+
+
+79.44
+
+
+
+
+4
+
+
+
+
+19.86
+
+
+
+
+6.895833
+
+
+
+
+0.00117
+
+
+
+
+2.866081
+
+
+
+
+
+
+組內
+
+
+
+
+57.6
+
+
+
+
+20
+
+
+
+
+2.88
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+總和
+
+
+
+
+137.04
+
+
+
+
+24
+
+
+
+
+　
+
+
+
+
+　
+
+
+
+
+　
+
+
+
+
+　
+
+
+
+
+
+因F＞2.866，故拒絕假設。
+
+
+試用不同軟體做此題3%。列出步驟。
+
+
+測驗：
+
+
+檢測4種廠牌同種針劑之主成份含量（μg）：
+
+
+樣本
+
+
+廠牌        
+1       2        3         
+4
+
+
+A         
+9.3       9.4      9.6        
+10
+
+
+B         
+9.4       9.3      
+9.8        
+9.9
+
+
+C         
+9.2       9.4      
+9.5        
+9.7
+
+
+D         
+9.7       9.6      
+10       10.2
+
+
+若α＝0.05，請問，此4廠牌平均成份是否相同？用2種不同軟體解題。4%
+
+
+另例：見Test-3，Sheet1。
+
+
+測驗：
+
+
+4個實驗室進行同項生化分析，結果：
+
+
+Lab.  
+A      B     
+C      D
+
+
+58.7       
+62.7    55.9    
+60.7
+
+
+61.4       
+64.5    56.1    
+60.3
+
+
+60.9       
+63.1    57.3    
+60.9 
+
+
+59.1      
+59.2    55.2    
+61.4 
+
+
+58.2      
+60.3    58.1    
+62.3
+
+
+若α＝0.05，求這些實驗室的結果是否相符？3%
+
+
+ 
+
+
+測驗：
+
+
+下表為5位國立台東大學某系某班學生4科成績：
+
+
+                      
+科目
+
+
+              
+生統         分生    
+    遺傳        
+生資
+
+
+學生
+
+
+張xx         
+68          
+57           73          
+61
+
+
+李xx         
+83          
+94           91          
+86
+
+
+王xx         
+72          
+81           63          
+59
+
+
+趙xx         
+55          
+73           77          
+66
+
+
+吳xx         
+92          
+68  
+         75          
+87
+
+
+若α＝0.05，求（1）這些課難度是否相同？
+
+
+（2）學生能力是否相等？4%
+
+
+ 
+
+
+ 
+
+
+不考慮2因子間交互影�鄐�2因子變異數分析：
+
+
+3種小麥品種，在施用4種肥料下，之單位面積產量（kg）：
+
+
+品種
+
+
+                
+A       B        
+C
+
+
+肥料
+
+
+甲              
+64       72       74
+
+
+乙            
+55       57        47
+
+
+丙            
+59       66        58
+
+
+丁            
+58       57        53
+
+
+在α＝0.05下，小麥品種，與肥料種類，對平均產量有無影�遄H
+
+
+假設H0 
+：α1＝α2＝α3＝0（列效果為0）         
+H1 ：至少有1個αi不相等
+
+
+H0’：β1＝β2＝β3＝0（行效果為0）       H1’：至少有1個βj不相等
+
+
+使用Excel，工具項＝＞雙因子變異數分析無重複試驗＝＞代入資料得：
+
+
+
+
+
+雙因子變異數分析：無重複試驗
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+摘要
+
+
+
+
+個數
+
+
+
+
+總和
+
+
+
+
+平均
+
+
+
+
+變異數
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+列 
+      1
+
+
+
+
+3
+
+
+
+
+210
+
+
+
+
+70
+
+
+
+
+28
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+列 
+      2
+
+
+
+
+3
+
+
+
+
+159
+
+
+
+
+53
+
+
+
+
+28
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+列 
+      3
+
+
+
+
+3
+
+
+
+
+183
+
+
+
+
+61
+
+
+
+
+19
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+列 
+      4
+
+
+
+
+3
+
+
+
+
+168
+
+
+
+
+56
+
+
+
+
+7
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+欄 
+      1
+
+
+
+
+4
+
+
+
+
+236
+
+
+
+
+59
+
+
+
+
+14
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+欄 
+      2
+
+
+
+
+4
+
+
+
+
+252
+
+
+
+
+63
+
+
+
+
+54
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+欄 
+      3
+
+
+
+
+4
+
+
+
+
+232
+
+
+
+
+58
+
+
+
+
+134
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ANOVA
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+變源
+
+
+
+
+SS
+
+
+
+
+自由度
+
+
+
+
+MS
+
+
+
+
+F
+
+
+
+
+P-值
+
+
+
+
+臨界值
+
+
+
+
+
+
+列
+
+
+
+
+498
+
+
+
+
+3
+
+
+
+
+166
+
+
+
+
+9.222222
+
+
+
+
+0.011523
+
+
+
+
+4.757055
+
+
+
+
+
+
+欄
+
+
+
+
+56
+
+
+
+
+2
+
+
+
+
+28
+
+
+
+
+1.555556
+
+
+
+
+0.285588
+
+
+
+
+5.143249
+
+
+
+
+
+
+錯誤
+
+
+
+
+108
+
+
+
+
+6
+
+
+
+
+18
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+總和
+
+
+
+
+662
+
+
+
+
+11
+
+
+
+
+　
+
+
+
+
+　
+
+
+
+
+　
+
+
+
+
+　
+
+
+
+
+
+其中9.22＞4.76故拒絕H0，即肥料�N影響產量。而1.56＜5.14故接受H0’，即品種不�N影響產量。
+
+
+
+
+第11章   
+迴歸（regression）與相關（Correlation）
+
+
+迴歸是由英國生物學家Galton（1877）研究人類身高與父母親身高所創用的名詞。身高很高的父親，兒子會比父親略矮，很矮的的父親，兒子會比父親略高。這種身高會跑回（going   
+back）平均數的現像，稱之。在散佈圖上符合此資料分佈情況的線段，稱「迴歸線」，表示此線的方程式稱「迴歸方程式-regression   
+equation」。以後推廣至凡用於估計線或方程式的統計技術均稱「迴歸分析」。
+
+
+最簡單的為直線迴歸：一般均用最小平方法（Least   
+square method）
+
+
+相關係數（Correlation   
+Coefficient）：資料量大，r＜-0.7或r＞0.7則表示2�Z數有相關。
+
+
+可用Excel 
+http://www.gifted.uconn.edu/Siegle/research/Correlation/excel.htm 
+or http://www.changbioscience.com/stat/corr.html 
+, http://fonsg3.let.uva.nl/Service/Statistics/Correlation_coefficient.html 
+, http://www.ifigure.com/math/stat/regress.htm 
+軟體。
+
+
+The correlation between two variables reflects the degree   
+to which the variables are related. The most common measure of correlation is   
+the Pearson Product Moment Correlation (called Pearson's correlation for short).   
+When measured in a population   
+the Pearson Product Moment correlation is designated by the Greek letter rho (r).   
+When computed in a sample, it is designated by the letter "r" and is 
+sometimes called "Pearson's r." Pearson's correlation reflects the 
+degree of linear 
+relationship between two variables. It ranges from +1 to -1. A correlation 
+of +1 means that there is a perfect positive linear relationship between 
+variables. The scatterplot shown on this page depicts such a relationship. It is 
+a positive relationship because high scores on the X-axis are associated with 
+high scores on the Y-axis.
+A correlation of -1 means that there is a perfect negative 
+linear relationship between variables. The scatterplot shown to the right 
+depicts a negative relationship. It is a negative relationship because high 
+scores on the X-axis are associated with low scores on the Y-axis. A correlation 
+of 0 means there is no linear relationship between the two variables.
+The second graph shows a Pearson correlation of 0. 
+  
+Correlations are rarely if ever 0, 1, or -1. Some real data showing a moderately   
+high correlation are shown ：
+The scatterplot below shows arm strength as a function of   
+grip strength for 147 people working in physically-demanding jobs (click here   
+for details about the study).The plot reveals a strong positive relationship.   
+The value of Pearson's correlation is 0.63.
+
+
+Other information about Pearson's correlation can be 
+obtained by clicking one of the following links:
+
+Computational 
+    formula
+Sampling 
+    distribution
+Confidence 
+    interval
+Confidence 
+    interval on difference between r's
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+The   
+      formula for Pearson's correlation takes on many forms. A commonly used   
+      formula is shown on the right. The formula looks a bit complicated, but   
+      taken step by step as shown in the numerical   
+      example, it is really quite simple.  
+      A simpler looking formula can be used if the numbers are converted   
+      into z scores:
+  
+      where zx is the variable X converted into z scores and zy   
+      is the variable Y converted into z scores.
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Just   
+      like any other statistic, Pearson's r has a sampling
+distribution. If   
+      N pairs of scores were sampled over and over again the resulting Pearson   
+      r's would form a distribution. When the absolute value of the correlation   
+      in the population is low (say less than about .4) then the sampling   
+      distribution of Pearson's r is approximately normal.   
+      However, with high values of correlation, the distribution has a negative   
+      skew. The graph on the right shows the sampling distribution of   
+      Pearson's r when the population correlation is .8 and when N = 19. The   
+      strong negative skew is apparent. Although no value of r ever exceeds 1.0,   
+      some values of r are very low. A transformation called Fisher's z'   
+      transformation converts Pearson's r to a value that is normally   
+      distributed and with a standard   
+      error of 
+      .  
+      It stands to reason that the greater the sample   
+      size (N, the number of pairs of scores), the smaller the standard   
+      error. Since N is in the denominator of the formula, the larger the sample   
+      size, the smaller the standard error. Consider the following problem: If   
+      the population correlation (rho) between scores on an aptitude test and   
+      grades in school were .5, what is the probability that a correlation based   
+      on 19 students would be larger than .75? The first step is to convert a   
+      correlation of .5 to z'. This can be done with the r   
+      to z' table. The value of z' is .55. The standard error is 
+      =   
+      1/4 = .25.  
+      The second step is to convert .75 to z'. Again this is done with an   
+      r to z' table. The value is .97.
+The number of standard deviations 
+      from the mean can be calculated with the formula: 
+      where: 
+      z is the number of standard deviations above the z' associated with the 
+      population correlation, z' is the value of Fisher's z' for the sample 
+      correlation (z' =.97 in this case), m 
+      is the value of z' for the population correlation (.55 in this case) and 
+      is the mean of the sampling distribution of z'. 
+      is the standard error of Fisher's z'; it was previously 
+      calculated to be .25 for N = 19.
+Plugging the numbers into the formula: z = (.97 - 
+      .55)/.25 = 1.68. Therefore, a correlation of .75 is associated with a 
+      value 1.68 standard deviations above the mean. As shown 
+      previously, a z 
+      table can be used to determine the probability of a value more than 
+      1.68 standard deviations above the mean. The probability is .95. Therefore 
+      there is a .05 probability of obtaining a Pearson's r of .75 or greater 
+      when the "true" correlation is only .50.
+Since the sampling 
+      distribution of Pearson's 
+      r is not normally distributed, 
+      Pearson's r is converted to Fisher's 
+      z' and the confidence interval is computed using Fisher's z'. The 
+      values of Fisher's z' in the confidence interval are then converted back 
+      to Pearson's r's. For example, assume a researcher wished to construct a 
+      99% confidence interval on the correlation between SAT scores and grades 
+      in the first year in college at a large state university. The researcher 
+      obtained data from 100 students chosen at random and found that the sample 
+      value of Pearson's r was .60. The first step in computing the confidence 
+      interval is to convert .60 to a value of z' using the r 
+      to z' table . The value is: z' = .69.
+The sampling distribution of z' is known to be 
+      approximately normal with a standard error of 
+      . 
+      where N is the number of pairs 
+      of scores.
+It stands to reason that the greater the sample 
+      size (N, the number of pairs of scores), the smaller the standard 
+      error. Since N is in the denominator of the formula, the larger the sample 
+      size, the smaller the standard error. Consider the following problem: If 
+      the population correlation (rho) between scores on an aptitude test and 
+      grades in school were .5, what is the probability that a correlation based 
+      on 19 students would be larger than .75? The first step is to convert a 
+      correlation of .5 to z'. This can be done with the r 
+      to z' table. The value of z' is .55. The standard error is 
+      = 
+      1/4 = .25.
+
+      The second step is to convert .75 to z'. Again this is done with an 
+      r to z' table. The value is .97.
+The number of standard deviations 
+      from the mean can be calculated with the formula: 
+      where: 
+      z is the number of standard deviations above the z' associated with the 
+      population correlation, z' is the value of Fisher's z' for the sample 
+      correlation (z' =.97 in this case), m 
+      is the value of z' for the population correlation (.55 in this case) and 
+      is the mean of the sampling distribution of z'. 
+      is the standard error of Fisher's z'; it was previously 
+      calculated to be .25 for N = 19.
+Plugging the numbers into the formula: z = (.97 - 
+      .55)/.25 = 1.68. Therefore, a correlation of .75 is associated with a 
+      value 1.68 standard deviations above the mean. As shown 
+      previously, a z 
+      table can be used to determine the probability of a value more than 
+      1.68 standard deviations above the mean. The probability is .95. Therefore 
+      there is a .05 probability of obtaining a Pearson's r of .75 or greater 
+      when the "true" correlation is only .50.
+The procedure for computing a confidence 
+      interval on the difference between two independent correlations 
+      is similar to the procedure for computing a confidence interval on one correlation. 
+      The first step is to convert both values of r to z'. 
+      Then a confidence interval is constructed based on the general 
+      formula for a confidence interval where the statistic is z'1 
+      - z'2 , and the standard error of the statistic is: 
+      where 
+      N1 is the number of pairs of scores in r1 and N2 
+      is the number of pairs of scores in r2. Once the confidence 
+      interval is computed, the upper and lower limits are converted back from 
+      z' to r. As an example, assume a researcher were interested in whether the 
+      correlation between verbal and quantitative SAT scores (VSAT and QSAT) is 
+      different for females than it is for males. Samples of 80 females and 75 
+      males are tested and the correlation for females is .55 and the 
+      correlation for males is .42.
+The problem is to construct the 95% confidence on 
+      the difference between correlations.
+      The formula is:
+
+      The first step is to use the r 
+      to z' table to convert the two r's. The r of .55 corresponds to a z' 
+      of .62 and the r of .42 corresponds to a z' of .45. Therefore, z - z = .62 
+      - .45 = .17.
+      The next step is to find z. From a z 
+      table, it can be determined that the z for 95% confidence intervals is 
+      1.96.
+      Finally, 
+      
+      = 0.164.
+      Therefore,
+      Lower limit = .17 - (1.96)(.164) = -.15
+      Upper limit = .17 + (1.96)(.164) = .49
+      Converting the lower and upper limits back to r, results in r's of -.15 
+      and .45 respectively. Therefore, the confidence interval is: -0.15 
+      r1 
+      - r2
+0.45 
+      where r1 
+      is the population correlation for females and r2 
+      is the population correlation for males.
+
+
+
+
+
+The experiment shows that there is still uncertainty about 
+the difference in correlations. It could be that the correlation for females is 
+as much as 0.49 higher; but it could also be 0.15 lower.
+Summary of Computations
+1. Compute the sample r's.
+2. Use an r to z' 
+table to convert the values of r to z'.
+3. Compute z'1 - z'2.
+4. Use a to z table to 
+find the value of z for the level of confidence desired.
+5. Compute: 
+
+
+6. Lower limit = z'1 - z'2 - (z)()
+7. Upper limit = z'1 - z'2 + (z)()
+8. Use an r to z' 
+table to convert the lower and upper limits to r's.
+Assumptions:
+1. Each subject (observation) is sampled independently from each other subject.
+2. Subjects are sampled randomly.
+3. The two correlations are from independent samples (different groups of 
+subjects). If the same subjects were used for both correlations then the 
+assumption of independence would be violated.
+
+
+ 
+
+
+第12章   
+無母數統計（Nonparametric Methods）
+
+
+例：下為12位病人等診時間（min）：
+
+
+17   
+15 20 20 32 28 12 26 25 25 35 24若α＝0.05，問，病人平均等診時間是否在20min以內？
+
+
+H0：u＝20
+
+
+H1：u＜20
+
+
+將候診時間＞20者為＋，＝20者為0，＜20者為－，可得：
+
+
+－－00＋＋－＋＋＋＋＋，0者不計，依二項分配n＝10，X＝3，p＝1/2得p＝0.1719＞0.05，接受假設。即u不小於20min。
+
+
+測驗：
+
+
+某次生統考試，有是非20題，正確答案為：
+
+
+○         
+××○×○×○○×○××○×○×○○×
+
+
+問，此是非題的安排是否隨機？
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+、
+
+
+
+
+
+統計方法與生物醫學研究
+
+
+
+
+
+
+
+
+
+首頁         
+新增資料與公告
+
+
+
+
+
+
+
+
+最新消息:
+
+
+
+坦桑尼亞蔬菜溫室的研發
+
+
+　
+
+　
+
+
+
+
+
+
+
+
+
+
+　
+
+
+
+　
+
+
+
+
+統計方法與生物醫學研究
+
+
+　
+
+
+
+
+中興大學
+
+		生物系統工程研究室
+陳加忠
+
+
+　
+
+
+　
+
+
+
+
+
+		統計學此學門的內容與其重要性已經不用再多介紹。只要量測的對象本身有差異存在，即是需要統計學。對生物學門中的三大部門：生物學，農學，醫學，統計學的重要性由其普遍性即可瞭解。在生物學門三領域中每一學生都是必修統計學。
+
+
+		工程部門與統計學的相關性最初只是出現於工程數學中機率章節。近年來，統計技術也普遍應用於工程科系各領域。例如電機領域中隨機訊號之處理、土木領域中混凝土材料強度之比對，化工領域中製程之控制，機械領域中成品的品質管制。工程界耳熟能詳的六倍標準差也是統計之典型應用。
+
+自1990年代之後隨著個人電腦的普及，功能不斷地進步。以往要藉由大型電腦才能運算的統計題目可以輕而易舉的在桌上型電腦完成。統計軟體也隨之日益普及化。配合視窗式介面，以滑鼠點取即可執行各種統計運算。但也因是如此，造成研究人不重視統計原理，不習慣自基礎學門開始研習，認為只要統計軟體在手，一切統計問題依賴滑鼠即可解決。此種對於統計學的誤解，對於統計技術的濫用與誤用，學術界以"Abuse 
+		and Misuse of Statistics"加以表示。
+
+在2004年5月，西班牙Girona 
+		University，兩名教授Emili 
+		Garcia Berthou與Carles 
+		Alcaraz在BMC 
+		Medical Research Methodology發表一篇驚人的報告。2001年的Nature刊物中181篇研究論文，至少有69篇被發現其統計技術至少有一個錯誤。自2004年至2008年，許多醫學期刊開始評論期刊內容內常見的統計錯誤。國內許多學術刊物，依我個人的檢視，論文統計錯誤之比例更有80％以上。
+
+
+		在工程領域中，農業工程，食品工程與生醫工程是介於生物與工程之間的學術領域。對這些工程學系而言，統計技術的正確應用更為重要。生物系統工程研究室為此而開授一系列的課程。大學部學生要求修習統計學，研究所則研習兩門課：回歸分析，生物與化學計量學。目的即是要求學生具有統計學之基礎。在應用方面，在國外許多醫學期刊已有許多評論性文章(Reviews)用以討論統計應用常見的錯誤。在生物學門的三大領域中，醫學領域對於統計學要求最為嚴謹，因此更是值得學習。
+
+此網站建立"生物醫學研究之統計方法"此專欄。此專欄之目的不是教授統計原理，而是用以提供研究人員相關資訊：如何避免誤用統計。將以一系列文章介紹此主題，重點以生醫領域為主軸。以下為近十年來相關之論文獻索引。
+
+
+
+
+
+作者(Authors)
+
+
+年代(year)
+
+
+篇名 
+					(Title)
+
+
+期刊名稱 
+					(Journal)
+
+
+捲(期) 
+					Vol:
+
+
+頁數 
+					(Page)
+
+
+
+
+James E.De Muth
+
+
+2009
+
+
+Overview of 
+					biostatistics used in clinical research
+
+
+Am J Health-Syst 
+					Pharm
+
+
+66
+
+
+70-81
+
+
+
+
+S. R. Lowy3
+
+
+2009
+
+
+Use and Misuse 
+					of Multilple Comparisons in Animal Experiments1,2
+
+
+J. Anim. Sci. 
+					1992
+
+
+70
+
+
+1971-1977
+
+
+
+
+Eunsik ParkPh.D.1 
+					et al.
+
+
+2009
+
+
+Correct Use of 
+					Repeated Measures Analysis of Variance
+
+
+Korean J Lab Med
+					
+
+
+29
+
+
+1-9
+
+
+
+
+Nancy R
+
+
+2009
+
+
+Use and Misuse 
+					of the Receiver Operating  Characteristic Curve in Risk 
+					Prediction
+
+
+Circulation 
+					.2007
+
+
+115
+
+
+928-935
+
+
+
+
+Eugene H. 
+					Blackstone,MD
+
+
+2009
+
+
+Breaking down 
+					barriers:Helpful breakthrough statistical methods you need 
+					to understand better
+
+
+The Journal of 
+					Thoracic and Cardiovascular Surgery
+
+
+122
+
+
+430-439
+
+
+
+
+Ng K H.
+
+
+2009
+
+
+Effective 
+					Medical Weiting(Presenting the statictical results)
+
+
+Singapore Med J
+
+
+50(1)
+
+
+11-14
+
+
+
+
+Sylvan 
+					Wallenstein et al.
+
+
+2009
+
+
+Some Statistical 
+					Methods Useful in Circulation Research
+
+
+Circulation 
+					Research
+
+
+47(1)
+
+
+1-9
+
+
+
+
+ 
+
+
+
+
+Sharon-LiseT.Normand,Ph.D.
+
+
+2008
+
+
+Some Ood and 
+					Some New Statistical Tools for Outcomes Research 
+
+
+
+Published in 
+					final edited from as: Circulation.
+
+
+118(8)
+
+
+872-884
+
+
+
+
+Emmanuel 
+					Lesaffre,Dr.Sc.
+
+
+2008
+
+
+Use and Misuse 
+					of the P-Value
+
+
+Bulletin of the 
+					NYU Hospital for Joint Diseases
+
+
+66(2)
+
+
+146-9
+
+
+
+
+Um Okeh
+
+
+2008
+
+
+Statistical 
+					problems in medical research
+
+
+African Journal 
+					of Biotechbology
+
+
+7(25)
+
+
+4819-4826
+
+
+
+
+David Bartley. 
+					et al.
+
+
+2008
+
+
+Measurement 
+					Uncertainty
+
+
+Ann. Occup. Hyg.
+					
+
+
+52(6)
+
+
+413-417
+
+
+
+
+Carlo Basile. et 
+					al.
+
+
+2008
+
+
+Total body water 
+					in health and disease:Have anthropometric equations any 
+					meaning?
+
+
+Nephrol Dial 
+					Transplant
+
+
+23
+
+
+1997-2002
+
+
+
+
+Helen Blair 
+					Simpsina,b,*. et al.
+
+
+2008
+
+
+Statistical 
+					choices can effect inferences about treatment efficacy: A 
+					case study from obsessive-compulsive disorder research  
+					
+
+
+Journal of 
+					Psychiatric Research
+
+
+42
+
+
+631-638
+
+
+
+
+Nathan Tabacka,b,*. 
+					et al.
+
+
+2008
+
+
+A survey of 
+					abstracts of high-impact clinical journals indicated  most 
+					statistical methods presented are summary statistics 
+
+
+
+Journal of 
+					Clinical Epidemiology
+
+
+61
+
+
+277-281
+
+
+
+
+John Ludbrook
+
+
+2008
+
+
+Analysis of 2 × 
+					2 tables of frequencies:matching test to experimental design
+
+
+International 
+					Journal of Epidemiology
+
+
+37
+
+
+1430-1435
+
+
+
+
+Gervasio Pineiroa,*. 
+					et al.
+
+
+2008
+
+
+How to evaluate 
+					models:Observed vs. predicted or predicted vs. observed?
+					
+
+
+Ecological 
+					Modelling
+
+
+216
+
+
+316-322
+
+
+
+
+Stephen J 
+					Gilmore
+
+
+2008
+
+
+Evaluating 
+					statistics in clinical trials:Making the unintelligible 
+					intelligible
+
+
+Australasian 
+					Journal of Dermatology
+
+
+49
+
+
+177-186
+
+
+
+
+Brian Whittle. 
+					et al.
+
+
+2008
+
+
+Magazine on 
+					Production Processing 
+﹠Marketing
+
+
+World Poultry
+
+
+24
+
+
+1-34
+
+
+
+
+J.Michael Oakes
+
+
+2008
+
+
+Statisuscal 
+					Power and Sample Size:Some Fundamentals for Clinician 
+					Researchers
+
+
+
+					S.P.Glasser(ed.),Essentials of Clinical Research
+
+
+15
+
+
+261-278
+
+
+
+
+Don Byod. et al.
+
+
+2008
+
+
+Overview of 
+					Measuring Effest Size:The Effect of Measurement Error
+
+
+National Center 
+					for Analysis of Longitudinal Data in Education Research
+
+
+ 
+
+
+1-7
+
+
+
+
+Peh W C G .
+
+
+2008
+
+
+Effective 
+					Medical Weiting(Why Write?)
+
+
+Singapore Med J
+
+
+49(6)
+
+
+443-444
+
+
+
+
+Peh W C G .
+
+
+2008
+
+
+Effective 
+					Medical Weiting(Weiting the Introduction)
+
+
+Singapore Med J
+
+
+49(10)
+
+
+756-758
+
+
+
+
+Peh W C G .
+
+
+2008
+
+
+Effective 
+					Medical Weiting(Basic structure and types of scientific 
+					papers)
+
+
+Singapore Med J
+
+
+49(7)
+
+
+522-525
+
+
+
+
+Ng K H.
+
+
+2008
+
+
+Effective 
+					Medical Weiting(Weiting the results)
+
+
+Singapore Med J
+
+
+49(12)
+
+
+967-969
+
+
+
+
+ 
+
+
+
+
+Tom Lang,MA
+					
+
+
+2007
+
+
+Documenting 
+					Research in Scientific Articles: Guidelines for Authors*
+
+
+CHEST
+
+
+131
+
+
+317-319
+
+
+
+
+Barry K. Moser
+
+
+2007
+
+
+Statistics for 
+					Clinicians
+
+
+Clinical 
+					Advances in Hematology﹠Oncology
+					
+
+
+5(4)
+
+
+251-253
+
+
+
+
+Shinichi 
+					Nakagawa. et al.
+
+
+2007
+
+
+Effect 
+					size,confidence interval and statistical significance: a 
+					practical guide for biologists
+
+
+Biol. Rev
+
+
+82
+
+
+591-605
+
+
+
+
+L.A. Hothorn
+
+
+2007
+
+
+How to deal with 
+					multiple treatment or dose groups in randomized clinical 
+					trials?
+
+
+2007 The Author 
+					Journal compilation 2007 Blackwell Publishing 
+					Ltd.Fundamental 
+﹠Clinical 
+					Pharmacology
+
+
+21
+
+
+137-154
+
+
+
+
+Todd Neideen,MD. 
+					et al. 
+
+
+2007
+
+
+Understanding 
+					Statistical Tests
+
+
+Journal of 
+					Surgical Education
+
+
+64
+
+
+93-96
+
+
+
+
+D.Betsy Mccoach. 
+					et al.
+
+
+2007
+
+
+Errors of 
+					Inference in Sructural Equation Modeling 
+
+
+Psychology in 
+					the School.
+
+
+44(5)
+
+
+461-470
+
+
+
+
+Norman A 
+					Desbiens*
+
+
+2007
+
+
+The reporting of 
+					statistics in medical educational studies: an observational 
+					study
+
+
+BMC Medical 
+					Research Methodology
+
+
+7(35)
+
+
+1-3
+
+
+
+
+David Berle. et 
+					al.
+
+
+2007
+
+
+Inconsistencies 
+					between reported test statistics and p-values un two 
+					psychiatry journals
+
+
+International 
+					Journal of Methods in Psychiatric Rresearch Int. J. Methods 
+					Psychiatr.Res.
+
+
+16(4)
+
+
+202-207
+
+
+
+
+ 
+
+
+
+
+Douglas A.Fitts*
+
+
+2006
+
+
+Misuse of ANOVA 
+					with cumulative intakes
+
+
+Appetite
+
+
+46
+
+
+100-102
+
+
+
+
+Yu-Kang Tu. et 
+					al.
+
+
+2006
+
+
+Misuses of 
+					correlation and regression analyses in orthodontic research 
+					: The problem of mathematical coupling
+
+
+American Journal 
+					of Orthodontics and Dentofacial Orthopedics 
+
+
+130
+
+
+62-68
+
+
+
+
+Gregory T.Sica. 
+					et al.
+
+
+2006
+
+
+Bias in Research 
+					Studies 
+
+
+Radiology
+
+
+238
+
+
+780-789
+
+
+
+
+Dr P.F Kotur
+
+
+2006
+
+
+Statistics in 
+					Blomedical Journals
+
+
+Indian J.Anaesth
+
+
+50(3)
+
+
+166-168
+
+
+
+
+A.Gustavo 
+					Gonzalez. et al.
+
+
+2006
+
+
+The correlation 
+					coefficient attacks again
+
+
+Accred Qual 
+					Assur
+
+
+11
+
+
+256-258
+
+
+
+
+Peyman Jafari. 
+					et al.
+
+
+2006
+
+
+An assessment of 
+					recently published gene expression data analyses : reporting 
+					experimental design and statistical factors 
+
+
+BMC Medical 
+					Informatics and Decision Marking
+
+
+6(27)
+
+
+1-8
+
+
+
+
+Tom Lang,MA
+
+
+2006
+
+
+Documenting 
+					Research in Scientific Articles : Guidelines for Authors*t
+
+
+Chest
+
+
+130
+
+
+1263-1268
+
+
+
+
+Karl De Vore*
+
+
+2006
+
+
+Have more 
+					confidence in your stability data : Two points to consider
+
+
+Journal of 
+					Pharmaceutical and Biomedical Analysis
+
+
+41
+
+
+293-298
+
+
+
+
+J.M.Sonnergaard*
+
+
+2006
+
+
+On the 
+					misinterpretation of the correlation coefficient in 
+					pharmaceutical sciences
+
+
+International 
+					Journal of Pharmaceutics
+
+
+321
+
+
+12-17
+
+
+
+
+T.Singtoroja. 
+					et al.
+
+
+2006
+
+
+A new approach 
+					to evaluate regression model during validation of 
+					bioanalytical aeeays
+
+
+Journal of 
+					Pharmaceutical and Biomedical Analysis
+
+
+41
+
+
+219-227
+
+
+
+
+A.Petrie
+
+
+2006
+
+
+Statistics in 
+					orthopaedic papers
+
+
+The Journal of 
+					Bone and Joint Surgery
+
+
+88
+
+
+1121-1136
+
+
+
+
+Tom Lang,MA
+
+
+2006
+
+
+Common 
+					Statistical Errors Even You Can Find(Part : 7 Common Errors 
+					in Conclusions )
+
+
+AMWA JOURNAL
+
+
+21(1)
+
+
+17-18
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+Philip Schatz*. 
+					et al.
+
+
+2005
+
+
+Misuse of 
+					statistical tests in Archives of Clinical Neuropsychology 
+					publications
+
+
+Archives of 
+					Clinical Neuropsychology
+
+
+20
+
+
+1053-1059
+
+
+
+
+Julia Volaufova
+
+
+2005
+
+
+Statistics 
+					Methods in Biomedical Research and Measurement Science
+
+
+Measurement 
+					Science Review 
+
+
+5(1)
+
+
+1-10
+
+
+
+
+Dana Oliver. et 
+					al.
+
+
+2005
+
+
+Reading a 
+					Research Article Part 
+Ⅰ 
+					: Types pf Variables 
+
+
+Clinical Journal 
+					of Oncology Nursing
+
+
+9(1)
+
+
+110-112
+
+
+
+
+Dana Oliver. et 
+					al.
+
+
+2005
+
+
+Reading a 
+					Research Article Part 
+Ⅱ 
+					: Parametric and Nonparametric Statistics
+
+
+Clinical Journal 
+					of Oncology Nursing
+
+
+9(2)
+
+
+238-240
+
+
+
+
+Dana Oliver. et 
+					al.
+
+
+2005
+
+
+Reading a 
+					Research Article Part 
+Ⅲ 
+					: The Data Collection Instrument
+
+
+Clinical Journal 
+					of Oncology Nursing
+
+
+10(3)
+
+
+423-426
+
+
+
+
+Peter 
+					G.Fedor-Freybergh. et al.
+
+
+2005
+
+
+From the 
+					descriptive towards inferential statistics : Hundred years 
+					since conception of the Student's t-distribution
+
+
+Neuroendocrinol 
+					Lett
+
+
+26(3)
+
+
+167-172
+
+
+
+
+Moon-Jae K.im et 
+					al.
+
+
+2005
+
+
+Development of 
+					Anthropometry-Based Equations for the Estimation of the 
+					Total Body Water in Koreans
+
+
+J Korean Med Sci
+
+
+20
+
+
+445-449
+
+
+
+
+David A. Ludwig
+
+
+2005
+
+
+Use and Misuse 
+					of p-Values in Designed and Observational Studies : Guide 
+					for Researchers and Reviewers
+
+
+
+					Auiation,Space,and EnuironmentalMedicine
+
+
+76(7)
+
+
+675-680
+
+
+
+
+K.Gregory. et 
+					al.
+
+
+2005
+
+
+A standard 
+					approach to measurement uncertainties for scientists and 
+					engineers in medicine*
+
+
+Australasian 
+					Physical 
+﹠Engineering 
+					Sciences in Medicine 
+
+
+28
+
+
+131-139
+
+
+
+
+F.R.Harker. et 
+					al.
+
+
+2005
+
+
+The use and 
+					misuse of discrimination tests for assessing the sensory 
+					properties of fruit and vegetables
+
+
+Postharvest 
+					Biology and Technology 
+
+
+38
+
+
+195-201
+
+
+
+
+Andrew J. 
+					Vickers. et al.
+
+
+2005
+
+
+Analysis of 
+					Variance is Easily Misapplied in the Analysis of Randomizesd 
+					Trials : A Critique and Discussion of Alternative 
+					Statistical Approaches 
+
+
+Psychosomatic 
+					Medicine 
+
+
+67
+
+
+652-655
+
+
+
+
+Tom Lang,MA
+
+
+2005
+
+
+Common 
+					Statistical Errors Even You Can Find(Part : 6 Errors in 
+					Research Designs )
+
+
+AMWA JOURNAL
+
+
+20(3)
+
+
+112-115
+
+
+
+
+Tom Lang,MA
+
+
+2005
+
+
+Common 
+					Statistical Errors Even You Can Find(Part : 5 Errors in 
+					Reports of Diagnostic Tests )
+
+
+AMWA JOURNAL
+
+
+20(2)
+
+
+50-51
+
+
+
+
+Tom Lang,MA
+
+
+2005
+
+
+Common 
+					Statistical Errors Even You Can Find(Part : 4 Errors in 
+					Correlation and Regression Analyses)
+
+
+AMWA JOURNAL
+
+
+20(1)
+
+
+10-11
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+Alan S Rigby. et 
+					al.
+
+
+2004
+
+
+A survey of 
+					statistics in three UK general practice journal
+
+
+BMC Medical 
+					Research Methodology
+
+
+4(28)
+
+
+1-7
+
+
+
+
+Kenneth 
+					J.Ottenbachera,*. et al.
+
+
+2004
+
+
+A review of two 
+					journals found that articles using multivariable logistic 
+					regression frequently did not report commonly recommended 
+					assumptions 
+
+
+Journal of 
+					Clinical Epidemiology
+
+
+57
+
+
+1147-1152
+
+
+
+
+T.kutia. 
+					et al.
+
+
+2004
+
+
+Analysis of 
+					sensory data of different food products by ANOVA
+
+
+Chemometrics and 
+					Intelligent Laboratory Systems
+
+
+72
+
+
+253-257
+
+
+
+
+Taesung Park. et 
+					al.
+
+
+2004
+
+
+Model Diagnostic 
+					Plots for Repeated Measures Data
+
+
+Biometrical 
+					Journal 
+
+
+4
+
+
+441-452
+
+
+
+
+L.R.Schaeffer*
+
+
+2004
+
+
+Application of 
+					random regression models in  animal breeding
+
+
+Livestock 
+					Production Sciences
+
+
+86
+
+
+35-45
+
+
+
+
+B.Ballaa. 
+					et al.
+
+
+2004
+
+
+Comparative 
+					study of cardiovascular markers data by various techniques 
+					of multivariate analysis
+
+
+Chemometrics and 
+					Intelligent Laboratory Systems
+
+
+72
+
+
+259-267
+
+
+
+
+Kinga Komka. et 
+					al.
+
+
+2004
+
+
+A modified error 
+					model for the assessment of stability of pharmaceutical 
+					products
+
+
+Chemometrics and 
+					Intelligent Laboratory Systems
+
+
+72
+
+
+161-165
+
+
+
+
+M.J.R.Healy*
+
+
+2004
+
+
+What statistics 
+					does a paediatrician need to know? 
+
+
+Current 
+					Paediatrics
+
+
+14
+
+
+507-512
+
+
+
+
+Elizabeth 
+					M.Glaister. et al.
+
+
+2004
+
+
+Line-Fitting 
+					with Outliers
+
+
+Teaching 
+					Staitstics
+
+
+26(3)
+
+
+78-80
+
+
+
+
+Tom Lang,MA
+
+
+2004
+
+
+Common 
+					Statistical Errors Even You Can Find(Part : 3 Errors in Data 
+					Displays)
+
+
+AMWA JOURNAL
+
+
+19(2)
+
+
+9-11
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+E.Nigel Linga,*
+
+
+2003
+
+
+Statistical 
+					power in comparative aquaculture studies
+
+
+Aquaculture
+
+
+224
+
+
+159-168
+
+
+
+
+Graham R. et al.
+
+
+2003
+
+
+Misrepresenting 
+					random sampling?A systematic review of research parpers in 
+					the Journal of Advanced Nursing
+
+
+2003 Blackwell 
+					Publishing Ltd,Journal of Advanced Nursing
+
+
+44(3)
+
+
+278-288
+
+
+
+
+James F.Reed. et 
+					al.
+
+
+2003
+
+
+Methodological 
+					and Statistical Techniques:What Do Residents Really Need to 
+					Know About Statistics?
+
+
+Journal of 
+					Medical Systems
+
+
+27(3)
+
+
+233-238
+
+
+
+
+J.Lorenzo 
+					Bermejo. et al.
+
+
+2003
+
+
+Random 
+					regression to model genetically the longitudinal data of 
+					daily feed intake in growing pigs
+
+
+Livestock 
+					Production Science
+
+
+82
+
+
+189-199
+
+
+
+
+M.E.Shy,MD. et 
+					al.
+
+
+2003
+
+
+Quantitative 
+					sensory testing(Report of the Therapeutics and Technology 
+					Assessment Subcommittee of the American Academy of 
+					Neurology)
+
+
+Neurology
+
+
+60
+
+
+898-904
+
+
+
+
+Y H Chan
+
+
+2003
+
+
+Biostatistics 
+					102:Quantitative Data-ParametricNon-Parametric Tests 
+
+
+
+Singapore Med J
+
+
+44(8)
+
+
+391-396
+
+
+
+
+Tom Lang,MA
+
+
+2003
+
+
+Common 
+					Statistical Errors Even You Can Find(Part : 2 Errors in 
+					Multivariate Analyses and in Interpreting Differences 
+					Between Groups)
+
+
+AMWA JOURNAL
+
+
+18(3)
+
+
+103-107
+
+
+
+
+Tom Lang,MA
+
+
+2003
+
+
+Common 
+					Statistical Errors Even You Can Find(Part : 1 Errors in 
+					Descriptive Statistics and in Interpreting Probability 
+					Values)
+
+
+AMWA JOURNAL
+
+
+18(2)
+
+
+67-71
+
+
+
+
+ 
+
+
+
+
+Bahman 
+					P.Tabaei,MPH. et al.
+
+
+2002
+
+
+A Multivariate 
+					Logistic Regression Equation to Ssreen for Diabetes
+
+
+Diabetes Care
+
+
+25(11)
+
+
+1999-2003
+
+
+
+
+Jianping Liu. et 
+					al.
+
+
+2002
+
+
+Misuse of 
+					Randomization : A Review of Chineses Randomized Trials of 
+					Herbal Medicines for Chronic Hepatitis B
+
+
+The American 
+					Journal  of Chineses Medicines
+
+
+30(1)
+
+
+173-176
+
+
+
+
+Maarten 
+					L.A.T.M.Hertog*
+
+
+2002
+
+
+The impact of 
+					biological variation on postharvest population dynamics
+
+
+Postharvest 
+					Biology and Technology
+
+
+26
+
+
+253-263
+
+
+
+
+Jeffrey 
+					A.Gliner. et al.
+
+
+2002
+
+
+Problems With 
+					Null Hypothesis Significance Testing (NHST) : What Do the 
+					Textbooks Say?
+
+
+The  Journal  of 
+					Experimental Education
+
+
+71(1)
+
+
+83-92
+
+
+
+
+James P.Brody*t. 
+					et al.
+
+
+2002
+
+
+Significance and 
+					Statistical errors in the analysis of DNA microarray data
+
+
+PNAS
+
+
+90(20)
+
+
+12975-12978
+
+
+
+
+Hideo Kusuoka. 
+					et al.
+
+
+2002
+
+
+Advice on  
+					Statistical Analysis for Circulation Research
+
+
+Circ Res
+
+
+91
+
+
+662-671
+
+
+
+
+Lynda Anne 
+					Szczech. et al.
+
+
+2002
+
+
+Key Concepts in 
+					Biostatistics : Using Statistics to Answer the Question “Is 
+					There a Difference?”
+
+
+Seminars in 
+					Dialysis
+
+
+15(5)
+
+
+347-351
+
+
+
+
+John Ludbrook
+
+
+2002
+
+
+Statistical 
+					Techniques for Comparing Measurers and methods of 
+					measurement : a critical review
+
+
+Clinical and 
+					Experimental Pharmacology and Physiology
+
+
+29
+
+
+527-536
+
+
+
+
+Elise Whitley. 
+					et al.
+
+
+2002
+
+
+Statistics 
+					review 3 : Hypothesis Testing and P values
+
+
+Critical Care
+
+
+6(3)
+
+
+222-225
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+Gregory 
+					A.Miller. et al.
+
+
+2001
+
+
+Misunderstanding 
+					Analysis of Covariance
+
+
+Journal of 
+					Abnormal Psychology
+
+
+110(1)
+
+
+40-48
+
+
+
+
+Steven C.Bagleya. 
+					et al.
+
+
+2001
+
+
+Logistic 
+					regression in the medical literature : Standards for use and 
+					reporting,with particular attention to one medical domain 
+					
+
+
+Journal of 
+					Clinical Epidemiology
+
+
+54
+
+
+979-985
+
+
+
+
+Alan S.Rigby
+
+
+2001
+
+
+Statistical 
+					methods in epidemiology.VⅡ. 
+					An overview of the X2 test for 2 × 2 contingency 
+					table analysis.
+
+
+Disability and 
+					Rehabilitation
+
+
+23
+
+
+693-697
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+James B.Jones. 
+					et al.
+
+
+2000
+
+
+Research 
+					Fundamentals : Statistical Considerations in Research Design 
+					: A Simple Person's Apptoach
+
+
+Academic 
+					Emergency Medicine
+
+
+7
+
+
+194-199
+
+
+
+
+Lloyd 
+					J.Edwards,phD
+
+
+2000
+
+
+Modern 
+					Statistical Techniques for the Analysis of Longitudinal Data 
+					in Biomedical Research
+
+
+Pediatric 
+					Pulmonology
+
+
+30
+
+
+330-344
+
+
+
+
+ 
+
+
+
+
+N.V.Nagaraja. et 
+					al.
+
+
+1999
+
+
+Choosing the 
+					calibration model in assay validation1
+
+
+Journal of 
+					Pharmaceutical and Biomedical Analysis
+
+
+20
+
+
+433-438
+
+
+
+
+Alan M W Porter 
+					MD PhD
+
+
+1999
+
+
+Misuse of 
+					correlation and regression in three medical journals 
+
+
+
+J R Soc Med
+
+
+92
+
+
+123-128
+
+
+
+
+Steven N.Goodman 
+					MD PhD
+
+
+1999
+
+
+Toward 
+					Evidence-Based Medical Statistics.1: The P Value Fallacy
+
+
+Annals of 
+					Internal Medicine
+
+
+130
+
+
+995-1004
+
+
+
+
+Dale N.Glaser
+
+
+1999
+
+
+The Controversy 
+					of Significance Testing : Misconceptions and Alternatives
+
+
+American Journal 
+					of Critical Care  
+
+
+5
+
+
+291-296
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+Phillip 
+					Ratcliffe
+
+
+1998
+
+
+Using 
+					the‘new’statistics in nursing research
+
+
+Journal of 
+					Advanced Nursing
+
+
+27
+
+
+132-139
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+Alejandro 
+					R.Jadad. et al.
+
+
+1996
+
+
+Assessing the 
+					Quality of Reports of Randomized Clinical Trials : Is 
+					Blinding Neceddary?
+
+
+Controlled 
+					Clinical Trials
+
+
+17
+
+
+1-12
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+Gordon Guyatt. 
+					et al.
+
+
+1995
+
+
+Basic Statistics 
+					for Clinicians : 2. Interpreting Study Results : Confidence 
+					Intervals
+
+
+CAN MED ASSOC J
+
+
+152(2)
+
+
+169-173
+
+
+
+
+Gordon Guyatt. 
+					et al.
+
+
+1995
+
+
+Basic Statistics 
+					for Clinicians :4. Correlation and Regression
+
+
+CAN MED ASSOC J
+
+
+152(4)
+
+
+497-504
+
+
+
+
+ 
+
+
+
+
+Todd C.Wehner. 
+					et al.
+
+
+1994
+
+
+Presentation of 
+					Analysis of Variance Results and Graphical Data
+
+
+HORT SCIENCE
+					
+
+
+29(6)
+
+
+1
+
+
+
+
+Michael 
+					E.Compton
+
+
+1994
+
+
+Statistical 
+					methods suitable for the analysis of plant tissue culture 
+					data
+
+
+Plant 
+					Cell,Tissue and Organ Culture
+
+
+37
+
+
+217-242
+
+
+
+
+ 
+
+
+
+
+J.Martin Bland . 
+					et al.
+
+
+1986
+
+
+Statistical 
+					Methods for Assessing Agreement Between two Methods of 
+					Clinical Measurement
+
+
+Lacet
+
+
+?
+
+
+1-9
+
+
+
+
+
+　
+
+
+
+　
+
+
+
+
+
+
+
+
+天瓏網路書店-實用生物統計方法及 R-Web
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+天瓏網路書店
+全台最齊全
+中英文電腦書專賣店
+
+
+
+
+
+
+
+天瓏資訊圖書粉絲專頁
+
+
+
+
+搜尋
+
+
+資料科學
+簡體書
+Packt
+微服務
+工程師必讀經典
+英文書新到貨
+Python
+Tensorflow
+無瑕程式碼
+
+
+
+
+
+
+
+
+        實用生物統計方法及 R-Web
+        
+
+
+        鄭光甫、陳錦華、蔡政安、陳弘家
+        
+      
+
+
+
+
+ 
+
+
+出版商:
+東華
+
+
+出版日期:
+2015-10-12
+
+
+定價:
+$420
+
+
+售價:
+
+$420
+
+
+
+貴賓價:
+
+9.5 折
+            $399
+
+語言:
+繁體中文
+
+
+ISBN:
+9574838463
+
+ISBN-13:
+9789574838462
+
+
+
+
+
+      無法訂購
+    
+
+
+
+
+
+
+
+
+
+
+
+買這商品的人也買了...
+
+
+
+
+
+
+
+ 
+$360
+              售價: $281
+          
+用 Drupal 輕鬆架出商業網站 : 網路商店╳報名平臺╳預約系統╳拍賣平臺
+
+
+
+
+
+ 
+$300
+              售價: $237
+          
+JavaScript Object Notation精要 | JSON核心主題導引(Introduction to JavaScript Object Notation: A To-the-Point Guide to JSON)
+
+
+
+
+
+ 
+$299
+              售價: $254
+          
+陪孩子學程式- Scratch 遊戲設計好好玩
+
+
+
+
+
+ 
+$450
+              售價: $383
+          
+不是你太笨, 是爛 UI 的錯! 非設計師也該學的介面設計常識
+
+
+
+
+
+ 
+$620
+              售價: $484
+          
+Hadoop + Spark 大數據巨量分析與機器學習整合開發實戰
+
+
+
+
+
+ 
+$490
+              售價: $382
+          
+職業駭客的告白III部曲-C語言、組合語言與逆向工程的秘密
+
+
+
+
+
+ 
+              貴賓價: $380
+          
+區塊鏈技術指南
+
+
+
+
+
+ 
+$580
+              售價: $458
+          
+演算法技術手冊, 2/e (Algorithms in a Nutshell: A Practical Guide, 2/e)
+
+
+
+
+
+ 
+$300
+              貴賓價: $270
+          
+圖解統計學
+
+
+
+
+
+ 
+$580
+              售價: $458
+          
+Python 專家實踐指南｜搭乘專業開發者的學習便車 (The Hitchhiker's Guide to Python: Best Practices for Development)
+
+
+
+
+
+ 
+$360
+              售價: $281
+          
+深度學習快速入門—使用 TensorFlow (Getting started with TensorFlow)
+
+
+
+
+
+ 
+$850
+              貴賓價: $765
+          
+財金統計學：使用 R 語言
+
+
+
+
+
+ 
+$400
+              售價: $316
+          
+PHP 網路服務, 2/e (PHP Web Services: APIs for the Modern Web, 2/e)
+
+
+
+
+
+ 
+$420
+              售價: $294
+          
+Python 程式設計實用經典
+
+
+
+
+
+ 
+$580
+              售價: $458
+          
+Data Science from Scratch｜用Python學資料科學 (中文版)(Data Science from Scratch: First Principles with Python)
+
+
+
+
+
+ 
+$780
+              售價: $616
+          
+ASP.NET MVC 5 網站開發美學
+
+
+
+
+
+ 
+$680
+              貴賓價: $578
+          
+Android 4.4 App 開發之鑰—使用 Java 及 eclipse
+
+
+
+
+
+ 
+$320
+              售價: $250
+          
+告別瀑布，擁抱 Scrum：解析微軟與 Adobe 如何在 30 天內開發出新軟體 (Software in 30 Days: How Agile Managers Beat the Odds, Delight Their Customers, And Leave Competitors In the Dust)
+
+
+
+
+
+ 
+$480
+              售價: $408
+          
+一手掌握 Android NFC 開發技術
+
+
+
+
+
+ 
+$350
+              售價: $277
+          
+Google 活用技巧大解密－絕對能派上用場的 Google 超級攻略
+
+
+
+
+產品描述
+
+<內容簡介>
+        20世紀初期，生物學家 Karl Pearson推展了生物統計學的新頁，成立第一個生物統計的期刊 Biometrika，奠定了生物統計學理的重要基礎。之後，重要的生物統計學的學者包括有 Fisher, Wright, Haldane等人；特別是 Fisher他發展出來的一些統計推論原理早已是經現代統計學的重要基礎。 　　對很多人而言，生物統計學和統計學一樣，不但是一種科學，它的分析表現也是一種藝術的呈現。因此，生物統計學家基本上就是資料科學家（ data scientist），但是他們也熱衷於將分析的創見當成一種藝術品。現代生物統計的應用，除了在醫藥和農業研究外，它所發展出來的分析方法也很普遍的被應用在心理、教育、管理、財金、工程等等相關的研究上。因此，本書中所討論的案例以醫藥問題的研究為主，但是方法不限制僅能應用於生物資料的分析。
+<本書特色>
+分析方法的介紹盡量由解決實際問題的需求出發，強調學統計是為應用的目的。盡量用平易的文字敘述分析的方法及要解決的問題，若非必要，不呈現公式的推導，避開學統計和學數學沒兩樣的誤會。介紹如何使用雲端資料分析及導引系統（ R-web），將複雜的生物統計計算降低到最簡單的層次，強調在雲端軟體的時代，生物統計的分析可以在方法上多講究，不必要花費太多時間和心力在處理計算的問題。用淺顯易懂的字介紹一些過去教科書沒教但現代醫藥研究上常用的分析方法，例如，存活分析 5.內容的設計適合給每周上課二小時，共上課 15周的初級生物統計課程，本書可供為教科書或工具書使用。 <目錄>
+Chapter 1 描述資料特徵的統計量及圖表Chapter 2 基礎機率及抽樣分配 Chapter 3 估計及假設檢定Chapter 4 單樣本及雙樣本檢定Chapter 5 平均數檢定：多組樣本Chapter 6 兩個類別變數之檢定Chapter 7 相關和線性迴歸分析Chapter 8 相關和邏輯斯迴歸分析Chapter 9 卜瓦松迴歸模型Chapter 10 多變項迴歸分析 Chapter 11 存活資料分析Chapter 12 檢定力及樣本數Chapter 13 調查研究Chapter 14 診斷工具之判斷準則Chapter 15 研究設計及統合分析
+
+
+
+
+
+
+
+
+中文書籍分類
+
+最新新書
+2016 年度暢銷排行
+暢銷排行 (2017/06)
+暢銷排行 (2017/05)
+暢銷排行 (2017/04)
+
+
+
+活動主題列表
+
+資料科學
+CRC好書上架
+簡體中文書最新到貨
+PACKT 最新到貨
+Effective 系列書
+微服務系列書
+Ruddy老師的敏捷教室
+程式設計必讀經典系列
+Springer好書上架
+英文書最新到貨
+資料視覺化系列書
+Python 系列書籍
+深度學習系列書籍
+無瑕的程式碼 超值合購
+Maker小天地
+
+
+
+特價書籍
+
+Bootstrap系列76折起
+松崗暢銷書展5折起
+
+
+
+
+
+
+
+
+
+
+國立臺灣大學 農藝學系暨研究所 Depart of Agronomy, NTU
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+您的瀏覽器不支援Javascript，部分功能將無法呈現。
+
+
+
+
+
+:::
+迴首頁
+|
+臺灣大學
+|
+網站導覽
+|
+友善列印
+|
+English
+國立臺灣大學 農藝學系暨研究所
+
+:::生物統計學程
+
+
+:::
+生物統計學程（暫停使用）
+
+
+
+‧學程簡介　‧學程規定　‧開授課程　‧課程地圖　‧申請表格下載
+
+
+
+
+
+
+
+
+
+生物統計學程(Biological Statistics)簡介
+
+協辦單位 
+參與規劃教師(按姓氏筆劃) 
+設置宗旨 
+設置目標 
+學程規劃 
+
+協辦單位
+
+協辦學院：生命科學院、公共衛生學院、生物資源暨農學院 
+協辦系所：生命科學系、農藝學系、生物環境系統工程學系、農業化學系、動物科學技術學系、園藝學系、昆蟲學系、森林環境暨資源學系、獸醫學系、農業經濟學系、生物產業機電工程學系 、公共衛生學系、流行病學研究所、職業醫學與工業衛生研究所、預防醫學研究所 
+聯絡單位：農藝學系(電話：33664796) 
+
+參與規劃教師(按姓氏筆劃)
+
+生命科學院：李培芬，李英周，林曜松、阮雪芬 
+生農學院：邱祈榮，李佳音，林恩仲，林國慶，洪淑彬，胡凱康，薑延年，孫立群，陳世銘，陳明傑，陳鬱蕙，張龍生，彭雲明，廖振鐸，雷立芬，楊平政，鄭克聲，盧福明，劉清，劉仁沛，關秉宗，謝英雄，蘇明道，蘇秀媛 
+
+設置宗旨
+在 20世紀初，英國統計大師R.A. Fisher在Rothamsted農業試驗場工作時發明瞭田間試驗的各種不同設計及發展出變方分析(Analysis of Variance)與變積分析(Analysis of Covariance)方法分析數據。這些試驗設計與分析方法，不但是統計理論與方法上的偉大成就，更對二十世紀糧食的增產與農作物的改良具有不可磨滅的 貢獻，而在二十世紀50年代英國的B. Hill將Fisher在農業上的隨機試驗設計應用在醫學與藥物評估上，發展出隨機雙盲的臨床試驗之基礎，對人類健康福祉做出了重大的貢獻。另外，在美國 國家衛生研究院任職的J. Cornfield將統計方法應用在流行病學上證明抽煙與肺癌間的因果關係。自孟德爾在研究豌豆的遺傳性狀與T.H. Morgan研究果蠅遺傳特徵以來，統計一直是遺傳與育種上不可缺少的研究工具，而且發展出許多研究遺傳的統計方法。另外生物統計在生態保育與環境保護之 應用亦有重大的貢獻。在現在二十一世紀初，基因體學，蛋白質體與生物資訊學的蓬勃發展，而生物統計在這些突破性生物科技領域上扮演更不可或缺的角色。統計 學在生物的應用已有長遠的歷史，許多統計的理論與方法也是自生物上的應用發展而來，而且生物統計是一個極重要的跨生命科學各研究領域的平臺。
+
+二十一世紀為生物科技的世紀，生技工業的產品如生物晶片，藥品與基改作物等產品之研發更需要生物統計的評估。許多國際性生技產品公司與政府產品管理單位如 美國食品與藥物管理局均聘請大量生物統計人才進行生技產品的研發，評估及核准的工作。近年來我國生技產業與政府單位為了要發展國內生技工業亦開始用生物統 計人才。但國內160多所大專院校目前尚未有任何學校設置生物統計學程或系所，培育社會上所急需的生物統計人才。因本校為國內唯一大型的綜合性大學，而且在各學院生物統計上的研究，應用與教學已有長久的歷史與成果。故特設置生物統計學程統合與規劃生命科學院與生農學院目前已開設的課程，加上配合新開授的生技產業，基因體蛋白質體與生物資訊的統計課程。培育國內在生技產業所需的生物統計人才及未來從事生物統計的研究人力。
+設置目標
+本學程可提供本校大學部學生學習有關生物統計的相關課程，希望學生在修畢本學程後能瞭解：
+
+
+統計學的基本認識 
+統計學的基本理論 
+生物資料收集方法 
+生物資料庫的建立 
+生物資料統計分析軟體之使用 
+生物資料分析的統計方法 
+統計分析結果的詮釋與報告的撰寫 
+
+
+學程規劃
+本學程設計之原則
+
+理論與實務並重 
+以各學院現有各生物統計課程為架構(避免增加各教授老師教學)，供各學院選修生物統計學程的學生修習該院開授生物統計相關課程 
+新開授跨領域的生物技術之統計課程供各學院修習生物統計學程學生跨院選修 
+培育生技產業所需的生物統計人才 
+培育生物統計未來的研究人力 
+
+
+
+
+
+
+
+
+
+
+
+
+國立台灣大學學生申請修習生物統計學程規定
+第一條
+本校為培育生物統計學相關人才，設立生物統計學程（以下簡稱本學程）。
+
+第二條
+            本學程由本校生物資源暨農學院及生命科學院與公共衛生學院共同舉辦，由農藝系執行各項事宜。
+
+第三條
+            為訂定本學程方向，並執行學程之推動，置設生物統計學程小組（以下簡稱本小組），由委員7至11人組成。由參與本學程各學院推派與學程相關領域教師擔任 之，並互相推選一人為本學程召集人，任期三年，連選得連任。
+
+第四條
+            本學程課程之規劃分先修課程、基礎課程、資料收集方法課程、資料分析工具課程及進階生物統計課程，詳見課程大綱。
+
+第五條
+            本學程學生應修學分數除先修課程外，至少二十學分，其中基礎課程至少二門（必修），資料收集方法課程至少一門（選修），資料分析工具課程至少一門（選 修），進階生物統計課程至少三門（選修）。
+
+第六條
+            修畢本學程規定之學分，由本校發給生物統計學程證明書。
+
+第七條
+            學生申請修習本學程需為本校各系在學大學部二年級以上及碩博士學生。
+
+第八條
+            合於申請資格之學生應經本校「生物統計學程小組」遴選錄取後方得成為本學程學生。遴選規定如下：將申請表及歷年成績單送至本學程中心，由本學程小組審核同 意後，公佈申請核准名單。
+
+第九條
+            本學程學生辦理抵免進入本學程前修習本學程相關科目，應於申請核准為本學程學生時，一併辦理學分抵免。
+
+第十條
+            本學程自九十四學年起實施。
+
+第十一條
+            已具本學程修習資格，而未修畢本學程學分之大學畢業生，若成為研究所學生，得繼續修習本學程。其已修習之學分數得併入計算。
+
+第十二條
+            本辦法經各學院院務會議通過後，送請教務會議通過公告實施，修正時亦同。 
+
+
+
+
+
+
+
+
+
+
+開授課程
+            請點以下連結下載開授課程pdf檔。
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+生物統計學程課程地圖
+
+先修課程（不計學分） 
+基礎課程二群（各必修一門） 
+資料收集方法課程（必選一門） 
+資料分析工具課程（必選一門） 
+進階生物統計課程（必選三門） 
+
+一、先修課程（不計學分）
+
+
+
+
+課號
+課程名稱
+授課教師
+學分
+開設系所
+
+
+201 101A1
+微積分甲上
+
+各教師
+4
+數學系
+
+
+201 101A2
+微積分甲下
+各教師
+4
+數學系
+
+
+201 101B1
+微積分乙上
+各教師
+3
+數學系
+
+
+201 101B2
+微積分乙下
+各教師
+3
+數學系
+
+
+
+
+ 
+二、基礎課程二群（各必修一門）
+1.至少一門（或三學分）
+
+
+
+
+課號
+課程名稱
+授課教師
+學分
+開設系所
+
+
+602 23900
+統計學
+鄭克聲
+3
+生物環境系統工程學系
+
+
+611 20020
+統計學
+盧福明
+3
+生物產業機電工程學系
+
+
+606 20020
+統計學
+林恩仲
+3
+動物科學技術系
+
+
+605 20011
+統計學上
+關秉宗 邱祈榮 陳明傑
+3
+森林環資系
+
+
+605 20012
+統計學下
+關秉宗 邱祈榮 陳明傑
+3
+森林環資系
+
+
+608 39000
+生物統計學
+張龍生
+3
+園藝系
+
+
+607 20011
+統計學上
+陳鬱蕙
+3
+農業經濟學系
+
+
+607 20012
+統計學下
+陳鬱蕙 張宏浩
+3
+農業經濟學系
+
+
+601 20020
+統計學
+劉 清
+　
+農藝系
+
+
+　
+統計學
+彭雲明
+　
+農藝系
+
+
+　
+統計學
+廖振擇
+　
+農藝系
+
+
+　
+統計學
+蘇秀媛
+　
+農藝系
+
+
+　
+統計學
+謝英雄
+　
+農藝系
+
+
+　
+統計學
+劉仁沛
+3
+農藝系
+
+
+801 21310
+生物統計學一
+蕭朱杏
+3
+公共衛生學系
+
+
+801 22320
+生物統計學二
+蕭朱杏
+3
+公共衛生學系
+
+
+849 U0060
+生物統計學一
+蕭朱杏
+3
+流行病學與預防醫學學研究所
+
+
+849 U3320
+生物統計學二
+蕭朱杏
+3
+流行病學與預防醫學學研究所
+
+
+849 U0010
+應用生物統計學
+李文宗
+3
+流行病學與預防醫學學研究所
+
+
+841 U5230
+環境職業衛生統計
+陳保中
+2
+職業醫學與工業衛生研究所
+
+
+841 U5240
+環境職業衛生統計實習
+陳保中
+1
+職業醫學與工業衛生研究所
+
+
+
+
+
+2.至少一門（或三學分）
+
+
+
+
+
+課號
+課程名稱
+授課教師
+學分
+開設系所
+
+
+621 U1930
+高等生物統計方法一
+蘇秀媛
+3
+農藝系
+
+
+621 U1950
+高等生物統計方法二
+蘇秀媛
+3
+農藝系
+
+
+626 M1510
+高等統計分析法
+薑延年
+4
+動物科學技術系
+
+
+B44 U1000
+生物統計學特論
+林曜松
+3
+生態學與演化生物學研究所
+
+
+627 U0710
+高等統計學一
+林國慶
+3
+農業經濟學系
+
+
+627 U0720
+高等統計學二
+黃芳玫 
+3
+農業經濟學系
+
+
+849 U0200
+統計原理
+洪 弘 
+3
+流行病學與預防醫學學研究所
+
+
+849 M0790
+高等生物統計學方法
+ 
+3
+流行病學與預防醫學學研究所
+
+
+
+
+ 
+三、資料收集方法課程（必選一門）
+
+
+
+
+課號
+課程名稱
+授課教師
+學分
+開設系所
+
+
+631 M3100
+試驗設計之工程應用
+周呈霙
+3
+生物產業機電工程學系
+
+
+628 U1700
+試驗設計在園藝的應用
+張龍生
+3
+園藝系
+
+
+601 28010
+試驗設計學
+謝英雄
+3
+農藝系
+
+
+621 U6340
+抽樣方法
+劉力瑜
+3
+農藝系
+
+
+629 M1860
+獸醫試驗設計
+楊平政
+3
+獸醫系
+
+
+B45 U1090
+試驗設計學
+李英周
+4
+生命科學系
+
+
+801 32100
+流行病學
+郭柏秀
+2
+公共衛生學系
+
+
+849 U0100
+病例對照研究法特論
+李文宗
+2
+流行病學與預防醫學學研究所 
+
+
+849 M0060
+流行病學原理
+方啟泰 /程蘊菁
+2
+流行病學與預防醫學學研究所 
+
+
+841 U1480
+流行病學方法論
+王榮德
+2
+職業醫學與工業衛生研究所
+
+
+801 39400
+健康服務研究法導論
+丁志音
+2
+公共衛生學系
+
+
+847 U1020
+公共衛生實例分析
+　
+3
+流行病學與預防醫學研究所
+
+
+
+
+ 
+四、資料分析工具課程（必選一門）
+
+
+
+
+課號
+課程名稱
+授課教師
+學分
+開設系所
+
+
+B01 31010
+生物資訊資料庫
+李培芬
+3
+生命科學系
+
+
+621 U6350
+統計應用軟體
+劉力瑜
+3
+農藝系
+
+
+622 U2750
+資料庫系統
+蘇明道
+3
+生物環境系統工程學系
+
+
+626 M1620
+生物資訊學軟體應用
+林恩仲
+3
+動物科學技術系
+
+
+607 49450
+經濟分析軟體應用
+陸怡慧　
+2
+農經系
+
+
+
+
+  
+五、進階生物統計課程（必選三門）
+
+
+
+課號
+課程名稱
+授課教師
+學分
+開設系所
+
+
+622 U4710
+類神經網路-理論與實際
+張斐章
+3
+生物環境系統工程學系
+
+
+B44 U1050
+資料分析
+李培芬
+3
+生態學與演化生物學研究所
+
+
+631 U1850
+數值法
+陳世銘
+3
+生物產業機電工程學系
+
+
+626 M1610
+生物資訊學
+林恩仲
+3
+動物科學技術系
+
+
+626 U0260
+資訊工具在動物科技之應用
+林恩仲
+3
+動物科學技術系
+
+
+606 36800
+生物資訊學導論
+林恩仲
+3
+動物科學技術學系
+
+
+627 U0070
+計量經濟學一
+陸怡蕙
+3
+農業經濟學系
+
+
+627 U0080
+計量經濟學二
+陸怡蕙
+3
+農業經濟學系
+
+
+601 36730
+迴歸分析一
+劉清
+3
+農藝系
+
+
+621 M1670
+多變數分析
+劉仁沛
+4
+農藝系
+
+
+621 M1660
+族群遺傳學
+劉清
+3
+農藝系
+
+
+621 U6260
+數量性狀基因座統計定位
+劉清
+　
+農藝系
+
+
+621 U6330
+生技產品統計方法（一）
+劉仁沛
+　
+農藝系
+
+
+621 U6370
+生技產品統計方法（二）
+劉仁沛
+3
+農藝系
+
+
+621 U6380
+基因體統計方法導論
+高振宏
+　
+農藝系
+
+
+621 U6150
+生物檢定統計法
+劉仁沛
+3
+農藝系
+
+
+621 U6490
+應用多變數統計方法
+劉仁沛
+3
+農藝系
+
+
+621 U6100
+統計諮詢
+蕭金福
+2
+農藝系
+
+
+B43 U1230
+生物資訊
+阮雪芬
+2
+分子與細胞生物學研究所
+
+
+B43 U1240
+生物資訊實習
+阮雪芬
+1
+分子與細胞生物學研究所
+
+
+849 U0180
+應用貝氏統計分析
+蕭朱杏
+2
+流行病學與預防醫學學研究所 
+
+
+849 M0350
+描述性流行病學方法論
+　
+　
+流行病學與預防醫學學研究所 
+
+
+849 M0330
+遺傳流行病學原理
+陳為堅
+　
+流行病學與預防醫學學研究所 
+
+
+849 M0050
+流行病學特論
+李文宗
+　
+流行病學與預防醫學學研究所 
+
+
+849 U0170
+應用多變量數量方法
+季瑋珠 劉仁沛
+3
+流行病學與預防醫學研究所
+
+
+849 M0690
+基因體數量分析方法
+程蘊菁
+2
+流行病學與預防醫學研究所
+
+
+849 U0360
+慢性病流行病學
+簡國龍
+2
+公共衛生學系
+
+
+841 U0090
+環境及職業流行病學
+黃耀輝
+2
+職業醫學與工業衛生研究所
+
+
+849 U0200
+統計原理
+洪 弘
+3
+流行病學與預防醫學研究所
+
+
+849 M0740
+流行病學原理：資料分析
+方啟泰 /程韻菁
+1
+流行病學與預防醫學研究所
+
+
+849 U0210
+接受者操作特性曲線之分析與應用
+洪 弘
+2
+流行病學與預防醫學研究所
+
+
+849 M0250
+預防醫學研究方法
+李永凌
+2
+流行病學與預防醫學研究所
+
+
+849 M0640
+臨床試驗
+簡國龍
+2
+流行病學與預防醫學研究所
+
+
+849 U0240
+系統回顧與統合分析
+ 
+2
+流行病學與預防醫學研究所
+
+
+849 M0750
+基因體研究特論
+ 
+2
+流行病學與預防醫學研究所
+
+
+849 M0040
+高等流行病學方法
+ 
+2
+流行病學與預防醫學研究所
+
+
+621 M2060
+統計計算
+蔡政安
+3
+農藝系
+
+
+ 
+生物資訊學導論
+劉力瑜
+3
+農藝系
+
+
+B21 U2190
+生物資訊學
+阮雪芬
+3
+生命科學系
+
+
+
+
+
+
+
+99學年第二學期開始，下列課程自生物統計學程課程中刪除：
+醫學統計學一、醫學統計學二、系統生物數學、基因體統計、 流行病學、複雜性疾病的基因圖譜建構、生物資訊學、統計遺傳學導論、數量遺傳學、 生態統計學、生物晶片資料之統計分析、空間分析在公共衛生的應用、 傳染病數理流行病學、貝氏統計導論、生物系統分析與模擬、數量性狀基因座統計定位。 
+99學年第一學期前申請學程者，若有修習以上課程者，仍會將課程計入學程學分。 
+ 
+申請表格下載
+
+抵免學分申請書 
+修畢學分申請書 
+
+
+
+
+:::
+
+標準版RSs 2.x套裝最新消息關於農藝系所成員招生資訊課程資訊生統學程學術成果磯小屋系友會
+
+
+Login
+:::
+
+
+帳號:
+
+密碼:
+
+
+
+
+
+ 忘記帳號密碼
+
+
+
+
+
+
+
+
+
+
+
+
+
+搜尋本站
+ 搜尋站外 
+
+
+
+
+
+
+
+
+
+
+本網站著作權屬於國立臺灣大學 農藝學系暨研究所，請詳見使用規則。
+Department of Agronomy © All RIGHTS RESERVED, Please see Terms of use 
+Tel：(02)33664755　Fax：(02)23620879
+(106) 臺北市羅斯福路四段一號 農藝學系
+National Taiwan University, No. 1, Section 4, Roosevelt Road, Taipei 106, Taiwan
+E-Mail：agron@ntu.edu.tw | Contact Us
+
+
+
+
+
+瀏覽人數：
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+歡迎進入生物統計學程
+
+
+
+
+
+學程簡介
+
+學程名稱
+協辦單位
+參與規劃教師(按姓氏筆劃)
+設置宗旨
+設置目標
+學程規劃
+
+學程名稱
+生物統計學程(Biological Statistics)
+協辦單位
+
+協辦學院：生命科學院、生物資源暨農學院
+
+		協辦系所：生命科學系、農藝學系、生物環境系統工程學系、農業化學系、動物科學技術學系、園藝學系、昆蟲學系、森林環境暨資源學系、獸醫學系、農業經濟學系、生物產業機電工程學系
+聯絡單位：農藝學系(電話：33664796)
+
+參與規劃教師(按姓氏筆劃)
+
+生命科學院：李培芬，李英周，林曜松、阮雪芬
+
+		生農學院：邱祈榮，李佳音，林恩仲，林國慶，洪淑彬，胡凱康，薑延年，孫立群，陳世銘，陳明傑，陳鬱蕙，張龍生，彭雲明，廖振鐸，雷立芬，楊平政，鄭克聲，盧福明，劉清，劉仁沛，關秉宗，謝英雄，蘇明道，蘇秀媛
+
+設置宗旨
+在20世紀初，英國統計大師R.A. 
+	Fisher在Rothamsted農業試驗場工作時發明瞭田間試驗的各種不同設計及發展出變方分析(Analysis of 
+	Variance)與變積分析(Analysis of 
+	Covariance)方法分析數據。這些試驗設計與分析方法，不但是統計理論與方法上的偉大成就，更對二十世紀糧食的增產與農作物的改良具有不可磨滅的貢獻，而在二十世紀50年代英國的B. 
+	Hill將Fisher在農業上的隨機試驗設計應用在醫學與藥物評估上，發展出隨機雙盲的臨床試驗之基礎，對人類健康福祉做出了重大的貢獻。另外，在美國國家衛生研究院任職的J. 
+	Cornfield將統計方法應用在流行病學上證明抽煙與肺癌間的因果關係。自孟德爾在研究豌豆的遺傳性狀與T.H. 
+	Morgan研究果蠅遺傳特徵以來，統計一直是遺傳與育種上不可缺少的研究工具，而且發展出許多研究遺傳的統計方法。另外生物統計在生態保育與環境保護之應用亦有重大的貢獻。在現在二十一世紀初，基因體學，蛋白質體與生物資訊學的蓬勃發展，而生物統計在這些突破性生物科技領域上扮演更不可或缺的角色。統計學在生物的應用已有長遠的歷史，許多統計的理論與方法也是自生物上的應用發展而來，而且生物統計是一個極重要的跨生命科學各研究領域的平臺。
+
+	二十一世紀為生物科技的世紀，生技工業的產品如生物晶片，藥品與基改作物等產品之研發更需要生物統計的評估。許多國際性生技產品公司與政府產品管理單位如美國食品與藥物管理局均聘請大量生物統計人才進行生技產品的研發，評估及核准的工作。近年來我國生技產業與政府單位為了要發展國內生技工業亦開始用生物統計人才。但國內160多所大專院校目前尚未有任何學校設置生物統計學程或系所，培育社會上所急需的生物統計人才。因本校為國內唯一大型的綜合性大學，而且在各學院生物統計上的研究，應用與教學已有長久的歷史與成果。故特設置生物統計學程統合與規劃生命科學院與生農學院目前已開設的課程，加上配合新開授的生技產業，基因體，蛋白質體與生物資訊的統計課程。培育國內在生技產業所需的生物統計人才及未來從事生物統計的研究人力。
+設置目標
+本學程可提供本校大學部學生學習有關生物統計的相關課程，希望學生在修畢本學程後能瞭解：
+
+統計學的基本認識
+統計學的基本理論
+生物資料收集方法
+生物資料庫的建立
+生物資料統計分析軟體之使用
+生物資料分析的統計方法
+統計分析結果的詮釋與報告的撰寫
+
+學程規劃
+本學程設計之原則
+
+理論與實務並重
+以各學院現有各生物統計課程為架構(避免增加各教授老師教學)，供各學院選修生物統計學程的學生修習該院開授生物統計相關課程
+新開授跨領域的生物技術之統計課程供各學院修習生物統計學程學生跨院選修
+培育生技產業所需的生物統計人才
+培育生物統計未來的研究人力
+
+ 
+
+
+
+
+
+
+
+學程簡介
+
+
+
+
+學程規定
+
+
+
+
+申請及核可流程
+
+
+
+
+開授課程
+
+
+
+
+申請書下載
+
+
+
+
+ 
+
+
+
+
+TOP
+
+
+
+
+迴首頁
+
+
+
+
+
+
+
+
+「實用生物統計方法及R-Web」 比價結果 - 買書網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+中文書 專業/教科書/政府出版品 生命科學類 生物學  
+
+
+
+
+
+
+
+
+實用生物統計方法及R-Web
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+定價：420 元
+
+NT $ 399				
+
+
+
+
+
+作者：鄭光甫，陳錦華，蔡政安，陳弘家
+出版社：東華
+出版日期：2015-10-13
+語言：繁體中文
+ISBN10：9574838463
+ISBN13：9789574838462
+裝訂：平裝 / 288頁 / 16k / 19 x 26 cm / 普通級 / 單色印刷 / 初版
+
+
+
+
+
+
+
+
+商家比價
+圖書介紹 
+
+
+
+網路書店
+類別
+折扣
+價格
+
+
+
+
+  博客來 
+
+ 新書
+
+						95								折
+$399
+
+
+
+  三民網路書店 
+
+ 新書
+
+						95								折
+$399
+
+
+ 
+
+實用生物統計方法及R-Web
+
+ 
+
+    內容簡介
+  
+
+
+      　　20世紀初期，生物學家 Karl Pearson推展了生物統計學的新頁，成立第一個生物統計的期刊 Biometrika，奠定了生物統計學理的重要基礎。之後，重要的生物統計學的學者包括有 Fisher, Wright, Haldane等人；特別是 Fisher他發展出來的一些統計推論原理早已是經現代統計學的重要基礎。
+
+      　　對很多人而言，生物統計學和統計學一樣，不但是一種科學，它的分析表現也是一種藝術的呈現。因此，生物統計學家基本上就是資料科學家（ data
+      scientist），但是他們也熱衷於將分析的創見當成一種藝術品。現代生物統計的應用，除了在醫藥和農業研究外，它所發展出來的分析方法也很普遍的被應用在心理、教育、管理、財金、工程等等相關的研究上。因此，本書中所討論的案例以醫藥問題的研究為主，但是方法不限制僅能應用於生物資料的分析。
+
+本書特色
+
+      　　1.分析方法的介紹盡量由解決實際問題的需求出發，強調學統計是為應用的目的。
+
+      　　2.盡量用平易的文字敘述分析的方法及要解決的問題，若非必要，不呈現公式的推導，避開學統計和學數學沒兩樣的誤會。
+
+      　　3.介紹如何使用雲端資料分析及導引系統（ R-web），將複雜的生物統計計算降低到最簡單的層次，強調在雲端軟體的時代，生物統計的分析可以在方法上多講究，不必要花費太多時間和心力在處理計算的問題。
+
+      　　4.用淺顯易懂的字介紹一些過去教科書沒教但現代醫藥研究上常用的分析方法，例如，存活分析 5.內容的設計適合給每周上課二小時，共上課 15周的初級生物統計課程，本書可供為教科書或工具書使用。
+
+
+
+
+
+ 
+
+    目錄
+  
+
+
+      Chapter 1 描述資料特徵的統計量及圖表
+      Chapter 2 基礎機率及抽樣分配
+      Chapter 3 估計及假設檢定
+      Chapter 4 單樣本及雙樣本檢定
+      Chapter 5 平均數檢定：多組樣本
+      Chapter 6 兩個類別變數之檢定
+      Chapter 7 相關和線性迴歸分析
+      Chapter 8 相關和邏輯斯迴歸分析
+      Chapter 9 卜瓦松迴歸模型
+      Chapter 10 多變項迴歸分析
+      Chapter 11 存活資料分析
+      Chapter 12 檢定力及樣本數
+      Chapter 13 調查研究
+      Chapter 14 診斷工具之判斷準則
+      Chapter 15 研究設計及統合分析
+    
+
+
+
+看更多 
+
+ 
+
+
+				商品資料由 博客來 所提供.
+			
+
+
+
+其他相關書籍
+
+
+
+
+
+
+
+
+圖解生物統計學
+
+
+$277 ~ 333						
+
+
+
+
+
+
+
+生物科技產業概論(第三版)
+
+
+$396 ~ 418						
+
+
+
+
+
+
+
+基礎生物統計學：使用Excel與SAS
+
+
+$380						
+
+
+
+
+
+
+
+生物統計學(第三版)
+
+
+$356 ~ 375						
+
+
+
+
+
+
+
+科學揭祕動物世界02：海洋類
+
+
+$198 ~ 225						
+
+
+
+
+
+
+
+植物遊戲玩玩看 1
+
+
+$405 ~ 428						
+
+
+
+
+
+
+
+McGraw-Hill Encyclopedia of Science and Technology Volumes 1-20 11/e(11版)
+
+
+$17,100						
+
+
+
+
+
+
+
+小動物臨床腫瘤學(5版)
+
+
+$2,394						
+
+
+
+
+
+
+
+野生動物臨床入門：外溫動物
+
+
+$1,093						
+
+
+
+
+
+
+
+圖解式生物統計學
+
+
+$468 ~ 494						
+
+
+
+
+
+
+
+生物統計入門(三版)
+
+
+$405 ~ 428						
+
+
+
+
+
+
+
+人體解剖生理學
+
+
+$618 ~ 650						
+
+
+
+
+
+
+
+生物學實驗(第三版)
+
+
+$243 ~ 257						
+
+
+
+
+
+
+
+分子生物學(第二版)
+
+
+$414 ~ 437						
+
+
+
+
+
+
+
+生物學
+
+
+$684 ~ 720						
+
+
+
+
+
+
+
+解剖生理學(2版)
+
+
+$810 ~ 855						
+
+
+
+
+
+
+
+科學揭祕動物世界01：無脊椎類
+
+
+$198 ~ 225						
+
+
+
+
+
+
+
+科學揭祕動物世界05：鳥類
+
+
+$198 ~ 225						
+
+
+
+
+
+
+
+科學揭祕動物世界04：兩棲爬行類
+
+
+$198 ~ 225						
+
+
+
+
+
+
+
+拯救嬰兒?新生兒基因篩檢的影響
+
+
+$324 ~ 342						
+
+
+
+
+ 
+
+
+
+
+網友評價
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+買書網
+
+
+
+
+ 首頁
+ 書店暢銷榜
+ 暢銷排行
+ 中文書
+ 簡體書
+ 外文書
+ 雜誌
+ MOOK
+ 購物比價
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+

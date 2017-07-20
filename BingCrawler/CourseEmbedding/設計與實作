@@ -1,0 +1,5315 @@
+
+
+設計與實作服務
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer Network
+Developer Network
+Developer
+
+
+
+
+登入
+
+
+
+
+MSDN 訂閱
+
+
+
+
+取得工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+使用 WCF 以服務為導向的應用程式
+Windows Communication Foundation
+
+基本 WCF 程式設計
+
+
+
+
+
+基本 WCF 程式設計
+設計與實作服務
+
+
+
+
+設計與實作服務
+
+
+
+
+設計與實作服務
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+基本程式設計週期 
+
+設計與實作服務 
+
+設計服務合約 
+
+實作服務合約 
+
+設定服務 
+
+裝載服務 
+
+建置用戶端 
+
+擴充性簡介 
+
+WCF 疑難排解快速入門 
+
+WCF 錯誤處理 
+
+WCF 和 ASP.NET Web 應用程式開發介面 
+
+
+
+TOC
+
+ 
+摺疊目錄
+展開目錄
+
+
+
+
+本文件已封存並已停止維護。
+
+
+
+
+
+
+
+若要檢視英文版的文章，請選取 [原文] 核取方塊。您也可以將滑鼠指標移到文字上，即可在快顯視窗顯示英文原文。
+
+
+
+譯文
+
+
+原文
+
+
+
+
+
+本文件已封存並已停止維護。
+
+
+設計與實作服務
+
+
+
+                .NET Framework (current version)
+            
+
+
+
+
+
+
+                        其他版本
+                    
+
+
+
+
+
+
+
+Visual Studio 2010
+
+
+.NET Framework 4
+
+
+Visual Studio 2008
+
+
+.NET Framework 3.5
+
+
+
+
+
+
+ 本節將說明如何定義和實作 WCF 合約。服務合約會指定端點與外界溝通的內容。更具體來說，這是關於一組會組織到基本訊息交換模式 (MEP) 之特定訊息的聲明，而這些交換模式包括要求/回覆、單向和雙工。如果服務合約為一組邏輯相關的訊息交換，則服務作業就是單一的訊息交換。例如，Hello 作業一定會明確地接收一個訊息 (這樣呼叫端才能宣告歡迎畫面)，但卻不一定會傳回訊息 (需視作業的禮節而定)。如需合約以及其他核心 Windows Communication Foundation (WCF) 概念的詳細資訊，請參閱Windows Communication Foundation 的主要概念。本主題將著重於讓您瞭解服務合約。如需如何建置可使用服務合約連線到服務之用戶端的詳細資訊，請參閱 WCF 用戶端概觀。概觀本主題會提供在設計和實作 WCF 服務時的高層級概念方向。副標題則提供設計和實作之細節的詳細資訊。在設計及實作您的 WCF 應用程式之前，建議您先：瞭解服務合約是什麼、如何使用它，以及如何建立它。瞭解合約會聲明執行階段組態或裝載環境不一定會支援的最低需求。服務合約服務合約會指定下列項目：合約所公開的作業。依據所交換之訊息的作業簽章。這些訊息的資料型別。作業的位置。用於支援與服務的成功通訊的特定通訊協定和序列化格式。例如，採購單合約可能會有 CreateOrder 作業，該作業會接受訂單資訊輸入並傳回成功或失敗資訊 (包括訂單識別碼)。它也可能會有 GetOrderStatus 作業，該作業會接受訂單識別碼並傳回訂單狀態資訊。這類服務合約會指定：採購單合約由 CreateOrder 和 GetOrderStatus 作業組成。這些作業擁有指定的輸入訊息和輸出訊息。這些訊息可以包含的資料。成功處理訊息時所需要之通訊基礎結構的分類聲明。例如，這些詳細資訊包含在建立成功通訊時是否需要安全性及安全性的格式為何。若要將此類資訊傳遞給許多平臺 (包括非 Microsoft 的平臺) 上的其他應用程式，XML 服務合約會以標準 XML 格式公開表示，例如 Web 服務描述語言 (WSDL) (英文) 和 XML 結構描述 (XSD) (英文) 等格式。大多數平臺的開發人員都可以使用這項公開的合約資訊來建立可以和服務進行通訊的應用程式，除了因為他們瞭解規格語言，更因為這些語言已設計成可透過描述服務所支援的公開形式、格式和通訊協定來達到互通性。如需 WCF 如何處理此類資訊的詳細資訊，請參閱中繼資料。合約能夠以多種方式表示，但 WSDL 和 XSD 卻是能夠以可存取方式來描述服務的絕佳語言，這兩種語言很難直接使用，而且只能建立服務描述，而不能建立服務合約實作。因此，WCF 應用程式會使用 Managed 屬性、介面和類別來定義服務結構並實作該服務。所產生且定義為 Managed 型別的合約可以在用戶端或其他服務實作器需要時「匯出」(Exported) 為中繼資料 (WSDL 和 XSD)。其結果便是產生一個簡單扼要的程式設計模型，而這個模型可以使用公開中繼資料描述給任何用戶端應用程式。基礎 SOAP 訊息的詳細資訊、傳輸和安全性相關資訊等資料可以留給 WCF，這個應用程式會在必要時自動在服務合約類型系統和 XML 類型系統之間來回執行轉換。如需設計合約的詳細資訊，請參閱設計服務合約。如需實作合約的詳細資訊，請參閱實作服務合約。最新的訊息如果您已經習慣遠端程序呼叫 (RPC) 樣式的方法簽章，那麼使用 Managed 的介面、類別和方法來建立服務作業模型將更為簡單，此時傳遞參數至方法及接收傳回值是物件或其他類型程式碼之要求功能的一般形式。例如，使用 Managed 語言 (例如 Visual Basic 和 C++ COM) 的程式設計人員可以在建立 WCF 服務合約時應用他們對於 RPC 樣式方法 (不論使用物件或介面) 的知識，而不會遇到 RPC 樣式分散式物件系統的固有問題。服務方向除了提供鬆散耦合、訊息導向之程式設計的優點，同時保留簡易且熟悉的 RPC 程式設計經驗。有許多程式設計人員更熟悉使用訊息導向的應用程式開發介面，例如 Microsoft MSMQ 之類的訊息佇列、.NET Framework 中的 System.Messaging 命名空間 (Namespace)，或在 HTTP 要求中傳送非結構化的 XML，以上只是略舉部分例子。如需在訊息層級進行程式設計的詳細資訊，請參閱使用訊息合約、服務通道層級的程式設計和與 POX 應用程式的互通性。瞭解需求的階層架構服務合約可將作業分組、指定訊息交換模式、訊息類型，以及這些訊息所包含的資料型別，並指出實作必須擁有以支援合約的執行階段行為類別 (例如，合約可能會要求加密及簽署訊息)。服務合約本身並不會清楚地指定如何達到這些需求，而只會指定必須達到這些需求。加密類型或簽署訊息的方式取決於實作以及相容性服務的組態。請註意，合約需要服務合約實作和執行階段組態中的某些項目才能新增行為。必須符合才能公開服務提供使用的一組需求，是採用前一組需求來做為建置基礎。如果合約有提出實作需求，則實作可能會需要更多的組態和繫結才能夠讓服務執行。最後，主應用程式 (Host Application) 也必須支援服務組態和繫結所新增的任何需求。在設計、實作、設定和裝載 Windows Communication Foundation (WCF) 服務應用程式時，必須特別註意這項新增的需求程序。例如，合約可以指定必須支援某個工作階段。若是如此，您就必須將繫結設定成可支援該合約需求，否則服務實作將無法運作。或者，如果您的服務需要 Windows 整合式驗證而且已裝載於網際網路資訊服務 (IIS)，則服務所在的 Web 應用程式必須啟用 Windows 整合式驗證並關閉匿名支援。如需不同服務之主應用程式類型之功能和影響的詳細資訊，請參閱裝載服務。另請參閱設計服務合約實作服務合約
+
+
+
+
+
+顯示:
+
+受繼承
+        
+
+受保護
+        
+
+
+
+
+
+
+
+列印
+
+匯出 (0)
+            
+
+
+
+
+
+
+
+列印
+
+分享
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+本文內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本頁對您有幫助嗎？
+是
+否
+
+
+
+
+
+其他意見反應？
+
+
+剩餘 1500 個字元
+
+提交
+略過此項
+
+
+
+
+
+
+
+謝謝！
+我們非常感謝您提供的意見反應。
+
+
+
+
+
+
+
+
+
+
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+資策會•數位教育研究所•科技化服務
+
+
+
+
+
+
+　
+　
+　
+　
+　
+
+
+　
+　
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+															★
+															
+全國唯一，最具實務性的節能機房設計實作課程！
+
+
+
+
+
+
+
+　
+　
+
+
+
+經濟部工業局 
+																		製造業價值鏈資訊應用計畫
+
+
+
+
+
+
+
+																			資策會 
+																			機房管理/ 
+																			資訊服務/ 
+																			資安個資/ 
+																			研發管理 
+																			- 
+																			系列課程
+																			
+
+																			★資策會 
+																			機房管理 
+																			課程主題館★
+																			
+
+																			【機房認證】CDCP資訊機房管理師 
+																			國際認證班
+																			
+
+																			【機房認證】CDCS資訊機房專家 
+																			國際認證班
+																			
+
+																			【機房認證】CDCE資訊機房資深專家 
+																			國際認證班
+																			
+
+																			【機房認證】CTDC 
+																			TIA-942設計顧問 
+																			國際認證班
+																			
+
+																			【機房認證】CITM資訊經理人國際認證班
+																			
+
+																			【機房管理】綠色機房之規劃與建置實務班
+																			
+
+																			【機房管理】綠色機房之能源系統模擬訓練
+																			
+
+																			【機房管理】小型機房之設計與驗證實作班
+																			
+
+																			【機房管理】打造符合Tier規範的國際級機房
+																			
+
+																			【機房管理】打造符合TIA-942規範的國際級機房
+																			
+
+																			【機房管理】IT基礎設施之問題分析與維運管理
+																			
+
+																			【能源管理】ISO50001 
+																			主導稽核員認證班
+																			
+
+																			【智慧建築】BIM應用於智慧建築與資訊機房
+																			
+
+																			【智慧建築】達成智慧建築標章各項評估指標
+																			
+
+																			★資策會 
+																			資訊服務管理 
+																			課程主題館★
+																			
+
+																			【IT服務管理】ITIL 
+																			Foundation 
+																			認證班
+																			
+
+																			【IT服務管理】ITIL 
+																			Capability 
+																			進階認證班
+																			
+
+																			【IT設施管理】IT基礎設施之問題分析與維運管理
+																			
+
+																			★資策會 
+																			資安個資 
+																			課程主題館★
+																			
+
+																			【資安管理】ISO27001:2013 
+																			轉版及建置訓練課程
+																			
+
+																			【資安管理】ISO27002 
+																			資安管理作業要點國際認證班
+																			
+
+																			【資安管理】ISO27005 
+																			資安與個資風險管理認證班
+																			
+
+																			【資安管理】CompTIA 
+																			Security+ 
+																			國際網路資安認證班
+																			
+
+																			【個資管理】雲端時代IT部門如何因應個資法
+																			
+
+																			★資策會 
+																			研發管理系列 
+																			課程主題館★
+																			
+
+																			【商業分析】PMI-PBA商業分析師國際認證班
+																			
+
+																			【商業分析】國際商業分析師(CBAP)認證班
+																			
+
+																			【研發管理】新產品開發管理師(NPDP)認證班
+																			
+
+																			【研發管理】產品研發專案管理實務班
+																			
+
+																			【研發管理】研發團隊績效管理實務班
+																			
+
+																			【產品管理】產品經理之核心技能培訓班
+																			
+
+																			【產品管理】產品經理之跨部門溝通實務
+																			
+
+																			【創新管理】商業模式創新設計工作坊
+																			
+
+																			【技術創業】技術創業與營運計畫書撰寫
+																			
+
+
+
+
+　
+　
+
+
+　
+　
+　
+　
+
+
+
+
+　
+
+
+
+
+　
+
+
+
+
+　
+　
+　
+　
+　
+
+
+　
+　
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+　
+
+
+
+
+
+《2017/10/16開課，2017/10/09前報名可享工業局負擔40%優惠！》 
+
+
+
+
+
+
+「CDCP資訊機房管理師認證班」，同步招生中 
+
+
+
+
+
+　
+
+
+
+
+◆ 課程源起
+
+
+
+
+
+
+
+
+在資訊化時代，資訊機房已是每個企業不可缺少的重要單位，一旦機房或相關的IT服務出問題，對客戶造成的傷害將是難以彌補的，可見得資訊機房對現今企業的重要性！然而，一個大型機房若要達成如Tier或TIA-942之類的國際規範，所需的經費動輒數千萬甚至上億，對於以中小企業為主體的台灣產業而言，實在是過於遙不可及；此外，資訊機房的單位耗電量相當大（比一般辦公大樓高出數倍），長期累積的電費對企業而言也是一筆沈重的負擔，要如何在有限的預算、人力、資源下，設計出務實的、符合企業需求的資訊機房？如何透過妥善的節能規劃，大幅改善資訊機房的耗能狀況，以協助企業節省不必要的浪費與開銷？
+																																		為了滿足業界需求，資策會全新規劃「小型機房之設計與驗證實作班」，本課程將以小型資訊機房（空間小於100坪）為核心，帶領學員瞭解小型機房在評估、設計、施工、驗證等各階段的執行重點，包括機房空間、電信、空調、電力、建築等的整體需求規劃，及各階段所需的技術、設備、成本及人力，並透過效益分析讓學員瞭解節能機房可為企業帶來的效益，以及透過案例分享瞭解小型機房建置過程中可能遇到的狀況與解決方式，進而增進學員設計與規劃小型資訊機房的能力。
+本課程並非單純的課程講授，而是由業界資深顧問專家進行引導，透過精心設計的小型機房規劃情境，讓學員實際進行設計與規劃練習，並將規劃成果進行分享與討論；此外，課程中亦將透過案例實作，指導學員如何實際計算小型機房的RCI(機櫃冷卻指數)、RTI(回風溫度指數)、SHI(熱量供應指數)等數據，以及機房功能驗證時的評估重點及情境說明，透過實作讓學員不只學到「理論」，還能得到「經驗」與「實務」，是一門不可錯過的資訊機房實作課程。
+更多相關資訊請按此參考「機房管理主題館」
+
+
+
+
+
+
+
+ ◆ 課程目標
+
+
+
+
+
+
+
+
+
+藉由小型節能機房專案親自動手規劃實務，瞭解機房具體節能作法。 
+導入設計驗證及量測驗證創新技術，確保機房新建及改善的品質。 
+協助企業打造自家小型節能機房，減少運轉成本以提高企業競爭力。
+
+
+
+
+
+
+
+
+ ◆ 適合對象
+
+
+
+
+
+
+
+
+
+想透過實作案例瞭解小型機房之設計與規劃實務者。
+計畫建置小型節能機房之企業的主管、專案經理或技術人員。
+想瞭解節能機房之評估、設計、建置、驗證等議題者。
+資訊服務業、系統整合業、機房設備製造商等相關產業之主管、專案經理或技術人員。
+
+
+
+
+
+
+
+
+ ◆ 課程大綱
+
+
+
+
+
+
+
+
+
+
+
+
+課程單元
+
+
+
+課程主題
+
+
+
+時數
+
+
+
+
+
+																																					資訊機房建置
+																																					重點說明與實務分享
+
+
+
+
+資訊機房建置評估架構
+評估重點說明
+設計階段重點工作說明
+施工階段重點工作說明
+驗收階段重點工作說明
+
+
+
+
+																																					1
+
+
+
+
+
+																																					資訊機房
+																																					功能驗證及管理
+
+
+
+動態機櫃冷卻指數(Rack Cooling Index, RCI)計算
+回風溫度指數(Return Heat Index, RTI)計算
+熱量供應指數(Supply Heat Index, SHI)計算
+測試調整與平衡(TAB)與風量計算
+資訊機房能源管理系統簡介
+
+
+
+
+																																					3
+
+
+
+
+
+																																					資訊機房功能驗證 
+																																					實例解說
+
+
+
+資訊機房現場評估重點
+專案量測情境說明
+
+
+
+
+																																					3
+
+
+
+
+
+
+																																					資訊機房設計規劃
+																																					實務與作業原則(一)
+
+
+
+機房空間需求及初步規劃
+電信需求計算
+空調需求規劃
+電力需求規劃
+建築需求規劃
+效益分析說明
+
+
+
+
+																																					4
+
+
+
+
+
+																																					資訊機房設計規劃
+																																					實務與作業原則(二)
+
+
+
+小型機房規劃情境說明
+線上實務操作與討論
+設計規劃成果與分享
+
+
+
+
+																																					3
+
+
+
+
+
+
+
+
+
+* 課程執行單位保留調整課程內容與講師之權利 
+
+
+
+
+
+
+
+ ◆ 課程日期
+
+
+
+
+
+
+
+2017年10月16日∼10月17日(週一、二)，每日9:00~12:30、13:30~17:00 上課，計兩天、14小時。
+
+
+
+
+
+
+ ◆ 上課地點
+
+
+
+
+
+
+
+
+資訊工業策進會 數位教育研究所，臺北市信義路三段153號10樓。
+																																		上課地點位於捷運大安站1號出口左轉（復興南路與信義路交叉口附近）
+																																		* 上課地點與教室之確認，以上課通知函為主。
+
+
+
+
+
+
+ ◆ 報名方式
+
+
+
+
+
+
+
+本課程採線上報名，請按右方【我要報名】進入報名系統。依據工業局人才培訓專案規範，接受補助之學員須完整填具學員基本資料表並於開課當天簽署一份「工業局個資告知同意書」，否則無法接受補助。
+
+
+
+
+
+
+課程諮詢：(02)6631-6539 課程經理 張先生，或E-mail：alanchang@iii.org.tw
+																																		報名確認：(02)6631-6535 孫小姐，或E-mail：chelseasun@iii.org.tw
+
+
+
+
+
+
+ ◆ 課程費用與繳費
+
+
+
+
+
+
+
+1.
+本課程費用 NT$10,000元，費用含課程、講義、午餐餐盒。
+
+
+2.
+
+
+
+本課程工業局負擔40%，凡於2017年10月09日前完成報名並填寫繳費資料者，可享早鳥價 NT$6,000 元(含稅)。
+（政府捐助(贈)財團法人、學校教職員工及非本國國籍者不在補助範圍內）
+（政府捐助(贈)財團法人名單請直接點選上方連結確認！）
+
+
+3.
+團報優惠：兩人團報可打95折、四人團報可打9折優惠。
+˙團報優惠與早鳥優惠可一併使用。
+																																		˙課程報名系統每個帳號僅提供一位學員報名，若為團報學員，每位皆必須完成線上報名，並於其他     金額說明欄位註記「與XXX一起團報」，以利事後核對名單。 
+
+
+4.
+
+
+						特殊身份優惠：限一般產業在職員工，如為「身心障礙者、原住民、低收入戶、中堅企業員工」等特殊身份學員，享有經濟部工業局負擔60%之優惠，前三者學員需提供政府機關核發之身份證明文件影本，中堅企業員工需提供在職證明文件正本，請參中堅企業名單與中堅企業躍升計畫介紹。
+
+
+5.
+請以信用卡或即期支票支付—
+
+
+　
+˙以信用卡支付者：請務必將正確信用卡資料填寫於繳費方式資料表。
+    ˙以即期支票支付者：抬頭為「財團法人資訊工業策進會」， 劃線並禁止背書轉讓，以掛號寄至臺北市106信義路三段153號9樓之1，邱小姐 收。
+
+
+6.
+課程若未如期開班，費用將全額退還。
+
+
+
+
+
+
+◆ 報名確認與取消
+
+
+
+
+
+
+
+1.
+已完成報名與繳費之學員，課程主辦單位將於開課三天前以E-mail方式寄發上課通知函；若課程因故取消或延期，亦將以E-mail方式通知，如未收到任何通知，敬請來電確認。
+
+
+2.
+已完成繳費之學員如欲取消報名，請於實際上課日前以書面通知業務承辦人，主辦單位將退還80% 課程費用。
+
+
+3.
+學員於培訓期間如因個人因素無法繼續參與課程，將依課程退費規定辦理之︰上課未逾總時數三分之一，欲辦理退費，可退還所有費用二分之一；上課逾總時數三分之一，則不退費。 
+
+
+4.
+課程執行單位保留是否接受報名之權利。 
+
+
+5.
+如遇不可抗拒之因素，課程主辦單位保留修訂課程日期及取消課程的權利。
+
+
+
+
+
+
+
+
+																																 ◆ 餐點服務
+
+
+
+
+
+
+
+
+本課程上課期間，每天都會提供午餐餐盒，學員不需自行準備或額外付費。
+
+
+
+
+
+
+
+ ◆ 
+														招生人數
+
+
+
+
+
+
+
+本課程預計招收人數為30人，至少需達10人才予開課。
+
+
+
+
+
+
+
+
+
+																																 ◆ 結業證書
+
+
+
+
+
+
+
+
+依本會ISO品質系統之「教育訓練服務程序」規定，本課程學員缺課未超過總時數五分之一者，結業時由本會核發結業證書。
+
+
+
+
+
+
+
+
+																																 ◆ 學習護照
+
+
+
+
+
+
+
+
+本課程學習時數可登錄「公務人員終身學習護照」、「中小企業終身學習護照」，相關事宜按發照單位作業辦法辦理。
+
+
+
+
+
+
+
+
+																																 ◆ 資策會 機房管理(智慧綠能) 課程架構圖
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+◆ 資策會 資訊機房 國際認證
+
+
+
+
+
+
+
+
+
+國際證照：CDCP 資訊機房管理師 國際認證班
+國際證照：CDCS 資訊機房專家 國際認證班
+國際證照：CDCE 資訊機房資深專家 國際認證班
+能源管理：ISO50001能源管理系統 主導稽核員訓練
+
+
+
+
+
+
+
+
+◆ 資策會 資訊機房 實務課程
+
+
+
+
+
+
+
+
+
+綠色機房：綠色機房之規劃與建置實務班
+綠色機房：綠色機房之能源系統模擬訓練
+機房管理：小型機房之設計與驗證實作班
+機房管理：打造符合TIA-942規範的國際級機房
+機房管理：建築資訊模型(BIM)應用於智慧建築與資訊機房
+
+
+
+
+
+
+
+
+◆ 機房節能 相關報導
+
+
+
+
+
+
+
+
+
+【IThome】機房省電有秘訣，可比先前多省4成電費
+【網管人】跟著做就有效！機房節能15招
+【Digitimes】機房能源管理 企業智慧節電
+【Digitimes】綠色機房散熱規劃與節能技術
+【Digitimes】機房節能未達止境　降低PUE仍待努力
+【Digitimes】綠色機房與節能調查專輯：瞭解企業機房用電現況 才能對症下藥
+【Digitimes】機房節能不重要？近6成企業IT部門尚未將「機房電費支出」列入績效考核項目
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+　
+　
+
+
+　
+　
+　
+　
+　
+
+
+
+
+　
+　
+　
+
+
+
+
+
+
+
+
+
+
+
+　
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+　
+　
+
+
+　
+　
+　
+　
+　
+
+
+
+
+　
+　
+　
+
+
+
+
+資訊工業策進會 數位教育研究所    
+版權所有，禁止侵害，違者必究。
+Copyright (c) 2015 III Digital Education Institute. All 
+Rights Reserved
+
+
+
+
+﻿
+
+
+
+
+
+
+
+
+國立交通大學開放式課程(OpenCourseWare, OCW)
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 交大首頁  |  聯絡我們  |  網站導覽  |  常見問答  |  相關連結  |  English 
+
+
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+作業系統設計與實作 Operating System Design and Implementation (OSDI)
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+課程首頁
+
+	本課程是由交通大學資訊工程學系提供。
+
+	 
+
+	本課程以Linux 作業系統為基礎來講授作業系統內部的設計與實作方法。課程將透過一系列的實驗模組，來對Linux的行程管理，記憶體管理，檔案系統，輸出入系統進行深入的剖析以及修改。修課學生預計除了累積實際動手修改作業系統的經驗，亦可培養大型程式專案規劃的概念以及大量程式原始碼追蹤（trace）的能力。
+ 
+
+
+ 
+
+
+
+
+
+授課教師
+資訊工程學系 曹孝櫟老師
+
+
+
+課程學分
+3
+
+
+
+授課年度
+104學年度
+
+
+
+授課對象
+碩士生
+
+
+
+預備知識
+計算機組織概論、作業系統概論
+
+
+本課程提供
+
+課程影音　
+    課程講義  　   課程綱要　 
+         課程行事曆　 
+            
+
+
+
+
+
+個人評分：
+
+ 
+ 
+ 
+
+ 
+
+評論分數：
+ 
+
+
+
+
+
+ (共
+              11              人評分)
+點閱數：
+              10499              
+
+
+
+
+
+
+
+
+請提供任何對本課程之意見，作為後續改進之參考。
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+課程首頁
+
+
+課程影音
+
+
+課程講義
+
+
+課程綱要
+
+
+課程行事曆
+
+
+
+
+
+
+
+
+
+
+ 
+
+所有課程
+
+
+
+
+ 
+                  理學院                   
+
+
+
+
+ 
+                  工學院                   
+
+
+
+
+ 
+                  電機學院                   
+
+
+
+
+ 
+                  管理學院                   
+
+
+
+
+ 
+                  資訊學院                   
+
+
+
+
+ 
+                  生物科技學院                   
+
+
+
+
+ 
+                  人文社會學院                   
+
+
+
+
+ 
+                  客家文化學院                   
+
+
+
+
+ 
+                  通識課程                   
+
+
+
+
+ 
+                  華語中心                   
+
+
+
+
+ 
+                  經典通識教育講座                  
+
+
+
+
+ 
+                  經典名著選讀                   
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+本網站內容僅供學術使用，嚴禁任何商業行為。
+Copyright © 2006-2015 National Chiao Tung University. All rights reserved.　 
+諮詢單位：交通大學開放教育推動中心(OEO)/理學院 E-learning推動小組　E-Mail：nctuocw@gmail.com
+諮詢專線：03-5712121轉56072
+
+
+
+
+
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+作業系統設計與實作 Operating System Design and Implementation (OSDI)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+系統分析設計與實作—活用 UML/SCRUM 與 C# | www.hsdc.com.tw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+Home
+關於HSDc
+顧問輔導
+產品服務
+教育訓練
+顧問專欄
+文檔下載
+聯絡我們
+English
+  
+
+首頁 ›   
+
+
+
+
+搜尋本站: 
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+系統分析設計與實作—活用 UML/SCRUM 與 C#
+
+
+ in 課程
+
+
+
+
+
+
+
+ 
+要達成有效的系統分析與設計，強調的是「敏捷 (Agile)、務實性的設計，以及可具重構的程式碼框架」：
+　o 符合 Agile/SCRUM 的敏捷快速開發精神，快速從分析導出到實作，實踐 I&I (漸增與循環)精髓。
+　o 界定功能需求，建立 MVC 程式碼框架，打通從 UI->中間層->資料庫的管道。
+　o 強調實作的設計，應用如微軟的 Entity Framework 與 Object Model，建立中間層與資料庫系統的 Mapping。
+　o 利用實作案例，演練如何重構程式碼，並列舉重構的判斷原則與主要技巧。
+
+
+
+
+
+報名資訊課程介紹課程大綱報名資訊{暫訂上課地點}。
+上課地點：臺北市中山區建國北路二段3巷17號1F。
+交通地圖 ：可搭乘捷運至松江南京或南京東路站。
+
+§上課日期：
+　o 日期：2015/08/01 起，每週六白天。
+　　每次上課為六個小時(AM 9:30~PM 4:30)，共八個星期。
+　o 預定上課日期：08/01, 08/08, 08/15, 08/22, 08/29, 09/05, 09/12, 09/19
+　o 上課地點：上課前一週以電郵/電話通知學員。
+§課程費用：
+　o 特價優惠：NT$１4,800, 含稅。舊生或三人同行再折扣為: NT$１3,200。
+　　(同等課程原價學費為 ＄３0,000 以上)。
+　o 大學/研究所 資訊相關科系講師、助教或教授，出示相關證明，我們會以建教合作方式計費。(請另以電話聯絡)
+　o 清貧或由家扶中心推薦，請出示相關證明，所有費用 免費！！
+§備註：
+　o 教室設備包括白板與投影機，由講師親自說明與操作示範。(學員可攜帶錄音筆)
+　o 學員最好能攜帶 Notebook(可無線上網)，可以於課程中實際操作與練習。
+　o 上過本課程(.NET/Java 均可)學員，仍可免費旁聽本課程。(每次保留 5 名學員名額。)
+　o 若未達上課人數(原則以15人以上)則延期至下一梯次開課，已報名學員，本中心會電話通知，並主動辦理退費(或可保留至下一梯次)。
+　o 開課前一週會以電子郵件聯絡與通知學員。
+　o 遇國定假日或颱風等因素，則延至下一週上課日(本中心會主動通知學員)，以此類推。
+　＊＊＊＊＊＊
+　o 為確保報名足額人數，煩請先以 ATM 轉帳預約費用($1000，當然也可一次繳清)。
+　　並請於報名錶備註欄位內，註明您的轉帳帳號末 5 碼與轉帳金額。
+　　(若實在不及轉帳者，仍可現場報名，但請在報名錶內註明現場繳費)。
+　o ATM 轉帳帳號： 新光銀行 (103)　帳號： 0772-50-100979-9 
+--------------------------------------------------------------------------------
+§課程諮詢(HSDc. 軟體設計專業顧問團隊)：
+　o 諮詢專線：TEL: 02-27227179
+　o 服務信箱：service.hsdc@gmail.com
+　o http://www.hsdc.com.tw
+Signups closed for this Course
+10 individuals signed up 
+
+rexlucien 
+hongyuan287 
+jamesmct 
+polppk 
+Bill Lin 
+5 anonymous 
+
+
+課程介紹關於課程介紹的相關資訊。
+
+
+HSDc.  顧問開發團隊綜合多年來的大型系統實務輔導與開發經驗，並結合大量研究的理論知識與平臺技術，所推出關於完整的系統分析、設計至實作的課程，期能協助軟體開發人員在現實的工作中，能瞭解完整的開發流程與各個角色的工作執掌與產出。
+在基於以架構為中心來建立團隊具共識的整體觀下，能聚焦在適切開發單位的功能點內，快速地從需求分析導出到實作，找出並剋服開發過程中，包括溝通、技能與技術等風險因子。而後基於這樣的框架目標內，得以對系統的結構作重整，卻又不至於影響已有的功能前提下，得以對程式碼施以重構的技巧，讓系統更有延展度與彈性。
+觀念的傳授、設計的圖形化塑模表達、程式碼的實作三層次，是我們對於系統分析設計與實作課程的基本原則與態度。
+修習本次系統分析的學員們，也必然可以拿到完整的教材、完整案例的 Model 檔與實作程式碼的對應，帶回去自行練習，並能對映於工作上，如此才會有顯著且實質的效益。
+HSDc. 軟體團隊，強調的是「虛」與「實」兩者調和的『知行合一』．．．。
+
+
+
+課程大綱關於課程大綱的資訊。
+
+
+o 第一階段課程目標 (24 Hrs)：
+　o 有效組織與整理系統功能需求
+　o 快速設計、建立系統 MVC (Model-View-Control)框架
+　o 產出程式碼骨幹，打通從 UI-中間層-資料庫 管道。
+一、方法論－開發流程與UML塑模 (6 hrs)
+　o 敏捷式的開發流程
+　　o 介紹 RUP/Agile/SCRUM 核心原則
+　　o 比較 瀑布式 vs. I&I (Increment & Iteration)的開發模式
+　　o 專案開發各階段(SA/SD/Coding)的主要產出(artifacts)範本
+　　o 軟體開發的最佳實務 (Best Practices)導引
+　o 軟體塑模 - 統一塑模語言(UML, Unified Modeling Language)的綜觀介紹
+　　o 利用完整案例導引 UML 的十三種圖形 (Overview)
+　　o 說明 需求面/結構面/實作面 等三大構面的設計圖
+　　o UML 工具的示範操作
+　　o 完整 UML Model 範本 (附於課程操作光碟內)
+二、需求面的系統功能分析與設計 (12 hrs)
+　o 分析何謂企業流程與系統功能
+　　o 利用火箭圖/活動圖記錄企業流程
+　　o 利用使用案例圖捕捉系統功能
+　　o 從企業流程的活動圖導出到使用案例圖的步驟
+　o 建構使用案例模型
+　　o 利用使用案例圖表達系統的功能需求
+　　　o 如何界定系統範圍(System Boundary)
+　　　o 如何找出使用案例與參與者(Actor)
+　　　o 使用案例之間的關係— include and extend
+　　　o 利用使用案例圖表達架構觀點
+　　o 使用案例敘述(Description)的寫作實務
+　　　o 如何寫出高品質的使用案例敘述
+　　　o 如何依據使用案例範本完成使用案例敘述的撰寫
+　　　o 如何表達正常、替代、擴充與例外事件流程的敘述
+　　　o 寫好每一條動作步驟陳述的要領
+　　o 使用案例的重點補充
+　　　o 針對每一個使用案例，撰寫測試案例 (Test Case)
+　　　o 利用 EA "Document Generation" 機制產出美輪美奐的需求報表文件
+三、案例分析與實作 #1 (6 hrs) by UML 三劍客
+　o 說明三劍客的應用時機－ 使用案例模型、類別圖、物件合作循序圖
+　o 使用案例的實現(Realization)與實作
+　　o 軟體開發的至高原則－MVC (Model-View-Control)設計樣式
+　　o 利用類別圖設計與創建 Use Case 控制物件，實現使用案例的功能需求
+　　o 利用循序圖表達程式碼物件的互動設計
+　o 利用 EA UML 工具
+　　o 實做使用案例模型(Use Case Model)、類別圖、循序圖
+　　o 利用 Code-Generator 機制，產出 C#.NET 程式碼框架
+　o 設計控制 (Control)物件，實現使用案例所分析的功能需求
+　　o 利用 Entity Framework，實際連結 SQL Server 存取資料。
+　　o 利用 Object Data Model，成為 UI 與控制物件間的參數傳遞型別
+　o 利用 Visual Studio Comminity IDE 撰寫
+　　o ASP.NET Web MVC Form
+　　o 控制(Control) 物件 by C#.NET
+　　o 利用 NUnit 撰寫功能測試程式碼
+--------------------------------------------------------------------
+o 第二階段課程目標 (24 Hrs)：
+　o 系統延展、彈性、可重用性的設計原則
+　o 如何重構程式碼 (類別結構)
+　o 物件與設計樣式 (Design Pattern)的基礎觀念
+一、物件導向觀念養成與應用 (6 hrs)—觀念、模型與程式碼的三面表達
+　o 介紹「概念(concept)」與「抽象(abstraction)」的觀念
+　o 瞭解「類別(class)」與「物件(object)」的區別與關係
+　　o 結合(association)、組合(aggregiation) 關係
+　　o 一般-特殊化(generalize-specialize)關係
+　o 封裝(encapsulation)與多型(polymorphism)的設計觀與應用
+　o 繼承(Inheritence)與介面(Interface)」的設計原理
+　o 程式碼範例—
+　　o 利用 C#.NET 程式碼表達類別的結構關係(結合,組合,一般-特殊化)
+　　o 利用 C#.NET 程式碼呈現介面與多型的設計實作
+二、軟體結構面的分析與設計  (9 hrs)
+　o 建構領域 (Domain)至物件模型的技巧與方法
+　　o 從使用案例的敘述中找出潛在的概念物件。
+　　o 運用交易樣式(Transaction Patterns)找出核心交易物件
+　o 資料庫表格的設計
+　　o E-R (Entity-Relationship) Model 的分析與設計
+　　o 利用 EA UML 工具設計 E-R 圖，並轉為可以匯入資料庫的 DDL SQL 敘述檔
+　o 實體 (Entity)物件的設計
+　　o 物件的責任分派(responsibility assign) — 屬性與行為的分析
+　　o 利用類別圖建構問題領域的物件模型 (Problem Domain Object Model)
+　o 活用設計樣式(design pattern)
+　　o Design Pattern Overview － 生成類、結構類、行為類 總覽介紹
+　　o 合成(composite)樣式的設計 — 樹狀結構/BOM 表的最佳呈現
+　　o Facade and Adapter 樣式，表達在 Control and Boundary 物件的設計原則
+　o 分析類別(Analysis Class)的設計
+　　o Control 物件
+　　o Entity (Business)物件
+　　o Boundary 物件 
+三、案例分析與實作 #1 (6 hrs)
+　o 程式碼重構的設計原則
+　　o 分析程式碼冗長的 method，撰寫 Clean Code
+　　o 找出程式碼重複多餘 (redoundant)的部分，設計共用物件
+　　o 確實釐清物件的責任分派 (Responsibility Assign)
+　o 分析類別在中間層 (Middleware)的實現
+　　o 實現 Controller by POCO (pure C# object)
+　　o 實現 O-R Mapping by Entity Framework
+　　o 實現 實體 (Entity)物件 by POCO
+　o EA 與 Visual Studio Comminity 工具的操作
+　　o 重構修改已部署的程式碼
+　　o 執行與驗測 功能/單元 (Unit)測試程式碼
+--------------------------------------------------------------------
+§ 整體開發流程總複習
+　o 檢視兩個階段的開發所產出的設計圖與程式碼
+　o 回顧每一個流程開發階段的產出與所運用的設計、技術與技能
+　o 學員課程中的問題提問與回答總整理
+
+
+
+
+分類：
+  	課程 
+如果想要發表回應，請先登入 或 註冊。
+
+ 
+
+ 
+
+
+使用者登入
+
+
+
+Log in using OpenID: 
+
+What is OpenID?
+
+
+使用者名稱: *
+
+
+
+密碼: *
+
+
+
+
+
+
+Log in using OpenID
+Cancel OpenID login
+註冊新帳號
+索取新密碼
+
+
+
+ 
+
+企業包班課程系列
+
+
+歡迎直接詢報價，或規劃為貴單位量身打造之客製化課程(含內容、時數)!
+
+
+編號
+
+課程單元建議
+
+建議Hrs
+
+
+HOT
+
+系統分析設計與實作—活用 UML/SCRUM 與 JAVA
+
+
+
+48
+
+
+HOT
+
+系統分析設計與實作—活用 UML/SCRUM 與 C#
+
+
+
+48
+
+
+01
+
+EA(Enterprise Architect)工具使用基礎教學
+
+
+18
+
+
+02
+
+UML 2.4 觀念引導與實務操作入門
+
+
+18
+
+
+03
+
+UML團隊開發流程與管理
+
+
+36
+
+
+04
+
+程式碼與循序圖的關係與HSDc Sequence Plugin
+
+
+6
+
+
+05
+
+利用 EA/UML 工具設計企業架構框架 UPDM/DoDAF 產出物與實例演練
+
+
+54
+
+
+06
+
+使用案例寫作實務一日遊
+
+
+6
+
+
+07
+
+系統分析設計與實作—活用 UML 塑模 與 Java
+
+
+54
+
+
+08
+
+系統分析設計與實作—活用 UML 塑模 與  C#.NET
+
+
+54
+
+
+09
+
+專案開發實務操作－微型系統開發與產出 by C#.NET 
+
+
+18
+
+
+10
+
+七步驟寫好 Java 自動化測試 
+
+
+18
+
+
+11
+
+自動化測試 by C# 實作演練
+
+
+6
+
+
+12
+
+Workflow Plugin EA客製化教學
+
+
+18
+
+
+13
+
+利用 EA/UML 工具建構企業流程模式(BPM/UML/WfMC)-原理與實作
+
+
+24
+
+
+14
+
+利用 EA/SOML 塑模工具建構雲端計算(Cloud Computing)分析設計-原理與實作[Opening soon!]
+
+
+36
+
+
+
+
+ 
+ 
+
+
+HSDc Sequence Plugin
+
+原始程式碼診斷掃描器--程式碼品質檢驗最佳利器！
+
+
+
+
+
+
+Sale Price:US $99 (Detail...)
+Get it from CNET Download.com
+
+
+
+
+
+
+
+
+
+
+ 
+
+HSDc RingleFlow - Workflow Engine
+
+符合WfMC工作流程引擎!免費! 利用EA繪製工作流程直接設到工作流程引擎。 (馬上前往)
+
+
+ 
+ 
+ 
+
+信仁軟體設計有限公司 (HSDc Corporation, High-quality Software Desgin Center)
+TEL(02)2722-7179　Email: service@hsdc.com.tw
+ 
+ 
+
+
+
+
+
+
+Wiki - 課程進度與開放資源
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+成大資工 Wiki
+
+
+所有頁面
+分類
+隨機頁面
+最近活動
+上傳檔案
+
+本頁面
+
+頁面原始檔
+可列印版本
+刪除本頁
+
+
+
+
+登入 / 註冊帳號
+登出 
+
+
+
+
+
+
+
+
+
+搜尋
+前往
+
+
+LaTeXConTeXtTexinforeSTMarkdownCommonMarkPlain textMediaWikiOrg-modeICMLTextileAsciiDocMan pageDocBookDZSlidesSlidyS5EPUBODTDOCXRTF 
+
+
+
+
+
+
+
+
+
+
+
+
+
+viewedithistorydiscuss
+
+課程進度與開放資源
+
+
+Instructor: Jim Huang (黃敬群) <jserv.tw@gmail.com>
+
+Facebook 粉絲專頁 (不要擔心提了笨問題，這就是專門和學生互動的)
+
+討論區: https://www.facebook.com/groups/system.software2016/
+共筆: https://embedded2016.hackpad.com
+課程信箱: <embedded.master2015@gmail.com>
+參考硬體平臺: STM32, STMicroelectronics
+
+嵌入式作業系統設計與實作 (Spring 2016)
+
+
+
+
+
+
+Week
+Date
+Subject
+Assignment
+
+
+
+
+#1
+Feb 23
+2016q1 Overview
+= 2016q1: Homework1 =
+
+
+#2
+Mar 1
+2016q1:基本能力鑑定測驗
+-
+
+
+#3
+Mar 8
+Code Review
+= 2016q1: Homework2 =
+
+
+#4
+Mar 15
+Synchronization and POSIX Threads
+-
+
+
+#5
+Mar 22
+Object-Oriented Programming & Thread
+= 2016q1: Homework3 =
+
+
+#6
+Mar 29
+Threading and ARM
+= 2016q1: Homework4 =
+
+
+#7
+Apr 5
+停課一次 / Embedded Linux Conference
+
+
+#8
+Apr 12
+ARM architecture
+= 2016q1: Homework5 =
+
+
+#9
+Apr 19
+OS Scheduling
+
+
+#10
+Apr 26
+分組報告(A)
+
+
+#11
+May 3
+分組報告(B)
+
+
+#12
+May 10
+作業系統發展回顧 + 即時 Linux 的工業應用
+
+
+#13
+May 17
+分組報告(C)
+
+
+#14
+May 24
+中斷、排程，多核心處理
+
+
+#15
+May 31
+分組報告(D)
+
+
+#16
+Jun 7
+分組報告(E)
+
+
+#17
+Jun 14
+分組報告(F)
+
+
+#18
+Jun 21
+分組報告(G) + 期末總結
+
+
+
+進階嵌入式系統設計與實作 (Fall 2015)
+
+
+
+
+
+
+Week
+Date
+Subject
+Assignment
+
+
+
+
+#1
+Sep 18
+2015q3 Overview
+= 2015q3: Homework1 ; 2015q3: Ext1 =
+
+
+#2
+Sep 25
+2015q3:基本能力鑑定測驗
+-
+
+
+#3
+Oct 2
+ARM Architecture and Optimization Concepts
+= 2015q3: Homework2 ; 2015q3: Homework3 =
+
+
+#4
+Oct 9
+國定假日
+-
+
+
+#5
+Oct 16
+Compilers + Calling Convention
+= 2015q3: Homework4 =
+
+
+#6
+Oct 23
+專題演說
+= 2015q3: Homework5 =
+
+
+#7
+Oct 30
+Code Review
+= 2015q3: Homework6 =
+
+
+#8
+Nov 6
+C Programming + ARM
+= 2015q3: Homework7 =
+
+
+#9
+Nov 13
+From Hello to Preemptive Scheduler
+= 2015q3: Homework8 =
+
+
+#10
+Nov 20
+From ARM core to Peripherals
+= 2015q3: Homework9 =
+
+
+#11
+Nov 27
+STM32 + Peripherals
+= 2015q3: Homework10 =
+
+
+#12
+Dec 4
+Peripherals: GPIO ADC
+QA: GPIO, QA: ADC
+
+
+#13
+Dec 11
+; Peripherals: SPI; uVisor
+QA: SPI
+
+
+#14
+Dec 18
+課程公告; Peripherals: USART, Flash, I2C
+QA: USART, QA: Flash, QA: I2C
+
+
+#15
+Dec 25
+專題演說
+QA: USB
+
+
+#16
+Jan 1
+Happy New Year!
+*
+
+
+#17
+Jan 8
+Code Review / 作業回顧
+*
+
+
+#18
+Jan 15
+Software Quality + Security Issues
+*
+
+
+
+嵌入式作業系統設計與實作 (Spring 2015)
+
+
+
+
+
+
+Week
+Date
+Subject
+Assignment
+
+
+
+
+#1
+Feb 24
+2015q1 Overview
+*
+
+
+#2
+Mar 3
+2015q1:基本能力鑑定測驗
+Lab 38: ARM Cross-Development Environment
+
+
+#3
+Mar 10
+ARM Architecture + OS Concepts
+Lab 39: FreeRTOS
+
+
+#4
+Mar 17
+ARM Exceptions/Interrupts
+Lab 40: Scheduling
+
+
+#5
+Mar 24
+Embedded Linux Conference 2015
+Lab 41: 基礎觀念訓練
+
+
+#6
+Mar 31
+ARM and RTOS: Part I
+確認 Lab 38, Lab 39, Lab 40, Lab 41 均充分完成
+
+
+#7
+Apr 7
+ARM and RTOS: Part II
+Lab 42: Mini ARM OS
+
+
+#8
+Apr 14
+From Hello to Preemptive Scheduler
+Lab 42: Mini ARM OS
+
+
+#9
+Apr 21
+Kernel Concepts and Threading
+Lab 43: Runtime Behavior
+
+
+#10
+Apr 28
+2015q1:Group Presentation(1)
+*
+
+
+#11
+May 5
+2015q1:Group Presentation(2)
+*
+
+
+#12
+May 12
+2015q1:Group Presentation(3)
+*
+
+
+#13
+May 19
+2015q1:Group Presentation(4)
+*
+
+
+#14
+May 26
+2015q1:Group Presentation(5)
+*
+
+
+#15
+Jun 2
+2015q1:Group Presentation(6)
+*
+
+
+#16
+Jun 9
+2015q1:Group Presentation(7)
+*
+
+
+#17
+Jun 16
+2015q1:Group Presentation(8)
+*
+
+
+#18
+Jun 23
+2015q1:Group Presentation(9)
+*
+
+
+
+進階嵌入式系統開發與實作 (Fall 2014)
+
+
+
+
+
+
+Week
+Date
+Subject
+Assignment
+
+
+
+
+#1
+Sep 18
+2014q3 Overview
+Lab 31: ARM Environment
+
+
+#2
+Sep 25
+ARM Architecture (cont)
+Lab 32: QEMU + FreeRTOS
+
+
+#3
+Oct 2
+ARM Architecture (cont2)
+Lab 33: GDB + FreeRTOS
+
+
+#4
+Oct 9
+ARM Architecture and Interface
+Lab 34: Buffer overflow
+
+
+#5
+Oct 16
+Hardware Concepts Review
+Lab 35: STM32F429
+
+
+#6
+Oct 23
+Code Review for Lab 32-33
+Lab 35: STM32F429
+
+
+#7
+Oct 30
+Code Review + ELF
+Lab 36: ELF
+
+
+#8
+Nov 6
+Interrupt/Exceptions + RTOS
+Lab 37: Memory allocation
+
+
+#9
+Nov 13
+2014q3:Group Presentation (1)
+-
+
+
+#10
+Nov 20
+2014q3:Group Presentation (2)
+-
+
+
+#11
+Nov 27
+2014q3:Group Presentation (3)
+-
+
+
+#12
+Dec 4
+2014q3:Group Presentation (4)
+-
+
+
+#13
+Dec 11
+2014q3:Group Presentation (5)
+侯捷 C++ 底層技術課程分享
+
+
+#14
+Dec 18
+2014q3:Group Presentation (6)
+-
+
+
+#15
+Dec 25
+2014q3:Group Presentation (7)
+-
+
+
+#16
+Jan 1
+Happy New Year!
+-
+
+
+#17
+Jan 8
+2014q3:Group Presentation (8)
+-
+
+
+#18
+Jan 15
+2014q3:Group Presentation (9)
+-
+
+
+#18
+Jan 17
+期末展示
+-
+
+
+
+嵌入式作業系統設計與實作 (Spring 2014)
+
+
+
+
+
+
+Week
+Date
+Subject
+Assignment
+
+
+
+
+#1
+Feb 18
+Overview: Embedded Systems and OS
+Lab 25
+
+
+#2
+Feb 25
+ARM Architecture Evolution
+Lab 26
+
+
+#3
+Mar 4
+Case: Quadcopter
+Lab 27
+
+
+#4
+Mar 11
+Assignment Review
+Lab 28
+
+
+#5
+Mar 18
+ARM Cortex-M + RTOS Concepts
+Lab 29
+
+
+#6
+Mar 25
+ARM I/O, Interrupt, Exception
+Lab 30
+
+
+#7
+Apr 1
+春假
+:
+
+
+#8
+Apr 8
+Advanced OS Design issues
+:
+
+
+#9
+Apr 15
+Group Presentation (a)
+:
+
+
+#10
+Apr 22
+Group Presentation (b)
+:
+
+
+#11
+Apr 29
+Group Presentation (c)
+:
+
+
+#12
+May 6
+Group Presentation (d)
+:
+
+
+#13
+May 13
+Group Presentation (d)
+:
+
+
+#14
+May 20
+Group Presentation (f)
+:
+
+
+#15
+May 27
+Group Presentation (g)
+:
+
+
+#16
+Jun 3
+Group Presentation (h)
+:
+
+
+#17
+Jun 10
+Talk: 雲、端、架構
+:
+
+
+#18
+June 17
+Group Presentation
+:
+
+
+#18
+Jun 21
+期末成果展示
+:
+
+
+
+進階嵌入式系統開發與實作 (Fall 2013)
+
+
+
+
+
+
+Week
+Date
+Subject
+Assignment
+
+
+
+
+#1
+Sep 17
+Overview: Embedded in our world
+Lab 19: QEMU
+
+
+#2
+Sep 23
+ARM Architecture and SoC
+Lab 20: GNU Toolchain
+
+
+#3
+Oct 1
+Operating Systems for Embedded
+Lab 20: GNU Toolchain
+
+
+#4
+Oct 8
+ARM: Instructions
+Lab 21: RTOS (1)
+
+
+#5
+Oct 15
+ARM: Toolchain and Peripherals
+Lab 22: RTOS (2)
+
+
+#6
+Oct 22
+ARM: Interrupts and Exceptions
+Lab 23: RTOS (3)
+
+
+#7
+Oct 29
+Code Review
+-
+
+
+#8
+Nov 5
+Code Review + Group Presentation(1)
+Lab 24: Hardware
+
+
+#9
+Nov 12
+3D Printer + Group Presentation(2)
+-
+
+
+#10
+Nov 19
+Group Presentation(3)
+-
+
+
+#11
+Nov 26
+Speech + Group Presentation(4)
+-
+
+
+#12
+Dec 3
+Group Presentation(5)
+-
+
+
+#13
+Dec 10
+Group Presentation(6)
+-
+
+
+#14
+Dec 17
+Group Presentation(7)
+-
+
+
+#15
+Dec 24
+Group Presentation(8)
+-
+
+
+#16
+Dec 31
+Group Presentation(9)
+-
+
+
+#17
+Jan 7
+Group Presentation(10)
+-
+
+
+#18
+Jan 12
+期末展示
+-
+
+
+
+嵌入式作業系統設計與實作 (Spring 2013)
+
+
+
+
+
+
+Week
+Date
+Subject
+Assignment
+
+
+
+
+#1
+Feb 19
+課程介紹 + 期初考
+
+
+#2
+Feb 26
+Embedded Operating System Concepts
+Lab 8 : GNU Toolchain + RTOS (Sol 8)
+
+
+#3
+Mar 5
+RTOS Characteristics
+Lab 9 : Multitasking programming (Sol 9)
+
+
+#4
+Mar 12
+從火星探測號談 scheduling
+Lab 10 : Priority Inversion (Sol 10)
+
+
+#5
+Mar 19
+ARM Architecture Intro
+Lab 11: Build RTOS for ARM (Sol 11)
+
+
+#6
+Mar 26
+ARM Architecture Intro + 月考
+Lab 12: RTOS Visualization (Sol 12)
+
+
+#7
+Apr 2
+春假
+
+
+
+#8
+Apr 9
+ARM and Assignment Review
+Lab 13: ARM Programming with GNU Toolchain (Sol 11)
+
+
+#9
+Apr 16
+I/O, Interrupt, Exception (ARM)
+Lab 14: OS and BSP Porting (Sol 14)
+
+
+#10
+Apr 23
+RTOS Evaluation
+Lab 15: Benchmarking concepts
+
+
+#11
+Apr 30
+Case Study: Train control + 月考
+Lab 15: Validation and benchmarking
+
+
+#12
+May 7
+Tickless scheduling
+Lab 16: Hardware Enablement
+
+
+#13
+May 14
+Embedded Kernel Design Review
+Lab 17: Tickless scheduling for ARM hardware
+
+
+#14
+May 21
+Embedded Kernel Design Review-2
+Lab 18: OS Evaluation for ARM
+
+
+#15
+May 28
+Automotive Linux Summit (Spring) +月考
+
+
+
+#16
+Jun 4
+Open Discussion
+
+
+
+#17
+Jun 11
+The End
+
+
+
+
+進階嵌入式系統開發與實作 (Fall 2012)
+
+
+
+
+
+
+Week
+Date
+Subject
+Assignment
+
+
+
+
+#1
+Sep 18
+Overview: Embedded - Why and How
+Lab 1: QEMU
+
+
+#2
+Sep 25
+ARM Architecture (Basic)
+Lab 2: GNU Toolchain + QEMU/ARM
+
+
+#3
+Oct 2
+Realtime Operating System (Basic)
+Lab 2s: GNU Toolchain + QEMU/ARM
+
+
+#4
+Oct 9
+Timer, Interrupt, Exception in ARM
+Lab 3: GNU Toolchain + RTOS
+
+
+#5
+Oct 16
+RTOS Design and Implementation
+Lab 4: RTOS for MCU
+
+
+#6
+Oct 23
+Code review of Lab assignments
+Lab 5: RTOS modifications
+
+
+#7
+Oct 30
+Peripherals and hardware interface
+Lab 6: Hardware
+
+
+#8
+Nov 6
+Embedded Linux Conference Europe
+分組準備與討論
+
+
+#9
+Nov 13
+Group Presentation (1)
+分組準備與討論
+
+
+#10
+Nov 20
+Group Presentation (2)
+Lab 6: Hardware + Unit Test
+
+
+#11
+Nov 27
+Group Presentation (3)
+Lab 6: Hardware + On-Chip Debugger
+
+
+#12
+Dec 4
+Group Presentation (4)
+Lab 7: On-Chip Debugger + semihosting
+
+
+#13
+Dec 11
+Group Presentation (5)
+Hack!
+
+
+#14
+Dec 18
+Group Presentation (6)
+Hack!
+
+
+#15
+Dec 25
+Group Presentation (7)
+Hack!
+
+
+#16
+Jan 1
+Happy New Year - 2013
+N/A
+
+
+#17
+Jan 8
+Final project review (and vote)
+N/A
+
+
+#18
+Jan 15
+Make Your Own System (and profit)
+DONE
+
+
+embeddedarmstm32rtoskernellinuxncku
+
+
+
+
+Please enable JavaScript to view the comments powered by Disqus.
+
+
+
+
+本站所有內容，除另有標註外，採用創用 CC 姓名標示-相同方式分享 3.0 台灣 授權條款授權
+	
+
+說明
+Powered by gitit
+Customized by CrBoy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+艾鍗學院-嵌入式軟韌體教育訓練中心 - 電路設計實作班
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁關於艾鍗最新公告公司簡介師資介紹開發板介紹環境設備交通資訊最新職缺艾鍗新聞獲獎與榮耀課程資訊資料科學系列課程大數據分析與機器學習應用工程師養成班Embedded Linux課程[學程] 嵌入式Linux開發實務Linux系統建置實務嵌入式Linux開發實務 Linux系統程式設計Linux驅動程式 ARM Boot Loader設計Linux Socket網路程式設計Linux核心程式介面Raspberry Pi之Python程式設計硬體控制快速打造物聯網Web整合應用班韌體設計系列課程[學程] MCU韌體開發實戰USB韌體設計單晶片韌體開發班生醫感測器整合設計班ARM Cortex-M0 應用整合設計穿戴式裝置應用開發TI MSP430微控制器開發 嵌入式即時作業系統FreeRTOS 設計實作快速打造物聯網Web整合應用班硬體設計系列課程電路設計實作班感測電路設計與應用Allegro/PCB Layout設計FPGA 數位IC設計實戰 H.264視訊編、解碼器系統開發ARM系列課程快速打造物聯網Web整合應用班ARM Boot Loader設計ARM Cortex-M0 應用整合設計Android系列課程[學程] Android APP 實戰開發Android嵌入式平臺開發訓練班 Android FrameworkAndroid ADK周邊裝置開發班程式語言系列課程暑期C語言程式研習營JavaScript程式設計精修班Python程式設計班Java 物件導向程式 資料結構精修班C語言程式設計iOS程式開發系列課程iPhone程式設計基礎班iPhone程式設計進階班德州儀器課程Android嵌入式平臺開發訓練班 TI MSP430微控制器開發 Web及雲端系列課程快速打造物聯網Web整合應用班web全端開發工程師養成班雲端伺服器建置實務Google App Engine 雲端程式開發實務研發經理人才培育班產品應用系列課程生醫感測器整合設計班NFC無線通訊設計實作班快速打造物聯網Web整合應用班轉職就業班醫療電子產品開發人才養成班IoT平臺開發人才養成班 (政府補助)物聯網韌體工程師人才養成班物聯網平臺開發人才養成班(政府+企業雙重補助)課程說明會平日班_課程說明會假日班_課程說明會數位學習APCS檢定(C語言)數位課程Web全端程式設計數位課程資料結構數位課程Python數位課程MCU數位課程Linux驅動程式數位課程更多數位課程補助專班物聯網平臺開發人才養成班更多...企業服務企業內訓服務艾鍗企業VIP會員研發設計服務電腦教室租借服務學員專區學員見證資訊專區廠商求才學員常見問題學員權益與報名須知試聽專區最新成果展學習地圖研討活動前進校園
+
+
+
+ 
+
+     
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+第 1 頁，共 2 頁 
+
+
+
+
+
+
+學程簡介
+課程大綱
+
+
+
+
+現在位置：艾鍗學院＞硬體設計系列課程＞電路設計實作
+
+
+ 
+
+
+課程特色
+
+
+● 培養真正的電路設計工程師，而不是按圖施工的技術員
+本課程請到業界名師「盧老師」，擁有35年教學經驗、12項專利，以獨家研發的電子教學模組進行實作教學，每階段都會帶同學進行實務應用練習，讓你有完整的系統整合概念，最後透過模組化的教學讓你回家後也能自行設計開發產品，練就終身可以自行研發的能力。
+
+●快速學會PCB電路板佈線關鍵技巧
+PCB 被稱為是「電子系統產品之母」，印刷電路板能將電子零組件連接在一起，主要功能是提供上頭各項零件的相互電流連接，因此是所有電子資訊產品不可或缺的基本構成要件。  PCB印刷電路板的版圖設計，會影響其商品穩定性、成本、競爭力的重要因素。 本課程的重點在快速提高設計品質，以一次傳授印刷電路板上佈線的精隨技巧，降低訊號乾擾、佈線漂亮、維修方便…等，讓您快速學會關鍵技術，從菜鳥變高手！
+
+
+師資團隊
+
+
+ 
+
+
+
+
+盧明智 老師 (35年教學經驗，擁有12項專利)
+▪ 國立交通大學電子工程  ▪ 電子公司技術顧問
+▪ 電子系統設計與製作  ▪ 工控電路與感測應用
+▪ 大地監視工程應用設計   ▪ 機器人感應系統(看更多)
+
+
+
+ 
+
+
+
+
+董老師
+▪ 工業技術研究院機電技術顧問
+ ▪ 萬能科大、清雲科大、中國科技大學兼任講師
+ ▪ 數位電子、單晶片微電腦、界面控制、電路板設計
+
+
+
+ 
+
+
+
+獨家研發電子教學模組
+
+
+
+ 
+
+
+課程重點
+
+
+一次傳授PCB印刷電路板上佈線的精隨技巧
+　　● 傳授layout的重要Know how，減少雜訊乾擾等關鍵技巧  　　● 教您電路板佈局如何lay的漂亮，從新手變成layout達人！
+  我想瞭解更多 
+
+
+電路板佈局範例
+ 
+
+● 本課程採用Altium Designer（前身Protel）
+
+
+
+ 
+
+
+ 課程目標
+
+1. 熟悉PCB軟體(Altium Designer)操作  2. 熟悉電路圖繪製 3. 熟悉印刷電路板(PCB)的製作 4. 養成其具備量測被動及主動電子元件的能力及瞭解其特性與規格 5. 使具備熟悉電學各種基本定理與定律的活用技巧 5. 能清楚掌握半導體的原理及其使用方法與技巧 5. 使具備獨立使用電子儀器進行線路量測與除錯檢修的能力 5. 培養具備積木式模組化線路設計的創意運用能力 5. 訓練成具備善用網路資源從事終生自學的習慣與能力 
+
+
+適合對象
+
+
+轉職、就業、社會新鮮人： 只要您對於韌體開發有濃厚興趣，透過本課程完整規劃，可讓您在最短時間下有系統學習， 有效精準掌握此領域關鍵技術，幫您最快獲得進入高科技產業工作機會，為自己創造競爭優勢 已在相關領域： 可以讓您直接應用於現有的工作中，為您晉升之路鍍金，及擁有更高薪資成長與投資報酬率
+
+
+
+延伸學習
+
+
+
+
+學生須知
+
+報名須知 | 繳費方式 | 退費方法
+
+
+職涯方向
+
+ 電子工程師 │ FAE硬體工程師 │ 硬體研發工程師│ PCB Layout 工程師
+
+
+上課花絮
+
+▪ 以自製電子教學模組從事線路分析之個案教學。
+▪ 從底層基礎教起，一路到實務應用課程。
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+12下一篇最後
+
+
+
+
+			
+				立即索取課程資訊			
+
+
+
+
+
+
+
+
+已閱讀個資保護聲明
+電路設計實作班
+  
+
+
+ 電路設計實作班 假日班 開課日期：106/8/12(六) 課程時段：假日上課課程時數：84小時 上課時間：09:30~17:30 早鳥優惠名額僅剩最後3位！
+
+
+
+
+
+
+
+			
+				熱門推薦			
+
+
+
+
+ 
+8/15 ↑ 物聯網韌體工程師養成班 【待業限定，政府補助，名額倒數中】
+
+
+8/12 ↑ 嵌入式Linux開發實務【本班符合政府補助】報名立即送Raspberry Pi 3開發套件組
+
+
+8/12↑MCU+韌體設計實戰班【政府補助】報名送艾鍗獨家研發ARM實驗板+MCU套件包+電子模組
+
+ 
+10/29↑FPGA 數位IC設計實戰   【百萬年薪的第一步】報名送BeMicro CV kit
+
+ 
+8/16↑暑期C語言程式研習營  【7/31前報名，享早鳥優惠！！】好評加開中，額滿為止
+
+ 
+↑物聯網整合應用實作班報名送最新Raspberry Pi 3開發套件包補助今年最後一梯次，剩8位
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+訂閱艾鍗電子報掌握最新課程優惠
+
+ 
+Please enable JavaScript &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+已閱讀個資保護聲明
+電路設計實作班
+  
+
+
+ 
+
+
+
+
+
+最新消息
+
+ 最新公告
+ 近期研討
+ 就業人才培訓計畫
+ 研發實習生計畫
+
+
+
+
+
+
+
+
+關於艾鍗
+
+ 公司簡介
+ 師資簡介
+ 環境設備
+ 會員廠商
+ 活動相簿
+ 交通資訊
+
+
+
+
+
+
+
+
+服務項目
+
+ 教育訓練
+ 職前訓練
+ 企業內訓
+ 數位學習
+ 教室租借
+
+
+
+
+
+
+
+
+社群資源
+
+ 艾鍗 Facebook
+ 艾鍗 YouTube 頻道
+ 艾鍗技術討論區
+ 教學實錄分享
+　　　　　　
+
+
+
+
+
+
+
+
+
+
+學員專區
+
+ 個資保護聲明
+ 學習地圖
+ 學員見證
+ 課程Q&A
+ 學員權益
+ 加入會員
+
+
+
+
+
+
+
+
+
+
+
+
+
+聯絡我們
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+首頁關於艾鍗最新公告公司簡介師資介紹開發板介紹環境設備交通資訊最新職缺艾鍗新聞獲獎與榮耀課程資訊資料科學系列課程大數據分析與機器學習應用工程師養成班Embedded Linux課程[學程] 嵌入式Linux開發實務Linux系統建置實務嵌入式Linux開發實務 Linux系統程式設計Linux驅動程式 ARM Boot Loader設計Linux Socket網路程式設計Linux核心程式介面Raspberry Pi之Python程式設計硬體控制快速打造物聯網Web整合應用班韌體設計系列課程[學程] MCU韌體開發實戰USB韌體設計單晶片韌體開發班生醫感測器整合設計班ARM Cortex-M0 應用整合設計穿戴式裝置應用開發TI MSP430微控制器開發 嵌入式即時作業系統FreeRTOS 設計實作快速打造物聯網Web整合應用班硬體設計系列課程電路設計實作班感測電路設計與應用Allegro/PCB Layout設計FPGA 數位IC設計實戰 H.264視訊編、解碼器系統開發ARM系列課程快速打造物聯網Web整合應用班ARM Boot Loader設計ARM Cortex-M0 應用整合設計Android系列課程[學程] Android APP 實戰開發Android嵌入式平臺開發訓練班 Android FrameworkAndroid ADK周邊裝置開發班程式語言系列課程暑期C語言程式研習營JavaScript程式設計精修班Python程式設計班Java 物件導向程式 資料結構精修班C語言程式設計iOS程式開發系列課程iPhone程式設計基礎班iPhone程式設計進階班德州儀器課程Android嵌入式平臺開發訓練班 TI MSP430微控制器開發 Web及雲端系列課程快速打造物聯網Web整合應用班web全端開發工程師養成班雲端伺服器建置實務Google App Engine 雲端程式開發實務研發經理人才培育班產品應用系列課程生醫感測器整合設計班NFC無線通訊設計實作班快速打造物聯網Web整合應用班轉職就業班醫療電子產品開發人才養成班IoT平臺開發人才養成班 (政府補助)物聯網韌體工程師人才養成班物聯網平臺開發人才養成班(政府+企業雙重補助)課程說明會平日班_課程說明會假日班_課程說明會數位學習APCS檢定(C語言)數位課程Web全端程式設計數位課程資料結構數位課程Python數位課程MCU數位課程Linux驅動程式數位課程更多數位課程補助專班物聯網平臺開發人才養成班更多...企業服務企業內訓服務艾鍗企業VIP會員研發設計服務電腦教室租借服務學員專區學員見證資訊專區廠商求才學員常見問題學員權益與報名須知試聽專區最新成果展學習地圖研討活動前進校園
+
+
+
+
+
+
+系統分析設計與實作—活用 UML/SCRUM 與 Java (2016/03/19, 48Hrs) | www.hsdc.com.tw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+Home
+關於HSDc
+顧問輔導
+產品服務
+教育訓練
+顧問專欄
+文檔下載
+聯絡我們
+English
+  
+
+首頁 ›   
+
+
+
+
+搜尋本站: 
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+系統分析設計與實作—活用 UML/SCRUM 與 Java (2016/03/19, 48Hrs)
+
+
+ in 課程
+
+
+
+
+
+
+
+ 
+
+＊＊ 已確定如期開課 ＊＊
+上課地點：臺北市士林區忠誠路一段179號3樓 (善恩創新股份有限公司)。
+交通地圖 ：捷運芝山站 可轉乘公車＞220、606、616、685。
+
+＊＊　所有程式碼 & UML Model，均以開源 (open-source)方式放置於 Git-Hub 供學員免費下載與持續更新。　＊＊
+要達成有效的系統分析與設計，強調的是「敏捷 (Agile)、務實性的設計，以及可具重構的程式碼框架」：
+　o 符合 Agile/SCRUM 的敏捷快速開發精神，快速從分析導出到實作，實踐 I&I (漸增與循環)精髓。
+　o 界定功能需求，建立 MVC 程式碼框架，打通從 UI->中間層->資料庫的管道。
+　o 強調實作的設計，應用 Enterprise Solution，建立從 Web → POJ(C)O → 資料庫的系統實作。
+　o 利用實作案例，演練如何重構程式碼，並列舉重構的判斷原則與主要技巧。
+
+
+
+
+
+報名資訊課程介紹課程大綱報名資訊§上課日期：
+　o 日期：2016/03/19 起，每週六白天。
+　　每次上課為六個小時 (AM 9:30~PM 4:30)，共八個星期。
+　o 預定上課日期：03/19, 03/26, 04/09, 04/16, 04/23, 04/30, 05/07, 05/14
+　　(4/2 適逢清明掃墓連假，延期乙週。)
+　o 上課地點：上課前一週以電郵/電話通知學員。
+§課程費用：
+　o 特價優惠：NT$ 16,800, 含稅。舊生或三人同行再折扣為: NT$ 15,100。
+　o 大學/研究所 資訊相關科系講師、助教或教授，出示相關證明，我們會以建教合作方式計費。(請另以電話聯絡)
+　o 清貧或由家扶中心推薦，請出示相關證明，所有費用 免費！！
+§備註：
+　o 教室設備包括白板與投影機，由講師親自說明與操作示範。(學員可攜帶錄音筆)
+　o 學員最好能攜帶 Notebook(可無線上網)，可以於課程中實際操作與練習。
+　o 上過本課程(.NET/Java 均可)學員，仍可免費旁聽本課程。(每次保留 5 名學員名額。)
+　o 若未達上課人數(原則以15人以上)則延期至下一梯次開課，已報名學員，本中心會電話通知，並主動辦理退費(或可保留至下一梯次)。
+　o 開課前一週會以電子郵件聯絡與通知學員。
+　o 遇國定假日或颱風等因素，則延至下一週上課日(本中心會主動通知學員)，以此類推。
+　＊＊＊＊＊＊
+　o 為確保報名足額人數，煩請先以 ATM 轉帳預約費用($1000，當然也可一次繳清)。
+　　並請於報名錶備註欄位內，註明您的轉帳帳號末 5 碼與轉帳金額。
+　　(若實在不及轉帳者，仍可現場報名，但請在報名錶內註明現場繳費)。
+　o ATM 轉帳帳號： 新光銀行 (103)　帳號： 0772-50-100979-9 
+--------------------------------------------------------------------------------
+§課程諮詢(HSDc. 軟體設計專業顧問團隊)：
+　o 諮詢專線：TEL: 02-27227179
+　o 服務信箱：service.hsdc@gmail.com
+　o http://www.hsdc.com.tw
+Signups closed for this Course
+7 individuals signed up 
+
+alvinwang 
+LuciaHo 
+Bill Lin 
+kingchang 
+gan068 
+2 anonymous 
+
+
+課程介紹關於課程介紹的相關資訊。
+
+
+HSDc.  顧問開發團隊綜合多年來的大型系統實務輔導與開發經驗，並結合大量研究的理論知識與平臺技術，所推出關於完整的系統分析、設計至實作的課程，期能協助軟體開發人員在現實的工作中，能瞭解完整的開發流程與各個角色的工作執掌與產出。
+在基於以架構為中心來建立團隊具共識的整體觀下，能聚焦在適切開發單位的功能點內，快速地從需求分析導出到實作，找出並剋服開發過程中，包括溝通、技能與技術等風險因子。而後基於這樣的框架目標內，得以對系統的結構作重整，卻又不至於影響已有的功能前提下，得以對程式碼施以重構的技巧，讓系統更有延展度與彈性。
+觀念的傳授、設計的圖形化塑模表達、程式碼的實作三層次，是我們對於系統分析設計與實作課程的基本原則與態度。
+修習本次系統分析的學員們，也必然可以拿到完整的教材、完整案例的 Model 檔與實作程式碼的對應，帶回去自行練習，並能對映於工作上，如此才會有顯著且實質的效益。
+HSDc. 軟體團隊，強調的是「虛」與「實」兩者調和的『知行合一』．．．。
+
+
+
+課程大綱關於課程大綱的資訊。
+
+
+o 第一階段課程目標 (24 Hrs)：
+　o 有效組織與整理系統功能需求
+　o 快速設計、建立系統 MVC (Model-View-Control)框架
+　o 產出程式碼骨幹，打通從 UI-中間層-資料庫 管道。
+一、方法論－開發流程與UML塑模 (6 hrs)
+　o 敏捷式的開發流程
+　　o 介紹 Agile/SCRUM 核心原則與開發方法。
+　　o 比較 瀑布式 vs. I&I (Increment & Iteration)的開發模式
+　　o 專案開發各階段(SA/SD/Coding)的主要產出(artifacts)範本
+　　o 軟體開發的最佳實務 (Best Practices)導引
+　o 軟體塑模 - 統一塑模語言(UML, Unified Modeling Language)的綜觀介紹
+　　o 利用完整案例導引 UML 的十三種圖形 (Overview)
+　　o 說明 需求面/結構面/實作面 等三大構面的設計圖
+　　o UML 工具的示範操作
+　　o 完整 UML Model 範本 (附於課程操作光碟內)
+二、需求面的系統功能分析與設計 (12 hrs)
+　o 分析何謂企業流程與系統功能
+　　o 利用火箭圖/活動圖記錄企業流程
+　　o 利用使用案例圖捕捉系統功能
+　　o 從企業流程的活動圖導出到使用案例圖的步驟
+　o 建構使用案例模型
+　　o 利用使用案例圖表達系統的功能需求
+　　　o 如何界定系統範圍 (System Boundary)
+　　　o 如何找出使用案例與參與者(Actor)
+　　　o 使用案例之間的關係— include and extend
+　　　o 利用使用案例圖表達架構觀點
+　　o 使用案例敘述 (Description)的寫作實務
+　　　o 如何寫出高品質的使用案例敘述
+　　　o 如何依據使用案例範本完成使用案例敘述的撰寫
+　　　o 如何表達正常、替代、擴充與例外事件流程的敘述
+　　　o 寫好每一條動作步驟陳述的要領
+　　o 使用案例的重點補充
+　　　o 針對每一個使用案例，撰寫測試案例 (Test Case)
+　　　o 利用 EA "Document Generation" 機制產出高品質的需求報表文件
+　　　o 使用案例與 SCRUM 的實現關係
+　　　　o 如何定義 Sprint Backlog，並對應至 Use Case
+　　　　o 如何分解 System Backlog，並對應至 Use Case Scenario 
+三、案例分析與實作 #1 (6 hrs) by UML 三劍客
+　o 說明三劍客的應用時機－ 使用案例模型、類別圖、物件合作循序圖
+　o 使用案例的實現(Realization)與實作
+　　o 軟體開發的至高原則－MVC (Model-View-Control)設計樣式
+　　o 利用類別圖設計與創建 Use Case 控制物件，實現使用案例的功能需求
+　　o 利用循序圖表達程式碼物件的互動設計
+　o 利用 EA UML 工具
+　　o 實做使用案例模型(Use Case Model)、類別圖、循序圖
+　　o 利用 Code-Generator 機制，產出 Java 程式碼框架
+　o 設計控制 (Control)物件，實現使用案例所分析的功能需求
+　　o 規劃 Value Object，成為 UI 與控制物件 間的參數傳遞型別
+　　o 利用虛擬碼(Pseudo Code)撰寫程式碼內部的細節
+　o 利用 Java Eclipse IDE 撰寫
+　　o Java Spring Web MVC 表單
+　　o Java 控制(Control) 物件 by POJO
+　　o 實現 資料傳遞物件 (DTO, Data Tranfser Object) by POJO
+　　o Java 資料存取物件(DAO) by JPA with Hibernate
+　o 利用 JUnit 撰寫單元測試程式碼
+　　o 測試先行—在 IDE 工具內撰寫該控制物件的測試程式碼
+　o 應用程式的部署(Deploy) - Apache Tomcat & Derby DB.
+　　o 實際執行應用程式碼的部署與執行功能測試
+--------------------------------------------------------------------
+o 第二階段課程目標 (24 Hrs)：
+　o 系統延展、彈性、可重用性的設計原則
+　o 如何重構程式碼 (類別結構)
+　o 物件與設計樣式 (Design Pattern)的基礎觀念
+一、物件導向觀念養成與應用 (6 hrs)
+　　— 觀念、UML 模型與 Java 程式碼的三面向呈現
+　o 介紹「概念(concept)」與「抽象(abstraction)」的觀念
+　o 瞭解「類別(class)」與「物件(object)」的區別與關係
+　　o 結合(association)、組合(aggregiation) 關係
+　　o 一般-特殊化(generalize-specialize)關係
+　o 封裝(encapsulation)與多型(polymorphism)的設計觀與應用
+　o 繼承(Inheritence)與介面(Interface)」的設計原理
+　o 程式碼範例—
+　　o 利用 Java 程式碼表達類別的結構關係(結合,組合,一般-特殊化)
+　　o 利用 Java 程式碼呈現介面與多型的設計實作
+二、軟體結構面的分析與設計 (9 hrs)
+　o 建構領域 (Domain)至物件模型的技巧與方法
+　　o 從使用案例的敘述中找出潛在的概念物件。
+　　o 運用交易樣式(Transaction Patterns)找出核心交易物件
+　o 資料庫表格的設計
+　　o E-R (Entity-Relationship) Model 的分析與設計
+　　o 利用 EA UML 工具設計 E-R 圖，並轉為可以匯入資料庫的 DDL SQL 敘述檔
+　o 實體 (Entity)物件的設計
+　　o 物件的責任分派(responsibility assign) — 屬性與行為的分析
+　　o 利用類別圖建構問題領域的物件模型 (Problem Domain Object Model)
+　o 結構重整&程式碼重構的設計原則
+　　o 分析程式碼冗長的 method，撰寫 Clean Code
+　　o 找出程式碼重複多餘 (redundant)的部分，設計共用物件
+　　o 確實釐清物件的責任分派 (Responsibility Assign)
+三、案例分析與實作 #1 (6 hrs)
+　o 分析類別在中間層 (Middleware)的實現
+　　o 實現 Controller by POJO (pure Java object)
+　　o 實現 O-R Mapping by Spring Framework
+　　o 萃取 (eXtract)與實作共用型的企業邏輯物件
+　o 利用 Eclipse 重構程式碼結構
+　　o 利用 EA 更新類別與E-R圖，並重新部署 DDL DB Schema 至 Database
+　　o 利用 EA 實現正反向工程，達成程式碼與 Model 的同步
+　　o 利用 Iteration #1 所撰寫的測試碼驗證與修正被重構的程式碼
+--------------------------------------------------------------------
+§ 整體開發流程總複習
+　o 檢視兩個階段的開發所產出的設計圖與程式碼
+　o 回顧每一個流程開發階段的產出與所運用的設計、技術與技能
+　o 學員課程中的問題提問與回答總整理
+
+
+
+
+分類：
+  	課程 
+如果想要發表回應，請先登入 或 註冊。
+
+ 
+
+ 
+
+
+使用者登入
+
+
+
+Log in using OpenID: 
+
+What is OpenID?
+
+
+使用者名稱: *
+
+
+
+密碼: *
+
+
+
+
+
+
+Log in using OpenID
+Cancel OpenID login
+註冊新帳號
+索取新密碼
+
+
+
+ 
+
+企業包班課程系列
+
+
+歡迎直接詢報價，或規劃為貴單位量身打造之客製化課程(含內容、時數)!
+
+
+編號
+
+課程單元建議
+
+建議Hrs
+
+
+HOT
+
+系統分析設計與實作—活用 UML/SCRUM 與 JAVA
+
+
+
+48
+
+
+HOT
+
+系統分析設計與實作—活用 UML/SCRUM 與 C#
+
+
+
+48
+
+
+01
+
+EA(Enterprise Architect)工具使用基礎教學
+
+
+18
+
+
+02
+
+UML 2.4 觀念引導與實務操作入門
+
+
+18
+
+
+03
+
+UML團隊開發流程與管理
+
+
+36
+
+
+04
+
+程式碼與循序圖的關係與HSDc Sequence Plugin
+
+
+6
+
+
+05
+
+利用 EA/UML 工具設計企業架構框架 UPDM/DoDAF 產出物與實例演練
+
+
+54
+
+
+06
+
+使用案例寫作實務一日遊
+
+
+6
+
+
+07
+
+系統分析設計與實作—活用 UML 塑模 與 Java
+
+
+54
+
+
+08
+
+系統分析設計與實作—活用 UML 塑模 與  C#.NET
+
+
+54
+
+
+09
+
+專案開發實務操作－微型系統開發與產出 by C#.NET 
+
+
+18
+
+
+10
+
+七步驟寫好 Java 自動化測試 
+
+
+18
+
+
+11
+
+自動化測試 by C# 實作演練
+
+
+6
+
+
+12
+
+Workflow Plugin EA客製化教學
+
+
+18
+
+
+13
+
+利用 EA/UML 工具建構企業流程模式(BPM/UML/WfMC)-原理與實作
+
+
+24
+
+
+14
+
+利用 EA/SOML 塑模工具建構雲端計算(Cloud Computing)分析設計-原理與實作[Opening soon!]
+
+
+36
+
+
+
+
+ 
+ 
+
+
+HSDc Sequence Plugin
+
+原始程式碼診斷掃描器--程式碼品質檢驗最佳利器！
+
+
+
+
+
+
+Sale Price:US $99 (Detail...)
+Get it from CNET Download.com
+
+
+
+
+
+
+
+
+
+
+ 
+
+HSDc RingleFlow - Workflow Engine
+
+符合WfMC工作流程引擎!免費! 利用EA繪製工作流程直接設到工作流程引擎。 (馬上前往)
+
+
+ 
+ 
+ 
+
+信仁軟體設計有限公司 (HSDc Corporation, High-quality Software Desgin Center)
+TEL(02)2722-7179　Email: service@hsdc.com.tw
+ 
+ 
+
+
+
+﻿﻿
+
+
+
+
+
+
+
+
+國立交通大學開放式課程(OpenCourseWare, OCW)
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 交大首頁  |  聯絡我們  |  網站導覽  |  常見問答  |  相關連結  |  English 
+
+
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+            作業系統設計與實作 Operating System Design and Implementation (OSDI)  -  L2 Getting started with kernel and kernel debugging (全)          
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+週次
+ 章節
+ 影音格式
+
+
+
+ L2 Getting started with kernel and kernel debugging (全)
+ 
+ 
+
+
+
+ L2 Getting started with kernel and kernel debugging (1/5)
+ 
+ 
+
+
+
+ L2 Getting started with kernel and kernel debugging (2/5)
+ 
+ 
+
+
+
+ L2 Getting started with kernel and kernel debugging (3/5)
+ 
+ 
+
+
+
+ L2 Getting started with kernel and kernel debugging (4/5)
+ 
+ 
+
+
+
+ L2 Getting started with kernel and kernel debugging (5/5)
+ 
+ 
+
+
+
+ L3 Booting process (全)
+ 
+ 
+
+
+
+ L3 Booting process (1/3)
+ 
+ 
+
+
+
+ L3 Booting process (2/3)
+ 
+ 
+
+
+
+ L3 Booting process (3/3)
+ 
+ 
+
+
+
+ L4 Process Management – Part I (全)
+ 
+ 
+
+
+
+ L4 Process Management – Part I (1/3)
+ 
+ 
+
+
+
+ L4 Process Management – Part I (2/3)
+ 
+ 
+
+
+
+ L4 Process Management – Part I (3/3)
+ 
+ 
+
+
+
+ L5 Process Management – Part II (全)
+ 
+ 
+
+
+
+ L5 Process Management – Part II (1/3)
+ 
+ 
+
+
+
+ L5 Process Management – Part II (2/3)
+ 
+ 
+
+
+
+ L5 Process Management – Part II (3/3)
+ 
+ 
+
+
+
+ L6 Memory Management – Part I (全)
+ 
+ 
+
+
+
+ L6 Memory Management – Part I (1/3)
+ 
+ 
+
+
+
+ L6 Memory Management – Part I (2/3)
+ 
+ 
+
+
+
+ L6 Memory Management – Part I  (3/3)
+ 
+ 
+
+
+
+ L7 Memory Management – Part II (全)
+ 
+ 
+
+
+
+ L7 Memory Management – Part II (1/3)
+ 
+ 
+
+
+
+ L7 Memory Management – Part II (2/3)
+ 
+ 
+
+
+
+ L7 Memory Management – Part II (3/3)
+ 
+ 
+
+
+
+ L8 Memory Management – Part III (全)
+ 
+ 
+
+
+
+ L8 Memory Management – Part III (1/3)
+ 
+ 
+
+
+
+ L8 Memory Management – Part III (2/3)
+ 
+ 
+
+
+
+ L8 Memory Management – Part III (3/3)
+ 
+ 
+
+
+
+ L9 Kernel Synchronization (全)
+ 
+ 
+
+
+
+ L9 Kernel Synchronization (1/3)
+ 
+ 
+
+
+
+ L9 Kernel Synchronization (2/3)
+ 
+ 
+
+
+
+ L9 Kernel Synchronization (3/3)
+ 
+ 
+
+
+
+ L10 Interrupt and Interrupt Handling - Part I
+ 
+ 
+
+
+
+ L10 Interrupt and Interrupt Handling - Part I (1/2)
+ 
+ 
+
+
+
+ L10 Interrupt and Interrupt Handling - Part I (2/2)
+ 
+ 
+
+
+
+ L10 Interrupt and Interrupt Handling - Part II (全)
+ 
+ 
+
+
+
+ L10 Interrupt and Interrupt Handling - Part II (1/3)
+ 
+ 
+
+
+
+ L10 Interrupt and Interrupt Handling - Part II (2/3)
+ 
+ 
+
+
+
+ L10 Interrupt and Interrupt Handling - Part II (3/3)
+ 
+ 
+
+
+
+ L11 Filesystem and Block I/O (全)
+ 
+ 
+
+
+
+ L11 Filesystem and Block I/O (1/3)
+ 
+ 
+
+
+
+ L11 Filesystem and Block I/O (2/3)
+ 
+ 
+
+
+
+ L11 Filesystem and Block I/O (3/3)
+ 
+ 
+
+
+
+ L12 Network Protocol and NIC Driver (全)
+ 
+ 
+
+
+
+ L12 Network Protocol and NIC Driver (1/3)
+ 
+ 
+
+
+
+ L12 Network Protocol and NIC Driver (2/3)
+ 
+ 
+
+
+
+ L12 Network Protocol and NIC Driver (3/3)
+ 
+ 
+
+
+
+
+
+
+
+
+
+請提供任何對本課程之意見，作為後續改進之參考。
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+課程首頁
+
+
+課程影音
+
+
+課程講義
+
+
+ 
+                  課程綱要                  
+
+
+ 
+                  課程行事曆                  
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+所有課程
+
+
+
+
+ 
+                  理學院                   
+
+
+
+
+ 
+                  工學院                   
+
+
+
+
+ 
+                  電機學院                   
+
+
+
+
+ 
+                  管理學院                   
+
+
+
+
+ 
+                  資訊學院                   
+
+
+
+
+ 
+                  生物科技學院                   
+
+
+
+
+ 
+                  人文社會學院                   
+
+
+
+
+ 
+                  客家文化學院                   
+
+
+
+
+ 
+                  通識課程                   
+
+
+
+
+ 
+                  華語中心                   
+
+
+
+
+ 
+                  經典通識教育講座                  
+
+
+
+
+ 
+                  經典名著選讀                   
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+本網站內容僅供學術使用，嚴禁任何商業行為。
+Copyright © 2006-2015 National Chiao Tung University. All rights reserved.　 
+諮詢單位：交通大學開放教育推動中心(OEO)/理學院 E-learning推動小組　E-Mail：nctuocw@gmail.com
+諮詢專線：03-5712121轉56072
+
+
+
+
+
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+實作評量的設計原則與應用 | WikiTeamWork | FANDOM powered by Wikia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FANDOM
+
+
+
+
+
+
+  
+
+
+	社區中心
+
+
+
+ 
+
+
+ 
+
+ 
+
+
+
+
+
+ 我的帳戶
+ 
+
+
+
+
+		登入	
+
+ 
+		沒有帳戶？	
+
+		註冊	
+
+
+
+
+
+
+創建維基
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+廣告
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WikiTeamWork
+
+
+870
+個頁面
+
+
+
+ 增加新頁面
+
+
+
+
+
+
+
+
+
+
+
+實作評量的設計原則與應用
+
+
+ 
+
+
+
+
+ 編輯
+
+
+
+ 
+
+
+
+
+							傳統編輯器						
+
+
+
+							歷史記錄						
+
+
+
+							對話頁(0)						
+
+
+
+
+
+
+ 分享
+
+
+
+
+
+
+
+
+
+
+實作評量（performance assessment）從1980年代，由專業領域轉至教室評量領域開始，至今已成為教育評量的另類主流。影響實作評量發展的因素大致來自對標準化測驗的批判、對學習與思考的認知研究、對專家與生手的研究以及認知科學與電腦科技的發展等。科技整合的趨勢使評量可以更多元化、更深入化，就不需侷限於容易施測與評分的評量方式。
+(AEL092222林青蓉)
+
+
+實作評量的性質編輯
+實作評量是介於評量認知能力和在真實情境中應用能力兩者之間，在模擬各種不同真實程度的測驗情境之下，提供教師一種有系統的評量學生實作表現的方法。例如，自然課程比較重視學生在實驗室的操作技能、數學課程比較重視學生的演算及實際問題解決技能、語言課程比較重視學生的口語表達技能等，這些實作表現技能都是典型的客觀式和論文式測驗所無法測量出的，在這種情境下，唯有實作評量才可以提供直接測量上述學習成果的有用訊息。
+所以在專門評量知識與理解的客觀式紙筆測驗之外，實作評量提供另一種有用的輔助評量方式，這種在真實的教育情境下進行的評量，其最大的好處是，除了可以改變教學和評量，進而促進改善教育外，更可以各種方法增進學生、教師及家庭所應扮演的角色。
+表1所示，即為各種評量方式的比較。(餘民寧,2002,457-460)
+
+
+ 表1 各種評量方式的比較
+
+ 客觀測驗論文測驗口試實作評量
+
+
+目標知識樣本，具有最大的有效性和信度值評量思考技能或知識結構的精熟度評量教學中的知識評量將知識和理解轉換成行動的能力
+
+
+學生的反應閱讀、評鑑、選擇組織、寫作口頭回答計畫、建構和傳送原始的反應
+
+
+優點有效－能同一時間內進行多個測驗試題的施測可以評量較複雜的認知成果可以連結評量與教學提供實作技能充分的證據
+
+
+對學習的影響過度強調記憶；如果妥善編製，亦可測量到思考技能激勵思考和寫作技能的發展刺激學生參與教學，提供教師有關教學成效的立即回饋強調在相關的問題背景情境下，使用現成技能和知識
+
+資料來源：餘民寧,2002,458；Stiggins,1987,35
+一般以為實作評量必定是要學生實際操作，事實上，實際操作只是學生學習的表現形式之ㄧ，也並非動手操作就是實作評量的形式。實作強調個人「表現」（performance）的意義，實作的精熟通常可表現在完成一篇散文、一項設計工作或社會大眾有興趣的方案上。實際操作以及各種形式的表現方式，如學生筆記、電腦虛擬形式、自由申論題與新形式的選擇題，若能測得學生應用知識來表現精熟的能力，不論是評量知識的組織、解題時的策略或監控表現的能力，都可以稱之為實作評量或表現本位評量。
+綜合上述，所謂「實作評量」，就是在自然或已建構好的情境中，具有評量專業的教師，要求學生執行或處理一項指定的工作（task），讓學生表現所知、所能的學習結果，並由教師觀察與評鑑學生的建構性反應過程與結果，看他們是否適當、精確和完美地達成教學目標。簡單地說，實作評量就是一種直接判斷表現的評量。由此可知，實作評量不是在測量基本的、機械的心理動作能力，例如體育科的基本體能測驗，而是在測量結合知識與複雜動作協調的技能領域。「實作」可以用口語表達方式進行，例如演講、戲劇、角色扮演等；或者以紙筆完成建構式作業，例如編擬計畫、建造模型、繪製圖表等；也可以是操作工具或設備（電腦、樂器、打字機）等。
+(AEL092222林青蓉)
+
+實作評量的類型編輯
+紙筆表現編輯
+紙筆表現有別於傳統所使用的紙筆測驗，它更強調在模擬情境中應用知識與技能。這種紙筆評量方式的應用可能是最後學習成果的展現，例如在測驗編制的課程裡實際設計一份雙向細目表，並據以編一份試捲；也作為動手操作前的初步評量，例如要求學生寫出檢查和啟動機器的安全步驟。
+在紙筆表現測驗中，時常使用類似「設計」、「編製」、「擬定」、「創造」、「撰寫」等行為動詞，例如設計一份海報、擬定活動流程等。紙筆表現測驗的施測方式是團體的、紙上的，所以具有經濟與安全的價值。
+
+辨認測驗編輯
+是指以實物作為刺激，但所要求的反應仍是語文反應（紙筆或口頭），而不要求學生實際去操作。例如在某種情境下，可能只要求學生辨認一套工具或一組器具，並指名它們的功用而已；或比較複雜的，教師操作一輛故障的汽車給學生看和聽，要求他們指出最可能故障的部分，並說出應採取的檢查步驟及所需用到的工具。
+雖然，辨認測驗在工業教育中較被廣泛使用，但它的用途並不限於該領域而已。例如，化學系的學生需要去辨認各種化學物質和儀器設備、外語系學生需要去辨認正確的發音等。因此辨認測驗在認知層次上，不只是可以測量知識的層次，也可以測量到分析、評鑑的層次。
+
+結構化表現測驗編輯
+此評量係要求學生在標準且控制下的情境完成實作作業，測驗情境的結構性甚高，它要求每位學生都能表現出相同的反應動作。這種測驗和摽準化測驗一樣，特別強調施測和計分過程的一致性和公平性，所以在儀器設備、材料、時間、要求的實作上都有一致的規定，而在計分上，通常根據多個標準來評定，例如成品精確性、實作步驟的適當性、工作速度、符合規定的程度。
+當使用結構化表現測驗時，也許需要設定可被接收的最低表現水準是什麼，它可能是有關測量的精確性（如：測量氣溫，精確到小數點以下第二位）、適當的步驟和順序（如：依據適當的步驟順序，調整一部顯微鏡到理想的位置）或表現的速度（如：在三分鐘內找出一部電器發生故障的部位）等。但不論採用何種標準作為判斷表現良窳的依據，都必須使用操作行定義，以可被觀察到的、測量到的及可被量化的數字形式，來加以描述和界定可被接受的最低表現水準，如此的評量結果才會具有客觀性和公正性。
+
+模擬表現編輯
+模擬表現即為配合或替代真實情境中的表現，局部或全部模擬真實情境而設立的一種評量方式。例如，在體育課程中，針對一個假想的球練習揮棒與一位假想選手模擬拳擊對打；在社會科學課程中，學生角色扮演法庭審判、市政會議的進行等都是一種模擬表現。
+模擬表現在學校的應用很廣，例如，輔導教師以角色扮演方式幫助畢業學生演練就業晤談的能力；也適合用來檢驗各種災變因應計畫的效能，並同時訓練相關人員應變的能力，例如舉行消防演習、防震演習等。
+
+工作範本編輯
+在實作評量的各種類型中，工作樣本算是真實性程度最高的一種評量方式，它需要學生在實際作業上，表現出所要測量的全部真實技能。工作樣本通常取自真正工作中較重要的部分，而把較不重要的或有危險性的部分去除掉了。例如，在模擬道路的標準場地裡進行駕駛執照的路考。
+在商業及工業教育中的實作評量，也都常使用工作樣本的評量方式，例如，要求學生速記一段口述資料、打一封商業書信或操作電腦分析一份商業資料等。工商企業界在僱用新進人員時常採用「試用制度」，分派新人做一些簡單的工作，實際上就是以工作樣本法來進行評量。
+另外，在甄選某類（如製圖、美工、攝影）新進人員時，要求應徵者提出個人作品專輯，以展示個人能力與成就，也是一種以工作樣本為評量的方法。
+(AEL092222林青蓉)
+
+實作評量的設計原則編輯
+確立實作評量的目的(曾毓敏)編輯
+確認實作評量的標準(曾毓敏)編輯
+提供適當的表現情境(曾毓敏)編輯
+選擇計分和評分方法編輯
+系統觀察與軼事記錄(曾毓敏)編輯
+檢核表(林彥如)編輯
+檢核表為分析式評定法其中的一種。係把要觀察的行為或作品先分解成幾個要素，列成一清單，然後逐一作判斷，最後再合計總分。而檢核表即是一組列出表現或成果的測量向度，並且提供簡單記錄「是」或「否」判斷的資料表。適用於當作品或動作可以細分為一系列明確且具體的要素，而這些要素又可以作二分法判斷（是或否、有或無、合格或不合格）。
+例如，如果要使用檢核表來評量一組過程時，只要依序列出這些評核向度，然後，由觀察者逐一核對每個被觀察的表現項目是否發生或出現即可。若該表現行為已出現或發生時，則觀察者只要在檢核表前的適當空格中打個「ˇ」號，以作個評核紀錄即可。若該表現行為未曾出現或發生時，則觀察者便不需要留下任何記號，直接跳至下一個觀察項目，繼續評核下去即可。
+另外，進行觀察判斷時，評分者常會加上一些說明來支持他的判斷，或寫一些他觀察到的重要事件，所以在每一個項目之後留有空白，或在表格右邊留有較大的空間，將很有幫助。
+一份用來評量成果的檢核表，一般都包括兩個部分：（1）條列出描述該優良表現成果的重要向度（如：大小、顏色、形狀等），（2）根據評量特性的結果，提供打「ˇ」或作任何記號（如：劃記「×」）的空白處。因此，檢核表只是引導評量的註意力到所要觀察的向度上，並且提供一種方便作判斷記錄的工具。
+檢核表通常可以提供教師有關學生行為的診斷訊息，讓教師明瞭學生有哪些行為或學習是需要改進的地方，累積一段時日的檢核表資料，可以看出學生學習進步的情形，以及提供跨班、跨校、及跨年度進行比較的參考資料。但是，檢核表亦有其使用上的兩大限制。
+
+1、檢核表只提供教師兩種選擇：「是」或「否」兩者。而實際上，學生有許多知識或行為的學習，是介於這兩個極端之間的，並非「全有或全無」兩種絕然的狀態。因此，當教師使用檢核表強迫二分法的選擇時，所收集到的資料可能會喪失對某部分行為描述的精確訊息。
+2、評量結果很難以一個總分來表示。也就是說，檢核表評量的結果是一種質化的資料，而非量化的資料。若要進行量化，且以一個客觀的總分來代表時，則教師必須先計算檢核表中打勾的記號數目，再將其除以全部的檢核表評量結果的量化指標。
+
+另一作法，則是由教師事先設定評定學生表現行為的標準。例如：【見附錄】
+
+《卓越》：如果評定結果達到10至12項表現標準。
+《優良》：如果評定結果達到7至9項表現標準。
+《普通》：如果評定結果達到4至6項表現標準。
+《低劣》：如果評定結果達到1至3項表現標準。
+
+
+如此教師便可以將評定學生後的資料，轉化成上述的等第或等級指標，並以相對地位量數的觀點，來解釋和描述學生表現行為的好壞。這是另一種以量化分數來評定學生表現的作法。
+要設計一份作為實做評量用的檢核表，通常包括下列步驟：
+
+條列出所要進行評量的每一項過程或成果特質。
+增列一些常見的錯誤到該檢核表裡，它對較差表現的診斷很有幫助。
+以某種邏輯順序排列這些列舉項目（例如：步驟的排列順序）。
+提供評分指導語和勾選每個檢查項目的地方。
+如果需要的話，可以在檢核表底部留些空白處，供作書面文字評論之用。
+
+評定量表(林彥如)編輯
+評定量表類似檢核表，都是用來作為判斷過程和成果的一種評量工具。其間的主要差異是，評定量表不像檢核表一樣，僅提供「是」或「否」等簡單的二分髮判斷而已，它反而是提供評定某種表現出現程度多寡的機會，它所評量的表現行為特質通常都是隸屬於等距量尺（interval scale）以上的連續性變項資料，但可被人為方式分成少數幾個等分或等級者。例如，有名的李克特氏五點評定量表，即是將評定量表所使用的評定等級分成五個固定的數字評定選項，然後要求評量者依據所評定特質的隸屬程度，在適當的數字評定選像上勾選作答。
+當然，評定量表不一定限制只能使用個固定的評定選項而已，使用其他數目的評定選項也可以，通常，使用最多的評定選項數目約在三至七個之間。就如同檢核表一樣，評定量表也只是引導評量的註意力到所要觀察的向度上，並且提供一種方便作判斷記錄的工具而已。
+評定量表依據所使用的目的和量尺類型的不同，可以分成三類：
+
+1、數字型評定量表（numerical rating scale）
+即依據學生在某種行為上出現頻率次數（如：總是、偶爾、從未等），圈選足以代表該表現程度的適當數字（如：5、3、1等）的一種評量工具。
+
+2、圖表型評定量表（graphic rating scale）
+即依據學生在某種表現上的一般品質（如：傑出、優秀、普通、低下、劣等），在一條用來表示該種特質或品質的連續線上（但可分成幾個小線段）
+
+3、描述型評定量表（descriptive rating scale）
+又稱作評分規準，即使用簡短的描述語句（如：快速完成作品、緩慢完成作品、沒有幫助無法完成作品等），來評定學生在實際表現中可被接受的最低表現水準的一種評量工具。在每個試題或每組試題後面，也可以預留一些空間供作書面文字評論之用，以補充說明評定的意義獲描述如何改善表現的建議。
+
+另外，若使用描述型評定量表的評量結果，而要進行量劃分數的報告時，也可以仿同檢核表量化成等級分數一樣，先由教師事先設定評定結果的表現標準，例如：
+
+「卓越」：面對聽眾，穩穩地站著，並且保持目光接觸。
+「優良」：偶爾面對聽眾，直直地站著，時而保持目光接觸。
+「普通」：目光游移不定，稍微目光接觸，表情與聲調不一致。
+「低劣」：不安地走動，沒有目光接觸，聲音單調，面無表情。
+
+然後將評定學生後的資料加總起來，轉化成等地或等級分數，並對照上述的描述用詞，來加以解釋學生表現行為的好壞。這亦是一種將直化資料轉化成量化資料的解釋方法。
+要設計一份作為實作評量用的評定量表，通常包括下列步驟：
+
+條列出所要進行評量的每一道過程或成果特質。
+選擇所要使用的量表類型及評定點數，並且以描述語句或片語來界定它們。
+在評定量表上依序排列試題，以方便使用。
+提供清楚、簡短的評分說明，以告知如何在量尺上評定每道試題。
+如果為了診斷或教學的緣故，尚須提供可供作書面文字評論的空白處。
+
+作品量表編輯
+作品量表的格式與評定量表相類似，內容包括一系列足以反映出各種不同品質程度的範本作品，例如，在判斷書法字跡的美醜與工整性時，我們也許會挑選五份書法字跡品質在「卓越-低劣」的連續量尺上大約等距的作品範本，然後依序在每份作品範本上標記數字（如：5、4、3、2、1），數字越大即代表書法字跡的品質越美、越工整，數字越小即代表書法字跡的品質越醜、越潦草，這種量尺表示法即為作品量表。
+接著，將每位學生的書法作品字跡依序與這五種範本作對照，看看每位學生的字跡符合哪一種範本，即得該範本代號的分數，該分數即用來表示書法字跡的美醜與工整程度的數值。例如，某生的書法作品字跡接近3號範本，他的得分就為3分。
+同樣的，作品量表也可以應用到諸如：繪畫、模型、木工、烹飪等領域。當某種作品的品質很難以一組特徵來下定義，但使用整體的判斷法還算可行時（如：藝術品的鑑賞），使用這種作品量表的評定方法特別有用。
+要發展一套作為實做評量用的作品量表，通常必須遵守下列步驟：
+
+挑選三至七種不同品質程度的作品範本。
+依序（即依據某種評量標準）排列這些範本，並給予標上號碼，號碼越大，及代表該作品的品質越高。
+將學生的作品依序與該作品量表相對照，找出與範本相似或相同者，並給予該範本所標記的號碼分數，以作為該學生作品的品質得分。
+
+(林彥如)
+
+檔案評量編輯
+通常使用系統觀察及檢核表、評定量表、及作品量表等方法，所蒐集的實作評量資料，多半是一次僅針對一件表現行為事件來進行的。如果教師想要蒐集到更多足以代表學生典型行為的表現樣本的話，也許可以借用檔案的蒐集工作，來當作一種實作評量方式使用。例如，學生的寫作檔案可以用來評量他們的寫作技能，繪畫方面的檔案可以用來評量他們的美術技能，便是一例。 
+在某些情況下，所有教室內表現成果的檔案，都可以被當程式一個整體來加以組織和運用。因此所謂的檔案，即是泛指用以顯示學生在一個或數個領域內，有關學習成就或持續進步訊息的一連串表現、作品、評量結果、和其他有關學習成長紀錄等資料的匯集，不光只是收集學生作品的檔案夾而已，而是更具意義地收集學生邁向重要課程目標之成長與發展方面的相關作品樣本，整個檔案從內容的放入、標準的選擇、和評分標準的決定，都有學生參與其中，並且還包括更重要的學生自我反省的證據。
+近年來，由於這種檔案評量方式具有諸多使用優點，因此它在教室情境下的應用已有逐漸受到學校教師們重視的趨勢；甚至，連我國正在推動的九年一貫課程評量方式，亦具檔案評量的精神與功能。
+實作評量具有提供教學目標，可測量較複雜的學習成果，又同時可對過程和結果進行評量,若妥善加以運用，以評量者的角度來看，對學習者的學習狀況可以作更有效的掌控，又因為實作評量的多元化，可培養學生其它如蒐集、整理資料、歸納、獨立思考等能力，的確是一個值得推廣並應用的評量方式。
+(林彥如)
+
+實作評量的應用實例編輯
+一、系統觀察與軼事記錄編輯
+附件一(軼事記錄表)
+
+國小自然課之軼事記錄表
+
+http://140.116.223.225/plan/5-1/22-L.htm
+
+
+附件二(軼事記錄表)
+
+http://cris.fhl.net/article/study.htm
+
+
+二、檢核表編輯
+附件三(檢核表)
+
+自殺風險評估檢核表
+
+臺北醫學大學．巿立萬芳醫院精神科 謝文傑心理師
+
+
+被評估者：　　　　　    年齡：　　  　性別：　　　教育程度：
+評估日期：　　　　　檔案編號：
+評估原因：
+可能性風險：
+評估者簽章：
+指導語：下列各題為一個人企圖自殺時的可能性反應。俏若你身旁的個案疑似為自殺的高危險群時，
+        請依照題目的指示，在□中以「ˇ」號標示符合的狀況。
+
+□感到強烈的無望／絕望 
+□自尊非常低
+□感到哀愁與憂鬱，並且對於喜愛的活動興趣缺缺 
+□酒類或藥物的使用量較以往多 
+□近期有經歷失落事件或是與重要他人分離 
+□飲食、飲酒與睡眠型態，出現戲劇化的轉變 
+□變得非常喜怒無常 
+□突然變得沈靜 
+□言談過程中，透露出自殺的想法 
+□對於死亡有預期性想法 
+□在課業或工作上的功能表現不如以往 
+□從朋友群聚中退縮下來 
+□從過去的經常性活動中退縮下來
+□不重視自身外表 
+□精神集中感到困難 
+□出現身體症狀，如：頭痛或倦怠感 
+□強烈的出現罪惡感或羞恥感 
+□出現暴力、敵對或反叛的行為（尤其是年輕人最常有此反應） 
+□近期是否曾因接受精神科住院治療後出院
+附記：當您所勾選的「□」愈多時，您就愈有理由考慮被評估者正受到自殺的威脅，請予以妥善的專業處置。
+
+
+附件四（檢核表）
+
+國小自然科第二冊第二單元「豆子發芽」評量檢核表:
+
+http://content.edu.tw/primary/nature/ks_gc/txt/txt/a2-2.txt
+
+三、評定量表編輯
+附件五（評定量表）
+
+行為態度量表:
+
+http://summer.ntua.edu.tw/~t0336/affectb.htm
+
+附件六(數字評定量表)
+
+                 敘述文評定量表
+               1      2    3      4     5
+1.標點適當 〔   〕〔   〕〔   〕〔   〕〔   〕
+2.用字正確 〔   〕〔   〕〔   〕〔   〕〔   〕
+3.修詞精確 〔   〕〔   〕〔   〕〔   〕〔   〕
+4.文法通順 〔   〕〔   〕〔   〕〔   〕〔   〕
+5.句型豐富 〔   〕〔   〕〔   〕〔   〕〔   〕
+6.取材適切 〔   〕〔   〕〔   〕〔   〕〔   〕
+7.主題鮮明 〔   〕〔   〕〔   〕〔   〕〔   〕
+8.背景清晰 〔   〕〔   〕〔   〕〔   〕〔   〕
+9.情節流暢 〔   〕〔   〕〔   〕〔   〕〔   〕
+                                         總分：
+
+
+
+附件七(學習檔案評定量表)
+
+http://www.tmps.tp.edu.tw/shitong/records/Student/Srp.htm
+
+四、作品量表編輯
+五、檔案評量編輯
+嘉義市博愛國小網頁:
+
+http://www.paes.cy.edu.tw/t/tea/diary02-6.htm
+(AEL092211徐凱婷)
+
+參考資料編輯
+書目編輯
+餘民寧(2002)。教育測驗與評量－成就測驗與教學評量。臺北市：心理。
+歐滄和(2002)。教育測驗與評量。臺北市：心理。
+
+網路編輯
+軼名。軼事記錄表。2007/5/8取自 http://cris.fhl.net/article/study/play/13.doc
+軼名。多元化教學評量理念。2007/5/8取自 http://140.116.223.225/plan/5-1/22-L.htm
+軼名。國小自然科第二冊第二單元「豆子發芽」評量檢核表。2007/5/8取自 http://content.edu.tw/primary/nature/ks_gc/txt/txt/a2-2.txt
+軼名。行為態度評定量表。2007/5/8取自 http://summer.ntua.edu.tw/~t0336/affectb.htm
+軼名。學生檔案評定量表。2007/5/8取自 http://www.tmps.tp.edu.tw/shitong/records/Student/Srp.htm
+軼名。嘉義市博愛國小網頁學生檔案。2007/5/8取自 http://www.paes.cy.edu.tw/t/tea/diary02-6.htm
+
+討論問題編輯
+在國民小學階段，哪種領域課程適合以實作評量方式進行評量？如何進行？
+
+
+
+
+取自「http://zh.wikiteamwork.wikia.com/wiki/%E5%AF%A6%E4%BD%9C%E8%A9%95%E9%87%8F%E7%9A%84%E8%A8%AD%E8%A8%88%E5%8E%9F%E5%89%87%E8%88%87%E6%87%89%E7%94%A8?oldid=8158」
+
+
+
+您使用了廣告過濾軟體！
+
+Wikia通過廣告運營為使用者提供免費的服務。我們對通過嵌入廣告過濾軟體訪問網站的使用者進行調整。							
+							如果您使用了廣告過濾軟體，將無法使用我們的服務。請您移除廣告過濾軟體，以確保頁面正常載入。						
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Logan Movie
+
+
+
+Sci-Fi Guide
+
+
+
+Morrowind Top 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

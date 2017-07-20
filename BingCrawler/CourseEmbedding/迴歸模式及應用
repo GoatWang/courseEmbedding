@@ -1,0 +1,1262 @@
+
+
+
+迴歸分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+迴歸分析
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+統計學系列條目
+
+
+迴歸分析
+
+
+
+
+
+模型
+
+
+
+
+線性回歸
+簡單迴歸（英語：Simple linear regression）
+普通最小平方法（英語：Ordinary least squares）
+多項式迴歸（英語：Polynomial regression）
+一般線性模型
+
+
+
+
+
+
+廣義線性模式
+離散選擇（英語：Discrete choice）
+邏輯迴歸
+多項羅吉特（英語：Multinomial logit）
+混合羅吉特
+波比（英語：Probit model）
+多項式波比（英語：Multinomial probit）
+排序性模型（英語：Ordered logit）
+有序波比（英語：Ordered probit）
+泊松迴歸
+
+
+
+
+
+
+等級線性模型
+固定效應（英語：Fixed effects model）
+隨機效應（英語：Random effects model）
+混合模型（英語：Mixed model）
+
+
+
+
+
+
+非線性迴歸（英語：Nonlinear regression）
+非參數（英語：Nonparametric regression）
+半參數（英語：Semiparametric regression）
+穩健（英語：Robust regression）
+分位數迴歸
+保序迴歸
+主成分（英語：Principal component regression）
+最小角
+局部（英語：Local regression）
+分段（英語：Segmented regression）
+
+
+
+
+
+
+含誤差變量（英語：Errors-in-variables models）
+
+
+
+
+估計
+
+
+
+
+最小平方法
+普通最小平方法（英語：Ordinary least squares）
+線性
+偏最小平方迴歸
+總體（英語：Total least squares）
+廣義（英語：Generalized least squares）
+加權
+非線性（英語：Non-linear least squares）
+非負（英語：Non-negative least squares）
+重複再加權（英語：Iteratively reweighted least squares）
+嶺迴歸（英語：Tikhonov regularization）
+LASSO
+
+
+
+
+
+
+最小絕對值導數法（英語：Least absolute deviations）
+貝葉斯（英語：Bayesian linear regression）
+貝葉斯多元（英語：Bayesian multivariate linear regression）
+
+
+
+
+背景
+
+
+
+
+迴歸模型檢驗（英語：Regression model validation）
+平均響應和預測響應（英語：Mean and predicted response）
+誤差和殘差
+擬合優度（英語：Goodness of fit）
+學生化殘差（英語：Studentized residual）
+高斯－馬可夫定理
+
+
+
+
+
+
+ 機率與統計主題
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+
+
+
+
+
+
+
+簡單線性迴歸分析的例子
+
+
+迴歸分析（英語：Regression Analysis）是一種統計學上分析數據的方法，目的在於瞭解兩個或多個變數間是否相關、相關方向與強度，並建立數學模型以便觀察特定變數來預測研究者感興趣的變數。更具體的來說，迴歸分析可以幫助人們瞭解在只有一個自變量變化時因變量的變化量。一般來說，通過迴歸分析我們可以由給出的自變量估計因變量的條件期望。
+迴歸分析是建立因變數
+
+
+
+Y
+
+
+{\displaystyle Y}
+
+（或稱依變數，反應變數）與自變數
+
+
+
+X
+
+
+{\displaystyle X}
+
+（或稱獨變數，解釋變數）之間關係的模型。簡單線性回歸使用一個自變量
+
+
+
+X
+
+
+{\displaystyle X}
+
+，複迴歸使用超過一個自變量（
+
+
+
+
+X
+
+1
+
+
+,
+
+X
+
+2
+
+
+.
+.
+.
+
+X
+
+i
+
+
+
+
+{\displaystyle X_{1},X_{2}...X_{i}}
+
+）。
+
+
+
+目錄
+
+
+1 起源
+2 迴歸分析原理
+
+2.1 參數估計
+
+
+3 迴歸模型
+4 迴歸分析的種類
+
+4.1 簡單線性回歸
+4.2 複迴歸（或多變量迴歸）
+4.3 對數線性迴歸
+4.4 非線性迴歸
+4.5 邏輯迴歸
+4.6 偏迴歸
+4.7 自迴歸
+
+4.7.1 自迴歸滑動平均模型
+4.7.2 差分自迴歸滑動平均模型
+4.7.3 向量自迴歸模型
+
+
+
+
+5 參閱
+6 參考資料
+7 外部連結
+
+
+
+起源[編輯]
+迴歸的最早形式是最小平方法，由1805年的勒壤得(Legendre)[1]，和1809年的高斯(Gauss)出版[2]。勒壤得和高斯都將該方法應用於從天文觀測中確定關於太陽的物體的軌道（主要是彗星，但後來是新發現的小行星）的問題。 高斯在1821年發表了最小平方理論的進一步發展[3]，包括高斯－馬可夫定理的一個版本。
+「迴歸」（或作「回歸」）一詞最早由法蘭西斯·高爾頓（Francis Galton）所使用[4][5]。他曾對親子間的身高做研究，發現父母的身高雖然會遺傳給子女，但子女的身高卻有逐漸「迴歸到中等（即人的平均值）」的現象。不過當時的迴歸和現在的迴歸在意義上已不盡相同。
+在1950年代和60年代，經濟學家使用機械電子桌面計算器來計算迴歸。在1970年之前，它有時需要長達24小時從一個迴歸接收結果[6]。
+迴歸分析原理[編輯]
+
+目的在於找出一條最能夠代表所有觀測資料的函數（迴歸估計式）。
+用此函數代表因變數和自變數之間的關係。
+
+參數估計[編輯]
+
+矩估計（Method of Moment、MOM）
+最小平方法（Ordinary Least Square Estimation, OLSE）
+最大似然估計（Maximum Likelihood Estimation, MLE）
+
+迴歸模型[編輯]
+迴歸模型主要包括以下變量：
+
+未知參數，記為β，可以代表一個純量或一個向量。
+自變量，X。
+因變量，Y。
+
+迴歸模型將Y和一個關於X和β的函數關聯起來。
+
+
+
+
+
+Y
+≈
+f
+(
+
+X
+
+,
+
+β
+
+)
+
+
+{\displaystyle Y\approx f(\mathbf {X} ,{\boldsymbol {\beta }})}
+
+
+
+迴歸分析的種類[編輯]
+簡單線性回歸[編輯]
+簡單線性迴歸（英語：Simple linear regression）（英語：simple linear regression）
+
+應用時機
+
+
+以單一變數預測
+判斷兩變數之間相關的方向和程度
+
+複迴歸（或多變量迴歸）[編輯]
+複迴歸分析（英語：multiple regression analysis）是簡單線性迴歸的一種延伸應用，用以瞭解一個依變項與兩組以上自變項的函數關係。
+對數線性迴歸[編輯]
+對數線性迴歸（英語：Log-linear model）（英語：Log-linear model），是將解釋變項（實驗設計中的自變項）和反應變項（實驗設計中的依變項）都取對數值之後再進行線性迴歸，所以依據解釋變項的數量，可能是對數簡單線性迴歸，也可能是對數複迴歸。
+非線性迴歸[編輯]
+邏輯迴歸[編輯]
+主條目：邏輯迴歸
+邏輯迴歸（英語：Logistic Regression）
+偏迴歸[編輯]
+偏迴歸（英語：Partial Regression）（英語：Partial Regression）
+自迴歸[編輯]
+主條目：自迴歸模型
+自迴歸滑動平均模型[編輯]
+主條目：ARMA模型
+差分自迴歸滑動平均模型[編輯]
+主條目：ARIMA模型
+向量自迴歸模型[編輯]
+主條目：向量自迴歸模型
+參閱[編輯]
+
+
+機率與統計主題
+
+
+
+
+曲線擬合
+估計理論
+廣義線性模型
+多元常態分佈
+皮爾遜積矩相關係數
+信號處理
+相關分析
+多變量統計
+
+
+參考資料[編輯]
+
+
+^ A.M. Legendre. Nouvelles méthodes pour la détermination des orbites des comètes, Firmin Didot, Paris, 1805. 「Sur la Méthode des moindres quarrés」 appears as an appendix.
+^ C.F. Gauss. Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientum. (1809)
+^ C.F. Gauss. Theoria combinationis observationum erroribus minimis obnoxiae. (1821/1823)
+^ Mogull, Robert G. Second-Semester Applied Statistics. Kendall/Hunt Publishing Company. 2004: 59. ISBN 0-7575-1181-3. 
+^ Galton, Francis. Kinship and Correlation (reprinted 1989). Statistical Science (Institute of Mathematical Statistics). 1989, 4 (2): 80–86. JSTOR 2245330. doi:10.1214/ss/1177012581. 
+^ Rodney Ramcharan. Regressions: Why Are Economists Obessessed with Them? March 2006. Accessed 2011-12-03.
+
+
+外部連結[編輯]
+
+解讀迴歸分析的原理及結構
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+統計學
+
+
+
+
+
+
+描述統計學
+
+
+
+
+
+連續變數機率分佈
+
+
+
+
+
+
+集中趨勢
+
+
+平均數（平方 · 算術 · 幾何 · 調和 · 算術-幾何 · 幾何-調和 · 希羅|平均數不等式） · 中位數 · 眾數
+
+
+
+
+
+
+
+離散程度
+
+
+全距 · 標準差 · 變異係數 · 百分位數 · 四分差 · 四分位數 · 變異數 · 標準分數 · 切比雪夫不等式
+
+
+
+
+
+
+
+分佈形態（英語：Shape of the distribution）
+
+
+偏態 · 峰態
+
+
+
+
+
+
+
+
+
+
+離散變數機率分佈
+
+
+次數（英語：Count data） · 列聯表（英語：Contingency table）
+
+
+
+
+
+
+
+
+
+
+
+
+推論統計學
+和 假設檢定
+
+
+
+
+
+推論統計學
+
+
+置信區間 · 區間估計（英語：Interval estimation） · 顯著性差異 · 元分析 · 貝氏推論
+
+
+
+
+
+
+
+實驗設計
+
+
+統計總量 · 抽樣 · 重複（英語：Replication (statistics)） · 阻礙 · 特敏度 · 區集（英語：Blocking (statistics)）
+
+
+
+
+
+
+
+樣本量（英語：Sample size）
+
+
+統計功效 · 效應值 · 標準誤 · 虛無假設 · 對立假設（英語：Alternative hypothesis） · 第一型和第二型誤差 · 統計檢定力
+
+
+
+
+
+
+
+常規估計
+
+
+貝葉斯推論 · 區間估計（英語：Interval estimation） · 最大似然估計 · 最小距離估計（英語：Minimum distance estimation） · 矩量法 · 最大間距
+
+
+
+
+
+
+
+特效檢驗
+
+
+Z檢驗 · 學生t檢驗 · F檢驗 · 卡方檢驗 · Wald檢驗（英語：Wald test） · 曼-惠特尼檢驗（英語：Mann–Whitney U test） · 秩和檢驗
+
+
+
+
+
+
+
+生存分析
+
+
+生存函數 · 乘積極限估計量 · 對數秩和檢定 · 失效率 · 危險比例模式
+
+
+
+
+
+
+
+
+
+相關及
+迴歸分析
+
+
+
+
+
+相關性
+
+
+混淆變項（英語：Confounding） · 皮爾森積差相關係數 · 等級相關（英語：Rank correlation） (史匹曼等級相關係數 · 肯德等級相關係數（英語：Kendall tau rank correlation coefficient）)
+
+
+
+
+
+
+
+線性迴歸
+
+
+線性模式（英語：Linear model） · 一般線性模式 · 廣義線性模式 · 變異數分析 · 協變異數分析（英語：Analysis of covariance）
+
+
+
+
+
+
+
+非線性迴歸（英語：Nonlinear regression）
+
+
+非參數迴歸模型（英語：Nonparametric regression） · 半參數迴歸模型（英語：Semiparametric regression） · Logit模型
+
+
+
+
+
+
+
+
+
+統計圖形
+
+圓餅圖 · 長條圖 · 雙標圖 · 箱形圖 · 管制圖 · 森林圖（英語：Forest plot） · 直方圖 · QQ圖 · 趨勢圖 · 散佈圖（英語：Scatter plot） · 莖葉圖（英語：Stem-and-leaf display） · 雷達圖（英語：Radar chart） · 示意地圖
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4129903-6
+NDL: 00564579
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=迴歸分析&oldid=43004164"					
+4 個分類：回歸分析統計方法計量經濟學精算隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaБългарскиCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEuskaraفارسیSuomiFrançaisGalegoMagyarBahasa IndonesiaÍslenskaItaliano日本語Basa Jawa한국어LatviešuNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSimple EnglishBasa SundaSvenskaТоҷикӣTagalogTürkçeУкраїнськаOʻzbekcha/ўзбекчаTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年1月30日 (週一) 12:59。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：線性迴歸模型及聯立方程式模型之Mallows形式有界迴歸分位向量
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 線性迴歸模型及聯立方程式模型之Mallows形式有界迴歸分位向量Mallows Type Bounded Influence Regression Quantile for Linear Regression Model and Simultaneous Equations Model
+作者: 莊弘昌Chuang, Hung-Chang陳鄰安Chen Lin-An統計學研究所
+關鍵字: 影響;迴歸分位向量;influence;regression quantile
+公開日期: 1996
+摘要: 我們導出線性迴歸模型及聯立方程式模型的Mallows形式有界迴歸
+分位向  量之近似分配。我們也做蒙地卡羅(Monte Carlo)模擬，並比
+較均方誤差且  驗證出如果獨立變數產生毛差(gross errors)時，則有界
+迴歸分位向量將比無界迴歸分位  向量(見Koenker及Bassett(1978))來得
+有效率              。
+We present asymptotic distributions of the Mallows type
+bounded-influencereg  ression quantile for the linear regression
+model and also the simultaneousequa  tions model. Monte Carlo
+simulation comparing mean squared errors showsthat th  e
+bounded-influence one is more efficient than the unbounded-
+influence one(Koe  nker and Bassett(1978))when gross errors
+occur in the independent-variables-s  pace.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT850337007http://hdl.handle.net/11536/61733
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefMallows型式迴歸分位向量 / 陳鄰安;CHEN LIN-AN基因表現分析之穩健回歸估計量 / 張祐華;Chang, Yu-Hua;陳鄰安;Chen, Lin-An對稱型迴歸分位向量和它應用在非線性迴歸的穩健估計 / 林麗卿;Lin, Li-Ching;陳鄰安;Chen Lin-AnThe symmetric type two-stage trimmed least squares estimator for the simultaneous equations model / Chen, LA;Thompson, P;Hung, HNTrimmed least squares estimator as best trimmed linear conditional estimator for linear regression model / Chen, LA;Thompson, PSymmetric quantiles and their applications / Chiang, Yuang-Chin;Chen, Lin-An;Yang, Hsien-Chueh PeterTwo-stage regression quantiles and two-stage trimmed least squares estimators for structural equation models / Chen, LA;Portnoy, S國立政治大學 - 線性位置-形狀迴歸模式下迴歸係數估計量之一致性與有效性 / 鄭天澤;蔡輝榮;毛乃文 國立政治大學 - 線性位置-形狀迴歸模式下迴歸係數估計量之一致性與有效性 / 鄭天澤;蔡輝榮;毛乃文 國立政治大學 - 線性位置-形狀迴歸模式下迴歸係數估計量之一致性與有效性 / 鄭天澤;蔡輝榮;毛乃文 中原大學 - 模糊線性迴歸模型之穩健式最小平方法 / 駱如儀; Lu-Lee Lo 國立政治大學 - 近似無關迴歸模型：分量迴歸之應用 / 張珣 中華大學 - 以線性迴歸方式建立科技廠房工期之估算模式 / 鄭奕孟,; Cheng, Yi-Meng 國立臺灣大學 - 向量自我迴歸模式之模態分析 / 李常聲;林華澤; Li, Chang-Sheng;林華澤 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
