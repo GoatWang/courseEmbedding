@@ -1,0 +1,3006 @@
+
+
+
+模態邏輯 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+模態邏輯
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+模態邏輯，或者叫（不很常見）內涵邏輯，是處理用模態如「可能」、「或許」、「可以」、「一定」、「必然」等限定的句子的邏輯。模態邏輯可以用語義的「內涵性」來描述其特徵：複雜公式的真值不能由子公式的真值來決定的。允許這種決定性的邏輯是「外延性的」，經典邏輯就是外延性的例子。模態算子不能使用外延語義來形式化：「喬治·布希是美國總統」和「2 + 2 = 4」是真的，但是「喬治·布希必然是美國總統」是假的，而「2 + 2 = 4是必然的」是真的。
+形式模態邏輯使用模態判決算子表示模態。基本的模態算子是
+
+
+
+◻
+
+
+{\displaystyle \Box }
+
+和
+
+
+
+◊
+
+
+{\displaystyle \Diamond }
+
+。（有時分別使用「L」和「M」）。它們的意義依賴於特定的模態邏輯，但它們總是以相互定義的方式來定義：
+
+
+
+
+
+◊
+p
+=
+¬
+
+◻
+
+¬
+
+p
+.
+
+
+{\displaystyle \Diamond p=\lnot \,\Box \,\lnot \,p.}
+
+
+
+
+
+
+◻
+p
+=
+¬
+
+◊
+
+¬
+
+p
+.
+
+
+{\displaystyle \Box p=\lnot \,\Diamond \,\lnot \,p.}
+
+
+
+
+
+
+目錄
+
+
+1 真勢模態
+2 其他模態
+
+2.1 認識
+2.2 道義和時間
+
+
+3 模態邏輯的釋義
+4 公理系統
+5 模態邏輯的發展
+6 引用
+7 參見
+8 外部連結
+9 致謝
+
+
+
+真勢模態[編輯]
+在真勢模態邏輯（就是說必然性和可能性的邏輯）中
+
+
+
+◻
+
+
+{\displaystyle \Box }
+
+表示必然性，而
+
+
+
+◊
+
+
+{\displaystyle \Diamond }
+
+表示可能性。所以Jones有兄弟是「可能的」，若且唯若Jones「沒」有兄弟是「非必然的」。
+句子被認定為
+
+可能的如果它「可能」為真（不管實際上是真是假）;
+必然的如果它「不可能」為假;
+偶然的如果它「不是」必然為真，就是說，可能為真可能為假。偶然的真理是「實際上」為真，但「可能曾經不是」的真理。
+
+其他模態[編輯]
+認識[編輯]
+模態邏輯最經常用來談論所謂的「真勢模態」:「...是必然的」或者「....是可能的」，這些模態（包括形上學模態和邏輯模態）最容易混淆於認識模態(來自希臘語episteme,知識):「...確實是真的」和「...（對給定的可獲得的信息）或許是真的」。在普通的話語中這兩種模態經常用類似的詞來表達；下列對比可能有所幫助：
+一個人Jones可以合理的「同時」說出：（1）「我確信大腳怪不可能存在」，還有（2）「大腳怪存在的確是可能的」。Jones通過（1）表達的意思是，對於給定的所有可獲得的信息，大腳怪存在與否是沒有疑問的。這是一個認識上的斷言。通過（2）表達的意思是這個事物可能曾是其它樣子的。他的意思不是「就我所知而言，大腳怪可能存在」。（所以這不矛盾於（1））。而是，他做了一個「形上學」上的斷定，「即使我不知道，大腳怪存在仍是可能的」。
+在其他方面，Jones可以說（3）「哥德巴赫猜想可能為真，也可能為假」，還有（4）「如果它是真的，則它必然是真的，不可能是假的」。這裡Jones的意思是，「就他所知而言，它為真為假都是在認識上可能的（哥德巴赫猜想仍未被證明是真還是假）。但是如果有這麼一個證明（至今仍未發現），則哥德巴赫猜想為假在邏輯上是不可能的」。邏輯上的可能性是一種「真勢」（alethic）可能性；（4）做了對一個數學真理曾經為假是否可能的一個斷言，而（3）只做了對「就Jones所知而言」這個論斷被證實為假是否可能的一個斷言，所以Jones還是不自相矛盾。
+認識上的可能性還以一種非形上學的方式關註真實世界。形上學的可能性以「可能曾是」的方式關註世界，而認識上的可能性以（就我所知而言）「可能正是」的方式關註世界。比如，我想知道在離開前是否要帶把傘。如果你告訴我「外面可能在下雨」 -- 在一種「認識上可能」的意義上--那麼這會影響我是否帶傘的決定。但是如果你告訴我「外面下雨是可能的」 -- 在一種「形上學上可能」的意義上--那麼我從這種大道理中沒有得到任何啟示。
+大量的哲學文獻關心「真勢」而非「認識」模態。（實際上，其中大多數關心一種最廣泛的真勢模態，就是邏輯可能性）。這不是說真勢可能性比我們日常用的認識可能性更重要（考慮上面決定是否帶傘的例子）。只是說在哲學研究中的優先權不是日常生活中的重要性帶來的。
+道義和時間[編輯]
+言語中有一些類似的模式，儘管不大可能與真勢模態混淆但仍密切的相關。其一是有關時間的談論。明天可能會下雨，但也可能不下好像是合理的；在另一方面，如果昨天下雨了，如果實際上已經下了，則說「昨天可能沒有下雨」就不是完全正確的。過去好像「固定的」或必然的，而將來在某種程度上不是。很多哲學家和邏輯學家認為這種推理不是很好；但是我們經常以這種方式談話，所以最好有一種邏輯能捕獲它的結構。類似的有關道德的談論，或者說義務和規範一般好像也有模態結構。在「你必須這麼做」和「你可以這麼做」之間的區別看起來很像在「這是必然的」和「這是可能的」之間的區別。這種邏輯叫做道義邏輯，「道義」來自希臘語duty。
+模態邏輯的釋義[編輯]
+在模態邏輯的最常見解釋中，你要考慮「所有邏輯上可能的世界」。如果一個陳述在所有可能世界中是真的，則它是必然的真理。如果一個陳述碰巧在我們的世界中是真的，但不是在所有可能世界中是真的，則它是偶然的真理。在某些（不是必須在我們自己的）可能世界中是真的陳述叫做可能的真理。
+這種"可能世界"是否是解釋模態邏輯的最佳方式，怎樣在文字上接受這種方言，是形上學的鮮活的問題。例如，可能世界的方言可以把關於大腳怪的斷言翻譯為「有某個可能世界，在其中大腳怪存在」。要主張大腳怪的存在性是可能的，但不是現實的，你可以說「有某個可能世界，在其中大腳怪存在；但是在現實世界中，大腳怪不存在」。但是對使模態斷言對我們負責的那個東西是什麼仍是不清楚的。我們真的要宣稱可能世界的存在性嗎？它在每一點都同我們的現實世界一樣真實，卻惟獨不是現實的。David Lewis強硬的說就是這樣，可能世界同我們自己的世界一樣真實。這種立場叫做「模態現實主義」。不足為奇的，多數哲學家不願意接受這種特別的學說，在搜尋一種可替代的方式來釋義我們的模態斷言所蘊含的本體論承諾。
+公理系統[編輯]
+有很多有不同性質的模態邏輯。在其中很多必然性和可能性的概念滿足下列德·摩根定律的聯繫：
+
+"X是非必然的"等價於"非X是可能的"。
+
+
+"X是非可能的"等價於"非X是必然的"。
+
+儘管模態邏輯教科書比如Hughes和Cresswell的《A New Introduction to Modal Logic》覆蓋了這個定律不成立的一些系統。
+模態邏輯向命題邏輯的「合式公式」增加上必然性和偶然性。在一些記號中「必然的p」使用「方塊」（
+
+
+
+◻
+p
+
+
+{\displaystyle \Box p}
+
+）表示，而「可能的p」使用「菱形」（
+
+
+
+◊
+p
+
+
+{\displaystyle \Diamond p}
+
+）表示。無論是什麼樣的記號，兩個算子是以相互定義的方式定義的：
+
+
+
+
+
+◻
+p
+
+
+{\displaystyle \Box p}
+
+（必然的p）等價於
+
+
+
+¬
+◊
+¬
+p
+
+
+{\displaystyle \neg \Diamond \neg p}
+
+（非可能的非p）
+
+
+
+
+◊
+p
+
+
+{\displaystyle \Diamond p}
+
+（可能的p）等價於
+
+
+
+¬
+◻
+¬
+p
+
+
+{\displaystyle \neg \Box \neg p}
+
+（非必然的非p）
+
+因此，
+
+
+
+◻
+
+
+{\displaystyle \Box }
+
+和
+
+
+
+◊
+
+
+{\displaystyle \Diamond }
+
+叫做對偶算子。
+要建立模態邏輯的可用系統，必須向命題邏輯的增加什麼公理是非常有爭議的主題。得名於Saul Kripke的K，只向經典命題邏輯公理體系增加瞭如下規則：
+
+必然性規則：如果p是 K的定理，則
+
+
+
+◻
+p
+
+
+{\displaystyle \Box p}
+
+也是。
+分配律公理：如果
+
+
+
+◻
+(
+p
+→
+q
+)
+
+
+{\displaystyle \Box (p\rightarrow q)}
+
+則
+
+
+
+(
+◻
+p
+→
+◻
+q
+)
+
+
+{\displaystyle (\Box p\rightarrow \Box q)}
+
+（這也叫做公理K）
+
+但K是一個弱模態邏輯。特別是留下了一個公開的問題，命題是必然的但只偶爾是必然的。如果
+
+
+
+◻
+p
+
+
+{\displaystyle \Box p}
+
+為真則
+
+
+
+◻
+◻
+p
+
+
+{\displaystyle \Box \Box p}
+
+為真不是K的定理，它是說，必然的真理必然是必然的。這可能不是K的大缺陷，因為這些好像是十分奇怪的問題，而試圖解答它們的任何嘗試都把我們捲入混亂的難題中。無論如何，對這種問題的不同解決方式生成了不同的模態邏輯系統。
+這些規則缺乏從p的必然性到p的實際情況的公理，所以通常要補充上下列「自反性」公理，這就生成經常叫做T的一個系統。
+
+
+
+
+
+◻
+p
+→
+p
+
+
+{\displaystyle \Box p\rightarrow p}
+
+（如果p是必然的，則p是事實）
+
+這是多數但不是全部模態邏輯系統的規則。Jay Zeman的書《Modal Logic》覆蓋了沒有這個規則的系統如S1^0。
+其他周知的基本公理：
+
+4: 
+
+
+
+◻
+p
+→
+◻
+◻
+p
+
+
+{\displaystyle \Box p\rightarrow \Box \Box p}
+
+
+B: 
+
+
+
+p
+→
+◻
+◊
+p
+
+
+{\displaystyle p\rightarrow \Box \Diamond p}
+
+
+D: 
+
+
+
+◻
+p
+→
+◊
+p
+
+
+{\displaystyle \Box p\rightarrow \Diamond p}
+
+
+5: 
+
+
+
+◊
+p
+→
+◻
+◊
+p
+.
+
+
+{\displaystyle \Diamond p\rightarrow \Box \Diamond p.}
+
+
+
+這些公理產生的系統：
+
+K := K + N
+T := K + T
+S4 := T + 4
+S5 := S4 + 5
+D := K + D.
+
+K到S5形成了嵌套的系統層級，建造了正規模態邏輯的核心。D主要對探索模態邏輯的道義解釋的人有價值。
+今天最常見的系統是模態邏輯S5，它通過增加使所有模態真理是必然的公理來粗壯的解答了這個問題：例如，如果p是可能的，則p必然是可能的，如果p是必然的，則它必然是必然的。很多人認為它正當的根據是，它是在我們需要每個可能的世界相對於每個其他世界都是可能的時候所獲得的系統。不過，模態邏輯的其他系統已經被公式化了，部分的因為S5不能很好的適合我們感興趣的所有種類的形上學模態。（若此則意味著可能的世界的談論不能很好的適合這些種類的模態）。
+模態邏輯的發展[編輯]
+儘管亞里士多德的邏輯幾乎全部都關註直言三段論的理論，他的著作還包含在模態邏輯要點上的一些延伸討論（比如他著名的在解釋篇§ 9中海戰悖論），並且它們與潛在性和時間有關連。遵從他的著作，經院學者為模態邏輯的嚴格理論開發出了根基，大多在關於本質性和偶然性的陳述的邏輯的註釋的上下文中。在中世紀的作家中，在William of Ockham和John Duns Scotus的著作中找到了關於模態邏輯的一些最重要的工作。
+形式模態邏輯的締造者是C. I. Lewis，他在專著《A Survey of Symbolic Logic》（1918）中介入了一個系統（後來叫做S3），並（同C. H. Langford一起）在書《Symbolic Logic》（1932）中介入了系統S1-S5。J. C. C. McKinsey在1941年使用代數方法（帶有算子的布爾代數）來證明Lewis的S2和S4的可判定性。Saul Kripke從1959年開始為模態邏輯設計了關係語義或可能世界語義。Vaughan Pratt在1976年介入了動態邏輯。Amir Pnueli在1977年提出使用時態邏輯來公式化頻繁操作並發程序的行為。
+時間邏輯，在1957年由A. N. Prior發明，與模態邏輯有密切的關聯，因為增加了模態算子[F]和[P]，分別意味著今後和至今，導致了時間邏輯的一個系統。時間邏輯的風味包括：命題動態邏輯（PDL），命題線性時間邏輯（PLTL），線性時間邏輯（LTL），計算樹邏輯（CTL），Hennessy-Milner邏輯和T。
+模態邏輯的數學結構，也就是擴充一元運算的布爾代數（經常叫做「模態代數」），開始出現於J. C. C. McKinsey在1941年對S2和S4是可判定性的證明，並於阿爾弗雷德·塔斯基和他的學生Bjarni Jonsson的工作（Jonsson與Tarski 1951-52）中得到完全能力。這項工作顯示了S4和S5是內部代數的模型，它是最初設計用來捕獲拓撲學的內部算子和閉包算子的性質的布爾代數的真擴展。關於模態邏輯的課本典型不太多提及它與布爾代數和拓撲學研究的聯繫。形式模態邏輯與有關數學的歷史概述可參見Goldblatt (2006)。
+引用[編輯]
+
+M. Fitting and R.L. Mendelsohn (1998) First Order Modal Logic. Kluwer Academic Publishers.
+James Garson (2003) Modal logic. Entry in the Stanford Encyclopedia of Philosophy.
+Rod Girle (2000) Modal Logics and Philosophy. Acumen (UK). The proof theory employs refutation trees (semantic tableaux). A good introduction to the varied interpretations of modal logic.
+Robert Goldblatt (1992) "Logics of Time and Computation", CSLI Lecture Notes No. 7, Centre for the Study of Language and Information, Stanford University, 2nd ed. (distributed by University of Chicago Press).
+Robert Goldblatt (1993) "Mathematics of Modality", CSLI Lecture Notes No. 43, Centre for the Study of Language and Information, Stanford University. (distributed by University of Chicago Press).
+G.E. Hughes and M.J. Cresswell (1968) An Introduction to Modal Logic, Methuen.
+G.E. Hughes and M.J. Cresswell (1984) A Companion to Modal Logic, Medhuen.
+G.E. Hughes and M.J. Cresswell (1996) A New Introduction to Modal Logic, Routledge.
+E.J. Lemmon (with Dana Scott), 1977, An Introduction to Modal Logic, American Philosophical Quarterly Monograph Series, no. 11 (ed. by Krister Segerberg), Basil Blackwell, Oxford.
+J. Jay Zeeman (1973) Modal Logic. D. Reidel Publishing Company.
+
+參見[編輯]
+
+
+可能世界
+De dicto and de re
+混合邏輯
+內部代數
+可解釋性邏輯
+可證明性邏輯
+Kripke語義
+可及關係
+認識邏輯
+時間邏輯
+道義邏輯
+信念邏輯
+哥德爾本體論證明
+
+
+外部連結[編輯]
+
+A discussion of modal logic by John McCarthy
+Bibliography of Non-Standard Logics by Peter Suber
+List of Logic Systems List of most of the more popular modal logics.
+Advances in Modal Logic（bi-annual international conference and book series in Modal Logic）
+
+致謝[編輯]
+本文包含最初來自Free On-line Dictionary of Computing的一些材料，經過授權在GFDL下。
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=模態邏輯&oldid=44182872"					
+4 個分類：邏輯模態邏輯形式邏輯系統情態 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةCatalàČeštinaDanskDeutschEnglishEspañolEestiفارسیSuomiFrançaisGaeilgeעבריתMagyarՀայերենIdoÍslenskaItaliano日本語한국어КыргызчаNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSrpskohrvatski / српскохрватскиSlovenčinaСрпски / srpskiSvenskaУкраїнськаWinaray 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年4月30日 (週日) 04:22。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+            模態邏輯 -華人百科                       模態邏輯  模態邏輯，邏輯的一個分支，它研究必然、可能及其相關概念的邏輯性質。  中文名稱 模態邏輯 外文名稱 Modal logic 繁    體 模態邏輯 版    次 內涵邏輯      簡介模態邏輯，或者叫(不很常見)內涵邏輯，是處理用模態如"可能"、"或許"、"可以"、"一定"、"必然"等限定的句子的邏輯。模態邏輯可以用語義的"內涵性"來描述其特征: 復雜公式的真值不能由子公式的真值來決定的。允許這種決定性的邏輯是"外延性的"，經典邏輯就是外延性的例子。模態運算元不能使用外延語義來形式化: "喬治·布希是美國總統"和"2 + 2 = 4"是真的，但是"喬治·布希必然是美國總統"是假的，而"2 + 2 = 4 是必然的"是真的。形式模態邏輯使用模態判決運算元表示模態。基本的模態運算元是 和 。(有時分別使用"L"和"M")。它們的意義依賴於特定的模態邏輯，但它們總是以相互定義的方式來定義。研究必然、可能及其相關概念的邏輯性質。邏輯的一個分支模態邏輯所研究的命題"必然 A"和"可能 A"與通常命題演算中的命題不同。後者是真值函項，前者不是。因為，當A真時，"必然A"既可以是真也可以是假;當A假時，"可能A"既可以是真也可以是假。模態命題演算是現代模態邏輯的基本內容之一。 真勢模態在真勢模態邏輯(就是說必然性和可能性的邏輯)中 表示必然性，而 表示可能性。所以 Jones 有兄弟是"可能的"，當且僅當 Jones "沒"有兄弟是"非必然的"。句子被認定為 釋義在模態邏輯的最常見解釋中，你要考慮"所有邏輯上可能的世界"。如果一個陳述在所有可能世界中是真的，則它是必然的真理。如果一個陳述碰巧在我們的世界中是真的，但不是在所有可能世界中是真的，則它是偶然的真理。在某些(不是必須在我們自己的)可能世界中是真的陳述叫做可能的真理。這種"可能世界"是否是解釋模態邏輯的最佳方式，怎樣在文字上接受這種方言，是形而上學的鮮活的問題。例如，可能世界的方言可以把關於大腳怪的斷言翻譯為"有某個可能世界，在其中大腳怪存在"。要主張大腳怪的存在性是可能的，但不是現實的，你可以說"有某個可能世界，在其中大腳怪存在;但是在現實世界中，大腳怪不存在"。但是對使模態斷言對我們負責的那個東西是什麽仍是不清楚的。我們真的要宣稱可能世界的存在性嗎?它在每一點都同我們的現實世界一樣真實，卻惟獨不是現實的。David Lewis 強硬的說就是這樣，可能世界同我們自己的世界一樣真實。這種立場叫做"模態現實主義"。不足為奇的，多數哲學家不願意接受這種特別的學說，在搜尋一種可替代的方式來釋義我們的模態斷言所蘊含的本體論承諾。 模態三段論早在古希臘，亞裏士多德詳細研究過模態三段論。他把命題分為 3種:①實然命題的形式是，"a是b";②必然命題的形式是，"a必然是b";③偶然命題的形式是，"a偶然是b"。後兩者屬於模態命題。亞裏士多德所說的"必然"，具有兩種意義。在一種意義下,"a必然是b"表示"b"所指謂的性質,是"a"所指謂的事物的本質屬性或本質屬性的一部分。這是客觀事物的必然性。由於在亞裏士多德的理論中，本質與定義是相應的，因此也可以說，這是根據命題中語詞的定義而得出的必然性。在另一種意義下，"a必然是b"表示 "a是b" 是由別的命題根據三段論推出的必然結論。這實質上是演繹推理的邏輯必然性。亞裏士多德所說的"偶然"是一個含混的語詞。在他的《工具論》中的有些地方，"a偶然是b"就是"a可能是b"。在這個意義上，"a必然是b"可推出"a偶然是b"。但在另外的地方，"a偶然是b"則是"a不必然是 b並且a不必然不是b"，或者是"a可能不是 b並且a可能是b"。在這一意義上，"a必然是b"就不能推出"a偶然是b",而"a偶然是b"卻可推出"a不必然是b"。把"必然"和"偶然"這兩個模態概念分別加到亞裏士多德的4種實然命題A、E、I、O上去，就可得出8種模態命題。例如，"所有 a都必然是b"，"有些a偶然不是b"等。亞裏士多德討論了這8種模態命題的換質與換位，也討論了這些命題之間的邏輯關系。他所提出的模態三段論，是至少有一前提是模態命題的三段論。他根據前提把模態三段論分為 8大類:①兩個前提都是必然命題;②大前提是必然命題，小前提是實然命題;③大前提是實然命題，小前提是必然命題;④兩個前提都是偶然命題;⑤大前提是偶然命題，小前提是實然命題;⑥大前提是實然命題，小前提是偶然命題;⑦大前提是偶然命提,小前提是必然命題;⑧大前提是必然命題,小前提是偶然命題。亞裏士多德的模態三段論實質上是一個公理系統。他像處理實然三段論(見三段論)一樣，把模態三段論分為第1、第2和第3格，並把第1格的模態三段論看作完美的、不需要證明的,而且主要套用換位法和歸謬法,就可以從第 1格的模態三段論推出其他的模態三段論。亞裏士多德的學生泰奧弗拉斯多也創造了一個不同的模態三段論系統。稍後，麥加拉 -斯多阿學派(見麥加拉-斯多阿學派邏輯)也對必然與可能這些模態概念進行了較深入的探討。在公元 9~12世紀，阿拉伯邏輯學家吸取了古希臘有關模態邏輯的思想並有所發展。伊本·西那把模態概念和命題的時間結合起來，創造了一個新的模態三段論系統。12~15世紀的歐洲經院邏輯學家區別了命題模態與事物模態合的意義下的模態與分的意義下的模態。偽司各特還構造了一個在合的意義下的模態三段論系統和一個在分的意義下的模態三段論系統。奧康的威廉則構造了一個這樣的模態三段論系統:其中一個前提是在合的意義下的模態命題，而另一個前提是在分的意義下的模態命題。此外，經院邏輯學家還研究了知道、懷疑、願意等主觀模態概念和應當、許可等道義概念的邏輯性質。 模態命題演算模態命題演算是現代模態邏輯的基本內容之一。它是套用數理邏輯的方法研究模態命題邏輯的結果。最先開始這方面研究的是19世紀末的H.麥克考爾(1837~1907)。在他的影響下，美國哲學家、邏輯學家C.I.劉易斯於1914年構造了一個模態命題演算。他用~(不可能)作為基本符號,通過定義p叾q呏~(p-q)引入嚴格蘊涵。這裏,"叾"是嚴格蘊涵符號,"呏"是定義符號，~ (p-q)解釋為不可能(p真並且q假)。後來劉易斯又不斷改進其模態系統，包括改進他所用的符號。1932年，他提出了 5個以"◇"(可能)為基本符號的模態命題演算S1,S2,S3,S4,S5。20世紀30年代以後，出現了許多模態命題演算。其中，模態命題演算T是一個很簡單並且直觀性很強的系統。它是在一個完全的命題演算上再加上①一個基本符號:L;②一條形成規則:如果 A是合式公式，則LA是合式公式;③兩條公理:Lp →p,L(p →q) →(Lp →Lq)。④一條推理規則:如果p是定理，則Lp是定理。⑤一些定義:Mp =Df塡L塡p,p崊q =DfL(p→q)，p匔q = Df(p崊q)∧(q崊p)模態命題演算T有以下重要的定理: p →Mp;Lp →Mp;塡Lp凮M塡p;塡Mp凮L塡p;(塡p崊p)凮Lp;Lp →(q崊p);L塡p →(p崊q)。該演算中的基本符號L可以解釋為必然;引入符號M可以解釋為可能。公理Lp→p可以解釋為:如果必然p是真的，則p是真的;公理L(p →q)→(Lp →Lq)可以解釋為:當必然(如果p，則q)是真的，並且必然p是真的，那麽必然q是真的。必然性規則可以解釋為:如果p是定理，則必然p是定理。在模態命題演算T上再加公理Lp→LLp，就可以得到一個實質上是劉易斯的 S4的模態命題演算。由於在S4中能推出定理①Lp凮LLp和②Mp凮MMp。因此, 在S4中，根據等值替換定理並套用①和②，就能分別把具有多個連線的相同模態詞的公式，化歸為隻具有一個模態詞的公式，即把 LL...Lp化歸為Lp，把MM...Mp化歸為Mp。在模態命題演算T上再加公理塡Lp→L塡Lp，就得出一個實質上是劉易斯的S5的模態命題演算。在 S5中能推出:①L1p凮L1L1p，②Mp凮MMp, ③ML1p凮L1p，④L1Mp凮Mp, ⑤L(p∨Lq)凮(Lp∨Lq),⑥L(p∨Mq)凮Lp∨Mq， ⑦L(p0∧Lq)凮(Lp∧Lq)， ⑧L(p∧Mq)凮Lp∧Mq， ⑨M(p∨Lq)凮(Mp∨Mq), ⑩M(p∨Mq)凮(Mp∨Mq)，?M(p∧Lq)凮(Mp)∧Lq)，?M(p∧Mq)凮(Mp∧Mq)。套用定理①~?並根據等值替換定理，就可把一個多級的模態公式化歸為一個一級的模態公式。例如,把LMLp∧ML(ML...Mp →Lq)化歸為Lp∧(Mp →Lq)。 模態謂詞演算1946年，R.C.巴肯和R.卡爾納普各自獨立地構造了一個模態謂詞演算。巴肯的模態謂詞演算，實質上是在劉易斯的模態命題演算S2上再加個體詞、謂詞和量詞，以及有關的形成規則，公理和推理規則的結果。在這個演算中，有下麵這樣一條公理:M(ヨx)fx →(ヨx)Mfx這一公式通常叫做巴肯公式。其解釋是:如果可能有的個體有f 性質，則有的個體可能有f 性質。但在巴肯的演算中，(ヨx)Mfx →M(ヨx)fx卻不是定理。 模型40年代末，卡爾納普開始從語義方面研究模態邏輯。50年代末到60年代初，S.坎格爾、J.欣梯卡與S.A.克裏普克等人發展了卡爾納普的理論，提出了比較完整的模態邏輯的模型理論。克裏普克所構造的模態命題演算的模型,是一個三元組〈W、R、V〉。其中W是許多可能世界的集合。一個可能世界,從直觀上說，也就是一個由許多互不矛盾但不一定現實的事物情況所組成的整體;R是可能世界之間的二元關系;V是滿足某些條件的賦值。而模態謂詞演算的模型,則在W、R、V之外至少還要加上個體域 D。根據這樣的模型就可定義模態常真式。 趨勢和意義60年代以來模態邏輯有很大發展，出現了許多新的系統，特別出現了許多非標準的模態邏輯系統，如認知邏輯、道義邏輯、時態邏輯等。模態邏輯由於研究和闡明瞭必然、可能、應當、知道等本體論和認識論概念的邏輯性質，因而具有深刻的哲學意義。   相關詞條     模態邏輯導論      選言命題      辯證邏輯      聯言命題      假言命題      演繹推理      必要條件      充分條件      思維方式      悖論      皮亞諾曲線             模態邏輯 @ 華人百科  勵志人生 國語字典辭典 詩詞大全 小語 腦筋急轉彎    模態邏輯- 台灣Wiki 首頁百科圖片百科分類TwWiki台灣Wiki>百科分類>數學術語>自動化>模態邏輯評論（0）分享到：分享到Facebook分享到Twitter分享到Google+分享到噗浪模態邏輯 標籤： 暫無標籤  模態邏輯，是邏輯的一個分支，它研究必然、可能及其相關概念的邏輯性質。模態邏輯所研究的命題"必然 A"和"可能 A"與通常命題演算中的命題不同。後者是真值函項，前者不是。因為，當A真時，"必然A"既可以是真也可以是假；當A假時，"可能A"既可以是真也可以是假。 目錄1. 模態邏輯2. 正文3. 配圖4. 相關連接回目錄1 模態邏輯 -模態邏輯  回目錄2 模態邏輯 -正文  　　邏輯的一個分支，它研究必然、可能及其相關概念的邏輯性質。模態邏輯所研究的命題"必然 A"和"可能 A"與通常命題演算中的命題不同。後者是真值函項，前者不是。因為，當A真時，"必然A"既可以是真也可以是假；當A假時，"可能A"既可以是真也可以是假。 　　模態三段論 　早在古希臘，亞里士多德詳細研究過模態三段論。他把命題分為 3種：①實然命題的形式是，"a是b"；②必然命題的形式是，"a必然是b"；③偶然命題的形式是，"a偶然是b"。後兩者屬於模態命題。亞里士多德所說的"必然"，具有兩種意義。在一種意義下,"a必然是b"表示"b"所指謂的性質,是"a"所指謂的事物的本質屬性或本質屬性的一部分。這是客觀事物的必然性。由於在亞里士多德的理論中，本質與定義是相應的，因此也可以說，這是根據命題中語詞的定義而得出的必然性。在另一種意義下，"a必然是b"表示 "a是b" 是由別的命題根據三段論推出的必然結論。這實質上是演繹推理的邏輯必然性。亞里士多德所說的"偶然"是一個含混的語詞。在他的《工具論》中的有些地方，"a偶然是b"就是"a可能是b"。在這個意義上，"a必然是b"可推出"a偶然是b"。但在另外的地方，"a偶然是b"則是"a不必然是 b並且a不必然不是b"，或者是"a可能不是 b並且a可能是b"。在這一意義上，"a必然是b"就不能推出"a偶然是b",而"a偶然是b"卻可推出"a不必然是b"。 　　把"必然"和"偶然"這兩個模態概念分別加到亞里士多德的4種實然命題A、E、I、O上去，就可得出8種模態命題。例如，"所有 a都必然是b"，"有些a偶然不是b"等。亞里士多德討論了這8種模態命題的換質與換位，也討論了這些命題之間的邏輯關係。他所提出的模態三段論，是至少有一前提是模態命題的三段論。他根據前提把模態三段論分為 8大類：①兩個前提都是必然命題；②大前提是必然命題，小前提是實然命題；③大前提是實然命題，小前提是必然命題；④兩個前提都是偶然命題；⑤大前提是偶然命題，小前提是實然命題；⑥大前提是實然命題，小前提是偶然命題；⑦大前提是偶然命提,小前提是必然命題；⑧大前提是必然命題,小前提是偶然命題。 　　亞里士多德的模態三段論實質上是一個公理系統。他像處理實然三段論（見三段論）一樣，把模態三段論分為第1、第2和第3格，並把第1格的模態三段論看作完美的、不需要證明的,而且主要應用換位法和歸謬法,就可以從第 1格的模態三段論推出其他的模態三段論。 　　亞里士多德的學生泰奧弗拉斯多也創造了一個不同的模態三段論系統。稍後，麥加拉 -斯多阿學派（見麥加拉－斯多阿學派邏輯）也對必然與可能這些模態概念進行了較深入的探討。在公元 9～12世紀，阿拉伯邏輯學家吸取了古希臘有關模態邏輯的思想並有所發展。伊本·西那把模態概念和命題的時間結合起來，創造了一個新的模態三段論系統。12～15世紀的歐洲經院邏輯學家區別了命題模態與事物模態合的意義下的模態與分的意義下的模態。偽司各特還構造了一個在合的意義下的模態三段論系統和一個在分的意義下的模態三段論系統。奧康的威廉則構造了一個這樣的模態三段論系統：其中一個前提是在合的意義下的模態命題，而另一個前提是在分的意義下的模態命題。此外，經院邏輯學家還研究了知道、懷疑、願意等主觀模態概念和應當、許可等道義概念的邏輯性質。 　　模態命題演算 　模態命題演算是現代模態邏輯的基本內容之一。它是應用數理邏輯的方法研究模態命題邏輯的結果。最先開始這方面研究的是19世紀末的H.麥克考爾(1837～1907)。在他的影響下，美國哲學家、邏輯學家C.I.劉易斯於1914年構造了一個模態命題演算。他用～（不可能）作為基本符號,通過定義p叾q呏～(p-q)引入嚴格蘊涵。這裡,"叾"是嚴格蘊涵符號,"呏"是定義符號，～ (p-q)解釋為不可能（p真並且q假）。後來劉易斯又不斷改進其模態系統，包括改進他所用的符號。1932年，他提出了 5個以"◇"（可能）為基本符號的模態命題演算S1,S2,S3,S4,S5。　　20世紀30年代以後，出現了許多模態命題演算。其中，模態命題演算 T是一個很簡單並且直觀性很強的系統。它是在一個完全的命題演算上再加上 　　①一個基本符號：L；　　②一條形成規則：如果 A是合式公式，則LA是合式公式；　　③兩條公理：　　　　　　　　　　　Lp→p,　　　　　　　L(p →q) →(Lp→Lq)。　　④一條推理規則：如果p是定理，則Lp是定理。　　⑤一些定義：Mp=Dｆ塡L塡p,p崊q=DｆL(p→q)，p匔q=Dｆ(p崊q)∧(q崊p)　　模態命題演算T有以下重要的定理：p→Mp；Lp→Mp；塡Lp凮M塡p；塡Mp凮L塡p；　　(塡p崊p)凮Lp；Lp→(q崊p)；L塡p →(p崊q)。　　該演算中的基本符號L可以解釋為必然；引入符號M可以解釋為可能。公理Lp→p可以解釋為：如果必然p是真的，則p是真的；公理L(p →q)→(Lp →Lq)可以解釋為：當必然（如果p，則q）是真的，並且必然p是真的，那麼必然q是真的。必然性規則可以解釋為：如果p是定理，則必然p是定理。　　在模態命題演算T上再加公理Lp→LLp，就可以得到一個實質上是劉易斯的 S4的模態命題演算。由於在S4中能推出定理①Lp凮LLp和②Mp凮MMp。因此, 在S4中，根據等值替換定理並應用①和②，就能分別把具有多個連接的相同模態詞的公式，化歸為只具有一個模態詞的公式，即把LL...Lp化歸為Lp，把MM...Mp化歸為Mp。　　在模態命題演算 T上再加公理 塡Lp→L塡Lp，就得出一個實質上是劉易斯的S5的模態命題演算。在 S5中能推出：①Ｌ1p凮Ｌ1Ｌ1p，②Mp凮MMp, ③MＬ1p凮Ｌ1p，④Ｌ1Mp凮Mp, ⑤Ｌ(p∨Ｌq)凮(Ｌp∨Ｌq),⑥Ｌ(p∨Mq)凮Ｌp∨Mq， ⑦Ｌ(p0∧Lq)凮(Lp∧Ｌq)， ⑧Ｌ(p∧Mq)凮Ｌp∧Mq， ⑨M(p∨Ｌq)凮(Mp∨Mq), ⑩M(p∨Mq)凮(Mp∨Mq)，M(p∧Ｌq)凮(Mp)∧Lq)，M(p∧Mq)凮(Mp∧Mq)。應用定理①～並根據等值替換定理，就可把一個多級的模態公式化歸為一個一級的模態公式。例如,把ＬMＬp∧MＬ(MＬ...Mp →Ｌq)化歸為Ｌp∧(Mp →Ｌq)。　　模態謂詞演算 　1946年，R.C.巴肯和R.卡爾納普各自獨立地構造了一個模態謂詞演算。巴肯的模態謂詞演算，實質上是在劉易斯的模態命題演算S2上再加個體詞、謂詞和量詞，以及有關的形成規則，公理和推理規則的結果。在這個演算中，有下麵這樣一條公理：　　　　　　M(ヨｘ)ｆｘ →(ヨｘ)Mｆｘ 這一公式通常叫做巴肯公式。其解釋是：如果可能有的個體有ｆ 性質，則有的個體可能有ｆ 性質。但在巴肯的演算中，(ヨｘ)Mｆｘ →M(ヨｘ)ｆｘ卻不是定理。 　　模態邏輯模型 　40年代末，卡爾納普開始從語義方面研究模態邏輯。50年代末到60年代初，S.坎格爾、J.欣梯卡與S.A.克裡普克等人發展了卡爾納普的理論，提出了比較完整的模態邏輯的模型理論。克裡普克所構造的模態命題演算的模型,是一個三元組〈W、R、V〉。其中W是許多可能世界的集合。一個可能世界,從直觀上說，也就是一個由許多互不矛盾但不一定現實的事物情況所組成的總體；R是可能世界之間的二元關係；V是滿足某些條件的賦值。而模態謂詞演算的模型,則在W、R、V之外至少還要加上個體域 D。根據這樣的模型就可定義模態常真式。 　　趨勢和意義 　60年代以來模態邏輯有很大發展，出現了許多新的系統，特別出現了許多非標準的模態邏輯系統，如認知邏輯、道義邏輯、時態邏輯等。模態邏輯由於研究和闡明瞭必然、可能、應當、知道等本體論和認識論概念的邏輯性質，因而具有深刻的哲學意義。　　參考書目　C.I.Lewis & C.H.Langford, Symbolic Logic, N.Y.The Cantury Co.,1932. von Wright, An Essay In Modal Logic,Amsterdam,North-Holland,1951.　G.E.Hughts & M.J.Cresswell, An Introduction toModal Logic,London Methuen,1972. 回目錄3 模態邏輯 -配圖  回目錄4 模態邏輯 -相關連接 上一篇[乙醯化二澱粉磷酸酯]  相關評論同義詞：暫無同義詞收藏到：收藏到Facebook收藏到Twitter收藏到Google+收藏到噗浪詞條信息瀏覽次數: 60 次更新時間: 2013-09-25相關詞條精彩詞條More>聖艾修伯里魏秋樺吞拿魚沙拉貉子春日結乃腸道菌群失調症分享到分享到Facebook分享到Twitter分享到Google+分享到噗浪1模態邏輯2正文3配圖4相關連接
+
+
+模態邏輯 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+開啟主選單
+
+
+
+β
+
+
+
+
+
+搜尋
+
+
+
+編輯本頁以其他語言閱讀模態邏輯模態邏輯，或者叫（不很常見）內涵邏輯，是處理用模態如「可能」、「或許」、「可以」、「一定」、「必然」等限定的句子的邏輯。模態邏輯可以用語義的「內涵性」來描述其特徵：複雜公式的真值不能由子公式的真值來決定的。允許這種決定性的邏輯是「外延性的」，經典邏輯就是外延性的例子。模態算子不能使用外延語義來形式化：「喬治·布希是美國總統」和「2 + 2 = 4」是真的，但是「喬治·布希必然是美國總統」是假的，而「2 + 2 = 4是必然的」是真的。
+形式模態邏輯使用模態判決算子表示模態。基本的模態算子是
+
+
+
+◻
+
+
+{\displaystyle \Box }
+和
+
+
+
+◊
+
+
+{\displaystyle \Diamond }
+。（有時分別使用「L」和「M」）。它們的意義依賴於特定的模態邏輯，但它們總是以相互定義的方式來定義：
+
+
+
+
+◊
+p
+=
+¬
+
+◻
+
+¬
+
+p
+.
+
+
+{\displaystyle \Diamond p=\lnot \,\Box \,\lnot \,p.}
+
+
+
+
+
+◻
+p
+=
+¬
+
+◊
+
+¬
+
+p
+.
+
+
+{\displaystyle \Box p=\lnot \,\Diamond \,\lnot \,p.}
+
+
+目錄真勢模態編輯
+在真勢模態邏輯（就是說必然性和可能性的邏輯）中
+
+
+
+◻
+
+
+{\displaystyle \Box }
+ 表示必然性，而
+
+
+
+◊
+
+
+{\displaystyle \Diamond }
+ 表示可能性。所以Jones有兄弟是「可能的」，若且唯若Jones「沒」有兄弟是「非必然的」。
+句子被認定為
+可能的如果它「可能」為真（不管實際上是真是假）;
+必然的如果它「不可能」為假;
+偶然的如果它「不是」必然為真，就是說，可能為真可能為假。偶然的真理是「實際上」為真，但「可能曾經不是」的真理。
+其他模態編輯
+認識編輯
+模態邏輯最經常用來談論所謂的「真勢模態」:「...是必然的」或者「....是可能的」，這些模態（包括形上學模態和邏輯模態）最容易混淆於認識模態(來自希臘語episteme,知識):「...確實是真的」和「...（對給定的可獲得的信息）或許是真的」。在普通的話語中這兩種模態經常用類似的詞來表達；下列對比可能有所幫助：
+一個人Jones可以合理的「同時」說出：（1）「我確信大腳怪不可能存在」，還有（2）「大腳怪存在的確是可能的」。Jones通過（1）表達的意思是，對於給定的所有可獲得的信息，大腳怪存在與否是沒有疑問的。這是一個認識上的斷言。通過（2）表達的意思是這個事物可能曾是其它樣子的。他的意思不是「就我所知而言，大腳怪可能存在」。（所以這不矛盾於（1））。而是，他做了一個「形上學」上的斷定，「即使我不知道，大腳怪存在仍是可能的」。
+在其他方面，Jones可以說（3）「哥德巴赫猜想可能為真，也可能為假」，還有（4）「如果它是真的，則它必然是真的，不可能是假的」。這裡Jones的意思是，「就他所知而言，它為真為假都是在認識上可能的（哥德巴赫猜想仍未被證明是真還是假）。但是如果有這麼一個證明（至今仍未發現），則哥德巴赫猜想為假在邏輯上是不可能的」。邏輯上的可能性是一種「真勢」（alethic）可能性；（4）做了對一個數學真理曾經為假是否可能的一個斷言，而（3）只做了對「就Jones所知而言」這個論斷被證實為假是否可能的一個斷言，所以Jones還是不自相矛盾。
+認識上的可能性還以一種非形上學的方式關註真實世界。形上學的可能性以「可能曾是」的方式關註世界，而認識上的可能性以（就我所知而言）「可能正是」的方式關註世界。比如，我想知道在離開前是否要帶把傘。如果你告訴我「外面可能在下雨」 -- 在一種「認識上可能」的意義上--那麼這會影響我是否帶傘的決定。但是如果你告訴我「外面下雨是可能的」 -- 在一種「形上學上可能」的意義上--那麼我從這種大道理中沒有得到任何啟示。
+大量的哲學文獻關心「真勢」而非「認識」模態。（實際上，其中大多數關心一種最廣泛的真勢模態，就是邏輯可能性）。這不是說真勢可能性比我們日常用的認識可能性更重要（考慮上面決定是否帶傘的例子）。只是說在哲學研究中的優先權不是日常生活中的重要性帶來的。
+道義和時間編輯
+言語中有一些類似的模式，儘管不大可能與真勢模態混淆但仍密切的相關。其一是有關時間的談論。明天可能會下雨，但也可能不下好像是合理的；在另一方面，如果昨天下雨了，如果實際上已經下了，則說「昨天可能沒有下雨」就不是完全正確的。過去好像「固定的」或必然的，而將來在某種程度上不是。很多哲學家和邏輯學家認為這種推理不是很好；但是我們經常以這種方式談話，所以最好有一種邏輯能捕獲它的結構。類似的有關道德的談論，或者說義務和規範一般好像也有模態結構。在「你必須這麼做」和「你可以這麼做」之間的區別看起來很像在「這是必然的」和「這是可能的」之間的區別。這種邏輯叫做道義邏輯，「道義」來自希臘語duty。
+模態邏輯的釋義編輯
+在模態邏輯的最常見解釋中，你要考慮「所有邏輯上可能的世界」。如果一個陳述在所有可能世界中是真的，則它是必然的真理。如果一個陳述碰巧在我們的世界中是真的，但不是在所有可能世界中是真的，則它是偶然的真理。在某些（不是必須在我們自己的）可能世界中是真的陳述叫做可能的真理。
+這種"可能世界"是否是解釋模態邏輯的最佳方式，怎樣在文字上接受這種方言，是形上學的鮮活的問題。例如，可能世界的方言可以把關於大腳怪的斷言翻譯為「有某個可能世界，在其中大腳怪存在」。要主張大腳怪的存在性是可能的，但不是現實的，你可以說「有某個可能世界，在其中大腳怪存在；但是在現實世界中，大腳怪不存在」。但是對使模態斷言對我們負責的那個東西是什麼仍是不清楚的。我們真的要宣稱可能世界的存在性嗎？它在每一點都同我們的現實世界一樣真實，卻惟獨不是現實的。David Lewis強硬的說就是這樣，可能世界同我們自己的世界一樣真實。這種立場叫做「模態現實主義」。不足為奇的，多數哲學家不願意接受這種特別的學說，在搜尋一種可替代的方式來釋義我們的模態斷言所蘊含的本體論承諾。
+公理系統編輯
+有很多有不同性質的模態邏輯。在其中很多必然性和可能性的概念滿足下列德·摩根定律的聯繫：
+"X是非必然的"等價於"非X是可能的"。
+"X是非可能的"等價於"非X是必然的"。
+儘管模態邏輯教科書比如Hughes和Cresswell的《A New Introduction to Modal Logic》覆蓋了這個定律不成立的一些系統。
+模態邏輯向命題邏輯的「合式公式」增加上必然性和偶然性。在一些記號中「必然的p」使用「方塊」（
+
+
+
+◻
+p
+
+
+{\displaystyle \Box p}
+ ）表示，而「可能的p」使用「菱形」（
+
+
+
+◊
+p
+
+
+{\displaystyle \Diamond p}
+ ）表示。無論是什麼樣的記號，兩個算子是以相互定義的方式定義的：
+
+
+
+
+◻
+p
+
+
+{\displaystyle \Box p}
+ （必然的p）等價於
+
+
+
+¬
+◊
+¬
+p
+
+
+{\displaystyle \neg \Diamond \neg p}
+ （非可能的非p）
+
+
+
+
+◊
+p
+
+
+{\displaystyle \Diamond p}
+ （可能的p）等價於
+
+
+
+¬
+◻
+¬
+p
+
+
+{\displaystyle \neg \Box \neg p}
+ （非必然的非p）
+因此，
+
+
+
+◻
+
+
+{\displaystyle \Box }
+ 和
+
+
+
+◊
+
+
+{\displaystyle \Diamond }
+ 叫做對偶算子。
+要建立模態邏輯的可用系統，必須向命題邏輯的增加什麼公理是非常有爭議的主題。得名於Saul Kripke的K，只向經典命題邏輯公理體系增加瞭如下規則：
+必然性規則：如果p是 K的定理，則
+
+
+
+◻
+p
+
+
+{\displaystyle \Box p}
+ 也是。
+分配律公理：如果
+
+
+
+◻
+(
+p
+→
+q
+)
+
+
+{\displaystyle \Box (p\rightarrow q)}
+ 則
+
+
+
+(
+◻
+p
+→
+◻
+q
+)
+
+
+{\displaystyle (\Box p\rightarrow \Box q)}
+ （這也叫做公理K）
+但K是一個弱模態邏輯。特別是留下了一個公開的問題，命題是必然的但只偶爾是必然的。如果
+
+
+
+◻
+p
+
+
+{\displaystyle \Box p}
+ 為真則
+
+
+
+◻
+◻
+p
+
+
+{\displaystyle \Box \Box p}
+ 為真不是K的定理，它是說，必然的真理必然是必然的。這可能不是K的大缺陷，因為這些好像是十分奇怪的問題，而試圖解答它們的任何嘗試都把我們捲入混亂的難題中。無論如何，對這種問題的不同解決方式生成了不同的模態邏輯系統。
+這些規則缺乏從p的必然性到p的實際情況的公理，所以通常要補充上下列「自反性」公理，這就生成經常叫做T的一個系統。
+
+
+
+
+◻
+p
+→
+p
+
+
+{\displaystyle \Box p\rightarrow p}
+ （如果p是必然的，則p是事實）
+這是多數但不是全部模態邏輯系統的規則。Jay Zeman的書《Modal Logic》覆蓋了沒有這個規則的系統如S1^0。
+其他周知的基本公理：
+4: 
+
+
+
+◻
+p
+→
+◻
+◻
+p
+
+
+{\displaystyle \Box p\rightarrow \Box \Box p}
+ 
+B: 
+
+
+
+p
+→
+◻
+◊
+p
+
+
+{\displaystyle p\rightarrow \Box \Diamond p}
+ 
+D: 
+
+
+
+◻
+p
+→
+◊
+p
+
+
+{\displaystyle \Box p\rightarrow \Diamond p}
+ 
+5: 
+
+
+
+◊
+p
+→
+◻
+◊
+p
+.
+
+
+{\displaystyle \Diamond p\rightarrow \Box \Diamond p.}
+ 
+這些公理產生的系統：
+K := K + N
+T := K + T
+S4 := T + 4
+S5 := S4 + 5
+D := K + D.
+K到S5形成了嵌套的系統層級，建造了正規模態邏輯的核心。D主要對探索模態邏輯的道義解釋的人有價值。
+今天最常見的系統是模態邏輯S5，它通過增加使所有模態真理是必然的公理來粗壯的解答了這個問題：例如，如果p是可能的，則p必然是可能的，如果p是必然的，則它必然是必然的。很多人認為它正當的根據是，它是在我們需要每個可能的世界相對於每個其他世界都是可能的時候所獲得的系統。不過，模態邏輯的其他系統已經被公式化了，部分的因為S5不能很好的適合我們感興趣的所有種類的形上學模態。（若此則意味著可能的世界的談論不能很好的適合這些種類的模態）。
+模態邏輯的發展編輯
+儘管亞里士多德的邏輯幾乎全部都關註直言三段論的理論，他的著作還包含在模態邏輯要點上的一些延伸討論（比如他著名的在解釋篇§ 9中海戰悖論），並且它們與潛在性和時間有關連。遵從他的著作，經院學者為模態邏輯的嚴格理論開發出了根基，大多在關於本質性和偶然性的陳述的邏輯的註釋的上下文中。在中世紀的作家中，在William of Ockham和John Duns Scotus的著作中找到了關於模態邏輯的一些最重要的工作。
+形式模態邏輯的締造者是C. I. Lewis，他在專著《A Survey of Symbolic Logic》（1918）中介入了一個系統（後來叫做S3），並（同C. H. Langford一起）在書《Symbolic Logic》（1932）中介入了系統S1-S5。J. C. C. McKinsey在1941年使用代數方法（帶有算子的布爾代數）來證明Lewis的S2和S4的可判定性。Saul Kripke從1959年開始為模態邏輯設計了關係語義或可能世界語義。Vaughan Pratt在1976年介入了動態邏輯。Amir Pnueli在1977年提出使用時態邏輯來公式化頻繁操作並發程序的行為。
+時間邏輯，在1957年由A. N. Prior發明，與模態邏輯有密切的關聯，因為增加了模態算子[F]和[P]，分別意味著今後和至今，導致了時間邏輯的一個系統。時間邏輯的風味包括：命題動態邏輯（PDL），命題線性時間邏輯（PLTL），線性時間邏輯（LTL），計算樹邏輯（CTL），Hennessy-Milner邏輯和T。
+模態邏輯的數學結構，也就是擴充一元運算的布爾代數（經常叫做「模態代數」），開始出現於J. C. C. McKinsey在1941年對S2和S4是可判定性的證明，並於阿爾弗雷德·塔斯基和他的學生Bjarni Jonsson的工作（Jonsson與Tarski 1951-52）中得到完全能力。這項工作顯示了S4和S5是內部代數的模型，它是最初設計用來捕獲拓撲學的內部算子和閉包算子的性質的布爾代數的真擴展。關於模態邏輯的課本典型不太多提及它與布爾代數和拓撲學研究的聯繫。形式模態邏輯與有關數學的歷史概述可參見Goldblatt (2006)。
+引用編輯
+M. Fitting and R.L. Mendelsohn (1998) First Order Modal Logic. Kluwer Academic Publishers.
+James Garson (2003) Modal logic. Entry in the Stanford Encyclopedia of Philosophy.
+Rod Girle (2000) Modal Logics and Philosophy. Acumen (UK). The proof theory employs refutation trees (semantic tableaux). A good introduction to the varied interpretations of modal logic.
+Robert Goldblatt (1992) "Logics of Time and Computation", CSLI Lecture Notes No. 7, Centre for the Study of Language and Information, Stanford University, 2nd ed. (distributed by University of Chicago Press).
+Robert Goldblatt (1993) "Mathematics of Modality", CSLI Lecture Notes No. 43, Centre for the Study of Language and Information, Stanford University. (distributed by University of Chicago Press).
+G.E. Hughes and M.J. Cresswell (1968) An Introduction to Modal Logic, Methuen.
+G.E. Hughes and M.J. Cresswell (1984) A Companion to Modal Logic, Medhuen.
+G.E. Hughes and M.J. Cresswell (1996) A New Introduction to Modal Logic, Routledge.
+E.J. Lemmon (with Dana Scott), 1977, An Introduction to Modal Logic, American Philosophical Quarterly Monograph Series, no. 11 (ed. by Krister Segerberg), Basil Blackwell, Oxford.
+J. Jay Zeeman (1973) Modal Logic. D. Reidel Publishing Company.
+參見編輯
+
+可能世界
+De dicto and de re
+混合邏輯
+內部代數
+可解釋性邏輯
+可證明性邏輯
+Kripke語義
+可及關係
+認識邏輯
+時間邏輯
+道義邏輯
+信念邏輯
+哥德爾本體論證明
+
+外部連結編輯
+A discussion of modal logic by John McCarthy
+Bibliography of Non-Standard Logics by Peter Suber
+List of Logic Systems List of most of the more popular modal logics.
+Advances in Modal Logic（bi-annual international conference and book series in Modal Logic）
+致謝編輯
+本文包含最初來自Free On-line Dictionary of Computing的一些材料，經過授權在GFDL下。
+
+
+取自 "https://zh.wikipedia.org/w/index.php?title=模態邏輯&oldid=44182872"
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+模態邏輯 - MBA智庫百科
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+模態邏輯
+
+出自 MBA智庫百科(http://wiki.mbalib.com/)
+
+
+目錄
+
+1 什麼是模態邏輯
+2 模態邏輯的釋義
+3 模態邏輯的發展
+
+
+[編輯] 什麼是模態邏輯 
+　　模態邏輯或者叫（不很常見）內涵邏輯，是處理用模態如“可能”、“或許”、“可以”、“一定”、“必然”等限定的句子的邏輯。模態邏輯可以用語義的“內涵性”來描述其特征：複雜公式的真值不能由子公式的真值來決定的。允許這種決定性的邏輯是“外延性的”，經典邏輯就是外延性的例子。模態運算元不能使用外延語義來形式化：“喬治·布希是美國總統”和“2 + 2 = 4”是真的，但是“喬治·布希必然是美國總統”是假的，而“2 + 2 = 4是必然的”是真的。
+
+[編輯] 模態邏輯的釋義 
+　　在模態邏輯的最常見解釋中，你要考慮“所有邏輯上可能的世界”。如果一個陳述在所有可能世界中是真的，則它是必然的真理。如果一個陳述碰巧在我們的世界中是真的，但不是在所有可能世界中是真的，則它是偶然的真理。在某些（不是必須在我們自己的）可能世界中是真的陳述叫做可能的真理。
+　　這種"可能世界"是否是解釋模態邏輯的最佳方式，怎樣在文字上接受這種方言，是形而上學的鮮活的問題。例如，可能世界的方言可以把關於大腳怪的斷言翻譯為“有某個可能世界，在其中大腳怪存在”。要主張大腳怪的存在性是可能的，但不是現實的，你可以說“有某個可能世界，在其中大腳怪存在；但是在現實世界中，大腳怪不存在”。但是對使模態斷言對我們負責的那個東西是什麼仍是不清楚的。我們真的要宣稱可能世界的存在性嗎？它在每一點都同我們的現實世界一樣真實，卻惟獨不是現實的。David Lewis強硬的說就是這樣，可能世界同我們自己的世界一樣真實。這種立場叫做“模態現實主義”。不足為奇的，多數哲學家不願意接受這種特別的學說，在搜尋一種可替代的方式來釋義我們的模態斷言所蘊含的本體論承諾。
+
+[編輯] 模態邏輯的發展 
+　　儘管亞里士多德的邏輯幾乎全部都關註直言三段論的理論，他的著作還包含在模態邏輯要點上的一些延伸討論（比如他著名的在解釋篇§ 9中海戰悖論），並且它們與潛在性和時間有關連。遵從他的著作，經院學者為模態邏輯的嚴格理論開發出了根基，大多在關於本質性和偶然性的陳述的邏輯的註釋的上下文中。在中世紀的作家中，在William of Ockham和John Duns Scotus的著作中找到了關於模態邏輯的一些最重要的工作。
+　　形式模態邏輯的締造者是C. I. Lewis，他在專著《A Survey of Symbolic Logic》（1918）中介入了一個系統（後來叫做S3），並（同C. H. Langford一起）在書《Symbolic Logic》（1932）中介入了系統S1-S5。J. C. C. McKinsey在1941年使用代數方法（帶有運算元的布爾代數）來證明Lewis的S2和S4的可判定性。Saul Kripke從1959年開始為模態邏輯設計了關係語義或可能世界語義。Vaughan Pratt在1976年介入了動態邏輯。Amir Pnueli在1977年提出使用時態邏輯來公式化頻繁操作併發程式的行為。
+　　時間邏輯，在1957年由A. N. Prior發明，與模態邏輯有密切的關聯，因為增加了模態運算元[F]和[P]，分別意味著今後和至今，導致了時間邏輯的一個系統。時間邏輯的風味包括：命題動態邏輯（PDL），命題線性時間邏輯（PLTL），線性時間邏輯（LTL），計算樹邏輯（CTL），Hennessy-Milner邏輯和T。
+　　模態邏輯的數學結構，也就是擴充一元運算的布爾代數（經常叫做“模態代數”），開始出現於J. C. C. McKinsey在1941年對S2和S4是可判定性的證明，並於阿爾弗雷德·塔斯基和他的學生Bjarni Jonsson的工作（Jonsson與Tarski 1951-52）中得到完全能力。這項工作顯示了S4和S5是內部代數的模型，它是最初設計用來捕獲拓撲學的內部運算元和閉包運算元的性質的布爾代數的真擴展。
+
+
+
+
+取自"http://wiki.mbalib.com/zh-tw/%E6%A8%A1%E6%80%81%E9%80%BB%E8%BE%91"
+
+本條目對我有幫助0  分享到：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   如果您認為本條目還有待完善，需要補充新內容或修改錯誤內容，請編輯條目。
+本條目由以下用戶參與貢獻
+蘇青荇. 頁面分類: 邏輯 
+
+
+
+
+
+評論(共0條)提示:評論內容為網友針對條目"模態邏輯"展開的討論，與本站觀點立場無關。
+發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+導航
+
+
+首頁
+文檔
+百科
+商學院
+資訊
+培訓
+幫幫
+
+
+
+
+個人工具
+
+
+用戶登錄創建新帳號 
+
+
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+ 
+
+全球最大的中文經管百科，由121,994位網友共同編寫而成，共計413,893個條目
+
+
+
+
+
+
+
+
+ 
+首頁
+ 
+管理
+ 
+營銷
+ 
+經濟
+ 
+金融
+ 
+人力資源
+ 
+咨詢
+ 
+財務
+ 
+品牌
+ 
+證券
+ 
+物流
+ 
+貿易
+ 
+商學院
+ 
+法律
+ 
+人物
+ 
+分類索引
+ 
+
+
+
+
+查看
+
+條目討論編輯簡體中文繁體中文 
+
+
+工具▼
+
+
+鏈入頁面
+鏈出更改
+上載文件 特殊頁面 可列印版
+永久鏈接 
+
+
+
+
+
+
+
+
+
+
+
+
+
+導航
+
+
+最新資訊
+最新評論
+最新推薦
+熱門推薦
+編輯實驗
+使用幫助
+創建條目
+隨便看看
+
+
+
+
+
+
+
+
+
+
+
+
+本周推薦
+最多推薦
+
+
+
+影響世界的100個經典管理定律垃圾人定律工作計劃6W2H分析巴納姆效應樹立和提高威信法大石頭理論為什麼一為什麼分析法產品定位五步法最大笨蛋理論七層次領導力 
+
+蘑菇管理定律猴子管理法則情緒ABC理論100個最流行的管理辭彙21天效應破窗效應懶螞蟻效應SWOT分析模型墨菲定律踢貓效應 
+
+以上內容根據網友推薦自動排序生成
+
+
+
+
+
+
+
+
+
+x
+
+
+
+	   最後更改17:12, 2017年1月9日.	  
+智庫首頁 - 
+百科首頁 - 
+關於百科 -
+	   客戶端 -
+	   人才招聘 -
+	   廣告合作 - 
+權利通知 -
+	   聯繫我們 -
+	   免責聲明
+ - 友情鏈接
+
+©2006-2017 MBAlib.com, All rights reserved. 
+
+
+ 
+
+
+
+
+
+
+正規模態邏輯 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+正規模態邏輯
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+在邏輯中，正規模態邏輯是模態公式的集合 L，L 包含
+
+所有命題重言式，
+Kripke 模式: 
+
+
+
+◻
+(
+A
+→
+B
+)
+→
+(
+◻
+A
+→
+◻
+B
+)
+
+
+{\displaystyle \Box (A\to B)\to (\Box A\to \Box B)}
+
+，
+
+並且 L 閉合於
+
+代換，
+分拆規則: 從 A 和 A→B 推出 B，
+必然性規則: 從 A 推出 
+
+
+
+◻
+A
+
+
+{\displaystyle \Box A}
+
+。
+
+最小化的正規模態邏輯叫做 K。
+
+
+
+這是一篇與邏輯學相關的小作品。你可以透過編輯或修訂擴充其內容。
+
+
+閱
+論
+編
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=正規模態邏輯&oldid=25371643"					
+分類：模態邏輯隱藏分類：全部小作品邏輯學小作品 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+DeutschEnglishFrançaisPortuguês 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2013年3月10日 (週日) 02:26。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+模態邏輯 - Übersetzung - Chinesisch-Deutsch Wörterbuch - Glosbe
+
+
+GlosbeDeutsch AnmeldenWörterbuch/Wörterbuch Chinesisch/Chinesisch-Deutsch WörterbuchChinesisch
+
+	     
+        
+        Deutsch
+      Chinesisch 
+       Deutsch
+    
+						 
+						Chinesisch - Deutsch模態邏輯  auf DeutschÜbersetzung und Definition "模態邏輯", 
+      	Chinesisch-Deutsch Wörterbuch  Online模態邏輯 HanDeDictModallogik
+								{		
+								mathematics 	
+								}
+							Ähnliche Phrasen im Wörterbuch Chinesisch Deutsch.
+					(62)
+				變態地abnorm變態者Psychopath, Psychopathin, Psychopatin表單編輯器Formular-Editor持懷疑態度的人Skeptiker, Zweifler初始狀態Anfangszustand傳遞狀態通知 (DSN)Benachrichtigung über den Übermittlungsstatus詞態學Formenlehre詞態學Formenlehre大規模殺傷性武器Massenvernichtungswaffe帶鋼模切Ausstanzung, Ausstanzung, Bandstahlschnitt, Bandstahlschnitt, ausstanzen, ausstanzen, stanzen, stanzen待機狀態Standby, Standbybetrieb, Standbybetrieb, Standby帶鋼模切Ausstanzung, Ausstanzung, Bandstahlschnitt, Bandstahlschnitt, ausstanzen, ausstanzen, stanzen, stanzen單核苷酸多態性Single Nucleotide Polymorphism動態使用者物件Active User Object分散狀態disperser Zustand負載測試編輯器Auslastungstest-Editor葛邏祿Karluken葛邏祿Karluken工作階段狀態Sitzungszustand管理編輯器Chefredakteur規模化Dimensionierung環保生態綠色標志Öko-Plakette輯abholen, einsammeln, zusammenstellen輯abholen, abholen, einsammeln, einsammeln, zusammenstellen剪力模數Schubmodul剪力模數Schubmodul剪切模量Schubmodul健馱邏國Gandhara將來時態Futur距離模數Entfernungsmodul臨場動態角色扮演遊戲Live Action Role Playing命題邏輯Aussagenlogik模Muster, Norm, Norm, Standard, Standard, Vorbild, Vorbild, Muster, imitieren, nachahmen, nachahmen, imitieren模塊化系統modulares System模塊式設計Baukastensystem, Bausteinkonzept模擬倍增器Analogmultiplexer目標邏輯 Datacenterlogisches Zieldatencenter內嵌的視訊剪輯eingebetteter Videoclip你有一個較小的規模gibt es eine kleinere Größe凝聚態物理學Kondensierte Materie平衡狀態Beharrungszustand氣體狀態gasförmiger Zustand商務邏輯處理常式架構Geschäftslogikhandler-Framework設在外面的編輯部Außenredaktion生產無證付狀態Produktionsanarchie詩歌專輯Poesiealbum使用者狀態擷取Benutzerstatuserfassung輸入狀態Eingabemodus, Eingabemodus, Eingabestatus, Eingabestatus數理邏輯學semantisch睡眠狀態inaktiv, ruhend, schlafend態Gesinnung, Haltung, Verhältnis態Gesinnung, Haltung, Verhältnis態度決定一切Haltung bestimmt alles統一建模語言Unified Modeling Language完成狀態abgeschlossener Status微軟模擬飛行Microsoft Flight Simulator微軟模擬列車Microsoft Train Simulator現在時態Gegenwart, Präsens性心理變態Paraphilie制動狀態Bremsstellung資料編輯列Bearbeitungsleiste組建健康狀態Buildqualität  mehr weniger  Beispielsätze mit "模態邏輯", Translation Memoryadd examplezh 確認適宜以電子方式提供《聯合國機關慣例彙編》和《安全理事會慣例彙輯》的所有語文文本MultiUnde erkennt an, dass es wünschenswert ist, das Repertory of Practice of United Nations Organs und das Repertoire of the Practice of the Security Council in allen ihren jeweiligen Sprachfassungen elektronisch zur Verfügung zu stellenzh 代理伺服器組態檔案執行錯誤NameKDE40.1de Beim Ausführen des Skripts zur Proxy-Konfiguration ist ein Fehler aufgetreten.Namezh 只在徑向平面或者縱向平面建模TEDde nur in der Sagittalebene oder der vertikalen Ebene modellieren,zh 搭模斯月 六月/七月jw.orgde TAMMUS Juni—Julizh 過濾器資訊 這個欄位顯示關於所選取過濾器的一般資訊。 包括 : 過濾器名稱( 顯示在 KDEPrint 使用者介面上的名稱 ) 過濾器需求( 需要的外部程式 ) 輸入格式( 一個或多個 MIME 型態 ) 輸出格式( 過濾器產生的 MIME 型態 ) 文字描述KDE40.1de Filter-Info Dieses Feld zeigt einige allgemeine Informationen über den ausgewählten Filter an. Unter diesen sind: Der Filtername (wie in der KDEPrint Benutzeroberfläche angezeigt); Die Filter Voraussetzungen (das ist das externe Programm, das auf diesem System vorhanden und ausführbar sein muss); Das Filter-Eingabeformat (in der Form von einem oder mehreren MIME Typen, die der Filter akzeptiert); Das Filter-Ausgabeformat (in der Form eines MIME Typs, den der Filter erzeugt); Einen mehr oder weniger umfangreichen Text, der die Filterfunktion beschreibtzh 金屬製冰塊模tmClassde Eisformen aus Metallzh 一些本徵模,不過你還可以看到TEDde einige der Eigenformen gesehen, aber vielleicht auch,zh 用於等離子體蝕刻、化學蒸汽沈積、平版印刷、掩模平版印刷、掩模UN-2de Geräte und Werkstoffe für Plasmaätzverfahren, chemische Bedampfungsverfahren (CVD-Verfahren), Lithographie, Maskenlithographie, Masken und Fotolacke.zh 富國許多決定都對環境造成負面影響,但貧民卻因此背負鉅額代價,氣候變遷造成旱災、饑荒與死亡,但只要擁有儲水設備等科技,就能避免許多地區造成這種情況,也幫助當地社區因應新氣候狀態。globalvoicesde Wenn die reichen Länder Entscheidungen treffen, die negative Auswirkungen auf die Umwelt haben, dann sind es die Menschen, die in Armut leben, die den höchsten Preis bezahlen.zh 有婦女坐在城門口為巴比倫的搭模斯神哀哭,一些叛道者在聖殿的門廳向太陽下拜,這些人全都被處決。(jw.orgde Auch alle Frauen, die am Tor saßen und den babylonischen Gott Tammuz beweinten, sowie die Abtrünnigen, die bei der Tempelvorhalle die Sonne anbeteten, wurden getötet (8:7 bis 9:8).zh 兩者各有美態,雖然大不相同,卻是近親。jw.orgde Die andere steht gebeugt da und lässt die „Flügel“ hängen.zh 自動代理伺服器組態NameKDE40.1de Sucht nach einem Proxy-Server und richtet ihn einNamezh 他們最愛的、為之獻身的模因TEDde für die Meme, für die sie bereit sind zu sterben.zh 在中東大部,爭奪支配權(mastery)的暴力鬥爭已成新常態。ProjectSyndicatede In weiten Teilen des Mittleren Ostens ist die neue Normalität ein gewaltsamer Kampf um die Herrschaft.zh 這裡讓您設定 & kde; 拼字檢查程式。 您可以變更所使用的拼字檢查程式, 還有設定要檢察哪些型態的錯誤, 以及預設所使用的字典。 kde; 支援 ASpell 以及 ISpell 。KDE40.1de Zum Einrichten der Rechtschreibprüfung unter & kde; können Sie zum Beispiel auswählen, welches Programm verwendet werden soll, welche Eingaben als Fehler angesehen werden sollen und welches Wörterbuch Sie standardmäßig verwenden möchten. Mit & kde; können Sie sowohl ASpell, als auch ISpell verwendenzh 點選視窗標題列上最右邊的按鍵。 如果您正在該視窗編輯某個文件, 您會被詢問是否要 儲存 還是 丟棄 您先前所做的變更, 還是要 取消 這個關閉的動作 。KDE40.1de Klicken Sie auf den Knopf ganz rechts in der Titelleiste des Fensters. Wenn Sie mit dieser Anwendung ein Dokument bearbeitet haben, werden Sie gefragt, ob Sie Ihre Änderungen Speichern oder Verwerfen wollen, oder ob Sie das Beenden der Anwendung Abbrechen wollenzh 恢復已暫停的工作, 或將已送進佇列的工作狀態改為「 等待中 」 。 如果此工作在清單的最頂端, 則會開始工作 。KDE40.1de Setzt einen angehaltenen Auftrag fort oder versetzt einen Auftrag, der in die Warteschlange eingereiht wurde in den Status wartend. Steht der Auftrag an erster Stelle in der Liste, wird er sofort gesprochenzh 早在基督教創立之前很久,古巴比倫人已用十字符號作為生殖之神搭模斯的象徵物來崇拜。jw.orgde Lange vor der christlichen Zeit verwendeten die Babylonier bei der Anbetung Kreuze als Symbole des Fruchtbarkeitsgottes Tammuz.zh 文章提出存在兩種對立的“模式”: 一種是“流暢”邏輯, 表現在視覺傳媒(電視)中; 另一種是“稀缺”邏輯, 表現在電影傳媒中; 此外, 新的財政支持模式也加入進來。springerde Sie macht einen Gegensatz von zwei „Modellen“ deutlich: einer Logik des „Flusses“ im audiovisuellen Kreislauf (Fernsehen), und einer Logik der „Seltenheit“ im cinematographischen Kreislauf, die gerade im Begriff sind, neue Formen der finanziellen Unterstützung zu vervollständigen.zh 檔案分享讓您設定 Samba( Microsoft; & Windows; ) 與 NFS ( UNIX; ) 的檔案分享功能。 要改變這些設定, 您必須有 root 或管理者的密碼。 若您沒有 root 權限, 您也可以設定是否允許使用者, 以及允許哪些使用者分享檔案, 分享的資料夾, 還有分享的型態等等的選項 。KDE40.1de Mit der Dateifreigabe können Sie Samba (Microsoft; & Windows;) und NFS (UNIX;) zum gemeinsamen Verwenden von Dateien verwenden. Um Änderungen in diesem Modul vornehmen zu können, benötigen Sie das Passwort des Systemverwalters. Sie können einrichten, ob und welche Benutzer auch ohne das Passwort des Systemverwalters Ordner freigeben dürfen. Außerdem können Sie einrichten, welche Ordner Sie wie freigeben möchten und sich diese freigegebenen Ordner anzeigen lassenzh 預示未來事物的先模jw.orgde PROPHETISCHE VORBILDERzh 請秘書長向大會第六十九屆會議提交一份關於《聯合國各機關慣例彙編》和《安全理事會慣例彙輯》的報告;UN-2de ersucht den Generalsekretär, der Generalversammlung auf ihrer neunundsechzigsten Tagung einen Bericht sowohl über das Repertory als auch über das Repertoire vorzulegen;zh 一些桌面工具, 如行事曆、 編輯器等等 。KDE40.1de Verschiedene Schreibtischutensilien wie Taschenrechner, Editor und andereszh Samba 設定需要 root 或管理者的密碼。 這個模組提供您一個操作簡單的介面, 讓您設定 Samba 的檔礙分享、 安全性、 使用者、 列印分享, 還有設定您的 Samba 伺服器成為 & Windows; NT 網域主控者等等的功能 。KDE40.1de Um Änderungen im Modul Samba vornehmen zu können, benötigen Sie root-Rechte oder ein Systemverwalter-Passwort. Hierbei handelt es sich um ein Modul, mit dem Sie fortgeschrittene Einstellungen, wie zum Beispiel Sicherheitseinstellungen, Freigaben, Benutzer und Drucker über eine einfach zu bedienende grafische Benutzeroberfläche vornehmen können. Sie können mit diesem Modul Einstellungen von der einfachen Datei-und Druckerfreigabe bis zur Verwendung Ihres Samba-Servers als & Windows; NT Dömanen-Controller festlegenzh 巴西人對於這則新聞也是持幽默態度,以下是「政治幽默」 (Humor Político [葡萄牙文]) 部落格上的插畫。globalvoicesde In Brasilien rief die Nachricht ebenfalls eine Reihe an humorvollen Beiträgen hervor, wie eine Sammlung von Abbildungen im Blog Humor Político [Politischer Humor, pt] zeigt.Nächste Seite >>Zeige Seite 1. Gefunden: 490 zur Phrase 模態邏輯 passende Sätze.Gefunden in 7 ms.Seien Sie gewarnt: Translation Memories kommen aus vielen Quellen und werden nicht überprüft. Sie sind durch menschliche Hand geschaffen aber durch Computer verwaltet, was Fehler verursachen könnte. 
+Übersetzung hinzufügen 
+           Übersetzung hinzufügen
+
+
+
+
+
+
+
+
+
+
+	modality logics中文翻譯,modality logics是什麼意思:模態邏輯…《查查》英語翻譯
+
+
+
+
+簡體版
+English
+
+
+登入 註冊
+
+網站工具
+
+設為首頁
+收藏本站
+
+
+
+
+
+
+
+
+
+
+英語翻譯
+日語翻譯
+法語翻譯
+俄語翻譯
+韓語翻譯
+漢語辭典
+句子翻譯
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+當前位置：綫上翻譯 > 英語翻譯 > modality logics
+
+
+
+
+
+
+
+
+
+modality logics 中文翻譯
+中文翻譯手機版模態邏輯modality:    n. 形態，樣式，方式；【數學】模態；【邏輯學】程式；感 ...logic:    n. 1.邏輯，理論學。 2.推理[方法]；邏輯性，條理 ...logics:    邏輯學modality:    n. 形態，樣式，方式；【數學】模態；【邏輯學】程式；感覺道〔如視覺道〕；物理療法。 formal logics:    形式邏輯consistency in nonmonotonic logics:    非單調邏輯的一致性i： aristotelian logics:    亞里士多德邏輯學aid modality:    援助方式bi modality:    雙通道contiguous modality:    接觸性感覺樣式deontic modality:    義務情態distribution modality:    按勞分配為主體的多種分配方式epistemic modality:    知識情態imaging modality:    顯像模式; 顯象方式logic of modality:    模態邏輯modal; modality:    模態modality effect:    感道效應modality matching:    交叉感覺匹配modality of sensation:    感覺型part modality:    部件模態radiation modality:    照射方式rehabilitation modality:    康復模式sense modality:    感覺道; 感覺通道; 感覺形態sensory modality:    感覺形態series modality:    序列形態
+
+
+相關詞匯modality 中文modalities 中文special modality 中文imaging modality 中文taste modalities 中文bi modality 中文series modality 中文output modalities 中文deontic modality 中文
+相鄰詞匯modalities for operational activities 中文modality 中文modality effect 中文modality for co operation 中文modality for co-operation 中文modality matching 中文modality of foreign aid 中文modality of sensation 中文modallogic 中文熱門詞彙root 中文suv 中文cpi 中文app 中文hr 中文logo 中文生日快樂英文謝謝的英文晚安的英文
+modality logics的中文翻譯，modality logics是什麼意思，怎麽用漢語翻譯modality logics，modality logics的中文意思，modality logics的中文，modality logics in Chinese，發音，例句，用法和解釋由查查在綫詞典提供，版權所有違者必究。
+
+英語翻譯    日語翻譯    法語翻譯    韓語翻譯    俄語翻譯    漢語詞典    Hindi
+關於查查    網站合作    人才招聘    意見反饋    友情鏈接
+Copyright © 詞泰科技有限公司 (京ICP備13021324號) tw.ichacha.net All rights reserved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+正規模態邏輯 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+開啟主選單
+
+
+
+β
+
+
+
+
+
+搜尋
+
+
+
+編輯本頁以其他語言閱讀正規模態邏輯在邏輯中，正規模態邏輯是模態公式的集合 L，L 包含
+所有命題重言式，
+Kripke 模式: 
+
+
+
+◻
+(
+A
+→
+B
+)
+→
+(
+◻
+A
+→
+◻
+B
+)
+
+
+{\displaystyle \Box (A\to B)\to (\Box A\to \Box B)}
+，
+並且 L 閉合於
+代換，
+分拆規則: 從 A 和 A→B 推出 B，
+必然性規則: 從 A 推出 
+
+
+
+◻
+A
+
+
+{\displaystyle \Box A}
+。
+最小化的正規模態邏輯叫做 K。
+
+這是一篇與邏輯學相關的小作品。你可以透過編輯或修訂擴充其內容。
+
+閱
+論
+編
+
+
+
+
+取自 "https://zh.wikipedia.org/w/index.php?title=正規模態邏輯&oldid=25371643"
+
+
+
+
+
+
+ 
+
+
+
+
+廣義量詞系列：模態量化結構
+
+
+
+
+廣義量詞系列：模態量化結構
+
+1. 引言
+
+筆者在《廣義量詞系列：時間量化結構》中討論了把「廣義量詞」推廣應用
+於「時間論域」的問題，並介紹了各種「時間量化結構」。在本章，筆者將把「廣義量詞」推廣應用於「模態
+邏輯」(Modal Logic)的研究領域，並討論各種「模態量化結構」 (Modal Quantified Structure)。
+由於「模態邏輯」包含若干個分支理論－「真勢模態邏輯」、「認識模態邏輯」、「道義模態邏輯」(註1)，另
+外，「祈使邏輯」在某些方面也與「模態邏輯」有共通之處，本文將分節討論這些分支理論的量化結構。
+
+2. 真勢模態邏輯
+2.1 可能世界
+
+「真勢模態邏輯」(Alethic Modal Logic)是「模態邏輯」中歷史最悠久的分支理論，早在Aristotle
+時期便已見端倪。「真勢模態邏輯」主要是研究兩個「模態詞」－「必然」和「可能」之間的推理關係。十分
+有趣的是，「必然」與「可能」之間存在著「謂詞邏輯」中的兩個量詞－「全稱量詞」與「存在量詞」之間的
+那種推理關係。舉例說，根據「謂詞邏輯」，「全稱量化句」與「存在量化句」存在以下關係：
+
+所有A都是B ⇔ 並非有A不是B
+有A是B ⇔ 並非所有A都不是B
+
+因此之故，「全稱量詞」與「存在量詞」可以互相定義如下：
+
+所有 = ~有~
+有 = ~所有~
+
+「必然模態句」和「可能模態句」也存在類似的關係：
+
+必然p真 ⇔ 並非可能p不真
+可能p真 ⇔ 並非必然p不真
+
+「必然」與「可能」同樣可以互相定義如下：
+
+必然 = ~可能~
+可能 = ~必然~
+
+「真勢模態邏輯」與「謂詞邏輯」這種驚人的相似性驅使哲學家尋求一種方法，把「模態詞」解釋成「量詞」
+。但「模態詞」究竟是對甚麼進行量化？哲學家兼數學家Leibniz提供了答案。他指出「模態詞」就是對「
+可能世界」(Possible World)的量化。所謂「可能世界」，就是指一種可能的情況或事態。世事存在各種
+可能性，每種可能性都構成一個「可能世界」，而真實情況－即「現實世界」(Actual World)只是眾多「可能
+世界」中的一種。利用「可能世界」的概念，Leibniz把「必然p」解釋成在所有「可能世界」中p都是真的，並
+把「可能p」解釋成在至少一個「可能世界」中p是真的。這樣便建立了「必然」與「全稱量詞」和「可能」與
+「存在量詞」的聯繫，從而把「模態詞」解釋成「可能世界論域」(Possible World Domain，以下用
+W表示)上的量詞，「真勢模態邏輯」與「謂詞邏輯」的相似性乃得以解釋。把「模態詞」解釋成「可能世界論
+域」上的量詞有其合理性。事實上，在日常語言中，我們有時的確會把「必然p」表達成「在所有情況下皆p」
+，這裡的「情況」其實就是「模態邏輯」所指的「可能世界」。
+
+「真勢模態邏輯」通常使用符號□和◇分別代表「必然」和「可能」算子，但是由於這兩個算子可以被看成「
+可能世界論域」上的量詞，我們可以把它們跟量詞"every"和"some"聯繫起來，只要定義適當的
+「可能世界集合」便行了。為此，我們引入函項World(p)。請註意上述函項跟
+《廣義量詞系列：時間量化結構》中定義的函項Time(p)非常相似，只不過這個函項的輸出值不是「時段」
+，而是在「可能世界論域」W中使命題p為真的「可能世界」的集合。有了上述定義，我們便可得到以下等價關
+係：
+
+□(p) ⇔ every(W)(World(p)) &nbsp&nbsp&nbsp&nbsp(1)
+◇(p) ⇔ some(W)(World(p)) &nbsp&nbsp&nbsp&nbsp(2)
+
+請註意上式表現為「第一類泛化量化結構」(以「可能世界論域」W作為「三分結構」的第一論元)，這是因為「
+p必然真」和「p可能真」表達了一種「絕對模態」，即p的必然性是根據所有「可能世界」的情況而
+作出判斷的。
+
+利用「可能世界」的概念，我們便可以把「無人稱動詞句」(例如漢語的「下雨」和英語的"It rained."等)分
+析成某種「量化結構」。從錶面上看，「無人稱動詞句」既無量詞，又無主語，只包含一個謂語，似乎不涉及
+任何量化。現在，我們可以透過引入「現實世界」，把這類句子分析成「可能世界論域」上的「量化結構」。
+語句「下雨」的意思其實就是「『下雨』這個命題在現實世界中是真的」(註2)，因此「下雨」便可以表達為
+
+wACTUAL ∈ World(RAIN)
+
+在上式中，wACTUAL代表「現實世界」，它在「可能世界論域」中的作用類似一個「專有名詞」。
+由於「專有名詞」可以表達為含有 "every"的結構，上式又可以表達為以下「三分結構式」：
+
+every({wACTUAL})(World(RAIN))
+2.2 相關性與模態基集
+
+可是，上述的(1)和(2)兩式是十分粗疏的。在這兩式中，「可能世界論域」W的範圍漫無邊際，它可能包括那些
+與p不協調(Inconsistent)的「可能世界」，這樣就勢必導致p在某個「可能世界」中既真又假的邏輯矛盾。而
+且一個無所不包的「可能世界論域」W就像集合論中包含所有集合的集合一樣，容易導致像「羅素悖論」那樣的
+悖論。為避免上述矛盾，我們必須對「可能世界論域」加以限制。
+
+在20世紀，Kripke引入「相關性」(Accessibility，亦譯作「可達性」)概念，對「可能世界論域」
+作出限制。所謂「相關性」，是指「可能世界」之間的一種相容關係。在「真勢模態邏輯」中，我們說「可能
+世界」w與w'是「相關」的，若w'符合在w成立的邏輯規律，這種相容關係可用R(w, w')來表示。語句「p必然真
+」和「p可能真」不再是根據所有「可能世界」，而是只根據那些與「現實世界」相關的「可能世界」的情況而
+判斷其真假。因此，我們定義新的「可能世界論域」WA*如下(這裡W帶有下標A以表示這是「真勢模
+態邏輯」下的「可能世界論域」，以區別於下文要介紹的其他「可能世界論域」)：
+
+WA* = {w: R(wACTUAL, w)} (註3)
+
+在上式中，WA*代表所有與「現實世界」相關的「可能世界」組成的集合。有了上述定義，我們便
+可以把上面的(1)和(2)修改為：
+
+□(p) ⇔ every(WA*)(World(p)) &nbsp&nbsp&nbsp&nbsp(3)
+◇(p) ⇔ some(WA*)(World(p)) &nbsp&nbsp&nbsp&nbsp(4)
+
+上面提到，我們把R(w, w')理解為w'符合在w成立的邏輯規律，這裡的「邏輯」是指歷代邏輯學家研究的各種「
+邏輯」，再加上一些分析性真理(例如數學上的真理)。可是，在日常話語中，人們並不總是單純依靠邏輯進行
+判斷或推理，而是基於各種知識乃至常識。舉例說，根據「狹義相對論」，任何物質的運動速度不可能超過光
+速，上述這個命題就是基於現實世界的物理學知識。可是若從純粹邏輯的角度去看，物質運動速度不超過光速
+卻不是必然的，我們完全可以設想一個存在超光速物質的世界。因此當某人說出「必然p」時，必須搞清楚他是
+基於甚麼而說出這一語句。
+
+Kratzer在Conditionals一文中提出「模態基集」(Modal Base)的概念，她指出在日常語言中
+，會話背景會設定一個衡量語句真值的適用範圍，這個範圍就是與講話者心目中的某種知識相容的「可能世界」
+組成的集合，稱為「模態基集」。容易看到，這裡所定義的「模態基集」其實等同於前面定義的「可能世界論
+域」WA*，在這裡我們要把R(w, w')理解成，w'符合在w中成立的講話者心目中的某種知識領域。
+
+「模態基集」有時是會話雙方沒有明說出來的共識，有時則透過某些短語具體表達出來。舉例說，當人們以「
+根據狹義相對論」或「據我所知」作為某句的開首時，他事實上就在設定「模態基集」。前者把「模態基集」
+設定為那些與「狹義相對論」相容的「可能世界」組成的集合，後者則把「模態基集」設定為那些與講話者的
+知識相容的「可能世界」組成的集合。當然，在更多的情況下，人們在進行判斷或推理時，並不一定會說明他
+的依據，但我們總能根據上下文判斷其「模態基集」。
+
+2.3 相對模態與條件句
+
+前面討論的模態都是「絕對模態」，在這種模態下，命題p的必然性是根據整個「可能世界論域」
+WA*而作出判斷，無須參照任何先決條件。這種模態表現為「第一類泛化量化結構」的形式，即以
+WA*作為「三分結構」中的第一論元。除此以外，我們還可以有「相對模態」。在這種模
+態下，要判斷命題p的必然性，除了須參照WA*外，還要參照某一先決條件c，這種模態反映了自然
+語言中「條件句」的語義。
+
+我們首先討論「充分條件」(Sufficient Condition)的情況，這種「條件句」一般帶有由連詞"if" 
+(相當於漢語的「如果」)、"provided that" (相當於漢語的「只要」)、"on condition that" (相當於漢語的
+「在...的情況下」)等引導的「狀語分句」(以下統稱為「If分句」)。根據Kratzer的Conditionals一
+文，「If分句」的作用就是限制「模態詞」的量化範圍，即以滿足條件c的所有「可能世界」組成的集合而非整
+個WA*作為量化範圍。Zuber在Conditionals and the Dual of Presupposition一文中更把
+「If分句」(即「條件句」的「前件」)理解成主句(即「條件句」的「後件」)的修飾語，因此筆者認為，不妨
+把「If分句」分析成一種「相交修飾語」。
+
+根據《廣義量詞系列：迭代量詞》，我們可以把語句
+
+Every girl who loves John is tall.
+
+表達成以下「三分結構式」：
+
+every(GIRL ∩ {x: LOVE(x, j)})(TALL(e(X')))
+
+類似地，我們也可以把「充分條件句」
+
+If John sings, then Mary will (surely) sing too.
+
+表達為以下「三分結構式」：
+
+every(World(SING(j)) ∩ WA*)(World(SING(m)))
+
+請註意以上兩個「三分結構」具有相似的結構，兩者都把代表「相交修飾語」的集合與第一論元中的集合相交
+。根據WA*的全集性質，上式又可化簡為
+
+every(World(SING(j)))(World(SING(m)))
+
+以上討論的「充分條件句」的主句都表達「必然」模態(即我們假設這些「條件句」的主句隱含著"surely"一詞
+)，但除此以外，「充分條件句」的主句也可表達「可能」模態，例如以下語句
+
+If John sings, then Mary will probably sing too.
+
+對於這類語句，我們也可應用上述分析法，把「If分句」處理成「相交修飾語」，因此上句的「三分結構式」
+為(請註意由於上句的主句表達「可能」模態，所以以下「三分結構式」應用"some"而非
+"every"作為量詞)：
+
+
+
+&nbspsome(World(SING(j)) ∩ WA*)(World(SING(m)))
+
+
+≡some(World(SING(j)))(World(SING(m)))
+
+
+
+接著討論「必要條件」(Necessary Condition)的情況，這種「條件句」一般帶有由連詞"only if" 
+(相當於漢語的「只有當」)引導的「狀語分句」，例如
+
+Only if John sings will Mary sing.
+
+由於根據命題邏輯，
+
+Only if p, q. ⇔ If q, p.
+
+我們可以把上句表達為
+
+every(World(SING(m)))(World(SING(j)))
+
+可是，由於量詞"every"與"only"互為「逆向反義詞」(兩者分別對應著集合之間的「⊆」
+和「⊇」關係)，我們又可以把上式變換為
+
+only(World(SING(j)))(World(SING(m)))
+
+另外，根據
+
+Only if p, q. ⇔ If not p, not q.
+
+在某些情況下我們亦可把上句表達為
+
+every(~World(SING(j)))(~World(SING(m)))
+
+請註意在上式中，我們採用了以下等式：
+
+World(~p) = ~World(p)
+
+上式是合理的，這是因為使~p為真的「可能世界集合」應就是那些使p為真的「可能世界集合」的「補集」。
+
+接著討論「充分必要條件」(Sufficient and Necessary Condition)，這種「條件句」一般帶有由
+"if and only if" (相當於漢語的「當且僅當」)引導的分句，例如
+
+Mary will sing if and only if John sings.
+
+由於這種「條件句」實際上是「充分條件句」與「必要條件句」的合取，我們可以把上句表達為
+
+(every and only)(World(SING(j)))(World(SING(m)))
+
+可是，根據"every"、"only"和"(no except A)"的真值條件，我們有(以下U代表論域)
+：
+
+
+
+(every and only)(A)(B)⇔ A = B
+
+
+&nbsp⇔ U ∩ B = A
+
+
+&nbsp⇔ (no except A)(U)(B)
+
+
+
+因此我們又可以把上式變換為
+
+(no except World(SING(j)))(WA*)(World(SING(m)))
+
+既然「模態詞」"if and only if"對應於量詞"(no except World(p))"，一個自然的推論是，是否有一
+個「模態詞」對應著量詞"(all except World(p))"？筆者認為是有的，這個「模態詞」就是"except 
+when ... otherwise"。舉例說，語句
+
+Except when John is absent, otherwise Mary will sing.
+
+便可以表達為
+
+(all except World(ABSENT(j)))(WA*)(World(SING(m)))
+
+請註意由於
+
+(all except A))(U)(B) ⇔ (no except A))(U)(~B)
+
+我們實際是把"Except when p, otherwise q."分析成等同於"If and only if p, not q."。
+
+最後討論包含連詞"unless"的「條件句」，例如
+
+Unless John sings, Mary will cry.
+
+這裡採用一般語言學家的說法，把"unless"分析為等同於"if not"，這樣我們便可以把上句表達為
+
+every(~World(SING(j)))(World(CRY(m)))
+
+我們還可以把前述各種「條件句」的分析法綜合應用於「多重條件句」。在日常語言中，有時我們會不只使用
+一個「相交修飾語」，只需把這些「多重修飾語」處理成多重交集便可，例如語句
+
+Every girl showing up who loves John is tall.
+
+便可以表達成以下「三分結構式」：
+
+every(GIRL ∩ SHOW-UP ∩ {x: LOVE(x, j)})(TALL(e(X')))
+
+類似地，「多重條件句」中的條件也可以處理成多重交集。但為方便分析，在進行相交前，有時須先把各個條
+件轉換成適當的「If分句」。試考慮以下「條件句」：
+
+Unless John is absent, if Bill sings then Mary will sing too.
+
+我們首先把"unless John is absent"改寫為"if John is not absent"，這樣我們便看到上句實際包含著兩個
+「If分句」，把這兩個分句當作「多重修飾語」處理，便可把上句表達為
+
+every(~World(ABSENT(j)) ∩ World(SING(b)))(World(SING(m)))
+2.4 經典概率模型
+
+在上面筆者把「模態詞」解釋成「可能世界論域」上的量詞，但除此以外，我們還可以把「模態詞」理解成表
+達「經典概率」(Classical Probability)，即把「必然p」理解成事件p發生的概率等於1 (註4)，而
+「可能p」理解成事件p發生的概率大於0。「模態詞」的「可能世界模型」與「經典概率模型」錶面上是兩個不
+同的模型，但兩者其實是相通的。首先看看「經典概率」的定義，設有一個有限隨機過程可產生N個互斥且機會
+均等的結果，在這N個結果中有Np個是使事件p為真的結果，則事件p的「經典概率」為
+
+Prob(p) = Np / N
+
+上述定義中的「結果」(Outcome)代表一種可能出現的事態，正可用一個「可能世界」來代表。這樣我們便可得
+到以下等式：N = |WA*|，Np = |World(p)| (註5)。由此我們得到(請註意World(p) 
+⊆ WA*)：
+
+Prob(p) = 1 ⇔ Np = N ⇔ World(p) = WA* ⇔ 
+every(WA*)(World(p))
+Prob(p) > 0 ⇔ Np > 0 ⇔ World(p) ≠ Φ ⇔ 
+some(WA*)(World(p))
+
+由此可見，「可能世界模型」與「經典概率模型」是相通的。有了「概率」的概念，我們便可以把「必然p」和
+「可能p」表達為以下「三分結構式」：
+
+(=)(Prob(p))(1)
+(>)(Prob(p))(0)
+
+其中
+
+Prob(p) = |World(p)| / |WA*| &nbsp&nbsp&nbsp&nbsp(5)
+
+我們還可以把「經典概率模型」應用於「相對模態」中的「充分條件句」，因為「充分條件句」在某種條件下
+可以用「概率論」中的「條件概率」(Conditional Probability)來表達，這種概率的定義為
+
+Prob(p | c) = Nc ∧ p / Nc
+
+在上式中，Prob(p | c)代表在c真的條件下p真的概率，而Nc ∧ p則代表使c和p同真的結果總
+數。以下我們證明上式與上一小節介紹的「充分條件句」的「三分結構式」是相通的：
+
+
+
+Prob(p | c) = 1⇔ Nc ∧ p = Nc
+
+
+&nbsp⇔ World(c ∧ p) = World(c)
+
+
+&nbsp⇔ World(c) ∩ World(p) = World(c)
+
+
+&nbsp⇔ World(c) ⊆ World(p)
+
+
+&nbsp⇔ every(World(c))(World(p))
+
+
+
+惟請註意，上述「充分條件句」與「條件概率」的對應關係有一個前提條件，就是c不為假命題(亦即
+Nc ≠ 0)。根據現代邏輯，當「前件」c假時，「充分條件句」"If c, p"自動取真值。可是，根
+據上述「條件概率」的定義，當Nc = 0時，Prob(p | c)無定義。造成上述差異的原因是，「條件
+概率」把「c不假」視作給定的前提，而一般的「充分條件句」卻沒有設定這個前提，由此可見「充分條件句」
+與「條件概率」這兩個概念並不完全對應。其他「條件句」也可表述為類似的「條件概率」，這裡不作詳細討
+論。
+
+對於表達某些語句的真值條件，使用「概率」會較為方便。舉例說，以下兩句
+
+How likely is John to win?
+John has a 50-50 chance of winning. &nbsp&nbsp&nbsp&nbsp(6)
+
+的真值條件便可以分別表達為
+
+A = Prob(WIN(j))
+Prob(WIN(j)) = 0.5
+
+在上面第一式中，A代表「解答集」，在這裡我們假設可以「概率」的形式回答"how likely"這類問句。當然我
+們也可以用「可能世界論域」上的「相對數量比較詞」來代表以上兩句的「模態詞」，例如語句(6)便可以表達
+為
+
+(exactly 1/2)(WA*)(World(WIN(j))) ⇔ |World(WIN(j))| / 
+|WA*| = 0.5
+
+但根據(5)，比值|World(WIN(j))| / |WA*|正等於「概率」Prob(WIN(j))，因此我們可以把上述的
+「概率」表達法看成上式的一種簡寫。
+
+2.5 模糊模態
+
+「經典概率模型」的另一個優點是較容易表達「模糊模態詞」的概念。在自然語言中，有一些詞語可
+用來表達程度不同的可能性。若把這些詞語按可能性高低排成一個序列，便可構成一個「概率量表」
+(Probability Scale)。舉例說，在英語中，形容詞"certain"、"almost certain"、"very likely"、"rather 
+probable"、"somewhat unlikely"、"very unlikely"、"almost impossible"、"impossible"等便構成一個「
+概率量表」(註6)。在上述序列中，除了首尾兩個詞語分別代表確定的概率1和0外，其他詞語都代表某種「模糊
+概率」(Fuzzy Probability)，故可稱為「模糊模態詞」。
+
+說到這裡，有必要交代一個理論問題。數學界一向認為，「模糊集合」的「隸屬度」與「概率」雖然都是量度
+「不確定性」(Uncertainty)的量，而且都在區間[0, 1]內取值，但兩者具有很不相同的性質，不可混同，因此
+我們應如何理解「模糊概率」？以下用一個簡單的例子作為類比，解釋「模糊概率」的意義。設某「論域」以
+人作為元素，並有「模糊集合」OLD(e(X'))、YOUNG(e(X'))、MIDDLE-AGED(e(X'))等。
+為了刻劃「論域」中每個元素(人)屬於這些「模糊集合」的程度，我們可以為每一個「模糊集合」定義一個「
+隸屬度函數」。為了用算式表達這些「隸屬度函數」，我們可以「論域」中每個人的某個量值來作為這些函數
+的輸入值。對於上述三個「模糊集合」來說，最自然的量值就是每個人的「歲數」。定義了各個「隸屬度函數」
+後，只要輸入某個人的歲數，便可求得那個人對某個「模糊集合」的隸屬度。
+
+在「模糊數學」中，「模糊概率」一般被處理成「語言概率」(Linguistic Probability)(註7)。「語言概率」
+的特點是，以「事件」作為「論域」的元素，並以自然語言中表達各種可能性的概念(例如
+VERY-LIKELY(e(X'))、RATHER-PROBABLE(e(X'))等，此即前述「概率量表」中的詞項)作為「模
+糊集合」。為了用算式表達這些「模糊集合」的「隸屬度函數」，我們以「論域」中每個元素(事件)的某個量
+值來作為這些函數的輸入值，最自然的量值就是「論域」中每個事件的「概率」。定義了各個「隸屬度函數」
+後，只要輸入某個事件的「概率」，便可求得該事件對某個「模糊集合」的隸屬度。由此可見，在「語言概率」
+中，「隸屬度」與「概率」是分別作為「隸屬度函數」的輸出值和輸入值，兩者雖然在形式上很相似，但扮演
+很不相同的角色。
+
+舉例說，我們可以把VERY-LIKELY(e(X'))定義為以下「隸屬度函數」：
+
+
+
+&nbsp0,if 0 ≤ x ≤ 0.8
+
+
+μ[VERY-LIKELY(e(X'))](x) = (x − 0.8) / 0.1,if 0.8 ≤ x 
+≤ 0.9 &nbsp&nbsp&nbsp&nbsp(7)
+
+
+&nbsp1,if 0.9 ≤ x ≤ 1
+
+
+
+設某事件的「概率」為0.85，把這個數值代入上式，便可求得這個事件對VERY LIKELY(e(X'))的隸屬度
+為0.5。
+
+有了「模糊概率」的概念，我們便可以把含有「模糊模態詞」Q的語句p的真值定為p的概率對Q的隸屬度。舉例
+說，命題
+
+It is very likely that John will win. &nbsp&nbsp&nbsp&nbsp(8)
+
+的真值便可以表達為
+
+μ[TRUTH]((8)) = μ[VERY-LIKELY(e(X'))](Prob(WIN(j)))
+
+假設John勝出的「概率」為0.85，那麼根據上述計算，(8)的真值為0.5。
+
+除了用「模糊概率」刻劃「模糊模態」外，我們也可以把「模糊模態詞」處理成「可能世界論域」上的「模糊
+量詞」。舉例說，我們可以把"almost certain"、"very likely"、"very unlikely"和"almost impossible"分
+別對應於「模糊量詞」"almost every"、"a very large proportion of"、"a very small 
+proportion of"和"almost no"，這樣我們便可以把(8)表達為以下「三分結構式」：
+
+(a very large proportion of)(WA*)(World(WIN(j)))
+
+上式的意思就是在絕大多數「相關可能世界」中，John勝出是真的。請註意上式的真值其實就是比值
+|World(WIN(j)| / |WA*|對於"a very large proportion of"的隸屬度，而這個比值正等
+於Prob(WIN(j))，所以我們最終還是用「模糊概率」刻劃「模糊模態」。由於「模糊數學」已有一套關於「模
+糊概率」的理論，所以本文以這套理論作為討論「模糊模態詞」語義的主要依據。
+
+2.6 情境與情境類型
+
+至此，筆者已把多種「模態詞」歸結為「可能世界論域」上的量詞，這些量詞包括"every"、
+"some"、"only"以及各種「相對數量比較詞」。一個自然的推論是，我們能否定義「可能世界
+論域」上的其他量詞，特別是「絕對數量比較詞」，例如"(exactly n)"、"(all except n)"等
+？既然「必然」和「可能」分別等同於「在所有情況下」和「在至少一種情況下」，而在自然語言中也的確存
+在「在剛好三種情況下」、「除了三種情況外，在(其餘)所有情況下」等說法，那麼我們似乎可以把「絕對數
+量比較詞」引入「可能世界論域」。不過這裡我們有一個困難，以下用一個實例加以說明。假設我們想表達以
+下語句：
+
+在剛好兩種情況下，John必然會被陳老師責罵(這兩種情況就是他於上課時談話或睡覺)。 
+&nbsp&nbsp&nbsp&nbsp(9)
+
+我們能否把「剛好兩種情況」理解為等同於「剛好兩個可能世界」並把上句(不包括括號中的部分)表達為以下
+集合論表達式(在下式中，SCOLD和c分別代表「責罵」和「陳老師」)：
+
+|World(SCOLD(c, j))| = 2
+
+答案是否定的。這是因為「可能世界」這個概念是就著世界上所有事物的所有可能情況而定義的，世界上每個
+獨立發生的可能情況的每種排列組合都構成獨一無二的「可能世界」(註8)，因此使「John被陳老師責罵」為真
+的「可能世界」便不只兩個，而是有「不可數無窮多個」(Uncountably Infinite)。舉例說，下列的
+w1－w4便對應著不同的「可能世界」：
+
+
+
+w1: John被陳老師責罵，Mary愛Bill，海衛一的錶面溫度低於40 K，...
+
+
+w2: John被陳老師責罵，Mary不愛Bill，海衛一的錶面溫度高於40 K，...
+
+
+w3: John被陳老師責罵，Mary愛Bill，海衛一的錶面溫度低於40 K，...
+
+
+w4: John被陳老師責罵，Mary不愛Bill，海衛一的錶面溫度高於40 K，...
+
+
+...
+
+
+
+上述例子顯示，「可能世界」的概念包含了大量與當前語境無關的內容，例如在上述例子中，Mary是否愛Bill
+便跟John是否被陳老師責罵沒有直接關係，而海衛一的錶面溫度更與John的日常生活沒有絲毫關係(John可能根
+本不知道「海衛一」是海王星其中一顆衛星的名稱)。可是根據「可能世界」的定義，上述的w1－
+w4卻要被看成不同的「可能世界」。由此可見，「可能世界」不是表達「情況」的適當概念。為此
+，我們必須尋求一種只包含世界部分信息的概念。
+
+筆者在這裡借用「情境語義學」(Situation Semantics)中的「情境」(Situation)概念來表達語句
+(9)所描述的「情況」(註9)。根據Devlin的Situation Theory and Situation Semantics一文，「情境
+」是「世界」的一部分。我們可以把「情境」看成「縮小的可能世界」模型，這個「縮小的可能世界」只包含
+與當前語境直接有關的信息(包括某「情境」所涉及的動作行為、參與者、地點、時間等)，而略去大量無關信
+息。舉例說，「John在2001年1月1日9時正談話」便可以表達為下式(為簡化討論，下式略去John的談話地點的
+信息)：
+
+s1 |= 《TALK(j), 2001.1.1 09:00》
+
+在上式中，s1是代表上述「情境」的符號，《 》內的部分稱為「信息條目」(Infon)，它包含多種
+類型的論元，包括命題、地點、時間等，這些論元各自在不同的論域中取值。「信息條目」表達某種「事態」
+(State of Affairs)，「事態」是「情境」的組成部分，一個「情境」可以包含多個「事態」。「情境」與「
+事態」之間的包含關係用符號「|=」表示，例如上式便是說，s1此一「情境」包含「John於2001年
+1月1日9時正談話」此一「事態」。
+
+可是，「情境」仍然不是表達語句(9)的適當概念，這是因為「情境」此一概念仍然包含過於細致的信息。就以
+「John談話」為例，John在不同時間不同地點作出的談話便各自構成一個「情境」，這樣我們將有無窮無盡的
+「情境」。因此我們必須對具有相同特徵的「情境」進行適當的歸併，即把細節上各有不同但基本內容相同的
+「情境」歸併為同一種「情境類型」(Situation Type)。至於如何歸併，即以甚麼作為「情境類型」
+中各個「情境」共有的「基本內容」，這完全視乎講話者想要表達的意思。舉例說，如果我們想把John於不同
+日子上陳老師課時的多次談話視作一個「情境類型」，那麼我們可以定義以下「情境類型」：
+
+{s*: s* |= 《TALK(j), t*》} (註10)
+
+筆者在這裡把「情境類型」看作由具有相同特徵的「情境」組成的集合，因此上式被寫成集合的形式。在上式
+中，帶有「*」號的論元稱為「參數」(Parameter)，它相當於集合定義中的變項，代表該論元可以在所屬論域
+中取任意值。假如我們把「情境論域」和「時間論域」分別定為「與當前語境相關的情境組成的集合」和「
+John上陳老師課的時間」，那麼s*和t*便是上述兩個論域中的任意元素，而上式則代表John於上陳老師課時談
+話的所有「情境」組成的「情境類型」。
+
+接著讓我們考慮以下語句的表達法：
+
+在John於上陳老師課時談話的情況下，他必然會被陳老師責罵。 &nbsp&nbsp&nbsp&nbsp(10)
+
+
+由於「在...的情況下」的語義類似「如果」，我們可以把語句(10)看成某種「充分條件句」。根據上面2.3小
+節，「充分條件句」可以表達為「可能世界集合」之間的包含關係。由於現在我們的描述對象是「情境類型」
+而非「可能世界集合」，所以我們把語句(10)看成表達「情境類型」之間的某種包含關係，因此語句(10)應表
+達為
+
+{s*: s* |= 《TALK(j), t*》} ⊆ {s*: s* |= 《SCOLD(c, j), t*》} (註11)
+
+上式的意思就是，每一個包含John於上陳老師課時談話的「情境」都同時包含著他被陳老師責罵的「情境」，
+這正是語句(10)要表達的意思。
+
+接著我們引入代表「情境類型」和「情境類型論域」(Situation Type Domain)的符號st和ST，後者
+代表所有與當前語境相關的「情境類型」組成的集合。現在我們可以把語句(9)表達為以下形式：
+
+|{st ∈ ST: st ⊆ {s*: s* |= 《SCOLD(c, j), t*》}}| = 2
+
+請註意在上式中，st作為代表「情境類型」的符號，既是ST的元素，本身又是由「情境」組成的集合。上式的
+意思是說，存在兩種「情境類型」，這兩種「情境類型」中的每一個「情境」都是John被陳老師責罵的「情境」
+，這正是語句(9)的意思。
+
+3. 認識模態邏輯
+3.1 引言
+
+筆者在上節詳細介紹了「真勢模態邏輯」涉及的量化現象，以下筆者將介紹「模態邏輯」的其他分支理論。由
+於在其他分支理論中，有一些量化現象與前面介紹的大同小異，本文將略去重複的內容，只集中介紹各個分支
+理論獨有的內容。本節將介紹「認識模態邏輯」的內容。
+
+對於「認識模態邏輯」(Epistemic Modal Logic)的研究對象，歷來有兩種看法，我們或者可以說是
+有兩種「認識模態邏輯」。第一種「認識模態邏輯」在形式上與「真勢模態邏輯」非常相似，也含有兩個模態
+詞「必然」和「可能」，例如語句
+
+根據狹義相對論，任何物質的運動速度必然低於或等於光速。
+根據對現有證據的推斷，John可能是兇手。
+
+所表達的就是這種「認識模態」。由於根據2.2小節，我們可以把這種「認識模態」歸結為「真勢模態」的特例
+，即其「模態基集」是與某種知識或常識相容的「可能世界」的集合，因此筆者認為應把這種「認識模態邏輯」
+看作「真勢模態邏輯」的次類。第二種「認識模態邏輯」實際由三種「應用邏輯」組成，即有關「信念」、「
+知識」和「斷定」的邏輯。由於這些「應用邏輯」的研究起步較晚，尚未形成公認一致的體系，以下僅就有關
+「信念」和「知識」的邏輯作一些簡介。
+
+3.2 信念邏輯與知識邏輯
+
+「信念邏輯」(亦稱「相信邏輯」Doxastic Logic或Belief Logic)和「知識邏輯」(亦稱「
+知道邏輯」Knowledge Logic)，是對「信念」和「知識」的含義以及相信／知道「主體」(Agent)與其「信念」
+／「知識」之間的關係進行形式化研究的邏輯分支。由於當今有多種「信念邏輯」和「知識邏輯」的理論框架
+，並非每一個框架都以「可能世界」作為語義基礎，因此以下只擬簡介Hintikka在Knowledge and Belief -
+An Introduction to the Logic of the Two Notions一書中提出的對「信念」和「知識」的定義，這些定
+義都是基於「可能世界」而作出的。由於這兩個概念有相似的結構，以下將一起介紹這兩個概念。
+
+由於「信念／知識模態句」往往涉及一個「主體」(即動詞「相信」／「知道」的主語)，「信念／知識模態詞」
+常被處理成「二元函項」，這個函項包含兩個論元－「主體」a以及被「相信」／「知道」的「命題」p。這種
+「模態詞」可稱為「相對信念／知識模態詞」，因為有關「模態句」的真假是相對於a的信念／知識而言的。套
+用2.2小節的說法，我們可以說這類「模態句」的「模態基集」是以a的信念／知識為依據。
+
+不過，日常語言的「模態句」有時可以把主語略去，例如英語以被動態形式"It is believed / known that"開
+首的句子以及漢語以「據信／據知」開首的句子。我們可以把這些句子中的「模態詞」處理成只包含「命題」
+論元p的「一元函項」。這種「模態詞」可稱為「絕對信念／知識模態詞」，這類「模態句」的「模態基集」是
+以講話者的信念／知識(即他的個人信念／知識或他認為一般人都具有的信念／知識)為依據，我們把這個「模
+態基集」記為WB* / WK*，以區別於前述「真勢模態邏輯」下的「模態基集」
+WA*。以下為簡化討論，筆者將集中討論「絕對信念／知識模態詞」。
+
+根據當今的「信念／知識邏輯」，共有兩組「絕對信念／知識模態詞」：LB / LK和MB / MK，它們分別相當於
+論域WB* / WK*上的「全稱量詞」和「存在量詞」。因此我們有以下等價關係：
+
+LB(p) ⇔ every(WB*)(World(p))
+LK(p) ⇔ every(WK*)(World(p))
+MB(p) ⇔ some(WB*)(World(p))
+MK(p) ⇔ some(WK*)(World(p))
+
+這裡要說明一下上述「模態詞」在自然語言中的對應詞項。由於LB(p) / LK(p)表示在所有與講話者的信念／知
+識相容的「可能世界」中命題p皆真，我們可以把LB / LK理解成對應於自然語言中的「確信」／「確知」(註
+12)。MB和MK則可被分別理解成對應於「可信」(Plausible)和「可想像」(Conceivable)。這一點是合理的，因
+為根據前面2.1小節「全稱量詞」與「存在量詞」的互相定義關係，LB(p)與MB(p)以及LK(p)與MK(p)之間應存在
+以下關係：
+
+LB(p) ⇔ ~MB(~p)
+MB(p) ⇔ ~LB(~p)
+LK(p) ⇔ ~MK(~p)
+MK(p) ⇔ ~LK(~p)
+
+而事實上「確信」與「可信」以及「確知」與「可想像」之間也的確存在上述關係：
+
+p是被確信的 ⇔ ~p是不可信的
+p是可信的 ⇔ ~p不是被確信的
+p是被確知的 ⇔ ~p是不可想像的
+p是可想像的 ⇔ ~p不是被確知的
+3.3 主觀概率與模糊信念
+
+在「真勢模態邏輯」下，我們可以把「可能性」解釋為「經典概率」。筆者認為，在「信念邏輯」下，我們也
+有相應的概念，這就是「主觀概率」(Subjective Probability)。「主觀概率」又稱「貝葉斯概率」
+(Bayesian Probability)，是把「概率」解釋為人們對某一命題的相信程度的一種度量。跟「經典概率」以及
+由「經典概率」派生出來的「頻率概率」(Frequency Probability)不同，「主觀概率」的定義不是基於客觀事
+件的發生次數或頻率，而是個人的主觀判斷，這種判斷反映了個人相信某命題可能為真的程度。請註意雖然「
+主觀概率」與「經典概率」有不同的解釋，但兩者同屬「概率」，具有相同的表現形式，即都符合Kolmogorov
+提出的有關「概率」的公理，因此我們應有以下關係：
+
+LB(p) ⇔ (=)(Prob(p))(1)
+MB(p) ⇔ (>)(Prob(p))(0)
+
+正如在「真勢模態邏輯」下，我們有表達各種可能性大小的詞語來表達「模糊模態」；在「信念邏輯」下，我
+們也有表達各種相信程度大小的詞語來表達「模糊信念」(Fuzzy Belief)，這些詞語包括英語的
+"extremely plausible"、"very plausible"、"rather plausible"等。在2.5小節，筆者指出我們可以把「模
+糊模態詞」處理成「模糊概率」。筆者認為，此一概念亦可推廣至「模糊信念」，其形式跟2.5小節介紹的「模
+糊概率」大同小異，只需把那裡的"likely"改為"plausible"便行了。舉例說，我們可以採用上面的(7)作為
+「模糊集合」VERY-PLAUSIBLE(e(X'))的隸屬度函數。這樣，語句
+
+It is very plausible that John is alive. &nbsp&nbsp&nbsp&nbsp(11)
+
+的真值便可以表達為
+
+μ[TRUTH]((11)) = μ[VERY-PLAUSIBLE(e(X'))](Prob(ALIVE(j)))
+
+假設「John生存」的「主觀概率」為0.85，那麼根據2.5小節的計算，(11)的真值為0.5。
+
+3.4 命題態度與生成世界的謂詞
+
+從更廣闊的角度看，「相信」和「知道」除了屬於「認識」活動外，也是「命題態度」
+(Propositional Attitude)的一種。「命題態度」就是個體(通常為人)與命題之間的一種關係，在自然語言中
+表現為以下這些「命題態度謂詞」："assert"、"believe"、"consider"、"deny"、"doubt"、"expect"、
+"imagine"、"intend"、"know"、 "wish"等。對於這些動詞的語義，我們可以從多種理論的角度進行研究，包
+括「可能世界理論」(Possible Worlds Theory)、「言語行為理論」(Speech Act Theory)、「情境語義學」、
+「事件語義學」、「內涵語義學」等。這裡無法逐一介紹這些理論，只想簡介一種類似Hintikka對「信念」和
+「知識」的定義的「可能世界理論」。根據這種理論，一個「命題態度謂詞」可被視為「模態基集」W*上的「
+全稱量詞」，其中W*包含所有與該謂詞所代表的「命題態度」相容的「可能世界」。由於上述定義涉及「可能
+世界」的概念，所以「命題態度謂詞」又稱為「生成世界的謂詞」(World-Creating Predicate)。
+
+以上定義還可以推廣到更廣闊的層面。自然語言的某些應用領域，例如文學創作，往往涉及一些虛構的世界，
+因此這裡也包含「生成世界的謂詞」。舉例說，語句
+
+在《西遊記》中，孫悟空是唐三藏的徒弟。
+
+中，短語「在《西遊記》中」便構成一種「生成世界的謂詞」，與這個謂詞相關的「模態基集」W*包含所有與
+《西遊記》的故事情節相容的「可能世界」，而上句是真的當且僅當在W*的所有元素中，「孫悟空是唐三藏的
+徒弟」都是真的。
+
+在某些情況下，「可能世界集合」之間存在複雜的關係。試看以下例句：
+
+John expected to meet Mary. He intended to greet her.
+
+我們的目標是分析上面後一句的語義，該句受兩個因素制約：一方面前一句設定了一個充分條件，另一方面謂
+詞"intend"則確立了一個相關的「模態基集」W*。綜合以上分析，我們把上面後一句的語義確定為：在所有
+John遇見Mary並且與John的意圖相符的「可能世界」中，John都向Mary打超呼，用「三分結構式」寫出來，就
+是
+
+every(W* ∩ World(MEET(j, m)))(World(GREET(j, m)))
+4. 道義模態邏輯
+4.1 排序依據與極優可能世界
+
+「道義模態邏輯」(亦譯作「規範模態邏輯」Deontic Modal Logic)是研究模態詞「必須」和「可以」
+的邏輯分支。這兩個「模態詞」同樣存在類似2.2小節所述的互相定義關係：
+
+必須 = ~可以~
+可以 = ~必須~
+
+「道義模態邏輯」通常使用符號O和P分別代表「必須」和「可以」算子，並且再加一個代表「禁止」的符號F
+。請註意這個F在實質上等同於~P (因為「禁止」在實質上等同於「不可以」)，因此可以看成~P的「別名」，
+這一點就正如我們可以把量詞"no"看成"~some"的「別名」一樣。
+
+由於O和P與□和◇具有相似的關係，容易推斷O和P應分別對應於某一論域的「全稱量詞」和「存在量詞」，而
+這個論域就是以某一套法律規章、道德規範、規矩慣例或道義責任(以下統稱為「規範」)為依據的「模態基集
+」。這個「模態基集」包含所有與「現實世界」的某一套「規範」相符的「可能世界」，我們不妨把這個「模
+態基集」記作WD*。這樣，我們可以仿照上面的(3)和(4)作出以下定義(另外再加一個有關算子F的
+定義)：
+
+O(p) ⇔ every(WD*)(World(p)) &nbsp&nbsp&nbsp&nbsp(12)
+P(p) ⇔ some(WD*)(World(p)) &nbsp&nbsp&nbsp&nbsp(13)
+F(p) ⇔ no(WD*)(World(p)) &nbsp&nbsp&nbsp&nbsp(14)
+
+可是，以上等價關係卻是不正確的，這是因為「規範」跟自然定律不同，是有可能被違反的。以上面的(12)為
+例，即使p是必須的，也並不代表它在所有與有關「規範」相符的「可能世界」中便一定被遵守。事實上，我們
+要衡量的「可能世界」不是整個WD*，而是WD*的一個子集，即那些在符合有關「規範」
+方面達到最高標準的「可能世界」，筆者把這些「可能世界」稱為「極優可能世界」(Optimal 
+Possible World)，並把這個子集記作WD**。
+
+為了更精確地定義上述的集合WD**，筆者在這裡借用Kratzer在The Notional Category of 
+Modality一文中提出的「排序依據」(Ordering Source)概念。「排序依據」是指與當前「道義
+模態句」直接相關的「規範」，我們可以根據WD*中各個「可能世界」符合這些「規範」的情況把
+這些「可能世界」排序，排在最前的「可能世界」就是「極優可能世界」。具體地說，設有一個命題p。根據與
+p直接相關的「規範」，我們得知p是「必要性命題」、「允許性命題」或「禁止性命題」，這樣我們便可以把p
+劃歸以下三個集合中的一個：OSO、OSP和OSF，這三個集合的下標分別代
+表必要、允許和禁止。接著定義以下「序關係」，設w1和w2為WD*中兩個
+不相同的「可能世界」，則有：
+
+
+
+w1 < w2 ⇔{p ∈ OSO: w2 ∈ 
+World(p)} ⊆ {p ∈ OSO: w1 ∈ World(p)} ∧
+&nbsp&nbsp&nbsp&nbsp(15)
+
+&nbsp{p ∈ OSF: w1 ∈ World(p)} ⊆ {p ∈ 
+OSF: w2 ∈ World(p)}
+
+
+
+上面的w1 < w2代表w1在符合「規範」方面優於w2。上式是說
+，在下列情況下，w1可被視為優於w2：在w2為真的「必要性命題」在
+w1都為真；並且在w2為假的「禁止性命題」在w1都為假。至於「允許性命
+題」，則對「可能世界」的排序不發生作用。請註意以上定義的「1和w2之間都必定滿足
+w1 < w2或w2 < w1，正如並非任何兩個集合之間都必定存在
+包含關係一樣。利用「D**：
+
+WD** = {w ∈ WD*: ~∃w' ∈ WD* 
+(w' < w)} &nbsp&nbsp&nbsp&nbsp(16)
+
+根據上述定義，WD**的元素就是那些在符合「規範」方面沒有比它更優的「可能世界」，故被稱為
+「極優可能世界」。請註意由於上面定義的的「D**，我們便可以把上面的(12)－(14)修改為
+
+O(p) ⇔ every(WD**)(World(p)) &nbsp&nbsp&nbsp&nbsp(17)
+P(p) ⇔ some(WD**)(World(p)) &nbsp&nbsp&nbsp&nbsp(18)
+F(p) ⇔ no(WD**)(World(p)) &nbsp&nbsp&nbsp&nbsp(19)
+4.2 語義模型
+
+以下用一個「語義模型」來說明上述概念：
+
+
+
+語義模型1：考慮以下有關某次考試的語句：
+
+John must be on time for the exam. He must wear uniform and must not cheat. 
+&nbsp&nbsp&nbsp&nbsp(20)
+
+我們把上句看成由三個句子組成的集合並逐句考慮其真假：
+
+{O(ON-TIME(j)), O(WEAR-UNIFORM(j)), F(CHEAT(j))}
+
+假設根據考試規則，每名考生可以穿著校服或便服參加考試，但他們必須準時到達試場，並且不可作弊。根據
+上述規則，我們可以確定上述的三個集合OSO、OSP和OSF：
+
+OSO = {ON-TIME(j)}，OSP = {WEAR-UNIFORM(j)}，OSF = 
+{CHEAT(j)}
+
+接著假設WD*包含以下元素：
+
+
+w1: ON-TIME(j), WEAR-UNIFORM(j), CHEAT(j)
+
+
+w2: ON-TIME(j), WEAR-UNIFORM(j), ~CHEAT(j)
+
+
+w3: ON-TIME(j), ~WEAR-UNIFORM(j), CHEAT(j)
+
+
+w4: ON-TIME(j) ~WEAR-UNIFORM(j), ~CHEAT(j)
+
+
+w5: ~ON-TIME(j), WEAR-UNIFORM(j), CHEAT(j)
+
+
+w6: ~ON-TIME(j), WEAR-UNIFORM(j), ~CHEAT(j)
+
+
+w7: ~ON-TIME(j) ~WEAR-UNIFORM(j), CHEAT(j)
+
+
+w8: ~ON-TIME(j) ~WEAR-UNIFORM(j), ~CHEAT(j)
+
+
+
+
+
+接著根據(15)把上述「語義模型」中WD*的元素排序如下：
+
+w4 < w8 < w7；w4 < w3；
+w2 < w6 < w5；w2 < w1
+
+根據(16)，求得
+
+WD** = {w2, w4}
+
+最後根據(17)－(19)的定義判斷(20)中三句的真假。由於在w2和w4中，ON-TIME(j)同
+時取真值，而CHEAT(j)同時取假值，所以O(ON-TIME(j))和F(CHEAT(j))是真的。可是WEAR-UNIFORM(j)只有在
+w2中才取真值，所以O(WEAR-UNIFORM(j))是假的。如果我們把O(WEAR-UNIFORM(j))改為
+P(WEAR-UNIFORM(j))，該句便會取真值。
+
+4.3 相對模態與模糊模態
+
+在「道義模態邏輯」下，我們也有類似上面2.3小節的「相對模態」和2.5小節的「模糊模態」的概念。首先考
+慮「相對道義模態」的情況，試看以下語句(該句是作為上面「語義模型1」的延續)：
+
+If John cheats in the exam, he must be disqualified. &nbsp&nbsp&nbsp&nbsp(21)
+
+根據上面2.3小節的討論，「If分句」的作用是限制「模態詞」的量化範圍，即以代表「If分句」c的「可能世
+界集合」World(c)代替原來由「模態基集」所起的作用。對於「道義模態句」而言，這相當於以World(c)代替
+定義(16)中的WD*，從而得到一個新的「極優可能世界集」：
+
+{w ∈ World(c): ~∃w' ∈ World(c) (w' < w)}
+
+請註意上式除了跟(16)存在上述差別外，「
+以語句(21)為例，本來根據「語義模型1」，命題CHEAT(j)是OSF的元素。可是由於語句(21)的分句
+"if John cheats in the exam"已使CHEAT(j)不再切合當前的情況，因此「排序依據」應作適當調整。假設根
+據考試規則，凡作弊者均須被開除考試資格，這樣在新情況下，OSO便應包含命題DISQUALIFIED(j)
+。綜合以上討論，我們便可以確定語句(21)的真值條件為：
+
+{w ∈ World(CHEAT(j)): ~∃w' ∈ World(CHEAT(j)) (w' < w)} ⊆ 
+World(DISQUALIFIED(j)))
+
+上式的意思是說，所有那些John在考試作弊的「極優可能世界」都是John被開除考試資格的「可能世界」，上
+式準確地反映了語句(21)的語義。
+
+其次考慮「模糊道義模態」的情況。正如「真勢模態」和「信念模態」那樣，我們也有表達各種必要
+性大小的詞語以表達「模糊道義」，這些詞語包括英語的 "extremely advisable"、"very advisable"、
+"rather advisable"、"somewhat inadvisable"、"very inadvisable"、"extremely inadvisable"等。但是跟
+2.5和3.3小節不同，「模糊道義」並無相應的「概率」概念。不過，我們可以把「模糊道義模態詞」看成「極
+優可能世界集」上的「模糊量詞」。舉例說，語句
+
+It is very advisable that John be on time. &nbsp&nbsp&nbsp&nbsp(22)
+It is somewhat inadvisable that John quit school. &nbsp&nbsp&nbsp&nbsp(23)
+
+的真值便可以表達為
+
+(a very large proportion of)(WD**)(World(ON-TIME(j)))
+(a small proportion of)(WD**)(World(QUIT-SCHOOL(j))) (註13)
+5. 祈使邏輯
+5.1 有關祈使的邏輯學理論
+
+「祈使邏輯」(Imperative Logic)是新興的邏輯分支。由於「祈使」(即指發出命令或請求)作為一種
+「言語行為」，本身無真假可言，所以很多有關「祈使」的邏輯學理論都把「祈使」與「道義模態邏輯」聯繫
+起來，從而把「道義模態句」的邏輯結果推廣引伸至「祈使句」。舉例說，周禮全在《邏輯—正確思維和有效
+交際的理論》一書中便介紹了一種「祈使邏輯」，這種邏輯使用!和i這兩個算子分別代表「命令」和「許可」
+(註14)，而這兩個算子的語義跟「道義模態邏輯」的算子O和P非常相似，這是因為當我們對別人發出命令或給
+予許可時，相當於說出「你必須...」或「你可以...」。「許可」在錶面上雖然與「祈使」有異，但這兩個概
+念其實有相通之處，這一點可以從某些語言可用同一個詞語表達「祈使」和「許可」看出，例如漢語的「叫」
+便有這個功能，試看以下例句：
+
+經理叫我在三日內把事情辦妥。 (祈使)
+黑暗的社會不叫我生存。 (許可)
+
+請註意上面兩句中的「叫」字可分別用表達「祈使」的「吩咐」和表達「許可」的「容許」代替。英語的"let"
+也有類似的特點，例如：
+
+Let us start work! (祈使)
+He didn't let me pass. (許可)
+
+請註意上面某些例句儘管並非表達直接的「祈使」和「許可」，但它們顯示了這兩個概念的相通之處。由此可
+見，把代表「許可」的算子加入「祈使邏輯」中是合理的。根據上述兩個算子與「道義模態詞」的相似性，!與
+i亦存在類似O與P之間的互相定義關係：
+
+! = ~i~
+i = ~!~
+5.2 有關祈使的語義學理論
+
+除了從邏輯學角度理解「祈使」外，某些語言學家也從語言學的角度論證「祈使句」與「道義模態句」的相似
+性。Portner在The Semantics of Imperatives within a Theory of Clause Types一文中從「可能世
+界理論」的角度討論了「陳述句」和「祈使句」的語義問題，指出這兩種句式存在密切的關係。Portner沿襲
+Stalnaker在Assertion一文中所提出的，把「陳述句」的語義所指確定為「命題」。從語用學的角度看
+，說出一個「陳述句」相當於把一個命題加入到會話雙方的「共同會話背景」(Common Ground)中。「共同會話
+背景」是一個由命題組成的集合(以下用CG來代表這個集合)，它代表會話雙方共同知道或相信的一組命題。從
+「可能世界」的角度看，我們可以把一個命題p理解成「可能世界集合」World(p)，即那些使p為真的「可能世
+界」組成的集合，而「共同會話背景」則相當於使集合CG中所有命題均為真的「可能世界」組成的集合，亦即
+對應於CG中所有命題p的「可能世界集合」的交集：
+
+∩p ∈ CG World(p)
+
+Portner把上述概念引伸到「祈使句」，把「祈使句」的語義所指確定為講話者認為受話者應具備的「屬性」
+(Property)。從語用學的角度看，說出一個「祈使句」相當於把一個「屬性」加入到受話者的「任務清單
+」(To-Do List)上。「任務清單」是一個由「屬性」組成的集合(以下用TDL來代表這個集合)，它代表某
+人所應具備的一組「屬性」。由於「屬性」通常由謂詞表達，而當謂詞加上代表受話者的個體詞後便構成一個
+命題，所以「祈使句」最終也可表述為命題。舉例說，假設受話者是John，被說出來的「祈使句」為"Leave!"
+，那麼在John的「任務清單」上便增加了一個屬性LEAVE，而這個「祈使句」則可表達為
+
+!(LEAVE(j))
+
+其中LEAVE(j)構成一個命題。請註意「共同會話背景」此一概念並不局限於「陳述句」，因為「祈使句」也涉
+及「共同會話背景」。換句話說，要理解「祈使句」的語義，必須同時考慮會話雙方的「共同會話背景」以及
+受話者的「任務清單」。
+
+Portner還進一步確立「祈使句」與「道義模態句」的對應關係。他指出「共同會話背景」和「任務清單」分別
+相當於「模態基集」和「排序依據」，因為透過「共同會話背景」，我們可以確定與「祈使句」所述「任務」
+相容的「可能世界集合」WI*，而透過「任務清單」，我們可以把WI*中的元素排序。
+兩個不同的「可能世界」w1和w2若滿足w1 < w2，則代表
+w1在符合「任務清單」方面優於w2，或者換句話說，受話者在w1中較為服
+從和合作。基於上述排序，我們同樣可以定義「極優可能世界集」WI**。這樣，上一小節提及的算
+子!和i的語義便可以確定為
+
+!(p) ⇔ every(WI**)(World(p))
+i(p) ⇔ some(WI**)(World(p))
+6. 可能世界論域上的其他量化現象
+
+「可能世界理論」在當代形式語義學上尚有其他應用，這些應用或多或少都涉及到量化現象。由於這些現象大
+多只涉及「存在量詞」或「全稱量詞」，所以沒有納入上文的討論範圍，只在這裡作一些簡介。
+
+6.1 內涵語義學
+
+開創當代形式語義學先河的Montague的一項重大貢獻就是利用「可能世界理論」創立了一套「內涵語義學
+」(Intensional Semantics)，從而成功解決了某些語義疑難問題，「內涵語義學」構成他的「蒙太格語
+法」的重要組成部分。謂詞邏輯有一個「替換原理」(Substitution Principle)，若常項a和b存在相等關係a = 
+b，則對於任何包含a的表達式，我們都可以把其中的全部或部分a替換成b。此一原理相當符合我們的直觀，在
+很多情況下也是有效的，例見以下推理(在以下推理中，「晨星」和「昏星」是古代人對他們在不同時間見到的
+兩顆星的名稱，後來人們才知道這兩顆星其實是同一顆星，那就是金星)：
+
+我用望遠鏡看見了晨星。
+晨星 = 昏星
+∴我用望遠鏡看見了昏星。
+
+可是，「替換原理」並不適用於某些情況，最著名的就是以下的「晨星昏星悖論」：
+
+晨星必然就是晨星。
+晨星 = 昏星
+∴晨星必然就是昏星。 &nbsp&nbsp&nbsp&nbsp(24)
+
+請註意上述推理是無效的，儘管由於「晨星就是晨星」是一個「重言式」，因此「晨星必然就是晨星」是正確
+的，而根據我們的天文學知識，「晨星 = 昏星」也是正確的；但上述結論卻是不正確的，因為「晨星就是昏星
+」並非必然正確的真理，我們完全可以設想一個「可能世界」，在其中「晨星 ≠ 昏星」。
+
+以上悖論使邏輯學家明白到要區分意義的「內涵」(Intension)和「外延」(Extension)。「晨星」和「昏星」
+在現實世界中雖然有相同的「外延」(即兩者有相同的「語義所指」)，但兩者的「內涵」卻是不同的，因為兩
+者代表古代人在不同時間看見的星體。以上例子告訴我們，在包含「必然」算子的語句中，兩個概念即使有相
+同的「外延」，也不一定能互相替換；只有當這兩個概念具有相同的「內涵」時，才能互相替換，因此人們把
+包含「必然」算子的語句稱為「內涵語境」(Intensional Context)。除了包含「必然」算子的語句外，人們發
+現在自然語言中還有其他「內涵語境」，包括某些「內涵動詞」(例如英語的"believe"、"want"、"seek"等)、
+「內涵形容詞」(例如"former"、"possible"等)、「內涵名詞」(例如一些會隨時間變化的職位或度量名稱，如
+"USA President"、"price"等)。
+
+「內涵語境」除了令「替換原理」失效外，在某些情況下還會導致歧義，試看以下例句：
+
+Bill believes the person who solved this problem is clever. &nbsp&nbsp&nbsp&nbsp(25)
+
+
+上句有兩種解讀：「涉名解」(De Dicto Reading)與「涉實解」(De Re Reading)。在前一種解讀下，"the 
+person who solved this problem"並不確指某一個實在的人，而是指「任何解題者」，而且Bill相信這類
+人是聰明的，故稱「涉名解」(註15)。在後一種解讀下，"the person who solved this problem"確指某
+一個實在的解題者(例如John)，而且Bill相信這個人(即John)是聰明的，故稱為「涉實解」。上句的歧
+義也可從「內涵-外延」的角度加以解釋。上句的「涉名解」可以被理解成具有內涵為「解題者」的對象(不論
+是否在現實世界中)是聰明的；而「涉實解」則可以被理解成那個在現實世界中屬於「解題者」外延的個體是聰
+明的。
+
+從以上的討論可見，有必要在形式語義學中區分「內涵」和「外延」這兩個概念。「外延」的概念很簡單，它
+就是謂詞邏輯研究的對象，例如命題的「外延」就是真值，一元謂詞的「外延」就是個體集合，二元謂詞的「
+外延」就是有序對集合等等。但「內涵」的概念卻十分抽象，如何用形式化的方法加以表述？Montague的辦法
+是把「內涵」處理成把「可能世界」映射到「外延」的函項，從而巧妙地解決了這個難題。舉例說，「晨星」
+和「昏星」的「外延」同為我們現在稱為「金星」的那個星體；而它的「內涵」卻是具有以下形式的函項(在下
+式中，^PHOSPHORUS和^HESPERUS分別代表「晨星」和「昏星」的概念，v代表「金星」這個星體，
+a1、a2、b1、b2等則代表其他星體)：
+
+^PHOSPHORUS(wACTUAL) = v, ^PHOSPHORUS(w1) = a1, 
+^PHOSPHORUS(w2) = a2, ...
+^HESPERUS(wACTUAL) = v, ^HESPERUS(w1) = b1, 
+^HESPERUS(w2) = b2, ...
+
+請註意上式沿襲Montague的處理方式，在PHOSPHORUS和HESPERUS的左上角加了符號「^」，以表示這兩個是「內
+涵」概念。上式顯示，儘管在「現實世界」(即wACTUAL)上，「晨星」和「昏星」有相同的「外延」
+(即同指v)，但這兩個概念在其他「可能世界」上的「外延」卻可以不同，從而具有不同的「內涵」。利用上述
+概念，我們便可以把語句(24)表達為以下「三分結構式」：
+
+every(WA*)(World(^PHOSPHORUS(w) = ^HESPERUS(w)))
+
+由於並非在所有「可能世界」w上都有^PHOSPHORUS(w) = ^HESPERUS(w)，上式是假的，因此語句(24)也是假的
+，這樣便解決了「晨星昏星悖論」的疑難問題。
+
+利用上述概念，我們還可以把語句(25)的「涉名解」與「涉實解」分別表達為
+
+^BELIEVE(wACTUAL)(b, λw[^CLEVER(w)(^SOLVER(w))])
+^BELIEVE(wACTUAL)(b, ^CLEVER(wACTUAL)(^SOLVER(wACTUAL)))
+
+
+在以上兩式中，^BELIEVE、^CLEVER和^SOLVER都是內涵概念，這三個內涵分別把「可能世界」映射為二元函項
+、集合和個體。在第一式中，λw[^CLEVER(w)(^SOLVER(w))]是形式語義學中常用的「λ表達式」
+，表示在任何可能世界(不限於現實世界)中，「解題者」都是聰明的，所以此式表達「涉名解」。在第二式中
+，^SOLVER和^CLEVER都指向現實世界，該式表示現實世界中的那個「解題者」是聰明的，所以此式表達「涉實
+解」。
+
+6.2 疑問句與反事實條件句
+
+筆者在《廣義量詞系列：特殊單式量詞》中曾指出，當今的形式語義學有兩
+套關於「疑問句」的理論：「結構化意義語義學」和「選項語義學」。筆者以往介紹「疑問量詞」的
+語義，主要是依據「結構化意義語義學」，這裡補充說明一下「選項語義學」。根據該套理論，疑問句的語義
+所指是「命題集合」，即由該問題的所有可能解答(以完整命題的形式出現)組成的集合。舉例說，疑問句
+
+Who sang? &nbsp&nbsp&nbsp&nbsp(26)
+
+的語義所指便是
+
+{SING(j), SING(m), SING(j) ∧ SING(m), ...}
+
+如果我們像在5.2小節那樣把一個命題p理解成集合World(p)，那麼便可以把一個疑問句q理解成「集合族」，這
+個「集合族」內的每個集合對應著q的「解答集」中的某個命題。舉例說，(26)便可以理解成
+
+{World(SING(j)), World(SING(m)), World(SING(j) ∧ SING(m)), ...}
+
+
+請註意上述「集合族」在實質上是把「可能世界」歸類，例如上式第一個集合World(SING(j))便包含著所有使
+「John唱歌」為真的「可能世界」。如果我們規定「解答集」所包含的解答必須互斥且窮盡一切可能性，那麼
+上述「集合族」便構成「可能世界論域」的一個「劃分」(Partition)，而「集合族」內的集合則是「等價類」
+(Equivalence Class)。有關把疑問句看成「可能世界論域」的「劃分」的理論，是當今某些學者的研究課題，
+這裡不再深入討論。
+
+「反事實條件句」(Counterfactual Conditional)是指那些前提為假的條件句，例如以下語句(註16)
+：
+
+If Al Gore had won the presidential election, he would have moved to White House. 
+&nbsp&nbsp&nbsp&nbsp(27)
+If Al Gore had won the presidential election, he would have moved to Mars. 
+&nbsp&nbsp&nbsp&nbsp(28)
+
+本來根據「命題邏輯」中有關「實質蘊涵」(Material Implication)的定義，這類條件句自動取真值。可是這
+樣處理「反事實條件句」並不能準確反映語言事實，因為在直觀上，(27)是真的而(28)則是假的。有關「反事
+實條件句」的語義問題，不同學者提出了不同的理論，筆者在這裡只擬簡介Lewis提出的一個分析框架(略加修
+改)。Lewis提出一個三元謂詞C以表達「可能世界」之間的相似關係，對任何「可能世界」w、w'和w''而言，我
+們有C(w, w', w'')當且僅當w'與w的相似程度不低於w''與w的相似程度。利用這個三元謂詞，我們便可以定義
+「反事實條件句」"If p, then q" (Lewis把這種句子記作p □→ q)的真值條件如下：
+
+∃w(w ∈ World(p) ∧ ∀w'((C(wACTUAL, w', w) ∧ w' ∈ 
+World(p)) ⇒ w' ∈ World(q)))
+
+現在根據上式判斷語句(27)和(28)的真值。上式中的∃w(w ∈ World(p))是成立的，因為我們可以設
+想一個戈爾贏得總統選舉的「可能世界」w。現在考慮所有那些與「現實世界」的相似程度不低於w，而且戈爾
+在其中贏得總統選舉的「可能世界」w'。如果前面設想的w除了戈爾勝出這一點外，在其他方面與「現實世界」
+相差不遠，那麼在所有w'中，戈爾都必定會遷入白宮而不可能遷往火星，由此便可判斷語句(27)是真的而(28)
+則是假的。由於「反事實條件句」涉及虛構的「可能世界」，要準確分析其真值條件，有相當的難度，本文的
+討論只能到此為止。
+
+7. 命題論域
+7.1 命題的量化
+
+前面筆者著重討論對「可能世界」的量化問題，這種量化反映「主體」對命題的必然性、可信性、必要性等範
+疇的評估。除此以外，我們也可以對「命題」本身進行量化，這種量化反映「生成世界的謂詞」所作用的命題
+的數目。為此，筆者引入「命題論域」(Propositional Domain，以下用PROP表示)的概念。在「命
+題論域」下，命題是基本的元素，各種「生成世界的謂詞」則相當於由命題組成的集合。在這種分析下，語句
+
+It is probable that John loves Mary.
+Bill believes that John loves Mary.
+
+可以被表達為(以下以p代表命題"John loves Mary")：
+
+p ∈ PROBABLE
+p ∈ BILL-BELIEVE (註17)
+
+對於不含任何「生成世界的謂詞」的語句，我們也可以假設該句隱含著"it is true that"並用集合TRUE代表這
+個謂詞(換句話說，我們是把單純的命題p理解為等同於「p真」)。因此語句
+
+John loves Mary.
+
+便可以表達為
+
+p ∈ TRUE
+
+接下來我們討論「命題論域」上的量化問題。由於「合取」(Conjunction)命題「p真和q真」和「析取」
+(Disjunction)命題「p真或q真」在邏輯上分別等同於「在p和q兩者中全部都真」和「在p和q兩者中至少有一個
+真」，我們可以把「p真和q真」和「p真或q真」分別表達為以下三分結構：
+
+every({p, q})(TRUE)
+some({p, q})(TRUE)
+
+這樣我們便在「命題論域」上建立了「全稱量詞」與「合取」以及「存在量詞」與「析取」之間的對應關係。
+
+對於混合了「合取」／「析取」的複合命題，我們需要使用「迭代三分結構」的概念。舉例說，命題「p真和q
+真，或r真和s真」(用命題邏輯的慣常寫法寫出來就是(p ∧ q) ∨ (r ∧ s)便可以表達為以下三分結
+構式：
+
+some({every({p, q})(TRUE), every({r, s})(TRUE)})(TRUE)
+
+上式是說，在「p真和q真」和「r真和s真」這兩個命題中，至少有一個是真的。由於「『p是真的』這個命題是
+真的」在邏輯上等同於「p是真的」，所以儘管上式包含兩層TRUE，上式仍是可以理解的。
+
+我們還可以把上述結果推廣至其他「生成世界的謂詞」，例如語句
+
+Bill believes that John loves Mary or that Tom hates Susan.
+
+便可以表達為(以下以p代表"John loves Mary"，q代表"Tom hates Susan")：
+
+some({p, q})(BILL-BELIEVE) (註18)
+
+7.2 是非疑問句
+
+利用「命題論域」的概念，我們還可以用形式化方法表達「是非疑問句」(Yes/No Question)的語義，關鍵在於
+把這類疑問句看成一種「選擇疑問句」，這是因為「是非疑問句」實際上提供「是」和「非」這兩個選項供回
+答者選擇。如果我們使用前面介紹的TRUE及其補集FALSE分別代表真命題和假命題集合，那麼根據筆者在
+《廣義量詞系列：特殊單式量詞》中介紹的「選擇疑問句」表達法，我們可
+以把「是非疑問句」
+
+Does John love Mary?
+
+的論元結構和真值條件表達為(以下以p代表"John loves Mary")：
+
+(which of)({TRUE, FALSE})({P ⊆ PROP: p ∈ P})(C) ⇔ C = {TRUE, FALSE} 
+∩ {P ⊆ PROP: p ∈ P}
+
+由於TRUE和FALSE這兩個集合互斥，我們可以把上述真值條件化簡為
+
+C = {P ∈ {TRUE, FALSE}: p ∈ P}
+
+請註意在上式中，「解答集」C是一個單元集，它的唯一元素是「命題集合」TRUE或FALSE，視乎p究竟是真命題
+還是假命題。
+
+正如「命題」一樣，在某些情況下，我們也可以把「問題」作為量化的對象，例如在以下語句中
+
+Bill asked whether John loves Mary and whether Bill hates Susan.
+
+謂詞BILL-ASK便包含兩個問題，因此似乎我們也須引入一個「問題論域」，或者把「命題論域」擴大為包括命
+題與問題。由於這牽涉頗複雜的問題，本文的討論只能到此為止。
+
+
+註1：其實「時態邏輯」也可算作「模態邏輯」的一個分支理論，不過由於「時間論域」具有堪與「個體論域」
+媲美的複雜結構，所以筆者把「時間量化結構」獨立列為一節。
+
+註2：這句聽起來很蹩扭，這是因為這句略去了表示時間和地點的詞語，我們可以把這句當作「『今天這裡下雨
+』這個命題在現實世界中是真的」的簡寫。事實上，「可能世界」這個概念包羅一切事物的所有可能性，它必
+然包含有關時空的信息。但為簡化討論，本文的例句略去這些信息。
+
+註3：本文假設所有「模態量化句」的真值都是參照「現實世界」而言的。但是在更一般的情況下，我們可以定
+義參照其他「可能世界」w' 的「模態量化句」的真值。在這種情況下，WA*的定義便要修改為：
+
+WA* = {w: R(w', w)}
+
+註4：請註意這裡使用的「事件」一詞與《廣義量詞系列：時間量化結構》
+中所稱的「事件」是不同的概念。本文所稱的「事件」是「概率論」上的概念，其重要性不在於其發生時間或
+延續長度，而在於其發生可能性的大小，因此應用「可能世界」來刻劃。
+
+註5：嚴格地說，由於一般「可能世界集合」含有無窮多個元素，所以|World(p)|和|WA*|是沒有意
+義的。不過，這裡我們所關心的是這兩個數值的比值(這個比值就是「概率」的定義)。請註意儘管|World(p)|
+和|WA*|都是無窮大量，但它們的比值卻可以是有限實數，「數學分析」中求「極限」的運算也有
+類似的現象。
+
+註6：除了這些「可能性形容詞」外，英語的「直陳式情態助動詞」(Indicative Mood Modal Auxiliary)也構
+成另一個「概率量表」。例如蔣嚴在On What is Less Certain: The Probability Scale and 
+Hypothetical Meaning一文中便把英語的「直陳式情態助動詞」排成以下序列："must"、"will"、"ought 
+to"、"can"、"may"。筆者認為英語的「情態助動詞」與「可能性形容詞」構成兩個平行的「概率量表」。不過
+，由於「情態助動詞」往往包含其他情態意義(例如"will"可表達意願、意志等；"can"可表達能力)，並非純粹
+的「模糊模態詞」，因此本文只討論「可能性形容詞」。
+
+註7：在「模糊數學」中，至少有三種「模糊概率」：「模糊事件的普通概率」、「普通事件的模糊概率」和「
+模糊事件的模糊概率」，本文所指的是第二種「模糊概率」。
+
+註8：請註意「獨立發生」此一條件在這裡的重要性。假如根據講話者的判斷，事件a的發生必然導致事件b的發
+生，那麼事件a和事件b就不是互相獨立的，這構成對WA*中的「可能世界」結構的一種限制，即每
+一個包含事件a的「可能世界」必然同時包含著事件b，或者換句話說，WA*不能包含這麼一個「可
+能世界」w，其中w ∈ World(a)和w ~∈ World(b)。
+
+註9：請註意「情境語義學」有它本身的一套形式化語言，與本文用來描述「可能世界」的形式語言並不完全相
+同，因此本文只是借用「情境語義學」的某些概念，而並非照搬該理論的分析框架。
+
+註10：看到這裡，有些讀者可能覺得本文介紹的「情境類型」跟筆者在《廣義量
+詞系列：時間量化結構》中介紹的「事件」很相似。事實上，在某些情況下，「事件」與「情境類型」這
+兩個概念是可以相通的。但在表達絕對量時，兩者的側重點各有不同，因而表達很不相同的意思。「事件」包
+含時間因素，因此只要發生時間不同，便要被視作不同的「事件」，「事件」的絕對量表現為「事件」發生的
+「次數」。「情境類型」則一般把時間論元抽象出來(「時間」是以「參數」的形式出現)，因而發生於不同時
+間的「情境」可被視為同一種「情境類型」，「情境類型」的絕對量表現為「類型數目」。順帶一提的是，「
+情境類型」不僅可把時間論元抽象出來，也可把其他論元抽象出來，形成包含多個「參數」的「情境類型」，
+而「事件」則並不具備類似的「類型抽象」(Type Abstraction)操作。
+
+註11：請註意「情境語義學」把「情境類型」看成與集合不同的概念，並把「充分條件句」處理成「情境類型」
+之間的一種「制約關聯」(Constraint)，並用符號「⇒」表示。因此根據上述Devlin一文，上式應寫成
+
+[s*: s* |= 《TALK(j), t*》] ⇒ [s*: s* |= 《SCOLD(c, j), t*》]
+
+
+但由於上述表達式與本文沿用的集合論語言並不吻合，所以筆者對上述概念作了修改。
+
+註12：當今的「信念／知識邏輯」一般把LB / LK對應於自然語言中的「相信／知道」。為了更清晰地區別LB / 
+LK與MB / MK的意義，筆者把「相信／知道」改為「確信／確知」。這裡使用「確」字
+是為了突出LB / LK對應於「全稱量詞」的性質。
+
+註13：請註意在確定這兩條等式中的WD**時，要因應語句中所含「模態詞」是表達積極義還是消極
+義而把相關的命題p歸入OSO或OSF。由於語句(22)的"advisable"表達積極義，故應把
+命題ON-TIME(j)歸入OSO；而語句(23)的"inadvisable"表達消極義，故應把命題QUIT-SCHOOL(j)歸
+入OSF。
+
+註14：周禮全一書中代表「許可」的符號其實是感歎號「!」的倒轉形式，由於在網頁上無法顯示這個符號，所
+以本文用外形相近的「i」來代表「許可」。
+
+註15：這裡還有一個「唯一性」的問題，即根據(25)，在任何可能世界中，「解題者」的外延都是唯一的。但
+為簡化討論，這裡不考慮這個問題。
+
+註16：戈爾(Al Gore)是2000年美國民主黨的總統候選人，他於當年的選舉中落敗。
+
+註17：這裡我們把BILL-BELIEVE處理成一元謂詞(即以命題為論元的集合)，其實我們也可以把"Bill"抽離出來
+，把BELIEVE處理成二元謂詞(即以個體和命題為論元的集合)。
+
+註18：請註意"Bill believes that p or that q."與"Bill believes that p or q."這兩句並不同義，前者
+等同於"Bill believes that p or Bill believes that q."，在這句中"or"所連接的是兩個「相信」的行為
+；而在後者中"or"所連接的則是兩個被相信的命題。some({p, q})(BILL-BELIEVE)只能表示前者的意
+思，後者的意思則必須表達為every({r})(BILL-BELIEVE)，其中r代表複合命題"p or q"。
+
+
+
+返回語言學專題
+
+

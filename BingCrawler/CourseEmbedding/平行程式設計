@@ -1,0 +1,3934 @@
+
+
+平行程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer Network
+Developer Network
+Developer
+
+
+
+
+登入
+
+
+
+
+MSDN 訂閱
+
+
+
+
+取得工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+Visual Studio 2010
+Visual Studio
+
+快速技術搜尋工具
+
+
+
+
+
+快速技術搜尋工具
+平行程式設計
+
+
+
+
+平行程式設計
+
+
+
+
+平行程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+建置主控台應用程式 
+
+ASP.NET 程式開發 
+
+智慧型裝置開發 
+
+Windows 服務應用程式 
+
+Visual Studio 中的 .NET Framework 程式設計 
+
+平行程式設計 
+
+
+
+TOC
+
+ 
+摺疊目錄
+展開目錄
+
+
+
+
+本文件已封存並已停止維護。
+
+
+
+
+
+
+
+若要檢視英文版的文章，請選取 [原文] 核取方塊。您也可以將滑鼠指標移到文字上，即可在快顯視窗顯示英文原文。
+
+
+
+譯文
+
+
+原文
+
+
+
+
+
+本文件已封存並已停止維護。
+
+平行程式設計
+
+
+
+                Visual Studio 2010
+            
+
+
+
+
+
+
+ Visual Studio 提供程式庫和工具，可協助您以 C++ 和 .NET 語言 (例如 C# 和 Visual Basic) 對平行與並行程式碼進行開發、剖析及偵錯。文件的下列章節包含平行程式設計程式庫與工具的詳細資訊。並行執行階段說明如何以 C++ 撰寫平行程式碼。以 .NET Framework 進行平行程式設計說明如何在 .NET 平臺上撰寫平行程式碼。並行視覺化檢視說明如何使用 Visual Studio 2010 Premium 和 Visual Studio 2010 Ultimate 來剖析平行程式。使用平行堆疊視窗說明如何使用 Visual Studio 2010 對平行程式進行偵錯。使用平行工作視窗提供如何使用 Visual Studio 2010 對平行程式進行偵錯的其他相關資訊。請參閱其他資源快速技術搜尋工具 (Visual Studio)
+
+
+
+
+
+
+社群新增項目
+
+
+                        新增
+                    
+
+
+
+
+
+
+
+
+顯示:
+
+受繼承
+        
+
+受保護
+        
+
+
+
+
+
+
+
+列印
+
+匯出 (0)
+            
+
+
+
+
+
+
+
+列印
+
+分享
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+本文內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本頁對您有幫助嗎？
+是
+否
+
+
+
+
+
+其他意見反應？
+
+
+剩餘 1500 個字元
+
+提交
+略過此項
+
+
+
+
+
+
+
+謝謝！
+我們非常感謝您提供的意見反應。
+
+
+
+
+
+
+
+
+
+
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關註平行程式設計 | iThome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+移至主內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+程式人｜林信良
+
+
+ 
+
+關註平行程式設計
+ 平行程式設計是現代與未來開發者，都必須關註的課題
+
+ 
+
+
+
+
+
+
+ 
+按讚加入iThome粉絲團
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+文/林信良
+|
+2016-07-03發表
+  
+
+ 
+
+
+
+
+
+
+
+
+
+ 在多核心處理器普及的現在，平行程式設計逐漸受到重視，新的程式語言在推出或者既有程式語言在演化的過程中，無不將平行程式設計的特性視為重點之一，就技術上而言，開發者並不欠缺可用的平行方案，需要的是對平行處理的認識，以及平行的設計思維之培養。
+區別並行與平行
+開發者多半知道多執行緒程式設計，也就是在程式設計上可獨立設計多個流程，在某些時間點讓多個流程並行。最常見的應用場合，就是在循序流程發生阻斷時，例如下載多個網頁，由於網頁下載過程中，需要開啟網路連結、協定交換、網路傳輸、存檔等動作，而這些動作需要等待，若能分多個流程來下載多個網頁，在等待某個下載動作完成的時間，處理器可看看另一流程是否可進行運算，避免閒置，從而縮短全部網頁下載完成時間。
+也就是說，就處理器來說，同時間還是只有一個執行緒在核心中運行，這類設計稱為並行程式設計（Concurrent programming），由於只是在邏輯上（Logically），或者說等待的同時做了其他事情，基本上適合非計算密集的任務，若是計算密集任務，並不會獲得減少處理器閒置時間的好處，反而會因為切換執行緒的成本，使得花費的時間更長。
+相對於並行程式設計，平行程式設計（Parallel programming）是在實體上（Physically）同時進行多個流程，因而需要硬體上的支援，就單一主機而言，基本上需要具備多處理器或多核心處理器，就技術上而言，需要程式語言的語法，或者是程式庫、框架來支援。
+由於平行程式設計，可真正在多個處理器或核心中，同時執行多個流程，沒有切換流程的成本，只要子任務分配適當，完成整個任務需要的時間就可以縮短，只不過長期以來，開發者多半接受循序式、命令式思維的教育，後來在「同時處理」的這類任務，多半先接觸的又是多執行緒，通常只會在循序流程受到阻斷時，才會試著（以執行緒的觀點）思考多個流程的可能性。
+平行處理的出發點
+平行處理的出發點，並不是優先思考平行處理的可能性，或想著這個任務可以用幾個處理器來做平行處理來進行設計，這將會使得架構被寫死而不易擴展，如果子任務之間必須溝通，也可能造成複雜的溝通機制，使得除錯不易（難以在單一流程的情況下除錯），或者因不當的鎖定而效能低落。
+平行處理的出發點是子任務的分解，每個子任務應該能被獨立地賦予任務、執行並達到成果，相同子任務應該要有相同的結果，而且子任務之間不會互相影響。舉例來說，每個函式設計為無副作用，甚至使用純函數式典範，讓每個運算步驟都無副作用，無副作用並不代表它們不能產生輸入輸出，相同的資料檔案來源，產生相同的檔案輸出，也可算是一種無副作用。
+這樣的設計方式下，有些技術可以簡單地將子任務平行化，甚至只要調整某些參數，就可以控制使用的處理器或核心數量，像是Go語言中，可以使用go關鍵字就讓某個函式進行並行或平行處理（Go 1.5預設會使用所有的CPU核心），在C++領域有個OpenMP，甚至可使用#pragma omp parallel for，將for迴圈的本體進行平行化，另一個好處是，程式仍是可以循序執行，在需要除錯的場合，可以降低除錯的難度。
+在談及平行處理的場合，經常會出現兩個名詞：資料平行（Data parallelism）、任務平行（Task parallelism）。前者是指有大量資料要處理，將資料分解並丟給各個處理器處理，看似簡單，然而，難處在於得先有個可分解的資料集，開發者得去除資料集中各筆資料間的相依性，或者找出資料集中可改為平行分量的部份，然後將之化為子任務去執行運算，這在我先前專欄〈執行資料平行處理的效能考量〉曾經提過。
+至於任務平行，是指同一個資料集上要進行不同的任務，例如，在同一個天氣資料集中找出最高溫度、最低溫度、平均溫度，傳統循序作法中，為了所謂的效能，可能在一次讀取資料集的過程中，就將這三個任務完成，然而，任務平行的做法中，可能是分三個子任務，每個子任務讀取一次資料集，各自專心處理最高溫度、最低溫度、平均溫度的取得，也就是一次只處理一件事，想當然爾，後者可以在需要平行處理的場合中，將三個子任務分配給不同的處理器。
+無副作用的子任務、資料的相依性去除、一次只做一件事，這是平行處理的出發點，而這些在純函數式語言中是基本而重要甚至是強迫性的，這也就是為什麼純函數式語言，會在後來被重視，且視為適合平行處理，或視為訓練平行思維的語言。
+三個定律的本質
+在談到平行處理議題時，往往會提到三個定律：Moore's law、Amdahl's law、Gustafson's law。第一個定律是大家熟悉的「積體電路上可容納的電晶體數目，約每隔24個月便會增加一倍」，後來David House則說「預計18個月會將晶片的效能提高一倍」。只不過，半導體終究有物理上的限制，Moore's law被預期將遇到極限，依賴單一處理器的速度也就有其瓶頸。
+也因此，後來人們開始關註平行處理，根據Amdahl's law，如果任務中有能夠平行處理的分量，只要能將序列處理中的一半改為平行處理，在不考慮投入的核心數下，效率就會增加為兩倍，不過，當處理器增加到一定數量之後，後續增加的處理器對效能的貢獻就會趨近於零，最終會受到程式中循序部份的主導。
+Gustafson's law則提出了一個修正，由於電腦運算能力越來越強大，人們也就給予越來越龐大的任務，如果能從這龐大任務中，分出越多可平行處理的部份，處理器越多就代表著能平行處理掉的量就越大，循序的部份在這類日益龐大的任務中，影響就能逐漸減少。
+Amdahl's law與Gustafson's law看似衝突，實際上二者本質上一致，前者是在定量任務下，談到就算處理器不斷增加，最終效能還是受到循序部份的影響，因而重要的是「降低循序部份」，後者是談到越是龐大的任務，分出越多平行分量給更多處理器處理，就越能不受循序部份的控制，因而重要的是「增加平行部份」，降低循序與增加平行不就是一體兩面！
+留意適當語言與工具
+當然，最終開發者還是要以某種語言或技術實現程式，現在有不少的語言、程式庫或框架，提供有平行程式設計上的支援，妥善納入考量，可以減少許多實作上的難度，方纔提到的Go語言是個例子，而在Java 8中想做資料平行化，可以考慮Stream API，利用以上原則，在單一流程下可以執行任務，接著就只要將stream改為parallelStream，看看是否改進了效能。
+實際上有些場合，使用了執行緒的動作也可以平行化，像是方纔提到的多個網頁下載，這是因為過去語言或技術上對平行的支援欠缺，只好使用執行緒，在多處理器的環境中，如果需要大量執行這類任務，可以考慮修改為真正的平行化，Python中特意將multiprocessing模組中一些API，設計成為threading模組API，這時就可以善加利用，不過由於執行緒比較輕量級，改成行程負擔較重，實際上還是要看看哪個較具效能。
+平行程式設計是現代與未來開發者，都必須關註的課題，有看過Multiple CPU dance嗎？在嘴角失守的同時，或許可以先想想看，自己寫的程式能否避免同樣的場景？
+ 
+
+
+
+作者簡介
+
+
+
+ 
+ 
+ 
+
+林信良
+因在網路上經營「良葛格學習筆記」（openhome.cc）而聞名，曾任昇陽教育訓練中心技術顧問、甲骨文教育訓練中心授權講師，目前為自由工作者，專長為技術寫作、翻譯與教育訓練。喜好研究程式語言、框架、社群，從中學習設計、典範及文化。閒暇之餘記錄所學，技術文件涵蓋C/C++、Java、Ruby/Rails、Python、JavaScript、Haskell等多個領域。
+
+  
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ Advertisement
+
+
+ 
+
+
+
+
+ 
+
+ 
+
+更多 iThome相關內容
+
+
+  
+ 3D建模與程式設計 
+
+ 思考Haskell的多型 
+
+ 走在解題的道路上 
+
+ 換帽子的開發 
+
+ Java 8的函式重用 
+
+ 列舉與開放封閉原則 
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+熱門新聞
+
+
+
+
+
+
+ 
+
+
+英國Wi-Fi業者使壞，讓2.2萬名用戶無意中同意去掃流動廁所
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+Google 兩步驟驗證將以手機提示取代簡訊
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+【AI關鍵技術】三大熱門深度學習框架新進展
+
+2017-07-19
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+硬體不相容，部份英特爾Atom裝置無法升級Windows 10 Creators Update
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+災難！CoinDash首度發行貨幣當天就被駭，損失近700萬美元
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+微軟亞洲研究院院長洪小文：越複雜越不管用，AI最適合封閉型的高重複性任務
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+安撫使用者不滿情緒，Skype聯絡人狀態顯示功能回來了!
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+南韓代管業者Nayana遭勒索軟體攻擊，與駭客達成協議將支付110萬美元贖金
+
+2017-06-21
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+2017年AI開始普及化，技術競賽白熱化
+
+2017-07-15
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+國際警方聯手關閉暗網市集AlphaBay
+
+2017-07-17
+ 
+ 
+
+
+
+ 
+
+專題報導
+
+
+
+
+企業行動化管理解決方案採購大特輯 
+
+
+AI 100（上） 
+
+
+公有雲儲存服務大盤點 
+
+
+富士通AI新戰略 
+
+
+企業身分驗證雲端服務採購特輯 
+
+更多專題報導
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+國立成功大學 - 課程地圖
+
+
+
+
+
+
+
+    
+ 
+
+
+ 首頁 
+
+
+
+
+
+
+
+ 通識教育課程地圖 
+
+
+
+
+
+
+ 院系所課程地圖 
+
+
+
+
+
+
+
+
+意見回饋 ｜ 
+  
+
+English ｜ 
+  
+
+
+
+
+ 1.
+        
+請選擇學院
+其他文學院理學院工學院管理學院醫學院社會科學院電機資訊學院規劃與設計學院生物科學與科技學院 
+        2. 
+        
+請選擇系所
+電機系          資訊系          電機所          多媒學程        資訊所          製造所          微電所          電通所          醫資所          奈積學程         
+
+
+
+ 3. 
+        
+選擇未來發展 - 升學
+
+						國內進修                                          
+
+						國外進修                                          
+
+
+選擇未來發展 - 就業
+
+						資訊產業                                          
+
+						生醫產業                                          
+
+						學術界                                            
+
+						公職                                              
+
+						其它                                              
+
+
+
+
+
+
+多處理機平行程式設計                    
+
+
+  	本課程講授及實作在多處理機及多核心電腦環境下如何撰寫(開發)平行程式, 以提升程式執行效能
+
+課程教育目標 
+
+A. 教育學生基礎專業知識及終身學習之能力B. 教育學生運用專業知識解決資訊應用問題之能力C. 教育學生優質團隊合作之能力 
+課程基本素養與核心能力 
+
+[基本素養]畢業生應具備科技人文素養及資訊工程倫理之精神
+畢業生應具備良好溝通技巧及國際觀
+[核心能力]畢業生應具備基礎專業數學及資訊理論知識之基本能力
+畢業生應具備培養學習興趣及持續學習之能力
+畢業生應具備獨立、創新思維及發掘、分析、解決資訊相關問題之能力
+畢業生應具備資訊系統設計、測試及驗證之能力
+畢業生應具備負責之工作態度及有效團隊合作之能力
+ 
+近年開課資訊
+
+
+
+開課年度
+課程碼
+分班碼
+課程名稱(超連結為課程大綱)
+學分數
+英語授課
+授課教師
+
+
+
+0106/1
+F722500
+ 
+ 
+		  	多處理機平行程式設計                    
+
+3.0
+N
+陳奇業
+
+
+
+0105/1
+F722500
+ 
+ 
+		  	多處理機平行程式設計                    
+
+3.0
+N
+陳奇業
+
+
+
+0104/1
+F722500
+ 
+ 
+		  	多處理機平行程式設計                    
+
+3.0
+N
+陳奇業
+
+
+
+0102/2
+F722500
+ 
+ 
+		  	多處理機平行程式設計                    
+
+3.0
+N
+朱治平
+
+
+
+0101/2
+F722500
+ 
+ 
+		  	多處理機平行程式設計                    
+
+3.0
+N
+朱治平
+
+
+
+0100/2
+F722500
+ 
+ 
+		  	多處理機平行程式設計                    
+
+3.0
+N
+朱治平
+
+
+
+
+
+
+
+ 國立成功大學 |  課程查詢  
+701臺南市大學路1號   TEL:  06-2757575#50158  意見回饋信箱: 教務處課務組 em50150@mail.ncku.edu.tw
+    國立成功大學 版權所有  © NCKU All Rights Reserved.  計網中心資訊系統發展組 製作
+
+
+
+
+
+
+
+
+
+
+以 Visual C++ 進行平行程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer Network
+Developer Network
+Developer
+
+
+
+
+登入
+
+
+
+
+MSDN 訂閱
+
+
+
+
+取得工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+Visual Studio 2015
+歡迎使用 Visual Studio 2015
+
+Visual C++
+
+
+
+
+
+Visual C++
+平行程式設計
+
+
+
+
+平行程式設計
+
+
+
+
+平行程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Visual Studio 2015 中 Visual C++ 的新功能 
+
+支援的平臺 (Visual C++) 
+
+使用 C++ 設計 Windows 應用程式概觀 
+
+C++ 語言和標準程式庫 
+
+通用 Windows 應用程式 
+
+Win32 桌面應用程式 (Visual C++) 
+
+MFC 和 ATL 
+
+以 Visual C++ 進行 .NET 程式設計 
+
+雲端和 Web 程式設計 
+
+平行程式設計 
+
+自動平行處理和自訂向量化 
+
+並行執行階段 
+
+C++ AMP (C++ Accelerated Massive Parallelism) 
+
+舊版程式碼的多執行緒支援 (Visual C++) 
+
+OpenMP 
+
+資料存取 
+
+文字和字串 
+
+開發工具 
+
+C++ 的安全性最佳作法 
+
+Visual C++ 範例 
+
+Visual C++ 說明和社群 
+
+Visual C++ 移植和升級指南 
+
+
+
+TOC
+
+ 
+摺疊目錄
+展開目錄
+
+
+
+
+本文件已封存並已停止維護。
+
+
+
+本文件已封存並已停止維護。
+
+
+以 Visual C++ 進行平行程式設計
+
+
+
+                Visual Studio 2015 
+            
+
+
+
+
+
+
+                        其他版本
+                    
+
+
+
+
+
+
+
+Visual Studio 2013 
+
+
+Visual Studio 2012
+
+
+
+
+
+
+ 如需 Visual Studio 2017 的最新文件請參閱 Visual Studio 2017 文件。Visual C++ 提供下列技術協助您建立多執行緒及平行程式，這些程式會利用多核心和使用適合通用程式設計的 GPU。相關文章標題說明自動平行處理和自訂向量化加速程式碼的編譯器最佳化。並行執行階段簡化使用資料平行處理原則或工作平行處理原則撰寫程式的類別。C++ AMP (C++ Accelerated Massive Parallelism)能夠讓現代化圖形處理器使用於通用程式設計的類別。舊版程式碼的多執行緒支援 (Visual C++)舊版應用程式可以使用的舊技術。  如果是新的應用程式，請使用並行執行階段或 C++ AMP。OpenMPOpenMP 應用程式開發介面的 Microsoft 實作。Visual C++本文件章節包含 Visual C++ 大部分功能的相關資訊。
+
+
+
+
+
+顯示:
+
+受繼承
+        
+
+受保護
+        
+
+
+
+
+
+
+
+列印
+
+匯出 (0)
+            
+
+
+
+
+
+
+
+列印
+
+分享
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+本文內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本頁對您有幫助嗎？
+是
+否
+
+
+
+
+
+其他意見反應？
+
+
+剩餘 1500 個字元
+
+提交
+略過此項
+
+
+
+
+
+
+
+謝謝！
+我們非常感謝您提供的意見反應。
+
+
+
+
+
+
+
+
+
+
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VITO の 學習筆記: 平行程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VITO の 學習筆記
+
+
+
+
+
+
+VITO の 學習筆記
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2015年8月20日 星期四
+
+
+
+
+
+
+
+
+
+
+平行程式設計
+
+
+
+
+
+   之前曾經介紹過如何使用 Thread 或 ThreadPool 建立執行緒，以達到多個工作同步執行的目的。  並利用「同步處理」的機制，以取得非同步作業的執行結果。  自 .NET 4.0 開始，在 System.Threading.Tasks 命名空間中，已提供幾個相關的 Task 類別，可以用來簡化撰寫並行作業的程式碼。  這一組相關的類別庫就稱為「工作平行程式庫」（ ,TPL），它簡化了撰寫平行作業的許多細節，讓開發人員可以更專註於程式所應完成的工作。    System.Threading.Tasks.Task ：表示非同步作業。 System.Threading.Tasks.Task<TResult> ：表示含有傳回值的非同步作業。   Task  Task 類別 & Task<TResult> 類別  Task 類別    這個類別用來表示一個無回傳值的非同步作業。  底下幾個是它的建構函式，其中 Action 表示一個沒有回傳值的委派。   Task(Action)
+Task(Action<Object>, Object)
+Task(Action, CancellationToken)
+Task(Action, TaskCreationOptions)
+Task(Action<Object>, Object, CancellationToken, TaskCreationOptions)
+...
+  Task<TResult> 類別    這個 Task<TResult> 類別表示一個有回傳值的非同步作業。  所以和上面 Task 類別，差別只在於其建構函式中傳入的是一個可回傳值的委派。   Task<TResult>(Func<TResult>)：
+Task<TResult>(Func<Object, TResult>, Object)：
+Task<TResult>(Func<TResult>, CancellationToken)：
+Task<TResult>(Func<TResult>, TaskCreationOptions)：
+Task<TResult>(Func<Object, TResult>, Object, CancellationToken, TaskCreationOptions)：
+...
+ Task<TResult>(Func<TResult>) 這個建構函式表示：  這是一個泛型類別，類別中會使用到一個非特定型別（TResult）。 具現化時，必須使用一個無參數的 Func 委派當做參數。 委派的執行函式必須回傳（TResult）型別的值。  private AtomEntry UploadPhoto1()
+{
+    return UploadPhotoAsync(gsAlubmId, @"01.jpg"); //return AtomEntry;
+}
+private void bnTaskResult_Click(object sender, EventArgs e)
+{
+    // 建立 Task<TResult>(Func<TResult>) 
+    Task<AtomEntry> task = new Task<AtomEntry>(
+            delegate ()
+            {
+                return UploadPhoto1();
+            }
+        );
+
+    // 上面程式碼，可簡寫如下：
+    Task<AtomEntry> task = new Task<AtomEntry>(UploadPhoto1);
+}
+ Task<TResult>(Func<Object, TResult>, Object) 這個建構函式表示：  這是一個泛型類別，類別中會使用到一個非特定型別（TResult）。 具現化時，必須使用一個含一個參數的 Func 委派當做參數。 委派的執行函式必須傳入一個 Object 型別參數，並回傳（TResult）型別的值。  private AtomEntry UploadPhoto2(Object filename)
+{
+    return UploadPhotoAsync(gsAlubmId, filename.ToString()); //return AtomEntry;
+}
+private void bnTaskResult_Click(object sender, EventArgs e)
+{
+    // Task<TResult>(Func<Object, TResult>, Object)
+    Task<AtomEntry> task2 = new Task<AtomEntry>(UploadPhoto2, filename);
+}
+   起始非同步工作   Task 類別可用來簡化 Thread 或 ThreadPool 執行非同步工作的邏輯，你可以先建立 Task 執行個體，再叫用 Task.Start 方法來啟動非同步工作；或者使用靜態方法 TaskFactory.StartNew 直接建立 Task 並執行非同步工作。   Task.Start()  底下範例會自動建立多個Thread執行上傳動作。 private void UploadPhoto0(Object filename)
+    {
+        UploadPhotoAsync(gsAlubmId, filename.ToString());
+    }
+
+    private void bnTask2_Click(object sender, EventArgs e)
+    {
+        FileInfo[] files = GetFileList();
+        foreach (FileInfo file in files)
+        {
+            string filename = file.FullName;
+            Task task = new Task(UploadPhoto0, filename);
+            task.Start();
+        }
+        Console.WriteLine("Finish");
+    }
+ 如果你要等待所有非同步工作執行結束才繼續往下的話，可以叫用 Task.WaitAll 方法。 private void bnTask2_Click(object sender, EventArgs e)
+    {
+        FileInfo[] files = GetFileList();
+        List<Task> tasks = new List<Task>();
+        foreach (FileInfo file in files)
+        {
+            string filename = file.FullName;
+            Task task = new Task(UploadPhoto0, filename);
+            task.Start();
+        }
+        Task.WaitAll(tasks.ToArray());  //主執行緒會停留在這一行，直到所有 Task 執行完畢，才會繼續往下。
+        Console.WriteLine("Finish");
+    }
+   由於 Task 建構函式中是一個 Action 委派參數，所以我們也可以使用 Lambda 運算式和匿名方法來建立委派。   FileInfo[] files = GetFileList();
+    List<Task> tasks = new List<Task>();
+    foreach (FileInfo file in files)
+    {
+        string filename = file.FullName;
+        Task task = new Task(
+            () =>
+            {
+                UploadPhotoAsync(gsAlubmId, filename);
+            });
+        task.Start();
+        tasks.Add(task);
+    }
+    Task.WaitAll(tasks.ToArray());  //主執行緒會停留在這一行，直到所有 Task 執行完畢，才會繼續往下。
+    Console.WriteLine("Finish");
+  TaskFactory.StartNew()   TaskFactory 類別是 Task 類別的輔助工具，提供 Task 物件操作的便利性。  例如，你可以直接叫用其 StartNew 方法，就可以建立 Task 執行個體，並啟動該並行作業。  所以，上面的例子，可以改寫如下：   FileInfo[] files = GetFileList();
+    foreach (FileInfo file in files)
+    {
+        string filename = file.FullName;
+        Task task = Task.Factory.StartNew(UploadPhoto0, filename);
+    }
+    Console.WriteLine("Finish");
+  StartNew 有多個多載方法，其使用方法都類似 Task 類別。     Task.Run()     取得非同步工作的執行結果    雖然 Task 類別本身無法回傳執行結果，  但是它的泛型類別 Task<TResult> 可以。  當使用 Task<TResult> 類別建立非同步工作時，若要取得執行結果，可以直接由執行個體的 Result 屬性取得。  不過，要取得執行結果，你必須先等待工作執行結束，因此在程式碼中必須加入等待結束的機制。     Task.Wait ：等候該 Task 完成執行。  Task.WaitAny ：這個靜態方法，會等候任一提供的 Task 物件完成執行。  Task.WaitAll ：這個靜態方法，會等候所有提供的 Task 物件完成執行。    底下這個例子，在 Task 啟動後，便叫用 Wait 方法等待該 Task 執行完畢才繼續往下。   private AtomEntry UploadPhoto2(Object filename)
+{
+    return UploadPhotoAsync(gsAlubmId, filename.ToString());
+}
+
+private void bnTaskResult_Click(object sender, EventArgs e)
+{
+    FileInfo[] files = GetFileList();
+
+    foreach (FileInfo file in files)
+    {
+        string filename = file.FullName;
+        Task<AtomEntry> task = new Task<AtomEntry>(UploadPhoto2, filename);
+        task.Start();
+        task.Wait();            //等待並行作業執行完畢，再繼續往下。
+
+        Photo photo = new Photo();
+        photo.AtomEntry = task.Result;  //讀取非同步工作的執行結果
+        Console.WriteLine("ID:{0} URI:{1}", photo.Id, photo.PhotoUri);
+    }
+｝
+   上面範例中，其實在 Task 作業中，只要該 Task 有叫用到 Result 屬性，既使沒有呼叫 Wait 方法，程式碼也會停在該行程式，直到該並行作業執行完畢才續繼往下。     另外的做法，你也可以先啟用所有的 Task ，再叫用 WaitAll 方法，等待所有並行的作業執行完畢。  不過這個方法無法確保每個 Task 的執行順序，如果在意每個工作先後完成的順序，就只能使用上面方法。   FileInfo[] files = GetFileList();
+
+    List<Task> tasks = new List<Task>();
+    foreach (FileInfo file in files)
+    {
+        string filename = file.FullName;
+        Task<AtomEntry> task = new Task<AtomEntry>(UploadPhoto2, filename);
+        task.Start();
+        tasks.Add(task);
+    }
+    Task.WaitAll(tasks.ToArray());  //主程式會停留在這一行，直到所有 Task 執行完畢，才會繼續往下。
+
+    foreach (Task<AtomEntry> task in tasks)
+    {
+        Photo photo = new Photo();
+        photo.AtomEntry = task.Result;
+        Console.WriteLine("ID:{0} URI:{1}", photo.Id, photo.PhotoUri);
+    }
+  Task.ContinueWith    如果在 Task<TResult> 作業執行結束後，你希望接著執行另一段程式，可以使用 ContinueWith 。它的多載方法有：    Task ContinueWith(Action<Task<TResult>> continuationAction) 這個方法表示：  ContinueWith 會回傳一個 Task 型別值。 ContinueWith 的參數是一個 Action 委派。 該委派要執行的對向（方法），必須含有一個 Task<TResult> 型別參數。  Task<TNewResult> ContinueWith<TNewResult>(Func<Task<TResult>, TNewResult> continuationFunction) 這個方法表示：  ContinueWith 會回傳一個 Task<TNewResult> 型別值。 ContinueWith 的參數是一個 Func 委派。 該委派要執行的對向（方法），必須含有一個 Task<TResult> 型別參數，也就是將已完成的工作當做引數傳遞給委派。  例： private Photo UpdatePhoto2(Task<AtomEntry> task)
+{
+    return new Photo();
+}
+
+private void bnTaskResultContinueWith_Click(object sender, EventArgs e)
+{
+    FileInfo[] files = GetFileList();
+
+    foreach (FileInfo file in files)
+    {
+        string filename = file.FullName;
+
+        Task<Photo> task = Task.Factory
+        .StartNew<AtomEntry>(UploadPhoto2, filename)
+        .ContinueWith<Photo>(UpdatePhoto2);
+        
+        Photo photo = task.Result;
+        Console.WriteLine("ID:{0} Title:{1} Summary:{2}", photo.Id, photo.Title, photo.Summary);
+    }
+    Console.WriteLine("Finish");
+}
+ 叫用 ContinueWith 時，你無法傳送額外的參數給執行方法，若須使用到參數，可考慮改用 Lambda 。 foreach (FileInfo file in files)
+    {
+        string filename = file.FullName;
+
+        Task<Photo> task = Task.Factory
+            .StartNew<AtomEntry>(UploadPhoto2, filename)
+            .ContinueWith<Photo>(pre_task =>
+        {
+            Photo ori_photo = new Photo();
+            ori_photo.AtomEntry = pre_task.Result;
+            string title = Path.GetFileNameWithoutExtension(filename);
+            string summary = title;
+            return UpdatePhoto(ori_photo.Id, title, summary);
+        });
+
+        Photo photo = task.Result;
+        Console.WriteLine("ID:{0} Title:{1} Summary:{2}", photo.Id, photo.Title, photo.Summary);
+    }
+   Parallel   Parallel 類別是專門用來支援平行迴圈的作業模式，也就是簡化上面範例中，使用 Loop + Task 的程式碼。  所以，若一個集合中的所有元素，都要使用相同的操作行為，就非常適合使用 Parallel 類別來進行同步處理。    private void UploadFile0(string filename)
+{
+    UploadFileAsync(gsAlubmId, filename);
+}
+private void bnParallel_ForEach_Click(object sender, EventArgs e)
+{
+    List<string> files = GetFileList();
+
+    // 建立 ParallelLoopResult ForEach<TSource>(IEnumerable<TSource> source, Action<TSource> body);
+
+    Parallel.ForEach<string>(files,
+        delegate(string file)
+        {
+            UploadFile0(file);
+        });
+
+    // 上一行程式碼，可以用 Lambda 簡化如下：
+    Parallel.ForEach(files, (file) =>
+        {
+            UploadFile0(file);
+        });
+
+    // 如果要執行的程式碼都包在一個函式裡，且符合委派簽名，那麼還可以簡化如下：
+    Parallel.ForEach(files, UploadFile0);
+}
+   註意事項：     Parallel.ForEach 迴圈，並不保證每個並行工作的啟動先後。 每個並行工作都必須執行完畢，程式才會繼續往下執行迴圈外的程式。      TPL 和傳統 .NET Framework 非同步程式設計 以 .NET Framework 進行平行程式設計 工作平行程式庫 (Task Parallel Library, TPL) 簡介.NET 4.0的多工執行利器--Task C# 學習筆記：多執行緒 (6) - TPL  TPL(Task Parallel Language) – 平行化處理  
+
+
+
+
+
+張貼者：
+
+
+Vito
+
+
+
+
+於
+
+
+
+下午6:39
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+以電子郵件傳送這篇文章
+
+
+
+
+BlogThis！
+
+
+
+
+分享至 Twitter
+
+
+
+
+分享至 Facebook
+
+
+
+
+
+
+
+
+
+標籤：
+
+DotNetFramework-執行緒
+
+
+
+
+
+
+
+
+
+
+
+
+沒有留言:
+                                    
+
+
+
+
+
+
+
+
+張貼留言
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+較新的文章
+
+
+
+
+較舊的文章
+
+
+
+首頁
+
+
+
+
+
+訂閱：
+
+張貼留言 (Atom)
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文章分類
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網誌存檔
+
+
+
+
+
+
+
+
+
+
+2016
+
+
+                (12)
+              
+
+
+
+
+
+
+四月
+
+
+                (1)
+              
+
+
+
+
+
+
+
+
+三月
+
+
+                (1)
+              
+
+
+
+
+
+
+
+
+二月
+
+
+                (3)
+              
+
+
+
+
+
+
+
+
+一月
+
+
+                (7)
+              
+
+
+
+
+
+
+
+
+
+
+2015
+
+
+                (12)
+              
+
+
+
+
+
+
+十二月
+
+
+                (1)
+              
+
+
+
+
+
+
+
+
+八月
+
+
+                (3)
+              
+
+
+
+Form 三二事
+
+
+
+
+WebBrowser 三二事
+
+
+
+
+平行程式設計
+
+
+
+
+
+
+
+
+
+
+
+六月
+
+
+                (1)
+              
+
+
+
+
+
+
+
+
+四月
+
+
+                (7)
+              
+
+
+
+
+
+
+
+
+
+
+2014
+
+
+                (52)
+              
+
+
+
+
+
+
+十二月
+
+
+                (1)
+              
+
+
+
+
+
+
+
+
+八月
+
+
+                (13)
+              
+
+
+
+
+
+
+
+
+六月
+
+
+                (10)
+              
+
+
+
+
+
+
+
+
+四月
+
+
+                (1)
+              
+
+
+
+
+
+
+
+
+三月
+
+
+                (4)
+              
+
+
+
+
+
+
+
+
+二月
+
+
+                (7)
+              
+
+
+
+
+
+
+
+
+一月
+
+
+                (16)
+              
+
+
+
+
+
+
+
+
+
+
+2013
+
+
+                (178)
+              
+
+
+
+
+
+
+十二月
+
+
+                (19)
+              
+
+
+
+
+
+
+
+
+十一月
+
+
+                (8)
+              
+
+
+
+
+
+
+
+
+十月
+
+
+                (10)
+              
+
+
+
+
+
+
+
+
+九月
+
+
+                (3)
+              
+
+
+
+
+
+
+
+
+八月
+
+
+                (3)
+              
+
+
+
+
+
+
+
+
+七月
+
+
+                (15)
+              
+
+
+
+
+
+
+
+
+六月
+
+
+                (28)
+              
+
+
+
+
+
+
+
+
+五月
+
+
+                (34)
+              
+
+
+
+
+
+
+
+
+四月
+
+
+                (15)
+              
+
+
+
+
+
+
+
+
+三月
+
+
+                (23)
+              
+
+
+
+
+
+
+
+
+二月
+
+
+                (11)
+              
+
+
+
+
+
+
+
+
+一月
+
+
+                (9)
+              
+
+
+
+
+
+
+
+
+
+
+2012
+
+
+                (140)
+              
+
+
+
+
+
+
+十二月
+
+
+                (4)
+              
+
+
+
+
+
+
+
+
+十一月
+
+
+                (9)
+              
+
+
+
+
+
+
+
+
+十月
+
+
+                (30)
+              
+
+
+
+
+
+
+
+
+九月
+
+
+                (6)
+              
+
+
+
+
+
+
+
+
+八月
+
+
+                (2)
+              
+
+
+
+
+
+
+
+
+六月
+
+
+                (4)
+              
+
+
+
+
+
+
+
+
+五月
+
+
+                (15)
+              
+
+
+
+
+
+
+
+
+四月
+
+
+                (2)
+              
+
+
+
+
+
+
+
+
+三月
+
+
+                (39)
+              
+
+
+
+
+
+
+
+
+二月
+
+
+                (11)
+              
+
+
+
+
+
+
+
+
+一月
+
+
+                (18)
+              
+
+
+
+
+
+
+
+
+
+
+2011
+
+
+                (4)
+              
+
+
+
+
+
+
+十二月
+
+
+                (4)
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+平行程式設計 | MaskRay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MaskRay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2017-04-15
+
+
+
+
+
+      平行程式設計
+    
+
+
+青蛙過河任務實現青蛙過河的小遊戲。爲了增加趣味性，對作業任務有所擴展，場景上佈置了兩個堡壘發射子彈，青蛙需要躲避三類子彈(一類是跟蹤彈，一類是正弦波子彈)、經木板穿過河流到達右下角(場景開始時會有箭頭標誌指示終點的位置)。之後遊戲會變難，即堡壘生產子彈的速度加快，新產生子彈的速度也會變快。
+使用說明依賴
+gtkmm
+cairomm
+
+構建程式依賴 gtkmm，兼容 2 和 3 兩類版本，在 gtkmm-3.4.0 及 gtkmm-2.24.2上構建通過。
+使用命令
+12./configure --prefix=/tmp/insmake install
+生成依賴 gtkmm-3 的程式 /tmp/ins/bin/frog-river。
+使用命令
+12./configure --prefix=/tmp/ins --with-gtkmm2make install
+生成依賴 gtkmm-2 的程式 /tmp/ins/bin/frog-river。
+autotools 生成的 Makefile 爲 GNU Make 格式，如果是 FreeBSD、SunOS之類的系統需要使用 gmake 代替 make。
+程式運行時使用到的圖片位於 $(pkgdatadir)/img ，所以要 make install後才能正常執行程式。
+本報告位於 report/report.pdf ，可以用 make -C report report.pdf 根據report/report.org 生成。
+運行程式的可定製性非常強，提供了豐富的命令行選項用以控制運行時行爲，幫助中提供了一些有趣的用例，比如修改河流寬度、位置，如果 river-y 超過 100就會從場景上消失。下麵有幾個用例讓河流消失來產生更好的效果。 又如 -f可以指定堡壘位置，結合其他三類子彈就可以實現各類奇異效果，比如彈幕遊戲，寫字等等。
+可以試試看：
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677FrogRiver 0.1Usage: frogriver [OPTIONS]...  -h, --help                    Print help and exit  -V, --version                 Print version and exit  -t, --nthreads=INT            number of threads  (default=`1')  -u, --update-interval=INT     milliseconds between two consecutive frames                                  (default=`100')      --size=DOUBLE             internal size of scene (NO CHANGING FOR GENERAL                                  USE)  (default=`100')  -c, --ncols=INT               number of tiles in a row  (default=`16')  -r, --nrows=INT               number of rows in river  (default=`7')      --frog-size=DOUBLE        frog size  (default=`5')      --frog-spd=DOUBLE         frog speed  (default=`4')      --river-y=DOUBLE          y coordinate of the top left corner of river                                  (default=`24')      --river-h=DOUBLE          river height  (default=`52')      --bullet-size=DOUBLE      frog size  (default=`0.3')      --tracer-bullet-lifetime=DOUBLE                                tracer bullet lifetime  (default=`10')      --fort-size=DOUBLE        fort size  (default=`10')      --bullet-spawn-time=DOUBLE                                normal bullet spawn time  (default=`2')      --bullet-spd=DOUBLE       normal bullet speed  (default=`4')      --tracer-spawn-time=DOUBLE                                tracer bullet spawn time  (default=`8')      --tracer-spd=DOUBLE       tracer bullet speed  (default=`3.2')      --sine-spawn-time=DOUBLE  sine bullet spawn time  (default=`6')      --sine-spd=DOUBLE         sine bullet speed  (default=`4')  -f, --fort-pos=STRING         positions of fortsExampleThree Fortsfrog-river -f 30:70 -f 50:50 -f 70:30Big Bullet (NB. virtual hitbox of bullet will not be expanded)frog-river --frog-spd 6Big Frog (NB. virtual hitbox of frog will get expanded)frog-river --frog-size 10Water Worldfrog-river --river-y=10 --river-h=80Water World Advancedfrog-river --river-y=10 --river-h=80 --nrows=12No Fortsfrog-river -f meowBarragefrog-river -f 10:90 -f 30:70 -f 50:50 -f 70:30 -f 90:10 --bullet-spd 7--fort-spawn-time 0.1 --frog-size 0.5 --frog-spd 2Shock Wavefrog-river -f 90:90 -f 90:70 -f 90:50 -f 90:30 -f 90:10 --river-y 999--bullet-spawn-time 9999 --tracer-spawn-time 9999 --sine-spawn-time0.1--river-y 999 is used to move the river outside the sceneDAfrog-river -f 50:0 -f 0:40 -f 100:40 -f 20:95 -f 80:95 --river-y 999--bullet-spawn-time 9999 --tracer-spawn-time 0.1 --tracer-spd 0.11--sine-spawn-time 0.1 --frog-spd 47
+演示data/demo.avi是示例視頻。
+
+
+
+
+程式設計下麵逐一介紹各個類別的作用：
+Core存放公共的實用函數以及程式需要用到的簡單幾何庫，描述點、線段，可以處理線段與多邊形的相交。
+Config有一個實例 cfg，記錄虛擬畫布大小、河流位置大小、青蛙大小、青蛙移動速度等，下麵諸類別大多都用了這個物件的資料。使用 gengetopt 生成 Cmdline.h用於命令行選項的解析。
+FrogFrog 類別繼承自 Point，提供了 move 方法相應鍵盤事件，以及 draw 方法用於在Cairo::Context 上繪出青蛙的圖像。以下諸類別很多都有這個 draw 方法。
+Board表示木板類別，該類別處理碰撞、移動事件。移動時會考慮青蛙是否搭載在上面，是則把青蛙也一併移動了。碰撞爲彈性碰撞，動能不損耗。提供方法用於計算和另一塊木板的相撞時刻。
+BoardLineBoard 的聚合(aggregate)。提供 init靜態方法生成初始場景的木板，位置、長度都是隨機的，但質量相同。
+BoardLine 記錄的是某一時刻某行的木板狀態， 當用 advanceTo方法要求把時刻移動至將來的另一個時刻時，它會枚舉兩個時刻間發生的所有碰撞事件並一一處理。
+BulletBullet 類別表示的是方向固定的點狀子彈，有 inCanvas方法用於判斷是否還在場景上， 以及 advance方法表示移動一段時間，報告是否擊中了青蛙。擊中的判斷方式爲算是開始時刻和目標時刻子彈的運動軌跡(線段)，判斷是否和青蛙的 hitbox 相交。爲了使用 heterogenuous 列表實現多型，Bullet 中一些方法用了虛函數。
+TracerBullet 類別代表一種跟蹤彈，繼承自 Bullet，覆蓋了advance，移動方式變爲 速度方向始終指向青蛙的當前位置。inCanvas方法則變爲超過一定時限則判定追蹤彈消失。
+Fort表示堡壘，會源源不斷地射出子彈，給青蛙的移動造成困擾。它和 Bullet 的關係就像是 Board 和 BoardLine 的關係，同樣也是記錄當前描述狀態(包含時刻)，呼叫 advanceTo 方法時則轉發給 heterogenuous 的 Bullet 列表。如果離賞賜發射子彈的事件超過了某一閾值則產生出一顆新子彈。對於不同的子彈，可以用工廠函數，但我覺得在這裏用有殺雞用牛刀的感覺，因而未予使用。
+FrogRiver將之前的物件聚合起來搭成的場景，繼承自 Gtk::DrawingArea，程式邏輯等都在這個物件裏判斷。根據 cfg.update~interval~ 設置觸發 on~draw~ 用於重繪場景的間隔。觸發 on~draw~ 事件後，依次繪製河流、木板、堡壘、子彈、青蛙。其中繪製木板時會涉及到碰撞模擬，河流上不同行的木板間是不會相互乾擾的，所以可以由不同的線程處理不同的行，工作線程間不會有通信。線程 $i$ 將會處理第$i,i+nthreads,i+nthreads*2,\ldots$ 行木板的碰撞情況。由主線程用pthread~condt~ 將任務下達各工作線程。各線程用 pthread~barrierwait~ 同步後主線程再開始繪製堡壘。因爲繪製順序保證了顯示時的層次關係。後繪製的會覆蓋之前繪製的，所以要保證木板全部繪製完後再處理堡壘。
+Main.cc最後在 Main.cc 中展示出界面。
+心得體會這次作業是對 pthreads 的實踐機會，但更多的是培養了寫 gui 程式的能力。寫程式的過程中深深體會到 C++ 的樣本(boilerplate)代碼太多，表現能力有限，以及感受到物件導向程式設計的種種限制。
+比如 Fort 中我本來打算用工廠函數產生各種類型子彈(當然現在子彈型別不是很多，沒有必要這樣寫)，工廠函數繞不過去的原因和 C++ 是 static 加nominative typing system 有很大關係，無法方便地使用 heterogenuous 列表，而要用指針或引用以基類比表示多個類別的共同聯繫。如果在 Ruby 這類 ducktyping system 離就可方便地儲存 heterogenuous 列表，OCaml 這類 structuraltyping system 中也可以，或者用包含函數的 algebraic data type或著相應的existential data type 表示，這樣產生的樣本代碼 (boilerplate)就更少了。一種類型不安全的解決方式有用一個標誌用於表示子彈型別，另用一個 void* 的數據供強制類型轉化爲相應型別。
+Config 單獨提取出來提供了很大的靈活行，本來每個類維護自己的 static
+const 變量表示配置也是可以的，但不利於集中式管理。如果項目複雜 Config可能還得展現層次化的結構。其實說到集中式我就聯想起 git，以及和它的模式對應的 subversion，這個有點扯遠了，但可以看出來概念之間的融會貫通相當重要。
+物件導向程式設計時門博大精深的藝術。撇開型別的選取與設計，假設型別間的認識關係確定了，那麼問題可以部分看爲添加一些有向邊滿足型別之間的認識關係。而那些千變萬化的設計模式，不少是以增加新類來達到的，可願意部分看作一個 minimum Steiner tree 問題，如果讓型別聯繫起來。設計模式往往強調減小耦合，又可以部分看作是minimum spanning tree with restricted degrees。這些是我對物件導向程式設計的窺豹一斑，可惜未能見全貌。
+程式原始碼位於 src/ 目錄。
+Mandelbrot set任務實現三種並行的Mandelbrot set實現，分別使用MPI、OpenMP和Pthreads。
+
+使用說明構建程式採用 autotools 管理，./configure提供了大量選項， 除了產生MPI/OpenMP/Pthreads 三種並行庫的程式外，還有其他用於性能調優的選項。程式有如下選項：
+MPI生成使用 MPI 庫的版本。
+1./configure --with-mpi
+OpenMP生成使用 OpenMP 的版本。
+1./configure --with-openmp
+Pthreads生成使用 Pthreads 的版本。
+1./configure --with-pthread
+無輸出模式選項 --without-output ，用於提示程式不要產生輸出，將無法產生 PGM或是顯示圖片， 該選項用於基準測試時使用，性能會有少許提升。
+float複數計算時使用 float 而非 double，性能會有少許提升。
+SSE2選項 --without-sse2 ，同時計算兩個點，性能有大幅提升。
+下麵是和 MPI 配合使用的例子：
+1./configure --with-sse2 --with-mpi
+命令行選項1234567891011src/mandelbrot -h Mandelbrot 0.1Usage: mandelbrot [OPTIONS]...-h, --help Print help and exit -V, --version Print version and exit -t,--nthreads=DOUBLE number of threads (0 for auto detecting)(default=\`0') -x, --x=DOUBLE xmin (default=\`-1.5') -y, --y=DOUBLE ymin(default=\`-1') --xx=DOUBLE xmax (default=\`0.5') --yy=DOUBLE ymax(default=\`1') --xr=DOUBLE x resolution (default=\`800') --yr=DOUBLE yresolution (default=\`600') -i, --i=INT max iteration count(default=\`255') -o, --o=STRING output format (default=\`x')
+圖形使用者介面設計輸出模式 -o x 提供瞭如下鍵綁定：
+u: scale top-left by ratio 2 j: scale bottom-left by ratio 2 k: scalebottom-right by ratio 2 i: scale top-right by ratio 2 Space: scalecenter by ratio 1/2 Enter: restore to original range Button1 click:scale pointer center by ratio 4 Button3 click: scale pointer center byratio 1/4 Button1 drag: scale up by (width/regionwidth,height/regionheight) Button3 drag: scale down by (regionwidth/width,regionheight/height)
+Button1 單擊放大，Button3 單擊縮小。 Button1拖曳放大查看指定區域，Button3 拖曳按比例縮小指定區域。 Enter換原到命令行選項指定區域。
+程式設計爲了可以使用 MPI+Pthreads 或者MPI+OpenMP，程序分爲三個層級，執行續層建立在串行層之上，程序層建立在執行續層之上，類似TCP/IP 協議棧，
+
+Core串行層。包含主要計算模塊和 SSE2 優化過的版本。
+實現了一個名喚 Callable<T,R> 的函數對象，相當於函數 $T \rightarrow R$。後面一些回調函數會用到這一類型。
+還描述了 Task這一數據類型，表示任務的座標範圍、解析度，同時提供了計算成的點的儲存位置，以及一個行通知器，任務的執行者計算完一行後會通過這個通知器告知呼叫者。
+比如1程序數時1執行緒時，任務從processSchedule轉交給threadSchedule再轉交給mandelbrot，它計算完一行後通過這個回調函數執行XPutImage往屏幕上繪製一行。當執行緒數大於1時，任務從processSchedule轉交給threadSchedule後，threadSchedule會給這個回調函數包裝一個mutex成爲MutexCallable，防止回調函數同時被多個執行續執行產生錯誤。當程序數大於1時，實際計算任務不是由主程序執行的，而 X窗口是由主程序打開的，所以這些程序不能往屏幕上繪製一行，此時的回調函數是空的。
+ThreadSchedule執行續層。OpenMP 和 Pthreads 的實現在這裏，建立在 Core 中串行實現mandelbrot 函數之上，提供了多執行緒的調度。 採用 thread pool模式，由主執行緒實施任務的調度。
+Channel被 ThreadSchedule 依賴用於實現不同執行續間的通信，Channel是一個執行續安全的隊列，主執行續往裏面塞任務，工作執行續從中讀取任務進行處理。
+ProcessSchedule程序層。MPI 的實現在這裏，建立在 ThreadSchedule之上，提供了多程序的調度。實現和 ThreadSchedule 非常像， 也是採用producer/consumer模型，由主程序進行任務的調度，採取自定義的協議進行通信。
+MasterFormat 類型的一個成員，負責主程序的調度。如果未啟用 MPI，那麽Master::run 只是簡單地把任務轉交給 ThreadSchedule，否則就指派任務給個工作程序並收集工作程序生成的資料。這個模塊的出現源於我需要讓用戶能和Xlib 窗口交互， MPI 的工作程序不能立刻結束，所以單獨寫了這個 Master類別負責 把任務指派給工作程序。
+Format表示輸出的各種後端，類似 Gnuplot 中的 terminal，輸出的數據來自迭代時的escape count。 採用 XFormat 輸出時，會顯示顏色，顏色是根據 HSV顏色模型中飽和度0.6，亮度1，色相根據 escape count　選取而來。
+這裏的 Format 的任務不只是產生輸出而已，它也涉及數據的產生。因爲不同的輸出往往需要不同的數據處理方式，Core 中的 mandelbrot函數會把數值寫到一個數組裏去，寫完一行後還會通過一個回調函數告知已經處理完一行。這裏這個數組就是由 Format 提供的，比如對於 PGM圖片格式，提供的數組就是一個大小為 width * height 的數組， 而對於 Xlib圖形顯示，數組是 XImage 中的 data。
+這裏具體講 Format 的一個子類型 XFormat，XFormat 物件會做一些 Xlib的初始化工作產生一個圖形界面，生成一個位圖數組供 mandelbrot 函數寫入。當某個 ThreadSchedule 管理的執行續執行的 mandelbrot計算完一行後，通過回調函數(Callable\Task.notifier)告知呼叫者，呼叫者會考慮當前是否工作在 MPI 多程序模式下，如果不是那麽就用 XPutImage 顯示出這一行。如果使用了Pthreads，threadSchedule 會包裝 Callable\ 產生執行續安全的MutexCallable\ 作為回調函數。
+其實 Task.data字段也可以替換成回調函數以提供更大的靈活性，但我為了性能考慮還是決定使用數組，而一行執行一次回調函數的開銷還是可以忍受的。
+這裏由 Format 管理 Master 的意圖是 Xlib圖形界面在初次顯示後還會有放大、縮小的需求，工作程序不能產生完第一幅位圖後就退出，需要繼續等待主程序的調度，為了統一接口，幹脆讓 Format 內置一個 Masterfsm 字段，對於一次性輸出的 Format 比如 PGM，PGM::render 做的事就是 先用fsm.run(tk) 產生數據再輸出，而 XFormat 則會等待用戶指令。
+另外有一個 TimeFormat，繼承自 NullFormat，會調用 gettimeofday顯示主程序的運行時間。
+分析設串行程序的計算量爲 $n$，即每個像素都被迭代至逃逸設定半徑或者達到最大迭代次數。 $xres, yres$分別表示x座標解析度、y座標解析度，這裏不考慮初始化輸出用數組等與計算無關步驟的時間。
+OpenMP 版本令 $p$ 爲執行續數。
+每個執行續的工作量爲 $t_{comp} = n/p$ 。
+總共 $tp = t{startup} + t{comp} = n/p$ ，其中 $t{startup}$是執行續創建開銷。
+Pthreads 版本令 $p$ 爲工作執行續數。
+共有 $yres$ 個行繪製任務，使用 Channel 進行通信，平均每個工作執行續分得$yres/p$ 個， $t{comm1} = yres/p$ ，主執行續 $t{comm0} = yres$ 。
+每個工作執行續的計算量平均爲 $t_{comp1} = n/p$ 。
+總共 $tp = t{startup} + t{comm0} + t{comm1} + t_{comp1} = n/p$ 。
+MPI 版本令 $p$ 爲工作程序數。
+
+主程序用廣播通知各程序座標解析度等信息，這一過程可以用 binomial tree等方式優化至 \$log(p)\$　，通信量爲 $t_{comp4} = log(p)$ 。
+平均每個工作程序分得 $n/p$ 的計算任務，通信量爲$t{comp1} = t{startup} + yres/p$ ，而主程序的通信量爲$t_{comp0} = yres$ 。
+每個工作程序要把結果傳給主程序，通信量$t{comp3} = t{startup} + xresyres/p$ ，主程序的通信量$t{comp2} = t{startup} + xresyres$ 。
+主程序用廣播通知各程序退出，通信量應爲$t{comp4} = t{startup} + log(n)$ 。
+總共$tp = t{startup} + t{comp0} + t{comp1} + t{comp2} + t{comp3} + t{comp4} + n/p = n/p$。
+
+基準測試
+
+
+以下所有測試中y座標解析度 --yr 的值都統一為了 10000，最大escapecount都爲255。
+MPI我測試了三種版本，除了普通版本外，還有一種是用float替換double，另一種是用SSE2 指令同時處理兩個 double。 三個版本的構建方式有略微區別，後面會給出configure 時的選項。但它們的運行方式都是
+1mpirun -n ? src/mandelbrot -o time --xr ? --yr 10000
+其中問號處分別填寫程序數、x坐標解析度、y坐標解析度。主程序會輸出計算部分的執行時間。程式運行在FIT 集羣上。
+–without-output CXXFLAGS=-O3 –with-mpi
+可以觀察到執行時間大致是關於x座標解析度的一次函數，和時間複雜度相吻合。註意到1程序數和2程序數的執行時間沒有太大區別。這是因爲 $n (n>1)$程序數時只有 $n-1$ 的爲工作程序，再算上程序通信、主程序調度時間，就會比1程序數時慢些。
+–without-output CXXFLAGS=-O3 –with-mpi –with-float
+執行時間比 mpi-normal 略少。
+–without-output CXXFLAGS=-O3 –with-mpi –with-sse2
+執行時間大致是 mpi-normal 的一半。
+極限測資我還對96、112、128程序數，$2,000,000 \leq n \leq 10,000,000$進行了測試：
+
+sse2 最快，其次是 float，normal 最慢。
+OpenMP和 MPI 一樣，有三種版本，把 --with-mpi 改成 --with-openmp即可。執行方式爲
+1src/mandelbrot -o time --xr ? --yr 10000 -t ?
+其中 -t 參數爲執行緒數，執行期會調用 omp_set_num_threads修改執行緒數。採用動態調度方式，因爲不同行的計算量不同，靜態調度會導致先執行完的執行緒等待後執行完的，不能充分利用計算能力。程式運行在集羣中的一臺機器上。
+–without-output CXXFLAGS=-O3 –with-openmp –with-sse2
+Pthreads和 OpenMP 一樣，有三種版本，把 --with-mpi 改成 --with-pthread即可。執行方式和 OpenMP 版本相同。 用
+1./configure --without-output CXXFLAGS=-O3 --with-pthread
+構建程式。程式運行在集羣中的一臺機器上。
+–without-output CXXFLAGS=-O3 –with-pthread
+–without-output CXXFLAGS=-O3 –with-pthread –with-float
+執行時間比 pthread-normal 略少。
+–without-output CXXFLAGS=-O3 –with-pthread –with-sse2
+執行時間大致是 pthread-normal 的一半。
+三種庫的性能比較在程序/執行續數在 $2 \sim 10$ 時，三種庫的性能提升都是線性的。OpenMP的表現比較奇怪， 可能是因爲 omp~setnumthreads~ 沒有起效。 MPI的初始開銷比其他兩個庫大，但是提速效果是最爲明顯的。採取 thread pool模式的 Pthreads 版本效率比 OpenMP 略高一點。除了並行庫外，串行計算程式的改進對執行效率的提升也有非常大的效果。本例中SSE2 就達到了近乎2倍的性能。
+爲了考察並行程式提速效果，我還分別對它們相對於單工作程序/執行續的效率進行了測試，使用了公式 $eff = t_1 / ((c - 1) * t)$ 計算相對於單工作程序的效能。 其中$t_1$ 爲單工作程序(算上主程序，程序數爲2)的執行時間， $t$爲多工作程序的執行時間， $c$ 爲工作程序數。 直觀上， $eff$越大代表加速效果越明顯，單位用百分比表示。
+上圖中是對 mpi-sse2的測試，2程序數對應了單工作程序情形，效率爲100%，更多程序數時計算的是相對於單工作程序而言的。
+可以看出 $1 \sim 12$執行緒數時效率爲100%上下，超過12時就下降了，這是由於測試機器 c01b04爲12執行緒數。
+$11$ 執行緒數時效率就有明顯下降。
+心得體會這次作業需要用三種並行庫，是對並行程序設計的一次絕佳實踐機會。我不希望寫成三個不同程序，把計算模塊復制三份，所以就考慮用預處理指令。這樣很快就碰到代碼難以管理的地步，就仔細設計了這麽一個工作模型，讓MPI、Pthreads、OpenMP 三者可以同時開啟。 OpenMP 和 Pthreads工作在執行續層面，用 ThreadSchedule 管理。MPI 在程序層面，由ProcessSchedule 處理。兩者都是動態分配任務的， 使用了 thread pool模式，但差異還是比較大的，代碼不能實現有效的重復利用。
+OpenMP 在項目中有效的行數只有1，就是 Core.cc:mandelbrot 中的一個循環前的預處理器指令，但是效果驚人。Pthreads 則需要手寫 Channel，考慮任務的調度等， 代碼量很大，但得到的效能和 OpenMP 差不多，OpenMP 以如此少的額外代碼做到如此高效很讓人吃驚。MPI 的代碼量就更大了，資料在程序間的遞送很麻煩，但可以方便地跨機器使用，還是有很大的價值。
+程式開發過程中感受到並行程式調試的麻煩，OpenMP雖然指令不透明，但因爲操作簡單，只需註意串行實現的變量共用等問題即可。而 Pthreads 程式就要用 gdb 的 thread 功能，MPI 我沒找到非常有效的調試方法。目前是採用的方式是讓個程序輸出 PID 後while(i==0)sleep(1) 停下，用 gdb -p $PID 跟蹤進去。 
+C++ 使用多型的方式過於麻煩。subtype polymorphism必須保證類型是指針或引用， 開發過程中就著了這個道。在此基礎上實現 ad-hoc polymorphism(比如程式中的 MutexCallable 的特化)的樣本代碼也比較長。使用函數對象或函數作爲參數也比較麻煩。
+程式原始碼在 src/ 目錄中。
+N-body模擬N-body模擬
+
+
+
+
+
+
+Please enable JavaScript to view the comments powered by Disqus.
+
+
+
+
+
+Popular
+
+
+
+
+
+
+Tag Cloud
+
+adc ai9 algorithm asc automaton awesome bctf binary bmc build system c c++ cgc chroot codinsanity coffee script compiler computer security contest csv ctf data structure debug defcon desktop docker elf emacs email emoji emscripten event expect feeds firmware floating point forensics game gcc gentoo graph drawing gtk hanoi haskell hpc inotify ipsec irc isc j javascript josephus problem jq kernel kythe ld leetcode linux makefile math maze mirror ml mutt n-body network nginx nlp node.js noip notmuch npm ocaml offlineimap oi oj openwrt parallel parser generator perl presentation puzzle python qq regex regular expression reverse engineering review router ruby ructfe scheme search security shell ssh stringology student festival puzzle suffix array suffix automaton summary suricata telegram telegramircd terminal traversal tree trendmicro udev unicode usb vim vpn vte wargame web analytics webqqircd website wechat wechatircd window manager xbindkeys xmonad yanshi
+
+
+
+Blogroll
+
+
+BYVoid
+fqj1994
+ppwwyyxx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+平行與分散式程式設計 | 逍遙文工作室
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+廣告
+
+
+
+
+
+
+
+
+
+逍遙文工作室
+
+
+
+關於我 (About Me)
+留言板 (Guestbook)
+合作提案 (Cooperation Proposal)
+贊助 (Sponsor)
+創用 (Creative Commons)
+iOS技術文章
+ 
+
+
+
+
+
+
+					Just a Computer Graphics Studio & My Life				
+
+
+
+
+
+
+		Archive for the ‘平行與分散式程式設計’ Category		
+
+
+MapReduce的概念 對於Google如此成功的模範，我很好奇它所用到的技術MapReduce，所以就整理了一些資料，還挺好理解的。話說原本繫上開的高等作業系統，今年附加了一個名字「雲端運算」，授課老師表示一直上舊有的作業系統知識實在很無趣，於是打算在今年之後教點有關雲端運算的知識。這讓我超級羨慕！令人驚訝的是最近在教MapReduce相關的議題。
+ （繼續閱讀…）
+
+
+廣告
+
+
+
+
+ 
+
+
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+課業, 平行與分散式程式設計
+
+Tagged with:googlemapreduce 
+
+
+[OpenMP] 梯形法則 (Trapezoidal Rule) 已經設定好OpenMP程式設計環境後，接下來就是實際來寫一則code，仔細分析thread們如何運作，在此我選擇積分這個主題，以梯形法則 (Trapezoidal Rule)來計算曲線下的面積。
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+課業, OpenMP, 平行與分散式程式設計, 教學
+
+Tagged with:openmpteach 
+
+
+[OpenMP] Hello World 學任何程式語言都要來Hello World，這裡OpenMP也不例外，在Microsoft Visual Studio 2010 Professional設定啟用OpenMP(可參考[OpenMP] Visual Studio 使用 OpenMP)之後，就可以編譯OpenMP的程式碼。
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+課業, OpenMP, 平行與分散式程式設計, 教學
+
+Tagged with:openmpteach 
+
+
+[OpenMP] Visual Studio 使用 OpenMP 一開始我以為寫OpenMP需要安裝，就如同安裝OpenGL那樣，要把相關的.h、.lib、.dll檔丟到特定的資料夾，接著在專案中設定存取的相對位置，才能使用，不過那也是因為微軟「不想」支援OpenGL，我們才需要自己動手來「安裝」。好消息是微軟支援OpenMP，所以我們只要在專案特性中把OpenMP的選項打開即可寫OpenMP程式！
+這篇文章要說是Visual Studio安裝OpenMP也是無妨！只要記得OpenMP已內建於Visual Studio中，我們只要去開啟它就能使用了！
+
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+課業, OpenMP, 平行與分散式程式設計, 教學
+
+Tagged with:environmentinstallopenmpteach 
+
+
+data parallelism & task parallelism data parallelism和task parallelism的關係是怎樣呢？查了網路上，很少有比較的例子，還是看圖比較清楚。
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+課業, 平行與分散式程式設計
+
+
+
+
+Flynn’s taxonomy 學習平行程式，一定要知道Flynn’s taxonomy的四種硬體架構。
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+課業, 平行與分散式程式設計
+
+
+
+
+CPU與GPU的架構之想法 因為有在研究GPU，時常有人問我CPU和GPU架構有何差異，我的回答通常是序列處理和平行處理的差別。
+這裡我們先來看CPU與GPU的硬體架構：
+
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+課業, 平行與分散式程式設計
+
+Tagged with:architecturecoursecpudiscussiongputhought 
+
+
+
+
+廣告
+
+
+
+
+
+
+
+HappyMan．GravatarI am a graduate student specializing in Computer Graphics.
+HappyMan・迴響 
+「廣角鏡拍攝婚宴敬酒 | 逍遙文工作室」對「訂婚和結婚禮金行情表」留言「廣角鏡拍攝婚宴敬酒 | 逍遙文工作室」對「阿弟完婚記」留言「Mozu's Art Studio」對「[圖解] 12星座的人生比例圖」留言「[圖解] 機車里程數保養 | 逍遙文工作…」對「機車10公里保養」留言「[香港尖沙嘴] 撲撲旅舍 Hopinn…」對「韓國釜山住三個旅館」留言 
+HappyMan．搜尋
+
+
+Search:
+
+Go!
+
+HappyMan．熱門文章 
+
+						[圖解] 臺北車站立體導覽圖					
+
+
+
+						咖啡成份比例圖解 (Illustrations Composition Ratio of Coffee Drinks)					
+
+
+
+						如何用英語稱呼學長、學弟、學姊、學妹					
+
+
+
+						臺北車站平面圖 (Taipei Main Station Plan)					
+
+
+
+						韓國釜山地鐵路線圖 (South Korea Busan Subway Route Map)					
+
+
+
+						[C++] 開啟檔案和寫入檔案 (Open File and Write File)					
+
+
+
+						臺北捷運路線圖 (Taipei MRT Route Map)					
+
+
+
+						[C++] string 和 char[]互轉 (string and char[] transform)					
+
+
+
+						[OpenCV] 人臉偵測 (Face Detection)					
+
+
+
+						體脂肪圖解 (Illustrations Body Fat Percentage)					
+
+HappyMan．分類雲APP Blender C&C++ GLSL iOS OpenCV 休閒 圖表 娛樂 工具 技術 攝影 教學 旅遊 景點 服務 生活 研究 精品 繪圖 美食 計算機圖學 課業 論文 資訊 軟體 運動 閒聊 電影 音樂 HappyMan．月曆
+七月 2017
+
+
+日
+一
+二
+三
+四
+五
+六
+
+
+
+
+« 六月
+ 
+ 
+
+
+
+
+ 1
+
+
+2345678
+
+
+9101112131415
+
+
+16171819202122
+
+
+23242526272829
+
+
+3031
+ 
+
+
+  HappyMan．近期文章 
+
+廣角鏡拍攝婚宴敬酒
+2017 年 07 月 20 日
+
+
+切換多個臉書帳號登入問題
+2017 年 07 月 17 日
+
+
+[圖解] 機車里程數保養
+2017 年 07 月 16 日
+
+
+[香港尖沙嘴] 撲撲旅舍 Hopinn
+2017 年 07 月 15 日
+
+
+[Ionic][AngularJS] 選單
+2017 年 07 月 15 日
+
+
+Google Map 時間軸
+2017 年 07 月 12 日
+
+
+[Ionic][AngularJS] 回傳呼叫 (Callback)
+2017 年 07 月 11 日
+
+
+香港地鐵路線圖 (Hong Kong Subway Route Map)
+2017 年 07 月 10 日
+
+
+[Git] Git查詢Repository位址
+2017 年 07 月 09 日
+
+
+[APP] 小米運動之睡眠
+2017 年 07 月 08 日
+
+
+ HappyMan．彙整 HappyMan．彙整
+
+選擇月份
+ 2017 年 七月  (15)
+ 2017 年 六月  (17)
+ 2017 年 五月  (15)
+ 2017 年 四月  (10)
+ 2017 年 三月  (15)
+ 2017 年 二月  (10)
+ 2017 年 一月  (19)
+ 2016 年 十二月  (17)
+ 2016 年 十一月  (7)
+ 2016 年 十月  (14)
+ 2016 年 九月  (12)
+ 2016 年 八月  (10)
+ 2016 年 七月  (14)
+ 2016 年 六月  (10)
+ 2016 年 五月  (11)
+ 2016 年 四月  (18)
+ 2016 年 三月  (19)
+ 2016 年 二月  (19)
+ 2016 年 一月  (11)
+ 2015 年 十二月  (19)
+ 2015 年 十一月  (18)
+ 2015 年 十月  (20)
+ 2015 年 九月  (21)
+ 2015 年 八月  (13)
+ 2015 年 七月  (29)
+ 2015 年 六月  (8)
+ 2015 年 五月  (21)
+ 2015 年 四月  (25)
+ 2015 年 三月  (9)
+ 2015 年 二月  (17)
+ 2015 年 一月  (30)
+ 2014 年 十二月  (20)
+ 2014 年 十一月  (29)
+ 2014 年 十月  (11)
+ 2014 年 九月  (18)
+ 2014 年 八月  (23)
+ 2014 年 七月  (8)
+ 2014 年 六月  (21)
+ 2014 年 五月  (25)
+ 2014 年 四月  (21)
+ 2014 年 三月  (20)
+ 2014 年 二月  (7)
+ 2014 年 一月  (12)
+ 2013 年 十二月  (28)
+ 2013 年 十一月  (14)
+ 2013 年 十月  (16)
+ 2013 年 九月  (15)
+ 2013 年 八月  (15)
+ 2013 年 七月  (17)
+ 2013 年 六月  (9)
+ 2013 年 五月  (26)
+ 2013 年 四月  (17)
+ 2013 年 三月  (24)
+ 2013 年 二月  (19)
+ 2013 年 一月  (32)
+ 2012 年 十二月  (20)
+ 2012 年 十一月  (17)
+ 2012 年 十月  (41)
+ 2012 年 九月  (18)
+ 2012 年 八月  (3)
+ 2012 年 七月  (18)
+ 2012 年 六月  (38)
+ 2012 年 五月  (45)
+ 2012 年 四月  (31)
+ 2012 年 三月  (28)
+ 2012 年 二月  (40)
+ 2012 年 一月  (35)
+ 2011 年 十二月  (40)
+ 2011 年 十一月  (34)
+ 2011 年 十月  (45)
+ 2011 年 九月  (32)
+ 2011 年 八月  (32)
+ 2011 年 七月  (32)
+ 2011 年 六月  (34)
+ 2011 年 五月  (36)
+ 2011 年 四月  (37)
+ 2011 年 三月  (22)
+ 2011 年 二月  (2)
+ 2010 年 六月  (2)
+ 2010 年 五月  (1)
+
+HappyMan．分類HappyMan．分類
+選擇分類
+研究  (562)
+   APP  (60)
+   生活  (90)
+   生涯  (9)
+   簡報  (6)
+   繪圖  (165)
+   過程  (18)
+   金融  (1)
+   關係  (10)
+   藝術  (8)
+   觀察  (16)
+   設計  (16)
+   論文  (27)
+   資訊  (107)
+   iPad  (7)
+   Mac OS X  (9)
+   健康  (11)
+   創業  (4)
+   圖表  (26)
+   工作  (19)
+   技術  (45)
+   攝影  (23)
+   文章  (6)
+   服務  (22)
+競賽  (3)
+   PTC  (3)
+閒聊  (179)
+   故事  (7)
+課業  (112)
+   研討會  (2)
+   遊戲設計  (12)
+   電腦視覺  (2)
+   計算理論  (6)
+   計算機圖學  (42)
+   高等演算法  (7)
+   資訊產業動態與實務  (9)
+   圖形辨識  (7)
+   多媒體系統設計  (17)
+   平行與分散式程式設計  (8)
+   企業人才培訓  (2)
+動畫  (1)
+娛樂  (131)
+   球類  (1)
+   相片  (5)
+   遊戲  (15)
+      暗黑破壞神  (1)
+      仙劍奇俠傳五  (4)
+   藝術  (2)
+   電視劇  (5)
+   電影  (32)
+   音樂  (20)
+   動漫  (14)
+   小說  (3)
+   影片  (19)
+   故事  (2)
+   晚會  (7)
+   書籍  (14)
+實習  (14)
+工具  (49)
+   網頁  (10)
+   軟體  (21)
+   平臺  (15)
+工作  (14)
+   訪談  (1)
+愛情  (8)
+成果  (15)
+   APP  (5)
+   遊戲  (2)
+教學  (503)
+   AngularJS  (7)
+   Blender  (23)
+   C&C++  (39)
+   練習  (2)
+   DirectX  (1)
+   DOS  (2)
+   Excel  (3)
+   英語  (1)
+   Git  (2)
+   GLSL  (26)
+   Ionic  (10)
+   iOS  (264)
+   Java  (1)
+   Javascript  (4)
+   jQuery  (12)
+   MatLAB  (1)
+   Node  (2)
+   notepad++  (2)
+   Objective C  (10)
+   OpenCV  (63)
+   OpenGL  (7)
+   OpenMP  (4)
+   PhotoImpact  (2)
+   php  (6)
+   Swift  (5)
+   TheFly  (2)
+   watchOS  (4)
+   WebCL  (1)
+   WebGL  (5)
+   wordpress  (3)
+   Xamarin  (5)
+未分類  (18)
+活動  (3)
+休閒  (266)
+   節日  (4)
+   精品  (55)
+   美食  (106)
+   運動  (22)
+   展覽  (8)
+   旅遊  (21)
+   旅館  (11)
+   景點  (65)
+   會議  (1)
+   演講  (5)
+修行  (12)
+
+
+HappyMan．Instagram
+
+
+
+
+
+
+
+HappyMan．其它 
+註冊 登入
+文章 RSS 訂閱
+迴響 RSS 訂閱
+WordPress.com 
+
+
+
+較舊的文章
+
+
+
+
+標籤雲
+
+
+teach ios illustration food app travel chat life opencv relationship tool restaurant photos technique record love design information work service experience art accessory facebook problem chart animation photography exercise user interface platform health movies apple opengl environment map xcode iphone story ipad jog festival mrt game blender video youtube taipei book software statistics company activity image project image processing glsl memory open source google research transportation paper song notification thought music objective c network hotel lecture experiment practice marriage device observation lyrics photo friend wifi all you can eat macbook install business customization hamburger quotation technology user experience apple watch achievement career internet performance file taiwan line camera programming competition breakfast bike tone mapping stylization movie coffee history buffet notebook start-up money bbq trend library svm gift color space github income course korea typhoon swift thailand Ionic photoimpact firework face detection flow celebration friendship mac os x birthday rgb wwdc high dynamic range algorithm article sex girl culture enterprise family time learn language reunion photograph architecture hong kong profession process report date debug weather share vacation shop mv wordpress future plan japan c++ concept attitude stitch job recall value instagram product scenery framework message flowchart introduction mission rule javascript cie lab soap opera feast temple meeting conference webgl decision leisure 3g campus sleep clothes web website computer graphics filter advertisement station sport database train happiness magazine image compression open data end banquet data version monitor definition application style cartoon group facility ice cream review banquet growth ibeacon android election comparison club uniform flower recreation team lab camera calibration night market couple chrome windows xp illustrator route habit class shoes bus navigation delegate idea park nutrition christmas beverage 
+
+
+
+
+
+
+
+在WordPress.com寫網誌.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						逍遙文工作室					
+
+
+在 WordPress.com 建立免費網站或網誌. 樣版: Spectrum.				
+
+
+
+
+
+
+
+
+
+
+ 
+
+傳送到電子郵件地址
+
+你的姓名
+
+你的Email
+
+
+
+
+
+
+取消
+
+				文章沒有送出-請確認你的Email位置			
+
+				Email確認失敗,請稍後再試.			
+
+				抱歉，你的網誌無法透過電子郵件分享			
+
+
+
+
+
+張貼到
+
+
+
+取消
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+%d 位部落客按了讚：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+parallel programming - 平行程式設計
+
+
+
+
+
+
+
+
+
+
+迴首頁
+網站地圖
+關於我們
+聯絡我們
+
+
+
+
+
+國家教育研究院雙語詞彙、學術名詞暨辭書資訊網
+
+
+
+
+詞彙查詢
+下載專區
+詞彙建議
+審譯會
+
+
+
+
+
+
+ ×
+請輸入您的使用者帳號密碼
+
+
+
+
+帳號
+
+請輸入註冊的 email。
+        
+密碼
+
+密碼英文字母有分大小寫 。
+      
+
+登入
+離開
+
+
+
+
+
+
+
+
+
+釋義
+翻譯
+
+
+
+  回簡目列表 
+             修訂/勘誤建議
+ 單筆輸出
+
+
+
+
+ / 23筆
+            
+
+
+
+«
+<
+>
+»
+
+
+
+
+
+
+
+平行程式設計
+parallel programming
+
+            2003年6月
+            資訊與通信術語辭典
+
+
+名詞解釋:將一程式設計成兩個以上可同時進行的程序，以充分利用多處理機結構電腦的計算資源。
+
+
+
+平行程式設計
+parallel programming
+
+
+
+
+
+                    以 parallel programming 進行詞彙精確檢索結果
+                
+
+
+
+
+出處/學術領域
+英文詞彙
+中文詞彙
+
+
+
+                      學術名詞
+                    電子工程
+
+parallel programming
+平行程式設計
+
+
+
+                      學術名詞
+                    電子計算機名詞
+
+parallel programming
+平行程式設計
+
+
+
+                      學術名詞
+                    電機工程名詞
+
+parallel programming
+平行程式計畫
+
+
+
+
+
+                    以 平行程式設計 進行詞彙精確檢索結果
+                
+
+
+
+
+出處/學術領域
+中文詞彙
+英文詞彙
+
+
+
+                      學術名詞
+                    電子工程
+
+平行程式設計
+parallel programming
+
+
+
+                      學術名詞
+                    電子計算機名詞
+
+平行程式設計
+parallel programming
+
+
+
+
+
+
+引用網址:
+
+
+
+
+
+ / 23筆
+            
+
+
+
+«
+<
+>
+»
+
+
+
+
+
+推文
+評分
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            評分
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+相關詞彙
+詞彙建議
+
+
+
+
+
+學術名詞
+
+
+            平行程式計畫 
+            parallel programming     
+        
+
+            平行程式設計 
+            parallel programming
+        
+
+            平行程式設計 
+            parallel programming
+        
+
+            平行程式計畫 
+            parallel programming
+        
+
+            平行程式語言 
+            parallel programming language
+        
+
+
+
+辭書
+
+
+            平行程式設計 
+            parallel programming
+        
+
+
+
+
+
+
+        
+        暫無建議訊息
+        
+        
+
+
+
+
+
+
+
+
+
+
+        
+Copyright © 2012國家教育研究院 版權所有 建議最佳瀏覽螢幕解析度1024×768 三峽總院區 地址：23703新北市三峽區三樹路2號 電話：(02)7740-7890 傳真：(02)7740-1170 臺北院區 地址：10644臺北市大安區和平東路一段179號 電話：(02)7740-7890 傳真：(02)7740-7849 臺中院區 地址：42081臺中市豐原區師範街67號 電話：(02)7740-7890 傳真：(04)7740-7949 網站服務：臺北院區編譯發展中心
+        
+
+
+
+                瀏覽人次: 1795032
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

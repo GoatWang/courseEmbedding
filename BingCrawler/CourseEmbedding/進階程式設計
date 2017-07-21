@@ -1,0 +1,8114 @@
+
+
+MATLAB程式設計：進階篇
+
+
+
+
+
+
+MATLAB程式設計：進階篇
+Roger Jang (張智星)
+
+本線上教材已經付梓成書，請見「�眳p連結」。
+		姊妹作：MATLAB程式設計：入門篇
+Download:
+
+	[all examples]
+
+	[all slides]
+
+
+
+
+
+
+您是來自 104.199.203.235 的貴賓，您已點閱本站網頁 2 次。
+(從 2015/8/24 至今的點閱次數：25993)
+
+
+
+
+Table of Contents
+
+Chapter 1: 程式計時當程式越來越複雜，使得程式執行時間過長時，此時即有對程式進行最佳化，以提高程式執行效率的必要。但在對程式進行最佳化之前，必需要能夠找出程式執行的瓶頸所在，才能對症下藥。本章目的即在介紹 MATLAB 程式計時的方法，使您能快速地找到執行時間的瓶頸所在（也就是耗時最久的指令），進而改善整體程式的執行效率。[Slides][Examples]
+1-1：整段程式碼的計時方法：馬錶計時
+1-2：個別函數的計時方法：程式計時器
+1-3：程式計時器的其他功能
+1-4：本章指令彙整
+Chapter 1: Exercises
+Chapter 2: 程式碼與記憶體之最佳化前一章介紹如何經由 MATLAB 程式計時功能來找尋程式執行的頸瓶，本章則在進一步說明如何改善您的 MATLAB 程式碼，使其能夠善用向量化運算、 JIT 加速器，以及平行處理，來提高程式碼的執行效率。同時配合有效的記憶體管理，使您的電腦發揮最大的功效。[Slides][Examples]
+2-1：向量化運算與 JIT 加速
+2-2：使用多核心來加速運算
+2-3：使用GPU來加速運算
+2-4：矩陣的預先配置
+2-5：記憶體管理
+Chapter 2: Exercises
+Chapter 3: 應用程式介面MATLAB 雖然是一個完整的科學計算與目視的環境，但在很多情況下，MATLAB 仍必須與其它外部程式溝通，因此我們可用 MATLAB 所提供的應用程式介面（Application Program Interface，簡稱 API）來達到此功能。本章即對 MATLAB 的應用程式介面進行深入淺出的介紹。[Slides][Examples]
+3-1：MATLAB 應用程式介面
+3-2：撰寫能讓 MATLAB 呼叫的 C 函數：前置測試
+3-3：MATLAB 的資料結構及對應 API
+3-4：一個最簡單的 MEX 檔案
+3-5：處理二維矩陣的 MEX 檔案範例
+3-6：產生基本工作空間變數的 MEX 檔案範例
+3-7：對於結構陣列的處理
+3-8：從獨立的 C 程式來呼叫  MATLAB 引擎
+Chapter 3: Exercises
+Chapter 4: 通用運算式MATLAB 在第六版引進了通用運算式（Regular Expressions），可以對字串進行高效率的比對與代換，適用於字串的各種處理與運算，特別是對於自然語言處理（Natural Language Processing，簡稱 NLP）的開發和研究，這是一套不可或缺的工具。[Video][Slides][Examples]
+4-1：通用運算式的基本介紹
+4-2：通用式的基本用法
+4-3：方括弧的使用
+4-4：特定字元
+4-5：定位符號
+4-6：字元與字串的重複
+4-7：選項與小括弧的使用
+4-8：字串的代換
+Chapter 4: Exercises
+Chapter 5: 稀疏矩陣一個矩陣中，如果包含很多數值為零的元素，此矩陣即可稱為稀疏矩陣（Sparse Matrix）。稀疏矩陣在工程上的用途相當廣泛，舉凡電路、圖學、有限元素法及偏微分方程等，都會用到稀疏矩陣。為了節省空間及計算，MATLAB 對稀疏矩陣有不同的內部表示法，並有其它適用於稀疏矩陣的相關指令，將在本章一一介紹。[Slides][Examples]
+5-1：稀疏矩陣的建立
+5-2：稀疏矩陣的儲存空間
+5-3：稀疏矩陣的觀看與圖示
+5-4：稀疏矩陣的運算
+5-5：本章指令彙整
+Chapter 5: Exercises
+Chapter 6: 線性代數線性代數是根基於矩陣的一門學問，其探討的層面很廣泛，包含矩陣的各項數學運算與性質，例如線性聯立方程組的解法、矩陣的特徵值與特徵向量、矩陣的奇異值等，這些運算常被用在各種科學與工程學門。[Slides][Examples]
+6-1：反矩陣與行列式
+6-2：固有值與固有向量
+6-3：奇異值與奇異向量
+6-4：聯立線性方程式
+6-5：本章指令彙整
+Chapter 6: Exercises
+Chapter 7: 多項式的處理與分析本章介紹 MATLAB 處理多項式的相關指令，以便用於多項式的計算與分析，包括：多項式的加、減、乘、除、求值、求根、微分、積分、矩陣的特徵多項式、部份分式展開、多項式擬合等。[Slides][Examples]
+7-1：多項式的加減乘除
+7-2：多項式的求值、求根、微分與積分
+7-3：矩陣的特徵多項式
+7-4：部份分式展開
+7-5：多項式擬合
+Chapter 7: Exercises
+Chapter 8: 一般數學函數的處理與分析上一章介紹瞭如何使用 MATLAB 來進行多項式的處理與分析，本章將向前推進一步，介紹 MATLAB 對於一般數學函數（多項式僅為一特例）的處理與分析。[Video][Slides][Examples]
+8-1：MATLAB 的函數表示法
+8-2：數學函數的作圖
+8-3：函數的求根
+8-4：函數的極小值
+8-5：數值積分
+8-6：本章指令彙整
+Chapter 8: Exercises
+Chapter 9: 內插法內插法（Interpolation）可利用已知的資料點，來建立平滑連續的函數，以便預測其它點所對應的函數值。其應用範圍相當廣泛，不只用在工程，也用在金融、經濟、生化等各領域。MATLAB 提供了一系列的內插法函數，可讓您做最佳的選擇，以應付不同的應用需求。[Slides][Examples]
+9-1：一維內插法
+9-2：二維格子點內插法
+9-3：二維散佈點內插法
+9-4：三維格子點內插法
+9-5：高維格子點內插法
+9-6：三角內插法與計算幾何
+9-7：本章指令彙整
+Chapter 9: Exercises
+Chapter 10: 曲線擬合與迴歸分析曲線擬合（Curve Fitting）與迴歸分析（Regression Analysis）是資料分析的重要步驟，其目的是要經由有限的取樣點（Sample Points）來建立數學模型，並藉由此模型來進行進一步的預測與分析。本章將介紹曲線擬合及迴歸分析的基本方法，並介紹如何以 MATLAB 來進行實作。[Video][Slides][Examples]
+10-1：線性迴歸：曲線擬合
+10-2：線性迴歸：曲面擬合
+10-3：非線性迴歸：使用 fminsearch
+10-4：非線性迴歸：使用混成法
+10-5：非線性迴歸：使用變形法
+10-6：「曲線擬合工具箱」的使用
+10-7：模型複雜度的決定
+10-8：最小平方法的推導
+Chapter 10: Exercises
+Chapter 11: 常微分方程式本章介紹 MATLAB 用於求解常微分方程式（Ordinary Differential Equations，簡稱 ODE）的指令，這些指令可對一般的 ODE 或 Stiff ODE 進行數值積分，以便求取其數值解，並且可以立刻畫出各個狀態變數的二維或三維軌跡圖，非常好用。[Slides][Examples]
+11-1：ODE 指令列表
+11-2：ODE 指令基本用法
+11-3：ODE 指令的選項
+11-4：ODE 檔案的進階用法
+Chapter 11: Exercises
+Chapter 12: 與Excel試算表的整合MATLAB 本身便具有和微軟 Excel 試算表整合的功能，並不需要特殊的工具箱。與試算表整合的最大好處，是 MATLAB 可以和 Excel 的資料互通，因此我們可以輕易地使用 MATLAB 的分析和畫圖來處理 Excel 的資料，同時 Excel 也可以對 MATLAB 的資料來進行作圖。[Slides][Examples]
+12-1：Excel 檔案的讀取
+12-2：Excel 檔案的寫入
+12-3：與 Excel 相關的其它功能
+Chapter 12: Exercises
+Chapter 13: 與資料庫的整合當今是IT（Information Technology）的時代，若要駕馭大量的資料，就必須靠資料庫（Database）才能事半功倍。MATLAB可以靠資料庫工具箱「Database Toolbox」來對資料進行有效的儲存和管理。本章目的即在介紹資料庫工具箱，以便讓讀者能夠將計算結果存入資料庫，並利用資料庫來延伸MATLAB的功能。[Slides][Examples]
+13-1：資料庫簡介
+13-2：使用GUI對資料庫查詢
+13-3：如何設定DSN
+13-4：使用MATLAB對資料庫進行查詢
+13-5：使用MATLAB對資料庫進行修改
+13-6：使用 MATLAB對資料庫進行修改：另一種方法
+Chapter 13: Exercises
+Chapter 14: MATLAB 編譯器MATLAB編譯器（MATLAB Compiler）的主要功能是將使用者所寫的MATLAB程式碼轉成C語言，以便整合到其他的外部應用程式。換句話說，這些外部應用程式就擁有MATLAB的各種功能（例如計算反矩陣、行列式，或是各種繪圖功能），而且可以在沒有安裝MATLAB的電腦上執行。[Slides][Examples]
+14-1：MATLAB編譯器簡介
+14-2：產生獨立應用程式
+14-3：產生共享程式庫
+Chapter 14: Exercises
+Chapter 15: 物件導向程式設計本章介紹如何使用 MATLAB 來進行物件導向程式設計（Objected Oriented Programming），以便簡化程式碼的撰寫，並提高程式碼的可讀性。[Slides][Examples]
+15-1：物件導向程式設計
+15-2：運算元的重載
+15-3：物件的方法
+15-4：類別的繼承
+15-5：物件的聚合
+Chapter 15: Exercises
+
+
+
+
+
+
+
+
+
+
+進階 Web 程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer Network
+Developer Network
+Developer
+
+
+
+
+登入
+
+
+
+
+MSDN 訂閱
+
+
+
+
+取得工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+技術範例
+基本範例
+
+Web 程式設計模型範例
+
+
+
+
+
+Web 程式設計模型範例
+進階 Web 程式設計
+
+
+
+
+進階 Web 程式設計
+
+
+
+
+進階 Web 程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+基本 Web 程式設計模型 
+
+進階 Web 程式設計 
+
+UriTemplate 
+
+UriTemplate 表 
+
+UriTemplate 表發送器 
+
+
+
+TOC
+
+ 
+摺疊目錄
+展開目錄
+
+
+
+
+本文件已封存並已停止維護。
+
+
+
+
+
+
+
+
+本文件已封存並已停止維護。
+
+
+本文件已封存並已停止維護。
+
+進階 Web 程式設計
+
+
+
+                Visual Studio 2008
+            
+
+
+
+
+
+
+這個範例會示範一些 Windows Communication Foundation (WCF) Web 程式設計模型的進階功能。本範例提出下列概念：
+
+URI Template Dispatch：允許將服務作業繫結至符合指定之模式的外部 URI。
+
+HTTP Methods：可以使用任意 HTTP 方法 (包括 GET、PUT、POST 和 DELETE) 叫用服務作業。
+
+HTTP Headers：服務可以使用 WebOperationContext 操作 HTTP 標頭的內容。
+
+註意： 
+要建置和執行這個範例，必須安裝 .NET Framework version 3.5。要開啟專案和方案檔，必須要有 Visual Studio 2008。
+
+此範例會實作客戶資料的基本集合，並儲存於記憶體中。它支援基本的 Create, Read、Update 和 Delete 作業，並使用 URI 和 HTTP 方法對外公開這些作業。
+服務合約和實作
+在這個範例中，服務會實作接聽基底 URI 位址 (http://localhost:8000/Customers) 的單一端點。服務以下列方式處理前置底下的 URI 要求：
+
+對 http://localhost:8000/Customers 的 GET 要求會路由到 GetCustomers()。
+
+系統中的每個客戶都有唯一識別項，而在 URI 裡會附帶這個識別項。這些 URI (例如，http://localhost:8000/Customers/1) 的 GET 要求會對應至 GetCustomer()。
+
+對個別客戶的 URI 發出 HTTP PUT 要求，可以更新該客戶。
+
+對客戶的 URI 發出 HTTP DELETE，可以將客戶從系統移除。
+
+對基底 URI 發出 HTTP POST，可以將新資料新增至系統。
+
+
+
+
+
+
+
+複製
+
+
+
+
+[ServiceContract]
+public interface ICustomerCollection
+{
+    [OperationContract]
+    [WebInvoke(Method = "POST", UriTemplate = "")]
+    Customer AddCustomer(Customer customer);
+
+    [OperationContract]
+    [WebInvoke(Method = "DELETE", UriTemplate = "{id}")]
+    void DeleteCustomer(string id);
+
+    [OperationContract]
+    [WebGet(UriTemplate = "{id}")]
+    Customer GetCustomer(string id);
+
+    [OperationContract]
+    [WebGet(UriTemplate = "")]
+    List<Customer> GetCustomers();
+
+    [OperationContract]
+    [WebInvoke(Method = "PUT", UriTemplate = "{id}")]
+    Customer UpdateCustomer(string id, Customer newCustomer);
+}
+
+
+
+
+服務合約是由 Service 類別所實作，而此類別會使用 WCF 單一執行個體。接收到的所有要求都會路由至伺服器上的同一個物件執行個體，讓要求之間可以共用客戶的雜湊資料表。
+
+
+
+
+
+
+複製
+
+
+
+
+[ServiceBehavior( InstanceContextMode = InstanceContextMode.Single )]
+public class Service : ICustomerCollection
+{
+   Hashtable customers = new Hashtable();
+   ...
+}        
+
+
+
+
+對服務基底 URI (例如，http://localhost:8000/Customers) 發出 HTTP GET 要求可以叫用 GetCustomers() 作業。Customer 型別會透過Data Contract Serializer序列化。
+
+
+
+
+
+
+複製
+
+
+
+
+public List<Customer> GetCustomers()
+{
+    List<Customer> list = new List<Customer>();
+
+    foreach (Customer c in this.customers.Values)
+    {
+        list.Add(c);
+    }
+
+    return list;
+}
+
+
+
+
+對個別客戶的唯一 URI 發出 GET 要求，可以擷取該客戶。例如，可以在 http://localhost:8000/Customers/1 擷取 ID 為 1 的客戶。同樣地，可以在 http:/localhost:8000/Customers/2 存取客戶 2。這兩個 URI 都會分派至伺服器上的 GetCustomer(string id) 方法。套用在 GetCustomer() 作業合約的 [WebGet( UriTemplate="{id}")] 屬性會建立這種對應。UriTemplate 是一個用來描述 GetCustomer() 作業要處理之一組 URI 的模式。在本例中，這個模式描述所有剛好有一個片段在端點基底位址後面的 URI。這個片段的內容與 {id} 範本變數相符，且由 WCF 發送器傳遞至方法的 id 參數。
+
+
+
+
+
+
+複製
+
+
+
+
+//[WebGet( UriTemplate=”{id}” )]
+public Customer GetCustomer(string id)
+{
+    Customer c = this.customers[id] as Customer;
+      
+    if (c == null)
+    {
+        WebOperationContext.Current.OutgoingResponse.SetStatusAsNotFound();
+        return null;
+    }
+
+    return c;
+}
+
+
+
+
+GetCustomer() 的實作會查詢客戶識別碼 (在 URI 中提供)，然後傳回相關聯的客戶。如果找不到客戶，作業便會使用 WebOperationContext 方法設定回應狀態碼，以傳回 HTTP 404 回應。
+請註意，跟 GetCustomer() 方法一樣，UpdateCustomer() 和 DeleteCustomer() 方法也會與相同的 URI 範本產生關聯。WCF Web 程式設計模型允許將多項作業繫結至同一個 URI 範本，只要這些作業各自關聯於不同的 HTTP 方法即可。在本例中，UpdateCustomer() 方法繫結至 HTTP PUT 方法，而 DeleteCustomer() 作業則是繫結至 HTTP DELETE 方法。
+
+
+
+
+
+
+複製
+
+
+
+
+[OperationContract]
+[WebInvoke( Method="PUT", UriTemplate="{id}")]
+Customer UpdateCustomer(string id, Customer newCustomer);
+
+[OperationContract]
+[WebInvoke( Method="DELETE", UriTemplate="{id}" )]
+void DeleteCustomer(string id);
+
+
+
+
+
+AddCustomer() 方法示範如何使用新的 UriTemplate 類別，來建立符合特定模式的新 URI。WebOperationContext() 方法可用來將 HTTP CREATED 回應與設為新建客戶之 URI 的 location 標頭一起傳回。
+
+
+
+
+
+
+複製
+
+
+
+
+public Customer AddCustomer(Customer customer)
+{
+    lock (writeLock)
+    {
+        counter++;
+        UriTemplateMatch match = WebOperationContext.Current.IncomingRequest.UriTemplateMatch;
+
+        UriTemplate template = new UriTemplate("{id}");
+        customer.Uri = template.BindByPosition(match.BaseUri, counter.ToString());
+
+        customers[counter.ToString()] = customer;
+        WebOperationContext.Current.OutgoingResponse.SetStatusAsCreated(customer.Uri);
+    }
+
+    return customer;
+}
+
+
+
+
+
+服務裝載
+使用 WebServiceHost() 來裝載服務，並使用 WebHttpBinding() 公開一個端點。
+
+
+
+
+
+
+複製
+
+
+
+
+using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http://localhost:8000/Customers")))
+{
+    //WebServiceHost will automatically create a default endpoint at the base address using the WebHttpBinding
+    //and the WebHttpBehavior, so there's no need to set it up explicitly
+    host.Open();
+    ...
+}
+
+
+
+
+
+用戶端
+用戶端會使用 WebChannelFactory 方法建立，以建立遠端服務的通道。
+
+
+
+
+
+
+複製
+
+
+
+
+using (WebChannelFactory<ICustomerCollection> cf = new WebChannelFactory<ICustomerCollection>( baseAddress ))
+{
+    //WebChannelFactory will default to using the WebHttpBinding with the WebHttpBehavior,
+    //so there's no need to set up the endpoint explicitly
+    ICustomerCollection channel = cf.CreateChannel();
+    ...
+}
+
+
+
+
+
+使用通道的用戶端會向管理客戶集合狀態的伺服器發出一連串的要求。
+輸出
+使用 POST 新增一些客戶：
+
+
+
+
+
+
+複製
+
+
+
+
+Alice 123 Pike Place http://localhost:8000/Customers/1
+Bob 2323 Lake Shore Drive http://localhost:8000/Customers/2
+
+
+
+
+使用 PUT 更新客戶：
+
+
+
+
+
+
+複製
+
+
+
+
+Charlie 123 Pike Place http://localhost:8000/Customers/1
+
+
+
+
+使用 GET 擷取客戶的清單：
+
+
+
+
+
+
+複製
+
+
+
+
+Charlie 123 Pike Place http://localhost:8000/Customers/1
+Bob 2323 Lake Shore Drive http://localhost:8000/Customers/2
+
+
+
+
+使用 DELETE 刪除客戶：
+最終的客戶清單：
+
+
+
+
+
+
+複製
+
+
+
+
+Charlie 123 Pike Place http://localhost:8000/Customers/1
+
+
+
+
+當互動完成時，程式會等候您按下按鍵，然後終止。
+若要設定、建置及執行範例
+請確定您已執行 Windows Communication Foundation 範例的單次安裝程序。
+
+若要建置方案的 C# 或 Visual Basic .NET 版本，請遵循建置 Windows Communication Foundation 範例中的指示。
+
+若要在單一或跨電腦的組態中執行本範例，請遵循執行 Windows Communication Foundation 範例中的指示。
+
+請參閱工作基本 Web 程式設計模型範例
+
+
+
+			
+			
+			
+			Send comments about this topic to Microsoft.
+		
+
+			
+			© 2007 Microsoft Corporation. All rights reserved.				
+  			
+			
+ 		
+
+
+
+顯示:
+
+受繼承
+        
+
+受保護
+        
+
+
+
+
+
+
+
+列印
+
+匯出 (0)
+            
+
+
+
+
+
+
+
+列印
+
+分享
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+本文內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+進階 Web 程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer Network
+Developer Network
+Developer
+
+
+
+
+登入
+
+
+
+
+MSDN 訂閱
+
+
+
+
+取得工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+技術範例
+基本範例
+
+Web 程式設計模型範例
+
+
+
+
+
+Web 程式設計模型範例
+進階 Web 程式設計
+
+
+
+
+進階 Web 程式設計
+
+
+
+
+進階 Web 程式設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+基本 Web 程式設計模型 
+
+進階 Web 程式設計 
+
+UriTemplate 
+
+UriTemplate 表 
+
+UriTemplate 表發送器 
+
+
+
+TOC
+
+ 
+摺疊目錄
+展開目錄
+
+
+
+
+本文件已封存並已停止維護。
+
+
+
+
+
+
+
+
+本文件已封存並已停止維護。
+
+
+本文件已封存並已停止維護。
+
+進階 Web 程式設計
+
+
+
+                Visual Studio 2008
+            
+
+
+
+
+
+
+這個範例會示範一些 Windows Communication Foundation (WCF) Web 程式設計模型的進階功能。本範例提出下列概念：
+
+URI Template Dispatch：允許將服務作業繫結至符合指定之模式的外部 URI。
+
+HTTP Methods：可以使用任意 HTTP 方法 (包括 GET、PUT、POST 和 DELETE) 叫用服務作業。
+
+HTTP Headers：服務可以使用 WebOperationContext 操作 HTTP 標頭的內容。
+
+註意： 
+要建置和執行這個範例，必須安裝 .NET Framework version 3.5。要開啟專案和方案檔，必須要有 Visual Studio 2008。
+
+此範例會實作客戶資料的基本集合，並儲存於記憶體中。它支援基本的 Create, Read、Update 和 Delete 作業，並使用 URI 和 HTTP 方法對外公開這些作業。
+服務合約和實作
+在這個範例中，服務會實作接聽基底 URI 位址 (http://localhost:8000/Customers) 的單一端點。服務以下列方式處理前置底下的 URI 要求：
+
+對 http://localhost:8000/Customers 的 GET 要求會路由到 GetCustomers()。
+
+系統中的每個客戶都有唯一識別項，而在 URI 裡會附帶這個識別項。這些 URI (例如，http://localhost:8000/Customers/1) 的 GET 要求會對應至 GetCustomer()。
+
+對個別客戶的 URI 發出 HTTP PUT 要求，可以更新該客戶。
+
+對客戶的 URI 發出 HTTP DELETE，可以將客戶從系統移除。
+
+對基底 URI 發出 HTTP POST，可以將新資料新增至系統。
+
+
+
+
+
+
+
+複製
+
+
+
+
+[ServiceContract]
+public interface ICustomerCollection
+{
+    [OperationContract]
+    [WebInvoke(Method = "POST", UriTemplate = "")]
+    Customer AddCustomer(Customer customer);
+
+    [OperationContract]
+    [WebInvoke(Method = "DELETE", UriTemplate = "{id}")]
+    void DeleteCustomer(string id);
+
+    [OperationContract]
+    [WebGet(UriTemplate = "{id}")]
+    Customer GetCustomer(string id);
+
+    [OperationContract]
+    [WebGet(UriTemplate = "")]
+    List<Customer> GetCustomers();
+
+    [OperationContract]
+    [WebInvoke(Method = "PUT", UriTemplate = "{id}")]
+    Customer UpdateCustomer(string id, Customer newCustomer);
+}
+
+
+
+
+服務合約是由 Service 類別所實作，而此類別會使用 WCF 單一執行個體。接收到的所有要求都會路由至伺服器上的同一個物件執行個體，讓要求之間可以共用客戶的雜湊資料表。
+
+
+
+
+
+
+複製
+
+
+
+
+[ServiceBehavior( InstanceContextMode = InstanceContextMode.Single )]
+public class Service : ICustomerCollection
+{
+   Hashtable customers = new Hashtable();
+   ...
+}        
+
+
+
+
+對服務基底 URI (例如，http://localhost:8000/Customers) 發出 HTTP GET 要求可以叫用 GetCustomers() 作業。Customer 型別會透過Data Contract Serializer序列化。
+
+
+
+
+
+
+複製
+
+
+
+
+public List<Customer> GetCustomers()
+{
+    List<Customer> list = new List<Customer>();
+
+    foreach (Customer c in this.customers.Values)
+    {
+        list.Add(c);
+    }
+
+    return list;
+}
+
+
+
+
+對個別客戶的唯一 URI 發出 GET 要求，可以擷取該客戶。例如，可以在 http://localhost:8000/Customers/1 擷取 ID 為 1 的客戶。同樣地，可以在 http:/localhost:8000/Customers/2 存取客戶 2。這兩個 URI 都會分派至伺服器上的 GetCustomer(string id) 方法。套用在 GetCustomer() 作業合約的 [WebGet( UriTemplate="{id}")] 屬性會建立這種對應。UriTemplate 是一個用來描述 GetCustomer() 作業要處理之一組 URI 的模式。在本例中，這個模式描述所有剛好有一個片段在端點基底位址後面的 URI。這個片段的內容與 {id} 範本變數相符，且由 WCF 發送器傳遞至方法的 id 參數。
+
+
+
+
+
+
+複製
+
+
+
+
+//[WebGet( UriTemplate=”{id}” )]
+public Customer GetCustomer(string id)
+{
+    Customer c = this.customers[id] as Customer;
+      
+    if (c == null)
+    {
+        WebOperationContext.Current.OutgoingResponse.SetStatusAsNotFound();
+        return null;
+    }
+
+    return c;
+}
+
+
+
+
+GetCustomer() 的實作會查詢客戶識別碼 (在 URI 中提供)，然後傳回相關聯的客戶。如果找不到客戶，作業便會使用 WebOperationContext 方法設定回應狀態碼，以傳回 HTTP 404 回應。
+請註意，跟 GetCustomer() 方法一樣，UpdateCustomer() 和 DeleteCustomer() 方法也會與相同的 URI 範本產生關聯。WCF Web 程式設計模型允許將多項作業繫結至同一個 URI 範本，只要這些作業各自關聯於不同的 HTTP 方法即可。在本例中，UpdateCustomer() 方法繫結至 HTTP PUT 方法，而 DeleteCustomer() 作業則是繫結至 HTTP DELETE 方法。
+
+
+
+
+
+
+複製
+
+
+
+
+[OperationContract]
+[WebInvoke( Method="PUT", UriTemplate="{id}")]
+Customer UpdateCustomer(string id, Customer newCustomer);
+
+[OperationContract]
+[WebInvoke( Method="DELETE", UriTemplate="{id}" )]
+void DeleteCustomer(string id);
+
+
+
+
+
+AddCustomer() 方法示範如何使用新的 UriTemplate 類別，來建立符合特定模式的新 URI。WebOperationContext() 方法可用來將 HTTP CREATED 回應與設為新建客戶之 URI 的 location 標頭一起傳回。
+
+
+
+
+
+
+複製
+
+
+
+
+public Customer AddCustomer(Customer customer)
+{
+    lock (writeLock)
+    {
+        counter++;
+        UriTemplateMatch match = WebOperationContext.Current.IncomingRequest.UriTemplateMatch;
+
+        UriTemplate template = new UriTemplate("{id}");
+        customer.Uri = template.BindByPosition(match.BaseUri, counter.ToString());
+
+        customers[counter.ToString()] = customer;
+        WebOperationContext.Current.OutgoingResponse.SetStatusAsCreated(customer.Uri);
+    }
+
+    return customer;
+}
+
+
+
+
+
+服務裝載
+使用 WebServiceHost() 來裝載服務，並使用 WebHttpBinding() 公開一個端點。
+
+
+
+
+
+
+複製
+
+
+
+
+using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http://localhost:8000/Customers")))
+{
+    //WebServiceHost will automatically create a default endpoint at the base address using the WebHttpBinding
+    //and the WebHttpBehavior, so there's no need to set it up explicitly
+    host.Open();
+    ...
+}
+
+
+
+
+
+用戶端
+用戶端會使用 WebChannelFactory 方法建立，以建立遠端服務的通道。
+
+
+
+
+
+
+複製
+
+
+
+
+using (WebChannelFactory<ICustomerCollection> cf = new WebChannelFactory<ICustomerCollection>( baseAddress ))
+{
+    //WebChannelFactory will default to using the WebHttpBinding with the WebHttpBehavior,
+    //so there's no need to set up the endpoint explicitly
+    ICustomerCollection channel = cf.CreateChannel();
+    ...
+}
+
+
+
+
+
+使用通道的用戶端會向管理客戶集合狀態的伺服器發出一連串的要求。
+輸出
+使用 POST 新增一些客戶：
+
+
+
+
+
+
+複製
+
+
+
+
+Alice 123 Pike Place http://localhost:8000/Customers/1
+Bob 2323 Lake Shore Drive http://localhost:8000/Customers/2
+
+
+
+
+使用 PUT 更新客戶：
+
+
+
+
+
+
+複製
+
+
+
+
+Charlie 123 Pike Place http://localhost:8000/Customers/1
+
+
+
+
+使用 GET 擷取客戶的清單：
+
+
+
+
+
+
+複製
+
+
+
+
+Charlie 123 Pike Place http://localhost:8000/Customers/1
+Bob 2323 Lake Shore Drive http://localhost:8000/Customers/2
+
+
+
+
+使用 DELETE 刪除客戶：
+最終的客戶清單：
+
+
+
+
+
+
+複製
+
+
+
+
+Charlie 123 Pike Place http://localhost:8000/Customers/1
+
+
+
+
+當互動完成時，程式會等候您按下按鍵，然後終止。
+若要設定、建置及執行範例
+請確定您已執行 Windows Communication Foundation 範例的單次安裝程序。
+
+若要建置方案的 C# 或 Visual Basic .NET 版本，請遵循建置 Windows Communication Foundation 範例中的指示。
+
+若要在單一或跨電腦的組態中執行本範例，請遵循執行 Windows Communication Foundation 範例中的指示。
+
+請參閱工作基本 Web 程式設計模型範例
+
+
+
+			
+			
+			
+			Send comments about this topic to Microsoft.
+		
+
+			
+			© 2007 Microsoft Corporation. All rights reserved.				
+  			
+			
+ 		
+
+
+
+顯示:
+
+受繼承
+        
+
+受保護
+        
+
+
+
+
+
+
+
+列印
+
+匯出 (0)
+            
+
+
+
+
+
+
+
+列印
+
+分享
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+本文內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+進階PHP程式設計-Ajax - 進階PHP討論 相關討論於 台灣PHP聯盟[ Taiwan PHP User Group ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+討論
+
+
+
+
+
+
+
+Home › 進階PHP討論 
+
+登入 · Register  
+
+
+
+
+
+你好, 新朋友！
+點下麵的按鈕可以加入我們！
+
+
+
+
+
+登入 申請加入 
+
+
+ Categories  Recent Discussions
+
+
+
+分類 
+7.1K All Categories30 Flex & Flash
+205 Javascript
+2.5K PHP新手區
+62 中文化發表區
+292 伺服器環境
+38 虛擬主機
+151 資料庫
+29 個人資訊管理
+1K 內容管理系統
+20 Drupal
+938 XOOPS
+78 其他
+52 原創軟體分享區
+470 商業與就業
+124 問題與建議
+211 客戶關係管理與電子報
+52 數位學習平臺
+265 程式架構
+169 CakePHP
+29 Zend Framework
+1 Laravel
+529 群組軟體
+422 egroupware
+127 聚會與活動
+35 PHPConf TW
+23 討論區系統
+6 Vanilla Forums
+15 認證討論區
+12 財會商管
+402 進階PHP討論
+13 PEAR&PECL
+4 版本控制
+63 程式編輯器
+220 開放原始碼專案報導
+196 閒聊
+222 電子商務
+49 Magento
+16 PrestaShop
+
+
+
+本討論參與人 
+
+九月 2006 bugsfamily 
+
+八月 2006 anonymous1 
+
+六月 2006 zeppelin 
+
+六月 2006 kenmine 
+
+六月 2006 kiang 
+
+
+
+
+進階PHP程式設計-Ajax
+
+
+
+
+
+kiwikiwi 
+
+
+
+
+
+六月 2006 
+ edited 十月 2013   in 進階PHP討論 
+
+
+
+
+
+
+這一篇文章主要是教導各位怎樣在php的環境上開發Ajax程式
+如果要撰寫ajax，HTML及JavaScript的基礎是相當必要的。
+
+* Server Side及Client Side
+
+要探討Ajax之前，我們必須先定義上面這兩個名詞。早期的CGI程式設計(這是一個很老掉牙的名詞)，就是一種最標準的伺服器端(Server Side)程式設計，這個代名詞對很多老一派的Web程式設計師都應該不陌生。CGI是一種規格，而在php都還沒開始的年代，大家都是用Perl來實做。然而php的出現，他更簡易的語法及簡單的物件導向設計，使得很多人前僕後繼。而MySQL這開放原始碼且簡單好用的資料庫系統，加上php的支援，以及Apache的穩定，讓他們成為最好的搭檔。
+
+用戶端程式(Client Side)設計泛指使用HTML，CSS，JavaScript(以下我們簡稱JS)等瀏覽器才能解析的語言來撰寫程式的方式。用戶端程式設計的好處是，所有的結果會即時反應在瀏覽器上，因為資料不需要重新傳送回去伺服器，也就不會有任何的畫面更新。很常見到的是很多人會去找JS特校，所以JS也快變成網頁特效的代名詞。而現在撰寫JS除了要註意瀏覽器的支援問題以外，JS的除錯也是得由瀏覽器支援，例如像IE就不是很好除錯JS程式碼，而Firefox 還可以支援中斷點。
+
+下麵有三個時鐘範例：
+
+時鐘1
+
+時鐘2
+
+時鐘3
+
+看起來是相同的結果，其實完全不一樣。第一個是用JS寫的，第二個是用Ajax寫的，第三個是PHP，稍後我將實際解釋程式碼。
+
+* 什麼是Ajax
+
+Ajax就是Asynchronous JavaScript And XML，Ajax發音做A-jacks。這樣的程式撰寫方式不限定任何一個語言平臺，想要的話C也可以寫Ajax。要討論同步或非同步，我們要先看第三個php時鐘的程式碼。
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+<html xmlns="http://www.w3.org/1999/xhtml"&gt;
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PHP 時鐘</title>
+</head>
+ 
+ 
+<body onload="setInterval('form1.submit()',1000)">
+<form id="form1" name="form1" action="index.php" method="post">
+  現在的時間 ：
+  <input name="time" type="text" id="textbox" size="28" value="<?php print(date('H:i:s')); ?>" />
+</form>
+</body>
+</html>
+
+你可以註意到，在這樣的情況下，Client和Server的通訊大概會是像：
+Client -> HTTP POST -> Server PHP
+Client -> 等待Server PHP回應
+Server PHP -> 回應 -> Client
+這樣的流程。我們之所以說是同步，是因為Client一定要等待整個php程式執行完後，資料傳送回來，才會更新畫面。
+
+為了達到每一秒更新時間的效果，就要每一秒呼叫form1.submit()。如此便會造成畫面的閃動。根據瀏覽器再次將整個回應的HTML讀入到記憶體，如果你回應的HTML很大，或是你有多個物件都在做每秒更新的動作，也不見得會是剛好一秒了。但是可以見到，這樣是最單純的寫法，也是被大家廣為接受的Web程式設計模式。
+
+那非同步是怎樣呢？在Ajax的設計方法之下，他們的通訊會是像這樣：
+Client -> 將要求的XML傳送到Server PHP
+Client -> 不會發生任何畫面改變
+Server -> 將要變更的項目封裝成XML -> Client
+Client -> 解析XML之後並且更新畫面
+不要太介意非同步這個名詞，他只是為了要區別以前的寫法。
+從這個流程可以發現，資料都是用XML傳遞，而且是在背景。而且傳遞的XML不見得會是自己定義的XML，你也可以直接傳遞畫面結果所需要的HTML(這也是XML啊)，然後直接填到動態HTML物件如Div及Span。
+
+* Ajax時鐘-套件及配置
+
+要在php上撰寫 Ajax，在這裡我介紹xajax函式庫。
+xajax是一個以Server為主的Ajax函示庫，也就是說很多的商業邏輯將會放在Server Side的php程式裡。
+此外還有另一套叫做Prototype的函示庫，他就是Client為主的，好處是在於就算把商業邏輯的Server端程式替換掉，也幾乎不會影響程式的運作(在這樣的設計模式下，Server Side有點像只是提供資料庫存取)。
+接下來將一步一步地介紹如何撰寫Ajax模式的程式。
+
+檔案及資料夾結構
+
+下載xajax-0.2.4套件包並且解開，你會看到xajax.inc.php, xajaxCompress.php及xajaxResponse.inc.php，以及裝有xajax.js的xajax_js資料夾。
+
+在Ajax時鐘的目錄下，將上面的檔案複製過去。順便先建立好檔案，做成這樣的配置
+/ajaxclock/
+/ajaxclock/index.php
+/ajaxclock/clock.server.php
+/ajaxclock/xajax/xajax.inc.php
+/ajaxclock/xajax/xajaxCompress.php
+/ajaxclock/xajax/xajaxResponse.inc.php
+/ajaxclock/xajax_js/xajax.js
+
+* Ajax時鐘-ClientSide Code
+
+Client Side的角色就是index.php，你也可以更名為clock.php，意思更明確。
+這個程式的流程是：
+
+1. 建立Ajax物件，告訴他Server Side程式的檔名
+2. 註冊你要呼叫的Server Side副程式
+3. 在標籤的中間，呼叫Ajax物件的printJavascript(’./’);，參數是告訴他xajax_js目錄在哪
+
+我在這裡註冊了兩個副程式，GetTime讓他每一次自動取得時間用的，ShowTime是來展示如何將表單資料送到Server Side程式。
+在中間的body onload事件中，可以看到呼叫xajax的方式。如果你的註冊的副程式叫做GetTime，你就要用xajax_GetTime來呼叫。這裡我們在呼叫的時候並沒有傳入任何參數。配合JS的setTimeout，我們可以每一秒呼叫GetTime來更新。
+
+你會問說，要更新的不是<input type=’text’ id=’text’>的文字盒嗎？怎麼沒有看到任何設定value=’幾點幾分’ 的程式碼呢？這個你就要接下去看ServerSide的程式碼了。先記著，我們要更新的物件，他的id是text。
+
+我們會產生這樣的index.php：
+<?php
+require_once "xajax/xajax.inc.php";
+
+$Ajax = new xajax("clock.server.php");
+$Ajax->registerFunction('GetTime');
+$Ajax->registerFunction('ShowTime');
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+<html xmlns="http://www.w3.org/1999/xhtml"&gt;
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ajax 時鐘</title>
+<?php $Ajax->printJavascript('./'); ?> 
+</head>
+
+
+<body onload="setInterval('xajax_GetTime()',1000)">
+<form id="form1" name="form1" >
+  現在的時間 ：
+  <input name="time" type="text" id="textbox" size="28" />
+</form>
+</body>
+</html>
+
+* Ajax時鐘-ServerSide Code
+
+這個程式的流程是這樣：
+
+1. 撰寫好你所需要的副程式
+2. 在主程式碼的部分，建立一個Ajax物件，也是同樣地告訴他ServerSide程式的檔名
+3. 同樣地註冊副程式
+4. 一定要呼叫processRequests()
+
+那剛剛的GetTime從ClientSide被呼叫了，該怎樣去設定那個input id=’text’的值呢？
+
+1. 在副程式裡，建立xajaxResponse物件
+2. 呼叫他的addAssign，裡面傳入你要設定的
+
+($id,$attribute,$value)
+
+。這裡的id可以是ClientSide的HTML中的任何一個物件的ID，例如說form1也可以(因為有<Form id=’form1′>這一行)。attribute這個是這個物件的屬性，這個你就要參考W3School HTML DOM Reference了。input應該有一個屬性叫做value，目的就是要設定該物件顯示的值，所以在這裡的第二個參數是value。第三個參數就是你要給他的值了，當然就是時間字串囉。
+3. 記得要將xajaxResponse物件回傳啊
+
+如此我們會產生clock.server.php：
+<?php
+require_once "xajax/xajax.inc.php";
+function GetTime()
+{
+    $response=new xajaxResponse();
+    $response->addAssign("textbox","value",date('H:i:s'));
+    return $response;
+}
+$Ajax=new xajax('clock.server.php');
+$Ajax->registerFunction('GetTime');
+$Ajax->registerFunction('ShowTime');
+$Ajax->ProcessRequests();
+?>
+
+* Ajax時鐘-表單的處理
+
+由於Ajax不需要任何POST的動作，因此Form標籤裡就可以不用加上action和method屬性
+
+我們先在index.php裡加上一行，
+
+<input type="button" value="將值傳送到clock.server.php處理" onclick="xajax_ShowTime(xajax.getFormValues('form1'))"/>
+
+因為不需要POST表單，所以type當然是button即可。在onlick事件中，我們呼叫了一個ShowTime副程式，等會一定要在 clock.server.php中宣告。為了要將表單form1中的任何變數都傳到ShowTime副程式，此時，xajax的JS物件就提供了 getFormValues的方法，並且要傳入表單的ID。如果你正常地配置了xajax.js，透過$Ajax-> printJavascript(’./’); 這一小斷程式碼便會將xajax物件包含進來，應該是可以不用擔心。
+
+在clock.server.php中，我們加上
+function ShowTime($arg)
+{
+    $response=new xajaxResponse();
+    $response->addAlert(print_r($arg,true));
+    return $response;    
+}
+
+如果前面的動作都正確的話，$arg就應該是一個hash，並且會有一個key叫做text，裡麵包含值。
+我們可以看到xajaxResponse提供一個功能讓你快速地在ClientSide呼叫警告對話盒，相當於呼叫window.alert()
+此外他也提供另一個功能是addScript，讓你在ClientSide執行任何的JS。
+
+這些你都可以參考Xajax的Wiki。
+
+* 除錯
+
+除錯需要的是耐心，也是因為現有的Browser除錯的支援程度就是這樣而已。
+你可以參考：
+http://www.ruby.oss.tw/html/modules/newbb/viewtopic.php?viewmode=flat&topic_id=87&forum=10
+
+* 比較和結論
+
+優點
+在上面的範例中，我們知道Ajax的優點，在於可以以背景的方式更新部分的畫面。這些畫面就是看設計者怎樣去配置HTML物件，xajax的函式庫也大幅地簡化了這個流程。這樣確實是以往php程式所做不到的，一旦在ClientSide使用自動或是半自動的將資料POST回php程式來取得結果，便會有很多不確定的因素，但又要為了效果而不得不做取捨。例如說有個表單需要驗證，如果驗證沒過便要顯示怎樣的訊息，在ASP.Net裡是有好用的控制項，他乾脆把驗證程式碼一起丟到ClientSide讓JS程式碼去做驗證。而寫php當然也可以如此(反而是應該要如此)，如果不用這種方法，就得將資料 POST回去，造成每改一個字或是做個選擇，就會更新一次畫面。使用Ajax來做，不管是處理表單還是驗證都可以寫在ServerSide，充分解決 View及Control以往糾纏不情的情況。
+
+缺點
+Ajax也有為人詬病的問題，例如說資料量大，造成速度的問題。ajax需要將很多事情都用XML包裝，為了更新部分畫面，展示特效，往往消耗大量的頻寬，結果還是造成平均的網頁讀取時間低落。對於少量的資料，或是在短暫時間內更新極少部分，使用者不會有太大感覺。但是誇張一點的，像是微軟的電子地圖，或是Outlook WebAccess這個產品，還有這個模擬桌面的展示網頁，玩玩看就知道要付出多大速度的代價。這一方面相對於ajax方式，原來php一次就傳回結果，而不是分次載入，簡潔的結果和快速的反應，比較適合不需要炫麗效果，要求正確度的程式。
+
+會遇到的問題
+如同xajax函式庫一樣，所有撰寫的人都會遇到幾個問題。第一就是字碼，為了安全地使用HTTP傳送資料，資料必須經由HTML encode然後才送出。但是大部分的瀏覽器，在window.alert的時候，遇到html encode字串都不能解析。此外傳送的字串一定要是UTF8，如果其他的字串將造成不能解析。所以使用Dreamweaver中文版，或是其他預設不是 UTF8的編輯器，就要加倍小心，也不能夠在UTF8文件中加上BOM(UTF8 Signature)，否則通常會造成Web Server不能讀取。
+
+再來是除錯機制，xajax有還不錯的除錯機制，有任何不是正常的XML回應，都會顯示出來。官方也說明瞭可以利用Zend Studio來進行debug。其他的xajax函式庫就不是相當容易除錯的，大部分還是要靠設計師的毅力及直覺了。
+
+結論
+對PHP的程式設計師而言，能夠活用多種不同的技術是相當重要的，而不是將解決方式綁死在同一種技術上。可能不同的技術混雜在一起，也會增加程式碼維護的難度，不管如何設計者一定要三思。
+
+原始討論： http://twpug.net/x/modules/newbb/viewtopic.php?topic_id=1661 
+ Share on Facebook Share on Twitter 
+
+
+
+評論 
+
+
+
+
+
+
+
+kiang 
+
+
+
+
+
+六月 2006 
+ edited 六月 2006  
+
+
+
+
+                            感謝提供，有興趣關註進階議題的朋友也可以多註意 kiwi 的部落格：
+
+http://gridv6.csie.chu.edu.tw/
+
+ 
+ Share on Facebook Share on Twitter 
+
+
+
+
+
+
+
+
+
+
+kenmine 
+
+
+
+
+
+六月 2006 
+ edited 六月 2006  
+
+
+
+
+                            始終都是不明白，為什麼要多此一舉，令到程式更複雜，只用 JavaScript 也做用的話，為什麼要浪費伺服器的資源呢？做個時鐘也要每秒連接伺服器，伺服器不繁忙也怪。                        
+ Share on Facebook Share on Twitter 
+
+
+
+
+
+
+
+
+
+
+zeppelin 
+
+
+
+
+
+六月 2006 
+ edited 六月 2006  
+
+
+
+
+                            只是範例而已啊
+ajax的應用會讓程式更方便..                        
+ Share on Facebook Share on Twitter 
+
+
+
+
+
+
+
+
+
+
+anonymous1 
+
+
+
+
+
+八月 2006 
+ edited 八月 2006  
+
+
+
+
+                            請問xajax怎麼上傳檔案 input type=file                        
+ Share on Facebook Share on Twitter 
+
+
+
+
+
+
+
+
+
+
+bugsfamily 
+
+
+
+
+
+九月 2006 
+ edited 九月 2006  
+
+
+
+
+http://www.openajax.net/wordpress/
+這是一個想要研究AJAX不錯的網址
+
+http://www.4al.pl/phpAjaxTags/
+這是個人目前覺得很不的AJAX Framework                        
+ Share on Facebook Share on Twitter 
+
+
+
+
+ 
+Sign In or Register to comment.                    
+
+
+
+
+
+
+Forum Software
+                Powered by Vanilla
+
+
+
+
+
+
+進階PHP討論 相關討論於 台灣PHP聯盟[ Taiwan PHP User Group ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+討論
+
+
+
+
+
+
+
+Home › 進階PHP討論 
+
+登入 · Register  
+
+
+
+
+
+你好, 新朋友！
+點下麵的按鈕可以加入我們！
+
+
+
+
+
+登入 申請加入 
+
+
+ Categories  Recent Discussions
+
+
+
+分類 
+7.1K All Categories30 Flex & Flash
+205 Javascript
+2.5K PHP新手區
+62 中文化發表區
+292 伺服器環境
+38 虛擬主機
+151 資料庫
+29 個人資訊管理
+1K 內容管理系統
+20 Drupal
+938 XOOPS
+78 其他
+52 原創軟體分享區
+470 商業與就業
+124 問題與建議
+211 客戶關係管理與電子報
+52 數位學習平臺
+265 程式架構
+169 CakePHP
+29 Zend Framework
+1 Laravel
+529 群組軟體
+422 egroupware
+127 聚會與活動
+35 PHPConf TW
+23 討論區系統
+6 Vanilla Forums
+15 認證討論區
+12 財會商管
+402 進階PHP討論
+13 PEAR&PECL
+4 版本控制
+63 程式編輯器
+220 開放原始碼專案報導
+196 閒聊
+222 電子商務
+49 Magento
+16 PrestaShop
+
+
+
+Popular Tags 
+php 70
+徵才 16
+javascript 10
+工程師 8
+mysql 8
+jquery 8
+facebook 6
+php工程師 5
+php程式 4
+laravel 4
+ubuntu 4
+php網站 4
+問題 3
+購物車 3
+php,api,問題 3
+開源php框架 2
+magento 2
+wordpress 2
+資料庫 2
+php.javascript.sql 2
+網站建置 2
+表單 2
+php會員登入 2
+平臺架設 2
+xoops 2
+
+
+
+進階PHP討論 相關討論於 台灣PHP聯盟[ Taiwan PHP User Group ]如果你是第一次來到這兒要發問，或是並不清楚自己的問題出在哪裡，請到新手區發問！Child Categories
+
+
+
+PEAR&PECL
+
+                        PEAR一般比較嚴謹，PECL就比較自由，兩者都是提供許多現成函式庫的地方。                    
+
+13 discussions
+26 評論
+
+
+
+
+
+版本控制
+
+                        cvs,svn,git,mercurial,bazaar,...                    
+
+4 discussions
+3 評論
+
+
+
+
+
+程式編輯器
+
+                        IDE工具、文字編輯器                    
+
+63 discussions
+215 評論
+
+
+
+
+ «1234567…11» 
+
+
+
+
+
+URL Rewrite 衝突..... 
+
+78 views
+3 評論
+0 points
+最近更新 mypetertw 八月 2016 
+
+
+
+
+
+
+
+include資料存儲問題 
+
+64 views
+0 評論
+0 points
+發起人 beatman 五月 2016 
+
+
+
+
+
+
+
+PHP The Right Way 有熱心網友翻譯完了 
+
+402 views
+4 評論
+0 points
+最近更新 v60i 四月 2016 
+
+
+
+
+
+
+
+關於PHP程式，我在FTP找不到其程式的問題！！！ 
+
+89 views
+2 評論
+0 points
+最近更新 jk60504 十二月 2015 
+
+
+
+
+
+
+
+汐止東科IBM代理商徵PHP工程師 
+
+187 views
+0 評論
+0 points
+發起人 shawtuzz 八月 2015 
+
+
+
+
+
+
+
+解 TripleDES 的加密 
+
+233 views
+3 評論
+0 points
+最近更新 kiang 八月 2015 
+
+
+
+
+
+
+
+php是否能自定義'錯誤'和'致命錯誤'訊息 
+
+417 views
+12 評論
+0 points
+最近更新 rickysu 七月 2015 
+
+
+
+
+
+
+
+為什麼我的PHP PAYPAL IPN不能Update database 
+
+264 views
+0 評論
+0 points
+發起人 keung725 三月 2015 
+
+
+
+
+
+
+
+各位高手，小弟有事請教 
+
+223 views
+3 評論
+0 points
+最近更新 mikun 一月 2015 
+
+
+
+
+
+
+
+高手們，請問怎樣使用ajax pass 這兩個value? 
+
+131 views
+2 評論
+0 points
+最近更新 keung725 一月 2015 
+
+
+
+
+
+
+
+svg 圖形的儲存與輸出 
+
+345 views
+0 評論
+0 points
+發起人 kiang 十一月 2014 
+
+
+
+
+
+
+
+利用PhpMailer寄送留言板的訊息,可以寄送但$_POST[""]不出留言板填寫的內容 
+
+537 views
+2 評論
+0 points
+最近更新 noon 九月 2014 
+
+
+
+
+
+
+
+PHP 核心開始進行一些針對效能的重構 
+
+333 views
+6 評論
+0 points
+最近更新 rickysu 五月 2014 
+
+
+
+
+
+
+
+合併資料表平均值 
+
+101 views
+1 評論
+0 points
+發起人 gogo813 五月 2014 
+
+
+
+
+
+
+
+check the user like of the like button and display something immediately in facebook app,      謝謝 
+
+74 views
+2 評論
+0 points
+最近更新 keung725 四月 2014 
+
+
+
+
+
+
+
+解出 pdf 檔案的文字內容 
+
+2.1K views
+4 評論
+0 points
+最近更新 kiang 四月 2014 
+
+
+
+
+
+
+
+PHP for SNMP 
+
+3.8K views
+2 評論
+0 points
+最近更新 deitel123 四月 2014 
+
+
+
+
+
+
+
+有沒有可能透過開啟mail的動作取得IP 
+
+320 views
+9 評論
+0 points
+最近更新 shiang 三月 2014 
+
+
+
+
+
+
+
+Facebook 已經在內部醞釀一個取代 PHP 的計畫 Hack 
+
+402 views
+6 評論
+0 points
+最近更新 see7di 三月 2014 
+
+
+
+
+
+
+
+資料庫數據有大括號, 是作何用 
+
+2.2K views
+4 評論
+0 points
+最近更新 see7di 三月 2014 
+
+
+
+
+
+
+
+Facebook 的 HipHop 2.0 虛擬機器非常快 
+
+1.7K views
+3 評論
+0 points
+最近更新 see7di 三月 2014 
+
+
+
+
+
+
+
+網頁程式設計 
+
+72 views
+3 評論
+0 points
+最近更新 see7di 三月 2014 
+
+
+
+
+
+
+
+取出 PDF 中的圖片並且做一些雜訊的清除 
+
+80 views
+2 評論
+0 points
+最近更新 see7di 三月 2014 
+
+
+
+
+
+
+
+curl 模擬 http post 提交檔案至 google swiffy 轉檔 
+
+188 views
+4 評論
+0 points
+最近更新 see7di 三月 2014 
+
+
+
+
+
+
+
+解出 word 檔案的文字內容 
+
+50 views
+1 評論
+0 points
+發起人 kiang 二月 2014 
+
+
+
+
+
+
+
+在windows 上php 運行 daemon 
+
+183 views
+8 評論
+0 points
+最近更新 kiang 一月 2014 
+
+
+
+
+
+
+
+hhvm 測試比較 
+
+126 views
+3 評論
+0 points
+最近更新 kiang 一月 2014 
+
+
+
+
+
+
+
+我不知道這是屬於PHP還是什麼問題 
+
+1.6K views
+9 評論
+0 points
+最近更新 ccuuttww 一月 2014 
+
+
+
+
+
+
+
+PHP 中 SOAP 中使用 session 做到 Single Sign On 
+
+5.5K views
+7 評論
+0 points
+最近更新 runli 十二月 2013 
+
+
+
+
+
+
+
+在 Ubuntu 安裝 Phing 記錄 
+
+70 views
+1 評論
+0 points
+發起人 kiang 十一月 2013 
+
+
+
+ «1234567…11»
+
+
+
+
+Forum Software
+                Powered by Vanilla
+
+
+
+
+
+
+
+VisualBasic 程式設計進階-金石堂網路書店
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+會員功能列
+
+ 
+
+
+加入會員
+登入
+
+
+
+
+您好
+登出
+
+
+會員專區
+客服中心
+查訂單
+
+
+ 
+（ 0 件）0 元
+結帳
+
+
+
+
+
+
+
+
+
+
+
+
+購物車
+（ 0 件）0 元
+結帳
+
+
+
+金石堂及銀行均不會請您操作ATM!  如接獲電話要求您前往ATM提款機，請不要聽從指示，以免受騙上當!
+    (詳情)
+
+
+
+
+VisualBasic 程式設計進階－金石堂網路書店歡迎您加入博客和facebook 臉書粉絲團！The largest retail books store chains in Taiwan! 
+
+
+
+
+
+TOP關鍵字
+
+2017希望書包
+怪獸的產地
+七龍珠
+肆一 
+蠟筆小新套票
+抽EC
+
+
+
+
+
+
+全館搜尋
+中文書
+英文書
+簡體書
+雜誌
+MOOK
+文具
+玩具親子
+美妝配飾
+3C
+家電
+運動休閒
+居家生活
+動漫部屋
+日用清潔
+食品
+
+
+
+
+ 
+
+天花版bn
+
+12345678910
+
+
+
+
+
+購物目錄
+
+
+首頁
+3h快送
+中文書
+英文書
+簡體書
+雜誌
+MOOK
+文具
+美妝配飾
+玩具親子
+3C
+家電
+運動休閒
+居家生活
+日用清潔
+動漫精品
+食品
+
+
+
+
+
+
+商品次目錄
+
+
+新書
+預購書
+推薦書
+套書
+暢銷書排行榜
+書展 / 特惠
+讀者書評
+出版社專區
+香港出版品
+
+
+
+
+ 
+
+    您的位置：金石堂網路書店
+中文書
+電腦資訊
+程式設計
+VB
+商品詳情
+
+ 
+
+
+VisualBasic 程式設計進階
+                        
+
+
+
+
+
+
+
+
+
+
+作者：黃瑞祥、松橋 3小組工作室
+追蹤
+
+
+
+出版社：經瑋      
+出版社追蹤
+
+
+出版日：2014/5/5
+
+ISBN：9789865835750
+語言：中文繁體
+適讀年齡：成人適讀
+
+
+定價：350 元
+
+特價：79 折 277 元 (可得紅利2點)
+紅利優惠價：77 折 269 元 (折抵說明)紅利可抵：8 元 
+信用卡紅利：可折抵多家銀行 (扣抵說明)
+運送方式：全球配送　香港到店　國內宅配國內店取　
+
+
+
+
+
+
+
+
+
+
+
+
+<<
+
+
+
+>>
+
+
+https://cdn.kingstone.com.tw/book/images/product/20131/2013120293847/2013120293847b.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           購買後立即為您進貨!立即購買 預計出貨日：2017/7/27
+
+
+
+金石堂讀者好評
+ 
+0 個人說讚，看排行 >
+
+
+
+
+
+
+電腦資訊分類追蹤
+使用此功能請先登入金石堂網路書店正式會員。這是什麼？
+
+
+
+
+分享：
+                            
+                           	  
+
+
+
+
+
+
+
+
+
+
+書籍介紹
+其他讀者也買
+強力推薦
+讀者好評(0)
+下標籤
+團體專屬服務
+
+
+
+
+
+
+內容簡介目錄
+詳細資料
+
+
+
+
+
+
+內容簡介 top 
+《VisualBasic 程式設計進階》
+
+	Visual Basic Express－免費授權，卻又令人驚豔的新程式語言工具。
+	市面上已有不下數十本的Visual Basic 相關書籍，但是大都是討論入門的概念及基本應用，對諸如物件導向、檔案、報表、資料庫、WPF及應用程式建置等，每每僅做入門的簡介而已，較少做較深入的探討。
+
+
+	物件導向是Visual Basic的賣點之一，檔案及資料庫方便大量資料的處理有其重要性，而報表輸出及程式建置更是不可或缺的重要功能，加上Vista作業環境的普及，WPF的新顯示架 構程式學習，絕對有其必要性，不學這些內容，或僅輕描淡寫帶過，怎算學會使用Visual Basic。以下是我們建議的研讀模式
+
+
+	1. 拿到書後，概略翻一下書，知道內容有那些。
+	2. 詳讀各章節內容，照著做一遍，熟悉指令、語法、資料結構及邏輯。
+	3. 不看書上的程式碼，自己再做一次，訓練自己寫程式的能力，當然一開始可能需要書本的協助。研讀過的程式，自已再試著把它寫出來，這是初學者，較無挫折感的學習方式。
+	4. 習題是更進一步的學習。試著瞭解問題、分析問題、設計解決問題的步驟，進步會很顯著。
+	5. 如果您很確實的完成前面四個步驟，您應該可以看懂軟體的Help，加上善用網路資源，您已然踏上寬廣的程式設計之路。
+
+
+
+目錄 top 
+VisualBasic 程式設計進階－目錄導覽說明
+
+
+	Chapter 1　物件導向
+	1-1 物件導向基本概念
+	1-2 類別的實作
+	1-3 實作範例
+	1-4 習題
+
+	 
+
+	Chapter 2　檔案系統
+	2-1 My.Computer.FileSystem
+	2-2 磁碟機資訊
+	2-3 檔案讀寫和資料夾讀取
+	2-4 文字性檔案讀寫
+	2-5 讀取Excel檔案
+	2-6 習題
+
+	 
+
+	Chapter 3　報表製作
+	3-1 印表機圖形功能
+	3-2 列印表格資料
+	3-3 旋轉列印
+	3-4 列印長條圖資料
+	3-5 習題
+
+	 
+
+	Chapter 4　資料庫系統
+	4-1 資料庫定義
+	4-2 資料庫和資料表分析
+	4-3 FireBird 資料庫介紹
+	4-4 專案分析
+	4-5 習題
+
+	 
+
+	Chapter 5　WPF程式設計
+	5-1 WPF基礎應用範例
+	5-2 WPF進階應用例
+	5-3 習題
+
+	 
+
+	Chapter 6　安裝與部署
+	6-1 發行程式
+	6-2 發行附文字檔的程式
+	6-3 以自製安裝批次檔的方式，建置應用程式
+	6-4 習題
+
+
+
+
+
+
+詳細資料top 
+
+                               語言：中文繁體規格：平裝分級：普級開數：18開17*23cm頁數：264
+                               出版地：台灣
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VB相關書籍
+延伸閱讀推薦
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+共0篇好評top 
+寫書評去 >
+
+
+
+
+
+
+
+
+
+
+商品標籤 (什麼是標籤？)
+
+Word
+
+
+
+我的標籤新增
+
+
+
+
+
+
+
+
+
+團體專屬服務top
+
+團體專屬服務
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+訂購須知top 
+防治詐騙，提醒您!!金石堂及銀行均不會請您操作ATM! 如接獲電話要求您前往ATM提款機，請不要聽從指示，以免受騙上當! 
+
+商品運送說明：
+當商品送達金石堂門市或便利商店後，您會收到E-mail及APP出貨/到貨通知，您也可透過【訂單查詢】確認到貨情況。
+建議您可下載『金石堂APP』並開啟推撥設定，即可收到相關出貨/到貨通知訊息。
+並請您於指定期限內取貨付款，若逾期未取，您取貨的金石堂門市或便利商店將會辦理退貨作業。
+產品顏色可能會因網頁呈現與拍攝關係產生色差，圖片僅供參考，商品依實際供貨樣式為準。 
+
+退換貨說明：
+依據「消費者保護法」第19條及行政院消費者保護處公告之「通訊交易解除權合理例外情事適用準則」，以下商品購買後，除商品本身有瑕疵外，將不提供7天的猶豫期：
+
+                            1、 易於腐敗、保存期限較短或解約時即將逾期。（如：生鮮食品）
+                            2、 依消費者要求所為之客製化給付。（客製化商品）
+                            3、 報紙、期刊或雜誌。（含MOOK、外文雜誌）
+                            4、 經消費者拆封之影音商品或電腦軟體。
+                            5、 非以有形媒介提供之數位內容或一經提供即為完成之線上服務，經消費者事先同意始提供。（如：電子書、電子雜誌、下載版軟體、虛擬商品…等）
+                            6、 已拆封之個人衛生用品。（如：內衣褲、刮鬍刀、除毛刀…等）
+若非上列種類商品，商品均享有到貨7天的猶豫期（含例假日）。
+辦理退換貨時，商品（組合商品恕無法接受單獨退貨）必須是您收到商品時的原始狀態（包含商品本體、配件、贈品、保證書、所有附隨資料文件及原廠內外包裝…等），請勿直接使用原廠包裝寄送，或於原廠包裝上黏貼紙張或書寫文字。退回商品若無法回復原狀，將請您負擔回復原狀所需費用，嚴重時將影響您的退貨權益。
+
+
+
+
+
+
+
+
+
+
+中文書籍分類
+
+文學財經企管生活風格飲食料理心理勵志醫療保健旅遊宗教命理教育/親子教養童書羅曼史輕小說漫畫語言／字辭典藝術設計電腦資訊
+程式設計
+C／C#／JAVA
+VB
+其它程式設計
+
+
+網頁設計
+繪圖／影音／多媒體
+辦公軟體／應用軟體
+作業系統
+資料庫
+3C數位生活
+APPLE專區
+認證考試
+網路／安全／概論
+其他電腦資訊
+
+自然科普人文歷史社會哲思考試書／政府出版品參考書全部的分類 >>
+
+
+
+手機版
+VisualBasic 程式設計進階
+
+
+
+
+相關商品
+
+
+雜誌
+
+
+
+PC DIY! 7月2017第245期
+數位狂潮DIGITREND 2017第44期
+PC HOME 電腦家庭 7月2017第258期
+MAXIMUM PC Spcl: BUILD IT:The Perfect PC Vol.2 2017
+PC DIY! 6月2017第244期
+
+
+
+
+
+
+
+
+
+外嵌連結
+VisualBasic 程式設計進階
+
+
+
+在金石堂門市找此書
+                         選擇縣市：
+
+請選擇
+基隆市
+臺北市
+新北市
+桃園市
+新竹市
+新竹縣
+宜蘭縣
+苗慄市
+苗慄縣
+南投縣
+臺中市
+雲林縣
+彰化縣
+嘉義市
+臺南市
+高雄市
+屏東縣
+
+查詢
+
+
+
+
+
+
+
+
+
+
+
+
+↑回上方
+
+金石堂網路書店
+
+首頁
+關於金石堂網路書店
+人才招募
+客服中心
+異業合作
+出版情報
+手機版
+關於金石堂書店
+金石堂書店全台門市
+
+
+
+客服專線：02-2364-9989
+傳真：02-2364-4672
+客服時間：週一至週五 9：00∼12：30 及 13：30∼18：00（例假日除外）
+地址：100 台灣臺北市中正區汀州路三段 160 巷 3 號 2 樓
+Copyright©2016, Digital Kingstone Co., Ltd. 金石網絡股份有限公司
+
+
+
+
+
+
+瀏覽本站建議使用：Internet Explorer 8.0 以上或 FireFox、Google Chrome、Safari 等瀏覽器。
+本網站已依台灣網站內容分級規定處理且符合電子商務、安全交易
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+金石堂APP出/到貨提醒不漏接，讓您便利隨行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.15
+
+
+
+
+Learn Python
+
+
+
+
+
+
+
+回上方
+
+
+
+
+
+註冊新帳號
+登入
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Learn Python
+玩遊戲、架網站、學物理
+        影像辨識、遊戲創作
+
+
+
+
+
+
+
+
+使用者登入次數：7870次		
+		註冊使用者：840人
+		資料庫記錄：共137573筆
+		訪客人次：26508次
+開站時間：Sept. 12, 2016, 8:10 a.m.
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+學習資源
+How to Think Like a Computer Scientist
+Udacity:Programming Foundations with Python
+
+
+
+Quick Links
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+博客來-中文書>電腦資訊>程式設計/APP開發>C/C++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::相關網站
+
+博客來
+售票網
+企業採購
+福利平臺
+
+:::會員服務|快速功能
+
+0結帳
+登入
+加入會員
+購物金
+
+
+購物金 0
+福利金 0
+E-Coupon 0 張
+
+會員專區
+
+
+
+
+
+關閉廣告
+
+
+展開廣告
+
+
+回博客來首頁
+
+
+
+
+
+客服公告：2017/7/1起，配合政府施行電子發票政策，三聯式發票將全面採用電子化服務。詳情
+
+
+
+
+
+
+
+
+
+
+移動滑鼠展開全站分類
+:::全站分類
+
+全站分類
+旗艦店
+
+
+
+中文書
+簡體書
+‧外文書
+雜誌
+‧MOOK
+CD
+‧DVD
+‧售票
+保養
+‧彩妝
+‧醫美
+日用
+‧洗髮
+‧沐浴
+服飾
+‧機能服
+‧鞋襪
+包包精品
+‧錶飾配件
+美食
+‧飲品
+‧食材
+保健
+‧纖體
+‧醫材
+文具
+‧動漫
+‧療癒
+餐廚生活
+‧家居生雜
+婦幼
+‧休閒
+‧寵物
+3C
+‧家電
+全館即時榜
+ 
+
+看全部商品分類
+
+
+
+MUJI 無印良品
+設計入味
+安心食材專賣店
+STARBUCKS
+icash 2.0
+日本麗克特
+一起一起食光
+日本美妝生活市集
+天然草本旗艦店
+黑貓探險隊
+CCLIFE囍生活
+funbox
+康是美
+理膚寶水
+日本DUSKIN
+統一生機
+PEKOE
+北歐櫥窗
+nest 巢．家居
+統一時代百貨臺北店
+JIA PLUS
+名模衣櫃
+大學眼鏡
+天和鮮物
+花仙子
+運動旗艦館
+
+
+
+:::網站搜尋
+
+
+
+
+
+全館
+展開
+
+
+全館
+圖書
+影音
+百貨
+雜誌
+售票
+
+搜尋
+
+
+
+熱門關鍵字
+夏日小說節
+霍格華茲圖書館
+Middle+林夕
+生酮飲食適合誰？
+
+
+
+中文書
+
+小小博客來
+2017曬書節
+新書
+預購
+排行榜
+選書
+即將出版
+特價書
+香港出版
+讀者書評
+出版社專區
+分類總覽
+
+
+
+
+博客來中文書電腦資訊程式設計/APP開發C/C++
+
+
+
+
+
+
+顯示模式                                顯示模式圖文模式
+
+
+
+
+        排序依        
+上市日期(新→舊)上市日期(舊→新)暢銷度價格(高→低)價格(低→高)
+
+
+
+
+共有186本
+
+
+
+
+精通C/C++指標：深入系統底層技術
+
+蔡明志，碁峰，出版日期：2017-07-31
+
+同時收錄Java/C#/Python類似指標的Reference主題   ‧探討C/C++語言指標的基本概念及它與變數、陣列、結構和檔案之間的應用。   ‧同時剖析Java、C#、Python類似指標的Reference主題。   ‧分別以......more
+
+
+定價：680元
+優惠價95折 646元
+放入購物車
+
+
+
+
+資料結構：使用C++(精裝本)(附範例光碟)
+
+蔡明志，全華圖書，出版日期：2017-06-30
+
+「資料結構」在資訊學科中是一門重要的課程。本書的內容依不同的主題共分為14章，在各章的每一小節中均附有練習題及類似題，旨在讓讀者測試對該小節所談及的內容是否已全盤瞭解。在各章末有「動動腦時間」...more
+
+
+定價：500元
+優惠價95折 475元
+放入購物車
+
+
+
+
+第一次學C++就上手(第二版)
+
+李啟龍，碁峰，出版日期：2017-05-26
+
+*適量的教學分配：將C++程式設計的重要觀念，巧妙地分配在各章節，讓讀者可以循序漸進地輕鬆學習。   *豐富的學習範例：以做中學的實作精神，提供百題實用程式範例，將精彩的程式範例與程式設計知識，做一...more
+
+
+定價：440元
+優惠價79折 348元
+放入購物車
+
+
+
+
+動畫圖解資料結構：使用C++(附光碟)(第三版)
+
+李春雄，上奇資訊，出版日期：2017-04-27
+
+全國第一本最完整的「影音數位教材」   全國第一本最完整的「動畫電子書教材」   全國第一本附有「自我評量測驗系統」的教材   本書中附有五種程式語言：C / C++ / C# / Java / VB   本書以嚴謹的架構和豐...more
+
+
+定價：550元
+優惠價79折 435元
+放入購物車
+
+
+
+
+C語言入門與進階教學：跨平臺程式設計及最新C11語法介紹
+
+鄭昌傑，國立交通大學，出版日期：2017-04-25
+
+這是一本入門容易且極具深度的C語言學習與參考書籍，由淺至深介紹如何以正確的觀念開發C語言的程式，並介紹C89、C99與C11之間的差異。   由於目前已非單一作業系統獨占市場的時代，學習程式語言必須要有跨...more
+
+
+定價：620元
+優惠價95折 589元
+放入購物車
+
+
+
+
+演算法：使用C++虛擬碼(第五版)
+
+Richard Neapolitan，碁峰，出版日期：2017-04-13
+
+《Foundations of Algorithms》第五版均衡地解說了演算法的設計與複雜度分析，並使用較簡單的符號系統，清晰地解釋了用到的數學概念，特別適合修過代數和離散結構的資訊科系學生。   本書以C ++和Java虛擬...more
+
+
+定價：700元
+優惠價79折 553元
+放入購物車
+
+
+
+
+優化 C++：提高程式效能的有效技術
+
+Kurt Guntheroth，歐萊禮，出版日期：2017-03-31
+
+充滿強效建議的寶典-合乎時宜、蒐羅廣泛且切中要點。它是您瞭解C++新面貌的可靠參考資料。    -Jerry Tan, 美國證券集中保管結算公司資深軟體工程師   處於現今快速變遷與高度競爭的環境中，一套程式的效...more
+
+
+定價：680元
+優惠價79折 537元
+放入購物車
+
+
+
+
+C 語法暨程式庫標準辭典(第二版)
+
+Peter Prinz,Tony Crawford，歐萊禮，出版日期：2017-02-13
+
+涵蓋 C11 標準   『《C 語法暨程式庫標準辭典》是 C 開發人員最佳的生產力工具。2011 C 標準新增了許多功能，這本書能讓你瞭解這些新功能的細節和用法。』 —KPIT 技術公司專案經理 Peter Hessheimer   這...more
+
+
+定價：980元
+優惠價9折 882元
+放入購物車
+
+
+
+
+從工程師到系統架構師之路：用muduo C++開發網路多執行緒應用程式
+
+陳碩，佳魁資訊，出版日期：2016-12-25
+
+本書專註於簡單容易瞭解的程式碼，以及最接近C語言的語法，並且大量應用多執行緒的思路，開發出來的非阻塞式(Non-blocking)網路程式庫，比同級產品快了20%，程式碼卻少了50%，充份展現C++的小而美且快。除...more
+
+
+定價：590元
+優惠價9折 531元
+放入購物車
+
+
+
+
+資料結構：使用C語言(第四版)(精裝本)(附範例光碟)
+
+蔡明志，全華圖書，出版日期：2016-11-10
+
+資料結構在資料相關的領域上是一門重要的學科，本書的內容依不同的主題分為14章。在每一章的每一小節均附有練習題及類似題，旨在讓讀者測試對此一小節所談及的內容，是否已全盤瞭解。在每一章的最後有動動...more
+
+
+定價：490元
+優惠價95折 466元
+放入購物車
+
+
+
+
+C語言程式設計：入門與實務演練(附範例光碟)
+
+吳卓俊，全華圖書，出版日期：2016-10-06
+
+本書適合大學、科技大學與技術學院的資訊相關學系作為入門的程式語言教材，同時也適合初學者自學之用。在全書17個章節中，涵蓋了C語言的入門基礎、資料型態、運算式、格式化的輸入與輸出、條件與流程控制...more
+
+
+定價：650元
+優惠價95折 618元
+放入購物車
+
+
+
+
+職業駭客的告白III部曲：C語言、組合語言與逆向工程的秘密
+
+宋駿瑋/審校,秋聲，博碩，出版日期：2016-09-16
+
+不顧駭客圈的次次警告，也要揭開這業界的秘辛   用盡洪荒之力，挑戰駭客們的底線   秋聲再次低調出手，沒有最駭只有更駭   「就算看到了某些事物，也不代表你真正看見了。」-【秋聲駭客流】Nick Sung   在...more
+
+
+定價：490元
+優惠價9折 441元
+放入購物車
+
+
+
+
+Hello C++程式設計
+
+蔡志敏，松崗，出版日期：2016-08-17
+
+程式設計不僅是技能，也是生活能力   程式設計的目的是為瞭解決或簡化生活中繁瑣的事件，也就是說程式設計的本質除了程式語言之外，系統化的思考、邏輯推理是程式設計中最基本的能力。因此，程式設計不僅...more
+
+
+定價：350元
+優惠價95折 333元
+放入購物車
+
+
+
+
+C語言程式設計與應用(第二版)(附範例光碟)
+
+陳會安，全華圖書，出版日期：2016-08-16
+
+本書採用ANSI-C標準C語言的語法，詳細說明程式設計的觀念和相關技術，強調不只單純學習C語言；更希望能夠建立讀者正確的程式設計觀念，以便讓讀者能夠靈活運用C語言來建立所需的應用程式。   學習程式設計...more
+
+
+定價：620元
+優惠價95折 589元
+放入購物車
+
+
+
+
+C++入門進階：C&C++基本語法/物件導向/例外處理/樣板/STL(適用Visual Studio 2015版)(附光碟)
+
+位元文化，松崗，出版日期：2016-08-05
+
+這是一本觀念與語法並陳、範例與說明並重、入門與進階循序引導的最佳C/C++語言入門至進階教材。書中以生活化的實例說明，讓物件導向觀念融入您的思維，詳細的範例說明，讓程式設計的技巧一覽無遺，即使您...more
+
+
+定價：690元
+優惠價95折 656元
+放入購物車
+
+
+
+
+C++程式設計實習：趣玩Arduino(附範例光碟)
+
+陳會安，全華圖書，出版日期：2016-07-05
+
+本書是一本C++語言的程式設計教材，詳細說明程式設計觀念和相關技術，強調不只單純學習C++語言，更希望能夠建立讀者正確的程式設計觀念、程式邏輯，和軟硬整合的實務應用，以便讀者能夠靈活運用C++語言來...more
+
+
+定價：380元
+優惠價95折 361元
+放入購物車
+
+
+
+
+C語言程式設計實務：立即擁有結構化程式設計能力的16堂課
+
+吳燦銘,榮欽科技，博碩，出版日期：2016-07-04
+
+C語言結構化程式設計語法、函數的觀念、使用者自訂型態等，是後來程式語言參考的依據。本書強調理論與實作並重，依C語言功能循序漸進、由淺入深，以16堂課詳實地介紹C語言精要。 本書大綱如下：   1.基礎...more
+
+
+定價：480元
+優惠價299元
+放入購物車
+
+
+
+
+C++程式設計(第三版)
+
+張耀仁，碁峰，出版日期：2016-06-30
+
+▪ 打造C++程式語言的堅實基礎，內容不僅涵蓋最基本的語法，也深入探討物件導向的主要精神。   ▪ 本書範例程式全部經過最新的 C++編譯器測試，包括：Microsoft Visual C++ Community 2015， Dev-C++......more
+
+
+定價：640元
+優惠價95折 608元
+放入購物車
+
+
+
+
+手機跨界開發高手：用Cocos2d-x及C++縱橫Apple/Android
+
+關東升，佳魁資訊，出版日期：2016-06-30
+
+Cocos2d-x 自發佈第一個版本以來，如今使用者已遍佈全球，數不清的採用Cocos 引擎開發的遊戲橫掃各個暢銷榜單。   Cocos2d-x 遊戲引擎的優勢在於「在一個平臺下開發，多平臺發佈」。   許多知名的開發團隊...more
+
+
+定價：720元
+優惠價9折 648元
+放入購物車
+
+
+
+
+圖解資料結構：使用C語言(第三版)
+
+胡昭民，博碩，出版日期：2016-06-28
+
+對於第一次接觸資料結構課程的初學者來說，過多的內容及不清楚的表達常是造成學習障礙的最主要原因。本書是以C程式語言實作來解說資料結構概念的入門書，內 容淺顯易懂，藉由豐富的圖例來闡述基本概念及應...more
+
+
+定價：480元
+優惠價299元
+放入購物車
+
+
+
+
+從零開始!邁向嵌入式開發 C語言程設設計入門
+
+施威銘研究室，旗標，出版日期：2016-06-21
+
+在嵌入式應用的領域, 由於硬體資源比較侷限, 因此執行速度快、檔案小、語法簡單的 C 語言是開發的首選。不過 C 語言的教材多半是針對電腦程式所設計, 少有為嵌入式的程式設計量身打造的。   本書從最基礎...more
+
+
+定價：480元
+優惠價95折 456元
+放入購物車
+
+
+
+
+學C語言從玩NXT樂高機器人開始(使用NXC)(附光碟)(第二版)
+
+李春雄，上奇資訊，出版日期：2016-06-20
+
+• 銜接正規程式「C語言的先修課程」。   • 對NXT樂高機器人的支援性非常高。   • 具有NXT-G軟體所沒有的除錯功能。   • 「邊寫邊玩」引起動機與增加興趣。...more
+
+
+定價：520元
+優惠價79折 411元
+放入購物車
+
+
+
+
+Effective Modern C++ 中文版：提昇C++11與C++14技術的42個具體作法
+
+Scott Meyers，歐萊禮，出版日期：2016-05-04
+
+面對 C++11 與 C++14，不僅是要熟悉新加入的功能(例如：auto 型別宣告、搬移語義、lambda 運算式及並行支援)，更在於挑戰有效的運用這些功能，讓開發的軟體正確、有效率、易於維護且具有可攜性，這也是寫...more
+
+
+定價：580元
+優惠價95折 551元
+放入購物車
+
+
+
+
+王者歸來-Linux C系統整合開發設計-第四版
+
+吳岳，佳魁資訊，出版日期：2016-04-20
+
+隨著電腦技術的高速發展，Linux系統在伺服器解決方案中的優勢越來越被開發者認同。在電腦就業市場上，基於Linux系統開發的人員需求量也不斷增加。其中，對Linux系統環境下C語言開發人員的需求尤為明顯。由...more
+
+
+定價：880元
+優惠價9折 792元
+放入購物車
+
+
+
+
+快速學會 C++ 程式語言(附綠色範例檔)
+
+洪志維，經瑋，出版日期：2016-04-01
+
+本書特色   作者結合多年C++語言教學經驗與教學實踐，編寫了這本書，力求突出以下特色：    第一、深入淺出，簡潔明快。學習電腦語言是為瞭解決問題，而通過程式深入學習電腦語言又是一種最有效的學習方法...more
+
+
+定價：480元
+優惠價95折 456元
+放入購物車
+
+
+
+
+C++程式設計解題入門
+
+黃建庭，松崗，出版日期：2016-03-25
+
+最清楚的邏輯訓練X易理解的演算解析X超實用的範例練習 一本最適合程式語法初學者的解題策略入門書 10種易上手的演算法設計技巧大公開，用C++解題一點也不難!   本書為銜接C++程式設計與競賽解題最好的跳板...more
+
+
+定價：490元
+優惠價95折 466元
+放入購物車
+
+
+
+
+C++程式設計藝術(第九版)(國際版)(附範例光碟)
+
+佘步雲，全華圖書，出版日期：2016-03-16
+
+本書是針對C++程式設計的初學者所編寫，透過完整的實際程式，並且以先介紹物件導向觀念的教學法，教導讀者如何編寫C++程式。作者強調藉由結構化與物件導向程式設計、軟體再利用，以及元件導向的軟體建構。...more
+
+
+定價：780元
+優惠價95折 741元
+放入購物車
+
+
+
+
+學會C語言：從不懂，到玩上手
+
+陳會安，旗標，出版日期：2016-03-15
+
+觀念和邏輯都具備了，學程式才不會卡住!      C語言是使用最廣泛的程式語言，也是許多初學者入門學習的第一種程式語言，   不過相關書籍總是厚厚一本，而且一翻開就是密密麻麻的程式，初學者根本就看不懂...more
+
+
+定價：480元
+優惠價95折 456元
+放入購物車
+
+
+
+
+戰勝C語言
+
+蔡明志，碁峰，出版日期：2016-02-26
+
+從除錯題目瞭解撰寫程式常犯錯的地方，提升撰寫程式的能力，成為C程式語言高手!   .本書內容淺顯易懂，並配合豐富的範例程式以及圖表加以說明，以利讀者收事半功倍的效果。   .從第四章到第十三章皆附有應...more
+
+
+定價：500元
+優惠價95折 475元
+放入購物車
+
+
+
+
+看圖學C語言(附範例光碟)
+
+陳會安，全華圖書，出版日期：2016-01-18
+
+本書內容是使用ANSI-C標準C語言的語法，針對完全沒有任何程式設計經驗的學生與使用者，或對程式設計有興趣、想瞭解的讀者，所規劃的一本C語言入門教材和自學手冊。為了降低讀者學習程式設計的門檻，和讓讀...more
+
+
+定價：380元
+優惠價95折 361元
+放入購物車
+
+
+
+
+物件導向程式設計：結合生活與遊戲的C++語言(第二版)(附範光例光碟)
+
+邏輯林，全華圖書，出版日期：2016-01-15
+
+本書累積作者多年教學及實務經驗，引入生活中的事物，對照程式中的邏輯概念，讓初學者對物件導向程式設計有概念。書中所附的程式範例，均為具實用性的生活例子，常用的C++語言庫存函式介紹，讓初學者免去...more
+
+
+定價：550元
+優惠價95折 523元
+放入購物車
+
+
+
+
+以C語言解析電腦(第二版)(附程式範例光碟)
+
+蔡英川，全華圖書，出版日期：2016-01-04
+
+資訊業進步太快，新鮮人只能靠自己模糊的記憶來學習業界的知識。作者長期從事編寫底層應用程式，整理多年經驗與資料，並附上範例程式，減少初學者抓不到頭緒的困擾，也給有興趣做這方面的人有個起頭。   ...more
+
+
+定價：650元
+優惠價95折 618元
+放入購物車
+
+
+
+
+實戰C語言：增訂TQC+C程式語言認證模擬試題(附光碟)
+
+蔡明志，碁峰，出版日期：2015-12-10
+
+範例導向：以實例操作引導學習，教學、自修兩相宜   自我評量：提供練習體、問題演練、除錯題與程式實作，讓您自我測試學習成果   認證考試：提供有助於考取TQC+ C語言初級認證之模擬試題   .以淺顯易懂的...more
+
+
+定價：460元
+優惠價95折 437元
+放入購物車
+
+
+
+
+人物場景這麼做：Panda3D、C++、Python專業商用3D引擎
+
+劉暉,李強,林欣，佳魁資訊，出版日期：2015-11-30
+
+Panda3D是世界十大開放原始碼遊戲引擎中，功能最完整、效能最穩定、商業化限制最少的一款。目前，迪士尼仍在使用，世界各地的業界人員也以開放、共用全部原始程式碼方式不斷促進這款遊戲引擎的持續發展。...more
+
+
+定價：860元
+優惠價9折 774元
+放入購物車
+
+
+
+
+C++程式設計實務：立即擁有物件導向設計能力的16堂課
+
+吳惠茹,吳燦銘,榮欽科技，博碩，出版日期：2015-11-27
+
+物件導向設計能讓程式碼較容易擴充、修改及維護，本書中所有的C++程式是以免費的Dev C++來編譯與執行。全書分成四個重點：   1.基礎語法Chapter1~ Chapter4   先簡單說明如何進行C++程式撰寫、編譯、執行...more
+
+
+定價：520元
+優惠價75折 390元
+放入購物車
+
+
+
+
+C++程式設計入門(附光碟)
+
+黃建庭，松崗，出版日期：2015-10-26
+
+最清楚的概念說明X最精確的解題流程X最有趣的範例演練 帶您進入最強大的C++世界!   ※光碟附150個範例程式檔，幫助讀者從實作中，完整認識C++進而學習靈活運用之技巧。   本書先簡述了C++的特性與開發軟體...more
+
+
+定價：490元
+優惠價79折 387元
+放入購物車
+
+
+
+
+用C++開發頂級多執行緒網路函數庫Muduo
+
+陳碩，佳魁資訊，出版日期：2015-09-30
+
+本書專註於簡單容易瞭解的程式碼，以及最接近C語言的語法，並且大量應用多執行緒的思路，開發出來的非阻塞式(Non-blocking)網路程式庫，比同級產品快了20%，程式碼卻少了50%，充份展現C++的小而美且快。除...more
+
+
+定價：590元
+優惠價9折 531元
+放入購物車
+
+
+
+
+C Primer Plus 中文版(第六版)
+
+Stephen Prata，碁峰，出版日期：2015-09-07
+
+《Primer Plus 中文版 第六版》提供最完整內容給想要徹底學習程式設計相關技術的讀者，透過此書的引領，讓您按步就班學習C語言程式設計的概念與技巧。   作者Stephen Prata是位知名作家及學者，本書以兼具...more
+
+
+定價：680元
+優惠價79折 537元
+放入購物車
+
+
+
+
+程式揭秘：從C/C++程式碼探索電腦系統的運作原理[中文原創經典]
+
+左飛，博碩，出版日期：2015-08-31
+
+為您抽絲剝繭揭程式碼背後少為人知的本質與電腦系統運作機制   本書從程式設計角度出發，以 C/C++ 為描述語言，以 Visual C++ 為形式工具，將隱藏在程式碼背後的關於計算機組成原理、電腦作業系統等方面的...more
+
+
+定價：490元
+優惠價299元
+放入購物車
+
+
+
+
+資料結構：C語言實例導引 (附光碟1片)
+
+連志誠，東華，出版日期：2015-06-29
+
+本書特色   1.隨書附贈網頁教學CD：可隨時以網頁瀏覽器直接觀看本書綱要、圖表、範例程式及執行結果。   2.精心設計範例程式與教學圖表：由淺入深、由廣至精地示範、解說資料結構與相關程式寫作的技巧和語...more
+
+
+定價：650元
+優惠價95折 618元
+放入購物車
+
+
+
+
+Windows 8.1市集應用程式開發之鑰：使用XAML及C#(第二版)附DVD
+
+王安邦，上奇資訊，出版日期：2015-06-22
+
+‧是一本內容豐富的書   Windows 8.1 市集應用程式的相關主題都有介紹，包括：含多媒體、網頁、ListView、GridView、WrapGrid、SemanticZoom、RichTextBlock、RichEditBox、頁面......more
+
+
+定價：620元
+優惠價9折 558元
+放入購物車
+
+
+
+
+The C++ Programming Language國際中文版 第四版
+
+Bjarne Stroustrup，碁峰，出版日期：2015-06-10
+
+最新的C++11標準不僅讓程式員可以更清楚，簡單及直接的表達想法，而且可以寫出更有效率的程式碼。Bjarne Stroustrup是C++的設計者與最初的實作者，為了讓程式員可以更有效率地使用C++，他重新制定，擴增以...more
+
+
+定價：980元
+優惠價75折 735元
+放入購物車
+
+
+
+
+C++ 並行程式設計實戰手冊
+
+Anthony Williams，碁峰，出版日期：2015-05-27
+
+多執行緒實務   多核心的多處理器平臺已是十分常見的架構，C++ 在 C++ 11 版標準加入了更好的多執行緒應用程式支援，開發人員必須熟悉新標準中並行功能的原則與技巧，才能夠繼續維持領先。   《C++ 並行程...more
+
+
+定價：680元
+優惠價7折 476元
+放入購物車
+
+
+
+
+學C語言從玩NXT樂高機器人開始(使用NXC)(附光碟)
+
+李春雄，上奇資訊，出版日期：2015-05-27
+
+• 銜接正規程式「C語言的先修課程」。   • 對NXT樂高機器人的支援性非常高。   • 具有NXT-G軟體所沒有的除錯功能。   • 「邊寫邊玩」引起動機與增加興趣。...more
+
+
+定價：520元
+優惠價75折 390元
+放入購物車
+
+
+
+
+最新C程式語言教學範本(第七版)(精裝本)(附範例光碟)
+
+蔡明志，全華圖書，出版日期：2015-05-22
+
+本書的設計是針對C語言的初學者，不論您是否學過其他的程式語言，皆可以很快且愉快的獲得程式設計的觀念。由於筆者瞭解原文書的不當之處，所以本書在設計時即抱持者「簡單易懂」的理念，盼望能夠儘速引導...more
+
+
+定價：490元
+優惠價95折 466元
+放入購物車
+
+
+
+
+同時成為iOS/Android開發大師：使用Cocos2d-x及C++
+
+關東升，佳魁資訊，出版日期：2015-04-30
+
+Cocos2d-x 自發佈第一個版本以來，如今使用者已遍佈全球，數不清的採用Cocos 引擎開發的遊戲橫掃各個暢銷榜單。   Cocos2d-x 遊戲引擎的優勢在於「在一個平臺下開發，多平臺發佈」。   許多知名的開發團隊...more
+
+
+定價：720元
+優惠價9折 648元
+放入購物車
+
+
+
+
+資料結構：C語言實作(第三版)
+
+陳惠貞，碁峰，出版日期：2015-04-29
+
+紮實學習   本書以範例為導向、漸進式的學習架構，詳盡解說各種資料結構，期能讓讀者掌握資料結構的精髓，進而具備開發大型程式的功力。   實戰演練   *隨堂練習：透過隨堂練習，讓學生即刻驗證課堂上的所...more
+
+
+定價：450元
+優惠價95折 428元
+放入購物車
+
+
+
+
+第一次學C就上手：從C程式範例到專題製作(第二版/附光碟)
+
+李啟龍，碁峰，出版日期：2015-04-27
+
+*適量的教學分配：將C程式設計的重要觀念，巧妙地分配在各章節，讓讀者可以循序漸進地輕鬆學習   *豐富的學習範例：秉持從做中學的實作觀念，提供百題實用程式範例，將精彩的程式範例與程式設計知識，做一...more
+
+
+定價：420元
+優惠價95折 399元
+放入購物車
+
+
+
+
+動畫圖解資料結構：使用C++(2版)
+
+李春雄，上奇資訊，出版日期：2015-03-27
+
+全國第一本最完整的「影音數位教材」 全國第一本最完整的「動畫電子書教材」 全國第一本附有「自我評量測驗系統」的教材   本書中附有五種程式語言：C / C++ / C# / Java / VB   本書以嚴謹的架構和豐富的...more
+
+
+定價：550元
+優惠價9折 495元
+放入購物車
+
+
+
+
+C/C++教學範本(第三版)
+
+洪錦魁，上奇資訊，出版日期：2015-03-27
+
+這是一本學習C/C++語言的完整教材。整本書從基本的C語言觀念開始介紹，講解程式的流程控制、函數、指標，以及一些簡單的資料結構，再配合C++語言章節，除了讓讀者可精通C語言外，又可學會C++的基礎知識。 ...more
+
+
+定價：500元
+優惠價9折 450元
+放入購物車
+
+
+
+
+實作中精熟C語言
+
+許金童，松崗，出版日期：2015-01-26
+
+‧全書超過100個實例示範   ‧超過200個參考程式對照    ‧超過1000個題目演練   從理論到實作，從實作中精熟程式運用，輕鬆進入C殿堂，C語言一次掌握。   全書共分十三章，由淺入深，可協助初學「計算機程式...more
+
+
+定價：580元
+優惠價75折 435元
+放入購物車
+
+
+
+
+C語言程式設計(第三版)(附範例光碟)
+
+劉紹漢，全華圖書，出版日期：2015-01-21
+
+1.本書以介紹ANSI_C為主軸，內容從C語言的基本特性、各種資料型態的內部結構，系統所提供的指令、函數…一直到程式設計的觀念，以幫助讀者建立一個完整的程式設計基礎。   2.全書共分下麵七章：第一章說明C...more
+
+
+定價：620元
+優惠價95折 589元
+放入購物車
+
+
+
+
+萬無一失的程式碼：終結C&C++軟體漏洞
+
+Robert C. Seacord，博碩，出版日期：2014-12-31
+
+~釐清造成軟體漏洞的主因及避免的方式~   一些常見且可被利用的軟體弱點通常都來自可避免的軟體瑕疵。   本書指出並解釋這些原因且逐步介紹了避免的方法。此外，本書鼓勵程式設計師採用最好的安全方法並擁...more
+
+
+定價：720元
+優惠價299元
+放入購物車
+
+
+
+
+C++全方位學習(修訂第二版)(適用Dev C++與Visual C++)
+
+古頤榛，碁峰，出版日期：2014-12-29
+
+第一版榮獲國家圖書館民國100年狀元推薦閱讀書單科學類第15名，也是唯二進榜的程式設計書籍!   *本書是作者累積二十年教學與著作經驗完成，書的章節架構採循序漸進、難易適中，內容說明簡單扼要、巨細靡遺...more
+
+
+定價：580元
+優惠價95折 551元
+放入購物車
+
+
+
+
+C++標準庫：學習教本與參考工具(第二版)
+
+Nicolai M. Josuttis，碁峰，出版日期：2014-12-15
+
+全球銷售冠軍之C++教本 — 如今進化至C++11 —   C++標準庫提供一整套用途廣泛的classes和interfaces，大大擴充了C++語言。然而這個巨大的產品無法自帶完善的解釋。為能夠完整使用其所有組件並受惠於其強大...more
+
+
+定價：1200元
+優惠價75折 900元
+放入購物車
+
+
+
+
+數值分析：使用C語言(第三版)(附CD)
+
+張海,王勇,程曉旭,耿魯靜，佳魁資訊，出版日期：2014-11-28
+
+C語言以它的高效性和靈活性著稱，也是應用最廣泛的語言之一。工程應用中，也經常會使用C語言來編寫各種各樣的數值演算法或非數值演算法。對於應用C語言演算法的初學者和愛好者來說，一本編排簡單、容易上...more
+
+
+定價：580元
+優惠價9折 522元
+放入購物車
+
+
+
+
+C++程式設計原理與實務 第二版(Programming Principles and Practice Using C++)
+
+Bjarne Stroustrup，上奇資訊，出版日期：2014-09-30
+
+C++發明人親自講解程式開發   為真實世界開發作準備   本書假設你期待能開發出簡潔的程式，無論你是軟體開發者或身在其它技術的領域。   著重基本概念及範本   本書深度說明基礎概念及技術，而非一般傳統...more
+
+
+定價：990元
+優惠價9折 891元
+放入購物車
+
+
+
+
+實作中精熟C++ (附CDx1)
+
+許金童，松崗，出版日期：2014-09-24
+
+全書超過200個參考程式，超過1000個題目。 從理論到實作，從實作中精熟程式運用，輕鬆進入C殿堂，C++語法一次掌握。   全書共分十七章，由淺入深，向下整合了「C語言」，完全包括了「C語言」的優點與特色...more
+
+
+定價：620元
+優惠價75折 465元
+放入購物車
+
+
+
+
+物件導向程式設計：結合生活與遊戲的C++語言(附範例光碟)
+
+邏輯林，全華圖書，出版日期：2014-09-04
+
+本書累積作者多年教學及實務經驗，引入生活中的事物，對照程式中的邏輯概念，讓初學者對物件導向程式設計有fu。書中所附的程式範例，均為具實用性的生活例子，常用的C++語言庫存函式介紹，讓初學者免去浪...more
+
+
+定價：550元
+優惠價95折 523元
+放入購物車
+
+
+
+
+王者歸來：Panda3D、C++、Python商業化3D遊戲引擎大揭秘
+
+劉暉,李強,林欣,王學光,陳小東，佳魁資訊，出版日期：2014-08-29
+
+Panda3D是世界十大開放原始碼遊戲引擎中，功能最完整、效能最穩定、商業化限制最少的一款。目前，迪士尼仍在使用，世界各地的業界人員也以開放、共用全部原始程式碼方式不斷促進這款遊戲引擎的持續發展。...more
+
+
+定價：860元
+優惠價9折 774元
+放入購物車
+
+
+
+
+C & C++程式設計經典-第三版(適用Dev C++與Visual C++ 2013)
+
+吳明哲/策劃,蔡文龍/著，碁峰，出版日期：2014-08-22
+
+本書共分C語言與C++兩個部份：第1~15章詳實介紹C語言程式設計技巧；第16~22章介紹C++物件導向程式設計、樣版、例外處理與STL等進階議題。   書中範例淺顯易懂且具代表性與實用性，非常適合教學與自學，是...more
+
+
+定價：600元
+優惠價95折 570元
+放入購物車
+
+
+
+
+你也可以和大師這麼接近：用C++開發頂級多執行緒網路函數庫Muduo
+
+陳碩，佳魁資訊，出版日期：2014-07-30
+
+想學好C++就從全球第一個華人開發的頂級C++網路程式庫Muduo開始。本書主要說明採用現代C++ 在x86-64 Linux 上撰寫多執行緒TCP 網路服務程式的主流標準技術，重點說明多執行緒網路服務器的一種IO 模型，即o...more
+
+
+定價：590元
+優惠價9折 531元
+放入購物車
+
+
+
+
+C++程式設計導論 (第三版)
+
+Y. Daniel Liang，碁峰，出版日期：2014-07-29
+
+*本書以問題導向方式教授程式設計，強調的是問題解決而非僅是語法介紹，書中運用發人深省的問題介紹程式設計。前面幾章的核心思維是問題解決，適當的語法與函式庫介紹讓讀者可以學習撰寫程式解決問題。   ...more
+
+
+定價：620元
+優惠價95折 589元
+放入購物車
+
+
+
+
+Visual C++ Web程式設計
+
+黃嘉輝，上奇資訊，出版日期：2014-06-20
+
+本書以Visual C++和Microsoft.NET Framework為基礎，討論與網路有關之議題，除了網路概論、各類Socket之比較、伺服端與用戶端程式架構、通訊協定等主題外，還說明Microsoft .NET Framework與......more
+
+
+定價：620元
+優惠價9折 558元
+放入購物車
+
+
+
+
+8051入門：C語言輕鬆學
+
+楊明豐，碁峰，出版日期：2014-05-13
+
+入門經典，易學易用的初學指引!   8051 C語言必修啟蒙書：   本書是以從未學習過任何單晶片的入門初學者角度，來設計多元化的實習單元，以最簡單的方式教導讀者輕鬆學習8051程式設計。專題實作單元中皆包...more
+
+
+定價：350元
+優惠價95折 333元
+放入購物車
+
+
+
+
+C++沉思錄
+
+Andrew Koenig,Barbara E. Moo/合著,孟岩,陳錦輝/審校，博碩，出版日期：2014-04-30
+
+這本書是一本C++的經典之作，為了讓台灣的讀者不會有遺珠之憾，博碩文化特地引進本書，並將之編為《名家名著》系列第05號書籍。兩位作者的來頭都不小(請見作者簡介)，而本書更是作者十年磨一劍的經典之作...more
+
+
+定價：520元
+優惠價7折 364元
+放入購物車
+
+
+
+
+C++ API 設計
+
+Martin Reddy，碁峰，出版日期：2014-04-29
+
+以實用的API設計技術，產出耐久且強韌的程式碼   「Martin Reddy從他對大型協同開發的軟體專案經驗中提出模式和實務做法，為個人開發者以及組織提供真正的價值。《C++ API設計》探索了技術與非技術上往往...more
+
+
+定價：550元
+優惠價75折 413元
+放入購物車
+
+
+
+
+21世紀的C語言：史上最簡潔程式語言Go Web開發到底
+
+謝孟軍，佳魁資訊，出版日期：2014-04-29
+
+主要分三部分，第一部分是Go 語言的基礎語法，介紹Go 語言的一些語法特性、環境設定和開發工具。第二部分是Web 開發，介紹Go Web 的基本原理、表單處理、資料庫操作、Session 和Cookie 處理、文字處理、So...more
+
+
+定價：520元
+優惠價9折 468元
+放入購物車
+
+
+
+
+第一次學C++就上手(附光碟)
+
+李啟龍　,鄭任翔，碁峰，出版日期：2014-04-22
+
+*適量的教學分配：將C++程式設計的重要觀念，巧妙地分配在各章節，讓讀者可以循序漸進地輕鬆學習。   *豐富的學習範例：以做中學的實作精神，提供百題實用程式範例，將精彩的程式範例與程式設計知識，做一...more
+
+
+定價：440元
+優惠價9折 396元
+放入購物車
+
+
+
+
+資料結構：使用C語言(附CD)
+
+陳會安，松崗，出版日期：2014-04-11
+
+資料結構是大專院校資訊相關科系的必修課程之一，對於初接觸資料結構的初學者來說，缺少實際的圖例輔助抽象化的概念，是最辛苦的事。   本書超過400幅圖例，以最基本的Step By Step方式示範資料結構的基本...more
+
+
+定價：520元
+優惠價95折 494元
+放入購物車
+
+
+
+
+王者歸來 Linux C系統整合開發設計(第三版)
+
+吳岳，佳魁資訊，出版日期：2014-03-26
+
+隨著電腦技術的高速發展，Linux系統在伺服器解決方案中的優勢越來越被開發者認同。在電腦就業市場上，基於Linux系統開發的人員需求量也不斷增加。其中，對Linux系統環境下C語言開發人員的需求尤為明顯。由...more
+
+
+定價：880元
+優惠價9折 792元
+放入購物車
+
+
+
+
+Linux程式設計完全攻略：記憶體管理×檔案系統×多執行緒×網路×多媒體
+
+楊宗德、呂光宏、劉雍 編著；廖信彥/審校，博碩，出版日期：2014-02-27
+
+重要觀念完整說明 學習進程精心設計   本書圍繞Linux作業系統「一切都是檔案」的特點，描述Linux作業系統下應用層「一段執行單元(處理程序)對系統資源(CPU、記憶體、磁碟、周邊與網路設備)的管理」，重點...more
+
+
+定價：720元
+優惠價66折 475元
+放入購物車
+
+
+
+
+快速學會 C++ 程式語言(附VCD)
+
+洪志維，易習圖書，出版日期：2014-02-01
+
+作者結合多年C++語言教學經驗與教學實踐，編寫了這本書，力求突出以下特色：   第一、深入淺出，簡潔明快。學習電腦語言是為瞭解決問題，而通過程式深入學習電腦語言又是一種最有效的學習方法。為此，在透...more
+
+
+定價：480元
+優惠價95折 456元
+放入購物車
+
+
+
+
+Windows 8.1市集應用程式開發之鑰-使用XAML及C#
+
+王安邦，上奇資訊，出版日期：2014-01-20
+
+‧是一本內容豐富的書 Windows 8.1 市集應用程式的相關主題都有介紹，包括：含多媒體、網頁、ListView、GridView、WrapGrid、SemanticZoom、RichTextBlock、RichEditBox、頁面之間......more
+
+
+定價：620元
+優惠價9折 558元
+放入購物車
+
+
+
+
+征服C語言程式設計：資料結構與程式設計競賽精解(第二版)
+
+李啟龍，松崗，出版日期：2014-01-08
+
+本書一共分為18章，談論C語言與資料結構的重點，為求達到『從做中學』的目標，本書設計了超過百題的程式範例，幫助讀者學習C語言與基本資料結構。每個程式範例大致分為『程式設計目標』、『參考程式碼』和...more
+
+
+定價：460元
+優惠價95折 437元
+放入購物車
+
+
+
+
+IVOR HORTON’S BEGINNING VISUAL C++ 2013
+
+HORTON，全華圖書，出版日期：2014-01-01
+
+Learn C++ with the best tutorial on the market! Horton s unique tutorial approach and step-by-step guidance have helped ......more
+
+
+定價：1400元
+優惠價1400元
+放入購物車
+
+
+
+
+C/C++教學範本(第二版)
+
+洪錦魁，上奇資訊，出版日期：2013-11-29
+
+這是一本學習C/C++語言的完整教材。   整本書從基本的C語言觀念開始介紹，講解程式的流程控制、函數、指標，以及一些簡單的資料結構，再配合C++語言章節，除了讓讀者可精通C語言外，又可學會C++的基礎知識...more
+
+
+定價：500元
+優惠價9折 450元
+放入購物車
+
+
+
+
+透視C語言指標：深度探索記憶體管理核心技術
+
+Richard Reese，歐萊禮，出版日期：2013-10-25
+
+深入理解 C 語言指標與記憶體管理能提昇程式設計能力。本書以實務應用為導向，介紹指標在動態記憶體操作、輔助資料結構實作與存取硬體的各種機制，在書中作者透過記憶體模型為讀者示範，如何將指標與陣列...more
+
+
+定價：480元
+優惠價95折 456元
+放入購物車
+
+
+
+
+Visual C++ 2012 教學手冊
+
+Ivor Horton，碁峰，出版日期：2013-10-09
+
+讓權威作者引領您學習Visual C++ 2012   Ivor Horton所撰寫的書籍能獲得長久好評的原因是：以獨特與易於理解的講授方式，讓初學者與有經驗的程式設計師皆能有所獲益。   本書內容針對標準C++及Visual C++ ...more
+
+
+定價：780元
+優惠價66折 515元
+放入購物車
+
+
+
+
+C++程式設計輕鬆入門
+
+黃品梅/編著，五南，出版日期：2013-10-01
+
+C++語言是一種功能強大的電腦軟體語言，有關它的應用無所不在，從電腦的作業系統、大型應用軟體到日常生活中的汽車、智慧手機、家電等電器的控制軟體與應用軟體等，大部分都是以C++語言編寫的。學會C++語...more
+
+
+定價：580元
+優惠價299元
+放入購物車
+
+
+
+
+動畫圖解資料結構：使用C++(附光碟)
+
+李春雄，上奇資訊，出版日期：2013-05-29
+
+本書以嚴謹的架構和豐富的內容帶領讀者進入資料結構的殿堂，搭配多樣的內容和圖片說明，讓您更快掌握程式技巧，迅速提升作業效率。 本書特點   全國第一本最完整的「影音數位教材」   全國第一本最完整的...more
+
+
+定價：550元
+優惠價9折 495元
+放入購物車
+
+
+
+
+單晶片C語言教學範本(附光碟)
+
+陳正義、李建華，碁峰，出版日期：2013-04-11
+
+以單晶片、微處理器原理及實習課程為設計方針，循序漸進設計單晶片應用課程的內容。本書採用C語言程式設計，以單晶片原理及控制技巧為基礎，實作為主、理論為輔，講授MCS-8051內部構造及輸入/輸出控制之基...more
+
+
+定價：520元
+優惠價9折 468元
+放入購物車
+
+
+
+
+最新C++物件導向程式設計實例入門(第四版)(附光碟)
+
+高橋麻奈，博碩，出版日期：2013-04-03
+
+這是一本專為初學者所設計的入門書，內容淺顯易懂，先從最基本的程式概念開始說明，再加上類別、成員、物件、建構式、繼承、多載、範本等物件導向的概念，引領讀者進入物件導向程式設計的全新領域。   本...more
+
+
+定價：520元
+優惠價75折 390元
+放入購物車
+
+
+
+
+數值分析：使用C語言(第二版)
+
+程曉旭、耿魯靜、張海、王勇，佳魁資訊，出版日期：2013-03-27
+
+C語言以它的高效性和靈活性著稱，也是應用最廣泛的語言之一。工程應用中，也經常會使用C語言來編寫各種各樣的數值演算法或非數值演算法。對於應用C語言演算法的初學者和愛好者來說，一本編排簡單、容易上...more
+
+
+定價：580元
+優惠價9折 522元
+放入購物車
+
+
+
+
+王者歸來：Linux C系統整合開發設計(第二版)
+
+吳岳，佳魁資訊，出版日期：2013-03-22
+
+隨著電腦技術的高速發展，Linux系統在伺服器解決方案中的優勢越來越被開發者認同。在電腦就業市場上，基於Linux系統開發的人員需求量也不斷增加。其中，對Linux系統環境下C語言開發人員的需求尤為明顯。由...more
+
+
+定價：880元
+優惠價9折 792元
+放入購物車
+
+
+
+
+Linux 應用程式設計：使用C(附光碟)
+
+楊樹青、王歡，上奇資訊，出版日期：2013-02-20
+
+全書透過多樣化的程式實例，讓讀者快速掌握在Linux系統下，使用C語言進行程式開發的方法與技巧，內容主要包括在Linux系統下使用C語言程式設計的環境介紹、C語言編輯器、調試工具和自動維護工具的使用、檔...more
+
+
+定價：540元
+優惠價9折 486元
+放入購物車
+
+
+
+
+最新C語言程式設計實例入門(第四版)
+
+高橋麻奈，博碩，出版日期：2013-02-19
+
+這是一本專為初學者所設計的入門書，內容淺顯易懂，先從最基本的程式架構開始說明，再逐步介紹變數、條件處理、陣列、函數、指標、資料型態、檔案的輸出入等重點，使讀者循序漸進地完成更完整的程式。   ...more
+
+
+定價：490元
+優惠價9折 441元
+放入購物車
+
+
+
+
+C程式語言導論與實例設計(第二版)(精裝本)(附範例光碟)
+
+呂慈純、蔡文輝、張真誠，全華圖書，出版日期：2013-01-21
+
+乘著C的翅膀 穿梭在程式的天空 科技不斷進步，程式語言也從早期的組合語言、BASIC、Fortran、COBOL、C，進步到現在的Java、Perl、Lisp等高階語言。不論是初次接觸程式的新手，或者是經驗豐富的資訊人員，...more
+
+
+定價：600元
+優惠價95折 570元
+放入購物車
+
+
+
+
+C++ Primer Plus中文版(第六版)
+
+Stephen Prata，碁峰，出版日期：2012-11-15
+
+涵蓋最新的C++11   C++ Primer Plus 一書是為程式設計師與開發人員精心設計，且對於每個主題核心皆有完整說明的教學書籍。主要教導的內容包含了程式碼結構化與由上到下的設計原則、以及類別、繼承、樣板、...more
+
+
+定價：780元
+優惠價79折 616元
+放入購物車
+
+
+
+
+深入淺出 C
+
+David Griffiths、Dawn Griffiths，歐萊禮，出版日期：2012-11-05
+
+你將從本書學到什麼?   可曾冀望有什麼比較簡單的方法能夠讓你輕鬆學會 C 語言嗎?《深入淺出 C》正是專為此目的而設計的一段完整學習體驗，教導你如何以卓越的 C 語言技巧建構出良好的程式。本書運用超越...more
+
+
+定價：880元
+優惠價9折 792元
+放入購物車
+
+
+
+
+Linux系統程式設計：使用C語言(附光碟)
+
+劉冰、邵文豪、孫興義、趙廷濤，上奇資訊，出版日期：2012-09-26
+
+本書包含如何使用Linux系統、C語言基礎介紹、以及在Linux系統下如何使用C語言設計Linux系統程式。   .自基礎講解Linux系統檔案、目錄、磁碟操作以及Shell程式設計，及GCC、GDB、Make…的使用。結合MySQL，...more
+
+
+定價：580元
+優惠價9折 522元
+放入購物車
+
+
+
+
+由片語學習 C 程式設計
+
+劉邦鋒，國立臺灣大學出版中心，出版日期：2012-09-06
+
+作者劉邦鋒教授，感念在臺大資訊系唸書時，教過他的老師們，回憶從課堂上學習到寫程式是多麼有趣的事情，能夠一寫就是三十年。他將這份熱誠投註在教學及寫作上，經過多年教學累積經驗，試教兩年，不斷精進...more
+
+
+定價：400元
+優惠價79折 316元
+放入購物車
+
+
+
+
+資料結構 使用C語言(第三版)
+
+李春雄，上奇資訊，出版日期：2012-08-27
+
+「資料結構」一直是電腦資訊相關科系的必修核心課程之一，而本書以淺顯易懂的方式，透過圖文並茂、圖解說明豐富的內容，讓您學習如何設計良好的資料結構及演算法，進而設計高效率的程式。並且藉由學習各種...more
+
+
+定價：490元
+優惠價9折 441元
+放入購物車
+
+
+
+
+C教學範本(第二版)
+
+洪錦魁，上奇資訊，出版日期：2012-08-10
+
+這是一本C語言學習的完整教材，從最基本的C語言觀念開始介紹，逐步講解程式流程控制、函數、指標…，以及一些簡單的資料結構；每一章節均附上完整實例輔以解說，相信只要遵循本書步驟，必可在很短時間內學...more
+
+
+定價：450元
+優惠價9折 405元
+放入購物車
+
+
+
+
+C/C++技研手冊 第二版(附光碟)
+
+文淵閣工作室，松崗，出版日期：2012-08-06
+
+本書以淺顯的方式介紹C++語言，使用豐富的範例、詳盡的原理解說，並加入圖解觀念，透過「視覺引導，做中學」的過程，達到易讀易懂的目的，帶領學習者進入 C++ 語言的程式設計殿堂。 本書特色   ◆圖解觀念...more
+
+
+定價：350元
+優惠價9折 315元
+放入購物車
+
+
+
+
+程式設計：使用C++(附範例光碟)
+
+黃建庭，全華圖書，出版日期：2012-06-04
+
+透過本書能帶領讀者進入C++的世界，並能瞭解程式設計，進而喜歡上程式設計，活用程式語言的選擇結構、迴圈結構、函式與陣列製作出解決問題的程式。...more
+
+
+定價：420元
+優惠價95折 399元
+放入購物車
+
+
+
+
+C語言從零開始(附CD)
+
+資訊教育研究室，博碩，出版日期：2012-04-30
+
+編寫本書的主要目的是為因應如何讓初學者能快速進入C & C++程式設計的殿堂，並將所學應用到職場上而編寫的教科書。為避免讓初學者開始學習程式設計便產生挫折感，先由簡單的C語言程式基本流程，透過書中精...more
+
+
+定價：520元
+優惠價9折 468元
+放入購物車
+
+
+
+
+樂在C語言(第二版)(附光碟)
+
+蔡明志，碁峰，出版日期：2012-02-13
+
+漫畫圖解：用生動的漫畫詮釋C語言，帶您輕鬆掌握學習重點   範例導向：以實例操作引導學習，教學、自修兩相宜   自我評量：提供上機實習與程式實作，讓您自我測試學習成果   ■ 以漫畫說明每一章的用意，帶...more
+
+
+定價：350元
+優惠價9折 315元
+放入購物車
+
+
+
+
+C語言程式設計入門與實作
+
+吳燦銘、胡昭民，博碩，出版日期：2012-01-31
+
+學習C語言程式設計最有效的方式，就是在教導過程中讓學習者大量參與程式的實際撰寫，並從這些程式的實作經驗中，熟悉各項C程言的重要指令及語法，大量吸收程式偵錯及程式規劃的能力。   為了有效降低學習...more
+
+
+定價：450元
+優惠價299元
+放入購物車
+
+
+
+
+C++程式設計範例入門(最新版)(附光碟)
+
+王震寰，上奇資訊，出版日期：2012-01-18
+
+C++程式語言一直是大專院校資訊相關科系重要的程式語言課程。   本書淺顯易懂，強調程式範例多，且著重習題的質與量，循序漸進且錯誤率低，讓老師教授與學生學習的過程平順、易上手。   書中的程式範例高...more
+
+
+定價：480元
+優惠價9折 432元
+放入購物車
+
+
+共2頁
+1
+2
+下一頁
+        跳到
+12頁
+
+
+
+
+中文書書籍分類
+
+電腦資訊程式設計/APP開發C/C++
+
+
+縮小搜尋範圍
+
+依出版日期搜尋
+
+即將出版最近一個月最近三個月最近半年最近一年更多最近三年三年以前
+
+
+依價格帶搜尋
+
+249元以下250元~499元500元~799元800元以上
+
+
+依購買狀態搜尋
+
+目前可購買目前不可購買
+
+
+
+
+關於我們
+關於博客來
+關於PCSC
+隱私權政策
+服務條款
+人才募集
+
+會員服務
+加入會員
+新手上路
+會員分級
+訂閱電子報
+24小時隔日取貨
+行動博客來
+切換行動版
+
+合作提案
+企業採購
+福利平臺
+加入供應商
+AP策略聯盟
+異業合作
+
+客服中心
+查詢帳號密碼
+客服信箱
+客服專線
+客服中心Q&A
+
+好站連結
+OKAPI 閱讀生活誌
+三魚網
+售票網
+博客來Youtube
+博客來粉絲團
+
+得獎認證
+天下雜誌2017金牌服務大賞
+2016新世代最嚮往企業
+SSL憑證服務
+數位時代2012年台灣網站100強
+電子發票推廣標章
+dpmark資料隱私保護標章
+數位時代2011台灣電子商務TOP50強
+
+客戶服務專線：02-26535588傳真：02-27885008服務時間：週一~六 8:00~19:00，週日、例假日 9:00~18:00，365天全年無休
+博客來數位科技股份有限公司地址：臺灣 115 臺北市南港區八德路四段768巷1弄18號B1之1
+Copyright © since 1995 books.com.tw All Rights Reserved.
+
+
+
+
+
+博客來-中文書>電腦資訊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::相關網站
+
+博客來
+售票網
+企業採購
+福利平臺
+
+:::會員服務|快速功能
+
+0結帳
+登入
+加入會員
+購物金
+
+
+購物金 0
+福利金 0
+E-Coupon 0 張
+
+會員專區
+
+
+
+
+
+關閉廣告
+
+
+展開廣告
+
+
+回博客來首頁
+
+
+
+
+
+客服公告：2017/7/1起，配合政府施行電子發票政策，三聯式發票將全面採用電子化服務。詳情
+
+
+
+
+
+
+
+
+
+
+移動滑鼠展開全站分類
+:::全站分類
+
+全站分類
+旗艦店
+
+
+
+中文書
+簡體書
+‧外文書
+雜誌
+‧MOOK
+CD
+‧DVD
+‧售票
+保養
+‧彩妝
+‧醫美
+日用
+‧洗髮
+‧沐浴
+服飾
+‧機能服
+‧鞋襪
+包包精品
+‧錶飾配件
+美食
+‧飲品
+‧食材
+保健
+‧纖體
+‧醫材
+文具
+‧動漫
+‧療癒
+餐廚生活
+‧家居生雜
+婦幼
+‧休閒
+‧寵物
+3C
+‧家電
+全館即時榜
+ 
+
+看全部商品分類
+
+
+
+MUJI 無印良品
+設計入味
+安心食材專賣店
+STARBUCKS
+icash 2.0
+日本麗克特
+一起一起食光
+日本美妝生活市集
+天然草本旗艦店
+黑貓探險隊
+CCLIFE囍生活
+funbox
+康是美
+理膚寶水
+日本DUSKIN
+統一生機
+PEKOE
+北歐櫥窗
+nest 巢．家居
+統一時代百貨臺北店
+JIA PLUS
+名模衣櫃
+大學眼鏡
+天和鮮物
+花仙子
+運動旗艦館
+
+
+
+:::網站搜尋
+
+
+
+
+
+全館
+展開
+
+
+全館
+圖書
+影音
+百貨
+雜誌
+售票
+
+搜尋
+
+
+
+熱門關鍵字
+夏日小說節
+霍格華茲圖書館
+Middle+林夕
+生酮飲食適合誰？
+
+
+
+中文書
+
+小小博客來
+2017曬書節
+新書
+預購
+排行榜
+選書
+即將出版
+特價書
+香港出版
+讀者書評
+出版社專區
+分類總覽
+
+
+
+
+博客來中文書電腦資訊
+
+
+
+輪播
+
+
+
+
+
+
+第0則-活動名稱上稿第1則-活動名稱上稿第2則-活動名稱上稿第3則-活動名稱上稿
+
+
+
+
+熱門關鍵字：
+
+AI人工智慧
+資訊安全 / 防毒
+行動APP開發
+物聯網應用
+遊戲開發
+UI / UX
+資料挖礦 / 大數據
+Minecraft攻略
+簡報軟體應用
+
+
+
+
+
+
+搶眼新書
+
+
+
+
+
+認識資料分析與資料科學的第一本書！
+
+作者：Anil Maheshwari
+優惠價：79折356元
+
+
+
+敏捷方法與最新軟體開發原則的完美結合。
+
+作者：Robert C. Martin,Micah Martin
+優惠價：79折624元
+
+
+
+數據資料視覺化，從實例學圖表製作的技術。
+
+作者：Jorge Camões
+優惠價：79折490元
+
+
+
+
+
+
+
+
+
+第1頁第2頁
+上頁
+下頁
+
+
+
+
+專為程式初學者量身打造的Scratch程式！
+
+作者：杉浦學/著,阿部和廣/審定
+優惠價：79折300元
+
+
+
+世界上最簡單、最詳盡全面的入門百科全書！ 
+
+作者：Yumi Makino
+優惠價：79折332元
+
+
+
+徹底瞭解Google Cloud平臺的優勢！
+
+作者：蘇培欣,胡際善,洪宜禎
+優惠價：79折300元
+
+
+
+Excel教我的那些理財記帳、投資管理大小事
+
+作者：艾凡斯
+優惠價：79折157元
+
+
+
+榮獲日本遊戲開發者奧斯卡著述賞大獎！
+
+作者：中嶋謙互
+優惠價：79折466元
+
+
+
+最適合初學入門、現學現用的21堂關鍵課！
+
+作者：鄧文淵/總監製,文淵閣工作室/編著
+優惠價：79折379元
+
+
+
+
+
+
+電腦資訊暢銷榜
+
+
+Excel VBA 職場即用255招：不會寫程式也能看懂的VBA無痛指導TensorFlow+Keras深度學習人工智慧實務應用Google必修的圖表簡報術：Google總監首度公開絕活，教你做對圖表、說對話，所有人都聽你的！精通 Python：運用簡單的套件進行現代運算迎接AI新時代：用圍棋理解人工智慧從人到人工智慧，破解AI革命的68個核心概念：實戰專家全圖解 × 人腦不被電腦淘汰的關鍵思考比別人快一步的 Google 工作術：從職場到人生的100個聰明改造提案IBM首席顧問最受歡迎的圖表簡報術：掌握69招視覺化溝通技巧，提案、企畫、簡報一次過關！Excel函數精用密技字典（第二版）深度學習快速入門：使用TensorFlow
+
+more
+
+
+
+
+
+編輯推薦
+
+
+迎接AI新時代：用圍棋理解人工智慧
+
+作者：王銘琬
+優惠價：79折277元
+
+
+一位頂尖職業棋士全力揮棒的報告書！
+
+2016年韓國棋王李世乭與AlphaGo的一戰，人類敗北後，世界開始認真面對AI時代的來臨！認識AI最前線的圍棋AI，是思考人類如何面對AI的第一站！世界唯一參與圍棋AI開發的一流棋士王銘琬，詳盡敘述圍棋AI的過去、現在，並以職業棋士觀點提示人類如何因應與AI共存的未來。...more
+
+
+
+
+
+編輯推薦
+
+
+R語言：金融演算法與台指期貨程式交易實務
+
+作者：酆士昌
+優惠價：78折390元
+
+
+活用R語言實作金融科技與資料分析！
+
+本書從R語言的使用、函數介紹與圖表繪製切入介紹，快速地對R語言具備基本的使用技能，接著介紹國內的交易所與商品，瞭解交易的規則與資訊揭示的意涵，隨後切入期貨程式交易的領域，從資料的研判到策略的建構，從而能加以整合應用。...more
+
+
+
+
+
+
+
+
+
+【Python】大數據時代最受歡的程式語言！
+
+
+    支援豐富的資料型態以及直覺又精簡的語法，在Facebook、Google等大型企業，已是最多工程師使用的語言。
+
+
+Python自動化的樂趣網站擷取：使用Python運用簡單的套件進行現代運算。
+
+
+
+
+【2017曬書節】高CP值暢銷書輕鬆選！滿千再送百元購物金！
+特價199物聯網專案實作樂高機器人軟體開發速成特價249樹莓派輕鬆學成為一線程式設計師Google超級密技特價269虛擬實境狂潮認識虛擬化技術VBA一點都不難！特價299叫車App設計解密InDesign技法遊戲開發實戰超值66折3D遊戲設計全攻略Arduino輕鬆入門Node.js設計模式
+
+
+主題活動
+
+
+
+
+
+Excel職場新人300招破解AI革命的68個核心概念Swift 3自學力
+
+
+
+
+電腦資訊分類暢銷推薦
+
+
+
+辦公軟體應用
+
+
+Excel 公式+函數職場專用超級辭典：新人、老鳥到大師級都需要的速查指引
+
+作者：王國勝
+優惠價：79折427元
+
+
+【11大類函數全面收錄】三角函數、日期與時間函數、資料庫函數、財務函數、統計函數、文字函數……等【函數一堆不知道怎麼用？】分門別類用途更清晰，公式範例教你如何舉一反三【職場高手必學超級函數】財務、人資、業
+
+
+程式設計/APP開發
+
+
+全能Android絕對正確培養聖經
+
+作者：顧浩鑫
+優惠價：79折569元
+
+
+Android的書這麼多，要找到真正幫你培養全職能的書卻不容易。這是一本來自第一線網路公司的真正實作產品方案的完整過程，而非簡單說明一下Android的函數庫，開發原理等基礎書籍。全書包括了規劃、設計、測
+
+
+電腦硬體/創客
+
+
+DIY聲光動作秀：用Arduino和Raspberry Pi打造有趣的聲光動態專題
+
+作者：西蒙‧孟克
+優惠價：79折363元
+
+
+本書將帶領你由淺入深地用Arduino和RaspberryPi創造並控制動作、燈光與聲音，從基礎開始進行各種動態實驗和專題！Arduino是一臺簡單又容易上手的微控制器，而RaspberryPi則是一臺微型的Linux電腦。本書
+
+
+網路/架站
+
+
+圖解TCP/IP網路通訊協定（涵蓋IPv6）
+
+作者：竹下隆史,村山公保,荒井透,苅田幸雄
+優惠價：79折458元
+
+
+日文版銷售逾30萬冊，TCP/IP經典入門書在TCP/IP出現之前，網路的目的是連接電腦，進行資料交換，以讓有限設備之間彼此通訊的電腦網路為主，進行開發。不僅可連線的設備有限，用法也有限制，與現在的網路相比，
+
+
+資料庫/大數據
+
+
+白話大數據與機器學習
+
+作者：高揚,衛崢,尹會生
+優惠價：79折379元
+
+
+本書以降低學習門檻為宗旨，解說大數據與機器學習的相關基礎知識，只要具備高中數學基礎即可看懂。內容結合大量案例與生動的插畫，將高度抽象的數學、演算法與現實生活中的事件作關聯，幫助讀者理解。本書
+
+
+
+網頁開發設計
+
+
+Laravel 啟動與運行
+
+作者：Matt Stauffer
+優惠價：79折616元
+
+
+現代PHPApp建構框架 Laravel與其他的PHPweb框架有什麼不同？對初學者來說，不同之處在於它的速度與簡單程度。這個快速的應用程式開發框架及其廣泛的工具系統，可讓你快速地使用簡潔、易讀的程式碼來建
+
+
+軟體工程/遊戲開發
+
+
+遊戲核心技術全攻略：多人線上遊戲的企劃與實作
+
+作者：中嶋謙互
+優惠價：79折466元
+
+
+本書榮獲日本遊戲開發者奧斯卡CEDECAWARDS著述賞大獎！「高並行」與「低延遲」並存的實用技巧大公開！遊戲企劃×程式設計×系統架構×伺服器維運×開發團隊管理完整呈現網
+
+
+影音多媒體
+
+
+威力導演15數位影音創作超人氣(附影音教學、試用版、範例)
+
+作者：李燕秋
+優惠價：79折284元
+
+
+附DVD一片一次就集結詢問度超高的廣告效果、韓劇風格的魅力特效！熱門運動攝影、縮時影像、微電影、懶人包、360ºVR影音、手機直式行動影片等主題應用威力導演暢銷口碑人氣好書將帶著你珍藏
+
+
+影像編修繪圖
+
+
+絕讚數位插畫繪製：CLIP STUDIO PAINT PRO 56種多樣上色技巧大公開
+
+作者：NEXT CREATOR 編集部
+優惠價：79折411元
+
+
+日本超受好評的電繪上色書！上色再進化！本書集結了日本11位實力派專業繪畫師，徹底解說使用CLIPSTUDIOPAINTPRO的人物上色技巧。不論是從「動畫風上色」「筆刷上色」「水彩風上色」等的基本上色，還是「日
+
+
+認證檢定
+
+
+TQC+ AutoCAD 2018特訓教材：基礎篇(隨書附贈102個精彩繪圖心法動態教學檔)
+
+作者：吳永進,林美櫻/編著,財團法人中華民國電腦技能基金會/總策劃
+優惠價：79折514元
+
+
+附DVD一片本書適用機械、建築、土木、室內設計、模具、電機電子、工業設計...等多種領域，完整而詳實的AutoCAD2018功能介紹範例解析【書籍特色】讓初學者→紮紮實實的學好AutoCAD2D基
+
+
+
+
+ 
+電腦資訊新書上架
+
+
+
+
+
+資料結構：使用 Visual Basic 語言(適用VB 2008-2017)
+
+作者：陳芸仙,楊淑雅
+優惠價：95折361元
+
+
+
+
+與Ubuntu共舞：中文環境調校x雲端共享x Libreoffice x 架站 x dropbox自己架（隨書附贈教學影片與Ububntu安裝光碟）
+
+作者：吳紹裳
+優惠價：79折379元
+
+
+
+
+Word 完全教本(適用2013/2016)(附超過300分鐘的影音教學、範例檔)
+
+作者：許嘉聲
+優惠價：79折356元
+
+
+
+
+Make：國際中文版30
+
+作者：MAKER MEDIA
+優惠價：79折205元
+
+
+
+
+《The Wall Street Journal》與《Business Week》都在用的商務圖表技法：超強Excel達人的大數據資料製作術
+
+作者：張傑
+優惠價：78折273元
+
+
+more
+
+
+中文書書籍分類
+
+電腦資訊概論/科技趨勢電腦硬體/創客作業系統資料庫/大數據程式設計/APP開發網頁開發設計網路/架站影音多媒體影像編修繪圖工程/3D繪圖Apple數位生活辦公軟體應用認證檢定
+
+
+電子報
+
+
+☆訂閱學習新知報真正搞懂Excel函數，秒解所有難題！秒殺完成不不失誤，讓時間花在對的地方。網路事件鑑證，罪案調查指導。是真的，VR顛覆世界的日子已到來！為溝通而存在，傳授簡報「心、巧、技」！HTML5+CSS3，打造滿足用戶需求的響應式網站。「有趣」很重要，因為它從來都不簡單。Excel做得漂亮，就贏得別人信賴！輕鬆建立地圖應用程式，打造最強的商脈路徑。在數位集客的時代，讓LINE@圈出你的人脈金礦！
+
+
+出版社專區
+
+碁峰歐萊禮PCuSER電腦人文化
+
+
+
+閱讀專門店
+
+
+
+
+
+
+關於我們
+關於博客來
+關於PCSC
+隱私權政策
+服務條款
+人才募集
+
+會員服務
+加入會員
+新手上路
+會員分級
+訂閱電子報
+24小時隔日取貨
+行動博客來
+切換行動版
+
+合作提案
+企業採購
+福利平臺
+加入供應商
+AP策略聯盟
+異業合作
+
+客服中心
+查詢帳號密碼
+客服信箱
+客服專線
+客服中心Q&A
+
+好站連結
+OKAPI 閱讀生活誌
+三魚網
+售票網
+博客來Youtube
+博客來粉絲團
+
+得獎認證
+天下雜誌2017金牌服務大賞
+2016新世代最嚮往企業
+SSL憑證服務
+數位時代2012年台灣網站100強
+電子發票推廣標章
+dpmark資料隱私保護標章
+數位時代2011台灣電子商務TOP50強
+
+客戶服務專線：02-26535588傳真：02-27885008服務時間：週一~六 8:00~19:00，週日、例假日 9:00~18:00，365天全年無休
+博客來數位科技股份有限公司地址：臺灣 115 臺北市南港區八德路四段768巷1弄18號B1之1
+Copyright © since 1995 books.com.tw All Rights Reserved.
+
+
+
+
+
+博客來-中文書>電腦資訊>程式設計/APP開發
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::相關網站
+
+博客來
+售票網
+企業採購
+福利平臺
+
+:::會員服務|快速功能
+
+0結帳
+登入
+加入會員
+購物金
+
+
+購物金 0
+福利金 0
+E-Coupon 0 張
+
+會員專區
+
+
+
+
+
+關閉廣告
+
+
+展開廣告
+
+
+回博客來首頁
+
+
+
+
+
+客服公告：2017/7/1起，配合政府施行電子發票政策，三聯式發票將全面採用電子化服務。詳情
+
+
+
+
+
+
+
+
+
+
+移動滑鼠展開全站分類
+:::全站分類
+
+全站分類
+旗艦店
+
+
+
+中文書
+簡體書
+‧外文書
+雜誌
+‧MOOK
+CD
+‧DVD
+‧售票
+保養
+‧彩妝
+‧醫美
+日用
+‧洗髮
+‧沐浴
+服飾
+‧機能服
+‧鞋襪
+包包精品
+‧錶飾配件
+美食
+‧飲品
+‧食材
+保健
+‧纖體
+‧醫材
+文具
+‧動漫
+‧療癒
+餐廚生活
+‧家居生雜
+婦幼
+‧休閒
+‧寵物
+3C
+‧家電
+全館即時榜
+ 
+
+看全部商品分類
+
+
+
+MUJI 無印良品
+設計入味
+安心食材專賣店
+STARBUCKS
+icash 2.0
+日本麗克特
+一起一起食光
+日本美妝生活市集
+天然草本旗艦店
+黑貓探險隊
+CCLIFE囍生活
+funbox
+康是美
+理膚寶水
+日本DUSKIN
+統一生機
+PEKOE
+北歐櫥窗
+nest 巢．家居
+統一時代百貨臺北店
+JIA PLUS
+名模衣櫃
+大學眼鏡
+天和鮮物
+花仙子
+運動旗艦館
+
+
+
+:::網站搜尋
+
+
+
+
+
+全館
+展開
+
+
+全館
+圖書
+影音
+百貨
+雜誌
+售票
+
+搜尋
+
+
+
+熱門關鍵字
+夏日小說節
+霍格華茲圖書館
+Middle+林夕
+生酮飲食適合誰？
+
+
+
+中文書
+
+小小博客來
+2017曬書節
+新書
+預購
+排行榜
+選書
+即將出版
+特價書
+香港出版
+讀者書評
+出版社專區
+分類總覽
+
+
+
+
+博客來中文書電腦資訊程式設計/APP開發
+
+
+
+ 
+暢銷榜
+
+
+第1頁第2頁第3頁第4頁第5頁
+上頁
+下頁
+
+
+
+
+
+精通 Python：運用簡單的套件進行現代運算
+
+作者：Bill Lubanovic
+優惠價：79折616元
+
+
+
+
+Python 自動化的樂趣：搞定重複瑣碎&單調無聊的工作
+
+作者：Al Sweigart
+優惠價：79折395元
+
+
+
+
+C語言教學手冊（四版）（附1光碟）
+
+作者：洪維恩
+優惠價：9折558元
+
+
+
+
+培養與鍛鍊程式設計的邏輯腦：程式設計大賽的解題策略基礎入門(第二版)
+
+作者：江任捷
+優惠價：199元
+
+
+
+
+R語言資料分析：從機器學習、資料探勘、文字探勘到巨量資料分析 [第二版]
+
+作者：李仁鐘,李秋緣
+優惠價：79折411元
+
+
+
+
+Data Science from Scratch中文版：用Python學資料科學
+
+作者：Joel Grus
+優惠價：79折458元
+
+
+
+
+寫程式前就該懂的演算法：資料分析與程式設計人員必學的邏輯思考術
+
+作者：Aditya Y. Bhargava
+優惠價：95折371元
+
+
+
+
+網站擷取：使用Python
+
+作者：Ryan Mitchell
+優惠價：79折458元
+
+
+
+
+Python 程式設計「超入門」
+
+作者：鎌田正浩
+優惠價：95折399元
+
+
+
+
+Swift 3自學力！圖解146個iOS App開發範例，入門必備超直覺設計指南
+
+作者：魏巍
+優惠價：79折332元
+
+
+
+
+無瑕的程式碼：敏捷軟體開發技巧守則
+
+作者：Robert C. Martin
+優惠價：75折435元
+
+
+
+
+iOS 10 App程式設計實力超進化實戰攻略：知名iOS教學部落格AppCoda作家親授實作關鍵技巧讓你不NG
+
+作者：Simon Ng
+優惠價：9折648元
+
+
+
+
+R語言：金融演算法與台指期貨程式交易實務
+
+作者：酆士昌
+優惠價：78折390元
+
+
+
+
+深入淺出 Java 程式設計 第二版
+
+作者：Kathy Sierra, Bert Bates
+優惠價：79折695元
+
+
+
+
+資料視覺化：使用Python與JavaScript
+
+作者：Kyran Dale
+優惠價：79折537元
+
+
+
+
+Python程式設計入門：金融商管實務案例 [第二版]
+
+作者：林萍珍
+優惠價：79折411元
+
+
+
+
+Python機器學習
+
+作者：Sebastian Raschka
+優惠價：9折522元
+
+
+
+
+Python 3 物件導向程式設計(第二版)
+
+作者：Dusty Phillips
+優惠價：299元
+
+
+
+
+Python初學特訓班(增訂版)(附250分鐘影音教學/範例程式)
+
+作者：文淵閣工作室/編著
+優惠價：79折379元
+
+
+
+
+無瑕的程式碼 敏捷完整篇：物件導向原則、設計模式與C#實踐
+
+作者：Robert C. Martin,Micah Martin
+優惠價：79折624元
+
+
+
+
+Visual C# 2017基礎必修課(適用2017/2015，附範例光碟)
+
+作者：蔡文龍,歐志信,張傑瑞,何叡/著,吳明哲/策劃
+優惠價：79折419元
+
+
+
+
+最新 Java 8 程式語言(第四版)
+
+作者：施威銘研究室
+優惠價：95折618元
+
+
+
+
+深入淺出 C#(第三版)
+
+作者：Jennifer Greene,Andrew Stellman
+優惠價：79折774元
+
+
+
+
+資料結構：使用Python
+
+作者：蔡明志
+優惠價：79折411元
+
+
+
+
+Android初學特訓班 (第七版) (適用 Android 6.x~7.x / 全新Android Studio 2.X開發，附影音)
+
+作者：鄧文淵/總監製,文淵閣工作室/編著
+優惠價：79折379元
+
+
+
+
+
+
+
+顯示模式                                顯示模式圖文模式
+
+
+
+
+        排序依        
+上市日期(新→舊)上市日期(舊→新)暢銷度價格(高→低)價格(低→高)
+
+
+
+
+近期新書共有1335本
+
+
+
+
+普格碼島的法師：歡樂自學寫程式
+
+唐宗浩，網路與書出版，出版日期：2017-07-31
+
+歡迎光臨普格碼!拿起指南，你也可以遨遊程式的奇幻世界。 程式學習就從這本開始!讓你迅速認識4大類7種程式語言： Scratch/Python/Haskell/HTML/CSS/JavaScript/Java+Arduino 一起修練入門魔法......more
+
+
+定價：450元
+優惠價9折 405元
+放入購物車
+
+
+
+
+精通C/C++指標：深入系統底層技術
+
+蔡明志，碁峰，出版日期：2017-07-31
+
+同時收錄Java/C#/Python類似指標的Reference主題   ‧探討C/C++語言指標的基本概念及它與變數、陣列、結構和檔案之間的應用。   ‧同時剖析Java、C#、Python類似指標的Reference主題。   ‧分別以......more
+
+
+定價：680元
+優惠價95折 646元
+放入購物車
+
+
+
+
+Unity超人氣遊戲設計全書：萬代南夢宮一線設計師的原創大獎遊戲實戰!
+
+加藤政樹，碁峰，出版日期：2017-07-31
+
+榮獲【遊戲開發界奧斯卡CEDEC Awards著述賞大獎】   日本知名遊戲廠「萬代南夢宮」一線設計師的原創大獎遊戲實戰最新版!   出自日本頂尖遊戲設計師之手   遊戲開發者必讀鉅作!   綜合遊戲方法設定、觀念草...more
+
+
+定價：590元
+優惠價95折 561元
+放入購物車
+
+
+
+
+會做簡報就會製作跨平臺App：Smart Apps Creator 3超神開發術
+
+淵閣工作室/編著,鄧文淵/總監製，碁峰，出版日期：2017-07-28
+
+附DVD一片   【原廠指定推薦用書/國際證照指定教材】   零負擔學習法!   這樣開發App超簡單，有創意就可以!   不用懂App開發語言，只需簡單的簡報思維，   立即啟動App創意因子，任何人都可以快速打造精采...more
+
+
+定價：420元
+優惠價95折 399元
+放入購物車
+
+
+
+
+從零開始!MicrosoftVisualC#2017程式設計入門
+
+洪國勝，旗標，出版日期：2017-07-25
+
+大量範例+實作練習+遊戲專案，密集式範例學習最有效!      主題最完整!保證紮穩物件導向程式設計基礎!       本書是以開發程式解決問題為最主要的目標，不會像一般程式語言學習書籍一樣，花費大量的篇幅在...more
+
+
+定價：650元
+優惠價95折 618元
+放入購物車
+
+
+
+
+資料結構：使用 Visual Basic 語言(適用VB 2008-2017)
+
+楊淑雅,陳芸仙，松崗，出版日期：2017-07-21
+
+正確的資料結構→提高演算法效率→有效的程式執行   資料結構是將資料透過有結構的安排，配合演算法，能幫助您以最快速、最正確的方式解決問題。   本書使用VB語言來實作，由演繹演算法的概念及運用做開端，...more
+
+
+定價：380元
+優惠價95折 361元
+放入購物車
+
+
+
+
+用Scratch(mBlock)玩Arduino基礎控制-使用MEB多功能實驗板附影音教學 - 最新版
+
+梅克2工作室，台科大，出版日期：2017-07-14
+
+本書特色   1.使用圖控程式進行開發，加快建置程式及測試的時間，並減少傳統需背誦程式指令的困擾。   2.本書自行開發一些mBlock未內建的周邊I/O積木，讓手邊常見的元件可立即上手，立即應用，並支援連線...more
+
+
+定價：350元
+優惠價9折 315元
+放入購物車
+
+
+
+
+細談資料結構第七版
+
+謝樹明，旗標，出版日期：2017-07-12
+
+本書從首版發行至今已二十餘年，期間歷經多次改版，目前已堂堂邁入第七版，受益的學生近十萬人。本書將資料結構最重要的精神融入簡明易懂的實例當中，讓學習者免於在龐雜的抽象文字中摸索，而能透過範例與...more
+
+
+定價：420元
+優惠價95折 399元
+放入購物車
+
+
+
+
+Python初學特訓班(增訂版)(附250分鐘影音教學/範例程式)
+
+文淵閣工作室/編著，碁峰，出版日期：2017-07-11
+
+Python學習新經典! 榮登各大網路書店電腦暢銷書/知名電腦專業書店暢銷書 榮獲眾多讀者肯定與近100位老師滿意的Python書籍   解決初學痛點，避免開發地雷，   融入主流技術，結合250分鐘影音教學，   從180...more
+
+
+定價：480元
+優惠價79折 379元
+放入購物車
+
+
+
+
+Linux Shell 程式設計與管理實務 [第三版]
+
+臥龍小三，博碩，出版日期：2017-07-10
+
+系統管理者必備的經典工具書   主機管理的上乘之道，就在於能夠把工作予以自動化；凡是可以交給電腦做的事，就不要由人來做。工作自動化的關鍵，就在於管理者是否具備 Shell 程式設計的能力。我們可以說：...more
+
+
+定價：690元
+優惠價78折 538元
+放入購物車
+
+
+
+
+R語言：金融演算法與台指期貨程式交易實務
+
+酆士昌，博碩，出版日期：2017-07-05
+
+想要活用R語言實作金融科技與資料分析嗎? 現在就切入程式交易這個神祕領域，然後加以整合應用   金融科技是指個人或是公司運用科技工具，可使得金融服務變得更有效率，因而形成的一種經濟產業，其內包含甚...more
+
+
+定價：500元
+優惠價78折 390元
+放入購物車
+
+
+
+
+Scratch 2.0 動畫遊戲設計(第二版)
+
+陳芸麗，博碩，出版日期：2017-06-30
+
+培養程式邏輯訓練，在玩樂中學習 體驗Scratch 2.0互動式創意遊戲開發   Scratch這套軟體主要是以積木堆疊的方式來拼貼程式指令，能讓使用者發揮創意來設計互動式故事、動畫或小遊戲，並且上傳與他人分享。...more
+
+
+定價：450元
+優惠價78折 351元
+放入購物車
+
+
+
+
+打造可維護軟體：編寫可維護程式碼的10項法則 (C#版)
+
+Joost Visser，歐萊禮，出版日期：2017-06-30
+
+「這些指導方針正確無誤，以簡單明瞭、切實可行的方式，闡述高效開發者如何一貫地撰寫及交付高品質的程式碼。」 — George Marinos, 應用程式架構師, 希臘國家銀行   你可曾在修改他人程式碼時深感挫折與沮...more
+
+
+定價：450元
+優惠價79折 356元
+放入購物車
+
+
+
+
+打造可維護軟體：編寫可維護程式碼的10項法則 (Java版)
+
+Joost Visser，歐萊禮，出版日期：2017-06-30
+
+「這些指導方針正確無誤，以簡單明瞭、切實可行的方式，闡述高效開發者如何一貫地撰寫及交付高品質的程式碼。」 — George Marinos, 應用程式架構師, 希臘國家銀行   你可曾在修改他人程式碼時深感挫折與沮...more
+
+
+定價：450元
+優惠價79折 356元
+放入購物車
+
+
+
+
+深入理解Linux程式設計：從應用到核心
+
+李彬,高峰，碁峰，出版日期：2017-06-30
+
+‧應用程式設計與核心實作相互結合   ‧幫助開發人員深入核心，解析Linux介面工作原理，掌握Linux系統運行機制   《Advanced Programming Unix Environment》(簡稱APUE)幾乎是Linux領域程式......more
+
+
+定價：580元
+優惠價79折 458元
+放入購物車
+
+
+
+
+資料結構：使用C++(精裝本)(附範例光碟)
+
+蔡明志，全華圖書，出版日期：2017-06-30
+
+「資料結構」在資訊學科中是一門重要的課程。本書的內容依不同的主題共分為14章，在各章的每一小節中均附有練習題及類似題，旨在讓讀者測試對該小節所談及的內容是否已全盤瞭解。在各章末有「動動腦時間」...more
+
+
+定價：500元
+優惠價95折 475元
+放入購物車
+
+
+
+
+Haskell的魔力：函數式程式設計入門與應用
+
+韓冬，碁峰，出版日期：2017-06-29
+
+‧揭秘單子變換、範本程式設計和泛型程式設計等特性   ‧解答異常處理、網路程式設計、資料庫操作等方面的常見問題   Haskell是一套純函數式程式語言，從語言設計到對實際程式設計問題的建模，都帶有那種讓...more
+
+
+定價：520元
+優惠價79折 411元
+放入購物車
+
+
+
+
+Visual Basic程式設計一本通
+
+吳燦銘，上奇資訊，出版日期：2017-06-27
+
+Visual Basic是學習程式設計的入門語言，為了避免學習語言上的不順暢，全書在介紹各種程式語法時搭配完整的程式實例，並加上充份的註解，來降低許多學習的障礙。   本書用嚴謹的態度，配合精要的表達方式...more
+
+
+定價：560元
+優惠價9折 504元
+放入購物車
+
+
+
+
+玩Minecraft學程式：培養運算思維能力
+
+柚子，碁峰，出版日期：2017-06-23
+
+本書將利用世界最夯的遊戲Minecraft以PBL的方式呈現教材，讓老師與學生透過有故事性的專題遊戲，去學習、培養程式撰寫邏輯以及數位閱讀能力，透過最好玩、最簡單、又具啟發式的方式進行紮根基礎知識以及程...more
+
+
+定價：250元
+優惠價79折 198元
+放入購物車
+
+
+
+
+Scratch!貓爪程式入門
+
+杉浦學/著,阿部和廣/審定，八方，出版日期：2017-06-22
+
+台灣三年級以上中小學生必學!未來將正式併入課綱   臺灣中小學校都在舉辦以貓爪程式(Scratch)程式為設計基礎的比賽!什麼是Scratch貓爪程式?   由MIT(麻省理工學院)經過多年研究測試   專為程式初學者量身...more
+
+
+定價：380元
+優惠價79折 300元
+放入購物車
+
+
+
+
+隨手取材輕鬆玩創客木工 - 使用Scratch 2.0 程式設計 - 最新版
+
+廖宏德(硬漢爸),盧建邦,陳亭竹,陳奕學,陳建奇，台科大，出版日期：2017-06-22
+
+本書特色      1.創意激發：開放式主題創意教學，天馬行空創意激發。   2.程式設計：Scratch圖形化設計，8歲小朋友輕鬆上手。   3.動手實做：遊戲中學會基本電學，做玩具輕鬆學會木工。   4.數學運算：靈...more
+
+
+定價：400元
+優惠價9折 360元
+放入購物車
+
+
+
+
+寫程式前就該懂的演算法：資料分析與程式設計人員必學的邏輯思考術
+
+Aditya Y. Bhargava，松崗，出版日期：2017-06-21
+
+日常生活的演算問題→ 加了註解的Python程式碼+大量可愛插圖 =用最簡單的方式學會演算法   本書使用大量插圖與生活實例，讓您以最簡單快速的方式進入演算法領域。翻開本書，您可透過不同主題的圖示與說明，...more
+
+
+定價：390元
+優惠價95折 371元
+放入購物車
+
+
+
+
+穿梭虛擬與現實：Unity 3D擴增實境AR速戰技(附範例/近220分鐘影音教學)
+
+何昇隆,呂國泰,曾偉凱,李慧貞，碁峰，出版日期：2017-06-15
+
+附DVD一片   模組化設計，簡易快速套用密技，   不用寫程式，也能設計AR實例，   發布App!   2016年「Pokemon GO」遊戲誕生，讓擴增實境(Augmented Reality，簡稱AR)頓時成為熱門主題，但AR帶給我......more
+
+
+定價：550元
+優惠價95折 523元
+放入購物車
+
+
+
+
+資料結構：使用Python
+
+蔡明志，碁峰，出版日期：2017-06-14
+
+資料結構(Data Structures)是資訊學科中的核心課程之一，也是基礎和必修的科目。本書確實闡述資料結構的重要主題，並以圖文並茂的方式表達，最能達到教學與學習事半功倍的效果。   內容共分十三章，分別為...more
+
+
+定價：520元
+優惠價79折 411元
+放入購物車
+
+
+
+
+資料結構：使用Java(第四版)
+
+蔡明志，碁峰，出版日期：2017-06-14
+
+資料結構(Data Structures)是資訊學科中的核心課程之一，也是基礎和必修的科目。本書確實闡述資料結構的重要主題，並以圖文並茂的方式表達，最能達到教學與學習事半功倍的效果。   內容共分十三章，分別為...more
+
+
+定價：520元
+優惠價95折 494元
+放入購物車
+
+
+
+
+Agile 成功法則：敏捷實作者的解決方案
+
+Daniel James Gullo，碁峰，出版日期：2017-06-12
+
+「本書給予各位問題的答案，如同身邊有位真正的導師一般。Daniel Gullo與讀者分享敏捷世界中無可避免的重要問題之真知灼見。」   - 引自Stephen Denning前言，《The Leader s Guide to Radical......more
+
+
+定價：480元
+優惠價95折 456元
+放入購物車
+
+
+
+
+Kodu 主題式3D遊戲程式設計附多媒體教學光碟 - 最新版
+
+呂聰賢，台科大，出版日期：2017-06-09
+
+本書以主題式教學為主，包含了10個主題，配合學生活動和生活經驗，透過具體範例，由實例中學習程式指令的加入，幫助讀者融會貫通Kodu的程式與技巧，達到教學與生活的目的。...more
+
+
+定價：280元
+優惠價9折 252元
+放入購物車
+
+
+
+
+R語言資料分析：從機器學習、資料探勘、文字探勘到巨量資料分析 [第二版]
+
+李仁鐘,李秋緣，博碩，出版日期：2017-06-07
+
+資訊爆量的時代，你需要學習R語言成為統計分析達人!   R是統計軟體也是一種程式設計語言，具有Windows、Unix、Linux及Apple MacOS 等不同作業系統的版本。它的應用領域包含統計分析、資料探勘、機器學習、...more
+
+
+定價：520元
+優惠價79折 411元
+放入購物車
+
+
+
+
+高品質微服務：建構跨工程組織的標準化系統
+
+Susan J. Fowler，歐萊禮，出版日期：2017-06-07
+
+“我認為這本書的目標是成為設計與運行微服務的標準參考，光是高品質檢查項目清單就值回票價!”   -Daniel Bryant, OpenCredo首席科學家   “微服務架構的實作很困難，特別是從運行的角度來看。這本書幫助你...more
+
+
+定價：450元
+優惠價79折 356元
+放入購物車
+
+
+
+
+手機應用程式設計超簡單：App Inventor 2初學特訓班(中文介面第二版)(附影音/範例/架設解說與上架PDF)
+
+文淵閣工作室/編著,鄧文淵/總監製，碁峰，出版日期：2017-06-06
+
+★★★★★眾多讀者與教師第一指名，App Inventor暢銷系列書★★★★★   引領App Inventor風潮的經典App創意開發主題書!   從入門、應用到上架全攻略!   前版榮獲Amazon上架App Inventor中文書/網......more
+
+
+定價：420元
+優惠價79折 332元
+放入購物車
+
+
+
+
+Visual C# 2017基礎必修課(適用2017/2015，附範例光碟)
+
+何叡/著,吳明哲/策劃,張傑瑞,歐志信,蔡文龍，碁峰，出版日期：2017-06-06
+
+體貼初學者的學習流程：範例說明->解題技巧->問題分析->程式設計   本書適用Visual C# 2017與2015。書附光碟提供VC# 2017與2015版的範例程式。   **專家與教師共同執筆**   由微軟MVP、微軟認證專家及科.....more
+
+
+定價：530元
+優惠價79折 419元
+放入購物車
+
+
+
+
+遊戲核心技術全攻略：多人線上遊戲的企劃與實作
+
+中嶋謙互，博碩，出版日期：2017-06-02
+
+本書榮獲日本遊戲開發者奧斯卡 CEDEC AWARDS著述賞大獎!   「高並行」與「低延遲」並存的實用技巧大公開!   遊戲企劃×程式設計×系統架構×伺服器維運×開發團隊管理   完整呈現網路遊戲核心技術   所有的遊...more
+
+
+定價：590元
+優惠價79折 466元
+放入購物車
+
+
+
+
+Java SE 8與Android 7.x程式設計範例教本
+
+陳會安，碁峰，出版日期：2017-06-02
+
+附DVD一片   ★學習Java、物件導向和Android應用程式開發的最佳入門教材   ★使用官方Android Studio整合開發環境建立Android應用程式   Android應用程式設計是目前當紅的開發領域，對於不熟悉Java語......more
+
+
+定價：540元
+優惠價79折 427元
+放入購物車
+
+
+
+
+無瑕的程式碼 敏捷完整篇：物件導向原則、設計模式與C#實踐
+
+Micah Martin,Robert C. Martin，博碩，出版日期：2017-05-31
+
+~~~《名家名著》03   V.S. 《無瑕的程式碼》03~~~   小記者︰能說說你對《無瑕的程式碼──敏捷完整版》的讀後心得嗎?   工程師︰自從讀了這本《敏捷完整版》之後，我再也不怕面對那些慣老闆、慣客戶了。而...more
+
+
+定價：790元
+優惠價79折 624元
+放入購物車
+
+
+
+
+Effective C#中文版：寫出良好C#程式的50個具體做法(第三版)
+
+Bill Wagner，碁峰，出版日期：2017-05-31
+
+涵蓋 C# 6.0   因應越來越複雜的C#語言與日漸龐大的開發社群，作者歸納了50種撰寫更好程式的方法，協助讀者撰寫出堅實、高效率、高性能C# 6.0程式。本書新版所提供的新方案包括善用泛型與LINQ，以及專門一...more
+
+
+定價：450元
+優惠價79折 356元
+放入購物車
+
+
+
+
+全能Android絕對正確培養聖經
+
+顧浩鑫，佳魁資訊，出版日期：2017-05-31
+
+Android的書這麼多，要找到真正幫你培養全職能的書卻不容易。   這是一本來自第一線網路公司的真正實作產品方案的完整過程，而非簡單說明一下Android的函數庫，開發原理等基礎書籍。全書包括了規劃、設計...more
+
+
+定價：720元
+優惠價79折 569元
+放入購物車
+
+
+
+
+第一次學C++就上手(第二版)
+
+李啟龍，碁峰，出版日期：2017-05-26
+
+*適量的教學分配：將C++程式設計的重要觀念，巧妙地分配在各章節，讓讀者可以循序漸進地輕鬆學習。   *豐富的學習範例：以做中學的實作精神，提供百題實用程式範例，將精彩的程式範例與程式設計知識，做一...more
+
+
+定價：440元
+優惠價79折 348元
+放入購物車
+
+
+
+
+利用Corona一次開發跨平臺手機App桌面程式(第二版)附光碟
+
+黃一庭，上奇資訊，出版日期：2017-05-26
+
+Corona SDK是跨平臺App開發軟體，強調容易上手、進入無門檻，特點是程式碼寫一次，即可跨平臺開發手機。   本書內容   建立可以開發跨平臺(iOS、Android)手機的App。   幫助讀者開發Windows和Mac OS X桌.....more
+
+
+定價：520元
+優惠價9折 468元
+放入購物車
+
+
+
+
+邁入Swift程式設計新紀元(第二版)
+
+羅康鴻，上奇資訊，出版日期：2017-05-26
+
+你知道什麼是Swift嗎?你知道Swift的用途是什麼嗎?如果你想快速進入Swift語言的世界，那麼這將是你不可錯過的一本書。   本書跳脫一般程式語言書籍的寫作模式，以淺顯易懂的方試講述Swift，配合日常生活中...more
+
+
+定價：400元
+優惠價79折 316元
+放入購物車
+
+
+
+
+學校沒教的軟體工程
+
+周忠信，洪葉文化，出版日期：2017-05-26
+
+許多人必須等軟體程式設計後，才能確定是否滿足需求。因此當需求愈多，往往會牽一髮而動全身，以致於愈難修改。另一方面，當軟體愈龐大，軟體發展就愈需要眾人合作；而軟體愈成功，軟體生命週期則會愈長。...more
+
+
+定價：150元
+優惠價9折 135元
+放入購物車
+
+
+
+
+Cocos2d-x實際演練 - JS篇
+
+關東升，佳魁資訊，出版日期：2017-05-25
+
+Cocos2d-JS開發權威指南 遊戲程式設計和開發人員不可或缺的案頭寶典   本書介紹Cocos2d-x遊戲程式設計和開發技術。   全書分為6部分：基礎篇、進階篇、資料與網路篇、最佳化篇、多平臺移植篇和實戰篇。涵...more
+
+
+定價：590元
+優惠價9折 531元
+放入購物車
+
+
+
+
+Scrum-大型專案開發進化-用LeSS框架完成更多的事
+
+BAS VODDE,CRAIG LARMAN，松崗，出版日期：2017-05-12
+
+本書是作者們在各企業間推行LeSS超過10年以上的經驗後，將其轉化為更簡潔的架構。使其具有更多的靈活性、更少的複雜性，能得到更大效益並且少了無謂的浪費，以更少的指令達成更多目標。   適合給每個做產...more
+
+
+定價：580元
+優惠價95折 551元
+放入購物車
+
+
+
+
+Python程式設計入門：金融商管實務案例 [第二版]
+
+林萍珍，博碩，出版日期：2017-05-08
+
+本書(首部曲)特色：   ★ Python語法簡潔好學，適合程式設計入門課程。   ★ 圖例說明程式設計的重要觀念。   ★ 金融實務案例應用在統計分析、技術分析、貨幣時間價值應用、會計折舊與資本預算應用、Yahoo F...more
+
+
+定價：520元
+優惠價79折 411元
+放入購物車
+
+
+
+
+Android程式設計與應用(附範例光碟)
+
+陳會安，全華圖書，出版日期：2017-05-08
+
+Android是一套行動裝置使用的作業系統，這是以Linux作業系統為基礎所開發的開放原始碼(Open Source)作業系統，在本書開發的Android應用程式就是在此作業系統上執行的應用程式。   本書的所有範例都是使用G...more
+
+
+定價：520元
+優惠價95折 494元
+放入購物車
+
+
+
+
+第一次學 Python 就上手!
+
+陳惠貞，旗標，出版日期：2017-05-05
+
+程式設計懶人包，初學 Python 的最佳教材!   從培養邏輯思考起步，逐步學會簡單、易懂的 Python 語法，即學即用、馬上解決日常遇到的運算問題，並且帶您靈活運用功能強大的 Python 延伸套件，輕鬆搞定各種...more
+
+
+定價：480元
+優惠價95折 456元
+放入購物車
+
+
+
+
+S2A創客實戰演練：用Scratch 2.x 玩轉 Arduino(附綠色範例檔)
+
+林俊傑，經瑋，出版日期：2017-05-01
+
+Scratch是由美國麻省理工學院開發的一套開源的、專門為八歲到十六歲兒童準備的程式設計軟體。它將原本的程式指令轉化成一個個的積木方塊，只需將這些指令積木進行簡單的拖曳組合，就可以完成卡通、動畫及...more
+
+
+定價：550元
+優惠價95折 523元
+放入購物車
+
+
+
+
+WFDuino 創客實戰演練：用Scratch 2.x 玩轉 Arduino(附綠色範例檔)
+
+林俊傑，經瑋，出版日期：2017-05-01
+
+Scratch是由美國麻省理工學院開發的一套開源的、專門為八歲到十六歲兒童準備的程式設計軟體。它將原本的程式指令轉化成一個個的積木方塊，只需將這些指令積木進行簡單的拖曳組合，就可以完成卡通、動畫及...more
+
+
+定價：550元
+優惠價95折 523元
+放入購物車
+
+
+
+
+軟體工程理論與實務應用(第四版)
+
+顏春煌，碁峰，出版日期：2017-04-28
+
+■第四版加入了群聚外包(crowdsourcing)與技術負債(technical debt)等概念，同時也介紹了軟體重構(refactoring)在大數據(big data)的運用。   本書結合軟體工程的核心知識與實務應用，透過實例帶領......more
+
+
+定價：460元
+優惠價79折 363元
+放入購物車
+
+
+
+
+輕鬆學，Flash手機遊戲設計很簡單
+
+李篤易，上奇資訊，出版日期：2017-04-27
+
+來來來!用Flash製遊戲App超簡單   本書採用堆積木的設計概念，先由複習ActionScript 3.0開始熱身，入門瞭解跨平臺的設計環境與行動裝置的基本操控方式，再進階至針對行動APP 特性而設計內容模式，並連結行...more
+
+
+定價：550元
+優惠價79折 435元
+放入購物車
+
+
+
+
+Android程式開發設計輕鬆入門
+
+Chris Haseman，上奇資訊，出版日期：2017-04-27
+
+全球行動電話市場市佔率超過一半以上的Android行動平臺，為開發者提供了充滿活力及持續成長的市場，本書將告訴你如何使用最具威力的Android工具集開始撰寫下一代的Android應用程式。   書中完整介紹如何為...more
+
+
+定價：480元
+優惠價9折 432元
+放入購物車
+
+
+
+
+iOS 核心框架程式開發設計
+
+Shawn Welch，上奇資訊，出版日期：2017-04-27
+
+設計師兼開發師，是今時今日的當紅炸子雞。 但是要如何提升開發速度，才能加入他們的行列? 如果你是一個視覺學習者，不妨閱讀iOS 5 核心框架開發設計極速上手。   Apple讓iOS的軟體開發過程更上層樓。為完...more
+
+
+定價：600元
+優惠價9折 540元
+放入購物車
+
+
+
+
+動畫圖解資料結構：使用C++(附光碟)(第三版)
+
+李春雄，上奇資訊，出版日期：2017-04-27
+
+全國第一本最完整的「影音數位教材」   全國第一本最完整的「動畫電子書教材」   全國第一本附有「自我評量測驗系統」的教材   本書中附有五種程式語言：C / C++ / C# / Java / VB   本書以嚴謹的架構和豐...more
+
+
+定價：550元
+優惠價79折 435元
+放入購物車
+
+
+
+
+Go at Google：Go語言實際上手
+
+郝林，佳魁資訊，出版日期：2017-04-26
+
+雲端運算時代必學的開放原始碼程式語言! 專家推薦   Go語言作為優秀的開放原始碼程式語言，已逐漸成為雲端運算時代的必學語言之一。本書不但對基本的Go語言程式設計方法和技巧進行了深入的闡釋，還獨樹一...more
+
+
+定價：690元
+優惠價79折 545元
+放入購物車
+
+
+
+
+Swift - AR擴增實境與感應器開發
+
+關東升，佳魁資訊，出版日期：2017-04-26
+
+本書介紹蘋果iOS 裝置主要的感測器應用程式開發的相關知識，其中包含手勢識別、加速度計、陀螺儀、指南針、磁力計、照相機、攝影機、音訊裝置存取、定位和藍牙通訊等。 全書包含內容：   iOS 中的手勢識別...more
+
+
+定價：480元
+優惠價9折 432元
+放入購物車
+
+
+
+
+手機應用程式設計超簡單：App Inventor 2零基礎入門班(中文介面第二版) (附影音/範例/架設解說pdf)
+
+文淵閣工作室/編著,鄧文淵/總監製，碁峰，出版日期：2017-04-25
+
+★★★★★眾多讀者與教師第一指名，App Inventor暢銷系列書★★★★★   掌握App開發的捷徑，輕鬆打好基本功!   現在立即啟動App Inventor 2!縮短50%的App學習與開發時間!   Google實驗室設計，由麻省......more
+
+
+定價：420元
+優惠價79折 332元
+放入購物車
+
+
+
+
+七天學會設計模式：設計模式也可以這樣學
+
+Yan(硯取歪)，博碩，出版日期：2017-04-25
+
+「設計模式」一詞起源於建築設計，目的是為瞭解決工程中重複出現的各種問題，之後被這個概念被導入軟體工程之中。   其中最為人熟悉的是GoF整理的23種設計模式，本書對此做了簡單扼要的介紹，並輔以輕鬆愉...more
+
+
+定價：320元
+優惠價79折 253元
+放入購物車
+
+
+
+
+使用Visual Basic 開發Android App(第二版)(附光碟)
+
+李春雄，上奇資訊，出版日期：2017-04-25
+
+Visual Basic(VB)愛好者開發Android App的一大福音。   運用類似VB的Basic4Android(B4A)程式語言來輕鬆開發Android App。   可以讓授課老師「易教」、初學習者「易學、易用」的開發手機程式......more
+
+
+定價：520元
+優惠價9折 468元
+放入購物車
+
+
+
+
+C語言入門與進階教學：跨平臺程式設計及最新C11語法介紹
+
+鄭昌傑，國立交通大學，出版日期：2017-04-25
+
+這是一本入門容易且極具深度的C語言學習與參考書籍，由淺至深介紹如何以正確的觀念開發C語言的程式，並介紹C89、C99與C11之間的差異。   由於目前已非單一作業系統獨占市場的時代，學習程式語言必須要有跨...more
+
+
+定價：620元
+優惠價95折 589元
+放入購物車
+
+
+
+
+Swift 3自學力!圖解146個iOS App開發範例，入門必備超直覺設計指南
+
+魏巍，PCuSER電腦人文化，出版日期：2017-04-22
+
+我的第一本Swift Cookbook：15堂輕鬆學會iOS App程式設計 *全圖解!程式概念到架構，用圖為你提點需要思考的設計環節! *低成本!開放源碼、豐富的資源共享，自學者一手包辦沒問題! *超快速!程式碼複製、貼上...more
+
+
+定價：420元
+優惠價79折 332元
+放入購物車
+
+
+
+
+學會 Python：從不懂，到玩上手!
+
+陳會安，旗標，出版日期：2017-04-21
+
+簡潔易懂又能動手做，輕鬆學好程式不卡關!   21世紀，不懂程式語言，已是新文盲!!   但學寫程式枯燥、無聊又很難!!   有沒有一套很簡單、好學又實用的程式語言啊?   寫程式一定要 key 英文，我怕怕…!!   ...more
+
+
+定價：550元
+優惠價95折 523元
+放入購物車
+
+
+
+
+TQC+ 行動裝置應用程式設計認證指南解題秘笈：Android 6
+
+陳文敬/編著，碁峰，出版日期：2017-04-20
+
+1.本書專為『TQC+ 行動裝置應用程式設計認證指南 Android 6』操作題所寫之解題技巧。   2.『TQC+ 行動裝置應用程式設計認證指南解題秘笈-Android 6』需搭配『TQC+ 行動裝置應用程式設計認證指南 Android ....more
+
+
+定價：320元
+優惠價95折 304元
+放入購物車
+
+
+
+
+資料視覺化：使用Python與JavaScript
+
+Kyran Dale，歐萊禮，出版日期：2017-04-18
+
+學習如何運用Python與JavaScript這組對超級強大的組合，處理手中的原始資料，建構出功能強大的互動式視覺化網站。在這一本以實務為主的書中，將告訴您如何善用Python和JavaScript的強大函式庫資源，包括Sc...more
+
+
+定價：680元
+優惠價79折 537元
+放入購物車
+
+
+
+
+Android 7.x APP開發教戰手冊(附DVD一片)
+
+黃彬華，碁峰，出版日期：2017-04-17
+
+隨書附贈DVD：420分鐘的影音教學影片、本書範例程式   *以最新Android進行開發示範，範例皆為Android Studio版本。您只要跟著學習，就可以開發出智慧型手機、平版電腦的應用程式!   *以大量圖示與step by ...more
+
+
+定價：520元
+優惠價79折 411元
+放入購物車
+
+
+
+
+漫畫!圖解程式設計必學基礎
+
+李思，碁峰，出版日期：2017-04-13
+
+學程式設計也可以卡通一點 每個人都能懂的程式設計概念!   這是一本針對新手初學者的程式設計和C語言基礎概念書籍，全書以漫畫圖解的輕鬆方式來呈現程式設計所要學習的基本觀念，例如：變數、變數與記憶體...more
+
+
+定價：300元
+優惠價79折 237元
+放入購物車
+
+
+
+
+演算法：使用C++虛擬碼(第五版)
+
+Richard Neapolitan，碁峰，出版日期：2017-04-13
+
+《Foundations of Algorithms》第五版均衡地解說了演算法的設計與複雜度分析，並使用較簡單的符號系統，清晰地解釋了用到的數學概念，特別適合修過代數和離散結構的資訊科系學生。   本書以C ++和Java虛擬...more
+
+
+定價：700元
+優惠價79折 553元
+放入購物車
+
+
+
+
+iOS 10 App開發全面修鍊實戰(附教學影片/範例檔/增量電子書)
+
+柯博文，碁峰，出版日期：2017-04-12
+
+[嚴選經典]美國矽谷創業家/全球數十家科技大廠與業界指定講師之iOS App開發入門鉅作!   本書是針對iOS有興趣的程式開發者而編寫，由入門到深入的設計實戰，將iOS程式語言以淺顯易懂的文字解說，並透過實際...more
+
+
+定價：520元
+優惠價79折 411元
+放入購物車
+
+
+
+
+系統管理員懶人包：Shell Script自動化指令集
+
+Brandon Perry,Dave Taylor，碁峰，出版日期：2017-04-11
+
+命令腳本(shell scripts)是和電腦溝通及管理檔案與作業系統最有效率的方式，透過幾行程式，電腦就會乖乖依照你的意思辦事，腳本還可以用在許多重要任務上。本書提供實用、可以直接修改套用的腳本，幫助您...more
+
+
+定價：480元
+優惠價79折 379元
+放入購物車
+
+
+
+
+iOS App程式開發與設計：規劃、開發，親手打造可實際上架的App程式(附光碟)
+
+黃聰明，松崗，出版日期：2017-04-07
+
+美觀且具質感的iPhone在搭配了友善的觸控操作介面及豐富多樣的App內容的iOS系統，其魅力橫掃全球，無「機」能擋，學習iOS App的開發頓時成為程式設計的顯學!   但雖然想要學習的人多，資源卻相對不夠充份...more
+
+
+定價：580元
+優惠價95折 551元
+放入購物車
+
+
+
+
+揭開設計模式的秘辛：設計模式 第1¾版
+
+John Vlissides，博碩，出版日期：2017-03-31
+
+~~~~~~~大師已逝，墨跡留香~~~~~~~   學習設計模式的人，一定聽過《Design Patterns: Elements of Reusable Object-Oriented Software》這本書，俗稱GoF的《設計模式》或......more
+
+
+定價：390元
+優惠價79折 308元
+放入購物車
+
+
+
+
+優化 C++：提高程式效能的有效技術
+
+Kurt Guntheroth，歐萊禮，出版日期：2017-03-31
+
+充滿強效建議的寶典-合乎時宜、蒐羅廣泛且切中要點。它是您瞭解C++新面貌的可靠參考資料。    -Jerry Tan, 美國證券集中保管結算公司資深軟體工程師   處於現今快速變遷與高度競爭的環境中，一套程式的效...more
+
+
+定價：680元
+優惠價79折 537元
+放入購物車
+
+
+
+
+從零開始學Visual C# 2015程式設計
+
+李馨，博碩，出版日期：2017-03-31
+
+這是一個科技發達，訊息快速傳遞的世界。學習一個程式語言，以不變觀其變之外，本書對於Visual C#程式語言的特色和語法有更多的著墨。除了以.NET Framework提供的類別庫為範本外，配合Visual Studio 2015...more
+
+
+定價：620元
+優惠價75折 465元
+放入購物車
+
+
+
+
+Ardublock + App Inventor 2 輕鬆學：玩積木寫程式，輕鬆進入Arduino的創意世界
+
+藍永興，博碩，出版日期：2017-03-31
+
+現在歐美各國從小學就開始教小朋友學習電腦程式，而國內的教育部也開始重視這一塊，並輔助學校讓學生學習Arduino，而且以圖形化拼圖的方式來撰寫指令，非常適合各種年齡層來學習，再加上一些互動式的電子...more
+
+
+定價：480元
+優惠價299元
+放入購物車
+
+
+
+
+R語言：深入淺出財經計量
+
+何宗武，博碩，出版日期：2017-03-30
+
+R所提供的統計與繪圖功能非常完整且豐富，不因它是個免費的軟體而有絲毫遜色，特別是種類多元的視覺化繪圖功能，本書重點在於以經濟計量方法和數量財務兩塊的模型作主軸撰寫，除了門檻模式(Threshold)和多...more
+
+
+定價：580元
+優惠價79折 458元
+放入購物車
+
+
+
+
+一次搞定：所有Python Web框架開發百科全書 最完整Python Web框架，包括Django、Flask、Tornado、Twisted等
+
+劉長龍，佳魁資訊，出版日期：2017-03-28
+
+▶最完整的Python Web框架，包括Django、Flask、 Tornado、Twisted等   ▶完整的TCP/IP網頁程式開發介紹   ▶完整的HTTP請求回應方式介面   ▶完整的RESTFUL動詞而明   ▶最新的WebSo......more
+
+
+定價：590元
+優惠價79折 466元
+放入購物車
+
+
+
+
+新觀念 Microsoft Visual Basic 2017 程式設計
+
+施威銘研究室，旗標，出版日期：2017-03-24
+
+零挫折!免基礎!學習最有成就感   用一本書的價格，找到一位能體貼初學者心情的老師,   整個學習的過程就是一連串的「啊，原來是這樣，我懂了!」,   一步步累積成就感...於是就學會了。   Visual Basic 從...more
+
+
+定價：560元
+優惠價95折 532元
+放入購物車
+
+
+
+
+Unity實戰教學 第2版
+
+張右緯，佳魁資訊，出版日期：2017-03-24
+
+由於Unity非常易於學習，它是全球最多人使用的遊戲引擎，它內建許多強大的工具，使得遊戲開發者可以只專註於遊戲邏輯這部份，它強大跨平臺的特性，在遊戲主機、個人電腦、智慧型手機(Android、iOS…等)、網...more
+
+
+定價：550元
+優惠價79折 435元
+放入購物車
+
+
+
+
+深入淺出Ruby
+
+Jay McGavren，歐萊禮，出版日期：2017-03-13
+
+採用適合大腦的學習方法   學會製作自己的類別和物件   使用區塊來切割資料   使用mixin替你的類別加料   對外提供你的web app   你將從本書學到什麼?   Ruby語言怎麼那麼紅?它適合你嗎?嗯，問問你自己：...more
+
+
+定價：780元
+優惠價95折 741元
+放入購物車
+
+
+
+
+Android雲端與物聯網關鍵通訊技術
+
+何偉全，松崗，出版日期：2017-03-08
+
+本書專註在物聯網世代當中，介紹Android系統上所有無線通訊技術的API與開發方式，以及架設自己的雲端服務。   ●開發環境與物聯網的簡介。   ●以Socket開發自己的即時通聊天，同時以自己的網路協定開發伺服...more
+
+
+定價：520元
+優惠價95折 494元
+放入購物車
+
+
+
+
+JAVA程式設計藝術(第十版)(國際版)(附範例光碟)
+
+張子庭，全華圖書，出版日期：2017-03-07
+
+1.本書的核心是Deitel 的招牌特色「程式碼實況解說 (live-code approach)」我們會使用完整可運作的程式來說明概念，而非只有片段的程式碼。每個完整的程式碼範例，都伴隨著實際的範例執行。   2.本書也適...more
+
+
+定價：880元
+優惠價95折 836元
+放入購物車
+
+
+
+
+高手昇級：可完全取代Java的Scala
+
+周志湖,牛亞真，佳魁資訊，出版日期：2017-03-01
+
+●資深大數據工程師開發經驗分享   ●循序漸進介紹Scala核心語法   ●透過實際操作用Scala進行應用開發   本書是作者在Scala 學習、工作實作及教育訓練過程中的心得體會和系統歸納，是學習Scala進行應用開發...more
+
+
+定價：540元
+優惠價9折 486元
+放入購物車
+
+
+
+
+大數據的下一步：用Spark玩轉活用(第2版)
+
+劉旭暉,史鳴飛,夏俊鸞,程浩,邵賽賽,黃潔，佳魁資訊，出版日期：2017-03-01
+
+適用：從事安防監控領域的應用開發和工程施工的技術人員。 名人推薦   隨著大數據時代的到來，企業資料每天都在急劇快速膨脹，如何發掘這些資料的價值，需要一種高效而穩定的分散式運算框架和模型。Spark...more
+
+
+定價：480元
+優惠價9折 432元
+放入購物車
+
+
+
+
+Android專案開發實戰：叫車服務App的設計實務大解密
+
+黃士嘉，博碩，出版日期：2017-02-24
+
+10萬下載量的BlueNet計程車叫車App的設計者大解密   1000名計程車司機實際在BlueNet計程車叫車App運行   你知道Line是如何傳送可愛貼圖的嗎?   你知道Uber是如何設計地圖模式叫車系統的嗎?   本書透過做中...more
+
+
+定價：400元
+優惠價299元
+放入購物車
+
+
+
+
+KODU遊戲程式開發一試上手
+
+陳美琪，上奇資訊，出版日期：2017-02-24
+
+*由淺入深介紹Kodu的使用技巧，包含場景建置、角色與物件的編輯、路徑設定、變更世界、以及指令盤的加入   *易學易懂的圖解說明，加深學習者的印象   *範例實作，由實例中學習程式指令的加入   *內附完整...more
+
+
+定價：380元
+優惠價79折 300元
+放入購物車
+
+
+
+
+Windows 10 通用視窗App開發完全制霸：使用XAML及C#(附光碟)
+
+王安邦，上奇資訊，出版日期：2017-02-24
+
+一手打造可以同時運用在PC、平板和手機介面的App! 可結合Xbox、物聯網等裝置的Window 10 通用視窗，將顛覆你的多媒體娛樂整合應用視野!   豐富內容：全面性涵蓋Windows 10通用視窗特色之基礎學習和進階技...more
+
+
+定價：620元
+優惠價9折 558元
+放入購物車
+
+
+
+
+.NET Framework 教戰手冊：實戰 Windows 市集應用程式開發
+
+周家安，佳魁資訊，出版日期：2017-02-23
+
+本書運用豐富的實例系統論述了Windows應用程式開發的基本方法、技能與技巧。本書重點介紹Windows商店應用程式(Windows Store App)開發，共包含12章的豐富內容，分別詳盡剖析了以下知識：應用程式專案的基...more
+
+
+定價：580元
+優惠價9折 522元
+放入購物車
+
+
+
+
+破解線上遊戲：電玩駭客的自動化Bot開發寶典
+
+Nick Cano，博碩，出版日期：2017-02-20
+
+第一本聚焦於遊戲外掛程式開發的技術著作   Bot(機器人)是遊戲外掛程式的一個分支，早在 1996 年，便有玩家自行為遊戲《雷神之鎚》(Quake)開發了可與人類匹敵的 Bot，讓人們無須受制於當時的網路速度，便...more
+
+
+定價：550元
+優惠價7折 385元
+放入購物車
+
+
+
+
+Android App 程式設計教本之無痛起步：使用 Android Studio 2.X 開發環境
+
+施威銘/主編，旗標，出版日期：2017-02-17
+
+學習 Android 程式設計一直困擾許多初學者，其原因有三。首先，你必須會使用 Java 程式語言，並且要懂 Android 的 XML，然後才開始學習 Android 的程式設計。在學習的過程裡又常見到一些程式設計老手所使...more
+
+
+定價：580元
+優惠價95折 551元
+放入購物車
+
+
+
+
+C 語法暨程式庫標準辭典(第二版)
+
+Peter Prinz,Tony Crawford，歐萊禮，出版日期：2017-02-13
+
+涵蓋 C11 標準   『《C 語法暨程式庫標準辭典》是 C 開發人員最佳的生產力工具。2011 C 標準新增了許多功能，這本書能讓你瞭解這些新功能的細節和用法。』 —KPIT 技術公司專案經理 Peter Hessheimer   這...more
+
+
+定價：980元
+優惠價9折 882元
+放入購物車
+
+
+
+
+Python專家實踐指南：搭乘專業開發者的學習便車
+
+Kenneth Reitz,Tanya Schlusser，歐萊禮，出版日期：2017-02-13
+
+”《Python專家實踐指南》以精煉的內容帶你巡禮Python宇宙“。 -Raymond Hettinger 卓越的Python核心開發者   ”你一直期待這本書。慣例與最佳實踐的闡述對新手非常重要，而每個人均在某些事上是個新手。透過...more
+
+
+定價：580元
+優惠價95折 551元
+放入購物車
+
+
+
+
+人機互動終極體驗：Kinect菁英大師的專題剖析 Base on C#
+
+吳國斌,李斌,閻驥洲，佳魁資訊，出版日期：2017-01-25
+
+Kinect 是微軟公司推出的以體感互動為基礎的人機互動裝置。   Kinect 蘊藏的無限潛力，正等待著讀者們去發掘和創造。這是一本Kinect開發入門教學書，透過對基礎篇和開發篇的學習，讀者可以瞭解Kinect 技術...more
+
+
+定價：450元
+優惠價79折 356元
+放入購物車
+
+
+
+
+Web應用程式開發の羽量級優化
+
+邱俊濤，佳魁資訊，出版日期：2017-01-25
+
+ThoughtWorks高級諮詢師最新力作 學習輕量級、最新的Web開發方法   輕量級Web開發是一個很廣的主題，開發人員經常提到，但卻少有人能夠講明它的內涵。   好的程式設計師 就是從基礎開始，作業系統、工具、...more
+
+
+定價：540元
+優惠價9折 486元
+放入購物車
+
+
+
+
+Android實戰手冊：Telephony原理剖析與最佳實作
+
+楊青平，佳魁資訊，出版日期：2017-01-25
+
+從原始程式碼角度深入解析Telephony的架構設計與實現原理，全面揭示Android系統的通訊機制!   Android 智慧型手機的爆發式成長和逐步從一般手機轉向Android 智慧型手機的廠商，催生了大量的從業人員需求，...more
+
+
+定價：650元
+優惠價9折 585元
+放入購物車
+
+
+
+
+UML物件導向系統分析與設計(第三版)
+
+游峰碩，博碩，出版日期：2017-01-23
+
+本書以物件導向技術為主軸，輔以UML為塑模工具來闡述有關近代資訊系統開發之方法。適用對象包含任何對系統開發有興趣之同學，程式設計師，軟體工程師，及系統分析師。   本書主要是從以下幾個觀點來介紹系...more
+
+
+定價：560元
+優惠價75折 420元
+放入購物車
+
+
+
+
+熟悉軟體開發SOP：進入無Bug程式世界
+
+董越，上奇資訊，出版日期：2017-01-23
+
+本書寫給所有與軟體發展有關的使用者，軟體配置管理為軟體發展提供基礎性的支援環境，它與軟體發展中的所有角色都有聯繫。   本書分為兩部分，第一部分詳細介紹了軟體配置管理的基本知識；第二部分主要講...more
+
+
+定價：520元
+優惠價9折 468元
+放入購物車
+
+
+
+
+系統程式及作業系統觀念與考題寶典(第二版)
+
+林建福，上奇資訊，出版日期：2017-01-23
+
+本書內容涵蓋作業系統、系統程式和編譯程式，書中提供各章中英試題題型練習和解答，並在章末附上習題讓您掌握學習成效，對於踏入資訊領域的學子們，作業系統與系統程式幾乎是必備的基本知識。...more
+
+
+定價：520元
+優惠價9折 468元
+放入購物車
+
+
+
+
+Swift基礎入門學習手冊
+
+邱俊傑，上奇資訊，出版日期：2017-01-23
+
+運用簡單易懂的描述及有趣範例，增加學習印象。 單元循序漸進，由淺入深帶領讀者一窺Swift 的全貌。   Swift 是一個全新的程式語言，也是蘋果御用程式語言，除了可以撰寫 iOS移動設備的APP 之外，連OS X ...more
+
+
+定價：480元
+優惠價9折 432元
+放入購物車
+
+
+
+
+演算法技術手冊 第二版
+
+Gary Pollice,George T. Heineman,Stanley Selkow，歐萊禮，出版日期：2017-01-20
+
+設計穩健的軟體需要運用高效的演算法，然而程式設計師鮮少能深入瞭解演算法可運用的程度。書中提供用於解決各種程式設計問題的現有演算法，並協助讀者選擇與實作適合所需的演算法。搭配淺顯易懂的數學陳述...more
+
+
+定價：580元
+優惠價95折 551元
+放入購物車
+
+
+
+
+Visual Basic 2015 入門與應用(第二版)(附光碟)
+
+李春雄，上奇資訊，出版日期：2017-01-20
+
+1.學習目標：每一章的最前面都有引言來說明學習目標，以啟發學習動機。   2.圖解說明：利用圖文並茂的內容來說明程式設計的概念知識。   3.以「輸入---處理---輸出」的流程架構來說明程式設計概念。   4....more
+
+
+定價：560元
+優惠價9折 504元
+放入購物車
+
+
+
+
+輕鬆學習 MIT App Inventor 2 中文版程式開發(附CD)
+
+王安邦，上奇資訊，出版日期：2017-01-20
+
+中文版MIT App Inventor 2讓您更輕鬆開發App程式!   不需要複雜的程式碼也可以進行簡單的手機程式開發， 完全雲端的操作，讓您更能隨時隨地完成理想中的Android程式!   全彩印刷x清楚步驟x完整範例x重點整...more
+
+
+定價：520元
+優惠價9折 468元
+放入購物車
+
+
+
+
+開發Android App手機入門及應用：使用VB
+
+李春雄，上奇資訊，出版日期：2017-01-20
+
+‧Visual Basic(VB)愛好者開發Android App的一大福音。   ‧可以讓你的B4A 程式輕易的結合手機內、外部資料庫。   ‧帶領同學開發具有「創新的應用、實用的價值及符合產業需求」的APP手機應用程式。...more
+
+
+定價：520元
+優惠價9折 468元
+放入購物車
+
+
+共14頁
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+下一頁
+        跳到
+1234567891011121314頁
+
+
+
+
+中文書書籍分類
+
+電腦資訊程式設計/APP開發C/C++C#Swift/Objective-CJavaPythonVisualBasic程式邏輯/演算法手機/平板APP開發軟體工程/遊戲開發其他程式設計相關
+
+
+
+
+關於我們
+關於博客來
+關於PCSC
+隱私權政策
+服務條款
+人才募集
+
+會員服務
+加入會員
+新手上路
+會員分級
+訂閱電子報
+24小時隔日取貨
+行動博客來
+切換行動版
+
+合作提案
+企業採購
+福利平臺
+加入供應商
+AP策略聯盟
+異業合作
+
+客服中心
+查詢帳號密碼
+客服信箱
+客服專線
+客服中心Q&A
+
+好站連結
+OKAPI 閱讀生活誌
+三魚網
+售票網
+博客來Youtube
+博客來粉絲團
+
+得獎認證
+天下雜誌2017金牌服務大賞
+2016新世代最嚮往企業
+SSL憑證服務
+數位時代2012年台灣網站100強
+電子發票推廣標章
+dpmark資料隱私保護標章
+數位時代2011台灣電子商務TOP50強
+
+客戶服務專線：02-26535588傳真：02-27885008服務時間：週一~六 8:00~19:00，週日、例假日 9:00~18:00，365天全年無休
+博客來數位科技股份有限公司地址：臺灣 115 臺北市南港區八德路四段768巷1弄18號B1之1
+Copyright © since 1995 books.com.tw All Rights Reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+進階程式設計 - 賴和隆 的資訊教室
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+賴和隆 的資訊教室搜尋這個協作平臺
+
+
+
+
+
+
+
+
+
+
+
+
+AIntel 工具作品及發表作業規範參觀報告小論文影片心得影片製作簡報製作讀書心得十二年國教課綱國中資訊參考書目各類課堂進度100學年度100資訊班上100資訊班下102100高二自上學期主題方向分組名單問捲練習小論文作品小論文問題心得完成課堂互評閱讀書目101學年度210224319智慧車原理程式設計高一必上高一必下102學年度高一必上高一必下高二C智慧車高二C組高二音樂班103學年度223基礎程式設計進階程式設計高一必上高一必下高二C組104學年度320英資基礎程式設計專題網頁規畫設計進階程式設計高一必上高一必下105學年度319320322基礎程式設計進階程式設計高一必上高一必下98下學年99以前99學年度必修104-資訊科技概論必修110選修上 - 資訊科學專題探究選修下必修教學主題APPIOTWeb2.0人工智慧創用CC免費資源區塊鏈&比特幣大數據手機服務機器人科學史自由與管制資訊科技與工作資訊簡史軟體操作運算思維金融科技FinTech隱私與個資法電子商務電子支付找我?教學活動教學年班98class99class檔案下載登錄與表單協作平臺登錄高中生程式競賽相關課程計畫必修開設課程C語言(選)function下學期測驗下學期題目參考程式參考解答參考解答字串排序歷年資料網路教學集(影音)練習題目陣列VB(選)小中正106小中正應用軟體(選)photoimpact動畫製作影片製作教師研習Google應用於教學Web2.0著作權智慧車單元一單元三單元二活動一表單研習營隊APP10107APPLEGO0722LEGO10108LEGOMAZE0725社團課程資訊專題資訊科技概論(必)99學年度導論資訊科技與人類社會電腦硬體電腦網路電腦與問題解決電腦軟體高一必下高中資訊課綱95暫綱99課綱高二自智慧車協作平臺地圖
+相關連結專題網頁設計(98)celina老師教師部落格
+
+
+
+
+ 
+
+各類課堂進度‎ > ‎103學年度‎ > ‎
+  
+
+進階程式設計
+
+
+
+http://join-and-joy.appspot.com/為了協助學生學習程式設計與培養運用運算式思考解決問題的能力，國科會高瞻計畫「資訊科學創新學習計畫」研發一系列創新程式設計課程，搭配程式設計合作學習平臺，讓學生能隨時隨地學習程式設計。註意：此平臺上有些輸出入語法應使用printf 及scanf， 請參考美麗C世界高一班級(星期五34節進階)代碼 CCSH103下adv帳號 學號密碼 同帳號20150306  20150520介紹自訂函數練習一：修改講解之『質數判斷』程式，使其可以在C++環境執行練習二：寫作一指數函數可以輸入x,n，計算x^n          Q: 輸入若為10,10,計算會正確嗎?練習三：寫作一程式(含自己製作的指數函數)               使其可以計算多項式函數值例輸入-2,5,3,-4,2,0,0即在計算 G(-2)       其中G(x)=5x^3-4x^2參考網址http://dhcp.tcgs.tc.edu.tw/c/p010.htm延伸學習關鍵字：大數乘法 概念 及 參考資料20150313  20150527自訂函數1.最大公因數[法一]質因數分解觀察法練習：輸入一數，輸出其標準分解式[法二]輾轉相除法 a=bq+r, (a,b)=(b,r)練習一：兩數求最大公因數 (使用迴圈)              參考http://openhome.cc/Gossip/AlgorithmGossip/GCDPNumber.htm練習二：三數求最大公因數 (利用(a,b,c)=((a,b),c))(加分題)使用質因數分解觀察法找出兩數之最大公因數(加分題)使用陣列求算輸入6個數找最大公因數【TOI練習賽】http://toi.csie.ntnu.edu.tw/http://www.hpcodewars.com.tw/20150320遞迴參考網址 https://sites.google.com/site/jingprogram/c/function【動畫模擬】河內塔 http://cs.armstrong.edu/liang/animation/web/TowerOfHanoi.html201503271.氣泡排序法實作2. 多項式方程式勘根20150403放假201504101.利用氣泡排序法，輸入五位同學的座號、國文及英文分數   計算其總分、名次、各科平均及各科不及格人數2.使用二分逼近的概念，求算x^2=2的正根。20150417練習 Join and joy 示範課程：副程式、排序演算法20150424程式設計基礎線上教學影音==>  這裡【動畫模擬】 Queue http://cs.armstrong.edu/liang/animation/web/Queue.html【動畫模擬】Stack http://cs.armstrong.edu/liang/animation/web/Stack.html [參考資料]【動畫模擬】 資料結構http://cs.armstrong.edu/liang/animation/animation.html20150501佇列與堆疊：講解與J&J練習20150515J&J練習 二維陣列20150522高瞻教案二：畫地圖並產生樹預習：最短路徑20150529中正高中  高摘計畫https://sites.google.com/a/webmail.ccsh.tp.edu.tw/highscope/2015060520150612期末練習20150619期末測驗成炸高中生暑期程式設計比賽http://hspc.csie.ncku.edu.tw/程式完成-「指數函數」(0306)11724   11121 10518 (0313)11108  11728程式完成-「計算多項式函數值」(0306)11724switch case [四則運算，使用自製函數]#include<stdio.h>#include<stdlib.h>int add(int,int);int minus(int,int);int multiply(int,int);float divide(int,int);int main(void){   int a,b;   char choice;   printf("輸入計算式:");   scanf("%d %c %d",&a,&choice,&b);   switch(choice)     {     case '+':printf(" %d + %d = %d\n",a,b,add(a,b));break;     case '-':printf(" %d - %d = %d\n",a,b,minus(a,b));break;     case '*':printf(" %d * %d = %d\n",a,b,multiply(a,b));break;     case '/':printf(" %d / %d = %d\n",a,b,divide(a,b));break;     default:break;     }      system("pause");} int add(int a,int b){ return a+b;}int minus(int a,int b){ return a-b;}int multiply(int a,int b){ return a*b;}float divide(int a,int b){ return (float)a/b;}程式完成-「三數求最大公因數」(0313)11724程式完成-「成績計算」(0410)10518(0501)11724
+
+
+
+ 
+
+
+
+Comments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in|Recent Site Activity|Report Abuse|Print Page|Powered By Google Sites
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C++入門進階：C&C++基本語法/物件導向/例外處理/樣板/STL（適用Visual Studio 2015版） - 松崗資產管理股份有限公司
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+會員登入新會員註冊訂閱電子報
+
+
+
+
+
+迴首頁
+ 
+軟體專區
+ 
+關於松崗
+ 
+聯絡我們
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        	» 首頁  / 圖書類別 / 程式設計 / C++ / C++入門進階：C&C++基本語法/物件導向/例外處理/樣板/STL（適用Visual Studio 2015版）
+
+
+
+
+繼續購物 前往購物車
+
+
+
+
+
+相關類別
+
+
+
+手機與行動裝置程式設計
+
+Visual Basic
+
+C語言
+
+C#
+
+Scratch
+
+Java
+
+單晶片
+
+自動化程式設計
+
+遊戲、視窗程式設計
+
+其他
+
+
+
+
+
+
+相關書籍
+
+
+
+實作中精熟C++
+By 許金童
+
+
+實作中精熟C語言
+By 許金童
+
+
+C++程式設計入門
+By 黃建庭
+
+
+C++程式設計解題入門
+By 黃建庭
+
+
+Hello C++程式設計
+By 蔡志敏
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C++入門進階：C&C++基本語法/物件導向/例外處理/樣板/STL（適用Visual Studio 2015版）
+
+商品編號：XP16287作者：位元文化 著ISBN：9789572245804頁數：872 頁開數：17x23公分 色彩：單色光碟：CDx1出版日期：2016 年 08 月 05 日
+
+定價：690 元
+
+
+購買本書：
+
+博客來天瓏金石堂
+
+
+
+
+
+
+
+
+
+
+
+詳細介紹大綱特色作者介紹
+
+
+
+
+
+	這是一本觀念與語法並陳、範例與說明並重、入門與進階循序引導的最佳C/C++語言入門至進階教材。書中以生活化的實例說明，讓物件導向觀念融入您的思維，詳細的範例說明，讓程式設計的技巧一覽無遺，即使您不懂程式語言，照樣輕鬆學習。如果您想學習C++語言的進階觀念、物件導向程式設計的真諦與體驗STL程式設計的技巧，那麼您絕對不能錯過這本書。
+
+
+
+
+
+PART I 程式設計入門與C++基本語法
+	第1章 簡介C/C++程式語言
+	本章將為您簡單介紹程式語言的基本觀念、C/C++的發展過程，並簡介Visual Studio Express 2015整合開發環境的基本操作。
+
+	 
+
+第2章 Hello C++！與程式的除錯
+	這一章將利用簡單的Hello C++程式，講解C++程式的大致架構，最後則介紹如何運用Visual Studio Express 2015的除錯工具，執行程式的編譯與除錯。
+
+	 
+
+第3章 變數、資料型別與常數
+	變數、資料型別與常數是程式的最基本觀念，變數就是用於儲存程式中欲使用的資料。資料型別則用於宣告變數內儲存的資料為何。而常數的觀念，則是讓我們可以將無意義的數字，用有意義的文字代替，並方便程式的維護。
+
+	 
+
+第4章 運算子與運算式
+	這一章中將先說明一些名詞，接著再介紹程式內執行運算所使用的各種運算子。在介紹過運算子後，將詳細說明運算式中運算子計算之優先順序，以及運算式之計算規則。本章的最後一節裡，將介紹各種不同型別的資料，在運算時自動型別轉換的規則，以及如何在程式中執行資料型別的強制轉換。
+
+	 
+
+第5章 流程控制
+	程式執行的原則是一行一行，由上而下、由左而右執行。但這只是原則，有時候可能需要控製程式執行的過程，如：重複執行某一程式區段或判斷某一區段是否被執行。這些變化可以利用判斷式與迴圈達成，本章將為您介紹各種判斷式與迴圈的使用。
+
+	 
+
+PART II C++進階語法
+	第6章 陣列
+	第3 章介紹了不同資料型別的變數，這些變數僅能儲存一個值。程式裡，常常需要儲存一連串相同的值，這時就必須用到陣列。而陣列並不是只有一維的型式，還有二維、三維…等多維陣列，這些將於本章中介紹。
+
+	 
+
+第7章 指標
+	本章使用圖表說明指標與變數間關係的方法，建議您在閱讀時，自己也可以試著畫看看。相信往後當您遇到指標方面的問題時，一定可以幫上很大的忙。
+
+	 
+
+第8章 函數
+	函數在程式中佔有相當重要的地位，藉由函數的協助，讓程式的撰寫變得較為簡潔，對於程式的除錯與維護更見其效益。此外，運用他人撰寫的函數，將可節省許多程式開發的時間。就讓我們來看看，如何定義及運用函數。在介紹過函數的使用後，也將更深入說明一些函數應用的主題，其中包括自訂標頭檔、使用遞迴函數、函數指標以及函數之不定長度引數列傳入之定義方式。
+
+	 
+
+第9章 動態記憶體的配置
+	當學完陣列後，不知道您會不會覺得，無法動態決定陣列大小是一大遺憾呢？本章9-2 節將告訴您如何建立可以等到執行程式時，再決定大小的動態陣列。9-3 節則為您解答7-3 節有關指標的指標之用途的疑問，並告訴您如何建立動態陣列。
+
+	 
+
+第10章 自訂資料型別
+	到目前為止，C++可使用的資料型別，已分別介紹於第3章的基本資料型別、第6 章的陣列與第7 章的指標。本章將再介紹一些特別的資料型別，其中包括利用typedef 為特定資料型別指定別名，可將不同型別的資料都放在一起的結構變數struct，以及相當於常數宣告，並可用來宣告變數的列舉常數enum。
+
+	 
+
+PART III物件導向觀念與C++語法
+	第11章 物件導向的基本觀念
+	從這一章起，您將開始接觸物件導向程式設計的觀念，並透過真實世界內，各種個體間的關係，說明物件導向觀念的物件、類別、繼承、訊息這四個基本觀念，建立您對物件導向觀念的基本認識。但接觸到C++內支援物件導向觀念的各種語法前，將先利用這一章，說明電腦將如何模擬真實世界，以及物件導向觀念在模擬真實世界上，有什麼樣的優點。
+
+	 
+
+第12章 Hello C++！
+	這一章將帶領您建立一支簡單的C++程式，並詳細說明程式的內容。這一章的介紹內容，在往後的章節將做更進一步的說明。
+
+	 
+
+第13章 類別與物件
+	上一章的內容，一直繞著兩個主題打轉–模擬世界與如何抽象化。由這兩個主題點出物件導向技術的優點之一，就是以物件為觀念模擬真實世界的個體時，將可保持真實世界的個體概念。這一章將進一步說明物件導向技術的基石–物件。
+
+	 
+
+第14章 類別的繼承–程式碼的再用
+	從第11章開始一直強調物件導向技術在程式碼再用上的優點，成就這個優點的主要觀念就是繼承。物件導向的繼承觀念主要為物件關係的靜態模擬。這一章裡，將告訴您如何將繼承機制運用在應用程式的開發上。除此之外，亦告訴您運用繼承可能遇到的一些問題與解決方法。
+
+	 
+
+第15章 物件間的關聯與實作
+	上一章介紹的繼承觀念將描述類別與類別間的特性觀念，以完成一個繼承階層。真實世界內，物件間的關係當然不僅止於此。在物件導向觀念裡，還將用關聯、組合與聚合三種關係描述物件間關係。而這些觀念亦是繼承外，達成程式碼再用的重要機制。
+
+	 
+
+第16章 訊息–物件間的對談
+	本章闡述的觀念，卻是物件導向技術中極為重要的一環，少了這個觀念，物件導向技術就像個折翼天使，是誰這麼重要呢？它就是多型（Polymorphism）。所謂物件導向觀念的多型，就是用於模擬真實世界裡，個體間的訊息溝通。真實世界之訊息為多元性的，而C++實踐多型的機制就是函數的多載與動態連結。
+
+	 
+
+第17章 樣板（TEMPLATE）
+	樣板是什麼？程式裡，倒進樣板這個模子的石膏是資料型別，而產生的成品則是程式內的類別或函數，本章將針對樣板做一詳細的解說。
+
+	 
+
+PART IV C++標準類別庫與標準樣板程式庫
+	第18章 資料流與檔案的輸出/入
+	欲輸出或輸入資料時，在C++裡，都將以資料流的觀念，透過資料流類別處理。前面所提及的cin、cout兩個物件，僅負責操作資料流與螢幕間的輸出/入工作。所以，這一章將更進一步說明資料流的觀念，並將從螢幕輸出/入資料的方式，延伸至從檔案輸出/入資料。
+
+	 
+
+第19章 標準字串類別
+	到目前為止，程式均利用字元陣列儲存字串，並運用cstring標頭檔定義的字串函數執行處理。事實上，cstring標頭檔將引用C語言的string.h標頭檔，因此，並不是C++提供的字串處理功能。這一章則將為您介紹C++標準所提供，用於處理字串的標準字串類別（basic_string類別），並介紹運用標準字串類別的各種成員函數，處理字串。
+
+	 
+
+第20章 例外處理
+	以往處理程式錯誤的方式，主要運用if敘述檢查函數傳回值之方式達成，但使用上有許多限制。在這一章裡，將為您介紹如何運用C++提供的例外處理（Exception Handling），建立程式的錯誤處理機制。
+
+	 
+
+第21章 命名空間（namespace）
+	本章將介紹如何運用命名空間（namespace）的觀念，解決命名衝突的問題。
+
+	 
+
+第22章 標準樣板程式庫
+	在處理資料結構上，將泛型化程式設計的觀念與物件導向技術相結合，而建立出的標準樣板程式庫（STL，Standard Template Library），在資料結構的處理上，帶給程式設計師非常大的便利，本章將進行說明。
+
+	 
+
+第23章 模組化開發、自訂標頭檔與條件式編譯
+	前面介紹的C++程式，所有的程式碼都放在同一個程式碼檔中，本章將介紹如何發展模組化的程式，也就是將函數的程式碼與主程式放置在不同的程式碼檔，並且利用自訂標頭檔與條件式編譯使得模組功能更加完備。
+
+	 
+
+第24章 圖書管理系統範例
+	這一章是本書內容的總結，本章將從無到有地示範建立圖書管理系統的完整流程。從系統的建立流程，將示範物件導向系統的系統分析、設計與建構的大略過程。讓各位體會一下，該如何利用物件導向觀念與技術，尋求問題的解答。
+
+	 
+
+附錄A ASCII碼
+	 
+
+
+
+
+
+帶領讀者從基本語法開始學習，以物件導向觀點學習C++。並透過生活化、口語化的方式說明，輔以眾多程式範例，讓您從實際操作中學習。
+
+	 
+
+
+		區分觀念難易滿足不同需求：本書內容依觀念難易程度，區分為入門、進階與專家，讀者可依不同階段之需求彈性學習。
+		 
+
+		入門進階一氣呵成：這是市面上第一本以C++語言為起點，以物件導向觀念為方向，帶領您循序學習繼承、多型、例外處理與STL的程式書。
+		 
+
+		正確觀念深植腦海：以生活化、口語化的方式，為您建立物件導向觀念，並在介紹C++語法的過程裡，運用物件導向觀念思考問題。
+		 
+
+		觀念技巧相互印證：以物件導向觀念的角度剖析C++程式設計技巧，讓您深入瞭解C++實踐物件導向觀念的機制。
+		 
+
+		別人頭疼您不困擾：對於令人頭疼的指標，將運用圖示為您解說，並釐清指標與字串、陣列及函數間的關係。
+		 
+
+		深入技巧絕不迴避：詳細介紹大多數書籍遺漏的前置處理、函數指標、樣版與STL等觀念，讓您深刻體驗進階技術。
+		 
+
+		範例眾多說明詳盡：全書提供236個範例，讓您從實際範例紮實學習，除列出完整程式碼與詳盡的解說外，更堅持一句一註解，程式閱讀輕鬆無負擔。
+		 
+
+		親身體驗軟體革命：透過範例的實際討論，讓您體會物件導向程式設計如何提高程式碼再用，且易於擴充之特性。
+		 
+
+		設計思維完整呈現：以圖書管理系統發展過程為例，介紹系統分析、設計與系統建構的完整流程。
+		 
+
+		輕鬆駕馭超級工具：除告訴您如何撰寫程式，更介紹Visual Studio Express 2015 for Windows Desktop的操作技巧。
+		 
+
+
+
+
+
+
+郭尚君
+
+	經歷
+
+
+		華亞科技 專案經理
+		 
+
+		聯華電子 高級工程師
+		 
+
+		電腦圖書作者，專精領域為物件導向技術、C/C++、Java、視窗程式設計、關聯式資料庫、動態網頁設計（JSP、ASP、DHTML）、XML...等，相關著作五十餘本
+		 
+
+		國科會「國道工程施工網圖模組建立之研究（二）」計畫顧問
+		 
+
+		技能檢定考題命題委員
+		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    	
+        松崗資產管理股份有限公司 │ Sung Gang Asset Management Corp.Limited 版權所有
+        電話: (02)2381-3398 │ 傳真: (02)2381-5266 │ 地址: 100 臺北市中正區忠孝西路一段 50 號 9 樓
+        Copyright © Sung Gang Asset Management Corp.Limited. All Rights Reserved.
+	
+
+
+
+
+

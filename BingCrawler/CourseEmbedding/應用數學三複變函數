@@ -1,0 +1,7786 @@
+
+
+複變函數 - 陳鍾誠的網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wikidot.com
+
+
+
+.wikidot.com
+    
+
+
+Share on
+
+
+
+
+
+
+
+
+Edit
+History
+Tags
+Source
+
+Explore »
+
+ 
+
+
+
+
+
+陳鍾誠的網站
+金門大學：免費電子書、教材、程式、動畫
+
+
+
+
+
+
+
+
+文章列表
+
+最近修改
+所有網頁
+標記
+
+
+相關網站
+
+陳鍾誠的網站
+系統程式
+C# 程式設計
+
+
+陳鍾誠
+
+關於陳鍾誠
+陳鍾誠的信箱
+陳鍾誠的 Facebook
+陳鍾誠的網站
+陳鍾誠的手機網
+陳鍾誠的簡歷
+陳鍾誠的 Diigo
+陳鍾誠的 Youtube
+
+
+Wikidot
+
+網站管理
+本站成員
+標記
+加入本站?
+頂欄
+側欄
+樣版
+Wikidot 文件
+Wikidot 語法
+Wikidot Module
+Wikidot Embedding
+Wikidot Template
+Wikidot Layout
+
+
+
+
+Create account or Sign in 
+
+
+
+
+課程
+兩岸產業
+網路資源
+網路程式
+開放原碼
+動畫設計
+研究專題
+書籍
+系統程式
+C# 程式設計
+Blender 動畫設計
+作品
+程式
+論文
+動畫
+文章
+新詩
+故事
+歷史
+研究
+研究
+衛星遊戲
+人工智慧
+網路出版
+機器翻譯
+興趣
+閱讀
+寫作
+影片
+關註
+學習
+常用
+生活
+網站
+手機版
+手機最愛
+Diigo
+Twitter
+Facebook
+Scribd
+Youtube
+Kmit
+ping
+GAE
+金門不動產
+手機入口網
+大學課程網
+
+
+rating: 0+x
+
+
+
+
+
+                            複變函數
+                        
+
+
+
+
+
+
+
+
+微積分
+簡介
+函數
+極限
+微分
+積分
+微分與積分
+公理化
+無窮級數
+泰勒展開式
+傅立葉級數
+拉氏轉換
+z 轉換
+小波轉換
+多變量微積分
+向量與函數
+向量分析
+複變函數
+偏微分
+Jocobian
+多重積分
+微分方程
+偏微分方程
+向量場
+對偶空間
+張量
+梯度
+線積分
+散度
+旋度
+英文用語
+GeoGebra
+習題
+相關書籍
+應用數學
+微積分
+離散數學
+線性代數
+機率統計
+訊息
+相關網站
+參考文獻
+最新修改
+簡體版
+English
+
+
+
+
+
+文章
+留言
+授權
+
+
+
+記號約定
+在複分析中複數通常用符號 z 表示，它可以分為實部 (x) 與虛部 (y)：
+(1)
+\begin{align} z = x + i y\, \end{align}
+這裏 x 與 y 是實數，i 是虛單位。在這種通常記法下複數 z 對應與笛卡兒平面中的點 (x, y)。
+笛卡兒平面中的點 (x, y) 在極座標中也能表示為
+(2)
+\begin{align} (x, y) = (r\cos\theta, r\sin\theta)\qquad\left(r = \sqrt{x^2+y^2}; \quad \theta=\arctan\frac{y}{x}\right).\, \end{align}
+在笛卡兒平面中可能假設反切 (反餘玹) 函數取值於 −π 到 π （弧度，當 x ≤ 0 時，對 (x,y) 定義“真正的”反切函數需要一點考慮。在複平面上它們的極座標具有如下形式
+(3)
+\begin{align} z = x + iy = |z|\left(\cos\theta + i\sin\theta\right) = |z|e^{i\theta}\, \end{align}
+這裏
+(4)
+\begin{align} |z| = \sqrt{x^2+y^2}; \quad \theta = \arg(z) = -i\log\frac{z}{|z|}.\, \end{align}
+這裏 |z| 是複數 z 的絕對值或長度；θ 是 z 的輻角，通常取值於區間 0 ≤ θ < 2π；最後一個等式（$|z|= e^{i \theta}$）得自歐拉公式。註意 z 的輻角是多值的，因為複指數函數是週期為 2πi。從而，如果 θ 是 arg(z) 的一個值，其他值由 arg(z) = θ + 2 n π 給出，這裏 n 是任何 ≠ 0 整數。
+圍道積分理論是複分析的重要組成部分。在此情形，沿著閉曲線的積分方向是要緊的——沿著相反的方向所得的積分值乘以 −1。習慣上“正方向”是逆時針方向。例如，沿著單位圓我們從點 z=1 開始，向右上移動經過 z=i，然後向左下經過 −1，右下經過 − i，最後向右上移動到達起點 z=1，這就是單位圓的正方向。
+幾乎所有複分析專註複函數——即將複平面的一個子集映到複平面某個另外的（可能相交甚至重合）子集。這裏習慣說 f(z) 的定義域位於 z-平面上，並稱 f(z) 的值域或像作為 w-平面中的一個點集。用符號記成
+(5)
+\begin{align} z = x + iy;\qquad f(z) = w = u + iv,\, \end{align}
+並經常將函數 f 視為 z-平面（帶有座標 (x, y)）到 w-平面（帶有座標 (u, v)） 的變換。
+複變函數
+複變函數，是引數和因變數都為複數的函數。更確切的說,復函數的值域與定義域都是複平面的子集。在複分析中，引數又稱為函數的“宗量”
+對於復函數，引數和因變數可分成實部和虛部:
+(6)
+\begin{align} z = x + iy\, \end{align}
+(7)
+\begin{align} w = f(z) = u(x,y) + iv(x,y)\, \end{align}
+用另一句話說，就是函數 f(z) 的成分,
+(8)
+\begin{align} u = u(x,y)\, \end{align}
+(9)
+\begin{align} v = v(x,y),\, \end{align}
+可以理解成變數 x 和 y 的二元實函數。
+全純函數
+全純函數（holomorphic function）是定義在複平面C的開子集上的，在複平面C中取值的，在每點上皆複可微的函數。
+複變函數為全純函數的充分必要條件是複變函數的史部和虛部同時滿足「柯西-黎曼方程」
+(10)
+\begin{align} { \partial u \over \partial x } = { \partial v \over \partial y } \end{align}
+和
+(11)
+\begin{align} { \partial u \over \partial y } = -{ \partial v \over \partial x } . \end{align}
+通過上面的這個方程組也可以由全純函數的實部或者虛部之一來求解另一個。
+柯西積分定理
+柯西積分定理指出，如果全純函數的閉合積分路徑沒有包括奇異點，那麼其積分值為0；如果包含奇異點，則外部閉合路徑正向積分的值等於包圍這個奇異點的內環上閉合路徑的正向積分值。
+柯西積分定理
+假設 U 是複平面 C 的一個開子集，f:U → C 是一個在閉圓盤 D 上複可微的方程，並且閉圓盤 D = { z : | z − z0 ≤ r} 是 U 的子集。 設 C 為 D 的邊界 。則可以推得每個在 D 內部的點 a:
+(12)
+\begin{align} f(a) = {1 \over 2\pi i} \oint_C {f(z) \over z-a}\, dz \end{align}
+其中的積分為逆時針方向沿著 C 的積分。
+柯西積分定理，是一個關於複平面上全純函數的路徑積分的很重要的陳述。這個定理說明，如果從一點到另一點有兩個不同的路徑，而函數在兩個路徑之間處處是全純的，則函數的兩個路徑積分是相等的。也就是說，設 U 是 C 的一個單連通開子集，f : U → C 是一個全純函數，並設 γ 是 U 內的一個可求長路徑，其起點與終點相同，則
+(13)
+\begin{align} \oint_\gamma f(z)\,dz = 0. \end{align}
+U 是單連通的條件，意味著 U 沒有“洞”，例如任何一個開圓盤 U={ z: |z-z0| < r} 都符合條件，這個條件是很重要的，考慮以下路徑
+(14)
+\begin{align} \gamma(t) = e^{it} \quad t \in \left[0,2\pi\right] \end{align}
+它是一個單位圓，則路徑積分
+(15)
+\begin{align} \oint_\gamma \frac{1}{z}\,dz = \int_0^{2\pi} { ie^{it} \over e^{it} }\,dt= \int_0^{2\pi}i\,dt = 2\pi i \end{align}
+不等於零；這裏不能使用柯西積分定理，因為 f(z) = 1/z 在 z=0 處沒有定義。
+該定理的一個重要的結果，是在單連通域內全純函數的路徑積分可以用類似於微積分基本定理的方法來計算：設 U 是 C 的一個單連通開子集，f : U → C 是一個全純函數，並設 γ 是 U 內的一個分段連續可微分的路徑，起點為 a，終點為 b。如果 F 是 f 的一個複數導數，則
+(16)
+\begin{align} \int_\gamma f(z)\,dz=F(b)-F(a). \end{align}
+從柯西積分定理可以推導出「柯西積分公式」和「留數定理」。
+柯西積分公式
+在數學中，柯西積分公式是複分析的一個核心理論。以著名數學家柯西命名。
+它主要表述了任何一個在閉圓盤上複可微的方程在圓盤內的值完全取決於它在盤邊界上的值。並且圓盤內每一點的所有的導數也可通過柯西積分公式計算。而在實分析中這樣的結果是完全不可能達到的。
+假設 U 是複平面 C 的一個開子集，f:U →C 是一個在閉圓盤 D 上複可微的方程，並且閉圓盤 D = {z| z-z0 <= r} 是 U 的子集。 設 C 為 D 的邊界。則可以推得每個在 D 內部的點 a：
+(17)
+\begin{align} f(a) = {1 \over 2\pi i} \oint_C {f(z) \over z-a}\, dz \end{align}
+其中的積分為逆時針方向沿著 C 的積分。
+亞純函數
+在複分析中，一個複平面的開子集 D 上的亞純函數是一個在 D 上除一個或若干個孤立點集合之外的區域全純的函數，那些孤立點稱為該函數的極點。
+複變函數的級數展開
+複函數的可微性有比實函數的可微性更強的性質。例如：每一個正則函數在其定義域中的每個開圓盤都可以冪級數來表示：
+(18)
+\begin{align} f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n = a_0 + a_1 (z-z_0) + a_2 (z-z_0)^2 + a_3 (z-z_0)^3 + \cdots \end{align}
+特別地，全純函數都是無限次可微的，性質對實可微函數而言普遍不成立。大部分初等函數（多項式、指數函數、三角函數）都是全純函數。常用的方法有=「泰勒級數展開」等。
+洛朗級數
+複變函數 f(z) 的洛朗級數，是冪級數的一種，它不僅包含了正數次數的項，也包含了負數次數的項。有時無法把函數表示為泰勒級數，但可以表示為洛朗級數。
+(19)
+\begin{align} f(z)=\sum_{n=-\infty}^\infty a_n(z-c)^n \end{align}
+奇點的情況
+對於複變函數的孤立奇點，有如下三類。
+本質奇點
+複變函數在某孤立奇點鄰域的洛朗級數展開，如果存在無窮個負冪項，那麼這個點稱為“本質奇點”。
+對複平面 C 上的給定的開子集 U，以及 U 中的一點 a，亞純函數 f:U\{a}→C 在 a 處有本質奇點當且僅當它不是極點也不是可去奇點。
+極點
+複變函數在某孤立奇點鄰域的洛朗級數展開，如果存在有限個負冪項，那麼這個點稱為“極點” (singularity)。
+亞純函數的極點是一種特殊的奇點，它的表現如同 z-a = 0 時 $1/(z-a)^n$ 的奇點。這就是說，如果當 z 趨於 a 時，函數 f(z) 趨於無窮大，那麼 f(z) 在 z = a 處便具有極點。
+可去奇點
+複變函數在某孤立奇點鄰域的洛朗級數展開，如果沒有負冪項，那麼這個點稱為“極點” (singularity)。
+如果 U 是複平面 C 的一個開集，a 是 U 中一點，f : U-{a} → C 是一個全純函數，如果存在一個在 U - {a} 與 f 相等的全純函數 g : U → C，則 a 稱為 f 的一個「可去奇點」。如果這樣的 g 存在，我們說 f 在 a 是可全純延拓的。
+授權
+本文修改自維基百科，使用時請遵守其 CC-by-sa 3.0 授權。
+參考文獻
+
+維基百科：複數平面 — http://zh.wikipedia.org/wiki/%E5%A4%8D%E5%B9%B3%E9%9D%A2
+維基百科：複分析 — http://zh.wikipedia.org/wiki/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0
+維基百科：柯西－黎曼方程 — http://zh.wikipedia.org/wiki/%E6%9F%AF%E8%A5%BF-%E9%BB%8E%E6%9B%BC%E6%96%B9%E7%A8%8B
+維基百科：柯西積分定理 — http://zh.wikipedia.org/wiki/%E6%9F%AF%E8%A5%BF%E7%A7%AF%E5%88%86%E5%AE%9A%E7%90%86
+維基百科：留數 — http://zh.wikipedia.org/wiki/%E7%95%99%E6%95%B0
+
+Facebook
+
+
+
+Facebook
+
+Wikidot
+
+
+Show Comments
+
+
+
+
+
+Add a New Comment
+
+
+Post preview:
+
+
+Close preview
+
+
+
+
+
+
+
+
+or Sign in as Wikidot user
+
+
+
+(will not be published)
+
+
+
+
+-
++
+
+
+                    Help: wiki text quick reference 
+
+
+
+
+
+
+
+
+
+
+
+Permanent Link
+Edit
+Delete
+
+
+
+
+
+本網頁的作者、授權與引用方式
+
+本文中有些部分修改自維基百科，因此本文可以視為維基百科的衍生作品。
+
+修改者
+陳鍾誠，於金門大學資訊工程系，電子郵件：wt.ude.uqn|ccc#wt.ude.uqn|ccc，網站：http://ccckmit.wikidot.com。
+授權
+本文採用創作共用 (Creative Common) 3.0 版的 姓名標示─非商業性─相同方式分享 授權條款，歡迎轉載或修改使用，但若做為商業使用時必須取得授權，引用本文時請參考下列格式。
+中文版 (APA格式)
+維基百科的衍生創作，修改者為陳鍾誠 (25 Feb 2011 08:02)，(網頁標題) 複變函數，(網站標題) 陳鍾誠的網站，取自 http://ccckmit.wikidot.com/ca:complex ，網頁修改第 22 版。
+英文版 (APA格式)
+Deriving from Wikipedia by Chung-Chen Chen (25 Feb 2011 08:02), Retrieved from http://ccckmit.wikidot.com/ca:complex , Page Revision 22.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+page revision: 22, last edited: 28 Jul 2012 12:32
+
+Edit
+Rate (0)
+Tags
+Discuss (0)
+History
+Files
+Print
+Site tools
++ Options
+
+
+Edit Sections
+Append
+Edit Meta
+Watchers
+Backlinks
+Page Source
+Parent
+Lock Page
+Rename
+Delete
+
+
+
+
+
+
+
+
+
+Help
+     |
+    Terms of Service
+     |
+    Privacy
+     |
+    Report a bug
+     |
+    Flag as objectionable
+
+Powered by Wikidot.com
+
+
+                    Unless otherwise stated, the content of this page is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
+
+
+
+
+
+Other interesting sites
+
+
+
+
+
+
+History in the New Media
+          
+              Digital Project Design in Archives and Public History
+            
+
+
+
+
+
+
+
+The Tales of Daeren
+
+
+
+
+
+
+
+
+
+Ammon Allred's Online Classroom
+          
+              University of Toledo Philosophy Professor
+            
+
+
+
+
+
+
+
+Trumpet exercise database
+          
+              for trumpet players, students and teachers
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Click here to edit contents of this page.    
+
+
+
+        Click here to toggle editing of individual sections of the page (if possible).         Watch headings for an "edit" link when available.    
+
+        Append content without editing the whole page source.    
+
+        Check out how this page has evolved in the past.    
+
+        If you want to discuss contents of this page - this is the easiest way to do it.    
+
+        View and manage file attachments for this page.    
+
+        A few useful tools to manage this Site.    
+
+        See pages that link to and include this page.    
+
+        Change the name (also URL address, possibly the category) of the page.    
+
+        View wiki source for this page without editing.    
+  
+        View/set parent page (used for creating breadcrumbs and structured layout).    
+
+            Notify administrators if there is objectionable content in this page.        
+
+            Something does not work as expected? Find out what you can do.        
+
+            General Wikidot.com documentation and help section.        
+
+            Wikidot.com Terms of Service - what you can, what you should not etc.        
+
+            Wikidot.com Privacy Policy.          
+        
+
+
+
+
+
+複分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+複分析
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+複分析是研究複函數，特別是亞純函數和複解析函數的數學理論。
+研究中常用的理論、公式以及方法包括柯西積分定理、柯西積分公式、留數定理、洛朗級數展開等。複分析的應用領域較為廣泛，在其它數學分支和物理學中也起著重要的作用。包括數論、應用數學、流體力學、熱力學和電動力學。
+
+
+
+目錄
+
+
+1 複變函數
+
+1.1 全純函數
+
+1.1.1 柯西積分定理
+1.1.2 柯西積分公式
+
+
+1.2 亞純函數
+
+
+2 複變函數的級數展開
+
+2.1 洛朗級數
+2.2 奇異點的情況
+
+2.2.1 本質奇異點
+2.2.2 極點
+2.2.3 可去奇異點
+
+
+
+
+3 留數
+
+3.1 定義
+3.2 留數定理
+
+
+4 註釋及參考文獻
+5 參考書目
+
+
+
+複變函數[編輯]
+
+
+
+
+曼德博集合，碎形
+
+
+複變函數，是自變量和應變量都為複數的函數。更確切的說，複函數的值域與定義域都是複數平面的子集。在複分析中，自變量又稱為函數的「宗量」[1]。
+對於複函數，自變量和應變量可分成實部和虛部:
+
+
+
+
+
+z
+=
+x
++
+i
+y
+
+
+
+{\displaystyle z=x+iy\,}
+
+
+
+
+
+
+w
+=
+f
+(
+z
+)
+=
+u
+(
+x
+,
+y
+)
++
+i
+v
+(
+x
+,
+y
+)
+
+
+
+{\displaystyle w=f(z)=u(x,y)+iv(x,y)\,}
+
+
+其中
+
+
+
+x
+,
+y
+∈
+
+R
+
+
+
+
+{\displaystyle x,y\in \mathbb {R} \,}
+
+和
+
+
+
+u
+(
+x
+,
+y
+)
+,
+v
+(
+x
+,
+y
+)
+
+
+
+{\displaystyle u(x,y),v(x,y)\,}
+
+是實函數。
+
+用另一句話說，就是函數 f(z)的成分,
+
+
+
+
+
+u
+=
+u
+(
+x
+,
+y
+)
+
+
+
+{\displaystyle u=u(x,y)\,}
+
+
+
+
+
+
+v
+=
+v
+(
+x
+,
+y
+)
+,
+
+
+
+{\displaystyle v=v(x,y),\,}
+
+
+
+可以理解成變量 x和 y的二元實函數。
+全純函數[編輯]
+主條目：全純函數
+參見：解析函數
+全純函數（holomorphic function）是定義在複數平面C的開子集上的，在複數平面C中取值的，在每點上皆複可微的函數。[2]
+複變函數為全純函數的充分必要條件是複變函數的實部和虛部同時滿足柯西-黎曼方程[3]：
+
+
+
+
+
+
+
+
+∂
+u
+
+
+∂
+x
+
+
+
+=
+
+
+
+∂
+v
+
+
+∂
+y
+
+
+
+
+
+{\displaystyle {\partial u \over \partial x}={\partial v \over \partial y}}
+
+
+
+和
+
+
+
+
+
+
+
+
+∂
+u
+
+
+∂
+y
+
+
+
+=
+−
+
+
+
+∂
+v
+
+
+∂
+x
+
+
+
+.
+
+
+{\displaystyle {\partial u \over \partial y}=-{\partial v \over \partial x}.}
+
+
+
+通過上面的這個方程組也可以由全純函數的實部或者虛部之一來求解另一個[4]。
+柯西積分定理[編輯]
+主條目：柯西積分定理
+柯西積分定理指出，如果全純函數的閉合積分路徑沒有包括奇異點，那麼其積分值為0；如果包含奇異點，則外部閉合路徑正向[5]積分的值等於包圍這個奇異點的內環上閉合路徑的正向積分值。
+柯西積分公式[編輯]
+主條目：柯西積分公式
+假設 U 是複數平面C的一個開子集，f : U → C 是一個在閉圓盤D上複可微的方程，
+並且閉圓盤 D = { z : | z − z0| ≤ r} 是U的子集。 設C 為D 的邊界。則可以推得每個在D 內部的點a:
+
+
+
+
+
+f
+(
+a
+)
+=
+
+
+1
+
+2
+π
+i
+
+
+
+
+∮
+
+C
+
+
+
+
+
+f
+(
+z
+)
+
+
+z
+−
+a
+
+
+
+
+d
+z
+
+
+{\displaystyle f(a)={1 \over 2\pi i}\oint _{C}{f(z) \over z-a}\,dz}
+
+
+
+其中的積分為逆時針方向沿著C的積分。
+亞純函數[編輯]
+主條目：亞純函數
+在複分析中，一個複數平面的開子集D上的亞純函數是一個在D上除一個或若干個孤立點集合之外的區域全純的函數，那些孤立點稱為該函數的極點。
+複變函數的級數展開[編輯]
+參見：冪級數
+複函數的可微性有比實函數的可微性更強的性質。例如：每一個正則函數在其定義域中的每個開圓盤都可以冪級數來表示：
+
+
+
+
+
+
+
+f
+(
+z
+)
+=
+
+∑
+
+n
+=
+0
+
+
+∞
+
+
+
+a
+
+n
+
+
+(
+z
+−
+
+z
+
+0
+
+
+
+)
+
+n
+
+
+=
+
+a
+
+0
+
+
++
+
+a
+
+1
+
+
+(
+z
+−
+
+z
+
+0
+
+
+)
++
+
+a
+
+2
+
+
+(
+z
+−
+
+z
+
+0
+
+
+
+)
+
+2
+
+
++
+
+a
+
+3
+
+
+(
+z
+−
+
+z
+
+0
+
+
+
+)
+
+3
+
+
++
+⋯
+
+
+{\displaystyle f(z)=\sum _{n=0}^{\infty }a_{n}(z-z_{0})^{n}=a_{0}+a_{1}(z-z_{0})+a_{2}(z-z_{0})^{2}+a_{3}(z-z_{0})^{3}+\cdots }
+
+。
+
+
+
+特別地，全純函數都是無限次可微的[6]，性質對實可微函數而言普遍不成立。大部分初等函數（多項式、指數函數、三角函數）都是全純函數。常用的方法有泰勒級數展開等。
+洛朗級數[編輯]
+主條目：洛朗級數
+複變函數
+
+
+
+f
+(
+z
+)
+
+
+{\displaystyle f(z)}
+
+的洛朗級數，是冪級數的一種，它不僅包含了正數次數的項，也包含了負數次數的項。有時無法把函數表示為泰勒級數，但可以表示為洛朗級數。
+
+
+
+
+
+f
+(
+z
+)
+=
+
+∑
+
+n
+=
+−
+∞
+
+
+∞
+
+
+
+a
+
+n
+
+
+(
+z
+−
+c
+
+)
+
+n
+
+
+
+
+{\displaystyle f(z)=\sum _{n=-\infty }^{\infty }a_{n}(z-c)^{n}}
+
+
+
+奇異點的情況[編輯]
+主條目：孤立奇異點
+對於複變函數的孤立奇異點，有如下三類。
+本質奇異點[編輯]
+主條目：本質奇異點
+複變函數在某孤立奇異點鄰域的洛朗級數展開，如果存在無窮個負冪項，那麼這個點稱為「本質奇異點」[7]。
+對複數平面 C 上的給定的開子集 U，以及 U 中的一點 
+
+
+
+a
+
+
+{\displaystyle a}
+
+，亞純函數 f : U\{a} → C 在 
+
+
+
+a
+
+
+{\displaystyle a}
+
+ 處有本質奇異點若且唯若它不是極點也不是可去奇異點。
+極點[編輯]
+主條目：極點 (代數)
+複變函數在某孤立奇異點鄰域的洛朗級數展開，如果存在有限個負冪項，那麼這個點稱為「極點」[7]。
+亞純函數的極點是一種特殊的奇異點，它的表現如同z-a = 0時1/(z-a)n的奇異點。這就是說，如果當z趨於a時，函數f(z)趨於無窮大，那麼f(z)在z = a處便具有極點。
+可去奇異點[編輯]
+主條目：可去奇異點
+複變函數在某孤立奇異點鄰域的洛朗級數展開，如果沒有負冪項，那麼這個點稱為「可去奇異點」[7]。
+如果 U 是複數平面 C 的一個開集，a 是 U 中一點，f : U - {a} → C 是一個全純函數，如果存在一個在 U - {a} 與 f 相等的全純函數 g : U → C，則 a 稱為 f 的一個可去奇異點。如果這樣的 g 存在，我們說 f 在 a 是可全純延拓的。
+留數[編輯]
+主條目：留數
+定義[編輯]
+在複分析中，留數是一個複數，描述亞純函數在奇異點周圍的路徑積分的表現。
+亞純函數
+
+
+
+f
+
+
+{\displaystyle f}
+
+在孤立奇異點
+
+
+
+a
+
+
+{\displaystyle a}
+
+的留數，通常記為
+
+
+
+R
+e
+s
+(
+f
+,
+a
+)
+
+
+{\displaystyle Res(f,a)}
+
+，是使
+
+
+
+
+
+f
+(
+z
+)
+−
+
+
+R
+
+(
+z
+−
+a
+)
+
+
+
+
+
+{\displaystyle f(z)-{R \over (z-a)}}
+
+
+
+在圓盤
+
+
+
+0
+<
+
+|
+
+z
+−
+a
+
+|
+
+<
+δ
+
+
+{\displaystyle 0<|z-a|<\delta }
+
+內具有解析原函數的唯一值
+
+
+
+R
+
+
+{\displaystyle R}
+
+
+留數定理[編輯]
+主條目：留數定理
+
+
+
+
+
+
+
+在複分析中，留數定理是用來計算解析函數沿著閉曲線的路徑積分的一個有力的工具，也可以用來計算實函數的積分。它是柯西積分定理和柯西積分公式的推廣。
+假設U是複數平面上的一個單連通開子集，a1、……、an是複數平面上有限個點，f是定義在U \ {a1、……、an}的全純函數。如果γ是一條把a1、……、an包圍起來的可求長曲線，但不經過任何一個ak，並且其起點與終點重合，那麼：
+
+
+
+
+
+
+∮
+
+γ
+
+
+f
+(
+z
+)
+
+d
+z
+=
+2
+π
+i
+
+∑
+
+k
+=
+1
+
+
+n
+
+
+I
+⁡
+(
+γ
+,
+
+a
+
+k
+
+
+)
+Res
+⁡
+(
+f
+,
+
+a
+
+k
+
+
+)
+.
+
+
+{\displaystyle \oint _{\gamma }f(z)\,dz=2\pi i\sum _{k=1}^{n}\operatorname {I} (\gamma ,a_{k})\operatorname {Res} (f,a_{k}).}
+
+
+
+一些難於計算的實函數的積分可以通過轉化為複變函數，然後利用留數定理來進行計算[8]。
+註釋及參考文獻[編輯]
+
+
+^ 梁昆淼 等. 數學物理方法（第四版）. 高等教育出版社. : 6頁. ISBN 978-7-04-028352-5. 
+^ 全純函數有時也被稱作解析函數，但後者有幾個其他的含義。
+^ 梁昆淼 等. 數學物理方法（第四版）. 高等教育出版社. : 13. ISBN 978-7-04-028352-5. 
+^ 在積分的時候需要一定的初始條件才能得到確定的解。
+^ 沿積分路徑前進時，閉合路徑包圍的區域總在前進方向左側。定義這個方向為「正向」。
+^ 梁昆淼 等. 數學物理方法（第四版）. 高等教育出版社. : 12頁. ISBN 978-7-04-028352-5. 
+^ 7.0 7.1 7.2 梁昆淼 等. 數學物理方法（第四版）. 高等教育出版社. : 48頁. ISBN 978-7-04-028352-5. 
+^ 梁昆淼 等. 數學物理方法（第四版）. 高等教育出版社. : 56頁. ISBN 978-7-04-028352-5. 
+
+
+參考書目[編輯]
+
+（美）布朗 等. 複變函數及應用. 機械工業出版社. ISBN 978-7-11-115830-1. 
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=複分析&oldid=43259654"					
+分類：複分析隱藏分類：含有英語的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةБеларускаяБългарскиCatalàکوردیČeštinaCymraegDeutschΕλληνικάEnglishEsperantoEspañolEestiفارسیSuomiFrançaisGalegoעבריתहिन्दीMagyarÍslenskaItaliano日本語ქართული한국어LumbaartMaltiNederlandsИронPolskiPortuguêsRomânăРусскийසිංහලSlovenčinaShqipСрпски / srpskiSvenskaTürkçeУкраїнськаTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年2月17日 (週五) 09:54。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+複數 (數學) - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+複數 (數學)
+
+維基百科，自由的百科全書
+(已重新導向自 複數)
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+本條目介紹的是數學上的複數。關於語言學上的複數或稱眾數，請見「眾數 (語言學)」。
+
+
+
+
+各種各樣的數
+
+
+基本
+
+
+
+
+
+
+
+
+N
+
+⊆
+
+Z
+
+⊆
+
+Q
+
+⊆
+
+R
+
+⊆
+
+C
+
+
+
+{\displaystyle \mathbb {N} \subseteq \mathbb {Z} \subseteq \mathbb {Q} \subseteq \mathbb {R} \subseteq \mathbb {C} }
+
+ 
+
+
+
+正數 
+
+
+
+
+
+
+
+
+
+
+R
+
+
++
+
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {R} ^{+}\end{smallmatrix}}}
+
+
+自然數 
+
+
+
+
+
+
+
+
+
+N
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {N} \end{smallmatrix}}}
+
+
+正整數 
+
+
+
+
+
+
+
+
+
+
+Z
+
+
++
+
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {Z} ^{+}\end{smallmatrix}}}
+
+
+小數
+有限小數
+無限小數
+循環小數
+有理數 
+
+
+
+
+
+
+
+
+
+Q
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {Q} \end{smallmatrix}}}
+
+
+代數數 
+
+
+
+
+
+
+
+
+
+A
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {A} \end{smallmatrix}}}
+
+
+實數 
+
+
+
+
+
+
+
+
+
+R
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {R} \end{smallmatrix}}}
+
+
+複數 
+
+
+
+
+
+
+
+
+
+C
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {C} \end{smallmatrix}}}
+
+
+高斯整數 
+
+
+
+
+
+
+
+
+
+Z
+
+[
+i
+]
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {Z} [i]\end{smallmatrix}}}
+
+
+
+
+負數 
+
+
+
+
+
+
+
+
+
+
+R
+
+
+−
+
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {R} ^{-}\end{smallmatrix}}}
+
+
+整數 
+
+
+
+
+
+
+
+
+
+Z
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {Z} \end{smallmatrix}}}
+
+
+負整數 
+
+
+
+
+
+
+
+
+
+
+Z
+
+
+−
+
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {Z} ^{-}\end{smallmatrix}}}
+
+
+分數
+單位分數
+二進分數
+規矩數
+無理數
+超越數
+虛數
+二次無理數
+艾森斯坦整數 
+
+
+
+
+
+
+
+
+
+Z
+
+[
+ω
+]
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {Z} [\omega ]\end{smallmatrix}}}
+
+
+
+
+
+
+
+
+延伸
+
+
+
+
+
+
+雙複數
+四元數 
+
+
+
+
+
+
+
+
+
+H
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {H} \end{smallmatrix}}}
+
+
+共四元數
+八元數 
+
+
+
+
+
+
+
+
+
+O
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {O} \end{smallmatrix}}}
+
+
+超數
+上超實數
+
+
+超複數
+十六元數 
+
+
+
+
+
+
+
+
+
+S
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\mathbb {S} \end{smallmatrix}}}
+
+
+複四元數
+大實數
+超實數 
+
+
+
+
+
+
+
+
+
+
+
+
+⋆
+
+
+
+R
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}{}^{\star }\mathbb {R} \end{smallmatrix}}}
+
+
+超現實數
+
+
+
+
+
+
+其他
+
+
+
+
+
+
+對偶數
+雙曲複數
+序數
+質數
+同餘
+可計算數
+艾禮富數
+
+
+公稱值
+超限數
+基數
+P進數
+規矩數
+整數數列
+數學常數
+
+
+
+圓周率 
+
+
+
+
+
+
+
+
+π
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\pi \end{smallmatrix}}}
+
+ = 3.141592653…
+自然對數的底 
+
+
+
+
+
+
+
+
+e
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}e\end{smallmatrix}}}
+
+ = 2.718281828…
+虛數單位 
+
+
+
+
+
+
+
+
+i
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}i\end{smallmatrix}}}
+
+ = 
+
+
+
+
+
+
+
+
++
+
+
+−
+1
+
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}+{\sqrt {-1}}\end{smallmatrix}}}
+
+
+無窮大 
+
+
+
+
+
+
+
+
+∞
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}\infty \end{smallmatrix}}}
+
+
+
+
+
+
+
+
+
+函數f(x)=(x²-1)(x-2-i)²/(x²+2+2i)的色相環複變函數圖形。色相表示函數的輻角，飽和度與明度表示函數的幅值。
+
+
+複數，為實數的延伸，它使任一多項式方程式都有根。複數當中有個「虛數單位」
+
+
+
+i
+
+
+{\displaystyle i}
+
+，它是
+
+
+
+−
+1
+
+
+{\displaystyle -1}
+
+的一個平方根，即
+
+
+
+
+i
+
+2
+
+
+=
+−
+1
+
+
+{\displaystyle i^{2}=-1}
+
+。任一複數都可表達為
+
+
+
+x
++
+y
+i
+
+
+{\displaystyle x+yi}
+
+，其中
+
+
+
+x
+
+
+{\displaystyle x}
+
+及
+
+
+
+y
+
+
+{\displaystyle y}
+
+皆為實數，分別稱為複數之「實部」和「虛部」。
+複數的發現源於三次方程的根的表達式。數學上，「複」字表明所討論的數體為複數，如複矩陣、複變函數等。
+
+
+
+目錄
+
+
+1 歷史
+2 定義
+
+2.1 符號表示
+2.2 等量關係
+2.3 運算
+2.4 複數體
+2.5 複數平面
+2.6 絕對值、共軛與距離
+2.7 複數運算的幾何解釋
+
+
+3 極座標形式
+
+3.1 從極座標形式到笛卡兒座標形式的轉換
+3.2 從笛卡爾座標形式到極座標形式的轉換
+3.3 極座標形式的符號
+3.4 極座標形式下的乘法、除法、指數和開方根
+
+
+4 一些特性
+
+4.1 矩陣表達式
+4.2 實向量空間
+4.3 多項式的根
+4.4 代數特徵
+4.5 不可排序
+4.6 複指數冪
+
+
+5 複分析
+6 應用
+
+6.1 系統分析
+6.2 信號分析
+6.3 反常積分
+6.4 量子力學
+6.5 相對論
+6.6 應用數學
+6.7 流體力學
+6.8 碎形
+
+
+7 複數的平方根
+8 參見
+9 參考資料
+10 延伸閱讀
+11 外部連結
+
+
+
+歷史[編輯]
+最早有關負數方根的文獻出於公元1世紀希臘數學家希羅，他考慮的是平頂金字塔不可能問題。16世紀義大利數學家（請參看塔塔利亞和卡爾達諾）得出一元三次和四次方程式的根的表達式，並發現即使只考慮實數根，仍不可避免面對負數方根。17世紀笛卡兒稱負數方根為虛數，「子虛烏有的數」，表達對此的無奈和不忿。18世紀初棣莫弗及歐拉大力推動複數的接受。1730年，棣莫弗提出棣莫弗公式：
+
+
+
+
+
+(
+cos
+⁡
+θ
++
+i
+sin
+⁡
+θ
+
+)
+
+n
+
+
+=
+cos
+⁡
+n
+θ
++
+i
+sin
+⁡
+n
+θ
+
+
+{\displaystyle (\cos \theta +i\sin \theta )^{n}=\cos n\theta +i\sin n\theta }
+
+，
+
+而歐拉則在1748年提出分析學中的歐拉公式：
+
+
+
+
+
+cos
+⁡
+θ
++
+i
+sin
+⁡
+θ
+=
+
+e
+
+i
+θ
+
+
+
+
+{\displaystyle \cos \theta +i\sin \theta =e^{i\theta }}
+
+，
+
+18世紀末，複數漸漸被大多數人接受，當時卡斯帕爾·韋塞爾提出複數可看作平面上的一點。數年後，高斯再提出此觀點並大力推廣，複數的研究開始高速發展。詫異的是，早於1685年約翰·沃利斯已經在De Algebra tractatus提出此一觀點。
+卡斯帕爾·韋塞爾的文章發表在1799年的Proceedings of the Copenhagen Academy上，以當今標準來看，也是相當清楚和完備。他又考慮球體，得出四元數並以此提出完備的球面三角學理論。1804年，Abbé Buée亦獨立地提出與沃利斯相似的觀點，即以
+
+
+
+±
+
+
+−
+1
+
+
+
+
+{\displaystyle \pm {\sqrt {-1}}}
+
+來表示平面上與實數軸垂直的單位線段。1806年，Buée的文章正式刊出，同年讓-羅貝爾·阿爾岡亦發表同類文章，而阿岡的複數平面成了標準。1831年高斯認為複數不夠普及，次年他發表了一篇備忘錄，奠定複數在數學的地位。柯西及阿貝爾的努力，掃除了複數使用的最後顧忌，後者更是首位以複數研究著名的。
+複數吸引了著名數學家的註意，包括庫默爾（1844年）、克羅內克（1845年）、Scheffler（1845年、1851年、1880年）、Bellavitis（1835年、1852年）、喬治·皮科克（1845年）及德·摩根（1849年）。莫比烏斯發表了大量有關複數幾何的短文，約翰·彼得·狄利克雷將很多實數概念，例如質數，推廣至複數。
+費迪南·艾森斯坦研究
+
+
+
+a
++
+b
+j
+
+
+{\displaystyle a+bj}
+
+，其中
+
+
+
+j
+
+
+{\displaystyle j}
+
+是
+
+
+
+
+x
+
+3
+
+
+−
+1
+=
+0
+
+
+{\displaystyle x^{3}-1=0}
+
+的複根。其他如
+
+
+
+
+x
+
+k
+
+
+−
+1
+=
+0
+
+
+{\displaystyle x^{k}-1=0}
+
+ (
+
+
+
+k
+
+
+{\displaystyle k}
+
+是質數)亦有考慮。類以推廣的先鋒為庫默爾的完美數理論，經由菲利克斯·克萊因（1893年）以幾何角度加以簡化。伽羅華其後提出更一般的推廣，解決了五次以上多項式的根不能表達問題。
+定義[編輯]
+符號表示[編輯]
+儘管可以使用其他表示法，複數通常寫為如下形式
+
+
+
+
+
+a
++
+b
+i
+
+
+{\displaystyle a+bi}
+
+，
+
+這裡的a和b是實數，而i是虛數單位，它有著性質i ² = −1。實數a叫做複數的實部，而實數b叫做複數的虛部。實數可以被認為是虛部為零的複數；就是說實數a等價於複數a+0i。實部為零且虛部不為零的複數也被稱作「純虛數」；而實部為不為零且虛部也不為零的複數也被稱作「非純虛數」或「雜虛數」。
+例如，3 + 2i是複數，它的實部為3虛部為2。如果z = a + ib，則實部（a）被指示為Re(z)或
+
+
+
+ℜ
+(
+z
+)
+
+
+{\displaystyle \Re (z)}
+
+，而虛部（b）被指示為Im(z)或
+
+
+
+ℑ
+(
+z
+)
+
+
+{\displaystyle \Im (z)}
+
+。
+在某些領域（特別是電子工程，這裡的i是電流的符號）中，虛部i被替代寫為j，所以複數有時寫為a + jb[1]。
+所有複數的集合通常指示為C，或者用黑板粗體寫為
+
+
+
+
+C
+
+
+
+{\displaystyle \mathbb {C} }
+
+。實數R可以被當作C的子集，通過把實數的所有成員當作複數: a = a + 0i。
+等量關係[編輯]
+複數中的虛數是無法比較大小的，即兩個虛數只有相等和不等兩種等量關係。
+兩個複數是相等的，若且唯若它們的實部是相等的並且它們的虛部是相等的。就是說，設a,b,c,d為實數,則a + bi = c + di若且唯若a = c並且b = d。
+運算[編輯]
+通過形式上應用代數的結合律、交換律和分配律，再加上等式i ² = −1，定義複數的加法、減法、乘法和除法:
+
+
+
+加法：
+
+
+
+
+(
+a
++
+b
+i
+)
++
+(
+c
++
+d
+i
+)
+=
+(
+a
++
+c
+)
++
+(
+b
++
+d
+)
+i
+
+
+{\displaystyle \,(a+bi)+(c+di)=(a+c)+(b+d)i}
+
+
+減法：
+
+
+
+
+(
+a
++
+b
+i
+)
+−
+(
+c
++
+d
+i
+)
+=
+(
+a
+−
+c
+)
++
+(
+b
+−
+d
+)
+i
+
+
+{\displaystyle \,(a+bi)-(c+di)=(a-c)+(b-d)i}
+
+
+乘法：
+
+
+
+
+(
+a
++
+b
+i
+)
+(
+c
++
+d
+i
+)
+=
+a
+c
++
+b
+c
+i
++
+a
+d
+i
++
+b
+d
+
+i
+
+2
+
+
+=
+(
+a
+c
+−
+b
+d
+)
++
+(
+b
+c
++
+a
+d
+)
+i
+
+
+{\displaystyle \,(a+bi)(c+di)=ac+bci+adi+bdi^{2}=(ac-bd)+(bc+ad)i}
+
+
+除法：
+
+
+
+
+
+
+
+(
+a
++
+b
+i
+)
+
+
+(
+c
++
+d
+i
+)
+
+
+
+=
+
+
+
+(
+a
++
+b
+i
+)
+(
+c
+−
+d
+i
+)
+
+
+(
+c
++
+d
+i
+)
+(
+c
+−
+d
+i
+)
+
+
+
+=
+
+
+
+a
+c
++
+b
+c
+i
+−
+a
+d
+i
+−
+b
+d
+
+i
+
+2
+
+
+
+
+
+c
+
+2
+
+
+−
+(
+d
+i
+
+)
+
+2
+
+
+
+
+
+=
+
+
+
+(
+a
+c
++
+b
+d
+)
++
+(
+b
+c
+−
+a
+d
+)
+i
+
+
+
+c
+
+2
+
+
++
+
+d
+
+2
+
+
+
+
+
+=
+
+(
+
+
+
+a
+c
++
+b
+d
+
+
+
+c
+
+2
+
+
++
+
+d
+
+2
+
+
+
+
+
+)
+
++
+
+(
+
+
+
+b
+c
+−
+a
+d
+
+
+
+c
+
+2
+
+
++
+
+d
+
+2
+
+
+
+
+
+)
+
+i
+
+
+{\displaystyle \,{\frac {(a+bi)}{(c+di)}}={\frac {(a+bi)(c-di)}{(c+di)(c-di)}}={\frac {ac+bci-adi-bdi^{2}}{c^{2}-(di)^{2}}}={\frac {(ac+bd)+(bc-ad)i}{c^{2}+d^{2}}}=\left({ac+bd \over c^{2}+d^{2}}\right)+\left({bc-ad \over c^{2}+d^{2}}\right)i}
+
+
+
+
+
+複數體[編輯]
+複數可定義為實數
+
+
+
+a
+,
+b
+
+
+{\displaystyle a,b}
+
+組成的有序對，而其相關之和及積為：
+
+
+
+
+
+(
+a
+,
+b
+)
++
+(
+c
+,
+d
+)
+=
+(
+a
++
+c
+,
+b
++
+d
+)
+
+
+{\displaystyle (a,b)+(c,d)=(a+c,b+d)}
+
+，
+
+
+
+
+
+
+(
+a
+,
+b
+)
+⋅
+(
+c
+,
+d
+)
+=
+(
+a
+c
+−
+b
+d
+,
+b
+c
++
+a
+d
+)
+
+
+{\displaystyle (a,b)\cdot (c,d)=(ac-bd,bc+ad)}
+
+，
+
+複數數系是一個體，複數體常以
+
+
+
+
+C
+
+
+
+{\displaystyle \mathbb {C} }
+
+來表示。
+一個實數
+
+
+
+a
+
+
+{\displaystyle a}
+
+等同於複數
+
+
+
+(
+a
+,
+0
+)
+
+
+{\displaystyle (a,0)}
+
+，故實數體為複數體的子體。虛數單位
+
+
+
+i
+
+
+{\displaystyle i}
+
+就是複數
+
+
+
+(
+0
+,
+1
+)
+
+
+{\displaystyle (0,1)}
+
+。此外，還有:
+
+加法單位元素（「零元素」）: 
+
+
+
+(
+0
+,
+0
+)
+
+
+{\displaystyle (0,0)}
+
+
+乘法單位元素（「單位元素」）: 
+
+
+
+(
+1
+,
+0
+)
+
+
+{\displaystyle (1,0)}
+
+
+(a,b)的加法反元素: (−a, −b)
+非零 (a, b)的乘法反元素（倒數）: 
+
+
+
+
+(
+
+
+a
+
+
+a
+
+2
+
+
++
+
+b
+
+2
+
+
+
+
+
+,
+
+
+
+−
+b
+
+
+
+a
+
+2
+
+
++
+
+b
+
+2
+
+
+
+
+
+)
+
+
+
+{\displaystyle \left({a \over a^{2}+b^{2}},{-b \over a^{2}+b^{2}}\right)}
+
+。
+
+複數體亦可定為代數數的拓撲閉包或實數體的代數閉包。
+複數平面[編輯]
+主條目：複數平面
+先把座標軸畫出來，橫的叫實數軸，豎的叫虛軸，然後確定0的位置，z=a十bi可以用二維空間來表示出來。
+複數z可以被看作在被稱為阿甘得圖（得名於讓-羅貝爾·阿岡，也叫做高斯平面）的二維笛卡爾座標系內的一個點或位置向量。這個點也就是這個複數z可以用笛卡爾（直角）座標指定。複數的笛卡爾座標是實部 x = Re(z)和虛部y = Im(z)。複數的笛卡爾座標表示叫做複數的「笛卡爾形式」、「直角形式」或「代數形式」。
+絕對值、共軛與距離[編輯]
+
+
+
+
+z
+=
+r
+
+e
+
+i
+ϕ
+
+
+
+
+{\displaystyle z=re^{i\phi }}
+
+，則
+
+
+
+
+|
+
+z
+
+|
+
+=
+r
+
+
+{\displaystyle |z|=r}
+
+是
+
+
+
+z
+
+
+{\displaystyle z}
+
+的「絕對值」（「模」、「幅值」）。如果
+
+
+
+z
+=
+a
++
+b
+i
+
+
+{\displaystyle z=a+bi}
+
+，則
+
+
+
+
+|
+
+z
+
+|
+
+=
+
+
+
+a
+
+2
+
+
++
+
+b
+
+2
+
+
+
+
+
+
+{\displaystyle |z|={\sqrt {a^{2}+b^{2}}}}
+
+.
+對所有
+
+
+
+z
+
+
+{\displaystyle z}
+
+及
+
+
+
+w
+
+
+{\displaystyle w}
+
+，有
+
+
+
+
+
+
+|
+
+z
+
+|
+
+−
+
+|
+
+w
+
+|
+
+≤
+
+|
+
+z
++
+w
+
+|
+
+≤
+
+|
+
+z
+
+|
+
++
+
+|
+
+w
+
+|
+
+
+
+{\displaystyle |z|-|w|\leq |z+w|\leq |z|+|w|}
+
+
+
+
+
+
+
+
+
+|
+
+z
+w
+
+|
+
+=
+
+|
+
+z
+
+|
+
+
+
+|
+
+w
+
+|
+
+
+
+{\displaystyle |zw|=|z|\;|w|}
+
+
+
+
+
+
+
+
+
+|
+
+
+z
+w
+
+
+|
+
+=
+
+
+
+
+|
+
+z
+
+|
+
+
+
+
+|
+
+w
+
+|
+
+
+
+
+
+
+{\displaystyle \left|{\frac {z}{w}}\right|={\frac {|z|}{|w|}}}
+
+
+
+當定義了距離
+
+
+
+d
+(
+z
+,
+w
+)
+=
+
+|
+z
+−
+w
+|
+
+
+
+{\displaystyle d(z,w)=\left|z-w\right|}
+
+，複數體便成了度量空間，我們亦可談極限和連續。加法、乘法及除法都是連續的運算。
+
+
+
+
+z
+=
+a
++
+i
+b
+
+
+{\displaystyle z=a+ib}
+
+的共軛複數定義為
+
+
+
+z
+=
+a
+−
+i
+b
+
+
+{\displaystyle z=a-ib}
+
+，記作 
+
+
+
+
+
+z
+¯
+
+
+
+
+{\displaystyle {\overline {z}}}
+
+ 或 
+
+
+
+
+z
+
+∗
+
+
+
+
+{\displaystyle z^{*}}
+
+ 。如圖所示，
+
+
+
+
+
+z
+¯
+
+
+
+
+{\displaystyle {\overline {z}}}
+
+是
+
+
+
+z
+
+
+{\displaystyle z}
+
+關於實數軸的「對稱點」。有
+
+
+
+
+
+
+
+
+z
++
+w
+
+¯
+
+
+=
+
+
+z
+¯
+
+
++
+
+
+w
+¯
+
+
+
+
+{\displaystyle {\overline {z+w}}={\overline {z}}+{\overline {w}}}
+
+
+
+
+
+
+
+
+
+
+
+z
+w
+
+¯
+
+
+=
+
+
+z
+¯
+
+
+⋅
+
+
+w
+¯
+
+
+
+
+{\displaystyle {\overline {zw}}={\overline {z}}\cdot {\overline {w}}}
+
+
+
+
+
+
+
+
+
+
+
+(
+
+
+z
+w
+
+
+)
+
+¯
+
+
+=
+
+
+
+z
+¯
+
+
+w
+¯
+
+
+
+
+
+{\displaystyle {\overline {\left({\frac {z}{w}}\right)}}={\frac {\overline {z}}{\overline {w}}}}
+
+
+
+
+
+
+
+
+
+
+
+z
+¯
+
+¯
+
+
+=
+z
+
+
+{\displaystyle {\overline {\overline {z}}}=z}
+
+
+
+
+
+
+
+
+
+
+z
+¯
+
+
+=
+z
+
+
+{\displaystyle {\overline {z}}=z}
+
+ 當且僅當
+
+
+
+z
+
+
+{\displaystyle z}
+
+是實數
+
+
+
+
+
+
+
+|
+
+z
+
+|
+
+=
+
+|
+
+
+
+z
+¯
+
+
+
+|
+
+
+
+{\displaystyle |z|=|{\overline {z}}|}
+
+
+
+
+
+
+
+
+
+|
+
+z
+
+
+|
+
+
+2
+
+
+=
+z
+
+
+z
+¯
+
+
+
+
+{\displaystyle |z|^{2}=z{\overline {z}}}
+
+
+
+
+
+
+
+
+
+z
+
+−
+1
+
+
+=
+
+
+z
+¯
+
+
+
+|
+
+z
+
+
+|
+
+
+−
+2
+
+
+
+
+{\displaystyle z^{-1}={\overline {z}}|z|^{-2}}
+
+ 若
+
+
+
+z
+
+
+{\displaystyle z}
+
+非零。這是計算乘法逆最常用的等式。
+
+對於所有代數運算
+
+
+
+f
+
+
+{\displaystyle f}
+
+，共軛值是可交換的。這即是說
+
+
+
+f
+(
+
+
+z
+¯
+
+
+)
+=
+
+
+
+f
+(
+z
+)
+
+¯
+
+
+
+
+{\displaystyle f({\overline {z}})={\overline {f(z)}}}
+
+。一些非代數運算如正弦「sin」亦有此性質。這是由於
+
+
+
+i
+
+
+{\displaystyle i}
+
+的不明確選擇——
+
+
+
+
+x
+
+2
+
+
+=
+−
+1
+
+
+{\displaystyle x^{2}=-1}
+
+有二解。可是，共軛值是不可微分的（參見全純函數）。
+一複數
+
+
+
+z
+=
+r
+
+e
+
+i
+ϕ
+
+
+
+
+{\displaystyle z=re^{i\phi }}
+
+的「幅角」或「相位」為
+
+
+
+ϕ
+
+
+{\displaystyle \phi }
+
+。此值對模
+
+
+
+2
+π
+
+
+{\displaystyle 2\pi }
+
+而言是唯一的。
+對於乘法和除法分別有：
+
+
+
+
+
+
+r
+
+e
+
+α
+i
+
+
+s
+
+e
+
+β
+i
+
+
+=
+(
+r
+s
+)
+
+e
+
+(
+α
++
+β
+)
+i
+
+
+
+
+{\displaystyle \,re^{\alpha i}se^{\beta i}=(rs)e^{(\alpha +\beta )i}}
+
+（即「模值相乘，幅角相加」）
+
+
+
+
+
+
+
+
+r
+
+e
+
+α
+i
+
+
+
+
+s
+
+e
+
+β
+i
+
+
+
+
+
+=
+
+
+r
+s
+
+
+
+e
+
+(
+α
+−
+β
+)
+i
+
+
+
+
+{\displaystyle \,{\frac {re^{\alpha i}}{se^{\beta i}}}={\frac {r}{s}}e^{(\alpha -\beta )i}}
+
+（即「模值相除，幅角相減」)
+
+複數運算的幾何解釋[編輯]
+
+
+
+
+X = A + B
+
+
+
+
+
+
+X = AB
+
+
+
+
+
+
+X = A*
+
+
+考慮一個平面。一個點是原點0。另一個點是單位1。
+兩個點A和B的和是點X = A + B使得頂點0, A, B的三角形和頂點A, B, X的三角形是全等的。
+兩個點A和B的積是點X = AB使得頂點0, 1, A的三角形和頂點0, B, X的三角形是相似的。
+點A的共軛複數是點X = A*使得頂點0, 1, A的三角形和頂點0, 1, X的三角形相互是鏡像。
+極座標形式[編輯]
+作為替代，複數z可以用極座標來指定。極座標是叫做絕對值或模的r = |z| ≥ 0和叫做z的輻角的φ = arg(z)。對於r = 0，任何值的φ都描述同一個數。要得到唯一的表示，常規的選擇是設置arg(0) = 0。對於r > 0輻角φ 模以2π後是唯一的；就是說，如果複數輻角的兩個值只相差精確的2π的整數倍數，則它們被認為是等價的。要得到唯一表示，常規的選擇是限制φ在區間 (-π,π]內，就是−π < φ ≤ π。複數的極座標表示叫做複數的「極座標形式」。
+從極座標形式到笛卡兒座標形式的轉換[編輯]
+
+
+
+
+
+x
+=
+r
+cos
+⁡
+φ
+
+
+{\displaystyle x=r\cos \varphi }
+
+
+
+
+
+
+y
+=
+r
+sin
+⁡
+φ
+
+
+{\displaystyle y=r\sin \varphi }
+
+
+
+從笛卡爾座標形式到極座標形式的轉換[編輯]
+
+
+
+
+
+r
+=
+
+
+
+x
+
+2
+
+
++
+
+y
+
+2
+
+
+
+
+
+
+{\displaystyle r={\sqrt {x^{2}+y^{2}}}}
+
+
+
+
+
+
+
+
+φ
+=
+
+
+{
+
+
+
+arctan
+⁡
+(
+
+
+y
+x
+
+
+)
+
+
+
+if 
+
+x
+>
+0
+
+
+
+
+arctan
+⁡
+(
+
+
+y
+x
+
+
+)
++
+π
+
+
+
+if 
+
+x
+<
+0
+
+ and 
+
+y
+≥
+0
+
+
+
+
+arctan
+⁡
+(
+
+
+y
+x
+
+
+)
+−
+π
+
+
+
+if 
+
+x
+<
+0
+
+ and 
+
+y
+<
+0
+
+
+
+
++
+
+
+π
+2
+
+
+
+
+
+if 
+
+x
+=
+0
+
+ and 
+
+y
+>
+0
+
+
+
+
+−
+
+
+π
+2
+
+
+
+
+
+if 
+
+x
+=
+0
+
+ and 
+
+y
+<
+0
+
+
+
+
+
+u
+n
+d
+e
+f
+i
+n
+e
+d
+
+
+
+
+if 
+
+x
+=
+0
+
+ and 
+
+y
+=
+0.
+
+
+
+
+
+
+
+
+{\displaystyle \varphi ={\begin{cases}\arctan({\frac {y}{x}})&{\mbox{if }}x>0\\\arctan({\frac {y}{x}})+\pi &{\mbox{if }}x<0{\mbox{ and }}y\geq 0\\\arctan({\frac {y}{x}})-\pi &{\mbox{if }}x<0{\mbox{ and }}y<0\\+{\frac {\pi }{2}}&{\mbox{if }}x=0{\mbox{ and }}y>0\\-{\frac {\pi }{2}}&{\mbox{if }}x=0{\mbox{ and }}y<0\\\mathrm {undefined} &{\mbox{if }}x=0{\mbox{ and }}y=0.\end{cases}}}
+
+
+
+前面的公式要求非常繁雜的情況區分。但是很多程式語言提供了經常叫做atan2一個變體的反正切函數來處理這些細節。使用反餘弦函數的公式要求更少的情況區分:
+
+
+
+
+
+φ
+=
+
+
+{
+
+
+
++
+arccos
+⁡
+
+
+x
+r
+
+
+
+
+
+if 
+
+y
+≥
+0
+
+ and 
+
+r
+≠
+0
+
+
+
+
+−
+arccos
+⁡
+
+
+x
+r
+
+
+
+
+
+if 
+
+y
+<
+0
+
+
+
+
+
+u
+n
+d
+e
+f
+i
+n
+e
+d
+
+
+
+
+if 
+
+r
+=
+0.
+
+
+
+
+
+
+
+
+{\displaystyle \varphi ={\begin{cases}+\arccos {\frac {x}{r}}&{\mbox{if }}y\geq 0{\mbox{ and }}r\neq 0\\-\arccos {\frac {x}{r}}&{\mbox{if }}y<0\\\mathrm {undefined} &{\mbox{if }}r=0.\end{cases}}}
+
+
+
+極座標形式的符號[編輯]
+極座標形式的符號
+
+
+
+
+
+z
+=
+r
+
+(
+cos
+⁡
+φ
++
+i
+sin
+⁡
+φ
+)
+
+
+{\displaystyle z=r\,(\cos \varphi +i\sin \varphi )}
+
+，
+
+被叫做「三角形式」。有時使用符號cis φ簡寫cosφ + isinφ。 使用歐拉公式還可以寫為
+
+
+
+
+
+z
+=
+r
+
+
+
+e
+
+
+i
+φ
+
+
+
+,
+
+
+{\displaystyle z=r\,\mathrm {e} ^{i\varphi }\,,}
+
+
+
+這叫做「指數形式」。
+極座標形式下的乘法、除法、指數和開方根[編輯]
+在極座標形式下乘法、除法、指數和開方根要比笛卡爾形式下容易許多。
+使用三角恆等式得到
+
+
+
+
+
+
+r
+
+1
+
+
+
+
+e
+
+i
+
+φ
+
+1
+
+
+
+
+⋅
+
+r
+
+2
+
+
+
+
+e
+
+i
+
+φ
+
+2
+
+
+
+
+=
+
+r
+
+1
+
+
+
+
+r
+
+2
+
+
+
+
+e
+
+i
+(
+
+φ
+
+1
+
+
++
+
+φ
+
+2
+
+
+)
+
+
+
+
+{\displaystyle r_{1}\,e^{i\varphi _{1}}\cdot r_{2}\,e^{i\varphi _{2}}=r_{1}\,r_{2}\,e^{i(\varphi _{1}+\varphi _{2})}}
+
+，
+
+和
+
+
+
+
+
+
+
+
+
+r
+
+1
+
+
+
+
+e
+
+i
+
+φ
+
+1
+
+
+
+
+
+
+
+r
+
+2
+
+
+
+
+e
+
+i
+
+φ
+
+2
+
+
+
+
+
+
+
+=
+
+
+
+r
+
+1
+
+
+
+r
+
+2
+
+
+
+
+
+
+e
+
+i
+(
+
+φ
+
+1
+
+
+−
+
+φ
+
+2
+
+
+)
+
+
+
+
+{\displaystyle {\frac {r_{1}\,e^{i\varphi _{1}}}{r_{2}\,e^{i\varphi _{2}}}}={\frac {r_{1}}{r_{2}}}\,e^{i(\varphi _{1}-\varphi _{2})}}
+
+。
+
+依據棣莫弗定理做整數冪的指數運算，
+
+
+
+
+
+
+
+(
+
+
+r
+
+
+e
+
+i
+φ
+
+
+
+
+
+)
+
+
+
+n
+
+
+=
+
+r
+
+n
+
+
+
+
+e
+
+i
+n
+φ
+
+
+
+
+{\displaystyle {\big (}r\,e^{i\varphi }{\big )}^{n}=r^{n}\,e^{in\varphi }}
+
+。
+
+任意複數冪的指數運算在條目指數函數中討論。
+兩個複數的加法只是兩個向量的向量加法，乘以一個固定複數的可以被看作同時旋轉和伸縮。
+乘以i對應於一個逆時針旋轉90 度(π/2 弧度)。方程i 2 = −1的幾何意義是順序的兩個90度旋轉導致一個180度(π弧度)旋轉。甚至算術中的 (−1) · (−1) = +1都可以被在幾何上被理解為兩個180度旋轉的組合。
+任何數的所有方根，實數或複數的，都可以用簡單的算法找到。n次方根給出為
+
+
+
+
+
+
+
+
+r
+
+e
+
+i
+φ
+
+
+
+
+n
+
+
+
+=
+
+
+r
+
+n
+
+
+
+ 
+
+e
+
+i
+
+(
+
+
+
+φ
++
+2
+k
+π
+
+n
+
+
+)
+
+
+
+
+
+{\displaystyle {\sqrt[{n}]{re^{i\varphi }}}={\sqrt[{n}]{r}}\ e^{i\left({\frac {\varphi +2k\pi }{n}}\right)}}
+
+
+
+對於k = 0, 1, 2, …, n − 1，這裡的
+
+
+
+
+
+r
+
+n
+
+
+
+
+
+{\displaystyle {\sqrt[{n}]{r}}}
+
+表示r的主n次方根。
+一些特性[編輯]
+矩陣表達式[編輯]
+這是個實用價值不大，但具數學意義的表達式，是將複數看作能旋轉及伸縮二維位置矢量的2×2實數矩陣，即是
+
+
+
+
+
+a
++
+i
+b
+↔
+
+
+(
+
+
+
+a
+
+
+−
+b
+
+
+
+
+b
+
+
+
+
+a
+
+
+
+)
+
+
+=
+r
+
+
+[
+
+
+
+cos
+⁡
+φ
+
+
+−
+sin
+⁡
+φ
+
+
+
+
+sin
+⁡
+φ
+
+
+cos
+⁡
+φ
+
+
+
+]
+
+
+=
+r
+exp
+⁡
+
+(
+φ
+
+
+[
+
+
+
+0
+
+
+−
+1
+
+
+
+
+1
+
+
+0
+
+
+
+]
+
+
+)
+
+,
+
+
+{\displaystyle a+ib\leftrightarrow {\begin{pmatrix}a&-b\\b&\;\;a\end{pmatrix}}=r{\begin{bmatrix}\cos \varphi &-\sin \varphi \\\sin \varphi &\cos \varphi \end{bmatrix}}=r\exp \left(\varphi {\begin{bmatrix}0&-1\\1&0\end{bmatrix}}\right),}
+
+
+
+其中a及b為實數。可算出此類矩陣的和、積及乘法逆都是此類矩陣。此外
+
+
+
+
+
+
+
+(
+
+
+
+a
+
+
+−
+b
+
+
+
+
+b
+
+
+
+
+a
+
+
+
+)
+
+
+=
+a
+
+
+(
+
+
+
+1
+
+
+
+
+0
+
+
+
+
+0
+
+
+
+
+1
+
+
+
+)
+
+
++
+b
+
+
+(
+
+
+
+0
+
+
+−
+1
+
+
+
+
+1
+
+
+
+
+0
+
+
+
+)
+
+
+
+
+{\displaystyle {\begin{pmatrix}a&-b\\b&\;\;a\end{pmatrix}}=a{\begin{pmatrix}1&\;\;0\\0&\;\;1\end{pmatrix}}+b{\begin{pmatrix}0&-1\\1&\;\;0\end{pmatrix}}}
+
+
+
+即實數1對應著單位矩陣
+
+
+
+
+
+
+
+(
+
+
+
+1
+
+
+
+
+0
+
+
+
+
+0
+
+
+
+
+1
+
+
+
+)
+
+
+
+
+{\displaystyle {\begin{pmatrix}1&\;\;0\\0&\;\;1\end{pmatrix}}}
+
+，
+
+而虛數單位
+
+
+
+i
+
+
+{\displaystyle i}
+
+對應著
+
+
+
+
+
+
+
+(
+
+
+
+0
+
+
+−
+1
+
+
+
+
+1
+
+
+
+
+0
+
+
+
+)
+
+
+
+
+{\displaystyle {\begin{pmatrix}0&-1\\1&\;\;0\end{pmatrix}}}
+
+。
+
+此矩陣令平面作逆時鐘90度旋轉，它的平方就是 -1。
+複數的絶對值就是行列式的平方根。這些矩陣對應相應的平面變換，其旋轉角度等於複數的徧角，改變比例等於複數的絶對值。複數的軛就是矩陣的轉置。
+若矩陣中的a和b本來就是複數，則構成的代數便是四元數。由此，矩陣代表法可看成代數的凱萊-迪克森結構法。
+實向量空間[編輯]
+C可以視作二維實綫性空間。[2]不同於實數體，複數體上不可能有與其算術相容的全序：C並非有序體。
+多項式的根[編輯]
+滿足p(z)= 0的複數z是多項式p的「根」。代數基本定理指出，所有n次多項式，不管實數系數抑或複數系數的，都剛好有n個複數根（k重根按k個計算）。這定理等價於複數體是代數閉域。
+事實上，複數體是實數體的代數閉包。它是多項式環R[X]經由理想〈X2 + 1〉顯生出的商環:
+
+
+
+
+
+
+C
+
+=
+
+R
+
+[
+X
+]
+
+/
+
+(
+
+X
+
+2
+
+
++
+1
+)
+
+
+{\displaystyle \mathbb {C} =\mathbb {R} [X]/(X^{2}+1)}
+
+。
+
+這是一個體因為X2 + 1為不可約多項式，而X在商環內對應著虛數單位i。
+代數特徵[編輯]
+複數體C唯一（就體同構來說）的體擁有三項代數特徵:
+
+它的特徵值是0
+它對質數體的超越度是實數的基數
+它是代數閉的
+
+而然，C包含很多與C同構的子體。
+不可排序[編輯]
+在C上不可能建立與其加法及乘法相容之全序關係，即不存在一全序
+
+
+
+⪯
+
+
+{\displaystyle \preceq }
+
+使得對於任意複數
+
+
+
+
+z
+
+1
+
+
+,
+
+z
+
+2
+
+
+
+
+{\displaystyle z_{1},z_{2}}
+
+，有
+
+
+
+0
+⪯
+
+z
+
+1
+
+
+,
+
+z
+
+2
+
+
+⇒
+0
+⪯
+
+z
+
+1
+
+
++
+
+z
+
+2
+
+
+,
+0
+⪯
+
+z
+
+1
+
+
+
+z
+
+2
+
+
+
+
+{\displaystyle 0\preceq z_{1},z_{2}\Rightarrow 0\preceq z_{1}+z_{2},0\preceq z_{1}z_{2}}
+
+。
+複指數冪[編輯]
+主條目：冪 § 正實數的複數冪
+計算一個實數的複數冪是可以的。
+
+
+
+
+a
+
+z
+
+
+
+
+{\displaystyle a^{z}}
+
+可以定義為
+
+
+
+
+e
+
+z
+⋅
+ln
+⁡
+(
+a
+)
+
+
+
+
+{\displaystyle e^{z\cdot \ln(a)}}
+
+。
+複分析[編輯]
+研究複變函數的理論稱為複分析。它在應用數學和其他數學分支上都有許多實際應用。實分析和數論的結果，最自然的証明經常是以複分析的技巧完成（例子可見質數定理）。
+複變函數的圖像是四維的，所以不像實變函數般可以用平面圖像表示。要表示複變函數的圖像，可以用有顏色的三維圖像表達四維資訊，或者以動畫表示函數對複平面的動態變換。
+應用[編輯]
+系統分析[編輯]
+在系統分析中，系統常常通過拉普拉斯變換從時域變換到頻域。因此可在複平面上分析系統的極點和零點。分析系統穩定性的根軌跡法、奈奎斯特圖法和尼科爾斯圖法都是在複平面上進行的。
+無論系統極點和零點在左半平面還是右半平面，根軌跡法都很重要。如果系統極點
+
+位於右半平面，則因果系統不穩定；
+都位於左半平面，則因果系統穩定；
+位於虛軸上，則系統為臨界穩定的。
+
+如果穩定系統的全部零點都位於左半平面，則這是個最小相位系統。如果系統的極點和零點關於虛軸對稱，則這是全通系統。
+信號分析[編輯]
+信號分析和其他領域使用複數可以方便的表示周期信號。模值|z|表示信號的幅度，輻角arg(z)表示給定頻率的正弦波的相位。
+利用傅立葉變換可將實信號表示成一系列周期函數的和。這些周期函數通常用形式如下的複函數的實部表示：
+
+
+
+
+
+f
+(
+t
+)
+=
+z
+
+e
+
+i
+ω
+t
+
+
+
+
+{\displaystyle f(t)=ze^{i\omega t}}
+
+，
+
+其中ω對應角頻率，複數z包含了幅度和相位的信息。
+電路分析中，引入電容、電感與頻率有關的虛部可以方便的將電壓、電流的關係用簡單的線性方程表示並求解。（有時用字母j作為虛數單位，以免與電流符號i混淆。）
+反常積分[編輯]
+在應用層面，複分析常用以計算某些實值的反常積分，藉由複值函數得出。方法有多種，見圍道積分方法（英語：Methods of contour integration）。
+量子力學[編輯]
+量子力學中複數是十分重要的，因其理論是建基於複數體上無限維的希爾伯特空間。
+相對論[編輯]
+如將時間變數視為虛數的話便可簡化一些狹義和廣義相對論中的時空度量 (Metric)方程。
+應用數學[編輯]
+實際應用中，求解給定差分方程模型的系統，通常首先找出線性差分方程對應的特徵方程的所有複特徵根r，再將系統以形爲f(t)= ert的基函數的線性組合表示。
+流體力學[編輯]
+複函數於流體力學中可描述二維勢流。
+碎形[編輯]
+一些碎形如曼德博集合和茹利亞集（Julia set）是建基於複平面上的點的。
+複數的平方根[編輯]
+主條目：平方根 § 複數的平方根
+複數的平方根是可以計算的。其公式為
+
+
+
+
+
+x
++
+i
+y
+
+
+=
+
+
+
+
+
+|
+x
++
+i
+y
+|
+
++
+x
+
+2
+
+
+
+±
+i
+
+
+
+
+
+|
+x
++
+i
+y
+|
+
+−
+x
+
+2
+
+
+
+
+
+{\displaystyle {\sqrt {x+iy}}={\sqrt {\frac {\left|x+iy\right|+x}{2}}}\pm i{\sqrt {\frac {\left|x+iy\right|-x}{2}}}}
+
+。
+參見[編輯]
+
+複平面
+複幾何
+棣莫弗公式
+歐拉恆等式
+超複數
+局部體
+相量
+四元數
+雙曲複數
+
+參考資料[編輯]
+
+^ Mary P Attenborough. Mathematics for Electrical Engineering and Computing. Newnes. 2003: 208 [2016-03-18]. ISBN 9780080473406. 
+^ 繆龍驥. 從實數到複數. 數學知識. [2014-10-22]. 
+
+
+Conway, John. Functions of One Complex Variable I. Springer. 1986. ISBN 0-387-90328-3. 
+
+延伸閱讀[編輯]
+
+An Imaginary Tale: The Story of 
+
+
+
+
+
+−
+1
+
+
+
+
+{\displaystyle {\sqrt {-1}}}
+
+, by Paul J. Nahin; Princeton University Press; ISBN 0-691-02795-1 (hardcover, 1998). A gentle introduction to the history of complex numbers and the beginnings of complex analysis.
+Numbers, by H.-D. Ebbinghaus, H. Hermes, F. Hirzebruch, M. Koecher, K. Mainzer, J. Neukirch, A. Prestel, R. Remmert; Springer; ISBN 0-387-97497-0 (hardcover, 1991). An advanced perspective on the historical development of the concept of number.
+The Road to Reality: A Complete Guide to the Laws of the Universe, by Roger Penrose; Alfred A. Knopf, 2005; ISBN 0-679-45443-8. Chapters 4-7 in particular deal extensively (and enthusiastically) with complex numbers.
+Unknown Quantity: A Real and Imaginary History of Algebra, by John Derbyshire; Joseph Henry Press; ISBN 0-309-09657-X (hardcover 2006). A very readable history with emphasis on solving polynomial equations and the structures of modern algebra.
+Visual Complex Analysis, by Tristan Needham; Clarendon Press; ISBN 0-19-853447-7 (hardcover, 1997). History of complex numbers and complex analysis with compelling and useful visual interpretations.
+
+外部連結[編輯]
+
+
+您可以在維基教科書中查找此百科條目的相關電子教程：
+複數
+
+
+
+Euler's work on Complex Roots of Polynomials at Convergence
+John and Betty's Journey Through Complex Numbers
+MathWorld上Complex Number的資料，作者：埃里克·韋斯坦因。
+SOS Math - Complex Variables
+Algebraic Structure of Complex Numbers from cut-the-knot
+Complex Numbers Module by John H. Mathews
+IMO Compendium Training Materials contains a text on applications of complex numbers to euclidean geometry
+myElectrical.com Complex Number Ccalculator
+solvemymath.com Complex Numbers Calculator
+Interactive Visual Representation of Complex Numbers
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4128698-4
+NDL: 00563643
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=複數_(數學)&oldid=45147282"					
+2 個分類：複數複分析隱藏分類：包含規範控制信息的維基百科條目使用ISBN魔術連結的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源維基教科書 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+AfrikaansAlemannischአማርኛAragonésالعربيةঅসমীয়াAsturianuAzərbaycancaБашҡортсаŽemaitėškaБеларускаяБеларуская (тарашкевіца)‎БългарскиবাংলাBosanskiCatalàکوردیČeštinaЧӑвашлаCymraegDanskDeutschZazakiΕλληνικάEmiliàn e rumagnòlEnglishEsperantoEspañolEestiEuskaraفارسیSuomiVõroFøroysktFrançaisFryskGaeilge贛語Galegoעבריתहिन्दीHrvatskiMagyarՀայերենBahasa IndonesiaÍslenskaItaliano日本語PatoisLa .lojban.ქართულიҚазақшаភាសាខ្មែរ한국어LatinaLumbaartລາວLietuviųLatviešuMalagasyМакедонскиമലയാളംМонголमराठीBahasa Melayuမြန်မာဘာသာNederlandsNorsk nynorskNorsk bokmålOccitanИронਪੰਜਾਬੀPolskiPiemontèisپنجابیPortuguêsRomânăРусскийРусиньскыйСаха тылаSicilianuScotsSrpskohrvatski / српскохрватскиසිංහලSimple EnglishSlovenčinaSlovenščinaSoomaaligaShqipСрпски / srpskiSvenskaதமிழ்తెలుగుไทยTagalogTürkçeТатарча/tatarçaУкраїнськаاردوOʻzbekcha/ўзбекчаTiếng ViệtWest-VlamsWinarayХальмгייִדישYorùbá文言Bân-lâm-gú粵語 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年7月11日 (週二) 02:01。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+三、應用拉式轉換（Laplace transform），求下列常微分方程式之特解..-阿摩線上測驗
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+載入中..請稍候..
+
+
+關閉
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 搜尋
+          
+
+
+
+ 回報          
+
+
+
+註冊
+
+
+登入
+
+
+ 
+
+ 
+
+
+
+
+
+
+ 
+
+
+106 中等學校教檢通過心得分享106年教師甄試考程列表106教育法規（非條文版）高普考試 黃金7大上榜術循序漸進模式推出新版囉高普考刪減考試科目VIP專屬!任務一鍵領取!佛洛伊德、皮亞傑、艾瑞克森發展階段比較應有盡有的國文必考常識有關翻轉教育的考題和筆記整理(20150611 整理)國考作文必用【名言佳句】行政法3500題大放送喔....防礙你考上的三大不良習慣與心理障礙，不可不查班級經營理論簡易整理刑法必背的法條法學緒論重點五月鑽石加倍送-號召各方老師們!【各發展階段總整理】認知發展、社會性發展、性別概念發展、公民發展、個體發展、道德發展總整理超級詳細錯題偵測(已詳細分類!!!)英文字首字根查詢網站分享合作學習的教學策略（自己整理超詳細必讀）國文詩句與季節，國文必殺整理，中國傳統節日與詩詞
+
+
+
+
+
+
+
+ 
+
+
+
+喊話
+
+
+
+
+
+
+
+
+
+
+
+功能列表
+    
+
+
+
+
+ 循序 
+
+
+ 試捲
+
+
+ 錯題 
+
+
+ 自由
+
+
+ 冠軍
+
+
+
+
+練功房
+
+
+
+
+
+ 考試一覽表 
+ 近期刊誤
+ 試捲模式
+ 循序漸進模式 
+ 百人冠軍賽
+ 今日錯題測驗 
+ 近期錯題測驗 
+ 最近測驗
+ 未完成試捲
+
+
+ 個人題庫總複習
+ 自由測驗
+ 關鍵字測驗
+ 精熟測驗
+ 讀書會測驗
+ 常錯總複習
+ 申論題
+
+
+
+
+
+
+
+            考試秘書			
+
+
+
+
+ 各科能力分析
+打氣工具
+ 私有筆記
+ 打卡
+ 發問問題
+ 線上筆記
+ 考用行事曆
+ 我上傳的試捲
+
+
+最近測驗
+收錄的題目
+ 按讚的題目
+ 發表的討論
+ 私人筆記
+ 查單字
+
+
+
+
+
+
+ 好友
+
+
+
+
+          四處逛逛            
+
+
+ 回家
+
+
+
+              大廳              
+
+
+
+
+              成功牆              
+
+
+ 
+            打工          
+
+
+ 
+            科目一覽表          
+
+
+ 
+            線上人數
+          
+
+
+
+
+
+
+            加值服務            
+
+
+
+
+
+                商城
+              
+
+
+
+
+                加值訂單查詢              
+
+
+VIP專區
+
+
+
+                轉讓VIP              
+
+
+
+
+                暫停VIP              
+
+
+
+ 加速:off
+          
+
+
+
+
+                    VIP功能介紹                  
+
+下載題庫專區
+  下載題庫
+  試題查詢
+  序號兌換
+
+
+
+
+
+密技
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+
+
+測驗模式申論題工程數學(應用數學, 線性代數、微分方程、複變函數與機率)三、應用拉式轉換（Laplace transform），求下列常微分方程式之特解（particula.. 
+ 
+
+
+
+
+工程數學(應用數學, 線性代數、微分方程、複變函數與機率)題庫
+
+
+
+
+
+
+查單字:關
+ 
+
+
+
+			
+			
+			【非選題】三、應用拉式轉換（Laplace transform），求下列常微分方程式之特解（particular
+solution）：（15 分）
+ty
+"-  ty' + y = 0，y(0)= 0， y'(0) = 1 
+
+
+
+編輯私有筆記及自訂標籤
+
+
+
+
+
+
+
+工程數學(應用數學, 線性代數、微分方程、複變函數與機率)-
+								97 年 - 097年交通事業鐵路人員 、97年交通事業公路人員鐵路人員高員三級_電力工程#36631
+
+
+討論
+私人筆記( 0 )
+
+
+
+
+
+
+
+
+50
+
+
+
+
+ 【站僕】摩檸Morning：有沒有達人提供一下答案?
+
+倒數 3天 ,已有 0 則答案  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+全部討論
+
+收錄
+				 
+		
+
+
+
+你可以購買VIP會員所寫的私人筆記。
+
+
+
+
+ 
+
+
+
+
+
+查單字:關
+ 
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+ 
+給阿摩一個讚
+
+給我們一個讚，讓我們可以做的更好!
+
+
+登入後，將不會看到此視窗
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+應用數學系 
+
+
+
+
+Your browser does not support JavaScript!
+
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+
+
+
+
+
+應用數學系
+
+歡迎光臨 文化大學 應用數學系
+
+
+        description 
+
+
+
+
+
+
+
+文化首頁
+迴首頁
+系務公告
+招生訊息
+師資陣容
+課程規劃
+網站管理
+
+
+
+
+
+
+
+
+
+
+
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+系務相關
+
+
+
+
+
+系務公告
+
+系所介紹
+系史
+教育目標
+核心能力
+
+
+課程規劃
+應用數學
+統計科學
+計算機科學
+課程學習地圖
+課程查詢
+
+招生訊息
+
+師資陣容
+專任教師
+兼任教師
+行政助教
+專任教師輔導時間
+
+
+畢業修業規定
+修課要點
+畢業門檻
+
+
+下載專區
+
+學群
+學群科目表
+學群申請表
+學群證書申請辦法
+
+系友獎助學金
+學分學程
+學生考取相關證照獎助學金
+專題報告發表獎助辦法
+課外活動獎勵辦法
+
+專題報告
+專題報告撰寫說明
+專題報告樣式1
+專題報告樣式3
+專題報告樣式2
+
+
+
+評鑑專區
+目標、核心能力與課程設計
+教師教學與學習評量
+學生輔導與學習資源
+學術與專業表現
+畢業生表現與整體自我改善機制
+
+聯絡我們
+
+
+
+
+
+
+
+
+相關辦法
+
+
+
+
+學群辦法
+系友獎助學金辦法
+
+學分學程
+科學計算學分學程
+資料分析應用與實務學分學程
+智慧手機APP設計學分學程
+
+
+
+
+
+Your browser does not support JavaScript!
+
+
+
+
+研討會專區
+
+
+
+
+
+智慧科技與應用統計研討會
+2009年7月22日
+2016年5月28日
+
+
+海峽兩岸應用統計研討會
+2009年5月19日
+2013年5月19日
+
+
+
+
+
+Your browser does not support JavaScript!
+
+
+
+
+門檻相關
+
+
+
+
+
+
+
+
+
+
+
+外部連結
+
+
+
+
+
+
+
+
+
+
+
+
+
+維基百科
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MathWorld
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Maple T.A.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+數學傳播
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+數學知識
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+數學相關系所連結
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+系務公告
+全校公告
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+數據載入中...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+演講公告More...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+【講座】通過面試
+
+
+
+
+
+
+【講座】應數人生。幾何學
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+【講座】學會這些，就能在職場立足
+
+
+
+
+
+
+【講座】職場新鮮人不可不知的事
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+【演講】現實人生 vs 實現人生
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ More...
+
+
+
+
+
+
+
+
+華岡即時天氣
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+應數系三大學群
+
+
+
+
+
+
+
+
+進入應數系未來想往哪個學群發展？
+
+
+
+
+ 應用數學學群 
+
+
+ 統計科學學群 
+
+
+ 計算機科學學群 
+
+
+
+
+
+
+驗證碼:
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+Voice Play
+
+
+
+更換驗證碼
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+學生專區
+
+
+
+
+
+應數系學會
+101直屬家族名單
+102直屬家族名單
+103直屬家族名單
+104直屬名單
+105直屬家族名單
+
+
+普渡大學雙學位
+普渡大學系網頁
+普渡大學雙學位合作案
+
+榜單天地
+
+數位教材
+微積分
+複變函數論
+
+
+學生問捲專區
+畢業生離校問捲
+課程規劃問捲
+
+
+
+
+
+Your browser does not support JavaScript!
+
+
+
+
+系友專區
+
+
+
+
+
+系友會
+組織章程
+
+
+活動專區
+2012系友大會
+2013系友大會
+活動照片
+
+
+問捲專區
+101學年度執行畢業生就業流向調查追蹤結果
+系友近況調查
+
+
+傑出校友
+歷屆傑出系友
+
+
+相關連結
+華岡校友網
+應用數學系FACEBOOK
+
+
+
+
+
+Your browser does not support JavaScript!
+
+
+
+
+活動照片
+
+
+
+
+
+
+
+
+
+
+華岡職涯網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+教學卓越
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+教師專業成就檔案
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+中國文化大學圖書館
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+數學傳播
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+數學知識
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright  ©  2015  中國文化大學 應用數學系　
+Address：11114 臺北市士林區華岡路55號 大義館401
+TEL：02-28610511#25105｜FAX：02-28619509｜E-mail ：crssam@dep.pccu.edu.tw
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學應用數學系 Department of Applied Mathematics, NCTU
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .:: 迴首頁 | 交通大學 | 意見回饋 | 網站地圖 | 手機板 |  English  ::.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+課程介紹
+規章表單
+雙聯學位
+
+修課範例
+大學部
+修業規定
+課程流程圖
+必修課程
+當學期課程
+領域課程
+學程介紹
+跨域學程
+研究所
+碩班修業規定
+博班修業規定
+基本課程介紹
+當學期課程
+交清共同課程
+
+
+
+e-Campus 平臺
+課務組
+交通大學
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+大學部課程流程圖
+大學部課程流程圖
+
+適用於102學年度以前入學學生
+
+
+
+適用於99學年度以前入學學生
+
+
+大三、 大四其它課程，依各領域分類如下
+
+
+分析幾何
+組合
+計算科學
+機率與統計
+
+
+
+
+複變函數論 
+分析導論 
+應數導論 
+向量分析 
+幾何學 
+實變函數論 
+常微分方程 
+偏微分方程 
+動態系統 
+拓樸學 
+數論
+
+
+
+
+圖論
+編碼理論 
+設計理論 
+演算法
+
+
+
+
+高等數值
+科學計算 
+
+
+
+
+隨機過程 
+高等統計 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+　　　English Version|
+意見回饋|
+Go Top
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+本網站著作權屬於國立交通大學 應用數學系  © 2010地址: 300 新竹市大學路1001號 科學一館2樓
+電話 (03) 5722088 傳真 (03) 5724679 校內分機 (03)5712121-56401 電子郵件：chenii@mail.nctu.edu.tw 最後更新:2016-10-15 12:40:15 PM (CST)
+
+
+
+
+
+
+
+��ࡱ�                >  ��	               t          v      ����    s   �������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������� �	  �R�             43   bjbjo>o>                   LV  T  T  �                             ��         ��         ��                 �     �      �                                       ����    %      %      %  8   ]  $   �  �   %      6!  �  e      e      e      e      e      �  
+   �     �     �      �       �       �       �       �       �   $   �"  �  �%  P   �   E                         �                      �      �      �      �      �                           e              e  4  �      �      �      �      �  �        e            e      �               �                                                      �      �               �              �                                                                              �      e      ����     p�uձ�        ����    c  �   �              q      !  0   6!      �      �%      �  D  �'      �                                                                      �  P   �%  �  �'  $         E  ,  �      �      �      �      �                                      �      �      �      �       �                                       A  �                                  �      �      �      6!      �      �      �      �              ����    ����    ����            ����    ����    ����    ����    ����    ����    ����    ����    ����    ����    ����    ����    ����    ����    �'      �      �      �      �      �      �                                                              �      �      �      �  /  �  :     	                                                                                                                                                                                                                                                                                                                                                                                                                                    �a(uxex[�|  D e p a r t m e n t   o f   A p p l i e d   M a t h e m a t i c s  1 0 3 x[t^�^  ( A c a d e m i c   Y e a r   2 0 1 4 )  t^  } �y�vT1z C o u r s e   N a m e  �yx[��W S c i e n t i f i c  F i e l d  R�g��W A n a l y s i s  F i e l d  ��{�[\O��W C o m p u t i n g  F i e l d  vQ�[xex[��W O t h e r   M a t h e m a t i c   F i e l d     
+N1 s t  N2 n d  
+N1 s t  N2 n d  
+N1 s t  N2 n d  
+N1 s t  N2 n d    'Y  N F r e s h m a n  irt P h y s i c s  4  4          �_MzR C a l c u l u s    4  4        ��{_j�i֊ I n t .   t o   C o m p u t e r   S c i e n c e      3  3      �}'`�Nxe L i n e a r   A l g e b r a        3  3   'Y�N'Y	N ( i�'`�\x���)  S o p h o m o r e 0J u n i o r    ( A d a p t i v e   g u i d a n c e   c o u r s e )  Tϑ�_MzR V e c t o r   C a l c u l u s    3         �_R�ez D i f f e r e n t i a l   E q u a t i o n s    3         OP�_R�ez\֊ I n t .   t o   P a r t i a l   D i f f e r e n t i a l   E q u a t i o n s     3        xex[ߎԚ�[\O P r a c t i c e   o f   M a t h e m a t i c a l   S o f t w a r e      3       ��{xex[ C o m p u t a t i o n a l   M a t h e m a t i c s       3      _j�s֊ P r o b a b i l i t y        3     q}�x[ S t a t i s t i c s         3    �cexex[ D i s c r e t e   M a t h e m a t i c s         3   'Y�N 'Y	N S o p h o m o r e 0J u n i o r  R�g\֊ I n t r o d u c t i o n   t o   A n a l y s i s    4  4        �Nxex[(  N)  A l g e b r a ( I )        3    'Y	N J u n i o r  ����Qxe֊ C o m p l e x   A n a l y s i s     3       T��_�Ox[Rxe�6 6 x[R, ,g�| gNObumix[R�p  1 2 8   x[R0 T o t a l   r e q u i r e d   c r e d i t s :   6 6   p o i n t s .    T h e   m i n i m u m   o f   c r e d i t s   n e e d e d   t o   g r a d u a t e   w i t h   a   b a c h e l o r  s   d e g r e e   o f   D A M   i s   1 2 8 .        
+  N  P  T  V  \  �  �  �  �  �  �  �  �  �  	  	  (	  2	  4	  B	  p	  r	  v	  �	  �	  �	  ���÷������u]T�T�u]T�T�T�TK           h|?! hu� PJ  h|?! hS PJ  .h|?! hS 0J B*PJ fH� ph    q�
+   ����    *h|?! hS B*PJ fH� ph    q�
+   ����    h|?! hS KH  PJ  h|?! h�[� PJ  h|?! hS KH  PJ \�h|?! h&_� KH  PJ \�h|?! h�[� KH  PJ \�h|?! hZ# KH  PJ \�h|?! h�l� CJ$ KH  PJ \�aJ$ h|?! hS CJ$ KH  PJ \�aJ$ h|?! h&_� CJ$ KH  PJ \�aJ$     P  �  �  �  �  �  �  �  �  �  	  	  (	  4	  B	  p	  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                                                                                                                            $d    �x $If   a$gd�cX    $d    $1$If   a$gd�cX   $d    �x $If   a$gd�cX  
+  $d    a$gd�l�  p	  r	  t	  =            ,                                                                $d    �x $If   a$gd�cX �  kd    $$If   � 4�            ֈ ���\d (#0*��                ��
+                �                ��                �                �                �0   �     �     �     �     �     �  �L*�  �  �   �   �   �   �   �   ��   �   �   �   �   �   ��   �   �   �   �   �   ��   �   �   �   �   �   �4� 
+ a�  yt�N�  t	  v	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �	  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                           $�x $If   a$gd��   $d    $If   a$gd�cX   $d    �x $If   a$gdXB|   $d    �x $If   a$gd�cX    Ff     $d    $1$If   a$gd�cX   $d    �x $If   a$gd�cX  �	  �	  �	  �	  �	  �	  
+  
+  *
+  ,
+  @
+  P
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+    Z  x  z  �  �  �  �  �    N  `  �  �  �  �  �  �  
+    ,  .  @  L  `  b  t  �  �  �  �  �  �  �  (  *  >  P  d  ����о��о��е���е���Шо��ооШоШо��о��о��о��Йо��  h|?! hu� B*KH  PJ ph    h|?! hu� B*PJ ph    h|?! hu� aJ  h|?! hu�  h|?! hu� KH  PJ  h|?! hu� PJ  h|?! hu� CJ PJ aJ  2h|?! hu� B*CJ PJ aJ fH� ph    q�
+   ����   
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  ,
+  .
+  0
+  4
+  8
+  :
+  <
+  >
+  @
+  B
+  D
+  P
+  �
+  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                  Ffg	    $d    $If   a$gd�cX   $d    �x $If   a$gd�cX    Ff�    $�x $If   a$gd��  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �
+  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                  Ff�    $d    $If   a$gd�cX   $d    �x $If   a$gd�cX    Ff    $�x $If   a$gd��  �
+    N  Z  z  |  ~  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                            Ff}    $�x $If   a$gd��   $d    $If   a$gd�cX   $d    �x $If   a$gd�cX  �  �  �  �  �    >  @  B  F  H  J  L  N  P  R  `  �  �  �  �  �  �  �  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                  Ff�    $d    $If   a$gd�cX   $d    �x $If   a$gd�cX    Ff/    $�x $If   a$gd��  �  �  �  �  �  �  �  �  �  �           
+        .  0  2  4  6  8  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                  FfE#    $d    $If   a$gd�cX   $d    �x $If   a$gd�cX    Ff�    $�x $If   a$gd��  8  :  >  @  B  D  L  b  d  f  h  j  l  n  p  t  v  x  �  �  �  �  �  �  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                  Ff�*    $d    $If   a$gd�cX   $d    �x $If   a$gd�cX    Ff�&  $�x $If   a$gd��  �  �  �  �  �  �  �  �  �  �  *  ,  .  2  6  8  :    >  @  B  P  f  h  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                  Ff2    $d    $If   a$gd�cX   $d    �x $If   a$gd�cX    Ff[.    $�x $If   a$gd��  d  f  x  �  �  �  �  �  �  �  �  �  �  �  �    (  *  �  �  �  �  �      .  .  ~.  �.  ����������������������zxdTH     h|?! h�/z KH  PJ \�h|?! h�aC CJ$ KH  PJ \�aJ$ 'h|?! h�/z CJ$ KH  OJ PJ QJ \�aJ$ Uh|?! h(� KH   h|?! h�[� KH  PJ \�h|?! hN~ PJ  h|?! h�[� KH  PJ  h|?! hS PJ  h|?! h�R	 PJ  h|?! h�[� PJ  h|?! hu� KH  PJ  h|?! hu� CJ PJ aJ  2h|?! hu� B*CJ PJ aJ fH� ph    q�
+   ����    h|?! hu�  h|?! hu� PJ h  j  l  n  p  r  v  x  z  �  �  �  �  �  �  �  �  �  �  �  �  �  �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �            �                                                    Ffi9    $d    $If   a$gd�cX   $d    �x $If   a$gd�cX    Ff�5    $�x $If   a$gd��  �    V  �  �  �  .  ~.  �.  �            �            �            s            h            ]            R            G               
+  $d    a$gd�/z  
+  $d    a$gd�aC  
+  $d    a$gdN+  
+  $d    a$gd�l�  a  kd�;  $$If   � �            � ��0*�L*                �0   �     �     �     �     �     �  �L*�  �  �   ��   ��   ��   �4� 
+ a�  yt�N�   $���d    $If   UD��]���a$gdN~   $���d    $If   UD��]���a$gd�cX  �a(uxex[�|��|�y�vh� M i n o r   P r o g r a m s   o f   D e p a r t m e n t   o f   A p p l i e d   M a t h e m a t i c s  1 0 3 x[t^�^  ( A c a d e m i c   Y e a r   2 0 1 4 )  x�%R C a t e g o r y  �y�vT1z C o u r s e   N a m e  x[RxeC r e d i t  �y�vT1z C o u r s e   N a m e  x[Rxe C r e d i t   �_�O R e q u i r e d   c o u r s e  R�g\֊(  N) ( �N)  I n t r o d u c t i o n   t o   A n a l y s i s  8  �}'`�Nxe(  N) ( �N)  L i n e a r   A l g e b r a  6   AS�y�\x��O1 2 x[R T h e s e   t e n   c o u r s e s   b e   c h o s e n   a t   l e a s t   1 2   c r e d i t s  �_R�ez D i f f e r e n t i a l   E q u a t i o n s  3  �Nxex[(  N)  A l g e b r a ( I )  3    _j�s֊ P r o b a b i l i t y  3  �Nxex[( �N)  A l g e b r a ( I I )    3    ����Qxe֊ C o m p l e x   A n a l y s i s  3  ��{xex[ C o m p u t a t i o n a l   M a t h e m a t i c s  3    q}�x[S t a t i s t i c s  3  �cexex[ D i s c r e t e   M a t h e m a t i c s  3    Tϑ�_MzR V e c t o r   C a l c u l u s  3  OP�_R�ez\֊ I n t .   t o   P a r t i a l   D i f f e r e n t i a l   E q u a t i o n s  3   ��| gNO�a�Ox[R�p2 6 x[R T h e   m i n i m u m   o f   c r e d i t s   n e e d e d   t o   D A M   M i n o r   P r o g r a m   i s   2 6                                                                                                                                                                                                                               �.  �.  �.  b/  z/  �/   0  `0  X1  �1  �1  2  02  |2  ~2  �2  �2  �2  3  3  3  3  3  3  3   3  $3  &3  *3  ,3  23  43  �������ддЫ�З���Ї�xtxtxtxt�                                                                         h�]�  j    h�]� Uh|?! hK%�  h|?! h�/z  h|?! h�K� PJ  h|?! h�aC PJ  h|?! h�4: KH  PJ  h|?! h�4: PJ  h|?! h�4: B*PJ ph    h|?! h�4: B*KH  PJ ph    h|?! h�/z KH  PJ  h|?! h�aC KH  PJ  h|?! h�/z CJ$ PJ aJ$  h|?! h�aC KH  PJ \� �.  �.  �.  �.  �.  /  /  &/  ./  �            �            �            �            �            �            �            �            �                                                                                                                                                                                                                                                                                                                  $d    $1$If   a$gd9�    $$1$If   a$gd9�  	>/  D/  d/  *                                        $$1$If   a$gd�aC �  kdq$$If   �            ���r   ��%*�Z    �A    �X    �=    �X    �0               �       �    ��6�  �  �     �     �     �     4�   a� b�p�2   �   �     �   �     �   �     �   �     �   �  yt  d/  z/  �/  �/  �/  �/  �            �            �            �            �                                                                                                                                                                                                                                                                                                                                                          $$1$If   a$gd    $d    $1$If   a$gd    d    $1$If   gd  �/  �/   0  *                                                 
+  $1$If   gd �  kdp=  $$If   �            ���r   ��%*�Z    �A    �X    �=    �X    �0               �       �    ��6�  �  �     �     �     �     4�   a� b�p�2   �   �     �   �     �   �     �   �     �   �  yt   0  `0  j0  �0  �0  �0  �0  �0  �            �            �            �            �            �            �                                                                                                                                                                                                                                                                                                  $$1$If   a$gd    $d    $1$If   a$gd    d    $1$If   gd  
+  $1$If   gd�aC  �0  �0  �0  (                                             
+  $1$If   gd  �  kdo>  $$If   4�            ���r   ��%*�Z       �A    �X    �=    �X    �0               �       �    ��6�  �  �     �     �   �    �     4�   a� b� p�2   �   �     �   �     �   �     �   �     �   �  yt  �0  �0  �0  �0  �0  1  1  �            �            �            �            �            �                                                                                                                                                                                                                                                                                                                                         $$1$If   a$gd    $d    $1$If   a$gd    d    $1$If   gd  1  1  1  (                                             
+  $1$If   gd  �  kd�?  $$If   4�            ���r   ��%*�Z          �A    �X    �=    �X    �0               �       �    ��6�  �  �   �    �     �   �    �     4�   a� b�  p�2   �   �     �   �     �   �     �   �     �   �  yt  1  (1  J1  N1  X1  �1  �1  �            �            �            �            �            �                                                                                                                                                                                                                                                                                                                                         $$1$If   a$gd    $d    $1$If   a$gd    d    $1$If   gd  �1  �1  �1  (                                             
+  $1$If   gd  �  kd�@  $$If   4�            ���r   ��%*�            �A    �X    �=    �X    �0               �       �    ��6�  �  �   �    �     �   �    �     4�   a� b�  p�2   �   �     �   �     �   �     �   �     �   �  yt  �1  �1  �1  �1  �1  �1  �            �            �            �            �                                                                                                                                                                                                                                                                                                                                                          $$1$If   a$gd    $d    $1$If   a$gd    d    $1$If   gd  �1  �1  �1  (                                             
+  $1$If   gd  �  kd�A  $$If   4�            ���r   ��%*�            �A    �X    �=    �X    �0               �       �    ��6�  �  �   �    �     �   �    �     4�   a� b�  p�2   �   �     �   �     �   �     �   �     �   �  yt  �1  �1  2   2  02  ~2  �2  �            �            �            �            �            �                                                                                                                                                                                                                                                                                                                                         $$1$If   a$gd    $d    $1$If   a$gd    d    $1$If   gd  �2  �2  �2  (                                   $d    $1$If   a$gd  �  kd	C  $$If   4�            ���r   ��%*�         �A    �X    �=    �X    �0               �       �    ��6�  �  �   �    �     �     �     4�   a� b� p�2   �   �     �   �     �   �     �   �     �   �  yt  �2  3  3  3  3  3  3  "3  $3  (3  *3  .3  03  �            �            |            q            o            o            o            o            o            o            o            o                              
+  $d    a$gd�/z    gd�/z m  kd:D  $$If   �            �~�   *�      �0               �       �    ��6�  �  � � � � 4�   a� b�p�
+   �   �  yt    $d    $1$If   a$gd�K�  03  23  43  �            �                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+  $d    a$gd�/z     J 090P &P	 1�h2P :pm7� ��. ��A!�7"�7#�7$�%�  �S�  ��Dp                                                                                                                                                                                                                                                                                                                                                                                                                                                       � $$If   �  !v h#v �#v�
+#v#v�#v:V � 4�0   �     �     �     �     �     �  �L*�  +� +�,� 5� �5��
+5�5��5�4�    4� 
+ yt�N� 3$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� +�,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd�   $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd�  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd7  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd�  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd�  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kdM  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd�  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd�  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kdc  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd"  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd�%  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kdy)  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd+-  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd�0  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� .$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � 4�0   �     �     �     �     �     �  �L*�  +� ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� �kd�4  $$If   � 4�            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� &$$If   �  !v 
+h#v �#v�
+#v�#v8#v
+�:V � �0   �     �     �     �     �     �  �L*�  ,� 
+5� �5��
+5��5�85�
+�4�    4� 
+ p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� }kdA8  $$If   � �            �� 
+���\�d� �(#�&0*��                ��
+                ��                ��                �8                ��                ��                ��                ��                ��                �0   �     �     �     �     �     �  �L*�  �  �(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   ��(   �   �   �   �   �   �   �   �   �   �4� 
+ a�  p�d��������������������   �   �     �   �     �   �  ��������������������   �   �     �   �     �   �  yt�N� � $$If   �  !v h#v L*:V � �0   �     �     �     �     �     �  �L*�  ,� 5� L*4�    4� 
+ yt�N� � $$If   !v h#v #vz#v#vq#v:V ���0               �       �    ��6�  ,� 5� Z5�A5�X5�=5�X/�    4� 
+  a� p�2   �   �     �   �     �   �     �   �     �   �  yt � $$If   !v h#v #vz#v#vq#v:V ���0               �       �    ��6�  ,� 5� Z5�A5�X5�=5�X/�    4� 
+  a� p�2   �   �     �   �     �   �     �   �     �   �  yt /$$If   !v h#v #vz#v#vq#v:V 4���0               �       �    ��6�  +� ,� 5� Z5�A5�X5�=5�X/�   /�    /�    /�    4� 
+  a� p�2   �   �     �   �     �   �     �   �     �   �  yt !$$If   !v h#v #vz#v#vq#v:V 4���0               �       �    ��6�  +� ,� 5� Z5�A5�X5�=5�X/�   /�    /�    4� 
+  a� p�2   �   �     �   �     �   �     �   �     �   �  yt !$$If   !v h#v #vz#v#vq#v:V 4���0               �       �    ��6�  +� ,� 5�   5�A5�X5�=5�X/�   /�    /�    4� 
+  a� p�2   �   �     �   �     �   �     �   �     �   �  yt !$$If   !v h#v #vz#v#vq#v:V 4���0               �       �    ��6�  +� ,� 5�   5�A5�X5�=5�X/�   /�    /�    4� 
+  a� p�2   �   �     �   �     �   �     �   �     �   �  yt /$$If   !v h#v #vz#v#vq#v:V 4���0               �       �    ��6�  +� ,� 5�   5�A5�X5�=5�X/�   /�    /�    /�    4� 
+  a� p�2   �   �     �   �     �   �     �   �     �   �  yt � $$If   !v h#v *:V �~�0               �       �    ��6�  ,� 5�   /�    4� 
+  a� p�
+   �   �  yt s��Sd�A�O��&j���SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2��SL�CJ������2s��Sd�A�O��&j�s��Sd�A�O��&j�s��Sd�A�O��&j�       b                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              2     �  �  �  �          0  @  P  `  p  �  �  �  �  �  �       2  (  �  �     0  @  P  `  p  �  �  �  �  �  �          0  @  P  `  p  �  �  �  �  �  �          0  @  P  `  p  �  �  �  �  �  �          0  @  P  `  p  �  �  �  �  �  �          0  @  P  `  p  �  �  �  �  �  �          0  @  P  `  p  �  �  8  X  �      V  ~     PJ _HmH	nHsH	tH    D  `�� D          gQ�e     1$    CJ KH _HaJ mH	nHsH	tH                  $ A`��� $          �-��k=�W[�W    B i@��� B          h� �  4� 
+l 4�   a�        k ���             !qn�U        N ^@ � N    K%�    gQ�e  ( W e b )     �d �d 1$[$\$  KH  OJ QJ ^J 6 @ 6    �c�    ���    � 9r G$  CJ aJ 6  @ 6    �c�    �>\    � 9r G$  CJ aJ  ) � !    �c�    ��x    8 �@ 28   0r�    ;�㉹eJX�eW[     CJ OJ QJ aJ B �O� AB    S    a p p l e - c o n v e r t e d - s p a c e     PK     ! ����        [Content_Types].xml���N�0E�H���-J��@%�ǎǢ|�ș$�ز�U��L�TB� l,�3��;�r��Ø��J��B+$�G]��7O٭V�������(7��I��R�{�pgL�=��r����8�5v&����uQ�뉑8��C����X=����$␴�?6N�JC�������F�B.ʹ'�.�+���Y�T���^e5�5�� ��ð�_�g -�;�����Yl�ݎ��|6^�N��`�?���[  �� PK     ! �֧��   6     _rels/.rels���j�0���}Q��%v/��C/�} �(h"���O�
+������=������ ����C?�h�v=��Ʌ��%[xp��{۵_�Pѣ�H�0���O�R�Bd���JE�4b$��q_����6L��R�7`�������0̞O��,�En7�Li�b��/�S���e��е����  �� PK     ! ky��   �      theme/theme/themeManager.xml�M
+� @�}�w��7c�(Eb�ˮ�� C�AǠҟ����7��՛KY,��e�.���|,���H�,l����xɴ��I�sQ}#Ր���� ֵ+�!�,�^�$j=�GW���)�E�+&
+8�  �� PK     ! R��  �     theme/theme/theme1.xml�YOoG�W�w�b'v�#;6i!ņ��x=�2���'�V��R�JUi�JEjO=T-H �R�ӄ��T�+����z'^���� ��o����7��nE�!)��^�l�C$����Aӻ��Y�T8b�c��&Dz��}����\�M/T*Y]X�>,cy�'$�g#."����܈-,V*����b�ث��	z��ï�?���g�}�e::�J�����@��;ܭj���6h���|�On)1,��-��_���&���-�뚿t_�a��ht�`�+�vk�s�|`j��tڝj.� �֖��Zw���d@���v�^��������V��Hm�B�~���W*˵�Eo@_���Z�����7 �_��w�5�k.ހBF���Nh��J�!#�6K�+ _���)
+�!�.�b�c5��"|��. 4�aEc�&	a������X+����%_�,i]H��&�齟`h����|��!:������w�ܾo9�6qw=���?�}��x���_��e��O?}�y9�gj��~���O��p��.��ӈHt���c&*��d N��bZܱ�Xk)��Q���2�,͎cG���.�>ʀ�7�{�+Z��R9�-�Y���(\Һ
+a��\�q;��n���og� ofe�8��c�6ñ���B��%�Ļ�:qݢ�����AQ�Ґ������MA^&e>C���l]G-�ʼ� {.�����9a���
+Ge"�8bŀ_�*,3�7~ב
+2�QgH�,�sU����_��X�i�b��E
+Ew�d^Ɯ�|��()��h���](Q���*�oq�C�w����:%N�_��h��4-�d,Jry�p�~{6��P���������N���*��Wb��J��pz�������;J�m.���g����ߒ���'�y�|���%�=�.,�}��I�[X�G�ɠ���=Hp�Ua/�	�UO	d*:�(�.�f�T�����U��/!�9$V[|h���rv����s��-i�U�t.
+�����6��ڪ�4C����ebs)����bMj�B�e��k�p���u�m����,�f�d��$͑�{6GU���Vf�~�b�ǗD����ž���$���6G]����RV��,������bs��7�F}��!'Mo�d�%�u��H�x��+a����l�|��F��Ux�a�>����j�Ж�y�� ��&k�b�zZ����XZ�b�׬�8��%��U1م;�5�R>VD���>�����~]��ϐJx�aA�ws:��K�i�߈�]�,	qJ��E�N�pCH��[����>O����Pg��7�#�)M�r`�$�~W��`�����c(*xOm�dO�o{��0m�H�C$(�G*�l-��{��jzvY�,d*�`�L���GX_s�>�=B�6Ii���֟�=��A���b�9L��������638��h���&����T������-:�LǬZ���p4ҶENx�Zƚ�x��Y���(�wHH��>#������;��~�� l�����i�����-&-ʆ6�tԲ���'�\�`kˎ��;�\uN/�f��;��ksC�=ڢ�4�.2&1�ײ�/Y|p��������w*�a��>���ֵ�   �� PK     ! ѐ��     '   theme/theme/_rels/themeManager.xml.rels��M
+�0���wooӺ�&݈Э���56?$Q���,.�a��i����c2�1h�:�q��m��@RN��;d�`��o7�g�K(M&$R(.1�r'J��ЊT���8��V�"��AȻ�H�u}��|�$�b{� �P����8�g/]�QAsم(����#��L�[����   �� PK-      ! ����                      [Content_Types].xmlPK-      ! �֧��   6               0  _rels/.relsPK-      ! ky��   �                  theme/theme/themeManager.xmlPK-      ! R��  �               �  theme/theme/theme1.xmlPK-      ! ѐ��     '             �	  theme/theme/_rels/themeManager.xml.relsPK      ]  �
+    
+�    V    ����             	                                 �	  d  �.  43                 p	  t	  �	  �
+  �
+  �  �  8  �  h  �  �.  d/  �/   0  �0  �0  1  1  �1  �1  �1  �1  �2  �2  03  43  	   
+                                                    !   "   #   $   %   &'   (   )   *     �@     �                           @ �   ��    � ��� �   �H     �          �0    �(    	�                    
+�           �    �         �0    �(    	�                    
+�          �B    
+�        S �   �   �    �   	   ?    �      ��    1 �  �      �  �         +   .   D   E   H   L   Y   ]   o   s   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   �   	    "  '  M  Q  l  p  r  x  �  �  �  �  �  �  �  �  )  /  ]  a  �  �  �  �  �  �  �  �  �  �  �  �  �  �  !  $  %  &  =  ?  G  L  h  j  r  t  u  ~  �  �     
+  B  E  [  ]  g  k  x  {  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  0  4  N  Q  R  S  d  g  v  y  z  {  �  �  �  �  �  �  �  �  �  �  B  K  M  O  �  �  �  �  �  �  �  �  �                                                                                                                                                                  o  p  %  &  G  H      �  �  �  �  R  S  �  �  �  �  �  �  �  �  �  �  �   s  s  s  3  s  s  s  s              ]   ^   h   i   s   t   |   }   �   �   �   �   �   �   �   �   �   �   �   �           '  (  A  E  Q  R  a  g  q  z  �  �  �  �  �  �  �  �  �  !  /  0  R  V  a  b  |  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �  �      '  (  3  9  ?  @  L  M  ^  a  h  ?  �  0    ?  B  �  �  �  �  �  �  �  �  �                                                                                                      D   D   h   h   |   |   �   �   �   �   �   �   �          A  K  a  k      �  �  �  �  �  �  �  �    '  R  [  |  �  �  �  �  �  �  �  �  �      3    ?  F  ^  g  h  h  �  �  �  �  q  t  �  �  �  �  �  �  �  �  �  �  �  �                                                                           7zn�(CC      �(CC�r]      zVU7zn      ��[           �r]           E         �       D   k  S Z# �R	 �|  � lK � |?! s( N+ �/ �4: w}? a,C �aC `K 'O TOO �Q vQ �cX AyX �VZ �tZ Zh Upl ]gn vo ,p 	r �Wu �/z XB| N~ l+~ m7� �S� (� 3 � �]� K%� nb� �l� � �K� T0� �P� F7� �[� � �c� V� �c� ~� 9� 9� 2� &_� h� �e� 0r� u� �� j� �N� h
+�     �  �         �@     
+                      @                   �  �      �  
+    �      �      �  .    ��    U n k n o w n ��            ��     ��   ��    ��   ��       G�  �* �Ax �	       �      T i m e s   N e w   R o m a n   5�                   �    S y m b o l   3.�  �* �Cx �	       �      A r i a l   /M��  	                        jwiԚ  35�� 	  � 	(              ^0}WԚ  C��       � ����(             �e0}fԚ  P M i n g L i U   A�  � ��$ B        �      C a m b r i a   M a t h      ��  �  h    ���f#TT'#TT' P   �   �          �   �             I       ?  ! ) , . : ; ? ] } � �     " % & ' 2 t%00	00000000�1�3�4�6�8�:��@�B�D�O�P�Q�R�T�U�V�W�Z�\�^��	������\�]�d�                                                                            ( [ { � �   5 0
+0000005�7�9�;�=�?�A�C�Y�[�]��[�                                              77� � ��2              �  �                                                                       	3�q      ��                        HP    	��?  �  ���������������������K%�    2                     !                             x   x           �             �   ��        �a(uxex[�|�_�O�y�v N��h�       A d m i n  H O                        �     A  a  e  �  �    R  |  �  �  �    �  (    �     �D              �D              �D              	E              E              )E              9E              IE              YE              iE              yE              �E              �E              �E              �E              �E              �E              �E               ���i	��� Z'��`���I��� Z'��                                                                                ��                      �����Oh�� +'��0   T        �      �      �      �      �   	   �      �   
+                  (     4          D     L     �        ���μƾǨt���׬�ؤ@����          Admin         Normal        HO        25        Microsoft Office Word   @    �-   @    �kWձ�@    �`��@    �kWձ�         �      �                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ��                      ��՜.�� +,��0   �   
+      X      `      l      t      |      �      �      �      �      �      �                           �                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                	   
+                                                                      !   "   #   $   %   &'   (   )   *   +   ����-   .   /   0   1   2   3   4   5   6   7   8   9   :   ;   =   >   ?   @   A   B   C   D   E   F   G   H   I   J   K   L   M   N   ����P   Q   R   S   T   U   V   W   X   Y   Z   [   \   ]   ^   _   `   a   b   ����d   e   f   g   h   i   j   ����l   m   n   o   p   q   r   ��������u   ��������������������������������������������R o o t   E n t r y                                              ��������   	     �      F            p�	vձ�w   �       D a t a                                                         
+ ������������                                    ,   �E      1 T a b l e                                                            ����                                    O   �'      W o r d D o c u m e n t                                                ����                                        LV       S u m m a r y I n f o r m a t i o n                           ( ������������                                    c           D o c u m e n t S u m m a r y I n f o r m a t i o n           8    ��������                                    k           C o m p O b j                                                   ������������                                        n                                                                           ������������                                                   ���������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������� ��
+  ����	     �      F   Microsoft Word 97-2003 ��� 
+   MSWordDoc    Word.Document.8 �9�q                                                                                                                                                                                                                                                                                                                                                                                                                              We're fetching your file...Please wait a moment while we retrieve your file from its home on the internet
+
+
+
+
+
+
+首頁 | Yahoo奇摩知識+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ⌂首頁信箱新聞股市名人娛樂氣象運動App下載購物中心商城拍賣更多⋁知識+汽車機車電影字典遊戲旅遊理財房地產時尚美妝折扣城   Yahoo 奇摩知識+                        👤 登入    ✉ 信箱     ⚙ 服務說明    帳號資料 服務說明 意見回報        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yahoo奇摩知識+ 首頁
+
+
+
+
+
+
+
+
+
+
+
+所有分類
+ 
+健康
+ 
+商業與財經
+ 
+娛樂與音樂
+ 
+家居與園藝
+ 
+家庭與人際關係
+ 
+寵物
+ 
+懷孕與育兒
+ 
+政治與政府
+ 
+教育與參考
+ 
+新聞與活動
+ 
+旅遊
+ 
+汽車與交通
+ 
+消費電子產品
+ 
+環境
+ 
+社會科學
+ 
+社會與文化
+ 
+科學
+ 
+美容與造型
+ 
+藝術與人文
+ 
+遊戲與休閒活動
+ 
+運動
+ 
+電腦與網際網路
+ 
+食品與飲料
+ 
+餐廳與小吃
+ 
+
+
+
+
+
+世界Yahoo 
+
+
+
+
+
+
+
+
+阿根廷
+
+
+
+
+
+澳洲
+
+
+
+
+
+巴西
+
+
+
+
+
+加拿大
+
+
+
+
+
+法國
+
+
+
+
+
+德國
+
+
+
+
+
+印度
+
+
+
+
+
+印尼
+
+
+
+
+
+義大利
+
+
+
+
+
+馬來西亞
+
+
+
+
+
+墨西哥
+
+
+
+
+
+
+
+紐西蘭
+
+
+
+
+
+菲律賓
+
+
+
+
+
+魁北克
+
+
+
+
+
+新加坡
+
+
+
+
+
+香港
+
+
+
+
+
+西班牙
+
+
+
+
+
+泰國
+
+
+
+
+
+英國與愛爾蘭
+
+
+
+
+
+美國
+
+
+
+
+
+越南
+
+
+
+
+
+西班牙文
+
+
+
+
+
+
+
+關於
+
+
+
+
+
+關於 Yahoo奇摩知識+
+社群指南
+排行榜
+點數與等級
+部落格
+如何安全地使用 Yahoo奇摩
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+此問題不存在或正處於投票階段。
+社群指南
+
+
+
+
+            發燒問題
+        
+
+
+
+
+
+
+
+
+
+
+
+發問問題
+通常可在幾分鐘內獲得解答！
+
+
+
+
+
+
+
+展開»
+
+
+
+
+
+
+詳細資料
+
+
+
+詳細資料
+
+
+
+
+
+
+現有問題
+
+
+
+
+更多
+
+
+
+
+
+請多詳述您的問題
+上傳處理中
+
+
+
+
+上傳失敗。 請上傳大於 100x100 像素的檔案
+目前發生問題，請再試一次。
+您只能上傳 PNG、JPG 或 JPEG 等類型的檔案。
+您只能上傳 3GP、3GPP、MP4、MOV、AVI、MPG、MPEG 或 RM 等類型的檔案。
+您只能上傳不超過 5 MB 的相片。
+您只能上傳不超過 600 MB 的影片。
+您只能上傳相片 (png, jpg, jpeg) 或影片 (3gp, 3gpp, mp4, mov, avi, mpg, mpeg, rm)。
+您只能上傳相片或影片。
+影片不應超過 <b>600mb/5 分鐘</b>
+相片不應超過 <b>5mb</b>
+影片不應超過 <b>600mb/5 分鐘</b>相片不應超過 <b>5mb</b>
+  
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+服務條款
+
+
+隱私權
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+404 Not Found
+
+Not Found
+The requested URL /main.php was not found on this server.
+

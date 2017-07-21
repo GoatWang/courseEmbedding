@@ -1,0 +1,4698 @@
+
+
+
+計算機圖學 | 逍遙文工作室
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+廣告
+
+
+
+
+
+
+
+
+
+逍遙文工作室
+
+
+
+關於我 (About Me)
+留言板 (Guestbook)
+合作提案 (Cooperation Proposal)
+贊助 (Sponsor)
+創用 (Creative Commons)
+iOS技術文章
+ 
+
+
+
+
+
+
+					Just a Computer Graphics Studio & My Life				
+
+
+
+
+
+
+		Archive for the ‘計算機圖學’ Category		
+
+
+[C++] 光線追蹤動畫 (Ray Tracing Animation) 看到阿立正在寫KD樹的光線追蹤，讓我回想起去年寫的光線追蹤，這個作業說實在的非常有趣，我可以對球作反射、折射、陰影、鏡射光、散射光之外，還能寫其應用如動模糊、景深、動畫、軟陰影、去鋸齒等，哈～不過我並沒有太多時間去完成，這點令我有點遺憾呢！
+在這呢～我想要將我去年所做的成果貼上來，這回合是光線追蹤動畫 (Ray Tracing Animation)，想要知道動畫如何被製作出來，首先必須先參考我去年寫的光線追蹤 (Ray Tracing)。
+
+ （繼續閱讀…）
+
+
+廣告
+
+
+
+
+ 
+
+
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+計算機圖學, 課業
+
+Tagged with:animationray tracingrender 
+
+
+躲避和燒錄 (Dodging and Burning) 什麼是躲避和燒錄 (Dodging and Burning)？好啦～還是以英文稱之。這是傳統底片攝影的技術，在暗房中想要將底片顯影到相片上，我們會選擇影像的一部分來操作Dodging and Burning。若想要讓該區域看起來比較亮，那麼就要使用Dodging來減少曝光；反之想要讓該區域看起來比較暗，那麼就要使用Burning來增加曝光，一張維基百科的圖可以讓你知道我在講什麼：
+
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+研究, 計算機圖學, 課業, 技術
+
+Tagged with:dodging and burningimage processingtone mapping 
+
+
+縮放演算法 (Scaling Algorithm) 時常在處理影像的人很常用到的一個功能就是縮放 (Scaling)，過去不太瞭解原理的我總覺得這技術相當直覺，大概是因為都在使用現成的軟體，才會讓我以為這技術沒什麼了不起！但事實上沒研究過就不知道它的原理，軟體中一鍵搞定放大和縮小，眼睛敏銳的人就會發覺，由不同軟體縮放所得到的結果不太一樣，這就是我這篇想要講的內容。
+
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+遊戲設計, 計算機圖學, 課業
+
+Tagged with:image processingsamplingscalingteach 
+
+
+全方位影像映射 (Omni-directional Image Mapping) 遊戲設計在前天最後一堂落幕，所上的內容跟我的研究居然有那麼點關係！HDR的技術確實已經用在遊戲界多年，跟攝影界所用的方法有些差異，這就是為什麼儘管我已經研究相當多HDR相關知識，我還是想不斷地精進和觸類旁通！就如同近年來走紅的ambient occlusion (AO)，概念簡單而作法多，已經呈現百家齊放的現象。
+此時我想瞭解全方位影像映射 (Omni-directional Image Mapping)是如何實做，找了網路上的資料，原來是SIGGRAPH ’08裡的課程High dynamic range imaging & image-based lighting中的投影片。
+
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+遊戲設計, 計算機圖學, 課業
+
+
+
+
+摩頓碼 (Morton Code) 摩頓碼 (Morton Code)用來實做LBVH(可見包圍體階層 (Bounding Volume Hierarchies))，又稱做Z-order Curve，因為它找grid的方式是以Z形追蹤，概念相當簡單，用圖來解釋更清楚。
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+遊戲設計, 計算機圖學, 課業
+
+
+
+
+包圍體階層 (Bounding Volume Hierarchies) 包圍體階層 (Bounding Volume Hierarchies)是幾何物體集合的樹狀結構，所有的幾何物體都會在此樹狀結構的葉子節點，這些幾何物體還可以包裹成包圍體的小集合，由葉子節點開始往根節點包裹。
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+遊戲設計, 計算機圖學, 課業
+
+
+
+
+二元空間分割樹 (BSP Tree) 在計算機圖學中已經有提過二元空間分割樹 (Binary space partitioning)和二元空間分割樹2 (Binary space partitioning2)，這裡以遊戲設計的角度談兩種方式來做二元空間分割樹：對齊軸 (Axis-aligned)與對齊多邊形 (Polygon-aligned)。
+ （繼續閱讀…）
+分享：）Tweet更多列印電子郵件請按讚：喜歡 載入中... 
+
+分類：
+遊戲設計, 計算機圖學, 課業
+
+
+
+
+
+
+廣告
+
+
+
+
+
+
+
+HappyMan．GravatarI am a graduate student specializing in Computer Graphics.
+HappyMan・迴響 
+「廣角鏡拍攝婚宴敬酒 | 逍遙文工作室」對「訂婚和結婚禮金行情表」留言「廣角鏡拍攝婚宴敬酒 | 逍遙文工作室」對「阿弟完婚記」留言「Mozu's Art Studio」對「[圖解] 12星座的人生比例圖」留言「[圖解] 機車里程數保養 | 逍遙文工作…」對「機車10公里保養」留言「[香港尖沙嘴] 撲撲旅舍 Hopinn…」對「韓國釜山住三個旅館」留言 
+HappyMan．搜尋
+
+
+Search:
+
+Go!
+
+HappyMan．熱門文章 
+
+						[圖解] 臺北車站立體導覽圖					
+
+
+
+						咖啡成份比例圖解 (Illustrations Composition Ratio of Coffee Drinks)					
+
+
+
+						如何用英語稱呼學長、學弟、學姊、學妹					
+
+
+
+						臺北車站平面圖 (Taipei Main Station Plan)					
+
+
+
+						韓國釜山地鐵路線圖 (South Korea Busan Subway Route Map)					
+
+
+
+						[C++] 開啟檔案和寫入檔案 (Open File and Write File)					
+
+
+
+						臺北捷運路線圖 (Taipei MRT Route Map)					
+
+
+
+						[OpenCV] 人臉偵測 (Face Detection)					
+
+
+
+						體脂肪圖解 (Illustrations Body Fat Percentage)					
+
+
+
+						[C++] string 和 char[]互轉 (string and char[] transform)					
+
+HappyMan．分類雲APP Blender C&C++ GLSL iOS OpenCV 休閒 圖表 娛樂 工具 技術 攝影 教學 旅遊 景點 服務 生活 研究 精品 繪圖 美食 計算機圖學 課業 論文 資訊 軟體 運動 閒聊 電影 音樂 HappyMan．月曆
+七月 2017
+
+
+日
+一
+二
+三
+四
+五
+六
+
+
+
+
+« 六月
+ 
+ 
+
+
+
+
+ 1
+
+
+2345678
+
+
+9101112131415
+
+
+16171819202122
+
+
+23242526272829
+
+
+3031
+ 
+
+
+  HappyMan．近期文章 
+
+廣角鏡拍攝婚宴敬酒
+2017 年 07 月 20 日
+
+
+切換多個臉書帳號登入問題
+2017 年 07 月 17 日
+
+
+[圖解] 機車里程數保養
+2017 年 07 月 16 日
+
+
+[香港尖沙嘴] 撲撲旅舍 Hopinn
+2017 年 07 月 15 日
+
+
+[Ionic][AngularJS] 選單
+2017 年 07 月 15 日
+
+
+Google Map 時間軸
+2017 年 07 月 12 日
+
+
+[Ionic][AngularJS] 回傳呼叫 (Callback)
+2017 年 07 月 11 日
+
+
+香港地鐵路線圖 (Hong Kong Subway Route Map)
+2017 年 07 月 10 日
+
+
+[Git] Git查詢Repository位址
+2017 年 07 月 09 日
+
+
+[APP] 小米運動之睡眠
+2017 年 07 月 08 日
+
+
+ HappyMan．彙整 HappyMan．彙整
+
+選擇月份
+ 2017 年 七月  (15)
+ 2017 年 六月  (17)
+ 2017 年 五月  (15)
+ 2017 年 四月  (10)
+ 2017 年 三月  (15)
+ 2017 年 二月  (10)
+ 2017 年 一月  (19)
+ 2016 年 十二月  (17)
+ 2016 年 十一月  (7)
+ 2016 年 十月  (14)
+ 2016 年 九月  (12)
+ 2016 年 八月  (10)
+ 2016 年 七月  (14)
+ 2016 年 六月  (10)
+ 2016 年 五月  (11)
+ 2016 年 四月  (18)
+ 2016 年 三月  (19)
+ 2016 年 二月  (19)
+ 2016 年 一月  (11)
+ 2015 年 十二月  (19)
+ 2015 年 十一月  (18)
+ 2015 年 十月  (20)
+ 2015 年 九月  (21)
+ 2015 年 八月  (13)
+ 2015 年 七月  (29)
+ 2015 年 六月  (8)
+ 2015 年 五月  (21)
+ 2015 年 四月  (25)
+ 2015 年 三月  (9)
+ 2015 年 二月  (17)
+ 2015 年 一月  (30)
+ 2014 年 十二月  (20)
+ 2014 年 十一月  (29)
+ 2014 年 十月  (11)
+ 2014 年 九月  (18)
+ 2014 年 八月  (23)
+ 2014 年 七月  (8)
+ 2014 年 六月  (21)
+ 2014 年 五月  (25)
+ 2014 年 四月  (21)
+ 2014 年 三月  (20)
+ 2014 年 二月  (7)
+ 2014 年 一月  (12)
+ 2013 年 十二月  (28)
+ 2013 年 十一月  (14)
+ 2013 年 十月  (16)
+ 2013 年 九月  (15)
+ 2013 年 八月  (15)
+ 2013 年 七月  (17)
+ 2013 年 六月  (9)
+ 2013 年 五月  (26)
+ 2013 年 四月  (17)
+ 2013 年 三月  (24)
+ 2013 年 二月  (19)
+ 2013 年 一月  (32)
+ 2012 年 十二月  (20)
+ 2012 年 十一月  (17)
+ 2012 年 十月  (41)
+ 2012 年 九月  (18)
+ 2012 年 八月  (3)
+ 2012 年 七月  (18)
+ 2012 年 六月  (38)
+ 2012 年 五月  (45)
+ 2012 年 四月  (31)
+ 2012 年 三月  (28)
+ 2012 年 二月  (40)
+ 2012 年 一月  (35)
+ 2011 年 十二月  (40)
+ 2011 年 十一月  (34)
+ 2011 年 十月  (45)
+ 2011 年 九月  (32)
+ 2011 年 八月  (32)
+ 2011 年 七月  (32)
+ 2011 年 六月  (34)
+ 2011 年 五月  (36)
+ 2011 年 四月  (37)
+ 2011 年 三月  (22)
+ 2011 年 二月  (2)
+ 2010 年 六月  (2)
+ 2010 年 五月  (1)
+
+HappyMan．分類HappyMan．分類
+選擇分類
+研究  (562)
+   APP  (60)
+   生活  (90)
+   生涯  (9)
+   簡報  (6)
+   繪圖  (165)
+   過程  (18)
+   金融  (1)
+   關係  (10)
+   藝術  (8)
+   觀察  (16)
+   設計  (16)
+   論文  (27)
+   資訊  (107)
+   iPad  (7)
+   Mac OS X  (9)
+   健康  (11)
+   創業  (4)
+   圖表  (26)
+   工作  (19)
+   技術  (45)
+   攝影  (23)
+   文章  (6)
+   服務  (22)
+競賽  (3)
+   PTC  (3)
+閒聊  (179)
+   故事  (7)
+課業  (112)
+   研討會  (2)
+   遊戲設計  (12)
+   電腦視覺  (2)
+   計算理論  (6)
+   計算機圖學  (42)
+   高等演算法  (7)
+   資訊產業動態與實務  (9)
+   圖形辨識  (7)
+   多媒體系統設計  (17)
+   平行與分散式程式設計  (8)
+   企業人才培訓  (2)
+動畫  (1)
+娛樂  (131)
+   球類  (1)
+   相片  (5)
+   遊戲  (15)
+      暗黑破壞神  (1)
+      仙劍奇俠傳五  (4)
+   藝術  (2)
+   電視劇  (5)
+   電影  (32)
+   音樂  (20)
+   動漫  (14)
+   小說  (3)
+   影片  (19)
+   故事  (2)
+   晚會  (7)
+   書籍  (14)
+實習  (14)
+工具  (49)
+   網頁  (10)
+   軟體  (21)
+   平臺  (15)
+工作  (14)
+   訪談  (1)
+愛情  (8)
+成果  (15)
+   APP  (5)
+   遊戲  (2)
+教學  (503)
+   AngularJS  (7)
+   Blender  (23)
+   C&C++  (39)
+   練習  (2)
+   DirectX  (1)
+   DOS  (2)
+   Excel  (3)
+   英語  (1)
+   Git  (2)
+   GLSL  (26)
+   Ionic  (10)
+   iOS  (264)
+   Java  (1)
+   Javascript  (4)
+   jQuery  (12)
+   MatLAB  (1)
+   Node  (2)
+   notepad++  (2)
+   Objective C  (10)
+   OpenCV  (63)
+   OpenGL  (7)
+   OpenMP  (4)
+   PhotoImpact  (2)
+   php  (6)
+   Swift  (5)
+   TheFly  (2)
+   watchOS  (4)
+   WebCL  (1)
+   WebGL  (5)
+   wordpress  (3)
+   Xamarin  (5)
+未分類  (18)
+活動  (3)
+休閒  (266)
+   節日  (4)
+   精品  (55)
+   美食  (106)
+   運動  (22)
+   展覽  (8)
+   旅遊  (21)
+   旅館  (11)
+   景點  (65)
+   會議  (1)
+   演講  (5)
+修行  (12)
+
+
+HappyMan．Instagram
+
+
+
+
+
+
+
+HappyMan．其它 
+註冊 登入
+文章 RSS 訂閱
+迴響 RSS 訂閱
+WordPress.com 
+
+
+
+較舊的文章
+
+
+
+
+標籤雲
+
+
+teach ios illustration food app travel chat life opencv relationship tool restaurant photos technique record love design information work service experience art accessory facebook problem chart animation photography exercise user interface platform health movies apple opengl environment map xcode iphone story ipad jog festival mrt game blender video youtube taipei book software statistics company activity image project image processing glsl memory open source google research transportation paper song notification thought music objective c network hotel lecture experiment practice marriage device observation lyrics photo friend wifi all you can eat macbook install business customization hamburger quotation technology user experience apple watch achievement career internet performance file taiwan line camera programming competition breakfast bike tone mapping stylization movie coffee history buffet notebook start-up money bbq trend library svm gift color space github income course korea typhoon swift thailand Ionic photoimpact firework face detection flow celebration friendship mac os x birthday rgb wwdc high dynamic range algorithm article sex girl culture enterprise family time learn language reunion photograph architecture hong kong profession process report date debug weather share vacation shop mv wordpress future plan japan c++ concept attitude stitch job recall value instagram product scenery framework message flowchart introduction mission rule javascript cie lab soap opera feast temple meeting conference webgl decision leisure 3g campus sleep clothes web website computer graphics filter advertisement station sport database train happiness magazine image compression open data end banquet data version monitor definition application style cartoon group facility ice cream review banquet growth ibeacon android election comparison club uniform flower recreation team lab camera calibration night market couple chrome windows xp illustrator route habit class shoes bus navigation delegate idea park nutrition christmas beverage 
+
+
+
+
+
+
+
+在 WordPress.com 建立免費網站或網誌.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						逍遙文工作室					
+
+
+在 WordPress.com 建立免費網站或網誌. 樣版: Spectrum.				
+
+
+
+
+
+張貼到
+
+
+
+取消
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+傳送到電子郵件地址
+
+你的姓名
+
+你的Email
+
+
+
+
+
+
+取消
+
+				文章沒有送出-請確認你的Email位置			
+
+				Email確認失敗,請稍後再試.			
+
+				抱歉，你的網誌無法透過電子郵件分享			
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+%d 位部落客按了讚：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電腦圖學 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+電腦圖學
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電腦圖形軟體
+
+
+
+
+
+
+現代建築的3D電腦設計成為主流
+
+
+電腦圖學（英語：computer graphics，縮寫為CG）是研究電腦在硬體和軟體的幫助下建立電腦圖形的科學學科，是電腦科學的一個分支領域，主要關註數位合成與操作視覺的圖形內容。雖然這個詞通常被認為是指三維圖形，事實上同時包括了二維圖形以及影像處理。
+
+
+
+目錄
+
+
+1 概述
+2 電腦圖學的分支學科
+
+2.1 幾何
+2.2 動畫
+2.3 彩現
+2.4 其它分支學科
+
+
+3 電腦圖形
+
+3.1 2D電腦圖形
+3.2 3D電腦圖形
+
+
+4 電腦動畫
+5 著名的研究人員
+6 參考文獻
+7 參見
+
+
+
+概述[編輯]
+簡單地說，電腦圖學的主要研究內容就是研究如何在電腦中表示圖形、以及利用電腦進行圖形的計算、處理和顯示的相關原理與演算法。圖形通常由點、線、面、體等幾何元素和灰度、色彩、線型、線寬等非幾何屬性組成。從處理技術上來看，圖形主要分為兩類，一類是基於線條資訊表示的，如工程圖、等高線地圖、曲面的線框圖等，另一類是明暗圖，也就是通常所說的真實感圖形。
+電腦圖學一個主要的目的就是要利用電腦產生令人賞心悅目的真實感圖形。為此，必須建立圖形所描述的場景的幾何表示，再用某種光照模型，計算在假想的光源、紋理、材質屬性下的光照明效果。所以電腦圖學與另一門學科電腦輔助幾何設計有著密切的關係。事實上，圖形學也把可以表示幾何場景的曲線曲面造型技術和實體造型技術作為其主要的研究內容。同時，真實感圖形計算的結果是以數字圖象的方式提供的，電腦圖學也就和圖像處理有著密切的關係。
+圖形與圖像兩個概念間的區別越來越模糊，但還是有區別的：圖像純指電腦內以點陣圖形式存在的灰度資訊，而圖形含有幾何屬性，或者說更強調場景的幾何表示，是由場景的幾何模型和景物的物理屬性共同組成的。
+電腦圖學的研究內容非常廣泛，如圖形硬體、圖形標準、圖形互動技術、光柵圖形生成演算法、曲線曲面造型、實體造型、真實感圖形計算與顯示演算法、非真實感繪製，以及計算視覺化、電腦動畫、自然景物仿真、虛擬現實等。
+電腦圖學的分支學科[編輯]
+這個科學廣義的分支學科，可大致可分為以下幾類
+
+幾何：研究面的表示和處理的方法
+動畫：研究移動的表示和操作方法
+影像擬真/彩現：研究模擬光線傳遞效果的演算法
+影像：研究影像的獲取或是編輯
+拓撲結構：研究的空間和錶面的結構。
+
+幾何[編輯]
+幾何學的一個分支，研究將3D物件用離散數字表示。因為模型的外觀很大程度上取決於它的外錶面，所以邊界表示法（BREP）是最常用的。對於大多數模型來說2D錶面很好的表示方法，雖然他們可能是非流形。 多邊形網格是最常見的表示形式，儘管基於點的表示方法最近開始變得受歡迎，這些表示方法被稱作拉格朗日。另外，一些變形曲面可以進行許多拓撲變化（如流體就是最顯著的例子）。
+動畫[編輯]
+動畫研究是曲面或其他的物件，隨著時間的推移而移動或變形的一個分支。從歷史上看，大部分在這一領域的工作，都專註於調節參數來使模型運動，但最近動力學模擬已成為更受歡迎更強大的方法。
+
+子領域
+
+
+運動捕捉
+骨骼動畫
+動力學模擬（例如流體動力學）
+
+彩現[編輯]
+將模型通過彩現生成圖像，彩現可能會模擬光線跟蹤來創造真實的圖像或者用它建立具有特殊藝術風格而非真實感繪製的圖像。其中真實感繪製的兩個基本運算是傳遞（多少光線從一個地方到另一個地方）和散射（錶面如何與光相互作用）。
+其它分支學科[編輯]
+
+實時彩現側重於對於互動式應用程式的使用（如遊戲、建模時的實時預覽）。
+非真實感繪製
+光照
+
+電腦圖形[編輯]
+主條目：電腦圖形
+電腦圖形在學術中的廣義被用來描述為「在電腦里除了文字與聲音以外的一切」。
+2D電腦圖形[編輯]
+主條目：2D電腦圖形
+2D電腦圖形（2D computer graphics），是產生基於電腦的數位圖像（例如2D幾何模型，文字，和數位圖像）。2D電腦圖形被利用在許多方面，例如字型、地圖、工程製圖、廣告、等等。
+3D電腦圖形[編輯]
+主條目：3D電腦圖形
+3D電腦圖形（3D computer graphics）是電腦和特殊3D軟體幫助下創造的作品。一般來講，該術語可指代創造這些圖形的過程，或者3D電腦圖形技術的研究領域，及其相關技術。
+電腦動畫[編輯]
+主條目：電腦動畫
+電腦動畫（computer animation），又稱電腦繪圖，是通過使用電腦製作動畫的技術。它是電腦圖學和動畫的子領域。近年動畫師越來越多的藉助於3D電腦圖形學，縱使2D電腦圖形學仍然被廣泛使用著。有時動畫最後播放的地方就是電腦本身，有時候則是另外的媒體，例如電影。
+著名的研究人員[編輯]
+
+羅伯特·庫克
+艾德文·卡特姆
+洛倫·卡彭特
+馬丁·紐維爾
+匠白光（埃爾維·雷·史密斯）
+吉姆·卡吉雅
+吉姆·布林
+約翰·諾爾
+
+參考文獻[編輯]
+
+參見[編輯]
+
+
+電腦科學主題
+資訊科技主題
+設計主題
+
+
+
+電腦圖形
+電腦視覺
+圖像處理
+電腦輔助設計
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+科學、技術、資訊的視覺化
+
+
+
+
+
+
+領域劃分
+
+
+
+生物學資料視覺化（英語：Biological data visualization）
+化學成像（英語：Chemical imaging）
+罪行繪圖
+資料視覺化
+教育視覺化
+流動視覺化（英語：Flow visualization）
+地理視覺化
+資訊視覺化
+數學視覺化（英語：Mathematical diagram）
+醫學影像
+分子圖形學（英語：Molecular graphics）
+產品視覺化
+科學視覺化
+軟體視覺化（英語：Software visualization）
+工程製圖
+使用者介面設計
+視覺文化（英語：Visual culture）
+立體彩現
+
+
+
+
+
+
+
+
+圖像類型
+
+
+
+統計圖表
+圖解（英語：Diagram）
+工程圖
+函式圖形
+形意文字
+地圖
+相片
+象形文字
+Plot（英語：Plot）
+概要圖（英語：Schematic）
+統計圖形
+表格
+工程製圖
+技術插圖（英語：Technical illustration）
+使用者介面
+圖
+
+
+
+
+
+
+
+
+相關人士
+
+
+
+Jacques Bertin
+Jim Blinn
+Stuart Card
+Thomas A. DeFanti
+麥可·弗蘭德利
+George Furnas
+Nigel Holmes
+Alan MacEachren
+Jock D. Mackinlay
+Michael Maltz
+Bruce H. McCormick
+Charles Joseph Minard
+Otto Neurath
+Florence Nightingale
+Clifford A. Pickover
+William Playfair
+Adolphe Quetelet
+George G. Robertson
+Arthur H. Robinson
+Lawrence J. Rosenblum
+Ben Shneiderman
+Edward Tufte
+Fernanda Viegas
+Manuel Lima
+Gaspard Monge
+
+
+
+
+
+
+
+
+相關軟體
+
+
+
+
+
+視覺化軟體
+
+
+
+
+維基百科視覺化編輯器
+Protege
+Sirius視覺化軟體
+VisIt
+
+
+
+
+
+
+
+
+
+數值分析軟體
+
+
+
+
+Scilab
+
+
+
+
+
+
+
+
+
+
+
+相關主題
+
+
+
+
+
+電腦圖形學
+
+
+
+
+點陣圖
+
+電腦的可視化
+視覺化
+圖像處理
+
+又稱影像處理
+
+
+電腦圖形
+電腦動畫
+電腦模擬
+科學建模（英語：Scientific modelling）
+
+模板：電腦建模
+
+
+
+
+
+
+
+
+
+
+
+人機互動
+
+
+
+
+使用者介面
+
+圖形使用者介面
+所見即所得
+圖示
+
+
+虛擬現實
+
+
+
+
+
+
+
+
+
+圖像式思考輔助工具
+
+
+
+
+故事板
+魚骨圖
+導引圖
+記憶樹
+心智圖
+流程圖
+歐拉圖
+
+
+
+
+
+
+
+地圖學
+
+又稱製圖學
+
+
+無效的圖表（英語：Chartjunk）
+圖形繪製（英語：Graph drawing）
+平面設計
+
+又稱圖形設計
+
+
+成像科學（英語：Imaging science）
+資訊學
+資訊圖形
+心像（英語：Mental image）
+誤導性影像（英語：Misleading graph）
+神經成像
+專利圖（英語：Patent drawing）
+空間分析
+視覺化分析論
+視知覺
+統計學
+圖意學
+圖像記譜
+
+
+
+
+
+
+
+
+
+參見：科學、資訊科技、設計、攝影、圖表、圖論、電腦圖形學、視覺化程式設計語言、 計算機科學主要領域
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+電腦科學
+
+
+
+
+
+
+數學基礎
+
+數理邏輯 · 集合論 · 數論 · 圖論 · 類型論 · 範疇論 · 數值分析 · 資訊理論
+
+
+
+
+
+
+計算理論
+
+自動機 · 可計算性理論 · 計算複雜性理論 · 量子計算 · 數值計算方法
+
+
+
+
+
+
+演算法和資料結構
+
+演算法分析 · 演算法設計 · 計算幾何
+
+
+
+
+
+
+程式語言和編譯器
+
+語法分析器 · 直譯器 · 編程典範（程序化編程 · 物件導向程式編程 · 函數語言程式設計 · 邏輯編程等）
+
+
+
+
+
+
+並行、並列和分散式系統
+
+多處理器 · 網格計算 · 並行控制
+
+
+
+
+
+
+軟體工程
+
+需求分析 · 軟體設計 · 程式設計 · 形式化方法 · 軟體測試 · 軟體開發過程
+
+
+
+
+
+
+系統架構
+
+電腦系統架構 · 微處理器體系結構 · 作業系統
+
+
+
+
+
+
+電信與網路
+
+路由 · 網路拓撲 · 密碼學
+
+
+
+
+
+
+資料庫
+
+資料庫管理系統 · 關聯式資料庫 · 結構化查詢語言 · NoSQL · 事務處理 · 資料庫索引 · 資料探勘
+
+
+
+
+
+
+人工智慧
+
+自動推理 · 計算語言學 · 電腦視覺 · 進化計算 · 專家系統 · 機器學習 · 自然語言處理 · 機器人學
+
+
+
+
+
+
+電腦圖學
+
+視覺化 · 電腦動畫 · 圖像處理
+
+
+
+
+
+
+人機互動
+
+電腦輔助功能 · 使用者介面 · 可穿戴電腦 · 普適計算 · 虛擬現實 · 聊天機器人
+
+
+
+
+
+
+科學計算
+
+人工生命 · 生物資訊學 · 認知科學 · 計算化學 · 計算神經科學 · 計算物理學 · 數值演算法 · 符號計算
+
+
+
+
+
+
+
+註：電腦科學領域也可根據ACM-2012分類系統進行分類。
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=計算機圖形學&oldid=44387524"					
+2 個分類：計算機科學分支計算機圖形學隱藏分類：含有英語的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaБългарскиবাংলাBosanskiČeštinaDanskDeutschΕλληνικάEnglishEsperantoEestiفارسیSuomiFrançaisעבריתहिन्दीHrvatskiKreyòl ayisyenMagyarBahasa IndonesiaItaliano日本語Қазақшаಕನ್ನಡ한국어LietuviųОлык марийМонголNederlandsNorsk bokmålPolskiPortuguêsRomânăSicilianuSrpskohrvatski / српскохрватскиSimple EnglishSlovenčinaСрпски / srpskiSvenskaதமிழ்ไทยTürkmençeTürkçeУкраїнськаOʻzbekcha/ўзбекчаTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年5月17日 (週三) 02:32。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+CGGM Site - Home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Menu
+
+
+
+		Home	
+
+
+		Award	
+
+
+		Member	
+
+
+		Research	
+
+
+		Project	
+
+
+		Course	
+
+
+		Join Us	
+ 
+
+			Forum			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Real-time Translucent Rendering Using GPU-based Texture Space Importance SamplingReal-time Translucent Rendering Using GPU-based Texture Space Importance SamplingEuroGraphics 2008
+
+
+
+
+Volume Based Mesh SegmentationVolume Based Mesh SegmentationJouranl of Information Science and Engineering, 2012
+
+
+
+
+Intractive Lighting Design with Hierarchical Light RepresentationIntractive Lighting Design with Hierarchical Light RepresentationEurographics Symposium on Rendering, 2013
+
+
+
+
+Physically-based Cosmetic RenderingPhysically-based Cosmetic RenderingComputer Animation and Virtual Worlds volume 24, 2013
+
+
+PublicationOur PublicationsReal-time Translucent Rendering Using GPU-based Texture Space Importance SamplingReal-time Translucent Rendering Using GPU-based Texture Space Importance SamplingEuroGraphics 2008http://graphics.cs.nctu.edu.tw/images/slideshow/publications/00.jpgVolume Based Mesh SegmentationVolume Based Mesh SegmentationJouranl of Information Science and Engineering, 2012http://graphics.cs.nctu.edu.tw/images/slideshow/publications/01.jpgIntractive Lighting Design with Hierarchical Light RepresentationIntractive Lighting Design with Hierarchical Light RepresentationEurographics Symposium on Rendering, 2013http://graphics.cs.nctu.edu.tw/images/slideshow/publications/02.jpgPhysically-based Cosmetic RenderingPhysically-based Cosmetic RenderingComputer Animation and Virtual Worlds volume 24, 2013http://graphics.cs.nctu.edu.tw/images/slideshow/publications/03.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Home
+
+
+
+
+
+
+在找大學部專題指導老師嗎？
+目前我們有以下五個題目：
+
+VR/AR技術與應用
+3D/VR/AR 遊戲設計與製作
+3D 遊戲即時擬真顯像技術
+Kinect 於動態 Range Image 之處理及應用
+物理主導之形變技術, 如風吹草動
+
+ 
+在找研究所指導教授嗎?
+我們的研究主題涵蓋了下列幾項：
+
+擴增實境(AR)的虛實場景遮擋計算、3D場景資訊重建
+虛擬實境(VR)的雙視角即時顯像技術
+虛擬實境多人3D場景設計、虛擬實境多人燈光與材質設計
+人臉肌膚與五官美化技術
+三維模型風格轉換
+巨量資料（如社群、遊戲、電子商務資料）視覺化分析
+動態 Range Images（如 Kinect 取得之深度資料）之處理及應用）
+3D 遊戲即時顯像技術（Real-time Rendering）
+即時流體（如火焰、水流、高黏稠度流體）之模擬、控制、合成、與設計
+
+如果您對 VR/AR/3D 圖學及遊戲與動畫的應用有興趣，歡迎與老師聯絡：This email address is being protected from spambots. You need JavaScript enabled to view it.
+
+ 
+News
+
+
+
+
+
+Assignment 3: Hair simulation and...2016 / 12 / 17Program Description Implement the hair simulati...
+
+ 
+
+
+Assignment 2: Planar Reflection and...2016 / 11 / 15Program Description Implement effects that are ...
+
+ 
+
+
+Data Visualization and Visual...2016 / 10 / 27Instructor Jung-hong Chuang (莊榮宏) Office: EC 52...
+
+ 
+
+
+Assignment 1 Phase 2: Texture Mapping2016 / 10 / 25Program Description Implement texture mapping t...
+
+ 
+
+
+Scene File2016 / 10 / 11Example:model house.obj 1.0 1.0 1.0 0.0 0.0 1.0...
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Administrator: Joshua, Web Administrator: Joshua, System Build: Joshua Copyright © 2017 CGGM Site. All Rights Reserved.
+Joomla! is Free Software released under the GNU General Public License.
+
+
+
+
+
+
+
+
+
+Go to top
+
+
+
+
+
+
+
+
+
+
+計算機圖學 | 虛擬實境與多媒體研究室
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+移至主內容
+
+
+
+
+
+
+
+
+log in 
+
+ 
+
+
+首頁
+研究室歷史
+指導教授
+成員
+研究範疇
+開授課程
+生活點滴
+媒體報導
+獲獎紀錄
+交通資訊
+ 
+ 
+
+
+
+
+
+
+
+
+您在這裡首頁 » 開授課程
+
+計算機圖學  
+
+
+
+
+
+
+
+
+本課程銜接大一之工程圖學、計算機概論與大二之機械畫、程式設計四門課程。介紹電腦輔助設計(CAD)軟體之數理基礎，結合圖學與程式設計基礎利用OpenGL與類別設計(或模組化程式設計)技巧開發簡單三維圖形視窗軟體。
+
+ 
+
+
+
+
+
+105學年度計算機圖學 
+
+
+
+104學年度計算機圖學 
+
+
+
+103學年度計算機圖學 
+
+
+
+102學年度計算機圖學 
+
+
+
+101學年度計算機圖學 
+
+
+
+100學年度計算機圖學 
+
+
+
+99學年度計算機圖學 
+
+
+
+98學年度計算機圖學 
+
+
+
+97學年度計算機圖學 
+
+
+
+95學年度計算機圖學 
+
+
+
+94學年度計算機圖學 
+
+
+
+93學年度計算機圖學 
+
+
+
+92學年度計算機圖學 
+
+
+
+91學年度計算機圖學 
+
+
+
+
+ 
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+國立成功大學機械工程學系 虛擬實境與多媒體研究室
+地址:
+701 臺南市東區大學路1號 國立成功大學 自強校區 機械系館 8F 91806室
+電話:
+06-2757575 轉 62252-18 (成大分機)
+ 
+06-2087233 (市話專線) 
+
+
+
+網站版權屬國立成功大學機械工程學系 虛擬實境與多媒體研究室所有
+			網站管理員信箱：vr@vr.me.ncku.edu.tw
+			建議瀏覽解析度：1280x720
+			建議瀏覽器：Chrome/Firefox
+
+ 
+
+
+Drupal Theme by LevelTen Interactive
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+非關語言: 電腦圖學入門
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+ 回 OPENHOME 首頁
+
+  
+
+
+ 
+
+
+
+
+
+
+非關語言: 電腦圖學入門
+
+
+ 
+
+
+
+電腦圖學（Computer
+            Graphics）是資料結構、演算法與數學的應用，要深入瞭解的話，是個可以作為一生研究的領域，然而基礎的電腦圖學是某些從事資訊行業的人所不可少的，這並不專指程式設計人員，也包括了3D繪圖與動畫設計人員。
+
+            這邊的文件是我學習電腦圖學時的一些心得，也是入門電腦圖學的基礎，對於一些基本的2D或3D繪圖需求應該也足以應付，為了展現一些成果及部份的程式設計實作，使用了Java Applet與HTML 5 Canvas來展現，當然，與資料結構及演算法一樣，電腦圖學與程式語言沒有絕對相關性。
+
+
+
+
+
+
+
+座標系統
+
+學習圖學的第一
+            步，就是先瞭解物體在二維平面與三維空間中
+            如何定義位置，然後瞭解在二維螢幕上，電腦如何處理每個點的繪製。
+
+
+二維座標系
+繪圖座標系
+基本的二維座標轉換
+太空船座標旋轉
+三維座標系
+創造物體的遠近感（透視）
+三維直角座標之繞軸旋轉
+齊次座標
+四元數與旋轉
+向量運算
+函式圖形繪製
+
+
+
+頂點配置
+
+無論是二維或是三維繪製，頂點的使用是一個重要的課題，如何定義各類圖象的頂點，以在節省記憶體與效能之間取得平衡，一直是值得研究的對象。
+
+
+頂點索引陣列
+無索引頂點陣列
+正多面體頂點
+水晶球頂點
+旋
+                轉體、錐狀體、柱狀體頂點
+
+
+
+深度處理
+
+三維世界中的有遠近，近的物體遮蓋遠的物體，深度的判斷除了簡單的遮蓋作用之外，對於隱藏面就省去不畫，節省計算資源。
+
+
+畫家深度排序
+平面法線判定法
+曲面法線判定法
+最大最小法
+Z Buffer法
+
+
+
+色彩
+
+有時您以為顏色一
+            樣，其實根本不一樣，色彩的一些細微變
+            化，有時足以影響整個構圖的感覺。
+
+
+色彩簡介
+色譜簡介
+錶面的受光
+
+
+
+ 
+ 
+
+遞迴繪圖
+
+對於一些複雜的幾何圖形，您可以研究出其遞迴規律並使用程式簡單的運行，即可構造出複雜的圖案，自然界中的某些物體常存在這類的遞迴規律。
+
+
+二維海龜繪圖法
+三維海龜繪圖法
+科赫曲線
+樹木曲線
+蕨葉曲線
+雪花曲線
+龍形曲線
+十字繡曲線
+樹林與倒影
+
+
+
+動畫
+
+可以寫些動畫來自娛總是令學習的過程有趣一些，這邊介紹幾個動畫入門，您可以結合之前的主題自行實作一些簡單的動畫。
+
+
+動畫簡介
+動畫程式骨架
+雙緩衝區繪圖
+畫框檔案管理
+
+
+
+背景、地圖
+
+遊戲製作中幾個簡單的地圖製作以及障礙物的處理其實並不困難，透過下麵的幾個主題，您可以稍微瞭解一下製作的原理。
+
+
+捲軸背景
+平面地圖
+斜角地圖
+迷宮（斜角地圖實例）
+
+
+
+粒子系統
+
+自然界中的一些粒子運動看似複雜，其實每個例子有其獨立的狀態，透過對狀態的模擬與包裝，您也可以模擬出一些自然界的粒子運動。
+
+
+煙火
+煙粒子
+煙火與煙
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+可視化 (計算機圖形學) - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+可視化 (計算機圖形學)
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+提示：本條目的主題不是視覺化。
+
+
+
+
+事故汽車有限元素分析結果的可視化呈現。
+
+
+可視化是指用於創建圖形、圖像或動畫，以便交流溝通訊息的任何技術和方法。在歷史上包括洞穴壁畫、埃及象形文字等，如今可視化有不斷擴大的應用領域，如科學教育、工程、互動多媒體、醫學等。
+
+
+
+目錄
+
+
+1 可視化的領域
+
+1.1 科學可視化
+1.2 教育可視化
+1.3 產品可視化
+1.4 信息可視化
+1.5 數據可視化
+1.6 思維可視化
+
+
+2 參見
+
+
+
+可視化的領域[編輯]
+計算機可視化是計算機圖形學的一個子類別，關於處理的統計圖形和地理或空間數據，它以示意圖的方式表達抽象數據。
+科學可視化[編輯]
+主條目：科學可視化
+出於讓信息/知識更容易被理解、傳播和控制，將其用容易感知的方式進行呈現，包含但不僅限於視覺，聽覺，嗅覺，觸覺等等。
+教育可視化[編輯]
+教育可視化通常是在計算機上創建一個模擬的圖形來表示需要展示的物體。這是非常有用的，例如展示原子的結構，因為原子太小了，通過教育可視化很容易學習，且無需購買昂貴並難以使用的科學設備。
+產品可視化[編輯]
+信息可視化[編輯]
+主條目：信息可視化
+數據可視化[編輯]
+思維可視化[編輯]
+參見[編輯]
+
+信息圖形學
+計算機圖形學
+光學
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+科學、技術、資訊的可視化
+
+
+
+
+
+
+領域劃分
+
+
+
+生物學數據可視化（英語：Biological data visualization）
+化學成像（英語：Chemical imaging）
+罪行繪圖
+數據可視化
+教育可視化
+流動可視化（英語：Flow visualization）
+地理可視化
+信息可視化
+數學可視化（英語：Mathematical diagram）
+醫學影像
+分子圖形學（英語：Molecular graphics）
+產品可視化
+科學可視化
+軟體可視化（英語：Software visualization）
+工程製圖
+用戶界面設計
+視覺文化（英語：Visual culture）
+立體渲染
+
+
+
+
+
+
+
+
+圖像類型
+
+
+
+統計圖表
+圖解（英語：Diagram）
+工程圖
+函數圖形
+形意文字
+地圖
+相片
+象形文字
+Plot（英語：Plot）
+概要圖（英語：Schematic）
+統計圖形
+表格
+工程製圖
+技術插圖（英語：Technical illustration）
+用戶界面
+圖
+
+
+
+
+
+
+
+
+相關人士
+
+
+
+Jacques Bertin
+Jim Blinn
+Stuart Card
+Thomas A. DeFanti
+麥可·弗蘭德利
+George Furnas
+Nigel Holmes
+Alan MacEachren
+Jock D. Mackinlay
+Michael Maltz
+Bruce H. McCormick
+Charles Joseph Minard
+Otto Neurath
+Florence Nightingale
+Clifford A. Pickover
+William Playfair
+Adolphe Quetelet
+George G. Robertson
+Arthur H. Robinson
+Lawrence J. Rosenblum
+Ben Shneiderman
+Edward Tufte
+Fernanda Viegas
+Manuel Lima
+Gaspard Monge
+
+
+
+
+
+
+
+
+相關軟體
+
+
+
+
+
+可視化軟體
+
+
+
+
+維基百科可視化編輯器
+Protege
+Sirius可視化軟體
+VisIt
+
+
+
+
+
+
+
+
+
+數值分析軟體
+
+
+
+
+Scilab
+
+
+
+
+
+
+
+
+
+
+
+相關主題
+
+
+
+
+
+電腦圖形學
+
+
+
+
+位圖
+
+電腦的可視化
+視覺化
+圖像處理
+
+又稱影像處理
+
+
+電腦圖形
+電腦動畫
+電腦模擬
+科學建模（英語：Scientific modelling）
+
+模板：計算機建模
+
+
+
+
+
+
+
+
+
+
+
+人機互動
+
+
+
+
+用戶界面
+
+圖形使用者介面
+所見即所得
+圖示
+
+
+虛擬現實
+
+
+
+
+
+
+
+
+
+圖像式思考輔助工具
+
+
+
+
+故事板
+魚骨圖
+導引圖
+記憶樹
+心智圖
+流程圖
+歐拉圖
+
+
+
+
+
+
+
+地圖學
+
+又稱製圖學
+
+
+無效的圖表（英語：Chartjunk）
+圖形繪製（英語：Graph drawing）
+平面設計
+
+又稱圖形設計
+
+
+成像科學（英語：Imaging science）
+信息學
+信息圖形
+心像（英語：Mental image）
+誤導性影像（英語：Misleading graph）
+神經成像
+專利圖（英語：Patent drawing）
+空間分析
+可視化分析論
+視知覺
+統計學
+圖意學
+圖像記譜
+
+
+
+
+
+
+
+
+
+參見：科學、資訊科技、設計、攝影、圖表、圖論、電腦圖形學、視覺化程式設計語言、 計算機科學主要領域
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+電腦科學
+
+
+
+
+
+
+數學基礎
+
+數理邏輯 · 集合論 · 數論 · 圖論 · 類型論 · 範疇論 · 數值分析 · 資訊理論
+
+
+
+
+
+
+計算理論
+
+自動機 · 可計算性理論 · 計算複雜性理論 · 量子計算 · 數值計算方法
+
+
+
+
+
+
+算法和資料結構
+
+算法分析 · 算法設計 · 計算幾何
+
+
+
+
+
+
+程式語言和編譯器
+
+語法分析器 · 解釋器 · 編程範型（過程化編程 · 物件導向程序編程 · 函數式編程 · 邏輯編程等）
+
+
+
+
+
+
+並發、並行和分佈式系統
+
+多處理器 · 網格計算 · 並發控制
+
+
+
+
+
+
+軟體工程
+
+需求分析 · 軟體設計 · 程序設計 · 形式化方法 · 軟體測試 · 軟體開發過程
+
+
+
+
+
+
+系統架構
+
+電腦系統架構 · 微處理器體系結構 · 作業系統
+
+
+
+
+
+
+電信與網絡
+
+路由 · 網絡拓撲 · 密碼學
+
+
+
+
+
+
+資料庫
+
+資料庫管理系統 · 關係資料庫 · 結構化查詢語言 · NoSQL · 事務處理 · 資料庫索引 · 數據挖掘
+
+
+
+
+
+
+人工智慧
+
+自動推理 · 計算語言學 · 計算機視覺 · 進化計算 · 專家系統 · 機器學習 · 自然語言處理 · 機器人學
+
+
+
+
+
+
+計算機圖形學
+
+可視化 · 計算機動畫 · 圖像處理
+
+
+
+
+
+
+人機互動
+
+計算機輔助功能 · 用戶界面 · 可穿戴計算機 · 普適計算 · 虛擬現實 · 聊天機器人
+
+
+
+
+
+
+科學計算
+
+人工生命 · 生物信息學 · 認知科學 · 計算化學 · 計算神經科學 · 計算物理學 · 數值算法 · 符號計算
+
+
+
+
+
+
+
+註：計算機科學領域也可根據ACM-2012分類系統進行分類。
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4188417-6
+NDL: 01213306
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=可視化_(計算機圖形學)&oldid=41282961"					
+4 個分類：可視化計算機圖形學科學建模計算科學隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+CatalàČeštinaDeutschEnglishEestiفارسیSuomiעבריתBahasa Indonesia日本語ҚазақшаLietuviųNederlandsPolskiPortuguêsРусскийShqipSvenskaไทยУкраїнська 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2016年8月28日 (週日) 03:03。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+  計算機圖學|最夯計算機圖學介紹圖形計算器 app(共68筆1|1頁)與圖形計算器 app-癮科技App
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+不能錯過
+
+趙奕歡2-寶軟3D主題趙奕歡4-寶軟3D主題掌上人醫放開那三國-寶軟3D主題柳岩3-寶軟3D主題 
+
+
+
+ 
+
+
+
+癮科技App
+
+
+
+ 
+
+
+
+
+
+
+
+
+首頁 / 
+                    計算機圖學網站相關資料
+
+
+計算機圖學網站相關資料
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+圖形計算器
+
+7月 15, 2014
+高拴工作室
+工具
+312
+
+
+
+非關語言: 電腦圖學入門 - OpenHome.cc主要功能特點： 1, 雙行顯示. 2,支持任意複雜表達式的運算,並能準確發現表達式輸入錯誤的情況. 3,多種函數運算和繪圖.包擴含絕對值函數的繪圖.輕輕滑動屏幕,即可對函數圖象進行上下左右的移動,方便您查看函數圖象. 4,可對輸入的表達式進行方便的插入,刪除操作.刪除時直接刪除整個函數,而不是一個字電腦圖學（Computer Graphics）是資料結構、演算法與數學的應用，要深入瞭解的話
+ ，是個可以作為一生研究的領域，然而基礎的電腦圖學是某些從事資訊行業的人所 ......
+
+
+
+ 
+
+
+
+圖形計算器
+
+3月 18, 2014
+來自互聯網
+生產應用
+567
+
+
+
+計算機圖形學- 維基百科，自由的百科全書FREE - for LIMITED TIME-----------------------------------------King Calculator aims to be very simple to use while being extremely functional, it's g計算機圖形學（英文：Computer Graphics，縮寫：CG）是計算機在硬件和軟件的幫助
+ 下創建計算機圖形的科學，是計算機科學的一個分支領域，主要關註數位合成與操作
+  ......
+
+
+
+ 
+
+
+
+Get Followers for Instagram
+
+9月 13, 2014
+DIGISET
+社交
+646
+
+
+
+計算機圖學| 逍遙文工作室Followers for Instagram lets you get more followers on Instagram for free. Get thousands of real Instagram followers, become an Instagram sensation ovPosts about 計算機圖學written by HappyMan. ... Just a Computer Graphics Studio 
+ & My Life. Archive for the '計算機圖學' Category. [C++] 光線追蹤動畫(Ray ......
+
+
+
+ 
+
+
+
+圖形計算器 Percentage Graph Calculater
+
+7月 19, 2013
+LightweightAppsLabs
+工具
+625
+
+
+
+NTHU GL 清華大學計算機圖學實驗室 - 國立清華大學資訊工程系它是一個應用程序，以計算該比率（百分比），每個產品的數量被顯示在一個餅圖。方便聚合問卷。操作非常簡單，你可以添加你想要盡可能多的項目。【免費APP-圖形計算器 Percentage Graph Calculater APP試玩不用錢】工具APP試玩-圖形計算器 Percentage Graph Ca計算機圖學實驗室位於資訊電機館八樓836室。研究方向為計算機圖學相關領域。
+ 近年由於動畫產業的興盛，而其與「電腦視覺」及「多媒體人機介面」...等領域的關係 ......
+
+
+
+ 
+
+
+
+石墨圖形計算器Graphite Pro
+
+8月 6, 2013
+Graphite Development
+生產應用
+626
+
+
+
+電腦圖學(Computer Graphics - MyOOPS開放式課程石墨圖形計算器是一個專業的科學圖形計算器，支持解析先進的數學表達式，包括括號。命令歷史記錄保存，以方便再現以前的計算。 其特點包括： - 圖形的任意自定義功能（支持捏縮放和拖動到鍋） - 豐富的數學庫 - 預先定義的三角函數 - 概率分佈預先定義 - 計算器視圖的行為就像眾所周知的物理計算機 - 用6.837提供有關電腦圖學硬體，演算法，和軟體的介紹。章節中包含：線的生成， 仿射
+ 轉換，線和多邊形的裁切，樣條線，互動技術，透視投影，實體模型，隱藏面演算法， ......
+
+
+
+ 
+
+
+
+3D圖形計算器免費
+
+1月 1, 1970
+Manrock
+工具
+385
+
+
+
+影像處理與計算機圖學- 程式設計俱樂部3D圖形計算器免費（圖形圖象質量）：允許您創建2D和3D圖形的坐標表。使您可以創建簡單的公式圖表，如參數方程。您ใ透明度sesisan光線反射效果。圖中，只是通過拖動鼠標輕鬆旋轉。當您繪製的圖形繪製，可以內置到它，解決它的時候了，我推薦3D圖形計算器免費，非常適合學生和工程師在圖形的計算公式。 一個影像處理與計算機圖學. 2D、3D數位影像處理、轉換、壓縮、復原、分割、辯識、
+ 計算機圖學、理論或實務 .... 影像處理與計算機圖學- 討論區 ......
+
+
+
+
+
+
+
+非關語言: 電腦圖學入門 - OpenHome.cc
+
+7月 18, 2017
+
+
+電腦圖學（Computer Graphics）是資料結構、演算法與數學的應用，要深入瞭解的話
+ ，是個可以作為一生研究的領域，然而基礎的電腦圖學是某些從事資訊行業的人所 ......
+
+
+
+
+
+
+
+計算機圖形學- 維基百科，自由的百科全書
+
+7月 15, 2017
+
+
+計算機圖形學（英文：Computer Graphics，縮寫：CG）是計算機在硬件和軟件的幫助
+ 下創建計算機圖形的科學，是計算機科學的一個分支領域，主要關註數位合成與操作
+  ......
+
+
+
+
+
+
+
+計算機圖學| 逍遙文工作室
+
+7月 13, 2017
+
+
+Posts about 計算機圖學written by HappyMan. ... Just a Computer Graphics Studio 
+ & My Life. Archive for the '計算機圖學' Category. [C++] 光線追蹤動畫(Ray ......
+
+
+
+
+
+
+
+NTHU GL 清華大學計算機圖學實驗室 - 國立清華大學資訊工程系
+
+7月 13, 2017
+
+
+計算機圖學實驗室位於資訊電機館八樓836室。研究方向為計算機圖學相關領域。
+ 近年由於動畫產業的興盛，而其與「電腦視覺」及「多媒體人機介面」...等領域的關係 ......
+
+
+
+
+
+
+
+電腦圖學(Computer Graphics - MyOOPS開放式課程
+
+7月 13, 2017
+
+
+6.837提供有關電腦圖學硬體，演算法，和軟體的介紹。章節中包含：線的生成， 仿射
+ 轉換，線和多邊形的裁切，樣條線，互動技術，透視投影，實體模型，隱藏面演算法， ......
+
+
+
+
+
+
+
+影像處理與計算機圖學- 程式設計俱樂部
+
+7月 15, 2017
+
+
+影像處理與計算機圖學. 2D、3D數位影像處理、轉換、壓縮、復原、分割、辯識、
+ 計算機圖學、理論或實務 .... 影像處理與計算機圖學- 討論區 ......
+
+
+
+
+
+
+
+莊榮宏Jung-Hong Chuang
+
+7月 19, 2017
+
+
+本實驗室將盡力協助學生一起努力完成好的論文，並如期畢業。 若您對3D圖學及其
+ 在遊戲與動畫的應用有興趣，歡迎以E-mail 與老師聯絡：jhchuang@cs.nctu.edu.tw....
+
+
+
+
+
+
+
+電腦圖學(Computer Graphics)
+
+7月 20, 2017
+
+
+為了達到在運算的環境中，表現，呈現與操控設計物的內容，電腦圖學便成為必要的
+ 知識與工具。 本課程將藉由電腦圖學與幾何模型相關理論的介紹，以及作業的練習，
+  ......
+
+
+
+
+
+
+
+計算機繪圖（計算機圖學分支）_百度百科
+
+7月 14, 2017
+
+
+計算機繪圖是相對於手工繪圖而言的一種高效率、高質量的繪圖技術。手工繪圖使用
+ 三角板、丁字尺、圓規等簡單工具，是一項細緻、複雜和冗長的勞動。不但效率低、 ......
+
+
+
+
+
+
+
+資訊學門(二) 圖學領域學門規劃 - 國立臺灣大學資訊工程學系
+
+7月 19, 2017
+
+
+近年來，台灣在電腦圖學研究領域鑽研的學者有越來越多的趨勢，但是觀諸於 ... 台灣
+ 學者尚未擠身於主流的電腦圖學社群當中，尚無法充分掌握電腦圖學領域....
+
+
+
+
+
+
+
+
+
+熱門APP分類
+
+
+
+
+娛樂教育冒險拼字書籍紙牌工具街機天氣生產應用交通運輸運動博奕射擊 
+
+
+
+
+App精選
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+熱門搜尋
+
+
+
+
+計算機圖學講義電腦圖學圖形計算器 app圖形計算器計算機流程圖計算機概論講義計算機概論題庫計算機概論筆記計算機網路講義計算機概論講義ppt計算機圖學opengl計算機圖學論文計算機圖學 書計算機圖學方晶晶 
+
+
+
+
+
+
+
+ 
+
+
+
+最新App消息網友最愛App熱門App 
+
+ 
+
+
+
+翻越竹林
+6月 23, 2014
+休閒
+
+
+
+
+
+逆襲成語
+6月 5, 2014
+休閒
+
+
+
+
+
+竹海鸚鵡動態壁紙
+3月 17, 2014
+個人化
+
+
+
+
+
+銀河守衛
+6月 11, 2014
+休閒
+
+ 
+
+
+
+HARADA
+1月 1, 1970
+購物
+
+
+
+
+
+フットサルボード
+1月 1, 1970
+運動
+
+
+
+
+
+Alpen Group
+1月 1, 1970
+運動
+
+
+
+
+
+韓國食譜免費
+1月 1, 1970
+健康
+
+ 
+
+
+
+EzDAQ
+3月 16, 2015
+生產應用
+
+
+
+
+
+RSS読み上げ AloudRSS
+3月 30, 2013
+新聞
+
+
+
+
+
+EZoApp 行動商務
+9月 13, 2012
+生產應用
+
+
+
+
+
+RSSどっとコム
+4月 3, 2013
+新聞
+
+ 
+
+
+Facebook粉絲團關註 
+
+
+Fiiser App Search
+癮科技
+
+
+ 
+
+
+
+高評價APP
+
+通訊電話帳S知米聽力坑地鼠聚勝科技漫畫APP4U-數位玩家 您賺大錢的好夥伴心臟冠天氣部件中醫網DotA盒子棋類遊戲桌球-2D真實賽車3三維花瓣自行車競技 專業2011 完整已付費版 
+
+
+ 
+
+
+
+© Copyright 2017, All Rights Reserved. | Powered by Fiiser飛搜 | 聯絡我們 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+計算機圖學
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Computer Graphics and Augmented 
+				Reality(Spring 2012)
+
+
+
+
+
+ 
+
+Announcements:
+
+Post Date Message 
+4/22  First class will meet on 
+						April 22, 2012
+
+  
+
+
+
+  
+Table of Contents
+
+ Chap Lecture Notes                            Labs 
+  1    Graphics Systems and Models             lab0 
+  2    Graphics Programming                    -    
+  3    Input and Interaction                   -    
+  4    Geometric Objects and Transformations   lab1 
+  5    Viewing                                 -    
+  6    Shading                                 lab2 
+  7    From Vertices to Fragments              -    
+  8    Discrete Techniques, Texture Mapping    lab3 
+  9    Programmable Shaders (GLSL)             lab4 
+ 10    Modeling and Procedural Methods         -    
+ 11    Scene Graphs and Real Time              lab5 
+ 12    Curves and Surfaces                     -    
+ 13    Advanced Rendering                      -    
+
+  
+
+
+
+  
+Sckedule
+
+
+
+
+
+
+
+
+ 
+
+							4月22日
+
+							4月29日
+
+							5月6日
+
+							5月13日
+
+							5月20日
+
+							5月27日
+
+							6月3日
+
+
+
+　
+
+							Sunday
+
+							Sunday
+
+							Sunday
+
+							Sunday
+
+							Sunday
+
+							Sunday
+
+							Sunday
+
+
+
+08:00
+ 
+
+							　
+ 
+
+							　
+
+							　
+
+							　
+
+							　
+
+
+
+1
+ 
+
+							　
+ 
+
+							　
+
+							　
+
+							　
+
+							　
+
+
+
+09:00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+2
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+10:00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+3
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+11:00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+4
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+12:00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+　
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+01:00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+5
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+02:00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+6
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+03:00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+7
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+04:00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+8
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+05:00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+9
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+節次1
+
+08:10-09:00 
+
+
+
+節次2
+
+09:10-10:00 
+
+
+
+節次3
+
+10:10-11:00 
+
+
+
+節次4
+
+11:10-12:00 
+
+
+
+節次5
+
+13:10-14:00 
+
+
+
+節次6
+
+14:10-15:00 
+
+
+
+節次7
+
+15:10-16:00 
+
+
+
+節次8
+
+16:10-17:00 
+
+
+
+節次9
+
+17:10-18:00 
+
+
+ 
+
+
+
+
+  
+ScketchUp (Tutorial Video)
+
+Unit 1:
+基本功能操作及上傳模型，熟悉Sketchup基本操作
+基本功能操作、基本貼圖
+上傳模型到Google Earrth
+利用已經裁好的貼圖做簡單的大樓模型示範
+以北科大附近的大樓為例，以提升親切感及興趣
+Unit 2:
+熟悉貼圖及零件組裝
+進階功能操作、兩種貼圖示範、元件及組件的製作
+上傳模型到Google Earrth
+利用已經裁好的貼圖製作元件，組裝元件或組件
+建模樂趣分享
+Unit 3:
+枓栱及木架構
+利用基本功能建構斗栱
+三種枓栱
+木架構組成
+元件及群組的存檔
+Unit 4:
+宮殿建築屋頂
+廡殿頂
+歇山頂
+舉折制
+其它細節
+貼圖
+Unit 5:
+其它構件及元件組裝
+各種構件的快速組裝
+構件的比例調整及貼圖註意事項
+Unit 6:
+亭臺樓閣及坊的原則及示範
+中式建築的原則
+各種中式建築的變化
+元件及群組的滙入
+利用各元件組成建築的示範
+
+  
+
+
+  
+Labs
+
+Labs:
+lab 0: OpenGL warm up                   
+lab 1: transformation                   
+lab 2: lighting and shading             
+lab 3: texture mapping                  
+lab 4: GLSL                             
+lab 5: Animator                         
+lab 6: OpenGL ES                        
+lab 7: Unity                            
+
+  
+
+
+  
+課程介紹
+
+                    介紹OpenGL電腦圖學基本原理：幾何圖形、互動介面、幾何轉換、透視投影、明暗度計算、紋理貼圖、色彩原理等。包含電腦教室上機程式碼撰寫的實作，運用OpenGL來開發精簡電腦動畫製作軟體，透過OpenGL電腦動畫製作軟體的功能增加來逐步熟悉電腦圖學。關於電腦動畫主題的選擇，課程提供背景相關資料，包含介紹華夏美學相關之多媒體材料，期能製作傳達歷史傳承為主題的電腦動畫。本課程適合軟體工程師或者是美術背景的動畫師來更加認識電腦圖學。
+                    瞭解了基本原理之後，課程邀請業界講師，介紹線上遊戲產業實際使用之3D繪圖遊戲引擎狀況、及並提供創作實例經驗談。
+                    課程並介紹近年來在多媒體產業非常重要的擴增實境(Augmented Reality, AR)繪圖技術之運用，並且介紹其在Location-Based Services上適地性服務的應用實作。
+                    
+  
+
+
+  
+Kinect 課程
+
+Kintect labs:
+May 05 (Saturday): 9:00-12:00, 13:00-15:00 
+May 11 (Saturday): 9:00-12:00, 13:00-15:00 
+May 25 (Saturday): 9:00-12:00, 13:00-15:00 
+
+  
+
+
+  
+Syllabus
+
+
+Lecture:
+Sunday 9:10-12:00, 13:10-17:00
+Location:
+Technology Building 335
+Class webpage:
+ http://www.ntut.edu.tw/~tjhsieh/cgar2012s/ 
+Discussion Board:
+
+Instructor:
+Prof. H si eh
+Prof. Liu
+Instructor from Lager Inc. (雷爵網絡科技):
+5/06 陳仲斌 (核心技術處處長) 遊戲三維繪圖引擎設計與架構
+5/13 李健勳 (程式設計師) OpenSource 
+					遊戲引擎 Ogre 
+5/13 佟家齊 (核心技術處資深企劃) 線上遊戲市場與遊戲產業
+5/20 藍光華 (資深程式設計師) Gamebryo 
+					遊戲引擎 
+5/20 陳仲斌 (核心技術處處長) Unreal Engine & UDK
+5/27 吳世祥 (資深程式設計師) 使用 Unity3D 開發遊戲
+Teaching Assistant:
+TBA
+Office: Technology Building 1422
+Handout:
+Slides
+SketchUp Tutorial Videos
+Textbook:
+Edward Angel,  Interactive Computer Graphics: A Top-Down Approach using OpenGL (6th Edition), Addison Wesley, 2008. 
+					(Errata)
+Reference Book:
+OpenGL Programming Guide: The Official Guide to Learning OpenGL, Version 2.1 (6th Edition), Addison Wesley, 2006.
+                    http://www.opengl.org/documentation/red_book/
+OpenGL Reference Manual: The Official Reference Document to OpenGL, Version 1.4 (4th Edition), Addison Wesley, 2006.
+                    http://www.opengl.org/documentation/blue_book/
+OpenGL ES 2.0 Programming Guide, Addison Wesley, 2008.
+                    http://opengles-book.com/
+Outline: (from 
+					Catalog)
+ The objective of this course is to familiarize the student with basic principles, methods, and tools of computer graphics. 
+					Topics include: 1. Generation of 2D and 3D geometric shapes 2. 2D and 3D transformation 3. Hidden surfaces and hidden lines 
+					techniques 4. Color principles 5. Shading and shadowing techniques. The student will be required to write computer programs 
+					and/or use modeling and rendering packages  
+Grading:
+
+Programming Assignment 100% 
+Class Participation 10%
+
+Policy:
+
+A regrade request must be submitted within one week after the original grade is received.
+Students are not allowed to copy solutions from others, and students should not share your answers with others. Students will receive a score of zero for doing this.
+Academic Honesty: (1) (2)
+NTUT Exam Rules http://www.cc.ntut.edu.tw/~wwwoaa/oaa-nwww/oaa-l/course/law_course_007.doc
+NTUT Cheating Penalties http://www.cc.ntut.edu.tw/~wwwoaa/oaa-nwww/oaa-l/course/law_course_008.doc
+Be sure to check the course website frequently.
+
+
+
+
+
+  
+Resources
+
+
+
+SketchUp:
+
+SketchUp Pro
+SketchUp Tutorials
+SketchUp Tutorials (English)
+SketchUp Tutorials (TW)
+What's New in Google SketchUp 8
+Sketchup with TANTUNN
+
+
+ChangAn:
+
+ChangAn
+
+
+Graphics Software:
+
+Computer Graphics Research Software
+
+
+Code samples:
+
+Nate Robins tutors
+Redbook code samples
+OpenGL - Examples
+Visualization Library
+NeHe OpenGL Tutorials
+lighthouse3d GLSL Tutorial
+lighthouse3d VRML Interactive Tutorial
+NVIDIA SDK 9.52 Code Samples
+Textbook-Angel
+GLSL Tutorials
+GLSL Shader Examples
+GLUI
+Shader Maker
+nvidia SDK 9.52 Code Samples
+cglx
+OpenGL tutorial
+GPGPU
+CUDA
+CUDA C SDK Code Samples
+NVIDIA PhysX
+OpenGL Programming Examples
+
+
+Does your computer support OpenGL 2.1?
+
+OpenGL Extensions Viewer
+HardwareInfos
+
+
+Where to find papers?
+
+CG people
+IEEE Xplore
+ACM Portal
+Rowley's collection
+Hsuang's collection
+Physics in Graphics
+IEEE Visualization papers
+Rigging, 
+					    FiberMesh, 
+					    Power Crust,
+					    Lindstrom,
+					    Hoppe,
+					    collision,
+					    gamma,
+					    Igarashi,
+					
+
+
+3D Models:
+
+Stanford PLY 
+Princeton 
+Georgia Tech 
+NTU 
+LOD 
+GemStones 
+3D Links 
+3D Cafe 
+TurboSquid 
+
+
+Format:
+
+PLY, OBJ
+
+
+How to Write a Paper?
+
+How to Read a Research Paper
+How To Get Your SIGGRAPH Paper Rejected
+template (SIGGRAPH)
+template (TVCG)
+template (VIS)
+template (VGTC)
+template (CGF)
+Research as a Graduate Student - beyond a survival guide
+
+
+Links:
+
+Computer Graphics Research Software
+Physically Based Rendering
+The Internet ray tracing competition
+Stanford Rendering Competition
+ Stanford 
+                    CS248,
+08,
+                    07,
+                    06,
+                    05,
+                    04,
+                    03,
+                    02,
+                    01,
+                    00,
+                    99,
+                    
+ Washington 
+					CSE457,
+                    08au,
+                    08sp,
+                    07sp,
+                    06au,
+                    06sp,
+                    05au,
+                    05sp,
+                    04au,
+                    04sp,
+                    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+Interactive Computer Graphics: A Top-Down Approach using OpenGL (6th Edition)   
+ 
+
+
+
+OpenGL Programming Guide: The Official Guide to Learning OpenGL, Version 2.1 (6th Edition)   
+ 
+
+
+
+The OpenGL Reference Manual (4th Edition)   
+ 
+
+
+
+OpenGL Shading Language (2nd Edition)  
+ 
+
+
+
+OpenGL ES 2.0 Programming Guide  
+ 
+
+
+
+GPU Gems  
+ 
+
+
+
+GPU Gems 2  
+ 
+
+
+
+GPU Gems 3  
+ 
+
+
+
+NVIDIA GPU Programming Guide  
+ 
+
+
+
+OpenGL� SuperBible: Comprehensive Tutorial and Reference (4th Edition)  
+ 
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+ [筆記] 計算機圖學概論：開發環境設定圖文教學 | iLog                                                        電腦軟體伺服器網管技術軟體技術與教學軟體最新情報電腦硬體硬體技術與教學硬體新品情報電腦組裝與維護WindowsWindows ServerWindows 技術教學Windows 最新消息正式發行版本預覽版本發佈AndroidAndroid 技術教學Android 最新消息AppleiOS 技術教學iOS 最新消息網路資訊WordPress伺服器服務介紹網路資源介紹跨國網購攻略生活觀點個人觀點生活紀錄站務公告課堂筆記開箱紀錄  搜尋 文章列表關於本站聯絡站長設備資訊贊助本站連載目錄                            iLog 電腦軟體  全部文章伺服器網管技術軟體技術與教學軟體最新情報 軟體技術與教學WannaCry (Wana) 勒索程式預防、處理與各版本 Windows 修補程式整理 軟體最新情報【限免】Cyberlink PowerDirector 威力導演 14 LE 限時免費下載與合法序號提供 伺服器網管技術Step-by-step 教你解決 ESXi 6.0、ESXi 5.5 認不到 AHCI 硬碟的問題 伺服器網管技術Azure 技巧：如何設定虛擬機器 (VM) 的 Reverse DNS (PTR) 反解紀錄？電腦硬體  全部文章硬體技術與教學硬體新品情報電腦組裝與維護 硬體技術與教學電腦達人養成計畫 5-26：追求效率最大化－NVIDIA Maxwell 架構 硬體技術與教學電腦達人養成計畫 5-25：策略轉向再創高峰－NVIDIA Kepler 架構 硬體技術與教學電腦達人養成計畫 5-24：逐漸失控的大核心戰略－NVIDIA Fermi 架構 硬體新品情報Intel 第 7 代 Core 處理器 (Kaby Lake) 架構解析與選購完全指南Windows  全部文章Windows ServerWindows 技術教學Windows 最新消息正式發行版本預覽版本發佈 Windows 最新消息Windows 10 Redstone 3 (RS3) 公眾預覽版本 Build 16232、Build 16237 改… Windows 最新消息Windows 10 Redstone 3 (RS3) 公眾預覽版本 Build 16215、Build 16226 改… 預覽版本發佈Windows 10 Redstone 3 (RS3) 公眾預覽版本 Build 16215 發佈 + 繁體中文版下載 Windows 最新消息安裝微軟在 6/2 錯誤推送給預覽計畫參加者的 Windows 10 內部測試版本後的解決方案Android  全部文章Android 技術教學Android 最新消息 Android 最新消息Sony Xperia 萬用刷機工具－Flashtool 0.9.23.0 加入對 Android 7.0 Nougat… Android 技術教學Sony Xperia 系列備份 TA 分割區 (重新上鎖用) 與 DRM Key 教學 (Android 6.x 適用… Android 最新消息[獨家首發] Xperia XA、X Performance 已通過 PTCRB 審查，距離發售日已不遠 Android 技術教學[教學] 使用 XperiFirm 製作 Xperia 手機原廠軟體 FTF 安裝包Apple  全部文章iOS 技術教學iOS 最新消息 iOS 最新消息即時轉播：Apple Special Event (March, 2016) iOS 最新消息iOS 9.1 正式發佈，本站提供 IPSW 安裝包下載 iOS 技術教學iOS 9.0 ~ 9.0.2 完美越獄 (Jailbreak, JB) 圖文教學 iOS 最新消息iOS 9 正式版本、iOS 9.1 Beta 下載提供與測試版本升級、降級教學網路資訊  全部文章WordPress伺服器服務介紹網路資源介紹跨國網購攻略 網路資源介紹學生限定的免費 Windows Server 授權與免費資源－Microsoft Imagine 完全指南 跨國網購攻略跨國購買筆記型電腦完全攻略－DELL XPS 15 (9560) 美國購買紀實 伺服器服務介紹iZone.TW－本站附設的 cPanel 虛擬主機服務！(優惠折扣至 8/31 止) 網路資源介紹[ 突發 ] Mega 創辦人呼籲大眾盡速備份 Mega 上的資料？！ (附官方澄清)生活觀點  全部文章個人觀點生活紀錄站務公告課堂筆記開箱紀錄 開箱紀錄買來玩電腦還是買來被電腦玩？－ASUS PRIME X370-PRO 主機板開箱與短評 開箱紀錄八核心終於飛入尋常百姓家－AMD Ryzen 7 1800X 處理器開箱 生活紀錄當選 2017 Microsoft 最有價值專家 Most Valuable Professional (MVP) 與獎… 站務公告感謝大家的支持！2016 年終盤點與展望 2017 年的新開始    首頁  生活觀點  課堂筆記生活觀點課堂筆記 [筆記] 計算機圖學概論：開發環境設定圖文教學By Andrew Huang - 2015-11-022,024 views1 透過 Facebook 分享 轉發到 Twitter   tweet    這學期的計算機圖學概論推薦使用的開發工具為 Visual Studio (就資工系來說這還真是稀奇)，發現好像有同學對於助教提供的教學投影片有點疑惑 XD (因為是英文而且版本不太一樣又沒有圖吧？)本篇文章使用的版本為 Visual Studio 2015 Enterprise。安裝與取得 Visual Studio取得 Visual Studio關於 Visual Studio 有兩種版本是本系的學生比較有機會取得的，其中比較完整的是學校採購授權的 Visual Studio 2015 Professional，另一個則是免費供社群使用的 Visual Studio 2015 Community，以課程需要來說應該是兩個版本都足以勝任的。Visual Studio 2015 Community 請到這裡下載：https://www.visualstudio.com/zh-tw/products/visual-studio-community-vs.aspxVisual Studio 2015 Professional 請參考學校的軟體授權網站。安裝 Visual StudioStep 01：如果下載回來的是 ISO 形式的光碟映像檔，先掛載之後執行目錄中的 vs_(版本別).exe 開始安裝，如果下載下來的是只有 vs_(版本別).exe 的執行檔的話，直接開啟安裝即可 (但會需要網路連線以從微軟的伺服器上下載實體程式)。   Step 02： 如果你安裝的是 Visual Studio 2015 以前的版本 (例如 2012、2013)，一般來說在這裡不必要做太多調整，直接點右下角的 [ 安裝 ] 開始安裝就行了，如果有特殊需求也可以點自訂來選擇要安裝的功能。如果你安裝的是如同範例中相同的 Visual Studio 2015，請務必選自訂安裝，因為 Visual Studio 2015 預設不會完整安裝 Visual C++。Step 03：自訂安裝中請勾選會用到的功能，例如 Visual C++。Step 04：確認要安裝的項目之後點選 [ 安裝 ] 就會開始執行了。Step 05：根據電腦等級與選擇項目多寡的不同，安裝可能會需要 5 ~ 60 分鐘。Step 06：安裝完成畫面出現之後點選下方的「啟動」以執行 Visual Studio，第一次執行會需要花費比較多的時間。Step 07：使用校園授權的話請點「不是現在，以後再說」，然後輸入學校提供的產品金鑰啟用 Visual Studio 授權。如果使用 MSDN 或 DreamSpark、BizSpark 授權的話，因為微軟不再針對這些用戶提供俗稱「神 Key」的靜態啟用金鑰，請登入 MSDN 訂閱權益所屬的 Microsoft 帳戶。 (雲端化還真是防範盜版的好理由啊……)執行範例程式程式結構說明助教提供的範例實際上是由七組不同的範例組成的，其中編號 6 與 7 的範例組是由數支不同的範例程式組成，而共用的 OpenGL 函式庫與資源則放在最外層 dll 與 lib 目錄中，需要用到的標頭檔則放在 include 目錄中，因此結構不同於一般單獨的 Project。因為結構不同因此在使用時才會需要進行一些額外的調整，否則會發生程式「不知道」要去讀取共用函式庫的情況。執行範例的步驟Step 01：由於助教已經把各支範例程式之間的連結，運用 Visual Studio 內建的功能產生出 Solution (方案) 檔了，因此只需要直接執行解壓縮之後得到的 OpenGL.sln 即可，由於助教製作時使用的是老舊版本的 Visual Studio 2005，因此匯入 Visual Studio 2015 時會需要進行升級，點選 [ 確定 ] 即可。Step 02：轉換進行中。Step 03：由於檔案是來自於網路下載，因此會出現安全性警告，為了避免接下來每支範例程式都要確認一次 (大概有 20 次左右)，請取消勾選「在開啟此方案的每個專案時詢問我 (A)」。Step 04：載入完成之後對想看的範例按右鍵，選擇「設定為起始專案 (A)」即可 (切換要看的範例程式時也是用這個方法)。需要進行的調整 (1) PDB 格式相容性首先由於助教提供的檔案版本與現今的 Visual Studio 版本已經相去甚遠，因此會出現 LNK1207 不相容的 PDB 格式錯誤。解決方案：在選單列上點選 [ 建置 (B) ] => [ 重建方案 (R) ]，或是使用 Ctrl + Alt + F7 組合鍵將方案中的老舊檔案重建一次即可。需要進行的調整 (2) 共用函式庫路徑如同前面說過的，助教在範例包中使用了共用函式庫的做法，因此我們需要手動指定每個 Project 要尋找函式庫的位置，否則會發生無法成功執行的情況。(因為這部分設定沒有放在 Project 檔案裏面，因此助教也沒辦法先幫我們做好，當換到別台電腦上做時，這個設定會需要重做一次。)解決方案：一次將所有的 Project 選起來，右鍵點選 [ 屬性 ]。在左邊點選 [ 偵錯 ]，之後將右邊工作目錄這一項的值改成「../dll」，環境這一項的值改為「PATH=$(LocalDebuggerWorkingDirectory)」。執行結果按下鍵盤上的 F5 就會開始執行目前被設為「起始專案」的 Project 了。BTW，這篇是個半小時完工速成文章的節奏 XD   相關文章查看更多 課堂筆記[筆記] 憲法與政府體制 (三) 立法院行使各類職權所需立委席次數與黨團組成 課堂筆記Xilinx ISE Design Suite 14.7 安裝與授權取得、設定教學 課堂筆記Xilinx ISE 於 Windows 8.x 與 Windows 10 安裝的註意事項  花花~~ 感謝你啊~~~~~   最新文章Windows 10 Redstone 3 (RS3) 公眾預覽版本 Build 16232、Build 16237 改... Windows 最新消息 2017-07-21Windows 10 Redstone 3 (RS3) 公眾預覽版本 Build 16215、Build 16226 改... Windows 最新消息 2017-07-18Windows 10 Redstone 3 (RS3) 公眾預覽版本 Build 16215 發佈 + 繁體中文版下載 預覽版本發佈 2017-06-12安裝微軟在 6/2 錯誤推送給預覽計畫參加者的 Windows 10 內部測試版本後的解決方案 Windows 最新消息 2017-06-04Windows 10 Redstone 3 (RS3) 公眾預覽版本 Build 16199 發佈 + 繁體中文版下載 預覽版本發佈 2017-05-19社群網路1,751粉絲讚62關註者關註160關註者關註0訂閱者訂閱 投票中心本站的各項主題中，你最希望站長提高哪個主題的更新頻率？ 「電腦達人養成計畫」 「各家 VPS 介紹特輯」 硬體測評分析 「電腦組裝完全攻略」 個人觀點 資安網管技術 伺服器相關教學 Loading ... 搜尋本站 獲獎紀錄Microsoft 最有價值專家 (MVP) Windows and Devices for IT在 Twitter 上追蹤我我的推文贊助本站 請選擇贊助金額請站長喝杯咖啡 NT$100 TWD贊助站長一天的餐錢 NT$300 TWD請站長吃頓大餐 NT$1,000 TWD贊助站長撰寫更多教學文章 NT$3,000 TWD贊助站長買新玩具來開箱 NT$5,000 TWD贊助站長升級伺服器 NT$10,000 TWD       適用電子郵件訂閱網站輸入你的電子郵件地址訂閱網站的新文章，使用電子郵件接收新通知。訂閱 16 其他用戶  電子郵件位址						         聯絡站長關於本站 Copyright © 2016 - 2017 iSite.TW / 未經允許請勿複製或轉載本站內容。 error: 未經允許請勿複製或轉載本站內容。                             Edit with Live CSS     
+
+計算機圖學
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Computer Graphics (Fall 2011)
+
+
+
+
+
+ 
+
+Announcements:
+
+Post Date Message 
+9/1  First class will meet on September 14th, 2011
+
+  
+
+
+
+  
+Schedule
+
+Week Chap RedbookLecture Notes            Labs 
+1     7.9 1   Bresenham's Algorithm                   lab1 
+2     1   2   Graphics Systems and Models             lab2 
+3     2   3   Graphics Programming                    lab3 
+4     3   4   Input and Interaction                   lab4 
+5     4   5   Geometric Objects and Transformations   lab5 
+6     5   6   Viewing                                 lab6 
+7     6   7   Shading                                 lab7 
+8     7   8   From Vertices to Fragments              lab8 
+9     -   -   Midterm week                            -    
+10    8   9   Discrete Techniques, Texture Mapping    pro1 
+11    9   10  Programmable Shaders  (GLSL)            -    
+12   10   11  Modeling and Procedural Methods         -    
+13   11   12  Scene Graphs and Real Time              -    
+14   12   13  Curves and Surfaces                     pro2 
+15   13   14  Advanced Rendering                      -    
+16    -   -   Animator                                -    
+17    -   -   Scientific Visualization                -    
+18    -   -   Final Project Presentation              pro3 
+
+  
+
+
+  
+Schedule 業界專家協同教學
+
+Week 3 (9/30):
+基本功能操作及上傳模型，熟悉Sketchup基本操作
+基本功能操作、基本貼圖
+上傳模型到Google Earrth
+利用已經裁好的貼圖做簡單的大樓模型示範
+以北科大附近的大樓為例，以提升親切感及興趣
+Week 4 (10/07):
+熟悉貼圖及零件組裝
+進階功能操作、兩種貼圖示範、元件及組件的製作
+上傳模型到Google Earrth
+利用已經裁好的貼圖製作元件，組裝元件或組件
+建模樂趣分享
+Week 5 (10/14):
+枓栱及木架構
+利用基本功能建構斗栱
+三種枓栱
+木架構組成
+元件及群組的存檔
+Week 6 (10/21):
+宮殿建築屋頂
+廡殿頂
+歇山頂
+舉折制
+其它細節
+貼圖
+Week 7 (10/28):
+其它構件及元件組裝
+各種構件的快速組裝
+構件的比例調整及貼圖註意事項
+Week 8 (11/04):
+亭臺樓閣及坊的原則及示範
+中式建築的原則
+各種中式建築的變化
+元件及群組的滙入
+利用各元件組成建築的示範
+
+  
+
+
+  
+Labs
+
+Labs:
+
+lab 0: OpenGL warm up                   
+lab 1: transformation                   
+lab 2: lighting and shading             
+lab 3: texture mapping                  
+lab 4: GLSL                             
+lab 5: transformation (OpenGL ES) 
+lab 6: lighting and shading (OpenGL ES) 
+lab 7: texture mapping (OpenGL ES) 
+lab 8: GLSL (OpenGL ES) 
+Projects:
+project 1: Unity - 唐長安城 
+project 2: Animator                                 
+project 3: OpenGL ES on Android 
+
+  
+
+
+  
+Syllabus
+
+
+Lecture:
+Tuesday 17:10-18:00, Friday 13:10-15:00
+Location:
+6th Teaching Building 527
+Class webpage:
+ http://www.ntut.edu.tw/~tjhsieh/cg2011f/ 
+Discussion Board:
+ http://elearning.ntut.edu.tw/ 
+Instructor:
+Prof. H si eh
+Office: Technology Building 1535
+Office hours: Friday 15:00-18:00
+Teaching Assistant:
+TBA
+Office: Technology Building 1422
+Office hours: Friday 15:00-18:00
+Textbook:
+Edward Angel,  Interactive Computer Graphics: A Top-Down Approach using OpenGL (6th Edition), Addison Wesley, 2008. 
+					(Errata)
+Reference Book:
+OpenGL Programming Guide: The Official Guide to Learning OpenGL, Version 2.1 (6th Edition), Addison Wesley, 2006.
+                    http://www.opengl.org/documentation/red_book/
+OpenGL Reference Manual: The Official Reference Document to OpenGL, Version 1.4 (4th Edition), Addison Wesley, 2006.
+                    http://www.opengl.org/documentation/blue_book/
+Outline: (from 
+					Catalog)
+ The objective of this course is to familiarize the student with basic principles, methods, and tools of computer graphics. 
+					Topics include: 1. Generation of 2D and 3D geometric shapes 2. 2D and 3D transformation 3. Hidden surfaces and hidden lines 
+					techniques 4. Color principles 5. Shading and shadowing techniques. The student will be required to write computer programs 
+					and/or use modeling and rendering packages  
+Grading:
+
+Programming Assignment 60% 
+Term Project 1 10%
+Term Project 2 30%
+Class Participation 10%
+
+Policy:
+
+A regrade request must be submitted within one week after the original grade is received.
+Students are not allowed to copy solutions from others, and students should not share your answers with others. Students will receive a score of zero for doing this.
+Academic Honesty: (1) (2)
+NTUT Exam Rules http://www.cc.ntut.edu.tw/~wwwoaa/oaa-nwww/oaa-l/course/law_course_007.doc
+NTUT Cheating Penalties http://www.cc.ntut.edu.tw/~wwwoaa/oaa-nwww/oaa-l/course/law_course_008.doc
+Be sure to check the course website frequently.
+
+
+
+
+
+  
+Resources
+
+
+
+SketchUp:
+
+SketchUp Pro
+SketchUp Tutorials
+SketchUp Tutorials (English)
+SketchUp Tutorials (TW)
+What's New in Google SketchUp 8
+Sketchup with TANTUNN
+
+
+ChangAn:
+
+ChangAn
+
+
+Graphics Software:
+
+Computer Graphics Research Software
+
+
+Code samples:
+
+Nate Robins tutors
+Redbook code samples
+OpenGL - Examples
+Visualization Library
+NeHe OpenGL Tutorials
+lighthouse3d GLSL Tutorial
+lighthouse3d VRML Interactive Tutorial
+NVIDIA SDK 9.52 Code Samples
+Textbook-Angel
+GLSL Tutorials
+GLSL Shader Examples
+GLUI
+Shader Maker
+nvidia SDK 9.52 Code Samples
+cglx
+OpenGL tutorial
+GPGPU
+CUDA
+CUDA C SDK Code Samples
+NVIDIA PhysX
+OpenGL Programming Examples
+
+
+Does your computer support OpenGL 2.1?
+
+OpenGL Extensions Viewer
+HardwareInfos
+
+
+Where to find papers?
+
+CG people
+IEEE Xplore
+ACM Portal
+Rowley's collection
+Hsuang's collection
+Physics in Graphics
+IEEE Visualization papers
+Rigging, 
+					    FiberMesh, 
+					    Power Crust,
+					    Lindstrom,
+					    Hoppe,
+					    collision,
+					    gamma,
+					    Igarashi,
+					
+
+
+3D Models:
+
+Stanford PLY 
+Princeton 
+Georgia Tech 
+NTU 
+LOD 
+GemStones 
+3D Links 
+3D Cafe 
+TurboSquid 
+
+
+Format:
+
+PLY, OBJ
+
+
+How to Write a Paper?
+
+How to Read a Research Paper
+How To Get Your SIGGRAPH Paper Rejected
+template (SIGGRAPH)
+template (TVCG)
+template (VIS)
+template (VGTC)
+template (CGF)
+Research as a Graduate Student - beyond a survival guide
+
+
+Links:
+
+Computer Graphics Research Software
+Physically Based Rendering
+The Internet ray tracing competition
+Stanford Rendering Competition
+ Stanford 
+                    CS248,
+08,
+                    07,
+                    06,
+                    05,
+                    04,
+                    03,
+                    02,
+                    01,
+                    00,
+                    99,
+                    
+ Washington 
+					CSE457,
+                    08au,
+                    08sp,
+                    07sp,
+                    06au,
+                    06sp,
+                    05au,
+                    05sp,
+                    04au,
+                    04sp,
+                    
+
+
+
+  
+
+
+  
+
+
+					Upload your cg.html to sun.cc.ntut.edu.tw (140.124.13.2). 
+					how? 
+賴柏辰,
+林鈺皓,
+賴嘉亨,
+李冠緯,
+鄭尊仁,
+李孟謙,
+張柏隆,
+舒一斌,
+黃厚皓,
+林柏鋒,
+蔡秉修,
+吳承書,
+鄭欣珆,
+張竣翔,
+黃凱笙,
+郭哲銘,
+潘義傑,
+黃勢棋,
+蘇偉仁,
+範國鼎,
+巫培源,
+張國浩,
+劉皓倫,
+洪凱鬱,
+曾芃榛,
+陳建勳,
+黃睿麟,
+孫國欽,
+黃仕揚,
+莊謹傑,
+韓佩珊,
+李旻憲,
+潘王翔,
+張海創,
+貝妮可,
+林珈妤,
+張啟瑩,
+徐嘉陞,
+陳碩漢,
+李劭騏,
+羅玟捷,
+王瀚宇,
+陳子琦,
+唐軒尉,
+王玉玲,
+陳怡玫,
+陳冠廷,
+朱偉慈,
+李紹華,
+劉家名,
+江文成,
+楊凱霖,
+張朕瑀,
+吳靜怡,
+成　明,
+張雅婷,
+蘇柏宇,
+王顗誠,
+蔡雲朝,
+杜宗翰,
+田孟學,
+梁迪茵,
+邱鈺荃,
+洪辰瀚,
+鍾孟翰,
+蕭皓原,
+楊開安,
+潘昆毅,
+許睿源,
+廖富璿,
+呂學昱,
+張嘉賢,
+張家凱,
+孫柏恩,
+羅胤綸,
+蔡文哲,
+林佳賢,
+徐振峰,
+溫知博,
+李慶堂,
+徐孟廷,
+王志瑋,
+廖御霖,
+葉雲豪,
+陳昱銘,
+張銘傑,
+郭坤樹,
+林永,
+張瑋芸,
+謝瑋真,
+
+  
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+Term Project Evaluation
+
+技術:
+徐嘉陞, 王瀚宇 (19票)
+成明, 蔡雲朝, 田孟學, 徐振峰(18票)
+楊凱霖, 張嘉賢, 林佳賢, 溫知博(10票)
+創新:
+李劭騏, 陳子琦 (17票)
+蕭皓原, 潘昆毅, 孫柏恩, 李慶堂 (7票)
+表達:
+王玉玲, 陳怡玫 (9票)
+孫國欽, 莊謹傑, 潘王翔, 貝妮可 (8票)
+成明, 蔡雲朝, 田孟學, 徐振峰 (8票)
+故事:
+成明, 蔡雲朝, 田孟學, 徐振峰 (11票)
+李劭騏, 陳子琦 (8票)
+陳冠廷, 朱偉慈, 吳靜怡, 邱鈺荃 (5票)
+運鏡:
+成明, 蔡雲朝, 田孟學, 徐振峰 (17票)
+徐嘉陞, 王瀚宇 (9票)
+王玉玲, 陳怡玫 (8票)
+配樂:
+張雅婷, 王顗誠, 梁迪茵, 林峯永 (8票)
+成明, 蔡雲朝, 田孟學, 徐振峰 (7票)
+蕭皓原, 潘昆毅, 孫柏恩, 李慶堂 (7票)
+整體:
+成明, 蔡雲朝, 田孟學, 徐振峰 (23票)
+徐嘉陞, 王瀚宇 (8票)
+王玉玲, 陳怡玫 (6票)
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+Interactive Computer Graphics: A Top-Down Approach using OpenGL (6th Edition)   
+ 
+
+
+
+OpenGL Programming Guide: The Official Guide to Learning OpenGL, Version 2.1 (6th Edition)   
+ 
+
+
+
+The OpenGL Reference Manual (4th Edition)   
+ 
+
+
+
+OpenGL Shading Language (2nd Edition)  
+ 
+
+
+
+OpenGL ES 2.0 Programming Guide  
+ 
+
+
+
+GPU Gems  
+ 
+
+
+
+GPU Gems 2  
+ 
+
+
+
+GPU Gems 3  
+ 
+
+
+
+NVIDIA GPU Programming Guide  
+ 
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+

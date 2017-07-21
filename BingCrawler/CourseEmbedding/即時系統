@@ -1,0 +1,3524 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is a Real-Time Operating System (RTOS)? - National Instruments
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is a Real-Time Operating System (RTOS)?
+Publish Date: Nov 22, 2013
+				
+					|
+		286 Ratings | 3.43 out of 5
+						|
+			        Print
+
+
+Overview
+This paper explains what a real-time operating system (RTOS) is, how real-time operating systems are useful for measurement and control applications, and how they differ from standard general-purpose operating systems like Windows.  
+Table of Contents
+Introduction to Real-Time Operating Systems
+Example Real-Time Applications
+Under the Hood: How Real-Time OSs Differ from General-Purpose OSs
+Next Steps
+
+1. Introduction to Real-Time Operating Systems
+The sections below outline basic concepts and terminology related to real-time operating systems. After you have read through this paper, it is recommended that you visit Building a Real-Time System with NI Hardware and Software next to learn more about how National Instruments can help you build a superior real-time system in as little time as possible.
+What is a Real-Time OS?
+In general, an operating system (OS) is responsible for managing the hardware resources of a computer and hosting applications that run on the computer. An RTOS performs these tasks, but is also specially designed to run applications with very precise timing and a high degree of reliability. This can be especially important in measurement and automation systems where downtime is costly or a program delay could cause a safety hazard.
+To be considered "real-time", an operating system must have a known maximum time for each of the critical operations that it performs (or at least be able to guarantee that maximum most of the time). Some of these operations include OS calls and interrupt handling. Operating systems that can absolutely guarantee a maximum time for these operations are commonly referred to as "hard real-time", while operating systems that can only guarantee a maximum most of the time are referred to as "soft real-time". In practice, these strict categories have limited usefulness - each RTOS solution demonstrates unique performance characteristics and the user should carefully investigate these characteristics.
+To fully grasp these concepts, it is helpful to consider an example. Imagine that you are designing an airbag system for a new model of car. In this case, a small error in timing (causing the airbag to deploy too early or too late) could be catastrophic and cause injury. Therefore, a hard real-time system is needed; you need assurance as the system designer that no single operation will exceed certain timing constraints. On the other hand, if you were to design a mobile phone that received streaming video, it may be ok to lose a small amount of data occasionally even though on average it is important to keep up with the video stream. For this application, a soft real-time operating system may suffice.
+The main point is that, if programmed correctly, an RTOS can guarantee that a program will run with very consistent timing. Real-time operating systems do this by providing programmers with a high degree of control over how tasks are prioritized, and typically also allow checking to make sure that important deadlines are met.
+In contrast to real-time operating systems, the most popular operating systems for personal computer use (such as Windows) are called general-purpose operating systems. While more in-depth technical information on how real-time operating systems differ from general-purpose operating systems is given in a section below, it is important to remember that there are advantages and disadvantages to both types of OS. Operating systems like Windows are designed to maintain user responsiveness with many programs and services running (ensuring "fairness"), while real-time operating systems are designed to run critical applications reliably and with precise timing (paying attention to the programmer's priorities).
+Important Terminology and Concepts
+Determinism: An application (or critical piece of an application) that runs on a hard real-time operating system is referred to as deterministic if its timing can be guaranteed within a certain margin of error.
+Soft vs Hard Real-Time: An OS that can absolutely guarantee a maximum time for the operations it performs is referred to as hard real-time. In contrast, an OS that can usually perform operations in a certain time is referred to as soft real-time.
+Jitter: The amount of error in the timing of a task over subsequent iterations of a program or loop is referred to as jitter. Real-time operating systems are optimized to provide a low amount of jitter when programmed correctly; a task will take very close to the same amount of time to execute each time it is run.
+
+Figure 1. Jitter is a measure of how much the execution time of a task differs over subsequent iterations. Real-time operating systems are optimized to minimize jitter.
+ 
+ Back to Top 2. Example Real-Time Applications
+Real-time operating systems were designed for two general classes of applications: event response and closed-loop control. Event response applications, such as automated visual inspection of assembly line parts, require a response to a stimulus in a certain amount of time. In this visual inspection system, for example, each part must be photographed and analyzed before the assembly line moves.
+By carefully programming an application that runs on a hard real-time operating system, designers working on event response applications can guarantee that a response will happen deterministically (within a certain maximum amount of time). Considering the parts inspection example, using a general-purpose OS could result in a part not being inspected in time - therefore delaying the assembly line, forcing the part to be discarded, or shipping a potentially defective part.
+In contrast, closed-loop control systems, such as an automotive cruise control system, continuously process feedback data to adjust one or more outputs. Because each output value depends on processing the input data in a fixed amount of time, it is critical that loop deadlines are met in order to assure that the correct outputs are produced. What would happen if a cruise control system failed to determine what the throttle setting should be at a given point in time? Once again, hard real-time operating systems can guarantee that control system input data is processed in a consistent amount of time (with a fixed worst-case maximum).
+It should also be noted that many applications that must run for extended periods of time can benefit from the reliability that an RTOS can provide. Because real-time operating systems typically run a minimal set of software rather than many applications and processes at the same time, they are well suited for systems that require 24-7 operation or where down-time is unacceptable or expensive.
+If you are considering using an RTOS for an upcoming project, see the paper: Do I Need a Real-Time System?
+ Back to Top 3. Under the Hood: How Real-Time OSs Differ from General-Purpose OSs
+Operating systems such as Microsoft Windows and Mac OS can provide an excellent platform for developing and running your non-critical measurement and control applications. However, these operating systems are designed for different use cases than real-time operating systems, and are not the ideal platform for running applications that require precise timing or extended up-time. This section will identify some of the major under-the-hood differences between both types of operating systems, and explain what you can expect when programming a real-time application. 
+Setting Priorities
+When programming an application, most operating systems (of any type) allow the programmer to specify a priority for the overall application and even for different tasks within the application (threads). These priorities serve as a signal to the OS, dictating which operations the designer feels are most important. The goal is that if two or more tasks are ready to run at the same time, the OS will run the task with the higher priority.
+In practice, general-purpose operating systems do not always follow these programmed priorities strictly. Because general-purpose operating systems are optimized to run a variety of applications and processes simultaneously, they typically work to make sure that all tasks receive at least some processing time. As a result, low-priority tasks may in some cases have their priority boosted above other higher priority tasks. This ensures some amount of run-time for each task, but means that the designer's wishes are not always followed.
+In contrast, real-time operating systems follow the programmer's priorities much more strictly. On most real-time operating systems, if a high priority task is using 100% of the processor, no other lower priority tasks will run until the high priority task finishes. Therefore, real-time system designers must program their applications carefully with priorities in mind. In a typical real-time application, a designer will place time-critical code (e.g. event response or control code) in one section with a very high priority. Other less-important code such as logging to disk or network communication may be combined in a section with a lower priority.
+Interrupt Latency
+Interrupt latency is measured as the amount of time between when a device generates an interrupt and when that device is serviced. While general-purpose operating systems may take a variable amount of time to respond to a given interrupt, real-time operating systems must guarantee that all interrupts will be serviced within a certain maximum amount of time. In other words, the interrupt latency of real-time operating systems must be bounded. 
+Performance
+One common misconception is that real-time operating systems have better performance than other general-purpose operating systems. While real-time operating systems may provide better performance in some cases due to less multitasking between applications and services, this is not a rule. Actual application performance will depend on CPU speed, memory architecture, program characteristics, and more. 
+Though real-time operating systems may or may not increase the speed of execution, they can provide much more precise and predictable timing characteristics than general-purpose operating systems.
+ Back to Top 4. Next Steps
+Continue on to the following paper to learn how you can use NI hardware and software to build a superior real-time system in as little time as possible:
+>> Building a Real-Time System with NI Hardware and Software
+>> Do I Need a Real-Time System?
+>> Evaluation Software
+
+ Back to Top 
+
+
+
+
+
+
+
+Bookmark & Share
+
+
+
+
+
+
+Share
+
+
+
+
+
+
+
+
+
+
+
+
+Ratings
+
+
+
+
+
+
+
+Rate this document
+
+Select a Rating
+1 - Poor
+2
+3
+4
+5 - Excellent
+
+
+Answered Your Question?
+ Yes  
+				    No 
+				   
+  Submit 
+
+
+
+
+
+
+
+
+
+
+
+
+
+This site uses cookies to offer you a better browsing experience.  Learn more about our privacy policy.
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16. 即時作業系統 (Real-time Operating System) | 宅學習 - Social Learning Space
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+宅學習 - Social Learning Space
+社交學習空間@FJU CSIE
+
+
+
+
+
+
+
+
+
+
+
+
+返回頁首
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+You are here 
+
+16. 即時作業系統 (Real-time Operating System)
+
+
+
+Submitted by mei on 一, 2014-01-27 16:07
+
+
+Attachment大小 
+
+ RTOS演算法.doc35 KB 
+
+
+定義：　　
+　　即時作業系統（Real-time operating system，RTOS），是指作業系統要在一個固定時間內，做出正確反應，以及對時序及穩定度的要求十分嚴格，它會按照排序執行、管理系統資源，並為開發應用程式提供一致的基礎。 
+　　即時作業系統相較一般的作業系統，最大的特色就在於「即時性」，也就是說，如有一個 process 需執行，即時作業系統會在最短時間內執行該 process ，不會有較長的延遲。這種特性保證了各個 process 的即時執行。通常都具備有最基礎的 kernel，以及外加上去的模組，像是檔案系統、網路協定堆疊和應用、裝置驅動程式……等模組。RTOS 的核心通常包括，排程器、物件、服務程式。 
+　　衡量一個即時作業系統堅固性的重要指標，是他從接收一個 process，到完成該 process 所需的時間，其時間的變化稱為 jitter。硬即時作業系統比軟即時作業系統有更少的 jitter。設計即時作業系統的首要標的不是高的 throughput，而是保證 process 在特定時間內完成。 
+　　即時作業系統可分類為「軟式（Soft）」與「硬式（Hard）」。硬即時作業系統，是指系統從命令起始到執行動作之間的中斷延遲回應特性。一般像是 Win CE 這種的軟即時作業系統，其反應時間約為 1~2ms，要達到硬即時性能的要求，其反應時間必須要在 150μs 以內；軟即時系統通常指超過期限後，系統的公用程式可容忍某段誤差時間。舉例來說，當行動電話來電時，則必須在按下按鈕時即建立連結。然而，此限制時間並非絕對，亦可有些許的延遲。 
+　　硬即時作業系統必須使 process 在確定的時間內完成，而軟即時作業系統能讓絕大多數 process 在確定時間內完成。
+ 
+演算法和行程排班:
+ 
+RTOS多任務運行的實現實際上是靠CPU在許多任務之間轉換、調度。CPU只有一個，輪番服務於一系列任務中的某一個。多任務運行使CPU的利用率得到最大的發揮，並使應用程式模組化。在即時應用中，多任務化的最大特點是，開發人員可以將很複雜的應用程式層次化，而且應用程式將更容易設計與維護。  因此在多任務即時操作系統RTOS中涉及到任務調度，任務調度機制是嵌入式即時操作系統的一個重要概念，也是其核心技術。針對嵌入式即時系統任務的管理和調度的特點,在多任務即時內核結構中，多數採用的是基於優先順序的可搶佔式調度策略。系統為每一個任務分配一個優先順序，調度程式總是選擇優先順序最高的就緒任務運行。內核運行中頻繁地進行任務調度，調度速度緩慢時，會影響整個系統的回應速度和處理能力。因此，關於最高優先順序就緒任務的查找演算法是即時多任務系統的關鍵技術。
+ 
+本文給出64個優先順序任務內核的不同最高優先順序就緒任務查找演算法，通過實例詳細闡明其原理，並分析了各個演算法的優缺點. 
+ 
+ 
+ 
+ 
+最高優先順序就緒任務查找演算法：順次檢索法  關於最高優先順序就緒任務的查找，有多種處理方法，其中最簡單最基本的方法是順次檢索。將所有的任務按照優先順序排隊，優先順序高的排在佇列前邊，優先順序低的排在佇列後邊。查找時從佇列的頭部開始，遇到的第一個就緒任務就是優先順序最高的就緒任務。假如即時系統共有n個任務，按照優先順序別的高低，順次存入數組Tb[n]中。當某一優先順序別的任務處於就緒態時，就在相應的佇列處置就緒態標誌。在系統進行任務調度的過程中，只要從佇列的頭部開始，依次查找就緒態標誌，找到的第一個具有就緒態標誌的任務就是優先順序別最高的就緒任務。該方法思路簡單，查找便利，但存在的缺點是不同優先順序任務查找時所需要的時間不同，系統中的任務數越多，且最高優先順序就緒任務越靠後，則查找速度越慢。
+ 
+逐次比較法 
+ 
+ 可以發現，最高優先順序就緒任務是可以通過OSRdyG和OSRdyT [ ]求出來的，下麵介紹一種普通的逐次比較，求最高優先順序就緒任務演算法。首先，從OSRdyG的最低位往最高位比較搜索，若為1停止，最高優先順序就緒任務就在此位對應的OSRdyT [n]中；然後找到OSRdyT[n]中為1的最低位，那麼就可以確定最高優先順序就緒任務。
+ 
+其演算法描述如下：  
+ 
+     for(i=0;i<8;i++)      
+ 
+ { if (OSRdyG & OSMap [i])     
+ 
+   break;       }      
+ 
+  for(j=0;j<8;j++)     
+ 
+ {         
+ 
+  if (OSRdyT [i]& OSMap [j])      
+ 
+  break;       }      
+ 
+  highprio=i<<3+j;  
+ 
+顯然，用迴圈程式實現不但複雜，更重要的是執行時間是不確定的，因為有時只需一個迴圈即可，而有時需要8個迴圈，不符合即時系統的確定性原則。為了加快即時系統的執行速度，可以採用查表方法進一步改進演算法
+ 
+ 
+ 
+ 
+ 
+查表法:
+為了減少以上演算法所造成的時間損耗以及不確定性。採用查表的方法實現最高優先順序就
+ 
+緒任務的查找，在程式中事先建立一個存儲表，保存在數組OSUnMapT [255]中，存儲值表示OSRdyG和OSRdyT[n]的值相對優先順序別高三位和低三位的映射值。存儲值內容見表1。  例如，若OSRdyG的值為二進位00100100b，即0x24，則查OSUnMapT [OSRdyG]得到的值是2，它相應於OSRdyG中的第2位bit2，類似地，如果OSRdyT[2]的值是二進位11000010，即0xC2，則OSUnMapT[OSRdyT [2]]的值是1，即第1位bit1。於是就緒任務的最高優先順序就等於8進制21，即17（2*8+1）。  因此利用該表，可以用固定 的三條程式指令就計算出就緒任務最高優先順序的；計算就緒任務最高優先順序的演算法如下：  
+ 
+       high3 =OSUnMapT [OSRdyG];                                
+ 
+       low3 =OSUnMapT[OSRdyT [high3]];                     
+ 
+       highprio =(high3<<3)+low3;                          
+ 
+兩種演算法對比可知，後者是用儲存空間來換取了執行時間；而對於一個操作系統，任務調度是十分頻繁的，這一點空間相對其換取回來的寶貴CPU時間是微不足道的。可以採用這種策略，從而使其實時系統性能得到大大的提高。  對具有相同優先順序的任務可以用時間片輪轉或者先進先出方式,來搶佔CPU。然後調度程式先檢查該任務當前是否處於運行狀態，如果該任務正佔用CPU，則不進行任務調度，調度程式退出；如果沒有佔用CPU，則進行任務調度，讓找到的最高優先順序的就緒任務開始運行。
+ 
+ 
+對於即時行程的排程，有許多功能更強大及更合適的方法紛紛被提出來討論。這些方法基本上都需要作業系統擁有各個行程的一些附加的資訊。一般來說，對於各個行程，作業系統需要擁有下列資訊：
+ 
+1.備妥時間(Ready Time)：行程準備好開始執行所需花費的時間。對於週期性的行程而言，備妥時間實際上是一連串事先預知的時間。對於非週期性的行程而言，備妥時間可能事先預知，或者是等到行程確實準備好之後，再通知作業系統做適當的處理。
+ 
+2.啟始期限(Starting deadline)：行程必須開始執行的時間。
+ 
+3.完成期限(Completion deadline)：行程必須完成其工作的時間。典型的即時應用程式可能會要求啟始期限，或者是完成期限，但不會同時要求兩者。
+ 
+4.處理時間(Processing time)：工作執行直到完成所需的時間。有些情況下，應用程式會提供這項資訊。有些情況下，作業系統會自動測量其指數平均值。有些情況下，作業系統不會使用這項資訊。
+ 
+5.資源需求(Resource requirements)：行程在執行時所需要的所有資源（除了處理器之外）。
+ 
+6.優先權(Priority)：提供了行程之間重要性的相對關係。迫切性的即時行程可能會提供絕對的優先權，如果無法滿足它對於期限的要求，則這個系統便無法正常運作。如果系統在任何情況下都想繼續運作（即使某個迫切性的即時行程對於期限的要求無法被滿足），則可以為迫切性與非迫切性的即時行程指定相對的優先權，提供排班機製作為排班的依據。
+ 
+7.次行程的結構(Subtask structure)：行程可以被分解為強制性的次行程及附加性的次行程。只有強制性的次行程才需要指定工作期限。
+ 
+排班機制在考慮行程執行期限的問題時，有許多層面需要考量，例如：系統應該根據什麼條件以選擇下一個行程來執行﹑系統應該允許什麼種類的搶先機制。我們通常必須針對系統的應用場合，來決定要採用什麼樣的排班策略。
+ 
+ 
+ 
+ 
+ 參考資料http://murphymind.blogspot.tw/1997/06/rtos-concepts.html
+設計理念:
+
+Thread 導向的設計
+為了降低複雜度，通常會採用 threads 導向的設計，把一個專案切分成比較易於管理的小塊（也就是 threads），而後每一個 thread 負責該應用程式的一部分。這樣的系統有助於識別 threads 之間的重要順序。也就是說，某些 threads 具有即時性的需求，必須盡量快速並且正確地回應它們。如果你的系統採用了專業的 RTOS，一定會有劃分 threads 優先權 (prioritization) 的設計。除了優先權之外，也會提供一套乾淨而且被仔細測試過的 API，有助於簡化 threads 之間的通訊。
+所以如果我們採用 RTOS 的話，就會獲得一些工具能夠：
+確保能夠在即時約束條件 (real-time constraints) 內執行時間關鍵 (time-critical) 部分的程式碼。或許同樣都很重要，但高優先權的 threads 所需要的即時行為，並不會受到低優先權 threads 的影響。
+確保易於開發和維護複雜的應用。開發和維護小的 threads，比起硬搞整套應用更為容易。此外，對於低優先權 threads 的更動也不會影響到高優先權 threads 的即時處理。
+能夠將整體應用程式的不同部分，分派給多個開發人員。每一個開發人員能夠擔負應用程式的一個或多個 threads，而且當他們在進行開發工作時，還會有一套乾淨的 API 能夠讓不同的 modules / threads 相互溝通。
+採用 RTOS 的話，你不但能夠創建 threads，同時也具備一些讓它們能夠彼此溝通的工具，再加上能夠確保能夠在即時約束條件內執行完畢 threads 具時間關鍵的部分工作。由於採用了 RTOS，不同 threads 之間的介面將會變得非常乾淨，在進行開發的時候你就可以省時省力。
+RTOS 如何工作？
+RTOS 的核心被稱為 kernel，並提供有一個可以透過 kernel 去創建 threads 的 API。一個 thread 就像是一個擁有自己的堆疊、並帶有 Thread 控制區塊（TCB – Thread Control Block）的函式。除了 thread 本身私有的堆疊之外，每個 TCB 也保有一部分該 thread 的狀態訊息。
+kernel 還包含有一個 scheuler，scheuler 會按照一套排程機制來執行 threads。各種 scheulers 之間主要的差異，就是如何分配執行他們所管理之各種 threads 的時間。基於優先權的 preemptive scheuler 是嵌入式 RTOS 之間最流行和普遍的 threads 調度演算法。通常情況下，相同優先權的 threads 會以 round-robin 循環的方式加以執行。
+多數內核還會利用系統時脈 (system tick) 中斷，其典型的頻率為 10ms。如果在 RTOS 中缺乏系統時鐘，仍然能夠有某種基本形式的調度，但時間相關的服務則否。這種與時間有關的服務內容包括：軟體定時器、thread 睡眠 API 呼叫、thread 時間片段、以及逾時的 API 呼叫。
+為了實現系統時脈中斷，可以透過嵌入式晶片的硬體計時器。大多數的 RTOS 有能力動態地擴增或重新設置計時器的中斷頻率，以便讓該系統進入睡眠，直到被下一個計時器期限或外部事件喚醒。例如，如果你有一個對耗能敏感的應用程式，您可能不希望每 10ms 就運行一次不必要的系統時脈處理程序。所以假設應用程式處於閒置狀態，想要把下一個定時器期限改為 1000ms。在這種情況下，計時器可以被重新規劃成 1000ms，應用程式則會進入低功耗模式。一旦在這種模式下，處理器將呈現休眠狀態，直到產生了外部事件、或是計時器的 1000ms 到期。在任一種情況之下，當處理器恢復執行時，RTOS 就會根據已經經過了多少時間來調整內部時間，並恢復 RTOS 和應用程式處理。如此一來，處理器只會在執行應用程式有事可做時進行運算。空閒期間處理器可以睡眠，並且節省電力。
+ 
+參考資料：http://zh.wikipedia.org/wiki/即時作業系統
+
+http://cms.mcuapps.com/devscenes/ds0001/
+
+硬即時和軟即時的比較:
+
+在很多的書及文獻上我們可能會看到『硬即時（hard real-time）』和『軟即時（soft real-time）』這二個名詞。不同的人會給它們不同的意義，但大致來說它們是一組相對的概念。有些人會從工作的特性上來分，例如我們常會用核能電廠和看 VCD 為例，用在核能電廠的即時作業系統如果出了差錯可能會導致嚴重的損害，然而 VCD Player 出了些差錯不過是讓使用者認清它所用的程式不夠好而已。所以前者是硬即時，後者是軟即時。
+但在大多數的狀況下，分野並不是如此的清楚。做 VCD Player 的廠商當然不希望它的 Player 老是出錯，它也會希望 Player 用一個硬即時作業系統來驅動。所以硬即時和軟即時的差別可能只是分類學上的問題而已。以下表格為統整齣來的資料：  
+
+ 
+
+
+硬性即時作業系統
+（Hard Real-Time System）
+
+
+軟性即時系統
+（Soft Real-Time System）
+
+
+簡介
+
+
+也可稱為安全臨界系統（Safety-Critical System），有最迫切的需求，必須在特定期限之前回應事件，保證在它們的期限內完成臨界即時任務。
+
+
+跟硬性即時系統比較起來，限制的範圍比較少，簡單提供一件臨界的即時系統，將在其它的任務上接受優先權並保有優先權直到它完成。
+
+
+應用
+
+
+通常指不能有任何差錯的工作，一般而言，與安全相關的系統均屬於硬即時系統。
+例如：軍事系統、核能安控、車用電子煞車系統…等。
+
+
+比較容許差錯的工作，即時工作的執行擁有最高的優先權即可，直到執行完畢為止。
+例如：多媒體播放器…等。
+
+
+工作延遲
+
+
+所有工作都不能夠延遲
+
+
+允許少量的工作延遲，若沒有在回應時間內完成，只是造成系統的效能變差，不會影響系統的執行
+
+
+要求
+
+
+非常嚴苛
+
+
+比較寬鬆
+
+參考資料：
+http://pastahuang.pixnet.net/blog/post/51620470-即時作業系統是如何演進的
+http://etd.yuntech.edu.tw/dmdocuments/etd-0823111-143458.pdf
+http://blog.xuite.net/jackie.xie/bluelove/5555541
+http://www.ni.com/white-paper/3938/zht/
+http://web.ydu.edu.tw/~hjw/course/esd/9402_sw/Ch01.pdf
+http://linux.sheup.com/linux/linux5162.htm
+http://mail.tku.edu.tw/jingo/informationoverview100/ch-03.pdf
+
+案例:
+
+WinCE、VxWorks、μC/OS-Ⅱ等運用較廣。Linux是作為通用操作系統開發的，其內核在實時處理能力上先天不足，部分網絡開發社區將其經過改造能在一定程度上成為實時操作系統。下麵例舉比較其優缺點：
+1. embedded Linux, ucLinux
+
+優點: 系統完整, 功能強大, 支援各種 file system, TCP/IP stack, communication protocol stack, 發展工具齊全(GNU toolchain), 網路上高手多, 
+
+缺點: 是否歸類於 RTOS 仍有爭議, 只支援 32-bit CPU, 複雜度高, device driver 架構稍大, 移植難度較大, 編譯後的 file footprint (kernel + application) 過大, 新手較難維護, scheduling mode 較少, hard-real time scheduling 的支援度待改進.
+
+2. e-Cos
+
+優點: 發展工具齊全(GNU toolchain), 模組化程度非常好, 支援的 CPU 架構多, 複雜度較低, device driver 架構比較簡單, 移植容易, 編譯後的 file footprint 小, 有專門的公司定期更新版本.
+
+缺點: 支援的 file system, TCP/IP stack 和 communication protocol 較少, scheduling mode 較少, 網路上高手較少, 出問題要找專人解決時的顧問費用不低.
+
+3. uc/OS-II
+
+優點: 支援的 CPU 架構多, 系統單純, 學習容易, 書籍內容精彩, device driver 發展容易, 移植容易, 編譯後的 file footprint 非常小, 有專門的公司維護版本.
+
+缺點: 發展工具少( borland C/C++ only. 但可改用 GNU toolchain). 沒有 file system 和 TCP/IP stack (要自己解決), scheduling mode 較少, 網路上高手較少. 商用授權費不低.
+
+ 
+ 
+ 
+
+<15. 系統安全 (System Security)
+上一層
+17. 多媒體作業系統 (Multimedia Operating System) >
+
+
+
+
+
+ 
+
+
+
+
+
+
+共同筆記 2.0
+
+HTML5
+Brain Informatics 腦資訊學
+Drupal建置開發管理
+I-Ching Informatics 易經資訊學
+Wearable Computing 穿戴式運算
+Web 攻防技術
+Web基本原理與技術
+Web新興技術
+XML技術與應用
+作業系統01. 作業系統原理簡介
+02. 作業系統結構 (System Structure)
+03. 行程觀念 (Process Concept)
+04. 多執行緒 (Multi-thread)
+05. 行程排班/排程 (Process Scheduling)
+06. 同步 (Synchronization)
+07. 死結 (Deadlock)
+08. 記憶體管理策略 (Memory Management Strategies)
+09. 虛擬記憶體 (Virtual Memory)
+10. 檔案系統 (File System)
+11. 檔案系統實作 (Implementing File Systems)
+12. 大量儲存裝置結構 (Mass-Storage Structure)
+13. 輸入/輸出系統 (I/O Systems)
+14. 系統保護 (System Protection)
+15. 系統安全 (System Security)
+16. 即時作業系統 (Real-time Operating System)
+17. 多媒體作業系統 (Multimedia Operating System)
+18. 分散(佈)式系統
+19. S-14 作業系統案例研討
+20. S-16 雲端與物聯網作業系統案例研討
+
+智齡者心理與雲端科技
+深網(Deep Web)智慧
+混成式 Windows 8 APP (with Javascript)
+無線行動軟體技術
+物聯網(Internet of Things)
+第二人生 (Second Life)
+網路技術
+計算機概論
+遠距醫療健康服務(Telemedicine and Telehealth Services)
+響應式設計(Responsive Web Design) 
+筆記撰寫規格範例
+ 
+ 
+
+使用者登入
+
+
+使用者名稱 *
+
+
+
+密碼 *
+
+
+註冊新帳號
+索取新密碼
+
+
+ 
+ 
+
+線上使用者
+
+There is currently 1 user online. 
+ 
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+© 2017 宅學習 - Social Learning Space. All Rights Reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Design by Zymphonies
+
+ 
+
+
+
+臺南市政府線上即時服務平臺
+
+
+
+
+
+
+
+
+
+服務流程
+
+人民陳情案件查詢
+
+案件處理滿意度
+
+案件反映排行榜
+
+常見問題FAQ
+
+廉政案件
+
+
+首頁
+臺南市政府全球資訊網
+
+
+
+市長信箱
+
+
+
+
+
+
+【如有緊急事件，可撥打24小時臺南市民服務熱線1999(外縣市請撥(06)6326303)】
+
+
+[隱私權保護政策暨資訊安全政策] 
+            [著作權聲明]
+
+
+
+
+
+
+
+
+
+Zuvio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+認識產品
+
+
+
+校園使用者
+業界使用者
+
+
+
+關於我們
+
+客戶服務
+
+登入
+
+
+語言
+
+
+
+簡體中文
+正體中文
+
+
+
+
+
+
+
+
+
+校園使用者
+業界使用者
+
+
+
+
+
+簡體中文
+正體中文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳的即時互動解決方案
+即時回饋、趣味學習、互動現場、雲端系統
+
+
+向下開始滾動
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+課前
+隨時隨地，雲端出題
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+課中
+一鍵播放，快速答題
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+課後
+統計圖表，輕鬆匯出
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+您最佳的互動好夥伴
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+課前
+隨時隨地，雲端出題
+
+
+
+課中
+一鍵播放，快速答題
+
+
+課後
+統計圖表，輕鬆匯出
+
+
+您最佳的互動好夥伴
+
+
+
+
+
+
+目前為止 共有 7025 位老師和 220083 位學員使用 Zuvio 雲端互動系統
+
+
+
+校園使用者
+
+
+
+業界使用者
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+聯絡我們
+電話：(02) 2581-1069信箱：service@zuvio.com.tw地址：104 臺北市中山區松江路200號11樓-2
+
+
+
+
+隱私權政策
+Terms｜Privacy Policy
+
+
+
+
+相關連結
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+聯絡我們
+電話：(02) 2581-1069信箱：service@zuvio.com.tw地址：104 臺北市中山區松江路200號11樓-2
+
+
+
+
+Terms｜Privacy Policy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+聯絡我們
+電話：(02) 2581-1069信箱：service@zuvio.com.tw地址：104 臺北市中山區松江路200號11樓-2
+Terms｜Privacy Policy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+即時反饋系統，讓教室動起來！ – 國立臺灣師範大學教學發展中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 第 70 期電子報文章總覽
+
+ 薪火相傳！臺師大鴻鵠營展翅高翔
+ 2015六藝講會 臺師大教發中心敬邀蒞臨
+ 104(1)教學知能成長講座：來一場教學的午餐約會吧！
+ 統整與轉銜～系（所）總整課程補助介紹
+ 學習可以很不一樣～師徒制學生學習獎勵方案介紹
+ 面對、反思、實踐～學生學習成長系列工作坊
+ 即時反饋系統，讓教室動起來！
+
+
+
+
+
+
+ 各期總覽			
+
+
+
+ 薪新相習			
+
+
+
+ 教學深耕			
+
+
+
+ 教學相長			
+
+
+
+ 共學共享			
+
+
+
+ 數位學習			
+
+
+
+ 杏光大道			
+
+
+
+ 六藝講會			
+
+
+
+ 訂閱/取消電子報			
+
+
+
+
+
+
+ 即時反饋系統，讓教室動起來！	
+
+ 首頁
+教發電子報
+即時反饋系統，讓教室動起來！
+
+
+
+
+即時反饋系統，讓教室動起來！
+
+
+發佈單位： 教學發展中心綜合企劃組						以往傳統的教室課堂中，教師們多以簡報、影片或其它網路資源來豐富課堂內容與教材，但也僅限於單向式的知識傳遞。另一方面，臺灣學生課堂中普遍不善於表達自己的想法與意見。有賴資訊科技的進步，教師能採用各式的工具輔助將課程活動逐漸轉化為雙向的問答式教學，使之能夠立即清楚學生目前的學習狀況，進而調整授課內容與教學進度。
+不斷找尋最佳解的課題
+儘管教學科技仍持續不斷演進，也的確能有效促成教學品質的改善，卻仍舊缺乏一個完美的選項。以即時反饋系統這類工具的演進為例，第一個可能面臨的問題是，教師端的系統可能包含笨重的硬體與冗雜的設定操作。其次，傳統學生端系統也許是一人一支特殊設備的遙控器（俗稱clicker），造成管理上的不便與較低的使用彈性。第三，由於傳統設備構造較為單純，故僅能接收一些簡單的資訊（例如選擇與是非等封閉式問題）。
+隨著近年來智慧型手機與行動網路的普及，鼓勵B.Y.O.D. (Bring Your Own Device) 並結合網路即時反饋系統似乎帶來一個嶄新的平臺與解答。但問題來了，如果學校網路硬體建設不夠完整無法配合，抑或班上有部分同學無法自行攜帶載具，又該怎麼辦呢？
+工具無優劣，適用才重要
+綜合上述，現階段並不存在一個所謂「面面俱到」的工具，換言之每項工具都有其各自適用的狀況與存在的必要；另一方面，坊間新興的即時反饋系統更是玲瑯滿目、不勝枚舉。有鑑於此，本文整理出五款各具特色的即時反饋系統提參考，包括：
+※傳統式課堂表決器
+傳統課堂表決器（俗稱clicker或按按按）是對於硬體的耦合度最強的，進行授課除了必須攜帶厚重的硬體（包括系統、接收器與載具）外，課前課後都必須發放、回收學生端的遙控器，卻是唯一不需要透過網路與行動載具的。
+
+
+
+
+
+
+
+
+
+
+※行動載具APP式即時反饋系統
+　1.Cloud ClassRoom, CCR（http://www.ccr.tw/）
+雲端教室系統（Cloud ClassRoom, CCR）是一套由臺師大科學教育中心所開發的即時反饋系統，除了即時問答與統計功能，CCR 特有的即時策略性分組、自拍打卡、學習歷程記錄、師生角色翻轉等功能，並且可與臉書(Facebook)進行連結。值得一提的是，CCR有一個僅臺師大師生的專屬福利，只要輸入單一認證（LDAP）帳號密碼後即可使用喔！
+
+
+
+
+
+
+
+
+
+
+
+
+
+　2.Zuvio（http://www.zuvio.com.tw/）
+Zuvio是目前臺灣市面上最成熟的即時反饋系統之一，ZUVIO主要特色包含課前備課，即提供投影片外掛功能讓老師設計題目。此外，除了封閉式問答外也支援多元題型、多元統計模式與同儕互評機制等。使教師在上課時學生可透過連網裝置回答問題，老師馬上透過圖表掌握學習狀況。
+　3.Plickers（https://plickers.com/）
+Plickers是一款普遍用於中小學的APP，適用於網路或載具不普及的班級。學生端只需以A4輸出代表選項的圖卡作為載具，經由教師端下載軟體後利用手機掃描即可同步到資料庫中，並即時呈現於電腦畫面。惟受限於紙本輸出的載具，僅能支援選擇與是非等封閉式問答。
+
+
+
+
+
+
+
+
+
+
+　4.Kahoot!（https://getkahoot.com/）
+Kahoot!是一款趣味性很高的即時反饋系統平臺，搭配令人心跳加速的時間倒數與背景音樂，讓回答問題變得跟遊戲一樣。最大的特色是系統會在學生完成問題後立即的提供回饋，包括得分、排名與答對人數等。非常適合為枯燥的課堂活動帶來一些活力，但並不適合用於需要正式計分的課程活動。
+
+
+
+
+
+
+
+
+
+
+
+
+ 回上一頁
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+系統與即時作業系統 | Yahoo奇摩知識+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+   ⌂首頁信箱新聞股市名人娛樂氣象運動App下載購物中心商城拍賣更多⋁知識+汽車機車電影字典遊戲旅遊理財房地產時尚美妝折扣城   Yahoo 奇摩知識+                        👤 登入    ✉ 信箱     ⚙ 服務說明    帳號資料 服務說明 意見回報        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yahoo奇摩知識+ 首頁
+
+
+
+
+
+
+
+
+
+
+
+所有分類
+ 
+健康
+ 
+商業與財經
+ 
+娛樂與音樂
+ 
+家居與園藝
+ 
+家庭與人際關係
+ 
+寵物
+ 
+懷孕與育兒
+ 
+政治與政府
+ 
+教育與參考
+ 
+新聞與活動
+ 
+旅遊
+ 
+汽車與交通
+ 
+消費電子產品
+ 
+環境
+ 
+社會科學
+ 
+社會與文化
+ 
+科學
+ 
+美容與造型
+ 
+藝術與人文
+ 
+遊戲與休閒活動
+ 
+運動
+ 
+電腦與網際網路
+ 
+食品與飲料
+ 
+餐廳與小吃
+ 
+
+
+
+
+
+世界Yahoo 
+
+
+
+
+
+
+
+
+阿根廷
+
+
+
+
+
+澳洲
+
+
+
+
+
+巴西
+
+
+
+
+
+加拿大
+
+
+
+
+
+法國
+
+
+
+
+
+德國
+
+
+
+
+
+印度
+
+
+
+
+
+印尼
+
+
+
+
+
+義大利
+
+
+
+
+
+馬來西亞
+
+
+
+
+
+墨西哥
+
+
+
+
+
+
+
+紐西蘭
+
+
+
+
+
+菲律賓
+
+
+
+
+
+魁北克
+
+
+
+
+
+新加坡
+
+
+
+
+
+香港
+
+
+
+
+
+西班牙
+
+
+
+
+
+泰國
+
+
+
+
+
+英國與愛爾蘭
+
+
+
+
+
+美國
+
+
+
+
+
+越南
+
+
+
+
+
+西班牙文
+
+
+
+
+
+
+
+關於
+
+
+
+
+
+關於 Yahoo奇摩知識+
+社群指南
+排行榜
+點數與等級
+部落格
+如何安全地使用 Yahoo奇摩
+
+ 
+
+
+
+
+
+
+
+
+ 電腦與網際網路
+
+ 軟體
+
+
+ 看另一則問題 
+
+
+
+
+ 
+
+
+            系統與即時作業系統
+        
+
+
+1. 為什麼電腦系統中必須要有作業系統(OS)？
+2. 試說明連線作業系統(On - Line Operation) 系統與即時作業系統(Real - Time Operating System) 之關聯性。
+3. 試說明多程式作業系統(Multiprogramming System) 與分時作業系統(Time - Sharing System) 之關聯性。
+4. 試描述處理單元(Process) 與執行緒(Thread) 之關係。
+5. 試描述處理單元(Process) 之各種可能狀態與其發生之原因為何？
+6. 請描述中斷(Interrupt) 發生時之處理過程。
+7. 何謂處理單元控制區塊(PCB)？
+8....
+ 顯示更多 
+ 1. 為什麼電腦系統中必須要有作業系統(OS)？ 
+2. 試說明連線作業系統(On - Line Operation) 系統與即時作業系統(Real - Time Operating System) 之關聯性。 
+3. 試說明多程式作業系統(Multiprogramming System) 與分時作業系統(Time - Sharing System) 之關聯性。 
+4. 試描述處理單元(Process) 與執行緒(Thread) 之關係。 
+5. 試描述處理單元(Process) 之各種可能狀態與其發生之原因為何？ 
+6. 請描述中斷(Interrupt) 發生時之處理過程。 
+7. 何謂處理單元控制區塊(PCB)？ 
+8. 多元處理作業系統(Multiprocessing System) 是否必為多程式作業系統(Multiprogramming System)？ 
+9. Windows 98 關機後，再重新開機進入 Windows 98 環境時，會發現與關機前之狀態相同，試問此現象涉及到本章中的那些觀念？
+
+更新: 
+給:簡約~優雅~  
+不好意思!有點聽不太懂你的解釋! 
+我只要這9題的答案重點!不用全部寫出來!只要他每一題答案裡的重點! 
+麻煩你可以依依幫我解答嗎?因為這幾題我真的很不懂!又加上考試會考...又沒錢去補習!所以只能在這發問!而考試快到了!所以蠻緊急的!麻煩這位大大!謝謝... 
+能幫我解答一下嗎? 
+我要每一題的答案!不用全部答案都寫出來!只要寫出重點就OK了
+
+更新 2: 
+好像不用到畫表格...只要寫出他的意義就好..和答案
+
+更新 3: 
+請問第8第9題的答案...你知道嗎?
+
+
+
+
+
+ 
+1 個人正在追蹤 
+
+
+ 
+ 5 個解答 
+5
+
+
+檢舉不當使用
+
+
+
+
+
+
+
+
+
+您確定要刪除此解答嗎？
+是
+否
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+抱歉，似乎發生一些問題。
+
+
+
+Trending Now
+
+
+
+
+
+ 
+
+解答
+
+
+評分
+
+
+最新
+最舊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳解答: 
+             第九題的本章，是指哪一章呀？ 
+
+可以說清楚些嗎 
+
+ 2009-03-14 10:26:02 補充： 
+hi~~ 你的題目好多哦~  有的題目看配分，配分多也可以寫超多的耶…  但是我大致上回答一個方向~ 答案不一定正確哦~  
+圖片參考：http://l.yimg.com/f/i/tw/ugc/rte/smiley_9.gif 
+
+
+1. 為什麼電腦系統中必須要有作業系統(OS)？ 
+    ans：此題就是問os為什麼存在，問目的~  約4點。 
+
+2. 試說明連線作業系統(On - Line Operation) 系統與即時作業系統(Real - Time Operating System) 之關聯性。 
+   ans：on-line 不一定為 real-time system，但real-time system一定是on-line。可以舉例。配分多，你還可以兩者進行比較畫表格。 
+
+3. 試說明多程式作業系統(Multiprogramming System) 與分時作業系統(Time - Sharing System) 之關聯性。 
+  ans：multiprogramming 不一定是time-sharing；但time-sharing一定是multiprogramming。配分多，一樣可以畫表格將兩個系統特性拿來比較一番。 
+
+4. 試描述處理單元(Process) 與執行緒(Thread) 之關係。 
+  ans：這題我應該會做表格吧。 
+
+5. 試描述處理單元(Process) 之各種可能狀態與其發生之原因為何？ 
+  ans：狀態轉換圖。畫恐龍那個5個狀態那個。有閒可以畫7個很詳細的那一個。(洪逸版本) 
+
+6. 請描述中斷(Interrupt) 發生時之處理過程。 
+ ans：這題把中斷的圖示畫一畫，並說明處理步驟約13點吧。最保險就是把恐龍的圖畫上去。 
+
+7. 何謂處理單元控制區塊(PCB)？ 
+ ans：定義寫一寫。並把其八個組成寫出來，頂多再對這八個舉例，就可以說是很完整了。 
+
+8. 多元處理作業系統(Multiprocessing System) 是否必為多程式作業系統(Multiprogramming System)？ 
+  ans：是。然後如果配分多，請再詳述為什麼 
+
+9. Windows 98 關機後，再重新開機進入 Windows 98 環境時，會發現與關機前之狀態相同，試問此現象涉及到本章中的那些觀念？  
+ ans：這題我真的就不會耶… 歹勢啦~~ 
+
+
+我覺得有些東西還是要個人努力才會有成果的~~所以只提供答案的方向哦，也許不一定正確 ^^  
+希望有幫到您~ 
+
+ 2009-03-14 15:32:10 補充： 
+第一題我剛剛才幫人解答過，先貼給你 
+
+1.是使用者和硬體溝通介面 
+2.OS提供一個讓user programs易於執行的環境 
+3.OS也是資源(Resource)之協調分配之管理者 
+4.監督Processes之執行過程、防止非法運作所引起之系統重大危害 
+
+ 2009-03-14 15:32:57 補充： 
+第二題： 
+ on-line operation不一定為 real-time system，但real-time operating system一定是on-line operation。 
+
+
+第三題： 多程式作業系統(multiprogramming system)不一定是分時作業系統(time-sharing system)；但分時作業系統(time-sharing system)一定是多程式作業系統(multiprogramming system) 
+
+(第二題跟第三題這樣寫應該就有呈現關聯性了。) 
+
+ 2009-03-14 15:49:13 補充： 
+第四題： 
+
+Process與Thread關係：process內包含多條threads，這些threads彼此共享process內的code section, Data section 及other os resources (e.g. Open files)，當Process內還有available threads可執行時，則整個process不會被blocked。 
+
+ 2009-03-14 16:03:50 補充： 
+其他晚點再補充~  要先來忙囉~  ^^~ 
+
+ 2009-03-15 09:38:35 補充： 
+第五題： 
+
+新產生(new)：該行程正在產生(create)中  
+執行(running)：指令正在執行  
+等待(waiting)：該行程等待某件事件的發生(譬如輸出入完成或接收到一個信號)  
+就緒(ready)：該行程正等待指定一個處理器  
+結束(terminated)：該行程完成執行 
+
+ 2009-03-15 09:43:13 補充： 
+第六題： 
+
+1、OS收到Interrupt後，會先暫停目前執行中的process，會保存它當時執行的狀況 
+2、OS依Interrupt ID，到Interrupt vector查詢，判定何種中斷發生，並取得對應ISR之起始位址 
+3、OS Jump to ISR起始位址執行 
+4、ISR完成後，控制權轉回Kernel 
+5、恢復中斷前之process的執行 
+
+ 2009-03-15 09:47:41 補充： 
+第七題： 
+
+OS為了管理Process，會在kernel space中，針對每一個process準備一個block(or table)，記錄該process之所有相關資訊，稱為PCB。其主要組成有： 
+1、Process ID 
+2、Process state 
+3、Programming counter 
+4、CPU register 
+5、CPU scheduling information 
+6、Memory management information 
+7、Accounting information 
+8、I/O status information 
+
+ 2009-03-15 16:49:21 補充： 
+第八題： 
+
+是。因為單一處理器的系統，允許多個Processes同時執行，已經可以是Multiprogramming system。故多元處理作業系統(Multiprocessing System) 為多個處理器時，必為多程式作業系統(Multiprogramming System) 
+
+ 2009-03-15 16:50:21 補充： 
+第九題： 
+
+這題我非常困惑要怎麼回答你，因為你的題目並不清楚，不曉得所謂的"本章"是哪一章，到底它要你答的是哪一方面的概念？是要回答1~4章的概念(因為看你1~8題都是前四章的)，還是6、7章記憶體管理那邊的概念，不過以下的回答你參考看看： 
+
+ans：重新開機後會跟關機前的狀態一樣，是因為在載入作業系統到主記憶體的過程中(此過程稱為booting)，會把上次關機前OS所儲存到硬碟的設定，再從硬碟載入到主記憶體(main memory)，所以會跟關機前的狀態相同。 
+
+
+
+
+終於結束了..... 
+
+
+
+
+ 參考資料： 
+ 自己和補過習的經驗~,   其他再待補充，答案僅供參考，不一定正確,   其他再待補充，答案僅供參考，不一定正確,   其他再待補充，答案僅供參考，不一定正確,   恐龍課本上的答案，供參考,   答案僅供參考,   答案僅供參考,   答案僅供參考 ，不一定正確哦,   第九題你再自己驗證一下哦~ 
+
+
+星萍
+ · 8 年前 
+
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  發問者的評分
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ●九州  娛樂  網站  http://ts777.cc 
+●●●運彩遊戲、真人遊戲、電子遊戲、對戰遊戲、對戰遊戲●●● 
+
+●新舊會員儲值就送500點 
+
+● 真人百家樂彩金等你拿 
+
+●線上影片直播、正妹圖、討論區免費註冊 
+
+歡迎免費體驗交流試玩! 
+
+●九州  娛樂  網站  http://ts777.cc
+
+
+
+
+
+Deanna
+ · 2 年前 
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 想要賺錢嗎??? 
+
+我覺得比基金.股票.黃金.定存 等等 都還要穩 
+
+利息也算OK的網路投資 一次終身 希望你可以來看看 
+
+http://migre.me/iFiHM   我的部落落~~ 
+
++我臉書~ 詳細可以加我好友 
+
+https://www.facebook.com/profile.php?id=100002198710933 
+
+我有專屬臉書社團 還有很多不需要錢就可以賺到 的事業 也歡迎你歐
+
+
+
+
+
+Gabriel
+ · 2 年前 
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 這有類似的 
+
+▶▶http://qoozoo20140926.pixnet.net/
+
+
+
+
+
+ 匿名使用者 
+ · 3 年前 
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 我提供免費電腦問題諮詢:02-29405818 
+
+我只要是~電腦維修~電腦重灌~電腦問題~修電腦~重灌win7~xp重灌~都是找他們 
+他們到府服務非常方便!!  
+希望能幫到你 
+可以跟他們聯絡看看 
+評價很高...你可以試試看!!^^ 
+
+電話:02-29405818 
+
+或者加LINE~直接線上詢問也可以! 
+
+ID:gmepc168 
+
+希望能幫到你 
+
+Yahoo服務加網址 
+
+http://tw.serviceplus.yahoo.com/booth/seller/Y0193898792
+
+
+
+
+
+ 匿名使用者 
+ · 3 年前 
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+檢舉不當使用
+
+ 我認為此問題違反社群指南 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此問題違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此解答違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此解答違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此意見違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此意見違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+ 
+
+你可能對以下搜尋感興趣：
+
+
+海外代購超輕鬆
+
+暑假趴趴走輕鬆訂房出遊去
+
+解決你的網頁設計問題
+
+日本旅遊讓你天天上網超方便
+
+
+
+
+
+
+
+
+
+
+
+
+發問問題
+通常可在幾分鐘內獲得解答！
+
+
+
+
+
+
+
+展開»
+
+
+
+
+
+
+詳細資料
+
+
+
+詳細資料
+
+
+
+
+
+
+現有問題
+
+
+
+
+更多
+
+
+
+
+
+請多詳述您的問題
+上傳處理中
+
+
+
+
+上傳失敗。 請上傳大於 100x100 像素的檔案
+目前發生問題，請再試一次。
+您只能上傳 PNG、JPG 或 JPEG 等類型的檔案。
+您只能上傳 3GP、3GPP、MP4、MOV、AVI、MPG、MPEG 或 RM 等類型的檔案。
+您只能上傳不超過 5 MB 的相片。
+您只能上傳不超過 600 MB 的影片。
+您只能上傳相片 (png, jpg, jpeg) 或影片 (3gp, 3gpp, mp4, mov, avi, mpg, mpeg, rm)。
+您只能上傳相片或影片。
+影片不應超過 <b>600mb/5 分鐘</b>
+相片不應超過 <b>5mb</b>
+影片不應超過 <b>600mb/5 分鐘</b>相片不應超過 <b>5mb</b>
+  
+
+
+
+
+
+
+
+解答問題
+
+
+為什麼我安裝在手機裡的字體不能用？
+之前還可以，可是現在就不行了
+我是用愛字體下載的?
+
+
+
+ 
+
+CorelDrawX7 常有 突然 沒回應?
+
+
+
+ 
+
+我用威力導演14 不知為何我要增加新的視訊軌道但它都最多只給我四個不讓我再增加更多?
+
+
+
+ 
+
+日本對映像軟件有分級制度嗎？
+
+
+
+ 
+
+
+發燒問題
+
+
+
+
+男人陽虛怎麼辦???
+
+                  4 個解答
+              
+
+ 
+
+電腦看影片為何會斷斷續續的?
+
+                  5 個解答
+              
+
+ 
+
+WELCOME色情視窗關不掉 求解QQ?
+
+                  4 個解答
+              
+
+ 
+更多問題
+
+
+
+
+
+我的電腦一直跳出新視窗?
+
+             4 個解答
+         
+
+ 
+
+電腦桌面東西完全不見 工作管理員也無法開啟 但右鍵可以使用 求好心人幫忙解決?
+
+             4 個解答
+         
+
+ 
+
+20170606
+求line禮品小舖金頭腦送禮達人第2彈解答~~😀😀?
+
+             8 個解答
+         
+
+ 
+
+  
+
+
+
+
+
+
+
+
+服務條款
+
+
+隱私權
+
+
+RSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CloudClassRoom - IRS即時反饋系統
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+功能簡介
+使用範例
+
+影片示範
+使用手冊
+ 
+常見問題
+
+常見問題
+FACEBOOK客服
+
+
+關於我們
+
+研究成果
+開發團隊
+
+
+使用條款
+立即使用
+
+CCR 基本版
+CCR 專業版
+CCR 中港澳
+
+
+Language
+
+中文
+English
+français
+日本語
+العربية
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IRS
+即時反饋系統
+Interactive Response System 是近幾年來改善課堂教學品質最重要的資訊應用設備之一。CCR (CloudClassRoom, CCR ) 為此提供了最佳的解決方案！.
+Read More
+
+
+
+
+
+跨平臺
+不限裝置 隨時用
+支援Windows、OSX、Linux、iOS、Android、BlackBerry 等，不限制地區及環境，不管在室內或室外，只要有網路有裝置，即可立即使用。
+Read More
+
+
+
+
+
+高品質
+易用、快速、穩定
+國立臺灣師範大學「邁向頂尖大學計畫」支援，由科學教育中心團隊全力開發、研究、試驗成果，多次登上國際期刊論文，CCR具有最專業的學術背景涵養，及最佳的使用者經驗。
+Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+功能特色
+
+
+免安裝
+
+
+
+
+不需購買專用設備，不需安裝任何軟體或APP，不需註冊或申請帳號。只要有網路，只要有手機、平板或電腦，只要有興趣，只要有熱忱！就能立即使用IRS即時反饋系統，快速上手體驗最佳的互動教學解決方案，「自由、簡單、完美」。
+
+
+
+
+
+跨平臺
+
+
+
+
+IRS即時反饋系統支援PC、OSX、iOS、Android，系統以HTML5架構撰寫，幾乎支援所有電腦和行動裝置，只要您的裝置能開啟網頁，並且在有網路的環境下，就能立即進入雲端教室，感受IRS即時反饋系統帶來的魅力和趣味。
+
+
+
+
+
+不用錢
+
+
+
+
+本計畫由臺師大「邁向頂尖大學計畫」支援相關經費，IRS即時反饋系統中的軟體、機房設備、頻寬，皆由本團隊自行研發、架設、維護。並且秉著學術自由及推廣教育的理念，我們歡迎所有教師自由取用相關資源，為教育界盡一份心力。
+
+
+
+
+
+
+
+
+
+
+
+
+立即體驗
+
+
+
+IRS即時反饋系統
+基本版
+
+老師能快速出題棒
+新增是非題讚
+新增選擇題帥
+新增問答題酷
+
+立即使用
+
+
+
+
+雲端即時互動系統
+基本版
+
+提供學生分組互動好玩
+快速統計學生答案好用
+不需安裝任何軟體好棒
+有了網路就能使用好快
+
+快來使用
+
+
+
+
+ClickClickClick
+專業版
+
+創建多間教室超方便
+查看學生歷程超實用
+先行建立考卷超簡單
+師生轉換身分超有趣
+
+馬上使用
+
+
+
+
+雲端教室
+專業版
+
+小組討論議題激盪
+複習答題歷程智慧
+勇於表達意見勇氣
+增進師生互動感情
+
+還在等?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+省道即時交通資訊網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+App下載：
+Android
+iOS
+Windows Phone
+
+
+
+線上  
+    					總訪客
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	            	  引用自Google Map僅供參考    
+迴首頁     
+	            
+
+
+
+
+請選擇縣市基隆市臺北市新北市桃園縣
+新竹縣苗慄縣臺中市彰化縣南投縣
+雲林縣嘉義縣臺南市高雄市屏東縣
+宜蘭縣花蓮縣台東縣
+
+	                       
+	                    
+
+
+
+
+
+
+
+
+
+請選擇縣市基隆市臺北市新北市桃園縣
+新竹縣苗慄縣臺中市彰化縣南投縣
+雲林縣嘉義縣臺南市高雄市屏東縣
+宜蘭縣花蓮縣台東縣
+  
+					
+
+
+
+
+
+
+
+規 劃
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+迴首頁  
+
+
+
+
+
+    大 台 北
+    桃  園
+    新  竹
+
+
+
+
+
+    苗  慄
+    台  中
+    彰  化
+    南  投
+    雲  林
+
+
+
+
+
+    嘉  義
+    台  南
+    高  雄
+    屏  東
+
+
+
+
+
+    宜  蘭
+    花  蓮
+    台  東
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+迴首頁  
+
+
+
+
+
+
+
+
+  東北角濱海公路
+  北橫公路
+  烏來
+  新竹風景海岸線
+  竹東北埔遊樂區
+
+
+
+
+
+  中潭公路
+  合歡山公路
+  中部橫貫公路
+  新中橫公路
+  中豐公路
+  尖豐公路
+  名間水裡線
+  環湖公路
+  縱貫線-花園段
+  濱海公路
+
+
+
+
+
+  阿裡山公路
+  南迴公路
+  沿海公路
+  屏鵝公路
+  佛光山
+  茂林國家風景區
+  寶來溫泉
+  雙流國家森林遊樂區
+  墾丁國家公園
+  大鵬灣國家風景區
+  情人碼頭
+
+
+
+
+
+  蘇花公路
+  太魯閣公路
+  礁溪五峰旗瀑布
+  棲蘭森林遊樂區
+  兆豐農場
+  花蓮鯉魚潭
+  濱海公路沿線
+  大禹嶺-合歡山
+  花東縱谷花蓮段
+  小野柳
+  水往上流
+  三仙台
+  八仙洞
+  金崙溫泉
+  知本溫泉
+  池上大坡地
+
+
+
+
+
+  日月潭路段績效
+  阿裡山路段績效
+  墾丁路段績效
+  太魯閣路段績效
+  冬山河路段績效
+  小烏來路段績效
+  溪頭路段績效
+  獅山路段績效
+  縱谷鹿野路段績效
+  黃金福隆路段績效
+  武陵梨山路段績效
+  鹿港大城路段績效
+  鹿港路段績效
+  慈湖路段績效
+  獅山南莊路段績效
+  仙山路段績效
+  北港祈福路段績效
+  向天湖路段績效
+  東部海岸路段績效
+  南莊路段績效
+  礁溪路段績效
+  礁溪蘇澳路段績效
+  鹽鄉濱海路段績效
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+迴首頁  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+迴首頁  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+迴首頁  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+台9線蘇花公路全線隧道;於106/7/18至7/23止 夜間0時至翌日7時 進行隧道照明檢測，請用路人行經此路段小心註意。
+							
+							
+
+台2線122.5k南下 大溪漁港入口 砂石車翻覆 警方已到場 現北上單線雙向, 已通報工務段派員查看處理，請用路人小心留意。
+							
+							
+
+台9線50.3k處，目前開放單線通行。
+							
+							
+
+台62線7/24至25日9時至17時11k~18k東向外側路面整修7/26至28日內側路面整修請用路人小心駕駛。
+							
+							
+
+台9線128.1k南澳路段邊坡保護，自106年7月24日起至7月26日止，每日早上8時至下午6時實施每整點管制放行10分鐘。
+							
+							
+
+台86線西向10.200K~9.100K及7.200K~7.700K,AC路面刨誧外側車道及路肩封閉。
+							
+							
+
+7/24-28 台62線11k-18k，每日9-17時進行東、西向路面反光標記整修工程
+							
+							
+
+7/28-7/30 新北貢寮國際海洋音樂祭活動，請多利用台9線或國道5號往返宜蘭地區
+							
+							
+
+台65線0.6K，自106年7月21日10時至16時，外側車道施工，請用路人小心駕駛
+							
+							
+
+台37線12.25 至 14.378K，106/7/10~7/26 路面整修工程，每日6時至19時請用路人配合指揮改道行駛。
+							
+							
+
+台7甲線42K，自106年7月10日至7月31日止，每日8時至17時，每整點放行10分鐘。(假日不管制)
+							
+							
+
+台74線7.58K東向、8.3K西行，7月10日9時至16日24時，橋梁伸縮縫工程，24小時半半施工，封閉部分車道，建議改道
+							
+							
+
+台1線320K+445~323K+400等4處路面改善工程，施工日期106年7月10日~7月23日採半半施工封閉一車道。
+							
+							(新聞稿連結)
+
+
+26線39.5k至41.5k ，7月8日~10日18時30分至20時30分實施保護陸蟹交管每10分鐘封閉120秒通行管制
+							
+							
+
+台8線30~31K松鶴，施工雙向封閉，106年7月17日至21日8點半至17點，約每15至30分鐘機動放行，請依現場指揮通行
+							
+							
+
+台18線72.3 至 80.3K (福山~十字路)106年6月26日至8月9日邊坡工程,採每次施工管制20分鐘單線放行一次
+							
+							(新聞稿連結)
+
+
+武嶺橋面施工,請用路人小心駕駛
+							
+							
+
+本局新版省道即時交通資訊App-Android版本已上架，iOS版本近期上架
+							
+							
+
+台７線49.8K ( 大曼) 邊坡工程施工6/1-7/31 ８時至１８時整點放行１０分鐘。19時至隔日07時管制道路
+							
+							
+
+台74線(五權西路至朝馬路路段)橡膠伸縮縫，106年4月17日至9月21日辦理伸縮縫更新工程，請用路人提早改道
+							
+							
+
+台20線108K～153K道路管制封閉，禁止除施工外各式車輛進入
+							
+							
+
+台9線460.6K~460.9K進行道路施工，施工日期：106/3/1~106/6/19。請用路人行經該路段時註意安全
+							
+							
+
+ 台8線97.4K 碧綠溪路段 施工實施交通管制，每日上午08：30~18:30每1小時放行10分鐘
+							
+							
+
+台20線153K~175K+600(向陽~利稻)，限3.5噸以下小貨車及9人座以下小客車通行，其他車種禁行。
+							
+							
+
+台29線0~35K(民生~甲仙)，禁止甲類大客車。
+							
+							
+
+台27線10K+400~20K(興龍~葫蘆谷路段)，禁行21噸以上及乙類以上大客車。
+							
+							
+
+台20線89~105K(寶來~桃源)，禁行21噸以上及甲、乙類大客車。
+							
+							
+
+台8線167.5K(文山路段)，即日起至7月31日止，每日上午7時30分至下午17時30分，每逢半點放行10分鐘(假日不管制)
+							
+							
+
+台8線163.7K(文山路段)，即日起至7月31日止，每日上午7時30分至下午17時30分，每逢半點放行10分鐘(假日不管制)
+							
+							
+
+台8線178.5K(燕子口路段)，即日起至7月31日止，每日08時至17時，每逢整點放行10分鐘(假日不管制)
+							
+							
+
+台7線61K~85k(西村至棲蘭)災區路段邊坡及路基受風災重創相形脆弱，限15噸以下車輛通行。
+							
+							
+
+台21線110~145K 神木---塔塔加 施工 下午5:30~隔天早上7:00 全線封閉
+							
+							
+
+  為愛啟程：安全駕駛，從我做起。
+							
+							
+
+
+
+
+
+
+請選擇
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+上班時間：上午08:30至下午05:30     地址：10863臺北市萬華區東園街65號 
+					總機：(02)2307-0123(代表號)   監理及大客車投訴專線：0800-231-035
+					公路總局用路人服務專線：0800-231-035
+
+    	建議使用IE 8、Firefox 4、Chrome 10以上版本瀏覽器，解析度1280x960
+    	更新時間：
+網站維護：資拓宏宇
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

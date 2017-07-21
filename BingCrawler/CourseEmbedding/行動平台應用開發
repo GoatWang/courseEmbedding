@@ -1,0 +1,6324 @@
+
+
+
+
+
+
+
+
+行動應用開發平臺寶典 (一) 跨平臺行動前端技術 – MSDN 台灣部落格
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search MSDN
+
+
+
+Search all blogs
+
+
+
+Search this blog
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+行動應用開發平臺寶典 (一) 跨平臺行動前端技術 
+
+
+
+★★★★★★★★★★★★★★★
+
+
+
+ 
+
+Dora Chen六月 19, 20160 
+
+Share
+
+0
+0
+
+
+
+
+
+
+
+【2016/6/16 號外】雲優先、行動優先 - 微軟在 Gartner 魔力象限的行動應用程式開發平臺 (MADP) 成為領導者! 詳情請見 連結
+
+ 
+微軟行動應用開發願景
+建立適應性強、企業等級的行動 App 策略橫跨您的開發、IT 運行以及生產管理
+
+
+ 
+前言
+行動裝置可謂人類史上最快速的科技爆炸，不僅是 80年代 PC 爆炸成長的 10 倍速度，更是近年社交網路的 3 倍速度成長。根據 Gartner 預估，2016 年底前會有 82% 的行動電話是智慧型手機，比起 2015 年成長了 12 %。現今，人手不只一隻智慧型手機更有一臺平板，身為開發人員您準備好挑戰市場浪潮了嗎?
+
+雖然您可以針對不同平臺各自開發原生的行動 App，例如建置 iOS App 使用 Objective-C/Swift 、Android App 使用 Java 以創造很棒的使用者體驗，但面對多個平臺，開發維護成本是非常可觀的，更別說需要成立多個團隊各自為營的人力與溝通成本。
+
+為了協助控制以及降低成本，跨平臺的技術已漸漸成為顯學。您知道嗎? 預估到 2017 年會有 40% 的行動開發是採用跨平臺技術 的。
+此篇為 行動應用開發平臺寶典 系列文 (一)，為您列舉現在微軟支援的幾種熱門的跨平臺行動應用開發前端技術。
+ 
+混合式 App 使用 HTNL/JavaScript 技術
+如果您是熟悉 HTML 和 JavaScript 的 Web 開發人員，則可使用 Visual Studio Tools for Apache Cordova 以 Windows、Android 和 iOS 裝置為目標。這些應用程式可以全部三個平臺為目標，且您可以使用最熟悉的技巧和程序來建置它們。
+那麼 Cordova 是什麼？ 簡單地說，它是一個架構。該架構包含外掛程式的模型。此外掛程式模型提供單一的 JavaScript API，您可以用來存取所有三個平臺 (iOS、Android 和 Windows) 的原生裝置功能。
+因為這些 API 是跨平臺的，您可以在所有三個平臺之間共用您撰寫的大部分內容。這會降低開發與維護的成本。另外，也不需要從頭開始。如果您已建立其他類型的 Web 應用程式，可以與 Cordova 應用程式共用那些檔案，而不需要以任何方式修改或重新設計。
+
+1. Visual Studio Tools for Apache Cordova (TACO)
+- MSDN 技術手冊: 開始使用 Visual Studio Tools for Apache Cordova
+- TACO 官網:  http://taco.visualstudio.com 
+- 部落格介紹文章: 借力 Apache Cordova，網站工程師也能攻掠行動平臺！
+2. Visual Studio Code + Cordova extension
+- 部落格介紹文章: Visual Studio Code 上也能開發 Apache Cordova 應用程式了!
+
+原生 App 跨平臺技術
+1. 使用 C#、.NET 和 Xamarin 
+Xamarin 是行動應用程式開發平臺，可從通用 C#/.NET 程式碼基底建置原生 iOS、Android 和 Windows 應用程式，以在平臺之間重複使用 75% 到將近 100% 的程式碼。使用 Xamarin 和 C# 撰寫的應用程式可完整存取基礎平臺 API，並且能夠建置原生使用者介面，再編譯為機器碼，因此不會對執行階段效能造成太大的影響。
+更棒的是，熟悉 C#、.NET 和 Visual Studio 的開發人員在使用 Xamarin 開發行動應用程式時，不需要瞭解 Objective-C 或 Java 等機器碼語言，也能享有相同的功能和產能，包括在 Android、iOS 和 Windows 裝置上進行遠端偵錯。因此，許多具有美觀使用者介面的高效能應用程式 (例如 NASCAR、Aviva 和 MixRadio) 意料之中都是使用 Xamarin 所建置。
+
+- MSDN 技術手冊: Xamarin 的行動應用程式開發
+- 影片教學: YouTube 影片 & Channel 9 影片
+- Xamarin 開發人員中心
+2. 使用 Visual Studio C++ 建立共用程式庫與元件
+您可以使用 Visual Studio，針對傳統型 Windows 應用程式、通用 Windows 應用程式、iOS 和 Android 平臺，來建置標準 C++ 程式碼的共用程式庫。您只需使用 Visual C++ 以及整合在 Visual Studio 中的協力廠商工具，就可以建置適用於 Windows 和 Android 平臺的原生應用程式。如果您有 Mac 電腦，便可使用 Visual Studio 針對建立與部署在您 Mac 上的 iOS 應用程式建立及偵錯 C++ 程式碼。
+
+- MSDN 技術手冊: 使用 Visual C++ 建置跨平臺應用程式
+您可以使用 Visual C++ for Cross-Platform Mobile Development 來建立、建置、執行和偵錯使用 C++ 的完整 Android 應用程式。Visual Studio 包含可協助您開始使用的 Android Native Activity 專案範本。
+
+- MSDN 技術手冊: 建立 Android Native Activity 應用程式
+- 官網: Visual C++ 跨平臺行動開發
+3. 使用 Visual Studio Tools for Unity 建立手機遊戲
+Unity是建立跨平臺遊戲的遊戲引擎和開發環境。Unity 引擎可在 21 個平臺上執行，涵蓋範圍從高效能電腦，到遊戲主機、觸控式平板電腦和行動平臺、網站甚至 console。Unity 編輯器提供容易使用的介面，可建置出豐富的遊戲世界。Unity 的功能、使用容易和涵蓋範圍，使其成為現今遊戲開發人員之間的熱門選擇。
+Unity 編輯器適合用來組合您的遊戲世界，但無法在該編輯器中撰寫程式碼。您可運用 Visual Studio Tools for Unity，使用熟悉的 Visual Studio 程式碼編輯、偵錯與提升生產力的功能，用 C# 為 Unity 專案建立編輯器與遊戲指令碼，也可以使用 Visual Studio 的強大偵錯功能，對這些指令碼進行偵錯。
+不僅如此，Visual Studio Tools for Unity 還與 Unity 編輯器緊密整合，因此您可以花較少時間來回切換執行簡單工作，它也提供 Unity 特有的提升產能功能，並將 Unity 文件放在您可以隨時取得的位置。
+
+- MSDN 技術手冊: Visual Studio Tools for Unity
+- 官網: 使用 Visual Studio 組建 Unity 遊戲
+4. 使用 PowerApps 建立客製化企業重要的內部應用程式 (LoB) - Preview
+這項服務的一個主要用例是允許商業用戶在一個基於表單的用戶介面上，通過拖放控制項和數據源的方式開發應用。而專業開發者一樣可以參與這些應用的開發過程，他們可以在 Azure API App 平臺上開發相應的 API，並讓 PowerApps 應用進行調用。一但您和其他使用者分享這個 App，他們可以選擇運行在網頁瀏覽器或者任何裝置(PC、平板或手機) 或者使用 PowerApps for iOS & Android。因此您只需建立一次 App，便可在任何裝置平臺上呈現。
+
+- PowerApps 入門手冊: 開始使用 PowerApps
+- PowerApps 官網
+ 
+參考資源:
+- Visual Studio 中的跨平臺開發
+- Visual Studio 官網
+
+下一章節
+- 行動應用開發平臺寶典 (二) 行動後端服務
+ 
+
+
+若對以上技術及產品有任何問題，很樂意為您服務! 請洽：台灣微軟開發工具服務窗口 – MSDNTW@microsoft.com / 02-3725-3888 #4922
+
+
+
+
+
+
+		Comments (0)	
+
+ 取消回覆 
+名稱 * 
+電子郵件 * 
+個人網站 
+ 
+
+ 
+
+
+
+Skip to main content
+
+
+Follow UsPopular Tagsvisual studio
+azure
+VS2013
+TFS
+asp.net
+.net
+visual studio 2013
+xamarin
+Cloud
+Visual Studio Online
+c#
+VS Online
+case study
+DevOps
+windows 10
+ALM
+Visual Studio 2015
+.net core
+PaaS
+windows
+Archives 2017 年 五月 (2)
+2017 年 四月 (5)
+2017 年 三月 (2)
+2017 年 二月 (1)
+2017 年 一月 (5)
+2016 年 十二月 (2)
+2016 年 十一月 (4)
+All of 2017 (15)
+All of 2016 (104)
+All of 2015 (115)
+All of 2014 (187)
+All of 2013 (34)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+行動應用開發平臺寶典 (三) 行動 DevOps – MSDN 台灣部落格
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search MSDN
+
+
+
+Search all blogs
+
+
+
+Search this blog
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+行動應用開發平臺寶典 (三) 行動 DevOps 
+
+
+
+★★★★★★★★★★★★★★★
+
+
+
+ 
+
+MSDN Taiwan九月 30, 20160 
+
+Share
+
+0
+0
+
+
+
+
+
+
+
+前言
+微軟的 Visual Studio Team Services、Team Foundation Server、Xamarin Test Cloud 與 HockeyApp 提供開發者與 IT 人員一個全方位的環境，讓您的團隊可以管理專案並快速地建置、測試與佈署行動 app 和後端的服務。
+
+由下圖我們可以更清楚地瞭解每一個流程，VSTS 可以用來建置 iOS、Android 與 Windows 裝置的 app，透過 Xamarin Test Cloud 來測試，用 HockeyApp 來佈署到行動裝置，並提供開發者 app 的回饋與即時分析。
+
+行動 app 的開發越來越複雜，有越來越多新的裝置，新版的作業系統，app 必須要能夠適應各種不同的裝置類型與螢幕解析度。為了要在這環境下生存，您的專案必須要在整個開發的生命週期自動化。不只是建置與開發，版本管理與測試用戶也是，還有收集回饋與遙測數據．總結來說 VSTS 擁有以下這些能力：
+
+VSTS/TFS 程式碼管理（Git 或 TFVC），敏捷開發計畫（有支援 Agile、Scrum 與 CMMI），持續整合，發佈管理與其他 agile 團隊的工具。
+VSTS/TFS 包含了第一方與第三方外掛的強大而且不斷增長的生態系統，您可以輕鬆地建構行動 app 持續整合，建置，測試，交付與發佈管理的流程。
+VSTS/TFS 的構建可以直接串聯至 HockeyApp，而它會佈署 app 給您的測試人員。app 安裝到測試人員的裝置後，HockeyApp 會收集使用資料、錯誤報告與用戶回饋並附上螢幕截圖，而當下一個構建可以取得會發出提示。
+HockeyApp 緊縮了 DevOps 的生命週期，透過測試、A/B 實驗、beta 回饋管理與錯誤資料分析。
+Azure App Service 也支援了 DevOps 的後端，讓您可以配置與定義開發的 slot、暫存，而生產從 VSTS 整合並允許您這些 slot 的配置、部署與管理行動服務。
+
+ 
+使用 VSTS/TFS 來管理團隊與專案
+我們列出幾點主要的好處：
+
+彈性的版本控制 您可以選擇使用 Git 來進行分散式的版本控制或使用 TFVC 來進行集中式的版本控制。
+無上限的私人存放庫 不需要限制您開發的專案數量。VSTS/TFS 能提供團隊建立任何專案所需的存放庫。
+現代化的合作流程 分支隔離了開發專案的風險。Pull Request 提供工具，可以使協作更為容易，並可以檢閱要被合併回去有更動的程式碼。
+分支政策 要求所有程式碼的提交都要有程式碼檢閱，與透過閘道組件來消除建置中斷。
+IDE 整合 使用您最喜愛的語言與開發工具。版本控制支援任何語言。
+構建整合 建立與管理構建過程，在雲端自動編譯與測試您的應用程式。根據您的需求或是作為自動化持續整合策略的一部份。
+待處理項目 快速地定義、設定優先權與分解您專案的工作。設定優先權幫助您讓最重要的工作擺在待處理項目的最上頭。
+Scrum 規劃 衝刺（sprint）計畫使用以團隊為基礎的能力規劃、拖拉工作項目作業到您需要它們的地方，並透過燃盡圖來監控整個進程。
+任務版 用一個符合目的的任務版來執行您的衝刺，當工作要開始您可以進行觀看。
+自訂的 query 使用 query 您可以追蹤與組織您的資料來符合每個專案與狀況的需求。建立自訂 query 來查看過舊的工作、阻礙進程的障礙或需要關註的待處理項目。
+
+ 
+使用 VSTS/TFS 、Xamarin Test Cloud 與 HockeyApp 來進行持續整合、開發與發佈管理
+有了 VSTS 與 TFS 支援持續整合，開發人員可以建立並維護一個自動化建置與測試的伺服器在任何行動平臺上面，而不需要自己撰寫幾百行的程式。VSTS 與 TFS 是完全跨平臺並且適用輕量任務框架與一系列前建置的任務（如下圖）與整個全新的擴充 Marketplace。
+
+新的發佈管理功能在 VSTS/TFS 讓您可以建立持續交付，簡化發佈更新到 beta 與公開商店的過程，而提供您需要滿足您組織需求的控制權與可見性。
+以下是主要的好處：
+
+持續整合 提供一個簡化的、以任務為主的體驗來建立 CI 伺服器給原生（Android、iOS 與 Windows）和跨平臺（Xamarin、Cordova 與 React Native）的行動 app，還有 Microsoft 與非 Microsoft（js、Java）為主的伺服器技術。
+持續測試 構建展示整合的測試結果，您可以用 Grunt、Gulp、xctool 與 Gradle 等來執行，而允許當錯誤發生時自動建立工作項目。
+測試雲端 Xamarin Test Cloud 整合構建/測試的流程，或其他像是 Perfecto Mobile、Sauce Labs 與 Keynote 來執行您的整合與作為您持續整合一部份的 UI 自動化測試。
+構建代理程式 使用 VSTS（Windows）與 MacinCloud（OS X）提供的雲端建置機器，或配置一個自己的構建代理程式執行在您自己的設備上，與內部部署的 TFS 整合或雲端的 Team Services。
+持續交付 自動化您的行動 app 部署，不論您是要發佈到 HockeyApp（beta 版）、Google Play 或 App Store（產品）。使用 Azure 部署任務，Chef、Docker等持續部署您行動 app 的伺服器端。
+發佈管理 為您的 app 配置多個環境（QA、暫存、生產），每一個都可以有前質與後置的核准來幫助您確保更新會不小心被發佈。
+Marketplace 最豐富的第一和第三方服務擴充的生態系統，有利於更進一步客製化您的 CI 與 CD 體驗。
+
+ 
+使用 HockeyApp 來管理 beta 版的發佈程序
+有了 HockeyApp 您可以直接交付給測試人員與內部或外部 beta 的客戶裝置。透過網頁或原生行動 app 中的集中式儀表板，測試人員可以取得 beta 版的 app 與所有其他的版本，如下圖所示。
+
+透過行動 app 的通知服務，您可以請求用戶更新到特定的版本，讓您的用戶能保持在最新的版本。
+HockeyApp 提供了非常豐富的管理工具給用戶與裝置。用戶可以用現有的帳號（像是 Google、Facebook、Twitter、Microsoft 與 Azure Active Directory）來登入。您可以新增新的測試人員透過自動徵才與用 URL 連結或 email 來邀請。您也可以控制不同版本的 app 存取權限，根據不同的用戶或者是團隊。HockeyApp 還可以收集用戶裝置的資訊，來幫助管理 iOS 的 UDID 與瞭解裝置測試的涵蓋範圍。
+ 
+使用 HockeyApp 來蒐集操作與行為的分析
+瞭解實際的錯誤情況對於行動應用程式來說是非常重要的。HockeyApp 整合完全開源的 SDK 提供了非常可靠的自動錯誤收集，對於每一個應用程式的錯誤，而這個功能支援大多數主要的行動平臺，包含 iOS、Android、Windows、Xamarin、Cordova、React Native 等等。
+HockeyApp 的儀表板提供了錯誤的摘要與用戶的回饋，包含用戶回傳的訊息與自動螢幕截圖。它會歸納所有平臺上相似的錯誤，如下圖所示。
+
+您可以享受強大的錯誤分析工具帶來的好處，與自動錯誤分群來辨識相同原因所導致的錯誤。您可以利用 HockeyApp Mac app 來檢視錯誤報告與直接導向到錯誤的那行程式碼在您的 IDE 中。HockeyApp 幫助您瞭解每個錯誤在裝置與 OS 的分佈情況，讓您可以進一步瞭解平臺的問題。取得每個錯誤影響的總用戶來更快地分類。
+HockeyApp 讓您可以更瞭解用戶的行為模式，透過自動化的工具與流程，並且可以追蹤任何用戶的動作與視覺化地分析數據，還可以直接透過回饋系統來與用戶聯繫，分享用戶的體驗與螢幕截圖。
+ 
+使用 Azure Mobile Engagement 來洞悉行動顧客的想法與進行行銷活動
+Azure Mobile Engagement 是一個用戶參與的 SaaS 平臺，提供行動 app 使用情況的資料洞悉與即時的用戶區隔。有了 Azure Mobile Engagement，應用程式的發佈者與行銷人員可以更清楚地瞭解 app 的用戶並與他們互動。
+ 
+可即時採取相應動作的分析來最大化投資報酬率
+您可以透過結合大數據資料的收集與即時訊息的處理，根據使用者的行為和人口統計，進而觸發業務開發案例。Azure Mobile Engagement 幾乎能為您解決業務需求的所有疑難雜症。例如，建立自訂儀表板以測量關鍵效能指標（KPI）。快速尋找並修正使用者路徑中的使用量瓶頸。追蹤保留期與忠誠度，並依此判斷哪些行銷活動能創造最大的 ROI。在 Mobile Engagement 中使用 360° 的使用者路徑檢視，可以輕鬆且持續地增強使用者體驗並將其最佳化，進而驅使更高的保留率與更多的 app 使用量。
+
+ 
+加值型推播和通訊平臺
+Mobile Engagement 能夠完美搭配原生推播通知閘道運作，例如 Google GCM、Apple APNS 或 Microsoft WNS。而還可以進一步讓您有能力透過分析用戶行為來區隔用戶群，來建立目標客群的活動。
+透過高效率與非親入性的方式來接觸他們的客戶有利於 app 的開發人員，如下圖所示。
+ 
+開放式 API 和輕鬆整合
+透過容易整合的開放式 API 與 SDK，您可以使用 CRM、CMS 或其他後端系統現有的資料。這讓您可以更深入地改善目標客群的選取及保護您的投資。
+ 
+使用 VSTS、Azure 與 Application Insights 執行後端行動服務的 DevOps
+開發人員與測試人員可以簡單快速地使用 Azure 中的範本來佈建開發與測試環境。下圖說明瞭整個流程。
+
+開發人員可以建立自動化測試在每個階段的部署，並可以定義必要的核准在部署之前與之後。
+有兩個基礎的技術撐起整個 Azure 的架構：
+
+Azure Resource Manager 開發人員可以使用儲存在原始檔控制的 ARM 範本，佈建虛擬機與任何 Azure PaaS 元件，並使用他們已經熟悉的工具來工作。
+Azure Marketplace 範本 提供許多測試的 framework 與服務，讓開發人員可以做功能與效能的測試。顧客也可以利用 VSTS 的負載測試服務，從世界各地的不同的 Azure 資料中心，為您的 app 生成無限制的虛擬使用者。
+
+ 
+使用 Visual Studio Application Insights 來分析後端系統的健康度
+Application Insights 幫助您偵測與診斷效能上的問題與瞭解使用者實際上如何與您的 app 互動，其為開發者設計，讓您可以持續改進您服務與 app 的效能與可用性。
+
+您可以使用它來做到以下的事：
+
+分析使用的行為模式來更暸解您的使用者，並持續改善您的 app。
+計算瀏覽量、新進與迴流的用戶、地理位置、平臺等核心的使用數據。
+追蹤使用路徑來評估每個功能的成功。
+偵測與診斷效能問題，並在大多數用戶看到前修復它們。
+效能改變或發生錯誤時會收到警告。
+探索指標來診斷效能問題，像是回應時間、CPU 使用量與 dependency 追蹤。
+web app 的可用性測試
+從例外狀況的報告與警示中洞悉更多有用的資訊。
+強大的診斷 log 搜尋（包含您最喜歡的 logging framework 的 log 追蹤）。
+
+ 
+
+若對以上技術及產品有任何問題，很樂意為您服務! 請洽：台灣微軟開發工具服務窗口 – MSDNTW@microsoft.com / 02-3725-3888 #4922
+
+
+
+
+
+
+		Comments (0)	
+
+ 取消回覆 
+名稱 * 
+電子郵件 * 
+個人網站 
+ 
+
+ 
+
+
+
+Skip to main content
+
+
+Follow UsPopular Tagsvisual studio
+azure
+VS2013
+TFS
+asp.net
+.net
+visual studio 2013
+xamarin
+Cloud
+Visual Studio Online
+c#
+VS Online
+case study
+DevOps
+windows 10
+ALM
+Visual Studio 2015
+.net core
+PaaS
+windows
+Archives 2017 年 五月 (2)
+2017 年 四月 (5)
+2017 年 三月 (2)
+2017 年 二月 (1)
+2017 年 一月 (5)
+2016 年 十二月 (2)
+2016 年 十一月 (4)
+All of 2017 (15)
+All of 2016 (104)
+All of 2015 (115)
+All of 2014 (187)
+All of 2013 (34)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBM  - 跨平臺行動應用開發解決方案 - 高誠 - Taiwan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+選取一個國家/地區: Taiwan
+
+
+
+
+IBM®
+
+
+網站導覽
+
+
+
+
+搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+跨平臺行動應用開發解決方案
+高誠
+
+
+
+
+
+
+
+
+
+
+商業挑戰
+
+M 化是當前企業資訊應用的主流趨勢，但卻不知從何著手？
+行動應用開發平臺眾多 （iOS, Android, Window Phone 等），技術繁雜如何掌握？
+以現有的程式開發模式開發企業 APP，成本太高且曠日費時？
+多平臺造成多版本，若採用外包，不僅更新維護難上加難、更難即時完成？
+企業現有的應用程式該如何與行動應用整合？
+
+解決方案
+Instant Service 行動化應用模組
+
+行動化的趨勢不但深切地影響著我們的生活，企業IT趨勢也從過去的 Web 化快速邁向 Mobility 行動化。然而行動應用與傳統應用程式截然不同的開發技術、流程與多平臺，不僅造成許多企業 IT 部門的困擾，更導致開發及維護成本劇增，而使企業面臨行動化裹足不前。
+
+高誠 Instant Service 行動化應用模組以 IBM Rational 全方位行動應用敏捷開發平臺為架構，為行動應用開發生命週期的完整平臺，企業藉其敏捷規劃與跨平臺行動網路、全方位、自動化完成跨平臺行動應用開發任務。
+
+
+整合 IBM RAD Mobile Suite 快速開發手機前臺的能力，簡化跨平臺開發的複雜問題。
+Instant Service 提供現成的行動化模組，讓客戶以最少的開發資源達成最高的行動化效益。
+協助客戶將現有應用快速包裝成 web service 的模式，讓行動應用方案更具彈性。
+協助客戶導入使用 IBM Team Concert：一次建置多個平臺的手機應用程式，並將多平臺的程式有效納入管理。
+
+客戶效益
+
+協助企業導入團隊協同開發模式，提供單一行動應用開發管理平臺，並全程支援管控專案進度、版本等流程，確保完成高信賴度的行動應用程式。
+除了能快速整合原有的應用程式，更能大幅減少行動應用程式開發的人力與時程。
+利用可高度客製化的行動應用模組，快速實作所需功能。
+透明化的工作項目管理，簡化資訊取得管道，工作內容一目瞭然，可以降低管理成本，防範於未然。
+全面支援跨平臺及現有的應用管理系統，不需放棄現有的生命週期解決方案，為企業節省龐大開發成本。
+
+軟體產品
+
+IBM Rational Application Development Mobile Suite
+IBM Rational Team Concert
+高誠網路服務 Instant Service 行動應用模組
+
+客戶案例
+協助保健安公司建立行動訊息系統
+
+保健安股份有限公司為專業的醫療管理公司，負責多家醫療機構的營運與管理，其所經營的醫療機構遍佈全台。保健安過去一直以電子郵件為主要的訊息溝通工具，然而分散各地的機構，透過電子郵件溝通有安全性（跨越防火牆）、即時性以及管理上的諸多問題。加上醫護人員流動性的工作型態，使得保健安公司不得不尋求更具機動性、即時性與安全性的解決方案。
+
+高誠協助保健安公司導入行動訊息系統，公司內部人員可直接以行動裝置獲取企業資訊，如部門公告、最新消息、甚至緊急作業通知等。內部人員也可以利用行動訊息系統，進行內部的資訊分享與交換。
+
+行動訊息系統不僅解決訊息溝通的安全性與即時性問題，更大幅減低原有電子郵件伺服器的負荷，節省IT的維護成本。
+
+我有興趣
+
+關於高誠
+高誠網路服務專精於 IBM RAD 程式開發平臺，致力於簡化行動化應用與網路程式開發複雜度的技術研發。高誠研發部門累積十數年的應用程式開發經驗，研發與 IBM RAD 充分整合的輔助開發元件以及立即可用的行動方案，提供企業客戶高效能的應用程式開發平臺與經驗。針對有需要的客戶，高誠也提供行動應用專案開發，以及 RAD 跨平臺開發模式的導入顧問服務。
+
+
+
+
+
+
+我有興趣
+請 Email 給我們 或致電 0800-016-888 按 1
+Priority code: 102JX02E
+請 Email 給我們 或致電 0800-016-888 按 1
+Priority code: 102JX02E
+經銷事業夥伴解決方案集錦
+
+啟動智慧解決方案　企業通往成功捷徑
+
+
+瞭解更多
+
+
+
+
+
+
+
+
+
+
+內容導覽
+
+軟體精選方案
+啟動智慧解決方案　企業通往成功捷徑
+高誠
+我有興趣
+
+
+
+相關連結
+
+軟體產品電子型錄
+成功案例
+軟體產品更新及技術支援
+軟體新聞
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+原則鏈結
+
+
+聯絡我們
+隱私權條款
+使用條款
+
+
+
+
+
+
+
+
+開發者看過來！微軟正式發表Visual Studio 2017，強調跨平臺、行動、雲端｜數位時代About us廣告刊登商店場地租借EN 新聞
+新聞分類最新新聞科技物聯網人工智慧機器人金融科技虛擬實境大數據交通運輸電信通訊資訊安全實驗室裡的科技企業阿裡巴巴Amazon蘋果FacebookGoogleIBM微軟Yahoo商業產業創新策略IPO併購合作創業新創團隊募資創業活動創投創業人物新創管理行銷流量數據廣告創意品牌經營內容行銷社群行銷技能職場未來工作數位工作術產品開發開發者電子商務數位內容新聞媒體遊戲電子書音樂影視人物產品觀點專題PX酷品 活動
+活動未來商務展Meet Taipei社群活動雜誌創業小聚數位行銷學院微軟開發者 開發者看過來！微軟正式發表Visual Studio 2017，強調跨平臺、行動、雲端
+ by
+ 張庭瑜
+2017.03.08分享Visual Studio分享 微軟3月8日正式推出Visual Studio 2017，其中提升了速度、生產力和協作性，希望幫助開發者打造行動、雲端優先的應用程式。
+在Visual Studio發表滿20年之際，微軟於8日正式推出其最新版本：Visual Studio 2017，現已開放下載。「新版本的目標為支援任何開發人員、任何應用程式和任何平臺。」微軟雲端事業負責人Julia White指出，雲端和行動應用開發是Visual Studio 2017的更新重點。有興趣的人也可以收看臺灣微軟資深技術傳教士上官林傑對Visual Studio 2017發表會的解說影片：「支援任何開發人員、任何應用程式和任何平臺。」為了簡化雲端開發流程，Visual Studio 2017可和.NET Core、Azure應用程式和服務、Docker容器等整合。此外，Visual Studio 2017也和行動應用程式開發工具Xamarin整合，透過其進階偵錯與分析工具及單元測試產生功能，幫助開發者可以更快速開發Android、iOS和Windows的應用程式。Visual Studio 2017整合Xamarin的進階偵錯與分析工具及單元測試產生功能，讓開發者更容易開發Android、iOS及Windows原生行動應用程式。Visual Studio另外，新版本也增加開發環境的靈活性，其提供輕量模組化安裝體驗，讓開發者自行選擇要安裝那些元件，加速安裝流程；安裝檔案大小僅為2015版本的1/10，2分鐘內即可安裝完成。且Visual Studio Enterprise 2017內建Redgate開發工具，可讓開發人員更容易將資料庫整合進開發流程。Visual Studio 2017提供模組輕量化的安裝流程。Visual Studio其他重點更新摘錄如下：改善啟動和專案載入速度：啟動速度較2015版本快3倍、解決方案載入時間短2到4倍，且效能更快（特別是C++專案）。加強程式碼巡覽：包含全新的「移至」功能 (Go To)、尋找所有參考（Find All References）（Shift+F12） 等。例如，「尋找所有參考」的搜尋結果過去以單調的清單呈現，2017版本則提供進階的分組、篩選、排序、搜尋參考結果，以及以彩色標示結果。Visual Studio不用開啟專案或解決方案即可載入檔案，支援C#、C++、Ruby、Go等大量語言。新增IntelliSense過濾功能，讓開發者更快找到搜尋目標。Visual Studio加強語言功能：更新C#程式語言重構功能和樣式分析器、支援EditorConfig、加強對C++11和C++14功能的支援、新的TypeScript和JavaScript語言服務。CMake支援：可以直接在Visual Studio 2017中載入CMake專案。Linux支援：將Visual C++ Linux開發擴充套件納入Visual Studio 2017，可開發在Linux環境上執行的C++應用程式。即時單元測試：編輯器上即時以視覺化方式呈現單元測試結果和程式碼涵蓋範圍。Visual Studio新增Git功能：加強共同作業功能，讓版本控制變得更容易。Visual Studio月活躍用戶一年成長25%Visual Studio 2017的價錢和Visual Studio 2015相同，微軟也提供免費的社群版本給個人開發者和小型開發團隊。同時，微軟也發布新的Visual Studio for Mac預覽版。根據微軟統計，Visual Studio月活躍用戶在過去一年內成長25%，且微軟整合開發環境（IDE）的Mac月活躍用戶數，也在半年內倍增。從Visual Studio 2017的發布看來，微軟希望不只是針對Windows開發者、而是希望推出對所有開發者都是旗艦級的開發工具。微軟也強調，Visual Studio不只是單純的IDE，更是微軟「行動優先、雲端至上」政策的一環。資料來源：Microsoft、Visual Studio、ZDNet、GeekWire數字焦點25% Visual Studio月活躍用戶在過去一年內成長25%
+數說新語NextPedia整合開發環境Integrated Development Environment 整合開發環境是一種輔助程式開發人員開發軟體的應用軟體，在開發工具內部就可以輔助編寫原始碼文本、並編譯打包成為可用的程式，有些甚至可以設計圖形介面。
+IDE通常包括程式語言編輯器、自動構建工具、通常還包括除錯器。有些還會包含編譯器、直譯器、版本控制系統、設計圖形用戶界面的工具。
+(來源：
+維基百科 )
+#微軟#程式語言#開發者#visual studio#ide分享熱門文章1 台灣的軟體工程師都跑哪裡去了？
+by 林宜敬2017-07-192 董事會成員只剩CEO！曾獲比爾蓋茲、李嘉誠投資的「植物蛋」新創陷困局
+by 愛範兒 ifanr23 小時前3 BNB Air #9——吳柏蒼X張鐵志：《誰把音樂變免費》一個原本賣不掉的發明，摧毀了整個產業
+by 數位時代19 小時前4 當宮廟遇上科技──PTT最紅求籤「七王爺線上靈籤」的誕生之路
+by 顏理謙2017-07-195 挑戰蘋果、Fitbit失敗，傳Intel已裁撤整個健康穿戴式裝置部門
+by 張庭瑜23 小時前6 連輪胎也要創新！韓泰輪胎再次獲得設計大獎
+by Eva Huang21 小時前追蹤我們
+
+
+
+
+
+
+行動應用開發程式設計師SOHO養成班 - ::資策會 資訊技術訓練中心::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+近期課程關於我們交通資訊學員須知表單下載數位教育研究所
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 列印 
+
+行動應用開發程式設計師SOHO養成班
+
+
+
+
+免費課程說明會
+ 7/25- 14:00 
+我要報名
+
+
+iPhone狂潮席捲全球
+iPhone掀起的智慧型手機熱潮，已讓成千上萬的台灣人加入蘋果的粉絲大家族，其中最讓人著迷的地方在於App Store上的應用程式，目前數量已超過200萬套軟體，下載次數更已破1400億次！擁有一支已在全世界售出10億台的iPhone智慧型手機，即可免費或付費取得這些軟體，手機不再只局限於原廠所提供的功能，反而像是通往另一個世界的大門，每天都有不同的新奇軟體可以使用！
+ 
+工程師也能賺大錢
+創造智慧型手機新世代的兩大功臣為Apple與各地的開發者。Apple提供App Store開放平臺，而全球各地的軟體開發者投入iPhone應用軟體開發的行列，才讓iPhone的世界永遠多彩多姿，新奇無比。而這些iPhone開發者也締造了許多致富傳奇：史丹福的助理教授Ge Wang，因為開發iPhone上的陶笛軟體，不到一個月就有40萬次的下載量，賺進了近台幣八九百萬的收入。Steve Demeter，一位30歲出頭的工程師，利用工作之餘的時間撰寫了一套方塊遊戲軟體，兩個月內賺進約台幣七百五十萬。
+由於Apple提供完善的平臺以及分帳規則，軟體開發者終於可以直接透過撰寫軟體獲利，而無須僅是為特定公司撰寫軟體領取月薪，或是大費周章地將自己的軟體推銷出去。加入智慧型手機應用軟體開發，不僅是個人技術的養成，更有機會成為下一個iPhone致富傳奇的主角。
+ 
+Android開發勢如破竹
+另一波來勢洶洶的是Google Android，透過更開放自由的方式，讓硬體廠商可以將Android搭載於自行研發的手機或是其他硬體，目前也透過Android Market提供全球開發者進行上傳，由於使用Java語言，投入Android應用軟體開發的門檻相較於iPhone低了許多，擴散速度也更加迅速，現已成為智慧型手機應用開發第二大市場。根據AdMob行動廣告商的調查，有超過七成的iPhone開發者也計畫投入Android開發的行列，iPhone上的知名軟體也逐漸在Android市集上出現，成為不可忽視的一大市場。
+ 
+雲端服務結合必為趨勢
+雲端服務已成為資訊領域中的最熱門應用，未來行動應用軟體將從封閉的軟體內容，逐步轉化為雲端服務應用軟體，提供使用者即時的多元化豐富資訊，並能具備高互動之社交功能。未來所有的網站服務，必須能適應於各種平臺上瀏覽，而各式應用程式將扮演好Client端的角色，幫助使用者以最便捷的方式，提供人性化的界面來進行存取。
+ 
+行動開發應用軟體程式設計師養成班，帶領同學一探行動開發的世界，掌握iPhone與Android，並結合雲端服務，成為IT界最夯的程式設計師！  
+ 
+
+課程大綱 │ 課程目標 │ 適合對象 │ 就業方向│常見問題 │ 學長心得 │ 時數與學費 │ 線上報名
+
+
+
+課程大綱
+
+網頁設計基礎與最新網頁技術
+ 動態網頁
+ 網站程式與資料庫
+ 行動應用人機界面
+ iOS應用開發 - 語法基礎
+ iOS應用開發 - 界面設計
+ iOS應用開發 - 內建裝置
+ iOS應用開發 - 網路服務
+ iOS應用開發 - 進階應用
+ Android應用開發 - 語法基礎
+ Android應用開發 - 功能元件
+ 創業經營
+ 專題製作
+
+
+
+課程架構
+
+
+
+詳細內容
+
+● 網頁基礎與最新網頁技術
+
+HTML語法基礎
+CSS語法基礎
+HTML5
+CSS3
+
+● 動態網頁
+
+JavaScript簡介
+資料型態與變數
+運算子與敘述
+函數
+JavaScript物件
+JavaScript的事件處理
+BOM 物件模型
+Dynamic HTML
+
+●網站程式與資料庫
+
+準備工作:下載與安裝MAMP
+開發動態網頁
+PHP程式入門
+流程控制
+陣列
+MySQL資料庫操作與使用
+SQL 命令入門
+
+●行動應用人機界面
+
+人機介面的設計原則
+瞭解使用者
+互動設計程序
+瞭解介面如何影響使用者
+互動模式與概念化
+以使用者為中心的人機互動設計
+
+●iOS應用開發-語法基礎
+
+Swift語法基礎
+          
+Variable
+Operators
+Expression
+Program Flow
+function
+array
+dictionary
+class
+protocol
+closure
+
+
+物件導向概論
+          
+物件導向
+Objective-C
+自定類別
+訊息傳遞
+類別與物件
+Class Objects
+基本常用類別
+記憶體管理
+Objective-C 控制流程
+
+
+Objective-C 語法基礎
+          
+Category 與 延伸
+Protocol & Delegate
+Key-Value Coding & Observing
+NSThread
+Block
+GCD - Grand Central Dispatch
+
+
+
+●iOS應用開發-界面設計
+
+MVC Design Pattern
+Navigation Controller
+Tab bar Controller
+UITableView
+Multi-Tasking
+UIScrollView
+iPad UI - UISplitViewController
+iPad UI - UIPopoverController
+CoreAnimation
+SQLite
+
+●iOS應用開發-內建裝置
+
+震動
+音效播放、音樂撥放、錄音、影片播放
+地圖與定位應用、自訂圖標與文字資訊
+電子羅盤
+接近感應器
+加速感應器
+拍照與錄影
+QRCode
+
+●iOS應用開發-網路服務
+
+UIWebView
+Json
+RSS Reader實作
+網路連線狀態檢查
+XML Parser
+Facebook SDK
+傳輸編碼
+ASIHttpRequest
+
+●iOS應用開發-進階應用
+
+社交應用
+雲端平臺
+BlueTooth
+
+●Android應用開發-語法基礎
+
+程式除錯
+語法基礎：基本資料型態與運算子
+語法基礎：流程控制與遞迴
+語法基礎：方法與多載
+語法基礎：陣列
+語法基礎：物件導向
+語法基礎：常用之元件與方法
+常用資料結構
+
+●Android應用開發-功能元件
+
+Android基本UI設計與使用
+Android SDK安裝與設定
+UI設計和使用
+版面XML配置
+檔案存取：Local與SD卡檔案存取
+檔案存取：設定檔存取
+檔案存取：SQLite資料庫
+內建裝置：感應器
+內建裝置：振動
+內建裝置：多媒體播放
+內建裝置：GPS
+內建裝置：Map
+內建裝置：簡訊收發
+網頁瀏覽、URL
+FTP、下載
+遠端網頁、伺服器資料存取與AJAX
+XML, JSON 應用
+
+●jQuery mobile
+●行銷策略
+
+App 上架前準備
+           
+　定位與區隔
+　功能與可用性
+
+
+App 上架流程與註意事項
+           
+　iPhone App 上架
+
+
+App 定價策略
+           
+　Free or Paid App?
+　with Ads or not?
+
+
+IV.App行銷計畫
+           
+　App Store
+　Social Network
+　Analytics         
+
+
+
+●創業經營
+
+瞭解行動平臺的現況與特徵
+建立App Store市場概念
+初期創業目標及企業使命
+設定小型軟體開發公司架構
+如何做 版本控管
+如何做 crash report
+如何做End user usage profiling
+
+
+
+
+
+課程目標
+
+培養行動應用軟體開發程式設計師，專長於iPhone與Android平臺
+ 培養行動應用雲端服務人才，具備規劃與實作行動應用雲端服務的能力
+ 培養行動網站開發人員，具備行動網站界面設計與功能設計的能力
+
+
+
+適合對象
+
+大專畢業，不限所學科系，只要您有興趣學習並投入行動開發之相關領域
+ 有志培養行動開發第二專長，成為業餘行動開發者
+ 投入行動開發事業，成立個人SOHO工作室者
+ 欲建構行動雲端服務，架構跨平臺應用者
+
+
+
+就業方向
+
+iOS APP設計師
+
+
+
+時數學費
+480小時/原價：144,000元，本班採優惠方案，學員僅需自付90,000 元。
+
+
+上課日期
+週一~週五，日間：09:00-16:30(或17:00)
+
+
+
+
+
+課程洽詢
+承辦人：羅小姐　電話：(02)66316586 E-Mail：
+    地　址：臺北市復興南路一段390號２樓　傳真：(02)66316598
+
+
+
+  詳細內容 / 線上報名 
+
+課程大綱 │ 課程目標 │ 適合對象 │ 就業方向│常見問題 │ 學長心得 │ 時數與學費 │ 線上報名
+ 
+
+
+更多文章...
+
+
+行動應用開發程式設計師SOHO養成班-Q&A
+
+
+佩承：APP技術在手 SOHO創業希望無窮
+
+
+
+123»最後
+
+
+
+
+
+
+學員訪問
+「能夠自己做出自己心裡面想做的遊戲和App是快樂的。通過資策會那幾個月的訓練，真的可以把我從出版界轉換成可以寫程式的開發者..」 …魏巍 
+
+
+
+
+
+軟體市集革命
+隨著智慧型手機的普及，Apple與Google分別於2008年7月與10月開創App Store與Android Market，讓手機上的軟體不在只由開發商提供，更擴大至任何有興趣的第三方軟體開發者。這種軟體商店的興起，讓程式設計者有了更完善的管道進行軟體銷售。
+SOHO養成班
+2011年隆重推出行動應用開發程式設計師SOHO養成班，從前期分析企劃、中期軟體製作以及後期行銷，規劃整體系列課程，期許能為國內培育出優秀行動開發人才。
+
+
+
+
+
+
+
+
+
+
+
+
+
+JavaScript is currently disabled.Please enable it for a better experience of Jumi.
+
+
+
+跨平臺行動應用開發框架特性分析
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於本站
+網站地圖
+臺北科技大學
+English
+
+
+		fontSet Start
+			
+字級:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			fontSet End
+		
+
+
+
+
+
+
+查詢範圍：
+
+
+所有來源
+								
+
+
+博碩士論文
+
+
+國科會計畫
+
+
+期刊論文
+
+
+校史文物
+
+
+校史文獻
+
+
+會議論文
+
+
+
+
+
+進階查詢
+
+
+
+登入
+
+
+Menu
+
+
+論文提交
+
+
+典藏辦法
+
+
+分類瀏覽
+
+
+博碩士論文
+
+
+期刊論文
+
+
+會議論文
+
+
+國科會計畫
+
+
+校史文物
+
+
+校史文獻
+
+
+考古題
+
+
+
+
+
+
+TAB標籤功能，如不執行不影響您資料瀏覽
+
+
+
+
+
+
+
+現在位置首頁
+			> 
+			博碩士論文							
+							
+							> 
+							詳目
+
+
+
+
+
+您目前尚無權限瀏覽數位物件,請洽系統管理員
+
+
+
+
+
+
+
+
+
+論文中文名稱：跨平臺行動應用開發框架特性分析
+														[以論文名稱查詢館藏系統]
+													
+
+
+論文英文名稱：The Study of Cross-Platform Mobile Application Development Frameworks
+														[以論文名稱查詢館藏系統]
+													
+
+
+院校名稱：臺北科技大學
+
+
+學院名稱：電資學院
+
+
+系所名稱：資訊工程系研究所
+
+
+畢業學年度：102
+
+
+出版年度：103
+
+
+中文姓名：楊俊仁
+
+
+英文姓名：Jun-Ren Yang
+
+
+研究生學號：101598011
+
+
+學位類別：碩士
+
+
+語文別：中文
+
+
+口試日期：2014-06-16
+
+
+論文頁數：93
+
+
+指導教授中文名：陳英一
+
+
+口試委員中文名：郭斯彥；陳俊良
+
+
+中文關鍵詞：跨平臺
+																；
+																行動應用開發
+																；
+																PhoneGap
+																；
+																Titanium
+																；
+																Xamarin
+
+
+英文關鍵詞：cross-platform
+																；
+																Mobile Application
+																；
+																PhoneGap
+																；
+																Titanium
+																；
+																Xamarin
+
+
+論文中文摘要：隨著智慧型手機的進步和發展，帶來的行動端使用者規模也與日俱增，使得行動應用程式在新一波的軟體市場中扮演著十分重要的角色。不論公或私部門，在行動平臺上發展行動應用，早已成為必要的投資。對於公部門而言，發展行動應用服務，是為了提高更便民的服務；對於私部門而言，積極拓展行動應用，是為了更廣大的行動商機。在這樣積極拓展行動應用的氛圍裡，在眾多行動平臺的情境下，跨平臺行動應用開發技術顯得更為重要。近年來，各類跨平臺行動開發框架不斷地推陳出新。然而，這些跨平臺行動開發框架的技術特性、開發成本為何？適合哪種應用情境？這些，都是開發者迫切關心的議題。本研究旨在於探討廣為常見之跨平臺行動應用開發框架，於眾多的開發框架中選擇PhoneGap，Titanium，以及Xamarin框進行研究，這三套框架實現跨平臺的原理與技術雖截然不同，但皆為當今熱門開發框架，受到廣開發者青睞與支持。本研究的焦點在各框架的核心技術分析，開發特性與成本分析，以及適用情境分析為主，並設計一個開發案例，以驗證與解析各框架實際運作成效。
+
+
+論文英文摘要：With the progress and development of smart phones, mobile end users is also increasing scale brings, makes mobile application plays an important role in the new wave of software market. Whether public or private sector, in the development of mobile applications on mobile platforms, has become the necessary investments. For the public sector, the development of mobile applications, is more convenient to people; For the private sector, actively expand mobile applications to a wider action opportunities.In recent years, various types of cross-platform mobile development framework for continuous innovation. However, the technical characteristics of these cross-platform mobile development framework, development costs are? Which application scenarios fit? These are the developers urgent care issues.This study aims to explore the wide common cross-platform mobile application development framework, choose PhoneGap, Titanium, and Xamarin framework. The focus of this study was to analyze the core technology of the frameworks, development characteristics and cost analysis, and what kind of the application scenarios fits.  We will design a development case, to verify the effectiveness of the actual operation to these frameworks
+
+
+論文目次：摘要	iABSTRACT	ii誌謝	iv目錄	v表目錄	viii圖目錄	ix第一章 緒論	11.1 研究背景	11.2 研究動機與目的	21.2.1 研究動機	21.2.2 研究目的	21.3 國內外研究現況	31.4 論文架構	5第二章 相關研究與核心技術	62.1 行動應用開發平臺	62.1.1 智慧型手機介紹	62.1.2 Android	72.1.3 iOS	82.1.4 Windows Phone	92.2 PhoneGap相關技術	102.2.1 HTML	102.2.2 HTML5	102.2.3 JavaScript	112.2.4 JSON	122.2.5 CSS	122.2.6 Ionic Mobile UI Framework	132.3 Titanium相關技術	142.3.1 Alloy MVC Framework	142.3.2 Appcelerator Cloud Service	152.3.3 CommonJS	162.4 Xamarin相關技術	182.4.1 Mono Framework	182.4.2 MonoTouch Framework	202.4.3 MonoDroid Framework	22第三章 跨平臺行動開發框架分析	243.1 行動應用開發層次分析	243.2 PhoneGap 特性分析	293.2.1 PhoneGap簡介	293.2.2 PhoneGap核心技術	293.2.3 PhoneGap架構	303.2.4 PhoneGap框架之跨平臺開發成本	313.3 Titanium 特性分析	343.3.1 Titanium簡介	343.3.2 Titanium核心技術	353.3.3 Titanium架構	363.3.4 Titanium框架之跨平臺開發成本	393.4 Xamarin特性分析	403.4.1 Xamarin簡介	403.4.2 Xamarin核心技術	433.4.3 Xamarin架構	443.4.4 Xamarin框架之跨平臺開發成本	46第四章 系統分析與設計	484.1需求分析	484.1.1系統功能	494.1.2使用者案例	504.2跨平臺應用程式開發分析	514.2.1使用PhoneGap框架開發分析	524.2.2使用Titanium框架開發分析	574.2.3使用Xamarin框架開發分析	64第五章 系統建置	685.1軟硬體環境部屬	685.1.1硬體環境部屬	685.1.2軟體環境部屬	695.2 PhoneGap開發環境建置	705.2.1 iOS平臺建置	725.2.2 Android平臺建置	745.3 Titanium環境建置	765.3.1 iOS平臺建置	785.3.2 Android平臺建置	805.4 Xamarin環境建置	825.4.1 iOS平臺建置	845.4.2 Android平臺建置	865.5 建置相關數據與資訊	885.5.1 Android行動應用程式建置數據	885.5.2 iOS行動應用程式建置數據	885.5.3框架綜合比較資訊	89第六章 結論	90參考文獻	92
+
+
+論文參考文獻：1.	Gryaznov, Gennady, and Roman Kovin. "Development of the cross-platform mobile framework for integration with enterprise information systems." Strategic Technology (IFOST), 2012 7th International Forum on. IEEE, 2012.2.	Statista Inc., Global market share held by the leading smartphone operating systems in sales to end users from 1st quarter 2009 to 3th quarter 2013, http://www.statista.com/statistics/266136/global-market-share-held-by-smartphone-operating-systems/3.	Chen-Fan Pan, Development of XML-based Replaceable Mobile Applications, Master, National Taipei University of Technology, Taipei, 2011.4.	Wikipedia, http://en.wikipedia.org/wiki/Android_(operating_system)5.	Hsiang-Wen Chen, The Study of Cross-Platform Mobile Applications Development Using PhoneGap Framework, Master, National Taipei University of Technology, Taiwan, 20126.	Apple, The Cocoa Environment, https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CocoaFundamentals/WhatIsCocoa/WhatIsCocoa.html7.	Wikipedia, Windows Phone, http://en.wikipedia.org/wiki/Windows_Phone8.	 Matthew B. Hoy. Html5: A new standard for the web. Medical Reference Services Quarterly, 30(1):50–55, 2011.9.	Wikipedia, HTML5, http://en.wikipedia.org/wiki/HTML510.	Wikipedia, JavaScript, http://en.wikipedia.org/wiki/JavaScript11.	Guanhua Wang, "Improving Data Transmission in Web Applications via the Translation between XML and JSON," Communications and Mobile Computing (CMC), 2011 Third International Conference on, 2011, pp.182-185.12.	W3C, Cascading style sheets (css) snapshot 2010, http://www.w3.org/TR/CSS/.13.	Driftyco, Ionic Framework, http://ionicframework.com/14.	Google, AngularJS, https://angularjs.org/15.	Appcelerator, Alloy Quick Start, http://docs.appcelerator.com/titanium/3.0/#!/guide/Alloy_Quick_Start16.	Appcelerator, Appcelerator新一代移動互聯網平臺,http://cn.appcelerator.com/17.	Wikipedia, CommonJS, http://en.wikipedia.org/wiki/CommonJS18.	Wikipedia, Mono, http://zh.wikipedia.org/wiki/Mono19.	Xamarin, Mono Framework, http://docs.go-mono.com/index.aspx?link=root%3A%2FMonoTouch-lib20.	Wikipedia, Google Play, http://en.wikipedia.org/wiki/Google_Play21.	Wikipedia , PhoneGap Framework, http://en.wikipedia.org/wiki/PhoneGap22.	MQTT, MQTT, http://mqtt.org/23.	Appcelerator, Titanium Mobile Development Environment, http://www.appcelerator.com/titanium/24.	Appcelerator, Titanium Modules,  http://docs.appcelerator.com/titanium/latest/#!/guide/Titanium_Modules25.	Wikipedia, Xamarin ,http://en.wikipedia.org/wiki/Xamarin26.	Genymotion,The Faster android emulator, http://www.genymotion.com/
+
+
+論文全文使用權限：同意授權於2017-07-24起公開
+
+
+
+
+內容分享：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+延伸閱讀
+
+
+一個跨平臺Web應用程式測試環境供裝方法
+
+
+基於PS4Mobile的跨平臺行動應用程式驗收測試開發方法與...
+														
+
+
+以PhoneGap技術開發跨平臺行動應用之研究
+
+
+基於強健度故事之雲端同步軟體驗收測試：以Dropbox為例
+
+
+以XML為基礎的迭代式行動應用開發
+
+
+跨平臺軟體持續整合樣式之已知案例探討
+
+
+一個支援跨平臺測試之個人建構工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright © 2013國立臺北科技大學，所刊載內容均受著作權法保護
+    10608臺北市忠孝東路三段一號 圖書館　Tel: 886-2-2771-2171#3100　Fax:886-2-2776-2383本系統請使用IE 9.0以上或Google Chrome瀏覽器進行操作，最佳瀏覽解析度為1024x768以上
+
+
+
+
+詮釋資料：32,640筆 
+數典檔案：42,200筆 
+瀏覽人數：7797142人 
+最後更新：2017-07-21 
+
+
+
+
+
+
+
+
+
+行動應用開發                                                                        ,臺北移動學苑,行動行銷應用,行動商務網站-MobiBizs行動商機王
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+功能說明
+使用範例
+行銷應用
+購買方案
+常見問題
+
+
+
+
+
+
+
+我要訂閱電子報
+
+
+
+
+加入我的最愛
+
+
+
+
+
+
+
+
+
+
+會員登入
+
+
+
+
+
+
+
+行動行銷:手機支付、QR CODE、手機版網站行銷應用
+
+行銷應用
+QRCode
+
+■ QR Codes創造全新自由行體驗    
+■ QR創意應用-- 中秋月餅起義                                
+■ 電視廣告運用                                                    
+■ 平面媒體運用                                        
+■ 展場行銷面運用                        
+■ QR CODE 搭配手機廣告應用                            
+■ 展覽活動之QR 行銷應用                                                            
+■ 多元化QR Code行銷                                
+■ 活用QRCode秘笈                                                                                                  
+■ 活用QRCode影片篇                
+■ QR Code讓宣傳行動化                            
+■ QR Code結合行動支付                            
+■ QRCode支付戰                
+■  麥當勞已展開行動行銷        
+■ QRCode一拍即購                                                
+■ QR應用-全員掃Code中            
+■ QR應用-刮刮QRTree                        
+■ 如何追蹤QRCode被掃描率？？                            
+■ QR應用-跟著QR去旅行                                                            
+■ 邊買菜邊掃QRCode看食譜！！                                
+■ QRCode給你更多采多姿的手帳！            
+■ 生死關頭，QRCode可以救你的命！            
+■ Google外掛幫你快速把網頁從電腦搬到手機?                        
+■ QR Music！                                                    
+■ QRCode慶讚中元!                        
+■ QR Code讓你不再迷失於茫茫車海中！        
+
+金流服務
+
+■ 金流應用-PayPal                                                                                                    
+■ 金流應用-藍新科技                        
+■ 金流應用-綠界科技                    
+■ 金流應用-玉山            
+■ 金流合作說明                                 
+
+行動支付
+
+■ 男女手機購物行為差異                                                                
+■ 手機支付/手機網頁購買率增加 7成                            
+■ 行動支付熱潮席捲世界                        
+■ 年輕族群手機購物熱潮        
+■ 行動支付帶動行動商機     
+■ 行動行銷影響力俱增            
+■ 手機購物人數節節攀升                
+■ 行動版網頁的購物體驗                
+■ 把握經濟產業大商機        
+■ 行動支付正式影響業績                                
+■ 行動購物超越電腦購物                    
+■ 行動商務正式起飛                            
+■ 非做行動支付不可的7個理由                    
+
+手機網站
+
+■ 行動族平均上網率                                                                      
+■ 企業用行動網站6理由                
+■ 手機行銷應用3大秘訣                                                                                                                                                      
+■ 啟動行動行銷計畫                                            
+■ 手機網站提升公司效能                           
+■ 手機花費時間倍數成長                
+■ 建立友好手機網站介面                
+■ 大陸手機上網率提升                    
+■ 智慧型手機上網普及                                    
+■ 手機版商品展示更清晰        
+■ 手機網站首頁設計優點        
+■ 智慧手機提昇店內體驗       
+■ 手機版公司頁過目不忘        
+■ 簡訊行銷結合行動網站    
+■ 結合電子郵件行銷好處    
+■ 掌握2014潛力商機            
+■ RWD響應式網站的5大FAQ                
+■ 12個小撇步，讓你的多螢網站更多贏 (下)        
+■ 12個小撇步，讓你的多螢網站更多贏 (上)                        
+
+行動廣告
+
+■ 設置FB廣告投放時段，精準控制你的預算！            
+■ 手機廣告商機無限        
+■ 手機廣告點擊率高電腦 10倍之多
+■ 行動廣告市場成長快速        
+■ Google Adwords 應用        
+■ 你踏入行動市場了嗎?            
+■ 行動廣告成長潛力無限                    
+■ 2014網路廣告趨勢                     
+■ 4招創聖誕佳績                                   
+■ 3步驟優化你的行動廣告                                            
+■ 節日購物者行為解析                   
+■ 行動廣告簡介-Vpon                                                    
+■ 全面搶占行動廣告市場，Facebook也加入戰局！                                                        
+■ google地圖廣告你知道嗎？        
+■ 太神了！Google廣告還可以幫我特製訊息！                     
+■ 善用Google廣告創造飢餓行銷！        
+■ 行動時代，廣告也要更聰明                                
+
+社群行銷
+
+■ 引經據典出口成章，增加社群參與度！                        
+■ FB社交圖表搜尋把大家底細都翻出來啦！        
+■ 你今天+1了嗎                                                                
+■ 行動行銷優於社群媒體                                    
+■ 行動社群時代來了    
+■ 2014社群行銷7趨勢            
+■ 制定社群媒體策略的七要素                                                
+■ 9個利用Google+增加網站流量的小技巧                                
+■ 7招啟動社群行銷計劃                        
+■ Facebook15秒影音廣告，勢力再延伸！        
+■ 5點開啟FB廣告行銷戰！                                                        
+■ Pinterst v.s Instagram:視覺內容行銷            
+■ 四個方法用社群軟體增進顧客關係        
+■ 你應該在Facebook廣告上投放多少預算?                    
+■ 老調重彈？舊文章4招回春！
+■ 做好這10件事，迅速提升你的社群發文感染力！(上)              
+■ 做好這10件事，迅速提升你的社群發文感染力！(下)    
+■ 高效率社群媒體行銷            
+■ 在社群媒體上賣產品，你需要知道這5招             
+■ 預約下一個熱門粉絲專頁！                                            
+■ 12個社群互動的好點子！            
+■ 讓你的FB粉絲專頁連結Instagram！                    
+■ 在地商家，你依「LINE」行銷了嗎？                                    
+■ FB廣告加碼，一次給你五張圖！        
+■ 社群與內容行銷
+■ 七步驟讓你的網站融入社群
+
+行動搜尋
+
+■ 行動關鍵字廣告與SEO                        
+■ 行動搜尋時代降臨                            
+■ 行動搜尋與購買                    
+■ Google將全面支持行動網站！            
+■ 你Hold住Google本地搜尋前3名了嗎？                
+
+行動商機王活動
+
+■ 雲端服務行銷講座                                
+■ APICTA Award        
+■ Mobibizs通過資策會SAAS雲端技術特性驗測！                
+
+多螢商務
+
+■ 擴大你的螢響力                    
+■ 電視變商店            
+■ 多螢商務應用                                                                                    
+■ 多螢時代掌握顧客目光                            
+■ 4個你不能錯過的行動商務方案                                                                                        
+
+行動商務
+
+■ 行動商務崛起                    
+
+行動行銷
+
+■ Email行動化                                            
+■ 行動策略不該另外製訂?                                
+■ SOMOLO行銷，您跟上了嗎？                    
+■ 5個不用不可的行動行銷工具        
+■ 2014第一季台灣行動用戶數據                                                     
+■ iBeacons 在適地化行銷的無限可能！                                
+■ Mobile first 到底重要在哪裡？                                                
+■ 10大2015行銷趨勢預測！                
+
+臺北移動學苑
+
+■ 好品牌的關鍵企劃力
+■ O2O全方位集客救援班                                                                    
+■ 引爆網賺流量實戰班                                                                                                                
+■ 行動應用開發                                                                        
+■ 打造2015吸金企業                                        
+■ 關鍵字與網站分析課程                                    
+■ 智慧生活物聯商機課程                                                                                
+■ APP開發與應用課程                                                        
+■ 電子商務銷售實戰課程                                                
+■ Google分析考照與多螢商務課程                                        
+■ 打造跨境智慧商城課程                            
+■ O2O行動購物商務課程                            
+■ 關鍵字行銷課程                                            
+■ 跨境支付商機與發展課程                                                                        
+■ 多螢行銷與發展策略                                                                                                            
+■ 多螢商務與行銷課程                                                  
+■ 行動搜尋與商務課程                                                                                                                            
+■ 網站分析與行動商務(二)                                                
+■ 網站分析與行動支付                         
+■ 網路行銷入門必修       
+
+Mobibizs小學苑
+
+■ 行動網站實務操作                                    
+■  Google Analytics網站實務分析課程                                                                                        
+■ FB粉絲團基礎入門                                        
+■ EDM經營進階實務課程                                    
+■ Google站長工具操作實務課程                                                            
+■ 網站操作重點要素&高效修圖技巧                                            
+■ 運用行動支付，讓您成為行動收款王                            
+■ SOLOMO行銷入門            
+■ EDM規劃製作實務課程        
+■ 關鍵字廣告基礎課程                
+
+網路行銷
+
+■ 智慧零售新時尚    
+■ 免費又簡單，10大SEO好幫手分享！        
+■ 6大2014網路行銷趨勢重點             
+■ 中外貿企業 跨境電商試水溫            
+■ 如何改善使用者的網站體驗?                    
+■ Gmail收件標籤讓Email行銷陷入恐慌?                    
+■ 突破Email行銷的瓶頸                
+■ 搜尋引擎影響了消費者甚麼？                                            
+■ Google Analytics洞察訪客行為          
+■ 5大超實用電子報行銷解決方案                
+■ 6大指標提升網站的投資報酬率(ROI)                    
+■ 實用網站分析工具分享！                    
+■ 超實用截圖工具大公開        
+■ 隱藏在Call to Action背後的心理學           
+■ 12項提高營銷的心理學研究(上)            
+■ 12項提高營銷的心理學研究(下)                                
+■ 創造吸引使用者的好UI !!!                                                            
+■ 什麼？商品推薦功能這麼有效！    
+■ 行動行銷6大策略，搶攻假期購物潮    
+■ ５大方法用影片輔助SEO！            
+■ 好用性評估究竟要評估什麼？                        
+■ 零售業2015年增加線上銷售的9大秘訣        
+■ 創造緊扣使用者需求層次的到達頁面！                    
+■ 提升你的電子報在手機上的開信率！                                        
+■ 三大2015體驗設計趨勢 !              
+■ 超實用顏色、尺寸查詢外掛工具！    
+■ 7大電子商務要避免的錯誤！                                                
+■ 你的企業網站適合什麼顏色?  (上)                          
+■ 你的企業網站適合什麼顏色? (下)                                                
+■ 6個你該避免的UX錯誤
+■ 開發產品一定不能錯過的UI課!!                                            
+■ 必讀！優化轉換率前需知的三件事！                                       
+■ 想要提升轉換率？你該試試個人化服務！        
+■  出現吧! 密碼!                    
+■ 請用A/B測試說服我！                
+
+內容行銷
+
+■ 病毒行銷的秘密        
+■ 元宵燈謎猜猜！                        
+■ 向天才學創意，達文西構思術！        
+
+影片行銷
+
+■ 如何在你的youtube影片中加入活動宣傳連結？            
+■ 善用YouTube行銷網站                    
+■ 7個吸引人觀看YouTube影片的大絕！                            
+■ 有圖有真相？請用影片說服我！        
+■ Youtube影片新增「資訊卡」，與行動族互動！            
+■ 如何使用Analytic追蹤Youtube成效        
+
+E-mail行銷
+
+■ Email行為行銷，幫你召回變心的用戶們！        
+■ 善用罐頭小功能，在信件中分享更多內容！           
+
+
+Mobibizs全新改版！全功能免費使用！            
+大牆面購物強勢來襲!                                                                            
+要手機網站還是APP?                                                                      
+餐廳用行動網站10理由                                                                                                                            
+婚紗應用篇                                                                                   
+旅遊應用篇                                                                                                            
+婚紗應用(二)                                                                            
+房仲業應用                                                                                    
+網拍業應用篇                                    
+迎春送冬好禮3重送                                                                                    
+迎向智慧聯網新時代：智慧育樂應用交流會(系列二)                
+
+
+
+
+首頁 > 行銷應用 > 臺北移動學苑 > 行動應用開發                                                                        
+
+
+
+ 
+【行動開發，決戰掌中商機】
+
+專案管理導入APP開發，選擇簡便金流服務，做消費者手中的熱門店面。
+ 
+
+到底要選擇行動網站還是APP？我應該要如何開始？開始後要註意什麼？ 
+
+說到行動行銷，不少人第一個想到的都是APP。但APP開發成本高，究竟該怎麼選擇？本課程將針對APP開發的流程、之中可能會遇到的問題做分享，讓你的行銷和服務跟隨著消費者的裝置一起進化。
+
+ 
+
+想做電子商務但擔心金流太麻煩？不會寫程式但又想要有網路收款機？ 
+
+你知道目前臺灣討論的沸沸揚揚的第三方支付究竟是如何交易的嗎？對於商家或消費者，到底有哪些更便利的好處呢？本課程邀請到中國信託講師，分享未來支付趨勢--第三方支付，讓你不論是商家還是小賣家，都可以好好賣，讓消費者好好買。
+
+ 
+
+公司的專案讓你一個頭兩個大？覺得人員很難掌控、計畫永遠趕不上變化？你需要瞭解專案管理的科學和藝術！
+
+不論是開發手機使用的APP、企業的IT系統或是製造業的生產線自動化系統等都是一個專案，如何達成專案的成功目標：如期、如質、如預算？如何『管理』將是關鍵！專案管理的科學是指？專案管理的藝術是指？究竟專案管理要如何落實到公司的營運中，將會是本課程將分享的重點。
+ 
+
+受夠了每次上傳新商品都要填一堆規格？世上最大的電子用品線上目錄，讓你省下更多時間，賣出更多商品。
+
+涵蓋全球30多種常用語言，Icecat在全世界與大量科技品牌合作推出線上開放式產品目錄，幫助製造商、代理商、通路商提高線上銷售的便利性。專業團隊及時生產發佈產品資訊和規格給全球數以萬計的使用者，從上資料到追蹤銷售狀況，更聰明被掌握。
+
+
+講義下載
+
+
+
+
+授課對象：所有網站經營者、行銷人員。
+課程時間： 104年1月27日(二) 14:00-17:10
+地點：臺大育成中心102教室
+地址： 100 臺北市中正區思源街18號
+課程資訊：
+ 
+行動應用開發   14:05-15:05
+
+講師：林廣維 執行長/ 城市轉想資訊
+持續耕耘於行動資訊產業，以打造優質的行動資訊平臺為使命，曾經歷於智慧型手機硬體產業、電信產業、雲端應用產業以及行動資訊產業，有完整而全面的行動軟硬產業經驗，希望可以更進一步促使台灣各界在行動資訊的合作發展。
+  
+- 專案管理=認知管理
+- APP開發與傳統Web開發的差異
+- 為什麼APP這麼貴
+- 平臺案例介紹
+
+- 忍受與享受行動發展的進化
+- 善用管理工具，事半工倍
+
+
+
+瞭解第三方支付，今天就開始擁有收款機   15:10-15:40
+講師：劉豐銘 協理 / 中國信託 
+任職於中國信託商業銀行。20年的銀行經驗，歷練資訊、作業、客服與行銷單位。目前負責商店相關的支付服務與商店融資產品的經營，與新商業模式的發展。。
+ 
+
+- 什麼是第三方支付
+- 第三方支付的交易流程
+- 商家與消費者，有什麼好處？
+- 未來商機與發展趨勢
+ 
+ 
+專案管理的科學與藝術   15:50-16:50
+講師：徐重光 顧問 / 
+具有PMP證照及專案管理碩士學位。擁有21年以上在各大企業的專案實務經驗，並輔導多家企業建置專案管理制度及導入專案管理資訊系統，曾任中油專案經理、IBM資深專案經理等。教學方面也有相當深厚(10年)的資歷，現任行政院勞動部企業人力提升輔導委員、集思專案管理顧問(股)首席顧問/講師，並兼任各大企業專案管理講師。
+
+- 專案的定義？ 
+- 什麼是成功的專案？ 
+- 專案管理的定義 ？
+- 專案管理是科學還是藝術？
+- 如何落實專案管理？
+ 
+
+ 
+ 躍上雲端的Catalog　16:55-17:10
+
+
+講師：Anson / 臺北移動設計
+專案部工程師，參與各項平臺開發專案，包括手機網站、多螢購物網站、多螢形象網站等，致力成為能幫客戶「賣產品、賣服務」的工程師。
+
+
+
+-電子產品商家面臨的困境
+-icecat 究竟是什麼?
+-雲端目錄的優勢
+-製造商、代理商、通路商的潛在商機
+
+
+
+課程講義下載：http://goo.gl/r3kwsE 
+ 
+課程直播
+行動應用開發
+
+ 
+ 
+躍上雲端的Catalog
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MobiBizs行動商機王 http://hicloudmall.mobi/ © 2011 Copyright All Rights Reserved. ‧版權宣告‧隱私權說明‧Google+
+奇寶網路  seo Tel:+886-2-2369-8858 Fax:+886-2-2369-8853  Add:106-臺北市大安區羅斯福路三段301號8F
+
+
+螢幕最佳瀏覽解析度: 1024x768以上，瀏覽器使用建議：Internet Explorer 9 、Google Chrome 或 FireFox  瀏覽器
+IE9以下較舊版本之IE瀏覽器，會有部分功能無法顯示，請升級為最新版本的IE瀏覽器或改用其他瀏覽器，造成您的不便，敬請見諒
+
+
+
+
+網站首頁設計
+公司簡介
+服務項目簡介
+聯絡資訊
+
+
+社群分享
+商品展示
+RSS訊息設定
+服務時間 
+
+
+相簿功能
+影片功能
+分店資訊
+預約單 
+
+
+商品詢價單
+優惠券
+客服留言
+常見問題
+
+
+試用與升級
+會員專區
+聯絡我們
+使用範例
+
+
+行銷應用
+購買方案
+經銷合作
+購物車 
+
+
+手機支付
+行動商務
+行動行銷
+手機行銷
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+以PhoneGap技術開發跨平臺行動應用之研究
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於本站
+網站地圖
+臺北科技大學
+English
+
+
+		fontSet Start
+			
+字級:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			fontSet End
+		
+
+
+
+
+
+
+查詢範圍：
+
+
+所有來源
+								
+
+
+博碩士論文
+
+
+國科會計畫
+
+
+期刊論文
+
+
+校史文物
+
+
+校史文獻
+
+
+會議論文
+
+
+
+
+
+進階查詢
+
+
+
+登入
+
+
+Menu
+
+
+論文提交
+
+
+典藏辦法
+
+
+分類瀏覽
+
+
+博碩士論文
+
+
+期刊論文
+
+
+會議論文
+
+
+國科會計畫
+
+
+校史文物
+
+
+校史文獻
+
+
+考古題
+
+
+
+
+
+
+TAB標籤功能，如不執行不影響您資料瀏覽
+
+
+
+
+
+
+
+現在位置首頁
+			> 
+			博碩士論文							
+							
+							> 
+							詳目
+
+
+
+
+
+您目前尚無權限瀏覽數位物件,請洽系統管理員
+
+
+
+
+
+
+
+
+
+論文中文名稱：以PhoneGap技術開發跨平臺行動應用之研究
+														[以論文名稱查詢館藏系統]
+													
+
+
+論文英文名稱：The Study of Cross-Platform Mobile Applications Development Using PhoneGap Framework
+														[以論文名稱查詢館藏系統]
+													
+
+
+院校名稱：臺北科技大學
+
+
+學院名稱：電資學院
+
+
+系所名稱：資訊工程系研究所
+
+
+畢業學年度：100
+
+
+出版年度：101
+
+
+中文姓名：陳祥文
+
+
+英文姓名：Hsiang-Wen Chen
+
+
+研究生學號：99598004
+
+
+學位類別：碩士
+
+
+語文別：中文
+
+
+口試日期：2012-06-25
+
+
+論文頁數：85
+
+
+指導教授中文名：陳英一
+
+
+指導教授英文名：Ing-Yi Chen
+
+
+口試委員中文名：郭斯彥；黃悅民
+
+
+口試委員英文名：Sy-Yen Kuo；Yueh-Min Huang
+
+
+中文關鍵詞：PhoneGap
+																；
+																跨平臺
+																；
+																行動應用開發
+
+
+英文關鍵詞：PhoneGap
+																；
+																Cross-Platform
+																；
+																Mobile Applications Development
+
+
+論文中文摘要：近年來，行動裝置(Mobile Device)越來越普及，不論是智慧型手機或平板電腦正快速融入我們的生活當中。大量的軟體開發商和一般的開發者投入行動應用程式的市場，所以開發行動裝置上的應用程式變成我們所關心的課題。    本研究主要在於探討行動應用程式開發上的方法，目前常見行動平臺(Mobile Platform)在開發上皆不相同。所以當有一個行動應用需求時，開發者必須開發多套。為瞭解決上述的問題，達到「以最低的成本，開發各平臺的行動應用程式」的目的，本研究利用跨平臺開發方法開發行動應用程式，在開發上使用相同開發語言(HTML、JavaScript)來進行開發，並且使用PhoneGap Framework所提供一致的應用程式界面來開發各平臺上的硬體裝置功能。    由於所開發的跨平臺行動應用程式可能會有效能上的問題，所以本研究將行動應用分成幾大類。整理出哪一種類的行動應用程式適合使用跨平臺開發方法來進行開發，並分析此類行動應用程式的特性。最後才能在適合的應用場域上降低開發上的成本，並加快開發上的速度。
+
+
+論文英文摘要：In recent years, there are more and more mobile devices in our lives, no matter smart phones or tablets. Numerous software developers devoted have themselves to this market, and thus, the development of application programs on mobile devices becomes an important topic in software engineering.     The main purpose for this research is on investigating method of developing application on mobile devices. Since methods of development on different mobile platforms are quite different, when there is a new demand of mobile application, the developers must prepare at least two versions of the apps. To solve this problem, we use the cross-platform program to develop the apps, which uses the same programing language such as HTML and JavaScript as the base language, and application program interfaces from PhoneGap Framework to build up the hardware devices functions on platforms.    Because there may be problems of efficacy on cross-platform programs, we classify the mobile application into several kinds, and find the most suitable kind on developing cross-platform programs; also, analyze the characteristics of this kind of mobile applications. By doing these works, we finally can reduce costs on developing applications to solve the practical problems in our world.
+
+
+論文目次：摘 要	iABSTRACT	ii誌 謝	iii目錄	iv表目錄	vi圖目錄	vii第一章	緒論	11.1 研究背景	11.2 研究動機與目的	21.2.1	研究動機	21.2.2	研究目的	31.3 國內外研究現況	41.3.1	Web technologies	41.3.2	Interpretation	71.3.3	Cross compilation	101.4 論文架構	11第二章	相關研究與核心技術	122.1 智慧型手機介紹	122.1.1 iOS	132.1.2 Android	142.1.3 Windows Phone	152.1.4 BlackBerry	172.1.5 Symbian	172.2 行動應用程式種類	182.2.1 Mobile Applications	182.2.2 Mobile Web Applications	202.3 XML技術	222.3.1 XML介紹	222.3.2 XML特性	232.3.3 XML Schema	242.4 JSON技術	262.5 Web技術	282.5.1 HTML	282.5.2 JavaScript	292.5.3 AJAX	30第三章	系統分析與設計	313.1 需求分析	313.1.1系統功能	323.1.2使用者案例	333.1.3系統分析	343.2 行動應用程式開發分析	353.2.1 iOS平臺開發	373.2.2 Android平臺開發	443.2.3 Windows Phone平臺開發	513.3 跨平臺行動應用程式開發分析	56第四章	系統建置	604.1 軟硬體環境部屬	604.1.1 硬體環境	614.1.2 軟體環境	624.2 PhoneGap開發環境建置	624.2.1 iOS平臺建置PhoneGap	634.2.2 Android平臺建置PhoneGap	664.2.3 Windows Phone平臺建置PhoneGap	704.3系統建置結果	734.3.1 iOS建置結果	734.3.2 Android建置結果	754.3.3 Windows Phone建置結果	774.3.3 PhoneGap建置結果	79第五章	結論與未來展望	815.1結論	815.2未來展望	82參考文獻	83
+
+
+論文參考文獻：參考文獻[1]	Daniel Y. Na, "The What, Why, and How of Mobile Applications," Noblis. Sigma, Inside theDigital Ecosystem, 2011, pp.27-32.[2]	Anar Gasimov, Chuan-Hoo Tan, Chee Wei Phang and Juliana Sutanto, "Visiting Mobile Application Development: What, How and Where," Ninth International Conference on Mobile Business / Ninth Global Mobility Roundtable, 2010, pp.74-81.[3]	Allan Hammershoj, Antonio Sapuppo, and Reza Tadayoni, "Challenges for mobile application development, "International Conference on Intelligence in Next Generation Networks, 2010, pp.1-8.[4]	Siyu Mi, Zhijie Qiu and Lei Luo, "Research on Mobile Web Applications End to End Technology," Computer and Information Technology (CIT), 2010 IEEE 10th International Conference on, 2010, pp.2061-2065.[5]	Liankui Qiu, Panlong He and Lei Luo, "The Strategy of Advancing Mobile Web Application's Layout and Drawing," Computer and Information Technology (CIT), 2010 IEEE 10th International Conference on, 2010, pp.2148-2152.[6]	Giron, J.E., Mendoza, S. and Torres-Huitzil, C., "Mechanism for dynamic deployment of plastic mobile cross-platform user interfaces," Electrical Engineering Computing Science and Automatic Control (CCE), 2011 8th International Conference on, 2011, pp.1-5.[7]	Bin Zhang, Tian-gang Xu, Wei Wang and Xia Jia, "Research and implementation of cross-platform development of mobile widget," Communication Software and Networks (ICCSN), 2011 IEEE 3rd International Conference on, 2011, pp.146-150.[8]	Puder, A. and Yoon, I., "Smartphone Cross-Compilation Framework for Multiplayer Online Games," Mobile, Hybrid, and On-Line Learning, 2010. ELML '10. Second International Conference on, 2010, pp.87-92.[9]	Chen-Fan Pan, Development of XML-based Replaceable Mobile Applications, Master, National Taipei University of Technology, Taipei, 2011.[10]	Wikipedia, Apple Store , http://en.wikipedia.org/wiki/Apple_Store.[11]	Butler, M., I., " Android: Changing the Mobile Landscape," Pervasive Computing, IEEE, 2011, pp.4-7.[12]	Wikipedia, Google Play, http://en.wikipedia.org/wiki/Google_Play[13]	Wikipedia, Windows Phone, http://en.wikipedia.org/wiki/Windows_Phone[14]	Microsoft, Marketplace, http:// www.windowsphone.com/marketplace[15]	Application Categories, "HTML5, Hybrid or Native Mobile App Development", IBM Worklight,2011, http://www.worklight.com/assets/files/HTML5,%20Hybrid%20or%20Native%20Mobile%20App%20Development.pdf[16]	Toshihiko Yamakami, "Mobile Web 2.0: Lessons from Web 2.0 and Past Mobile Internet Development, " International Conference on Multimedia and Ubiquitous Engineering, 2007, pp.886-890.[17]	Wikipedia , JQuery Mobile, http://en.wikipedia.org/wiki/JQuery_Mobile[18]	Wikipedia , JQTouch, http://en.wikipedia.org/wiki/JQTouch[19]	Wikipedia , Sencha Touch, http://en.wikipedia.org/wiki/Sencha_Touch[20]	Zepto.js, Zepto, http://zeptojs.com/[21]	XUI.js, XUI, http://xuijs.com/[22]	Huang-Yu Liang A Cloud Service Based Content Editing System for Mobile Applications, Master, National Taipei University of Technology, Taipei, 2011.[23]	Guanhua Wang, "Improving Data Transmission in Web Applications via the Translation between XML and JSON," Communications and Mobile Computing (CMC), 2011 Third International Conference on, 2011, pp.182-185.[24]	A. Charland and B. Lerous, "Mobile application development: Web vs. native, "Communications of the ACM, vol. 54, no. 5, 2011, pp. 49-53.[25]	Wikipedia , MVC Pattern, http://zh.wikipedia.org/wiki/MVC[26]	iOS Developer, https://developer.apple.com/devcenter/ios/index.action[27]	Android Developer, http://developer.android.com/index.html[28]	Windows Phone developer, http://msdn.microsoft.com/en-us/library/ff402535(v=vs.92)[29]	Adam M. Christ, "Bridging the mobile app gap," Noblis. Sigma, Inside theDigital Ecosystem, 2011, pp.27–32.[30]	Richard Padley, "Html5 - bridging the mobile platform gap: mobile technologies in scholarly communication," The Journal for the Serials Community, 2011, pp.32–39.[31]	Wikipedia , PhoneGap Framework, http://en.wikipedia.org/wiki/PhoneGap
+
+
+論文全文使用權限：同意授權於2017-07-23起公開
+
+
+
+
+內容分享：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+延伸閱讀
+
+
+一個跨平臺Web應用程式測試環境供裝方法
+
+
+基於PS4Mobile的跨平臺行動應用程式驗收測試開發方法與...
+														
+
+
+基於強健度故事之雲端同步軟體驗收測試：以Dropbox為例
+
+
+以XML為基礎的迭代式行動應用開發
+
+
+跨平臺軟體持續整合樣式之已知案例探討
+
+
+一個支援跨平臺測試之個人建構工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright © 2013國立臺北科技大學，所刊載內容均受著作權法保護
+    10608臺北市忠孝東路三段一號 圖書館　Tel: 886-2-2771-2171#3100　Fax:886-2-2776-2383本系統請使用IE 9.0以上或Google Chrome瀏覽器進行操作，最佳瀏覽解析度為1024x768以上
+
+
+
+
+詮釋資料：32,640筆 
+數典檔案：42,200筆 
+瀏覽人數：7797144人 
+最後更新：2017-07-21 
+
+
+
+
+
+
+
+
+
+以MVC設計樣式開發跨平臺行動應用之研究__臺灣博碩士論文知識加值系統
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資料載入處理中...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+網站導覽|
+首頁|
+關於本站|
+聯絡我們|
+國圖首頁|
+常見問題|
+操作說明
+
+
+
+English
+|FB 專頁
+|Mobile
+
+
+
+
+
+
+免費會員
+登入|
+註冊
+
+
+
+
+
+
+
+
+
+切換版麵粉紅色
+
+
+切換版面綠色
+
+
+切換版面橘色
+
+
+切換版面淡藍色
+
+
+切換版面黃色
+
+
+切換版面藍色
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(104.199.203.235) 您好！臺灣時間：2017/07/21 12:15          離開系統
+
+
+字體大小：
+
+
+ 
+
+ 
+
+ 
+字級大小SCRIPT，如您的瀏覽器不支援，IE6請利用鍵盤按住ALT鍵 + V → X → (G)最大(L)較大(M)中(S)較小(A)小，來選擇適合您的文字大小，如為IE7或Firefoxy瀏覽器則可利用鍵盤 Ctrl + (+)放大 (-)縮小來改變字型大小。
+
+字體大小變更功能，需開啟瀏覽器的JAVASCRIPT功能
+
+
+
+
+
+
+
+
+
+
+
+
+詳目顯示:::
+
+
+
+
+
+
+
+
+
+
+ 第 1 筆 /
+      共 1 筆   
+
+
+
+
+
+
+
+
+
+ 
+/1頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+論文基本資料
+摘要
+外文摘要
+目次
+參考文獻
+電子全文
+紙本論文
+QR Code
+
+
+
+本論文永久網址:      Twitter研究生:張婷雅研究生(外文):Ting-Ya Chang論文名稱:以MVC設計樣式開發跨平臺行動應用之研究論文名稱(外文):The Study of Cross-Platform Mobile Application Developments Using MVC Design Pattern指導教授:陳英一學位類別:碩士校院名稱:國立臺北科技大學系所名稱:資訊工程系研究所學門:工程學門學類:電資工程學類論文出版年:2014畢業學年度:102語文別:中文論文頁數:71中文關鍵詞:MVC、AngularJS、行動應用、跨平臺外文關鍵詞:MVC、AngularJS、mobile application、cross-platform相關次數:
+
+被引用:4點閱:453評分:下載:5書目收藏:0
+
+
+
+隨著行動裝置不斷演進，在行動裝置應用也越來越多元，開發行動應用需要考量不同行動平臺，每個行動裝置之平臺不同，開發行動應用使用的技術也不同，例如，iOS之Objective-C、Android之Java。為解決多平臺開發之問題，出現了跨平臺開發方法，使用HTML、JavaScript進行開發。本研究主要在於探討行動跨平臺開發方法。開發行動應用過程中，最常遭遇到需求變更，往往會造成程式重新撰寫。為瞭解決程式不斷重新撰寫問題，達到程式重複使用，以及畫面與控制邏輯乾淨切割之目的，本研究利用MVC樣式開發行動應用程式，使用AngularJS所提供應用程式界面來輔助開發，並且使用跨平臺工具PhoneGap來開發各平臺控制硬體裝置之功能。本研究將分析使用JavaScript MVC框架與沒使用JavaScript MVC框架之差異，並整理出適合之應用場域，以分析此類行動應用程式的特性，以加快開發速度。
+
+As mobile devices continue to evolve, mobile applications developers need to consider different mobile platforms that the different platforms of mobile devices are developed using different technology, for example, iOS devices using Objective-C language, Android devices using Java language. The cross-platform mobile development that using HTML, JavaScript, and CSS technologies can solve the problem of multi-platform.This paper focuses on how to use the MVC design pattern to develop cross-platform mobile applications. Comparing two different UI frameworks, jQuery Mobile with jQuery and Ionic with AngularJS, found using Ionic with AngularJS better than jQuery Mobile with jQuery.This study found that the use of Ionic with AngularJS implementation results of cross-platform mobile applications: to reduce the amount of coding, programming high reusability and easy maintenance.
+
+中文摘要  i英文摘要  ii誌 謝  iii目 錄  iv表目錄  vi圖目錄  vii第一章　緒論  11.1  研究背景  11.2  研究動機與目的  21.3  國內外研究現況  31.4  論文架構  4第二章　相關研究與核心技術  52.1  行動應用程式  52.1.1  行動應用程式  52.1.2  行動網頁應用程式  62.2  軟體設計樣式  82.2.1  MVC[4]  82.2.2  MVVM[5]  102.3  程式設計樣式[6]  112.3.1  Singleton樣式  112.3.2  Factory樣式  132.3.3  Observer樣式[8]  142.3.4  Strategy樣式  152.3.5  Composite樣式  152.4  JSON技術[9]  162.5  Web技術  182.5.1  HTML  182.5.2  CSS  212.5.3  JavaScript[12]  232.5.4  AJAX[13]  24第三章　系統分析與設計  253.1  需求分析  253.1.1  系統功能  263.1.2  使用者案例  273.1.3  系統功能分析  273.2  跨平臺行動應用程式開發分析  283.2.1  架構設計  293.2.2  系統設計  303.2.3  系統開發工具介紹  323.2.3.1  jQuery Mobile + jQuery [15]  333.2.3.2  Ionic + AngularJS  38第四章　系統建置  464.1  系統軟硬體部署  464.1.1  硬體環境  464.1.2  軟體環境  474.2  跨平臺開發環境建置  474.2.1  建立PhoneGap 專案  484.2.2  Android平臺建置  504.2.3  iOS平臺建置  524.3  系統建置方法  534.3.1  jQuery Mobile搭配jQuery  534.3.2  Ionic搭配AngularJS  584.4  系統建置結果  614.4.1  jQuery Mobile搭配jQuery建置結果  614.4.2  Ionic搭配AngularJS建置結果  64第五章　結論與未來展望  675.1  結論  675.2  未來展望  69參考文獻  70
+
+1.Zhang, Xiaobo, and Ralph Deters. "MVC apps in the personal cloud." Cloud Computing and Communications (LATINCLOUD), 2012 IEEE Latin America Conference on. IEEE, 2012, pp.7-12.2.Wikipedia, Mobile browser, http://en.wikipedia.org/wiki/Mobile_browser3.Wikipedia, SPA, http://en.wikipedia.org/wiki/Single-page_application4.demo、陳傳興(Bruce)、星寂、阿源哥哥、黃偉榮(Wade)、陳仕傑，ASP.NET MVC4網站開發美學，出版地：碁峰，2013。5.Vice, Ryan. MVVM Survival Guide for Enterprise Architectures in Silverlight and WPF. Packt Publishing Ltd, 2012.6.Gamma, Erich, et al. Design patterns: elements of reusable object-oriented software. Pearson Education, 1994.7.Gossip, Design Pattern: Singleton 模式, http://openhome.cc/Gossip/DesignPattern/SingletonPattern.htm.8.Schmidt, Douglas C., et al. Pattern-Oriented Software Architecture, Patterns for Concurrent and Networked Objects. Vol. 4. John Wiley & Sons, 2013.9.ECMA, Standard ECMA-262 3rd Edition, December 1999.10.ECMA, JSON, http://www.json.org/11.陳聖博，互動式網站前臺開發武功秘笈: 使用HTML5、CSS3 和 jQuery，出版社：佳魁資訊，2013。12.黃銘偉譯，JavaScript大全(第六版)，出版社：歐萊禮，2012。13.Wikipedia, AJAX, http://zh.wikipedia.org/wiki/AJAX.14.Google, 搜尋趨勢, https://www.google.com.tw/trends.15.黃銘偉譯，jQuery Mobile建置與執行，出版社：歐萊禮，2012。16.Wikipedia, jQuery, http://zh.wikipedia.org/wiki/JQuery17.Brad Green(布拉德．格林)、Shyam Seshadri(希亞姆．夏德瑞)，用AngularJS開發下一代Web應用，出版社：電子工業出版社，2014。18.Drifty, Ionic, http://ionicframework.com/
+
+
+ 電子全文
+
+
+ 國圖紙本論文
+
+
+
+
+
+
+
+
+推文當script無法執行時可按︰推文
+網路書籤當script無法執行時可按︰網路書籤
+推薦當script無法執行時可按︰推薦
+評分當script無法執行時可按︰評分
+引用網址當script無法執行時可按︰引用網址
+轉寄當script無法執行時可按︰轉寄
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+相關論文
+相關期刊
+熱門點閱論文
+
+
+
+
+
+
+
+
+
+1.
+網際網路暨行動APP之智慧型插座控制
+
+
+2.
+以前端瀏覽器為中心之雲端運算服務模型研究
+
+
+3.
+針對影像監控系統的跨平臺彈性架構設計
+
+
+4.
+跨平臺行動應用之商業模組開發-以Cocos2d-X為例
+
+
+5.
+探討物理引擎融入跨平臺遊戲之應用
+
+
+6.
+跨平臺行動應用開發框架特性分析
+
+
+7.
+行動裝置應用程式開發MDA轉換方法論之研究
+
+
+8.
+個人資料管理:手機個人雲應用程式架構
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+無相關期刊
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+1.
+基於 MVC 設計模式之中小型網站開發與設計實例
+
+
+2.
+基於MVC架構與抽象化資料庫映射方法的輕量級Web開發框架之設計與實作
+
+
+3.
+跨平臺行動應用開發框架特性分析
+
+
+4.
+以事件驅動 MVC 模型為基礎建置具標準模組介面之網頁系統架構
+
+
+5.
+基於MVC架構之雲端平臺設計
+
+
+6.
+基於雲端平臺技術之線上測驗系統開發研究
+
+
+7.
+以科技接受模式與創新擴散理論探討企業導入以MVC進行軟體開發之影響因素研究
+
+
+8.
+以訊息佇列技術設計高效率行動應用訊息推播系統
+
+
+9.
+基於MVC架構之模糊類神經網路雲端運算
+
+
+10.
+使用SBC軟體架構整合MVC模式之研究
+
+
+11.
+基於Struts框架之高效率Web應用開發平臺設計
+
+
+12.
+跨平臺影音分享智財行動學習系統
+
+
+13.
+以CMS平臺建構可擴充性內容網站之研究
+
+
+14.
+使用HTML5開發跨平臺應用
+
+
+15.
+一個以MVC與PAC為基礎的Web互動式應用程式設計架構
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+簡易查詢 |
+進階查詢 |
+論文瀏覽 |
+熱門排行 |
+我的研究室
+
+
+
+
+
+
+
+
+
+
+本系統(Web1)共收集：論文已授權全文：404904 筆、書目與摘要：1017950 筆目前上線人數：7006 ／ 訪客人次（自99年6月）：269494410 ／ 檢索次數（自99年6月）：2521137431 ／ 指導單位： 教育部國家圖書館著作權聲明 Copyright © 2010 All rights reserved.本館地址：100 臺北市中山南路20號 總機：(02)23619132本網站最佳瀏覽解析度為 1280 x 768
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+        
+	Mobile_Management
+
+        GIS.FCU｜逢甲大學地理資訊系統研究中心
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最新消息
+電子報專區
+聯絡我們 
+English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        提供市場主流行動平臺各項解決方案
+
+
+
+
+服務說明
+技術細節
+專案實績
+
+
+
+
+
+
+技術簡介
+
+                            隨著智慧型手機不斷推陳出新，及其全球銷售額及市佔率不斷攀升的情況下，行動應用程式(APP)儼然是目前市面上最夯、最受歡迎的產品，不論公私部門皆競相開發出各式各樣的服務應用程式。本中心除了在行動應用程式致力於更直覺式的使用者介面與操作流暢度設計外，更本著對於空間資訊的研究，於近年不斷開發出於行動平臺上應用的行動圖台，以及運用手機內建工具發展各種創新應用技術(如利用電子羅盤、陀螺儀及相機鏡頭發展擴增實境輔助展示)，並且持續密切關註各家主流行動作業系統(包括iOS、Android、Windows Phone等)的發展，不斷推出適合於各種平臺、各種版本之行動圖台應用程式，也因應客戶使用情境之不同與作業需求(例如作業環境具備網路服務或不在網路服務範圍內)，規劃並建議最佳設計方案提供客戶評估採用。
+                        
+
+應用領域
+行動平臺應用領域相當多元，包括主管決策輔助、業務管理、資源調查、現地勘查、生活資訊、便民服務等，本中心目前擁有iOS、Android以及Windows Phone各項解決方案，除一般APP開發，整合行動平臺技術提供決策者隨時隨地查詢最新計畫摘要報告、執行進度分析等，亦可提供現地勘查人員記錄/回報/查詢等各式輔助管理作業，並同步更新異動資訊，以達最新資訊一手掌握之效，此外，更獨家研發離線版圖台，可依需求載入主題圖層(如地籍圖、航照    影像圖等)讓使用者在無網路服務環境下亦可悠遊於地圖的世界中，隨時掌握各項空間訊息。
+
+
+應用效益
+
+                            提供I2C之應用效益，達到隨時隨地、同步資訊、統一決策管理之功效。
+                        
+
+Immediate
+                                結合現場作業即時資料，提供給遠端管理系統即時同步最新資料，使各單位作業流程能大幅提昇，達到無縫式管理之功效。且具備獨家空間資訊解決方案，解決在無網路服務環境下無法瀏覽地圖的困擾，確保各種情況下皆能達到瀏覽地圖之目的。
+                            
+Integrate
+                                整併各種行動裝置開發技術，並提供各種相關元件支援開發。擁有不同平臺的解決方案，可依據需求為您量身打造專屬的行動APP。 
+Convenience
+                                不論是智慧型手機或是平板電腦，皆可無時無刻、隨時隨地得到最新資料，滿足各單位在任何情況下皆能方便管理決策之需求 
+
+聯絡窗口
+電話：04-24516669#601 | 聯絡人：王小姐 
+
+
+
+行動平臺主要透過五種相關元件，來針對各種不同之需求，達到客製化之效果。分別為Map控制、影像控制、UI控制、遠端資料更新、資料庫存取。經由這五種元件建置之行動系統，可以與遠端管理系統進行無縫式M化管理，降低資源的浪費與增加工作處理的效率。
+
+
+
+Map控制
+                                提供採用MBTile格式的離線地圖，在網路無法連線之情況下，仍可進行地圖瀏覽。並提供點、線、面之繪製，方便使用者對地圖進行標記。同時也提供了基本測量的功能以及圖層套疊、下載之相關功能。該模組可以滿足大多數的GIS應用需求，並能提供更好的地圖操作體驗。
+                                
+離線地圖瀏覽與地籍圖套疊
+                            
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+影像控制提供照相與攝影功能之進階控制，可以結合現地查報系統，進行影像之拍攝並即時進行圖片編輯。將靜態圖像賦予有用之資訊，才能達到整合利用之功效。另外還特別提供了擴增實境模組（AR），是一種計算攝影機影像的位置及角度並加上相關圖像處理的技術，這種技術的目標是在螢幕上把虛擬世界套在現實世界並進行互動。此模組可以提供使用者特過攝影鏡頭，來得知現地周遭相關點位資訊，可將一成不變的靜態資料，轉變成動態圖像資訊。可以利用在各種地標顯示的情境。
+                            
+擴增實境應用在工程填報（左）與緊急應變系統（右）
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UI控制有別於基本UI的顯示，該模組可以提供更加絢麗之UI介面、特效。例如轉盤式的選單、書本翻頁的特效、頁面切換特效等等。目的在於提供給使用者更好的行動系統體驗。
+                            
+各式特效與UI介面建置
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+遠端資料更新透過存取遠端Server的資料，讓行動裝置與遠端資料庫能達到同步之功能。該模組可使行動裝置與資料庫伺服器能夠進行資料交流。透過XML與JSON兩種資料格式當做傳輸媒介，提供七種主要之同步功能。包含了身分驗證、檔案上下載、SQL指令執行...等。可讓行動裝置與遠端系統快速達到同步之功效。
+                            
+資料上下傳同步
+                            
+
+
+
+
+
+
+資料庫存取目前行動裝置上所搭載的資料庫，皆以SQLite資料庫為主，不僅無法相容於微軟的資料庫且結構及存取指令也截然不同，該模組提供快速操作SQLITE之方法。
+                            
+SQLITE存取應用在MIS系統  
+                            
+
+
+
+
+
+
+
+合作客戶：行政院研考會/水利署/原民會/林務局/水保局/核研所…等
+專案實績：技術整合/行動管理
+
+
+
+地方發展知識庫行動版系統
+配合政府首長行動查詢需求，建置以開放式架構Android系統之地方發展知識庫，利用Android系統平板電腦，決策者可隨時掌握地方發展動態，省去須經常電話聯繫與時間確認之困擾，提供決策者”any time、anywhere”都能迅速做出正確且全面的決策。
+                                
+
+水質水量保護區現勘輔助行動系統
+現地勘查作業常因登記地點不明確，以及圖紙資料提供之資訊有限等限制，造成現地作業困難，本計畫建立行動化勘查系統，提供現勘人員現地勘查時輔助判斷及查詢相關資訊之用，並可協助計畫查核與疑義案件之現場調查工作；另外，並設計提供主管機關保育回饋重要統計資訊，以協助主管進行決策分析之參考依據。
+                                
+
+
+
+保留地行動化系統
+保留地查詢程式專為行動化應用開發而成，提供使用者透過可攜式裝置，於野外進行保留地勘查確認時應用本系統以輔助相關業務之用，配合定位功能及無線3G網路可隨時隨地搭配Google Map圖資服務，充分發揮行動化的優勢特色。
+                                
+
+行動式核子事故緊急應變資訊紀錄系統
+為提供輻射、核子事故緊急應變人員可即時與方便進行演訓、應變作業，本計畫針對輻射偵測開發行動化資訊系統，提供現地作業第一手資訊，落實輻射防護作業執行的最大效益。
+                                
+
+水庫集水區行動版管理系統
+「水庫集水區行動版管理系統」為利用GPS通訊與GIS圖資，以iOS行動技術提供現場工程勘查人員所需的空間資訊，用以落實水庫集水區即時監控、管理效率化之目標。
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Previous
+
+
+
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+隱私權及資訊安全政策聲明
+
+
+                        臺中市西屯區文華路100號 TEL:04-24516669 
+          Copyright © 逢甲大學地理資訊系統研究中心 GIS RESEARCH CENTER, FCU
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+跨平臺原生 App 開發實戰 使用 Visual Studio + Xamarin 3.0 + C# | TechDays Taiwan 2014 | Channel 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip Navigation
+
+
+
+
+
+
+
+
+
+
+
+TechDays Taiwan 2014
+
+跨平臺原生 App 開發實戰  使用 Visual Studio + Xamarin 3.0 + C#
+
+
+
+							Sep 20, 2014 at 9:11PM
+					
+
+						by Terry Lin
+
+
+
+
+
+
+
+
+					Average of 0 out of 5 stars
+				
+
+0 ratings
+
+		
+
+Sign in to rate
+
+
+						Close
+					
+
+
+
+
+
+778 views
+						
+
+
+
+
+
+
+
+
+
+
+Play 跨平臺原生 App 開發實戰  使用 Visual Studio + Xamarin 3.0 + C#
+01:10:14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in to queue
+
+
+						Sorry, an error occurred.
+						
+
+								Close
+							
+
+
+
+
+
+
+Description
+
+.NET/C# 讓你一統三國！ 透過 Xamarin 開發套件，你將可以用 Visual Studio 及 C# 開發各行動平臺 (Windows/iOS/Android) 的原生 App，而且執行效能一樣好，讓使用 .NET 技術開發企業應用者，用既有的投資及熟悉的技術快速進入 App 開發世界。我們將深入探討 Xamarin 3.0 帶來的改變，包括 Designer 用拖拉點選的方式設計 App 的 UI、透過 Xamarin.Form 表單的共用再搭配 MVVM 的技巧，讓你透過共用程式碼，開發真正的跨行動平臺 App。最後用實際案例，利用 Azure Mobile Services 快速打造一個 App 的後台，以及搭配 SignalR 技術開發一個即時通訊的 App！
+
+
+Day: 
+2
+
+
+Level:
+200
+
+
+Track:
+[DEV] 開發工具平臺
+
+
+Session Type:
+Breakout
+
+
+Code: 
+									DEV206
+								
+
+Room: 
+									Room 201DEF
+								
+
+
+
+
+Share
+
+
+
+Twitter
+
+
+Facebook
+
+
+Reddit
+
+
+
+
+Share Link
+
+
+
+
+
+
+
+Embed
+
+
+
+Download
+
+
+
+Download this episode
+
+
+
+													MP3
+												 (64.3 MB)
+											
+
+
+													Low Quality MP4
+												 (83.3 MB)
+											
+
+
+													Mid Quality WMV
+												 (146.8 MB)
+											
+
+
+													High Quality MP4
+												 (744.8 MB)
+											
+
+
+													Mid Quality MP4
+												 (374.2 MB)
+											
+
+
+													High Quality WMV
+												 (3.1 GB)
+											
+
+
+
+
+
+
+
+
+
+
+
+Event Homepage
+
+							TechDays Taiwan 2014
+					
+More episodes in this series
+
+
+
+TechDays Taiwan 2014
+
+
+跨平臺 Hybrid App 開發簡介  使用 Visual Studio Tool for Apache Cordova + HTML/JavaScript
+
+
+
+
+01:10:50
+
+
+
+
+
+TechDays Taiwan 2014
+
+
+使用 AngularJS 在 ASP.NET 專案上開發企業水準的應用
+
+
+
+
+01:09:12
+
+
+Related episodes
+
+
+
+Techdays Taiwan 2013
+
+
+真 跨平臺 App 開發 - 使用 Visual Studio + Xamarin
+
+
+
+
+01:03:27
+
+
+
+
+
+
+
+
+
+
+The Discussion
+
+
+
+
+
+Add Your 2 Cents
+
+
+Are you human? If so, leave this field blank.
+
+
+
+
+Name
+
+
+
+
+Email
+
+
+
+
+Or
+Sign In
+
+
+Comment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+跨平臺原生 App 開發實戰 使用 Visual Studio + Xamarin 3.0 + C# | TechDays Taiwan 2014 | Channel 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip Navigation
+
+
+
+
+
+
+
+
+
+
+
+TechDays Taiwan 2014
+
+跨平臺原生 App 開發實戰  使用 Visual Studio + Xamarin 3.0 + C#
+
+
+
+							Sep 20, 2014 at 9:11PM
+					
+
+						by Terry Lin
+
+
+
+
+
+
+
+
+					Average of 0 out of 5 stars
+				
+
+0 ratings
+
+		
+
+Sign in to rate
+
+
+						Close
+					
+
+
+
+
+
+778 views
+						
+
+
+
+
+
+
+
+
+
+
+Play 跨平臺原生 App 開發實戰  使用 Visual Studio + Xamarin 3.0 + C#
+01:10:14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in to queue
+
+
+						Sorry, an error occurred.
+						
+
+								Close
+							
+
+
+
+
+
+
+Description
+
+.NET/C# 讓你一統三國！ 透過 Xamarin 開發套件，你將可以用 Visual Studio 及 C# 開發各行動平臺 (Windows/iOS/Android) 的原生 App，而且執行效能一樣好，讓使用 .NET 技術開發企業應用者，用既有的投資及熟悉的技術快速進入 App 開發世界。我們將深入探討 Xamarin 3.0 帶來的改變，包括 Designer 用拖拉點選的方式設計 App 的 UI、透過 Xamarin.Form 表單的共用再搭配 MVVM 的技巧，讓你透過共用程式碼，開發真正的跨行動平臺 App。最後用實際案例，利用 Azure Mobile Services 快速打造一個 App 的後台，以及搭配 SignalR 技術開發一個即時通訊的 App！
+
+
+Day: 
+2
+
+
+Level:
+200
+
+
+Track:
+[DEV] 開發工具平臺
+
+
+Session Type:
+Breakout
+
+
+Code: 
+									DEV206
+								
+
+Room: 
+									Room 201DEF
+								
+
+
+
+
+Share
+
+
+
+Twitter
+
+
+Facebook
+
+
+Reddit
+
+
+
+
+Share Link
+
+
+
+
+
+
+
+Embed
+
+
+
+Download
+
+
+
+Download this episode
+
+
+
+													MP3
+												 (64.3 MB)
+											
+
+
+													Low Quality MP4
+												 (83.3 MB)
+											
+
+
+													Mid Quality WMV
+												 (146.8 MB)
+											
+
+
+													High Quality MP4
+												 (744.8 MB)
+											
+
+
+													Mid Quality MP4
+												 (374.2 MB)
+											
+
+
+													High Quality WMV
+												 (3.1 GB)
+											
+
+
+
+
+
+
+
+
+
+
+
+Event Homepage
+
+							TechDays Taiwan 2014
+					
+More episodes in this series
+
+
+
+TechDays Taiwan 2014
+
+
+跨平臺 Hybrid App 開發簡介  使用 Visual Studio Tool for Apache Cordova + HTML/JavaScript
+
+
+
+
+01:10:50
+
+
+
+
+
+TechDays Taiwan 2014
+
+
+使用 AngularJS 在 ASP.NET 專案上開發企業水準的應用
+
+
+
+
+01:09:12
+
+
+Related episodes
+
+
+
+Techdays Taiwan 2013
+
+
+真 跨平臺 App 開發 - 使用 Visual Studio + Xamarin
+
+
+
+
+01:03:27
+
+
+
+
+
+
+
+
+
+
+The Discussion
+
+
+
+
+
+Add Your 2 Cents
+
+
+Are you human? If so, leave this field blank.
+
+
+
+
+Name
+
+
+
+
+Email
+
+
+
+
+Or
+Sign In
+
+
+Comment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Universal App 及新 Windows 市集應用程式 (Windows 8.1/Windows Phone 8.1) 開發模式 | TechDays Taiwan 2014 | Channel 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip Navigation
+
+
+
+
+
+
+
+
+
+
+
+TechDays Taiwan 2014
+
+Universal App 及新 Windows 市集應用程式 (Windows 8.1/Windows Phone 8.1) 開發模式
+
+
+
+							Sep 20, 2014 at 8:50PM
+					
+
+						by Bill Chung
+
+
+
+
+
+
+
+
+					Average of 0 out of 5 stars
+				
+
+0 ratings
+
+		
+
+Sign in to rate
+
+
+						Close
+					
+
+
+
+
+
+329 views
+						
+
+
+
+
+
+
+
+
+
+
+Play Universal App 及新 Windows 市集應用程式 (Windows 8.1/Windows Phone 8.1) 開發模式
+01:16:11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in to queue
+
+
+						Sorry, an error occurred.
+						
+
+								Close
+							
+
+
+
+
+
+
+Description
+
+今年四月的 BUILD 大會中，對 Windows 行動開發者而言最重要的宣佈，莫過於能橫跨不同 Windows 裝置的 Universal App (通用應用程式)，以及 Windows Phone App 的全新應用開發模式了。本課程即將引領學員由淺入深，帶領學員學習微軟打入行動平臺的最新技術，並在課後即能開始建置跨裝置的 App。
+
+
+Day: 
+2
+
+
+Level:
+200
+
+
+Track:
+[DEV] 開發工具平臺
+
+
+Session Type:
+Breakout
+
+
+Code: 
+									DEV205
+								
+
+Room: 
+									Room 101CD
+								
+
+
+
+
+Share
+
+
+
+Twitter
+
+
+Facebook
+
+
+Reddit
+
+
+
+
+Share Link
+
+
+
+
+
+
+
+Embed
+
+
+
+Download
+
+
+
+Download this episode
+
+
+
+													MP3
+												 (69.8 MB)
+											
+
+
+													Low Quality MP4
+												 (88.0 MB)
+											
+
+
+													Mid Quality WMV
+												 (155.9 MB)
+											
+
+
+													High Quality MP4
+												 (827.8 MB)
+											
+
+
+													Mid Quality MP4
+												 (406.8 MB)
+											
+
+
+													High Quality WMV
+												 (3.3 GB)
+											
+
+
+
+
+
+
+
+
+
+
+
+Event Homepage
+
+							TechDays Taiwan 2014
+					
+More episodes in this series
+
+
+
+TechDays Taiwan 2014
+
+
+使用 System Center Orchestrator Service Management Automation (SMA) 實現資料中心與 Microsoft Azure…
+
+
+
+
+01:09:39
+
+
+
+
+
+TechDays Taiwan 2014
+
+
+用 Microsoft Azure Storage 建構高效能與高可用的雲端儲存應用
+
+
+
+
+01:10:41
+
+
+Related episodes
+
+
+
+TechDays Taiwan 2015
+
+
+可適性使用者經驗 (Adaptive UX) 實作: 利用 XAML 最佳化 Universal Windows Apps 之技巧
+
+
+
+
+01:14:39
+
+
+
+
+
+TechDays Taiwan 2015
+
+
+在 Windows 10 Universal Windows Apps 中存取使用者資料
+
+
+
+
+01:08:15
+
+
+
+
+
+Windows 10 Developer Readiness - Powered by MVPs
+
+
+Windows 10 Developer Readiness [Taiwan]
+
+
+
+
+49:35
+
+
+
+
+
+2015 MVP 微軟實戰課程日
+
+
+Universal Apps 的共用策略
+
+
+
+
+46:37
+
+
+
+
+
+Techdays Taiwan 2013
+
+
+從 Idea 到上架 - Windows Phone App 實戰密技
+
+
+
+
+01:05:35
+
+
+
+
+
+Techdays Taiwan 2013
+
+
+透過Windows Store Apps賺錢! 獲利模式、實作及案例分享
+
+
+
+
+01:01:52
+
+
+
+
+
+
+
+
+
+
+The Discussion
+
+
+
+
+
+Add Your 2 Cents
+
+
+Are you human? If so, leave this field blank.
+
+
+
+
+Name
+
+
+
+
+Email
+
+
+
+
+Or
+Sign In
+
+
+Comment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Universal App 及新 Windows 市集應用程式 (Windows 8.1/Windows Phone 8.1) 開發模式 | TechDays Taiwan 2014 | Channel 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip Navigation
+
+
+
+
+
+
+
+
+
+
+
+TechDays Taiwan 2014
+
+Universal App 及新 Windows 市集應用程式 (Windows 8.1/Windows Phone 8.1) 開發模式
+
+
+
+							Sep 20, 2014 at 8:50PM
+					
+
+						by Bill Chung
+
+
+
+
+
+
+
+
+					Average of 0 out of 5 stars
+				
+
+0 ratings
+
+		
+
+Sign in to rate
+
+
+						Close
+					
+
+
+
+
+
+329 views
+						
+
+
+
+
+
+
+
+
+
+
+Play Universal App 及新 Windows 市集應用程式 (Windows 8.1/Windows Phone 8.1) 開發模式
+01:16:11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in to queue
+
+
+						Sorry, an error occurred.
+						
+
+								Close
+							
+
+
+
+
+
+
+Description
+
+今年四月的 BUILD 大會中，對 Windows 行動開發者而言最重要的宣佈，莫過於能橫跨不同 Windows 裝置的 Universal App (通用應用程式)，以及 Windows Phone App 的全新應用開發模式了。本課程即將引領學員由淺入深，帶領學員學習微軟打入行動平臺的最新技術，並在課後即能開始建置跨裝置的 App。
+
+
+Day: 
+2
+
+
+Level:
+200
+
+
+Track:
+[DEV] 開發工具平臺
+
+
+Session Type:
+Breakout
+
+
+Code: 
+									DEV205
+								
+
+Room: 
+									Room 101CD
+								
+
+
+
+
+Share
+
+
+
+Twitter
+
+
+Facebook
+
+
+Reddit
+
+
+
+
+Share Link
+
+
+
+
+
+
+
+Embed
+
+
+
+Download
+
+
+
+Download this episode
+
+
+
+													MP3
+												 (69.8 MB)
+											
+
+
+													Low Quality MP4
+												 (88.0 MB)
+											
+
+
+													Mid Quality WMV
+												 (155.9 MB)
+											
+
+
+													High Quality MP4
+												 (827.8 MB)
+											
+
+
+													Mid Quality MP4
+												 (406.8 MB)
+											
+
+
+													High Quality WMV
+												 (3.3 GB)
+											
+
+
+
+
+
+
+
+
+
+
+
+Event Homepage
+
+							TechDays Taiwan 2014
+					
+More episodes in this series
+
+
+
+TechDays Taiwan 2014
+
+
+使用 System Center Orchestrator Service Management Automation (SMA) 實現資料中心與 Microsoft Azure…
+
+
+
+
+01:09:39
+
+
+
+
+
+TechDays Taiwan 2014
+
+
+用 Microsoft Azure Storage 建構高效能與高可用的雲端儲存應用
+
+
+
+
+01:10:41
+
+
+Related episodes
+
+
+
+TechDays Taiwan 2015
+
+
+可適性使用者經驗 (Adaptive UX) 實作: 利用 XAML 最佳化 Universal Windows Apps 之技巧
+
+
+
+
+01:14:39
+
+
+
+
+
+TechDays Taiwan 2015
+
+
+在 Windows 10 Universal Windows Apps 中存取使用者資料
+
+
+
+
+01:08:15
+
+
+
+
+
+Windows 10 Developer Readiness - Powered by MVPs
+
+
+Windows 10 Developer Readiness [Taiwan]
+
+
+
+
+49:35
+
+
+
+
+
+2015 MVP 微軟實戰課程日
+
+
+Universal Apps 的共用策略
+
+
+
+
+46:37
+
+
+
+
+
+Techdays Taiwan 2013
+
+
+從 Idea 到上架 - Windows Phone App 實戰密技
+
+
+
+
+01:05:35
+
+
+
+
+
+Techdays Taiwan 2013
+
+
+透過Windows Store Apps賺錢! 獲利模式、實作及案例分享
+
+
+
+
+01:01:52
+
+
+
+
+
+
+
+
+
+
+The Discussion
+
+
+
+
+
+Add Your 2 Cents
+
+
+Are you human? If so, leave this field blank.
+
+
+
+
+Name
+
+
+
+
+Email
+
+
+
+
+Or
+Sign In
+
+
+Comment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+遠距離戀愛也能越洋高潮——LovePalz 台灣開發團隊專訪 - INSIDE 硬塞的網路趨勢觀察
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSIDE 硬塞的網路趨勢觀察
+
+選單
+
+
+
+
+
+
+新創
+
+
+趨勢
+
+
+娛樂
+
+
+評論
+
+
+焦點Hightlight
+
+硬塞科技字典
+物聯網
+
+
+
+
+
+
+硬塞報童
+
+
+主機與網站應用
+
+
+
+
+訂閱
+
+
+隨時關註最新創業、科技、網路、工作訊息。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+新創
+
+遠距離戀愛也能越洋高潮——LovePalz 台灣開發團隊專訪 
+
+
+2014/4/21
+
+
+
+Liz Chen 
+
+iPhone/iPad應用發掘、台灣、專訪、應用技術、相關新聞、硬體、網路觀察、群眾募資、行動應用趨勢、行動趨勢
+
+
+評論
+
+
+
+
+
+
+評論
+
+
+
+ 左為蔚思專案執行經理呂岱芸（Viv），右為平臺總監陳律宇
+電影《雲端情人》中，男主角戴上耳機，與擁有自我人格意識的人工智慧系統莎曼珊談起戀愛，不只是精神上的滿足，他們甚至能夠藉由聲音以及「僱用」有血有肉的女孩作為真實世界的附身，跨越虛實疆界，兩人一同在沙發上纏綿。只是，最終男主角因為無法適應「代理人」導致的角色錯亂，中途喊卡。愛情溢滿心靈，然而肉體慾望在導演想像中的未來世界，依然（暫時）無解。
+把時間拉回現代，性的缺憾一直是幾乎所有遠距離戀人必然得剋服的難關，多少對本來濃情蜜意的情侶因為少了肉體接觸而以出軌寫下句點？這是多麼實在的「痛點」，幸而去年台灣團隊 WINZZ（蔚思）推出一款即時體感情趣用品 LovePalz，隨即在網路上引發轟動，它打破距離界限，拯救慾火焚身的遠距離戀人直上雲端激情大戰，被媒體譽為「異地戀神器」。
+乍看 LovePlaz 外觀，就像一般家飾品，但是打開蓋子可是令人又害羞，又想趕快躲進閨房，與遠在他方的戀人試試這玩意兒有多神奇。
+
+LovePalz 以希臘神話的角色命名，共有四種顏色，粉色或紫色是赫拉，藍色或黑色是宙斯，是說宙斯與赫拉似乎感情不太好啊 。宙斯其實是假陰道，赫拉則是假陽具，性行為插入者和接受者誰該拿哪個應該不用多說。成雙成對販售，同性戀與異性戀都適用，就算想要一個人 3P 也是可以很快樂。
+兩方連上網路，分別對著假性器施與力量，藉著體感技術，就能把你對戀人的情慾傳遞到遠方，對方同步感受做出回應，並且配合網頁視訊與定位，表情、聲音全部到位，視覺、聽覺、觸覺無一不缺，感官刺激幾乎與真實性愛無所區別。不妨直接觀看 LovePal 的介紹影片：
+
+明明是遠距救星，當初蔚思團隊欲在 KickStarter 上發起募資，卻因情色元素而被拒之門外（由於 KickStarter 阻擋情慾產品，TechCrunch 今年初特別撰文 〈KickStarter 該喚起性意識了 〉，蔚思也是受訪的其中一位 KickStarter 受害者），只好「自己的產品自己募」，2012 年 9 月蔚思在台灣小島透過網路號召全球遠距戀人催生 LovePalz。儘管要價不斐，預購單價 94.95 美金（約合 2850 新台幣），但來自歐美的訂單依舊蜂擁而入，兩個月內售出 5000 多組，雖然因為出貨延遲，最後成交訂單量仍達 75%。
+而現在，我們得付出 189 美金才能得到一個宙斯或赫拉，不過能夠遠距享受性愛歡愉，即使得花上逾萬新台幣，還是很多人趨之若鶩，截至目前上萬支赫拉與宙斯已在全世界合體。我們專訪 LovePalz 幕後團隊蔚思平臺總監陳律宇以及呂岱芸（Viv），從來不是「硬體咖」的他們，可是煞費苦心，甚至「忍辱負重」，才為全世界千萬對遠距離戀人帶來前所未有的性福感。
+解決遠距無性之痛
+其實一開始，陳律宇也是因為自己到美國唸書，與身在台灣的女友分隔兩地，觸不著摸不到，親嘗遠距切身之痛，在孤單寂寞覺得冷的苦悶中，他構築出 LovePalz 的雛形。回國後進入本以開發網路服務為主的新創公司蔚思工作。他大膽提案，不如來做改善床上運動的產品吧，「金主」很開明，評估市場潛力無限，旋即投入研發。
+說來也是天時地利，2012 年適逢硬體成本降低，網路革新掀起一波波浪潮，「太早做可能會死在沙灘上」。從原型製造到跟台灣工廠洽談，他們展開一連串既爆笑又心酸的旅程。
+剛開始團隊徒手畫模型，就像小學勞作一般，吸管、血壓計氣囊、膠帶貼到透明水杯，就組成了充滿手作質樸感的原型。打造出的成品總得有人去測試，陳律宇只能親自「含淚」下海，到樓下便利商店買保險套（沒忘了跟店員說要打統編報公帳），在同事眾目睽睽之下步入辦公室廁所「把自己搞到可以測試的狀態」，還得自己吹氣，驗證氣囊厚薄或矽膠軟硬夠不夠「有感」。
+產品開發與行銷期間，他們正大光明在辦公室觀賞成人片，陳律宇不愛戴耳機，有一陣子室內充滿淫聲浪語，蔚為特殊景象，但是同事也早就見怪不怪了。外人可能會覺得是「福利」，不過 Viv 可是看得身心具疲，覺得男女主角操成這樣「不會壞掉嗎？」
+這段歷程回想起來還是好累好氣又好笑，做了數不清的原型，看了不知多少 A 片，「人體實驗」千百回，好不容易才進入量產階段。陳律宇說，台灣硬體廠近年因走不出代工桎梏顯得有氣無力，工廠老闆聽到「有人要做品牌」都開心不已，不過緊接著再聽到「我們是要做情趣用品的」，反應都是先愣住，而後捧腹大笑。這些過去承接電子元件設備的傳產老闆，剛開始聽到一些性教育名詞還開玩笑裝清純「不要對我性騷擾啦」，現在談起生意，陰莖陰道琅琅上口。
+ 赫拉，專屬性行為中的接受者
+ 
+ 宙斯則給性行為中的插入者
+出貨之後，接下來就是應接不暇的顧客回饋了。眾多 Reddit 鄉民盛讚 LovePalz 根本「夢幻逸品」來著、「讓我夢想成真！」還有美國辣妹 Cam Girl 興奮得不得了，主動提議以「聯盟行銷」的方式幫他們宣傳。但還是有些讓他們哭笑不得的意見，曾經有個外國人來函，說他「那話兒太大了，塞不進去」，客服只好跟這位巨無霸先生說抱歉，請試試潤滑油。尺寸寫得明明白白，總不能為他量身訂做一條比較寬鬆的陰道吧，
+一回生二回熟，現在 LovePalz 已經進入第二代，準時交貨，售出一千多組。剛見到陳律宇跟 Viv 時，他們即雀躍的拿出最新版本的宙斯與赫拉，導入香氣、增加顆粒感、減少出油狀況、馬達靜音、連線速度提升，反應無延滯，而且各多了一片感覺超厲害的「Mad Tongue」（直譯瘋狂舌頭），體驗更加細緻，性愛刺激更上一層樓。
+做愛未來式
+這兩年蔚思把精力專註在產品上，「產品做得好，本身就能帶出爆炸性議題」，勾動人性原始慾望的情趣產品莫此為甚。
+當然，蔚思還是非常註重公關與行銷，尤其 LovePalz 最大宗的訂單來自美加、歐洲與南美，除了邀請國外部落客評測，Viv 也非常積極與科技媒體如 TechCrunch、Wired 或 Mashable 聯繫，陳律宇說「電話打到對方一接起來都知道這是來自台灣的 Viv 姐了」，LovePalz 引領新奇性體驗也讓 GQ、柯夢波丹等主流時尚雜誌興致勃勃。
+從這些媒體曝光的文章都還算是老少皆宜，但是情趣用品真正的網路行銷管道是另外一個次元，因此投身這個市場，真的什麼都是從頭學起。在蔚思團隊心中，LovePalz 只不過是「網路延伸設備」，但是 Google、 Facebook 不容許性商品宣傳，而且「查得很勤快」，bang、sex 這些字眼全不放過，只能以優雅假掰的方式暗藏玄機。煽情的文案與圖像、橫幅廣告、關鍵字只能在專屬的 18 禁廣告平臺挑逗人心，要多露骨就多露骨。
+「性」被社會框架排除在外，有色眼光污染了跟性有關的一切。陳律宇說，他實在不是很愛「sex toy」（情趣用品）這個概念，「太狹隘了」，性就是凡人的普通行為，助性產品就如日常用品一般，既然人人家裡有鞋拔、有碗筷，擁有一對 LovePalz 也不足為奇。這也就是為何 LovePalz 的外型擺脫傳統情趣用品的「直觀」設計，就算擺在誠品販售也毫不突兀。
+
+第二代才剛開賣，目前已經擴編到十幾人的團隊已經開始研擬下一代的 LovePalz。陳律宇說，目標是盡可能還原真實的性體驗，把做愛這檔本來就很好玩的事變得更好玩。甚至，LovePalz 可以不再只是吸引遠距情人，就算雙方只住在隔壁兩條街，偶爾也會想嘗試「螢幕、空間隔閡製造的神秘感」，讓感官游離在真真假假之間，創造另外一種樂趣。同時他們也將顧及年輕人需求，可能推出平價版 LovePalz。
+堅持台灣製造，情趣玩具掀起硬體復興新高潮
+「到現在，還是走在瘋狂的道路上」。LovePalz 登臺以後，記者編輯下筆多帶著嬉笑意味。情趣玩具正經不起來， 但在「奇葩、神器、富比士雜誌 選拔最古怪的產品之一」背後，資源稀缺又是硬體門外漢的他們，也如許多號召群眾集資的軟硬整合團隊，曾與廠方雞同鴨講到快抓狂才培養出默契，卻仍無法避免因出貨一再延遲而被罵翻，這也是陳律宇和 Viv 從中學得的一大教訓，「募資完才是挑戰的開始，量產規模問題一堆」，他們建議有意投入軟硬整合的團隊深思熟慮，免得徒惹罵名。
+不過他們終究度過難關，二代 LovePalz 準時發貨。一路走來，蔚思堅持「台灣製造」，也不打算外移。LovePalz 內部各種零件如馬達、空氣幫浦、矽膠等等，因為規格特殊，做慣電子元件代工的台廠得特別為這名客戶開產線，「客製化到一個不行」。在台灣，產量與品質都可兼顧，何況已經花費這麼久的力氣溝通。「到了中國又是另一條學習曲線，」陳律宇直率地說，「『LP』被人（中國）佔住，一個政策（改變）就掛掉了」。
+
+科技始終來自人「性」，然而不若隔壁日本，我們的情色產業一向貧瘠，全世界每年 150 億美金市場幾乎看不到台灣蹤影。走進情趣用品專賣店，商品琳琅滿目卻都是歐美日進口貨。但是終於有蔚思乘上網路浪潮，把握台灣本土硬體優勢，註入無垠的想像與豐富的創意，搶在保險套大廠杜蕾斯類似產品「Fundawear」之前，LovePalz 率先開啟全球遠距性商機。從陳律宇的職銜「平臺」總監，不難看出他們成為自己口中「情趣用品界 Nike」的野心，可以預見，他們會為我們的性生活帶來更多不可預見的驚喜。
+
+「很多電影都是生活的預告。」陳律宇和 Viv 都很喜歡《雲端情人》詩意的未來景象，也許我們可以期盼，如果情節成真，那道無解的人機性愛難題，會由這組來自台灣的團隊，製造出一百分的性高潮。
+
+
+
+
+
+
+分享文章或觀看評論
+
+評論
+
+
+
+
+
+
+Liz Chen
+
+
+
+
+Mail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+訂閱 INSIDE
+
+
+隨時關註最新創業、科技、網路、工作訊息。
+
+
+
+
+
+
+訂閱
+
+
+
+
+
+相關文章
+
+
+
+
+
+評論
+
+
+
+
+
+
+
+知名廠商強力徵才中
+
+
+
+
+
+
+Android Engineer (APP, SDK) *赴日工作* 
+
+XFLAG (Mixi旗下遊戲公司) 
+
+
+
+
+創業夥伴- 資料分析工程師 
+
+旅型資訊股份有限公司 
+
+
+
+
+Ruby on Rails Full stack developer 
+
+Zooe Inc. 
+
+
+
+
+測試工程師 Test Engineer 
+
+LINEFukuoka [Momozono代徵] 
+
+
+
+
+
+
+
+
+
+
+
+新創
+
+
+踏出「休閒運動的一小步」，Reebok 這款鞋將要登上外太空！
+
+
+
+2017/7/20
+
+
+
+【合作媒體】iFanr愛範兒 
+
+reebok、太空鞋
+
+
+
+台灣新創 Pointimize 獨霸亞洲簡報大賽 挺進歐洲科技盛會
+
+
+
+2017/7/14
+
+
+
+INSIDE 硬塞的網路趨勢觀察 
+
+Pointimize、RISE、歐洲科技盛會
+
+
+
+用電商賣吐司　冷凍包子王轉型豪賭！
+
+
+
+2017/7/14
+
+
+
+商業周刊 
+
+B2C、烘焙、電商
+
+
+
+目標時速 1126 公里，「超級高鐵」Hyperloop One 真空試跑成功！
+
+
+
+2017/7/13
+
+
+
+Chris 
+
+Hyperloop、超級高鐵
+
+
+
+創業不再孤獨，SLP Taipei 創業培訓課程即將開跑！
+
+
+
+2017/7/4
+
+
+
+INSIDE 硬塞的網路趨勢觀察 
+
+SLP、創業、新創
+
+
+趨勢
+
+
+是預言家日報嗎？哈利波特 20 年，找亞馬遜推出「會動的」電子版
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+互動、亞馬遜、動態、哈利波特、電子書
+
+
+
+遠程控制「捕魚機器人」，讓你邊玩抓魚遊戲邊賣魚賺錢！
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+機器人、海洋生態
+
+
+
+Google 街景無極限，前進國際太空站！
+
+
+
+2017/7/21
+
+
+
+騰訊科技 
+
+Google、太空、街景
+
+
+
+UberEATS 今公佈十大人氣美食 交通部籲全民檢舉！
+
+
+
+2017/7/21
+
+
+
+聯合新聞網 
+
+UberEATS、交通部
+
+
+
+比特幣跌價拖累，顯示卡廠 Q3 動能降溫！
+
+
+
+2017/7/21
+
+
+
+聯合新聞網 
+
+bitcoin、graphics card、比特幣、顯示卡
+
+
+娛樂
+
+
+是預言家日報嗎？哈利波特 20 年，找亞馬遜推出「會動的」電子版
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+互動、亞馬遜、動態、哈利波特、電子書
+
+
+
+【Cheng lap 的資訊通鑑】打電話玩 RPG：勇者鬥惡婆、修羅戰記與七座金城
+
+
+
+2017/7/20
+
+
+
+Chenglap 
+
+BBS、RPG、修羅戰記、撥號、遊戲
+
+
+
+花錢當課長 SSR 老抽不到？立委籲修法，明示手遊抽獎機率！
+
+
+
+2017/7/20
+
+
+
+Chris 
+
+SSR、手遊、課金
+
+
+
+《冰與火之歌》第七季熱燒，能為 HBO 在網路趕上 Netflix 車尾燈嗎？
+
+
+
+2017/7/19
+
+
+
+Chris 
+
+HBO、streaming、冰與火之歌
+
+
+
+華文首部 VR 電影怎麼拍？蔡明亮說沒有構圖、特寫，要當劇場去規劃
+
+
+
+2017/7/18
+
+
+
+Chris 
+
+VR、蔡明亮
+
+
+評論
+
+
+兩週募破千萬，達成率 1300%！ALPHA Camp 和慕課專案要培養「國際級全端工程師」
+
+
+
+2017/7/20
+
+
+
+Mia 
+
+ALPHA Camp、全端工程師、募資、慕課、課程
+
+
+
+oBike 來台引爭議，問題到底出在哪？
+
+
+
+2017/7/20
+
+
+
+Mashdigi 
+
+oBike、共享單車、市容問題
+
+
+
+在萬物聯網的新時代下，區塊鏈才是撐起一切的安全關鍵！
+
+
+
+2017/7/20
+
+
+
+精選轉貼 
+
+區塊鏈、萬物聯網
+
+
+
+從 Google 出走的這五家「創業車隊」，其命運各自為何？
+
+
+
+2017/7/19
+
+
+
+【合作媒體】36kr 
+
+Google、無人車創業
+
+
+
+Google「你畫我猜」數據分析：你畫圈是順時針還是逆時針？台、日和其他國家大不同
+
+
+
+2017/7/18
+
+
+
+Mia 
+
+Google、文化、文字、畫圈、畫圓
+
+
+
+
+
+
+
+
+
+訂閱 INSIDE
+
+
+隨時關註最新創業、科技、網路、工作訊息。
+
+
+
+
+
+
+訂閱
+
+
+
+
+
+關於 INSIDE
+
+
+聯絡我們
+
+
+隱私權聲明
+
+
+著作權聲明
+
+
+
+© 2009-2017 INSIDE 硬塞的網路趨勢觀察 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+遠距離戀愛也能越洋高潮——LovePalz 台灣開發團隊專訪 - INSIDE 硬塞的網路趨勢觀察
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSIDE 硬塞的網路趨勢觀察
+
+選單
+
+
+
+
+
+
+新創
+
+
+趨勢
+
+
+娛樂
+
+
+評論
+
+
+焦點Hightlight
+
+硬塞科技字典
+物聯網
+
+
+
+
+
+
+硬塞報童
+
+
+主機與網站應用
+
+
+
+
+訂閱
+
+
+隨時關註最新創業、科技、網路、工作訊息。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+新創
+
+遠距離戀愛也能越洋高潮——LovePalz 台灣開發團隊專訪 
+
+
+2014/4/21
+
+
+
+Liz Chen 
+
+iPhone/iPad應用發掘、台灣、專訪、應用技術、相關新聞、硬體、網路觀察、群眾募資、行動應用趨勢、行動趨勢
+
+
+評論
+
+
+
+
+
+
+評論
+
+
+
+ 左為蔚思專案執行經理呂岱芸（Viv），右為平臺總監陳律宇
+電影《雲端情人》中，男主角戴上耳機，與擁有自我人格意識的人工智慧系統莎曼珊談起戀愛，不只是精神上的滿足，他們甚至能夠藉由聲音以及「僱用」有血有肉的女孩作為真實世界的附身，跨越虛實疆界，兩人一同在沙發上纏綿。只是，最終男主角因為無法適應「代理人」導致的角色錯亂，中途喊卡。愛情溢滿心靈，然而肉體慾望在導演想像中的未來世界，依然（暫時）無解。
+把時間拉回現代，性的缺憾一直是幾乎所有遠距離戀人必然得剋服的難關，多少對本來濃情蜜意的情侶因為少了肉體接觸而以出軌寫下句點？這是多麼實在的「痛點」，幸而去年台灣團隊 WINZZ（蔚思）推出一款即時體感情趣用品 LovePalz，隨即在網路上引發轟動，它打破距離界限，拯救慾火焚身的遠距離戀人直上雲端激情大戰，被媒體譽為「異地戀神器」。
+乍看 LovePlaz 外觀，就像一般家飾品，但是打開蓋子可是令人又害羞，又想趕快躲進閨房，與遠在他方的戀人試試這玩意兒有多神奇。
+
+LovePalz 以希臘神話的角色命名，共有四種顏色，粉色或紫色是赫拉，藍色或黑色是宙斯，是說宙斯與赫拉似乎感情不太好啊 。宙斯其實是假陰道，赫拉則是假陽具，性行為插入者和接受者誰該拿哪個應該不用多說。成雙成對販售，同性戀與異性戀都適用，就算想要一個人 3P 也是可以很快樂。
+兩方連上網路，分別對著假性器施與力量，藉著體感技術，就能把你對戀人的情慾傳遞到遠方，對方同步感受做出回應，並且配合網頁視訊與定位，表情、聲音全部到位，視覺、聽覺、觸覺無一不缺，感官刺激幾乎與真實性愛無所區別。不妨直接觀看 LovePal 的介紹影片：
+
+明明是遠距救星，當初蔚思團隊欲在 KickStarter 上發起募資，卻因情色元素而被拒之門外（由於 KickStarter 阻擋情慾產品，TechCrunch 今年初特別撰文 〈KickStarter 該喚起性意識了 〉，蔚思也是受訪的其中一位 KickStarter 受害者），只好「自己的產品自己募」，2012 年 9 月蔚思在台灣小島透過網路號召全球遠距戀人催生 LovePalz。儘管要價不斐，預購單價 94.95 美金（約合 2850 新台幣），但來自歐美的訂單依舊蜂擁而入，兩個月內售出 5000 多組，雖然因為出貨延遲，最後成交訂單量仍達 75%。
+而現在，我們得付出 189 美金才能得到一個宙斯或赫拉，不過能夠遠距享受性愛歡愉，即使得花上逾萬新台幣，還是很多人趨之若鶩，截至目前上萬支赫拉與宙斯已在全世界合體。我們專訪 LovePalz 幕後團隊蔚思平臺總監陳律宇以及呂岱芸（Viv），從來不是「硬體咖」的他們，可是煞費苦心，甚至「忍辱負重」，才為全世界千萬對遠距離戀人帶來前所未有的性福感。
+解決遠距無性之痛
+其實一開始，陳律宇也是因為自己到美國唸書，與身在台灣的女友分隔兩地，觸不著摸不到，親嘗遠距切身之痛，在孤單寂寞覺得冷的苦悶中，他構築出 LovePalz 的雛形。回國後進入本以開發網路服務為主的新創公司蔚思工作。他大膽提案，不如來做改善床上運動的產品吧，「金主」很開明，評估市場潛力無限，旋即投入研發。
+說來也是天時地利，2012 年適逢硬體成本降低，網路革新掀起一波波浪潮，「太早做可能會死在沙灘上」。從原型製造到跟台灣工廠洽談，他們展開一連串既爆笑又心酸的旅程。
+剛開始團隊徒手畫模型，就像小學勞作一般，吸管、血壓計氣囊、膠帶貼到透明水杯，就組成了充滿手作質樸感的原型。打造出的成品總得有人去測試，陳律宇只能親自「含淚」下海，到樓下便利商店買保險套（沒忘了跟店員說要打統編報公帳），在同事眾目睽睽之下步入辦公室廁所「把自己搞到可以測試的狀態」，還得自己吹氣，驗證氣囊厚薄或矽膠軟硬夠不夠「有感」。
+產品開發與行銷期間，他們正大光明在辦公室觀賞成人片，陳律宇不愛戴耳機，有一陣子室內充滿淫聲浪語，蔚為特殊景象，但是同事也早就見怪不怪了。外人可能會覺得是「福利」，不過 Viv 可是看得身心具疲，覺得男女主角操成這樣「不會壞掉嗎？」
+這段歷程回想起來還是好累好氣又好笑，做了數不清的原型，看了不知多少 A 片，「人體實驗」千百回，好不容易才進入量產階段。陳律宇說，台灣硬體廠近年因走不出代工桎梏顯得有氣無力，工廠老闆聽到「有人要做品牌」都開心不已，不過緊接著再聽到「我們是要做情趣用品的」，反應都是先愣住，而後捧腹大笑。這些過去承接電子元件設備的傳產老闆，剛開始聽到一些性教育名詞還開玩笑裝清純「不要對我性騷擾啦」，現在談起生意，陰莖陰道琅琅上口。
+ 赫拉，專屬性行為中的接受者
+ 
+ 宙斯則給性行為中的插入者
+出貨之後，接下來就是應接不暇的顧客回饋了。眾多 Reddit 鄉民盛讚 LovePalz 根本「夢幻逸品」來著、「讓我夢想成真！」還有美國辣妹 Cam Girl 興奮得不得了，主動提議以「聯盟行銷」的方式幫他們宣傳。但還是有些讓他們哭笑不得的意見，曾經有個外國人來函，說他「那話兒太大了，塞不進去」，客服只好跟這位巨無霸先生說抱歉，請試試潤滑油。尺寸寫得明明白白，總不能為他量身訂做一條比較寬鬆的陰道吧，
+一回生二回熟，現在 LovePalz 已經進入第二代，準時交貨，售出一千多組。剛見到陳律宇跟 Viv 時，他們即雀躍的拿出最新版本的宙斯與赫拉，導入香氣、增加顆粒感、減少出油狀況、馬達靜音、連線速度提升，反應無延滯，而且各多了一片感覺超厲害的「Mad Tongue」（直譯瘋狂舌頭），體驗更加細緻，性愛刺激更上一層樓。
+做愛未來式
+這兩年蔚思把精力專註在產品上，「產品做得好，本身就能帶出爆炸性議題」，勾動人性原始慾望的情趣產品莫此為甚。
+當然，蔚思還是非常註重公關與行銷，尤其 LovePalz 最大宗的訂單來自美加、歐洲與南美，除了邀請國外部落客評測，Viv 也非常積極與科技媒體如 TechCrunch、Wired 或 Mashable 聯繫，陳律宇說「電話打到對方一接起來都知道這是來自台灣的 Viv 姐了」，LovePalz 引領新奇性體驗也讓 GQ、柯夢波丹等主流時尚雜誌興致勃勃。
+從這些媒體曝光的文章都還算是老少皆宜，但是情趣用品真正的網路行銷管道是另外一個次元，因此投身這個市場，真的什麼都是從頭學起。在蔚思團隊心中，LovePalz 只不過是「網路延伸設備」，但是 Google、 Facebook 不容許性商品宣傳，而且「查得很勤快」，bang、sex 這些字眼全不放過，只能以優雅假掰的方式暗藏玄機。煽情的文案與圖像、橫幅廣告、關鍵字只能在專屬的 18 禁廣告平臺挑逗人心，要多露骨就多露骨。
+「性」被社會框架排除在外，有色眼光污染了跟性有關的一切。陳律宇說，他實在不是很愛「sex toy」（情趣用品）這個概念，「太狹隘了」，性就是凡人的普通行為，助性產品就如日常用品一般，既然人人家裡有鞋拔、有碗筷，擁有一對 LovePalz 也不足為奇。這也就是為何 LovePalz 的外型擺脫傳統情趣用品的「直觀」設計，就算擺在誠品販售也毫不突兀。
+
+第二代才剛開賣，目前已經擴編到十幾人的團隊已經開始研擬下一代的 LovePalz。陳律宇說，目標是盡可能還原真實的性體驗，把做愛這檔本來就很好玩的事變得更好玩。甚至，LovePalz 可以不再只是吸引遠距情人，就算雙方只住在隔壁兩條街，偶爾也會想嘗試「螢幕、空間隔閡製造的神秘感」，讓感官游離在真真假假之間，創造另外一種樂趣。同時他們也將顧及年輕人需求，可能推出平價版 LovePalz。
+堅持台灣製造，情趣玩具掀起硬體復興新高潮
+「到現在，還是走在瘋狂的道路上」。LovePalz 登臺以後，記者編輯下筆多帶著嬉笑意味。情趣玩具正經不起來， 但在「奇葩、神器、富比士雜誌 選拔最古怪的產品之一」背後，資源稀缺又是硬體門外漢的他們，也如許多號召群眾集資的軟硬整合團隊，曾與廠方雞同鴨講到快抓狂才培養出默契，卻仍無法避免因出貨一再延遲而被罵翻，這也是陳律宇和 Viv 從中學得的一大教訓，「募資完才是挑戰的開始，量產規模問題一堆」，他們建議有意投入軟硬整合的團隊深思熟慮，免得徒惹罵名。
+不過他們終究度過難關，二代 LovePalz 準時發貨。一路走來，蔚思堅持「台灣製造」，也不打算外移。LovePalz 內部各種零件如馬達、空氣幫浦、矽膠等等，因為規格特殊，做慣電子元件代工的台廠得特別為這名客戶開產線，「客製化到一個不行」。在台灣，產量與品質都可兼顧，何況已經花費這麼久的力氣溝通。「到了中國又是另一條學習曲線，」陳律宇直率地說，「『LP』被人（中國）佔住，一個政策（改變）就掛掉了」。
+
+科技始終來自人「性」，然而不若隔壁日本，我們的情色產業一向貧瘠，全世界每年 150 億美金市場幾乎看不到台灣蹤影。走進情趣用品專賣店，商品琳琅滿目卻都是歐美日進口貨。但是終於有蔚思乘上網路浪潮，把握台灣本土硬體優勢，註入無垠的想像與豐富的創意，搶在保險套大廠杜蕾斯類似產品「Fundawear」之前，LovePalz 率先開啟全球遠距性商機。從陳律宇的職銜「平臺」總監，不難看出他們成為自己口中「情趣用品界 Nike」的野心，可以預見，他們會為我們的性生活帶來更多不可預見的驚喜。
+
+「很多電影都是生活的預告。」陳律宇和 Viv 都很喜歡《雲端情人》詩意的未來景象，也許我們可以期盼，如果情節成真，那道無解的人機性愛難題，會由這組來自台灣的團隊，製造出一百分的性高潮。
+
+
+
+
+
+
+分享文章或觀看評論
+
+評論
+
+
+
+
+
+
+Liz Chen
+
+
+
+
+Mail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+訂閱 INSIDE
+
+
+隨時關註最新創業、科技、網路、工作訊息。
+
+
+
+
+
+
+訂閱
+
+
+
+
+
+相關文章
+
+
+
+
+
+評論
+
+
+
+
+
+
+
+知名廠商強力徵才中
+
+
+
+
+
+
+Android Engineer (APP, SDK) *赴日工作* 
+
+XFLAG (Mixi旗下遊戲公司) 
+
+
+
+
+創業夥伴- 資料分析工程師 
+
+旅型資訊股份有限公司 
+
+
+
+
+Ruby on Rails Full stack developer 
+
+Zooe Inc. 
+
+
+
+
+測試工程師 Test Engineer 
+
+LINEFukuoka [Momozono代徵] 
+
+
+
+
+
+
+
+
+
+
+
+新創
+
+
+踏出「休閒運動的一小步」，Reebok 這款鞋將要登上外太空！
+
+
+
+2017/7/20
+
+
+
+【合作媒體】iFanr愛範兒 
+
+reebok、太空鞋
+
+
+
+台灣新創 Pointimize 獨霸亞洲簡報大賽 挺進歐洲科技盛會
+
+
+
+2017/7/14
+
+
+
+INSIDE 硬塞的網路趨勢觀察 
+
+Pointimize、RISE、歐洲科技盛會
+
+
+
+用電商賣吐司　冷凍包子王轉型豪賭！
+
+
+
+2017/7/14
+
+
+
+商業周刊 
+
+B2C、烘焙、電商
+
+
+
+目標時速 1126 公里，「超級高鐵」Hyperloop One 真空試跑成功！
+
+
+
+2017/7/13
+
+
+
+Chris 
+
+Hyperloop、超級高鐵
+
+
+
+創業不再孤獨，SLP Taipei 創業培訓課程即將開跑！
+
+
+
+2017/7/4
+
+
+
+INSIDE 硬塞的網路趨勢觀察 
+
+SLP、創業、新創
+
+
+趨勢
+
+
+是預言家日報嗎？哈利波特 20 年，找亞馬遜推出「會動的」電子版
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+互動、亞馬遜、動態、哈利波特、電子書
+
+
+
+遠程控制「捕魚機器人」，讓你邊玩抓魚遊戲邊賣魚賺錢！
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+機器人、海洋生態
+
+
+
+Google 街景無極限，前進國際太空站！
+
+
+
+2017/7/21
+
+
+
+騰訊科技 
+
+Google、太空、街景
+
+
+
+UberEATS 今公佈十大人氣美食 交通部籲全民檢舉！
+
+
+
+2017/7/21
+
+
+
+聯合新聞網 
+
+UberEATS、交通部
+
+
+
+比特幣跌價拖累，顯示卡廠 Q3 動能降溫！
+
+
+
+2017/7/21
+
+
+
+聯合新聞網 
+
+bitcoin、graphics card、比特幣、顯示卡
+
+
+娛樂
+
+
+是預言家日報嗎？哈利波特 20 年，找亞馬遜推出「會動的」電子版
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+互動、亞馬遜、動態、哈利波特、電子書
+
+
+
+【Cheng lap 的資訊通鑑】打電話玩 RPG：勇者鬥惡婆、修羅戰記與七座金城
+
+
+
+2017/7/20
+
+
+
+Chenglap 
+
+BBS、RPG、修羅戰記、撥號、遊戲
+
+
+
+花錢當課長 SSR 老抽不到？立委籲修法，明示手遊抽獎機率！
+
+
+
+2017/7/20
+
+
+
+Chris 
+
+SSR、手遊、課金
+
+
+
+《冰與火之歌》第七季熱燒，能為 HBO 在網路趕上 Netflix 車尾燈嗎？
+
+
+
+2017/7/19
+
+
+
+Chris 
+
+HBO、streaming、冰與火之歌
+
+
+
+華文首部 VR 電影怎麼拍？蔡明亮說沒有構圖、特寫，要當劇場去規劃
+
+
+
+2017/7/18
+
+
+
+Chris 
+
+VR、蔡明亮
+
+
+評論
+
+
+兩週募破千萬，達成率 1300%！ALPHA Camp 和慕課專案要培養「國際級全端工程師」
+
+
+
+2017/7/20
+
+
+
+Mia 
+
+ALPHA Camp、全端工程師、募資、慕課、課程
+
+
+
+oBike 來台引爭議，問題到底出在哪？
+
+
+
+2017/7/20
+
+
+
+Mashdigi 
+
+oBike、共享單車、市容問題
+
+
+
+在萬物聯網的新時代下，區塊鏈才是撐起一切的安全關鍵！
+
+
+
+2017/7/20
+
+
+
+精選轉貼 
+
+區塊鏈、萬物聯網
+
+
+
+從 Google 出走的這五家「創業車隊」，其命運各自為何？
+
+
+
+2017/7/19
+
+
+
+【合作媒體】36kr 
+
+Google、無人車創業
+
+
+
+Google「你畫我猜」數據分析：你畫圈是順時針還是逆時針？台、日和其他國家大不同
+
+
+
+2017/7/18
+
+
+
+Mia 
+
+Google、文化、文字、畫圈、畫圓
+
+
+
+
+
+
+
+
+
+訂閱 INSIDE
+
+
+隨時關註最新創業、科技、網路、工作訊息。
+
+
+
+
+
+
+訂閱
+
+
+
+
+
+關於 INSIDE
+
+
+聯絡我們
+
+
+隱私權聲明
+
+
+著作權聲明
+
+
+
+© 2009-2017 INSIDE 硬塞的網路趨勢觀察 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

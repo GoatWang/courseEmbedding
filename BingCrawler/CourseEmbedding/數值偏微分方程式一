@@ -1,0 +1,6737 @@
+
+
+
+偏微分方程 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+偏微分方程
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+
+二維熱傳導方程式的解
+
+
+
+
+系列條目
+
+
+微積分學
+
+
+
+
+
+函數
+導數
+微分
+積分
+
+
+
+
+基本定理
+
+
+
+
+函數極限
+連續函數
+
+
+
+
+均值定理
+羅爾定理
+
+
+
+
+
+
+
+基礎概念
+
+
+
+函數 · 數列 · 級數 · 極限
+初等函數 · 無窮小量 · 收斂數列
+收斂性 · 夾擠定理
+連續 · 均勻連續 · 間斷點
+
+
+
+
+
+
+
+
+
+一元微分
+
+
+
+導數 · 高階導數 · 介值定理 · 均值定理（羅爾定理 · 拉格朗日均值定理 · 柯西均值定理） · 泰勒公式 · 求導法則（乘法定則 · 除法定則 · 倒數定則 · 鏈式法則） · 羅必達法則 · 導數列表 · 導數的函數應用（單調性 · 極值 · 駐點 · 拐點 · 凹凸性 · 曲率）
+
+
+
+
+
+
+
+
+
+一元積分
+
+
+
+不定積分 · 定積分 · 積分的定義（黎曼積分 · 達布積分 · 勒貝格積分） · 積分表 · 求積分的技巧（吸納積分法 · 換元積分法 · 分部積分法 · 三角換元法 · 降次積分法 · 部分分式積分法） · 牛頓-萊布尼茨公式 · 廣義積分 · 主值 · 柯西主值 · Β函數 · Γ函數 · 數值積分 · 牛頓-寇次公式 · 近似積分法（矩形法 · 梯形法 · 辛普森積分法）
+
+
+
+
+
+
+
+
+
+多元微積分
+
+
+
+多元函數 · 偏導數 · 隱函數 · 全微分 · 方向導數 · 梯度 · 泰勒公式 · 拉格朗日乘數 · 多元函數積分 · 多重積分 · 廣義多重積分 · 曲線積分 · 曲面積分 · 格林公式 · 高斯公式 · 斯托克斯公式 · 散度 · 旋度
+
+
+
+
+
+
+
+
+
+微分方程
+
+
+
+常微分方程 · 分離變數法 · 積分因子 · 歐拉方法 · 柯西-歐拉方程 · 伯努利微分方程 · 克萊羅方程 · 全微分方程 · 線性微分方程 · 差分方程 · 拉普拉斯變換法 · 偏微分方程 · 拉普拉斯方程
+
+
+
+
+
+
+
+
+
+相關數學家
+
+
+牛頓 · 萊布尼茲 · 柯西 · 黎曼
+拉格朗日 · 拉普拉斯 · 歐拉
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+
+
+
+偏微分方程（英語：partial differential equation，縮寫作PDE）指含有未知函數及其偏導數的方程。描述自變量、未知函數及其偏導數之間的關係。符合這個關係的函數是方程的解。
+偏微分方程分為線性偏微分方程式與非線性偏微分方程式，常常有幾個解而且涉及額外的邊界條件。
+
+
+
+目錄
+
+
+1 記號及例子
+
+1.1 拉普拉斯方程
+1.2 泊松方程
+1.3 波動方程式
+1.4 熱傳導方程式
+
+
+2 分類
+
+2.1 一階偏微分方程
+2.2 二階偏微分方程
+2.3 混合形式方程
+
+
+3 偏微分方程有關問題
+
+3.1 適定問題
+
+
+4 解析法解偏微分方程
+
+4.1 分離變量法
+4.2 特徵線法
+4.3 積分變換
+4.4 變量變換
+4.5 基本解
+4.6 疊加原理
+
+
+5 數值法解偏微分方程
+6 參考文獻
+
+
+
+記號及例子[編輯]
+方程式中常以u為未知數及偏微分，如下：
+
+
+
+
+
+
+u
+
+x
+
+
+=
+
+
+
+∂
+u
+
+
+∂
+x
+
+
+
+
+
+{\displaystyle u_{x}={\partial u \over \partial x}}
+
+
+
+
+
+
+
+
+
+u
+
+x
+y
+
+
+=
+
+
+
+
+∂
+
+2
+
+
+u
+
+
+∂
+x
+
+∂
+y
+
+
+
+
+
+{\displaystyle u_{xy}={\partial ^{2}u \over \partial x\,\partial y}}
+
+
+
+用於空間偏微分的梯度運算子
+
+
+
+∇
+=
+(
+
+
+∂
+
+∂
+
+x
+
+
+
+
+,
+
+
+∂
+
+∂
+
+y
+
+
+
+
+,
+
+
+∂
+
+∂
+
+z
+
+
+
+
+)
+
+
+{\displaystyle \nabla =({\partial  \over \partial _{x}},{\partial  \over \partial _{y}},{\partial  \over \partial _{z}})}
+
+
+時間偏微分
+
+
+
+
+
+
+u
+˙
+
+
+
+=
+
+
+
+∂
+u
+
+
+∂
+t
+
+
+
+
+
+{\displaystyle {\dot {u}}={\partial u \over \partial t}}
+
+，線性偏微分方程式的例子如下：
+拉普拉斯方程[編輯]
+
+
+
+
+
+
+u
+
+x
+x
+
+
++
+
+u
+
+y
+y
+
+
++
+
+u
+
+z
+z
+
+
+=
+0
+
+
+{\displaystyle u_{xx}+u_{yy}+u_{zz}=0}
+
+
+
+適用於重力場問題的求解
+泊松方程[編輯]
+
+
+
+
+
+
+u
+
+x
+x
+
+
++
+
+u
+
+y
+y
+
+
++
+
+u
+
+z
+z
+
+
+=
+f
+(
+x
+,
+y
+,
+z
+)
+
+
+{\displaystyle u_{xx}+u_{yy}+u_{zz}=f(x,y,z)}
+
+
+
+適用於所有物質或電荷的重力場或靜電場。
+波動方程式[編輯]
+未知函數u(x,y,z,t):
+
+
+
+
+
+
+u
+
+t
+t
+
+
+=
+
+c
+
+2
+
+
+(
+
+u
+
+x
+x
+
+
++
+
+u
+
+y
+y
+
+
++
+
+u
+
+z
+z
+
+
+)
+
+
+{\displaystyle u_{tt}=c^{2}(u_{xx}+u_{yy}+u_{zz})}
+
+
+
+
+
+
+
+
+
+u
+¨
+
+
+
+=
+
+c
+
+2
+
+
+
+∇
+
+2
+
+
+u
+
+
+{\displaystyle {\ddot {u}}=c^{2}\nabla ^{2}u}
+
+
+
+熱傳導方程式[編輯]
+
+
+
+
+
+
+u
+
+t
+
+
+=
+k
+(
+
+u
+
+x
+x
+
+
++
+
+u
+
+y
+y
+
+
++
+
+u
+
+z
+z
+
+
+)
+
+
+{\displaystyle u_{t}=k(u_{xx}+u_{yy}+u_{zz})}
+
+
+
+其中k代表該材料
+分類[編輯]
+一些線性二階偏微分方程可以分為：拋物線方程，雙曲線方程和橢圓方程。其他的像Euler–Tricomi方程在不同應用領域中也有不同的形式。這種分類便於在解偏微分方程時尋找初始條件提供依據。
+一階偏微分方程[編輯]
+主條目：一階偏微分方程
+
+
+
+本章節未有任何內容。（2012年11月8日）
+
+
+二階偏微分方程[編輯]
+表達式為：
+
+
+
+
+
+A
+
+u
+
+x
+x
+
+
++
+2
+B
+
+u
+
+x
+y
+
+
++
+C
+
+u
+
+y
+y
+
+
++
+⋯
+=
+0
+,
+
+
+{\displaystyle Au_{xx}+2Bu_{xy}+Cu_{yy}+\cdots =0,}
+
+
+
+其中A,B,C為參數並且取決於x,y。如果在xy平面上有
+
+
+
+
+A
+
+2
+
+
++
+
+B
+
+2
+
+
++
+
+C
+
+2
+
+
+>
+0
+
+
+{\displaystyle A^{2}+B^{2}+C^{2}>0}
+
+，該偏微分方程在該平面上為二階偏微分方程。可變形為：
+
+
+
+
+
+A
+
+x
+
+2
+
+
++
+2
+B
+x
+y
++
+C
+
+y
+
+2
+
+
++
+⋯
+=
+0.
+
+
+{\displaystyle Ax^{2}+2Bxy+Cy^{2}+\cdots =0.}
+
+
+
+該二階偏微分方程可分類為：拋物線方程，雙曲線方程和橢圓方程，其分類方式為：
+
+
+
+
+
+
+B
+
+2
+
+
+−
+A
+C
+
+<
+0
+
+
+{\displaystyle B^{2}-AC\,<0}
+
+ : 橢圓方程；
+
+
+
+
+
+B
+
+2
+
+
+−
+A
+C
+=
+0
+
+
+
+{\displaystyle B^{2}-AC=0\,}
+
+ : 拋物線方程；
+
+
+
+
+
+B
+
+2
+
+
+−
+A
+C
+
+>
+0
+
+
+{\displaystyle B^{2}-AC\,>0}
+
+：雙曲線方程。
+
+混合形式方程[編輯]
+如果偏微分方程的係數不是一個常數，該偏微分方程可能不屬於以上幾種類別之一，而可能是混合形式方程。一個簡單的例子為Euler–Tricomi方程：
+
+
+
+
+
+
+u
+
+x
+x
+
+
+
+=
+x
+
+u
+
+y
+y
+
+
+
+
+{\displaystyle u_{xx}\,=xu_{yy}}
+
+
+
+該方程稱為橢圓雙曲線方程。因為當x < 0時是橢圓形式，當x > 0時是雙曲線形式。
+偏微分方程有關問題[編輯]
+適定問題[編輯]
+偏微分方程解中任意函數的出現必然產生解的各種差異，考慮到幾乎不知道這些解的詳情，在大多數問題中慣常的目標是找滿足合適的和確定的條件(例如在空間的邊界處和某固定時刻）的那些解，要求這些條件可以確定唯的解是自然的要求。
+而且還有更進一步的考慮，即這些條件的大小或量的微小改變在解本身也帶來相應地小的改變。
+法國數學家阿達馬強調後一方面，當解不連續地依賴於原始數據變化時稱此問題是不適定的或提得不正確的
+
+不適定的例子
+
+對於雙變量的Laplace方程：
+
+
+
+
+
+
+
+
+∂
+
+2
+
+
+z
+
+
+∂
+
+x
+
+2
+
+
+
+
+
++
+
+
+
+
+∂
+
+2
+
+
+z
+
+
+∂
+
+y
+
+2
+
+
+
+
+
+=
+0
+(
+y
+>
+0
+)
+
+
+{\displaystyle {\frac {\partial ^{2}z}{\partial x^{2}}}+{\frac {\partial ^{2}z}{\partial y^{2}}}=0(y>0)}
+
+
+在邊界條件
+
+
+
+
+z
+(
+x
+,
+0
+)
+=
+0
+
+
+{\displaystyle z(x,0)=0}
+
+ 和 
+
+
+
+
+
+
+∂
+z
+(
+x
+,
+0
+)
+
+
+∂
+y
+
+
+
+=
+
+
+1
+n
+
+
+cos
+⁡
+n
+x
+
+
+{\displaystyle {\frac {\partial z(x,0)}{\partial y}}={\frac {1}{n}}\cos nx}
+
+
+之下，符合條件的解為
+
+
+
+
+z
+(
+x
+,
+y
+)
+=
+
+
+1
+
+n
+
+2
+
+
+
+
+sinh
+⁡
+(
+n
+y
+)
+cos
+⁡
+(
+n
+x
+)
+
+
+{\displaystyle z(x,y)={\frac {1}{n^{2}}}\sinh(ny)\cos(nx)}
+
+
+當
+
+
+
+
+
+
+
+
+n
+→
++
+∞
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}n\rightarrow +\infty \end{smallmatrix}}}
+
+時 其數據在
+
+
+
+
+
+
+
+
+y
+=
+0
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}y=0\end{smallmatrix}}}
+
+處
+
+
+
+
+
+
+
+
+z
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}z\end{smallmatrix}}}
+
+和
+
+
+
+
+
+
+
+
+
+
+
+∂
+z
+
+
+∂
+y
+
+
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}{\frac {\partial z}{\partial y}}\end{smallmatrix}}}
+
+的指定值趨於0，而
+
+
+
+
+
+
+
+
+z
+(
+x
+,
+y
+)
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}z(x,y)\end{smallmatrix}}}
+
+的值在無窮大的範圍內震盪，所以這個解不適定。
+解析法解偏微分方程[編輯]
+一些有效的解析法解偏微分方程方法：
+分離變量法[編輯]
+主條目：可分離變數的偏微分方程
+通過分離變量法減少偏微分方程中的變量，將一個偏微分方程分解成若干個常微分方程。
+特徵線法[編輯]
+主條目：特徵線法
+沿著一階偏微分方程的特徵線，偏微分方程簡化為一個常微分方程。沿著特徵線求出對應常微分方程的解就可以得到偏微分方程的解。
+積分變換[編輯]
+利用積分法，將偏微分方程變換為可分離的偏微分方程，方便求解。一般為傅立葉變換分析。
+變量變換[編輯]
+通過適當的變量變換，可以簡化偏微分方程的求解。一個典型的例子為Black–Scholes方程：
+
+
+
+
+
+
+
+
+∂
+V
+
+
+∂
+t
+
+
+
++
+
+
+1
+2
+
+
+
+σ
+
+2
+
+
+
+S
+
+2
+
+
+
+
+
+
+∂
+
+2
+
+
+V
+
+
+∂
+
+S
+
+2
+
+
+
+
+
++
+r
+S
+
+
+
+∂
+V
+
+
+∂
+S
+
+
+
+−
+r
+V
+=
+0
+
+
+{\displaystyle {\frac {\partial V}{\partial t}}+{\frac {1}{2}}\sigma ^{2}S^{2}{\frac {\partial ^{2}V}{\partial S^{2}}}+rS{\frac {\partial V}{\partial S}}-rV=0}
+
+
+
+可以簡化為熱力方程：
+
+
+
+
+
+
+
+
+∂
+u
+
+
+∂
+τ
+
+
+
+=
+
+
+
+
+∂
+
+2
+
+
+u
+
+
+∂
+
+x
+
+2
+
+
+
+
+
+
+
+{\displaystyle {\frac {\partial u}{\partial \tau }}={\frac {\partial ^{2}u}{\partial x^{2}}}}
+
+
+
+通過如下變換：
+
+
+
+
+
+V
+(
+S
+,
+t
+)
+=
+K
+v
+(
+x
+,
+τ
+)
+
+
+
+{\displaystyle V(S,t)=Kv(x,\tau )\,}
+
+
+
+
+
+
+x
+=
+ln
+⁡
+(
+S
+
+/
+
+K
+)
+
+
+
+{\displaystyle x=\ln(S/K)\,}
+
+
+
+
+
+
+τ
+=
+
+
+1
+2
+
+
+
+σ
+
+2
+
+
+(
+T
+−
+t
+)
+
+
+{\displaystyle \tau ={\frac {1}{2}}\sigma ^{2}(T-t)}
+
+
+
+
+
+
+v
+(
+x
+,
+τ
+)
+=
+exp
+⁡
+(
+−
+α
+x
+−
+β
+τ
+)
+u
+(
+x
+,
+τ
+)
+.
+
+
+
+{\displaystyle v(x,\tau )=\exp(-\alpha x-\beta \tau )u(x,\tau ).\,}
+
+
+
+基本解[編輯]
+非齊次偏微分方程可通過尋找基本算子，然後通過帶有初始條件的摺積來解答。 該法常用於信號處理中通過衝激響應來求解濾波器。
+疊加原理[編輯]
+因為一個線性齊次偏微分方程解的重疊也可看做一個解，所以可以通過交叉重疊這些解得到偏微分方程的一個解。
+數值法解偏微分方程[編輯]
+在眾多求解偏微分方程的數值方法中，三種應用最廣的方法為有限元法（Finite Element Method, FEM）、有限體積法（Finite Volume Method, FVM）和有限差分法（Finite Difference Method, FDM）。其中，有限元法占主要地位，尤其是它的高效高階版本—hp-FEM（英語：hp-FEM）。其它版本的有限元法還有：廣義有限元法（Generalized Finite Element Method, FFEM）、擴展有限元法（eXtended Finite Element Method, XFEM）、無網格有限元法（Meshfree Finite Element Method）、離散迦遼金有限元法（Discontinuous Galerkin Finite Element Method, DGFEM）等。
+參考文獻[編輯]
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4044779-0
+NDL: 00563088
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=偏微分方程&oldid=43645921"					
+分類：偏微分方程隱藏分類：含有英語的條目自2012年11月擴充中的條目擴充中的條目包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةБългарскиBosanskiCatalàČeštinaDeutschΕλληνικάEnglishEsperantoEspañolفارسیSuomiFrançaisGalegoעבריתहिन्दीՀայերենBahasa IndonesiaItaliano日本語한국어Bahasa MelayuNederlandsNorsk bokmålPolskiPortuguêsRomânăРусскийScotsSrpskohrvatski / српскохрватскиSimple EnglishSlovenčinaСрпски / srpskiSvenskaTagalogTürkçeУкраїнськаTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年3月17日 (週五) 08:32。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+微分方程 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+微分方程
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+系列條目
+
+
+微積分學
+
+
+
+
+
+函數
+導數
+微分
+積分
+
+
+
+
+基本定理
+
+
+
+
+函數極限
+連續函數
+
+
+
+
+均值定理
+羅爾定理
+
+
+
+
+
+
+
+基礎概念
+
+
+
+函數 · 數列 · 級數 · 極限
+初等函數 · 無窮小量 · 收斂數列
+收斂性 · 夾擠定理
+連續 · 一致連續 · 間斷點
+
+
+
+
+
+
+
+
+
+一元微分
+
+
+
+導數 · 高階導數 · 介值定理 · 中值定理（羅爾定理 · 拉格朗日中值定理 · 柯西中值定理） · 泰勒公式 · 求導法則（乘法定則 · 除法定則 · 倒數定則 · 鏈式法則） · 洛必達法則 · 導數列表 · 導數的函數應用（單調性 · 極值 · 駐點 · 拐點 · 凹凸性 · 曲率）
+
+
+
+
+
+
+
+
+
+一元積分
+
+
+
+不定積分 · 定積分 · 積分的定義（黎曼積分 · 達布積分 · 勒貝格積分） · 積分表 · 求積分的技巧（吸納積分法 · 換元積分法 · 分部積分法 · 三角換元法 · 降次積分法 · 部分分式積分法） · 牛頓-萊布尼茨公式 · 廣義積分 · 主值 · 柯西主值 · Β函數 · Γ函數 · 數值積分 · 牛頓-寇次公式 · 近似積分法（矩形法 · 梯形法 · 辛普森積分法）
+
+
+
+
+
+
+
+
+
+多元微積分
+
+
+
+多元函數 · 偏導數 · 隱函數 · 全微分 · 方向導數 · 梯度 · 泰勒公式 · 拉格朗日乘數 · 多元函數積分 · 多重積分 · 廣義多重積分 · 曲線積分 · 曲面積分 · 格林公式 · 高斯公式 · 斯托克斯公式 · 散度 · 旋度
+
+
+
+
+
+
+
+
+
+微分方程
+
+
+
+常微分方程 · 分離變數法 · 積分因子 · 歐拉方法 · 柯西-歐拉方程 · 伯努利微分方程 · 克萊羅方程 · 全微分方程 · 線性微分方程 · 差分方程 · 拉普拉斯變換法 · 偏微分方程 · 拉普拉斯方程
+
+
+
+
+
+
+
+
+
+相關數學家
+
+
+牛頓 · 萊布尼茲 · 柯西 · 黎曼
+拉格朗日 · 拉普拉斯 · 歐拉
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+
+
+
+
+
+
+
+一個導管中氣流的模擬，使用納維-斯托克斯方程式
+
+
+
+
+
+
+藉由求解熱方程式得到的泵浦外殼熱分佈圖，假設外界是較低溫度的溫度分佈，熱由泵浦內部傳出，由外界冷卻。
+
+
+微分方程（英語：Differential equation，DE）是一種數學方程，用來描述某一類函數與其導數之間的關係。微分方程的解是一個符合方程的函數。而在初等數學的代數方程裡，其解是常數值。
+微分方程的應用十分廣泛，可以解決許多與導數有關的問題[1]:p.1。物理中許多涉及變力的運動學、動力學問題，如空氣的阻力為速度函數的落體運動等問題，很多可以用微分方程求解。此外，微分方程在化學、工程學、經濟學和人口統計等領域都有應用。
+數學領域對微分方程的研究著重在幾個不同的面向，但大多數都是關心微分方程的解。只有少數簡單的微分方程可以求得解析解。不過即使沒有找到其解析解，仍然可以確認其解的部份性質。在無法求得解析解時，可以利用數值分析的方式，利用電腦來找到其數值解。動力系統理論強調對於微分方程系統的量化分析，而許多數值方法可以計算微分方程的數值解，且有一定的準確度。
+
+
+
+目錄
+
+
+1 分類
+
+1.1 常微分方程及偏微分方程
+1.2 線性及非線性
+1.3 舉例
+
+
+2 性質
+
+2.1 普遍性的數學描述
+2.2 微分方程的解
+2.3 簡易微分方程的求解方法
+
+2.3.1 一階線性常微分方程
+2.3.2 二階常係數齊次常微分方程
+
+
+2.4 約束條件
+2.5 解的存在性及唯一性
+
+
+3 歷史
+4 相關概念
+5 和差分方程的關係
+6 著名的微分方程
+
+6.1 物理及工程
+6.2 生物學
+6.3 經濟學
+
+
+7 參見
+8 參考資料
+
+8.1 參考文獻
+
+
+
+
+
+分類[編輯]
+微分方程可分為以下幾類，而隨著微分方程種類的不同，其相關研究的方式也會隨之不同。
+常微分方程及偏微分方程[編輯]
+
+常微分方程（ODE）是指一微分方程的未知數是單一自變數的函數[2]。最簡單的常微分方程，未知數是一個實數或是複數的函數，但未知數也可能是一個向量函數或是矩陣函數，後者可對應一個由常微分方程組成的系統。微分方程的表達通式是：
+
+
+
+
+
+
+f
+
+(
+x
+,
+
+
+
+
+d
+
+n
+
+
+y
+
+
+d
+
+x
+
+n
+
+
+
+
+
+,
+
+
+
+
+d
+
+(
+n
+−
+1
+)
+
+
+y
+
+
+d
+
+x
+
+(
+n
+−
+1
+)
+
+
+
+
+
+,
+⋯
+,
+
+
+
+d
+y
+
+
+d
+x
+
+
+
+,
+y
+)
+
+=
+0
+
+
+{\displaystyle f\left(x,{\frac {d^{n}y}{dx^{n}}},{\frac {d^{(n-1)}y}{dx^{(n-1)}}},\cdots ,{\frac {dy}{dx}},y\right)=0}
+
+
+
+
+常微分方程常依其階數分類，階數是指自變數導數的最高階數[1]:p.3，最常見的二種為一階微分方程及二階微分方程。例如以下的貝塞爾方程：
+
+
+
+
+
+
+
+
+
+x
+
+2
+
+
+
+
+
+
+d
+
+2
+
+
+y
+
+
+d
+
+x
+
+2
+
+
+
+
+
++
+x
+
+
+
+d
+y
+
+
+d
+x
+
+
+
++
+(
+
+x
+
+2
+
+
+−
+
+α
+
+2
+
+
+)
+y
+=
+0
+
+
+{\displaystyle x^{2}{\frac {d^{2}y}{dx^{2}}}+x{\frac {dy}{dx}}+(x^{2}-\alpha ^{2})y=0}
+
+
+
+
+（其中y為應變數）為二階微分方程，其解為貝索函數。
+
+
+偏微分方程（PDE）是指一微分方程的未知數是多個自變數的函數[2]，且方程式中有未知數對自變數的偏微分。偏微分方程的階數定義類似常微分方程，但更細分為橢圓型、雙曲線型及拋物線型的偏微分方程，尤其在二階偏微分方程中上述的分類更是重要。有些偏微分方程在整個自變數的值域中無法歸類在上述任何一種型式中，這種偏微分方程則稱為混合型。像以下的方程就是偏微分方程：
+
+
+
+
+
+
+
+
+
+
+
+∂
+u
+
+
+∂
+t
+
+
+
++
+t
+
+
+
+∂
+u
+
+
+∂
+x
+
+
+
+=
+0
+
+
+{\displaystyle {\frac {\partial u}{\partial t}}+t{\frac {\partial u}{\partial x}}=0}
+
+。
+
+
+
+線性及非線性[編輯]
+常微分方程及偏微分方程都可以分為線性及非線性二類。
+若微分方程中沒有出現自變數及微分項的平方或其他乘積項，也沒有出現應變數及其微分項的乘積，此微分方程為線性微分方程，否則即為非線性微分方程。
+齊次線性微分方程是線性微分方程中更細的分類，微分方程的解乘上一係數或是與另一個解相加後的結果仍為微分方程的解。
+若線性微分方程的係數均為常數，則為常係數線性微分方程。常係數線性微分方程可以利用拉氏轉換轉換為代數方程[1]:p.315-316，因此簡化求解的過程。
+針對非線性的微分方程，只有相當少數的方法可以求得微分方程的解析解，而且這些方法需要微分方程有特別的對稱性。長時間時非線性微分方程可能會出現非常複雜的特性，也可能會有混沌現象。有關非線性微分方程的一些基本問題，例如解的存在性、唯一性及初始值非線性微分方程的適定性問題，以及邊界值非線性微分方程都是相當難的問題，甚至針對特定非線性微分方程的上述基本問題都被視為是數學理論的一大突破。例如2000年提出的7個千禧年大獎難題中，其中一個是納維-斯托克斯存在性與光滑性，都是探討納維－斯托克斯方程式其解的數學性質[3]，至2012年8月為止此問題尚未被證明。
+線性微分方程常常用來近似非線性微分方程，不過只在特定的條件下才能近似。例如單擺的運動方程為非線性的微分方程，但在小角度時可以近似為線性的微分方程。
+舉例[編輯]
+以下是常微分方程的一些例子，其中u為未知的函數，自變數為x，c及ω均為常數。
+
+非齊次一階常係數線性微分方程：
+
+
+
+
+
+
+
+
+
+
+
+d
+u
+
+
+d
+x
+
+
+
+=
+c
+u
++
+
+x
+
+2
+
+
+
+
+{\displaystyle {\frac {du}{dx}}=cu+x^{2}}
+
+。
+
+
+
+
+齊次二階線性微分方程：
+
+
+
+
+
+
+
+
+
+
+
+
+d
+
+2
+
+
+u
+
+
+d
+
+x
+
+2
+
+
+
+
+
+−
+x
+
+
+
+d
+u
+
+
+d
+x
+
+
+
++
+u
+=
+0
+
+
+{\displaystyle {\frac {d^{2}u}{dx^{2}}}-x{\frac {du}{dx}}+u=0}
+
+。
+
+
+
+
+描述諧振子的齊次二階常係數線性微分方程：
+
+
+
+
+
+
+
+
+
+
+
+
+d
+
+2
+
+
+u
+
+
+d
+
+x
+
+2
+
+
+
+
+
++
+
+ω
+
+2
+
+
+u
+=
+0
+
+
+{\displaystyle {\frac {d^{2}u}{dx^{2}}}+\omega ^{2}u=0}
+
+。
+
+
+
+
+非齊次一階非線性微分方程：
+
+
+
+
+
+
+
+
+
+
+
+d
+u
+
+
+d
+x
+
+
+
+=
+
+u
+
+2
+
+
++
+1
+
+
+{\displaystyle {\frac {du}{dx}}=u^{2}+1}
+
+。
+
+
+
+
+描述長度為L的單擺的二階非線性微分方程：
+
+
+
+
+
+
+
+
+L
+
+
+
+
+d
+
+2
+
+
+u
+
+
+d
+
+x
+
+2
+
+
+
+
+
++
+g
+sin
+⁡
+u
+=
+0
+
+
+{\displaystyle L{\frac {d^{2}u}{dx^{2}}}+g\sin u=0}
+
+。
+
+
+
+以下是偏微分方程的一些例子，其中u為未知的函數，自變數為x及t或者是x及y。
+
+齊次一階線性偏微分方程：
+
+
+
+
+
+
+
+
+
+
+
+∂
+u
+
+
+∂
+t
+
+
+
++
+t
+
+
+
+∂
+u
+
+
+∂
+x
+
+
+
+=
+0
+
+
+{\displaystyle {\frac {\partial u}{\partial t}}+t{\frac {\partial u}{\partial x}}=0}
+
+。
+
+
+
+
+拉普拉斯方程，是橢圓型的齊次二階常係數線性偏微分方程：
+
+
+
+
+
+
+
+
+
+
+
+
+∂
+
+2
+
+
+u
+
+
+∂
+
+x
+
+2
+
+
+
+
+
++
+
+
+
+
+∂
+
+2
+
+
+u
+
+
+∂
+
+y
+
+2
+
+
+
+
+
+=
+0
+
+
+{\displaystyle {\frac {\partial ^{2}u}{\partial x^{2}}}+{\frac {\partial ^{2}u}{\partial y^{2}}}=0}
+
+。
+
+
+
+
+KdV方程，是三階的非線性偏微分方程：
+
+
+
+
+
+
+
+
+
+
+
+∂
+u
+
+
+∂
+t
+
+
+
+=
+6
+u
+
+
+
+∂
+u
+
+
+∂
+x
+
+
+
+−
+
+
+
+
+∂
+
+3
+
+
+u
+
+
+∂
+
+x
+
+3
+
+
+
+
+
+
+
+{\displaystyle {\frac {\partial u}{\partial t}}=6u{\frac {\partial u}{\partial x}}-{\frac {\partial ^{3}u}{\partial x^{3}}}}
+
+。
+
+
+
+性質[編輯]
+普遍性的數學描述[編輯]
+許多物理或是化學的基本定律都可以寫成微分方程的形式。在生物學及經濟學中，微分方程用來作為複雜系統的數學模型。微分方程的數學理論最早是和方程對應的科學領域一起出現，而微分方程的解就可以用在該領域中。不過有時二個截然不同的科學領域會形成相同的微分方程，此時微分方程對應的數學理論可以看到不同現象後面一致的原則。
+例如考慮光和聲音在空氣中的傳播，以及池塘水面上的波動，這些都可以用同一個二階的偏微分方程來描述，此方程即為波動方程，因此可以將光和聲音視為一種波，和水面上的水波有些類似之處。約瑟夫·傅立葉所發展的熱傳導理論，其統御方程是另一個二階偏微分方程－熱傳導方程式，擴散作用看似和熱傳導不同，但也適用同一個統御方程，而經濟學中的布萊克-休斯方程也和熱傳導方程有關。
+微分方程的解[編輯]
+微分方程的解通常是一個函數表達式
+
+
+
+y
+=
+f
+(
+x
+)
+
+
+
+{\displaystyle y=f(x)\,}
+
+（含一個或多個待定常數，由初始條件確定）。例如：
+
+
+
+
+
+
+
+
+d
+y
+
+
+d
+x
+
+
+
+=
+sin
+⁡
+x
+
+
+{\displaystyle {\frac {dy}{dx}}=\sin x}
+
+，
+
+的解是
+
+
+
+
+
+y
+=
+−
+cos
+⁡
+x
++
+C
+
+
+{\displaystyle y=-\cos x+C}
+
+，
+
+其中
+
+
+
+C
+
+
+{\displaystyle C}
+
+是待定常數；
+例如，如果知道
+
+
+
+
+
+y
+=
+f
+(
+π
+)
+=
+2
+
+
+{\displaystyle y=f(\pi )=2}
+
+，
+
+則可推出
+
+
+
+
+
+C
+=
+1
+
+
+{\displaystyle C=1}
+
+，
+
+而可知
+
+
+
+y
+=
+−
+cos
+⁡
+x
++
+1
+
+
+{\displaystyle y=-\cos x+1}
+
+，
+簡易微分方程的求解方法[編輯]
+一階線性常微分方程[編輯]
+對於一階線性常微分方程，常用的方法是常數變易法：
+對於方程：
+
+
+
+
+y
+′
+
++
+p
+(
+x
+)
+y
++
+q
+(
+x
+)
+=
+0
+
+
+{\displaystyle y'+p(x)y+q(x)=0}
+
+
+可知其通解：
+
+
+
+y
+=
+C
+(
+x
+)
+
+e
+
+−
+∫
+p
+(
+x
+)
+
+d
+x
+
+
+
+
+{\displaystyle y=C(x)e^{-\int p(x)\,dx}}
+
+
+然後將這個通解代回到原式中，即可求出
+
+
+
+C
+(
+x
+)
+
+
+{\displaystyle C(x)}
+
+的值
+二階常係數齊次常微分方程[編輯]
+對於二階常係數齊次常微分方程，常用方法是求出其特徵方程的解
+對於方程：
+
+
+
+
+y
+″
+
++
+p
+
+y
+′
+
++
+q
+y
+=
+0
+
+
+{\displaystyle y''+py'+qy=0}
+
+
+其特徵方程：
+
+
+
+
+r
+
+2
+
+
++
+p
+r
++
+q
+=
+0
+
+
+{\displaystyle r^{2}+pr+q=0}
+
+
+根據其特徵方程，判斷根的分佈情況，然後得到方程的通解： 
+
+
+
+y
+=
+
+c
+
+1
+
+
+
+y
+
+1
+
+
++
+
+c
+
+2
+
+
+
+y
+
+2
+
+
+
+
+{\displaystyle y=c_{1}y_{1}+c_{2}y_{2}}
+
+
+一般的通解形式為 （在
+
+
+
+
+
+
+
+
+
+r
+
+1
+
+
+=
+
+r
+
+2
+
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}r_{1}=r_{2}\end{smallmatrix}}}
+
+的情況下）:
+
+
+
+y
+=
+(
+
+C
+
+1
+
+
++
+
+C
+
+2
+
+
+x
+)
+
+e
+
+r
+x
+
+
+
+
+{\displaystyle y=(C_{1}+C_{2}x)e^{rx}}
+
+
+（在
+
+
+
+
+
+
+
+
+
+r
+
+1
+
+
+≠
+
+r
+
+2
+
+
+
+
+
+
+
+
+
+{\displaystyle {\begin{smallmatrix}r_{1}\neq r_{2}\end{smallmatrix}}}
+
+的情況下）:
+
+
+
+y
+=
+
+C
+
+1
+
+
+
+e
+
+
+r
+
+1
+
+
+x
+
+
++
+
+C
+
+2
+
+
+
+e
+
+
+r
+
+2
+
+
+x
+
+
+
+
+{\displaystyle y=C_{1}e^{r_{1}x}+C_{2}e^{r_{2}x}}
+
+
+（在共軛複數根的情況下）：
+
+
+
+y
+=
+
+e
+
+α
+x
+
+
+(
+
+C
+
+1
+
+
+cos
+⁡
+(
+β
+x
+)
++
+
+C
+
+2
+
+
+sin
+⁡
+(
+β
+x
+)
+)
+
+
+{\displaystyle y=e^{\alpha x}(C_{1}\cos(\beta x)+C_{2}\sin(\beta x))}
+
+
+約束條件[編輯]
+微分方程的約束條件是指其解需符合的條件，依常微分方程及偏微分方程的不同，有不同的約束條件。
+常微分方程常見的約束條件是函數在特定點的值，若是高階的微分方程，會加上其各階導數的值，有這類約束條件的常微分方程稱為初值問題。
+若是二階的常微分方程，也可能會指定函數在二個特定點的值，此時的問題即為邊界值問題。若邊界條件指定二點數值，稱為狄利克雷邊界條件（第一類邊值條件），此外也有指定二個特定點上導數的邊界條件，稱為諾伊曼邊界條件（第二類邊值條件）等。
+偏微分方程常見的問題以邊界值問題為主，不過邊界條件則是指定一特定超曲面的值或導數需符定特定條件。
+解的存在性及唯一性[編輯]
+存在性是指給定一微分方程及約束條件，判斷其解是否存在。唯一性是指在上述條件下，是否只存在一個解。
+針對常微分方程的初值問題，皮亞諾存在性定理可判別解的存在性，柯西-利普希茨定理則可以判別解的存在性及唯一性。
+針對偏微分方程，柯西-克瓦列夫斯基定理（英語：Cauchy–Kowalevski theorem）可以判別解的存在性及唯一性。 皮亞諾存在性定理可以判斷常微分方程初值問題的解是否存在。
+歷史[編輯]
+微分方程的起源約在十七世紀末，為瞭解決物理及天文學問題而產生，大約和微積分的發展同時。惠更斯在1693年的《教師學報》中提到常微分方程，雅各布·白努利在1691年建立懸鏈線的微分方程，並求得其函數。微分方程在十八世紀中期成為一個獨立的學科[4]，而微分方程也帶動許多當時的科學發展，例如海王星的發現就和微分方程的分析有關[5]。
+偏微分方程是由傅立葉開始的，他在1822年發表《熱的解析理論》，提出熱傳導方程的偏微分方程，並且利用分離變數法求得級數解，並且開始有關傅立葉級數的研究。另外在十九世紀有關拉普拉斯方程的研究也是偏微分方程的重要發展。拉普拉斯和泊松都有許多的貢獻，後來喬治·格林提出了相關格林函數及格林公式等概念，並帶動斯托克斯、麥克斯韋及後來電磁學相關的研究。而流體力學的納維-斯托克斯方程及彈性介質的柯西方程也是在十九世紀提出的偏微分方程。[5]。後來許多的理論都是以偏微分方程的形式出現，量子力學的基礎方程式薛丁格方程也是偏微分方程，廣義相對論中的愛因斯坦重力場方程式也有類似偏微分的協變導數。
+相關概念[編輯]
+
+時滯微分方程（DDE）是一個單一自變數的方程，此變數一般稱為時間，未知數在某一時間的導數和特定函數在之前時間的值有關。
+
+
+隨機微分方程（SDE）是一個未知數為隨機過程，且方程中有包括已知隨機過程（例如維納過程)的方程，不過雖名為微分方程，其中沒有微分項。
+
+
+微分代數方程（英語：differential algebraic equation）（DAE）是包括自變數微分項的方程，但是為自變數微分項的隱函數。
+
+和差分方程的關係[編輯]
+參見：時標微積分
+微分方程的理論和差分方程的理論有密切的關係，後者的座標只允許離散值，許多計算微分方程數值解的方法或是對於微分方程性質的研究都需要將微分方程的解近似為對應差分方程的解。
+著名的微分方程[編輯]
+
+物理及工程[編輯]
+
+動力學中的牛頓第二運動定律
+經典力學中的歐拉－拉格朗日方程
+經典力學中的哈密頓力學
+熱力學中的牛頓冷卻定律
+波動方程
+電磁學中的麥克斯韋方程組
+熱力學中的熱傳導方程式
+定義調和函數的拉普拉斯方程
+泊松方程
+廣義相對論中的愛因斯坦場方程
+量子力學中的薛丁格方程式
+測地線
+流體力學中的納維－斯托克斯方程式
+隨機過程中的擴散方程
+流體力學中的對流－擴散方程
+複變分析中的柯西－黎曼方程
+分子動力學中的泊松－玻爾茲曼方程
+淺水方程（英語：shallow water equations）
+通用微分方程
+勞侖次吸子，其解包括了渾沌現象
+
+
+生物學[編輯]
+
+威爾霍斯特方程–生物族群增長模型
+個體成長模型–生物個體增長模型
+洛特卡－沃爾泰拉方程–掠食者和獵物的動態模型
+複製方程（英語：Replicator dynamics）–應用在生物數學中
+Hodgkin-Huxley模型（英語：Hodgkin–Huxley model）–神經的動作電位
+
+經濟學[編輯]
+
+布萊克-休斯方程
+索洛模型
+馬爾薩斯模型
+塞西廣告模型（英語：Sethi model）
+
+參見[編輯]
+
+
+數學主題
+
+
+
+線性微分方程
+拉普拉斯變換
+常微分方程
+偏微分方程
+初值問題
+邊值問題
+
+參考資料[編輯]
+
+
+^ 1.0 1.1 1.2 劉睦雄; 張任業. 微分方程. 華泰書局. 1988.  引文使用過時參數coauthors (幫助)
+^ 2.0 2.1 翁秉仁. 微分方程. EpisteMath. 中央研究院數學所、臺大數學系. [2014-01-15] （中文）. 
+^ Official statement of the problem, Clay Mathematics Institute.
+^ 常微分方程的發展史況. 高等數學. 北京航空航天大學現代遠程教育學院. [2014-01-18] （中文）. 
+^ 5.0 5.1 偏微分方程理論學習. 中國科學技術大學. [2014-01-18] （中文）. 
+
+
+參考文獻[編輯]
+
+D. Zwillinger, Handbook of Differential Equations (3rd edition), Academic Press, Boston, 1997.
+A. D. Polyanin and V. F. Zaitsev, Handbook of Exact Solutions for Ordinary Differential Equations (2nd edition), Chapman & Hall/CRC Press, Boca Raton, 2003. ISBN 978-1-58488-297-8.
+W. Johnson, A Treatise on Ordinary and Partial Differential Equations, John Wiley and Sons, 1913, in University of Michigan Historical Math Collection
+E. L. Ince, Ordinary Differential Equations, Dover Publications, 1956
+E. A. Coddington and N. Levinson, Theory of Ordinary Differential Equations, McGraw-Hill, 1955
+P. Blanchard, R. L. Devaney, G. R. Hall, Differential Equations, Thompson, 2006
+P. Abbott and H. Neill, Teach Yourself Calculus, 2003 pages 266-277
+R. I. Porter, Further Elementary Analysis, 1978, chapter XIX Differential Equations
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+數學領域
+
+
+
+
+
+
+
+註釋：數學的領域也可根據「MSC分類標準」或「中國學科分類國家標準」進行分類。
+
+
+
+
+
+
+領域
+
+
+
+數理邏輯
+集合論
+範疇論
+代數
+
+初等
+線性
+多重線性
+抽象
+
+
+數論
+分析/微積分
+微分方程/動態系統
+數學物理
+數理統計
+幾何
+
+離散（英語：Discrete geometry）
+代數
+解析
+微分
+有限
+
+
+拓撲
+動力系統
+組合
+泛函分析
+博弈論
+資訊理論
+圖論
+數學教育
+數理邏輯
+數學物理
+數值分析
+最優化
+序理論
+數學哲學
+趣味數學
+計算
+機率
+表示
+統計
+三角
+
+
+
+
+
+
+
+
+分支
+
+
+
+純粹數學
+應用數學
+離散數學
+計算數學
+元數學
+
+
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4012249-9
+NDL: 00560651
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=微分方程&oldid=45213233"					
+分類：微分方程隱藏分類：含有過時參數的引用的頁麵包含規範控制信息的維基百科條目使用ISBN魔術連結的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+AfrikaansAlemannischAragonésالعربيةAsturianuБашҡортсаБеларускаяБеларуская (тарашкевіца)‎БългарскиবাংলাBosanskiCatalàکوردیČeštinaЧӑвашлаDanskDeutschΕλληνικάEnglishEsperantoEspañolEestiفارسیSuomiFrançaisGaeilge贛語Galegoעבריתहिन्दीFiji HindiHrvatskiMagyarՀայերենBahasa IndonesiaItaliano日本語PatoisქართულიQaraqalpaqshaҚазақшаភាសាខ្មែរ한국어KurdîLatinaЛезгиLietuviųLatviešuМакедонскиമലയാളംBahasa MelayuMaltiNederlandsNorsk nynorskNorsk bokmålOccitanਪੰਜਾਬੀPolskiPiemontèisپنجابیPortuguêsRomânăРусскийScotsSrpskohrvatski / српскохрватскиසිංහලSimple EnglishSlovenčinaSlovenščinaСрпски / srpskiSvenskaதமிழ்ไทยTürkmençeTagalogTürkçeУкраїнськаاردوOʻzbekcha/ўзбекчаTiếng ViệtWinarayייִדישBân-lâm-gú粵語 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年7月15日 (週六) 14:01。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+數值偏微分方程
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        Mathematics Everywhere                                        
+
+
+略過內容
+前往主導覽功能並進行登入
+
+導覽列檢視搜尋
+導覽列
+
+HomePython入門PatentsPublicationsCoursesDownloads
+
+
+搜尋
+
+
+搜尋... 
+
+
+
+
+ 
+
+
+
+
+您目前位置：Home  教學筆記  數值分析  數值偏微分方程
+
+
+
+
+
+
+
+
+
+		數值偏微分方程
+
+
+
+ 
+
+ 
+
+
+
+
+詳細內容
+
+				分類：數值分析 
+
+	發佈於：2014-05-15, 週四 10:22	
+
+				作者 曾正男		
+
+	點擊數：4879	
+
+
+
+數值偏微分方程
+
+
+Elliptic PDE
+
+
+Parabolic PDE
+
+
+Hyperbolic PDE
+
+
+後記
+
+
+全部頁面
+
+
+第 3 頁，共 5 頁
+Parabolic PDE
+接下來我們用一維的熱傳導方程來介紹Parabolic PDE，我們令 \(u(x,t)\) 是熱在一維的 \(x\) 空間上隨時間 \(t\) 的分佈，方程如下：
+\(A \frac{\partial^{2}u(x,t)}{\partial x^{2}} = \frac{\partial u(x,t)}{\partial t}\)，
+其中 \(0\leq x\leq x_f\), \(0\leq t \leq T\) 並且有下列邊界條件：
+\(u(0,t) = b_0(t)\), \(u(x_f,t) = b_f(t)\)，以及 \(u(x,0) =i_0(x)\).
+The Explicit Forward Euler Method
+我們一樣使用finite difference method 把 \([0,x_f]\) 區間切割成 \(M\) 等分，把 \([0,T]\) 時間區間切割成 \(N\) 等分。因此，我們有 \(\Delta x = \frac{x_f}{M}\) 以及 \(\Delta t = \frac{T}{N}\)。並且我們用central difference approximation 去取代 \(u(x,t)\) 在空間上的二次偏微分，用forward difference approximation 取代對時間的偏微分。我們得到下列差分方程式： \(A\frac{u_{i+1}^k-2u_i^{k}+u_{i-1}^{k}}{\Delta x^{2}} = \frac{u_{i}^{k+1}-u_{i}^{k}}{\Delta t}\)
+這裡的 \(u_{i}^{k}\) 代表 \(u(x_{i},t_{k})\) 因此 \(u_{i}^{k+1}\) 的時間比其他項更新，我們可以將上式寫成下列的疊代式：
+（PB 式一） \(u_{i}^{k+1} = r(u_{i+1}^{k}+u_{i-1}^{k})+(1-2r)u_{i}^{k}\) ，其中 \(r = A\frac{\Delta t}{\Delta x^{2}}\) ，\(i = 1,2,..., M-1\)
+和先前的Laplace's equation 不一樣，因為不知道T 時間的狀態，我們隨著時間的增加，若先前的計算有誤差，不知道這誤差會怎麼被累積下去。這和解常微分方程的Euler 方法一樣，我們擔心數值解會有不穩定的情形發生。若我們希望這個疊代式穩定，（PB式一）會對應一個線性系統 \(Au^{k+1} = u^{k}\)，理所當然地矩陣 \(A\) 的特徵值要小於1。我們除了把對應的矩陣寫開並且計算其特徵值之外，還可以用下列方法決定適合的 \(\Delta t\) 和 \(\Delta x\)。
+我們把 \(u_{i}^{k}\) 用傅立葉基底表示，假設 \(u_{i}^{k} = \lambda^{k}e^{j\frac{i\pi}{P}}\) 其中 \(j\) 是 \(\sqrt{-1}\) 的意思，\(P\) 是任意非零的整數代入（PB式一），我們得到
+\(\lambda = 1-2r(1-cos(\frac{\pi}{P}))\)
+當我們希望 \(u_{i}^{k}\) 不會隨著 \(k\) 增加而爆掉時，我們希望 \(|\lambda|\leq 1\)，因此我們有
+\(r=A\frac{\Delta t}{\Delta x^{2}} \leq \frac{1}{2}\)
+用Explicit Forward Euler Method 解 heat equation 的Python 程式如下，若要解一般的Parabolic PDE 對應的函數與公式讀者要自行調整。
+def pde_heat_exp(a,xf,T,Fx,M,N):
+    """
+    solve a u_xx = u_t for 0<=x<=xf, 0<=t<=T by explicit method
+    u(x,0) = it0(x)
+    u(0,t) = bx0(t)
+    u(xf,t) = bxf(t)
+    M : the number of subintervals along x axis
+    N : the number of subintervals along t axis
+    Fx : the list of function, Fx = [it0,bx0,bxf]
+    
+    For example:
+    Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]
+    u, x, t = pde_heat_exp(1.0,1.0,0.1,Fx,20,100)
+    Notice that r = a*dt/dx^2 must < 1/2 for stablility
+    """
+
+    dx, dt = float(xf)/M, float(T)/N
+    x = np.linspace(0,xf,M+1)
+    t = np.linspace(0,T,N+1)
+    
+    if len(Fx)<>3:
+        print "Fx = [it0,bx0,bxf]"
+        return
+    it0, bx0, bxf = Fx[0], Fx[1], Fx[2]
+
+    u = np.zeros([N+1,M+1])
+    X = np.zeros([N+1,M+1]) #the mesh grids of x
+    Y = np.zeros([N+1,M+1]) #the mesh grids of t
+
+    for i in range(N+1):
+        for j in range(M+1):
+            X[i,j] = x[j]
+            Y[i,j] = t[i]
+            
+    #set the boundary condition
+    u[0,:] = it0(x)
+    u[:,0] = bx0(t)
+    u[:,-1] = bxf(t)
+
+    r = a*dt/(dx**2)
+    r1 = 1 - 2*r
+    
+    for k in range(N):
+        for i in range(1,M):
+            u[k+1,i] = r*(u[k,i+1]+u[k,i-1])+r1*u[k,i]
+    
+    return u, X, Y
+ 
+因為是3D 的圖形，所以output 的 \(x\) 與 \(t\) 我們調整成和u 一樣大小，方便繪圖。要顯示我們的計算結果，Python 的3D 繪圖方法如下：
+ 
+>>> Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]>>> u, x, t = pde_heat_exp(1.0,1.0,0.1,Fx,20,100)>>> import pylab as p>>> import mpl_toolkits.mplot3d.axes3d as p3>>> fig = p.figure()>>> ax = p3.Axes3D(fig)>>> ax.plot_wireframe(u,x,t)<mpl_toolkits.mplot3d.art3d.Line3DCollection object at 0x1d500d0>>>> p.show()
+ 
+The Implicit Backward Euler Method
+若我們把差分方程式的右端改成backward 差分，我們得到
+\(A\frac{u_{i+1}^{k}-2u_{i}^{k}+u_{i-1}^{k}}{\Delta x^{2}} = \frac{u_{i}^{k}-u_{i}^{k-1}}{\Delta t}\)
+上式整理過後成為
+（PB 式二） \(-r(u_{i-1}^{k}+(1+2r)u_{i}^{k}-ru_{i+1}^{k}) = u_{i}^{k-1}\) ，其中 \(r = A\frac{\Delta t}{\Delta x^{2}}\) ，\(i = 1,2,..., M-1\)
+這時我們無法對每一個 \(i\) 位置的 \(u\) 進行單純地迭代得到答案，而是解一個三對角的矩陣。若我們解的是Dirichlet 形式的邊界條件問題，我們有 \(u_{0}^{k}\) 和 \(u_{M}^{k}\)。若我們解的是Neumann 形式的邊界條件問題，我們使用 \(\frac{u_{1}^{k}-u_{-1}^{k}}{2\Delta x} = b'_{0}(k)\)，這樣 \(u_{-1}^{k}\) 這一項才能被 \(b'_{0}(k)\) 表示出來。雖然解矩陣是比較麻煩的方式，但若我們套用先前的傅立葉分析方法將 \(u_{i}^{k} = \lambda^{k}e^{j\frac{i\pi}{P}}\)帶入（PB 式二），經過整理算式後我們發現\(|\lambda|\) 自動小於 \(1\)，這表示不用特別調整 \(\Delta x\) 和 \(\Delta t\) 的大小，我們用Implicit Backward Euler Method 可以得到比較穩定的解。
+下列是Python 的heat equation 用 implicit backward Euler Method 的程式：
+def pde_heat_imp(a,xf,T,Fx,M,N):
+    """
+    solve a u_xx = u_t for 0<=x<=xf, 0<=t<=T by explicit method
+    u(x,0) = it0(x)
+    u(0,t) = bx0(t)
+    u(xf,t) = bxf(t)
+    M : the number of subintervals along x axis
+    N : the number of subintervals along t axis
+    Fx : the list of function, Fx = [it0,bx0,bxf]
+    
+    For example:
+    Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]
+    u, x, t = pde_heat_imp(1.0,1.0,0.1,Fx,20,100)
+    """
+
+    dx, dt = float(xf)/M, float(T)/N
+    x = np.linspace(0,xf,M+1)
+    t = np.linspace(0,T,N+1)
+    
+    if len(Fx)<>3:
+        print "Fx = [it0,bx0,bxf]"
+        return
+    it0, bx0, bxf = Fx[0], Fx[1], Fx[2]
+
+    u = np.zeros([N+1,M+1])
+    X = np.zeros([N+1,M+1]) #the mesh grids of x
+    Y = np.zeros([N+1,M+1]) #the mesh grids of t
+
+    for i in range(N+1):
+        for j in range(M+1):
+            X[i,j] = x[j]
+            Y[i,j] = t[i]
+            
+    #set the boundary condition
+    u[0,:] = it0(x)
+    u[:,0] = bx0(t)
+    u[:,-1] = bxf(t)
+
+    r = a*dt/(dx**2)
+    r2 = 1 + 2*r
+
+    #set the linear system
+    A = np.zeros([M-1,M-1])
+    for i in range(M-1):
+        A[i,i] = r2
+        if i>1:
+            A[i-1,i] = -r
+            A[i,i-1] = -r
+    #compute each time step        
+    for k in range(N):
+        b = u[k,1:-1]
+        b[0] += r*u[k,0]
+        b[-1] += r*u[k,-1]
+        u[k+1,1:-1] = lg.solve(A,b)
+    
+    return u, X, Y
+
+ 
+這個程式的使用方法與ode_heat_exp() 類似，讀者可以試著調整M, N 的值，比較兩者的差別。
+ 
+The Crank-Nicholson Method
+回顧一下implicit backward Euler method 的遞迴公式
+\(A\frac{u_{i+1}^{k}-2u_{i}^{k}+u_{i-1}^{k}}{\Delta x^{2}} = \frac{u_{i}^{k}-u_{i}^{k-1}}{\Delta t}\)
+請註意一下，左端點的差分公式是對 \(u(x_{i},t_{k})\) 做展開，而右端的差分公式是對 \(u(x_{i},(t_{k}+t_{k-1})\) 這一點展開，這裡存在時間上的不一致，就會增加更多的truncation error。Crank-Nicholson Method 就是為了改進時間上不一致而有的方法，他的差分方程式如下： \(\frac{A}{2}(\frac{u_{i+1}^{k+1}-2u_{i}^{k+1}+u_{i-1}^{k+1}}{\Delta x^{2}}+\frac{u_{i+1}^{k}-2u_{i}^{k}+u_{i-1}^{k}}{\Delta x^{2}}) = \frac{u_{i}^{k+1}-u_{i}^{k}}{\Delta t}\)
+經過這樣的調整，等號兩邊的位置與時間都保持一致，簡化後的差分式如下：
+\(-ru_{i+1}^{k+1}+2(1+r)u_{i}^{k+1}-ru_{i-1}^{k+1} = ru_{i+1}^{k}+2(1-r)u_{i}^{k}+ru_{i-1}^{k}\) 其中 \(r = A\frac{\Delta t}{\Delta x^2}\)
+仿照同樣的分析穩定性的方法，我們得到對應的\(|\lambda|\) 也是自動小於等於 \(1\) 。說明這個方法也是一個穩定的解法，並且我們預期它的誤差會比implicit backward Euler method 來的好。對應的Crank-Nicholson 程式如下：
+def pde_heat_CN(a,xf,T,Fx,M,N):
+    """
+    solve a u_xx = u_t for 0<=x<=xf, 0<=t<=T by explicit method
+    u(x,0) = it0(x)
+    u(0,t) = bx0(t)
+    u(xf,t) = bxf(t)
+    M : the number of subintervals along x axis
+    N : the number of subintervals along t axis
+    Fx : the list of function, Fx = [it0,bx0,bxf]
+    
+    For example:
+    Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]
+    u, x, t = pde_heat_CN(1.0,1.0,0.1,Fx,20,100)
+    """
+
+    dx, dt = float(xf)/M, float(T)/N
+    x = np.linspace(0,xf,M+1)
+    t = np.linspace(0,T,N+1)
+    
+    if len(Fx)<>3:
+        print "Fx = [it0,bx0,bxf]"
+        return
+    it0, bx0, bxf = Fx[0], Fx[1], Fx[2]
+
+    u = np.zeros([N+1,M+1])
+    X = np.zeros([N+1,M+1]) #the mesh grids of x
+    Y = np.zeros([N+1,M+1]) #the mesh grids of t
+
+    for i in range(N+1):
+        for j in range(M+1):
+            X[i,j] = x[j]
+            Y[i,j] = t[i]
+            
+    #set the boundary condition
+    u[0,:] = it0(x)
+    u[:,0] = bx0(t)
+    u[:,-1] = bxf(t)
+
+    r = a*dt/(dx**2)
+    r1 = 2*(1+r)
+    r2 = 2*(1-r)
+
+    #set the linear system
+    A = np.zeros([M-1,M-1])
+    for i in range(M-1):
+        A[i,i] = r1
+        if i>1:
+            A[i-1,i] = -r
+            A[i,i-1] = -r
+    #compute each time step        
+    for k in range(N):
+        b = r*(u[k,0:M-1]+u[k,2:M+1])+r2*u[k,1:M]
+        b[0] += r*(u[k,0]+u[k+1,0])
+        b[-1] += r*(u[k,-1]+u[k+1,-1])
+        u[k+1,1:-1] = lg.solve(A,b)
+    
+    return u, X, Y
+
+ 
+我們用下列heat equation 來驗證上述三種數值分法的優劣。考慮parabolic PDE
+\(\frac{\partial^{2} u(x,t)}{\partial x^{2}} = \frac{\partial u(x,t)}{\partial t}\), for \(0\leq x \leq 1\), \(0 \leq t \leq 0.1\)
+且邊界條件為
+\(u(x,0) = sin(\pi x)\), \(u(0,t) = 0\), \(u(1,t) = 1\)
+這個方程的真解為
+\(u(x,t) = sin(\pi x)e^{-\pi ^{2}t}\)
+我們用下列程式來觀察這三種方法的比較。
+from glophynum import *
+import numpy.linalg as lg
+
+a, xf, T = 1.0, 1.0, 0.1
+M, N = 25, 100
+Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]
+u_exp, x, t = pde_heat_exp(a,xf,T,Fx,M,N)
+u_imp, x, t = pde_heat_imp(a,xf,T,Fx,M,N)
+u_cn, x, t = pde_heat_CN(a,xf,T,Fx,M,N)
+
+#evalue the true solution
+def u(x,t):
+    return np.sin(np.pi*x)*np.exp(-t*np.pi**2)
+
+m,n = x.shape
+u_true = np.zeros([m,n])
+for i in range(m):
+    for j in range(n):
+        u_true[i][j] = u(x[i][j],t[i][j])
+
+err_exp = lg.norm(u_true-u_exp)
+err_imp = lg.norm(u_true-u_imp)
+err_cn = lg.norm(u_true-u_cn)
+
+print 'Error of exp method is: ', err_exp
+print 'Error of imp method is: ', err_imp
+print 'Error of CN method is: ', err_cn
+
+import pylab as p
+import mpl_toolkits.mplot3d.axes3d as p3
+fig1 = p.figure(1)
+fig2 = p.figure(2)
+fig3 = p.figure(3)
+ax1 = p3.Axes3D(fig1)
+ax2 = p3.Axes3D(fig2)
+ax3 = p3.Axes3D(fig3)
+ax1.plot_wireframe(u_exp,x,t)
+ax2.plot_wireframe(u_imp,x,t)
+ax3.plot_wireframe(u_cn,x,t)
+p.show()
+
+這個例子，explicit method 是爆掉的。我們也看到，再同樣的條件下，Crank-Nicholson 方法是最好的。
+<< 前一頁 下一個 >>
+
+
+
+
+< 前一頁
+
+
+
+
+
+
+
+
+
+首頁關於我部落格最新消息網站地圖網站連結舊版glophy教學筆記數值Azure平臺
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                核心是 Joomla!®
+
+
+
+
+
+
+
+
+
+
+
+
+
+數值偏微分方程
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        Mathematics Everywhere                                        
+
+
+略過內容
+前往主導覽功能並進行登入
+
+導覽列檢視搜尋
+導覽列
+
+HomePython入門PatentsPublicationsCoursesDownloads
+
+
+搜尋
+
+
+搜尋... 
+
+
+
+
+ 
+
+
+
+
+您目前位置：Home  教學筆記  數值分析  數值偏微分方程
+
+
+
+
+
+
+
+
+
+		數值偏微分方程
+
+
+
+ 
+
+ 
+
+
+
+
+詳細內容
+
+				分類：數值分析 
+
+	發佈於：2014-05-15, 週四 10:22	
+
+				作者 曾正男		
+
+	點擊數：4879	
+
+
+
+數值偏微分方程
+
+
+Elliptic PDE
+
+
+Parabolic PDE
+
+
+Hyperbolic PDE
+
+
+後記
+
+
+全部頁面
+
+
+數值偏微分方程
+偏微分方程（PDE）與常微分方程（ODE）的差別在於偏微分方程有兩個或兩個以上的自變數。我們這一章只討論一般型的二階偏微分方程，他的基本形式如下： \(A(x,y) \frac{\partial^2 u}{\partial x^2} + B(x,y) \frac{\partial^2 u}{\partial x \partial y} + C(x,y) \frac{\partial^2 u}{\partial y^2} = f(x,y,u,\frac{\partial u}{\partial x},\frac{\partial u}{\partial y})\) for \(x_0\leq x \leq x_f\), \(y_0 \leq y \leq y_f\) 並且給予下列邊界條件： \(u(x,y_0) = b_{y_0}(x)\), \(u(x,y_f) = b_{y_f}(x)\),\(u(x_0,y) = b_{x_0}(y)\) 以及 \(u(x_f,y) = b_{x_f}(y)\)
+這類的PDE 會有下列三種分類： 
+
+Elliptic PDE : 若 \(B^2-4AC <0\)
+Parabolic PDE: 若 \(B^2-4AC = 0\)
+Hyperbolic PDE: 若 \(B^2-4AC > 0\)
+
+這三種分類剛好對應到平衡態，消散態以及震盪系統這三種形式的表現。
+
+ 
+Elliptic PDE
+這一節我們只討論一個特別形式的 elliptic equation 稱為Helmholtz's equation，它的形式如下 \(\frac{\partial^2 u(x,y)}{\partial x^2} + \frac{\partial^2 u(x,y)}{\partial y^2} + g(x,y)u(x,y) = f(x,y)\) 在Domain \(D=\{ (x,y) | x_0 \leq x \leq x_f, y_0 \leq y \leq y_f \}\) 並且有下列邊界條件 \(u(x,y_0) = b_{y_0}(x)\), \(u(x,y_f) = b_{y_f}(x)\),\(u(x_0,y) = b_{x_0}(y)\) 以及 \(u(x_f,y) = b_{x_f}(y)\) 若 \(g(x,y) = f(x,y) = 0\)，我們稱這個方程式為 Laplace's equation。 為了用差分的方法，我們把 \(x\) 方向的定義域切割成 \(M_x\) 等分，每一段的間距是 \(\Delta x = \frac{x_f - x_0}{M_x}\)，同樣地，我們等分 \(y\) 方向的定義域為 \(M_y\) 等分，每一段的間距是 \(\Delta y = \frac{y_f - y_0}{M_y}\)。
+我們用下列的差分式來代替微分值
+\( \frac{u_{i,j+1}-2u_{i,j}+u_{i,j-1})}{\Delta x^2} \simeq \frac{\partial^2 u(x,y)}{\partial x^2}|_{xj,yi}\) \( \frac{u_{i+1,j}-2u_{i,j}+u_{i-1,j}}{\Delta y^2} \simeq \frac{\partial^2 u(x,y)}{\partial y^2}|_{xj,yi}\)
+這裡的 \(x_j = x_0 + j \Delta x\)， \(y_i = y{0} + i \Delta y\)，\(1\leq i\leq M_y-1\) 以及 \(1\leq j\leq M_x-1\)。 我們得到下列 finite difference equation
+\(\frac{u_{i,j+1}-2u_{i,j}+u_{i,j-1}}{\Delta x^2} + \frac{u_{i+1,j}-2u_{i,j}+u_{i-1,j}}{\Delta y^2} + g_{i,j} u_{i,j} = f_{i,j}\)
+其中 \(u_{i,j} = u(x_j,y_i)\)，\(f_{i,j} = f(x_j,y_i)\) 以及 \(g_{i,j} = g(x_j,y_i)\) 這是一個 \((M_x-1)(M_y-1)\) 個未知數和方程式構成的線性方程組，可想而知，當 \(M_x\) 與 \(M_y\) 稍微放大一些，我們就糊了。這和先前三對角矩陣的情況不同，我們可以想像，不論我們如何把所有未知數排序，對應的矩陣不是一個三對角或幾對角類型的 sparse 矩陣。如果電腦硬體夠強，我們可以試著把矩陣寫開，然後真的使用軟體或是 linear solver套件去解它。如果不是呢？我們就要借用疊代法的技巧，不真的把矩陣寫開來計算。
+要寫出一個疊代式我們把上式二次差分中的 \(u_{i,j}\) 保留在等號的左邊，其餘項移到等號右邊，我們得到
+\(u_{i,j} = r_y (u_{i,j+1}+u_{i,j-1}) + r_x(u_{i+1,j}+u_{i-1,j}) + r_{xy}(g_{i,j}u_{i,j} - f_{i,j})\)
+其中
+\(r_y = \frac{\Delta y^2}{2(\Delta x^2+\Delta y^2)}\),\(r_x = \frac{\Delta x^2}{2(\Delta x^2+\Delta y^2)}\), \(r_{xy} = \frac{\Delta x^2 \Delta y^2}{2(\Delta x^2+\Delta y^2)}\), \(u_{i,0} = b_{x_0}(y_i)\), \(u_{i,Mx} = b_{x_f}(y_i)\), \(u_{0,j} = b_{y_0}(x_j)\) 以及 \(u_{My,j} = b_{y_f}(x_j)\)。
+和解ODE的遞迴式一樣，他們的寫法可以有很多種變形，重點是我們會把它看做是
+\(x^{n+1} = A x^n + b = A^n x^0 + (A^{n-1}+A^{n-2}+...+A)b\)
+的遞迴形式。這樣的形式如何保證會收斂呢？答案當然是對應的 \(A\) 矩陣每一項 eigenvalue 都小於1 。如果我們知道所寫出來的遞迴式是一個會收斂的式子，再來的問題是起始值怎麼決定？因為我們有僅有的真解是邊界條件，把每一個 \(u_{i,j}\) 設成邊界條件的平均值似乎是一個合理的選擇。
+若我們要用硬算的方式，可以用下列的Python 程式：
+import numpy as np
+import numpy.linalg as lg
+
+def pde_Elliptic(f,g,BFx,Domain,Mx,My):
+    """
+    The matrix generator of the Elliptic PDE
+
+    u_xx + u_yy + g(x,y)u = f(x,y) over the region
+    D = [x0,xf]x[y0,yf] with the boundary conditions:
+    u(x0,y) = bx0(y), u(xf,y) = bxf(y)
+    u(x,y0) = by0(x), u(x,yf) = byf(x)
+    Mx : the number of subintervals along x axis
+    My : the number of subintervals along y axis
+
+    BFx = [bx0,bxf,by0,byf]
+    Domain = [x0,xf,y0,yf]
+    
+    The output A, b the matrix and vector of the corresponding linear system
+    """
+
+    n = (Mx-1)*(My-1) #The number of variables
+    A = np.zeros([n,n])
+    b = np.zeros([n,1])
+    
+    bx0, bxf, by0, byf = BFx[0], BFx[1], BFx[2], BFx[3]
+    x0, xf, y0, yf = Domain[0], Domain[1], Domain[2], Domain[3]
+
+    hx = float(xf-x0)/Mx
+    hy = float(yf-y0)/My
+
+    x = [x0+j*hx for j in range(1,Mx)]
+    y = [y0+i*hy for i in range(1,My)]
+
+    h2x = 1.0/(hx**2)
+    h2y = 1.0/(hy**2)
+    
+    def ij2k(i,j): #Transfer (i,j) 2D-index to 1D index
+        return i*(Mx-1)+j
+    l = -1
+    for i in range(My-1):
+        for j in range(Mx-1):
+            l += 1 
+            k = ij2k(i,j)
+            b[k] += f(x[j],y[i])
+            #set the center coefficient
+            A[l][k] = g(x[j],y[i])-2*(h2x+h2y)
+            #set the up coefficient
+            if i==0:
+                b[k] -= h2y*by0(x[j])
+            else:
+                ku = ij2k(i-1,j)
+                A[l][ku] += h2y
+            #set the low coefficient
+            if i==(My-2):
+                b[k] -= h2y*byf(x[j])
+            else:
+                kd = ij2k(i+1,j)
+                A[l][kd] += h2y
+            #set the left coefficient
+            if j==0:
+                b[k] -= h2x*bx0(y[i])
+            else:
+                kl = ij2k(i,j-1)
+                A[l][kl] += h2x
+            #set the right coefficient
+            if j==(Mx-2):
+                b[k] -= h2x*bxf(y[i])
+            else:
+                kr = ij2k(i,j+1)
+                A[l][kr] += h2x
+    return A, b
+
+ 
+若我們要解的PDE 為Laplace's equation，並且邊界條件為
+\(b_{x_0}(y) = e^y-cos(y)\), \(b_{x_f}(y) = e^y cos(4)-exp(4)cos(y)\) \(b_{y_0}(x) = cos(x) -e^x\), \(b_{y_f}(x) = e^4 cos(x)-e^x cos(4)\) 且Domain 為 \([0,4]\times [0,4]\)
+則我們用下列Python 程式求解。
+>>> BFx = [lambda y:np.exp(y)-np.cos(y), lambda y:np.exp(y)*np.cos(4)-np.exp(4)*np.cos(y),.... lambda x:np.cos(x)-np.exp(x), lambda x: np.exp(4)*np.cos(x) - np.exp(x)*np.cos(4)]>>> Domain = [0,4,0,4]>>> A,b = pde_Elliptic(lambda x,y:0.0, lambda x,y:0.0, BFx,Domain,20,20)>>> Aarray([[-100., 25., 0., ..., 0., 0., 0.],[ 25., -100., 25., ..., 0., 0., 0.],[ 0., 25., -100., ..., 0., 0., 0.],...,[ 0., 0., 0., ..., -100., 25., 0.],[ 0., 0., 0., ..., 25., -100., 25.],[ 0., 0., 0., ..., 0., 25., -100.]])>>> A.shape(361, 361)>>> len(b)361>>> x = lg.solve(A,b)>>> X = x.reshape([19,19])>>> X.shape(19, 19)>>> A,b = pde_Elliptic(lambda x,y:0.0, lambda x,y:0.0, BFx,Domain,100,100)>>> A.shape(9801, 9801)>>> x = lg.solve(A,b)
+ 
+這裡的 \(x\) 是解出來的向量，我們用 reshape() 函式把他排成矩陣的形式，方便我們繪圖。若我們把 \(M_x\) 和 \(M_y\) 增加到100，我們看到矩陣的大小變成9801x9801。最後一步解線性方程，以我手上的電腦大約花了一分鐘的時間（雖然無法忍受，但相較於Matlab 需要六分鐘的時間，也證明Python 比Matlab 快多了），我們可以想像，若網格點變得更細緻時，一般地電腦基本上是無法負荷的，因此我們需要用到遞迴解的方式來代替展開矩陣。
+以下是遞迴解的Python 程式：
+def pde_poisson(f,g,BFx,Domain,Mx,My,tol=10**(-8),MaxIter=100):
+    """
+    The PDE solver of u_xx + u_yy + g(x,y)u = f(x,y) over the region
+    D = [x0,xf]x[y0,yf] with the boundary conditions:
+    u(x0,y) = bx0(y), u(xf,y) = bxf(y)
+    u(x,y0) = by0(x), u(x,yf) = byf(x)
+    Mx : the number of subintervals along x axis
+    My : the number of subintervals along y axis
+
+    tol : the tolerance
+    MaxIter : the Maximal number of the iteration
+    
+    The output
+    u : u(x_j,y_i)
+    x : the uniform grids of x-axis
+    y : the uniform grids of y-axis 
+    """
+
+    bx0, bxf, by0, byf = BFx[0], BFx[1], BFx[2], BFx[3]
+    x0, xf, y0, yf = Domain[0], Domain[1], Domain[2], Domain[3]
+    
+    hx = float(xf-x0)/Mx
+    hy = float(yf-y0)/My
+
+    x = [x0+j*hx for j in range(1,Mx)]
+    y = [y0+i*hy for i in range(1,My)]
+
+    Mx, My = Mx+1, My+1
+
+    u = np.zeros([My,Mx])
+    F = np.zeros([My,Mx])
+    G = np.zeros([My,Mx])
+    u0 = np.zeros([My,Mx])
+
+    #set boundary condition
+    j = 1
+    for xj in x:
+        u[0,j], u[My-1,j] = by0(xj), byf(xj)
+        j+=1
+    i = 1
+    for yi in y:
+        u[i,0], u[i,Mx-1] = bx0(yi), bxf(yi)
+        i+=1
+
+    #initialize as the average of boundary values
+    sum_of_bv = sum(u[0,:])+sum(u[My-1,:])+sum(u[1:My-1,0])+sum(u[1:My-1,Mx-1])
+
+    u[1:My-1,1:Mx-1] = float(sum_of_bv)/(2*(Mx+My-2))
+
+    #set the f(xj,yi) & g(xj,yi)
+    for i in range(1,My-1):
+        for j in range(1,Mx-1):
+            F[i,j], G[i,j] = f(x[j-1],y[i-1]), g(x[j-1],y[i-1])
+
+    dx2, dy2 = hx**2, hy**2
+    dxy2 = 2*(dx2+dy2)
+    rx, ry = dx2/dxy2, dy2/dxy2
+    rxy = rx*dy2
+    for itr in range(MaxIter):
+        for i in range(1,My-1):
+            for j in range(1,Mx-1):
+                u[i,j] = ry*(u[i,j+1]+u[i,j-1])+rx*(u[i+1,j]+u[i-1,j])+rxy*(G[i,j]*u[i,j]-F[i,j])
+        Err = abs(u-u0)
+        
+        if (itr>1) & (Err.max()<tol):
+            break
+        u0 = u
+
+    u = u[1:My,1:Mx]
+    return u, x, y
+
+ 
+我們用下列程式求先前的Laplace's equation
+>>> BFx = [lambda y:np.exp(y)-np.cos(y), lambda y:np.exp(y)*np.cos(4)-np.exp(4)*np.cos(y),.... lambda x:np.cos(x)-np.exp(x), lambda x: np.exp(4)*np.cos(x) - np.exp(x)*np.cos(4)]>>> Domain = [0,4,0,4]>>> u,x,y = pde_poisson(lambda x,y:0.0, lambda x,y:0.0, BFx,Domain,20,20,10**(-8),50)>>> u.shape(20, 20)
+ 
+有了這兩種算法，有興趣的讀者可以進一步比較這兩種算法所計算的結果有哪些差異。先前我們談到，使用遞迴解的方式，要保證收斂所對應的線性系統的矩陣的特徵值的絕對值要比1小。接下來我們要驗證剛才的遞迴式所對應的矩陣特徵值是否真的如此。
+產生這個對應矩陣的Python 程式如下：
+def pde_poisson_MG(f,g,BFx,Domain,Mx,My):
+    """
+    The Matrix generator of the iteration method to solve u_xx + u_yy + g(x,y)u = f(x,y) over the region
+    D = [x0,xf]x[y0,yf] with the boundary conditions:
+    u(x0,y) = bx0(y), u(xf,y) = bxf(y)
+    u(x,y0) = by0(x), u(x,yf) = byf(x)
+    Mx : the number of subintervals along x axis
+    My : the number of subintervals along y axis
+    """
+
+    bx0, bxf, by0, byf = BFx[0], BFx[1], BFx[2], BFx[3]
+    x0, xf, y0, yf = Domain[0], Domain[1], Domain[2], Domain[3]
+    
+    hx = float(xf-x0)/Mx
+    hy = float(yf-y0)/My
+
+    x = [x0+j*hx for j in range(1,Mx)]
+    y = [y0+i*hy for i in range(1,My)]
+
+    Mx, My = Mx+1, My+1
+
+    u = np.zeros([My,Mx])
+    F = np.zeros([My,Mx])
+    G = np.zeros([My,Mx])
+    u0 = np.zeros([My,Mx])
+
+    #set boundary condition
+    j = 1
+    for xj in x:
+        u[0,j], u[My-1,j] = by0(xj), byf(xj)
+        j+=1
+    i = 1
+    for yi in y:
+        u[i,0], u[i,Mx-1] = bx0(yi), bxf(yi)
+        i+=1
+
+    #initialize as the average of boundary values
+    sum_of_bv = sum(u[0,:])+sum(u[My-1,:])+sum(u[1:My-1,0])+sum(u[1:My-1,Mx-1])
+
+    u[1:My-1,1:Mx-1] = float(sum_of_bv)/(2*(Mx+My-2))
+
+    #set the f(xj,yi) & g(xj,yi)
+    for i in range(1,My-1):
+        for j in range(1,Mx-1):
+            F[i,j], G[i,j] = f(x[j-1],y[i-1]), g(x[j-1],y[i-1])
+
+    dx2, dy2 = hx**2, hy**2
+    dxy2 = 2*(dx2+dy2)
+    rx, ry = dx2/dxy2, dy2/dxy2
+    rxy = rx*dy2
+    
+    def ij2k(i,j): #Transfer (i,j) 2D-index to 1D index
+        return (i-1)*(Mx-2)+(j-1)
+
+    n = (Mx-2)*(My-2) #The number of variables
+    A = np.zeros([n,n])
+
+    l=-1
+    for i in range(1,My-2):
+        for j in range(1,Mx-2):
+            l += 1 
+            k = ij2k(i,j)
+            #set the center coefficient
+            A[l][k] = rxy*G[i,j]
+            #set the up coefficient
+            if i>0:
+                ku = ij2k(i-1,j)
+                A[l][ku] += rx
+            #set the low coefficient
+            if i<(My--1):
+                kd = ij2k(i+1,j)
+                A[l][kd] += rx
+            #set the left coefficient
+            if j>0:
+                kl = ij2k(i,j-1)
+                A[l][kl] += ry
+            #set the right coefficient
+            if j<(Mx-1):
+                kr = ij2k(i,j+1)
+                A[l][kr] += ry
+    return A
+ 
+我們用同樣的Laplace's equation 條件來計算這個矩陣。
+>>> BFx = [lambda y:np.exp(y)-np.cos(y), lambda y:np.exp(y)*np.cos(4)-np.exp(4)*np.cos(y),.... lambda x:np.cos(x)-np.exp(x), lambda x: np.exp(4)*np.cos(x) - np.exp(x)*np.cos(4)]>>> Domain = [0,4,0,4]>>> A = pde_poisson_MG(lambda x,y:0.0, lambda x,y:0.0, BFx,Domain,20,20)>>> D,V = lg.eig(A)>>> max(D)(0.91231809995413671+0j)
+瞧！最大的eigenvalue 是0.9 多，所以會收斂，只可惜這個特徵值是0.9，若能更靠近0 收斂速度會更快。不知道大家通了沒有，我們可以套用解ODE 的Relaxation Method 自己用調整 \(w\) 的方式設計出收斂速度更快的方法。
+
+Parabolic PDE
+接下來我們用一維的熱傳導方程來介紹Parabolic PDE，我們令 \(u(x,t)\) 是熱在一維的 \(x\) 空間上隨時間 \(t\) 的分佈，方程如下：
+\(A \frac{\partial^{2}u(x,t)}{\partial x^{2}} = \frac{\partial u(x,t)}{\partial t}\)，
+其中 \(0\leq x\leq x_f\), \(0\leq t \leq T\) 並且有下列邊界條件：
+\(u(0,t) = b_0(t)\), \(u(x_f,t) = b_f(t)\)，以及 \(u(x,0) =i_0(x)\).
+The Explicit Forward Euler Method
+我們一樣使用finite difference method 把 \([0,x_f]\) 區間切割成 \(M\) 等分，把 \([0,T]\) 時間區間切割成 \(N\) 等分。因此，我們有 \(\Delta x = \frac{x_f}{M}\) 以及 \(\Delta t = \frac{T}{N}\)。並且我們用central difference approximation 去取代 \(u(x,t)\) 在空間上的二次偏微分，用forward difference approximation 取代對時間的偏微分。我們得到下列差分方程式： \(A\frac{u_{i+1}^k-2u_i^{k}+u_{i-1}^{k}}{\Delta x^{2}} = \frac{u_{i}^{k+1}-u_{i}^{k}}{\Delta t}\)
+這裡的 \(u_{i}^{k}\) 代表 \(u(x_{i},t_{k})\) 因此 \(u_{i}^{k+1}\) 的時間比其他項更新，我們可以將上式寫成下列的疊代式：
+（PB 式一） \(u_{i}^{k+1} = r(u_{i+1}^{k}+u_{i-1}^{k})+(1-2r)u_{i}^{k}\) ，其中 \(r = A\frac{\Delta t}{\Delta x^{2}}\) ，\(i = 1,2,..., M-1\)
+和先前的Laplace's equation 不一樣，因為不知道T 時間的狀態，我們隨著時間的增加，若先前的計算有誤差，不知道這誤差會怎麼被累積下去。這和解常微分方程的Euler 方法一樣，我們擔心數值解會有不穩定的情形發生。若我們希望這個疊代式穩定，（PB式一）會對應一個線性系統 \(Au^{k+1} = u^{k}\)，理所當然地矩陣 \(A\) 的特徵值要小於1。我們除了把對應的矩陣寫開並且計算其特徵值之外，還可以用下列方法決定適合的 \(\Delta t\) 和 \(\Delta x\)。
+我們把 \(u_{i}^{k}\) 用傅立葉基底表示，假設 \(u_{i}^{k} = \lambda^{k}e^{j\frac{i\pi}{P}}\) 其中 \(j\) 是 \(\sqrt{-1}\) 的意思，\(P\) 是任意非零的整數代入（PB式一），我們得到
+\(\lambda = 1-2r(1-cos(\frac{\pi}{P}))\)
+當我們希望 \(u_{i}^{k}\) 不會隨著 \(k\) 增加而爆掉時，我們希望 \(|\lambda|\leq 1\)，因此我們有
+\(r=A\frac{\Delta t}{\Delta x^{2}} \leq \frac{1}{2}\)
+用Explicit Forward Euler Method 解 heat equation 的Python 程式如下，若要解一般的Parabolic PDE 對應的函數與公式讀者要自行調整。
+def pde_heat_exp(a,xf,T,Fx,M,N):
+    """
+    solve a u_xx = u_t for 0<=x<=xf, 0<=t<=T by explicit method
+    u(x,0) = it0(x)
+    u(0,t) = bx0(t)
+    u(xf,t) = bxf(t)
+    M : the number of subintervals along x axis
+    N : the number of subintervals along t axis
+    Fx : the list of function, Fx = [it0,bx0,bxf]
+    
+    For example:
+    Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]
+    u, x, t = pde_heat_exp(1.0,1.0,0.1,Fx,20,100)
+    Notice that r = a*dt/dx^2 must < 1/2 for stablility
+    """
+
+    dx, dt = float(xf)/M, float(T)/N
+    x = np.linspace(0,xf,M+1)
+    t = np.linspace(0,T,N+1)
+    
+    if len(Fx)<>3:
+        print "Fx = [it0,bx0,bxf]"
+        return
+    it0, bx0, bxf = Fx[0], Fx[1], Fx[2]
+
+    u = np.zeros([N+1,M+1])
+    X = np.zeros([N+1,M+1]) #the mesh grids of x
+    Y = np.zeros([N+1,M+1]) #the mesh grids of t
+
+    for i in range(N+1):
+        for j in range(M+1):
+            X[i,j] = x[j]
+            Y[i,j] = t[i]
+            
+    #set the boundary condition
+    u[0,:] = it0(x)
+    u[:,0] = bx0(t)
+    u[:,-1] = bxf(t)
+
+    r = a*dt/(dx**2)
+    r1 = 1 - 2*r
+    
+    for k in range(N):
+        for i in range(1,M):
+            u[k+1,i] = r*(u[k,i+1]+u[k,i-1])+r1*u[k,i]
+    
+    return u, X, Y
+ 
+因為是3D 的圖形，所以output 的 \(x\) 與 \(t\) 我們調整成和u 一樣大小，方便繪圖。要顯示我們的計算結果，Python 的3D 繪圖方法如下：
+ 
+>>> Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]>>> u, x, t = pde_heat_exp(1.0,1.0,0.1,Fx,20,100)>>> import pylab as p>>> import mpl_toolkits.mplot3d.axes3d as p3>>> fig = p.figure()>>> ax = p3.Axes3D(fig)>>> ax.plot_wireframe(u,x,t)<mpl_toolkits.mplot3d.art3d.Line3DCollection object at 0x1d500d0>>>> p.show()
+ 
+The Implicit Backward Euler Method
+若我們把差分方程式的右端改成backward 差分，我們得到
+\(A\frac{u_{i+1}^{k}-2u_{i}^{k}+u_{i-1}^{k}}{\Delta x^{2}} = \frac{u_{i}^{k}-u_{i}^{k-1}}{\Delta t}\)
+上式整理過後成為
+（PB 式二） \(-r(u_{i-1}^{k}+(1+2r)u_{i}^{k}-ru_{i+1}^{k}) = u_{i}^{k-1}\) ，其中 \(r = A\frac{\Delta t}{\Delta x^{2}}\) ，\(i = 1,2,..., M-1\)
+這時我們無法對每一個 \(i\) 位置的 \(u\) 進行單純地迭代得到答案，而是解一個三對角的矩陣。若我們解的是Dirichlet 形式的邊界條件問題，我們有 \(u_{0}^{k}\) 和 \(u_{M}^{k}\)。若我們解的是Neumann 形式的邊界條件問題，我們使用 \(\frac{u_{1}^{k}-u_{-1}^{k}}{2\Delta x} = b'_{0}(k)\)，這樣 \(u_{-1}^{k}\) 這一項才能被 \(b'_{0}(k)\) 表示出來。雖然解矩陣是比較麻煩的方式，但若我們套用先前的傅立葉分析方法將 \(u_{i}^{k} = \lambda^{k}e^{j\frac{i\pi}{P}}\)帶入（PB 式二），經過整理算式後我們發現\(|\lambda|\) 自動小於 \(1\)，這表示不用特別調整 \(\Delta x\) 和 \(\Delta t\) 的大小，我們用Implicit Backward Euler Method 可以得到比較穩定的解。
+下列是Python 的heat equation 用 implicit backward Euler Method 的程式：
+def pde_heat_imp(a,xf,T,Fx,M,N):
+    """
+    solve a u_xx = u_t for 0<=x<=xf, 0<=t<=T by explicit method
+    u(x,0) = it0(x)
+    u(0,t) = bx0(t)
+    u(xf,t) = bxf(t)
+    M : the number of subintervals along x axis
+    N : the number of subintervals along t axis
+    Fx : the list of function, Fx = [it0,bx0,bxf]
+    
+    For example:
+    Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]
+    u, x, t = pde_heat_imp(1.0,1.0,0.1,Fx,20,100)
+    """
+
+    dx, dt = float(xf)/M, float(T)/N
+    x = np.linspace(0,xf,M+1)
+    t = np.linspace(0,T,N+1)
+    
+    if len(Fx)<>3:
+        print "Fx = [it0,bx0,bxf]"
+        return
+    it0, bx0, bxf = Fx[0], Fx[1], Fx[2]
+
+    u = np.zeros([N+1,M+1])
+    X = np.zeros([N+1,M+1]) #the mesh grids of x
+    Y = np.zeros([N+1,M+1]) #the mesh grids of t
+
+    for i in range(N+1):
+        for j in range(M+1):
+            X[i,j] = x[j]
+            Y[i,j] = t[i]
+            
+    #set the boundary condition
+    u[0,:] = it0(x)
+    u[:,0] = bx0(t)
+    u[:,-1] = bxf(t)
+
+    r = a*dt/(dx**2)
+    r2 = 1 + 2*r
+
+    #set the linear system
+    A = np.zeros([M-1,M-1])
+    for i in range(M-1):
+        A[i,i] = r2
+        if i>1:
+            A[i-1,i] = -r
+            A[i,i-1] = -r
+    #compute each time step        
+    for k in range(N):
+        b = u[k,1:-1]
+        b[0] += r*u[k,0]
+        b[-1] += r*u[k,-1]
+        u[k+1,1:-1] = lg.solve(A,b)
+    
+    return u, X, Y
+
+ 
+這個程式的使用方法與ode_heat_exp() 類似，讀者可以試著調整M, N 的值，比較兩者的差別。
+ 
+The Crank-Nicholson Method
+回顧一下implicit backward Euler method 的遞迴公式
+\(A\frac{u_{i+1}^{k}-2u_{i}^{k}+u_{i-1}^{k}}{\Delta x^{2}} = \frac{u_{i}^{k}-u_{i}^{k-1}}{\Delta t}\)
+請註意一下，左端點的差分公式是對 \(u(x_{i},t_{k})\) 做展開，而右端的差分公式是對 \(u(x_{i},(t_{k}+t_{k-1})\) 這一點展開，這裡存在時間上的不一致，就會增加更多的truncation error。Crank-Nicholson Method 就是為了改進時間上不一致而有的方法，他的差分方程式如下： \(\frac{A}{2}(\frac{u_{i+1}^{k+1}-2u_{i}^{k+1}+u_{i-1}^{k+1}}{\Delta x^{2}}+\frac{u_{i+1}^{k}-2u_{i}^{k}+u_{i-1}^{k}}{\Delta x^{2}}) = \frac{u_{i}^{k+1}-u_{i}^{k}}{\Delta t}\)
+經過這樣的調整，等號兩邊的位置與時間都保持一致，簡化後的差分式如下：
+\(-ru_{i+1}^{k+1}+2(1+r)u_{i}^{k+1}-ru_{i-1}^{k+1} = ru_{i+1}^{k}+2(1-r)u_{i}^{k}+ru_{i-1}^{k}\) 其中 \(r = A\frac{\Delta t}{\Delta x^2}\)
+仿照同樣的分析穩定性的方法，我們得到對應的\(|\lambda|\) 也是自動小於等於 \(1\) 。說明這個方法也是一個穩定的解法，並且我們預期它的誤差會比implicit backward Euler method 來的好。對應的Crank-Nicholson 程式如下：
+def pde_heat_CN(a,xf,T,Fx,M,N):
+    """
+    solve a u_xx = u_t for 0<=x<=xf, 0<=t<=T by explicit method
+    u(x,0) = it0(x)
+    u(0,t) = bx0(t)
+    u(xf,t) = bxf(t)
+    M : the number of subintervals along x axis
+    N : the number of subintervals along t axis
+    Fx : the list of function, Fx = [it0,bx0,bxf]
+    
+    For example:
+    Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]
+    u, x, t = pde_heat_CN(1.0,1.0,0.1,Fx,20,100)
+    """
+
+    dx, dt = float(xf)/M, float(T)/N
+    x = np.linspace(0,xf,M+1)
+    t = np.linspace(0,T,N+1)
+    
+    if len(Fx)<>3:
+        print "Fx = [it0,bx0,bxf]"
+        return
+    it0, bx0, bxf = Fx[0], Fx[1], Fx[2]
+
+    u = np.zeros([N+1,M+1])
+    X = np.zeros([N+1,M+1]) #the mesh grids of x
+    Y = np.zeros([N+1,M+1]) #the mesh grids of t
+
+    for i in range(N+1):
+        for j in range(M+1):
+            X[i,j] = x[j]
+            Y[i,j] = t[i]
+            
+    #set the boundary condition
+    u[0,:] = it0(x)
+    u[:,0] = bx0(t)
+    u[:,-1] = bxf(t)
+
+    r = a*dt/(dx**2)
+    r1 = 2*(1+r)
+    r2 = 2*(1-r)
+
+    #set the linear system
+    A = np.zeros([M-1,M-1])
+    for i in range(M-1):
+        A[i,i] = r1
+        if i>1:
+            A[i-1,i] = -r
+            A[i,i-1] = -r
+    #compute each time step        
+    for k in range(N):
+        b = r*(u[k,0:M-1]+u[k,2:M+1])+r2*u[k,1:M]
+        b[0] += r*(u[k,0]+u[k+1,0])
+        b[-1] += r*(u[k,-1]+u[k+1,-1])
+        u[k+1,1:-1] = lg.solve(A,b)
+    
+    return u, X, Y
+
+ 
+我們用下列heat equation 來驗證上述三種數值分法的優劣。考慮parabolic PDE
+\(\frac{\partial^{2} u(x,t)}{\partial x^{2}} = \frac{\partial u(x,t)}{\partial t}\), for \(0\leq x \leq 1\), \(0 \leq t \leq 0.1\)
+且邊界條件為
+\(u(x,0) = sin(\pi x)\), \(u(0,t) = 0\), \(u(1,t) = 1\)
+這個方程的真解為
+\(u(x,t) = sin(\pi x)e^{-\pi ^{2}t}\)
+我們用下列程式來觀察這三種方法的比較。
+from glophynum import *
+import numpy.linalg as lg
+
+a, xf, T = 1.0, 1.0, 0.1
+M, N = 25, 100
+Fx = [lambda x:np.sin(np.pi*x), lambda t: 0.0*t, lambda t: 0.0*t]
+u_exp, x, t = pde_heat_exp(a,xf,T,Fx,M,N)
+u_imp, x, t = pde_heat_imp(a,xf,T,Fx,M,N)
+u_cn, x, t = pde_heat_CN(a,xf,T,Fx,M,N)
+
+#evalue the true solution
+def u(x,t):
+    return np.sin(np.pi*x)*np.exp(-t*np.pi**2)
+
+m,n = x.shape
+u_true = np.zeros([m,n])
+for i in range(m):
+    for j in range(n):
+        u_true[i][j] = u(x[i][j],t[i][j])
+
+err_exp = lg.norm(u_true-u_exp)
+err_imp = lg.norm(u_true-u_imp)
+err_cn = lg.norm(u_true-u_cn)
+
+print 'Error of exp method is: ', err_exp
+print 'Error of imp method is: ', err_imp
+print 'Error of CN method is: ', err_cn
+
+import pylab as p
+import mpl_toolkits.mplot3d.axes3d as p3
+fig1 = p.figure(1)
+fig2 = p.figure(2)
+fig3 = p.figure(3)
+ax1 = p3.Axes3D(fig1)
+ax2 = p3.Axes3D(fig2)
+ax3 = p3.Axes3D(fig3)
+ax1.plot_wireframe(u_exp,x,t)
+ax2.plot_wireframe(u_imp,x,t)
+ax3.plot_wireframe(u_cn,x,t)
+p.show()
+
+這個例子，explicit method 是爆掉的。我們也看到，再同樣的條件下，Crank-Nicholson 方法是最好的。
+
+Hyperbolic PDE
+著名的Hyperbolic PDE 是波動方程（Wave equation），對於位置 \(x\) 與時間 \(t\) 的振幅函數 \(u(x,t)\) 滿足下列形式
+\(A\frac{\partial^{2} u(x,t)}{\partial x^{2}} = \frac{\partial^{2} u(x,t)}{\partial t^{2}}\) for \(0\leq x \leq x_{f}\), \(0\leq t \leq T\)
+並且滿足下列邊界條件：
+\(u(0,t) = b_{0}(t)\), \(u(x_{f},t) = b_{f}(t)\), \(u(x,0) = i_{0}(x)\) 以及 \(\frac{\partial u}{\partial t}|_{t=0} (x,0) = i'_{0}(x)\)
+ 
+The Explicit Central Difference Method
+ 
+因為等號兩端都是二次偏導數，理所當然地我們使用Central Difference 來代替二次偏導數，得到的差分方程如下：
+\(A(\frac{u_{i+1}^{k}-2u_{i}^{k}+u_{i-1}^{k}}{\Delta x^{2}}) = \frac{u_{i}^{k+1}-2u_{i}^{k}+u_{i}^{k-1}}{\Delta t^{2}}\) 其中 \(\Delta x = \frac{x_{f}}{M}\), \(\Delta t = \frac{T}{N}\)
+經過整理後得到
+\(u_{i}^{k+1} = r(u_{i+1}^{k}+u_{i-1}^{k})+2(1-r)u_{i}^{k} - u_{i}^{k-1}\) 其中 \(r = A(\frac{\Delta t^{2}}{\Delta x^{2}})\)
+由於我們沒有 \(u_{i}^{-1}\) 的值，所以我們無法開始進行疊代的工作。我們利用 \(\frac{u_{i}^{1}-u_{i}^{-1}}{2\Delta t}\) 來逼近 \(i'_{0}(x_{i})\)。對於 \(k=1\) 的情況，經過整理後我們有
+\(u_{i}^{1} = \frac{1}{2}r(u_{i+1}^{0}+u_{i-1}^{0}) + (1-r)u_{i}^{0} + i'_{0}(x_{i})\Delta t\)
+一旦有了 \(k=1\) 以及 \(k=0\) 的值，我們就可以開始進行疊代。和先前分析穩定性的方式一樣，我們計算出 \(r\) 的穩定範圍為小於等於 \(1\)。對應的Python 程式如下：
+def pde_wave_exp(a,xf,T,Fx,M,N):
+    """
+    solve a u_xx = u_t for 0<=x<=xf, 0<=t<=T by explicit method
+    u(x,0) = it0(x)
+    u_t(x,0) = i1t0(x)
+    u(0,t) = bx0(t)
+    u(xf,t) = bxf(t)
+    M : the number of subintervals along x axis
+    N : the number of subintervals along t axis
+    Fx : the list of function, Fx = [it0,i1t0,bx0,bxf]
+    
+    For example:
+    Fx = [lambda x:x*(1-x), lambda x: 0.0*x, lambda t: 0.0*t, lambda t: 0.0*t]
+    u, x, t = pde_wave_exp(1.0,1.0,2,Fx,20,50)
+    Notice that r = a*dt^2/dx^2 must <=1  for stablility
+    """
+
+    dx, dt = float(xf)/M, float(T)/N
+    x = np.linspace(0,xf,M+1)
+    t = np.linspace(0,T,N+1)
+    
+    if len(Fx)<>4:
+        print "Fx = [it0,i1t0,bx0,bxf]"
+        return
+    it0, i1t0, bx0, bxf = Fx[0], Fx[1], Fx[2],Fx[3]
+
+    u = np.zeros([N+1,M+1])
+    X = np.zeros([N+1,M+1]) #the mesh grids of x
+    Y = np.zeros([N+1,M+1]) #the mesh grids of t
+
+    for i in range(N+1):
+        for j in range(M+1):
+            X[i,j] = x[j]
+            Y[i,j] = t[i]
+            
+    #set the boundary condition
+    u[0,:] = it0(x)
+    u[:,0] = bx0(t)
+    u[:,-1] = bxf(t)
+
+    r = a*dt*dt/(dx**2)
+    r1 = r/2
+    r2 = 2*(1-r)
+
+    #set the u(x,t_{1})
+    u[1,1:-1] = r1*u[0,0:-2]+(1-r)*u[0,1:-1]+r1*u[0,2:]+dt*i1t0(x[1:-1])
+    
+    for k in range(2,N+1):
+        u[k,1:-1] = r*u[k-1,0:-2]+r2*u[k-1,1:-1]+r*u[k-1,2:]-u[k-2,1:-1]
+        
+    return u, X, Y
+ 
+我們執行下列程式用動態繪圖觀察我們計算的結果。
+>>> from glophynum import *>>> Fx = [lambda x:x*(1-x), lambda x: 0.0*x, lambda t: 0.0*t, lambda t: 0.0*t]>>> u,x,t = pde_wave_exp(1.0,1.0,2,Fx,20,50)>>> import pylab as p>>> import time>>> u.shape(51, 21)>>> p.ion()>>> p.hold(False)>>> for i in range(51):... ll = p.plot(x[i,:],u[i,:])... ax = p.axis([0,1,-0.3,0.3])... p.draw()... time.sleep(1)...
+因為我們要畫動態的圖，所以我們在p.plot() 指令前給一個變數，讓Python 不要在shell 裡面顯示一些我們不太關註的顯示項目。axis() 函式是強迫繪圖的範圍，這樣才不會因為Python 自動調整軸的級距，誤導我們對圖形的認識。其他指令，請參考Glophy 首頁上的 Python 入門。
+Two-Dimensional Hyperbolic PDE
+這一節我們考慮二維的波動方程u(x,y,t) ： \(A(\frac{\partial^{2} u(x,y,t)}{\partial x^{2}}+\frac{\partial^{2} u(x,y,t)}{\partial y^{2}}) = \frac{\partial^{2} u(x,y,t)}{\partial t^{2}}\) for \(0 \leq x \leq x_{f}\), \(0 \leq y \leq y_{f}\), \(0 \leq t \leq T\)
+其邊界條件為\( u(0,y,t) = b_{x_0}(y,t)\), \(u(x_{f},y,t) = b_{x_f}(y,t)\), \(u(x,0,t) = b_{y_0}(x,t)\) 及 \(u(x,y_{f},t) = b_{y_f}(x,t)\)
+並且給予起始條件
+\(u(x,y,0) = i_{0}(x,y)\) 以及 \(\frac{\partial u}{\partial t}|_{t=0}(x,y,0) = i'_{0}(x,y)\)
+和一維的波動方程一樣，我們用central difference 方法來替代偏導數值，得到
+\(A(\frac{u_{i,j+1}^{k}-2u_{i,j}^{k}+u_{i,j-1}^{k}}{\Delta x^{2}}+\frac{u_{i+1,j}^{k}-2u_{i,j}^{k}+u_{i-1,j}^{k}}{\Delta y^{2}}) = \frac{u_{i,j}^{k+1}-2u_{i,j}^{k}+u_{i,j}^{k-1}}{\Delta t^{2}}\)  其中 \(\Delta x = \frac{x_{f}}{M_{x}}\), \(\Delta y = \frac{y_{f}}{M_{y}}\), \(\Delta t = \frac{T}{N}\)
+經過整理後得到
+\(u_{i,j}^{k+1} = r_{x}(u_{i,j+1}^{k}+u_{i,j-1}^{k}) +2(1-r_{x}-r_{y})u_{i,j}^{k} + r_{y}(u_{i+1,j}^{k}+u_{i-1,j}^{k})-u_{i,j}^{k-1}\) 其中 \(r_{x} = A\frac{\Delta t^{2}}{\Delta x^{2}}\), \(r_{y} = A\frac{\Delta t^{2}}{\Delta y^{2}}\) 和一維的起始情況一樣，因為我們沒有時間 \(k=-1\) 的值，所以我們用central difference 配合 \(k=0\) 時的偏導數，把 \(u_{i,j}^{-1}\) 用偏導數值替換。經過整理得到 \(u_{i,j}^{1} = \frac{1}{2}\{r_{x}(u_{i,j+1}^{0}+u_{i,j-1}^{0}) + r_{y}(u_{i+1,j}^{0}+u_{i-1,j}^{0})\}+2(1-r_{x}-r_{y})u_{i,j}^{0} + i'_{0}(x_{j},y_{i})\Delta t\)
+這個差分式的穩定條件為
+\(r = \frac{4A\Delta t^{2}}{\Delta x^{2}+ \Delta y^{2}}\leq 1\) 這個章節特別提到二維的情形只是讓讀者有一個認識，一維時我們在定義域上做切割，若不是explicit 的形式，對應的矩陣會隨著切割定義域的細緻度而增加，可想而知，若二維的情形我們也用解矩陣的方式處理，那麼矩陣會有多大？再來，當我們處理真實世界的3D 問題時，我們需要多少的計算資源與技巧才能顯現3D 的即時結果。
+2D 的波動方程Python 程式如下：
+def ode_wave2(a,D,T,Fx,Mx,My,N):
+    """
+    solve a(u_xx + u_yy) = u_tt for D[0]<=x<=D[1], D[2]<=y<=D[3],
+    0<=t<=T with
+    Initial condition: u(x,y,0) = Fx[0](x,y),
+                       u_t(x,y,0) = Fx[1](x,y)
+    Boundary condition: u(0,y,t) = Fx[2](y,t)
+                        u(x_f,y,t) = Fx[3](y,t)
+                        u(x,0,t) = Fx[4](x,t)
+                        u(x,y_f,t) = Fx[5](x,t)
+    Mx: the number of subintervals along x axis
+    My: the number of subintervals along y axis
+    N : the number of subintervals along t axis
+
+    For example:
+    D = [0,2,0,2]
+    Fx = [lambda x,y:0.1*np.sin(np.pi*x)*np.sin(np.pi*y/2),
+          lambda x,y:0.0*(x+y),
+          lambda y,t:0.0*(y+t),
+          lambda y,t:0.0*(y+t),
+          lambda x,t:0.0*(x+t),
+          lambda x,t:0.0*(x+t)]
+          
+    u,X,Y,t = ode_wave2(0.25,D,2,Fx,40,40,40)
+    """
+    dx = float(D[1]-D[0])/Mx
+    dy = float(D[3]-D[2])/My
+    x = np.linspace(D[0],D[1],Mx+1)
+    y = np.linspace(D[2],D[3],My+1)
+    dt = float(T)/N
+    t = np.linspace(0,T,N+1)
+
+    it0,i1t0,u0y,ufy,ux0,uxf = Fx[0],Fx[1],Fx[2],Fx[3],Fx[4],Fx[5]
+
+    
+    #Initialization
+    u = np.zeros([N+1,My+1,Mx+1]) #u(x_j,y_i,t_k) = u[k,i,j], k = 0,1,2,...,N
+    ut = np.zeros([My+1,Mx+1])
+    for j in range(1,Mx):
+        for i in range(1,My):
+            u[0,i,j] = it0(x[j],y[i])
+            ut[i,j] = i1t0(x[j],y[i])
+    adt2 = a*dt*dt
+    rx, ry = adt2/(dx*dx), adt2/(dy*dy)
+    rxy1 = 1-rx-ry
+    rxy2 = rxy1*2
+
+    for k in range(1,N+1):
+        #set boundary condition
+        u[k,0,:] = u0y(y,t[k])
+        u[k,-1,:] = ufy(y,t[k])
+        u[k,:,0] = ux0(x,t[k])
+        u[k,:,-1] = uxf(x,t[k])
+
+        if k==1:
+            for i in range(1,My):
+                for j in range(1,Mx):
+                    u[k,i,j] = 0.5*(rx*(u[k-1,i,j-1]+u[k-1,i,j+1])+ry*(u[k-1,i-1,j]+u[k-1,i+1,j]))+rxy1*u[k-1,i,j]+ut[i,j]*dt
+        else:
+            for i in range(1,My):
+                for j in range(1,Mx):
+                    u[k,i,j] = rx*(u[k-1,i,j+1]+u[k-1,i,j-1])+rxy2*u[k-1,i,j]+ry*(u[k-1,i+1,j]+u[k-1,i-1,j])-u[k-2,i,j]
+     
+    m,n = My+1, Mx+1
+    X = np.zeros([m,n])
+    Y = np.zeros([m,n])
+    for i in range(m):
+        for j in range(n):
+            X[i,j] = x[j]
+            Y[i,j] = y[i]
+
+    return u,X,Y,t
+
+ 
+若我們解下列波動方程 \(\frac{1}{4}( \frac{\partial^{2} u(x,y,t)}{\partial x^{2}} + \frac{\partial^{2} u(x,y,t)}{\partial y^{2}} ) = \frac{\partial^{2} u(x,y,t)}{\partial t^{2}}\) for \(0 \leq x\leq 2\), \(0 \leq y \leq 2\), \(0\leq t \leq 2\)
+給予起始條件
+\(u(x,y,0) = 0.1*sin(\pi x) sin(0.5 \pi y)\), \(\frac{\partial u(x,y,t)}{\partial t} = 0\), for \(t = 0\)
+其餘邊界條件都是 \(0\) 函數。我們用下列Python 程式計算。
+>>> D = [0,2,0,2]>>> Fx = [lambda x,y:0.1*np.sin(np.pi*x)*np.sin(np.pi*y/2),lambda x,y:0.0*(x+y),lambda y,t:0.0*(y+t),lambda y,t:0.0*(y+t),lambda x,t:0.0*(x+t),lambda x,t:0.0*(x+t)]>>> u,X,Y,t = ode_wave2(0.25,D,2,Fx,40,40,40)>>> u.shape(41, 41, 41)
+ 
+若我們想看動態的圖形，可以參考下列範例。
+from glophynum import *
+from mpl_toolkits.mplot3d import axes3d
+import matplotlib.pyplot as plt
+import time
+
+plt.ion()
+fig = plt.figure()
+ax = axes3d.Axes3D(fig)
+
+D = [0,2,0,2]
+Fx = [lambda x,y:0.1*np.sin(np.pi*x)*np.sin(np.pi*y/2),
+          lambda x,y:0.0*(x+y),
+          lambda y,t:0.0*(y+t),
+          lambda y,t:0.0*(y+t),
+          lambda x,t:0.0*(x+t),
+          lambda x,t:0.0*(x+t)]
+
+u,X,Y,t = ode_wave2(0.25,D,2,Fx,40,40,40)
+
+wframe = None
+for i in range(41):
+    oldcol = wframe
+    wframe = ax.plot_wireframe(u[i,:,:], X, Y, rstride=2, cstride=2)
+
+    if oldcol is not None:
+        ax.collections.remove(oldcol)
+
+    ax.view_init(105,20)
+
+    plt.draw()
+    time.sleep(0.5)
+    
+plt.close()
+
+ 
+為了便利同學把精神放在計算而不是程式，我把關於繪圖的部份寫了兩個靜態繪圖套件EZplot2D() 、EZplot3D()，以及兩個動態繪圖套件movie2D()、movie3D()。透過這幾個套件我們可以很快地看到我們的計算結果。使用範例如下：
+>>> D = [0,3,0,2]
+>>> Fx = [lambda x,y:0.1*np.sin(np.pi*x)*np.sin(np.pi*y/2), lambda x,y:0.0*(x+y), lambda y,t:0.0*(y+t), lambda y,t:0.0*(y+t), lambda x,t:0.0*(x+t), lambda x,t:0.0*(x+t)]
+>>> u,X,Y,t = ode_wave2(0.25,D,2,Fx,40,40,40)
+>>> EZplot3D(X,Y,u[0,:,:])
+ 
+我們可以很容易拉動圖形，來觀察細部的變化。若要顯示動態的3D 動畫，我們使用
+>>> movie3D(u,X,Y)
+
+後記
+這一份數值分析教材，在編排上刻意跳過矩陣計算的部份，我希望藉由計算微積分的微分與積分問題，配合基礎的微分方程問題，帶出我們對大矩陣計算的需求。這份教材的範例不斷地出現三對角矩陣，並且隨著精細度的要求，對應的矩陣也隨之爆大，要如何解這樣的矩陣，計算行列式值，並且把反矩陣算出來絕對不是適合的路徑。我們也看到在許多考慮收斂的場合，方程式會對應到大矩陣的特徵值問題，因此如何快速地計算特徵值問題也是一個重要的課題。隨著維度和精密度增加不斷爆大爆大的矩陣，數學系學生還期待用紙筆計算？基礎的程式訓練絕對不能逃避。當我們費盡辛苦學習至此，我們的訓練與企業的需求卻還有一段距離。若不能把所學透過GUI 程式變成產品，數學系的訓練對企業來說僅只於諮詢的角色，也因此我們的價值無法反應在價格上。
+回想多數數學系的課程編排，微積分，程式設計，線性代數，機率統計，高等微積分，微分方程，然後才是數值分析。我們難免同情數學系學生的窘境，許多單獨的學門既獨立又互相影響，如何才能在大學短短四年內把這些課程讀通而有應用的能力。這真不是一件容易的事。這份教材就像是在岸邊向著對岸丟一顆石頭，然後在對岸邊噗通一聲激起小小的漣漪。這只是個起頭，我丟出了一個方向，同學再用一點力就可以上岸了。流動的水中濺起的水花，總不會持久，也不會有人記得。那麼，什麼是可以讓同學上岸的最後一根繩索？學wxpython。 
+
+
+
+
+< 前一頁
+
+
+
+
+
+
+
+
+
+首頁關於我部落格最新消息網站地圖網站連結舊版glophy教學筆記數值Azure平臺
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                核心是 Joomla!®
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        數值偏微分方程式一 (薛克民)  - CourseUnion：分享 x 學習 | 大學的課程社群
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toggle navigation
+
+
+
+
+
+                          CourseUnion
+                        
+
+
+
+
+
+
+
+
+                                        註冊
+                                    
+
+
+
+                                        登入
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&nbsp&nbsp加入課程&nbsp&nbsp
+&nbsp&nbsp取消加入&nbsp&nbsp
+
+
+
+
+
+
+
+
+				數值偏微分方程式一
+			
+
+薛克民
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+                        評價
+                    
+
+
+
+0
+
+                        貼文
+                    
+
+
+
+0
+
+                        同學
+                    
+
+
+
+
+
+                        課程資訊
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+批踢踢評價
+
+課程
+教授
+
+
+
+
+
+
+整體評分
+
+0人評價
+
+_
+
+0,0,0,0,0
+
+1&nbsp&nbsp2&nbsp&nbsp3&nbsp&nbsp4&nbsp&nbsp5
+
+各項評分
+
+
+
+
+                            甜度
+                            -
+
+
+
+
+
+
+
+0,0,0,0,0
+
+
+
+
+                            扎實度
+                            -
+
+
+
+
+
+
+
+0,0,0,0,0
+
+
+
+
+                            清晰度
+                            -
+
+
+
+
+
+
+
+0,0,0,0,0
+
+
+
+
+                            難度
+                            -
+
+
+
+
+
+
+
+0,0,0,0,0
+
+
+
+
+
+
+
+
+
+
+
+
+&nbsp&nbsp發評價
+                        
+
+
+                              排序 
+
+
+新到舊
+舊到新
+
+分數高到低
+分數低到高
+
+
+
+
+
+
+
+
+
+目前還沒有評價
+
+
+                                先別失望不妨用左方按鈕去批踢踢找找吧!
+                                如果剛好修過這門課，歡迎留下你的評價哦～
+                            
+
+
+
+
+
+
+
+
+
+
+
+撰寫新評價
+×
+
+
+
+				須先登入並啟用帳號才能發文
+			
+
+
+
+
+
+
+
+				填寫成功！謝謝您
+			
+
+
+
+
+
+
+
+
+
+							修習年度/學期 :
+                        
+
+99 學年度
+100 學年度
+101 學年度
+102 學年度
+103 學年度
+104 學年度
+105 學年度
+106 學年度
+
+
+上學期
+下學期
+
+
+
+甜　度 ：
+                        
+
+
+1
+2
+3
+4
+5
+
+
+
+扎實度 ：
+                        
+
+
+1
+2
+3
+4
+5
+
+
+
+清晰度 ：
+                        
+
+
+1
+2
+3
+4
+5
+
+
+
+難　度 ：
+                        
+
+
+1
+2
+3
+4
+5
+
+
+
+整　體 ：
+                        
+
+
+1
+2
+3
+4
+5
+
+
+
+
+
+評語&nbsp(可依照參考格式撰寫或自由抒發)&nbsp: 
+
+                            ✧ 課程大概內容
+                            ✧ 上課用書&nbsp(影印講義或是指定教科書)
+                            ✧ 上課方式&nbsp(投影片、團體討論、老師教學風格)
+                            ✧ 評分方式&nbsp(給分甜嗎？是紮實分？)
+                            ✧ 考試題型、作業形式&nbsp(如團體報告、閱讀心得)
+                            ✧ 總結
+
+                         
+
+
+
+
+
+完成
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+系所
+數學系
+
+
+老師
+
+教師資訊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×Close
+
+
+
+立即註冊，加入你/妳的大學課程社群 !
+瞭解更多
+
+ Facebook 註冊
+         
+
+
+
+
+
+&nbsp男
+                    &nbsp&nbsp&nbsp&nbsp
+                    &nbsp女
+
+
+
+
+
+
+
+
+
+
+Email有點問題...
+- 目前僅開放台灣大學 -
+
+
+
+
+
+帳號特殊字元只能含 .&nbsp- _
+
+
+
+
+
+
+
+
+
+
+您輸入的密碼不一致!
+
+
+
+
+
+
+
+            已經有帳號了
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：偏微分方程（一）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+數位教材
+開放式課程
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 偏微分方程（一）Partial Differential Equations I
+作者: 林琦焜Open Education Office開放教育推動中心
+公開日期: 2008
+摘要: 課程首頁
+ 
+本課程是由交通大學應用數學系提供。
+ 
+本課程屬研究所程度的微分方程課程，授課偏重於數學與物理間的連結，並且讓學生藉由此課程瞭解直觀地PDE概念。課程目標  
+本課程屬研究所程度的微分方程課程，授課偏重於數學與物理間的連結，並且讓學生藉由此課程瞭解直觀地PDE概念。
+ 
+課程章節  
+
+
+
+
+章節
+
+
+章節內容
+
+
+第一章
+The Single First-Order Equation
+
+
+第二章
+Second-Order Equations: Hyperbolic Equations for Functions of Two Independent Variables
+
+
+第三章
+Characteristic Manifolds and Cauchy Problem
+
+
+
+第四章
+The Laplace Equation
+ 
+課程書目 
+
+Partial Differential Equations (4th Edition), Fritz John 
+Applied Mathematical Sciences Vol.1, Springer-Verlag 1982 
+ 
+評分標準  
+
+
+
+項目
+百分比
+
+
+
+
+
+平時作業
+60%
+
+
+
+期中報告
+20%
+
+
+
+期末報告
+20%授課對象：研究所學生預備知識：Calculus, Advanced Calculus, Linear Algebra,Ordinary differential equation,Complex Analysis and Real analysis
+URI: http://ocw.nctu.edu.tw/course_detail.php?bgid=1&nid=1http://hdl.handle.net/11536/108206
+顯示於類別：開放式課程
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文件中的檔案：存到雲端
+
+
+
+
+第一章 The Single First-Order Equation1-1 Introduction.mp4
+
+
+
+
+
+第一章 The Single First-Order Equation1-2 Examples.mp4
+
+
+
+
+
+第一章 The Single First-Order Equation1-3 Analytic Solution and Approximation methods in a simple example.mp4
+
+
+
+
+
+第一章 The Single First-Order Equation1-4 Quasilinear Equation.mp4
+
+
+
+
+
+第一章 The Single First-Order Equation1-5 The Cauchy Problem for the Quasilinear-linear Equations.mp4
+
+
+
+
+
+第一章 The Single First-Order Equation1-6 Examples.mp4
+
+
+
+
+
+第一章 The Single First-Order Equation1-7 The general first-order equation for a function of two variables.mp4
+
+
+
+
+
+第一章 The Single First-Order Equation1-8 The Cauchy Problem.mp4
+
+
+
+
+
+第一章 The Single First-Order Equation1-9 Solutions generated as envelopes.mp4
+
+
+
+
+
+第二章 Second-Order Equations: Hyperbolic Equations for Functions of Two Independent Variables2-1 Characteristics for Linear and Quasilinear Second-Order Equations.mp4
+
+
+
+
+
+第二章 Second-Order Equations: Hyperbolic Equations for Functions of Two Independent Variables2-2 Propagation of Singularity.mp4
+
+
+
+
+
+第二章 Second-Order Equations: Hyperbolic Equations for Functions of Two Independent Variables2-3 The Linear Second-Order Equation.mp4
+
+
+
+
+
+第二章 Second-Order Equations: Hyperbolic Equations for Functions of Two Independent Variables2-4 The One-Dimensional Wave Equation.mp4
+
+
+
+
+
+第二章 Second-Order Equations: Hyperbolic Equations for Functions of Two Independent Variables2-5 System of First-Order Equations.mp4
+
+
+
+
+
+第二章Second-Order Equations: Hyperbolic Equations for Functions of Two Independent Variables2-6 A Quasi-linear System and Simple Waves.mp4
+
+
+
+
+
+第三章 Characteristic Manifolds and Cauchy Problem3-1 Natation of Laurent Schwartz.mp4
+
+
+
+
+
+第三章 Characteristic Manifolds and Cauchy Problem3-2 The Cauchy Problem.mp4
+
+
+
+
+
+第三章 Characteristic Manifolds and Cauchy Problem3-3 Real Analytic Functions and the Cauchy-Kowalevski Theorem.mp4
+
+
+
+
+
+第三章 Characteristic Manifolds and Cauchy Problem3-4 The Lagrange-Green Identity.mp4
+
+
+
+
+
+第三章 Characteristic Manifolds and Cauchy Problem3-5 The Uniqueness Theorem of Holmgren.mp4
+
+
+
+
+
+第三章 Characteristic Manifolds and Cauchy Problem3-6 Distribution Solutions.mp4
+
+
+
+
+
+第四章 The Laplace Equation4-1 Greens Identity, Fundamental Solutions, and Poissons Equation.mp4
+
+
+
+
+
+第四章 The Laplace Equation4-2 The Maximal Principle.mp4
+
+
+
+
+
+第四章 The Laplace Equation4-3 The Dirichlet Problem, Greens Function, and Poisson Formula.mp4
+
+
+
+
+
+第四章 The Laplace Equation4-4 Perrons method.mp4
+
+
+
+
+
+第四章 The Laplace Equation4-5 Solution of the Dirichlet Problem by Hilbert-Space Methods.mp4
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef超擴散過程和偏微分方程 / 許元春;SHEU YUAN-CHUNG超過程與其應用之研究 / 許元春;SHEU YUAN-CHUNG超擴散過程漸近問題之研究 / 許元春;SHEU YUAN-CHUNG偏微分方程（二） / 林琦焜兼具巨觀與微觀之動態車流理論之研究 / 卓訓榮;CHO HSUN-JUNG非整數次梯度結構理論及其在變分學與微分方程上的應用 / 司靈得 非整數次梯度結構理論及其在變分學與微分方程上的應用 / 司靈得;Spector Daniel, Eli有限差分法與有限元素法在車流波方程模式數值解之應用與比較研究 / 林崇儒;Chorng-Ru Lin;卓訓榮;Hsun-Jung Cho車流波動方程式數值解法之研究 / 周志忠;Jou, Tyh-Jong;卓訓榮;Hsun-Jung Cho中原大學 - 利用分數微積分研討一般N階常微分方程式與偏微分方程式的解 / 秦爾聰; Chin Erh-Tsung 中原大學 - 一些關於一階偏差變數微分方程振盪性之研究 / 柯飛麟; KE, FEI-LIN 桃園創新技術學院 - 某個一階速度-旋度偏微分方程組之分析 / 蔡瓊萩 國立臺灣師範大學 - 退化偏微分方程之行為 / 劉信宏 國立成功大學 - 偏微分方程的反問題 / 王振男 臺北市立大學 - 一種混合型偏微分方程式解的Maximum Principle 定理 / 曾麗霞; 林玉斌 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：數位教材
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+數位教材
+: [3510]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+考古題
+
+開放式課程
+
+
+
+
+探索
+
+
+作者
+8 
+林念慈6 
+劉美君6 
+林琦焜6 
+簡紋濱6 
+莊重6 
+蔣淑貞5 
+徐雍鎣5 
+李大偉5 
+白啟光5 
+陳永平.
+下一步 >
+
+關鍵字
+308 
+Department of Civil Engineering308 
+土木工程系所186 
+工程數學169 
+Institute of Communication Studies169 
+Institute of Management of Techno...169 
+傳播研究所169 
+科技管理研究所150 
+計算機概論146 
+Institute of Traffic and Transpor...146 
+交通運輸研究所.
+下一步 >
+
+公開日期
+2704 
+2000 - 2016806 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：開放式課程
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+數位教材
+
+
+
+
+
+
+開放式課程
+: [328]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 328 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016105學年 (上) 經典通識教育講座通識教育委員會暨通識教育中心; Open Education Office; 開放教育推動中心
+2016物理(一)-105學年度簡紋濱; Open Education Office; 開放教育推動中心
+2015動態系統模擬與實現陳永平; Open Education Office; 開放教育推動中心
+2015整合交通控制與先進技術於實務之應用張金琳; Open Education Office; 開放教育推動中心
+2015學習的藝術：人生的一本書，學習的經驗。楊振寰; Open Education Office; 開放教育推動中心
+2015亞際文化研究學會暑期班Open Education Office; 開放教育推動中心
+2015演算法江蕙如; Open Education Office; 開放教育推動中心
+2015整合性交通走廊控制與運作張金琳; Open Education Office; 開放教育推動中心
+2015管理理論與實務討論- 103學年度蕭嬋; Open Education Office; 開放教育推動中心
+2015電玩藝術文化分析梁世佑; Open Education Office; 開放教育推動中心
+2015管理理論與實務討論-104學年度蕭嬋; Open Education Office; 開放教育推動中心
+2015領袖學程的16堂課林志潔; 張兆恬; 金孟華; Open Education Office; 開放教育推動中心
+2015104學年 (下) 經典通識教育講座通識教育委員會暨通識教育中心; Open Education Office; 開放教育推動中心
+2015心理學概論羅仕宇; Open Education Office; 開放教育推動中心
+2015104學年 (上) 經典通識教育講座通識教育委員會暨通識教育中心; Open Education Office; 開放教育推動中心
+2015有機化學(二)蒙國光; Open Education Office; 開放教育推動中心
+2015可變結構控制系統陳永平; Open Education Office; 開放教育推動中心
+2015食品安全與法律倪貴榮; 陳鋕雄; Open Education Office; 開放教育推動中心
+2015普通生物學(二)柯立偉; 陳文亮; Open Education Office; 開放教育推動中心
+2015大腦與認知科學黃植懋; Open Education Office; 開放教育推動中心
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 328 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+8 
+林念慈6 
+劉美君6 
+林琦焜6 
+簡紋濱6 
+莊重6 
+蔣淑貞5 
+徐雍鎣5 
+李大偉5 
+白啟光5 
+陳永平.
+下一步 >
+
+公開日期
+327 
+2000 - 20161 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+
+微分方程
+
+
+
+
+
+
+
+ 
+
+微分方程
+Differential Equation
+
+ 
+
+
+
+首頁 | 搜尋
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+十七世紀後，自然科學與技術蓬勃的發展，一個核心的因素是微積分的發明，而微積分之所以能廣泛地應用在各科學課題，則是因為這些問題經常被化歸為解某微分方程的問題。因此，微分方程成為整個十八與十九世紀數學發展的主調，其中包括各種重要微分方程解的研究，求解方法的發展，一般理論的萌芽，在經由反饋而催生新的數學領域。
+
+
+
+
+
+
+
+例子
+
+
+
+底下是一些微分方程的例子
+
+
+(1) 
+
+
+
+(2) Malthus人口方程：
+
+
+
+
+
+
+
+
+
+(3) 虎克定律：
+  
+
+
+
+
+
+
+
+(4) 牛頓萬有引力方程
+
+
+
+
+
+
+其中 
+,
+,
+ 代表相對的位置向量，例如行星之於太陽。
+
+
+(5) d'Alembert 波動方程：
+
+
+
+
+
+
+
+
+(6) 勢方程或 Laplace 方程：
+
+
+
+
+
+
+其中 V(x,y,z) 為空間位置函數。
+
+
+(7) Fourier 熱傳導方程：
+
+
+
+
+
+
+,T(x,y,t) 溫度函數。
+
+
+(8) Largrange 最小曲面方程：
+
+
+(1+q2)r-2pqs+(1+p2)t=0
+
+
+
+其中 z=z(x,y) 為曲面之函數式，
+,
+,
+
+,
+,
+
+。
+
+
+(9)Maxwell 方程式：
+
+
+
+
+
+
+
+
+
+由這些例子，我們知道微分方程就是指一些函數的方程式或方程組，而且式中還包括了這些函數的導函數或偏導函數。
+
+
+
+
+ 
+
+對外搜尋關鍵字：．Malthus人口方程．萬有引力方程．波動方程．Laplace方程．熱傳導方程．最小曲面方程．Maxwell方程式．常微分方程．偏微分方程．線性條件．Huygens．Leibniz．James Bernoulli．等時曲線．簡諧運動．d'Alembert．Euler．Danial Bernoulli．函數．Fourier級數．Kepler．行星運動定律．Laplace．Lagrange．Poincare．愛因斯坦．測地線．變分學．最小作用原理．微積分基本定理．線性代數．特殊函數．Bessel函數．Legendre函數．歐拉法
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+微分方程的一些基本分類
+
+
+
+如果在方程式中，我們關心的函數都是某單一變數的函數（例如(1)、(2)、(3)、(4)），則稱為常微分方程（ODE, ordinary differential
+equation，在物理系統中最常見的變數是時間 t）；不然稱為偏微分方程（PDE, partial differential equation）；如果方程式不只一個，則通稱為微分方程組（例如(4)、(9)）；一個滿足微分方程的函數稱為一個解，通常微分方程的解並不唯一，經常要給定恰當的起始條件才能確定：如果微分方程的解，滿足疊加原理（或稱線性條件）
+
+
+
+若 F(x),G(x) 為解，則 
+ 也是解，
+
+
+
+則稱為線性方程，（如(1)、(2)、(3)、(5)、(6)、(7)），不然則稱為非線性方程（(4)、(8)），線性常微分方程組，數學家已經非常瞭解它們的性質，線性偏微分方程也有許多研究，但是非線性則相對地要困難許多。
+
+
+
+
+ 
+
+    
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+歷史
+
+
+
+最早談及微分方程的數學家是 Huygens 與 Leibniz，最先以微積分技巧處理微分方程可能是 James Bernoulli 的等時曲線問題（牛頓的方法是幾何的），但是在早期分析史上最重要的兩個問題來源是
+
+
+
+
+(1) 弦震動問題：
+
+它在與 ODE 的簡諧運動方程或波型方程（形如(3)）有關，在 PDE 則是波動方程。弦震動問題並引發 d'Alembert、Euler、Danial Bernoulli 關於作為起始條件的弦函數可以具有什麼性質的論戰。這次爭論最起碼有兩個意義：
+(一)它讓數學家意識到非解析函數的重要，並省思函數一詞的意義（見函數）。
+(二)藉由 D. Bernoulli 猜測弦函數可以表成無窮三角級數和，開啟後來所謂 Fourier 級數大門（見Fourier）。
+
+
+
+
+(2) n 體問題：
+
+由牛頓重力定律，探討 n 個星球彼此的作用歷程，就是天體力學中的 n 體問題。當 n=2 時，牛頓已充分解出，並推導出 Kepler 的行星運動定律（參看行星運動三大定律)， 的問題沒有一般解，因此刺激了一系列天體問題的研究，Euler、Laplace、Lagrange 都有重要的貢獻，到了十九世紀末，經由 Poincaré 的新觀點，開始微分方程的定性研究，並開啟所謂動力系統的領域（渾沌即為其中一支）。另外由於考慮星球總引力，也導出了所謂的 Laplace 方程（即(6)），相同的想法也出現在電磁學中。
+
+
+
+有意義而且影響深遠的微分方程來源，主要是物理與幾何，除了前面所列舉的方程外，舉例來說還有，Euler 以及 Navier-Stokes 的流體力學方程，愛因斯坦廣義相對論的愛因斯坦方程，量子力學中的 Schördinger 方程，Dirac 方程，幾何上的測地線方程，最小曲面（子流形）方程等等。
+
+
+相當多的微分方程都可以用一種系統性的看法來推導出來，這就是稱為函數空間「微積分學」的變分學（加上最小作用原理）。另外在解決 PDE 問題時可以利用對稱性，分離變數，將問題化歸為 ODE 的問題。
+
+
+
+
+ 
+
+    
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+方法
+
+
+
+解決 ODE 的最基本方法是微積分基本定理，例(1)是顯然的，例(2)可以經由分離變數，變成
+
+
+
+
+
+
+n 階線性微分方程組的求解，藉由線性代數與特徵方程式原則上可以說是清楚了。但是要求「確解」，即使是例(1)這種類型的方程也力有未逮，例如 
+。
+解決這個問題的方法，首先可能是重新定義所謂的特殊函數 (special function)，例如Bessel 函數，Legendre 函數，以及採用無窮級數法。而 PDE 的問題通常就更困難了。
+
+
+因此後來在所謂的求解意義上發生了兩類轉折
+
+
+(1) 所謂存在性（或加上唯一性）的解決方式，論證在某些特定的條件下，解一定會存在，但是通常並不知道解真正的模樣，在 ODE 最基本的是下述定理：
+
+
+
+
+
+存在唯一性定理. 如果 f(t,y) 在 (t0,y0) 上連續，則一階微分方程
+
+
+
+
+
+
+有解且僅有一解。
+
+
+
+在 PDE 則有 Cauchy-Kovalevskaya 存在性定理。由於存在性定理的需求，也促進泛函分析的發展（當然另一個來源是量子力學）。
+
+
+
+
+(2) 另外則是採用數值計算的方式，在已知解存在的情形下，以最有效率的方式，來求近似解，最簡單的例子是 ODE 中的歐拉法。由於廿世紀中期之後電子計算機的發達，運用數值方法來求微分方程的解，已經是一們相當專門的學科。
+
+
+
+
+
+
+ 
+
+    
+ 
+
+
+
+
+
+ 
+
+（撰稿：翁秉仁／臺大數學系）
+
+   相關網頁：
+   
+
+     數學與科學：行星運動三大定律（曹亮吉）
+   
+
+     數學與科學：生態學之 Lokta-Volterra 模型（翁秉仁）
+   
+
+     數學與科學：傳染病之擴散模型（翁秉仁）
+   
+
+     數學與科學：人口成長模型（翁秉仁）
+   
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+留言（若有指正、疑問……可利用這裡留言）
+  
+ 
+
+
+
+
+
+
+EpisteMath (c) 2000 中央研究院數學所、臺大數學系
+各網頁文章內容之著作權為原著作人所有
+
+
+
+
+編輯：李渭天
+最後修改日期：9/18/2001
+
+
+
+
+
+國立交通大學機構典藏：車流波動方程式數值解法之研究
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 車流波動方程式數值解法之研究The Study of Numerical Methods for Traffic Flow Continuum Models
+作者: 周志忠Jou, Tyh-Jong卓訓榮Hsun-Jung Cho運輸與物流管理學系
+關鍵字: 車流波動方程;偏微分方程;數值模擬;有限差分法;適應性有限差分法;CFL條件;traffic flow continuum model;partial differential equation;numerical simulation;finite difference method;adaptive finite difference method;CFL condition
+公開日期: 1996
+摘要: 車流波動方程式為一巨觀的車流模型，可以描述道路上的動態車流行
+為，以做為道路規劃者的分析工具或即時資訊的提供等。然而，由於車流
+波動方程式為一雙曲線型偏微分方程式，其模式之求解十分困難；因此，
+要將此一車流波動方程理論有效地應用，發展合理的數值模擬方法實是一
+個重要且關鍵的步驟。    本研究針對波動方程的有限差分數值解法作一
+完整的探討。首先，針對一階線性波動方程式，以七種有限差分顯式法與
+兩種有限差分隱式法進行求解，評比數值解與正確解之間的誤差，而選出
+Lax-F、Lax-W及Leapfrog等幾個較佳的演算法進行一階準線性波動方程的
+數值模擬。而在準線性波動方程的數值模擬中，我們發現以Lax-F所求得
+的解較為合理。    在求解的過程中，我們發現有限差分顯式法必須在滿
+足CFL條件的情況下，求得的解才能保證收斂。而為了滿足此一收斂條件
+，必須將空間軸上與時間軸上的切割比增加，亦即必須在時間軸上多做切
+割，而造成求解的缺乏效率。因此本研究即以此CFL收斂條件為基礎，發
+展一適應性的有限差分法，藉由每一時間層上的密度值來判斷下一個時間
+層的切割距離大小，並證明本演算法之收斂性存在。我們並以兩個簡單的
+準線性波動方程式為例，分別利用一般的Lax-F有限差分法與本研究所發
+展的適應性Lax-F有限差分法進行比較，發現適應性的Lax-F有限差分法只
+要以較少的時間軸切割數，便能得到與一般Lax-F差分法同樣精確的結果
+。
+Macroscopic traffic flow continuum models are composed of
+single or systems of partial difference equations (PDEs) with
+suitable initial and boundary conditions which describe various
+traffic phenomena and road geometry. These models have provided
+a useful tool with which to test and assess road and traffic
+control plans. Since the analytical solutions of traffic flow
+continuum models are difficult to be solved. How to find an
+approximate and efficient numerical solution becomes an
+important course.    This study takes aim at the numerical
+finite difference methods of traffic flow continuum models. At
+first, there are seven methods of explicit finite difference
+schemes and two methods of implicit schemes used to solve the
+first order linear continuum models, and compare the errors
+between exact solution and numerical solutions of these methods.
+In these results, there are three better algorithms, including
+Lax-F、Lax-W and Leapfrog schemes, used to simulate the
+quasilinear continuum models, and the Lax-F scheme can get a
+more reasonable solution.    In the process of numerical
+computation, we found that every explicit finite difference
+methods must satisfy the CFL condition to ensure the stability
+and convergence. This condition requires the ratio of the mesh
+in space and the mesh in time must satisfy some constrains, and
+this makes the computation lack of efficiency. Therefore, this
+study based on the CFL condition develops an adaptive finite
+difference scheme to solve the LWR model more efficiently. This
+adaptive scheme can determine automatically the nest suitable
+time mesh size from the characteristic curve of every grid
+points in this time, and it can converge to a stable solution.
+In the numerical test, the Lax method and adaptive Lax method
+are used to solve the LWR model with different initial and
+boundary conditions. The simulation results show us that the
+adaptive Lax method is more efficiency than the Lax method.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT850118046http://hdl.handle.net/11536/61566
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef有限差分法與有限元素法在車流波方程模式數值解之應用與比較研究 / 林崇儒;Chorng-Ru Lin;卓訓榮;Hsun-Jung Cho高解析方法之巨觀車流模式數值解 / 黃鋒樟;Feng-Jang Hwang;卓訓榮;Hsun-Jung Cho交通車流波動方程式數值計算之研究 / 卓訓榮;CHO HSUN-JUNG動態車流方程式數值解之研究－以LWR及其包含擴散項之模式為例 / 盧金辰;Chin-Chen Lu;卓訓榮;Hsun-Jung ChoA finite difference method with adaptive time mesh for hyperbolic traffic flow / Cho, HJ;Hwang, MC;Jou, TJ車流動力模式之構建與模擬-以波茲曼輸運方程為基礎 / 羅仕京;Shih-Ching Lo;卓訓榮;Hsun-Jung Cho兼具巨觀與微觀之動態車流理論之研究 / 卓訓榮;CHO HSUN-JUNG國立臺灣大學 - 波茲曼模型方程式之高解析數值方法 / 湯國樑; Tang, Gwo-Liang 國立成功大學 - 二維偏微分方程式結構性格點數值解之極高度精確提升法研究 / 鄭育能 國立成功大學 - Helmholtz 積分方程法求解聲波引發流場之計算研究 / 楊世安 國立成功大學 - Helmholtz積分方程法求解聲波引發流場之計算研究 / Yang, Shih-An; 楊世安 國立中興大學 - 混合微分代數方程式數值積分法之研究 / 陳世昌; Chen Shr-Chang 國立中興大學 - 混合微分代數方程式數值積分法之研究 / 陳世昌; S.C.Chen 國立臺灣大學 - 以空時扭變高斯方程式模擬流動註入分析法之波形研究 / Lai, Yee-Hwong; 賴宜鴻 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+

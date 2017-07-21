@@ -1,0 +1,2598 @@
+
+
+
+
+[問題] 平行與分散式計算在工程上之應用的評價 - 看板 NTUST_Talk - 批踢踢實業坊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+批踢踢實業坊
+›
+看板 NTUST_Talk
+關於我們
+聯絡資訊
+
+
+
+
+返回看板
+
+
+分享
+
+
+
+
+
+
+
+作者soheadsome (師大狗鼻哥)看板NTUST_Talk標題[問題] 平行與分散式計算在工程上之應用的評價時間Thu Jan 16 03:34:14 2014
+不好意思 小弟是師大的學生
+
+剛好看到貴校的建築系有開
+
+平行與分散式計算在工程上之應用
+
+這門課 感到很有興趣
+
+想詢問大家對這們課的評價如何?
+
+因為有衝到我想選的另一門課
+
+所以我正在做評估
+
+謝謝
+
+--
+※ 發信站: 批踢踢實業坊(ptt.cc) 
+◆ From: 140.122.216.61
+推 howard2010:這不是建築系的課壓!~ 是營建系的!~ 01/16 12:11
+→ howard2010:這堂課程式的部分非常的重 C跟C++語言要非常的熟!~ 01/16 12:13
+→ soheadsome:摁摁 謝謝樓上回答 那營建相關的東西會很吃重嗎? 01/16 14:34
+→ soheadsome:因為我本身是資工的 所以寫程式應該還算可以 01/16 14:34
+推 wsx02:臺大資工有開平行與分散式程式設計 01/16 16:56
+→ soheadsome:可是師大選臺大的課要學分費 選台科的不用 01/16 17:41
+推 YuuKei:我有修過 我們繫上有小cluster可以玩MPI 01/16 19:52
+→ YuuKei:老師教得還不錯 英文中文各講一次 滿好吸收的 01/16 19:52
+→ YuuKei:印象中作業有點多就是了 01/16 19:54
+推 mystes:修過覺得還不錯，老師人也很好~ 01/16 19:55
+推 YuuKei:營建系的東西 好像幾乎不吃吧 因為會有別系的來修 01/16 19:58
+→ YuuKei:cluster今年好像會升級一點 好像會有32核心可以玩 01/16 19:59
+推 YuuKei:發現作業其實沒有很多 應該是當時同時修很多門課的錯覺吧 01/17 16:30
+→ soheadsome:摁摁 謝謝大大無私地分享XD 01/22 15:23
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ CT5708701 平行與分散式計算在工程上之應用  Parallel and Distributed Computing 
+
+
+ [Announcements]   [Notes]   [Assignments]  
+ Announcements 
+ 
+ 
+ 
+
+ 2011-03-31 A workshop regarding HPC in Switzerland, it is worthy checking it out!!  Lecture Notes 
+ 
+ 
+ 
+
+ 2011-02-22 00. Syllabus 2011-02-22 01. Introduction 2011-03-01 02. Review of C Programming  2011-03-08 03. Review of C Programming (II) 2011-03-15 04. Efficient Programming 2011-03-22 05. MPI (I)Examples #5 2011-03-29 06. MPI-2Examples #6 2011-04-12 07. MPI-3Example #7 2011-04-19 08. MPI (IV) & CUDA (I) 2011-04-26 09. CUDA (I) 2011-05-03 10. CUDA (II) 2011-05-10 11. CUDA (III) 2011-05-17 12. CUDA (IV) & OpenMP (I) 2011-05-24 13. OpenMP (II) 2011-05-31 14. OpenMP (III) 2011-06-07 15. Parallel Sorting & Parallel Linear Algebra  Assignments 
+ 
+ 
+ 
+
+ 2011-03-09 01. Applications of parallel computing & reading 2011-03-15 02. Efficient Programming #1 - data layout and compilation flags 2011-03-29 03. Couting FLOPS, memory bandwidth, and effect of cache 2011-04-13 04. MPI-1 & Term Project Progress Report 2011-04-26 05. MPI parallelization #2 using P2P communications 2011-05-10 Term Project Progress #3 - Serial Implementation 2011-05-24 06. CUDA parallelization
+
+
+
+
+
+
+
+
+
+
+
+台灣科技大學營建工程系
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::首頁 
+
+網站地圖 
+
+管理者登入 
+
+
+
+English Version 
+
+
+
+
+
+
+首頁 
+系所公告系所簡介師資陣容研究所資訊各式表單課程資訊工程教育認證系友會
+
+
+
+
+
+
+
+:::資訊組教師
+陳鴻銘謝佑明楊亦東廖國偉
+
+
+回上一層 
+
+
+
+
+
+
+
+									校外實習媒合平臺
+								
+
+
+
+
+	目前人力銀行網站上土木相關之職缺共 27183 個	
+
+統計表 
+
+資料來源 : 104人力銀行1111人力銀行yes123求職網518人力銀行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+重要公告畢業生「離系」問捲 (本學期準備辦理離校者須先填寫)首頁 > 師資陣容 > 資訊組教師 > 謝佑明							謝佑明
+::: 
+
+
+
+姓名:
+
+
+				謝佑明  副教授			
+
+
+ 
+
+
+
+
+學位:
+
+
+美國麻省理工學院博士			
+
+
+
+E-mail:
+
+
+ymhsieh@mail.ntust.edu.tw 
+
+
+
+個人網站:
+
+
+ 謝佑明的教學網站 
+
+
+
+辦公室:
+
+
+				E2-707-2			
+
+
+
+聯絡電話:
+
+
+				+886-2-27301056			
+
+
+
+
+傳真:
+
+
+
+				+886-2-27376606			
+
+
+
+研究領域:
+
+
+				電腦輔助工程、資訊科技、大地工程、雲端運算、無線感測器網路 (WSN)、監測資訊系統			
+
+
+
+教授課程:
+
+
+				平行與分散式計算在工程上之應用、營建資訊系統之軟體工程、BIM理論與實務、C/VB程式與應用及計算機概論。			
+
+
+
+歡迎對於資訊應用或大地工程數值分析有興趣的同學加入本研究團隊。 
+
+
+
+
+
+
+
+
+
+
+
+						個人經歷						
+
+
+
+
+
+名稱
+起
+迄
+其它資訊
+Link
+
+理事 2009-04 2013-04 社團法人中華民國大地工程學會 [LINK]
+秘書長 2005-04 2009-04 社團法人大地工程學會 [LINK]
+助理教授 2004-08 2012-07 國立臺灣科技大學營建工程系 -- 
+
+
+
+
+
+
+
+
+
+						期刊論文 & 研討會論文 & 專書及技術報告						
+
+
+
+
+
+
+				期刊論文			
+
+
+Y. M. Hsieh, P. H. Dang, H. D. Lin (2016),  "How Small Strain Stiffness and Yield Surface Affect Undrained Excavation Predictions",  International Journal of Geomechanics,  Vol. 17, Issue 3,  [SCI],  [EI].  [LINK]H.D. Lin, S. Mendy, H.C. Liao, P. H. Dang, Y. M. Hsieh, C. C. Chen (2016),  "Responses of 3d excavation and adjacent buildings in sagging and hogging zones using decoupled analysis method",  Journal of GeoEngineering,  11(2), pp. 85-96.,  [EI].  [LINK]H.D. Lin, P.H. Dang, Y.M. Hsieh (2015),  "RIFT: Robust and Interpolation-Free Technique for Objective Functions in Geotechnical Inverse Analysis",  COMPUTERS AND GEOTECHNICS,  Volume 64, Pages 96–104,  [SCI],  [EI].  [LINK]Yo-Ming Hsieh, Mao-Sen Pan (2014),  "ESFM: An Essential Software Framework for Meshfree Methods",  ADVANCES IN ENGINEERING SOFTWARE,  Volume 76, October 2014, Pages 133–147.  DOI: 10.1016/j.advengsoft.2014.06.006,  [SCI],  [EI].  [LINK]Yo-Ming Hsieh, Ya-Sue Lu (2012),  "Visualization system for field monitoring data and its effectiveness",  Automation in Construction,  Volume 26, Pages 54-68,  [SCI],  [EI].  [LINK]Yo-Ming Hsieh, Yen-How Chen (2012),  "Critical reliability assessments of distributed field-monitoring information systems",  Automation in Construction,  Volume 26, Pages 21-31,  [SCI],  [EI].  [LINK]I-Tung Yang, Yo-Ming Hsieh, Li-Ou Kung (2012),  "Parallel Computing Platform for Multiobjective Simulation Optimization of Bridge Maintenance Planning",  JOURNAL OF CONSTRUCTION ENGINEERING AND MANAGEMENT,  138(2), 215–226,  [SCI].  [LINK]Yo-Ming Hsieh, Kuo-Chen Lee, Fu-Shu Jeng, Tsan-Hwei Huang (2011),  "Can tilt tests provide correct insight regarding frictional behavior of sliding rock block under seismic excitation?",  Engineering Geology,  Volume 122, Issues 1–2, Pages 84-92,  [SCI],  [EI].  [LINK]M.C. Weng, L.S. Tsai, Y.M. Hsieh, F.S. Jeng (2010),  "An associated elastic–viscoplastic constitutive model for sandstone involving shear-induced volumetric deformation",  International Journal of Rock Mechanics and Mining Sciences,  Volume 47, Issue 8, Pages 1263-1273,  [SCI],  [EI].  [LINK]M.C. Weng, F.S. Jeng, L.S. Tsai, Y.M. Hsieh (2010),  "A simple model for geo-materials involving shear-induced anisotropic degradation",  Journal of the Chinese Institute of Engineers,  33 (6) , pp. 833-844,  [SCI].  [LINK]Y.M. Hsieh, Y.C. Hung (2009),  "A scalable IT infrastructure for automated monitoring systems based on the distributed computing technique using simple object access protocol Web-services",  Automation in Construction,  18(4), pp. 424-433,  [SCI],  [EI].  [LINK]M.C. Weng, F.S. Jeng, Y.M. Hsieh, T.H. Huang (2008),  "A simple model for stress-induced anisotropic softening of weak sandstones",  International Journal of Rock Mechanics and Mining Sciences,  Volume 45, Issue 2, Pages 155-166,  [SCI],  [EI].  [LINK]L.S. Tsai, Y.M. Hsieh, M.C. Weng, T.H. Huang, F.S. Jeng (2008),  "Time-dependent deformation behaviors of weak sandstones",  International Journal of Rock Mechanics and Mining Sciences,  Volume 45, Issue 2, Pages 144-154,  [SCI],  [EI].  [LINK]Yo-Ming Hsieh, Hung-Hui Li, Tsan-Hwei Huang, Fu-Shu Jeng (2008),  "Interpretations on how the macroscopic mechanical behavior of sandstone affected by microscopic properties—Revealed by bonded-particle model",  Engineering Geology,  Volume 99, Issues 1–2, Pages 1-10,  [SCI],  [EI].  [LINK]Yo-Ming Hsieh, Andrew J. Whittle, Hai-Sui Yu (2002),  "Interpretation of Pressuremeter Tests in Sand using Advanced Soil Model",  Journal of Geotechnical and Geoenvironmental Engineering,  128(3), 274–278.,  [SCI].  [LINK] 
+
+
+
+
+				研討會論文			
+
+
+Yo-Ming Hsieh, Kuo-Lung Wang (2016),  "A Low-Cost Slope Monitoring Device Using Off-The-Shelf Components",  Proceeding of the 16th International Conference on Computing in Civil and Building Engineering (ICCCBE 2016),  pp. 254 - 261, Jul. 6 - 8, 2016, Osaka, Japan.  [LINK]Y.M. Hsieh, S.H. Chang, M.S. Tsai (2016),  "A Web-based Construction Site Risk Evaluation and IFC-based Presentation System",  Proceeding of the 16th International Conference on Construction Applications of Virtual Reality (CONVR 2016),  pp. 351 - 361, Dec. 11-13, 2016, Hong Kong.P.H. Dang, Y.M. Hsieh, H.D. Lin (2016),  "Assessment of Building Responses Adjacent to Deep Excavation Using 3D Simulation",  19 TH  SOUTHEAST ASIAN GEOTECHNICAL CONFERENCE & 2 ND  AGSSEA CONFERENCE,  May. 31 - Jun. 2, 2016, Dorsett Grand Subang, Subang Jaya, Malaysia
+
+.H.D. Lin, S. Mendy, P.H. Dang, Y.M. Hsieh, C.C. Chen (2015),  "Responses of adjacent ground and building induced by excavation using 3D decoupled simulation",  15th Asian Regional Conference on Soil Mechanics and Geotechnical Engineering,  ARC 2015: New Innovations and Sustainability , pp. 1437 - 1440 . .張世暉, 康益昇, 謝佑明 (2015),  "結合建築資訊模型之施工風險評估網頁應用程式",  2015年電子計算機於土木水利工程應用研討會論文集,  pp. 297 - 306，臺中，台灣。(最佳論文獎).謝佑明, 廖育慶, 翁琪婷 (2015),  "基於機器視覺技術之隧道內定位系統與研究平臺",  2015年電子計算機於土木水利工程應用研討會論文集,  pp. 751 - 760，臺中，台灣。.謝佑明, 黃俊培, 彭敬鈞 (2015),  "以行動裝置輔助隧道檢監測現地作業",  2015年電子計算機於土木水利工程應用研討會論文集,  pp. 354 - 360，臺中，台灣。.Yo-Ming Hsieh, Yu-Chin Liao (2014),  "Localization inside Tunnels Using Machine Vision",  Proceeding of the 31st International Symposium on Automation and Robotics in Construction and Mining (ISARC 2014),  pp. 860 - 867, Sydney, NSW, Australia. (Paper #123).Yo-Ming Hsieh (2014),  "Cloud-Computing Based Parameter Identification System – with Applications in Geotechnical Engineering",  Proceeding of ICCCBE 2014,  Jun. 23 - 25, Florida, USA.,  [EI].  [LINK]K.L. Wang, Y.M. Hsieh (2013),  "Using Motion Sensor for Landslide Monitoring: A community scale landslide monitoring project",  Proceeding of 7th International Conference on Sensing Technology,  (IEEE) Wellington, New Zealand, Dec. 3-5, 2013,,  [EI].  [LINK]謝佑明, 鄒昌佑 (2013),  "雲端隧道檢監測資訊系統與三維互動式介面",  第十五屆大地工程學術研究討論會論文集(Geotech2013),  9/11-9/13, 雲林, 台灣.謝佑明, 蔡茂生, 康益昇 (2013),  "BIM於工程風險評估之應用",  102年電子計算機於土木水利工程應用研討會,  9/5-9/6, 臺北, 台灣.Yo-Ming Hsieh, Mao-Sheng Tsai, and Yi-Sheng, Kang (2013),  "A BIM-Enhanced Information System for Construction Site Safety Management",  Proceeding of The 6th Civil Engineering Conference in the Asian Region,  Aug. 20 – 22, Jakarta, Indonesia.Mao-Sen Pan, Yo-Ming Hsieh (2012),  "The Evaluation of Sparse Matrix Performance in Meshfree Analysis
+",  Proceeding of ICCCBE 2012,  Jun. 27 - 29, Moscow, Russia..  [LINK]Yo-Ming Hsieh, Mao-Sen Pan (2012),  "Enhancing Performance of Meshfree Methods by Hybrid Computing",  Proceeding of ICCCBE 2012,  Jun. 27 - 29, Moscow, Russia..  [LINK]Yo-Ming Hsieh (2012),  "Reliability Assessments on a Distributed-Computing Based Monitoring Information System",  Proceeding of ICCCBE 2012,  Jun. 27 - 29, Moscow, Russia..  [LINK]Yo-Ming Hsieh, Song-Xu Tsai (2011),  "Computer Aided Iterative Design – A Future Trend In Computer Aided Engineering Software
+",  Proceedings of the 28th ISARC, Seoul, Korea,  Pages 1110-1115.  [LINK]潘茂森, 謝佑明 (2011),  "稀疏矩陣於無元素分析法上效能之評估",  100年電子計算機在土木水利工程應用研討會,  9/1-9/2, 高雄，台灣.謝佑明, 陳彥皓 (2011),  "分散式監測訊資訊系統及其可靠度探討",  100年電子計算機在土木水利工程應用研討會,  9/1-9/2, 2011, 高雄，台灣.謝佑明, 蔡松栩, 潘茂森 (2010),  "基於無元素法之電腦輔助迭代式設計軟體",  第三十四屆全國力學會議,  11/19-11/20, 雲林縣, 台灣 .潘茂森, 謝佑明 (2010),  "Weak-form 無元素分析架構之案例實作探討",  第三十四屆全國力學會議,  11/19-11/20, 雲林縣, 台灣 .Yo-Ming Hsieh, Ya-Sue Lu (2010),  "An interactive 3D visualization system for displaying field-monitoring data",  Proceedings of the International Conference in Computing in Civil and Building Engineering,  Jun. 30 - Jul. 2, Nottingham, UK, Nottingham University Press, Paper 14, p. 27,  [EI].  [LINK]謝佑明, 盧雅淑 (2009),  "應用電腦視覺化技術結合監測資料與三維模型呈現",  98年電子計算機於土木水利工程應用研討會,  9/3-9/4,新竹市,台灣.Y.M. Hsieh (2009),  "An efficient scheme for parallel parametric-study in finite element analyses",  Proceedings of the 2009 ASCE International Workshop on Computing in Civil Engineering, June 24-27, 2009, Austin, Texas, United States ,  346 , pp. 390-397,  [EI].  [LINK]Yo-Ming Hsieh, Mao-Sen Pan (2009),  "An Object-oriented Framework for Spatial Interpolation
+",  Proceedings of the 26th ISARC, Austin TX, U.S.A.,  Pages 527-534.  [LINK]Y.M. Hsieh, Y.C. Hung (2008),  "New Technologies and a Distributed Information System Architecture for Large-Scale Automated Monitoring Projects",  ICCCBE-XII & INCITE 2008,  Oct. 16-18, Beijing, China.謝佑明, 潘茂森 (2007),  "網格演化有限元素分析於大地工程之應用",  第十二屆大地工程學術研討會,  8/29-8/31, 南投縣，台灣 .Y.M. Hsieh, A.J. Whittle (2006),  "Efficient Computation for a Complex Tunnel Excavation Problem",  Proceedings of GeoCongress 2006,  Feb. 26 - Mar. 1, Atlanta, U.S.A..H.C. Chao, Y.M. Hsieh, D. H. Ju, C.H. Chuang (2005),  "2-D and 3-D Numerical Analyses of Tunneling",  The 2nd World Forum of Chinese Scholars in Geotechnical Engineering,  Aug. 20 – 21, Nanjing, China. 
+
+
+
+
+				專書及技術報告			
+
+
+K. L. Wang, Y. M. Hsieh, C. N. Liu, J. R. Chen, C. M. Wu, S. Y. Lin, H. Y. Pan (2015),  "Using Motion Sensor for Landslide Monitoring and Hazard Mitigation",  Intelligent Environmental Sensing,  Volume 13 of the series Smart Sensors, Measurement and Instrumentation pp 111-127.  [LINK]林美聆, 王國隆, 陳德偉, 林育崇, 謝佑明, 黃文昭, 田耘昇 (2012),  "公路邊坡設計規範研修探討",  地工技術,  132期.  [LINK]謝佑明, 陳皆儒 (2006),  "限度狀態設計與可靠度設計觀念",  地工技術雜誌 109 期,  pp. 15-26.  [LINK]謝佑明 (2005),  "地下車站施工 疊穴工法立法",  營建知訊,  269 期, pp. 36-45.  [LINK]Yo-Ming Hsieh (2004),  "Parallel Computation in Efficient Non-Linear Finite Element Analysis with Applications to Soft-Ground Tunneling Project",  Ph.D Dissertation,  Massachusetts Institute of Technology, USA..  [LINK] 
+
+
+
+
+
+
+
+
+
+
+
+台灣科技大學 | 國際事務處 | 系友會 | Facebook任何建議請與我們連絡  WebMaster : 陳曦  &  指導教授 : 謝佑明 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+Parallel and Distributed Computing Laboratory
+
+
+
+[English Version]
+
+
+
+
+平行與分散計算實驗室
+中央大學資訊工程系
+地點: 工五館 A309 (E6-A309)
+
+
+
+
+
+
+
+
+
+成員:
+王尉任 (副教授)
+陳劭睿 (博士生)
+				陳家慶 (博士生)
+方瑋綸 (碩士生)
+				鄭鈞輿 (碩士生)
+				董孝倫 (碩士生)
+				林子晏 (碩士生)
+				張長聞 (碩士生)
+				趙緯 (碩士生)
+				聶順成 (碩士生)
+				陳盈宏 (碩士生)
+
+
+
+實驗室簡介:
+平行與分散計算實驗室(簡稱PaDiC實驗室)的研究目標在於發展一個計算系統與架構,並使之自動調適於大型且動態的計算環境,進而簡化分散式程式的撰寫以及改善程式的執行效率,並利用這些技術到各種領域,例如天文等科學計算領域. 平行與分散計算實驗室的成員們也研究網路相關的應用技術,例如資訊隱藏.目前平行與分散計算實驗室的研究主要集中在下列方向:
+
+大型分散式程式技術
+
+雲端計算
+
+工業物聯網系統 (DDS-based IIoT Systems)
+
+虛擬機器錯與工可用性技術
+
+大型科學計算應用程式架構與資料分析
+
+
+目前研究計畫與方向:
+雲端計算環境的建置與研究: 
+
+
+
+	本研究著重在研發基礎架構服務為主的雲端運算管理軟體，我們稱它為SMAEVED系統。SAMEVED是以現有的虛擬機器管理工具為基礎去研發新的中介軟體，讓雲端服務提供者可以方便的建立一個完整的雲端計算環境，並提供雲端服務使用者完善的管理工具。我們將實體機器虛擬化，提供虛擬機器給使用者使用，使用者可以透過SAMEVED簡單且方便地建立、管理自己的虛擬機器
+	與虛擬網路環境，甚至建立、管理自己的虛擬機房 
+	(Virtual Elastic 
+	Datacenter)。這套軟體可以讓雲端使用者可以依不同權限與其身分進行虛擬機器的管理。我們也設計了一套完善的雲端監控機制，讓有特殊權限的使用者可以快速瞭解目前系統的狀態。除此之外，我們的軟體也提供API讓其他軟體直接透過SSL直接呼叫，因此可以支援自動的系統資源管理與監控。目前我們正在研究自動系統管理功能、更完整的API、以及更強化的系統安全。
+	我們已經建立了一個容易管理而且有效率的雲端網路攻防實驗平臺，未來要加強系統容錯能力與穩定性。這個平臺將用來提供網路安全實驗服務，針對各種入侵方式的攻防演練，以提升平臺安全性管理人員專業技能。舉例而言，我們的雲端平臺將可以動態建構虛擬網路環境來進行網路的攻防實驗 
+	(例如DDoS的演練) ，並提供監測的資料給使用者與教師使用。
+
+
+
+
+工業用電腦虛擬機容錯之研究:
+
+
+基於目前的KVM 虛擬機器架構，我們在其上設計KVM 
+	容錯機制。我們的容錯方式是採用虛擬機器同步狀態備份的方式， 我們把對外服務的VM 稱為primary VM，另外有一個備份VM為secondary VM負責同步維持與primary 
+	VM的狀態。
+
+我們另外研發了KVM HA機制，我們設計與實作的元件包含WD (watchdog)、RM (Replica 
+	management)、Interceptor。WD 負責監測使用者的虛擬機器，一旦發現錯誤便啟動recovery process。RM 
+	提供interface 來建立重建VM，並負責recovery process，Interceptor 
+	在執行階段時時刻刻攔截I/O events 來同步backup VM 狀態。而在這樣的容錯架構之下，我們必須要對被保護的虛擬機器(FTVM) 
+	進行監控，也需要對重要的libvertd 服務進行監控與容錯保護。
+
+大型科學計算應用程式架構與資料分析: 
+
+
+
+	分散式計算技術在進入網路時代之後已變得越來越重要，有越來越多的研究課題因為問題本身的特性，例如資料量或計算量太過龐大，因此需要使用這類型的技術來來建立自己的應用程式。在這一方面的研究中，我們除了發展一些通用的技術來幫助科學計算外，也針對特定領域研究(如天文與計算神經科學)開發特定工具。
+
+
+我們也和中央生醫所進行計算神經科學的研究，我們運用平行與分散式運算技術與計算神經科學的理論模型，將這種技術轉移到MATLAB與GPU Programming上來加速資料分析
+	，目前的研究方向也朝向機器學習在中風復健上的應用。
+
+DDS-Based 工業物聯網 (IIoT) 系統效能分析與模擬平臺:
+
+
+
+	在本計畫中，我們與工業電腦廠商合作研究"基於DDS通訊架構的IIoT系統效能評估"，並預估建置一個可以在線分析基於DDS IIoT架構的工廠生產線的通訊效能與瓶頸的平臺。
+
+
+
+實驗室成員榮譽事項:
+
+2016年
+碩士班 黃泓霖 通過 「五年一貫雙學位」審查 提早畢業
+
+
+2015年
+碩士班 曾珮綺 榮獲 「HP Internship」
+
+
+2014年
+碩士班 陳儀峰 榮獲 「Qualcomm Internship」
+
+2013年
+王尉任老師 榮獲 「中央大學優良導師」
+碩士班 呂享倫 榮獲「IBM Internship」
+碩士班 崔孝戎 通過 「五年一貫雙學位」審查 提早畢業
+
+2012年:
+	  
+王尉任老師 榮獲 「中央大學教學優良教師」
+王尉任老師 榮獲 「中央大學資電院新進人員研究優良獎」
+博士班 黃正達 榮獲 「校長獎學金」 (校內研究生研究獎項最高榮譽)
+碩士班 蔡旻嶧 通過 「五年一貫雙學位」審查 提早畢業
+碩士班 崔孝戎 榮獲 「康德基金會獎學金」
+101年度醫療電子聯盟4B生醫工程研討會: “GPU-Based Parallelism for Accelerating DCM 
+		for ERP Computation” 佳作論文
+專題生 陳大慶、王竣鋒、陳健新、李建庚 以作品 "PonPonBear探險記" 榮獲中央資工系專題競賽佳作
+
+2011年:
+	  
+博士班 黃正達 榮獲 「優秀研究生研究獎學金 」
+碩士班 蔣秉芳 榮獲 「優秀研究生獎學金」
+專題生 蔡旻嶧、徐振翔、黃宇廷、何儒軒 榮獲「網路通訊軟體與創意應用競賽」值得註目獎
+專題生 蔡旻嶧 榮獲「趨勢科技Internship」
+
+2010年:
+	  
+碩士班黃安慶、專題生蔡旻嶧 參與蔡孟峰老師指導的團隊(林英傑、黃安慶、林子剛、蔡旻嶧) 榮獲98學年度「大學校院網路通訊軟體與創意應用競賽
+		」 
+		佳作
+ 碩士班 黃安慶 榮獲 「Yahoo Internship」
+
+2009年:
+	  
+專題生 張凱富 榮獲第一屆「台灣 CUDA 程式設計比賽」 專業設計組 佳作 
+
+
+　
+
+課程教學:
+
+
+ Fall 2016:
+		(CE6132-*)高等分散式計算模型,
+		(SE6031) 工業電腦虛擬化技術
+之前課程: (CE1001A) 計算機概論I, (CE1003-A) 
+		計算機實習I, 
+		(CE5049-*) 網格計算概論, (CE1002-A) 計算機概論 Ⅱ, (CE1004-A) 
+		計算機實習II, 
+		(CE3002-A)作業系統, (CE5049-*), 
+		(CE6132-*)高等分散式計算模型, (CE3061) 進階Java程式設計, 
+		(CE6002-*)書報討論, (SE6023-*) 雲端運算概論, 
+		(SE6031) 工業電腦虛擬化技術
+
+
+　
+
+學術文章發表:
+詳細資料請見Wei-Jen Wang's Publication List.
+
+給希望加入本實驗室的碩士生與專題生:
+
+專業能力方面要求: 我們希望進入實驗室的新生有良好的系統實作能力與程式撰寫能力.
+其他方面要求: 我們希望進入實驗室的新生有良好的待人處事態度與團隊工作態度. 我們認為這兩者跟專業能力一樣重要.
+實驗室訓練要點: 我們強調獨立思考能力的訓練與系統實作能力的培養.
+
+　
+畢業學生:
+
+資料請見: 平行與分散式計算實驗室畢業生
+
+　
+
+
+
+
+
+
+國立中央大學
+
+
+
+國立中央大學資訊工程系　
+
+
+
+
+		無線與多媒體實驗室
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ Current course offering 
+
+
+Course
+Classroom
+Schedule
+Term
+
+
+
+BIM理論與實務 Theory and Practice of Building Information Modeling 
+E2-412 
+9:10 - 12:10 
+ 
+			104學年度第一學期Fall, 2015   
+		
+ 
+
+
+
+營建資訊系統之軟體工程 Software Engineering in Construction Information Systems 
+IB-410-1 
+13:20 - 16:20 
+ 
+			104學年度第一學期Fall, 2015   
+		
+ 
+
+
+
+ Past course offerings 
+
+
+Course
+Classroom
+Schedule
+Term
+
+
+
+平行與分散式計算在工程上之應用 Parallel and Distributed Computing 
+IB-506 
+9:30AM - 12:20PM, Tuesday 
+ 103學年度第二學期   
+ 
+
+
+
+C/VB 程式與應用 C/VB programming and applications 
+E2-412 
+9:30 - 12:20, Friday 
+ 103學年度第二學期   
+ 
+
+
+
+BIM理論與實務 Theory and Practice of Building Information Modeling 
+E2-412 
+9:30AM - 12:20PM, Tuesday 
+ 103學年度第一學期   
+ 
+
+
+
+C/VB 程式與應用 C/VB programming and applications 
+E2-412 
+09:30AM - 12:20PM, Friday 
+ 102學年度第二學期   
+ 
+
+
+
+平行與分散式計算在工程上之應用 Parallel and Distributed Computing 
+IB-506 
+09:30AM - 12:20PM, Tuesday 
+ 102學年度第二學期   
+ 
+
+
+
+BIM理論與實務 Theory and Practice of Building Information Modeling 
+E2 電腦教室 
+1:30PM - 4:20PM, Thursday 
+ 102學年度第一學期   
+ 
+
+
+
+營建資訊系統之軟體工程 Software Engineering in Construction Information Systems 
+IB-504 
+9:30AM - 12:20PM, Tuesday 
+ 102學年度第一學期   
+ 
+
+
+
+C/VB 程式與應用 C/VB programming and applications 
+RB-508 
+9:30AM - 12:20PM, Friday  
+ 101學年度第二學期   
+ 
+
+
+
+平行與分散式計算在工程上之應用 Parallel and Distributed Computing 
+IB-505 
+9:30AM - 12:20PM, Tuesday 
+ 101學年度第二學期   
+ 
+
+
+
+電腦輔助資料視覺化及呈現於營建工程上之應用 Computer Aided Data Visualization and Presentation in Construction Engineering 
+IB-307 
+1:30PM - 4:20PM, Wednesday 
+ 101學年度第一學期    
+ 
+
+
+
+營建資訊系統之軟體工程 Software Engineering in Construction Information Systems 
+IB-409-2 
+9:30AM - 12:20PM, Tuesday 
+ 101學年度第一學期    
+ 
+
+
+
+實務專題 (基礎與山坡地設計) Special Projects 
+IB-601 
+3:30PM - 6:20PM, Friday 
+ 101學年度第一學期    
+ 
+
+
+
+C/VB 程式與應用 C/VB programming and applications 
+RB-509 
+9:30AM - 12:20PM, Friday 
+ 100學年度第二學期   
+ 
+
+
+
+平行與分散式計算在工程上之應用 Parallel and Distributed Computing 
+IB-505 
+9:30AM - 12:20PM, Tuesday 
+ 100學年度第二學期   
+ 
+
+
+
+實務專題 (基礎與山坡地設計) Special Projects 
+IB-608 
+3:30PM - 5:20PM, Friday 
+ 100學年度第二學期   
+ 
+
+
+
+電腦輔助資料視覺化及呈現於營建工程上之應用 Computer Aided Data Visualization and Presentation in Construction Engineering 
+E2 Computer Room / IB-409-2 
+1:30PM - 4:20PM, Friday 
+ 100學年度第一學期   
+ 
+
+
+
+營建資訊系統之軟體工程 Software Engineering in Construction Information Systems 
+IB-508 
+1:30PM - 4:20PM, Wednesday 
+ 100學年度第一學期   
+ 
+
+
+
+C/VB 程式與應用 C/VB programming and applications 
+RB-510 
+9:30AM - 12:20PM, Friday 
+ 99學年度第二學期   
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+台灣科技大學營建工程系
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::首頁 
+
+網站地圖 
+
+管理者登入 
+
+
+
+English Version 
+
+
+
+
+
+
+首頁 
+系所公告系所簡介師資陣容研究所資訊各式表單課程資訊工程教育認證系友會
+
+
+
+
+
+
+
+:::課程資訊
+課程查詢系統修業相關規定大學部課程研究所課程_營建管理組研究所課程_大地工程組研究所課程_結構工程組研究所課程_營建材料組研究所課程_資訊科技組研究所課程_碩士在職專班研究所各組核心課程專業課程分類參考表開課時程參考表國際學程國立臺灣科技大學校外實務深度研習作業要點
+
+
+回上一層 
+
+
+
+
+
+
+
+									校外實習媒合平臺
+								
+
+
+
+
+	目前人力銀行網站上土木相關之職缺共 27183 個	
+
+統計表 
+
+資料來源 : 104人力銀行1111人力銀行yes123求職網518人力銀行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+重要公告畢業生「離系」問捲 (本學期準備辦理離校者須先填寫)首頁 > 課程資訊 > 研究所課程_資訊科技組							研究所課程_資訊科技組
+::: 修改日期 : 2011-09-08 21:41:45
+
+
+
+
+
+
+
+代 碼
+
+課程名稱
+
+學分數
+
+課 程 簡  介
+
+
+
+				CT5705
+
+				資料庫與資訊科技
+
+				3
+
+				This course-focuses on the introduction of the state-of-the-art technologies in database system and IT. This will provide students the necessary background for research in the application of information technology to the construction process, and the design of e-business/e-work systems in construction/civil industry. 課程大綱：DBMS concept and architecture; Relational databases; Object-oriented databases; Design of Engineering Databases; Querying languages (SQL and JDBC); Query optimization; Data mining. Information modeling; Information assurance and security; Process flow modeling; Workflow; Operational issues. Programming tools includes HTML, JavaScript, VBScript, ASP, and XML.
+
+
+
+				CT5706
+
+				電腦繪圖與視覺模擬
+
+				3
+
+				介紹電腦繪圖之基本運算原理，演算法之實際程式寫作，與先進電腦繪圖程式庫之介紹與使用。課程大綱：2D繪圖，圖形化介面之互動技術，3D投射與視覺轉換， GL Pipeline， 3D圖形與動畫之修飾(反射、透視、光源、陰影、混合與霧化等效果)， Curve and Surface，隱藏面處理， Solid Modeling， OpenGL與VRML packages 之應用。
+				註:開放給大四學生選修
+
+
+
+				CT5707
+
+				物件導向程式分析與設計(開放大四選修)
+
+				3
+
+				學習物件導向程式語言、物件導向之問題分析方法、與物件導向設計哲學。 課程大綱：C++/Java程式設計(物件與類別、封裝、繼承、多元性、類別間之階層架構)， 物件導向分析與設計哲學，UML，營建工程相關應用，資料結構、樣板、C++STL、Java Packages， 基本演算法(searching、sorting、etc.)。
+				註:開放給大四學生選修
+
+
+
+				CT5708
+
+				平行與分散式計算在工程上之應用(開放大四選修)
+
+				3
+
+
+					介紹平行與分散式計算的技術、軟硬體架構、演算法、以及工程上之應用。 課程大綱：平行與分散式系統架構，平行程式模式，效能分析，平行與分散式計算之程式支援介面 (MPI、OpenMP、CORBA、Java RMI)，平行演算法(矩陣求解、排序、動態工作分配等)，工程上之應用 (有限元素分析之平行化技術、平行動力積分法等)。
+
+
+
+
+				CT5800
+
+				人工智慧在營建工程上之應用
+
+				3
+
+
+					本課程旨在介紹人工智慧於近年之發展，軟體工具，以及其在營建工程上之應用。課程大綱： Review of linear algebra and functional analysis; Pattern recognition and regression; Optimization theory; Neural networks; Support vector machine(S.V.M); Vapnik-Chervonenkis(V-C) dimension and model selection; Applications in construction engineering.
+
+
+
+
+				CT5808
+
+				電腦輔助決策模擬分析
+
+				3
+
+				Decision-making under uncertainty has been an important skill needed throughout all aspects of construction engineering. To provide students with sufficient tools, this course introduces a variety of contexts related to decision analysis and computer simulation.
+
+
+
+				CT5809
+
+				計算智慧於工程上的應用
+
+				3
+
+				This course introduces the theoretical concepts of computational intelligence with the main focus on metaheuristic algorithms. Students will learn to develop algorithms for solving optimization problems in the construction domain, with good performance in terms of effectiveness, efficiency, and robustness.
+
+
+
+				CT5901
+
+				專題討論(一) **
+
+				0
+
+				本課程之目的為充實學生工程實務經驗及一般之工程知識，以增進其對各專業科目學理貫通之瞭解；每週邀請與營建工程有關之各行業專家、學者對一主題作深入淺出之講解。每次並寄發海報通知各工業單位及學術單位，觀迎有關人士前來聽講，希望能藉此提高國內營建工程之水準。課程大綱：以本系教學之三大目標：營建管理、營建材料及營建技術為專題討論主題之主要範疇。
+
+
+
+				CT5902
+
+				專題討論(二) **
+
+				0
+
+				本課程之目的為充實學生工程實務經驗及一般之工程知識，以增進其對各專業科目學理貫通之瞭解；每週邀請與營建工程有關之各行業專家、學者對一主題作深入淺出之講解。每次並寄發海報通知各工業單位及學術單位，觀迎有關人士前來聽講，希望能藉此提高國內營建工程之水準。課程大綱：針對本系營建管理、工程、結構、材料相關課題，邀請專家、學者進行專題演講與討論。
+				** 碩博生一下、碩博生二上全修生均為必選修。
+
+
+
+				CT5803
+
+				統計學習理論
+
+				3
+
+				介紹統計學習之理論及演算法、以及工程上之應用。課程大綱： 機率思維 v.s. 可信度思維之探討及貝式定理、不確定性之模擬及傳播、常見之靜態及動態系統之數理及機率模型、在不確定環境下靜態及動態系統之監測、Monte Carlo simulation、工程上之應用。
+
+
+
+				CT5805
+
+				營建資訊系統之軟體工程
+
+				3
+
+				本課程之目的在於教導學生軟體工程之觀念與應用，並透過專題計畫的方式使學生們能練習於上課中所習得之軟體工程概念與方法。課程大綱：營建資訊系統概論、資訊系統之規劃與成本估算、軟體開發之流程、軟體專案之規劃流程與管理、 軟體專案時程控管、軟體專案品質掌控。
+
+
+
+				CT5818
+
+				系統工程與可靠度設計
+
+				3
+
+				授課原則為跨領域概念之建立及在實務上之應用。課程大綱：系統工程之介紹、不確定性因子在工程中的角色、蒙地卡羅與重點取樣演算法、降低變異性之技術、考量不確定因素之設計、耦合系統分析、系統設計、程式語言與軟體 
+				– Simulink之應用。
+
+
+
+				CT5819
+
+				模糊理論及其在工程上之應用
+
+				3
+
+				授課原則為模糊理論之介紹及其在工程實務上之應用。課程大綱：概論、模糊集合與運算、模糊集理論與機率、模糊邏輯與推論、模糊系統、模糊化類神經網路、模糊理論在土木工程上的應用。
+
+
+
+				CT6304
+
+				類神經網路在營建工程上之應用
+
+				3
+
+				介紹類神經網路的基本觀念及模式，軟體工具，以及其在營建工程上之應用。課程大綱：類神經網路之基本觀念與特性、類神經網路基本運作模式、倒傳式類神經網路(Backpropagation)、其他網路模型、類神經網路在營建工程上之應用實例。
+
+
+
+
+
+
+
+
+
+
+台灣科技大學 | 國際事務處 | 系友會 | Facebook任何建議請與我們連絡  WebMaster : 陳曦  &  指導教授 : 謝佑明 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Course Suggestions
+
+
+
+
+
+
+
+
+
+
+
+
+Semester
+Computing
+Optimization
+
+Fall(1)
+CT5707701
+        ��拐辣撠����蝔�撘����������閮剛��
+        Object-Oriented Programming Design and Analysis
+
+OR
+
+MI4204701
+        ��拐辣撠����蝔�撘�隤�閮�
+        Object Oriented Programming Language
+CS2002301/MI3002301/EE3407301
+        鞈����蝯�瑽�
+        Data Structures
+
+OR
+
+ET3409701
+        鞈����蝯�瑽����瞍�蝞�瘜�
+        Data Structures and Algorithms
+
+OR
+
+ET4802701 
+        閮�蝞�璈�瞍�蝞�瘜�撠�隢�
+        Introduction to Computer Algorithms
+
+OR
+
+MI5109701 
+        擃�蝑�瞍�蝞�瘜�
+        Advanced Algorithms
+
+IM4103302
+        雿�璆剔��蝛�(銝�)
+        Operations Research (1)
+Students without strong OR background are encouraged to sit in this class.
+IM7101701 (Taught in English)
+������閬����
+        Dynamic Programming
+    
+
+Winter(1)
+CT5809701 (Taught in English)
+閮�蝞���箸�扳�澆極蝔�銝����������
+        Application of Computational Intelligence in Engineering
+CS3005301
+        ��拐辣撠����蝔�撘�閮剛��
+        Object-oriented Programming
+CS3001301/MI3103701
+        瞍�蝞�瘜�
+        Algorithms
+
+OR
+
+ET5003701
+        閮�蝞�璈�瞍�蝞�瘜�
+        Computer Algorithms
+
+OR
+
+ET3408701
+        鞈����蝯�瑽�
+        Data Structures
+CT5708701 (Taught in English)
+撟唾�����������撘�閮�蝞���典極蝔�銝�銋�������
+        Parallel and Distributed Computing
+IM6101701 (Taught in English)
+��詨飛閬����
+        Mathematical Programming
+
+OR 
+
+IM5101701 (Taught in English)
+蝺���扯�����
+        Linear Programming
+
+Fall(2)
+N/A
+IM6513701
+        蝯�������雿喳��
+        Combinatorial Optimization
+IM6407701
+        ���蝔����隢�
+        Scheduling Theory
+
+Winter(2)
+N/A
+IMxxxxxxx
+        ���雿喳��璅∪�����������
+        Optimization Models and Applications
+
+GLSCM Home
+
+
+
+
+
+
+分散式運算 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+分散式運算
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+在計算機科學中，分散式運算（英語：Distributed computing），又譯為分佈式計算。這個研究領域，主要研究分散式系統（Distributed system）如何進行計算。分散式系統是一組電腦（computer），透過網路相互連結傳遞訊息與通訊後並協調它們的行為而形成的系統。[1]元件之間彼此進行互動以實現一個共同的目標。把需要進行大量計算的工程資料分割成小塊，由多台電腦分別計算，再上傳運算結果後，將結果統一合併得出資料結論的科學。分散式系統的例子來自有所不同的面向服務的架構，大型多人線上遊戲，對等網路應用。
+目前常見的分散式運算專案通常使用世界各地上千萬志願者電腦的閒置計算能力，通過網際網路進行資料傳輸（志願計算）。如分析計算蛋白質的內部結構和相關藥物的Folding@home專案，該專案結構龐大，需要驚人的計算量，由一臺電腦計算是不可能完成的。雖然現在有了計算能力超強的超級計算機，但這些裝置造價高昂，而一些科研機構的經費卻又十分有限，藉助分佈式計算可以花費較小的成本來達到目標。
+
+
+
+
+(a)–(b) 一個 分散式系統。
+(c) 一個 並列系統。
+
+
+
+
+
+目錄
+
+
+1 分散式運算專案
+2 主流分散式運算專案列表
+3 參考文獻
+4 外部連結
+
+
+
+分散式運算專案[編輯]
+
+Climateprediction.net：模擬百年以來全球氣象變化，並計算未來地球氣象，以對付未來可能遭遇的災變性天氣。
+Quake-Catcher Network（捕震網）：藉由日漸普及的筆記型電腦中內建的加速度計，以及一個簡易的小型USB微機電強震儀（感測器），建立一個大的強震觀測網。可用於地震的即時警報或防災、減災等相關的應用上。
+World Community Grid（世界社群網格）：幫助尋找人類疾病的治療方法，和改善人類生活的相關公益研究，包括愛滋病、癌症、流感病毒等疾病及水資源復育、太陽能技術、水稻品種的研究等。
+D2OL：研究新藥物。
+DPAD：設計粒子加速器。
+Einstein@Home：於2005年（定為世界物理年）的這一年開始的計畫，預計是要找出脈衝星的重力波，驗證愛因斯坦的相對論預測。
+Find-a-Drug：並列執行一系列專案，用來尋找一些危害人類健康的重大疾病的藥物。專案目標包括瘧疾、愛滋病、癌症、呼吸道系統疾病等等。
+FightAIDS@home：研究愛滋病的生理原理和相關藥物。
+Folding@home：瞭解蛋白質摺疊、聚合以及相關疾病。
+GIMPS：尋找新的梅森素數。
+SETI@home：通過執行螢幕保護裝置或後台程式來分析世界上最大的無線電望遠鏡所收到的、可能含有外星智慧型訊號的無線電波。
+SOB：解決謝爾賓斯基問題。
+United Devices：綜合科學性運算，主攻醫藥領域，以尋找抗癌藥物和天花疫苗為主。
+Distributed.net：2002年10月7日，以破解加密術而著稱的Distributed.net宣佈，在經過全球33.1萬名電腦高手共同參與，苦心研究了4年之後，他們已於2002年9月中旬破解了以研究加密演算法而著稱的美國RSA資料安全實驗室開發的64位元金鑰——RC5-64金鑰。目前正在進行的是RC5-72金鑰。
+最優Golomb尺問題（OGR）。所謂Golomb尺是指在一個固定整數長度的尺上不等長地劃分最少的刻度，並且不存在這樣的兩對刻度使得每對刻度量出的長度相等的問題。例如OGR-6是在6cm的尺上按0、1、4、6劃分刻度，即可連續量度1、2、3、4、5、6cm的每一距離。最優Golomb尺OGR-22、23、24、25（Phase1）均已解決，目前正在進行的是OGR-25（Phase2）。
+
+主流分散式運算專案列表[編輯]
+
+中國正在執行中的分散式運算專案
+Sun Grid Engine - 昇陽電腦所研發的分散式電腦叢集軟體。
+
+參考文獻[編輯]
+
+
+^ Coulouris, George; Jean Dollimore; Tim Kindberg; Gordon Blair. Distributed Systems: Concepts and Design (5th Edition). Boston: Addison-Wesley. 2011. ISBN 0-132-14301-1. 
+
+
+外部連結[編輯]
+
+中國分散式運算總站
+中國分散式運算論壇
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+平行計算
+
+
+
+
+
+
+概論
+
+
+
+分散式運算
+平行計算
+大規模並列處理機
+雲端運算
+高效能計算
+多元處理
+大規模多核心處理器（英語：Manycore processor）
+GPGPU
+電腦網路
+Systolic array（英語：Systolic array）
+
+
+
+
+
+
+
+
+層級
+
+
+
+位元
+指令
+執行緒
+任務
+資料
+記憶體
+迴圈（英語：Loop-level parallelism）
+流水線
+
+
+
+
+
+
+
+
+多執行緒
+
+
+
+時間（英語：Temporal multithreading）
+同步多執行緒（SMT）
+投機（英語：Speculative multithreading）（SpMT）
+搶占式
+協作
+集群多執行緒（CMT）
+硬體偵測
+
+
+
+
+
+
+
+
+理論
+
+
+
+PRAM模型
+並列演算法分析（英語：Analysis of parallel algorithms）
+阿姆達爾定律
+Gustafson's law（英語：Gustafson's law）
+Cost efficiency（英語：Cost efficiency）
+Karp–Flatt metric（英語：Karp–Flatt metric）
+減速（英語：Parallel slowdown）
+加速比
+
+
+
+
+
+
+
+
+元素
+
+
+
+行程
+執行緒
+纖程
+指令窗口（英語：Instruction window）
+
+
+
+
+
+
+
+
+協調
+
+
+
+多元處理
+記憶體一致性（英語：Memory coherence）
+快取一致性
+快取失效（英語：Cache invalidation）
+屏障
+同步
+應用程式檢查點（英語：Application checkpointing）
+
+
+
+
+
+
+
+
+編程
+
+
+
+流處理（英語：Stream processing）
+資料流處理（英語：Dataflow programming）
+模型（英語：Parallel programming model）
+
+隱式並列（英語：Implicit parallelism）
+顯式並列（英語：Explicit parallelism）
+並行性
+
+
+非阻塞演算法（英語：Non-blocking algorithm）
+
+
+
+
+
+
+
+
+硬體
+
+
+
+費林分類法
+
+單指令流單資料流
+單指令流多資料流
+單指令多執行緒（英語：Single instruction, multiple threads）（SIMT）
+多指令流單資料流
+多指令流多資料流
+
+
+資料流架構（英語：Dataflow architecture）
+指令管線化
+超純量
+並列向量處理機
+多處理器
+
+對稱
+非對稱
+
+
+記憶體（英語：Semiconductor memory）
+
+共享
+分散式記憶體（英語：Distributed memory）
+分散式共享
+UMA
+NUMA
+COMA（英語：Cache-only memory architecture）
+
+
+大規模並列處理機
+電腦集群
+網格計算
+
+
+
+
+
+
+
+
+API
+
+
+
+Ateji PX（英語：Ateji PX）
+Boost.Thread
+Charm++（英語：Charm%2B%2B）
+Cilk
+Coarray Fortran（英語：Coarray Fortran）
+CUDA
+Dryad（英語：Dryad (programming)）
+C++ AMP
+Global Arrays（英語：Global Arrays）
+MPI
+OpenMP
+OpenCL
+HMPP開放標準
+OpenACC
+TPL（英語：Parallel Extensions#Task Parallel Library）
+PLINQ（英語：Parallel Extensions#PLINQ）
+並列虛擬機器（英語：Parallel Virtual Machine）（PVM）
+POSIX執行緒
+RaftLib（英語：RaftLib）
+UPC
+TBB（英語：Threading Building Blocks）
+
+
+
+
+
+
+
+
+問題
+
+
+
+軟體閉鎖（英語：Software lockout）
+可延伸性
+競爭危害
+死結
+活鎖
+飢餓（英語：Starvation (computer science)）
+確定性演算法
+並列變慢（英語：Parallel slowdown）
+
+
+
+
+
+
+
+
+
+
+
+ 分類：平行計算
+ 維基共享資源中有關分散式運算的多媒體資源
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+電腦科學
+
+
+
+
+
+
+數學基礎
+
+數理邏輯 · 集合論 · 數論 · 圖論 · 類型論 · 範疇論 · 數值分析 · 資訊理論
+
+
+
+
+
+
+計算理論
+
+自動機 · 可計算性理論 · 計算複雜性理論 · 量子計算 · 數值計算方法
+
+
+
+
+
+
+演算法和資料結構
+
+演算法分析 · 演算法設計 · 計算幾何
+
+
+
+
+
+
+程式語言和編譯器
+
+語法分析器 · 直譯器 · 編程典範（程序化編程 · 物件導向程式編程 · 函數語言程式設計 · 邏輯編程等）
+
+
+
+
+
+
+並行、並列和分散式系統
+
+多處理器 · 網格計算 · 並行控制
+
+
+
+
+
+
+軟體工程
+
+需求分析 · 軟體設計 · 程式設計 · 形式化方法 · 軟體測試 · 軟體開發過程
+
+
+
+
+
+
+系統架構
+
+電腦系統架構 · 微處理器體系結構 · 作業系統
+
+
+
+
+
+
+電信與網路
+
+路由 · 網路拓撲 · 密碼學
+
+
+
+
+
+
+資料庫
+
+資料庫管理系統 · 關聯式資料庫 · 結構化查詢語言 · NoSQL · 事務處理 · 資料庫索引 · 資料探勘
+
+
+
+
+
+
+人工智慧
+
+自動推理 · 計算語言學 · 電腦視覺 · 進化計算 · 專家系統 · 機器學習 · 自然語言處理 · 機器人學
+
+
+
+
+
+
+電腦圖形學
+
+視覺化 · 電腦動畫 · 圖像處理
+
+
+
+
+
+
+人機互動
+
+電腦輔助功能 · 使用者介面 · 可穿戴電腦 · 普適計算 · 虛擬現實 · 聊天機器人
+
+
+
+
+
+
+科學計算
+
+人工生命 · 生物資訊學 · 認知科學 · 計算化學 · 計算神經科學 · 計算物理學 · 數值演算法 · 符號計算
+
+
+
+
+
+
+
+註：電腦科學領域也可根據ACM-2012分類系統進行分類。
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=分佈式計算&oldid=42615485"					
+3 個分類：分佈式計算計算機科學理論計算機科學 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةБеларускаяБеларуская (тарашкевіца)‎БългарскиBosanskiCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEestiفارسیSuomiFrançaisעבריתMagyarBahasa IndonesiaIdoItaliano日本語ქართულიҚазақша한국어LietuviųLatviešuМакедонскиBahasa MelayuNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsRomânăРусскийScotsSimple EnglishSlovenčinaСрпски / srpskiSvenskaதமிழ்TürkçeУкраїнськаاردوTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2016年12月30日 (週五) 22:29。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+雲端計算(分散式系統) - WisdomFish - IT3.0 中庸學習之道
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+WisdomFish - IT3.0 中庸學習之道Search this site
+
+
+
+
+
+
+
+
+
+
+
+
+My Main Blog link ...
+老魚研究室(協作平臺連結)+ 開發者線上快速參考+ WisdomFish - TED+ MMORPG 遊戲開發與管理+ PostgreSQL 國際中文誌+ PostgreSQL DBA之研究+ 2G::Groovy.Grails+ 斯卡拉魚(ScalaFish)+ Java EE & SOA, Research- WisdomFish Python- 中山系統分析與設計研究平臺- 中山資管服務科學協作平臺- Hadoop雲端架構實作研究- 生劑藥物設計雲平臺計劃- WFish軟體工程研究所- 資訊超限科學(博士後研究)+ 老魚易經學習筆記(I-Ching)
+留給下一代的新思維Introduction000.老魚研究室狀態To Do List關於老魚EDU X.0老魚: 樂之觀想房ADT/集合框架/泛型不可改變的集合容器?!GNU/LinuxLPIC認證考試VimGNU/Linux老魚焦點企業2.0::自由軟體GUI/RIAJAVA/SCA專業班CODE質量與文檔Java SyntaxOOP/UMLInterface整合開發環境(IDE)IntelliJ IDEA開發者線上參考文檔JAVA企業平臺(EE)EE ApplicationsJAVA新聞JVM槁本型語言JVM版本性能/管理JRE 32 BIT VS JRE 64 BITMacBook LogsMDA/UML/OCLDesign Patternsjava.text.DateFormat程序設計典範XML優秀的第三方APIs共時(並行)程序java.lang.Runnablejava.lang.ThreadJSR-166Package.java.util.concurrent創用CC版權宣告原始碼管理(SCM)Apache ivyapache ivyMac OS參考資源及文獻快速下載參考詞彙簡繁對照表持久層技術JDO時間與日期的亂象服務流程計算Apache Axis2Open Web Services ListService Design檔案系統/NIO.2生物資訊學(Bioinformatics)Glossary藥物設計計算當MIS走入歷史全球化開放標準的衝擊多點觸控技術硬體(Hardware)虛擬化(Virtualization)系統動力學(System Dynamics)SD - Google Inc.易理哲學(I-Ching)易經繫辭傳說卦傳經營策略與先秦思想道德經(Tao Te Ching)網路應用NetJetty註釋(Annotation)語言級探究(Scala)Refactor從有形進而無形Linux軟體專案管理孫子兵法/三略老魚Media感觸集貞觀政要The Last Castle 2001軟體估算金剛經雲端計算(分散式系統)Apache HadoopGoogle IT ResearchMapReduce分散式存儲系統雲端架構SitemapRecent site activity
+
+
+
+
+
+
+
+
+
+
+本著作係採用創用 CC 「姓名標示─非商業性─禁止改作 2.5 台灣版」授權條款釋出。
+
+
+
+
+
+
+
+
+
+
+Recent site activity道德經(Tao Te Ching)edited by (ChaoYi, Kuo) 郭朝益經營策略與先秦思想edited by (ChaoYi, Kuo) 郭朝益SD - Google Inc.attachment from (ChaoYi, Kuo) 郭朝益說卦傳edited by (ChaoYi, Kuo) 郭朝益SD - Google Inc.edited by (ChaoYi, Kuo) 郭朝益易經繫辭傳edited by (ChaoYi, Kuo) 郭朝益易理哲學(I-Ching)attachment from (ChaoYi, Kuo) 郭朝益edited by (ChaoYi, Kuo) 郭朝益系統動力學(System Dynamics)edited by (ChaoYi, Kuo) 郭朝益removed by (ChaoYi, Kuo) 郭朝益道德經(Tao Te Ching)removed by (ChaoYi, Kuo) 郭朝益經營策略與先秦思想removed by (ChaoYi, Kuo) 郭朝益View All
+
+
+
+
+ 
+
+
+
+雲端計算(分散式系統)
+
+
+
+ 
+        
+        
+        
+      
+        
+
+        
+
+      
+        
+        
+      
+        
+        
+      
+          
+
+雲端計算(Cloud Computing), 雲計算這個詞老魚想應該只有一半的人認為很有創新, 但在另一半的人心裡一定想說, 這不過是分散式叢集(Distributed Cluster)運算/網格(Grid)的舊瓶新裝, 也許是吧 ..., 但早年這方面的技術被商業型的大公司視為商業機密技術, 不同的公司也對 Computer Cluster 的定義與實作標準都不同, 這導致了幾個新問題：獨有的 Cluster 技術並非是最佳甚至友善程度高的系統受限於特定廠商的硬體架構實作研究的機會受到資源取得限制學習的成本困難與高昂非開放性的壟斷市場 那跟今日的 Cloud Computing 有何差別呢 ? 老魚能用來說服自己的有下列的幾點：隨著 Internet 佈網全球, 頻寬速度上不在是早年前的狀態, 分散式運算從 Local Site Cluster 變成以 Internet 的全球化佈局, 在當今最成功的案例就是以萬台為單位的 Google 最具代表性.實作研究的資源取得, 也逐漸變成一種顯學, 甚至也逐漸出了非正式的標準架構可供參與與實現.不同以往, 它伴隨著適用於此類系統的儲存系統來替代傳統關聯式資料庫的配套方案, 例如 Google 的 Bigtable, CODBMS(Columns-Oriented DBMS).學習的成本降低了, 建置成本可以學習如同Google一樣的方式, 只須一般的PC規格, 配合GNU/Linux, 就可以創造比高單價的伺服器來的有效率與效果.逐漸產生許多開放源始碼(OSS)的相關專案的發展與實作.
+Contents1 Cloud Computing2 老魚研究團隊進展記錄 (Private)2.1 參與研究當前HR分配3 研究進展記錄4 相關系統分類5 反向思考的評論文章6 Google 機房帶來的省思7 News8 Stable Storge9 References9.1 Glossary
+Cloud Computing
+雲端運算-Google 2008臺北程式開發日
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      是建立一個服務，你可以上去使用軟體應用但硬體更新與變動與您無任何的關係，您只需有個能上網的環境就行了.Service and Data in the cloud,using with browser.Large Scalability.老魚研究團隊進展記錄 (Private)(Private by Group, 當前人數: 11)老魚團隊以 Apache Hadoop Project 為實作研究對象, 老魚為何選 Hadoop 來當雲計算實作研究主題, 最主要的三點理由：Apache Licence 2.0老魚與我的團隊們, 全數人主專註於使用 Java / Linux / Mac OS.我們的目標為在 Hadoop 上堆疊自行開發的 Java 套件為方向, 並進行適當的改造 Hadoop 效能與管理為最終理想.有著龐大的開放社群Support.WisdomFish - Cloud Computing Researchhttp://of.openfoundry.org/projects/1234
+
+參與研究當前HR分配統派指揮 * 2系統工程與安全研究 * 3HBase 欄位導向型DBMS * 3MapReduce * 7參與者當前認證資格總數：LPIC: 9 CCNA: 2SCJP: 7PostgreSQL: 1研究進展記錄應用程式開發實作議題 2009-05-24, 參與人數: 6Hadoop/HBase 問題討論與解決 - 2009-05-14, 參與人數: 6Hadoop - HBase / Bigtable論文導讀 - 2009-05-07, 參與人數: 6[分享製圖] 雲端計算中的資料儲存系統 HBase - 2009-04-30, 參與人數: 5[分享製圖] Hadoop 基礎安裝與簡要架構 - 2009-04-24, 參與人數: 5Cloud Computing 雲端計算 - 第一次實體聚會心得 - 2009-04-17, 參與人數: 6老魚的GAE測試站(Google Cloud)GAE/J相關系統分類序列式應用系統序列式應
+用系統為大多數人們所使用的軟體類別，這類軟體系統係單獨於單一電腦上來執行運作。分散式應用系統分散式應用系統係運用多個計算引擎，可於單一或多部電腦上執行，並包含
+多個不相互影響的工作。分散式應用系統，像是Monte Carlo
+模擬系統，通常會以不同的輸入參數去不斷重複執行同一個演算法。平行式應用系統平行式應用系統同樣也運用在多個可於單一或多個電腦上執行的運算引擎，但平行式系統的工作
+項目為獨立的且是在軟體執行時相互交換資料的。這些工作常會使用較大的資料集。 反向思考的評論文章談談所謂雲計算，也就那麼回事當雲飄到行動平臺當涉及到處理能力 ，行動硬體的性質還是限制了它的發揮。而手機自己要處理的事務越多，電池的壽命就愈加短命。提出了一個被稱為克隆雲（CloneCloud）的服務，這項新服務使用雲計算為移動電話提供額外的運算處理能力。克隆雲系統帶來的一個主要好處就是它可以極大的改善手機的性能。比如， Chun就製作了一個可以在執行照片面部識別的測試應用。在移動電話上，它的運行需要100秒。但是如果將任務交給電腦處理，完成同樣的任務只要1秒。Hadoop與Cache Pool 架構關係與區別Google 機房帶來的省思
+
+Google神秘伺服器大公開 
+        
+      
+        
+      
+        
+      從2005年起，其資料中心加入了標準運輸貨櫃，每個都有1160台伺服器，耗電量可達250 千瓦特（kilowatts）。Jimmy Clidaras透露，該公司的資料中心核心是由標準1AAA貨櫃組成，每個貨櫃裡有1160台伺服器，每座資料中心都有好幾個貨櫃。YouTube看得到Google資料中心設計系統強韌到能把硬碟直接擺在地上，壞了就拔，想加就加，於是 Gmail
+的容量才能不停地成長。今天，連主機都變成那樣了：房間就像一個機箱，簡化過的主板，直接搭在機架上，一格就可以多放好幾片。哪一片的指示燈有問題就下架
+換新，也不必檢查了。而且現在聽說還能用機器人自動化地檢查抽換。
+
+這樣的系統有什麼好處？除了維護成本下降之外，Google
+還有一套專門操作這些主機群的代碼，開發者不必知道實際上會用到那一臺機器、多少台機器，只管做自己想做的計算就是了。一個例子是，有人把維基百科數據庫
+抓回來做自然語言處理的相關研究，terabyte(兆)規模的資料，只消十幾分鐘便處理完畢。事後去看看到底用了多少運算資源？不多，一千台而已。
+
+我在 P4 2G 的機器上，用普普通通 bi-gram 演算法，對megabyte(百萬)等級的中文維基語料進行斷詞，要...... 六小時。Google比利時數據中心無冷卻劑 靠室外空氣製冷 2009-07-16Google曾在今年春天公開討論過其無需冷卻劑的降溫裝置.該公司表示,根據比利時的氣候條件,每年只有7天左右無法使用自由冷卻方式.在比較炎熱的夏天,Google可以將該數據中心的計算任務轉移到其它數據中心中.Google幾乎可以即時性的在不同數據中心之間進行負載轉移,就如同在服務器之間移動數據一樣.Google喜歡把每個數據中心看作一個大機器.基於Azure雲計算平臺的網格計算，第1部分 作者  David Pallmann - 2009年8月27日News資料分散才是開發雲端應用的難處
+- 2009/06/24IBM更新雲戰略和產品 作者  Dave West 譯者  黃璜 發佈於 2009年6月22日http://udn.com/NEWS/FINANCE/FIN3/4924559.shtmlStable StorgeDFSGFSHDFSKFSReferencesDistributed Systems, http://code.google.com/intl/zh-TW/edu/parallel/騰雲駕霧程式競賽 - 趨勢科技 2009-05~07GlossaryColumn-oriented_DBMSDocument-oriented_database
+
+
+
+
+
+                  Showing 9 items
+                
+
+
+
+Full NameChinese Name-TWCN
+
+
+Sort  Sort  Sort  
+
+
+
+
+Full NameChinese Name-TWCNChunk server == Data Node   Chunk Size == Block Size   Cloud Computing 雲端計算 雲計算 DFS, Distributed File System 分散式檔案系統  Distribution File System 分散式檔案系統 分佈文件系統 GFS, Google File System   HDFS Hadoop DFS  Master == Name node   Parallel Computing 平行運算  
+
+
+              Showing 9 items
+            
+
+
+
+
+
+            Subpages (5):
+
+Apache Hadoop
+
+
+Google IT Research
+
+
+MapReduce
+
+
+分散式存儲系統
+
+
+雲端架構
+
+
+
+
+
+
+Comments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in|Recent Site Activity|Report Abuse|Print Page|Powered By Google Sites
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Ascending   Descending   Ascending   Descending   Ascending   Descending  
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+國立交通大學機構典藏：分散式記憶體平行電腦上適應性資料平行計算之研究
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 分散式記憶體平行電腦上適應性資料平行計算之研究Adaptive Data-Parallel Computations on Distributed-Memory Multicomputers
+作者: 黃國展Huang, Kuo-Chan王豐堅Feng-Jian Wang資訊科學與工程研究所
+關鍵字: 資料平行計算;分散式記憶體平行電腦;動態性平行系統;適應性計算;軟體設計模式;物件導向技術;data-parallel computation;distributed-memory multicomputer;dynamic parallel system;adaptive computation;software design pattern;object-oriented technology
+公開日期: 1997
+摘要: 本論文描述在分散式記憶體平行電腦上關於資料平行計算之適應性排程
+的研究成果。此研究著重在平行系統的動態行為及其對執行效能的影響上
+。我們發展了一個適應性資料平行計算模型(ADPCM)，用來有效地描述程
+式及系統的動態行為。奠基於ADPCM，我們探討了適應性資料平行計算中
+兩個重要的課題：適應性處理器配置(APA)及資料分割與發送(DPD) 。本
+論文採用解析與實驗並重的方式來探討這兩個問題。實驗結果顯示適應性
+計算的技術能夠有效地增進動態性平行系統的執行效能。根據這些實驗，
+我們發展出一個確定性效能模擬方法(DPSM)，以量化的方式來有效地分析
+及評估不同的處理器配置及資料分割與發送的方法。藉由DPSM的輔助，我
+們發展出一組高效率的演算法及經驗法則，可用來解決ADPCM模式之平行
+系統上的適應性處理器配置及資料分割與發送的問題。此外，適應性平行
+程式的發展遠比一般平行程式來得複雜，為了幫助程式發展者有效地開發
+適應性平行程式，本論文也提出了兩個軟體設計模式(software design
+pattern)，用來輔助平行程式發展中工作管理(task management)及資料
+分割與發送(data partition and distribution)的問題。這兩個模式採
+用物件導向的技術，可降低軟體複雜度並促進設計層次的軟體再利用(
+software reuse)。    總而言之，本論文中的解析性與實驗性研究促進
+了對動態性平行系統行為模式的瞭解。由於奠基於實際計算環境中的實際
+平行系統，所發展出來的方法可有效地改進寬鬆性同步系統(loosely-
+synchronous systems) 的執行效能，並可被擴充應用至其他種類的平行
+系統上。
+This thesis presents adaptively scheduling data-parallel
+computation onto distributed-memory multicomputers. An Adaptive
+Data-Parallel Computation Model (ADPCM) developed provides
+abstract representation of program and system behavior. Based on
+ADPCM, two important issues in adaptive data-parallel
+computation, the Adaptive Processor Allocation (ADP) and Data
+Partition and Distribution (DPD) problems, are addressed. A
+combination of both analytical and experimental techniques is
+applied to the problems. Experimental results indicate that
+adaptive computation can effectively improve the runtime
+performance of dynamic parallel systems. A deterministic
+performance simulation method (DPSM) developed provides
+qualitative insight as well as efficient quantitative evaluation
+of different APA and DPD methods. Based on DPSM, a set of
+efficient algorithms and heuristics have been developed to solve
+the APA and DPD problems for ADPCM based systems. To effectively
+develop adaptive programs, this thesis presents two object-
+oriented software design patterns addressing the issues of task
+management and data partition and distribution in parallel
+programming.     In summary, the analytical and experimental
+results in the thesis contribute towards the understanding of
+fundamental behaviors of dynamic parallel systems. Based on real
+applications running on real computing environments,the
+developed approaches can improve runtime performance of loosely-
+synchronous systems, and can be easily extended for other kinds
+of parallel systems.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT860392006http://hdl.handle.net/11536/62733
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefDesign and implementation of a communication-efficient data-parallel program compiling system / Shih, KP;Lai, CY;Sheu, JP;Tseng, YC在分散式記憶體多處理器系統上智慧型繞徑器之設計 / 黃銘傳;Ming-Chuan Huang;曾建超;Dr. Chien-Chao TsengTwo design patterns for data-parallel computation based on master-slave model / Huang, KC;Wang, FJ;Tsai, JHParallelizing a level 3 BLAS library for LAN-connected workstations / Huang, KC;Wang, FJ;Wu, PCPerformance-based data distribution for data mining applications on grid computing environments / Shih, Wen-Chung;Yang, Chao-Tung;Tseng, Shian-Shyong嵌入式資訊網系統之高階計算伺服器設計(I) / 鍾崇斌;CHUNG CHUNG-PING國立臺灣大學 - 分散式共用記憶體系統─架構、演算法與發展環境─子計畫三：分散式共用記憶體系統上之平行模擬研究(Ⅲ) / 顏嗣鈞 國立臺灣大學 - 分散式共用記憶體系統上之平行模擬(2/3) / 顏嗣鈞; Yen, Hsu-Chun 國立臺北科技大學 - 以平行計算在分子動力學上計算最適性之研究 / 董仲桓; Banjamin Dong 國立成功大學 - 分散式共用記憶體系統動態計算負載平衡機制之研究 / 謝錫堃 國立成功大學 - 工作站群組上群集計算環境之研究(II)：分散式共用記憶體系統負載平衡之設計與實現 / 孔令洋 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+

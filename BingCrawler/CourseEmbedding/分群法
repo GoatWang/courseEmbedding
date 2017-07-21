@@ -1,0 +1,6070 @@
+
+
+3-3 K-means 分群法
+
+
+
+
+
+
+
+
+
+
+
+
+
+3-3 K-means 分群法
+
+
+
+在使用分割式分群法（partitional clustering）時，我們必須先指定群聚的數目，然後藉著反覆疊代運算，逐次降低一個誤差目標函數的值，直到目標函數不再變化，就達到分群的最後結果。
+
+在所有的分割式分群法之中，最基本的方法，就是所謂的 K-means 分群法（k-means clustering），又稱為Forgy's algorithm [6]。其主要目標是要在大量高維的資料點中找出具有代表性的資料點，這些資料點可以稱為是群中心（cluster centers）、代表點（prototypes）、codewords等，然後在根據這些群中心，進行後續的處理，這些處理可以包含：
+
+資料壓縮：以少數的資料點來代表大量的資料，達到資料壓縮的功能。
+資料分類：以少數代表點來代表特定類別的資料，可以降低資料量及計算量，並可以避免雜訊的不良影響。
+
+分割式分群法的目的是希望盡量減小每個群聚中，每一點與群中心的距離平方誤差（square error）。假設我們現在有一組包含c個群聚的資料，其中第 k 個群聚可以用集合 Gk 來表示，假設 Gk 包含nk筆資料 {x1, x2, …, xnk），此群聚中心為yk，則該群聚的平方誤差 ek可以定義為：
+
+ek = Si |xi-yk|2，其中 xi 是屬於第 k 群的資料點。
+
+而這c個群聚的總和平方誤差E便是每個群聚的平方誤差總和，可稱為分群的「誤差函數」（error function）或「失真度」（distortion）：
+
+E = Sk=1~c ek
+
+ 
+我們分群的方法，就變成是一個最佳化的問題，換句話說，我們要如何選取 c 個群聚以及相關的群中心，使得 E 的值為最小。
+
+我們也可以使用另一套數來描述，給定一組 n 點資料 X = {x1, ..., xn}，每一點都有 d 維，k-means 分群法的任務是找到一組 m 個代表點 Y = {y1, ..., ym}，每一點也是d維，以使下列的目標函數越小越好：
+
+J(X; Y, U) = Si=1n|xi-yk|2
+
+其中 xi屬於 Gk 而且 yk 是 Gk 的代表點。同時在上述目標函數中，U 是一個 mxn 的分組矩陣，每一個元素值都是 0 或 1，而且每一直行的總和等於 1，如果 U(i, j) = 1，代表第i個資料點是屬於第j組。
+
+若要直接對上述目標函數進行最小化，是一件蠻困難的事，因為這個目標函數有 m*n+m*d個可變參數，同時又有n個限制條件，很難直接採用傳統的方式來進行最佳化，但我們可以觀察到兩個現象：
+
+當Y（群中心）固定時，我們可以很容易地找到對應的U（資料分群方式），使J(X; Y, U)的值為最小。此最佳的U值，即代表最佳的分群方式，因此若將每個資料點歸類到距離最近的代表點，即可完成此目標。
+當U（資料分群方式）固定實，我們也可以很快地找到對應的Y（群中心），使J(X; Y, U)的值為最小。此最佳的Y集合，代表每個代表點至其組員的距離平方和為最小，因此此最佳的Y集合即是每一群的平均點。
+
+在演算法開始進行前，我們必須事先決定好預期分群的群聚數目。假設預期的分群群聚數目為c，則根據上述觀察，我們可以經由下列步驟來進行 k-means 分群法：
+
+隨機選取 c 個資料點，將之分別視為c 個群聚的群中心，這就是Y。
+由固定的Y，產生最佳的U。換句話說，對每一個資料點x，尋找與之最接近的群中心，並將x加入該群聚。
+計算目標函數 J(X; Y, U)，如果保持不變，代表分群結果已經穩定不變，所以可以結束此疊代方法。
+再由固定的U，產生最佳的Y。跳回第2個步驟。
+
+在上述方法中，我們是先找群中心，再開始反覆疊代的過程。事實上，我們也可以先進行任意分群，然後再進行反覆疊代的過程，得到的結果應該很類似。
+
+這是一個反覆的過程，但在整個迴圈的過程中，我們可以保證J(X; Y, U)絕對不會遞增（可用數學證明，請見上述前述兩點觀察），只會遞減或維持不變，一旦維持不變，我們就可以跳出迴圈、結束演算法。
+Hintk-means 分群法是屬於「向量量化」（Vector Quantization，簡稱 VQ）的一個基本方法，所以在 Machine Learning Toolbox 中，k-means 的主要函示是 kMeansClustering.m
+
+下麵這個範例，顯示k-means分群法對於一組二維資料的分群效果：
+Example 1: kmeans01.m% ====== Get the data set
+DS = dcData(5);
+subplot(2,2,1);
+plot(DS.input(1,:), DS.input(2,:), '.');
+axis tight, axis image
+% ====== Run kmeans
+centerNum=4;
+[center, U, distortion, allCenters] = kMeansClustering(DS.input, centerNum);
+% ====== Plot the result
+subplot(2,2,2);
+vqDataPlot(DS.input, center);
+subplot(2,1,2);
+plot(distortion, 'o-');
+xlabel('No. of iterations'); ylabel('Distortion'); grid on
+
+在上圖中，左圖是在迭代過程中，目標函數遞減的圖形，右圖則是最後的分群結果。在上述範例中，由於啟始中心點是由亂數產生，所以每次執行程式碼，所得到的圖形都會不太一樣。
+
+下麵這個範例，我們使用同一組二維資料來進行 kmeans，並顯示在迭代過程中，中心點的移動過程：
+Example 2: kmeans02.m% ====== Get the data set
+DS = dcData(5);
+centerNum=4;
+% ====== Get initial cluster centers
+initCenter=vqCenterInit(DS.input, centerNum);
+subplot(2,2,1);
+vqDataPlot(DS.input, initCenter);
+% ====== Run k-means to get the final cluster centers
+[center, U, distortion, allCenters] = kMeansClustering(DS.input, initCenter);
+subplot(2,2,2);
+vqDataPlot(DS.input, center);
+% ====== Plot the distortion
+subplot(2,2,3);
+plot(1:length(distortion), distortion, 'o-');
+xlabel('No. of iterations');
+ylabel('Distortion');
+grid on; axis tight
+% ====== Plot the moving paths of the centers
+subplot(2,2,4);
+for i=1:centerNum
+	xData=allCenters(1,i,:); xData=xData(:);
+	yData=allCenters(2,i,:); yData=yData(:);
+	line(xData, yData, 'color', getColor(i), 'lineWidth', 3);	
+end
+box on; axis image
+在上圖中：
+
+左上圖是啟始的群中心和分群的結果。
+右上圖是最後的群中心和分群的結果。
+左下圖是目標函數J(X; Y, U)隨著疊代次數而遞減的情況。
+右下圖是群中心雖著疊代次數而移動的路徑。
+
+在上述資料中，我們可以很明顯地看出，資料原先就可以概分為四群，如果我們也設定群數等於4，然後開始跑k-means，所得到的結果通常是正確的，但是如何決定適當的群數，這是尚待解決的另一個問題，此問題通稱為cluster validation，請見後續章節的說明。
+
+下麵這個範例，顯示k-means分群法對於另一組二維資料（甜甜圈）的分群效果：
+Example 3: kmeans03.m% ====== Get the data set
+DS = dcData(2);
+centerNum=8;
+% ====== Get initial cluster centers
+initCenter=vqCenterInit(DS.input, centerNum);
+clf;
+subplot(2,2,1);
+vqDataPlot(DS.input, initCenter);
+% ====== Run k-means to get the final cluster centers
+[center, U, distortion, allCenters] = kMeansClustering(DS.input, initCenter);
+subplot(2,2,2);
+vqDataPlot(DS.input, center);
+% ====== Plot the distortion
+subplot(2,2,3);
+plot(1:length(distortion), distortion, 'o-');
+xlabel('No. of iterations');
+ylabel('Distortion');
+grid on; axis tight
+% ====== Plot the moving paths of the centers
+subplot(2,2,4);
+for i=1:centerNum
+	xData=allCenters(1,i,:); xData=xData(:);
+	yData=allCenters(2,i,:); yData=yData(:);
+	line(xData, yData, 'color', getColor(i), 'lineWidth', 3);	
+end
+box on; axis image
+有關於k-means的方法，還需要註意幾點：
+
+這個方法只能保證J(X; Y, U)越來越小，但無法保證能夠找到J(X; Y, U)的絕對最小值，因此若時間許可，應該由不同的啟始群中心，多跑幾次，然後再選取最好的結果。
+啟始群中心對於最後的分群結果有很大的影響，因此如何以很快的方法找到比較好的群中心，就變成重要的研究課題。
+我們前述的方法是先找群中心，然後進行反覆疊代。我們也可以先分群，然後再反覆疊代，也可以得到類似的效果。
+
+雖然我們可以證明此方法一定收斂，但是此方法只能找到目標函數的局部最小值（local minimum），我們並無法證明此方法所找到的群聚及群中心會使目標函數到達全域最小值（global minimum）。而事實上到目前為止，也沒有出現任何一種方法，能保證所找到的分群結果可使目標函數達到全域最小值。
+
+由於我們只能找到局部最小值，所以如何選一組好的起始點，就變得很重要。以上述方法來說，若要選取 c 個起始中心典，常用的選取方法有下列幾種：
+
+從資料裡面隨意選出 c 點資料
+找出離所有資料平均值最遠的 c 個資料點
+找出離所有資料平均值最近的 c 個資料點
+找出距離平方和最小的 c 個資料點
+
+但是這些找出起始群中心點的方法也都無法保證達到更好的目標函數值。如果計算時間不是太久，建議在選取啟始群中心時，多試用不同的方法，找出多組啟始群中心，同時進行 k-means，最後再以目標函數最小的結果來作為最後分群的結果。
+
+另一個可能發生的問題，就是在進行 k-means 的過程中，有可能出現一個空的群聚，此群聚是空集合，沒有資料點。碰到這種情況，一個簡單的解決方式，就是直接將另一個群聚拆解為兩個，這樣才能保持群聚數目的不變。至於要找那一個群聚來切成兩個，可已有下列標準：
+
+找資料點最多的群聚
+找貢獻於目標函數最大的群聚
+
+上述討論的方法，通常又稱為 batch k-means algorithm，另一個類似的方法稱為 sequential k-means algorithm 或是 on-line k-mean algorithm，則是每當收集到一筆資料時，就可以更新群中心，方法如下：
+
+隨機選取c的起始點，將之分別視為c個群聚的群中心
+對每一個資料點x，尋找與之最接近的群中心，並將x加入該群聚，隨即計算新的群聚中心（該群聚中原有的資料點加上x後的平均向量）
+檢查每一個資料點目前與之最接近的群聚中心是否和他的群聚分配一致，如果不是，則回到步驟二，反覆疊代，直到收斂。
+
+一般而言， sequential k-mean algorithm的優點如下：
+
+適用於資料特性隨時間而變的情況。
+計算簡單，適用於硬體實現。
+
+除非有特殊情況，否則我們很少使用 sequential k-mean algorithm。
+
+
+Data Clustering and Pattern Recognition (資料分群與樣式辨認)
+
+
+
+
+
+
+
+
+
+3-2 Hierarchical Clustering (階層式分群法)
+
+
+
+
+
+
+
+
+
+
+
+
+
+3-2 Hierarchical Clustering (階層式分群法)
+
+
+
+[english][all](請註意：中文版本並未隨英文版本同步更新！)
+
+Slides
+階層式分群法（hierarchical clustering）透過一種階層架構的方式，將資料層層反覆地進行分裂或聚合，以產生最後的樹狀結構，常見的方式有兩種：
+
+如果採用聚合的方式，階層式分群法可由樹狀結構的底部開始，將資料或群聚逐次合併
+如果採用分裂的方式，則由樹狀結構的頂端開始，將群聚逐次分裂。
+
+本節將針對聚合式（由下而上）階層分群法來進行說明。
+
+聚合式階層分群法（agglomerative hierarchical clustering）由樹狀結構的底部開始層層聚合。一開始我們將每一筆資料視為一個群聚（cluster），假設我們現在擁有n筆資料，則將這n筆資料視為n個群聚，亦即每個群聚包含一筆資料：
+
+將每筆資料視為一個群聚 Ci, i=1 1 to n.
+找出所有群聚間，距離最接近的兩個群聚 Ci、Cj
+合併 Ci、 Cj 成為一個新的群聚
+假如目前的群聚數目多於我們預期的群聚數目，則反覆重複步驟二至四，直到群聚數目已將降到我們所要求的數目。
+
+下列範例展示聚合式階層分群法所產生的樹狀圖（dendrogram）。
+Example 1: hierClusteringPlot01.mdata=rand(2, 50);			% 50 data instances of dim 2
+distMat=distPairwise(data);		% Distance matrix of 50 by 50
+hcOutput=hierClustering(distMat);
+hierClusteringPlot(hcOutput);		% Plot the dendrogram
+在步驟二中，何謂「距離最接近的兩個群聚 Ci、Cj」呢？事實上在定義兩個群聚之間的距離，有各種不同的方式，每一種方式所得到的結果都不太相同。這些常用的群聚距離的定義可以說明如下。
+
+單一連結聚合演算法（single-linkage agglomerative algorithm）：群聚與群聚間的距離可以定義為不同群聚中最接近兩點間的距離：
+$$d(C_i, C_j)=\min_{\mathbf{a}\in C_i, \mathbf{b}\in C_j} d(\mathbf{a}, \mathbf{b})$$
+完整連結聚合演算法（complete-linkage agglomerative algorithm）：群聚間的距離定義為不同群聚中最遠兩點間的距離：
+$$d(C_i, C_j)=\max_{\mathbf{a}\in C_i, \mathbf{b}\in C_j} d(\mathbf{a}, \mathbf{b})$$
+平均連結聚合演算法（average-linkage agglomerative algorithm）：群聚間的距離則定義為不同群聚間各點與各點間距離總和的平均（其中， 表示 的資料個數。）：
+$$d(C_i, C_j)=\sum_{\mathbf{a}\in C_i, \mathbf{b}\in C_j} \frac{d(\mathbf{a}, \mathbf{b})}{|C_i||C_j|},$$
+where $|C_i|$ and $|C_j|$ are the sizes for $C_i$ and $C_j$, respectively.
+沃德法（Ward's method）：群聚間的距離定義為在將兩群合併後，各點到合併後的群中心的距離平方和（其中，m 表示 Ci∪Cj 的平均值）
+$$d(C_i, C_j)=\sum_{\mathbf{a}\in C_i \cup C_j} \|\mathbf{a}-\mathbf{\mu}\|,$$
+where $\mathbf{\mu}$ is the mean vector of $C_i \cup C_j$.
+
+我們可以使用不同的群聚距離來產生階層式群聚樹，所得到的結果如下：
+Example 2: hierClusteringPlot02.mdata=rand(2, 50);			% 50 data instances of dim 2
+distMat=distPairwise(data);		% Distance matrix of 50 by 50
+method='single';
+hcOutput=hierClustering(distMat, method);
+subplot(1,2,1); hierClusteringPlot(hcOutput); title(['method=', method]);
+method='complete';
+hcOutput=hierClustering(distMat, method);
+subplot(1,2,2); hierClusteringPlot(hcOutput); title(['method=', method]);
+由上述群聚樹，我們可以發覺下列特性：
+
+single linkage 會在群聚的過程中產生「大者恆大」的效果。
+而 complete linkage 和 average linkage 比較容易產生「齊頭並進」的效果。
+
+若要觀看在群聚過程中的動態展示，請見下一個範例（此範例以 single linkage 為群聚距離）：
+Example 3: hierClusteringAnim01.mdata=dcData(6);
+data=data.input;
+dataNum=size(data,2);
+distMat=distPairwise(data, data);
+distMat(1:dataNum+1:dataNum^2)=inf;	% Diagonal elements should always be inf.
+method='single';			% 'single' or 'complete'
+level=hierClustering(distMat, method);
+hierClusteringAnim(data, distMat, level);
+事實上我們可以證明，如果資料集是二維平面上的點所成的集合，而且我們採用 single linkage，則所得到的連結圖即是這些點的 minimum spanning tree。
+
+
+
+整體來說，階層式分群法的優點如下：
+
+概念簡單，可用樹狀結構來表現整個計算過程。
+只需要資料點兩兩之間的距離，就可以建構分群結果，而不需要資料點的實際座標。（因此每一個資料點可以示一個物件，而不必是空間中的一點。）
+
+但是階層式分群法也有缺點，它通常只適用於少量資料，很難處理大量資料。
+
+
+
+
+Data Clustering and Pattern Recognition (資料分群與樣式辨認)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AI - Ch19 機器學習(7), 分群/聚類：階層式分群法 Clustering: Hierarchical Clustering | Mr. Opengate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pages
+
+
+
+Home
+
+
+About
+
+
+Contact
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skip to main  |
+      skip to sidebar
+
+
+
+
+
+
+
+Mr. Opengate
+
+
+
+
+Work hard, play harder, love hardest.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2015年6月16日 星期二
+
+
+
+
+
+
+
+
+AI - Ch19 機器學習(7), 分群/聚類：階層式分群法 Clustering: Hierarchical Clustering
+
+
+
+
+
+於
+
+6/16/2015 08:14:00 下午
+
+
+
+
+
+標籤：
+Computer Science-Artificial Intelligence
+
+
+ 
+
+
+
+
+階層式分群法（Hierarchical Clustering）
+階層式分群法透過一種階層架構的方式，將資料層層反覆地進行分裂或聚合，以產生最後的樹狀結構，常見的方式有兩種：
+
+聚合式階層分群法 (Bottom-up, agglomerative) : 如果採用聚合的方式，階層式分群法可由樹狀結構的底部開始，將資料或群聚逐次合併。
+分裂式階層分群法 (Top-down, divisible) : 如果採用分裂的方式，則由樹狀結構的頂端開始，將群聚逐次分裂。
+
+
+
+
+聚合式階層分群法（Hierarchical Agglomerative Clustering, HAC）
+由樹狀結構的底部開始層層聚合，一開始我們將每一筆資料視為一個群聚（cluster），假設我們現在擁有n筆資料，則將這n筆資料視為n個群聚，亦即每個群聚包含一筆資料：
+
+將每筆資料視為一個群聚 $C_i, i=1\ to\ n$
+找出所有群聚間，距離最接近的兩個群聚 $C_i$、$C_j$
+合併 $C_i$、$C_j$ 成為一個新的群聚
+假如目前的群聚數目多於我們預期的群聚數目，則反覆重複步驟二至四，直到群聚數目已將降到我們所要求的數目。
+
+Hierarchical Clustering 最後可以表示成一個Tree，來展示聚合式階層分群法所產生的樹狀圖(dendrogram)。
+
+
+
+
+
+定義兩個群聚之間的距離
+
+單一連結聚合演算法(single-linkage agglomerative algorithm)：群聚與群聚間的距離可以定義為不同群聚中最接近兩點間的距離。
+完整連結聚合演算法(complete-linkage agglomerative algorithm）：群聚間的距離定義為不同群聚中最遠兩點間的距離，這樣可以保證這兩個集合合併後, 任何一對的距離不會大於 d。
+平均連結聚合演算法(average-linkage agglomerative algorithm)：群聚間的距離定義為不同群聚間各點與各點間距離總和的平均。
+沃德法（Ward's method）：群聚間的距離定義為在將兩群合併後，各點到合併後的群中心的距離平方和。
+
+
+
+[用心去感覺] 群聚距離特性
+
+Complete linkage : 和 average linkage 比較容易產生「齊頭並進」的效果。
+Single linkage : 會在群聚的過程中產生「大者恆大」的效果。
+
+Kruskal's algorithm : 事實上我們可以證明，如果資料集是二維平面上的點所成的集合，而且我們採用 single linkage，則所得到的連結圖即是這些點的 minimum spanning tree。
+
+
+[tiny lab] Agglomerative Nesting (Hierarchical Clustering)
+Description : Computes agglomerative hierarchical clustering of the dataset.
+Usage:
+
+agnes(x, diss = inherits(x, "dist"), metric = "euclidean",
+      stand = FALSE, method = "average", par.method,
+      keep.diss = n < 100, keep.data = !diss, trace.lev = 0)
+
+
+library("cluster")
+
+# import data
+x <- read.table("data.txt")
+
+# run AGNES
+ag <- agnes (x, FALSE, metric="euclidean", FALSE, method ="single")
+
+# print components of ag
+print(ag)
+
+# plot clusters
+plot(ag, ask = FALSE, which.plots = NULL)
+
+#input data
+#      BA FI MI VO RM TO
+#BA 0 662 877 255 412 996
+#FI 662 0 295 468 268 400
+#MI 877 295 0 754 564 138
+#VO 255 468 754 0 219 869
+#RM 412 268 564 219 0 669
+#TO 996 400 138 869 669 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+COBWEB: Incremental Conceptual Clustering
+COBWEB為一個漸增式的階層概念分群演算法，是一種非監督式學習(Unsupervised Learning)，採用了一個啟發式的類別效度(Category Utility)評估函數，並以此類別效度來引導一個分類樹的建立。
+
+漸增式 : 資料會陸續加入系統中，而不是一次完整加入(batch)
+階層概念分群 : 不必事先給定叢集數目的參數，系統會在資料陸 續加入的過程中自動搜尋整個分類樹，並調整叢集的數目找到最佳的叢集。
+
+
+
+
+
+
+
+類別效度 (Category Utility, CU)
+類別效度的函數量測了某一特定物件被置放於給定類別之正確屬性值期望。
+CU is a tradeoff between intra-class similarity and inter- class dissimilarity of objects.
+
+Probability-theoretic definition of Category Utility : The probability-theoretic definition of category utility given in Fisher (1987) and Witten & Frank (2005) is as follows:
+
+
+$CU(C,F) = \tfrac{1}{p} \sum_{c_j \in C} p(c_j) \left [\sum_{f_i \in F} \sum_{k=1}^m p(f_{ik}|c_j)^2 - \sum_{f_i \in F} \sum_{k=1}^m p(f_{ik})^2\right ]$
+
+
+也就是$\Sigma_C \Sigma_A \Sigma_v P(A_i=V_{ij}) \times  P(A_i=V_{ij}|C_k)  \times   P(C_k|A_i=V_{ij})$
+
+類別效度的方程式包含了三個機率。
+
+$P(A_i=V_{ij})$ : 首先是量測屬性 $A_i=V_{ij}$ 時，在整個資料庫中的條件機率。
+$P(A_i=V_{ij}|C_k)$ : 在類別 $C_k$ 下,屬性 $A_i=V_{ij}$ 的條件機率。如果此值為1時，表示類別為 $C_k$ 的資料中屬性 $A_i$ 的值皆為 $V_{ij}$。屬性 $A_i$ 的值為 $V_{ij}$ 為定義類別的必要條件。
+$P(C_k|A_i=V_{ij})$ : 某一資料在 $A_i=V_{ij}$ 時，存在類別 $C_k$ 中的條件機率。如果此值為1時，表示當 $A_i=V_{ij}$ 時，包含此值的類別必為 $C_k$。屬性 $A_i$ 的值為 $V_{ij}$ 被稱為定義類別 $C_k$ 的充要條件。
+
+
+
+
+
+
+
+
+階層式分群法結論
+
+優點
+
+概念簡單，可用樹狀結構來表現整個計算過程。
+只需要資料點兩兩之間的距離，就可以建構分群結果，而不需要資料點的實際座標。（因此每一個資料點可以示一個物件，而不必是空間中的一點。）
+
+缺點
+
+通常只適用於少量資料，很難處理大量資料。
+
+
+
+
+
+
+
+References
+
+Hierarchical Clustering (階層式分群法)
+http://mirlab.org/jang/books/dcpr/dcHierClustering.asp?title=3-2%20Hierarchical%20Clustering%20(%B6%A5%BCh%A6%A1%A4%C0%B8s%AAk)&language=chinese
+
+Data Mining Algorithms In R/Clustering/Hierarchical Clustering
+https://en.wikibooks.org/wiki/Data_Mining_Algorithms_In_R/Clustering/Hierarchical_Clustering
+
+Wiki - Conceptual clustering
+https://en.wikipedia.org/wiki/Conceptual_clustering
+
+Wiki - Cobweb (clustering)
+https://en.wikipedia.org/wiki/Cobweb_(clustering)
+
+周仲愚 - 適用於COBWEB 演算法之屬性挑選與預先排序策略研究
+http://ir.lib.stust.edu.tw/bitstream/987654321/960/2/093stut0396035.pdf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+較新的文章
+
+
+較舊的文章
+
+首頁
+
+
+
+
+
+
+
+技術提供：Blogger.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Me
+
+
+
+
+Hi! I'm Mr. Opengate.
+
+
+
+喜歡做很酷的事，和睡覺；
+
+相信品味與信念的不朽價值。
+
+希望有更多的機會感受這個世界：）
+
+
+第一次來記得看一下本站簡介喔！ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Facebook
+
+Mr. Opengate
+
+
+
+
+
+
+
+
+
+
+
+Contents
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Popular Posts
+
+
+
+
+
+
+
+
+
+臺大資工研究所畢業心得：怪咖、凡人和藝術家
+
+
+
+
+
+
+
+
+
+
+臺北信義行：信義商圈、Taipei 101、四四南村
+
+
+
+
+
+
+
+
+
+
+C/C++ - Vector (STL) 用法與心得完全攻略
+
+
+
+
+
+
+
+
+
+
+科技業常見的職務縮寫 SA SD RD PG PM DBA MIS QA Sales
+
+
+
+
+
+
+
+
+
+
+猴子都會寫的Makefile - makefile簡易教學 (1)
+
+
+
+
+
+
+
+
+
+
+C/C++ - String 用法與心得完全攻略
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RSS
+
+
+
+
+
+
+
+發表文章
+
+
+
+
+
+
+
+
+
+
+                  Atom
+                
+
+
+
+
+
+
+
+
+
+
+發表文章
+
+
+
+
+
+
+
+
+
+
+
+
+留言
+
+
+
+
+
+
+
+
+
+
+                  Atom
+                
+
+
+
+
+
+
+
+
+
+
+留言
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pageviews
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Contact Me
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+K-Means 分群演算法 - 陳鍾誠的網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wikidot.com
+
+
+
+.wikidot.com
+    
+
+
+Share on
+
+
+
+
+
+
+
+
+Edit
+History
+Tags
+Source
+
+Explore »
+
+ 
+
+
+
+
+
+陳鍾誠的網站
+金門大學：免費電子書、教材、程式、動畫
+
+
+
+
+
+
+
+
+文章列表
+
+最近修改
+所有網頁
+標記
+
+
+相關網站
+
+陳鍾誠的網站
+系統程式
+C# 程式設計
+
+
+陳鍾誠
+
+關於陳鍾誠
+陳鍾誠的信箱
+陳鍾誠的 Facebook
+陳鍾誠的網站
+陳鍾誠的手機網
+陳鍾誠的簡歷
+陳鍾誠的 Diigo
+陳鍾誠的 Youtube
+
+
+Wikidot
+
+網站管理
+本站成員
+標記
+加入本站?
+頂欄
+側欄
+樣版
+Wikidot 文件
+Wikidot 語法
+Wikidot Module
+Wikidot Embedding
+Wikidot Template
+Wikidot Layout
+
+
+
+
+Create account or Sign in 
+
+
+
+
+課程
+兩岸產業
+網路資源
+網路程式
+開放原碼
+動畫設計
+研究專題
+書籍
+系統程式
+C# 程式設計
+Blender 動畫設計
+作品
+程式
+論文
+動畫
+文章
+新詩
+故事
+歷史
+研究
+研究
+衛星遊戲
+人工智慧
+網路出版
+機器翻譯
+興趣
+閱讀
+寫作
+影片
+關註
+學習
+常用
+生活
+網站
+手機版
+手機最愛
+Diigo
+Twitter
+Facebook
+Scribd
+Youtube
+Kmit
+ping
+GAE
+金門不動產
+手機入口網
+大學課程網
+
+
+rating: 0+x
+
+
+
+
+
+                            K-Means 分群演算法
+                        
+
+
+
+
+
+
+
+
+人工智慧
+前言
+簡介
+知識表達
+知識學習
+理論方法
+搜尋優化
+邏輯推論
+神經網路
+機率統計
+實務應用
+專家系統
+自然語言
+分群分類
+程式語言
+Prolog
+javascript
+程式實作
+邏輯推論
+爬山算法
+基因算法
+機率學習
+交談程式
+數字辨識
+訊息
+相關網站
+參考文獻
+最新修改
+簡體版
+English
+
+
+
+
+
+文章
+留言
+授權
+
+
+
+K-Means 是 J. B. MacQueen 於1967年所提出的分群演算法，必須事前設定群集的數量 k，然後找尋下列公式的極大值，以達到分群的最佳化之目的。
+(1)
+\begin{align} argmin \sum_{i=1}^{k} \sum_{\mathbf x_j \in S_i} \big\| \mathbf x_j - \boldsymbol\mu_i \big\|^2 \end{align}
+其中的 $\mu_i$ 是 Si 群體的平均。
+演算法
+
+1. 隨機指派群集中心：(圖一)
+
+在訓練組資料中「隨機」找出K筆紀錄來作為初始種子(初始群集的中心)
+
+
+2. 產生初始群集：(圖二)
+
+計算每一筆紀錄到各個隨機種子之間的距離，然後比較該筆紀錄究竟離哪一個隨機種子最近，然後這筆紀錄就會被指派到最接近的那個群集中心，此時就會形成一個群集邊界，產生了初始群集的成員集合
+
+
+3. 產生新的質量中心：(圖三)
+
+根據邊界內的每一個案例重新計算出該群集的質量中心，利用新的質量中心取代之前的隨機種子，來做為該群的中心
+
+
+
+(2)
+\begin{align} S_i^{(t)} = \left\{ \mathbf x_j : \big\| \mathbf x_j - \mathbf m^{(t)}_i \big\| \leq \big\| \mathbf x_j - \mathbf m^{(t)}_{i^*} \big\| \text{ for all }i^*=1,\ldots,k \right\} \end{align}
+
+4. 變動群集邊界：(圖四)
+
+指定完新的質量中心之後，再一次比較每一筆紀錄與新的群集中心之間的距離，然後根據距離，再度重新分配每一個案例所屬的群集
+
+
+
+(3)
+\begin{align} \mathbf m^{(t+1)}_i = \frac{1}{|S^{(t)}_i|} \sum_{\mathbf x_j \in S^{(t)}_i} \mathbf x_j \end{align}
+
+5. 持續反覆 3, 4 的步驟，一直執行到群集成員不再變動為止
+
+
+圖一、隨機指派群集中心
+
+圖二、產生初始群集
+
+圖三、產生新的質量中心
+
+圖四、變動群集邊界
+參考文獻
+
+J. B. MacQueen (1967): "Some Methods for classification and Analysis of Multivariate Observations", Proceedings of 5-th Berkeley Symposium on Mathematical Statistics and Probability, Berkeley, University of California Press, 1:281-297
+J. A. Hartigan (1975) "Clustering Algorithms". Wiley.
+J. A. Hartigan and M. A. Wong (1979) "A K-Means Clustering Algorithm", Applied Statistics, Vol. 28, No. 1, p100-108.
+D. Arthur，S. Vassilvitskii (2006): "How Slow is the k-means Method?," Proceedings of the 2006 Symposium on Computational Geometry (SoCG).
+http://en.wikipedia.org/wiki/K-means_clustering
+http://zh.wikipedia.org/wiki/K平均演算法
+http://140.118.9.173/salo/data%20mining/Ch5 群集演算法.pdf
+漫談 Clustering (1): k-means — http://blog.pluskid.org/?p=17
+
+Facebook
+
+
+
+Facebook
+
+Wikidot
+
+
+Show Comments
+
+
+
+
+
+Add a New Comment
+
+
+Post preview:
+
+
+Close preview
+
+
+
+
+
+
+
+
+or Sign in as Wikidot user
+
+
+
+(will not be published)
+
+
+
+
+-
++
+
+
+                    Help: wiki text quick reference 
+
+
+
+
+
+
+
+
+
+
+
+Permanent Link
+Edit
+Delete
+
+
+
+
+
+本網頁的作者、授權與引用方式
+
+
+作者
+陳鍾誠，於金門大學資訊工程系，電子郵件：wt.ude.uqn|ccc#wt.ude.uqn|ccc，網站：http://ccckmit.wikidot.com。
+授權
+本文採用創作共用 (Creative Common) 3.0 版的 姓名標示─非商業性─相同方式分享 授權條款，歡迎轉載或修改使用，但若做為商業使用時必須取得授權，引用本文時請參考下列格式。
+中文版 (APA格式)
+陳鍾誠 (28 Nov 2009 23:05)，(網頁標題) K-Means 分群演算法，(網站標題) 陳鍾誠的網站，取自 http://ccckmit.wikidot.com/ai:kmeans ，網頁修改第 16 版。
+英文版 (APA格式)
+Chung-Chen Chen (28 Nov 2009 23:05), Retrieved from http://ccckmit.wikidot.com/ai:kmeans , Page Revision 16.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+page revision: 16, last edited: 20 Aug 2010 02:43
+
+Edit
+Rate (0)
+Tags
+Discuss (0)
+History
+Files
+Print
+Site tools
++ Options
+
+
+Edit Sections
+Append
+Edit Meta
+Watchers
+Backlinks
+Page Source
+Parent
+Lock Page
+Rename
+Delete
+
+
+
+
+
+
+
+
+
+Help
+     |
+    Terms of Service
+     |
+    Privacy
+     |
+    Report a bug
+     |
+    Flag as objectionable
+
+Powered by Wikidot.com
+
+
+                    Unless otherwise stated, the content of this page is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
+
+
+
+
+
+Other interesting sites
+
+
+
+
+
+
+Leaping Stag
+
+
+
+
+
+
+
+
+
+Thymio & Aseba
+
+
+
+
+
+
+
+
+
+Philosophia UAM
+          
+              Wiki studentów filozofii UAM
+            
+
+
+
+
+
+
+
+Logos Tao Deus
+          
+              a slowschool
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Click here to edit contents of this page.    
+
+
+
+        Click here to toggle editing of individual sections of the page (if possible).         Watch headings for an "edit" link when available.    
+
+        Append content without editing the whole page source.    
+
+        Check out how this page has evolved in the past.    
+
+        If you want to discuss contents of this page - this is the easiest way to do it.    
+
+        View and manage file attachments for this page.    
+
+        A few useful tools to manage this Site.    
+
+        See pages that link to and include this page.    
+
+        Change the name (also URL address, possibly the category) of the page.    
+
+        View wiki source for this page without editing.    
+  
+        View/set parent page (used for creating breadcrumbs and structured layout).    
+
+            Notify administrators if there is objectionable content in this page.        
+
+            Something does not work as expected? Find out what you can do.        
+
+            General Wikidot.com documentation and help section.        
+
+            Wikidot.com Terms of Service - what you can, what you should not etc.        
+
+            Wikidot.com Privacy Policy.          
+        
+
+
+
+
+
+
+資料分群簡介（data clustering） | IT 腦人加
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+主頁
+關於
+
+
+
+
+
+
+
+
+
+
+IT 腦人加
+
+
+文章 RSS 訂閱 | Comments RSS
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Pages關於
+
+分類
+
+分類 .NET (2)
+
+Big Data 大數據 (9)
+
+Certification (5)
+
+Cloud Computing (1)
+
+CSSLP (3)
+
+Database (12)
+
+Estimation (2)
+
+General (28)
+
+Graphic Design Tools (1)
+
+Hacker (2)
+
+Hardware (4)
+
+Industry (1)
+
+Intranet (9)
+
+ITIL (3)
+
+Mac (1)
+
+Media (1)
+
+Mobile (6)
+
+MS Exchange (6)
+
+Network (9)
+
+News (2)
+
+Project Development (2)
+
+Security (99)
+
+Access Control Systems and Methodology (3)
+
+Applications and Systems Development (3)
+
+Business Continuity (31)
+
+Cryptography (2)
+
+Information Security Management (4)
+
+Law, Investigations and Ethics (8)
+
+Operations Security (14)
+
+Physical Security (7)
+
+Security Architecture and Models (4)
+
+Telecommunications, Network, and Internet Security (6)
+
+
+
+Server (1)
+
+Software Engineering (4)
+
+SSADM (2)
+
+Storage (8)
+
+Utilities (1)
+
+VM (4)
+
+Windows (4)
+
+WindowsInternals (5)
+
+未分類 (6)
+
+ 
+
+文章存檔
+
+2017 年 六月
+2016 年 十月
+2016 年 九月
+2016 年 六月
+2013 年 一月
+2012 年 五月
+2012 年 三月
+2011 年 十月
+2011 年 九月
+2011 年 八月
+2010 年 十月
+2010 年 七月
+2010 年 六月
+2010 年 二月
+2010 年 一月
+2009 年 八月
+2009 年 七月
+2009 年 六月
+2009 年 五月
+2009 年 四月
+2008 年 十二月
+2008 年 十一月
+2008 年 九月
+2008 年 五月
+2008 年 四月
+2008 年 三月
+
+
+
+
+
+
+
+
+
+資料分群簡介（data clustering）
+
+					Posted on Fri, 18 Apr 2008 00:34:31 +0000 by 腦人加									
+
+資料分群（data clustering）或是分群演算法（clustering algorithms）是一種將資料分類成群的方法，其主要的目的乃在於找出資料中較相似的幾個群聚（clusters），並找出各個群聚的代表點，稱為中心點（centroids）或是原型（prototypes）。使用這些中心點來代表原先大量的資料點，就可以達到兩個基本目標：  
+
+降低計算量
+資料壓縮 
+
+一般而言，分群法可以大致歸為兩大類：  
+
+階層式分群法（hierarchical clustering）：群數（number of clusters）可以由大變小，或是由小變大，來進群聚的合併或分裂，最後再選取最佳的群數。
+分割式分群法（partitional clustering）：先指定群數後，再用一套疊代的數學運算法，找出最佳的分群方式以及相關的群中心。 
+
+所有的分群法都有相似的流程，大略可歸納為下列三點：  
+
+收集資料
+使用某種方法進行分群
+測試分群結果
+檢測分群結果，如果未達預期效果，則回到步驟二，再一次進行分群 
+
+向量量化（vector quantization，簡稱 VQ）可以說是資料分群的延伸，只不過是向量量化常被用在影像和語音的壓縮，應用層面比較不相同，但是其底層方法和最終目標都和資料分群非常類似。
+ 
+
+廣告
+
+
+
+
+ 
+
+
+請按讚：喜歡 載入中...
+
+相關
+
+
+						Filed under: Network |					
+
+
+« Cluster 的主從架構 Clustering 服務 »
+
+
+
+
+
+一個回應
+
+
+
+
+ adhd treatment, on Wed, 21 Aug 2013 09:00:38 +0000 at 9:00 上午 said:		
+
+Thanks for this inspiring content. I really enjoyed it lots.
+What you have done is pretty inspirational.
+|
+This is really inspirational content. I would like to
+use your style to better my own content on my website.
+
+回應 
+
+
+
+
+
+
+
+
+發表迴響 取消回覆 
+
+
+
+在此輸入你的回應…
+
+
+
+
+在下方填入你的資料或按右方圖示以社群網站登入：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+電子郵件 （電子郵件地址不會被公開）
+
+
+
+名稱
+
+
+
+個人網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 WordPress.com 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Twitter 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Facebook 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Google+ 帳號。 ( 登出 / 變更 )
+
+
+
+
+取消
+連結到 %s
+
+
+
+
+ 透過電子郵件通知我後續回應。
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 近期文章
+
+
+勒索軟件急增Splunk藉保安走入企業
+
+
+陳喜倫：中國OpenStack市場正處於「臨界點」
+
+
+Security Best Practices for Non-Relational Data Stores
+
+
+漏洞 VULNERABILITIES
+
+
+Asset
+
+
+風險評估之用例場景 
+
+
+風險評估程序 RISK ASSESSMENT PROCESS
+
+
+BENEFITS, RISKS AND RECOMMENDATIONS FOR INFORMATION SECURITY
+
+
+配置Outlook Web應用程序
+
+
+客戶端連接到客戶端訪問服務器
+
+
+
+熱門文章
+ 
+
+						資料分群簡介（data clustering）					
+
+
+
+						功能性／非功能性需求					
+
+
+
+						資料倉儲(Data Warehouse, DW)					
+
+
+
+						EFI / UEFI BIOS 入門					
+
+
+
+						以 syslog-ng 取代傳統 GNU syslogd					
+
+
+
+						NAS/SAN/iSCSI 結束無意義的技術詞彙之爭					
+
+
+
+						Physical Security 簡介及 CISSP 的期望					
+
+
+
+						分層防禦模型 The Layered Defense Model					
+
+
+
+						管理的Exchange Server2013郵箱					
+
+
+
+						IFPUG功能點估算基本方法					
+
+
+
+四月 2008
+
+
+一
+二
+三
+四
+五
+六
+日
+
+
+
+
+« 三月
+ 
+五月 »
+
+
+
+
+ 123456
+
+
+78910111213
+
+
+14151617181920
+
+
+21222324252627
+
+
+282930
+ 
+
+
+
+近期迴響
+
+「匿名」對「檢查時間/使用時間（Time of Check / TOC…」留言「Angel圖文記」對「Reporting Tools」留言「chibang1005」對「陳喜倫：中國OpenStack市場正處於「臨界點」」留言「website for direct t…」對「IFPUG功能點估算基本方法」留言「adhd treatment」對「資料分群簡介（data clustering）」留言 
+
+
+BI
+CCSK
+database access
+Data Mining
+Data Warehouse
+ERP
+ISC2 CBK
+ISC2 EXAM
+M3-1
+M4-1
+M4-2
+M4-3
+M5-1
+M5-2
+Management
+Maths
+openstack
+SAP
+
+
+
+
+在 WordPress.com 建立免費網站或網誌. WP Designer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+%d 位部落客按了讚：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：數字型資料分群法之整合
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 數字型資料分群法之整合Clustering Aggregation for numerical-type data
+作者: 鐘詠聖Chung, Yong-Sheng林志青Lin, Ja-Chen多媒體工程研究所
+關鍵字: 分群法整合;數字型;clustering aggregation;numerical;evidence accumulation
+公開日期: 2015
+摘要: 本論文研究數字型資料分群法之整合。我們延伸反覆迭代式成對整合的方法(IPC)，提出了三種數字型資料分群結果整合法。反覆迭代式成對整合法為一種類似最大期望值之演算法，須計算點與點間的相似程度，亦即計數兩點在諸多輸入分群結果中被分至同群的次數。在我們提出的第一個方法中，我們對各輸入分群結果中被分至同群的點，使用主成分分析，以更精確的計算點與點在各輸入分群法內的相似程度;然後定義兩點間的整體相似程度為兩點在各輸入分群法相似程度的總合，也就是對於被分至同群的配對做再一次確認兩者相似。在我們提出的第二個方法中，我們同樣對各輸入分群結果中被分至同群的點使用主成分分析，但我們反過來計算不被分至同群的點間的相似程度，然後定義兩點間的整體相似程度為計數兩點在各分群法被分至同群的次數與不被分至同群時的相似程度總合，也就是對不被分至同群的配對給予翻身的機會。在我們提出的第三個方法，我們延伸第一個方法，將其計算出的相似矩陣做為輸入，執行“頻譜分群法之相似矩陣整合”，計算各輸入分群法的權重。最後再以第一個方法經加權後的相似程度做為分群整合依據。We propose three clustering aggregation methods for numerical-type data. These three methods are based on the idea of the iterative pairwise consensus (IPC) method. IPC is an Expectation-Maximization-like (EM-like) method which maximizes the sum of similarity measures between pairwise data points. In IPC method, the similarity between a pair of data points was defined as the average number of partitions in which the paired points are assigned to the same clusters. Our first proposed method, i.e. similarity-confirming clustering aggregation (SCfCA), apply PCA to the data points who are assigned to the same cluster in each partition, and then modify the similarity measure of coupled data points. SCfCA defines the overall similarity measure as the average similarity of pairwise data points in each partition.
+Our second method, i.e. similarity-compensation clustering aggregation (SCpCA) method, also apply PCA to the data points which are assigned to the same cluster in each partition. However, we also evaluate the similarity of pairwise data points which are assigned to different cluster in each partition. SCpCA defines the overall similarity measure of pairwise data points as the sum of the average number of partitions where the paired points are assigned to the same clusters and the average similarity of pairwise data points which are assigned to different cluster in each partition.
+Our third method, i.e. the weighted similarity-confirming clustering aggregation (WSCfCA) method, uses the similarity matrices of partitions conducted by SCfCA as input. Then, we use the affinity aggregation for spectral clustering (AASC) to get the weight of each partition. Finally, we use the weighted similarity matrix to aggregate the clustering results.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT070256626http://hdl.handle.net/11536/127276
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefComparing Hard and Fuzzy C-Means for Evidence-Accumulation Clustering / Wang, Tsaipei基於證據累加的叢集整合技術之強韌化與功能延伸 / 王才沛;Wang Tsaipei無線感測網路中基於資料聚集方法下的安全比較系統 / 陳宏達;Hung-Ta Chen;曾文貴;Wen-Guey Tzeng用於交通預測之二層資料分群法 / 榮芊菡;Jung, Chien-Han;彭文志;Peng, Wen-ChihSecure encrypted-data aggregation for wireless sensor networks / Huang, Shih-I;Shieh, Shiuhpyng;Tygar, J. D.Multidimensional Sensor Data Analysis in Cyber-Physical System: An Atypical Cube Approach / Tang, Lu-An;Yu, Xiao;Kim, Sangkyum;Han, Jiawei;Peng, Wen-ChihComparing patterns of intersectoral innovation diffusion in Taiwan and China: A network analysis / Chang, PL;Shih, HY國立臺灣科技大學 - 循序型資料分群及分類法整合架構於資料分析之研究 / Heidsyam, Yardin 國立臺灣科技大學 - 結合資料分群及分類法於多元件產品原型測試資料分析之研究 / 楊朝龍 淡江大學 - 長期追蹤資料分群問題之研究---K中心的函數型分群演算法 / 李百靈 國立臺灣科技大學 - 中文字型資料結構之分析與數值化 / 邱煥鐘 國立成功大學 - 針對混合資料型態的k-means分群演算法 / 王品鈞; Wang, Ping-Chung 國立臺北科技大學 - 生態工法資料模型建立和整合分析之研究 / 陳偉堯 國立成功大學 - 整合以模糊分群擷取之事前知識的資訊擴散方法學習小樣本資料 / 陳建頲; Chen, Chien-Ting Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+分群法 的價格 - EZprice比價網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+分群法 的價格 - EZprice比價網
+
+
+
+
+
+商品
+
+商品
+找書
+
+
+
+
+
+
+
+
+
+
+
+
+登入/註冊
+
+
+
+登出
+
+
+
+
+
+
+
+
+
+
+
+EZprice比價網
+
+
+›
+				
+
+分群法
+
+
+
+
+
+				進階篩選
+			
+
+
+
+分類篩選：
+
+
+
+3C電腦週邊(28)
+
+
+
+
+
+
+視聽家電(365)
+
+
+
+
+
+
+3C手機相機(44)
+
+
+
+
+
+
+汽車機車(15)
+
+
+
+
+
+
+精品珠寶(144)
+
+
+
+
+
+
+美妝保養(430)
+
+
+
+
+
+
+運動休閒(131)
+
+
+
+
+
+
+傢俱寢具(559)
+
+
+
+
+
+
+生活用品(207)
+
+
+
+
+
+
+養生保健(50)
+
+
+
+
+
+
+婦幼玩具(259)
+
+
+
+
+
+
+食品飲料(50)
+
+
+
+
+
+
+鞋包配件(87)
+
+
+
+
+
+
+男女服飾(230)
+
+
+
+
+
+
+文具(8)
+
+
+
+
+
+
+書籍(209)
+
+
+
+
+
+
+							更多
+						
+
+
+平臺篩選：
+
+
+
+PChome商店街(73948)
+
+
+
+
+
+
+Yahoo奇摩購物中心(9237)
+
+
+
+
+
+
+大買家(2954)
+
+
+
+
+
+
+博客來(5554)
+
+
+
+
+
+
+momo富邦購物館(18400)
+
+
+
+
+
+
+燦坤(170)
+
+
+
+
+
+
+GOHAPPY(16410)
+
+
+
+
+
+
+PChome線上購物(27419)
+
+
+
+
+
+
+Yahoo超級商城(54140)
+
+
+
+
+
+
+東森購物(9321)
+
+
+
+
+
+
+ibon mart(1290)
+
+
+
+
+
+
+udn買東西(11060)
+
+
+
+
+
+
+森森購物網(9507)
+
+
+
+
+
+
+亞柏EZ購(15)
+
+
+
+
+
+
+17Life(265)
+
+
+
+
+
+
+HOWA好襪購物網(21)
+
+
+
+
+
+
+良興股份有限公司(51)
+
+
+
+
+
+
+瘋狂賣客(45)
+
+
+
+
+
+
+愛買線上購物(726)
+
+
+
+
+
+
+大潤發網路購物(580)
+
+
+
+
+
+
+博客來書籍館(12474)
+
+
+
+
+
+
+myfone購物(8362)
+
+
+
+
+
+
+myfone手機購物(3610)
+
+
+
+
+
+
+生鮮市集(29)
+
+
+
+
+
+
+好吃宅配網(80)
+
+
+
+
+
+
+生活市集(309)
+
+
+
+
+
+
+哇寶居家生活館(201)
+
+
+
+
+
+
+新蛋全球生活網(1214)
+
+
+
+
+
+
+friDay購物(4208)
+
+
+
+
+
+
+momo摩天商城(22751)
+
+
+
+
+
+
+watsons屈臣氏(140)
+
+
+
+
+
+
+陽信商店街(547)
+
+
+
+
+
+
+QKshopping 家電專業線上購物網(34)
+
+
+
+
+
+
+Treemall(835)
+
+
+
+
+
+
+百利市購物中心(1506)
+
+
+
+
+
+
+鮮食家雲端冰箱(7)
+
+
+
+
+
+
+法雅客e-SHOP(53)
+
+
+
+
+
+
+e同購線上購物網(153)
+
+
+
+
+
+
+gomaji(334)
+
+
+
+
+
+
+isunfar愛順發3C購物網(4)
+
+
+
+
+
+
+costco(10)
+
+
+
+
+
+
+台灣迪卡儂(14)
+
+
+
+
+
+
+雅光電器商城(5)
+
+
+
+
+
+
+ZALORA(32)
+
+
+
+
+
+
+WUZ 屋子(487)
+
+
+
+
+
+
+全家行動購(99)
+
+
+
+
+
+
+良基電腦(10)
+
+
+
+
+
+
+SECAR旭益汽車百貨(29)
+
+
+
+
+
+
+紐頓e世界(16)
+
+
+
+
+
+
+世博惠購物網(7)
+
+
+
+
+
+
+美麗999(110)
+
+
+
+
+
+
+詮美珠寶(1)
+
+
+
+
+
+
+MamiBuy(492)
+
+
+
+
+
+
+飛利浦直購體驗店(2)
+
+
+
+
+
+
+姐妹團購網(348)
+
+
+
+
+
+
+3C市集(1)
+
+
+
+
+
+
+松果購物(831)
+
+
+
+
+
+
+BONEBONE(146)
+
+
+
+
+
+
+babyhome(264)
+
+
+
+
+
+
+ezoutlet(1)
+
+
+
+
+
+
+ICareU嚴選 健康生活館(1)
+
+
+
+
+
+
+神腦(57)
+
+
+
+
+
+
+原價屋(1)
+
+
+
+
+
+
+欣亞(26)
+
+
+
+
+
+
+三花棉業購物網(1)
+
+
+
+
+
+
+							更多
+						
+
+
+品牌篩選：
+
+
+
+GE 奇異(1)
+
+
+
+
+
+
+Louis Vuitton LV(1)
+
+
+
+
+
+
+PHILIPS 飛利浦(1)
+
+
+
+
+
+
+PX 大通(1)
+
+
+
+
+
+
+SAMPO 聲寶(1)
+
+
+
+
+
+
+Whirlpool 惠而浦(1)
+
+
+
+
+
+
+SHISEIDO 資生堂(1)
+
+
+
+
+
+
+ANNA SUI 安娜蘇(2)
+
+
+
+
+
+
+CathyCat (1)
+
+
+
+
+
+
+FERRAGAMO (1)
+
+
+
+
+
+
+EMC (1)
+
+
+
+
+
+
+Anderson 安德成(1)
+
+
+
+
+
+
+TEFAL 特福(1)
+
+
+
+
+
+
+THOMSON 唐姆笙(4)
+
+
+
+
+
+
+L&#39;ORÉAL 巴黎萊雅(3)
+
+
+
+
+
+
+Princeton Tec (1)
+
+
+
+
+
+
+DARPHIN (6)
+
+
+
+
+
+
+Agatha (1)
+
+
+
+
+
+
+ALAIN DELON (4)
+
+
+
+
+
+
+ARTDECO (2)
+
+
+
+
+
+
+Centella (1)
+
+
+
+
+
+
+Chloe (9)
+
+
+
+
+
+
+DERMAGOR 朵瑪(2)
+
+
+
+
+
+
+ELLE (5)
+
+
+
+
+
+
+Ferrari 法拉利(21)
+
+
+
+
+
+
+LA DEFONSE 黎得芳(1)
+
+
+
+
+
+
+LONGCHAMP (2)
+
+
+
+
+
+
+LooCa (4)
+
+
+
+
+
+
+MOMUS (3)
+
+
+
+
+
+
+Montagut (13)
+
+
+
+
+
+
+PAYOT 柏姿(1)
+
+
+
+
+
+
+Salvatore Ferragamo (1)
+
+
+
+
+
+
+SHINNING WAY 萱薇(1)
+
+
+
+
+
+
+倩碧 Clinique(1)
+
+
+
+
+
+
+Glamour (13)
+
+
+
+
+
+
+Pathfinder (1)
+
+
+
+
+
+
+Tiamo (9)
+
+
+
+
+
+
+gorenje 歌蘭尼(2)
+
+
+
+
+
+
+零機齡 uniskin(1)
+
+
+
+
+
+
+VinVautz (6)
+
+
+
+
+
+
+HARIO (3)
+
+
+
+
+
+
+HANG (1)
+
+
+
+
+
+
+Terraillon 得利安(1)
+
+
+
+
+
+
+Elipson (2)
+
+
+
+
+
+
+EGON (1)
+
+
+
+
+
+
+Takasima 高島(1)
+
+
+
+
+
+
+健而婷 (1)
+
+
+
+
+
+
+LOVEMORE 愛戀膜法(1)
+
+
+
+
+
+
+納尼亞 NANIA(2)
+
+
+
+
+
+
+RECH18 (3)
+
+
+
+
+
+
+Bestvite 必賜力(1)
+
+
+
+
+
+
+優利亞 (1)
+
+
+
+
+
+
+TONYMOLY (3)
+
+
+
+
+
+
+艾維斯 (8)
+
+
+
+
+
+
+NOV 娜芙(1)
+
+
+
+
+
+
+R.rouge 愛美肌(1)
+
+
+
+
+
+
+Exfoliac (3)
+
+
+
+
+
+
+BIODERMA (7)
+
+
+
+
+
+
+noreva (17)
+
+
+
+
+
+
+LJH (1)
+
+
+
+
+
+
+法貝兒 (1)
+
+
+
+
+
+
+藝佽芫 (4)
+
+
+
+
+
+
+Cubic Fun (2)
+
+
+
+
+
+
+OPEN (1)
+
+
+
+
+
+
+DAYLA (1)
+
+
+
+
+
+
+IEI (1)
+
+
+
+
+
+
+CEV (1)
+
+
+
+
+
+
+ALTEAM (1)
+
+
+
+
+
+
+BIOline (1)
+
+
+
+
+
+
+AFA 艾法(13)
+
+
+
+
+
+
+FORUOR (2)
+
+
+
+
+
+
+任e行 (1)
+
+
+
+
+
+
+康生 Concern(2)
+
+
+
+
+
+
+							更多
+						
+
+
+
+
+
+相關度排序
+價格由低到高
+價格由高到低
+
+
+                                -
+                                
+確認
+
+
+分群法 的價格比較結果，共 300,955 件商品符合
+                
+
+
+                        前往符合分群法比價結果的商店
+
+
+
+
+
+
+
+
+
+                                            新白話六法：票據法
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+198
+
+GOHAPPY
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            這樣讀 飆進高分群：基測專家林文虎教你如何考高分（附贈高分學習法1小時教學精華示範光碟）
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+253
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            法概念與法效力
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+253
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            八法拳、八法槍
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+198
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            刑法類推與司法造法
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+171
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            分科六法：環境法
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+395
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            刑法概論I：刑法總則
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+378
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            神奇止痛療法：100種點按法
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+180
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            刑法概論II：刑法分則
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+351
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            法的全球化與全球化的法
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+285
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            德國問題－國際法與憲法的爭議
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+270
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            眉＆指 修整法‧描繪法handbook
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+162
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            國際刑法與歐洲刑法
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+713
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            現代稅法原理與國際稅法
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+713
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            民事法問題研究：物權法論
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+570
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            分科六法-公務員法
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+361
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            測驗式六法：刑事法
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+361
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+
+
+
+
+
+
+
+                                            法形成與法典化-法與資訊研究
+                    
+
+
+
+信用卡
+atm
+
+
+                            宅配
+                        
+
+
+
+266
+
+博客來書籍館
+
+
+前往賣場
+
+
+
+
+
+其他相關商品：
+荷比法
+法 鬥
+法資優乾洗法
+商標法
+票據法
+喜兒法
+麼法梳
+刑法總則
+法西多
+輸入法
+法歐尼
+荷那法蕊
+懶人農法
+Fees法緻
+國際法
+更多
+
+
+
+上一頁
+1
+2
+3
+4
+5
+6
+...
+下一頁
+
+
+
+
+
+
+
+
+
+					好康優惠
+				
+
+
+愛買折價券現領現折 →大家電滿$5000現折$500，找家電來愛買，別讓鈔票森77  
+
+
+
+【新蛋購物超給力】 全站滿額折 7/17、7/19、7/21限時開放 單筆滿3,500元折330元、單筆滿9,000元折800元
+
+
+
+※百利市購物中心※消費滿額送$250折價券
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+��GAAC ��Ⱥ�����������������ϵͳ֮����-��Google Desktop Search Ϊ��_�ٶ��Ŀ�
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+�ٶ���ҳ
+��¼ע��
+�������
+���ؿͻ���
+
+
+
+��ҳ
+����
+����
+֪��
+����
+ͼƬ
+��Ƶ
+��ͼ
+�Ŀ�
+|
+
+
+
+�Ŀ�����н���ͼ�飬���᲻�����޾�Ʒ�������˫�ַ��ϣ��뼰ʱ����Ŷ��
+
+
+
+���ù���&nbsp&nbsp&nbsp
+ְ����־
+
+������������Դ��ѳ���
+
+
+
+����һ���Ķ���Ա����ʡ24Ԫ��
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+������
+7
+
+
+
+�����ĵ�
+
+ȫ��
+DOC
+PPT
+TXT
+PDF
+XLS
+
+
+
+
+
+
+
+
+���
+
+
+
+
+
+��ҳ
+����
+
+�����Ŀ�
+
+
+�߿����
+
+
+��Ʒ�Ŀ�
+
+
+��Ʒ�γ�
+ѧ��ר��
+��������
+
+
+��������
+
+
+������֤
+��������
+Ʒ���ƹ�
+��������
+������ļ
+
+
+
+
+�Ŀ�VIP  
+
+
+VIP���ר��
+VIP����ר��
+�һ�VIP
+
+
+��������
+
+
+��������
+ÿ������
+רҵ��֤
+
+
+
+
+
+
+
+����Ƶ��
+
+
+Сѧ
+                        
+����
+                        
+����
+                        
+�߿����
+                        
+
+
+
+
+
+רҵ����
+
+
+�������
+IT/�����
+���̿Ƽ�
+
+
+
+
+
+ʵ���ĵ�
+
+
+��ְ/ְ��
+�ܽ�/�㱨
+���Ź���
+
+
+
+
+
+�ʸ���
+
+
+�и�����
+                               
+������ѧ
+                                                     
+��˼����
+                                                     
+
+
+
+
+
+��������
+
+
+��������
+                                                     
+���ⷿ��
+                               
+�˶�����
+                                                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+�ٶ��Ŀ�
+ʵ���ĵ�
+����/ģ��
+����/����
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+��GAAC ��Ⱥ�����������������ϵͳ֮����-��Google Desktop Search Ϊ��
+
+
+498730765�ϴ���2011-09-21|��������|0|0|�ĵ����|�ٱ�
+
+
+
+  ��GAAC ��Ⱥ�����������������ϵͳ֮����-��Google Desktop Search Ϊ��
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+��������
+
+×
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+�Ķ��ѽ�����������ر�����Ҫʹ��5����ȯ
+
+
+����
+
+
+
+��������ر��ģ�
+
+��������VIP
+
+
+
+������ȯ�����ĵ�
+10��ƪ��ѡ�ĵ������
+ǧ����Ʒ��������ѿ�
+
+
+
+
+
+
+
+
+����HR��ϲ���ļ���
+
+��Ҫ���Ƽ���
+
+
+
+
+
+
+
+
+��һƪ
+
+
+
+
+
+���ĵ�����Blog��BBS�����վ�ȣ�
+
+
+����
+
+Ԥ��
+
+
+
+��ͨ�ߴ�(450*500pix)
+
+�ϴ�ߴ�(630*500pix)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+�����ĵ������ԣ�����ʹ�ø�����
+5����ȯ  1��������
+
+
+����
+
+
+
+
+��ʣ20ҳδ���������Ķ�
+
+
+
+
+
+
+
+
+����HR��ϲ���ļ���
+
+��Ҫ���Ƽ���
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+�����ϲ��
+
+
+
+
+
+                    
+                        
+                        
+                        
+                        
+                        
+                    
+                 
+
+
+
+
+
+         
+            
+            
+                
+            
+            
+             
+                
+                    
+                    
+                        
+                        
+                            0){%>
+                                
+                            
+                                ��������
+                            
+                        
+                        ҳ
+                        
+                    
+                    
+                
+                
+                  �����롰����ص�����>&gt
+                
+             
+        
+            
+
+
+
+
+
+��������
+
+
+
+*��л֧�֣����ĵ������ǰɣ�
+
+
+
+
+
+240
+
+��������
+
+
+
+��һ��
+
+
+
+
+
+
+
+�û�����
+���ۼ�����...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+�ϴ��ĵ�
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+©2017 Baidu ʹ�ðٶ�ǰ�ض� | �Ŀ�Э�� | ������ | ��ҵ�Ŀ� | ��վ��ͼ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+35成群: 輕鬆聊之K-Means演算法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+35成群
+
+
+
+
+臺南，是一個適合人們作夢、寫code、吃美食、敗家、寫文章、悠然過活的地方。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2014年7月18日
+
+
+
+
+
+
+
+
+輕鬆聊之K-Means演算法
+
+
+
+
+
+
+By
+
+
+
+misgod
+
+
+
+
+標籤
+技術筆記,
+演算法,
+機器學習
+
+
+
+
+
+
+
+上次跟大家簡單介紹了一下KNN演算法，今天介紹一下很容易跟KNN搞混的K-means演算法，不過兩個其實差蠻多的，只有名字比較像而已。K-means主要講的就是「物以類聚」，只要中心思想是相近的，就可以歸在同一類。
+K-means是一個分群(Clustering)的演算法，不需要有預先標記好的資料(unlabeled data)，屬於非監督式學習(Unsupervised learning)。主要是用來做常常被使用在資料分群，簡單的說就是把一堆資料根據你判斷相近的邏輯，把這一堆資料分成k群。
+
+用比較數學(嚇人)的說法就是，追求各個群組內部的均方誤差總和最小。
+argmin∑i=1k∑xj∈Si||Xj−μi||2
+(x1,x2,x3...,xn)為給定的資料集合 
+S=S1,S2,…,Sk, S為分割的群組集合
+μi是群組Si內所有元素xj的重心，或叫中心點。
+下麵這個圖是一個資料根據不同K所分群出來的結果，顏色只是提供辨識分群用。
+
+
+圖片來源: Statistical Learning  (Stanford Online Course )    
+
+
+運作流程
+我們先來看一下它運作的流程。 
+
+
+先決定K 
+  k就是最後要分成幾群，如果你希望最後資料分成 3群 ，k就是3。  
+在你的資料中，隨機選擇k個點做為群中心(也可以直接從資料挑)。
+把每一筆資料標記上離它最近的群中心
+根據同一個標記的所有資料，重新計算出群中心。  
+如果步驟4算出來的群中心跟原本步驟3不同，則重複步驟3  
+
+
+上面的步驟可以用下圖來表示，   
+
+
+圖片來源: Machine Learning (By Andrew NG, Coursera)  
+
+
+我們要分成兩群(K=2),所以一開始先挑了兩個點(b)。
+將資料標記(著色)成距離最近的群中心(c)。
+同一個群中心(顏色)的資料重新計算新的中心位置(d)。
+同步驟2，做標記(著色的動作)。
+同步驟3，重新計算新的群中心的位置(f)。
+再重複步驟2,3 結果群中心位置不變，表示分群完畢。
+
+註意須知
+K-means一開始的亂數選擇群中心，會影響到最後分群的結果，下圖這個就使用K=3跑6次出來的結果，紅色235.8為產生出來的最佳的分群。 
+
+
+圖片來源: Statistical Learning  (Stanford Online Course )   
+
+關於怎麼避免一開始的選擇影響最後分群品質，這個等我研究有心得再跟大家分享。
+後記
+K-means簡單快速的方法被廣泛的使用，但是實際運用上還是有一些問題需要被剋服。正所謂萬事起頭難，K-means一開始會先要求你提供K，但是k到底要多少才合理？ 這個問題我們有空再來談。下次我們來分享一下不給定K的狀況下，我們要怎麼將資料分群。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 則留言:
+
+
+
+
+匿名2017年3月1日 下午10:00Thanks for sharing.回覆刪除新增留言載入更多…
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+較新的文章
+
+
+較舊的文章
+
+首頁
+
+
+
+
+訂閱：
+張貼留言 (Atom)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30天不間斷馬拉松式發文進行中!!究竟能不能成功呢，讓我們繼續看下去...
+
+
+
+
+
+
+
+
+
+
+
+文章
+
+
+
+
+
+
+
+
+        ▼ 
+      
+
+
+
+2014
+
+(25)
+
+
+
+
+
+        ▼ 
+      
+
+
+
+七月
+
+(24)
+
+超輕量化JavaScript除錯工具
+在網頁上顯示程式碼 - Code Prettify tool
+簡單的開箱與改裝 - ThinkPad T540p
+桌遊簡易開箱文- 禁制的沙漠
+簡單的開箱與迅速的關箱 - AORUS X7 v2
+輕鬆聊之Hierarchical Clustering
+輕鬆聊之K-Means演算法
+Build software better - Android AAR 類別庫的使用與分享
+五條港文學踏查隨筆（3）
+五條港文學踏查隨筆（2）
+UI Test Script for Android - 以Puzzle And Dragons自動...
+輕鬆聊之KNN演算法
+[開箱文] ASUS Padfone S - 4G LTE
+五條港文學踏查隨筆（1）
+IE 你別鬧了
+UI Test Script for Android - 以Puzzle And Dragons自動...
+[心得] 超效率時間整理術
+[投影片] Regular Expression 101
+在Android上使用Facebook API
+如何發佈 App 到 Google Play - 建造出 APK 檔案
+UI Test Script for Android - 以Puzzle And Dragons自動...
+壓縮JavaScript的好工具 - Closure Compiler
+臺南古蹟 - Android App
+臺南311開發紀錄 (下)
+
+
+
+
+
+
+
+
+        ► 
+      
+
+
+
+六月
+
+(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標籤
+
+
+
+開發心得
+(9)
+
+
+Android
+(6)
+
+
+技術筆記
+(6)
+
+
+古蹟
+(4)
+
+
+臺南
+(4)
+
+
+寫程式
+(4)
+
+
+Puzzle And Dragons
+(3)
+
+
+機器學習
+(3)
+
+
+演算法
+(3)
+
+
+Build sofeware better
+(2)
+
+
+JavaScript
+(2)
+
+
+Closure Compiler
+(1)
+
+
+Google Play
+(1)
+
+
+Jenkins
+(1)
+
+
+Maven
+(1)
+
+
+Padfone S
+(1)
+
+
+敗家
+(1)
+
+
+桌上遊戲
+(1)
+
+
+讀書心得
+(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+訪客數
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+熱門文章
+
+
+
+如何發佈 App 到 Google Play - 建造出 APK 檔案
+
+
+輕鬆聊之KNN演算法
+
+
+輕鬆聊之K-Means演算法
+
+
+Build software better - Android AAR 類別庫的使用與分享
+
+
+簡單的開箱與改裝 - ThinkPad T540p 
+
+
+
+
+
+
+
+
+
+
+
+
+
+新文章通知我
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RSS訂閱
+
+
+
+
+
+
+
+發表文章
+
+
+
+
+
+
+
+
+
+
+                  Atom
+                
+
+
+
+
+
+
+
+
+
+
+發表文章
+
+
+
+
+
+
+
+
+
+
+
+
+留言
+
+
+
+
+
+
+
+
+
+
+                  Atom
+                
+
+
+
+
+
+
+
+
+
+
+留言
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

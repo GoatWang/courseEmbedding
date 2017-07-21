@@ -1,0 +1,2208 @@
+
+
+
+
+
+
+
+數位訊號處理架構設計 (VLSI Signal Processing) 
+
+
+
+
+
+
+數位訊號處理架構設計 (VLSI Signal
+Processing) 
+ 
+Instructor: 吳安宇副教授, 
+E-mail: andywu@cc.ee.ntu.edu.tw,
+Phone Extension: 409
+TA: 李芳明　E-mail:
+vinson@access.ee.ntu.edu.tw
+Prerequisite: DSP (required), VLSI designs (recommended)
+ 
+Contents: 
+This course will discuss the design issues and techniques in
+VLSI signal processing. Our focus is on mapping a given DSP algorithm to its
+cost-effective VLSI architectures. Lots of SP techniques can be employed to
+reduce the required hardware complexity. We take some popular architectural
+designs as the examples to learn the design techniques. Several computer
+simulations need to be conducted to verify the algorithms and architectures.
+ 
+Outline:
+Part I:
+Case study of VLSI SP
+1.      
+Re-visit "Fast Fourier
+Transforms": The divide-and-conquer approach
+2.      
+Discrete Cosine Transform (DCT)
+algorithms and architectures: The processing kernel of MPEG and JPEG
+3.      
+Speeding-up the FIR filtering:
+Multirate and Lookahead approaches
+4.      
+Low-complexity FIR designs:
+Interpolated FIR (IFIR) Approach and Canonical Signed-Digit (CSD)-based filter
+designs.
+5.      
+Rotational kernel: CORDIC algorithms
+and architectures
+6.      
+Distributed arithmetic (DA) and Reduced
+Number Systems (RNS): Reduce the complexity at the arithmetic level
+7.      
+Fixed-point analysis: the step to
+convert a floating-point based algorithm to a fixed-point implementation (for
+wordlength assignment)
+ 
+Part
+II: CAD Approach for High-performance VLSI architecture design 
+1.     
+Overview of Systolic array
+2.     
+Iteration Bound
+3.     
+Pipelining and Parallel Processing
+4.     
+Retiming techniques
+5.     
+Unfolding and Folding Techniques
+ 
+Part III: A final
+project on VLSI signal processing: Report writing and presentation
+
+
+ 
+Grading:
+
+l       
+Participation: 3%, Mid-term Exam: 26%, Final
+Exam: 26%
+l       
+Computer Projects, paper reading, and
+homeworks: 25%
+l       
+Final project: 20% 
+Textbook:
+
+1.     
+“VLSI Digital Signal Processing
+Systems: Design and Implementation," by K. K. Parhi, Wiley-Interscience
+Publication, 1999.
+2.     
+Selected papers and notes.
+Reference
+books:
+1.     
+"Digital Signal Processing for
+Multimedia Systems," edited by K. K. Parhi and Takao Nishitani, Marcel
+Dekker, Inc., 1999.
+2.     
+"VLSI array processors," by
+S. Y. Kung, Prentice Hall, 1988.
+3.     
+"Discrete-time signal
+processing," by A. V. Oppenheim and Ronald W. Schafer, Prentice Hall,
+1989.
+ 
+上課投影片
+0 Revisit Fast
+Fourier Transforms 
+1 FFT PROCESSOR
+2 QUANTIZATION EFFET
+(11/4)
+3 DISTRIBUTED
+ARITHMETIC (11/4)
+4 DCT AND LATTICE
+5 CODIC (11/12)
+6 Residue
+Number System (12/2)
+7 MULTIRATE PROCESSING OF
+Digital Signals : Fundamentals
+8 MULTIRATE PROCESSING OF
+Digital Signals (II)
+9 CORDIC_FOR VSP NTUEE
+10 DISTRIBUTED ARITHMETIC
+11 RESIDUE NUMBER SYSTEM
+12 QUANTIZATION EFFET NTUEE
+13 SYSTOLIC
+ARRAY
+14 Low-Power CMOS Design
+(12/18)
+
+作業
+HW1-FFT
+HW2-DCT
+HW3-CORDIC AND DA
+Final Project (11/26)
+Course Schedule (11/26)
+ 
+公告
+作業及期中考分數
+(有問題請mail TA)
+ 1/4            上Low-Power
+CMOS Design & SOC/IP Design
+ 1/11           停課
+ 1/18,25         final
+project report
+
+
+
+
+
+
+
+[評價] 簡韶逸 數位訊號處理架構設計 - kinomoto板 - Disp BBS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+顯示廣告
+
+隱藏 ✕
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disp BBS
+
+
+guest 註冊 登入(i) 線上人數: 1108
+
+
+首頁(home)
+上頁(↑)
+下頁(↓)
+末頁(end)
+
+
+14x
+
+看板 kinomoto作者 kinomoto(轉瞬為風)標題 [評價] 簡韶逸 數位訊號處理架構設計時間 2010年03月28日 Sun. PM 11:22:15
+  授課教師：
+ 
+         簡韶逸教授
+ 
+  課程名稱：
+ 
+         數位訊號處理架構設計
+ 
+  哪一學年度修課：
+ 
+        九十七學年度第一學期
+ 
+  δ 課程大概內容
+ 
+        本課程主要介紹一些數位電路設計的技巧。在電路設計上，我
+        們希望設計的電路能夠達到 1.High Speed 2. Low Hardware
+        cost 3. Low Power。但是這三個條件常常是無法同時兼顧的
+        ，如果要達到 High Speed，常常可能要用到較多的 Hardware
+        cost；如果要達到 Low Hardware cost，可能要用操作速度去
+        換。所以這門課的內容即是希望教大家如何先用一些技巧盡可
+        能同時達到三要素某種程度上的最佳化，再如何用硬體成本去
+        換操作頻率，或者用操作頻率去換低硬體成本。
+
+ 
+        本課程上課內容的重要性對於做相關研究的人而言，大概可以
+        用以下比喻。對於研究數位訊號處理的人而言，訊號與系統是
+        屬於最最基本的技能，而數位訊號處理大概就是進階；同樣對
+        於研究數位電路與系統設計的人而言，邏輯設計大概就相當於
+        訊號與系統，而本課程的重要性和難度，大概就相當於數位訊
+        號處理。
+
+ 
+        本課程期中考試前會教完課本的內容，及一些數位電路架構設
+        計的技巧，期末考後會介紹一些常見的研究題材，例如 DCT、
+        FFT 等 DSP 的理論要如何用較有效率的方式做成電路等。
+
+ 
+  Ω 私心推薦指數(以五分計) ★★★★★
+ 
+        電子所: ★★★★★
+        電信所: ★★★
+ 
+  μ 上課方式(投影片、團體討論、老師教學風格)
+ 
+        簡老師在本課程主要是以投影片為主，而課程所用的書籍為數
+        位訊號處理架構設計的聖經本，投影片的內容大致上就整理自
+        該聖經本，但是整學期大概只會上完整本課本內容的1/3 。老
+        師在課堂上講解非常清楚，所以有專心聽講並於課後複習的話
+        ，應該不至於有太大的問題。整體而言簡老師的這門課程算是
+        非常紮實，對於認真聽課和課後複習的同學，應該可以在這門
+        課學到很多必要的知識和技能
+
+ 
+        老師上課時表情看起來還蠻嚴肅的，但是常常會講一些笑話，
+        所以課堂上有時會有些意外的笑點。
+ 
+  σ 評分方式(給分甜嗎？是紮實分？)
+ 
+        這們課的評分主要分成三項
+        [1] 作業 9 次: 50%
+        [2] 期中考:    25%
+        [3] 期末專題:  25%
+ 
+        作業方面，整學期總共有 9次的作業，作業全部都是教紙本，
+        而作業的內容大概都是從課本挑出，另外有部分是老師自己出
+        題。老師每教完一個章節就會有一次作業，而作業的內容大致
+        上就是希望能夠讓同學們能夠練習上課所教授電路設計技巧，
+        大概你能把作業做完該章節的內容也差不多能夠理解了。
+
+ 
+        期中考試的話，大概就考老師上課的內容，考試大概有50~60%
+        是從作業的題目變化而來，基本上作業有自己親自練習並思考
+        過作業這部分應該都沒有太大問題，至於其他的部分就要靠熟
+        練課程的內容和自己考場的反應了。
+
+ 
+        期末專題的話，大致上就是要求同學去找相關的論文研讀，然
+        後整理出重要的部分並加以比較。期末的時候，你可以選擇上
+        台報告，或者是寫一份完成的報告交給老師。上臺報告的同學
+        會由老師、助教以及全部的修課同學共同評分。
+
+ 
+   Ψ 總結
+ 
+        對於從事相關研究的同學而言，這門課是一門非常值得推薦的
+        好課，除了內容的重要性外，老師上課講解清楚有系統，作業
+        也非常有代表性能夠讓修課同學熟悉課堂上介紹的設計技巧。
+        但對於電信所的同學而言，該課程其實對於研究的幫助並不大
+        ，雖然該課程名稱中有「數位訊號處理」幾個大字，但實質上
+        該門課程並非要教大家數位訊號處理的數學理論。所以如果希
+        望能夠學到 DSP理論的同學，該課程可能無法滿足你的需求。
+
+
+
+--
+※ 來源: DISP BBS (http://disp.cc)
+※ 作者: kinomoto  來自: 140.112.218.166  時間: 2010-03-28 23:22:15
+
+	※ 看板: kinomoto　文章推薦值: 0 目前人氣: 0 累積人氣: 1414　
+
+
+
+
+※ 文章分類: 課程評價 
+
+
+
+
+
+
+
+
+
+
+
+
+
+按←鍵回到看板，瀏覽文章列表
+
+
+
+
+r)回覆
+		e)編輯 	d)刪除 		
+		M)收藏
+^x)轉錄
+	同主題:
+	=)首篇
+[)上篇
+])下篇
+
+
+
+
+
+
+
+回列表(←)
+分享
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+服務條款
+聯絡站長
+FB專頁 
+Copyright © 2012 Disp Technology Co., Ltd. All rights reserved.
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：適用於數位訊號處理應用之多級運算引擎設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 適用於數位訊號處理應用之多級運算引擎設計Design of Multi-Stage Computing Engine for DSP Applications
+作者: 陳志清Chen, Chih-Ching劉志尉Liu, Chih-Wei電子工程學系 電子研究所
+關鍵字: 多級運算引擎;串流介面單元;Multi-stage Computing Engine;Stream Interface Unit
+公開日期: 2013
+摘要: 在處理器的發展史中，簡化指令集處理器(RISC)在好幾年前就已經成為設計主流，它有著簡單且規律的資料路徑，我們可以更容易利用管線化(pipeline)來提高處理器的效能。但因為每分派一個指令，只能執行一個基本運算(primitive operation)，會導致硬體使用率不高。隨後多指令分發(multi-issue)處理器被提出，利用指令層級平行度(instruction level parallelism)來提高硬體使用率，但它的暫存器檔案面積會隨著運算單元增加而大幅度成長，因而付出太多的成本。近年來，特定應用指令集處理器(ASIP)被大量使用，以客製化的順序串接多個運算單元，在一個指令分派時可以處理多個連續的基本運算，達到硬體使用率的提升。特定應用指令集處理器不僅可以減輕像多指令分發處理器的暫存器檔案面積因運算單元增加而劇烈成長的問題，也因為一個指令抓取運算子後，會做多個運算後才回存暫存器檔案，對暫存器檔案的存取次數隨之減少，進而達到低功率的好處。然而，串接多個運算單元會導致關鍵路徑(critical path)變長，不適合用於速度需求較高的應用，且固定的串接順序會讓某些應用不適用。在本論文中，我們提出一個多級運算架構(multi-stage architecture)，在暫存器檔案及運算單元之間插入一個串流介面單元(stream interface unit)，用來存放暫存資料，同時也提供運算單元的前饋路徑(forwarding paths)，使資料路徑的執行順序可以調整，確保應用在運算時不受運算單元的串接順序限制影響。同時這樣可以節省更多集中式暫存器檔案的存取，進而省下更多的功率損耗。針對幾個典型的數位訊號處理應用分析，我們方法的硬體使用率(operation per cycle)和簡化指令集處理器的1.00相比，平均可以提升至1.57。使用UMC 90nm製程去合成，在相同的運算效能下，多級運算架構的面積可以比多指令分發減少約22%，在較高的效能需求下，面積也會比簡化指令集及特定應用指令集小。而多級運算架構的功率損耗，可以比簡化指令集、多指令分發及特定應用指令集省下約7%~25%。In the history of processor development, we observe that Reduced Instruction Set Computer (RISC) processors have already become mainstream for several years. It has a simple and regular datapath and thus facilitates pipelining for high performance. But its hardware utilization is low because it executes one operation in single instruction issued. Then, VLIW processor is presented, that takes advantage of the Instruction Level Parallelism (ILP) to improve hardware utilization. But the register file (RF) area of VLIW processor grows dramatically with the increase of the functional unit number. The cost is considerably high. In recent years, Application-Specific Instruction-set Processor (ASIP) is widely used. It cascades several functional units in costumed order to execute consecutive multiple primitive operations in single cycle to enhance hardware utilization. With limited ports to the centralized register file, the area of the ASIP would not increase exaggeratedly as more additional functional units being allocated. In addition, the cascaded datapath can perform several operations after fetching operands and then write the result back to the register file. It reduces the register file access times, thus achieving the benefit of low-power. However, cascaded functional units increase critical path, it cannot satisfy the requirements of the high clock rate and the fixed cascading order is not suitable for some applications. In this thesis, we propose a multi-stage architecture, which inserts a Stream Interface Unit (SIU) between register file and functional units. The immediate output of functional units can be stored in SIU. The SIU also provides forwarding paths among functional units to modify the execution order within the computing datapath to ensure the hardware utilization for different applications. It also reduces more centralized register file access and implies lower power consumption. For several classical DSP kernels analysis, the hardware utilization of multi-stage is 1.57 times in average higher than 1.00 of RISC. We use the UMC 90nm process to synthesis these architecture. Under same performance, the area of multi-stage is 22% less than VLIW; with higher performance requirement, the area is less than RISC and ASIP. The multi-stage saves about 7%~25% power consumption compared with RISC, VLIW, and ASIP.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT079911680http://hdl.handle.net/11536/75237
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef高度整合非對稱多處理核心工作排程之設計與分析 / 王志鵬;Chih-Peng Wang;蔡淳仁;Chun-Jen Tsai使用60GHz之室內十億級位元傳輸率之無線基頻傳收機---子計畫二：適用於十億級位元傳輸率無線個人區域網路應用之異質多處理器核心系統晶片平臺(I) / 劉志尉;Liu Chih-Wei視訊編碼器在雙核心平臺上的最佳化 / 曾建堂;Chien-Tang, Tseng;蔡淳仁;Chun-Jen, TsaiDSP全數位控制可程式電源供應器之研製 / 賴哲宏;Che-Hung Lai;鄒應嶼;Ying-Yu TzouA compact DSP core with static floating-point arithmetic / Lin, TJ;Lin, HY;Chao, CM;Liu, CW;Jen, CWMultithreaded coprocessor interface for multi-core multimedia SoC / Ou, Shih-Hao;Lin, Tay-Jyi;Deng, Xiang Sheng;Zhuo, Zhi Hong;Liu, Chih Wei國立臺灣大學 - 適用於可攜式超音波影像系統之移動補償彩色都卜勒數位信號處理引擎與VLSI架構設計 / 劉姿伶; LIU, ZIH-LING 國立中興大學 - 可重組化數位訊號處理核心電路架構於多媒體應用之設計與實現 / 楊宗錕; Tzong-Kun Yang 國立中興大學 - 可重組化數位訊號處理核心電路架構於多媒體應用之設計與實現 / 楊宗錕; Yang, Tzong-Kun 元智大學 - 適用於內嵌式數位訊號處理器模組設計 / 鄧紀賓; Chi-Bin Teng 國立臺灣大學 - 適用於百億位元乙太網路之基頻數位訊號處理設計 / Hsu, Ming-Feng; 徐銘鋒 國立臺灣大學 - 10GBase-T乙太網路系統晶片設計－子計畫五：適用於10GBase-T乙太網路之高效能數位信號處理引擎設計(3/3) / 吳安宇 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+數位訊號處理架構設計 - NTU_Lab_DISP板 - Disp BBS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+顯示廣告
+
+隱藏 ✕
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disp BBS
+
+
+guest 註冊 登入(i) 線上人數: 1108
+
+
+首頁(home)
+上頁(↑)
+下頁(↓)
+末頁(end)
+
+
+9l
+
+看板 NTU_Lab_DISP作者 kinomoto(訪客)標題 數位訊號處理架構設計時間 2008年09月05日 Fri. PM 08:28:28
+實驗室好像有蠻多人想要選這門課的，但是選課系統上面的介紹寫的也不是很詳細，所以
+大家好像也不太瞭解這門的在上些什麼。因為我大學時做的專題研究方向和這門課的內容
+有相關，大四時也去旁聽過學校開的類似課程，所以幫大家大致說明一下這門課的上課內
+容。
+
+
+雖然這門課的課名有「數位訊號處理」幾個字，其課程內容也確實和數位訊號處理有相關
+，但是他並不是專門在介紹數位訊號處理的理論。理論的方面我想該課程會當作大家已經
+有一點基礎了，所以其課程內容會較為著重在「硬體」的設計和實作上。而一般電子所所
+設計的電路，又可分為RF IC、數位IC、類比IC、Mixed-signal 等等，這門課所上的主要
+是著重在數位IC領域。
+
+
+比如說我們現在已設計好一個3-Tap的數位濾波器，如圖所示
+[img] http://disp.ee.ntu.edu.tw/kinomoto/other/dsp_arch/filter1.jpg [/img]
+
+雖然我們可以寫C或MATLAB程式去模擬濾波器的效能，但是那隻能說是模擬，並不是真正
+把濾波器「實現」出來。
+
+
+要把所設計的數位濾波器做成真正的硬體，我們可以透過嵌入式系統，利用特定的語言把
+
+數位濾波器寫成程式，再把程式碼燒錄到實驗版的晶片當中，實現真正的數位濾波器硬體。
+
+
+或者我們可以利用大學邏輯設計和電子學所學的理論基礎，將數位濾波器硬體實作出來。
+圖中的濾波器，主要需要三種邏輯運算元件：(1)加法器(2)DFlipFlop  (3)成法器。這三
+種運算元件都可以用基本的邏輯閘如ANDgate、OR gate、NOT gate，XOR gate兜出來。但
+是兜出來的邏輯電路圖還不能算是真正的電路，我們必須使用MOS把邏輯閘加以實現。比
+如說NOTgate，我們可以把NMOS和PMOS接起來形成如下圖的電晶體電路。其他的邏輯元件
+都可以使用這種所謂的CMOS接出來。
+
+[img] http://disp.ee.ntu.edu.tw/kinomoto/other/dsp_arch/inverter.jpg[/img]
+
+但是這些接出這些電晶體還是只完成電路設計圖，我們還必須把這些電路轉成Layout，
+並拿去給晶圓廠下線，才算是完成最後的晶片成品。至於什麼叫做「Layout」呢？大家
+
+只要把CPU或者一些IC版的封裝打開，看到密密麻麻的線路圖，就是所謂的IC Layout了。
+
+這種密密麻麻的Layout當然不可能人自己用手去畫，這時候就要仰賴工作站上面的EDA 
+
+tool (電子設計自動化工具)。
+
+
+再回到原來的濾波器例子。透過Transpose Operation，我們能夠將上面所舉的數位濾
+波器轉換成如下圖的形式
+[img] http://disp.ee.ntu.edu.tw/kinomoto/other/dsp_arch/filter2.jpg [/img]
+
+這個濾波器所實現的數學式和前一個例子是一模一樣的，在數學上我們看不出什麼差別
+，但是一旦把兩種濾波器時做成積體電路，那麼孰優孰劣就可見一般，繼續看下去吧。
+
+
+以下先說明一下實際電路運作的觀念
+
+舉一個NOTgate作例子，假設輸入電壓為邏輯1/HIGH(假設電壓為5V)，理想上在電壓
+輸入的那一瞬間，輸出電壓就要放電變成邏輯0/LOW(假設電壓為0V)。但是我們用來
+實現邏輯的電晶體而可避免的會有寄生電容在上面，電容充放電一定需要花時間，
+不可能在瞬間即變化完成，所以就會造成實際電路運作的訊號延遲。
+
+
+所以到這邊就可以知道，我們用來實現電路的加法器、乘法器等，都無可避免的會造
+成訊號的延遲。所以把濾波器做成電路，我們就要考慮延遲的因素。
+
+基於這種延遲因子，我們來分析一下兩種濾波器的差異性：從輸出 or 延遲原件(D)
+出發的所有訊號，完成所有運算到達下一個延遲原件的時間，一定要小於一個週期
+的時間。
+
+
+假如
+(1) 加法器：運算需要 10 個時間單位
+(2) 乘法器：運算需要 20 個時間單位。
+
+對於第一種濾波器：最長的一條路徑其運算時間為 10*2+20=40(1乘法器+2加法器)。
+對於第二種濾波器：最長的一條路徑其運算時間為 10  +20=30(1乘法器+1加法器)。
+
+
+假如一個週期為40個時間單位，那麼兩種架構都沒有問題。
+但是當一個週期為30個時間單位時，那麼第一種架構的功能就Fail了。
+[img] http://disp.ee.ntu.edu.tw/kinomoto/other/dsp_arch/filter1.jpg[/img]
+
+[img] http://disp.ee.ntu.edu.tw/kinomoto/other/dsp_arch/filter2.jpg[/img]
+
+其他還有很多考量的因素，比如說數位電路的精準度問題，要量化到什麼程度才能夠
+有效表現理想(完美)濾波器的特性等等。
+
+要改善這些的問題，會有很多其他的設計技巧，那就是這門課所要上的內容了。
+
+所以總結而言，要設計數位IC，基本上要經過以下流程
+
+演算法設計→電路架構設計→Layout→Tapeout
+
+如果說同樣作DSP，演算法設計就是著重在數學理論方面，那麼電路架構設計大概就是
+在想要如何把理論設計成電路。
+
+因為實作數位IC，需要用到很多的EDA Tool，也需要一些HDL(硬體描述語言)的基礎，
+大家心裡不免有個疑惑；我不會用工作站，也不會寫HDL，那麼我去修這門課適合嗎？
+就我看過去年課程的內容，在作業部分並沒有很多的程式作業(幾乎沒有)，幾乎都是
+交紙本的作業，當然是利用上課交的觀念去解答。期末會有個temp project，有兩三
+個人分一組報告，報告內容有分兩種方式，可以選擇看相關論文，並且把所閱讀的論
+文做個整理；也可以選擇一種通訊演算法或數位訊號理論，例如LDPC、Viterbi、FFT
+、DCT等等，把理論時做成真正的電路；當然，兩種並行也是OK的。
+
+
+如果今年還是同樣的方式，那麼在只會理論不會寫HDL和用工作站的情況下，我認為
+修這門課還是OK的。我想大家可以先去上第一堂課，聽聽老師對該課程的規定和介
+紹，再決定要不要修課。
+
+
+先說到這邊，如果大家還有什麼疑問的話，就到實驗室再問我吧。
+
+
+--
+※ 來源: 臺大電信 DISP 實驗室 (http://disp.twbbs.org)
+※ 編輯: kinomoto  來自: 118.160.238.98  時間: 2008-09-05 20:38:12
+推 sakuku: 好文推一下! >>61.224.30.233 09-05 22:31
+推 nick: 好ㄟ!  推推 >>61.216.115.201 09-05 22:52
+推 nick: 太猛了啦  忍不住再推一次 >>61.216.115.201 09-05 22:57
+推 Knuckles: 嗚嗚 好充實的一篇文 推！！ >>140.112.175.128 09-05 23:27
+推 josh613: 好強大的學弟，學弟快點發揚本實驗室吧~~~ >>218.169.235.119 09-06 15:54
+推 alexndy: 酷歐 我預定跟你同組  XD >>218.211.228.36 09-07 23:17
+推 cnnegro: 維毅人真好!!推一下 >>140.112.175.130 09-08 12:49
+推 dato: 幹 我也要啦 >>124.8.15.170 09-09 23:27
+推 truexray: 這是維益嗎? 太強大了 QQ >>218.211.228.36 09-10 21:43
+推 dato: 維大力 >>124.8.3.164 09-11 22:29
+推 dato: 維大力 >>124.8.3.164 09-11 22:30
+
+	※ 看板: NTU_Lab_DISP　文章推薦值: 11 目前人氣: 0 累積人氣: 270　
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+按←鍵回到看板，瀏覽文章列表
+
+
+
+
+→
+guest
+來留個言...
+
+
+x)推文
+r)回覆
+		e)編輯 	d)刪除 		
+		M)收藏
+^x)轉錄
+	同主題:
+	=)首篇
+[)上篇
+])下篇
+
+
+
+
+
+
+
+回列表(←)
+分享
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+服務條款
+聯絡站長
+FB專頁 
+Copyright © 2012 Disp Technology Co., Ltd. All rights reserved.
+
+
+
+
+
+
+
+
+
+數位訊號處理器 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+數位訊號處理器
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+
+DSP-Grafikchip
+
+
+
+
+
+
+一塊與PC機相連接的DSP板
+
+
+數位信號處理器（英語：digital signal processor，DSP）是一種專用於（通常為實時的）數位信號處理的微處理器。
+
+
+
+目錄
+
+
+1 數位信號處理器的特點
+2 數位信號的處理
+
+2.1 數據運算指令
+2.2 程式流程
+
+
+3 歷史
+4 參見
+5 外部連結
+
+
+
+數位信號處理器的特點[編輯]
+
+分開的程式存儲器和數據存儲器（哈佛結構）。
+用於單指令流多數據流（SIMD）作業的特殊指令集。
+可進行並行處理，但不支援多任務。
+用於宿主環境時可作為直接記憶體存取（DMA）設備運作。
+從類比數位轉換器（ADC）獲得數據，最終輸出的是由數位類比轉換器（DAC）轉換為類比信號的數據。
+
+
+數位信號的處理[編輯]
+數位信號的處理可由通用微處理器完成。可能的優化為：
+數據運算指令[編輯]
+
+使用飽和算法，在這種方式中，會產生溢出的運算將累積至暫存器可容納的最大（或最小）值，而不是按環繞方式（環繞方式是很多通用CPU採取的方式。在環繞方式中，暫存器的數值到達最大值後再加一則會繞回到最小值；而使用飽和算法時則不會發生這種環繞，運算結果仍將保持為最大值）。有些情況下可使用不同的粘滯位運算模式。
+使用乘積累加（MAC）運算，這會提高各種矩陣運算的效率（例如捲積運算、點積運算、乃至矩陣多項式的求值運算；參看Horner scheme和積和熔加運算）。由於在許多DSP中都必然地使用了單週期的MAC部件，因此也自然沿襲了下麵所述的許多性質（尤其是哈佛結構和指令流水線）。
+在使用同餘定址方式操作循環緩衝器、以及在使用逆位序定址模式處理快速傅立葉變換交叉參照時，都可使用專門的指令實現。
+
+程式流程[編輯]
+
+使用深層流水線技術，這種情況下，因錯誤的預測產生的跳轉會造成更大的（效率）成本。
+使用通過動態表或硬編碼的零開銷循環實現的分支預測。為減少執行高頻度的內層循環時跳轉造成的（效率）影響，有些處理器提供了這個特性。該技術包括兩種類型的操作：單指令的重複操作和多指令的循環操作。
+預取指令使用指令流水線方式。
+流水線作業方式可減少總體的處理時間，增加系統的產出效率。
+流水線可以分為若干層級。
+
+歷史[編輯]
+1978年，Intel發布了一種「類比信號處理器」——2920處理器。它包含一組帶有一個內部信號處理器的片上ADC/DAC，但由於它不含硬體乘法器，因此在市場上銷售並不成功. 1979年，AMI發布了S2811處理器，它被設計成微處理器的周邊裝置，必須由主處理器初始化後才能工作。S2811在市場上也不成功。
+1979年，貝爾實驗室發表了第一款單晶片DSP，即Mac 4型微處理器。繼而於1980年的IEEE國際固態電路會議上出現了第一批獨立、完整的DSP，它們是NEC的μPD7720處理器和AT&T的DSP1處理器。這兩種處理器都是在公共交換電話網的遠程通信研究中受到了啟發而產生的。
+還有一種早期的DSP，Altamira DX-1，它使用一組帶有延遲轉移和轉移預測機制的四整數組流水線。
+事實證明，1983年德克薩斯儀器公司生產的第一款DSP，TMS32010，是一個更大的成功，時至今日德州儀器已成為通用DSP市場的龍頭，並提供有HPI（Host-Post Interface），由外部CPU直接訪問。另一款成功的設計是摩托羅拉的56000。
+通用CPU中有些技術是受到帶有擴展模塊的DSP的影響而出現的，例如Intel的IA-32架構指令集中的MMX擴展。
+大部分DSP使用的是定點算法，這是因為在信號處理的一般實際應用中不需要使用浮點運算比定點運算多提供的那部分額外的精度範圍，而使用定點算法犧牲了不需要的精度，卻大大提高了速度。另一方面，浮點DSP則常用在科學計算和某些需要高精度的應用中。
+DSP晶片通常採用專用積體電路設計，然而亦可使用現場可編程門陣列（FPGA）晶片來實現DSP的功能，FPGA的I/O頻寬比DSP頻寬大十多倍。
+參見[編輯]
+
+VisualDSP++
+數位訊號處理器入門套件
+
+外部連結[編輯]
+
+Microcontroller.com
+DSP教育與研究世界上成立了數位信號處理以及其它嵌入式系統研究團隊的大學列表
+DSP工程雜誌
+Bores的DSP教程
+Improv Systems公司主頁
+Analog Devices公司主頁
+德州儀器公司主頁
+DSP討論組
+DSP在線資源
+DSP和VLIW
+數位信號處理使用的處理器的便攜指南，BDTI（Berkeley Design Technology, INC）公司
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+處理器技術
+
+
+
+
+
+
+架構
+
+
+
+哈佛架構
+修正哈佛架構（英語：Modified Harvard architecture）
+馮·諾伊曼結構
+資料流架構（英語：Dataflow architecture）
+CPU架構比較（英語：Comparison of CPU architectures）
+
+
+
+
+
+
+
+
+指令集
+
+
+
+複雜指令集
+EDGE
+顯式並行指令運算
+MISC
+單一指令集
+精簡指令集
+超長指令集
+無指令集（英語：No instruction set computing）
+零指令集
+
+
+
+
+
+
+
+
+字元組大小
+
+
+
+1位元
+4位元
+8位元
+12位元
+16位元
+18位元（英語：18-bit）
+24位元（英語：24-bit）
+31位元（英語：31-bit）
+32位元
+36位元（英語：36-bit）
+48位元（英語：48-bit）
+64位元
+128位元
+256位元（英語：256-bit）
+變動位元
+
+
+
+
+
+
+
+
+並行
+
+
+
+
+
+指令管線
+
+
+
+
+指令管線化
+按序/亂序執行
+預測執行
+暫存器重命名
+冒險
+
+
+
+
+
+
+
+
+
+並行層次
+
+
+
+
+位級並行
+指令級並行
+
+純量
+超純量
+
+
+數據並行
+任務並行
+
+
+
+
+
+
+
+
+
+執行緒
+
+
+
+
+多執行緒
+同步多執行緒
+超執行緒
+超級線程（英語：Super-threading）
+
+
+
+
+
+
+
+
+
+費林分類法
+
+
+
+
+單指令流單數據流
+單指令流多數據流
+多指令流單數據流
+多指令流多數據流
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+
+數位訊號處理器
+單片機
+系統單晶片
+並行向量處理機
+
+
+
+
+
+
+
+
+組件
+
+
+
+算術邏輯單元
+桶式移位器
+浮點運算器
+後端匯流排
+多路復用器
+暫存器
+內存管理單元
+轉譯後備緩衝區
+處理器緩存
+暫存器堆
+微程式
+控制單元
+時脈
+
+
+
+
+
+
+
+
+電源管理
+
+
+
+高級電源管理
+高級配置與電源介面
+動態時脈調整
+動態電壓調節
+時脈閘控
+
+
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4054943-4
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=數位訊號處理器&oldid=44227001"					
+2 個分類：數位信號處理器集成電路隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةБългарскиCatalàČeštinaDanskDeutschEnglishEspañolEestiفارسیSuomiFrançaisעבריתहिन्दीMagyarBahasa IndonesiaItaliano日本語한국어LatviešuമലയാളംBahasa MelayuPlattdüütschNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsRomânăРусскийSimple EnglishSlovenčinaSlovenščinaSvenskaTürkçeУкраїнська 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年5月3日 (週三) 22:10。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+數位訊號處理架構設計 (VLSI Signal Processing) 
+Instructor: 吳安宇副教授, 
+    
+E-mail: andywu@cc.ee.ntu.edu.tw, 
+    Phone Extension: 409
+TA: 黃世緯 
+    (Rm332)　E-mail: shihway@video.ee.ntu.edu.tw
+Prerequisite: 
+    DSP (required), VLSI designs (recommended)
+Contents: 
+This course 
+    will discuss the design issues and techniques in VLSI signal processing. Our 
+    focus is on mapping a given DSP algorithm to its cost-effective VLSI architectures. 
+    Lots of SP techniques can be employed to reduce the required hardware complexity. 
+    We take some popular architectural designs as the examples to learn the design 
+    techniques. Several computer simulations need to be conducted to verify the 
+    algorithms and architectures.
+Outline:
+Part I: Case study of VLSI SP
+1.       
+    Re-visit 
+    "Fast Fourier Transforms": The divide-and-conquer approach
+2.       
+    Discrete 
+    Cosine Transform (DCT) algorithms and architectures: The processing kernel 
+    of MPEG and JPEG
+3.       
+    Speeding-up 
+    the FIR filtering: Multirate and Lookahead approaches
+4.       
+    Low-complexity 
+    FIR designs: Interpolated FIR (IFIR) Approach and Canonical Signed-Digit (CSD)-based 
+    filter designs.
+5.       
+    Rotational 
+    kernel: CORDIC algorithms and architectures
+6.       
+    Distributed 
+    arithmetic (DA) and Reduced Number Systems (RNS): Reduce the complexity at 
+    the arithmetic level
+7.       
+    Fixed-point 
+    analysis: the step to convert a floating-point based algorithm to a fixed-point 
+    implementation (for wordlength assignment)
+Part II: CAD Approach for High-performance 
+    VLSI architecture design 
+1.      
+    Overview 
+    of Systolic array
+2.      
+    Iteration 
+    Bound
+3.      
+    Pipelining 
+    and Parallel Processing
+4.      
+    Retiming 
+    techniques
+5.      
+    Unfolding 
+    and Folding Techniques
+Part III:
+A final project on VLSI signal processing: 
+    Report writing and presentation
+
+
+Grading: 
+    
+l        
+    Participation: 
+    3%, Mid-term Exam: 26%, Final Exam: 26%
+l        
+    Computer 
+    Projects, paper reading, and homeworks: 25%
+l        
+    Final 
+    project: 20% 
+Textbook: 
+    
+1.      “VLSI Digital Signal Processing 
+    Systems: Design and Implementation," by K. K. Parhi, Wiley-Interscience 
+    Publication, 1999.
+2.      Selected papers and notes.
+Reference 
+    books:
+1.      "Digital Signal Processing 
+    for Multimedia Systems," edited by K. K. Parhi and Takao Nishitani, Marcel 
+    Dekker, Inc., 1999.
+2.      "VLSI array processors," 
+    by S. Y. Kung, Prentice Hall, 1988.
+3.      "Discrete-time signal 
+    processing," by A. V. Oppenheim and Ronald W. Schafer, Prentice Hall, 
+    1989.
+
+
+
+
+
+
+臺大課程地圖
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+共同必修課程
+
+國文
+外文
+體育
+服務學習
+進階英語
+
+
+通識課程
+
+文學與藝術領域
+歷史思維領域
+世界文明領域
+哲學與道德思考領域
+公民意識與社會分析領域
+量化分析與數學素養領域
+物質科學領域
+生命科學領域
+
+
+院系所課程
+
+文學院
+理學院
+社會科學院
+醫學院
+工學院
+生物資源暨農學院
+管理學院
+公共衛生學院
+電機資訊學院
+法律學院
+生命科學院
+牙醫專業學院
+獸醫專業學院
+其他教學單位
+
+
+其他全校性課程
+
+軍訓
+共同選修
+新生專題
+寫作教學
+基本能力課程
+
+
+English．英文版
+
+
+
+課程名稱：【數位訊號處理架構設計】
+
+
+當學期所開設課程
+
+
+
+課號
+班次
+課名
+學分數
+全半年
+授課教師
+時間(教室)
+
+
+EE5141
+01
+數位訊號處理架構設計 
+3.0
+2
+楊家驤
+二789 (博理114) 
+
+
+EE5141
+01
+數位訊號處理架構設計 
+3.0
+2
+楊家驤
+二789 (博理114) 
+
+
+EE5141
+01
+數位訊號處理架構設計 
+3.0
+2
+楊家驤
+二789 (博理114) 
+
+
+EE5141
+02
+數位訊號處理架構設計 
+3.0
+2
+陳良基
+三789 (電二455) 
+
+
+EE5141
+02
+數位訊號處理架構設計 
+3.0
+2
+陳良基
+三789 (電二455) 
+
+
+
+往年所開設課程
+
+
+
+開課年度
+課號
+班次
+課名
+學分數
+全半年
+授課教師
+時間(教室)
+
+
+99-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二229) 
+
+
+99-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二229) 
+
+
+99-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二229) 
+
+
+99-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二229) 
+
+
+98-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二143) 
+
+
+98-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二143) 
+
+
+98-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二143) 
+
+
+97-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二145) 
+
+
+97-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二145) 
+
+
+97-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二145) 
+
+
+95-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234
+
+
+95-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234
+
+
+95-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234
+
+
+94-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二678
+
+
+94-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二678
+
+
+94-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二678
+
+
+93-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+三678
+
+
+93-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+三678
+
+
+93-2
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+三678
+
+
+105-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+陳良基
+二678 (電二303) 
+
+
+105-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+陳良基
+二678 (電二303) 
+
+
+105-1
+EE5141
+01
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二143) 
+
+
+105-1
+EE5141
+01
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二143) 
+
+
+105-1
+EE5141
+01
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二234 (電二143) 
+
+
+103-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二678 (電二106) 
+
+
+103-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二678 (電二106) 
+
+
+103-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+二678 (電二106) 
+
+
+101-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+五234 (電二229) 
+
+
+101-1
+EE5141
+
+數位訊號處理架構設計
+3
+2
+簡韶逸
+五234 (電二229) 
+
+
+
+
+
+
+
+
+
+
+Copyright 2008 臺灣大學 National Taiwan University
+10617 臺北市羅斯福路四段一號　No. 1, Sec. 4, Roosevelt Road, Taipei, 10617 Taiwan(R.O.C)
+電話 (Phone)：+886-2-3366-2388轉308,607　　傳真號碼 (Fax)：+886-2-2362-6282
+
+
+
+
+
+
+

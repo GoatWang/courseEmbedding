@@ -1,0 +1,3341 @@
+
+
+
+
+	5G行動通訊之毫米波相位陣列天線系統 - 主軸技術 - 工研院資訊與通訊研究所
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        您的瀏覽器不支援JavaScript語法,但是並不影響您獲取本網站的內容。
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+主軸技術
+
+產業資訊
+
+技術趨勢
+
+推廣與合作
+
+歷史期刊
+
+關於我們
+
+訂閱期刊專區
+
+
+
+
+
+
+
+
+
+                    首頁>
+
+主軸技術>5G>
+
+5G行動通訊之毫米波相位陣列天線系統
+
+
+
+
+
+
+                    5G行動通訊之毫米波相位陣列天線系統
+            
+
+
+
+中文摘要　　隨著行動通訊快速的發展，手持裝置對多媒體資訊的傳輸需求日漸增加，目前第四代行動通訊系統已經在許多國家建置。然而，隨著劇增的無線裝置與服務，即使在第四代行動通訊系統，仍有許多的挑戰無法剋服，比如頻譜問題。因此，各國的專家開始第五代行動通訊系統的研究，預期在2020年後商轉。在第五代行動通訊中，其中一個重要的技術就是毫米波通訊系統。本論文中，我們設計並實現毫米波相位陣列天線系統，此系統操作在11GHz頻帶，射頻頻寬250MHz，傳輸距離可達200公尺，達到1Gbps的下行傳輸速率，此外，也探討各種相位陣列天線系統的架構跟設計考量。
+
+Abstract　　With the rapid development of mobile communication systems, demands for the transmission of multimedia information using portable devices are increasing day by day. Nowadays, the fourth generation (4G) communication systems have been deployed in many countries. However, with an explosion of wireless devices and services, there are still some challenges that cannot be overcome even by 4G, such as the spectrum crisis. Therefore, wireless system designers have stared research on fifth generation (5G) wireless systems that are expected to be deployed beyond 2020. The millimeter wave (mm-wave) communication system and beam-forming technology are key technologies in 5G communication systems. In this article, we design and implement a millimeter wave active phased array antenna system. This 11GHz communication system can provide 1Gbps for the downlink over 200m within 250MHz bandwidth. Besides, we will discuss designed issues of different phased array antenna systems.
+
+關鍵詞(Key Words)毫米波(Millimeter wave)相位陣列天線(Phased array antenna)主動式相位陣列天線(Active phased array antenna)波束成形(Beam-forming)超外差(Superheterodyne)載波聚合(Carrier aggregation)
+1. 前言
+　　隨著多媒體的進步、其他加值服務與日益增加的連線裝置，對頻寬的需求量越來越大，第四代行動通訊已面臨挑戰， 因此，近年來各國開始著手第五代行動通訊技術的開發，預期在2020年能達到商轉的目標，歐洲針對5G計畫成立METIS( Mobile and wireless communications Enablers for the Twenty-Twenty Information Society)組織，其對5G通訊系統規格有較明確的定義，除了使用者端的傳輸速率要有10-100倍的提升外，單位面積下系統的行動資料量要有1000倍以上的提升， 根據Shannon-Hartley理論
+　　其中C代表通道容量，B代表頻寬，S代表接收到的訊號功率，N代表雜訊或是乾擾功率，從式子中可以看出，若要提升通道容量，其一就是改善訊號對雜訊比，其二就是提高使用頻寬。　在改善訊號對雜訊比部份，波束成形技術是目前用來改善訊號對雜訊比最常見的技術之一，其利用發射能量較集中的場型覆蓋目標裝置，除了能改善傳輸距離，也能降低對非目標裝置的乾擾，進而改善訊號對雜訊比。　在增加頻寬的部份，目前商用頻段的使用大部分在6GHz以下，在擁擠的頻譜下，有限的頻寬當中，如何取得足夠的頻譜增加傳輸速度是一大問題，載波聚合是其中一個技術，但是能夠取得的頻譜還是有限，另外一個方式則是往更高頻段發展，畢竟在高頻段除了使用率不高，而且寬頻帶取得容易。綜合上述，未來5G通訊系統將可能採用波束成形跟毫米波技術。　相較於目前常使用低於6GHz的商用頻段，當無線信號於毫米波頻段傳播時，在空氣中傳輸損耗急遽地增加，因此，毫米波系統需要高增益天線與超高輸出功率的功率放大器(poweramplifier)剋服傳輸損耗，值得一提的是， 超高功率的功率放大器的功率轉換效率不佳，意味著元件更耗電，另外，毫米波超高輸出功率放大器亦非常難實現。此外，由於目前5G系統的頻段尚未制定，各國際大廠對頻段的看法不一，因此，要如何針對頻帶變化做出快速的因應，也是設計5G毫米波相位陣列天線系統需要的考量之一。　因此，在本論文，我們設計並且實現具有波束成形功能的毫米波主動式相位陣列天線系統，除了具有高增益天線，也利用主動式天線架構，剋服毫米波超高輸出功率放大器問題，另外，系統具有可調整的中頻輸出頻率(70MHz至6GHz)，故在硬體部分，只需要修改中頻至射頻電路與天線即可因應不同的頻帶。本文的第二部份主要是探討不同的相位陣列天線架構之優缺點，第三部份是5G毫米波通訊系統參數設計與相位陣列天線系統的設計，第四部份是相位陣列天線系統的實現，第五部份是結論。2. 相位陣列天線架構
+2.1 相位陣列天線-依據移相器分類
+　　要實現波束成形功能需要利用相位天線陣列，調整相位天線陣列中移相器的參數，則能夠調整天線波束的方向， 根據移相器所處的位置可分為四種架構：
+
+RF(Radio Frequency) 路徑波束成形(RF path beam-forming)架構[1]-[6]：移相器操作在RF頻帶，且在主訊號的路徑上，優點是架構比較簡單，混頻器的數目少，缺點是移相器損耗較大，因此，主訊號路徑損耗大，且高頻移相器相位解析度較低。
+
+LO(Local Oscillator) 路徑波束成形(LOpath beam-forming)架構[7]-[11]：移相器操作在LO頻帶，且在LO的路徑上，因此，移相器比較不會影響主訊號路徑，優點是主訊號路徑損耗小，缺點是混頻器數目多，且需要LO分配網路，天線數目越多時，LO分配網路實現難度越高。
+
+
+IF(Intermediate Frequency)路徑波束成形(IF path beam-forming)架構[12]、[13]：移相器操作在IF頻帶，優點是移相器的損耗小，且低頻移相器相位解析度高，缺點是混頻器數目多，且需要LO分配網路。
+
+
+數位波束成形(Digital beam-forming)架構[14]-[17]：移相器在數位處理，優點是場型實現的自由度最高，缺點是每個天線需要額外的ADC或DAC來處理信號，故比較耗電。
+
+
+圖1 相位陣列天線- RF路徑波束成形
+
+
+圖2 相位陣列天線- LO路徑波束成形
+
+
+圖3 相位陣列天線- IF路徑波束成形
+
+
+圖4 相位陣列天線-數位波束成形
+
+2.2 主、被動相位陣列天線
+　　相位陣列天線可分為主動式(active)跟被動式(passive)兩種，如圖5所示。在主動式相位陣列天線中，訊號經過功率分配器至每個天線單元，接著經過移相器後，最後會再經過功率放大器放大，再經由天線輻射出去，而被動式相位陣列天線，各路的訊號經過移相器後，沒有經過功率放大器放大，直接由天線輻射出去，移相器通常視為一損耗元件。
+圖5 主、被動相位陣列天線系統架構
+
+
+　　因此，Ｎ個天線的相位陣列天線，要發射出相同功率的條件下，被動式相位陣列天線需要一顆輸出功率相當高的功率放大器，才能夠補償移相器造成的損耗，而主動式相位陣列天線，訊號經過移相器後，會再利用功率放大器來補償移相器造成的損耗，所以只需要Ｎ 顆一般輸出功率的功率放大器即可達到同樣的輸出功率，然而非常高功率的功率放大器在低頻段可以實現出來，但越往高頻，受限於半導體製程卻很難實現，因此，在毫米波相位陣列天線的實現，我們採用主動式相位陣列天線的架構，剋服毫米波超高功率放大器的問題。
+
+表1 提出的系統之鏈路預算設計
+
+3. 毫米波通訊系統設計
+3.1 鏈路預算(Link budget )參數
+
+　　其中PRX表示接收到的功率，PTX表示發射功率，GTX表示發射端天線增益， LFS表示自由空間的損耗，LM表示其他損耗如fading、shadowing等其他損耗，GRX表示接收端天線增益。
+　　使用鏈路預算來決定實現的通訊系統的參數， 本論文以11GHz做為實現的頻段， 頻寬為250MHz，最遠傳輸距離200公尺，表1為提出的系統之鏈路預算參數，在200公尺內，下行最高資料傳輸速率可達1Gbps，需要註意的是，下行傳送端的線性輸出功率為32dBm， 要使用單顆功率放大器實現，在目前是很難達成的。
+3.2 提出之主動式相位陣列天線架構
+　　在本論文中，射頻收發機架構採用超外差(superheterodyne)架構，也就是經過兩次升降頻，在中心頻率11GHz，頻寬250MHz，LO小於RF的情況下，其雜波響應(spurious response)分析如圖6所示，藍色條狀表示雜波所在，綠色區塊表示無雜波乾擾，因此，射頻收發機的設計參數為中心頻率11GHz，頻寬250MHz，中頻頻率為1.5GHz。
+圖6 LO<RF, 雜波響應分析
+
+
+　　中頻到基頻的部分，則是利用現有的商用產品Analog devices的AD9361做後續的訊號處理，AD9361的輸出頻率從70MHz至6GHz，晶片能支援的最大頻寬約62.5MHz，因此，使用載波聚合的方式，利用四顆AD9361平行處理達到250MHz的頻寬。綜合前述的討論，本論文提出8×2主動式相位陣列天線系統架構如圖7所示，為TDD系統，圖7中的T/R模組詳列在圖8，Ｔ /R模組包含發射端的功率放大器以及接收端的低雜訊放大器(low noise amplifier)，收發共用衰減器跟移相器。
+
+圖7 8×2 主動式相位陣列天線系統架構
+
+
+圖8 T/R模組架構
+
+4. 主動式相位陣列天線系統實現
+4.1 主動式相位陣列系統電路
+　　根據前述圖7的架構，我們實現中心頻率為11GHz，頻寬為250MHz的8×2主動式相位陣列天線系統電路，如圖9所示，採用RogersRO4003C與FR4的複合板材，高頻電路層部份使用RO4003C，數位跟電源層部份使用FR4，此電路區分四部分，(1)電源模組(power module)，提供整個系統所需要的電源。(2) 收發機(transceiver)，負責訊號的升降頻、放大、雜訊濾除與收發切換。(3)SPI介面，外接FPGA，經由SPI 控制陣列系統的收發切換、鎖相迴路(phase lock loop, PLL)與Ｔ /R模組中的衰減器跟移相器。(4)8×2T/R模組，共16路的輸出，負責每路訊號的相位偏移、衰減量、訊號放大跟收發切換。
+圖9 實現之11GHz相位陣列電路
+
+　　以發射端單路而言，也就是從Tx IF至單路的RF out，可達35dB的增益，Ｔ /R模組發射端的P1dB約在30dBm， 根據表1的系統參數，整個系統需要達到32dBm的輸出功率，在8×2 T/R模組架構下，每顆功率放大器需要20dB的輸出功率，實現的電路模組符合系統需求。
+4.2 陣列天線
+　　本論文中，使用horn天線架構實現8×2陣列天線，圖10為設計的天線單元分解圖，天線可分為兩部分，下半部為輻射patch，底板為RogersRO4003C 60mil厚度的板材，上半部金屬為鋁，形成horn antenna，訊號經由最底部的SMA接頭饋入至patch，然後輻射，再經由horn輻射而出，此天線單元的增益約為10.5dBi。
+圖10 天線單元-horn天線
+
+
+　　圖11為實現之8×2天線陣列，圖12為每路天線量測的反射損耗(return loss) ， 在頻帶10.875GHz至11.125GHz中，16路的反射損耗皆低於-15dB，表示16路的能量幾乎完全的饋入，圖13為水平方向的量測場型，天線增益約22dBi，符合前述系統的規劃。
+
+圖11 實現之8×2陣列天線
+
+
+圖12 單路天線反射損耗之量測結果
+
+
+圖13 8×2陣列天線場型量測結果
+
+4.3 主動式相位陣列天線系統
+　　將前述的兩部份(1)主動式相位陣列系統電路和(2)陣列天線，透過傳輸線連接，即為本論文實現之主動式相位陣列天線系統，如圖14所示，機殼內擺置圖9的電路，16個輸出連接至機殼的頂板，8×2天線陣列再透過傳輸線連接至頂板的16個SMA接頭，此8×2主動式相位陣列天線系統即為我們的基站，另外，在使用者端不需要相位陣列天線系統， 實現的使用者端電路如圖15所示，圖16為5G通訊系統測試平臺，其操作中心頻率在為11GHz，頻寬250MHz，發射端即為本論文設計的8×2主動式相位陣列天線系統，圖15之電路接上天線則為接收端，圖片中間部分為中頻與基頻電路，此測試平臺可進行即時的影像傳輸，最高傳輸速率約為1Gbps
+圖14 實現之11GHz 8×2主動式相位陣列天線系統
+
+
+圖15 實現之11GHz使用者端收發機
+
+
+圖16 5G通訊系統測試平臺
+
+
+5. 結論　　本論文除了探討各種相位陣列天線技術外，也提出毫米波通訊系統的設計及其參數，此系統操作在11GHz，傳輸頻寬250MHz，最遠傳輸距離200公尺，並針對此系統設計與實現8×2主動式相位陣列天線系統(基站端)和收發機(使用者端)，此8×2主動式相位陣列天線系統具有高增益天線與等效超高輸出功率，並具有彈性輸出的中(70MHz至6GHz)，經過測試平臺驗證，在傳輸頻寬250MHz下，最高傳輸速率可達1Gbps，遠高於目前第四代行動通訊。因此，利用波束成形與毫米波技術提升傳輸速率， 將是下世代行動通訊系統發展重點。
+參考文獻
+
+S. Emami, R. F. Wiser, E. Ali, M. G. Forbes, M.Q. Gordon, X. Guan, S. Lo, P. T. McElwee, J.Parker, J. R. Tani, J. M. Gilbert, and C. H. Doan,“A 60 GHz CMOS phased-array transceiver pair for multi-Gb/s wireless communications,” in Proc. IEEE Int. Solid-State Circuits Conf., San Francisco, CA, Feb. 2011, pp. 164–166.
+A. Valdes-Garcia, S. T. Nicolson, J.-W. Lai, A.Natarajan, P.-Y. Chen, S. K. Reynolds, J.-H. C.Zhan, D. G. Kam, D. Liu, and B. Floyd, “A fully integrated 16-element phased-array transmitter in SiGe BiCMOS for 60-GHz communications,”IEEE J. Solid-State Circuits, vol. 45, no. 12, pp.2757–2773, Dec. 2010.
+A. Natarajan, S. K. Reynolds, M.-D. Tsai, S. T.Nicolson, J.-H. C. Zhan, D. G. Kam, D. Liu,Y.-L. O. Huang, A. Valdes-Garcia, and B. A.Floyd, “A fully integrated 16-element phased-array receiver in SiGe BiCMOS for 60-GHz communications,” IEEE J. Solid-State Circuits, vol. 46, no. 5, pp. 1059–1075, May 2011.
+Y. Yu, P. G. M. Baltus, A. de Graauw, E. van der Heijden, C. S. Vaucher, and A. H. M. van Roermund, “A 60 GHz phase shifter integrated with LNA and PA in 65 nm CMOS for phased array systems,” IEEE J. Solid-State Circuits, vol.45, no. 9, pp. 1697–1709, Sep. 2010.
+S. Lin, K. B. Ng, H. Wong, K. M. Luk, S. S. Wong,and A. S. Y. Poon, “A 60-GHz digitally controlled RF beamforming array in 65-nm CMOS with off-chip antennas,” in Proc. IEEE Radio Frequency Integr. Circuits Conf., Baltimore, MD,Jun. 2011, DOI: 10.1109/RFIC.2011. 5940602.
+
+E. Cohen, C. G. Jakobson, S. Ravid, and D. Ritter,“A bidirectional TX/RX four-element phased array at 60 GHz with RF-IF conversion block in 90-nm CMOS process,” IEEE Trans. Microw. Theory Tech., vol. 58, no. 5, pp. 1438–1446, May 2010.
+
+
+H. Krishnaswamy and H. Hashemi, "A variable-phase ring oscillator and PLL architecture for integrated phased array transceivers,” IEEE J. Solid-State Circuits, vol. 43, no. 11, pp. 2446–2463,Nov. 2008.
+
+
+X. Guan, H. Hashemi, and A. Hajimiri, “A fully integrated 24-GHz eight-element phased-array receiver in silicon,” IEEE J. Solid-State Circuits,vol. 39, no. 12, pp. 2311–2320, Dec. 2004.
+
+
+K. Scheir, S. Bronckers, J. Borremans, P.Wambacq, and Y. Rolain, “A 52 GHz phased-array receiver front-end in 90 nm digital CMOS,” IEEE J. Solid-State Circuits, vol. 43, no. 12, pp.2651–2659, Dec. 2008.
+
+
+A. Natarajan, A. Komijani, X. Guan, A. Babakhani, and A. Hajimiri, “A 77-GHz phased-array transceiver with on-chip antennas in silicon: Transmitter and local LO-path phase shifting,” IEEE J. Solid-State Circuits, vol. 41, no.12, pp. 2807–2819, Dec. 2006.
+
+
+A. Babakhani, X. Guan, A. Komijani, A. Natarajan, and A. Hajimiri, “A 77-GHz phased-array transceiver with on-chip antennas in silicon: Receiver and antennas,” IEEE J. Solid-State Circuits, vol. 41, no. 12, pp. 2795–2806, Dec.2006.
+
+
+K. Raczkowski, W. D. Raedt, and B. Nauwelaers,“A wideband beamformer for a phased-array 60 GHz receiver in 40 nm digital CMOS,” in Int.Solid-State Circuits Conf. Dig. Tech. Papers, Feb.2010, pp. 40–41.
+
+
+M. Tabesh, J. Chen, C. Marcu, L. Kong, S. Kang,E. Alon, and A. Niknejad, “A 65 nm CMOS 4-element sub-34 mw/element 60 GHz phased-array transceiver,” in Proc. IEEE Int.Solid-State Circuits Conf., San Francisco, CA, Feb. 2011, pp. 166–168.
+
+
+D. G. Rahn, M. S. Cavin, F. F. Dai, N. H. W.Fong, R. Griffith, J. Macedo, A. D. Moore, J. W.M. Rogers, and M. Toner, “A fully integrated multiband MIMO WLAN transceiver RFIC,”IEEE J. Solid-State Circuits, vol. 40, no. 8, pp. 1629–1642, Aug. 2005.
+
+
+F. Tzeng, A. Jahanian, D. Pi, and P. Heydari, “A CMOS code-modulated path-sharing multi-antenna receiver front-end,” IEEE J.Solid-State Circuits, vol. 44, no. 5, pp.1321–1335, May 2009.
+
+
+H. Rafati and B. Razavi, “A receiver architecture for dual-antenna systems,” IEEE J.Solid-State Circuits, vol. 42, no. 6, pp.1291–1299, Jun. 2007.
+
+
+Y. A. Atesal, B. Cetinoneri, K. M. Ho, and G.M. Rebeiz, “A two-channel 8–20-GHz SiGe BiCMOS receiver with selectable IFs formultibeam phased-array digital beamforming applications,” IEEE Trans. Microw. Theory Tech., vol. 59, no. 3, pp. 716–726, Mar. 2011.
+
+作者簡介
+
+紀鈞翔現任工研院資通所無線新應用射頻技術部工程師。2009年取得國立交通大學電信工程研究所博士學位。專長為毫米波系統設計、毫米波主、被動電路設計、封裝設計。E-mail: chschi@itri.org.tw
+
+
+
+
+
+
+
+
+
+
+
+
+回上一頁
+友善列印
+
+
+
+
+
+
+留言
+
+
+
+姓名：
+
+
+
+E-Mail：
+
+
+
+文章留言：
+
+
+
+
+輸入驗證碼：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+工研院資訊與通訊研究所
+© 2015 The Industrial Technology Research Institute.法律聲明
+        發行單位：工業技術研究院 資訊與通訊研究所　電話：03-5915605　傳真：03-5820420　服務信箱：JICT@itri.org.tw
+        發行地址：新竹縣竹東鎮中興路四段195號51館719室　建議網頁瀏覽器為IE8.0以上(含)版本
+        
+top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：應用於六百億赫茲通訊系統的毫米波互補式金氧半電路分析與設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 應用於六百億赫茲通訊系統的毫米波互補式金氧半電路分析與設計The Analysis and Design of Millimeter-Wave CMOS Circuits for 60-GHz Communication Systems
+作者: 陳旻珓Min-Chiao Chen吳重雨Chung-Yu Wu電子研究所
+關鍵字: 互補式金氧半;毫米波;頻率倍乘器;鎖相迴路;接收機;六百億赫茲;CMOS;Millimeter-Wave;Frequency Multiplier;Phase-Locked Loop;Receiver;60GHz
+公開日期: 2008
+摘要: 本篇論文主要闡述了適用於60GHz低功率通訊系統的毫米波互補式金氧半電路其設計方法及製作技術。論文中包含下列三個部分：(1)次諧波註入鎖住式三倍頻器的分析、模型建立與設計方法；(2)整合註入鎖住式頻率倍乘器的60GHz鎖相迴路電路分析及設計；(3)整合註入鎖住式三倍頻器的60GHz直接降頻接收機的設計。
+  首先，本論文提出以及分析一個具有差動輸出的互補式金氧半次諧波註入鎖住式三倍頻器，並且設計使其適用於K頻段和V頻段。根據所提出的次諧波註入鎖住式三倍頻器的架構，發展出鎖頻範圍及輸出相位雜訊的模型。K頻段的註入鎖住式三倍頻器採用了0.18微米互補式金氧半製程設計與製作。由量測結果可知：當功率消耗為0.45毫瓦特和輸入功率為4dBm時，鎖頻範圍為1092MHz；輸出的三階諧波對於一階、二階、四階及五階的諧波抑制比分別為22.65、30.58、29.29及40.35分貝；當使用可變電容及增加功率消耗到2.95毫瓦特時，K頻段的註入鎖住式三倍頻器鎖頻範圍可達到3915MHz。另外設計了採用0.13微米互補式金氧半製程的V頻段的註入鎖住式三倍頻器。量測結果顯示：當功率消耗為1.86毫瓦特和輸入功率為6dBm時，鎖頻範圍為1422MHz。可以發現到此次所提出的註入鎖住式三倍頻器，其鎖頻範圍與傳統利用可變電容來調整輸出頻率的壓控振盪器是相似的。
+  其次，本論文提出了一個能夠產生60GHz輸出的整合註入鎖住式頻率倍乘器之鎖相迴路。此60GHz鎖相迴路整合了壓控振盪器、註入鎖住式頻率倍乘器、除32的頻率除法器、相位頻率偵測器、電荷幫浦和迴路濾波器。因為所提出的註入鎖住式頻率倍乘器能夠產生壓控振盪器的五階諧波訊號，所以壓控振盪器僅需工作在所需要頻率的五分之一。此鎖相迴路採用了0.18微米互補式金氧半製程設計與製造。由量測結果可得：鎖相迴路輸出頻率為53.04到58.0GHz及輸出功率為–37.85dBm，相位雜訊在1MHz及10MHz偏移量下每赫茲分別較主訊號低85.2及90.9分貝，參考突波訊號較主訊號低65分貝。在1.8伏特的電壓工作下，其電路功率消耗為35.7毫瓦特。整個鎖相迴路的晶片面積為0.96×0.84平方毫米。
+  最後，本論文提出一個應用於60-GHz頻段且整合次諧波註入鎖住式三倍頻器的直接降頻接收機。本論文提出的直接降頻接收機包含了低雜訊放大器、四相位降頻混頻器、一個20-GHz的四相位壓控振盪器、兩個次諧波註入鎖住式三倍頻器、兩個中頻放大器以及兩個輸出緩衝級。在這個接收機中，本地振盪器的訊號是經由一個操作在三分之一載波的四相位壓控振盪器串接兩個次諧波註入鎖住式三倍頻器來提供。由於四相位壓控振盪器的頻率偏移，所以產生的本地振盪器訊號最高頻率只有55.03GHz。在以射頻訊號55.03GHz以及中頻訊號100MHz時的量測結果可知：接收機的增益為18.2分貝、雜訊指數16.96分貝、增益1分貝壓縮點在輸入端為–17.0dBm、三階互調失真點為–7.6dBm。本論文提出的接收機是使用0.13微米的互補式金氧半製程所製作。在供應電壓1.2伏特時的總功率消耗為31.0毫瓦特，整個直接降頻接收機的晶片面積為1.21×1.03平方毫米。
+  經由模擬以及量測結果可以證實，本論文所提出的註入鎖住式三倍頻器可適用於低功率高性能工作在毫米波頻段的收發機。在未來中，更進階的研究將可以整合低功率的單一晶片收發機以及頻率合成器。In this thesis, the design methodologies and implementations of millimeter-wave CMOS circuit for 60-GHz low-power communication system are presented. There are three parts: (1) the analysis, modeling, and design of the subharmonic injection-locked frequency tripler (ILFT); (2) the analysis and design of 60-GHz phase-locked loop (PLL) integrated with injection-locked frequency multiplier (ILFM); and (3) the design of 60-GHz direct-conversion receiver integrated with ILFT.
+  At first, K-band and V-band CMOS differential subharmonic ILFTs are proposed, analyzed, and designed. Based on the proposed ILFT structure, models for the locking range and the output phase noise are developed. A K-band ILFT is designed and fabricated using 0.18-μm CMOS technology. The measured locking range is 1092 MHz with a dc power consumption of 0.45 mW and an input power of 4 dBm. The harmonic rejection-ratios are 22.65, 30.58, 29.29, 40.35 dBc for the first, second, fourth, and fifth harmonics, respectively. The total locking range of the K-band ILFT can achieve 3915 MHz when the varactors are used and the dc power consumption is increased to 2.95 mW. A V-band ILFT is also designed and fabricated using 0.13-μm CMOS technology. The measured locking range is 1422 MHz with 1.86-mW dc power consumption and 6-dBm input power. It can be seen that the locking range of the proposed ILFT is similar to the tuning range of a conventional varactor-tuned bulk-CMOS voltage-controlled oscillator (VCO).
+  Secondly, a novel CMOS PLL integrated with ILFM that generates the 60-GHz output signal is proposed. The proposed 60-GHz PLL is composed of VCO, ILFM, 1/32 frequency divider, phase/frequency detector, charge pump, and loop filter. Because the proposed ILFM can generate the fifth-order harmonic frequency of VCO output, the operational frequency of the VCO can be reduced to only one-fifth of the desired frequency. The PLL is designed and fabricated in 0.18-μm CMOS technology. The output frequency range of the proposed PLL is from 53.04 GHz to 58.0 GHz with output power of –37.85 dBm. The measured phase noises at 1 MHz and 10 MHz offset from the carrier are –85.2 and –90.9 dBc/Hz, respectively. The reference spur level of –40.16 dBc is measured. The dc power dissipation of the fabricated PLL is 35.7 mW under a 1.8-V supply. The chip area including pads is 0.96 mm × 0.84 mm.
+  Finally, a 60-GHz direct-conversion receiver integrated with ILFT is proposed. The proposed direct-conversion receiver front-end is composed of a low-noise amplifier (LNA), I/Q quadrature down-conversion mixers, a 20-GHz QVCO, two ILFTs, two IF amplifiers, and two output buffers. In the proposed receiver, the local oscillator (LO) signals are generated by QVCO operated at only one-third of carrier frequency cascade with the two ILFTs. Due to the frequency shift of QVCO, the maximum RF frequency is only 55.03 GHz. The measured results show a receiver gain of 18.2 dB, a noise figure of 16.96 dB with RF frequency of 55.03 GHz and IF frequency of 100 MHz, channel bandwidth of 2 GHz with LO frequency of 55.02 GHz, an input-referred 1-dB compression point (P1dB) of –17.0 dBm, and input third-order inter-modulation intercept point (IIP3) of –7.6 dBm. The proposed receiver is implemented using 0.13-μm CMOS technology and draws 25.84 mA from a 1.2-V supply. The total chip area, including testing pads, is only 1.21 mm × 1.03 mm.
+  It is believed that the proposed ILFT can be used in low-power high-performance transceiver design in the millimeter-wave band. Further research for low-power single chip transceiver and frequency synthesizer can be integrated in the future.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT009111628http://hdl.handle.net/11536/43902
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文件中的檔案：存到雲端
+
+
+
+
+162801.pdf
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef毫米波CMOS混頻器、三倍頻器和功率放大器設計 / 吳坤龍;胡樹一使用註入鎖住機制的毫米波頻率產生器 / 顏子超;Yan, Tzu-Chao;郭建男內建本地震盪倍頻器的毫米波寬帶中頻之互補式金氧半混頻器設計 / 謝正煌;Hsieh, Cheng-Huang;胡樹一;Hu, Shu-I金氧半製程之次兆赫茲接收機型式鎖相迴路電路設計 / 王艶婷;Wang, Yan-Ting;陳巍仁;Chen, Wei-Zen互補式金氧半毫米波放大器設計 / 柯鈞琳;Ko, Chun-Lin;郭建男;Kuo, Chien-NanDesign and analysis of a millimeter-wave direct injection-locked frequency divider with large frequency locking range / Wu, Chung-Yu;Yu, Chi-Yao國立臺灣大學 - 於0.18微米互補式金氧半製程實現之一伏特兩百億赫茲鎖相迴路設計 / Fang, Yu-Hsien; 方語賢 國立清華大學 - 於0.18微米互補式金氧半製程實現之五億赫茲頻率合成器設計 / Wang, Bing-Yi; 汪炳義 國立臺灣大學 - 百億位元乙太網路系統之互補式金氧半接收機前端電路設計 / Li, Tsung-Ying; 李宗穎 國立臺灣大學 - 應用於W 頻帶接收機前端之互補式金氧半場效電晶體毫米波電路設計技巧 / Chu, Kun-Da; 褚坤達 國立臺灣大學 - 應用於生醫系統之低功率低雜訊互補式金氧半讀取電路設計 / Chou, Chien-Jung; 周健榮 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+系統組教授 « 國立交通大學電子工程學系 | NCTUEE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  交通大學首頁
+English
+
+
+
+
+
+
+
+
+
+
+搜尋
+
+
+
+
+
+
+
+ 
+首頁
+最新消息
+
+所有公告
+招生公告
+獎學金與競賽公告
+演講/活動公告
+獲獎公告
+徵聘公告
+學士班公告
+碩士班公告
+博士班公告
+系友會公告
+
+
+系所介紹
+
+本系特色
+歷史沿革
+
+序言
+編年大事紀
+我們的驕傲
+里程碑
+系史-2001~
+系史-1996 – 2000
+系史-1991 – 1995
+系史-1986 – 1990
+系史-1981 – 1985
+
+
+未來展望
+地理位置
+系圖書室
+教育目標及核心能力
+
+電子工程系所教育目標及學生核心能力
+國立交通大學電子工程系所學程規畫
+
+
+
+
+系所成員
+
+院士/會士
+專任師資
+
+系統組教授
+固態組教授
+
+
+兼任師資
+合聘師資
+退休師資
+行政/技術人員
+
+
+學術研究
+
+系統組實驗室
+固態組實驗室
+本系網路資源
+研究領域
+研究團隊成果
+教師學術成果
+
+
+學生專區
+
+大學部學士班
+
+跨域學程
+104年大學部修業規定
+103年大學部修業規定
+102年大學部修業規定
+101年大學部修業規定
+
+
+研究所碩士班
+
+105年碩士班修業規定
+104年碩士班修業規定
+103年碩士班修業規定
+102年碩士班修業規定
+101年碩士班修業規定
+
+
+研究所博士班
+
+博士班獎助學金資訊
+105年博士班修業規定
+104年博士班修業規定
+103年博士班修業規定
+102年博士班修業規定
+101年博士班修業規定
+100年博士班修業規定
+99年博士班修業規定
+98年博士班修業規定
+97年博士班修業規定
+96年博士班修業規定
+95年博士班修業規定
+94年博士班修業規定
+93年博士班修業規定
+92年博士班修業規定
+
+
+國際學生
+
+考生基本資料表
+
+
+磐石課程綱要
+
+
+高中生專區
+
+高中生專區首頁
+分組招生說明及本繫系友的觀點
+
+
+相關連結
+
+活動相簿
+博士班考古題
+連結
+電子人專區
+
+志工服務
+系學會資料
+大學部學生
+失竊的三分之一
+實驗室有牛
+紅野狼
+電子人登入
+卡拉ok大賽
+
+2009卡拉ok大賽
+2006卡拉ok大賽
+
+
+pub之夜
+電子週
+迎新宿營
+
+101級電外迎新
+
+
+新生盃
+電工系隊
+畢業生發展
+QandA
+
+Q and A(博士班)
+Q and A(碩士班)
+Q and A(大學部)(包含國際學程相關說明)
+交大電子Q and A
+
+
+
+
+表單下載
+網站地圖
+
+
+高中生專區
+
+
+
+
+
+
+
+
+系所成員院士/會士專任師資系統組教授固態組教授兼任師資合聘師資退休師資行政/技術人員
+
+建議使用 Firefox 或 Chromium 瀏覽此網頁
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 系統組教授
+
+
+程式設計、數位系統、數位電路學群
+類比電路學群
+訊號與系統、通訊、控制學群
+生醫電子、光電學群
+系統組所有教授
+
+程式設計、數位系統、數位電路學群
+ 負責開授：線性代數、離散數學、計算機程式設計、邏輯設計、資料結構、數位電路與系統、演算法、電子設計自動化概論、超大型積體電路設計導論、超大型積體電路設計實驗、計算機組織。
+
+
+
+ 方偉騏(Fang, Wei-Chi)
+積體電路系統、類神經網路與智慧系統、多媒體與通訊系統
+
+
+ 江蕙如(Jiang, Iris Hui-Ru)
+電子設計自動化、組合最優化
+
+
+ 李鎮宜(Lee, C. Y.)
+積體電路與系統設計、視訊通訊與高速網路、電腦輔助系統設計
+
+
+ 周世傑(Jou, Shyh-Jye)
+數位積體電路與系統、混合信號積體電路、計算機輔助設計
+
+
+ 周景揚(Jou, Jing-Yang)
+電腦輔助設計、積體電路與系統、計算機結構
+
+
+ 陳宏明(Chen, Hung-Ming)
+數位類比電路設計自動化、演算法設計分析與最佳化、晶片封裝系統協同設計
+
+
+ 莊景德(Chuang, Ching-Te)
+元件設計、邏輯與記憶體電路設計、微處理器
+
+
+郭峻因(Guo, Jiun-In)
+VLSI設計、數位信號處理、DIP設計、SOC設計
+
+
+ 黃威(Hwang, Wei)
+數位積體電路、記憶體電路與系統、三維晶片(3D IC)微系統整合
+
+
+ 黃俊達(Huang, Juinn-Dar)
+電子設計自動化、生物晶片設計自動化、微處理器設計、矽智財與系統單晶片設計
+
+
+ 張添烜(Chang, Tian-Sheuan)
+數位矽智財與系統晶片設計、訊號處理、計算機結構
+
+
+ 張錫嘉(Chang, Hsie-Chia)
+系統晶片設計、編碼理論、訊號處理
+
+
+ 趙家佐(Chao, Mango Chia-Tso)
+積體電路測試 , 電子設計自動化 , 積體電路統計時序分析
+
+
+ 劉志尉(Liu, Chih-Wei)
+系統晶片設計、訊號處理器架構、數位通訊、編碼理論
+
+
+ 賴伯承(Lai, Bo-Cheng Charles)
+系統晶片設計, 計算機輔助設計, 多處理器系統
+
+
+
+類比電路學群：
+負責開授：電路學、電子學I,II、電磁學、類比積體電路、類比積體電路導論、數位實驗、電子實驗。
+
+
+
+王毓駒(Wang, Yu-Jiu)
+電路理論與方法學、射頻超大型積體電路與系統 (毫米波大型相控陣列、遠距無線傳電)
+
+
+吳介琮(Wu, Jieh-Tsorng)
+類比與數位積體電路設計、電子電路與系統
+
+
+吳重雨(Wu, Chung-Yu)
+生醫電子、類比與數位積體電路與系統設計、類神經網路
+
+
+柯明道(Ker, Ming-Dou)
+積體電路設計、積體電路可靠度、生醫電子、智慧型仿生電路與系統
+
+
+胡樹一(Hu, Robert)
+微波、毫微波、MMIC Design
+
+
+陳柏宏(Chen, Po-Hung)
+無線電力傳輸、電源IC設計、低電壓電路設計
+
+
+陳巍仁(Chen, Wei-Zen)
+混合信號積體電路設計、高頻電路設計、通訊系統
+
+
+郭建男(Kuo, Chien-Nan)
+無線通訊SoC/SiP系統整合、無線偵測系統、毫米波醫學影像
+
+
+張懋中(Chang, Mau-Chung)
+高速半導體元件、射頻/無線互聯數位、類比、微波、毫米波太赫茲系統積體電路
+
+
+蔡嘉明(Tsai, Chia-Ming)
+高速及類比積體電路,半導體光電元件
+
+
+
+訊號與系統、通訊、控制學群
+負責開授：機率與統計、線性代數(支援) 、訊號與系統、數位訊號處理、數位訊號處理實驗、通訊原理I,II。
+
+
+
+ 王聖智(Wang, S. J.)
+電腦視覺、影像處理、訊號處理
+
+
+ 林大衛(Lin, David W.)
+數位通訊、無線通訊、訊號處理、多媒體通訊
+
+
+ 杭學鳴(Hang, Hsueh-Ming)
+訊號/影像處理、多媒體通訊、數位通訊
+
+
+ 桑梓賢(Sang, Tzu-Hsien)
+寬頻通訊系統設計、訊號處理、訊號處理器晶片設計
+
+
+ 陳紹基(Chen, Sau-Gee)
+數位通信數位通信、多媒體訊號處理、積體電路設計
+
+
+ 黃經堯(Huang, ChingYao)
+無線多媒體接取技術控制管理、無線遠距醫療傳輸系統設計、物聯網通訊系統設計、智慧財產權與創業經營管理
+
+
+ 溫瓌岸(Wen, Kuei-Ann)
+積體電路與系統、數位通訊、電子電路設計
+
+
+ 馮智豪(Fung, Carrson C.)
+統計訊號處理、通訊、數據建模和分析、優化
+
+
+ 張添烜(Chang, Tian-Sheuan)
+數位矽智財與系統晶片設計、訊號處理、計算機結構
+
+
+ 張錫嘉(Chang, Hsie-Chia)
+系統晶片設計、編碼理論、訊號處理
+
+
+ 劉志尉(Liu, Chih-Wei)
+系統晶片設計、訊號處理、數位通訊、編碼理論
+
+
+簡鳳村(Chien, Feng-Tsun)
+ 無線通訊、訊號處理、機器學習
+
+
+
+
+
+
+
+生醫電子光電學群：
+負責開授：生物晶片技術、生物晶片實作。
+
+
+
+ 李鎮宜(Lee, C. Y.)
+積體電路與系統設計、視訊通訊與高速網路、電腦輔助系統設計
+
+
+ 吳介琮(Wu, Jieh-Tsorng)
+類比與數位積體電路設計、電子電路與系統
+
+
+ 吳重雨(Wu, Chung-Yu)
+生醫電子、類比與數位積體電路與系統設計、類神經網路
+
+
+ 周世傑(Jou, Shyh-Jye)
+數位積體電路與系統、混合信號積體電路、計算機輔助設計
+
+
+ 林鴻志(Lin, H. C.)
+元件物理、奈米元件技術、薄膜元件技術、ULSI製程、元件可靠性分析
+
+
+ 柯明道(Ker, Ming-Dou)
+積體電路設計、積體電路可靠度、生醫電子、智慧型仿生電路與系統
+
+
+ 桑梓賢(Sang, Tzu-Hsien)
+寬頻通訊系統設計、訊號處理、訊號處理器晶片設計
+
+
+ 陳明哲(Chen, Ming-Jer)
+奈米電子元件及電路、生物電子雜訊、可靠性及擾動
+
+
+陳柏宏(Chen, Po-Hung)
+無線電力傳輸、電源IC設計、低電壓電路設計
+
+
+ 張添烜(Chang, Tian-Sheuan)
+數位矽智財與系統晶片設計、訊號處理、計算機結構
+
+
+ 劉志尉(Liu, Chih-Wei)
+系統晶片設計、訊號處理、數位通訊、編碼理論
+
+
+ 鄭裕庭(Cheng, Yu-Ting)
+微光機電、奈米技術、系統封裝
+
+
+
+系統組所有教授
+
+
+
+ 方偉騏(Fang, Wei-chi)
+積體電路系統、類神經網路與智慧系統、多媒體與通訊系統
+
+
+ 王聖智(Wang, S. J.)
+電腦視覺、影像處理、訊號處理
+
+
+王毓駒(Wang, Yu-Jiu)
+電路理論與方法學、射頻超大型積體電路與系統 (毫米波大型相控陣列、遠距無線傳電)
+
+
+ 江蕙如(Jiang, Iris Hui-Ru)
+電子設計自動化、組合最優化
+
+
+ 李鎮宜(Lee, C. Y.)
+積體電路與系統設計、視訊通訊與高速網路、電腦輔助系統設計
+
+
+ 吳介琮(Wu, Jieh-Tsorng)
+類比與數位積體電路設計、電子電路與系統
+
+
+ 吳重雨(Wu, Chung-Yu)
+生醫電子、類比與數位積體電路與系統設計、類神經網路
+
+
+ 周世傑(Jou, Shyh-Jye)
+數位積體電路與系統、混合信號積體電路、計算機輔助設計
+
+
+ 周景揚(Jou, Jing-Yang)
+電腦輔助設計、積體電路與系統、計算機結構
+
+
+ 林大衛(Lin, David W.)
+數位通訊、無線通訊、訊號處理、多媒體通訊
+
+
+ 林鴻志(Lin, H. C.)
+元件物理、奈米元件技術、薄膜元件技術、ULSI製程、元件可靠性分析
+
+
+ 杭學鳴(Hang, Hsueh-Ming)
+訊號/影像處理、多媒體通訊、數位通訊
+
+
+ 柯明道(Ker, Ming-Dou)
+積體電路設計、積體電路可靠度、生醫電子、智慧型仿生電路與系統
+
+
+胡樹一(Hu, Robert)
+微波、毫微波、MMIC Design
+
+
+ 桑梓賢(Sang, Tzu-Hsien)
+寬頻通訊系統設計、訊號處理、訊號處理器晶片設計
+
+
+ 陳宏明(Chen, Hung-Ming)
+數位類比電路設計自動化、演算法設計分析與最佳化、晶片封裝系統協同設計
+
+
+ 陳明哲(Chen, Ming-Jer)
+奈米電子元件及電路、生物電子雜訊、可靠性及擾動
+
+
+陳柏宏(Chen, Po-Hung)
+無線電力傳輸、電源IC設計、低電壓電路設計
+
+
+ 陳紹基(Chen, Sau-Gee)
+數位通信數位通信、多媒體訊號處理、積體電路設計
+
+
+陳巍仁(Chen, Wei-Zen)
+混合信號積體電路設計、高頻電路設計、通訊系統
+
+
+ 莊景德(Chuang, Ching-Te)
+元件設計、邏輯與記憶體電路設計、微處理器
+
+
+郭建男(Kuo, Chien-Nan)
+無線通訊SoC/SiP系統整合、無線偵測系統、超音波醫學影像
+
+
+郭峻因(Guo, Jiun-In)
+VLSI設計、數位信號處理、DIP設計、SOC設計
+
+
+ 黃威(Hwang, Wei)
+數位積體電路、記憶體電路與系統、三維晶片(3D IC)微系統整合
+
+
+ 黃俊達(Huang, Juinn-Dar)
+電子設計自動化、生物晶片設計自動化、微處理器設計、矽智財與系統單晶片設計
+
+
+ 黃經堯(Huang, ChingYao)
+無線多媒體接取技術控制管理、無線遠距醫療傳輸系統設計、物聯網通訊系統設計、智慧財產權與創業經營管理
+
+
+溫瓌岸(Wen, Kuei-Ann)
+積體電路與系統、數位通訊、電子電路設計
+
+
+ 馮智豪(Fung, Carrson C.)
+數位訊號處理、統計訊號處理、通訊、多媒體
+
+
+ 張添烜(Chang, Tian-Sheuan)
+數位矽智財與系統晶片設計、訊號處理、計算機結構
+
+
+ 張錫嘉(Chang, Hsie-Chia)
+系統晶片設計、編碼理論、訊號處理
+
+
+張懋中(Chang, Mau-Chung)
+高速半導體元件、射頻/無線互聯數位、類比、微波、毫米波太赫茲系統積體電路
+
+
+ 趙家佐(Chao, Mango Chia-Tso)
+積體電路測試 , 電子設計自動化 , 積體電路統計時序分析
+
+
+ 劉志尉(Liu, Chih-Wei)
+系統晶片設計、訊號處理器架構、數位通訊、編碼理論
+
+
+蔡嘉明(Tsai, Chia-Ming)
+高速及類比積體電路,半導體光電元件
+
+
+ 鄭裕庭(Cheng, Yu-Ting)
+微光機電、奈米技術、系統封裝
+
+
+ 賴伯承(Lai, Bo-Cheng Charles)
+系統晶片設計, 計算機輔助設計, 多處理器系統
+
+
+ 簡鳳村(Chien, Feng-Tsun)
+無線通訊系統、訊號處理、機器學習
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright © 2017 交通大學電子工程學系
+300 新竹市大學路 1001 號光復校區工程四館   電話: (03) 571-5507, 傳真: 03-5724361 Email: nctueeoffice@ee.nctu.edu.tw
+  
+
+Powered by WordPress & the Atahualpa Theme by BytesForAll
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：平衡式微波/毫米波被動元件之電路設計構想與製作
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+研究計畫
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 平衡式微波/毫米波被動元件之電路設計構想與製作Design Concept and Implementation of the Balanced Microwave/Mm-Wave Passive Circuits
+作者: 張志揚CHANG CHI-YANG國立交通大學電信工程學系（所）
+公開日期: 2011
+官方說明文件#: NSC98-2221-E009-034-MY3
+URI: http://hdl.handle.net/11536/98949https://www.grb.gov.tw/search/planDetail?id=2215074&docId=354469
+顯示於類別：研究計畫
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef平衡式微波/毫米波被動元件之電路設計構想與製作 / 張志揚;CHANG CHI-YANG平衡式微波/毫米波被動元件之電路設計構想與製作 / 張志揚;CHANG CHI-YANGIntegrating passive components with active circuits using standard silicon process for millimeter-wave applications - (Invited paper) / Meng, Chinchun;Tseng, Sheng-CheGilbert Mixers With Microwave Quadrature/Differential Generators: An Approach for Millimeter-Wave IC / Meng, Chinchun;Tseng, Sheng-Che低溫共燒陶瓷技術之非平衡至平衡及電容抽頭分接式交連濾波器暨射頻平衡輸入至平衡輸出帶通濾波器研究 / 吳能炎;Nen-Yen Wu;鍾世忠;Shyh-Jong Chung國立中央大學 - 積體化微波被動元件之研製與2.4GHz射頻電路設計 / 林睿輝 Ruey-Huei Lin 國立清華大學 - 微波平衡式濾波器之設計與量測 / Lin, Kuan-Yu; 林冠餘 國立臺灣大學 - 毫米波電路與天線II─毫米波電路與天線II子計畫一:單面被動組件 / 陳俊雄 國立臺灣科技大學 - 使用新式微波導波結構研製平衡-不平衡轉換器、混波器及CMOS毫米波帶通濾波器 / 蕭語鋕 國立中正大學 - 毫米波CMOS平衡式帶通濾波器之設計 / 廖彥寧; Liao, Yenning Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：研究計畫
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+研究計畫
+: [16504]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 16504 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2017單層碳與Weyl半金屬的電動力學性質儒森斯坦 ; 國立交通大學電子物理學系（所） 
+2016微波電漿氮化金屬氧化物及化學氣相沉積鑽石張立; CHANG LI; 國立交通大學材料科學與工程學系（所）
+2016功能性新穎螢光體之研製、特性鑑定及能量傳遞之研究與其在節能、生化檢測與綠能元件之應用陳登銘; CHEN TENG-MING; 國立交通大學應用化學系（所）
+2016新穎矽量子點薄膜之開發與其在太陽能電池之應用李柏璁; Lee Po-Tsung; 國立交通大學光電工程學系（所）
+2016分子設計與元件工程於高分子太陽能電池許千樹; HSU CHAIN-SHU; 國立交通大學應用化學系（所）
+2016結合非揮發性之多核心系統與記憶體架構陳添福; Chen Tien-Fu; 國立交通大學資訊工程學系（所）
+2016數位鑑識應用於多國文字的印刷來源辨識及掃瞄印刷偽造文件的偵測蔡銘箴; TSAI MIN-JEN; 國立交通大學資訊管理與財務金融學系
+2016補助國內大專院校購置「 Datastream 財經資訊」資料庫專案戴天時; Dai Tian-Shyr; 國立交通大學資訊管理與財務金融學系
+2016具非揮發性記憶體之多核心處理器電源與記憶體管理曹孝櫟; Tsao Shiao-Li; 國立交通大學資訊工程學系（所）
+2016R-1234 系列冷媒熱流特性與系統研究開發王啟川; WANG CHI-CHUAN; 國立交通大學機械工程學系（所）
+2016克雷白氏肺炎桿菌CG43反應膜外壓力的雙分子系統CpxAR 的功能性探討彭慧玲; PENG HWEI-LING; 國立交通大學生物科技學系（所）
+2016探討大腦語音神經編碼之機制與長期聲音處理對其之影響曲在雯; Chiu Tzai-Wen; 國立交通大學生物科技學系（所）
+2016設計合成新穎P型與N型有機共軛分子應用於溶液製程之有機光電元件鄭彥如; Cheng Yen-Ju; 國立交通大學應用化學系（所）
+2016指定機組之流線型生產排程：複雜度分析與文獻綜覽林妙聰; Lin Bertrand  Miao-T; 國立交通大學資訊管理與財務金融學系
+2016利用果蠅中樞神經系統發育系統性探討神經幹細胞的典型分化模式及分子機制高智飛; Kao Chih-Fei; 國立交通大學生物科技學系（所）
+2016利用溶液製程之鈣鈦礦材料製作新穎光電元件-子計畫二：可溶液製程之有機金屬鹵化鈣鈦礦光電材料特性研究與其發光元件的開發陳方中; Chen Fang-Chung; 國立交通大學光電工程學系（所）
+2016台灣左翼思想口述計畫（1970年代至1980年代）陳光興; CHEN KUAN-HSING; 國立交通大學社會與文化研究所
+2016族群傳播與客家蔡欣怡; 國立交通大學傳播與科技學系
+2016新穎磁性複合型介晶體材料之研製與應用朱英豪; Chu Ying-Hao; 國立交通大學材料科學與工程學系（所）
+2016結合傳統金屬與新穎類金屬材料發展錶面電漿之垂直整合元件進行生物粒子捕獲與感測之前瞻性研究李柏璁; Lee Po-Tsung; 國立交通大學光電工程學系（所）
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 16504 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+88 
+吳重雨88 
+蔡春進77 
+林進燈75 
+LIN CHIN-TENG75 
+黃志彬74 
+許千樹73 
+HSU CHAIN-SHU71 
+張良正71 
+李鎮宜69 
+LEE CHEN-YI.
+下一步 >
+
+關鍵字
+408 
+ 114 
+類神經網路79 
+客家71 
+Neural network58 
+量子點54 
+虛擬實境53 
+Hakka48 
+網際網路47 
+氮化鎵45 
+Virtual reality.
+下一步 >
+
+公開日期
+5169 
+2010 - 20177869 
+2000 - 20093466 
+1993 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+
+聯盟實驗室 - 臺灣電磁產學聯盟
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+您的瀏覽器不支援Javascript，部分功能將無法呈現。
+
+
+:::
+迴首頁
+|
+網站導覽
+|
+友善列印
+|
+Login
+|
+English
+臺灣電磁產學聯盟
+
+
+
+
+
+::: 關於聯盟聯盟宗旨及願景聯盟組織聯盟實驗室聯盟研究群聯盟行政團隊
+
+
+:::
+臺大台科大北科大交大中央元智中山中正中華科大各校實驗儀器對外借用規定聯盟實驗室 / 中央 
+
+
+
+
+ 簡介: 
+                    中央大學電機系自10餘年前起即陸續投入高頻、高速電路與元件技術開發,因應近年無線通訊產業之蓬勃發展, 陸續增聘相關教研人才,而於94年成立電波教學研究組。團隊成立雖晚,但結合國內外電波領域名校畢業之年輕優秀師資,為國內電磁科技領域平均年齡最低的學界團隊,因而活力十足,尤其近年來得校、院、系的大力資助,於中大電機系原有之良好高頻、高速電路量測與製程設備基礎上,陸續擴充微波與毫米波電路相關軟、硬體,如建立毫米波電路與元件量測實驗室及大型電波暗室等設施,並運作中大貴重儀器中心之高頻功率與雜訊量 測系統,亦與中研院、工研院、中科院建立長期合作關係,迅速成為國內培育電磁相關人才重要據點之一。團隊成員專精於微波與毫米波天線與主、被動單晶積體電路技術,並結合中大電機系之高速元件研發能量,發展新世代銻化物電晶體、鐵性薄膜微波元件、與高速光連接模組等,期於未來數年內能在下一代高頻、高速電路技術發展上,能呈現突破性的進展與重要研究貢獻。 
+
+
+
+
+
+
+
+
+ 目標: 
+                    開發新世代高頻主、被動元件與電路技術,建置射頻至毫米波頻段完整之電路量測與系統驗證平臺,培育高頻電 路技術人才,帶動業界技術創新,協助國內電磁相關產業發展。 
+
+
+
+
+
+
+
+
+ 人員: 
+                    現有邱煥凱、丘增傑、林祐生、張鴻埜、凃文化、傅家相、李俊興等專任教師7名,半數具有相關產業實務經驗。研究生部份現有碩士生約40人,博士生20餘人。
+
+
+
+
+
+
+
+
+
+ 研究領域: 
+                   射頻、微波、毫米波與太赫茲積體電路、行動通訊天線、高頻封裝與模組技術、高功率微波元件與電路、高速混合積體電路、通訊系統工程等。
+
+
+
+
+
+
+
+
+
+ 設備: 
+                    儀器方麵包括毫米波向量網路分析儀、頻譜分析儀、向量訊號產生器、雜訊參數儀,及功率量測系統,與探針平臺、打線機、高速示波器、任意波形產生器、電波暗室等。 
+                     軟體方麵包括HFSS, Sonnet, IE3D, ADS, Microwave Office, Semcad等主流高頻電磁與電路分析軟體。
+
+
+
+
+
+
+
+
+ 服務項目: 
+                    S參數測量(~170GHz)、高頻功率與雜訊量測(~40GHz)、高低溫元件直流特性測試、高速數位訊號量測驗證、天線量測(1-18GHz)等。
+
+
+
+
+
+
+
+
+
+ 重要成就: 
+                                 ● 長期投入矽基與化合物半導體微波單晶積體電路技術,並與產業界緊密合作。 
+                                 ● 超寬頻調變器技術居世界領先。 
+                                 ● 與業界合作開發GPRS手機低溫共燒陶瓷射頻模組,並成功量產。 
+                                 ● 持續並有系統地進行行動通訊裝置天線相關研究。  
+                                 ● 於微型化微波被動元件開發方面成果豐碩,並積極投入新興兆赫波成像系統與異質整合能量獵取電路設計,已有成果發表於國際頂尖期刊。
+
+
+
+
+
+
+
+
+
+ 重要技術: 
+                    射頻與毫米波積體電路、整合被動元件、多頻天線與相位陣列、兆赫波成像系統、系統級封裝異質整合、能量獵取電路設計、可調式微波元件與電路技術等。
+
+
+
+
+
+
+
+
+
+ 連絡人: 
+                     吳素惠 03-4227151 ext. 34517, e-mail: sophiewu@ee.ncu.edu.tw
+
+
+
+
+
+
+
+:::
+
+
+標準版RSs 2.x套裝最新消息最新消息近期活動聯盟行事曆關於聯盟聯盟宗旨及願景聯盟組織聯盟實驗室聯盟研究群聯盟行政團隊聯盟成員學界會員台灣大學台灣科技大學臺北科技大學中央大學交通大學元智大學中山大學中正大學其他學校企級會員研級會員加入聯盟聯盟服務學界會員加入流程企級會員加入流程研級會員加入流程聯盟成果活動成果出版品活動相簿電磁知識家活動報名系統相關連結
+
+
+Login
+:::
+
+
+帳號:
+
+密碼:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本站
+ 站外 
+
+
+
+
+
+
+
+
+
+
+
+本網站著作權屬於臺灣電磁產學聯盟，請詳見使用規則。
+電話:02-33663713 　傳真:02-33665599 					
+地址：10617臺北市大安區羅斯福路四段1號 國立台灣大學電機系 博理館7樓BL-A研究室 	
+E-Mail：temiac@ntu.edu.tw				
+建議使用Google Chrome或Mozilla Firefox，並將螢幕解析度設定為1024*768，以獲得最佳瀏覽效果
+
+
+
+
+瀏覽人數：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立中央大學 電機工程學系 高中生區
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+您用的瀏覽器不支援iframe，請改用支援框架的瀏覽器來閱讀。
+
+
+
+
+
+
+
+系所介紹
+學生活動
+活動花絮
+
+友站連結
+中大生活知訊網
+
+
+
+
+
+
+電機工程學系 
+    Department of Electrical Engineering
+系所簡介
+
+組織架構 
+
+電機系學些什麼? 
+
+科學家試著去研究並理解我們現存的這個宇宙；工程師則試著開發並創造前所未見的新世界 
+工程師應用科學家發現的原理與規則去開發新技術與新產品來解決實際的問題 
+電機工程學 (Electrical Engineering)，只要與「電」有關，從早期的大電機(台電)到現今的微電子(台積電)都是我們的守備範圍 
+
+電機、資工、通訊有何不同? 
+
+電機系 – 例如手機裡的IC和電路板 (偏重硬體) 
+資工系 – 例如手機裡的 Apps和作業系統  (偏重軟體)
+通訊系 – 如何讓手機通話清晰、手機上網流暢 
+
+
+ 
+大學部實驗室簡介
+
+電子電路實驗室 
+電機機械實驗室 
+VLSI/CAD實驗室 
+固態電子實驗室 
+電磁波實驗室 
+嵌入式系統實驗室 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+組別介紹
+
+電子電路組－數位與類比積體電路(IC)設計
+
+	      智慧電子系統設計、超大型積體電路與系統設計、單晶片系統(SoC) 電腦輔助設計、混合信號或高速積體電路設計、生醫電子電路與系統設計、超大型積體電路系統測試與設計自動化和物聯網等。
+	    
+固態組－半導體元件 
+
+	      先進半導體製程、量子與奈米元件、光電元件、微波元件和微機電技術等。
+	    
+系統與生醫組－機器人、生醫電子與電力電子
+
+	      智慧型控制理論與應用研究、機器人、機電系統設計及應用、生醫工程及高科技輔具、語音處理與辨識、電力電子與電動機控制應用和智慧電網等。
+	    
+電波組－天線、射頻(RF)電路與通訊系統設計
+
+	      天線及波導、數值模擬方法、電磁量測技術、微波及毫米波電路設計和衛星遙測技術等。
+	    
+
+ 
+師資陣容
+
+電機系分為電子、固態、系統與生醫、電波等教學研究組，含大學部、碩士班及博士班等三個學程，目前專任教師計35名，其中教授19名、副教授8名、助理教授7名和講師1名。
+
+ 
+核心課程
+
+本系最低畢業學分為133學分，包含校訂必修30學分，系訂必修55學分，系訂選修36學分（設置電子、固態、系統與生醫與通訊等五大類別），專題實驗課程9學分及其他4學分。課程規劃在於提供紮實的專業基礎課程，並以培養學生獨立研究能力及實務基本技能為目標。
+
+ 
+企業導師制度
+
+為培養在校生正確的職場認知與社會競爭力，本系自103學年度成立企業導師制度，特邀請畢業學長姐參與，不定期與學弟妹聚會，分享交流有關產業、創業等職場及生活經驗。
+
+
+
+ 
+
+
+	  　　研究範疇涵括積體電路設計、奈米電子、光電通訊系統、控制與電力電子系統、生醫系統、電波工程等方向。各組橫向連結，形成緊密的研究團隊，開發高頻高速通訊系統與生醫工程系統之基礎理論與前瞻技術，以因應優質生活意識的抬頭與高齡化社會的需求。    
+
+電子電路組
+
+　　本組核心發展方向有二：（一）高頻高速電路與系統晶片設計（二）單晶片系統之可靠性設計平臺。著力於先進電路與系統設計以及建構整合高良率暨可靠度的自動化設計平臺等技術發展。
+
+固態組
+
+　　本組特色側重於奈米量子元件、光通訊元件及高頻高速積體電路。本組素以高頻高速積體電路卓越研究見長，在單電子電晶體及單光子發射源與光檢測器等奈米元件之技術及理論，亦領先國內各研究單位，和美、日、德併駕齊趨。相關的奈米技術再結合高頻高速積體電路的成果，可以發展成尖端高速奈米積體電路，最終可應用到量子通訊、密碼學、生醫檢測器、量子計算機及量子訊息處理。 
+	  　　　　　　　　　　　　
+	  
+系統與生醫組
+
+　　本組之整體研究目標在於結合各組發展優勢，開發高科技前瞻生醫工程系統。因應優質生活意識的抬頭與高齡化社會的需求，本組研究結合控制理論、馬達控制、電力電子與生醫工程等技術，開發高科技前瞻生醫工程輔具系統。核心發展方向有二：（一）溝通生醫輔具（二）行動生醫輔具。未來可結合高頻高速小型化運算電路與系統，開發區域性醫療測試監控網路。 
+	  　　　　　　　　　　　　　　
+	  
+電波組
+
+　　本組研究發展著重於遙測及通訊毫米波系統平臺之開發，主要內容包括有任務導向創新性高性能高整合度毫米波系統研製及高速電磁模擬計算平臺開發。配合中大既有特色領域太空遙測及光電科技，進行雷達、遙測、輻射計、電波望遠鏡等微波及毫米波系統組裝及測試。 
+ 
+
+
+國立中央大學電機工程學系　 (32001) 桃園市中壢區五權里2鄰中大路300號
+          TEL：(03) 422-7151 轉 34567 , 34568 | FAX：(03) 425-5830
+        | E-mail：eeoffice@ee.ncu.edu.tw Copyright © Department of Electrical Engineering, NCU. All Rights Reserved.
+隱私權政策聲明
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電光系統所_【高頻系統】高頻電路設計與系統應用工程師(M200)_工研院 _財團法人工業技術研究院 - 104人力銀行
+
+
+
+
+
+
+
+
+
+
+
+
+                        電光系統所_【高頻系統】高頻電路設計與系統應用工程師(M200)                        
+工研院 _財團法人工業技術研究院
+本公司其他工作
+
+
+
+我要應徵
+處理中...
+儲存工作
+處理中...
+
+
+0~5人應徵
+FB 分享
+轉寄
+檢舉
+
+
+
+
+
+
+
+
+
+
+
+工作內容
+
+1. 天線陣列 (Antenna array)開發2. 相位陣列(Phase array)開發3. 波束成型 (Beam-forming)開發4. 毫米波天線與前端模組(millimeter wave antenna and front end module)5. 77GHz 車用雷達 (77GHz car radar)開發6. 合成孔徑雷達(SAR)開發7. 雷達/遙測/毫米波/太赫茲成像系統開發8. OFDM & MIMO 60GHz 收發機 (OFDM & MIMO 60GHz transceiver)開發9. OFDM毫米波光載微波系統 (OFDM Radar over fiber system)開發
+
+職務類別：
+
+硬體研發工程師、RF通訊工程師、韌體設計工程師 
+
+
+
+
+
+
+認識「」職務
+
+詳細職類分析(工作內容、薪資分佈..)
+更多相關工作
+
+
+
+
+工作待遇：
+依公司規定
+工作性質：
+全職
+上班地點：
+
+	                                    新竹縣竹東鎮中興路四段195號
+
+
+
+
+
+
+
+地圖找工作
+
+
+
+
+管理責任：
+不需負擔管理責任
+出差外派：
+需出差，一年累積時間未定
+上班時段：
+日班，08:00~17:00
+休假制度：
+週休二日
+可上班日：
+不限
+需求人數：
+1至2 人
+
+
+
+
+條件要求
+
+
+接受身份：
+上班族
+工作經歷：
+不拘
+學歷要求：
+碩士以上
+科系要求：
+電機電子工程相關、通信學類
+語文條件：
+
+英文 -- 聽 /中等、說 /中等、讀 /中等、寫 /中等
+
+擅長工具：
+不拘
+工作技能：
+不拘
+其他條件：
+1. 碩士(含)以上，電機、電子、電信、通訊等相關科系2. 具有IC下線、無線系統應用設計、微控制器等軟軔體系統整合開發之經驗尤佳3.請檢附相當於TOEIC 650分之英語測驗成績證明，如無法提供，將安排參加本院英文檢測
+
+
+
+
+公司福利
+
+這是一個為研究菁英打造的研發環境，我們的訴求是讓研究人員能在此構築人生理想及技術成就，讓工作與生活兼顧平衡與樂趣。多年來致力於打造讓每位工研人身體健康、工作愉快，進而使家庭幸福快樂的友善職場。優於法規之多元給假制度針對不同族群，設計多元且優於法令規定之給假方案，以利員工於工作之餘，得以兼顧各式之需要，如：特別休假、新人彈性預支休假、安胎及育兒假、志工假等。 幸福成家開發專屬未婚員工的交友網站-『男女拉拉對』，同仁可加入網站會員，與其他會員互動，並可參加定期舉辦的未婚聯誼活動，讓單身同仁有更多管道結交朋友，促成良緣。 幸福安家關懷女性同仁哺育母乳的需求，特於各院區設置母愛室。為了讓同仁子女得到妥善照顧，設有托嬰中心、幼兒園、及附設安親班。每年舉辦院慶、運動會暨家庭日以及藝文及親子活動，邀同仁與家人共同參與。悠活館設有室內溫水游泳池、水療池、蒸氣室、烤箱、兒童池、健身房、羽球場、網球場、桌撞球桌、韻律教室等，讓員工鍛練體魄、紓發壓力、促進健康。 工研餐廳提供全方位餐點服務，聘有專業之營養師，提供色香味俱全的美食外，更針對食的安全與健康予以嚴格的把關與守護。「工研人好健康」促進網絡除了設置醫務室，由醫師排班駐診，給予員工最便利及時的醫療診治，我們更提供不分年齡層每年一次的免費健康檢查、建構全方位照護網－「工研人好健康」，依健康分級給予不同的健康促進方案，達到提昇個人健康善的循環。 諮商室 建置溫馨舒適的諮商環境，由專業心理諮商師提供員工關於身心靈各類問題之免費諮商與輔導。
+
+
+
+聯絡方式
+
+
+聯絡人：
+陳先生
+
+
+
+
+
+更新日期：2017-07-11
+
+
+與電光系統所_【高頻系統】高頻電路設計與系統應用工程師(M200)相關的工作
+
+推薦工作
+104 智能管家依據您平常儲存、應徵工作的喜好，為您推薦工作！請先登入My104 會員中心
+
+
+
+看過此工作的人也看以下工作
+推薦課程
+
+
+
+
+瀏覽工作紀錄
+清除
+
+
+
+
+
+
+
+104提醒：
+求職應徵請準時赴約並註意安全。如有公司要求您交付提款卡及密碼、信用卡、銀行郵局帳號、身分證，及要求繳費、購買服務或產品等情事，請勿進行並速與警方反詐騙專線165聯繫。看更多>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立中央大學 電機工程學系 關於電機-實驗室介紹
+
+
+
+
+
+
+
+
+
+
+
+您用的瀏覽器不支援iframe，請改用支援框架的瀏覽器來閱讀。
+
+
+
+
+
+
+
+教育宗旨與目標
+歷史沿革
+系所現況
+辦學特色
+實驗室
+實驗室管理規則
+統計資料
+榮譽榜
+
+
+
+
+
+
+
+
+
+　　主要研究方向在單晶片系統設計與電腦輔助設計、多媒體單晶片系統設計、奈米電路之可靠度分析與測試、混合類比及數位系統設計、微波與射頻積體電路，發展超大型積體電路(VLSI)應用於各種層面之電路設計，以及開發電腦輔助設計之軟體。本組在具備上述專長領域教授群的指導下，先後成立類比混合、射頻與微波、多媒體系統設計、可靠度分析與測試、單晶片系統測試與電腦輔助設計等實驗室，此外本組亦為國科會之重點發展實驗室，並爭取到多個國科會與國家型之大型群體研究計畫、經濟部大型產學計畫、教育部系統晶片教育改進計畫、與業界產學計畫。在研究設備方面，具混合信號量測實驗室至10GHz左右之數位/類比量測能力，微波、毫米波量測能力至50 GHz，單晶片系統設計實驗室建立SoC設計工具及流程，使其具備未來前瞻計畫執行之功能。
+ 
+
+
+
+
+
+類比混合、射頻與微波實驗室
+多媒體系統設計實驗室
+
+
+可靠度分析與測試實驗室
+
+單晶片系統測試與電腦輔助設計實驗室
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+　　現有師資九人均專精於固態元件。有五位教授致力於提升高速光電之元件速率及頻寬，四位教授著重於奈米元件之製作及特性量測。前者和工業界己經有密切合作，例如提升手機功能，通信品質及速率都很有助益。對台灣的經濟絕對有不可忽視的貢獻。除此之外，也培育了不少研究生參與台灣科技的提升。後者對台灣科技，無論是積體電路，通訊系統，材料科學等有全方位的影響。本組之單電子電晶體及單光子產生器不僅在台灣是先驅，在國際上和美，日，德各研發小組的成果也有等同的地位。值得驕傲的事，我們的研發費用約他們的六分之一不到。因能源的短缺，節能的電子元件更顯重要。單電子電晶體及單光子產生器是極低耗電元件。經由奈米元件的開發，從中而有新技術的發明，進而能實現量子通信及量子計算。如能實現量子通信及量子計算，這不僅是文化上的進展，而是人類文明的革命。本組的教授也深切的認知知識傳承與普及的重要，所以我們也強調科技教育與人文教育的結合，開授通識課，讓科學能在社會各角落生根，為科技立國盡心力。 
+
+
+
+
+
+固態電子實驗室
+磊晶成長實驗室
+
+
+光電元件量測實驗室
+
+光電元件製造潔淨室
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+　　本組之整體研究目標在於結合各組發展優勢，開發高科技前瞻生醫工程系統。為了因應優質生活意識的抬頭與高齡化社會的需求，本組以控制理論、馬達控制、電力電子與生醫工程為知識基礎，開發高科技前瞻生醫工程輔具系統。利用所開發的高感測生物晶片，配合電生理放大器之製作，經過生醫訊號處理、影像處理等技術，萃取有意義的生理訊號，進一步配合模糊控制理論與智慧型控制機器人，達成完整的智慧型生醫輔具系統開發。以目前系統與生醫組現有教師之專長，將開發以下兩個核心發展方向：
+ 　　一、 溝通生醫輔具。
+              　　二、 行動生醫輔具。 
+            　　溝通生醫輔具是藉由生醫訊號、生醫影像處理的技術發展為基礎，配合生醫系統模擬與高科技演算法的開發，製作人工電子耳，開發聽語辨識系統等；行動生醫輔具的開發則是以訊號處理、影像處理為基礎，經過各式先進控制理論，萃取電生理訊號於智慧型機器人、馬達控制系統等輸出系統的操控上，所需的驅動電源則由電力電子相關實驗室所開發的高效能電源系統提供。
+          　　未來結合電子組與固態組開發高頻高速小型化運算電路與系統，並結合電波組開發區域性醫療測試監控網路。進一步配合電機工程學系與資電院之整體發展，爭取跨領域整合型研究計畫，開設尖端生醫領域與電子電機控制領域的前瞻性課程，達到研究與教學之最佳綜效。 
+
+
+
+
+
+語音處理實驗室
+電力電子與訊號處理實驗室 
+
+
+智慧型控制實驗室
+
+Bioinformatics&Cad Lab
+
+
+智慧型動態控制實驗室
+生醫系統模擬與聽語實驗室
+
+
+電機控制實驗室
+
+
+
+
+
+
+
+ 
+　
+
+
+
+
+
+　　有鑑於微波電路於無線通訊與遙測等科學應用的蓬勃發展，本系約於三年前成立電波組，強化電波領域的教學與研究工作。目前電波組共有專任教授5位，合聘教授2位，專長涵蓋天線、微波與毫米波主、被動元件設計，數值電磁分析，以及微波遙測。隨著電信產業的快速成長，無線通訊技術的進展甚為迅速，頻帶的需求也更形殷切，促使通訊系統往更高頻段發展，而各式影音多媒體裝置也逐漸成為消費性電子產品的主流，因而在未來的無線通訊系統中，超高速數據傳輸(Gigabit Transmission)的需求將越來越大，其應用包括有大眾運輸工具內與室內之無線寬頻影音資料連接、娛樂檔案傳輸、以及高畫質醫療影像傳輸等。為降低佈線複雜度與修復之難度，以無線通訊方式進行此類超高速數據傳輸應用為最佳之選擇。而由於毫米波頻率範圍從30至300  GHz，具有較大的頻寬可用於超高速無線傳輸；且因波長較短，相對地電路面積也較小，又於現階段頻譜資源較不擁擠且因大氣衰減量較大，較不易受到鄰近使用者乾擾，並可應用於高解析度的雷達、微波影像或遙測系統，在IEEE 802.16標準上，也規劃10至66 GHz頻段可供寬頻無線傳輸使用。相較於有線光纖同軸混合電纜網路需要二到四年的網路建置時間，毫米波頻段無線通訊系統只需約六個月便可完成網路架設，對於超高速數據傳輸的應用與普及來說極具開發潛力。為配合此一發展趨勢，電波組教師整合各自研究專長，規劃進行「毫米波寬頻雙向收發機系統」的研製，其目標為：以創新的雙向收發機架構，研發微小化與低成本的毫米波頻段無線寬頻收發機，並建立毫米波寬頻無線通訊系統元組件與系統整合之關鍵技術。除此之外，所開發的毫米波頻段電路技術，亦可應用於微波遙測及影像、衛星通訊、汽車自動駕駛雷達、無線電識別系統(RFID)、雷達及航空器導航系統和電波天文望遠鏡等，對於國內毫米波技術的提升與其於航太科技應用將有很大的助益，亦可培養參與研究人員及學生，成為國內在微波及毫米波積體電路設計與系統整合之重要人才。 
+
+
+
+
+
+電磁波實驗室
+ 
+
+
+
+
+
+
+
+
+
+國立中央大學電機工程學系　 (32001) 桃園市中壢區五權里2鄰中大路300號
+          TEL：(03) 422-7151 轉 34567 , 34568 | FAX：(03) 425-5830
+        | E-mail：eeoffice@ee.ncu.edu.tw Copyright © Department of Electrical Engineering, NCU. All Rights Reserved.
+隱私權政策聲明
+
+
+
+
+
+
+
+
+
+
+
+
+NCTU+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          進階搜尋
+        
+
+
+
+
+
+
+
+所有學期
+106上
+105暑
+105下
+105上
+104暑
+104下
+104上
+103暑
+103下
+103上
+102暑
+102下
+102上
+101暑
+101下
+101上
+100暑
+100下
+100上
+99暑
+99下
+99上
+
+
+分類
+大學部
+大學部共同
+研究所
+
+
+系所
+華語中心
+通識教育中心
+語言教學與研究中心
+師資培育中心
+交大遠距教學
+體育室
+軍訓室
+資訊技術服務中心
+圖書館
+普通物理教學小組
+微積分教學小組
+衛保組(健康與護理)
+教務處
+寫作中心
+服務學習中心
+計概小組
+課務組
+國際處
+臺中一中科學班
+資訊學院共同課程
+電機學院共同課程
+管理學院共同課程
+電機學院與資訊學院共同課程
+
+
+
+
+
+
+
+學期
+系所/摘要
+課名
+老師
+學分
+時間
+年級
+收藏
+
+
+
+
+            103下
+          
+
+            應化所 
+          
+有機金屬化學
+王朝諺
+3
+1BCD
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            應用化學系分子科學碩博班 
+          
+量子化學
+魏恆理
+3
+4EFG
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            語言教學與研究中心 基礎
+          
+大一英文（二）
+N/A
+2
+3CD
+
+            1
+          
+
+
+
+
+
+
+            103下
+          
+
+            資訊學院碩士在職專班 
+          
+計算機網路
+陳耀宗
+3
+4IJK
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            電機學院碩士在職專班 
+          
+影像處理
+林昇甫
+3
+4IJK
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            科技管理研究所 
+          
+顧客關係管理與服務行銷
+林亭汝,周啟陽
+3
+1IJK
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            電資學士班 
+          
+國外研習
+洪崇智
+3
+6ABC
+
+            4
+          
+
+
+
+
+
+
+            103下
+          
+
+            清華大學 
+          
+計算機網路概論
+張正尚
+3
+1GH4F
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            應數所 
+          
+偏微分方程數值方法
+賴明治
+3
+1EFG
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            電信工程研究所 
+          
+消息理論
+李冕
+3
+4EFG
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            電信工程研究所 
+          
+展頻通訊
+黃家齊
+3
+2B4GH
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            應數所 
+          
+生物數學導論
+石至文
+3
+2CD3G
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            管理學院碩士在職專班-科管組 
+          
+財務策略與管理
+洪志洋
+3
+1IJK
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            科技管理研究所 
+          
+財務策略與管理
+洪志洋
+3
+1EFG
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            工學院碩士在職專班-精密組 
+          
+碩士論文研究
+精密專班
+3
+
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            管科所 
+          
+資訊管理
+胡念祖
+3
+6BCD
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            管理學院碩士在職專班-管科組 
+          
+會計學
+蔡璧徽
+3
+5IJK
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            音研所 
+          
+音樂理論
+吳慈菁,洪億津
+2
+1GH
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            土木系 
+          
+物理實驗（二）
+物理實驗助教
+1
+5ABC
+
+            1
+          
+
+
+
+
+
+
+            103下
+          
+
+            管理學院碩士在職專班-物流組 
+          
+數量分析方法
+馮正民,汪進財,邱裕鈞,卓訓榮
+3
+5IJK
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            電子研究所 
+          
+電子專題研討(系統組)
+溫    岸,賴伯承
+0
+2EF
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            建築研究所 
+          
+數位專題:自創生與自我組織
+劉嘉驊
+3
+2IJY
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            電機資訊國際碩、博士學位學程 
+          
+專題研討
+李毅郎
+0
+
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            管理學院碩士在職專班-物流組 
+          
+供應鏈規劃與策略
+馮正民,陳穆臻
+3
+6BCD
+
+            *
+          
+
+
+
+
+
+
+            103下
+          
+
+            清華大學研究所 
+          
+奈米碳管專論
+徐文光
+3
+5BCD
+
+            *
+          
+
+
+
+
+
+
+
+
+
+				﻿
+First
+
+				﻿
+
+Prev
+
+
+...
+
+
+581
+
+
+582
+
+
+583
+
+
+584
+
+
+585
+
+
+...
+
+
+Next
+
+
+Last
+
+
+
+
+
+
+
+	© Copyright NCTU+ 2016 
+	
+
+
+
+
+
+
+
+
+
+
+
+

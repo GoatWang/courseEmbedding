@@ -1,0 +1,3730 @@
+
+
+
+
+正規語言概論 | 交資夢想 – moved to http://shaform.com/csdream/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+交資夢想 – moved to http://shaform.com/csdream/
+
+
+交大資工，交織夢想。
+
+
+
+
+
+Skip to content
+
+主頁文章彙整
+關於
+
+
+
+
+
+
+
+
+← 離散數學
+密碼學概論 →
+
+
+正規語言概論
+
+Posted on 十二月 10, 2011 by Shaform  
+
+前言
+正規語言概論是交大資工大三上的必修課程。這門課的課題是基礎的計算理論，研究什麼是電腦的能力和極限。介紹各種計算模型，例如 DFA, NFA, PDA, Turing machines 等等，以及其相對應的正規語言，如 regular languages, context free languages, Turing-decidable languages 等等。也會探討問題間的 Reduction 以及問題的 Complexity 等等。
+繫上使用的教科書主要是《Introduction to the Theory of Computation》不過也有老師使用《Introduction to Automata Theory, Languages, and Computation》。
+簡介
+透過計算模型，我們可以對計算定下明確的數學定義。而一旦有了明確的定義，便可以研究什麼是可計算的、什麼是不可計算的，而對於可計算的問題，必須花費多少時間和空間才可能計算。
+Church–Turing thesis 指出，所有演算法可解的問題，都可透過 Turing machines 求解，也因此，藉由研究 Turing machines 我們得以探討電腦的極限，以及對各種問題的難度訂出明確的界線。
+這是一門非常理論與數學的課，需要非常清晰的邏輯思考。老師曾說，資訊界日新月異，許多課程可能幾年後就不見了，或者教的東西大幅改變。但你幾乎可以確定，正規語言這門課還是會一直存在。從哲學的角度來說，計算理論在電腦科學裡佔了十分核心的地位。
+正規語言課程所學的東西其實也有很多延伸的應用，以至於很多讀者很可能早已接觸過某些部份，但直到這門課，才真正以嚴謹的方式學習背後的來歷。像是如果有接觸像 Python 等語言或者用過 Vim 等編輯器的搜尋功能的讀者，很有可能有接觸過正規表示式。而 CFG 和程式語言的設計以及編譯器等課程有密切相關，你或許會曾在程式語言的文件上看過他。如果在演算法等課程聽過 NP、P 等名詞，在這堂課裡，你可以學到這些名詞到底有什麼含意。而對什麼是演算法，時間複雜度、問題的可計算性等等，都會在這堂課得到更深的理解。
+學習小指引
+課本本身寫的很好，建議將《Introduction to the Theory of Computation》研讀數遍，並配合書中練習題。
+參考
+
+Computability and Complexity
+Automata, Computability, and Complexity
+Regular Expression (RegExp) in JavaScript
+
+ 
+
+廣告
+
+
+
+
+ 
+
+
+Share this:點擊分享到 Google+(在新視窗中開啟)分享到 Facebook(在新視窗中開啟)分享到 Twitter(在新視窗中開啟)Click to email(在新視窗中開啟)請按讚：喜歡 載入中...
+
+相關
+ 
+
+												本篇發表於 交大課程 並標籤為 計算理論, 資工, 正規語言, 交大課程, 交大資工。將永久鏈結加入書籤。											
+
+
+← 離散數學
+密碼學概論 →
+
+
+One Response to 正規語言概論
+
+
+引用通告： 正規語言概論 – 交大修課心得 | 一座島
+
+
+
+發表迴響 取消回覆 
+
+
+
+在此輸入你的回應…
+
+
+
+
+在下方填入你的資料或按右方圖示以社群網站登入：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+電子郵件 (必) （電子郵件地址不會被公開）
+
+
+
+名稱 (必)
+
+
+
+個人網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 WordPress.com 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Twitter 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Facebook 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Google+ 帳號。 ( 登出 / 變更 )
+
+
+
+
+取消
+連結到 %s
+
+
+
+
+ 透過電子郵件通知我後續回應。
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+搜尋：
+
+
+
+  最近文章 
+
+資夢
+
+
+Timus Online Judge 教學
+
+
+資訊工程專題
+
+
+交大資工相關獎學金、競賽、工讀與實習機會
+
+
+程式語言
+
+
+ 熱門文章 
+
+						資工系開放式課程資源					
+
+
+
+						正規語言概論					
+
+
+
+						計算機概論與程式設計					
+
+
+
+						基礎程式設計					
+
+
+
+						組合語言與系統程式					
+
+
+
+						數位電路實驗					
+
+
+
+						微處理機系統實驗					
+
+
+
+						交大資工相關獎學金、競賽、工讀與實習機會					
+
+
+
+						文章彙整					
+
+
+
+						資夢					
+
+文章存檔 
+2014 年 五月
+2013 年 六月
+2012 年 十月
+2012 年 七月
+2012 年 六月
+2012 年 三月
+2012 年 二月
+2011 年 十二月
+2011 年 十一月
+2011 年 十月
+2011 年 八月
+2011 年 七月
+2011 年 四月
+
+分類 
+學習資源
+
+實用技能
+
+教學
+
+交大生活
+
+交大課程
+
+
+8051
+ACM
+Arduino
+C
+Google
+Haskell
+HDL
+Java
+microcontroller
+MIT
+OCW
+online judge
+problem solving
+Prolog
+Python
+RSA
+Timus
+Verilog
+交大
+交大課程
+交大資工
+交資夢想
+大學
+學習資源
+密碼學
+實習
+專題
+打工
+搜尋
+教科書
+數學
+正規語言
+獎學金
+程式設計
+競賽
+組合語言
+英語
+計算理論
+資工
+開放式課程其它 
+註冊 登入
+文章 RSS 訂閱
+迴響 RSS 訂閱
+WordPress.com 
+ 
+
+
+
+
+
+
+					交資夢想 – moved to http://shaform.com/csdream/				
+
+
+在WordPress.com寫網誌.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+傳送到電子郵件地址
+
+你的姓名
+
+你的Email
+
+
+
+
+
+
+取消
+
+				文章沒有送出-請確認你的Email位置			
+
+				Email確認失敗,請稍後再試.			
+
+				抱歉，你的網誌無法透過電子郵件分享			
+
+
+
+
+
+ 
+ 
+%d 位部落客按了讚：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+正規語言概論 – 交大修課心得 – 一座島
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+一座島
+一座島，一個人，一個世界。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+一月 2, 2013 by Shaform 
+正規語言概論 – 交大修課心得 
+
+
+Lego Turing Machine from Projet Rubens, ENS Lyon (cc-by)
+課程資料
+正規語言概論
+開課：黃廷祿老師
+修課年度：100資工系
+這門課的課題是基礎的計算理論，研究什麼是電腦的能力和極限。介紹各種計算模型，例如 DFA, NFA, PDA, Turing machines 等等，以及其相對應的正規語言，如 regular languages, context free languages, Turing-decidable languages 等等。也會探討問題間的 Reduction 以及問題的 Complexity。使用的課本是《Introduction to the Theory of Computation》，更多相關議題可參考：〈正規語言概論〉。
+上課方式
+上課是用老師自己編的講義作為投影片講解，有時也會配合課本的頁面。老師上課時常會點同學回答，如果有同學打瞌睡他也會熱心的叫醒大家。老師會記人的名字，筆者就曾被點名回答題目。有時老師的穿著頗為正式，下課時如果問老師問題，他會不耐其煩的細心講解。作業通常是先在上課時宣佈，其後再公佈於課程網頁上。他偶而會在上課時突擊小考。
+他曾說資工有很多課會消失於時代的演進之中，但這堂課是歷久不衰的。
+好像是因為有同學懷疑課本的文法，所以老師有一次和我們談談學習英文的重要性，還跟我們說學校的圖書館有 iPad 可以出借，介紹了可以在其上使用的 Merriam-Webster 英英字典(有真人發音)，以及 New York Times 等讀物。
+順帶一提，筆者也有用過《Longman Dictionary of Contemporary English》以及《Collins COBUILD Advanced Learner’s English Dictionary》，這三者都是非常優秀的英英字典，除了紙本外也都附有 PC 版光碟。關於英英字典也可參考：〈辭典選用的基本觀念〉、〈哪本辭典的定義最好？〉
+考試作業
+這堂課的負擔其實沒有很重，通常是數個禮拜老師才會在上課時宣佈習題。習題內容為課本的練習題，每次都只有一兩題，很快就會寫完，有時老師也會自己出題。
+基本上是不點名，只有一次發了問捲調查作為點名，不過因為上課時有突擊小考，加上作業都在上課先宣佈的關係，建議還是不要蹺課比較好。
+突擊小考的內容多半是剛剛才講過的內容，所以上課專心能有回報。考題不難，通常只有一題，若對課本有一定的熟悉度，應能很快寫完。
+除此之外，還有期中考和期末考。老師會在事前公佈考古題，從考古題看來，以前的考試型態似乎有不少證明題。不過這次的期中考意外的沒出證明題，而且題型偏向簡單，多數人都考的不錯。期末考出了幾題證明，不過也滿基本的，考古題感覺難很多。
+考試題型分別為是非題、選擇題，及最後的簡答、計算與證明題。所有的考試都是 open book，可以自由查閱課本、講義，或任何自帶紙本參考資料。也因此考的題目都會有變化，不會跟考古題一樣。
+結語
+這門課使用的課本其實內容不多，而且由於較為理論與數學，可以邊看邊思考，閱讀起來並不枯燥，筆者暑假時利用通勤的時間，把課本看完了一遍，覺得幫助頗大。《Intro. to the Theory of Computation》這本書真的寫得不錯，算是在資工教科書中，十分易讀的課本之一。
+由於老師出的練習題實在太少，令人感覺不踏實，所以筆者也將課本裡附有答案的習題寫過了一遍。老師並不會出一些刁難的問題，基本上只要細讀課本與講義，考試和作業應該都能把握。
+
+ 
+
+廣告
+
+
+
+
+ 
+
+
+分享此文：GoogleFacebookPocket請按讚：喜歡 載入中...
+
+相關
+ 
+
+
+
+
+
+			2 thoughts on “正規語言概論 – 交大修課心得”		
+
+
+
+
+板主你好，想請問一下無資工背景，來選修這門課，會不會聽不懂？感謝。
+
+
+回應 
+
+
+
+
+
+您好，這個應該是看個人情況有所不同，不過其實印象中這門課跟資工其他課的關聯度沒有很大就是，唯一可能可以算的上是有關的先修課程應該只有「離散數學」。理論上修過其他資工的課並不會比較聽的懂這堂課。
+
+
+回應 
+
+
+
+
+
+
+發表迴響 取消回覆 
+
+
+
+在此輸入你的回應…
+
+
+
+
+在下方填入你的資料或按右方圖示以社群網站登入：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+電子郵件 (必) （電子郵件地址不會被公開）
+
+
+
+名稱 (必)
+
+
+
+個人網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 WordPress.com 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Twitter 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Facebook 帳號。 ( 登出 / 變更 )
+
+
+
+
+
+
+
+
+
+
+
+
+ 您的留言將使用 Google+ 帳號。 ( 登出 / 變更 )
+
+
+
+
+取消
+連結到 %s
+
+
+
+
+ 透過電子郵件通知我後續回應。
+ 
+
+
+
+ 
+
+
+
+
+
+
+ 
+搜尋
+
+
+
+熱門文章與頁面︰ 
+
+						從交大資工到臺大資工所					
+
+
+
+						在臺北實習的短期租屋					
+
+
+
+						千萬別學英語：關於學習、過往、及其它					
+
+
+
+						「從留學到在美就業」講座心得					
+
+
+
+						女生讀資工					
+
+
+
+						談談資工升大學備審資料的準備					
+
+
+
+						談談資工升研究所備審資料的準備					
+
+
+
+						從台灣申請北美軟體工程實習 – 準備篇					
+
+
+
+						高中一年回顧					
+
+
+
+						文章匯整					
+
+  近期文章 
+
+看美劇的日子
+
+
+眼界、控制、選擇
+
+
+閱讀器
+
+
+2016 年末回顧
+
+
+背後的眼光
+
+
+ 近期迴響 
+「姆Q」對「PTT 教我的人生哲學」留言「Shaform」對「從交大資工到臺大資工所」留言「dechen」對「從交大資工到臺大資工所」留言「Shaform」對「2016 年末回顧」留言「6 Anson」對「2016 年末回顧」留言 
+分類 
+生活紀實
+
+白日夢
+
+胡謅
+
+閱書坊
+
+設計間
+
+散掉的紙張
+
+望世界
+
+
+TagsAIESEC
+AP
+Bellevue
+BP
+debate
+dvorak
+english
+Flash
+Google
+Google Drive
+IBM
+Kindle
+linux
+Mainframe
+Master the Mainframe
+Microsoft
+NPSC
+Redmond
+System z
+USA
+交大修課心得
+交通大學
+努力
+升大學的準備方向
+升學
+危險心靈
+古都馬拉松
+臺北
+臺南
+臺大
+台灣
+台灣大學
+回顧
+國文
+大學
+大腦
+學習
+實習
+工作
+心情
+思想
+性別
+教學
+教育
+文字
+新竹
+新聞
+校園
+比賽
+海外實習
+生技
+生活
+研究所
+科幻
+程式
+程式設計
+網路
+考試
+英文
+英語辯論
+行列
+計劃
+設計
+評論
+資工
+超自然
+足球
+軟體工程師
+輸入法
+運動
+閱謮
+閱讀
+電腦
+食物
+鬼Blog Stats 
+278,353 hits
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+張貼到
+
+
+
+取消
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+%d 位部落客按了讚：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fw: [心得] 正規語言概論 - 陳穎平 - 看板 NCTU-Teacher - 批踢踢實業坊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+批踢踢實業坊
+›
+看板 NCTU-Teacher
+關於我們
+聯絡資訊
+
+
+
+
+返回看板
+
+
+分享
+
+
+
+
+
+
+
+作者neoneon (紅茶を飲む程度の能力)看板NCTU-Teacher標題Fw: [心得] 正規語言概論 - 陳穎平時間Tue Jul 12 01:43:57 2016
+※ [本文轉錄自 neoneon 信箱]
+
+作者: [email protected] ("愛宕有機奈米負離子貓")
+標題: [心得] 正規語言概論 - 陳穎平
+時間: Sun Jul 10 10:22:43 2016
+
+作者: kougousei (BOSS) 看板: NCTU-Teacher
+標題: [心得] 正規語言概論 - 陳穎平
+時間: 2012/01/20 Fri 18:28:52
+
+
+⊕課名⊕
+
+正規語言概論
+
+▲教授▲
+
+陳穎平
+
+★修課年度★（請加註開課單位 如:大三通識、XX系選修、XX所）
+
+100上 資工系必修
+
+￡教了什麼￡（課程大概內容。或是額外學會了什麼東西。）
+
+DFA, NFA, CFG, PDA, turing maching, time complexity, NP-complete
+
+簡單來說是資訊工程的理論基礎，探討電腦解決問題的能力到底有多強
+
+(這可能是資工系最理論最數學的一堂課...)
+
+
+◆上課方式◆（投影片、團體討論、老師教學風格）
+
+用ipad放投影片，投影片文字圖片都是教科書的內容
+
+不過偶爾會補充一些課本挪到習題的定理，例如Rice's theorm或CYK algorithm之類的
+
+
+基本上這本課本寫得還不錯，所以不聽課也無所謂，但是老師講解還算詳細，
+
+所以聽課有助於增進理解。
+
+▼考試作業▼
+
+3次考試，值得註意的是老師***非常***要求證明的嚴謹度，
+所以扣分算是扣得蠻嚴格的
+
+不過考試題目大多來自課本習題，事前練習絕對有幫助。
+考古題也一定要寫
+
+考試的班平均還蠻慘的不過學期最後會調分所以還ok
+(聽說調得很神奇)
+
+￥其他￥（是否註重出席率or嚴禁遲到？需要的基礎？）
+
+第一堂課和最後一堂課有簽到.....
+
+
+要修陳老師的課請做好要寫嚴謹數學證明的心理準備，
+否則另外兩班是你更好的選擇。
+
+離散數學和演算法有學好有幫助(邏輯和graph的部分常常出現)，
+不過真的用到時再回去翻or google也來得及啦
+
+￠最後想說的話￠
+
+老師長得很像陳漢典。
+
+
+
+--
+※ Origin: 交大次世代(bs2.to)
+◆ From: 111-240-40-181.dynamic.hinet.net
+推 chingtung：推薦這篇文章                                         01/20 18:40
+肝 pocket579：大推這個陳漢典!!!!!!!!!!!!!!!!他是好人阿!!!!!!!!!    01/20 18:40
+→ chingtung：明明就不像!!!!老師教得很棒^q^                        01/20 18:42
+推 kougousei：越看會越像=3=                                        01/20 18:43
+推 michael01800：我也覺得不像@@不過老師是好人! XD                  01/20 18:55
+推 PSP：老師是帥氣大叔 :$                                          01/20 18:57
+推 canfish98：推薦這個漢典                                         01/20 19:06
+推 sa411022：大推ypchen!!!!!!!                                     01/20 19:29
+推 Roronoa：考試扣分這點我要稍微替老師平反一下                     01/20 20:49
+推 Roronoa：題目的批改方式都是由三個助教討論後決定 並非老師指示    01/20 20:50
+推 Roronoa：改嚴一點是為了 讓認真的同學有較高的報酬                01/20 20:53
+推 gxlkhhc：推薦這篇文章                                           01/20 21:00
+推 mike1026915：推薦這篇文章                                       01/20 21:09
+推 leoturkey：推薦這篇文章                                         01/20 22:08
+推 jeffrey1：推薦這篇文章                                          01/20 22:16
+推 smilecat13：推調分調的很神奇... 應該有20多分吧?!                01/20 22:32
+推 hsnuer1171：不像啊@@"                                           01/21 00:16
+推 jarhys：推薦這篇文章                                            01/21 01:07
+推 yohu：推薦這篇文章                                              01/21 23:11
+推 ParkerTsai：推ypchen不推陳漢典 XD                               01/22 09:59
+推 shadowIVII：考試數理邏輯真的要清楚 只不過調分其實調很大         01/26 11:47
+推 johnnylo00：推薦這篇文章                                        01/27 11:19
+推 shaform：推薦這篇文章                                           01/30 21:50
+推 philo165：推薦這篇文章                                          01/31 11:04
+
+
+※ 發信站: 批踢踢實業坊(ptt.cc)
+※ 轉錄者: neoneon (106.105.175.48), 07/12/2016 01:43:57
+
+
+
+
+
+
+
+
+
+
+
+
+正規語言概論 | 資夢
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+                        Introduction
+                    
+
+
+
+
+1.
+                        
+                        開始
+                    
+
+
+
+
+1.1.
+                        
+                        搜尋資源
+                    
+
+
+
+
+1.2.
+                        
+                        認識同好
+                    
+
+
+
+
+1.3.
+                        
+                        取得書籍
+                    
+
+
+1.4. 使用工具
+
+
+
+
+1.5.
+                        
+                        學習英文
+                    
+
+
+
+
+
+
+2.
+                        
+                        學習程式語言
+                    
+
+
+2.1. Python
+
+
+2.2. JavaScript
+
+
+2.3. C/C++
+
+
+2.4. Ruby
+
+
+2.5. Java
+
+
+
+
+3. 程式開發實務
+
+
+3.1. 網站開發
+
+
+3.2. 遊戲開發
+
+
+3.3. 手機程式開發
+
+
+
+
+4. 課題
+
+
+4.1. 基礎知識
+
+
+
+
+4.2.
+                        
+                        程式解題
+                    
+
+
+4.3. 資安攻防
+
+
+4.4. 數學
+
+
+4.5. 計算機工程
+
+
+4.6. 計算機科學
+
+
+
+
+5. 前方的道路
+
+
+5.1. 參與公益行動
+
+
+5.2. 參與開放原始碼專案
+
+
+5.3. 創業
+
+
+
+
+5.4.
+                        
+                        當個軟體工程師
+                    
+
+
+5.5. 讀資工系
+
+
+
+
+6. 附錄：資源
+
+
+
+
+6.1.
+                        
+                        資工系開放式課程資源
+                    
+
+
+
+
+6.2.
+                        
+                        交大資工相關獎學金、競賽、工讀與實習機會
+                    
+
+
+
+
+6.3.
+                        
+                        Timus Online Judge 教學
+                    
+
+
+
+
+7. 附錄：資工課程
+
+
+
+
+7.1.
+                        
+                        組合語言與系統程式
+                    
+
+
+
+
+7.2.
+                        
+                        數位電路實驗
+                    
+
+
+
+
+7.3.
+                        
+                        計算機概論與程式設計
+                    
+
+
+
+
+7.4.
+                        
+                        離散數學
+                    
+
+
+
+
+7.5.
+                        
+                        正規語言概論
+                    
+
+
+
+
+7.6.
+                        
+                        密碼學概論
+                    
+
+
+
+
+7.7.
+                        
+                        微處理機系統實驗
+                    
+
+
+
+
+7.8.
+                        
+                        程式語言
+                    
+
+
+
+
+7.9.
+                        
+                        資訊工程專題
+                    
+
+
+
+
+
+
+                Published with GitBook
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A
+A
+
+
+Serif
+Sans
+
+
+White
+Sepia
+Night
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Share on Twitter
+                
+
+                    Share on Google
+                
+
+                    Share on Facebook
+                
+
+                    Share on Weibo
+                
+
+                    Share on Instapaper
+                
+
+
+
+
+
+
+
+
+
+資夢
+
+
+
+
+
+正規語言概論
+前言
+正規語言概論是交大資工大三上的必修課程。這門課的課題是基礎的計算理論，研究什麼是電腦的能力和極限。介紹各種計算模型，例如 DFA, NFA, PDA, Turing machines 等等，以及其相對應的正規語言，如 regular languages, context free languages, Turing-decidable languages 等等。也會探討問題間的 Reduction 以及問題的 Complexity 等等。
+繫上使用的教科書主要是《Introduction to the Theory of Computation》不過也有老師使用《Introduction to Automata Theory, Languages, and Computation》。
+簡介
+透過計算模型，我們可以對計算定下明確的數學定義。而一旦有了明確的定義，便可以研究什麼是可計算的、什麼是不可計算的，而對於可計算的問題，必須花費多少時間和空間才可能計算。
+Church–Turing thesis 指出，所有演算法可解的問題，都可透過 Turing machines 求解，也因此，藉由研究 Turing machines 我們得以探討電腦的極限，以及對各種問題的難度訂出明確的界線。
+這是一門非常理論與數學的課，需要非常清晰的邏輯思考。老師曾說，資訊界日新月異，許多課程可能幾年後就不見了，或者教的東西大幅改變。但你幾乎可以確定，正規語言這門課還是會一直存在。從哲學的角度來說，計算理論在電腦科學裡佔了十分核心的地位。
+正規語言課程所學的東西其實也有很多延伸的應用，以至於很多讀者很可能早已接觸過某些部份，但直到這門課，才真正以嚴謹的方式學習背後的來歷。像是如果有接觸像 Python 等語言或者用過 Vim 等編輯器的搜尋功能的讀者，很有可能有接觸過正規表示式。而 CFG 和程式語言的設計以及編譯器等課程有密切相關，你或許會曾在程式語言的文件上看過他。如果在演算法等課程聽過 NP、P 等名詞，在這堂課裡，你可以學到這些名詞到底有什麼含意。而對什麼是演算法，時間複雜度、問題的可計算性等等，都會在這堂課得到更深的理解。
+學習小指引
+課本本身寫的很好，建議將《Introduction to the Theory of Computation》研讀數遍，並配合書中練習題。
+參考
+
+Computability and Complexity
+Automata, Computability, and Complexity
+Regular Expression (RegExp) in JavaScript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NCTU+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+課程資訊
+
+課程攻略
+歷年統計
+留言板
+
+教授比一比
+課程(心得)討論區
+考古題
+
+
+
+
+
+
+
+	
+					正規語言概論－何宗易
+                                
+
+						最後同步時間 2016-01-09 16:56
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 課程資訊
+
+
+永久課號 DCP3321
+學分 3
+
+
+
+課程綱要
+							
+								(本學期無開課)
+							
+
+							查看更多 
+							
+
+ 
+
+
+
+
+
+學期
+單位
+課號
+選別
+修課人數/上限
+時間
+教室
+年級
+備註
+
+
+103下
+資訊學院共同課程
+1196
+							
+					必修
+			
+
+				93/90
+			
+1EF4B
+EC015
+all
+共同必修；外系生請於2/24上網加選；資工系與電資學士班學生優先選課
+
+
+
+
+
+
+ 修了這堂課的人，也修了...
+線性代數 
+                                    計算機網路概論 
+                                    離散數學 
+                                    數位電路實驗 
+                                    作業系統概論 
+                        
+
+
+
+ 課程攻略
+
+
+
+ 作業/考試：
+					編輯
+
+
+
+
+
+
+ 其他內容：
+					編輯
+
+
+
+
+
+
+
+
+
+  歷年統計
+
+
+
+
+
+
+
+
+						
+						同課程最高成績
+				
+
+粼粼林
+						同課程最高分老師
+				
+
+
+
+
+
+
+ 留言板：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	© Copyright NCTU+ 2016 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[系列文目錄] 正規語言 Formal Language | Mr. Opengate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pages
+
+
+
+Home
+
+
+About
+
+
+Contact
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skip to main  |
+      skip to sidebar
+
+
+
+
+
+
+
+Mr. Opengate
+
+
+
+
+Work hard, play harder, love hardest.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2015年6月14日 星期日
+
+
+
+
+
+
+
+
+[系列文目錄] 正規語言 Formal Language
+
+
+
+
+
+於
+
+6/14/2015 11:08:00 下午
+
+
+
+
+
+標籤：
+Computer Science-Formal Language,
+featured
+
+
+ 
+
+
+
+
+
+
+序 - 計算理論是計算機科學的靈魂
+
+我就讀大一、大二時，其實對資訊科學並沒有非常的喜歡，而比較喜歡數學和物理這種用「單純」且「優雅」的理論就能解釋許多現象的學科。一直到大三學到了正規語言概論，才感覺到自己真正初步瞭解「電腦」的能力與極限，讓我有一種豁然開朗的感覺，而開始對資訊科學感興趣。
+
+上了研究所後，又因修課仔細的研讀了一次正規語言，感觸十分深刻，因此，寫下了這些正規語言的介紹和整理。我的介紹整理秉持盡量以中文撰寫英文為輔為原則，期望有更多人能參透正規語言這個有趣的學門：）
+
+
+
+
+
+目錄
+
+一、正則語言 Regular Languages
+
+Ch1    決定性有限自動機 Deterministic Finite automata, DFA
+Ch2    非決定性有限自動機 Nondeterminism Finite automata, NFA
+Ch3    正則表達式 Regular Expression, RE
+Ch3.5  常用的正則表示式 Regular Expression in Application
+Ch4    泵引理 Pumping Lemma
+Ch5    邁希爾－尼羅德定理 Myhill-Nerode Theorem
+
+
+
+二、上下文無關語言 Context-Free Languages
+
+Ch6    上下文無關語言 Context-free language, CFLs
+Ch7    下推自動機 Pushdown automaton, PDAs
+Ch8    上下文無關語言泵引理 Pumping lemma for context free languages
+
+
+
+三、邱奇－圖靈論題 Church–Turing Thesis
+
+Ch9    圖靈機 Turing Machines
+Ch10   變種圖靈機 Variants of Turing Machines
+
+
+
+四、決定性問題 Decidability
+
+Ch11   決定性問題 Decidability
+Ch12   不可決定問題與圖靈可識別語言 Undecidable Problem and Turing-recognizable language
+Ch12.5 決定與不可決定問題相關習題
+
+
+
+五、歸約 Reducibility
+
+Ch13   可歸約性 Reducibility
+Ch14   多一歸約 Mapping Reducibility
+Ch14.5 歸約相關習題 Exercises for Reducibility
+
+
+
+六、時間複雜度 Time Complexity
+
+Ch15   複雜度P和NP Time Complexity, P and NP
+Ch16   NP完全 NP-Complete, NPC
+Ch16.5 Cook-Levin理論與卡普的二十一個NP-完全問題
+
+
+
+
+
+
+
+前言
+
+正規語言概論是交大資工大三上的必修課程。這門課的課題是基礎的計算理論，研究什麼是電腦的能力和極限。介紹各種計算模型，例如 DFA, NFA, PDA, Turing machines 等等，以及其相對應的正規語言，如 regular languages, context free languages, Turing-decidable languages 等等。也會探討問題間的 Reduction 以及問題的 Complexity 等等。
+
+通常使用的教科書主要是《Introduction to the Theory of Computation》不過也有老師使用《Introduction to Automata Theory, Languages, and Computation》。
+
+
+
+
+
+簡介
+
+透過計算模型，我們可以對計算定下明確的數學定義。而一旦有了明確的定義，便可以研究什麼是可計算的、什麼是不可計算的，而對於可計算的問題，必須花費多少時間和空間才可能計算。
+
+Church–Turing thesis 指出，所有演算法可解的問題，都可透過 Turing machines 求解，也因此，藉由研究 Turing machines 我們得以探討電腦的極限，以及對各種問題的難度訂出明確的界線。
+
+這是一門非常理論與數學的課，需要非常清晰的邏輯思考。老師曾說，資訊界日新月異，許多課程可能幾年後就不見了，或者教的東西大幅改變。但你幾乎可以確定，正規語言這門課還是會一直存在。從哲學的角度來說，計算理論在電腦科學裡佔了十分核心的地位。
+
+正規語言課程所學的東西其實也有很多延伸的應用，以至於很多讀者很可能早已接觸過某些部份，但直到這門課，才真正以嚴謹的方式學習背後的來歷。像是如果有接觸像 Python 等語言或者用過 Vim 等編輯器的搜尋功能的讀者，很有可能有接觸過正規表示式。而 CFG 和程式語言的設計以及編譯器等課程有密切相關，你或許會曾在程式語言的文件上看過他。如果在演算法等課程聽過 NP、P 等名詞，在這堂課裡，你可以學到這些名詞到底有什麼含意。而對什麼是演算法，時間複雜度、問題的可計算性等等，都會在這堂課得到更深的理解。
+
+
+
+
+
+學習小指引
+
+課本本身寫的很好，建議將《Introduction to the Theory of Computation》研讀數遍，並配合書中練習題。
+
+
+
+
+
+
+References
+
+交資夢想 - 正規語言概論
+https://nctucs.wordpress.com/2011/12/10/formal-languages/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+較新的文章
+
+
+較舊的文章
+
+首頁
+
+
+
+
+
+
+
+技術提供：Blogger.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Me
+
+
+
+
+Hi! I'm Mr. Opengate.
+
+
+
+喜歡做很酷的事，和睡覺；
+
+相信品味與信念的不朽價值。
+
+希望有更多的機會感受這個世界：）
+
+
+第一次來記得看一下本站簡介喔！ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Facebook
+
+Mr. Opengate
+
+
+
+
+
+
+
+
+
+
+
+Contents
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Popular Posts
+
+
+
+
+
+
+
+
+
+臺大資工研究所畢業心得：怪咖、凡人和藝術家
+
+
+
+
+
+
+
+
+
+
+臺北信義行：信義商圈、Taipei 101、四四南村
+
+
+
+
+
+
+
+
+
+
+C/C++ - Vector (STL) 用法與心得完全攻略
+
+
+
+
+
+
+
+
+
+
+科技業常見的職務縮寫 SA SD RD PG PM DBA MIS QA Sales
+
+
+
+
+
+
+
+
+
+
+猴子都會寫的Makefile - makefile簡易教學 (1)
+
+
+
+
+
+
+
+
+
+
+C/C++ - String 用法與心得完全攻略
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RSS
+
+
+
+
+
+
+
+發表文章
+
+
+
+
+
+
+
+
+
+
+                  Atom
+                
+
+
+
+
+
+
+
+
+
+
+發表文章
+
+
+
+
+
+
+
+
+
+
+
+
+留言
+
+
+
+
+
+
+
+
+
+
+                  Atom
+                
+
+
+
+
+
+
+
+
+
+
+留言
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pageviews
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Contact Me
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+十二月 | 2011 | 交資夢想 – moved to http://shaform.com/csdream/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+交資夢想 – moved to http://shaform.com/csdream/
+
+
+交大資工，交織夢想。
+
+
+
+
+
+Skip to content
+
+主頁文章彙整
+關於
+
+
+
+
+
+
+
+
+				Monthly Archives: 十二月 2011 
+
+正規語言概論
+
+Posted on 十二月 10, 2011 by Shaform  
+
+前言 正規語言概論是交大資工大三上的必修課程。這門課的課題是基礎的計算理論，研究 … 繼續閱讀 →
+
+
+
+張貼在 交大課程 
+|
+
+標記 計算理論, 資工, 正規語言, 交大課程, 交大資工 
+|
+1 則迴響
+
+
+
+
+
+
+
+
+搜尋：
+
+
+
+  最近文章 
+
+資夢
+
+
+Timus Online Judge 教學
+
+
+資訊工程專題
+
+
+交大資工相關獎學金、競賽、工讀與實習機會
+
+
+程式語言
+
+
+ 熱門文章 
+
+						資工系開放式課程資源					
+
+
+
+						正規語言概論					
+
+
+
+						計算機概論與程式設計					
+
+
+
+						基礎程式設計					
+
+
+
+						組合語言與系統程式					
+
+
+
+						數位電路實驗					
+
+
+
+						微處理機系統實驗					
+
+
+
+						交大資工相關獎學金、競賽、工讀與實習機會					
+
+
+
+						文章彙整					
+
+
+
+						資夢					
+
+文章存檔 
+2014 年 五月
+2013 年 六月
+2012 年 十月
+2012 年 七月
+2012 年 六月
+2012 年 三月
+2012 年 二月
+2011 年 十二月
+2011 年 十一月
+2011 年 十月
+2011 年 八月
+2011 年 七月
+2011 年 四月
+
+分類 
+學習資源
+
+實用技能
+
+教學
+
+交大生活
+
+交大課程
+
+
+8051
+ACM
+Arduino
+C
+Google
+Haskell
+HDL
+Java
+microcontroller
+MIT
+OCW
+online judge
+problem solving
+Prolog
+Python
+RSA
+Timus
+Verilog
+交大
+交大課程
+交大資工
+交資夢想
+大學
+學習資源
+密碼學
+實習
+專題
+打工
+搜尋
+教科書
+數學
+正規語言
+獎學金
+程式設計
+競賽
+組合語言
+英語
+計算理論
+資工
+開放式課程其它 
+註冊 登入
+文章 RSS 訂閱
+迴響 RSS 訂閱
+WordPress.com 
+ 
+
+
+
+
+
+
+					交資夢想 – moved to http://shaform.com/csdream/				
+
+
+在 WordPress.com 建立免費網站或網誌.
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+正規語言 (Formal Language) - 教科書：系統程式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wikidot.com
+
+
+
+.wikidot.com
+    
+
+
+Share on
+
+
+
+
+
+
+
+
+Edit
+History
+Tags
+Source
+
+Explore »
+
+ 
+
+
+
+
+
+教科書：系統程式
+陳鍾誠著，旗標出版
+
+
+
+
+
+
+
+
+文章列表
+
+最近修改
+所有網頁
+標記
+
+
+相關網站
+
+陳鍾誠的網站
+系統程式
+打造電腦
+C# 程式設計
+Blender 動畫設計
+Linux 程式設計
+Android 手機程式
+HTML5 技術體系
+
+
+陳鍾誠
+
+陳鍾誠的信箱
+陳鍾誠的留言板
+陳鍾誠的網站
+陳鍾誠在金門大學
+陳鍾誠的手機網
+陳鍾誠的簡歷
+陳鍾誠的 Facebook
+陳鍾誠的 Twitter
+陳鍾誠的 Diigo
+陳鍾誠的 Scribd
+陳鍾誠的 ping
+陳鍾誠的 Youtube
+陳鍾誠的 GAE
+
+
+旗標出版社
+
+旗標首頁
+信箱
+留言板
+教師服務
+購書服務
+讀者服務
+
+
+Wikidot
+
+網站管理
+本站成員
+標記
+加入本站?
+頂欄
+側欄
+樣版
+Wikidot 文件
+Wikidot 語法
+Wikidot Module
+Wikidot Embedding
+Wikidot Template
+Wikidot Layout
+
+
+
+
+Create account or Sign in 
+
+
+
+
+內容
+前言
+目錄
+1. 系統軟體
+2. 電腦的硬體結構
+3. 組合語言
+4. 組譯器
+5. 連結與載入
+6. 巨集處理器
+7. 高階語言
+8. 編譯器
+9. 虛擬機器
+10. 作業系統
+11. 嵌入式系統
+12. 系統軟體實作
+附錄
+補充教材
+教學錄影
+家庭作業
+版本管理
+相關資源
+投影片
+下載
+參考文獻
+相關文章
+相關資源
+錯誤更正
+購買本書
+手機版網站
+問題與回答
+
+rating: 0+x
+
+
+
+
+
+                            正規語言 (Formal Language)
+                        
+
+
+
+
+
+
+
+
+文章
+評論
+授權
+
+
+
+在資訊系的相關課程當中，與高階語言相關的課程，包含程式語言 (Programming Language)、正規語言 (Formal Language)、以及編譯器 (Compiler) 等等。這些課程的核心是語法理論，我們可以利用生成規則 (例如：BNF, EBNF 等) 描述程式的語法。一但能正確的描述某個程式語言，就能撰寫剖析該語言的剖析程式，將這些語法轉換成語法樹 (或稱剖析樹)。
+高階語言所使用的語法，大致上分為兩個層次，在單詞的語法上會使用正規語法 (Regular Grammar)，而句法結構上則使用與上下文無關的文法 (Context-Free Grammar，簡稱 CFG)，這兩個語法都可以使用近代語言學之父的喬姆斯基 (Chomsky) 的生成語法 (Generative Grammar) 描述。在程式語言的領域，我們通常用 BNF 與 EBNF 語法描述這些程式的語法。
+Chomsky 是個語言學家，提出的生成語法主要也是為了描述人類所說的語言，這在資訊科學的領域被稱為自然語言，以便與程式設計時所用的程式語言區分開來。然而，生成語法雖然主要為了描述自然語言而提出，但卻同樣適用於程式語言的語法上，甚至在程式語言的設計上造成了相當大的影響，這或許是當初 Chomsky 所沒有想到的。
+語法的概念或許並非 Chomsky 所第一個提出的，但以正規的遞迴結構，有系統的描述英文的文法，則應歸功於 Chomsky，當初 Chomsky 看出了英文文法當中具有強烈的結構性，可以利用生成語法規則描述。透過有限的 (甚至是只有很少的幾條) 語法規則，就可以描述變化無窮的英文語句，這導至語言學研究的重要革命。同樣的，在程式語言上，也能利用規則，產生變化無窮的程式組合，這可以說是一個意外的收穫。
+有關喬姆斯基語法階層的理論，是正規語言課程的主題，甚至牽涉到進階的計算理論主題，在此我們僅簡單的列出各型語法於表格 7.1當中，詳細內容請參考正規語言與計算理論課程的教科書。
+表格 7.1 喬姆斯基語法階層
+
+
+文法
+語言
+自動機
+產生式規則
+
+
+0-型
+遞迴可枚舉語言 (Recursively Enumerable)
+圖靈機 (Turing Machine)
+α-> β
+
+
+1-型
+上下文相關語言 (Context Sensitive Grammar)
+線性有界非確定圖靈機 (Linear Bounded Automata)
+αAβ -> αγβ
+
+
+2-型
+上下文無關語言 (Context Free Grammar)
+非確定下推自動機(Push Down Automata)
+A -> γ
+
+
+3-型
+正規語言 (Regular Grammar)
+有限狀態自動機 (Finite State Automata)
+A -> aB A -> a
+
+
+
+
+
+Show Comments
+
+
+
+
+
+Add a New Comment
+
+
+Post preview:
+
+
+Close preview
+
+
+
+
+
+
+
+
+or Sign in as Wikidot user
+
+
+
+(will not be published)
+
+
+
+
+-
++
+
+
+                    Help: wiki text quick reference 
+
+
+
+
+
+
+
+
+
+
+
+Permanent Link
+Edit
+Delete
+
+
+
+
+
+本網頁的作者、授權與引用方式
+
+
+作者
+陳鍾誠，於金門大學資訊工程系，電子郵件：wt.ude.uqn|ccc#wt.ude.uqn|ccc，網站：http://ccckmit.wikidot.com。
+授權
+本文採用創作共用 (Creative Common) 3.0 版的 姓名標示─非商業性─相同方式分享 授權條款，歡迎轉載或修改使用，但若做為商業使用時必須取得授權，引用本文時請參考下列格式。
+中文版 (APA格式)
+陳鍾誠 (1270527286|%Y年%m月%d日)，(網頁標題) 正規語言 (Formal Language)，(網站標題) 教科書：系統程式，1270527286|%Y年%m月%d日，取自 http://sp1.wikidot.com/formallanguage ，網頁修改第 1 版。
+英文版 (APA格式)
+Chung-Chen Chen (1270527286|%Y,%b%e), Retrieved 1270527286|%b %e,%Y from http://sp1.wikidot.com/formallanguage, Page Revision 1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+page revision: 1, last edited: 10 Jun 2010 07:46
+
+Edit
+Tags
+Discuss (0)
+History
+Files
+Print
+Site tools
++ Options
+
+
+Edit Sections
+Append
+Edit Meta
+Watchers
+Backlinks
+Page Source
+Parent
+Lock Page
+Rename
+Delete
+
+
+
+
+
+
+
+
+
+Help
+     |
+    Terms of Service
+     |
+    Privacy
+     |
+    Report a bug
+     |
+    Flag as objectionable
+
+Powered by Wikidot.com
+
+
+                    Unless otherwise stated, the content of this page is licensed under Creative Commons Attribution-ShareAlike 3.0 License
+
+
+
+
+
+Other interesting sites
+
+
+
+
+
+
+Eat-Drink-Man-Woman
+          
+              A hang-out place to relax and chit-chat about food and boy-girl stuff...
+            
+
+
+
+
+
+
+
+WikiofScience
+          
+              Everything learned, and nothing forgotten
+            
+
+
+
+
+
+
+
+Metrix Create:Space
+
+
+
+
+
+
+
+
+
+Generalia
+          
+              your one-stop shop for all things generals.
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Click here to edit contents of this page.    
+
+
+
+        Click here to toggle editing of individual sections of the page (if possible).         Watch headings for an "edit" link when available.    
+
+        Append content without editing the whole page source.    
+
+        Check out how this page has evolved in the past.    
+
+        If you want to discuss contents of this page - this is the easiest way to do it.    
+
+        View and manage file attachments for this page.    
+
+        A few useful tools to manage this Site.    
+
+        See pages that link to and include this page.    
+
+        Change the name (also URL address, possibly the category) of the page.    
+
+        View wiki source for this page without editing.    
+  
+        View/set parent page (used for creating breadcrumbs and structured layout).    
+
+            Notify administrators if there is objectionable content in this page.        
+
+            Something does not work as expected? Find out what you can do.        
+
+            General Wikidot.com documentation and help section.        
+
+            Wikidot.com Terms of Service - what you can, what you should not etc.        
+
+            Wikidot.com Privacy Policy.          
+        
+
+
+ 
+
+
+
+正規語言dfa,dfa是什麼條目|愛維基 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+iWiki|愛維基
+群眾智慧，深得您心。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於dfa ncr east的搜尋結果
+關於dfa philippines的搜尋結果
+
+
+
+關於"正規語言dfa"的搜尋結果,蒐集關於正規語言dfa的熱門網站
+
+
+
+
+
+
+
+iWiki精選網站
+iWiki精選影片
+
+
+
+
+
+
+正規語言概論 | 交資夢想
+
+前言 正規語言概論是交大資工大三上的必修課程。這門課的課題是基礎的計算理論，研究什麼是電腦的能力和極限。介紹各種計算模型，例如 DFA, NFA, PDA, Turing machines 等等，以及其相對應的正規語言，如 regular languages, context free languages, Turing ...
+nctucs.wordpress.com/2011/12/10/formal-languages
+
+
+
+
+資訊生活札記: 話說「正規語言」這門課
+
+後來上維基百科查到正規語言 的定義，感覺好像又是一門難懂的數學…當初已經被離散數學整過，沒想到研究所又來一次 ... 不過，真佩服想出這些理論的人。最近剛上完DFA與NDFA 的互換，以及其「等價」之關係。每次上課看著這些圖，就想著 ...
+syncopat.blogspot.com/2009/10/blog-post_17.html
+
+
+
+
+正規語言期中考 - 大葉大學 - 資訊工程系 Department of CSIE at Dayeh University
+
+正規語言期中考(20100416) 1) For any sets S1;S2;S3, show that S1 \(S2 [S3) = (S1 \S2)[(S1 \S3).(10 分) 2) Describe the language recognized by the following ﬁnite automaton.(10 分) Fig. 1. a dfa 3) Construct a dfa to accept all strings on f0;1g of length four or ...
+www.csie.dyu.edu.tw/~spring/PastExam/midterm20100416.pdf
+
+
+
+
+正規語言dfa - 相關部落格
+
+2.4.1_1242280085.pptx f9406013 Thu May 14 13:48:05 2009 2.4.1 2 48.0604166667 您的答案是錯的，題目是要將 dfa 的狀態個數改到最少 ...
+www.csie.dyu.edu.tw/~spring/Teaching/97_2/Formal/Homeworks2009/...
+
+
+
+
+正規語言作業
+
+一個語言L 是正規語言若且唯若存在一個正規表示式使該語言為該正規表示式所表述。（不知道這樣翻譯的到不到位XD ... 依照正規表示式的規則將之轉換為一臺NFA(Nondeteministic finite state automaton),而也可以將NFA 轉為DFA ...
+blog.qcl.tw/2012/08/blog-post.html
+
+
+
+
+{qcl}: 自動機與正規表示式
+
+1.複習所需的數學基礎能力 2.瞭解正規語言與計算理論的關係 投影片、課堂講授 1 2 出席狀況、作業題目 有限自動機 (Finite Automata) ACDE 1.瞭解DFA與NFA 2.瞭解DFA=NFA ...
+www.csie.nutn.edu.tw/ch/course_view.php?c_code=60
+
+
+
+
+國立臺南大學資訊工程學系National University of Tainan, Dept of Computer Science and Information Engineering,NUTN
+
+一個非確定自動機(NFA) 在讀入符號串之後，並不確切地知道自動機處於哪個狀態。但可以肯定一定處於狀態集中的某一狀態。該狀態集記做 {q1,q2,…qk} 。而一個等價的確定自動機(DFA) 讀入同樣的 w 一定處於某個確定的狀態上。
+www.teachblog.net/yhspace/archive/2006/04/30/631.aspx
+
+
+
+
+如何理解NFA向DFA轉換 - 形式系統 - 教師博客
+
+其他語言 Български ব ল Català Čeština Deutsch English Español Eesti Suomi Français Gaeilge עברית Bahasa Indonesia Italiano 日本語 Қазақша 한국어 Latina Lietuvių Bahasa Melayu ...
+zh.wikipedia.org/zh-tw/自動機
+
+
+
+
+自動機 - 維基百科，自由的百科全書
+
+DFA state minimization (ppt) Lecture 10 The Myhill-Nerode Theorem(ppt) PART II: Pushdown Automata and Context-Free Langugaes Context-Free Grammars and Langugaes(ppt) Linear Grammars and Normal Forms(ppt) Pushdown Automata and CFGs(ppt) ppt) ...
+xml.cs.nccu.edu.tw/courses/Flang/FL2008/lecture-notes.html
+
+
+
+
+Formal Language and Automata Lecture Notes
+
+課程資料 正規語言概論 開課：黃廷祿老師 修課年度：100資工系 這門課的課題是基礎的計算理論，研究什麼是電腦的能力和極限。介紹各種計算模型，例如 DFA, NFA, PDA, Turing machines 等等，以及其相對應的正規語言，如 regular languages, context free ...
+shaform.wordpress.com/2013/01/02/formal-languages
+
+
+
+
+
+進階搜尋
+
+
+
+
+
+
+
+
+
+
+相關條目
+
+
+
+dfa設計
+
+
+dfa花藝
+
+
+dfa ncr east
+
+
+dfa設計
+
+
+dfa nfa
+
+
+
+
+
+精選標籤
+
+安全監控系統
+建築設計
+採光窗
+機器設備
+洗水塔
+
+
+
+
+拿香港來回機票！
+8
+
+
+
+
+
+
+
+
+
+
+
+
+
+

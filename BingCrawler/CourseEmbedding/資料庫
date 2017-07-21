@@ -1,0 +1,3540 @@
+
+
+
+資料庫 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+資料庫
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+中國大陸
+數據庫
+
+
+港臺
+資料庫
+
+
+
+
+提示：本條目的主題不是資料倉儲。
+
+資料庫，簡單來說可視為電子化的檔案櫃——儲存電子檔案的處所，使用者可以對檔案中的資料執行新增、擷取、更新、刪除等操作[1]。
+資料庫指的是以一定方式儲存在一起、能為多個用戶共享、具有儘可能小的冗餘度、與應用程式彼此獨立的資料集合。
+
+
+
+目錄
+
+
+1 資料庫管理系統
+2 類型
+
+2.1 關聯式資料庫
+2.2 非關係型資料庫（NoSQL）
+
+2.2.1 鍵值（key-value）資料庫
+
+
+
+
+3 資料庫模型
+
+3.1 架構
+3.2 資料庫索引
+3.3 資料庫操作:事務
+
+
+4 參考文獻
+5 參見
+
+
+
+資料庫管理系統[編輯]
+主條目：資料庫管理系統
+資料庫管理系統（英語：Database Management System，簡稱DBMS）是為管理資料庫而設計的電腦軟體系統，一般具有儲存、擷取、安全保障、備份等基礎功能。資料庫管理系統可以依據它所支援的資料庫模型來作分類，例如關聯式、XML；或依據所支援的電腦類型來作分類，例如伺服器群集、行動電話；或依據所用查詢語言來作分類，例如SQL、XQuery；或依據效能衝量重點來作分類，例如最大規模、最高執行速度；亦或其他的分類方式。不論使用哪種分類方式，一些DBMS能夠跨類別，例如，同時支援多種查詢語言。
+類型[編輯]
+關聯式資料庫[編輯]
+
+MySQL
+
+MariaDB（MySQL的代替品[2]，英文維基百科從MySQL轉向MariaDB[3]）
+Percona Server（MySQL的代替品[4] · [5]）
+
+
+PostgreSQL
+Microsoft Access
+Microsoft SQL Server
+Google Fusion Tables（英語：Google Fusion Tables）
+FileMaker
+Oracle資料庫
+Sybase
+dBASE
+Clipper
+FoxPro
+foshub
+
+
+幾乎所有的資料庫管理系統都配備了一個開放式資料庫連接（ODBC）驅動程式，令各個資料庫之間得以互相整合。
+非關係型資料庫（NoSQL）[編輯]
+主條目：NoSQL
+
+BigTable（Google）
+Cassandra
+MongoDB
+CouchDB
+
+鍵值（key-value）資料庫[編輯]
+
+Apache Cassandra（為Facebook所使用[6]）：高度可延伸[7]
+Dynamo
+LevelDB（Google）
+
+資料庫模型[編輯]
+
+物件模型
+層次模型（輕量級資料存取協定）
+網狀模型（大型資料儲存）
+關係模型
+物件導向模型
+半結構化模型
+平面模型（表格模型，一般在形式上是一個二維陣列。如表格模型資料Excel)
+
+架構[編輯]
+資料庫的架構可以大致區分為三個概括層次：內層、概念層和外層。
+
+內層：最接近實際儲存體，亦即有關資料的實際儲存方式。
+外層：最接近使用者，即有關個別使用者觀看資料的方式。
+概念層：介於兩者之間的間接層。[8]
+
+資料庫索引[編輯]
+主條目：資料庫索引
+資料索引的觀念由來已久，像是一本書前面幾頁都有目錄，目錄也算是索引的一種，只是它的分類較廣，例如車牌、身分証字號、條碼等，都是一個索引的號碼，當我們看到號碼時，可以從號碼中看出其中的端倪，若是要找的人、車或物品，也只要提供相關的號碼，即可迅速查到正確的人事物。
+另外，索引跟欄位有著相應的關係，索引即是由欄位而來，其中欄位有所謂的關鍵欄位（Key Field），該欄位具有唯一性，即其值不可重複，且不可為"空值（null）"。例如：在合併資料時，索引便是扮演欲附加欄位資料之指向性用途的角色。故此索引為不可重複性且不可為空。
+資料庫操作:事務[編輯]
+主條目：資料庫事務
+事務（transaction）是用戶定義的一個資料庫操作序列，這些操作要麼全做，要麼全不做，是一個不可分割的工作單位。 事務的ACID特性：
+
+基元性（atomicity）
+一致性（consistency）
+隔離性（isolation）
+持續性（durability）
+
+事務的並行性是指多個事務的並列操作輪流交叉執行，事務的並行可能會存取和儲存不正確的資料，破壞交易的隔離性和資料庫的一致性。
+參考文獻[編輯]
+
+
+^ 陳春旭、餘明興、李建全 譯：《資料庫系統概論》第四版，儒林圖書有限公司，1986年7月，第3頁
+^ mariadb. [2013-01-07]. 
+^ Wikipedia moving from MySQL to MariaDB. [2013-01-07]. 
+^ https://drupal.org/node/2062399
+^ https://blog.mozilla.org/it/2013/03/08/different-mysql-forks-for-different-folks/
+^ http://wiki.apache.org/cassandra/%E9%A6%96%E9%A1%B5
+^ http://cassandra.apache.org/
+^ 陳春旭、餘明興、李建全譯，《資料庫系統概論》第四版，儒林，1986年7月，第29頁
+
+
+參見[編輯]
+
+
+電腦科學主題
+資訊科技主題
+軟體主題
+
+
+
+資料庫理論
+資訊科技稽核
+LDAP（輕量級資料存取協定）
+SQL（結構化查詢語言）
+資料庫管理系統
+
+
+
+
+資料庫管理系統（DBMS） （檢視 · 討論 · 編輯）
+
+
+
+概念
+資料庫 · 資料模型 · 資料庫儲存結構（英語：Database storage structures） · 關係 (資料庫) · 關係模型 · 分散式資料庫 · ACID ( 原子性（英語：Atomicity (database systems)） · 一致性· 隔離性· 永續性（英語：Durability (database systems)） ) · Null值
+關係模型 · 資料庫正規化 · 資料庫完整性 · 實體完整性 · 參照完整性（英語：Referential integrity） · 關聯式資料庫管理系統 
+主鍵 · 外來鍵 · 代理鍵 · 超鍵 · 候選鍵 
+
+
+
+
+資料庫元件
+觸發器 · 視圖 · 資料庫表 · 指標 (資料庫) · 事務記錄檔（英語：Transaction log） · 資料庫事務 · 並行控制 · 樂觀鎖 · 悲觀鎖 · 資料庫索引 
+儲存程式 · 資料庫分割（英語：Partition (database)）
+
+
+SQL
+分類： 資料查詢語言（DQL） - 資料定義語言（DDL） - 資料操縱語言（DML） - 資料控制語言（DCL）
+指令：SELECT · INSERT · UPDATE · MERGE · DELETE · JOIN · UNION（英語：Union (SQL)） · CREATE · DROP · Begin work · COMMIT · ROLLBACK · TRUNCATE · ALTER
+安全： SQL資料隱碼攻擊 · 參數化查詢
+
+
+
+資料庫管理系統的實現
+
+
+
+實現類型
+關聯式資料庫 · 檔案型資料庫 · Deductive · 維度化資料庫 · 階層式 · 圖形資料庫 · NoSQL· 物件資料庫 · 物件關聯式資料庫 · Temporal · XML資料庫
+
+
+
+
+資料庫產品
+物件型（對比） · 關係型（對比）
+
+
+資料庫元件
+資料查詢語言 · 查詢最佳化器 · 查詢計畫 · 嵌入式SQL · ODBC · JDBC · OLE DB
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+資料庫模型（英語：Database model）
+
+
+
+
+
+
+常見模型
+
+
+
+平面（英語：Flat file database）
+層次
+空間建模（英語：Dimensional modeling）
+網狀
+關係
+ER模型
+
+增強實體關係模型（英語：Enhanced entity–relationship model）
+
+
+圖
+物件導向
+實體-屬性-值（英語：Entity–attribute–value model）
+
+
+
+
+
+
+
+
+其他模型
+
+
+
+關聯（英語：Associative model of data）
+多維
+陣列（英語：Array DBMS）
+語意資料模型（英語：Semantic data model）
+星模式（英語：Star schema）
+XML資料庫（英語：XML database）
+
+
+
+
+
+
+
+
+實現
+
+
+
+螢幕檔案（英語：Flat file database）
+列式
+文件導向
+物件關係（英語：Object-relational database）
+演繹（英語：Deductive database）
+時間
+XML資料儲存（英語：XML database）
+三元儲存（英語：Triplestore）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+電腦科學
+
+
+
+
+
+
+數學基礎
+
+數理邏輯 · 集合論 · 數論 · 圖論 · 類型論 · 範疇論 · 數值分析 · 資訊理論
+
+
+
+
+
+
+計算理論
+
+自動機 · 可計算性理論 · 計算複雜性理論 · 量子計算 · 數值計算方法
+
+
+
+
+
+
+演算法和資料結構
+
+演算法分析 · 演算法設計 · 計算幾何
+
+
+
+
+
+
+程式語言和編譯器
+
+語法分析器 · 直譯器 · 編程典範（程序化編程 · 物件導向程式編程 · 函數語言程式設計 · 邏輯編程等）
+
+
+
+
+
+
+並行、並列和分散式系統
+
+多處理器 · 網格計算 · 並行控制
+
+
+
+
+
+
+軟體工程
+
+需求分析 · 軟體設計 · 程式設計 · 形式化方法 · 軟體測試 · 軟體開發過程
+
+
+
+
+
+
+系統架構
+
+電腦系統架構 · 微處理器體系結構 · 作業系統
+
+
+
+
+
+
+電信與網路
+
+路由 · 網路拓撲 · 密碼學
+
+
+
+
+
+
+資料庫
+
+資料庫管理系統 · 關聯式資料庫 · 結構化查詢語言 · NoSQL · 事務處理 · 資料庫索引 · 資料探勘
+
+
+
+
+
+
+人工智慧
+
+自動推理 · 計算語言學 · 電腦視覺 · 進化計算 · 專家系統 · 機器學習 · 自然語言處理 · 機器人學
+
+
+
+
+
+
+電腦圖形學
+
+視覺化 · 電腦動畫 · 圖像處理
+
+
+
+
+
+
+人機互動
+
+電腦輔助功能 · 使用者介面 · 可穿戴電腦 · 普適計算 · 虛擬現實 · 聊天機器人
+
+
+
+
+
+
+科學計算
+
+人工生命 · 生物資訊學 · 認知科學 · 計算化學 · 計算神經科學 · 計算物理學 · 數值演算法 · 符號計算
+
+
+
+
+
+
+
+註：電腦科學領域也可根據ACM-2012分類系統進行分類。
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4113276-2
+NDL: 00865521
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=數據庫&oldid=44869337"					
+2 個分類：資料庫數據管理隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+AfrikaansAragonésالعربيةمصرىAzərbaycancaBoarischБеларускаяБеларуская (тарашкевіца)‎БългарскиবাংলাBrezhonegBosanskiCatalàکوردیČeštinaCymraegDanskDeutschΕλληνικάEnglishEsperantoEspañolEestiEuskaraفارسیSuomiFrançaisGaeilgeGalegoעבריתहिन्दीHrvatskiMagyarՀայերենInterlinguaBahasa IndonesiaIdoÍslenskaItaliano日本語Basa JawaქართულიҚазақша한국어KurdîКыргызчаLatinaLietuviųLatviešuОлык марийМакедонскиമലയാളംМонголBahasa MelayuMirandésမြန်မာဘာသာNederlandsNorsk nynorskNorsk bokmålਪੰਜਾਬੀPolskiپښتوPortuguêsRomânăРусскийSicilianuScotsSrpskohrvatski / српскохрватскиසිංහලSimple EnglishSlovenčinaSlovenščinaShqipСрпски / srpskiSeelterskSvenskaதமிழ்తెలుగుТоҷикӣไทยTagalogTürkçeУкраїнськаاردوOʻzbekcha/ўзбекчаTiếng ViệtWalonWinaray粵語 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年6月21日 (週三) 21:13。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+國立臺灣大學圖書館電子資料庫系統
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立台灣大學圖書館 電子資料庫系統
+
+
+圖書館首頁 |
+      電子資源新訊(News) | 
+常見問題(FAQ) | 
+離開系統(Logout)
+
+
+
+
+資料庫(Databases)
+
+ 
+
+電子期刊(Ejournal)
+
+ 
+
+電子書(Ebooks)
+
+ 
+
+資源探索(DISCOVERY)
+
+ 
+
+校外連線說明(Remote Access)
+
+ 
+
+個人化服務(Sign in)
+
+
+
+
+
+
+ 
+登入者：Guest
+
+
+
+
+
+
+
+
+
+
+
+ 常用資料庫(Hot) 
+
+
+
+
+ 主題排列(Subject) 
+
+
+
+
+
+藝術與人文-Arts & Humanities (232)
+藝術 Art (7)
+戲劇/電影 Theatre/ Movies (11)
+歷史 History (80)
+語言 Linguistics (27)
+音樂 Music (13)
+哲學 Philosophy (13)
+宗教 Religion (9)
+文學 Literature (60)
+
+
+生命科學與醫學-Life Sciences & Medicine (67)
+農業 Agriculture (7)
+生物 Biological Sciences (11)
+藥物/藥理 Pharmacy/ Pharmacology (8)
+醫學 Medical Science (21)
+護理 Nursing (5)
+公共衛生 Public Health (2)
+動物 Zoology (4)
+
+
+社會科學-Social Sciences (219)
+商業管理 Business Management (47)
+教育 Education (6)
+經濟 Economics (34)
+圖書資訊學 Library & Information Science (6)
+政治 Political Science (22)
+社會科學 Social Science (37)
+法律 Law (23)
+心理 Psychology (3)
+
+
+科學與工程-Science & Technology (62)
+材料科學 Materials Science (2)
+化學 Chemistry (8)
+工程 Engineering (10)
+地理 Geography (1)
+電機資訊 Electrical Engineering & Computer Science (9)
+數學 Mathematics (11)
+物理 Physics (6)
+地球科學 Earth Sciences (4)
+
+
+
+
+
+
+
+
+
+ 類型排列(Type)
+
+
+
+
+
+地圖-Map (9)
+多媒體資料庫-Multimedia (34)
+字典-Dictionaries (10)
+百科全書-Encyclopedia (16)
+技術報告-Technical Reports (2)
+其他參考工具-Reference Tools (71)
+書目管理軟體-Bibliographic Management Software (6)
+專利/標準-Patents/standards (7)
+博碩士論文-Dissertations & Theses (20)
+報紙-Newspapers (28)
+期刊全文-Fulltext periodicals (75)
+期刊索引摘要-Periodical Index & Abstracts (40)
+傳記-Biography (7)
+會議論文-Proceedings (6)
+電子書-Ebooks (66)
+綜合性資料庫-Multi-discipline (124)
+
+
+
+
+
+
+
+ 題名排列(Title) 
+
+
+
+
+ 語文別排列(Language) 
+
+
+
+
+
+中文-Chinese (340)
+日文-Japanese (27)
+西文-English or western Languages (286)
+韓文-Korean (1)
+
+
+
+
+
+
+
+ 試用資源(Trial) 
+
+
+
+
+ 免費資源(Free) 
+
+
+
+
+ 新增資料庫(New) 
+
+
+
+
+ 熱門點閱(Popular) 
+
+
+
+ 電子資料庫APP (Database APP) 
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+【資源查詢】
+
+不限欄位
+	資源名稱(DB title)
+	平臺名稱(Platform Name)
+	
+精確檢索
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+
+
+
+日期
+標題
+
+2017/7/3
+ProQuest平臺將於7/30(日)凌晨3點至中午12點停機進行系統維護，影響相關ProQuest、Chadwyck-Healey、PIVOT資料庫暫時無法使用。
+
+More...
+
+
+&nbsp
+
+使用電子資料庫請遵守各資料庫之使用規定，並限於個人學術研究或教學目的使用，不得有商業行為及連續、大量、有系統地下載檔案(請避免同日、同時段、同IP大量下載電子期刊)，而且禁止使用Open Proxy或自動下載軟體，否則可能誤觸法網！
+使用者如涉及違反智慧財產權，經查證屬實，將依校規移送校方處置，並須自負相關法律責任。違規者將先行停止其使用權，並需親自致函向出版社道歉。（參閱計中網路使用規範）
+
+電子資料庫網頁中標示符號者，開放臺大教職員生校外連線使用。請利用臺大校園虛擬私有網路(Virtual Private Network，簡稱VPN)，網址https://sslvpn.ntu.edu.tw，輸入計中e-mail帳號及密碼認證後使用。(詳細服務及設定說明)
+              
+
+
+
+
+
+
+
+
+
+
+Copyright © 國立台灣大學圖書館. All Rights Reserved.
+
+
+
+
+
+
+
+
+Access資料庫,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+設為首頁│加到最愛
+
+
+
+
+
+
+
+
+
+
+
+
+'
+
+// -->
+
+
+
+
+
+
+
+
+
+
+
+
+公司簡介
+課程介紹
+分校資料
+線上洽詢
+學員專區
+數位學習
+特約商店
+企業包班
+資訊園地
+就業專區
+
+
+
+
+
+
+電腦基礎入門
+Windows 課程
+網際網路課程
+工業製圖課程
+美工影像課程
+程式設計課程
+資料庫課程    
+網路管理課程
+多媒體課程    
+專業認證課程
+原廠認證課程
+
+
+彰化中區電腦
+和美中區電腦
+鹿港中區電腦
+溪湖中區電腦
+北斗中區電腦
+員林中區電腦
+大雅中區電腦
+大里中區電腦
+
+ 
+
+
+最新課程查詢
+學員作品欣賞
+超值優惠卡    
+技術論壇    
+
+
+
+
+
+
+
+
+
+
+求才求職專區
+中區招募精英
+全國就業e網   
+104人力銀行   
+1111就業網     
+
+
+
+
+
+
+
+
+
+Auto CAD 2D 平面設計 
+3D Max 動畫設計 
+SolidWorks 工業製圖 
+CorelDRAW 美工繪圖 
+Photoshop 影像處理
+Illustrator 插畫設計
+InDesign 數位排版
+DreamWeaver夢幻網頁 
+Autodesk 原廠認證 
+SolidWorks 原廠認證 
+Visual C++ 程式設計 
+Linux 網路管理課程 
+電子商務應用入門
+
+
+
+  
+   
+  
+
+ 
+
+
+
+
+
+迴首頁 
+＞ 資料庫設計系列 ＞ Access 資料庫
+
+
+		資料庫設計系列
+
+
+
+
+
+
+
+Access
+資料庫
+
+
+
+Visual FoxPro
+資料庫管理
+
+
+
+Delphi
+資料庫設計
+
+
+
+SQL資料庫
+程式設計
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Access 資料庫
+
+
+
+
+
+  
+
+
+
+
+　
+
+
+
+使用軟體：Microsoft Access　
+　
+
+上課時數：21 小時　
+　
+ 
+適合對象：
+　•公司行號機關 
+　•行政人員及資料處理人員 
+　•學生 
+                                  
+ 
+
+　
+　
+
+ 
+先修課程：
+　為了讓您學習的更順利，我們建議您最好先具有下列的軟體基礎：Windows 電腦應用
+　
+　
+
+ 
+軟體介紹 ( 什麼是 Access )：
+
+      			
+			　Access是什麼？Access是一套『管理資料庫』的軟體，也就是一般常說的『資料庫管理系統』(DataBase Management System，DBMS)至於『資料庫』則是指一群『有組織』的資料集合。
+
+
+      			
+			　Access 是一套操作簡易，卻功能完整的資料庫。它可將垂手可得，但零亂無序的資料如公司網頁資料、銷售數字、傳票或是客戶姓名與地址加以有效的組織及管理，而且不管資料是在個人PC、公司網路或Internet上，只須花少量的學習時間，即可在數個動作中，建立可隨時上線使用之資料庫。同時，為了提昇使用者工作效率，提供許多的輔助工具，達到「以最少的時間，建立最實用的資料庫」的目標。 
+                              　　 
+
+      			
+			　即使不熟悉資料庫的生手，也可輕鬆使用Microsoft Access，在短時間內快速提供資訊、建立資料庫。Access  
+                              的資料庫精靈，提供超過20個以上的範例資料庫，在幾個對話方塊間即可完成資料庫的基礎建設。資料庫工作效率的關鍵在資料表，Access  
+                              的資料表分析精靈，可幫助使用者分析資料表結構是否正確，並提供最佳化建議。即使您不是資料庫專家或不瞭解Access  
+                              關聯式資料庫，也可輕易完成分析及最佳化處理。 
+                              
+
+			　
+　
+
+ 
+課程內容介紹：
+　　˙以教授資料庫的基本概念、資料庫的建立、修改、刪除、新增、查詢等基本功能。 
+                                  　　˙以資料庫的關連、螢幕的設計、簡報的建立、資料的整合、巨集的建立及使用為主。　
+　
+ 
+相關課程連結：
+
+
+　•Visual FoxPro 資料庫設計
+　•Delphi 資料庫設計
+　•SQL 資料庫程式設計
+
+
+　
+　
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Copyright (c) 2000-2007 中區電腦 (私立世揚電腦技藝短期補習班) Inc. All rights reserved.
+
+
+
+本站最佳瀏覽視窗為1024x768線上客服專線：0800-090979瀏覽人數：
+
+
+
+
+
+Oracle資料庫 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Oracle資料庫
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+Oracle Database
+
+
+
+
+開發者
+甲骨文公司
+
+
+初始版本
+1979
+
+
+穩定版本
+12c（2013年7月1日 (2013-07-01)）
+
+
+程式語言
+C
+
+
+作業系統
+跨平臺
+
+
+類型
+關聯式資料庫管理系統
+
+
+許可協定
+專有軟體
+
+
+網站
+https://web.archive.org/web/20030205194523/https://oracle.com/
+
+
+Oracle Database，又名Oracle RDBMS，或簡稱Oracle。是甲骨文公司的一款關聯式資料庫管理系統。到目前仍在資料庫市場上占有主要份額。[1]
+勞倫斯·埃里森和他的朋友，之前的同事Bob Miner（英語：Bob Miner）和Ed Oates（英語：Ed Oates）在1977年建立了軟體開發實驗室諮詢公司（SDL，Software Development Laboratories）。SDL開發了Oracle軟體的最初版本。Oracle的名稱來自於埃里森在Ampex工作時參加的一個由中央情報局建立的專案的代碼名稱。[2]
+
+
+
+目錄
+
+
+1 實體和邏輯結構
+
+1.1 儲存
+
+1.1.1 磁碟檔案
+
+1.1.1.1 資料檔案
+1.1.1.2 控制檔案
+
+
+
+
+
+
+2 國際化
+3 歷史
+4 版本
+
+4.1 資料庫管理及開發工具
+
+
+5 支援平臺
+6 參照
+7 外部連結
+8 參見
+
+
+
+實體和邏輯結構[編輯]
+一個Oracle資料庫系統是以一個由文數字組成的系統識別碼（SID, Site ID）來做唯一性的區別[3]—包含了至少一個應用程式的實例，和資料儲存裝置。一個實例（instance）是由一個實例數字（或是一個啟動ID：SYS.V_$DATABASE.ACTIVATION#）表示—包含了一個作業系統程式的集合和與儲存裝置進行交談的內部結構。典型的程式有PMON（the process monitor程式監看器）和SMON（the system monitor系統監看器）。
+Oracle資料庫的用戶設計到了SGA（System Global Area系統全局領域）伺服器端記憶體結構。SGA儲存了快取資訊比如資料緩衝區，SQL命令，和用戶資訊。在儲存之外，資料庫由儲存了資料變更歷史的線上取消復原記錄檔。行程可以把線上的取消復原記錄檔轉換成存檔的記錄檔（離線取消復原記錄檔），給資料回覆和再生提供了基礎。
+如果Oracle資料庫管理員實現了Oracle RAC（Real Application Clusters真正應用集群），那麼在不同的伺服器上的多個例項，隸屬於一個中央磁碟陣列。這個方案提供了一些優點，比如更高的效率、擴充功能性和冗餘。然而，這樣會導致系統更複雜，因此許多站點並不使用RAC。在10g版本中，網格計算引進了共享資源，這樣一個例項可以使用（例如）網格中另一個節點的CPU資源。
+Oracle資料庫管理系統可以儲存並執行自己的儲存程式和函式。PL-SQL（Oracle公司的專有的SQL擴充功能語言），或物件導向語言Java可以呼叫那些代碼物件或者編寫這些代碼。
+儲存[編輯]
+Oracle關係型資料庫管理系統從邏輯上把資料儲存在表空間（英語：Tablespace）內，在物理上以資料檔案的形式儲存。表空間可以包含多種類型的記憶體區段，例如資料區段（Data Segment）、索引區段（Index Segment）等等。區段相應的由一個或多個擴充功能（extent）組成。擴充功能由相連的資料區段組成。資料區段是資料儲存的基本單元。
+Oracle資料庫管理系統通過儲存在SYSTEM表空間內的資訊來跟蹤資料儲存。SYSTEM表空間包含了資料字典—以及（預設的）索引和集群。資料字典包含了一個儲存了所有資料庫中用戶物件的資訊的表。從8i版本開始，Oracle開始支援本地管理表空間，即把空間管理資訊儲存在它們自己的信頭的點陣圖中而不是SYSTEM表空間內。
+磁碟檔案[編輯]
+
+
+
+本章節需要擴充
+
+
+資料檔案[編輯]
+在實體層，資料檔案（英語：Data file）由一個或多個資料區段組成。區段的大小根據資料庫的不同而不同。
+資料檔案可以使用電腦伺服器的檔案系統的預先分配空間，直接操作磁碟，或儲存在自動儲存管理邏輯捲內。[4]
+控制檔案[編輯]
+一個或多個控制檔案儲存了系統整體的資訊和狀態。[5]
+國際化[編輯]
+Oracle資料庫軟體有63個語種的版本（包括了區域差異語言比如美國英語和英國英語）。不同語言版本間的差異包括了日期和月份的名字，縮寫，時間格式和排序。[6]
+Oracle公司已經把Oracle資料庫的錯誤資訊翻譯到阿拉伯語、加泰羅尼亞語、中文、捷克語、丹麥語、荷蘭語、英語、芬蘭語、法語、德語、希臘語、希伯來語匈牙利語、義大利語、日語、韓語、挪威語、波蘭語、葡萄牙語、羅馬尼亞語、俄語、斯洛伐克語、西班牙語、瑞典語、泰語和土耳其語。[7]
+
+Oracle公司給資料庫開發人員提供產生國際化的資料庫應用程式的工具與機制。[8]
+歷史[編輯]
+版本[編輯]
+資料庫管理及開發工具[編輯]
+
+Navicat for Oracle是一套專為Oracle設計的強大資料庫管理及開發工具。它可以用於任何版本的Oracle資料庫，並支援大部份Oracle的功能，包括觸發器、索引、檢視等。
+Toad for Oracle是一款老牌的Oracle開發管理工具，比任何一款Oracle開發管理工具功能更多，並針對使用者不同的角色有多個分支版本。版本包括：Toad DBA Suite for Oracle是一款專門為Oracle DBA管理Oracle資料庫工具, Toad Development Suite for Oracle是一款專門為Oracle開發工具， Toad DBA Suite for Oracle – Exadata Edition是一款專門為Oracle Exadata一體伺服器及Oracle資料庫管理工具, Toad DBA Suite for Oracle - RAC Edition是一款專門為Oracle搭建集群RAC的DBA管理工具
+
+支援平臺[編輯]
+在2001年發布的Oracle9i之前，甲骨文公司把他們的資料庫產品廣泛的移植到了不同的平臺上。近期，甲骨文公司鞏固了一小部分的作業系統平臺。
+截止至2006年10月，甲骨文公司的Oracle10g支援以下的作業系統和硬體：
+
+Apple Mac OS X Server: PowerPC
+HP HP-UX: PA-RISC, Itanium
+HP Tru64 UNIX（英語：Tru64）: Alpha
+HP OpenVMS: Alpha, Itanium
+IBM AIX5L: IBM POWER
+IBM z/OS（英語：z/OS）: Security zSeries（英語：IBM System z）
+Linux: x86, x86-64, PowerPC, zSeries, Itanium
+Microsoft Windows: x86, x86-64, Itanium
+Sun Solaris: SPARC, x86, x86-64
+
+參照[編輯]
+
+
+^ IDC: Oracle Maintains Lead in Database Market
+^ Welcome to Larryland
+^ Bhakthavatsalam, Namrata. Glossary. Oracle Database Client Installation Guide 11g Release 1 (11.1) for AIX Based Systems Part Number B32077-03. Oracle. August 2008 [2008-11-17]. The SID automatically defaults to the database name portion of the global database name (sales in the example sales.us.example.com) until you reach eight characters or enter a period. You can accept or change the default value. 
+^ Watkins, Bob. Look inside ASM disk groups with Oracle 10gR2's ASMCMD. techrepublic.com. ZDNet. 2007-01-30 [2009-07-30]. （原始內容存檔於2012-07-07）. In 10g, Oracle introduced a new kind of storage for its database product. Automatic Storage Management (ASM) is a logical volume manager that takes physical disk partitions and manages their contents [...] Until ASM, there were only two choices: file system storage and raw disk storage. 
+^ Nyffenegger, René. Control files [Oracle]. René Nyffenegger's collection of things on the web. [2009-07-30]. The control files of a database store the status of the physical structure of the database. 
+^ Locale Languages. [2008-02-26]. 
+^ Error Message languagues. [2008-02-26]. 
+^ Shea, Cathy; et al.. Overview of Globalization Support. Oracle Database Globalization Support Guide 11g Release 1（11.1）. Oracle Corporation. September 2007 [2009-02-16]. In the past, Oracle referred to globalization support capabilities as National Language Support (NLS) features. NLS is actually a subset of globalization support. NLS is the ability to choose a national language and store data in a specific character set. Globalization support enables you to develop multilingual applications and software products that can be accessed and run from anywhere in the world simultaneously.  引文使用過時參數coauthors (幫助)
+
+
+外部連結[編輯]
+
+Oracle Database, a view provided by Oracle Corporation
+Oracle Database Documentation
+
+參見[編輯]
+
+PL-SQL
+
+
+
+
+資料庫管理系統（DBMS） （檢視 · 討論 · 編輯）
+
+
+
+概念
+資料庫 · 資料模型 · 資料庫儲存結構（英語：Database storage structures） · 關係 (資料庫) · 關係模型 · 分散式資料庫 · ACID ( 原子性（英語：Atomicity (database systems)） · 一致性· 隔離性· 永續性（英語：Durability (database systems)） ) · Null值
+關係模型 · 資料庫正規化 · 資料庫完整性 · 實體完整性 · 參照完整性（英語：Referential integrity） · 關聯式資料庫管理系統 
+主鍵 · 外來鍵 · 代理鍵 · 超鍵 · 候選鍵 
+
+
+
+
+資料庫元件
+觸發器 · 視圖 · 資料庫表 · 指標 (資料庫) · 事務記錄檔（英語：Transaction log） · 資料庫事務 · 並行控制 · 樂觀鎖 · 悲觀鎖 · 資料庫索引 
+儲存程式 · 資料庫分割（英語：Partition (database)）
+
+
+SQL
+分類： 資料查詢語言（DQL） - 資料定義語言（DDL） - 資料操縱語言（DML） - 資料控制語言（DCL）
+指令：SELECT · INSERT · UPDATE · MERGE · DELETE · JOIN · UNION（英語：Union (SQL)） · CREATE · DROP · Begin work · COMMIT · ROLLBACK · TRUNCATE · ALTER
+安全： SQL資料隱碼攻擊 · 參數化查詢
+
+
+
+資料庫管理系統的實現
+
+
+
+實現類型
+關聯式資料庫 · 檔案型資料庫 · Deductive · 維度化資料庫 · 階層式 · 圖形資料庫 · NoSQL· 物件資料庫 · 物件關聯式資料庫 · Temporal · XML資料庫
+
+
+
+
+資料庫產品
+物件型（對比） · 關係型（對比）
+
+
+資料庫元件
+資料查詢語言 · 查詢最佳化器 · 查詢計畫 · 嵌入式SQL · ODBC · JDBC · OLE DB
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=Oracle數據庫&oldid=44696679"					
+3 個分類：資料庫管理系統甲骨文公司軟體跨平臺軟體隱藏分類：含有過時參數的引用的頁面使用過時圖像語法的頁面擴充中的條目所有擴充中的條目拒絕當選首頁新條目推薦欄目的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源MediaWiki 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaCatalàMìng-dĕ̤ng-ngṳ̄ČeštinaDeutschΕλληνικάEnglishEsperantoEspañolEestiEuskaraفارسیSuomiFrançaisGaeilgeעבריתहिन्दीMagyarBahasa IndonesiaItaliano日本語Қазақша한국어LietuviųLatviešuМонголNederlandsNorsk bokmålPolskiPortuguêsРусскийSrpskohrvatski / српскохрватскиSimple EnglishSlovenčinaSlovenščinaСрпски / srpskiதமிழ்తెలుగుTürkçeУкраїнська粵語 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年6月9日 (週五) 20:28。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資料庫 - MBA智庫百科
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資料庫
+
+出自 MBA智庫百科(http://wiki.mbalib.com/)
+
+
+資料庫(Data Base，DB)
+
+目錄
+
+1 什麼是資料庫
+2 資料庫研究的範圍[1]
+3 資料庫的優點[2]
+4 資料庫的組成[2]
+5 相關條目
+6 參考文獻
+
+
+[編輯] 什麼是資料庫 
+　　資料庫是指長期存儲在電腦內有組織的、可共用的數據集合。資料庫中的數據按一定的數據模型組織、描述和存儲，具有較小的冗餘度、較高的數據獨立性和易擴展性，並可為各種用戶共用。
+　　資料庫是被長期存放在電腦內、有組織的、可以表現為多種形式的可共用的數據集合。這裡“共用”是指資料庫中的數據，可為多個不同的用戶、使用多種不同的語言、為了不同的目的而同時存取資料庫，甚至同一塊數據也可以同時存取；“集合”是指某特定應用環境中的各種應用的數據及其數據之間的聯繫(聯繫也是一種數據)全部集中地按照一定的結構形式進行存儲。
+
+[編輯] 資料庫研究的範圍[1] 
+　　當前，資料庫研究的範圍有以下三個領域。
+
+　　1.資料庫管理系統軟體的研製
+
+　　資料庫管理系統(DBMS)是資料庫系統的基礎。DBMS的研製包括研製DBMS本身及以DBMS為核心的一組相互聯繫的軟體系統。研製的目標是擴大功能、提高性能和提高用戶的生產率。
+
+　　2.資料庫設計
+
+　　資料庫設計的主要任務是在DBMS的支持下，按照應用的要求，為某一部門或組織設計一個結構合理、使用方便、效率較高的資料庫及其應用系統。其中主要的研究方向包括資料庫設計方法、設計工具和設計理論的研究，數據模型和數據建模的研究，電腦輔助資料庫設計方法及其軟體系統的研究，資料庫設計規範和標準的研究等。
+
+　　3.資料庫理論
+
+　　資料庫理論的研究主要集中於關係的規範化理論、關係數據理論等。近年來，隨著人工智慧與資料庫理論的結合及並行計算機的發展，資料庫邏輯演繹和知識推理、並行演算法等理論研究，以及演繹資料庫系統、知識庫系統和數據倉庫的研製都已成為新的研究方向。
+
+[編輯]資料庫的優點[2]
+　　與數據文件管理方式相比較，資料庫管理有許多優越性。這些優越性來自資料庫特有的數據結構和數據存儲方式。歸納起來，資料庫有如下優點。
+　　(1)查詢迅速、準確，且有多種表達與傳輸方式。以一個大型倉庫管理為例：用手工操作，如要查找“某地區生產的商品的名稱、規格、數量”，就可能要先翻閱賬本，弄清分類目錄和分類形式，然後按地區或商品分類、商品名稱找到其他附帶的屬性，再抄寫下來。如果要查找的內容較多，則查找與抄寫既費時又費力。資料庫系統能根據給定的條件自動地按一定途徑以毫秒級速度進行掃描查找，可以在瞬間將符合要求的數據一一用表格或其他方式顯示出來，還可以自動地列印出來或通過網路傳輸到指定地址，而且不會出現錯誤。
+　　(2)數據結構化且統一管理。在資料庫中，數據按邏輯結構組織起來，而按物理結構存放在磁介質中，並且由資料庫管理系統統一管理，既考慮了數據本身的特點，也考慮了數據之間以及文件之間的聯繫，數據的查詢、檢索和處理很方便。在傳統的文件系統中，儘管記錄內部存在某種結構，但記錄之間沒有聯繫，數據的查詢、檢索和處理十分煩瑣、困難。實現數據的整體結構化管理，是資料庫的主要特征之一，也是資料庫系統與文件系統的本質區別。
+　　(3)數據冗餘度小。在文件系統中，為了滿足一個應用程式對數據的需要，常常在不同地方重覆存放同一個或同一組數據。這樣一來，如果一個多處存放的數據出現錯誤，就必須同時修改幾個地方，否則將造成數據之間的不一致性。在資料庫系統中，數據不僅可以面向某個局部應用而且可以面向整體應用，從而大大減少數據冗餘，節約了存儲空間，有效地避免了數據之間的不一致性。
+　　(4)具有較高的數據獨立性。數據獨立性是指用戶應用程式與存儲在資料庫中數據的相互獨立性。當人們利用應用程式調用資料庫進行數據處理時，只涉及數據的邏輯結構，而不涉及其存儲方式和物理結構。而當數據的物理存儲方式和結構改變時，資料庫管理系統將自動處理這種改變，而應用程式不必改變。近期甚至發展到資料庫的邏輯結構改變了，用戶程式也可以不變。用戶程式不隨數據邏輯結構改變而改變的特性，可稱為數據的“邏輯獨立性”。數據獨立性(物理的和邏輯的)是資料庫的重要特征和優點，它有利於在資料庫結構修改時保持應用程式的穩定性，可以大大減少應用程式員的軟體開發工作量。
+　　(5)數據的共用性好。存放於資料庫中的數據的共用性包括系統內部共用性和外部共用性兩種，這是資料庫管理方式區別於手工管理和文件管理方式的最本質的特征和優點。
+　　系統內部的共用性是指同一個(組)數據在一次處理中可以多次被調用的性能，而系統外部的共用性是指同一個(組)數據可以同時供多個用戶調用。這兩種共用性的原理是一致的，它使得多種作業、多種語言、多種用戶可以相互覆蓋地使用數據集合。
+　　內部共用性有效地降低了數據的冗餘度，系統很容易進行維護和擴充，而且能夠使應用程式的編寫更加方便。系統外部共用性能夠促進並實現信息社會化服務，可以充分發揮信息的價值。舉一個簡單的事例，在沒有使用資料庫技術時，火車票和飛機票發售的數據很難共用，常常出現有的售票處某線路車票或機票已售完，而另一售票處還有很多同一線路的車票或機票無人購買的情況。為了避免上述現象的出現，火車客運站和航空公司往往採取讓不同售票處出售不同路線車票和機票的做法，結果給乘客帶來許多不便。如今採用資料庫來管理車票和機票發售工作，各個售票處可以互通有無，乘客不但可以在一個城市的任何售票處方便地查詢併購買當地出發的某路線車票和機票，而且隨著網路技術的發展，人們甚至可以在全國任一城市查詢併購買異地出發的任一路線車票和機票。
+
+[編輯]資料庫的組成[2]
+　　一個資料庫有4個主要成分：數據(data)、關係(relationship)、約束(constraint)和模式(schema)(見下圖)。數據是所存儲的邏輯實體在電腦中的二進位表示；關係表示數據項之間的某種對應；約束是定義正確數據狀態的語言；模式描述資料庫中數據的組織和聯繫。
+
+
+[編輯] 相關條目 
+數據
+資料庫系統
+資料庫管理系統
+
+[編輯] 參考文獻 
+
+↑ 陳國震,吳菁.21世紀高職高專規劃教材  網路資料庫[M].清華大學出版社,2005年03月第1版.
+↑ 2.0 2.1 吳沖龍.地質信息技術基礎[M].清華大學出版社,2008.8.
+
+
+
+取自"http://wiki.mbalib.com/zh-tw/%E6%95%B0%E6%8D%AE%E5%BA%93"
+
+本條目對我有幫助8  分享到：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   如果您認為本條目還有待完善，需要補充新內容或修改錯誤內容，請編輯條目。
+
+本條目相關文檔
+ 資料庫營銷 26頁 資料庫設計指南 16頁 資料庫原理教程 535頁 資料庫營銷 58頁 ORACLE資料庫 85頁 CNKI資料庫培訓 48頁 EBSCO資料庫檢索 48頁 資料庫產品培訓 51頁 資料庫營銷 18頁 市場商情資料庫 16頁更多相關文檔
+
+本條目相關資訊
+原始數據哪裡找？這些網站要用好！｜200個國內外經濟/金融/行研/咨詢數據網站大全 2016年12月1日職場溝通：還再冷場尷尬中 ?  三招教你自在聊天... 2016年8月28日研究生常用十五個較全的學術搜索引擎 2016年2月16日緊急提醒：你的支付寶可能被別人“占領”! 2015年10月12日輕鬆五步創造資料庫營銷奇跡 2015年7月1日企業存儲類初創公司走紅  2015年1月5日凡客陳年：創業企業要不斷追尋初心 2012年12月7日十位白手起家的財富巨人 命運多舛屢受挫折 2012年9月27日企業留客五大關鍵 2012年9月13日企業發展不得不面對的5個問題 2012年7月25日
+本條目由以下用戶參與貢獻
+Yixi,方小莉,林巧玲,Mis銘,劉維燎,蘇青荇. 頁面分類: 信息管理術語 
+
+
+
+
+
+評論(共3條)提示:評論內容為網友針對條目"資料庫"展開的討論，與本站觀點立場無關。
+
+ 180.136.57.*  在 2015年11月7日 09:45 發表    
+
+
+存取數據失敗，請退出好友動態重試    
+為什麼呢
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 180.136.57.*  在 2015年11月7日 09:45 發表    
+
+
+存取數據失敗，請退出好友動態重試    
+為什麼
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 222.134.60.*  在 2016年10月8日 17:20 發表    
+
+
+110
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+導航
+
+
+首頁
+文檔
+百科
+商學院
+資訊
+培訓
+幫幫
+
+
+
+
+個人工具
+
+
+用戶登錄創建新帳號 
+
+
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+ 
+
+全球最大的中文經管百科，由121,994位網友共同編寫而成，共計414,214個條目
+
+
+
+
+
+
+
+
+ 
+首頁
+ 
+管理
+ 
+營銷
+ 
+經濟
+ 
+金融
+ 
+人力資源
+ 
+咨詢
+ 
+財務
+ 
+品牌
+ 
+證券
+ 
+物流
+ 
+貿易
+ 
+商學院
+ 
+法律
+ 
+人物
+ 
+分類索引
+ 
+
+
+
+
+查看
+
+條目討論編輯簡體中文繁體中文 
+
+
+工具▼
+
+
+鏈入頁面
+鏈出更改
+上載文件 特殊頁面 可列印版
+永久鏈接 
+
+
+
+
+
+
+
+
+
+
+
+
+
+導航
+
+
+最新資訊
+最新評論
+最新推薦
+熱門推薦
+編輯實驗
+使用幫助
+創建條目
+隨便看看
+
+
+
+
+
+
+
+
+
+
+
+
+本周推薦
+最多推薦
+
+
+
+影響世界的100個經典管理定律垃圾人定律產品定位五步法MECE分析法管理百科巴納姆效應PPP模式感性型人格約哈里窗戶哈默定律 
+
+蘑菇管理定律猴子管理法則情緒ABC理論100個最流行的管理辭彙21天效應破窗效應懶螞蟻效應SWOT分析模型墨菲定律踢貓效應 
+
+以上內容根據網友推薦自動排序生成
+
+
+
+
+
+
+
+
+
+x
+
+
+
+	   最後更改11:29, 2016年10月18日.	  
+智庫首頁 - 
+百科首頁 - 
+關於百科 -
+	   客戶端 -
+	   人才招聘 -
+	   廣告合作 - 
+權利通知 -
+	   聯繫我們 -
+	   免責聲明
+ - 友情鏈接
+
+©2006-2017 MBAlib.com, All rights reserved. 
+
+
+ 
+
+
+
+
+
+
+
+
+
+臺灣魚類資料庫
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+汽車資料庫 - Yahoo奇摩汽車機車
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+首頁
+
+
+信箱
+
+
+新聞
+
+
+股市
+
+
+氣象
+
+
+運動
+
+
+Yahoo TV
+
+
+娛樂
+
+
+Flickr
+
+
+購物中心
+
+
+商城
+
+
+拍賣
+
+
+
+更多
+
+
+
+
+
+
+知識+
+
+
+汽車機車
+
+
+電影
+
+
+字典
+
+
+遊戲
+
+
+旅遊
+
+
+理財
+
+
+房地產
+
+
+時尚美妝
+
+
+3C科技
+
+
+折扣城
+
+
+
+
+
+設定 Yahoo 為首頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+登入
+
+
+
+
+
+
+
+Yahoo奇摩帳號登入
+
+
+新使用者?
+請註冊
+
+
+
+
+
+
+
+
+
+信箱
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+追蹤Yahoo汽車
+
+
+
+
+
+加入粉絲團
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+
+
+找汽車
+
+
+車款比較
+                                
+
+
+汽車資料庫
+                                
+
+
+車訊情報
+                                
+
+
+
+
+汽車新聞
+
+
+新車試駕
+
+
+明星愛車
+
+
+型男正妹試駕
+
+
+名家專欄
+
+
+優惠快訊
+
+
+售後市場
+
+
+特別企劃
+
+
+銷售排行
+
+
+賽車報導
+
+
+汽車百科
+
+
+
+
+
+
+熱門車排行
+                                
+
+
+汽車特輯
+                                
+
+
+
+
+極限 只是起點 AMG 50週年
+
+
+2016臺北車展
+
+
+假期最夯出遊用車總攻略
+
+
+
+
+
+
+
+
+找機車
+
+
+車款比較
+                                
+
+
+機車資料庫
+                                
+
+
+車訊情報
+                                
+
+
+
+
+機車新聞
+
+
+機車評測
+
+
+優惠快訊
+
+
+售後市場
+
+
+特別企劃
+
+
+
+
+
+
+熱門車排行
+                                
+
+
+機車特輯
+                                
+
+
+
+
+國產機車選購指南
+
+
+重機人生～夢想追尋！
+
+
+
+
+
+
+
+
+找中古車
+
+
+本季行情分析
+                                
+
+
+主題車款推薦
+                                
+
+
+熱門排行
+                                
+
+
+認證品牌專館
+                                
+
+
+
+
+HOT好車大聯盟
+
+
+奧迪嚴選中古車
+
+
+SUM優質車商聯盟
+
+
+@bc好車網
+
+
+
+
+
+
+
+
+圖輯
+
+
+影音
+
+
+
+
+
+                    我們全心傾聽您的建議！
+                
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+汽車廠牌
+
+
+
+
+
+
+
+
+A
+
+Alfa Romeo 
+Aston Martin 
+Audi 奧迪
+
+
+
+B
+
+Bentley 賓利
+BMW 寶馬
+Bugatti 
+Buick 別克
+
+
+
+C
+
+Cadillac 凱迪拉克
+Chery 
+Chrysler 克萊斯勒
+Citroen 雪鐵龍
+
+
+
+D
+
+Daihatsu 大發
+
+
+
+F
+
+Ferrari 法拉利
+Fiat 飛雅特
+Ford 福特
+
+
+
+H
+
+Honda 本田
+Hyundai 現代
+
+
+
+
+
+
+
+I
+
+Infiniti 
+
+
+
+J
+
+Jaguar 捷豹
+Jeep 吉普
+
+
+
+K
+
+Kia 起亞
+
+
+
+L
+
+Lamborghini 
+Land Rover 
+Lexus 凌志
+Lotus 蓮花
+Luxgen 納智捷
+
+
+
+M
+
+M-Benz 賓士
+Mahindra 
+Maserati 瑪莎拉蒂
+Mazda 馬自達
+McLaren 麥拿侖
+Mini 迷你
+Mitsubishi 三菱
+Morgan 
+
+
+
+N
+
+Nissan 日產
+
+
+
+
+
+
+
+O
+
+Opel 歐普
+
+
+
+P
+
+Peugeot 寶獅
+Porsche 保時捷
+Proton 寶騰
+
+
+
+R
+
+Renault 雷諾
+Rolls-Royce 勞斯萊斯
+
+
+
+S
+
+Saab 紳寶
+Skoda 
+Smart 
+Ssangyong 雙龍
+Subaru 速霸陸
+Suzuki 鈴木
+
+
+
+T
+
+Tesla 特斯拉
+Tobe 酷比
+Toyota 豐田
+
+
+
+V
+
+Volkswagen 福斯
+Volvo 富豪
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+新車
+
+
+中古車
+
+
+機車
+
+
+
+
+
+
+Hyundai 現代 (廠牌)
+
+
+
+Hyundai 現代 (廠牌)
+Aston Martin 
+Audi 奧迪
+Bentley 賓利
+BMW 寶馬
+Bugatti 
+Citroen 雪鐵龍
+Ferrari 法拉利
+Ford 福特
+Honda 本田
+Hyundai 現代
+Infiniti 
+Jaguar 捷豹
+Kia 起亞
+Lamborghini 
+Land Rover 
+Lexus 凌志
+Lotus 蓮花
+Luxgen 納智捷
+M-Benz 賓士
+Mahindra 
+Maserati 瑪莎拉蒂
+Mazda 馬自達
+McLaren 麥拿侖
+Mini 迷你
+Mitsubishi 三菱
+Morgan 
+Nissan 日產
+Peugeot 寶獅
+Porsche 保時捷
+Rolls-Royce 勞斯萊斯
+Skoda 
+Smart 
+Ssangyong 雙龍
+Subaru 速霸陸
+Suzuki 鈴木
+Tesla 特斯拉
+Toyota 豐田
+Volkswagen 福斯
+Volvo 富豪
+
+
+
+
+車系
+
+
+
+
+
+
+
+
+
+
+ (廠牌)
+
+
+
+ (廠牌)
+Alfa Romeo
+Aston Martin
+Audi 奧迪
+Bentley 賓利
+BMW 寶馬
+Buick 別克
+Cadillac 凱迪拉克
+Chery
+Chrysler 克萊斯勒
+Citroen 雪鐵龍
+Citroen 雪鐵龍
+Daihatsu 大發
+Ferrari 法拉利
+Fiat 飛雅特
+Ford 福特
+Formosa 台朔
+Honda 本田
+Hyundai 現代
+Infiniti
+Jaguar 捷豹
+Jeep 吉普
+Kia 起亞
+Lamborghini
+Land Rover
+Lexus 凌志
+Lotus 蓮花
+Luxgen 納智捷
+M-Benz 賓士
+Maserati 瑪莎拉蒂
+Mazda 馬自達
+McLaren 麥拿侖
+Mini 迷你
+Mitsubishi 三菱
+Nissan 日產
+Opel 歐普
+Peugeot 寶獅
+Porsche 保時捷
+Proton 寶騰
+Renault 雷諾
+Rolls-Royce 勞斯萊斯
+Saab 紳寶
+Skoda
+Smart
+Ssangyong 雙龍
+Subaru 速霸陸
+Suzuki 鈴木
+Tobe 酷比
+Toyota 豐田
+Volkswagen 福斯
+Volvo 富豪
+其他
+
+
+
+
+車系
+
+
+
+
+
+
+
+
+
+
+Honda 本田 (廠牌)
+
+
+
+Honda 本田 (廠牌)
+Adiva 亞帝發
+AEON 宏佳騰
+Aprilia 
+Benelli 倍力尼
+BMW 
+Can-Am 
+CPI 
+Ducati 杜卡迪
+e-moving 中華電動二輪車
+Gilera 
+Gogoro 
+Harley-Davidson 哈雷
+Hartford 哈特佛
+Honda 本田
+Indian 印地安
+Kawasaki 川崎
+KTM 
+Kymco 光陽
+Moto Guzzi 
+MV Agusta 
+PGO 
+Suzuki 鈴木
+SYM 三陽
+Triumph 凱旋
+Vespa 
+Yamaha 山葉
+Zero Engineering 
+
+
+
+
+車款
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+熱門車排行 - 跨界休旅車
+
+
+
+
+
+
+
+
+
+2017 Audi Q3
+
+$ 308 萬
+                        
+                    
+
+
+
+
+
+
+
+
+2017 Nissan Juke
+
+$ 125.9 萬
+                        
+                    
+
+
+
+
+
+
+
+
+2017 Mini Countryman
+
+$ 216 萬
+                        
+                    
+
+
+
+
+
+
+更多排行
+
+
+
+
+
+
+
+
+
+
+
+
+
+最近瀏覽
+
+
+
+
+
+
+
+
+                    更多 
+
+
+
+
+
+
+
+
+自售車推薦
+
+
+
+
+
+
+
+
+
+買得到的夢想！車主自售BMW挑入手
+
+
+
+
+
+
+
+
+
+最新世代賓士C300水貨大舉低價入侵！
+
+
+
+
+
+
+
+
+
+前輩的美感仿不來！經典保時捷稀有釋出
+
+
+
+
+
+
+
+
+
+價格親民馬力夠！外匯熱門跑車-福特野馬
+
+
+
+
+
+
+
+
+
+連好萊塢藝人也愛用的環保油電車！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+服務中心
+ / 
+建議
+
+
+隱私權
+
+
+關鍵字廣告
+
+
+服務條款
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+794013613
+http%3A%2F%2Ftw.autos.yahoo.com%2Fcar-research%2F
+https://sb.scorecardresearch.com/p?c1=2&c2=7241469&c7=http%3A%2F%2Ftw.autos.yahoo.com%2Fcar-research%2F&c5=794013613&cv=2.0&cj=1
+{"intl":"TW","pt":"auto_carresearch","pstcat":"找汽車/汽車資料庫"}
+
+[{"moduleSelector":"#yog-nav #navigation","trackingData":{"sec":"cspcontentnavigation"},"extraSelector":"","customData":["slk"]},{"moduleSelector":".search-car .SimpleTabs","trackingData":{"sec":"searchbymmt"}},{"moduleSelector":"#yog-related .trim-history .bd","trackingData":{"sec":"trimhistory"}},{"moduleSelector":".compare-panel-block .compare-panel","trackingData":{"sec":"comparepanel"},"extraSelector":"input[type=button]","customData":["slk"]},{"moduleSelector":"#yog-stage .fans-col .lower","trackingData":{"sec":"facebookfans"}},{"moduleSelector":"#serviceplus","trackingData":{"sec":"serviceplus"},"customData":["slk"]},{"moduleSelector":"#yog-related .topic-promo","trackingData":{"sec":"promobanner"}},{"moduleSelector":"#yog-content","trackingData":{"sec":"socialsharebutton"},"extraSelector":"a .bubble","customData":["slk"]},{"moduleSelector":"#yog-related .popular-cars-right","trackingData":{"sec":"utilitypopularmmt"},"customData":["slk"]},{"moduleSelector":"#yog-related .topic-promo","trackingData":{"sec":"promobanner"}}]
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+可加入4輛
+
+
+
+
+
+
+
+可再加入3輛
+
+
+
+
+
+
+
+可再加入2輛
+
+
+
+
+
+
+
+可再加入1輛
+
+
+
+目前選擇 0 輛
+
+目前選擇 0 輛
+
+
+ 
+
+
+
+
+
+
+                取消比較
+                
+
+
+
+
+
+
+
+
+
+
+
+﻿資料庫軟體及應用程式 | Microsoft Access
+試用 Microsoft Edge專為 Windows 10 設計、快速且安全的瀏覽器不，謝謝開始使用MicrosoftOffice無結果0 個項目在購物車中登入Office購買 Office 365立即交談 Access提升資料品質以最適合企業使用的格式，輕鬆建立您自己的資料庫 App。立即購買 家用  商務用 立即試用 家用  商務用 顯示 Microsoft Access 資料庫中供應商清單的電腦螢幕一角的影像。不是開發人員也能快速建立自訂 App*超越傳統型資料庫Access 現在不只能用來建立傳統型資料庫，還是一種能讓您快速地建立瀏覽器型資料庫應用程式來協助企業營運的易於使用的工具。您的資料會自動儲存在 SQL 資料庫中，因此較以往更為安全，而且可以輕鬆與同事共用您的應用程式。App 範本藉由建立自訂 App 輕鬆上手，或從一系列專業設計的全新 App 範本中尋找靈感。資料表範本知道自訂 App 要追蹤的項目嗎？只要在 [新增資料表] 文字方塊中輸入該項目，然後在相關的資料表中選擇，即可快速地定義欄位、其關係與規則。只要幾分鐘的時間，就能設計一款新的 App！建立簡單好用而且能隨著業務成長的 App*「App 體驗」App 如能具備易於使用及吸引人註意的介面，以及一致的使用者體驗，就無須再擔心使用者會「迷失在資料中」。Access 的專業外觀與風格設計，即遵循了這項法則。相關項目控制使用者無須變更畫面，就可以一窺資料庫中的其他相關資訊，因此在檢閱或輸入資訊時，都能夠在正確的環境中進行。自動完成控制提供下拉清單以及在開始輸入資料時提供建議，大幅提升 App 使用者輸入資料的便利性，而且大幅降低出錯的機率。「查閱」功能可以為不同資料表間的記錄建立關聯。更輕鬆地共用資料及控制資料的存取*適用於 SharePoint 部署的 App若是搭配 Access Services 及 SharePoint Online 或內部部署 SharePoint Server 2013，企業就能在瀏覽器中透過其 SharePoint 網站輕鬆地管理及監控 Access App。如此一來，不僅可以讓多名使用者存取 App，權限控制也能符合 SharePoint 的需求，同時也能監控 App 的使用狀況。資料儲存在 SQL 中將後端移往 SQL Server 及 Microsoft Azure SQL Database，藉以提升可靠度、強化安全性、擴充能力，以及長時間後的管理能力。Access 應用程式採用了標準的 SQL 語法，無論是在內部部署或雲端上，都能確實執行後端的關鍵任務。Microsoft Access 2016 是最新版的 Access。之前的版本包括 Access 2013、Access 2010、Access 2007 和 Access 2003。Access 2016 與 Windows 10、Windows 8.1 和 Windows 7 相容。*需要 Access Services。此服務會搭配特定 Office 365、SharePoint Online 與 SharePoint Server 2013 方案一起販售。
+                    Was this information helpful?
+                
+                    Yes
+                
+                    No
+                
+                    Great! Any other feedback?
+                
+                    How can we improve it?
+                
+                    Please fill in the feedback field before sending!
+                
+                    To protect your privacy, please do not include contact information in your feedback. Review our
+                    
+                        privacy policy.
+                    SendNo thanks
+                        Thank you for your feedback!
+                    
+                ×
+            關註 OfficeOffice 部落格在 Facebook 上對 Office 按讚
+
+
+
+
+
+
+
+
+
+
+聯合知識庫 - 歷史的窗 從雲端看臺灣
+
+
+
+
+
+
+
+
+
+Database
+
+
+
+
+
+
+��Ʈw
+
+
+
+
+ ��Ʈw 
+
+
+
+
+
+
+ Richard Stallman's article on  U.S. Congress Threatens to Establish a New Kind of
+          Monopoly. (30 Apr 1999)
+    
+
+
+ �ꤺ��Ʈw 
+ �@����
+
+ EES ��Ʈw 
+ �����޸�T����
+      STICNET
+
+ �ƾǻP�ͤ�
+
+  Cambridge Structure Database
+ Beilstein
+      Database
+ PDB
+  SpecInfo Database
+
+
+ ��ڸ�Ʈw
+  Academic Press Dictionary of Sience and Technology
+ ��l
+
+ Webelements:  the periodic table on the WWW
+      Atomic scattering factors for the elements
+  Database of core edge (inner shell) excitation spectra of gas
+      phase atoms and molecules
+ NIST Atomic Spectroscopic Database 
+
+
+
+���l���c��Ʈw
+
+ Webmolecules contains more than 100,000 molecules!
+      Corina 3-D Coordinates
+ Fullerene database login: sabio - select: other databases and remote libraries - select Buckballs database
+      Extensive database about conjugated polymers
+  The IMB Jena Image Library of Biological Macromolecules 
+  Indiana University Molecular Structure Center
+  Library of 3-D Molecular Structures (MathMol Library)
+ Molecular Structure
+      Center(Indiana University) 
+  Okanagan University College's PDB Collection:
+      Excellent source of small molecule models created by Dr.
+      Dave Woodcock.
+      Malathion Teaching Module Structures 
+ Organic Compounds Database
+  Polycyclic Aromatic Hydrocarbons (PAHs)
+      Data Base 
+      ( Jinno Laboratory Research Information, Japan ) 
+      Porphyrin Database (K. M. Smith Group at UC Davies):
+      A variety of information about porphyrin chemistry including
+      documents about organic synthesis, non-planar porphyrins,
+      crystallography, PRC mimics, oxophlorins, PDT, and more...
+     Protein databank
+ Rasmol/Chime
+      Homepage
+  Smell Database 
+  Three-Dimensional Drug Structure Databank
+  The Twenty Common Amino Acids 
+ Web Molecules
+  WWU Virtual Molecular Model Kit 
+  The WWW Chemical Structures Database
+  Atlas of Zeolite Structure Types  ( International Zeolite
+      Association )
+      The Molecular Sieves Database 
+ The Cambridge
+      Cluster Database: the results of global optimizations for a
+      variety of systems in a downloadable form.
+  
+
+
+���z�ʽ�
+  �����a�зǧ� ��Ʈw
+    (National Institute of Standards and Technology (USA) Data) 
+
+
+NIST ONLINE Reference Databases
+  Physical Reference Data of the NIST Physics Laboratory : �򥻪��z�`��, ��촫��, X�g�u �� �����Ϊ����
+ NIST ��  Webbook  ����5000 IR ���СB8000���ХH�Τ����ͦ����B�����൥���Ϊ���ơC 
+        �b  Chemistry WebBook���A  �A�i�H�����Q�� �ƾǦ��B�ƾǦW�١B
+        ���l�q�B�����൥��T�ӷj�M�C 
+        ��: acetone �� IR ����
+ Integrated Spectral Data Base System for Organic Compounds
+  The WWW Chemical Structures Database
+
+  IUPAC Homepage  : contains full texts of IUPAC Recommendations
+      in many different fields.
+      
+  Glossary of terms used in Physical Organic Chemistry 
+  Glossary of terms used in
+          bioinorganic chemistry
+ Solubility Data
+
+  NMR Data of Known Compounds
+  DIELECTRIC CONSTANT REFERENCE
+      GUIDE
+
+
+���O��
+
+ NIST Chemistry webbook
+  NIST Thermophysical Properties of Fluid Systems
+ ���ѫװѼ�
+  Electron Binding Energies
+  Solubility Product Constants at 25o C 
+
+
+
+������
+
+  Structure Determination from Powder Diffraction - Database (ALB Crystallography)
+      Cambridge Structure Database
+  Crystallography: Molecular Structure Center 
+ Space group data,
+      Crystal symmetry environement
+  Orbifold Atlas ( Crystallographic Topology )
+     The Mineral Database
+  The Mineral Gallery
+
+���c�L���ƾ�
+
+  ILL's database of VRML zeolite structures
+  ILL's database of VRML superconductor structures.
+  ICSD for WWW Inorganic Crystal Structure Database
+  Atlas of Zeolite Structure Types  ( International Zeolite
+      Association )
+      The Molecular Sieves Database 
+
+
+Zeolite
+
+  The zeolite database, by Bruno Herreros
+      Compendium of zeolite isopotential surfaces
+      The Zeolite Researchers' List
+
+ The Molecular Sieves Database
+      Atlas of Zeolite Structure Types  ( International Zeolite
+      Association )
+      ILL's database of VRML zeolite structures
+
+
+�����ƾǸ�Ʈw
+
+  Organic Compounds Database
+  Integrated Spectral Data Base System for Organic Compounds
+  Flavornet
+
+
+
+������� Surface Science
+
+  Database of XPS and AES Spectra (Surface Analysis Society of Japan)
+    Databases of XPS Spectra (XPS International, Inc.)
+    Database of XPS Spectra (CNRS-Orleans / VG Scientific)
+    Monochromatic XP Spectral Libraries (off-line : XPS International, Inc.)
+    NIST Chemistry WebBook (incl. MS-fragmentation & IR data)
+    NIST : XPS Database (off-line)
+    NIST : Surface Structure Database (off-line)
+    Static SIMS Library (off-line : SurfaceSpectra Ltd.)
+    
+
+
+ �G���P�������ʾ� Liquid Crystal, Surfactant
+
+ LiqCryst -
+    the Database 
+    of Thermotropic Liquid Crystals
+   LIPIDAT - a relational database of thermodynamic and associated information on
+    lipid mesophase and crystal polymorphic transitions
+   Database:
+    FTIR spectra of 430 surfactants (Reflex 
+    Analytical Corporation)
+   Database:
+    Hummel 
+    Surfactants - FTIR spectra of 1000 surfactants (Reflex 
+    Analytical Corporation)
+   Surfactants: General
+    Information (from the Solvent Alternatives Guide)
+   Formulation 
+    Chemistry (David Young, Auburn U.)
+   Surfactant Enhancement
+    and Cosolvent Information Available from GWRTAC
+ Comparative Chain
+    Length Distributions for Common Fats and Oils
+ Phase    
+    Behavior and Microstructure of Alkyl polyglucoside Microemulsions,
+    Larry D. Ryan, U. of Delaware
+   KOSMET - an
+    online 
+    database specialising in Cosmetic Science and Industry information
+   Analysis
+    of Detergent Solution Properties using Dynamic Light Scattering (Protein
+    Solutions Inc.)
+
+
+�ͪ��ƾǻP���l�ͪ��� Biochemistry and Molecular Biology
+  Amino Acid Properties
+  National Center for Biotechnology Information
+
+ MEDLINE  NLM's search service to access the 9 million citations
+    NCBI taxonomy browser
+
+  Molecular Biology Servers/Databases/Web Sites of Interest
+ The EF-Hand Calcium-Binding Proteins Data Library
+ Protein Databank:
+  STING
+  PROMISE : The Prosthetic groups and Metal Ions in Protein Active Sites Database Version 2.0
+ Metalloprotein site Database and
+  Browser (MDB), Scripps Research Institute, USA
+ Macromolecular Structure Database @ EBI
+ scop - Structural Classification of Proteins
+ The EF-Hand Calcium-Binding Proteins Data Library
+ PROTFAM - Protein Classification @ MIPS, Germany
+ DbBrowser - 
+  The UCL Bioinformatics Server
+ Macromolecular Structures
+  Database
+
+ReliBase - 
+     structural data about receptor/ligand complexes.
+
+
+
+DrugDB 
+ Drug Data Base ( Jinno Laboratory Research Information, Japan )
+    NIH �� National Toxicology
+    Program Database:
+    
+  Chemicals with Health & Safety Data (460k file!)
+ Structural descriptors for NTP chemicals 
+
+  EPA factsheets for every regulated toxic chemical.
+ �P�������Ʈw
+  Agency for Toxic Substances and Disease Registry 
+  A MOLECULAR DATABASE FOR CHIRAL CHROMATOGRAPHY 
+  Klotho: Biochemical Compounds Declarative Database 
+ Top 20 Hazardous Substances
+ 
+  Iron in Biology: Study of the Iron Content in Ferritin, The Iron-storage Protein.
+
+
+
+
+
+
+�q���ƾ� Mineral chemistry
+
+  Joe Smyth's mineral structures at the University of Colorado
+ The Mineral Database
+  The Mineral Gallery
+  The Mineralogical Society of America database of mineral structures
+  Larry Finger's high pressure mineral structures
+ �q���P�_�۪��Ϥ���Ʈw
+
+
+�䥦
+
+  Material Safety Data Sheets (MSDS)
+
+Yahoo Links
+
+  Molecular Weights Table 
+  Photochemistry Database:
+      
+        On line collection of current literature in photochemistry
+        and related fields
+      
+ The Cambridge
+      Cluster Database: the results of global optimizations for a
+      variety of systems in a downloadable form.
+      QCLDB(Quantum Chemistry Literature DataBase) 
+
+        QCLDB is a literature database on ab initio MO calculations published
+        in major journals of Chemistry, Physics and Computer Science since
+        1978. Data includes author(s), journal name, volume, page, year,
+        substance formulas, methods of calculation, basis sets, physical
+        properties and comments.  Most recently released version ( release 97 )
+        contains 36,856 literature references on ab initio quantum
+        chemistry calculations published in the period from 1978 to 1996.
+      
+  CAOS/CAMM Center Free Internet Services 
+
+        Cambridge Crystallographic Database (CSD),
+        
+        Crystal Symmetry Modeler (CSECM),
+        
+        Quantum Chemistry Literature Data Base (QCLDB),
+        
+        Visualization of molecular and electronic structure (MOLDEN),
+        
+        Modeling and Computational Chemistry Abstracts (MMCC Results),
+        
+        Sequence Retrieval Server (SRS 5),
+        
+        Human Genome Database (GDB),
+        
+        Mouse Genome Database (MGD),
+        
+        GeneCards: human genes, proteins and diseases
+      
+ Chromophores
+  Acid dyes
+  Radiation Chemistry Data Center of the Notre
+      Dame Radiation Laboratory:
+      
+        an information resource dedicated to the collection,
+        evaluation, and dissemination of data characterizing the reactions of
+        transient intermediates produced by radiation chemical and
+        photochemical methods.
+      
+  Electrochemical Science and Technology Information Resource (ESTIR)
+  THE CHEMICAL DATABASE SERVICE
+  UnCover (another database)
+  Chemical Abstracts Service
+  Atmospheric Chemistry Data 
+  Biodegradability of chemical substances
+  Food Additive Database
+
+
+
+��L�W�s��
+
+  Chemical information sites indexed at the ChemFinder
+      WebServer
+ List of
+      links of database
+  another list of database from  A Living Document of Internet Resources, Information and Applications
+ On-line Databases Page of the UK ESCA Users Group 
+
+
+
+
+
+
+
+ ��Ʈw 
+
+
+
+
+ �p�G�A��������D�Ϋ�ĳ, �D�`�w��P�ڭ� �p��
+
+
+
+
+

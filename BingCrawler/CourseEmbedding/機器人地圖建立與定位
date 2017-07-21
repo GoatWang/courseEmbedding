@@ -1,0 +1,3379 @@
+
+
+
+即時定位與地圖構建 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+即時定位與地圖構建
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+一個由德國達姆施塔特理工大學研發的機器人正使用雷射成像探測與測距技術來給迷宮繪圖。
+
+
+
+
+
+
+上圖的機器人描繪出的地圖。
+
+
+同步定位與地圖構建（SLAM或Simultaneous localization and mapping）是一種概念：希望機器人從未知環境的未知地點出發，在運動過程中通過重複觀測到的地圖特徵（比如，牆角，柱子等）定位自身位置和姿態，再根據自身位置增量式的構建地圖，從而達到同時定位和地圖構建的目的。
+
+
+
+目錄
+
+
+1 操作性定義
+2 技術上的問題
+
+2.1 地圖構建
+2.2 傳感
+2.3 定位
+2.4 建模
+
+
+3 相關文獻
+4 參見
+5 參考資料
+6 外部連結
+
+
+
+操作性定義[編輯]
+這裡說的地圖，是用來在環境中定位，以及描述當前環境以便於規劃航線的一個概念；它通過記錄以某種形式的感知獲取的信息，用以和當前的感知結果相比較，以支撐對現實定位的評估。在定位評估方面，地圖提供的幫助程度，與感知的精度和質量成反相關。地圖通常反映了它被描繪出來的時刻的環境狀態，所以它並不一定反映它被使用的時刻的環境狀態。
+在誤差和噪音條件下，定位和地圖構建技術上的複雜度不支持兩者同時獲得連續的解。即時定位與地圖構建（SLAM）是這樣一個概念：把兩方面的進程都捆綁在一個循環之中，以此支持雙方在各自進程中都求得連續解；不同進程中相互疊代的反饋對雙方的連續解有改進作用。
+地圖構建，是研究如何把從一系列傳感器收集到的信息，集成到一個一致性的模型上的問題。它可以被描述為第一核心問題：這個世界長什麼樣？地圖構建的核心部分是環境的表達方式以及傳感器數據的解釋。
+與之相比，定位，是在地圖上估測機器人的坐標和姿勢形態的問題；換而言之，機器人需要回答這裡的第二核心問題，我在哪？典型的解包含以下兩個方面：追蹤——通常機器人的初始位置已知；全局定位——通常只給出很少，甚至不給出有關於起始位置環境特徵的先驗信息。
+所以，同步定位與地圖構建（SLAM）被定義為以下問題：在建立新地圖模型或者改進已知地圖的同時，在該地圖模型上定位機器人。實際上，這兩個核心問題如果分開解決，將毫無意義；必須同時求解。
+在機器人能夠根據一系列觀測值回答「這個世界長什麼樣」之前，它需要知道的額外信息很多，比如以下：
+
+它自身的運動學特徵,
+信息的自動獲得需要什麼樣的品質,
+附加的支持觀測值能從哪些源得到。在沒有地圖或者方向參考的前提下，對機器人的當前位置估測是一個複雜的任務。[1]這裡的"位置"可以簡單指代機器人的所處方位，也可以包括它的姿勢形態。
+
+技術上的問題[編輯]
+同步定位與地圖構建（SLAM）可以被看做是一個雞生蛋蛋生雞的問題：完美的定位需要用到一個無偏差的地圖；但這樣的地圖又需要精確的位置估測來描繪。這就是一個疊代數學問題解決策略的起始條件。作為對比，原子軌道模型可以被看做一個在不精確的觀測條件下說明足夠多的結果的經典方法。
+再者，由於多個傳感器對機器人的相對運動的辨別存在固有的不確定性，上一節提到的兩個「核心問題」也不像看起來的那麼簡單。一般來說，由於技術環境中總會考慮噪聲，所以SLAM方法要考慮的不只是數學上的緊湊解，也包括與那些和結果相關的物理概念的相互作用。
+如果在地圖構建的下一個疊代步驟中，測得的距離和方向有可預知的一系列不精確度——通常由傳感器有限的的精確度和外加的環境噪聲所引起，那麼附加到地圖上的所有特徵都將會含有相應的誤差。隨著時間的推移和運動的變化，定位和地圖構建的誤差累計增加，將會對地圖本身和機器人的定位、導航等能力的精度產生很大的扭曲。
+有許多技術能補償這些誤差，比如那些能再現某些特徵過去的值的方法（也就是說，圖像匹配法或者環路閉合檢測法），或者對現有的地圖進行處理——以融合該特徵在不同時間的不同值。此外還有一些用於SLAM統計學的技術可起到作用，包括卡爾曼濾波、粒子濾波（實際上是一種蒙特卡羅方法）以及掃描匹配的數據範圍。
+地圖構建[編輯]
+在機器人技術社區中，SLAM的地圖構建通常指的是建立與環境幾何一致的地圖。而一般算法中建立的拓撲地圖只反映了環境中的各點連接關係，並不能構建幾何一致的地圖。因此，這些拓撲算法不能被用於SLAM。
+在實用中，SLAM通常要被剪裁至適應可獲得的資源，於是可以看出它的目標不是完美，而是操作實用性。已經發布的SLAM方法已被應用於無人機、無人潛艇、行星探測車、最近大熱的家政機器人、甚至人體內部。[2]
+學界大致都認為，SLAM問題的「正在得到解決」是過去十年間機器人研究領域的最重大成果之一。[3] 該領域中仍有許多有待解決的難題，比如圖像匹配和計算複雜度等方面的相關問題。
+基於SLAM文獻的最新研究進展中，有一條值得註意，就是對SLAM的機率論基礎進行重新估測。這個充滿了冒險家特質的方法大意如下：通過引入隨機有限集的、多目標的貝葉斯濾波器，使得基於特徵的SLAM算法獲得卓越的性能，以此跳過對圖像匹配的依賴；但作為代價，測量中的假警報率和漏檢率都會被提升。[4] 這裡面的算法是基於機率假設密度濾波的方法來改進的。[5]
+傳感[編輯]
+SLAM研究中經常使用許多不同型號的傳感器來獲得地圖數據。這些數據帶有統計獨立的誤差。[來源請求]這個統計獨立是解決度量偏差和檢測中的噪聲的強制需求。簡單來說，就是任何一個東西都很難測的準確。比如一根1米長的棍子，你第一次測量的時候可能是1.02米，第二次測量時1.05米，...。總之測量的時候多多少少都會有一些誤差在裡面，因此SLAM算法本身必須要有效的處理這些測量誤差。
+這些傳感器可以是光學的，比如1D的（單波束）或者2D的（掃描）雷射測距儀、3D_Flash_LIDAR、2D或3D聲吶傳感器以及一個或多個2D攝像頭。從2005年開始，使用可視化傳感器（攝像頭）對SLAM的研究（可視化SLAM）如火如荼地展開，因為從那時起攝像頭開始普及（比如說手機普遍帶有攝像頭）。[6]
+新近的方法使用了準光學的無線測距法，同時把三角測距法等幾何方法應用於SLAM中，用以消除微弱無線信號對測量的影響。
+一種為走路者設計的SLAM應用使用了一個裝在鞋頭的慣性測量單元作為主要傳感器，該設計依賴於走路者能自動規避牆體這一假設。這個名為FootSLAM的設計可被用於自動建立建築物的樓面佈置圖，從而方便建立該建築的室內定位系統。[7]
+定位[編輯]
+傳感器的結果會作為定位算法的輸入。由幾何知識可知，對於n維的定位問題，任何傳感輸出必須包含至少一個多點定位和（n+1）個判別方程。為了算出結果，有關於在絕對或相對的循環和鏡像坐標系統下得到的結果的先驗知識也是必要的。
+建模[編輯]
+以上結果對地圖構建的貢獻，可以在「2D建模並分別表示」或者在「3D建模並在2D上投影表示」中工作得一樣出色。作為建模的一部分，機器人本身的運動學特徵也要被考慮進去，用以提高在固有背景噪聲下的傳感精度。構建的動態模型需平衡不同傳感器、不同局部誤差模型給出來的貢獻值，並最終包含一個基於地圖本身的銳利的可視化描述，這包括機器人的位置和方向等雲機率信息。地圖構建就是這樣一個動態模型的最終運算結果。
+相關文獻[編輯]
+有關於SLAM的一個開創性工作是以R.C. Smith和P. Cheeseman為代表，在1986年作出的對空間不確定性的估測的研究。[8][9]其他該領域的開拓工作由Hugh_F._Durrant-Whyte的研究團隊在1990年代初所作出。[10]
+參見[編輯]
+
+
+機器人學主題
+
+
+
+卡爾曼濾波
+蒙特卡洛定位法
+粒子濾波
+Stanley,一輛成功使用了SLAM技術的無人車
+深度圖像的圖像配準
+移動機器人編程工具包項目：一組開源、跨平臺的SLAM資料庫。
+Multi Autonomous Ground-國際機器人競賽：一項160萬美元的國際競賽，要求參賽者讓多台無人車合作給一大片區域繪製地圖。
+
+參考資料[編輯]
+
+
+^ Definition according to OpenSLAM.org, a platform for SLAM researchers
+^ Mountney, P.; Stoyanov, D. Davison, A. Yang, G-Z. Simultaneous Stereoscope Localization and Soft-Tissue Mapping for Minimal Invasive Surgery (PDF). MICCAI. 2006, 1: 347–354 [2010-07-30]. doi:10.1007/11866565_43.  引文使用過時參數coauthors (幫助)
+^ Durrant-Whyte, H.; Bailey, T. Simultaneous Localization and Mapping (SLAM): Part I The Essential Algorithms (PDF). Robotics and Automation Magazine. 2006, 13 (2): 99–110 [2008-04-08]. doi:10.1109/MRA.2006.1638022.  引文使用過時參數coauthors (幫助)
+^ J. Mullane, B.-N. Vo, M. D. Adams, and B.-T. Vo,. A random-finite-set approach to Bayesian SLAM, (PDF). IEEE Transactions on Robotics. 2011, 27 (2): 268–282. doi:10.1109/TRO.2010.2101370. 
+^ R. P. S. Mahler,. Statistical Multisource-Multitarget Information Fusion.. Artech House,. 2007.  請檢查|date=中的日期值 (幫助)
+^ Karlsson, N.; Di Bernardo, E.;Ostrowski, J;Goncalves, L.;Pirjanian, P.;Munich, M. The vSLAM Algorithm for Robust Localization and Mapping. Int. Conf. on Robotics and Automation (ICRA). 2005.  引文使用過時參數coauthors (幫助)
+^ Robertson, P.; Angermann, M.;Krach B. Simultaneous Localization and Mapping for Pedestrians using only Foot-Mounted Inertial Sensors (PDF). Ubicomp 2009. Orlando, Florida, USA: ACM. 2009. doi:10.1145/1620545.1620560.  引文使用過時參數coauthors (幫助)
+^ Smith, R.C.; Cheeseman, P. On the Representation and Estimation of Spatial Uncertainty (PDF). The International Journal of Robotics Research. 1986, 5 (4): 56–68 [2008-04-08]. doi:10.1177/027836498600500404.  引文使用過時參數coauthors (幫助)
+^ Smith, R.C.; Self, M.;Cheeseman, P. Estimating Uncertain Spatial Relationships in Robotics (PDF). Proceedings of the Second Annual Conference on Uncertainty in Artificial Intelligence. UAI '86. University of Pennsylvania, Philadelphia, PA, USA: Elsevier: 435–461. 1986.  引文使用過時參數coauthors (幫助)
+^ Leonard, J.J.; Durrant-whyte, H.F. Simultaneous map building and localization for an autonomous mobile robot. Intelligent Robots and Systems' 91.'Intelligence for Mechanical Systems, Proceedings IROS'91. IEEE/RSJ International Workshop on. 1991: 1442–1447 [2008-04-08]. doi:10.1109/IROS.1991.174711.  引文使用過時參數coauthors (幫助)
+
+
+外部連結[編輯]
+
+Probabilistic Robotics by Sebastian Thrun, Wolfram Burgard and Dieter Fox with a clear overview of SLAM.
+SLAM For Dummies (A Tutorial Approach to Simultaneous Localization and Mapping).
+Andrew Davison research page at Imperial College London about SLAM using vision.
+Autonomous and Perceptive Systems research page at University of Groningen about visual SLAM.
+openslam.org A good collection of open source code and explanations of SLAM.
+Matlab Toolbox of Kalman Filtering applied to Simultaneous Localization and Mapping Vehicle moving in 1D, 2D and 3D.
+SLAM Example using Processing.js of Feature-Based Navigation.
+FootSLAM research page at DLR including the related Wifi SLAM and PlaceSLAM approaches.
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+機器人學
+
+
+
+
+
+
+主要文章
+
+
+
+綱要（英語：Outline of robotics）
+術語（英語：Glossary of robotics）
+索引（英語：Index of robotics articles）
+歷史（英語：History of robots）
+未來
+世界機器人學（英語：Robotics worldwide）
+機器人名人堂（英語：Robot Hall of Fame）
+機械倫理學
+機器人法律
+人類與機器人的互動
+人工智慧競賽和獎項（英語：Competitions and prizes in artificial intelligence）
+機器人列表（英語：List of robots）
+虛構機器人列表（英語：List of fictional robots and androids）
+
+
+
+
+
+
+
+
+
+
+
+類型
+
+
+
+
+
+依外型
+
+
+
+
+類人型
+人型
+女性
+改造人
+六足（英語：Hexapod (robotics)）
+關節（英語：Articulated robot）（機械手臂）
+BEAM
+仿生
+微型（英語：Microbotics）
+奈米
+
+
+
+
+
+
+
+
+
+依用途
+
+
+
+
+家用（英語：Domestic robot）
+娛樂（英語：Entertainment robot）
+軍用
+醫療
+服務（英語：Service robot）
+殘疾（英語：Disability robot）
+假肢
+農業
+餐館（英語：Automated restaurant）
+工業
+
+
+
+
+
+
+
+
+
+依使用環境
+
+
+
+
+固定
+地面
+水下
+空中
+太空
+移動機器人（英語：Mobile robots）
+極地機器人（英語：Mobile robots#Classification）
+
+
+
+
+
+
+
+
+
+依移動方式
+
+
+
+
+步行
+輪子
+履帶
+
+
+
+
+
+
+
+
+
+依運動行為
+
+
+
+
+跑步
+游泳
+機器人攀登（英語：Climber (BEAM)）
+機器人跳躍（英語：Robot locomotion#Hopping）
+爬行
+機器人擺臂（英語：Robot locomotion#Brachiating）
+
+
+
+
+
+
+
+
+
+
+
+部件
+
+
+
+動力源
+驅動
+感應
+
+
+
+
+
+
+
+
+導航（英語：Mobile robot navigation）
+
+
+
+手動遙控（英語：Mobile robot#Manual remote or tele-op）、遙控操作（英語：Remote operation）或遠控自主（英語：Telerobotics）
+避障遙控（英語：Mobile robot#Guarded tele-op）
+線控機器人（英語：Mobile robot#Line-following robot）
+自主隨機機器人（英語：Mobile robot#Autonomously randomized robot）
+自動引導機器人（英語：Mobile robot#Autonomously guided robot）
+滑動自主（英語：Mobile robot#Sliding autonomy）
+
+
+
+
+
+
+
+
+研究
+
+
+
+機器人學家
+機器人的領域（英語：Areas of robotics）
+機器人演化（英語：Evolutionary robotics）
+機器人工具組（英語：Robot kit）
+機器人模擬器（英語：Robotics simulator）
+Suite（英語：Robotics suite）
+開源（英語：Open-source robotics）
+軟體（英語：Robot software）
+適應性（英語：Adaptable robotics）
+開發（英語：Developmental robotics）
+範式（英語：Robotic paradigms）
+普適（英語：Ubiquitous robot）
+
+
+
+
+
+
+
+
+
+
+
+分類
+共享資源
+主題
+專題
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=即時定位與地圖構建&oldid=44893663"					
+3 個分類：人工智慧機器學習機器人學隱藏分類：含有過時參數的引用的頁面引文格式1錯誤：日期含有英語的條目有未列明來源語句的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةDeutschEnglishEsperantoEspañolFrançaisItaliano日本語한국어NederlandsPortuguêsРусскийSvenskaУкраїнська 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年6月23日 (週五) 12:50。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+公告：「機器人地圖建立與定位」（全英語授課）大碩課程招生公告 - 國立臺灣師範大學 資訊工程學系
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+您的瀏覽器不支援Javascript，部分功能將無法呈現。
+
+
+:::
+網站導覽
+舊網 
+Login
+English
+
+
+
+
+
+
+
+國立臺灣師範大學 資訊工程學系
+
+:::最新消息系所公告演講公告競賽活動工讀訊息徵才訊息
+
+
+:::
+「機器人地圖建立與定位」（全英語授課）大碩課程招生公告系所公告張貼人： ╱ 公告日期：2013-02-22應用電子科技學系101學年度第2學期
+「機器人地圖建立與定位」（全英語授課）大碩課程招生公告
+一、課程內容：為培育智慧型機器人先進研發人才，建立其機器人自我定位與地圖建立的扎實基礎，拓展相關知識領域，特聘請國際級智慧型機器人大師Dr. Baltes (RoboCup 與FIRA 機器人比賽的執行委員)親自授課。
+二、授課對象：本校大三、四、研究所學生
+三、上課名額：以50人為限
+四、選課期間：102/2/18（一）- 3/4(一) （每日上午8：30起至晚上9：30止）
+五、開設科目及上課時間：
+
+
+
+
+開設科目
+
+
+授課老師
+
+
+學分數
+
+
+上課時間
+
+
+上課地點
+
+
+
+
+機器人地圖建立與定位
+Simultaneous Localization and Mapping (SLAM)for Robotics　
+
+
+Hansjoerg(Jacky)Baltes教授
+
+
+3
+
+
+4/10~6/6
+週三18:10~21:00
+週四17:10~20:00
+
+
+科技學院
+工511
+
+
+
+
+六、課程大綱及師資簡介：
+
+
+
+
+授課講師
+
+
+學經歷
+
+
+課程大綱
+
+
+
+
+Hansjoerg (Jacky) Baltes教授
+
+
+1.University of Manitoba教授，世界盃機器人比賽RoboCup與FIRA執行委員兼副主席
+2. University of Calgary博士
+http://www.cs.umanitoba.ca/~jacky/
+
+
+1. Introduction to localization and mapping for navigation.
+2. The fundamentals of probability theory for Localization and mapping.
+3. Localization: motion models, sensor models, and Monte Carlo method, particle filter.
+4. Eigenvectors and singular value decomposition.
+5. Incremental closest point algorithm. 
+6. Introduction to computer vision, thresholding, histograms, edge detection, Sobel, and Laplacian.
+7. Convolution, segmentation, and integral image.
+8. Visual SLAM, SIFT and SURF features.
+9. Visual SLAM - Bundle adjustment.
+
+
+
+
+ 
+ 
+ 
+ 最後修改時間：2015-04-15 PM 4:52
+
+
+:::
+
+最新消息招生資訊系所簡介系所成員設備資源活動剪影徵聘教師榮譽榜教務資訊表單下載數位學習資源連結行事曆系友系統基礎課程免修認證專區
+
+
+
+
+
+
+
+
+
+
+
+
+本網站著作權屬於國立臺灣師範大學 資訊工程學系，請詳見使用規則。
+地址：116臺北市汀州路四段88號					
+聯絡電話：(02)7734-6660　(02)7734-6659 | 校內分機：6660 | 傳真專線：(02)2932-2378
+
+
+
+瀏覽人數：
+296453
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：全向式移動機器人之同步定位與環境地圖建立
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 全向式移動機器人之同步定位與環境地圖建立Simultaneous localization and mapping of an omni-directional robotic platform
+作者: 王兆戊Chao-Wu Wang宋開泰Kai-Tai Song電控工程研究所
+關鍵字: 全向式移動平臺;全向式攝影機;即時定位與環境地圖建立;擴展式卡門濾波器;全向輪;omni-directional robotic platform;omni-directional camera;simultaneous localization and mapping;extended Kalman filter;omni-directional wheel
+公開日期: 2007
+摘要: 本論文提出一使用全向式攝影機(Omni-directional camera)之全向移動式機器人(Omni-directional Mobile Robot)之同步定位與環境地圖建立(Simultaneous Localization and Mapping, SLAM)。藉由全向式攝影機360°的視野，取得更豐富的影像資訊和更多的環境地標(Landmark)，並結合擴展式卡門濾波器(Extended Kalman Filter, EKF)達成全向式移動平臺的vSLAM。本論文採用參考點轉換與建立的策略，讓機器人能自主建立個別參考點，當走回已到過區域時仍能從資料庫中取回儲存之參考點資訊使用，減少EKF的計算負擔。實驗結果顯示特徵點辨識之正確率為93%，以實驗室之機器人於室內繞行8字形軌跡移動行經約16公尺後之起點與終點定位誤差均在0.1公尺以內。實驗結果證實機器人能藉定位系統達成走廊上的長距離全向式移動及轉動，且建立走廊環境的特徵點地圖，達成全向移動式機器人的室內導航功能。This thesis investigates simultaneous localization and mapping (SLAM) of an omni-directional mobile robot. A method is proposed to use an omni-directional camera to realize SLAM algorithm based on extended Kalman filter (EKF). This study focus on the use of 360° of view of the omni-directional camera to reduce the accumulative error from odometer and to achieve simultaneous localization and mapping of the omni-directional platform. The method of visual reference scans is adopted in this design. Features of previously visited places can be used repeatedly to reduce the complexity of extended Kalman filter. Experimental results show that the matching rate of landmark features is 93%. The localization error is less than 0.10m for traveling 16 meters of “8” shaped route. Indoor navigation experiments revealed that the proposed localization system can navigate the omni-directional robot in an indoor environment and build the feature map simultaneously.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT009512616http://hdl.handle.net/11536/38325
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文件中的檔案：存到雲端
+
+
+
+
+261601.pdf
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefSelf-Localization and Control of an Omni-Directional Mobile Robot Based on an Omni-Directional Camera / Song, Kai-Tai;Wang, Chao-WuVision SLAM Using Omni-Directional Visual Scan Matching / Huang, Fu-Sheng;Song, Kai-Tai基於全向式影像之機器人同步定位與環境地圖建立 / 黃富聖;Fu-Sheng Huang;宋開泰;Kai-Tai Song利用架設在視訊監控車上成對的全方位攝影裝置作週遭環境監控之研究 / 陳俊甫;Chen, Chun-Fu;蔡文祥;Tsai, Wen-Hsiang利用環場視覺作自動車應用之定位與影像分析新技術之研究 / 吳至仁;Wu, Chih-Jen;蔡文祥;Tsai, Wen-Hsiang利用環場攝影機於車內做基於擴增實境技術的室外園區導覽 / 衛彥成;Wei, Yen-Cheng;蔡文祥;Tsai, Wen-Hsiang國立高雄第一科技大學 - 家用服務型機器人之同步定位與環境地圖建構 / 蔡政霖; Tsai Cheng-Lin 國立清華大學 - 利用雙眼視覺影像於室內場景之機器人同步定位與環境地圖建立 / Chang, Hsun-Hao; 張洵豪 國立成功大學 - 全方位移動機器人應用於環境地圖建立 / 鐘啟豪; Zhong, Qi-Hao 國立成功大學 - 全方位移動機器人應用於環境地圖建立 / 鐘啟豪; Zhong, Qi-Hao 國立中正大學 - 使用RGB-D攝影機實現移動式機器人即時同步定位與建構地圖 / 鐘國豪; Kuo Hao, Chung 國立清華大學 - 適用於室內環境之快速機器人同步定位與建圖 / Kuo, Bor-Woei; 郭柏瑋 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：基於擴展卡門濾波同時定位與地圖建立之地圖接合研究
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 基於擴展卡門濾波同時定位與地圖建立之地圖接合研究Study of Map Joining in EKF-SLAM
+作者: 劉建宏宋開泰電控工程研究所
+關鍵字: 同時定位與地圖建立;卡曼濾波器;地圖接合;封閉路徑;EKF-SLAM;Map join;Loop closure;Kinect
+公開日期: 2011
+摘要: 本論文提出一使用Kinect深度攝影機之機器人定位方法。以Kinect為感測器取得環境資訊，結合Extended Kalman Filter(EKF) 之同時定位與環境地圖建立(Simultaneous Localization and Mapping, SLAM)演算法，並以地圖接合之方式降低定位系統運算複雜度。Kinect深度影像攝影機同時提供彩色影像與距離資訊，本研究以擷取SURF特徵點對應感測器所取得之深度關係，快速且精確的取得特徵點之環境資訊，接著以EKF修正機器人狀態與特徵點三維座標。為了避免EKF隨環境增長而使矩陣運算複雜度快速增加，本論文提出以區域路徑範圍判斷之作法將環境分為數個子區域，機器人僅需要使用區域內之特徵點訊息，而無須使用整個環境資訊做定位系統演算，如此提高定位系統於機器人應用之即時運算之性能，最後鄰近的子區域以地圖融合演算法修正其間之差異，以維持整個環境地圖之完整性。實驗結果顯示機器人運行於一16mX7m之室內環境行走約83公尺，當機器人回到原點附近時實際位置與估測之間的二維座標平均誤差小於0.1公尺。實驗結果證實機器人能以EKF之定位系統藉地圖接合之作法，達成機器人室內導航之功能。This study investigates simultaneous localization and mapping(SLAM) of a mobile robot using a Kinect depth camera. Depth and image information from Kinect are utilized to realize SLAM algorithms based on extended Kalman filter(EKF). In this thesis, visual landmarks are extracted by SURF algorithm, then three dimensional location of feature points are calculated from Kinect depth image data. A map joining method is proposed to reduce computational complexity of EKF-SLAM, and to correct the deviations of adjacent local maps. A global map of the environment is constructed by the map joining procedure. Navigation experiments show that the accuracy of robot localization for a travel about 83m path is within 0.1m. It is verified that the developed algorithm of simultaneous localization and mapping with map joining can allow robot to navigate in an indoor environment
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT079812594http://hdl.handle.net/11536/46950
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文件中的檔案：存到雲端
+
+
+
+
+259403.pdf
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefA New Approach to Map Joining for Depth-Augmented Visual SLAM / Liu, Chien-Hung;Song, Kai-Tai基於單眼視覺之機器人迴圈原點及同步定位與地圖建立 / 袁立德;Yuan, Li-Deh;宋開泰;Song, Kai-TaiVision SLAM Using Omni-Directional Visual Scan Matching / Huang, Fu-Sheng;Song, Kai-Tai智慧型輪椅機器人基於多感測器融合之遠距離人員偵測與追蹤 / 鄒岱佑;Tsou, Tai-Yu;吳炳飛;Wu, Bing-Fei基於全向式影像之機器人同步定位與環境地圖建立 / 黃富聖;Fu-Sheng Huang;宋開泰;Kai-Tai Song使用卡曼濾波器及延伸卡曼濾波器實現磁儲存系統之通道估測與鎖相迴路 / 吳信昌;Hsin-Chang Wu;鄭木火;Mu-Huo Cheng淡江大學 - 基於擴張型卡爾曼過濾器的機器人視覺式同時定位、建圖、與移動物體追蹤 / 洪敦彥; Hung, Duen-yan 國立成功大學 - 同步定位與環境地圖建立之圖資表示與演算法研究 / 姚俊華; Yao, Jyun-Hua 淡江大學 - 結合粒子群最佳化法之雙層粒子濾波器於移動機器人的定位與地圖建置 / 鄧宏志; Teng, Hung-Chih 國立臺灣科技大學 - 單一相機同時定位與環境地圖建製於二維移動載具之實現 / 許竣揚 國立清華大學 - 利用雙眼視覺影像於室內場景之機器人同步定位與環境地圖建立 / Chang, Hsun-Hao; 張洵豪 Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+智慧型服務機器人之視覺追蹤及辨識應用於感測器融合理論 (III) - 國立臺灣大學 智慧機器人及自動化國際研究中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+English電子報
+
+
+
+國立臺灣大學 智慧機器人及自動化國際研究中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最新消息
+
+最新消息
+
+產業動態
+
+
+
+關於iCeiRA
+
+關於iCeiRA
+
+中心主任
+
+主任的話
+
+組織架構
+
+設置願景與目標
+
+聯絡我們
+
+
+
+研究
+
+計畫簡介
+
+研究成果
+
+技術轉移
+
+機器人及自動化相關機械實驗室
+
+
+
+活動
+
+國際研討會資訊
+
+專題演講
+
+競賽資訊
+
+競賽成果
+
+外賓參訪
+
+
+
+產學趨勢
+
+機器人及自動化研究動態
+
+機器人及自動化業界發展與應用
+
+
+
+影音展示
+
+影片展示區
+
+照片展示區
+
+
+
+相關連結
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+研究
+
+計畫簡介研究成果技術轉移機器人及自動化相關實驗室
+
+
+
+
+
+
+
+
+
+			智慧型服務機器人之視覺追蹤及辨識應用於感測器融合理論 (III)		
+
+
+
+
+
+
+
+
+
+	本計畫的目標為發展智慧型服務機器人創新關鍵科技，並針對遠距教學機器人進行 開發，使教師可在遠端電腦並透過網路來操控機器人進行遠距教學，藉由此服務型機器 人，可大大改善城鄉間的教學品質差距，並使相當多的學童受惠，此機器人關鍵技術，基於影像之同步定位與地圖建置(Vision Based SLAM)
+
+Localization and SLAM
+
+	發展完善的機器人運動規劃與控制系統，使機器人能透過此一系統，進行即時的運動規劃，以完全自主性的方式在動態環境中自由移動，完成所要求的任務。其中機器人系統架構以運動規劃與同步定位與建構環境地圖（Simultaneous Localization and Mapping）以及路徑規劃與自動導航之演算法為核心，將涵蓋感測(sensing)，感知(Perception)，智能(Intelligence)，控制(Control)，機構(Mechanism)，驅動(Actuation)等方面。
+
+	Fig 1.A.1. 運動規劃所涵蓋的技術範圍
+
+	由於本計畫機器人型態包含輪型平臺主要目標在建立行動式機器人各種前瞻運動規劃理論，其中包含輪型機器人差速協調控制、輪型機器人即時避障機制、輪型機器人即時路徑規劃系統、動態環境同步定位與地圖建構（SLAM）、多機器人協調控制系統。此外為了使機器人感知系統更為完整，在本計畫中配合影像系統作為輔助，提高感知系統的準確度，以達到更為完善的即時運動規劃系統。
+
+	本計畫依照系統模組的方式進行分類，則可以分為協調控制系統、同步定位與環境地圖建構系統、路徑規劃與自動導航系統、影像分析與控制系統、感知系統、機器人社群智慧系統。目前規劃是依此模組化架構發展各項模組系統的前瞻技術，最後再將各模組系統整合成完整的運動規劃系統。
+
+	Fig 1.A.2. 運動規劃系統的模組化架構
+
+	目前實現SLAM 的方式主要分成三種：Topological, Grid-Based, Feature-Based methods。在Topological的方式，是將整個環境當作一張圖，利用辨識各個物體或是環境的方式在環境中達到定位的功能，雖然透過這種方式可以做到大尺寸環境的定位，但實際上要做到辨識環境則是相當困難的，因此也較少人使用。
+
+	Grid-Based 的方式，也同樣被廣泛使用來處理定位與建構地圖的問題，一個典型的處理方式，就是將環境分成全域地圖（global map）與區域地圖( local map )，全域地圖是用來儲存所有環境的資訊，而區域地圖則是用來更新全域地圖的資訊，透過偵測區域地圖在全域地圖的相對位置，就可以達到機器人定位的目的。但由於需要一直儲存區域地圖的資訊因此Grid-Based 需要相當大的計算量以及儲存空間。相較於Topological 和Grid-Based 兩種方式，透過特徵擷取來達到定位與建構地圖顯得更直覺得多，可以經由影像來獲取邊緣、菱角、角落、線等特徵資訊，甚至也可以利用顏色、形狀、長度等特徵來瞭解環境，一個特徵地圖（Feature-Based Map）通常可以利用下式表達，其中i f 是指特徵， N 則是指地圖中特徵的數目。
+
+
+地圖比對(Map-Matching)
+
+	利用機器人的感應器所建出的局部地圖和全域地圖做比較，以全域地圖為基準來修正目前機器人的位置。利用比對局部地圖和全域地圖的關係來做位置上面的估測，但其計算量相對來說較大，而且其不確定性也遠大於利用地標來做估測；不過其可以更快速的完成地圖的建立，只是此種方法必須周圍環境具有顯的形狀特徵才可以完成，例如直角，利用此形狀特性來做比對與結合。其缺點在於環境中做融合之特徵不易被擷取，資料融合所憑藉的是機器人所偵測到的局部地圖資訊中，尋找出如直角等有明顯特徵的圖案，再與全域座標做特徵的比對，當環境處於類似走廊的情況，便無法做有效的融合、定位，此方法之受周圍環境限制太大，並且其不確定性也遠大於利用地標來做估測的結果。
+
+SLAM演算法
+
+	目前用來做為多機器人定位的演算法中，主要有三角定位法、Kalman Filter、MCL(Monte Carlo Localization)，Particle Filter、 Mixture MCL、Grid-Based Markov 定位法。三角定位法提供簡單、快速、幾何形狀的位置更新，但其所得到的位置資訊不能將感測器及機器人的誤差以機率方式涵蓋進去，因此機器人的誤差及定位後所在位置的機率無法有效的比較。
+
+	利用統計學演算法來對機器人其位置估測的不確定性作數學式的表示，以此不確定性拿來當做機器人定位之效能指標是目前機器人定位領域被公認的，如Kalman Filter、MCL、Mixture MCL、Grid-Based Markov 等定位演算法都是利用機率理論來建構的。這些定位演算法都具有相同的特性，那就是以多筆資料融合來得到最佳位置的估測，融合的資料越多，其估測值也經將更加準確。
+
+	Kalman Filter 的原理在於利用現在的狀態資訊加上下一秒的輸入，推斷出下一時刻的輸出，因此我們可以發現在使用Kalman Filter 演算法的時候，我們必須有現在機器人位置的狀態。Kalman Filter 利用高斯分佈(Gaussian Distribution)，在經過其遞迴的演算法則來對外在感測之誤差做有效的估測與融合。
+
+	Kalman Filter 是個精確又簡單的方法。不過此方法必須假設加入融合的感測器模型誤差分佈(Error Distribution)接近高斯分佈且必須為線性的。卡曼濾波器的優點在於融合、收斂速度快，若其誤差模型為高斯分佈則其估測出來的結果準確度將會相當高；缺點就如同上面所說，必須其誤差模型必須為高斯分佈，否則估測出來的結果將會缺乏準確度。
+
+	因為多機器人系統與SLAM 領域的堀起，許多研究者提出了Markov 定位演算法，其主要原理也是利用機率的觀念估測機器人間的位置，此法允許機器人在全域的地圖中來估測彼此之間的位置，它將區域地圖與全域地圖做從頭到尾的比對，找出機器人最有可能所在的位置，不需要起始位置，也不怕定位失敗，但是可以想像計算量將非常巨大，特別是一開始的時候。為了降低機器人在定位過程的時間消耗，MCL 定位演算法隨之產生，MCL(Monte Carlo Localization)並不是把區域地圖與全域地圖做完全的比對， MCL 的重點在相信度函數(Believe Function)，其用來做估測及修正的方式在於不斷的取樣(Sampling)與重新取樣(Re-Sampling)，在全域地圖上定義一定數量的取樣點(Sample)或稱粒子(Particle)，將每個取樣點賦予一個機率值，當這些取樣點越收斂表示機器人的位置越有可能在那個地方，它確實降低了Markov 定位演算法的計算量，其計算的時間皆隨著其地圖的維度，大小，分割精確度決定；換句話說，其計算量的大小取決於分佈粒子的取樣數，因此較難滿足即時性(Real-Time)的要求。不過MCL 的優點在於能接受具有不同或多種的感測器模型的誤差分佈(Error Distribution)，不限於高斯分佈而已。
+
+	由Kalman Filter 與MCL 的定位方法比較中，我們發現MCL 定位在大地圖的時候比Kalman Filter 定位來的穩定(Stable)與強健(Robust)但是，從另一方面來看，Kalman Filter 定位卻比MCL 定位來的精確，只要其輸入的感測模型資訊越接近高斯分佈(Gaussian Distribution)時，其效能及精準度都會大大提高，且Kalman Filter 收斂速度比MCL 快，因此比MCL 更適合運用在即時的需求上。雖然說Kalman Filter演算法被提出的時間較早，探討的也較深入，但因為這兩種定位演算法各有其專長，因此運用KalmanFilter 定位演算法的人還是不少，也提出了許多的改良方法EX(:Extended Kalman filter(EKF)，Unscented Kalman Filter(UKF)‧‧‧等)。總結來說，Kalman Filter 較常被運用在小地圖的定位上，而MCL 定位演算法較常被運用在大地圖的定位。
+
+	如果SLAM 的問題是線性而且為Gaussian，則Kalman Filter 可以保證其結果為收斂錯誤! 找不到參照來源。且為最佳化之結果。然而實際上SLAM 的問題卻很少為線性的，因此Extended Kalman filter(EKF)才發展出來用以解決非線性的定位問題。Xt 代表機器人在時間為t 時的位置資訊，ut+1 為控制機器人往t+1 的時間行動的命令，融合Xt 和ut+1可以得到Xt+1 的位置，再跟機器人得到對環境的觀測資訊zt+1 做比較，就可以準確的定位出機器人的所在位置。如此一直疊代下去就可以得到每個時刻機器人的所在位置了。
+
+	圖4、Formulation of SLAM
+
+
+	0為SLAM的算式，藉由前一秒的位置與這一秒的命令推算出這一秒的位置，並且與感應器所觀察到的資料做比對，得到這一秒精準的機器人位置。0為Durrant-Whyte所說明的SLAM中所要解決的問題：因為無法得知機器人及環境Landmark確實的位置，所以要藉由Sensor來測量環境的資訊，以此估測出機器人的位置及環境地圖。例如當機器人位於Xk-1時，觀測到mi等兩個Landmark，將兩個沒見過的Landmark建立在地圖上後，亦估測出機器人本身的相對位置。因為機器人移動的距離及對Landmark的觀測值不可能是完全準確的，因此Landmark 及機器人位置均有一不確定性(Uncertainty) 存在；在Xk時，同時觀測的到mi、mj…等三個Landmark，除了將之前沒見過的mj等兩個Landmark加入地圖後，因為mi是第二次觀測到了，不僅更新了mi的位置，更能縮小其位置所在的不確定性，增加Landmark的正確度，同時依據觀測到的Landmark，也能再次估測出機器人的位置；以此循環，機器人便能完成同時定位且建立環境地圖的功能。
+
+	圖5、SLAM 演算法概念示意圖
+
+	在SLAM 中，解決機器人位置與地圖不確定性的機率問題是主要的議題之一，Kalman filter是蠻好的方法，但其缺點為必須使用在線性系統下，因此基於feature-based的Extended Kalman filter則是常用的解決方法，EKF具有收斂速度快、運算精度高、穩定性佳等優點，其演算法較為直接且容易實現，並且可用於非線性系統中，可應用在即時系統，有效剋服數據的誤差，保持系統狀態估測的正確性。
+
+
+	我們將利用EKF做為解決雜訊融合資料的方法，並尋求EKF的改良版本Unscented Kalman Filter(UKF)，來達到比EKF效率更好，精準度更高的結果。藉由視覺判斷出Landmark的位置，並使用超音波與視覺資料的Covariance Intersection，達到同時SLAM與避障的效果。Unscented Kalman Filter(UKF)是根據EKF修改後所得到改良版的演算法，EKF須利用到泰勒展開式的一階微分得到計算所需要的係數，因此必須反覆的計算Jacobians，而UKF是藉由線性還原得到一個高斯分佈的平均值，因此不用每次預測和更新時都要重新計算Jacobian，總結來說，UKF和EKF都有快速收斂的高效率，但在泰勒展開式的第一項和第二項為係數時，UKF會比EKF更加來的線性，預測精確度也會較高如0 所示，我們可以看到UKF的預測誤差範圍幾乎完全覆蓋在正確預測誤差範圍上而EFK的預測誤差範圍則是偏了一小部分，且UKF少了反覆計算Jacobians的步驟，相對的來說演算法也就更加簡單。
+
+
+
+
+
+
+
+
+
+
+
+
+版權所有 © 臺灣大學 智慧機器人及自動化國際研究中心
+電話: 02-33669824~27 
+地址: 100臺北市中正區思源街18號（臺大水源校區)卓越研究大樓3樓 / Email: secretariat@ira.ee.ntu.edu.tw
+
+
+
+文章瀏覽點擊數
+448586
+
+
+
+
+首頁網站地圖聯絡我們全站搜尋機器人icit2016
+
+網頁設計：Cadiis
+
+
+
+
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+掃地機器人是怎麼做路徑規劃的？ | TechNews 科技新報
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+搜尋：
+
+
+
+
+EN
+ 簡
+TW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        在粉絲團上追蹤我們
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+掃地機器人是怎麼做路徑規劃的？
+
+
+
+
+作者
+雷鋒網 | 
+                            發布日期
+2016 年 06 月 05 日 0:00  | 
+                                
+                        分類
+
+AI 人工智慧
+																														, 										機器人
+																														, 										軟體、系統
+
+ | edit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+路徑規劃技術是掃地機器人研究的核心內容之一，機器人定位與環境地圖構建就是為路徑規劃服務的。所謂機器人路徑規劃技術，就是機器人根據自身傳感器對環境的感知，自行規劃出一條安全的運行路線，同時高效完成作業任務。  通常，行動機器人路徑規劃需要解決 3 個問題：  使機器人能從初始位置運動到目標位置。 用一定的算法使機器人能繞開障礙物，並且經過某些必須經過的點完成相應的作業任務。 在完成以上任務的前提下，儘量最佳化機器人運行軌跡。  行動機器人的路徑規劃根據其目的的不同可以分為兩種，一種是傳統的點到點的路徑規劃，另一種就是完全遍歷路徑規劃。 點到點的路徑規劃是一種從起始點到終點的運動策略，它要求尋找一條從始點到終點的最優（如代價最小、路徑最短、時間最短）並且合理的路徑，使行動機器人能夠在工作空間順利地通行而不碰到任何障礙物。完全遍歷路徑規劃是一種在二維工作空間中特殊的路徑規劃，指在滿足某種性能指標最優的前提下，尋找一條在設定區域內從始點到終點且經過所有可達到點的連續路徑。 對於掃地機器人來說，其作業任務是清掃房間，它的路徑規劃屬於完全遍歷路徑規劃，需滿足兩個指標：遍歷性和不重複性。所謂遍歷性是指掃地機器人運動軌跡需要最大程度的遍佈所有空間，它反映的是機器人的工作質量問題。所謂不重複性是指掃地機器人的行走路線應盡量避免重複，反映的是機器人的工作效率問題。 掃地機器人的自主尋路可以分為兩種：隨機覆蓋法和路徑規劃式。    隨機覆蓋法 隨機覆蓋法，有人也稱為隨機碰撞式導航，但這並非是指機器人真正與環境中的物體產生碰撞，也非毫無章法的在地板上隨機移動，換言之在工程操作中「隨機」也是 一個難以達到要求，隨機覆蓋法是指機器人根據一定的移動算法，如三角形、五邊形軌跡嘗試性的覆蓋作業區，如果遇到障礙，則執行對應的轉向函數。這種方法是一種以時間換空間的低成本策略，如不計時間可以達到 100% 覆蓋率。隨機覆蓋法不用定位、也沒有環境地圖，也無法對路徑進行規劃，所以其移動路徑基本依賴於內置的算法，算法的優劣也決定了其清掃質量與效率的高低。    美國 iRobot 公司研發的 iRobot Roomba 3-8 系列是隨機碰撞尋路系統的典型代表。 據稱，其採用 iAdapt 智慧化清掃技術的專利技術，這是一種軟、硬體相結合的智慧化 AI 清掃系統， 硬體由 Roomba 前方的若干紅外線探測器、底部灰塵偵測器和落差傳感器、毛刷膠刷邊刷測速系統等組成，透過 Roomba 的硬體傳回的訊息，iRobot 自身的軟體可以對回傳訊息進行分析，根據紅外線回傳訊息的強度、範圍、高度、轉速、電流大小、阻力等參數，計算出前方障礙物大致形狀，再經過軟體的處理運算，得出的結果就是 Roomba 下一步清潔方式，Roomba 以每秒 60 次的速度計算周邊障礙物的情況，同時根據所處環境做出四十餘種清掃動作，如圍繞、 折返、螺旋、貼邊、轉身等。 其次 iRobot 採用面積模糊判定算法，根據房間面積自動設定清掃時長。和路徑規劃不同的是，Roomba 開始收集算法估算所需的兩個重要參數：單次行進距離和單位時間碰撞頻率。單次行進距離越長則間接代表房間面積越大，走幾步就調頭則間接代表房間面積較小。每次碰撞 Roomba 都能收集到相關資訊，單位時間內碰撞頻率越高代表房間面積越小，碰撞頻率低則表示需要清掃的面積較大。    市面上大多數掃地機器人雖都採用隨機碰撞尋路方式，然而清潔效率卻差異很大，歸根到底還是軟體算法上的問題，這也是為什麼同樣大家買的都是隨機碰撞尋路方式的掃地機器人，在覆蓋率與效率上面卻有天壤之別。   路徑規劃式 規劃式導航需要建立環境地圖並進行定位。對路徑規劃的研究已經持續很多年了，也提出了很多種類的方法。不同的方法有各自的優缺點，適用範圍各不相同，沒有一種路徑規劃方法能適用於所有的環境信息。 其中的人工勢場法、柵格法、模板模型法、人工智慧法等是路徑規劃中很典型的方法，並且受到越來越多的關註。下麵將分別介紹上述這些典型的路徑規劃方法。 1. 人工勢場法 人工勢場法是機器人導航中提出的一種虛擬力法，其基本方法是將機器人在周圍環境中的運動設計成在一種勢場中的運動，是對機器人運動環境的一種抽象描述，機器人在場中具有一定的抽象勢能，勢能源有兩種：斥力極和引力極。 機器人在不希望進入的區域和障礙物屬於斥力極：目標及機器人系統建議通過的區域為引力極。在極的周圍產生相應的勢，在任何一點的勢為該點產生的勢之和、該勢的負梯度稱為勢力。勢場的建立主要用於動態避障，此時的引力極是局部環境中的中間目標，斥力極則是局部環境中的障礙物。引力和斥力的合力作為機器人的加速力，來控制機器人的運動方向和計算機器人的位置。該方法結構簡單，便於低層的及時控制，在實時避障和平滑的軌跡控制方面，得到廣泛的應用。但對存在的局部最優解的問題，容易產生死鎖現象，因而可能使機器人在到達目標點之前就停留在局部最優點。    2. 柵格法 設定行動機器人實際幾何形狀可用方形區域表示。規劃過程中將機器人縮為一個點，而環境中的障礙物邊界做相應的擴展及模糊化處理。採用網格表示工作空間，即把工作空間劃分為一個個大小相同的方格，方格大小與機器人幾何外形相同。 用柵格法表示環境：使用大小相同的柵格劃分機器人的工作空間，並用柵格數組來表示環境，每個柵格是兩種狀態之一，或者在自由空間中，或者在障礙物空間中。這種方法的特點是簡單，易於實現，進而為路徑規劃帶來很多方便，具有表示不規則障礙物的能力；其缺點是表示效率不高，存在時空開銷與精度之間的矛盾，柵格的大小直接影響著環境信息存儲量的大小和規劃時間的長短。柵格劃分大了，環境訊息儲存量就小了，規劃時間短，分辨率下降，在密集環境下發現路徑的能力減弱；柵格劃分小了，環境分辨率高，在密集環境下發現路徑的能力強，但環境的儲存量大。所以柵格的大小直接影響著控制算法的性能。 3. 模板模型法 另外一種常用的方法是模板模型。DeCaravalh 提出了一種依靠二維清潔環境的地圖並且是基於完全遍歷路徑規劃的模板。為了完成完全遍歷路徑規 劃，DeCaravalh 定義了 5 種模板，分別是：前進模型（Towards Model）、沿邊轉向模型（Side Shift）、回逆跟蹤（Backtracker）、U 轉彎模型、U 轉彎交替模型。模板模型法是基於先驗知識和先前的環境地圖遍歷機器人讓得到的環境資訊來匹配事先定義的模板。 因此，整個路徑就是一系列的模板組成的。在這個方法中，為了簡化路徑規劃過程，環境事先擴大，這樣這種小巧靈活的機器人就可以考慮成一個質點。基於模板的模型完全遍歷路徑規劃，它要求事先定義環境模型和模板的記憶，因此對於變化著的環境就不好處理了，比如在遍歷機器人的工作過程中突然出現一個障礙等。 4. 人工智慧法 近年來有許多學者利用模糊邏輯、人工神經網路、遺傳算法等現代計算智慧技術來解決機器人的路徑規劃問題，並取得了一些可喜的成果。 A. 模糊控制算法 模糊控制方法應用與路徑規劃，是一種很有特色的方法，是線上規劃中通常採用的一種規劃方法，包括建模和全局規劃。它用若干個傳感器探測前方道路和障礙物的狀況，依據駕駛的駕車經驗制定模糊控制規則，用於處理傳感器資訊，並輸出速度、加速度、轉角等控制量，指導小車的前進。該方法最大的優點是參與人的駕駛經驗，計算量不大，能夠及時規劃，可以做到剋服勢場法易產生的局部極點問題，效果比較理想。 模糊控制的路徑規劃方法特別適用於局部避碰規劃，具有設計簡單、直觀、速度快、效果好等特點。 B. 神經網路路徑規劃 神經網路已經被應用到很多的工程領域，機器人領域當然也不例外。神經網路在路徑規劃中的應用也很多。Tse 為清掃行動機器人從一個地方到另外一個地方的運輸，提出了 BP 神經網路，這個模型透過自主學習能進行自主導航的路徑規劃。避障的完全遍歷路徑規劃能夠透過離線學習達到，並且有運動行為、路線規劃和全局路徑規劃 3 個步驟。在運動行為階段機器人通過各種傳感器採集 3d 環境資訊，然後把這些資訊輸入到 BP 神經網路中，機器人可以清掃周邊的區域直到周邊沒有未清掃區域。在路線規劃階段，清潔機器人要決定一條最短的路徑通向工作空間中其他未清掃區域，在全局路徑規劃中，產生一個全局環境地圖，然後機器人從起始點開始，清掃整個工作空間。  C. 遺傳算法 遺傳算法是由 JohnH oland 在 70 年代早期發展起來的一種自然選擇和群體遺傳機理的搜尋算法。它模擬了自然選擇和自然遺傳過程中發生的繁殖、交配和突變現象。它將每個可能的解看做是群體（所有可能解）中的一個個體，並將每個個體編碼成字符串的形式，根據預定的目標函數對每個個體進行評價，給出一個適合值。開始時總是隨機地產生一些個體（即候選解），根據這些個體的適合度利用遺傳算法（選擇、交叉、變異）對這些個體進行交叉組合，得到一個新的個體。這一群新的個體由於繼承了上一代的一些優良性質，因而明顯優於上一代，這樣逐步朝著更優解的方向進化。遺傳算法對於複雜的最佳化問題無需建模和進行複雜的運算，只要用遺傳算法的 3 種算符就能找到最優解，因而在各種領域中得到了廣泛的應用。 在機器人相關領域研究中，遺傳算法已被應用於機械手的軌跡生成、多機器人的路徑規劃、冗餘機械手的障礙避碰。 另一方面，當遺傳算法與模糊邏輯，人工神經網路等技術相結合，組合成一個智慧學習和進化系統時，便顯示了它的強大威力。有很多學者綜合運用上述智慧方法做了路徑規劃的嘗試。如 Toshio Fukuda 等人提出了一個具有「結構化智慧」的機器人導航系統。它以模糊控制器為核心。路徑規劃的一種分層決策機構，並且根據反饋得到的獎賞，懲罰訊息進行學習和進化。其優點是系統自學習能力，這也是其研究的側重點，然而他們把系統做得比較複雜，效率較低。   總結 行動機器人的路徑規劃技術已經取得了豐碩成果，但各種方法各有優缺點，也沒有一種方法能適用於任何場合，如模版匹配方法過於依賴機器人過去的經驗；人工勢場路徑規劃方法通常存在局部極小點和計算量過大的問題。不過隨著科技不斷發展，這些問題都會出現新的解決或者替代方法，同時機器人應用領域還將不斷擴大， 機器人工作環境會更複雜，行動機器人路徑規劃這一課題領域還將不斷深入。 （本文由 雷鋒網 授權轉載；首圖來源：Flickr/Kārlis Dambrāns CC BY 2.0） 你可能有興趣的文章: 在 Zenbo 出現的 30 年前，這曾是美國最受歡迎的家用機器人    審查文件只需幾秒！摩根大通 AI 軟體可替代律師年省 36 萬小時    iRobot 推出內建導航功能的 Roomba 980 掃地機器人，支援 App 遠端精準遙控  Google 翻譯愈來愈聰明，錯誤建議騙不到它       李開復臺大畢業演說全文，AI 的時代       規模 10 兆日圓的軟銀科技基金上路，鴻海、蘋果都參一咖      prev next
+
+關鍵字: AI , 掃地機器人 , 路徑規劃
+
+
+
+
+
+
+
+發表迴響 取消回覆抱歉，你必須要登入才能發表迴響喔！ 
+  
+
+
+
+
+
+
+
+						我們偵測
+						到您有啟用
+AD Block
+
+
+請您暫停使用AD Block，以支持我們持續能提供更多新聞資訊與優質的閱讀環境。
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+贊助專欄
+活動專區
+研討會
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+本週熱門【一圖弄懂半導體】台積電與英特爾在追趕的奈米製程是什麼？ 
+
+
+
+
+
+智慧手機正走向死亡，兇手就是科技巨頭自己 你家電視盒常看的影集都找不到了嗎？中國 A 站、B 站影片資源全被下架，日劇日影內容幾乎全滅 三大問題搞不定，傳 iPhone 團隊陷恐慌，出貨量恐下修 地球若毀滅，「牠」命超硬竟能活下來 攝影師因「自拍猴子」版權訴訟而面臨破產 鳳梨酥模式：後蘋果時代，台灣科技業最後一搏 （更新）HTC 預設輸入法出現推播廣告，引發怒火 
+
+ 
+
+
+
+
+
+
+編輯精選
+
+[ 專題 ]【一圖弄懂半導體】台積電與英特爾在追趕的奈米製程是什麼？
+[ 專欄 ]【豐雲】玩具不死只會重生，孩之寶如何構建數位時代王圖霸業
+[ 專題 ]【經濟科普】何謂產業轉型？從製造業迷思看臺灣經濟現象
+[ 推廣 ]支付堵塞、監管曖昧不明，臺灣 P2P 網貸機會在哪？
+[ 專欄 ]落實程式設計教育，需跳脫傳統考試評量、更不為單純培育軟體人才
+[ 專題 ]Office 軟體到底該用哪個？各家格式標準為何？
+[ 專欄 ]【豐雲】當亞馬遜揮軍進攻最終堡壘，通路末日戰役號角吹響
+[ 專題 ]【金融史】貨幣寬鬆造就貧富差距外，還在 1720 年引起金融危機
+
+
+
+
+
+
+FB 粉絲團 
+
+
+
+
+其它 
+登入
+文章 RSS 訂閱
+迴響 RSS 訂閱
+WordPress 台灣正體中文 
+
+
+ 
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							請您暫停使用AD Block，以支持我們持續能提供更多新聞資訊與優質的閱讀環境。
+						
+
+
+
+
+
+
+
+
+獨角獸 Theranos 蒙塵，被譽為「賈伯斯第二」的執行長身價從上千億蒸發為 0機器人世紀大戰，台灣電子業最受惠
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學機構典藏:Item 987654321/106308
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English
+
+ | 
+正體中文
+ | 
+簡體中文
+
+ | 
+
+
+
+
+	全文筆數/總筆數 : 79757/116690 (68%)
+
+
+	
+
+
+
+	造訪人次 : 11380712
+
+    
+
+	線上人數 : 87
+
+                  	
+
+
+
+
+
+
+
+
+
+
+
+RC Version 6.0 © Powered By DSPACE, MIT. Enhanced by NTU Library IR team. ReEnhanced by NCKU Library IR team. 
+
+
+
+
+
+
+
+
+
+
+
+              搜尋範圍
+              
+
+
+
+全部NCKUR
+電機資訊學院
+   電機工程學系
+      --博碩士論文
+
+
+
+查詢小技巧：您可在西文檢索詞彙前後加上"雙引號"，以獲取較精準的檢索結果若欲以作者姓名搜尋，建議至進階搜尋限定作者欄位，可獲得較完整資料
+
+
+
+
+進階搜尋 
+
+
+
+
+
+
+
+
+
+
+主頁
+	                  ‧
+	      
+          
+          	登入
+          
+          ‧
+          上傳
+ 	‧
+          說明
+         ‧
+          關於NCKUR
+            
+         ‧
+          管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學機構典藏 >
+
+電機資訊學院 >
+
+電機工程學系 >
+
+博碩士論文 >
+
+
+
+ Item 987654321/106308
+
+
+
+
+
+
+
+
+
+資料載入中.....
+
+
+
+
+
+
+
+
+
+
+書目資料匯出
+
+
+
+
+
+Endnote RIS 格式資料匯出
+
+
+
+
+
+
+Bibtex 格式資料匯出
+
+
+
+
+
+
+
+
+引文資訊
+
+
+                資料載入中.....
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+請使用永久網址來引用或連結此文件:
+                http://ir.lib.ncku.edu.tw/handle/987654321/106308
+
+
+
+
+
+
+
+
+
+題名: 居家服務機器人同步定位與地圖建立及行為策略之設計與實現
+其他題名: Design and Implementation of SLAM and Behavior Strategy for Home Service Robot
+作者: 鄭凱中Cheng, Kai-Chung
+貢獻者: 電機工程學系碩博士班李祖聖Li, Tzuu-Hseng S.
+日期: 2010-07-21
+上傳時間: 2011-02-15 14:44:49  (UTC+8)
+摘要: 本論文係探討居家服務機器人同步定位與地圖建立以及行為策略之設計與實現。本論文開發出一個新的居家服務機器人平臺，包括機器人運動控制、同步定位與地圖建立、基於已知地圖之自我定位、以及機器人自主導航與行為策略。SLAM模組使機器人可以在陌生環境下學習與認知環境資訊。此模組主要截取雷射之距離資訊與里程計資訊來學習認知陌生環境。本論文藉由結合傳統Rao-Blackwellised 粒子濾波器與KLD-sampling方法來完成實現SLAM模組。自主定位係使用蒙地卡羅法與晶格地圖來記錄定位的資訊。行為策劃部份，則經由檢查雷射距離資訊映射到地圖的晶格是否落在門的區域來偵測門。在全域路徑規劃部份，本論文主要採用A*演算法，並改進ND導航演算法以達成避障的功能。利用融合上述功能所提供之資訊來達成機器人的行為策略。最後，由實驗結果來驗證所設計之機器人系統的可行性與效益。This thesis mainly concerns about the development of the simultaneous localization and mapping (SLAM) and behavior strategy for the home service robot  We develop a new platform for home service robot  involving many topics such as motion control  SLAM algorithm  self-localization based on known map  safe navigation  and behavior strategy  The main function of the SLAM module is to learn the map for the unknown environment  The information of the SLAM module consists of the distance received by laser scanner and the movement of the robot computed by odometer  In SLAM module  an approach for learning environment is developed by combing the KLD-sampling method and the conventional Rao-Blackwellised particle filter method  The localization based on known map of the developed robot is realized via the Monte Carlo Localization (MCL) and the belief of the robot in its position is represented by a position probability grid map  In behavior strategy  a method for door detection by checking the end points fall into the region of the door is proposed  For navigation part  we adopt the A* algorithm for global path planning  In addition  we improve the Nearness Diagram (ND) method for local obstacle avoidance  The behavior strategy for the home service robot is also examined  Finally  the experiment results demonstrate the capability of SLAM and strategy system  and the efficiency and validity in the home service robot applications
+顯示於類別:[電機工程學系] 博碩士論文
+
+文件中的檔案:
+檔案
+描述
+大小格式瀏覽次數
+index.html0KbHTML368檢視/開啟
+
+
+
+
+
+
+
+在NCKUR中所有的資料項目都受到原著作權保護.
+
+
+
+
+
+ -
+
+
+
+              回饋
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+掃地機器人如何規劃清潔路徑？ - INSIDE 硬塞的網路趨勢觀察
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSIDE 硬塞的網路趨勢觀察
+
+選單
+
+
+
+
+
+
+新創
+
+
+趨勢
+
+
+娛樂
+
+
+評論
+
+
+焦點Hightlight
+
+硬塞科技字典
+物聯網
+
+
+
+
+
+
+硬塞報童
+
+
+主機與網站應用
+
+
+
+
+訂閱
+
+
+隨時關註最新創業、科技、網路、工作訊息。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+趨勢
+
+掃地機器人如何規劃清潔路徑？ 
+
+
+2016/6/15
+
+
+
+【合作媒體】雷鋒網 
+
+人工智慧、硬體、科技
+
+
+評論
+
+
+
+
+
+
+評論
+
+
+
+Photo Credit: Bäst-i-Test.se
+
+本文原刊於 合作媒體雷鋒網 ，INSIDE 授權刊載
+
+
+路徑規劃技術是掃地機器人研究的核心內容之一，機器人定位與環境地圖構建就是為路徑規劃服務的。所謂機器人路徑規劃技術，就是機器人根據自身感應器對環境的感知，自行規劃出一條安全的運行路線，同時高效完成作業任務。
+通常， 行動機器人路徑規劃需要解決 3 個問題 ：
+
+使機器人能從初始位置運動到目標位置。
+用一定的演算法使機器人能繞開障礙物，並且經過某些必須經過的點完成相應的作業任務。
+在完成以上任務的前提下，儘量最佳化機器人運行軌跡。
+
+行動機器人的路徑規劃根據其目的的不同可以分為兩種， 一種是傳統的點到點的路徑規劃，另一種就是完全遍歷路徑規劃 。
+點到點的路徑規劃是一種從起始點到終點的運動策略，它要求尋找一條從始點到終點的最優（如代價最小、路徑最短、時間最短）並且合理的路徑，使行動機器人能夠在工作空間順利地通行而不碰到任何障礙物。完全遍歷路徑規劃是一種在二度工作空間中特殊的路徑規劃，指在滿足某種性能指標最優的前提下，尋找一條在設定區域內從始點到終點且經過所有可達到點的連續路徑。
+對於掃地機器人來說，其作業任務是清掃房間，它的路徑規劃屬於完全遍歷路徑規劃，需滿足兩個指標：遍歷性和不重複性。所謂遍歷性是指掃地機器人運動軌跡需要最大程度的遍佈所有空間，它反映的是機器人的工作多寡問題。所謂不重複性是指掃地機器人的行走路線應盡量避免重複，反映的是機器人的工作效率問題。
+掃地機器人的自主尋路可以分為兩種：隨機覆蓋法和路徑規劃式 。
+
+隨機覆蓋法
+隨機覆蓋法，有人也稱為隨機碰撞式導航，但這並非是指機器人真正與環境中的物體產生碰撞，也非毫無章法的在地板上隨機移動，換言之在工程操作中「隨機」也是 一個難以達到要求，隨機覆蓋法是指機器人根據一定的移動演算法，如三角形、五邊形軌跡嘗試性的覆蓋作業區，如果遇到障礙，則執行對應的轉向函數。這種方法是一種以時間換空間的低成本策略，如不計時間可以達到 100% 覆蓋率。隨機覆蓋法不用定位、也沒有環境地圖，也無法對路徑進行規劃，所以其移動路徑基本依賴於內置的演算法，演算法的優劣也決定了其清掃多寡與效率的高低。
+
+美國 iRobot 公司研發的 iRobot Roomba 3-8 系列是隨機碰撞尋路系統的典型代表。
+據稱，其 採用 iAdapt 智慧化清掃技術的專利技術，這是一種軟、硬體相結合的智慧化 AI 清掃系統 ， 硬體由 Roomba 前方的若干紅外線探測器、底部灰塵偵測器和落差感應器、毛刷膠刷邊刷測速系統等組成，透過 Roomba 的硬體傳回的訊息，iRobot 自身的軟體可以對回傳訊息進行分析，根據紅外線回傳訊息的強度、範圍、高度、轉速、電流大小、阻力等參數，計算出前方障礙物大致形狀，再經過軟體的處理運算，得出的結果就是 Roomba 下一步清潔方式，Roomba 以每秒 60 次的速度計算周邊障礙物的情況，同時根據所處環境做出四十餘種清掃動作，如圍繞、 折返、螺旋、貼邊、轉身等。
+其次 iRobot 採用面積模糊判定演算法，根據房間面積自動設定清掃時長。和路徑規劃不同的是，Roomba 開始收集演算法估算所需的兩個重要參數：單次行進距離和單位時間碰撞頻率。單次行進距離越長則間接代表房間面積越大，走幾步就調頭則間接代表房間面積較小。每次碰撞 Roomba 都能收集到相關資訊，單位時間內碰撞頻率越高代表房間面積越小，碰撞頻率低則表示需要清掃的面積較大。
+
+市面上大多數掃地機器人雖都採用隨機碰撞尋路方式，然而清潔效率卻差異很大，歸根到底還是軟體演算法上的問題，這也是為什麼同樣大家買的都是隨機碰撞尋路方式的掃地機器人，在覆蓋率與效率上面卻有天壤之別。
+路徑規劃式
+規劃式導航需要建立環境地圖並進行定位。對路徑規劃的研究已經持續很多年了，也提出了很多種類的方法。不同的方法有各自的優缺點，適用範圍各不相同，沒有一種路徑規劃方法能適用於所有的環境訊息。 其中的人工勢場法、柵格法、模板模型法、人工智慧法等是路徑規劃中很典型的方法，並且受到越來越多的關註。下麵將分別介紹上述這些典型的路徑規劃方法。
+1. 人工勢場法
+人工勢場法是機器人導航中提出的一種虛擬力法，其基本方法是 將機器人在周圍環境中的運動設計成在一種勢場中的運動，是對機器人運動環境的一種抽象描述，機器人在場中具有一定的抽象勢能，勢能有兩種：斥力極和引力極 。
+機器人在不希望進入的區域和障礙物屬於斥力極：目標及機器人系統建議通過的區域為引力極。在極的周圍產生相應的勢，在任何一點的勢為該點產生的勢之和、該勢的負梯度稱為勢力 。勢場的建立主要用於動態避障，此時的引力極是局部環境中的中間目標，斥力極則是局部環境中的障礙物。引力和斥力的合力作為機器人的加速力，來控制機器人的運動方向和計算機器人的位置。該方法結構簡單，便於低層的及時控制，在實時避障和平滑的軌跡控制方面，得到廣泛的應用。但對存在的局部最優解的問題，容易產生死鎖現象，因而可能使機器人在到達目標點之前就停留在局部最優點。
+
+2. 柵格法
+設定行動機器人實際幾何形狀可用方形區域表示。規劃過程中將機器人縮為一個點，而環境中的障礙物邊界做相應的擴展及模糊化處理。採用網格表示工作空間，即把工作空間劃分為一個個大小相同的方格，方格大小與機器人幾何外形相同。
+用柵格法表示環境：使用大小相同的柵格劃分機器人的工作空間，並用柵格數組來表示環境，每個柵格是兩種狀態之一，或者在自由空間中，或者在障礙物空間中。這種方法的特點是簡單，易於實現，進而為路徑規劃帶來很多方便，具有表示不規則障礙物的能力；其缺點是表示效率不高，存在時空開銷與精度之間的矛盾，柵格的大小直接影響著環境訊息存儲量的大小和規劃時間的長短。柵格劃分大了，環境訊息儲存量就小了，規劃時間短，分辨率下降，在密集環境下發現路徑的能力減弱；柵格劃分小了，環境分辨率高，在密集環境下發現路徑的能力強，但環境的儲存量大。所以柵格的大小直接影響著控制演算法的性能。
+3. 模板模型法
+另外一種常用的方法是模板模型。DeCaravalh 提出了一種依靠二度清潔環境的地圖並且是基於完全遍歷路徑規劃的模板。為了完成完全遍歷路徑規 劃，DeCaravalh 定義了 5 種模板，分別是：前進模型（Towards Model）、沿邊轉向模型（Side Shift）、回逆跟蹤（Backtracker）、U 轉彎模型、U 轉彎交替模型。模板模型法是基於先驗知識和先前的環境地圖遍歷機器人讓得到的環境資訊來匹配事先定義的模板。 因此，整個路徑就是一系列的模板組成的。在這個方法中，為了簡化路徑規劃過程，環境事先擴大，這樣這種小巧靈活的機器人就可以考慮成一個質點。基於模板的模型完全遍歷路徑規劃，它要求事先定義環境模型和模板的記憶，因此對於變化著的環境就不好處理了，比如在遍歷機器人的工作過程中突然出現一個障礙等。
+4. 人工智慧法
+近年來有許多學者利用模糊邏輯、人工神經網路、遺傳演算法等現代計算智慧技術來解決機器人的路徑規劃問題，並取得了一些可喜的成果。
+(1). 模糊控制演算法
+模糊控制方法應用與路徑規劃，是一種很有特色的方法，是線上規劃中通常採用的一種規劃方法，包括建模和全局規劃。它用若干個感應器探測前方道路和障礙物的狀況，依據駕駛的駕車經驗制定模糊控制規則，用於處理感應器資訊，並輸出速度、加速度、轉角等控制量，指導小車的前進。該方法最大的優點是參與人的駕駛經驗，計算量不大，能夠及時規劃，可以做到剋服勢場法易產生的局部極點問題，效果比較理想。
+模糊控制的路徑規劃方法特別適用於局部避碰規劃，具有設計簡單、直觀、速度快、效果好等特點。
+(2). 神經網路路徑規劃
+神經網路已經被應用到很多的工程領域，機器人領域當然也不例外。神經網路在路徑規劃中的應用也很多。Tse 為清掃行動機器人從一個地方到另外一個地方的運輸，提出了 BP 神經網路，這個模型透過自主學習能進行自主導航的路徑規劃。避障的完全遍歷路徑規劃能夠透過離線學習達到，並且有運動行為、路線規劃和全局路徑規劃 3 個步驟。在運動行為階段機器人通過各種感應器採集 3D 環境資訊，然後把這些資訊輸入到 BP 神經網路中，機器人可以清掃周邊的區域直到周邊沒有未清掃區域。在路線規劃階段，清潔機器人要決定一條最短的路徑通向工作空間中其他未清掃區域，在全局路徑規劃中，產生一個全局環境地圖，然後機器人從起始點開始，清掃整個工作空間。
+
+(3). 遺傳演算法
+遺傳演算法是由 JohnH oland 在 70 年代早期發展起來的一種自然選擇和群體遺傳機理的搜尋演算法。它模擬了自然選擇和自然遺傳過程中發生的繁殖、交配和突變現象。它將每個可能的解看做是群體（所有可能解）中的一個個體，並將每個個體編碼成字符串的形式，根據預定的目標函數對每個個體進行評價，給出一個適合值。開始時總是隨機地產生一些個體（即候選解），根據這些個體的適合度利用遺傳演算法（選擇、交叉、變異）對這些個體進行交叉組合，得到一個新的個體。這一群新的個體由於繼承了上一代的一些優良性質，因而明顯優於上一代，這樣逐步朝著更優解的方向進化。遺傳演算法對於複雜的最佳化問題無需建模和進行複雜的運算，只要用遺傳演算法的 3 種算符就能找到最優解，因而在各種領域中得到了廣泛的應用。 在機器人相關領域研究中，遺傳演算法已被應用於機械手的軌跡生成、多機器人的路徑規劃、冗餘機械手的障礙避碰。
+另一方面，當遺傳演算法與模糊邏輯，人工神經網路等技術相結合，組合成一個智慧學習和進化系統時，便顯示了它的強大威力。有很多學者綜合運用上述智慧方法做了路徑規劃的嘗試。如 Toshio Fukuda 等人提出了一個具有「結構化智慧」的機器人導航系統。它以模糊控制器為核心。路徑規劃的一種分層決策機構，並且根據反饋得到的獎賞，懲罰訊息進行學習和進化。其優點是系統自學習能力，這也是其研究的側重點，然而他們把系統做得比較複雜，效率較低。
+總結
+行動機器人的路徑規劃技術已經取得了豐碩成果，但各種方法各有優缺點，也沒有一種方法能適用於任何場合，如模版匹配方法過於依賴機器人過去的經驗；人工勢場路徑規劃方法通常存在局部極小點和計算量過大的問題。不過隨著科技不斷發展，這些問題都會出現新的解決或者替代方法，同時機器人應用領域還將不斷擴大， 機器人工作環境會更複雜，行動機器人路徑規劃這一課題領域還將不斷深入。
+歡迎加入「Inside」Line 官方帳號，關註最新創業、科技、網路、工作訊息
+
+
+
+
+
+
+
+分享文章或觀看評論
+
+評論
+
+
+
+
+
+
+【合作媒體】雷鋒網
+
+
+
+
+Mail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+訂閱 INSIDE
+
+
+隨時關註最新創業、科技、網路、工作訊息。
+
+
+
+
+
+
+訂閱
+
+
+
+
+
+相關文章
+
+
+
+
+
+評論
+
+
+
+
+
+
+
+知名廠商強力徵才中
+
+
+
+
+
+
+Android Engineer (APP, SDK) *赴日工作* 
+
+XFLAG (Mixi旗下遊戲公司) 
+
+
+
+
+創業夥伴- 資料分析工程師 
+
+旅型資訊股份有限公司 
+
+
+
+
+Ruby on Rails Full stack developer 
+
+Zooe Inc. 
+
+
+
+
+測試工程師 Test Engineer 
+
+LINEFukuoka [Momozono代徵] 
+
+
+
+
+
+
+
+
+
+
+
+新創
+
+
+踏出「休閒運動的一小步」，Reebok 這款鞋將要登上外太空！
+
+
+
+2017/7/20
+
+
+
+【合作媒體】iFanr愛範兒 
+
+reebok、太空鞋
+
+
+
+台灣新創 Pointimize 獨霸亞洲簡報大賽 挺進歐洲科技盛會
+
+
+
+2017/7/14
+
+
+
+INSIDE 硬塞的網路趨勢觀察 
+
+Pointimize、RISE、歐洲科技盛會
+
+
+
+用電商賣吐司　冷凍包子王轉型豪賭！
+
+
+
+2017/7/14
+
+
+
+商業周刊 
+
+B2C、烘焙、電商
+
+
+
+目標時速 1126 公里，「超級高鐵」Hyperloop One 真空試跑成功！
+
+
+
+2017/7/13
+
+
+
+Chris 
+
+Hyperloop、超級高鐵
+
+
+
+創業不再孤獨，SLP Taipei 創業培訓課程即將開跑！
+
+
+
+2017/7/4
+
+
+
+INSIDE 硬塞的網路趨勢觀察 
+
+SLP、創業、新創
+
+
+趨勢
+
+
+美 GAAP 會計準則重磅改變：科技業財報將「大翻轉」
+
+
+
+2017/7/21
+
+
+
+鉅亨網 
+
+GAAP、會計、科技產業、財報
+
+
+
+Facebook 註冊專利，投入研發 Google 放棄的模組化手機
+
+
+
+2017/7/21
+
+
+
+Mashdigi 
+
+Building 8、Facebook、專利、手機、模組化
+
+
+
+鮮京電信、NVIDIA 合作，取得南韓自駕車路測許可
+
+
+
+2017/7/21
+
+
+
+MoneyDJ理財網 
+
+南韓、自動駕駛、電信
+
+
+
+是預言家日報嗎？哈利波特 20 年，找亞馬遜推出「會動的」電子版
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+互動、亞馬遜、動態、哈利波特、電子書
+
+
+
+遠程控制「捕魚機器人」，讓你邊玩抓魚遊戲邊賣魚賺錢！
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+機器人、海洋生態
+
+
+娛樂
+
+
+是預言家日報嗎？哈利波特 20 年，找亞馬遜推出「會動的」電子版
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+互動、亞馬遜、動態、哈利波特、電子書
+
+
+
+【Cheng lap 的資訊通鑑】打電話玩 RPG：勇者鬥惡婆、修羅戰記與七座金城
+
+
+
+2017/7/20
+
+
+
+Chenglap 
+
+BBS、RPG、修羅戰記、撥號、遊戲
+
+
+
+花錢當課長 SSR 老抽不到？立委籲修法，明示手遊抽獎機率！
+
+
+
+2017/7/20
+
+
+
+Chris 
+
+SSR、手遊、課金
+
+
+
+《冰與火之歌》第七季熱燒，能為 HBO 在網路趕上 Netflix 車尾燈嗎？
+
+
+
+2017/7/19
+
+
+
+Chris 
+
+HBO、streaming、冰與火之歌
+
+
+
+華文首部 VR 電影怎麼拍？蔡明亮說沒有構圖、特寫，要當劇場去規劃
+
+
+
+2017/7/18
+
+
+
+Chris 
+
+VR、蔡明亮
+
+
+評論
+
+
+寫個白皮書就能用比特幣融資千萬？瘋狂的可能不是 ICO，而是人心！
+
+
+
+2017/7/21
+
+
+
+【合作媒體】iFanr愛範兒 
+
+ICO、以太坊、區塊鏈、比特幣
+
+
+
+兩週募破千萬，達成率 1300%！ALPHA Camp 和慕課專案要培養「國際級全端工程師」
+
+
+
+2017/7/20
+
+
+
+Mia 
+
+ALPHA Camp、全端工程師、募資、慕課、課程
+
+
+
+oBike 來台引爭議，問題到底出在哪？
+
+
+
+2017/7/20
+
+
+
+Mashdigi 
+
+oBike、共享單車、市容問題
+
+
+
+在萬物聯網的新時代下，區塊鏈才是撐起一切的安全關鍵！
+
+
+
+2017/7/20
+
+
+
+精選轉貼 
+
+區塊鏈、萬物聯網
+
+
+
+從 Google 出走的這五家「創業車隊」，其命運各自為何？
+
+
+
+2017/7/19
+
+
+
+【合作媒體】36kr 
+
+Google、無人車創業
+
+
+
+
+
+
+
+
+
+訂閱 INSIDE
+
+
+隨時關註最新創業、科技、網路、工作訊息。
+
+
+
+
+
+
+訂閱
+
+
+
+
+
+關於 INSIDE
+
+
+聯絡我們
+
+
+隱私權聲明
+
+
+著作權聲明
+
+
+
+© 2009-2017 INSIDE 硬塞的網路趨勢觀察 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ISCI LAB 智慧型系統控制整合實驗室
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Research 
+        Results
+
+
+
+
+
+
+
+
+
+
+
+ 多機器人合作感測定位與環境地圖建立  
+Localization and Map-Building Using Multi-Robot Cooperative Sensing
+研 究 生：
+
+
+ 邱黃正憲
+指導教授：宋開泰 博士 
+
+環境地圖與自我定位是智慧型機器人導航的重要資訊。最近幾年，利用多機器人合作感測定位的研究逐漸受到重視，如何提供智慧型機器人對本身位置做準確的估測，進而建立可供後續使用的環境地圖是此研究領域的重點。本研究發展出一個運用多機器人系統以合作式感測並利用卡 曼 濾波器概念來對機器人團隊中的 機器人做感測 資訊融合，降低其位置不確定性，進而建立較準確的線段環境地圖。本論文建立一套多機器人 Server-Client 架構，用來對多機器人系統做一有效的操作與監控。最後利用 2 台機器人做合作感測定位的驗證，結果顯示所提出之方法確實有預期的功效。
+圖 1 為實體架構圖： H1 及 Dog 機器人，圖 2 為 H1 及 Dog 地圖建立完成。 
+
+
+
+1.辨識用圓形色球 
+
+ 2.立體視覺模組
+3.電源供應系統/DSP馬達控制卡
+4.無線網路卡
+
+5.工業電腦
+6.電池座
+
+
+
+
+
+圖 1 H1 及 Dog 機器人 
+
+圖 2 H1&Dog 機器人 合作盰冊之地圖建立實驗結果
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Best 
+        view with 800x600| maintained by Jotarun 
+        Lin | Update Date： 
+        
+
+
+
+
+
+

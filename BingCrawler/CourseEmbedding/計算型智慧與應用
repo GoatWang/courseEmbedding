@@ -1,0 +1,4194 @@
+
+
+
+計算型智慧 - 學習 (Computational Intelligence) | Morris' Blog
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Morris' Blog
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2014-04-12
+
+
+學校課程►計算型智慧
+
+
+
+
+
+
+
+
+
+
+
+
+      計算型智慧 - 學習 (Computational Intelligence)
+    
+
+
+
+
+contents
+1. 計算型智慧1.1. 文章簡介1.2. 算法設計1.2.1. 特定型最佳化法則1.2.2. 廣義型最佳化法則1.3. 模糊系統1.3.1. 模型簡介1.3.2. 模型介紹1.3.3. 結語1.4. 模擬退火1.4.1. 簡介1.4.2. 操作1.4.3. 結語1.5. 基因算法1.5.1. 簡介1.5.2. 操作1.5.3. 設定集1.5.4. 結語1.6. 螞蟻算法1.6.1. 簡介1.6.2. 操作1.6.3. 設定集1.6.4. 結語1.7. 粒子算法1.7.1. 簡介1.7.2. 操作1.7.3. 結語1.8. 反思題目1.9. 題外話2. Reference
+
+計算型智慧文章簡介
+下學期修了這門課，這其中會與另一門類神經網路有關。
+中間穿插工數和微積分的一些數學名詞。
+接著，您將會看到一系列筆者對計算型智慧的認知。
+看到以下內容，雖有數學模型、演算法成份，但主體為模擬自然界的各種思維。
+
+算法設計特定型最佳化法則根據函數的特性，衍伸出來的搜尋方式，目標函數有特別性質，例如：線性、微分 … 等。微分法、梯度法都是屬於此類。再講白一點，一般大學時學的演算法都是如此，通常是具有最佳化結構的情況，因此會有最短路徑算法、二分搜尋、三分搜尋 … 等。
+廣義型最佳化法則不管目標函數的特性為何，無須修改設計法則，亂做一通、隨機搜索、以及接下來講的主題都屬此類。
+模糊系統模型簡介
+一般程式撰寫判斷條件相當精準，同時也不好做修正，畢竟一般人看不懂那麼多 if-else 語句。
+那有沒有更好一點的描述方式？這就是接下來要講的。
+如果硬要說明，模糊系統相當於一個精準輸入→亂來一通→精準輸出，也就是多了中間那個過程。
+
+模型介紹
+是或不是，僅有 0/1 描述。真實世界是按照是的相似度有多高，不是的話就是有多高。或者描述多是有多多，少是有多少。
+
+歸屬函數 (membership function)值介於 [0, 1] 同時也是相似度的描述。詳細請參照 wiki 模糊集
+
+模糊關係 (fuzzy relation)簡單的說，一般用稀疏矩陣是用 N * N 的陣列，並且裡面存放 0/1 數值，但是在模糊關係中，將會使用 [0, 1] 之間的實數來代替。詳細請參照 wiki 模糊關係
+
+有什麼樣的操作 ?  對於關係運算，也有關係合成或者是條件機率。對於關係合成就可以自訂函數來合成，而條件機率通常會使用積分去查閱，但是模糊關係至少三維空間 (因為多一個歸屬函數值)，所以必須走投影擴充的方式，當然可能有其他的做法。
+
+
+單一規則，單一變數if x = p, then y = q.  模糊起來
+x = p 的關聯性多少，y = q 的多少比率。
+  舉個例子來說
+x 相當靠近 p, 假使說相似度 50%, 則 y = 0.5 * q
+  以上是函數是說法，當然您可以自由選擇越接近反而越低，或者是客製化。
+
+單一規則，多變數if x1 = p1 and x2 = p2, then y = q
+
+由上一條，會有一點想法，那把兩個相似度取最小值如何？或者是相乘(假使相似度小於 1)。
+模糊沒有標準答案，覺得合理就行。
+
+
+單一規則，多變數if x1 = p1 or x2 = p2, then y = q
+
+由上一條，會有一點想法，那把兩個相似度取最大值如何？或者是相加後約束小於 1。
+模糊沒有標準答案，覺得合理就行。
+
+
+多規則，單一變數if x1 = p1, then y1 = q1if x2 = p2, then y1 = q2
+
+再藉由上一條相乘，那接著相加如何？還是要來個加權平均？
+一樣沒有標準答案，加權就是拿相似度出來當權重。
+
+
+多規則，多變數想必已經自動推論出來，在此就不多說。
+
+怎麼來亂？(隨便說說)
+
+函數式：多少相似度 p 根據多項式 f(p) 產出 y 值。
+語意式：畫出 f(y) = p 的圖，計算 p 所占有面積的面積(劃一條線取交集)，來決定 y 要取多少。
+中間要不要遵守遞移律、交換律、結合律？照理來講是要的。不過想吐槽的是，都這麼模糊了，還要遵守這三律嗎？
+
+
+
+建造模糊規則
+
+通常由有經驗的專家口頭描述，然後讓程式慢慢演化。
+如果沒有專家可問，先把參數空間做切割，分別定義產出。最簡單的大小分，如果有 n 個參數，將會產出 2^n 個空間，定義起來就很累。
+
+
+
+模糊化類神經網路 … 略
+
+
+結語
+運算方式，跟編程複雜度有關。
+函數式最好寫，但是彈性不高，產出結果通常有限(多樣性)。
+如果採用非連續性的就很痛苦，通常會使用離散化取數值分析，可用重心法。
+有重心法、肯定有眾數、中數法。
+一般來說函數式就夠用，世界萬物都是簡單構成複雜。
+可以利用收集資料，讓類神經網路產生演化結果 (稍後會提到)，神經應該也是模糊的！
+收集到的資料正確性不知道有多高，根據簡單的投影法則，也可以變成模糊系統(初版)。
+
+
+模擬退火簡介「模擬退火來自冶金學的專有名詞退火。退火是將材料加熱後再經特定速率冷卻，目的是增大晶粒的體積，並且減少晶格中的缺陷。」取自 wiki
+簡單的說，膨脹去雜質，冷卻來精煉。冷卻得到區域最佳解，膨脹增加得到全局最佳解的機率。
+操作
+以 f(x, y) = z 的函數，要找到全局最小值，圖形看起來就是 3D 模型。水往低處流，人往低處走
+
+當現在在 (x, y) 時，笨的方式就是往四處看看，看哪邊更小就往哪裡走出下一步。而高明的作法則是根據梯度(微分來了)低的地方走，您就講想您有一個重力感測器。
+步伐將會越來越小，這樣才能步步靠近區域最佳解。
+當相當靠近區域最佳解時，變小幅度(dx/dt)太小，那就跳到更遠的地方去吧，相當於容忍較差的環境。
+什麼時候容忍？可以根據某些指數函數結果跟隨機亂數比大小。
+
+結語
+寫 ACM 題目時，通常會選擇隨機撒點，然後對於每一個點根據相同步伐走相同步數，逐一縮小步伐。因為跳出的容忍不好設計。foreach 隨機點
+    for stepSize big to small
+        for i = 0 to stepCount
+            四處看看找更好的，Update 當前隨機點。
+
+簡單運用，找出多邊形費馬點、最小覆蓋圓 … 等。
+與隨機搜索差別在哪？隨機搜索相當於對每個子空間猜測，分佈密度高才會準，空間越大，連區域最佳解都得不到。
+講到區域最佳解－看看咱們的政治人物，不外乎都是講那些事情，這樣就是區域最佳解。思維跳脫機率不夠高，看來是火不夠大。
+
+
+基因算法簡介又稱 GA 算法，模擬生物遺傳的過程，根據「物競天擇，適者生存」的演化論，最後會得到最好的解答。而進行演化就是染色體的事情了，當一開始的多樣性夠，再搭配突變情況交織出來，那崇高的自然藝術便會出現。
+
+看看人類，您覺得有適者生存嗎？那這樣會進化嗎？有空去搜尋電影－《蠢蛋進化論》看看不願面對的真相？
+
+操作
+將資料表示成基因片段，最簡單為二進編碼，當然也可以用實數。  資料是什麼？函數的常數參數，來驅使我們的模型可以更接近收集出來的數據。
+第一步－初始化物種  隨機產生基因片段，或者來個生物大滅絕保留可能好的再隨機生成。
+第二步－適應環境  越接近收集出來的數據(差值總和越小)，適應力越高。這就相當於成長階段。
+第三步－擇偶  通常適應度高的會配在一起，就如人類有反例，這沒有絕對。
+第四步－交配  交配方式如同染色體行減數分裂後的運作，將某幾段進行交換，而生物染色體只會切一刀然後配對，因為當初的雙股螺旋 … 各種原因，反正就是生物物質關係。如果是實數，則可以想像成會生成拉近關係或者是拉遠關係的結果。
+兩個好的物種交配，也不見得子代會好。
+
+
+第五步－突變  個體突變，染色體的 01 互換機率，或者在實數方面特化或者是弱化(就是乘實數)。
+
+設定集
+基因種類
+
+一般型基因原則  DNA[i] 只會有 0 或 1
+實數型基因原則  DNA[i] 可以是任意實數
+為什麼這麼分類？IEEE floating-point format 感覺不是好的方法？請自行思考，其中最大的原因是不應該侷限基因。
+
+
+一般型交配手法
+
+單點交配  對兩段基因，隨機找索引 i，交換索引 i 之後的所有基因。i = rand_generate();
+for j = i to length
+    swap(dna1[j], dna2[j])
+
+兩點交配  與單點交配類似，不過是找一個區間 [l, r] 進行交換for i = l to r
+    swap(dna1[j], dna2[j])
+
+字罩交配  隨機挑數個隨機位置做交換。
+更多，您可以妄想。
+
+
+實數型交配手法
+DNA1[i]' = DNA1[i] + k * (DNA1[i] - DNA2[i])
+DNA2[i]' = DNA2[i] - k * (DNA1[i] - DNA2[i])
+k 取 [-1, 1] 的微量亂數。
+
+繁殖  因為繁殖池大小有限，物種數量將會被約束。
+
+輪盤式選擇  根據適應函數反應分佈群族大小，四捨五入填滿整個繁殖池。
+競爭式選擇  每次隨機挑選兩個，對於這兩個挑一個好的留下，直到繁殖池滿。
+
+
+更多設定
+
+基因長度：  反應精準度、編碼方式。
+交配機率：  機率高，容易產生混種！看看混血兒多聰明且吸引人，通常子代就不是如此。
+突變機率：  機率太高反而是隨機搜索，調適好相當於爆炸式搜索。
+適應函數：  如何反應好的物種？
+
+
+
+結語
+應用－使用類神經網路的模型，利用基因算法找到最佳解。而每個神經元都有搭配的參數，就是把參數基因化，調用基因算法。  幾句話說明類神經網路
+每個神經元根據所受到的刺激產出一個定值，而神經元也有階層關係，每一個階層間會互相刺激，最外層吸收外界資訊，慢慢細化傳入最後階段的神經元來反應。而 ‘刺激到產出’ 可以猜想為加權平均。
+
+
+實作後，這種算法必須應用在接近連續層面上會比較好，離散函數的問題效果不彰，也就是會有一些額外的判斷條件。
+擇偶相當困擾，通常根據隨機亂數，在排序後做選擇。
+交配相當刺激，同時也是最難抉擇的地方，個人造化。
+要不要適應繁殖？都行，適應好的物種就多複製幾個！// 看您要不要固定，不然數量會爆炸，或者加入篩選。
+大量繁殖大量突變，造就爆炸效應！(在鄰近空間進行爆炸找更好的地方)
+最後根本就是在玩突變，突變算法就此誕生！
+
+
+螞蟻算法簡介螞蟻單一功能低，群體完成最佳化。螞蟻行動過程中會留下費洛蒙，隨著時間費洛蒙也會下降，在這反反覆覆的過程中，蟻群很有機會開創出全局最佳解。
+
+螞蟻雖小，亦能驅象。
+
+操作
+鮮少有人根據時間做迭代模擬的基底。
+由於模擬上相當困難，所以來點不科學的寫法，但仍要抓住費洛蒙的核心。
+第一版本－對於最短路徑搜索
+決定有多少隻螞蟻
+所有路徑上的費洛蒙初始為 0。
+決定要跑多少次迭代
+每次迭代，依序放出螞蟻，螞蟻會根據路徑上費洛蒙隨機走(也並不是越高越好)，對於走比較好的路徑，將其走過路徑上的費洛蒙濃度增加。
+每次迭代，消散一點費洛蒙，來減少重複的錯誤區域解。這樣有什麼缺點？因為是依序放出螞蟻，所以相當不自然。
+再者每隻螞蟻還要有能力記錄走過的路徑。
+螞蟻的記憶能力有多高？
+
+
+
+虛擬碼
+Initialize
+    Loop /* at this level each loop is called an iteration */
+        Each ant is positioned on a starting node
+        Loop /* at this level each loop is called a step */
+            Each ant applies a state transition rule to     incrementally build a solution and a local pheromone     updating rule
+        Until all ants have built a complete solution
+        A global pheromone updating rule is applied
+    Until End_condition
+
+第二版本－收集食物
+
+決定有多少隻螞蟻，並且隨機撒下。
+每隻螞蟻會搜索鄰近的食物
+根據概率撿起某個食物，朝向費洛蒙高的地方搬運。
+再根據概率將食物放下，放下時增加該地費洛蒙。
+
+
+
+設定集
+費洛蒙的濃度消散函數
+螞蟻根據費洛蒙濃度的選擇函數
+不遵守？機率為何？
+遵守？又是根據什麼條件機率。
+
+
+
+結語
+應用方面
+分群，把文章分類。
+搜索，各種 NPC 問題都可以拿來玩玩。
+
+
+小遊戲  感覺攻城遊戲對於這方面相當有意思，不過此遊戲有炒地皮的設定，基礎建設越來越貴，各種不科學的情況，七八千分還算正常人吧，沒有搭載最佳化系統的素人。
+另外可見 DJWS的說明
+
+
+粒子算法簡介英文名稱 Particle Swarm Optimization，粒子群聚演算法。看過鳥群群舞嗎？魚群穿梭嗎？
+圖片來源地址
+在相互模仿效應中，牠們會向鄰近學習，部分保留、部分學習，這也是向其好的一面靠攏。
+藉由互相學習來調整群體面向，最後演化應該是會非常接近的群體。以人類來說，演化時間還不夠久 看起來個體智慧與能力的分歧度還相當大。根據演化結果，由於互動機率因歧異性而下降，導致演化不會趨近於一。
+粒子演算法三項重點：評估，比較，模仿
+
+評估 - 目標函數值
+比較 - 根據評估結果比較，根據機率還是特定條件符合後 
+模仿 - 將部分屬性（參數）模仿過來
+
+操作
+一開始把族群撒在特定區域，並且賦予牠一個初速度。
+接著將會根據這個速度飛行。
+但是同時會根據鄰近或區域最佳進行模仿，速度矢量會有兩條(原本和模仿)，兩個矢量根據參數調整後相加。
+慢慢地朝著某個方向飛行，帶頭的也會往其他的地方飛行。
+
+結語
+單純模仿也行，只是要明白模仿對象是鄰居還是全局最佳。
+單純模仿的壞處在於搜索中的過程路徑會相當短，但是迭代次數應該會比較少次。
+如果是向鄰近模仿，可能是按照歐幾里德距離找最近幾個資料點。說不定會運用到 K-d Tree 這個資料結構。
+
+
+反思題目
+(25%) 請說明模糊系統的構成要件為何 ? 其功能分別是 ? 如何建立模糊系統 ?其優缺點分別是 ? 大體要件：模糊化機構、模糊推論引擎、模糊規則庫、去模糊化系統。
+ 模糊化機構：輸入有可信度問題，加以模糊。 模糊推論引擎：將數個模糊規則合併篩選用途。 模糊規則庫：每條規則將根據輸入產出相對應模糊輸出。 去模糊化系統：將模糊產出的圖，進行調整最後以向量形式輸出。
+ 細節要件：模糊集合、模糊運算、模糊關係。
+ 模糊集合：用來表示一個函數對於某個條件的歸屬程度。 模糊運算：表示每一個模糊集合之間的合成方法，用以做更複雜的組合。 模糊規則：明確判斷條件 if else 轉換成模糊的判斷條件，即為模糊規則。 模糊關係：在龐大的關係中，輔助綜合條件判斷的模型。
+ 建造模糊系統：通常由專家提供的語意規則建造，否則將會使用均勻切割的方式去建造模糊系統。 優點：語意式的描述給予程式判斷上更大的彈性，不用撰寫非常明確的判斷條件於程式中，也能讓結果相當符合一般人的需求，而且後期可調整參數。 缺點：可能沒有專家協助，模糊定義上很難得到好的結果。相較於明確判斷，去模糊化的過程速度會慢上許多，以及模糊運算上動用到的函數複雜度與所需時間成正比。
+
+(25%) 螞蟻是如何找到最短路徑 ? 請詳述 AS-TSP algorithm。 就是那個每次回合，依序放出螞蟻，螞蟻根據費洛蒙走判斷條件走，最佳的走法將會在下一次運行時，路徑上的費洛蒙額外增加。
+
+(20%) 請詳述 RBF network 的架構為何 ? 如何訓練 RBF network ? 全名：Radial basis function network 架構有三層輸入層、隱藏層、輸出層。 要素為非線性激活函數、向量形式的輸入輸出。 在這門課中，採用基因算法來訓練它，根據與收集資料的誤差來當作適應程度，不斷地調整至好的參數。 而在線性可分割的高維空間中，可以利用數學函數的運算再加上一個微量調整的偏量相乘，將整個函數慢慢導向至最好結果。(曾經所說的向量疊加，新的法向量 = 所在的法向量 + 微量 * 資料表誤差表示出來的向量。)
+
+(10%) 請說明有哪兩大類最佳化工具 ? 其優缺點分別為何 ?
+特定型最佳化法則  快，一個問題一個算法。同一算法能解決的問題少，幾乎都要客製化。
+廣義型最佳化法則  慢，無須根據問題調整算法。
+
+
+(20%) 請詳述 Genetic algorithm。其優缺點分別為何 ? 如何改進其缺點 ? 優點
+
+1 與問題領域無關切快速隨機的搜索能力。 2 搜索從群體出發，具有潛在的並行性，可以進行多個個體的同時比較，robust。 3 搜索使用評價函數啟發，過程簡單。 4 使用概率機制進行迭代，具有隨機性。 5 具有可擴展性，容易與其他算法結合。   
+
+ 缺點
+
+1 遺傳算法的編程實現比較複雜，首先需要對問題進行編碼，找到最優解之後還需要對問題進行解碼。 2 另外三個算子的實現也有許多參數，如交叉率和變異率，並且這些參數的選擇嚴重影響解的品質，而目前這些參數的選擇大部分是依靠經驗。 3 沒有能夠及時利用網絡的反饋信息，故算法的搜索速度比較慢，要得要較精確的解需要較多的訓練時間。 4 算法對初始種群的選擇有一定的依賴性，能夠結合一些啟發算法進行改進。 5 算法的並行機制的潛在能力沒有得到充分的利用，這也是當前遺傳算法的一個研究熱點方向。
+
+ 參考
+
+(20%) 請詳述 螞蟻算法。其優缺點分別為何 ? 如何改進其缺點 ? 優點
+
+1 求解性能上，具有很強的魯棒性（對基本蟻群算法模型稍加修改，便可以應用於其他問題）和搜索較好解的能力。 2 蟻群算法是一種基於種群的進化算法，具有本質並行性，易於並行實現。 3 蟻群算法很容易與多種啟髮式算法結合，以改善算法性能。
+
+ 缺點
+
+基本蟻群算法計算量大，求解所需時間較長。
+
+ 參考
+
+(20%) 請詳述 粒子算法。其優缺點分別為何 ? 如何改進其缺點 ? 優點
+
+簡單、易實現、計算量小和計算效率高
+
+ 缺點
+
+問題最主要的是它容易產生早熟收斂（尤其是在處理複雜的多峰搜索問題中）、局部尋優能力較差等。PSO 算法陷入局部最小，主要歸咎於種群在搜索空間中多樣性的丟失。
+
+ 改善
+
+（1）全局優化算法與局部優化算法混合 （2）全局優化算法與全局優化算法混合。縱觀各種與 PSO 算法相關的混合算法，大多數基本上採用一種策略對其改進，要麼與其他算法，要麼加入變異操作，同時採用兩種策略的混合算法較少。
+
+ 參考
+
+
+
+題外話
+關於單一感知機
+假設現在處於平面上，也就是說 f(xi, yi) = ci根據感知機會有三個變數，猶如 w[1]  x + w[2]  y + w[0]現在得到一堆 (xi, yi, ci) 是實際的情況，如何訓練感知機得到 w[] ?假設感知機會根據 (xi, yi) 產出 di根據調整參數 w’[i] = w[i] + wwww((yi - di))wwww 可以是任意函數，不過盡可能地介於 [0, 1]。會發現地，最後產出 di 會相當接近於 yi。
+當處於線性可分割，也就是可以一刀把兩個群族分開，那麼感知機是會收斂得到好的結果。
+也有另外一種方式，採用偏離向量的迭加，這個向量也會來自於產出的誤差效應。
+
+
+
+
+Reference
+NCU CSIE 計算型智慧課程
+
+
+
+
+
+
+
+Please enable JavaScript to view the comments powered by Disqus.
+
+
+
+
+
+
+Categories
+
+學校課程115介面設計5作業系統6即時系統3大學專題2巨量資料1平行程式43敏捷方法3數位影像生成4編譯器1自然語言5虛擬實境4計算型智慧3計算幾何6計算機圖學2資料庫系統4資訊安全9通識課程14手札日記36網頁設計15About This Blog7HTML51JQuery4Markdown1NodeJs2解題區625Latex1出題解題21解題區 - POJ3解題區 - UVa480解題區 - Zerojudge76解題區 - 其他題目43解題區 - 未解題目1雜言筆記4
+
+
+
+Recents
+
+
+
+
+ 
+              
+            吶，還記得我們的「約定」嗎
+
+
+
+ 
+              
+            批改娘 20021. Dynamic Range Sum
+
+
+
+ 
+              
+            批改娘 20020. Dot Product
+
+
+
+ 
+              
+            批改娘 20018. Square Root of Vector Elements
+
+
+
+ 
+              
+            助教生涯－平行總結
+
+
+
+ 
+              
+            純粹 Part 2
+
+
+
+ 
+              
+            純粹 Part 1
+
+
+
+ 
+              
+            UVa 13154 - Extreme XOR Sum
+
+
+
+ 
+              
+            關於高效大數除法的那些事
+
+
+
+ 
+              
+            2017 Google Code Jam Round QR
+
+
+
+
+
+Links
+
+
+ Morris' Blog (pchome)
+ flere's Blog
+ dreamoon's Blog
+ m80126colin's Blog
+ Nico's Blog
+ KuoE0's Dots
+ Tyan Blog
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+計算型智慧與學習系統實驗室
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<English  Version>
+
+
+
+
+
+
+
+王振興 教授
+
+
+ 職稱
+
+
+ 特聘教授
+
+
+電話
+
+
+ +886-6-275-7575 
+                          ext. 62378
+
+
+ 傳真
+
+
+ +886-6-236-9418 
+
+
+ 電子信箱
+
+
+jeenshin@mail.ncku.edu.tw
+
+
+ 實驗室
+
+
+計算型智慧與學習系統實驗室(地
+                          址:臺南市大學路1號電機系館92802&92810室)(TEL:06-2757575 ext. 62400-1410)
+
+
+ 開授課程
+
+
+104學年度第一學期  
+
+類神經網路簡介
+專題討論
+
+104學年度第二學期 
+
+線性代數
+專題討論
+
+
+
+ 學歷
+
+
+
+美國普渡大學電
+                              機博士  
+美國密蘇里大學電
+                            機碩士  
+美國密蘇里大學電
+                            機學士 
+
+
+
+ 經歷
+
+
+
+國立成功大學電機系副教授
+國立成功大學電機系助理教授 
+美國普渡大學研究助理 
+美國密蘇里大學研究助理 
+
+
+
+ 專長及研究領域
+
+
+
+穿戴式裝置
+生理訊號處理
+學習系統晶片設計 
+智慧型控制 
+計算型智能 
+最佳化理論 
+資料探勘 
+
+
+
+ 學術活動與榮譽
+
+
+學術活動
+
+
+Member of
+Institute
+                                  of
+                                  Electrical and Electronics Engineers (IEEE)
+Taiwan Association of
+                                  System Science and Engineering (TASSE)
+
+
+ Web Manager,  IEEE
+                                  Computational Intelligence Society (2009-present)
+
+
+ Vice Chair, IEEE Computational
+                                  Intelligence Society Tainan Chapter (2005-2007)
+
+
+ Program Committee: 
+ (1) 2006 IEEE International Conference on
+                                  Engineering of Intelligent Systems
+ (2) 2008   IEEE
+                                  International Conference on Systems, Man, and Cybernetics (SMC 2008)
+ (3) 2008 International Conference on Intelligent
+                                  Computing 
+ (4) 2009   IEEE Symposium on Computational Intelligence in Control and Automation
+ (5) 2009
+                                  International Conference on Knowledge Discovery and Information
+                                  Retrieval
+(6) 2012 International  Conference on Intelligent Computing 
+ Associate Editor,  International
+                                Journal of Control Theory and Applications.  (2006-present)
+ Reviewers for: 
+
+ National Science Council, Taiwan, R.O.C.  
+ Journals: 
+      (1) IEEE Transactions
+                                on Neural Networks
+      (2) IEEE
+                                Transactions on Fuzzy Systems
+      (3) IEEE
+                                Transactions on Circuits and Systems-I
+      (4)  IEEE Transactions on Control
+                                Systems Technology
+      (5)  IEEE Transactions on
+                                Systems, Man, and Cybernetics-Part B
+      (6)   IEEE/ASME 
+                                Transactions on Mechatronics
+      (7) Pattern
+                                Recognition
+      (8) Pattern Recognition
+                                Letters
+      (9) International Journal of Electrical Engineering
+      (10) Journal of Process Control
+      (11) Journal of Information Science and Engineering
+      (12)
+                                International Journal of Computational Intelligence Research
+      (13) Control and
+                                Intelligent Systems Journal
+      (14) Journal of the
+                                Chinese Institute of Engineers
+      (15)   Asian Journal of Control
+     
+                                (16)   International Journal of Pattern Recognition and Artificial Intelligence
+     
+                                (17) Pervasive
+                                  and Mobile Computing
+      (18)   Mathematics and Computers in Simulation
+     
+                                (19)
+                                IEEE Signal Processing Letters
+ Conferences:
+     (1) IEEE International
+                                Conference on Engineering of Intelligent Systems
+    (2) IEEE International
+                                Conference on Fuzzy Systems
+      (3) IEEE
+                                International Joint Conference on Neural Networks
+      (4) IEEE
+                                International Conference on Systems, Man, and Cybernetics 
+      (5) IEEE International
+                                Symposium on Circuits and Systems 
+      (6)  IEEE
+                                International Conference on Networking, Sensing and Control
+      (7) 2008   IEEE
+                                International Conference on Systems, Man, and Cybernetics (SMC 2008)
+     
+                                (8) 2008 International Conference
+                                  on Intelligent Computing  
+Judges:
+    
+                                (1) Microsoft Image Cup (2013)
+    
+                                (2) Golden Silicon Award (2012, 2013,  2014)
+
+榮譽
+
+執行104年度科技部高瞻成果嘉年華榮獲：優良大學團隊獎、特色高瞻課程獎、高瞻宣傳影片獎
+指導學生參加2015年衛服部全國食品藥物開放資料應用創新競賽：冠軍
+指導學生參加2014年衛服部全國食品開放應用創新競賽：冠軍
+執行103年度科技部高瞻成果嘉年華榮獲：高瞻特色獎、特優高瞻學校獎
+指導學生參加2014   微軟潛能創意盃世界公民組 榮獲：全球亞軍
+
+指導學生參加2014   微軟潛能創意盃世界公民組 榮獲：台灣區冠軍 
+
+
+執行100年度國科會高瞻成果嘉年華榮獲：高瞻計畫執行成果年度執行研究團隊獎(計畫涵蓋領域包含教育、醫學及工程)
+
+
+ 指導學生參加2012 
+                                  微軟潛能創意盃世界大賽軟體設計組 (含嵌入式系統) 晉級世界前六強(共72國參賽) 
+
+
+指導學生參加2012   微軟潛能創意盃軟體設計組 (含嵌入式系統) 榮獲：冠軍 
+
+
+指導學生參加2011 成大雲端應用創意競賽入選決賽並榮獲：冠軍
+
+
+ 指導學生參加2011 ARM 
+                                  Code-O-Rama設計大賽入選決賽並榮獲：冠軍(127隊報名參賽)
+
+
+ 99學年度行政院國科會吳大猷先生紀念獎
+
+
+ 指導學生參加中華電信2009
+                                  
+                                  電信加值應用大賽3G行動數位生活應用組入選決賽並榮
+                                    獲：亞軍
+
+
+ 指導學生參加2009 ARM Code-O-Rama設計大賽入選決賽並榮
+                                  獲：冠軍(80隊報名參賽)
+
+
+ 指導學生參加第九屆「旺宏金矽獎」半導體設計與應用大賽入選應用組決賽並榮獲：評審團鑽石大賞、最佳指導教授獎(239隊報名參賽)
+
+
+ 指導學生參加第九屆「旺宏金矽獎」半導體設計與應用大賽榮獲應
+                                  用組：最佳創意獎
+
+
+ 指導學生參加97學年度全國大學院校嵌入式系統設計競賽入選創意應用組全國決賽並榮獲：佳作(110隊報名參賽)
+
+
+ 指導學生參加96學年度全國大學院校嵌入式系統設計競賽入選創意應用組全國決賽並榮獲：佳作(116隊報名參賽)
+
+
+ 指導學生參加96學年度全國大學院校嵌入式系統設計競賽入選軟硬體整合組全國決賽並榮獲主辦單位頒
+                                  發：產學應用獎
+ 指導學生參加95學年度全國大學院校嵌入式軟體設計競賽入選綜合應用組全國決賽並榮獲：特優(第一名)(112
+                                    隊報名參賽)
+
+
+ 95年度國科
+                                  會控制學門吳大猷紀念獎候選人 
+
+
+Marquis Who's Who in World (2010)
+
+
+ Marquis Who's Who in Asia (2006)  
+
+
+
+
+ 專利
+
+
+
+王振興，鄭秉恩，許煜亮，“手寫裝置及其移動軌跡補償方法”，中華民國專利證書號：I525481。
+王振興，林哲偉，“耳道式量測裝置”，中華民國專利證書號：I511703。
+王振興，許煜亮，“移動軌跡產生方法”，中華民國專利證書號：I512548。
+王振興，鄭秉恩，許煜亮，“光學手寫筆、光學手寫筆系統與其換行輸寫方法”，中華民國專利證書號：I501164。
+詹寶珠，謝達斌，曾永華，王振興，“外接式腫瘤偵測模組”，中華民國專利證書號：I498105。
+王振興，林哲偉，“步態分析方法及步態分析系統”，中華民國專利證書號數：I498846。
+王振興，詹寶珠，林哲偉，莊芳甄，王夏果，“健康照護監測系統”，中華民國專利證書號：I494078。
+王振興，楊家輝，高子平，伍琇瑩，陳柏良，廖恪應， “互動式遊戲控制系統與控制方法”，中華民國專利證書號：I478756。
+王振興，林鴻藝，徐崇堯，詹寶珠，“基於腦波訊號之呼吸輔助裝置及其方法”，中華民國專利證書號：I454294。 
+王振興，許煜亮，“移動軌跡校正方法及移動軌跡產生方法”，中華民國專利證書號：I474265。
+王振興，劉俊男，許煜亮，莊芳甄，李國筠，“運動軌跡重建方法及其裝置”，中華民國專利證書號：I476733。
+詹寶珠，王振興，王琪珍，莊芳甄，林哲偉，“具心電量測及無線傳輸功能的隱形胸罩”，中華民國專利證書號：I466641。
+
+王振興，許煜亮，劉俊男，“基於慣性訊號之識別系統及其識別方法”，中華民國專利證書號數：I389042。
+
+王振興，許煜亮，劉俊男，“移動軌跡重建系統及其訊號輸入裝置”，中華民國專利證書號：I411939。
+
+王振興，許煜亮，莊芳甄，“動作重建及比對裝置”，中華民國專利證書號：I413030。
+
+王振興，林鴻藝，徐崇堯，“睡眠腦波監測裝置”，中華民國專利證書號：I418338。
+
+	詹寶珠，王振興，王琪珍，楊延光，莊芳甄，林哲偉，“代謝當量計算系統及其方法”，中華民國專利證書號：I419674。
+
+ 	詹寶珠，王振興，吳家宇，王煜智，“互動式按摩系統與互動式按摩方法”，中華民國專利證書號數：I373333。
+
+ 詹寶珠，王振興，林哲偉，薑仁傑，“具生理狀態調節功能之可攜式生理訊號分析裝置”，中華民國專利公開號：201038251。
+
+王振興，徐崇堯，林哲偉，江維鈞，“睡眠效率分析方法及其裝置”，中華民國專利公開號：201143715。
+
+詹寶珠，謝達斌，曾永華，錢百敦，洪正瑞，二岡祥子，鄭莉莉，艾祖華，魏嘉玲，王振興，“可攜式腫瘤偵測裝置”，中華民國專利公開號：201143720。
+
+	詹寶珠，謝達斌，曾永華，王振興，“外接式腫瘤偵測模組”，中華民國專利公開號：201143718。
+
+王振興，鄭秉恩，許煜亮，“手寫裝置及其移動軌跡補償方法”，中華民國專利公開號：201327278。
+
+王振興，顏銘信，許煜亮，“關節活動度量測之裝置與方法”，中華民國專利公開號：201347734。
+
+王振興，許煜亮，“移動軌跡校正方法及移動軌跡產生方法”，中華民國專利公開號：201308218。
+
+王振興，鄭秉恩，許煜亮，“光學手寫筆、光學手寫筆系統與其換行書寫方法”，中華民國專利公開號：201405438。
+
+王振興，顏銘信，許煜亮，“關節活動度量測裝置及其量測方法”，中華人民共和國專利證書號：CN103417217 B。(2012/12/05~2032/12/05)
+
+王振興，許煜亮，“移動軌跡校正方法及移動軌跡產生方法”，中華人民共和國專利公開號：CN102915130 A。
+
+王振興，許煜亮，“運動軌跡產生方法”，中華人民共和國專利公開號：CN102915171 A。
+
+王振興，林哲偉，“步態分析方法及步態分析系統”，中華人民共和國專利申請號：201310282004.9。
+
+Jeen-Shing  Wang and Yu-Liang Hsu, “Moving trajectory generation  method,” US Patent No. US Patent No. 13/566620.
+
+Jeen-Shing Wang and Yu-Liang Hsu, “Moving trajectory calibration method and moving trajectory generation method,” US Patent No. US20130035890 A1.
+
+Jeen-Shing Wang and Yu-Liang Hsu, “Moving trajectory generation method,” US Patent No. US9098123 B2.
+
+Jeen-Shing Wang, Min-Shen Yan, and Yu-Liang Hsu, “Joint motion measuring apparatus and measuring method thereof,” US Patent No. US20130310711 A1.
+
+Jeen-Shing Wang and Che-Wei Lin, “GAIT ANALYSIS METHOD AND GAIT NALYSIS SYSTEM”，US Patent No. 13/935898.
+
+王振興、呂景民、許煜亮、江維鈞，“以音樂為介入之生理情緒狀態調控系統及其調控方法”，成大技轉中心申請號：103-011-BP。
+
+
+
+ 著作 
+
+
+A. Journal Papers
+
+Yen-Chin  Chen, Cheng-Yu Lin, Carol Strong, Chung-Yi Li, Jeen-Shing Wang, Wen-Chien Ko,  and Nai-Ying Ko, “Sleep disturbances at the time of a new diagnosis: a comparative  study of human immunodeficiency virus patients, cancer patients, and general  population controls,” Sleep Medicine,  vol. 36, pp. 38-43, 2017.
+
+
+Jia-Jen Chen, Li-Fan Liu, Jeen-Shing Wang, and Ting-Ting Chang, “A Pilot Study Exploring the Relationship between Short-Term HRV and Self-Rated Health Status among Elderly People,” accepted by Archives of Community Medicine and Public Health, March 2017.
+
+
+Yu-Liang Hsu, Jeen-Shing Wang, and Che-Wei Chang, “A Wearable Inertial Pedestrian Navigation System with Quaternion-Based Extended Kalman Filter for Pedestrian Localization,” accepted by IEEE Sensors Journal, Feb. 19, 2017.
+
+Yu-Liang Hsu, Cheng-Ling Chu, Yi-Ju Tsai,  and Jeen-Shing Wang, “An inertial pen with dynamic time warping  recognizer for handwriting and gesture recognition,” IEEE  Sensors Journal, vol. 15, no. 1, pp. 154-163, 2014. 
+Yu-Liang Hsu, Pau-Choo Chung, Wei-Hsin  Wang, Ming-Chyi Pai, Chun-Yao Wang, Chien-Wen Lin, Hao-Li Wu, and Jeen-Shing  Wang, “Gait and balance analysis for patients with Alzheimer’s disease  using an inertial-sensor-based wearable instrument,” IEEE Journal of Biomedical and Health Infomatics, vol. 18, no. 6, pp.1822-1830, 2014.
+Yu-Ching Lin, Yu-Liang Hsu, Jeen-Shing Wang, Yi-Ju Tsai, and Shu-Min Chen, “Reliability of a novel wearable inertial sensing instrument for shoulder range of motions measurement,” Journal of Rehabilitation Medicine, vol.  45, no. 53, pp. 188, 2013.
+Jeen-Shing Wang, Wei-Chun Chiang, Yu-Liang Hsu, and Ya-Ting C. Yang, “ECG Arrhythmia Classification Using a Probabilistic Neural Network with a Feature Reduction Method,” Neurocomputing, vol. 116, pp. 38-45, 2013.
+Jeen-Shing Wang, Che-Wei Lin, and Ya-Ting C. Yang, “A K-Nearest-Neighbor Classifier with Heart Rate Variability Feature-based Transformation Algorithm for Driving Stress Recognition,” Neurocomputing, vol. 116, pp. 136-143, 2013.
+Yu-Liang Hsu, Ya-Ting Yang, Chung-Yao 
+                                Hsu, and Jeen-Shing Wang, “Automatic Sleep Stage Recurrent Neural 
+                                Classifier Using Energy Features of EEG Signals,” Neurocomputing, vol. 104, pp. 105-114, 2013. 
+Shihong Yue, Huaxiang 
+                                Wang, and Jeen-Shing Wang, “Designs and Applications of 
+                                Information Fusion Control System,” Transactions of the 
+                                  Institute of Measurement and Control, vol. 35, no. 5, pp. 630-636, 2013.
+ Tingna Shi, Jeen-Shing Wang, Penglong Wang, and Shihong Yue, “Application of grid-based K-means clustering algorithm for optimal image processing,” Computer Science and Information Systems, vol. 9, no. 4, pp. 1679-1696, 2012.
+Che-Wei Lin, Jeen-Shing Wang, Yi-Ching Yang, Ya-Ting C. Yang, “A Wearable Sensor Module with a Neural-Network-based Activity Classification Algorithm for Daily Energy Expenditure Estimation,” IEEE Transactions on Information Technology in Biomedicine, vol. 16, no. 5, pp. 991-998, 2012.
+Jeen-Shing Wang, Che-Wei Lin, Yu-Jen Ho, and Ya-Ting Yang, “Walking Pattern Classification and Movement Distance Estimation   Algorithms Using Gait Phase Information,” IEEE Transactions on Biomedical Engineering, vol. 59, no. 10, pp. 2884-2892, 2012. 
+Yu-Ching Lin, Yu-Liang Hsu, Yi-Ju Tsai, Jeen-Shing Wang, and Shu-Min Chen, “Wearable inertial sensing instrument for measuring shoulder range of motions,” Journal of Rehabilitation Medicine, vol. 44, no. 52, pp. 72, 2012. 
+Jeen-Shing  Wang and Fang-Chen Chuang, “An Accelerometer-Based  Digital Pen with a Trajectory Recognition Algorithm for Handwritten Digit and  Gesture Recognition,” IEEE Transactions on  Industrial Electronics, vol. 59,  no. 7,  pp. 2998-3007,  2012. 
+  Yu-Liang Hsu, Lun-Chia Kuo, Ping-En Cheng, Che-Wei Chang, Jen-Chieh 
+                                Chiang, and Jeen-Shing Wang, “MEMS 
+                                Inertial-Sensor-Based Pedestrian Navigation System,”  ICL 
+                                  TECHNICAL JOURNAL,  vol. 143, pp. 27-34, 2012.
+Jeen-Shing 
+                                Wang,Ya-Ting C. Yang, Wei-Chun Chiang, and Che-Wei Lin, “Using a 
+                                Wearable Physical Activity Sensor System for Sleep/Wake States 
+                                Detection,” Sleep and Biological Rhythms, vol. 9, no. 4, pp. 
+                                378, 2011. 
+Ya-Ting C. 
+                                Yang, Jeen-Shing Wang, Che-Wei Lin, and Wei-Chun 
+                                Chiang, “Relations between Sleep Activity Indices and Verran and 
+                                Snyder-Halpern (VSH) Sleep Scale Using Statistical Analysis,” Sleep 
+                                  and Biological Rhythms, vol. 9, no. 4, pp. 377-378, 2011. 
+Jeen-Shing Wang and Yu-Liang Hsu, “An MDL-Based 
+                                Hammerstein Recurrent Neural Network for Control Applications,” Neurocomputing, vol. 74, pp. 315-327, 
+                                  2010. 
+Jeen-Shing Wang,  Yu-Liang 
+                                Hsu, and Jiun-Nan Liu, “Inertial-Measurement-Unit-Based Pen with a Trajectory 
+                                  Reconstruction Algorithm and Its Applications,” IEEE Transactions on Industrial Electronics, vol. 
+                                    57, no. 10, pp. 3508-3521, 2010. 
+ Shihong Yue, Jeen-Shing Wang, Wei Chen, and Huaxiang 
+                                Wang, “A Grid-Based K-Means Approach for Clustering Analysis,” Science in China Series F: 
+                                  Information Sciences, pp. 1345-1357, no. 7, 2010. 
+Che-Wei Lin, Jeen-Shing Wang, 
+                                and Pau-Choo Chung, “Mining Physiological Conditions from Heart Rate 
+                                Variability Analysis,” IEEE Computational Intelligence Magazine, 
+                                pp. 50-58, February, 2010. 
+ Shihong Yue, Jeen-Shing Wang, Teresa Wu and Huaxiang 
+                                Wang, “A New Separation Measure for Improving the Effectiveness of 
+                                Validity Indices,” Information 
+                                  Science, vol. 180, pp. 748-764, 
+                                2010. 
+Yi-Chung Chen and Jeen-Shing Wang, “A 
+                                Hammerstein-Wiener Recurrent Neural Network with Frequency-Domain 
+                                Eigensystem Realization Algorithm for Unknown System 
+                                Identification,” Journal of Universal Computer Science, vol. 15, 
+                                  no. 13, pp. 2547-2565, 2009. 
+吳致緯、曾育中、王振興，“智慧型輪型機器人之發展，” Robot World, issue 35, pp. 2-7, Oct. 2009. 
+王振興、許煜亮、劉俊男、莊芳甄，“利用微慣性感測訊號進行手寫軌跡重建，” 自動化科技學會會刊, pp. 22-29, September, 
+                                2009. 
+Jeen-Shing Wang and 
+                                Jen-Chieh Chiang, 
+                                “An 
+                                Efficient Data Preprocessing Procedure for SVC Algorithm,” Journal 
+                                  of Universal Computer Science, vol. 15, no. 4, pp. 705-721, 2009. 
+Yu-Liang Hsu and Jeen-Shing 
+                                Wang, “A Wiener-Type Recurrent Neural Network and Its Control 
+                                  Strategy for Nonlinear Dynamic Applications,” Journal of Process Control, vol. 19, no. 6, pp. 942-953, 
+                                2009. 
+Jeen-Shing Wang, Yu-Liang Hsu, Hung-Yi 
+                                Lin, and Yen-Ping Chen, “Model 
+                                  Dimension/Order Determination for Recurrent Neural Networks,” Pattern Recognition Letters, vol. 30, no. 4, pp. 812-819, 
+                                2009. 
+Jeen-Shing Wang and Yen-Ping 
+                                Chen, “A 
+                                  Hammerstein Recurrent Neuro-Fuzzy Network with an Online Minimal 
+                                  Realization Learning Algorithm,” IEEE Transactions on Fuzzy Systems, vol. 16, no. 6, 
+                                  pp. 1597-1612, 2008. 
+Yen-Ping Chen, 
+                                Jhun-Ying Yang, Shun-Nan Liou, Gwo-Yun Lee, and Jeen-Shing Wang,“Online Classifier Construction Algorithm for Human Motion 
+                                  Detection Using an Accelerometer,” Applied Mathematics and 
+                                    Computation, vol. 205, no. 2, pp. 849-860, 
+                                      2008. 
+Jhun-Ying Yang, Jeen-Shing Wang, and Yen-Ping Chen, “Using Acceleration Measurements for 
+                                Activity Recognition: An Effective Learning Algorithm for Constructing 
+                                Neural Classifiers,” Pattern Recognition Letters, vol. 29, no. 16, pp. 2213-2220, 2008.  
+Shihong Yue, Huaxiang 
+                                Wang, Jeen-Shing Wang, Miaomiao Wei, and Xin Wang, “A General 
+                                Grid-Clustering Approach,” Pattern Recognition Letters, 
+                                vol. 29, no. 9, pp. 1372-1384, 2008. 
+Jeen-Shing Wang and Yu-Liang 
+                                Hsu, “Dynamic Nonlinear System Identification Using a Wiener-Type 
+                                  Recurrent Network with OKID Algorithm,” Journal of Information Science and 
+                                    Engineering, vol. 24, no. 3, pp. 891-905, 2008. 
+Jeen-Shing Wang and Jen-Chieh 
+                                Chiang, “A 
+                                  Cluster Validity Measure with Outlier Detection for Support Vector 
+                                  Clustering,” IEEE Transactions on 
+                                    Systems, Man, and Cybernetics-Part B, vol. 38, no. 1, pp. 78-89, 
+                                2008. 
+Jeen-Shing Wang and Jen-Chieh 
+                                Chiang, “A Cluster Validity Measure with a Hybrid Parameter Search 
+                                Method for Support Vector Clustering Algorithm,” Pattern Recognition, vol. 41, no. 2, pp. 506-520, 
+                                  2008. 
+Jeen-Shing Wang and Yen-Ping 
+                                Chen, “A Fully Automated Recurrent Neural Network for Unknown Dynamic 
+                                System Identification and Control,” IEEE Transactions on Circuits and 
+                                  Systems-I, vol. 56, no. 6, pp. 1363-1372, 2006. 
+Jeen-Shing Wang and C. S. G. 
+                                Lee, “Self-Adaptive Recurrent Neuro-Fuzzy Control of an Autonomous 
+                                Underwater Vehicle,” IEEE Transactions on Robotics and 
+                                  Automation, vol. 19, no. 2, pp. 283-295, 2003. 
+Jeen-Shing Wang and C. S. G. 
+                                Lee, “Self-Adaptive Neuro-Fuzzy Inference Systems for Classification 
+                                Applications,” IEEE Transactions on Fuzzy Systems, vol. 10, no. 
+                                6, pp. 790-802, 2002. 
+C. S. G. Lee, Jeen-Shing Wang, and J. Yuh, “Self-Adaptive Neuro-Fuzzy Systems for Autonomous Underwater 
+                                Vehicle Control,” Advanced Robotics, The Robotics Society of 
+                                  Japan, vol. 15, no. 5, pp. 589-608, 2001. 
+Jeen-Shing Wang and C. S. G. 
+                                Lee, “Structure and Learning in Self-Adaptive Neural Fuzzy Inference 
+                                Systems,” International Journal of Fuzzy Systems, vol. 2, no. 1, 
+                                pp. 12-22, March 2000. 
+
+Pending Publications:
+
+ Jeen-Shing Wang,  Cheng-Yi Mau, and Sheau-Fang 
+                                Lei, “An Integrated Voice Activity Detection Algorithm with a 
+                                Self-Regulatory Threshold and Tracking Power Envelope Dynamics,”                                submitted to Speech Communication. 
+Jeen-Shing Wang and Shihong Yue, “A Boundary 
+                                Estimation Clustering Algorithm and Its Applications,” 
+                                  submitted to Information Science. 
+Jeen-Shing Wang and Ming-Jan You, “An Improved 
+                                Spectral Subtractive-Type Algorithm with a Spectral Weighted Filter for 
+                                Single-Channel Speech Enhancement,” submitted to EURASIP Journal on 
+                                  Advances in Signal Processing. 
+Fang-Chen Hwang, Jeen-Shing Wang, Jen-Chieh Chiang, and Pau-Choo Chung, “Use of 
+                                dynamic music features in detecting emotional expression of music,”                                revised for IEEE Transactions on Affective Computing, 
+                                2011.
+
+B. Book Chapters
+
+Che-Wei
+                                Lin, Chung-Yao Hsu, Li-Ming Liou, Yen-Kuang Yang, Jeen-Shing
+                                  Wang, and Pau-Choo Chung., “Diagnosis of Parkinson’s Disease
+                                Severity from Heart Rate Variability Analysis,” in Heart Rate
+                                  Variability (HRV) Signal Processing: Clinical Applications,
+                                ed. M. V. Kamath, C. Morillo, and A.R. Upton, CRC PRESS, USA, 2012.
+ 
+
+C. Conference papers
+
+Jeen-Shing Wang, Fang-Chen Chuang, and Ya-Ting Yang, “An Energy Expenditure Estimation  Algorithm for a Wearable System,” in the 2015 International Conference on Health  Informatics and Medical Systems, pp.  185-191, 2015.
+Ya-Ting  Yang and Jeen-Shing Wang, “A  Pilot Study on the Web-based Health Promotion Program Combined with a Wearable  Device to Increase Physical Activity,” in the 2015 International Conference on Health Informatics and  Medical Systems, pp. 178-181, 2015.
+Tzu-Ping  Kao, Jeen-Shing Wang, and Ya-Ting Yang, “A Sleep Stage Classification Method  Using a Hierarchical Synthetic Minority Over-Sampling Random Forest Algorithm,”  in International Conference on  Engineering and Applied Sciences, 2015.
+Wei-Chun  Chiang, Tzu-Ping Kao, and Jeen-Shing Wang, “A Decision-Tree-Based Support  Vector Machine for Sleep Stage Classification Using Activity and ECG Features,”  in International Conference on  Engineering and Applied Sciences, 2015.
+Yu-Ching Lin, Jeen-Shing Wang, Yu-Liang Hsu, Kuan-Lin Chen, and Yi-Ju Tsai, “Validation of a wearable wireless upper limb body sensor network system for quantitative evaluation of upper limb function,” accepted by 9th World Congress of the International Society of Physical and Rehabilitation Medicine, 2015.
+Yu-Ching Lin, Jeen-Shing Wang, Yu-Liang Hsu, and Kuan-Lin Chen, “Development and reliability of a wearable upper limb motion sensing instrument for measuring elbow range of motions,” in Asian Prosthetic and Orthotic Scientific Meeting 2014 in conjunction with The Second Meeting of the International Society for Restorative Neurology (APOSM 2014 & ISRN), pp. 1, 2014.
+ Wei-Chun Chiang, Jeen-Shing Wang, and Yu-Liang Hsu, “ A music emotion recognition algorithm with hierarchical SVM based classifiers,” accepted by IEEE International Symposium on Computer, Consumer and Control (IEEE IS3C2014), 2014, pp.  1249-1252.
+Jeen-Shing Wang, Yu-Liang Hsu, and Cheng-Ling Chu, “Online Handwriting Recognition  Using an Accelerometer-Based Pen Device,” in 2nd International Conference on Advances in Computer Science  and Engineering, pp. 229-232, 2013.
+Yu-Liang  Hsu, Jeen-Shing Wang, Yu-Ching Lin, Yi-Ju Tsai, Shu-Min Chen, Cheng-Ling  Chu, and Che-Wei Chang, “A wearable  inertial-sensing-based body sensor network for shoulder range of motion  assessment,” in IEEE International  Conference on Orange Technologies, pp. 328-331, 2013.
+林裕晴、張竣凱、王振興、許煜亮、蔡一如、程琡敏，“新型穿戴式慣性感測儀器於肩關節活動度量測之再測信度評估，” in 102年台灣復健醫學會會員大會暨學術研討會，2013.
+Tzu-Ping Kao, Jeen-Shing Wang, and Ya-Ting Yang, “Applying Bootstrap AdaBoost with KNN for Automated Obstructive Sleep Apnea Detection from ECG Recordings,” accepted by the 6th International Symposium on Bio- and Medical Informatics and Cybernetics, Orlando, FL, July, 2012.
+Fang-Chen Chuang, Jeen-Shing Wang, and Ya-Ting Yang, “Energy Expenditure Estimation Methods and Performance Comparison,” accepted by the 6th International Symposium on Bio- and Medical Informatics and Cybernetics, Orlando, FL, July, 2012.
+Cheng-Ling Chu, Yu-Liang Hsu,  Ping-En 
+                                Cheng, Min-Shen Yan, and Jeen-Shing Wang, “An inertial-sensing-based pen 
+                                with its dynamic time warping-based recognition algorithm for 
+                                handwritten digit and gesture recognition,” accepted by  2012 National 
+                                  Symposium on System Science and Engineering. 
+Jeen-Shing Wang, Yu-Liang Hsu, Che-Wei Chang, and 
+                                Ping-En Cheng, “A wearable pedestrian navigation system using inertial 
+                                sensors and a magnetometer,” accepted by  2012 National Symposium on 
+                                  System Science and Engineering. 
+Yu-Liang Hsu, Min-Shen Yan, and Jeen-Shing Wang, “A 
+                                wearable body sensor network for real-time human upper limb motion 
+                                capture application,” accepted by  2012 National Symposium on 
+                                  System Science and Engineering. 
+Jeen-Shing Wang, Chien-Han Hung, Yi-Hui Lee, and Che-Wei 
+                                Lin, “A real-time ECG morphology feature based R wave detection 
+                                Algorithm,” accepted by  2012 National Symposium on 
+                                  System Science and Engineering. 
+ Wei-Chun Chiang, I-Hua Chen, Ya-Ting C. Yang, and Jeen-Shing Wang, “Evaluation of sustained attention using feature 
+                                parameters extracted from ECG signal,” accepted by  2012 National 
+                                  Symposium on System Science and Engineering. 
+Tzu-Ping Kao, Jeen-Shing Wang, Che-Wei Lin, Ya-Ting Yang, and  Fang-Chen Chuang, “Using Bootstrap AdaBoost with KNN for ECG-based Automated  Obstructive Sleep Apnea Detection,” in the 2012 International Joint Conference  on Neural Networks, pp. 1-5, July, 2012.
+Fang-Chen Chuang, Jeen-Shing Wang, Ya-Ting Yang, and Tzu-Ping  Kao, “A wearable activity sensor system and its physical activity  classification scheme,” in the 2012 International Joint Conference on  Neural Networks, pp. 1-6, July, 2012.
+Jeen-Shing Wang, Guan-Rong Shih,
+                                and Wei-Chun Chiang, “Sleep Stage Classification of Sleep Apnea
+                                Patients Using Decision-Tree-Based Support Vector Machines Based on ECG
+                                Parameters,” 2012 IEEE-EMBS International Conference on
+                                  Biomedical and Health Informatics, Hong Kong,
+                                China, Jan. 6-7. 
+ Che-Wei
+                                Lin, Jeffrey Gamble, Ya-Ting Yang, and Jeen-Shing Wang, “Estimating
+                                  the Influence of Chronotype and Social Zeitgebers on Circadian Rhythms
+                                  using an Accelerometer-based Sensor Network,” 2012
+                                    IEEE-EMBS International Conference on Biomedical and Health Informatics, Hong Kong, China, Jan. 6-7. 
+Jeen-Shing
+                                Wang, Fang-Chen Chuang, and Ya-Ting C. Yang, “A Wearable
+                                Physical Activity Sensor System: Its Classification Algorithm and
+                                Performance Comparison of Different Sensor Placements,” accepted by Lecture
+                                  Notes in Artificial Intelligence, June, 2011. 
+Pau-Choo Chung,Jeen-Shing Wang,
+                                Yu-Liang Hsu, Chun-Yao Wang, Chien-Wen Lin, Ming-Chyi Pai, and
+                                Siang-Shang Jheng, “Development of a wearable gait analysis instrument
+                                for patients with Alzheimer's disease,” accepted by The Fifth
+                                  Congress of the Asian Society Against Dementia- Action, Strategies
+                                    and Developments, 2011. 
+Jeen-Shing
+                                Wang, Wei-Chun Chiang, Ya-Ting C. Yang, and Yu-Liang Hsu, “An
+                                Effective ECG Arrhythmia Classification Algorithm,” accepted by Communications
+                                  in Computer and Information Science, June, 2011.
+Jeen-Shing
+                                Wang, Che-Wei Lin, and Ya-Ting C. Yang, “Using Heart Rate
+                                Variability Parameters and Feature Transformation Driving Stress
+                                Recognition,” accepted by Communications in Computer and
+                                  Information Science, June, 2011. 
+Jeen-Shing
+                                Wang, Che-Wei Lin, Ya-Ting C. Yang, Tzu-Ping Kao, Wei-Hsin
+                                Wang, and Yen-Shiun Chen, “An PACE Sensor System with Machine
+                                Learning-based Energy Expenditure Regression Algorithm,” accepted by Lecture Notes in Bioinformatics, June, 2011 
+Jeen-Shing
+                                Wang, Ya-Ting Yang, and Che-Wei Lin, “An Activity Recording
+                                System with a Radial-Basis-Function-Network-Based Energy Expenditure
+                                Regression Algorithm,” Proceedings of the 13th
+                                  International Conference on Artificial Intelligence, Las Vegas, USA, pp. 798-803, July
+                                18-21, 2011. 
+Jeen-Shing
+                                Wang,Ya-Ting Yang, Chung-Yao Hsu, and Yu-Liang Hsu, “A
+                                Recurrent Neural Sleep-Stage Classifier Using Energy Features of EEG
+                                Signals,” Proceedings of the 13th
+                                  International Conference on Artificial Intelligence, Las Vegas, USA, pp. 980-983, July
+                                18-21, 2011. 
+Jeen-Shing
+                                Wang, Che-Wei Lin, Yen-Shun Chen, and Wei-Hsin Wang, “A
+                                Difference-Based Data Compression for Daily Activity Signals and Its
+                                Realization in an Embedded System,” Proceedings
+                                  of the 13th International Conference on Embedded Systems and
+                                  Applications, Las
+                                Vegas, USA, pp.
+                                227-230, July 18-21, 2011.
+Jeen-Shing
+                                Wang, Yu-Liang Hsu, Ping-En Cheng, Lun-Chia Kuo, and
+                                Jen-Chieh Chiang, “A Wearable Trajectory Reconstruction System Using
+                                Inertial and Magnetic Sensors,” Proceedings of
+                                  the 13th International Conference on Embedded Systems and Applications, Las Vegas, USA, pp. 220-222, July
+                                18-21, 2011.
+Jeen-Shing
+                                Wang, Ya-Ting C. Yang, Wei-Chun Chiang, and Che-Wei Lin,
+                                “Using a Wearable Physical Activity Sensor System for Sleep/Wake States
+                                Detection,” Proceedings of Worldsleep, Kyoto, Japan, Oct. 16-20, 2011. 
+Ya-Ting
+                                C. Yang, Jeen-Shing Wang, Che-Wei Lin, Fu-Haw Yang,
+                                and Wei-Chun Chiang, 
+                                “Relations between Sleep Activity Indices and
+                                Verran and Snyder-Halpern (VSH) Sleep Scale using Statistical
+                                Analysis,”  Proceedings of Worldsleep, Kyoto, Japan, Oct. 16-20, 2011. 
+Ming-Han
+                                Wu, Chih-Jen Wang, Yen-Kuang Yang, Jeen-Shing Wang, and Pau-Choo Chung, 
+                                “Emotional Quality Level Recognition Based on HRV,” IEEE World Congress on Computational Intelligence,
+                                  IJCNN, 2010 (WCCI 2010). 
+Chen-Yan Chen, Chi-Jen Wang, E-Liang
+                                Chen, Chi-Keng Wu, Yen-Kuang Yang, Jeen-Shing Wang, and 
+                                Pau-Choo Chung,  
+                                “Detecting Sustained Attention during Cognitive Work
+                                using Heart Rate Variability,” The Sixth International
+                                  Conference on Intelligent Information Hiding and Multimedia Signal
+                                  Processing IIHMSP 2010. 
+王維新、王振興、王琪珍、詹寶珠、林哲偉，“基於雲端運算分析概念之生理訊號分析與健康促進系統，” 2010數位生活科技研討會, 2010. 
+Tzu-Ping Kao, Che-Wei Lin, and Jeen-Shing
+                                Wang, 
+                                “Development of a portable activity detector for daily
+                                activity recognition,” Proc. of IEEE International Symposium
+                                  on Industrial Electronics, Seoul, Korea, pp.115-120, July
+                                5-8, 2009.
+Hsin-Hui Tseng,
+                                Che-Wei Lin, Yuh-Cherng Guo, Li-Min Liou, and Jeen-Shing Wang,
+                                “A Polysomnography-based HRV and EEG Analysis Software,” Proc.
+                                   of International Symposium on Biomedical Engineering, pp. 1-5,
+                                2008.
+Jhih-Wei Wu, I-Han
+                                Liu, and Jeen-Shing Wang, “Intelligent Car-Like
+                                Robot with a Remote Monitoring Control and Lane Keeping Assistance
+                                System,” Proc. of International Automatic Control Conferenc,
+                                pp. 1-6, 2008.
+Jeen-Shing Wang,
+                                Tzu-Ping Kao, and I-Han Liu, “An Autonomous Vehicle with a
+                                Cellphone-Based Remote Control and Vision-Guided Surveillance System,” Proc. of International Automatic Control Conferenc, pp. 1-5,
+                                2008.  
+Hung-Yi Lin, Li-Ying Wu, Chung-Yao Hsu, Sheng-Hsing
+                                Lan, and Jeen-Shing Wang, “An Automatic Detectio
+                                Algorithm of Cyclic Alternating Pattern,” Proc. of
+                                  International Symposium on Biomedical Engineering, pp. 1-5,
+                                2008 (97-2221-E-006-157)
+Fang-Chen Chuang
+                                and Jeen-Shing Wang, “Single-Channel
+                                  Speech Enhancement: Using Recurrent Neuro-Fuzzy Voice Activity Detector
+                                  and Spectral Subtraction Algorithms,” Proc. of 2008 IEEE
+                                    International Conference on Systems, Man, and Cybernetics,
+                                  pp. 3057-3061, 2008.
+Li-Ying Wu and Jeen-Shing Wang, “A Simplified
+                                Support Vector Clustering Algorithm,” Proc. of 2008 IEEE
+                                  International Conference on Systems, Man, and Cybernetics,
+                                pp. 1259-1264, 2008.  
+Jeen-Shing Wang and Yi-Chung Chen, “A Hammerstein-Wiener
+                                Recurrent Neural Network with a Frequency Response Function
+                                Initialization Algorithm,” Proc. of 2008 IEEE International
+                                  Conference on Systems, Man, and Cybernetics, pp. 1832-1837,
+                                2008.
+Che-Wei
+                                Lin and Jeen-Shing Wang, “A
+                                  Digital Circuit Design of Nonlinear Activation Functions for Neural
+                                  Networks,” Proc. of 2008 IEEE International Symposium on
+                                    Circuits and Systems, pp. 856-859, 2008.
+Che-Wei
+                                Lin and Jeen-Shing Wang, “A Digital Circuit Design of State-Space
+                                  Recurrent Neural Networks,” Proc. of 2008 IEEE International
+                                    Conference on Systems, Man, and Cybernetics, pp. 1838-1842,
+                                  2008. 
+Ming-Chan You, Cheng-Yi Mao, and Jeen-Shing Wang, “Recursive Parametric Spectral Subtraction
+                                Algorithm for Speech Enhancement,” Communications in Computer and Information
+                                  Sciences, vol. 2, pp. 826-835, 2007. 
+Jeen-Shing Wang, Jen-Chieh Chiang,
+                                and Ya-Ting Yang, “Support
+                                  Vector Clustering with Outlier Detection,” Communications in Computer and Information
+                                    Sciences, vol. 2, pp. 423-431, 2007.
+Che-Wei Lin and Jeen-Shing Wang,
+                                  “A Novel Membership Function Approximation for
+                                  Effective Design of Neural Networks,” the 18th VLSI Design/CAD Symposium, Taiwan, pp. 261-265,  August 8-11,
+                                2007.
+Che-Wei Lin, Jeen-Shing Wang,
+                                and Chun-Chang Yu, “Synchronous Pipeline Hardware Design for a
+                                Neuro-Fuzzy Circuit with On-Chip Learning Capability,” Lecture
+                                  Notes in Artificial Intelligence, vol. 4682, pp. 192-201,
+                                2007.  
+Tzun-Ying Yang, Yen-Ping Chen, Shun-Nan Liou, Gwo-Yun Lee, and Jeen-Shing
+                                Wang,“Activity Recognition Using One Triaxial
+                                Accelerometer: A Neuro-fuzzy Classifier with Feature Reduction,” Lecture Notes in Computer Sciences,
+                                  vol. 4740, pp. 395-400, 2007. 
+Tzu-Ping
+                                Kao, Chun-Chang Yu, Ting-Yu Chen, and Jeen-Shing Wang, “Hardware Design of an Adaptive Neuro-Fuzzy Network with On-Chip
+                                Learning Capability,” Lecture Notes in Computer Science,
+                                vol. 4492, no. 2, pp. 336-345, 2007. 
+Jeen-Shing Wang, Hung-Yi Lin, Yu-Liang Hsu, and Ya-Ting
+                                Yang, “Using a Wiener-Type Recurrent
+                                  Neural Network with the Minimum Description Length Principle for
+                                  Dynamic System Identification,” Lecture
+                                    Notes in Artificial Intelligence, vol. 4682, pp. 192-201, 2007. 
+Jeen-Shing Wang and
+                                Jen-Chieh Chiang, “Support
+                                  Vector Clustering with a Novel Cluster Validity Method,” Proc. of 2006 IEEE
+                                    International Conference on Systems, Man & Cybernetics,
+                                      Taipei, Taiwan, pp. 3715-3720, Oct. 8-11, 2006.
+Jeen-Shing Wang and Yen-Ping Chen, “A
+                                Hammerstein Neuro-Fuzzy Network with an Online Hybrid Construction
+                                Algorithm for Dynamic Applications,” Proc. of 2006 IEEE World
+                                  Congress on Computational Intelligence, Vancouver, Canada, pp.
+                                9946-9953, July 16-21, 2006.
+Yen-Ping Chen and Jeen-Shing
+                                Wang, “A
+                                  Novel Nonlinear Dynamical Systems Control Using Linear Controllers with
+                                  Nonlinearity Eliminators,” Proc. of 2006 IEEE World
+                                    Congress on Computational Intelligence, Vancouver, Canada, pp.
+                                10737-10744, July 16-21, 2006.
+Yen-Ping Chen and Jeen-Shing
+                                Wang, “Identification
+                                  of Chaotic Systems Using a Self-Constructing Recurrent Neural Network,” Proc. of 2005 IEEE International Conference on Systems, Man
+                                    & Cybernetics, The Big
+                                       Island, Hawaii, pp. 2150-2155, Oct. 10-12,
+                                         2005.
+Yen-Ping Chen and Jeen-Shing
+                                Wang, “An Automated Hammerstein Recurrent Neural Network for
+                                Dynamic Applications,”  Proc. of IASTED International Conference on
+                                  Computational Intelligence, Calgary,
+                                    Canada, July 4-6, 2005.
+Jen-Chieh Chiang
+                                and Jeen-Shing Wang, “A Validity-Guided Support Vector
+                                Clustering Algorithm for Identification of Optimal Cluster
+                                Configuration ,” Proc.
+                                  of 2004 IEEE International Conference
+                                    on Systems, Man & Cybernetics,
+                                      Hague, Netherlands, pp. 3613-3618, October 10-13, 2004.
+Shao-Hua Lee and Jeen-Shing
+                                Wang, “Design of a Neuro-Fuzzy Chip Using
+                                  Adaptive Multimode Approaches for an Intelligent Car-Backing System,” Proc. IEEE International Conference on Systems, Man & Cybernetics,
+                                    Hague, Netherlands, pp. 3799-3804, October 10-13, 2004.
+Jiun-Kai Wang and Jeen-Shing
+                                Wang, “Efficient
+                                  Function Approximation Using an Online Self-Regulating Clustering
+                                  Algorithm,” Proc. of 2004 IEEE
+                                    International Conference on Systems, Man
+                                      & Cybernetics,
+                                         Hague, Netherlands, pp. 5935-5940, October 10-13, 2004.
+Yen-Ping
+                                Chen, Sheng-Nan Wu and Jeen-Shing Wang, “A
+                                  Hybrid Predictor for Time Series Prediction,” Proc. of 2004 IEEE International Joint
+                                    Conference on Neural Networks, Budapest, Hungary, pp. 1596-1602, July 25-29,
+                                      2004. 
+Jiun-Kai Wang and Jeen-Shing
+                                Wang, “A
+                                  Self-Regulating Clustering Algorithm for Identification of Minimal
+                                  Cluster Configuration,” Proc. of 2004 IEEE International Joint
+                                    Conference on Neural Networks, Budapest, Hungary, pp. 1427-1432, July 25-29,
+                                      2004. 
+Yen-Ping Chen and Jeen-Shing
+                                Wang, “A Novel Recurrent Neural Network with Minimal
+                                Representation for Dynamic System Identification,” Proc. of
+                                  2004 IEEE
+                                    International Joint Conference on Neural Networks, Budapest, Hungary, pp. 849-854, July 25-29,
+                                      2004.  
+Sheng-Nan
+                                Wu and Jeen-Shing Wang, “An
+                                Adaptive Recurrent Neuro-Fuzzy Filter for Noisy Speech Enhancement,” Proc.
+                                  of 2004 IEEE
+                                    International Joint Conference on Neural Networks, Budapest, Hungary, pp. 3083-3088, July 25-29,
+                                      2004.  
+Jeen-Shing Wang, “An
+                                Efficient Recurrent Neuro-Fuzzy System for Identification and Control
+                                of Dynamic Systems,” Proc. of 2003 IEEE Int'l Conf. on Systems, Man
+                                  & Cybernetics, Washington, D.C., pp. 2833-2838, Oct 5-8,
+                                     2003.  
+Jeen-Shing
+                                Wang and C. S. G. Lee, “Self-Adaptive Recurrent Neuro-Fuzzy
+                                Control for an Autonomous Underwater Vehicle,” Proc. of 2002
+                                  IEEE Int'l Conf. on Robotics and Automation, Washington,
+                                D.C., pp. 1190-1100, May 11-15, 2002 (Finalist for the Best Student
+                                Paper Award). 
+Jeen-Shing
+                                Wang and C. S. G. Lee, “Efficient Neuro-Fuzzy Control Systems
+                                Autonomous Underwater Vehicles,” Proc. of 2001 IEEE Int'l
+                                  Conf. on Robotics and Automation, Seoul, Korea, pp.
+                                2986-2991, May 21-26, 2001. 
+C.
+                                S. G. Lee and Jeen-Shing Wang, “Self-Adaptive
+                                Neuro-Fuzzy Systems: Structure and Learning,” Proc. of 2000
+                                  IEEE/RSJ Int'l Conf. on Intelligent Robots and Systems,
+                                Takamatsu, Japan, pp. 52-57, Oct. 31-Nov. 3, 2000. 
+Jeen-Shing
+                                Wang, C. S. G. Lee, and J. Yuh, “Self-Adaptive Neuro-Fuzzy
+                                Systems with Fast Parameter Learning for Autonomous Underwater Vehicle
+                                Control,” Proc. of 2000 IEEE Int'l Conf. on Robotics and
+                                  Automation, San Francisco, CA, pp. 3861-3866, April 24-28, 2000. 
+Jeen-Shing
+                                Wang, C. S. G. Lee, and J. Yuh, “Self-Adaptive Neuro-Fuzzy
+                                Control with Fuzzy Basis Function Network for Autonomous Underwater
+                                Vehicles,” Proc. of 1999 IEEE/RSJ Int'l Conf. on Intelligent
+                                  Robots and Systems, Kyongju, Korea, pp. 130-135, Oct. 17-21,
+                                1999. 
+Jeen-Shing
+                                Wang, C. S. G. Lee, and C. H. Juang, “Structure and Learning
+                                in Self-Adaptive Neural Fuzzy Inference Systems,” Proc. of
+                                  the Eighth Int'l Fuzzy Syst. Association World Congress (IFSA'99),
+                                Taipei, Taiwan, pp. 975-980, Aug. 17-20, 1999. 
+Jeen-Shing
+                                Wang, C. S. G. Lee, and J. Yuh, “An On-Line Self-Organizing
+                                Neuro-Fuzzy Control for Autonomous Underwater Vehicles,” Proc.
+                                  of 1999 IEEE Int'l Conf. on Robotics and Automation, Detroit,
+                                MI, pp. 2416-2421, May 10-15, 1999. 
+Jeen-Shing
+                                Wang and R. McLaren, “A Modified Defuzzifier for Control of
+                                the Inverted Pendulum Using Learning,” Proc. of 1997 Annual
+                                  Meeting of the North American Fuzzy Information Processing Society -
+                                  NAFIPS, Syracuse, NY, pp.118-23, Sept. 21-24, 1997. 
+
+D. Books
+
+Ph.D. Thesis, On the Structure and
+                                Learning of Self-Adaptive Neuro-Fuzzy Inference Systems, School of Electrical and Computer Engineering,
+                                  Purdue University, 2001. 
+Master
+                                Thesis, A Modified Defuzzifier for Control of the Inverted Pendulum Using Learning,
+                                  Department of Electrical Engineering, University of Missouri-Columbia,
+                                  1997. 
+
+
+
+ 參與國際會議 
+
+
+
+2009 IEEE
+                              International Symposium on Industrial Electronics, Seoul,  Korea  (Section Chair)
+ 2008 IEEE  International
+                            Conference on Acoustics, Speech, and Signal Processing, Las Vegas, USA.  
+2007
+                            International Conference on Intelligent Computing, Qingdao, China.
+                            (Section Chair) 
+2007
+                            International Symposium on Neural Networks, Nanjing, China. 
+2006 IEEE
+                            World Congress on Computational Intelligence, Vancouver, Canada.
+2005 IASTED
+                            International Conference on Computational Intelligence, Calgary, Canada. 
+2004 IEEE
+                            International Joint Conference on Neural Networks, Budapest, Hungary
+                            (Section Chair) 
+2003 IEEE International
+                            Conference on Systems,
+                              Man & Cybernetics, Washington D.C., USA. (Section Chair) 
+2002 IEEE
+                            International Conference on Robotics and Automation, Washington, D.C.,
+                            USA. 
+
+
+
+ 研究計畫 
+
+
+A.
+                          科技部計畫
+
+智慧健康照護手環與雲端服務平臺於氣喘預警、睡眠障礙篩檢及老年照護之前瞻應用與服務開發(2015-2018)，主持人。
+「雲端自我健康促進與管理科技領域探究式課程」精緻化與推廣(2014-2016)，共同主持人。
+上肢註射肉毒桿菌毒素應用於腦中風病人之成效：研發並應用新型穿戴式慣性模組評估上肢功能變化及註射肉毒桿菌毒素的療效(2014-2015)，共同主持人。
+以慣性感測技術為基礎之穿戴式痙攣程度量化評估系統之研製及其用於中風患者註射肉毒桿菌毒素療效評估指標之開發(2014-2015)，共同主持人。
+智慧型手錶核心技術開發(2014-2015)，主持人。
+建構高齡者運動支持系統之研究建構高齡者運動支持系統之研究(2014-2015)，共同主持人。
+穿戴式慣性感測動作捕捉系統及其雲端復健評估與居家課程平臺之研製(2013-2016)，主持人。
+行動健康促進工具驗證及肥胖與代謝癥候群個案之介入性研究(2013-2015)，共同主持人。
+運用創新教學策略與雲端運算科技融入高中職之自我健
+                              康管理與促進課程實驗計畫(2011-2014)，共同主持人。  
+ 以慣性感測器為基礎之可攜式動作捕捉系統研製及其應用開發(2010-2013)，主持人。 
+以慣性感測元件為基礎的動作辨識與軌跡重建之演算法開發：實現互動式遊戲操控平臺與慣性雷射簡報筆 (2009-2010)，主持人。 
+與醫療看護整合之身心理健康促進系統之研究(2008-2010)，共同主持人。 
+「人本智慧生活科技整合中心」-專案八：互動式全感知3D實虛境服務精靈(2008-2009)，協同主持人。 
+支持向量群聚演算法之效能改善與其實際應用(2008-2009)，主持人。 
+適應性類神經模糊網路晶片之最佳設計與其在具電腦視覺之智慧型駕車系統軟/硬體共同模
+                              擬平臺之實證 (2006-2008)，主持人。
+遞迴類神經模糊系統之最小狀態空間表示在未知動態系統之控制與辨別(2004-2006)，主持人。 
+複雜動態系統之遞迴類神經模糊控制:設計及穩定度分析(2003)，主持人。 
+
+B.
+                            科技部大專生專題計畫
+
+基於眼動圖、肌電圖及活動量的快速動眼期睡眠偵測之裝置及演算法開發(專題生: 劉乃碩)
+                              (07/2011~02/2012) 
+基於心律變異性分析的可攜式情緒導正MP3播放器(專題生: 李怡慧)
+                              (07/2011~02/2012) 
+Visualization
+                              of SVC feature space and development of automatic kernel/parameters
+                              selection mechanisms (專題生:吳俐
+                              瑩)
+                              (07/2007~02/2008) 
+整合3G手機之智慧型自走車：利用虛擬力場理論及視
+                              覺與超音波感測器開發自動導引系統 (專題生:周楨惇)
+                              (07/2007~02/2008) 
+A Study on
+                              Identification and Control of a Nonlinear System: A Hybrid Approach (專題生:陳奕中)(07/2006~02/2007) 
+
+C.
+                            一般建教案
+
+腕動式裝置動作無線控制APP之技術開發之研究(財團法人工業技術研究院)(04/2015~12/2015)
+智慧型手錶核心技術開發(德之傑科技股份有限公司)(02/2014~01/2015)
+穿戴裝置之數據介接及分析模組研究與開發(01~11/2014)
+用於心臟輔助器之可攜式心電儀(怡忠生物科技有限公司) (08/2011~07/2012)
+慣性導航系統應用於室內定位(工研院資訊與通訊研究所) (05~12/2011) 
+慣性訊號軌跡轉文字影像雜訊點消除及整合PDA嵌入 式系統應用介面開發之研究 (工研院微系統科技中心) (01~12/2008) 
+動作辨識感知技術開發 (工研院微系統科技中心)
+                              (12/2006~05/2007) 
+智慧動作辨識系統軟/硬體共同設計技術開發研究 (工研院微系統科技中心) (06~12/2007) 
+
+D.
+                            產學合作案
+
+以電磁筆顯示器為基礎之簽名辨識/防偽技術開發(科技部產學合作計畫案：優派國際股份有限公司)
+Wiedu智慧學習系統功能優化(科技部產學合作計畫案：緯創資通股份有限公司)(02/2015~01/2016)
+互動式電子筆：以慣性元件為基礎之手寫技術開發(國家科學委員會產學合作計畫案：圓展科技股份有限公司) (06/2011~05/2013) 
+iHealth行動健康促進系統商品化合作研究案
+                              (中華電信股份有限公司) (06/2011~06/2013) 
+
+E.
+                            其他計畫案
+
+微環境室內空氣品質監測用之微型、低耗能複合型氣體感測器開發(國家實驗研究院)
+應用於過敏性氣喘偵測用之微型穿戴式複合檢測器開發(國家實驗研究院)
+成功大學電資學院明日之星研究獎助計畫
+
+ 
+  
+
+
+ 指導學生情況 
+
+
+A. 指導學生 
+
+博士 
+
+     
+                            陳彥冰(97畢)、薑仁傑(98畢)、許煜亮(100畢)、林哲偉(100畢)、莊芳甄(101畢)、江維鈞(103畢)
+
+碩士 
+
+              106級：張婷婷、陳怡靜、林昀庭、溫苡任、陳冠翔
+              105級：沈育宏、陳品翰
+              104級(畢)：袁明安、曾瑞竹、賴柏元、 張巧玲(預研生)、楊宗翰(預研生)、高子平
+                103級(畢)：羅永、吳?昇、 莊雅冠(預研生)
+    
+                            102級(畢)：洪千涵、翁啟翔、胡家瑋、張哲維、朱晟瓴、劉乃碩
+                            (預研生)、李怡慧(預研生)
+     101級(畢)：施冠榮、鄭秉恩、顏銘信
+     100級(畢)：何域禎、謝豐任、洪健超、黃彥綸、廖士鈞(預研生)、陳彥勳(預研生)
+     99級(畢):曾信輝、吳俐瑩、黃裕閔、江維鈞、張端穎、伍琇瑩
+     98級(畢):陳奕中、林鴻藝、高子平、劉俊男、吳致瑋、曾育中      
+                                 
+     97級(畢):毛成一、游明展、
+                            楊惠祁、劉羿涵      
+     96級(畢):許煜亮、吳建輝、黃瑋婷、陳亭宇、童俊銘、顏仲甫
+     95級(畢):餘俊璋、洪志明、黃國和、許書彰、廖士頤
+     94級(畢):林建華、薑仁傑、莊芳甄、謝環澤 
+     93級(畢):王俊凱、李紹華、吳勝男、陳彥冰 
+ 
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+系所介紹 - 國立中央大學資訊工程學系
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+系所簡介
+
+
+成員簡介
+
+
+研究領域
+
+
+實驗室簡介
+
+
+研究領域
+依據教師專長領域規劃六大研究學群，研究學群資深教授引領新進教授進行相關領域或跨領域之研究計畫。由教師的學術背景可一窺本系教學多元發展之趨向，期望在各領域研究發展，均能與國內辦學優良之各校並駕齊驅。六大研究學群之研究方向如下：
+
+軟體工程研究學群
+
+
+快速軟體雛形法
+快捷方法與軟體成熟度模型
+概念模型之軟體與軟體工程環境
+物件導向方法與服務導向軟體工程
+
+資料工程研究學群
+
+
+資訊分析技術及應用
+數位學習技術與研究
+資料探勘和倉儲技術的構建及應用
+資訊庫系統技術及生醫資訊處理技術
+
+網路工程研究學群
+
+
+先進網路通訊技術的研發
+新世代網路應用的開拓
+密碼學理論的構建及應用
+全方位資訊安全技術研發及構建
+
+多媒體工程研究學群
+
+
+視訊監控及汽車安全視覺研究
+虛擬實境及人機互動
+影像處理及視訊編碼技術
+醫學影像處理及多媒體資料庫
+
+系統工程研究學群
+
+
+復健科技
+機器人應用研究
+人機介面及互動技術
+嵌入式系統及軟硬體整合設計
+
+計算理論與應用研究學群
+
+
+演算法
+圖論與最佳化
+網格計算及雲端計算
+人工智慧及計算型智慧
+
+
+
+
+
+
+
+
+焦點新聞
+
+                        更多                    
+
+
+
+
+
+
+
+賀！周立德教授指導博士生曾繁勛同學獲中華民國資訊學會「博士論文佳作指導獎」
+![博士論文佳作指導獎][1]
+
+
+  [1]: /file/819423af72cbeab083edfabd10b7f7c0
+
+
+
+
+
+賀！鄭旭詠副教授獲106年青年獎章
+中央大學資訊工程系副教授鄭旭詠研究成果豐碩，曾獲多項論文及研究獎項，2015年與2016年中央大學研究傑出獎、2016年中華民國系統學會學術傑出青年
+獎、2016中國電機工程學會優秀青年電機工程師獎及2016與2017年科技部優秀年輕學者計畫，致力於預測太陽能輻射量跨領域整合創新研究與整合資通訊技術用
+於智慧型運輸系統，為未來產生新的價值為經濟帶來嶄新的成長動能。
+
+相關新聞連結
+[http://www.epochtimes.com/b5/17/3/28/n8975083.htm][1]
+
+
+  [1]: http://www.epochtimes.com/b5/17/3/28/n8975083.htm
+
+
+
+
+
+賀！慄永徽助理教授榮獲2017日內瓦國際發明展金牌以及特別獎
+慄永徽助理教授以「智慧眼鏡上的智能型虹膜辨識系統」，榮獲2017日內瓦國際發明展金牌以及特別獎兩項殊榮，全系師生與有榮焉。
+
+![2017日內瓦國際發明展][1]
+
+
+  [1]: /file/0c00e8ac102b2b6bb21531a99cda3013
+
+
+
+
+
+
+
+系友會系學會教室租借系統電子報 
+
+        Copyright © 2017 Department of Computer Science & Information Engineering, National Central University.
+版權宣告 | 後台管理 | 聯絡我們 | 網站地圖 | 03-422-7151 分機：35200, 35250-2
+         | 03-422-2681
+         | ncu4500@ncu.edu.tw
+         | 
+
+
+
+
+
+
+×關閉
+選擇語言 Choose language
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+成大自行研發iNCKU手錶　健康好幫手 - NCKU, 成功大學-新聞中心 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+成功大學新聞中心
+歡迎光臨成功大學新聞中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+新聞中心
+
+聯絡我們
+網站地圖
+English
+成大首頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+分類清單
+
+
+
+
+
+
+中心簡介
+中心簡介
+組織成員
+
+即時新聞
+即時影音新聞
+學生主播新聞台
+學生主播說新聞
+《雲嘉南濱海國家風景區新聞專區》
+
+歷屆學生主播
+幹部群(6人）
+正式主播 (26人)
+儲備主播 (8人)
+畢業主播(42人)
+
+新聞剪報
+新聞集錦
+成大簡訊
+成大簡介
+校區地圖
+表單下載
+網站地圖
+
+
+攝影棚使用規範
+
+賀年卡下載
+2017賀年卡下載
+2016賀年卡下載
+
+
+
+
+
+
+
+
+
+最後更新日期   
+
+
+
+
+
+
+2017-07-21  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+ > 
+即時新聞
+
+
+
+	字體大小調整
+	小
+中
+大
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+成大自行研發iNCKU手錶　健康好幫手
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+【臺南訊】行動穿戴裝置正夯，成功大學「創新數位內容研究中心」不讓市售品專美於前，研發出一款經濟、美觀，且個人或團體皆適宜的行動即時健康管理系統「iNCKU手錶」，目前全台20所中學及成大都已使用iNCKU做為健康促進的管理，展現出學術研究成果落實在日常生活與應用的最佳典範。
+
+市面上雖不乏行動穿戴裝置品項，但量測到的數據只有當事人知道，其他使用者及其背後龐大的數據難以取得，更遑論大數據的分析與應用。成大電機工程學系王振興教授主持的「計算型智慧與學習系統實驗室」4、5年前開始投入穿戴裝置相關研究，利用人工智慧判讀量測配戴者日常移動的數據，如走行產生的步數、熱量消耗、心跳頻率等訊號。
+
+研究成員之一江維鈞博士表示，從軟體程式規劃到實際量測到的數據分析、雲端蒐集、資訊解讀與應用等都很順利，但要將研究用的實驗室用的行動穿戴模組做成如市售品般精美則是一大考驗；鐘錶業者得知成大iNCKU研究之後大為驚艷，於是展開合作，目前除已產出1500支錶面上鑲著成大榕樹標幟的iNCKU手錶，也產出具科技感手環式的行動穿戴載具。
+
+現在iNCKU手錶，正運用在成大衛生保健組的「行動智能愛成大(iNCKU)、雲端作伴護健康」活動，共徵選450名學生使用「行動即時健康管理系統」，要將手錶蒐集到的學生日常生活與運動資訊，上載到團隊設計的資訊管理雲端平臺，作為學生健康自我管理，初步成效不錯。
+
+江維鈞博士指出，一般人使用健康行動穿戴裝置多有持續力不足的問題，這對健康促進的效果大打折扣，為解決此一問題，我們從社群遊戲中找到靈感，已著設計一款「台灣健康走」遊戲，鼓勵配戴者揪伴一起玩，大家平均運動的時間、運動強度達到一定標準才能得分，未達標準扣分，讓成員彼此提醒去運動、多多運動，另外還設計闖關、金幣等，遊戲設計已告一段落，現正測試中以期更符合實際需求。
+
+江維鈞博士表示，健康促進的項目很多，為讓iNCKU手錶做更多的事情，現在已著手研發氣喘、睡眠呼吸中止、情緒、專註力及急難求救等偵測，希望iNCKU手錶能成為大家健康的好夥伴。
+
+創新、創意、創業已是趨勢，經濟部也大力推動「產學研價值創造計畫」，江維鈞說，近期將申請「價值創造計畫」成立衍生公司，日後會正式行銷iNCKU手錶，讓更多人一起來顧健康，企業或團隊採用iNCKU手錶來促進員工或成員的健康，需成員們的健康數據做分析，雲端都可以配合匯出，以方便團隊設計符合本身的活動或其他。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+瀏覽數  
+
+
+
+
+
+
+
+轉寄親友
+友善列印
+
+
+
+                  分享
+               
+
+
+
+
+
+
+
+Line
+
+
+
+Plurk
+
+
+
+Funp
+
+
+
+Google
+
+
+
+MySpace
+
+
+
+Digg
+
+
+
+Yahoo
+
+
+
+Facebook
+
+
+
+twitter
+
+
+
+
+
+
+
+
+
+
+將此文章推薦給親友
+
+
+
+稱呼:
+
+
+
+親友Email:
+
+
+
+推薦說明:
+請輸入推薦說明
+
+
+驗證碼:
+
+
+
+
+驗證碼:
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+Voice Play
+
+
+9905
+
+
+
+更換驗證碼
+請重整網頁或按F5更換驗證碼
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEL:(886)6-275-7575 #50040 , Email : em50040@email.ncku.edu.tw , 701臺南市大學路一號 No1, University Road, Tainan City, Taiwan, ROC
+Best browse with resolution 1024x768, IE6.0 later 
+© Copyright 2008 National Cheng Kung University. All rights Reserved.
+最佳瀏覽環境：IE 6.0以上版本，解析度：1024*768
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資訊工程學系-專任教師-專任教師
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+中原大學
+itouch
+English
+
+
+
+
+
+
+
+
+
+
+選單
+
+
+訊息公告
+
+
+最新消息
+
+
+課程公告
+
+
+招生公告
+
+
+高中生專區
+
+
+徵才公告
+
+
+競賽資訊
+
+
+
+
+系所介紹
+
+
+沿革
+
+
+理念與宗旨
+
+
+教學目標及特色
+
+
+未來出路與就業機會
+
+
+核心能力
+
+
+大學部
+
+
+碩士班
+
+
+
+
+聯絡資訊
+
+
+交通方式
+
+
+校園地圖
+
+
+聯絡我們
+
+
+
+
+
+
+系所成員
+
+
+專任教師
+
+
+兼任教師
+
+
+行政人員
+
+
+
+
+課程介紹
+
+
+課表查詢
+
+
+開課查詢系統
+
+
+課程規劃
+
+
+修業規定
+
+
+學士班
+
+
+碩士班
+
+
+碩專班
+
+
+
+
+企業實習
+
+
+
+
+招生專區
+
+
+學士班
+
+
+繁星推薦
+
+
+個人申請
+
+
+考試分發
+
+
+轉系申請
+
+
+轉學考試
+
+
+
+
+碩士/碩專班
+
+
+電子系資訊組博士班
+
+
+招生系統
+
+
+考古題
+
+
+
+
+獎學金
+
+
+Best Choice獎學金
+
+
+1989級獎助學金
+
+
+梁修宗清寒獎助金
+
+
+專精書捲獎
+
+
+各項團體競賽獎助金
+
+
+發表論文獎助金
+
+
+楊熙年教授學生事務基金
+
+
+
+
+演講活動
+
+
+書報討論
+
+
+資工講座
+
+
+資訊安全概論
+
+
+
+
+系友會
+
+
+照片花絮
+
+
+校友服務中心
+
+
+加入系友會
+
+
+加入系友會FB
+
+
+
+
+
+
+TAB標籤功能，如不執行不影響您資料瀏覽
+
+
+
+
+
+
+:::
+
+
+
+相關連結
+
+
+中原大學
+
+
+中原大學電機資訊學院
+
+
+i-Learning
+
+
+張靜愚紀念圖書館
+
+
+中原大學招生系統
+
+
+
+
+
+活動一覽
+
+
+2017
+				年
+				07
+				月
+				21
+				日
+				
+				星期五
+
+
+日
+一
+二
+三
+四
+五
+六
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
+
+
+
+
+
+
+2
+
+
+
+
+3
+
+
+
+
+4
+
+
+
+
+5
+
+
+
+
+6
+
+
+
+
+7
+
+
+
+
+8
+
+
+
+
+
+
+9
+
+
+
+
+10
+
+
+
+
+11
+
+
+
+
+12
+
+
+
+
+13
+
+
+
+
+14
+
+
+
+
+15
+
+
+
+
+
+
+16
+
+
+
+
+17
+
+
+
+
+18
+
+
+
+
+19
+
+
+
+
+20
+
+
+
+
+21
+
+
+
+
+22
+
+
+
+
+
+
+23
+
+
+
+
+24
+
+
+
+
+25
+
+
+
+
+26
+
+
+
+
+27
+
+
+
+
+28
+
+
+
+
+29
+
+
+
+
+
+
+
+
+
+意見信箱
+
+
+
+
+照片花絮
+
+
+
+1060325大學甄試
+
+
+
+
+
+1060315日月光參訪(資訊工程學系)2017/04/11
+
+
+1060218高中生體驗營(資訊工程學系)2017/04/11
+
+
+
+
+							更多照片花絮
+
+
+
+
+
+
+
+
+:::
+
+
+
+
+現在位置：首頁
+				>
+				系所成員
+				>
+				專任教師
+
+
+
+
+
+
+
+專任教師
+
+專任教師
+
+ 
+張元翔 | 鍾斌賢 |  蔡明達 |  賀嘉生 |  留忠賢 |  夏延德 |  田筱榮 |  朱守禮 |  楊明豪 |  鄭憲永 |
+吳宜鴻 |  鄭維凱 |  蘇志文 |  柯士文 |  湯松年 |  郭雅貞 | 
+ 
+
+
+
+
+
+ 
+
+
+
+ 張元翔 副教授兼系主任　　　　　　研究領域  
+
+
+ 學　歷：美國匹茲堡大學 電機工程系博士
+
+
+ 專　長：影像處理、計算機視覺、圖形識別、醫學影像、電腦輔助診斷、人機介面
+
+
+ 電　話：(03)265-4713
+
+
+ E-mail：changyh@ice.cycu.edu.tw
+
+
+ 辦 公 室：電學大樓805
+
+
+
+ 實 驗 室： 計算機視覺實驗室(電學大樓603、分機:4726)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 鍾斌賢 教授　　 　 　　　　　　　研究領域  
+
+
+ 學　歷：清華大學 資訊科學博士
+
+
+ 專　長：計算機圖學、虛擬實境科技、學習科技
+
+
+ 電　話：(03)265-4716
+
+
+ E-mail：bsjong@ice.cycu.edu.tw
+
+
+ 辦 公 室：電學大樓711
+
+
+ 實 驗 室：計算機圖學實驗室(電學大樓716、分機:4717)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 蔡明達 教授　 　 　　　　　　　　研究領域 
+
+
+ 學　歷：日本東京大學 精密機械博士
+
+
+ 專　長：計算機圖學、研究項目包括容積圖學、科學計算視覺化、計算機圖學的醫學應用、手術模擬、醫學應用的影像分析
+
+
+ 電　話：(03)265-4718
+
+
+ E-mail：tsai@ice.cycu.edu.tw
+
+
+ 辦 公 室：電學大樓712
+
+
+ 實 驗 室：科學視算與應用實驗室(電學大樓716、分機:4717)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 賀嘉生 教授　　    　　　　　　　　研究領域  
+
+
+ 學　歷：台灣大學 電機工程學系博士,台灣大學 資訊所博士
+
+
+ 專　長：大數據分析技術與實務、文本分析與知識分析、神經網路、資料探索、計算型智慧、數位學習
+
+
+ 電　話：(03)265-4719
+
+
+ E-mail：jsheh@ice.cycu.edu.tw
+
+
+ 辦 公 室：電學大樓806
+
+
+ 實 驗 室：多媒體通訊系統實驗室(電學大樓801、分機:4725)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 留忠賢 副教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：美國西北大學 電機電腦博士
+
+
+ 專　長：軟體工程、物件導向、生物資訊學、計算機通訊
+
+
+ 電　話：(03)265-4709
+
+
+ E-mail：liucs@ice.cycu.edu.tw
+
+
+ 辦 公 室：電學大樓706
+
+
+ 實 驗 室：軟體工程實驗室(電學大樓702、分機:4710)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 夏延德 副教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：美國堪薩斯大學 資訊科學博士
+
+
+ 專　長： Uncertain reasoning(不定推理)、learning technology(學習科技)、knowledge engineering(知識工程)
+
+
+ 電　話：(03)265-4720
+
+
+ E-mail：hsia.yenteh@gmail.com
+
+
+ 辦 公 室：電學大樓714
+
+
+ 實 驗 室：人工智慧實驗室(電學大樓715、分機:4723)
+
+
+
+ 
+
+
+
+
+ 
+
+
+ 田筱榮 副教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：美國西北大學 資訊科學博士
+
+
+ 專　長：系統與網路安全、計算機網路、智慧型系統、作業系統、計算機結構
+
+
+ 電　話：(03)265-4700 / (03)265-4706
+
+
+ E-mail：tyan@ice.cycu.edu.tw
+
+
+ 辦 公 室：電學大樓209/ 電學大樓709
+
+
+ 實 驗 室：網路與系統實驗室(電學大樓718、分機:4707)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 朱守禮 副教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：國立中山大學 電機工程學系博士
+
+
+ 專　長：高效能計算機結構、平行編譯器、低耗能系統技術、嵌入式系統開發、系統晶片設計、RISC/VLIW處理器設計、平行程式最佳化、GPU架構設計
+
+
+ 電　話：(03)265-4721
+
+
+ E-mail：slchu@cycu.edu.tw
+
+
+ 辦 公 室：電學大樓707
+
+
+ 實 驗 室：計算機系統與結構實驗室(電學大樓701B、分機:4722)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 楊明豪 教授  　　　　　　 　　　　研究領域  
+
+
+ 學　歷：國立中央大學 資工所博士
+
+
+ 專　長：網路安全、網路通訊協定、隨傳視訊、平行及分散式計算與容錯計算
+
+
+ 電　話：(03)265-4711
+
+
+ E-mail：mhyang@cycu.edu.tw
+
+
+ 辦 公 室：電學大樓713
+
+
+
+ 實 驗 室：無線安全實驗室(電學大樓312、分機:4733)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 鄭憲永 助理教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：中原大學 電子工程博士
+
+
+ 專　長： 資料處理、資料庫系統、電腦系統、資訊教育、學習科技
+
+
+ 電　話：(03)265-2939
+
+
+ E-mail：cheng@cycu.edu.tw
+
+
+ 辦 公 室：真知教學大樓702
+
+
+
+ 實 驗 室：
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 吳宜鴻 助理教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：清華大學 資訊工程博士
+
+
+ 專　長：資料庫系統、網際網路應用、資料探勘、多媒體檢索、資料串流、社交網路
+
+
+ 電　話：(03)265-4727
+
+
+ E-mail：yhwu@cycu.edu.tw
+
+
+ 辦 公 室：電學大樓605
+
+
+
+ 實 驗 室：知識與資料工程實驗室(電學大樓214B、分機:4737)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 鄭維凱 副教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：清華大學 資訊工程博士
+
+
+ 專　長：積體電路合成與設計自動化、系統晶片設計方法、數位平臺開發系統、計算機結構、微處理機設計
+
+
+ 電　話：(03)265-4714
+
+
+ E-mail：wkcheng@cycu.edu.tw
+
+
+ 辦 公 室：電學大樓710
+
+
+
+ 實 驗 室：VLSI系統與設計自動化實驗室(電學大樓701A、分機:4734)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 蘇志文 助理教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：中央大學 資訊工程博士
+
+
+ 專　長：多媒體檢索、視訊監控、視訊優化
+
+
+ 電　話：(03)265-4730
+
+
+ E-mail：lucas@cycu.edu.tw
+
+
+ 辦 公 室：電學大樓604A
+
+
+
+ 實 驗 室：多媒體分析與檢索系統實驗室(電學大樓602、分機:4736)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 柯士文 助理教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：英國桑德蘭大學 資訊科學博士
+
+
+ 專　長：資訊檢索導論、多媒體數位學習系統、網路資訊系統、線性代數(英語授課)
+
+
+ 電　話：(03)265-4729
+
+
+ E-mail：swgke@cycu.edu.tw
+
+
+ 辦 公 室：電學大樓212
+
+
+ 實 驗 室：網路資訊檢索研究室(電學大樓214A、分機:4732)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 湯松年 助理教授　　　　　　　　　　研究領域  
+
+
+ 學　歷：清華大學 電機工程博士
+
+
+ 專　長：通訊/生醫應用IC設計、高效能運算器設計、數位系統開發、        SoC架構設計、軟硬體整合協同設計
+
+
+ 電　話：(03)2654731
+
+
+ E-mail：sntang@ice.cycu.edu.tw
+
+
+ 辦 公 室：電學大樓311A
+
+
+ 實 驗 室：通訊暨生醫系統晶片設計實驗室 (電學大樓311B、分機: 4739)
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+ 郭雅貞 講師(與電算中心合聘)　　　　　　　　　　 
+
+
+ 學　歷：中原大學 電子工程碩士
+
+
+ 專　長：Unix 系統管理
+
+
+ 電　話：(03)265-2913
+
+
+ E-mail：kyj@cycu.edu.tw
+
+
+ 辦 公 室：真知教學大樓717
+
+
+
+ 實 驗 室：
+
+
+
+ 
+ 
+
+TAB標籤效果，如不執行不影響您資料瀏覽
+
+
+
+
+
+
+
+
+
+回頁首
+
+
+回上一頁
+當script無法執行時可按"alt + ←"鍵替代
+
+lp.xsl:,cp.xsl:
+
+
+
+
+
+
+
+
+
+校園地圖
+交通指引
+網站地圖
+分機資訊
+聯絡我們
+
+
+版權所有 ©中原大學．資訊工程學系
+32023桃園市中壢區中北路200號 電學大樓209室
+電話：(03) 265-4701/ 傳真：(03) 265-4799
+
+
+
+
+
+TAB標籤效果，如不執行不影響您資料瀏覽
+
+
+ 
+
+
+
+  2008 crazy idea應用王-生物技術研發成果創意應用競賽::網路通訊軟體與創意應用競賽::網路通訊軟體與創意應用競賽::茂迪盃太陽能光電應用設計創意競賽::網路通訊軟體::全國奈米科技應用創意競賽::通訊軟體|筆數16第1頁-UZCCA
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+UZCCA
+UZCCA
+
+
+
+
+
+
+
+
+
+
+2008 crazy idea應用王-生物技術研發成果創意應用競賽
+
+
+
+
+
+
+
+
+
+ 
+
+渣男總是名正言順吃小三妹妹...正宮的靠北最後讓人都傻眼了！
+
+12月 15, 2015
+葉迎蓮
+男女話題
+
+成大教師資料-王振興 教授 - 成功大學系辦網頁 --------------------------------靠北男友原文：當初是你說你其實對我也有意思才開始交往的憑什麼一回家我就要看到你跟我妹在床上脫光光已經不是一兩次了你每次都會說就妹妹的身材比較好嘛叫你不要一直抽煙 很傷身體的你每次都會說沒關係啦死不了的你什麼時候才會覺得我才是你的正宮阿王 振興 教授 職稱 教授 電話 +886-6-275-7575 ext. 62378 傳 真 +886-6-236-9418 電 子信箱 jeenshin@mail.ncku.edu.tw 實驗室 計算型智慧與學習系統實驗室(地址:臺南市大 學路1號電機系館92802&92810室)(TEL:06-2757575 ext. 62400-1410)...
+全文閱讀
+
+
+
+ 
+
+「他就像一面鏡子，讓我赤裸裸的看到自己...」資深新聞工作者陳廷宇：婚姻是最好的靈修道場
+
+12月 15, 2015
+郭靖萍
+男女話題
+
+成大研發快訊 - 國立成功大學國際會議暨專案用伺服器(臺北訊)曾任公視新聞主播的陳廷宇，目前是「獨立特派員」節目製作人，除了是資深的新聞工作者外，另外一個身分是瑜珈修行人。日前參加公視「誰來晚餐」節目，拜訪台灣與荷蘭異國聯姻的林士琪與唐睿謙夫妻檔。陳廷宇是天主教徒，但同時也練習瑜珈靜坐靜心，在靈修圈小有名氣。她在節目中分享開始吃素的因緣，以及婚姻中的雙線性系統是介於線性系統與廣義非線性系統間一種特殊的非線性系統模式，雙線性系統異於線性系統的是這類系統在原有線性系統模式外，加入了系統狀態與控制輸入的耦合項，因此雙線性系統可視為一種最簡單的非線性系統。...
+全文閱讀
+
+
+
+ 
+
+奶奶長大了！「千年一遇美少女」橋本環奈胸部發育成長超驚人啊！
+
+12月 14, 2015
+張碧文
+男人最愛
+
+國研院 - 科技政策智庫 - 全球與臺灣人才培育發展現況、問題與趨勢最近日本網友po出橋本環奈新發的寫真書，眼尖的網友發現胸部長大了!! 之後不少網友po舊照比較, 發現，奶奶果然長大了！ 最新: 翻拍ck101下同到底奶奶變大了多少？好辣，我們來回顧一下！舊年:半年前:四個月前:更早之前：文章轉載http://ck101.com/thread-3414014-1-資料來源：黃能堂(2009)；高正奇(2012) 3. 競爭力的核心：研發與創新 2008 年金融風暴席捲全世界，全球經濟景氣衰退，嚴重影響就業市場。因此，英、美、德、日、韓及中國等國家紛紛提出振興經濟計畫；有些國家將在下一階段知識經濟競賽與綠色 ......
+全文閱讀
+
+
+
+ 
+
+娘家給了五十萬陪嫁，老公想用它給他哥還債！我拒絕後，老公卻笑笑跟我說：「妳做得很好！」原因竟是...
+
+12月 14, 2015
+張碧文
+男女話題
+
+新聞查詢 - Sybase EAServer Version 5.5我和薑偉去年結婚的，戀愛了三年，感情一直很好，雖然薑偉家庭條件不好，但我也對薑偉的人品很認可。 薑偉的爸爸去世早，他媽帶大了他哥和他。薑偉的哥比薑偉大五歲，因為父親去世早，他初中畢業後就沒上學，打工掙錢幫助他媽支撐這個家，供薑偉上大學。 薑偉大學畢業後很照顧他媽和他哥，那時他哥已經結婚了。 薑偉他媽敬請踴躍報名參加「2013年第四屆健康照護國際學術研討會」，請查照。 敬請踴躍參加「2013年第五屆國際研討會：尋找照顧意義的旅程--跨專業觀點」，,請查照。 敬請踴躍報名參加2013健康產業管理專題競賽發表會，請查照。...
+全文閱讀
+
+
+
+ 
+
+被劈腿不選擇直接攤牌，她的理智作法被大家讚爆了！
+
+12月 14, 2015
+何憶青
+男女話題
+
+陳宗嶽的個人資料 - 國立成功大學 生物科技研究所  ------------------------------靠北男友原文：嗯 我想說每一段戀情結束 都是好好提升自己的開始我交往四年的男友，沒錯偷吃了給對方隱私，這就會造就跟妹越聊越開心的結果很多人會馬上攤牌，講個清楚說個明白，我沒有這麼做，而是忍了半年，蒐集所有聊天內容，就一次攤的夠國立成功大學 生物科技研究所 網站 ... 本網站著作權屬於國立成功大學 生物科技研究所，請詳見使用規則。 電話：(06)2757575 Ext.65600 傳真：(06)2766505 地址：701臺南市大學路1號...
+全文閱讀
+
+
+
+ 
+
+交往到熱戀期只有一周的睡魔男友，連吵分手時都還在睡...
+
+12月 14, 2015
+王映夏
+男女話題
+
+銘傳大學 - 生物科技學系/所 -------------------------------靠北男友原文：靠北我那無緣的前男友,就叫他 睡魔 吧。我和 睡魔交往三個多月,熱戀期大約只有一個多禮拜, 他的嗜睡魔性就顯露無遺熱戀的一個禮拜中,他禮拜天放假我們還會看電影或是隨處逛逛, 可惜好景不長...沒多久, 睡魔下班後來找我,一2014/10/07 銘傳大學生物科技學系副教授 陳良宇博士 TVBS新聞：原料牛油「合艙」 專家：產地也應先精煉 2014/09/17 銘傳大學生物科技學繫系主任 吳慧中博士 公民新聞：導入水耕、植物工廠、魚菜共生課程的原因...
+全文閱讀
+
+
+
+
+
+相關網站資料
+
+
+
+
+成大教師資料-王振興 教授 - 成功大學系辦網頁
+
+7月 17, 2017
+
+王 振興 教授 職稱 教授 電話 +886-6-275-7575 ext. 62378 傳 真 +886-6-236-9418 電 子信箱 jeenshin@mail.ncku.edu.tw 實驗室 計算型智慧與學習系統實驗室(地址:臺南市大 學路1號電機系館92802&92810室)(TEL:06-2757575 ext. 62400-1410)...
+全文閱讀
+
+
+
+
+
+成大研發快訊 - 國立成功大學國際會議暨專案用伺服器
+
+7月 15, 2017
+
+雙線性系統是介於線性系統與廣義非線性系統間一種特殊的非線性系統模式，雙線性系統異於線性系統的是這類系統在原有線性系統模式外，加入了系統狀態與控制輸入的耦合項，因此雙線性系統可視為一種最簡單的非線性系統。...
+全文閱讀
+
+
+
+
+
+國研院 - 科技政策智庫 - 全球與臺灣人才培育發展現況、問題與趨勢
+
+7月 19, 2017
+
+資料來源：黃能堂(2009)；高正奇(2012) 3. 競爭力的核心：研發與創新 2008 年金融風暴席捲全世界，全球經濟景氣衰退，嚴重影響就業市場。因此，英、美、德、日、韓及中國等國家紛紛提出振興經濟計畫；有些國家將在下一階段知識經濟競賽與綠色 ......
+全文閱讀
+
+
+
+
+
+新聞查詢 - Sybase EAServer Version 5.5
+
+7月 17, 2017
+
+敬請踴躍報名參加「2013年第四屆健康照護國際學術研討會」，請查照。 敬請踴躍參加「2013年第五屆國際研討會：尋找照顧意義的旅程--跨專業觀點」，,請查照。 敬請踴躍報名參加2013健康產業管理專題競賽發表會，請查照。...
+全文閱讀
+
+
+
+
+
+陳宗嶽的個人資料 - 國立成功大學 生物科技研究所
+
+7月 13, 2017
+
+國立成功大學 生物科技研究所 網站 ... 本網站著作權屬於國立成功大學 生物科技研究所，請詳見使用規則。 電話：(06)2757575 Ext.65600 傳真：(06)2766505 地址：701臺南市大學路1號...
+全文閱讀
+
+
+
+
+
+銘傳大學 - 生物科技學系/所
+
+7月 14, 2017
+
+2014/10/07 銘傳大學生物科技學系副教授 陳良宇博士 TVBS新聞：原料牛油「合艙」 專家：產地也應先精煉 2014/09/17 銘傳大學生物科技學繫系主任 吳慧中博士 公民新聞：導入水耕、植物工廠、魚菜共生課程的原因...
+全文閱讀
+
+
+
+
+
+新增網頁1
+
+7月 18, 2017
+
+姓名: 陳宗嶽 職稱 教授(所長) 電話 +886-6-275-7575 ext. 65622轉610 傳真 +886-6-276-6505 電子信箱 ibcty@mail.ncku.edu.tw 實驗室 分子遺傳實驗室 (臺南市大學路 1 號資訊大樓生物科技研究所 610R) 開授課程 102學年度第一學期 生物技術學...
+全文閱讀
+
+
+
+
+
+明志刊物 - 明志科技大學
+
+7月 16, 2017
+
+請填寫網站簡述 ... 明志刊物 10405_第86期 10406 第87期 10407_ 第88期 10408_ 第89期 10409_第90期 10312 第81期 10401 第82期 10402 第83期 10403 第84期...
+全文閱讀
+
+
+
+
+
+OH!Study 留學遊學資訊網-台灣就業市場趨勢研究報告
+
+7月 20, 2017
+
+104銀行調查：近五成職缺要求英文能力！ 台灣企業趨向國際化，對求職者的要求也越來越高！根據統計，目前在104 人力銀行線上的所有「全職」工作機會中，有47.5% 的職缺要求英文能力；「中階主管」職缺中，約有67% 的工作機會要求英文能力；「高階 ......
+全文閱讀
+
+
+
+
+
+元智生物科技與工程研究所歡迎您
+
+7月 17, 2017
+
+1. August 2011 to now, Editorial Board, Fermentation Technology. 2. May 2010 to now, Associate Editor, Biotechnology Research International. 3. November 2010, invited prize lecture, The 62th annual meeting of Society for Biotechnology, Miyazaki ......
+全文閱讀
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+最近新消息
+
+
+
+
+學生萌妹子上課自拍，結果卻被後面的男同學...最後...網友：這種女生不可能出現在世界上！
+ ▲這個學生妹長得超萌。（source:加藤軍粉絲團，下同）   大家好，我是小白兔～ 不知道大家還記不記得以前學生時代，男生總要欺負女生，好似這就是一個不變的定律一樣，其他男生有沒有喜歡被欺負的女生兔編是不知道，但是這部影片的男學生應該是有喜歡的吧XD 根據加藤軍粉絲團報導，大陸有一名超
+
+
+
+只有這種時刻最情色，32 男人認為「巨乳·美尻」不就是過眼雲煙，女人在這樣的瞬間...才是最銷魂！
+ ▲ 沒搞錯吧...?!(Source:sumomo，下同)   大家好，劍小編兩性時間來了。 男人通常覺得女人性感的時候，大多數都是要露個什麼東西，像是奶呀、屁股都是蠻常見的，有些人可能比較喜歡私密一點的部位，像是鎖骨、腳踝真的都有其愛好者，但你知道嗎！針對日本某網站的調查結果，居然有3
+
+
+
+
+
+熱門文章
+
+
+
+
+男女必看！六種敗夫的女人，你娶到了嗎？千萬別娶這樣的當老婆...（歡迎分享）
+ 女人要學做聰明的女人，懂得男人的進退，也懂得給自己儲備後退的路，把握男人不是只抓住他的胃就可以了，更重的是要讓這個男人心甘情願的為你掏腰包貼心肺。聰明女人懂得不做以下幾個舉動：   一、大手大腳，不懂得管理家庭經濟收入與支出。 無論是男人還是女人，一個家庭有一個人大手大腳都可能會有被生活
+
+
+
+《謝謝你，勾引我老公！》被網友封為2014年神文，轉給每一個愛老公的女人和不懂愛情的男人。
+ 《謝謝你，勾引我老公！》被網友封為2014年神文,所有人都值得一看的一篇文章.看完會讓你明白很多，轉給每一個愛老公的女人和不懂愛情的男人。   俗話說的好。再好的魚肉吃多了。也還是想嚐嚐 大白菜的味道。   再好的老婆處久了。也還是想知道別的女人的風韻。   所以，如
+
+
+
+8步教你怎樣避免分手 情侶必看
+兩個人在一起久了，好多年。感情已經很穩定、彼此瞭解、不會分手，覺得已經是家人、是親人了...一個眼神，一個微小的動作，都知道對方在想什麼、要做什麼，知道這輩子就是他了。一切都順理成章的進行著，就等著畢業、工作、結婚。 可並不能因為這樣的穩定，而忽略了生活上的細節，從而忽略了對方的感覺。就算
+
+
+
+
+
+網友最愛精選
+
+
+
+
+結婚13年的張智霖，被問到上次與老婆袁詠儀一起旅行是什麼時候，他一句話被虧：「歷史悠久」的旅行...
+ 東森超視33頻道2100亞洲綜藝超級比一比，引進大陸當紅綜藝節目在台灣首播，包括主持人劉燁帶著秦漢、曾江、牛犇、雷恪生四位爺爺暢遊歐洲的「背著青春去旅行」以及田亮葉一茜、何潔赫子銘和張智霖袁詠儀三對當紅明星夫婦為固定嘉賓的「一路上有你」， 將於12月起每週一到五晚間九點於東森超視接力播出，打造全新
+
+
+
+Koobii人氣嚴選173【 關西高中－林虹瑄】–下次別再勾錯人的手啦！
+ 來自關西高中的虹瑄，外表看起來很兇（這是他自己說的喔！），但其實很有氣質、很好相處喔！曾經發生過要勾男友的手卻勾到別人的事情…小編實在很好奇後續發展是怎麼的XD！ (以下桃紅色文字為林虹瑄的回答） 【圖／林虹瑄授權】 【文／Koobii高校誌】 ♣姓名：林虹瑄 ♣綽號：momo ♣生日： 1997
+
+
+
+正德國斜背休旅擠掉C系列 M.Benz GLC Coupe
+● GLC車型斜背版本 ● 導入多款4缸汽、柴油引擎 ● 應用鋁合金輕量化車體結構 ● 國外上市日期2016年Q3 勝者為王，即使在自家人眼裡也不得不靠大邊來站。正當全球SUV車系發燒，不管傳統的、變形的一律熱賣，竟然使得德國正宗C系列必須移師海外生產，走上與BMW一樣接受南非製造的老路，而C系列空
+
+
+
+
+
+精選文章
+
+
+
+
+全球最恐怖，最罕見動物。。。包你大開眼界
+   世界上原來竟然有這麼多我們以前聞所未聞見所未見的怪異動物，本文中這些恐怖的小怪獸，不僅極其罕見世間少有，你連名字都叫不出來，且其猙獰的面目無不讓人看得目瞪口獃，不知你有沒有興趣和膽量一度它們的「芳顏」呢？ 【長耳跳鼠】 兩隻大耳朵，一雙大而黑的眼睛，以及袋鼠一樣的雙腿，顯然，與它的小
+
+
+
+「神奇寶貝」解剖照！！原來牠們身體構造是這樣的...
+ ▼小火龍，果真解剖的很全面 ▼傑尼龜，這水膀胱是什麼概念 ▼妙蛙種子，沒想到頭那麼大，腦子這麼小 ▼皮卡丘，要是我沒看錯的話，那寫的是電線吧，這讓我說什麼好   via 
+
+
+
+老公在大雨下打了一通電話，沒想到卻惹禍上身！？
+ 
+
+
+
+
+
+熱門搜尋
+
+網路通訊軟體與創意應用競賽茂迪盃太陽能光電應用設計創意競賽全國奈米科技應用創意競賽2012全國奈米科技應用創意競賽led照明應用創意設計競賽智慧電子創新應用與設計競賽東華盃太陽光電創意應用競賽2013智慧電子創新應用與設計競賽101大學校院網路通訊軟體與創意應用競賽101網路通訊軟體與創意應用競賽 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+成大電機系王振興教授團隊研發iNCKU手錶　健康好幫手 - 成大電機資訊學院 EECS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+成大電機資訊學院 EECS
+歡迎光臨國立成功大學
+
+
+
+
+
+
+
+
+
+
+
+繁體English
+
+
+
+首頁
+院內單位
+學分學程
+奈米積體電路工程碩士班學分學程
+繪圖與視訊技術學分學程
+
+成大首頁
+聯絡我們
+English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+
+
+
+
+網站目錄
+
+
+
+
+
+
+公告事項
+最新訊息
+徵才訊息
+招生與學生相關訊息
+成大新聞中心
+
+
+學院簡介
+沿革
+教學研究目標
+師生架構
+未來展望
+
+學院成員
+
+成大電機資訊80年
+歷史篇
+校友篇
+產業貢獻篇
+學術貢獻篇
+未來展望篇
+電機資訊80年相關參考資料
+電機資訊80年動態電子書
+
+
+老師的故事
+王駿發 講座教授的故事
+曾永華 講座教授的故事
+鄭芳田 講座教授的故事
+
+研究領域簡介
+
+國際合作
+姊妹校清單
+交換學生(Outgoing)
+外賓來訪
+雙學位
+
+活動報導
+演講訊息
+傑出研發成果
+
+榮譽與獲獎
+獲獎統計
+傑出教師
+傑出學生
+校友榮譽榜
+
+
+英語授課
+研究所課程
+
+捐贈電資學院
+獎學金訊息
+學院年度研究報告
+院內相關辦法
+
+會議紀錄
+院務會議紀錄
+
+地理位置
+學院活動花絮捕影
+EECS KPI 填報系統
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+ > 
+公告事項 
+ > 
+最新訊息 
+
+	字體大小調整
+	小
+中
+大
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+成大電機系王振興教授團隊研發iNCKU手錶　健康好幫手
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+【臺南訊】行動穿戴裝置正夯，成功大學「創新數位內容研究中心」不讓市售品專美於前，研發出一款經濟、美觀，且個人或團體皆適宜的行動即時健康管理系統「iNCKU手錶」，目前全台20所中學及成大都已使用iNCKU做為健康促進的管理，展現出學術研究成果落實在日常生活與應用的最佳典範。
+
+市面上雖不乏行動穿戴裝置品項，但量測到的數據只有當事人知道，其他使用者及其背後龐大的數據難以取得，更遑論大數據的分析與應用。成大電機工程學系王振興教授主持的「計算型智慧與學習系統實驗室」4、5年前開始投入穿戴裝置相關研究，利用人工智慧判讀量測配戴者日常移動的數據，如走行產生的步數、熱量消耗、心跳頻率等訊號。
+  
+研究成員之一江維鈞博士表示，從軟體程式規劃到實際量測到的數據分析、雲端蒐集、資訊解讀與應用等都很順利，但要將研究用的實驗室用的行動穿戴模組做成如市售品般精美則是一大考驗；鐘錶業者得知成大iNCKU研究之後大為驚艷，於是展開合作，目前除已產出1500支錶面上鑲著成大榕樹標幟的iNCKU手錶，也產出具科技感手環式的行動穿戴載具。
+
+現在iNCKU手錶，正運用在成大衛生保健組的「行動智能愛成大(iNCKU)、雲端作伴護健康」活動，共徵選450名學生使用「行動即時健康管理系統」，要將手錶蒐集到的學生日常生活與運動資訊，上載到團隊設計的資訊管理雲端平臺，作為學生健康自我管理，初步成效不錯。
+
+江維鈞博士指出，一般人使用健康行動穿戴裝置多有持續力不足的問題，這對健康促進的效果大打折扣，為解決此一問題，我們從社群遊戲中找到靈感，已著設計一款「台灣健康走」遊戲，鼓勵配戴者揪伴一起玩，大家平均運動的時間、運動強度達到一定標準才能得分，未達標準扣分，讓成員彼此提醒去運動、多多運動，另外還設計闖關、金幣等，遊戲設計已告一段落，現正測試中以期更符合實際需求。
+
+江維鈞博士表示，健康促進的項目很多，為讓iNCKU手錶做更多的事情，現在已著手研發氣喘、睡眠呼吸中止、情緒、專註力及急難求救等偵測，希望iNCKU手錶能成為大家健康的好夥伴。
+
+創新、創意、創業已是趨勢，經濟部也大力推動「產學研價值創造計畫」，江維鈞說，近期將申請「價值創造計畫」成立衍生公司，日後會正式行銷iNCKU手錶，讓更多人一起來顧健康，企業或團隊採用iNCKU手錶來促進員工或成員的健康，需成員們的健康數據做分析，雲端都可以配合匯出，以方便團隊設計符合本身的活動或其他。
+ 
+資料來源：http://news.secr.ncku.edu.tw/files/14-1054-153180,r81-1.php?Lang=zh-tw
+
+
+
+
+
+
+
+
+瀏覽數  
+
+
+
+
+
+
+
+轉寄親友
+友善列印
+
+
+
+                  分享
+               
+
+
+
+
+
+
+
+Line
+
+
+
+Plurk
+
+
+
+Funp
+
+
+
+Google
+
+
+
+MySpace
+
+
+
+Digg
+
+
+
+Yahoo
+
+
+
+Facebook
+
+
+
+twitter
+
+
+
+
+
+
+
+
+
+
+將此文章推薦給親友
+
+
+
+稱呼:
+
+
+
+親友Email:
+
+
+
+推薦說明:
+請輸入推薦說明
+
+
+驗證碼:
+
+
+
+
+驗證碼:
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+Voice Play
+
+
+6269
+
+
+
+更換驗證碼
+請重整網頁或按F5更換驗證碼
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學電機資訊學院
+電話：(06)2757575 Ext.34000  傳真：(06)2362303  
+地址：(701)臺南市大學路1號(自強校區電機大樓9F)  E-Mail：em34000@email.ncku.edu.tw
+
+
+
+
+
+
+
+
+
+
+
+
+
+

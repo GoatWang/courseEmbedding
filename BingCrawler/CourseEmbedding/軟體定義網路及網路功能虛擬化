@@ -1,0 +1,5986 @@
+
+
+
+網路功能虛擬化 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+網路功能虛擬化
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+網路功能虛擬化（英語：Network Functions Virtualization，縮為 NFV），一種對於網路架構（network architecture）的概念，利用虛擬化技術，將網路節點階層的功能，分割成幾個功能區塊，分別以軟體方式實作，不再拘限於硬體架構。
+歷史[編輯]
+2012年10月，基於軟體定義網路及OpenFlow的發展，開始形成產業聯盟，提出網路功能虛擬化[1]的白皮書，定義了這個名詞及發展方向。
+2014年10月1日，Linux基金會，宣佈成立NFV開放平臺專案（OPNFV）。
+註釋[編輯]
+
+
+^ Network Functions Virtualisation. ISG web portal. [20 June 2013]. 
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=網路功能虛擬化&oldid=32832527"					
+分類：網路結構 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+ΕλληνικάEnglishEspañolPortuguêsРусскийSimple English 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2014年10月1日 (週三) 05:15。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+虛擬化第二章：儲存與網路虛擬化革命 | iThome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+移至主內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+編者的話
+
+
+ 
+
+虛擬化第二章：儲存與網路虛擬化革命
+ 虛擬化技術的不再只限於伺服器，已經是逐步擴及儲存、網路、資安等伺服器以外的整個IT系統了。
+
+ 
+
+
+
+
+
+
+ 
+按讚加入iThome粉絲團
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+文/吳其勳
+|
+2013-09-06發表
+  
+
+ 
+
+
+
+
+
+
+
+
+
+ 本周IT界矚目焦點之一，就是VMware在美國舉辦的VMworld年會，VMware每年固定利用這個機會發表vSphere虛擬化平臺的更新版本，並且揭露技術未來的走向。今年的VMworld也不例外，除瞭如大家所料發表vSphere 5.5版，並在這個新版本上又增加許多功能，同時，自前年就開始透露的儲存虛擬化與網路虛擬化技術，終於計畫在今年底正式推出，此舉代表虛擬化的第二章已經開啟了，儲存與網路虛擬化的革命要開始了。在儲存虛擬化方面，新推出的VSAN（vSphere Virtual SAN），可以利用伺服器主機的本地端硬碟空間，將多臺主機的儲存空間集結為一個統一的儲存資源池，由Hypervisor層直接管理。VSAN虛擬儲存網路還可以依據管理政策提供不同的服務水平（SLA），如效能與可靠度等，而且能夠針對每一臺虛擬機器給予不同的服務品質。有了VSAN這樣的虛擬儲存網路功能，利用本機端的儲存空間就能建構出儲存網路，而不需依賴專門的儲存硬體設備，對於某些建置狀況而言，當然是更方便使用。不過，為了確保效能與可靠度，本機端必須有SSD與硬碟，才能使用VSAN功能，因為必須藉助SSD做為資料存取的快取；同時，為了確保資料的可靠度，VSAN會複製多份資料，因此最少必須有3臺主機，而目前支援最大的數量是8臺主機。VMware新推出的NSX網路虛擬化，同樣有很大的企圖心。透過整合vCloud Network and Security，以及VMware去年併購的SDN軟體定義網路技術（Nicira公司），提出了新一代網路虛擬化解決方案。NSX將會整合在Hypervisor層，提供OSI網路第2到第7層的網路模式，可執行路由、防火牆、流量控管等功能，如BGP、OSPF等路由功能皆可在本機端執行，而不必再依靠其他的設備。NSX並可支援多種Hypervisor、雲端OS及網路設備，包括VMware自家產品、Citrix的XenServer、CloudStack、OpenStack等等，對於微軟Hyper-V的支援也已列在計畫中。不過，若是在vSphere環境下，NSX則可提供獨家的功能，在同一主機下的不同子網路的虛擬機器，彼此可以直接傳輸資料，而不必再透過上層的NSX閘道器來處理封包交換。VMware這次的新技術發表明顯透露一件事：虛擬化技術的主戰場不再只限於伺服器，已經是逐步擴及儲存、網路、資安等伺服器以外的整個IT系統了。伺服器虛擬化的問市，讓伺服器變成軟體可控制的虛擬機器，就已經巔覆了整個IT業界，未來隨著網路、儲存的管理也都由軟體來控制，推到極致就是整個資料中心都是以軟體管理，也就是軟體定義資料中心（Software Defined Data Center），所掀起的變革衝擊之大，更是現在難以預料的。有人說軟體定義網路、軟體定義儲存、軟體定義資料中心等等，是所謂現代化的IT架構，最後的答案是否如此現在還言之過早，但不可否認的，虛擬化的變革已經開啟了第二章，未來IT架構革新的力道可不容小覷。此外，在本期的新單元DevTalk中，新聞主編王宏仁與和沛科技總經理翟本喬進行了一段對話，分享翟本喬一路由Google工程師進入台達電創立雲端團隊，又帶領整個團隊獨立創業的心路歷程，同時也探討開發團隊能夠在很短的時間內推出雲端應用服務的秘訣，其中的一些作法頗值得借鏡。吳其勳／iThome電腦報周刊總編輯想掌握最新IT動態，歡迎按贊加入iThome粉絲團
+
+ 
+
+
+
+作者簡介
+
+
+
+ 
+ 
+ 
+
+吳其勳
+iThome電腦報周刊總編輯
+
+  
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ Advertisement
+
+
+ 
+
+
+
+
+ 
+
+ 
+
+更多 iThome相關內容
+
+
+  
+ 製造競爭門檻，不要怕被模仿 
+
+ 資安不能說的秘密 
+
+ 資安SaaS服務可隨選即用了嗎？ 
+
+ 身在未來 
+
+ 明天過後 
+
+ 超融合基礎架構產品的下一步 
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+熱門新聞
+
+
+
+
+
+
+ 
+
+
+英國Wi-Fi業者使壞，讓2.2萬名用戶無意中同意去掃流動廁所
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+Google 兩步驟驗證將以手機提示取代簡訊
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+【AI關鍵技術】三大熱門深度學習框架新進展
+
+2017-07-19
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+硬體不相容，部份英特爾Atom裝置無法升級Windows 10 Creators Update
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+災難！CoinDash首度發行貨幣當天就被駭，損失近700萬美元
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+微軟亞洲研究院院長洪小文：越複雜越不管用，AI最適合封閉型的高重複性任務
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+安撫使用者不滿情緒，Skype聯絡人狀態顯示功能回來了!
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+南韓代管業者Nayana遭勒索軟體攻擊，與駭客達成協議將支付110萬美元贖金
+
+2017-06-21
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+2017年AI開始普及化，技術競賽白熱化
+
+2017-07-15
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+國際警方聯手關閉暗網市集AlphaBay
+
+2017-07-17
+ 
+ 
+
+
+
+ 
+
+專題報導
+
+
+
+
+企業行動化管理解決方案採購大特輯 
+
+
+AI 100（上） 
+
+
+公有雲儲存服務大盤點 
+
+
+富士通AI新戰略 
+
+
+企業身分驗證雲端服務採購特輯 
+
+更多專題報導
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資料中心網路環境面臨重大變革：SDN與NFV崛起，軟體將主宰網路 | iThome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+移至主內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+技術文章
+
+
+ 
+
+資料中心網路環境面臨重大變革：SDN與NFV崛起，軟體將主宰網路
+ 在大型資料中心的網路環境中，既有的分散式架構日益顯得疊床架屋，為了提升使用效率、簡化管理、節省空間，新一代的軟體定義式網路（SDN）及網路功能虛擬化（NFV），紛紛應運而生
+
+ 
+
+
+
+
+
+
+ 
+按讚加入iThome粉絲團
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+文/李宗翰
+|
+2014-09-10發表
+  
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+ iThome
+ 被認為能顛覆既有網路架構的軟體定義式網路（Software defined Networking，SDN），是近年來相關設備廠商的兵家必爭之地，這樣的技術發展也為IT產業帶來新商機，身為全世界IT產品設計、製造重鎮之一的臺灣，也沒有自外於這股新潮流。
+去年10月由中華電信、工研院和資策會擔任召集人，聯手成立臺灣SDN聯盟（Taiwan SDN Alliance），希望整合產、學、研究界等資源，加速SDN產業發展自主技術SDN解決方案，而今年8月，Intel與中華電信宣佈簽訂新階段的合作備忘錄，除了物聯網、雲端運算之外，SDN也是當中合作的項目之一，並且將Intel架構的解決方案，共同推動SDN的概念驗證與創新應用。
+SDN為什麼這麼重要？因為它可以讓網路的管理變得更集中，而且具有可程式化的機制，對電信網路業者或企業的資料中心網路服務來說，可以藉此獲得自動處理與動態因應變化的好處，這樣一來，可節省支出，不需經常購買專用架構網路設備，並且日常維運時，SDN的網路部署能支援隨成長規模大小來付費的模式，杜絕過度提供資源。
+同時，SDN可以減少IT服務日常維運的開銷，讓網路可透過程式演算法的方式來進行控制，而透過搭配一些可程式化程度提升的網路設備元件，能讓網路的設計、部署、管理、規模延展更為容易。簡而言之，這項機制能讓網路做到服務自動提供與彼此協作，降低平時管理網路環境所需的時間，並減少人為出錯的機會，改善服務可用性與可靠度。
+SDN讓網路能夠自動調配，等於也為網路資源的調度提供靈活度與彈性，理論上，可協助企業或組織快速部署新的應用系統、服務與基礎架構，以儘快符合業務目標變更時所衍生的種種需求。此外，帶動組織的創新，也是SDN的訴求點之一，企業可以藉網路環境的高效率，來建立新型態的應用系統、服務與業務模式，進而開創新的收入來源與更多價值。
+影響SDN與NFV發展的三大組織
+目前在推動SDN應用的組織，主要有開放網路基金會（Open Networking Foundation，ONF），負責制定OpenFlow的標準，以及由Linux基金會發展的OpenDaylight專案，此外，歐洲電信標準協會（ETSI）也成立了NFV工作小組，力推SDN和NFV。
+其中，ONF是在2011年成立，由德國電信、Facebook、Google、微軟、Verizon、Yahoo等6家公司發起，目前已經有153個成員，幾乎你所有想得到的網路設備廠商、硬體晶片廠商、伺服器虛擬化軟體公司、大型網站業者與國家級電信，都加入了這個基金會，到了2013年，ONF正式發布OpenFlow Switch規格1.3.2版。
+而OpenDaylight是在2013年成立的開放原始碼專案，發起的廠商主要有13家，包括Arista、Big Switch、Brocade、Cisco、Citrix、Ericsson、HP、IBM、Juniper、NEC與Red Hat，現在成員也增加到41個，OpenDaylight在今年2月已經發布了第一個版本的SDN框架Hydrogen，當中可細分為基礎版，以及分別針對虛擬化應用與服務供應商環境的版本。
+至於NFV的成形，則是在2012年有全球7大電信網路業者選定ETSI，作為發展NFV產業規格的小組，目前已經發展成有超過220家公司參與的規模，其中包含37家全球主要的服務供應商，涵蓋電信公司與IT廠商。在2013年，他們發布了一系列的規格，分別對應效能與可移植性的最佳實務、使用案例、架構性框架、主要概念術語，以及虛擬化需求。
+從分散回歸集中，SDN提供更簡化、且支援程式控制的網路環境
+如果你想要瞭解新一代的網路架構，一定會在各種媒體上經常看到SDN、OpenFlow這幾個技術名詞，乍看之下，它們很像，但都是指涉同一件事嗎？為什麼有這麼多種稱呼？
+根據維基百科的定義，SDN是一種電腦網路傳輸方式，能讓IT人員透過將低階功能抽象化的方式來管理網路服務，要做到這樣，需要去除系統之間的耦合關係，亦即把網路流量要送去特定位置的決定權（控制層，Control Plane），從負責實際轉送流量到目的地的底層網路設備（資料層，Data Plane）當中抽離出來，以此來簡化網路架構。
+為了要讓控制層與資料層之間能夠彼此溝通，SDN需要透過一些方法來進行，而其中一種方法就是OpenFlow，所以這也是一般人經常把它當做SDN的同義詞，然而若要適用這個概念，也可以運用其他方法來達成。
+在ONF基金會的SDN定義裡面，也和上述的說法差不多，但這裡補充了一件事：SDN是能夠直接用程式化（programmable）的方式來控制的，而且一旦控制權從個別的網路設備上脫離，然後轉移到運算設備之後，能夠使底層的網路基礎架構抽象化，以便作為應用系統服務與網路服務，換句話說，我們可將網路的存取視為邏輯或虛擬的實體，若能達到這樣的結果，網路基礎架構就能變得非常的動態、容易管理、更具有成本效益與高度適應力，因此，傳統網路的後端骨幹架構就能轉型，成為足以提供各種服務的平臺。
+若我們再參考SDNCentral這個網站對SDN的定義，可能會瞭解得更透徹一點。他們認為SDN是一種設計、建構與管理網路的新方式，基本概念是將網路的控制層與轉送層分開，以提升效率。在這樣的架構下，控制器就像人類的大腦一般，IT人員、應用程式能以抽象、集中的方式檢視整體網路，而轉送層就像肌肉，負責執行來自大腦的命令。
+可程式化的網路
+透過SDN控制器，網路管理者可以快速、輕易地決定與執行位於轉送層的底層系統（交換器、路由器），讓它們知道該如何處理流量。而在SDN網路下，目前控制器與交換器之間溝通最常使用的協定是OpenFlow，或者透過應用程式介面（Application Programmatic Interfaces，API）來進行，通常這樣的應用程式介面，我們稱之為南向（Southbound）API，也就是上述SDN的可程式化機制。
+除了透過南向API，讓SDN控制器與底層的網路交換器互動，對於更上層的網路服務與應用程式的執行，SDN環境也可透過開放的API來支援，這些API通常稱為北向（Northbound）API，可促進創新應用，並且讓IT服務能夠更有效率的協作（Orchestration）和自動化（Automation）。
+基於這樣可程式化控制的架構，SDN讓網路管理者可以隨著業務需求的變化而動態地調整網路流量，並且部署多種服務，而無需接觸位於封包轉送層的個別交換器或路由器。
+OpenFlow是SDN的一部分，但SDN不是只有OpenFlow
+事實上，OpenFlow雖然技術上被視為一種協定的規格，但其實它也是南向API，而且是第一個且最知名的南向程式介面。也因為兩者關係非常密切，難怪許多人會把OpenFlow等同於SDN，但簡單來說，OpenFlow是一套開放的網路溝通協定標準，讓控制層能夠和轉送層互動，但它只是整體SDN架構的一部分，而且也並非唯一可用的協定，若參考OpenDaylight的Hydrogen 1.0 Service Provider版，我們可以看到當中可運用的南向介面或協定，包含NetConf（Network Configuration Protocol）、LISP（Locator/Identifier Separation Protocol）、PCEP（Path Computation Element Communication Protocol），以及一般網路設備所普遍支援的BGP、SNMP──除了OpenFlow這類近年來開始發展的網路協定之外，有一些人正設法在SDN上支援既有網路環境所慣用的各種協定。
+透過虛擬化技術，NFV讓網路安全設備大整併並重回軟體式應用
+另一個經常跟SDN相提並論的技術是網路功能虛擬化（NFV），近年也受到相當熱烈的關註，但兩者之間其實有所不同。
+對於設計、部署、管理網路服務的需求，NFV提供新的作法。它的主要訴求跟SDN有些類似，但面向不同──解除眾多網路功能與硬體設備之間的耦合關係。例如將NAT、防火牆、網路入侵偵測∕防禦（IDS/IPS）、網域名稱服務（DNS）、網站快取等網路功能，從專屬的硬體設備當中脫離，讓它們可以在軟體中執行。
+設計上，NFV是用來整併網路元件，並且能將這些網路元件的功能提供出去，以支援虛擬化基礎架構，包括受到虛擬化的伺服器、儲存，甚至網路，當中運用了標準的IT虛擬化技術，能執行在高容量的伺服器、交換器與儲存硬體設備，以便虛擬化網路相關的功能。對任何資料層的處理或控制層的功能來說，不論是用在有線或無線網路環境，NFV都適用。
+為什麼NFV會開始崛起？這跟電信網路業者所面臨的挑戰有更大的關係，因為在他們的機房內擺放了越來越多不同類型的專屬硬體設備，若要啟用新的網路服務，經常需要建置更多的專屬硬體設備，此時，你必須挪出額外的機房空間和電力供應來容納這些機器；而隨著設備數量持續增加，在有限的機房環境下，要擺放這些設備越來越困難，再加上在既有的網路架構，也需要整合與部署這些數量龐大的硬體設備，相關的作業複雜度因此越來越高。甚至，這些專屬硬體設備往往上線才短短時間，很快地就到達使用年限。
+於是，這造成一種奇怪的現象──當業務創新加速、需建置更多系統來因應時，那些新進的專屬硬體設備也跟著入駐機房，但他們的生命週期竟越來越短，因此，在當前日漸以網路應用為中心的世界中，創新受到很大的限制。
+針對這些問題，NFV是利用標準IT虛擬化技術來整併許多類型的網路設備，並將它們放置在採一般標準設計的高容量伺服器、網路交換器與儲存設備。它所要供應的網路功能都是實作在軟體上，而且可以在各種標準伺服器硬體上，同時能夠依照需求搬移或安裝在網路上的不同地方，而不需安裝新的硬體設備。總之，NFV的完成，相當仰賴軟體定義的方式。
+SDN與NFV之間的差異
+相較於NFV是基於電信服務供應商需求所建立的，成員也都是屬於該產業的公司，SDN一開始是在大學校園發展起來的，當研究人員經常在網路設備上遭遇到無法改變當中的軟體功能時，他們開始實驗新的網路通訊協定，他們想到讓網路設備的「行為」變得可程式化，並且能透過集中的方式來控管。這導致了運作原理相關的元件開始定型，界定了今日的SDN特性，例如將控制與轉送功能區隔開、集中控制，以及具有將網路行為程式化的能力，而提供妥善規範的介面。
+除了校園，SDN後來也開始進入雲端資料中心環境。因為這些資料中心的規模和布建地點會日益擴增，而為了能夠連接與控制數量龐大的虛擬機器，是需要一個更好的方法來因應，而就SDN原理來看，透過控制層和資料層分離的概念，理論上，應該是能夠提升資料中心網路受到控制的程度。
+從上面的比較來看，SDN和NFV有共通點，但不同的地方更多，但為什麼兩者會經常一起被拿出來討論？
+事實上，這兩種網路應用彼此並不依賴，因為NFV可以運用虛擬化技術，部署在非SDN的資料中心，也可以實作在SDN環境；相反地，在SDN網路下，不論是否搭配NFV，都可獨立運作。
+不過，很多人認為SDN和NFV可以互補互惠，因此會把這兩種概念和解決方案常搭配在一起，以獲得很大的價值。
+要達到NFV的效果，其實，透過現行許多資料中心正在使用有的技術和設備，就可以了；而在控制層與資料轉送層分離的SDN環境當中，網路效能強化了，並能簡化與既有網路環境部署的相容性作法，促進日常作業與維護的程序，此時若搭配NFV的支援，即可由它來提供基礎架構，讓SDN軟體可以在當中執行。而且，NFV可以在通用的伺服器和交換器上實施，這跟SDN的作法和目標很類似。
+SDN與NFV相互搭配之後，會是什麼樣子？Overture技術長Prayson Pate表示，目前有一些使用單位開始用它們來實作代管式路由服務，舉例來說，用戶可以在機房架設一臺路由器，NFV會透過將路由器功能虛擬化來因應這種情況，當中所存取的網路介面裝置（Network Interface Device，NID），可提供區隔點及效能量測機制。同時，由於SDN是分隔控制層與資料層，所以，網路封包會由最佳化後的資料層所轉送，同時，這些路由器（控制層）的功能，是在一臺機架式伺服器的VM上執行。
+整體來說，SDN與NFV相互結合有一些好處。像是：企業能以通用的硬體與具有進階功能的軟體，彼此搭配之後，取代昂貴、專屬的硬體應用設備；而軟體控制層會從昂貴的專屬設備平臺，轉移到建置在資料中心或中央機房的伺服器，提供最佳化執行的平臺；此外，資料層的控制會被抽象化與標準化，這讓網路與應用系統的效能最佳化，可以提升到新境界，而不需要升級網路設備。
+簡而言之，SDN提供了網路自動化的機制，讓管理政策執行的當下，能協調網路流量的去處，同時，NFV則聚焦在網路服務上，可確保所提供的網路功能，能夠與資料中心的虛擬化環境需要的部分一致。這些技術的進步將會是讓網路進化到下一階段的關鍵，確保能趕上各種創新，例如，人與各種裝置相互連結的應用（物聯網）。
+ 
+傳統網路交換器與SDN網路交換機制的比較
+現行網路交換器和SDN架構網路交換機制，都可以區分為3個層次，這當中包括控制層、資料層及集中管理層。一般網路交換器設備大多同時涵蓋了控制層和資料層，但SDN是將這兩層分開，同時增加了集中管理的部份，並提供可程式化的功能。資料來源：Intel，2014年9月
+
+ 
+SDN網路的基本架構
+
+資料來源：ONF，2014年9月
+ 
+現行網路設備與NFV架構的比較
+目前資料中心環境的網路設備，大多為專屬硬體規格，而且都是分成多臺建置，因此都只能透過實體的方式來部署。而在NFV環境下，所使用的都是通用規格的x86伺服器、儲存設備與網路交換器，只是它們配置了更大資源，借助虛擬化技術與各式軟體，即能以少量設備來支撐大量而動態的應用。資料來源：Ixia，2014年9月
+
+ 
+網路與安全設備走向集中化，支援SDN與NFV的應用
+
+資料來源：Intel，2014年9月
+ 
+開放原始碼SDN框架OpenDaylight架構
+根據OpenDaylight的架構，SDN可分為3大層面：網路應用程式與的協作（Network Apps & Orchestration）、控制平臺（Controller Platform），以及實體與虛擬的網路設備（Physical & Virtual Network Devices）
+資料來源：OpenDaylight，2014年9月
+(看大圖)
+
+ 
+相關報導請參考「軟體定義式基礎架構崛起：IT策略重新配置」
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+ Advertisement
+
+
+ 
+
+ 
+
+更多 iThome相關內容
+
+
+  
+ 突破傳統儲存架構困境，軟體定義式儲存走向開放、統合，帶動應用創新 
+
+ IT架構典範轉移 走向以應用為優先的新IT基礎架構 
+
+ 451研究：2016年全球有7成企業增加軟體定義基礎建設的支出 
+
+ 搶進5G競賽，Nokia用SDN打造新一代行動網路架構 
+
+ 看準全球化多據點需求，企業廣域網路進入軟體定義新時代 
+
+ 軟體定義廣域網路4大產品總覽 
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+熱門新聞
+
+
+
+
+
+
+ 
+
+
+英國Wi-Fi業者使壞，讓2.2萬名用戶無意中同意去掃流動廁所
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+Google 兩步驟驗證將以手機提示取代簡訊
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+【AI關鍵技術】三大熱門深度學習框架新進展
+
+2017-07-19
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+硬體不相容，部份英特爾Atom裝置無法升級Windows 10 Creators Update
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+災難！CoinDash首度發行貨幣當天就被駭，損失近700萬美元
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+微軟亞洲研究院院長洪小文：越複雜越不管用，AI最適合封閉型的高重複性任務
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+安撫使用者不滿情緒，Skype聯絡人狀態顯示功能回來了!
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+南韓代管業者Nayana遭勒索軟體攻擊，與駭客達成協議將支付110萬美元贖金
+
+2017-06-21
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+2017年AI開始普及化，技術競賽白熱化
+
+2017-07-15
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+國際警方聯手關閉暗網市集AlphaBay
+
+2017-07-17
+ 
+ 
+
+
+
+ 
+
+專題報導
+
+
+
+
+企業行動化管理解決方案採購大特輯 
+
+
+AI 100（上） 
+
+
+公有雲儲存服務大盤點 
+
+
+富士通AI新戰略 
+
+
+企業身分驗證雲端服務採購特輯 
+
+更多專題報導
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBM 網路服務 - 台灣
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Taiwan
+
+
+
+
+
+
+
+
+ 搜尋 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+全球資訊科技服務事業部
+
+
+
+
+
+
+
+
+
+
+網路服務
+利用高效率之連結技術，協助您提高網路靈活性，降低成本，並降低複雜性。
+閱讀 IDC 觀點  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBM 網路服務
+
+
+案例與洞察
+
+
+
+
+
+
+
+您該如何利用軟體定義網路（SDN）、網路功能虛擬化（NFV）、物聯網及 WiFi 的光纖通訊等不斷演進的技術來維持領先地位？身為經驗豐富的技術夥伴，IBM 將根據您所處產業，提供包括：戰略、評估、規劃、設計及管理等完整之技術服務，並藉由軟體定義、分析及自動化技術將現有環境作順利轉型。IBM 網路服務(IBM Networking Services) 協助您確保網路能妥善、快速應對不斷變遷的業務需求，且能橫跨多重裝置、應用程式及地點；並幫助您能簡化、靈敏、合算及高度安全的網路基礎架構，可支援創新並展現企業價值。
+
+
+
+ 
+
+提昇網路設備部署速度
+
+ 
+
+減少 IT 基礎設備成本
+
+ 
+
+降低應用部署時間
+
+
+
+ 
+
+提昇 IT 人員網路運作效率
+
+ 
+
+減少網路相關意外停機時間
+
+
+
+
+
+
+集中化和虛擬化
+集中網路設備、整合網路及通訊
+
+
+
+
+最佳化及標準化
+集中化網路和通訊，並施行標準化取得卓越一致性
+
+
+
+
+最佳化彈性功能
+利用進階分析，即時的意見反饋以及彈性的應對模式
+
+
+
+
+簡化和自動化
+藉由虛擬化、軟體定義網路（SDN）和自動化來降低複雜度
+
+
+
+
+
+
+IBM 網路服務
+
+
+
+
+
+
+雲端網路 
+在您轉移至雲端環境前，先啟動並優化您的網路
+
+
+
+
+
+
+ 網路管理服務
+獲得簡化及自動化網路管理的能力，以便增加可用性以及輕鬆管理開支
+
+
+
+
+
+
+
+
+  通訊服務供應商網路基礎架構服務 (US)
+建構高效載波網路基礎架構，以開啟新的收益潛力及成本效益
+
+
+
+
+
+
+ 網路安全
+保護您的網路免受安全威脅侵擾
+
+
+
+
+
+
+
+
+智慧集中式網路通訊服務
+導入通訊網路來支援智慧電網營運
+
+
+
+
+
+
+ 網路諮詢服務
+建構靈敏且整合化的網路，提升效能及重要業務應用程式的可用性
+
+
+
+
+
+
+
+
+網路整合服務
+將您的網路環境轉型，來增加可用性、可靠性以及安全性
+
+
+
+
+
+
+ Passive Optical Networking/ Distributed Antenna System（PON/DAS）
+這種現代化解決方案為實體環境無縫地提供寬廣的無線（Wi-Fi 及行動）連線覆蓋，確保完整的觀眾體驗
+
+
+
+
+
+
+
+
+案例與洞察
+
+
+
+
+
+
+
+雲端技術對企業之影響大，而全面導入軟體定義環境的後，對企業將產生顯著的利益。
+閱讀 IBM 領導思維白皮書 
+
+
+
+
+
+
+
+
+IDC 發現，公司正在透過 IBM 網路服務實現非常顯著的投資價值。
+閱讀 IDC 完整報告 
+
+
+
+
+
+
+
+
+雲端世代的技術及掌握主動權的使用者都有密集的網路需求已超出目前基礎架構的能力，同時衍生業務營運風險。
+觀看 SDN 資訊圖表 (294KB)
+
+
+
+
+
+
+
+
+
+
+軟體定義一旦部署後，卓越的業務優勢指日可待。
+ 觀看全新世代網路敏捷性圖解 
+
+
+
+
+
+
+
+
+
+
+聯絡 IBM
+電子郵件
+                  立即與我們聯絡
+                  致電: 0800-016-888-轉 10800-016-888-轉 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+軟體網路虛擬化安全平臺  VMware NSX功能架構簡述 - 技術專欄 - 網管人NetAdmin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 登入 | 註冊 |  RSS訂閱
+
+
+帳號：
+密碼：
+
+忘記密碼 | 重新認證
+
+
+
+
+
+
+
+
+搜尋
+
+
+
+
+
+
+
+
+
+
+輕鬆執行遠端備援與災難復原
+公雲私雲同一家，備份備援效率佳
+超融合來臨，你的設備有支援嗎?
+ 
+
+首頁
+專題報導
+技術專欄
+產業趨勢
+深度專訪
+市場新知
+資源下載
+
+
+
+
+
+
+最近更新文章
+
+2017/7/21
+掌握溝通就掌握未來　供應商卡位搶協作商機
+2017/7/21
+突破極限的關鍵力量
+2017/7/20
+軟體定義儲存深度動手玩　ScaleIO功能實測（上）
+2017/7/20
+鎖定中小企業協作應用　訴求一站式解決方案
+2017/7/19
+是方偕甲骨文 推國際級在地雲
+2017/7/19
+提供在地化深度服務　Team+客製企業協作
+2017/7/18
+新協作時代以人為中心　認知運算實現聰明工作
+2017/7/17
+免費企業級虛擬化平臺　Hyper-V Server 2016攻略
+2017/7/17
+參與創新取代計劃創新
+2017/7/14
+網路安全領域年中回顧　五大創新趨勢有潛力
+2017/7/14
+微軟進軍企業協作市場　Teams整合安全互動
+2017/7/13
+落實工控系統防護能力　降低物聯網資安風險
+2017/7/13
+扮演資訊科技AI新介面 　智慧機器人成電腦展亮點
+2017/7/12
+阿裡巴巴王堅： 台灣發展AI有譜
+2017/7/12
+vRealize Network Insight　網管監控神器入門(二)
+2017/7/11
+SonicWall復出　加碼台灣市場
+2017/7/11
+網路直播並存商機與風險　平臺兼負控管法律責任
+2017/7/10
+OpenStack高峰會新願景　組合式架構自由實現創意
+2017/7/10
+終結勒索　智取端點威脅
+2017/7/7
+機器學習判別未知檔案　端點安全保護平臺再強化
+2017/7/6
+過期系統遇上零日威脅　無更新可用照樣防護漏洞
+2017/7/6
+端點整合閘道、雲端　建立完整資安防禦體系
+
+
+
+
+
+首頁技術專欄
+
+
+2016/5/5 以硬體資源池實現網路安全機制  集中部署維運利於擴充整合 軟體網路虛擬化安全平臺  VMware NSX功能架構簡述 饒康立 前兩期文章分別就軟體定義網路、網路虛擬化以及微切分架構等方案於新型態資料中心內的效益與大家做介紹，而本文希望就VMware NSX的功能與系統構件有哪些，並且如何達成上述的整合性虛擬化方案，對讀者進行一個概括性的說明。 為因應新型態雲端資料中心內，對應客戶於網路與安全功能的部署速度提升、建置彈性、安全隔離與風險降低等需求，VMware提供了VMware NSX虛擬化方案，自從2013年正式推出NSX-vSphere版本後，已經是中大型客戶建立資料中心時首選考慮的軟體定義網路及安全虛擬化方案。
+
+
+開宗明義，NSX這三個字母代表什麼呢？VMware最重要的伺服器虛擬化產品叫做vSphere ESX，因此NSX在取名時與ESX在英文字母上對仗，代表資料中心內部的「Network and Security Hypervisor」，也就是將資料中心內客戶所需要的網路以及安全功能，不再必要於指定的廠牌型號硬體設備上執行，而能夠在基於開放的x86/IP fabric架構資源池內，以軟體的方式將網路以及安全功能於Hypervisor內，或是以網路虛擬機器的方式提供給客戶使用。
+
+
+因此，NSX提供三項最主要的功能項目：
+
+
+·以軟體定義網路（Software Defined Network）及網路虛擬化（Network Virtualization）技術，藉由封裝機制於企業現有實體網路上隨需建立業務需求的邏輯網路。邏輯網路可依實際需求動態產出、跨越地域且不受限於實體網路部署架構，並可藉由雲平臺呼叫達成自動化。
+
+
+·透過直接於vSphere Hypervisor內提供標準L4 Stateful防火牆與封包轉送技術，達成資料中心內的微切分（Micro-Segmentation）防護需求，可針對細至單一虛擬機器、單一網路連線提供完整的防火牆防護，並可搭配其他第三方安全廠商提供完善的網路與系統安全防護。
+
+
+·以隨需建立的網路服務虛擬機器，提供資料中心內的網路功能虛擬化（Virtual Network Function）方案。用戶可隨時動態、無額外成本地建立新的網路服務虛擬機器，此虛擬機器能夠作為路由器、南北向防火牆、本地負載平衡器以及VPN Gateway等不同功能的網路服務設備使用。
+
+
+
+
+
+
+▲圖1  VMware NSX的網路與安全功能構件。（圖片來源：VMware Public Slide）
+
+
+
+
+參考圖1這張圖，以下我們將對各個NSX的細部功能構件進行討論。
+
+
+
+Logical Switch（邏輯交換器）
+
+
+不僅僅能搭配實體網路以及VMware vDS內的VLAN，NSX可進一步動態建立於虛擬層內的邏輯交換機，提供資料中心內東西向的跨伺服器封包交換。這些邏輯交換機具備下麵的特性：
+
+
+·內建於vSphere Hypervisor內。
+
+
+·可以橫跨任何一臺受NSX控管的虛擬化主機，建立於此邏輯交換機上的虛擬機器無論vMotion/HA/DRS到哪一臺虛擬化主機，都無需變更網段與IP。
+
+
+·設定完全與底層網路分離，所有Logical Switch的建立、變更都無需於底層網路設備進行任何異動。只要在NSX介面按幾個按鈕就好了。
+
+
+·沒有如VLAN般的4,096個數量限制，Logical Switch的理論值數量超過一千六百萬個，目前在單一vCenter內支援一萬個（現行vCenter限制）。
+
+
+·底層透過不同的封裝協定（目前主要採用VXLAN），跨L2或甚至L3網段提供伺服器間的虛擬交換器封包交換。並且與之前VMware vCNS需求不同，底層網路無需支援Layer-3 Multicast，即可支援VXLAN功能提供跨L3網路的溝通。
+
+
+
+Logical Router
+
+
+NSX方案內提供分散式邏輯路由器（Distributed Logical Router）與集中式邏輯路由器（Edge Router）兩種路由機制。分散式邏輯路由器提供資料中心內東西向的路由交換，並且直接於各台Hypervisor Kernel內執行，而集中式邏輯路由器則以虛擬機器的形式，提供南北向，也就是虛擬環境對實體環境內的路由交換。其特性如下所述：
+
+
+
+ 
+
+123
+
+下一頁
+
+
+
+
+
+
+
+
+
+
+
+
+這篇文章讓你覺得滿意不滿意
+送出
+
+相關文章
+
+vRealize Network Insight　網管監控神器入門(二)
+廣域網加速器升級進化　SD-WAN跨線路聰明調度
+趨勢科技與 NEC、Netcracker 攜手合作提供整合式虛擬網路防護解決方案
+華為延伸和紅帽在公共雲及電信雲的合作
+展望2017資訊IT趨勢　多項超現實技術可望成真
+
+留言
+
+
+
+
+
+顯示暱稱：
+留言內容：
+
+
+送出
+
+HomeBackTop
+
+
+
+
+
+
+
+
+
+
+
+熱門點閱文章
+【網管人特刊】最佳化IT基礎架構指南
+變種勒索病毒Petya大爆發　感染力更勝WannaCry
+網路封包分析的好幫手—Wireshark　擷取分析、防範攻擊無所不包
+深入瞭解IP位址與子網路遮罩
+網站SSL加密原理簡介
+伺服器安裝第一首選  CentOS 6帶來寧靜革命
+最基本也最實用操作技巧大公開 Outlook 2007協同運作管理秘訣TOP10
+抓出誰在惡搞網路  用Netflow流量分析工具監控IP異常活動
+化繁為簡談虛擬區域網路 在Cisco交換器設定VLAN及Trunk
+VMware vSphere 5新功能概觀
+更多熱門文章
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本期雜誌
+第138期 2017年7月
+
+
+
+掌握溝通就掌握未來　供應商卡位搶協作商機
+突破極限的關鍵力量
+軟體定義儲存深度動手玩　ScaleIO功能實測（上）
+
+
+訂閱雜誌本期精彩內容
+
+
+
+
+
+
+
+
+
+
+
+訂閱電子報 | 廣告刊登 | 聯絡編輯部 | 雜誌訂戶服務 | 隱私權政策 | 關於網管人
+城邦文化事業股份有限公司版權所有、轉載必究．Copyright © 2011 Cite Publishing Ltd.
+
+
+
+
+
+
+軟體定義的網路功能
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TechNet
+
+
+產品
+
+產品
+
+
+Windows
+
+
+Windows Server
+
+
+System Center
+
+
+Microsoft Edge
+
+
+
+ 
+
+
+Office
+
+
+Office 365
+
+
+Exchange Server
+
+
+
+ 
+
+
+SQL Server
+
+
+SharePoint 產品
+
+
+Skype for Business
+
+
+查看所有產品 »
+
+
+
+
+
+資源
+
+Resources
+
+
+Channel 9 Video
+
+
+評估中心
+
+
+學習資源
+
+
+Microsoft Tech 小幫手應用程式
+
+
+Microsoft Technical Communities
+
+
+Microsoft Virtual Academy
+
+
+指令碼中心
+
+
+伺服器和工具部落格
+
+
+TechNet 部落格
+
+
+
+ 
+
+
+TechNet Flash 電子報
+
+
+TechNet 組件庫
+
+
+TechNet 文件庫
+
+
+TechNet 雜誌
+
+
+TechNet Wiki
+
+
+Windows Sysinternals
+
+
+虛擬實驗室
+
+
+
+Solutions
+
+
+網路連線
+
+
+私用雲端
+
+
+安全性
+
+
+虛擬化
+
+
+
+
+
+下載
+
+更新
+
+
+Service Pack
+
+
+資訊安全公告
+
+
+Microsoft Update
+
+
+
+試用版
+
+
+Windows Server 2016
+
+
+System Center 2016
+
+
+Windows 10 Enterprise
+
+
+SQL Server 2016
+
+
+查看所有試用版 »
+
+
+
+相關網站
+
+
+Microsoft 下載中心
+
+
+TechNet 評估中心
+
+
+驅動程式
+
+
+Windows Sysinternals
+
+
+TechNet 組件庫
+
+
+
+
+
+培訓
+
+培訓
+
+
+由專家帶領的虛擬課程
+
+
+訓練目錄
+
+
+課程地點
+
+
+Microsoft Virtual Academy
+
+
+免費的 Windows Server 2012 課程
+
+
+Free Windows 8 courses
+
+
+SQL Server 訓練課程
+
+
+e-Learning 概觀
+
+
+
+認證
+
+
+認證概觀
+
+
+MCSA: Windows 10
+
+
+Windows Server 認證 (MCSE)
+
+
+私用雲端認證 (MCSE)
+
+
+SQL Server 認證 (MCSE)
+
+
+
+其他資源
+
+
+Microsoft 活動
+
+
+重考認證
+
+
+Born To Learn 部落格
+
+
+Find technical communities in your area
+
+
+
+
+
+支援
+
+產品支援
+
+
+企業用戶
+
+
+適用於開發人員
+
+
+適用於 IT 專業人員
+
+
+取得技術支援
+
+
+提供支援服務
+
+
+
+其他支援連結
+
+
+Microsoft Premier Online
+
+
+TechNet 論壇
+
+
+MSDN 論壇
+
+
+安全公佈欄及諮詢
+
+
+
+不是 IT 專業人員嗎？
+
+
+Microsoft 客戶支援
+
+
+Microsoft 社群論壇
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+台灣 (繁體中文)
+
+登入
+
+
+
+
+
+
+
+
+
+
+
+TechNet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Library
+Learn
+Downloads
+Support
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+Windows Server 2012 R2 和 Windows Server 2012
+伺服器角色及技術
+
+網路
+
+
+
+
+
+網路
+軟體定義的網路技術
+
+
+
+
+軟體定義的網路技術
+
+
+
+
+軟體定義的網路技術
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網路的新功能 
+
+核心網路指南與附屬指南 
+
+802.1X 驗證有線存取 
+
+802.1X 驗證無線存取 
+
+BranchCache 
+
+資料中心橋接 (DCB) 
+
+DirectAccess 
+
+網域名稱系統 (DNS) 
+
+動態主機設定通訊協定 (DHCP) 
+
+可延伸的驗證通訊協定 (EAP) 進行網路存取 
+
+高速網路功能 
+
+Hyper-V Network Virtualization Overview 
+
+Hyper-V 虛擬交換器 
+
+IP 位址管理 (IPAM) 
+
+低延遲工作負載技術 
+
+網路負載平衡 
+
+網路原則與存取服務 
+
+網路殼層 (Netsh) 
+
+網路子系統效能調整 
+
+NIC 小組 
+
+Quality of Service (QoS) 
+
+遠端存取 
+
+軟體定義的網路技術 
+
+TCP/IP 
+
+電話語音伺服器與電話語音 API 
+
+Windows Server 2012 R2 的虛擬接收端調整 
+
+Windows Firewall with Advanced Security 
+
+Windows 網際網路名稱服務 (WINS) 
+
+網路的 Windows PowerShell Cmdlet 
+
+Windows Server 閘道 
+
+
+
+TOC
+
+ 
+摺疊目錄
+展開目錄
+
+
+
+
+本文件已封存並已停止維護。
+
+
+
+
+
+
+
+若要檢視英文版的文章，請選取 [原文] 核取方塊。您也可以將滑鼠指標移到文字上，即可在快顯視窗顯示英文原文。
+
+
+
+譯文
+
+
+原文
+
+
+
+
+
+本文件已封存並已停止維護。
+
+
+軟體定義的網路功能
+
+ 適用於: Windows Server 2012 R2, System Center 2012 R2您可以使用本主題來深入瞭解 Windows Server、System Center 和 Microsoft Azure 中提供的軟體定義網路技術。本主題涵蓋下列各節。軟體定義的網路功能概觀適用於軟體定義的網路功能之 Windows Server 技術適用於軟體定義的網路功能之 System Center 技術Microsoft Azure軟體定義的網路功能概觀軟體定義的網路功能 (SDN) 提供方法來集中設定和管理實體和虛擬網路裝置，例如路由器、交換器及資料中心內的閘道。 如 Hyper-V 虛擬交換器、HYPER-V 網路虛擬化和 Windows Server 閘道等虛擬網路元素，都是設計成軟體定義的網路基礎結構的整合元素。 雖然您仍然可以使用現有的實體交換器、路由器和其他硬體裝置，但如果虛擬網路與實體網路是設計與軟體定義的網路功能相容，您仍可更深入整合這些裝置。軟體定義的網路功能是可行的，因為網路飛機 (管理、控制和資料飛機) 不會再繫結至網路裝置本身，但會由其他實體 (如 System Center 此類資料中心管理軟體) 抽象使用。軟體定義的網路功能可讓您以動態方式管理資料中心網路，提供自動化、集中化的方式以符合應用程式和工作負載的需求。 軟體定義的網路功能提供下列功能。抽象化基礎實體網路的應用程式和工作負載的能力 (透過虛擬化網路完成)。 如同使用 Hyper-V 進行伺服器虛擬化一般，抽象化是一致的，而且能以不中斷的方式執行您的應用程式和工作負載。 例如，軟體定義的網路功能提供您實體網路元素的虛擬抽象化，例如 IP 位址、交換器及負載平衡器。集中定義和控制用來管理實體和虛擬網路之原則的能力，包括這兩種網路類型之間的流量。即使當您部署新工作負載或跨虛擬或實體網路移動工作負載時，仍可以一致且可調的方式實作網路原則的能力。適用於軟體定義的網路功能之 Windows Server 技術Windows Server 包含下列軟體定義的網路技術。網路控制卡Hyper-V 網路虛擬化Hyper-V 虛擬交換器RRAS 多租用戶閘道NIC 小組網路控制卡Windows Server® Technical Preview 的新增功能，網路控制器提供集中式、可程式化的自動化點，可以管理、設定、監視和疑難排解資料中心中的虛擬和實體網路基礎結構。 使用網路控制器時，您可以自動化網路基礎結構的設定，而不用執行網路裝置與服務的手動設定。網路控制器是高度可用且可擴充的伺服器角色，並提供一個應用程式發展介面 (API) (即 Southbound API)，可讓網路控制器和網路通訊，也提供第二個 API (即 Northbound API)，可讓您和網路控制器通訊。使用 Windows PowerShell、Representational State Transfer (REST) API 或管理應用程式時，您可以使用網路控制器來管理下列實體和虛擬網路基礎結構：HYPER-V VM 和虛擬交換器實體網路交換器實體網路路由器防火牆軟體VPN 閘道，包括路由及遠端存取服務 (RRAS) 多租用戶閘道負載平衡器如需詳細資訊，請參閱網路控制卡。Hyper-V 網路虛擬化Windows Server 2012 傳遞 Hyper-V 網路虛擬化，可幫助您使用虛擬網路，將實體網路的應用程式和工作負載抽象化。 虛擬網路會在共用的實體網路網狀架構上提供執行所需的多租用戶隔離，藉此提高資源使用率。 為了確保可以盡快回收現有的投資，虛擬網路可以在現有的網路設備上設定，並且與 VLAN 相容。如需詳細資訊，請參閱 Hyper-V 網路虛擬化概觀。Hyper-V 虛擬交換器Hyper-V 虛擬交換器是一種軟體式 Layer-2 乙太網路交換器，安裝 Hyper-V 伺服器角色時會隨附在 Hyper-V 管理員中。 交換器包含以程式設計方式管理和可擴充的功能，將虛擬機器連線到虛擬網路和實體網路。 此外，Hyper-V 虛擬交換器提供安全性、隔離以及服務層級的原則強化。Hyper-V 虛擬交換器也可讓合作夥伴建置安全性和管理能力擴充功能。 例如，Cisco 宣佈將 Nexus 1000V 擴充功能的一般功能擴充至 Hyper-V 虛擬交換器，包括整合 System Center 2012 SP1 Virtual Machine Manager。 NEC 宣佈為其 OpenFlow 型 Hyper-V 虛擬交換器擴充功能提供 System Center 2012 SP1 Virtual Machine Manager 型支援。 此外，5NINE 和 inMon 已在市場中推出以 Windows Server 2012 Hyper-V 交換器擴充功能為基礎的組合產品。如需詳細資訊，請參閱 Hyper-V 虛擬交換器概觀。RRAS 多租用戶閘道為了順暢地幫助您轉移資料中心和雲端內部及其間的工作負載，我們在 System Center 2012 R2 可管理的 Windows Server 2012 R2 中提供軟體邊緣閘道。 如果您是企業 IT，這個閘道可協助您輕鬆地將資料中心的界限擴展到服務提供者或 Windows Azure，讓您可以視需要傳遞混合式基礎結構。 如果您是主機服務提供者，這表示可大幅提升營運效率，因為此虛擬閘道可感知多個租用戶，並可在單一閘道執行個體上支援多個客戶，同時滿足他們的輸送量和可用性需求。如需詳細資訊，請參閱 Windows Server 2012 R2 RRAS 多租用戶閘道部署指南。NIC 小組NIC 小組，也就是負載平衡與容錯移轉 (LBFO)，可讓某部電腦上的多張網路介面卡因為下列用途而放入一個小組：頻寬彙總流量容錯移轉以防網路元件故障時中斷連線如需詳細資訊，請參閱 NIC 小組概觀。適用於軟體定義的網路功能之 System Center 技術System Center 包含下列用於軟體定義的網路功能技術。System Center Operations ManagerSystem Center Virtual Machine ManagerWindows Server 閘道System Center Operations ManagerSystem Center 2012 Operations Manager 提供彈性且符合成本效益的基礎結構監視功能，有助於確保重要的應用程式皆具備可預測的效能和可用性，並可全面監視私人和公用的資料中心和雲端。如需詳細資料，請參閱 Operations ManagerSystem Center Virtual Machine Manager使用 System Center 2012 SP1 Virtual Machine Manager，您可以適當地佈建和管理虛擬網路。 您可以集中定義和控制虛擬網路原則，並將它們連結至您的應用程式或工作負載。 部署或移動工作負載時，網路設定本身會自動調整。 這是重要的，因為這可免除手動重新設定網路硬體的必要，藉此降低操作的複雜性，並節省您寶貴的資源以運用於較需要的工作。 Virtual Machine Manager 也可協助您控制虛擬網路之間的流量，包括定義關鍵應用程式和工作負載之保證頻寬的能力。如需詳細資訊，請參閱 Virtual Machine ManagerWindows Server 閘道若要部署 Windows Server 閘道，您必須使用 System Center 2012 R2 和 Virtual Machine Manager。 Windows Server 閘道路由器是專為搭配多組織用戶共享部署使用所設計。 使用 System Center 2012 R2 Virtual Machine Manager Windows Server 閘道路由器，Virtual Machine Manager 軟體介面只提供非常有限的一組邊界閘道通訊協定 (BGP) 設定選項，包括本機 BGP IP 位址和自發的系統編號 (ASN)、BGP 對等 IP 位址與 ASN、值的清單。 不過，您可以使用遠端存取 Windows PowerShell BGP 命令來設定 Windows Server 閘道的其他所有功能。如需詳細資訊，請參閱 Windows Server 閘道。Microsoft AzureMicrosoft Azure 是 Microsoft 的雲端平臺，為日益成長的整合式服務集合 (運算、儲存、資料、網路和應用程式)，可協助您移動更為快速、執行更多工作並節省成本。Microsoft 之軟體定義的網路功能方案包括為 Microsoft Azure 等類似服務，設計、建置和操作全球資料中心網路。 Microsoft Azure 全球資料中心每天執行數以萬計的網路變更，只有軟體定義的網路功能才能勝任。Microsoft Azure 會在 Windows Server 包含的相同 Windows Server 和 Hyper-V 平臺上執行。 Windows Server 和 System Center 包括 Microsoft 在操作全球資料中心網路 (如 Microsoft Azure) 所加入的增強功能及體驗的最佳作法，讓您在使用軟體設計的網路功能技術時，可以彈性、自動和控相同的技術。如需詳細資訊，請參閱何謂 Microsoft Azure？
+
+
+
+
+
+顯示:
+
+受繼承
+        
+
+受保護
+        
+
+
+
+
+
+
+
+列印
+
+匯出 (0)
+            
+
+
+
+
+
+
+
+列印
+
+分享
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+本文內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本頁對您有幫助嗎？
+是
+否
+
+
+
+
+
+其他意見反應？
+
+
+剩餘 1500 個字元
+
+提交
+略過此項
+
+
+
+
+
+
+
+謝謝！
+我們非常感謝您提供的意見反應。
+
+
+
+
+
+
+
+
+
+
+
+
+管理您的個人檔案
+
+
+
+
+|
+
+
+
+
+
+        網站意見
+    
+
+
+
+
+                網站意見
+            
+
+x
+
+
+
+
+                和我們分享您的經驗…
+            
+
+                頁面載入的速度夠快嗎？
+            
+
+
+                    是
+
+
+                    否
+
+
+
+                您喜歡網頁的設計嗎？
+            
+
+
+                    是
+
+
+                    否
+
+
+
+                表達更多意見
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電子快訊
+
+|
+
+與我們連絡
+
+|
+
+隱私權聲明
+
+|
+
+使用規定
+
+|
+
+商標
+
+|
+
+
+
+
+
+
+
+
+
+
+© 2017 Microsoft
+
+
+
+
+
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+軟體定義網路 (SDN) 及網路功能虛擬化的全球市場預測 2020年:SDN應用程式平臺、SDN控制器、SDS平臺 - GII
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 聯絡我們
+| 公司簡介
+日商環球訊息有限公司
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Menu
+
+首頁
+產業/市場分類
+
+電子零件/半導體
+能源/環境
+材料
+醫療設備
+通訊
+製藥
+消費品
+工業機械
+基礎設施
+汽車工業
+食物/飲料
+銀行業務
+航空與太空
+
+
+出版商一覽
+試閱服務
+Email 通知
+公司簡介
+聯絡我們
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁  > 市場調查報告書  > 通訊  > 軟體
+
+
+
+
+
+
+
+
+
+市場調查報告書
+軟體定義網路 (SDN) 及網路功能虛擬化的全球市場預測 2020年:SDN應用程式平臺、SDN控制器、SDS平臺
+Software Defined Networking (SDN) Market & Network Function Virtualization by Solution (Security Technologies, Switches, SDN Application Platform & Controller, SDS Platform, and Routers), Service, End User - Global Forecasts to 2020
+
+
+
+出版商
+MarketsandMarkets
+商品編碼
+244878
+
+
+出版日期
+2015年07月31日
+內容資訊
+英文 166 Pages 
+
+
+價格
+
+
+
+
+
+
+
+
+
+
+
+USD 7,150
+
+PDF by E-mail (Single User License)
+
+
+
+
+
+USD 8,500
+
+PDF by E-mail (5-user license)
+
+
+
+
+
+USD 9,650
+
+PDF by E-mail (Corporate License)
+
+
+
+
+
+USD 11,000
+
+PDF by E-mail (Global License)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				軟體定義網路 (SDN) 及網路功能虛擬化的全球市場預測 2020年:SDN應用程式平臺、SDN控制器、SDS平臺
+				Software Defined Networking (SDN) Market & Network Function Virtualization by Solution (Security Technologies, Switches, SDN Application Platform & Controller, SDS Platform, and Routers), Service, End User - Global Forecasts to 2020
+
+
+
+出版日期: 2015年07月31日
+內容資訊: 英文 166 Pages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+簡介
+
+傳統的網路架構非常複雜，擁有資料損失，靜態流通量，及延遲率增加幾個嚴重的問題。另一方面，軟體定義網路 (SDN) 具有動態性質，提供提高網路彈性，在減少延遲率上支援網路供應商。許多網路供應商所面臨的另一個大問題是如何連接大型資料中心，因為傳統網路不支援伺服器虛擬化的動態要件。
+SDN對應區域網路 (LAN) 、廣域網 (WAN) 、及資料中心中集中化及分散化網路架構等網路相關的所有商務需求。SDN市場的主要阻礙因素，為數據傳送相關安全的課題與SDN產業規格的缺乏。
+
+
+本報告提供全球SDN (Software-Defined Networking) 市場相關調查、SDN與其影響分析、市場促進/阻礙要素、趨勢、機會及課題分析、解決方案、服務、終端用戶、組織規模、各垂直產業市場分析、各地區的分析，及競爭情形的分析，也包含主要企業簡介，為您概述為以下內容。
+
+第1章 簡介
+第2章 調查手法
+第3章 摘要整理
+第4章 重要考察
+
+SDN、NFV市場上富有魅力的市場機會
+ 商務，應用及雲端的組織化
+ PCE (PATH COMPUTATION ELEMENT)
+ SDN、NFV市場:3大技術市場區隔
+ SDN、NFV市場:3大地區 vs. 垂直產業
+ SDN、NFV市場:各地區
+ 生命週期分析:各地區
+
+第5章 市場概要
+
+簡介
+ 市場區隔
+ 市場動態
+  
+促進要素
+   阻礙要素
+   機會
+   課題
+  
+SDN的生態系統
+
+第6章 產業趨勢
+
+簡介
+ 技術、平臺
+ 規格
+ 經營模式
+ SDN引進要素
+ 技術、市場藍圖
+
+第7章 SDN、NFV市場分析:各解決方案
+
+簡介
+ 安全技術
+ 交換器
+ SDN應用程式平臺、控制器
+ 軟體定義儲存 (SDS) 平臺
+ 路由器
+
+第8章 SDN、NFV市場分析:各類服務
+
+簡介
+ 諮詢、整合
+ 支援、維修
+ 網路安全、分析
+ 其他專門服務
+
+第9章 SDN、NFV市場分析:各終端用戶
+
+簡介
+ 雲端服務供應商
+ 通訊服務供應商
+ 企業
+
+第10章 SDN、NFV市場分析:各組織規模
+
+簡介
+ 中小企業 (SMB)
+ 大企業
+
+第11章 SDN、NFV市場分析:各垂直產業
+
+簡介
+ 大學、研究機關
+ BFSI
+ 消費品、零售
+ 政府、國防
+ 製造業
+ 通訊、IT
+ 其他垂直產業
+
+第12章 地區分析
+
+簡介
+ 北美
+ 歐洲
+ 亞太地區
+ 中東、非洲
+ 南美
+
+第13章 競爭情形
+
+概要
+ SDN、NFV市場評估架構
+ 競爭情形、趨勢
+
+第14章 企業簡介
+
+簡介
+ CISCO SYSTEMS, INC.
+ HEWLETT-PACKARD
+ INTERNATIONAL BUSINESS MACHINES CORPORATION (IBM)
+ INTEL CORPORATION
+ JUNIPER NETWORKS
+ NEC (日本電氣)
+ DELL INC.
+ PICA8, INC.
+ PLEXXI, INC.
+ BIG SWITCH NETWORKS, INC.
+
+第15章 附錄
+圖表清單
+
+
+
+※ 本網頁內容可能與最新版本有所差異。詳細情況請與我們聯繫。
+
+
+目錄
+Product Code: TC 2390Traditional network architecture is very complex and has some serious concerns like loss of data, static traffic flow, and increased latency rate. On the other side, software-defined networking (SDN) is dynamic in nature, provides increased network flexibility, and assists network providers in decreasing latency rate. Another big challenge faced by most of the network providers is how to connect the large data centers, because traditional networks do not support the dynamic requirements of server virtualization. SDN serves every business need related to networking such as centralized and distributed network architecture in local area networks (LAN), wide area networks (WAN), and in data centers.
+SDN is creating efficient and effective networking environment in almost each industry vertical, but telecom and IT, and cloud services providers are the heavy adopters of it. In SDN architecture, any number of applications can be served by services providers and improve customer satisfaction. SDN architecture eliminates multiple layer architecture required by traditional network architecture by decoupling the control layer and provides virtualized control from a remote location. By using SDN applications, service providers can use proper bandwidth management in order to provide better browsing experience to end users.
+The major restraints of this market are the security issues related to data transfer and lack of industry standard for SDN.
+There are various assumptions that we have taken into consideration for market sizing and forecasting exercise. Few of global assumptions include political, economic, social, technological and economic factors. For instance, exchange rates, one of the economic factors, are expected to have a moderate rating of impact on this market. Therefore, dollar fluctuations are expected to not seriously affect the forecasts in the emerging APAC regions.
+The report will help the market leaders/new entrants in this market in the following ways -
+
+1. This report segments the market into solutions, covering this market comprehensively. The report provides the closest approximations of the revenue numbers for the overall market and the sub-segments. The market numbers are further split across the different verticals and regions.
+
+
+2. This report will help them better understand the competitor and gain more insights to better position their business. There is a separate section on competitive landscape, including competitor ecosystem, mergers and acquisition and venture capital funding. Besides, there are company profiles of 10 players in this market. In this section, market internals are provided that can put them ahead of the competitors.
+
+
+3. The report helps them understand the pulse of the market. The report provides information on key market drivers, restraints, challenges, and opportunities.
+TABLE OF CONTENTS
+1. INTRODUCTION
+
+1.1. OBJECTIVES OF THE STUDY
+1.2. MARKET DEFINITION
+1.3. MARKET SCOPE
+
+1.3.1. MARKETS COVERED
+1.3.2. YEARS CONSIDERED FOR THE STUDY
+
+1.4. CURRENCY
+1.5. LIMITATIONS
+1.6. STAKEHOLDERS
+1.7. KEY TAKEAWAYS
+
+2. RESEARCH METHODOLOGY
+
+2.1. MARKET SIZE ESTIMATION
+2.2. MARKET BREAKDOWN AND DATA TRIANGULATION
+
+2.2.1. DATA FROM SECONDARY SOURCES
+2.2.2. DATA FROM PRIMARY SOURCES
+
+2.2.2.1. Key industry insights
+
+2.2.3. ASSUMPTIONS
+
+
+3. EXECUTIVE SUMMARY
+4. PREMIUM INSIGHTS
+
+4.1. ATTRACTIVE MARKET OPPORTUNITIES IN THE SDN AND NFV MARKET
+4.2. BUSINESS, APPLICATIONS AND CLOUD ORCHESTRATION
+4.3. PATH COMPUTATION ELEMENT (PCE)
+4.4. OPENFLOW
+4.5. SDN AND NFV MARKET: TOP THREE TECHNOLOGY SEGMENTS
+4.6. SDN AND NFV MARKET: TOP THREE REGIONS VS VERTICALS
+4.7. SDN AND NFV MARKET, BY REGION
+4.8. LIFE CYCLE ANALYSIS, BY REGION
+
+5. MARKET OVERVIEW
+
+5.1. INTRODUCTION
+5.2. MARKET SEGMENTATION
+
+5.2.1. BY SOLUTION
+
+5.3. MARKET DYNAMICS
+
+5.3.1. DRIVERS
+
+5.3.1.1. Rising need for mobility
+5.3.1.2. Surging cloud services
+5.3.1.3. Varying traffic patterns and increasing complexity of networks
+5.3.1.4. Data center consolidation and server virtualization
+
+5.3.2. RESTRAINTS
+
+5.3.2.1. Privacy and security issues
+5.3.2.2. Limited knowledge among enterprise end users
+
+5.3.3. OPPORTUNITIES
+
+5.3.3.1. Increasing SDN infrastructure vendors and Value-Added Resellers (VARs)
+5.3.3.2. Technological advancements
+5.3.3.3. Increased adoption of private clouds
+5.3.3.4. Innovative services offered telecom operators
+
+5.3.4. CHALLENGES
+
+5.3.4.1. Lack of governance and standardization
+5.3.4.2. Managing traditional technology and surviving SDN hype cycle
+
+
+5.4. SDN ECOSYSTEM
+
+6. INDUSTRY TRENDS
+
+6.1. INTRODUCTION
+6.2. TECHNOLOGIES AND PLATFORMS
+
+6.2.1. RECENT TRENDS
+6.2.2. DEEP PACKET INSPECTION (DPI)
+6.2.3. GEOGRAPHIC LOAD BALANCING
+6.2.4. POWER MANAGEMENT
+6.2.5. CLOUD MANAGEMENT
+6.2.6. SOFTWARE APPLICATIONS
+
+6.3. STANDARDS
+
+6.3.1. DATA CENTER BRIDGING (DCB)
+
+6.3.1.1. Priority Flow Control (PFC) 802.1Qbb
+6.3.1.2. Congestion management (802.1Qau)
+6.3.1.3. Bandwidth management (802.1Qaz)
+6.3.1.4. Data Center Bridging Exchange (DCBX)
+
+6.3.2. FIBER CHANNEL OVER ETHERNET (FCOE)
+6.3.3. NETWORK VIRTUALIZATION USING GENERIC ROUTING ENCAPSULATION (NVGRE)
+6.3.4. SHORTEST PATH BRIDGING (SPB)
+6.3.5. TRANSPARENT INTERCONNECTION OF LOTS OF LINKS (TRILL)
+6.3.6. VIRTUAL ETHERNET PORT AGGREGATOR (VEPA)
+6.3.7. MULTIPROTOCOL LABEL SWITCHING (MPLS)
+6.3.8. VIRTUAL EXTENSIBLE LOCAL AREA NETWORK (VXLAN)
+
+6.4. BUSINESS MODEL
+
+6.4.1. BUSINESS MODEL: NOW
+
+6.4.1.1. Manual process-driven approach
+6.4.1.2. Network functionality at a virtual layer
+6.4.1.3. Device centricity
+6.4.1.4. OpenFlow-driven approach
+6.4.1.5. Critical success factors
+
+6.4.2. BUSINESS MODEL: IN THE FUTURE
+
+6.4.2.1. Enterprise data center networks approach
+6.4.2.2. Hyper-scale cloud networking
+6.4.2.3. SDN, a function of software development
+6.4.2.4. Collaboration with virtual networking frameworks
+6.4.2.5. Virtual networking leadership
+
+
+6.5. SDN-ADOPTION FACTORS
+
+6.5.1. ACADEMIA AND OPEN SOURCE COMMUNITIES
+
+6.5.1.1. OpenDaylight
+6.5.1.2. OpenContrail
+6.5.1.3. Open Network Operating System (ONOS)
+6.5.1.4. Floodlight
+6.5.1.5. NodeFlow
+6.5.1.6. Mininet
+6.5.1.7. Snabb Switch
+6.5.1.8. OpenvSwitch
+6.5.1.9. Pantou
+6.5.1.10. NOX
+6.5.1.11. POX
+6.5.1.12. Jaxon
+6.5.1.13. RouteFlow
+6.5.1.14. FlowVisor
+6.5.1.15. FlowScale
+
+6.5.2. EARLY STANDARDIZATION
+6.5.3. SDN IS A COMPLETE SOLUTION, NOT JUST A HARDWARE
+6.5.4. SDN OVERCOMES THE "RIP AND REPLACE" STRATEGY
+6.5.5. ROLE OF VAR
+
+6.6. TECHNOLOGY AND MARKET ROADMAP
+
+6.6.1. INEVITABILITY OF SDN
+6.6.2. FUNCTIONALITY TO OPENFLOW CONTROLLERS
+6.6.3. REVOLUTIONIZING NETWORK UTILIZATION
+6.6.4. TRANSITIONING FOR COMPETITIVE ADVANTAGE
+6.6.5. ENTERPRISE COMMERCIALIZATION
+
+
+7. SDN AND NFV MARKET ANALYSIS, BY SOLUTION
+
+7.1. INTRODUCTION
+7.2. SECURITY TECHNOLOGIES
+7.3. SWITCHES
+7.4. SDN APPLICATION PLATFORM AND CONTROLLER
+7.5. SOFTWARE-DEFINED STORAGE (SDS) PLATFORMS
+7.6. ROUTERS
+
+8. SDN AND NFV MARKET ANALYSIS, BY SERVICE
+
+8.1. INTRODUCTION
+8.2. CONSULTING AND INTEGRATION
+8.3. SUPPORT AND MAINTENANCE
+8.4. NETWORK SECURITY AND ANALYTICS
+8.5. OTHER PROFESSIONAL SERVICES
+
+9. SDN AND NFV MARKET ANALYSIS, BY END USER
+
+9.1. INTRODUCTION
+9.2. CLOUD SERVICE PROVIDERS
+9.3. TELECOMMUNICATION SERVICE PROVIDERS
+9.4. ENTERPRISES
+
+10. SDN AND NFV MARKET ANALYSIS, BY ORGANIZATION SIZE
+
+10.1. INTRODUCTION
+10.2. SMALL AND MEDIUM BUSINESSES (SMBS)
+10.3. LARGE ENTERPRISES
+
+11. SDN AND NFV MARKET ANALYSIS, BY VERTICAL
+
+11.1. INTRODUCTION
+11.2. ACADEMIA AND RESEARCH
+11.3. BFSI.
+11.4. CONSUMER GOODS AND RETAIL
+11.5. GOVERNMENT AND DEFENSE
+11.6. MANUFACTURING
+11.7. TELECOM AND IT
+11.8. OTHER VERTICALS
+
+12. GEOGRAPHIC ANALYSIS
+
+12.1. INTRODUCTION
+12.2. NORTH AMERICA
+12.3. EUROPE
+12.4. ASIA-PACIFIC
+12.5. MIDDLE EAST AND AFRICA
+12.6. LATIN AMERICA
+
+13. COMPETITIVE LANDSCAPE
+
+13.1. OVERVIEW
+13.2. SDN AND NFV MARKET EVALUATION FRAMEWORK
+13.3. COMPETITIVE SITUATION AND TRENDS
+
+13.3.1. NEW PRODUCT LAUNCHES
+13.3.2. MERGERS AND ACQUISITIONS
+13.3.3. PARTNERSHIPS AND COLLABORATIONS
+13.3.4. PRODUCT UPGRADATIONS
+
+
+14. COMPANY PROFILES (Overview, Products & Services, Strategies & Insights, Developments and MnM View)*
+
+14.1. INTRODUCTION
+14.2. CISCO SYSTEMS, INC.
+14.3. HEWLETT-PACKARD
+14.4. INTERNATIONAL BUSINESS MACHINES CORPORATION (IBM)
+14.5. INTEL CORPORATION
+14.6. JUNIPER NETWORKS
+14.7. NEC CORPORATION
+14.8. DELL INC.
+14.9. PICA8, INC.
+14.10. PLEXXI, INC.
+14.11. BIG SWITCH NETWORKS, INC.
+
+*Details on Overview, Products & Services, Strategies & Insights, Developments and MnM View might not be captured in case of unlisted companies.
+15. APPENDIX
+
+15.1. INDUSTRY EXPERTS
+15.2. DISCUSSION GUIDE
+15.3. INTRODUCING RT: REAL TIME MARKET INTELLIGENCE
+15.4. AVAILABLE CUSTOMIZATIONS
+15.5. RELATED REPORTS
+
+LIST OF TABLES
+
+TABLE 1: GLOBAL SDN AND NFV MARKET SIZE, 2013-2020 (USD MILLION)
+TABLE 2: SDN AND NFV MARKET SIZE, BY SOLUTION, 2013-2020 (USD MILLION)
+TABLE 3: SECURITY TECHNOLOGIES: SDN AND NFV MARKET SIZE, BY END USER,  2013-2020 (USD MILLION)
+TABLE 4: SECURITY TECHNOLOGIES: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE, 2013-2020 (USD MILLION)
+TABLE 5: SECURITY TECHNOLOGIES: SDN AND NFV MARKET SIZE, BY VERTICAL,  2013-2020 (USD MILLION)
+TABLE 6: SECURITY TECHNOLOGIES: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 7: SWITCHES: SDN AND NFV MARKET SIZE, BY END USER,  2013-2020 (USD MILLION)
+TABLE 8: SWITCHES: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE,  2013-2020 (USD MILLION)
+TABLE 9: SWITCHES: SDN AND NFV MARKET SIZE, BY VERTICAL, 2013-2020 (USD MILLION)
+TABLE 10: SWITCHES: SDN AND NFV MARKET SIZE, BY END USER,  2013-2020 (USD MILLION)
+TABLE 11: SDN APPLICATION PLATFORM AND CONTROLLER: SDN AND NFV MARKET SIZE,  BY END USER, 2013-2020 (USD MILLION)
+TABLE 12: SDN APPLICATION PLATFORM AND CONTROLLER: SDN AND NFV MARKET SIZE,  BY ORGANIZATION SIZE, 2013-2020 (USD MILLION)
+TABLE 13: SDN APPLICATION PLATFORM AND CONTROLLER: SDN AND NFV MARKET SIZE,  BY VERTICAL, 2013-2020 (USD MILLION)
+TABLE 14: SDN APPLICATION PLATFORM AND CONTROLLER: SDN AND NFV MARKET SIZE,  BY VERTICAL, 2013-2020 (USD MILLION)
+TABLE 15: SDS PLATFORM: SDN AND NFV MARKET SIZE, BY END USER, 2013-2020 (USD MILLION)
+TABLE 16: SDS PLATFORM: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE,  2013-2020 (USD MILLION)
+TABLE 17: SDS PLATFORM: SDN AND NFV MARKET SIZE, BY VERTICAL,  2013-2020 (USD MILLION)
+TABLE 18: SDS PLATFORM: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 19: ROUTER: SDN AND NFV MARKET SIZE, BY END USER, 2013-2020 (USD MILLION)
+TABLE 20: ROUTER: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE,  2013-2020 (USD MILLION)
+TABLE 21: ROUTER: SDN AND NFV MARKET SIZE, BY VERTICAL, 2013-2020 (USD MILLION)
+TABLE 22: ROUTER: SDN AND NFV MARKET SIZE, BY REGION, 2013-2020 (USD MILLION)
+TABLE 23: SDN AND NFV MARKET SIZE, BY SERVICE, 2013-2020 (USD MILLION)
+TABLE 24: CONSULTING AND INTEGRATION: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE, 2013-2020 (USD MILLION)
+TABLE 25: CONSULTING AND INTEGRATION: SDN AND NFV MARKET SIZE, BY VERTICAL, 2013-2020 (USD MILLION)
+TABLE 26: CONSULTING AND INTEGRATION: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 27: SUPPORT AND MAINTENANCE: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE, 2013-2020 (USD MILLION)
+TABLE 28: SUPPORT AND MAINTENANCE: SDN AND NFV MARKET SIZE, BY VERTICAL,  2013-2020 (USD MILLION)
+TABLE 29: SUPPORT AND MAINTENANCE: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 30: SUPPORT AND MAINTENANCE: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE, 2013-2020 (USD MILLION)
+TABLE 31: SUPPORT AND MAINTENANCE: SDN AND NFV MARKET SIZE, BY VERTICAL,  2013-2020 (USD MILLION)
+TABLE 32: SUPPORT AND MAINTENANCE: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 33: OTHER PROFESSIONAL: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE, 2013-2020 (USD MILLION)
+TABLE 34: OTHER PROFESSIONAL: SDN AND NFV MARKET SIZE, BY VERTICAL,  2013-2020 (USD MILLION)
+TABLE 35: OTHER PROFESSIONAL: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE, 2013-2020 (USD MILLION)
+TABLE 36: SDN AND NFV MARKET SIZE, BY END USER, 2013-2020 (USD MILLION)
+TABLE 37: CLOUD SERVICE PROVIDERS: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 38: TELECOMMUNICATION SERVICE PROVIDERS: SDN AND NFV MARKET SIZE,  BY REGION, 2013-2020 (USD MILLION)
+TABLE 39: ENTERPRISES: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 40: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE, 2013-2020 (USD MILLION)
+TABLE 41: SMBS: SDN AND NFV MARKET SIZE, BY REGION, 2013-2020 (USD MILLION)
+TABLE 42: LARGE ENTERPRISES: LARGE ENTERPRISES MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 43: SDN AND NFV MARKET SIZE, BY VERTICAL, 2013-2020 (USD MILLION)
+TABLE 44: ACADEMIA AND RESEARCH: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 45: BFSI: SDN AND NFV MARKET SIZE, BY REGION, 2013-2020 (USD MILLION)
+TABLE 46: CONSUMER GOODS AND RETAIL: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 47: GOVERNMENT AND DEFENSE: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 48: MANUFACTURING: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 49: TELECOM AND IT: SDN AND NFV MARKET SIZE, BY REGION,  2013-2020 (USD MILLION)
+TABLE 50: OTHERS: SDN AND NFV MARKET SIZE, BY REGION, 2013-2020 (USD MILLION)
+TABLE 51: SDN AND NFV MARKET SIZE, BY REGION, 2013-2020 (USD MILLION)
+TABLE 52: NORTH AMERICA: SDN AND NFV MARKET SIZE, BY SOLUTION,  2013-2020 (USD MILLION)
+TABLE 53: NORTH AMERICA: SDN AND NFV MARKET SIZE, BY SERVICE,  2013-2020 (USD MILLION)
+TABLE 54: NORTH AMERICA: SDN AND NFV MARKET SIZE, BY END USER,  2013-2020 (USD MILLION)
+TABLE 55: NORTH AMERICA: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE,  2013-2020 (USD MILLION)
+TABLE 56: NORTH AMERICA: SDN AND NFV MARKET SIZE, BY VERTICAL,  2013-2020 (USD MILLION)
+TABLE 57: EUROPE: SDN AND NFV MARKET SIZE, BY SOLUTION, 2013-2020 (USD MILLION)
+TABLE 58: EUROPE: SDN AND NFV MARKET SIZE, BY SERVICE, 2013-2020 (USD MILLION)
+TABLE 59: EUROPE: SDN AND NFV MARKET SIZE, BY END USER, 2013-2020 (USD MILLION)
+TABLE 60: EUROPE: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE,  2013-2020 (USD MILLION)
+TABLE 61: EUROPE: SDN AND NFV MARKET SIZE, BY VERTICAL, 2013-2020 (USD MILLION)
+TABLE 62: ASIA-PACIFIC: SDN AND NFV MARKET SIZE, BY SOLUTION,  2013-2020 (USD MILLION)
+TABLE 63: ASIA-PACIFIC: SDN AND NFV MARKET SIZE, BY SERVICE,  2013-2020 (USD MILLION)
+TABLE 64: ASIA-PACIFIC: SDN AND NFV MARKET SIZE, BY END USER,  2013-2020 (USD MILLION)
+TABLE 65: ASIA-PACIFIC: SDN AND NFV MARKET SIZE, BY ORGANIZATION SIZE,  2013-2020 (USD MILLION)
+TABLE 66: ASIA-PACIFIC: SDN AND NFV MARKET SIZE, BY VERTICAL,  2013-2020 (USD MILLION)
+TABLE 67: MIDDLE EAST AND AFRICA: SDN AND NFV MARKET SIZE, BY SOLUTION,  2013-2020 (USD MILLION)
+TABLE 68: MIDDLE EAST AND AFRICA: SDN AND NFV MARKET SIZE, BY SERVICE,  2013-2020 (USD MILLION)
+TABLE 69: MIDDLE EAST AND AFRICA: SDN AND NFV MARKET SIZE, BY END USER,  2013-2020 (USD MILLION)
+TABLE 70: MIDDLE EAST AND AFRICA: SDN AND NFV MARKET SIZE, BY END USER,  2013-2020 (USD MILLION)
+TABLE 71: MIDDLE EAST AND AFRICA: SDN AND NFV MARKET SIZE, BY VERTICAL,  2013-2020 (USD MILLION)
+TABLE 72: LATIN AMERICA: SDN AND NFV MARKET SIZE, BY SOLUTION,  2013-2020 (USD MILLION)
+TABLE 73: LATIN AMERICA: SDN AND NFV MARKET SIZE, BY SERVICE, 2013-2020 (USD MILLION)
+TABLE 74: LATIN AMERICA: SDN AND NFV MARKET SIZE, BY END USER,  2013-2020 (USD MILLION)
+TABLE 75: LATIN AMERICA: SDN AND NFV MARKET SIZE, BY END USER,  2013-2020 (USD MILLION)
+TABLE 76: LATIN AMERICA: SDN AND NFV MARKET SIZE, BY VERTICAL,  2013-2020 (USD MILLION)
+TABLE 77: NEW PRODUCT LAUNCHES, 2012-2015
+TABLE 78: MERGERS AND ACQUISITIONS, 2012-2015
+TABLE 79: PARTNERSHIPS AND COLLABORATIONS, 2012-2014
+TABLE 80: PRODUCT UPGRADATIONS, 2012-2015
+
+LIST OF FIGURES
+
+FIGURE 1: GLOBAL SDN AND NFV MARKET: RESEARCH DESIGN
+FIGURE 2: MARKET SIZE ESTIMATION METHODOLOGY: BOTTOM-UP APPROACH
+FIGURE 3: MARKET SIZE ESTIMATION METHODOLOGY: TOP-DOWN APPROACH
+FIGURE 4: BREAKDOWN OF PRIMARIES: BY COMPANY, DESIGNATION, AND REGION
+FIGURE 5: MARKET BREAKDOWN AND DATA TRIANGULATION
+FIGURE 6: SDN AND NFV: KEY INSIGHTS
+FIGURE 7: MARKET EVOLUTION: SDN AND NFV
+FIGURE 8: SDN AND NFV SOFTWARE MARKET SNAPSHOT (2015 VS. 2020): SOFTWARE-DEFINED STORAGE PLATFORMS ARE EXPECTED TO GROW AT THE HIGHEST CAGR DURING THE FORECAST PERIOD
+FIGURE 9: SDN AND NFV SERVICES MARKET SNAPSHOT (2015 VS. 2020): NETWORK SECURITY AND ANALYTICS SERVICES ARE EXPECTED TO GROW AT THE HIGHEST CAGR DURING THE FORECAST PERIOD
+FIGURE 10: SDN AND NFV HARDWARE MARKET SIZE, 2013-2020 (USD MILLION)
+FIGURE 11: GLOBAL SDN AND NFV MARKET ANALYSIS, BY SOLUTION, 2015
+FIGURE 12: NORTH AMERICA SDN AND NFV MARKET IS EXPECTED TO EXHIBIT THE HIGHEST ADOPTION DURING THE FORECAST PERIOD
+FIGURE 13: NORTH AMERICA IS EXPECTED TO HOLD THE LARGEST MARKET SHARE OF THE SDN AND NFV MARKET IN 2015
+FIGURE 14: GLOBAL SDN AND NFV MARKET IS EXPECTED TO GROW AT A CAGR OF 86.0%
+FIGURE 15: SDN APPLICATION PLATFORM AND CONTROLLERS ARE THE MOST LUCRATIVE SECTORS FOR VENDORS
+FIGURE 16: TELECOM AND IT, CONSUMER GOODS AND RETAIL, AND BFSI SECTORS ARE EXPECTED TO BE THE MAJOR AREAS OF INVESTMENT ACROSS NORTH AMERICA, EUROPE, AND APAC
+FIGURE 17: CAPEX REDUCTION WITH SDN AND NFV TECHNOLOGY IS EXPECTED TO DRIVE ITS ADOPTION IN ASIA-PACIFIC
+FIGURE 18: ASIA-PACIFIC TO BE INTHE HIGH GROWTH PHASE
+FIGURE 19: SDN AND NFV MARKET SEGMENTATION: BY SOLUTION
+FIGURE 20: SDN AND NFV MARKET SEGMENTATION: BY SERVICE
+FIGURE 21: SDN AND NFV MARKET SEGMENTATION: BY END USER
+FIGURE 22: SDN AND NFV MARKET SEGMENTATION: BY ORGANIZATION SIZE
+FIGURE 23: SDN AND NFV MARKET SEGMENTATION: BY VERTICAL
+FIGURE 24: RISING NEED FOR MOBILITY IS EXPECTED TO DRIVE THE SDN MARKET
+FIGURE 25: ASTER*X CONTROLLER DESIGN FOR THE MAIN CONTROL LOGIC
+FIGURE 26: GOOGLE SDN WAN HISTORY
+FIGURE 27: SOFTWARE-DEFINED STORAGE PLATFORMS ARE EXPECTED TO EXHIBIT THE HIGHEST ADOPTION RATE DURING THE FORECAST PERIOD
+FIGURE 28: CONSULTING AND INTEGRATION SERVICES ARE EXPECTED TO LEAD THE SDN  AND NFV MARKET DURING THE FORECAST PERIOD
+FIGURE 29: TELECOMMUNICATION SERVICE PROVIDERS ARE EXPECTED TO EXHIBIT HIGHEST ADOPTION RATE OF SDN AND NFV SOLUTIONS DURING THE FORECAST PERIOD
+FIGURE 30: SMBS ARE EXPECTED TO EXHIBIT THE HIGHEST ADOPTION RATE OF SDN AND NFV SOLUTION AND SERVICES
+FIGURE 31: GOVERNMENT AND DEFENSE SECTOR IS EXPECTED TO EXHIBIT THE HIGHEST ADOPTION RATE OF SDN AND NFV SOLUTION AND SERVICES DURING THE FORECAST PERIOD
+FIGURE 32: GEOGRAPHIC SNAPSHOT
+FIGURE 33: ASIA-PACIFIC AND MEA REGIONS ARE THE MOST ATTRACTIVE MARKETS FOR SDN INVESTMENTS
+FIGURE 34: ASIA-PACIFIC IS EXPECTED TO GROW WITH THE HIGHEST CAGR DURING THE FORECAST PERIOD
+FIGURE 35: NORTH AMERICA SDN AND NFV MARKET SNAPSHOT: DEMAND IS DRIVEN BY THE INCREASING NEED FOR SDN APPLICATION PLATFORM AND CONTROLLERS
+FIGURE 36: ASIA-PACIFIC SDN AND NFV MARKET SNAPSHOT: GROWING ADVANCEMENTS IN SDN APPLICATION PLATFORMS AND CONTROLLERS IS DRIVING THE SDN AND NFV MARKET
+FIGURE 37: NEW PRODUCT LAUNCHES IS THE KEY STRATEGY ADOPTED FROM 2012 TO 2015
+FIGURE 38: SDN AND NFV MARKET EVALUATION FRAMEWORK
+FIGURE 39: BATTLE FOR MARKET SHARE: NEW PRODUCT LAUNCH WAS THE KEY STRATEGY
+FIGURE 40: GEOGRAPHIC REVENUE MIX OF TOP 5 PLAYERS
+FIGURE 41: CISCO: COMPANY SNAPSHOT
+FIGURE 42: CISCO SYSTEMS: SWOT ANALYSIS
+FIGURE 43: HEWLETT PACKARD: COMPANY SNAPSHOT
+FIGURE 44: HEWLETT-PACKARD: SWOT ANALYSIS
+FIGURE 45: IBM: COMPANY SNAPSHOT
+FIGURE 46: IBM: SWOT ANALYSIS
+FIGURE 47: INTEL CORPORATION: COMPANY SNAPSHOT
+FIGURE 48: INTEL: SWOT ANALYSIS
+FIGURE 49: JUNIPER NETWORKS: COMPANY SNAPSHOT
+FIGURE 50: JUNIPER NETWORKS: SWOT ANALYSIS
+FIGURE 51: NEC CORPORATION: COMPANY SNAPSHOT
+
+
+
+
+
+
+
+
+
+
+02-2729-4219
+				+886-2-2729-4219
+			
+
+2017年新服務開始
+
+全球各國所發行的 市場調查報告 我們均可經手處理 如有這個網站未刊載的報告 您也可諮詢 
+
+FAQ
+
+
+到貨時間
+使用權限
+付款方式
+
+
+相關商品
+
+
+SDN/NFV總數點閱服務 年間契約型資訊服務
+SDN (Software Defined Networking)的全球市場分析、預測 ∼2025年:各解決方案、終端用戶、產業、地區 2017年03月10日
+全球軟體定義網路 (SDN) 市場分析與趨勢:產業預測 2017年01月01日
+SDN(Software Defined Networking)市場的各最終用途、服務、解決方案(物理網路基礎設施、虛擬/管理軟體、SDN應用)、應用、地區的規模與分析及各領域預測 2016年12月21日
+全球SDN/NFV市場:Telco (電信運營商)的計劃、投資的基準 2016年09月28日
+軟體定義資料中心 (SDDC) 的全球市場的預測 ∼2021年 2016年06月07日
+SDN (Software Defined Networking)：各種解決方案、供應商&企業策略、實行、市場預測 (2016-2020年) 2016年01月07日
+軟體定義網路(SDN)解決方案:市場機會及預測 2015年01月29日
+SDN、NFV及網路虛擬化的聖經 2014年11月18日
+SDN用開關技術及零組件 2014年02月14日
+
+
+
+ ▼
+
+
+
+
+
+
+
+
+
+
+
+
+使用指南
+產品及服務須知
+網站導覽
+
+
+星期一到星期五
+9:30am-6:00pm
+TEL: 02-2729-4219
+(+886-2-2729-4219)
+
+
+			全球市場/產業 調查, 分析, 預測 報告書
+© Copyright 2004 - 2017,
+Global Information, Inc.
+All rights reserved.
+
+
+
+
+
+
+
+
+網路設備都能虛擬化：SDN軟體定義網路實作白皮書-金石堂網路書店
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+會員功能列
+
+ 
+
+
+加入會員
+登入
+
+
+
+
+您好
+登出
+
+
+會員專區
+客服中心
+查訂單
+
+
+ 
+（ 0 件）0 元
+結帳
+
+
+
+
+
+
+
+
+
+
+
+
+購物車
+（ 0 件）0 元
+結帳
+
+
+
+金石堂及銀行均不會請您操作ATM!  如接獲電話要求您前往ATM提款機，請不要聽從指示，以免受騙上當!
+    (詳情)
+
+
+
+
+網路設備都能虛擬化：SDN軟體定義網路實作白皮書－金石堂網路書店歡迎您加入博客和facebook 臉書粉絲團！The largest retail books store chains in Taiwan! 
+
+
+
+
+
+TOP關鍵字
+
+2017希望書包
+怪獸的產地
+七龍珠
+肆一 
+蠟筆小新套票
+抽EC
+
+
+
+
+
+
+全館搜尋
+中文書
+英文書
+
+雜誌
+MOOK
+文具
+玩具親子
+美妝配飾
+3C
+家電
+運動休閒
+居家生活
+動漫部屋
+日用清潔
+食品
+
+
+
+
+ 
+
+天花版bn
+
+12345678910
+
+
+
+
+
+購物目錄
+
+
+首頁
+3h快送
+中文書
+英文書
+
+雜誌
+MOOK
+文具
+美妝配飾
+玩具親子
+3C
+家電
+運動休閒
+居家生活
+日用清潔
+動漫精品
+食品
+
+
+
+
+
+
+商品次目錄
+
+
+新書
+預購書
+推薦書
+套書
+暢銷書排行榜
+書展 / 特惠
+讀者書評
+出版社專區
+香港出版品
+
+
+
+
+ 
+
+    您的位置：金石堂網路書店
+中文書
+電腦資訊
+網路／安全／概論
+網路技術
+商品詳情
+
+ 
+
+
+網路設備都能虛擬化：SDN軟體定義網路實作白皮書
+                        
+
+
+
+
+
+
+
+
+
+
+作者：雷葆華、王峰、王茜、王和宇
+追蹤
+
+
+
+出版社：佳魁      
+出版社追蹤
+
+
+出版日：2014/6/25
+
+ISBN：9789865712686
+語言：中文繁體
+適讀年齡：全齡適讀
+
+
+定價：450 元
+
+特價：79 折 356 元 (可得紅利3點)
+紅利優惠價：77 折 345 元 (折抵說明)紅利可抵：11 元 
+信用卡紅利：可折抵多家銀行 (扣抵說明)
+運送方式：全球配送　香港到店　國內宅配國內店取　
+
+
+
+
+
+
+
+
+
+
+
+
+<<
+
+
+
+>>
+
+
+https://cdn.kingstone.com.tw/book/images/product/20131/2013120303195/2013120303195b.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           商品暫時無法購買
+                           
+
+
+金石堂讀者好評
+ 
+0 個人說讚，看排行 >
+
+
+
+
+
+
+電腦資訊分類追蹤
+使用此功能請先登入金石堂網路書店正式會員。這是什麼？
+
+
+
+
+分享：
+                            
+                           	  
+
+
+
+
+
+
+
+
+
+
+書籍介紹
+其他讀者也買
+強力推薦
+讀者好評(0)
+下標籤
+團體專屬服務
+
+
+
+
+
+
+內容簡介目錄序/導讀
+詳細資料
+
+
+
+
+
+
+內容簡介 top 
+《網路設備都能虛擬化：SDN軟體定義網路實作白皮書》
+
+軟體定義網路(Software Defined Network, SDN)就是一切的答案
+	雲端運算三大基礎：伺服器、儲存、網路
+	伺服器已全面虛擬化，運算能力不再用「台」或「顆」計算的雲端時代，使用網路分派儲存設備也已完全整合，不再使用單顆硬碟或SATA、SAS等方式連接，使用網路來連接最昂貴的網路硬體設備，也能像伺服器一樣，讓處理器專精於計算，網路功能，則交給軟體處理嗎？
+	本書充分地分析SDN的應用場景，並從產業生態系統的角度對SDN的發展格局和未來走勢進行分析和展望，讓讀者能夠瞭解到SDN的概貌。對從事SDN技術產品研發的專業人士、網路運營服務從業人員、相關科系學生，和對SDN感興趣的讀者，都能提供參考。
+
+
+
+目錄 top 
+網路設備都能虛擬化：SDN軟體定義網路實作白皮書－目錄導覽說明
+
+
+Chapter 01 SDN 技術概述
+	1.1 SDN 定義
+	1.1.1 ONF SDN 架構定義 
+	1.1.2 ETSI NFV 架構定義
+	1.1.3 OpenDaylight 開放原始碼專案
+	1.1.4 SDN 架構的特徵分析
+	1.2 SDN 發展背景
+	1.3 SDN 實現方案 
+	1.3.1 以專用介面為基礎的方案
+	1.3.2 以重疊網路為基礎的方案
+	1.3.3 以開放協定為基礎的方案
+	1.3.4 SDN 實現方案分析
+	1.4 SDN 核心技術 
+	1.4.1 交換機及南向介面技術
+	1.4.2 控制器及北向介面技術
+	1.4.3 應用編排和資源管理技術
+	1.5 本章小結 
+	Chapter 02 SDN 交換機及南向介面技術
+	2.1 交換機核心技術
+	2.1.1 交換機工作原理
+	2.1.2 交換機實現技術
+	2.2 OpenFlow 交換機標準 
+	2.2.1 OpenFlow v1.0 概述
+	2.2.2 OpenFlow 標準演進 
+	2.2.3 OpenFlow 問題分析
+	2.3 OF-CONFIG 設定管理協定
+	2.3.1 OF-CONFIG v1.0 概述 
+	2.3.2 OF-CONFIG 協定演進
+	2.4 OVS 交換機實現分析
+	2.4.1 OVS 交換機工作原理
+	2.4.2 OVS 交換機核心實現
+	2.5 本章小結 
+	Chapter 03 SDN 控制器及北向介面技術
+	3.1 控制器核心技術
+	3.1.1 南向網路控制技術 
+	3.1.2 北向業務支撐技術
+	3.1.3 東西向控制器擴充技術
+	3.2 控制器設計要素
+	3.3 開放原始碼控制器實現
+	3.3.1 NOX/POX
+	3.3.2 Ryu
+	3.3.3 Floodlight
+	3.3.4 控制器實現分析 
+	3.4 本章小結
+	Chapter 04 SDN 應用編排和資源管理技術
+	4.1 SDN 應用類型和實現技術
+	4.1.1 資源管理平臺
+	4.1.2 軟體定義的應用發佈
+	4.2 OpenStack 平臺的Quantum 元件分析 
+	4.2.1 OpenStack Quantum 實現原理 
+	4.2.2 OpenStack Quantum 的基本功能 
+	4.3 本章小結
+	Chapter 05 SDN 網路系統實戰
+	5.1 SDN 實驗概述
+	5.2 利用Mininet 架設模擬網路環境
+	5.2.1 Mininet 模擬網路拓樸
+	5.2.2 Open vSwitch 的安裝和設定
+	5.2.3 OpenFlow 資料流程分析
+	5.3 以Floodlight 為基礎開發SDN 應用 
+	5.3.1 建立程式
+	5.3.2 增加服務 
+	5.3.3 增加REST API
+	5.4 Floodlight REST API 開發
+	5.4.1 撰寫說明
+	5.4.2 程式範例 
+	5.4.3 常用REST API 
+	5.5 本章小結
+	Chapter 06 SDN 應用實作和探索
+	6.1 網路整體概述
+	6.2 SDN 在資料中心的應用
+	6.2.1 雲端資料中心的多租戶網路解決方案 
+	6.2.2 Windows Azure 虛擬化網路
+	6.3 SDN 在骨幹網中的應用 
+	6.4 SDN 在都會區網路邊緣的應用 
+	6.5 SDN 在連線網的應用
+	6.6 SDN 在IP RAN 中的應用 
+	6.7 SDN 在固網行動融合場景中的應用 
+	6.8 SDN 在企業網路中的應用
+	6.8.1 企業內部網路拓樸應用場景
+	6.8.2 大型企業網應用場景
+	6.9 本章小結
+	Chapter 07 SDN 產業現狀及展望
+	7.1 SDN 產業現狀 
+	7.1.1 晶片提供商 
+	7.1.2 裝置和解決方案提供商——傳統裝置廠商
+	7.1.3 裝置和解決方案提供商——創新公司
+	7.1.4 網際網路企業和電信業者
+	7.1.5 開放原始碼專案
+	7.2 SDN 標準化進展 
+	7.2.1 ONF
+	7.2.2 ETSI NFV
+	7.2.3 IETF
+	7.2.4 ITU-T
+	7.2.5 CCSA
+	7.3 SDN 的市場化展望 
+	7.4 SDN 發展展望
+	Appendix A 參考文獻 
+
+
+
+
+
+序/導讀 《網路設備都能虛擬化》top 
+
+
+[前言]
+
+	SDN（Software Defined Networking，軟體定義網路）是目前網路領域的熱點，被業界普遍視作未來網路的演進方向。同時，它還有另外一個綽號——StillDon’t kNow ！那麼，SDN 究竟是什麼？它是一項技術？一種網路？一種服務？隨著SDN 日益受到關註，各方參與者都從各自的角度進行了回答，這些答案豐富了SDN 的內涵和外延，同時也為SDN 蒙上了神秘的面紗。
+
+
+很久以來，網路領域一直存在著一個討論，即底層網路資源如何能更進一步地為上層業務及應用服務，做到資源的靈活排程與隨選發佈。為此，業界曾從通訊技術的 角度進行了很多嘗試，但效果並不明顯。而雲端運算、巨量資料等業務的興起，對網路的改造需求越來越迫切，於是，業界開始從IT 的角度看待網路，SDN 就是一個具有代表性的突破。SDN 宣導的標準化控制協定、軟體化網路介面為資源的統一管理、業務的推陳出新提供了極佳地支援，能夠提供給使用者更好的網路體驗，提升了網路的價值。
+
+
+SDN 秉承著軟體化、IT 化、開放化的理念，正在改變著人們對傳統網路的看法。我們有理由相信它將在未來的網路中擁有越來越重要的地位。同時，SDN是一把「雙刃劍」，如何趨利避害，也是每位參與者必須審慎考慮的問題。
+
+
+本書的主要內容是我們在多年研究的基礎上對SDN 進行的歸納和整理，其中既包含了對SDN 關鍵技術系統的詳細解讀，還涵蓋了基於開放原始碼軟體的典型SDN 環境架設、豐富的業界進展介紹和SDN 發展趨勢分析。
+
+
+本書第1 章介紹SDN 技術的概述，闡釋了主流的SDN 架構定義並分析它們的異同，進而論述SDN 的提出背景和目前主要的實現方案類型，並以SDN 層次化架建為基礎，構立了關鍵技術系統，讓讀者能夠瞭解到SDN 的概貌，為後續深入閱讀奠定基礎。
+
+
+第2 章至第4 章分別從交換機和控制器南向介面、控制器及其北向介面、應用編排和資源管理等三個層面，全面地剖析了支撐SDN 架構的關鍵技術。除了對相關技術的工作原理進行深入解讀外，還介紹和分析了對應領域的主流開放原始碼技術。
+
+
+第5 章介紹SDN 的實作案例，包含模擬網路環境架設、虛擬網路裝置部署、典類型資料流分析等環節中的詳細步驟，並重點介紹基於Floodlight 控制器開發SDN 應用的工作流程和註意事項，將有助讀者透過動手實作加深對SDN 的瞭解。
+
+
+第6 章和第7 章分別介紹SDN 的應用場景和現狀展望，全面地闡釋在各種應用場景中引用SDN 的策略和方法，介紹SDN 產業現狀及其標準化進展，並深入分析和闡述了SDN 面臨的機遇和挑戰，幫助讀者辨析SDN 的未來方向和發展前景。
+
+
+在SDN 技術研究和本書的撰寫過程中，我們獲得了中國電信集團公司和中國電信北京研究院的大力支持。SDN 興起伊始，研究院主管就鼓勵我們積極參與SDN 業界的各項活動，並創造各種環境支援我們對相關技術進行研究，為我們深入瞭解產業進展、快速熟練核心技術提供了很多便利。
+
+
+希望本書中展現的成果能為讀者呈現出SDN 的全貌，幫助大家撥開SDN 的迷霧、領悟SDN 的真諦，並最後推動SDN 的應用與推廣。
+
+
+SDN 方興未艾，目前仍處於快速發展之中，因此書中內容難免存在紕漏之處，還請各位專家和讀者不吝賜教。
+
+
+
+
+
+詳細資料top 
+
+                               語言：中文繁體規格：平裝分級：普級開數：18開17*23cm頁數：256
+                               出版地：台灣
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網路技術相關書籍
+延伸閱讀推薦
+延伸推薦
+
+
+
+
+
+
+
+
+
+延伸推薦top 
+
+
+
+
+
+Cisco Ise for ...
+
+特價 3527元
+
+
+
+
+
+The Darkening ...
+
+特價 945元
+
+
+
+
+
+Ipv6 Fundament...
+
+特價 3023元
+
+
+
+
+
+Unsolved!...
+
+特價 1103元
+
+
+
+
+
+Minitel...
+
+特價 1764元
+
+
+
+
+
+
+
+
+
+
+
+
+共0篇好評top 
+寫書評去 >
+
+
+
+
+
+
+
+
+
+
+商品標籤 (什麼是標籤？)
+
+UML資訊工程學系
+
+
+
+我的標籤新增
+
+
+
+
+
+
+
+
+
+團體專屬服務top
+
+團體專屬服務
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+訂購須知top 
+防治詐騙，提醒您!!金石堂及銀行均不會請您操作ATM! 如接獲電話要求您前往ATM提款機，請不要聽從指示，以免受騙上當! 
+
+商品運送說明：
+當商品送達金石堂門市或便利商店後，您會收到E-mail及APP出貨/到貨通知，您也可透過【訂單查詢】確認到貨情況。
+建議您可下載『金石堂APP』並開啟推撥設定，即可收到相關出貨/到貨通知訊息。
+並請您於指定期限內取貨付款，若逾期未取，您取貨的金石堂門市或便利商店將會辦理退貨作業。
+產品顏色可能會因網頁呈現與拍攝關係產生色差，圖片僅供參考，商品依實際供貨樣式為準。 
+
+退換貨說明：
+依據「消費者保護法」第19條及行政院消費者保護處公告之「通訊交易解除權合理例外情事適用準則」，以下商品購買後，除商品本身有瑕疵外，將不提供7天的猶豫期：
+
+                            1、 易於腐敗、保存期限較短或解約時即將逾期。（如：生鮮食品）
+                            2、 依消費者要求所為之客製化給付。（客製化商品）
+                            3、 報紙、期刊或雜誌。（含MOOK、外文雜誌）
+                            4、 經消費者拆封之影音商品或電腦軟體。
+                            5、 非以有形媒介提供之數位內容或一經提供即為完成之線上服務，經消費者事先同意始提供。（如：電子書、電子雜誌、下載版軟體、虛擬商品…等）
+                            6、 已拆封之個人衛生用品。（如：內衣褲、刮鬍刀、除毛刀…等）
+若非上列種類商品，商品均享有到貨7天的猶豫期（含例假日）。
+辦理退換貨時，商品（組合商品恕無法接受單獨退貨）必須是您收到商品時的原始狀態（包含商品本體、配件、贈品、保證書、所有附隨資料文件及原廠內外包裝…等），請勿直接使用原廠包裝寄送，或於原廠包裝上黏貼紙張或書寫文字。退回商品若無法回復原狀，將請您負擔回復原狀所需費用，嚴重時將影響您的退貨權益。
+
+
+
+
+
+
+
+
+
+
+中文書籍分類
+
+文學財經企管生活風格飲食料理心理勵志醫療保健旅遊宗教命理教育/親子教養童書羅曼史輕小說漫畫語言／字辭典藝術設計電腦資訊
+程式設計
+網頁設計
+繪圖／影音／多媒體
+辦公軟體／應用軟體
+作業系統
+資料庫
+3C數位生活
+APPLE專區
+認證考試
+網路／安全／概論
+網路技術
+雲端技術
+系統分析／設計
+計算機概論
+電腦專業辭典
+
+
+其他電腦資訊
+
+自然科普人文歷史社會哲思考試書／政府出版品參考書全部的分類 >>
+
+
+
+
+相關商品
+
+
+雜誌
+
+
+
+PC DIY! 7月2017第245期
+數位狂潮DIGITREND 2017第44期
+PC HOME 電腦家庭 7月2017第258期
+MAXIMUM PC Spcl: BUILD IT:The Perfect PC Vol.2 2017
+PC DIY! 6月2017第244期
+
+
+
+
+
+
+
+
+
+外嵌連結
+網路設備都能虛擬化：SDN軟體定義網路實作白皮書
+
+
+
+在金石堂門市找此書
+                         選擇縣市：
+
+請選擇
+基隆市
+臺北市
+新北市
+桃園市
+新竹市
+新竹縣
+宜蘭縣
+苗慄市
+苗慄縣
+南投縣
+臺中市
+雲林縣
+彰化縣
+嘉義市
+臺南市
+高雄市
+屏東縣
+
+查詢
+
+
+
+
+
+
+
+
+
+
+
+
+↑回上方
+
+金石堂網路書店
+
+首頁
+關於金石堂網路書店
+人才招募
+客服中心
+異業合作
+出版情報
+手機版
+關於金石堂書店
+金石堂書店全台門市
+
+
+
+客服專線：02-2364-9989
+傳真：02-2364-4672
+客服時間：週一至週五 9：00∼12：30 及 13：30∼18：00（例假日除外）
+地址：100 台灣臺北市中正區汀州路三段 160 巷 3 號 2 樓
+Copyright©2016, Digital Kingstone Co., Ltd. 金石網絡股份有限公司
+
+
+
+
+
+
+瀏覽本站建議使用：Internet Explorer 8.0 以上或 FireFox、Google Chrome、Safari 等瀏覽器。
+本網站已依台灣網站內容分級規定處理且符合電子商務、安全交易
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+金石堂APP出/到貨提醒不漏接，讓您便利隨行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.15
+
+
+
+
+
+
+
+軟體定義的網路適用的 vRealize Network Insight：VMware
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+  產品 
+
+
+
+
+  vRealize Network Insight
+
+
+
+
+
+
+
+
+
+ 說明
+
+
+
+
+
+ 說明
+
+
+
+
+
+
+
+
+
+vRealize Network Insight
+
+概觀
+
+客戶案例
+
+焦點
+
+使用情境
+
+快速入門
+
+資源
+
+
+
+
+
+聯絡銷售人員 
+試用 Hands-On Lab
+
+
+
+
+
+
+
+
+
+
+
+
+
+VMware vRealize Network Insight 在虛擬、實體及多雲環境之間提供軟體定義的網路與安全性智慧型作業
+VMware vRealize Network Insight 提供軟體定義的網路與安全性智慧型作業。協助客戶打造跨多雲環境的最佳化高可用性安全網路基礎架構。加速微分段規劃與部署、實現跨虛擬與實體網路能見度，並提供營運觀點以管理和延展 VMware NSX 部署。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(2:21)
+
+
+
+
+vRealize Network Insight 概觀
+探索 vRealize Network Insight 如何提供實體、虛擬與雲端環境均適用的網路與安全性智慧型作業。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+運用 vRealize Network Insight 做出明智決策
+瞭解美國加州水資源部如何運用 vRealize Network Insight 降低營運成本和總持有成本。
+閱讀個案研究 
+
+
+
+
+
+
+
+
+
+
+
+
+
+資訊圖：如何解決虛擬及實體網路難題
+查看資訊圖表 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+客戶案例 
+數百家客戶已採用 vRealize Network Insight，以在其資料中心內推行軟體定義的資料中心網路與安全性智慧型作業。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+客戶電子書：vRealize Network Insight 和 VMware NSX
+此電子書會重點說明運用 vRealize Network Insight 增加服務層級協定、改善 IT 靈活性和降低軟體定義的資料中心環境複雜性的使用情境。
+
+
+立即閱讀 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(2:53)
+
+
+
+
+採用 VMware 技術的 VMware：使用 vRealize Network Insight 管理 VMware 私有雲
+瞭解 VMware 如何運用 vRealize Network Insight 進行微分段和資料中心管理。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+焦點 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+vRealize Network Insight 3.3
+改善軟體定義的資料中心的安全性與網路管理。
+
+
+閱讀部落格 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+vRealize Network Insight 3.3 功能逐步解說
+vRealize Network Insight 3.3 持續強化頂層和底層網路的能見度和管理。
+閱讀部落格 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+採用 Palo Alto Networks 防火牆的 vRealize Network Insight 解決方案簡介
+使用 vRealize Network Insight 建立及操作以 VMware NSX 與 Palo Alto Networks 防火牆為基礎的軟體定義的資料中心。
+
+
+閱讀解決方案簡介 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+使用 vRealize Network Insight、NSX 及 Palo Alto Networks 進行微分段
+資料中心網路安全是迅速變動的目標，IT 團隊必須不斷搶在不軌人士下手前就先採取行動，才能制敵機先。安全性攻擊來自四面八方，內部和外部都可能會遭受威脅，IT 團隊必須使用零信任安全性方法來強化所有的資料。
+閱讀部落格 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+使用情境
+
+
+
+
+
+
+
+微分段規劃、部署及合規
+• 透過微分段規劃及衡量的安全性影響 • 使用防火牆規則建議來加速微分段部署 • 隨著時間推移持續監控並稽核合規狀態
+
+
+
+
+
+
+
+
+
+
+全方位網路能見度和疑難排解
+• 透過強大的路徑視覺化功能快速排解虛擬機之間的連線問題 • 有效管理事件、警示和問題以迅速解決問題 • 統合虛擬與實體基礎架構之間的疑難排解體驗
+
+
+
+
+
+
+
+
+
+
+
+管理和延展 NSX 部署
+• 透過強大的拓撲及運作狀況視覺化功能，跨多個 NSX Manager 進行延展 • 透過產品內最佳做法檢查清單避免設定問題 • 使用直覺式使用者介面及自然語言搜尋，明確指出問題並加以分級來快速解決問題
+
+
+
+
+
+
+
+
+
+
+管理公有雲安全性
+• 將微分段規劃擴展至 AWS 結構 • 分析 AWS 中的傳輸流量，並瞭解 AWS Virtual Private Cloud (VPC) • 排解 AWS 中虛擬機之間的防火牆問題
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+快速入門 
+
+
+
+
+
+
+
+
+教育訓練資源
+
+
+資訊圖：網路虛擬化的優點
+
+
+
+虛擬及實體網路難題解決方法和美國加州水資源部個案研究
+
+
+
+
+
+
+
+
+
+
+
+
+
+親自體驗和探索
+
+
+Hands-On Lab
+
+
+
+功能逐步解說
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+微分段簡易指南
+瞭解如何開發本質安全的資料中心
+
+
+下載指南 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資源 
+
+
+
+
+
+
+
+
+學習與評量
+
+
+vRealize Network Insight 規格說明
+
+
+
+vRealize Network Insight 常見問題
+
+
+
+運用 vRealize Network Insight 做出明智決策 - 美國加州水資源部個案研究
+
+
+
+
+
+
+
+
+
+
+
+
+
+加入社群
+
+
+VMware 雲端管理部落格
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+安裝與設定
+
+
+vRealize Network Insight 使用者指南
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+使用 VMware NSX 虛擬化網路做到網路虛擬化
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+  產品 
+
+
+
+
+  NSX
+
+
+
+
+
+
+
+
+
+ Follow
+
+
+
+
+
+ Follow
+
+
+
+
+
+ Follow
+
+
+
+
+
+ Follow
+
+
+
+
+
+ Follow
+
+
+
+
+
+ Follow
+
+
+
+
+
+
+
+
+
+NSX
+
+概觀
+
+使用情境
+
+快速入門
+
+比較
+
+成功案例
+
+資源
+
+
+
+
+
+諮詢服務 
+合作夥伴解決方案 
+試用 Hands-On Lab
+
+
+
+
+
+
+
+
+
+
+
+
+
+VMware NSX 是軟體定義的資料中心專用的網路虛擬化平臺。   
+ 
+NSX 能在軟體中建立完整網路，並將這些網路嵌入從底層實體硬體分離出來的虛擬化管理程序層內。所有網路元件均能在數分鐘內佈建完成，完全無需修改應用程式。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(4:09)
+
+
+
+
+NSX 簡介
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+規格說明
+瞭解 NSX 的重要功能和優點。
+立即下載 
+
+
+
+
+
+
+
+
+
+
+
+
+
+NSX 技術簡介
+瞭解 NSX 如何破除硬體式網路的限制，讓您能在快速、靈活且安全的虛擬網路上執行關鍵應用程式。
+觀看隨選線上研討會 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NSX 的使用情境
+
+
+
+
+
+
+
+
+
+安全性 
+NSX 將安全性功能內嵌在虛擬化管理程序中。能為個別工作負載提供微分段和精密的安全性，實現本質上更安全的資料中心。安全性原則隨同工作負載一併移動，且不受工作負載在網路拓撲中的所在位置限制。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+應用程式延續性 
+NSX 將網路從底層硬體抽離，並將網路與安全性原則附加在相關的工作負載上。應用程式與資料可以存放在任何地方，也可從任何地方存取。您可以在資料中心之間移動工作負載，或將工作負載部署到混合雲環境中。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+自動化 
+NSX 讓您能將實體網路當做傳輸容量集區，並以原則導向方式將網路與安全性服務附加到工作負載上。此項特點讓網路運作自動化，並排除了以硬體為基礎之網路所造成的瓶頸。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+快速入門 
+
+
+
+
+
+
+
+
+教育訓練資源
+
+
+NSX 產品逐步解說
+
+
+
+資訊圖：網路虛擬化的優點
+
+
+
+網路虛擬化設計指南
+
+
+
+
+
+
+
+
+
+
+
+
+
+親自體驗和探索
+
+
+擴展您的產品技能組合並試用產品
+
+
+
+網路虛擬化基礎課程免費直播活動
+
+
+
+VMware Social Labs 免費直播活動
+
+
+
+線上研討會系列：充分發揮 NSX 的效益
+
+
+
+瀏覽所有 NSX 線上研討會
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網路虛擬化簡易指南
+瞭解網路虛擬化的運作方式和最佳做法。
+
+
+下載指南 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+比較
+NSX 方案：
+
+Standard版本：自動化 IT 工作流程，為資料中心帶來靈活性並降低網路營運成本與複雜性。
+Advanced 版本：Standard 版本再加上本質更安全且具有微分段的資料中心。能幫助確保資料中心最高程度的安全，同時使安全性的 IT 佈建自動化。
+Enterprise 版本：Advanced 版本再加上跨多網域的網路與安全性。讓資料中心網路能擴展到跨多站點，並與高總流量的實體工作負載連接。
+Remote Branch Office 版本：會將遠端或分公司的工作負載作業自動化，並加以保護。
+
+
+
+
+
+
+
+
+
+產品功能
+
+
+Standard
+
+
+Advanced
+
+
+Enterprise
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					分散式交換器
+
+Standard
+
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+*
+
+
+
+產品功能
+					分散式路由
+
+Standard
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+產品功能
+					NSX Edge 防火牆
+
+Standard
+
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					NAT
+
+Standard
+
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					軟體 L2 橋接到實體環境
+
+Standard
+
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+產品功能
+					透過 ECMP (主動-主動) 的動態路由
+
+Standard
+
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					API 驅動的自動化
+
+Standard
+
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					與 vRealize 和 OpenStack 整合
+
+Standard
+
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					透過 vRealize 提供安全性原則自動化
+
+Standard
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					NSX Edge 負載平衡
+
+Standard
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					分散式防火牆保護
+
+Standard
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					與 Active Directory 整合
+
+Standard
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					伺服器活動監控
+
+Standard
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					服務接入 (與協力廠商整合)
+
+Standard
+
+
+Advanced
+
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					跨 vCenter NSX
+
+Standard
+
+
+Advanced
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+產品功能
+					多站點 NSX 最佳化
+
+Standard
+
+
+Advanced
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+產品功能
+					VPN (IPSec 與 SSL)
+
+Standard
+
+
+Advanced
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+產品功能
+					遠端閘道
+
+Standard
+
+
+Advanced
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+產品功能
+					與 HW VTEP 整合
+
+Standard
+
+
+Advanced
+
+
+Enterprise
+
+
+
+遠端分公司
+
+
+
+
+
+
+
+
+*v支援區域網路新應用程式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+成功案例
+
+
+
+
+
+
+
+
+
+
+客戶重點需求
+新墨西哥大學需要不仰賴硬體，就能擁有更高的安全性、微分段和多租戶功能。瞭解這所大學選用 NSX 網路虛擬化的原因。
+觀賞客戶影片 >>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+瞭解更多 NSX 成功案例
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資源 
+
+
+
+
+
+
+
+
+學習與評量
+
+
+資訊圖表：VMware 網路虛擬化
+
+
+
+NSX 產品規格說明
+
+
+
+NSX 解決方案概觀：加速業務運作
+
+
+
+網路虛擬化平臺白皮書
+
+
+
+互動式資訊圖表 – 網路虛擬化
+
+
+
+
+
+
+
+
+
+
+
+
+
+安裝及設定
+
+
+VMware NSX Brownfield 設計與部署指南
+
+
+
+VMware NSX 分散式防火牆保護原則規則組態設定指南
+
+
+
+VMware NSX 安全性強化指南
+
+
+
+
+
+
+
+
+
+
+
+
+
+加入社群
+
+
+VMware NSX 社群網站
+
+
+
+網路虛擬化部落格
+
+
+
+VMware 使用者群組 (VMUG)
+
+
+
+RADIUS：網路虛擬化與 SDN
+
+
+
+訂閱 NSX YouTube 頻道
+
+
+
+到 Twitter 掌握 NSX 的最新動態
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+規劃與設計
+
+
+NSX 產品逐步解說
+
+
+
+NSX 網路虛擬化設計指南
+
+
+
+瞭解更多 NSX 設計指南
+
+
+
+VMware 驗證設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+訓練與認證
+
+
+VMware Education 的 NSX 課程
+
+
+
+NSX 認證
+
+
+
+VCP-NX 研究指南
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4023 @@
+
+
+Untitled Document
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+
+
+ 
+智慧型製造系統 (Intelligent Manufacturing Systems) 的定義為：「利用先進的智能技術 (如專家系統、模糊邏輯、類神經網路等) 和知識庫來建立具有智慧或自我決策能力的製造系統，以便有效率地完成生產線上的關鍵作業程序，順遂達到降低生產成本之最終目的」[1][2][3][4]。
+隨著台灣高科技 (如半導體及TFT-LCD等) 產業之製程技術的持續提升，製程精度之要求亦隨之日益嚴苛，導致產品良率的確保也受到嚴厲的考驗。因此產業界急需要借重具有智慧或自我決策能力的智慧型製造系統 (即IMS) 來達成提升生產效率及降低生產成本的目標。
+一個製造系統可由小至一個生產機台到大至一個供應鏈或工程鏈所組成。傳統的IMS大部分均偏重在發展單一機台的智慧化，如預測保養、失效偵測與分類、虛擬量測、…等等。
+隨著網際網路科技的發展，使得CIM化能進展成E化的境界，導致E化的產物如供應鏈與工程鏈等亦普遍存在於各個高科技產業，並且更進一步地發展成一個E化製造(e-Manufacturing)的全球營運模式。E化製造環境下的供應鏈與工程鏈的智慧化需求則如可製造性設計 (Design for Manufacturability, DFM) 、產能預估 (Capacity Forecasting)、精實生產 (Lean Production) 、…等等。
+一般而言，IMS需具有線上與即時預測能力 [10]；同時，亦需具備即時評估其預測結果是否可靠之能力 [16]。此外，IMS亦需通用化，使其能應用在不同領域，如半導體產業、TFT-LCD產業或其他高科技產業。
+為了達成上述目的，本重點研究以微觀及宏觀的角度將IMS規劃成針對「單一機台內的分散式智慧」及針對「完整製造系統的總體性智慧」等兩個子研發議題。在微觀方面 (Machine Level)，其共通性技術為嵌入式與無線化技術；而在宏觀方面 (Enterprise Level)，則必須先建構完成E化製造的基礎建設 (Infrastructure)。
+ 
+
+智慧型製造系統的範疇
+  
+
+
+ 
+== 研究方向 ==
+
+
+單一機台內的分散式智慧 [17][18]
+
+
+ 
+1.
+嵌入式與無線化技術
+ 
+3.
+失效偵測與分類 [17]
+
+
+ 
+a.
+嵌入式平臺建構
+ 
+a.
+偵測與分析製程失效之原因
+
+
+ 
+b.
+WLAN 無線網路應用技術
+ 
+b.
+建立製程失效模式
+
+
+ 
+c.
+藍芽無線網路應用技術
+ 
+c.
+預測製程可能失效之時機
+
+
+ 
+d.
+無線感應網路應用技術 (ZigBee,RFID,…等)
+ 
+d.
+預先警報之建置
+
+
+ 
+2.
+預測保養 [11]
+ 
+4.
+虛擬量測 [12][13][14][15]
+
+
+ 
+a.
+失效模式之失析與建立
+ 
+a.
+建構兼顧即時性與精度之虛擬量測架構
+
+
+ 
+b.
+設備異常癥兆之偵測
+ 
+b.
+研發虛擬量測系統之信心度的評估方法
+
+
+ 
+c.
+設備剩餘壽命之預估
+ 
+c.
+建構資料品質確保機制
+
+
+ 
+d.
+失效備援機制之建置
+ 
+d.
+建構可進行虛擬製程驗證之虛擬機台
+
+
+ 
+
+
+完整製造系統的總體性智慧
+
+
+ 
+1.
+E化製造基礎建設
+ 
+3.
+產能預估
+
+
+ 
+a.
+資訊網路安全架構建置
+ 
+a.
+在製品監控技術之開發
+
+
+ 
+b.
+大量資料交換框架建置
+ 
+b.
+產能配置技術之開發
+
+
+ 
+c.
+複雜商業流程架構建置
+ 
+c.
+產能預測技術之開發
+
+
+ 
+　
+　
+ 
+d.
+良率預測技術之開發
+
+
+ 
+2.
+可製造性設計
+ 
+4.
+精實生產
+
+
+ 
+a.
+APC 與 DFM 的連結技術與開發
+ 
+a.
+訂單履行程序最佳化
+
+
+ 
+b.
+DFM 知識管理架構的建置
+ 
+b.
+研發程序最佳化
+
+
+ 
+c.
+工程鏈知識整合技術之開發
+ 
+c.
+製造程序最佳化
+
+
+ 
+　
+　
+ 
+d.
+量產程序最佳化
+
+
+  
+
+
+ 
+== 預期成果 ==
+高科技產業在激烈競爭與科技蓬勃發展的環境下，使得從微觀到宏觀及下游到上游的所有製造相關的角色的智慧化與整合成為不可避免的趨勢，所以需要借重智慧型製造系統 (IMS) 的觀念來運作這個龐大的體系。
+以微觀的角度來看，IMS將應用具製造智慧的嵌入式裝置及無線網路技術來將各式製造智慧佈署到全廠的各個機台設備，使之形成一個具有分散式智慧的單一機台，進而致使各個單一設備或製程均具有自我品管，及自我失常診斷與功能恢復的免疫能力。
+以宏觀的角度來看，IMS將在E化製造的基礎建設上建構一個具有總體性智慧的完整製造系統，進而致使可製造性設計、產能預估、精實生產、…等等之功能與任務能有效率地實現。
+在具有分散式智慧與總體性智慧能力的製造系統之運作下，將能有效率地達成提高生產設備的OEE、降低營運成本、縮短產品上市時間與交期等目標，進而強化我國高科技產業在全球市場的競爭力。
+  
+
+
+ 
+== 參考資料 ==
+
+
+ 
+[1]
+
+
+V. Devedzic and D. Radovic, "A framework for building intelligent manufacturing systems," Systems, Man and Cybernetics, Part C: Applications and Reviews, IEEE Transactions on, vol. 29, pp. 422-439, 1999.
+
+
+
+
+ 
+[2]
+
+
+I. S. Jawahir, A. K. Balaji, K. E. Rouch, and J. R. Baker, "Towards integration of hybrid models for optimized machining performance in intelligent manufacturing systems," Journal of Materials Processing Technology, vol. 139, pp. 488-498, 2003.
+
+
+
+
+ 
+[3]
+
+
+I. Drstvensek, M. Ficko, and J. Balic, "Relational database as a cogitative part of an intelligent manufacturing system," Journal of Materials Processing Technology, vol. 157-158, pp. 114-122, 2004.
+
+
+
+
+ 
+[4]
+
+
+D. M. Anderson, Design for Manufacturability & Concurrent Engineering; How to Design for Low Cost, Design in High Quality, Design for Lean Manufacture, and Design Quickly for Fast Production: CIM Press, 2006.
+
+
+
+
+ 
+[5]
+
+
+
+“Design for manufacturability (IC),” August 2007. http://en.wikipedia.org/wiki/Design_for_manufacturability_(IC).
+
+
+
+
+
+
+ 
+[6]
+
+
+Printed Wiring Board Design for Manufacturability Guidelines (Ver. 1.2): HADCO Corporation, 1999.
+
+
+
+
+ 
+[7]
+
+
+R. Aitken, S. Eichenberger, G. Maier, S. Kundu, and H. Walker, "Design for manufacturability [ITC 2003 Roundtable]," Design & Test of Computers, IEEE, vol. 21, pp. 144-156, 2004.
+
+
+
+
+ 
+[8]
+
+
+C. Guardiani, N. Dragone, and P. McNamara, "Proactive design for manufacturing (DFM) for nanometer SoC designs," in Custom Integrated Circuits Conference, 2004. Proceedings of the IEEE 2004, 2004, pp. 309-316.
+
+
+
+
+ 
+[9]
+
+
+A. Xiao, C. C. Seepersad, J. K. Allen, D. W. Rosen, and F. Mistree, "Design for manufacturing: application of collaborative multidisciplinary decision-making methodology," Engineering Optimization, vol. 39, pp. 429 - 451, 2007.
+
+
+
+
+ 
+[10]
+
+
+M. N. Yuniarto and A. W. Labib, "Designing an online and real time simulation, control and monitoring of disturbances in an intelligent manufacturing system," in Industrial Informatics, 2003. INDIN 2003. Proceedings. IEEE International Conference on, 2003, pp. 273-278.
+
+
+
+
+ 
+[11]
+
+
+F.-T. Cheng, S.-L. Wu, P.-Y. Tsai, Y.-T. Chung, and H.-C. Yang, "Application Cluster Service Scheme for Near-Zero-Downtime Services," in Proc. 2005 IEEE International Conference on Robotics and Automation, Barcelona, Spain, pp. 4073-4078, April 2005. 
+
+
+
+
+ 
+[12]
+
+
+P.-H. Chen, S. Wu, J.-S. Lin, F. Ko, H. Lo, J. Wang, C.-H. Yu, and M.-S. Liang,, “Virtual Metrology: a Solution for Wafer to Wafer Advanced Process Control,” in Proc. 2005 IEEE International Symposium on Semiconductor Manufacturing, San Jose, CA ,USA, pp.155-157, Sept. 2005.
+
+
+
+
+ 
+[13]
+
+
+Y.-C. Su, M.-H. Hung, F.-T. Cheng, and Y.-T. Chen, "A Processing Quality Prognostics Scheme for Plasma Sputtering in TFT-LCD Manufacturing," IEEE Transactions on Semiconductor Manufacturing, vol. 19, no. 2, pp. 183-194, May 2006. 
+
+
+
+
+ 
+[14]
+
+
+J. Chang and F.-T. Cheng, "Application Development of Virtual Metrology in Semiconductor Industry ," in Proc. of The 31th Annual Conference of the IEEE Industrial Electronics Society (IECON 2005), Raleigh, North Carolina, U.S.A., November 2005.
+
+
+
+
+ 
+[15]
+
+
+F.-T. Cheng, H.-C. Huang, and C.-A. Kao, "Dual-Phase Virtual Metrology Scheme," to appear in IEEE Transactions on Semiconductor Manufacturing, November 2007.
+
+
+
+
+ 
+[16]
+
+
+F.-T. Cheng, Y.-T. Chen, Y.-C. Su, and D.-L. Zeng, "Method for Evaluating Reliance Level of a Virtual Metrology System," in Proc. 2007 IEEE International Conference on Robotics and Automation, Roma, Italy, pp.1590-1596, April 2007.
+
+
+
+
+ 
+[17]
+
+
+Equipment Engineering Capabilities (EEC) guidelines, v2.5, International SEMATECH, July, 2002. [Online]. Available: http://ismi.sematech.org/emanufacturing/docs/eecguidebook.pdf
+
+
+
+
+ 
+[18]
+
+
+Y.-C. Su, F.-T. Cheng, M.-H. Hung, and H.-C. Huang,"Intelligent Prognostics System Design and Implementation," IEEE Transactions on Semiconductor Manufacturing, vol. 19, no. 2, pp. 195-207, May 2006.
+
+
+
+
+ 
+[19]
+
+
+H.-P. Huang, Y.-H. Liu, and C.-S. Wong, "Automatic EMG feature evaluation for controlling a prosthetic hand using supervised feature mining method: an intelligent approach," in Proc. 2003 IEEE International Conference on Robotics and Automation, 2003, pp. 220-225. 
+
+
+
+
+ 
+[20]
+
+
+H.-P. Huang and Y.-T. Chang, "Robust Design for RFID System Testing and Applications," in Proc. 2007 IEEE International Conference on Robotics and Automation, 2007, pp. 4594-4599. 
+
+
+
+
+ 
+[21]
+
+
+J. T. Lin, T.-L. Chen, T. Tsai, J.-J. Lai, and T.-C. Huang, "A SCOR-Based Methodology for Analyzing and Designing Supply Chain," International Journal of Electronic Business Management, vol. 13,no. 1, pp. 1-7, 2005.
+
+
+
+
+ 
+[22]
+
+
+K. J. Wang, J. T. Lin, and G. Weigert, "Agent-based interbay system control for a single-loop semiconductor manufacturing fab," Production Planning & Control, vol. 18,no. 2, pp. 74 - 90, 2007.
+
+
+
+
+ 
+[23]
+
+
+
+R.-S. Lee, Y.-M. Chen, H. Yu Cheng, and M.-D. Kuo, "A framework of a concurrent process planning system for mold manufacturing," Computer Integrated Manufacturing Systems, vol. 11,no. 3, pp. 171-190, 1998.
+
+
+
+
+
+
+ 
+[24]
+
+
+
+R.-S. Lee, J.-P. Tsai, Y.-C. Kao, G. C. I. Lin, and K.-C. Fan, "STEP-based product modeling system for remote collaborative reverse engineering," Robotics and Computer-Integrated Manufacturing, vol. 19,no. 6, pp. 543-553, 2003.
+
+
+
+
+
+
+ 
+[25]
+
+
+
+T.-A. Chiang, A. J. C. Trappey, and C.-C. Ku, "Using a knowledge-based intelligent system to support dynamic design reasoning for a collaborative design community," The International Journal of Advanced Manufacturing Technology, vol. 31,pp. 421-433, 2006.
+
+
+
+
+
+
+ 
+[26]
+
+
+C. V. Trappey, A. J. C. Trappey, G. Y. P. Lin, and W.-T. Lee, "Business and logistic hub integration to facilitate global supply chain linkage," Journal of Engineering Manufacture vol. 221,pp. 1221-1233, 2007.
+
+
+
+
+ 
+[27]
+
+
+Rother, M., and Shook, J., 2003, Learning to See: Value Stream Mapping to Create Value and Eliminate Muda, Version 1.3, Lean Enterprise Institute, Brookline, MA. 
+
+
+
+
+ 
+[28]
+
+
+
+J.K. Liker, 2003, Lean Thinking: Banish Waste and Create Wealth in Your Corporation, 2nd edition, Free Press, New York.
+
+
+
+
+
+
+ 
+[29]
+
+
+J.K. Liker and D. Meier, 2006, The TOYOTA Way Fieldbook: A Practical Guide for Implementing Toyota’a 4Ps, McGraw Hill, New York.
+
+
+
+
+ 
+ 
+
+
+
+
+ 
+
+
+
+
+            智慧型製造系統 -華人百科                       智慧型製造系統  智慧型製造系統是一種由智慧型機器和人類專家共同組成的人機一體化智慧型系統，它在製造過程中能以一種高度柔性與集成不高的方式，藉助計算機模擬人類專家的智慧型活動進行分析、推理、判斷、構思和決策等，從而取代或者延伸製造環境中人的部分腦力勞動。同時，收集、存貯、完善、共享、集成和發展人類專家的智慧型。  中文名稱 智慧型製造系統 組成部分 智慧型機器、人類專家 特    徵 自組織、自律、自學習等 功    能 分析、推理、判斷、構思、決策      概念解析所謂智慧型製造，就是面向產品全生命周期，實現泛在感知條件下的信息化製造。智慧型製造技術是在現代感測技術、網路技術、自動化技術、擬人化智慧型技術等先進技術的基礎上，通過智慧型化的感知、人機互動、決策和執行技術，實現設計過程、製造過程和製造裝備智慧型化，是信息技術、智慧型技術與裝備製造技術的深度融合與集成。智慧型製造，是信息化與工業化深度融合的大趨勢。 智慧型製造系統智慧型製造系統是一種由智慧型機器和人類專家共同組成的人機一體化智慧型系統，它在製造過程中能以一種高度柔性與集成不高的方式，藉助計算機模擬人類專家的智慧型活動進行分析、推理、判斷、構思和決策等，從而取代或者延伸製造環境中人的部分腦力勞動。同時，收集、存貯、完善、共享、集成和發展人類專家的智慧型。 智慧型工廠 特徵:自組織能力;自律能力;自學習和自維護能力;整個製造環境中智慧型繼承。 MES系統作為車間信息管理技術的載體，製造執行系統MES在實現生產過程的自動化、智慧型化、網路化等方面發揮著巨大作用。MES處於企業級的資源計畫系統ERP和工廠底層的控制系統SFC之間，是提高企業製造能力和生產管理能力的重要手段。 MES系統             智慧型製造系統 @ 華人百科  勵志人生 國語字典辭典 詩詞大全 小語 腦筋急轉彎    
+
+
+
+
+
+
+製造組 - 台灣科技大學機械工程系 
+
+
+
+
+
+
+Your browser does not support JavaScript!
+
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+分類清單
+
+
+
+
+
+
+最新消息
+佈告欄
+演講及短期授課資訊
+榮譽榜
+獎學金
+競賽消息
+
+
+系所資訊
+系所簡介
+系所位置
+教育目標與核心能力
+系主任的話
+本系歷屆系主任一覽表
+105學年度導師名單
+
+
+系所成員
+
+專任師資
+專任師資總表
+固力設計組
+製造組
+熱流組
+控制組
+材料組
+
+名譽教授
+兼任師資
+退休教師
+系所職員
+
+
+招生資訊
+大學部
+研究所碩士班
+研究所博士班
+
+
+課務資訊
+
+學則規定
+大學部
+研究所碩士班
+研究所博士班
+
+
+各組專業課程
+固力組
+製造組
+熱流組
+控制組
+材料組
+
+
+大學部學程課程
+學程證明申請
+智慧製造學程
+
+
+課程地圖
+課程地圖
+
+
+
+系所資源
+Office Hours
+
+教學實驗室
+CAE電腦教室
+
+金相實驗室
+手動型洛氏硬度計
+微小維克式硬度計
+金相鑲埋機
+全自動洛氏硬度試驗機
+Nakazawa 精密切割機
+維克氏硬度計
+Heiwa 精密切割機
+
+
+流力與熱工實驗室
+流場可視化水槽
+新熱電偶實驗設備
+火焰穩定儀
+彎曲流損測試台
+空氣壓縮機 CPT-280
+熱交換器
+空氣流動台 AF-11
+
+
+電子電路實驗室
+三用電錶
+電源供應器
+示波器
+函數產生器
+
+
+自動控制實驗室
+空壓機 CS-50
+冷凍式空氣乾燥機
+
+
+材料實驗室
+Shore硬度試驗機
+彎曲試驗機
+100頓萬能試驗機(SHIMADZU)
+硬度試驗機
+100頓萬能試驗機
+30頓萬能試驗機
+衝擊試驗機
+
+
+精密五軸加工中心
+CNC加工中心機
+五軸加工機
+CNC 線切割機
+CNC 放電加工機
+CNC車床
+
+
+鑄造實驗室
+拉力試驗機
+伺服電子精密壓床
+恆電位 電流儀
+金屬焊接裝置及吸煙萬向定位裝置
+500M-TON 熱間擠型機
+
+
+精密量具室
+真圓度測定儀
+三次元座標測定機
+錶面粗糙度量測系統
+臥式投影機
+雷射動態量測系統
+
+
+機械工廠
+半自動油壓帶鋸床
+鑽床
+攻牙鑽孔雙用機
+立式銑床
+高速精密車床(楊鐵)
+高速精密車床(金竑)
+圓筒磨床
+
+
+
+會議室
+E1-470教室
+E1-100-1會議室
+E1-100-2會議室
+E1-211會議室
+T3-718會議室
+
+
+表單下載
+博碩士學位口試相關資料
+研究/建教/產學合作計畫
+工具操作認證
+經費支用
+實務專題
+輔導表
+雜項
+
+作業流程
+
+網站連結
+各大學連結
+國立台灣科技大學機械工程繫系學會(Facebook)
+
+教師專區
+
+常見問與答
+技術類問答
+行政類問答
+
+105-1實習課表
+
+
+就業資訊
+職涯進路地圖
+校外實習專區
+校外實習公告
+企業求才
+徵求師資
+
+
+國際合作
+海外修學
+
+
+產學合作
+產學合作專區網頁
+
+
+技術服務
+
+機械設計加工服務中心
+CNC車床(Fanuc 0T)
+CNC車銑複合機(0i-TD)
+CW43線切割機(慶鴻)
+D433CL放電加工機
+(TNC620)MV154加工中心機
+(Fanuc 0M)MV-3A加工中心機
+(西門子840D)UX300五軸加工機
+(海德漢iTNC530)UX300五軸加工機
+
+
+材料試驗室
+委託書
+收費表
+
+
+奈米壓痕機
+申請表
+
+
+
+工業安全與衛生
+
+最新及重要資訊
+實驗室安全衛生作業守則
+排煙櫃測考題目
+排煙櫃安全宣教
+
+環安室
+
+系學會FB
+系友會網站
+系友會FB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+ > 
+課務資訊 
+ > 
+各組專業課程 
+
+	字體大小調整
+	小
+中
+大
+
+
+Your browser does not support JavaScript!
+
+
+
+
+
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+製造組
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+製造組課程分類表
+
+
+
+
+精密製造
+
+
+CAD/CAM
+
+
+智慧型製造
+
+
+
+
+大  學  部
+
+
+
+
+ME3303
+製造學
+
+
+ME2010
+電腦輔助機械製圖
+
+
+ME4312
+智慧化製造系統
+
+
+
+
+ME 4006
+精密量測學
+
+
+ME 3207
+電腦輔助設計概論
+
+
+ME3323
+自動化光學檢測概論與實務
+
+
+
+
+ ME 4008
+精密量測實習
+
+
+ME 3305
+數值控制工具機
+
+
+ME 3216
+電腦輔助機電系統設計與實作
+
+
+
+
+ME 4311
+精密工程概論
+
+
+ME 3206
+數控工具機實習
+
+
+ME 3309
+電腦整合製造概論
+
+
+
+
+ME4339
+積層製造概論
+
+
+ME3311
+五軸NC加工
+
+
+ ME3213
+嵌入式系統於機電整合之應用
+
+
+
+
+ME 4300
+切削學
+
+
+ME3312
+五軸NC加工實習
+
+ 
+
+
+
+ ME 3301
+磨潤學
+
+
+ 
+
+
+ 
+
+
+
+
+ME4301
+沖壓加工與沖模設計
+
+
+ 
+
+
+ 
+
+
+
+
+研  究  所
+
+
+
+
+ME 5312
+高等精密量測學
+
+
+ME5203
+計算機輔助設計
+
+
+ME5500
+智慧型製造系統
+
+
+
+
+ ME5331
+超精密加工機械設計特論
+
+
+ME5321
+電腦輔助模具設計與分析
+
+
+ME 6301
+機械製造系統工程
+
+
+
+
+ ME5332
+晶圓平坦化加工技術特論
+
+
+ME 5317
+製造設計學
+
+
+ME 6303
+彈性製造系統理論與實驗
+
+
+
+
+ ME 5316
+微奈米製造技術
+
+
+ME5339
+進階工具機技術
+
+
+ME5001
+高等工程分析
+
+
+
+
+ME5324
+光電半導體材料製造技術
+
+
+ME5335
+五軸加工與量測
+
+
+ME5301
+製造分析
+
+
+
+
+ME5334
+先進加工技術特論
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+ME5326
+先進模造成形技術
+
+
+ 
+
+
+ 
+
+
+
+
+ME 5307
+雷射加工
+
+
+ 
+
+
+ 
+
+
+
+
+ME5318
+高等磨潤學
+
+
+ 
+
+
+ 
+
+
+
+
+  ME5340
+高等切削學
+
+ 
+
+ 
+
+
+
+
+ME5310
+特殊製造技術
+
+ 
+
+ 
+
+
+
+
+ME5333
+積層製造
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+瀏覽數  
+
+
+
+
+
+
+
+友善列印
+
+
+
+
+
+將此文章推薦給親友
+
+
+
+稱呼:
+
+
+
+親友Email:
+
+
+
+推薦說明:
+請輸入推薦說明
+
+
+驗證碼:
+
+
+
+
+驗證碼:
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+Voice Play
+
+
+
+更換驗證碼
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright ©2017 國立台灣科技大學機械工程系
+10607臺北市大安區基隆路四段43號工程一館100室 電話:(02)2737-6464 傳真:(02)2737-6460 
+No. 43, Keelung Rd., Sec. 4, Taipei 10607, Taiwan, R.O.C., Tel:+886-(0)2-2737-6464 Fax:+886-(0)2-2737-6460
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+自動化到智慧化 製造系統效益全面提昇 - DIGITIMES 物聯網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+    
+
+
+			星期五 
+			,7月 21日, 2017 (臺北)
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+					輸入e-mail信箱，訂閱DIGITIMES物聯網電子報，免費提供您全球最新的領域別智慧應用資訊，豐富您的產業知識、激盪您的創意靈感、發現您的合作商機，讓您成為物聯網世代下的創新者、領先者。
+				
+
+					請勾選您感興趣的領域別應用頻道，DIGITIMES將在每日為您篩選、寄出所感興趣的智慧應用報導與產品方案。
+				
+
+
+
+ 工業4.0
+ 車聯網
+ 智慧醫療
+ 智慧城市
+
+
+
+
+						四頻道所涵蓋領域，未來將依產業發展與市場需求狀況，陸續發展出新的獨立頻道。新頻道上線時，DIGITIMES將主動通知訂戶調整訂閱項目，讓讀者享有更精準的內容閱讀服務。瞭解頻道內容
+
+
+
+								大椽股份有限公司「DIGITIMES」基於個資法令需徵求您同意以下說明：
+凡勾選訂閱訂閱DIGITIMES物聯網電子報之讀者，我們將會透過Email發送廣告信件，提供重要產品資訊及研討會等各項廣宣訊息。DIGITIMES將妥善保存您提供的資料，不會提供予第三人或挪為他用。關於個人資料的蒐集、處理及利用，請參考「DIGITIMES網站隱私權聲明」詳細說明。
+若您不希望再收到類似的廣告訊息，請取消訂閱。
+若您不同意接收DIGITIMES廣告訊息，將無法完成訂閱。
+								  我同意以上說明內容
+							
+
+
+
+
+ (不區分大小寫)
+					
+確定
+
+
+
+
+
+
+
+
+
+
+
+
+
+  物聯網    
+
+自動化到智慧化 製造系統效益全面提昇
+
+
+DIGITIMES企劃
+
+
+2014-03-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						ICT技術的加持，強化了機器視覺的應用功能，是自動化轉變為智慧化的典型案例。DIGITIMES
+					
+
+
+
+製造業應用自動化系統由來已久，但在競爭日趨激烈的市場環境中，自動化必須進一步提升為智慧化，方能使企業立於不敗之地，但自動化如何進化為智慧化？智慧化將為企業帶來哪些效益？這不只是導入企業的難題，也是設備供應端必須深思的問題。 2013年4月，在漢諾威工業博覽會中，德國提出了工業4.0(Industry 4.0)的概念，正式宣告智慧製造為核心的新世代工業型態，將成為第4波工業革命，但儘管智慧化已被視為製造系統的未來，但「智慧化」3個字十分模糊，何謂智慧化？智慧化製造系統應該具有什麼功能？不僅使用端的製造業者說不上來，連供應方的設備系統廠商也有不同認知。雖然業界對智慧工廠還沒有共識，不過供應商的產品共同訴求倒是相當一致，都與現行自動化系統的「降低成本、提升效率」建置目標相同，只不過是自動化系統的再延伸版與放大版。目前的自動化系統包括感測、運算處理、邏輯推理判斷、反應等4個子系統，將這4個子系統進一步強化並將之整合，就是製造業從自動化邁向智慧化之路。由於生產系統的內容架構必須因應導入企業的需求做變化，因此這4大子系統的規模設計，也沒有一定標準，過去自動化製造系統中，各環節的工作內容固定，每站只做自己分內的組裝工作，直到最後產品完成，這類流水線生產模式由來已久，以往產品生週期長，且製造模式為少樣多量型態，這種生產方式足敷所需，不過近年來消費者的胃口瞬息萬變，造成產品生命週期愈來愈短，客製化產品日趨多樣，製造成本也跟著難以控制；此外，更加複雜的其他因素變項，使得廠商必須隨時面對不穩定的訂單、少量多樣的生產、生產良率的控制，以及備料庫存壓力等相關問題，已對傳統自動化生產模式造帶來重大挑戰，這也是自動化系統為何有必要轉化為智慧化的主要原因。製程全面掌握 快速提升競爭力至於智慧化將為製造業帶來哪些改變？以目前設備供應商提出的產品功能，可以歸納出幾個選項，包括清楚掌握產銷流程、提高生產過程的可控性、減少生產線上人工的乾預、即時正確地蒐集生產線數據，以及合理的生產計畫編排與生產進度等，這些都是業者提升競爭力及生產力所必須掌握的關鍵項目。 除了製造現場的系統掌控，產品設計也是智慧工廠的系統架構重點，現在產品除了上市時間越來越快，產品功能也漸趨多元，這兩個因素不但大量擠壓了研發時間，產品內部設計也越見複雜，為使產品能兼具上市時間與多元功能兩項需求，善用可用研發資源，進行協同設計已成企業重要的研發策略，然而協同設計牽涉的部門人員眾多，所彙整的資料也相當龐雜，如何駕馭繁雜的資料量，將設計流程化繁為簡是企業面對研發的必要課題。以汽車設計為例，在各類先進模擬設計系統的協助下，汽車的整車設計時間在過去20年間縮減了一半，而近幾年汽車電子技術進展快速，車輛越來越多的功能必需透過電子產品實現，就目前來看，中高階車輛的電子模組已超過40個，電子電氣相關零部件成本已佔車體成本35%，因此電子電氣的開發與驗證，已成為整車開發時的重要環節。越來越龐雜的電子模組架構，若依照傳統的開發流程，從需求定義、系統設計、樣板成品、測試等環節逐一進行，將會耗費大量時間，例如在需求定義端無法迅速驗證，或系統設計時，初期受測硬體不完整且整體成本過高，使得設計出現缺陷，而這些問題大都在實體完成時才會浮現，就一般經驗來看，錯誤修正成本與發現時間成正比，在流程前端發現錯誤，所支付的各項成本最低，若到最後環節才發現，則必須逐層回溯，無論是金錢、時間、人力，都會耗費大量成本。因此，現在的汽車製造在設計期，從需求定義端就得逐步創建系統模型，再透過詳細的演算法設計產生自動代碼，讓需求在虛擬模型中得以實現，各部門在協同設計時若發現錯誤，就可即時修改，大幅降低車輛在實體問世後才出現的錯誤，透過模擬軟體的自動代碼生成，模型可公用於設計與測試，模組化設計也有利於系統調校，同時系統化管理軟體內容，有效簡化設計流程，縮短整車設計時間。視覺技術讓製造系統更聰明 在生產階段，智慧化製程的重點在於提高產線彈性。一般的作法有兩種，一是在設備中建置感測器，感測器可快速判斷工件的類別，改變生產方式，但只要所需處理的工件種類變多，系統複雜度也必須同步提升，另一是將產線系統設備模組化，一旦產品或製程需要改變，只要將產線拆開重組，即可組裝成適合的生產系統。這2種方式都會牽涉到系統整合，而在系統整合之前，必須強化系統中各類自動化技術。以機器視覺為例，品管向來是產品品質最後把關的環節，在機器視覺技術未臻成熟之前，過去都以人力為主，以太陽能、LED產業為例，就有超過20%的人力投註在此，不過產品檢測單調且冗長的作業模式，容易使操作者出現疲勞、註意力分散等問題，現在機器視覺技術逐漸精進，足以擔當產品檢測重任，因此可以被導入產線以提高了產能、降低成本。目前機器視覺化的檢測作法，是將視覺感測器與鏡頭，直接建在系統設備上，當產品傳送至該站時，即可被檢測，這種作法的好處有兩個，一是可以全檢，與一般的抽檢方式，全檢可使產品品質獲得全面性保障，另一個優點則是速度快，可加快檢測速度。視覺檢測是現代自動化系統相當重要的部分，而此一技術也是現代與傳統自動化的主要差異，20年前機器視覺因技術尚未成熟，與自動化系統整合的難度相當高，就算整合進去，判別速度也有限，不過隨著視覺演算、判斷法則的進步，再加上現在電腦的功能比過去強大許多，視覺檢測未來應會大量應用在各類製程。從視覺技術的例子可以看到，製造設備從自動化到智慧化的實際演變，至於整體系統的智慧趨勢，業界看法雖然紛紜，不過仍可歸納出一個重點，即是「虛實整合」，虛實整合除了現有軟硬兩端技術相互為用之外，也大量應用了ICT技術，像是前文提到，在實際物品在設計時，就先在軟體系統上以非常嚴謹的模式計算、模擬出來，此一方式可以大量減少執行時容易產生的錯誤成本。因此智慧工廠與ICT技術整合已成趨勢，智慧化系統的4個步驟－感測、運算處理、邏輯推理判斷、反應，目前的研究多與ICT技術有關，例如在感測方面，就將與近來相當火紅的物聯網結合，未來製造系統中，每個物件都會內建感測器，紀錄設備狀況後，再將訊息回報給使用者，目前已有機械廠商將感測器建入線性滑軌、主軸中，全球多數領導廠商也都已有相關作法，觀察目前發展態勢，智慧工廠的各種建置都已加速佈局中，未來幾年將可逐漸看到成果。
+
+
+
+
+&nbsp分享
+&nbsp分享
+&nbsp轉寄
+&nbsp列印
+
+
+
+
+
+
+
+
+更多關鍵字報導：
+自動化
+電腦整合製造系統(Computer Integrated manufacturing)
+智慧化
+機器視覺(machine vision)
+工業4.0(Industry 4.0)
+智慧工廠(Smart Factory)
+智慧製造(Smart Production)
+
+
+
+
+
+最新文章
+
+
+
+
+
+
+
+MIT發表穿戴式IoT安全原型Saftey++
+
+
+
+
+
+
+
+工業4.0帶來全新製造風格　企業從傳統價值鏈明確轉型
+
+
+
+
+
+
+
+剖析工業物聯網生態圈的六大層次
+
+
+
+
+更多
+
+
+
+最新產品方案
+
+
+
+
+
+
+
+迎戰AI shopping時代   輕鬆掌握智慧商務DNA
+
+
+
+
+
+
+
+全新R&S TS-290載波接收測試系統 促進物聯網整合
+
+
+
+
+
+
+
+從現場端到管理端 PROFACE軟硬整合前進工業4.0
+
+
+
+
+更多
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Digitimes物聯網
+
+
+
+
+ 熱門文章
+
+
+
+
+
+ AI領域人才需求三年內成長8倍　大陸吸引磁力漸強
+
+
+
+
+
+
+ 英國醫療工作者  每天因IT問題浪費20分鐘
+
+
+
+
+
+
+ 指紋辨識晶片殺價普及　迎來智慧門鎖市場爆發
+
+
+
+
+
+
+ 工業4.0非一蹴可幾　模組化IPC落實擴充彈性
+
+
+
+
+
+
+ 奧迪AI引爆車聯網話題　半導體零件佔比創新高
+
+
+
+
+
+
+
+
+ 推薦活動
+
+
+
+
+
+雲端物聯網&啟動工業4.0研討會
+
+
+
+
+
+2017 IIOT架構技術及Matrikon Flex OPC UA SDK新產品研討會
+
+
+
+
+
+2017 軟體品質與App資安研討會-臺北
+
+
+
+
+
+D Forum 2017 電源技術論壇：高效能電源技術設計趨勢
+
+
+
+
+
+IBM Cloud X SAP HANA雲端技術論壇
+
+
+
+
+
+
+
+ 最新技術專輯
+
+
+
+
+智慧醫療應用專輯
+
+
+
+
+智慧工廠專輯
+
+
+
+
+2017工業安全與環境監控論壇專輯
+
+
+
+
+2017雲端資安論壇專輯
+
+
+
+
+網通技術專輯
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於我們
+							·
+							著作權
+							·
+							隱私權
+							·
+							常見問題
+							·
+							發布新聞稿( 中文 、 English )							
+							·
+							人才招募
+
+
+							■
+							中文簡體版
+							 
+							■ English   
+						
+
+
+							下載新聞App
+
+
+
+							下載活動+App
+
+本網站內之全部圖文，係屬於大椽股份有限公司所有，非經本公司同意不得將全部或部分內容轉載於任何形式之媒體 © DIGITIMES Inc. 版權所有
+
+
+
+
+
+
+ 
+關於我們  | 
+										服務說明  | 
+										著作權  | 
+										隱私權  | 
+										常見問題  | 
+										發布新聞稿( 中文 、 English )  | 
+										
+
+
+
+建議使用Chrome、Firefox、或IE 9.0以上版本
+
+
+									■
+									中文簡體版
+									 
+									■ English        
+								
+
+
+
+
+
+科技網
+物聯網
+椽經閣
+活動＋
+DIGITIMES
+
+
+
+
+
+
+產業
+
+
+
+
+
+● 半導體/零組件
+
+
+● 光電/顯示
+
+
+● 物聯科技/智慧製造
+
+
+● CarTech/綠能
+
+
+● 行動/通訊
+
+
+● 網路/電商
+
+
+● IT/醫電
+
+
+● 數位家庭/VR
+
+
+● 圖表
+
+
+
+
+
+
+區域
+
+
+
+
+
+● 東南亞/紐澳
+
+
+● 南亞
+
+
+● 東亞
+
+
+● 國際
+
+
+● 宏觀/商業
+
+
+● 圖表
+
+
+
+
+
+
+Research
+
+
+
+
+
+● 電腦運算
+
+
+● 數位家庭
+
+
+● 可攜式CE
+
+
+● 行動通訊
+
+
+● 寬頻與無線
+
+
+● 大尺寸FPD
+
+
+● 中小尺寸FPD
+
+
+● IC設計
+
+
+● IC製造
+
+
+● LED/節能
+
+
+● 物聯網
+
+
+● CarTech
+
+
+
+
+
+
+議題
+
+
+
+
+觀點
+
+
+
+
+電子時報
+
+
+
+
+報導總覽
+
+
+
+
+科技商情
+
+
+
+
+企業IT
+
+
+
+
+雲端
+
+
+
+
+工控自動
+
+
+
+
+展會專區
+
+
+
+
+
+
+
+工業4.0
+
+
+車聯網
+
+
+智慧醫療
+
+
+智慧城市
+
+
+系統開發設計
+
+
+產品應用服務
+
+
+
+
+
+
+
+同窗、同學
+
+
+ 椽家之言
+
+
+
+科技行腳
+
+
+ 作者群
+
+
+ 關於專欄
+
+
+
+
+
+
+
+
+所有活動
+
+
+D Forum
+
+
+研討會
+
+ 
+												 
+
+
+												下載活動+App
+
+
+
+
+
+
+
+
+
+關於我們
+
+
+會員服務
+
+
+商情電子報訂閱
+
+
+訂閱電子時報
+
+
+整合行銷服務
+
+
+人才招募
+
+
+聯絡我們 
+
+
+
+												 
+
+
+												下載新聞App
+
+
+
+
+
+
+
+
+
+
+本網站內之全部圖文，係屬於大椽股份有限公司所有，非經本公司同意不得將全部或部分內容轉載於任何形式之媒體 © DIGITIMES Inc. 版權所有 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+印度為何能打造出 120 元手機？ 5 項省錢關鍵分析！ | 自由電子報 3C科技
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3C科技
+
+智慧手機
+
+新機消息
+評測報告
+穿戴裝置
+促銷資費
+手機周邊
+Pad 平板
+iOS
+Android
+行動OS
+
+
+實用秘技
+
+電腦相關
+手機應用
+拍照技巧
+APP特蒐
+
+
+電腦應用
+
+筆記型電腦
+桌上型電腦
+作業系統
+電腦周邊
+軟體應用
+虛擬實境
+
+
+網路社群
+
+Facebook
+LINE
+Google
+網路服務
+瀏覽器
+資訊安全
+
+
+好攝相機
+
+數位相機
+數位單眼
+攝影機
+運動/全景相機
+相機配備
+測評報告
+
+
+家電娛樂
+
+生活家電
+視聽家電
+娛樂遊戲
+
+
+科技趣聞
+
+生活科技
+科學新知
+3C 趣聞
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3C科技手機版
+加入3C科技粉絲團
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+3C科技 > 智慧手機
+
+智慧手機
+
+
+新機消息聯發科Freedom 251
+
+印度為何能打造出 120 元手機？ 5 項省錢關鍵分析！
+
+
+文／記者譚偉晟／ 2016-02-18 11:45
+
+
+
+
+
+
+
+
+
+
+
+
+印度手機廠商 Ringring Bell 打造出售價約新台幣 120 元的手機 Freedom 251（圖／Gadgets360）
+印度手機廠商 Ringring Bells 推出了一款售價僅約新台幣 120 元的手機「Freedom 251」。儘管價格低廉，但這款手機不但能運行完整的 Android 系統，還能使用相機、行動網路、並且支援行動網路與雙卡雙待。對此外界普遍認為，這款手機的製造成本低於正常水準，究竟 Ringring Bell 是用什麼方式，打造出連中國山寨廠商都做不出的超低價手機？
+Freedom 251 的售價為 3.6 美元（約新台幣 120 元），在這款手機推出後，印度人民黨前主席 Murli Manohar Joshi 給了極高的讚譽，他指出對印度而言，科技應用的費用若是過高將變得毫無用途，畢竟對於當地漁民、農夫、或是學生來說，價格會是重要的使用門檻。當然儘管價格低廉，產品本身依舊要有足夠的效能表現，才足以使用。
+
+因此這款 Freedom 251 智慧型手機，可說是一推出就成為印度的亮眼新星。這款手機的詳細規格如下：
+
+1.3GHz 四核心處理器
+1GB RAM
+8GB 儲存空間，可利用 MicroSD 擴充至 32GB
+4 吋 540x960 螢幕
+320 萬畫素相機、30 萬畫素自拍相機
+1450mAh 電池
+支援 3G 行動網路、雙卡雙待、Wi-Fi 連線、藍牙連線、3.5mm 耳機孔
+搭載接近感測器
+運行 Android 5.1 系統
+售價：251 盧比（約新台幣 120 元）
+
+這款手機採用 4 吋螢幕（圖／freedom251.com）
+其中運行 Android 5.1 可望讓更多的 App 可以正常運行，這款手機已經在印度開始販售，然而它的售價遠低於印度手機平均 1500 至 2000 盧比的價格，甚至達到中國山債手機廠商也無法達到的價格水平，讓人不禁好奇它是透過何種方式來大幅壓低手機成本。
+你可能還想看...   和印度人聊天無障礙？ Google 推出全新「對話翻譯」！為了理解印度人？ Facebook 推出新政策 「2G 網速星期二」
+【下一頁】如何壓低成本？從「裡」到「外」都是關鍵！
+
+
+123＞
+
+
+
+ 新聞送上來！ 快加入APP、LINE好友
+
+
+iOS
+
+
+
+Android
+
+
+
+APP下載
+
+
+
+LINE好友
+
+
+
+
+
+↓按讚加入自由 3C 科技粉絲團↓
+自由 3C 科技
+
+
+
+
+
+
+
+
+
+Android產業新聞小米4吋Ringring Bells
+
+相關文章
+
+停止下載！5 類最沒用的 app  你的手機裡也有嗎？
+手機裡的應用程式一大堆，但是其中有許多是下載後就沒用過幾次？甚至有些 App 還會對手機造成額外負擔？根據 Google......
+擺脫焦慮、找回專註力！ 戒除手機成癮 4 步驟
+隨著智慧型手機的功能日漸強大，現代人生活幾乎離不開手機，儘管這帶來了不少便利，但伴隨而來的是更多的不自覺的「手機成癮症」......
+[2016 MWC] 手機戰開打！MWC 上 10 款安卓新機誰行？
+年度手機界最大盛事 MWC 世界移動通訊大會即將在下週 2 月 22 日起在西班牙巴賽隆納展開，除了蘋果的 iPhone......
+無法止血？Microsoft 傳將再裁芬蘭手機部門！
+在經過 2015 年大幅裁員後，Microsoft 手機事業依舊不見好轉，2015 年第三季的 Windows Phon......
+iPhone 比不上？ 10 項優勢說明 Android 手機更好用！
+關於 iOS 與 Android 的誰高誰低的論戰已經延續好長一段時間了，隨著 iOS 與 Android 的設計愈來愈......
+公司省錢新方案 電腦全部改用 Mac？
+將公司電腦全部改為 Mac 系統，聽起來似乎是個昂貴又不划算的做法。然而最新的研究指出，當公司全面改用 Mac 電腦後，......
+[小編觀點] 省錢免稅聰明買！日本電器購買攻略
+日本是世界上主要的電器生產大國，加上最近日幣直落，許多人到日本基本上都會想要帶個不錯的電器用品回家，但是倘若是第一次到日......
+TOP▲
+
+
+
+TOP▲
+專欄 ‧ 評測
+
+
+
+最快 2018 年量產！Panasonic 發表 0.45mm 可彎曲電池在 CES 2017 消費性電子展上，日本科技公司松下（Panason
+
+
+小升級挾帶價格優勢，Canon 推出 G9 X Mark II 相機！
+三星的 Chromebook 新筆電，讓微軟緊張起來了？
+高通的 VR 新品，搭載 Snapdragon 835 的旗艦眼鏡！
+加速 5G 網路佈建，高通與愛立信、AT&T 進行 5G NR 測試！
+CES 2017 最佳新品評選，HTC、Asus 雙雙奪冠！
+ThinkPad 更新外，聯想還推出全新電競品牌「Legion」！
+MSI 新電競筆電在臺上市，Hi-Res 和 VR 音效成新特色！
+NVIDIA 推出自駕車超級電腦，因為「人類實在不該開車」！
+最狂筆電唯一選擇，Razer 推出「3 螢幕」頂級筆電！
+他們是智慧錶的未來？New Balance、Under Armour 現身 CE...
+
+熱門文章
+
+
+
+手機電池被充壞了？破解智慧型手機充電的五大迷思新買的手機怎麼才沒用多久，就感覺電池續航力下降不少，逛 FB、玩遊戲、
+
+
+iPhone 8 掀超級換機潮？分析師狠打臉：還比不過這支手機！
+這些不是密技！但實用度很高的 5 個 LINE 小技巧
+宏達電 U11 熱銷發威！HTC U12 超美概念影片搶先流出
+再也不怕遇到塞車了！Google Maps 新功能讓人直呼太實用！
+蘋果發布 iOS 10.3.3 正式版 ！這幾款 iPhone、iPad 之後將...
+iPhone 8 軟體出錯恐拖累出貨時間！外媒爆：Apple 團隊陷入「恐慌」！
+LINE 廣告群組邀請超惱人！快用這2 招「對抗」秘技
+諾基亞真的準備好了？Nokia 8 悄悄現身官網快閃
+iPhone 8 最終版渲染圖曝光 ！傳將有這 2 個全新功能設計
+下載 YouTube 影片其實超簡單！去掉網址裡面「 3 個字」就完成！
+
+TOP▲
+
+
+
+
+
+
+
+
+
+搜尋
+
+
+最新文章
+
+
+
+ZenFone「這款」手機竟無法撥打緊急求救電話！華碩 回應這麼說
+
+
+這樣自拍也太 COOL！美圖秀秀與 FaceBook 合作推出三款 AR 特效濾鏡
+
+
+拍 4K VR影片變得更簡單了！有三軸防手震的 Garmin 360 全景相機新登場
+
+
+你看過了嗎？這 5 部影片最近 YouTube 上超紅的！
+
+
+硬體不相容！「這些」裝置無法升級微軟 Windows 10 Creators
+
+
+華碩 5 款 ZenFone 4 新機都已通過 NCC 認證！下月將有神秘驚喜？
+
+
+臉書準備向讀者收費？傳10月起測試訂閱新聞機制
+
+
+蘋果發布 iOS 10.3.3 正式版 ！這幾款 iPhone、iPad 之後將不再支援更新
+
+
+
+熱門索引
+
+LINESonySamsungASUSLGHTCCHTAppleFacebookGoogleMicrosoftxiaomi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+印度為何能打造出 120 元手機？ 5 項省錢關鍵分析！ | 自由電子報 3C科技
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3C科技
+
+智慧手機
+
+新機消息
+評測報告
+穿戴裝置
+促銷資費
+手機周邊
+Pad 平板
+iOS
+Android
+行動OS
+
+
+實用秘技
+
+電腦相關
+手機應用
+拍照技巧
+APP特蒐
+
+
+電腦應用
+
+筆記型電腦
+桌上型電腦
+作業系統
+電腦周邊
+軟體應用
+虛擬實境
+
+
+網路社群
+
+Facebook
+LINE
+Google
+網路服務
+瀏覽器
+資訊安全
+
+
+好攝相機
+
+數位相機
+數位單眼
+攝影機
+運動/全景相機
+相機配備
+測評報告
+
+
+家電娛樂
+
+生活家電
+視聽家電
+娛樂遊戲
+
+
+科技趣聞
+
+生活科技
+科學新知
+3C 趣聞
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3C科技手機版
+加入3C科技粉絲團
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+3C科技 > 智慧手機
+
+智慧手機
+
+
+新機消息聯發科Freedom 251
+
+印度為何能打造出 120 元手機？ 5 項省錢關鍵分析！
+
+
+文／記者譚偉晟／ 2016-02-18 11:45
+
+
+
+
+
+
+
+
+
+
+
+
+印度手機廠商 Ringring Bell 打造出售價約新台幣 120 元的手機 Freedom 251（圖／Gadgets360）
+印度手機廠商 Ringring Bells 推出了一款售價僅約新台幣 120 元的手機「Freedom 251」。儘管價格低廉，但這款手機不但能運行完整的 Android 系統，還能使用相機、行動網路、並且支援行動網路與雙卡雙待。對此外界普遍認為，這款手機的製造成本低於正常水準，究竟 Ringring Bell 是用什麼方式，打造出連中國山寨廠商都做不出的超低價手機？
+Freedom 251 的售價為 3.6 美元（約新台幣 120 元），在這款手機推出後，印度人民黨前主席 Murli Manohar Joshi 給了極高的讚譽，他指出對印度而言，科技應用的費用若是過高將變得毫無用途，畢竟對於當地漁民、農夫、或是學生來說，價格會是重要的使用門檻。當然儘管價格低廉，產品本身依舊要有足夠的效能表現，才足以使用。
+
+因此這款 Freedom 251 智慧型手機，可說是一推出就成為印度的亮眼新星。這款手機的詳細規格如下：
+
+1.3GHz 四核心處理器
+1GB RAM
+8GB 儲存空間，可利用 MicroSD 擴充至 32GB
+4 吋 540x960 螢幕
+320 萬畫素相機、30 萬畫素自拍相機
+1450mAh 電池
+支援 3G 行動網路、雙卡雙待、Wi-Fi 連線、藍牙連線、3.5mm 耳機孔
+搭載接近感測器
+運行 Android 5.1 系統
+售價：251 盧比（約新台幣 120 元）
+
+這款手機採用 4 吋螢幕（圖／freedom251.com）
+其中運行 Android 5.1 可望讓更多的 App 可以正常運行，這款手機已經在印度開始販售，然而它的售價遠低於印度手機平均 1500 至 2000 盧比的價格，甚至達到中國山債手機廠商也無法達到的價格水平，讓人不禁好奇它是透過何種方式來大幅壓低手機成本。
+你可能還想看...   和印度人聊天無障礙？ Google 推出全新「對話翻譯」！為了理解印度人？ Facebook 推出新政策 「2G 網速星期二」
+【下一頁】如何壓低成本？從「裡」到「外」都是關鍵！
+
+
+123＞
+
+
+
+ 新聞送上來！ 快加入APP、LINE好友
+
+
+iOS
+
+
+
+Android
+
+
+
+APP下載
+
+
+
+LINE好友
+
+
+
+
+
+↓按讚加入自由 3C 科技粉絲團↓
+自由 3C 科技
+
+
+
+
+
+
+
+
+
+Android產業新聞小米4吋Ringring Bells
+
+相關文章
+
+停止下載！5 類最沒用的 app  你的手機裡也有嗎？
+手機裡的應用程式一大堆，但是其中有許多是下載後就沒用過幾次？甚至有些 App 還會對手機造成額外負擔？根據 Google......
+擺脫焦慮、找回專註力！ 戒除手機成癮 4 步驟
+隨著智慧型手機的功能日漸強大，現代人生活幾乎離不開手機，儘管這帶來了不少便利，但伴隨而來的是更多的不自覺的「手機成癮症」......
+[2016 MWC] 手機戰開打！MWC 上 10 款安卓新機誰行？
+年度手機界最大盛事 MWC 世界移動通訊大會即將在下週 2 月 22 日起在西班牙巴賽隆納展開，除了蘋果的 iPhone......
+無法止血？Microsoft 傳將再裁芬蘭手機部門！
+在經過 2015 年大幅裁員後，Microsoft 手機事業依舊不見好轉，2015 年第三季的 Windows Phon......
+iPhone 比不上？ 10 項優勢說明 Android 手機更好用！
+關於 iOS 與 Android 的誰高誰低的論戰已經延續好長一段時間了，隨著 iOS 與 Android 的設計愈來愈......
+公司省錢新方案 電腦全部改用 Mac？
+將公司電腦全部改為 Mac 系統，聽起來似乎是個昂貴又不划算的做法。然而最新的研究指出，當公司全面改用 Mac 電腦後，......
+[小編觀點] 省錢免稅聰明買！日本電器購買攻略
+日本是世界上主要的電器生產大國，加上最近日幣直落，許多人到日本基本上都會想要帶個不錯的電器用品回家，但是倘若是第一次到日......
+TOP▲
+
+
+
+TOP▲
+專欄 ‧ 評測
+
+
+
+最快 2018 年量產！Panasonic 發表 0.45mm 可彎曲電池在 CES 2017 消費性電子展上，日本科技公司松下（Panason
+
+
+小升級挾帶價格優勢，Canon 推出 G9 X Mark II 相機！
+三星的 Chromebook 新筆電，讓微軟緊張起來了？
+高通的 VR 新品，搭載 Snapdragon 835 的旗艦眼鏡！
+加速 5G 網路佈建，高通與愛立信、AT&T 進行 5G NR 測試！
+CES 2017 最佳新品評選，HTC、Asus 雙雙奪冠！
+ThinkPad 更新外，聯想還推出全新電競品牌「Legion」！
+MSI 新電競筆電在臺上市，Hi-Res 和 VR 音效成新特色！
+NVIDIA 推出自駕車超級電腦，因為「人類實在不該開車」！
+最狂筆電唯一選擇，Razer 推出「3 螢幕」頂級筆電！
+他們是智慧錶的未來？New Balance、Under Armour 現身 CE...
+
+熱門文章
+
+
+
+手機電池被充壞了？破解智慧型手機充電的五大迷思新買的手機怎麼才沒用多久，就感覺電池續航力下降不少，逛 FB、玩遊戲、
+
+
+iPhone 8 掀超級換機潮？分析師狠打臉：還比不過這支手機！
+這些不是密技！但實用度很高的 5 個 LINE 小技巧
+宏達電 U11 熱銷發威！HTC U12 超美概念影片搶先流出
+再也不怕遇到塞車了！Google Maps 新功能讓人直呼太實用！
+蘋果發布 iOS 10.3.3 正式版 ！這幾款 iPhone、iPad 之後將...
+iPhone 8 軟體出錯恐拖累出貨時間！外媒爆：Apple 團隊陷入「恐慌」！
+LINE 廣告群組邀請超惱人！快用這2 招「對抗」秘技
+諾基亞真的準備好了？Nokia 8 悄悄現身官網快閃
+iPhone 8 最終版渲染圖曝光 ！傳將有這 2 個全新功能設計
+下載 YouTube 影片其實超簡單！去掉網址裡面「 3 個字」就完成！
+
+TOP▲
+
+
+
+
+
+
+
+
+
+搜尋
+
+
+最新文章
+
+
+
+ZenFone「這款」手機竟無法撥打緊急求救電話！華碩 回應這麼說
+
+
+這樣自拍也太 COOL！美圖秀秀與 FaceBook 合作推出三款 AR 特效濾鏡
+
+
+拍 4K VR影片變得更簡單了！有三軸防手震的 Garmin 360 全景相機新登場
+
+
+你看過了嗎？這 5 部影片最近 YouTube 上超紅的！
+
+
+硬體不相容！「這些」裝置無法升級微軟 Windows 10 Creators
+
+
+華碩 5 款 ZenFone 4 新機都已通過 NCC 認證！下月將有神秘驚喜？
+
+
+臉書準備向讀者收費？傳10月起測試訂閱新聞機制
+
+
+蘋果發布 iOS 10.3.3 正式版 ！這幾款 iPhone、iPad 之後將不再支援更新
+
+
+
+熱門索引
+
+LINESonySamsungASUSLGHTCCHTAppleFacebookGoogleMicrosoftxiaomi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+淺談智慧型手機
+
+
+
+
+
+
+│ 
+	編輯室 │ 臺大首頁 │ 計中首頁 │ 
+	 
+
+
+第0008期 • 2009.3.20發行
+
+
+
+
+
+
+歷史回顧
+
+
+
+	訂閱/取消
+
+
+校務服務
+
+
+專題報導
+
+	 
+技術論壇
+
+
+推薦刊物
+
+
+
+
+
+首頁 >專題報導
+
+
+
+
+專題報導
+
+
+
+淺談智慧型手機			
+			作者：黃彥傑 / 臺灣大學電機資訊學院資訊工程系
+            
+            
+「時尚」、「強大的影音功能」、「高速上網」，越來越「夯」的「智慧型手機(Smart Phone)」…「黑莓機(BlackBerry)」、「iPhone」、「GPhone」是「什米碗糕」？本文淺談這三種手機的優劣與平臺，帶您認識「智慧型手機(Smart Phone)」。
+前言
+由於CPU的進步、硬體體積縮小化以及3G網路的普及，智慧型手機漸漸在手機市場中嶄露頭角，商務人士使用智慧型手機收發電子郵件、觀看股票最新動態、透過攝影機進行視訊會議、利用自動提醒功能的行事曆紀錄重要會談時間與地點…等，讓自己能夠掌握最新的商務資訊；旅客利用智慧型手機內建的GPS(Global Position System)系統搭配地圖程式功能來規劃旅遊路線、上網查看各個景點的網友評價，讓旅遊可以豐富又愜意；年輕人用智慧型手機玩遊戲、聽音樂，甚至看YouTube以及DVD影片，隨時隨地享受流行脈動；從前要透過電腦才能做到的，現在在智慧型手機上都可以完成了！
+            從智慧型手機的始祖黑莓機(BlackBerry)開始，各家廠商陸續推出不同的智慧型手機，例如台灣廠商宏達電推出的HTC Touch系列、今年(2009)剛於台灣上市的iPhone 3G手機以及2008年在美國上市的T-Mobile G1(俗稱的GPhone)...等。這些智慧型手機搭配各電信業者的3G、3.5G服務後，提供了高速的上網環境，再加上手機原本附有的豐富的功能選項、完整的作業系統、大螢幕與觸控功能，智慧型手機毫無疑問地在手機歷史上開創了一個新紀元！
+            
+各家手機特色
+BlackBerry可以說是第一臺較有發展力的智慧型手機。推出時還造成市場上一片轟動！因為它打破了手機只能通電話的限制，還提供了收發電子郵件的功能。除此之外，BlackBerry最大的特色就是所謂的push mail功能。當用戶的電子信箱有新郵件時，BlackBerry會主動通知用戶，即時傳達重要訊息，與以往用戶需要被動的去信箱查看信件有很大的不同。除此之外，更提供了安全性上的加強、行事曆、備忘錄的同步技術…等，也因此BlackBerry一推出就在商業界颳起一片旋風。
+            而這兩年陸續推出的HTC Touch系列、iPhone以及G-Mobile則是改變了傳統的手機印象-小螢幕和複雜的輸入鍵盤，改用大螢幕以及簡單方便的觸控式操作介面。
+            在全球著名的HTC Touch系列，採用微軟Windows Mobile作業系統(簡稱WM)，對於慣用Windows系統的用戶而言，HTC無疑是個無法抗拒的誘惑！最明顯的例子就是，當用戶不知該從何開始使用這隻手機時，一見到Windows經典的『開始』按鈕，就知道如何開始享受這隻手機上的所有服務了！除此之外，對於經常使用微軟Live服務的用戶，也可以透過WM系統達到電腦與手機上的同步化，包括常見的MSN、Hotmail、Live Space…等，再加上HTC Touch系列搭配觸控式介面以及2.5吋以上的大螢幕，使用者可以輕易的利用手指或是觸控筆使用WM上的各種軟體，像是Internet Explore、Office…等，使HTC Touch成為商務人士的最愛，也在智慧型手機市場上擁有傲人的市占率。
+            
+而在另一方面，與HTC Touch不分軒輊的iPhone也在2008年上市，維持著Apple優雅簡明的使用者介面，iPhone一洗智慧型手機複雜介面的刻板印象。搭配3.5吋大螢幕、多重觸控的功能以及簡單明瞭的介面圖示，iPhone一上市就在市場上投下了一顆震撼彈！除了外觀上的革新外，iPhone也在軟體上做到最大的客製化，用戶可以自行到AppStore線上購買、下載所需要的軟體(例如各種遊戲、線上購物、氣象、導航…等)，而這些軟體是來自世界各地的程式設計師所提供的，並非只有來自Apple。如此一來，即使是相同外觀的iPhone，內含的功能卻都根據不同的使用者而有不同的配置！這也讓iPhone在一上市就拿下耀眼的成績，對其他智慧型手機廠商構成極大的威脅！
+            
+而在台灣尚未上市，卻擁有無限潛力的則是GPhone。簡單來說，GPhone其實是一個概念，實際上並沒有GPhone這隻手機。跟以往合作模式不同，Google推出的是一個免費的手機平臺，稱作Android，而搭配Android系統的手機則通稱為GPhone。目前第一隻使用Android且上市的手機是HTC的T-Mobile G1，也是目前唯一的GPhone。但近來各家廠商皆在觀望G1在市場上的反應，即未來的Gphone可能由Nokia、SonyEricsson或是其他廠商生產製造，而不是HTC的專利！也因此，以外觀來說，未來每支GPhone可能都長得不太一樣；但就其使用者介面來說，GPhone提供的介面與iPhone類似，皆是利用簡單的圖示進入各種軟體，且其軟體也是開放讓各界的程式設計師撰寫不同的軟體。但與iPhone不同的是，Android的開發工具比iPhone還要開放許多，也就是說Andriod提供給外界程式設計師全部的資源，而iPhone僅開放部份資源而已。如此一來，外界也相信Android上的應用軟體將會比iPhone更多元、更豐富。但另一方面來說，Google並沒有一個類似AppStore的平臺去驗證軟體的安全性，所以也有人擔心Android上的病毒將會比iPhone更加肆虐。但無論如何，Android終究提供瞭如此豐富的手機經驗，讓市場預測未來的幾大龍頭之一將會包涵這個新世代的手機平臺。
+            
+
+智慧型手機未來展望
+由於智慧型手機豐富的使用者介面、觸控功能以及複雜的作業系統，短期內的價格可能仍然會居高不下，但隨著科技進步、開放原始碼的流行，智慧型手機上提供的服務可能會越來越多、越來越豐富，甚至會邁向某科技公司的主管說過的：未來五到十年內的小孩子第一次上網可能就是透過手機，而不是電腦！
+            
+目前在智慧型手機硬體市場上，除了上述的HTC、Apple、BlackBerry以外，尚有許多不同的廠商準備進入；而在軟體市場上，目前市占率較大的作業系統包括了Windows Mobile、Symbian OS(Nokia、Sony Ericsson、Panasonic…等採用)、iPhone OS以及正準備要進入市場的Android。其中以Android採取開放原始碼策略，也就是廠商可以免費自行更改Android的相關程式碼，達到各家廠商不同的需求規劃！如此一來，廠商製造手機時可以省去作業系統的成本，也可以達到針對不同客戶生產不同系統的手機，對智慧型手機用戶無疑是個好消息！當然同時也對其他軟體廠商造成一定的威脅，但無論如何，有競爭才有進步，相信各家廠商未來更會陸續提出對抗Android的作業系統，也讓手機用戶可以有更多的選擇、更好的價格！
+            
+
+
+
+
+
+
+版權所有 © 國立台灣大學計算機及資訊網路中心 All
+				Rights Reserved. 電話：02-33665022 或 3366-5023 傳真： 02-23637204
+				讀者意見信箱：ntuccepaper@ntu.edu.tw
+
+				  地址：10617 臺北市羅斯福路四段一號
+				  建議最佳螢幕解析度 1024*768
+
+
+
+
+
+
+
+智慧型製造系統 - 陳育欣 - 中原選課大全
+
+
+
+
+
+
+
+
+中原選課大全
+
+Fork me on GitHub
+
+
+
+
+
+公告：系統維護人員招募中，意者請洽粉絲頁。
+
+
+智慧型製造系統
+
+
+
+
+
+
+
+
+
+
+
+
+基本資訊
+
+課程分類
+一般
+授課教師
+陳育欣
+課程評分
+0
+投票人數
+0
+
+
+
+開課資訊
+
+
+課程評論
+留言
+留言0則留言
+
+
+
+
+Top
+
+
+
+
+
+
+
+
+
+課程大綱
+
+
+
+
+
+
+
+
+
+
+智慧型製造系統INTELLIGENT MANUFACTURING SYSTEMS
+
+
+
+
+
+
+開課系所 Department/Institute:  製造所          Manufacturing Information and Systems
+開課教師 Instructor:   李家岩 Lee, Chia-Yen                 
+開課學年 Academic Year:   0103
+開課學期 Semester:    1
+開課序號 Serial Number:   012
+
+課程屬性碼 Attribute Code:   IMIS7232E
+課程碼 Course Number:   P961400 
+分班碼 Class Code: 
+學分數 No. of Credits:           3
+課程語言 Medium of Instruction:   英文
+
+
+課程網址 Course Website: http://moodle.ncku.edu.tw/ 
+
+先修課程或先備能力 Prerequisite Course(s): 
+
+教師聯絡資訊 Contact with Teacher
+  	    Instructor: 李家岩博士 Dr. Chia-Yen Lee
+Office: 儀器設備大樓 6 樓95602 室
+Phone: 06-2757575 #34223
+Email: cylee at mail dot ncku dot edu dot tw
+Office hours: TBD      
+
+助教資訊 Contact with Tutor
+
+
+學習規範 Course Policy
+	    Course Policies
+Examinations: All exams will be comprehensive up to a specified topic although emphasis will be on the newer material. The formula sheet will be provided in exam. You are allowed to use calculator. There will be no make-up examinations unless prior arrangements have been made with the instructor. An official written authorized excused is required.      
+
+評量方式 Grading
+
+
+方法百分比%
+
+作業 Assignments
+20個人口頭報告 Presentations
+20期末考 Term exam
+30小組報告 Group Projects
+30
+
+
+
+
+教學方法 Teaching Strategies
+      1. Lecture
+2. Video and System Demo
+3. Group Discussion    
+
+		※請遵守智慧財產權觀念  不得不法影印
+		 Please follow the Intellectual Property instruction and No illegal copy
+	
+
+課程教材 Course Material
+	    Lecture Notes    
+
+參考書目 References
+	    Textbook: No specific textbook.
+References:
+-Manufacturing Systems
+  Gautam, N. (2012), Analysis of Queues: Methods and Applications, CRC Press.
+  Hopp, W. and M. Spearman (2001), Factory physics, 2nd ed., Boston, MA: Irwin McGraw-Hill.
+  Nahmias, S. (2008), Production and Operations Analysis, 6th ed., McGraw-Hill/Irwin.
+-Computational Intelligence and Metaheuristics
+  Enerhart, R. and Y. Shi (2007), Computational Intelligence: Concepts and Implementations, Morgan Kaufmann, San Diego. http://www.computelligence.org/issue/CICI/CICI.html#Home
+  Gen, M. and R. Cheng (1999), Genetic Algorithms and Engineering Optimization, Wiley-Interscience.
+-Statistical Machine Learning and Data Mining
+  Bishop, C.M. (2006), Pattern Recognition and Machine Learning, 1st ed., Springer.
+  Hastie, T., R. Tibshirani, and J. Friedman (2009), The Elements of Statistical Learning: Data Mining, Inference, and Prediction, 2nd ed., Springer.
+  Han, J., M. Kamber, and J. Pei (2011), Data Mining: Concepts and Techniques, 3rd ed., Morgan Kaufmann.    
+
+備註 Remarks
+     The junior or senior undergraduate students are welcome. 大學部高年級學生歡迎選修
+
+
+
+
+基本素養 Basic Literacy
+□ 註重人性的尊嚴、價值與培養自信心
+ The aim is to emphasize dignity and values of humanity, and cultivate self-confidence.
+□ 具備法治觀念與培養尊重及包容的工作態度與倫理
+ The aim is to learn rules of law education and develop working manner and ethics with honor and tolerance.
+□ 熱愛生命，關懷弱勢
+ The aim is to learn to adore life and to show care for the vulnerable.
+□ 培養外語能力並積極參與國際學術活動
+ The aim is to acquire knowledge and develop capabilities in learning foreign languages and aggressively joining international academic activities.
+ 
+
+核心能力 Competence
+■ 具備製造資訊與系統領域相關知識之能力。
+ The aim is to acquire knowledge and develop capabilities in manufacturing information and systems.
+□ 具備E化製造領域相關知識之能力
+ The aim is to acquire knowledge and developing capabilities in e-Manufacturing infrastructure.
+□ 資訊技術導入工業自動化相關領與能力
+ The aim is to apply Information and System technology into industry for improving the efficiency and performance of manufacturing technology.
+■ 具備獨立思考、分析判斷與解決製造資訊與系統領域問題之能力
+ The aim is to acquire knowledge and develop capabilities of independently thinking, analyzing, and solving problems in manufacturing information and systems.
+■ 具備研究結果分析與判斷之能力
+ The aim is to acquire knowledge to analize research results.
+■ 具備跨領域有效溝通表達的專業語文能力
+ The aim is to acquire knowledge of efficient communications for crossing research area through professional language expression.
+□ 具備研讀及撰寫專業論文之能力
+ The aim is to acquire knowledge of reading and writing professional papers.
+□ 具備組織與領導團隊及從事創新設計之能力
+ The aim is to acquire knowledge of leadership for team working and innovative design.
+■ 具備凝聚團隊精神、創新製造資訊與系統領域實務所需之技術及系統整合溝通之能力
+ The aim is to acquire knowledge and develop capabilities of solidifying team-working spirit, and acquire knowledge of practical techniques and communication for system integration in the innovative manufacturing information and systems.
+ 
+
+課程概述 Course Description
+       P961400 智慧型製造系統
+任課老師：李家岩 ( 3學分、開授學期：博碩上)
+本課程將使學生瞭解如何應用人工智慧與資料挖礦的技術，改善製造系統的作業效率。分析模型包含了基因演算法、類神經網路、決策樹、關聯規則等，課程結合資訊與工程領域的相關知識，並藉由演算法的設計及統計的方法有系統地建模以解決實務問題。
+��	1. Introduction
+��	2. Computational Intelligence 
+��	2.1 Simulated Annealing and Tabu Search
+��	2.2 Genetic Algorithms
+��	2.3 Neural Networks
+��	2.4 Particle Swarm Optimization
+��	2.5 Ant Colony Optimization
+��	3. Data Mining
+��	3.1 Principal Component Analysis
+��	3.2 Decision Tree Algorithms
+��	3.3 Association Rules
+��	3.4 Clustering
+��	4. Empirical Studies and Research Topics
+P961400  Intelligent Manufacturing Systems
+This course will provide students to learn how to apply artificial intelligence (AI) and data mining (DM) techniques to improve the efficiency of manufacturing systems. The models include genetic algorithm, neural network, decision tree, association rule, etc. The course integrates the knowledge domains of the information and engineering, and solves the real problem systematically using the design of metaheuristic algorithms and statistics tools.
+    
+
+課程學習目標 Course Objectives    
+	    The objective of this course is to learn the statistics and optimization methodologies in intelligent manufacturing systems. The students will know how to apply artificial intelligence (AI) and data mining (DM) techniques to solve the real problems in shop-floor level or capacity planning problems.
+
+Learning Requirement:
+1. Know the intelligent manufacturing techniques
+2. Create the prototype model to solve the problem in real setting
+3. Develop the research skills and prepare a basic project report    
+
+課程進度 Course Outline
+
+
+週次 Week進度說明 Progress Description
+1Overview and Computational Intelligence2Production System: Manufacturing and Service Systems3Production System: Factory Physics4Production System: Capacity Management5Meta-Heuristic Algorithms:Tabu Search and Simulated Annealing6Meta-Heuristic Algorithms: Genetic Algorithms7Meta-Heuristic Algorithms: Genetic Algorithms8Meta-Heuristic Algorithms: Neural Networks: backpropagation (BPN)9Meta-Heuristic Algorithms: Self-Organizing Maps (SOM), Adaptive Resonance Theory (ART)10Meta-Heuristic Algorithms: Particle Swarm and Ant Colony Optimization (if time allowed)11Literature Review Project12Data Mining: Principal Component Analysis13Data Mining: Decision Tree Algorithms14Data Mining: Association Rules15Data Mining: Clustering Analysis16Empirical Studies and Research Topics17Term-Project Presentation18Final Exam 
+
+　以上每週進度教師可依上課情況做適度調整。The schedule may be subject to change.
+
+
+課程學習融入下列議題或具有下列內涵的程度 Immersing the Following Issues or Contents
+議題或內容 Issues or Contents關聯性 Correlation性別平等 Gender Equity
+無相關 No correlation法治教育 Law-Related Education
+無相關 No correlation人權教育 Human Rights Education
+無相關 No correlation服務學習 Service Learning
+無相關 No correlation生命教育 Life Education
+無相關 No correlation智慧財產權 Intellectual Property
+無相關 No correlation環境安全 Environmental Safety
+無相關 No correlation環境保護 Environmental Protection
+無相關 No correlation文創產業 Cultural and creative Industry
+無相關 No correlation健康醫療照護產業 Health,Medical Treatment, Nursing Industry
+間接相關 Indirect correlation精緻農業產業 Advanced Agriculture
+無相關 No correlation生物科技產業 Biotechnology Industry
+無相關 No correlation觀光旅遊產業 Tourism
+無相關 No correlation綠色能源產業 Green Energy Industry
+間接相關 Indirect correlation強化工業基礎技術方案 Advancing basic industry technology program
+間接相關 Indirect correlation學術研究取向 Academic Orientation
+直接相關 Direct correlation工作實務取向 Pragmatic Orientation
+直接相關 Direct correlation 
+
+有關課程其他調查 Other Surveys of Courses
+                   1.本課程是否規劃業界教師參與教學或演講?   否            
+Is there any industry specialist invited in this course? How many times? No
+			
+           2.本課程是否規劃內含校外實習 (並非參訪)?   否		   
+Is there any in (out of) school practicum involved in this course? How many hours?  No
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	2016/12 智慧型製造數據分析的經典問題－晶圓製造缺陷模式分析／胡竹生所長 - 產業合作 - 機械與機電系統研究所 - 單位介紹 - 工研院中文版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        您的瀏覽器不支援JavaScript語法,但是並不影響您獲取本網站的內容。
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+工業技術研究院
+
+迴首頁網站導覽菁英招募出版品服務據點公告電子報專業連結FBYouTubei創科技EN
+
+
+
+
+
+
+
+
+
+
+關於工研院
+
+工研院簡介
+
+董監事會
+
+經營團隊介紹
+
+工研院院士
+
+綠色低碳院區
+
+社會公益
+
+獲獎榮耀
+
+工研院院友會
+
+安衛品質環境能源政策
+
+
+
+創新應用
+
+簡介
+
+智慧生活
+
+健康樂活
+
+永續環境
+
+
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+新聞室
+
+新聞資料庫
+
+新聞連絡
+
+精彩影音
+
+
+
+單位介紹
+
+總覽
+
+南分院
+
+中分院
+
+生醫與醫材研究所
+
+綠能與環境研究所
+
+材料與化工研究所
+
+機械與機電系統研究所
+
+資訊與通訊研究所
+
+電子與光電系統研究所
+
+量測技術發展中心
+
+影像顯示科技中心
+
+服務系統科技中心
+
+產業經濟與趨勢研究中心
+
+巨量資訊科技中心
+
+智慧機械科技中心
+
+智慧微系統科技中心
+
+雷射與積層製造科技中心
+
+產業學院
+
+技術移轉與法律中心
+
+產業服務中心
+
+國際中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+首頁
+單位介紹機械與機電系統研究所
+產業合作
+專家觀點
+
+
+2016/12 智慧型製造數據分析的經典問題－晶圓製造缺陷模式分析／胡竹生所長
+
+
+
+
+
+
+                    專家觀點
+
+
+字級：
+小字級
+中字級
+大字級
+
+若您無法使用字級縮放功能，請改用鍵盤"Ctrl"+"加號鍵"或"Ctrl"+"減號鍵"，來放大或縮小字級
+
+2016/12 智慧型製造數據分析的經典問題－晶圓製造缺陷模式分析／胡竹生所長
+
+一、前言不能免俗的，這個文章的題目加上了”智慧型”三個字，所謂"智慧型"，從學理的演化派別來看，就是以類神經網路或機器學習模型為架構的計算模式，有別於其他派別的主張，因為其非線性與隨機性現象難以捉摸，卻在某些例子上展現驚人的效果，超越了預期。說穿了就是研究界對於非線性與隨機性問題的根本學理仍在摸索，而且現有方法在解題上仍有缺口，從大自然演化的仿生結構（神經元與網路）與統計學習理論出發，或許可以找到捷徑，這個手法在很多工程技術上都常被用到。之所以要寫這篇文章，因為我對晶圓缺陷模式這個問題有點淵源，加上製造數據的分析，是現今廣大製造業提升的必經之路，也是未來一個重點的工作。晶圓缺陷模式分析是製造數據分析的經典，是因為它所呈現的問題非常複雜，一般傳統統計分析方法不易對付。但是一個製作完成的晶圓其成本和價值都非常高，且良率決定了晶圓製造廠能否獲利，例如單一客戶動輒每月數百萬顆晶片的產出，1%的不良率就可能是很可觀的損失，因此非得弄清楚製造缺陷的成因。所以相較於其他產業，晶圓製造產業一開始就必須面對這個困難的問題。讀者諸公也很清楚晶圓製造廠網羅了很多一流的專家與工程師，這其中所開發的技術，恐怕很多都無法公開。因此現在我們對廣大的製造業，在談製造數據分析技術，可能有些正要經歷他們走過的路。二、晶圓製造檢測數據分析那麼到底晶圓缺陷分析是個甚麼問題?我們先用簡單的情況看一下下麵的晶圓圖，其中紅色的代表符合規格的晶片（OK），藍色的代表不合格（NG）。你可以想像這是一個圓形的棋盤格，就像圍棋一樣，OK是白子，NG是黑子，而良率的要求跟下圍棋類似，生產者持白子，要把NG的黑子數量盡量減少，甚至到零是最好，而持有黑子的對手是製程機器的失誤。註意到圖中這缺陷分佈似乎有聚集於中心與邊緣的模式，但是也有像是隨機分佈的部分。晶圓缺陷分析的第一個目標是辨別缺陷分佈模式究竟屬系統性或隨機性，接下來的任務是找出各種系統性模式的成因與規則（root cause）。這僅僅是三個圖，對於一個每月生產十幾萬片晶圓的廠，可以想像缺陷分佈模式的複雜與龐大。
+
+晶圓缺陷圖，取材至http://www.datasciencecentral.com/profiles/blogs/data-science-applications-in-semiconductor-manufacturing
+ 拿圍棋作比喻，恰好2016年Google的AlphaGo打敗了人類的冠軍棋士，造成全世界轟動，因為圍棋所擁有的可能性是天文數字，過去許多演算法都很難打敗人類的智慧。圍棋有361個棋位，每個棋位有黑子，白子以及空位三種可能性，所以是3的361次方（大約是10的172次方）。針對單純的晶圓檢測（OK與NG），每顆晶片有2種可能性，只要超過573顆晶片，該晶圓所擁有的缺陷分佈可能性就超過圍棋，而實際上每片晶圓的晶片數動輒上千。這就不難想像要去辨識晶圓缺陷的模式，甚至歸類的複雜度。以上的描述對個別晶片僅有OK與NG的狀態，實際上NG的晶片通常還包含缺陷的類別與數目，如果加入考慮，那麼蘊含的變化數量級將更大。其次我們都知道圍棋雖然呈現的模式很複雜，但是規則很簡單，目的是基於這個規則的運用方式打敗對手。而晶圓製造過程中，缺陷的產生規則卻是事先不知道的（經驗豐富的製程工程師或可掌握少量的規則），也就是說，晶圓缺陷分析的目的是要去找到缺陷發生的成因與規則。如果這晶圓經過了十幾道製程，每個製程又有幾十個或幾百個機器參數可以調整，那麼從缺陷分類去尋找到規則，又是另一個天文數字的組合。當然製程工程師會盡量在過程中分段抽樣檢測以縮小範圍，但是太多檢測會拖延製程時間，因此往往沒這個機會。這還有更深一層的挑戰，我們都從報導中看到為了要訓練AlphaGo的演算法，擷取了過去人類累積的大量棋譜，並透過不斷與棋手對弈，或是兩個程式對戰，以產生大量的數據。但是複雜度遠高於圍棋的晶圓製造缺陷模式，卻沒有機會去任意調控機器來產出數據，讓演算法充分去訓練，因為製程機器不從事生產，在財務上就是損失。我這裡舉的例子，只是晶圓製造數據分析的一部分，實際上還有許多不同的狀況，包含從量測數據結果，對過程中物理與化學現象的掌握等等。經過上述的說明，各位讀者認為晶圓製造的數據分析，是比下圍棋來得簡單還是難呢?或是說台積電面對這麼多不同客戶的產品製造，能夠領先全世界，每年獲利這麼高，是不是很偉大！三、技術發展歷程從公開的文獻中，晶圓製造良率分析的研究，最早應該是Bernard T. Murphy博士提出的，Murphy在1963年加入美國貝爾實驗室後，便積極的研究在積體電路的製造良率。在他1964年發表的論文中[1]，就提出傳統半導體元件製造的Poisson分佈機率模型，不適用於描述在晶圓上製作大量集成電路的良率現象。這篇論文完全沒有引用任何其他論文，可見其前瞻性與重要性。隨後十幾年間，研究者陸續提出不同的機率模型，特別是在描述晶圓上缺陷的集中現象以及相關機率模型在晶圓空間上的非均勻性。直到1979年在IBM East Fishkill工作的Shih-Ming Hu，對各種已經發表的機率模型提出質疑，認為在數學上都有不正確的假設[2]。1983年在IBM Essex Junction工作的Charles H. Stapper博士與其同事發表了一篇重要的論文，把晶圓缺陷分佈的隨機現象，與製程中缺陷可能的成因，建構其模型並分析，該文章連結了數學理論與實際製造行為[3]。Stapper於1961年加入IBM，在1972年開發出一套對記憶體（SRAM與DRAM）製造的缺陷與良率模型，然後大量運用在製程最佳化。他早期大部分的技術揭露在IBM發行的期刊（IBM Journal of Research and Development）。IBM East Fishkill與Essex Junction是IBM微電子事業的兩個據點，IBM在2006年7月1日正式結束了這個事業，將其轉移給了GlobalFoundries。Stapper是公認在晶圓製造缺陷分析上全球重要的技術推手，1996年國際電機電子學會的超大型積體電路系統缺陷與容錯技術會議，特別以專文紀念他的貢獻[4]。為了更準確掌握晶圓生產缺陷的狀態，從1980年代起就對於其機率模型有很多修正。然而使用機率模型來分析有其極限，尤其是製程工程師每天面對大量的量測數據，需要更多元的參數模型來涵括各種狀況，同時利用人工經驗來辨識歸類缺陷不僅可能偏差，也很沒有效率。Intel人工智慧實驗室的Digvijay Sikka在1993年發表了一篇不太起眼的學術會議論文[5]，他將晶圓的檢測結果當作影像，使用影像處理以及類神經網路來偵測並分類晶圓缺陷狀況。據稱針對已知的缺陷類別其分類效率達到100[c1] %，論文中並透露這個方法已經在Intel內部成功的使用超過兩年了。1998年在加州聖塔克拉拉Intel製造部門工作的Sean P. Cunningham發表了一篇很完整的期刊論文，正式提出以視覺缺陷計量學（Visual Defect Metrology）來看待晶圓缺陷模式分析技術。從這兩篇文章可以約略猜測Intel在1980年代後期就已經發現，使用影像處理與人工智慧技術來對付晶圓缺陷的量測數據，可以有很好的結果。從以上的文獻追溯揭示對於這個問題重要的研究起源並非學術界，而是AT&T的貝爾實驗室，IBM，以及Intel，因為這些公司從事積體電路製造，才能發現實際問題。同時因為公司規模大，可以雇用研究人員去發掘創造適用的理論與方法。台灣從1980年成立新竹科學園區，開始建立積體電路製造的能力，也一定面臨同樣的問題。從台灣的博碩士論文資料庫，不難發現鄰近科學園區的清華大學與交通大學，從1990年起有若干研究團隊也致力於晶圓製造良率的研究，例如清華大學的簡禎富教授，在這方面有相當傑出的研究成果。在2000年，清華大學工業工程系的陳飛龍教授，發表了一篇以類神經網路偵測晶圓缺陷的空間分佈模式的論文在國際電機電子工程學會的半導體製造期刊[6]，從學術文獻歷史來看，當時這是相當領先的研究。這代表在20年前，其實台灣就已經運用人工智慧的技術於解決晶圓製造的良率問題，只是其他製造業的環境與條件，還未能大量採用而已。近來因為智慧製造被炒熱成為下一世代的製造趨勢，以及AlphaGo造成的人工智慧風潮，許多報導不是慨嘆我們的落後，就是對於未來的不確定性感到懼怕，其實都是不瞭解我們已經有的潛在基礎。然而不論是數據科學或是人工智慧（例如深度學習），線性代數、機率統計、機器學習與優化理論都是必要的基礎，不可否認的，現今能夠掌握運用這些知識的人才非常稀缺。四、結語本文旨在闡述大量數據資料在製造上的重要性，台灣引以為傲的積體電路製造業，已經在很多年前就已經開始探索並善用製造數據，多年的研究與知識累積，造就了無可取代的競爭力。而台灣廣大的製造業，不乏才正要開始導入並實作這些觀念與技術。當我們從報導中看到國外許多在消費市場，醫療與公共行政上的大數據案例，可千萬不要捨近求遠，台灣經濟發展基石的製造業，其實有太多數據值得我們去發掘，探索，分析與產生價值。自從德國提出工業4.0的口號，市場上就到處充斥著各種不同關於智慧製造的報導與分析，太多的面向與角度，以及帶有行銷企圖的口氣，讓很多製造業，尤其是中小企業，常常覺得無所適從。特別是從大數據分析技術的角度來看，認為一切只需要提供數據，最好是利用人工智慧的分析與資料探勘，可以從數據中撈到令人意想不到的關聯性，就像中獎一樣，進而產生了價值。這種說法其實是另一種型式的賭博，風險非常高。對製造業而言，萬變不離其宗，一切都必須從企業的核心價值出發，思考何種數據可以增加這個價值，如何取得這些數據，以及如何分析善用這些數據。如果對於某一些製造領域內長久存在的已知問題，其所呈現的數據隱含豐富的資訊量，這就可能是個金礦。只要能善用資料分析與建模技術解決這些問題，很可能一下子就把競爭對手遠遠甩開。另一方面，通過解析資料的異常數據以及潛藏規律也可能發掘過去所不為人所知的製造問題，譬如，AlphaGo經常奕出人類無法理解的棋步即為一例。最後，從前文所述晶圓缺陷分析技術的發展歷史，可以看到這是長時間的功夫累積，以及學理基礎的必要性，絕對不是靠人工經驗與僥倖可以成功的。這代表企業必須下定決心投資在建立堅實的數據科學和人工智慧知識與技術，以及教育界必須積極培養所需的人才。誌謝：本文要感謝周志成教授對內容寶貴的建議與修正。參考文獻：
+Bernard T. Murphy, "Cost-size optima of monolithic integrated circuits." Proceedings of the IEEE 52.12 (1964): 1537-1545.Hu, S. M. "Some considerations in the formulation of IC yield statistics." Solid-State Electronics 22.2 (1979): 205-211.Stapper, Charles H., Frederick M. Armstrong, and Kiyotaka Saji. "Integrated circuit yield statistics." Proceedings of the IEEE 71.4 (1983): 453-470.Stapper, Charles H., The proceedings of the 1996 Symposium on Defect and Fault Tolerance in VLSI Systems, IEEE Computer Society, November 6 - 8, 1996, Boston, Massachusetts, USA.Sikka, Digvijay, "Automated feature detection and characterization in sort wafer maps." The proceedings of 1993 International Joint Conference on Neural Networks, Vol. 2, IEEE, 1993.Cunningham, Sean P., and Scott MacKinnon. "Statistical methods for visual defect metrology." IEEE Transactions on Semiconductor Manufacturing 11.1 (1998): 48-53.Chen, Fei-Long, and Shu-Fan Liu. "A neural-network approach to recognize defect spatial pattern in semiconductor fabrication." IEEE transactions on semiconductor manufacturing 13.3 (2000): 366-373.
+
+
+
+ [c1]一般來說，自動分類與人工分類的吻合度大概只有80~90%，實際情況是常常兩個工程師都無法有一致的判別。
+
+
+
+
+
+
+           
+    
+
+
+
+
+
+
+
+
+
+
+
+友善列印
+
+
+若您無法使用字級縮放功能，請改用鍵盤"Ctrl"+"加號鍵"或"Ctrl"+"減號鍵"，來放大或縮小字級
+
+分享：
+Share to Twitter
+Share to Plurk
+Share to Facebook
+Share to Google Plus
+
+
+                                當SCRIPT關閉時,請點選以下連結.
+                                Facebook
+plurk
+twitter
+google plus
+
+
+
+
+
+TOP
+
+
+
+:::
+:::
+
+機械與機電系統研究所
+
+關於我們
+
+簡介
+
+所長的話
+
+虛擬展示館
+
+資訊脈動
+
+機電人才培訓
+
+
+
+研究與發展
+
+前瞻研究
+智慧機械與機器人先進綠能設備製造智慧車輛
+開放式創新系統平臺
+智慧機械與機器人先進綠能設備製造智慧機電系統智慧車輛
+工業4.0專區
+
+機械展覽專區
+
+技術影片欣賞
+
+
+
+產業合作
+專家觀點工業服務產業聯盟國際合作
+可移轉技術
+
+聯絡我們
+
+
+
+
+
+
+
+
+
+
+
+
+關於工研院
+
+工研院簡介
+
+董監事會
+
+經營團隊介紹
+
+工研院院士
+
+綠色低碳院區
+
+社會公益
+
+獲獎榮耀
+
+工研院院友會
+
+安衛品質環境能源政策
+
+
+
+創新應用
+
+簡介
+
+智慧生活
+
+健康樂活
+
+永續環境
+
+
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+新聞室
+
+新聞資料庫
+
+新聞連絡
+
+精彩影音
+
+
+
+單位介紹
+
+總覽
+
+南分院
+
+中分院
+
+生醫與醫材研究所
+
+綠能與環境研究所
+
+材料與化工研究所
+
+機械與機電系統研究所
+
+資訊與通訊研究所
+
+電子與光電系統研究所
+
+量測技術發展中心
+
+影像顯示科技中心
+
+服務系統科技中心
+
+產業經濟與趨勢研究中心
+
+巨量資訊科技中心
+
+智慧機械科技中心
+
+智慧微系統科技中心
+
+雷射與積層製造科技中心
+
+產業學院
+
+技術移轉與法律中心
+
+產業服務中心
+
+國際中心
+
+
+
+
+
+
+
+
+
+法律聲明智財聲明工研院圖書館服務專線 / 信箱採購資訊問答集本網站已通過A+等級無障礙網頁檢測
+
+版權所有© 2014工業技術研究院 ∣ 新竹縣竹東鎮中興路四段195號  (地圖) ∣ 總機：+886-3-582-0100 ∣ 客服專線：0800-45-8899 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	產業合作 - 機械與機電系統研究所 - 單位介紹 - 工研院中文版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        您的瀏覽器不支援JavaScript語法,但是並不影響您獲取本網站的內容。
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+工業技術研究院
+
+迴首頁網站導覽菁英招募出版品服務據點公告電子報專業連結FBYouTubei創科技EN
+
+
+
+
+
+
+
+
+
+
+關於工研院
+
+工研院簡介
+
+董監事會
+
+經營團隊介紹
+
+工研院院士
+
+綠色低碳院區
+
+社會公益
+
+獲獎榮耀
+
+工研院院友會
+
+安衛品質環境能源政策
+
+
+
+創新應用
+
+簡介
+
+智慧生活
+
+健康樂活
+
+永續環境
+
+
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+新聞室
+
+新聞資料庫
+
+新聞連絡
+
+精彩影音
+
+
+
+單位介紹
+
+總覽
+
+南分院
+
+中分院
+
+生醫與醫材研究所
+
+綠能與環境研究所
+
+材料與化工研究所
+
+機械與機電系統研究所
+
+資訊與通訊研究所
+
+電子與光電系統研究所
+
+量測技術發展中心
+
+影像顯示科技中心
+
+服務系統科技中心
+
+產業經濟與趨勢研究中心
+
+巨量資訊科技中心
+
+智慧機械科技中心
+
+智慧微系統科技中心
+
+雷射與積層製造科技中心
+
+產業學院
+
+技術移轉與法律中心
+
+產業服務中心
+
+國際中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+首頁
+單位介紹機械與機電系統研究所
+
+
+產業合作
+
+
+
+
+
+
+                    產業合作
+
+
+字級：
+小字級
+中字級
+大字級
+
+若您無法使用字級縮放功能，請改用鍵盤"Ctrl"+"加號鍵"或"Ctrl"+"減號鍵"，來放大或縮小字級
+
+
+
+
+  專家觀點 收錄與工研院機械與機電系統研究相關評論文章，並隨時加入對時事、趨勢、議題的觀察與看法，期許透過文字與大家交流。  工業服務 工研院產業合作技術，包含智慧機械與機器人領域、先進綠能設備製造領域、智慧機電領域以及智慧車輛領域。  產業聯盟 為推動台灣機械產業發展，工研院機械與機電系統研究所將與相關公學會保持良好互動，謀畫工業之改良推廣，共同提升機械產業之競爭力。  國際合作 工研院機械與機電系統研究所與國際權威學術研究單位，以及全球先進科技企業共同合作，成為國內與國際間的技術交流平臺。
+
+
+
+
+           
+    
+
+
+
+
+
+
+
+
+友善列印
+
+
+若您無法使用字級縮放功能，請改用鍵盤"Ctrl"+"加號鍵"或"Ctrl"+"減號鍵"，來放大或縮小字級
+
+分享：
+Share to Twitter
+Share to Plurk
+Share to Facebook
+Share to Google Plus
+
+
+                                當SCRIPT關閉時,請點選以下連結.
+                                Facebook
+plurk
+twitter
+google plus
+
+
+
+
+
+TOP
+
+
+
+:::
+:::
+
+機械與機電系統研究所
+
+關於我們
+
+簡介
+
+所長的話
+
+虛擬展示館
+
+資訊脈動
+
+機電人才培訓
+
+
+
+研究與發展
+
+前瞻研究
+智慧機械與機器人先進綠能設備製造智慧車輛
+開放式創新系統平臺
+智慧機械與機器人先進綠能設備製造智慧機電系統智慧車輛
+工業4.0專區
+
+機械展覽專區
+
+技術影片欣賞
+
+
+
+產業合作
+專家觀點工業服務產業聯盟國際合作
+可移轉技術
+
+聯絡我們
+
+
+
+
+
+
+
+
+
+
+
+
+關於工研院
+
+工研院簡介
+
+董監事會
+
+經營團隊介紹
+
+工研院院士
+
+綠色低碳院區
+
+社會公益
+
+獲獎榮耀
+
+工研院院友會
+
+安衛品質環境能源政策
+
+
+
+創新應用
+
+簡介
+
+智慧生活
+
+健康樂活
+
+永續環境
+
+
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+新聞室
+
+新聞資料庫
+
+新聞連絡
+
+精彩影音
+
+
+
+單位介紹
+
+總覽
+
+南分院
+
+中分院
+
+生醫與醫材研究所
+
+綠能與環境研究所
+
+材料與化工研究所
+
+機械與機電系統研究所
+
+資訊與通訊研究所
+
+電子與光電系統研究所
+
+量測技術發展中心
+
+影像顯示科技中心
+
+服務系統科技中心
+
+產業經濟與趨勢研究中心
+
+巨量資訊科技中心
+
+智慧機械科技中心
+
+智慧微系統科技中心
+
+雷射與積層製造科技中心
+
+產業學院
+
+技術移轉與法律中心
+
+產業服務中心
+
+國際中心
+
+
+
+
+
+
+
+
+
+法律聲明智財聲明工研院圖書館服務專線 / 信箱採購資訊問答集本網站已通過A+等級無障礙網頁檢測
+
+版權所有© 2014工業技術研究院 ∣ 新竹縣竹東鎮中興路四段195號  (地圖) ∣ 總機：+886-3-582-0100 ∣ 客服專線：0800-45-8899 
+
+
+
+
+
+
+
+

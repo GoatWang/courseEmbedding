@@ -1,0 +1,5237 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+散發代理程式安全性 | Microsoft Docs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+散發代理程式安全性Distribution Agent Security
+
+
+2017-3-14
+5 分鐘可讀完
+參與者
+
+
+
+
+
+
+
+
+
+
+ [散發代理程式安全性] 對話方塊，可以讓您指定散發代理程式執行用的 Windows 帳戶。The Distribution Agent Security dialog box allows you to specify the Windows account under which the Distribution Agent runs. 若為發送訂閱，散發代理程式會在散發者端執行；若為提取訂閱，則散發代理程式會在訂閱者端執行。The Distribution Agent runs at the Distributor for push subscriptions and at the Subscriber for pull subscriptions. 此  MicrosoftMicrosoft Windows 帳戶亦稱為 處理帳戶，因為代理程式處理序會以此帳戶執行。The  MicrosoftMicrosoft Windows account is also referred to as the process account, because the agent process runs under this account. 對話方塊中其他可用的選項會視您存取的方式而定：Additional options available in the dialog box depend on how you access it: 
+
+如果是從新增訂閱精靈中存取對話方塊，它還可以讓您指定散發代理程式連接到訂閱者 (適用於發送訂閱) 或散發者 (適用於提取訂閱) 所用的內容。If the dialog box is accessed from the New Subscription Wizard, it also allows you to specify the context under which the Distribution Agent makes connections to the Subscriber (for push subscriptions) or the Distributor (for pull subscriptions). 此連接可以藉由模擬 Windows 帳戶，或是用您指定之  MicrosoftMicrosoft SQL ServerSQL Server 帳戶的內容來進行。The connection can be made by impersonating the Windows account or under the context of a  MicrosoftMicrosoft SQL ServerSQL Server account you specify. 
+
+如果是從 [訂閱屬性] 對話方塊中存取對話方塊，請按一下[訂閱者連接]中的屬性按鈕 ( ... )，或該對話方塊的 [散發者連接] 資料列，即可指定散發代理程式進行連接所用的內容。If the dialog box is accessed from the Subscription Properties dialog box, specify the context under which the Distribution Agent makes connections by clicking the properties button (...) in the Subscriber Connection or Distributor Connection row of that dialog box. 如需存取 [訂閱屬性] 對話方塊的詳細資訊，請參閱檢視及修改發送訂閱屬性和如何：檢視及修改提取訂閱屬性。For more information about accessing the Subscription Properties dialog box, see View and Modify Push Subscription Properties and how to: View and Modify Pull Subscription Properties. 
+所有帳戶都必須有效，並且每個帳戶皆有指定正確的密碼。All accounts must be valid, with the correct password specified for each account. 等到代理程式執行時，才會驗證帳戶與密碼。Accounts and passwords are not validated until an agent runs. 
+
+
+選項Options
+ Process AccountProcess Account 輸入散發代理程式執行用的 Windows 帳戶：Enter a Windows account under which the Distribution Agent runs: 
+
+針對發送訂閱，帳戶必須：For push subscriptions, the account must: 
+
+至少是散發資料庫中 db_owner 固定資料庫角色的成員。At minimum be a member of the db_owner fixed database role in the distribution database. 
+
+是發行存取清單 (PAL) 的成員。Be a member of the publication access list (PAL). 
+
+擁有快照集共用上的讀取權限。Have read permissions on the snapshot share. 
+
+如果訂閱是針對非 SQL ServerSQL Server 訂閱者，訂閱者之 OLE DB 提供者的安裝目錄上，就要擁有讀取權限。Have read permissions on the install directory of the OLE DB provider for the Subscriber if the subscription is for a non- SQL ServerSQL Server Subscriber. 
+
+
+
+針對提取訂閱，帳戶至少必須是訂閱資料庫中之 db_owner 固定資料庫角色的成員。For pull subscriptions, the account must at minimum be a member of the db_owner fixed database role in the subscription database. 
+如果是在進行連接時模擬處理帳戶，則需要其他的權限。Additional permissions are required if the process account is impersonated when connections are made. 請參閱以下的＜ 連接到散發者 ＞和＜ 連接到訂閱者 ＞章節。See the Connect to the Distributor and Connect to the Subscriber sections below. 
+無法為 的提取訂閱指定  MicrosoftMicrosoft SQL Server ExpressSQL Server Express, because the Distribution Agent does not run on instances of  SQL Server ExpressSQL Server Express.Process Account cannot be specified for pull subscriptions to  MicrosoftMicrosoft SQL Server ExpressSQL Server Express, because the Distribution Agent does not run on instances of  SQL Server ExpressSQL Server Express. 
+[密碼] 與 [確認密碼]Password and Confirm Password輸入 Windows 帳戶的密碼。Enter the password for the Windows account. 
+連接到散發者Connect to the Distributor對於發送訂閱，要連接到散發者時，一律都會以模擬 [處理帳戶] 文字方塊中所指定的帳戶來進行。For push subscriptions, connections to the Distributor are always made by impersonating the account specified in the Process account text box. 
+對於提取訂閱，選取散發代理程式是否應模擬 [處理帳戶] 文字方塊中所指定的帳戶，還是要使用  SQL ServerSQL Server 帳戶，來連接到散發者。For pull subscriptions, select whether the Distribution Agent should make connections to the Distributor by impersonating the account specified in the Process account text box or by using a  SQL ServerSQL Server account. 如果您選取使用  SQL ServerSQL Server 帳戶，請輸入  SQL ServerSQL Server 登入和密碼。If you select to use a  SQL ServerSQL Server account, enter a  SQL ServerSQL Server login and password. 
+
+
+註意 建議您選取模擬 Windows 帳戶，而不要使用  SQL ServerSQL Server 帳戶。It is recommended that you select to impersonate the Windows account rather than using a  SQL ServerSQL Server account. 
+
+ 用於連接的 Windows 帳戶或  SQL ServerSQL Server 帳戶必須：The Windows account or  SQL ServerSQL Server account used for the connection must: 
+
+為 PAL 的成員。Be a member of the PAL. 
+
+擁有快照集共用上的讀取權限。Have read permissions on the snapshot share. 
+連接到訂閱者Connect to the Subscriber針對提取訂閱，一律會藉由模擬 [處理帳戶] 文字方塊中指定的帳戶連接到訂閱者。For pull subscriptions, connections to the Subscriber are always made by impersonating the account specified in the Process account text box. 
+對於發送訂閱，  SQL ServerSQL Server 訂閱者與非 SQL ServerSQL Server 訂閱者的選項並不相同：For push subscriptions, the options are different for  SQL ServerSQL Server Subscribers and non- SQL ServerSQL Server Subscribers: 
+
+對於  SQL ServerSQL Server 訂閱者：選取散發代理程式是否應模擬 [處理帳戶] 文字方塊中所指定的帳戶，還是要使用  SQL ServerSQL Server 帳戶，來連接到訂閱者。For  SQL ServerSQL Server Subscribers: select whether the Distribution Agent should make connections to the Subscriber by impersonating the account specified in the Process account text box or by using a  SQL ServerSQL Server account. 如果您選取使用  SQL ServerSQL Server 帳戶，請輸入  SQL ServerSQL Server 登入和密碼。If you select to use a  SQL ServerSQL Server account, enter a  SQL ServerSQL Server login and password. 
+註意 建議您選取模擬 Windows 帳戶，而不要使用  SQL ServerSQL Server 帳戶。It is recommended that you select to impersonate the Windows account rather than using a  SQL ServerSQL Server account. 
+
+ 用於連接到訂閱者的 Windows 帳戶或  SQL ServerSQL Server 帳戶至少必須是訂閱資料庫中之 db_owner 固定資料庫角色的成員。The Windows account or  SQL ServerSQL Server account used for the connection to the Subscriber must at minimum be a member of the db_owner fixed database role in the subscription database. 
+
+對於非 SQL ServerSQL Server 訂閱者，請指定當散發代理程式要連接到訂閱者時，應使用的訂閱者端之資料庫登入。For non- SQL ServerSQL Server Subscribers, specify the database login at the Subscriber that should be used when the Distribution Agent connects to the Subscriber. 此登入應擁有在訂閱資料庫中建立物件的權限。The login should have sufficient permissions to create objects in the subscription database. 如需設定非  SQL ServerSQL Server 訂閱者的詳細資訊，請參閱為非 SQL Server 訂閱者建立訂閱。For more information about configuring non- SQL ServerSQL Server Subscribers, see Create a Subscription for a Non-SQL Server Subscriber. 
+其他連接選項Additional connection options僅限非 SQL ServerSQL Server 訂閱者。Non- SQL ServerSQL Server Subscribers only. 以連接字串的格式，為訂閱者指定任何連接選項 (Oracle 並不需要其他選項)。Specify any connection options for the Subscriber in the form of a connection string (Oracle does not require additional options). 每個選項應以分號分隔。Each option should be separated by a semi-colon. 以下為 IBM DB2 連接字串的範例 (分行符號僅為便於閱讀)：The following is an example of an IBM DB2 connection string (line breaks are for readability): 
+
+
+Provider=DB2OLEDB;Initial Catalog=MY_SUBSCRIBER_DB;Network Transport Library=TCP;Host CCSID=1252;  
+PC Code Page=1252;Network Address=MY_SUBSCRIBER;Network Port=50000;Package Collection=MY_PKGCOL;  
+Default Schema=MY_SCHEMA;Process Binary as Character=False;Units of Work=RUW;DBMS Platform=DB2/NT;  
+Persist Security Info=False;Connection Pooling=True;  
+ 字串中的大多數選項是您設定之 DB2 伺服器的專用選項，但 將二進位當作字元處理 選項，應一律設定為 [False] 。Most of the options in the string are specific to the DB2 server you are configuring, but the Process Binary as Character option should always be set to False. 需要為 初始目錄 選項指定值，以便識別訂閱資料庫。A value is required for the Initial Catalog option to identify the subscription database. 如需相關資訊，請參閱 IBM DB2 Subscribers。For more information, see IBM DB2 Subscribers. 
+另請參閱See Also
+ 管理複寫的登入與密碼 Manage Logins and Passwords in Replication  複寫代理程式安全性模型  Replication Agent Security Model  複寫代理程式概觀  Replication Agents Overview  複寫安全性最佳做法  Replication Security Best Practices  訂閱發行集 Subscribe to Publications 
+
+
+
+
+
+
+
+
+
+
+編輯										
+
+
+共用
+
+Twitter
+Facebook
+
+
+|
+
+佈景主題
+
+
+淺色
+深色
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {{offlineMessage}}
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+試用 Microsoft Edge
+專為 Windows 10 設計、快速且安全的瀏覽器
+
+
+不，謝謝
+開始使用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft
+
+
+
+
+
+
+
+
+
+0
+ 個項目在購物車中
+
+
+
+
+登入
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Javascript 已停用 
+ 請啟用 JavaScript，然後重新整理頁面 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Cookie 已停用 
+ 請啟用 Cookie，然後重新整理頁面 
+
+
+
+CV： {{ getCv() }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+善用檢測工具幫你預先找出軟體安全性漏洞 | iThome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+移至主內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+技術文章
+
+
+ 
+
+善用檢測工具幫你預先找出軟體安全性漏洞
+ 在茫茫程式碼中，我們可以透過工具來協助找到並修正臭蟲，但前提是要在程式碼規模發展到一定程度之前，就要進行偵測
+
+ 
+
+
+
+
+
+
+ 
+按讚加入iThome粉絲團
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+文/李宗翰
+|
+2014-07-23發表
+  
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+ 對許多工作來說，一開始就把事情做對，往往能大幅節省掉後續許多無謂的修正和確認的工夫，對於應用程式的品質和安全性的確保也是一樣，如果在軟體開發期間就能及早發現程式臭蟲和安全性弱點，並且加以調整，之後，也就不需要浪費那麼多人力和時間去更新系統，甚至必須整個重新部署。
+就原則上，我們都知道一勞永逸是有可能達到的理想，然而，在軟體開發流程要落實這些工作，卻困難重重，所幸現在我們對這樣的觀念有更深刻的體認，在程式碼編寫方式上比較願意去調整和配合。
+而且，市面上也有不少輔助工具提供或整合了許多便利功能，減輕開發人員作業上的負擔。
+例如，有許多整合式開發工具都內建了更聰明的偵錯機制，當開發人員在撰寫或編譯程式碼時，都能夠接收到相關的提醒，提高警覺。
+有些開發平臺也內建了自動化的程式碼審查機制（Code Review），在程式碼提交到版本控制系統時，須根據管理者制定的政策來執行審查的程序，通過後，程式碼才能進到由系統集中管理的檔案庫，例如微軟Visual Studio搭配的Team Foundation Server。
+若需要專門針對安全性漏洞的偵測機制，你也可以利用第三方的程式碼安全檢測分析產品，像是HP Fortify系列產品、IBM Security AppScan、Checkmarx。
+不過，工具並非萬能，而且程式碼是人寫出來的、程式設計需求是人定義與理解的，為了滿足需求所實作的程式邏輯也可能變化多端，並非只是制式條列的死板文字，因此若要充分驗證軟體的品質和安全性，仍需要透過相關的使用測試來驗證，例如壓力測試（Stress test）、系統整合測試（SIT）、功能驗證測試（FVT）、使用者接受度測試（UAT），以及特別用在驗證資安防護程度的滲透測試（PT）。
+照理說，工具的運用與這些測試，對大型的IT或網路公司來說，應該是更有機會去落實在本身的開發流程中，不過類似蘋果iOS的SSL漏洞，後來被發現是因為少了括號，所以才出包，難道上述方法他們都沒有落實？還是這些作法對於發現這樣的漏洞沒有效果？是不是有些問題被忽略了？
+Bug為何永遠抓不盡、修不完？
+進入21世紀的現代，我們對於軟體的依賴度越來越高，不只是針對套裝軟體，現在連伺服器、儲存與網路等基礎架構都會應用到程式碼，而且，這幾年來，像是軟體定義式資料中心（SDDC）、軟體定義式網路（SDN）、軟體定義式儲存（SDS）這樣的應用方興未艾，未來透過軟體控制各種系統與服務的程度會更深。
+不過，隨著IT技術的發展腳步加快，除了新建置或升級既有應用系統之外，其實，我們在日常維運工作中，往往也花不少時間在處理系統的安全性漏洞，然後時間已經來到了2014年，IT人員仍然在不斷因應這些問題，有許多原因，其中一個因素，是跟軟體開發專案的人力配置與素質有關。
+通常比較有開發經驗的人所寫出來的程式，Bug少，錯誤率低。但實務上，很多開發專案經常處於趕工狀態，而因此會需要更多人手來協助，然而，有時為了節省成本等考量，會找新手來幫忙，而這些程式人很可能對資訊安全、系統平臺運作的相關經驗不足，所以寫出來的程式碼品質良莠不齊，所產生的程式碼問題，也和有經驗的開發者大不相同。
+另一個因素是軟體推出的時程緊迫，為了搶產品上市、系統上線的時機，公司高階主管會不斷催促軟體要趕快推出、上線，很多產品經理、專案經理在時程有限的壓力下，被迫趕鴨子上架，但同時又面臨到上述人力成本的限制，所以就算額外增加人手，可能也無法找到開發經驗夠豐富的人員來協助開發，或者因為沒有足夠時間去訓練這些新手，於是同樣又因此產生一些熟手不會犯的錯誤。
+不過，即使團隊中沒有新手，主要負責開發的都是資深人員，靠少數幾位足以吃下相關的工作負擔，但因為專案時間抓得很緊、工作過勞的關係，他就算知道程式中仍有臭蟲未解，只好暫時忽略，先把功能面的部份做完，行有餘力，再去處理資安的問題。
+本身有16年軟體開發經驗，目前在HP軟體事業群資訊安全處擔任Fortify技術經理的林榮秋，他觀察到目前軟體開發人員經常面臨到這樣的狀況，而且即使是有能力購買、導入Fortify程式碼安全檢測工具的用戶，他們雖然透過這套系統掃描到程式碼有不少安全性問題、弱點，但因為老闆要求上線的時間在即，所以明知有問題，還是冒險讓程式上線了，之後再設法在沒出事前，趕緊修改，只是心中有個賭註式的期待，希望這段期間駭客不要來攻打他們的程式。
+然而，開發時程緊迫已經是大勢所趨，因為現在大家都希望做到快速發行、程式釋出新版的間隔變得更短，林榮秋說，現在的開發時間又更為壓縮，尤其像手機App，開發時間更少，可能每半個月就要發出一個修正版，若允許長一點的開發時程，也可能頂多只有一個月。
+對於層出不窮的程式臭蟲，有17年軟體開發經驗的達友科技副總經理暨技術總監林皇興，因為需針對所代理的產品，例如Websense的網頁安全與資料外洩防護系統，為用戶提供客製功能服務，因此對軟體有漏洞的狀況也有一些體認。
+他說，這也是軟體的藝術，只要是藝術，就不會有100%的狀況──沒有絕對的對或錯，隨著時間演進，總會有新的發現。但程式不是滿講究邏輯的嗎？為什麼還是有個別差異？
+因為，每個人所寫的程式都有自己的風格。比如說我們列了5個功能要求，要5個人去寫程式，每個人一定寫得不一樣──就算都是同一間大學、科技畢業，但每個人寫出來的程式碼風格可能不一樣，這是沒有辦法的事。所以他們以前在面試程式員、開發人員時，通常請對方提供寫過的程式碼片段，看看風格是否適合公司要求。
+搭配軟體開發輔助工具，可以做到自動化偵測
+想要提升軟體品質與安全性的機制，有些廠商提供的開發平臺直接就內建相關的功能，如果是第三方的程式碼安全檢測工具，有許多產品也提供了與這些主流開發平臺整合機制。
+以微軟Visual Studio來說，企業若把相關的開發環境建立起來，不論人員是在內部開發，或者是把開發工作外包到給其他公司，都可以透過Team Foundation Server（TFS）內建的程式碼簽入原則（Check-in Policy），來管控開發人員所提交的程式碼，若程式碼無法符合這些資安或效能的政策，就不能簽入。
+當開發者要將程式碼簽入TFS時，系統會自動執行程式碼審核的工作，比如說系統設了20條規則，只要其中有一條出問題，就沒辦法簽入，所以任何有問題的程式碼，都進不了這裡。微軟開發工具暨平臺推廣處資深產品行銷經理吳典璋認為，問題在於如何在流程裡面去落實，這更重要，因為是從根本，也就是流程的層面去解決。
+不過，這麼做，一開始會讓許多開發人員很不適應，因為他們會發現程式碼都沒辦法簽入到系統上，因為沒有符合規範，吳典璋說，久而久之，開發人員就會習慣這樣的政策，而將對應的作法落實在日常的開發流程中，而不是到了最後關卡才做驗證的動作。
+吳典璋強調，傳統的品質確保作業（Quality Assurance，QA）只是工作流程中的一環，並不等於軟體品質，這項工作應該是在每個開發階段都要進行的。傳統的QA就是所謂的抓Bug、做測試，但是其實到了開發的末段才做驗證，已經太遲。而且，以臺灣多數的中小企業規模而言，想要擁有一個有規模的QA團隊來協助開發，並不容易。若你沒有能力去養一個QA團隊，你還是可以在開發階段做到，用上述方式幫程式碼品質把關。
+如果是要運用程式碼安全檢測工具，有辦法整合在開發流程中嗎？以HP Fortify的產品來說，用戶會固定每天把他們寫好的程式碼，提交到版本控制伺服器，然後Fortify會在晚上定期去掃描程式碼（以指令的方式將程式碼簽出，再做掃描）。
+林榮秋說，如果對象是手機App，因為程式本身不會很大，程式碼安全檢測系統在一個鐘頭之內就可以掃完。專案經理隔天就可以看到掃描結果的統計報表，然後，他再根據所呈現的問題狀況派工，看要誰去修改這段程式碼，
+事在人為，決定修改程式碼的關鍵仍在於人
+透過工具來幫忙固然是一種可行的選項，不過，實務上，還是有賴開發人員來妥善運用，才會奏效。
+這些產品能夠判斷程式碼的語法錯誤，主要是檢查出問題、發出警告，幫你判斷邏輯上的錯誤，在眾至資訊任職已10年的技術總監黃俊魁提醒，就算開發工具會顯示警告，很多人不見得會逐一檢視其中的問題。
+例如，當開發人員剛開始寫程式碼時，工具軟體出現警告，他們可能還會去看，等到判斷沒關係之後，就會略過這些訊息，繼續工作；當程式碼發展到很大規模的地步，此時，開發工具軟體所出現的警告可能是二十幾、三十幾個，因為訊息過多，所以很多人的反應是全部跳過不看。
+遇到這樣的狀況，黃俊魁說，只能要求程式人員看到警告時，要一個個去檢查，判斷是否可以忽略，或是把這些警告的來源修正掉。
+另一點是，若用第三方軟體來檢測程式碼，黃俊魁認為能否信任它們檢查的結果，會是一個問題點，因為現在開發者所用的軟體平臺，還是以官方的系統為主，如果你所用的是封閉的軟體開發平臺與程式語言，若有第三方的產品比對出來，發現程式碼是有問題時，卻跟官方軟體所檢查的結果不一樣，我們該相信哪一方？
+此外，不論是軟體開發平臺或是第三方的程式碼安全檢測工具，即便都具有安全性的測試功能，但是所能偵測的項目和範圍上，可能有局限，林皇興說，有些產品所針對的安全性弱點檢查，可能會偏重在OWASP（Open Web Application Security Project）組織所列出的10大主要威脅。
+有些比較嚴謹的使用單位，會要求做白箱檢測，也會要求做黑箱檢測，做完之後，還會要求以人工方式進行滲透測試，最後才能上線。不過，他也觀察到，真正能夠把這些步驟做到的企業或單位並不多，以目前現實環境而言，能夠做到其中一樣就不錯了。
+若要仰賴開發流程期間的種種測試，例如模組測試、單元測試，在多數的情況下，進行測試的人本身就是開發程式的人，林皇興表示，他們所用的測試方法是否完善，其實並不容易受到監督。
+對於這種狀況，黃俊魁也有同感，讓寫這段程式碼的人去做測試，往往都不會有問題，因為他知道程式邏輯怎麼寫，所以測試時，就會被這框架給限制住了。所以，他們會找一般使用者、不懂程式的人來執行這項工作，因為對方不知道寫程式碼的方式和框架預設的邏輯，而無法直覺地認定程式的功能，於是他操作的方式可能就跳脫開發人員的框架，這時候就有機會發現原來開發人員所沒有考慮到的問題。
+除了透過測試，若能夠有足夠的人力來審核寫好的程式碼，為軟體品質把關，有時也是必要的。黃俊魁說，他們公司目前有一位研發的主管專門負責這項工作，但他主要是針對重點的程式碼部分去做檢核，而不是逐行審閱，一些比較細小的、偏重使用者介面的部分，可能就會略過。
+
+程式碼安全檢測工具可偵測goto fail的問題
+透過程式碼安全檢測工具Checkmarx的分析，可以找到蘋果作業系統sslKeyExchange.c中不當使用 goto的段落。但這樣的情況對Checkmarx而言，通常視為品質問題，而非資安問題，所以列在 Info區。圖片提供∕叡揚資訊
+
+
+整合在微軟Visual Studio的程式碼安全檢測工具
+有些程式碼安全檢測工具可以嵌在整合式開發工具上，讓開發人員在單一介面上完成安全檢測。圖中是嵌在微軟Visual Studio（VS）的Fortify Static Code Analyzer（SCA），目前最新的4.1版支援VS2010、VS2012、VS2013，此外它還可以整合在Eclipse，以及IBM Rational Application Developer和Rational Software Architect。圖片提供∕HP Fortify
+
+
+換個角度理解iOS SSL/TLS程式臭蟲的成因
+以這段範例程式碼來看，基本上， result 的數值應該回應 3。因為，我們定義變數  updateResultLableTextWithState :3，所以，到下麵判斷執行時，應該顯示 state == 3 的結果。兩者的差別在於，左圖中的程式碼是簡寫，右圖則是加上了括號，所以執行結果大不相同。圖片提供∕眾至資訊
+
+ 
+
+在不同開發階段，皆可落實軟體品質管控
+要落實軟體品質的改善，並不是在程式碼完成後的測試作業時才進行，而是在每個開發階段上都應該導入的工作。資料來源：微軟，2014年7月
+
+
+ 
+相關報導請參考「軟體品質控管亮紅燈 小疏忽可能釀成大災難」
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+ Advertisement
+
+
+ 
+
+ 
+
+更多 iThome相關內容
+
+
+  
+ 應用程式安全性漏洞已成軟體應用大威脅 
+
+ HTTPS崛起 考驗企業網路防護力 
+
+ HTTPS網站居主流 資安重新定義 
+
+ 可快速申裝的中小企業防毒系統 
+
+ OpenSSH爆重大安全漏洞，可能導致加密金鑰外洩 
+
+ 蘋果Mac OS的Gatekeeper安全漏洞被爆未修補完全 
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+熱門新聞
+
+
+
+
+
+
+ 
+
+
+英國Wi-Fi業者使壞，讓2.2萬名用戶無意中同意去掃流動廁所
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+Google 兩步驟驗證將以手機提示取代簡訊
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+【AI關鍵技術】三大熱門深度學習框架新進展
+
+2017-07-19
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+硬體不相容，部份英特爾Atom裝置無法升級Windows 10 Creators Update
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+災難！CoinDash首度發行貨幣當天就被駭，損失近700萬美元
+
+2017-07-18
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+微軟亞洲研究院院長洪小文：越複雜越不管用，AI最適合封閉型的高重複性任務
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+安撫使用者不滿情緒，Skype聯絡人狀態顯示功能回來了!
+
+2017-07-17
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+南韓代管業者Nayana遭勒索軟體攻擊，與駭客達成協議將支付110萬美元贖金
+
+2017-06-21
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+2017年AI開始普及化，技術競賽白熱化
+
+2017-07-15
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+國際警方聯手關閉暗網市集AlphaBay
+
+2017-07-17
+ 
+ 
+
+
+
+ 
+
+專題報導
+
+
+
+
+企業行動化管理解決方案採購大特輯 
+
+
+AI 100（上） 
+
+
+公有雲儲存服務大盤點 
+
+
+富士通AI新戰略 
+
+
+企業身分驗證雲端服務採購特輯 
+
+更多專題報導
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+散發代理程式安全性 | Microsoft Docs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+散發代理程式安全性Distribution Agent Security
+
+
+2017-3-14
+5 分鐘可讀完
+參與者
+
+
+
+
+
+
+
+
+
+
+ [散發代理程式安全性] 對話方塊，可以讓您指定散發代理程式執行用的 Windows 帳戶。The Distribution Agent Security dialog box allows you to specify the Windows account under which the Distribution Agent runs. 若為發送訂閱，散發代理程式會在散發者端執行；若為提取訂閱，則散發代理程式會在訂閱者端執行。The Distribution Agent runs at the Distributor for push subscriptions and at the Subscriber for pull subscriptions. 此  MicrosoftMicrosoft Windows 帳戶亦稱為 處理帳戶，因為代理程式處理序會以此帳戶執行。The  MicrosoftMicrosoft Windows account is also referred to as the process account, because the agent process runs under this account. 對話方塊中其他可用的選項會視您存取的方式而定：Additional options available in the dialog box depend on how you access it: 
+
+如果是從新增訂閱精靈中存取對話方塊，它還可以讓您指定散發代理程式連接到訂閱者 (適用於發送訂閱) 或散發者 (適用於提取訂閱) 所用的內容。If the dialog box is accessed from the New Subscription Wizard, it also allows you to specify the context under which the Distribution Agent makes connections to the Subscriber (for push subscriptions) or the Distributor (for pull subscriptions). 此連接可以藉由模擬 Windows 帳戶，或是用您指定之  MicrosoftMicrosoft SQL ServerSQL Server 帳戶的內容來進行。The connection can be made by impersonating the Windows account or under the context of a  MicrosoftMicrosoft SQL ServerSQL Server account you specify. 
+
+如果是從 [訂閱屬性] 對話方塊中存取對話方塊，請按一下[訂閱者連接]中的屬性按鈕 ( ... )，或該對話方塊的 [散發者連接] 資料列，即可指定散發代理程式進行連接所用的內容。If the dialog box is accessed from the Subscription Properties dialog box, specify the context under which the Distribution Agent makes connections by clicking the properties button (...) in the Subscriber Connection or Distributor Connection row of that dialog box. 如需存取 [訂閱屬性] 對話方塊的詳細資訊，請參閱檢視及修改發送訂閱屬性和如何：檢視及修改提取訂閱屬性。For more information about accessing the Subscription Properties dialog box, see View and Modify Push Subscription Properties and how to: View and Modify Pull Subscription Properties. 
+所有帳戶都必須有效，並且每個帳戶皆有指定正確的密碼。All accounts must be valid, with the correct password specified for each account. 等到代理程式執行時，才會驗證帳戶與密碼。Accounts and passwords are not validated until an agent runs. 
+
+
+選項Options
+ Process AccountProcess Account 輸入散發代理程式執行用的 Windows 帳戶：Enter a Windows account under which the Distribution Agent runs: 
+
+針對發送訂閱，帳戶必須：For push subscriptions, the account must: 
+
+至少是散發資料庫中 db_owner 固定資料庫角色的成員。At minimum be a member of the db_owner fixed database role in the distribution database. 
+
+是發行存取清單 (PAL) 的成員。Be a member of the publication access list (PAL). 
+
+擁有快照集共用上的讀取權限。Have read permissions on the snapshot share. 
+
+如果訂閱是針對非 SQL ServerSQL Server 訂閱者，訂閱者之 OLE DB 提供者的安裝目錄上，就要擁有讀取權限。Have read permissions on the install directory of the OLE DB provider for the Subscriber if the subscription is for a non- SQL ServerSQL Server Subscriber. 
+
+
+
+針對提取訂閱，帳戶至少必須是訂閱資料庫中之 db_owner 固定資料庫角色的成員。For pull subscriptions, the account must at minimum be a member of the db_owner fixed database role in the subscription database. 
+如果是在進行連接時模擬處理帳戶，則需要其他的權限。Additional permissions are required if the process account is impersonated when connections are made. 請參閱以下的＜ 連接到散發者 ＞和＜ 連接到訂閱者 ＞章節。See the Connect to the Distributor and Connect to the Subscriber sections below. 
+無法為 的提取訂閱指定  MicrosoftMicrosoft SQL Server ExpressSQL Server Express, because the Distribution Agent does not run on instances of  SQL Server ExpressSQL Server Express.Process Account cannot be specified for pull subscriptions to  MicrosoftMicrosoft SQL Server ExpressSQL Server Express, because the Distribution Agent does not run on instances of  SQL Server ExpressSQL Server Express. 
+[密碼] 與 [確認密碼]Password and Confirm Password輸入 Windows 帳戶的密碼。Enter the password for the Windows account. 
+連接到散發者Connect to the Distributor對於發送訂閱，要連接到散發者時，一律都會以模擬 [處理帳戶] 文字方塊中所指定的帳戶來進行。For push subscriptions, connections to the Distributor are always made by impersonating the account specified in the Process account text box. 
+對於提取訂閱，選取散發代理程式是否應模擬 [處理帳戶] 文字方塊中所指定的帳戶，還是要使用  SQL ServerSQL Server 帳戶，來連接到散發者。For pull subscriptions, select whether the Distribution Agent should make connections to the Distributor by impersonating the account specified in the Process account text box or by using a  SQL ServerSQL Server account. 如果您選取使用  SQL ServerSQL Server 帳戶，請輸入  SQL ServerSQL Server 登入和密碼。If you select to use a  SQL ServerSQL Server account, enter a  SQL ServerSQL Server login and password. 
+
+
+註意 建議您選取模擬 Windows 帳戶，而不要使用  SQL ServerSQL Server 帳戶。It is recommended that you select to impersonate the Windows account rather than using a  SQL ServerSQL Server account. 
+
+ 用於連接的 Windows 帳戶或  SQL ServerSQL Server 帳戶必須：The Windows account or  SQL ServerSQL Server account used for the connection must: 
+
+為 PAL 的成員。Be a member of the PAL. 
+
+擁有快照集共用上的讀取權限。Have read permissions on the snapshot share. 
+連接到訂閱者Connect to the Subscriber針對提取訂閱，一律會藉由模擬 [處理帳戶] 文字方塊中指定的帳戶連接到訂閱者。For pull subscriptions, connections to the Subscriber are always made by impersonating the account specified in the Process account text box. 
+對於發送訂閱，  SQL ServerSQL Server 訂閱者與非 SQL ServerSQL Server 訂閱者的選項並不相同：For push subscriptions, the options are different for  SQL ServerSQL Server Subscribers and non- SQL ServerSQL Server Subscribers: 
+
+對於  SQL ServerSQL Server 訂閱者：選取散發代理程式是否應模擬 [處理帳戶] 文字方塊中所指定的帳戶，還是要使用  SQL ServerSQL Server 帳戶，來連接到訂閱者。For  SQL ServerSQL Server Subscribers: select whether the Distribution Agent should make connections to the Subscriber by impersonating the account specified in the Process account text box or by using a  SQL ServerSQL Server account. 如果您選取使用  SQL ServerSQL Server 帳戶，請輸入  SQL ServerSQL Server 登入和密碼。If you select to use a  SQL ServerSQL Server account, enter a  SQL ServerSQL Server login and password. 
+註意 建議您選取模擬 Windows 帳戶，而不要使用  SQL ServerSQL Server 帳戶。It is recommended that you select to impersonate the Windows account rather than using a  SQL ServerSQL Server account. 
+
+ 用於連接到訂閱者的 Windows 帳戶或  SQL ServerSQL Server 帳戶至少必須是訂閱資料庫中之 db_owner 固定資料庫角色的成員。The Windows account or  SQL ServerSQL Server account used for the connection to the Subscriber must at minimum be a member of the db_owner fixed database role in the subscription database. 
+
+對於非 SQL ServerSQL Server 訂閱者，請指定當散發代理程式要連接到訂閱者時，應使用的訂閱者端之資料庫登入。For non- SQL ServerSQL Server Subscribers, specify the database login at the Subscriber that should be used when the Distribution Agent connects to the Subscriber. 此登入應擁有在訂閱資料庫中建立物件的權限。The login should have sufficient permissions to create objects in the subscription database. 如需設定非  SQL ServerSQL Server 訂閱者的詳細資訊，請參閱為非 SQL Server 訂閱者建立訂閱。For more information about configuring non- SQL ServerSQL Server Subscribers, see Create a Subscription for a Non-SQL Server Subscriber. 
+其他連接選項Additional connection options僅限非 SQL ServerSQL Server 訂閱者。Non- SQL ServerSQL Server Subscribers only. 以連接字串的格式，為訂閱者指定任何連接選項 (Oracle 並不需要其他選項)。Specify any connection options for the Subscriber in the form of a connection string (Oracle does not require additional options). 每個選項應以分號分隔。Each option should be separated by a semi-colon. 以下為 IBM DB2 連接字串的範例 (分行符號僅為便於閱讀)：The following is an example of an IBM DB2 connection string (line breaks are for readability): 
+
+
+Provider=DB2OLEDB;Initial Catalog=MY_SUBSCRIBER_DB;Network Transport Library=TCP;Host CCSID=1252;  
+PC Code Page=1252;Network Address=MY_SUBSCRIBER;Network Port=50000;Package Collection=MY_PKGCOL;  
+Default Schema=MY_SCHEMA;Process Binary as Character=False;Units of Work=RUW;DBMS Platform=DB2/NT;  
+Persist Security Info=False;Connection Pooling=True;  
+ 字串中的大多數選項是您設定之 DB2 伺服器的專用選項，但 將二進位當作字元處理 選項，應一律設定為 [False] 。Most of the options in the string are specific to the DB2 server you are configuring, but the Process Binary as Character option should always be set to False. 需要為 初始目錄 選項指定值，以便識別訂閱資料庫。A value is required for the Initial Catalog option to identify the subscription database. 如需相關資訊，請參閱 IBM DB2 Subscribers。For more information, see IBM DB2 Subscribers. 
+另請參閱See Also
+ 管理複寫的登入與密碼 Manage Logins and Passwords in Replication  複寫代理程式安全性模型  Replication Agent Security Model  複寫代理程式概觀  Replication Agents Overview  複寫安全性最佳做法  Replication Security Best Practices  訂閱發行集 Subscribe to Publications 
+
+
+
+
+
+
+
+
+
+
+編輯										
+
+
+共用
+
+Twitter
+Facebook
+
+
+|
+
+佈景主題
+
+
+淺色
+深色
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {{offlineMessage}}
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+試用 Microsoft Edge
+專為 Windows 10 設計、快速且安全的瀏覽器
+
+
+不，謝謝
+開始使用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft
+
+
+
+
+
+
+
+
+
+0
+ 個項目在購物車中
+
+
+
+
+登入
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Javascript 已停用 
+ 請啟用 JavaScript，然後重新整理頁面 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Cookie 已停用 
+ 請啟用 Cookie，然後重新整理頁面 
+
+
+
+CV： {{ getCv() }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+《軟體》檔案備份/管理/同步下載Allway Sync@Dropbox輔助工具程式 - FUNTOP資訊網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FUNTOP資訊網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+首頁
+上傳下載檔案管理資訊防護《軟體》檔案備份/管理/同步下載Allway Sync@Dropbox輔助工具程式
+《軟體》檔案備份/管理/同步下載Allway Sync@Dropbox輔助工具程式
+
+
+2014.01.06
+
+上傳下載 ,檔案管理 ,資訊防護
+資訊三寶哥
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+許多網友現在都選擇透過雲端資料庫來備份檔案，方便檔案管理與同步處理，但多多少少還是會擔心網路資料遺漏的問題，不妨可以透過Allway Sync這款軟體，將資料同步管理之第三方空間，讓檔案資料更加安全。下載Allway Sync程式來備份電腦檔案吧。
+
+
+
+
+
+
+
+
+
+
+ 
+
+軟體名稱：Allway Sync
+軟體類型：檔案管理/備份工具
+
+ 
+
+
+ 
+支援第三方程式：
+Dropbox
+Windows資料夾
+Google Docs
+FTP伺服器
+WebDAV資料夾
+SFTP伺服器
+壓縮檔案
+……等
+ 
+Allway Sync官方網站：http://showmypc.com/
+ 
+檔案下載(點選空間下載):官方載點(3.2MB)
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+臉書留言
+
+
+
+一般留言
+
+
+
+
+
+
+訂閱網站
+
+免費訂閱最新文章，好文不錯過！
+ 
+
+							電子郵件位址						
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+  近期文章 
+
+[懶人包]學習英文 APP@中英文翻譯/文法改錯/每日一句考證照必備網站
+
+
+[懶人包]20170718食尚玩家美食筆記@珠海澳門海洋新奇緣.夢幻購物基金激點戰線上看
+
+
+[懶人包]20170717食尚玩家美食筆記@拉拉山夏天避暑計劃兩天一夜期間限定行程線上看
+
+
+[旅遊]宜蘭童玩節懶人包@交通接駁/票價節目表/時間地點資訊
+
+
+[直播]國際冠軍盃足球賽線上看@網路轉播實況.賽程購票懶人包
+
+
+[直播]NBA BIG3線上看@美國職籃三對三鬥牛籃球賽轉播/教練球員名單懶人包
+
+
+[住宿]苗慄旅館推薦懶人包@南莊/泰安溫泉會館排行榜 Miaoli Hostel
+
+
+[實況]2017 台日雙獅交流賽直播@FOX體育台線上看啦啦隊‧賽程懶人包
+
+
+ 文章分類全部開啟 | 收合
+
+
+ 
+
+
+標籤雲
+
+
+Pokki
+SHARK SAVERS
+KNY
+iOS
+Jeremy Lin
+nio電視網
+PDF
+PicPick
+MSNLite
+PITFALL
+Music
+PPuran Utilities
+PPStream
+NOKIA
+k750
+iobot
+RO
+Android
+PPS
+APP
+NISSAN
+MSN
+PhotoShop 教學
+MOD
+Package
+iPhone
+PDF 閱讀器
+3C
+Game
+NBA
+合作廠商 網站優化SEO排名專家　fun88
+
+網站訊息 －本站彙整網路資訊，整理懶人包非商用之交流。
+－影視頻道皆為外部連結，本站不製作不上傳。
+－歡迎廠商洽談合作邀稿。
+－歡迎大家留下建議與指教。
+
+
+ 
+AD 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+About Us
+
+FUNTOP資訊網創立以來，以分享實用的生活懶人包：運動賽事、電玩娛樂攻略、網路電視線上看、旅遊觀光資訊、電腦綠色軟體、推薦APP工具為宗旨。 在這網路爆炸時代，FUNTOP整理資料，讓大家能用最有效率的方式獲取想要的資訊，歡迎廠商接洽合作。
+
+
+			Contact us: funtop.tw@gmail.com		
+
+
+Follow Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+《軟體》檔案備份/管理/同步下載Allway Sync@Dropbox輔助工具程式 - FUNTOP資訊網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FUNTOP資訊網
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+首頁
+上傳下載檔案管理資訊防護《軟體》檔案備份/管理/同步下載Allway Sync@Dropbox輔助工具程式
+《軟體》檔案備份/管理/同步下載Allway Sync@Dropbox輔助工具程式
+
+
+2014.01.06
+
+上傳下載 ,檔案管理 ,資訊防護
+資訊三寶哥
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+許多網友現在都選擇透過雲端資料庫來備份檔案，方便檔案管理與同步處理，但多多少少還是會擔心網路資料遺漏的問題，不妨可以透過Allway Sync這款軟體，將資料同步管理之第三方空間，讓檔案資料更加安全。下載Allway Sync程式來備份電腦檔案吧。
+
+
+
+
+
+
+
+
+
+
+ 
+
+軟體名稱：Allway Sync
+軟體類型：檔案管理/備份工具
+
+ 
+
+
+ 
+支援第三方程式：
+Dropbox
+Windows資料夾
+Google Docs
+FTP伺服器
+WebDAV資料夾
+SFTP伺服器
+壓縮檔案
+……等
+ 
+Allway Sync官方網站：http://showmypc.com/
+ 
+檔案下載(點選空間下載):官方載點(3.2MB)
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+臉書留言
+
+
+
+一般留言
+
+
+
+
+
+
+訂閱網站
+
+免費訂閱最新文章，好文不錯過！
+ 
+
+							電子郵件位址						
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+  近期文章 
+
+[懶人包]學習英文 APP@中英文翻譯/文法改錯/每日一句考證照必備網站
+
+
+[懶人包]20170718食尚玩家美食筆記@珠海澳門海洋新奇緣.夢幻購物基金激點戰線上看
+
+
+[懶人包]20170717食尚玩家美食筆記@拉拉山夏天避暑計劃兩天一夜期間限定行程線上看
+
+
+[旅遊]宜蘭童玩節懶人包@交通接駁/票價節目表/時間地點資訊
+
+
+[直播]國際冠軍盃足球賽線上看@網路轉播實況.賽程購票懶人包
+
+
+[直播]NBA BIG3線上看@美國職籃三對三鬥牛籃球賽轉播/教練球員名單懶人包
+
+
+[住宿]苗慄旅館推薦懶人包@南莊/泰安溫泉會館排行榜 Miaoli Hostel
+
+
+[實況]2017 台日雙獅交流賽直播@FOX體育台線上看啦啦隊‧賽程懶人包
+
+
+ 文章分類全部開啟 | 收合
+
+
+ 
+
+
+標籤雲
+
+
+Android
+Pokki
+k750
+Jeremy Lin
+PDF
+MSN
+RO
+PhotoShop 教學
+iPhone
+PicPick
+MOD
+KNY
+PITFALL
+NOKIA
+MSNLite
+PPuran Utilities
+Package
+Music
+iobot
+NBA
+NISSAN
+3C
+PPS
+SHARK SAVERS
+PPStream
+PDF 閱讀器
+iOS
+nio電視網
+APP
+Game
+合作廠商 網站優化SEO排名專家　fun88
+
+網站訊息 －本站彙整網路資訊，整理懶人包非商用之交流。
+－影視頻道皆為外部連結，本站不製作不上傳。
+－歡迎廠商洽談合作邀稿。
+－歡迎大家留下建議與指教。
+
+
+ 
+AD 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+About Us
+
+FUNTOP資訊網創立以來，以分享實用的生活懶人包：運動賽事、電玩娛樂攻略、網路電視線上看、旅遊觀光資訊、電腦綠色軟體、推薦APP工具為宗旨。 在這網路爆炸時代，FUNTOP整理資料，讓大家能用最有效率的方式獲取想要的資訊，歡迎廠商接洽合作。
+
+
+			Contact us: funtop.tw@gmail.com		
+
+
+Follow Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Adobe - Adobe Flash Player 下載
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+步驟：3 之 1
+
+
+
+
+
+
+
+Adobe Flash Player
+
+19.2
+
+新增功能？
+
+
+讓程式維持安全狀態
+確保所安裝的 Flash Player 安全且為最新版本。只要在安裝程序期間或任何時候在 Flash Player 控制臺中選取「允許 Adobe 安裝更新」即可。  
+
+
+享受遊戲
+圖片將您的遊戲體驗提升到更高層次。只要按一下，就可讓您的遊戲變得流暢、反應靈敏且畫面超精細。我們還新增了針對遊戲控制器的支援，快來替你的遊戲升級吧！
+
+
+高效能
+利用 Flash Player 的完美播放功能體驗硬體的高速高畫質視訊。最新的改良功能可在 CPU 耗用率達到百分百時，仍舊讓支援的 Flash 內容和遊戲繼續靈敏地回應。
+
+
+
+
+
+
+附註 ：Adobe® Flash® Player 需要 Firefox 17.0 或更高版本
+                    
+
+
+
+
+您瀏覽器中的 JavaScript 目前為停用，且必須下載 Flash Player 才能運作。按一下這裡以取得啟動 JavaScript 的指示。
+
+
+
+版本 26.0.0.137
+系統需求
+您的系統：
+, 繁體中文
+ 
+您是 IT 管理員還是 OEM？
+
+
+
+
+
+
+
+關於：
+Adobe® Flash® Player 是輕量型的瀏覽器增效模組及豐富網際網路應用程式執行階段，提供一致且吸引人的使用體驗、播放令人驚艷的音效/視訊，以及精彩好玩的遊戲。
+安裝於超過 13 億個系統上的 Flash Player 是提供優良效果、豐富網頁內容的模範。
+
+
+可選購的供應項目：
+
+
+
+
+條款及條件：
+
+按一下「下載」按鈕表示您已經閱讀並同意  Adobe 軟體授權合約*。
+
+
+
+如果您安裝 Adobe Flash Player 時遇到了問題，請參閱我們的「安裝說明頁面」以取得協助。
+
+註意：您的防毒軟體必須允許您安裝軟體。
+
+
+							立即更新
+						
+
+總大小： 19.2 MB
+
+
+
+
+
+
+
+
+
+需要協助嗎？
+
+
+
+正在初始化
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+軟體安全課程 - 安全程式開發實務
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+焦點話題  »新聞中心  »叡揚e論壇  »成功案例  »資安電子報  »eHR電子報產品與服務  »Vital 全方位雲端服務家族  »Vitals ESP 知識管理企業雲  »醫院評鑑管理系統  »teamKube 工作管理系統  »teamLife 全方位辦公室資源整合  »R.A.D.A.R. 人力資源管理   »Heart-SWS 服務管理系統  »Heart-ITSM 資訊服務管理系統  »Heart-Survey 線上問捲管理系統  »S.P.E.E.D. 公文線上簽核管理  »B.E.S.T. 銀行信用風險資訊解決方案  »網擎三合一訊息安全解決方案  »QuEye 自動化持續整合平臺  »系統管理工具  »資訊安全  »資訊系統維運與開發服務  »iVoting 網路投票平臺  »Tracko案件追蹤管考系統  »政府共同供應契約e-School關於叡揚  »叡揚簡介  »創辦人的話  »叡揚大事紀  »得獎肯定  »合作夥伴  »營業據點  »聯絡我們CSR專區GSS部落格人才招募 
+
+
+
+
+
+
+English日文簡體中文Facebook
+
+
+	無 Iframes
+
+
+
+
+
+
+
+首頁 | 軟體安全課程 - 安全程式開發實務
+
+A+
+A
+A-
+ 
+
+
+
+
+
+					.NET & Java 安全程式開發實務-應用系統安全課程				
+
+
+
+
+
+	課程設計
+
+【本課程專為.NET 及 Java程式開發人員設計，節省軟體上線後，修改弱點的數十倍人力成本】本課程將說明OWASP Top10弱點、駭客可能的攻擊手法，並搭配程式演練，導引學員發掘程式弱點，並撰寫「安全」的Web應用程式，避免SQL、XSS等弱點。
+
+	 
+
+【今日開發人員必備的軟體安全基本功，涵蓋從系統設計、早期開發階段就該註意的安全規劃】IDC等研究報告皆指出，整合測試或系統測試階段的漏洞修復成本，通常為開發階段的15-90倍。協助開發人員於早期將軟體安全攻防納入考量，反而對於軟體安全更具成效。
+
+	課程目標
+
+
+
+培養完整清楚安全程式開發觀念
+
+
+
+具備源碼弱點(含OWASP Top10)修復實作能力： 理解攻防思維，以因應不同弱點情境使用相應修復策略，而非單一公式直接套用
+
+
+
+	課程內容
+
+	專為.NET 及 Java 程式開發人員設計(分班授課)，每班課程共計1天。
+
+
+		軟體安全漏洞對企業的傷害與漏洞實例
+
+		OWASP Top 10 完整說明及實務案例
+
+		如何從軟體開發週期 SDLC 源頭，設計安全軟體的原則
+
+		弱點掃描與源碼檢測外，軟體安全整體風險考量
+
+		源碼弱點修復實務說明
+
+		實作：源碼弱點檢測與弱點修復演練
+
+
+	教材編撰
+
+
+
+			證照：CEH道德駭客認證專家、 ISO 27001 IRCA LA
+
+
+
+專長：安全程式開發、資訊安全、 軟體設計
+
+
+
+輔導經驗：逾30家銀行、政府單位軟體弱點修復輔導經驗
+
+
+
+	課程對象
+
+	.Net 及 Java 程式開發人員，建議具Web應用系統開發經驗
+
+開課實績: 公開班及企業包班學員逾500人
+
+
+		2013 年 ~ 2015 年 <2日版課程>: 公開班共 12 場
+
+ 2016/04/15 : .NET 安全程式開發實務<1 日精華版>
+
+2016/06/17 :  Java 安全程式開發實務<1 日精華版>  客戶問捲評價
+
+2016/09/08 : .NET 安全程式開發實務<1 日精華版>  客戶問捲評價
+
+2016/11/21 : Java 安全程式開發實務<1 日精華版>  客戶問捲評價
+
+2017/04/21 : .NET 安全程式開發實務<1 日精華版>   客戶問捲評價
+
+		預計2017年開課日期：.NET - 9/15（五）。JAVA – 6/16（五）、11/17（五）
+
+		若需要企業包班課程請與我們聯絡：電話：02-2586-7890 ext：10502、10225
+
+
+	客戶評價: 最有收穫、幫助的部分
+
+
+
+	聯絡我們
+
+	如欲進一步瞭解，歡迎您透過以下方式與我們聯絡：
+	電話：02-2586-7890 ext：10502、10225   Email： gss_iss@mail.gss.com.tw
+
+
+		 
+
+
+	Follow Us
+
+ 訂閱開課訊息
+
+
+
+
+Tweet
+
+
+
+
+
+
+資訊安全
+
+總覽 / 原始碼安全檢測經驗Checkmarx 原始碼安全檢測工具OpenSource 資安檢測 - 應用系統持續整合平臺Arxan Mobile軟體保護Arxan 軟體保護簡介Arxan 程式碼保護- EnsureITArxan 程式碼保護- GuardITArxan 加密金鑰保護- TransformITIBM資訊安全解決方案IBM Qradar SIEM資安事件管理IBM AppScan網頁應用程式弱點掃描軟體軟體安全課程 - 安全程式開發實務Gemalto SafeNet  資料加密/ 去識別化SafeNet DataSecure企業資料加密SafeNet KeySecure金鑰管理SafeNet StorageSecure網路儲存加密SafeNet ProtectV 虛擬化及雲端資料防護資料外洩防禦(DLP) 總覽資料外洩防禦(DLP) 個資盤點資料外洩防禦(DLP) 網路端防護資料外洩防禦(DLP) 端點防護資料外洩防禦(DLP) 資料權限管理資安電子報Apperian 行動應用程式安全防護管理
+
+
+
+
+Sitemap
+
+
+
+		焦點話題
+
+新聞中心
+叡揚e論壇
+成功案例
+資安電子報
+eHR電子報
+
+
+
+		產品與服務
+
+Vital 全方位雲端服務家族
+Vitals ESP知識管理企業雲
+醫院評鑑管理系統
+teamKube工作管理系統
+teamLife辦公室資源整合
+R.A.D.A.R.人力資源管理
+Heart服務管理系統
+S.P.E.E.D.公文線上簽核管理
+B.E.S.T.銀行信用風險資訊解決方案
+
+網擎三合一訊息安全解決方案
+QuEye自動化持續整合平臺
+系統管理工具
+資訊安全
+資訊系統維運與開發服務
+iVoting網路投票平臺
+Tracko案件追蹤管考系統
+政府共同供應契約
+
+
+
+		關於叡揚
+
+叡揚簡介
+創辦人的話
+叡揚大事紀
+得獎肯定
+合作夥伴
+營業據點
+連絡我們
+
+
+
+		瞭解更多
+
+CSR專區
+人才招募
+
+
+
+		熱門連結
+
+叡揚資訊 粉絲頁
+GSS Engineering Blog
+Vitals ESP 粉絲頁
+GSSCloud 瘋雲區
+teamKube 粉絲頁
+Youtube 專頁
+
+
+
+
+
+
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+程式碼存取安全性
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer Network
+Developer Network
+Developer
+
+
+
+
+登入
+
+
+
+
+MSDN 訂閱
+
+
+
+
+取得工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+
+
+MSDN Library
+
+
+
+MSDN Library
+
+
+
+
+MSDN Library
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MSDN Library 
+
+Design Tools 
+
+開發工具和語言 
+
+.NET 開發 
+
+Office 開發 
+
+Microsoft Azure 
+
+伺服器和企業開發 
+
+Web 開發 
+
+技術文章 
+
+
+
+TOC
+
+ 
+摺疊目錄
+展開目錄
+
+
+
+
+本文件已封存並已停止維護。
+
+
+
+本文件已封存並已停止維護。
+
+程式碼存取安全性
+
+
+
+                .NET Framework 3.5
+            
+
+
+
+
+
+
+                        其他版本
+                    
+
+
+
+
+
+
+
+.NET Framework 2.0
+
+
+
+
+
+   更新：2007 年 11 月
+                    今日高度網路化的電腦系統經常暴露於各種不同來源的程式碼下，其中也可能包括不明的來源。程式碼可以附加在電子郵件上、包含於文件中或由網際網路下載。很遺憾地，許多電腦使用者仍然直接受到惡意行動程式碼攻擊，包含病毒和電腦蠕蟲，這些都可以危害或損毀資料並浪費時間和金錢。
+                
+                    大部分的一般安全機制都是依據使用者的登入認證 (一般為密碼) 來授與權限，並限制使用者允許存取的來源 (通常為目錄和檔案)。但是，這個方法無法解決幾個問題：使用者取得程式碼的來源非常多，有些來源可能不可靠；程式碼可能內含錯誤 (Bug) 或弱點，可能會被惡意程式所使用；使用者不知道程式碼會執行什麼動作。因此，電腦系統可能因此損壞，且當謹慎和可靠的使用者執行惡意或含有錯誤的軟體時，即可能危害到電腦系統並洩露私人資料。大多數作業系統的安全機制都會要求程式碼的每一部分必須完全受到信任才可以執行，Web 網頁上的指令碼可能不需要。因此，我們仍然需要一項更有效的應用安全性機制，以允許某一個電腦系統上的程式碼可以在受到保護的情況下，於另一個系統上執行，即使這兩個系統間並沒有信任關係存在。
+                
+                    為了保護電腦系統不受惡意行動程式碼攻擊，讓來源不明的程式碼在受到保護之下執行，並協助防止受信任的程式碼有意或無意間危害到安全性，.NET Framework 提供了一項稱為程式碼存取安全性的安全機制。程式碼存取安全性依程式碼的來源和程式碼本身的其他部分，分別給與程式碼不同程度的信任等級。程式碼存取安全性也可以提高程式碼的各種信任層級，使必須完全受信任才可執行的程式碼數量減少。使用程式碼存取安全性可以減少您的程式碼被惡意或充滿錯誤的程式碼不當使用的機會。它可以減輕您的負擔，因為您可以指定程式碼允許執行的作業範圍，以及不允許程式碼執行的作業。程式碼存取安全性也可以協助降低由安全性不足的程式碼所產生的危害。
+                
+                    定位於一般語言執行階段的所有 Managed 程式碼也可以從程式碼存取安全性獲得益處，即使該程式碼並沒有執行單一的程式碼存取安全性呼叫。然而，所有的應用程式都應該遵守程式碼存取的要求，如程式碼存取安全性的基本概念中所述。
+                在本節中程式碼存取安全性的簡介
+                    提供程式碼存取安全性的概觀。
+                程式碼存取安全性的基本概念
+                    說明程式碼存取安全性及其最常使用的用途。
+                從部分受信任程式碼使用程式庫
+                    說明如何啟用程式庫以便和 Unmanaged 程式碼搭配使用，以及如何從 Unmanaged 程式碼使用程式庫。
+                撰寫安全類別庫
+                    說明類別庫 (Class Library) 的安全性考量。
+                撰寫安全 Managed 控制項
+                    說明開發與部署 Managed 控制項的安全性考量。
+                建立您自己的程式碼存取權限
+                    說明如何建立自訂使用權限。
+                相關章節重要的安全性概念
+                    提供 .NET Framework 安全性系統所使用的許多重要關鍵字和概念。
+                以角色為基礎的安全性
+                    說明如何依據不同角色結合安全性。
+                密碼編譯服務
+                    說明如何讓您的應用程式擁有密碼編譯服務。
+                安全性原則管理
+                    說明如何管理安全性原則。
+                安全性工具
+                    說明實作和管理 .NET Framework 安全性系統所使用的工具。
+                 
+
+
+
+
+
+社群新增項目
+
+
+
+
+
+
+
+顯示:
+
+受繼承
+        
+
+受保護
+        
+
+
+
+
+
+
+
+列印
+
+匯出 (0)
+            
+
+
+
+
+
+
+
+列印
+
+分享
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+本文內容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本頁對您有幫助嗎？
+是
+否
+
+
+
+
+
+其他意見反應？
+
+
+剩餘 1500 個字元
+
+提交
+略過此項
+
+
+
+
+
+
+
+謝謝！
+我們非常感謝您提供的意見反應。
+
+
+
+
+
+
+
+
+
+
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    關於程式安全性
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer Network
+Developer Network
+Developer
+
+
+
+ 
+
+:CreateViewProfileText:
+登入
+
+
+
+
+MSDN 訂閱
+
+
+
+
+取得工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+ 
+ 
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            發問
+        
+
+
+
+
+
+快速存取 
+
+
+
+
+
+論壇首頁
+瀏覽論壇使用者
+FAQ
+
+
+
+
+
+
+
+
+
+搜尋相關討論串
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remove From My Forums
+
+
+
+
+
+
+
+
+
+最佳解答者
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於程式安全性
+
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+
+問題
+
+
+
+
+
+
+
+
+ 
+
+
+0
+
+
+
+
+登入以投票
+
+
+
+
+
+
+請問:
+  小弟使用VS 2005開發Mobile 5.0 SmartPhone的程式,在一些SP的手機上無法安裝,只知道是因為程式安全性的限制,所以並不允許安裝程式!
+  小弟有上網查過相關資料,似忽要先取得一些認證才可在這些有安全性限制的手機上安裝,請問有無大大有相關的流程或資訊可供小弟參考呢?
+
+
+
+
+2006年9月5日 上午 02:13
+
+
+
+                        回覆
+                    
+
+|
+
+
+                        引述
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                解答
+            
+
+
+
+
+
+
+
+
+
+ 
+
+
+0
+
+
+
+
+登入以投票
+
+
+
+
+
+
+HI,
+裏面有講程式要做數位簽章, 才可以通過安全性的認證! 如果要瞭解數位簽章, 可以參考看看以下文章的說明:
+http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnppcgen/html/wmsecurity.asp
+tihs
+
+
+
+
+2006年9月7日 上午 02:39
+
+
+
+                        回覆
+                    
+
+|
+
+
+                        引述
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                所有回覆
+            
+
+
+
+
+
+
+
+
+
+ 
+
+
+0
+
+
+
+
+登入以投票
+
+
+
+
+
+
+HI,
+您可以參考這一篇文章:
+What's New for Developers in Windows Mobile 5.0(http://msdn.microsoft.com/mobility/windowsmobile/howto/documentation/default.aspx?pull=/library/en-us/dnppcgen/html/whatsnew_wm5.asp)
+ 
+裏面有關於安全性的說明
+ 
+tihs
+
+
+
+
+2006年9月7日 上午 12:46
+
+
+
+                        回覆
+                    
+
+|
+
+
+                        引述
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+0
+
+
+
+
+登入以投票
+
+
+
+
+
+
+此篇文章已看過,我並非要瞭解"安全性"的相關意義!重點是如何讓我的軟體可以通過安全性的認證!
+
+
+
+
+2006年9月7日 上午 02:12
+
+
+
+                        回覆
+                    
+
+|
+
+
+                        引述
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+0
+
+
+
+
+登入以投票
+
+
+
+
+
+
+HI,
+裏面有講程式要做數位簽章, 才可以通過安全性的認證! 如果要瞭解數位簽章, 可以參考看看以下文章的說明:
+http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnppcgen/html/wmsecurity.asp
+tihs
+
+
+
+
+2006年9月7日 上午 02:39
+
+
+
+                        回覆
+                    
+
+|
+
+
+                        引述
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft 正展開一份線上問捲調查，瞭解您對於 Msdn 網站的看法。如果您選擇參加，您離開 Msdn 網站時即會顯示線上問捲調查。您是否想要參加？
+
+
+  
+                                                        
+
+
+
+                                                            隱私權聲明
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Msdn 論壇 - 行動與嵌入式開發
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer Network
+Developer Network
+Developer
+
+
+
+ 
+
+:CreateViewProfileText:
+登入
+
+
+
+
+MSDN 訂閱
+
+
+
+
+取得工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+很抱歉。您所要求的內容已遭移除。將會在 1 秒內自動重新導向。
+
+
+
+
+
+ 
+ 
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            發問
+        
+
+
+
+
+
+快速存取 
+
+
+
+
+
+論壇首頁
+瀏覽論壇使用者
+FAQ
+
+
+
+
+
+
+
+
+
+
+查看 1 個公告
+
+
+行動開發討論區(Mobile Development) 公告
+
+
+連結
+
+
+
+
+Windows Embedded 討論區開張了，Embedded系統類相關問題請移駕
+
+
+
+
+bauann
+
+2009年8月8日 上午 03:04
+
+Hi, 各位朋友大家好Windows Embedded 專區已經隆重開張了，位置在下麵這邊，請各位多加利用http://social.msdn.microsoft.com/Forums/zh-TW/winembeddedzhtw/threadsEmbedded系統開發、Driver問題、Platform builder使用問題，偏系統開發類請到Windows Embedded專區討論Mobile系統相關問題以及compact framework相關問題請在本討論區討論若您有任何建議，也歡迎您提出，感謝。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remove From My Forums
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                個論壇
+                
+[ 檢視全部 ]
+
+
+
+
+
+
+
+
+ 選取的論壇
+清除
+
+
+
+
+Windows Embedded 專區
+
+x
+
+
+
+
+
+
+行動開發討論區(Mobile Development)
+
+x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+篩選
+:
+
+                    所有往來文章
+                
+
+
+
+
+
+
+
+所有往來文章
+
+
+
+已答覆
+
+
+
+未答覆
+
+
+
+提議的解答
+
+
+
+一般討論
+
+
+
+
+無回覆
+
+
+
+有用
+
+
+
+包含代碼
+
+
+
+
+所有語言
+
+
+
+
+
+排序
+:
+
+                    最近的文章
+                
+
+
+
+
+
+
+
+最近的文章
+
+
+
+最近的往來文章
+
+
+
+票數總計
+
+
+
+回覆總數
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+Windows Embedded Thin PC 7和Windows Embedded POSReady 7的差異？
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+Windows Embedded 專區
+
+
+
+
+
+請問各位一下！
+
+Windows Embedded Thin PC 7和Windows Embedded POSReady ...
+
+
+已答覆
+
+|
+2 回覆
+|
+7509 檢視
+|
+
+Created by
+DannyLee - 
+2011年10月3日 上午 06:03
+
+|
+
+最後回覆 
+                            ：
+                            JunnyHAHA - 
+2017年7月12日 下午 03:16
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+How to add legacy driver with out-of-box in Image Configuration Editor 
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+Windows Embedded 專區
+
+
+
+
+
+OS: Windows Embedded Standard 7
+
+Tool: Image Configuration Editor
+
+1.I can use device manager add legacy driver and successfully work. 
+
+2.I add ...
+
+
+問題
+
+|
+0 回覆
+|
+56 檢視
+|
+
+Created by
+Boss6677 - 
+2017年6月29日 上午 07:01
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+觸控驅動程式在嵌入式系統上的支援
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+Windows Embedded 專區
+
+
+
+
+
+各位版上的前輩大家好：
+
+在這邊想請問各位前輩問& ...
+
+
+問題
+
+|
+0 回覆
+|
+126 檢視
+|
+
+Created by
+Cedric911217 - 
+2017年5月23日 上午 09:28
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+cordova ajax 呼叫web service 
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+大家好:
+
+第一次寫cordova + jquery + ajax +web server 
+
+1.call web server 是為了驗證後 ...
+
+
+已答覆
+
+|
+13 回覆
+|
+942 檢視
+|
+
+Created by
+olwin - 
+2016年9月19日 上午 07:57
+
+|
+
+最後回覆 
+                            ：
+                            olwin - 
+2017年4月11日 上午 03:36
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+2 投票
+
+
+
+
+
+
+
+
+
+
+
+[分享] Xamarin 自製的教學影片
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+我現在公司正在使用這套技術開發APP，由於我學習的還算ć ...
+
+
+一般討論
+
+|
+0 回覆
+|
+179 檢視
+|
+
+Created by
+funnyface325 - 
+2017年4月5日 下午 03:23
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+vs2017 cordova 起一個基本的專案，可是完成跑不動。
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+vs2017 cordova 起一個基本的專案，可是完成跑不動，有點傷心。我 ...
+
+
+問題
+
+|
+0 回覆
+|
+294 檢視
+|
+
+Created by
+chiangchien - 
+2017年3月24日 下午 01:54
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+Cordova 結合 Google Analytics
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+https://github.com/danwilson/google-analytics-plugin
+
+請問要怎麼在 Cordova 使用 Google ...
+
+
+問題
+
+|
+2 回覆
+|
+261 檢視
+|
+
+Created by
+YenHsiaoYing - 
+2017年3月20日 下午 03:19
+
+|
+
+最後回覆 
+                            ：
+                            YenHsiaoYing - 
+2017年3月21日 上午 11:05
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+wince7 subproject application(native) can't link with windows api
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+Windows Embedded 專區
+
+
+
+
+
+Hi:
+
+i install windows embedded compact 7 to my PC.
+
+
+
+
+
+i create a new plaformbuilder project in ...
+
+
+問題
+
+|
+1 回覆
+|
+624 檢視
+|
+
+Created by
+vincent.tsai - 
+2016年4月21日 上午 09:24
+
+|
+
+最後回覆 
+                            ：
+                            How.Lin - 
+2017年3月17日 上午 08:53
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+請問現在Win10有支援UAC 2.0的Webcam嗎?
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+Windows Embedded 專區
+
+
+
+
+
+如題,這是開發上的問題,不是使用哪一家webcam的使用問題,謝謝 ...
+
+
+問題
+
+|
+0 回覆
+|
+365 檢視
+|
+
+Created by
+甘昇玄 - 
+2017年1月13日 上午 07:41
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+Asus Zenfone 2 在Hyper-V 中VS2015 Xamarin抓不到，無法DeBug
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+安裝)，安裝成功後啥東西都沒有
+
+也試過將上圖的 ...
+
+
+已答覆
+
+|
+1 回覆
+|
+507 檢視
+|
+
+Created by
+JingShun - 
+2016年11月23日 上午 08:39
+
+|
+
+最後回覆 
+                            ：
+                            JingShun - 
+2016年12月19日 上午 12:55
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+WES7sp1 無法取得任何更新....
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+Windows Embedded 專區
+
+
+
+
+
+各位好
+
+        ...
+
+
+問題
+
+|
+1 回覆
+|
+500 檢視
+|
+
+Created by
+CyberSection - 
+2016年11月22日 上午 05:00
+
+|
+
+最後回覆 
+                            ：
+                            Sarah Chuang - 
+2016年12月16日 上午 10:24
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+在wince 7上觸控點座標無法正確
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+Windows Embedded 專區
+
+
+
+
+
+各位版上的前輩大家好:
+
+
+
+我有一個電容式觸控， ...
+
+
+問題
+
+|
+1 回覆
+|
+502 檢視
+|
+
+Created by
+Cedric911217 - 
+2016年10月18日 下午 03:56
+
+|
+
+最後回覆 
+                            ：
+                            Paul, Chao _ Techware - 
+2016年12月14日 下午 03:26
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+請問windows embedded compact 2013 是不是不能用在正常的intel x86 pc 上?
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+Windows Embedded 專區
+
+
+
+
+
+最近剛接觸embedded compact 2013，但是在選專案時只有三種，我選了cepc ...
+
+
+問題
+
+|
+4 回覆
+|
+748 檢視
+|
+
+Created by
+sloan0255 - 
+2016年5月11日 上午 06:49
+
+|
+
+最後回覆 
+                            ：
+                            Paul, Chao _ Techware - 
+2016年12月14日 下午 03:12
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+推播無法送出中文
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+https://docs.microsoft.com/zh-tw/azure/notification-hubs/notification-hubs-android-push-notification-google-gcm-get-started
+
+
+
+依照官方ă ...
+
+
+問題
+
+|
+0 回覆
+|
+295 檢視
+|
+
+Created by
+luckycan - 
+2016年11月26日 上午 01:02
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+xamarin過期無法編譯程式一事
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+請教
+
+開發工具xamarin ...
+
+
+問題
+
+|
+7 回覆
+|
+672 檢視
+|
+
+Created by
+nancy.ho - 
+2016年10月6日 上午 05:51
+
+|
+
+最後回覆 
+                            ：
+                            Bill Chung - 
+2016年10月27日 上午 05:01
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 投票
+
+
+
+
+
+
+
+
+
+
+
+想請問關於利用C++ 更該指定磁碟名稱的方法
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+想請問實作直接使用程式更改指定磁碟區名稱的方法， ...
+
+
+已答覆
+
+|
+3 回覆
+|
+448 檢視
+|
+
+Created by
+Brad_Li - 
+2016年10月13日 上午 10:14
+
+|
+
+最後回覆 
+                            ：
+                            tihs - 
+2016年10月14日 上午 04:05
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+Cordova的Globalization API - stringToDate 方法
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+使用此方法時發現奇怪的問題：
+
+1.讀入的字串必須符 ...
+
+
+已答覆
+
+|
+6 回覆
+|
+594 檢視
+|
+
+Created by
+Mark Sun - 
+2016年9月23日 上午 07:46
+
+|
+
+最後回覆 
+                            ：
+                            Mark Sun - 
+2016年9月30日 上午 04:28
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+使用Visual Studio Emulator for Android出現無法安裝APK的問題
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+將要測試的APK檔案拖曳到模擬器上後，安裝到一半，畫面Ñ ...
+
+
+已答覆
+
+|
+7 回覆
+|
+1029 檢視
+|
+
+Created by
+Mark Sun - 
+2016年6月4日 上午 03:06
+
+|
+
+最後回覆 
+                            ：
+                            Mark Sun - 
+2016年7月14日 上午 06:49
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 投票
+
+
+
+
+
+
+
+
+
+
+
+請問微軟是否有類似IBM  Worklight開發管理平臺？
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+請問微軟是否有類似IBM  Worklight ...
+
+
+已答覆
+
+|
+1 回覆
+|
+702 檢視
+|
+
+Created by
+Tony_Huang - 
+2016年5月24日 上午 09:18
+
+|
+
+最後回覆 
+                            ：
+                            James.Tsai - 
+2016年7月9日 下午 03:49
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 投票
+
+
+
+
+
+
+
+
+
+
+
+無法將程式建置到模擬器上執行
+
+
+
+
+行動與嵌入式開發
+
+
+ > 
+
+
+行動開發討論區(Mobile Development)
+
+
+
+
+
+使用visual studio 2015與visual studio emulator for ...
+
+
+已答覆
+
+|
+4 回覆
+|
+525 檢視
+|
+
+Created by
+bftrgd5 - 
+2016年7月6日 上午 09:57
+
+|
+
+最後回覆 
+                            ：
+                            bftrgd5 - 
+2016年7月7日 下午 01:42
+
+
+
+ 
+
+
+
+
+ 
+Items 1 to 20 of 2609
+下一頁 ›
+
+
+
+
+
+
+
+
+查看 1 個公告
+
+
+行動開發討論區(Mobile Development) 公告
+
+
+連結
+
+
+
+
+Windows Embedded 討論區開張了，Embedded系統類相關問題請移駕
+
+
+
+
+bauann
+
+2009年8月8日 上午 03:04
+
+Hi, 各位朋友大家好Windows Embedded 專區已經隆重開張了，位置在下麵這邊，請各位多加利用http://social.msdn.microsoft.com/Forums/zh-TW/winembeddedzhtw/threadsEmbedded系統開發、Driver問題、Platform builder使用問題，偏系統開發類請到Windows Embedded專區討論Mobile系統相關問題以及compact framework相關問題請在本討論區討論若您有任何建議，也歡迎您提出，感謝。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft 正展開一份線上問捲調查，瞭解您對於 Msdn 網站的看法。如果您選擇參加，您離開 Msdn 網站時即會顯示線上問捲調查。您是否想要參加？
+
+
+  
+                                                        
+
+
+
+                                                            隱私權聲明
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

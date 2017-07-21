@@ -1,0 +1,11842 @@
+
+
+
+深度學習 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+深度學習
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+機器學習與資料探勘
+
+
+
+
+
+問題
+
+
+
+
+
+分類
+聚類
+回歸
+異常檢測
+關聯規則
+強化學習
+結構預測（英語：Structured prediction）
+特徵學習
+線上學習（英語：Online machine learning）
+半監督學習（英語：Semi-supervised learning）
+語法歸納（英語：Grammar induction）
+
+
+
+
+
+
+監督學習
+(分類 · 回歸)
+
+
+
+
+
+
+決策樹
+表徵（裝袋, 提升，隨機森林）
+k-NN
+線性回歸
+樸素貝葉斯
+神經網路
+邏輯回歸
+感知器
+支援向量機（SVM）
+相關向量機（RVM）
+
+
+
+
+
+聚類
+
+
+
+
+
+BIRCH（英語：BIRCH）
+層次（英語：Hierarchical clustering）
+k平均
+期望最大化（EM）
+
+DBSCAN
+OPTICS（英語：OPTICS）
+均值飄移（英語：Mean shift）
+
+
+
+
+
+降維
+
+
+
+
+
+因子分析（英語：Factor analysis）
+CCA
+ICA
+LDA
+NMF（英語：Non-negative matrix factorization）
+PCA
+LASSO
+t-SNE（英語：t-distributed stochastic neighbor embedding）
+
+
+
+
+
+結構預測（英語：Structured prediction）
+
+
+
+
+
+機率圖模型（貝葉斯網路，CRF, HMM）
+
+
+
+
+
+異常檢測
+
+
+
+
+
+k-NN
+局部離群因子（英語：Local outlier factor）
+
+
+
+
+
+神經網路
+
+
+
+
+
+自編碼（英語：Autoencoder）
+深度學習
+多層感知機
+RNN
+受限玻爾茲曼機
+SOM
+CNN
+
+
+
+
+
+理論
+
+
+
+
+
+偏差/方差困境（英語：Bias–variance tradeoff）
+計算學習理論（英語：Computational learning theory）
+經驗風險最小化（英語：Empirical risk minimization）
+PAC學習（英語：Probably approximately correct learning）
+統計學習
+VC理論
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+
+
+
+深度學習（英語：deep learning）是機器學習拉出的分支，它試圖使用包含複雜結構或由多重非線性變換構成的多個處理層對資料進行高層抽象的演算法。[1][2][3][4][5]
+深度學習是機器學習中一種基於對資料進行表徵學習的方法。觀測值（例如一幅圖像）可以使用多種方式來表示，如每個像素強度值的向量，或者更抽象地表示成一系列邊、特定形狀的區域等。而使用某些特定的表示方法更容易從例項中學習任務（例如，人臉識別或面部表情識別[6]）。深度學習的好處是用非監督式或半監督式（英語：Semi-supervised learning）的特徵學習和分層特徵提取高效演算法來替代手工取得特徵（英語：Feature (machine learning)）。[7]
+表徵學習的目標是尋求更好的表示方法並建立更好的模型來從大規模未標記資料中學習這些表示方法。表達方式類似神經科學的進步，並鬆散地建立在類似神經系統中的資訊處理和通訊模式的理解上，如神經編碼，試圖定義拉動神經元的反應之間的關係以及大腦中的神經元的電活動之間的關係。[8]
+至今已有數種深度學習框架，如深度神經網路、捲積神經網路和深度置信網路（英語：Deep belief network）和遞迴神經網路已被應用電腦視覺、語音識別、自然語言處理、音訊識別與生物資訊學等領域並取得了極好的效果。
+另外，「深度學習」已成為類似術語，或者說是神經網路的品牌重塑。[9][10]
+
+
+
+目錄
+
+
+1 簡介
+2 基本概念
+3 人工神經網路下的深度學習
+4 深度學習結構
+
+4.1 深度神經網路
+4.2 深度神經網路的問題
+4.3 深度置信網路
+4.4 捲積神經網路
+4.5 捲積深度置信網路
+4.6 結果
+
+4.6.1 語音識別
+4.6.2 圖像分類
+
+
+
+
+5 深度學習與神經科學
+6 公眾視野中的深度學習
+7 批評
+8 參見
+9 參考資料
+10 外部連結
+
+
+
+簡介[編輯]
+深度學習框架，尤其是基於人工神經網路的框架可以追溯到1980年福島邦彥提出的新認知機[11]，而人工神經網路的歷史更為久遠。1989年，揚·勒丘恩（Yann LeCun）等人開始將1974年提出的標準反向傳播演算法[12]應用於深度神經網路，這一網路被用於手寫郵政編碼識別。儘管演算法可以成功執行，但計算代價非常巨大，神經網路的訓練時間達到了3天，因而無法投入實際使用[13]。許多因素導致了這一緩慢的訓練過程，其中一種是由於爾根·施密德胡伯（英語：Jürgen Schmidhuber）的學生賽普·霍克賴特（Sepp Hochreiter（英語：Sepp Hochreiter））於1991年提出的梯度消失問題[14][15]。
+最早的進行一般自然雜亂圖像中自然物體識別的深度學習網路是翁巨揚（Juyang Weng）等在1991和1992發表的生長網（Cresceptron）[16][17][18]。它也是第一個提出了後來很多實驗廣泛採用的一個方法：現在稱為最大匯集（max-pooling)以用於處理大物體的變形等問題。生長網不僅直接從雜亂自然場景中學習老師指定的一般物體，還用網路反向分析的方法把圖像內被識別了的物體從背景圖像中分割出來。
+2007年前後，傑弗里·辛頓和魯斯蘭·薩拉赫丁諾夫（Ruslan Salakhutdinov）提出了一種在前饋神經網路中進行有效訓練的演算法。這一演算法將網路中的每一層視為無監督的受限玻爾茲曼機，再使用有監督的反向傳播演算法進行調優[19]。在此之前的1992年，在更為普遍的情形下，施密德胡伯也曾在遞迴神經網路上提出一種類似的訓練方法，並在實驗中證明這一訓練方法能夠有效提高有監督學習的執行速度[20][21].
+自深度學習出現以來，它已成為很多領域，尤其是在電腦視覺和語音識別中，成為各種領先系統的一部分。在通用的用於檢驗的資料集，例如語音識別中的TIMIT和圖像識別中的ImageNet, Cifar10上的實驗證明，深度學習能夠提高識別的精度。與此同時，神經網路也受到了其他更加簡單歸類模型的挑戰，支援向量機等模型在20世紀90年代到21世紀初成為過流行的機器學習演算法。
+硬體的進步也是深度學習重新獲得關註的重要因素。高效能圖形處理器的出現極大地提高了數值和矩陣運算的速度，使得機器學習演算法的執行時間得到了顯著的縮短[22][23]。
+深度學習網路在2001年後正逐漸被更有潛力的基於腦模型的網路[24][25]所替代。腦科學的大量研究已表明人腦網路不是一個級聯的結構，大概是為了腦計算的必要吧。
+基本概念[編輯]
+深度學習的基礎是機器學習中的分散表示（distributed representation）。分散表示假定觀測值是由不同因子相互作用生成。在此基礎上，深度學習進一步假定這一相互作用的過程可分為多個層次，代表對觀測值的多層抽象。不同的層數和層的規模可用於不同程度的抽象[3]。
+深度學習運用了這分層次抽象的思想，更高層次的概念從低層次的概念學習得到。這一分層結構常常使用貪婪演算法逐層構建而成，並從中選取有助於機器學習的更有效的特徵[3].
+不少深度學習演算法都以無監督學習的形式出現，因而這些演算法能被應用於其他演算法無法企及的無標籤資料，這一類資料比有標籤資料更豐富，也更容易獲得。這一點也為深度學習贏得了重要的優勢[3]。
+人工神經網路下的深度學習[編輯]
+一部分最成功的深度學習方法涉及到對人工神經網路的運用。人工神經網路受到了1959年由諾貝爾獎得主大衛·休伯爾（David H. Hubel）和托斯坦·威澤爾（Torsten Wiesel）提出的理論啟發。休伯爾和威澤爾發現，在大腦的初級視覺皮層中存在兩種細胞：簡單細胞和複雜細胞，這兩種細胞承擔不同層次的視覺感知功能。受此啟發，許多神經網路模型也被設計為不同節點之間的分層模型[26]。
+福島邦彥提出的新認知機引入了使用無監督學習訓練的捲積神經網路。燕樂存將有監督的反向傳播演算法應用於這一架構[27]。事實上，從反向傳播演算法自20世紀70年代提出以來，不少研究者都曾試圖將其應用於訓練有監督的深度神經網路，但最初的嘗試大都失敗。賽普·霍克賴特（英語：Sepp Hochreiter）在其博士論文中將失敗的原因歸結為梯度消失，這一現象同時在深度前饋神經網路和遞迴神經網路中出現，後者的訓練過程類似深度網路。在分層訓練的過程中，本應用於修正模型參數的誤差隨著層數的增加指數遞減，這導致了模型訓練的效率低下[28][29]。
+為瞭解決這一問題，研究者們提出了一些不同的方法。於爾根·施密德胡伯（英語：Jürgen Schmidhuber）於1992年提出多層級網路，利用無監督學習訓練深度神經網路的每一層，再使用反向傳播演算法進行調優。在這一模型中，神經網路中的每一層都代表觀測變數的一種壓縮表示，這一表示也被傳遞到下一層網路[20]。
+另一種方法是賽普·霍克賴特和於爾根·施密德胡伯提出的長短期記憶神經網路（英語：long short term memory），LSTM）[30]。2009年，在ICDAR 2009舉辦的連筆手寫識別競賽中，在沒有任何先驗知識的情況下，深度多維長短期記憶神經網路取得了其中三場比賽的勝利[31][32]。
+斯文·貝克提出了在訓練時只依賴梯度符號的神經抽象金字塔模型，用以解決圖像重建和人臉定位的問題[33]。
+其他方法同樣採用了無監督預訓練來構建神經網路，用以發現有效的特徵，此後再採用有監督的反向傳播以區分有標籤資料。辛頓等人於2006年提出的深度模型提出了使用多層隱變數學習高層表示的方法。這一方法使用斯摩棱斯基於1986年提出的受限玻爾茲曼機[34]對每一個包含高層特徵的層進行建模。模型保證了資料的對數似然下界隨著層數的提升而遞增。當足夠多的層數被學習完畢，這一深層結構成為一個生成模型，可以通過自上而下的採樣重構整個資料集[35]。辛頓聲稱這一模型在高維結構化資料上能夠有效地提取特徵[36]。
+吳恩達和傑夫·迪恩領導的Google大腦團隊建立了一個僅通過YouTube影片學習高層概念（例如貓）的神經網路[37] [38]。
+其他方法依賴了現代電子電腦的強大計算能力，尤其是GPU。2010年，在於爾根·施密德胡伯位於瑞士人工智慧實驗室IDSIA的研究組中，丹·奇雷尚（Dan Ciresan）和他的同事展示了利用GPU直接執行反向傳播演算法而忽視梯度消失問題的存在。這一方法在燕樂存等人給出的手寫識別MNIST資料集上戰勝了已有的其他方法[22]。
+截止2011年，前饋神經網路深度學習中最新的方法是交替使用捲積層（convolutional layers）和最大值池化層（max-pooling layers）並加入單純的分類層作為頂端。訓練過程也無需引入無監督的預訓練[39][40]。從2011年起，這一方法的GPU實現[39]多次贏得了各類模式識別競賽的勝利，包括IJCNN 2011交通標誌識別競賽[41]和其他比賽。
+這些深度學習演算法也是最先在某些識別任務上達到和人類表現具備同等競爭力的演算法[42]。
+深度學習結構[編輯]
+深度神經網路是一種具備至少一個隱層的神經網路。與淺層神經網路類似，深度神經網路也能夠為複雜非線性系統提供建模，但多出的層次為模型提供了更高的抽象層次，因而提高了模型的能力。深度神經網路通常都是前饋神經網路，但也有語言建模等方面的研究將其拓展到遞迴神經網路[43]。捲積深度神經網路（Convolutional Neuron Networks, CNN）在電腦視覺領域得到了成功的應用[44]。此後，捲積神經網路也作為聽覺模型被使用在自動語音識別領域，較以往的方法獲得了更優的結果[45]。
+深度神經網路[編輯]
+深度神經網路（Deep Neural Networks, DNN）是一種判別模型，可以使用反向傳播演算法進行訓練。權重更新可以使用下式進行隨機梯度下降法（英語：Stochastic gradient descent）求解：
+
+
+
+
+
+Δ
+
+w
+
+i
+j
+
+
+(
+t
++
+1
+)
+=
+Δ
+
+w
+
+i
+j
+
+
+(
+t
+)
++
+η
+
+
+
+∂
+C
+
+
+∂
+
+w
+
+i
+j
+
+
+
+
+
+
+
+{\displaystyle \Delta w_{ij}(t+1)=\Delta w_{ij}(t)+\eta {\frac {\partial C}{\partial w_{ij}}}}
+
+
+
+其中，
+
+
+
+η
+
+
+{\displaystyle \eta }
+
+為學習率，
+
+
+
+C
+
+
+{\displaystyle C}
+
+為代價函式。這一函式的選擇與學習的類型（例如監督學習、無監督學習、增強學習）以及活化函數相關。例如，為了在一個多分類問題上進行監督學習，通常的選擇是使用ReLU作為活化函數，而使用交叉熵作為代價函式。Softmax函式定義為
+
+
+
+
+p
+
+j
+
+
+=
+
+
+
+exp
+⁡
+(
+
+x
+
+j
+
+
+)
+
+
+
+∑
+
+k
+
+
+exp
+⁡
+(
+
+x
+
+k
+
+
+)
+
+
+
+
+
+{\displaystyle p_{j}={\frac {\exp(x_{j})}{\sum _{k}\exp(x_{k})}}}
+
+，其中
+
+
+
+
+p
+
+j
+
+
+
+
+{\displaystyle p_{j}}
+
+代表類別
+
+
+
+j
+
+
+{\displaystyle j}
+
+的機率，而
+
+
+
+
+x
+
+j
+
+
+
+
+{\displaystyle x_{j}}
+
+和
+
+
+
+
+x
+
+k
+
+
+
+
+{\displaystyle x_{k}}
+
+分別代表對單元
+
+
+
+j
+
+
+{\displaystyle j}
+
+和
+
+
+
+k
+
+
+{\displaystyle k}
+
+的輸入。交叉熵定義為
+
+
+
+C
+=
+−
+
+∑
+
+j
+
+
+
+d
+
+j
+
+
+log
+⁡
+(
+
+p
+
+j
+
+
+)
+
+
+{\displaystyle C=-\sum _{j}d_{j}\log(p_{j})}
+
+，其中
+
+
+
+
+d
+
+j
+
+
+
+
+{\displaystyle d_{j}}
+
+代表輸出單元
+
+
+
+j
+
+
+{\displaystyle j}
+
+的目標機率，
+
+
+
+
+p
+
+j
+
+
+
+
+{\displaystyle p_{j}}
+
+代表應用了活化函數後對單元
+
+
+
+j
+
+
+{\displaystyle j}
+
+的機率輸出[46]。
+深度神經網路的問題[編輯]
+與其他神經網路模型類似，如果僅僅是簡單地訓練，深度神經網路可能會存在很多問題。常見的兩類問題是過擬合和過長的運算時間。
+深度神經網路很容易產生過擬合現象，因為增加的抽象層使得模型能夠對訓練資料中較為罕見的依賴關係進行建模。對此，權重遞減（
+
+
+
+
+ℓ
+
+2
+
+
+
+
+{\displaystyle \ell _{2}}
+
+正規化）或者稀疏（
+
+
+
+
+ℓ
+
+1
+
+
+
+
+{\displaystyle \ell _{1}}
+
+-正規化）等方法可以利用在訓練過程中以減小過擬合現象[47]。另一種較晚用於深度神經網路訓練的正規化方法是丟棄法（"dropout" regularization），即在訓練中隨機丟棄一部分隱層單元來避免對較為罕見的依賴進行建模[48]。
+反向傳播演算法和梯度下降法由於其實現簡單，與其他方法相比能夠收斂到更好的局部最優值而成為神經網路訓練的通行方法。但是，這些方法的計算代價很高，尤其是在訓練深度神經網路時，因為深度神經網路的規模（即層數和每層的節點數）、學習率、初始權重等眾多參數都需要考慮。掃描所有參數由於時間代價的原因並不可行，因而小批次訓練（mini-batching），即將多個訓練樣本組合進行訓練而不是每次只使用一個樣本進行訓練，被用於加速模型訓練[49]。而最顯著地速度提升來自GPU，因為矩陣和向量計算非常適合使用GPU實現。但使用大規模集群進行深度神經網路訓練仍然存在困難，因而深度神經網路在訓練並列化方面仍有提升的空間。
+深度置信網路[編輯]
+
+
+
+
+一個包含完全連線可見層和隱層的受限玻爾茲曼機（RBM）。註意到可見層單元和隱層單元內部彼此不相連。
+
+
+深度置信網路（deep belief networks，DBN）是一種包含多層隱單元的機率生成模型，可被視為多層簡單學習模型組合而成的複合模型[50]。
+深度致信網路可以作為深度神經網路的預訓練部分，並為網路提供初始權重，再使用反向傳播或者其他判定演算法作為調優的手段。這在訓練資料較為缺乏時很有價值，因為不恰當的初始化權重會顯著影響最終模型的效能，而預訓練獲得的權重在權值空間中比隨機權重更接近最優的權重。這不僅提升了模型的效能，也加快了調優階段的收斂速度[51]。
+深度置信網路中的每一層都是典型的受限玻爾茲曼機（restricted Boltzmann machine，RBM），可以使用高效的無監督逐層訓練方法進行訓練。受限玻爾茲曼機是一種無向的基於能量的生成模型，包含一個輸入層和一個隱層。圖中對的邊僅在輸入層和隱層之間存在，而輸入層節點內部和隱層節點內部則不存在邊。單層RBM的訓練方法最初由傑弗里·辛頓在訓練「專家乘積」中提出，被稱為對比分歧（contrast divergence, CD）。對比分歧提供了一種對最大似然的近似，被理想地用於學習受限玻爾茲曼機的權重[49]。當單層RBM被訓練完畢後，另一層RBM可被堆疊在已經訓練完成的RBM上，形成一個多層模型。每次堆疊時，原有的多層網路輸入層被初始化為訓練樣本，權重為先前訓練得到的權重，該網路的輸出作為新增RBM的輸入，新的RBM重複先前的單層訓練過程，整個過程可以持續進行，直到達到某個期望中的終止條件[2]。
+儘管對比分歧對最大似然的近似十分粗略（對比分歧並不在任何函式的梯度方向上），但經驗結果證實該方法是訓練深度結構的一種有效的方法[49]。
+捲積神經網路[編輯]
+主條目：捲積神經網路
+捲積神經網路（convolutional neuron networks，CNN）由一個或多個捲積層和頂端的全連通層（對應經典的神經網路）組成，同時也包括關聯權重和池化層（pooling layer）。這一結構使得捲積神經網路能夠利用輸入資料的二維結構。與其他深度學習結構相比，捲積神經網路在圖像和語音識別方面能夠給出更優的結果。這一模型也可以使用反向傳播演算法進行訓練。相比較其他深度、前饋神經網路，捲積神經網路需要估計的參數更少，使之成為一種頗具吸引力的深度學習結構[52]。
+捲積深度置信網路[編輯]
+捲積深度置信網路（convolutional deep belief networks，CDBN）是深度學習領域較新的分支。在結構上，捲積深度置信網路與捲積神經網路在結構上相似。因此，與捲積神經網路類似，捲積深度置信網路也具備利用圖像二維結構的能力，與此同時，捲積深度信念網路也擁有深度置信網路的預訓練優勢。捲積深度置信網路提供了一種能被用於訊號和圖像處理任務的通用結構，也能夠使用類似深度置信網路的訓練方法進行訓練[53]。
+結果[編輯]
+語音識別[編輯]
+下表中的結果展示了深度學習在通行的TIMIT資料集上的結果。TIMIT包含630人的語音資料，這些人持八種常見的美式英語口音，每人閱讀10句話。這一資料在深度學習發展之初常被用於驗證深度學習結構[54]。TIMIT資料集較小，使得研究者可以在其上實驗不同的模型配置。
+
+
+方法
+聲音誤差率 (PER, %)
+
+
+隨機初始化RNN
+26.1
+
+
+貝葉斯三音子GMM-HMM
+25.6
+
+
+單音子重複初始化DNN
+23.4
+
+
+單音子DBN-DNN
+22.4
+
+
+帶BMMI訓練的三音子GMM-HMM
+21.7
+
+
+共享池上的單音子DBN-DNN
+20.7
+
+
+捲積DNN
+20.0
+
+
+圖像分類[編輯]
+圖像分類領域中一個公認的評判資料集是MNIST資料集。MNIST由手寫阿拉伯數字組成，包含60,000個訓練樣本和10,000個測試樣本。與TIMIT類似，它的資料規模較小，因而能夠很容易地在不同的模型配置下測試。Yann LeCun的網站給出了多種方法得到的實驗結果[55]。截至2012年，最好的判別結果由Ciresan等人在當年給出，這一結果的錯誤率達到了0.23%[56]。
+深度學習與神經科學[編輯]
+電腦領域中的深度學習與20世紀90年代由認知神經科學研究者提出的大腦發育理論（尤其是皮層發育理論）密切相關[57]。對這一理論最容易理解的是傑弗里·艾爾曼（英語：Jeffrey Elman）於1996年出版的專著《對天賦的再思考》（Rethinking Innateness（英語：Rethinking Innateness））[58]（參見斯拉格和詹森[59]以及奎茲和賽傑諾維斯基[60]的表述）。由於這些理論給出了實際的神經計算模型，因而它們是純計算驅動的深度學習模型的技術先驅。這些理論指出，大腦中的神經元組成了不同的層次，這些層次相互連線，形成一個過濾體系。在這些層次中，每層神經元在其所處的環境中取得一部分資訊，經過處理後向更深的層級傳遞。這與後來的單純與計算相關的深度神經網路模型相似。這一過程的結果是一個與環境相協調的自組織的堆疊式的轉換器。正如1995年在《紐約時報》上刊登的那樣，「……嬰兒的大腦似乎受到所謂『營養因素』的影響而進行著自我組織……大腦的不同區域依次相連，不同層次的腦組織依照一定的先後順序發育成熟，直至整個大腦發育成熟。」[61]
+深度結構在人類認知演化和發展中的重要性也在認知神經學家的關註之中。發育時間的改變被認為是人類和其他靈長類動物之間智力發展差異的一個方面[62]。在靈長類中，人類的大腦在出生後的很長時間都具備可塑性，但其他靈長類動物的大腦則在出生時就幾乎完全定型。因而，人類在大腦發育最具可塑性的階段能夠接觸到更加複雜的外部場景，這可能幫助人類的大腦進行調節以適應快速變化的環境，而不是像其他動物的大腦那樣更多地受到遺傳結構的限制。這樣的發育時間差異也在大腦皮層的發育時間和大腦早期自組織中從刺激環境中取得資訊的改變得到體現。當然，伴隨著這一可塑性的是更長的兒童期，在此期間人需要依靠撫養者和社會群體的支援和訓練。因而這一理論也揭示了人類演化中文化和意識共同進化的現象[63]。
+公眾視野中的深度學習[編輯]
+深度學習常常被看作是通向真正人工智慧的重要一步[64]，因而許多機構對深度學習的實際應用抱有濃厚的興趣。2013年12月，Facebook宣佈雇用燕樂存為其新建的人工智慧實驗室的主管，這一實驗室將在加州、倫敦和紐約設立分支機構，幫助Facebook研究利用深度學習演算法進行類似自動標記相片中用戶姓名這樣的任務[65]。
+2013年3月，傑弗里·辛頓和他的兩位研究生亞歷克斯·克裡澤夫斯基和伊利婭·蘇特斯科娃被Google公司雇用，以提升現有的機器學習產品並協助處理Google日益增長的資料。Google同時併購了辛頓創辦的公司DNNresearch[66]。
+2016年3月，以深度學習開發的圍棋程式AlphaGo首度在比賽中擊敗人類頂尖對手，造成廣泛的討論。
+批評[編輯]
+對深度學習的主要批評是許多方法缺乏理論支撐。大多數深度結構僅僅是梯度下降的某些變式。儘管梯度下降已經被充分地研究，但理論涉及的其他演算法，例如對比分歧演算法，並沒有獲得充分的研究，其收斂性等問題仍不明確。深度學習方法常常被視為黑盒，大多數的結論確認都由經驗而非理論來確定。
+也有學者認為，深度學習應當被視為通向真正人工智慧的一條途徑，而不是一種包羅萬象的解決方案。儘管深度學習的能力很強，但和真正的人工智慧相比，仍然缺乏諸多重要的能力。理論心理學家加里·馬庫斯（英語：Gary Marcus）指出：
+
+就現實而言，深度學習只是建造智慧型機器這一更大挑戰中的一部分。這些技術缺乏表達因果關係的手段……缺乏進行邏輯推理的方法，而且遠沒有具備整合抽象知識，例如物品屬性、代表和典型用途的資訊。最為強大的人工智慧系統，例如IBM的人工智慧系統華生，僅僅把深度學習作為一個包含從貝葉斯推理和演繹推理等技術的複雜技術集合中的組成部分[67]。
+
+參見[編輯]
+
+圖模型
+人工智慧的應用
+吳恩達
+人工智慧專案列表
+
+深度學習庫
+
+Torch（英語：Torch (machine learning)）
+Theano（英語：Theano (software)）
+Deeplearning4j
+tensorflow
+Caffe
+Keras（英語：Keras）
+Mxnet
+
+參考資料[編輯]
+
+
+^ Deng, L.; Yu, D. Deep Learning: Methods and Applications (PDF). Foundations and Trends in Signal Processing. 2014, 7: 3–4. 
+^ 2.0 2.1 Bengio, Yoshua. Learning Deep Architectures for AI (PDF). Foundations and Trends in Machine Learning. 2009, 2 (1): 1–127. 
+^ 3.0 3.1 3.2 3.3 Bengio, Y.; Courville, A.; Vincent, P. Representation Learning: A Review and New Perspectives. IEEE Transactions on Pattern Analysis and Machine Intelligence. 2013, 35 (8): 1798–1828. arXiv:1206.5538. 
+^ Schmidhuber, J. Deep Learning in Neural Networks: An Overview. Neural Networks. 2015, 61: 85–117. arXiv:1404.7828. doi:10.1016/j.neunet.2014.09.003. 
+^ Bengio, Yoshua; LeCun, Yann; Hinton, Geoffrey. Deep Learning. Nature. 2015, 521: 436–444. 
+^ Glauner, P. Deep Convolutional Neural Networks for Smile Recognition (MSc Thesis). Imperial College London, Department of Computing. 2015. arXiv:1508.06535. 
+^ Song, H.A.; Lee, S. Y. Hierarchical Representation Using NMF. Neural Information Processing. Lectures Notes in Computer Sciences 8226. Springer Berlin Heidelberg. 2013: 466–473. ISBN 978-3-642-42053-5. doi:10.1007/978-3-642-42054-2_58. 
+^ Olshausen, B. A. Emergence of simple-cell receptive field properties by learning a sparse code for natural images. Nature. 1996, 381 (6583): 607–609. 
+^ Collobert, R. Deep Learning for Efficient Discriminative Parsing. VideoLectures.net. April 2011. 事件發生在 7min 45s. 
+^ Gomes, L. Machine-Learning Maestro Michael Jordan on the Delusions of Big Data and Other Huge Engineering Efforts. IEEE Spectrum. 20 October 2014. 
+^ K. Fukushima., "Neocognitron: A self-organizing neural network model for a mechanism of pattern recognition unaffected by shift in position," Biol. Cybern., 36, 193–202, 1980
+^ P. Werbos., "Beyond Regression: New Tools for Prediction and Analysis in the Behavioral Sciences," PhD thesis, Harvard University, 1974.
+^ LeCun et al., "Backpropagation Applied to Handwritten Zip Code Recognition," Neural Computation, 1, pp. 541–551, 1989.
+^ S. Hochreiter., "Untersuchungen zu dynamischen neuronalen Netzen," Diploma thesis. Institut f. Informatik, Technische Univ. Munich. Advisor: J. Schmidhuber, 1991.
+^ S. Hochreiter et al., "Gradient flow in recurrent nets: the difficulty of learning long-term dependencies," In S. C. Kremer and J. F. Kolen, editors, A Field Guide to Dynamical Recurrent Neural Networks. IEEE Press, 2001.
+^ J. Weng, N. Ahuja and T. S. Huang, "Cresceptron: a self-organizing neural network which grows adaptively," Proc. International Joint Conference on Neural Networks, Baltimore, Maryland, vol I, pp. 576-581, June, 1992.
+^ J. Weng, N. Ahuja and T. S. Huang, "Learning recognition and segmentation of 3-D objects from 2-D images," Proc. 4th International Conf. Computer Vision, Berlin, Germany, pp. 121-128, May, 1993.
+^ J. Weng, N. Ahuja and T. S. Huang, "Learning recognition and segmentation using the Cresceptron," International Journal of Computer Vision, vol. 25, no. 2, pp. 105-139, Nov. 1997.
+^ G. E. Hinton., "Learning multiple layers of representation," Trends in Cognitive Sciences, 11, pp. 428–434, 2007.
+^ 20.0 20.1 J. Schmidhuber., "Learning complex, extended sequences using the principle of history compression," Neural Computation, 4, pp. 234–242, 1992.
+^ J. Schmidhuber., "My First Deep Learning System of 1991 + Deep Learning Timeline 1962–2013."
+^ 22.0 22.1 D. C. Ciresan et al., "Deep Big Simple Neural Nets for Handwritten Digit Recognition," Neural Computation, 22, pp. 3207–3220, 2010.
+^ R. Raina, A. Madhavan, A. Ng., "Large-scale Deep Unsupervised Learning using Graphics Processors," Proc. 26th Int. Conf. on Machine Learning, 2009.
+^ J. Weng, J. McClelland, A. Pentland, O. Sporns, I. Stockman, M. Sur and E. Thelen, "Autonomous Mental Development by Robots and Animals," Science, vol. 291, no. 5504, pp. 599 - 600, Jan. 26, 2001.
+^ J. Weng, "Brains as Naturally Emerging Turing Machines," in Proc. International Joint Conference on Neural Networks, Killarney, Ireland, 8 pages, July 12-17. 2015.
+^ M Riesenhuber, T Poggio. Hierarchical models of object recognition in cortex. Nature neuroscience, 1999(11) 1019–1025.
+^ Y. LeCun, B. Boser, J. S. Denker, D. Henderson, R. E. Howard, W. Hubbard, L. D. Jackel. Backpropagation Applied to Handwritten Zip Code Recognition. Neural Computation, 1(4):541–551, 1989.
+^ S. Hochreiter. Untersuchungen zu dynamischen neuronalen Netzen. Diploma thesis, Institut f. Informatik, Technische Univ. Munich, 1991. Advisor: J. Schmidhuber
+^ S. Hochreiter, Y. Bengio, P. Frasconi, and J. Schmidhuber. Gradient flow in recurrent nets: the difficulty of learning long-term dependencies. In S. C. Kremer and J. F. Kolen, editors, A Field Guide to Dynamical Recurrent Neural Networks. IEEE Press, 2001.
+^ Hochreiter, Sepp; and Schmidhuber, Jürgen; Long Short-Term Memory, Neural Computation, 9(8):1735–1780, 1997
+^ Graves, Alex; and Schmidhuber, Jürgen; Offline Handwriting Recognition with Multidimensional Recurrent Neural Networks, in Bengio, Yoshua; Schuurmans, Dale; Lafferty, John; Williams, Chris K. I.; and Culotta, Aron (eds.), Advances in Neural Information Processing Systems 22 (NIPS'22), December 7th–10th, 2009, Vancouver, BC, Neural Information Processing Systems (NIPS) Foundation, 2009, pp. 545–552
+^ A. Graves, M. Liwicki, S. Fernandez, R. Bertolami, H. Bunke, J. Schmidhuber. A Novel Connectionist System for Improved Unconstrained Handwriting Recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 31, no. 5, 2009.
+^ Sven Behnke. Hierarchical Neural Networks for Image Interpretation. (PDF). Lecture Notes in Computer Science 2766. Springer. 2003. 
+^ Smolensky, P. Information processing in dynamical systems: Foundations of harmony theory.. In D. E. Rumelhart, J. L. McClelland, & the PDP Research Group, Parallel Distributed Processing: Explorations in the Microstructure of Cognition. 1. 1986: 194–281. 
+^ Hinton, G. E.; Osindero, S.; Teh, Y. A fast learning algorithm for deep belief nets (PDF). Neural Computation. 2006, 18 (7): 1527–1554. PMID 16764513. doi:10.1162/neco.2006.18.7.1527. 
+^ Hinton, G. Deep belief networks. Scholarpedia. 2009, 4 (5): 5947. doi:10.4249/scholarpedia.5947.  編輯
+^ John Markoff. How Many Computers to Identify a Cat? 16,000.. New York Times. 25 June 2012. 
+^ Ng, Andrew; Dean, Jeff. Building High-level Features Using Large Scale Unsupervised Learning (PDF). 2012. 
+^ 39.0 39.1 D. C. Ciresan, U. Meier, J. Masci, L. M. Gambardella, J. Schmidhuber. Flexible, High Performance Convolutional Neural Networks for Image Classification. International Joint Conference on Artificial Intelligence (IJCAI-2011, Barcelona), 2011.
+^ Martines, H., Bengio, Y., & Yannakakis, G. N. (2013). Learning Deep Physiological Models of Affect. I EEE Computational Intelligence, 8(2), 20.
+^ D. C. Ciresan, U. Meier, J. Masci, J. Schmidhuber. Multi-Column Deep Neural Network for Traffic Sign Classification. Neural Networks, 2012.
+^ D. C. Ciresan, U. Meier, J. Schmidhuber. Multi-column Deep Neural Networks for Image Classification. IEEE Conf. on Computer Vision and Pattern Recognition CVPR 2012.
+^ T. Mikolov et al., "Recurrent neural network based language model," Interspeech, 2010.
+^ Y. LeCun et al., "Gradient-based learning applied to document recognition," Proceedings of the IEEE, 86 (11), pp. 2278–2324.
+^ T. Sainath et al., "Convolutional neural networks for LVCSR," ICASSP, 2013.
+^ G. E. Hinton et al., "Deep Neural Networks for Acoustic Modeling in Speech Recognition: The shared views of four research groups," IEEE Signal Processing Magazine, pp. 82–97, November 2012.
+^ Y. Bengio et al., "Advances in optimizing recurrent networks," ICASSP', 2013.
+^ G. Dahl et al., "Improving DNNs for LVCSR using rectified linear units and dropout," ICASSP', 2013.
+^ 49.0 49.1 49.2 G. E. Hinton., "A Practical Guide to Training Restricted Boltzmann Machines," Tech. Rep. UTML TR 2010-003, Dept. CS., Univ. of Toronto, 2010.
+^ G.E. Hinton., "Deep belief networks," Scholarpedia, 4(5):5947.
+^ H. Larochelle et al., "An empirical evaluation of deep architectures on problems with many factors of variation," in Proc. 24th Int. Conf. Machine Learning, pp. 473–480, 2007.
+^ Convolutional Neural Network. [2014-09-16]. 
+^ Honglak Lee; Roger Grosse; Rajesh Ranganath; Andrew Y. Ng. Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations. ICML '09. 2009: 609–616. 
+^ TIMIT Acoustic-Phonetic Continuous Speech Corpus Linguistic Data Consortium, Philadelphia.
+^ http://yann.lecun.com/exdb/mnist/.
+^ D. Ciresan, U. Meier, J. Schmidhuber., "Multi-column Deep Neural Networks for Image Classification," Technical Report No. IDSIA-04-12', 2012.
+^ P. E. Utgoff and D. J. Stracuzzi., "Many-layered learning," Neural Computation, 14, pp. 2497–2529, 2002.
+^ J. Elman, et al., "Rethinking Innateness," 1996.
+^ J. Shrager, MH Johnson., "Dynamic plasticity influences the emergence of function in a simple cortical array," Neural Networks, 9 (7), pp. 1119–1129, 1996
+^ SR Quartz and TJ Sejnowski., "The neural basis of cognitive development: A constructivist manifesto," Behavioral and Brain Sciences, 20 (4), pp. 537–556, 1997.
+^ S. Blakeslee., "In brain's early growth, timetable may be critical," The New York Times, Science Section, pp. B5–B6, 1995.
+^ {BUFILL} E. Bufill, J. Agusti, R. Blesa., "Human neoteny revisited: The case of synaptic plasticity," American Journal of Human Biology, 23 (6), pp. 729–739, 2011.
+^ J. Shrager and M. H. Johnson., "Timing in the development of cortical function: A computational approach," In B. Julesz and I. Kovacs (Eds.), Maturational windows and adult cortical plasticity, 1995.
+^ D. Hernandez., "The Man Behind the Google Brain: Andrew Ng and the Quest for the New AI," Wired, 10 May 2013.
+^ C. Metz., "Facebook's 'Deep Learning' Guru Reveals the Future of AI," Wired, 12 December 2013.
+^ 谷歌收購DNNresearch，下一個帝國呼之欲出. CSDN. 2013-03-13 [2014-07-20]. 
+^ G. Marcus., "Is "Deep Learning" a Revolution in Artificial Intelligence?" The New Yorker, 25 November 2012.
+
+
+外部連結[編輯]
+
+來自蒙特婁大學的深度學習資訊 [1]
+傑弗里·辛頓的首頁 [2]
+深度學習影片教程 [3]
+燕樂存的首頁 [4]
+麻省理工大學生物和計算學習中心 (CBCL) [5]
+史丹福大學提供的無監督特徵學習和深度學習教程 [6]
+GoogleDistBelief框架 [7]
+Theano深度學習工具包（使用Python） [8]
+Deeplearning4j開源深度學習工具包（使用Java） [9]
+NIPS 2013會議（介紹深度學習相關資料） [10]
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=深度學習&oldid=44235700"					
+2 個分類：機器學習神經網絡 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةCatalàDeutschEnglishEspañolفارسیSuomiFrançaisBahasa IndonesiaItaliano日本語한국어PortuguêsРусскийSlovenščinaSvenskaไทยTürkçeУкраїнськаTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年5月4日 (週四) 13:32。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+深度學習──人工智能的現在與未來 - PanSci 泛科學
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文章
+
+所有快訊
+熱門文章
+泛科專題
+
+科青紅白機
+
+
+特輯
+好書搶先看
+
+
+影音
+科資源
+
+臺灣公民科學入口網
+科學活動
+科事曆
+臺大論文造假案：各方意見牆
+
+
+聯絡
+
+關於我們
+等你來投稿！
+泛科特工：最有腦的內容行銷
+加入我們
+廣告與贊助規範
+
+
+分類
+
+地球脈動
+太空天文
+生命奧祕
+萬物之理
+化學物語
+數學妙用
+醫療健康
+精神心理
+文明足跡
+活得科學
+科技能源
+環境生態
+社會群體
+科學傳播
+電影中的科學
+
+
+問答
+市集
+異星知識王
+
+給外星文明的瓶中信
+太陽系內哪裡找水
+孕育生命的星球
+尋找第二顆地球
+星塵間的生命原料
+搜尋宇宙生命訊號
+台灣的追星計畫
+
+
+研之有物
+泛・知識節
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 載入中 ...
+
+
+
+
+
+				註冊 / 登入 
+				
+
+
+
+
+
+
+
+文章
+
+所有快訊
+熱門文章
+泛科專題
+
+科青紅白機
+
+
+特輯
+好書搶先看
+
+
+影音
+科資源
+
+臺灣公民科學入口網
+科學活動
+科事曆
+臺大論文造假案：各方意見牆
+
+
+聯絡
+
+關於我們
+等你來投稿！
+泛科特工：最有腦的內容行銷
+加入我們
+廣告與贊助規範
+
+
+分類
+
+地球脈動
+太空天文
+生命奧祕
+萬物之理
+化學物語
+數學妙用
+醫療健康
+精神心理
+文明足跡
+活得科學
+科技能源
+環境生態
+社會群體
+科學傳播
+電影中的科學
+
+
+問答
+市集
+異星知識王
+
+給外星文明的瓶中信
+太陽系內哪裡找水
+孕育生命的星球
+尋找第二顆地球
+星塵間的生命原料
+搜尋宇宙生命訊號
+台灣的追星計畫
+
+
+研之有物
+泛・知識節
+
+
+
+
+
+
+
+
+
+
+
+文章
+
+所有快訊
+熱門文章
+泛科專題
+
+科青紅白機
+
+
+特輯
+好書搶先看
+
+
+影音
+科資源
+
+臺灣公民科學入口網
+科學活動
+科事曆
+臺大論文造假案：各方意見牆
+
+
+聯絡
+
+關於我們
+等你來投稿！
+泛科特工：最有腦的內容行銷
+加入我們
+廣告與贊助規範
+
+
+分類
+
+地球脈動
+太空天文
+生命奧祕
+萬物之理
+化學物語
+數學妙用
+醫療健康
+精神心理
+文明足跡
+活得科學
+科技能源
+環境生態
+社會群體
+科學傳播
+電影中的科學
+
+
+問答
+市集
+異星知識王
+
+給外星文明的瓶中信
+太陽系內哪裡找水
+孕育生命的星球
+尋找第二顆地球
+星塵間的生命原料
+搜尋宇宙生命訊號
+台灣的追星計畫
+
+
+研之有物
+泛・知識節
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 載入中 ...
+
+
+
+
+
+				註冊 / 登入 
+				
+
+
+
+
+
+
+
+
+文章
+
+所有快訊
+熱門文章
+泛科專題
+
+科青紅白機
+
+
+特輯
+好書搶先看
+
+
+影音
+科資源
+
+臺灣公民科學入口網
+科學活動
+科事曆
+臺大論文造假案：各方意見牆
+
+
+聯絡
+
+關於我們
+等你來投稿！
+泛科特工：最有腦的內容行銷
+加入我們
+廣告與贊助規範
+
+
+分類
+
+地球脈動
+太空天文
+生命奧祕
+萬物之理
+化學物語
+數學妙用
+醫療健康
+精神心理
+文明足跡
+活得科學
+科技能源
+環境生態
+社會群體
+科學傳播
+電影中的科學
+
+
+問答
+市集
+異星知識王
+
+給外星文明的瓶中信
+太陽系內哪裡找水
+孕育生命的星球
+尋找第二顆地球
+星塵間的生命原料
+搜尋宇宙生命訊號
+台灣的追星計畫
+
+
+研之有物
+泛・知識節
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pingback: IBM 發佈新型 SyNAPSE 神經芯片，會對整個計算機乃至科技領域產生什麼影響？ 閃新聞()
+
+
+
+Pingback: 按下快門，找到你想要的一切！－－透視百度拍照搜尋與其展現的未來 | 維京人酒吧 Viking Bar()
+
+
+
+
+
+
+
+
+分享本文至 E-mail 信箱
+
+
+
+
+
+E-mail：
+
+附註：
+
+驗證：(請填入泛科學三個字)
+
+
+
+
+
+
+
+學術引用格式
+
+MLA (點一下全選)
+
+APA (點一下全選)
+
+EndNote（.enw）
+
+ 下載 .enw 檔
+
+
+
+
+
+
+
+
+
+
+
+
+活躍星系核
+
+
+分享 
+
+
+
+462
+
+
+
+
+
+
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+深度學習──人工智能的現在與未來
+
+
+2014/03/20  |
+
+泛科授權 2.0
+科技能源 |
+標籤：deep learningGoogle Brain人工智能機器學習深度學習 
+
+
+文 / 曾鬱蓁
+在2012年，加州的 Google X Lab 用一千台電腦架成的 Google Brain，展現了前所未有的機器學習能力。研究者們準備了一千萬張從 Youtube 隨機截圖的靜止畫面給 Google Brain「觀看」。研究者沒有在系統中預設任何圖像知識、也沒有在圖片上附加任何說明標籤，就讓機器自己發掘圖庫所隱含的規則。在三天的「觀看」學習之後，Google Brain 成功地將這些 Youtube 截圖分成了三類：人臉、身體、還有──貓。
+能夠區分出貓的圖片，是Google Brain的一大突破，也是這個研究結果的一大亮點（及笑點），但它的重要性絕不僅於此。它代表機器從此能夠如同人類一樣，在龐雜無盡的資料中自己找出潛在的抽象規則，而不需要他人的說明或指導。它也標示著人工智能（Artificial intelligence, AI）的新篇章：深度學習（deep learning）技術。
+深度學習
+深度學習並不是研究者們憑空創造出來的運算技術，它是模仿神經網路的運算模式，以多節點、分層的運算來分析圖片上的特徵，最低層的節點們只計算每一個像素上的黑白對比，第二層的節點則根據第一層的資料、以連續的對比來分辨出線條與邊界，隨著層級越來越高、累積的計算資訊越來越複雜，就可以對圖片進行辨認與分類。以上述的Google Brain為例，它的結構一共分為九層，模仿人類視神經的分層與功能，最終可以分辨出人臉、身體、與貓圖片的決定性差異、並加以分類之。
+圖片來源：ANDREW NG
+神經網路模式運算也不是剛被提出的新玩意。早在1980年代，研究者們已經開始著手進行相關研究，至今相關研究仍在學界佔有一席之地。而隨著軟硬體的光速進步，這樣的技術已經開始被應用在真實世界。2009年，Geoffrey Hinton以及他在多倫多大學的研究團隊就以深度學習技術，開發出高準確度的語音辨認技術，能夠正確地將口語轉換成文字。而這樣的技術已經被廠商採用，搭載在許多智慧型手機之中。最為大眾廣為所知的手機虛擬助理，iPhone的Siri，便是仰賴深度學習技術，來辨認用戶的語音指令。
+舊技術，新突破
+而史丹佛大學的研究者 Andrew Ng，便是在同時間說服 Google 公司，讓他使用其公司的豐富資源來建立了 Google Brain。借助強勁的硬體與資料庫，一舉將深度運算技術推向新的紀元：發現潛在規則、自發性分類。這樣的技術比語音轉譯還難上許多，主要是因為其成果已經脫離的單純的資料對應轉換，而進化成在大型資料庫中找尋抽象分類與規則。也因此更接近人類的智能。
+除了 Google Brain 這樣，因尖端科技公司出資贊助而在資源上佔有絕對優勢的深度學習系統，Andrew Ng 也研發出不需要一千台電腦就可以消化大量資訊的系統。他表示，使用圖形處理器 （graphics processing units, GPUs），就可以架設出功能類似、但成本更為低廉的運算系統來進行深度學習。
+在2012年，Geoffrey Hinton 的團隊，就使用圖形處理器架設了一個深度學習系統。知名網路圖庫 ImageNet 每年皆會舉行一場圖片辨認比賽，這個網站會提供約一百萬張的標準化圖片，並標上其分類，參賽者必須寫出可以學到分類規則的語法，並用全新的照片測試之。Geoffrey Hinton 的深度學習系統使用同樣的圖庫，可以展現比過去參賽系統高出約10%的正確率。這樣的結果，讓他被Google 聘請去提升圖片搜尋的正確性。
+廣泛的應用領域
+除了圖片分類或語音轉譯，深度學習還有更多的用途。例如，Geoffrey Hinton 的學生 George Dahl 就應用深度學習技術，打敗了默克（Merck）藥廠現行的系統，成功提高了對特定化學分子間反應的預測力，以便更有效率地找出有用的藥物。他的團隊藉由這個深度學習系統，提升了約15%的預測力，更獲得了默克藥廠懸賞的2萬美金獎金。
+此外，麻省理工學院的 Sebastian Seung 也利用深度學習來分析腦部切片、以建立三維空間的腦圖，以及神經束的走向。這樣的系統除了更快以外，也節省了大量的人力。華盛頓大學的 William Stafford Noble 也應用深度學習系統來預測胺基酸鏈會組成如何的蛋白質、並可進一步預測此蛋白質的性狀。而這兩種應用的共同點都是其背後龐大的資料數量，以及深度學習所能提供的預測性。
+人工智能的未來
+雖然深度學習已經被應用到尖端科學研究及日常生活當中，而 Google 已經實際搭載在核心的搜尋功能之中。但其他知名的人工智能實驗室，對於深度學習技術的反應並不一致。
+例如艾倫人工智慧中心的執行長 Oren Etzioni，就沒有考慮將深度學習納入當前開發中的人工智慧系統中。該機構目前的研究是以小學程度的科學知識為目標，希望能開發出光是看學校的教科書，就能夠輕鬆應付各類考試的智能程式。Oren Etzioni 以飛機為例，他表示，最成功的飛機設計都不是來自於模仿鳥的結構，所以腦神經的類比並無法保證人工智能的實現，因此他們暫不考慮借用深度學習技術來開發這個系統。
+現行的人工智能程式，基本上都是將大大小小的各種知識寫成一句一句的陳述句，再灌進系統之中。當輸入問題進去智能程式時，它就會搜尋本身的資料庫，再選擇出最佳或最近解。2011年時，IBM 有名的 Watson 智能電腦，便是使用這樣的技術，在美國的電視益智節目中打敗的人類的最強衛冕者。雖然過去都是使用傳統式的手工輸入知識，然而 Watson 團隊現在也考慮將深度學習技術應用在部分的運算之中。IBM 的首席科技主管 Rob High 表示，他們現在已經在進行實驗，檢視深度學習能如何提高 Watson 辨認圖片的能力。
+雖然各家人工智能實驗室對於深度學習技術的反應不一，但科技公司與電腦科學家們已經看中它的潛在獲利能力。George Dahl 已經著手在尋找創立公司的可能性，而 Facebook 的人工智能部門也開始招募相關領域的研究者。Andrew Ng 表示，深度學習的系統會隨著資料庫越龐大，而變得更有效率。當硬體與網路的不斷進化、各種影音資料急速累積，深度學習技術將會吸引更多研究者發展它的各種可能性。George Dahl也表示，深度學習還尚在襁褓之中、才開剛始發展，他預期，這個技術將是未來的一大趨勢。
+原文：Computer science: The learning machines
+參考資料：
+
+Google Brain報導：How Many Computers to Identify a Cat? 16,000
+Deep Learning（深度學習）網站
+ImageNet網站主辦之大規模圖片辨認競賽：Large Scale Visual Recognition Challenge 2013
+
+特色圖片來源：Saad Faruque via photopin cc
+
+「空虛寂寞覺得冷會傳染嗎？」「為什麼人看到可愛的東西就想捏？」「為什麼蚊子喜歡叮穿深色衣服的人？」
+科學從不只是冷冰冰的文字，而是存在世界各個角落熱騰騰的知識！不論是天馬行空的想像或日常生活的疑問，都可能從科學的角度來解釋。
+本月的泛科選書 《不腦殘科學2》是泛科學作者編輯團隊嘔心瀝血的超級鉅獻！不只能滿足大人與小孩的好奇心，更將拓展你的視野，帶領大家發現一個嶄新的世界！
+
+泛科限時優惠79折(含運)，現在就帶一本回家
+
+
+
+
+
+
+
+
+
+462
+
+
+
+
+
+
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於作者
+
+
+
+
+
+
+
+
+
+
+活躍星系核
+活躍星系核（active galactic nucleus, AGN）是一類中央核區活動性很強的河外星系。這些星系比普通星系活躍，在從無線電波到伽瑪射線的全波段裡都發出很強的電磁輻射。
+
+本帳號發表來自各方的投稿。附有資料出處的科學好文，都歡迎你來投稿喔。
+Email: contact@pansci.asia
+
+
+
+
+
+
+
+
+
+
+
+ 迴響及觀看留言
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ RSS 訂閱 
+
+					PanSci 泛科學由泛科知識股份有限公司營運 [作者專區] 
+				所有內容，包括文字、圖像、影音，皆為原作者所有，轉載請洽原作者或透過PanSci編輯部代為詢問。
+				法律顧問：
+					
+
+
+					安和國際法律事務所 吳磺慶律師
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3 分鐘搞懂深度學習到底在深什麼 - PanX 泛科技
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+繁 | 簡
+
+
+RSS 訂閱
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+人物Ｘ趨勢
+智造Ｘ新奇
+技術Ｘ解析
+
+PanX 每週單字
+
+
+遊戲Ｘ文化
+
+科技史上的今天
+
+
+專欄
+特輯
+產業動態
+思維覽圖
+活動
+
+活動現場
+近期活動
+
+
+來問泛科技
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+人物Ｘ趨勢
+智造Ｘ新奇
+技術Ｘ解析
+
+PanX 每週單字
+
+
+遊戲Ｘ文化
+
+科技史上的今天
+
+
+專欄
+特輯
+產業動態
+思維覽圖
+活動
+
+活動現場
+近期活動
+
+
+來問泛科技
+
+
+
+
+
+
+
+
+
+
+
+
+留言討論
+
+
+
+
+
+
+
+分享本文至 E-mail 信箱
+
+
+
+
+
+E-mail：
+
+附註：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kobe Chen
+
+
+
+
+
+分享
+
+
+
+
+1.4k
+
+
+
+
+
+0
+
+
+
+
+
+10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3 分鐘搞懂深度學習到底在深什麼
+
+
+
+
+
+2016 年 07 月 27 日 
+
+技術Ｘ解析 
+
+
+人工智慧, 深度學習, 資料科學年會 
+
+
+深度學習其實跟 VR 很像，他們都不是全新的概念，卻在這幾年因為硬體進步而死灰復燃。深度學習是機器學習的一種方式，也可以說是目前人工智慧的主流，今年擊敗世界棋王的 Google AlphaGo，2011 年奪得益智問答比賽大獎的 IBM Watson 都是最佳代言。
+要設計出比天才還厲害的電腦，一定是比天才還聰明的人囉？答案是：不，建構一套深度學習的網路，其實沒有想像中困難，只要看完這篇文章，就能夠有基本的瞭解，再搭配網路資源自學一下，甚至就可以開始建立自己的深度學習網路。
+如果你想要深度學習「深度學習」，又能快速搞懂它到底在深什麼東西，看這篇文章就對了，那我們開始囉！（ㄟ跑錯棚了吧）
+（本文內容來自資料科學年會 2016 議程，未加註來源之圖片取自台灣大學電機系助理教授李宏毅之簡報）
+什麼是深度學習？
+深度學習其實很簡單，就跟把大象放進冰箱一樣，只需三個步驟：「打開冰箱、放進大象、關上冰箱門。」專攻語音辨識領域深度學習的臺大電機系教授李宏毅說，「深度學習也只要三個步驟：建構網路、設定目標、開始學習，說穿了就是這麼簡單。」
+Deep Learning 研究生的心得：其實就像在玩積木一樣，嘗試各種堆疊的方法。（Keras 是一款深度學習的開發套件）
+「簡單說，深度學習就是一個函數集，如此而已。」李宏毅說，類神經網路就是一堆函數的集合，我們丟進去一堆數值，整個網路就輸出一堆數值，從這裡面找出一個最好的結果，也就是機器運算出來的最佳解，機器可以依此決定要在棋盤上哪一點下手，人類也可以按照這個建議作決策。
+這段敘述也許太過抽象，我們可以先具體的說明一下函數。
+神經網路的基本架構就長這樣，每一層（layer）都有很多神經元（neuron），上一層的 output 就是下一層的 input，最終得出一組 final output。
+假設有一個函數叫總統府，這個函數的內容是 x = 無能，那麼無論我們輸入的是小馬、小英、地產大亨或前總統的妻子，最後的結果都 = 無能。
+當然現實世界不會這麼簡單，總統府裡面高深莫測，就像深度學習的類神經網路一樣，我們可以在這個函數裡加進各種變數，來模擬兩黨政治、全球暖化、恐怖攻擊等考量，經過一層又一層的運算之後，最後從總統府輸出的，就是這個函數集建議的最佳決策。
+但現實世界中，這個函數集更複雜，而且要等好幾年，才能看到結果。在程式設計裡，我們不但可以很快看到結果，還可以告訴機器，這個結果 no good，請調整函數內容，給我其他結果。這個過程，就是所謂的「學習」，經過大量的訓練過程，最終機器就能找到一個最佳函數，得出最佳解。
+以 AlphaGo 為例，團隊設定好神經網路架構後，便將大量的棋譜資料輸入，讓 AlphaGo 學習下圍棋的方法，最後它就能判斷棋盤上的各種狀況，並根據對手的落子做出回應。
+如果讓 AlphaGo 學習《棋靈王》的棋譜，當對方下了第一手 5 之五，AlphaGo 就會知道下在天元是最佳解！
+「AlphaGo 很厲害，但是它只能下棋，它的架構就是為了圍棋而存在的，要拿去開車就必須要重新設計」李宏毅表示，深度學習並不是萬能的人工智慧，它其實只能針對特定的需求來設計，現在的各種酷炫應用都還在原始階段，還有很多需要人類去定義、設計，未來當機器可以自己定義架構時，就更加值得期待。
+聽起來一點都不簡單啊！
+其實，深度學習的概念早在 90 年代就存在，那時是以類神經網路的概念發表，但是當時的電腦運算能力不足，因此效率不彰，導致後來只要提到神經網路，就沒人關註，直到近幾年換上深度學習的名字才捲土重來。
+Google 內部的研發專案使用深度學習的比例，在這兩年瘋狂暴增。圖片來源：SIGMOD/Jeff Dean
+深度學習的網路架構層層疊疊，說這個東西很簡單的肯定是瘋子，但事實上它又真的很簡單，因為這是「機器學習」啊。
+一般來說，我們看到十幾層的網路，就會想到每一層要怎麼設定各自的權重（weight）跟變數（parameter），然後還要互相串連，並且運算在極龐大的資料庫上。假設這個網路每一層有 1000 個神經單元（neuron），那每一層中間就有 100 萬個權重，疊加越多層越可怕，這怎麼會簡單？
+如果所有的細節都要人類去設定，那就不叫做「機器學習」了，這個系統厲害的地方就在於，在神經網路裡的千百萬個數值細節，都是機器自己學出來的，人類要做的事情就是給他「規則」跟海量的學習資料，告訴機器什麼答案是對的，中間的過程完全不用操心。
+舉例來說，Google 就嘗試讓機器手臂自己學習如何抓握不規則物品，與其透過人類不斷去修正每個動作的精準度，還不如讓機器自己學習，最後讓失敗率下降了 16%。
+
+在目前主要的深度學習架構裡，人類要擔心的重點只有一個：「Gradient Descent」，中文勉強譯做梯度下降法。我們可以把深度學習想像成有一百萬個學生同時在寫答案，他們每個人都有不同的思考方式，最後每個人都交出一個不同的答案（一個數字）。將所有的答案跟標準答案相減之後（技術上稱為 loss），畫成一條折線圖（或是複雜一點的 3D 圖），離標準答案最接近的那個答案，就會在這張圖的最低點，深度學習的目標就是要找到這個最低點。
+最低點代表什麼呢？代表寫出這個答案的學生，擁有最接近正確答案的思考方式，接下來我們讓其他學生向這位學生學習，並繼續測試，是否都能回答正確。理論上，隨著測試次數越多，正確率就會越高，表示這個機器已經通過測試，可以投入實戰分析了。
+這條曲線代表所有的 output 跟正確答案的差（Loss），因此最低點就最接近正確答案。機器隨機選取其中一個點，然後觀察兩旁的斜率來逼近最低點，你發現其中的難題了嗎？
+看到這裡，如果你想跟朋友炫耀一下什麼是「深度學習」，就跟他說「很簡單啊，就是在找 loss 最小的點嘛，Gradient Descent，懂？」
+深度學習越深越好嗎？
+深度學習之所以厲害就在於它堆疊了很多層，因此很多人會好奇，神經網路越多層就越好嗎？這個問題的答案跟「頭大的人就比較聰明嗎」差不多：不一定。
+從錯誤率（紅字）來看，神經網路疊得越深似乎越好，但可以註意它的架構也不是簡單的堆疊，而是變得很複雜。
+雖然從這幾年的一些機器學習競賽結果來看，似乎越多層就能得到更低的錯誤率，去年 Residual Network 堆到 152 層，錯誤率也低到 3.57%（ImageNet 資料庫的測試結果）。但是堆疊上百層的神經網路，常常會導致「Vanishing Gradient」，也就是因為每一層運算讓數值不斷收斂，導致最後的 output 越來越小，跟正確答案相減之後也就看不到顯著的最小值，看起來到處都是最小值。
+那你可能又會問，像前面說的，把所有的答案列出來跟標準答案比對，怎麼會找不到最小值呢？事實上，我們面對的可能不只一百萬個答案，很可能是千萬或上億個答案，實作上幾乎不可能列出所有的答案去「窮舉」它，而是用隨機抽選的方式，在線上找一個點，然後比對它旁邊的數值，看看是否更低，慢慢去貼近最低點，像在爬樓梯一樣漸漸往下所以才稱為 gradient。
+這會遇到一種狀況，當系統以為找到了最低點，但其實越過山丘，還會發現更低點；或者開局就落在高原上，附近超平坦的，就覺得應該是最低點了，其實遠方還有人在谷底等候。
+神經網路疊加的越多層，這個問題就會越明顯，因此需要設計不同的架構，跟特殊的運算過程，才能避免找不到最低點。有時候反而 layer 少一點，正確率還更高。
+「目前我們嘗試的語音辨識模型，大概疊 8 層，是一個 C/P 值滿高的選擇。」李宏毅說，深度學習目前其實還在神農嚐百草的階段，甚至是寒武紀大爆發的時代，雖然很精彩，但是其實水準還很低階。也許不久後，就有人找出比 Gradient Descent 更有效的方法，那現在所學的很多幫忙找出最低點的技術就沒用了，但這也代表我們離高階人工智慧又更近一步。
+圖像辨識、語音分析和種種可能
+在學習深度學習的時候，我腦中一直浮現古老的豐年果糖廣告，爸爸驕傲的說「爸爸頭腦比電腦好啊」的畫面。從理論來看，人腦確實很強大，強大到機器也要模仿人腦來變得更聰明。
+「人類的五感隨著演化過程互有消長，我們的嗅覺退化得很快，視覺則要處理最龐大的資料量。」專研影像辨識、智慧監控的 Umbo CV 技術長張秉霖指出，人腦處理一張圖像的資料量可能高達一百萬個位元，如果我們要用機器進行影像辨識，就一定要參考人腦的運作方式。
+在深度學習中有很多方式去辨識圖像，其實作法跟人腦很像，第一層先處理基本的線條，然後再慢慢組合成一些形狀，最後就能判讀出圖形的意義，就像 2012 年的 Google Brain 就能夠從龐大的圖形資料中，分辨出貓臉跟人臉的不同。
+「但是俗話說得好，一張圖勝過千言萬語，不同人對同一張圖片可能有不同的解讀，這是因為每個人對這張圖的背景知識認知不同。」張秉霖說，要讓機器圖像辨識再更上一層樓， 就要讓機器看懂圖像背後的脈絡，而要讓機器看懂脈絡，就需要讓它吸收大量知識，最好的辦法就是讓機器學會人類的語言，就可以學習到更多背景知識。
+清華大學電機系孫民博士指出，深度學習應用在圖像分析上，目前機器已經能夠用文字描述場景。圖片來源：孫民
+語音辨識面臨的問題則恰恰相反，之前的語音分析是將語音轉成文字，然後用文字進行語意分析，進而推理出這段語音的意思，這樣的作法無法判斷聲音情感，常常會誤判；新的作法則是將整段語音，丟到資料庫裡進行比對，找出最相近的聲紋，來理解這段話的意思。
+透過深度學習，機器正在變得越來越聰明，人工智慧的運用也更加廣泛。目前已經有一些案例，像是美國的梅西百貨（Macy’s）、Hilton McLean 飯店還有喬治亞理工學院，也嘗試運用  IBM Watson 來擔任服務員、櫃台接待與課堂助教，透過回答一些簡單的問題，來減輕人類的負擔，人類就能專心處理那些棘手的難題。
+Cornell 大學的研究團隊利用深度學習設計出的應用，首先輸入一張畫家的作品，再輸入任意照片，機器就會用那位畫家的風格來重繪照片。
+不難想像，深度學習在未來會運用在更多領域，甚至還有人嘗試用 Watson 來抓神奇寶貝。不過，深度學習的原理與實作的門檻並不太高，真正的難處不在深度學習本身，而是在於如何將人類要解決的問題用數字來表達，並設計成機器可以學習的架構，如何用數字來表示貓臉？用數字來描述圍棋？這些都需要人類去定義，因此深度學習要進一步發展，最需要的其實是人才，剩下的，就是機器的事了。
+
+老闆學校講座國際場
+《硬體創新點子出來後，然後呢？/ New idea for hardware comes up, and then？》
+
+新創團隊或許都曾面臨相同的問題：如何面對國際市場的廣大與不同？尤其硬體創新團隊更面臨實體銷路、通路等問題。身為硬體創新小團隊，要如何在沒太多資源的情況下，以小蝦米之身對抗大廠鯨魚？然而，或許我們也看到不少國外硬體新創團隊成功走出一片天，難道國際團隊就真的比較吃香？
+另一方面，自從 IoT、Maker 技術一詞大量被搬上檯面後，似乎人人都可以透過軟體、改變製造技術來硬體創新，製造出又酷又炫的產品。但卻逐漸看到各種募資失敗、無法正常出貨等新聞，最終，硬體創新只是一場夢？身為小團隊在沒有大量資本下，要如何製造原型（Prototype），快速檢驗自己的想法？從點子到實現，需要花費多少時間？當團隊成功出貨後，又要如何延續之後的銷路，將商品銷售到全世界？如何再利用第一批的顧客名單？
+2017 年老闆學校講座，我們邀請到專註於 VR 領域穿戴式裝置的美國新創團隊「Machina」，跨海與臺灣快速試製團隊「美鈦國際」及工研院主導的硬體媒合平臺「Tripple」（快速試製中心）分別一起談論國際新創團隊是如何突破市場的界線，操作國際市場，把商品銷售到全世界，他們是怎麼從點子到概念商品化？並找到快速試製供應商？如果你也好奇，7/20 歡迎一起來和我們聊聊《硬體創新點子出來後，然後呢？》
+ 
+
+封面圖片來源：extremetech.com 
+
+
+關於作者
+
+
+
+
+
+
+
+
+
+
+
+Kobe Chen
+金屬搖滾樂中毒，科技狂熱份子，愛貓人士，愛妻男人，這些都是我。相信台灣不只是鬼島，相信每個人都希望這個世界會變得更好。
+
+
+
+
+
+
+
+
+
+
+
+
+
+留言討論
+
+
+
+
+
+
+
+延伸閱讀
+
+
+
+
+
+
+														利用機器學習判定，紅樓夢全書是否為曹雪芹所寫													
+
+
+
+
+
+
+														大數據專題（三）／文字也是數據，語意分析掌握電腦背後的情感													
+
+
+
+
+
+
+														大數據專題（二）／站在 AI 浪頭上：訓練電腦成為決策代理人的核心概念													
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本期專題
+
+
+
+
+
+
+
+
+GMIS 2017 機器智能時代
+
+
+
+
+熱門文章
+
+
+
+
+
+
+
+
+
+
+						【倫敦遊戲節】不只大廠能做遊戲？EGX Rezzed 獨立遊戲節帶來全新想像					
+
+
+
+
+
+
+
+
+
+
+						節能救地球的新方向——隱形能源橫空出世？					
+
+
+
+
+
+
+
+
+
+
+						水災襲來怎麼辦？氣候劇變下的水資源新概念——跨域治理					
+
+
+
+
+
+編輯室報告
+
+
+
+
+
+
+
+
+泛科報告：讓知識追尋者找到彼此
+
+
+
+
+最新選書
+
+
+
+
+
+
+
+從人到人工智慧，破解 AI 革命的 68 個核心概念：實戰專家全圖解×人腦不...
+
+
+
+最新文章
+
+
+
+
+
+
+
+
+水災襲來怎麼辦？氣候劇變下的水資源新概念——跨域治理
+
+
+
+
+【倫敦遊戲節】不只大廠能做遊戲？EGX Rezzed 獨立遊戲節帶來全新想像
+
+
+
+
+節能救地球的新方向——隱形能源橫空出世？
+
+
+
+
+AI 也有蝴蝶效應，人工智慧用到的數學理論？最陡下降法、區域解、模糊理論、混...
+
+
+
+
+取材大自然的人工智慧概念：群體智慧、影像辨識、模控學、群體智慧
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ｘ
+
+
+
+
+
+
+
+
+
+
+
+
+訂閱
+
+最新訊息
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									© COPYRIGHT 2015
+								
+
+
+
+
+
+
+
+關於我們
+徵稿
+招募
+廣告規範
+連絡我們
+內容夥伴
+
+
+
+
+- 請選擇 -
+關於我們
+徵稿
+招募
+廣告規範
+連絡我們
+內容夥伴
+
+
+
+
+FOLLOW US 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+深度學習技術 | NVIDIA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ TWN - 台灣
+
+
+
+驅動程式
+
+
+
+GeForce 驅動程式
+
+
+
+
+GeForce Experience
+
+
+
+
+所有驅動程式
+
+
+
+
+
+
+產品
+
+
+處理器
+
+
+
+GeForce
+
+
+
+
+Quadro
+
+
+
+
+Tegra
+
+
+
+
+Tesla
+
+
+
+
+NVIDIA GRID
+
+
+
+
+NVS
+
+
+
+
+過去世代的產品
+
+
+
+
+
+
+技術
+
+
+
+Advanced Rendering
+
+
+
+
+CUDA
+
+
+
+
+人工智慧和深度學習
+
+
+
+
+G-SYNC
+
+
+
+
+多 GPU 技術
+
+
+
+
+Optimus
+
+
+
+
+OptiX
+
+
+
+
+PhysX
+
+
+
+
+SLI
+
+
+
+
+所有技術
+
+
+
+
+
+NVIDIA DGX
+
+
+
+NVIDIA DGX-1
+
+
+
+
+分析專用的 NVIDIA DGX
+
+
+
+
+
+
+NVIDIA GRID
+
+
+
+虛擬桌面與應用程式
+
+
+
+
+視覺運算裝置
+
+
+
+
+雲端遊戲
+
+
+
+
+
+
+Quadro VCA
+
+
+
+
+NVIDIA DRIVE
+
+
+
+
+3D Vision
+
+
+
+平臺
+
+
+
+桌上型
+
+
+
+
+筆記型
+
+
+
+
+智慧型手機
+
+
+
+
+工作站
+
+
+
+
+伺服器
+
+
+
+
+高效能運算
+
+
+
+
+汽車
+
+
+
+
+嵌入式
+
+
+
+
+
+
+SHIELD
+
+
+
+Android TV
+
+
+
+
+Tablet
+
+
+
+
+Portable
+
+
+
+
+
+
+
+
+深度學習與人工智慧
+
+
+
+深度學習概觀
+
+
+
+技術
+
+
+
+人工智慧
+
+
+
+
+機器學習
+
+
+
+
+自然語言處理
+
+
+
+
+影像辨識
+
+
+
+
+自駕車
+
+
+
+
+
+產品
+
+
+
+深度學習應用軟體
+
+
+
+
+DGX-1 深度學習系統
+
+
+
+
+Jetson TX1 超級電腦模組
+
+
+
+
+NVIDIA DRIVE PX 2
+
+
+
+
+NVIDIA TITAN X
+
+
+
+
+Tesla K80 加速器
+
+
+
+
+Tesla M4 Hyperscale 加速器
+
+
+
+
+Tesla M40 加速器
+
+
+
+
+Tesla P100 資料中心加速器
+
+
+
+
+
+教育
+
+
+
+深度學習簡介
+
+
+
+
+深度學習機構
+
+
+
+
+線上課程
+
+
+
+
+
+社群
+
+
+
+深度學習部落格
+
+
+
+
+DIGITS 使用者群組
+
+
+
+
+人工智慧開創計畫
+
+
+
+
+
+
+
+
+體驗區
+
+
+
+GeForce.com 台灣
+
+
+
+
+GeForce 台灣論壇
+
+
+
+
+3D Vision Live
+
+
+
+
+GTC (GPU 繪圖處理器技術大會)
+
+
+
+
+NVIDIA 合作夥伴網絡
+
+
+
+
+GPU 扶植創業專區
+
+
+
+
+開發人員專區
+
+
+
+CUDA Zone
+
+
+
+
+DesignWorks 
+
+
+
+
+嵌入式運算
+
+
+
+
+GameWorks
+
+
+
+
+
+
+PartnerForce
+
+
+
+
+NVIDIA研究
+
+
+
+
+
+
+酷玩意
+
+
+
+
+關於 NVIDIA
+
+
+
+公司資訊
+
+
+
+
+新聞中心
+
+
+
+
+NVIDIA Taiwan 官方部落格
+
+
+
+
+投資者關係
+
+
+
+
+企業公民
+
+
+
+
+人工智慧運算
+
+
+
+
+購買資訊
+
+
+
+
+相關活動
+
+
+
+
+NVIDIA 台灣官方粉絲團
+
+
+
+
+
+
+
+
+
+
+
+深度學習
+
+
+
+
+NVIDIA Home>產品>技術>深度學習 
+
+人工智慧和深度學習
+無限可能
+
+
+
+
+
+
+
+
+深度學習的強大威力
+ 
+深度學習是人工智慧中成長最為快速的領域，可協助電腦理解影像、聲音和文字等資料。現在透過多層級的神經網路，電腦可以和人類一樣針對複雜的情況進行觀察、學習和反應，甚至表現得更好。藉由這個方式，以完全不同的角度深入然後重新思考如何應用您的資料、您的技術，及創新您所提供的產品和服務。
+ 
+
+
+
+
+
+
+
+瞭解深度學習的熱門趨勢
+
+
+
+
+
+
+
+
+
+
+閱讀 NVIDIA CEO 黃仁勳所撰寫的「透過 GPU 加快人工智慧運算速度」部落格文章
+
+
+
+
+ 
+
+ 
+
+
+
+各行各業都想要智能技術
+各行各業中具有前瞻性的公司都已開始採用深度學習，處理大量增加的資料量、改善機器學習演算法並發展符合大量資料量所需的硬體。這可協助他們找出新方法，發掘手邊豐富資料進而開發新產品、服務和程序，並創造突破性競爭優勢。
+
+
+請參閱 Ovum 白皮書 (PDF)
+
+
+
+
+NVIDIA 的深度學習優勢
+ 
+NVIDIA 在加速深度學習的領域上一直處於先驅的地位，並且已開發各種深度學習軟體、函式庫和工具多年。現今的深度學習解決方案，幾乎是完全仰賴 NVIDIA GPU 加速運算來訓練和加速影像辨識、筆跡和聲音等具有挑戰性的應用領域。搭載 NVIDIA GPU 的深度學習系統具備多項優勢:
+ 
+加速深度神經網路和訓練效能
+NVIDIA GPU 擅長平行工作負載且可讓學習比 CPU 跑快 10 - 75 倍，也就是將許多資料訓練迭代的時間從數週縮短為數天。事實上 GPU 技術已在短短 1 年內讓深度神經網路訓練再加速 12 倍快。
+瞭解資料
+ 
+快速部署人工智慧應用
+人工智慧 (AI) 創新正以驚人的速度發展。現在電腦不但會學習，也會進行獨立思考。這也為機器人、醫療和自駕車等應用領域開啟一扇奇妙的機會之窗。您可以快速設計和部署深度學習應用，以利用這些驚人的突破。
+立即開始使用
+ 
+專為深度學習打造的 GPU 
+ 
+開發人員希望可以隨時創作、隨地部署。全世界的桌上型電腦、筆記型電腦、伺服器和超級電腦，以及 Amazon、IBM 和 Microsoft 提供的雲端服務都可享受 NVIDIA GPU 技術服務。現在您可以打造專屬或「隨插即用」的 GPU 加速深度學習解決方案，且由 NVIDIA GPU 和支援應用軟體技術提供技術支援。
+
+ 
+
+
+
+
+NVIDIA DGX-1
+全球最快且專為深度學習訓練打造的系統。 進一步瞭解 >
+
+
+
+
+
+Tesla P100
+最先進的深度學習訓練加速器。即將推出。 進一步瞭解 >
+
+
+
+
+
+Tesla M40
+最快速的深度學習訓練加速器。 進一步瞭解 >
+
+
+ 
+
+
+
+Tesla M4
+第一款專為超大規模伺服器打造的加速器。 進一步瞭解 >
+
+
+
+
+
+Tesla K80
+可提供高效能運算的多功能加速器。 進一步瞭解 >
+
+
+
+
+
+GeForce GTX TITAN X
+最快速的桌上型 PC 深度神經網路訓練加速器。 進一步瞭解 >
+
+
+ 
+
+
+
+
+立即開始使用
+與我們聯繫，立即部署深度學習。
+準備開始部署了嗎？
+
+
+
+
+
+
+
+
+ 
+
+
+GPU運算解決方案
+總覽
+什麼是 GPU 運算?
+GPU 應用
+個案研究
+為什麼選用 TESLA?
+伺服器與工作站
+購買資訊
+
+
+軟硬體
+Tesla 產品資料
+NVLINK 高速互連
+Tesla軟體功能
+軟體開發工具
+CUDA 開發套件
+顧問與訓練服務
+雲端運算
+OpenACC GPU 指令
+GPU Starter 開發套件
+
+
+新聞和信息
+新聞和文章
+實證考驗
+Webinars
+NVIDIA研究
+追求更美好的科學
+請註冊訂閱Tesla電子報
+聯絡我們
+
+
+線上搜尋NVIDIA
+NVIDIA Taiwan 官方部落格FacebookFlickrYoutube
+
+
+&nbsp;
+
+ 
+
+
+
+車用 | 繪圖卡 | GRID | 高效能運算 | 視覺化方案 | CUDA | Tegra
+
+
+
+活動 | 開發人員 | 人才招募 | 購買資訊 | 訂閱 RSS | 電子報 | 聯絡我們 | 產品安全
+
+
+
+                
+                版權所有 
+                
+                ©
+                
+                 2017 NVIDIA 公司 
+                
+                法律資訊 | 隱私權政策
+
+
+
+
+
+
+
+
+
+
+
+淺談Alpha Go所涉及的深度學習技術｜數位時代About us廣告刊登商店場地租借EN 新聞
+新聞分類最新新聞科技物聯網人工智慧機器人金融科技虛擬實境大數據交通運輸電信通訊資訊安全實驗室裡的科技企業阿裡巴巴Amazon蘋果FacebookGoogleIBM微軟Yahoo商業產業創新策略IPO併購合作創業新創團隊募資創業活動創投創業人物新創管理行銷流量數據廣告創意品牌經營內容行銷社群行銷技能職場未來工作數位工作術產品開發開發者電子商務數位內容新聞媒體遊戲電子書音樂影視人物產品觀點專題PX酷品 活動
+活動未來商務展Meet Taipei社群活動雜誌創業小聚數位行銷學院世紀對決！AlphaGo對戰人類圍棋冠軍李世乭AI人工智慧再突破！Google圍棋系統，幹掉歐洲最強職業選手1深入淺出，解讀Google的人工智慧圍棋「大腦」2淺談Alpha Go所涉及的深度學習技術3「戰勝自己」不只是口號──《Nature》AlphaGo論文讀後感4[韓國現場]世紀對決開始啦！AlphaGo與棋王李世乭對弈中5AlphaGo再勝李世乭！人機大戰4：1落幕6DeepMind執行長Demis Hassabis：20年前我就想發明AlphaGo了7[曹家榮]AlphaGo贏了，那人類開始反省了嗎？8專題故事Google DeepMind 開發的人工智慧圍棋程式「AlphaGo」自3月9日起在韓國與人類圍棋世界冠軍李世乭進行五場對弈。賽前 AlphaGo 並未獲得太多支持的聲音，一般認為李世乭的贏面較大，他本人也預估會取得五戰全勝或是四勝一負的戰果，其他像是李開復等人都不認為AlphaGo有勝算。然而，出乎意料地，經過四場比賽之後，AlphaGo 取得的戰績卻是領先的三勝一負，而且還是先連勝三場，令圍棋界，乃至於全球人類皆震驚不已。科技Google人工智慧1 AI人工智慧再突破！Google圍棋系統，幹掉歐洲最強職業選手 
+ 
+by
+ 楊晨欣
+2016.01.28分享分享在人工智慧科技發展之下，總會有一個討論議題－機器會不會有一天比人類聰明？雖然還沒有正確答案，但是，人工智慧的技術在今日有了重要突破：Google自己的AI計畫，成功學會了號稱最難讓機器學習的遊戲「圍棋」，更打敗歐洲圍棋冠軍Fan Hui。過去，電腦的智慧的確有辦法在西洋象棋、西洋跳棋等遊戲上勝過人類，但是對超過2500年歷史的圍棋來說，卻一直是個無法跨過的挑戰，甚至有科學家做研究並證明，圍棋是經典棋盤遊戲中，最難教會電腦的遊戲。但是，Google旗下的研究員卻成功完成挑戰，建立一個稱作AlphaGo的系統，並且已經把結果發佈在Nature期刊上。Google在部落格上發表聲明，當他們確認AlphaGo已經準備好面臨正式圍棋選手的挑戰時，就找來蟬聯3次的歐中圍棋冠軍Fan Hui，進行一場人類與AI系統的圍棋比賽。這場比賽進行了將近整整5天，結果由AlphaGo勝出五場，也創下歷史上電腦程式第一次打敗職業圍棋選手的紀錄。AlphaGo下一步打算迎戰韓國世界圍棋強手李世乭，這場比賽將在今年3月於韓國首爾舉辦。長期目標，則是希望再增進AI系統，讓它能夠透過實戰、觀看他人下棋，來促進自己的圍棋實力；另外，則是希望用這樣的AI演算方式，應用到社會上其他議題，例如氣候預測模型、疾病分析等。而這則新聞發表的同一天，Facebook執行長Mark Zuckerberg更在自己的Facebook帳號上，發表一則長篇文章，不僅講述AI的要點與重要性，更期許自己今年的目標，是要建造一個簡單的AI系統，幫助他管理家中與工作事務。（點這看Mark Zuckerberg發言。）資料來源：Google、BBC、Washington Post#Google#人工智慧#AI分享科技人工智慧2 深入淺出，解讀Google的人工智慧圍棋「大腦」 
+ 
+by
+ 36氪
+2016.02.22分享分享在象棋和國旗象棋中，電腦軟體都非常厲害，只有圍棋是唯一「電腦贏不過人類」的項目。而今年1月份有個爆炸性的新聞：Google DeepMind 開發的人工智慧程式 AlphaGo 以5：0比數壓倒性擊敗了歐洲圍棋冠軍、專業二段棋手。並且3月份 AlphaGo 將會和韓國九段、世界冠軍李世石進行對弈。如果此役 AlphaGo 獲勝，將意味著人工智慧真正里程碑式的勝利。這也引起了筆者的好奇心，在春節期間，跟 Facebook 的田淵棟（他的背景無可挑剔，卡內基梅隆大學機器人系博士，Alphabet X 無人車核心團隊，Facebook 人工智慧組研究員）交流，他做的也是計算機圍棋 AI －－黑暗森林（熟悉《三體》的朋友知道怎麼回事），今年1月份他的文章被機器學習頂級會議 ICLR 2016 接受，（表達學習在江湖上稱作深度學習或者特徵學）已在機器學習社群開闢了自己的江山，成為學術界的新寵。他談到自從Google收購了DeepMind，投入大量資源去做好人工智慧專案，不為別的，就是要向世界證明Google智慧的強大。發表在頂級期刊《Nature》的論文光看作者就20個，明顯是下了血本，前兩位都是計算機圍棋界的權威，第一，銀鴻是計算機圍棋和強化學習的頂級專家，整個博士論文主題就是圍棋；第二，阿哈黃以前寫過多年圍棋軟體，自己又是AGA6D的水平。還是不多說廢話，下麵是SpinPunch CTO對AlphaGo的工作原理解讀，原文見參考資料。Google DeepMind宣佈他們研發的神經網絡圍棋AI──AlphaGo，戰勝了人類職業選手。這篇論文由銀鴻等人完成。其中的技術是出乎意料地簡單而強大。為了讓不熟悉的讀者更容易理解，以下是我對系統工作原理的解讀。深度學習「深度學習」是指多層的人工神經網絡和訓練它的方法。一層神經網絡會把大量矩陣數字輸入，通過非線性激活方法取權重，再產生另一個數據集合作為輸出。這就像生物神經大腦的工作機理一樣，透過合適的矩陣數量，多層組織鏈接一起，形成神經網絡「大腦」進行精準複雜的處理，就像人們識別物體、標註圖片一樣。雖然神經網絡在幾十年前就有了，直到最近才浮出檯面。這是因為他們需要大量的「訓練」去發現矩陣中的數字價值。對早期研究者來說，想要獲得不錯效果的最小量測試，都遠遠超過計算能力和能提供的數據的大小。但最近幾年，一些能獲取大量資源的團隊重現挖掘神經網絡，其實就是透過「大數據」來使測試更有效率。兩個大腦AlphaGo是透過兩個不同神經網絡「大腦」合作來優化下棋程式。這些大腦是多層神經網絡，跟Google圖片搜索引擎識別圖片原理相似。它們從多層啟發式二維過濾器開始，去處理圍棋棋盤的定位，就像圖片分類器網絡處理圖片一樣。經過過濾，13個完全連接的神經網絡層產生對它們看到的局面判斷。這些層能夠做分類和邏輯推理。這些網絡透過反覆運算來檢查結果，再去校對調整參數，去讓下次執行更好。這個處理器有大量的隨機性元素，所以我們是不可能精確知道網絡是如何「思考」的，但更多的運算後能讓它進化到更好。第一大腦：落子選擇器（行動機械手）AlphaGo的第一個神經網絡大腦是「監督式學習的策略網絡（政策網絡）」，觀察棋盤佈局企圖找到最佳的下一步。事實上，它預測每一個合理下一步的最佳概率，你可以想像成「落子選擇器」。落子選擇器是怎麼看到棋盤的？數字呈現出最強人類選手會下在哪些地方的可能性。團隊透過在KGS（網路圍棋對戰平臺）上最強人類對手、百萬級的對弈落子去訓練大腦。這就是AlphaGo最像人的地方，目標是去學習那些頂尖高手的妙手。不是為了贏棋，而是去找一個跟人類高手同樣的下一步落子。AlphaGo落子選擇器能正確符合57％的人類高手。（不符合的不是意味著錯誤，有可能是人類自己犯的失誤）更強的落子選擇器AlphaGo系統事實上需要兩個額外落子選擇器的大腦。一個是「強化學習的策略網絡（策略Network）」，通過百萬級額外的模擬局來完成。比起基本的訓練，只是教程式去模仿單一人類的落子，高級的運算訓練會與每一個模擬棋局下到底，教程式最可能贏的下一步棋。 Sliver團隊通過更強的落子選擇器總結了百萬級訓練棋局，比他們之前版本又強化了不少。單單用這種落子選擇器就已經是強大的對手了，可以到業餘棋手的水平，或者說跟之前最強的圍棋AI媲美。這裡重點是這種落子選擇器不會去「讀」。它就是簡單審視從單一棋盤位置，再提出從那個位置分析出來的落子。它不會去模擬任何未來的走法。這展示了簡單的深度神經網絡學習的力量。更快的落子選擇器AlphaGo當然團隊沒有在這裡止步。下麵我會闡述是如何將閱讀能力賦予AI的。為了做到這一點，他們需要更快版本的落子選擇器大腦。越強的版本耗時越久──不過為了產生一個不錯的落子也夠快了，但「閱讀結構」需要去檢查幾千種落子可能性才能做決定。Sliver團隊建立簡單的落子選擇器去做出「快速閱讀」的版本，他們稱之為「滾動網絡」。簡單版本是不會看整個19 * 19的棋盤，但會在對手之前下的和新下的棋子中考慮，觀察一個更小的窗口。去掉部分落子選擇器大腦會損失一些實力，但輕量級版本能夠比之前快1000倍，這讓「閱讀結構」成了可能。第二大腦：棋局評估器（位置計算器）AlphaGo的第二個大腦相對於落子選擇器是回答另一個問題。不是去猜測具體下一步，它預測每一個棋手贏棋的可能，在給定棋子位置情況下。這「局面評估器」就是論文中提到的「價值網絡（價值Network)」，通過整體局面判斷來輔助落子選擇器。這個判斷僅僅是大概的，但對於閱讀速度提高很有幫助。通過分類潛在的未來局面的「好」與「壞」，AlphaGo能夠決定是否通過特殊變種去深入閱讀。如果局面評估器說這個特殊變種不行，那麼AI就跳過閱讀在這一條線上的任何更多落子。局面評估器是怎麼看這個棋盤的，深藍色表示下一步有利於贏棋的位置。局面評估器也通過百萬級別的棋局做訓練.Silver團隊通過複製兩個AlphaGo的最強落子選擇器，精心挑選隨機樣本創造了這些局面。這裡AI落子選擇器在高效創建大規模數據集去訓練局面評估器是非常有價值的。這種落子選擇器讓大家去模擬繼續往下走的很多可能，從任意給定棋盤局面去猜測大致的雙方贏棋概率。而人類的棋局還不夠多恐怕難以完成這種訓練。增加閱讀這裡做了三個版本的落子選擇大腦，加上局面評估大腦，AlphaGo可以有效去閱讀未來走法和步驟了。閱讀跟大多數圍棋AI一樣，透過蒙特卡洛樹搜索（MCTS）算法來完成。但AlphaGo比其他AI都要聰明，能夠更加智慧的猜測哪個變種去探測，需要多深去探測。蒙特卡洛樹搜索算法如果擁有無限的計算能力，MCTS可以理論上去計算最佳落子透過探索每一局的可能步驟。但未來走法的搜索空間對於圍棋來說太大了（大到比我們認知宇宙裡的粒子還多），實際上AI沒有辦法探索每一個可能的變種.MCTS做法比其他AI有多好的原因是在識別有利的變種，這樣可以跳過一些不利的。銀鴻團隊讓AlphaGo裝上MCTS系統的模組，這種框架讓設計者去嵌入不同的功能去評估變種。最後馬力全開的AlphaGo系統按以下方式使用了這些大腦。從當前的棋盤佈局，選擇哪些下一步的可能性。他們用基礎的落子選擇器大腦（他們嘗試使用更強的版本，但卻讓AlphaGo更弱，因為這沒有讓MCTS提供更廣闊的選擇空間）。它只集中在「明顯最好」的落子，而不是去選擇也許對後來有利的下法。對於每一個可能的落子，有兩種評估方式：要不用棋盤上局面評估器在落子後，要不運行更深入的蒙特卡羅模擬器去思考未來的落子，使用快速閱讀的落子選擇器去提高搜索速度。 AlphaGo使用簡單的參數──「混合相關係數」，將每一個猜測取權重。最大馬力的AlphaGo使用50/50的混合比，使用局面評估器和模擬化滾動去做平衡判斷。這篇論文包含一個隨著他們使用插件的不同，AlphaGo的能力變化和上述步驟的模擬。若僅使用獨立大腦，AlphaGo跟最好的計算機圍棋AI差不多強，但當使用這些綜合手段，就可能到達職業選手水平。AlphaGo的能力變化與MCTS的插件是否使用有關。這篇論文還詳細講了一些工程優化：分佈式計算，網絡計算機去提升MCTS速度，但這些都沒有改變基礎算法。這些算法部分精確，部分近似。在特別情況下，AlphaGo透過更強的計算能力變得更強，但計算單元的提升率隨著性能變強而減緩。優勢和劣勢我認為AlphaGo在小規模戰術上會非常厲害。它知道通過很多位置和類型找到人類最好的下法，所以不會在給定小範圍的戰術條件下犯明顯錯誤。但是，AlphaGo有個弱點在全局判斷上。它看到棋盤式通過5 x 5金字塔式的過濾，這樣對於集成戰術小塊變成戰略整體上帶來麻煩，同樣道理，圖片分類神經網路往往對包含一個東西和另一個的搞不清。比如說圍棋在角落上一個定式造成一個牆或者引徵，這會劇烈改變另一個角上的位置估值。就像其他的基於MCTS的AI，AlphaGo對於需要很深入閱讀才能解決的大勢判斷上，還是麻煩重重的，比如說大龍生死劫。 AlphaGo對一些故意看起來正常的局也會失去判斷，天元開盤或者少見的定式，因為很多訓練是基於人類的棋局庫。我還是很期待看到AlphaGo和李世石9段的對決！我預測是：如果李使用直（straight）式，就像跟其他職業棋手的對決，他可能會輸，但如果他讓AlphaGo陷入到不熟悉的戰略情形下，他可能就贏。以上為原文結束分割線，以下為筆者個人感想。這裡我還想到另一個人，中國最強大腦選手鮑橒，當時看了他走出蜂巢迷宮，被他的超強的空間記憶和想像能力深深震撼了，而他的職業就是圍棋選手，並且是盲棋。他能完成1對5的圍棋盲棋，實在是很不可思議的事情。在圍棋圈內，幾乎沒有棋手能完成盲棋，因為確實太難了。筆者也向他詢問了對這個事情看法，他說，歐洲冠軍沒能摸到程式的底，但從棋譜來說，對Google程式我也難以取勝，確實下的不錯。雖然圍棋圈一致看好李世石，不過我不敢確定Google的程式3月份進展到什麼地步。再說到Facebook的田博士，跟google DeepMind超豪華團隊長期投入不同，他就在半年多前從立項到實現，直到最近才有一個實習生加入幫他，而背後是他付出的心血，為了搶時間，在聖誕新年都是加班加點，按他所說，每日工作10+小時，自己搭機器，寫程式，調參數，單槍匹馬做出成績。談到跟Google團隊的較量，田博士說：「這是一場必敗的戰鬥」，但我還是很佩服他，他讓我想到三國時代趙子龍，單槍匹馬大戰曹軍，力拔山兮氣蓋世！因為他是真正的勇士。正是有了這些英勇無畏的科學家，一次次打破常規，挑戰極限，我們才知道人類如此大的潛力。最近短短幾年的發展，從大數據，深度學習人工智慧到虛擬實境，從發現了類地球行星，證實重力波，從Hyperloop，無人駕駛，量子計算，這些魅力無窮的科技讓我們對世界的認識上升到新的高度。面對這個激動人心的時代，我想說，天空是我們的極限，宇宙是我們的極限，未來才是我們的極限！最後允許我拿田博士的話來結束。我有時候會問自己：「我是不是背棄了夢想」我想除了我自己，任何人都不會給我答案，任何評論也不具效力。我記得有人問過，如果夢想從踐行的一開始，就在不自覺地向現實妥協，那樣的夢想還是最初的夢想嗎？其實，這樣的問題沒什麼可糾結的，因為世界從來就不是二元的，夢想和現實，如同高懸的日月，日月之間，有一條灰色的路，在自己腳下蜿蜒曲折，繞過各種險阻，一直向前。而我能做的，只是要在奔跑時，不停提醒自己，還記得「夢想」這個詞的含義。參考資料AlphaGo如何運作：http://www.dcine.com/2016/01/28/alphago/《Nature》論文：http://www.nature.com/nature/journal/v529/n7587/full/nature16961.html關於AlphaGo論文的閱讀筆記：http://36kr.com/p/5042969.html關於圍棋AI的新思路：http://zhuanlan.zhihu.com/yuandong/20364622本文授權轉載自：36 氪#AI#AlphaGo#Sliver#監督式學習#滾動網絡#棋局評估器#落子選擇器分享科技人工智慧3 淺談Alpha Go所涉及的深度學習技術 
+ 
+by
+ 尹相志
+2016.03.14分享分享本文作者尹相志，為亞洲資採國際股份有限公司技術長、華院數據首席數據科學家，擁有多年資料採礦、商業智慧實務經驗。原文刊載於尹相志Allan's blog，《數位時代》獲得授權轉載。介紹AlphaGo的技術原理，以及背後涉及到的類神經網路以及深度學習技術。註：感謝有DeepMind的朋友指出我在中文用字上的不夠精確，所以在此調整。我之前文章提到的「全局」指的是跨時間點的整場賽局，很容易被誤認為是某個特定時點整個棋盤的棋局，所以後面全部都修改為「整體棋局」。此外，關於整體棋局評估，除了透過離線數據學習的評價網路之外，還可以透過根據目前狀態實時計算的不同策略評價差異(這項技術稱之為Rollouts)，它透過將計算結果進行快取，也能做到局部考量整體棋局的效果。在此感謝DeepMind朋友的斧正。點部落格改版一段時間，我也荒廢了沒寫部落格好久，一直在想一個機會再重新拾筆，在人類連輸AlphaGo三局後的今天，我想正好是一個好時機，也讓大家對於AlphaGo所涉及的深度學習技術能夠有更多的理解(而不是想像復仇者聯盟中奧創將到來的恐慌)。在說明Alpha Go的深度學習技術之前，我先用幾個簡單的事實總結來釐清大家最常誤解的問題：AlphaGo這次使用的技術本質上與深藍截然不同，不再是使用暴力解題法來贏過人類沒錯，AlphaGo是透過深度學習能夠掌握更抽象的概念，但是電腦還是沒有自我意識與思考AlphaGo並沒有理解圍棋的美學與策略，他只不過是找出了2個美麗且強大的函數來決定他的落子就算是AlphaGo，在定義上，仍舊是屬於弱人工智慧甚麼是類神經網路其實類神經網路是很古老的技術了，在1943年，Warren McCulloch以及Walter Pitts首次提出神經元的數學模型，之後到了1958年，心理學家Rosenblatt提出了感知器(Perceptron)的概念，在前者神經元的結構中加入了訓練修正參數的機制(也是我們俗稱的學習)，這時類神經網路的基本學理架構算是完成。類神經網路的神經元其實是從前端收集到各種訊號(類似神經的樹突)，然後將各個訊號根據權重加權後加總，然後透過活化函數轉換成新訊號傳送出去(類似神經元的軸突)。至於類神經網路則是將神經元串接起來，我們可以區分為輸入層(表示輸入變數)，輸出層(表示要預測的變數)，而中間的隱藏層是用來增加神經元的複雜度，以便讓它能夠模擬更複雜的函數轉換結構。每個神經元之間都有連結，其中都各自擁有權重，來處理訊號的加權。傳統的類神經網路技術，就是透過隨機指派權重，然後透過遞迴計算的方式，根據輸入的訓練資料，逐一修正權重，來讓整體的錯誤率可以降到最低。隨著倒傳導網路、無監督式學習等技術的發展，那時一度類神經網路蔚為顯學，不過人類很快就遇到了困難，那就是計算能力的不足。因為當隱藏層只有一層的時候，其實大多數的狀況，類神經網路的分類預測效果其實並不會比傳統統計的羅吉斯迴歸差太多，但是卻要耗費更龐大的計算能力，但是隨著隱藏層神經元的增加，或者是隱藏層的增加，那麼所需要計算權重數量就會嚴重暴增。所以到了八十年代後期，整個類神經網路的研究就進入了寒冬，各位可能只能在洗衣機裡體會到它小小威力(現在洗衣機裡根據倒入衣物評估水量與執行時間很多都是用類神經網路作的)，說真的，類神經網路一點都沒有被認為強大。這個寒冬一直持續到2006年，在Hinton以及Lecun小組提出了「A fast learning algorithm for deep belief nets」論文之後，終於有了復甦的希望，它們提出的觀點是如果類神經網路神經元權重不是以隨機方式指派，那麼應該可以大幅縮短神經網路的計算時間，它們提出的方法是類用神經網路的非監督式學習來做為神經網路初始權重的指派，那時由於各家的論文期刊只要看到類神經網路字眼基本上就視為垃圾不刊登，所以他們才提出深度學習這個新的字眼突圍。除了Hinton的努力之外，得力於摩爾定律的效應，我們可以用有更快的計算能力，Hinton後來在2010年使用了這套方法搭配GPU的計算，讓語音識別的計算速度提升了70倍以上。深度學習的新一波高潮來自於2012年，那年的ImageNet大賽(有120萬張照片作為訓練組，5萬張當測試組，要進行1000個類別分組)深度學習首次參賽，把過去好幾年只有微幅變動的錯誤率，一下由26%降低到15%。而同年微軟團隊發布的論文中顯示，他們透過深度學習將ImageNet 2012資料集的錯誤率降到了4.94%，比人類的錯誤率5.1%還低。而去年(2015年)微軟再度拿下ImageNet 2015冠軍，此時錯誤率已經降到了3.57%的超低水準，而微軟用的是152層深度學習網路(我當初看到這個數字，嚇都嚇死了)....用最簡單的定義談深度學習，應該就是大量的訓練樣本+龐大的計算能力+靈巧的神經網路結構設計，我們這邊針對AlphaGo所使用的捲積神經網路來做比較詳盡的說明。捲積神經網路(Convolutional Neural Network)在圖像識別的問題上，我們處理的是一個二維的神經網路結構，以100*100像素的圖片來說，其實輸入資料就是這10000像素的向量(這還是指灰階圖片，如果是彩色則是30000)，那如果隱藏層的神經元與輸入層相當，我們等於要計算10的8次方的權重，這個數量想到就頭疼，即使是透過平行計算或者是分佈式計算都恐怕很難達成。因此捲積神經網路提出了兩個很重要的觀點：局部感知域：從人類的角度來看，當我們視覺聚焦在圖片的某個角落時，距離較遠的像素應該是不會影響到我們視覺的，因此局部感知域的概念就是，像素指需要與鄰近的像素產生連結，如此一來，我們要計算的神經連結數量就能夠大幅降低。舉例來說，一個神經元指需要與鄰近的1010的像素發生連結，那麼我們的計算就可以從10的8次方降低至100100(1010)=10的6次方了。權重共享：但是10的6次方還是很多，所以這時要引入第二個觀念就是權重共享。因為人類的視覺並不會去認像素在圖片上的絕對位置，當圖片發生了平移或者是位置的變化，我們都還是可以理解這個圖片，這表示我從一個局部所訓練出來的權重(例如1010的捲積核)應該是可以適用於照片的各個位置的。也就是說在這個1010範圍所學習到的特徵可以變成一個篩選器，套用到整個圖片的範圍。而權重共享造成這1010的捲積核內就共用了相同的權重。一個捲積核可以理解為一個特徵，所以神經網路中可以設計多個捲積核來提取更多的特徵。下圖是一個33的捲積核在5*5的照片中提取特徵的示意圖。捲積層找出了特徵後，就可以做為輸入變量到一般的類神經網路進行分類模型的訓練。不過當網路結構越來越複雜，樣本數如果不是極為龐大，很容易會發生過度學習的問題(over-fitting，神經網路記憶的建模數據的結構，而非找到規則)。因此我們後來引入池化 (pooling)或是局部取樣(subsampling)的概念，就是在捲積核中再透過n*n的小區域進行彙總，來凸顯這個區域的最顯著特徵，以避免過度學習的問題。所以常見的圖像識別技術(例如ImageNet)就是透過多階段的捲積層+池化層的組合，最後在接入一般的類神經網路架構來進行分類預測。下圖是一個圖像識別的範例。其中的C2、C4、C6都是捲積層，而S3與S5則是池化層。捲積神經網路建構了一個透過二維矩陣來解決抽象問題的神經網路技術。而圖像識別不再需要像過去一樣透過人工先找出圖像特徵給神經網路學習，而是透過捲積網路結構，它們可以自己從數據中找出特徵，而且捲積層越多，能夠辨識的特徵就越高階越抽象。所以你要訓練神經網路從照片中辨識貓或狗，你不再需要自己找出貓或狗的特徵註記，而是只要把大量的貓或狗的照片交給神經網路，它自己會找出貓或狗的抽象定義。講到這裡有沒有發現捲積神經網路作圖像識別與圍棋有甚麼相似性？沒錯，圍棋是一個19*19的方陣，而圍棋也是一個規則不像象棋或西洋棋般的明確，而且具備了很高的需要透過直覺才能判斷落子的特性。這個時候，深度學習就能發揮極佳的作用，因為程式設計師不需要自己把圍棋的遊戲規則輸入給電腦，它可以透過大量的棋譜自己找出對應的邏輯與抽象概念。為什麼圍棋比較困難?為什麼深藍可以在西洋棋贏過人類但是卻無法贏圍棋，這是因為深藍透過強大的計算能力，將未來局勢的樹狀架構，推導出後面勝負的可能性。但是各位要知道，以西洋棋或中國象棋來說，它的分支因子大概是40左右，這表示預測之後20步的動作需要計算40的20次方(這是多大，就算是1GHz的處理器，也要計算3486528500050735年，請註意，這還是比較簡單的西洋棋)，所以他利用了像是MinMax搜索算法以及Alpha-Beta修剪法來縮減可能的計算範圍，基本上是根據上層的勝率，可能勝的部分多算幾層、輸的少算，無關勝負不算，利用暴力解題法來找出最佳策略。但是很不幸的是，圍棋的分支因子是250，以圍棋19*19的方陣，共有361個落子點，所以整個圍棋棋局的總排列組合數高達10的171次方，有不少報導說這比全宇宙的原子數還多，這是採用了之前的一個古老的研究說全宇宙原子數是10的75次方，不過我對此只是笑笑，我覺得這也是低估了宇宙之大吧。AlphaGo的主要機制在架構上，AlphaGo可以說是擁有兩個大腦，兩個神經網路結構幾乎相同的兩個獨立網路：策略網路與評價網路，這兩個網路基本上是個13層的捲積神經網路所構成，捲積核大小為5*5，所以基本上與存取固定長寬像素的圖像識別神經網路一樣，只不過我們將矩陣的輸入值換成了棋盤上各個座標點的落子狀況。第一個大腦「策略網路」基本上就是一個單純的監督式學習，用來判斷對手最可能的落子位置。他的做法是大量的輸入這個世界上職業棋手的棋譜，用來預測對手最有可能的落子位置。在這個網路中，完全不用去思考「贏」這件事，只需要能夠預測對手的落子即可。目前AlphaGo預測對手落子位置的正確率是57%(這是刊登在Nature文章時的數據，現在想必更高了)。那各位可能認為AlphaGo的弱點是否應該就在策略網路，一方面是預測準確率不高，再者是如果下了之前他沒看過的棋局是不是就有機會可以贏過他。可惜並不是，因為AlphaGo的策略網路有做了兩個層面增強，第一個層面是利用了名為增強策略網路(reinforced-learning (RL) policy network)的技術，他先使用部分樣本訓練出一個基礎版本的策略網路，以及使用完整樣本建立出來的進階版策略網路，然後讓兩個網路對弈，後者進階版策略網路等於是站在基礎版前的「高手」，因此可以讓基礎網路可以快速的熟即到高手可能落子的位置數據，進而又產生一個增強版，這個增強版又變成原有進階版的「高手」，以此循環修正，就可以不斷的提升對於對手(高手)落子的預測。第二個層面則是現在的策略網路不再需要在19*19的方格中找出最可能落子位置，改良過的策略網路可以先透過捲積核排除掉一些區域不去進行計算，然後再根據剩餘區域找出最可能位置，雖然這可能降低AlphaGo策略網路的威力，但是這種機制卻能讓AlphaGo計算速度提升1000倍以上。也正因為Alpha Go一直是根據整體局勢來猜測對手的可能落子選擇，也因此人類耍的小心機像是刻意下幾步希望擾亂電腦的落子位置，其實都是沒有意義的。第二個大腦是評價網路。在評價網路中則是關註在目前局勢的狀況下，每個落子位置的「最後」勝率(這也是我所謂的整體棋局)，而非是短期的攻城略地。也就是說策略網路是分類問題(對方會下在哪)，評價網路是評估問題(我下在這的勝率是多少)。評價網路並不是一個精確解的評價機制，因為如果要算出精確解可能會耗費極大量的計算能力，因此它只是一個近似解的網路，而且透過捲積神經網路的方式來計算出捲積核範圍的平均勝率(這個做法的目的主要是要將評價函數平滑化，同時避免過度學習的問題)，最終答案他會留到最後的蒙利卡羅搜尋樹中解決。當然，這裡提到的勝率會跟向下預測的步數會有關，向下預測的步數越多，計算就越龐大，AlphaGo目前有能力自己判斷需要展開的預測步數。但是如何能確保過去的樣本能夠正確反映勝率，而且不受到對弈雙方實力的事前判斷(可能下在某處會贏不是因為下在這該贏，而是這個人比較厲害)，因此。這個部分它們是透過兩台AlphaGo對弈的方式來解決，因為兩台AlphaGo的實力可以當作是相同的，那麼最後的輸贏一定跟原來的兩人實力無關，而是跟下的位置有關。也因此評價網路並不是透過這世界上已知的棋譜作為訓練，因為人類對奕會受到雙方實力的影響，透過兩台對一的方式，他在與歐洲棋王對弈時，所使用的訓練組樣本只有3000萬個棋譜，但是在與李世石比賽時卻已經增加到1億。由於人類對奕動則數小時，但是AlphaGo間對奕可能就一秒完成數局，這種方式可以快速地累積出正確的評價樣本。所以先前提到機器下圍棋最大困難點評價機制的部分就是這樣透過捲積神經網路來解決掉。AlphaGo技術的最後環節就是蒙地卡羅搜尋樹，相較於以前深藍所使用的搜索(搭配MinMax搜索算法以及Alpha-Beta修剪法，這裡就不再贅述)，由於我們並非具有無限大的計算能力(請註意，如果是有限的排列組合，蒙地卡羅搜尋樹的確有可能針對所有組合進行通盤評估，但是在圍棋的場景下是沒有辦法的，就算這樣做，恐怕也會造成計算時間的大幅增加)，因此不可能是適用於舊的方法，不過在前面策略網路以及評價網路中，AlphaGo已經可以針對接下來的落子(包括對方)可能性縮小到一個可控的範圍，接下來他就可以快速地運用蒙地卡羅搜尋樹來有限的組合中計算最佳解。一般來說蒙地卡羅搜尋樹包括4個步驟：選取：首先根據目前的狀態，選擇幾種可能的對手落子模式。展開：根據對手的落子，展開至我們勝率最大的落子模式(我們稱之為一階蒙地卡羅樹)。所以在AlphaGo的搜尋樹中並不會真的展開所有組合。評估：如何評估最佳行動(AlphaGo該下在哪?)，一種方式是將行動後的棋局丟到評價網路來評估勝率，第二種方式則是做更深度的蒙地卡羅樹(多預測幾階可能的結果)。這兩種方法所評估的結果可能截然不同，AlphaGo使用了混合係數(mixing coefficient)來將兩種評估結果整合，目前在Nature刊出的混合係數是50%-50%(但是我猜實際一定不是)倒傳導：在決定我們最佳行動位置後，很快地根據這個位置向下透過策略網路評估對手可能的下一步，以及對應的搜索評估。所以AlphaGo其實最恐怖的是，李世石在思考自己該下哪裡的時候，不但AlphaGo可能早就猜出了他可能下的位置，而且正利用他在思考的時間繼續向下計算後面的棋路。根據AlphaGo團隊的實測，如果單獨使用一個大腦或是蒙利卡羅搜索樹技術，都能達到業餘(段)的等級(歐洲棋王樊摩強度等級大概是在2500~2600，而李世石是在3500以上)。但是當這些技術整合就能呈現更強大的力量。但是在刊登Nature論文時他的預估強度大概也只有職業3~4段(李世石是9段)，不過剛剛提到他透過增強技術強化策略網路、透過兩台AlphaGo來優化評價網路，這都可以讓他可以在短時間變得更加強大。而且電腦沒有情感也不怕壓力，更不會因為對手錶現而輕敵(AlphaGo的策略網路一向只預測強者)，所以人類就算有更強大的實力也未必能夠承受輸贏壓力而做最好的發揮。李世石有沒有贏的機會?在很多評論中，我覺得對於AlphaGo都有很多不正確的猜測，首先是AlphaGo有沒有「整體棋局」評估的能力，必須說的是以整台AlphaGo來說是有的，這主要是來自於評價網路的計算結果(因為它計算的是最後勝率)，但是獲得的是個池化區域的平滑化後平均勝率。在AlphaGo的策略網路主要是針對對手接下來的落子進行評估，至於蒙地卡羅搜索樹則是使用了評價網路的參數(離線訓練的結果)以及根據目前狀態實時計算價值差異的Rollouts技術，所以可以做出具有整體棋局考量的模擬試算。但是人類對於「整體棋局」的掌控是透過直覺，這一點應該還是比電腦強大，而且如果利用目前AlphaGo是透過捲積核池化過後結果評估平均勝率(主要是為了平滑化以及避免過度學習)，如果李世石有辦法利用AlphaGo會預測他的行為做後面決策，作出陷阱，來製造勝率評估的誤區(在池化範圍內平均是高勝率，但是某個位子下錯就造成「整體棋局」翻覆的狀況，這就是勝率預測的誤區)，那麼人類就有可能獲勝(當然啦，我這裡只是提出可能性，但是知易行難，這樣的行動的實際執行可能性是偏低的)。現在李世石必輸的原因在於它一直在猜測AlphaGo的棋路，但是事實上反而是AlphaGo一直在靠猜測李世石的下一步來做決策，所以他應該改變思路，透過自己的假動作來誘騙AlphaGo，這才有可能有勝利的可能性。弱人工智慧與強人工智慧現在電腦在圍棋這個號稱人類最後的堡壘中勝過了人類，那我們是不是要擔心人工智慧統治人類的一天到來，其實不必杞人憂天，因為在人工智慧的分類上來說，區分為弱人工智慧(Artificial Narrow Intelligence)與強人工智慧(Artificial General Intelligence)(事實上還有人提出高人工智慧Artificial Super Intelligence，認為是比人類智力更強大，具備創造創新與社交技能的人工智慧，但我覺得這太科幻了，不再討論範圍內)，其中最大的差別在於弱人工智慧不具備自我意識、不具備理解問題、也不具備思考、計畫解決問題的能力。各位可能要質疑AlphaGo如果不能理解圍棋他是如何可以下的那麼好？請註意，AlphaGo本質上就是一個深度學習的神經網路，他只是透過網路架構與大量樣本找到了可以預測對手落子(策略網路)、計算勝率(評價網路)以及根據有限選項中計算最佳解的蒙地卡羅搜索樹，也就是說，他是根據這三個函數來找出最佳動作，而不是真的理解了甚麼是圍棋。所以AlphaGo在本質上與微軟的Cortana或iPhone的Siri其實差別只是專精在下圍棋罷了，並沒有多出什麼思考機制。我也看到一些報導亂說AlphaGo是個通用性的網路，所以之後叫他學打魔獸或是學醫都能夠快速上手，那這也是很大的謬誤，如果各位看完了上面的說明，就會知道AlphaGo根本就是為了下圍棋所設計出來的人工智慧，如果要拿它來解決其他問題，勢必神經結構以及算法都必須要重新設計。所以李世石與其說是輸給了AlphaGo，還不如說是輸給了數學，證明其實直覺還是不如數學的理性判斷。有人覺得人類輸掉了最後的堡壘，圍棋這項藝術也要毀滅了...其實各位真的不用太擔心。人類跑不過汽車的時候為何沒有那麼恐慌呢?跑步這項運動到現在也好好的，奧運金牌也不是都被法拉利拿走了...所以真的不必太過緊張。那麼會有強人工智慧出現的一天嗎?在2013年Bostrom對全球數百位最前沿的人工智慧專家做了問捲，問了到底他們預期強人工智慧什麼時候會出現，他根據問捲結果推導出了三個答案：樂觀估計(有10%的問捲中位數)是2022年，正常估計(50%的問捲中位數)是2040年，悲觀估計(90%的問捲中位數)是2075年。所以離我們還久的呢。不過當弱人工智慧的發展進入到成本降低可商業化的時候，大家與其關心人工智慧會不會統治地球，還不如先關心自己的工作技能會不會被電腦取代來實際些吧。Allan YiinCTO, AsiaMiner#AlphaGo#DeepMind#尹相志#ImageNet#圖像識別#捲積神經網路#策略網路#評價網路#-弱人工智慧與強人工智慧分享科技人工智慧4 「戰勝自己」不只是口號──《Nature》AlphaGo論文讀後感 
+ 
+by
+ 林守德
+2016.03.14分享分享本文作者林守德，為台灣大學資訊工程學系教授，專長為機器學習與資料探勘。曾率臺大團隊獲得5屆ACM KDD Cup資料探勘競賽世界冠軍、曾獲傑出人才基金會年輕學者創新獎，科技部吳大猷先生紀念獎，也獲得國際公司如Google、Microsoft、IBM、INTEL的學術獎勵。全文刊載於他的Facebook頁面，《數位時代》獲得授權轉載。我對圍棋一竅不通，過去也對AI-Game沒有特別研究，拜近日來AlphaGo重創人類在圍棋上領先的地位之賜，特別把這篇《Nature》上的論文（〈Mastering the game of Go with deep neural networks and tree search〉）拿來看了一下。這是一篇非常有趣的論文，摘錄心得如下：AlphaGo 決策過程跟過去的棋類程式不大一樣。它裡面每一個stage單獨的方法都是不是新的創見，只是它組合這些方法的framework（框架）很特別。它的學習結果（不管是DNN或是RL）都只是中間產物，最後用來幫助搜尋最好的棋步。編按：DNN為Deep Neural Nets的簡稱，中文譯為深度神經網絡；RL為Reinforcement Learning的簡稱，中文譯為增強式學習。它的學習分三個階段，第一個階段「天下棋手為我師」，它主要希望建構一個13層的DNN來學「圍棋專家」的棋步（policy），也就是根據這個盤面預測過去歷史資料中大家會怎麼下。第一階段訓練出來的SL系統就可以下棋，但是結果不是很好，因為其實就只是個模仿專家的系統。而第二階段「超越過去的自己」是一個增強式學習（Reinforcement Learning）的系統，藉由跟過去的自己對戰來增進（refine）第一階段學到的棋步，而且需要跟過去不同版本的對手對戰避免overfitting。在這個增強式學習的階段，才首度把勝負當成reward來訓練模型（model）。第二階段訓練出來的棋步已經有85％的機會贏過過去已知最強的圍棋程式（段數約二段）。第三階段我戲稱為「機率算盡太聰明」。其宗旨在預估每個盤面的價值。所謂盤面的價值，就是從這個盤面開始，假設對手能夠窮舉所有可能的下法找到最佳解，AlphaGo的獲勝機率有多高。當然我們無法知道無懈可擊的對手會怎麼下，所以退而求其次，AlphaGo模擬跟自己下的過程決定每個盤面的「勝率」有多少，然後用有限的盤面與勝率當成訓練資料（Training data）再去訓練一個DNN估計所有盤面的價值。在這個階段還有一個招數，也就是這些當成訓練資料不能用第一階段資料庫蒐集的棋局盤面，因為同一局的盤面有高的相關性以及一樣的獎勵，會造成學習中的「記憶」效應，而是要用「與自己下棋」中每一局單獨抽取的獨立盤面來訓練。前三個階段都是AlphaGo的「訓練」過程，這些都是offline可以做的。訓練好的AlphaGo已經可以贏過一般的對手。雖然訓練好的第三階段AlphaGo就可以仗劍大殺四方，但是還不足以贏過高段的對手。因為實戰中的盤面有很大的機率是在訓練中沒有看過（圍棋的盤面總數高達250的150次方之多），對於它們價值的預測其實不一定準。真正在實戰中，AlphaGo採取「靈機應變，無招勝有招」的戰術，不堅持使用之前學習到的棋步，反而利用過去學到的棋步結合了蒙地卡羅樹狀搜尋（MCTS）的方法找出最好棋步。也就是在實戰中對現在盤面進行模擬下棋（再度假設對手就是自己），在模擬的過程中把所有經歷的盤面重新計算它們的價值，在有限的思考時間內盡量進行模擬，最後選擇模擬過程中最穩定的棋步（不是價值最高的棋步）。在這個過程中需要快速的運算，越多的模擬就會讓盤面價值的計算越準，AlphaGo利用平行化計算加上GPU達成高速運算的目的。演算法總結：AlphaGo第一階段的訓練過程就像是把一個人關在房間裡，不告訴他圍棋是什麼，也不告訴他圍棋的規則，甚至連圍棋最後怎麼算勝負都不跟他說，只拿一大堆過去專家下棋的棋譜給他看。然後等它看完棋譜後，第二階段就讓他自己跟自己下棋，從中學習更好的下法，最後第三階段它只要看到某個盤面就知道這個盤面的勝率，雖然從頭到尾它還是不知道圍棋的規則。真正在下棋的時候，AlphaGo還是沈浸在自己的世界裡。每當對手下完一步，它就開始模擬接下來可能的數步（模擬的時候就是假設對手是自己，所以對手是誰對AlphaGo而言完全不重要，他也完全不去預測對手會怎麼下），在模擬的過程中，它就重新對於未來可能面對棋局來估算勝率，最後選擇最穩定最有可能獲勝的棋步。它的風格就像是金庸筆下的獨孤九劍，不拘於定式，而是當下根據對手的招式才決定最佳的進擊策略。AlphaGo並沒有針對對手的棋步訓練系統，我不確定在他使用的數據裡面有沒有李世石的棋譜，不過就算是有，所占的比例也應該微乎其微。「自我學習」（與自己對戰）才是AlphaGo的主軸。看起來AlphaGo所使用的所有招數跟方法是缺一不可，論文裡面還有一些決策（decision）的細節並沒有講清楚，但是相信是嘗試錯誤後決定的。後記1：AlphaGo的唯一目的是最後的勝利，所以在過程中它並不在乎下某一子的短期利益（會贏多少地盤），它甚至對於這些短期損益完全沒有認知，在訓練的過程中也不在乎「贏幾目」。在與人類對決的時候，我們看到棋評會指出它犯了一個「失誤」，或是它不喜歡某種策略如「打劫」。其實如果瞭解AlphaGo的決策模式，就會知道他其實沒有「策略」以及「失誤」的概念，對它而言，棋類等遊戲就是對於每個盤面精確且快速的估算其通往勝利的機率。後記2：因為AlphaGo在下棋的過程中會看到越來越多的盤面，所以它只會愈來愈進步。未來如果人類想從與其對奕中取得勝利，必須要能夠走出前所未見的局面，降低它對於盤面估測的準確度才會有機會。這也不是完全不可能，因為圍棋的複雜度太高。其實要更理解AlphaGo，必須要去研究它present每一個盤面所用的features，我因為不懂圍棋，所以沒有辦法評論。但是理論上如果它遺漏了某個重要的特徵，表示它無法利用這個資訊判斷盤面的價值，人類可以利用這個資訊去進攻，盡量去創造某個比較不容易被已有的feature來表達的盤面。延伸閱讀：淺談Alpha Go所涉及的深度學習技術#AlphaGo#蒙地卡羅樹狀搜尋#增強學習#深度神經網絡分享科技Google人工智慧5 [韓國現場]世紀對決開始啦！AlphaGo與棋王李世乭對弈中 
+ 
+by
+ 曾靉
+2016.03.09分享分享Google旗下人工智慧公司 DeepMind 所研發的 AlphaGo 人工智慧系統，今日下午正式開始迎戰世界棋王李世乭！這場人機大賽，讓全世界再度將焦點放到了Google在機器學習（Machine Learning）與人工智慧（Artificial Intelligence）領域的進展。AlphaGo與棋王李世乭的世紀對決看這裡由海峰棋院提供的中文講解：世紀對決開始啦！現場超熱鬧記者在韓國首爾現場，現場湧進來自12個國家的媒體近200人，把對弈的會場韓國四季酒店擠得水洩不通。韓國當地媒體也十分重視這場比賽，不僅當天報紙以頭版篇幅報導，在比賽過程中也出動SNG現場連線，隨時更新比賽狀況。（韓國當地出動大批媒體，把現場擠得水洩不通。）（Alphabat執行董事施密特（Eric Schmidt）、DeepMind執行長Demis Hassabis稍早已進入會場。）（不過對弈現場需要保持絕對安靜，AlphaGo與棋王李世乭對弈的小房間連工作人員都不能進去。）（現場大批來自各國的媒體只能在一旁會議室看轉播。）（棋王李世乭正在對弈中。照片來源：Google提供。）（韓國媒體超重視這場世紀對決，當天報紙幾乎都以頭版篇幅報導。）這場對弈已在韓國時間下午一點（台灣時間中午十二點）展開，賽事共分為五場，將從3月9日一直比到15日。今天進行的賽事是第一場，比賽預計進行三到四個小時，晚上就能知道第一場對決結果。這場人機大戰無論誰勝誰負，都將是Google在機器學習領域的另一里程被，這場賽事也有專屬的YouTube直播頻道，有興趣的讀者可以鎖定。Google：機器學習要讓人類生活得更好在比賽熱烈進行的同時，今日Google資深研究員Jeffery Dean也特別在賽前向媒體介紹目前Google在機器學習領域的佈局。Jeffery Dean在1999年加入 Google ，目前負責帶領 Google 研究深度學習（Deep Learning）的Google Brain團隊。簡單來說，機器學習運作方式，是經過輸入（input）後進入機器設定的模型（model）後得到產出（output）或預測結果（predictions）。不過，模型的設定可能過於單一固定，產出或預測結果會不準確。因此要如何讓模型的設定涵蓋更多變數、使機器更聰明，就是機器學習的重點。而這項技術如何運用在Google的服務上？Jeffery提到，目前Google在機器學習主要有三大應用，包括在「產品跟服務」、「自動化與醫療領域」以及雲端API的進展。其中產品跟服務是大家較為熟悉的部分，包括Google搜尋（Google Search）、Google翻譯、Gmail裡的Smart Reply功能、以及Google Photos的照片物件識別、分類功能。Jeffery舉例，像是在語音辨識領域通常會碰到三個主要的問題，一個是語音辨識，一個是不同語言的障礙，再來是不同年齡層的發音方式，但Google皆透過機器學習解決這些問題，而像是Smart Reply目前已有10％是在手機上應用。另外，Google機器學習除了應用在自己的工具與服務外，也同樣運用在自動化機械（robotics）與健康領域。例如，讓機器手臂經由抓取物件的過程，自動去學習、辨識物件。第三，則是機器學習應用在雲端領域，透過開放API讓開發者做更多的應用，例如2015年11月釋出的開放軟體TensorFlow。機器學習還沒達到人腦程度不過，讓大家擔心的是機器學習未來的威脅性？究竟機器學習能不能進一步提升到機器瞭解（Machine Understanding）的地步，意即機器能夠意識到自己在做什麼、識別、分析些什麼？Jeffery Dean表示，Google從2012年投入研究至今，現在機器學習已經有很大的進步，也從以前只能辨識個別單字、事件，到現在輸入、設定模型後，就能辨識完整圖像或語句，已經有很大的進步，某種程度上也算是一種瞭解。另外，人腦跟機器之間的學習方式也不同，機器學習是應用在可被規範的情形，它可以在某一個領域操作的很好，但無法像是人腦一樣應用在隨機事件，機器學習要達到人腦一樣的思考模式，還需要很多年的時間。「機器學習是一項很棒的技術，可以應用在很多不一樣的領域。」Jeffery Dean表示Google的目標還是在改善人們的日常生活，例如醫療領域。目前，Google內部有兩個專門研究機器學習的團隊，一個是由Jeffery掌舵、位於洛杉磯山景城總部的Google Brain研究團隊，另一個則是目前專攻棋類遊戲，下午即將再度挑戰圍棋對弈的Google DeepMind。不過，目前DeepMind的技術主要仍專註在棋類遊戲，未來兩方技術有沒有可能做進一步的整合，還需要進一步的規劃。但Jeffery認為，未來需要深度識別能力的Google自駕車計畫，就有可能需要Google DeepMind的技術。延伸閱讀：[韓國現場] 棋王李世乭：AlphaGO還不是非常成熟的棋士簡立峰看AlphaGo對決人類棋王：別擔心！AI不會取代人不是未來，就是現在！人工智慧走入商用領域#Google#人工智慧#機器學習#AlphaGo分享6 AlphaGo再勝李世乭！人機大戰4：1落幕 
+ 
+by
+ 曾靉
+2016.03.15分享分享人機世紀對決終於畫下尾聲！Google人工智慧AlphaGo與南韓棋王李世乭的圍棋對弈今日進行到第五局，由AlphaGo再添一勝，5局賽局最終比數為4：1。在3月9日到15日的比賽中，由AlphaGo先取得前三場勝利，隨後李世乭奪下第四局，最後一局依舊由AlphaGo拿下最終場勝利。在比賽激戰超過五個小時後，最終李世乭投子投降，而這也是五局來耗費最久時間的一局。在今天的第五戰中，由李世乭執黑子、AlphaGo執白子，比賽時間耗時超過5個小時，而雙方戰況一直十分膠著，AlphaGo看來已從先前的失誤中恢復，表現維持在職業選手等級，攻勢猛烈；但李世乭也延續第四戰勝出的氣勢，在比賽中段率先搶得右下角的優勢。在這場對弈中，李世乭心情似乎較前面幾局放鬆，但仍舊用了許多的思考時間，兩個小時結束進入讀秒階段時AlphaGo還剩下約20分鐘。比賽後段，雙方戰況仍陷入膠著，但白棋在左下角的佈局似乎犯了一些小錯誤，下了一些看似無意義的棋。Google DeepMind執行長Demis Hassabis也在Twitter發文表示，AlphaGo在比賽中犯了一個大錯，正努力彌補中。#AlphaGo made a bad mistake early in the game (it didnt know a known tesuji) but now it is trying hard to claw it back... nail-biting.— Demis Hassabis (@demishassabis) 2016年3月15日但AlphaGo犯錯後，自我修正的速度確實非常快。美國職業九段棋士Michael Redmond便評論，AlphaGo在右下角佈局失誤後，能夠調整錯誤、重新計算，接下來在左上角的佈局很成功。在比賽進行約5個小時後，白棋略勝黑棋一籌，最終李世乭投子投降。人腦與電腦的世紀對決在今日正式落幕，也讓大家重新把焦點放到人工智慧的進展，無論輸贏，都創造了新的里程碑。（圖片來源：GoRatings。）目前，AlphaGo也正式擠身世界圍棋高手之中。根據 GoRatings 世界圍棋排名日前更新的名單，AlphaGo目前名列世界第四位，次於中國柯潔、南韓樸永訓以及日本井山裕太之後，而此次與 AlphaGo 對弈的南韓棋士李世乭則是世界第五。另外，繼DeepMind工程師在臉書上向世界排名第一喊話後，在第五局比賽中途，日本棋院也向AlphaGo發出挑戰，邀請AlphaGo與目前世界排名第四的井山裕太對弈，未來人機大戰可能未完待續。延伸閱讀：淺談Alpha Go所涉及的深度學習技術幫AlphaGo擊敗南韓李世乭的那個人：台灣資工博士黃士傑DeepMind執行長Demis Hassabis：20年前我就想發明AlphaGo了「戰勝自己」不只是口號──《Nature》AlphaGo論文讀後感分享科技Google人工智慧7 DeepMind執行長Demis Hassabis：20年前我就想發明AlphaGo了 
+ 
+by
+ 曾靉
+2016.03.11分享分享「人工智慧的新里程碑！AlphaGo擊敗了棋王李世乭」「AI對人類真正的威脅是什麼？」「人機大戰再敗，李世乭：AlphaGo讓我開始挑戰對圍棋的傳統想法」。過去一週，人工智慧AlphaGo與南韓棋王李世乭的世紀之戰，無疑成為全球鎂光燈下的焦點。賽前賽前，大家都不甚看好AlphaGo。雖然它在去年10月擊敗了歐洲棋王樊麾，但樊麾棋力二段，與李世乭的九段（專業最高段數）仍有段差距。創新工場執行長、機器學習專家李開復在賽前曾就去年AlphaGo的表現剖析，這一次李世乭對上AlphaGo，雙方每盤勝算約是89：11，若AlphaGo想勝出，應該還要一兩年的時間。（圖說：3月8日韓國下午一點，Google人工智慧AlphaGo對上了南韓棋王李世乭，這一戰，全世界都在看。照片來源：Google提供。）這次，AlphaGo的學習能力卻超越眾人想像，在不到半年的時間內，它進步神速，吸收了三千萬張棋譜、與自己對戰了數萬局。在3月9日到15日這五場對弈中，最終李世乭與AlphaGo雙方比數4：1，由AlphaGo獲得這次比賽的勝利。AlphaGo更因為這場對決，擠身世界圍棋排名第四位。我們覺得很遙遠的未來，就是「現在」這場對弈，更讓人工智慧邁向新的里程碑。電腦勝過人類的歷史，要回溯到1997年，IBM的深藍（Deep Blue）電腦擊敗了當時的西洋棋冠軍Garry Kasparov。「深藍在機器學習領域是一個重要的突破。但當時大家的共識是：圍棋不可能會贏。」Google台灣董事總經理簡立峰表示，相較於西洋棋，圍棋是公認最複雜的棋類，一個子落下來，盤面有非常多種可能，複雜程度連電腦都無法完全參透。但近年隨著電腦的運算能力提升與資料庫變大，帶動機器學習有了新的突破，並且有能力去完成複雜度更高的人工智慧系統。「我們原來覺得很遙遠的未來，現在都到達了。」他說。這場對弈，在AI歷史中佔有絕對性的指標意義。在將近20年後，全世界又再度把焦點都放到了人工智慧的進展上。電腦看起來更聰明瞭，聰明到我們從前無法想像的地步。在科技突破的同時也加入了哲學思辨，「機器到底懂不懂自己在做什麼？有一天會不會完全取代人類？」人們開始反思人與電腦之間的關係，也對未來有了更多的好奇與畏懼。這是一場Google耗資120億元的豪賭AlphaGo的推手，正是Google在2014年豪擲約4億美元（120億台幣）收購的英國公司「DeepMind」。成立於2010年，這家專攻深度學習的AI公司在還沒有任何商業化的成績時，就被Google大手筆收購，成為Google至今在歐洲最大起收購案。Google所看中的，是DeepMind對於未來強烈的企圖心。（圖說：Google在2014年收購了深度學習公司DeepMind。）DeepMind所研發的AlphaGo人工智慧系統，是第一個結合了機器學習（Machine Learning）與Monte Carlo（蒙地卡羅）樹狀方法的深度學習網絡（deep neural networks）。而AlphaGo這套類神經網絡（neural networks），讓它能進一步模擬人類專家的思維，分析盤面並選擇最有利的下一步。DeepMind的研究結果，同樣在學術界取得領先地位，在去年兩次登上科學權威性期刊《Nature》的封面。photo credit: Nature西洋棋大師Demis Hassabis3月8日，韓國首爾，在AlphaGo即將對上李世乭的前一天，我採訪到了DeepMind執行長Demis Hassabis，而他也許正是這世界上最聰明的人之一。同時作為一個神經科學家、電腦科學家，Demis還有另一個讓人驚奇的身份：西洋棋神童。4歲開始學習西洋棋，13歲時棋藝已達大師等級，是當時世界段位第二高的棋手，蟬聯過5屆世界西洋棋冠軍。（圖說：DeepMind執行長Demis Hassabis。照片來源：曾靉攝影。）1997年，當IBM深藍電腦擊敗西洋棋冠軍的那一刻，正好是Demis在劍橋大學攻讀電腦科學的時候。當時已是西洋棋高手的Demis，在劍橋內第一次接觸到圍棋「Go」——這個已有千年歷史的棋類運動。Demis回憶，當時看到這場比賽內心萌生很多想法，也讓他下定決心，有一天要做出一個下圍棋勝過人類的電腦系統。遊戲，就是他探索這個宇宙的第一步。早在17歲時，Demis就曾製作過一套名為「主題公園」(Theme Park)的模擬遊戲，全球銷售超過百萬套。離開劍橋後，Demis創辦了電子遊戲公司 Elixir Studios，10年後他重回校園，在倫敦大學完成認知神經科學博士學位，也在麻省理工和哈佛大學從事博士後研究。Demis：「我不覺得AI是威脅，我覺得它很『Amazing』！」2010年，Demis與Shane Legg、Mustafa Suleyman三人共同創辦了DeepMind。在DeepMind官網首頁，他們這麼寫下公司宗旨：「解決智能，用它來讓世界更好。（SOLVE INTELLIGENCE, USE IT TO MAKE THE WORLD A BETTER PLACE.）」AlphaGo，就是DeepMind跨入AI領域的重要一步，這一步，世界矚目，但即使AlphaGo證明自己能夠勝過人腦，大家感到期待、驚訝，隱而未顯的卻是更多對於未來的恐懼。對於人工智慧的發展，持反對意見的科技大老不少，包括特斯拉（Tesla）執行長馬斯克（Elon Musk）、科學家史蒂芬・霍金（Stephan Hawking）都是知名的反對派，霍金更曾語出驚人一句「人工智慧將使人類滅絕。」人們害怕的是，AI會不會有一天懂得思考？會不會如《魔鬼終結者》中的天網，鋪天蓋地控制我們的生活？「我不覺得AI是個威脅，我覺得他很令人驚奇！（Amazing）」Demis說。相較於媒體詢問到任何有關AlphaGo的技術細節，Demis總能細細的、不厭其煩的解釋，他在講這一句話的時候，語氣特別加重了些。在Demis眼中，AI並不是用來取代人類，AI終歸是一項工具，意在讓人類的生活進步。機器不會有喜、不會有怒，當然也不會感到疲憊，機器可以不間斷的進行運算，在數以百萬計的數據資料中，找出最有價值的一個。運用在醫療、科學領域，都能帶來極大的幫助，但人類的思想、好奇、想像、直覺，才是創造出這一切的根本。（圖說：DeepMind的下一步棋，也同樣讓人好奇。照片來源：曾靉攝影。）AlphaGo在圍棋中勝過人類，但不代表它能夠知道或是理解自己正在做些什麼，要從機器學習進步到機器理解（Machine Understanding），還有非常長的距離，讓機器能像人腦一樣理解，也不會是DeepMind未來要做的。所以，Demis如何想像未來5年有AI的世界？「我覺得其實不會有什麼太大的改變，可能你的手機、你的家庭用品更理解你的使用行為了，也或許無人車滿街跑了，但如果說是什麼天翻地覆的改變，我覺得不會。」他說。AI的未來？我正在搞清楚宇宙是怎麼一回事採訪結束後，Demis先是做勢下棋給記者們拍照，閃光燈一暗下後卻是一群記者湧上前要跟他合照。「你簡直就像搖滾明星。」現場的記者們糗他。「對啊，這對一個科學家來說挺不尋常的。」Demis笑說。離開採訪現場，我重新點開Demis Hassabis的Twitter頁面，「我研究AI，正在試著搞清楚宇宙是怎麼一回事。（Working on AI. Trying to understand what is really going on in the universe.）」Demis在自己的Twitter個人簡介中這樣寫到。3月15日，人機圍棋世紀對決畫下句點。「我非常享受與 AlphaGo 的對戰。經過這次比賽，我對於傳統圍棋步數典範有了新的理解。接下來，還有許多研究、努力的空間。」南韓棋王李世乭這麼說到，雖然輸了比賽，但卻讓自己對圍棋有了更多想法。「我們必須對李世乭致上最高的敬意，感謝他接受挑戰、在賽局中展現出過人的棋藝。沒有李世乭的參與，我們沒有辦法突破 AlphaGo 的運算極限。」Demis同樣在賽後這麼說，「未來，我們希望能夠延續這個技術來完成更多的挑戰，從即時翻譯到智慧型手機的個人助理。甚至，將這個技術發展到醫療應用上。」2016年2月，DeepMind發表了DeepMind Health計畫，要透過行動App，幫助英國的醫護人員及早發現急性患者並更好的做臨床任務管理，雖然這項計畫現階段還未導入AI技術，卻也讓人期待未來的可能性。我想，隨著AlphaGo與李世乭的這場人機大戰告一段落，同時翻新的是我們對AI與圍棋的想像。AI與人類之間的平衡仍在擺盪，而或許在Demis的心中，早就已想好了下一步棋要落在哪裡。#Google#人工智慧#AI#AlphaGo#DeepMind分享科技人工智慧8 [曹家榮]AlphaGo贏了，那人類開始反省了嗎？ 
+ 
+by
+ 曹家榮
+2016.03.11分享分享電腦與人的圍棋大戰攝影／曾靉。這幾天如果有關註科技新聞的人，大概都不會錯過AlphaGo這套人工智慧系統與世界棋王李世乭的世紀對弈。就在我寫這篇文章的當下，AlphaGo已然連續贏得兩場勝利。而在比賽開始之前，不僅棋王認為AlphaGo還不是非常成熟的棋士，也有許多評論家認為，AlphaGo雖然一月時已擊敗歐洲棋王，但要贏過李世乭恐怕還不是時候。兩天之內，眾多人類們被打臉了。震天作響的巴掌聲中，有些人開始憂慮人工智慧征服人類的那一天真的要到來了，也有些人開始「正面思考」，相信這不失為好事，因為這代表著科技將更進步，而人類的生活將更好──只要我們不喪失鬥志。威脅潛伏：人工智慧關於人工智慧將帶來的挑戰，已經不是新鮮事。在之前的文章中，我也曾指出，WEF創辦人兼執行主席Klaus Schwab在宣告第四次工業革命即將到來時，也將人工智慧的發展視為最大的挑戰。更不用說英國物理學大師霍金曾警告，人工智慧終將發展出自我意識。而我們無法預料這個能夠獨立思考、又能持續進化的人工智慧，在超越人類的同時是否也會帶來滅亡。因此，在這些「警世預言」中，AlphaGo的勝利在某些人看來，等同於宣告著人類正走向這條前途堪慮的道路。也就是說，過去我們也許會認為，人工智慧最多只是扮演輔助性的角色，但AlphaGo的勝利顯然說明瞭人工智慧不僅能「思考」、學習，甚至在複雜的對奕中還能贏過人類。那麼，會不會有一天，就像「天網」一樣，人類將被判定是具威脅性的物種而需要毀滅？或者像Tesla創辦人馬斯克的「垃圾郵件滅世論」那樣，在神邏輯下終結人類的命運？圖說：「天網」為電影《魔鬼終結者》中挑戰人類的人工智慧，原本是政府研發的國防電腦系統，卻發展出自己的智慧、判定人類是威脅他們的物種。圖片來自電影劇照。雖然好萊塢電影不斷上演著類似的情節，但如今要說人工智慧真能發展到滅世的地步，確實悲觀的太早了一點（吧？）。但是，我們因此就可以樂觀地認為，還有大把時間讓我們好好想想，要如何「控制」人工智慧嗎？我認為，在「正面思考」中也存在幾點令人憂心的謬誤。樂觀的謬誤一：科技終究只是工具第一個樂觀的謬誤源自於人類根深蒂固的「主宰者」思維：科技終究只是工具。這樣的想法又可以分作兩個層次。首先，我們經常認為科技就是讓我們能夠達到目的的物質性手段。例如，印刷術可以讓我們快速生產、印製書籍；電視可以讓影音資訊同步在各地放送；而電腦、手機這類數位、多媒體科技更是有各式各樣的功能，滿足人類的需求。然而，一如傳播學者麥克魯漢所說的，認為各種科技物只是中性、用以達成目的的工具的人，根本就是「白日夢遊者」：以為自己清醒，卻從未從夢中醒來。換言之，他們從未認識到科技物真正施加於人的效果。圖說：傳播學者麥克魯漢。照片來自Len Edgerly via flickr, cc license知名科技評論作家Nicholas Carr在《網路讓我們變笨？》一書中，正是以麥克魯漢的觀點為基礎，指出了網際網路如何不只是「工具」，而是正在改變人們的大腦與思維模式。當我們將科技單純地視為是工具時，就會跟著產生第二個層次的問題：相信人類總是科技的主宰者。一如一些樂觀者所認為的，雖然人工智慧可能顯露出比人類更快、更好的智力、機器人可能已具備比人更有效、有力的生產能力，那都沒有關係。因為這些人工智慧、機器人終究是為我們人類服務、為我們創造價值。然而，樂觀者也許沒有看見的是，隨著工業革命至今的現代社會發展已顯示出：人類根本無力於成為他所以為的那個主宰者。科技的失控、反撲在一次又一次的生態浩劫與危機中顯現。圖說：科技社會學家Donna Haraway。照片來自Rusten Hogness分享於wikipedia, cc by 3.0因此，就像科技社會學家Donna Haraway所說的，我們人類其實沒有自己以為的那種「充分的理性」，可以算計出為了進步、發展而可犧牲的「成本」。同樣地，風險社會學家Ulrich Beck在車諾比核爆後也早已指出，風險的不確定性早已侵蝕了人類過去引以為傲的「理性」。樂觀的謬誤二：科技將帶給人們富足除了樂觀地認為我們可以控制、主宰人工智慧外，另一種正面思考則是認為：人工智慧的發展是好事，因為它將大幅提昇產能，讓人類社會更加富足。換言之，這類樂觀的觀點認為，雖然乍看起來，人工智慧與機器人將會搶走人類的工作，但也無須擔心，因為它們相對地也會帶來更多的產能，因此人們即便不工作也不愁吃穿。唯一需要擔心的是，人類會不會因此活得太廢、失去生活的意義。從某種角度來看，這類樂觀並沒有錯。一方面，當生產全面人工智慧化、機器人化，可能達到的產能與效率絕對可能供給全人類所需。同時，另一方面，在這樣的生活狀態下，我們的確需要憂慮的反而是人的心理問題。但問題是，先不說類似的觀點聽起來很耳熟，工業革命發生時，也有人預言過機器化的生產將可以解除全人類的貧窮問題。甚至今天，全球浪費掉的食物都足以餵飽所有人好幾次了。但人類社會真的「都已」富足了嗎？恐怕更接近事實的情況是如《紐約時報》這篇評論所說的：在未來，也許只有天龍人可以享受得到科技進步的果實。換言之，我們不是不能正面思考人工智慧將帶來的美好未來，問題在於，我們有認真想過這些科技是「為誰發展」的嗎？是誰掌握著這些人工智慧、這些高科技？是誰能夠決定由這些高科技所生產出來的利益的分配？倘若上述這些問題的答案都是：資本家、資本家、資本家，那麼我們又如何能期待資本家轉性不再追求利潤的累積（即便因此會更大量浪費物資），轉而願意養活在他們看來很廢的「魯蛇」呢？也許不是不可能，但卻未免過於樂觀。AlphaGo已經贏了兩場，我不知道當這篇文章刊出來時，世界棋王會是被直落三，還是能夠扳回局面。但我知道，人類若當真要開始反省人工智慧發展可能帶來的後果，我們不僅不能過度悲觀、恐慌，也得要避免重蹈「失控的正面思考」的覆轍。#人工智慧#麥克魯漢#AlphaGo#曹家榮#李世乭分享 曹家榮
+資訊社會研究者。相信人與科技物的關係是理解當代社會的核心。目前為科技部計畫博士後研究員。
+
+
+
+
+
+[DSC 2016] 系列活動：李宏毅 / 一天搞懂深度學習
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Slideshare uses cookies to improve functionality and performance, and to provide you with relevant advertising. If you continue browsing the site, you agree to the use of cookies on this website. See our User Agreement and Privacy Policy.
+    
+
+      Slideshare uses cookies to improve functionality and performance, and to provide you with relevant advertising. If you continue browsing the site, you agree to the use of cookies on this website. See our Privacy Policy and User Agreement for details.
+    
+
+
+
+
+
+
+SlideShare
+
+
+
+Explore
+
+
+
+Search
+
+
+
+You
+
+
+
+
+
+
+
+
+Home
+
+
+Technology
+
+
+Education
+
+
+More Topics
+
+
+
+
+For Uploaders
+
+
+
+
+
+                    Get Started
+
+
+
+
+                    Tips & Tricks
+
+
+
+
+                    Tools
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    [DSC 2016] 系列活動：李宏毅 / 一天搞懂深度學習
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Upcoming SlideShare
+
+
+
+
+
+
+
+
+
+
+Loading in …5
+×
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 of 301
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Like this presentation? Why not share!
+
+Share
+Email
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+[系列活動] 手把手的深度學習實務
+by 台灣資料科學年會
+15794 views
+
+
+
+
+
+
+
+Deep Learning Computer Build
+by Petteri Teikari, PhD
+23007 views
+
+
+
+
+
+
+
+[系列活動] Machine Learning 機器學習課程
+by 台灣資料科學年會
+9444 views
+
+
+
+
+
+
+
+Deep Learning - The Past, Present a...
+by Lukas Masuch
+41395 views
+
+
+
+
+
+
+
+Deep Learning through Examples
+by Sri Ambati
+99391 views
+
+
+
+
+
+
+
+Transform your Business with AI, De...
+by Sri Ambati
+10328 views
+
+
+
+
+
+ 
+
+
+
+
+
+
+Share SlideShare
+
+
+
+
+
+
+
+Facebook
+
+
+
+
+Twitter
+
+
+
+
+LinkedIn
+
+
+
+
+Google+
+
+
+
+
+
+Email
+
+
+
+
+
+
+
+
+
+
+Email sent successfully!
+
+
+
+Embed
+
+
+
+Size (px)
+
+
+
+Start on
+
+
+
+
+Show related SlideShares at end
+
+
+
+
+WordPress Shortcode
+
+
+
+Link
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  [DSC 2016] 系列活動：李宏毅 / 一天搞懂深度學習
+                
+
+
+
+
+                  216,870 views
+
+
+
+
+
+Share
+
+
+Like
+
+
+
+                  Download
+                
+
+
+
+
+
+
+
+
+
+
+
+台灣資料科學年會
+
+
+
+
+ Follow
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              Published on May 21, 2016
+
+
+
+
+
+
+                    深度學習 ( Deep Learning ) 是機器學習 ( Machine Learning ) 中近年來備受重視的一支，深度學習根源於類神經網路 ( Artificial Neural Network ) 模型，但今日深度學習的技術和它的前身已截然不同，目前最好的語音辨識和影像辨識系統都是以深度學習技術來完成，你可能在很多不同的場合聽過各種用深度學習做出的驚人應用 ( 例如：最近紅遍大街小巷的 AlphaGo )，聽完以後覺得心癢癢的，想要趕快使用這項強大的技術，卻不知要從何下手學習，那這門課就是你所需要的。 這門課程將由臺大電機系李宏毅教授利用短短的一天議程簡介深度學習。以下是課程大綱： 什麼是深度學習深度學習的技術錶面上看起來五花八門，但其實就是三個步驟：設定好類神經網路架構、訂出學習目標、開始學習，這堂課會簡介如何使用深度學習的工具 Keras，它可以幫助你在十分鐘內完成深度學習的程式。另外，有人說深度學習很厲害、有各種吹捧，也有人說深度學習只是個噱頭，到底深度學習和其他的機器學習方法有什麼不同呢？這堂課要剖析深度學習和其它機器學習方法相比潛在的優勢。 深度學習的各種小技巧雖然現在深度學習的工具滿街都是，想要寫一個深度學習的程式只是舉手之勞，但要得到好的成果可不簡單，訓練過程中各種枝枝節節的小技巧才是成功的關鍵。本課程中將分享深度學習的實作技巧及實戰經驗。 有記憶力的深度學習模型機器需要記憶力才能做更多事情，這段課程要講解遞迴式類神經網路 ( Recurrent Neural Network )，告訴大家深度學習模型如何可以有記憶力。 深度學習應用與展望深度學習可以拿來做甚麼？怎麼用深度學習做語音辨識？怎麼用深度學習做問答系統？接下來深度學習的研究者們在意的是什麼樣的問題呢？本課程希望幫助大家不只能瞭解深度學習，也可以有效率地上手深度學習，用在手邊的問題上。無論是從未嘗試過深度學習的新手，還是已經有一點經驗想更深入學習，都可以在這門課中有所收穫。
+
+
+
+
+                    ...
+
+
+
+
+
+Published in:
+Data & Analytics
+
+
+
+
+
+
+
+                    13 Comments
+                
+
+
+
+
+
+                  1,825 Likes
+                
+
+
+
+
+
+                Statistics
+              
+
+
+
+
+                Notes
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Full Name
+
+
+
+
+
+
+                          Comment goes here.
+                        
+12 hours ago  
+
+                        
+
+Delete
+Reply
+Spam
+Block
+
+
+
+
+Are you sure you want to
+Yes
+No
+
+
+
+                          Your message goes here
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Post
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+宏毅 李
+
+
+
+
+
+                                     at 
+                                    Academia Sinica
+
+
+
+
+
+@Zhang yan The value is obtained by differentiating the loss function. You can find more explanation from the following video: https://www.youtube.com/watch?v=fegAeph9UaA (start at 35:00)
+                            
+
+
+                                4 months ago
+                              
+  
+
+                            
+
+Reply 
+
+
+                              
+
+
+
+Are you sure you want to 
+                                Yes 
+                                No
+
+
+
+                              Your message goes here
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zhang yan
+
+
+                                    , 
+                                    學生 - 南昌航空大學
+
+
+
+
+
+
+
+
+                              I'm curious about slice 34.How to judge whether the value is positive or negative?Is there a value to measure? Thank you
+                            
+
+
+                                4 months ago
+                              
+  
+
+                            
+
+Reply 
+
+
+                              
+
+
+
+Are you sure you want to 
+                                Yes 
+                                No
+
+
+
+                              Your message goes here
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Qian Xu
+
+
+
+
+
+
+
+
+
+
+
+                              Thanks it is very helpful!
+                            
+
+
+                                4 months ago
+                              
+  
+
+                            
+
+Reply 
+
+
+                              
+
+
+
+Are you sure you want to 
+                                Yes 
+                                No
+
+
+
+                              Your message goes here
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+宏毅 李
+
+
+
+
+
+                                     at 
+                                    Academia Sinica
+
+
+
+
+
+@Perry Hou https://www.youtube.com/watch?v=fegAeph9UaA&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49  以上投影片的內容這學期的 ML 都有講到，課程有錄影
+                            
+
+
+                                5 months ago
+                              
+  
+
+                            
+
+Reply 
+
+
+                              
+
+
+
+Are you sure you want to 
+                                Yes 
+                                No
+
+
+
+                              Your message goes here
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Perry Hou
+
+
+                                    , 
+                                    Head of Operations
+
+
+                                     at 
+                                    汽車大師
+
+
+
+
+
+                              感謝分享，請問有視頻嗎？
+                            
+
+
+                                5 months ago
+                              
+  
+
+                            
+
+Reply 
+
+
+                              
+
+
+
+Are you sure you want to 
+                                Yes 
+                                No
+
+
+
+                              Your message goes here
+                            
+
+
+
+
+
+
+
+
+
+                      Show More
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LS Yang
+
+
+
+
+
+
+
+
+
+
+                              1 hour ago
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+warren92971
+
+
+
+
+
+
+
+
+
+
+                              20 hours ago
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shayuan Wei
+
+
+                                , 
+                                Senior Project Manager
+
+
+                                 at 
+                                Chuango Security Technology Corp.
+
+
+
+
+                              22 hours ago
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tian Cao
+
+
+                                , 
+                                Software Development Engineer / Machine Learning at A9.com
+
+
+                                 at 
+                                A9.com
+
+
+
+
+                              22 hours ago
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+National Taiwan University
+
+
+
+
+
+                                 at 
+                                National Taiwan University
+
+
+
+
+                              1 day ago
+                            
+
+
+
+
+
+
+
+                    Show More
+                    
+
+
+
+
+No Downloads
+
+
+
+
+Views
+
+Total views
+
+                      216,870
+                    
+On SlideShare
+
+                      0
+                    
+From Embeds
+
+                      0
+                    
+Number of Embeds
+
+                      1,270
+                    
+
+
+
+Actions
+
+Shares
+0
+Downloads
+
+                      20,340
+                    
+Comments
+
+                      13
+                    
+Likes
+
+                      1,825
+                    
+
+
+
+
+                    Embeds
+                    0
+
+
+No embeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No notes for slide
+
+
+
+
+
+
+                  [DSC 2016] 系列活動：李宏毅 / 一天搞懂深度學習
+              
+
+
+      1.
+    Deep Learning Tutorial
+李宏毅
+Hung-yi Lee
+ 
+  
+
+
+        2.
+      
+    Deep learning
+attracts lots of attention.
+• I believe you have seen lots of exciting results
+before.
+This talk focuses on the basic techniques.
+Deep learning trends
+at Google. Source:
+SIGMOD/Jeff Dean
+ 
+  
+
+
+        3.
+      
+    Outline
+Lecture IV: Next Wave
+Lecture III: Variants of Neural Network
+Lecture II: Tips for Training Deep Neural Network
+Lecture I: Introduction of Deep Learning
+ 
+  
+
+
+        4.
+      
+    Lecture I:
+Introduction of
+Deep Learning
+ 
+  
+
+
+        5.
+      
+    Outline of Lecture I
+Introduction of Deep Learning
+Why Deep?
+“Hello World” for Deep Learning
+Let’s start with general
+machine learning.
+ 
+  
+
+
+        6.
+      
+    Machine Learning
+≈ Looking for a Function
+• Speech Recognition
+• Image Recognition
+• Playing Go
+• Dialogue System
+ f
+ f
+ f
+ f
+“Cat”
+“How are you”
+“5-5”
+“Hello”“Hi”
+(what the user said) (system response)
+(next move)
+ 
+  
+
+
+        7.
+      
+    Framework
+A set of
+function 21, ff
+ 1f “cat”
+ 1f “dog”
+ 2f “money”
+ 2f “snake”
+Model
+ f “cat”
+Image Recognition:
+ 
+  
+
+
+        8.
+      
+    Framework
+A set of
+function 21, ff
+ f “cat”
+Image Recognition:
+Model
+Training
+Data
+Goodness of
+function f
+Better!
+“monkey” “cat” “dog”
+function input:
+function output:
+Supervised Learning
+ 
+  
+
+
+        9.
+      
+    Framework
+A set of
+function 21, ff
+ f “cat”
+Image Recognition:
+Model
+Training
+Data
+Goodness of
+function f
+“monkey” “cat” “dog”
+*
+f
+Pick the “Best” Function
+Using 
+f
+“cat”
+Training Testing
+Step 1
+Step 2 Step 3
+ 
+  
+
+
+        10.
+      
+    Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Three Steps for Deep Learning
+Deep Learning is so simple ……
+ 
+  
+
+
+        11.
+      
+    Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Three Steps for Deep Learning
+Deep Learning is so simple ……
+Neural
+Network
+ 
+  
+
+
+        12.
+      
+    Human Brains
+ 
+  
+
+
+        13.
+      
+    bwawawaz KKkk  11
+Neural Network
+z
+1w
+kw
+Kw
+…
+1a
+ka
+Ka
+
+b
+ z
+bias
+a
+weights
+Neuron…
+……
+A simple function
+Activation
+function
+ 
+  
+
+
+        14.
+      
+    Neural Network
+  z
+bias
+Activation
+function
+weights
+Neuron
+1
+-2
+-1
+1
+2
+-1
+1
+4
+ z
+z
+  z
+e
+z 
+
+
+1
+1
+
+Sigmoid Function
+0.98
+ 
+  
+
+
+        15.
+      
+    Neural Network
+ z
+ z
+ z
+ z
+Different connections leads to
+different network structure
+Weights and biases are network parameters 𝜃
+Each neurons can have different values
+of weights and biases.
+ 
+  
+
+
+        16.
+      
+    Fully Connect Feedforward
+Network
+ z
+z
+  z
+e
+z 
+
+
+1
+1
+
+Sigmoid Function
+1
+-1
+1
+-2
+1
+-1
+1
+0
+4
+-2
+0.98
+0.12
+ 
+  
+
+
+        17.
+      
+    Fully Connect Feedforward
+Network
+1
+-2
+1
+-1
+1
+0
+4
+-2
+0.98
+0.12
+2
+-1
+-1
+-2
+3
+-1
+4
+-1
+0.86
+0.11
+0.62
+0.83
+0
+0
+-2
+2
+1
+-1
+ 
+  
+
+
+        18.
+      
+    Fully Connect Feedforward
+Network
+1
+-2
+1
+-1
+1
+0
+0.73
+0.5
+2
+-1
+-1
+-2
+3
+-1
+4
+-1
+0.72
+0.12
+0.51
+0.85
+0
+0
+-2
+2
+𝑓
+0
+0
+=
+0.51
+0.85
+Given parameters 𝜃, define a function
+𝑓
+1
+−1
+=
+0.62
+0.83
+0
+0
+This is a function.
+Input vector, output vector
+Given network structure, define a function set
+ 
+  
+
+
+        19.
+      
+    Output
+LayerHidden Layers
+Input
+Layer
+Fully Connect Feedforward
+Network
+Input Output
+1x
+2x
+Layer 1
+……
+Nx
+……
+Layer 2
+……
+Layer L
+……
+……
+……
+……
+……
+y1
+y2
+yM
+Deep means many hidden layers
+neuron
+ 
+  
+
+
+        20.
+      
+    Output Layer (Option)
+• Softmax layer as the output layer
+Ordinary Layer
+ 11 zy 
+ 22 zy 
+ 33 zy 
+1z
+2z
+3z
+
+
+
+In general, the output of
+network can be any value.
+May not be easy to interpret
+ 
+  
+
+
+        21.
+      
+    Output Layer (Option)
+• Softmax layer as the output layer
+1z
+2z
+3z
+Softmax Layer
+e
+e
+e
+1z
+e
+2z
+e
+3z
+e
+
+
+
+3
+1
+1
+1
+j
+zz j
+eey
+
+3
+1j
+z j
+e
+
+
+
+3
+-3
+1 2.7
+20
+0.05
+0.88
+0.12
+≈0
+Probability:
+ 1 > 𝑦𝑖 > 0
+ 𝑖 𝑦𝑖 = 1
+
+
+3
+1
+2
+2
+j
+zz j
+eey
+
+
+3
+1
+3
+3
+j
+zz j
+eey
+ 
+  
+
+
+        22.
+      
+    Example Application
+Input Output
+16 x 16 = 256
+1x
+2x
+256x
+……
+Ink → 1
+No ink → 0
+……
+y1
+y2
+y10
+Each dimension represents
+the confidence of a digit.
+is 1
+is 2
+is 0
+……
+0.1
+0.7
+0.2
+The image
+is “2”
+ 
+  
+
+
+        23.
+      
+    Example Application
+• Handwriting Digit Recognition
+Machine “2”
+1x
+2x
+256x
+……
+……
+y1
+y2
+y10
+is 1
+is 2
+is 0
+……
+What is needed is a
+function ……
+Input:
+256-dim vector
+output:
+10-dim vector
+Neural
+Network
+ 
+  
+
+
+        24.
+      
+    Output
+LayerHidden Layers
+Input
+Layer
+Example Application
+Input Output
+1x
+2x
+Layer 1
+……
+Nx
+……
+Layer 2
+……
+Layer L
+……
+……
+……
+……
+“2”
+……
+y1
+y2
+y10
+is 1
+is 2
+is 0
+……
+A function set containing the
+candidates for
+Handwriting Digit Recognition
+You need to decide the network structure to
+let a good function in your function set.
+ 
+  
+
+
+        25.
+      
+    FAQ
+• Q: How many layers? How many neurons for each
+layer?
+• Q: Can the structure be automatically determined?
+Trial and Error Intuition+
+ 
+  
+
+
+        26.
+      
+    Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Three Steps for Deep Learning
+Deep Learning is so simple ……
+Neural
+Network
+ 
+  
+
+
+        27.
+      
+    Training Data
+• Preparing training data: images and their labels
+The learning target is defined on
+the training data.
+“5” “0” “4” “1”
+“3”“1”“2”“9”
+ 
+  
+
+
+        28.
+      
+    Learning Target
+16 x 16 = 256
+1x
+2x
+……256x
+……
+……
+……
+……
+Ink → 1
+No ink → 0
+……
+y1
+y2
+y10
+y1 has the maximum value
+The learning target is ……
+Input:
+y2 has the maximum valueInput:
+is 1
+is 2
+is 0
+Softmax
+ 
+  
+
+
+        29.
+      
+    Loss
+1x
+2x
+……
+Nx
+……
+……
+……
+……
+……
+y1
+y2
+y10
+Loss
+𝑙
+“1”
+……
+1
+0
+0……
+Loss can be the distance between the
+network output and target
+target
+As close as
+possible
+A good function should make the loss
+of all examples as small as possible.
+Given a set of
+parameters
+ 
+  
+
+
+        30.
+      
+    Total Loss
+x1
+x2
+xR
+NN
+NN
+NN
+……
+……
+y1
+y2
+yR
+𝑦1
+𝑦2
+𝑦 𝑅
+𝑙1
+……
+……
+x3 NN y3
+𝑦3
+For all training data …
+𝐿 =
+𝑟=1
+𝑅
+𝑙 𝑟
+Find the network
+parameters 𝜽∗ that
+minimize total loss L
+Total Loss:
+𝑙2
+𝑙3
+𝑙 𝑅
+As small as possible
+Find a function in
+function set that
+minimizes total loss L
+ 
+  
+
+
+        31.
+      
+    Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Three Steps for Deep Learning
+Deep Learning is so simple ……
+Neural
+Network
+ 
+  
+
+
+        32.
+      
+    How to pick the best function
+Find network parameters 𝜽∗ that minimize total loss L
+Network parameters 𝜃 =
+𝑤1, 𝑤2, 𝑤3, ⋯ , 𝑏1, 𝑏2, 𝑏3, ⋯
+Enumerate all possible values
+Layer l
+……
+Layer l+1
+……
+E.g. speech recognition: 8 layers and
+1000 neurons each layer
+1000
+neurons
+1000
+neurons
+106
+weights
+Millions of parameters
+ 
+  
+
+
+        33.
+      
+    Gradient Descent
+Total
+Loss 𝐿
+Random, RBM pre-train
+Usually good enough
+Network parameters 𝜃 =
+𝑤1, 𝑤2, ⋯ , 𝑏1, 𝑏2, ⋯
+w
+ Pick an initial value for w
+Find network parameters 𝜽∗ that minimize total loss L
+ 
+  
+
+
+        34.
+      
+    Gradient Descent
+Total
+Loss 𝐿
+Network parameters 𝜃 =
+𝑤1, 𝑤2, ⋯ , 𝑏1, 𝑏2, ⋯
+w
+ Pick an initial value for w
+ Compute 𝜕𝐿 𝜕𝑤
+Positive
+Negative
+Decrease w
+Increase w
+http://chico386.pixnet.net/album/photo/171572850
+Find network parameters 𝜽∗ that minimize total loss L
+ 
+  
+
+
+        35.
+      
+    Gradient Descent
+Total
+Loss 𝐿
+Network parameters 𝜃 =
+𝑤1, 𝑤2, ⋯ , 𝑏1, 𝑏2, ⋯
+w
+ Pick an initial value for w
+ Compute 𝜕𝐿 𝜕𝑤
+−𝜂𝜕𝐿 𝜕𝑤
+η is called
+“learning rate”
+𝑤 ← 𝑤 − 𝜂𝜕𝐿 𝜕𝑤
+Repeat
+Find network parameters 𝜽∗ that minimize total loss L
+ 
+  
+
+
+        36.
+      
+    Gradient Descent
+Total
+Loss 𝐿
+Network parameters 𝜃 =
+𝑤1, 𝑤2, ⋯ , 𝑏1, 𝑏2, ⋯
+w
+ Pick an initial value for w
+ Compute 𝜕𝐿 𝜕𝑤
+𝑤 ← 𝑤 − 𝜂𝜕𝐿 𝜕𝑤
+Repeat Until 𝜕𝐿 𝜕𝑤 is approximately small
+(when update is little)
+Find network parameters 𝜽∗ that minimize total loss L
+ 
+  
+
+
+        37.
+      
+    Gradient Descent
+𝑤1
+Compute 𝜕𝐿 𝜕𝑤1
+−𝜇 𝜕𝐿 𝜕𝑤1
+0.15
+𝑤2
+Compute 𝜕𝐿 𝜕𝑤2
+−𝜇 𝜕𝐿 𝜕𝑤2
+0.05
+𝑏1
+Compute 𝜕𝐿 𝜕𝑏1
+−𝜇 𝜕𝐿 𝜕𝑏1
+0.2
+…………
+0.2
+-0.1
+0.3
+𝜃
+𝜕𝐿
+𝜕𝑤1
+𝜕𝐿
+𝜕𝑤2
+⋮
+𝜕𝐿
+𝜕𝑏1
+⋮
+𝛻𝐿 =
+gradient
+ 
+  
+
+
+        38.
+      
+    Gradient Descent
+𝑤1
+Compute 𝜕𝐿 𝜕𝑤1
+−𝜇 𝜕𝐿 𝜕𝑤1
+0.15
+−𝜇 𝜕𝐿 𝜕𝑤1
+Compute 𝜕𝐿 𝜕𝑤1
+0.09
+𝑤2
+Compute 𝜕𝐿 𝜕𝑤2
+−𝜇 𝜕𝐿 𝜕𝑤2
+0.05
+−𝜇 𝜕𝐿 𝜕𝑤2
+Compute 𝜕𝐿 𝜕𝑤2
+0.15
+𝑏1
+Compute 𝜕𝐿 𝜕𝑏1
+−𝜇 𝜕𝐿 𝜕𝑏1
+0.2
+−𝜇 𝜕𝐿 𝜕𝑏1
+Compute 𝜕𝐿 𝜕𝑏1
+0.10
+…………
+0.2
+-0.1
+0.3
+……
+……
+……
+𝜃
+ 
+  
+
+
+        39.
+      
+    𝑤1
+𝑤2
+Gradient Descent
+Color: Value of
+Total Loss L
+Randomly pick a starting point
+ 
+  
+
+
+        40.
+      
+    𝑤1
+𝑤2
+Gradient Descent Hopfully, we would reach
+a minima …..
+Compute 𝜕𝐿 𝜕𝑤1, 𝜕𝐿 𝜕𝑤2
+(−𝜂 𝜕𝐿 𝜕𝑤1, −𝜂 𝜕𝐿 𝜕𝑤2)
+Color: Value of
+Total Loss L
+ 
+  
+
+
+        41.
+      
+    Gradient Descent - Difficulty
+• Gradient descent never guarantee global minima
+𝐿
+𝑤1 𝑤2
+Different initial point
+Reach different minima,
+so different results
+There are some tips to
+help you avoid local
+minima, no guarantee.
+ 
+  
+
+
+        42.
+      
+    Gradient Descent
+𝑤1𝑤2
+You are playing Age of Empires …
+Compute 𝜕𝐿 𝜕𝑤1, 𝜕𝐿 𝜕𝑤2
+(−𝜂 𝜕𝐿 𝜕𝑤1, −𝜂 𝜕𝐿 𝜕𝑤2)
+You cannot see the whole map.
+ 
+  
+
+
+        43.
+      
+    Gradient Descent
+This is the “learning” of machines in deep
+learning ……
+Even alpha go using this approach.
+I hope you are not too disappointed :p
+People image …… Actually …..
+ 
+  
+
+
+        44.
+      
+    Backpropagation
+• Backpropagation: an efficient way to compute 𝜕𝐿 𝜕𝑤
+• Ref:
+http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_201
+5_2/Lecture/DNN%20backprop.ecm.mp4/index.html
+Don’t worry about 𝜕𝐿 𝜕𝑤, the toolkits will handle it.
+臺大周伯威
+同學開發
+ 
+  
+
+
+        45.
+      
+    Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Concluding Remarks
+Deep Learning is so simple ……
+ 
+  
+
+
+        46.
+      
+    Outline of Lecture I
+Introduction of Deep Learning
+Why Deep?
+“Hello World” for Deep Learning
+ 
+  
+
+
+        47.
+      
+    Layer X Size
+Word Error
+Rate (%)
+Layer X Size
+Word Error
+Rate (%)
+1 X 2k 24.2
+2 X 2k 20.4
+3 X 2k 18.4
+4 X 2k 17.8
+5 X 2k 17.2 1 X 3772 22.5
+7 X 2k 17.1 1 X 4634 22.6
+1 X 16k 22.1
+Deeper is Better?
+Seide, Frank, Gang Li, and Dong Yu. "Conversational Speech Transcription
+Using Context-Dependent Deep Neural Networks." Interspeech. 2011.
+Not surprised, more
+parameters, better
+performance
+ 
+  
+
+
+        48.
+      
+    Universality Theorem
+Reference for the reason:
+http://neuralnetworksandde
+eplearning.com/chap4.html
+Any continuous function f
+M
+: RRf N
+
+Can be realized by a network
+with one hidden layer
+(given enough hidden
+neurons)
+Why “Deep” neural network not “Fat” neural network?
+ 
+  
+
+
+        49.
+      
+    Fat + Short v.s. Thin + Tall
+1x 2x …… Nx
+Deep
+1x 2x …… Nx
+……
+Shallow
+Which one is better?
+The same number
+of parameters
+ 
+  
+
+
+        50.
+      
+    Fat + Short v.s. Thin + Tall
+Seide, Frank, Gang Li, and Dong Yu. "Conversational Speech Transcription
+Using Context-Dependent Deep Neural Networks." Interspeech. 2011.
+Layer X Size
+Word Error
+Rate (%)
+Layer X Size
+Word Error
+Rate (%)
+1 X 2k 24.2
+2 X 2k 20.4
+3 X 2k 18.4
+4 X 2k 17.8
+5 X 2k 17.2 1 X 3772 22.5
+7 X 2k 17.1 1 X 4634 22.6
+1 X 16k 22.1
+Why?
+ 
+  
+
+
+        51.
+      
+    Analogy
+• Logic circuits consists of
+gates
+• A two layers of logic gates
+can represent any Boolean
+function.
+• Using multiple layers of
+logic gates to build some
+functions are much simpler
+• Neural network consists of
+neurons
+• A hidden layer network can
+represent any continuous
+function.
+• Using multiple layers of
+neurons to represent some
+functions are much simpler
+This page is for EE background.
+less gates needed
+Logic circuits Neural network
+less
+parameters
+less
+data?
+ 
+  
+
+
+        52.
+      
+    長髮
+男
+Modularization
+• Deep → Modularization
+Girls with
+long hair
+Boys with
+short hair
+Boys with
+long hair
+Image
+Classifier
+1
+Classifier
+2
+Classifier
+3
+長髮
+女
+長髮
+女
+長髮
+女
+長髮
+女
+Girls with
+short hair
+短髮
+女
+短髮
+男
+短髮
+男
+短髮
+男
+短髮
+男
+短髮
+女
+短髮
+女
+短髮
+女
+Classifier
+4
+Little examplesweak
+ 
+  
+
+
+        53.
+      
+    Modularization
+• Deep → Modularization
+Image
+Long or
+short?
+Boy or Girl?
+Classifiers for the
+attributes
+長髮
+男
+長髮
+女
+長髮
+女
+長髮
+女
+長髮
+女
+短髮
+女 短髮
+男
+短髮
+男
+短髮
+男
+短髮
+男
+短髮
+女
+短髮
+女
+短髮
+女
+v.s.
+長髮
+男
+長髮
+女
+長髮
+女
+長髮
+女
+長髮
+女
+短髮
+女
+短髮
+男
+短髮
+男
+短髮
+男
+短髮
+男
+短髮
+女
+短髮
+女
+短髮
+女
+v.s.
+Each basic classifier can have
+sufficient training examples.
+Basic
+Classifier
+ 
+  
+
+
+        54.
+      
+    Modularization
+• Deep → Modularization
+Image
+Long or
+short?
+Boy or Girl?
+Sharing by the
+following classifiers
+as module
+can be trained by little data
+Girls with
+long hair
+Boys with
+short hair
+Boys with
+long hair
+Classifier
+1
+Classifier
+2
+Classifier
+3
+Girls with
+short hair
+Classifier
+4
+Little datafineBasic
+Classifier
+ 
+  
+
+
+        55.
+      
+    Modularization
+• Deep → Modularization
+1x
+2x
+……
+Nx
+……
+……
+……
+……
+……
+……
+The most basic
+classifiers
+Use 1st layer as module
+to build classifiers
+Use 2nd layer as
+module ……
+The modularization is
+automatically learned from data.
+→ Less training data?
+ 
+  
+
+
+        56.
+      
+    Modularization
+• Deep → Modularization
+1x
+2x
+……
+Nx
+……
+……
+……
+……
+……
+……
+The most basic
+classifiers
+Use 1st layer as module
+to build classifiers
+Use 2nd layer as
+module ……
+Reference: Zeiler, M. D., & Fergus, R.
+(2014). Visualizing and understanding
+convolutional networks. In Computer
+Vision–ECCV 2014 (pp. 818-833)
+ 
+  
+
+
+        57.
+      
+    Outline of Lecture I
+Introduction of Deep Learning
+Why Deep?
+“Hello World” for Deep Learning
+ 
+  
+
+
+        58.
+      
+    Keras
+keras
+http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/L
+ecture/Theano%20DNN.ecm.mp4/index.html
+http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Le
+cture/RNN%20training%20(v6).ecm.mp4/index.html
+Very flexible
+Need some
+effort to learn
+Easy to learn and use
+(still have some flexibility)
+You can modify it if you can write
+TensorFlow or Theano
+Interface of
+TensorFlow or
+Theano
+or
+If you want to learn theano:
+ 
+  
+
+
+        59.
+      
+    Keras
+• François Chollet is the author of Keras.
+• He currently works for Google as a deep learning
+engineer and researcher.
+• Keras means horn in Greek
+• Documentation: http://keras.io/
+• Example:
+https://github.com/fchollet/keras/tree/master/exa
+mples
+ 
+  
+
+
+        60.
+      
+    使用 Keras 心得
+感謝 沈昇勳 同學提供圖檔
+ 
+  
+
+
+        61.
+      
+    Example Application
+• Handwriting Digit Recognition
+Machine “1”
+“Hello world” for deep learning
+MNIST Data: http://yann.lecun.com/exdb/mnist/
+Keras provides data sets loading function: http://keras.io/datasets/
+28 x 28
+ 
+  
+
+
+        62.
+      
+    Keras
+y1 y2 y10
+……
+……
+……
+……
+Softmax
+500
+500
+28x28
+ 
+  
+
+
+        63.
+      
+    Keras
+ 
+  
+
+
+        64.
+      
+    Keras
+Step 3.1: Configuration
+Step 3.2: Find the optimal network parameters
+𝑤 ← 𝑤 − 𝜂𝜕𝐿 𝜕𝑤
+0.1
+Training data
+(Images)
+Labels
+(digits)
+Next lecture
+ 
+  
+
+
+        65.
+      
+    Keras
+Step 3.2: Find the optimal network parameters
+https://www.tensorflow.org/versions/r0.8/tutorials/mnist/beginners/index.html
+Number of training examples
+numpy array
+28 x 28
+=784
+numpy array
+10
+Number of training examples
+…… ……
+ 
+  
+
+
+        66.
+      
+    Keras
+http://keras.io/getting-started/faq/#how-can-i-save-a-keras-model
+How to use the neural network (testing):
+case 1:
+case 2:
+Save and load models
+ 
+  
+
+
+        67.
+      
+    Keras
+• Using GPU to speed training
+• Way 1
+• THEANO_FLAGS=device=gpu0 python
+YourCode.py
+• Way 2 (in your code)
+• import os
+• os.environ["THEANO_FLAGS"] =
+"device=gpu0"
+ 
+  
+
+
+        68.
+      
+    Live Demo
+ 
+  
+
+
+        69.
+      
+    Lecture II:
+Tips for Training DNN
+ 
+  
+
+
+        70.
+      
+    Neural
+Network
+Good Results on
+Testing Data?
+Good Results on
+Training Data?
+Step 3: pick the
+best function
+Step 2: goodness
+of function
+Step 1: define a
+set of function
+YES
+YES
+NO
+NO
+Overfitting!
+Recipe of Deep Learning
+ 
+  
+
+
+        71.
+      
+    Do not always blame Overfitting
+Testing Data
+Overfitting?
+Training Data
+Not well trained
+ 
+  
+
+
+        72.
+      
+    Neural
+Network
+Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Different approaches for
+different problems.
+e.g. dropout for good results
+on testing data
+ 
+  
+
+
+        73.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Choosing proper loss
+Mini-batch
+New activation function
+Adaptive Learning Rate
+Momentum
+ 
+  
+
+
+        74.
+      
+    Choosing Proper Loss
+1x
+2x ……
+256x
+……
+……
+……
+……
+……
+y1
+y2
+y10
+loss
+“1”
+……
+1
+0
+0
+……
+target
+Softmax
+𝑖=1
+10
+𝑦𝑖 − 𝑦𝑖
+2Square
+Error
+Cross
+Entropy −
+𝑖=1
+10
+𝑦𝑖 𝑙𝑛𝑦𝑖
+Which one is better?
+𝑦1
+𝑦2
+𝑦10
+……
+1
+0
+0
+=0 =0
+ 
+  
+
+
+        75.
+      
+    Let’s try it
+Square Error
+Cross Entropy
+ 
+  
+
+
+        76.
+      
+    Let’s try it
+Accuracy
+Square Error 0.11
+Cross Entropy 0.84
+Training
+Testing:
+Cross
+Entropy
+Square
+Error
+ 
+  
+
+
+        77.
+      
+    Choosing Proper Loss
+Total
+Loss
+w1
+w2
+Cross
+Entropy
+Square
+Error
+When using softmax output layer,
+choose cross entropy
+http://jmlr.org/procee
+dings/papers/v9/gloro
+t10a/glorot10a.pdf
+ 
+  
+
+
+        78.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Choosing proper loss
+Mini-batch
+New activation function
+Adaptive Learning Rate
+Momentum
+ 
+  
+
+
+        79.
+      
+    Mini-batch
+x1
+NN
+……
+y1
+𝑦1
+𝑙1
+x31 NN y31
+𝑦31
+𝑙31
+x2
+NN
+……
+y2
+𝑦2
+𝑙2
+x16 NN y16
+𝑦16
+𝑙16
+ Pick the 1st batch
+ Randomly initialize
+network parameters
+ Pick the 2nd batch
+Mini-batchMini-batch
+𝐿′ = 𝑙1 + 𝑙31 + ⋯
+𝐿′′ = 𝑙2 + 𝑙16 + ⋯
+Update parameters once
+Update parameters once
+ Until all mini-batches
+have been picked
+…
+one epoch
+Repeat the above process
+We do not really minimize total loss!
+ 
+  
+
+
+        80.
+      
+    Mini-batch
+x1
+NN
+……
+y1
+𝑦1
+𝑙1
+x31 NN y31
+𝑦31
+𝑙31
+Mini-batch
+ Pick the 1st batch
+ Pick the 2nd batch
+𝐿′ = 𝑙1
++ 𝑙31
++ ⋯
+𝐿′′ = 𝑙2
++ 𝑙16
++ ⋯
+Update parameters once
+Update parameters once
+ Until all mini-batches
+have been picked
+…one epoch
+100 examples in a mini-batch
+Repeat 20 times
+ 
+  
+
+
+        81.
+      
+    Mini-batch
+x1
+NN
+……
+y1
+𝑦1
+𝑙1
+x31 NN y31
+𝑦31
+𝑙31
+x2
+NN
+……
+y2
+𝑦2
+𝑙2
+x16 NN y16
+𝑦16
+𝑙16
+ Pick the 1st batch
+ Randomly initialize
+network parameters
+ Pick the 2nd batch
+Mini-batchMini-batch
+𝐿′ = 𝑙1 + 𝑙31 + ⋯
+𝐿′′ = 𝑙2 + 𝑙16 + ⋯
+Update parameters once
+Update parameters once
+…
+L is different each time
+when we update
+parameters!
+We do not really minimize total loss!
+ 
+  
+
+
+        82.
+      
+    Mini-batch
+Original Gradient Descent With Mini-batch
+Unstable!!!
+The colors represent the total loss.
+ 
+  
+
+
+        83.
+      
+    Mini-batch is Faster
+1 epoch
+See all
+examples
+See only one
+batch
+Update after seeing all
+examples
+If there are 20 batches, update
+20 times in one epoch.
+Original Gradient Descent With Mini-batch
+Not always true with
+parallel computing.
+Can have the same speed
+(not super large data set)
+Mini-batch has better performance!
+ 
+  
+
+
+        84.
+      
+    Mini-batch is Better! Accuracy
+Mini-batch 0.84
+No batch 0.12
+Testing:
+Epoch
+Accuracy
+Mini-batch
+No batch
+Training
+ 
+  
+
+
+        85.
+      
+    x1
+NN…… y1
+𝑦1
+𝑙1
+x31 NN y31
+𝑦31
+𝑙31
+x2
+NN
+……
+y2
+𝑦2
+𝑙2
+x16 NN y16
+𝑦16
+𝑙16
+Mini-batchMini-batch
+Shuffle the training examples for each epoch
+Epoch 1
+x1
+NN
+……
+y1
+𝑦1
+𝑙1
+x31 NN y31
+𝑦31
+𝑙17
+x2
+NN
+……
+y2
+𝑦2
+𝑙2
+x16 NN y16
+𝑦16
+𝑙26
+Mini-batchMini-batch
+Epoch 2
+Don’t worry. This is the default of Keras.
+ 
+  
+
+
+        86.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Choosing proper loss
+Mini-batch
+New activation function
+Adaptive Learning Rate
+Momentum
+ 
+  
+
+
+        87.
+      
+    Hard to get the power of Deep …
+Deeper usually does not imply better.
+Results on Training Data
+ 
+  
+
+
+        88.
+      
+    Let’s try it
+Accuracy
+3 layers 0.84
+9 layers 0.11
+Testing:
+9 layers
+3 layers
+Training
+ 
+  
+
+
+        89.
+      
+    Vanishing Gradient Problem
+Larger gradients
+Almost random Already converge
+based on random!?
+Learn very slow Learn very fast
+1x
+2x
+……
+Nx
+……
+……
+……
+……
+……
+……
+……
+y1
+y2
+yM
+Smaller gradients
+ 
+  
+
+
+        90.
+      
+    Vanishing Gradient Problem
+1x
+2x
+……
+Nx
+……
+……
+……
+……
+……
+……
+……
+𝑦1
+𝑦2
+𝑦 𝑀
+……
+𝑦1
+𝑦2
+𝑦 𝑀
+𝑙
+Intuitive way to compute the derivatives …
+𝜕𝑙
+𝜕𝑤
+=?
++∆𝑤
++∆𝑙
+∆𝑙
+∆𝑤
+Smaller gradients
+Large
+input
+Small
+output
+ 
+  
+
+
+        91.
+      
+    Hard to get the power of Deep …
+In 2006, people used RBM pre-training.
+In 2015, people use ReLU.
+ 
+  
+
+
+        92.
+      
+    ReLU
+• Rectified Linear Unit (ReLU)
+Reason:
+1. Fast to compute
+2. Biological reason
+3. Infinite sigmoid
+with different biases
+4. Vanishing gradient
+problem
+𝑧
+𝑎
+𝑎 = 𝑧
+𝑎 = 0
+𝜎 𝑧
+[Xavier Glorot, AISTATS’11]
+[Andrew L. Maas, ICML’13]
+[Kaiming He, arXiv’15]
+ 
+  
+
+
+        93.
+      
+    ReLU
+1x
+2x
+1y
+2y
+0
+0
+0
+0
+𝑧
+𝑎
+𝑎 = 𝑧
+𝑎 = 0
+ 
+  
+
+
+        94.
+      
+    ReLU
+1x
+2x
+1y
+2y
+A Thinner linear network
+Do not have
+smaller gradients
+𝑧
+𝑎
+𝑎 = 𝑧
+𝑎 = 0
+ 
+  
+
+
+        95.
+      
+    Let’s try it
+ 
+  
+
+
+        96.
+      
+    Let’s try it
+• 9 layers
+9 layers Accuracy
+Sigmoid 0.11
+ReLU 0.96
+Training
+Testing:
+ReLU
+Sigmoid
+ 
+  
+
+
+        97.
+      
+    ReLU - variant
+𝑧
+𝑎
+𝑎 = 𝑧
+𝑎 = 0.01𝑧
+𝐿𝑒𝑎𝑘𝑦 𝑅𝑒𝐿𝑈
+𝑧
+𝑎
+𝑎 = 𝑧
+𝑎 = 𝛼𝑧
+𝑃𝑎𝑟𝑎𝑚𝑒𝑡𝑟𝑖𝑐 𝑅𝑒𝐿𝑈
+α also learned by
+gradient descent
+ 
+  
+
+
+        98.
+      
+    Maxout
+• Learnable activation function [Ian J. Goodfellow, ICML’13]
+Max
+1x
+2x
+Input
+Max
++ 5
++ 7
++ −1
++ 1
+7
+1
+Max
+Max
++ 1
++ 2
++ 4
++ 3
+2
+4
+ReLU is a special cases of Maxout
+You can have more than 2 elements in a group.
+neuron
+ 
+  
+
+
+        99.
+      
+    Maxout
+• Learnable activation function [Ian J. Goodfellow, ICML’13]
+• Activation function in maxout network can be
+any piecewise linear convex function
+• How many pieces depending on how many
+elements in a group
+ReLU is a special cases of Maxout
+2 elements in a group 3 elements in a group
+ 
+  
+
+
+        100.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Choosing proper loss
+Mini-batch
+New activation function
+Adaptive Learning Rate
+Momentum
+ 
+  
+
+
+        101.
+      
+    𝑤1
+𝑤2
+Learning Rates
+If learning rate is too large
+Total loss may not decrease
+after each update
+Set the learning
+rate η carefully
+ 
+  
+
+
+        102.
+      
+    𝑤1
+𝑤2
+Learning Rates
+If learning rate is too large
+Set the learning
+rate η carefully
+If learning rate is too small
+Training would be too slow
+Total loss may not decrease
+after each update
+ 
+  
+
+
+        103.
+      
+    Learning Rates
+• Popular & Simple Idea: Reduce the learning rate by
+some factor every few epochs.
+• At the beginning, we are far from the destination, so we
+use larger learning rate
+• After several epochs, we are close to the destination, so
+we reduce the learning rate
+• E.g. 1/t decay: 𝜂 𝑡 = 𝜂 𝑡 + 1
+• Learning rate cannot be one-size-fits-all
+• Giving different parameters different learning
+rates
+ 
+  
+
+
+        104.
+      
+    Adagrad
+Parameter dependent
+learning rate
+w ← 𝑤 − ߟ 𝑤 𝜕𝐿 ∕ 𝜕𝑤
+constant
+𝑔𝑖
+is 𝜕𝐿 ∕ 𝜕𝑤 obtained
+at the i-th update
+ߟ 𝑤 =
+𝜂
+𝑖=0
+𝑡
+𝑔𝑖 2
+Summation of the square of the previous derivatives
+𝑤 ← 𝑤 − 𝜂𝜕𝐿 ∕ 𝜕𝑤Original:
+Adagrad:
+ 
+  
+
+
+        105.
+      
+    Adagrad
+g0 g1 ……
+0.1 0.2 ……
+g0 g1 ……
+20.0 10.0 ……
+Observation: 1. Learning rate is smaller and
+smaller for all parameters
+2. Smaller derivatives, larger
+learning rate, and vice versa
+𝜂
+0.12
+𝜂
+0.12 + 0.22
+𝜂
+202
+𝜂
+202 + 102
+=
+𝜂
+0.1
+=
+𝜂
+0.22
+=
+𝜂
+20
+=
+𝜂
+22
+Why?
+ߟ 𝑤 =
+𝜂
+𝑖=0
+𝑡
+𝑔𝑖 2
+Learning rate: Learning rate:
+𝑤1 𝑤2
+ 
+  
+
+
+        106.
+      
+    Smaller Derivatives
+Larger Learning Rate
+2. Smaller derivatives, larger
+learning rate, and vice versa
+Why?
+Smaller
+Learning Rate
+Larger
+derivatives
+ 
+  
+
+
+        107.
+      
+    Not the whole story ……
+• Adagrad [John Duchi, JMLR’11]
+• RMSprop
+• https://www.youtube.com/watch?v=O3sxAc4hxZU
+• Adadelta [Matthew D. Zeiler, arXiv’12]
+• “No more pesky learning rates” [Tom Schaul, arXiv’12]
+• AdaSecant [Caglar Gulcehre, arXiv’14]
+• Adam [Diederik P. Kingma, ICLR’15]
+• Nadam
+• http://cs229.stanford.edu/proj2015/054_report.pdf
+ 
+  
+
+
+        108.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Choosing proper loss
+Mini-batch
+New activation function
+Adaptive Learning Rate
+Momentum
+ 
+  
+
+
+        109.
+      
+    Hard to find
+optimal network parameters
+Total
+Loss
+The value of a network parameter w
+Very slow at the
+plateau
+Stuck at local minima
+𝜕𝐿 ∕ 𝜕𝑤
+= 0
+Stuck at saddle point
+𝜕𝐿 ∕ 𝜕𝑤
+= 0
+𝜕𝐿 ∕ 𝜕𝑤
+≈ 0
+ 
+  
+
+
+        110.
+      
+    In physical world ……
+• Momentum
+How about put this phenomenon
+in gradient descent?
+ 
+  
+
+
+        111.
+      
+    Movement =
+Negative of 𝜕𝐿∕𝜕𝑤 + Momentum
+Momentum
+cost
+𝜕𝐿∕𝜕𝑤 = 0
+Still not guarantee reaching
+global minima, but give some
+hope ……
+Negative of 𝜕𝐿 ∕ 𝜕𝑤
+Momentum
+Real Movement
+ 
+  
+
+
+        112.
+      
+    Adam RMSProp (Advanced Adagrad) + Momentum
+ 
+  
+
+
+        113.
+      
+    Let’s try it
+• ReLU, 3 layer
+Accuracy
+Original 0.96
+Adam 0.97
+Training
+Testing:
+Adam
+Original
+ 
+  
+
+
+        114.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Early Stopping
+Regularization
+Dropout
+Network Structure
+ 
+  
+
+
+        115.
+      
+    Why Overfitting?
+• Training data and testing data can be different.
+Training Data: Testing Data:
+The parameters achieving the learning target do not
+necessary have good results on the testing data.
+Learning target is defined by the training data.
+ 
+  
+
+
+        116.
+      
+    Panacea for Overfitting
+• Have more training data
+• Create more training data (?)
+Original
+Training Data:
+Created
+Training Data:
+Shift 15。
+Handwriting recognition:
+ 
+  
+
+
+        117.
+      
+    Why Overfitting?
+• For experiments, we added some noises to the
+testing data
+ 
+  
+
+
+        118.
+      
+    Why Overfitting?
+• For experiments, we added some noises to the
+testing data
+Training is not influenced.
+Accuracy
+Clean 0.97
+Noisy 0.50
+Testing:
+ 
+  
+
+
+        119.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Early Stopping
+Weight Decay
+Dropout
+Network Structure
+ 
+  
+
+
+        120.
+      
+    Early Stopping
+Epochs
+Total
+Loss
+Training set
+Testing set
+Stop at
+here
+Validation set
+http://keras.io/getting-started/faq/#how-can-i-interrupt-training-when-
+the-validation-loss-isnt-decreasing-anymoreKeras:
+ 
+  
+
+
+        121.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Early Stopping
+Weight Decay
+Dropout
+Network Structure
+ 
+  
+
+
+        122.
+      
+    Weight Decay
+• Our brain prunes out the useless link between
+neurons.
+Doing the same thing to machine’s brain improves
+the performance.
+ 
+  
+
+
+        123.
+      
+    Weight Decay
+Useless
+Close to zero (萎縮了)
+Weight decay is one
+kind of regularization
+ 
+  
+
+
+        124.
+      
+    Weight Decay
+• Implementation
+Smaller and smaller
+Keras: http://keras.io/regularizers/
+w
+L
+ww
+
+
+ 
+ 
+w
+L
+ww
+
+
+ 1
+Original:
+Weight Decay:
+0.01
+0.99
+ 
+  
+
+
+        125.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Early Stopping
+Weight Decay
+Dropout
+Network Structure
+ 
+  
+
+
+        126.
+      
+    Dropout
+Training:
+ Each time before updating the parameters
+ Each neuron has p% to dropout
+ 
+  
+
+
+        127.
+      
+    Dropout
+Training:
+ Each time before updating the parameters
+ Each neuron has p% to dropout
+ Using the new network for training
+The structure of the network is changed.
+Thinner!
+For each mini-batch, we resample the dropout neurons
+ 
+  
+
+
+        128.
+      
+    Dropout
+Testing:
+ No dropout
+ If the dropout rate at training is p%,
+all the weights times (1-p)%
+ Assume that the dropout rate is 50%.
+If a weight w = 1 by training, set 𝑤 = 0.5 for testing.
+ 
+  
+
+
+        129.
+      
+    Dropout - Intuitive Reason
+ When teams up, if everyone expect the partner will do
+the work, nothing will be done finally.
+ However, if you know your partner will dropout, you
+will do better.
+我的 partner
+會擺爛，所以
+我要好好做
+ When testing, no one dropout actually, so obtaining
+good results eventually.
+ 
+  
+
+
+        130.
+      
+    Dropout - Intuitive Reason
+• Why the weights should multiply (1-p)% (dropout
+rate) when testing?
+Training of Dropout Testing of Dropout
+𝑤1
+𝑤2
+𝑤3
+𝑤4
+𝑧
+𝑤1
+𝑤2
+𝑤3
+𝑤4
+𝑧′
+Assume dropout rate is 50%
+0.5 ×
+0.5 ×
+0.5 ×
+0.5 ×
+No dropout
+Weights from training
+𝑧′ ≈ 2𝑧
+𝑧′ ≈ 𝑧
+Weights multiply (1-p)%
+ 
+  
+
+
+        131.
+      
+    Dropout is a kind of ensemble.
+Ensemble
+Network
+1
+Network
+2
+Network
+3
+Network
+4
+Train a bunch of networks with different structures
+Training
+Set
+Set 1 Set 2 Set 3 Set 4
+ 
+  
+
+
+        132.
+      
+    Dropout is a kind of ensemble.
+Ensemble
+y1
+Network
+1
+Network
+2
+Network
+3
+Network
+4
+Testing data x
+y2 y3 y4
+average
+ 
+  
+
+
+        133.
+      
+    Dropout is a kind of ensemble.
+Training of
+Dropout
+minibatch
+1
+……
+Using one mini-batch to train one network
+Some parameters in the network are shared
+minibatch
+2
+minibatch
+3
+minibatch
+4
+M neurons
+2M possible
+networks
+ 
+  
+
+
+        134.
+      
+    Dropout is a kind of ensemble.
+testing data x
+Testing of Dropout
+……
+average
+y1 y2 y3
+All the
+weights
+multiply
+(1-p)%
+≈ y
+?????
+ 
+  
+
+
+        135.
+      
+    More about dropout
+• More reference for dropout [Nitish Srivastava, JMLR’14] [Pierre Baldi,
+NIPS’13][Geoffrey E. Hinton, arXiv’12]
+• Dropout works better with Maxout [Ian J. Goodfellow, ICML’13]
+• Dropconnect [Li Wan, ICML’13]
+• Dropout delete neurons
+• Dropconnect deletes the connection between neurons
+• Annealed dropout [S.J. Rennie, SLT’14]
+• Dropout rate decreases by epochs
+• Standout [J. Ba, NISP’13]
+• Each neural has different dropout rate
+ 
+  
+
+
+        136.
+      
+    Let’s try it
+y1 y2 y10
+……
+……
+……
+……
+Softmax
+500
+500
+model.add( dropout(0.8) )
+model.add( dropout(0.8) )
+ 
+  
+
+
+        137.
+      
+    Let’s try it
+Training
+Dropout
+No Dropout
+Epoch
+Accuracy
+Accuracy
+Noisy 0.50
++ dropout 0.63
+Testing:
+ 
+  
+
+
+        138.
+      
+    Good Results on
+Testing Data?
+Good Results on
+Training Data?
+YES
+YES
+Recipe of Deep Learning
+Early Stopping
+Regularization
+Dropout
+Network Structure
+CNN is a very good example!
+(next lecture)
+ 
+  
+
+
+        139.
+      
+    Concluding Remarks
+of Lecture II
+ 
+  
+
+
+        140.
+      
+    Recipe of Deep Learning
+Neural
+Network
+Good Results on
+Testing Data?
+Good Results on
+Training Data?
+Step 3: pick the
+best function
+Step 2: goodness
+of function
+Step 1: define a
+set of function
+YES
+YES
+NO
+NO
+ 
+  
+
+
+        141.
+      
+    Let’s try another task
+ 
+  
+
+
+        142.
+      
+    Document Classification
+http://top-breaking-news.com/
+Machine
+政治
+體育
+經濟
+“president” in document
+“stock” in document
+體育 政治 財經
+ 
+  
+
+
+        143.
+      
+    Data
+ 
+  
+
+
+        144.
+      
+    MSE
+ 
+  
+
+
+        145.
+      
+    ReLU
+ 
+  
+
+
+        146.
+      
+    Adaptive Learning Rate
+Accuracy
+MSE 0.36
+CE 0.55
++ ReLU 0.75
++ Adam 0.77
+ 
+  
+
+
+        147.
+      
+    Dropout
+Accuracy
+Adam 0.77
++ dropout 0.79
+ 
+  
+
+
+        148.
+      
+    Lecture III:
+Variants of Neural
+Networks
+ 
+  
+
+
+        149.
+      
+    Variants of Neural Networks
+Convolutional Neural
+Network (CNN)
+Recurrent Neural Network
+(RNN)
+Widely used in
+image processing
+ 
+  
+
+
+        150.
+      
+    Why CNN for Image?
+• When processing image, the first layer of fully
+connected network would be very large
+100
+……
+……
+……
+……
+……
+Softmax
+100
+100 x 100 x 3 1000
+3 x 107
+Can the fully connected network be simplified by
+considering the properties of image recognition?
+ 
+  
+
+
+        151.
+      
+    Why CNN for Image
+• Some patterns are much smaller than the whole
+image
+A neuron does not have to see the whole image
+to discover the pattern.
+“beak” detector
+Connecting to small region with less parameters
+ 
+  
+
+
+        152.
+      
+    Why CNN for Image
+• The same patterns appear in different regions.
+“upper-left
+beak” detector
+“middle beak”
+detector
+They can use the same
+set of parameters.
+Do almost the same thing
+ 
+  
+
+
+        153.
+      
+    Why CNN for Image
+• Subsampling the pixels will not change the object
+subsampling
+bird
+bird
+We can subsample the pixels to make image smaller
+Less parameters for the network to process the image
+ 
+  
+
+
+        154.
+      
+    Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Three Steps for Deep Learning
+Deep Learning is so simple ……
+Convolutional
+Neural Network
+ 
+  
+
+
+        155.
+      
+    The whole CNN
+Fully Connected
+Feedforward network
+cat dog ……
+Convolution
+Max Pooling
+Convolution
+Max Pooling
+Flatten
+Can repeat
+many times
+ 
+  
+
+
+        156.
+      
+    The whole CNN
+Convolution
+Max Pooling
+Convolution
+Max Pooling
+Flatten
+Can repeat
+many times
+ Some patterns are much
+smaller than the whole image
+The same patterns appear in
+different regions.
+Subsampling the pixels will
+not change the object
+Property 1
+Property 2
+Property 3
+ 
+  
+
+
+        157.
+      
+    The whole CNN
+Fully Connected
+Feedforward network
+cat dog ……
+Convolution
+Max Pooling
+Convolution
+Max Pooling
+Flatten
+Can repeat
+many times
+ 
+  
+
+
+        158.
+      
+    CNN – Convolution
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+6 x 6 image
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Filter 1
+-1 1 -1
+-1 1 -1
+-1 1 -1
+Filter 2
+……
+Those are the network
+parameters to be learned.
+Matrix
+Matrix
+Each filter detects a small
+pattern (3 x 3).
+Property 1
+ 
+  
+
+
+        159.
+      
+    CNN – Convolution
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+6 x 6 image
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Filter 1
+3 -1
+stride=1
+ 
+  
+
+
+        160.
+      
+    CNN – Convolution
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+6 x 6 image
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Filter 1
+3 -3
+If stride=2
+We set stride=1 below
+ 
+  
+
+
+        161.
+      
+    CNN – Convolution
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+6 x 6 image
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Filter 1
+3 -1 -3 -1
+-3 1 0 -3
+-3 -3 0 1
+3 -2 -2 -1
+stride=1
+Property 2
+ 
+  
+
+
+        162.
+      
+    CNN – Convolution
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+6 x 6 image
+3 -1 -3 -1
+-3 1 0 -3
+-3 -3 0 1
+3 -2 -2 -1
+-1 1 -1
+-1 1 -1
+-1 1 -1
+Filter 2
+-1 -1 -1 -1
+-1 -1 -2 1
+-1 -1 -2 1
+-1 0 -4 3
+Do the same process for
+every filter
+stride=1
+4 x 4 image
+Feature
+Map
+ 
+  
+
+
+        163.
+      
+    CNN – Zero Padding
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+6 x 6 image
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Filter 1
+You will get another 6 x 6
+images in this way
+0
+Zero padding
+00
+0
+0
+0
+0
+000
+ 
+  
+
+
+        164.
+      
+    CNN – Colorful image
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Filter 1
+-1 1 -1
+-1 1 -1
+-1 1 -1
+Filter 2
+1 -1 -1
+-1 1 -1
+-1 -1 1
+1 -1 -1
+-1 1 -1
+-1 -1 1
+-1 1 -1
+-1 1 -1
+-1 1 -1
+-1 1 -1
+-1 1 -1
+-1 1 -1
+Colorful image
+ 
+  
+
+
+        165.
+      
+    The whole CNN
+Fully Connected
+Feedforward network
+cat dog ……
+Convolution
+Max Pooling
+Convolution
+Max Pooling
+Flatten
+Can repeat
+many times
+ 
+  
+
+
+        166.
+      
+    CNN – Max Pooling
+3 -1 -3 -1
+-3 1 0 -3
+-3 -3 0 1
+3 -2 -2 -1
+-1 1 -1
+-1 1 -1
+-1 1 -1
+Filter 2
+-1 -1 -1 -1
+-1 -1 -2 1
+-1 -1 -2 1
+-1 0 -4 3
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Filter 1
+ 
+  
+
+
+        167.
+      
+    CNN – Max Pooling
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+6 x 6 image
+3 0
+13
+-1 1
+30
+2 x 2 image
+Each filter
+is a channel
+New image
+but smaller
+Conv
+Max
+Pooling
+ 
+  
+
+
+        168.
+      
+    The whole CNN
+Convolution
+Max Pooling
+Convolution
+Max Pooling
+Can repeat
+many times
+A new image
+The number of the channel
+is the number of filters
+Smaller than the original
+image
+3 0
+13
+-1 1
+30
+ 
+  
+
+
+        169.
+      
+    The whole CNN
+Fully Connected
+Feedforward network
+cat dog ……
+Convolution
+Max Pooling
+Convolution
+Max Pooling
+Flatten
+A new image
+A new image
+ 
+  
+
+
+        170.
+      
+    Flatten
+3 0
+13
+-1 1
+30 Flatten
+3
+0
+1
+3
+-1
+1
+0
+3
+Fully Connected
+Feedforward network
+ 
+  
+
+
+        171.
+      
+    The whole CNN
+Convolution
+Max Pooling
+Convolution
+Max Pooling
+Can repeat
+many times
+ 
+  
+
+
+        172.
+      
+    Max
+1x
+2x
+Input
+Max
++ 5
++ 7
++ −1
++ 1
+7
+1
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+image
+convolution Max
+pooling
+-1 1 -1
+-1 1 -1
+-1 1 -1
+1 -1 -1
+-1 1 -1
+-1 -1 1
+(Ignoring the non-linear activation function after the convolution.)
+ 
+  
+
+
+        173.
+      
+    1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+6 x 6 image
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Filter 1
+1:
+2:
+3:
+…
+7:
+8:
+9:
+…
+13:
+14:
+15:… Only connect to 9
+input, not fully
+connected
+4:
+10:
+16:
+1
+0
+0
+0
+0
+1
+0
+0
+0
+0
+1
+1
+3
+Less parameters!
+ 
+  
+
+
+        174.
+      
+    1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Filter 1
+1:
+2:
+3:
+…
+7:
+8:
+9:
+…
+13:
+14:
+15:…
+4:
+10:
+16:
+1
+0
+0
+0
+0
+1
+0
+0
+0
+0
+1
+1
+3
+-1
+Shared weights
+6 x 6 image
+Less parameters!
+Even less parameters!
+ 
+  
+
+
+        175.
+      
+    Max
+1x
+2x
+Input
+Max
++ 5
++ 7
++ −1
++ 1
+7
+1
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+image
+convolution Max
+pooling
+-1 1 -1
+-1 1 -1
+-1 1 -1
+1 -1 -1
+-1 1 -1
+-1 -1 1
+(Ignoring the non-linear activation function after the convolution.)
+ 
+  
+
+
+        176.
+      
+    3 -1 -3 -1
+-3 1 0 -3
+-3 -3 0 1
+3 -2 -2 -1
+3 0
+13
+Max
+1x
+1x
+Input
+Max
++ 5
++ 7
++ −1
++ 1
+7
+1
+ 
+  
+
+
+        177.
+      
+    Max
+1x
+2x
+Input
+Max
++ 5
++ 7
++ −1
++ 1
+7
+1
+1 0 0 0 0 1
+0 1 0 0 1 0
+0 0 1 1 0 0
+1 0 0 0 1 0
+0 1 0 0 1 0
+0 0 1 0 1 0
+image
+convolution
+Max
+pooling
+-1 1 -1
+-1 1 -1
+-1 1 -1
+1 -1 -1
+-1 1 -1
+-1 -1 1
+Only 9 x 2 = 18
+parameters
+Dim = 6 x 6 = 36
+Dim = 4 x 4 x 2
+= 32
+parameters =
+36 x 32 = 1152
+ 
+  
+
+
+        178.
+      
+    Convolutional Neural Network
+Learning: Nothing special, just gradient descent ……
+CNN
+“monkey”
+“cat”
+“dog”
+Convolution, Max
+Pooling, fully connected
+1
+0
+0
+……
+target
+Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Convolutional
+Neural Network
+ 
+  
+
+
+        179.
+      
+    Playing Go
+Network (19 x 19
+positions)
+Next move
+19 x 19 vector
+Black: 1
+white: -1
+none: 0
+19 x 19 vector
+Fully-connected feedword
+network can be used
+But CNN performs much better.
+19 x 19 matrix
+(image)
+ 
+  
+
+
+        180.
+      
+    Playing Go
+Network
+Network
+record of previous plays
+Target:
+“天元” = 1
+else = 0
+Target:
+“五之 5” = 1
+else = 0
+Training:
+進藤光 v.s. 社清春
+黑: 5之五
+白: 天元
+黑: 五之5
+ 
+  
+
+
+        181.
+      
+    Why CNN for playing Go?
+• Some patterns are much smaller than the whole
+image
+• The same patterns appear in different regions.
+Alpha Go uses 5 x 5 for first layer
+ 
+  
+
+
+        182.
+      
+    Why CNN for playing Go?
+• Subsampling the pixels will not change the object
+Alpha Go does not use Max Pooling ……
+Max Pooling How to explain this???
+ 
+  
+
+
+        183.
+      
+    Variants of Neural Networks
+Convolutional Neural
+Network (CNN)
+Recurrent Neural Network
+(RNN) Neural Network with Memory
+ 
+  
+
+
+        184.
+      
+    Example Application
+• Slot Filling
+I would like to arrive Taipei on November 2nd.
+ticket booking system
+Destination:
+time of arrival:
+Taipei
+November 2nd
+Slot
+ 
+  
+
+
+        185.
+      
+    Example Application
+1x 2x
+2y1y
+Taipei
+Input: a word
+(Each word is represented
+as a vector)
+Solving slot filling by
+Feedforward network?
+ 
+  
+
+
+        186.
+      
+    1-of-N encoding
+Each dimension corresponds
+to a word in the lexicon
+The dimension for the word
+is 1, and others are 0
+lexicon = {apple, bag, cat, dog, elephant}
+apple = [ 1 0 0 0 0]
+bag = [ 0 1 0 0 0]
+cat = [ 0 0 1 0 0]
+dog = [ 0 0 0 1 0]
+elephant = [ 0 0 0 0 1]
+The vector is lexicon size.
+1-of-N Encoding
+How to represent each word as a vector?
+ 
+  
+
+
+        187.
+      
+    Beyond 1-of-N encoding
+w = “apple”
+a-a-a
+a-a-b
+p-p-l
+26 X 26 X 26
+……
+a-p-p
+…
+p-l-e
+…
+…………
+1
+1
+1
+0
+0
+Word hashingDimension for “Other”
+w = “Sauron”
+…
+apple
+bag
+cat
+dog
+elephant
+“other”
+0
+0
+0
+0
+0
+1
+w = “Gandalf”
+187
+ 
+  
+
+
+        188.
+      
+    Example Application
+1x 2x
+2y1y
+Taipei
+dest
+time of
+departure
+Input: a word
+(Each word is represented
+as a vector)
+Output:
+Probability distribution that
+the input word belonging to
+the slots
+Solving slot filling by
+Feedforward network?
+ 
+  
+
+
+        189.
+      
+    Example Application
+1x 2x
+2y1y
+Taipei
+arrive Taipei on November 2nd
+other otherdest time time
+leave Taipei on November 2nd
+place of departure
+Neural network
+needs memory!
+dest
+time of
+departure
+Problem?
+ 
+  
+
+
+        190.
+      
+    Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Three Steps for Deep Learning
+Deep Learning is so simple ……
+Recurrent
+Neural Network
+ 
+  
+
+
+        191.
+      
+    Recurrent Neural Network (RNN)
+1x 2x
+2y1y
+1a 2a
+Memory can be considered
+as another input.
+The output of hidden layer
+are stored in the memory.
+store
+ 
+  
+
+
+        192.
+      
+    RNN
+store store
+x1
+x2 x3
+y1 y2
+y3
+a1
+a1
+a2
+a2 a3
+The same network is used again and again.
+arrive Taipei on November 2nd
+Probability of
+“arrive” in each slot
+Probability of
+“Taipei” in each slot
+Probability of
+“on” in each slot
+ 
+  
+
+
+        193.
+      
+    RNN
+store
+x1 x2
+y1 y2
+a1
+a1
+a2
+……
+……
+……
+store
+x1 x2
+y1 y2
+a1
+a1
+a2
+……
+……
+……
+leave Taipei
+Prob of “leave”
+in each slot
+Prob of “Taipei”
+in each slot
+Prob of “arrive”
+in each slot
+Prob of “Taipei”
+in each slot
+arrive Taipei
+Different
+The values stored in the memory is different.
+ 
+  
+
+
+        194.
+      
+    Of course it can be deep …
+…… ……
+xt
+xt+1 xt+2
+……
+……yt
+……
+……
+yt+1
+……
+yt+2
+……
+……
+ 
+  
+
+
+        195.
+      
+    Bidirectional RNN
+yt+1
+…… ……
+…………
+yt+2yt
+xt xt+1 xt+2
+xt
+xt+1 xt+2
+ 
+  
+
+
+        196.
+      
+    Memory
+Cell
+Long Short-term Memory (LSTM)
+Input Gate
+Output Gate
+Signal control
+the input gate
+Signal control
+the output gate
+Forget
+Gate
+Signal control
+the forget gate
+Other part of the network
+Other part of the network
+(Other part of
+the network)
+(Other part of
+the network)
+(Other part of
+the network)
+LSTM
+Special Neuron:
+4 inputs,
+1 output
+ 
+  
+
+
+        197.
+      
+    𝑧
+𝑧𝑖
+𝑧𝑓
+𝑧 𝑜
+𝑔 𝑧
+𝑓 𝑧𝑖
+multiply
+multiply
+Activation function f is
+usually a sigmoid function
+Between 0 and 1
+Mimic open and close gate
+c
+𝑐′ = 𝑔 𝑧 𝑓 𝑧𝑖 + 𝑐𝑓 𝑧𝑓
+ℎ 𝑐′𝑓 𝑧 𝑜
+𝑎 = ℎ 𝑐′
+𝑓 𝑧 𝑜
+𝑔 𝑧 𝑓 𝑧𝑖
+𝑐′
+𝑓 𝑧𝑓
+𝑐𝑓 𝑧𝑓
+𝑐
+ 
+  
+
+
+        198.
+      
+    7
+3
+10
+-10
+10
+3
+≈1 3
+≈1
+10
+10
+≈0
+0
+ 
+  
+
+
+        199.
+      
+    7
+-3
+10
+10
+-10
+≈1
+≈0
+10
+≈1
+-3
+-3
+-3
+-3
+-3
+ 
+  
+
+
+        200.
+      
+    LSTM
+ct-1
+……
+vector
+xt
+zzizf zo 4 vectors
+ 
+  
+
+
+        201.
+      
+    LSTM
+xt
+zzi
+×
+zf zo
+× ＋ ×
+yt
+ct-1
+z
+zi
+zf
+zo
+ 
+  
+
+
+        202.
+      
+    LSTM
+xt
+zzi
+×
+zf zo
+× ＋ ×
+yt
+xt+1
+zzi
+×
+zf zo
+× ＋ ×
+yt+1
+ht
+Extension: “peephole”
+ht-1 ctct-1
+ct-1 ct
+ct+1
+ 
+  
+
+
+        203.
+      
+    Multiple-layer
+LSTM
+This is quite
+standard now.
+https://img.komicolle.org/2015-09-20/src/14426967627131.gif
+Don’t worry if you cannot understand this.
+Keras can handle it.
+Keras supports
+“LSTM”, “GRU”, “SimpleRNN” layers
+ 
+  
+
+
+        204.
+      
+    Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Three Steps for Deep Learning
+Deep Learning is so simple ……
+ 
+  
+
+
+        205.
+      
+    copy copy
+x1
+x2 x3
+y1 y2
+y3
+Wi
+a1
+a1
+a2
+a2 a3
+arrive Taipei on November 2nd
+Training
+Sentences:
+Learning Target
+other otherdest
+10 0 10 010 0
+other dest other
+… … … … … …
+time time
+ 
+  
+
+
+        206.
+      
+    Step 1:
+define a set
+of function
+Step 2:
+goodness of
+function
+Step 3: pick
+the best
+function
+Three Steps for Deep Learning
+Deep Learning is so simple ……
+ 
+  
+
+
+        207.
+      
+    Learning
+RNN Learning is very difficult in practice.
+Backpropagation
+through time (BPTT)
+𝑤 ← 𝑤 − 𝜂𝜕𝐿 ∕ 𝜕𝑤 1x 2x
+2y1y
+1a 2a
+copy
+𝑤
+ 
+  
+
+
+        208.
+      
+    Unfortunately ……
+• RNN-based network is not always easy to learn
+感謝 曾柏翔 同學
+提供實驗結果
+Real experiments on Language modeling
+Lucky
+sometimes
+TotalLoss
+Epoch
+ 
+  
+
+
+        209.
+      
+    The error surface is rough.
+w1
+w2
+Cost
+The error surface is either
+very flat or very steep.
+Clipping
+[Razvan Pascanu, ICML’13]
+TotalLoss
+ 
+  
+
+
+        210.
+      
+    Why?
+1
+1
+y1
+0
+1
+w
+y2
+0
+1
+w
+y3
+0
+1
+w
+y1000
+……
+𝑤 = 1
+𝑤 = 1.01
+𝑦1000
+= 1
+𝑦1000 ≈ 20000
+𝑤 = 0.99
+𝑤 = 0.01
+𝑦1000 ≈ 0
+𝑦1000 ≈ 0
+1 1 1 1
+Large
+𝜕𝐿 𝜕𝑤
+Small
+Learning rate?
+small
+𝜕𝐿 𝜕𝑤
+Large
+Learning rate?
+Toy Example
+=w999
+ 
+  
+
+
+        211.
+      
+    add
+• Long Short-term Memory (LSTM)
+• Can deal with gradient vanishing (not gradient
+explode)
+Helpful Techniques
+Memory and input are
+added
+The influence never disappears
+unless forget gate is closed
+No Gradient vanishing
+(If forget gate is opened.)
+[Cho, EMNLP’14]
+Gated Recurrent Unit (GRU):
+simpler than LSTM
+ 
+  
+
+
+        212.
+      
+    Helpful Techniques
+Vanilla RNN Initialized with Identity matrix + ReLU activation
+function [Quoc V. Le, arXiv’15]
+ Outperform or be comparable with LSTM in 4 different tasks
+[Jan Koutnik, JMLR’14]
+Clockwise RNN
+[Tomas Mikolov, ICLR’15]
+Structurally Constrained
+Recurrent Network (SCRN)
+ 
+  
+
+
+        213.
+      
+    More Applications ……
+store store
+x1
+x2 x3
+y1 y2
+y3
+a1
+a1
+a2
+a2 a3
+arrive Taipei on November 2nd
+Probability of
+“arrive” in each slot
+Probability of
+“Taipei” in each slot
+Probability of
+“on” in each slot
+Input and output are both sequences
+with the same length
+RNN can do more than that!
+ 
+  
+
+
+        214.
+      
+    Many to one
+• Input is a vector sequence, but output is only one vector
+Sentiment Analysis
+……
+我 覺 太得 糟 了
+超好雷
+好雷
+普雷
+負雷
+超負雷
+看了這部電影覺
+得很高興 …….
+這部電影太糟了
+…….
+這部電影很
+棒 …….
+Positive (正雷) Negative (負雷) Positive (正雷)
+……
+Keras Example:
+https://github.com/fchollet/keras/blob
+/master/examples/imdb_lstm.py
+ 
+  
+
+
+        215.
+      
+    Many to Many (Output is shorter)
+• Both input and output are both sequences, but the output
+is shorter.
+• E.g. Speech Recognition
+好 好 好
+Trimming
+棒 棒 棒 棒 棒
+“好棒”
+Why can’t it be
+“好棒棒”
+Input:
+Output: (character sequence)
+(vector
+sequence)
+Problem?
+ 
+  
+
+
+        216.
+      
+    Many to Many (Output is shorter)
+• Both input and output are both sequences, but the output
+is shorter.
+• Connectionist Temporal Classification (CTC) [Alex Graves,
+ICML’06][Alex Graves, ICML’14][Haşim Sak, Interspeech’15][Jie Li,
+Interspeech’15][Andrew Senior, ASRU’15]
+好 φ φ 棒 φ φ φ φ 好 φ φ 棒 φ 棒 φ φ
+“好棒” “好棒棒”Add an extra symbol “φ”
+representing “null”
+ 
+  
+
+
+        217.
+      
+    Many to Many (No Limitation)
+• Both input and output are both sequences with different
+lengths. → Sequence to sequence learning
+• E.g. Machine Translation (machine learning→機器學習)
+Containing all
+information about
+input sequence
+learning
+machine
+ 
+  
+
+
+        218.
+      
+    learning
+Many to Many (No Limitation)
+• Both input and output are both sequences with different
+lengths. → Sequence to sequence learning
+• E.g. Machine Translation (machine learning→機器學習)
+machine
+機 習器 學
+……
+……
+Don’t know when to stop
+慣 性
+ 
+  
+
+
+        219.
+      
+    Many to Many (No Limitation)
+推 tlkagk: =========斷==========
+Ref:http://zh.pttpedia.wikia.com/wiki/%E6%8E%A5%E9%BE%8D%
+E6%8E%A8%E6%96%87 (鄉民百科)
+ 
+  
+
+
+        220.
+      
+    learning
+Many to Many (No Limitation)
+• Both input and output are both sequences with different
+lengths. → Sequence to sequence learning
+• E.g. Machine Translation (machine learning→機器學習)
+machine
+機 習器 學
+Add a symbol “===“ (斷)
+[Ilya Sutskever, NIPS’14][Dzmitry Bahdanau, arXiv’15]
+===
+ 
+  
+
+
+        221.
+      
+    One to Many
+• Input an image, but output a sequence of words
+Input
+image
+a woman is
+……
+===
+CNN
+A vector
+for whole
+image
+[Kelvin Xu, arXiv’15][Li Yao, ICCV’15]
+Caption Generation
+ 
+  
+
+
+        222.
+      
+    Application:
+Video Caption Generation
+Video
+A girl is running.
+A group of people is
+walking in the forest.
+A group of people is
+knocked by a tree.
+ 
+  
+
+
+        223.
+      
+    Video Caption Generation
+• Can machine describe what it see from video?
+• Demo: 曾柏翔、吳柏瑜、盧宏宗
+ 
+  
+
+
+        224.
+      
+    Concluding Remarks
+Convolutional Neural
+Network (CNN)
+Recurrent Neural Network
+(RNN)
+ 
+  
+
+
+        225.
+      
+    Lecture IV:
+Next Wave
+ 
+  
+
+
+        226.
+      
+    Outline
+Supervised Learning
+• Ultra Deep Network
+• Attention Model
+Reinforcement Learning
+Unsupervised Learning
+• Image: Realizing what the World Looks Like
+• Text: Understanding the Meaning of Words
+• Audio: Learning human language without supervision
+New network structure
+ 
+  
+
+
+        227.
+      
+    Skyscraper
+https://zh.wikipedia.org/wiki/%E9%9B%99%E5%B3%B0%E5%A1%94#/me
+dia/File:BurjDubaiHeight.svg
+ 
+  
+
+
+        228.
+      
+    Ultra Deep Network
+8 layers
+19 layers
+22 layers
+AlexNet (2012) VGG (2014) GoogleNet (2014)
+16.4%
+7.3%
+6.7%
+http://cs231n.stanford.e
+du/slides/winter1516_le
+cture8.pdf
+ 
+  
+
+
+        229.
+      
+    Ultra Deep Network
+AlexNet
+(2012)
+VGG
+(2014)
+GoogleNet
+(2014)
+152 layers
+3.57%
+Residual Net
+(2015)
+Taipei
+101
+101 layers
+16.4%
+7.3% 6.7%
+ 
+  
+
+
+        230.
+      
+    Ultra Deep Network
+AlexNet
+(2012)
+VGG
+(2014)
+GoogleNet
+(2014)
+152 layers
+3.57%
+Residual Net
+(2015)
+16.4%
+7.3% 6.7%
+This ultra deep network
+have special structure.
+Worry about overfitting?
+Worry about training
+first!
+ 
+  
+
+
+        231.
+      
+    Ultra Deep Network
+• Ultra deep network is the
+ensemble of many networks
+with different depth.
+6 layers
+4 layers
+2 layers
+Ensemble
+ 
+  
+
+
+        232.
+      
+    Ultra Deep Network
+• FractalNet
+Resnet in Resnet
+Good Initialization?
+ 
+  
+
+
+        233.
+      
+    Ultra Deep Network
+• •
++
+copy
+copy
+Gate
+controller
+ 
+  
+
+
+        234.
+      
+    Input layer
+output layer
+Input layer
+output layer
+Input layer
+output layer
+Highway Network automatically
+determines the layers needed!
+ 
+  
+
+
+        235.
+      
+    Outline
+Supervised Learning
+• Ultra Deep Network
+• Attention Model
+Reinforcement Learning
+Unsupervised Learning
+• Image: Realizing what the World Looks Like
+• Text: Understanding the Meaning of Words
+• Audio: Learning human language without supervision
+New network structure
+ 
+  
+
+
+        236.
+      
+    Organize
+Attention-based Model
+http://henrylo1605.blogspot.tw/2015/05/blog-post_56.html
+Lunch todayWhat you learned
+in these lectures
+summer
+vacation 10
+years ago
+What is deep
+learning?
+Answer
+ 
+  
+
+
+        237.
+      
+    Attention-based Model
+Reading Head
+Controller
+Input
+Reading Head
+output
+…… ……
+Machine’s Memory
+DNN/RNN
+Ref:
+http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/Attain%20(v3).e
+cm.mp4/index.html
+ 
+  
+
+
+        238.
+      
+    Attention-based Model v2
+Reading Head
+Controller
+Input
+Reading Head
+output
+…… ……
+Machine’s Memory
+DNN/RNN
+Neural Turing Machine
+Writing Head
+Controller
+Writing Head
+ 
+  
+
+
+        239.
+      
+    Reading Comprehension
+Query
+Each sentence becomes a vector.
+……
+DNN/RNN
+Reading Head
+Controller
+……
+answer
+Semantic
+Analysis
+ 
+  
+
+
+        240.
+      
+    Reading Comprehension
+• End-To-End Memory Networks. S. Sukhbaatar, A. Szlam, J.
+Weston, R. Fergus. NIPS, 2015.
+The position of reading head:
+Keras has example:
+https://github.com/fchollet/keras/blob/master/examples/ba
+bi_memnn.py
+ 
+  
+
+
+        241.
+      
+    Visual Question Answering
+source: http://visualqa.org/
+ 
+  
+
+
+        242.
+      
+    Visual Question Answering
+Query DNN/RNN
+Reading Head
+Controller
+answer
+CNN A vector for
+each region
+ 
+  
+
+
+        243.
+      
+    Visual Question Answering
+• Huijuan Xu, Kate Saenko. Ask, Attend and Answer: Exploring
+Question-Guided Spatial Attention for Visual Question
+Answering. arXiv Pre-Print, 2015
+ 
+  
+
+
+        244.
+      
+    Speech Question Answering
+• TOEFL Listening Comprehension Test by Machine
+• Example:
+Question: “ What is a possible origin of Venus’ clouds? ”
+Audio Story:
+Choices:
+(A) gases released as a result of volcanic activity
+(B) chemical reactions caused by high surface temperatures
+(C) bursts of radio energy from the plane's surface
+(D) strong winds that blow dust into the atmosphere
+(The original story is 5 min long.)
+ 
+  
+
+
+        245.
+      
+    Simple Baselines
+Accuracy(%)
+(1) (2) (3) (4) (5) (6) (7)
+Naive Approaches
+random
+(4) the choice with semantic
+most similar to others
+(2) select the shortest
+choice as answer
+Experimental setup:
+717 for training,
+124 for validation, 122 for testing
+ 
+  
+
+
+        246.
+      
+    Model Architecture
+“what is a possible
+origin of Venus‘ clouds?"
+Question:
+Question
+Semantics
+…… It be quite possible that this be
+due to volcanic eruption because
+volcanic eruption often emit gas. If
+that be the case volcanism could very
+well be the root cause of Venus 's thick
+cloud cover. And also we have observe
+burst of radio energy from the planet
+'s surface. These burst be similar to
+what we see when volcano erupt on
+earth ……
+Audio Story:
+Speech
+Recognition
+Semantic
+Analysis
+Semantic
+Analysis
+Attention
+Answer
+Select the choice most
+similar to the answer
+Attention
+Everything is learned
+from training examples
+ 
+  
+
+
+        247.
+      
+    Model Architecture
+Word-based Attention
+ 
+  
+
+
+        248.
+      
+    Model Architecture
+Sentence-based Attention
+ 
+  
+
+
+        249.
+      
+    (A)
+(A) (A) (A) (A)
+(B) (B) (B)
+ 
+  
+
+
+        250.
+      
+    Supervised Learning
+Accuracy(%)
+(1) (2) (3) (4) (5) (6) (7)
+Memory Network: 39.2%
+Naive Approaches
+(proposed by FB AI group)
+ 
+  
+
+
+        251.
+      
+    Supervised Learning
+Accuracy(%)
+(1) (2) (3) (4) (5) (6) (7)
+Memory Network: 39.2%
+Naive Approaches
+Word-based Attention: 48.8%
+(proposed by FB AI group)
+[Fang & Hsu & Lee, SLT 16]
+[Tseng & Lee, Interspeech 16]
+ 
+  
+
+
+        252.
+      
+    Outline
+Supervised Learning
+• Ultra Deep Network
+• Attention Model
+Reinforcement Learning
+Unsupervised Learning
+• Image: Realizing what the World Looks Like
+• Text: Understanding the Meaning of Words
+• Audio: Learning human language without supervision
+New network structure
+ 
+  
+
+
+        253.
+      
+    Scenario of Reinforcement
+Learning
+Agent
+Environment
+Observation Action
+RewardDon’t do
+that
+ 
+  
+
+
+        254.
+      
+    Scenario of Reinforcement
+Learning
+Agent
+Environment
+Observation Action
+RewardThank you.
+Agent learns to take actions to
+maximize expected reward.
+http://www.sznews.com/news/conte
+nt/2013-11/26/content_8800180.htm
+ 
+  
+
+
+        255.
+      
+    Supervised v.s. Reinforcement
+• Supervised
+• Reinforcement
+Hello 
+Agent
+……
+Agent
+……. ……. ……
+Bad
+“Hello” Say “Hi”
+“Bye bye” Say “Good bye”
+Learning from
+teacher
+Learning from
+critics
+ 
+  
+
+
+        256.
+      
+    Scenario of Reinforcement
+Learning
+Environment
+Observation Action
+Reward Next Move
+If win, reward = 1
+If loss, reward = -1
+Otherwise, reward = 0
+Agent learns to take actions to
+maximize expected reward.
+ 
+  
+
+
+        257.
+      
+    Supervised v.s. Reinforcement
+• Supervised:
+• Reinforcement Learning
+Next move:
+“5-5”
+Next move:
+“3-3”
+First move …… many moves …… Win!
+Alpha Go is supervised learning + reinforcement learning.
+ 
+  
+
+
+        258.
+      
+    Difficulties of Reinforcement
+Learning
+• It may be better to sacrifice immediate reward to
+gain more long-term reward
+• E.g. Playing Go
+• Agent’s actions affect the subsequent data it
+receives
+• E.g. Exploration
+ 
+  
+
+
+        259.
+      
+    Deep Reinforcement Learning
+Environment
+Observation Action
+Reward
+Function
+Input
+Function
+Output
+Used to pick the
+best function
+…
+……
+DNN
+ 
+  
+
+
+        260.
+      
+    Application: Interactive Retrieval
+• Interactive retrieval is helpful.
+user
+“Deep Learning”
+“Deep Learning” related to Machine Learning?
+“Deep Learning” related to Education?
+[Wu & Lee, INTERSPEECH 16]
+ 
+  
+
+
+        261.
+      
+    Deep Reinforcement Learning
+• Different network depth
+Better retrieval
+performance,
+Less user labor
+The task cannot be addressed
+by linear model.
+Some depth is needed.
+More Interaction
+ 
+  
+
+
+        262.
+      
+    More applications
+• Alpha Go, Playing Video Games, Dialogue
+• Flying Helicopter
+• https://www.youtube.com/watch?v=0JL04JJjocc
+• Driving
+• https://www.youtube.com/watch?v=0xo1Ldx3L
+5Q
+• Google Cuts Its Giant Electricity Bill With
+DeepMind-Powered AI
+• http://www.bloomberg.com/news/articles/2016-07-
+19/google-cuts-its-giant-electricity-bill-with-deepmind-
+powered-ai
+ 
+  
+
+
+        263.
+      
+    To learn deep reinforcement
+learning ……
+• Lectures of David Silver
+• http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Te
+aching.html
+• 10 lectures (1:30 each)
+• Deep Reinforcement Learning
+• http://videolectures.net/rldm2015_silver_reinfo
+rcement_learning/
+ 
+  
+
+
+        264.
+      
+    Outline
+Supervised Learning
+• Ultra Deep Network
+• Attention Model
+Reinforcement Learning
+Unsupervised Learning
+• Image: Realizing what the World Looks Like
+• Text: Understanding the Meaning of Words
+• Audio: Learning human language without supervision
+New network structure
+ 
+  
+
+
+        265.
+      
+    Does machine know what the
+world look like?
+Draw something!
+Ref: https://openai.com/blog/generative-models/
+ 
+  
+
+
+        266.
+      
+    Deep Dream
+• Given a photo, machine adds what it sees ……
+http://deepdreamgenerator.com/
+ 
+  
+
+
+        267.
+      
+    Deep Dream
+• Given a photo, machine adds what it sees ……
+http://deepdreamgenerator.com/
+ 
+  
+
+
+        268.
+      
+    Deep Style
+• Given a photo, make its style like famous paintings
+https://dreamscopeapp.com/
+ 
+  
+
+
+        269.
+      
+    Deep Style
+• Given a photo, make its style like famous paintings
+https://dreamscopeapp.com/
+ 
+  
+
+
+        270.
+      
+    Deep Style
+CNN CNN
+content style
+CNN
+?
+ 
+  
+
+
+        271.
+      
+    Generating Images by RNN
+color of
+1st pixel
+color of
+2nd pixel
+color of
+2nd pixel
+color of
+3rd pixel
+color of
+3rd pixel
+color of
+4th pixel
+ 
+  
+
+
+        272.
+      
+    Generating Images by RNN
+• Pixel Recurrent Neural Networks
+• https://arxiv.org/abs/1601.06759
+Real
+World
+ 
+  
+
+
+        273.
+      
+    Generating Images
+• Training a decoder to generate images is
+unsupervised
+Neural Network
+? Training data is a lot of imagescode
+ 
+  
+
+
+        274.
+      
+    Auto-encoder
+NN
+Encoder
+NN
+Decoder
+code
+code
+Learn togetherInputLayer
+bottle
+OutputLayer
+Layer
+Layer
+… …
+Code
+As close as possible
+Layer
+Layer
+Encoder Decoder
+Not state-of-
+the-art
+approach
+ 
+  
+
+
+        275.
+      
+    Generating Images
+• Training a decoder to generate images is
+unsupervised
+• Variation Auto-encoder (VAE)
+• Ref: Auto-Encoding Variational Bayes,
+https://arxiv.org/abs/1312.6114
+• Generative Adversarial Network (GAN)
+• Ref: Generative Adversarial Networks,
+http://arxiv.org/abs/1406.2661
+NN
+Decoder
+code
+ 
+  
+
+
+        276.
+      
+    Which one is machine-generated?
+Ref: https://openai.com/blog/generative-models/
+ 
+  
+
+
+        277.
+      
+    畫漫畫!!! https://github.com/mattya/chainer-DCGAN
+ 
+  
+
+
+        278.
+      
+    Outline
+Supervised Learning
+• Ultra Deep Network
+• Attention Model
+Reinforcement Learning
+Unsupervised Learning
+• Image: Realizing what the World Looks Like
+• Text: Understanding the Meaning of Words
+• Audio: Learning human language without supervision
+New network structure
+ 
+  
+
+
+        279.
+      
+    http://top-breaking-news.com/
+Machine Reading
+• Machine learn the meaning of words from reading
+a lot of documents without supervision
+ 
+  
+
+
+        280.
+      
+    Machine Reading
+• Machine learn the meaning of words from reading
+a lot of documents without supervision
+dog
+cat
+rabbit
+jump
+run
+flower
+tree
+Word Vector / Embedding
+ 
+  
+
+
+        281.
+      
+    Machine Reading
+• Generating Word Vector/Embedding is
+unsupervised
+Neural Network
+Apple
+https://garavato.files.wordpress.com/2011/11/stacksdocuments.jpg?w=490
+Training data is a lot of text
+?
+ 
+  
+
+
+        282.
+      
+    Machine Reading
+• Machine learn the meaning of words from reading
+a lot of documents without supervision
+• A word can be understood by its context
+蔡英文 520宣誓就職
+馬英九 520宣誓就職
+蔡英文、馬英九 are
+something very similar
+You shall know a word
+by the company it keeps
+ 
+  
+
+
+        283.
+      
+    Word Vector
+Source: http://www.slideshare.net/hustwj/cikm-keynotenov2014
+283
+ 
+  
+
+
+        284.
+      
+    Word Vector
+• Characteristics
+• Solving analogies
+𝑉 ℎ𝑜𝑡𝑡𝑒𝑟 − 𝑉 ℎ𝑜𝑡 ≈ 𝑉 𝑏𝑖𝑔𝑔𝑒𝑟 − 𝑉 𝑏𝑖𝑔
+𝑉 𝑅𝑜𝑚𝑒 − 𝑉 𝐼𝑡𝑎𝑙𝑦 ≈ 𝑉 𝐵𝑒𝑟𝑙𝑖𝑛 − 𝑉 𝐺𝑒𝑟𝑚𝑎𝑛𝑦
+𝑉 𝑘𝑖𝑛𝑔 − 𝑉 𝑞𝑢𝑒𝑒𝑛 ≈ 𝑉 𝑢𝑛𝑐𝑙𝑒 − 𝑉 𝑎𝑢𝑛𝑡
+Rome : Italy = Berlin : ?
+𝑉 𝐺𝑒𝑟𝑚𝑎𝑛𝑦
+≈ 𝑉 𝐵𝑒𝑟𝑙𝑖𝑛 − 𝑉 𝑅𝑜𝑚𝑒 + 𝑉 𝐼𝑡𝑎𝑙𝑦
+Compute 𝑉 𝐵𝑒𝑟𝑙𝑖𝑛 − 𝑉 𝑅𝑜𝑚𝑒 + 𝑉 𝐼𝑡𝑎𝑙𝑦
+Find the word w with the closest V(w)
+284
+ 
+  
+
+
+        285.
+      
+    Machine Reading
+• Machine learn the meaning of words from reading
+a lot of documents without supervision
+ 
+  
+
+
+        286.
+      
+    Demo
+• Model used in demo is provided by 陳仰德
+• Part of the project done by 陳仰德、林資偉
+• TA: 劉元銘
+• Training data is from PTT (collected by 葉青峰)
+286
+ 
+  
+
+
+        287.
+      
+    Outline
+Supervised Learning
+• Ultra Deep Network
+• Attention Model
+Reinforcement Learning
+Unsupervised Learning
+• Image: Realizing what the World Looks Like
+• Text: Understanding the Meaning of Words
+• Audio: Learning human language without supervision
+New network structure
+ 
+  
+
+
+        288.
+      
+    Learning from Audio Book
+Machine listens to lots of
+audio book
+[Chung, Interspeech 16)
+Machine does not have
+any prior knowledge
+Like an infant
+ 
+  
+
+
+        289.
+      
+    Audio Word to Vector
+• Audio segment corresponding to an unknown word
+Fixed-length vector
+ 
+  
+
+
+        290.
+      
+    Audio Word to Vector
+• The audio segments corresponding to words with
+similar pronunciations are close to each other.
+ever ever
+never
+never
+never
+dog
+dog
+dogs
+ 
+  
+
+
+        291.
+      
+    Sequence-to-sequence
+Auto-encoder
+audio segment
+acoustic features
+The values in the memory
+represent the whole audio
+segment
+x1 x2 x3 x4
+RNN Encoder
+audio segment
+vector
+The vector we want
+How to train RNN Encoder?
+ 
+  
+
+
+        292.
+      
+    Sequence-to-sequence
+Auto-encoder
+RNN Decoder
+x1 x2 x3 x4
+y1 y2 y3 y4
+x1 x2 x3
+x4
+RNN Encoder
+audio segment
+acoustic features
+The RNN encoder and
+decoder are jointly trained.
+Input acoustic features
+ 
+  
+
+
+        293.
+      
+    Audio Word to Vector
+- Results
+• Visualizing embedding vectors of the words
+fear
+nearname
+fame
+ 
+  
+
+
+        294.
+      
+    WaveNet (DeepMind)
+https://deepmind.com/blog/wavenet-generative-model-raw-audio/
+ 
+  
+
+
+        295.
+      
+    Concluding Remarks
+ 
+  
+
+
+        296.
+      
+    Concluding Remarks
+Lecture IV: Next Wave
+Lecture III: Variants of Neural Network
+Lecture II: Tips for Training Deep Neural Network
+Lecture I: Introduction of Deep Learning
+ 
+  
+
+
+        297.
+      
+    AI 即將取代多數的工作?
+• New Job in AI Age
+http://www.express.co.uk/news/science/651202/First-step-towards-The-Terminator-
+becoming-reality-AI-beats-champ-of-world-s-oldest-game
+AI 訓練師
+(機器學習專家、
+資料科學家)
+ 
+  
+
+
+        298.
+      
+    AI 訓練師
+機器不是自己會學嗎？
+為什麼需要 AI 訓練師
+戰鬥是寶可夢在打，
+為什麼需要寶可夢訓練師？
+ 
+  
+
+
+        299.
+      
+    AI 訓練師
+寶可夢訓練師
+• 寶可夢訓練師要挑選適合
+的寶可夢來戰鬥
+• 寶可夢有不同的屬性
+• 召喚出來的寶可夢不一定
+能操控
+• E.g. 小智的噴火龍
+• 需要足夠的經驗
+AI 訓練師
+• 在 step 1，AI訓練師要挑
+選合適的模型
+• 不同模型適合處理不
+同的問題
+• 不一定能在 step 3 找出
+best function
+• E.g. Deep Learning
+• 需要足夠的經驗
+ 
+  
+
+
+        300.
+      
+    AI 訓練師
+• 厲害的 AI ， AI 訓練師功不可沒
+• 讓我們一起朝 AI 訓練師之路邁進
+http://www.gvm.com.tw/web
+only_content_10787.html
+ 
+  
+
+
+
+
+
+
+
+
+        Recommended
+      
+
+
+
+
+
+
+
+
+
+
+
+
+        Techniques and Concepts of Big Data
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Foundations of Programming: Databases
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Up and Running with NoSQL Databases
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [系列活動] 手把手的深度學習實務
+      
+台灣資料科學年會
+
+
+
+
+
+
+
+
+
+
+        Deep Learning Computer Build
+      
+Petteri Teikari, PhD
+
+
+
+
+
+
+
+
+
+
+        [系列活動] Machine Learning 機器學習課程
+      
+台灣資料科學年會
+
+
+
+
+
+
+
+
+
+
+        Deep Learning - The Past, Present and Future of Artificial Intelligence
+      
+Lukas Masuch
+
+
+
+
+
+
+
+
+
+
+        Deep Learning through Examples
+      
+Sri Ambati
+
+
+
+
+
+
+
+
+
+
+        Transform your Business with AI, Deep Learning and Machine Learning
+      
+Sri Ambati
+
+
+
+
+
+
+
+
+
+
+        Visual Detection, Recognition and Tracking with Deep Learning
+      
+Yu Huang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+
+
+Share Clipboard
+
+×
+
+
+Email
+
+
+
+
+
+
+
+
+
+Email sent successfully..
+
+
+
+
+
+Facebook
+
+
+Twitter
+
+
+LinkedIn
+
+
+
+Google+
+
+
+
+
+
+
+Link
+
+
+
+
+
+
+
+Public clipboards featuring this slide
+
+×
+
+
+
+
+    No public clipboards found for this slide
+  
+
+
+
+
+
+
+×
+
+
+
+Save the most important slides with Clipping
+
+
+
+
+Clipping is a handy way to collect and organize the most important slides from a presentation. You can keep your great finds in clipboards organized around topics.
+Start clipping
+No thanks. Continue to download.
+
+
+
+
+
+
+
+
+Select another clipboard
+
+×
+
+
+
+
+
+
+Looks like you’ve clipped this slide to  already.
+
+
+
+
+
+
+
+
+
+
+
+
+Create a clipboard
+
+
+
+
+
+
+You just clipped your first slide!
+
+        Clipping is a handy way to collect important slides you want to go back to later. Now customize the name of a clipboard to store your clips.
+      
+
+
+
+
+
+
+Name*
+          
+
+
+
+
+
+
+Description
+          
+
+
+
+
+
+Visibility
+        
+Others can see my Clipboard
+
+
+
+
+
+
+
+Cancel
+Save
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+深度學習技術帶來了人工智慧的大躍進｜數位時代About us廣告刊登商店場地租借EN 新聞
+新聞分類最新新聞科技物聯網人工智慧機器人金融科技虛擬實境大數據交通運輸電信通訊資訊安全實驗室裡的科技企業阿裡巴巴Amazon蘋果FacebookGoogleIBM微軟Yahoo商業產業創新策略IPO併購合作創業新創團隊募資創業活動創投創業人物新創管理行銷流量數據廣告創意品牌經營內容行銷社群行銷技能職場未來工作數位工作術產品開發開發者電子商務數位內容新聞媒體遊戲電子書音樂影視人物產品觀點專題PX酷品 活動
+活動未來商務展Meet Taipei社群活動雜誌創業小聚數位行銷學院 深度學習技術帶來了人工智慧的大躍進
+2014.09.11分享分享深度學習帶來了人工智慧的正向循環，那這對於我們來說意味著什麼？Andrew Ng和深度學習對於Andrew Ng，大家最熟悉的事件可能是他在Google期間借助深度學習，讓機器通過對數百萬份 YouTube影片的學習自行掌握了「貓」的概念，這成為世界深度學習領域廣為人知的成功案例之一，也成為對Google人工神經網路「DistBelief」的一次有力驗證。80年代初期，當時的人工智慧研究都在試圖尋找捷徑，希望可以繞過人腦神經網路來直接類比出行為，而不是試圖通過模仿大腦運作來實現。但有兩位技術高手一直堅持研究類比神經網路的深度學習，最終他們的演算法得到了全球人工智慧界和科技公司的關註和重視，他們就是深度學習的領軍人物、後來分別被Google和Facebook招致麾下的Hinton和 LeCun。Andrew Ng在大學時期曾經一度放棄了人工智慧的研究，直到後來被Jeff Hawkins（Palm創始人，《人工智慧的未來》作者）的HTM演算法（意思是人類智慧來源於這個單一演算法）所影響，重新開始了對人工智慧的研究，而他的研究方向一直是深度學習。如今，已經轉投百度的Andrew Ng在不久前的百度世界大會上再次強調了深度學習對人工智慧的重要意義。從目前看來，深度學習是實現人工智慧最有效、也是取得成效最大的實施方法。Andrew Ng在演講中提到目前百度大腦的新演算法就是屬於深度學習，他雖然沒有具體指明該演算法的領先程度，但卻強調了其在處理資料方面比傳統人工智慧演算法存在的優越性，並可以使人工智慧實現一種正向循環。奇點臨近——人工智慧的正向循環人工智慧的正向循環是Andrew Ng演講中的核心要點，在擁有深度學習演算法之後，將不再懼怕巨量資料，反而會因為資料的增長而取得更好的效果，而這些效果將直接體現在圖像搜尋、語音辨識等具體的網路服務中，從而為使用者提供更好服務並吸引更多使用者，這又會產生更多資料。「人工智慧正向循環」的確令人興奮，但人工智慧技術發展了幾十年，為何恰恰在今天有條件實現正向循環？搜尋引擎到人工智慧演進的幾個重點條件，包括搜尋引擎積累的戰略資料、類比神經網路的機器學習，從Andrew Ng的演講中已經證實了這兩個條件的成熟，他提到「百度有巨量資料」以及「百度大腦的新演算法」。還有一個重要條件是「技術奇點的出現」，指在積累資料的前提下，硬體存儲、超級運算和類比神經網路等相關技術的成熟。庫茲韋爾在《奇點臨近》一書中提到，奇點思想是：人類創造技術的節奏正在加速，技術的力量也正以指數級的速度在增長。指數級的增長是具有迷惑性的，它始於極微小的增長，隨後又以不可思議的速度爆炸式地增長。對於人工智慧來說，深度學習的出現就是這樣一個奇點。面對巨量資料，深度學習演算法可以做到傳統人工智慧演算法無法做到的事情，而且輸出結果會隨著資料處理量的增大而更加準確。傳統機器學習是通過標記資料和有監督學習，這意味著，如果想讓機器學會如何識別某一特定物件，就必須人為乾預對樣本進行標註，也就是說，隨著其所需處理資料量的增大，外界對其的支持和幫助也就更大，而且計算結果的準確性也會受到影響。因此，對於這種傳統演算法，越來越多的資料將成為負擔，也更容易達到極限或產生錯誤結果。但深度學習是從未經標記的資料展開學習，這更接近人腦的學習方式，可以通過訓練之後自行掌握概念，這將大幅度提高電腦處理資訊的效率。王威廉在《國際機器學習大會ICML2013參會感想》提到：「用半監督或無監督學習方法挖掘無標籤的資料，不僅是過去10年，還很可能是大資料時代的一個熱點。」拿機器視覺舉例，機器學習是通過構建多層類似人類視覺神經系統的演算法使機器自行明白物體整體的形態，而傳統的人工智慧演算法往往需要工程師人工輸入物體視覺或者聲音的資訊，然後由機器學習演算法來處理這些資訊資料。在加速回歸定律的指引下，深度學習將使人工智慧的進化節奏加快，並時進化過程中產物（輸出結果）獲得指數級增長。當深度學習的效率變得更高，就會吸引更多的資源向它聚合，使其發展更為迅速。同時，這些指數級增長都來源於我們對網路產品的每一次微小的使用以及相應的每次資料的貢獻。而這些彙集起來的資料再借助深度學習演算法就會為我們輸出更加準確的結果，提供更好的服務，其產生的效果也會像滾雪球一樣越來越大。深度學習帶來的重要意義深度學習帶來了人工智慧的正向循環，那這對於我們來說意味著什麼？Andrew Ng曾提出，深度學習演算法可以使機器「自己學會世界上的一些概念」，也就是機器將具備一定的人類般的學習和思考能力。人類自身的學習能力可以説明我們自行認識世界，而當機器當過模擬人腦具備了這一能力之後，就可以在一定程度上取代我們部分腦力工作。就像在工業革命和電力革命的影響力，我們自身從體力勞動中解放出來一樣，在深度學習所帶來的人工智慧革命下，我們同樣可以將腦力工作外包給機器。深度學習使機器更加聰明，但我們在這方面應保持足夠謹慎，不能過分誇大。我們不需要去考慮「機器智慧何時超越人類」等略顯科幻的問題，我們僅需要明白這些機器智慧將不斷下落到具體的網路應用中，帶給我們更加智慧的服務。比如說，通過視覺獲取和處理圖像、通過聲音講出語言是人類最自然的與外界溝通的方式，但傳統的電腦服務卻無法從本質上讀懂我們這些內容，當我們進行圖像搜尋或者向電腦發送某項指令時，我們需要預先在大腦中做一遍處理，將我們原本要表達的意思轉化成電腦能夠讀懂的文本資訊，然後手動輸入到電腦並獲得結果。但在機器學習的幫助下，我們隨意把一張圖片丟給電腦就能返回結果，我們直接用語言就可以來命令電腦來為我們提供各種服務。就像Andrew Ng提到的「（行動）新設備更需要提供更自然的方式找到服務」，而這就是機器學習最實際、最恰當的用途。奇點是未來的一個時期：技術變革的節奏如此迅速，其所帶來的影響如此深遠，人類的生活將不避免的發生改變。Andrew Ng的深度學習帶來了「人工智慧」的正向循環，給用戶帶來了更好的網路服務，這表明或許人工智慧的奇點已經到來。而至於要走向何方，Hinton 的一句自述也可以很恰當的用在Andrew Ng 身上——「我們希望把AI帶到一個美妙的新領域，一個還沒有人或者程式到達的境界。」本文出自虎嗅網分享熱門文章1 台灣的軟體工程師都跑哪裡去了？
+by 林宜敬2017-07-192 董事會成員只剩CEO！曾獲比爾蓋茲、李嘉誠投資的「植物蛋」新創陷困局
+by 愛範兒 ifanr19 小時前3 中國市場銷售不佳，蘋果任命大中華區新主管
+by 高敬原2017-07-194 把算命變輕盈，四個台灣男生用程式解密愛情
+by 顏理謙2017-07-195 誠品走過四分之一世紀，吳清友：KPI很容易比較，但DNA很難追尋
+by 蔡紀眉2017-06-236 當宮廟遇上科技──PTT最紅求籤「七王爺線上靈籤」的誕生之路
+by 顏理謙2017-07-19追蹤我們
+
+深度學習 C++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2017 TAAI 機器學習/深度學習推廣教育課程
+
+
+
+
+
+
+ 
+
+
+2017 TAAI 機器學習/深度學習推廣教育課程
+
+
+ 
+
+
+【活動對象】
+ 　　對機器學習有興趣之政府單位、國內大學、研究單位及業界人員與社會大眾。
+ 
+
+
+【活動詳情】
+　　課程資訊：
+              　　　　- 活動日期：6月26日~6月27日(臺北場)、6月28日~6月29日(臺南場)
+              　　　　- 活動地點：淡江大學臺北校園 D221中正紀念堂(臺北場)(交通指引)
+              　　　　 　　　　　 成功大學光復校區 國際會議廳第一演講室(臺南場)(交通指引)
+　　報名資訊：
+              　　　　- 報名時間：6月7日~6月16日
+              　　　　- 繳費時間：6月7日~6月16日 
+              　　　　- 錄取名額：臺北場180人/場次 (另開放30名候補名額)
+              　　　　 　　　　　 臺南場210人/場次 (另開放30名候補名額) 
+              　　　　- 報名費用：500元(大專院校學生、淡江大學與成功大學教職員、TAAI會員)
+              　　　　 　　　　　 1000元(其他人員) [註: 費用包含午餐*2、教材*1、下午茶會*2]
+              　　　　 　　　　　 加入TAAI(中華民國人工智慧學會)
+　　課程表：
+　　　　課程講義電子檔
+　　　　【第一天】
+
+
+
+
+
+
+
+9:45~10:00
+開幕
+
+
+10:00~12:00
+
+
+高宏宇教授 - 【機器學習介紹】 
+
+
+12:00~13:10
+午餐時間
+
+
+13:10~14:40  
+
+
+彭文孝教授 - 【深度學習】 
+
+
+14:40~15:00
+Coffee Break
+
+
+15:00~16:30 
+吳毅成教授 - 【深度強化式學習】 
+
+
+
+　　　　【第二天】
+
+
+
+
+
+
+ 
+
+10:00~12:00 
+
+
+吳尚鴻教授 - 【深度學習創新與實作 (I)】 
+
+
+12:00~13:10
+午餐時間
+
+
+13:10~14:40 
+吳尚鴻教授 - 【深度學習創新與實作 (II)】 
+
+
+14:40~15:00
+Coffee Break
+
+
+15:00~16:30 
+吳尚鴻教授 - 【深度學習創新與實作 (III)】 
+
+
+16:30
+賦歸
+
+
+
+
+
+
+ 
+ 
+＝＝＝＝＝＝＝＝【前往報名】＝＝＝＝＝＝＝＝
+ 
+臺北場　　臺南場
+ 
+ 
+
+
+【課程簡介】
+【機器學習介紹】 
+              　　機器學習是人工智慧的一個分支，人工智慧的研究是以推理為重點，到產生知識並將這過程轉化成可重複操作進行的步驟。而機器學習是達到這一目的的其中一種方式，機器學習涵蓋機率學、統計學、最佳理論與計算複雜與智能等，本課程將以計算方法角度出發，從回歸分析開始並涵蓋監督式學習、半監督式學習與非監督式學習，並將簡介特徵擷取與資料分析精神與技巧。
+【深度學習】
+              　　「深度學習」(Deep learning)與「強化式學習」(reinforcement learning)是人工智慧非常重要的兩項技術，最近擊敗世界圍棋冠軍李世石九段震撼全世界的 AlphaGo 所採用的即是這兩項技術，本短期課程將以深入淺出的方式探討這項技術。本課程首先將介紹「深度學習」技術，它採用了深層的類神經網路（Deep Neural Network）結構，來訓練及分析數據之特徵，以學習到如何自動辨識與分類。   　　課程內容將先介紹類神經網路的基本模型，如深度前饋網路(Deep Feedforward Networks)、反向傳遞(backpropagation)；接著介紹深度學習技術中常用的「深度捲積類神經網路」(Convolutional Neural Networks; CNN)模型，並配合一些應用實例，可幫助學員的瞭解深度學習；再來簡述其他常用或先進的網路模型，例如：Recurrent Neural Networks (RNN), Long Short Term Memory (LSTM), Deep Boltzmann Machines (DBM), Variational Autoencoders (VAE)  Generative Adversarial Network (GAN)等。
+
+【深度強化式學習】
+            　　本課程接著將更進一步探討「深度強化式學習」技術，它利用自我訓練來達到自我學習的效果，以 AlphaGo 為例，就是自我對戰，來避免陷阱。課程內容將先介紹強化式學習的模型，如馬可夫決策程序 (Markov Decision Process)；接著介紹強化式學習中常用的時序差學習法 (Temporal-Difference learning)，與蒙地卡羅學習法 (Monte-Carlo learning)；再來簡述如何將這些技術與深度學習技術結合，並應用於機器人、無人機上。
+【深度學習創新與實作】
+          　　本課程將結合機器學習理論、工具與實際資料集教導學員如何有效的分析資料。我們將專註在教授深度學習技術與在此領域的前端技術。此外，我們亦將利用TensorFlow公開軟體討論如何撰寫深度學習架構。本課程大綱包含：1. Keras 與 TensorFlow, 2. 深度學習架構建置技巧（Training Tricks）, 3. 詞向量訓練工具：Word2Vec, 4. 捲積類神經網路(Convolutional Neural  Networks; CNN), 5. 視覺化技術（Visualization）, 6. Sequence-to-Sequence Models, 7. 生成式模型（Generative Adversarial  Network ; GAN）。
+ 
+
+
+【講者簡介】
+
+
+ 
+【高宏宇教授】－  成功大學資訊工程系教授兼副系主任兼醫資所所長
+
+                  
+                  　　高宏宇目前是成功大學資訊工程系教授暨醫學資訊所所長，專長領域為資料探勘、機器學習與文字探勘。高博士目前已發表超過30篇期刊與50篇會議論文，其中包括生物資訊領域頂級期刊Bioinformatics與Nucleic Acids Research(NAR)，也在2010~2015年間獲得了三次BioCreaTive「國際分子生物文獻探勘競賽」第一名成績，高博士結合資料庫、知識庫、機器學習、資訊探勘等演算法，開發了多個著名的生醫文獻資料庫系統，如PubTator, tmVar, SR4GN, GenNorm, CoIN等，這些系統平均每月有百位來自世界各地的生物醫學研究人員使用。高博士目前為台灣人工智慧協會理事，以及IEEE 智慧計算社群(CIS, Computational Intelligence Society)臺南分會副主席。 
+ 
+
+
+
+
+ 
+【彭文孝教授】－ 國立交通大學資訊工程系副教授
+
+                      　　Dr.  Wen-Hsiao Peng (M'09-SM’13) received the B.S., M.S., and Ph.D. degrees from  National Chiao Tung University (NCTU), Hsinchu, Taiwan, in 1997, 1999, and  2005, respectively, all in electronics engineering. He was with the Intel  Microprocessor Research Laboratory, Santa Clara, CA, USA, from 2000 to 2001,  where he was involved in the development of International Organization for  Standardization (ISO) Moving Picture Experts Group (MPEG)-4 fine granularity  scalability and demonstrated its application in 3-D peer-to-peer video  conferencing. Since  2003, he has actively participated in the ISO MPEG digital video coding  standardization process and contributed to the development of the High  Efficiency Video Coding (HEVC) standard and MPEG-4 Part 10 Advanced Video  Coding Amd.3 Scalable Video Coding standard. His research group at NCTU is one  of the few university teams around the world that participated in the  Call-for-Proposals on HEVC and its Screen Content Coding extensions. He is  currently an Associate Professor with the Computer Science Department, NCTU. He  was a Visiting Scholar with the IBM Thomas J. Watson Research Center, Yorktown  Heights, NY, USA, from 2015 to 2016. He has authored over 60 technical papers  in the field of video/image processing and communications and over 50 standard  contributions. His research interests include video/image coding, multi-modality  data analytics, and machine learning. Dr. Peng is a Technical Committee Member  of the Visual Signal Processing and Communications and Multimedia  Systems and Application tracks of the IEEE Circuits and Systems Society. He  organized several special sessions on HEVC and related topics in prestigious  conferences and was a Technical Program Co-Chair for the Conference on Visual  Communications and Image Processing in 2011. More recently, he served as a Lead  Guest Editor for a Special Issue on Screen Content Video Coding and  Applications in IEEE JOURNAL ON EMERGING AND SELECTED TOPICS IN CIRCUITS AND  SYSTEMS.
+ 
+
+
+
+
+ 
+【吳毅成教授】－ 國立交通大學資訊工程系教授
+
+                      　　I-Chen Wu (吳毅成) is with the Department of Computer Science, at National Chiao Tung University. He received his B.S. in Electronic Engineering from National Taiwan University (NTU), M.S. in Computer Science from NTU, and Ph.D. in Computer Science from Carnegie-Mellon University, in 1982, 1984 and 1993, respectively. He serves in the editorial board of the IEEE Transactions on Computational Intelligence and AI in Games and ICGA Journal. His research interests include artificial intelligence, machine learning, robotics and volunteer computing.
+                      Dr. Wu introduced the new game, Connect6, a kind of six-in-a-row game. Since then, Connect6 has become a tournament item in Computer Olympiad. He led a team developing various game playing programs, winning over 30 gold medals in international tournaments, including Computer Olympiad. He wrote over 100 papers,  and served as chairs and committee in over 30 academic conferences and organizations, including the conference chair of IEEE CIG conference 2015.
+ 
+
+
+
+
+ 
+【吳尚鴻教授】－ 國立清華大學資訊工程系副教授
+
+                      　　Shan-Hung Wu (吳尚鴻) is an associate professor at the Department of Computer Science, National Tsing Hua University (NTHU), Taiwan. Since 2016, he also serve as Division Director for the Division of Academic Information System, Computer & Communication Center of NTHU. His research interests include: Machine Learning (in particular, Transfer Learning); NewSQL Database Systems and Big Data Management; App and Web Intelligence. I received the Ph.D. degree in Electrical Engineering from the National Taiwan University, Taiwan (2005/09 - 2009/02). Before joining NTHU in 2010, He was a senior research scientist at Telcordia Technologies Inc. (formerly Bellcore) during 2004 and 2010.
+
+
+
+ 
+
+
+【辦理單位】
+　　主辦單位：淡江大學資訊工程學系
+              　　共同主辦單位：國立成功大學資訊工程學系、 中華民國人工智慧學會
+            　　指導單位：教育部資訊及科技教育司
+ 
+
+
+
+【繳費方式與繳費流程】
+　　線上信用卡繳費(點此前往繳費)
+              　　註：請點選連結前往玉山銀行繳費頁面，繳費完成後請待系統確認。
+
+ 　　匯款：玉山銀行(808)新竹分行(0060) 帳號：0060-940-012133
+              　　　　　戶名：中華民國人工智慧學會許輝煌
+              　　註：完成後請傳真至學會(02-26224129)或Email至office.taiwan.taai@gmail.com，
+            　　　　主旨請註明「2017 TAAI 機器學習推廣教育課程 報名匯款收據」。
+ 
+※如有任何問題請發信至「taai2017.reg@gmail.com」。
+　　
+
+
+
+
+  
+
+
+ 
+
+

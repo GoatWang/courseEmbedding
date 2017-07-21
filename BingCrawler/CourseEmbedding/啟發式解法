@@ -1,0 +1,1968 @@
+
+
+
+啟發式搜尋 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+啟發式搜尋
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+
+
+本條目部分連結不符合格式手冊規範。跨語言連結及章節標題等處的連結可能需要清理。（2015年12月11日） 
+請協助改善此條目。參見WP:LINKSTYLE、WP:MOSIW以瞭解細節。突出顯示跨語言連結可以便於檢查。 
+
+
+
+
+
+
+
+本條目沒有列出任何參考或來源。（2013年9月30日） 
+維基百科所有的內容都應該可供查證。請協助添加來自可靠來源的參照以改善這篇條目。無法查證的內容可能被提出異議而移除。 
+
+
+電腦科學中所謂的heuristic，除了有經驗法則的意思外（見啟發式），它還有另外兩個技術上的意義。 
+
+
+目錄
+
+
+1 啟發式演算法
+2 啟發式演算法與最短路徑問題
+
+2.1 啟發式演算法對運算效能的影響
+2.2 找尋新的啟發式演算法
+
+
+3 參閱
+
+
+
+啟發式演算法[編輯]
+電腦科學的兩大基礎目標，就是發現可證明其執行效率良好且可得最佳解或次佳解的演算法。而啟發式演算法則試圖一次提供一個或全部目標。例如它常能發現很不錯的解，但也沒辦法證明它不會得到較壞的解；它通常可在合理時間解出答案，但也沒辦法知道它是否每次都可以這樣的速度求解。
+有時候人們會發現在某些特殊情況下，啟發式演算法會得到很壞的答案或效率極差，然而造成那些特殊情況的資料結構，也許永遠不會在現實世界出現。因此現實世界中啟發式演算法很常用來解決問題。啟發式演算法處理許多實際問題時通常可以在合理時間內得到不錯的答案。
+有一類的通用啟發式策略稱為元啟發式演算法（metaheuristic），通常使用亂數搜尋技巧。他們可以應用在非常廣泛的問題上，但不能保證效率。
+啟發式演算法與最短路徑問題[編輯]
+所謂的最短路徑問題有很多種意思，在這裡啟發式指的是一個在一個搜尋樹的節點上定義的函式
+
+
+
+h
+(
+n
+)
+
+
+{\displaystyle h(n)}
+
+，用於評估從此節點到目標節點最便宜的路徑。啟發式通常用於資訊充份的搜尋演算法，例如最好優先貪婪演算法與A*。最好優先貪婪演算法會為啟發式函式選擇最低代價的節點；A*則會為
+
+
+
+g
+(
+n
+)
++
+h
+(
+n
+)
+
+
+{\displaystyle g(n)+h(n)}
+
+選擇最低代價的節點，此
+
+
+
+g
+(
+n
+)
+
+
+{\displaystyle g(n)}
+
+是從起始節點到目前節點的路徑的確實代價。如果
+
+
+
+h
+(
+n
+)
+
+
+{\displaystyle h(n)}
+
+是可接受的（admissible）意即
+
+
+
+h
+(
+n
+)
+
+
+{\displaystyle h(n)}
+
+未曾付出超過達到目標的代價，則A*一定會找出最佳解。
+最能感受到啟發式演算法好處的經典問題是n-puzzle。此問題在計算錯誤的拼圖圖形，與計算任兩塊拼圖的曼哈頓距離的總和以及它距離目的有多遠時，使用了本演算法。註意，上述兩條件都必須在可接受的範圍內。
+啟發式演算法對運算效能的影響[編輯]
+任何的搜尋問題中，每個節點都有
+
+
+
+b
+
+
+{\displaystyle b}
+
+個選擇以及到達目標的深度
+
+
+
+d
+
+
+{\displaystyle d}
+
+，一個毫無技巧的演算法通常都要搜尋
+
+
+
+
+b
+
+d
+
+
+
+
+{\displaystyle b^{d}}
+
+個節點才能找到答案。啟發式演算法藉由使用某種切割機制降低了分叉率（branching factor）以改進搜尋效率，由
+
+
+
+
+b
+
+d
+
+
+
+
+{\displaystyle b^{d}}
+
+降到較低的
+
+
+
+
+b
+′
+
+
+
+{\displaystyle b'}
+
+。分叉率可以用來定義啟發式演算法的偏序關係，例如：若在一個
+
+
+
+n
+
+
+{\displaystyle n}
+
+節點的搜尋樹上，
+
+
+
+
+h
+
+1
+
+
+(
+n
+)
+
+
+{\displaystyle h_{1}(n)}
+
+的分叉率較
+
+
+
+
+h
+
+2
+
+
+(
+n
+)
+
+
+{\displaystyle h_{2}(n)}
+
+低，則
+
+
+
+
+h
+
+1
+
+
+(
+n
+)
+<
+
+h
+
+2
+
+
+(
+n
+)
+
+
+{\displaystyle h_{1}(n)<h_{2}(n)}
+
+。啟發式為每個要解決特定問題的搜尋樹的每個節點提供了較低的分叉率，因此它們擁有較佳效率的計算能力。
+找尋新的啟發式演算法[編輯]
+如何找到一個分叉率較少又通用的合理啟發式演算法，已被人工智慧社群深入探究過。他們使用幾種常見技術：
+
+部分問題的解答的代價通常可以評估解決整個問題的代價，通常很合理。例如一個10-puzzle拼盤，解題的代價應該與將1到5的方塊移回正確位置的代價差不多。通常解題者會先建立一個儲存部份問題所需代價的模式資料庫（pattern database）以評估問題。
+
+
+解決較易的近似問題通常可以拿來合理評估原先問題。例如曼哈頓距離是一個簡單版本的n-puzzle問題，因為我們假設可以獨立移動一個方塊到我們想要的位置，而暫不考慮會移到其他方塊的問題。
+
+
+給我們一群合理的啟發式函式
+
+
+
+
+h
+
+1
+
+
+(
+n
+)
+,
+
+h
+
+2
+
+
+(
+n
+)
+,
+.
+.
+.
+,
+
+h
+
+i
+
+
+(
+n
+)
+
+
+{\displaystyle h_{1}(n),h_{2}(n),...,h_{i}(n)}
+
+，而函式
+
+
+
+h
+(
+n
+)
+=
+max
+{
+
+h
+
+1
+
+
+(
+n
+)
+,
+
+h
+
+2
+
+
+(
+n
+)
+,
+.
+.
+.
+,
+
+h
+
+i
+
+
+(
+n
+)
+}
+
+
+{\displaystyle h(n)=\max\{h_{1}(n),h_{2}(n),...,h_{i}(n)\}}
+
+則是個可預測這些函式的啟發式函式。
+
+一個在1993年由A.E. Prieditis寫出的程式ABSOLVER就運用了這些技術，這程式可以自動為問題產生啟發式演算法。ABSOLVER為8-puzzle產生的啟發式演算法優於任何先前存在的！而且它也發現了第一個有用的解魔術方塊的啟發式程式。
+參閱[編輯]
+
+人工智慧
+專家系統
+Heuristic evaluation
+推理機
+Inquiry
+解決問題
+爬山演算法
+模擬退火演算法
+遺傳演算法
+Tabu演算法
+最好優先
+通用圖
+A*搜尋演算法
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=啟髮式搜索&oldid=45099859"					
+分類：算法隱藏分類：自2015年12月連結格式不正確的條目自2013年9月缺少來源的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةCatalàČeštinaEnglishEspañolفارسیFrançaisItalianoPolskiPortuguêsРусскийСрпски / srpskiSvenskaไทยTürkçeУкраїнська 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年7月7日 (週五) 15:45。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：GDA與RRT啟發式解法在VRP問題上之應用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: GDA與RRT啟發式解法在VRP問題上之應用Applications of Great Deluge Algorithm and Record to Record Travel Methods to Vehicle Routing Problem
+作者: 陳國清Chen, Guo-Ching韓復華Anthony Fu-Wha Han運輸與物流管理學系
+關鍵字: 大洪水法;記錄更新法;啟發式解法;車輛路線問題;Great Deluge Algorithm;Record to Record Travel;Heuristics method;Vehicle Routing Problem
+公開日期: 1997
+摘要: GDA與RRT啟發式解法在VRP問題上之應用研 究 生
+：陳國清                                  指導教授：韓復華國立交
+通大學交通運輸研究所摘  要大洪水法(Great Deluge Algorithm, GDA)
+與記錄更新法(Record to Record Travel, RRT)是Dueck在1993年發表的
+新啟發式解題架構。兩種方法主要是由門檻接受法(ThresholdAccepting,
+TA)演變而來﹐為具有跳離局部最佳解(Local Optimum)機制的演算法。
+GDA與RRT方法在國內外皆尚未應用於求解車輛路問題(Vehicle Routing
+Problem, VRP)上﹐本研究首度應用求解VRP問題﹐探討兩種方法之適用性
+及解題績效。本研究根據GDA和RRT方法之解題概念並與傳統啟發式解發結
+合後設計了求解之執行架構﹐並對所選擇之11題例題進行初步測試﹐結果
+發現以11題平均而言GDA執行架構之解題精度誤差得2%至4%之間﹔而RRT執
+行架構則在平均情況下解題精度誤差得12%以下。在追蹤RRT架構時發現﹐
+暫劣解擾動於固定的偏差值間﹐以致難以找到更好的記錄。為此﹐本研究
+提出了改良式的RRT執行架構﹐即讓偏差率參數隨執行次數遞減﹐因此稱
+之為偏差率遞減RRT－DDR執行架構。並以DDR架構對所選測試例題進行測
+試﹐結果發現在沒有增加時間的情況下11題平均誤差可以改善到7%以下﹐
+明顯地改善了RRT之結果。本研究以GDA與DDR作為基本架構﹐策略性地組
+合後提出兩階段與多階段組合型執行架構﹐主要目的在於在鄰域搜尋時考
+慮其強化性﹐期在目前鄰域裡能更嚴密地找到好的解之外﹐亦考慮跳離目
+前鄰域至另一鄰域﹐以避免陷入局部最佳解而預期找到全域最佳解。在兩
+階段方面提出RWL-GDA､GDA/DDR與DDR/GDA三種執行架構﹐此部份屬於強
+化策略。經初步測試後發現11題平均誤在3%左右﹐而以TSS為起始解所求
+得之結果較以SSI之結果佳。在多階段方面本研究提出DG-FF-DG與GD-FF-
+DG兩種架構﹐包括著具有跳離觀念的兩極跳躍法。經初步測試後發現11題
+平均誤在1.8%以下﹐而以TSS為起始解所求得之結果較以SSI之結果佳。本
+研究再針對單純架構與兩階段架構所需之參數進行大規模測試﹐並對各種
+執行架構提出最適參數範圍建議。本研究針對各階段之測試過程中求解得
+各例題最佳個案結果進行比較﹐以十一題例題之個案最佳結果的平均誤差
+而言兩階段組合型方法表現最好﹐平均誤差為0.17%﹔其餘依次為GDA､
+DDR､多階段組合型方法以及RRT方法。然而若以解題效率與解題精度為指
+標進行比較時在六組執行架構參數可併列為非劣解。依據此分析﹐建議在
+實際應用時可按不同的要求(解題精度或效率)來選擇何種執行架構﹐如果
+是講求解題效率則可考慮GDA和DDR架構﹐而若講求解題精度則可考慮多階
+段組合型架構﹐兩階段架構則介於兩種之間。再將本研究所求得之最佳個
+案結果與國際文獻之結果比較﹐在十一題例題中本研究有二題優於文獻已
+知最佳結果､有三題與文獻已知最佳結果相同﹐得十一題例題平均誤
+差0.06%﹐優於其他文獻。
+Applications of Great Deluge Algorithm and Record to Record
+Travel Methods                       to Vehicle Routing
+ProblemStudent: Guo-Ching Chen
+Advisor: Anthony Fu-Wha Han                  Institute of
+Traffic and Transportation                     National Chiao
+Tung UniversityThe Great Deluge Algorithm (GDA) and Record to
+Record Travel (RRT) Methods aregeneric search heuristics
+algorithms presented by Dueck in 1993 for thesolution of the
+famous 442-citie TSP problem.  These methods are similarto
+Threshold Accepting (TA) which is generally an improvement
+method forinitial solution and can avoid caving into local
+optimum.  Though GDA andRRT were applied to TSP, they have not
+been applied to the Vehicle RoutingProblem (VRP). This research
+attempts to combine the use of GDA andRRT with the traditional
+exchange methods for solving Vehicle Routing Problem(VRP).  A
+test bank of 11 benchmark VRP test problems from the TSPLIB
+wasselected for the evaluation of our developed methods.
+According to the concepts of GDA and RRT, we strategically
+combined thesemethods and developed eight implementation
+procedures which involveintensification and diversification
+strategies.  These procedures are pureGDA and RRT; improved RRT
+method, Descending Deviation RRT (DDR); Reset WaterLevel GDA(
+RWL-GDA), GDA/DDR and DDR/GDA which are two phases structures
+andbelong to intensification strategy; DG-FF-DG and GD-FF-DG
+which aremulti-phase structures and belong to intensification
+and diversificationstrategies.  Results show that the average
+deviations of 11 test problemsare all lower than 5%, hence these
+eight procedures are suitable for solvingVRP problem.  We find
+that the average deviations of mulit-phase structuresare lower
+than 2%.  It means that our hybrid strategies are robust.
+Comparewith the literature, 3 test problems are the same with
+the best knownresults and we have updated the best known
+solutions of 2 test problems,and the average deviation is 0.06%.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT860118037http://hdl.handle.net/11536/62634
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef大規模旅行推銷員問題之研究：鄰域搜尋法與巨集啟發式解法之應用 / 陳建緯;Chien-Wei Chen;韓復華;Anthony Fu-Wha Han一般化卡車拖車路線問題 / 吳志仁;Chih-Jen Wu;韓復華;Anthony Fu-Wha Han以門檻接受法改善TSP及VRP路網成本之研究 / 楊智凱;Jhy-Kai Yang;韓復華;Anthony Fu-Wha Han包容性啟發式解法在VRPTW問題上之應用 / 林修竹;Hsio-Chu Lin;韓復華;Anthony Fu-Wha Han包容性啟發式解法在時間窗車輛路線問題上之應用 / 韓復華;HAN ANTHONY FU-WHA週期性車輛路線問題(PVRP)啟發式解法之探討 / 劉銘韻;Ming-Yun Liu;韓復華;Anthony Fu-Wha Han以巨集啟發式方法求解多車種與週期性車輛路線問題之研究 / 卓裕仁;Yuh-Jen Cho;韓復華;Anthony Fu-Wha Han動態撥召公車問題之啟發式解法與策略 / 黃家耀;Wong Ka Io元智大學 - 應用啟發式演算法求解設施區位問題之研究 / 陳家和;丁慶榮 國立中興大學 - 啟發式演算法在地下水復育優選問題之應用 / 李姵穎; Pei-Yin Lee 國立中興大學 - 啟發式演算法在地下水復育優選問題之應用 / 李姵穎; Pei-Yin Lee Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+Google Groups
+
+
+
+
+
+
+
+
+
+
+
+
+
+To use Google Groups Discussions, please enable JavaScript in your browser settings, and then refresh this page.
+
+
+.
+My AccountSearchMapsYouTubePlayNewsGmailDriveCalendarGoogle+TranslatePhotosMoreShoppingWalletFinanceDocsBooksBloggerContactsHangoutsKeepEven more from GoogleSign inHidden fieldsSearch for groups or messages
+
+
+
+
+
+
+
+
+國立成功大學機構典藏:Item 987654321/16960
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English
+
+ | 
+正體中文
+ | 
+簡體中文
+
+ | 
+
+
+
+
+	全文筆數/總筆數 : 79667/116599 (68%)
+
+
+	
+
+
+
+	造訪人次 : 11379841
+
+    
+
+	線上人數 : 44
+
+                  	
+
+
+
+
+
+
+
+
+
+
+
+RC Version 6.0 © Powered By DSPACE, MIT. Enhanced by NTU Library IR team. ReEnhanced by NCKU Library IR team. 
+
+
+
+
+
+
+
+
+
+
+
+              搜尋範圍
+              
+
+
+
+全部NCKUR
+工學院
+   土木工程學系
+      --博碩士論文
+
+
+
+查詢小技巧：您可在西文檢索詞彙前後加上"雙引號"，以獲取較精準的檢索結果若欲以作者姓名搜尋，建議至進階搜尋限定作者欄位，可獲得較完整資料
+
+
+
+
+進階搜尋 
+
+
+
+
+
+
+
+
+
+
+主頁
+	                  ‧
+	      
+          
+          	登入
+          
+          ‧
+          上傳
+ 	‧
+          說明
+         ‧
+          關於NCKUR
+            
+         ‧
+          管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學機構典藏 >
+
+工學院 >
+
+土木工程學系 >
+
+博碩士論文 >
+
+
+
+ Item 987654321/16960
+
+
+
+
+
+
+
+
+
+資料載入中.....
+
+
+
+
+
+
+
+
+
+
+書目資料匯出
+
+
+
+
+
+Endnote RIS 格式資料匯出
+
+
+
+
+
+
+Bibtex 格式資料匯出
+
+
+
+
+
+
+
+
+引文資訊
+
+
+                資料載入中.....
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+請使用永久網址來引用或連結此文件:
+                http://ir.lib.ncku.edu.tw/handle/987654321/16960
+
+
+
+
+
+
+
+
+
+題名: 鋼筋裁切問題之啟發式解法
+其他題名: A heuristic approach for solving one-dimensional cutting stock problems
+作者: 沈宇晟Shen, Yu-Cheng
+貢獻者: 土木工程學系碩博士班李宇欣Lee, Yu-Sin
+關鍵詞: knapsack problembin packing problemcutting stock problem鋼筋裁切
+日期: 2005-01-24
+上傳時間: 2009-05-06 17:18:41  (UTC+8)
+摘要: 摘要    　　原料裁切問題（Cutting Stock Problems  CSP）探討由已知尺寸的原料中，以最佳方式裁切出符合需求尺寸的物件。經過裁切的原料經常會產生多餘不用的剩料，若剩料尺寸無法再被使用，則以廢料的方式捨棄或僅殘餘相對於原料甚低的價值。最佳化原料裁切模式及求解技術可應用於型鋼構件或鋼筋裁切問題，而其規劃目標經常為原料使用量最小化或廢料最小化。本研究以鋼筋裁切問題為例，探討一維鋼材原料裁切模式之構建以及演算流程。目標函數考慮使用原料成本最小化，以及留存長剩料以供後續利用。  　　本研究依一維原料裁切問題特性建構數學模式。在模式求解方面，由於一維原料裁切問題如同大多數組合最佳化問題，當問題規模增長同時變數量亦急遽增加，因此難以將直接對模式求解的方式應用在實務上的問題規模。本研究採用鄰近搜尋法（neighborhood search methods）與整數規畫法組合之三階段啟發式演算流程，有效率地找到一維原料裁切問題的良好解。  　　鄰近搜尋法的演算方式為逐步小幅變動一個起始可行解，以改善目標函數值而達到理想可行解之目的。鄰近搜尋法由於其小幅變動現有解的方式，使其有極高的演算效率。由於組合最佳化問題之目標函數有?多局部最佳解，使得搜尋鄰近解的演算過程很容易陷於局部最佳解，因此在搜尋過程中必須加入接受劣化解的機制以免陷於局部最佳解。本研究使用門檻接受法（Threshold Accepting  TA）的技巧並穿插整數規畫法，以將現行解帶出局部最佳解。本研究撰寫演算程式並以不同的測試例進行演算流程之測試。測試結果得知經由兩種演算策略的交互使用，並搭配三階段啟發式演算流程，可以同時獲得良好的演算效率及求解品質。Abstract    　This thesis examines a three-phase heuristic approach for solving one-dimensional cutting stock problems (1D-CSP) The proposed approach combines two themes of solving method：a neighborhood search algorithm with threshold accepting techniques  and an IP-based method   　Cutting stock problems deal with the optimal cutting of raw materials to satisfy the given demand of different order lengths  Techniques of modeling and solving cutting stock problems have many applications including structural steel cutting  Standard CSP usually consider the objective of minimizing the using of raw materials or cutting loss   　This thesis presents a model for the one-dimensional cutting stock problem as used for cutting structural steel bars and a sequence of solving procedures is proposed  The objective function minimizes the cost of raw steel materials as well as maximizes the lengths of remainder bars  The solving process consists of Threshold Accepting （TA） heuristic and Integer Programming （IP） proceeding in iterative computing  Case study indicates that the proposed solving process can effectively search the feasible region and avoid being trapped in local optimal by properly combining TA and IP algorithm  Computational testing on different instances shows that the three-phase solving process yields good results on both efficiency and quality
+顯示於類別:[土木工程學系] 博碩士論文
+
+文件中的檔案:
+檔案
+大小格式瀏覽次數
+0KbUnknown453檢視/開啟
+
+
+
+
+
+
+
+在NCKUR中所有的資料項目都受到原著作權保護.
+
+
+
+
+
+ -
+
+
+
+              回饋
+              
+
+
+
+
+
+
+
+
+
+tour improvement
+
+
+
+
+
+TSP路線改善法
+Tour 
+    Improvement
+
+
+
+啟發式解法必然有弱點，使用路線建構法所得到的路線可見到許多缺點有待改進。2-opt exchanges是常用的路線改善法，它先選擇兩段較長的路徑，從路線裡去除，然後設法以不同方式將殘缺的路線再接續起來。n取2的選擇非常多，因此改善的速度可能非常慢。下麵的Java程式可以選擇兩種方式來建構路線：隨機插入(random 
+        insertion)與近鄰法(nearest neighbor)，然後再進行2-opt路線改善。
+
+
+ 
+
+
+
+
+
+
+
+Sorry, your browser is not enabled to execute aJava applet. 
+
+
+Epilogue
+
+
+
+TSP由於問題定義明確易懂，可在短時間內上手並求得品質不錯的解答，但是要發展出品質極佳且速度合理的演算法相當困難，尤其是點的分佈型態千變萬化，能夠有效求解各種大型TSP問題(1000點以上)的演算法一直是研究者追求的目標。有意深造嗎？
+請進入德國學者Gerhard 
+          Reinelt的網頁
+
+
+
+
+
+
+我接受黑暗原力的考驗
+本網頁參考自http://itp.nat.uni-magdeburg.de/~mertens/TSP/node3.html
+    原作者: Stephan Mertens 
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學機構典藏:Item 987654321/66057
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English
+
+ | 
+正體中文
+ | 
+簡體中文
+
+ | 
+
+
+
+
+	全文筆數/總筆數 : 79667/116599 (68%)
+
+
+	
+
+
+
+	造訪人次 : 11379841
+
+    
+
+	線上人數 : 45
+
+                  	
+
+
+
+
+
+
+
+
+
+
+
+RC Version 6.0 © Powered By DSPACE, MIT. Enhanced by NTU Library IR team. ReEnhanced by NCKU Library IR team. 
+
+
+
+
+
+
+
+
+
+
+
+              搜尋範圍
+              
+
+
+
+全部NCKUR
+工學院
+   土木工程學系
+      --國科會研究報告
+
+
+
+查詢小技巧：您可在西文檢索詞彙前後加上"雙引號"，以獲取較精準的檢索結果若欲以作者姓名搜尋，建議至進階搜尋限定作者欄位，可獲得較完整資料
+
+
+
+
+進階搜尋 
+
+
+
+
+
+
+
+
+
+
+主頁
+	                  ‧
+	      
+          
+          	登入
+          
+          ‧
+          上傳
+ 	‧
+          說明
+         ‧
+          關於NCKUR
+            
+         ‧
+          管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學機構典藏 >
+
+工學院 >
+
+土木工程學系 >
+
+國科會研究報告 >
+
+
+
+ Item 987654321/66057
+
+
+
+
+
+
+
+
+
+資料載入中.....
+
+
+
+
+
+
+
+
+
+
+書目資料匯出
+
+
+
+
+
+Endnote RIS 格式資料匯出
+
+
+
+
+
+
+Bibtex 格式資料匯出
+
+
+
+
+
+
+
+
+引文資訊
+
+
+                資料載入中.....
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+請使用永久網址來引用或連結此文件:
+                http://ir.lib.ncku.edu.tw/handle/987654321/66057
+
+
+
+
+
+
+
+
+
+題名: 貨櫃場整櫃問題之啟發式解法
+其他題名: A Heuristic Method for the Container Pre-marshalling Problem
+作者: 李宇欣
+貢獻者: 土木工程學系
+關鍵詞: 貨櫃最佳化啟發式解法廣域搜尋法ContainerOptimizationHeuristicVery large scale neighborhood
+日期: 2003
+上傳時間: 2009-08-28 13:04:29  (UTC+8)
+摘要: 在貨櫃運輸領域中，貨櫃裝船作業為重要的一環。由於貨櫃以堆疊方式存放且僅能由堆疊的最上方被存取，因此堆疊中貨櫃之排列以及翻櫃次數對貨櫃儲區之作業效 率具有決定性之影響。本研究在廣域搜尋法的概念下提出一啟發式解法，以求解整櫃問題之近似最佳解。本方法分為兩階段交替進行。第一個階段利用鄰近搜尋法尋 找能產生良好櫃場末終狀態之整櫃計畫。第二個階段則依據第一階段所得之整櫃計畫建立一個小型整數規畫問題，以在不改變末終狀態之條件下減少整櫃計畫之搬移 次數。測試結果成效良好。Loading containers onto vessels is an essential part in the container transportation system. Because containers are stored in stacks in the yard, and stacks allow access only from the top, how containers are stored and the number of shuffles while retrieving affect the loading efficiency very significantly. In this research we propose a heuristic method based on the very large scale neighborhood concept to solve the container re-marshalling problem. The method has two stages performed alternatively. The first stage uses a neighborhood search to search for a re-marshalling plan that leads to a good final layout for the yard. The second stage uses a small integer optimization program to cut down the number of container movements in the re-marshalling plan under the condition that the final layout for the yard is preserved. Testing results are very promising.
+相關連結: http://grbsearch.stpi.narl.org.tw/GRB_Search/grb/show_report.jsp?projkey=PB9208-0409
+描述: 計畫編號:NSC92-2211-E006-074執行機構:成功大學土木工程學系（所）研究期間:2003-08~2004-07
+顯示於類別:[土木工程學系] 國科會研究報告
+
+文件中的檔案:
+檔案
+描述
+大小格式瀏覽次數
+3010601503004.pdf35KbAdobe PDF394檢視/開啟
+
+
+
+
+
+
+
+在NCKUR中所有的資料項目都受到原著作權保護.
+
+
+
+
+
+ -
+
+
+
+              回饋
+              
+
+
+
+
+
+
+
+Metaheuristics Laboratory, Evolution and Scheduling
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Back to Main Page
+
+
+　
+
+指導教授簡歷    
+		我的研究興趣為啟發式演算法 (metaheuristics) 
+		之設計與應用，主要焦聚於演化計算 (evolutionary computation)、多目標演化最佳化 (evolutionary 
+		multiobjective optimization, EMO)、資源最佳化（如生產排程、路線規畫），也對遊戲人工智慧有興趣。主持與共同主持國科會和教育部計畫二十餘件，發表學術論文著作逾五十篇，曾獲科技部特殊優秀人才獎勵。熱愛教學，曾獲校級教學傑出獎。
+　
+
+
+　
+
+
+
+
+
+
+
+啟發式演算法與最佳化
+
+　談到最佳化，推銷員旅行問題 (Traveling Salesman Problem, TSP) 
+
+
+				是資工背景同學最熟知的最佳化問題之一，其問題是在給定 
+n 
+個城市及其相互間距離後，求取一條經過所有城市各一次的最短循環路徑。事實上，最佳化問題在生活中無所不在：以有限資源在最短時間內完成指定工作、以最少成本滿足人力需求、在有限空間內存放最多數量的貨物、
+				以最少車輛數完成所有客戶的運輸需求等等。這些問題大多具有很高的複雜度，意味著目前並沒有能在有限時間內保證求得最佳解的演算法。 
+				
+
+
+　啟發式演算法為一類最佳化演算法的總稱，這類演算法常起源於自然界觀察而來的現象，如有模仿生物進化過程的演化演算法 
+				(evolutionary algorithms)，有習自蟻群覓食的蟻拓搜尋法 (ant colony 
+				optimization)，也有效法鳥類覓食的粒子群搜尋法 (particle swarm optimization) 等等。由於這些演算法具有高彈性（不限於求解某一特定問題）、實作簡單、求解效率高等等特質，目前已成為最佳化演算法中的新興熱門領域。 
+				
+
+　演化演算法之概念來自於生物演化，意指生物經過交配、突變產生後代，並經由物競天擇、適者生存選擇存活者的方式，逐漸提升生物對環境之適應力的過程。當我們求解一個問題 
+				(如 TSP 問題) 時，可將該問題各個可能的解 (solution) 
+				視為一個生物個體，透過模仿生物演化的演算法流程，逐漸提升解的品質（以 TSP 
+				問題而言，解的總路徑長會在演化過程中越來越小），以滿足解題的目標（最小化總路徑長）。
+　
+
+
+
+
+　
+
+歡迎新血加入  
+		歡迎各位新生同學加入師大資工所，我的研究興趣主要為演化演算法之設計與應用，運用這些啟發式演算法的概念，設計與實作出易懂、實作方便、使用簡單、效率快速、求解品質高的演算法，並應用在各種具有挑戰性與高實用價值的最佳化問題上。
+		相關主題包括：
+
+
+資源（人力、機器、車輛）規畫應用：
+
+
+			在發電系統中，如何安排發電機組始得以滿足用電需求，同時減少碳排放量？(emission economic dispatch)
+
+
+在生產系統中，如何安排機器處理工件，以提高生產效率、滿足顧客滿足度並減少能源消耗和環境污染？ 
+			(shop scheduling)
+
+
+
+			在人力有限的狀況下，如何決定專案中各任務的負責人以及各任務的執行順利，以縮短專案完成時間和減少人事成本？(project 
+			scheduling)
+
+
+想去的旅遊景點好多，該如何安排才能在假期中走訪最多最好玩的景點？ 
+			(orienteering problem, OP)
+
+
+校車、油罐車、黑貓宅急便等各類運輸系統，該如何以最少的車輛數，最短的路徑完成客戶們的需求？ 
+			(vehicle routing with time windows, VRPTW)
+
+
+籃球與棒球等運動賽事，該如何安排對戰組合以滿足限制（如主、客場連續場數）以及旅途時間成本之最佳化？ 
+			(traveling tournament problem, TTP)
+
+
+
+
+演化演算法設計與實作：
+
+
+當最佳化的目標不只一個（如時間與成本），當魚與熊掌不能兼得時，我們該如何有效地產生最佳解？(evolutionary multiobjective 
+			optimization, EMO)
+
+
+
+			面對不同特性的問題，該如何省去人為調校，使演算法可以自我學習以調整演算法參數？(adaptive parameter control)
+
+
+
+			演化演算法的應用如此廣泛，是否有一個易學、易用且高效率的軟體框架，讓一般使用者和研究者能快速完成其應用？
+
+
+
+其它應用：由於啟發式演算法具有高度彈性，故其應用領域十分廣泛
+		。近年我的大學部專題生也將它們應用於許多遊戲如小精靈虛擬玩家、Eternity-II 
+		拼圖、超級瑪莉的關卡產生器等等。未來我也希望能將它用在醫療照護 
+		、能源管理與娛樂遊戲的研究上。
+
+
+		　
+
+
+　
+
+FAQ
+Q：「演化計算聽起來很有趣，但對我而言有點陌生，這是屬於哪個領域的研究呢？」
+
+A: 演化計算屬於「
+			人工智慧」領域，
+			在科技部資訊工程學門/智慧計算學門的研究領域中，我們可以看到「人工智慧與仿生計算」子領域，該領域的規畫書提到「演化計算」為重點子領域之一。以資訊領域熟知的國際電子電機工程學會 (IEEE) 
+		與計算機學會 (ACM) 來說，前者每年都會舉辦演化計算國際會議 (IEEE 
+		Congress on Evolutionary Computation, CEC)，後者同樣也會每年舉辦演化計算會議 (Genetic 
+		and Evolutionary Computation COnference, GECCO)。其中 IEEE CEC 每兩年還會結合模糊系統 
+		(Fuzzy systems) 和類神經網路 (Neural networks) 合辦大型的人工智慧會議 (World Congress on 
+		Computational Intelligence, WCCI)。
+
+
+Q：「演化/啟發式演算法可以作些什麼呢？」
+
+A：演化/啟發式演算法是一種演算法框架，具有高度彈性，應用領域廣泛，以下只簡單列出一些例子。
+
+
+
+經典問題：旅行推銷員問題 
+			(traveling salesperson problem, TSP)、布林運算式滿足問題 
+			(satisfiability problem, SAT)、背包問題 
+			(knapsack problem)、分批問題 
+			(bin packing)
+
+
+資源管理問題：生產排程 
+			 
+			 
+				(production scheduling)、課程安排 
+			(course timetabling)、航班排程 
+			(flight scheduling)、車輛路由 
+			(vehicle routing)、賽程安排 
+			(sports timetabling)、平行環境中的工作指派問題 
+			(task scheduling)
+
+
+影像處理：資料壓縮 
+			(vector quantization)、影像分區 
+			(image segmentation)、人臉辨識 
+			(face recognition)
+
+
+資料探勘：分類法則 (classification 
+			rule 
+			extraction)、特徵選取 (feature 
+			selection)
+
+
+設計問題：網路拓撲 (network 
+			topology)、類神經網路 
+			(neural network)、貝氏網路 (Bayesian 
+			network)、積體電路
+			設計 (VLSI layout)
+
+
+軟體工程：測資生成 (generation of 
+			testing 
+			instances)、錯誤修復 
+			(fault repair)
+
+
+網路應用：問題回答 
+			(question answering)、垃圾信偵測 (spam 
+			detection)
+
+
+遊戲智慧：控制器生成 (game 
+			controller)、參數最佳化 
+			(parameter optimization)
+
+
+我的研究主要是資源管理類型的問題，不過同學們如果有特別感興趣的主題，我也很歡迎同學們為實驗室帶來新的研究主題。
+
+
+
+		Q：「演化計算看起來很有趣，但我不確定會不會進老師的實驗室，這樣也可以找老師談嗎？」
+
+A：當然可以，研究生活要過得充實愉快，一定要對研究主題感興趣。選實驗室就像買東西一樣，貨比三家不吃虧，歡迎同學來進一步瞭解我們的研究主題。
+
+Q：「老師什麼時候會在辦公室呢？」
+A：
+			不上課的時候我大部份都在辦公室，如果有興趣找我面談，請 email 給我。　如果你愛思考、有創意，歡迎你一起來設計與創造新的啟發式演算法。如果你喜歡撰寫程式、開發軟體，歡迎你一起來實作並測試誰才是最厲害的啟發式演算法。如果你不服輸、有毅力，歡迎你一起來挑戰經過二、三十年都還沒有人解出來的問題集。歡迎有興趣的同學與我聯絡 (請把 [at] 和 
+		[dot] 代換成 @ 和 .)，或可至我的實驗室 
+		R205 與目前在學同學詢問相關問題。
+
+		　
+
+
+　
+
+		　
+
+
+　

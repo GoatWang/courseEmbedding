@@ -1,0 +1,2525 @@
+
+
+
+人工神經網路 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+人工神經網路
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+本條目介紹的是模擬生物神經網路的數學模型。關於生物的神經網路，請見「生物神經網路」。
+
+
+
+
+機器學習與資料探勘
+
+
+
+
+
+問題
+
+
+
+
+
+分類
+聚類
+回歸
+異常檢測
+關聯規則
+強化學習
+結構預測（英語：Structured prediction）
+特徵學習
+線上學習（英語：Online machine learning）
+半監督學習（英語：Semi-supervised learning）
+語法歸納（英語：Grammar induction）
+
+
+
+
+
+
+監督學習
+(分類 · 回歸)
+
+
+
+
+
+
+決策樹
+表徵（裝袋, 提升，隨機森林）
+k-NN
+線性回歸
+樸素貝葉斯
+神經網路
+邏輯回歸
+感知器
+支援向量機（SVM）
+相關向量機（RVM）
+
+
+
+
+
+聚類
+
+
+
+
+
+BIRCH（英語：BIRCH）
+層次（英語：Hierarchical clustering）
+k平均
+期望最大化（EM）
+
+DBSCAN
+OPTICS（英語：OPTICS）
+均值飄移（英語：Mean shift）
+
+
+
+
+
+降維
+
+
+
+
+
+因子分析（英語：Factor analysis）
+CCA
+ICA
+LDA
+NMF（英語：Non-negative matrix factorization）
+PCA
+LASSO
+t-SNE（英語：t-distributed stochastic neighbor embedding）
+
+
+
+
+
+結構預測（英語：Structured prediction）
+
+
+
+
+
+機率圖模型（貝葉斯網路，CRF, HMM）
+
+
+
+
+
+異常檢測
+
+
+
+
+
+k-NN
+局部離群因子（英語：Local outlier factor）
+
+
+
+
+
+神經網路
+
+
+
+
+
+自編碼（英語：Autoencoder）
+深度學習
+多層感知機
+RNN
+受限玻爾茲曼機
+SOM
+CNN
+
+
+
+
+
+理論
+
+
+
+
+
+偏差/方差困境（英語：Bias–variance tradeoff）
+計算學習理論（英語：Computational learning theory）
+經驗風險最小化（英語：Empirical risk minimization）
+PAC學習（英語：Probably approximately correct learning）
+統計學習
+VC理論
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+
+
+
+在機器學習和認知科學領域，人工神經網路（英文：artificial neural network，縮寫ANN），簡稱神經網路（英文：neural network，縮寫NN）或類神經網路，是一種模仿生物神經網路(動物的中樞神經系統，特別是大腦)的結構和功能的數學模型或計算模型，用於對函式進行估計或近似。神經網路由大量的人工神經元聯結進行計算。大多數情況下人工神經網路能在外界資訊的基礎上改變內部結構，是一種自適應系統。[來源請求]現代神經網路是一種非線性統計性資料建模工具。典型的神經網路具有以下三個部分：
+
+結構 （Architecture） 結構指定了網路中的變數和它們的拓撲關係。例如，神經網路中的變數可以是神經元連線的權重（weights）和神經元的激勵值（activities of the neurons）。
+激勵函式（Activity Rule） 大部分神經網路模型具有一個短時間尺度的動力學規則，來定義神經元如何根據其他神經元的活動來改變自己的激勵值。一般激勵函式依賴於網路中的權重（即該網路的參數）。
+學習規則（Learning Rule）學習規則指定了網路中的權重如何隨著時間推進而調整。這一般被看做是一種長時間尺度的動力學規則。一般情況下，學習規則依賴於神經元的激勵值。它也可能依賴於監督者提供的目標值和當前權重的值。
+
+例如，用於手寫識別的一個神經網路，有一組輸入神經元。輸入神經元會被輸入圖像的資料所激發。在激勵值被加權並通過一個函式（由網路的設計者確定）後，這些神經元的激勵值被傳遞到其他神經元。這個過程不斷重複，直到輸出神經元被激發。最後，輸出神經元的激勵值決定了識別出來的是哪個字母。
+神經網路的構築理念是受到生物（人或其他動物）神經網路功能的運作啟發而產生的。人工神經網路通常是通過一個基於數學統計學類型的學習方法（Learning Method）得以最佳化，所以人工神經網路也是數學統計學方法的一種實際應用，通過統計學的標準數學方法我們能夠得到大量的可以用函式來表達的局部結構空間，另一方面在人工智慧學的人工感知領域，我們通過數學統計學的應用可以來做人工感知方面的決定問題(也就是說通過統計學的方法，人工神經網路能夠類似人一樣具有簡單的決定能力和簡單的判斷能力)，這種方法比起正式的邏輯學推理演算更具有優勢。
+和其他機器學習方法一樣，神經網路已經被用於解決各種各樣的問題，例如機器視覺和語音識別。這些問題都是很難被傳統基於規則的編程所解決的。
+
+
+
+目錄
+
+
+1 背景
+2 歷史
+
+2.1 赫布型學習
+2.2 反向傳播演算法與復興
+2.3 2006年之後的進展
+
+
+3 神經元
+4 神經元網路
+
+4.1 單層神經元網路
+4.2 多層神經元網路
+
+
+5 人工神經網路的實用性
+6 人工神經元網路模型
+7 基本結構
+8 學習過程
+9 種類
+10 理論性質
+
+10.1 計算能力
+10.2 容量
+10.3 收斂性
+10.4 綜合統計
+
+
+11 參見
+12 外部連結
+13 參考文獻
+
+
+
+背景[編輯]
+對人類中樞神經系統的觀察啟發了人工神經網路這個概念。在人工神經網路中，簡單的人工節點，稱作神經元（neurons），連線在一起形成一個類似生物神經網路的網狀結構。
+人工神經網路目前沒有一個統一的正式定義。不過，具有下列特點的統計模型可以被稱作是「神經化」的：
+
+具有一組可以被調節的權重，換言之，被學習演算法調節的數值參數，並且
+可以估計輸入資料的非線性函式關係
+
+這些可調節的權重可以被看做神經元之間的連線強度。
+人工神經網路與生物神經網路的相似之處在於，它可以集體地、並列地計算函式的各個部分，而不需要描述每一個單元的特定任務。神經網路這個詞一般指統計學、認知心理學和人工智慧領域使用的模型，而控制中央神經系統的神經網路屬於理論神經學和計算神經學。[1]
+在神經網路的現代軟體實現中，被生物學啟發的那種方法已經很大程度上被拋棄了，取而代之的是基於統計學和訊號處理的更加實用的方法。在一些軟體系統中，神經網路或者神經網路的一部分（例如人工神經元）是大型系統中的一個部分。這些系統結合了適應性的和非適應性的元素。雖然這種系統使用的這種更加普遍的方法更適宜解決現實中的問題，但是這和傳統的連線主義人工智慧已經沒有什麼關聯了。不過它們還有一些共同點：非線性、分散式、並列化，局部性計算以及適應性。從歷史的角度講，神經網路模型的應用標誌著二十世紀八十年代後期從高度符號化的人工智慧（以用條件規則表達知識的專家系統為代表）向低符號化的機器學習（以用動力系統的參數列達知識為代表）的轉變。
+歷史[編輯]
+沃倫·麥卡洛克和沃爾特·皮茨（1943）[2]基於數學和一種稱為閾值邏輯的演算法創造了一種神經網路的計算模型。這種模型使得神經網路的研究分裂為兩種不同研究思路。一種主要關註大腦中的生物學過程，另一種主要關註神經網路在人工智慧里的應用。
+赫布型學習[編輯]
+二十世紀40年代後期，心理學家唐納德·赫布根據神經可塑性的機制創造了一種對學習的假說，現在稱作赫布型學習。赫布型學習被認為是一種典型的非監督式學習規則，它後來的變種是長期增強作用的早期模型。從1948年開始，研究人員將這種計算模型的思想應用到B型圖靈機上。
+法利和韋斯利·A·克拉克（1954）[3]首次使用電腦，當時稱作計算機，在MIT模擬了一個赫布網路。
+弗蘭克·羅森布拉特（1956）[4]創造了感知機。這是一種模式識別演算法，用簡單的加減法實現了兩層的電腦學習網路。羅森布拉特也用數學符號描述了基本感知機里沒有的迴路，例如異或迴路。這種迴路一直無法被神經網路處理，直到Paul Werbos(1975)創造了反向傳播演算法。
+在馬文·明斯基和西摩·帕爾特（1969）發表了一項關於機器學習的研究以後，神經網路的研究停滯不前。他們發現了神經網路的兩個關鍵問題。第一是基本感知機無法處理異或迴路。第二個重要的問題是電腦沒有足夠的能力來處理大型神經網路所需要的很長的計算時間。直到電腦具有更強的計算能力之前，神經網路的研究進展緩慢。
+反向傳播演算法與復興[編輯]
+後來出現的一個關鍵的進展是反向傳播演算法（Werbos 1975）。這個演算法有效地解決了異或的問題，還有更普遍的訓練多層神經網路的問題。
+在二十世紀80年代中期，分散式並列處理（當時稱作聯結主義）流行起來。David E. Rumelhart和James McClelland（1986）的教材對於聯結主義在電腦模擬神經活動中的應用提供了全面的論述。
+神經網路傳統上被認為是大腦中的神經活動的簡化模型，雖然這個模型和大腦的生理結構之間的關聯存在爭議。人們不清楚人工神經網路能多大程度地反映大腦的功能。
+支援向量機和其他更簡單的方法（例如線性分類器）在機器學習領域的流行度逐漸超過了神經網路，但是在2000年代後期出現的深度學習重新激發了人們對神經網路的興趣。
+2006年之後的進展[編輯]
+人們用CMOS創造了用於生物物理模擬和神經形態計算的計算裝置。最新的研究顯示了用於大型主成分分析和捲積神經網路的奈米裝置[5]具有良好的前景。如果成功的話，這會創造出一種新的神經計算裝置[6]，因為它依賴於學習而不是編程，並且它從根本上就是模擬的而不是數位化的，雖然它的第一個例項可能是數位化的CMOS裝置。
+在2009到2012年之間，Jürgen Schmidhuber在Swiss AI Lab IDSIA的研究小組研發的遞迴神經網路和深前饋神經網路贏得了8項關於模式識別和機器學習的國際比賽。[7][8]例如，Alex Graves et al.的雙向、多維的LSTM贏得了2009年ICDAR的3項關於連筆字識別的比賽，而且之前並不知道關於將要學習的3種語言的資訊。[9][10][11][12]
+IDSIA的Dan Ciresan和同事根據這個方法編寫的基於GPU的實現贏得了多項模式識別的比賽，包括IJCNN 2011交通標誌識別比賽等等。[13][14]他們的神經網路也是第一個在重要的基準測試中（例如IJCNN 2012交通標誌識別和NYU的揚·勒丘恩（Yann LeCun）的MNIST手寫數字問題）能達到或超過人類水平的人工模式識別器。
+類似1980年Kunihiko Fukushima發明的neocognitron[15]和視覺標準結構[16]（由David H. Hubel和Torsten Wiesel在初級視皮層中發現的那些簡單而又複雜的細胞啟發）那樣有深度的、高度非線性的神經結構可以被多倫多大學傑夫·辛頓實驗室的非監督式學習方法所訓練。[17][18][19]
+神經元[編輯]
+神經元示意圖：
+
+
+
+
+a1~an為輸入向量的各個分量
+w1~wn為神經元各個突觸的權值
+b為偏置
+f為傳遞函式，通常為非線性函式。一般有traingd(),tansig(),hardlim()。以下預設為hardlim()
+t為神經元輸出
+
+數學表示 
+
+
+
+t
+=
+f
+(
+
+
+
+
+W
+′
+
+→
+
+
+
+
+
+
+A
+→
+
+
+
++
+b
+)
+
+
+{\displaystyle t=f({\vec {W'}}{\vec {A}}+b)}
+
+
+
+
+
+
+
+
+
+
+W
+→
+
+
+
+
+
+{\displaystyle {\vec {W}}}
+
+為權向量 ，
+
+
+
+
+
+
+
+W
+′
+
+→
+
+
+
+
+
+{\displaystyle {\vec {W'}}}
+
+為
+
+
+
+
+
+
+W
+→
+
+
+
+
+
+{\displaystyle {\vec {W}}}
+
+的轉置
+
+
+
+
+
+
+
+A
+→
+
+
+
+
+
+{\displaystyle {\vec {A}}}
+
+為輸入向量
+
+
+
+
+b
+
+
+{\displaystyle b}
+
+為偏置
+
+
+
+
+f
+
+
+{\displaystyle f}
+
+為傳遞函式
+
+可見，一個神經元的功能是求得輸入向量與權向量的內積後，經一個非線性傳遞函式得到一個純量結果。
+單個神經元的作用：把一個n維向量空間用一個超平面分割成兩部分（稱之為判斷邊界），給定一個輸入向量，神經元可以判斷出這個向量位於超平面的哪一邊。
+該超平面的方程:
+
+
+
+
+
+
+
+W
+′
+
+→
+
+
+
+
+
+
+p
+→
+
+
+
++
+b
+=
+0
+
+
+{\displaystyle {\vec {W'}}{\vec {p}}+b=0}
+
+
+
+
+
+
+
+
+
+
+W
+→
+
+
+
+
+
+{\displaystyle {\vec {W}}}
+
+權向量
+
+
+
+
+b
+
+
+{\displaystyle b}
+
+偏置
+
+
+
+
+
+
+
+p
+→
+
+
+
+
+
+{\displaystyle {\vec {p}}}
+
+超平面上的向量
+
+[20]
+神經元網路[編輯]
+單層神經元網路[編輯]
+是最基本的神經元網路形式，由有限個神經元構成，所有神經元的輸入向量都是同一個向量。由於每一個神經元都會產生一個純量結果，所以單層神經元的輸出是一個向量，向量的維數等於神經元的數目。
+示意圖：
+
+
+
+多層神經元網路[編輯]
+人工神經網路的實用性[編輯]
+人工神經網路是一個能夠學習，能夠總結歸納的系統，也就是說它能夠通過已知資料的實驗運用來學習和歸納總結。人工神經網路通過對局部情況的對照比較（而這些比較是基於不同情況下的自動學習和要實際解決問題的複雜性所決定的），它能夠推理產生一個可以自動識別的系統。與之不同的基於符號系統下的學習方法，它們也具有推理功能，只是它們是建立在邏輯演算法的基礎上，也就是說它們之所以能夠推理，基礎是需要有一個推理演算法則的集合。
+人工神經元網路模型[編輯]
+通常來說，一個人工神經元網路是由一個多層神經元結構組成，每一層神經元擁有輸入（它的輸入是前一層神經元的輸出）和輸出，每一層（我們用符號記做）Layer(i)是由Ni(Ni代表在第i層上的N)個網路神經元組成，每個Ni上的網路神經元把對應在Ni-1上的神經元輸出做為它的輸入，我們把神經元和與之對應的神經元之間的連線用生物學的名稱，叫做突觸（英語：Synapse），在數學模型中每個突觸有一個加權數值，我們稱做權重，那麼要計算第i層上的某個神經元所得到的勢能等於每一個權重乘以第i-1層上對應的神經元的輸出，然後全體求和得到了第i層上的某個神經元所得到的勢能，然後勢能數值通過該神經元上的活化函數（activation function，常是∑函式（英語：Sigmoid function）以控制輸出大小，因為其可微分且連續，方便差量規則（英語：Delta rule）處理。求出該神經元的輸出，註意的是該輸出是一個非線性的數值，也就是說通過激勵函式求的數值根據極限值來判斷是否要啟用該神經元，換句話說我們對一個神經元網路的輸出是否線性不感興趣。
+基本結構[編輯]
+一種常見的多層結構的前饋網路（Multilayer Feedforward Network）由三部分組成，
+
+輸入層（Input layer），眾多神經元（Neuron）接受大量非線形輸入訊息。輸入的訊息稱為輸入向量。
+輸出層（Output layer），訊息在神經元鏈接中傳輸、分析、權衡，形成輸出結果。輸出的訊息稱為輸出向量。
+隱藏層（Hidden layer），簡稱「隱層」，是輸入層和輸出層之間眾多神經元和鏈接組成的各個層面。隱層可以有多層，習慣上會用一層。隱層的節點（神經元）數目不定，但數目越多神經網路的非線性越顯著，從而神經網路的強健性（robustness）（控制系統在一定結構、大小等的參數攝動下，維持某些效能的特性。）更顯著。習慣上會選輸入節點1.2至1.5倍的節點。
+
+神經網路的類型已經演變出很多種，這種分層的結構也並不是對所有的神經網路都適用。
+學習過程[編輯]
+通過訓練樣本的校正，對各個層的權重進行校正（learning）而建立模型的過程，稱為自動學習過程（training algorithm）。具體的學習方法則因網路結構和模型不同而不同，常用反向傳播演算法(Backpropagation/倒傳遞/逆傳播，以output利用一次微分Delta rule（英語：Delta rule）來修正weight)來驗證。
+參見：神經網路介紹
+種類[編輯]
+人工神經網路分類為以下兩種:
+1.依學習策略（Algorithm）分類主要有：
+
+監督式學習網路（Supervised Learning Network）為主
+無監督式學習網路（Unsupervised Learning Network）
+混合式學習網路（Hybrid Learning Network）
+聯想式學習網路（Associate Learning Network）
+最適化學習網路（Optimization Application Network）
+
+
+2.依網路架構（Connectionism）分類主要有:
+
+前向式架構（Feed Forward Network）
+回饋式架構（Recurrent Network）
+強化式架構（Reinforcement Network）
+
+理論性質[編輯]
+計算能力[編輯]
+多層感知器（MLP）是一個通用的函式逼近器，由Cybenko定理證明。然而，證明不是由所要求的神經元數量或權重來推斷的。 Hava Siegelmann和Eduardo D. Sontag的工作證明瞭，一個具有有理數權重值的特定遞迴結構（與全精度實數權重值相對應）相當於一個具有有限數量的神經元和標準的線性關係的通用圖靈機。[21] 他們進一步表明，使用無理數權重值會產生一個超圖靈機。
+容量[編輯]
+人工神經網路模型有一個屬性，稱為「容量」，這大致相當於他們可以塑造任何函式的能力。它與可以被儲存在網路中的資訊的數量和複雜性相關。
+收斂性[編輯]
+沒有什麼通常意義上的收斂，因為它取決於一些因素。首先，函式可能存在許多局部極小值。這取決於成本函式和模型。其次，使用最佳化方法在遠離局部最小值時可能無法保證收斂。第三，對大量的資料或參數，一些方法變得不切實際。在一般情況下，我們發現，理論保證的收斂不能成為實際應用的一個可靠的指南。
+綜合統計[編輯]
+在目標是建立一個普遍系統的應用程式中，過度訓練的問題出現了。這出現在迴旋或過度具體的系統中當網路的容量大大超過所需的自由參數。為了避免這個問題，有兩個方向：第一個是使用交叉驗證和類似的技術來檢查過度訓練的存在和選擇最佳參數如最小化泛化誤差。二是使用某種形式的正規化。這是一個在機率化（貝葉斯）框架里出現的概念，其中的正則化可以通過為簡單模型選擇一個較大的先驗機率模型進行；而且在統計學習理論中，其目的是最大限度地減少了兩個數量：「風險」和「結構風險」，相當於誤差在訓練集和由於過度擬合造成的預測誤差。
+參見[編輯]
+
+生物神經網路
+人工智慧
+機器學習
+感知機
+
+外部連結[編輯]
+
+Performance comparison of neural network algorithms tested on UCI data sets
+A close view to Artificial Neural Networks Algorithms
+開放式目錄計劃中和Neural Networks相關的內容
+A Brief Introduction to Neural Networks (D. Kriesel) - Illustrated, bilingual manuscript about artificial neural networks; Topics so far: Perceptrons, Backpropagation, Radial Basis Functions, Recurrent Neural Networks, Self Organizing Maps, Hopfield Networks.
+Neural Networks in Materials Science
+A practical tutorial on Neural Networks
+Applications of neural networks
+XOR 實例
+
+參考文獻[編輯]
+
+
+^ Hentrich, Michael William. Methodology and Coronary Artery Disease Cure. 2015-08-16. doi:10.1709/TIT.2015.1083925. 
+^ McCulloch, Warren S.; Pitts, Walter. A logical calculus of the ideas immanent in nervous activity. The bulletin of mathematical biophysics. 1943-12-01, 5 (4): 115–133. ISSN 0007-4985. doi:10.1007/BF02478259 （英語）. 
+^ Farley, B.; Clark, W. Simulation of self-organizing systems by digital computer. Transactions of the IRE Professional Group on Information Theory. 1954-09-01, 4 (4): 76–84. ISSN 2168-2690. doi:10.1109/TIT.1954.1057468. 
+^ Rochester, N.; Holland, J.; Haibt, L.; Duda, W. Tests on a cell assembly theory of the action of the brain, using a large digital computer. IRE Transactions on Information Theory. 1956-09-01, 2 (3): 80–93. ISSN 0096-1000. doi:10.1109/TIT.1956.1056810. 
+^ Yang, J. J.; Pickett, M. D.; Li, X. M.; Ohlberg, D. A. A.; Stewart, D. R.; Williams, R. S. Memristive switching mechanism for metal/oxide/metal nanodevices. Nat. Nanotechnol. 2008, 3: 429–433. doi:10.1038/nnano.2008.160. 
+^ Strukov, D. B.; Snider, G. S.; Stewart, D. R.; Williams, R. S. The missing memristor found. Nature. 2008, 453: 80–83. PMID 18451858. doi:10.1038/nature06932. 
+^ 2012 Kurzweil AI Interview with Jürgen Schmidhuber on the eight competitions won by his Deep Learning team 2009–2012
+^ http://www.kurzweilai.net/how-bio-inspired-deep-learning-keeps-winning-competitions 2012 Kurzweil AI Interview with Jürgen Schmidhuber on the eight competitions won by his Deep Learning team 2009–2012
+^ Graves, Alex; and Schmidhuber, Jürgen; Offline Handwriting Recognition with Multidimensional Recurrent Neural Networks, in Bengio, Yoshua; Schuurmans, Dale; Lafferty, John; Williams, Chris K. I.; and Culotta, Aron (eds.), Advances in Neural Information Processing Systems 22 (NIPS'22), 7–10 December 2009, Vancouver, BC, Neural Information Processing Systems (NIPS) Foundation, 2009, pp. 545–552.
+^ Graves, A.; Liwicki, M.; Fernandez, S.; Bertolami, R.; Bunke, H.; Schmidhuber, J. A Novel Connectionist System for Improved Unconstrained Handwriting Recognition (PDF). IEEE Transactions on Pattern Analysis and Machine Intelligence. 2009, 31 (5). 
+^ Graves, Alex; and Schmidhuber, Jürgen; Offline Handwriting Recognition with Multidimensional Recurrent Neural Networks, in Bengio, Yoshua; Schuurmans, Dale; Lafferty, John; Williams, Chris K. I.; and Culotta, Aron (eds.), Advances in Neural Information Processing Systems 22 (NIPS'22), December 7th–10th, 2009, Vancouver, BC, Neural Information Processing Systems (NIPS) Foundation, 2009, pp. 545–552
+^ Graves, A.; Liwicki, M.; Fernandez, S.; Bertolami, R.; Bunke, H.; Schmidhuber, J. A Novel Connectionist System for Improved Unconstrained Handwriting Recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence. 2009, 31 (5). 
+^ D. C. Ciresan, U. Meier, J. Masci, J. Schmidhuber. Multi-Column Deep Neural Network for Traffic Sign Classification. Neural Networks, 2012.
+^ D. C. Ciresan, U. Meier, J. Masci, J. Schmidhuber. Multi-Column Deep Neural Network for Traffic Sign Classification. Neural Networks, 2012.
+^ Fukushima, K. Neocognitron: A self-organizing neural network model for a mechanism of pattern recognition unaffected by shift in position. Biological Cybernetics. 1980, 36 (4): 93–202. PMID 7370364. doi:10.1007/BF00344251. 
+^ M Riesenhuber, T Poggio. Hierarchical models of object recognition in cortex. Nature neuroscience, 1999.
+^ Deep belief networks at Scholarpedia.
+^ Hinton, G. E.; Osindero, S.; Teh, Y. W. A Fast Learning Algorithm for Deep Belief Nets (PDF). Neural Computation. 2006, 18 (7): 1527–1554. PMID 16764513. doi:10.1162/neco.2006.18.7.1527. 
+^ Hinton, G. E.; Osindero, S.; Teh, Y. A fast learning algorithm for deep belief nets (PDF). Neural Computation. 2006, 18 (7): 1527–1554. PMID 16764513. doi:10.1162/neco.2006.18.7.1527. 
+^ Hagan, Martin. Neural Network Design. PWS Publishing Company. 1996. ISBN 7-111-10841-8. 
+^ Siegelmann, H.T.; Sontag, E.D. Turing computability with neural nets (PDF). Appl. Math. Lett. 1991, 4 (6): 77–80. doi:10.1016/0893-9659(91)90080-F. 
+
+
+
+
+
+
+
+權威控制
+
+
+
+GND: 4226127-2
+NDL: 01165604
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=人工神經網絡&oldid=43795095"					
+5 個分類：資訊科學人工智慧機器學習計算機科學神經網路隱藏分類：CS1英語來源 (en)有未列明來源語句的條目包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaBosanskiCatalàČeštinaDanskDeutschEnglishEsperantoEspañolEestiفارسیFrançaisGaeilgeעבריתहिन्दीHrvatskiՀայերենBahasa IndonesiaÍslenskaItaliano日本語ქართული한국어LatinaLietuviųMalagasyМакедонскиമലയാളംNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSimple Englishதமிழ்ไทยTürkçeУкраїнськаاردوTiếng Việt 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年3月29日 (週三) 15:42。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft Neural Network Algorithm Technical Reference | Microsoft Docs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft Neural Network Algorithm Technical Reference
+
+
+2017-3-14
+13 分鐘可讀完
+參與者
+
+
+
+
+
+
+
+
+  The  Microsoft Neural Network uses a Multilayer Perceptron network, also called a Back-Propagated Delta Rule network, composed of up to three layers of neurons, or perceptrons. These layers are an input layer, an optional hidden layer, and an output layer.  
+ A detailed discussion of Multilayer Perceptron neural networks is outside the scope of this documentation. This topic explains the basic implementation of the algorithm, including the method used to normalize input and output values, and feature selection methods used to reduce attribute cardinality. This topic describes the parameters and other settings that can be used to customize the behavior of the algorithm, and provides links to additional information about querying the model.  
+Implementation of the Microsoft Neural Network Algorithm
+ In a Multilayer Perceptron neural network, each neuron receives one or more inputs and produces one or more identical outputs. Each output is a simple non-linear function of the sum of the inputs to the neuron. Inputs pass forward from nodes in the input layer to nodes in the hidden layer, and then pass from the hidden layer to the output layer; there are no connections between neurons within a layer. If no hidden layer is included, as in a logistic regression model, inputs pass forward directly from nodes in the input layer to nodes in the output layer.  
+ There are three types of neurons in a neural network that is created with the  Microsoft Neural Network algorithm:  
+Input neurons 
+ Input neurons provide input attribute values for the data mining model. For discrete input attributes, an input neuron typically represents a single state from the input attribute. This includes missing values, if the training data contains nulls for that attribute. A discrete input attribute that has more than two states generates one input neuron for each state, and one input neuron for a missing state, if there are any nulls in the training data. A continuous input attribute generates two input neurons: one neuron for a missing state, and one neuron for the value of the continuous attribute itself. Input neurons provide inputs to one or more hidden neurons.  
+Hidden neurons 
+ Hidden neurons receive inputs from input neurons and provide outputs to output neurons.  
+Output neurons 
+ Output neurons represent predictable attribute values for the data mining model. For discrete input attributes, an output neuron typically represents a single predicted state for a predictable attribute, including missing values. For example, a binary predictable attribute produces one output node that describes a missing or existing state, to indicate whether a value exists for that attribute. A Boolean column that is used as a predictable attribute generates three output neurons: one neuron for a true value, one neuron for a false value, and one neuron for a missing or existing state. A discrete predictable attribute that has more than two states generates one output neuron for each state, and one output neuron for a missing or existing state. Continuous predictable columns generate two output neurons: one neuron for a missing or existing state, and one neuron for the value of the continuous column itself. If more than 500 output neurons are generated by reviewing the set of predictable columns,  Analysis Services generates a new network in the mining model to represent the additional output neurons.  
+ A neuron receives input from other neurons, or from other data, depending on which layer of the network it is in. An input neuron receives inputs from the original data. Hidden neurons and output neurons receive inputs from the output of other neurons in the neural network. Inputs establish relationships between neurons, and the relationships serve as a path of analysis for a specific set of cases.  
+ Each input has a value assigned to it, called the weight, which describes the relevance or importance of that particular input to the hidden neuron or the output neuron. The greater the weight that is assigned to an input, the more relevant or important the value of that input. Weights can be negative, which implies that the input can inhibit, rather than activate, a specific neuron. The value of each input is multiplied by the weight to emphasize the importance of an input for a specific neuron. For negative weights, the effect of multiplying the value by the weight is to deemphasize the importance.  
+ Each neuron has a simple non-linear function assigned to it, called the activation function, which describes the relevance or importance of a particular neuron to that layer of a neural network. Hidden neurons use a hyperbolic tangent function (tanh) for their activation function, whereas output neurons use a sigmoid function for activation. Both functions are nonlinear, continuous functions that allow the neural network to model nonlinear relationships between input and output neurons.  
+Training Neural Networks
+ Several steps are involved in training a data mining model that uses the  Microsoft Neural Network algorithm. These steps are heavily influenced by the values that you specify for the algorithm parameters.  
+ The algorithm first evaluates and extracts training data from the data source. A percentage of the training data, called the holdout data, is reserved for use in assessing the accuracy of the network. Throughout the training process, the network is evaluated immediately after each iteration through the training data. When the accuracy no longer increases, the training process is stopped.  
+ The values of the SAMPLE_SIZE and HOLDOUT_PERCENTAGE parameters are used to determine the number of cases to sample from the training data and the number of cases to be put aside for the holdout data. The value of the HOLDOUT_SEED parameter is used to randomly determine the individual cases to be put aside for the holdout data.  
+Note These algorithm parameters are different from the HOLDOUT_SIZE and HOLDOUT_SEED properties, which are applied to a mining structure to define a testing data set.  
+
+ The algorithm next determines the number and complexity of the networks that the mining model supports. If the mining model contains one or more attributes that are used only for prediction, the algorithm creates a single network that represents all such attributes. If the mining model contains one or more attributes that are used for both input and prediction, the algorithm provider constructs a network for each attribute.  
+ For input and predictable attributes that have discrete values, each input or output neuron respectively represents a single state. For input and predictable attributes that have continuous values, each input or output neuron respectively represents the range and distribution of values for the attribute. The maximum number of states that is supported in either case depends on the value of the MAXIMUM_STATES algorithm parameter. If the number of states for a specific attribute exceeds the value of the MAXIMUM_STATES algorithm parameter, the most popular or relevant states for that attribute are chosen, up to the maximum number of states allowed, and the remaining states are grouped as missing values for the purposes of analysis.  
+ The algorithm then uses the value of the HIDDEN_NODE_RATIO parameter when determining the initial number of neurons to create for the hidden layer. You can set HIDDEN_NODE_RATIO to 0 to prevent the creation of a hidden layer in the networks that the algorithm generates for the mining model, to treat the neural network as a logistic regression.  
+ The algorithm provider iteratively evaluates the weight for all inputs across the network at the same time, by taking the set of training data that was reserved earlier and comparing the actual known value for each case in the holdout data with the network's prediction, in a process known as batch learning. After the algorithm has evaluated the entire set of training data, the algorithm reviews the predicted and actual value for each neuron. The algorithm calculates the degree of error, if any, and adjusts the weights that are associated with the inputs for that neuron, working backward from output neurons to input neurons in a process known as backpropagation. The algorithm then repeats the process over the entire set of training data. Because the algorithm can support many weights and output neurons, the conjugate gradient algorithm is used to guide the training process for assigning and evaluating weights for inputs. A discussion of the conjugate gradient algorithm is outside the scope of this documentation.  
+Feature Selection
+ If the number of input attributes is greater than the value of the MAXIMUM_INPUT_ATTRIBUTES parameter, or if the number of predictable attributes is greater than the value of the MAXIMUM_OUTPUT_ATTRIBUTES parameter, a feature selection algorithm is used to reduce the complexity of the networks that are included in the mining model. Feature selection reduces the number of input or predictable attributes to those that are most statistically relevant to the model.  
+ Feature selection is used automatically by all  Analysis Services data mining algorithms to improve analysis and reduce processing load. The method used for feature selection in neural network models depends on the data type of the attribute. For reference, the following table shows the feature selection methods used for neural network models, and also shows the feature selection methods used for the Logistic Regression algorithm, which is based on the Neural Network algorithm.  
+
+
+
+Algorithm
+Method of analysis
+Comments
+
+
+
+
+Neural Network
+Interestingness score Shannon's Entropy Bayesian with K2 Prior Bayesian Dirichlet with uniform prior (default)
+The Neural Networks algorithm can use both entropy-based and Bayesian scoring methods, as long as the data contains continuous columns. Default.
+
+
+Logistic Regression
+Interestingness score Shannon's Entropy Bayesian with K2 Prior Bayesian Dirichlet with uniform prior (default)
+Because you cannot pass a parameter to this algorithm to control feature election behavior, the defaults are used. Therefore, if all attributes are discrete or discretized, the default is BDEU.
+
+
+
+ The algorithm parameters that control feature selection for a neural network model are MAXIMUM_INPUT_ATTRIBUTES, MAXIMUM_OUTPUT_ATTRIBUTES, and MAXIMUM_STATES. You can also control the number of hidden layers by setting the HIDDEN_NODE_RATIO parameter.  
+Scoring Methods
+ Scoring is a kind of normalization, which in the context of training a neural network model means the process of converting a value, such as a discrete text label, into a value that can be compared with other types of inputs and weighted in the network. For example, if one input attribute is Gender and the possible values are Male and Female, and another input attribute is Income, with a variable range of values, the values for each attribute are not directly comparable, and therefore must be encoded to a common scale so that the weights can be computed. Scoring is the process of normalizing such inputs to numeric values: specifically, to a probability range. The functions used for normalization also help to distribute input value more evenly on a uniform scale so that extreme values do not distort the results of analysis.  
+ Outputs of the neural network are also encoded. When there is a single target for output (that is, prediction), or multiple targets that are used for prediction only and not for input, the model create a single network and it might not seem necessary to normalize the values. However, if multiple attributes are used for input and prediction, the model must create multiple networks; therefore, all values must be normalized, and the outputs too must be encoded as they exit the network.  
+ Encoding for inputs is based on summing each discrete value in the training cases, and multiplying that value by its weight. This is called a weighted sum, which is passed to the activation function in the hidden layer. A z-score is used for encoding, as follows:  
+ Discrete values 
+ μ = p – the prior probability of a state  
+ StdDev  = sqrt(p(1-p)) 
+ Continuous values 
+ Value present= 1 - μ/σ 
+ No existing value= -μ/σ 
+ After the values have been encoded, the inputs go through weighted summing, with network edges as weights.  
+ Encoding for outputs uses the sigmoid function, which has properties that make it very useful for prediction. One such property is that, regardless of how the original values are scaled, and regardless of whether values are negative or positive, the output of this function is always a value between 0 and 1, which is suited for estimating probabilities. Another useful property is that the sigmoid function has a smoothing effect, so that as values move farther away from point of inflection, the probability for the value moves towards 0 or 1, but slowly.  
+Customizing the Neural Network Algorithm
+ The  Microsoft Neural Network algorithm supports several parameters that affect the behavior, performance, and accuracy of the resulting mining model. You can also modify the way that the model processes data by setting modeling flags on columns, or by setting distribution flags to specify how values within the column are handled.  
+Setting Algorithm Parameters
+ The following table describes the parameters that can be used with the Microsoft Neural Network algorithm.  
+ HIDDEN_NODE_RATIO Specifies the ratio of hidden neurons to input and output neurons. The following formula determines the initial number of neurons in the hidden layer:  
+ HIDDEN_NODE_RATIO * SQRT(Total input neurons * Total output neurons)  
+ The default value is 4.0.  
+ HOLDOUT_PERCENTAGE Specifies the percentage of cases within the training data used to calculate the holdout error, which is used as part of the stopping criteria while training the mining model.  
+ The default value is 30.  
+ HOLDOUT_SEED Specifies a number that is used to seed the pseudo-random generator when the algorithm randomly determines the holdout data. If this parameter is set to 0, the algorithm generates the seed based on the name of the mining model, to guarantee that the model content remains the same during reprocessing.  
+ The default value is 0.  
+ MAXIMUM_INPUT_ATTRIBUTES Determines the maximum number of input attributes that can be supplied to the algorithm before feature selection is employed. Setting this value to 0 disables feature selection for input attributes.  
+ The default value is 255.  
+ MAXIMUM_OUTPUT_ATTRIBUTES Determines the maximum number of output attributes that can be supplied to the algorithm before feature selection is employed. Setting this value to 0 disables feature selection for output attributes.  
+ The default value is 255.  
+ MAXIMUM_STATES Specifies the maximum number of discrete states per attribute that is supported by the algorithm. If the number of states for a specific attribute is greater than the number that is specified for this parameter, the algorithm uses the most popular states for that attribute and treats the remaining states as missing.  
+ The default value is 100.  
+ SAMPLE_SIZE Specifies the number of cases to be used to train the model. The algorithm uses either this number or the percentage of total of cases not included in the holdout data as specified by the HOLDOUT_PERCENTAGE parameter, whichever value is smaller.  
+ In other words, if HOLDOUT_PERCENTAGE is set to 30, the algorithm will use either the value of this parameter, or a value equal to 70 percent of the total number of cases, whichever is smaller.  
+ The default value is 10000.  
+Modeling Flags
+ The following modeling flags are supported for use with the  Microsoft Neural Network algorithm.  
+ NOT NULL Indicates that the column cannot contain a null. An error will result if Analysis Services encounters a null during model training.  
+ Applies to mining structure columns.  
+ MODEL_EXISTENCE_ONLY Indicates that the model should only consider whether a value exists for the attribute or if a value is missing. The exact value does not matter.  
+ Applies to mining model columns.  
+Distribution Flags
+ The following distribution flags are supported for use with the  Microsoft Neural Network algorithm. The flags are used as hints to the model only; if the algorithm detects a different distribution it will use the found distribution, not the distribution provided in the hint.  
+ Normal Indicates that values within the column should be treated as though they represent the normal, or Gaussian, distribution.  
+ Uniform Indicates that values within the column should be treated as though they are distributed uniformly; that is, the probability of any value is roughly equal, and is a function of the total number of values.  
+ Log Normal Indicates that values within the column should be treated as though distributed according to the log normal curve, which means that the logarithm of the values is distributed normally.  
+Requirements
+ A neural network model must contain at least one input column and one output column.  
+Input and Predictable Columns
+ The  Microsoft Neural Network algorithm supports the specific input columns and predictable columns that are listed in the following table.  
+
+
+
+Column
+Content types
+
+
+
+
+Input attribute
+Continuous, Cyclical, Discrete, Discretized, Key, Table, and Ordered
+
+
+Predictable attribute
+Continuous, Cyclical, Discrete, Discretized, and Ordered
+
+
+
+Note Cyclical and Ordered content types are supported, but the algorithm treats them as discrete values and does not perform special processing.  
+
+See Also
+ Microsoft Neural Network Algorithm Mining Model Content for Neural Network Models (Analysis Services - Data Mining) Neural Network Model Query Examples 
+
+
+
+
+
+
+
+
+
+
+註解										
+
+
+
+編輯										
+
+
+共用
+
+Twitter
+Facebook
+
+
+|
+
+佈景主題
+
+
+淺色
+深色
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類神經網路導論：原理與應用(第二版)(CD Inside) - 類神經網路 - 電子與電機 | 書籍資訊 - 滄海書局‧鼎隆圖書‧滄海圖書資訊網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+購物車
+
+
+首頁|
+會員登入|
+購物客服中心|
+聯絡我們
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類神經網路
+首頁,書籍資訊,電子與電機,類神經網路
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類神經網路導論：原理與應用(第二版)(CD Inside)
++作者：
+
+張斐章/張麗秋合著
+
+
++年份：
+2015 年2 版
+
++ISBN：
+9789869092029
+
++書號：
+EE0418
+
++規格：
+16開/平裝/單色
+
++頁數：
+520
+
++出版商：
+滄海
+
++參考網址：
+
+
+
+
+
+
+
+
+
+
+
+定價
+
+                      $
+
+線上價$
+
+
+
+
+
+
+
+
+
+線上團體購書(15本以上)一律享有團體優惠價格，折扣為定價打 85 折，大量購書亦可來信或來電直接與我們聯絡。
+
+
+
+
+
+(本書勘誤表敬請讀者至一般檔案下載處自行下載，謝謝)§§前後版本差異：第5至第7章節調整
+
+
+
+本書清楚陳述類神經網路的概念、理論與演算方式，透過實例瞭解類神經網路運作及應用成效; 內含簡例及習題，為類神經網路課程之優良教材及自修材料 。類神經網路適合於預測、函數模擬、信號處理、影音辨識、分類及診斷等問題。
+
+
+
+張斐章現職：台灣大學生物環境系統工程學系特聘教授學歷：美國普渡大學土木博士經歷：台灣大學農業工程學系教授兼主任；台灣大學水工所主任；國家科學委員會學門召集人；台灣水文資訊學會理事長專長：類神經網路、水資源系統分析、統計分析張麗秋現職：淡江大學水資源及環境工程學系教授兼系主任學歷：台灣大學農業工程學博士經歷：淡江大學水資源及環境工程學系助理教授、副教授；美國德州奧斯汀大學電腦科學系訪問學者；行政院災害防救專家諮詢委員會委員專長：類神經網路、智慧型控制理論、水文資訊
+
+
+
+1 類神經網路簡述2 生物神經網路與類神經網路3 學習演算法4 倒傳遞類神經網路5 輻狀基底函數與支持向量機6 聚類演算法7 自組性類神經網路8 回饋式類神經網路9 模糊集合與模糊邏輯系統10 反傳遞模糊類神經網路11 調適性網路模糊推論系統12 最佳化搜尋法附錄 MATLAB應用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+會計
+
+
+
+會計學
+中級會計
+高級會計
+成本會計
+管理會計
+審計學
+會計資訊系統
+財務報表分析
+政府與非營利事業會計
+國際會計
+會計理論
+審計資訊系統
+稅務會計
+鑑識會計與舞弊查核
+會計其他
+
+
+
+
+經濟
+
+
+
+經濟學原理
+個體經濟學
+總體經濟學
+管理經濟學
+財政學
+經濟數學
+環境經濟學
+計量經濟
+勞動經濟
+都市經濟
+土地經濟
+國際政治經濟
+國際經濟
+比較經濟
+經濟發展
+經濟問題分析
+經濟專題
+高等總體經濟學
+經濟其他
+
+
+
+
+國際貿易
+
+
+
+國際貿易相關課程
+國際物流
+
+
+
+
+財務
+
+
+
+財務管理
+投資學
+金融市場
+金融機構
+貨幣銀行
+選擇權
+固定收益(債券市場)分析
+衍生性金融證券評價
+不動產投資
+個人理財
+風險管理
+保險學
+保險風險
+財務數值方法
+企業評價
+利率學
+投資心理學
+信託實務
+財務數學
+債券市場
+投資分析
+投資組合
+股票評價
+公司財務
+財政思想史
+國際金融
+財務工程
+國際財務管理
+財務經濟
+投資倫理
+財務分析
+投資哲學
+投資銀行
+財務其他
+
+
+
+
+企業管理
+
+
+
+企業概論
+管理學
+策略管理
+個案研究
+決策分析
+組織行為
+組織理論與管理
+組織發展
+組織結構
+人力資源管理
+領導學
+員工福利
+員工訓練與發展
+行銷學/行銷管理
+國際行銷學
+顧客關係管理
+廣告管理
+業務人員與銷售管理
+通路管理
+零售管理
+門市營運管理
+消費者行為
+行銷研究
+服務業行銷
+企業行銷
+網路行銷
+國際企業
+電子商務
+商業自動化
+知識管理
+專案管理
+服務業(生產)管理
+企業倫理
+創業管理
+創新管理
+中小企業管理
+企業談判
+企業經營診斷
+公司治理
+行銷策略與規劃
+商業文書
+定價策略
+企業研究方法
+觀光行銷
+商業智慧
+企業管理其他
+
+
+
+
+數學
+
+
+
+微積分(偏理工)
+微積分(偏商管)
+數學導論
+數論
+高等微積分
+分析理論
+線性代數
+微分方程
+偏微分方程
+離散數學
+工程數學
+實變函數論
+複變函數論
+管理數學
+數值分析
+幾何學
+向量分析
+圖論
+組合論
+線性規劃
+數理規劃
+傅立葉分析
+壽險數學
+轉換方法論
+矩陣
+向量微積分
+精算數學
+MATHEMATICA
+測度論
+拓樸學
+代數學
+數學其他
+
+
+
+
+機率與統計
+
+
+
+機率論
+統計學
+商業統計
+線性模式分析
+迴歸分析
+商業預測
+時間序列
+多變量分析
+數理統計
+高等統計
+推論統計
+統計方法
+抽樣方法
+研究方法
+實驗設計
+可靠度分析
+統計資料分析
+工程統計
+社會統計
+生物與醫護統計
+存活分析
+S, S-PLUS
+SPSS
+統計輔助軟體
+保險風險理論
+類別資料分析
+離散資料分析
+矩陣模式分析
+縱貫性分析
+隨機過程
+無母數統計
+臨床試驗分析
+財務統計
+估計與近似值理論
+質性研究方法
+醫療統計學
+巨量分析/大數據分析
+機率與統計其他
+
+
+
+
+資訊與資工
+
+
+
+計算機概論
+管理資訊系統
+資訊科技與資訊概論
+程式語言概論
+C
+C++
+C#
+JAVA
+FORTRAN
+COBOL
+Visual Basic
+系統分析與設計
+資料結構
+物件導向
+軟體工程
+計算機組織
+組合語言
+作業系統
+系統程式
+UNIX
+LINUX
+資料庫概論
+資料庫系統
+資料庫管理系統
+資料庫應用Access
+資料與電腦通訊
+網路安全
+資訊安全
+演算法
+區域網路
+資料倉儲與資料探勘
+多媒體
+多媒體通訊
+軟體專案管理
+決策支援系統
+電腦繪圖應用程式
+MATLAB
+數位教學
+通訊網路
+網路程式設計
+數位學習
+Python
+資訊與資工其他
+
+
+
+
+工業工程
+
+
+
+生產與作業管理
+高等生產管理
+作業研究與管理科學
+人因工程
+工業工程管理
+工作研究
+品質管理
+全面品質管理
+國際品質管理
+可靠度
+設施規劃
+工廠管理
+物流管理與運籌
+供應鏈管理
+採購管理
+物料管理
+存貨管理
+科技管理
+系統模擬
+排程
+工程經濟學
+企業資源規劃
+職業安全
+最佳化工程
+自動化製造
+產品開發
+電腦整合製造
+產品資料管理
+系統工程
+國際物流
+系統動力學
+工業工程其他
+
+
+
+
+社會與心理
+
+
+
+心理學
+社會心理學
+兒童心理學
+工業心理學
+管理心理學
+變態心理學
+教育心理學
+人格心理學
+健康心理學
+成人發展與老化
+心理學研究方法
+青少年健康
+認知心理學
+社會與心理其他
+
+
+
+
+醫務管理
+
+
+
+醫療管理
+醫療品質管理
+醫療人力資源管理
+醫療財務管理
+醫療資料管理
+醫療服務管理
+醫療經濟學
+醫療概論
+健康事業
+醫務管理其他
+
+
+
+
+物理
+
+
+
+大學物理
+學院物理
+生活物理
+熱物理
+熱力學(偏物理)
+電磁學(偏物理)
+光學
+傅立葉光學
+雷射
+X光繞射
+凸鏡設計
+近代物理
+固態物理
+量子物理
+粒子物理
+核物理
+超導體
+物理數學
+古典力學
+力學
+波
+天文學
+物理實驗
+MATHEMATICA(偏物理)
+量子力學
+物理其他
+
+
+
+
+化學與化工
+
+
+
+普通化學
+有機化學
+有機合成
+有機實驗
+分析化學
+儀器分析
+物理化學
+化學數學
+化工(化學)熱力學
+程序控制
+輸送現象與單元操作
+高分子化學
+陶瓷材料
+奈米材料
+奈米技術
+生物化學
+無機化學
+化工安全
+化學實驗
+通識化學
+固態化學
+化工概論
+光譜學
+分子光譜學
+生物質譜學
+催化作用
+薄膜合成與分離技術
+有機金屬
+藥物化學
+觸媒
+物化數學
+化學與化工其他
+
+
+
+
+電子與電機
+
+
+
+電路學
+電路學相關
+電子學
+電子學實驗
+電機學
+數位電子學
+類比電子學
+運算放大器
+電子學相關
+數位邏輯設計
+數位訊號處理
+影像處理
+聲音處理
+線性系統
+訊號與系統
+通訊系統
+電磁學(偏電子電機)
+光纖通訊
+通訊電子學
+射頻微波電路
+天線
+展頻分析
+行動通訊
+通訊相關
+顯示器
+光電工程
+光纖
+雷射電子學
+光學(偏電子電機)
+矽光子學
+數位控制
+控制相關
+半導體製程
+積體電路
+電子材料
+VLSI
+微機電
+半導體物理與元件
+半導體相關
+通訊網路
+類神經網路
+無線網路
+網路相關(偏電子電機)
+電機機械
+電力系統
+電力電子
+電力相關
+單晶片
+微處理機
+嵌入式系統
+資料壓縮
+數位系統設計
+數位邏輯實習
+訊號處理單晶片
+回授控制
+系統晶片
+控制系統
+電機工程
+電磁相容
+電子與電機其他
+
+
+
+
+機械工程
+
+
+
+靜力學
+動力學
+靜力與動力
+材料力學
+高等材料力學
+振動力學
+結構力學
+力學(偏機械)
+機械力學
+黏性力學
+生物力學
+固力相關
+流體力學
+熱力學(偏機械)
+熱傳學
+輻射熱傳
+對流熱傳
+熱傳與質傳
+冷凍空調
+燃燒工程
+內燃機
+壓縮流與氣體動力
+機械元件設計
+電腦輔助設計與機械製圖
+控制系統
+動力系統(中等動力學)
+系統動力
+機電整合
+自動化工程
+機器人學
+材料科學導論
+塑膠加工
+工程材料
+有限元素法
+奈米工程
+能源
+汽車引擎
+柴油引擎
+焊接
+摩潤學
+MATLAB(偏機械)
+油壓系統
+燃料電池
+機械製造
+連體力學
+機動學與機構學
+系統工程
+機械工程其他
+
+
+
+
+航空工程
+
+
+
+空氣動力學
+飛機結構
+航太概論
+飛機保養與維修
+飛機電子學
+飛機動力學
+飛行概論
+飛機力學
+衛星導航系統
+航空管理
+飛行力學
+航空交通控制
+飛機設計
+飛行控制與模擬
+航空工程其他
+
+
+
+
+土木工程
+
+
+
+結構分析
+給水工程
+水文學
+水資源工程
+輸砂理論
+石造結構
+鋼筋混凝土
+預力混凝土
+電腦輔助結構分析
+建築材料
+結構力學
+土壤學
+土壤力學
+基礎工程
+交通工程
+舖面工程
+交通計畫
+施工設備
+施工專案管理
+地理資訊系統
+遙感探測
+土木電腦輔助應用
+測量資訊相關
+環境影響評估
+物業管理
+運輸規劃
+營建管理
+土木工程其他
+
+
+
+
+環境工程
+
+
+
+環境科學
+環境工程
+水化學
+環境化學
+環境化學檢測
+環境化學分析
+污水工程
+地下水學
+有毒廢棄物管理
+固體廢棄物
+廢棄物管理與資源回收
+空氣污染防治工程
+噪音污染控制
+污染防治
+生態學
+生態工程
+環境影響評估
+環境毒物學
+環境控制系統
+環境土壤化學
+氣象學
+環境工程其他
+
+
+
+
+生命科學
+
+
+
+生物學
+微生物學
+分子生物學
+生物技術
+生醫材料
+生物資訊
+人類發展學
+食品科學
+遺傳學
+高等遺傳學
+作物培育
+寄生蟲學
+組織學
+生醫工程
+生命科學其他
+
+
+
+
+護理
+
+
+
+護理
+護理少量進口書籍 
+
+
+
+
+休閒觀光與餐飲
+
+
+
+休閒產業分析
+觀光學
+餐飲服務管理
+渡假村作業管理
+餐旅管理
+餐飲成本控制
+旅館前臺管理
+收益管理
+餐旅服務管理
+餐旅採購管理
+餐旅財務管理
+餐飲業
+
+
+
+
+化妝品科學
+
+
+
+化妝品化學
+化妝品原料
+其他
+
+
+
+
+其他
+
+
+
+國文類
+日語類
+英語類
+商事法
+合作社法
+公平交易法
+金融法
+稅務行政
+地球科學
+森林測量
+地質學
+人體解剖
+論文寫作
+談判
+綠色科技
+工程英語
+綠色創新設計
+憲法
+教學設計
+保險
+其他
+
+
+
+
+ 
+
+帳號
+
+
+密碼
+
+
+驗證碼
+
+
+
+
+
+忘記密碼 | 註冊
+
+
+
+訂閱 / 取消滄海電子報
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+書籍資訊|
+會員服務|
+教師專區|
+新聞中心|
+購物客服中心|
+電子報|
+加入會員|
+邀請作者|
+服務諮詢|
+員工專區|
+網站使用須知|
+隱私權政策
+
+
+2014 © 滄海書局‧鼎隆圖書股份有限公司.  All Rights Reserved.     Designed by WDD
+地址：臺中市西屯區臺灣大道三段540號11樓電話：(04)2708-8787傳真：(04)2708-7799E-mail：thbook@tsanghai.com.tw
+
+
+
+
+0
+
+購物車
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類神經網路的復興：深度學習簡史  –  StockFeel 股感知識庫
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+雲端科技動態類神經網路的復興：深度學習簡史作者：Lynn   |   2017 / 01 / 03文章來源：股感知識庫   |   圖片來源：Joseph Wang 
+
+
+
+
+前篇引導：數據分析專題（四）：機器學習的衰頹興盛：從類神經網路到淺層學習
+前述：人工智慧與機器學習的演進
+下述故事是我們在【人工智慧的黃金年代：機器學習】與【機器學習的衰頹興盛：從類神經網路到淺層學習】文章中已向大家介紹過一遍，若有想要回顧相關技術名詞的讀者歡迎參閱。
+1950年代電腦發明以來，科學家便希冀著利用電腦創造出人工智慧。然而當時的人工智慧理論採用的是邏輯推理方法，需要百分之百確定的事實配合、在實務上不容易使用；再加上當時的硬體效能低落、數據量不足，隨著通用問題解決機(General Problem Solver)、日本第五代電腦等研究計畫的失敗，人工智慧陷入了第一次的寒冬。
+人工智慧「現代鍊金術」的惡名，一直到1980年代開始才又復興。此時科學家不再使用傳統的邏輯推理方法，取而代之的是結合機率學、統計學等大量統計理論，讓電腦能透過資料自行學會一套技能，並根據新給的數據、自行更正預測錯誤的地方、不斷地優化該項技能，稱為「機器學習」。
+機器學習方法有許多種不同的數學模型，包括隨機森林、類神經網路、感知器…族繁不及備載。此間爆發了兩種不同的機器學習模型浪潮，第一波興盛的模型為「類神經網路」、又稱人工神經網路。
+機器學習一直在嘗試解決現實中複雜的資料切分問題。線性關係的資料能用一條直線表示，比如食量和肥胖度成正比；非線性關係的資料則無法用一條直線表達，比如指數成長的人口是一個指數函數；第一代神經網路單層感知機是線性模型，無法解決線性不可分的問題，因此早期的感知機神經網路也不受重視。
+
+直到1986年，學者包括Rumelhart、Hinton等人提出「反向傳播算法」(Backpropagation)訓練神經網路， 使的具備非線性學習能力的多層感知機 (Multi-Layer Perceptron)的可能露出一絲曙光。讓神經網路紅極一時。
+還記得我們提過的類神經網路的基本原理嗎？先讓資料訊號通過網路，輸出結果後、計算其與真實情況的誤差；再將誤差訊號反向傳播回去、對每一個神經元都往正確的方向調整一下權重；如此來回個數千萬遍後，機器就學會如何辨識一隻貓了。
+反向傳播時，資料科學家會設定更正錯誤的方法──「代價函數」(Cost Function)。代價函數是預測結果和真實結果之間的差距。代價函數的優化(Optimization)是機器學習的重要研究目標，也就是：如何找到優化的最佳解（誤差的最小值）？如何用更快的方式逼近最佳解？
+如何逼近最佳解有很多種不同的演算法，最典型的方法是採用隨機梯度下降法(Stochastic Gradient Descent)。當線性關係資料的代價函數為凸函數，找到最佳解不是問題；然而問題在於非線性關係的資料：其代價函數為非凸函數，求解時容易陷入局部最佳解、而非全域最佳解，這個問題叫做梯度消失問題(Vanishing Gradient)。
+更糟的是，梯度消失問題會隨著神經網路層數的增加而更加嚴重，意即，隨著梯度逐層不斷消散、導致神經網路對其神經元權重調整的功用越來越小，所以只能轉而處理淺層結構（比如2層）的網路，從而限制了性能。
+單層感知機失敗的原因乃不能切分非線性關係的資料；雖然1986年的學界提出了反向傳播算法，卻仍無法解決非線性資料的優化問題，多層感知機仍然無法實踐。這使得類神經網路在剛出現時雖大為火紅、卻在不久後又沒落了下去。
+經歷了單層感知機、和多層感知機的兩次失敗，當時的學界只要看到出現「神經網路」字眼的論文或研究計畫，便會立刻貶斥，認為：多層的神經網路是不可能的。然而若採用僅有兩層的神經網路，不如使用其他理論更完備也更好實踐、同樣只有兩層的「淺層」機器學習模型。因此在1990年代，支持向量機(Support Vector Machine)等「淺層機器學習模型」成為主流技術，此為機器學習的第二波浪潮。
+接下來，讓我們來繼續談談類神經網路是如何再度復甦。
+2006年，Hinton帶著「深度學習」回歸幕前
+若是沒有一個關鍵人物，那麼類神經網路的故事可能也就到此為止了。
+Hinton教授作為反向傳播算法的發明人之一，即使不被學界重視，30多年來、對於神經網路研究仍然不離不棄。Hinton教授的苦心鑽研，終於在2006年時有了成果，成功解決了反向傳播的優化問題。
+他是怎麼成功訓練神經網路的呢？ Hinton提出了限制玻爾茲曼機和深度信念網路兩個概念：
+
+限制玻爾茲曼機 (RBM)
+
+限制玻爾茲曼機 (Restricted Boltzmann Machines, RBM)為僅有2層結構的淺層神經網路，第一層稱為可視層(visible layer)、第二層稱為隱藏層(hidden layer)。
+玻爾茲曼機模型中，同一層之間的神經元也會連結在一起；然而為了降低複雜度，我們設計讓同一層的神經元彼此間沒有連結，這也是為什麼稱為「限制」玻爾茲曼機的意思。不同層的神經元彼此間會連接在一起，並採取隨機決策(stochastic decisions)來決定一個神經元要傳導或不傳導。
+RBM作為一種神經網路，其設計當然也包括了前向傳導和反向傳導兩個步驟：
+(1) 前向傳導 (forward)
+丟入一筆資料進行運算時，在可視層、每個神經元都會接收到一個資料的低層級特徵。比如當我們丟入一堆灰階的圖片，每個可視層的神經元會接收到每張圖片的每一個像素(pixel)。
+以手寫數字辨識資料庫MNIST為例，MNIST圖像共有784個像素，故RBM神經網路在處理MNIST資料時，在可視層就必須有784個輸入的神經元。(註：MNIST 數字是1998年由紐約大學的LeCun教授為了美國郵政部開發的手寫數字圖片資料庫, 可參考: http://yann.lecun.com/exdb/mnist/)
+每個輸入值 x (input)都會乘以一個權重 w (weight)、加總後再加上一個偏差值 b (bias)；由於神經網路中的神經元有些可能會傳遞、有些不會，加上偏差值的目的是為了至少讓某些神經元能被激發起來。最後在隱藏層輸出結果 a。
+也就是說各個神經元的激發函數公式為：
+激發函數 f( (權重 w * 輸入值 x) + 偏差值 b ) = 輸出結果 a
+
+(2) 重建(Reconstruction)
+RBM的目標是為了重建原始的輸入值 x、且還原的越精確越好。在反向傳導的過程中，剛剛的輸出結果 a在隱藏層作為新的輸入值，同樣乘上權重 w、加上一個偏差值，最終在可視層輸出資料重建的結果 r。
+接下來，我們在可視層比較一開始輸入值 x和重建值 r的差異，以分辨重建資料的精確度。RBM使用一種叫做「KL Divergence」的方法來衡量網路重建資料的準確度。
+整個網路會不斷向前傳遞過去、再向後傳導將原始資料重建回來，期間來回數次、不斷調整每個神經元的權重和偏差值，直到「原始資料」和「重建後資料值」兩者差異被優化到最小值為止。也就是說，我們盡量讓重建回去的資料值和原始資料接近一模一樣。
+關於RBM背後的機率理論相當複雜，在此略過不提，歡迎有興趣的讀者自行查閱。簡單來說，藉由RBM試圖「重建」原有資料的過程，讓神經網路能自行發覺資料隱含的規律。看起來很眼熟？沒錯，放入沒有被標籤過的資料、我們可以利用RBM來做無監督學習(unsupervised-learning)。
+甚至在重建的過程中，可以發現為了將資料重建回去、資料最關鍵的特徵是什麼。也就是說，我們能知道「用到哪些關鍵的特徵」就可以成功重建，得以利用RBM來提取資料的特徵。
+
+深度信念網路 (DBN)
+
+接下來Hinton使用了一個很聰明的技巧——將RBM堆疊起來、建立一個多層的神經網路，稱為深度信念網路 (Deep Belief Network)。
+
+訓練時，深度信念網路會一次訓練2層網路、而這2層正是RBM模型；將數個RBM模型堆疊起來，每一層模型的輸出值即為下一層模型的輸入值，直到抵達最後一層輸出層為止，由於我們直接將無標籤(unlabeled data)資料放入網路中，因此深度信念網路是一個無監督學習過程。
+學習到最後，我們可以結合半監督學習——透過一些少量的標籤資料(labeled data)，對深度信念網路的神經元權重和偏差值進行微調(Fine-Tune)，讓精確度更高。
+預先訓練完後，在最後一層才放「分類器」。也就是說，不直接將資料放進分類器中，而是將資料預先經過RBM模型的訓練。藉由這樣無監督或半監督、逐層的預訓練(unsupervised/semi-supervised, layer-wise pre-training)的過程，深度信念網路能找到輸入資料隱含的規律、具備優異的特徵學習能力。就像逐漸聚焦的相機鏡頭，深度信念網路讓資料越來越清晰。
+但這跟我們想解決的梯度消失(vanishing gradient)問題有什麼關係呢？
+若尚未聽過梯度消失問題的讀者，請先參閱【機器學習的衰頹興盛：從類神經網路到淺層學習】一文。
+在線性回歸當中，使用隨機梯度下降法、從任意一個點出發搜索，最終必然是下降到全域最小值(global minimum)。所以初始值可以任意設為0。
+
+問題是非線性回歸——陷入局部最小值是多層神經網路揮之不去的陰影。隨著層數的增加，非凸的代價函數越來越複雜、局部最小值點成倍增長。
+傳統的神經網路隨機初始化網路中的權值，導致網路很容易收斂到局部最小值。因而，如何避免一開始就倒霉地被吸到一個超淺的盆中呢？比起隨機選擇初始值、或是將初始值設為零，如果能找到一個理想的起始點開始梯度下降，將能夠更快、更容易找到全局最小值。
+
+從1980年代到2006年的十多年間，機器學習領域以支持向量機(SVM)等簡單高效的分類方法為主，這些方法在處理非線性關係的資料時，多依賴資料科學家將資料分段、採用局部線性逼近；然而這相當仰賴資料科學家本身的經驗。
+更甚地，研究人員還依據經驗或相關知識，設計了許多「人造特徵」。比如在圖像識別領域， SIFT、HOG、Gabor等人工設計的特徵被用來描述圖像的梯度或紋理性質。雖然在很多問題上取得了還不錯的性能，但人造特徵無法廣泛的並用、且設計新特徵需要強大的經驗和知識。最重要的是，面對大數據時，難以自然找到其中蘊含的規律。
+深度神經網路可以自動學習特徵，而不必像以前那樣還要請專家以人工建造特徵，大大推進了智能自動化。
+2006年可以說是深度學習起飛的一年。經過了三十年的研究，Hinton在《Science》等期刊發文，指出「具備多層隱藏層的神經網路具有更為優異的特徵學習能力，且其在訓練上的複雜度可以通過逐層初始化來有效緩解」。
+這篇驚世駭俗之作名為《Reducing the dimensionality of data with neural networks》。在這篇論文中， Hinton提出深度信念網路、使用無監督預訓練方法優化網路權值的初始值，再進行權值微調(Fine-Tune)，讓多層神經網路能夠真正被實踐。
+又由於神經網路的研究在過去被棄置已久，故Hinton教授又將深度神經網路重新換上「深度學習」(Deep Learning)的名字捲土重來，Hinton也因此被稱為「深度學習之父」。
+話說回來，目前已經沒什麼人在使用RBM或深度信念網路了；後來的研究發現，簡單的初始化和激發函數的調整，才是解決Vanishing Gradient Problem最好的方法。現今最為廣泛被使用的方法是「多層感知器(MLP) + ReLU函數」。
+
+ReLU函數近年來有取代傳統sigmoid函數神經元的趨勢。
+不過在2006年，Hinton以深度信念網路第一個提出「深度神經網路可行」的說法，讓學界把眼光重新放回神經網路這個領域。可以說RBM只是深度學習浪潮的一個開端。
+真正讓深度學習徹底的火爆起來，還是2012年那年10月發生了一件大事，從此革命火勢一發不可收拾。到2016年的今天，深度學習儼然成為未來十年內最重要的技術。究竟是發生了什麼事情呢？
+下篇，就讓我們來看看，NVIDIA的GPU是如何和深度學習技術相輔相成，成為時下最熱門的硬軟體技術應用。
+
+【延伸閱讀】
+
+數據分析專題（一）：引爆資料中心革命：雲端運算
+數據分析專題（二）：從儲存、挖掘到溝通，引領產業新面貌：大數據(Big Data)
+數據分析專題（三）：人工智慧的黃金年代：機器學習
+數據分析專題（四）：機器學習的衰頹興盛：從類神經網路到淺層學習
+數據分析專題（六）：神經網路的復興：重回風口的深度學習
+
+
+							42126						
+
+喜歡這篇文章？加入你的S夾！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lynn金融人轉科技人之路，專註於使用淺顯易懂的文字講述艱澀的產業知識。臉書粉絲專頁《寫點科普，請給指教》 
+
+
+Lynn的最新文章
+
+
+   1   生活消費知識    舊品牌新挑戰 — 數位化與永續價值     生活消費知識  股感知識庫  2017/03/10     2   生活消費知識    金權主義的幻夢 — 奢侈品     生活消費知識  股感知識庫  2017/03/08     3   生活消費知識    掌握人心的公式 ─ 時尚     生活消費知識  股感知識庫  2017/03/06     4   雲端科技知識    行動網站 — 線上營收的決勝關鍵     雲端科技知識  股感知識庫  2017/02/17   
+More
+
+
+
+
+
+
+
+前往雲端科技小地圖
+瞭解更完整的產業概念
+
+
+
+
+
+
+
+
+
+
+社群熱門分享排行榜
+
+
+本週
+本月
+
+
+
+
+   1   圖解財經    撐起台灣經濟半邊天 半導體的關鍵製程     圖解財經  股感知識庫  2017/07/19     2   財經媒體    私募基金的內部培訓筆記曝光 讓你投資少走幾條彎路     財經媒體  雪球  2017/07/16     3   社群達人    如何從便宜股票裡 篩選出真正被低估的優質企業？     社群達人  Base Hit Investing  2017/07/16     4   專業機構    眼見為憑逛街選股法     專業機構  KGI凱基證券  2017/07/20     5   財經媒體    經典演講 蒙格給畢業生的 15 條人生忠告     財經媒體  雪球  2017/07/18   
+
+   1   圖解財經    臺灣電商寒冬來襲？     圖解財經  股感知識庫  2017/06/26     2   專業機構    如果稅改後 股利改採分離課稅 存股者該如何因應？     專業機構  KGI凱基證券  2017/06/27     3   專業機構    股利分離課稅下存股策略     專業機構  KGI凱基證券  2017/06/22     4   圖解財經    機能衣大躍進 紡織矽谷的崛起     圖解財經  股感知識庫  2017/07/05     5   社群達人    一般人投資績效為何較低的12個原因(Ⅰ)     社群達人  The Aleph Blog  2017/07/11   
+
+
+
+
+
+
+
+追蹤股感的社群
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類神經網路課程
+
+
+
+
+
+
+
+類神經網路課程
+
+
+
+
+
+
+
+
+
+課程簡介
+
+
+
+
+
+
+作業
+
+
+
+課程內容摘要
+
+
+MATLAB 簡介: 
+Mich. Tech. Univ., 
+NCU 吳俊諆, 
+NTHU 張智星
+
+
+過去課程, 相關課程：
+
+
+
+其它類神經網路相關連結
+
+
+論文下載
+
+
+
+
+
+
+回
+
+類神經網路課程
+
+首頁
+
+
+
+
+製作日期: 5/30/2001
+by 丁培毅 (Pei-yih Ting)
+E-mail: pyting@cs.ntou.edu.tw
+TEL: 02 24622192x6615
+海洋大學
+理工學院
+資訊科學系
+Lagoon
+
+
+
+
+
+
+
+
+
+類神經模糊網路
+
+
+類神經模糊網路
+林進燈
+國立交通大學控制工程研究所
+
+一、前言
+類神經網路（Neural Network）與模糊理論(Fuzzy Theory）- 目前均被成功地應用在各個不同的領域上，同時也是目前研究上的一個熱門課題。由於目前已有相當多描述這兩者的文章或書籍〔l〕-〔4〕，因此在這裡我們所要探討的，並不著重於類神經網路或模糊理論個別的基礎介紹或探討。我們所要介紹、探討的角度，將著重在兩者間的關係與比較。舉例來說：類神經網路與模糊集合常常被相提並論，基本上兩者均有增加系統智慧，模擬一個輸入，輸出對應關係等的能力。這意謂著，兩者間有一種巧妙的關係存在。到底這種關係為何，兩者間有何相似、差異性，便是一個值得思索的題目。此外，在工程應用或問題解決上，如何在兩耆間做一合適的選擇，也是常見的問題。更甚者，如何擷取兩者間的優點，互補缺失，並發展一種新的模式，也 是一研究發展方向。而上述各個問 題，正是本文所要詳加介紹，探討 的。在這篇文章中，將以建立讀者 觀念為主，所以一些數學式子都將儘量避免出現。
+
+二､類神經網路與模糊系統之共通點及差異性
+一般而言，類神經網路與模糊 系統均具有在不須要知道一個系統的數學模式下，便能成功的估測此一系統的能力。由於兩者均採用數值的方法來解決問題，這使得我們可以用數學工具來處理，同時方便以演算法完成。由於方便以演算完成，使得硬體實現更加容易。而這些特性正是類神經網路和模糊理論與利用符號（Symbolic）方法來解決問題的人工智慧 （Artificial intelligence）的不同處。
+類神經網路及模糊理論的共同特性，大致可分為：
+
+兩者均是用來模擬人類的大腦。在這方面，類神經扮演的角色便是仿造大腦中細胞的行為。即大腦中的生理結構等較低階的部份。相對的，模糊邏輯（Fuzzy logic）則是用來模擬人類的心智，推理等屬於心理成份的部份。如果我們把類神經網路比喻成大腦的硬體成份，則模糊邏輯就好像軟體部份，藉由兩者間的相輔相成，便能描述人類的種種思考行為。
+知識的分散式表示（Distributed representation），就類神經網路而言，所貯存的知識被分散在節點 （Node) 與鏈結值 （Link）。而模糊系統的一個元件，則是由不同模糊集合（Fuzzy set) 上的不同的歸屬程度（Membership grade）所表達。
+兩者均是可以訓練的動態系統，並且在不須要知道一個連續函數的輸入，輸出間的數學關係下，便能估測此一函數。這種特、性使它們適合應用在控制領域上。
+均具有歸納 （Generalization）能力及容錯能力，由於知識的分散式表示以及均屬於平行架構，使得兩者均有好的容錯能力。即當本身架構受到損害時，均能展現相當強韌性（Robustness）。
+具有處理現實生活中因為資料的不確定或不精確等所造成的問題。儘管類神經網路與模糊系統有許多的相似性，在細微的部份，兩者還是有些差別。兩者的差異在於：如何由取樣點估測一個函數，如何表示及儲存這些取樣點，對於結構上的知識的表示與編碼方式，以及由輸入對應到輸出等等。
+基本上，類神經網路在估測一個函式時，所採用的取樣點是數值點（Numerical-point)， 這與模糊系統採用模糊集合當取樣點有所不同。在學習上，類神經網路須要一組的訓練資料，經由反覆的學習後，將這些訓練資料編碼於一個有如黑盒子的網路結構中。因此在學習之後，除非測試所有的輸入與輸出的關係，否則我們無法得知網路的學習結果。對於一般常用的若...則...，（IF-THEN）法則，我們無法直接將它編碼於網路中。我們可用的方法，便是提供一大筆的輸入､輸出相對應的訓練資料給系統。此外，由於使用者無法得知網路內層所代表的意思，因此很難決定一個網路的結構與大小。總言之，類神經網路是一種結構可隨意選取並且是完全分散式的模型。雖然這種分散性的結構可加強學習，但也使得我們無法以容易理解且精確的邏輯結構，如若...則...（IF...THEN...）法則來解釋之。
+相對於類神經網路，模糊系統屬於構化的數值估測 （Structured numericl estimators）。模糊系統可直接將關於結構的知識以數值的組織方法編碼在系統中。所以我們只須要設計一些法則，便能完成一個模糊系統。這種設計工作，遠比設計並訓練一個類神經網路來得簡單的多。
+類神經網路與模糊邏輯彼此是互補的技術 [5]。類神經網路可由所要學習或控制的系統中萃取資訊。而模糊技術通常直接的使用由專家所提供的口頭資訊。一種用來獲取兩者的優點並同時解決個別缺點的可行方法，便是將兩者結合成一套整合系統。如前所述，這兩者之間有許多的相似性，而這種相似性正 提供兩者間結合的可行性的一個不 錯的依據。
+結合的系統將具有類神經的優點（如：學習能力､最佳化能力、連結式的結構），與模糊邏輯系統的優點（如：接近人類的思考行為，容易結合專家知識）。依此，我們可把類神經這種低階的學習與計算功能應用在模糊邏輯系統上，並且把模糊 邏輯系統這種高階的，接近人類思考，推理的功能應用在類神經網路上。如此一來，在類神經網路這方面，整個網路結構將透明化，這使得它更像模糊系統。相對的，模糊系統自我調整的功能，將使它更接近類神經網路。
+
+三、類神經模糊網路的基本概念
+一個模糊系統表現的好壞往往決定於輸入、輸出的歸屬函數（Membership function），模糊邏輯法則（Fuzzy logic rules），及推理機制（Inference mechanism）。僅管目前已有許多文章，是專門在探討模糊系統的理論與應用 〔2]-[4〕，然而一套統一且有系統的發展方法，仍然還未被提出。傳統上，一套模糊系統的完成，是根據一大串的經驗觀察後，根據觀察結果而以適合的知識來表示。然而實際上發展一套模糊系統時，往往會遇到二個嚴重的間題：如何決定策略的初始模糊法則，及如何調整初始法則及其歸屬函數。傳統的方法往住須要某一領域的專家，依此產生初始法則及它們的歸屬函數。最後再根據錯誤嘗試（Trial and error），來細部調整這些法則與締屬函式，以使最後系統的表現達到最佳化。很明顯的，要檢測一個複雜的系統所有的輸入、輸出關係，並依此來找出並調整相對應的法則與函式，對一個專家而言，將是一件極困難的事情。
+以類神經網路來分析並自動設計一般的模糊邏輯法則，對以上所提到的設計問題，提供了一個嶄新且可行的解決方法 〔6〕-[7〕。一個模糊系統，當具備有自動調整參數，如歸屬函式的能力後，將很容易產生並且有適應性的能力。可見，由一個類神經網路所提供的技術，其目的在減少設計一個模糊系統時，人為設計的佔予成份，及加入自動調整的觀念，而後者將可使最後的系統有更多的自動化功能。
+以類神經網路來適應性的產生模糊系統的模糊邏輯法則的基本想法大致如下。數學上來說，一個模糊系統是將輸入乘積之高立方（Hypercube）上的模糊集合，映射到輸出之高立方上的模糊集合。模糊系統連結了輸入、輸出模糊集合，所以它的動作就如同連結記憶體（Associative memory）一般。相似的輸入將產生相似的輸出。換句話說，若把這個觀念加入類神經模糊系統中則synaptic向量把輸入、輸出空間量化成輸入、輸出群集（Cluster）。由輸入輸出群集的對應關係，可追蹤出專家如何把輸入對應到適當的輸出反應。每一對相互對應的輸入、輸出群集，就如同一條模糊邏輯法則，其中輸入群集表示一個法則的前置情形（Precondition），而輸出群集則表示結果。這其中主要的幾何概念為：互相連結的輸入、輸出群集就等於法則。這裡的連結可能是適應性分群演算法的結果。所以就幾何的觀點，一個隨著時間而變 （Time-varying）的群集間的對應，就如同適應性模糊系統。類神經網路的學習法則便是用來學習這些對應。由上所陳述的基本概念可知，適應性模糊系統是用類神經（或統計）的技術，由所穫取的資料中萃取出模糊法則，並利用新穫取的資料逐漸的調整這些法則。
+總體而言，適應性模糊系統所做的調整可分為二類 〔8〕：結構的調整（Structure tuning），以及參數調整（Parameter tuning）。第一類所關心的是法則的結構，變數所代表的意義，對每個變數區的分割，法則的數目及其連結構成形式等。第二類所關心的是歸屬函式的形狀與位置。這裡所謂的歸屬函式均為參數化的歸屬函式，而相關的參數，如三角形歸屬函式的中心與寬度均可調整。類神經網路的強大調整能力正可用來做模糊系統的結構與參數調整。在類神經網路的三種學習方法中，非監督式（Unsupervised）學習由於在不須要外在的訊息下，能夠抓住輸入向量的規則性而建構模式，因此適合用來做資料的分群，並找出對應的法則。當然，類神經網路本身的結構學習技巧，也可貢獻在模糊系統的結構調整。監督式學習與加強式學習，則通常用來針對模糊系統的要求輸出值（Desired output)，而調整其法則或歸屬函式。基因（Genetic）法則也可用來做結構調整，所用的方法是搜尋空間中所有可能的模糊決定表。一旦得到滿意的結構後，再做歸屬函式的微調工作，這部分可由監督式學習或加強式學習完成。類神經網路可以三種組態來參與模糊邏輯系統的自動調整 〔9〕：
+
+利用類神經的學習能力來自動決定並調整模糊法則及歸屬函式。有人以類神經網路驅動的模糊推理中，類神經網路的學習本事即被用在模糊推理上。在這種情況下，模糊系統實際上並不被類神經網路的結構所影響。
+利用梯度 （Gradient) 法則來調整歸屬函式。這裡遞減法則所扮演的角色，與在類神經網路或其它需要尋找最佳參數的參數化系統一般。一個很明顯的例子，便是Nomura 所提出的演算法：利用階梯法則來做如Sugeno 的模糊系統之參數的最佳化。
+模糊系統以如類神經網路般的結構存在，即本身為一個多層網路，而每一個結點各有其功能，便得整個網路作用就如同模糊系統一般。此為目前最常使用的方法。在後向傳遞（Backpropagation）演算法所使用 的梯度遞減 （Gradient descent）法則，往往也在此方法中用來訓練整個網路。在此方法中，如同傳統的邏輯一般，亦可用遞迥（Recurrent) 神經網路，來實現模糊還輯的複雜推理機制。
+
+
+四、應用
+目前在許多不同的領域上，兩者皆成功的被用來增加所控制的系統的機器智慧（Machine intelligence)。如類神經網路被用在語音辨識、影像處理、高速modem、 機場爆炸物偵測等。而模糊系統則用在地下鐵駕駛、 電視電腦的磁頭調整、空調系統的調整、機械手臂、工業製造程序、電梯、交通號誌的控制等。而類神經網路與模糊邏輯理論結合（類神經模糊網路）之應用也是非常廣泛。在洗衣機的應用方面，類神經網路即當作模糊控制器之補償器，在洗衣機中，除了原有之模糊控制器外，有一類神經網路被加進來，根據電導特性來量測水的透明或不透明（即乾淨或不乾淨），此電導性即當作類神經網路的輸入。在冰箱的應用方面，可以利用類神經網路來學習去預測一天當中何時冰箱的門開的頻率最高，此估測值被用到模糊控制器中，使冰箱能自動預先冷卻，這種方法可使冰箱中的食物溫度變化量在 2.2C 內。
+
+五、未來研究方向
+在一些現存模糊控制系統或類神經模糊網路， 其輸入及輸出之空間均分割成棋盤格狀，雖然在硬體實現上非常容易， 但當輸入及輸出之變數增加時， 這棋盤格狀之分割數目便隨之遽增， 導至所需之記憶體或硬體數目不切實際地增加，由於比方法在學習過程中， 欲得較好的空間分割須更多的訓練資料，否則將發生不充分的學習。 在複雜系統中， 為了避免分割數目遽增，須找出一更具彈性且不規則的分割方式是一研究方向。而具學習能力之類神經網路來實現模糊控制器， 這幾年來已使成一非常有趣的研究領域，但很多具學習能力之類神經模糊網路在應用時， 常常須事先藉由專家的知識，方能提升它的效能，所以僅由訓練資料中，自動地產生模糊法則及調整歸屬函數亦是 -研究方向。近幾年來，由於基因演算法具全域最佳化能力，使得基因演算法成為另一有用的工具，目前有利用基因演算法來調整模糊控制器之歸屬函數及類神經網路之加權值，將基因演算法與類神經模糊網路結合之應用，以加速其學習速度，亦值得探討。
+
+六、結論
+本文對類神經、模糊理論間的關聯性、差異性及結合方法與趨勢均做了一番詳細的介紹。其間該註意的重點，不在於鑽研孰劣孰優，而在於如何將兩者的優點加以結合。文中並詳細的介紹了應用及末來研究方向，以供讀者參考。
+　
+
+
+

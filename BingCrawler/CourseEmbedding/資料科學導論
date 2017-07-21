@@ -1,0 +1,2714 @@
+
+
+
+
+導論 · 語言分析與資料科學
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+導論
+
+
+
+
+
+
+
+語言分析與資料科學
+Linguistic Analysis and Data Science
+
+資料科學是什麼？資料科學家會什麼？
+
+To retrieve, transform, explore and model data as well as interprete and communicate results in a compelling way. 
+Be able to gain insights into your data and solve real-world problems with programming languages (e.g., R/Python) as well work with big data technology (Hadoop, Spark). 
+'number guys' vs 'text miners'.
+
+
+語言與文本分析
+
+文本四處都在，特別是網路。文本資料來源：網頁，新聞，網誌，電郵，社交媒體等等。（reviews, postings, tweets, blogs, news, articles, responses to surveys, advertisements, product descriptions, scholarly papers, emails, comments collected for insurance, retail, health care and research (to name a few)。
+
+文本資料的構成：以自然語言為主，常常伴隨各種表情符號，以及其他的多媒體素材。
+
+語言與文本分析的用意，就是運用語言學與文本分析的知識與技術，將文本資料(data)中蘊含的訊息(information)發掘出來，進一步轉化成知識(knowledge)，應用在各個領域。
+
+文本很大程度的反映了語言使用，而中文有其獨特的特性，因此需要語言學的知識才能很好的分析。
+
+
+Data Science and Text Analytics
+資料科學家的工作，可以視為是一個探索、預測與解讀資料意義的互動歷程。而語言分析的工作，在瞭解文本資料的語意與情緒表現上是重要的關鍵。本課程結合了目前統計程式設計與自然語言處理技術，以較為簡潔容易入門的設計與實際操作導引，希望可以讓毫無相關程式學習基礎的學生在本課程的帶領下，達到以下的學習目標：
+
+瞭解結構與非結構性資料的特性與預處理工作,特別是針對中文文本中呈現的語言特性的處理方法。
+瞭解中文的語言特性與文本解析 (text analytics) 的基本概念。
+選擇適當的變數與特徵並加以合理調製,對之進行描述統計與視覺探勘,針對不同的問題點與數據類型,找出適當的圖形表達與統計分析。
+學習簡易的自然語言處理與機器學習預測模式,並應用在自己關心的領域。
+
+
+文本是什麼 Text Representation
+
+文件和文本 document and text
+structured, semi-structured and unstructured data
+doc, csv, pdf, xml, html, markdown....
+
+文本挖掘/文本解析 (Text Analytics/Text Mining)
+
+
+KDD (Knowledge Discovery in Database) + Data Mining: 著重在如何從結構化的數據中挖掘出新的知識； Text mining + NLP (Natural Language Processing)則著重在如何從非結構化或半結構化的數據中挖掘出新的知識。
+
+文本挖掘可以被定義成以自動化或半自動化文本處理方法，挖掘文本中的知識的歷程。資料處理的層次來說，涉及如何把非結構性的數據轉化成結構化的數據，以方便機器學習分析與判讀。
+
+You do not need to have big data to do text analytics. The methods work with large, medium and small datasets.
+
+通常的應用涉及了文本分類與叢聚、模式與趨勢偵測、文體風格分析應用、隨著社群網站與物聯網的興起，應用更延伸到即時情緒意見偵測判斷與預測。 甚至：文本產生器，報告產生器。
+
+對於人文歷史與社會科學也是很重要。e.g., historical text mining
+
+文本分析的新亮點，在於各種 transformation (text2number, text2speech,text2score, text2image, 與反向操作，etc)
+
+Story telling and Narrative
+
+
+
+涉及學門間的關係
+
+
+基本工具箱: Linux, Git, R and Others
+
+
+Introduce Linux environment
+Learn Linux commands
+I/O redirection and Pipeline
+Introduce server-side Linux usage (e.g., use ssh to communicate with a remote server)
+
+
+
+Introduce modern source code management
+Learn common git operations
+Setup github and personal portfolio page
+
+
+Text Analytics with R (I)
+    Rstudio environment and package management
+    Basic Syntax
+    Data object: Vectors, Matrices, Data Frames, and Lists
+        Common functions
+    Local data input/output
+    Basic Data visualization
+Text Analytics with R (II)
+    Data scraping, sorting and merging
+    String manipulation/Regular Expressions
+    Dates and times
+    Connecting to an external database
+    Data manipulation with "dplyr"
+        Tables in R
+        Join
+        Subset
+        Advance manipulations with dplyr
+    Advanced data visualization (with ggplot2)
+    Building web app (with Shiny); Accessing APIs
+Text Analytics with R (III)
+    Statistics and Text mining packages
+    Machine learning 
+        Supervised Learning (Regression,Classification)
+        Unsupervised Learning (Clustering,Dimension Reduction)
+        Experiment and Performance evaluation
+        Employing advanced algorithms (e.g., neural network)
+    Parallel computing
+        Hadoop
+        Spark
+
+解析流程
+
+Step.1 收集與準備
+Crawling/storing the text(s)  
+Pre-processing the text(s) 可能就花掉妳 50% 的時間!!
+
+
+Step.2 探索觀察與假設 
+Exploratory data analysis (statistic summary/graphical representation)
+Missing value and outlier treatment
+
+
+Step.3 自然語言處理、標註與分析
+Natural Language Processing w/o Linguistic Analysis
+Annotation, analysis (and back to Step.2 if necessary) 
+
+
+Step.4 預測模型建立與評估
+Predictive modeling (regression, classification, clustering,...)
+Estimation of Performance
+
+
+Step.5 重製性報告與呈現 
+Reproducible (and infographic) Report
+Web app
+
+
+
+這個圖 1 說出 (之前的!) 文本挖掘作法流程
+
+
+相關套件
+
+tm, openNLP, qdap,koRpus,zipfR,Rwordseg/JiebaR, wordnet,qdap, RTextTools,languageR,Rweibo,corpora,textir twitteR,facebookR,..
+
+The current standard for text analysis in R is the tm package. It provides facilities to manage text collections and to perform the most common data preparation operations prior to statistical text analysis.
+
+相關網路服務
+愈來愈多的文本解析的線上服務
+
+Calais: 回傳 專名, 主題, 事件, 關係, 與 社會標籤。
+BosonNLP
+
+
+相關學術會議
+
+Linguistic Annotation Workshops
+Annual Text Analytics Summits 
+
+
+本書例子
+物聯網時代，資料來源的大宗除了網路之外，可能會是感測器。我們在本書中用的例子將以下來源為主：
+
+網路文本 web
+實體感測器：即時紀錄語音轉文本後的各種訊息。physical sensor (sensory description obtained by rating a set of products/events/ according to a list of sensory attributes.)
+各種社會媒體作為社會感測器：social sensor ('ptt','FB','twitter',...) 
+
+library(RCurl)
+library(googleVis)
+
+# 本書範例檔都放在 dropbox 的 public folder 底下
+URL <- "https://www.dropbox.com/sh/7uenyjjl81wo3x9/AAAPfYVIEkONCyIXjcDn2WGfa?dl=0/test.csv"
+x <- getURL(URL, ssl.verifypeer = FALSE)
+y <- read.csv(text = x, header = TRUE)
+
+
+1 出處：https://manoharswamynathan.files.wordpress.com/2015/04/r-text-mining-001.jpg
+2 新工作類型興起 陳良基：矽谷story telling年薪近500萬
+http://news.ltn.com.tw/news/life/breakingnews/1841618
+
+
+
+
+ results matching ""
+
+
+
+No results matching ""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+未來之星-菁英培育計畫
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+
+ 
+
+
+
+
+
+首頁
+計畫說明
+課程資訊
+
+資料科學
+資訊安全
+數位金融
+新興科技
+
+
+開課單位
+合作單位
+
+
+
+
+
+
+::: 目前位置：首頁>課程資訊: 資料科學
+
+
+
+ 資料科學
+
+
+
+資料科學家，無疑是現今最熱門的工作職缺之一，指數爆發性成長的資料不斷地被產生，需要更有效率的方法來從中分析、萃取出有價值的資訊。企業紛紛重金聘請資料科學家，來發掘隱藏在巨量資料背後的商業線索，藉以解決許多尚未發生或長年無法解決的問題。如何透過實際的操作來解決真實世界的問題，請跟著我們一起來學習資料科學！
+
+
+
+
+2017年 | 2016年
+
+
+
+
+◎ 資料科學導論
+
+
+
+
+
+線上自學課程 - 隨時隨地加入學習的行列！
+
+
+
+課程名稱
+課程目標
+
+
+Data Science Orientation資料科學導論
+瞭解資料科學的範疇，如何透過分析、視覺化工具、統計學等知識與工具，揭露資料背後的秘密。
+
+
+課程大綱
+馬上加入
+
+
+
+
+資料科學課程總覽
+資料科學基礎
+統計學入門
+實作：使用Excel來探索資料
+
+
+進入線上課程
+
+
+
+
+現場聚會活動 - 與業界專家直接面對面！
+
+
+
+
+
+場次
+日期
+星期
+時段
+活動主題
+講者
+備註
+
+
+中山企管
+04/11
+二
+18:30 ~ 20:30
+零售商場大數據分析
+Ryan Chen
+管院4112室
+
+
+中央資管
+04/26
+三
+13:00 ~ 15:00
+電子商務與大數據
+Kevin Wu
+管二館404室
+
+
+東華資工
+05/10
+三
+10:00 ~ 12:00
+資料科學簡介
+Gary Tien
+工程館A331室
+
+
+
+
+
+
+
+
+◎ 智慧應用與機器人開發
+
+
+
+
+
+線上自學課程 - 隨時隨地加入學習的行列！
+
+
+
+課程名稱
+課程目標
+
+
+Developing Intelligent Apps and Bots智慧應用與機器人開發
+瞭解如何透過微軟Azure機器學習網站服務建構智慧應用
+
+
+課程大綱
+馬上加入
+
+
+
+
+微軟Azure雲端服務
+文字分析
+聊天機器人開發
+即時事件處理
+
+
+進入線上課程
+
+
+
+
+現場聚會活動 - 與業界專家直接面對面！
+
+
+
+
+
+場次
+日期
+星期
+時段
+活動主題
+講者
+備註
+
+
+金門資工
+04/21
+五
+18:50 ~ 21:30
+VPA(虛擬個人助理)時代來臨
+Ryan Chung
+理工101演講廳
+
+
+東華資管
+05/01
+一
+14:00 ~ 16:00
+VPA(虛擬個人助理)時代來臨
+Ryan Chung
+教育學院C128
+
+
+長榮資管
+05/18
+四
+10:00 ~ 12:00
+VPA(虛擬個人助理)時代來臨
+Ryan Chung
+T30303室
+
+
+中央資管
+05/23
+二
+10:00 ~ 12:00
+打造你的工具人
+Ryan Chung
+管二館017室
+
+
+資策會(北)
+06/01
+四
+13:30 ~ 16:00
+微軟Build2017分享會
+Herman Wu
+線上報名
+
+
+元智資工
+06/02
+五
+19:00 ~ 21:00
+打造你的工具人
+Ryan Chung
+一館1401B
+
+
+暨南資管
+06/08
+四
+13:30 ~ 15:30
+打造你的工具人
+Ryan Chung
+管院260室
+
+
+南臺電子
+06/09
+五
+10:00 ~ 12:00
+打造你的工具人
+Ryan Chung
+J405 IoT Lab
+
+
+
+
+
+
+
+
+◎ 資料科學與Python導論
+
+
+
+
+
+線上自學課程 - 隨時隨地加入學習的行列！
+
+
+
+課程名稱
+課程目標
+
+
+Introduction to Python for Data Science資料科學與Python導論
+瞭解Python語言基本語法與常用資料型態，並能運用套件進行基本的資料視覺化。
+
+
+課程大綱
+馬上加入
+
+
+
+
+Python入門
+Python List
+函數與套件
+Numpy
+Matplotlib
+控制流程與Pandas
+
+
+進入線上課程
+
+
+
+
+現場聚會活動 - 與業界專家直接面對面！
+
+
+
+
+
+場次
+日期
+星期
+時段
+活動主題
+講者
+備註
+
+
+
+
+
+
+
+
+ 
+
+
+◎ 聯絡窗口：
+       (02)6631-6593 賴小姐 WL9208@iii.org.tw
+       (02)6631-6555 鐘老師 Ryan@iii.org.tw
+
+
+ 
+
+
+
+
+
+:::
+
+
+
+
+
+
+
+
+
+
+相關連結
+
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+
+
+
+
+
+	 訪客人數  
+	 
+
+啟用日期:2016/09/12
+
+
+	 財團法人資訊工業策進會 未來之星菁英培育計畫資訊工業策進會數位教育研究所(臺北市信義路三段153號11樓)TEL:+886-2-6631-6666　FAX:+886-2-6631-6789
+	 隱私權政策
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R 語言導論
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Tutorials
+Open Courses
+Blog
+Search
+Sign In
+Create free account
+
+
+
+        RSS Feed
+ 
+
+
+
+
+
+
+Learn to be a Data Scientist. Start your free account with DataCamp.
+ 
+
+
+
+
+
+
+
+
+DataCamp
+ We're hiring!
+
+
+
+
+
+
+
+
+Sign in
+Create Free Account
+
+
+
+
+
+
+
+
+
+
+
+
+
+Open Courses
+Blog
+Tutorials
+Home
+Tech Blog
+
+
+
+
+
+
+
+
+
+
+
+R 語言導論
+
+Start Free Course
+
+
+62 Exercises
+4 hours
+1,254 Participants
+6,200 XP
+
+
+
+
+
+
+
+
+
+
+
+Open Course Description
+我們將在 R 語言導論學習這個熱門的開源軟體，包含因素向量、清單與資料框等資料類別。 透過這門課的內容我們就可以著手對資料做分析。 目前 R 語言在全球已經有超過兩百萬個使用者，且人數以年增率 40% 高速成長中。 隨著日益增多的學術及商業組織在日常作業中使用 R 做資料分析，它也逐漸成為統計與資料科學的主流程式語言。 即刻開始學習免費的線上課程，體驗 R 語言的美妙之處！
+
+
+第一章: 基本介紹
+本章節是我們與 R 的第一次接觸，我們將學習如何使用 R 做數學運算以及如何宣告變數，也會學習 R 的基本資料類別，讓我們趕快開始吧！
+
+
+第二章: 向量
+在第二章的課程中，我們要去拉斯維加斯一趟學習如何在 R 使用向量分析博弈的結果！完成本章節後，我們不僅會變成技巧高超的賭客，還將學會如何宣告向量、命名向量、從向量選取元素以及比較不同的向量。
+
+
+第三章: 矩陣
+在本章節我們將學習如何在 R 使用矩陣，包括宣告以及運算，我們將要使用矩陣來分析星際大戰的票房記錄，願原力與我們同在！
+
+
+第四章: 因素向量
+資料常會有特定幾個類別，例如性別是男或女。在 R 語言，類別型的資料以因素向量的方式儲存，因素向量對資料分析是很重要的，讓我們好好學習如何建立、篩選與比較因素向量！
+
+
+第五章: 資料框
+實務上我們面對的多數資料都是儲存為資料框的格式，學完本章節之後，我們將可以熟練地建立資料框、選擇資料框中有興趣的部分以及根據某一個變數排序資料框。
+
+
+第六章: 清單
+清單與向量最大的不同是清單可以儲存不同類型的資料格式，就像我們的工作項目清單一樣，本章節我們將學會如何建立、命名以及選擇清單中的元素。
+
+
+
+
+
+
+
+Tony Yao-Jen Kuo
+
+
+            郭耀仁畢業於臺灣大學商學研究所碩士班，是資料科學與推廣教育的愛好者。目前是新創公司 Kyosei 的共同創辦人；同時亦是臺大系統訓練班的講師成員，推廣資料科學，R 語言與 Python， 班上熱心的學員是協助校正中文課程的得力助手。在 Kyosei 之前是 Coupang 的資料分析師與 SAS 分析顧問。 閒暇時熱愛長跑與乒乓球，參加 2016 年波士頓馬拉松時初次拜訪 DataCamp，與我們一同討論課程的中文化與資料科學的推廣。   Yao-Jen is enthusiastic about data science and education. He is now one of the co-founders at Kyosei, a startup focusing on light-weight data science solutions. He lectures on "Data Science and R/Python" at System Training Program of NTU. Active students in class helps him elaborate the localized courses. Prior to founding Kyosei, he was a senior data analyst at Coupang and an analytical consultant at SAS Software. He holds a M.B.A. at NTU, however, his career so far is quite different from most of his peers. In his spare time, he enjoys Marathons and ping-pong. In fact, the first time we met him was the 2016 Boston Marathon. He came to our office after the race and discussed localization of our courses.
+          
+
+
+
+
+
+
+
+
+
+
+
+
+DataCamp
+ 
+View All Courses
+Business
+Teach
+RDocumentation
+Terms of Use
+Privacy Policy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+電腦網路 | 資料科學導論 楊旭 等編 2014-3-1 北京理工大學出版社 | Yahoo拍賣
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ga conf
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+超級商城
+購物中心
+中古車
+帳務中心
+
+
+
+
+
+
+Yahoo!奇摩拍賣
+
+
+:::商品搜尋框
+
+搜尋
+搜尋:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::上方功能區塊
+
+
+
+
+
+
+件商品已加入
+
+
+
+
+
+前往購物車
+
+
+
+
+
+
+
+        {{#if items_normal}}
+            {{{merchant_name}}}
+{{items_normal}}項商品
+        {{/if}}
+        {{#if items_nextbuy}}
+            {{{merchant_name}}}
+下次買清單
+        {{/if}}
+        
+
+ 
+
+
+
+
+
+
+
+
+
+   拍賣  >    圖書/影音/文具  >    圖書與雜誌  >    簡體書  >    電腦網路  
+
+
+
+
+
+
+         
+ 檢舉商品   tumblr share   facebook share       0 
+ {{#if isLoveIcon}}
+	
+		{{likeNums}}
+	
+{{else}}
+    {{#if trackItem}}已喜愛商品{{else}}喜愛商品{{/if}}
+{{/if}}
+   
+
+
+    競標 資料科學導論 楊旭 等編 2014-3-1 北京理工大學出版社           4 天 07 時 27 分 18 秒結束
+      拍賣時間會自動延長 賣家可提前結束拍賣        起標價格    $144 / 0 次出價   出價增額 $10   最高出價者  無   數　　量    Decrease  Increase  庫存僅剩件     
+         結標前 2 小時手機提醒   加入 iOS 行事曆   加入 Google 行事曆    
+    本商品僅提供自動出價 (說明)              請輸入直接出價金額   請輸入單件出價上限    建議最低出價 $144   系統將按增額，依序遞補出價至上限金額為止   
+ 
+      Yahoo拍賣保障 放心買!我們給你五萬交易保障!     付款方式    信用卡一次付清   Yahoo奇摩輕鬆付   、  現金付款  Yahoo奇摩輕鬆付現金接受付款方式  帳戶餘額 網路ATM 實體ATM FamiPort  ATM提供6家銀行：合作金庫、華南銀行、玉山銀行、臺灣銀行、國泰世華、中國信託，以上6家同行轉帳，免轉帳手續費。  、   （想使用貨到付款嗎？）       運　　費   跨國寄送 - 單件運費$100     商品狀況 全新品   所在地區   中國大陸     商品編號   100059569520       {{#with countdown}}
+    {{#if days}}{{days}} 天 {{/if}}{{hours}} 時 {{minutes}} 分 {{seconds}} 秒結束
+{{/with}}
+   {{#with countdown}}
+    {{year}}/{{month}}/{{date}} {{hour}}:{{minute}}:{{second}} 結束
+{{/with}}
+    
+
+
+
+
+ 永擴文化傳播 代號 Y1237333505  加入最愛     正評99.26%  評價 2,201 則     關於我 商品問與答 (0) 全部商品 (214624) 
+
+
+
+
+
+
+
+
+
+
+
+
+  賣場任意門  廣告            不工作用20萬月創造2-3萬被動收入   $50,000              20元正版授權姓名貼紙防水且撕不破   $20              繽紛12色水性筆  特賣中   $89              超人氣～復古滾輪日期印章～手作必備唷   $75         看更多商品>   我要曝光>   
+
+
+
+
+
+{{title}}
+
+            {{#each geList}}
+            
+
+                    {{#if thumbnail}}{{/if}}
+                    {{desc}}
+
+                {{#if sponsorLink}}
+                    {{sponsor}}
+                {{else}}
+                    {{sponsor}}
+                {{/if}}
+            
+            {{/each}}
+        
+
+
+
+
+
+
+
+
+
+
+     商品資訊    出價紀錄   問與答(0)    商品資訊      分級   普級     decoration decoration      資料科學,作為一門正在蓬勃發展的新學科,所關註的正是如何在大資料時代背景下,去運用各門與資料相關的技術和理論,服務於社會,讓我們可以更好的去利用身邊的資料,將生活變得更加美好。本書將會系統性的講述與資料科學相關的各個方面的知識,著重於培養資料工程師所需要的技能與思維。本書將從資料科學相關的概念出發,...       出價紀錄  瀏覽摘要 詳細記錄   record   出價者   拍賣代號   出價金額   數量   出價時間   操作    看更多出價紀錄arrow  看更多出價紀錄arrow  目前沒有人出價    問與答 看更多問與答arrow  目前沒有任何問與答   comments   請先登入再進行發問    
+
+賣家回覆
+
+0/250
+
+
+取消
+
+
+
+
+
+ 
+  app migrate  熱門APP快下載 快下載拍賣APP，第一時間掌握賣家回覆，熱門商品別錯過！   立即下載 再等等  
+
+
+
+
+  賣家推薦  
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資料科學年會網站 – 2017年會
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於本年會
+
+
+
+台灣資料科學年會由一群愛好資料科學的同好們共同舉辦，宗旨為推廣資料科學的認知、技術及應用，議題包含資料科學的各個層面，例如數理統計、資料視覺化、資料處理及計算、資料儲存以及各領域裡的資料分析應用等，期待能透過演講、資料分析上手教學課程、心得分享、資料交流等各種形式，將我們對於資料科學的熱情傳達給大眾，幫助與會聽眾瞭解資料科學的魅力，進入資料科學的領域，進而一起探索與開發資料科學的潛力，更重要是能促使將資料科學引入每個人的專業領域之中，帶來新的創新及價值。
+
+
+
+
+台灣資料科學年會
+
+
+ 
+
+
+
+
+
+
+
+ 歡迎踴躍報名  
+
+
+
+
+
+徵求講者、投稿
+邀請對資料科學及人工智慧有熱情、有心得的專家上場演出，帶領與會者一起攀爬領域的高峰！
+
+
+
+
+
+
+
+
+
+
+
+ 即將開始招募
+ 
+
+
+
+
+
+徵求志工
+台灣資料科學年會四歲了，歡迎認同年會宗旨又喜歡辦活動的朋友、夥伴們，加入我們的志工籌備團隊！
+
+
+
+
+
+
+
+
+
+
+
+ 敬請期待
+ 
+
+
+
+
+
+報名年會
+敬請期待
+
+
+
+
+
+
+
+
+
+
+
+籌辦單位 | 媒體夥伴 | 工作人員 |
+                第一屆年會 |
+                第二屆年會 |
+                第三屆年會 |
+                年會粉絲頁
+© Copyright 2017 - 台灣資料科學協會 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+東吳大學巨量資料分析學分學程必、選修科目表 | 東吳大學巨量資料管理學院
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+移至主內容
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最新消息最新消息
+活動公告
+資訊聯播
+
+學院簡介學院簡介
+教學目標
+學院主管
+行政同仁
+未來發展
+相關法規東吳大學巨量資料管理學院暨學位學程聯席會議設置辦法
+東吳大學巨量資料管理學院暨學位學程課程委員會設置辦法
+東吳大學巨量資料管理學院特殊學科教師評審委員會設置辦法
+東吳大學巨量資料管理學院特殊學科教師評審辦法
+
+
+師資陣容講座教授
+專任教師
+兼任教師
+業界教師
+研究員
+顧問
+
+課程資訊學士學位學程
+巨量資料分析學士後第二專長學士學位學程
+碩士學位學程
+碩士在職學位學程
+巨量資料分析學分學程
+
+招生資訊學士學位學程
+巨量資料分析學士後第二專長學士學位學程
+碩士學位學程
+碩士在職學位學程
+巨量資料分析學分學程
+
+學院活動專題演講
+近期活動
+專題演講
+活動花絮
+近期活動
+
+English
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+您在這裡首頁 » 課程資訊 » 巨量資料分析學分學程 
+
+
+
+
+課程資訊
+
+
+學士學位學程
+巨量資料分析學士後第二專長學士學位學程
+碩士學位學程
+碩士在職學位學程
+巨量資料分析學分學程
+
+
+
+
+
+
+
+
+
+
+東吳大學巨量資料分析學分學程必、選修科目表
+
+
+
+
+
+
+
+
+東吳大學巨量資料分析學分學程必、選修科目表 
+  ( 106學年度核准修讀者適用)
+
+
+
+      科  目  名  稱 
+
+
+選 
+
+
+
+學 
+
+
+第一學年 
+
+
+第二學年 
+
+
+備  註 
+
+
+
+
+別 
+
+
+分 
+
+
+上 
+
+
+下 
+
+
+上 
+
+
+下 
+
+
+
+
+導引課程 
+
+
+資料科學與巨量資料導論  INTRODUCTION TO DATA SCIENCE AND BIG DATA 
+
+
+必(R) 
+
+
+3
+
+
+3
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+核心 
+      課程 
+
+
+統計概論  INTRODUCTION TO STATISTICS 
+
+
+必(R) 
+
+
+3
+
+
+ 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+隨班附讀，本校各學系3學分以上統計可抵 
+
+
+
+
+資料探勘與商業應用  DATA MINING WITH APPLICATIONS ON BUSINESS 
+
+
+必(R) 
+
+
+3
+
+
+ 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+應用統計   APPLIED STATISTIC 
+
+
+必(R) 
+
+
+3
+
+
+ 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+合班，財精系主開 
+
+
+
+
+實作課程 
+
+
+巨量資料分析與應用專題  SPECIAL TOPICS ON BIG DATA ANALYSIS AND APPLICATION 
+
+
+必(R) 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+3
+
+
+ 
+
+
+
+
+自然科學領域 
+
+
+數理統計   MATHEMATICAL STATISTICS 
+
+
+選(E) 
+
+
+3
+
+
+3
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+至數學系隨班附讀 
+
+
+
+
+數值分析   NUMERICAL ANALYSIS 
+
+
+選(E) 
+
+
+4
+
+
+ 
+
+
+ 
+
+
+4
+
+
+ 
+
+
+至數學系隨班附讀 
+
+
+
+
+線性規劃  LINEAR PROGRAMMING 
+
+
+選(E) 
+
+
+3 
+
+
+ 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+至數學系隨班附讀 
+
+
+
+
+人文社會領域 
+
+
+人口、健康與安全  POPULATION, HEALTH, AND SECURITY 
+
+
+選(E) 
+
+
+3 
+
+
+ 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+至社會學系隨班附讀 
+
+
+
+
+民意調查   SURVEY 
+
+
+選(E) 
+
+
+3 
+
+
+ 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+至社會學系隨班附讀 
+
+
+
+
+社會人口分析與決策  SOCIO-DEMOGRAPHIC ANALYSES AND DECISION MAKING 
+
+
+選(E) 
+
+
+3 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+3
+
+
+至社會學系隨班附讀 
+
+
+
+
+商管領域 
+
+
+作業研究   OPERATIONS RESEARCH 
+
+
+選(E) 
+
+
+3 
+
+
+ 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+至財精系隨班附讀 
+
+
+
+
+廻歸分析  REGRESSION ANALYSIS 
+
+
+選(E) 
+
+
+3 
+
+
+ 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+至財精系隨班附讀 
+
+
+
+
+財務時間序列分析  FINANCIAL TIME SERIES ANALYSIS 
+
+
+選(E) 
+
+
+3 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+3
+
+
+至財精系隨班附讀 
+
+
+
+
+資訊檢索導論  INTRODUCTION TO INFORMATION RETRIEVAL 
+
+
+選(E) 
+
+
+3 
+
+
+ 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+至資管系隨班附讀 
+
+
+
+
+決策支援系統  DECISION SUPPORT SYSTEMS 
+
+
+選(E) 
+
+
+3 
+
+
+3
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+至資管系隨班附讀 
+
+
+
+
+社群網路分析  SOCIAL NETWORK ANALYSIS 
+
+
+選(E) 
+
+
+3 
+
+
+ 
+
+
+ 
+
+
+3
+
+
+ 
+
+
+至資管系隨班附讀 
+
+
+
+
+必修(R)Sub Total 
+
+
+15
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+畢業學分總計         選修(E)Sub Total 
+
+
+6
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+共計 Total 
+
+
+21
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+*** (R): Required subject ; (E): Elective Subject ***
+附註:
+ 1. 必修課程須完成導引課程與核心課程共計12學分後，始得修讀實作課程。 
+ 2. 選修課程需選讀單一領域選修課程達6學分以上，承認6學分。 
+ 3. 自申請本學程通過至完成本學程5門必修課程期間，學生每學期應至少選讀本學程之課程一門，
+   未依本規定修讀者，得撤銷學程修讀資格；若有特殊情況，由學程主任認定之。 
+4. 主學系必、選修科目得申請抵為本學程科目，跨領域學程科目得抵為主學系選修科目，兩者互抵
+   至多十學分。
+5. 本學程與主學系課程互相列抵後，學生應修畢業總學分數為『主學系畢業學分外加本學程至少10
+   學分』。
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+地址 : 臺北市士林區臨溪路70號【東吳大學外雙溪校區】    TEL：02-2881-9471 轉 5932~5935    FAX : 02-28803947
+承辦業務時間：星期一至五  8:30~17:00      電子信箱 : bigdata@gm.scu.edu.tw
+
+版權所有 Copyright 2014 © 東吳大學巨量資料管理學院
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+想成為年薪 300 萬台幣的資料科學大師？一整年的武功秘籍自學清單都在這了！ | TechOrange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+逛其他頻道
+
+
+BuzzOrange 報橘
+
+
+ TechOrange 科技報橘
+
+
+
+VidaOrange 生活報橘
+
+
+
+訂閱電子報
+
+
+
+
+
+職缺訊息
+來看看有哪些職缺 https://buzzorange.com/recruit/
+
+
+聯絡報橘
+
+ 寫信給編輯 pr@fusionmedium.com
+ 寫信給業務 sales@fusionmedium.com
+ 其他聯絡需求 tips@fusionmedium.com
+
+
+
+ 
+
+我要投稿 edit@fusionmedium.com
+
+
+來信請附上投稿人真實姓名（刊登可用筆名，但請同時提供真實姓名）、背景（已就業者請提供所任職產業，學生請提供就讀科系），並直接附上投稿內容。
+稿件經編輯檯審核評估合宜性，並編寫導讀與修訂標題後再行刊登。
+若投稿三個工作日後，未收到編輯檯回覆刊登通知，即為本次投稿不予刊登。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 哈利波特 20 週年不退燒，亞馬遜 Kindle 變出會動的魔法書！
+
+
+
+
+ 「手擁三十億用戶，我們卻從沒停止創新」，Visa 正準備狠狠再顛覆一次世界！
+
+
+
+
+ 一切都是為了火星！馬斯克的「挖隧道公司」原來是要用來在火星上建立殖民城市？
+
+
+
+
+ 遭破壞、肢解、圍毆，中國共享單車摩拜進入英國 10 天受到的「不人道待遇」
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+想成為年薪 300 萬台幣的資料科學大師？一整年的武功秘籍自學清單都在這了！Posted on 2016/02/022017/05/03 
+  TO 精選觀點 
+
+
+
+本文由微信公眾號「大數據文摘」授權轉載，選文：孫強，翻譯：趙娟、王珏。大數據文摘微信 ID：BigDataDigest。，以下為作者 MANISH SARASWAT 第一人稱描述。
+新年並非僅僅是更換日曆或是清晨起床後揉開雙眼。新年是充滿喜悅的一個嶄新開始。它給我們一個完美的理由養成一個新習慣，它意味著新「希望」的到來。
+如果你正在閱讀這篇文章，我確信資料科學會讓你興奮！你要在 2017 年做出改變，難道不是嗎？如果你從今天開始致力於實現這些目標，這是完全可能的。你必須明白，成為一個資料科學家需要一個過程，它不是一朝一夕的成功。因此，你必須耐心地朝著目標而努力。
+註：這些通用的學習計畫是為有抱負的 / 有經驗的資料科學家準備的。該文章可能不適合非資料分析領域的人員。
+我已經將這些學習計畫根據資料科學家的三個水準階段進行了分類。你來決定那個階段最適合你，並進行實踐。當你完成本階段的學習任務後，便可進入下一個階段。針對不同的學習主題，我列出了可獲取的最好的課程。為了達到最佳效果，我建議你逐一學習這些課程。如果你覺得課程學習困難，請與我討論，我會給你提供一個備選方案。方便起見，我分享了可供下載的連接。
+
+初級水準
+
+誰是初學者？如果資料分析和資料科學對你來說是一個全新的領域，你不瞭解這個行業是如何運作的，但是，你滿懷好奇的在該領域發展你的事業，那麼，你就是個初學者。下麵就是你的學習目標：
+ 1. 從程式設計語言開始，無論是 R 或 Python。
+我曾看到有學生同時學習 R 和 Python。最終，他們什麼都沒學會。這種學習方法很糟糕。你必須保證自己深入學習 R 或 Python。這是兩個在公司中廣泛應用的開源工具。Python 是公認的最簡單的程式設計語言。R 仍是人們最為喜愛的統計工具。選擇權在你。兩者都很好。
+學習課程：在 Codecademy 完成 Python 的學習。在 DataCamp 完成 R 的學習。
+2. 學習統計學和數學 
+統計學是關於假設和運算的學科。但是，如果你不懂統計和數學，很難在這個行業立足。它是資料科學家的核心競爭力。如果你的數學不好，是時候改變了。習慣使用強大的統計技術、代數和機率學。在 Khan Academy、 Udacity 等平臺上有非常棒的統計學課程。
+學習課程：在 Udacity 上完成  Inferential 和 Descriptive 統計學習。在 Khan Academy 完成代數的學習。
+3. 報名參加一個大型開放式網路課程（MOOC）
+大型開放式網路課程（簡稱 MOOC）可以自由訪問和學習。但是，這是你做出的最難實現的承諾。學生們通常一次性報名參加多個課程，但最終一個也完成不了。因此，你必須專註於一個課程，完成之後，在進入下一個課程的學習。你可以在 coursera、edX、Udacity 上學習任何課程。
+學習課程：在 Coursera 完成資料科學專業（R）的學習。在 Dataquest 完成資料科學 Python 的學習。
+4. 積極參與行業實踐，發現新事物 
+你需要知道這個行業正在發生哪些變化。我們生活在一個充滿活力又瞬息萬變的世界。今天還十分盛行的技術明天可能就過時了。你必須與經驗豐富的專家交流，結識「未來的自己」。現在就開始行動吧，加入討論、參加聚會、關註部落格、參加團體活動，並  閱讀專業書籍 。你可以在 Facebook  上追蹤這方面的最新消息。
+
+中級水準
+
+誰是中等水準的資料科學家？如果你已經完成了初級水準的學習，並且已經嘗試使用  機器學習的基礎知識 ，熟練掌握了建立預測模型的知識，那麼你已經到達了資料科學家的中級水準。達到這個水準需要巨大的決心和大量的練習。準備好迎接這個挑戰了嗎？
+1. 理解並構建機器學習技能 
+機器學習是資料科學與技術的未來。所有大公司在聘僱該項技術人才方面投入大量的資金和人力。毫無疑問，當前這種人才的市場需求巨大。對個人而言，也是個不可多得的好機會。今年，你應當在機器學習方面深入拓展。熟練掌握迴歸分析（Regression）、集群分析（Clustering）、 CART 演算法。
+學習課程：在 Andrew Ng 完成機器學習的課程。
+2. 專註於 Ensemble 和 Boosting 演算法的學習 
+一旦你對機器學習充滿自信，那麼轉攻下一個模型吧。使用 boosting 和 ensemble 演算法，可以使得模型的精度遠遠高於其他演算法。上面分享的免費學習資源已經涵蓋了這個主題。但是，要讓自己更深入的理解這個主題。
+學習課程：閱讀 Kaggle 的 Ensembling  指南 。在 MIT Lecture 完成 Boosting 課程 。
+3. 探索使用 Spark, NoSQL 以及其他大資料處理工具 
+本年，你將開啟自己的大數據之旅。鑒於大數據人才需求的蓬勃發展，你必須學會 Spark 軟體。最近它非常流行。大資料的未來依賴於 Spark，它被廣泛應用於大資料的操作和處理。通過學習 Spark，你還可以拓展自己的專業知識到 NoSQL , Hadoop 上。
+學習課程：Spark
+4. 教育社區同伴 
+還有什麼比知識分享更棒！從今年開始，同那些努力學習資料科學的人分享你的知識。你可以加入活躍的資料科學  論壇 ，幫他們解疑答惑，教會他們有用的技巧和竅門。你也可以舉辦類似的聚會。Follow 我們的 FB 粉絲團 。
+5. 參加資料科學競賽 
+是時候檢驗你的學習效果了。今年你必須參一些競賽，它能幫你認清自己的長處和短板。此外，你會對已掌握的知識更加自信。我希望你能榮登 Kaggle Top500 排名榜。從現在開始，你的目標是成為 the Last Man Standing，這是一個資料科學領域的競賽。
+行動指南：加入 Kaggle 和 Data Hack。
+
+高級水準
+
+我無需定義這類人群。大部分人都非常害怕去嘗試資料科學，但他們卻十分精通。他們已經過上了輕鬆愜意的生活，但是，他們熱愛挑戰。他們是經驗豐富的專家。下麵是一些學習計畫：
+1. 構建一個深度學習模型（deep learning model）
+今年，你要為立志成為資料科學家的人樹立榜樣。你必須創建深度學習（deep learning）的模型。在世界各地，已經有人使用這些模型進行預測了。這是機器學習的高級階段。其準確性已明顯優於一般的機器學習模型。
+學習課程：完成 Tutorial 的深度學習。
+2. 回饋社群 
+我相信知識是用於分享而不是用於存起來放的。分享得越多，學到的越多。換種方法解釋，「你學到一個新概念，然後解釋給你的兩個朋友聽，你對這個概念的記憶可能會更久。」今年，你訂定一個計畫，利用你的知識和經驗説明  資料分析社區 的成員。這會説明那些在資料分析領域苦苦掙扎的人們找到勝利的彼岸。
+行動計畫：在 Discuss 上分享你的知識。
+3. 探索強化學習（Reinforcement Learning）
+強化學習是（Reinforcement Learning）機器學習中最強大的，然而少有人開發的一個分支。今年，在這一領域做些研究。雖然很有挑戰性，但值得一試。無人駕駛、間諜無人機就是強化學習的成果。一旦你開始涉足該領域，你就自動進入人工智慧領域。
+學習課程：完成 Andrew Moore 的 Tutorial。
+4. 進入 Kaggle 前 50 名 
+今年，你必須保持住在 Kaggle 上的「大師」地位，準確的講，確保自己在 Kaggle 排名進入前 50。參加適合自己領域的相關競賽，與其他 kagglers 組隊。參與這個水準的競賽，你會學習到一些在其他地方學不到的理念。
+行動計畫：加入 Kaggle
+追蹤你的進程。2016 年新年學習計畫表 Download
+
+結束語
+
+我理解，這些學習計畫對你具有挑戰性，但值得一試。根據你當前的情況，自由選擇適合自己的學習計畫。我只是羅列了有抱負的資料科學家必須要知道的重要知識和技能。
+在上周我意識到，人們並沒有足夠的勇氣制定新年計畫。這個問題也曾困擾著我。因此，我決定寫下這篇文章。我希望，在 2016 年結束之前，你會完成初級水準的學習（假設你是一個新手）。
+這篇文章已經為你制定新年計畫掃除了障礙。作為一個有野心的資料科學家，我已經為你提供了滿漢全席，就等著你去啃下它了。在學習的過程中如果遇到任何困難，也請分享你的想法。
+
+（本文獲《大數據文摘》授權轉載，首圖來源：HZ University of Applied Sciences　CC Licensed，未經授權請勿轉載。）
+延伸閱讀
+資料有看沒有到》台灣資料科學教父：輕忽 Data 力量，電商落後美國 20 年 
+資料科學的五大迷思 
+資料科學的演化爭論：「大數據」會讓國家機器一手掌控世界經濟命脈嗎？
+
+
+你對製作這些科技趨勢內容有興趣嗎？
+想從 TO 讀者變成 TO 製作者嗎？
+ 對內容策展有無比興趣的你，快加入我們的編輯團隊吧！
+
+TechOrange 社群編輯擴大徵才中 >>  詳細內容 
+
+ 意者請提供履歷自傳以及文字作品，寄至 jobs@fusionmedium.com
+ 來信主旨請註明：【應徵】TechOrange 職缺名稱：您的大名 
+
+點關鍵字看更多相關文章：大數據新經濟 
+
+
+7.1 KShares
+
+
+
+
+
+留言
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+你家公司要轉型沒頭緒？先從頭理解「大數據」到底能帶來什麼改變！
+
+
+
+
+外賣 O2O 登上高鐵車廂，這站點餐下一站送達，土產、麥當勞一應俱全
+
+
+
+
+Apple 就是你最好的字幕組：App Clips 自動替你影片加上字幕，增加臉書觸及率
+
+
+
+
+過半數據團隊慘找無數據人才？教你如何打造頂尖數據團隊
+
+
+
+
+盤點上半年倒閉的七家新創：想進入送餐服務、二手車市場、穿戴式設備的創業家們請三思啊！
+
+
+
+
+別人努力多年，你花點錢就想學會？「獨立思考判斷力」才是知識付費下你該學的東西
+
+
+
+
+飛向最高最遠的那一端！2017 無人機攝影大賽，每一張都又「高」又美啊
+
+
+
+
+Google 想買下全世界數據人才，為了求才你可能得付出多少代價？
+
+
+
+
+下 Facebook 廣告必備的 A/B test 撇步：從預算、廣告素材到監控指標一次搞懂
+
+
+
+
+【智慧手機將死】為了迎接 iPhone 的死亡，蘋果重磅壓註 AR
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+橘子學院 
+
+
+
+
+【企業專屬】Google Analytics 網站數據分析課程
+
+
+
+
+
+
+
+【活動快訊】拒當數位行動時代的廢柴和魯蛇！8/10 第二屆「WHATs NEXT！移動到未來」輕鬆接軌 Mobile Internet
+
+
+ 
+
+
+ 
+
+報橘週榜
+
+【投書】台灣嘲笑中國上 FB 要翻牆？陸生回擊：台灣人根本目光如鼠
+
+
+史上最殘酷的史丹佛雞湯文：你是如何從優秀的 19 歲年輕人，變成了平庸的 40 歲大人？
+
+
+比爾蓋茲再度預言：新鮮人，這三個才是你未來該進的領域！
+
+
+全球最大色情網站Pornhub全面加密，再也不怕A片瀏覽記錄被看到啦！
+
+
+厭世不幹了！華盛頓巡邏機器人 K5 罷工，跳進水池內自殺
+
+
+延燒 15 個月，「直播」還是泡沫化了：一場全中國都參與的流量遊戲趨近尾聲
+
+
+先幫 104 掬把辛酸淚，Google Hire 宣佈全面進軍人力資源市場！
+
+
+【有圖】黑科技產生器！亞馬遜蓋水底倉庫，大家潛水領貨呀
+
+
+Tesla 馬斯克親傳開啟知識天眼法！他用了個超神奇原理，變身無敵天才
+
+
+C 語言已死？想取代資安漏洞寬如海溝的 C，你該用這個語言
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+語言分析與資料科學 · GitBook
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+We are hiring! Sign Up Sign In Pricing Explore About Blogloperntu語言分析與資料科學Updated 4 months agoAbout0 Discussions0 Change Requests  Star 20  Subscribe 11 Read  Download PDF 語言分析與資料科學
+Linguistic Analysis and Data Science
+臺大基本能力課課程講義
+臺大語言學研究所語言處理與人文計算實驗室   謝舒凱
+
+背景知識
+駕馭大文本數據的需要
+大數據 (Big Data) 的時代，數位資料累積與增長的速度已經遠遠倍增於人類史上的任何階段。這樣一種鉅量資料風潮,不僅改變了人文社會與自然科學研究的面貌，在各項產業也產生了分析資料輔佐決策的迫切需求。在此背景下，數位素養 (digital literacy) 已經成為現代公 民必須具備的基本素養之一，近年來新興的資料科學家 (data scientist) 更成為當前最為熱門的行業之一。
+然而由於數據資料的發展，隨著社交媒體與社會網路的發展，非結構性的文本資料所佔比例已經遠超過結構性的表格性資料，使得文本的語言分析在資料科學發展中的角色顯得愈來愈重要，特別對於人文與社會科學的學生而言，更是開啟了一個結合數位科技與人文關懷的新的發展方向。
+本教程的設計，就是在這個動機之下，透過介紹語言學與文本分析知識結合統計計算，希望能夠刺激人文、社會、傳播與其他財務管理、醫學等各領域學生之間的互動協作與學習，培養跨領域的興趣與分析能力。
+
+課程相關訊息
+
+課程網站
+課堂共筆
+學習共筆
+臉書社團
+
+
+
+
+
+
+
+
+
+
+AboutHelpExploreEditorBlogPricingContact© GitBook.com
+需要安全驗證
+
+
+
+Facebook加入或登錄 Facebook   郵箱或手機號密碼忘記帳戶？登錄想加入 Facebook 嗎？註冊註冊安全驗證碼請輸入以下文本看不清楚上面的文字？換一個或播放語音驗證信息框中文字：這是什麼？安全驗證這是一個標準的安全測試，用於阻止垃圾郵件製造者創建假帳戶並向用戶發送垃圾信息。提交中文(簡體)English (US)日本語한국어Français (France)Bahasa IndonesiaPolskiEspañolPortuguês (Brasil)DeutschItalianoMessengerFacebook Lite用戶地點游戲位置名人二手市場小組食譜彩色氣球Instagram公司簡介創建廣告創建主頁開發者招聘信息隱私權政策Cookie廣告選項條款設置活動日誌 Facebook © 2017
+
+

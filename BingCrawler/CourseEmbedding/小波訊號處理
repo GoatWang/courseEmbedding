@@ -1,0 +1,4215 @@
+
+
+
+小波分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+小波分析
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+傅立葉轉換
+
+
+
+
+
+
+
+Z轉換
+
+
+
+
+
+
+
+傅立葉級數
+
+
+
+
+
+
+
+傅立葉轉換
+
+
+
+
+
+
+
+離散傅立葉級數
+
+
+
+
+
+
+
+離散時間傅立葉轉換
+
+
+
+
+
+
+
+離散傅立葉轉換
+
+
+
+
+
+
+
+快速傅立葉轉換
+
+
+
+
+
+
+
+分數傅立葉轉換
+
+
+
+
+
+
+
+短時距傅立葉轉換
+
+
+
+
+
+
+
+小波轉換
+
+
+
+
+
+
+
+離散小波變換
+
+
+
+
+
+
+
+連續小波轉換
+
+
+
+
+
+
+小波分析（wavelet analysis）或小波轉換（wavelet transform）是指用有限長或快速衰減的、稱為母小波（mother wavelet）的振盪波形來表示訊號。該波形被縮放和平移以匹配輸入的訊號。
+小波一詞由Morlet和Grossman在1980年代早期提出。他們用的是法語詞ondelette - 意思就是"小波"。後來在英語裡，"onde"被改為"wave"而成了wavelet。
+小波變換分成兩個大類：離散小波變換（DWT） 和連續小波轉換（CWT）。兩者的主要區別在於，連續變換在所有可能的縮放和平移上操作，而離散變換採用所有縮放和平移值的特定子集。
+小波理論和幾個其他課題相關。所有小波變換可以視為時域頻域表示的形式，所以和調和分析相關。所有實際有用的離散小波變換使用包含有限脈衝響應濾波器的濾波器段（filter band）。構成CWT的小波受海森堡的測不準原理制約，或者說，離散小波基可以在測不準原理的其他形式的情境中考慮。
+
+
+
+目錄
+
+
+1 母小波
+2 和傅里葉變換比較
+3 小波的定義
+
+3.1 縮放濾波器
+3.2 縮放函數
+3.3 小波函數
+
+
+4 應用
+
+4.1 影像壓縮
+4.2 邊緣偵測
+4.3 音樂訊號分析
+4.4 遙測影像分析
+4.5 生醫訊號分析
+
+
+5 歷史
+
+5.1 時間線
+
+
+6 小波轉換
+
+6.1 小波轉換的優點
+
+
+7 小波列表
+
+7.1 離散小波
+7.2 連續小波
+
+
+8 相關條目
+9 參考文獻
+10 參考書目
+11 外部連結
+
+
+
+母小波[編輯]
+簡單來說（技術上並非如此），母小波函數
+
+
+
+ψ
+ 
+(
+t
+)
+
+
+{\displaystyle \psi \ (t)}
+
+必須滿足下列條件：
+
+
+
+
+
+
+∫
+
+−
+∞
+
+
+∞
+
+
+
+|
+
+ψ
+(
+t
+)
+
+|
+
+
+ 
+
+2
+
+
+
+d
+t
+=
+1
+
+
+{\displaystyle \int _{-\infty }^{\infty }|\psi (t)|\ ^{2}\,dt=1}
+
+,也即
+
+
+
+ψ
+∈
+
+L
+
+2
+
+
+(
+
+R
+
+)
+
+
+{\displaystyle \psi \in L^{2}(\mathbb {R} )}
+
+並單位化
+
+
+
+
+
+∫
+
+−
+∞
+
+
+∞
+
+
+
+|
+
+ψ
+ 
+(
+t
+)
+
+|
+
+
+d
+t
+<
+∞
+
+
+{\displaystyle \int _{-\infty }^{\infty }|\psi \ (t)|\,dt<\infty }
+
+,也即
+
+
+
+ψ
+∈
+
+L
+
+1
+
+
+(
+
+R
+
+)
+
+
+{\displaystyle \psi \in L^{1}(\mathbb {R} )}
+
+
+
+
+
+
+
+∫
+
+−
+∞
+
+
+∞
+
+
+ψ
+ 
+(
+t
+)
+
+d
+t
+=
+0
+
+
+{\displaystyle \int _{-\infty }^{\infty }\psi \ (t)\,dt=0}
+
+
+
+多數情況下，需要要求
+
+
+
+ψ
+
+
+{\displaystyle \psi }
+
+連續且有一個矩(moment)為0的大整數M，也即對所有整數m<M滿足
+
+
+
+
+
+
+∫
+
+−
+∞
+
+
+∞
+
+
+
+t
+
+m
+
+
+
+ψ
+ 
+(
+t
+)
+
+d
+t
+=
+0
+
+
+{\displaystyle \int _{-\infty }^{\infty }t^{m}\,\psi \ (t)\,dt=0}
+
+
+
+即母小波有M個消失矩(vanishing moment)，且M不等於0，這表示母小波必須不是常數且均值為0。
+
+
+
+
+
+
+∫
+
+−
+∞
+
+
+∞
+
+
+
+
+
+
+|
+
+
+
+ψ
+⌢
+
+
+(
+ω
+)
+
+
+|
+
+
+2
+
+
+
+
+
+|
+
+ω
+
+|
+
+
+
+
+d
+ω
+<
+∞
+ 
+ 
+
+
+{\displaystyle \int _{-\infty }^{\infty }{\frac {|{\overset {\frown }{\psi }}(\omega )|^{2}}{|\omega |}}d\omega <\infty \ \ }
+
+，稱作可採納性(admissibility condition)，其中
+
+
+
+
+
+ψ
+⌢
+
+
+(
+ω
+)
+
+
+{\displaystyle {\overset {\frown }{\psi }}(\omega )}
+
+是 
+
+
+
+ψ
+(
+t
+)
+
+
+{\displaystyle \psi (t)}
+
+的傅立葉轉換。
+
+技術上來講，母小波必須滿足可採納性條件以使某個解析度的恆等成立。
+根據Morlet的原始形式，母小波定義為
+
+
+
+
+
+
+ψ
+
+a
+,
+b
+
+
+(
+t
+)
+=
+
+
+1
+
+
+a
+
+
+
+
+ψ
+
+(
+
+
+
+t
+−
+b
+
+a
+
+
+)
+
+
+
+{\displaystyle \psi _{a,b}(t)={1 \over {\sqrt {a}}}\psi \left({{t-b} \over a}\right)}
+
+
+
+其中a是縮放因子，當|a|<1時，母小波被壓縮，在時間軸上有較小的支撐度，並且對應到高頻，因為母小波變窄、變化變快， 反之，當|a|>1時，母小波變寬、變化較慢，所以對應到低頻。b則是平移參數，用來決定母小波的位置。
+根據訊號處理的測不準原理:
+
+
+
+
+
+Δ
+t
+Δ
+ω
+≧
+
+
+1
+2
+
+
+
+
+{\displaystyle \Delta t\Delta \omega \geqq {\frac {1}{2}}}
+
+
+
+t 是時間，ω是角頻率(ω = 2πf，f是順時頻率)。
+當時間解析度較高時，頻率解析度就會下降，反之，頻率解析度高時，時間解析度下降。當母小波或窗函數取的越寬，
+
+
+
+Δ
+t
+
+
+{\displaystyle \Delta t}
+
+的值越大。
+當
+
+
+
+Δ
+t
+
+
+{\displaystyle \Delta t}
+
+越大:
+
+1. 縮放因子越大，對應低頻。
+
+
+2. 頻率解析度高。
+
+
+3. 時間解析度低。
+
+當
+
+
+
+Δ
+t
+
+
+{\displaystyle \Delta t}
+
+越小:
+
+1. 縮放因子越小，對應高頻。
+
+
+2. 頻率解析度低。
+
+
+3. 時間解析度高。
+
+雖然跟短時距傅立葉轉換一樣能同時分析時間和頻率，但是小波轉換在高頻的時間解析度較好，在低頻時則是頻率解析度較好， 剛好符合我們對訊號分析在高低頻的解析度要求，因為在低頻時，例如頻率從1Hz變到2Hz，頻率差了一倍，所以頻率的變化相較時間的變化是比較明顯且重要的，然而在高頻時，例如頻率從1000Hz變到1001Hz，頻率相較時間的變化不大，所以對時間解析度的要求較高。但是短時距傅立葉轉換的解析度並不會隨著頻率而變化，下圖顯示兩者解析度變化的比較:
+
+
+
+母小波的一些例子：
+
+
+
+
+
+
+
+Meyer
+
+
+
+
+
+
+
+
+Morlet
+
+
+
+
+
+
+
+
+墨西哥帽
+
+
+
+
+
+和傅里葉變換比較[編輯]
+小波變換經常和傅里葉變換做比較，在後者中訊號用正弦函數的和來表示。
+
+
+
+
+傅立葉轉換
+
+
+
+
+轉換形式
+數學式
+參數
+
+
+傅立葉變換
+
+
+
+
+X
+(
+f
+)
+=
+
+∫
+
+−
+∞
+
+
+∞
+
+
+x
+(
+t
+)
+
+e
+
+−
+j
+2
+π
+f
+t
+
+
+
+d
+t
+
+
+{\displaystyle X(f)=\int _{-\infty }^{\infty }x(t)e^{-j2\pi ft}\,dt}
+
+
+f, 頻率
+
+
+短時距傅立葉變換
+
+
+
+
+X
+(
+t
+,
+f
+)
+=
+
+∫
+
+−
+∞
+
+
+∞
+
+
+w
+(
+t
+−
+τ
+)
+x
+(
+τ
+)
+
+e
+
+−
+j
+2
+π
+f
+τ
+
+
+
+d
+τ
+
+
+{\displaystyle X(t,f)=\int _{-\infty }^{\infty }w(t-\tau )x(\tau )e^{-j2\pi f\tau }\,d\tau }
+
+
+t, 時間; f, 頻率
+
+
+小波轉換
+
+
+
+
+X
+(
+a
+,
+b
+)
+=
+
+
+1
+
+b
+
+
+
+
+∫
+
+−
+∞
+
+
+∞
+
+
+ 
+x
+(
+t
+)
+
+Ψ
+
+(
+
+
+
+t
+−
+a
+
+b
+
+
+)
+
+
+
+d
+t
+
+
+{\displaystyle X(a,b)={\frac {1}{\sqrt {b}}}\int _{-\infty }^{\infty }\ x(t){\Psi \left({\frac {t-a}{b}}\right)}\,dt}
+
+
+a, 時間; b, 尺度
+
+
+
+
+
+
+STFT
+
+
+標準的傅立葉變換將訊號從時域轉換到頻率域上做分析，但沒辦法從頻率域上得知訊號在不同時間的頻率資訊，只能知道該訊號包含哪些頻率成份，因此不適合用來分析一個頻率會隨著時間而改變的訊號，例如:音樂訊號。
+然而短時距傅立葉變換（Short-time Fourier transform）（STFT）比傅立葉變換多了一個窗函數(window function)，可以分析出隨著時間變化的頻率,隨著窗函數大小的不同會有不同的頻率和時間解析度，以方形窗函數為例，當窗函數寬度越大，頻率的解析度越好，但時間解析度下降，反之，當窗函數寬度越小，時間的解析度越好，頻率解析度下降，然而有限長度的窗函數大小會限制頻率解析度，不過小波轉換能解決這個問題，通過多解析度分析通常可以給出更好的訊號表示。
+另外，當輸入訊號為二維時(例如:影像)，短時距傅立葉變換的輸出為四維度，但小波轉換仍是二維訊號，所以在影像處理上通常會使用小波轉換而非短時距傅立葉變換。
+小波變換的計算複雜度也更小，只需要
+
+
+
+
+
+O
+
+
+(
+N
+)
+
+
+{\displaystyle {\mathcal {O}}(N)}
+
+時間，快於快速傅里葉變換的
+
+
+
+
+
+O
+
+
+(
+N
+log
+⁡
+N
+)
+
+
+{\displaystyle {\mathcal {O}}(N\log N)}
+
+，其中
+
+
+
+N
+
+
+{\displaystyle N}
+
+代表數據大小。
+小波的定義[編輯]
+wavelet是指小型波(在傅立葉分析裡的弦波是大型波)，簡單說來，小波(wavelet)是一個衰減迅速的振盪。
+有幾種定義小波（或者小波族）的方法:
+縮放濾波器[編輯]
+小波完全通過縮放濾波器g——一個低通有限脈衝響應（FIR）長度為2N和為1的濾波器——來定義。在雙正交小波的情況，分解和重建的濾波器分別定義。
+高通濾波器的分析作為低通的QMF來計算，而重建濾波器為分解的時間反轉。例如Daubechies和Symlet小波。
+縮放函數[編輯]
+小波由時域中的小波函數
+
+
+
+ψ
+(
+t
+)
+
+
+{\displaystyle \psi (t)}
+
+ (即母小波)和縮放函數
+
+
+
+ϕ
+(
+t
+)
+
+
+{\displaystyle \phi (t)}
+
+ (也稱為父小波)來定義。
+小波函數實際上是帶通濾波器，每一級縮放將帶寬減半。這產生了一個問題，如果要覆蓋整個譜需要無窮多的級。縮放函數濾掉變換的最低級並保證整個譜被覆蓋到。詳細解釋請參看[1] 。
+對於有緊支撐的小波，
+
+
+
+ϕ
+(
+t
+)
+
+
+{\displaystyle \phi (t)}
+
+可以視為有限長，並等價於縮放濾波器g。例如Meyer小波。
+小波函數[編輯]
+小波只有時域表示，作為小波函數
+
+
+
+ψ
+(
+t
+)
+
+
+{\displaystyle \psi (t)}
+
+。例如墨西哥帽小波。
+應用[編輯]
+通常來講，DWT用於訊號編碼而CWT用於訊號分析。所以，DWT通常用於工程和計算機科學，而CWT經常用於科學研究。小波變換現在被大量不同的應用領域採納，有時甚至會取代了傅里葉變換的位置，在許多領域都有這樣的轉變。例如很多物理學的領域亦經歷了這個轉變，包括分子動力學，從頭計算（ab initio calculations），天文物理學，密度矩陣局部化，地球物理學，光學，湍流，和量子力學。其他經歷了這種變化的學科有圖像處理，血壓，心率和心電圖分析，DNA分析，蛋白質分析，氣象學，通用訊號處理，語言識別，計算機圖形學，和多分形分析。
+影像壓縮[編輯]
+小波轉換最常見的應用是用於影像壓縮。和其他變換一樣，小波變換可以用於原始影像（例如圖像），然後將變換後的數據編碼，得到有效的壓縮。影像壓縮通常可分為三大步驟，分別是轉換(Transform)、量化(Quantization)和編碼(Coding)[1]。其中轉換這個步驟是將原始資料轉換成另一種表示法，可經由逆轉換得到原始訊號。轉換的目的在於除去訊號取樣的相關性，也就是去除取樣間的累贅。在對影像資料轉換時，通常是將影像先分割成不重疊小區塊，再對小區塊進行單位轉換，而單位轉換是一種可逆的轉換，其演算的核心為正交的基底函數。訊號可以分為規則性訊號與非規則性訊號兩類，所謂規則性訊號即是訊號中所有組成物是同時發生的；而非規則性訊號其組成物並非是同時發生。對於規則的訊號，理想且有效的轉換方式是傅立葉轉換。而適用於非規則性訊號的工具就是小波轉換。較為知名的影像壓縮檔案格式JPEG 2000就是採用小波的圖像標準，演算法細節請參考小波壓縮。
+邊緣偵測[編輯]
+
+File:Wavelet transform of a house image.png
+Wavelet transform of a house image
+
+
+小波轉換亦常應用於影像的邊緣偵測(edge detection)，傳統的影像邊緣偵測採用二維差分運算子以偵測影像邊緣，乃假設影像邊緣上和邊緣旁之影像灰階值必然不同，當取微分時，在邊緣上會呈現非常大梯度值，藉由調整影像灰階值的臨界值參數可強化邊緣，但二維小波轉換則是一種效果較佳的影像邊緣偵測方法，當取小波轉換時，在影像邊緣上亦會呈現非常大的梯度值。在電腦視覺或影像處理上經常使用動態輪廓或蛇行模式來偵測物體的邊界或邊緣。
+在物體紋路及錶面瑕疵檢測上亦有其應用，由於小波轉換有局部性處理的能力，對於小區域之瑕疵能有效凸顯，其頻率特性使得在處理瑕疵上不易受環境影響。相對於頻率域之轉換方法，小波轉換處理速度快，因不須事先經過訓練與繁複的數學計算，使得小波轉換在速度處理上獲得不錯效果，其具有多解析(Multi-resolution)與多尺度(Multi-scale)能力，使得在處理紋路瑕疵上不會產生方塊效應。小波轉換不會變動影像物體的相對位置，且保留紋路與瑕疵的空間關係與影像大小[2]。
+音樂訊號分析[編輯]
+
+File:DWT application of music signal.png
+音樂訊號辨識流程圖
+
+
+小波轉換亦可用在音樂訊號上，像是樂器自動辨識的應用，第一種為先使用一維小波轉換將聲音訊號分解為不同頻率範圍的各個頻帶，接著再對各個頻帶中擷取能量平均值以及能量標準差視為一維小波轉換之特徵向量。而第二種方法為先將聲音訊號轉成頻譜圖並視為一張二維影像，對此頻譜圖做二維小波轉換分解出各個頻帶，再對頻帶中擷取能量平均值和能量標準差做為二維小波的特徵向量。最後，利用相鄰近似法使用歐基里德距離來計算測試資料的特徵向量和每一樂器的特徵向量之距離，並取最小距離為辨識結果的樂器類別[3]。
+而小波轉換也常用在音樂訊號的壓縮，由於人耳對聲音各頻帶是有其感知力的，故有些頻帶人無法聽見，有些頻帶人耳特別靈敏。利用離散小波轉換來將音樂訊號做高低頻切割多次，就可以將原訊號分成許多子頻帶(sub-band)，但傳統離散小波轉換計算架構，將波型分成高頻與低頻後，下一次的切割只對低頻做切割，故沒辦法完全分割出與人耳感知頻帶相符合的子頻帶。於是更精細的計算架構被提出，稱為離散小波包轉換(discrete wavelet packet transform)，原理就是音樂訊號被分成高頻訊號後，會再做分割。一段音樂訊號就可以被分割成更貼近人耳25個頻帶的訊號，這樣的分割法更優於一般傅立葉分析所使用的濾波器，從這些子頻帶中，找出能夠被屏蔽的訊號，濾除之後，就可以將原本音樂訊號檔案大小壓縮了。
+在辨識音樂訊號的樂譜上也有其應用，音樂訊號由一個個音符組成，而每個音符以特定的節奏出現，通常是成群的諧音出現，若要分辨出一段訊號最主要的頻率為何，必須濾除其泛音才能判斷，而由離散小波轉換的多重解析度分割就可以將泛音區隔在不同的子頻帶中，而且訊號中的雜訊也可以依同樣方法被濾除。由於是要偵測transient 現象，基於要偵測什麼樣的訊號就使用跟它很像的訊號當作基底拆解它這個原則，故在選擇小波基底時，就要選擇較有突然劇烈變化的母小波，如此一來小波轉換後的小波係數，能量就會聚集在原訊號有劇烈變化之處了[4]，由此方法可有效辨識音樂訊號的音高(也就是頻率)。
+遙測影像分析[編輯]
+連續小波轉換常應用於遙測影像分析上，如海底地形之解析[5]，利用具有分析非均勻訊號的高維連續小波轉換理論作為遙測影像的分析工具，從中求取影像波浪譜，再從影像波浪譜中反算出觀測區域的水深值。傳統的研究多將海洋遙測影像假設為均勻(homogeneous)的海面影像，並採用被分析影像為均勻性前提所發展出的方法進行譜轉換，其分析所得之影像譜實際上為整個遙測影像波數譜的平均值。然而自然界的訊號常存在有非均勻的特性，近岸海域的波浪亦不例外。為能從分析非均勻影像訊號中分析得到合理且準確的水深資訊，可引入非均勻訊號分析理論-小波轉換。如高維小波轉換理論可應用在分析海洋遙測影像之研究，藉以從中計算出底床地形的資訊，透過小波轉換的非定常訊號的解析能力，可將整張遙測影像分解為不同的子影像，每一塊子影像區域的波場理論上具有一定程度之均勻性，再進而從各子影像中求解水深值，藉以描繪出觀測海域的水深資訊。
+生醫訊號分析[編輯]
+
+File:Wavelet transform of ECG signal.png
+Wavelet transform of ECG signal
+
+
+離散小波轉換亦常應用在生醫領域中，因為其具有較低的複雜度與較佳的時域-頻域分析之特性，而被選擇作為分析生醫訊號的方法。心電圖 (Electrocardiography) 與腦波圖 (Electroencephalography) 是兩項常見的生醫應用。在心電圖方面，為了診斷心臟相關疾病，可使用離散小波轉換去除原始訊號中冗餘的特徵，並由重建的訊號中偵測R-R區間。
+一般而言，病患之心電圖時常需要全天候的觀察與分析，因此資料量相當龐大，此時便需要很大的儲存空間來儲存這些資料，因此有必要將心電圖之資料加以壓縮，才可有效減少所需之儲存設備成本。訊號的壓縮可分為無失真(lossless)壓縮和失真(lossy)壓縮兩種，若是依傳統醫學觀念，或許應該使用無失真壓縮，才可避免因資訊不完整而造成誤診等醫療疏失，但由於傳送資訊之網路頻寬有限且資料龐大，因此使用失真(lossy)壓縮以達到更大的壓縮效率已成必然，在增大壓縮效率的同時，亦可保證其重建訊號之可靠度，以避免不必要的醫療疏失便是一重要課題，小波轉換便可達到此項目標。
+而小波轉換亦有去除不必要雜訊之功用，以正確判讀心電圖，此方法稱為小波係數臨界法(wavelet coefficients thresholding)，訊號經小波轉換後，雜訊會成為較小的訊號(low scale)，因此將較小scale的訊號去除，即可去除雜訊，一般的做法為設立一臨界值，將低於此臨界值的訊號捨棄，高於臨界值的訊號保留。而選擇臨界值的方式有兩種，一種為硬式臨界值(hard threshold)，其臨界值為一常數，不隨輸入訊號改變而改變，此法優點為設計簡單，但得到的結果並不理想，若改由不同輸入訊號形成不同臨界值，則稱為軟式臨界值，將經小波轉換後每一頻帶之變異數(variance)開根號後形成標準差，而後以標準差當作參數作為臨界值，此法產生之臨界值會因輸入訊號長度的不同而改變[6]。
+另一個小波轉換在生醫領域的應用則是應用在腦電圖上，早期腦電圖訊號分析技術，普遍以傅立葉轉換為主，近年來，小波轉換技術逐漸被採用，其特性在對於未知訊號的頻率分佈，在時間軸上可以得到很好的解析度，適合應用於腦波的不穩定訊號分析處理。再配合類神經網路非線性分辨能力，可有效分辨α波、β波。
+亦有一個應用是在於腦電圖中正常的背景訊號與不正常的尖峰訊號之區分，患有癲癇的病人其不正常的尖峰訊號其形狀會類似一個凸起的尖峰，故此訊號殼稱為尖峰訊號(spike)，利用多重解析變換的小波轉換(multi-resolution wavelet transform)可用來分析這類型態類似、但大小區間變異很大的癲癇訊號。
+歷史[編輯]
+第一個小波轉換是Alfred Haar在 1909年提出來的哈爾小波(Haar wavelet)，但是當時小波的概念並不存在，直到1981年地球物理學家 Jean Morlet才提出小波的概念，且小波轉換變成分析地震波的新工具。
+之後在1984年Morlet 和 物理學家 Alex Grossman發明瞭"wavelet"一詞，並且對於連續小波轉換和其各種應用有比較詳盡的數學研究。
+在1985年之前，大家所熟知的正交小波(orthogonal wavelet)只有哈爾小波，然而數學家Yves Meyer 在1985年建立了第二種正交小波，即Meyer小波。接著越來越多人投入這個領域並在1987年法國辦了第一屆國際研討會。
+1988年, Stephane Mallat和 伊夫·梅耶爾 提出了多解析度的概念，同年(1988)，英格麗·多貝西（Ingrid Daubechies）建立了緊支撐正交小波(compact support orthogonal wavelet)，隔年(1989)Mallat 提出了快速小波轉換。隨著快速小波轉換的發展，許多小波轉換的應用得以實現。
+除了先前許多卓越的數學家像是 I. Daubechies, A. Grossmann, S. Mallat, 伊夫·梅耶爾, R. A.deVore, Coifman, V. Wickerhauser在小波理論上都有顯著的貢獻，之後直到現在也陸續有人提出了許多方法和應用。
+時間線[編輯]
+
+1909年: 第一個小波（Haar小波）由Alfred Haar提出
+1981年: Jean Morlet提出小波概念
+1984年: Morlet和 Grossman發明瞭"wavelet"一詞
+1985年: Meyer小波
+1987年: 第一屆國際研討會在法國
+1988年: Stephane Mallat和 伊夫·梅耶爾 提出了多解析度的概念
+1988年: 多貝西小波
+1989年: 快速小波轉換 （FWT）
+1990年代: 離散小波變換 （DWT）
+1999年: 方向小波轉換
+2000年: JPEG2000
+
+小波轉換[編輯]
+如果函數
+
+
+
+f
+∈
+
+L
+
+2
+
+
+(
+R
+)
+
+
+{\displaystyle f\in L_{2}(R)}
+
+，那麼級數
+
+
+
+
+
+
+∑
+
+j
+∈
+Z
+
+
+
+∑
+
+k
+∈
+Z
+
+
+
+⟨
+f
+,
+
+ψ
+
+j
+,
+k
+
+
+⟩
+
+
+ψ
+
+j
+,
+k
+
+
+(
+t
+)
+
+
+{\displaystyle \sum _{j\in Z}\sum _{k\in Z}\left\langle f,\psi _{j,k}\right\rangle \psi _{j,k}(t)}
+
+
+
+稱作
+
+
+
+f
+
+
+{\displaystyle f}
+
+的小波級數，且
+
+
+
+
+
+
+⟨
+f
+,
+
+ψ
+
+j
+,
+k
+
+
+⟩
+
+=
+
+∫
+
+−
+∞
+
+
+∞
+
+
+f
+(
+t
+)
+
+ψ
+
+j
+,
+k
+
+
+(
+t
+)
+
+d
+
+t
+
+
+{\displaystyle \left\langle f,\psi _{j,k}\right\rangle =\int _{-\infty }^{\infty }f(t)\psi _{j,k}(t)\mathrm {d} t}
+
+
+
+為
+
+
+
+f
+
+
+{\displaystyle f}
+
+的小波係數。
+存在著大量的小波變換，每個適合不同的應用。完整的列表參看小波相關的變換列表，常見的如下：
+
+連續小波變換（CWT）
+離散小波變換（DWT）
+快速小波轉換（FWT）
+小波包分解（Wavelet packet decomposition） （WPD）
+
+小波轉換的優點[編輯]
+
+可以同時觀察頻率和時間軸，在頻率高時有較好的時間解析度，在頻率低時有較好的頻率解析度。
+有快速小波轉換可以加速運算。
+可以分離出訊號的精細或粗糙成分。
+在小波理論中，可以用較少的小波係數去逼近一個函數。
+對訊號去噪或壓縮訊號時，不會對訊號造成明顯的破壞。
+
+小波列表[編輯]
+離散小波[編輯]
+
+Beylkin（18）
+Coiflet（6, 12, 18, 24, 30）
+多貝西小波（Daubechies小波） （2, 4, 6, 8, 10, 12, 14, 16, 18, 20）
+Cohen-Daubechies-Feauveau小波，有時稱為「多貝西」9/7 (Daubechies 9/7)或CDF9/7
+哈爾小波轉換
+Vaidyanathan濾波器（24）
+Symmlet
+複小波變換
+
+連續小波[編輯]
+
+墨西哥帽小波
+厄爾米特小波
+厄爾米特帽小波
+復墨西哥帽小波
+Morlet小波
+修正Morlet小波
+Addison小波
+希爾伯特-厄爾米特小波
+
+相關條目[編輯]
+
+濾波器段
+超寬帶無線傳輸小波。
+短時距傅立葉變換
+chirplet變換
+分數傅立葉變換
+
+參考文獻[編輯]
+
+
+^ http://www.csprs.org.tw/Temp/200509-10-3-305-314.pdf
+^ 應用小波轉換於錶面瑕疵檢驗__臺灣博碩士論文知識加值系統. 
+^ 應用小波轉換特徵於音樂樂器之辨識 - Lee - Journal of Information Technology and Applications. 
+^ http://djj.ee.ntu.edu.tw/Tutorial_Wavelet%20for%20Music%20Signal%20Analysis%20_1.pdf
+^ http://www.comc.ncku.edu.tw/chinese/h_paper/%E6%9C%9F%E5%88%8A%E8%AB%96%E6%96%87%E6%AA%94%E6%A1%882012/99%E5%B9%B4%E5%BA%A6%20%E9%80%A3%E7%BA%8C%E5%B0%8F%E6%B3%A2%E8%BD%89%E6%8F%9B%E6%87%89%E7%94%A8%E6%96%BC%E9%81%99%E6%B8%AC%E5%BD%B1%E5%83%8F%E4%B9%8B%E5%88%86%E6%9E%90%E2%80%94%E6%B5%B7%E5%BA%95%E5%9C%B0%E5%BD%A2%E4%B9%8B%E8%A7%A3%E6%9E%90.PDF
+^ http://djj.ee.ntu.edu.tw/Wavelet_Biomedical_SP.docx
+
+
+參考書目[編輯]
+
+Paul S. Addison, The Illustrated Wavelet Transform Handbook, Institute of Physics, 2002, ISBN 0-7503-0692-0
+Ingrid Daubechies, Ten Lectures on Wavelets, Society for Industrial and Applied Mathematics, 1992, ISBN 0-89871-274-2
+Mladen Victor Wickerhauser, Adapted Wavelet Analysis From Theory to Software, A K Peters Ltd, 1994, ISBN 1-56881-041-5
+P. P. Viadyanathan, Multirate Systems and Filter Banks, Prentice Hall, 1993, ISBN 0-13-605718-7
+
+外部連結[編輯]
+
+Wavelet Digest
+Amaras Wavelet Page
+Wavelet Posting Board
+The Wavelet Tutorial by Polikar
+OpenSource Wavelet C Code
+An Introduction to Wavelets
+Filter Coefficients of Popular Wavelets
+Wavelets for Kids (PDF file)（introductory）
+Link collection about wavelets
+List of Wavelet resources, libraries and source codes
+A really friendly guide to wavelets
+Wavelet forums (French) Wavelet forum (English)
+R語言小波分析wavelet
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=小波分析&oldid=43768730"					
+4 個分類：數值分析信號處理圖像處理小波分析隱藏分類：缺少文件的條目使用ISBN魔術連結的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةБеларускаяБългарскиCatalàČeštinaDeutschEnglishEsperantoEspañolفارسیSuomiFrançaisKreyòl ayisyenBahasa IndonesiaItaliano日本語한국어LietuviųNederlandsPolskiPortuguêsРусскийSimple EnglishSvenskaУкраїнська 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年3月27日 (週一) 08:15。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+地震訊號處理 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+地震訊號處理
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本條目存在以下問題，請協助改善本條目或在討論頁針對議題發表看法。
+
+
+
+
+
+
+本條目可能包含不適用或被曲解的參照資料，部分內容的準確性無法被證實。（2014年6月22日） 
+請協助校核其中的錯誤以改善這篇條目。詳情請參見條目的討論頁。 
+
+
+
+
+
+
+
+本條目需要編修，以確保文法、用詞、語氣、格式、標點等使用恰當。（2014年6月22日） 
+請按照校對指引，幫助編輯這個條目。（幫助、討論） 
+
+
+
+
+
+
+
+本條目需要補充更多來源。（2014年6月22日） 
+請協助添加多方面可靠來源以改善這篇條目，無法查證的內容可能會因為異議提出而移除。 
+
+
+
+
+
+
+
+地震訊號處理（Seismic signal processing），為數位訊號處理（DSP）的子研究領域之一，主要著重於地震資料的處理，來達到雜訊抑制、增強訊號以及地震事件在地表下遷移位置的分析。地震訊號處理有助於提供地質學家更加明顯和準確的地下構造實現更好的詮釋。
+
+
+
+目錄
+
+
+1 概述
+2 處理方式
+3 數位訊號處理的地震工程應用
+
+3.1 小波轉換
+3.2 史托克威爾轉換
+3.3 最大熵功率譜估計
+3.4 希爾伯特─黃轉換
+
+
+4 參考資料
+
+
+
+概述[編輯]
+地震訊號處理源自地震學的研究，並結合數位訊號處理的技術。地震學研究地震以及地震波在地球內部傳播的學問。同時，也研究其它由地震引發的現象，如海嘯；以及引起地震的原因，如板塊運動、火山運動等。
+地震在地球內部引發地震波，透過觀察地震波在地球內部的傳播，地質學家可以試圖瞭解和推斷出地球內部的結構和構造。因此，今日除了自然發生的地震，主動性使用人工爆破所產生的地震波，讓人們可以探測地底下的石油貯藏、岩石結構、鹽礦、地層的結構和被埋沒的隕石坑等等。
+處理方式[編輯]
+處理通常包括
+
+反褶積（deconvolution）
+速度分析
+正常/傾角時差（normal/dip moveout）
+靜校正
+疊加
+遷移
+
+數位訊號處理的地震工程應用[編輯]
+小波轉換[編輯]
+最早的小波轉換工程應用是在石油地震探勘訊號處理領域。西元1970年代，在法國石油公司工作的年輕地球物理學家莫列特（Morlet）提出小波轉換（WT）的概念。西元1980年代，他開發了連續小波變換（Continuous wavelet transform，CWT）。
+小波分析因為具有良好的時頻局部化性質而優於傳統的傅立葉分析。淺層地震的探勘訊號組成以低頻訊號為主，透過應用小波轉換的多解析度分析（multi-resolution analysis）方法，能夠將淺層地震探勘訊號中混雜的折射波、反射波和錶面波分離出來。
+小波轉換是一種訊號的時間－尺度(時間－頻率分析方法)，它具有多解析度分析的特點，而且在時頻兩域，都具有表徵訊號局部特徵的能力，是一種視窗大小固定不變但形狀可改變，時間窗（time window）和頻率窗（frequency window）都可以改變的時頻局部化分析方法。也就是在低頻部分具有較高的頻率解析度和較低的時間解析度，而在高頻部分具有較高的時間解析度和較低的頻率解析度，很適合於探測正常訊號中夾帶的瞬態反常現象並展示其成分，所以被譽為分析訊號的顯微鏡，利用連續小波轉換進行動態系統故障檢測與診斷具有良好的效果。
+正是小波轉換在低頻部分具有較高的頻率解析度和較低的時間解析度。近些年來，小波變換在地球物理學資料的處理上得到了廣泛的應用。在地震資料的處理上，小波轉換主要應用在地震資料的壓縮、提高解析度和訊號去除雜訊（noise）等方面。
+史托克威爾轉換[編輯]
+較早把史托克威爾轉換（S轉換，Stockwell Transform）引入到工程應用，就是石油地震探勘的地震訊號時頻分析方面，主要用於地震訊號的去雜訊和地震波頻域衰減屬性分析等。
+史托克威爾轉換首先是由Stockwell等人（1996）所提出，他們用一種特殊的母波（mother wavelet）做小波轉換後，再進行相位校正。該特殊母波其實並不滿足小波零均值（zero mean）的條件，因此實際上並非真正的小波轉換。但乘上相位因子後，卻能巧妙的與傅立葉轉換結合。史托克威爾轉換中的弦波調制項（modulating sinusoids）對時間軸固定，而靠高斯視窗（Gaussian window）的移動（translates）和延伸（dilates）獲得小波轉換的效果。所以史托克威爾轉換具有小波轉換所缺少的可逆性，又可利用快速傅立葉轉換（FFT）的方法運算，且維持與傅立葉頻譜的相關性。史托克威爾轉換以高斯視窗為基底函式來回移動，可以分析時頻域特質，雖然直接和傅立葉頻譜相關，但是史托克威爾轉換的優點是它局部化的高斯視窗可以將訊號詳細轉換，更提高了在頻率域的解析度。
+最大熵功率譜估計[編輯]
+最大熵頻譜估計（Maximum entropy spectral estimation）是一種頻譜密度估計的方法。目標是提高基於最大熵（Maximum entropy）原理的光譜品質。這個方法是基於選擇最隨機或最不可預測的時間序列，這些時間序列的自相關函式（autocorrelation function）符合某些已知值的光譜。
+這個假設，對應於統計力學和訊息理論兩者中，使用的最大熵的觀念，是最大限度地不明確的關於時間序列的自相關函式的未知值。這是一個簡單的最大熵模型的應用，適合任何類型的頻譜，而且可被應用於所有將資料以頻譜形式呈現的領域
+希爾伯特─黃轉換[編輯]
+希爾伯特─黃轉換（Hilbert-Huang Transform，HHT）是台灣中央研究院院士黃鍔根據近代知名數學家Hilbert的數學理論設計，一種新的時頻分析方法，適合用來獲取非線性和非穩定訊號的時間頻率變化。過程分成兩個步驟
+
+經驗模態分解（Empirical Mode Decomposition，EMD）
+
+希爾伯特─黃轉換的關鍵步驟是經驗模態分解（EMD），可將訊號分解為帶有物理意義的本質模態函式（Intrinsic Mode Function，IMF）。訊號在經過經驗模態分解後，各種頻率成分會以本質模態函式的形式從時間曲線中分離出來。各個本質模態函式分量都是平穩訊號或簡單的非線性訊號，具有簡單的非線性特徵，且訊號會隨著時間變化，具有時間上的局部化特徵。經驗模態分解可以被解釋為一個篩選過程，從最小的特徵尺度篩選訊號，並獲得本質模態函式的最短週期，然後通過一系列篩選。這個過程也體現了多解析度分析的過濾過程。
+
+希爾伯特轉換（Hilbert Transform）
+
+對本質模態函式序列進行希爾伯特轉換後，可得到包含時間、頻率以及振幅三者的頻譜，稱作希爾伯特頻譜（Hilbert Spectrum）。和其他分析方式相比，希爾伯特─黃轉換更適合用於非線性和非穩定的訊號。
+經驗模態分解（EMD）分解的效率相當高。同時，因為它不依賴於傅立葉，小波要求的基礎功能，它的適應性好，所以能更有效地反映的內部特徵的訊號，並且避免訊號能量的擴散和洩漏。希爾伯特─黃轉換方法不僅可以達到去除雜訊的效果，而且還可以充分保留了訊號的非線性和非穩定特徵。非線性和非穩定正好就是地震訊號所具有的特性，因此，希爾伯特─黃轉換適合用於地震訊號的雜訊去除。
+參考資料[編輯]
+
+http://csip.ece.gatech.edu/?q=technical-area/seismic-signal-processing
+http://blog.sciencenet.cn/blog-425437-675393.html
+http://2007tga.cgu.org.tw/cdrom/Poster/GP-P-09.pdf
+http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5917060
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+地震
+
+
+
+
+
+
+要素
+
+
+
+震源
+震源深度
+震央
+震央距
+震度
+地震矩
+
+
+
+
+
+
+
+
+地震波
+
+
+
+P波
+S波
+面波
+
+
+
+
+
+
+
+
+地震偵測
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+地震度量
+
+
+
+
+
+
+現代度量
+
+
+
+
+
+震度度量
+
+
+
+
+歐洲宏觀地震度量（EMS）（英語：European Macroseismic Scale）
+中國地震震度（CSIS）
+梅德韋傑夫·史邦豪雅·卡尼克震度度量（MSK）（英語：Medvedev–Sponheuer–Karnik scale）
+修訂麥加利地震震度（MM）
+日本氣象廳震度等級
+中央氣象局震度分級
+
+
+
+
+
+
+
+
+
+規模度量
+
+
+
+
+芮氏地震規模（近震規模，ML）
+體波規模（mb）
+錶面波規模（Ms）
+地震矩規模（Mw）
+日本氣象廳地震規模（Mj）
+
+
+
+
+
+
+
+
+
+
+
+曾用度量
+
+
+
+麥加利-坎加尼-希耶伯格（MCS）
+麥加利-伍德-紐曼（MWN）
+羅斯-佛熱（英語：Rossi–Forel scale）
+
+
+
+
+
+
+
+
+
+地震儀
+海底地震儀
+強震儀
+地震訊號處理
+震動圖
+等震線
+
+
+
+
+
+
+
+
+類型
+
+
+
+地震序列
+前震
+群震
+大型逆衝區地震
+慢地震
+地震帶
+
+阿爾卑斯帶
+環太平洋火山帶
+
+
+連發式地震帶
+
+
+
+
+
+
+
+
+研究
+
+
+
+地震學
+彈性回跳理論
+震源機制解
+古登堡－芮克特定律
+斷層
+盲斷層
+
+
+
+
+
+
+
+
+災害
+
+
+
+土壤液化
+海嘯
+山崩
+堰塞湖
+
+
+
+
+
+
+
+
+對策
+
+
+
+地震預測
+地震預警系統
+強震即時警報
+緊急地震速報
+地震工程
+防震縫
+地震險
+生命三角（有爭議）
+
+
+
+
+
+
+
+
+地震列表
+
+
+
+台灣地震列表
+中國地震列表
+四川地震列表
+日本地震列表
+美國地震列表
+希臘地震列表
+義大利地震列表
+亞塞拜然地震列表
+亞美尼亞地震列表
+阿爾及利亞地震列表
+
+
+
+
+
+
+
+
+各年地震
+
+
+
+20世紀地震列表
+21世紀地震列表
+2013年地震
+2014年地震
+2015年地震
+
+
+
+
+
+
+
+
+相關
+
+
+
+場址效應
+地震光
+地震雲
+地聲
+天體震動
+月震
+日震
+霜震
+
+
+
+
+
+
+
+
+
+參見：地震分類 · 地球科學主題頁 · 地震專題
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=地震信號處理&oldid=37769760"					
+2 個分類：地震學數位訊號處理隱藏分類：自2014年6月參照不當的條目拒絕當選首頁新條目推薦欄目的條目自2014年6月需要校對的頁面自2014年6月需補充來源的條目含有多個問題的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+
+新增連結 
+
+
+
+
+
+ 本頁面最後修訂於2015年11月5日 (週四) 13:44。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+國立成功大學 - 課程地圖
+
+
+
+
+
+
+
+    
+ 
+
+
+ 首頁 
+
+
+
+
+
+
+
+ 通識教育課程地圖 
+
+
+
+
+
+
+ 院系所課程地圖 
+
+
+
+
+
+
+
+
+意見回饋 ｜ 
+  
+
+English ｜ 
+  
+
+
+
+
+ 1.
+        
+請選擇學院
+其他文學院理學院工學院管理學院醫學院社會科學院電機資訊學院規劃與設計學院生物科學與科技學院 
+        2. 
+        
+請選擇系所
+電機系          資訊系          電機所          多媒學程        資訊所          製造所          微電所          電通所          醫資所          奈積學程         
+
+
+
+ 3. 
+        
+選擇未來發展 - 升學
+
+						電腦與網路領域                                    
+
+						通訊與網路領域                                    
+
+
+選擇未來發展 - 就業
+
+						國內各公私立大專院校教職                          
+
+						電信研究所                                        
+
+						中山科學院、中央研究院、資策會                    
+
+						國科會太空計畫室                                  
+
+						中科院、電信總局                                  
+
+
+
+
+
+
+小波訊號處理                            
+
+
+  	時-頻表示、垂直小波、濾波器組、快速離散小波轉換、小波近似理論，小波估測理論與小波資料壓縮。A. 教科書：A WAVELET TOUR OF SIGNAL PROCESSING by S.Mallat.    B.參考書目：Wavelets and filterbanks by G.Strang .
+
+課程教育目標 
+
+A. 奠定深厚專業知能：教育學生專業學識，並具備創新、分析、設計及實踐能力，以養成其深厚之電腦與通信工程專業知能、學術研究及跨領域整合之能力。C. 加強團隊合作精神：教育學生具備寬廣之知識、溝通技巧與團隊精神，以迎接不同生涯發展之挑戰，並對終身學習之必要性有所認知。 
+課程基本素養與核心能力 
+
+[核心能力]具電腦與通信工程相關領域之專業知識。
+撰寫專業論文之能力。
+ 
+近年開課資訊
+
+
+
+開課年度
+課程碼
+分班碼
+課程名稱(超連結為課程大綱)
+學分數
+英語授課
+授課教師
+
+
+
+0106/1
+Q352900
+ 
+ 
+		  	小波訊號處理                            
+
+3.0
+N
+陳進興
+
+
+
+0105/1
+Q352900
+ 
+ 
+		  	小波訊號處理                            
+
+3.0
+N
+陳進興
+
+
+
+0104/1
+Q352900
+ 
+ 
+		  	小波訊號處理                            
+
+3.0
+N
+陳進興
+
+
+
+0103/1
+Q352900
+ 
+ 
+		  	小波訊號處理                            
+
+3.0
+N
+陳進興
+
+
+
+0102/1
+Q352900
+ 
+ 
+		  	小波訊號處理                            
+
+3.0
+N
+陳進興
+
+
+
+0101/1
+Q352900
+ 
+ 
+		  	小波訊號處理                            
+
+3.0
+N
+陳進興
+
+
+
+0100/1
+Q352900
+ 
+ 
+		  	小波訊號處理                            
+
+3.0
+N
+陳進興
+
+
+
+0099/1
+Q352900
+ 
+ 
+		  	小波訊號處理                            
+
+3.0
+N
+陳進興
+
+
+
+0098/1
+Q352900
+ 
+ 
+		  	小波訊號處理                            
+
+3.0
+N
+陳進興
+
+
+
+
+
+
+
+ 國立成功大學 |  課程查詢  
+701臺南市大學路1號   TEL:  06-2757575#50158  意見回饋信箱: 教務處課務組 em50150@mail.ncku.edu.tw
+    國立成功大學 版權所有  © NCKU All Rights Reserved.  計網中心資訊系統發展組 製作
+
+
+
+
+
+
+
+
+
+
+
+
+
+課程大綱
+
+
+
+
+
+
+
+
+
+
+小波訊號處理WAVELET SIGNAL PROCESSING
+
+
+
+
+
+
+開課系所 Department/Institute:  電通所          Computer and Communication Engineering
+開課教師 Instructor:   陳進興 Chen, Chin-Hsing              
+開課學年 Academic Year:   0103
+開課學期 Semester:    1
+開課序號 Serial Number:   043
+
+課程屬性碼 Attribute Code:   CCE 6445 
+課程碼 Course Number:   Q352900 
+分班碼 Class Code: 
+學分數 No. of Credits:           3
+課程語言 Medium of Instruction:   中文
+
+
+課程網址 Course Website: 
+
+先修課程或先備能力 Prerequisite Course(s): 
+
+教師聯絡資訊 Contact with Teacher
+繫上分機62358
+
+
+助教資訊 Contact with Tutor
+
+
+學習規範 Course Policy
+
+
+評量方式 Grading
+
+
+方法百分比%
+
+期中考 Midterm Exam
+35期末考 Term exam
+35作業 Assignments
+20出席 Participation
+10
+
+
+
+
+教學方法 Teaching Strategies
+      口頭講授    
+
+		※請遵守智慧財產權觀念  不得不法影印
+		 Please follow the Intellectual Property instruction and No illegal copy
+	
+
+課程教材 Course Material
+	    自製投影片    
+
+參考書目 References
+
+
+備註 Remarks
+
+
+
+
+
+基本素養 Basic Literacy
+        無    
+
+核心能力 Competence
+■ 具電腦與通信工程相關領域之專業知識。
+ To possess professional knowledge in the field of computer and communication engineering.
+□ 策劃及執行專題研究之能力。
+ The ability to plan and carry out a research project.
+■ 撰寫專業論文之能力。
+ To write a professional-quality dissertation.
+□ 創新思考及獨立解決問題之能力。
+ Innovative thinking and the ability to solve problems independently.
+□ 跨領域人員協調整合之能力。
+ Multidisciplinary coordination and integration capabilities.
+□ 良好的國際觀以及實踐專業倫理與理解社會責任之能力。
+ A solid international outlook and the ability to understand professional ethics and social responsibility.
+□ 領導、管理及規劃之能力。
+ Leadership, management and planning abilities.
+□ 終身自我學習成長之能力。
+ The ability to learn and develop throughout life.
+ 
+
+課程概述 Course Description
+       時-頻表示、垂直小波、濾波器組、快速離散小波轉換、小波近似理論，小波估測理論與小波資料壓縮。A. 教科書：A WAVELET TOUR OF SIGNAL PROCESSING by S.Mallat.    B.參考書目：Wavelets and filterbanks by G.Strang . 
+
+課程學習目標 Course Objectives    
+	    瞭解 時-頻表示、垂直小波、濾波器組、快速離散小波轉換、小波近似理論，小波估測理論與小波資料壓縮。    
+
+課程進度 Course Outline
+
+
+週次 Week進度說明 Progress Description
+1時-頻表示2時-頻表示3垂直小波4垂直小波5濾波器組6濾波器組7第一次期中考8快速離散小波轉換9快速離散小波轉換10小波近似理論11小波近似理論12第二次期中考13小波估測理論14小波估測理論15小波資料壓縮16小波資料壓縮17小波資料壓縮18期末考 
+
+　以上每週進度教師可依上課情況做適度調整。The schedule may be subject to change.
+
+
+課程學習融入下列議題或具有下列內涵的程度 Immersing the Following Issues or Contents
+議題或內容 Issues or Contents關聯性 Correlation性別平等 Gender Equity
+無相關 No correlation法治教育 Law-Related Education
+無相關 No correlation人權教育 Human Rights Education
+無相關 No correlation服務學習 Service Learning
+無相關 No correlation生命教育 Life Education
+無相關 No correlation智慧財產權 Intellectual Property
+無相關 No correlation環境安全 Environmental Safety
+無相關 No correlation環境保護 Environmental Protection
+無相關 No correlation文創產業 Cultural and creative Industry
+無相關 No correlation健康醫療照護產業 Health,Medical Treatment, Nursing Industry
+無相關 No correlation精緻農業產業 Advanced Agriculture
+無相關 No correlation生物科技產業 Biotechnology Industry
+無相關 No correlation觀光旅遊產業 Tourism
+無相關 No correlation綠色能源產業 Green Energy Industry
+無相關 No correlation強化工業基礎技術方案 Advancing basic industry technology program
+無相關 No correlation學術研究取向 Academic Orientation
+無相關 No correlation工作實務取向 Pragmatic Orientation
+無相關 No correlation 
+
+有關課程其他調查 Other Surveys of Courses
+                   1.本課程是否規劃業界教師參與教學或演講?   否            
+Is there any industry specialist invited in this course? How many times? No
+			
+           2.本課程是否規劃內含校外實習 (並非參訪)?   否		   
+Is there any in (out of) school practicum involved in this course? How many hours?  No
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			LabVIEW Advanced Signal Processing Toolkit - National Instruments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ NI Home > Products & Services > Measurement & Automation Software > NI LabVIEW > LabVIEW Add-Ons > Analyze > Advanced Signal Processing Toolkit
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+NI LabVIEW
+LabVIEW Development Systems
+NI Software Suites
+LabVIEW Add-Ons
+Design
+Deploy
+Interface
+Integrate
+Analyze
+Biomedical Toolkit
+Sound and Vibration Toolkit
+Advanced Signal Processing Toolkit
+Electrical Power Toolkit
+Multicore Analysis and Sparse Matrix Toolkit
+Jitter Analysis Toolkit
+Validate
+LabVIEW Tools Network
+NI Developer Suite 
+
+
+
+
+
+
+
+LabVIEW Advanced Signal Processing Toolkit
+					Time-Frequency Analysis, Time-Series Analysis and Wavelets
+					
+
+
+
+
+
+
+
+			[+] Enlarge Picture
+		
+
+
+
+
+Starting at
+
+$ 1,555
+													
+
+
+												(view pricing options)
+											
+
+
+
+
+
+
+View Data Sheet 
+
+
+
+
+
+
+
+Includes the LabVIEW Digital Filter Design Toolkit (also available separately)
+Time-series analysis -- statistical analysis for description, explanation, prediction, and control
+Time-frequency analysis -- analytical, graphical tools for signals with evolving frequency content
+Wavelet and filter-bank design for short-duration signal characterization, noise reduction, and detrending
+Support for Windows XP/Vista/7 and LabVIEW Real-Time (32-bit Real-Time controllers only)
+Included in all three LabVIEW suites
+
+
+
+Download        				
+         	
+View Support Resources
+
+
+
+
+
+
+
+Overview
+Pricing
+Resources
+
+
+
+The LabVIEW Advanced Signal Processing Toolkit is a suite of software tools, example programs, and utilities for time-frequency analysis, time-series analysis, and wavelets. It also includes a full version of the  LabVIEW Digital Filter Design Toolkit, which is also available separately.
+You also can purchase the Advanced Signal Processing Toolkit through NI Developer Suite. NI Developer Suite is a modular product offering with which you can select software components based on your application needs. With an NI Developer Suite subscription, you have access to software as updates are available as well as direct access to technical support from NI applications engineers via phone and e-mail.
+		
+
+
+View Pricing and Purchasing Information
+
+
+
+
+
+
+
+
+
+  NI now offers free standard shipping!  Free standard shipping will be automatically applied to new quotes and orders.   
+
+
+
+
+
+
+									LabVIEW Advanced Signal Processing Toolkit
+										for Windows
+									- 777136-35
+
+Qty
+
+
+
+$ 1,555  each
+								
+
+
+
+
+
+
+Development  System
+						
+
+
+
+
+
+														LabVIEW Full Development System
+														for Windows
+														, 1 year SSP
+													
+													
+												
+											
+								 				- 		776670-35
+
+
+Qty
+
+
+
+
+$ 2,999  each
+
+
+
+
+
+														LabVIEW Professional Development System
+														for Windows
+														, 1 year SSP
+													
+													
+												
+											
+								 				- 		776678-35
+
+
+Qty
+
+
+
+
+$ 4,999  each
+
+
+
+Related Software Add-Ons
+						
+
+
+
+
+
+														LabVIEW Control Design and Simulation Module
+														for Windows
+														, 1 year SSP
+													
+													
+												
+											
+								 				- 		780050-35
+
+
+Qty
+
+
+
+
+$ 2,119  each
+
+
+
+
+
+														NI LabVIEW Real-Time Module
+														for Windows
+														, 1 year SSP
+													
+													
+												
+											
+								 				- 		777844-35
+
+
+Qty
+
+
+
+
+$ 2,691  each
+
+
+
+
+
+
+
+
+
+Estimated Shipping Days: 5 - 10
+				
+
+
+
+					Subtotal: 
+					
+$ 1,555
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Add to Cart
+
+
+
+
+
+Guarantee your price for 30 days (learn more)
+								
+
+
+
+Request Quote
+
+
+
+
+
+
+
+
+Save for Later
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Additional Product Information
+
+
+
+								Manuals
+							 (3)
+						
+
+
+								Evaluation Software
+							 
+						
+
+
+
+Related Information
+
+
+Learn about LabVIEW for Signal Processing, Analysis, and Math
+
+
+Application Note -- Four Practical Applications of Time-Frequency Analysis
+
+
+Application Note -- Joint Time-Frequency Analysis (JTFA) Overview
+
+
+
+
+
+View Pricing and Purchasing Information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This site uses cookies to offer you a better browsing experience.  Learn more about our privacy policy.
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+PRODUCT
+
+
+Order status and history
+
+
+Order by part number
+
+
+Activate a product
+
+
+Order and payment information
+
+
+
+
+SUPPORT
+
+
+Submit a service request
+
+
+Manuals
+
+
+Drivers
+
+
+Alliance Partners
+
+
+
+
+COMPANY
+
+
+About National Instruments
+
+
+Events
+
+
+Careers
+
+
+Contact Us
+
+
+
+
+
+
+MISSION
+NI equips engineers and scientists with systems that accelerate productivity, innovation, and discovery.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal | 
+Privacy
+| &copy    National Instruments. All rights reserved.
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：小波理論於管結構損壞識別之應用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 小波理論於管結構損壞識別之應用The Application of Wavelet Transform in Damage Identifications of Pipes
+作者: 謝濬鴻洪士林土木工程學系
+關鍵字: 小波轉換;管損壞識別;Wavelet transform;Damage identification of pipes
+公開日期: 2005
+摘要: 近年來小波轉換應用於各個研究領域之中，由於其對訊號具有多重解析的特性，以及提供以往傅力葉轉換只於頻率域上的解析外，訊號隨著時間變化關係的解析能力，表現出其對訊號處理方面上的優越性。
+本研究提出一個應用於管結構的非破壞性損壞識別方法，先建立識別參數資料庫，將衝擊檢測獲得的訊號以小波分析後與資料庫進行比對，以診斷出損壞發生位置與損壞的程度。研究過程使用數值方法模擬管勁度衰減損壞下的加速度反應，利用小波分析的多重解析技術將加速度訊號分解成不同尺度頻率區間的子訊號，利用特定尺度的子訊號能量變化判斷損壞發生位置及損壞程度。使用四個案例對管損壞識別系統進行測試，顯示出除了靠近邊界時，對於損壞發生位置的識別以及損壞程度上的識別都有相當不錯的表現。This thesis proposes an application of NDT method for damage identification of pipes. A numerical model is employed to process simulate accelerative responses of pipes which are subjected to the stiffness degradation damage in circular.First,a finite-element software is employed to establish the database of identification parameters.The wavelet transform is then adopted to process the signal from impact tests performed in FEM model.Finally, the damage location and the degree of damage is diagnosed by comparing analyzed results with parameters in the database.The accelerative responses are decomposed into several different frequency regions by the multi-resolution technique of wavelet analsys.It uses the energy variation of sub-signals in specific scale to diagnose damage.Testing the identify system by four cases,it reveal that the proposed model has excellent performances in damage identification except that damage is close to two supported ends.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT009216564http://hdl.handle.net/11536/72713
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文件中的檔案：存到雲端
+
+
+
+
+656401.pdf
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef應用小波神經網路於橋樑實測地震反應之損壞偵測 / 洪士林;HUNG SHIH-LIN小波轉換在碎形訊號分析及影像上的應用之研究 / 吳炳飛一個基於小波理論之紋理分離方法 / 陳玲慧;CHEN LING-HWEI智慧型無線感測監控系統平臺建構與其在土木結構診斷應用之研究-子計畫:無線感測於微動量測之應用及系統識別技術開發(I) / 黃炯憲;HUANG CHIUNG-SHIANN小波轉換於平版音洩研究之應用 / 林夆澤;Ferng-Tzer Lin;尹慶中;Ching-Chung Yin應用小波轉換於結構物之系統識別 / 林岑彥;黃炯憲小波神經網路於土木工程之應用 / 許育嘉;Yu-Chia Hsu;洪士林;Shih-Lin Hung國立臺灣大學 - 應用小波分析於鋼筋混凝土結構物的損壞識別 / 陳奕安; Chen, I-An 中原大學 - 應用小波理論與類神經網路於RC結構內管線洩漏之非破壞檢測 / 周逵穎; KUEI-YING CHOU 國立臺灣大學 - 子空間識別法於系統識別及結構損壞診斷之應用 / 翁健煌; Weng, Jian-Huang 國立臺灣大學 - 隨機子空間識別方法在結構損壞預警之應用 / 唐嘉明; Tang, Chia-Ming 國立成功大學 - 小波訊號處理於結構破損探測上之應用 / 張智傑; Chang, Chih-Chieh 國立中興大學 - 結構互制效應之結構系統識別暨損壞評估 / 林其璋,吳文華 國立成功大學 - 應用小波轉換於結構損傷偵測之研究 / 陳俊榮; Chen, Chun-Jung Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+臺大電信所 數位影像處理與信號處理實驗室
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+臺大電信所 數位影像處理與信號處理實驗室
+
+
+
+
+指導教授
+講座專區
+研究內容
+領域介紹
+課程專區
+成員介紹
+FB
+相簿
+English Version
+
+
+
+
+研究所的課程：
+時頻分析與小波轉換 Time Frequency Analysis and Wavelet 
+Transforms
+[課程資料下載] [課程討論區] 
+課程大綱：
+
+Introduction 
+  Short-Time Fourier Transform 
+  Gabor Transform 
+  Wigner Distribution FunctionS Transform and Cohen’s Class 
+	Time-Frequency Distribution 
+
+  Prolate Spheroidal Wave Function and Matching Pursuit, and Fractional 
+  Fourier Transform 
+  Filter Design in the Time-Frequency Domain 
+  Generalization for Modulation, Multiplexing, Sampling, and Other 
+	Applications 
+  Hilbert-Huang Transform  
+  Wavelet TransformDiscrete Wavelet Transform and 2-D Wavelet Transform
+	Implementation of Wavelet Transform 
+  Wavelet Transform for Image Processing 
+ 
+高等數位訊號處理 Advanced Digital 
+Signal Processing
+[課程資料下載] [課程討論區]
+課程大綱：
+
+Digital filter design 
+  Acoustics 
+  Spectrum analysis 
+  Non-LTI system analysis 
+  Fast implementation algorithm design 
+  Walsh and Haar transforms 
+  Number Theoretic Transform 
+  Others (data compression, encryption, CDMA, OFDM, fractal) 
+ 
+大學部的課程：
+微分方程 Differential 
+Equations
+[課程資料下載] [課程討論區]
+課程大綱：
+
+
+ First 
+	order differential equations 
+
+ Higher 
+	order differential equations 
+ System 
+	analysis 
+
+	differential equations 
+
+ Series 
+	solutions of linear equations
+
+ Laplace 
+	transform
+
+ Fourier 
+	series and integral transforms
+
+ Boundary-value 
+	problems 
+
+ 
+
+Copyright © 2007 
+DISP Lab, Graduate Institute of Communication Engineering, NTU10617 
+臺北市羅斯福路四段一號 明達館531室 TEL: 3366-3662
+
+
+
+
+
+
+
+
+4980J064的學習歷程檔案 - 維基知識
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+4980J064的學習歷程檔案協作的、分享的、社群的知識管理中心
+
+
+
+
+
+
+
+ 
+
+帳號: 
+
+密碼: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WePortfolio
+
+關於我
+生活札記
+生活歷程 維基知識 相簿 資源中心 
+登入
+
+
+
+
+
+
+
+
+ 
+
+
+
+功能建立新文章全部文章熱門文章統計資訊進階功能導覽最近平臺活動沒有任何活動 
+搜索
+
+
+
+
+
+
+
+
+
+
+
+
+
+個人工具
+
+
+
+
+
+
+Views
+
+文章
+歷程
+
+
+
+
+
+數位訊號處理
+
+From WisdomMasterWiki
+
+Jump to: navigation, search 
+數位訊號處理的域
+在數位訊號處理領域，工程師們常常在以下的一些特定域中研究數位訊號：時域（一維的訊號）、空間域（多維訊號）、頻域、自相關域和小波域。他們基於有根據的猜測來選擇不同的域來研究訊號（或者是為了嘗試不同的可能性），以找到能最佳表達訊號特徵的域。從測量儀器得到的取樣序列表現為時域和空間域的訊號，然而離散傅立葉轉換產生頻域訊號，這就是所謂的頻譜。自相關被定義為對訊號本身在變化的時間和空間坐標上做互相關處理。
+
+
+
+
+數位訊號處理系統
+ 數位系統
+
+
+另見：取樣
+真實世界的訊號一般是連續的類比訊號，相應的系統為類比系統。為了在類比系統中應用數位訊號處理，必須在類比系統和數位系統之間進行轉換。通常將類比系統的輸入數位化，即訊號取樣，將此數位訊號作為數位系統的輸入。類似的，在數位訊號處理的輸出端，將輸出的數位訊號轉換為類比訊號即為類比系統的輸出。
+對類比訊號的取樣必須滿足取樣定理以避免頻譜混疊。也就是說，取樣頻率必須大於被取樣訊號頻寬的兩倍。為了保證被取樣的類比訊號是帶限的，通常在取樣之前要對它進行適當的帶通或低通濾波。訊號取樣包括兩個步驟：即將變數和值都連續的類比訊號先後轉換為在變數上離散的的離散訊號和值上也離散的數位訊號（量化）。
+時域和空域
+在時域和空域最常用的處理方法是使用稱為濾波的方法增強輸入訊號強度。濾波大體上包括對於目前輸入或者輸出訊號周圍一些環境樣本的轉換。有不同方法表示濾波器的特點；例如：
+
+「線性」濾波器是對於輸入取樣的線性轉換；其它濾波器則是「非線性的」。線性濾波器滿足重疊條件，例如，如果一個輸入訊號是不同權重訊號的組合，輸出就是同等權重的對應輸出訊號的線性組合。 
+「因果」濾波器僅僅使用前面輸入或者輸出訊號的取樣；一個「非因果」濾波器使用未來的輸入取樣。有些非因果濾波器可以在上面添加一個延時轉換成因果濾波器；反之，因果濾波器可以通過引入延時單元獲得非因果濾波器的某些特性。 
+「非時變」濾波器有不隨時間變化的恆定屬性；其它諸如自適應濾波器隨著時間變化。 
+一些濾波器是「穩定的」，另外一些則是「不穩定的」。一個穩定濾波器隨著時間延長輸出逐漸匯聚到一點或者在一個有限時間段內在一個範圍內波動。一個不穩定濾波器產生髮散的輸出。 
+「無限脈衝響應」（IIR）濾波器含有反饋結構，因此它的輸出不但與之前的輸入訊號有關，還與之前的輸出訊號有關。而「有限脈衝響應」（FIR）濾波器沒有反饋結構，它的輸出僅僅與之前的輸入訊號有關。同樣因為有無反饋的關係，IIR濾波器可能是不穩定的，而FIR總是穩定的。 
+多數濾波器能夠在Z域（頻域的一個超集）用它們的傳遞函數描述。一個數位濾波器可以表示為一個差分方程、零點和極點集合。或者，如果是FIR濾波器的話，可以表示為脈衝響應或者階梯響應。FIR濾波器對應一個輸入的輸出可以用輸入訊號和脈衝響應的摺積來計算。濾波器也可以使用系統框圖表示，它們然後就可以用於派生出一個處理演算法示例使用硬體實現這個濾波器。
+ 頻域
+訊號通常通過傅立葉轉換從時域或者空間域轉換到頻域。傅立葉轉換將訊號資訊轉換成每個成份頻率上的振幅和相位。傅立葉轉換經常轉換成功率譜，功率譜是每個成份頻率振幅的平方。
+在頻域分析訊號的最常見目的是分析訊號屬性。工程師通過分析頻譜就可以知道輸入訊號中有那些頻率的訊號沒有那些頻率的訊號。
+有一些通用的頻域轉換方法，例如倒頻譜（cepstrum）通過傅立葉轉換將訊號轉換到頻域、取對數、然後再進行傅立葉轉換。這種方法加強了振幅較小的成份頻率但是保留了成份頻率振幅的順序。
+應用
+DSP的主要應用是音訊訊號處理、音訊壓縮、數位圖像處理、視訊壓縮、語音處理、語音識別和數位通訊等。明確的例子有數位行動電話中的語音壓縮和傳輸、高保真音響設備中聲音均衡、天氣預報、經濟預測、地震數據處理、工業過程的分析和控制、電影中的計算機動畫、如X射線斷層成像和MRI這樣的醫療圖像、圖像處理以及用於電吉他功放的數位音效。另外的應用還有PC音效卡的超低頻（VLF）接收。[1]
+取自"http://eportfolio.lib.ksu.edu.tw/~4980J064/wiki/index.php/%E6%95%B8%E4%BD%8D%E8%A8%8A%E8%99%9F%E8%99%95%E7%90%86"
+
+
+
+
+
+
+
+
+
+ 最後更改10:46 2011年三月7日.
+本頁面已經被瀏覽4次。
+
+
+
+
+
+
+
+
+
+ 請輸入文章名稱，以建立新文章。
+
+Name:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：以小波轉換為基礎的音訊處理系統之週邊電路設計
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 以小波轉換為基礎的音訊處理系統之週邊電路設計The Peripheral Circuit Design & Implementation of Wavelet-Based Audio Processing System
+作者: 鄭昆豐Kuen-Feng Jeng吳炳飛Bing-Fei Wu電控工程研究所
+關鍵字: 小波轉換;週邊電路設計;可程式化的邏輯元件陣列;Wavelet Transform;Peripheral Circuit Design;(FPGA)Field Programmable Gate Array
+公開日期: 1998
+摘要: 本論文係利用個人電腦、FPGA與AT89C51單晶片
+，設計一個週邊電路實驗環境，藉由控制 CODEC將立
+體聲音訊號收集進來，以小波轉換做訊號轉換處理，
+之後的資料先暫存於SRAM中，等待電腦主機以EPP模式
+傳輸至個人電腦進行儲存，構成一完整之以小波轉換
+做聲音訊號處理的實驗環境。
+硬體設計程式化近年已蔚為主流，在本論文中，
+我們將採用VHDL硬體描述語言來設計CODEC控制器，
+EPP、SRAM之介面電路，及離散小波轉換實現。In this thesis, we design the peripheral circuit of
+Wavelet-Based audio process system, with the personal computer, FPGA (Field Programmable Gate Array),  and microcontroller AT89C51. We sample stereo audio signals
+, by CODEC , and send the signals to the part of DWT
+(Discrete Wavelet Transform). Then, we save the transformed data to SRAM buffers, and wait for the host to read data. Finally, we save data in Hard-disk, that can be read and
+write as we wish.
+Hardware description language is the new trend in IC design. In this thesis, we use VHDL ( Very High Speed ICs Hardware Description Language ) to design the controller
+of CODEC、SRAM and EPP transmission mode.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#NT870591123http://hdl.handle.net/11536/65009
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef永磁式同步馬達向量控制晶片研製 / 張豪揚;林錫寬DSP-Based影像處理電路之設計與其在彩色影像壓縮上的應用 / 殷重瑞;In, Chung-Re;吳炳飛;BING-FEI WU使用內嵌指令式離散小波轉換與反轉換硬體設計 / 王志雄;Jyh-Wei Wang;吳炳飛;Bing-Fei Wu應用於多通道神經感測之可配置小波離散轉換 / 王唐瑄;Wang, Tang-Hsuan;黃 威;莊景德;Hwang, Wei以小波轉換為基礎、利用零樹及碎形編碼技術作影像壓縮之研究 / 吳炳飛;WU BING-FEI符合JPEG2000之離散小波轉換與反轉換硬體設計 / 楊明達;Min-Ta Yang;吳炳飛小波轉換及其在混沌信號上之應用 / 韋仁;Jen Wei;吳炳飛;Bing-Fei Wu次世代數位影音多用途光碟系統之光機電整合研究---子計畫四：數位視訊與音訊處理(I) / 吳炳飛;WU BING-FEI國立成功大學 - 強健數位濾波組之設計及以Matlab為基礎的音訊處理之實現 / 廖德祿 國立成功大學 - 強健數位濾波組之設計及以Maltab為基礎的音訊處理之實現 / Liao, Teh-Lu; 廖德祿 國立臺灣大學 - 應用於心電訊號偵測系統之小波轉換數位訊號處理電路 / 張凱皓; Chang, Kai-Hao 國立中正大學 - 以小波轉換為基礎之即時心電圖心跳檢測與疾病辨識處理器 / 顏滋頤; Yen, Tzu-Yi 國立臺灣師範大學 - 以小波轉換為基礎的高速視訊壓縮技術與在監控系統的實現 / 吳炳飛;洪堯俊;陳彥霖;陳昭榮;瞿忠正 中華大學 - 一個以過度取樣小波轉換為基礎所發展的視訊編碼系統 / 陳敬仁,; Chen, Jihng-Ren Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+

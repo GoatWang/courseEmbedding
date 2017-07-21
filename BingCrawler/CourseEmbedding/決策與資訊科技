@@ -1,0 +1,5339 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+群體決策應用 - 資訊科技與管理
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資訊科技與管理 (Technologies & Management)AIX GNU 編譯紀實AIX 經驗談C++ 經驗談Cassandra 經驗談J2EE 設計工坊Mono 經驗談Oracle 經驗談PERL 經驗談PHP 經驗談Python 經驗談XSLT 經驗談：電子報新聞敘事書寫新方式企業架構企業架構答客問作業系統 經驗談創新資訊整合服務 (Linux)專題演講稿服務導向協作式組織〈Service Oriented Collaboration Organization〉服務科學管理暨工程系統整合工坊網路經濟體美麗人生資訊管理研究趣味數學軟體設計樣式（Design Patterns）雲端運算實務電子化政府與服務品質IBM 以客戶價值為核心 銷售方法論IBM Journal of Research and Development英文稿分析-2電子商務何謂電子商務？網路行銷行銷〈Marketing〉雲端運算服務推廣企畫案電子商務行銷協作平臺地圖
+
+
+
+ 
+
+資訊科技與管理 (Technologies & Management)‎ > ‎Mono 經驗談‎ > ‎
+  
+
+群體決策應用
+
+
+
+商圈分析模型：
+
+
+程式碼：
+
+using System;
+using System.Collections.Generic;
+
+using GroupDecisionEngine;
+using GroupDecisionModel;
+
+namespace GroupDecisionModel
+{
+	class MainClass:DecisionModel2Level
+	{
+		public MainClass (int decisionScale)
+		{
+			this.decisionScale = decisionScale + 1;
+		}
+
+		// 給予決策方案亂數偏好
+		public void SetSolutionList ()
+		{
+			List<Solution> SolutionList = new List<Solution> ();
+
+			Random rnd = new Random ();
+
+			SolutionList.Add (new Solution { 
+				Name = "甲商圈", 
+				Value = rnd.Next (1, this.decisionScale), 
+				Weight = 0.0d });
+			SolutionList.Add (new Solution { 
+				Name = "乙商圈", 
+				Value = rnd.Next (1, this.decisionScale), 
+				Weight = 0.0d });
+			SolutionList.Add (new Solution { 
+				Name = "丙商圈", 
+				Value = rnd.Next (1, this.decisionScale), 
+				Weight = 0.0d });
+
+			// 傳入給決策引擎
+			this.SetSolutionList (SolutionList);
+		}
+
+		// 給予參與人亂數權重
+		public void SetParticipantList ()
+		{
+			List<Participant> ParticipantList = new List<Participant> ();
+			Random rnd = new Random ();
+
+			ParticipantList.Add (new Participant { 
+				Name = "張三豐", 
+				Value = rnd.Next (1, this.decisionScale), 
+				Weight = 0.0d });
+			ParticipantList.Add (new Participant { 
+				Name = "張無忌", Value = rnd.Next (1, this.decisionScale), 
+				Weight = 0.0d });
+			ParticipantList.Add (new Participant { 
+				Name = "殷素素", Value = rnd.Next (1, this.decisionScale), 
+				Weight = 0.0d });
+			ParticipantList.Add (new Participant { 
+				Name = "周芷若", Value = rnd.Next (1, this.decisionScale), 
+				Weight = 0.0d });
+
+			// 傳入給決策引擎
+			this.SetParticipantList (ParticipantList);
+		}
+
+		// 設定決策因子模型
+		public void SetFactorList ()
+		{
+			List<Factor> FactorList = new List<Factor> ();
+
+			// 首階決策因子
+			FactorList.Add (new Factor { LevelID = "1", Name = "環境" });
+			FactorList.Add (new Factor { LevelID = "2", Name = "經營" });
+			FactorList.Add (new Factor { LevelID = "3", Name = "消費" });
+
+			// 末階決策因子一
+			FactorList.Add (new Factor { LevelID = "1.1", Name = "交通便利" });
+			FactorList.Add (new Factor { LevelID = "1.2", Name = "商圈規模" });
+			FactorList.Add (new Factor { LevelID = "1.3", Name = "磁吸企業" });
+			FactorList.Add (new Factor { LevelID = "1.4", Name = "商圈適配" });
+
+			// 末階決策因子二
+			FactorList.Add (new Factor { LevelID = "2.1", Name = "潛在通路" });
+			FactorList.Add (new Factor { LevelID = "2.2", Name = "類似商品" });
+			FactorList.Add (new Factor { LevelID = "2.3", Name = "服務能力" });
+			FactorList.Add (new Factor { LevelID = "2.4", Name = "商品服務適配" });
+
+			// 末階決策因子三
+			FactorList.Add (new Factor { LevelID = "3.1", Name = "消費能力" });
+			FactorList.Add (new Factor { LevelID = "3.2", Name = "生活文化層次" });
+			FactorList.Add (new Factor { LevelID = "3.3", Name = "消費者屬性差異" });
+			FactorList.Add (new Factor { LevelID = "3.4", Name = "消費者適配" });
+
+			this.SetFactorList (FactorList);
+		}
+
+		// 給予參加人各階層亂數權重
+		protected override void SetFactorVoteByParticipant (String ParticipantName)
+		{
+			Random rnd = null;
+
+			rnd = new Random ();
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "1", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "2", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "3", rnd.Next (1, this.decisionScale));
+
+			rnd = new Random ();
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "1.1", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "1.2", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "1.3", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "1.4", rnd.Next (1, this.decisionScale));
+
+			rnd = new Random ();
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "2.1", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "2.2", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "2.3", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "2.4", rnd.Next (1, this.decisionScale));
+
+			rnd = new Random ();
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "3.1", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "3.2", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "3.3", rnd.Next (1, this.decisionScale));
+			this.TradeCircle_FactorVotes.SetFactorVoteList (
+				ParticipantName, "3.4", rnd.Next (1, this.decisionScale));
+		}
+
+		// 給予參加人決策方案亂數權重
+		protected override void SetGroupDecisionSolutionVoteByParticipant (
+			String ParticipantName)
+		{
+			Random rnd = null;
+			// 給予決策方案末階因子亂數權重
+			// 針對每一個決策方案
+			foreach (String solutionName in 
+				this.TradeCircle_Solutions.GetSolutionNameList()) {
+				rnd = new Random ();
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, 
+					solutionName, 
+					"1.1", rnd.Next (1, this.decisionScale));
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"1.2", rnd.Next (1, this.decisionScale));
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"1.3", rnd.Next (1, this.decisionScale));
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"1.4", rnd.Next (1, this.decisionScale));
+
+				rnd = new Random ();
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"2.1", rnd.Next (1, this.decisionScale));
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"2.2", rnd.Next (1, this.decisionScale));
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"2.3", rnd.Next (1, this.decisionScale));
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"2.4", rnd.Next (1, this.decisionScale));
+
+				rnd = new Random ();
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"3.1", rnd.Next (1, this.decisionScale));
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"3.2", rnd.Next (1, this.decisionScale));
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"3.3", rnd.Next (1, this.decisionScale));
+				this.TradeCircle_SolutionVotes.SetSolutionVoteList (
+					ParticipantName, solutionName, 
+					"3.4", rnd.Next (1, this.decisionScale));
+			}
+		}
+
+		public static void Main (string[] args)
+		{
+			// 選用權重 Likter 5 尺度
+			// 選用二階決策因子模型
+
+			MainClass decisionModel = new MainClass (5);
+
+			decisionModel.SetSolutionList ();
+			decisionModel.SetParticipantList ();
+			decisionModel.SetFactorList ();
+			decisionModel.SetGroupDecisionFactorVote ();
+			decisionModel.SetGroupDecisionSolutionVote ();
+			decisionModel.CalcWeight ();
+
+			// 輸出決策方案結果
+			foreach (SolutionDecision soluionDecision in decisionModel.GetOrderedDecisionList()) {
+				Console.WriteLine ("{0}\t{1:N2}", soluionDecision.Name, soluionDecision.Weight);
+			}
+
+			// 顯示內部資料值
+			String maskTask = "000000";
+
+			if (args.Length > 0) {
+				maskTask = args [0];
+			}
+
+			// 輸出 JSON 格式控制陣列
+			Boolean[] taskControl = new Boolean[] { false, false, false, false, false, false };
+
+			for (int i = 0; i < Math.Min (5, maskTask.Length); i++) {
+				if (maskTask.Substring (i, 1).Equals ("1")) {
+					taskControl [i] = true;
+				}
+			}
+
+			decisionModel.Output (Console.Out, taskControl);
+
+		}
+	}
+}
+
+
+輸出結果：
+
+
+
+
+
+甲商圈	0.40
+丙商圈	0.40
+乙商圈	0.20
+
+
+
+{ "SolutionList": [
+	{"Name":"甲商圈",	"Value":2,	"Weight":0.40},
+	{"Name":"乙商圈",	"Value":1,	"Weight":0.20},
+	{"Name":"丙商圈",	"Value":2,	"Weight":0.40}
+]}
+
+
+
+
+
+{ "Factor": [
+	{"LevelID":"1",		"Name":"環境"},
+	{"LevelID":"2",		"Name":"經營"},
+	{"LevelID":"3",		"Name":"消費"},
+	{"LevelID":"1.1",	"Name":"交通便利"},
+	{"LevelID":"1.2",	"Name":"商圈規模"},
+	{"LevelID":"1.3",	"Name":"磁吸企業"},
+	{"LevelID":"1.4",	"Name":"商圈適配"},
+	{"LevelID":"2.1",	"Name":"潛在通路"},
+	{"LevelID":"2.2",	"Name":"類似商品"},
+	{"LevelID":"2.3",	"Name":"服務能力"},
+	{"LevelID":"2.4",	"Name":"商品服務適配"},
+	{"LevelID":"3.1",	"Name":"消費能力"},
+	{"LevelID":"3.2",	"Name":"生活文化層次"},
+	{"LevelID":"3.3",	"Name":"消費者屬性差異"},
+	{"LevelID":"3.4",	"Name":"消費者適配"}
+]}
+
+
+
+{ "Participant": [
+	{"Name":"張三豐",	"Value":5,	"Weight":0.50},
+	{"Name":"張無忌",	"Value":3,	"Weight":0.30},
+	{"Name":"殷素素",	"Value":1,	"Weight":0.10},
+	{"Name":"周芷若",	"Value":1,	"Weight":0.10}
+]}
+
+
+
+
+
+{ "FactorVote": [
+	{"ParticipantName":"張三豐",	"LevelID":"1",		"Value":3,	"Weight":0.25},
+	{"ParticipantName":"張無忌",	"LevelID":"1",		"Value":3,	"Weight":0.25},
+	{"ParticipantName":"殷素素",	"LevelID":"1",		"Value":3,	"Weight":0.25},
+	{"ParticipantName":"周芷若",	"LevelID":"1",		"Value":3,	"Weight":0.25},
+	{"ParticipantName":"張三豐",	"LevelID":"2",		"Value":5,	"Weight":0.25},
+	{"ParticipantName":"張無忌",	"LevelID":"2",		"Value":5,	"Weight":0.25},
+	{"ParticipantName":"殷素素",	"LevelID":"2",		"Value":5,	"Weight":0.25},
+	{"ParticipantName":"周芷若",	"LevelID":"2",		"Value":5,	"Weight":0.25},
+	{"ParticipantName":"張三豐",	"LevelID":"3",		"Value":3,	"Weight":0.25},
+	{"ParticipantName":"張無忌",	"LevelID":"3",		"Value":3,	"Weight":0.25},
+	{"ParticipantName":"殷素素",	"LevelID":"3",		"Value":3,	"Weight":0.25},
+	{"ParticipantName":"周芷若",	"LevelID":"3",		"Value":3,	"Weight":0.25},
+	{"ParticipantName":"張三豐",	"LevelID":"1.1",	"Value":3,	"Weight":0.21},
+	{"ParticipantName":"張無忌",	"LevelID":"1.1",	"Value":3,	"Weight":0.21},
+	{"ParticipantName":"殷素素",	"LevelID":"1.1",	"Value":3,	"Weight":0.21},
+	{"ParticipantName":"周芷若",	"LevelID":"1.1",	"Value":5,	"Weight":0.36},
+	{"ParticipantName":"張三豐",	"LevelID":"1.2",	"Value":5,	"Weight":0.29},
+	{"ParticipantName":"張無忌",	"LevelID":"1.2",	"Value":5,	"Weight":0.29},
+	{"ParticipantName":"殷素素",	"LevelID":"1.2",	"Value":5,	"Weight":0.29},
+	{"ParticipantName":"周芷若",	"LevelID":"1.2",	"Value":2,	"Weight":0.12},
+	{"ParticipantName":"張三豐",	"LevelID":"1.3",	"Value":3,	"Weight":0.30},
+	{"ParticipantName":"張無忌",	"LevelID":"1.3",	"Value":3,	"Weight":0.30},
+	{"ParticipantName":"殷素素",	"LevelID":"1.3",	"Value":3,	"Weight":0.30},
+	{"ParticipantName":"周芷若",	"LevelID":"1.3",	"Value":1,	"Weight":0.10},
+	{"ParticipantName":"張三豐",	"LevelID":"1.4",	"Value":1,	"Weight":0.17},
+	{"ParticipantName":"張無忌",	"LevelID":"1.4",	"Value":1,	"Weight":0.17},
+	{"ParticipantName":"殷素素",	"LevelID":"1.4",	"Value":1,	"Weight":0.17},
+	{"ParticipantName":"周芷若",	"LevelID":"1.4",	"Value":3,	"Weight":0.50},
+	{"ParticipantName":"張三豐",	"LevelID":"2.1",	"Value":3,	"Weight":0.21},
+	{"ParticipantName":"張無忌",	"LevelID":"2.1",	"Value":3,	"Weight":0.21},
+	{"ParticipantName":"殷素素",	"LevelID":"2.1",	"Value":3,	"Weight":0.21},
+	{"ParticipantName":"周芷若",	"LevelID":"2.1",	"Value":5,	"Weight":0.36},
+	{"ParticipantName":"張三豐",	"LevelID":"2.2",	"Value":5,	"Weight":0.29},
+	{"ParticipantName":"張無忌",	"LevelID":"2.2",	"Value":5,	"Weight":0.29},
+	{"ParticipantName":"殷素素",	"LevelID":"2.2",	"Value":5,	"Weight":0.29},
+	{"ParticipantName":"周芷若",	"LevelID":"2.2",	"Value":2,	"Weight":0.12},
+	{"ParticipantName":"張三豐",	"LevelID":"2.3",	"Value":3,	"Weight":0.30},
+	{"ParticipantName":"張無忌",	"LevelID":"2.3",	"Value":3,	"Weight":0.30},
+	{"ParticipantName":"殷素素",	"LevelID":"2.3",	"Value":3,	"Weight":0.30},
+	{"ParticipantName":"周芷若",	"LevelID":"2.3",	"Value":1,	"Weight":0.10},
+	{"ParticipantName":"張三豐",	"LevelID":"2.4",	"Value":1,	"Weight":0.17},
+	{"ParticipantName":"張無忌",	"LevelID":"2.4",	"Value":1,	"Weight":0.17},
+	{"ParticipantName":"殷素素",	"LevelID":"2.4",	"Value":1,	"Weight":0.17},
+	{"ParticipantName":"周芷若",	"LevelID":"2.4",	"Value":3,	"Weight":0.50},
+	{"ParticipantName":"張三豐",	"LevelID":"3.1",	"Value":3,	"Weight":0.21},
+	{"ParticipantName":"張無忌",	"LevelID":"3.1",	"Value":3,	"Weight":0.21},
+	{"ParticipantName":"殷素素",	"LevelID":"3.1",	"Value":3,	"Weight":0.21},
+	{"ParticipantName":"周芷若",	"LevelID":"3.1",	"Value":5,	"Weight":0.36},
+	{"ParticipantName":"張三豐",	"LevelID":"3.2",	"Value":5,	"Weight":0.29},
+	{"ParticipantName":"張無忌",	"LevelID":"3.2",	"Value":5,	"Weight":0.29},
+	{"ParticipantName":"殷素素",	"LevelID":"3.2",	"Value":5,	"Weight":0.29},
+	{"ParticipantName":"周芷若",	"LevelID":"3.2",	"Value":2,	"Weight":0.12},
+	{"ParticipantName":"張三豐",	"LevelID":"3.3",	"Value":3,	"Weight":0.30},
+	{"ParticipantName":"張無忌",	"LevelID":"3.3",	"Value":3,	"Weight":0.30},
+	{"ParticipantName":"殷素素",	"LevelID":"3.3",	"Value":3,	"Weight":0.30},
+	{"ParticipantName":"周芷若",	"LevelID":"3.3",	"Value":1,	"Weight":0.10},
+	{"ParticipantName":"張三豐",	"LevelID":"3.4",	"Value":1,	"Weight":0.17},
+	{"ParticipantName":"張無忌",	"LevelID":"3.4",	"Value":1,	"Weight":0.17},
+	{"ParticipantName":"殷素素",	"LevelID":"3.4",	"Value":1,	"Weight":0.17},
+	{"ParticipantName":"周芷若",	"LevelID":"3.4",	"Value":3,	"Weight":0.50}
+]}
+
+
+
+
+
+{ "SolutionVote": [
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"1.1",	"Value":3,	"Weight":0.50},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"1.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"1.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"1.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"1.2",	"Value":4,	"Weight":0.57},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"1.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"1.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"1.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"1.3",	"Value":4,	"Weight":0.40},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"1.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"1.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"1.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"1.4",	"Value":3,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"1.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"1.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"1.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"2.1",	"Value":3,	"Weight":0.50},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"2.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"2.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"2.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"2.2",	"Value":4,	"Weight":0.57},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"2.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"2.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"2.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"2.3",	"Value":4,	"Weight":0.40},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"2.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"2.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"2.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"2.4",	"Value":3,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"2.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"2.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"2.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"3.1",	"Value":3,	"Weight":0.50},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"3.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"3.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"3.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"3.2",	"Value":4,	"Weight":0.57},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"3.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"3.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"3.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"3.3",	"Value":4,	"Weight":0.40},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"3.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"3.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"3.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張三豐",	"LevelID":"3.4",	"Value":3,	"Weight":0.20},
+	{"SolutionName":"甲商圈",	"ParticipantName":"張無忌",	"LevelID":"3.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"甲商圈",	"ParticipantName":"殷素素",	"LevelID":"3.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"甲商圈",	"ParticipantName":"周芷若",	"LevelID":"3.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"1.1",	"Value":3,	"Weight":0.50},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"1.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"1.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"1.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"1.2",	"Value":4,	"Weight":0.57},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"1.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"1.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"1.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"1.3",	"Value":4,	"Weight":0.40},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"1.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"1.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"1.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"1.4",	"Value":3,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"1.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"1.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"1.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"2.1",	"Value":3,	"Weight":0.50},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"2.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"2.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"2.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"2.2",	"Value":4,	"Weight":0.57},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"2.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"2.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"2.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"2.3",	"Value":4,	"Weight":0.40},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"2.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"2.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"2.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"2.4",	"Value":3,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"2.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"2.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"2.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"3.1",	"Value":3,	"Weight":0.50},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"3.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"3.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"3.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"3.2",	"Value":4,	"Weight":0.57},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"3.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"3.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"3.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"3.3",	"Value":4,	"Weight":0.40},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"3.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"3.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"3.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張三豐",	"LevelID":"3.4",	"Value":3,	"Weight":0.20},
+	{"SolutionName":"乙商圈",	"ParticipantName":"張無忌",	"LevelID":"3.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"乙商圈",	"ParticipantName":"殷素素",	"LevelID":"3.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"乙商圈",	"ParticipantName":"周芷若",	"LevelID":"3.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"1.1",	"Value":3,	"Weight":0.50},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"1.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"1.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"1.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"1.2",	"Value":4,	"Weight":0.57},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"1.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"1.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"1.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"1.3",	"Value":4,	"Weight":0.40},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"1.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"1.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"1.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"1.4",	"Value":3,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"1.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"1.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"1.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"2.1",	"Value":3,	"Weight":0.50},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"2.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"2.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"2.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"2.2",	"Value":4,	"Weight":0.57},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"2.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"2.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"2.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"2.3",	"Value":4,	"Weight":0.40},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"2.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"2.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"2.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"2.4",	"Value":3,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"2.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"2.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"2.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"3.1",	"Value":3,	"Weight":0.50},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"3.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"3.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"3.1",	"Value":1,	"Weight":0.17},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"3.2",	"Value":4,	"Weight":0.57},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"3.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"3.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"3.2",	"Value":1,	"Weight":0.14},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"3.3",	"Value":4,	"Weight":0.40},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"3.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"3.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"3.3",	"Value":2,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張三豐",	"LevelID":"3.4",	"Value":3,	"Weight":0.20},
+	{"SolutionName":"丙商圈",	"ParticipantName":"張無忌",	"LevelID":"3.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"丙商圈",	"ParticipantName":"殷素素",	"LevelID":"3.4",	"Value":4,	"Weight":0.27},
+	{"SolutionName":"丙商圈",	"ParticipantName":"周芷若",	"LevelID":"3.4",	"Value":4,	"Weight":0.27}
+]}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in|Recent Site Activity|Report Abuse|Print Page|Powered By Google Sites
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+資訊與決策科學研究所 
+
+
+
+
+Your browser does not support JavaScript!
+
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+
+
+
+資研所首頁 | 北商首頁  | 管理學院首頁 | English
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+最新消息
+一般公告 學術公告 招生公告 徵才資訊 研討會訊息及論文徵稿
+
+本所介紹
+歷史沿革 系所特色 教學研究重點 課程規劃 畢業生發展 系所位置
+
+師資陣容
+專任教師 兼任教師 行政人員
+
+課程規劃
+課程模組 畢業門檻 課程科目表 學分學程
+
+活動剪影
+招生資訊
+榮譽榜單
+FAQ
+其他資源
+相關法規 表格下載
+所務會議紀錄 課程會議紀錄 籌備會議紀錄
+
+
+資研所粉絲團
+
+
+
+
+ 
+
+
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Slider
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+123456
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser does not support JavaScript!
+
+Your browser does not support JavaScript!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立臺北商業大學資訊與決策科學研究所版權所有 Copyright (c) 2014 National Taipei University of Business. All Rights Reserved.
+校址:100臺北市中正區濟南路一段321號；電話:(02)2322-6291、2322-6292、2322-6308；統一編號:03763608
+Address : 321 Jinan Road, Section 1, Taipei 100, Taiwan, (ROC) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+產業策略評析：智慧型決策系統與情報理論
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+■本網站改版測試中，歡迎舊雨新知來試用。網址：http://iknow.stpi.org.tw
+
+
+
+
+
+│本室簡介│重大產業政策│產業新聞│市場報導│產業策略評析│專利情報│技術情報│
+
+
+本站檢索：
+
+
+
+
+
+
+
+
+
+
+
+
+
+│熱點專題│調查報告 │關鍵圖表│訂電子報│服務內容│STPI首頁│
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+■  智慧型決策系統與情報理論
+
+
+有讀者問到「智慧型決策系統」（見【智慧型決策系統】一文討論）與「情報理論」的關連性（見【商業情報學的小細節與大關鍵（上）】、【商業情報學的小細節與大關鍵（中）】、【商業情報學的小細節與大關鍵（下）】等文討論），本文進一步討論。
+智慧型決策系統與情報理論之對應關係如圖一所示。以資料層級（Data）論，生產流程控管所需之控制器（Controllers）、感測器（Sensors）與致動器（Actuators）所累積或運作之均屬於資料。不同點在於控制器屬於數位資料（Digital Data），而感測器與致動器屬於類比資料（Analog Data）。在【商業情報學的小細節與大關鍵】系列文章中，我們也討論過，資料是屬於外部與尚未結構化過的。
+一般而言，每一工廠或設備會有一人機介面（Human Machine Interface, HMI），其中此人機介面就好像是一個小電腦，此小電腦呈現每一製程或設備之運作狀況與參數控制模式，此人機介面可算是最基本之資訊層（Information）。有時候，人機介面會同時監視與控制許多控制器，例如整體生產線之運作條件與狀態，則此人機介面也屬於資訊層。資訊層與資料層最主要的差異在於資訊層屬於內部的、結構化的，其中內部是指情報組織之分類範疇內，而結構化更是依據情報作業程序所擬定之分類架構。
+資訊層（Information）與情報層（Intelligence）的差異在於決策需求，因為有了決策需求，方纔啟動情報循環。決策需求之賦予也是平時（Peacetime）與戰時（Wartime）之主要區別。其中決策需求在情報理論中可分為「戰略以及戰術規劃」、「內部執行現況監控」、「危機以及衝突管理」、「競爭者情報與預警」與「友軍以及環境掃瞄」等五類。若以如生產管理之模式來看，主要決策需求為「內部執行現況監控」及「危機以及衝突管理」。
+「內部執行現況監控」是指監視與控制「原規劃」與「現有執行結果」之差異，目的是確認「現有執行結果」與「原規劃」是吻合的。若「現有執行結果」與「原規劃」兩者吻合，則出現綠燈，若不吻合則顯示紅燈，超前則顯示藍燈。若「現有執行結果」與「原規劃」兩者不吻合，則需提出趕工計畫，當成下階段執行之依據。
+「危機以及衝突管理」是指生產過程階段發生需緊急處理之狀況，這些狀況當然不是原本預期的，因此需進行「危機管理作業」。生產線危機管理最常發生的即是某一段時間所生產的產品品質不良，需要透過情報理論與循環找出根本原因，並設法解決。
+從情報理論來看，情報層所顯示之「內部執行現況監控」或「危機以及衝突管理」其實不是總經理室（CEO）所要看的計分卡，而是情報長（CIO）螢幕上的計分卡，但實際執行上，這兩者可以一樣。
+從決策理論來說，越往決策層接近的知識領域（Knowledge Domain）需要越廣，因為決策通常需要考量諸多因素，其中內部現場執行的「內部執行現況監控」或「危機以及衝突管理」只是一部份。完整的智慧型決策系統思維包括「戰略以及戰術規劃」、「內部執行現況監控」、「危機以及衝突管理」、「競爭者情報與預警」與「友軍以及環境掃瞄」等五部分，且此五部分均需要有資料層、資訊層與情報層架構，當然也要有感測器、致動器、控制器、人機介面與計分卡等操作層次。(1220字；圖2)
+圖一 智慧型決策系統與情報理論之對應關係
+
+圖二 智慧型決策系統情報架構
+
+參考資料：
+
+智慧型決策系統,
+http://cdnet.stpi.narl.org.tw/techroom/analysis/2013/pat_13_A031.htm
+商業情報學的小細節與大關鍵（上）,
+http://cdnet.stpi.narl.org.tw/techroom/analysis/2013/pat_13_A011.htm
+商業情報學的小細節與大關鍵（中）,
+http://cdnet.stpi.narl.org.tw/techroom/analysis/2013/pat_13_A013.htm
+商業情報學的小細節與大關鍵（下）,
+http://cdnet.stpi.narl.org.tw/techroom/analysis/2013/pat_13_A015.htm
+
+ 
+關鍵字：智慧型決策系統
+(科技產業資訊室-- David撰稿，2013/05/28)
+ 
+
+
+
+前期資料：
+
+
+服務模式與商業模式
+2013/05/28
+
+
+開放式創新與平衡計分卡
+2013/05/23
+
+
+執行力的三個關鍵流程
+2013/05/23
+
+
+智慧型決策系統
+2013/05/15
+
+
+SWOT分析的精髓
+2013/05/15
+
+
+... more 
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+財團法人國家實驗研究院科技政策研究與資訊中心   資訊服務處　科技產業資訊室 2003-2009 All Rights Reserved.
+
+
+臺北市106-36 和平東路二段106號14樓（科技大樓14樓）/ TEL: (02)2737-7660 / FAX: (02)2737-7837 / Email: stmember@stpi.narl.org.tw 
+
+
+
+
+
+
+版本建議MSIE 8.0以上　最佳解析度1024x768以上 │ Visitors:  Since 2003/03/10 | 網頁更新：2013/05/28
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+招生資訊 | 國立臺灣科技大學資訊管理系
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+|
+臺灣科大
+|
+管理學院
+|
+
+系主任信箱
+|
+
+登入
+|
+
+
+English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁 >
+招生資訊
+>
+學分班
+>
+課程規劃
+
+
+
+
+
+
+
+
+						 
+
+
+
+
+
+
+
+
+
+
+									  課程名稱
+
+
+								學分
+
+
+
+科技與創新管理
+
+								3
+
+
+
+電子商務
+
+								3
+
+
+
+軟體工程與管理
+
+								3
+
+
+
+資料探勘
+
+								3
+
+
+
+策略知識管理
+
+								3
+
+
+
+應用統計學
+
+								3
+
+
+
+資安科技與管理
+
+								3
+
+
+
+決策分析與管理
+
+								3
+
+
+
+資訊科技管理
+
+								3
+
+
+
+多媒體暨網際網路技術
+
+								3
+
+
+
+服務導向企業系統管理
+
+								3
+
+
+
+
+
+
+
+
+
+
+
+
+
+科技與創新管理
+
+
+
+
+
+
+
+
+
+
+
+							授課教師：陳正綱 教授
+
+
+
+							課程內容：
+
+
+
+									科技管理簡介 
+
+
+
+									科學、科技、創新、發明與管理的本質
+
+
+
+									策略科技管理與企業核心競爭力
+
+
+
+									創新管理—產品發展週期之觀點
+
+
+
+									科技的實施—產品、服務與生產
+
+
+
+									科技的取代與擴散
+
+
+
+									科技變動的預測—速率、方向與不連續性
+
+
+
+									科技的移轉與創新的評估
+
+
+
+									科技研究與發展的策略
+
+
+
+									科技政策與社會環境相關議題
+
+
+
+
+
+							訓練目標：
+							本課程首先介紹科技管理概論，包括科學、科技、創新、發明與管理的本質與其相互之間的關係，接著探討如何以策略性科技管理來創造企業核心競爭力以營造競爭 優勢，並從產品發展週期之觀點來審視如何實施創新 管理；接下來將介紹科技如何實施於產品、服務與生產的活動中以創造附加價值，並介紹一些屬於科技變動管理的議題，如：科技的取代與擴散、科技變動的預測、 科技的移轉與創新的評估……等；最後，探討科技研究與發展的策略與科技政策與社會環境的相關議題。希望學員們從本課程的修習中，擴大對科技創新的活動與管 理功能的認識，進一步能整合科技與管理以創造企業經營的競爭優勢。
+
+
+
+
+
+
+
+
+
+
+
+
+電子商務
+
+
+
+
+
+
+
+							授課教師：盧希鵬 教授
+
+
+
+							課程內容：
+
+
+
+									產業電子化
+
+
+
+									電子商務經營模式
+
+
+
+									電子商務軟硬體架構
+
+
+
+									個案討論
+
+
+
+
+
+							訓練目標：
+							本課程的特色是由產業的觀點，來看企業的電子商務策略，並進一步的發展出電子商務的策略、經營模式與營運流程技術架構。產業的觀點很重要，台灣與美國不一 樣、賣書與賣汽車也不一樣，所以發展出的商務流程與營運架構就不能直接引用。許多課程以電子商務功能為主，在實際應用時，忽略了產業的觀點，便有格格不入 之憾。 本課程依照VPI（Value, Process, and Infrastructure）的「價值、流程、與營運架構」思維，在價值上，必須先考慮產業電子化策略後，再思考電子商務與企業電子化策略。在流程上， 本書採用Stabell and Fjeldstad 所提出的 value chains, shops, networks來架構製造業（重點在產品）、服務業（重點在人）、與仲介業（重點在關鍵數量）的巨觀流程策略，並以e-catalog, e-ordering, e-payment, e-fulfillment, and e-service成為微觀流程系統架構。基於此VPI架構上，本書進一步討論國內各產業的應用，包括日用品零售業、3C 資訊零售業、與旅遊業三大產業電子化的產業結構、經營模式、與電子化策略。在數位內容上，也包括圖書出版業、線上娛樂業、線上仲介業、線上學習、線上金 融、入口網站等產業電子化的產業結構、經營模式、與電子化策略。此外，企業間電子化如產業供應鏈的介紹、客戶訂單流程、生產庫存流程、物料供應流程、與電 子市集等等。也介紹e-Business中的CRM, ERP, KM, m-Commerce等觀念。
+
+
+
+
+
+
+
+
+
+
+
+
+軟體工程與管理
+
+
+
+
+
+
+
+							授課教師：黃世禎 教授
+
+
+
+							課程內容：
+
+
+
+									軟體開發流程模式（Software Development Process Model）
+
+
+
+									軟 體流程改善（Software Process Improvement, SPI）模式與標準：CMU/SEI能力成熟度整合模式（Capability Maturity Model Integration, CMMI）、IEEE/EIA 12207與ISO15504
+
+
+
+									CMMI認證（Certification）與評價（Appraisal）：ARC Appraisal Requirements for CMMI）與SCAMPI（Standard CMMI Appraisal Method for Process Improvement）
+
+
+
+									 軟體流程改善導入程序模式：CMU/SEI IDEAL模式
+
+
+
+									軟體品質模式與評估（Software Quality Model and Assessment）：ISO 9126與ISO 14595國際標準
+
+
+
+									軟體品保（Software Quality Assurance, SQA）計畫文件製作：IEEE 730標準
+
+
+
+									軟體度量與分析（Software Measurement and Analysis）
+
+
+
+									軟體大小、成本、工作量與時程預估（Software Size, Cost, Effort and Schedule Estimation）
+
+
+
+									電腦輔助軟體工程（Computer-Aided Software Engineering, CASE）工具介紹與展示
+
+
+
+
+
+							課程目標：
+							教導學員如何在軟體開發生命週期各階段中，利用工程與管理的技術、模式、方法與工具等，來提升軟體開發專案績效與生產力，並達到軟體工程的主要目標：在預 定的成本預算與時程內，開發出符合使用者品質要求的軟體系統。
+
+
+
+
+
+
+
+
+
+
+
+
+資料探勘
+
+
+
+
+
+
+
+							授課教師：呂永和 教授
+
+
+
+							課程內容：
+
+
+
+									關聯式資料庫
+
+
+
+									資料倉儲
+
+
+
+									資料探勘
+
+
+
+
+
+							訓練目標：
+							本課程首先要建立使用關聯式資料庫系統的能力，內容包含ER Model、表格結構、關聯代數(Relational Algebra)、關聯式資料庫的語言SQL、表格正規化技術等；第二部份將介紹資料倉儲的概念與建立方法，包含Star schema、Multidimensional data model及OLAP等；第三部份將介紹資料探勘技術與應用，包含決策樹(Decision tree)、關聯規則(Association rules)、及類神經網路(Neural Networks)等；其運用包括CRM, Fraud detection, Customer Ranking, Churn rate reduction, Database marketing等。
+
+
+
+
+
+
+
+
+
+
+
+
+策略知識管理
+
+
+
+
+
+
+
+							授課教師：李國光 教授
+
+
+
+							課程內容：
+							本課程首先介紹企業在面對未來的超競爭時代時中，企業的經營典範、管理典範、與科技典範三者將面臨史無前例的衝擊，發展有效的知識管理將是主要的關鍵所 在。課程中將說明知識管理的意義以及推動知識管理的具體做法。此外，本課程也將針對高階主管的經營需要，提出策略知識管理的概念與發展模式，以協助高階主 管在策略管理歷程中，有效實踐知識管理的做法。
+
+
+
+							訓練目標：
+							教授知識管理的理論概念與實踐做法，以引導學生對知識管理有正確的認知以及培養實踐知識管理的能力。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+應用統計學
+
+
+
+
+
+
+
+											授課教師：楊維寧 教授
+
+
+
+											課程內容：
+
+
+
+													機率與統計簡介
+
+
+
+													抽樣分配
+
+
+
+													統計推論(參數估計與假設檢定)
+
+
+
+													迴歸與相關性分析
+
+
+
+													變異數分析
+
+
+
+
+
+											訓練目標：經由機率觀念的學習來瞭解並量化現實生活中遇到的各種隨機現象。學習如何利用抽樣來推估母體的參數並利用機率敘述量化抽樣誤差，提供管理者客觀的資訊以提昇決策品質。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資安科技與管理
+
+
+
+
+
+
+
+											授課教師：查士朝 副教授
+
+
+
+											課程內容：
+
+
+
+													技術篇：存取控制 (Access Control)
+
+
+
+													技術篇：應用系統安全 (Application Security)
+
+
+
+													技術篇：密碼學 (Cryptography)
+
+
+
+													技術篇：通訊與網路安全 (Telecommunications and Network Security)
+
+
+
+													作業篇：作業安全 (Operations Security)
+
+
+
+													作業篇：實體與環境安全 (Physical Security)
+
+
+
+													制度篇：資訊安全框架架構與設計 (Security Architecture and Design)
+
+
+
+													制度篇：資訊安全與風險管理 (Information Security and Risk Management)
+
+
+
+													制度篇：業務永續及災難復原 (Business Continuity and Disaster Recovery)
+
+
+
+													制度篇：資訊安全法規與稽核 (Legal, Regulations, Compliance and Investigations)
+
+
+
+
+
+											訓 練目標：本課程旨在講授密碼學與資訊安全之基礎、技術、應用與管理等議題，以 CISSP 認證考試的十項知識，而針對存取控制、應用系統安全、密碼學、通訊與網路安全、安全架構與設計、實體與環境安全、作業安全、資訊安全與風險管理、業務永續 及災難復原，以及資訊安全法規與稽核作說明。以培養優秀的資訊安全經理人人才。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+決策分析與管理
+
+
+
+
+
+
+
+											授課教師：洪政煌 助理教授
+
+
+
+											課程內容：
+
+
+
+													Introduction to Decision Analysis EDI vs. XML
+
+
+
+													Systematic Decision Analysis – Structure Decisions
+
+
+
+													Systematic Decision Analysis – Sensitivity Analysis
+
+
+
+													Modeling Uncertainty – Probability and Subjective Probability
+
+
+
+													Modeling Uncertainty – Value of Information and Bayesian Decision
+
+
+
+													Modeling Preference – Risk Attitude and Utility Theory
+
+
+
+													Modeling Preference – Conflicting Objectives
+
+
+
+													Introduction to Decision Tools – Decision Information System
+
+
+
+													Introduction to Decision Tools – Data Mining and Knowledge Management
+
+
+
+													分組報告：決策分析與管理於各種事業的實務應用
+
+
+
+
+
+											訓練目標：決策是管理者最重要的工作，卻也是管理領域中最少被深入探討的領域之一。本課程將由決策分析序論為始，介紹系統化決策分析、不確定下決策分析、 多屬性決策分析，並以數位決策輔助工具介紹為終。期望學員間藉由充分合作與討論，瞭解如何界定決策因素、架構問題與評估可行替選方案。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+資訊科技管理
+
+
+
+
+
+
+
+											授課教師：周子銓 教授
+
+
+
+											課程內容：
+
+
+
+													資訊科技投資與決策管理
+
+
+
+													創新與科技引進管理
+
+
+
+													策略構面科技管理
+
+
+
+													組織構面科技管理
+
+
+
+													新制度經濟學觀點管理
+
+
+
+													委外夥伴關係管理
+
+
+
+													網絡分析與鑲嵌觀點管理
+
+
+
+													適應性結構化理論
+
+
+
+													公務機關電子化管理
+
+
+
+													資訊安全與客服管理
+
+
+
+
+
+											訓練目標：蓬勃的資訊技術應用為商業交易模式帶來許多嶄新的應用模式。本課程目標在透過課堂講解與個案研討來深化學生對資訊科技管理的知識與觀念，並瞭解 資訊科技之本質、應用、組織發展等相關的理論與實務。學生可以瞭解到資訊科技的應用、組織議題對科技適合度的影響、如何引進資訊科技、資訊科技如何演化成 為企業的策略武器等主題，並進一步整合其他管理技術於資訊科技的議題上。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+多媒體暨網際網路技術
+
+
+
+
+
+
+											授課教師：多位教師
+
+
+
+											課程內容：
+
+
+
+													簡介及基礎知識。
+
+
+
+													電腦繪圖及動畫簡介。
+
+
+
+													影像處理簡介。
+
+
+
+													色彩字型簡介。
+
+
+
+													視訊處理簡介。
+
+
+
+													聲訊處理簡介。
+
+
+
+													自動化決策與分類。
+
+
+
+													資料分群技術與應用。
+
+
+
+													自然語言與文件處理。
+
+
+
+													XML相關技術簡介。
+
+
+												網路服務相關技術簡介。
+
+
+													雲端運算相關技術簡介。
+
+
+
+
+
+									 
+
+
+
+											訓練目標：本課程旨在介紹各類先進的資訊科技系統所使用的相關技術及其基本原理，裨使同學們認知並探討在現代企業中，各類系統 可如何整合應用發揮綜效。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+服務導向企業系統管理
+
+
+
+
+
+
+
+											授課教師：魏小蘭 助理教授
+
+
+
+											課程內容：
+
+
+
+
+
+
+
+1
+
+
+
+															企業資訊科技革新藍圖
+
+
+
+
+
+2
+
+
+
+															企業營運模式與服務概念的演進
+
+
+
+
+
+3
+
+
+
+															SOA基本概念
+
+
+
+
+
+4
+
+
+
+															SOA與BPM
+
+
+
+
+
+5
+
+
+
+															SOA個案研究
+
+
+
+
+
+6
+
+
+
+															SOA治理與服務週期
+
+
+
+
+
+7
+
+
+
+															SOA個案研究
+
+
+
+
+
+8
+
+
+
+															SOA之原則、設計與實務
+
+
+
+
+
+9
+
+
+
+															SOA個案研究
+
+
+
+
+
+10
+
+
+
+															SOA與Web2.0
+
+
+
+
+
+11
+
+
+
+															SOA個案研究
+
+
+
+
+
+12
+
+
+
+															組織服務導向架構藍圖
+
+
+
+
+
+13
+
+
+
+															SOA個案研究
+
+
+
+
+
+14
+
+
+
+															SOA Maturity Model
+
+
+
+
+
+15
+
+
+
+															SOA價值與成功要素
+
+
+
+
+
+											課程大綱：本課程主要由組織、管理、技術等不同的理論觀點分析與探討服務導向企業系統的管理議題，並瞭解如何應用服務導向企業系統增加企業的價值。
+
+
+
+
+
+
+
+
+
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+	科技大觀園 -- 防災2.0專題（四）：運籌帷幄 決策系統力
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+						｜
+						網站導覽
+						｜
+						科國司
+						｜
+						科技部
+						｜
+						行動版
+
+
+一般大眾 
+						|
+						國中小生
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  單元  
+
+
+
+新知報
+新知專欄 (956)電磁波知多少 (5)科技新知 (999)專題報導 (541)人物專訪 (86)科普點子王 (33)行動與無線通..(3)產學小聯盟 (32)科普人談科普 (32)創業第一桶金 (16)
+
+
+文章
+科普知識 (793)精選專題 (1121)文章導覽 (9)突破的故事 (94)女科技人 (28)獎聲響起 (82)台灣新發現 (274)科技與社會 (114)科技瞭望 (67)
+
+
+演講
+「展望」系列..(182)「週日閱讀科..(167)「週末 Le..(146)「FUN科學..(58)經典譯註『人..(24)人文大師下午..(2)「網際網路素..(53)健康與醫藥科..(27)科學講古 (74)週末學術科普..(34)生活化與科技..(16)中研院「知識..(20)其它演講 (195)
+
+
+影視
+來點ㄦ科學 (100)牛頓馬戲團 (80)科學大解碼 (201)科技萬花筒 (34)發現 (129)神秘的史前踏..(5)科學再發現 (113)流言真與假 (118)有趣化學實驗..(38)百秒說科學 (23)二分鐘發現科..(37)ㄐㄧㄤˋ吃就..(26)科普一傳十 (40)其它影視 (2)
+
+
+廣播
+科學180 (67)生活才科學 (112)來自海洋的聲..(103)今天科學了沒..(50)科學三分鐘 (148)啟動科學腦 (52)似是而非 (54)
+
+
+
+
+  訊息  
+
+佈告欄 (16)電子報 (51)演講活動 (466)科普活動 (372)
+
+  認證  
+
+公務人員學習教師研習
+
+  科學迴廊    資源  
+
+活動成果 (45)假日科學廣場 (45)科普資源資料庫 (11724)國研院年度成果 (1)全國科學探究競賽－這樣教我就懂 (2)
+
+  出版品  
+
+科學發展 (67)東亞科技與社會國際期刊 (13)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+首頁 > 
+			單元 > 新知報 > 專題報導 > 防災2.0專題（四）：運籌帷幄 決策系統力
+
+
+
+				專題報導
+			
+
+
+
+
+
+	
+		 
+		
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+防災2.0專題（四）：運籌帷幄 決策系統力
+ 
+
+
+2013/06/27
+李柏昱 | 國立臺灣大學地理環境資源學系
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+依據世界銀行報告，台灣有7成的人口與土地，暴露在4種以上的災害風險當中，同時面臨地震、颱風、洪水、山崩的威脅，居住在災害風險如此高的地方，國家災害防救科技中心建立了「災害應變決策輔助系統」，協助強化政府的救災應變能力。不過，這個系統究竟如何做到防災減災的目的？我們邀請了國家災害防救科技中心的李維森副執行秘書，帶我們更深入瞭解災害應變決策輔助系統。
+
+
+資訊整合讓防災指揮事半功倍
+       
+根據氣象局統計，台灣每年平均會遭受3至4個颱風侵襲，而規模5到6的地震每年約30次。當災難發生，政府多個部會都會產出觀測資料與災情資訊，但是早期因為資訊缺乏縱整，救災指揮官無法獲得全面性的整合資訊。
+ 
+過去政府各單位所研發之資訊系統皆是因應單位業務需求所開發，主要目標與功能並不一致，且彼此獨立運作。就整體災害防救需求而言，各決策支援系統之間缺乏橫向流通，而且資料內容的檔案格式、精確性等皆不相同，造成災害資訊無法有效運用。
+ 
+災害應變決策輔助系統建置後，最重要的便是透過政府各單位的通力合作，有效整合各部會的資訊，給予指揮官資訊上的協助，在決策過程中能依照證據與實際情況做出最適當的決策。災害應變決策輔助系統重點在於資訊整合，包含動態資訊、數值模型等等，透過地理資訊系統，讓各部會的資訊與圖資能夠呈現在同一個平臺上。
+ 
+以颱風侵襲為例，指揮官能根據氣象局的雨量預報，預估哪裡雨量最大，研判降雨趨勢，再依據水利署的淹水潛勢圖資，決定是否有撤離、疏散以及抽水機調度的必要。同時，災害應變決策輔助系統在災害期間也能整合消防署的災情通報，透過每個通報個案的地址、路口等空間資訊，展現在地理資訊系統中，以利於全面的評斷災情。
+       
+防災減災：向災害學習
+ 
+除了災害來臨時協助指揮官判斷情況，我們也能透過災害應變決策輔助系統，向災害學習，達成防災減災的目的。在災害應變決策輔助系統中，每個災情的發生與決策的制定，都有時間資訊，於是能進行災害的時光回溯，追蹤災情隨時間的變化，以及災害期間的救災決策制定時間點。
+ 
+有了時光回溯資料，便能從每次災難中記取教訓，累積經驗，讓下次類似的災害來襲時，決策能有所依據，達成防災減災的目標。此外，亦能透過太空中心的衛星影像，進行災害前後的比對，分析災害地點的受災原因。
+ 
+中央與地方分進合擊
+ 
+在救災資訊上，中央與地方政府存在巨大的差距，中央的資訊永遠比地方多。但是在救災指揮中並不能完全仰賴中央判斷，因為各地方的實際情況一定大不相同。所以真正有效率的救災指揮，應當是中央與地方政府合作，地方政府根據在地經驗、即時資訊、災害潛勢圖與目前情況，進行救災的綜合研判，再請中央協助救災資源的調度與支援。
+ 
+災害應變決策輔助系統在2011年開放地方政府使用較為簡化的版本，讓中央的災害資訊能無縫傳遞給地方，同時加強地方救災人員的培訓，讓地方面對災難時有能力判斷哪些區域可能會有災情損失，和中央一起合作救災。
+ 
+未來展望：災害資訊多管道傳送
+ 
+2013年汛期前，災害應變決策輔助系統會開始進行災害風險資訊的多管道傳送，未來將和Google合作，藉由Google平臺做為資訊的流通傳播媒介，讓民眾不需要具備使用專業地理資訊系統的能力，只要會使用Google的平臺介面，便能獲得災害資訊。國家災害防救科技中心希望能藉由開放資料(Open Data)的方式，連結國內各有效資訊通路，有效改善防災資訊的流通性，創造出具台灣特色的防災產業、防災文化，以及防災在地措施。
+ 
+李維森說：「防災就是個與時俱進的議題，災害在演變、社會在演變、民眾的心態在演變，資訊在裡面扮演重要的角色。但是防災的進步是很慢的，往往5年、10年才有較明顯的里程碑。」台灣在世界上的救災能力數一數二，而且台灣各部會全力支援，共同合作建構災害應變決策輔助系統，在世界各國中非常難得。下次災害發生時，也請多給這些防災第一線的救災人員多一點掌聲！ （本文由國科會補助｢新媒體科普傳播實作計畫─重大天然災害之防救災科普知識教育推廣｣執行團隊撰稿）
+ 
+責任編輯：鄭國威 | 元智大學資訊社會研究所 瀏覽人次：14,393    災害潛勢圖(6)、開放資料(2)、防災(53)  延伸閱讀： 蘇文瑞、徐百輝、吳上煜、黃俊宏、葉家承、周恆毅與周學政，2007。空間資訊科技於災害防救之應用―以颱風災害應變為例，前瞻科技與管理特刊：29-46。【運籌帷幄，決策千里】災害應變決策輔助系統，國家實驗研究院。 
+
+
+
+
+已有 0 個人按~讚~
+
+
+ 
+
+熱門標籤  
+
+ 
+
+
+衛星遙測(32)物種滅絕(13)穿戴裝置(7)3D列印(29)災害(42)擴增實境(19)機器人(51)枯草桿菌(4)再生能源(27)肥胖(48)基因工程(6)大數據(29)演化(85)地震(106)聖嬰現象(14)臺灣山毛櫸(3)電洞(21)稀有物種滅絕(2)輻射(27)電波(41)
+
+
+ 
+
+
+ 返回列表 
+
+
+ 
+
+
+
+
+
+土壤液化專題報導（四）...
+企業防災（五）：協力防...
+混沌的地底：遠方強震與...
+防災預警科技(五)：沙...
+日本強震再掀海嘯陰影
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+單元
+新知報
+文章
+演講
+影視
+廣播
+
+
+訊息
+佈告欄
+電子報
+演講活動
+科普活動
+
+
+認證
+公務人員學習
+教師研習
+
+
+科學迴廊
+
+
+資源
+活動成果
+假日科學廣場
+科普資源資料庫
+國研院年度成果
+全國科學探究競賽－這樣教我就懂
+
+
+出版品
+科學發展
+東亞科技與社會國際期刊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於我們 | 著作權聲明 | 隱私權及資訊安全宣告 | 服務條款 | 聯絡我們
+
+				瀏覽本站建議使用 IE10 以上、MS Edge、Firefox、Chrome 或 Safari 等瀏覽器，1,280 x 720 以上解析度  
+				    
+				網站瀏覽人次：15,192,260
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+環境資訊管理與決策分析 - 環境工程其他 - 環境工程 | 書籍資訊 - 滄海書局‧鼎隆圖書‧滄海圖書資訊網站
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+購物車
+
+
+首頁|
+會員登入|
+購物客服中心|
+聯絡我們
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+環境工程其他
+首頁,書籍資訊,環境工程,環境工程其他
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+環境資訊管理與決策分析
++作者：
+
+張乃斌等著
+
+
++年份：
+2004 年1 版
+
++ISBN：
+9867777794
+
++書號：
+EN0050
+
++規格：
+16開/平裝
+
++頁數：
+512
+
++出版商：
+滄海
+
++參考網址：
+
+
+
+
+
+
+
+
+
+
+
+定價
+
+                      $
+
+線上價$
+
+
+
+
+
+
+
+
+
+線上團體購書(15本以上)一律享有團體優惠價格，折扣為定價打 85 折，大量購書亦可來信或來電直接與我們聯絡。
+
+
+
+
+
+
+
+
+
+本書以環境資訊、資訊科技，及決策分析作為三大主軸，陳述環境資訊管理及決策分析的各項主題，文中亦有作者多年來的研究案例穿插其中與讀者分享。  所有與環境資訊管理與決策分析相關的課程均適用本書，同時對從事相關環工、環管，及資訊管理的實務工程師或行政管理人員也可有所裨益。讀者如已有環工概論、電腦概論或永續發展的認識，閱讀此書將會有更深的體會及收穫。  本書章節的安排等分成四大部分，分別是：  (1) 概論篇  (2) 方法論篇  (3) 應用篇：公共部門  (4) 應用篇：企業部門 
+
+
+
+張揚祺  學歷：普度大學博士  現職：中山大學海工系助理教授  陳建中  學歷：成功大學博士  現職：輔英科技大學環工系副教授  甯蜀光  學歷：成功大學博士  現職：高雄大學土環系副教授  曾新穆  學歷：交通大學博士  現職：成功大學資工系副教授  施勵行  學歷：奧克拉荷馬大學博士  現職：成功大學資源系教授  張乃斌  學歷：康乃爾大學博士  現職：德州農工大學環工系教授 
+
+
+
+Part I 概論 第1章 緒論 第2章 環境系統概論 第3章 資訊系統概論 Part II 方法論第4章 環境監測與遠端控制技術 第5章 3S技術概論 第6章 資料探勘 第7章 決策支援系統 Part III 環境資訊管理與系統分析：公共部門 第8章 環境監測與遠端控制技術在環境管理之應用 第9章 3S技術在環境規劃與管理上之應用 第10章 環境決策支援系統 Part IV 環境資訊管理與決策：產業部門 第11章 企業環境資訊管理 第12章 產品環境資訊管理Part V 展望 第13章 環境資訊與系統分析之展望
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+會計
+
+
+
+會計學
+中級會計
+高級會計
+成本會計
+管理會計
+審計學
+會計資訊系統
+財務報表分析
+政府與非營利事業會計
+國際會計
+會計理論
+審計資訊系統
+稅務會計
+鑑識會計與舞弊查核
+會計其他
+
+
+
+
+經濟
+
+
+
+經濟學原理
+個體經濟學
+總體經濟學
+管理經濟學
+財政學
+經濟數學
+環境經濟學
+計量經濟
+勞動經濟
+都市經濟
+土地經濟
+國際政治經濟
+國際經濟
+比較經濟
+經濟發展
+經濟問題分析
+經濟專題
+高等總體經濟學
+經濟其他
+
+
+
+
+國際貿易
+
+
+
+國際貿易相關課程
+國際物流
+
+
+
+
+財務
+
+
+
+財務管理
+投資學
+金融市場
+金融機構
+貨幣銀行
+選擇權
+固定收益(債券市場)分析
+衍生性金融證券評價
+不動產投資
+個人理財
+風險管理
+保險學
+保險風險
+財務數值方法
+企業評價
+利率學
+投資心理學
+信託實務
+財務數學
+債券市場
+投資分析
+投資組合
+股票評價
+公司財務
+財政思想史
+國際金融
+財務工程
+國際財務管理
+財務經濟
+投資倫理
+財務分析
+投資哲學
+投資銀行
+財務其他
+
+
+
+
+企業管理
+
+
+
+企業概論
+管理學
+策略管理
+個案研究
+決策分析
+組織行為
+組織理論與管理
+組織發展
+組織結構
+人力資源管理
+領導學
+員工福利
+員工訓練與發展
+行銷學/行銷管理
+國際行銷學
+顧客關係管理
+廣告管理
+業務人員與銷售管理
+通路管理
+零售管理
+門市營運管理
+消費者行為
+行銷研究
+服務業行銷
+企業行銷
+網路行銷
+國際企業
+電子商務
+商業自動化
+知識管理
+專案管理
+服務業(生產)管理
+企業倫理
+創業管理
+創新管理
+中小企業管理
+企業談判
+企業經營診斷
+公司治理
+行銷策略與規劃
+商業文書
+定價策略
+企業研究方法
+觀光行銷
+商業智慧
+企業管理其他
+
+
+
+
+數學
+
+
+
+微積分(偏理工)
+微積分(偏商管)
+數學導論
+數論
+高等微積分
+分析理論
+線性代數
+微分方程
+偏微分方程
+離散數學
+工程數學
+實變函數論
+複變函數論
+管理數學
+數值分析
+幾何學
+向量分析
+圖論
+組合論
+線性規劃
+數理規劃
+傅立葉分析
+壽險數學
+轉換方法論
+矩陣
+向量微積分
+精算數學
+MATHEMATICA
+測度論
+拓樸學
+代數學
+數學其他
+
+
+
+
+機率與統計
+
+
+
+機率論
+統計學
+商業統計
+線性模式分析
+迴歸分析
+商業預測
+時間序列
+多變量分析
+數理統計
+高等統計
+推論統計
+統計方法
+抽樣方法
+研究方法
+實驗設計
+可靠度分析
+統計資料分析
+工程統計
+社會統計
+生物與醫護統計
+存活分析
+S, S-PLUS
+SPSS
+統計輔助軟體
+保險風險理論
+類別資料分析
+離散資料分析
+矩陣模式分析
+縱貫性分析
+隨機過程
+無母數統計
+臨床試驗分析
+財務統計
+估計與近似值理論
+質性研究方法
+醫療統計學
+巨量分析/大數據分析
+機率與統計其他
+
+
+
+
+資訊與資工
+
+
+
+計算機概論
+管理資訊系統
+資訊科技與資訊概論
+程式語言概論
+C
+C++
+C#
+JAVA
+FORTRAN
+COBOL
+Visual Basic
+系統分析與設計
+資料結構
+物件導向
+軟體工程
+計算機組織
+組合語言
+作業系統
+系統程式
+UNIX
+LINUX
+資料庫概論
+資料庫系統
+資料庫管理系統
+資料庫應用Access
+資料與電腦通訊
+網路安全
+資訊安全
+演算法
+區域網路
+資料倉儲與資料探勘
+多媒體
+多媒體通訊
+軟體專案管理
+決策支援系統
+電腦繪圖應用程式
+MATLAB
+數位教學
+通訊網路
+網路程式設計
+數位學習
+Python
+資訊與資工其他
+
+
+
+
+工業工程
+
+
+
+生產與作業管理
+高等生產管理
+作業研究與管理科學
+人因工程
+工業工程管理
+工作研究
+品質管理
+全面品質管理
+國際品質管理
+可靠度
+設施規劃
+工廠管理
+物流管理與運籌
+供應鏈管理
+採購管理
+物料管理
+存貨管理
+科技管理
+系統模擬
+排程
+工程經濟學
+企業資源規劃
+職業安全
+最佳化工程
+自動化製造
+產品開發
+電腦整合製造
+產品資料管理
+系統工程
+國際物流
+系統動力學
+工業工程其他
+
+
+
+
+社會與心理
+
+
+
+心理學
+社會心理學
+兒童心理學
+工業心理學
+管理心理學
+變態心理學
+教育心理學
+人格心理學
+健康心理學
+成人發展與老化
+心理學研究方法
+青少年健康
+認知心理學
+社會與心理其他
+
+
+
+
+醫務管理
+
+
+
+醫療管理
+醫療品質管理
+醫療人力資源管理
+醫療財務管理
+醫療資料管理
+醫療服務管理
+醫療經濟學
+醫療概論
+健康事業
+醫務管理其他
+
+
+
+
+物理
+
+
+
+大學物理
+學院物理
+生活物理
+熱物理
+熱力學(偏物理)
+電磁學(偏物理)
+光學
+傅立葉光學
+雷射
+X光繞射
+凸鏡設計
+近代物理
+固態物理
+量子物理
+粒子物理
+核物理
+超導體
+物理數學
+古典力學
+力學
+波
+天文學
+物理實驗
+MATHEMATICA(偏物理)
+量子力學
+物理其他
+
+
+
+
+化學與化工
+
+
+
+普通化學
+有機化學
+有機合成
+有機實驗
+分析化學
+儀器分析
+物理化學
+化學數學
+化工(化學)熱力學
+程序控制
+輸送現象與單元操作
+高分子化學
+陶瓷材料
+奈米材料
+奈米技術
+生物化學
+無機化學
+化工安全
+化學實驗
+通識化學
+固態化學
+化工概論
+光譜學
+分子光譜學
+生物質譜學
+催化作用
+薄膜合成與分離技術
+有機金屬
+藥物化學
+觸媒
+物化數學
+化學與化工其他
+
+
+
+
+電子與電機
+
+
+
+電路學
+電路學相關
+電子學
+電子學實驗
+電機學
+數位電子學
+類比電子學
+運算放大器
+電子學相關
+數位邏輯設計
+數位訊號處理
+影像處理
+聲音處理
+線性系統
+訊號與系統
+通訊系統
+電磁學(偏電子電機)
+光纖通訊
+通訊電子學
+射頻微波電路
+天線
+展頻分析
+行動通訊
+通訊相關
+顯示器
+光電工程
+光纖
+雷射電子學
+光學(偏電子電機)
+矽光子學
+數位控制
+控制相關
+半導體製程
+積體電路
+電子材料
+VLSI
+微機電
+半導體物理與元件
+半導體相關
+通訊網路
+類神經網路
+無線網路
+網路相關(偏電子電機)
+電機機械
+電力系統
+電力電子
+電力相關
+單晶片
+微處理機
+嵌入式系統
+資料壓縮
+數位系統設計
+數位邏輯實習
+訊號處理單晶片
+回授控制
+系統晶片
+控制系統
+電機工程
+電磁相容
+電子與電機其他
+
+
+
+
+機械工程
+
+
+
+靜力學
+動力學
+靜力與動力
+材料力學
+高等材料力學
+振動力學
+結構力學
+力學(偏機械)
+機械力學
+黏性力學
+生物力學
+固力相關
+流體力學
+熱力學(偏機械)
+熱傳學
+輻射熱傳
+對流熱傳
+熱傳與質傳
+冷凍空調
+燃燒工程
+內燃機
+壓縮流與氣體動力
+機械元件設計
+電腦輔助設計與機械製圖
+控制系統
+動力系統(中等動力學)
+系統動力
+機電整合
+自動化工程
+機器人學
+材料科學導論
+塑膠加工
+工程材料
+有限元素法
+奈米工程
+能源
+汽車引擎
+柴油引擎
+焊接
+摩潤學
+MATLAB(偏機械)
+油壓系統
+燃料電池
+機械製造
+連體力學
+機動學與機構學
+系統工程
+機械工程其他
+
+
+
+
+航空工程
+
+
+
+空氣動力學
+飛機結構
+航太概論
+飛機保養與維修
+飛機電子學
+飛機動力學
+飛行概論
+飛機力學
+衛星導航系統
+航空管理
+飛行力學
+航空交通控制
+飛機設計
+飛行控制與模擬
+航空工程其他
+
+
+
+
+土木工程
+
+
+
+結構分析
+給水工程
+水文學
+水資源工程
+輸砂理論
+石造結構
+鋼筋混凝土
+預力混凝土
+電腦輔助結構分析
+建築材料
+結構力學
+土壤學
+土壤力學
+基礎工程
+交通工程
+舖面工程
+交通計畫
+施工設備
+施工專案管理
+地理資訊系統
+遙感探測
+土木電腦輔助應用
+測量資訊相關
+環境影響評估
+物業管理
+運輸規劃
+營建管理
+土木工程其他
+
+
+
+
+環境工程
+
+
+
+環境科學
+環境工程
+水化學
+環境化學
+環境化學檢測
+環境化學分析
+污水工程
+地下水學
+有毒廢棄物管理
+固體廢棄物
+廢棄物管理與資源回收
+空氣污染防治工程
+噪音污染控制
+污染防治
+生態學
+生態工程
+環境影響評估
+環境毒物學
+環境控制系統
+環境土壤化學
+氣象學
+環境工程其他
+
+
+
+
+生命科學
+
+
+
+生物學
+微生物學
+分子生物學
+生物技術
+生醫材料
+生物資訊
+人類發展學
+食品科學
+遺傳學
+高等遺傳學
+作物培育
+寄生蟲學
+組織學
+生醫工程
+生命科學其他
+
+
+
+
+護理
+
+
+
+護理
+護理少量進口書籍 
+
+
+
+
+休閒觀光與餐飲
+
+
+
+休閒產業分析
+觀光學
+餐飲服務管理
+渡假村作業管理
+餐旅管理
+餐飲成本控制
+旅館前臺管理
+收益管理
+餐旅服務管理
+餐旅採購管理
+餐旅財務管理
+餐飲業
+
+
+
+
+化妝品科學
+
+
+
+化妝品化學
+化妝品原料
+其他
+
+
+
+
+其他
+
+
+
+國文類
+日語類
+英語類
+商事法
+合作社法
+公平交易法
+金融法
+稅務行政
+地球科學
+森林測量
+地質學
+人體解剖
+論文寫作
+談判
+綠色科技
+工程英語
+綠色創新設計
+憲法
+教學設計
+保險
+其他
+
+
+
+
+ 
+
+帳號
+
+
+密碼
+
+
+驗證碼
+
+
+
+
+
+忘記密碼 | 註冊
+
+
+
+訂閱 / 取消滄海電子報
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+書籍資訊|
+會員服務|
+教師專區|
+新聞中心|
+購物客服中心|
+電子報|
+加入會員|
+邀請作者|
+服務諮詢|
+員工專區|
+網站使用須知|
+隱私權政策
+
+
+2014 © 滄海書局‧鼎隆圖書股份有限公司.  All Rights Reserved.     Designed by WDD
+地址：臺中市西屯區臺灣大道三段540號11樓電話：(04)2708-8787傳真：(04)2708-7799E-mail：thbook@tsanghai.com.tw
+
+
+
+
+0
+
+購物車
+
+
+
+
+ 
+
+
+
+
+
+
+
+資訊科技 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+資訊科技
+
+維基百科，自由的百科全書
+(已重新導向自 資訊科技)
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+「IT」重新導向至此。關於與此名稱相似的其他條目，詳見「IT (消歧義)」。
+
+
+
+
+
+
+2005年世界各地用於資訊科技的投資
+
+
+
+
+
+
+電腦機房
+
+
+資訊科技（大陸：信息技術；台灣：資訊科技；英語：Information Technology，縮寫：IT）也稱資訊和通訊技術（Information and Communications Technology，ICT），是主要用於管理和處理資訊所採用的各種技術總稱，主要是應用電腦科學和通訊技術來設計、開發、安裝和實施資訊系統及應用軟體。依照儲存及處理資訊的不同，可以將資訊科技的發展分為幾個不同的階段：前機械時期（3000 BC – 1450 AD）、機械時期（1450–1840）、機電時期（1840–1940）及電子時期（1940–現時）[1]。本文主要介紹1940年起電子時期的資訊科技。
+在商業領域中，美國資訊科技協會（英語：Information Technology Association of America）（ITAA）定義資訊科技為「對於以電腦為基礎之資訊系統的研究、設計、開發、應用、實現、維護或應用」[2]。此領域相關的任務包括網路管理、軟體開發及安裝、針對組織內資訊技術生命週期的計劃及管理，包括軟體及硬體的維護、升級及汰換。
+資訊科技一詞最早是出現在1958年《哈佛商業評論》中，一篇由Harold J. Leavitt及Thomas L. Whisler所著的文章，其中提到「這種新技術還沒有一個單一的名稱，我們應該將其稱為資訊科技（information technology、IT）」[3]。
+
+
+
+目錄
+
+
+1 範圍
+2 應用
+3 資料儲存
+
+3.1 資料庫
+
+
+4 資料檢索
+5 資料傳輸
+6 資料處理
+7 不同觀點下的資訊科技
+
+7.1 學術觀點
+7.2 商業觀點
+7.3 倫理觀點
+
+
+8 參見
+9 參考文獻
+
+9.1 參照
+9.2 來源
+
+
+10 外部連結
+
+
+
+範圍[編輯]
+
+
+
+
+北韓紅星作業系統
+
+
+資訊科技的研究包括科學、技術、工程與管理學等學科，這些學科在資訊的管理，傳遞和處理中的應用，相關的軟體和裝置及其相互作用。
+資訊科技的應用包括電腦硬體與軟體、網路與通訊技術、應用軟體開發工具等。電腦與網際網路普及以來，人們日益普遍的使用電腦來生產、處理、交換與傳播各種形式的資訊（如書籍、商業檔案、報刊、唱片、電影、電視節目、語音、圖形、影像等）。
+應用[編輯]
+
+
+
+
+wristwatch手錶型Linux系統電腦
+
+
+在企業、學校和其它組織中，資訊科技體系結構是為了達成戰略目標，而採用和發展資訊科技的綜合結構。它包括管理和技術的成分。其管理成分包括使命、職能與資訊需求、系統配置、和資訊流程；技術成分包括用於實現管理體系結構的資訊科技標準、規則等。由於電腦是資訊管理的中心，電腦部門通常被稱為「資訊科技部門」。有些公司稱這個部門為「資訊服務」（IS）或「管理資訊服務」（MIS）。另一些企業選擇外包資訊科技部門，以獲得更好的效益。
+資料儲存[編輯]
+主條目：儲存裝置
+早期的電子式電腦（像Colossus電腦（英語：Colossus computer））是利用穿孔紙帶（英語：punched tape）來儲存資料，穿孔紙帶是一長條的紙帶，上面有洞可表示資料，是一個現今已不再使用的技術[4]。電子的資料儲存裝置最早是從第二次世界大戰時開始，當時是使用水銀的延遲線存儲器，開發目的是為了移除雷達的背景雜波[5]，但當時只能循序存取。第一個可隨機存取的數位儲存裝置是以陰極射線管為基礎的威廉士管[6]，不過用延遲線存儲器及威廉士管儲存的資料都是揮發性（volatile）的，需要定期再新（refresh），而且當電源中斷中資料就會消失。最早的非揮發性記憶體是在1932年發明的磁鼓記憶體[7]，用在費倫蒂馬克1號（英語：Ferranti Mark 1），這也是世界上第一臺商業化量產的泛用型電腦[8]。
+IBM在1956年導入第一個硬碟，是IBM 305 RAMAC（英語：IBM 305 RAMAC）電腦系統的一部份[9]。現今大部份的資料仍儲存在硬碟中，或是像CD-ROM等光學儲存裝置中[10]。在2002年之前大部份的資料仍儲存在類比裝置（英語：Analog device）中，但這些年來數位裝置的容量已超過類比裝置，在2007年幾乎94%的資料都已儲存在數位裝置中：[11]52%是在硬碟、28%是在光學裝置，而11%是在數位的磁帶中。估計全世界儲存裝置的容量已由1986年小於3艾位元組（EB）擴充到2007年的295艾位元組[12]，約三年加倍一次[13]。
+資料庫[編輯]
+主條目：資料庫
+
+
+
+
+超級電腦-走鵑
+
+
+為了要準確且快速的存取大量的資料，資料庫管理系統在1960年代出現。其中最早的系統為IBM的資訊管理系統（英語：IBM Information Management System）（IMS）[14]，在40年後仍在繼續使用[15]。IMS的資料模型是層次模型[14]，在1970年代埃德加·科德提出了另一種概念，是集合論、謂詞邏輯及類似表格、欄、列的概念來作為較大量資料儲存的模型，第一個商業使用的關聯式資料庫管理系統（RDBMS）是甲骨文公司在1980年開發的[16]。
+所有的資料庫管理系統包括了許多的部組，可以讓許多用戶同時存取，而又可以保持資料的完整性及一致性，資料庫的特徵是其資料的結構定義在資料庫輪廓（英語：database schema），和資料庫本身分開來儲存[14]。
+這些年來XML開始變成常用的資料媒介，XML可以用一般的檔案系統來儲存，不過現在也常用關聯式資料庫來儲存，「多年來，其實現性方式的強健性已在理論及實務上得到驗證」[17]。隨著SGML的演進，XML的文字基底結構可以讓人和機器都可以閱讀[18]。
+資料檢索[編輯]
+關連式資料庫的概念引入了與程式語言無關的結構化查詢語言（SQL），是以關係代數為其基礎[16]。
+「資料」（data）和「資訊」（information）有不同的意涵。只要儲存的內容都可以稱為資料，但僅有組織、以有意義方式呈現的才是資訊[19]。世界上大部份的資料沒有結構，儲存在不同的實體媒介中[20]。資料倉儲在1980年代起開始興起，目的是整合這些不同來源的資料。一般是包括來自不同來源的資料資料，包括外部資料庫（例如網際網路），再加以組織，可以供像決策支援系統類的系統[21]。
+資料傳輸[編輯]
+資料傳輸有三種不同的層面：發送、傳播及接收[22]。可以大致區分為資訊單向傳遞的廣播，以及資訊雙向傳遞的電信[12]。
+自從2000年代初期，越來越多的應用利用XML為資料交換的媒介[23]，特別是像網站導向通訊協定（像SOAP）中用到的機器互動[18]，描述的是「在傳送中的資料……而不是靜止不動的資料。」[23]。這種用途的一個挑戰是將資料由關連式資料庫轉換為文件物件模型（DOM）的結構[24]。
+資料處理[編輯]
+Hilbert及Lopez發現了資料技術改變帶來的指數成長（也是摩爾定律），1986年至2007年間，每人平均的專用機器資訊處理量每14個月會增加一倍，每人平均的泛用電腦資訊處理量每18個月會增加一倍，每人平均的總電信量每34個月會增加一倍，每人平均的資料儲存量每40個月會增加一倍，每人平均的廣播資料量每12.3年會增加一倍[12]。
+全世界每天都會產生大量的資料，不過若沒有加以分析，並且用有效的方式呈現，資料本質上就像放在「資料墳墓」中一様。「很少用到的資料備存」[25]。為了此議題，資料探勘在1980年代的後期興起，其概念就是從大量的資料中發現有趣的模式及知識[26]。
+不同觀點下的資訊科技[編輯]
+學術觀點[編輯]
+在學術上，電腦協會定義資訊科技為：「培養學生符合商業、政府、醫療、學校、及其他組織電腦技術需求的大學學程，資訊科技專員需選擇適合組織的硬體及軟體，將這些產品和組織的需求及基礎架構結合，為組織中的電腦用戶安裝應用程式，並客製化及進行維護。」[27]
+商業觀點[編輯]
+在商業上，美國資訊科技協會（英語：Information Technology Association of America）定義資訊科技為：「研究、設計、開發、應用、實作、支援或管理以電腦為基礎的資訊系統。」[2]。此領域工作人員的職責有網路管理、軟體開發及安裝、規劃及管理組織的技術生命週期，也就是哪些硬體及軟體需要維護、安裝或是替換。
+資訊科技的商業價值是在商業流程的自動化、提供決策需要的資訊、連接企業及其客戶、提供有生產力的工具以提昇效率
+
+全界資訊科技費用預測[28]（單位：十億美元）
+
+分類
+2014費用
+2015費用
+
+
+裝置
+685
+725
+
+
+資料中心系統（英語：Data center services）
+140
+144
+
+
+企業級軟體
+321
+344
+
+
+資訊科技服務
+967
+1,007
+
+
+電信服務
+1,635
+1,668
+
+
+共計
+3,749
+3,888
+
+
+
+倫理觀點[編輯]
+資訊倫理（英語：information ethics）的概念是由數學家諾伯特·維納在1940年代建立[29]。以下一些和資訊科技有關的內容[30]：
+
+下載一些非經版權所有人同意的檔案，造成著作權的侵犯。
+僱主監控員工的電子郵件及其忚網路使用。
+廣告電子郵件。
+駭客存取線上資料庫。
+網站在用戶的電腦中安裝Cookie或間諜軟體，監控用戶的線上活動。
+
+參見[編輯]
+
+
+資訊科技主題
+
+
+
+資訊及通訊科技
+資訊管理
+資料處理（英語：Data processing）
+
+參考文獻[編輯]
+參照[編輯]
+
+
+^ Butler, Jeremy G., A History of Information Technology and Systems, University of Arizona, [2 August 2012] 
+^ 2.0 2.1 Proctor (2011)，preface.
+^ Leavitt, Harold J.; Whisler, Thomas L., Management in the 1980s, Harvard Business Review, 1958, 11 
+^ Alavudeen & Venkateshwaran (2010)， p. 178
+^ Lavington (1998)， p. 1
+^ Early computers at Manchester University, Resurrection (The Computer Conservation Society), Summer 1992, 1 (4) [19 April 2008], ISSN 0958-7403 
+^ Universität Klagenfurt (編), Magnetic drum, Virtual Exhibitions in Informatics, [21 August 2011] 
+^ The Manchester Mark 1, University of Manchester, [24 January 2009] 
+^ Khurshudov (2001)， p. 6
+^ Wang & Taratorin (1999)， pp. 4–5.
+^ Wu, Suzanne, How Much Information Is There in the World?, USC News (University of Southern California), [10 September 2013] 
+^ 12.0 12.1 12.2 Hilbert, Martin; López, Priscila, The World's Technological Capacity to Store, Communicate, and Compute Information, Science, 1 April 2011, 332 (6025): 60–65 [10 September 2013], PMID 21310967, doi:10.1126/science.1200970 
+^ Americas events- Video animation on The World's Technological Capacity to Store, Communicate, and Compute Information from 1986 to 2010. The Economist. 
+^ 14.0 14.1 14.2 Ward & Dafoulas (2006)， p. 2
+^ Olofson, Carl W., A Platform for Enterprise Data Services (PDF), IDC, October 2009 [7 August 2012] 
+^ 16.0 16.1 Ward & Dafoulas (2006)， p. 3
+^ Pardede (2009)， p. 2.
+^ 18.0 18.1 Pardede (2009)， p. 4.
+^ Kedar (2009)， pp. 1–9
+^ van der Aalst (2011)， p. 2
+^ Dyché (2000)， pp. 4–6
+^ Weik (2000)， p. 361
+^ 23.0 23.1 Pardede (2009)， p. xiii.
+^ Lewis (2003)， pp. 228–31.
+^ Han，Kamber & Pei (2011)， p. 5
+^ Han，Kamber & Pei (2011)， p. xxiii
+^ The Joint Task Force for Computing Curricula 2005.Computing Curricula 2005: The Overview Report (pdf)
+^ Forecast Alert: IT Spending, Worldwide, 4Q12 Update, Gartner, [2 January 2013] 
+^ Bynum (2008)， p. 9.
+^ Reynolds (2009)， pp. 20–21.
+
+
+來源[編輯]
+
+書籍
+
+
+資訊科技概論. 碁峰. 2009: 432. ISBN 9789861817101 （繁體中文）. 
+The Global Information Technology Report 2008–2009 (PDF). World Economic Forum and INSEAD. 2009: 406. ISBN 978-92-95044-19-7 （英語）. 
+Alavudeen, A.; Venkateshwaran, N., Computer Integrated Manufacturing, PHI Learning, 2010, ISBN 978-81-203-3345-1 
+Bynum, Terrell Ward, Norbert Wiener and the Rise of Information Ethics, (編) van den Hoven, Jeroen; Weckert, John, Information Technology and Moral Philosophy, Cambridge University Press, 2008, ISBN 978-0-521-85549-5 
+Dyché, Jill, Turning Data Into Information With Data Warehousing, Addison Wesley, 2000, ISBN 978-0-201-65780-7 
+Han, Jiawei; Kamber, Micheline; Pei, Jian, Data Minining: Concepts and Techniques 3rd, Morgan Kaufman, 2011, ISBN 978-0-12-381479-1 
+Kedar, Seema, Database Management Systems, Technical Publications, 2009, ISBN 978-81-8431-584-4 
+Khurshudov, Andrei, The Essential Guide to Computer Data Storage: From Floppy to DVD, Prentice Hall, 2001, ISBN 978-0-130-92739-2 
+Lavington, Simon, A History of Manchester Computers 2nd, The British Computer Society, 1998, ISBN 978-1-902505-01-5 
+Pardede, Eric, Open and Novel Issues in XML Database Applications, Information Science Reference, 2009, ISBN 978-1-60566-308-1 
+Proctor, K. Scott, Optimizing and Assessing Information Technology: Improving Business Project Execution, John Wiley & Sons, 2011, ISBN 978-1-118-10263-3 
+Reynolds, George, Ethics in Information Technology, Cengage Learning, 2009, ISBN 978-0-538-74622-9 
+van der Aalst, Wil M. P., Process Mining: Discovery, Conformance and Enhancement of Business Processes, Springer, 2011, ISBN 978-3-642-19344-6 
+Wang, Shan X.; Taratorin, Aleksandr Markovich, Magnetic Information Storage Technology, Academic Press, 1999, ISBN 978-0-12-734570-3 
+Ward, Patricia; Dafoulas, George S., Database Management Systems, Cengage Learning EMEA, 2006, ISBN 978-1-84480-452-8 
+Weik, Martin, Computer Science and Communications Dictionary 2, Springer, 2000, ISBN 978-0-7923-8425-0 
+
+外部連結[編輯]
+
+資訊科技概論課程
+開放式課程：科技與文化
+開放式課程：整合電子系統與全球資訊系統
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+技術
+
+
+
+
+
+
+領域
+
+
+
+
+農業
+
+
+
+農業工程
+水產養殖
+水產學
+食品化學
+食品工程
+營養學
+食品技術
+食品微生物學（英語：Food microbiology）
+遺傳利用限制技術（英語：Genetic use restriction technology）
+
+
+
+
+
+
+
+
+生物醫學（英語：Biomedical technology）
+
+
+
+生物資訊學
+生物醫學工程
+生物工程學
+生物技術
+健康科學
+生化檢驗
+藥理學
+神經科學
+組織工程學
+基因工程
+奈米醫學
+化學資訊學
+
+
+
+
+
+
+
+
+水利/土木建築
+
+
+
+水利工程
+土木工程
+建築工程
+建築裝置
+消防工程
+安全工程
+結構工程
+
+
+
+
+
+
+
+
+教育技術
+
+
+
+線上學習
+教育技術學
+教育軟體（英語：Educational software）
+虛擬校園（英語：Virtual campus）
+
+
+
+
+
+
+
+
+能源
+
+
+
+核工程
+核技術
+儲能技術
+石油工程（英語：Petroleum engineering）
+
+
+
+
+
+
+
+
+軍事
+
+
+
+彈藥
+炸彈
+軍事技術
+電子作戰
+低可偵測性技術
+工兵
+軍事通訊（英語：Military communications）
+
+
+
+
+
+
+
+
+資訊
+
+
+
+人工智慧
+計算機工程
+電腦科學
+音樂工藝
+通訊工程
+通訊
+圖形
+資訊科技
+軟體工程
+音樂
+語音識別
+視覺化技術
+系統分類學
+本體工程
+資訊學
+
+
+
+
+
+
+
+
+工業（英語：Industrial technology）
+
+
+
+奈米科技
+音訊工程
+生物工程
+生化工程
+陶瓷工程
+化學工程
+控制工程
+低溫學
+電氣工程
+電子工程
+工程技術
+工程學
+工業工程學
+企業工程
+水力學
+機械工程
+機械電子學
+冶金工程
+海洋工程
+光學工程
+系統工程
+運輸工程
+電機工程學
+金融工程學
+製造
+機械
+採礦業
+自動化技術
+冶金學
+
+
+
+
+
+
+
+
+交通
+
+
+
+航空航天
+航空航天工程
+空間技術
+機動車
+車輛工程
+交通工程
+流量工程
+
+
+
+
+
+
+
+
+環境科技
+
+
+
+綠色建築
+可再生能源
+永續設計
+環境工程
+生態工程
+潔淨科技（英語：Clean technology）
+生態技術（英語：Ecotechnology）
+環境工程科學（英語：Environmental engineering science）
+
+
+
+
+
+
+
+
+應用科學
+
+
+
+考古
+電子學
+光學
+半導體物理學
+環境科學
+材料科學
+微系統
+微技術
+奈米技術
+
+
+
+
+
+
+
+
+其他領域
+
+
+
+機器人學
+機械電子學
+蛋白質工程
+系統工程
+聚合物工程（英語：Polymer engineering）
+
+
+
+
+
+
+
+
+
+
+
+組件
+
+
+
+基礎設施
+發明
+發明年表
+知識
+機器
+技能
+工藝
+工具
+
+
+
+
+
+
+
+
+技術史
+
+
+
+新石器革命
+工業革命
+第二次工業革命
+數字化革命
+第三次工業革命
+資訊時代
+史前技術（英語：Outline of prehistoric technology）
+古代技術（英語：Ancient technology）
+中世紀技術（英語：Medieval technology）
+文藝復興技術（英語：Renaissance technology）
+噴氣時代（英語：Jet Age）
+
+
+
+
+
+
+
+
+理論（英語：Theories of technology）
+和概念
+
+
+
+適用技術
+破壞性創新
+高科技
+技術成熟度曲線
+專家統治
+技術決定論
+技術官僚
+技術奇異點
+技術接受模型
+超人類主義
+軍民兩用技術（英語：Dual-use technology）
+技術倫理（英語：Ethics of technology）
+
+
+
+
+
+
+
+
+其他
+
+
+
+新興技術列表
+卡爾達肖夫指數
+Category:各國科技
+Category:科技公司
+Category:技術大學和學院
+技術傳播者
+技術新聞學
+
+
+
+
+
+
+
+
+
+
+
+Category:技術
+commons:Category:技術
+Portal:技術
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+全球主要資訊科技公司
+
+
+
+
+
+
+
+
+
+最大的資訊科技公司列表
+最大的網際網路公司列表
+最大的軟體公司列表
+全球二十大半導體廠商
+
+
+
+
+
+
+
+
+消費電子產品
+
+
+
+全球智慧型手機廠商[1]
+
+三星電子
+蘋果
+華為
+索尼手機
+HTC
+華碩手機
+聯想
+小米
+LG
+TCL
+OPPO
+步步高電子/Vivo
+中興
+夏普
+富可視
+
+
+
+
+全球個人電腦廠商[2]
+
+聯想
+惠普
+戴爾
+蘋果
+宏碁
+華碩
+微星
+東芝
+三星電子
+清華同方
+富士通
+
+
+
+
+組裝代工廠
+
+富士康
+FIH Mobile
+廣達
+仁寶
+緯創
+英業達
+和碩
+偉創力
+Celestica
+Jabil
+Sanmina-SCI
+冠捷
+
+
+其他
+
+諾基亞
+摩托羅拉
+HTC
+酷派
+索尼
+黑莓
+日本電氣
+
+
+
+
+
+
+
+
+
+
+影像
+
+
+
+佳能
+三星
+尼康
+索尼
+奧林巴斯
+柯尼卡美能達
+柯達
+京瓷
+利盟
+理光
+精工愛普生
+惠普
+夏普
+東芝
+全錄
+大立光電
+
+
+
+
+
+
+
+
+資料儲存
+
+
+
+硬碟[3]
+
+希捷科技
+日立儲存
+東芝
+三星
+
+
+戴爾
+易安信
+富士通
+惠普
+IBM
+威騰電子
+網路器械
+甲骨文
+
+
+
+
+
+
+
+
+諮詢和外包服務
+
+
+
+埃森哲
+源訊
+博思艾倫漢密爾頓控股公司
+BT
+CACI
+凱捷
+CGI Group
+高知特
+CSC
+德勤
+戴爾
+神州數位
+富士通
+HCL Technologies
+日立
+EDS
+IBM
+Indra
+印孚瑟斯
+日本電氣
+NTT
+Orange Business Services
+TCS
+T-Systems
+Wipro
+
+
+
+
+
+
+
+
+大型電腦
+
+
+
+大型電腦
+
+富士通
+IBM
+
+
+伺服器
+
+IBM
+甲骨文
+思科
+
+
+銷售時點情報系統
+
+NCR
+東芝
+
+
+
+
+
+
+
+
+
+
+網路裝置（英語：Network equipment provider）
+
+
+
+阿爾卡特-朗訊
+亞美亞
+思科
+愛立信
+富士通
+惠普
+華為
+瞻博網路
+摩托羅拉解決方案
+日本電氣
+諾基亞通訊
+三星
+中興
+
+
+
+
+
+
+
+
+半導體製造
+
+
+
+IC設計
+
+英特爾
+三星
+高通
+美光
+SK海力士
+東芝
+德州儀器
+博通
+意法半導體
+瑞薩
+超威
+英偉達
+華爲(海思半導體)
+聯發科
+飛思卡爾
+富士通
+索尼
+LG
+英飛凌
+邁威爾
+恩智浦
+松下
+安森美
+快捷
+LSI公司
+紫光集團
+安謀控股
+
+
+
+
+晶圓代工
+
+台積電
+聯華電子
+格羅方德
+中芯國際
+力晶科技
+
+
+
+
+
+
+
+
+
+
+網際網路[4]
+
+
+
+電子商務
+
+阿裡巴巴
+博客來
+Amazon
+eBay
+Priceline集團
+京東商城
+Groupon
+Flipkart
+樂天
+Salesforce.com
+IAC/InterActiveCorp
+貓途鷹
+Expedia公司
+唯品會
+攜程旅行網
+
+
+
+
+搜尋引擎
+
+Google
+百度
+Naver
+Yandex
+奇虎360
+
+
+社群網路
+
+Facebook
+騰訊
+Twitter
+領英
+
+
+入口網站
+
+網易
+Yahoo!
+Netflix
+新浪
+equinix
+
+
+
+
+
+
+
+
+
+
+軟體
+
+
+
+微軟
+甲骨文
+SAP
+賽門鐵克
+VMware
+CA公司
+Adobe
+蘋果
+Google
+IBM
+惠普
+Intuit
+趨勢科技
+訊連科技
+華為
+海爾
+中興
+Salesforce.com
+
+
+
+
+
+
+
+
+電信服務
+
+
+
+十大電信業者[5]
+
+AT&T
+威訊
+中國移動
+日本電信電話
+德國電信
+軟銀
+沃達豐
+美洲行動通訊（英語：América Móvil）
+中國電信
+西班牙電信
+
+
+
+
+其他
+
+Orange
+中國聯通
+KDDI
+英國電信
+義大利電信
+澳大利亞電信
+韓國電信
+世紀互聯（英語：CenturyLink）
+BCE公司（英語：BCE Inc.）
+挪威電信（英語：Telenor）
+威瑞森
+維旺迪
+中華電信
+荷蘭皇家電信（英語：KPN）
+NTT DOCOMO
+Reliance
+Sprint Nextel
+TeliaSonera
+3 (電訊)
+新加坡電信
+Etisalat
+TeliaSonera
+T-Mobile
+SK電訊
+電訊盈科
+
+
+
+
+
+
+
+
+
+
+電子遊戲
+
+
+
+動視暴雪
+雅達利股份公司
+萬代南夢宮娛樂
+卡普空‎
+藝電
+Epic Games
+LucasArts
+光榮特庫摩
+科樂美
+NCsoft
+Nexon
+任天堂
+世嘉
+索尼
+史克威爾艾尼克斯
+Take-Two Interactive
+騰訊
+育碧
+華納兄弟
+
+
+
+
+
+
+
+
+資料來源
+
+
+
+^ TrendForce：2015年全球智慧型手機出貨12.93億支
+^ IDC：全球十大PC廠商將有兩家退出市場2015年11月07日
+^ 全球硬碟市場大洗牌 僅存5家生產商
+^ 2015年全球網際網路公司市值前20強排名
+^ The World’s Biggest Public Companies. Forbes. [2 June 2016] （英語）. 
+
+
+
+
+
+
+
+
+
+收錄標準：年營業收入超過30億美元；特例：組別5（主機）為10億美元，組別11（網際網路）為15億美元，組別13（電信）為200億美元。
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=信息技術&oldid=42897833"					
+分類：信息技術隱藏分類：CS1英語來源 (en)含有英語的條目使用2號參數傳遞Portal模板圖像的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+AfrikaansAlemannischAragonésالعربيةمصرىঅসমীয়াAzərbaycancaБашҡортсаБеларускаяБеларуская (тарашкевіца)‎БългарскиবাংলাBosanskiCatalàکوردیČeštinaCymraegDanskDeutschΕλληνικάEnglishEsperantoEspañolEestiفارسیSuomiFrançaisGaeilge贛語GalegoگیلکیગુજરાતીGaelgעבריתहिन्दीFiji HindiHrvatskiՀայերենBahasa IndonesiaÍslenskaItaliano日本語PatoisBasa JawaქართულიҚазақшаភាសាខ្មែរಕನ್ನಡ한국어КыргызчаLatinaLimburgsລາວLietuviųLatviešuОлык марийമലയാളംМонголमराठीBahasa MelayuMirandésမြန်မာဘာသာनेपालीNederlandsNorsk nynorskNorsk bokmålOccitanLivvinkarjalaਪੰਜਾਬੀPolskiپنجابیPortuguêsRomânăРусскийРусиньскыйСаха тылаScotsسنڌيSrpskohrvatski / српскохрватскиසිංහලSimple EnglishSlovenčinaSlovenščinaSoomaaligaShqipСрпски / srpskiSvenskaKiswahiliதமிழ்ไทยTagalogSetswanaTürkçeТатарча/tatarçaУкраїнськаاردوOʻzbekcha/ўзбекчаTiếng ViệtWinarayWolofייִדיש粵語 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年1月20日 (週五) 01:37。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+農業科技決策支援資訊平臺簡介(農委會)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電腦模式
+
+
+:::
+
+迴首頁 |  網站導覽 |  雙語詞彙 |  ENGLISH |  兒童版 |  行動模式 |  會員專區
+
+
+
+
+
+
+
+
+
+
+便民服務重大政策線上申辦關於農委會農業政策農業法令新聞與公報休閒與生活農業科技統計與出版品資料下載農委會計畫研提政府資訊公開主題網站台灣農業故事館相關網站連結所屬機關網站
+網站地圖
+雙語詞彙
+ENGLISH
+農民版
+兒童版
+電腦模式
+會員專區
+
+
+
+
+農業科技統計與出版品資料下載農委會計畫研提政府資訊公開主題網站台灣農業故事館相關網站連結所屬機關網站
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+便民服務重大政策線上申辦關於農委會農業政策農業法令新聞與公報休閒與生活農業科技統計與出版品資料下載農委會計畫研提政府資訊公開主題網站台灣農業故事館相關網站連結所屬機關網站
+
+
+
+
+
+
+::: 現在位置: 首頁 > 統計與出版品 > 農業出版品 > 農政與農情 > 102年(第247期-258期) > 102年5月(第251期) > 農業科技決策支援資訊平臺簡介 
+
+
+
+
+
+
+統計與出版品
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+102年5月(第251期)
+                                                            
+
+
+
+
+
+
+
+
+
+
+ 本單元內容搜尋
+中文版
+英文版
+兒童版
+青年農民創業入口網
+
+查　詢
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+農業科技決策支援資訊平臺簡介
+
+
+
+
+科技處 陳怡良 
+台灣農業科技資源運籌管理學會 李宜映
+
+壹 . 前言 
+　　面對知識經濟時代，為因應國內外趨勢快速變遷，尋求農業科技利基並提升決策品質，行政院農業委員會（以下簡稱農委會）於 101 年完成農業科技決策支援資訊平臺（ http://agritech-foresight.coa.gov.tw ）之建置。除強化資訊流通，持續整合農業科技相關重要網站之最新消息或重要研究成果等資訊外，並提供農業專業性、即時性、全方位的科技產業知識之服務。該平臺為一互動式平臺，除對內提供農業科技前瞻體系所研析之 74 項農業科技重要發展議題，作為農委會決策單位、試驗研究人員及農業科技審議會下農業科技發展規劃小組（簡稱科技智庫）諮詢專家擬定科技研發議題所需之背景資訊外，並透過此平臺交流意見，加速農業優先議題之聚焦，以尋求貿易自由化衝擊下，我國農業轉型與未來發展之利基。另亦開放予各界查詢及瀏覽，俾利大眾瞭解農業科技政策及重點發展方向。 
+
+貳 . 平臺之網頁架構及內容 
+　　該平臺網站之首頁如圖 1 ，分為「全球趨勢」、「重要議題分析」、「領域焦點新聞」、「農業科技前瞻計畫執行成果」及「線上學習」 5 大區塊，各區塊所提供之資訊如圖 2 ，簡介如下： 
+（一）全球趨勢 
+　　以國際農業科技發展方向與重大議題之資訊為主，包括：全球農業重要國家（美國、日本、韓國、中國大陸等）之農業發展方向、趨勢發展報告。現階段網站已蒐集「 2020 年日本農林水產研究基本計畫之發展策略及目標」、「中國大陸農業科技發展趨勢 2011-2015 」等 36 篇分析報告，提供農企業及農委會各機關 / 單位作為規劃未來產業方向之參考，並得以與國際無縫接軌。 
+（二）重要議題分析 
+　　針對農業重要議題及配合政府政策所指定主題，由農委會科技智庫及幕僚團隊進一步研析所產出相關報告與策略建議，目前網站已蒐集「全球農業重要百大問題之解讀」、「 2040 年全球農業與食品之發展契機」、「農業政策與科技研究建議書」等 20 篇分析專文，提供農委會內部各業務單位重點投入研發資源之參考依據。 
+（三）領域焦點新聞 
+　　常態性蒐集 10 個農業科技領域（農糧、生物技術、農業政策與科技管理、食品、 E 化、漁業、牧業、森林及生物多樣性、農業環境與防災、防疫檢疫）之新聞時事與焦點議題報導，並定期委請專家摘要評析，俾利瀏覽者就其所關切之領域，即時取得最新訊息及趨勢分析。對農委會各產業主管機關 / 單位及試驗改良場所同仁而言，可快速獲得最新焦點訊息，而毋須耗時費力於各個網站蒐集並加以篩選，大幅提高資訊擷取效率及政府行政效能。以「農糧」領域為例，現階段網站已蒐集「透過全球合作、番茄全基因解析成功」、「發現抗鎘越光水稻的基因」及「日本開發小型水田用的除草機器人（鴨子機器人）」等報導供各界參考。 
+（四）農業科技前瞻計畫執行成果 
+　　針對 97-100 年執行之「農業科技前瞻體系之建立」計畫，提供前開 10 個領域之「農業科技前瞻策略規劃成果」、「農業科技前瞻兩回合德菲調查結果」、「科技前瞻簡介與各國執行經驗分析」、「科技前瞻運作機制指導手冊」及「臺灣農業科技前瞻活動執行經驗與內涵」等資料供下載。除藉此平臺發表農業科技前瞻執行成果外，所獲致臺灣農業科技前瞻之 74 項重要議題，亦可供農委會各機關 / 單位業務執行之參考，提升決策品質。 
+（五）線上學習 
+　　集結農委會自 99 年以來，為強化農業科技研發人員邏輯思維並提升撰寫品質所舉辦之相關訓練課程講義，包括科技計畫評估撰寫手冊、科技計畫績效指標擬定撰寫手冊、科技計畫研提撰寫手冊、農業科技發展綱要計畫撰寫手冊、農業科技綱要計畫成效報告撰寫要領手冊等。藉由相關課程下載，亦讓無法實地參加課程之學員或對課程有興趣之民眾，能透過網路教學習得農業科技管理概念。此外， 102 年 5 月新上線之「前瞻分析與情境規劃工具應用」與「理性決策思維在農業領域之應用」 2 項課程，將特別提供農委會同仁數位學習時數，每項課程完成測驗且分數達 70 分以上，將授予 1 小時時數，使網站平臺教學資源，發揮其最大效益。 
+
+參 . 結語及展望 
+　　本網站平臺之特色，除設計上具備既有之資料瀏覽功能外，可進一步加強資訊串接，廣納國內外農業重要機構提供之最新消息。並透過農委會智庫蒐集資訊後，加以篩選及分析，以新聞快訊方式循序持續地播放，讓農業科技研發人員及網站電子報會員能更方便且快速獲得農業重要訊息。另考量所蒐整資料文獻格式不一，特改以標準化方式呈現，讓使用者細讀報告之前，可透過關鍵字蒐尋，先獲取摘要內容與作者等相關資訊，提升閱讀效率。同時亦提供最常點閱、推薦閱讀等統計資訊，讓使用者得以快速連結到熱門與推薦資料。此外，本平臺亦提供電子報訂閱，於每月初主動發送農業科技最新資訊，期望除提供客觀資訊及分析報告，更盼瀏覽本平臺之研發人員增進農業科技國際趨勢之視野，俾投入研發之主題更具國際競爭力。 
+圖 1 農業科技決策支援資訊平臺網站首頁 
+
+
+圖 2 農業科技決策支援平臺架構及 5 大區塊提供之資訊內容 
+
+
+
+
+
+
+
+
+
+
+
+
+
+102-05-16:4,805
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+:::首長信箱 
+農業財團法人彙總表 
+廉政資訊專區 
+性別平等 
+就業情報站 
+常見問答集 
+交流園地 
+會內資訊
+
+
+
+
+首長信箱農業財團法人彙總表廉政資訊專區性別平等就業情報站常見問答集交流園地會內資訊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+便民服務
+
+
+
+民眾申辦案件電子表單
+交流園地
+首長信箱
+常見問答集(FAQ)
+訴願程序說明
+
+
+
+
+
+
+
+
+
+重大政策
+
+
+
+產銷履歷—安全、永續、資訊公開之可追溯農產品
+輔導設立農業政策研究中心
+農村再生2.0創造臺灣農村的新價值
+雞蛋可溯源 衛生安全有保障
+飼料及寵物食品法規修正上路，強化管理提升產業責任
+
+
+
+
+
+
+
+
+
+關於農委會
+
+
+
+概述與沿革
+主任委員簡歷
+副主任委員簡歷
+專訪園地
+執掌與組織
+
+
+
+
+
+
+
+
+
+農業政策
+
+
+
+本會中程施政計畫(106至109年度)(草案)
+本會中程施政計畫（102至105年度）
+106年度施政計畫
+業務報告與施政報告
+每月重要措施
+
+
+
+
+
+
+
+
+
+
+農業法令
+
+
+
+農業主管法規查詢系統
+農田水利會相關法規
+農地管理法規檢索系統
+全國法規資料庫
+解釋令
+
+
+
+
+
+
+
+
+
+新聞與公報
+
+
+
+RSS 新聞台
+農業新聞
+農委會所屬機關新聞
+資訊圖文
+消費者新聞
+
+
+
+
+
+
+
+
+
+休閒與生活
+
+
+
+消費者資訊專區
+優質農產品查詢
+休閒旅遊
+多媒體影音
+農業故事報導
+
+
+
+
+
+
+
+
+
+農業科技
+
+
+
+農業敏感科技項目
+行政院農業委員會貴重儀器供學研單位服務清單
+
+
+
+
+
+
+
+
+
+
+統計與出版品
+
+
+
+農業統計
+經營管理合理化在農業之應用
+農業出版品
+農委會及所屬機關年報
+網路圖書館
+
+
+
+
+
+
+
+
+
+資料下載
+
+
+
+1. 行政院農業委員會logo及banner
+2. 農業天然災害救助作業
+3. 人事業務相關資料
+4. 研考業務相關資料
+5. 會計業務相關資料
+
+
+
+
+
+
+
+
+
+農委會計畫研提
+
+
+
+本會農業計畫管理系統
+農業科技計畫
+農業管理計畫
+農業發展計畫
+農村再生新農業示範計畫推動作業手冊
+
+
+
+
+
+
+
+
+
+政府資訊公開
+
+
+
+農業法規與解釋令
+法律草案公開
+執掌與組織
+支付或接受之補助
+行政指導文書
+
+
+
+
+
+
+
+
+
+
+相關網站連結
+
+
+
+行政院暨各部會屬
+農委會所屬機關
+農民團體(農會、漁會、農田水利會、合作社、產銷班)
+其他農業相關網站
+中央研究院
+
+
+
+
+
+
+
+
+
+線上申辦
+
+
+主題網站
+
+
+台灣農業故事館
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+隱私權保護宣告/資訊安全政策/網站資料開放宣告/本會位置圖/各縣市動物保護申訴電話/緊急災害聯絡
+
+
+農產品走私檢舉專線：0800-054300‧動物保護及畜禽產品走私檢舉專線：0800-231532‧農業諮詢專線：4499595(手機請加02)
+
+
+10014 臺北市中正區南海路 37 號‧電話：+886-2-2381
+-
+-2991‧傳真：+886-2-2331
+-
+-0341‧服務時間： AM8:30~PM5:30
+
+Copyright© 行政院農業委員會 版權所有	
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關閉
+
+
+

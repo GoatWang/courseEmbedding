@@ -1,0 +1,3578 @@
+
+
+國立交通大學機構典藏：次世代定序配接序列偵測演算法實作及其效能驗證
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 次世代定序配接序列偵測演算法實作及其效能驗證The Implementation of a Paired-End Adapter Sequence Detecting Algorithm and its Performance Evaluation
+作者: 翁瑞成Weng, Jui-Cheng洪瑞鴻Hung, Jui-Hung生物資訊及系統生物研究所
+關鍵字: 配接裁剪器;次世代定序;adapter trimmer;NGS
+公開日期: 2013
+摘要: 次世代定序已經成為現代檢測基因組遺傳信息的主要技術；而在此技術下所定序出的短去氧核醣核酸(DNA)序列，會被定序時的添加物－配接器(Adapter)序列所污染。然而，我們認為現在仍不存在一個有效率的方法去移除這些污染物。雖然這些短去氧核醣核酸序列約只佔整體定序產量的少部分，但這其中仍存在著對研究人員有用的資訊。
+為此我們開發出一個精準且快速的雙端定序(paired-end sequencing)配接器偵測演算法，我們命名為PEAT (Paired-End Adapter Trimmer)。PEAT專門用來處理雙端定序的序列資料。除了優異的速度與精確度之外，PEAT最大的優點是在使用時不需提供配接器序列；對目前許多配接器偵測演算法來說，提供的配接器序列長短與正確性直接的影響到該工具的效能，而PEAT則省去了輸入配接器序列的麻煩，尤其適合大規模處理不同來源的定序資料。
+其後，我們使用了模擬資料和從GEO資料庫下載的真實定序資料來與目前現有的配接器偵測工具做效能比較。在模擬資料與真資料的驗證上，PEAT的效能都優於其他工具。最後，我們再找了三組不同定序應用的資料組 (ChIP-seq、RNA-seq和MNase-seq)，配合各自的下游分析來比較PEAT和Bowtie2-aligner在區域排比(local alignment)模式下所處理過的資料對回參照序列後會有怎麼樣的表現；在這些分析的結果中，我們也再度驗證了PEAT所處理過的資料，會有更多的短序列被保留，並對資料的解讀有顯著的影響。我們因此建議次世代定序資料分析時宜採用高效的配接器偵測演算法。Next Generation Sequencing (NGS) has become the choice of detecting genetic information in cells. In a typical sequencing protocol, short DNA fragments sequenced by sequencers are contaminated by adapter sequences—an addition of unwanted sequence on the 3’ end. Unfortunately, a robust method that could deal with such contamination efficiently is still absent. Although the short DNA fragments only occupy about a small portion of the entire library, it may still possess useful information for researchers. 
+For this reason, we herein propose an accurate and fast paired-end adapter detecting algorithm, namely PEAT (Paired-End Adapter Trimmer). PEAT is specially designed for processing paired-end sequencing data. The biggest advantage of PEAT besides its speed and accuracy is the non-requirement of a priori adapter sequences; for some other adapter detecting algorithms, the size of provided adapter sequences directly influences the performance of the trimming tools, which is not a problem for PEAT. This feature makes PEAT especially suitable for processing different sequencing datasets in large-scale analysis.
+    We used the simulation and true sequencing datasets downloaded from GEO Library to conduct performance evaluation between PEAT and other existing adapter detecting tools. In the tests, PEAT outperformed all the other tools we tested. Additionally, we downloaded real life datasets from three different types of experimental applications (i.e., ChIP-seq, RNA-seq and MNase-seq) and processed them along with specific downstream analyses to compare the results with and without PEAT. Based on the results, we again verified that the data processed by PEAT preserved more short reads and helped correct interpretation of the data. We therefore strongly recommend the use of an efficient and accurate adapter trimmer, like PEAT, for the analysis of NGS data for all sorts of applications.
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT070157216http://hdl.handle.net/11536/75469
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRef基於次世代定序資料偵測小沉默核醣核酸上的非範本附尾修飾的高效排比器 / 周旻德;Chou, Min-Te;洪瑞鴻;Hung, Jui-HungPEAT: an intelligent and efficient paired-end sequencing adapter trimming algorithm / Li, Yun-Lung;Weng, Jui-Cheng;Hsiao, Chiung-Chih;Chou, Min-Te;Tseng, Chin-Wen革新次世代定序雲端分析平臺---使用雲端隨需自助服務與統一計算架構GPU運算 / 洪瑞鴻;Hung Jui-Hung罕見變異關聯性分析的分類與介紹 / 詹蕙安;Chan, Hui-An;黃冠華;Huang, Guan-Hua建置新一代高通量定序分析平臺---從定序、功能、到系統生物網路---利用次世代定序資料進行基因體重組的研究與結構變異的偵測 / 盧錦隆;LU CHIN LUNG國立暨南國際大學 - 序列串接變動長度碼及迴旋碼其疊代型整合式訊源/通道循序解碼演算法 / 羅謙鋒; Chien-Feng Lo 中原大學 - 基因序列區段重組及編碼區域預測之演算法實作和分析 / 邱華明 國立清華大學 - 直接序列分碼多工系統下針對多用戶偵測之解碼演算法改進 / 陳建銘; Chien-Ming Chen 中原大學 - 在選擇性衰減通道下以最大期望演算法及其改進演算法所設計的最大可能序列接收機之效能分析 / 賴誼遑; Yi-Huang Lai 南臺科技大學 - 高效能探勘序列型樣之演算法 / 塗剛; Tu,Kang 南臺科技大學 - 設計及完成一高效率次高頻多維度序列探勘演算法 / 吳弘文; Hung-Wen Wu Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：多種核糖核酸序列分析工具間之比較
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標題: 多種核糖核酸序列分析工具間之比較Comparison of Several RNA-Seq Expression Analytic Tools
+作者: 張耀升Chang, Yao-Sheng黃冠華劉玉麗Huang, Guan-HuaLiu, Yu-Li統計學研究所
+關鍵字: 基因表現量的核糖核酸序列分析;選擇性剪切;單純總片斷計數方法;考慮不同轉錄結構下之計數方法;RNA-Seq;alternative splicing;raw-count method;isoform deconvolution method
+公開日期: 2015
+摘要: 摘 要
+隨著次世代定序技術的蓬勃發展，許多用來偵測基因表現量的核糖核酸序列分析工具也隨之被建立起來。然而，透過這些分析工具得到的分析結果往往不是很一致，這是由於不同的分析工具被建立乃基於不同的統計思維與模型。核糖核酸序列分析工具就方法上主要分為兩種。其中一種計數方法，單純只考慮某個基因上所有片段的總計數量，進而決定該基因在不同狀況下表現與否，此方法稱為raw-count method，如edgeR與DESeq。也基於如此，針對該方法進而改進的工具也隨之建立，如DEXSeq，其不同點在於考慮各個基因在不同外顯子上的片段計量與使用程度。另一種方法則是進一步考慮基因在不同轉錄型態(isoform)上的片段富含程度，進而決定該基因表現與否，此法稱為isoform deconvolution method，如Cuffdiff 2。在過去研究中曾指出，考慮基因因替代性剪接(alternative splicing)在不同轉錄結構下的表現量，能有效地判斷出某些癌症細胞株與正常細胞株在基因表現量上的差異，而非單純能從基因的整體表現上區分出來。如此對於某些疾病而言，也許是個重要的轉機。在此次研究中，我們利用真實的資料並透過不同的核糖核酸序列分析工具，比較在不同條件或狀況下，所有表現量上具有顯著差異的基因總個數。進一步地，此次研究也模擬了四種最容易發生的轉錄型態，並讓片段的分配比例在此四種轉錄型態上同時發生單調遞增及遞減的變化，並與假設的基本轉錄型態配對且兩兩進行比較。最後藉由本次模擬，瞭解本文所建議的工具在上述的狀況發生下，整體的表現狀況為何。透過本次研究，我們發現在實際資料的分析上，edgeR與DESeq偵測到有表現差異的基因總個數與DEXSeq很相近。然而在模擬上，我們發現傳統的raw-count method，如edgeR與DESeq，無法偵測出基因在不同轉錄型態上片段分配比例產生單調遞增或遞減的變化。相對地，改進後的DEXSeq以及考慮另一種方法下的Cuffdiff 2，卻能有效地偵測出此種變化。於是透過本次研究，我們建議使用者在進行基因表現量差異的核糖核酸序列分析上，基於便利性，可以先粗略地採用edgeR以及DESeq，初步地獲得一個整體的結果，並進階的使用DEXSeq以及Cuffdiff 2有效地進行轉錄型態的分析。
+
+關鍵字: 基因表現量的核糖核酸序列分析，選擇性剪切，單純總片斷計數方法，考慮不同轉錄結構下之計數方法。ABSTRACT
+With the advance of  Next Generation Sequencing (NGS) technique, several RNA-Seq analytic tools have been developed to detect the gene expression levels. However, the results from these tools sometimes are not consistent. This is because different tools are built based on different statistical ideas and models. Two different types of approaches are adopted in RNA-Seq analytic tools. One is the raw-count method and the other is the isoform deconvolution method. The traditional raw-count method only considers the abundance of reads for each gene. The isoform deconvolution method considers the abundance of reads in each transcript of each gene in advance, which can be useful because sometimes one can effectively discriminate the expression of cancer cell lines from non-cancer lines at the isoform level, but not at the gene level. This may be an important mechanism for some disease potentially. Our study ran various RNA-Seq analytic tools to detect the total number of expression genes in a real data study. Furthermore, in the simulation study, we imitated four possible alternative spicing structures with the monotonic change of transcript proportions, and examined the performance of these tools via pairwise comparison. We concluded that the total numbers of expressed genes detected by non-modified and modified raw-count methods, edgeR, DESeq and DEXSeq, in real data study were very similar. However once the read proportions change under different isoforms (or transcripts), the modified raw-count method DEXSeq and the isoform deconvolution method Cuffdiff 2 can efficiently and significantly detect the changes of isoform expression, but raw-count methods edgeR and DESeq cannot verify these conditions. For convenience, user can use the simpler raw-count-based tools such as edgeR and DESeq to roughly verify the total number of expressed gene. After this, user can perform the gene expression in RAN-Seq analyses by using more efficient tool such as DEXSeq or Cuffdiff 2.
+
+Key words: RNA-Seq, alternative splicing, raw-count method, isoform deconvolution method
+URI: http://140.113.39.130/cdrfb3/record/nctu/#GT070252606http://hdl.handle.net/11536/126303
+顯示於類別：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IR@NCTUTAIRCrossRefRegRNA: an integrated web server for identifying regulatory RNA motifs and elements / Huang, Hsi-Yuan;Chien, Chia-Hung;Jen, Kuan-Hua;Huang, Hsien-DaSmall Molecule Amiloride Modulates Oncogenic RNA Alternative Splicing to Devitalize Human Cancer Cells / Chang, Jan-Gowth;Yang, Den-Mei;Chang, Wen-Hsin;Chow, Lu-Ping;Chan, Wen-Ling利用次世代定序技術系統化分析微小非編碼核醣核酸 / 王威霽;Wang, Wei-Chi;黃憲達;Huang, Hsien-DaFunctional Implications of RNA Splicing for Human Long Intergenic Noncoding RNAs / Chen, Feng-Chi;Pan, Chia-Lin;Lin, Hsuan-YumiRTar: an integrated system for identifying miRNA-target interactions in human / Hsu, Justin Bo-Kai;Chiu, Chih-Min;Hsu, Sheng-Da;Huang, Wei-Yun;Chien, Chia-HungSpliceInfo: an information repository for mRNA alternative splicing in human genome / Huang, HD;Horng, JT;Lin, FM;Chang, YC;Huang, CC國立中正大學 - 應用超虛數於去氧核糖核酸序列比對 / 呂委整 高雄醫學大學 - 引致與非引致糖尿病之克沙奇B5病毒株其p2C核酸序列之比較  / 周正忠;林貴香;董宜青;柯冠名;趙美琴 高雄醫學大學 - 引致與非引致糖尿病之克沙奇B5病毒株其p2C核酸序列之比較  / 周正忠;林貴香;董宜青;柯冠名;趙美琴 高雄醫學大學 - 引致與非引致糖尿病之克沙奇B5病毒株其p2C核酸序列之比較  / 周正忠;林貴香;董宜青;柯冠名;趙美琴 中國文化大學 - 利用核糖體ITS2和葉綠體trnL-trnF DNA序列進行土肉桂種原鑑定及核苷酸多型性之研究 / 李常暉 國立中興大學 - 禽痘毒4b基因部分片段及其核酸序列的比較 / 李國華; LI GUO-HUA Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：學術出版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+
+
+
+
+
+
+學術出版
+: [108112]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別
+
+
+專利資料
+
+技術報告
+
+教師專書
+
+會議論文
+
+期刊論文
+
+畢業論文
+
+研究計畫
+
+
+
+
+探索
+
+
+作者
+570 
+楊千495 
+Kuo, Hao-Chung446 
+陳光華374 
+張翼349 
+林進燈327 
+Lin, Chin-Teng322 
+陳安斌320 
+吳重雨318 
+李榮貴317 
+孫春在.
+下一步 >
+
+關鍵字
+449 
+類神經網路424 
+GaN423 
+INFORMATION422 
+電子工程419 
+ELECTRONIC-ENGINEERING408 
+ 329 
+氮化鎵301 
+薄膜電晶體293 
+OFDM275 
+電腦.
+下一步 >
+
+公開日期
+83654 
+2000 - 201724454 
+1911 - 1999
+
+
+
+
+
+
+
+
+
+國立交通大學機構典藏：畢業論文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please click here if you are not redirected within a few seconds.
+Skip navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目前位置：國立交通大學機構典藏
+學術出版
+
+
+
+
+
+
+畢業論文
+: [47103]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+公開日期標題作者2016基於位置感知非侵入式負載監測之建築能源管理系統簡子陽; Chien, Tzu-Yang; 曹孝櫟; Tsao, Shiao-Li; 資訊科學與工程研究所
+2016以網格為基礎的鄰近密集區域查詢之研究蘇庭昱; Su,Ting-Yu; 黃俊龍; 資訊科學與工程研究所
+2016標記有根樹的計數問題楊凱帆; Yang, Kai-Fan; 傅恆霖; 劉樹忠; Fu, Hung-Lin; Liu, Shu-Chung; 應用數學系所
+2015元件佈局相關之寄生效應和參數萃取方法應用於奈米射頻CMOS模擬及雜訊分析羅毅人; Lou, Yi-Jen; 郭治群; Guo, Jyh-Chyurn; 電子工程學系 電子研究所
+2015整合Kinect與加速規量化臨床Tinetti量表參數黃巖閔; Huang, Yan-Min; 楊秉祥; Yang, Bing-Shiang; 機械工程系所
+2015錶面氧化層對鍺化鎳奈米線錶面形貌的影響陳佩玟; Chen, Pei-Wen; 周苡嘉; Chou, Yi-Chia; 電子物理系所
+2015高效率平面式微光學聚光器李勝儀; 潘瑞文; 光電科技學程
+2015兩岸服務貿易協議對台灣電影產業影響-以文化例外出發討論洪灝淩; Hung, Hao-Ling; 陳在方; Chen, Tsai-Fang; 科技法律研究所
+2015漢語「人家」的語意解釋李靜汶; Li, Ching-Wen; 林若望; Lin, Jo-Wang; 外國語文學系外國文學與語言學碩士班
+2015浴缸內外高低差對進出浴缸動作跌倒風險的影響黃健祐; 楊秉祥; 機械工程系所
+2015耗散奈米線中接近量子相變點的非平衡電子傳輸行為林照蘊; Lin, Chao-Yun; 仲崇厚; Chung, Hou-Chung; 電子物理系所
+2015新竹市水源里地方守護的形成與轉化（1980-2014）林威廷; Lin, Wei-Ting; 莊雅仲; Chuang,Ya-Chung; 人文社會學系族群與文化碩士班
+2015氧化鋅奈米柱陣列長度與液晶預傾角關係之研究陳睦哲; Chen, Mu-Zhe; 鄭協昌; Jeng, Shie-Chang; 影像與生醫光電研究所
+2015藉由解剖學治療學及化學分類系統與同源藥理揭露非癌症藥物於癌症治療曾仁琥; Tseng, Jen-Hu; 楊進木; Yang, Jinn-Moon; 生物資訊及系統生物研究所
+2015整合薄膜電晶體及非揮發性浮動閘極記憶體的記憶體電晶體製備研究彭子瑄; Peng, Tzu-Hsuan; 謝宗雍; Hsieh,Tsung-Eong; 材料科學與工程學系所
+2015標準制定組織之專利集管型態與授權爭議分析葉家齊; Yeh, Chia-Chi; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015設計專利侵權判斷之研究—以美國法為中心陳盈如; Chen, Ying-Ju; 劉尚志; Liu, Shang-Jyh; 科技法律研究所
+2015台灣北部三個空品測站大氣超細微粒的特性李國瑞; Lee, Guo-Rui; 蔡春進; Tsai,Chuen-Jinn; 環境工程系所
+2015美國後eBay時代專利侵權案件永久禁制令之研究李玄; 王立達; 科技法律研究所
+2015拉普拉斯變換及其應用江培華; Chiang, Pei-Hua; 林琦焜; Lin, C. K.; 應用數學系所
+
+
+類別內的文件 (依公開日期由降冪排序排序)： 從 1 到 20 筆，總共 47103 筆
+
+
+ 下一頁 >
+
+
+
+
+探索
+
+
+作者
+547 
+楊千443 
+陳光華298 
+李榮貴297 
+唐瓔璋294 
+黃仁宏292 
+陳安斌267 
+鍾惠民260 
+虞孝成249 
+朱博湧248 
+孫春在.
+下一步 >
+
+關鍵字
+423 
+INFORMATION419 
+ELECTRONIC-ENGINEERING419 
+電子工程335 
+類神經網路282 
+氮化鎵272 
+電腦270 
+MANAGEMENT268 
+GaN265 
+管理260 
+薄膜電晶體.
+下一步 >
+
+公開日期
+33253 
+2000 - 201613850 
+1911 - 1999
+
+
+
+
+
+
+
+
+ 
+
+
+預測下一個生技世代的風貌(一)：NGS次世代定序的見微知著 | GeneOnline News
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+繁體
+簡體
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文章僅限註冊會員閱讀
+
+close
+
+登入
+註冊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+You are at:Home»專題報導»預測下一個生技世代的風貌(一)：NGS次世代定序的見微知著 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			預測下一個生技世代的風貌(一)：NGS次世代定序的見微知著			
+ 0
+
+
+
+小
+
+大
+
+
+
+
+
+
+
+
+
+
+
+
+By 
+				Editor-Jane
+
+on				
+七月 20, 2016
+
+
+專題報導, 預測下一個生技世代的風貌
+
+
+
+
+
+1995 年 11 月，美國微軟創辦人比爾･蓋茲發表新書 The Road Ahead (中文譯為《擁抱未來》)，準確預測下一個資訊世代將會是電腦無縫接軌 (seamless computing) 的時代，任何資訊都可隨時隨地以各種不同的裝置即時取得，而電腦也將從單點運作化為二維網絡，甚至可結合現實生活的人、事、物達到3D資訊結構。事實證明，比爾･蓋茲的預測在不到二十年後即全面實現，現在的智慧型隨身裝置、雲端計算、以及物聯網的發展甚至超越當時想像力的極限。而當今的生技產業正如 1995 年的資訊業，同樣有許多新技術竄出頭、有雄厚資金投入其中、有各國政府大力支持、也有大量新人才和新點子激起活力和創意。這一系列專文將大膽預測下個生技世代可能呈現的風貌，也會剖析帶動下一世代生醫發展的關鍵六大技術：NGS 次世代定序、大數據分析、蛋白質體學、液態生物檢體 (liquid biopsy)、CRISPR 基因修飾技術、以及 3D 生物列印 (bioprinting)。未來結合資訊、速度、精準度、以及病源根除工具之嶄新生醫健康產業，非常值得期待！
+認識 NGS 次世代定序 (next-generation sequencing)
+2003 年 04 月 14 日，人類基因體完整定序圖譜出爐，整整耗費 13 年的時間和 27 億美元的經費，才得到一組基因體序列。時間來到 2016 年，完成一個人的基因體定序僅需 26 小時和 1,500 美元，如此驚人的落差，主要是 NGS 次世代定序技術所造就。
+由於 NGS 已是非常成熟的技術， 相關的科研計劃及臨床運用也越來越廣泛。在科研方面，去年《Science》期刊上發表的伊波拉病毒基因，就是藉由 NGS 去分析它的起源。臨床研究方面，NGS 也常被用來做基因的篩選、檢測及治療用藥的評估，而許多實驗室及臨床計畫皆透過與經驗豐富的業界團隊合作來完成，業界提供客製化的科研服務也是近年的趨勢。尤其 NGS 產出數據的流程已經標準化，實驗設計及數據產出後的分析將扮演關鍵的角色。由 NGS 產生的大量數據動輒數十億至數千億個鹼基，在分析時從軟體選擇，參數設定、軟體串連到最後的驗證等都有相當難度。因此，有經驗的分析團隊是目前許多研究單位最缺乏，卻也是 NGS 流程中最不可或缺的。幾年前，中國華大基因可說是從科研服務起家，而台灣的 Biotools 圖爾思生物科技，近年來也提供這樣的 NGS 服務，讓許多研究單位可借重業界的數據分析經驗和團隊。在少子化的時代，尤其是實驗室人力逐漸銳減下，不失為一個不錯的選擇。
+目前 NGS 技術主要有幾種：
+
+Illumina (Solexa) NGS MiniSeq/MiSeq/NextSeq/HiSeq
+Solexa 公司於 1998 年由兩位英國劍橋大學的科學家創辦，而其核心 NGS 技術的特色是將待定序的序列切成 100-150 個鹼基長的短片段後再大量複製各個片段，然後再將各片段的一端固定在平面上，以帶有螢光的鹼基進行定序。螢光鹼基結合 DNA 序列後就會發光，而電腦可捕捉這些螢光影像並同時讀取上萬片段的序列。由於每次反應只會接上一個新的螢光鹼基，所以只要讀取 100-150 個影像就能完成所有片段的定序，可大幅縮短資料讀取時間，而隨著技術的的進步被讀取的鹼基長度也更長。最後再利用電腦整合各片段的資訊，即可獲得完整的序列。Solexa 公司於 2007 年被 DNA 定序巨擘 Illumina 買下，而目前Illumina 堪稱 DNA 定序的全球龍頭，年營業額高達 16 億美金。現在全世界 90% 已定序的 DNA 序列，都是由 Illumina 的技術或機器所完成。
+ThermoFisher Ion Proton/Ion PGM/Ion S5
+Ion Torrent 的 NGS 技術早期屬於 Life Technologies，後來在 2014 年被 ThermoFisher 併購。這項技術是利用鹼基在定序過程結合上 DNA 序列後即會釋放一個氫離子的原理，捨棄過去以光學訊號作為讀取鹼基的基礎。ThermoFisher 的 NGS 的基本操作方式與 454 NGS 相當類似，是將待定序的序列切成 200 個鹼基長左右的小片段，然後將個別片段與單一珠子結合，再置入微量盤上的獨立凹槽進行片段複製。接下來同樣是利用一次將微量盤充滿一種鹼基的方式進行定序，但最大的差別是在於電腦會偵測氫離子釋放的訊號和數目，而不是光訊號。454 NGS 最大的弱點在於待定序片段出現一整串相同鹼基時 (例如：AAAAA)，電腦有時會分不清楚光學訊號而誤判鹼基數。不過偵測氫離子數目的 Ion Torrent 可以減少這種問題，故精準度可提升許多。
+454 NGS
+454 生命科學公司於 2005 年推出這項快速定序技術，是將待定序的序列切成 1,000 個鹼基長左右的大片段，再將這些片段與特殊珠料結合，每一個珠子上只會有一種片段。接下來，每個珠子將會被分到微量盤上的獨立凹槽進行片段複製作業。完成複製後，微量盤則會加滿同一種鹼基，而這些鹼基與 DNA 序列結合後就會釋放光訊號讓電腦可讀取序列。反應完成後，多餘的鹼基將會被洗掉，然後微量盤會重新充滿另一種鹼基。這種定序方式只須註意單一訊號即可，電腦不須區分四種鹼基的螢光顏色，因此定序速度可大幅提升，定序成本也可降低許多。2007 年，454 生命科學被 Roche 公司買下，不過隨著近年有更便宜而準確的 NGS 技術陸續推出，454 NGS的市占率也逐漸下滑，促使 Roche 公司宣佈將於 2016 年結束這個平臺，不再提供服務。
+
+
+延伸閱讀：美國 Foundation Medicine 宣佈與阿斯利康繼續合作 並取得 Sequenom 定序實驗室
+NGS次世代定序在生技和醫療的價值
+而全球 NGS 市場在 2021 年估計可達到 104 億美元的產值，主要價值在於基因序列即時偵測和大數據整合。若能立即瞭解特定基因甚至基因體的序列，研發各種轉殖微生物、生產單株抗體的細胞、或具有特定特徵的農作物將可大幅縮短時間並提升效率；而在臨床上，快速定序有助於診斷遺傳性疾病、判斷腫瘤類型、或是預測各種疾病的發病風險等等。而更上一層樓來看，所有這些定序的資訊若能透過大數據系統進行整合，將有助於瞭解每個基因的功能、基因與基因之間的互動、以及非基因的序列之功能和意義，真正地解開基因體的奧秘。
+NGS 技術除了應用在基因體的範疇之外, 從轉錄體 (transcriptome，即生物個體在任一時間點真正被轉錄出來的訊息 RNA，可反應當下有在發揮功能的基因種類) 與表觀體 (epigenome，即一個基因體上的各種表觀遺傳學修飾情形，像是甲基化、乙醯化等等) 的層面進行剖析更能夠表現出生物體內的即時狀態，這有機會讓醫療真正進入「即時醫學」和「預防醫學」的時代，未來可能不只癌症，各式各樣的遺傳性疾病、慢性病、或感染性疾病，都有機會進行即時病況追蹤和治療療效評估，甚至可達到前期預防的境界。
+本文末與讀者分享長庚醫院人類全基因體疾病研究核心實驗室於 2016 的演說：
+http://pics.ee/uoN
+©www.geneonline.news. All rights reserved. 基因線上版權所有 未經授權不得轉載。合作請聯繫：service@geneonlineasia.com
+分享此文：按一下以分享至 Facebook(在新視窗中開啟)分享到 LinkedIn(在新視窗中開啟)點這裡寄給朋友(在新視窗中開啟)點這裡列印(在新視窗中開啟)點擊分享到 Google+(在新視窗中開啟)
+
+相關
+
+
+
+
+
+Share.
+
+
+Twitter
+
+
+Facebook
+
+
+Line
+
+
+
+
+
+
+
+
+LinkedIn
+
+
+
+
+Email
+
+
+
+
+Related Posts
+
+
+
+
+
+
+
+七月 11, 2017 0
+
+木乃伊的 DNA (下)：古今埃及人的不變與變
+
+
+
+
+
+
+
+
+七月 10, 2017 0
+
+木乃伊的DNA (上)：用遺傳學破解神秘古埃及  曾經輝煌的古埃及文明
+
+
+
+
+
+
+
+
+六月 28, 2017 0
+
+生物時鐘與腸道菌有什麼關連？
+
+
+
+
+
+
+
+Leave A Reply Cancel Reply 
+
+
+Connect with:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 用電子郵件通知我後續的迴響。 新文章使用電子郵件通知我。 
+
+
+
+
+
+
+
+
+基因史上的今天
+
+
+
+
+
+
+六月 13, 2017 0
+
+
+							1926年06月13日 法國小兒科醫師與遺傳學家 Jérôme Lejeune誕生
+
+
+
+
+會員登入You are not logged in.帳號密碼 忘記?  註冊
+Connect with: 
+
+
+
+
+
+基因史上的今天
+
+
+
+
+
+
+六月 13, 2017 0
+
+
+							1926年06月13日 法國小兒科醫師與遺傳學家 Jérôme Lejeune誕生
+
+
+
+
+ 近期文章 
+
+奈米魔鬼氈捕捉母血中胎兒細胞，非侵入式產前診斷大躍進
+
+
+華大基因 成功搶攻創業板掛牌上市
+
+
+蝙蝠是冠狀病毒（coronavirus）的儲存庫 ?
+
+
+撥雲見日：從 2017 日本生技展見證日本生醫產業的轉守為攻
+
+
+木乃伊的 DNA (下)：古今埃及人的不變與變
+
+
+木乃伊的DNA (上)：用遺傳學破解神秘古埃及  曾經輝煌的古埃及文明
+
+
+英國健保超前瞻：力拚全國病患的全基因體定序
+
+
+《盧煜明教授專訪》一項改變世界的技術：非侵入性產前基因檢測
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+寄到電子郵件位址
+
+帳號
+
+你的Email
+
+
+
+
+
+取消
+
+				文章沒有送出-請確認你的Email位置			
+
+				Email確認失敗,請稍後再試.			
+
+				抱歉，你的網誌無法透過電子郵件分享			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+專題報導 | GeneOnline News
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+繁體
+簡體
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+文章僅限註冊會員閱讀
+
+close
+
+登入
+註冊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+You are at:Home»Category: "專題報導" 
+
+
+
+
+
+Browsing: 專題報導
+
+
+
+基因與考古
+
+
+
+
+七月 11, 2017 0
+
+木乃伊的 DNA (下)：古今埃及人的不變與變
+第一批古埃及基因組 終於，我們…
+
+
+
+
+
+基因與考古
+
+
+
+
+七月 10, 2017 0
+
+木乃伊的DNA (上)：用遺傳學破解神秘古埃及  曾經輝煌的古埃及文明
+埃及曾經有過輝煌的古文明，即使…
+
+
+
+
+
+人物專訪
+
+
+
+
+七月 5, 2017 0
+
+《盧煜明教授專訪》一項改變世界的技術：非侵入性產前基因檢測
+被譽為「中國諾貝爾獎」的未來科…
+
+
+
+
+
+專題報導
+
+
+
+
+六月 28, 2017 0
+
+生物時鐘與腸道菌有什麼關連？
+近年來，研究腸道菌如何影響生物…
+
+
+
+
+
+專題報導
+
+
+
+
+六月 27, 2017 0
+
+ASCO 系列報導 (一)：非小細胞肺癌治療，分子檢測強助攻是關鍵
+癌症年度盛會「美國臨床腫瘤學會…
+
+
+
+
+
+人物專訪
+
+
+
+
+六月 15, 2017 0
+
+精準醫學活氧計畫   訊聯生技集團蔡政憲博士談生技大數據願景
+今年四月美國 FDA 核准 2…
+
+
+
+
+
+基因與考古
+
+
+
+
+六月 5, 2017 0
+
+油脂人生（下）：千變萬化，屢受選汰的去飽和酶
+一個遺傳變異假如由於對生存有利…
+
+
+
+
+
+基因與考古
+
+
+
+
+六月 3, 2017 0
+
+油脂人生（上）：不可或缺的去飽和酶
+大家都聽過 DHA（docos…
+
+
+
+
+
+人物專訪
+
+
+
+
+五月 23, 2017 0
+
+國家衛生研究院 高承源博士：剖析熱門腸道菌相研究趨勢
+近年來國際上腸道菌相的研究相當…
+
+
+
+
+
+專題報導
+
+
+
+
+五月 10, 2017 0
+
+瘧原蟲如何流布無窮？
+雖然時間已經來到二十一世紀，但…
+
+
+
+
+
+1
+2
+3
+…
+13
+Next 
+
+
+
+
+基因史上的今天
+
+
+
+
+
+
+六月 13, 2017 0
+
+
+							1926年06月13日 法國小兒科醫師與遺傳學家 Jérôme Lejeune誕生
+
+
+
+
+會員登入You are not logged in.帳號密碼 忘記?  註冊
+Connect with: 
+
+
+
+
+
+基因史上的今天
+
+
+
+
+
+
+六月 13, 2017 0
+
+
+							1926年06月13日 法國小兒科醫師與遺傳學家 Jérôme Lejeune誕生
+
+
+
+
+ 近期文章 
+
+奈米魔鬼氈捕捉母血中胎兒細胞，非侵入式產前診斷大躍進
+
+
+華大基因 成功搶攻創業板掛牌上市
+
+
+蝙蝠是冠狀病毒（coronavirus）的儲存庫 ?
+
+
+撥雲見日：從 2017 日本生技展見證日本生醫產業的轉守為攻
+
+
+木乃伊的 DNA (下)：古今埃及人的不變與變
+
+
+木乃伊的DNA (上)：用遺傳學破解神秘古埃及  曾經輝煌的古埃及文明
+
+
+英國健保超前瞻：力拚全國病患的全基因體定序
+
+
+《盧煜明教授專訪》一項改變世界的技術：非侵入性產前基因檢測
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+科技報導: 新世代定序結果分析與解讀
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網頁
+
+
+
+首頁
+
+
+科學月刊
+
+
+科月Blog
+
+
+科月FB
+
+
+生命科學論壇
+
+
+關於我們
+
+
+稿約
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+新世代定序結果分析與解讀
+
+
+
+
+
+作者／黃彥華（任職陽明大學系統與合成生物學研究中心）
+
+新世代定序技術，可以使我們快速獲得基因序列，但是定序結果和參考序的比對，或是完整基因體序列的組裝，都只是第一步，後續的「進階分析」及「資料解讀」，才是重點所在，才能有效地由這「大數據」之中，萃取出隱藏的生物醫學意義。
+
+
+NGS的發展　將加速研究
+
+過去十年來，新世代定序技術（next generation sequencing technologies, NGS）突飛猛進，隨著
+不同的商業化技術服務問市，如Roche 454 pyrosequencing、Illumina Solexa、Life Technologies
+SOLiD，使得基因體及轉錄體定序效率大為提高、價格快速下降，也讓過去受限於定序成本及效率的各種生物醫學研究，得到了很大的幫助。例如由美國國家基因體研究所（NHGRI）所資助的ENCODE計畫（ENCyclopedia Of DNA Elements），即為其中最令人印象深刻的一個例子。因為NGS技術的發展，ENCODE計畫大量的引用「以新世代定序技術為基礎」的各種研究方法，如染色質免疫沉澱–測序（ChIP-sequencing）的技術，來研究轉錄因子的在各種不同的組織，在染色體上的結合位置。由於ENCODE計畫對基因體調控區、基因表現調控機制、組織特異性（tissue-specificity）的諸多發現，對各種生醫研究具有重大意義，因此被Nature期刊選為2012年的十大科研新聞之一。我們可以預期，如果ENCODE計畫之中，還是採用費時、精確度不高的前一代研究方法，是不可能得到如此良好的結果。
+
+新世代定序技術， 除了在基礎研究上提供了前所未有的豐富資料外，在轉譯醫學方面，因為利用高通量的NGS技術，對於遺傳及基因體變異疾病的致病因子及其機制，也有了許多重大的發現。目前醫學上有記錄的單基因遺傳疾病約有7000種，對於其中50％的疾病，已有若干致病基因變異被發現。有樂觀的研究人員，預測在2020年左右，因為定序技術的顯著改善，將可以破解餘下大部分單基因疾病的致病基因變異。
+
+此外，對於「癌症」這種已被認為是「基因體的疾病」而言，國際上的大型計畫，如美國國家衛生院資助的「癌症基因體圖譜計畫」（The Cancer Genome Atlas, TCGA）、國際合作的「國際癌症基因體聯盟」（International Cancer Genome Consortium, ICGC）對各種人類癌症展開了大規模的定序計畫。TCGA預計在2015年底，要對25種癌症、超過一萬份來自病人的癌組織樣本，進行外顯子（exon）甚至是全基因體定序。我們可以預期，利用新世代定序技術的所得到的研究成果，將為人類提供大量的「致病的基因變異」及相關的「基因表現調控變化」的資料，為藥物基因體學（pharmacogenomics）奠定良好的基礎。研究人員將可以為不同的致病機制，設計不同的治療方法。也許在未來，醫療的目標，將會由「對症下藥」，變成「對人下藥」，也就是「針對不同的個人，其致病的不同基因變異，選用適當治療方式」。
+
+有鑑於現今各種高通量技術在生醫產業應用的高度潛力，特別是在實現個人化醫療上、提供了造福全人類之健康的新希望。美國食品藥物管理局（FDA），於2013年10月，發佈了一份宣言《為個人化醫療鋪路，食藥局在這個新世代中對醫療產品發展所擔當的角色》（Paving the way for personalized medicine, FDA’s role in a new era of medical Product Development）。在這個宣言中，明確指出，新世代定序技術、計算生物學（生物資訊學）等領域快速進展，帶給了「個人化醫療」光明的前景。此外，FDA也在同一年11月，首次認證了NGS可以做為醫療診斷之用途。
+
+NGS技術仍在快速進步之中，今年初（2014）Illumina公司已宣稱，使用該公司最新的HiSeq X Ten定序儀，可以在不到一天的時間內，以美金1000元的成本，定出個人的基因體全序列。以上這些事件，都指出同一個事實：各種高通量實驗技術，特別是新世代定序技術相關的應用，已經漸趨成熟穩定，將成為生醫產業之應用上的可以信賴的工具。我們可以預期，在可以預見的未來，應用NGS技術，將使得和人類疾病相關的基因體變異、基因表現之調控等資料，快速累積，此外，NGS技術也可應用於農林漁牧等領域上，加速對於生物多樣性、特殊表現型的相關研究。最後這些知識，將會應用於轉譯研究，造福人類的生活。
+
+成功關鍵　在於「解讀」
+
+目前可以應用NGS技術的生醫研究領域，若是依研究的對象，基本上可以略分為，一、人類基因體研究及基因流行病學研究；二、模式物種、或是特有品系的基因體註解及比較基因體研究。欲進行這些研究，需要下列三類生物序列及資訊處理分析能力：
+
+（1）基因體（或表現序列）定序結果與參考基因體序列之快速比對
+（2）將基因體定序結果快速組合為基因體全序列（de novo sequence assembly）
+（3）解讀上述分析的結果，以回答該研究計畫，最初想要回答的問題
+
+以目前臺灣來說， 已有很多學研團隊、定序服務公司、甚至對大資料之分析有興趣的個別研究者，可以做到第（1）、（2）類的新世代定序結果分析。但是針對生物醫學的研究計畫目的，解決生物醫學的問題，則不是上述單純的、定型化的技術操作，可以達到的目的。在以下的介紹，為了能讓讀者可以比較瞭解第（3）類資料解讀，和第（1）、（2）類的分析（以下將簡稱為「基本分析」）之間的差別，首先以「人類基因體研究及基因流行病學研究」為例，分別討論「基本分析」與「解讀」意義之時，所牽涉到的不同工作內容及特性。其次，關於進行「模式物種或是特有品系的全基因體註解和比較基因體研究」，所涉及的分析種類繁多，解讀之過程必須整合各種不同的分析及實驗結果，和人類基因體相關研究之間具有相當的差異，因此也於此另分段落提出我們個人的看法。
+
+人類基因體及基因流行病學
+
+NGS 定序結果的「基本分析」將成為實驗室常規
+NGS技術的價格繼續下降及產能不斷提升，我們可以預期在不久的未來，NGS技術將會被一般規模的生物醫學實驗室大量採用，不會再是大型整合性計畫才能買單的高貴技術。另外，在定序結果的分析方面，不具生物資訊專才的研究人員，也可以很容易且可以在短時間之內，便完成上述第（1）、（2）類的分析。以一人份的外顯子定序結果而言，原始資料量可能是10 Giga bytes，分析過程產生的資料，可能會有30~50 Giga bytes。雖然看起來NGS的資料量很大，但是經過了過去數年的發展，現在不論是開源（open-source）或是商用軟體，都已經有良好而且方便的整合流程可以利用。如果偏好使用開源軟體來進行資料分析，想要「自行」找到病人基因體或是外顯子區域（exome）和參考序列不同之處，並不是十分困難的工作。比如說，在臺灣的生醫研究人員，可以考慮使用國家高速網路與計算中心所提供的Galaxy系統，參考生物資訊核心設施所提供的教育訓練材料；此外，也可以使用商用軟體，如CLC Bio來進行上述的定序比對分析、或是全基因體組裝的工作。
+
+挑戰—有效地解讀資料
+但是以上的步驟完成之後，並不意味著隱藏在新世代定序結果之中的生物醫學意義，可以被順利解讀。這種資料解讀的工作，是在新世代定序數據分析之中，最困難的一個環節，也是決定研究計畫成敗的關鍵。以加拿大的經驗為例，應用新世代定序結果分析，來尋找單基因致病變異，只有66％的成功率（Finding of Rare Disease Genes Canada, FORGE Canada）。很明顯的，在NGS被廣泛使用的今天，得到大量序列、並進行初步的分析，是相對的容易，但是進一步「解讀」結果，是具有挑戰性的。
+
+舉例而言，在應用NGS技術於尋找致病基因變異時，最常見的一種困難，是得到數以萬計的候選變異位點，使得研究人員，無法直接以實驗方式，對各別的變異位點，逐一驗證和欲研究之生物現象之間的關聯性。要解決這樣的困境，必須要針對研究的目的，客製化資料分析的策略，將初始的序列比對結果，配合已有的各種生物知識，包含基因體註解、基因表現、生物路徑等等各種資料庫，進行進階分析。比如在尋找單基因遺傳疾病之致病變異時，由數以千計的候選位點之中，過濾出少於50個、最有可能造成疾病的基因變異，可能要配合各種人類基因體變異資料庫，如dbSNP、The 1000 Genomes Project、ClinVar、COSMIC、LSDB、HGMD等，來對候選的致病變異來進行過濾。
+
+此外，在找到比較確定的致病基因變異位點後，為了預測基因變異對於細胞及組織的影響，以建議可能的致病機制並協助後續的實驗設計，此時就會要設計更進階的異質資料整合策略。舉例而言，若是發現和某特定疾病相關的基因體變化，是座落於非蛋白質轉譯區域（non-protein-coding region），在致病機制的研究上，在過去會造成很大的困擾。
+
+因此，在解讀定序結果時，研究人員必須要考慮其它的可能性，如致病的基因體變異，是不是會影響轉錄因子和該變異區域的結合、或是改變了基因正常的剪接型式的調控。此時，一種可能的研究方式，是利用ENCODE已分析的實驗結果，來查詢是否和我們有興趣的區域重疊。換言之，我們在分析新世代定序數據時，很可能會利用其它研究所產生的大數據，來輔助解讀自己手上的新世代定序結果。
+
+特有物種及比較基因體研究
+
+NGS之技術，應用範圍不只是針對人類遺傳或是基因體疾病之研究而已，還可以用來研究病原致病之機制，以及新穎物種（品系）之特有的表現型調控機制等等。這種型式的資料分析，和一般已有參考序列（如人類基因體）之分析目的不同，因為前者的目的，是要研究特定物種之所以會有特別的表現型，其在基因層次的調控機制。比如榮陽團隊的靈芝基因體及表現體定序計畫，其中一個很重要的目的，是要藉由基因表現的資訊，註解生物反應路徑的啟動狀況，以明確指出「靈芝的菌絲體及子實體，皆可以產生可以調節哺乳類免疫功能的三帖類」。
+
+（三帖類：一種化學物質，普遍存在於菌菇類植物當中。）
+
+乍看之下，有了特定物種的定序結果，得到了組合序列或是完整的基因體全序列後，要想達到上述目的，似乎只需兩個步驟而已：使用NCBI BLAST進行序列資料庫比對，再使用京都基因與基因體百科全書（Kyoto Encyclopedia of Genes and Genome, KEGG）資料庫與相關工具，輔助註解新物種的生物反應路徑。但是，一個具前瞻性的新物種或是品系的基因體定序計畫，是具有開創該領域新的研究方向的作用，如人類基因體計畫的完成，對於各種生醫研究，都有著巨大的影響。因此，在進行基因體註解之時，為了能確實達到新物種定序計畫，所期望達到的生醫研究目的，有許多值得考慮的品管及進階分析議題。而類似的發想，也可以適用於其它物種的基因體定序計畫。例如在完成經濟物種的定序計畫後，經由註解，所得到的精確的基因體功能區及調控區的資料，可以應用於進階的實驗設計，有助於日後品系之鑑定、品種改良、育種等生技產業應用。以下我們將針對全基因體定序計畫之中，所包含的品質控管及多樣性的分析項目，進行討論。
+
+NCBI BLAST（NCBI Basic Local Alignment Search Tool）
+美國國家生物技術資訊中心（National Center for Biotechnology Information, NCBI）隸屬於美國國衛院（NIH）。BLAST為在NCBI網站所提供資料庫搜尋的工具，主要在做生物序列如DNA、蛋白質序列的比對。
+
+品質管控
+在基因體序列的獲得及註解之中，全基因體定序及組合序列的品質評估，是一個相對被輕視的項目，最常見的評估，一般只有序列組合長度分佈（如N50）。但是，如果定序結果、或是組合序列的品質沒有達到一定的水準，後續的基因體註解，甚至是比較基因體學分析，既使做得再好，也無法彌補原始資料的誤失。換言之，新物種的註解，不只是比對序列資料庫而已，必須要重視所有處理資料及步驟的品質，對每個步驟所產生的衍生性資料，都要確實檢驗，是否有達到品管的要求，以確保最後的結果，是可以作為後續研究的基礎。比如說，具國際水準的生物資訊核心設施，在進行新物種之全基因體註解之前，除上述的序列組合長度分佈外，還會用原始定序讀序（reads）的再比對率（remapping ratio）、是否有外來物種污染定序結果、基因預測之狀況 （如基因數目、基因長度、及外顯子數量分佈、與相近物種之基因的差別大小、新穎基因的數量、基因的鹼基比例偏向、不含「已知基因」之區域的長度及分佈等），來對全基因體定序及組合之成果，進行進階的精細的評估。以上的這些結果，若與預期之範圍，有很大的出入，可能表示定序的結果或是序列組合的狀況，並不理想。以下舉出兩種經常會發生的意外狀況：
+
+．在定序結果之中，有高比例的讀序（reads），其末端序列呈現不正常的鹼基偏向，這有可能是定序時插入序列的長度太短，以致於在定序時，對3’端點的讀序過程中，包含了轉接子（adaptor）區域。
+
+．預測的基因數量，遠遠超過預期，比如和類似物種的註解結果相比，具有兩倍以上的基因。這種狀況，可以意味著組合序列的完整性低於預期，以致於有相當多的基因，被截成兩段，分在不同的接合序列（contigs）上。
+
+除了以上的兩種狀況之外，還有更多的全基因體組合的品管問題，值得在進行全基因體的註解過程之中，加以考慮。
+
+多樣性分析
+一個具有國際水準的基因體定序計畫，一定包含一個完整的「基因體註解」、以及「比較基因體分析」。在新基因體定序計畫之中，序列的獲得、組合、與註解，是為了達到生物學研究上預先設定的目的，期望由定序結果的分析及比對，可以告訴我們一些本來不知道的資訊，並期望能由於這些知識，指引未來的研究方向及實驗設計。因此，完整的基因體註解，所涵蓋的分析項目，可能是超乎一般人想像的多，可以進行的分析種類，不是只有用區域性序列比對工具如BLAST進行序列資料庫的相似性比對而已。以英國劍橋桑格研究所（The Wellcome Trust Sanger Institute）與歐洲分子生物實驗室（EMBL）的歐洲生物資訊研究中心（EBI）合作的Ensembl計畫為例，對人類基因體的基本註解流程，就超過了50種以上的不同的基本分析項目，除了預測並註解基因的位置及結構外，還要再預測蛋白質功能區域、蛋白質修飾位點、基因家族（gene family）、預測外泌蛋白之特徵、基因啟動子預測、非蛋白質基因（noncoding RNA genes，如tRNA、miRNA、lncRNA）、在不同組織之中表現體分析、基因結構比對、重複性序列註解等等（可參見Ensembl網站）。此外，因為近年來在公開領域（public-domain）高通量資料之累積，Ensembl也加入了大量的基因表現、調控實驗結果，特別是來自於ENCODE的資料。
+
+DNA定序技術
+傳統定序→新世代定序→資料的解讀與分析→
+
+傳統定序可分為「Sanger定序法」及「化學斷裂法」。將待定序的基因序列切成小片段，接入細菌質體，利用細菌生長繁殖快速的特性，大量複製待測質體片段，再利用電泳分析讀出DNA序列。適用於較長的DNA片段，但傳統定序法費工繁瑣，且十分昂貴。
+
+新世代定序常見的儀器有Roche 454、Illumina Solexa及Life Technologies SOLiD，大幅提高效率、價格快速下降。先解讀各小片段基因序列，再運用資訊科技協助進行片段接合，不需進行質體複製，減少錯誤發生。
+
+另外一個重要的基因體定序結果的分析項目：跨物種的基因體比對。這種分析，是利用演化所提供的線索，比較不同基因體間序列層次亦或是基因層次的異同。這種研究方法，除了應用於人類致病基因變異的研究之外，尚有其它多種應用的可能性：比如對於新定序的物種而言，可以借用相近的模式物種已有的基因體定序及註解結果，來加速對這個物種的基因結構、基因功能、及生物反應路徑的註解，找出新物種所具有的新穎表現型的調控機制；在流行病學方面，可以從病原菌間基因體相似程度推測，在不同時間地點發生的傳染病之間是否有相關性，藉此找出可能的病源、進而達到對傳染病的監控。
+
+資料之整合　是未來的趨勢
+
+隨著NGS技術的進步，在未來的研究與應用之中，基因體序列將快速累積，在這種情況下，若再考慮人類族群基因體研究或是比較眾多物種基因體研究，則需要整合的定序結果的資料筆數（如人次）可能高達數十乃至於上千。近兩年來，在國際生醫研究領域，針對少量（如小於10位）病人或是物種品系的定序結果分析，已不再被視為是新穎之事，目前在國際一流生醫期刊上，已經可以看到基於數千份、甚至是上萬份定序結果的研究。如沃克（David H Walker）等人於2013年發表於The Lancet infectious diseases期刊的流行病學研究，針對了390株結核桿菌，進行了全基因體定序及分析；另外珀塞爾米（Shaun M. Purcell）等人 於2014年2月，發表於Nature期刊，關於思覺失調症（schizophrenia）的致病變異研究之中，對2536位病人及2543位正常人，進行了外顯子定序（exome-sequencing）分析。
+
+此外，近年來國際大型研究計畫的趨勢，走向了多樣性異質資料的收集。如ENCODE及TCGA等國際計畫，所開放的相關定序資料，涵蓋了基因體、轉譯體、附基因體、微小核醣核酸等等，另外，TCGA還收集了相當完整的臨床資料。這些計畫，已經將大部份的資料公開，如上述的The 1000 Genomes Project以及ENCODE都已經將資料公開，供各方自由下載使用。這些資料和以往最大的不同，在於其巨大的資料份數，以及分析時必須進行的複雜資料整合。
+
+對於臺灣一般規模的生醫實驗室而言，面對高度的國際競爭，我們可以參考國際上已有之範例：其一，我們應善加利用各種國際大型研究計畫所產生的成果。利用資料探勘的技術，由這些龐大的、多樣性的異質資料之中，整合解讀出其中隱藏的意義，協助產生假說、並進而設計小型實驗予以驗證。其二，是各個團隊之間共享定序結果，甚至加入國際團隊，以群體的力量，來達到單一團隊所無法達到的目的。
+
+
+致謝
+本文作者黃彥華博士，目前任職於陽明大學系統與合成生物學研究中心，同時是科技部生技類核心設施 E3「臺灣生物資訊聯盟」的成員之一。作者感謝本中心主任楊永正老師、蔡毓舜博士、邱艦瑩先生，及國家高速網路與計算中心雲端小組王聿泰博士所提供的寶貴意見。
+
+
+
+延伸閱讀
+1. Mardis, E.R., The impact of next-generation sequencing technology on genetics, Trends Genet, Vol. 24: 133-141, 2008.
+2. Birney, E. et al., Identification and analysis of functional elements in 1% of the human genome by the ENCODE pilot project, Nature, Vol. 447:799-816, 2007.
+3. Raney, B.J. et al., ENCODE whole-genome data in the UCSC genome browser (2011 update), Nucleic Acids Res, Vol. 39: D871-875, 2011.
+4. Boycott, K.M. et al., Rare-disease genetics in the era of next-generation sequencing: discovery to translation, Nat Rev Genet, Vol. 14: 681-691, 2013.
+5. Cancer Genome Atlas Research, N. et al., The Cancer Genome Atlas Pan-Cancer analysis project, Nature genetics, Vol. 45: 1113-1120, 2013.
+6. Huang, Y.H. et al., Generation and analysis of the expressed sequence tags from the mycelium of Ganoderma lucidum, PLoS One, Vol. 8: e61127, 2013.
+7. Durbin, R.M. et al., A map of human genome variation from population-scale sequencing, Nature, Vol. 467: 1061-1073, 2010.
+8. Li, H. et al., The Sequence Alignment/Map format and SAMtools, Bioinformatics, Vol. 25: 2078-2079, 2009.
+9. Flicek, P. et al., Ensembl 2011, Nucleic Acids Res, Vol. 39: D800-806, 2011.
+
+
+
+
+
+
+張貼者：
+
+
+
+科學月刊／科技報導
+
+
+
+
+
+
+
+
+
+反應： 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+標籤：
+201409-393期,
+科技產業
+
+
+
+
+
+
+
+
+
+
+沒有留言:
+
+
+
+
+
+
+
+張貼留言
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+較新的文章
+
+
+較舊的文章
+
+首頁
+
+
+
+
+訂閱：
+張貼留言 (Atom)
+
+
+
+
+
+
+
+
+
+
+網站啟事
+
+科技報導電子版平臺由ISSUU網站提供，瀏覽器的廣告阻擋功能可能會阻擋電子書內容。若在本站看不到電子書畫面，請確認您的瀏覽器是否有開啟廣告阻擋功能。於版權問題如有任何疑慮，請洽編輯部。為尊重著作權，本網站內容請勿任意轉載，若需引用圖文請先與我們連繫。
+
+
+
+
+
+
+
+
+
+
+
+站內搜尋
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+科報檔案櫃
+
+
+
+
+科報檔案櫃
+七月 2017 (1)
+六月 2017 (1)
+五月 2017 (19)
+四月 2017 (32)
+三月 2017 (1)
+二月 2017 (1)
+一月 2017 (4)
+十二月 2016 (1)
+十一月 2016 (3)
+八月 2016 (3)
+七月 2016 (14)
+六月 2016 (6)
+五月 2016 (72)
+三月 2016 (2)
+一月 2016 (1)
+十二月 2015 (4)
+十一月 2015 (22)
+十月 2015 (21)
+九月 2015 (15)
+八月 2015 (12)
+七月 2015 (4)
+六月 2015 (21)
+五月 2015 (27)
+四月 2015 (17)
+三月 2015 (11)
+二月 2015 (20)
+一月 2015 (22)
+十二月 2014 (17)
+十一月 2014 (3)
+十月 2014 (92)
+九月 2014 (4)
+八月 2014 (4)
+七月 2014 (5)
+六月 2014 (7)
+五月 2014 (4)
+四月 2014 (10)
+三月 2014 (8)
+二月 2014 (2)
+十二月 2013 (21)
+十一月 2013 (17)
+十月 2013 (17)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+科技報導
+
+
+
+201504-400期
+
+
+201505-401期
+
+
+201506-402期
+
+
+201507-403期
+
+
+201508-404期
+
+
+201509-405期
+
+
+201510-406期
+
+
+201511-407期
+
+
+201512-408期
+
+
+201601-409期
+
+
+201602-410期
+
+
+201603-411期
+
+
+201604-412期
+
+
+201605-413期
+
+
+201606-414期
+
+
+201607-415期
+
+
+201608-416期
+
+
+201609-417期
+
+
+201610-418期
+
+
+201611-419期
+
+
+201612-420期
+
+
+201701-421期
+
+
+201702-422期
+
+
+201703-423期
+
+
+201704-424期
+
+
+201705-425期
+
+
+201706-426期
+
+
+201707-427期
+
+
+
+
+
+
+
+
+
+
+
+
+
+專欄
+
+
+
+目錄
+
+
+科技產業
+
+
+科技與人文
+
+
+科學文摘
+
+
+時事評析
+
+
+張昭鼎逝世二十周年紀念研討會專輯
+
+
+產官學研
+
+
+焦點話題
+
+
+新儒林外史系列
+
+
+
+
+
+
+
+
+
+
+
+
+
+生命科學論壇電子雙週報訂閱
+
+在此輸入Email：訂閱取消 送出
+
+
+
+
+
+
+
+
+
+
+
+
+追蹤者
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+本站流量
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+下一代序列(NGS)庫製作:指出客戶需求、成長機會 - GII
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 聯絡我們
+| 公司簡介
+日商環球訊息有限公司
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Menu
+
+首頁
+產業/市場分類
+
+電子零件/半導體
+能源/環境
+材料
+醫療設備
+通訊
+製藥
+消費品
+工業機械
+基礎設施
+汽車工業
+食物/飲料
+銀行業務
+航空與太空
+
+
+出版商一覽
+試閱服務
+Email 通知
+公司簡介
+聯絡我們
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁  > 市場調查報告書  > 醫療設備  > 生技設備
+
+
+
+
+
+
+
+
+
+市場調查報告書
+下一代序列(NGS)庫製作:指出客戶需求、成長機會
+NGS Library Prep Market Scan: Pinpointing Customer Needs and Opportunities for Growth
+
+
+
+出版商
+BioInformatics, LLC
+商品編碼
+289667
+
+
+出版日期
+2013年11月27日
+內容資訊
+英文 131 Pages 商品交期: 最快1-2個工作天內
+
+
+價格
+
+
+
+
+
+
+
+
+
+
+
+USD 3,200
+
+Hard Copy
+
+
+
+
+
+USD 5,200
+
+Hard Copy + PDF (Single Site License)
+
+
+
+
+
+USD 6,500
+
+Hard Copy + PDF (Company-Wide License)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				下一代序列(NGS)庫製作:指出客戶需求、成長機會
+				NGS Library Prep Market Scan: Pinpointing Customer Needs and Opportunities for Growth
+
+
+
+出版日期: 2013年11月27日
+內容資訊: 英文 131 Pages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+簡介
+
+ 下一代序列(NGS)是用戶及應用數不斷增加的顛覆性技術。從全球關點來看，生命科學研究人員約19％在研究中實行著NGS。
+
+
+
+ 本報告提供以廠商及供應商為對象，指出下一代序列(NGS)庫製作的客戶需求及成長機會、各產品分類的顧客滿意度的主要促進要素、顧客滿意度、品牌忠誠度、NGS用生技藥品樣品、NGS樣品、庫製作產品相關的年度實驗室預算、NGS各應用領域的NGS庫製作產品的供應商市場佔有率，及NGS庫製作相關的障礙等相關分析彙整，為您概述為以下內容。
+
+目錄
+NGS(下一代序列)庫製作的樣品
+
+NGS分析的樣品類型
+ DNA的製作及NGS的RNA型庫
+ DNA、RNA庫製作採用的樣品類型
+ 每1週的NGN庫製作數
+ 每1週的NGN庫製作數的變化預測
+
+NGS應用
+
+目前NGS應用
+ 今後12個月中引進新的NGS應用
+ NGS庫製作的比例:各應用、容許量
+ NGS庫製作的比例預測:今後12個月的各應用、容許量
+
+NGS庫製作
+
+NGS庫製作的種類
+ DNA細分化手法
+ NGS庫放大
+ NGS庫的製作場所
+ 影響NGS庫製作場所的要素
+ NGS庫製作工作流程相關的障礙
+
+DNA庫製作
+
+NGS的DNA庫所採用的雙鏈DNA的類型
+ DNA庫製作所採用的套件、試劑品牌
+ DNA庫製作所採用的套件、試劑品牌的滿意度
+ 促進DNA庫製作所採用的套件、試劑品牌的顧客滿意度的特徵
+ DNA庫製作用有重新排序可能性的推薦品牌
+
+標的DNA庫製作
+
+NGS標的DNA庫所採用的雙鏈DNA的類型
+ 標的改良手法、產品
+ 改良後NGS庫製作品牌偏好
+ 標的DNA庫所採用的套件、試劑品牌的滿意度
+ 促進標的DNA庫所採用的套件、試劑品牌的顧客滿意度的特徵
+ 標的DNA庫製作用有重新排序可能性的推薦品牌
+
+DNA庫製作
+
+RNA序列庫的作成所採用的RNA類型
+ 使用NGS實行的RNA分析類型
+ RNA序列庫的調整所採用的套件、試劑品牌
+ RNA序列庫的調整所採用的套件、試劑品牌的滿意度
+ 促進RNA序列庫的調整所採用的套件、試劑品牌的特徵
+ RNA序列庫製作用有重新排序可能性的推薦品牌
+
+NGS樣品庫製作的自動化
+
+納入NGS樣品製作工作流程的自動化類型
+ NGS樣品製作工作流程的自動化階段
+ NGS庫製作工作流程自動化的動機
+ 納入NGS庫製作工作流程的實驗室自動化品牌
+ 影響自動化品牌選擇的要素
+
+NGS庫製作的實驗室預算
+
+支撐NGS的實驗室營運預算
+ NGS庫製作專用預算
+ 供應商的市場佔有率預測
+
+NGS統計
+
+NGS的利用
+ 利用NGS的實驗室類型
+ 主要應用
+ NGS設備品牌、模式
+ NGS設備的地點位置
+ NGS即服務的提供
+ 學習關於NGS庫製作的新手法、產品
+ 實驗室的規模
+ 研究領域
+ NGS引進的時間框架
+ NGS庫的製作場所、NGS新用戶用NGS設備的地點位置
+
+
+
+
+目錄
+Product Code: 13-006STUDY SCOPE
+
+ This report will help you
+
+
+Identify the top NGS applications
+ Pinpoint the NGS applications with the greatest potential for growth in
+ 2014
+ Explore the range of biological samples used for NGS analysis
+ Estimate the number of researchers and labs currently performing NGS
+ Determine annual lab budgets associated with NGS sample and library
+ preparation products
+ Approximate supplier share by laboratory spending
+ Assess market growth in terms of budget allocation in the next 12 months
+ (through 2014)
+ Identify the leading suppliers of NGS library preparation products by NGS
+ application
+ Gauge customer satisfaction, loyalty and likelihood to reorder NGS library
+ preparation products
+ Recognize key drivers of customer satisfaction for NGS library preparation
+ products
+ Anticipate the bottlenecks associated with NGS library preparation
+ Assess the adoption of laboratory automation for NGS library preparation
+ Discover the role of NGS service providers vis-à-vis sample
+ preparation
+
+OVERVIEW
+
+ Next generation sequencing (NGS) is a disruptive technology with an
+ ever-increasing number of users and applications. As such, it is the fastest
+ growing and most attractive segment of all the different technologies that
+ comprise the genomics universe. On a global scale, we estimate that about 19%
+ of life science researchers perform NGS in their work.
+
+
+ At the core of every cutting edge technology are the tools required to execute
+ it, and next generation sequencing is no exception. Much of the hype
+ surrounding NGS has centered on the instruments-ranging from benchtop models
+ to those with production-scale capacity.
+
+
+ It is thanks to these tools that NGS has become a reality, allowing
+ researchers to identify genomes, transcriptomes and epigenomes at high speeds
+ and with a degree of clarity never before thought possible.
+
+
+ But preparing samples for sequencing is no small piece of the puzzle, as is
+ evidenced by the growing number of companies that are jumping onto the NGS
+ sample preparation bandwagon.
+
+
+ NGS Sample Prep Market Scan: Pinpointing Customer Needs and Opportunities for
+ Growth targets the manufacturers and suppliers of NGS sample prep to help
+ identify the usage, preferences and differentiators in a market that has
+ attracted a significant number of players.
+
+
+ Suppliers recognize that there are fewer barriers to entry in the sample prep
+ space compared to developing new sequencing platforms, thereby making sample
+ prep product development more attractive-and on the rise.
+
+
+ Inherent in the sample prep market are multiple opportunities to address
+ differences in sequencing platforms, methods of DNA fragmentation and,
+ ultimately, the conversion of DNA or RNA samples into application-specific NGS
+ libraries.
+
+
+ In this study, we will identify bottlenecks and areas that are causing the
+ most frustration to researchers, but also point directly to opportunities for
+ innovation.
+
+
+ We will cover areas of growth by application, segment and region. We will also
+ examine how automation can conceivably change the speed, consistency, accuracy
+ and ease with which researchers can expect to conduct next generation
+ sequencing now and in the future.
+
+
+ With so many suppliers to choose from, how can a single supplier stand out?
+ The foundation of a successful differentiation strategy is often a detailed
+ understanding of the external environment.
+
+In this report, we will 
+
+Identify the competitive mix by brand in the top product categories
+  
+DNA libraries: whole genome, ChIP and methylated DNA
+   Targeted resequencing: exome and panels
+   RNA libraries: total RNA, mRNA and small RNA
+  
+Determine the key drivers of customer satisfaction in each product category
+ Gain insights into customer satisfaction and loyalty
+ With literally hundreds of products available from dozens of suppliers,
+ the ability to fine-tune your unique message, value proposition and product
+ portfolio is more important than ever.
+
+Table of Contents
+Samples for NGS Library Preparation
+
+Types of samples analyzed by NGS
+ Preparation of DNA- and RNA-based libraries for NGS
+ Sample types used to prepare DNA and RNA libraries
+ Number of NGS libraries prepared per week
+ Expected change in the number of NGS libraries prepared per week
+
+NGS Applications
+
+Current NGS applications
+ Adoption of new NGS applications during the next 12 months
+ Percentage of NGS libraries prepared by application and throughput
+ Expected percentage of NGS library preparation by application and
+ throughput during the next 12 months
+
+NGS Library Preparation
+
+Types of NGS libraries prepared
+ DNA fragmentation methods
+ NGS library amplification
+ Where NGS libraries are prepared
+ Factors influencing where NGS libraries are prepared
+ Bottlenecks associated with NGS library prep workflow
+
+DNA Library Preparation
+
+Types of double-stranded DNA used to make DNA libraries for NGS
+ Kit and reagent brands used to prepare DNA libraries
+ Satisfaction with kit and reagent brands used to prepare DNA libraries
+ Features that drive customer satisfaction with kit and reagent brands for
+ preparing DNA libraries
+ Likelihood to reorder and recommend brands used for DNA library prep
+
+Targeted DNA Library Preparation
+
+Types of double-stranded DNA used to make targeted DNA libraries for NGS
+ Target enrichment methods and products
+ Brand preference for post-enrichment NGS library preparation
+ Satisfaction with kit and reagent brands used to prepare targeted DNA
+ libraries
+ Features that drive customer satisfaction with kit and reagent brands used
+ to prepare targeted DNA libraries
+ Likelihood to reorder and recommend brands used for targeted DNA library
+ prep
+
+RNA Library Preparation
+
+Types of RNA used to make RNA-Seq libraries
+ Types of RNA analysis performed using NGS
+ Kit and reagent brands used to prepare RNA-Seq libraries
+ Brand preference for further RNA-Seq library manipulation
+ Satisfaction with kit and reagent brands used to prepare RNA-Seq libraries
+ Features that drive customer satisfaction with RNA-Seq kit and reagent
+ brands
+ Likelihood to reorder and recommend brands used for RNA-Seq library prep
+
+Automation of NGS Sample and Library Preparation
+
+Types of automation incorporated into NGS sample prep workflow
+ Automated phases of NGS sample prep workflow
+ Motivation to automate NGS library prep workflow
+ Brands of laboratory automation incorporated into NGS library prep workflow
+ Factors that influence brand selection for automation
+
+Lab Budgets for NGS Library Preparation
+
+Laboratory operational budgets to support NGS in 2013
+ Budgets dedicated to NGS library preparation
+ 2013 estimated supplier share
+
+NGS Demographics
+
+Use of NGS
+ Types of labs that utilize NGS
+ Primary application
+ Brands and models of NGS instrumentation
+ Location of NGS instrumentation
+ Providing NGS as a service
+ Learning about new methods and products for NGS library preparation
+ Laboratory size
+ Areas of research
+ Time frame for adopting NGS
+ Where NGS libraries will be prepared and location of NGS instrumentation
+ for new users of NGS
+
+
+
+
+
+
+
+
+
+
+02-2729-4219
+				+886-2-2729-4219
+			
+
+2017年新服務開始
+
+全球各國所發行的 市場調查報告 我們均可經手處理 如有這個網站未刊載的報告 您也可諮詢 
+
+FAQ
+
+
+到貨時間
+使用權限
+付款方式
+
+
+相關商品
+
+
+次世代定序:新的臨床應用及全球市場 2017年06月26日
+全球新一代定序市場 2017年03月01日
+次世代定序(NGS)市場規模及預測:各用途(腫瘤，生殖醫療)，各技術(標的定序)，各工作流程(資料分析，各最終用途(學術機構，臨床研究)，及趨勢分析 2017年01月10日
+多重診斷市場(各技術(超高密度、高密度、中密度、低密度、次世代定序分析)、用途、終端用戶) - 全球產業分析、規模、構成比、成長率、趨勢及預測 2017年01月10日
+全球次世代定序(NGS)市場:成長、趨勢、預測 2016年09月23日
+次世代定序市場 2016年09月07日
+次世代定序 (NGS) 資料分析市場分析:各產品 (服務，NGS商用軟體，平臺OS/UI，分析軟體，QC/加工前工具其他) 、工作流程，各最終用途及市場區隔預測 2016年09月06日
+次世代定序 (NGS) 的試樣製備市場 2016年04月27日
+全球次世代定序 (NGS) 資訊學/軟體市場預測 2015年09月08日
+全球次世代定序 (NGS) 市場預測 2015年08月03日
+
+
+
+ ▼
+
+
+
+
+
+
+
+
+
+
+
+
+使用指南
+產品及服務須知
+網站導覽
+
+
+星期一到星期五
+9:30am-6:00pm
+TEL: 02-2729-4219
+(+886-2-2729-4219)
+
+
+			全球市場/產業 調查, 分析, 預測 報告書
+© Copyright 2004 - 2017,
+Global Information, Inc.
+All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+分析次世代定序“大”資料的“好”辦法 - 整合性基因體分析技術管理組
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+整合性基因體分析技術管理組搜尋這個協作平臺 
+
+
+
+關於我們最新消息教育訓練課程服務項目聯絡我們
+
+
+
+
+
+
+
+
+
+
+ 
+
+最新消息‎ > ‎
+  
+
+分析次世代定序“大”資料的“好”辦法
+
+
+
+      
+    
+  
+  張貼者：2013年12月9日 下午11:56Bearing Jong
+
+                  
+                       
+                      
+                        [
+  
+  
+  
+  
+  已更新 2014年10月26日 下午11:23
+]
+                      
+
+
+
+整合性基因體分析技術管理組~教育訓練課程暨巡迴推廣活動你是否對於分析次世代定序(NGS)產出的大量數據要進行分析時產生莫大的困擾呢? 實驗室雖然有運算等級高些的電腦，但跑NGS數據運算仍要等上三天三夜? 然而好不容易把資料算出來，密密麻麻的數字與文字卻恍如天書?有甚麼瀏覽介面能讓數據結果圖形化且一目瞭然?為協助NRPB使用者與國內生醫研究者於基因體分析，並致力於結合與推廣生技類核心設施所提供的服務資源。NRPB整合性基因體分析技術管理組項下的核心設施與資源中心合作已於國網中心的超級電腦上建立NGS高速分析平臺，本次研討會將簡介NRPB的研究者如何免費使用該高速分析平臺的雲端服務資源。另外，IGV（Integrative Genomics Viewer）是Broad Institute為了協助研究人員分析基因序列、序列變異、基因表現量、基因重複數、CHIP-seq和臨床病理資料等而開發的NGS及array-based序列資訊視覺化的瀏覽器。IGV的強大優勢在於可將本機端或是網路上的基因體定序資料快速繪製成圖譜提供視覺化界面，讓使用者可以任意放大或縮小瀏覽倍率進行快速搜尋。同時IGV也能建立定序資料與其他臨床性狀資料的關聯，讓使用者能方便地連結「基因」和「功能」。目前，國網中心的NGS高速分析平臺也建立網路端IGV瀏覽器，讓你NGS數據從運算端到瀏覽端能一路順暢。協助與增進國內基因體研究人員於基因製藥上能量上的開發是NRPB整合性基因體分析技術管理組的使命，因此，為使利用NGS序列分析的團隊或研究人員能更有效的瞭解NGS基本工具與技術，本組特於北、中、南區舉辦『分析次世代定序“大”資料的“好”辦法』的教育訓練課程，希望能推廣給更多的應用NGS基因體分析研究者知道有哪些免費資源、平臺與軟體可以使用，在此誠摯邀請您參加此活動，並竭誠歡迎您轉發此資訊給有需要的人。新竹場 :     時間: 2013年12月30日 (星期一)     地點:交通大學(博愛校區)生科實驗館 106演講廳臺北場:     時間: 2014年1月20日 (星期一)    地點:臺大醫學院 103講堂高雄場:     時間: 2014年 1月21日 (星期二)    地點:高雄醫學大學國際研究大樓五樓O05202電腦教室臺中場:    時間: 2014年2月11日 (星期二)     地點:臺中中國醫藥大學立夫教學大樓101講堂報名: 已截止各場次的活動內容: 
+
+
+
+
+
+
+Comments
+
+
+
+
+關於我們服務項目教育訓練課程文件下載整合性基因體分析委員會聯絡我們最新消息
+
+
+
+
+
+
+
+
+ TMT of Integrated Genome Analysis Committee, National Research Program for Biopharmaceuticals (NRPB), Copyright © NRPB, 2013. All Rights Reserved.contact information: TEL: 02-28212700, Mail: NRPBz@ym.edu.tw
+
+
+
+
+
+
+Sign in|Report Abuse|Powered By Google Sites
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+[課程] 2014/10/14新世代定序分析與高速計算設施教育訓練（講義已上傳 ） | 台灣生物資訊聯盟 Bioinformatics Consortium of Taiwan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  首頁
+  服務項目
+  分析需求申請書
+  網站地圖
+  文獻致謝範例
+  聯絡我們
+  相關連結
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ [課程] 2014/10/14新世代定序分析與高速計算設施教育訓練（講義已上傳 ）
+
+
+週一, 09/22/2014 - 14:51 | bct
+
+
+ 
+課程講議下載：中研院生圖
+
+
+
+時間
+內容
+演講者
+
+
+08:30 ~ 08:40
+報到
+ 
+
+
+08:40 ~ 09:00
+國家高速網路與計算中心在新世代定序分析的資訊服務
+王聿泰 (助理研究員，國家高速網路與計算中心)
+
+
+09:00 ~ 09:50
+LINUX 系統介紹與國網中心御風者實作課程
+葉昌偉 (副研究員，國家高速網路與計算中心)
+
+
+10:00 ~ 12:00
+GALAXY 在新世代定序資料分析上的應用
+在新世代定序實驗中產生非常大的資料。因此，計算分析上必須要確保高品質、高再現性與分析效率。這次課程中將介紹網頁為基礎的分析基因體之生物資訊工具。內容將包含基本的Galaxy使用與附加資料，分析流程，流程分享與發佈等功能。此外，將提供範例，例如檢視高通量資料品質，核酸定序所產生的基因表現資訊，蛋白質與染色體札合區段定序等，在課程部分最後將介紹進階內容，如本機安裝和工具組等。
+
+鐘文鈺 (助理教授，國立高雄應用大學資訊工程系)
+
+
+12:00 ~ 13:00
+午餐(提供便當)
+ 
+
+
+13:00 ~ 14:40
+GALAXY 操作說明與範例介紹
+鐘文鈺 (助理教授，國立高雄應用大學資訊工程系)
+
+
+14:40 ~ 15:00
+Coffee break
+ 
+
+
+15:00 ~ 15:50
+新世代定序資料的應用：微生物基因體組裝策略
+微生物基因體是瞭解微生物之生化與功能性的基礎，雖然次世代序列可以低價且大量的產出序列，但是受限於短序列的特性以及放大時的偏差，即便搭配使用各式次世代的組裝工具，基因體的組裝仍然大多是不完整的基因體初稿。第三代基因體定序技術的開發，可以產出跨越過重複片段的長序列，因此可以應用於有效組裝出完整的基因體序列，在此，我們將介紹可以完整組裝出微生物基因體的方法與策略。
+
+廖玉潔 (助研究員，國家衛生研究院群體健康科學研究所)
+
+
+15:50 ~ 16:40
+DR. RAW 個人化基因體分析流程
+以生物資訊方法分析新世代定序結果，尋找造成特別的表現型(如疾病)的基因體變異。以尋找脊髓小腦萎縮症(SCA22)致病基因及功能性研究為例。臺灣生物資訊聯盟提供DNA & RNA Re-sequencing Analysis Workflow &ndash;DR. RAW，以國際級的open-source新世代定序結果分析平臺為基礎，和國際一流生醫期刊同步的品管及準確性，根據臺灣定序之一般性品質及深度調整分析的參數, 並加入本核心設施獨有之流程(e.g. 品質管制)完整品質控管資訊、變異點資訊(含short indels)、表現體(transcriptome)差異性、融合基因(fusion genes), etc.
+
+黃彥華 (博士後研究員，國立陽明大學生物醫學資訊研究所)
+
+
+16:40 ~ 17:00
+有獎徵答或抽獎活動
+ 
+
+
+
+中研院主場課程資訊請參考
+ 
+ 
+
+地點：中研院人文館遠距會議室 (3F，主場)、陽明大學圖資大樓404室（遠距場）
+ 
+報名網址：我要報名
+＊陽明遠距場前30名現場報到之報名學員可領取便當，數量有限，請儘早報名及準時報到！
+ 
+
+主辦單位: 國家高速網路與計算中心
+協辦單位: 中央研究院生命科學圖書館、陽明大學系合中心、NRPB生技醫藥國家型科技計畫
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+搜尋
+
+
+
+
+
+
+
+
+搜尋本站：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+使用者登入
+
+
+
+
+
+
+
+使用者名稱：*
+
+
+
+密碼：*
+
+
+索取新密碼
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Monthly archive
+
+
+
+
+
+
+
+
+
+五月 2017
+              (1)
+          
+三月 2017
+              (2)
+          
+二月 2017
+              (1)
+          
+十二月 2016
+              (3)
+          
+十一月 2016
+              (1)
+          
+八月 2016
+              (1)
+          
+五月 2016
+              (1)
+          
+一月 2016
+              (1)
+          
+十二月 2015
+              (2)
+          
+九月 2015
+              (1)
+          
+
+
+
+1
+2
+3
+4
+下一頁 ›
+最後一頁 »
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us | Terms of Use | Trademarks | Privacy StatementCopyright © 2009 台灣生物資訊聯盟 Bioinformatics Consortium of Taiwan. All Rights Reserved. 
+
+
+
+
+
+
+
+
+

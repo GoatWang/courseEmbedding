@@ -1,0 +1,4476 @@
+
+
+PPT - 授課老師 : 陳文山 學生 : 陳瑞傑 PowerPoint Presentation - ID:1725506
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Create Presentation
+ Download Presentation
+
+
+
+
+ Loading in 5 sec.... 授課老師 : 陳文山 學生 : 陳瑞傑PowerPoint Presentation
+
+ Download
+ 授課老師 : 陳文山 學生 : 陳瑞傑
+
+
+ Download Presentation
+
+
+
+Loading in 2 Seconds...
+
+
+
+
+Share Presentations
+
+
+
+Email Presentation to Friend
+
+
+
+
+
+
+
+Error in Email Address...
+
+Email Sent Successfully
+
+Embed Code
+<iframe src="http://www.slideserve.com/embed/1725506" width="600" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+Embed Code Copied...
+Link
+
+
+
+
+
+  
+
+
+1 / 13
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 授課老師 : 陳文山 學生 : 陳瑞傑 - PowerPoint PPT Presentation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+By clea
+Follow User
+
+
+
+
+
+
+156 Views
+Uploaded on 2014-07-13
+
+
+
+
+
+
+
+
+
+ Description
+ Statistics
+ Report
+
+
+
+  - 微波電路期中報告 -.  題目 : 電腦輔助設計的射頻和微波電路與系統 Computer-Aided Design of RF and Microwave Circuits and Systems Michael B. Steer, Fellow, IEEE, John W. Bandler,  Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE.  授課老師 : 陳文山  學生 : 陳瑞傑.
+
+
+
+
+
+
+
+
+ Copyright Complaint
+ Adult Content
+ Flag as Inappropriate
+
+
+
+
+
+I am the owner, or an agent authorized to act on behalf of the owner, of the copyrighted work described.
+                   
+
+Report This
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Download Presentation 
+PowerPoint Slideshow about ' 授課老師 : 陳文山 學生 : 陳瑞傑' - clea
+An Image/Link below is provided (as is) to download presentation
+Download Policy: Content on the Website is provided to you AS IS for your information and personal use and may not be sold / licensed / shared on other websites without getting consent from its author.While downloading, if for some reason you are not able to download a presentation, the publisher may have deleted the file from their server.
+
+
+
+
+
+
+
+
+- - - - - - - - - - - - - - - -  - - - - - - - - - -  E  N  D  - - - - - - - - - - - - - - - -  - - - - - - - - - -
+ 
+Presentation Transcript
+
+-微波電路期中報告- 題目:電腦輔助設計的射頻和微波電路與系統Computer-Aided Design of RF and MicrowaveCircuits and SystemsMichael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE 授課老師:陳文山 學生:陳瑞傑 IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,996-1005 
+
+目錄 摘要 非線性與線性微波模擬 微波電路模擬 主動元件模型 計算機輔助設計微波電路 未來射頻與微波 結論 
+
+摘要 歷史的射頻和微波計算機輔助工程是記錄在的IEEE微波理論與技術協會。 準確的解析模型中的微波元件和簡單的電腦輔助技術可以得到線性組件模型線性的響應微波電路。快速發展，成為今天的電腦型微波爐的做法處理複雜幾何與整體的能力模型及優化電路。追求準確模型的主動元件以及被動元件仍是一個重要的課題。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,996 
+
+非線性微波模擬 模擬射頻和微波電路與系統：瞭解物理的一複雜系統相互作用的要素;在測試新的概念並優化設計。 此外，隨著頻率的射頻電路超出一千兆赫茲到幾十，幾百的千兆赫茲，波長成為大型設備和電路方面的尺寸和三維電磁環境變得更為顯著。 高收益的優化設計微波和毫米波電路要實現，相互影響的電磁場和線性和非線性電路元件必須是自製的模型。 非線性模擬微波電路，相當於在過去十年的發展。只有穩態響應，於由振幅和相位的正弦波，是必需的。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,997 
+
+非線性微波模擬：頻域 以前只限於弱非線性系統，但今天，可用於強非線性系統與大信號激發。跟頻域非線性分析技術在Volterra載的理論函。共同基礎原則是，在輸出頻譜具有廣泛的非線性電路和系統可以直接給予計算頻譜輸入到非線性系統有些技術來確定一個輸出頻率成分通過總結計算個別互調。 這些算法通過頻率產生的輸出頻譜，有些頻域非線性分析技術noniterative，雖然這些只限於單方面系統，稱頻域頻譜平衡技術，通過轉換一非線性元件並聯成直線元素的一個數字控制的電流源。這個過程是疊代的，並於每疊代，剩餘非線性元件是左，從而降低從一個疊代到另一個。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,997 
+
+非線性微波模擬：穩態 HB的過程，用於非線性 穩態模擬，在伽遼金方法，猜測這些係數進行調整，以盡量減少 誤差在控制方程，通常是基爾霍夫電流定律對非線性電路。該方法應用於非線性電路貝利在1960年。 變數，往往電流相量，描述了對非線性子電路是傅立葉變換時域響應的非線性子電路。這些都是相對於頻域響應的線性電路。這種混合時域/頻域的分析，確定由傅立葉變換的使用方法。第一個大量使用HB在分析微波電路是由Egami，這個所描述的，使用的電腦型微波爐實踐以盡量減少HB錯誤，決定的本地振盪器波形二極管混頻器。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,997-998 
+
+1975年，Nakhla和弗拉克 提出一個劃分為線性和非線性電路（見圖 1。）線性電路，以便減少可能大大簡化了用於處理線性電路。 LINEAR CIRCUIT SPATIALLY DISTRIBTED NETWORK LINEAR CIRCUIT LINEAR CIRCUIT LINEAR CIRCUIT ACTIVE DEVICE ACTIVE DEVICE ACTIVE DEVICE 圖1.HB分為線性和非線性電路與主動元   分佈式網路空間模式使用EM技術。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,997-998 
+
+等效電路模型 等效電路建模MESFET的和高電子遷移率晶體管（HEMT器件）在於1975年至1990年發現，當時奠定了基礎模型所使用的所有在今天的CAD。其中第一大信號等效電路場效應管的模型，由Van Tuyl和Liechti提出在於1974年，後來Curtice簡化了於1980年，1個二次模型，使用1平方律的依賴關係歐姆區域和VDS函數來模擬飽和漏電流源。它非常適合直流和小信號特徵，儘管它的缺點在VDS低值和VDS負值。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,997-998 
+
+主動元件模型 主動元件，它有必要將代表直流和交流特性，這些電路元件機種適合使用電路設計方法。在過去的50年中，有已逐步改善，同時在主動元件和其相關的模型。大多數是傳統的微波和射頻設計主動電路技術是基於等效電路型號或參數錶面（黑盒模型），需要廣泛的DC和RF特性，雖然有上升的趨勢傾向於使用物理模型作為一部分。早期的二極管和晶體管組成少數理想電路元件的代表直流是暫時的，高頻這些主動元件的性能。隨著頻率增加的操作，所以沒有複雜的模型和寄生（外在）元素被添加到提高準確性。相當大的努力一直致力於模型微波晶體管。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,997-999 
+
+計算機輔助設計微波電路 在我們的方法對微波CAD和建模的分析與綜合，應註意模擬和優化。數值分析是十分成熟在這兩個領域的理論和電路理論。即優化，理論研究，是當代表現分析固定。對於一個微波電路設計的優化器的開發。多年來與正統的設計方法由電路理論解析為導向，面臨的現實競爭的優化設計技術。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,997-1001 
+
+未來射頻與微波 射頻和微波CAE公司將受益於在計算進展斷電記憶，遷移到新的計算機體結構如功率並與計算機和算法進展。目前的分析只限於部分計劃電路，無法處理真實世界的激發，如數字調製信號無明顯簡化。在未來，我們必須能夠準確的模擬真實世界整個射頻信號，大大超過了預期的性能實際電路。非CAE的具體數值算法已經制定並正在不斷發展納入CAE的環境。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,997-1002 
+
+結論 微波和毫米波已經簡要探討，等效電路和物理為基礎的主動元件模型。改進包括電熱耦合，全球模型，並提高產量預測和優化。 未來需求高準確度，機動的模式將繼續推動研究這方面的未來將看到分層結構的模擬，優化，和調整非線性RF和微波系統的準確表達與混合信號集成非線性電路分析與電熱裝置的物理基礎模型。在一個全球化想法下，我們將看到分析複雜的幾何形狀與優化利用來使用的2D和三維EM模擬。 Computer-Aided Design of RF and MicrowaveCircuits and Systems .Michael B. Steer, Fellow, IEEE, John W. Bandler, Fellow, IEEE, and Christopher M. Snowden, Fellow, IEEE. IEEE TRANSACTIONS ON MICROWAVE THEORY AND TECHNIQUES, VOL. 50, NO. 3, MARCH 2002,997-1003 
+
+感想  早期所開發的電腦輔助設計(CAE)與射頻微波電路，在當時的設計包括計算機硬體、軟體與訊息處理，透過濾波器的優化非線性電子網路分析與電腦網路分析，來解釋矩陣的發展與基礎理論應用。計算機輔助設計技術，複雜的微波電路及一些特殊的問題，是今後要來探討的。  對於這篇paper還是有很多不瞭解的地方，對於射頻、微波這方面還是感覺很陌生，且閱讀英文的能力也有待加強。希望日後課餘時間可以多瞭解射頻與微波系統原理及應用。 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Related Presentations
+More by User
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+授課老師：李美娟  -我們這班與梵谷有約.  授課老師：李美娟.  學習重點  簡介梵谷的生平。   欣賞梵谷的作品。  介紹梵谷自畫像的外在形式 ( 色彩與筆觸 ) 及內在情感。
+
+
+
+
+
+
+
+
+
+
+
+
+
+電腦原理與應用 授課老師：  張鵬佐  -電腦原理與應用  授課老師：  張鵬佐.  第 1 課.  1-1 　電腦的類型  1-2 　電腦的基本單位  1-3 　電腦的基本組成  1-4 　電腦的主機  1-5     中央處理器
+
+
+
+
+
+
+
+
+
+
+
+
+
+授課老師 ： 李建中 教授     學生 ： 潘彥任 簡報日期： 98.06.25  -傳統發包與民間參與工程興建階段案例比較 - 以北、高捷運工程為例  期末報告.  授課老師 ： 李建中 教授      學生 ：
+
+
+
+
+
+
+
+
+
+
+
+
+
+課程名稱： 資料庫系統 授課老師：李春雄  博士  -第九章 資料庫與程式語言整合.  課程名稱： 資料庫系統  授課老師：李春雄  博士.   本章學習目標.  1. 讓讀者瞭解
+
+
+
+
+
+
+
+
+
+
+
+
+
+課程 : 功能性高分子 授課老師 : 謝慶東 學生 :  魏伯翰 學號 :49940004  -課程 : 功能性高分子  授課老師 : 謝慶東  學生 :  魏伯翰  學號 :49940004.  outline.  introduction  material  methods  experiments
+
+
+
+
+
+
+
+
+
+
+
+
+
+授課老師：吳文海 學　　生：林姍虹 報告日期： 2010/12/21  -授課老師：吳文海  學　　生：林姍虹  報告日期： 2010/12/21.  introduction.  奈米磁性粒子 的應用：
+
+
+
+
+
+
+
+
+
+
+
+
+
+授課老師：薑子龍 Ｅ- mail：[email protected]  -Access 第十七單元  結構化查詢語言(一 ).  授課老師：薑子龍  Ｅ- mail：[email protected]  結構化查詢語言(一 ) - 講授大綱.  關於 sql  訂定 sql
+
+
+
+
+
+
+
+
+
+
+
+
+
+自然科學概論 Technology of Science and Living 授課老師：賴新喜  -自然科學概論  technology of science and living  授課老師：賴新喜.  聯絡方式.  教師信箱：  [email protected]  教師研究室： i829
+
+
+
+
+
+
+
+
+
+
+
+
+
+政治大學社會科學學院 行政管理碩士學程選修 課程名稱：兩岸經貿政策 授課老師：黃智聰 授課內容： 兩岸工業園區的發展政策與影響 日期： 2004 年 3 月 25 日  -政治大學社會科學學院
+
+
+
+
+
+
+
+
+
+
+
+
+
+班級：金三乙 組員： 10017241 蔡劼 均 、 10017233 高麗如 10017234 劉春香、 10017235 徐瑋羚 授課老師：熊健儒  -真誠。 相信自己，無愧每一個當下     — 活出精采自我的 陶傳正.  陶傳正（ 1946
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Today's Free
+PowerPoint Template
+
+For SlideServe users
+ Download Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Download Presentation
+
+
+
+
+Connecting to Server..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+課程內涵達成學系教育目標比對資料
+
+
+
+
+課程內涵達成學系教育目標比對資料
+
+
+
+
+       
+
+
+
+
+   學年: 
+
+      
+ 
+104
+103
+102
+101
+100
+99
+98
+97
+96
+95
+94
+93
+92
+
+       
+   學期: 
+
+      
+ 
+一
+二
+
+
+
+
+
+105 學年 二 學期 課程資料
+
+
+
+
+
+
+
+授課老師：
+
+
+
+ 
+Robert Rieger
+王復康
+王朝欽
+餘祥華
+李立
+李立,鄭志強
+李宗哲
+李宗璘
+李傑穎
+李聰
+周本生
+周孜燦
+林吉聰
+林武文
+林根煌
+林惠民
+邱日清
+邱日清,鄭志強
+施信毓
+翁金輅
+馬誠佑
+馬誠佑,陳有德
+高崇堯
+莫清賢
+莊子肇
+莊豐任
+許元良
+許蒼嶺
+郭志文
+陳有德
+陳茂雄
+陳英忠
+陳朝順
+陳遵立
+黃宗傳
+黃國勝
+黃義佑
+劉承宗
+鄭志強
+鄭志強,邱日清
+鄧人豪
+盧展南
+蕭純育
+謝東佑
+蘇健翔
+
+
+
+
+
+課程名稱
+
+中文
+
+
+
+ 
+SOI/MOSFET設計專題
+ＶＬＳＩ設計導論
+切換系統控制專題
+主動式電力濾波器
+以微控器為基礎之電路設計實務
+半導體元件（二）
+生醫工程導論
+生醫影像研究方法
+交直流馬達控制
+光電元件
+光纖感測原理
+先進元件可靠度專題
+共振式轉換器專題
+多媒體控制專題（二）
+多變數系統控制
+行動通訊網路專題
+行動機器人
+低功率系統設計
+低功率積體電路專題
+材料科學（二）
+系統晶片測試
+車載通訊網路技術與應用
+固態電子元件（二）
+奈米材料
+非線性控制系統設計
+非線性微波電路專題
+保護電驛
+計算機系統專題
+計算機組織
+音頻電路設計
+射頻微電子
+書報討論
+配電管理系統專題
+高等矽覆絕緣技術
+高等影像處理
+強韌控制專題
+軟體系統
+最佳化簡介
+最佳控制簡介
+嵌入式多核心系統與軟體
+嵌入式軟體設計
+智慧型微感測晶片設計專題
+智慧型機器人專題（一）
+智慧電網專題
+無線通訊天線設計
+無線通訊系統導論
+無線傳輸專題
+無線網路資源管理專題
+無線與行動多媒體網路
+視訊傳輸專題
+視訊編碼與標準簡介
+超大型積體電路訊號處理
+微分方程_乙
+微分方程_甲
+微波感測專題
+微帶天線專題
+照明電子設計專題
+雷射工程（一）
+電力系統（二）
+電力系統專題
+電力系統運轉
+電力系統運轉
+電力品質
+電子元件專題（二）
+電子學（二）_乙
+電子學（二）_甲
+電工實驗（二）_乙
+電工實驗（二）_甲
+電工實驗（四）_乙
+電工實驗（四）_甲
+電能轉換實作專題
+電源與電池管理系統導論
+電路設計專題
+電路學（一）_乙
+電路學（一）_甲
+電磁理論
+電磁學（二）_乙
+電磁學（二）_甲
+電機系統有限元素分析
+電機機械_乙
+電機機械_甲
+實用數位系統設計
+演算法設計及分析
+網路效能分析專題
+影像處理導論
+數位通訊電路設計專題
+數值電磁專題
+模糊數學
+線性代數_乙
+線性代數_甲
+線性系統分析
+線性系統專題
+適應控制
+機率與統計
+積體電路技術
+臨床磁共振影像專題
+薄膜工程專題
+離散數學
+
+
+
+
+
+英文
+
+
+
+
+
+
+修課學分
+
+
+
+
+必選修
+
+
+
+
+修習學期
+
+
+學期
+
+
+     
+    
+
+
+
+載入歷史資料:  
+    
+
+
+
+
+
+課程描述(中文)
+
+
+
+
+
+
+
+
+Course 
+    Description (English)
+
+
+
+
+
+
+
+
+教科書(書名、作者、書局、年份)
+
+
+
+書名
+
+作者
+
+書局
+
+年份
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+刪除
+
+書名
+
+作者
+
+書局
+
+年份
+
+
+
+
+
+
+參考書
+
+
+
+書名
+
+作者
+
+書局
+
+年份
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+刪除
+
+書名
+
+作者
+
+書局
+
+年份
+
+
+
+
+
+
+課程教材
+學習評量方式(可複選)
+筆試     
+      
+  課堂抽問     
+      
+  口頭報告     
+      
+  書面報告     
+      
+  現場實際操作     
+             
+  其他  (請敘述)     
+時間分配
+
+
+教課(Lecture)
+實驗(Laboratory)
+討論(Recitation)
+其他(Others)
+
+
+ %
+ %
+ %
+ %
+
+
+授課大綱  [課程大綱以不超15個項目為原則!]
+
+
+授課大綱
+教育目標(請勾選，可複選)
+數學及基礎科學
+工程專業課程
+通識教育
+其他
+
+
+ 
+
+ 一.  
+    二.  
+    三.  
+    四.  
+    五.
+ %
+ %
+ %
+ %
+
+
+
+
+
+
+
+刪除
+修改
+
+授課大綱
+
+教育目標
+
+數學及基礎科學
+工程專業課程
+通識教育
+其他
+
+
+
+
+
+
+
+※課程資料請製表人輸入後列印，送請任課教師簽名確認後，送繫上彙整。
+
+
+　
+　
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Agilent Genesys v2008 01 射頻EDA軟體 英文版＠老師授課｜PChome 個人新聞台
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ PChome | 說明 |  
+登入 
+
+
+
+
+
+
+
+
+
+女性也會腎虧並致不孕？
+肺炎十大死因第3位 接…這麼多藥物難道是要用來…
+【內幕】長庚報告僅4頁...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+老師授課
+windows 7重灌 免費防毒軟體
+超級函授 打手槍 av 芝麻街 高普考
+A片 鼠來寶 大補帖 自慰 刀鋒戰士
+xyz 藍光A片 小鬼大間諜 藍光卡通 渦輪方程式
+xyz軟體下載倉庫 林晟 日本女優
+瑪德2號 末日公投 王臺北藍光出租
+DVD合輯 xyz大補帖 免費防毒軟體
+A片 99年新課綱 大補帖 自慰 謝孟媛
+A片 鼠來寶 大補帖 自慰 魔戒
+
+
+0愛的鼓勵
+0訂閱站台
+
+ 
+
+
+
+
+首頁
+相簿
+名片
+活動3
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+                            2014-08-05 09:43:44 
+                            | 人氣(117) 
+                            | 回應(0) 
+                
+                            | 上一篇
+                            | 下一篇 
+
+
+
+
+
+
+
+
+
+                
+                                        Agilent Genesys v2008 01 射頻EDA軟體 英文版
+                                    
+
+推薦
+                                        0
+                                        
+收藏
+                                        0
+                                        
+轉貼0
+訂閱站台
+
+
+
+
+
+
+Agilent Genesys v2008 01 射頻EDA軟體 英文版--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=軟體名稱: Agilent Genesys v2008 01語系版本: 英文版光碟片數: 單片裝破解說明: 參照SHooTERS目錄下的Readme.txt系統支援: Windows 2000/2003/XP/Vista (以官方網站為準)軟體類型: 以官方網站為準更新日期: 2008.07.02相關網址: http://eesof.tm.agilent.com/products/genesys/index.html中文網站: 軟體簡介: (以官方網站為準)--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=GENESYS 最初由Eagleware-Elanix 公司開發，後被安捷倫科技公司 (NYSE: A) 收購。它是一款面向射頻和微波設計的完整EDA 套裝軟體。GENESYS 是一個供射頻和微波元件和子系統設計人員使用的集成電子設計自動化 (EDA ) 軟體，這些設計人員需要專註於射頻設計人員的任務的負擔得起的專業設計工具。從最初的系統結構到最終的文檔，GENESYS 在快速、功能強大且準確的單一的、易於使用的設計環境中提供最先進的性能。它以一個負擔得起的價格為現代射頻設計提供所有基本合成和非線性仿真技術，並帶有五個新的有吸引力的套件。GENESYS 為全世界數千個射頻設計人員所使用，它大約 10 年前起源於 Eagleware-Elanix，從那之後 Eagleware-Elanix 就已被 Agilent 並購。Agilent 通過季度更新不斷地改進 GENESYS 平臺以提供更加準確的模型和更高的性能，以及新 的功能(如相位雜訊) 。GENESYS 現在還鏈結到 Agilent的企業射頻設計環境“高級設計系統(ADS)”以獲得連續頻譜的設計功能。我們的五個新套件可以識別出我們的客戶通常執行的射頻設計任務的種類，並已在兩個方面進行了高度優化: (1) 完成真正的射頻工作的基本功能，(2) 成為真正能夠負擔得起的，這樣，專業的 Agilent 工具可以成為行業中所有人的必備工具。關於安捷倫科技公司安捷倫科技公司 (NYSE: A) 是全球領先的測量公司，同時也是通信、電子 和生命科學和化工領域的技術領導者。公司擁有19，000名員工，遍及全球110多個 國家，為客戶提供卓越服務。在2006年，安捷倫的淨收入達到50億美元。安捷倫提供物理和生物領域中用於傳感、測量和解析的關鍵工具與技術。創新的解決方案使通信、電子、生命科學和化學分析領域的廣大客戶能夠取得技術進步，以提高生產力，改善人們的生活和工作方式。 安捷倫 2004 財年約 2/3 的收入來自於美國境外。由於有大約28，000 名雇員，因此安捷倫的全球運營具有競爭優勢。安捷倫在世界各地的製造、研發、銷售和支援能力，使客戶們從中得到了在當今競爭激烈的環境中所需的靈活性。 --=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=Agilent.Genesys.v2008.01.Incl.SP11.- Install the program Genesys2008_01.exeand Genesys2008_01_SP1.exe2.- Copy "license.lic" into "C: \ADS2008U1\licenses" or equivalent. (Yes，it uses ADS license method!)3.- Copy "genesys.2008.01-Patch.exe" into "C: \Program files\GENESYS2008.01" or equivalent and run it.4.- Set "LM_LICENSE_FILE" to "C: \ADS2008U1\licenses\license.lic"or equivalent.--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=相關商品:CadSoft Eagle Pro v5.0.0 設計印刷電路板的軟體 英文版AWR Design Environment v7.53.3723 高頻電子設計軟體 英文版Actel Designer v8.3 SPC Windows 電子設計 英文版Actel Flashpro v8.3 SPC 器件開發軟體 英文版 
+全民英檢
+筆記電子書
+Adobe
+基測百分百
+Autodesk 2014
+上課錄音
+金榜之路
+迪士尼
+南一版
+圖庫
+photoshop
+志光名師
+xyz MP3
+
+
+文章定位：
+
+
+
+我要檢舉
+
+
+
+
+
+
+
+
+
+
+                                        台長：
+                        Dr.eye
+
+
+
+
+
+您可能對以下文章有興趣
+[英] 不可能的任務 4 - 鬼影行動 (Mission
+                            
+
+[日] 高速婆婆 (The Crone Ksoku baba) (2013) (2D
+                            
+
+墨西哥英雄大混戰：超級渦輪冠軍版 Guacamelee! Super
+                            
+
+[英] 透納先生 (Mr.Turner) (2014) (港版)
+                            
+
+
+
+
+
+
+
+                人氣(117) | 回應(0)| 推薦 (0)| 收藏 (0)| 轉寄
+
+                                    全站分類: 工作甘苦(工作心得、創業、求職) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+回應(0)
+
+
+推薦(0)
+
+
+收藏(0)
+
+
+
+
+我要回應
+
+
+
+
+
+
+
+
+我要回應
+
+
+
+* 回應人：
+
+
+
+E-mail：
+
+
+
+個人網頁：
+
+
+
+悄悄話：
+
+否
+                              是 (若未登入"個人新聞台帳號"則看不到回覆唷!)
+                            
+
+
+回應內容：
+
+
+
+
+
+* 請輸入識別碼：
+
+
+
+
+
+
+請輸入圖片中算式的結果(可能為0) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+(有*為必填)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+自我介紹
+
+
+
+
+
+
+Dr.eye
+
+
+
+
+
+
+
+http://abc001.100bd.com.tw/
+
+
+
+
+關於本站
+留言板
+地圖
+加入好友
+
+
+愛的鼓勵：0
+文章篇數：585
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+熱搜關鍵字
+
+
+
+大直 火鍋,中和泰國菜,山芙蓉咖啡,咖啡走廊,咖啡苗,17餐廳,燒烤鐵板,九芎湖風景區,
+              
+
+
+
+
+
+
+                  日本女優
+                
+
+
+
+
+藍光播放軟體 藍光dvd 王牌巨猩
+藍光影片 藍光下載 超級函授
+xyz xyz軟體 xyz資訊工坊
+迪士尼 xyz大補帖
+A片 鼠來寶 神鬼奇航 自慰 刀鋒戰士
+巧連智 xyz下載倉庫
+藍光電影 3D 藍光A片 臺北藍光出租
+玩具總動員 第一滴血 王牌巨猩
+xyz軟體上課錄音 國中基測
+情色小說 av  免費防毒軟體
+xyz軟體之家 名師到你家 高普考
+A片 美國派 大補帖 自慰 刀鋒戰士
+xyz 藍光音樂 藍光av 藍光卡通 環太平洋
+兄弟連 冰原歷險記 魔鬼終結者
+xyz軟體下載倉庫 研究所補習班
+
+
+
+
+
+
+站方公告
+
+
+【公告】個人新聞台服務認證公告【公告】第五批 40款底圖將下線【公告】第四批 52款底圖將下線【公告】第三批 45款底圖將下線【公告】第二批 60款底圖將下線
+贊助商
+
+
+
+
+好友列表
+
+
+
+
+
+好友的新聞台Blog
+
+
+
+
+
+
+
+
+
+
+站內搜尋
+
+
+
+
+
+
+
+
+標題
+                                    內容
+                                    標籤
+                                
+
+
+
+
+
+最新文章
+
+
+打敗黑心建商：Sway買房實戰(主講:Sway)國語發音/繁體中文字幕VSO DVD Converter Ultimate v3.0.0.8 DVD終極轉換器 英文WinX DVD Ripper Platinum v7.3.2 DVD視頻轉換軟體 英文MAGIX Movie Edit Pro 2014 Premium v13.0.0.30含Apowersoft Streaming Audio Recorder v4.2.5 網路聲音錄製Autodesk AutoCAD Mechanical 2015 SP1 x32 機械工程設計系統Kaspersky Password Manager v5.0.0.159 卡巴斯基密碼管理器 英文版Bigasoft iPhone Ringtone Maker v1.9.3.4650 iPhone鈴聲創建器[中] 鍾馗伏魔：雪妖魔靈 (ZHONG KUI:SNOW GIRL AND2米眼鏡王蛇現鬧市頭部有成人手掌大小
+
+
+
+
+
+文章分類
+
+
+
+
+
+
+
+ 本臺最新標籤
+
+
+
+
+
+
+
+
+
+最新回應
+
+
+
+
+
+
+
+
+我在開講發表的話題
+
+
+
+
+更多>>
+
+
+
+
+
+
+我在開講回應的話題
+
+
+
+
+更多>>
+
+
+
+
+
+
+
+
+                  全彩講義
+                
+
+
+電腦命題
+考研究所
+Dr.eye
+DVD合輯
+芝麻街
+2003
+老師授課
+99年新課綱
+autocad
+正航一號
+微軟windows
+Vista微軟
+康軒版
+全彩講義
+全民英檢
+筆記電子書
+Adobe
+基測百分百
+Autodesk 2014
+上課錄音
+金榜之路
+迪士尼
+南一版
+圖庫
+
+
+
+ 
+
+
+
+
+
+
+
+站台人氣
+
+
+
+
+累積人氣：42,962
+當日人氣：23
+
+
+
+
+
+
+
+
+                  獅子王
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+訂閱本站
+
+
+
+
+RSS訂閱 
+                            (如何使用RSS)
+                        
+
+加入訂閱
+
+
+
+
+
+
+
+
+
+                  Kaza
+                
+
+
+
+
+
+
+
+
+最新留言
+
+
+
+
+
+
+
+
+ 連結書籤 
+
+
+目前沒有資料
+
+
+
+
+
+
+                  鼠來寶
+                
+
+
+
+王牌巨猩
+渦輪方程式
+金鋼狼
+火影忍者
+環太平洋
+古魯家族
+怪獸大學
+鋼鐵超人
+藍光電影
+臺北藍光出租
+雲門舞集
+蜘蛛人
+鋼鐵人3
+藍光dvd播放機
+藍光dvd
+藍光影片
+藍光播放軟體
+藍光下載
+暮光之城
+銅雀台
+宮崎駿
+神鬼傳奇
+蜘蛛人
+絕命終結站
+
+
+
+
+
+
+
+編輯每週一推
+
+
+推薦:食記、夏威夷、聖誕大餐、年菜、長灘島、伴手禮、泡湯、溫泉美食、自助旅行、美食推薦
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SUBARU FORESTER 79.8萬 FORESTER 86.8萬 FORESTER 61.8萬 FORESTER 79.8萬 FORESTER 79.8萬 FORESTER 79.8萬 FORESTER 65萬 FORESTER 75.9萬 FORESTER 108萬 Ford FORD KUGA 85.8萬 FORD KUGA 68.8萬 FORD KUGA 83.8萬 FORD KUGA 73.8萬 FORD KUGA 78.8萬 FORD KUGA 65.8萬 FORD KUGA 81.8萬 FORD KUGA 79.9萬 FORD KUGA 80.8萬 VW露營車 CADDY MAXI 36.8萬 CADDY MAXI 73.9萬 CADDY MAXI 72.8萬 CADDY MAXI 86.8萬 VW GOLF 59.8萬 VW GOLF 63.8萬 VW GOLF 37.8萬 CADDY MAXI 65萬 CADDY MAXI 65.8萬 BMW BMW 5 SERIES 155.5萬 BMW 5 SERIES 29.8萬 BMW 5 SERIES 145萬 BMW 5 SERIES 75萬 BMW 5 SERIES 23.8萬 BMW 5 SERIES 105萬 BMW 5 SERIES 105萬 BMW 5 SERIES 143萬 BMW 5 SERIES 168萬 TOYOTA TOYOTA ALTIS 49.8萬 TOYOTA ALTIS 45萬 TOYOTA ALTIS 49萬 TOYOTA ALTIS 55.8萬 TOYOTA ALTIS 55.8萬 TOYOTA ALTIS 53.8萬 TOYOTA ALTIS 39萬 TOYOTA ALTIS 50.8萬 TOYOTA ALTIS 18萬 AUDI AUDI A4 25.8萬 AUDI A4 27.8萬 AUDI A4 18.8萬 AUDI A4 28.8萬 AUDI A4 42萬 AUDI A4 28萬 AUDI A4 29.9萬 AUDI A4 46.8萬 AUDI A4 32萬 
+
+
+
+
+TOP
+
+
+．廣告刊登
+．消費者保護 
+．兒童網路安全 
+．About PChome 
+．徵才  
+ 網路家庭版權所有、轉載必究  Copyright© 
+ PChome Online 
+
+
+
+
+
+
+
+
+
+
+
+
+
+無線通訊射頻模組之設計 張 盛 富  教授 國立中正大學 電機工程系 通訊工程系 (05) , Fax:(05) , -  ppt download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Upload
+
+Log in
+
+
+
+
+
+
+
+
+My presentations
+Profile
+Feedback
+Log out
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Log in
+
+
+
+
+
+
+
+
+
+
+
+
+Log in
+
+Auth with social network: 
+
+
+
+
+
+
+
+
+
+
+
+Registration
+Forgot your password?
+
+
+
+
+
+
+
+
+
+Download presentation
+
+
+
+We think you have liked this presentation. If you wish to download it, please recommend it to your friends in any social system. Share buttons are a little bit lower. Thank you!
+Buttons:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cancel
+Download
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Presentation is loading. Please wait.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+無線通訊射頻模組之設計 張 盛 富  教授 國立中正大學 電機工程系 通訊工程系 (05) , Fax:(05) ,
+Published by
+Modified over 2 years ago
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Embed
+
+
+
+
+Download presentation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Copy to clipboard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Similar presentations                            
+
+
+More
+
+
+
+Presentation on theme: "無線通訊射頻模組之設計 張 盛 富  教授 國立中正大學 電機工程系 通訊工程系 (05) , Fax:(05) ,"— Presentation transcript:
+
+
+
+
+1
+
+(05)2720411-33218, Fax:(05)2720862, ieesfc@ccu.edu.tw無線通訊射頻模組之設計 張 盛 富  教授 國立中正大學 電機工程系 通訊工程系 (05) , Fax:(05) , February 2008
+
+
+
+
+
+
+
+2
+
+一、課程規劃 此門課屬於電磁學程課程系列 大四、研究所 電子學 電路學 電磁學 電磁波 微波元件與精密量測 射頻電路設計 高等電磁理論微波積層濾波器設計 天線理論與設計 射頻模組設計 功率放大器設計 電磁相容 大三、四
+
+
+
+
+
+
+
+3
+
+二、課程目標 培養由射頻規範得到射頻模組合適架構和應具備的規格 培養由射頻模組向下設計子電路的能力 培養由子電路向上整合成射頻模組的能力培養以團隊合作的方式完成射頻模組
+
+
+
+
+
+
+
+4
+
+
+
+
+
+
+
+5
+
+       無線通訊射頻模組設計 教材主要取材於2007年即將出版的教科書 第一部 射頻系統篇 第二部 射頻電路教學推動中心 主編 教育部顧問室 補助 中華民國95年11月 出版 張盛富  張嘉展 著 無線通訊射頻模組設計 教育部顧問室通訊科技人才培育 先導型計畫 第一部 射頻系統篇 第一章 無線通訊之射頻技術 (作者: 張盛富) 第二章 射頻收發架構分析(作者: 張盛富) 第三章 增益 (作者: 張盛富) 第四章 雜訊效應與計算(作者: 張盛富) 第五章 非線性效應與計算 (作者: 張嘉展) 第六章 射頻模組鏈路計算與模擬 (作者:張盛富) 第二部 射頻電路 第七章 微波元件與模型 (作者: 張嘉展) 第八章 低雜訊放大器(作者: 張盛富) 第九章 功率放大器與線性化技術(作者: 張嘉展) 第十章 振盪器 (作者: 張盛富) 第十一章 混頻器(作者: 張盛富)       
+
+
+
+
+
+
+
+6
+
+進度安排(一年課程 ) 上課講義 實驗教材 教科書 第一學期 WK1,2,3,4 射頻元件與模型 Lab 1 第七章 WK5,6,7,8低雜訊增益放大器 Lab 2 第八章 WK9,10,11,12 功率放大器 Lab 3 第九章 Wk13,14,15,16 振盪器 Lab 4 第十章 第二學期 混頻器 Lab 5 第十一章 WK5 射頻技術發展 第一章 WK6,7,8 射頻收發架構 第二章 WK9 增益鏈路 Lab 6 第三章 WK10,11,12 雜訊效應 Lab 7 第四章 WK13,14,15 非線性效應 Lab 8 第五章 WK17 射頻模組整合測試 Lab 9 第六章
+
+
+
+
+
+
+
+7
+
+進度安排(一學期課程 ) 上課講義 實驗教材 教科書 WK1,2 低雜訊增益放大器 Lab 2 第八章 WK3,4,5,6 振盪器第十章 WK7,8,9,10 混頻器 Lab 5 第十一章 WK11 射頻技術發展 第一章 WK12-13 射頻收發架構 第二章 WK14 增益鏈路 Lab 6 第三章 WK14-15 雜訊效應 Lab 7 第四章 WK16-17 非線性效應 Lab 8 第五章
+
+
+
+
+
+
+
+8
+
+課程實施 三人為一組 選擇題目: WiMAX, DVB-H, WiFi or Consult Professor 工作分配 個人進度報告 整合報告 計分方式
+
+
+
+
+
+
+
+9
+
+2006年2-7月開課例子 三人為一組 選擇題目 工作分配 Team Title Project Title Leader Jeans4G MIMO RF System 陳志昇(PLL) 黃俊穎(TX) 黃盈凱(RX) Dream Come True Speech Radar 李睿軒(LNA、PA) 張永忠(PLL) 蕭文俊(Mixer) Sales Smart Antenna-based Indoor Locating System 吳仁傑(Tag Circuit) 金廷嶽(TX) 劉昌熾(LNA) 創傑 2.4-GHz Zigbee 陳鼎中(TX) 謝東坤(RX) 陳睿識(PLL) ZigBee 2.4-GHz ZigBee 陳建任(VCO) 陳靜怡(LNA, mixer) 徐國雄(PA,mixer) WOW UWB 周正瑜(PLL) 劉如芳(PA、LNA) 黃釋偉(Mixer) LCCC Bluetooth 黃群超(PA) 蔡嘉偉(LNA) 陳明廣(VCO) 李政宏(Mixer)
+
+
+
+
+
+
+
+10
+
+2007年2-7月開課 四台卡丁車 Team Title Project Title Leader Overture ZigBee 何濬宏(LNA, DN MX) 羅泰麟 (RX, PLL) 黃議盈 (Up-MX, Ant) 林於恆 (PA, PLL) 大三元 賴威儒 (LNA, ) 賴炳均 (VCO) 吳政達 (Up/DN Mixer) 大四喜 UWB-OFDM 梁名惠 (Down-Mixer) 許晏國 (Up-Mixer) 賴建佑 (LNA) 機亮燁 Function Work 姚均翰 (LNA, PA) 劉坤興 (VCO, PLL) 鄭志彬 (Mixer) 四台卡丁車 S-Band TRX 林志奮 (VCO, PLL,PA) 林志傑 (Mixer, LNA) 黃少榆 林昆穎 WCperfect WiMax 許炎煌 蔡錦豐 江振強 周正瑜 (PA) RHDW 楊詠智 (VCO, MIxer) 黃智勇 劉育群 (PLL, PA) 歐振宇
+
+
+
+
+
+
+
+11
+
+Schedule Feb./March Section 1 break Section 2 WK1 19 Class beginLec. 1-Chap 1 RF overview Team forming: topic, teammate, assignment Lec  2-Chap 1 RF overview WK2 26 Lec  3- Chap 8 LNA Lec  4- Chap 8 LNA WK3 4 Team finalized Oral 1- Selected topic and assignment(10 min for each team) Lec  5 –Chap 10 VCO Lec  6 -Chap 10 VCO WK4 11 Lec 7- Chap 10 VCO Oral 2- LNA simulation Lec  8 -Chap 10 VCO WK5 18 Lec 9- Chap 10 VCO Oral 3- VCO simulation WK6 25 Oral 4- LNA Measurement Lec 10- Chap 11 Mixer
+
+
+
+
+
+
+
+12
+
+April Section 1 break Section 2 WK7 1 Spring Break WK8 8Lec 11- Chap 11 Mixer Lec 12- Chap 11 Mixer WK9 15 Lec 13- Chap 11 Mixer Lec 14- Chap 11 Mixer WK10 22 Lec 15- Chap 11 Mixer Oral 5- VCO measurement, PA simulation WK11 29 Oral 6- Mixer simulation Lec 16- Chap 2 RF architecture
+
+
+
+
+
+
+
+13
+
+May Section 1 break Section 2 WK12 6 Lec 17- RF architectureLec 18- Chap 3 Gain budget WK13 13 Lec 19- Chap 4 Noise budget Lec 20- Chap 4 Noise budget WK14 20 Lec 21- Chap 4 Noise budget Lec 22- Chap 4 Noise budget Oral 7-Mixer measurement, PA measurement WK16 31 Lec 23- Chap 5 Nonlinearity Lec 24- Chap 5 Nonlinearity
+
+
+
+
+
+
+
+14
+
+June Section 1 break Section 2 Written report due at11:30 am WK16 3Ora 8- LNA Meaurement Oral 9- VCO Measurement WK17 10 Oral-10 Mixer Measurement Oral-11 TRX measurement WK18 17 Final Exam week WK19 24 Written report due at11:30 am
+
+
+
+
+
+
+
+15
+
+計分方式 A. Individual achievement (70%)Student’s own circuit performance: circuit novelity, simulation completeness, and measurement performance individual score X difficulty weighting factor(0.9-1) B. Team achievement (30%) Integrated module performance:
+
+
+
+
+
+
+
+16
+
+學生作品: Jeans 隊, 題目: 4G MIMO RF SYSTEM
+
+
+
+
+
+
+
+17
+
+LNA Mixer Baseband amplifier VCO&PLL 整合測試 PA
+
+
+
+
+
+
+
+18
+
+References Topic Egan[1] Vismuller[2] Weber[3] CBN[4] Ludwig[5]Ch 1 RF Transceivers Ch 2 Noise Effects and Characterization Ch. 3, 5, 9 Ch. 10 Ch 3 Nonlinearity Effects and Characterization Ch. 4, 5 Ch 4 RF Module Design Ch. 1, 2 Ch. 1, Ch. 3 Ch. 4 Ch 5 Microwave Devices and Noises Ch. 10, 12 Ch. 3 Ch. 6, 7 Ch6 Low-Noise Amplifiers Ch. 2 Ch 4, 5, 15 Ch. 8 Ch. 8, 9 Ch 7 Power Amplifiers and Linearization Ch.6 Ch. 7 Ch. 11 Ch 8 Oscillators Ch. 9 Ch. 8, 15 Ch 9 Frequency Conversion Ch 10 Microwave switch Ch 11 Frequency Synthesis
+
+
+
+
+
+
+
+19
+
+Topic Besser[6] Gonalez[7] Ch 1 RF TransceiversCh 2 Noise Effects and Characterization Ch 3 Nonlinearity Effects and Characterization Ch 4 RF Module Design Ch 5 Microwave Devices and Noises Ch. 3 Ch6 Low-Noise Amplifiers Ch. 1, 2 Ch 7 Power Amplifiers and Linearization Ch. 5 Ch. 4 Ch 8 Oscillators Ch. 4, 6 Ch9 Frequency Conversion Ch. 7 Ch10 Microwave switch Ch 11 Frequency Synthesis
+
+
+
+
+
+
+
+20
+
+[1] William F. Egan, Practical RF System Design, John Wiley 2003[2] P. Vizmuller, RF Design GuideSystems, Circuits, and Equations, Artech House, 1995. [4] K. Chang, I. Bahl, and V. Nair, RF and Microwave cruits and component design for Wireless Systems, Wiley,2002. [6] Les Besser and Rowan Gilmore, Practical RF Circuit Design for Modern Wireless System, vol. 2
+
+
+
+
+
+
+
+
+
+
+Download ppt "無線通訊射頻模組之設計 張 盛 富  教授 國立中正大學 電機工程系 通訊工程系 (05) , Fax:(05) ,"
+
+
+
+
+
+
+
+
+Free download ppt on alternative sources of energy
+Ppt on revolution of the earth and seasons
+Ppt on ibm company profile
+Ppt on american vs british accent
+Ppt on programmable logic controller
+Ppt on forward rate agreement example
+Ppt on chromosomes and genes labeling
+Ppt on information security policy
+Ppt on limits and continuity calculus
+Ppt on current account deficit by country
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Similar presentations            
+
+
+
+
+
+
+
+
+1 Wireless Communication Lab CCU-EECOM 無線通訊射頻模組之設計 張 盛 富 教授 國立中正大學 電機工程系 通訊工程系 (05) , Fax:(05) , March 1, 2007.
+
+
+
+
+
+
+
+
+
+
+
+
+國立聯合大學 電機工程學系專題製作競賽 ( 應用物理組 ) 主講人：林家賢 組員：林俊宏 黃建彰 中華民國九十六年五月十二日.
+
+
+
+
+
+
+
+
+
+
+
+
+全國奈米科技人才培育推動計畫辦公室 中北區奈米科技Ｋ -12 教育發展中心計畫 簡 報 報告人：楊鏡堂教授 計畫執行單位：國立清華大學動力機械工程學系 計畫種子學校：教育部顧問室 94 年度奈米科技人才培育先導型計畫年度成果報告 中華民國九十四年十月十四日.
+
+
+
+
+
+
+
+
+
+
+
+教材名稱：網際網路安全之技術及其應用 （編號： 41 ） 計畫主持人：胡毓忠 副教授 聯絡電話： 教材網址：  執行單位： 政治大學資訊科學系.
+
+
+
+
+
+
+
+
+
+
+
+大華技術學院九十五學年度 資工系計算機概論教學大綱 吳弘翔. Wu Hung-Hsiang2 科目名稱：計算機概論與實習 授課老師：吳弘翔 學分數： 4 修別：必修 老師信箱：
+
+
+
+
+
+
+
+
+
+
+
+McGraw-Hill/Irwin © 2003 The McGraw-Hill Companies, Inc.,All Rights Reserved. 壹 企業研究導論.
+
+
+
+
+
+
+
+
+
+
+
+Embedded Systems Design
+
+
+
+
+
+
+
+
+
+
+
+
+電機工程系 選課輔導說明會. 選課輔導說明會宗旨 電機系自 95 年開始，同步進行『工程教育 認證』以及『系科本位課程』兩大與學生 課程相關的認證計畫。 電機系自 95 年開始，同步進行『工程教育 認證』以及『系科本位課程』兩大與學生 課程相關的認證計畫。 本系每年至少一次的系教育諮詢委員會， 廣邀產業界、學界、家長、畢業生、在校.
+
+
+
+
+
+
+
+
+
+
+
+大華技術學院九十三學年度 資工系計算機概論教學大綱 吳弘翔. Wu Hung-Hsiang2 科目名稱：計算機概論與實習 適用班別：夜資工技一Ａ 授課老師：吳弘翔 學分數： 4 修別：必修 老師信箱：
+
+
+
+
+
+
+
+
+
+
+
+1 寬頻分碼多重進接無線通訊上 鏈傳收系統之設計與製作 Transceiver System Design and Implementation for WCDMA Uplink Communication 國科會計畫 (1999/8 – 2002/7) 簡介 2004/1.
+
+
+
+
+
+
+
+
+
+
+
+寬頻通訊系統基礎教育計畫 分項計畫二 寬頻網路通訊 主要參與人員 黎碧煌 教 授 鍾順平 副教授
+
+
+
+
+
+
+
+
+
+
+
+高效率太陽能車 指導教授 : 蔡志成, 王國禎 組員 : 張友倫 ( ) 溫承豫 ( ) 溫承豫 ( ) 李志健 ( ) 李志健 ( ) 第十三週 (2005/5/18)
+
+
+
+
+
+
+
+
+
+
+
+第二十一章 研究流程、論文結構　 　　　　　　與研究範例 21-1 　研究流程 21-2 　論文結構 21-3 　研究範例.
+
+
+
+
+
+
+
+
+
+
+
+核心能力意見調查 計畫主持人：劉義周教授 研究助理： 林珮婷 報告日期： 調查案的目標與性質 調查的主要目的在進行宣傳，讓全校師生可以瞭 解何謂「課程地圖」與「核心能力」。 通識中心將核心能力主要區分為「學術訓練」、 「就業準備」、「公民文化養成」、「個人特質 提升」等四大面向，本調查依據此四大面向進一.
+
+
+
+
+
+
+
+
+
+
+
+論文研討 ( 一 ) B 組 課程簡介 劉美纓 / 尚榮安 / 胡凱傑 2009/09/17. 一、課程基本資料 科目名稱： ( 中文 ) 論文研討（一）Ｂ組 ( 英文 ) SEMINARS (I) 開課學期： 98 學年度第 1 學期 開課班級：企碩一 學 分 數： 2 學分 星期節次： 四 34.
+
+
+
+
+
+
+
+
+
+
+
+1 高等演算法 授課老師 : 陳建源 研究室 : 法 401 網站
+
+
+
+
+
+
+
+
+
+
+
+物流通關專業教室 (052) 國貿實務專業教室 (054) 企業資源整合專業教室 (055) 整合各專業教室資訊進行 即時動態及異常管理 (051) 貿易運籌研訓中心 專業實習、 、 師生研究討論 、、 、、 海關模擬系統、貨況追蹤、貨物 進出倉管理、海空運通關承攬、 通關自動化作業等相關模組 全球運籌決策中心.
+
+
+
+
+
+
+
+
+
+
+
+國立成功大學性別與婦女研究中心： 回顧與展望 劉開鈴主任 2007 年 8 月 6 日. 跨領域研究，跨科際整合 成大研究型大學.
+
+
+
+
+
+
+
+
+
+
+
+Chapter 3 Entropy : An Additional Balance Equation
+
+
+
+
+
+
+
+
+
+
+
+國立臺北科技大學進修部推廣教 育中心 生活美語會話 課程 英語課程說明 陳韻如 Melody.  課程目的：學生能夠使用簡單的英文以及在 一般英文會話中能夠自然應對並啟發學習英文 興趣  培養學生的聽、說、讀、寫基本能力，且琢 磨於文法、句型、字彙上的練習及應用使學生 透過老師的帶領，進行文化的體驗、發音的矯.
+
+
+
+
+
+
+
+
+
+
+
+
+Similar presentations                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Presentation is loading. Please wait....
+                    
+
+
+                        OK
+
+
+                                                            Embedded Systems Design                                                    
+
+
+
+
+
+
+
+
+
+
+
+About project
+SlidePlayer
+Terms of Service
+
+
+Feedback
+Privacy Policy
+Feedback
+
+
+© 2017 SlidePlayer.com Inc. All rights reserved.
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+Ads by Google
+
+
+
+
+
+
+
+
+
+
+射頻微波電路設計 - MakeSop
+
+
+
+
+
+
+
+
+
+
+
+
+                            歡迎您光臨本站
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電路>設計 
+
+
+射頻微波電路設計 
+
+無線通訊：射頻與微波電路設計
+已經被分享了1407次
+
+【課程名稱】 無線通訊：射頻與微波電路設計 【職訓局補助80%學費，學員僅自付$1,386元】 職訓局代碼：37087；目前剩後補名額，敬請把握！ 【課程代碼】 …
+射頻微波電路實驗 - RF & Microwave Lab.
+已經被分享了153次
+
+射頻微波電路實驗 教材大綱 授課教師：洪子聖 博士 課程助教：韓府義、鄭凱仁、林奇樑 ... 5.張盛富、戴明鳳，無線通信之射頻被動電路設計 ，全華科技圖書。 17 單元二 環型耦合器設計 …
+射頻-微波及毫米波積體電路 (RFIC and MMIC)
+已經被分享了813次
+
+射頻、微波 及毫米波積體電路 (RFIC and MMIC) 半導體製程的進展快速，目前已有0.18 μm/90 nm 甚至65 nm/40 nm 的RF ... 會受到影響，需要有兼顧射頻性能與靜電防護雙重考量的電路設計 。 8. 寬頻化的電路設計 將電路 …
+射頻主動電路 設計導論 - 景文科技大學e-portfolio數位化學習 …
+已經被分享了242次
+
+• 本課程針對」射頻電路」 模組之設計 • 介紹射頻與無線通道的觀念以及未來學習的 射頻傳輸接收器所需的相關 ... 這種三路徑的衰落通道用於視距(LOS)範圍的數位微波 中繼  …
+無線應用射頻與微波電路設計(第二版)
+已經被分享了797次
+
+3dWoo 大學簡繁體電腦書店,臺北市信義路四段60-92號,02-27008055 星期一~六：中午 12:00 ~ 晚上 9:00 星期日：下午 2:00 ~ 晚上 8:00 ... 無線應用射頻與微波電路設計(第 …
+博客來-射頻與微波通信電路：分析與設計
+已經被分享了1905次
+
+本書在第一版的基礎上對內容進行了擴展和更新。全書由13章和9個附錄組成，按照從一般到具體的方式，在簡略介紹通信系統、射頻無線通信和微波地面通信的基礎上，對所採用的射頻和微波電路的設計 …
+華梵大學 電子工程學系
+已經被分享了851次
+
+設立宗旨 提供低頻通訊電子電路模擬設計與製作量測、射頻/微波電路模擬設計與製作量測、無線通訊系統設計模擬、電磁波模擬等之教學訓練與專題研究，俾使學生將理論課程與實際應用設計結合，以培養出一通訊領域工程專業人員應有之設計 …
+射頻-微波及毫米波被動電路 (RF, Microwave MMW Passive …
+已經被分享了214次
+
+射頻、微波及毫米波被動電路 (RF, Microwave MMW Passive Circuits) 射頻、微波及毫米波被動電路可以概略分成濾波器、耦合器與平衡至非平衡 轉換器(balun)等，以及基本的微波電路 …
+NCHU射頻積體電路實驗室 - 中興電機
+已經被分享了1544次
+
+因此，大學部的專題 (微波專 題) 訓練著重於射頻積體電路相關元件的設計 ... ~同時也歡迎對射頻IC元件、電路、IC量測、微波電路有興趣的碩 、博新同學加入我們的行列 ...
+無線應用射頻微波電路設計----中國圖書網 台灣分站 (全球配送)
+已經被分享了1614次
+
+本書可以使讀者瞭解國際上關於分離及集成射頻/微波電路設計 方面的深入理論和最新動態，並獲得一些行之有效的設計方法和指標先進的新穎電路。書中引證的大量參考資 …
+RF射頻電路設計問題分析 . - 自動化在線網-我們只專註於技術
+已經被分享了1624次
+
+1 引言 射頻(RF)PCB設計，在目前公開出版的理論上具有很多不確定性，常被形容為一種「黑色藝術」。通常情況下，對於微波以下頻段的電路(包括低頻和低頻數字電路)，在全麵掌握各類設計原則前提下的仔細規劃是一次性成功設計 …
+射頻微波電路實驗 - RF & Microwave Lab.
+已經被分享了1765次
+
+射頻微波電路實驗 實驗教材 授課教師：洪子聖 博士 課程助教：韓府義、蕭舜謙、李樹林 ... 5.張盛富、戴明鳳，無線通信之射頻被動電路設計 ，全華科技圖書。 14 單元二 微帶枝幹耦合器設計 …
+數位類比通訊,微波電路設計,射頻電路設計,通信電子技術,光纖通訊,電子電路 …
+已經被分享了361次
+
+射頻暨微波 技術類 ETEK LC-2001 射頻電路設計實驗器 加入點選清單 瀏覽更多內容 功能說明 ... 課程目的： 1.培育無線電通訊技術人才之養成。 2.熟悉通訊儀器之使用與產品量測。 3.培養射頻模組電路設計 ...
+射頻微波電路設計-求購網
+已經被分享了633次
+
+射頻微波電路設計。射頻微波電路設計 陳弘典 編著 2-5 2.2.3 Microstrip Lines (1)製作在PCB 板上的微帶傳輸線結構如下圖 (2)單層PCB 的缺點：。找到了射頻微波電路設計 …
+2014 校園通訊競賽 射頻微波電路暨軟體無線電設計 - National …
+已經被分享了1524次
+
+為進一步提高研究生設計微波射頻電路與無線通訊系統的興趣及實作能力，活用產業界常用之電子輔助設計軟體 (EDA) 與通訊系| 統快速原型製作平臺，特舉辦此競賽，鼓勵 …
+RF 電路設計講座（1）射頻-微波天線技術探微
+已經被分享了1805次
+
+【設計講座】 RF 電路設計講座（1）射頻、微波天線技術探微 司馬餘 天線在無線電系統裡的功能是什麼呢？答案是，它是一個「門」、一個介面，透過它，射頻能量可以從 …
+《數位之牆》微波電路技術與應用課程
+已經被分享了1407次
+
+2010/7/6 · 微波電路設計是實現通訊系統射頻前端硬體電路之主要技術，本課程內容為微波電路設計之基礎技術，適合具電子、電機相關背景而欲跨入微波電路設計領域之 …
+射頻微波電路實務
+已經被分享了1548次
+
+南臺科技大學95學年度第二學期課程資訊 課程名稱 射頻微波電路實務 ... 6.射頻微波濾波器 7.天線設計 英文大綱 1.Transmission line theory 2.RF/Microwave Network …
+計算機輔助設計的射頻和微波 電路與系統 Computer-Aided Design of RF and Microwave …
+已經被分享了1881次
+
+... MARCH 2002,997-1003 感想 早期所開發的電腦輔助設計(CAE)與射頻微波電路，在當時的設計包括計算機硬體、軟體與訊息處理，透過濾波器的優化非線性電子網路分析 …
+天瓏網路書店 - 無線應用射頻與微波電路設計(第2版) (RF  Microwave …
+已經被分享了972次
+
+產品描述 < 內容簡介 > 羅德、魯道夫編著的《無線應用射頻與微波電路設計 (第 2 版)/ 國外信息技術精品智匯館》是《無線應用射頻與微波電路設計》的第二版。全書共 6  …
+[情報] 射頻微波電路設計 - 看板 Tech-Job - 批踢踢實業坊
+已經被分享了654次
+
+目前自強基金會有開射頻微波電路設計課程 有優惠兩人同行8300 批踢踢實業坊 › 看板 Tech_Job 關於我們 聯絡資訊 返回看板 分享 作者 peter0422 (打2007找我吧好速度隨片씩 看板 Tech_Job 標題 [情報] 射頻微波電路設計 ...
+射頻與微波電子學- 台灣Wiki
+已經被分享了1136次
+
+375 19.9 混頻器總結 376符號/縮略語表 377 習題 377 參考文獻 378 第20章 射頻/微波控制電路的設計 379 20.1 引言 379 20.2 PN結器件 379 20.3 開關結構 381 20.4 移相器 …
+高頻電路實驗室
+已經被分享了803次
+
+高頻電路實驗室 實驗教學特色 射頻與微波電路設計是電腦及通訊產業的 共同關鍵技術。。。。 本計劃擬以業界普遍使用之軟體進行射頻 與微波通訊電路模擬設計，，，並將電路圖佈局，並將電路 …
+【工業局補助50％】射頻與微波電路設計(臺北班） - 經濟部通 …
+已經被分享了1814次
+
+射頻與微波電路設計(臺北班） ※課程介紹： 使學員熟悉以傳輸線為基礎之微波電路設計，包含Transmission line theory, Smith chart, S-parameters, two-port networks, passive microwave …
+數位類比通訊,微波電路設計,射頻電路設計,通信電子技術,光纖通訊,電子電路 …
+已經被分享了1485次
+
+產品名稱 : 射頻電路設計實驗器 產品型號 : ETEK LC-2001 加入點選清單 點選清單
+射頻電子 - [實驗第四章] 微波濾波器與射頻多工器設計 - …
+已經被分享了1442次
+
+射頻電子 - [實驗第二章] I/O電路設計 1. 高頻電子電路實驗 第二章 I/O電路設計 李健榮 助理教授 Department of Electronic Engineering National Taipei University of …
+三民網路書店>射頻微波電路設計（簡體書）-陳會
+已經被分享了524次
+
+工具圖書 文學 軍事 歷史傳記 地理旅遊 語言學習 法律 社會科學 政治外交 美術藝術 哲學宗教 教育 體育休閒 電腦〈計算機〉 醫療保健 考題類 數理科學和化學 天文學、地球 …
+微波射頻電路設計與模擬100例-互動百科
+已經被分享了1510次
+
+微波射頻電路設計與模擬100例-圖書信息書 名: 微波射頻電路設計與模擬100例 作者：牛綱 出版社： 電子工業出版社 ISBN: 9787121145551 出版時間： 2011年9月1日 開 …
+[情報] 射頻與微波電路設計 - 看板 Tech-Job - 批踢踢實業坊
+已經被分享了760次
+
+目前自強基金會有開射頻微波電路設計課程 有優惠兩人同行8300 批踢踢實業坊 › 看板 Tech_Job 關於我們 聯絡資訊 返回看板 分享 作者 peter0422 (打2007找我吧好速度隨 …
+中華大學無線微波射頻電路 研發成果 - Documents
+已經被分享了1724次
+
+中華大學無線微波射頻電路 研發成果. 中華大學 通訊系 田慶誠 副教授 tien@chu.edu.tw 03 5186030 03 5186398. 無線通訊實驗室. 中華大學 電機所…
+(100)第一章 射頻微波電&#63799;設計簡介.pdf - 愛問共享 …
+已經被分享了157次
+
+2014/1/24 · 射頻微波電路設計陳弘典編著1-1第一章簡介1.1ImportanceofRadioFrequencyDesign本書目的提供在射頻(radiofrequency,RF)或微波(Microwave…
+射頻電子 - [實驗第四章] 微波濾波器與射頻多工器設計
+已經被分享了541次
+
+2015/6/13 · 射頻電子 - [實驗第四章] 微波濾波器與射頻多工器設計 1. 高頻電子電路實驗 第四章 微波濾波器與射頻多工器 李健榮 助理教授 Department of Electronic …
+Microwave Circuits Notes - 臺大電機系計算機中心
+已經被分享了1700次
+
+微波電路 講義 1. Class: EE5009(921U0560) Tue. 9:10-12:10, EE-II 144 2. Textbook: Microwave Engineering ... Radio frequency and microwave electronics, M. M. Radmanesh, Prentice Hall, 2001. (6) Microwave …
+若水堂簡體書店【大陸簡體書-期刊雜誌】網路書店
+已經被分享了735次
+
+內容簡介： 本書闡述了射頻微波電路設計的基本理論與方法，重點講解濾波器、放大器與功分合成電路。《射頻微波電路設計》將通過大量的工程設計實例，闡述濾波器、放 …
+微波電路設計 - MakeSop
+已經被分享了665次
+
+微波電路設計。2010/7/6 · 微波電路設計是實現通訊系統射頻前端硬體電路之主要技術，本課程內容為微波電路設計之基礎技術，適合具電子、電機相。找到了微波電路設計 …
+
+
+
+射頻文章
+
+
+無線射頻技術廠商 
+
+射頻元件廠商 
+
+ncc射頻認證 
+
+射頻鎖相迴路ic設計 
+
+射頻被動元件設計 
+
+rf無線射頻電路設計 
+
+射頻電路設計 
+
+射頻微波電路設計 
+
+射頻ic設計 
+
+射頻通訊電路設計 
+
+射頻電路設計實習 
+
+射頻電路 
+
+rf射頻電路 
+
+射頻電路原理 
+
+射頻電路介紹 
+
+射頻放大器電路 
+
+rf射頻原理 
+
+射頻放大器原理 
+
+無線射頻辨識技術 
+
+無線射頻技術 
+
+
+
+熱門文章
+
+
+衣櫃設計圖片 
+
+母親節教學活動設計 
+
+感恩活動教案設計 
+
+顏色主題網設計 
+
+hcgc和成衛浴目錄 
+
+上滑軌拉門設計 
+
+刺青字型設計 
+
+佛教海報背景設計 
+
+團體諮商方案設計 
+
+
+
+最新文章
+
+
+臺中文創園區設計展 
+
+松山文創園區設計展 
+
+母親節教學活動設計 
+
+幼兒教學活動設計 
+
+單元教學活動設計 
+
+教學活動設計範例 
+
+教學活動設計 
+
+這次的鄉土教學活動 
+
+鄉土語言闖關活動 
+
+ 
+
+
+
+    ﻿
+    
+
+    聯繫郵箱：（有任何問題請聯繫我們，我們會第一時間處理。）
+        站點：
+        MakeSop    
+
+        版權所有 部份內容來源於互聯網，僅供參考，專業問題請諮詢專家。
+    
+
+ 
+
+
+
+
+
+
+
+
+電路1頁 - MakeSop
+
+
+
+
+
+
+
+
+
+
+
+                            歡迎您光臨本站
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電路 
+
+
+
+
+
+ 
+
+
+led手電筒驅動電路 
+ @ 手電筒
+
+
+
+
+
+
+ 
+
+
+led驅動電路論文 
+ @ 驅動
+
+
+
+
+
+
+ 
+
+
+電容降壓電路 
+ @ 電容
+
+
+
+
+
+
+ 
+
+
+紅外線感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+門窗磁簧感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+氣缸磁簧感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+磁簧感應器如何安裝 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+無線磁簧感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+磁簧感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+高考消防技術 
+ @ 消防
+
+
+
+
+
+
+ 
+
+
+高考環保技術 
+ @ 高考
+
+
+
+
+
+
+ 
+
+
+高考生物技術 
+ @ 高考
+
+
+
+
+
+
+ 
+
+
+高考交通技術 
+ @ 高考
+
+
+
+
+
+
+ 
+
+
+高考衛生技術 
+ @ 高考
+
+
+
+
+
+
+ 
+
+
+積體電路製造技術 
+ @ 積體電路
+
+
+
+
+
+
+ 
+
+
+蝕刻製程模擬 
+ @ 蝕刻
+
+
+
+
+
+
+ 
+
+
+薄膜沉積製程模擬 
+ @ 沉積
+
+
+
+
+
+
+ 
+
+
+馬車cdi電路圖 
+ @ 馬車
+
+
+
+
+
+
+ 
+
+
+馬車cdi故障 
+ @ 馬車
+
+
+
+
+
+<<
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+>>
+
+
+
+
+熱門文章
+
+
+南亞電路板技術員薪水 
+
+電路元件符號表 
+
+電路元件符號對照表 
+
+ac馬達調速電路 
+
+分離式冷氣機線路圖 
+
+警報器電路 
+
+如何洗電路板 
+
+氣缸磁簧感應器 
+
+光控警報器電路 
+
+
+
+最新文章
+
+
+led手電筒驅動電路 
+
+led驅動電路論文 
+
+電容降壓電路 
+
+紅外線感應器 
+
+感應器 
+
+門窗磁簧感應器 
+
+氣缸磁簧感應器 
+
+磁簧感應器如何安裝 
+
+無線磁簧感應器 
+
+ 
+
+
+
+    ﻿
+    
+
+    聯繫郵箱：（有任何問題請聯繫我們，我們會第一時間處理。）
+        站點：
+        MakeSop    
+
+        版權所有 部份內容來源於互聯網，僅供參考，專業問題請諮詢專家。
+    
+
+ 
+
+
+
+
+
+
+
+
+
+設計1頁 - MakeSop
+
+
+
+
+
+
+
+
+
+
+
+                            歡迎您光臨本站
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電路>設計 
+
+
+
+
+
+ 
+
+
+臺中文創園區設計展 
+ @ 文創
+
+
+
+
+
+
+ 
+
+
+松山文創園區設計展 
+ @ 文創
+
+
+
+
+
+
+ 
+
+
+母親節教學活動設計 
+ @ 母親節
+
+
+
+
+
+
+ 
+
+
+幼兒教學活動設計 
+ @ 幼兒
+
+
+
+
+
+
+ 
+
+
+單元教學活動設計 
+ @ 單元
+
+
+
+
+
+
+ 
+
+
+教學活動設計範例 
+ @ 範例
+
+
+
+
+
+
+ 
+
+
+教學活動設計 
+ @ 教學
+
+
+
+
+
+
+ 
+
+
+這次的鄉土教學活動 
+ @ 鄉土
+
+
+
+
+
+
+ 
+
+
+鄉土語言闖關活動 
+ @ 鄉土
+
+
+
+
+
+
+ 
+
+
+鄉土教學活動 
+ @ 鄉土
+
+
+
+
+
+
+ 
+
+
+鄉土教案設計 
+ @ 鄉土
+
+
+
+
+
+
+ 
+
+
+天車製造安力工程 
+ @ 製造
+
+
+
+
+
+
+ 
+
+
+天車牛腿照片 
+ @ 照片
+
+
+
+
+
+
+ 
+
+
+珠寶設計師培訓班 
+ @ 培訓班
+
+
+
+
+
+
+ 
+
+
+珠寶設計師胡茵菲 
+ @ 設計師
+
+
+
+
+
+
+ 
+
+
+林曉同設計師珠寶 
+ @ 設計師
+
+
+
+
+
+
+ 
+
+
+台灣珠寶設計師 
+ @ 台灣
+
+
+
+
+
+
+ 
+
+
+珠寶設計師薪水 
+ @ 薪水
+
+
+
+
+
+
+ 
+
+
+珠寶設計師 
+ @ 設計師
+
+
+
+
+
+
+ 
+
+
+衣櫃設計圖片 
+ @ 衣櫃
+
+
+
+
+
+<<
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+>>
+
+
+
+
+熱門文章
+
+
+衣櫃設計圖片 
+
+母親節教學活動設計 
+
+感恩活動教案設計 
+
+顏色主題網設計 
+
+hcgc和成衛浴目錄 
+
+上滑軌拉門設計 
+
+刺青字型設計 
+
+佛教海報背景設計 
+
+團體諮商方案設計 
+
+
+
+最新文章
+
+
+臺中文創園區設計展 
+
+松山文創園區設計展 
+
+母親節教學活動設計 
+
+幼兒教學活動設計 
+
+單元教學活動設計 
+
+教學活動設計範例 
+
+教學活動設計 
+
+這次的鄉土教學活動 
+
+鄉土語言闖關活動 
+
+ 
+
+
+
+    ﻿
+    
+
+    聯繫郵箱：（有任何問題請聯繫我們，我們會第一時間處理。）
+        站點：
+        MakeSop    
+
+        版權所有 部份內容來源於互聯網，僅供參考，專業問題請諮詢專家。
+    
+
+ 
+
+
+
+
+
+
+
+
+
+rf無線射頻電路設計 - MakeSop
+
+
+
+
+
+
+
+
+
+
+
+
+                            歡迎您光臨本站
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電路>設計 
+
+
+rf無線射頻電路設計 
+
+無線射頻辨識標籤設計與測試 - 朝陽科技大學資訊學院 …
+已經被分享了1906次
+
+晶片電路設計 圖一為無線射頻 辨識標籤系統架構圖，本 設計包括整流／儲能電路、解調電路、後向散 ... Vrf 為輸入弦波電壓，Vth為導通電壓，由(1)式可 知，欲達到最高 …
+中華大學無線微波射頻電路 研發成果
+已經被分享了441次
+
+... 數位信號處理 無線通訊射頻電路研究 負責人：通訊系 田慶誠 副教授 實驗室研究領域： 無線通訊射頻電路設計 RF and Mixed-Signal IC設計 RFID 系統晶片設計 無線通訊系統模組及韌體開發 數值電磁場論 天線設計 …
+類比RF設計─電子工程專輯論壇
+已經被分享了98次
+
+隨著影音視訊與無線通訊應用的興起，類比和射頻(RF)設計的重要性也與日俱增。類比和射頻技術的涵蓋領域廣泛，從各種的轉換器、放大器、調節器至射頻接收器、頻率合成器等，各種不同應用又都有不同的設計 …
+National Chiao Tung University Institutional Repository：利用共振器耦合技術的無線射頻能量採集電路設計
+已經被分享了110次
+
+利用共振器耦合技術的無線射頻能量採集電路設計 An RF Energy Harvesting Circuit design Using Resonator Coupling Technique Authors: 譚隆文 Tain, Longwen-Wen 郭建男 Kuo, Chien-Nan 電機學院電子與光電學程 Keywords: 無線射頻辨識;無線 …
+射頻電路－第1頁 - 電子工程專輯論壇─工程師社群交流與互動 …
+已經被分享了435次
+
+電子工程專輯論壇>自由討論>類比/RF設計>射頻電路 隨著影音視訊與無線通訊應用的興起，類比和射頻(RF)設計 的重要性也與日俱增。類比和射頻技術的涵蓋領域廣泛，從各種的轉換器、放大器、調節器至射頻 …
+National Chiao Tung University Institutional Repository：用於2.4GHz無線接收器之射頻濾波器設計
+已經被分享了609次
+
+用於2.4GHz無線接收器之射頻濾波器設計 RF Filter Design for 2.4GHz Wireless Receiver Authors: 何鉅雄 Koi-Hong Ho 溫壞岸 Kuei-Ann Wen 電子研究所 Keywords: 射頻電路;濾波器;低雜訊放大器;低通濾波器;接收器;CMOS;類比電路;GM_C濾波器;RF …
+National Chiao Tung University Institutional Repository：無線網路應用之互補金氧半射頻接收器設計
+已經被分享了1897次
+
+無線網路應用之互補金氧半射頻接收器設計 CMOS RF Receiver Design for Wireless LAN Applications Authors: ... 國立清華大學 - 可變增益之1V互補式金氧半射頻前端電路於無線 …
+UHF RFID READER,RF高頻模組,RF無線通訊,無線模組,無線監控
+已經被分享了150次
+
+UHF RFID,超高頻被動式電子標簽系統,影像,無線影像,Wi-Fi控制,2.4G,ASK,FSK,AUDIO,RF Module,RF高頻模組,無線,高頻,通訊,微波,燈飾,模塊,發射,接收,藍芽,感應器,感應燈,雷達,模組,radio…
+CTIMES- 射頻電路板設計技巧 :藍芽設計,電路板
+已經被分享了715次
+
+2002/2/5 · 近幾年來，由於藍芽設備、無線區域網路(WLAN)設備，和行動電話的需求與成長，促使業者越來越關註RF電路設計的技巧。從過去到現在，RF電路板設計如同電 …
+WiMAX RF前端電路設計介紹 - 提供和分析最新產業資訊與科技 …
+已經被分享了1010次
+
+2007/5/1 · 在本文中將針對WiMAX之規格需求，設計一接收機前端電路。此前端電路包括低雜訊放大器及混波器，適用於2.5GHz 至2.7GHz ... 射頻/無線 WiMAX RF 前端電路設計 …
+射頻主動電路 設計導論 - 景文科技大學e-portfolio數位化學習 …
+已經被分享了1001次
+
+• 射頻電路設計對無線 產業界而言，實屬非常重要的一環，負有 產品開發成敗之責。•現況無線產品的擴展由垂直至水平整合，一個 ... GSM模組包含GSM通訊所需的全部RF、ADC/DAC及其它電路 的 電路 …
+CHAPTER 0 WIRELESS COMMUNICATION RFMICROWAVE CIRCUIT DESIGN RFIC TREND BRIEF INTRODUCTION 無線通訊射頻微波電路設計 …
+已經被分享了3次
+
+無線通訊射頻/微波電路設計簡介 Radio Frequency (RF) & Microwave (MW) Bands Very low frequency (VLF 超低頻) Low frequency (LF) Medium frequency (MF) High …
+射頻-微波及毫米波積體電路 (RFIC and MMIC)
+已經被分享了926次
+
+射頻、微波及毫米波積體電路 (RFIC and MMIC) 半導體製程的進展快速，目前已有0.18 μm/90 nm 甚至65 nm/40 nm 的RF CMOS製程被開發出來，使得RFIC的設計可以滿足 …
+RF電路設計 - 經濟部通訊產業發展推動小組
+已經被分享了947次
+
+... 距離的遠近與移動性，發展各式種_的無線通訊系統，包括無線區域網_以及蜂巢式網_等。RF電路是構成無線通訊系統的基本元件，本課程主旨在於培養工程師RF電路的設計 …
+rf電路設計-求購網
+已經被分享了172次
+
+rf電路設計。2014/11/6 · 是德科技(Keysight Technologies, Inc.)日前宣佈，該公司於美國加州舉辦的化合物半。 ... 實用射頻電路板設計： 無線電訊產品及網路 Practical RF …
+射頻積體電路設計-電子設備網
+已經被分享了1506次
+
+... 課程概要 RF 系統簡介、RF設計概念、傳輸線分析、史密斯圖、調變與偵測、多工汲取技術、無線傳輸標準、發射器架構、RF ... 2 5 馮武雄教授 長庚大學電子工程學系 Chapter 1 射頻電路設計 …
+射頻電路-求購網
+已經被分享了302次
+
+實用射頻電路板設計： 無線電訊產品及網路 Practical RF PCB Design: Wireless Telecommunication Products & Networks One of the most demanding consumer … CTIMES- 射頻電路板設計技巧 :藍芽設計,電路 …
+射頻- 台灣Wiki
+已經被分享了835次
+
+射頻簡稱RF射頻就是射頻電流，它是一種高頻交流變化電磁波的簡稱。每秒變化小於1000次的交流電稱為低頻電流，大於10000 ... 舉例來說，你或許需要為你的客戶提供一系列基於本地頻率的射頻通信系統。考慮到設計一個射頻 ...
+2.4 G Hz 射頻無線的優勢 - 自訂的 2.4 g h z RF 無線解決方案, PCB 電路設計 & 解決方案, PCBA 中國 - 電腦無線 …
+已經被分享了921次
+
+自訂的 2.4 g h z RF 無線解決方案, PCB 電路設計 & 解決方案, PCBA 中國 2.4G h z RF 無線遠端解決方案, 模組 & 產品 首頁 解決方案和應用程式 ...
+RF通訊工程師-104職務大百科 - 104人力銀行 - 工作機會數領 …
+已經被分享了37次
+
+內容 從事無線通訊之射頻電路研究、開發、設計等工作。 任務 負責高頻電路設計、電路板佈局及專案執行。負責產品規格測試、除錯、試產及法規認證。負責阻抗匹配、雜 …
+無線射頻(RF)
+已經被分享了1912次
+
+國內外無線射頻測試 / 對策服務 / 報告發行 / 申請服務 CTIA TRP/TIS 測試 MIMO 測試 DFS Master/Slave測試 SAR測試 修改諮詢及電路 板佈線 無線產品測試服務 FCC Part …
+《數位之牆》RF電路設計實作技術
+已經被分享了1510次
+
+2007/9/26 · 根據iSuppli報告預測，全球RF功能元件(RF Components)應用於行動手機的市場，將於2008年達到64.89億美元，隨著RF在無線通訊市場需求的提升，RF電路模組的應用也相繼快速成長，惟RF電路的設計關鍵在於設計能力，設計結果良好與否往往會影響到RF …
+CTIMES- 射頻電路板設計技巧 :藍芽設計,電路板
+已經被分享了1096次
+
+近幾年來，由於藍芽設備、無線區域網路(WLAN)設備，和行動電話的需求與成長，促使業者越來越關註RF電路設計的技巧。 ... 射頻(RF)電路板設計由於在理論上還有很多不 …
+《數位之牆》RF電路設計實作技術
+已經被分享了1737次
+
+rf接收電路。• 本課程針對」射頻電路 」 模組之設計 • 介紹射頻與無線通道的觀念以及未來學習的 射頻傳輸接收器所需的相關 ... 的接收 和發送所必需的那部分。SISO 。找到了rf ...
+現代無線系統射頻電路實用設計-(捲II)(有源電路與系統)----中國 …
+已經被分享了477次
+
+現代無線系統射頻電路實用設計- (捲II)(有源電路與系統) 作者 ： (美)吉爾摩、貝斯 ... 本書集作者40年從事RF電路和系統設計工作及授課經驗於一體。涵蓋有源及非線性電路，並介紹了RF電路和系統設計 …
+無線通訊前端射頻電路設計 - 財團法人自強工業科學基金會
+已經被分享了547次
+
+【課程名稱】 無線通訊前端射頻電路設計 【射頻電路設計的基礎必修課程】有志從事通訊領域者，絕對不容錯過！ 【課程代碼】 03W008 【上課時間】 12/13(六)、12/20( …
+RF無線射頻電路設計中的常見問題及設計原則-電子機械論文-免 …
+已經被分享了1894次
+
+論文《RF無線射頻電路設計 中的常見問題及設計原則》其它版本 簡體版：RF無線射頻電路設計中的常見問題及設計原則 英文版：RF radio frequency circuit design and …
+《數位之牆》射頻積體電路(RFIC)設計與應用
+已經被分享了747次
+
+2006/12/5 · ... 設計與分析方面的基本能力。主要的課程內容包括有：傳輸線分析、史密斯圖、基本射頻電路設計 ... Basic Concepts in RF Design 射頻積體電路設計 的基 …
+射頻電路設計 - 3dWoo 大學簡體電腦書店
+已經被分享了1539次
+
+3dWoo 大學簡繁體電腦書店,臺北市信義路四段60-92號,02-27008055 星期一~日：AM 12:00 ~ PM 9:00 ... 射頻電路設計 ( 簡體 版) 作者：黃智偉 類別：1. -> 通信技術-> 無線 …
+RF course chn 020210 - Welcome to Lexiwave
+已經被分享了1228次
+
+無線電信產品是消費品市場上大需求量的產品之一。良好設計的射頻電路板(RF PCB)直接影響無線電信 產品的質量，電路板的佈置亦決定了產品的穩定、表現和可靠性。 現今無線 …
+活動 報導 漫談 RF 電路設計 - 臺灣電磁產學聯盟
+已經被分享了1756次
+
+漫談RF 電路設計 聯盟特約記者／戴君翰 邀請演講 活動 報導 近年來隨著無線通訊的迅速發展，可攜式電子 ... 有著豐富的經歷，也對射頻電路（Radio frequency, RF ）有著豐富的經驗及學識。演講一開始，曾經理便介紹了 RF …
+National Chiao Tung University Institutional Repository：射頻電路模組設計
+已經被分享了1883次
+
+國立臺灣大學 - 射頻辨識系統掃讀器發射模組及電子標籤基頻電路設計 / 劉奇恩; Liu, Chi-En 國立聯合大學 - LNA射頻電路之ESD保護電路設計與模擬 / 陳勝利 國立中央大學 - C頻帶射頻電路設計及模組封裝 C band RF …
+天瓏網路書店 - 無線應用射頻與微波電路設計(第2版) (RF  …
+已經被分享了235次
+
+無線應用射頻與微波電路設計(第2版) (RF / Microwave Circuit Design for Wireless Applications, 2/e) Ulrich L. Rohde, Matthias Rudolph 著、張玉興、文繼國 ...
+
+
+
+射頻文章
+
+
+無線射頻技術廠商 
+
+射頻元件廠商 
+
+ncc射頻認證 
+
+射頻鎖相迴路ic設計 
+
+射頻被動元件設計 
+
+rf無線射頻電路設計 
+
+射頻電路設計 
+
+射頻微波電路設計 
+
+射頻ic設計 
+
+射頻通訊電路設計 
+
+射頻電路設計實習 
+
+射頻電路 
+
+rf射頻電路 
+
+射頻電路原理 
+
+射頻電路介紹 
+
+射頻放大器電路 
+
+rf射頻原理 
+
+射頻放大器原理 
+
+無線射頻辨識技術 
+
+無線射頻技術 
+
+
+
+熱門文章
+
+
+衣櫃設計圖片 
+
+母親節教學活動設計 
+
+感恩活動教案設計 
+
+顏色主題網設計 
+
+hcgc和成衛浴目錄 
+
+上滑軌拉門設計 
+
+刺青字型設計 
+
+佛教海報背景設計 
+
+團體諮商方案設計 
+
+
+
+最新文章
+
+
+臺中文創園區設計展 
+
+松山文創園區設計展 
+
+母親節教學活動設計 
+
+幼兒教學活動設計 
+
+單元教學活動設計 
+
+教學活動設計範例 
+
+教學活動設計 
+
+這次的鄉土教學活動 
+
+鄉土語言闖關活動 
+
+ 
+
+
+
+    ﻿
+    
+
+    聯繫郵箱：（有任何問題請聯繫我們，我們會第一時間處理。）
+        站點：
+        MakeSop    
+
+        版權所有 部份內容來源於互聯網，僅供參考，專業問題請諮詢專家。
+    
+
+ 
+
+
+
+
+
+
+
+
+電路1頁 - MakeSop
+
+
+
+
+
+
+
+
+
+
+
+                            歡迎您光臨本站
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電路 
+
+
+
+
+
+ 
+
+
+led手電筒驅動電路 
+ @ 手電筒
+
+
+
+
+
+
+ 
+
+
+led驅動電路論文 
+ @ 驅動
+
+
+
+
+
+
+ 
+
+
+電容降壓電路 
+ @ 電容
+
+
+
+
+
+
+ 
+
+
+紅外線感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+門窗磁簧感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+氣缸磁簧感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+磁簧感應器如何安裝 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+無線磁簧感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+磁簧感應器 
+ @ 感應器
+
+
+
+
+
+
+ 
+
+
+高考消防技術 
+ @ 消防
+
+
+
+
+
+
+ 
+
+
+高考環保技術 
+ @ 高考
+
+
+
+
+
+
+ 
+
+
+高考生物技術 
+ @ 高考
+
+
+
+
+
+
+ 
+
+
+高考交通技術 
+ @ 高考
+
+
+
+
+
+
+ 
+
+
+高考衛生技術 
+ @ 高考
+
+
+
+
+
+
+ 
+
+
+積體電路製造技術 
+ @ 積體電路
+
+
+
+
+
+
+ 
+
+
+蝕刻製程模擬 
+ @ 蝕刻
+
+
+
+
+
+
+ 
+
+
+薄膜沉積製程模擬 
+ @ 沉積
+
+
+
+
+
+
+ 
+
+
+馬車cdi電路圖 
+ @ 馬車
+
+
+
+
+
+
+ 
+
+
+馬車cdi故障 
+ @ 馬車
+
+
+
+
+
+<<
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+>>
+
+
+
+
+熱門文章
+
+
+南亞電路板技術員薪水 
+
+電路元件符號表 
+
+電路元件符號對照表 
+
+ac馬達調速電路 
+
+分離式冷氣機線路圖 
+
+警報器電路 
+
+如何洗電路板 
+
+氣缸磁簧感應器 
+
+光控警報器電路 
+
+
+
+最新文章
+
+
+led手電筒驅動電路 
+
+led驅動電路論文 
+
+電容降壓電路 
+
+紅外線感應器 
+
+感應器 
+
+門窗磁簧感應器 
+
+氣缸磁簧感應器 
+
+磁簧感應器如何安裝 
+
+無線磁簧感應器 
+
+ 
+
+
+
+    ﻿
+    
+
+    聯繫郵箱：（有任何問題請聯繫我們，我們會第一時間處理。）
+        站點：
+        MakeSop    
+
+        版權所有 部份內容來源於互聯網，僅供參考，專業問題請諮詢專家。
+    
+
+ 
+
+
+
+
+
+
+
+
+
+設計1頁 - MakeSop
+
+
+
+
+
+
+
+
+
+
+
+                            歡迎您光臨本站
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電路>設計 
+
+
+
+
+
+ 
+
+
+臺中文創園區設計展 
+ @ 文創
+
+
+
+
+
+
+ 
+
+
+松山文創園區設計展 
+ @ 文創
+
+
+
+
+
+
+ 
+
+
+母親節教學活動設計 
+ @ 母親節
+
+
+
+
+
+
+ 
+
+
+幼兒教學活動設計 
+ @ 幼兒
+
+
+
+
+
+
+ 
+
+
+單元教學活動設計 
+ @ 單元
+
+
+
+
+
+
+ 
+
+
+教學活動設計範例 
+ @ 範例
+
+
+
+
+
+
+ 
+
+
+教學活動設計 
+ @ 教學
+
+
+
+
+
+
+ 
+
+
+這次的鄉土教學活動 
+ @ 鄉土
+
+
+
+
+
+
+ 
+
+
+鄉土語言闖關活動 
+ @ 鄉土
+
+
+
+
+
+
+ 
+
+
+鄉土教學活動 
+ @ 鄉土
+
+
+
+
+
+
+ 
+
+
+鄉土教案設計 
+ @ 鄉土
+
+
+
+
+
+
+ 
+
+
+天車製造安力工程 
+ @ 製造
+
+
+
+
+
+
+ 
+
+
+天車牛腿照片 
+ @ 照片
+
+
+
+
+
+
+ 
+
+
+珠寶設計師培訓班 
+ @ 培訓班
+
+
+
+
+
+
+ 
+
+
+珠寶設計師胡茵菲 
+ @ 設計師
+
+
+
+
+
+
+ 
+
+
+林曉同設計師珠寶 
+ @ 設計師
+
+
+
+
+
+
+ 
+
+
+台灣珠寶設計師 
+ @ 台灣
+
+
+
+
+
+
+ 
+
+
+珠寶設計師薪水 
+ @ 薪水
+
+
+
+
+
+
+ 
+
+
+珠寶設計師 
+ @ 設計師
+
+
+
+
+
+
+ 
+
+
+衣櫃設計圖片 
+ @ 衣櫃
+
+
+
+
+
+<<
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+>>
+
+
+
+
+熱門文章
+
+
+衣櫃設計圖片 
+
+母親節教學活動設計 
+
+感恩活動教案設計 
+
+顏色主題網設計 
+
+hcgc和成衛浴目錄 
+
+上滑軌拉門設計 
+
+刺青字型設計 
+
+佛教海報背景設計 
+
+團體諮商方案設計 
+
+
+
+最新文章
+
+
+臺中文創園區設計展 
+
+松山文創園區設計展 
+
+母親節教學活動設計 
+
+幼兒教學活動設計 
+
+單元教學活動設計 
+
+教學活動設計範例 
+
+教學活動設計 
+
+這次的鄉土教學活動 
+
+鄉土語言闖關活動 
+
+ 
+
+
+
+    ﻿
+    
+
+    聯繫郵箱：（有任何問題請聯繫我們，我們會第一時間處理。）
+        站點：
+        MakeSop    
+
+        版權所有 部份內容來源於互聯網，僅供參考，專業問題請諮詢專家。
+    
+
+ 
+
+
+
+
+

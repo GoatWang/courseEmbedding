@@ -1,0 +1,6876 @@
+
+
+
+迴歸分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+迴歸分析
+
+維基百科，自由的百科全書
+
+
+					跳轉至：					導航，					搜索
+
+
+
+
+
+
+
+
+
+
+
+
+統計學系列條目
+
+
+迴歸分析
+
+
+
+
+
+模型
+
+
+
+
+線性回歸
+簡單回歸（英語：Simple linear regression）
+普通最小二乘法（英語：Ordinary least squares）
+多項式回歸（英語：Polynomial regression）
+一般線性模型
+
+
+
+
+
+
+廣義線性模式
+離散選擇（英語：Discrete choice）
+邏輯迴歸
+多項羅吉特（英語：Multinomial logit）
+混合羅吉特
+波比（英語：Probit model）
+多項式波比（英語：Multinomial probit）
+排序性模型（英語：Ordered logit）
+有序波比（英語：Ordered probit）
+泊松回歸
+
+
+
+
+
+
+等級線性模型
+固定效應（英語：Fixed effects model）
+隨機效應（英語：Random effects model）
+混合模型（英語：Mixed model）
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+非參數（英語：Nonparametric regression）
+半參數（英語：Semiparametric regression）
+穩健（英語：Robust regression）
+分位數迴歸
+保序回歸
+主成分（英語：Principal component regression）
+最小角
+局部（英語：Local regression）
+分段（英語：Segmented regression）
+
+
+
+
+
+
+含誤差變量（英語：Errors-in-variables models）
+
+
+
+
+估計
+
+
+
+
+最小二乘法
+普通最小二乘法（英語：Ordinary least squares）
+線性
+偏最小二乘回歸
+總體（英語：Total least squares）
+廣義（英語：Generalized least squares）
+加權
+非線性（英語：Non-linear least squares）
+非負（英語：Non-negative least squares）
+重覆再加權（英語：Iteratively reweighted least squares）
+嶺回歸（英語：Tikhonov regularization）
+LASSO
+
+
+
+
+
+
+最小絕對值導數法（英語：Least absolute deviations）
+貝葉斯（英語：Bayesian linear regression）
+貝葉斯多元（英語：Bayesian multivariate linear regression）
+
+
+
+
+背景
+
+
+
+
+回歸模型檢驗（英語：Regression model validation）
+平均響應和預測響應（英語：Mean and predicted response）
+誤差和殘差
+擬合優度（英語：Goodness of fit）
+學生化殘差（英語：Studentized residual）
+高斯－馬爾可夫定理
+
+
+
+
+
+
+ 概率與統計主題
+
+
+
+
+
+
+
+查
+論
+編
+
+
+
+
+
+
+
+
+
+簡單線性迴歸分析的例子
+
+
+迴歸分析（英語：Regression Analysis）是一種統計學上分析數據的方法，目的在於瞭解兩個或多個變數間是否相關、相關方向與強度，並建立數學模型以便觀察特定變數來預測研究者感興趣的變數。更具體的來說，回歸分析可以幫助人們瞭解在只有一個自變量變化時因變量的變化量。一般來說，通過回歸分析我們可以由給出的自變量估計因變量的條件期望。
+迴歸分析是建立因變數
+
+
+
+Y
+
+
+{\displaystyle Y}
+
+（或稱依變數，反應變數）與自變數
+
+
+
+X
+
+
+{\displaystyle X}
+
+（或稱獨變數，解釋變數）之間關係的模型。簡單線性回歸使用一個自變量
+
+
+
+X
+
+
+{\displaystyle X}
+
+，複迴歸使用超過一個自變量（
+
+
+
+
+X
+
+1
+
+
+,
+
+X
+
+2
+
+
+.
+.
+.
+
+X
+
+i
+
+
+
+
+{\displaystyle X_{1},X_{2}...X_{i}}
+
+）。
+
+
+
+目錄
+
+
+1 起源
+2 迴歸分析原理
+
+2.1 參數估計
+
+
+3 回歸模型
+4 迴歸分析的種類
+
+4.1 簡單線性回歸
+4.2 複迴歸（或多變量迴歸）
+4.3 對數線性迴歸
+4.4 非線性迴歸
+4.5 邏輯迴歸
+4.6 偏迴歸
+4.7 自迴歸
+
+4.7.1 自迴歸滑動平均模型
+4.7.2 差分自迴歸滑動平均模型
+4.7.3 向量自迴歸模型
+
+
+
+
+5 參閱
+6 參考資料
+7 外部連結
+
+
+
+起源[編輯]
+回歸的最早形式是最小二乘法，由1805年的勒讓德(Legendre)[1]，和1809年的高斯(Gauss)出版[2]。勒讓德和高斯都將該方法應用於從天文觀測中確定關於太陽的物體的軌道（主要是彗星，但後來是新發現的小行星）的問題。 高斯在1821年發表了最小二乘理論的進一步發展[3]，包括高斯－馬爾可夫定理的一個版本。
+「迴歸」（或作「回歸」）一詞最早由法蘭西斯·高爾頓（Francis Galton）所使用[4][5]。他曾對親子間的身高做研究，發現父母的身高雖然會遺傳給子女，但子女的身高卻有逐漸「迴歸到中等（即人的平均值）」的現象。不過當時的迴歸和現在的迴歸在意義上已不盡相同。
+在1950年代和60年代，經濟學家使用機械電子桌面計算器來計算回歸。在1970年之前，它有時需要長達24小時從一個回歸接收結果[6]。
+迴歸分析原理[編輯]
+
+目的在於找出一條最能夠代表所有觀測資料的函數（迴歸估計式）。
+用此函數代表因變數和自變數之間的關係。
+
+參數估計[編輯]
+
+矩估計（Method of Moment、MOM）
+最小二乘法（Ordinary Least Square Estimation, OLSE）
+最大似然估計（Maximum Likelihood Estimation, MLE）
+
+回歸模型[編輯]
+回歸模型主要包括以下變量：
+
+未知參數，記為β，可以代表一個標量或一個向量。
+自變量，X。
+因變量，Y。
+
+回歸模型將Y和一個關於X和β的函數關聯起來。
+
+
+
+
+
+Y
+≈
+f
+(
+
+X
+
+,
+
+β
+
+)
+
+
+{\displaystyle Y\approx f(\mathbf {X} ,{\boldsymbol {\beta }})}
+
+
+
+迴歸分析的種類[編輯]
+簡單線性回歸[編輯]
+簡單線性迴歸（英語：Simple linear regression）（英語：simple linear regression）
+
+應用時機
+
+
+以單一變數預測
+判斷兩變數之間相關的方向和程度
+
+複迴歸（或多變量迴歸）[編輯]
+複迴歸分析（英語：multiple regression analysis）是簡單線性迴歸的一種延伸應用，用以瞭解一個依變項與兩組以上自變項的函數關係。
+對數線性迴歸[編輯]
+對數線性迴歸（英語：Log-linear model）（英語：Log-linear model），是將解釋變項（實驗設計中的自變項）和反應變項（實驗設計中的依變項）都取對數值之後再進行線性迴歸，所以依據解釋變項的數量，可能是對數簡單線性迴歸，也可能是對數複迴歸。
+非線性迴歸[編輯]
+邏輯迴歸[編輯]
+主條目：邏輯迴歸
+邏輯迴歸（英語：Logistic Regression）
+偏迴歸[編輯]
+偏迴歸（英語：Partial Regression）（英語：Partial Regression）
+自迴歸[編輯]
+主條目：自迴歸模型
+自迴歸滑動平均模型[編輯]
+主條目：ARMA模型
+差分自迴歸滑動平均模型[編輯]
+主條目：ARIMA模型
+向量自迴歸模型[編輯]
+主條目：向量自迴歸模型
+參閱[編輯]
+
+
+概率與統計主題
+
+
+
+
+曲線擬合
+估計理論
+廣義線性模型
+多元正態分佈
+皮爾遜積矩相關係數
+信號處理
+相關分析
+多變量統計
+
+
+參考資料[編輯]
+
+
+^ A.M. Legendre. Nouvelles méthodes pour la détermination des orbites des comètes, Firmin Didot, Paris, 1805. “Sur la Méthode des moindres quarrés” appears as an appendix.
+^ C.F. Gauss. Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientum. (1809)
+^ C.F. Gauss. Theoria combinationis observationum erroribus minimis obnoxiae. (1821/1823)
+^ Mogull, Robert G. Second-Semester Applied Statistics. Kendall/Hunt Publishing Company. 2004: 59. ISBN 0-7575-1181-3. 
+^ Galton, Francis. Kinship and Correlation (reprinted 1989). Statistical Science (Institute of Mathematical Statistics). 1989, 4 (2): 80–86. JSTOR 2245330. doi:10.1214/ss/1177012581. 
+^ Rodney Ramcharan. Regressions: Why Are Economists Obessessed with Them? March 2006. Accessed 2011-12-03.
+
+
+外部連結[編輯]
+
+解讀迴歸分析的原理及結構
+
+
+
+
+
+
+
+
+
+查
+論
+編
+
+
+統計學
+
+
+
+
+
+
+描述統計學
+
+
+
+
+
+連續概率
+
+
+
+
+
+
+集中趨勢
+
+
+平均數（平方 · 算術 · 幾何 · 調和 · 算術-幾何 · 幾何-調和 · 希羅|平均數不等式） · 中位數 · 眾數
+
+
+
+
+
+
+
+離散程度
+
+
+全距 · 標準差 · 變異係數 · 百分位數 · 四分差 · 四分位數 · 方差 · 標準分數 · 切比雪夫不等式
+
+
+
+
+
+
+
+分佈形態（英語：Shape of the distribution）
+
+
+偏態 · 峰態
+
+
+
+
+
+
+
+
+
+
+離散概率
+
+
+次數（英語：Count data） · 列聯表（英語：Contingency table）
+
+
+
+
+
+
+
+
+
+
+
+
+推論統計學
+和 假設檢定
+
+
+
+
+
+推論統計學
+
+
+置信區間 · 區間估計（英語：Interval estimation） · 顯著性差異 · 元分析 · 貝氏推論
+
+
+
+
+
+
+
+實驗設計
+
+
+統計總量 · 抽樣 · 重覆（英語：Replication (statistics)） · 阻礙 · 特敏度 · 區集（英語：Blocking (statistics)）
+
+
+
+
+
+
+
+樣本量（英語：Sample size）
+
+
+統計功效 · 效應值 · 標準誤 · 虛無假設 · 對立假設（英語：Alternative hypothesis） · 第一型和第二型誤差 · 統計檢定力
+
+
+
+
+
+
+
+常規估計
+
+
+貝葉斯推論 · 區間估計（英語：Interval estimation） · 最大似然估計 · 最小距離估計（英語：Minimum distance estimation） · 矩量法 · 最大間距
+
+
+
+
+
+
+
+特效檢驗
+
+
+Z檢驗 · 學生t檢驗 · F檢驗 · 卡方檢驗 · Wald檢驗（英語：Wald test） · 曼-惠特尼檢驗（英語：Mann–Whitney U test） · 秩和檢驗
+
+
+
+
+
+
+
+生存分析
+
+
+生存函數 · 乘積極限估計量 · 對數秩和檢定 · 失效率 · 危險比例模式
+
+
+
+
+
+
+
+
+
+相關及
+回歸分析
+
+
+
+
+
+相關性
+
+
+混淆變項（英語：Confounding） · 皮爾森積差相關係數 · 等級相關（英語：Rank correlation） (史匹曼等級相關係數 · 肯德等級相關係數（英語：Kendall tau rank correlation coefficient）)
+
+
+
+
+
+
+
+線性回歸
+
+
+線性模式（英語：Linear model） · 一般線性模式 · 廣義線性模式 · 方差分析 · 協方差分析（英語：Analysis of covariance）
+
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+
+
+非參數回歸模型（英語：Nonparametric regression） · 半參數回歸模型（英語：Semiparametric regression） · Logit模型
+
+
+
+
+
+
+
+
+
+統計圖形
+
+餅圖 · 條形圖 · 雙標圖 · 箱形圖 · 管制圖 · 森林圖（英語：Forest plot） · 直方圖 · QQ圖 · 趨勢圖 · 散佈圖（英語：Scatter plot） · 莖葉圖（英語：Stem-and-leaf display） · 雷達圖（英語：Radar chart） · 示意地圖
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+ 專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+規範控制
+
+
+
+GND: 4129903-6
+NDL: 00564579
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自“https://zh.wikipedia.org/w/index.php?title=迴歸分析&oldid=43004164”					
+分類：回歸分析統計方法計量經濟學精算隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導航菜單
+
+
+個人工具
+
+沒有登錄討論貢獻創建賬戶登錄 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+不轉換
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+視圖
+
+閱讀
+編輯
+查看歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態最近更改隨機條目 
+
+
+
+幫助
+
+
+幫助維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+在其他項目中
+
+
+維基共享資源 
+
+
+
+打印/導出
+
+
+下載為PDF 
+
+
+
+工具
+
+
+鏈入頁面相關更改上傳文件特殊頁面打印頁面固定鏈接頁面信息維基數據項引用本頁 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaБългарскиCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEuskaraفارسیSuomiFrançaisGalegoMagyarBahasa IndonesiaÍslenskaItaliano日本語Basa Jawa한국어LatviešuNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSimple EnglishBasa SundaSvenskaТоҷикӣTagalogTürkçeУкраїнськаOʻzbekcha/ўзбекчаTiếng Việt 
+編輯鏈接 
+
+
+
+
+
+ 本頁面最後修訂於2017年1月30日 (星期一) 12:59。
+本站的全部文字在知識共享 署名-相同方式共享 3.0協議之條款下提供，附加條款亦可能應用。（請參閱使用條款）
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發者
+Cookie聲明
+手機版視圖
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+迴歸分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+迴歸分析
+
+維基百科，自由的百科全書
+
+
+					跳轉至：					導航，					搜索
+
+
+
+
+
+
+
+
+
+
+
+
+統計學系列條目
+
+
+迴歸分析
+
+
+
+
+
+模型
+
+
+
+
+線性回歸
+簡單回歸（英語：Simple linear regression）
+普通最小二乘法（英語：Ordinary least squares）
+多項式回歸（英語：Polynomial regression）
+一般線性模型
+
+
+
+
+
+
+廣義線性模式
+離散選擇（英語：Discrete choice）
+邏輯迴歸
+多項羅吉特（英語：Multinomial logit）
+混合羅吉特
+波比（英語：Probit model）
+多項式波比（英語：Multinomial probit）
+排序性模型（英語：Ordered logit）
+有序波比（英語：Ordered probit）
+泊松回歸
+
+
+
+
+
+
+等級線性模型
+固定效應（英語：Fixed effects model）
+隨機效應（英語：Random effects model）
+混合模型（英語：Mixed model）
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+非參數（英語：Nonparametric regression）
+半參數（英語：Semiparametric regression）
+穩健（英語：Robust regression）
+分位數迴歸
+保序回歸
+主成分（英語：Principal component regression）
+最小角
+局部（英語：Local regression）
+分段（英語：Segmented regression）
+
+
+
+
+
+
+含誤差變量（英語：Errors-in-variables models）
+
+
+
+
+估計
+
+
+
+
+最小二乘法
+普通最小二乘法（英語：Ordinary least squares）
+線性
+偏最小二乘回歸
+總體（英語：Total least squares）
+廣義（英語：Generalized least squares）
+加權
+非線性（英語：Non-linear least squares）
+非負（英語：Non-negative least squares）
+重覆再加權（英語：Iteratively reweighted least squares）
+嶺回歸（英語：Tikhonov regularization）
+LASSO
+
+
+
+
+
+
+最小絕對值導數法（英語：Least absolute deviations）
+貝葉斯（英語：Bayesian linear regression）
+貝葉斯多元（英語：Bayesian multivariate linear regression）
+
+
+
+
+背景
+
+
+
+
+回歸模型檢驗（英語：Regression model validation）
+平均響應和預測響應（英語：Mean and predicted response）
+誤差和殘差
+擬合優度（英語：Goodness of fit）
+學生化殘差（英語：Studentized residual）
+高斯－馬爾可夫定理
+
+
+
+
+
+
+ 概率與統計主題
+
+
+
+
+
+
+
+查
+論
+編
+
+
+
+
+
+
+
+
+
+簡單線性迴歸分析的例子
+
+
+迴歸分析（英語：Regression Analysis）是一種統計學上分析數據的方法，目的在於瞭解兩個或多個變數間是否相關、相關方向與強度，並建立數學模型以便觀察特定變數來預測研究者感興趣的變數。更具體的來說，回歸分析可以幫助人們瞭解在只有一個自變量變化時因變量的變化量。一般來說，通過回歸分析我們可以由給出的自變量估計因變量的條件期望。
+迴歸分析是建立因變數
+
+
+
+Y
+
+
+{\displaystyle Y}
+
+（或稱依變數，反應變數）與自變數
+
+
+
+X
+
+
+{\displaystyle X}
+
+（或稱獨變數，解釋變數）之間關係的模型。簡單線性回歸使用一個自變量
+
+
+
+X
+
+
+{\displaystyle X}
+
+，複迴歸使用超過一個自變量（
+
+
+
+
+X
+
+1
+
+
+,
+
+X
+
+2
+
+
+.
+.
+.
+
+X
+
+i
+
+
+
+
+{\displaystyle X_{1},X_{2}...X_{i}}
+
+）。
+
+
+
+目錄
+
+
+1 起源
+2 迴歸分析原理
+
+2.1 參數估計
+
+
+3 回歸模型
+4 迴歸分析的種類
+
+4.1 簡單線性回歸
+4.2 複迴歸（或多變量迴歸）
+4.3 對數線性迴歸
+4.4 非線性迴歸
+4.5 邏輯迴歸
+4.6 偏迴歸
+4.7 自迴歸
+
+4.7.1 自迴歸滑動平均模型
+4.7.2 差分自迴歸滑動平均模型
+4.7.3 向量自迴歸模型
+
+
+
+
+5 參閱
+6 參考資料
+7 外部連結
+
+
+
+起源[編輯]
+回歸的最早形式是最小二乘法，由1805年的勒讓德(Legendre)[1]，和1809年的高斯(Gauss)出版[2]。勒讓德和高斯都將該方法應用於從天文觀測中確定關於太陽的物體的軌道（主要是彗星，但後來是新發現的小行星）的問題。 高斯在1821年發表了最小二乘理論的進一步發展[3]，包括高斯－馬爾可夫定理的一個版本。
+「迴歸」（或作「回歸」）一詞最早由法蘭西斯·高爾頓（Francis Galton）所使用[4][5]。他曾對親子間的身高做研究，發現父母的身高雖然會遺傳給子女，但子女的身高卻有逐漸「迴歸到中等（即人的平均值）」的現象。不過當時的迴歸和現在的迴歸在意義上已不盡相同。
+在1950年代和60年代，經濟學家使用機械電子桌面計算器來計算回歸。在1970年之前，它有時需要長達24小時從一個回歸接收結果[6]。
+迴歸分析原理[編輯]
+
+目的在於找出一條最能夠代表所有觀測資料的函數（迴歸估計式）。
+用此函數代表因變數和自變數之間的關係。
+
+參數估計[編輯]
+
+矩估計（Method of Moment、MOM）
+最小二乘法（Ordinary Least Square Estimation, OLSE）
+最大似然估計（Maximum Likelihood Estimation, MLE）
+
+回歸模型[編輯]
+回歸模型主要包括以下變量：
+
+未知參數，記為β，可以代表一個標量或一個向量。
+自變量，X。
+因變量，Y。
+
+回歸模型將Y和一個關於X和β的函數關聯起來。
+
+
+
+
+
+Y
+≈
+f
+(
+
+X
+
+,
+
+β
+
+)
+
+
+{\displaystyle Y\approx f(\mathbf {X} ,{\boldsymbol {\beta }})}
+
+
+
+迴歸分析的種類[編輯]
+簡單線性回歸[編輯]
+簡單線性迴歸（英語：Simple linear regression）（英語：simple linear regression）
+
+應用時機
+
+
+以單一變數預測
+判斷兩變數之間相關的方向和程度
+
+複迴歸（或多變量迴歸）[編輯]
+複迴歸分析（英語：multiple regression analysis）是簡單線性迴歸的一種延伸應用，用以瞭解一個依變項與兩組以上自變項的函數關係。
+對數線性迴歸[編輯]
+對數線性迴歸（英語：Log-linear model）（英語：Log-linear model），是將解釋變項（實驗設計中的自變項）和反應變項（實驗設計中的依變項）都取對數值之後再進行線性迴歸，所以依據解釋變項的數量，可能是對數簡單線性迴歸，也可能是對數複迴歸。
+非線性迴歸[編輯]
+邏輯迴歸[編輯]
+主條目：邏輯迴歸
+邏輯迴歸（英語：Logistic Regression）
+偏迴歸[編輯]
+偏迴歸（英語：Partial Regression）（英語：Partial Regression）
+自迴歸[編輯]
+主條目：自迴歸模型
+自迴歸滑動平均模型[編輯]
+主條目：ARMA模型
+差分自迴歸滑動平均模型[編輯]
+主條目：ARIMA模型
+向量自迴歸模型[編輯]
+主條目：向量自迴歸模型
+參閱[編輯]
+
+
+概率與統計主題
+
+
+
+
+曲線擬合
+估計理論
+廣義線性模型
+多元正態分佈
+皮爾遜積矩相關係數
+信號處理
+相關分析
+多變量統計
+
+
+參考資料[編輯]
+
+
+^ A.M. Legendre. Nouvelles méthodes pour la détermination des orbites des comètes, Firmin Didot, Paris, 1805. “Sur la Méthode des moindres quarrés” appears as an appendix.
+^ C.F. Gauss. Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientum. (1809)
+^ C.F. Gauss. Theoria combinationis observationum erroribus minimis obnoxiae. (1821/1823)
+^ Mogull, Robert G. Second-Semester Applied Statistics. Kendall/Hunt Publishing Company. 2004: 59. ISBN 0-7575-1181-3. 
+^ Galton, Francis. Kinship and Correlation (reprinted 1989). Statistical Science (Institute of Mathematical Statistics). 1989, 4 (2): 80–86. JSTOR 2245330. doi:10.1214/ss/1177012581. 
+^ Rodney Ramcharan. Regressions: Why Are Economists Obessessed with Them? March 2006. Accessed 2011-12-03.
+
+
+外部連結[編輯]
+
+解讀迴歸分析的原理及結構
+
+
+
+
+
+
+
+
+
+查
+論
+編
+
+
+統計學
+
+
+
+
+
+
+描述統計學
+
+
+
+
+
+連續概率
+
+
+
+
+
+
+集中趨勢
+
+
+平均數（平方 · 算術 · 幾何 · 調和 · 算術-幾何 · 幾何-調和 · 希羅|平均數不等式） · 中位數 · 眾數
+
+
+
+
+
+
+
+離散程度
+
+
+全距 · 標準差 · 變異係數 · 百分位數 · 四分差 · 四分位數 · 方差 · 標準分數 · 切比雪夫不等式
+
+
+
+
+
+
+
+分佈形態（英語：Shape of the distribution）
+
+
+偏態 · 峰態
+
+
+
+
+
+
+
+
+
+
+離散概率
+
+
+次數（英語：Count data） · 列聯表（英語：Contingency table）
+
+
+
+
+
+
+
+
+
+
+
+
+推論統計學
+和 假設檢定
+
+
+
+
+
+推論統計學
+
+
+置信區間 · 區間估計（英語：Interval estimation） · 顯著性差異 · 元分析 · 貝氏推論
+
+
+
+
+
+
+
+實驗設計
+
+
+統計總量 · 抽樣 · 重覆（英語：Replication (statistics)） · 阻礙 · 特敏度 · 區集（英語：Blocking (statistics)）
+
+
+
+
+
+
+
+樣本量（英語：Sample size）
+
+
+統計功效 · 效應值 · 標準誤 · 虛無假設 · 對立假設（英語：Alternative hypothesis） · 第一型和第二型誤差 · 統計檢定力
+
+
+
+
+
+
+
+常規估計
+
+
+貝葉斯推論 · 區間估計（英語：Interval estimation） · 最大似然估計 · 最小距離估計（英語：Minimum distance estimation） · 矩量法 · 最大間距
+
+
+
+
+
+
+
+特效檢驗
+
+
+Z檢驗 · 學生t檢驗 · F檢驗 · 卡方檢驗 · Wald檢驗（英語：Wald test） · 曼-惠特尼檢驗（英語：Mann–Whitney U test） · 秩和檢驗
+
+
+
+
+
+
+
+生存分析
+
+
+生存函數 · 乘積極限估計量 · 對數秩和檢定 · 失效率 · 危險比例模式
+
+
+
+
+
+
+
+
+
+相關及
+回歸分析
+
+
+
+
+
+相關性
+
+
+混淆變項（英語：Confounding） · 皮爾森積差相關係數 · 等級相關（英語：Rank correlation） (史匹曼等級相關係數 · 肯德等級相關係數（英語：Kendall tau rank correlation coefficient）)
+
+
+
+
+
+
+
+線性回歸
+
+
+線性模式（英語：Linear model） · 一般線性模式 · 廣義線性模式 · 方差分析 · 協方差分析（英語：Analysis of covariance）
+
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+
+
+非參數回歸模型（英語：Nonparametric regression） · 半參數回歸模型（英語：Semiparametric regression） · Logit模型
+
+
+
+
+
+
+
+
+
+統計圖形
+
+餅圖 · 條形圖 · 雙標圖 · 箱形圖 · 管制圖 · 森林圖（英語：Forest plot） · 直方圖 · QQ圖 · 趨勢圖 · 散佈圖（英語：Scatter plot） · 莖葉圖（英語：Stem-and-leaf display） · 雷達圖（英語：Radar chart） · 示意地圖
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+ 專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+規範控制
+
+
+
+GND: 4129903-6
+NDL: 00564579
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自“https://zh.wikipedia.org/w/index.php?title=迴歸分析&oldid=43004164”					
+分類：回歸分析統計方法計量經濟學精算隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導航菜單
+
+
+個人工具
+
+沒有登錄討論貢獻創建賬戶登錄 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+不轉換
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+視圖
+
+閱讀
+編輯
+查看歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態最近更改隨機條目 
+
+
+
+幫助
+
+
+幫助維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+在其他項目中
+
+
+維基共享資源 
+
+
+
+打印/導出
+
+
+下載為PDF 
+
+
+
+工具
+
+
+鏈入頁面相關更改上傳文件特殊頁面打印頁面固定鏈接頁面信息維基數據項引用本頁 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaБългарскиCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEuskaraفارسیSuomiFrançaisGalegoMagyarBahasa IndonesiaÍslenskaItaliano日本語Basa Jawa한국어LatviešuNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSimple EnglishBasa SundaSvenskaТоҷикӣTagalogTürkçeУкраїнськаOʻzbekcha/ўзбекчаTiếng Việt 
+編輯鏈接 
+
+
+
+
+
+ 本頁面最後修訂於2017年1月30日 (星期一) 12:59。
+本站的全部文字在知識共享 署名-相同方式共享 3.0協議之條款下提供，附加條款亦可能應用。（請參閱使用條款）
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發者
+Cookie聲明
+手機版視圖
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+迴歸分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+迴歸分析
+
+維基百科，自由的百科全書
+
+
+					跳轉至：					導航，					搜索
+
+
+
+
+
+
+
+
+
+
+
+
+統計學系列條目
+
+
+迴歸分析
+
+
+
+
+
+模型
+
+
+
+
+線性回歸
+簡單回歸（英語：Simple linear regression）
+普通最小二乘法（英語：Ordinary least squares）
+多項式回歸（英語：Polynomial regression）
+一般線性模型
+
+
+
+
+
+
+廣義線性模式
+離散選擇（英語：Discrete choice）
+邏輯迴歸
+多項羅吉特（英語：Multinomial logit）
+混合羅吉特
+波比（英語：Probit model）
+多項式波比（英語：Multinomial probit）
+排序性模型（英語：Ordered logit）
+有序波比（英語：Ordered probit）
+泊松回歸
+
+
+
+
+
+
+等級線性模型
+固定效應（英語：Fixed effects model）
+隨機效應（英語：Random effects model）
+混合模型（英語：Mixed model）
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+非參數（英語：Nonparametric regression）
+半參數（英語：Semiparametric regression）
+穩健（英語：Robust regression）
+分位數迴歸
+保序回歸
+主成分（英語：Principal component regression）
+最小角
+局部（英語：Local regression）
+分段（英語：Segmented regression）
+
+
+
+
+
+
+含誤差變量（英語：Errors-in-variables models）
+
+
+
+
+估計
+
+
+
+
+最小二乘法
+普通最小二乘法（英語：Ordinary least squares）
+線性
+偏最小二乘回歸
+總體（英語：Total least squares）
+廣義（英語：Generalized least squares）
+加權
+非線性（英語：Non-linear least squares）
+非負（英語：Non-negative least squares）
+重覆再加權（英語：Iteratively reweighted least squares）
+嶺回歸（英語：Tikhonov regularization）
+LASSO
+
+
+
+
+
+
+最小絕對值導數法（英語：Least absolute deviations）
+貝葉斯（英語：Bayesian linear regression）
+貝葉斯多元（英語：Bayesian multivariate linear regression）
+
+
+
+
+背景
+
+
+
+
+回歸模型檢驗（英語：Regression model validation）
+平均響應和預測響應（英語：Mean and predicted response）
+誤差和殘差
+擬合優度（英語：Goodness of fit）
+學生化殘差（英語：Studentized residual）
+高斯－馬爾可夫定理
+
+
+
+
+
+
+ 概率與統計主題
+
+
+
+
+
+
+
+查
+論
+編
+
+
+
+
+
+
+
+
+
+簡單線性迴歸分析的例子
+
+
+迴歸分析（英語：Regression Analysis）是一種統計學上分析數據的方法，目的在於瞭解兩個或多個變數間是否相關、相關方向與強度，並建立數學模型以便觀察特定變數來預測研究者感興趣的變數。更具體的來說，回歸分析可以幫助人們瞭解在只有一個自變量變化時因變量的變化量。一般來說，通過回歸分析我們可以由給出的自變量估計因變量的條件期望。
+迴歸分析是建立因變數
+
+
+
+Y
+
+
+{\displaystyle Y}
+
+（或稱依變數，反應變數）與自變數
+
+
+
+X
+
+
+{\displaystyle X}
+
+（或稱獨變數，解釋變數）之間關係的模型。簡單線性回歸使用一個自變量
+
+
+
+X
+
+
+{\displaystyle X}
+
+，複迴歸使用超過一個自變量（
+
+
+
+
+X
+
+1
+
+
+,
+
+X
+
+2
+
+
+.
+.
+.
+
+X
+
+i
+
+
+
+
+{\displaystyle X_{1},X_{2}...X_{i}}
+
+）。
+
+
+
+目錄
+
+
+1 起源
+2 迴歸分析原理
+
+2.1 參數估計
+
+
+3 回歸模型
+4 迴歸分析的種類
+
+4.1 簡單線性回歸
+4.2 複迴歸（或多變量迴歸）
+4.3 對數線性迴歸
+4.4 非線性迴歸
+4.5 邏輯迴歸
+4.6 偏迴歸
+4.7 自迴歸
+
+4.7.1 自迴歸滑動平均模型
+4.7.2 差分自迴歸滑動平均模型
+4.7.3 向量自迴歸模型
+
+
+
+
+5 參閱
+6 參考資料
+7 外部連結
+
+
+
+起源[編輯]
+回歸的最早形式是最小二乘法，由1805年的勒讓德(Legendre)[1]，和1809年的高斯(Gauss)出版[2]。勒讓德和高斯都將該方法應用於從天文觀測中確定關於太陽的物體的軌道（主要是彗星，但後來是新發現的小行星）的問題。 高斯在1821年發表了最小二乘理論的進一步發展[3]，包括高斯－馬爾可夫定理的一個版本。
+「迴歸」（或作「回歸」）一詞最早由法蘭西斯·高爾頓（Francis Galton）所使用[4][5]。他曾對親子間的身高做研究，發現父母的身高雖然會遺傳給子女，但子女的身高卻有逐漸「迴歸到中等（即人的平均值）」的現象。不過當時的迴歸和現在的迴歸在意義上已不盡相同。
+在1950年代和60年代，經濟學家使用機械電子桌面計算器來計算回歸。在1970年之前，它有時需要長達24小時從一個回歸接收結果[6]。
+迴歸分析原理[編輯]
+
+目的在於找出一條最能夠代表所有觀測資料的函數（迴歸估計式）。
+用此函數代表因變數和自變數之間的關係。
+
+參數估計[編輯]
+
+矩估計（Method of Moment、MOM）
+最小二乘法（Ordinary Least Square Estimation, OLSE）
+最大似然估計（Maximum Likelihood Estimation, MLE）
+
+回歸模型[編輯]
+回歸模型主要包括以下變量：
+
+未知參數，記為β，可以代表一個標量或一個向量。
+自變量，X。
+因變量，Y。
+
+回歸模型將Y和一個關於X和β的函數關聯起來。
+
+
+
+
+
+Y
+≈
+f
+(
+
+X
+
+,
+
+β
+
+)
+
+
+{\displaystyle Y\approx f(\mathbf {X} ,{\boldsymbol {\beta }})}
+
+
+
+迴歸分析的種類[編輯]
+簡單線性回歸[編輯]
+簡單線性迴歸（英語：Simple linear regression）（英語：simple linear regression）
+
+應用時機
+
+
+以單一變數預測
+判斷兩變數之間相關的方向和程度
+
+複迴歸（或多變量迴歸）[編輯]
+複迴歸分析（英語：multiple regression analysis）是簡單線性迴歸的一種延伸應用，用以瞭解一個依變項與兩組以上自變項的函數關係。
+對數線性迴歸[編輯]
+對數線性迴歸（英語：Log-linear model）（英語：Log-linear model），是將解釋變項（實驗設計中的自變項）和反應變項（實驗設計中的依變項）都取對數值之後再進行線性迴歸，所以依據解釋變項的數量，可能是對數簡單線性迴歸，也可能是對數複迴歸。
+非線性迴歸[編輯]
+邏輯迴歸[編輯]
+主條目：邏輯迴歸
+邏輯迴歸（英語：Logistic Regression）
+偏迴歸[編輯]
+偏迴歸（英語：Partial Regression）（英語：Partial Regression）
+自迴歸[編輯]
+主條目：自迴歸模型
+自迴歸滑動平均模型[編輯]
+主條目：ARMA模型
+差分自迴歸滑動平均模型[編輯]
+主條目：ARIMA模型
+向量自迴歸模型[編輯]
+主條目：向量自迴歸模型
+參閱[編輯]
+
+
+概率與統計主題
+
+
+
+
+曲線擬合
+估計理論
+廣義線性模型
+多元正態分佈
+皮爾遜積矩相關係數
+信號處理
+相關分析
+多變量統計
+
+
+參考資料[編輯]
+
+
+^ A.M. Legendre. Nouvelles méthodes pour la détermination des orbites des comètes, Firmin Didot, Paris, 1805. “Sur la Méthode des moindres quarrés” appears as an appendix.
+^ C.F. Gauss. Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientum. (1809)
+^ C.F. Gauss. Theoria combinationis observationum erroribus minimis obnoxiae. (1821/1823)
+^ Mogull, Robert G. Second-Semester Applied Statistics. Kendall/Hunt Publishing Company. 2004: 59. ISBN 0-7575-1181-3. 
+^ Galton, Francis. Kinship and Correlation (reprinted 1989). Statistical Science (Institute of Mathematical Statistics). 1989, 4 (2): 80–86. JSTOR 2245330. doi:10.1214/ss/1177012581. 
+^ Rodney Ramcharan. Regressions: Why Are Economists Obessessed with Them? March 2006. Accessed 2011-12-03.
+
+
+外部連結[編輯]
+
+解讀迴歸分析的原理及結構
+
+
+
+
+
+
+
+
+
+查
+論
+編
+
+
+統計學
+
+
+
+
+
+
+描述統計學
+
+
+
+
+
+連續概率
+
+
+
+
+
+
+集中趨勢
+
+
+平均數（平方 · 算術 · 幾何 · 調和 · 算術-幾何 · 幾何-調和 · 希羅|平均數不等式） · 中位數 · 眾數
+
+
+
+
+
+
+
+離散程度
+
+
+全距 · 標準差 · 變異係數 · 百分位數 · 四分差 · 四分位數 · 方差 · 標準分數 · 切比雪夫不等式
+
+
+
+
+
+
+
+分佈形態（英語：Shape of the distribution）
+
+
+偏態 · 峰態
+
+
+
+
+
+
+
+
+
+
+離散概率
+
+
+次數（英語：Count data） · 列聯表（英語：Contingency table）
+
+
+
+
+
+
+
+
+
+
+
+
+推論統計學
+和 假設檢定
+
+
+
+
+
+推論統計學
+
+
+置信區間 · 區間估計（英語：Interval estimation） · 顯著性差異 · 元分析 · 貝氏推論
+
+
+
+
+
+
+
+實驗設計
+
+
+統計總量 · 抽樣 · 重覆（英語：Replication (statistics)） · 阻礙 · 特敏度 · 區集（英語：Blocking (statistics)）
+
+
+
+
+
+
+
+樣本量（英語：Sample size）
+
+
+統計功效 · 效應值 · 標準誤 · 虛無假設 · 對立假設（英語：Alternative hypothesis） · 第一型和第二型誤差 · 統計檢定力
+
+
+
+
+
+
+
+常規估計
+
+
+貝葉斯推論 · 區間估計（英語：Interval estimation） · 最大似然估計 · 最小距離估計（英語：Minimum distance estimation） · 矩量法 · 最大間距
+
+
+
+
+
+
+
+特效檢驗
+
+
+Z檢驗 · 學生t檢驗 · F檢驗 · 卡方檢驗 · Wald檢驗（英語：Wald test） · 曼-惠特尼檢驗（英語：Mann–Whitney U test） · 秩和檢驗
+
+
+
+
+
+
+
+生存分析
+
+
+生存函數 · 乘積極限估計量 · 對數秩和檢定 · 失效率 · 危險比例模式
+
+
+
+
+
+
+
+
+
+相關及
+回歸分析
+
+
+
+
+
+相關性
+
+
+混淆變項（英語：Confounding） · 皮爾森積差相關係數 · 等級相關（英語：Rank correlation） (史匹曼等級相關係數 · 肯德等級相關係數（英語：Kendall tau rank correlation coefficient）)
+
+
+
+
+
+
+
+線性回歸
+
+
+線性模式（英語：Linear model） · 一般線性模式 · 廣義線性模式 · 方差分析 · 協方差分析（英語：Analysis of covariance）
+
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+
+
+非參數回歸模型（英語：Nonparametric regression） · 半參數回歸模型（英語：Semiparametric regression） · Logit模型
+
+
+
+
+
+
+
+
+
+統計圖形
+
+餅圖 · 條形圖 · 雙標圖 · 箱形圖 · 管制圖 · 森林圖（英語：Forest plot） · 直方圖 · QQ圖 · 趨勢圖 · 散佈圖（英語：Scatter plot） · 莖葉圖（英語：Stem-and-leaf display） · 雷達圖（英語：Radar chart） · 示意地圖
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+ 專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+規範控制
+
+
+
+GND: 4129903-6
+NDL: 00564579
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自“https://zh.wikipedia.org/w/index.php?title=迴歸分析&oldid=43004164”					
+分類：回歸分析統計方法計量經濟學精算隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導航菜單
+
+
+個人工具
+
+沒有登錄討論貢獻創建賬戶登錄 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+不轉換
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+視圖
+
+閱讀
+編輯
+查看歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態最近更改隨機條目 
+
+
+
+幫助
+
+
+幫助維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+在其他項目中
+
+
+維基共享資源 
+
+
+
+打印/導出
+
+
+下載為PDF 
+
+
+
+工具
+
+
+鏈入頁面相關更改上傳文件特殊頁面打印頁面固定鏈接頁面信息維基數據項引用本頁 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaБългарскиCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEuskaraفارسیSuomiFrançaisGalegoMagyarBahasa IndonesiaÍslenskaItaliano日本語Basa Jawa한국어LatviešuNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSimple EnglishBasa SundaSvenskaТоҷикӣTagalogTürkçeУкраїнськаOʻzbekcha/ўзбекчаTiếng Việt 
+編輯鏈接 
+
+
+
+
+
+ 本頁面最後修訂於2017年1月30日 (星期一) 12:59。
+本站的全部文字在知識共享 署名-相同方式共享 3.0協議之條款下提供，附加條款亦可能應用。（請參閱使用條款）
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發者
+Cookie聲明
+手機版視圖
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+迴歸分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+迴歸分析
+
+維基百科，自由的百科全書
+
+
+					跳轉至：					導航，					搜索
+
+
+
+
+
+
+
+
+
+
+
+
+統計學系列條目
+
+
+迴歸分析
+
+
+
+
+
+模型
+
+
+
+
+線性回歸
+簡單回歸（英語：Simple linear regression）
+普通最小二乘法（英語：Ordinary least squares）
+多項式回歸（英語：Polynomial regression）
+一般線性模型
+
+
+
+
+
+
+廣義線性模式
+離散選擇（英語：Discrete choice）
+邏輯迴歸
+多項羅吉特（英語：Multinomial logit）
+混合羅吉特
+波比（英語：Probit model）
+多項式波比（英語：Multinomial probit）
+排序性模型（英語：Ordered logit）
+有序波比（英語：Ordered probit）
+泊松回歸
+
+
+
+
+
+
+等級線性模型
+固定效應（英語：Fixed effects model）
+隨機效應（英語：Random effects model）
+混合模型（英語：Mixed model）
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+非參數（英語：Nonparametric regression）
+半參數（英語：Semiparametric regression）
+穩健（英語：Robust regression）
+分位數迴歸
+保序回歸
+主成分（英語：Principal component regression）
+最小角
+局部（英語：Local regression）
+分段（英語：Segmented regression）
+
+
+
+
+
+
+含誤差變量（英語：Errors-in-variables models）
+
+
+
+
+估計
+
+
+
+
+最小二乘法
+普通最小二乘法（英語：Ordinary least squares）
+線性
+偏最小二乘回歸
+總體（英語：Total least squares）
+廣義（英語：Generalized least squares）
+加權
+非線性（英語：Non-linear least squares）
+非負（英語：Non-negative least squares）
+重覆再加權（英語：Iteratively reweighted least squares）
+嶺回歸（英語：Tikhonov regularization）
+LASSO
+
+
+
+
+
+
+最小絕對值導數法（英語：Least absolute deviations）
+貝葉斯（英語：Bayesian linear regression）
+貝葉斯多元（英語：Bayesian multivariate linear regression）
+
+
+
+
+背景
+
+
+
+
+回歸模型檢驗（英語：Regression model validation）
+平均響應和預測響應（英語：Mean and predicted response）
+誤差和殘差
+擬合優度（英語：Goodness of fit）
+學生化殘差（英語：Studentized residual）
+高斯－馬爾可夫定理
+
+
+
+
+
+
+ 概率與統計主題
+
+
+
+
+
+
+
+查
+論
+編
+
+
+
+
+
+
+
+
+
+簡單線性迴歸分析的例子
+
+
+迴歸分析（英語：Regression Analysis）是一種統計學上分析數據的方法，目的在於瞭解兩個或多個變數間是否相關、相關方向與強度，並建立數學模型以便觀察特定變數來預測研究者感興趣的變數。更具體的來說，回歸分析可以幫助人們瞭解在只有一個自變量變化時因變量的變化量。一般來說，通過回歸分析我們可以由給出的自變量估計因變量的條件期望。
+迴歸分析是建立因變數
+
+
+
+Y
+
+
+{\displaystyle Y}
+
+（或稱依變數，反應變數）與自變數
+
+
+
+X
+
+
+{\displaystyle X}
+
+（或稱獨變數，解釋變數）之間關係的模型。簡單線性回歸使用一個自變量
+
+
+
+X
+
+
+{\displaystyle X}
+
+，複迴歸使用超過一個自變量（
+
+
+
+
+X
+
+1
+
+
+,
+
+X
+
+2
+
+
+.
+.
+.
+
+X
+
+i
+
+
+
+
+{\displaystyle X_{1},X_{2}...X_{i}}
+
+）。
+
+
+
+目錄
+
+
+1 起源
+2 迴歸分析原理
+
+2.1 參數估計
+
+
+3 回歸模型
+4 迴歸分析的種類
+
+4.1 簡單線性回歸
+4.2 複迴歸（或多變量迴歸）
+4.3 對數線性迴歸
+4.4 非線性迴歸
+4.5 邏輯迴歸
+4.6 偏迴歸
+4.7 自迴歸
+
+4.7.1 自迴歸滑動平均模型
+4.7.2 差分自迴歸滑動平均模型
+4.7.3 向量自迴歸模型
+
+
+
+
+5 參閱
+6 參考資料
+7 外部連結
+
+
+
+起源[編輯]
+回歸的最早形式是最小二乘法，由1805年的勒讓德(Legendre)[1]，和1809年的高斯(Gauss)出版[2]。勒讓德和高斯都將該方法應用於從天文觀測中確定關於太陽的物體的軌道（主要是彗星，但後來是新發現的小行星）的問題。 高斯在1821年發表了最小二乘理論的進一步發展[3]，包括高斯－馬爾可夫定理的一個版本。
+「迴歸」（或作「回歸」）一詞最早由法蘭西斯·高爾頓（Francis Galton）所使用[4][5]。他曾對親子間的身高做研究，發現父母的身高雖然會遺傳給子女，但子女的身高卻有逐漸「迴歸到中等（即人的平均值）」的現象。不過當時的迴歸和現在的迴歸在意義上已不盡相同。
+在1950年代和60年代，經濟學家使用機械電子桌面計算器來計算回歸。在1970年之前，它有時需要長達24小時從一個回歸接收結果[6]。
+迴歸分析原理[編輯]
+
+目的在於找出一條最能夠代表所有觀測資料的函數（迴歸估計式）。
+用此函數代表因變數和自變數之間的關係。
+
+參數估計[編輯]
+
+矩估計（Method of Moment、MOM）
+最小二乘法（Ordinary Least Square Estimation, OLSE）
+最大似然估計（Maximum Likelihood Estimation, MLE）
+
+回歸模型[編輯]
+回歸模型主要包括以下變量：
+
+未知參數，記為β，可以代表一個標量或一個向量。
+自變量，X。
+因變量，Y。
+
+回歸模型將Y和一個關於X和β的函數關聯起來。
+
+
+
+
+
+Y
+≈
+f
+(
+
+X
+
+,
+
+β
+
+)
+
+
+{\displaystyle Y\approx f(\mathbf {X} ,{\boldsymbol {\beta }})}
+
+
+
+迴歸分析的種類[編輯]
+簡單線性回歸[編輯]
+簡單線性迴歸（英語：Simple linear regression）（英語：simple linear regression）
+
+應用時機
+
+
+以單一變數預測
+判斷兩變數之間相關的方向和程度
+
+複迴歸（或多變量迴歸）[編輯]
+複迴歸分析（英語：multiple regression analysis）是簡單線性迴歸的一種延伸應用，用以瞭解一個依變項與兩組以上自變項的函數關係。
+對數線性迴歸[編輯]
+對數線性迴歸（英語：Log-linear model）（英語：Log-linear model），是將解釋變項（實驗設計中的自變項）和反應變項（實驗設計中的依變項）都取對數值之後再進行線性迴歸，所以依據解釋變項的數量，可能是對數簡單線性迴歸，也可能是對數複迴歸。
+非線性迴歸[編輯]
+邏輯迴歸[編輯]
+主條目：邏輯迴歸
+邏輯迴歸（英語：Logistic Regression）
+偏迴歸[編輯]
+偏迴歸（英語：Partial Regression）（英語：Partial Regression）
+自迴歸[編輯]
+主條目：自迴歸模型
+自迴歸滑動平均模型[編輯]
+主條目：ARMA模型
+差分自迴歸滑動平均模型[編輯]
+主條目：ARIMA模型
+向量自迴歸模型[編輯]
+主條目：向量自迴歸模型
+參閱[編輯]
+
+
+概率與統計主題
+
+
+
+
+曲線擬合
+估計理論
+廣義線性模型
+多元正態分佈
+皮爾遜積矩相關係數
+信號處理
+相關分析
+多變量統計
+
+
+參考資料[編輯]
+
+
+^ A.M. Legendre. Nouvelles méthodes pour la détermination des orbites des comètes, Firmin Didot, Paris, 1805. “Sur la Méthode des moindres quarrés” appears as an appendix.
+^ C.F. Gauss. Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientum. (1809)
+^ C.F. Gauss. Theoria combinationis observationum erroribus minimis obnoxiae. (1821/1823)
+^ Mogull, Robert G. Second-Semester Applied Statistics. Kendall/Hunt Publishing Company. 2004: 59. ISBN 0-7575-1181-3. 
+^ Galton, Francis. Kinship and Correlation (reprinted 1989). Statistical Science (Institute of Mathematical Statistics). 1989, 4 (2): 80–86. JSTOR 2245330. doi:10.1214/ss/1177012581. 
+^ Rodney Ramcharan. Regressions: Why Are Economists Obessessed with Them? March 2006. Accessed 2011-12-03.
+
+
+外部連結[編輯]
+
+解讀迴歸分析的原理及結構
+
+
+
+
+
+
+
+
+
+查
+論
+編
+
+
+統計學
+
+
+
+
+
+
+描述統計學
+
+
+
+
+
+連續概率
+
+
+
+
+
+
+集中趨勢
+
+
+平均數（平方 · 算術 · 幾何 · 調和 · 算術-幾何 · 幾何-調和 · 希羅|平均數不等式） · 中位數 · 眾數
+
+
+
+
+
+
+
+離散程度
+
+
+全距 · 標準差 · 變異係數 · 百分位數 · 四分差 · 四分位數 · 方差 · 標準分數 · 切比雪夫不等式
+
+
+
+
+
+
+
+分佈形態（英語：Shape of the distribution）
+
+
+偏態 · 峰態
+
+
+
+
+
+
+
+
+
+
+離散概率
+
+
+次數（英語：Count data） · 列聯表（英語：Contingency table）
+
+
+
+
+
+
+
+
+
+
+
+
+推論統計學
+和 假設檢定
+
+
+
+
+
+推論統計學
+
+
+置信區間 · 區間估計（英語：Interval estimation） · 顯著性差異 · 元分析 · 貝氏推論
+
+
+
+
+
+
+
+實驗設計
+
+
+統計總量 · 抽樣 · 重覆（英語：Replication (statistics)） · 阻礙 · 特敏度 · 區集（英語：Blocking (statistics)）
+
+
+
+
+
+
+
+樣本量（英語：Sample size）
+
+
+統計功效 · 效應值 · 標準誤 · 虛無假設 · 對立假設（英語：Alternative hypothesis） · 第一型和第二型誤差 · 統計檢定力
+
+
+
+
+
+
+
+常規估計
+
+
+貝葉斯推論 · 區間估計（英語：Interval estimation） · 最大似然估計 · 最小距離估計（英語：Minimum distance estimation） · 矩量法 · 最大間距
+
+
+
+
+
+
+
+特效檢驗
+
+
+Z檢驗 · 學生t檢驗 · F檢驗 · 卡方檢驗 · Wald檢驗（英語：Wald test） · 曼-惠特尼檢驗（英語：Mann–Whitney U test） · 秩和檢驗
+
+
+
+
+
+
+
+生存分析
+
+
+生存函數 · 乘積極限估計量 · 對數秩和檢定 · 失效率 · 危險比例模式
+
+
+
+
+
+
+
+
+
+相關及
+回歸分析
+
+
+
+
+
+相關性
+
+
+混淆變項（英語：Confounding） · 皮爾森積差相關係數 · 等級相關（英語：Rank correlation） (史匹曼等級相關係數 · 肯德等級相關係數（英語：Kendall tau rank correlation coefficient）)
+
+
+
+
+
+
+
+線性回歸
+
+
+線性模式（英語：Linear model） · 一般線性模式 · 廣義線性模式 · 方差分析 · 協方差分析（英語：Analysis of covariance）
+
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+
+
+非參數回歸模型（英語：Nonparametric regression） · 半參數回歸模型（英語：Semiparametric regression） · Logit模型
+
+
+
+
+
+
+
+
+
+統計圖形
+
+餅圖 · 條形圖 · 雙標圖 · 箱形圖 · 管制圖 · 森林圖（英語：Forest plot） · 直方圖 · QQ圖 · 趨勢圖 · 散佈圖（英語：Scatter plot） · 莖葉圖（英語：Stem-and-leaf display） · 雷達圖（英語：Radar chart） · 示意地圖
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+ 專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+規範控制
+
+
+
+GND: 4129903-6
+NDL: 00564579
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自“https://zh.wikipedia.org/w/index.php?title=迴歸分析&oldid=43004164”					
+分類：回歸分析統計方法計量經濟學精算隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導航菜單
+
+
+個人工具
+
+沒有登錄討論貢獻創建賬戶登錄 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+不轉換
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+視圖
+
+閱讀
+編輯
+查看歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態最近更改隨機條目 
+
+
+
+幫助
+
+
+幫助維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+在其他項目中
+
+
+維基共享資源 
+
+
+
+打印/導出
+
+
+下載為PDF 
+
+
+
+工具
+
+
+鏈入頁面相關更改上傳文件特殊頁面打印頁面固定鏈接頁面信息維基數據項引用本頁 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaБългарскиCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEuskaraفارسیSuomiFrançaisGalegoMagyarBahasa IndonesiaÍslenskaItaliano日本語Basa Jawa한국어LatviešuNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSimple EnglishBasa SundaSvenskaТоҷикӣTagalogTürkçeУкраїнськаOʻzbekcha/ўзбекчаTiếng Việt 
+編輯鏈接 
+
+
+
+
+
+ 本頁面最後修訂於2017年1月30日 (星期一) 12:59。
+本站的全部文字在知識共享 署名-相同方式共享 3.0協議之條款下提供，附加條款亦可能應用。（請參閱使用條款）
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發者
+Cookie聲明
+手機版視圖
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+迴歸分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+迴歸分析
+
+維基百科，自由的百科全書
+
+
+					跳轉至：					導航，					搜索
+
+
+
+
+
+
+
+
+
+
+
+
+統計學系列條目
+
+
+迴歸分析
+
+
+
+
+
+模型
+
+
+
+
+線性回歸
+簡單回歸（英語：Simple linear regression）
+普通最小二乘法（英語：Ordinary least squares）
+多項式回歸（英語：Polynomial regression）
+一般線性模型
+
+
+
+
+
+
+廣義線性模式
+離散選擇（英語：Discrete choice）
+邏輯迴歸
+多項羅吉特（英語：Multinomial logit）
+混合羅吉特
+波比（英語：Probit model）
+多項式波比（英語：Multinomial probit）
+排序性模型（英語：Ordered logit）
+有序波比（英語：Ordered probit）
+泊松回歸
+
+
+
+
+
+
+等級線性模型
+固定效應（英語：Fixed effects model）
+隨機效應（英語：Random effects model）
+混合模型（英語：Mixed model）
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+非參數（英語：Nonparametric regression）
+半參數（英語：Semiparametric regression）
+穩健（英語：Robust regression）
+分位數迴歸
+保序回歸
+主成分（英語：Principal component regression）
+最小角
+局部（英語：Local regression）
+分段（英語：Segmented regression）
+
+
+
+
+
+
+含誤差變量（英語：Errors-in-variables models）
+
+
+
+
+估計
+
+
+
+
+最小二乘法
+普通最小二乘法（英語：Ordinary least squares）
+線性
+偏最小二乘回歸
+總體（英語：Total least squares）
+廣義（英語：Generalized least squares）
+加權
+非線性（英語：Non-linear least squares）
+非負（英語：Non-negative least squares）
+重覆再加權（英語：Iteratively reweighted least squares）
+嶺回歸（英語：Tikhonov regularization）
+LASSO
+
+
+
+
+
+
+最小絕對值導數法（英語：Least absolute deviations）
+貝葉斯（英語：Bayesian linear regression）
+貝葉斯多元（英語：Bayesian multivariate linear regression）
+
+
+
+
+背景
+
+
+
+
+回歸模型檢驗（英語：Regression model validation）
+平均響應和預測響應（英語：Mean and predicted response）
+誤差和殘差
+擬合優度（英語：Goodness of fit）
+學生化殘差（英語：Studentized residual）
+高斯－馬爾可夫定理
+
+
+
+
+
+
+ 概率與統計主題
+
+
+
+
+
+
+
+查
+論
+編
+
+
+
+
+
+
+
+
+
+簡單線性迴歸分析的例子
+
+
+迴歸分析（英語：Regression Analysis）是一種統計學上分析數據的方法，目的在於瞭解兩個或多個變數間是否相關、相關方向與強度，並建立數學模型以便觀察特定變數來預測研究者感興趣的變數。更具體的來說，回歸分析可以幫助人們瞭解在只有一個自變量變化時因變量的變化量。一般來說，通過回歸分析我們可以由給出的自變量估計因變量的條件期望。
+迴歸分析是建立因變數
+
+
+
+Y
+
+
+{\displaystyle Y}
+
+（或稱依變數，反應變數）與自變數
+
+
+
+X
+
+
+{\displaystyle X}
+
+（或稱獨變數，解釋變數）之間關係的模型。簡單線性回歸使用一個自變量
+
+
+
+X
+
+
+{\displaystyle X}
+
+，複迴歸使用超過一個自變量（
+
+
+
+
+X
+
+1
+
+
+,
+
+X
+
+2
+
+
+.
+.
+.
+
+X
+
+i
+
+
+
+
+{\displaystyle X_{1},X_{2}...X_{i}}
+
+）。
+
+
+
+目錄
+
+
+1 起源
+2 迴歸分析原理
+
+2.1 參數估計
+
+
+3 回歸模型
+4 迴歸分析的種類
+
+4.1 簡單線性回歸
+4.2 複迴歸（或多變量迴歸）
+4.3 對數線性迴歸
+4.4 非線性迴歸
+4.5 邏輯迴歸
+4.6 偏迴歸
+4.7 自迴歸
+
+4.7.1 自迴歸滑動平均模型
+4.7.2 差分自迴歸滑動平均模型
+4.7.3 向量自迴歸模型
+
+
+
+
+5 參閱
+6 參考資料
+7 外部連結
+
+
+
+起源[編輯]
+回歸的最早形式是最小二乘法，由1805年的勒讓德(Legendre)[1]，和1809年的高斯(Gauss)出版[2]。勒讓德和高斯都將該方法應用於從天文觀測中確定關於太陽的物體的軌道（主要是彗星，但後來是新發現的小行星）的問題。 高斯在1821年發表了最小二乘理論的進一步發展[3]，包括高斯－馬爾可夫定理的一個版本。
+「迴歸」（或作「回歸」）一詞最早由法蘭西斯·高爾頓（Francis Galton）所使用[4][5]。他曾對親子間的身高做研究，發現父母的身高雖然會遺傳給子女，但子女的身高卻有逐漸「迴歸到中等（即人的平均值）」的現象。不過當時的迴歸和現在的迴歸在意義上已不盡相同。
+在1950年代和60年代，經濟學家使用機械電子桌面計算器來計算回歸。在1970年之前，它有時需要長達24小時從一個回歸接收結果[6]。
+迴歸分析原理[編輯]
+
+目的在於找出一條最能夠代表所有觀測資料的函數（迴歸估計式）。
+用此函數代表因變數和自變數之間的關係。
+
+參數估計[編輯]
+
+矩估計（Method of Moment、MOM）
+最小二乘法（Ordinary Least Square Estimation, OLSE）
+最大似然估計（Maximum Likelihood Estimation, MLE）
+
+回歸模型[編輯]
+回歸模型主要包括以下變量：
+
+未知參數，記為β，可以代表一個標量或一個向量。
+自變量，X。
+因變量，Y。
+
+回歸模型將Y和一個關於X和β的函數關聯起來。
+
+
+
+
+
+Y
+≈
+f
+(
+
+X
+
+,
+
+β
+
+)
+
+
+{\displaystyle Y\approx f(\mathbf {X} ,{\boldsymbol {\beta }})}
+
+
+
+迴歸分析的種類[編輯]
+簡單線性回歸[編輯]
+簡單線性迴歸（英語：Simple linear regression）（英語：simple linear regression）
+
+應用時機
+
+
+以單一變數預測
+判斷兩變數之間相關的方向和程度
+
+複迴歸（或多變量迴歸）[編輯]
+複迴歸分析（英語：multiple regression analysis）是簡單線性迴歸的一種延伸應用，用以瞭解一個依變項與兩組以上自變項的函數關係。
+對數線性迴歸[編輯]
+對數線性迴歸（英語：Log-linear model）（英語：Log-linear model），是將解釋變項（實驗設計中的自變項）和反應變項（實驗設計中的依變項）都取對數值之後再進行線性迴歸，所以依據解釋變項的數量，可能是對數簡單線性迴歸，也可能是對數複迴歸。
+非線性迴歸[編輯]
+邏輯迴歸[編輯]
+主條目：邏輯迴歸
+邏輯迴歸（英語：Logistic Regression）
+偏迴歸[編輯]
+偏迴歸（英語：Partial Regression）（英語：Partial Regression）
+自迴歸[編輯]
+主條目：自迴歸模型
+自迴歸滑動平均模型[編輯]
+主條目：ARMA模型
+差分自迴歸滑動平均模型[編輯]
+主條目：ARIMA模型
+向量自迴歸模型[編輯]
+主條目：向量自迴歸模型
+參閱[編輯]
+
+
+概率與統計主題
+
+
+
+
+曲線擬合
+估計理論
+廣義線性模型
+多元正態分佈
+皮爾遜積矩相關係數
+信號處理
+相關分析
+多變量統計
+
+
+參考資料[編輯]
+
+
+^ A.M. Legendre. Nouvelles méthodes pour la détermination des orbites des comètes, Firmin Didot, Paris, 1805. “Sur la Méthode des moindres quarrés” appears as an appendix.
+^ C.F. Gauss. Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientum. (1809)
+^ C.F. Gauss. Theoria combinationis observationum erroribus minimis obnoxiae. (1821/1823)
+^ Mogull, Robert G. Second-Semester Applied Statistics. Kendall/Hunt Publishing Company. 2004: 59. ISBN 0-7575-1181-3. 
+^ Galton, Francis. Kinship and Correlation (reprinted 1989). Statistical Science (Institute of Mathematical Statistics). 1989, 4 (2): 80–86. JSTOR 2245330. doi:10.1214/ss/1177012581. 
+^ Rodney Ramcharan. Regressions: Why Are Economists Obessessed with Them? March 2006. Accessed 2011-12-03.
+
+
+外部連結[編輯]
+
+解讀迴歸分析的原理及結構
+
+
+
+
+
+
+
+
+
+查
+論
+編
+
+
+統計學
+
+
+
+
+
+
+描述統計學
+
+
+
+
+
+連續概率
+
+
+
+
+
+
+集中趨勢
+
+
+平均數（平方 · 算術 · 幾何 · 調和 · 算術-幾何 · 幾何-調和 · 希羅|平均數不等式） · 中位數 · 眾數
+
+
+
+
+
+
+
+離散程度
+
+
+全距 · 標準差 · 變異係數 · 百分位數 · 四分差 · 四分位數 · 方差 · 標準分數 · 切比雪夫不等式
+
+
+
+
+
+
+
+分佈形態（英語：Shape of the distribution）
+
+
+偏態 · 峰態
+
+
+
+
+
+
+
+
+
+
+離散概率
+
+
+次數（英語：Count data） · 列聯表（英語：Contingency table）
+
+
+
+
+
+
+
+
+
+
+
+
+推論統計學
+和 假設檢定
+
+
+
+
+
+推論統計學
+
+
+置信區間 · 區間估計（英語：Interval estimation） · 顯著性差異 · 元分析 · 貝氏推論
+
+
+
+
+
+
+
+實驗設計
+
+
+統計總量 · 抽樣 · 重覆（英語：Replication (statistics)） · 阻礙 · 特敏度 · 區集（英語：Blocking (statistics)）
+
+
+
+
+
+
+
+樣本量（英語：Sample size）
+
+
+統計功效 · 效應值 · 標準誤 · 虛無假設 · 對立假設（英語：Alternative hypothesis） · 第一型和第二型誤差 · 統計檢定力
+
+
+
+
+
+
+
+常規估計
+
+
+貝葉斯推論 · 區間估計（英語：Interval estimation） · 最大似然估計 · 最小距離估計（英語：Minimum distance estimation） · 矩量法 · 最大間距
+
+
+
+
+
+
+
+特效檢驗
+
+
+Z檢驗 · 學生t檢驗 · F檢驗 · 卡方檢驗 · Wald檢驗（英語：Wald test） · 曼-惠特尼檢驗（英語：Mann–Whitney U test） · 秩和檢驗
+
+
+
+
+
+
+
+生存分析
+
+
+生存函數 · 乘積極限估計量 · 對數秩和檢定 · 失效率 · 危險比例模式
+
+
+
+
+
+
+
+
+
+相關及
+回歸分析
+
+
+
+
+
+相關性
+
+
+混淆變項（英語：Confounding） · 皮爾森積差相關係數 · 等級相關（英語：Rank correlation） (史匹曼等級相關係數 · 肯德等級相關係數（英語：Kendall tau rank correlation coefficient）)
+
+
+
+
+
+
+
+線性回歸
+
+
+線性模式（英語：Linear model） · 一般線性模式 · 廣義線性模式 · 方差分析 · 協方差分析（英語：Analysis of covariance）
+
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+
+
+非參數回歸模型（英語：Nonparametric regression） · 半參數回歸模型（英語：Semiparametric regression） · Logit模型
+
+
+
+
+
+
+
+
+
+統計圖形
+
+餅圖 · 條形圖 · 雙標圖 · 箱形圖 · 管制圖 · 森林圖（英語：Forest plot） · 直方圖 · QQ圖 · 趨勢圖 · 散佈圖（英語：Scatter plot） · 莖葉圖（英語：Stem-and-leaf display） · 雷達圖（英語：Radar chart） · 示意地圖
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+ 專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+規範控制
+
+
+
+GND: 4129903-6
+NDL: 00564579
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自“https://zh.wikipedia.org/w/index.php?title=迴歸分析&oldid=43004164”					
+分類：回歸分析統計方法計量經濟學精算隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導航菜單
+
+
+個人工具
+
+沒有登錄討論貢獻創建賬戶登錄 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+不轉換
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+視圖
+
+閱讀
+編輯
+查看歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態最近更改隨機條目 
+
+
+
+幫助
+
+
+幫助維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+在其他項目中
+
+
+維基共享資源 
+
+
+
+打印/導出
+
+
+下載為PDF 
+
+
+
+工具
+
+
+鏈入頁面相關更改上傳文件特殊頁面打印頁面固定鏈接頁面信息維基數據項引用本頁 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaБългарскиCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEuskaraفارسیSuomiFrançaisGalegoMagyarBahasa IndonesiaÍslenskaItaliano日本語Basa Jawa한국어LatviešuNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSimple EnglishBasa SundaSvenskaТоҷикӣTagalogTürkçeУкраїнськаOʻzbekcha/ўзбекчаTiếng Việt 
+編輯鏈接 
+
+
+
+
+
+ 本頁面最後修訂於2017年1月30日 (星期一) 12:59。
+本站的全部文字在知識共享 署名-相同方式共享 3.0協議之條款下提供，附加條款亦可能應用。（請參閱使用條款）
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發者
+Cookie聲明
+手機版視圖
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+迴歸分析 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+迴歸分析
+
+維基百科，自由的百科全書
+
+
+					跳轉至：					導航，					搜索
+
+
+
+
+
+
+
+
+
+
+
+
+統計學系列條目
+
+
+迴歸分析
+
+
+
+
+
+模型
+
+
+
+
+線性回歸
+簡單回歸（英語：Simple linear regression）
+普通最小二乘法（英語：Ordinary least squares）
+多項式回歸（英語：Polynomial regression）
+一般線性模型
+
+
+
+
+
+
+廣義線性模式
+離散選擇（英語：Discrete choice）
+邏輯迴歸
+多項羅吉特（英語：Multinomial logit）
+混合羅吉特
+波比（英語：Probit model）
+多項式波比（英語：Multinomial probit）
+排序性模型（英語：Ordered logit）
+有序波比（英語：Ordered probit）
+泊松回歸
+
+
+
+
+
+
+等級線性模型
+固定效應（英語：Fixed effects model）
+隨機效應（英語：Random effects model）
+混合模型（英語：Mixed model）
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+非參數（英語：Nonparametric regression）
+半參數（英語：Semiparametric regression）
+穩健（英語：Robust regression）
+分位數迴歸
+保序回歸
+主成分（英語：Principal component regression）
+最小角
+局部（英語：Local regression）
+分段（英語：Segmented regression）
+
+
+
+
+
+
+含誤差變量（英語：Errors-in-variables models）
+
+
+
+
+估計
+
+
+
+
+最小二乘法
+普通最小二乘法（英語：Ordinary least squares）
+線性
+偏最小二乘回歸
+總體（英語：Total least squares）
+廣義（英語：Generalized least squares）
+加權
+非線性（英語：Non-linear least squares）
+非負（英語：Non-negative least squares）
+重覆再加權（英語：Iteratively reweighted least squares）
+嶺回歸（英語：Tikhonov regularization）
+LASSO
+
+
+
+
+
+
+最小絕對值導數法（英語：Least absolute deviations）
+貝葉斯（英語：Bayesian linear regression）
+貝葉斯多元（英語：Bayesian multivariate linear regression）
+
+
+
+
+背景
+
+
+
+
+回歸模型檢驗（英語：Regression model validation）
+平均響應和預測響應（英語：Mean and predicted response）
+誤差和殘差
+擬合優度（英語：Goodness of fit）
+學生化殘差（英語：Studentized residual）
+高斯－馬爾可夫定理
+
+
+
+
+
+
+ 概率與統計主題
+
+
+
+
+
+
+
+查
+論
+編
+
+
+
+
+
+
+
+
+
+簡單線性迴歸分析的例子
+
+
+迴歸分析（英語：Regression Analysis）是一種統計學上分析數據的方法，目的在於瞭解兩個或多個變數間是否相關、相關方向與強度，並建立數學模型以便觀察特定變數來預測研究者感興趣的變數。更具體的來說，回歸分析可以幫助人們瞭解在只有一個自變量變化時因變量的變化量。一般來說，通過回歸分析我們可以由給出的自變量估計因變量的條件期望。
+迴歸分析是建立因變數
+
+
+
+Y
+
+
+{\displaystyle Y}
+
+（或稱依變數，反應變數）與自變數
+
+
+
+X
+
+
+{\displaystyle X}
+
+（或稱獨變數，解釋變數）之間關係的模型。簡單線性回歸使用一個自變量
+
+
+
+X
+
+
+{\displaystyle X}
+
+，複迴歸使用超過一個自變量（
+
+
+
+
+X
+
+1
+
+
+,
+
+X
+
+2
+
+
+.
+.
+.
+
+X
+
+i
+
+
+
+
+{\displaystyle X_{1},X_{2}...X_{i}}
+
+）。
+
+
+
+目錄
+
+
+1 起源
+2 迴歸分析原理
+
+2.1 參數估計
+
+
+3 回歸模型
+4 迴歸分析的種類
+
+4.1 簡單線性回歸
+4.2 複迴歸（或多變量迴歸）
+4.3 對數線性迴歸
+4.4 非線性迴歸
+4.5 邏輯迴歸
+4.6 偏迴歸
+4.7 自迴歸
+
+4.7.1 自迴歸滑動平均模型
+4.7.2 差分自迴歸滑動平均模型
+4.7.3 向量自迴歸模型
+
+
+
+
+5 參閱
+6 參考資料
+7 外部連結
+
+
+
+起源[編輯]
+回歸的最早形式是最小二乘法，由1805年的勒讓德(Legendre)[1]，和1809年的高斯(Gauss)出版[2]。勒讓德和高斯都將該方法應用於從天文觀測中確定關於太陽的物體的軌道（主要是彗星，但後來是新發現的小行星）的問題。 高斯在1821年發表了最小二乘理論的進一步發展[3]，包括高斯－馬爾可夫定理的一個版本。
+「迴歸」（或作「回歸」）一詞最早由法蘭西斯·高爾頓（Francis Galton）所使用[4][5]。他曾對親子間的身高做研究，發現父母的身高雖然會遺傳給子女，但子女的身高卻有逐漸「迴歸到中等（即人的平均值）」的現象。不過當時的迴歸和現在的迴歸在意義上已不盡相同。
+在1950年代和60年代，經濟學家使用機械電子桌面計算器來計算回歸。在1970年之前，它有時需要長達24小時從一個回歸接收結果[6]。
+迴歸分析原理[編輯]
+
+目的在於找出一條最能夠代表所有觀測資料的函數（迴歸估計式）。
+用此函數代表因變數和自變數之間的關係。
+
+參數估計[編輯]
+
+矩估計（Method of Moment、MOM）
+最小二乘法（Ordinary Least Square Estimation, OLSE）
+最大似然估計（Maximum Likelihood Estimation, MLE）
+
+回歸模型[編輯]
+回歸模型主要包括以下變量：
+
+未知參數，記為β，可以代表一個標量或一個向量。
+自變量，X。
+因變量，Y。
+
+回歸模型將Y和一個關於X和β的函數關聯起來。
+
+
+
+
+
+Y
+≈
+f
+(
+
+X
+
+,
+
+β
+
+)
+
+
+{\displaystyle Y\approx f(\mathbf {X} ,{\boldsymbol {\beta }})}
+
+
+
+迴歸分析的種類[編輯]
+簡單線性回歸[編輯]
+簡單線性迴歸（英語：Simple linear regression）（英語：simple linear regression）
+
+應用時機
+
+
+以單一變數預測
+判斷兩變數之間相關的方向和程度
+
+複迴歸（或多變量迴歸）[編輯]
+複迴歸分析（英語：multiple regression analysis）是簡單線性迴歸的一種延伸應用，用以瞭解一個依變項與兩組以上自變項的函數關係。
+對數線性迴歸[編輯]
+對數線性迴歸（英語：Log-linear model）（英語：Log-linear model），是將解釋變項（實驗設計中的自變項）和反應變項（實驗設計中的依變項）都取對數值之後再進行線性迴歸，所以依據解釋變項的數量，可能是對數簡單線性迴歸，也可能是對數複迴歸。
+非線性迴歸[編輯]
+邏輯迴歸[編輯]
+主條目：邏輯迴歸
+邏輯迴歸（英語：Logistic Regression）
+偏迴歸[編輯]
+偏迴歸（英語：Partial Regression）（英語：Partial Regression）
+自迴歸[編輯]
+主條目：自迴歸模型
+自迴歸滑動平均模型[編輯]
+主條目：ARMA模型
+差分自迴歸滑動平均模型[編輯]
+主條目：ARIMA模型
+向量自迴歸模型[編輯]
+主條目：向量自迴歸模型
+參閱[編輯]
+
+
+概率與統計主題
+
+
+
+
+曲線擬合
+估計理論
+廣義線性模型
+多元正態分佈
+皮爾遜積矩相關係數
+信號處理
+相關分析
+多變量統計
+
+
+參考資料[編輯]
+
+
+^ A.M. Legendre. Nouvelles méthodes pour la détermination des orbites des comètes, Firmin Didot, Paris, 1805. “Sur la Méthode des moindres quarrés” appears as an appendix.
+^ C.F. Gauss. Theoria Motus Corporum Coelestium in Sectionibus Conicis Solem Ambientum. (1809)
+^ C.F. Gauss. Theoria combinationis observationum erroribus minimis obnoxiae. (1821/1823)
+^ Mogull, Robert G. Second-Semester Applied Statistics. Kendall/Hunt Publishing Company. 2004: 59. ISBN 0-7575-1181-3. 
+^ Galton, Francis. Kinship and Correlation (reprinted 1989). Statistical Science (Institute of Mathematical Statistics). 1989, 4 (2): 80–86. JSTOR 2245330. doi:10.1214/ss/1177012581. 
+^ Rodney Ramcharan. Regressions: Why Are Economists Obessessed with Them? March 2006. Accessed 2011-12-03.
+
+
+外部連結[編輯]
+
+解讀迴歸分析的原理及結構
+
+
+
+
+
+
+
+
+
+查
+論
+編
+
+
+統計學
+
+
+
+
+
+
+描述統計學
+
+
+
+
+
+連續概率
+
+
+
+
+
+
+集中趨勢
+
+
+平均數（平方 · 算術 · 幾何 · 調和 · 算術-幾何 · 幾何-調和 · 希羅|平均數不等式） · 中位數 · 眾數
+
+
+
+
+
+
+
+離散程度
+
+
+全距 · 標準差 · 變異係數 · 百分位數 · 四分差 · 四分位數 · 方差 · 標準分數 · 切比雪夫不等式
+
+
+
+
+
+
+
+分佈形態（英語：Shape of the distribution）
+
+
+偏態 · 峰態
+
+
+
+
+
+
+
+
+
+
+離散概率
+
+
+次數（英語：Count data） · 列聯表（英語：Contingency table）
+
+
+
+
+
+
+
+
+
+
+
+
+推論統計學
+和 假設檢定
+
+
+
+
+
+推論統計學
+
+
+置信區間 · 區間估計（英語：Interval estimation） · 顯著性差異 · 元分析 · 貝氏推論
+
+
+
+
+
+
+
+實驗設計
+
+
+統計總量 · 抽樣 · 重覆（英語：Replication (statistics)） · 阻礙 · 特敏度 · 區集（英語：Blocking (statistics)）
+
+
+
+
+
+
+
+樣本量（英語：Sample size）
+
+
+統計功效 · 效應值 · 標準誤 · 虛無假設 · 對立假設（英語：Alternative hypothesis） · 第一型和第二型誤差 · 統計檢定力
+
+
+
+
+
+
+
+常規估計
+
+
+貝葉斯推論 · 區間估計（英語：Interval estimation） · 最大似然估計 · 最小距離估計（英語：Minimum distance estimation） · 矩量法 · 最大間距
+
+
+
+
+
+
+
+特效檢驗
+
+
+Z檢驗 · 學生t檢驗 · F檢驗 · 卡方檢驗 · Wald檢驗（英語：Wald test） · 曼-惠特尼檢驗（英語：Mann–Whitney U test） · 秩和檢驗
+
+
+
+
+
+
+
+生存分析
+
+
+生存函數 · 乘積極限估計量 · 對數秩和檢定 · 失效率 · 危險比例模式
+
+
+
+
+
+
+
+
+
+相關及
+回歸分析
+
+
+
+
+
+相關性
+
+
+混淆變項（英語：Confounding） · 皮爾森積差相關係數 · 等級相關（英語：Rank correlation） (史匹曼等級相關係數 · 肯德等級相關係數（英語：Kendall tau rank correlation coefficient）)
+
+
+
+
+
+
+
+線性回歸
+
+
+線性模式（英語：Linear model） · 一般線性模式 · 廣義線性模式 · 方差分析 · 協方差分析（英語：Analysis of covariance）
+
+
+
+
+
+
+
+非線性回歸（英語：Nonlinear regression）
+
+
+非參數回歸模型（英語：Nonparametric regression） · 半參數回歸模型（英語：Semiparametric regression） · Logit模型
+
+
+
+
+
+
+
+
+
+統計圖形
+
+餅圖 · 條形圖 · 雙標圖 · 箱形圖 · 管制圖 · 森林圖（英語：Forest plot） · 直方圖 · QQ圖 · 趨勢圖 · 散佈圖（英語：Scatter plot） · 莖葉圖（英語：Stem-and-leaf display） · 雷達圖（英語：Radar chart） · 示意地圖
+
+
+
+
+
+
+
+
+
+分類
+主題
+共享資源
+ 專題
+
+
+
+
+
+
+
+
+
+
+
+
+
+規範控制
+
+
+
+GND: 4129903-6
+NDL: 00564579
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自“https://zh.wikipedia.org/w/index.php?title=迴歸分析&oldid=43004164”					
+分類：回歸分析統計方法計量經濟學精算隱藏分類：包含規範控制信息的維基百科條目 
+
+
+
+導航菜單
+
+
+個人工具
+
+沒有登錄討論貢獻創建賬戶登錄 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+不轉換
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+視圖
+
+閱讀
+編輯
+查看歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態最近更改隨機條目 
+
+
+
+幫助
+
+
+幫助維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+在其他項目中
+
+
+維基共享資源 
+
+
+
+打印/導出
+
+
+下載為PDF 
+
+
+
+工具
+
+
+鏈入頁面相關更改上傳文件特殊頁面打印頁面固定鏈接頁面信息維基數據項引用本頁 
+
+
+
+其他語言
+
+
+العربيةAzərbaycancaБългарскиCatalàČeštinaDanskDeutschΕλληνικάEnglishEsperantoEspañolEuskaraفارسیSuomiFrançaisGalegoMagyarBahasa IndonesiaÍslenskaItaliano日本語Basa Jawa한국어LatviešuNederlandsNorsk nynorskNorsk bokmålPolskiPortuguêsРусскийSimple EnglishBasa SundaSvenskaТоҷикӣTagalogTürkçeУкраїнськаOʻzbekcha/ўзбекчаTiếng Việt 
+編輯鏈接 
+
+
+
+
+
+ 本頁面最後修訂於2017年1月30日 (星期一) 12:59。
+本站的全部文字在知識共享 署名-相同方式共享 3.0協議之條款下提供，附加條款亦可能應用。（請參閱使用條款）
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發者
+Cookie聲明
+手機版視圖
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+回歸分析預測法 - MBA智庫百科
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+回歸分析預測法
+
+出自 MBA智庫百科(http://wiki.mbalib.com/)
+
+
+回歸分析預測法(Regression Analysis Prediction Method)
+
+目錄
+
+1 什麼是回歸分析預測法？
+2 回歸分析預測法的分類
+3 回歸分析預測法的步驟
+4 應用回歸預測法時應註意的問題
+5 回歸分析預測法案例分析
+
+5.1 案例一:回歸分析預測法預測新田公司銷售[1]
+
+
+6 參考文獻
+
+
+[編輯] 什麼是回歸分析預測法？ 
+　　回歸分析預測法，是在分析市場現象自變數和因變數之間相關關係的基礎上，建立變數之間的回歸方程，並將回歸方程作為預測模型，根據自變數在預測期的數量變化來預測因變數關係大多表現為相關關係，因此，回歸分析預測法是一種重要的市場預測方法，當我們在對市場現象未來發展狀況和水平進行預測時，如果能將影響市場預測對象的主要因素找到，並且能夠取得其數量資料，就可以採用回歸分析預測法進行預測。它是一種具體的、行之有效的、實用價值很高的常用市場預測方法。
+
+[編輯] 回歸分析預測法的分類 
+　　回歸分析預測法有多種類型。依據相關關係中自變數的個數不同分類，可分為一元回歸分析預測法和多元回歸分析預測法。在一元回歸分析預測法中，自變數只有一個，而在多元回歸分析預測法中，自變數有兩個以上。依據自變數和因變數之間的相關關係不同，可分為線性回歸預測和非線性回歸預測。
+
+[編輯] 回歸分析預測法的步驟 
+　　1．根據預測目標，確定自變數和因變數
+　　明確預測的具體目標，也就確定了因變數。如預測具體目標是下一年度的銷售量，那麼銷售量Y就是因變數。通過市場調查和查閱資料，尋找與預測目標的相關影響因素，即自變數，並從中選出主要的影響因素。
+　　2．建立回歸預測模型
+　　依據自變數和因變數的歷史統計資料進行計算，在此基礎上建立回歸分析方程，即回歸分析預測模型。
+　　3．進行相關分析
+　　回歸分析是對具有因果關係的影響因素（自變數）和預測對象（因變數）所進行的數理統計分析處理。只有當變數與因變數確實存在某種關係時，建立的回歸方程才有意義。因此，作為自變數的因素與作為因變數的預測對象是否有關，相關程度如何，以及判斷這種相關程度的把握性多大，就成為進行回歸分析必須要解決的問題。進行相關分析，一般要求出相關關係，以相關係數的大小來判斷自變數和因變數的相關的程度。
+　　4．檢驗回歸預測模型，計算預測誤差
+　　回歸預測模型是否可用於實際預測，取決於對回歸預測模型的檢驗和對預測誤差的計算。回歸方程只有通過各種檢驗，且預測誤差較小，才能將回歸方程作為預測模型進行預測。
+　　5．計算並確定預測值
+　　利用回歸預測模型計算預測值，並對預測值進行綜合分析，確定最後的預測值。
+
+[編輯] 應用回歸預測法時應註意的問題 
+　　應用回歸預測法時應首先確定變數之間是否存在相關關係。如果變數之間不存在相關關係，對這些變數應用回歸預測法就會得出錯誤的結果。
+　　正確應用回歸分析預測時應註意：
+　　①用定性分析判斷現象之間的依存關係；
+　　②避免回歸預測的任意外推；
+　　③應用合適的數據資料；
+
+[編輯] 回歸分析預測法案例分析 
+[編輯] 案例一:回歸分析預測法預測新田公司銷售[1] 
+　　一、新田公司的發展現狀
+　　新田公司全稱為新田摩托車製造有限公司，成立於1992年3月，當時的錫山市(那時還叫無錫縣)有兩個生產摩托車的鄉鎮企業：查橋鎮的捷達摩托車廠和洛社鎮的雅西摩托車廠。在9l、92年這兩家廠可以說是如日中天，但這兩家廠又各具特點：雅西摩托車廠完全是自主生產，除發動機外其餘配件都由本廠生產；捷達摩托車廠則是裝配型廠，配件由其他廠家生產，本廠只是組裝(後來也發展成了連發動機都生產的綜合型企業)。顧建新當時還只是一家村辦企業的供銷員，他就瞄準了摩托車行業的發展前景，於是想方設法和捷達廠取得了聯繫，從1992年3月起為捷達廠生產兩種型號的減震器，廠名是無錫減震器廠，由此開始了企業發展的道路。
+　　減震器廠自成立以後，隨著捷達摩托車廠摩托車年產量的不斷增長而得到了迅速發展。到了1994年6月，顧建新終於有了一個極好的機會：捷達摩托車廠的銷售部門和捷達摩托車的銷售商產生了予盾，因此捷達摩托車的銷售商答應顧建新，若顧建新也能生產出和捷達差不多質量的摩托車，則他們會在相同條件下優先銷售顧建新生產的摩托車。有了這個承諾，顧建新於94年lO月就成立了新田摩托車製造有限公司，開始生產新田牌摩托車。
+　　新田公司成立以後，在顧總和匡建中總工程師的領導下，開始了艱苦的創業過程，經過六年多的奮鬥，薪田公司終於從一個20多人的小廠發展成瞭如今的工人總數超過400人，日產摩托車超過200輛，年利潤超過2000萬的集團型企業，新田摩托車的配件包括發動機在內都由本企業自主生產。
+　　新田公司如今已是一個企業集團，除公司本部(總裝廠)外，還有減震器廠、發動機廠、塑件廠、車架車間、油箱車間、噴塗車間等獨立部門，這些部門除滿足新田公司所需配件外，還可以對外供應。1999年底，由於摩托車市場競爭的日趨激烈，新田公司的銷售模式由代理制轉向了派員銷售制(由公司往各城市直接派出銷售人員，負責各城市的銷售工作)，以減少中間環節，確保公司產品在整個摩托車市場的競爭力。同時，由於銷售模式的轉變，也帶來了生產模式的變化：以前是根據各地代理商的訂貨量來組織生產，現在則必需根據銷售情況和對將來銷售情況的預期來組織生產，這給企業的生產組織帶來了極大的困難。
+　　2.新田公司銷售的歷史數據及要解決的問題
+　　新田公司自94年成立以來取得了飛躍性的發展，這可以從新田公司歷年的銷售數據中看出來。下麵所附的表就是新田公司主導產品的銷售數據。（參見下麵表1.2.3.4）
+　　從表中的數據可以看出，新田公司的生產銷售形勢還是比較好的，從總體上來說是處於上升趨勢，但某些車型的銷售也有下降趨勢。同時，還有一些問題從銷售數據上是看不出來的。自從公司實行派員銷售制以來，由於銷售的預期值估計不准，常常出現工人加班加點仍趕不上交貨對間的情況和工人上了班卻無事可做的情況。顧建新總經理和其他公司領導也都發現了這個問題，也找到了原因所在，但由於技術上的原因而無法解決。因此，新田公司目前急需解決的問題就是如何來進行準確可行的銷售預測，以保證公司的正常運行。
+
+　　新田公司2001年第一季度銷售數據
+
+
+
+XT150-TXT150-HXT125-CXT125-WXT100-WXT100-GXT50-K總數
+
+
+665897166015001529160893310372
+
+　　新田公司2001年第二季度銷售數據
+
+
+
+XT150-TXT150-HXT125-CXT125-WXT100-WXT100-GXT50-K總數
+
+
+668350180815811542150316039862
+
+　　新田公司XT50-M在無錫的銷售數據
+
+
+
+第一季度第二季度第三季度第四季度
+
+
+1996年150170172180
+
+
+1997年201230233245
+
+
+1998年258292284298
+
+
+1999年283255209199
+
+
+2000年17516012290
+
+
+
+　　二、回歸分析預測法分析
+　　回歸分析預測法是通過研究分析一個應變數對一個或多個自變數的依賴關係，從而通過自變數的已知或設定值來估計和預測應變數均值的一種預測方法。
+　　回歸分析預測法又可分成線性回歸分析法、非線性回歸分析法、虛擬變數回歸預測法三種。這三種預測方法在新田公司銷售預測中都可以運用。
+　　(一)線性回歸分析法的運用
+　　線性回歸預測法是指一個或一個以上自變數和應變數之間具有線性關係(一個自變數時為一元線性回歸，一個以上自變數時為多元線性回歸)，配合線性回歸模型，根據自變數的變動來預測應變數平均發展趨勢的方法。
+　　線性回歸預測法在銷售預測中用得比較多，根據新田公司銷售數據的散點圈分析，作者發現新田公司的XTl50～T、XTl25～C XTl25一W三種車型的銷售可以用一元線性回歸預測法進行預測，由於銷售數據是時間性序列，多元線性回歸在此不適用。
+　　1.預測模型
+　　由於新田公司銷售預測中只用到一元線性回歸預測法，而一元線性回歸又是一種廣泛應用並且比較簡單的預測方法，因此，只需對一元線性回歸模型作簡單介紹。
+　　設X為自變數，Y為應變數，Y與X之間存在某種線性關係，一元線性回歸模型為：
+　　yi = a + bxi + εi　　  (1)
+　　式中ε為各種隨機因素y的影響總和，ε − (0,σ2)；y-N(a+bx,σ2)。則可設無法解析 (PNG 轉換失敗; 請檢查是否正確安裝了 latex, dvips, gs 和 convert): \widehat{y}i=a+b x_i
+　　(2)
+　　對此，可以通過最小二乘法來估計模型的回歸繫數。根據最小平方原理，必須符合以下條件：
+　　=最小值　　(3)
+　　無法解析 (PNG 轉換失敗; 請檢查是否正確安裝了 latex, dvips, gs 和 convert): \sum(yi-\widehat{y}i)=0
+　　(4)
+　　根據最小二乘法要求，記
+　　根據極值原理，為使Q具有最小值，可分別對a、b求偏導數，並令其等於零，即
+　　無法解析 (PNG 轉換失敗; 請檢查是否正確安裝了 latex, dvips, gs 和 convert): \frac{\partial Q}{\partial a}=-2\sum(yi-a-b x_i)=0
+
+　　
+　　整理的：
+　　　　　　
+　　對上兩式聯立求解，即可得到回歸繫數的估計值：
+　　　　(5)
+　　　　(6)
+　　相關係數R可根據最小二乘原理及平均數的數學性質得到：
+　　　　(7)
+　　相關係數R的絕對值的大小表示相關程度的高低。
+　　①當R=0時，說明是零相關，所求回歸繫數無效。
+　　②當時，說明是完全相關，自變數X與應變數Y之間的關係為函數系。
+　　⑧當時，說明是部分相關，淵值越大相關程度越高。
+　　另外，估計標準差Sy，和預測區間公式參見《預測與決策技術》。
+　　估計標準差：　　(8)
+　　預測區間：　　(9)
+　　在上式中，a為顯著水平，n-2為自由度，為y在xo的估計值。
+　　2.預測計算
+　　根據上面介紹的預測模型，下麵就先計算XTl50-T在2001年第一季度的預測銷售量。
+　　根據XTl50-T的銷售數據有：(X為時間，Y為銷售量)。
+　　n=16；；；；；
+　　根據公式(5)、(6)、(7)、(8)、(9)有：
+　　
+　　
+　　　　(xi = 17)
+　　
+　　
+　　
+　　i0.025(14) = 2.145
+　　以上是XT150-T的銷售預測計算，同理可計算XT125-C、XT150-W的預測結果，這裡不再給出計算過程而直接寫出結果：
+　　①XTl25-C的預測結果：
+　　　；　；　；R=0.99　；Sy = 16.56
+　　預測區間為：(1641，1723)  (i0.025(20) = 2.086)
+　　②XTl25-W的預測結果：
+　　　；　；　；R=0.99　；
+　　Sy = 29.35
+　　預測區間為：(1450，1596)  (i0.025(20) = 2.086)
+　　3.預測結果分析
+　　從上面的預測結果來看，有一點非常奇怪，那就是三種車型的預測中，相關係數R都非常接近於“1”，也就是說，這三種車型的銷售量和時間基本上是線性關係，相關程度非常之高。對於這個結果，作者感到很驚訝，為此，特意找到了新田公司，詢問這三種車型的銷售狀況，這才找到了原因。原來，這三種車型是新田公司的形象產品，基本上沒有利潤，和其他品牌的同類車型相比具有較大的的競爭力，因而這三種車型的銷售情況一直很好。公司為了其形象，對這三種車型採取計劃供應的方式，按逐年遞增的方式供應市場，以使這三種車型一直保持供不應求。由於以上原因，相關係數接近於“1”也就不奇怪了。
+　　另外，作者把通過公式計算得到的各期銷售數和實際銷售量比較發現，這三種車型有一個共同特點，那就是：第一季度的預測值一般要比實際值大，而第二季度則相反。第三、四季度則預測值和實際值相近。仔細分析原因，可能是因為這三種車型價格都比較高，受年終分配影響，第一季度銷量自然較大，隨後的第二季度銷量就自然偏小。
+　　對比2001年第一季度的預測值和實際值，以及上面說到的兩個特點可以發現，XT150-T的預測結果比較正常，而XTl25-C、XTl25-W的預測值卻出現了反而比實際值大的反常情況。通過各期預測值和實際值比較發現，原來XTl25-W從99年第二季度開始就出現預測值大於實際值的情況，根據作者對摩托車市場的瞭解，認為可能是因為這種車型的銷路已經出現問題，不能保持供不應求了。
+　　XTl25-C可能也是這種情況，只不過該車型的滯銷出現得稍稍晚而已。通過和新田公司銷售部門的聯繫發現，作者的判斷是正確的。
+　　(二)非線性回歸預測法的運用
+　　非線性回歸預測法是指自變數與因變數之間的關係不是線性的，而是某種非線性關係時的回歸預測法。非線性回歸預測法的回歸模型常見的有以下幾種：雙曲線模型、二次曲線模型、對數模型、三角函數模型、指數模型、冪函數模型、羅吉斯曲線模型、修正指數增長模型。
+　　通過對新田公司銷售數據的散點圖分析發現，XT100-W和XT50-K這兩種車型的圖形接近於拋物線形狀，因此可用非線性回歸的二次曲線模型來預測。
+　　1.預測模型
+　　非線性回歸二次曲線模型為：　　(10)
+　　令,則模型變化為：　　(11)
+　　上式的矩陣形式為：Y = XB + ε　　(12)
+　　用最小二乘法作參數估計，可設觀察值與模型估計值的殘差為E，則
+　　，
+　　根據小二乘法要求有：
+　　=最小值，　　(13)
+　　即：=最小值
+　　由極值原理，根據矩陣求導法，對B求導，並令其等於零，得：
+　　
+　　
+　　整理得回歸繫數向量B的估計值為：　　(14)
+　　二次曲線回歸中最常用的檢驗是R檢驗和F檢驗，公式如下：
+　　　　(15)
+　　　　(16)
+　　在實際工作中，R的計算可用以下簡捷公式：
+　　　　(17)
+　　估計標準誤差為：
+　　　　(18)
+　　預測區間為：
+　　·S  (n<30)　　(19)
+　　·S  (n>30)　　(20)
+　　2.預測計算
+　　根據上面介紹的預測模型，下麵就先進行XT100-W的預測計算。
+　　根據XTl00-W的銷售數據及(11)、(14)、(17)、(18)、(19)有(xi為時間變數)：
+　　
+　　。
+　　
+　　　(x_i=25)
+　　；；；
+　　
+　　
+　　(n-3)·　　(i0.025(21) = 2.080)
+　　下麵再計算XT50-K的預測結果。
+　　根據XT50-K的銷售數據及公式(11) 、(14)、(17)、(18)、(19)有：
+　　。
+　　
+　　
+　　
+　　
+　　；；；
+　　
+　　　　(t0.025(21) = 2.080)
+　　下麵再計算XT50—K的預測結果。
+　　根據XT50---K的銷售數據及公式(11)、(14)、(17)、(18)、(19)有：
+　　
+　　
+　　　　
+　　　　(xi = 25)
+　　;;;
+　　
+　　
+　　　　t0.025(21) = 2.080
+　　3.預測結果分析
+　　從2001年第一季度的預測結果和實際值的比較來看，預測還算是可行的，XTl00—W和XT50—K的實際銷售量均在預測範圍之內，回歸繫數也都接近於1，說明這兩種車型選取非線性回歸的二次曲線模型還是比較合適的。但是，還應該看到，兩種車型的預測結果中估計標準差S都比較大，說明回歸曲線和實際銷售數據的擬合情況並不太好，而S數值的偏大同時也帶來了預測範圍較大的後果。因此，預測精度較差。
+　　當然了，實際工作中不可能會有真正符合某條曲線的數據存在，只能是從散點圖來看大致符合某種曲線，就用該種曲線來進行擬合，以求大致的預測結果。因此，對於XTl00—W和XT50—K的預測還是可行的。
+　　再進一步考慮，XTl00—W的預測值比實際值大了66，說明實際下降趨勢比預測的要小，而XT50—K的情況則剛好相反。如果排除偶然因素的話，有可能XTlOO—w銷售量的下降趨勢在減緩，而XT50—K則相反，下降趨勢在加劇。聯繫實際情況，作者認為是50車型的銷量因競爭的日益加劇和政策的影響而加速下滑，而100車型則可能是由於公司的努力而減低了銷量下降的速度。作者的這個想法在後來和新田公司總工程師匡建中的交流中得到了驗證。
+　　(三)虛擬變數回歸預測法的運用
+　　在回歸模型分析中，有時還要考慮諸如性別、文化程度、宗教、戰爭、災難、季節以及政府經濟政策變化等品質變數的影響。這時，可在建立回歸模型時將品質變數引入線性回歸模型中，這種回歸預測法就是虛擬變數回歸預測法。
+　　常見的帶虛擬變數的回歸模型有以下三種形式：
+　　(1)反映政府政策變化或某種因素髮生重大變異的跳躍、間斷式模型。
+　　(2)具有轉折點的系統趨勢變化模型。
+　　(3)含有多個虛擬變數的線性回歸模型。
+　　虛擬變數回歸預測法的適用性一般在散點圖上明確看出。在表(1.1)中的數據都不適用。不過，作者發現新田公司的XT50—M在無錫的銷售倒是適合用具有轉折點的系統趨勢變化模型來進行預測。
+　　1.預測模型
+　　由於只有XT50—M在無錫的銷售適合用具有轉折點的系統趨勢變化模型來
+進行預測(見是表4)下麵僅介紹具有轉折點的系統趨勢變化模型。
+　　具有轉折點的系統趨勢變化模型為：
+　　yi = β1 + β2xi + β3(xi − x0)Di + εi　　(21)
+　　式中Di為虛擬變數，Di的取值為
+　　io為發生轉折點的時間，xo為io時間xi的觀察值。(21)可變形為：
+　　
+　　根據(21)，可令,，則該虛擬變數回歸轉化為二元線性回歸，可用二元線性回歸的計算方法計算。
+　　2)預測計算
+　　經過對散點圖觀察發現，1998年第四季度為轉折點，即i0 = 12，由表(4)的數據及(14)、(17)、(18)、(19)、(21)可得：
+　　
+　　　　
+　　
+　　
+　　　　xi = 21
+　　；；；
+　　
+　　
+　　　　(t0.025(18) = 2.101)
+　　3.預測結果分析
+　　新田公司的XT50—M2001年第一季度在無錫的實際銷售量為55輛，和預測結果相比，可以說還在預測範圍內，說明該車型在無錫的銷售用虛擬變數回歸預測法預測還是比較成功的。而之所以會在98年第四季度出現轉折點，作者還是瞭解的，原因就在於98年第四季度無錫市公佈了50車型不允許上助力車牌照的規定，從而引起了50車型在無錫的銷售量逐步減少。當然了，這種情況銷售預測中出現得不多，因此使用也不是很廣。
+　　三、回歸分析法總結
+　　回歸分析預測法是一類比較經典，也比較實用的預測方法。正是由於它經典，因此也就成熟，再加上比較容易理解，運用也就比較廣泛。相比之下，其中的線性回歸預測法和非線性回歸預測法的運用更廣些。在實際使用過程中，如果在選擇具體的方法和模型時能對數據作較為詳細的分析，對散點圖的觀察分析也能仔細一點的話，預測結果也就會比較令人滿意的。當然了回歸分析最大的特點就是在偶然中發現必然，而實際情況卻常常是千變萬化的，有時偶然因素的影響也會超過必然，這時預測結果也就不能很如意，這就要求在預測工作中不能機械，要會靈活運用，要註意瞭解會影響預測結果的偶然情況，以便對預測結果進行適當修正，這樣才能使預測結果更接近實際，也才能使預測能更好地為經濟建設服務。從新田公司的回歸分析預測結果來看，用線性回歸預測法來預測XTl50-T、XTl25—C和XTl25一W都得到了比較滿意的結果，而且各項指標也比較好，用虛擬變數回歸預測法預測XT50—M也得到了滿意的結果。因此可以基本上確定，用上述的預測方法來預測新田公司的這幾種車型是可行的。(參見下麵二圖)。
+　　
+　　
+
+[編輯] 參考文獻 
+
+↑ 錢曉星.新田公司摩托車銷售預測研究[D].2002
+
+
+
+取自"http://wiki.mbalib.com/zh-tw/%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E9%A2%84%E6%B5%8B%E6%B3%95"
+
+本條目對我有幫助280  分享到：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   如果您認為本條目還有待完善，需要補充新內容或修改錯誤內容，請編輯條目。
+
+本條目相關文檔
+ 回歸分析預測法 15頁 第十二章 回歸分析預測法 51頁更多相關文檔
+本條目由以下用戶參與貢獻
+sky,funwmy,Zfj3000,Angle Roh,Vulture,Dan,Jiangyingrong,Ljf0516,Yixi,Zxe,Boomtown,Landscape,Arran,林巧玲,Mis銘. 頁面分類: 決策預測 
+
+
+
+
+
+評論(共31條)提示:評論內容為網友針對條目"回歸分析預測法"展開的討論，與本站觀點立場無關。
+
+ 222.168.55.*  在 2009年12月15日 11:13 發表    
+
+
+真是好文章
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 125.71.200.*  在 2009年12月24日 09:59 發表    
+
+
+說的比較詳細
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ Lymaster (討論 | 貢獻) 在 2009年12月27日 13:47 發表    
+
+
+非常好的預測模型選定和應用的例子。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 159.226.20.*  在 2009年12月30日 10:17 發表    
+
+
+很好，支持LZ，好東西
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 116.228.229.*  在 2010年3月2日 11:12 發表    
+
+
+很好很好，可是自己感覺學過的東西都還給老師了...汗
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 219.243.90.*  在 2010年4月22日 20:34 發表    
+
+
+很好，用minitab 和e-views 都可以很快得出結果。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 58.255.160.*  在 2010年5月22日 12:59 發表    
+
+
+還是不明白，這些是大學里學的嗎？
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 113.250.152.*  在 2010年5月29日 18:55 發表    
+
+
+謝謝！
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 210.21.124.*  在 2010年6月12日 13:41 發表    
+
+
+很詳細,謝謝!
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 119.114.243.*  在 2010年6月30日 20:53 發表    
+
+
+為什麼不用股市數據做背景！
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 61.152.251.*  在 2010年8月24日 22:09 發表    
+
+
+額。。。看的懂例子，看不懂數據。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ Deren1984 (討論 | 貢獻) 在 2010年8月27日 19:50 發表    
+
+
+是很好的文章，但是在一些小細節上有錯誤。比如在對XT-150T分析時，前後兩次的R式就不一樣
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ Dan (討論 | 貢獻) 在 2010年9月3日 19:45 發表    
+
+
+ Deren1984 (討論 | 貢獻) 在 2010年8月27日 19:50 發表
+
+是很好的文章，但是在一些小細節上有錯誤。比如在對XT-150T分析時，前後兩次的R式就不一樣
+
+
+
+
+
+已做了部分修改，希望對你有所幫助～～
+MBA智庫百科是可以自由參與編輯和修改的百科，如有發現錯誤和不足，您也可以進行修改哦~
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 221.137.62.*  在 2010年9月15日 13:02 發表    
+
+
+謝謝。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 180.110.77.*  在 2010年10月1日 11:23 發表    
+
+
+很好的，希望能和你切磋，QQ1041015393
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 222.43.55.*  在 2011年1月7日 11:10 發表    
+
+
+以前在書本上看過關於回歸分析法的講解，但從來沒想過怎麼用，原來這種方法運用的這麼廣，雖然計算過程還是沒看明白，但大體意思懂了，謝謝。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ Helentanht (討論 | 貢獻) 在 2011年1月18日 13:01 發表    
+
+
+謝謝作者這麼詳盡的講解，但是數學都還給老師了，現在回歸分析是否有現成的工具或軟體進行？
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 58.214.9.*  在 2011年3月22日 14:19 發表    
+
+
+已經暈了
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 118.232.182.*  在 2011年4月27日 00:11 發表    
+
+
+利害!!!
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 61.161.147.*  在 2011年6月3日 14:33 發表    
+
+
+我還是不會阿.學習這個怎麼學呢? Q 406098080 求高手好人給予知道
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 60.0.78.*  在 2011年6月6日 09:27 發表    
+
+
+看得懂例子，看不懂公式.....
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 123.53.24.*  在 2011年7月24日 10:16 發表    
+
+
+文章對於本人的數學建模學習很有用，呵呵，謝了，很經典。。。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 112.97.24.*  在 2012年6月19日 10:15 發表    
+
+
+ 61.152.251.*  在 2010年8月24日 22:09 發表
+
+額。。。看的懂例子，看不懂數據。
+
+
+
+
+
+股市的相關係數太多了，不合適做教學。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 218.29.102.*  在 2012年12月14日 16:55 發表    
+
+
+過程很詳細，適合大家學習參考。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 171.109.150.*  在 2013年3月24日 22:06 發表    
+
+
+某次調查活動涉及的調查對象總體包括公務員5萬人，企業管理人員10萬人和教育人士7萬人，擬採用分層比例抽樣法從總體中抽取2000人作為調查樣本，公務員，企業管理人員和教育界人士和各應抽取多少人？
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 24.252.22.*  在 2013年4月5日 19:27 發表    
+
+
+在國外的商科孩子準備畢業考試。。可是這些完全看不懂啊，要暈了。。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 220.168.209.*  在 2013年9月1日 15:01 發表    
+
+
+可惜沒有數據  不然可以自己試驗下  效果會好些
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 221.232.147.*  在 2013年11月14日 16:05 發表    
+
+
+用什麼軟體可以計算出預測值呢，誰能告知一下
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 111.126.166.*  在 2014年4月8日 09:26 發表    
+
+
+求弄一下呼倫貝爾市物流業的需求預測唄。
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 210.42.32.*  在 2014年8月11日 10:22 發表    
+
+
+不錯
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+ 60.221.18.*  在 2015年5月5日 20:28 發表    
+
+
+ 58.255.160.*  在 2010年5月22日 12:59 發表
+
+還是不明白，這些是大學里學的嗎？
+
+
+
+
+
+是呀，寫論文要用到
+
+
+ 回複評論
+ 發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+導航
+
+
+首頁
+文檔
+百科
+商學院
+資訊
+培訓
+幫幫
+
+
+
+
+個人工具
+
+
+用戶登錄創建新帳號 
+
+
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+ 
+
+全球最大的中文經管百科，由121,994位網友共同編寫而成，共計414,214個條目
+
+
+
+
+
+
+
+
+ 
+首頁
+ 
+管理
+ 
+營銷
+ 
+經濟
+ 
+金融
+ 
+人力資源
+ 
+咨詢
+ 
+財務
+ 
+品牌
+ 
+證券
+ 
+物流
+ 
+貿易
+ 
+商學院
+ 
+法律
+ 
+人物
+ 
+分類索引
+ 
+
+
+
+
+查看
+
+條目討論編輯簡體中文繁體中文 
+
+
+工具▼
+
+
+鏈入頁面
+鏈出更改
+上載文件 特殊頁面 可列印版
+永久鏈接 
+
+
+
+
+
+
+
+
+
+
+
+
+
+導航
+
+
+最新資訊
+最新評論
+最新推薦
+熱門推薦
+編輯實驗
+使用幫助
+創建條目
+隨便看看
+
+
+
+
+
+
+
+
+
+
+
+
+本周推薦
+最多推薦
+
+
+
+影響世界的100個經典管理定律產品定位五步法垃圾人定律MECE分析法巴納姆效應管理百科DISC個性測驗感性型人格約哈里窗戶PPP模式 
+
+蘑菇管理定律猴子管理法則情緒ABC理論100個最流行的管理辭彙21天效應破窗效應懶螞蟻效應SWOT分析模型墨菲定律踢貓效應 
+
+以上內容根據網友推薦自動排序生成
+
+
+
+
+
+
+
+
+
+x
+
+
+
+	   最後更改16:32, 2015年3月17日.	  
+智庫首頁 - 
+百科首頁 - 
+關於百科 -
+	   客戶端 -
+	   人才招聘 -
+	   廣告合作 - 
+權利通知 -
+	   聯繫我們 -
+	   免責聲明
+ - 友情鏈接
+
+©2006-2017 MBAlib.com, All rights reserved. 
+
+
+ 
+
+
+
+
+
+請問迴歸分析的步驟、方法有哪些？專題用(20點奉上) | Yahoo奇摩知識+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+   ⌂首頁信箱新聞股市名人娛樂氣象運動App下載購物中心商城拍賣更多⋁知識+汽車機車電影字典遊戲旅遊理財房地產時尚美妝折扣城   Yahoo 奇摩知識+                        👤 登入    ✉ 信箱     ⚙ 服務說明    帳號資料 服務說明 意見回報        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yahoo奇摩知識+ 首頁
+
+
+
+
+
+
+
+
+
+
+
+所有分類
+ 
+健康
+ 
+商業與財經
+ 
+娛樂與音樂
+ 
+家居與園藝
+ 
+家庭與人際關係
+ 
+寵物
+ 
+懷孕與育兒
+ 
+政治與政府
+ 
+教育與參考
+ 
+新聞與活動
+ 
+旅遊
+ 
+汽車與交通
+ 
+消費電子產品
+ 
+環境
+ 
+社會科學
+ 
+社會與文化
+ 
+科學
+ 
+美容與造型
+ 
+藝術與人文
+ 
+遊戲與休閒活動
+ 
+運動
+ 
+電腦與網際網路
+ 
+食品與飲料
+ 
+餐廳與小吃
+ 
+
+
+
+
+
+世界Yahoo 
+
+
+
+
+
+
+
+
+阿根廷
+
+
+
+
+
+澳洲
+
+
+
+
+
+巴西
+
+
+
+
+
+加拿大
+
+
+
+
+
+法國
+
+
+
+
+
+德國
+
+
+
+
+
+印度
+
+
+
+
+
+印尼
+
+
+
+
+
+義大利
+
+
+
+
+
+馬來西亞
+
+
+
+
+
+墨西哥
+
+
+
+
+
+
+
+紐西蘭
+
+
+
+
+
+菲律賓
+
+
+
+
+
+魁北克
+
+
+
+
+
+新加坡
+
+
+
+
+
+香港
+
+
+
+
+
+西班牙
+
+
+
+
+
+泰國
+
+
+
+
+
+英國與愛爾蘭
+
+
+
+
+
+美國
+
+
+
+
+
+越南
+
+
+
+
+
+西班牙文
+
+
+
+
+
+
+
+關於
+
+
+
+
+
+關於 Yahoo奇摩知識+
+社群指南
+排行榜
+點數與等級
+部落格
+如何安全地使用 Yahoo奇摩
+
+ 
+
+
+
+
+
+
+
+
+ 電腦與網際網路
+
+ 軟體
+
+
+ 看另一則問題 
+
+
+
+
+
+
+
+
+
+
+            請問迴歸分析的步驟、方法有哪些？專題用(20點奉上)
+        
+
+
+對統計學不太熟悉，可以麻煩敘述請楚一點嗎？ 
+我們要做的是在以網路協同學習的學習模式底下對於 
+學習者的學習動機(H1)、 
+協同學習互動(H2)、 
+知識平臺支援(H3)， 
+這三樣因素影響學習者的&amp;quot;知識分享意願&amp;quot;， 
+再進而影響&amp;quot;學習滿意度&amp;quot;， 
+我們要使用的統計方法是迴歸分析 
+可不可以說一下以我們題目來說較好的迴歸分析方法？ 
+並說出為何使用此方法？ 
+此迴歸分析法的步驟、方法有哪些？ 
+感激不盡&gt;&quot;&lt;
+
+更新: 
+TO:piandexp@ymail.com大大 
+因為我需要的迴歸分析主要是類似論文那種 
+就是用許多算出來的數據以解釋那些變向的 
+請問如果我給您一些整合好的資料 
+例如問捲調查的樣本數、李克特五點量表 
+這些就可以算出迴歸分析的數據嗎@@？
+
+更新 2: 
+TO:piandexp@ymail.com大大 
+喔~我大致上能瞭解了 
+因為我們現在還在書面階段 
+那我想知道使用迴歸分析的方法有什麼好處呢？ 
+老師要我們去查為什麼使用迴歸分析 
+我查了許多網路上的資料 
+與圖書資料~ 
+但是我發現都是在講述公式之類的 
+理論的部份不多 
+所以我不太瞭解我們為何需要用到這個統計工具 
+老師說我們專題的預期成果可能用因素分析再來用迴歸分析 
+問題很多~謝謝您的幫忙
+
+
+
+
+
+ 
+1 個人正在追蹤 
+
+
+ 
+ 2 個解答 
+2
+
+
+檢舉不當使用
+
+
+
+
+
+
+
+
+
+您確定要刪除此解答嗎？
+是
+否
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+抱歉，似乎發生一些問題。
+
+
+
+Trending Now
+
+
+
+
+
+ 
+
+解答
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳解答: 
+             簡單來說﹐迴歸分析法是要研究兩個變數之間的關係。那通過數據找出一個最&quot;好&quot;或 
+者適合的公式來預測結果。引用您的例子﹐如果學習者的學習動機較少了﹐那會對 
+被影響的變數有什麼變化(這變化就是所謂的預測)。而這公式是線的公式(y=mx+c : m是線的斜度﹐c是當x等於零時y是什麼值).  
+
+(您是想學迴歸分析嗎?還是想得到測試結果?因為如果要詳細的解釋的話涉及相當複雜的數學問題。如果您沒有數學的基礎相信滿難理解的。估計您應該是教育相關行業的﹐我在大學常幫教育部門作統計咨詢﹐幫忙非數學系的部門解釋數據。如果您需要的話﹐我可以幫您測試。) 
+
+以上的迴歸分析法是針對兩個變數之間的關係。由於您的變數(H1﹐H2﹐ H3)多過兩 
+個﹐要解釋比較複雜。 
+
+ 2009-10-25 20:10:40 補充： 
+基本上是可以的。可是有一點是您需註意的﹐有些因素是不能非常準確的用數值來代替﹐ 
+
+例如教育程度不是數量﹐它沒有1﹐2﹐3﹐4。可是在統計學上就會把它轉換成接受教育的年數那假設就是接受教育的年數越高教育程度就較高。所以每一個因素的意思是非常重要. 
+
+我建議學習者的學習動機這因素可以稍微改成學習者的學習意願並由1代表非常不願 
+意到5代表非常願意﹐而知識平臺支援可能可以以支援的金額來代表, 金額越高表示越支持。。當您收集資料時儘量把因素數量化要不然那些數據沒有意思. 
+
+ 2009-10-25 20:24:25 補充： 
+補充一下﹐如果用迴歸分析﹐你會得到公式如下 
+
+知識分享意願 = b0 + b1*H1 + b2*H2 + b3*H3 
+
+學習滿意度 = b0 + b1*H1 + b2*H2 + b3*H3 + b4*知識分享意願 
+
+這兩個公式可以預測當知識平臺支援減少了 對學習滿意度有多少的改變。 
+
+還有一點﹐由於您用的是1到5的李克特五點量表﹐ 很有可能得到的學習滿意度可能 
+會是3.4還是3.8﹐那你得自己判斷滿意的程度了。 
+
+希望這些能幫助您!!! 
+
+
+
+
+ 參考資料： 
+ 自己 
+
+
+changguem
+ · 8 年前 
+
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  發問者的評分
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 到下麵的網址看看吧 
+
+▶▶http://qoozoo201409150.pixnet.net/blog
+
+
+
+
+
+QUVNRSFEPIEA
+ · 3 年前 
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+檢舉不當使用
+
+ 我認為此問題違反社群指南 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此問題違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此解答違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此解答違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此意見違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此意見違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+ 
+
+你可能對以下搜尋感興趣：
+
+
+防毒軟體為您抵擋病毒攻擊
+
+最火熱線上遊戲
+
+高效率學習程式設計
+
+日本旅遊讓你天天上網超方便
+
+
+
+
+
+
+
+
+
+
+
+
+發問問題
+通常可在幾分鐘內獲得解答！
+
+
+
+
+
+
+
+展開»
+
+
+
+
+
+
+詳細資料
+
+
+
+詳細資料
+
+
+
+
+
+
+現有問題
+
+
+
+
+更多
+
+
+
+
+
+請多詳述您的問題
+上傳處理中
+
+
+
+
+上傳失敗。 請上傳大於 100x100 像素的檔案
+目前發生問題，請再試一次。
+您只能上傳 PNG、JPG 或 JPEG 等類型的檔案。
+您只能上傳 3GP、3GPP、MP4、MOV、AVI、MPG、MPEG 或 RM 等類型的檔案。
+您只能上傳不超過 5 MB 的相片。
+您只能上傳不超過 600 MB 的影片。
+您只能上傳相片 (png, jpg, jpeg) 或影片 (3gp, 3gpp, mp4, mov, avi, mpg, mpeg, rm)。
+您只能上傳相片或影片。
+影片不應超過 <b>600mb/5 分鐘</b>
+相片不應超過 <b>5mb</b>
+影片不應超過 <b>600mb/5 分鐘</b>相片不應超過 <b>5mb</b>
+  
+
+
+
+
+
+
+
+解答問題
+
+
+請問管理員,最近"政治版"的程式是不是有出了甚麼問題? 為什麼"問題"都只停留在2星期前? 新的問題全部都被"刪"掉?
+
+
+
+ 
+
+日本對遊戲軟件有分級制度嗎？
+
+
+
+ 
+
+點樣阻止酒精對記憶的損害？
+
+
+
+ 
+
+為什麼我安裝在手機裡的字體不能用？
+之前還可以，可是現在就不行了
+我是用愛字體下載的?
+
+
+
+ 
+
+
+發燒問題
+
+
+
+
+男人陽虛怎麼辦???
+
+                  4 個解答
+              
+
+ 
+
+電腦看影片為何會斷斷續續的?
+
+                  5 個解答
+              
+
+ 
+
+WELCOME色情視窗關不掉 求解QQ?
+
+                  4 個解答
+              
+
+ 
+更多問題
+
+
+
+
+
+我的電腦一直跳出新視窗?
+
+             4 個解答
+         
+
+ 
+
+電腦桌面東西完全不見 工作管理員也無法開啟 但右鍵可以使用 求好心人幫忙解決?
+
+             4 個解答
+         
+
+ 
+
+20170606
+求line禮品小舖金頭腦送禮達人第2彈解答~~😀😀?
+
+             8 個解答
+         
+
+ 
+
+  
+
+
+
+
+
+
+
+
+服務條款
+
+
+隱私權
+
+
+RSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBM Knowledge Center
+
+
+
+
+
+
+
+
+United States
+
+
+
+IBM®
+IBM Knowledge Center
+
+Site map
+
+
+
+
+搜尋
+
+
+
+Search in IBM Knowledge Center
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IBM Knowledge Center uses JavaScript. Scripting appears to be disabled or not supported for your browser. Enable JavaScript use, and try again.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目錄
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+目錄
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+上一頁
+下一頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Beta] Download this page
+[Beta] Download this section
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us
+Contact IBM
+Comment on this content
+
+Tell us about this content or about IBM Knowledge Center
+
+General IBM Support
+
+Email feedback to IBM Support
+1-800-IBM-7378 (USA)
+Directory of Worldwide Contacts
+
+
+
+
+
+
+

@@ -1,0 +1,1660 @@
+
+
+
+流體動力學 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+流體動力學
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+本條目沒有列出任何參考或來源。（2013年12月25日） 
+維基百科所有的內容都應該可供查證。請協助添加來自可靠來源的引用以改善這篇條目。無法查證的內容可能被提出異議而移除。 
+
+
+
+
+
+
+
+流體動力學（Fluid dynamics）是流體力學的一門子學科。流體動力學研究的對象是運動中的流體（含液體和氣體）的狀態與規律。流體動力學底下的子學科包括有空氣動力學和液體動力學。
+解決一個典型的流體動力學問題，需要計算流體的多項特性，主要包括速度、壓力、密度、溫度。
+流體動力學有很大的應用，比如在預測天氣，計算飛機所受的力和力矩，輸油管線中石油的流率等方面上。其中的的一些原理甚至運用在交通工程，因交通運輸本身可被視為一連續流體運動。
+
+
+
+目錄
+
+
+1 流體動力學方程式
+
+1.1 可壓縮流與不可壓縮流
+1.2 黏性流與非黏性流
+1.3 穩定流與非穩定流
+1.4 層流與紊流
+1.5 牛頓式流體與非牛頓式流體
+1.6 其他近似
+
+
+2 參考文獻
+3 相關條目
+
+3.1 研究領域
+3.2 數學方程式與觀念
+3.3 流類型
+3.4 流體性質
+3.5 流體現象
+3.6 應用
+3.7 其他課題
+
+
+
+
+
+流體動力學方程式[編輯]
+流體動力學的基本公理為守恆律，特別是質量守恆、動量守恆（也稱作牛頓第二與第三定律）以及能量守恆。這些守恆律以古典力學為基礎，並且在量子力學及廣義相對論中有所修改。它們可用雷諾傳輸定理（Reynolds transport theorem）來表示。
+除了上面所述，流體還假設遵守「連續性假設」（continuum assumption）。流體由分子所組成，彼此互相碰撞，也與固體相碰撞。然而，連續性假設考慮了流體是連續的，而非離散的。因此，諸如密度、壓力、溫度以及速度等性質都被視作是在無限小的點上具有良好定義的，並且從一點到另一點是連續變動。流體是由離散的分子所構成的這項事實則被忽略。
+若流體足夠緻密，可以成為一連續體，並且不含有離子化的組成，速度相對於光速是很慢的，則牛頓流體的動量方程式為「納維-斯托克斯方程式」。其為非線性微分方程式，描述流體的流所帶有的應力是與速度及壓力呈線性相依。未簡化的納維-斯托克斯方程式並沒有一般閉形式解，所以只能用在計算流體力學，要不然就需要進行簡化。方程式可以通過很多方法來簡化，以容易求解。其中一些方法允許適合的流體力學問題能得到閉形式解。
+除了質量、動量與能量守恆方程式之外，另外還有熱力學的狀態方程式，使得壓力成為流體其他熱力學變數的函數，而使問題得以被限定。其中一個例子是所謂的理想氣體方程式：
+
+
+
+
+
+p
+=
+
+
+
+ρ
+
+R
+
+u
+
+
+T
+
+M
+
+
+
+
+{\displaystyle p={\frac {\rho R_{u}T}{M}}}
+
+
+
+其中 
+
+
+
+p
+
+
+{\displaystyle p}
+
+為壓力， 
+
+
+
+ρ
+
+
+{\displaystyle \rho }
+
+為密度， 
+
+
+
+
+R
+
+u
+
+
+
+
+{\displaystyle R_{u}}
+
+為氣體常數， 
+
+
+
+M
+
+
+{\displaystyle M}
+
+為分子量，以及 
+
+
+
+T
+
+
+{\displaystyle T}
+
+為溫度。
+可壓縮流與不可壓縮流[編輯]
+主條目：不可壓縮流
+所有流體某種程度上而言都是可壓縮的，換言之，壓力或溫度的改變會造成流體密度的改變。然而，許多情況下，壓力或溫度改變所造成的密度改變相當微小，是可以被忽略的。此種流體可以用不可壓縮流進行模擬，否則必須使用更普遍性的可壓縮流方程式進行描述。
+數學上而言，「不可壓縮性」代表著流體流動時，其密度
+
+
+
+ρ
+
+
+
+{\displaystyle \rho \;}
+
+維持不變，換言之：
+
+
+
+
+
+
+
+
+
+D
+
+ρ
+
+
+
+D
+
+t
+
+
+
+=
+0
+
+
+
+{\displaystyle {\frac {\mathrm {D} \rho }{\mathrm {D} t}}=0\,}
+
+，
+
+其中，
+
+
+
+
+D
+
+
+/
+
+
+D
+
+t
+
+
+{\displaystyle \mathrm {D} /\mathrm {D} t}
+
+為隨質導數（substantial derivative）。此條件可以簡化許多描述流體的方程式，尤其是運用在均勻密度的流體。而隨質導數又可分解成局部導數與對流導數，前者代表位置不變時，性質隨時間之變化率，而後者代表質點運動時，該性質隨速度方向之變化率。若為不可壓縮流，則代表對密度做隨質導數與對流導數，都各別為0時，代表密度不隨位置跟時間改變，即不可壓縮流。
+對於氣體要辨別是否具有可壓縮性，馬赫數是一個衡量的指標。概略來說，在馬赫數低於0.3左右時，可以用不可壓縮流的行為解釋。
+至於液體，較符合可壓縮流還是不可壓縮流的性質，主要取決於液體本身的性質（特別是液體的臨界壓力與臨界溫度）和流體的條件（液體壓力是否接近和液體臨界壓力）。
+聲學的問題往往需要引進壓縮性的考量，因為聲波算是可壓縮波，其性質會隨著傳播的介質以及壓力變化而改變。
+黏性流與非黏性流[編輯]
+當流體內的阻力越大時，描述流體須考慮其黏性的影響。雷諾數可用來估算流體的黏性對描述問題的影響。
+所謂史托克流指雷諾數相當小的流動。在此情況，流體的慣性相較於黏性可忽略。而流體的雷諾數大代表流體流動時慣性大於黏性。因此當流體有很大的雷諾數，假設它是非黏性流，忽略其黏性，可當成一個近似。
+這樣的近似，當雷諾數大時，可得到很好的結果，即便是在某些不得不考慮黏性的問題上（例如邊界問題）。但在流體與管壁的邊界，有所謂的不滑移條件，局部會有很大的速率應變率，使得黏性的作用放大而有渦度，黏性因而不可被忽略。
+因此，計算管壁對流體的淨力，需要使用黏性方程式。如同達朗白謬論的說明，物體在非黏性流裡，不會感受到力。歐拉方程式是描述非黏性流的標準方程式。在這種情況，一個常使用的模型，使用歐拉方程式描述遠離邊界的流體，在接觸的邊界，使用邊界層方程式。
+在某一個流線上，將歐拉方程式積分，可得到白努利定律。如果流體每一處都是無旋轉渦動，白努利方程式可描述整個流動。
+穩定流與非穩定流[編輯]
+穩定流即在流場中任一特定位置上，此位置上流體質點的任何物理性質不會隨時間改變。在流場中若有流線，線上任一位置上的切線方向與質點之速度向量相同。 非穩定流：水在滲流場內運動過程中各個運動要素隨時間改變的水流運動。運動要素包括水位、流速、流向等
+層流與紊流[編輯]
+當流動由漩渦和表觀的隨機性所主導時，此種流動稱為紊流。當亂流效應不明顯時，則稱為層流。然而值得註意的是，流動之中存在於漩渦不一定表示此流動為亂流──這些現象可能也存在於層流之中。數學上，紊流通常以雷諾分離法來表示，也就是紊流可以表示成穩定流與擾動部分的和。
+亂流遵守納維-斯托克斯方程式。數值直解法（Direct numerical simulation，DNS），基於納維-斯托克斯方程式可應用在不可壓縮流，可使用雷諾數對紊流進行模擬（必須在電腦性能與演算結果準確性均能負荷的條件下）。而此數值直解法的結果，可以解釋所得的實驗資料。
+然而，大部分我們有興趣的流動都是雷諾數比DNS能夠模擬的範圍大上許多，即使電腦性能在接下來的數十年間持續發展，仍難以實行模擬。任何飛行交通工具，要足夠能承載一個人（L >3 m）以72 km/h（20 m/s）的速度移動，此情況都遠遠在DNS能夠模擬的範圍之外（雷諾數為4百萬）。像是空中巴士A300或波音747這類的飛行工具，機翼上的雷諾數超過4千萬（以翼弦為標準）。為了能夠處理這些生活上實際的問題，需要建立紊流模型。雷諾平均納維-斯托克斯方程式（Reynolds-averaged Navier-Stokes equations）結合了紊流的效果，提供了一個紊流的模型，將額外的動量傳遞表示由雷諾應力所造成；然而，亂流也會增加熱傳與質傳速度。大渦數值模擬計算（Large eddy simulation，LES）也是一個模擬方法，外觀與分離渦流模型（detached eddy simulation, DES）甚相似，是一種紊流模擬與大渦數值模擬計算的結合。
+牛頓式流體與非牛頓式流體[編輯]
+牛頓流體為在定溫及定壓之下，流體的動力黏制係數不會隨速度梯度變化，且保持定值，非牛頓流體的動力黏制係數則會隨速度梯度改變。
+其他近似[編輯]
+參考文獻[編輯]
+相關條目[編輯]
+
+
+
+研究領域[編輯]
+
+聲學理論（英語：Acoustic theory）
+空氣動力學
+氣彈力學（英語：Aeroelasticity）
+航空學
+計算流體力學
+流測量（英語：Flow measurement）
+血液動力學（英語：Hemodynamics）
+水力學
+水文學
+流體靜力學
+超常流體力學（英語：Metafluid dynamics）
+電流體力學（英語：Electrohydrodynamics）
+磁流體力學
+流變學
+量子流體力學（英語：Quantum hydrodynamics）
+
+數學方程式與觀念[編輯]
+
+白努力方程式
+雷諾傳輸定理
+博欣內斯克近似（英語：Boussinesq approximation）
+守恆律
+歐拉方程式
+達西定律
+黑姆荷茲定理
+克希荷夫方程組
+曼寧公式
+納維-斯托克斯方程式
+泊肅葉定律
+相對論性歐拉方程式（英語：Relativistic Euler equations）
+雷諾分解（英語：Reynolds decomposition）
+流線函數（英語：Stream function）
+流線型
+
+
+
+流類型[編輯]
+
+可壓縮流（英語：Compressible flow）
+拖曳流動
+不可壓縮流
+非黏性流
+層流
+明渠流
+位流
+斯托克斯流
+超流性
+超音速
+跨音速
+暫態流
+紊流
+二相流（英語：Two-phase flow）
+
+流體性質[編輯]
+
+密度
+牛頓流體
+非牛頓流體
+錶面張力
+黏性
+蒸氣壓
+
+
+
+流體現象[編輯]
+
+邊界層
+康達效應
+對流單體（英語：Convection cell）
+阻力
+升力
+羅斯比波
+震波
+孤立子
+亂流
+文丘里效應
+漩渦
+渦度
+波阻（英語：Wave drag）
+
+應用[編輯]
+
+聲學
+空氣動力學
+液壓傳動
+氣象學
+造船學（英語：Naval architecture）
+海洋學
+電漿物理學
+氣動學
+泵
+
+其他課題[編輯]
+
+流體力學重要著作列表
+等值曲面
+旋轉水槽
+音障
+β平面（英語：Beta plane）
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+流體力學中的無因次量
+
+
+
+
+
+
+
+阿基米德數  · 阿特伍德數  · 巴格諾爾德數  · 必歐數Bi  · 比贊數Be  · 邦德數  · 布林克曼數  · 毛細數  · 柯西數  · 達姆科勒數  · 迪恩數  · 底波拉數  · 埃克特數  · 埃克曼數Ek  · 厄特沃什數  · 歐拉數Eu  · 福祿數Fr  · 伽利萊數  · 格拉斯霍夫數Gr  · 高德勒數  · 哈特曼數Ha  · 哈根數  · Kc數Kc  · 克努森數Kn  · 拉普拉斯數  · 路易斯數Le  · 馬赫數Ma  · 磁雷諾數  · 馬蘭戈尼數  · 莫頓數Mo  · 努塞爾數Nu  · 奧內佐格數Oh  · 佩克萊特數Pe  · 普朗特數Pr（磁 · 紊流）  · 瑞立數Ra  · 雷諾數Re  · 理查遜數Ri  · 羅什科數  · 羅斯貝數Ro  · 勞斯數  · 魯阿克數  · 施密特數Sc  · 舍伍德數Sh  · 斯坦頓數  · 斯托克斯數Stk  · 斯特勞哈爾數  · 斯圖爾特數  · 蘇拉特曼數  · 泰勒數Ta  · 厄塞爾數  · 韋伯數We  · 魏森貝格數  · 沃默斯利數
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+連續介質力學
+
+
+
+
+
+
+基本定律
+
+質量守恆 - 動量守恆 - 能量守恆 - 熵不等式
+
+
+
+
+
+
+
+
+
+固體力學
+
+固體 - 彈性 - 黏彈性 - 塑性 - 形變 - 有限應變理論 - 無限小應變理論 - 應力 - 應變 - 虎克定律 - 楊氏模量 - 剪切模量 - 體積模量 - 帕松比 - 流變學
+
+
+
+
+
+
+流體力學
+
+流體 - 流體靜力學 - 黏度 - 錶面張力 - 流體動力學 - 牛頓流體 - 非牛頓流體 - 白努力定律
+
+
+
+
+
+
+流變學
+
+黏彈性 - 智能流體 - 磁流變液（英語：Magnetorheological fluid） - 電流變液（英語：Electrorheological fluid） - 鐵磁流體 - 流變測量 - 流變儀 - 流量
+
+
+
+
+
+
+科學家
+
+牛頓 - 斯托克斯 - 納維 - 柯西 - 虎克 - 白努力 - 波以耳 - 給呂薩克
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=流體動力學&oldid=44794199"					
+2 個分類：連續介質力學流體動力學隱藏分類：自2013年12月缺少來源的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+其他專案
+
+
+維基共享資源 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+العربيةBosanskiCatalàČeštinaDeutschEnglishEsperantoEspañolEuskaraفارسیSuomiFrançaisGalego客家語/Hak-kâ-ngîहिन्दीMagyarBahasa IndonesiaIdoItaliano한국어LietuviųМакедонскиNederlandsNorsk nynorskNorsk bokmålOromooPolskiRomânăScotsSrpskohrvatski / српскохрватскиසිංහලSimple EnglishShqipСрпски / srpskiSvenskaதமிழ்ไทยTagalogTürkçeУкраїнськаاردوTiếng ViệtWinaray 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年6月16日 (週五) 13:05。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+課程大綱
+
+
+
+
+
+
+
+
+
+
+流體渦動學FLUID VORTICITY
+
+
+
+
+
+
+開課系所 Department/Institute:  系統所          Systems and Naval Mechatronic Engineering
+開課教師 Instructor:   吳鴻文 Wu, Horng-Wen                 
+開課學年 Academic Year:   0102
+開課學期 Semester:    1
+開課序號 Serial Number:   116
+
+課程屬性碼 Attribute Code:   SYS 7704 
+課程碼 Course Number:   P170400 
+分班碼 Class Code: 
+學分數 No. of Credits:           3
+課程語言 Medium of Instruction:   中文
+
+
+課程網址 Course Website: 
+
+先修課程或先備能力 Prerequisite Course(s): 
+
+教師聯絡資訊 Contact with Teacher
+  	    吳鴻文
+06-2747018-223
+z7708033@email.ncku.edu.tw 
+
+助教資訊 Contact with Tutor
+
+
+學習規範 Course Policy
+
+
+評量方式 Grading
+
+
+方法百分比%
+
+作業 Assignments
+30專題 
+20期中考 Midterm Exam
+25期末考 Term exam
+25
+
+
+
+
+教學方法 Teaching Strategies
+      class notes    
+
+		※請遵守智慧財產權觀念  不得不法影印
+		 Please follow the Intellectual Property instruction and No illegal copy
+	
+
+課程教材 Course Material
+	    無    
+
+參考書目 References
+
+
+備註 Remarks
+
+
+
+
+
+基本素養 Basic Literacy
+        無    
+
+核心能力 Competence
+■ 具備系統、船舶及機電工程的高階專業知識與創新之能力
+ Possessing the ability of advance specialized knowledge and innovation in the system of naval architecture and marine technology, as well as mechatronic engineering
+□ 具備策劃及執行專題研究之能力。
+ Possessing the ability to scheme and execute research projects
+□ 具備整合、表達、呈現研究成果之能力。
+ Possessing the ability to integrate, express and present the research achievement
+□ 思考及獨立解決問題之能力
+ Possessing the ability of innovated ideas, and independently solving problems
+□ 跨領域人員協調整合之能力
+ Possessing the ability to coordinate and integrate multidisciplinary
+□ 具備領導、管理及規劃之能力。
+ Possessing the ability of leadership, management, and schematization
+□ 具備良好的國際觀與終身自我學習成長之能力。
+ Possessing the ability of global view and lifelong learning
+□ 具備會議發表論文之能力。
+ Possessing the ability to present conference paper
+ 
+
+課程概述 Course Description
+       介紹流體渦旋運動的型態、類別，並闡述渦旋運動與結構體之交互作用。 
+
+課程學習目標 Course Objectives    
+	    充分瞭解運用不同渦旋流動    
+
+課程進度 Course Outline
+
+
+週次 Week進度說明 Progress Description
+1歷史回顧2渦量介紹3混合層之渦旋流動4混合層之渦旋流動5混合層之渦旋流動6噴流之渦旋流動7噴流之渦旋流動8噴流之渦旋流動9噴流之渦旋流動10期中考11流動分離之渦旋流動12流動分離之渦旋流動13流動分離之渦旋流動14流動分離之渦旋流動15渦旋運動與結構體之交互作用16渦旋運動與結構體之交互作用17渦旋運動與結構體之交互作用18期末考 
+
+　以上每週進度教師可依上課情況做適度調整。The schedule may be subject to change.
+
+
+課程學習融入下列議題或具有下列內涵的程度 Immersing the Following Issues or Contents
+議題或內容 Issues or Contents關聯性 Correlation生命教育 Life Education
+無相關 No correlation服務學習 Service Learning
+無相關 No correlation性別平等 Gender Equity
+無相關 No correlation環境安全 Environmental Safety
+無相關 No correlation環境保護 Environmental Protection
+無相關 No correlation智慧財產權 Intellectual Property
+間接相關 Indirect correlation法治教育 Law-Related Education
+無相關 No correlation人權教育 Human Rights Education
+無相關 No correlation 
+
+有關課程其他調查 Other Surveys of Courses
+                   1.本課程是否規劃業界教師參與教學或演講?   否            
+Is there any industry specialist invited in this course? How many times? No
+			
+           2.本課程是否規劃內含校外實習 (並非參訪)?   否		   
+Is there any in (out of) school practicum involved in this course? How many hours?  No
+
+
+
+
+
+
+
+
+NCKU 成功大學系統及船舶機電工程學系-教學大綱
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+NCKU 成功大學系統及船舶機電工程學系
+
+
+
+
+
+
+系所簡介 
+師資陣容 
+課程資訊 
+招生事項 
+研究發展 
+實驗設備 
+學生園地 
+工程認證 
+同學會 
+其　他 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+　　　迴首頁
+　　　公佈欄
+　　　同學會
+　　　船舶小聯盟
+　　　漁船中心
+　　　學生資訊
+　　　線上諮商平臺 
+　　　國際學人專區
+　　　活動花絮
+　　　海洋科技新貴
+　　　文件及表格
+　　　校園資訊
+　　　求職資訊
+　　　成大首頁
+　　　ENGLISH
+　　　問捲調查
+
+
+　
+
+
+登入區塊
+
+
+
+
+
+
+
+
+
+
+
+
+帳號
+
+
+
+
+
+密碼
+
+
+
+
+
+
+
+
+
+登入
+重設
+
+
+
+
+
+
+　
+
+
+計數器
+總瀏覽人數：
+
+
+
+
+
+
+
+
+
+目前線上人數：
+
+
+
+ 
+　
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+大學部課程名稱 [ Undergraduate - Course Title ]
+
+
+ 
+ 
+    微積分 ( 1 ) [ Calculus ( 1 ) ] 
+
+
+ 
+ 
+    
+微積分 ( 2 ) [ Calculus ( 2 ) ] 
+
+
+ 
+ 
+    普通物理學 ( 1 ) [ General Physics ( 1 ) ]
+
+
+ 
+ 
+	普通物理學 ( 2 ) [ General Physics ( 2 ) ]
+
+
+ 
+
+     
+     
+普通物理學實驗 ( 1 ) [ General Physics Laboratory ( 1 ) ]
+
+
+ 
+
+     
+    普通物理學實驗 ( 2 ) [ General Physics Laboratory ( 2 ) ]
+
+
+ 
+
+    計算機程式設計 [ Computer Program Design ]
+
+
+ 
+
+      
+    工程圖學  [ Eegineering Graphics ] 
+
+
+ 
+
+    應用力學(一) [ Applied Mechanics (1) ]
+
+
+ 
+
+      
+    系統及船舶機電概論 [ Introduction To Systems And Naval Mechatronics ]
+
+
+ 
+
+      C++ 程式語言設計 [ C++ Programming Language Design ] 
+
+
+ 
+
+      
+    服務學習 ( 1 ) [ Service Study ( 1 ) ]
+
+
+ 
+
+      
+    服務學習 ( 2 ) [ Service Study ( 2 ) ]
+
+
+ 
+
+         
+    服務學習(三) [ Service Study ( 3 ) ]
+
+
+ 
+
+     
+    工程數學 ( 1 ) [ Eegineering Mathematics ( 1 ) ] 
+
+
+ 
+
+     
+    工程數學 ( 1 ) [ Eegineering Mathematics ( 2 ) ] 
+
+
+ 
+
+      
+    工程數學 ( 三 ) [ Engineering Mathematics ( 3 ) ]
+
+
+ 
+
+      
+    應用力學(二) [ Applied Mechanics (2) ]
+
+
+ 
+
+      
+    熱力學(一) [ Thermodynamics (1) ]
+
+
+ 
+
+     
+    電工學 [ Electrical Engineering ]
+
+
+ 
+
+     
+    電子學 [ Electronics ]
+
+
+ 
+
+     
+    流體力學(一) [ Fluid Mechanics ( 1 ) ] 
+
+
+ 
+
+     
+    材料力學 [ Mechanics Of Materials ] 
+
+
+ 
+
+     
+    自動控制 [ Automatic Control ] 
+
+
+ 
+
+     
+    電腦輔助設計與製造 [ Computer Aided Design And Manufacture ] 
+
+
+ 
+
+     
+    系統工程分析 [ Systems Engineering And Analysis ]
+
+
+ 
+
+     
+    系統設計理論 [ System Design Theory ]
+
+
+ 
+
+      
+    校外實習 [ Practical Training ]
+
+
+ 
+
+      
+    資訊與通訊概論 [ Introduction To Information And Communication ]
+
+
+ 
+
+      
+    工程量測與虛擬儀錶設計 [ Engineering Measurement And Virtual Instrumentation ]
+
+
+ 
+
+      
+    高頻電子學 [ High Frequency Electronics ]
+
+
+ 
+
+      
+	微電腦控制 [ Microcomputer Control ]
+
+
+ 
+
+      
+    電力系統 [ Power System ]
+
+
+ 
+
+      
+    電磁學 [ Electromagnetics ]
+
+
+ 
+
+      
+    電機機械 [ Electric Machinery ]
+
+
+ 
+
+      
+    線性系統分析 [ Linear System Analysis ]
+
+
+ 
+
+      
+    機電系統整合 [ Mechatronic System Integration ]
+
+
+ 
+
+     
+    電腦輔助船舶設計 [ Computer Aided Ship Design ]
+
+
+ 
+
+      
+    數值分析 [ Numerical Analysis ]
+
+
+ 
+
+      
+    機械設計 [ Machine Design ]
+
+
+ 
+
+     
+    船舶結構學 [ Ship Structures Analysis ]
+
+
+ 
+
+         
+    船舶靜力學 [ System  and Ship Technology ] 
+
+
+ 
+
+     
+    造機設計原理 [ Design Theory Of  Marine Machinery ]
+
+
+ 
+
+     
+    船舶艤裝設計 [ Ship-Fitting Design ]
+
+
+ 
+
+     
+    船舶輔機 [ Marine Auxiliary Machinery ]
+
+
+ 
+
+     
+    
+船舶阻力與推進 [ Ship Resistance And Propulsion ]
+
+
+ 
+
+     
+    船舶實驗設計原理
+     
+    [ The Principles Of Experimental Design For Naval Architecture ]
+
+
+ 
+
+     
+    船舶設計基礎 [ Basic Ship Design ]
+
+
+ 
+
+      
+    船舶產業實務與展望 [ Practicality And Perspectivers Of Shipbuilding Industry ]
+
+
+ 
+
+      
+    論文 ( 一 ) [ Thesis ( 1 ) ]
+
+
+ 
+
+      
+    論文 ( 二 ) [ Thesis ( 2 ) ]
+
+
+ 
+
+      
+    工程統計學 [ Engineering Statistics ]
+
+
+ 
+
+      
+    工程史 [ History Of Engineering ]
+
+
+ 
+
+     
+    
+    體育 ( 一 )
+
+
+ 
+
+     
+    
+    體育 ( 二 )
+
+
+ 
+
+     
+    
+    體育 ( 三 )
+
+
+ 
+
+     
+    
+    體育 ( 四 )
+
+
+ 
+
+     
+    
+    綜合實驗 [ Mixed Sessions Of Experiments ]
+
+
+ 
+
+      
+	微機電系統概論 [ Introduction To Mems ]
+
+
+ 
+
+      
+    人因工程 [ Human Factor Engineering ]
+
+
+ 
+
+      
+    科技與社會導論 [ Introduction To Science, Technology, And Society ]
+
+
+ 
+
+      
+    產業電子化導論INTRODUCTION TO E BUSINESS
+
+
+ 
+
+      
+    舟艇設計 [ Design Of Small Craft ]
+
+
+ 
+
+      
+    振動力學 [ Mechanics Of Vibrations ]
+
+
+ 
+
+      
+    網路程式設計 [ Network Programming ]
+
+
+
+
+
+
+
+  
+
+碩博班課程名稱 [ Graduate - Course Title ]
+
+
+ 
+
+      
+    內燃機燃燒學 [ Principles Of Combustion In Internal Combustion Engine ]
+
+
+ 
+
+      
+    非線性系統分析 [ Nonlinear System Analysis ]
+
+
+ 
+
+      
+    計算流體力學 [ Computational Fluid Dynamics ]
+
+
+ 
+
+      
+    海洋工程 [ Ocean Engineering ]
+
+
+ 
+
+      
+    疲勞強度學 [ Fatigue Strength Analysis ]
+
+
+ 
+
+      
+    高等工程數學 [ Advanced Engineering Mathematics ]
+
+
+ 
+
+      
+    現代控制系統分析與設計 [ Modern Control System Analysis And Design ]
+
+
+ 
+  
+    船用流體動力學 [ Marine Hydrodynamics ]
+
+
+ 
+  
+    船舶耐海性 [ Seakeeping Characteristics Of Ship ]
+
+
+ 
+
+      
+    船舶振動學 [ Ship  Vibration ]
+
+
+ 
+
+      
+    船舶推進理論 [ Ship Propulsion Theory ]
+
+
+ 
+
+      
+    船舶結構分析 [ Ship Structure Analysis ]
+
+
+ 
+
+      
+    船舶結構可靠性 [ Reliability Of Ship Structure ]
+
+
+ 
+
+      
+    通訊電子學 [ Communication Electronics ]
+
+
+ 
+
+      
+    造機設計特論 [ Problem On The Design Of Ship Machinery ]
+
+
+ 
+
+      
+    結構動力學 [ Dynamics Of Structure ]
+
+
+ 
+
+      
+    結構穩定學 [ Elastic Stability Of Structure ]
+
+
+ 
+
+      
+    微感測器原理與應用 [ Microsensor Principles And Applications ]
+
+
+ 
+
+      
+    電力傳輸分析 [ Power Transmission Analysis ]
+
+
+ 
+
+      
+    電動機設計 [ Design  Of Electric Motors ]
+
+
+ 
+
+      
+    數位訊號處理 [ Digital Signal Processing ]
+
+
+ 
+
+      
+    高等熱力學 [ Advanced Thermodynamics ]
+
+
+ 
+
+     
+    專題討論 [ Special Topics ]
+
+
+ 
+
+      
+    專題討論 (一) [ Special Topics (1) ]
+
+
+ 
+
+      
+    專題討論 (二) [ Special Topics (2) ]
+
+
+ 
+
+      
+    專題討論 (三) [ Special Topics (3) ]
+
+
+ 
+
+      
+    專題討論 (四) [ Special Topics (4) ]
+
+
+ 
+
+      
+    產品資料管理 [ Product Data Management ]
+
+
+ 
+
+      
+    漫散及非線性振動 [ Random And Nonlinear Vibration ]
+
+
+ 
+
+      
+    彈塑性力學 [ Introduction To The Theory Of Elasticity And Plasticity ]
+
+
+ 
+
+      
+    LED光源模組原理及應用 [ LED Lighting Module Principle And Applications ]
+
+
+ 
+
+      
+    小波理論 [Wavelet Theory ]
+
+
+ 
+
+      
+    水中聲學 [ Underwater Acoustics ]
+
+
+ 
+
+      
+    流體渦動學 [ Fluid Vorticity ]
+
+
+ 
+
+      
+    
+    破壞力學 [ Fracture Mechanics ]
+
+
+ 
+
+      
+    紊流導論[ Introdution To Turbulence ]
+
+
+ 
+
+      
+    高等熱傳學 [ Advanced Heat Transfer ]
+
+
+ 
+
+      
+    通訊原理 [ Communication Electronics ]
+
+
+ 
+
+      
+    微光機電系統設計 [ Design Of Micro OPTO - Mechatronics System ]
+
+
+ 
+
+      
+    數位訊號處理器控制應用 [ DSP Control Applications ]
+
+
+ 
+
+      
+    噪音控制 [ Noise Control ]
+
+
+ 
+
+      
+    黏性流力 [ Viscous Fluid Mechanics ]
+
+
+ 
+
+      
+    工程日文 [ Engineering Japanese ]
+
+
+ 
+
+      
+    有限元素法 [ Finite Element Method ]
+
+
+ 
+
+      
+    專業寫作與表達 [ Professional Writing And Presentation ]
+
+
+ 
+
+      
+    造船工程學 [ Theory Of Naval Architecture ]
+
+
+ 
+
+      
+    進階工程日文 [ Advanced Engineering Japanese ]
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+地址：701臺南市大學路1號  系統及船舶機電工程學系     電話: (系)06-2747018 或 (校) 06-2757575ext63500   傳真:06-2747019     E-Mail:em63500@email.ncku.edu.tw       
+Copyright (c) 2009 National Cheng Kung University all rights reserved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+運動學- 台灣Wiki 首頁百科圖片百科分類TwWiki台灣Wiki>百科分類>生物化學品>術語>理論物理>製造>基本物理概念>機械零件>機械>物理理論>應用物理>生物力學>數學術語>學科名>計算機科學基礎理論>運動學評論（0）分享到：分享到Facebook分享到Twitter分享到Google+分享到噗浪運動學 標籤： 暫無標籤  從幾何的角度（指不涉及物體本身的物理性質和加在物體上的力) 描述和研究物體位置隨時間的變化規律的力學分支。以研究質點和剛體這兩個簡化模型的運動為基礎，並進一步研究變形體(彈性體、流體等)的運動。研究後者的運動，須把變形體中微團的剛性位移和應變分開。點的運動學研究點的運動方程、軌跡、位移、速度、加速度等運動特徵，這些都隨所選參考系的不同而異；而剛體運動學還要研究剛體本身的轉動過程、角速度、角加速度等更複雜些的運動特徵。剛體運動按運動的特性又可分為平動、繞定軸轉動、平面平行運動、繞定點轉動和一般運動。運動學為動力學、機械學提供理論基礎，也是自然科學和工程技術必需的基礎知識。運動學是理論力學的一個分支學科，它是運用幾何學的方法來研究物體的運動，通常不考慮力和質量等因素的影響。至於物體的運動和力的關係，則是動力學的研究課題。 目錄1. 簡介2. 發展歷史3. 流體運動學回目錄1 運動學 -簡介 運動學是理論力學的一個分支學科，它是運用幾何學的方法來研究物體的運動，通常不考慮力和質量等因素的影響。至於物體的運動和力的關係，則是動力學的研究課題。用幾何方法描述物體的運動必須確定一個參照系，因此，單純從運動學的觀點看，對任何運動的描述都是相對運動學的。這裡，運動的相對性是指經典力學範疇內的，即在不同的參照系中時間和空間的量度相同，和參照系的運動無關。不過當物體的速度接近光速時，時間和空間的量度就同參照系有關了。這裡的「運動」指機械運動，即物體位置的改變；所謂「從幾何的角度」是指不涉及物體本身的物理性質(如質量等)和加在物體上的力。運動學主要研究點和剛體的運動規律。點是指沒有大小和質量、在空間佔據一定位置的幾何點。剛體是沒有質量、不變形、但有一定形狀、佔據空間一定位置的形體。運動學包括點的運動學和剛體運動學兩部分。掌握了這兩類運動，才可能進一步研究變形體(彈性體、流體等)的運動。在變形體研究中，須把物體中微團的剛性位移和應變分開。點的運動學研究點的運動方程、軌跡、位移、速度、加速度等運動特徵，這些都隨所選的參考系不同而異；而剛體運動學還要研究剛體本身的轉動過程、角速度、角加速度等更複雜些的運動特徵。剛體運動按運動的特性又可分為：剛體的平動、剛體定軸轉動、剛體平面運動、剛體定點轉動和剛體一般運動。運動學為動力學、機械原理(機械學)提供理論基礎，也包含有自然科學和工程技術很多學科所必需的基本知識。回目錄2 運動學 -發展歷史 運動學在發展的初期，從屬於動力學，隨著動力學而發展。古代，人們通過對地運動學面物體和天體運動的觀察，逐漸形成了物體在空間中位置的變化和時間的概念。中國戰國時期在《墨經》中已有關於運動和時間先後的描述。亞里士多德在《物理學》中討論了落體運動和圓運動，已有了速度的概念。伽利略發現了等加速直線運動中，距離與時間二次方成正比的規律，建立了加速度的概念。在對彈射體運動的研究中，他得出拋物線軌跡，並建立了運動(或速度)合成的平行四邊形法則，伽利略為點的運動學奠定了基礎。在此基礎上，惠更斯在對擺的運動和牛頓在對天體運動的研究中，各自獨立地提出了離心力的概念，從而發現了向心加速度與速度的二次方成正比、同半徑成反比的規律。18世紀後期，由於天文學、造船業和機械業的發展和需要，歐拉用幾何方法系統地研究了剛體的定軸轉動和剛體的定點運動問題，提出了後人用他的姓氏命名的歐拉角的概念，建立了歐拉運動學方程和剛體有限轉動位移定理，並由此得到剛體瞬時轉運動學動軸和瞬時角速度矢量的概念，深刻地揭示了這種複雜運動形式的基本運動特徵。所以歐拉可稱為剛體運動學的奠基人。此後，拉格朗日和漢密爾頓分別引入了廣義坐標、廣義速度和廣義動量，為在多維位形空間和相空間中用幾何方法描述多自由度質點系統的運動開闢了新的途徑，促進了分析動力學的發展。19世紀末以來，為了適應不同生產需要、完成不同動作的各種機器相繼出現並廣泛使用，於是，機構學應運而生。機構學的任務是分析機構的運動規律，根據需要實現的運動設計新的機構和進行機構的綜合。現代儀器和自動化技術的發展又促進機構學的進一步發展，提出了各種平面和空間機構運動分析和綜合的問題，作為機構學的理論基礎，運動學已逐漸脫離動力學而成為經典力學中一個獨立的分支。回目錄3 運動學 -流體運動學 研究流體運動的幾何性質，而不涉及力的具體作用的流體力學分支。運動學流動的分析描述描寫流體運動的方法有兩種，即拉格朗日方法和歐拉方法。拉格朗日方法著眼於流體質點，設法描述每個流體質點的位置隨時間變化的規律。通常利用初始時刻流體質點的直角坐標或曲線坐標a、b、c作為區分不同流體質點的標誌。流體質點的運動規律可表示為r＝r（a、b、c、t），其中r是流體質點的矢徑；t為時間；a、b、c、t統稱為拉格朗日變數。歐拉方法著眼於空間點，設法在空間每一點上描述流體運動隨時間的變化狀況。流體質點的運動規律可用速度矢量v＝v（r、t）表示，其中r、t稱為歐拉變數。人們廣泛採用歐拉方法，較少採用拉格朗日方法，因為用歐拉變數確定的速度函數是定義在時間和空間點上，所以是速度場，稱為流場，可運用場論知識求解；其次，在歐拉方法中，由於加速度是一階導數，所以運動方程組是一階偏微分方程組，比拉格朗日方法中的二階偏微分方程組容易處理。流動的幾何描述流體質點在空間運動時所描繪的曲線稱為跡線；在流場中每一點上都與速度矢量相切的曲線稱為流線。跡線是同一流體質點在不同時刻形成的曲線，它是在拉格朗日方法中流體質點運動規律的幾何表示；流線是同一時刻不同流體質點所組成的曲線，它是在歐拉方法中流體質點運動規律的幾何表示。只有在定常運動中，兩者才重合在一起。流動分析流體運動比剛體運動複雜，它除了平動和轉動外，還要發生變形。亥姆霍茲速度分解定理指出，流體微團的運動可以分解為平動、轉動和變形3部分之和（見機械運動）。流體速度分解定理同剛體速度分解定理的重要區別為：①流體微團運動比剛體的多了變形速度部分；②剛體速度分解定理對整個剛體成立，因此是整體性定理，而流體速度分解定理只在流體微團內成立，因此是局部性的定理。運動學流動分類從運動形式角度，流體運動可分為無旋運動和有旋運動。從時間角度，可分為定常運動（所有物理量不隨時間而變）和非定常運動。從空間角度，根據有關物理量依賴於1個、2個和3個坐標，流體運動可分為一維、二維和三維運動。平面運動和軸對稱運動是二維運動的兩個重要例子。旋渦的運動學性質在有旋運動中，處處與旋渦矢量相切的曲線稱為渦線。渦線上各流體微團繞渦線的切線方向旋轉。在旋渦場內取一非渦線且不自相交的封閉曲線，通過它的所有渦線構成一管狀曲面，稱為渦管。渦管的運動學性質為：渦通量在渦管所有橫截面上都等於同一常數，稱為渦管強度。渦管不能在流體內產生或終止，如果它不以渦環的形式存在，就只能延伸到邊界上。連續性方程流體質量守恆定律的數學表達式。設在流場中任取一體積為τ的流體，τ的周界面為σ，從質量守恆定律得出：τ內流體質量的增加率等於單位時間內通過界面σ流出的流體質量。上一篇[光學望遠鏡]    下一篇 [白強]相關評論同義詞：暫無同義詞收藏到：收藏到Facebook收藏到Twitter收藏到Google+收藏到噗浪詞條信息瀏覽次數: 35 次更新時間: 2013-07-13相關詞條精彩詞條More>斯利姆《婚姻背靠背》漢江戀歌《最後的氣宗》尼策pan分享到分享到Facebook分享到Twitter分享到Google+分享到噗浪1簡介2發展歷史3流體運動學

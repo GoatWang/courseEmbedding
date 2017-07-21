@@ -1,0 +1,5770 @@
+
+
+
+
+
+網際網路技術與應用
+
+
+
+網際網路技術與應用
+範例與作業區
+
+ftp://172.19.6.8/ip
+課程資料
+
+
+
+
+02/20
+
+server 端程式開發工具                                                                 
+          Microsoft Visual Studio (Visual Web Developer--VWD) 
+http://www.microsoft.com/taiwan/vstudio/express/default.aspx             
+          
+
+                                                                                           
+          1. 輸入, 輸出                                                                                           
+          2. 變數,共用變數                                                                                            
+          3. file (檔案)                                                                                            
+          4. DB (資料庫)                                                                                            
+          5. 與flash結合                                                                                            
+          6. 與java script結合
+
+ASP.NET 4.6 網頁製作徹底研究：使用Visual Basic
+          ---
+upshow.aspx 
+          -----
+          ASP.NET
+web輸入 inputbox button
+輸出 label1.text = label1.text & stroutput
+共用變數 application("aaa12")
+自動更新  HTML---<meta           
+        http-equiv="refresh" content="5,url=show.aspx">
+----
+公佈欄  
+
+
+
+03/01
+公佈欄 使用
+        AJAX  --script manager-timer-update pannel 自動更新
+        ----
+        使用VB的重複指令 for
+        數字的拔河比賽
+        視覺化的拔河比賽
+
+
+03/08
+
+聊天室            
+        application("aaa3")=application("aaa2")            
+        application("aaa2")=application("aaa1")            
+        application("aaa1")=textbox1.text
+
+
+        aaaaaa
+        
+        bbbbb
+        if RadioButtonList1.SelectedIndex=0 then
+  label1.text = "<h1>" &  textbox1.text         
+        & "</h1>"
+end if
+        -----            
+        練習建立 聊天室 在自己work4目錄 並執行                            
+        
+
+
+
+            
+        03/13
+Date.now
+其他的                                        
+ 使用者輸入方式
+9/28 9/299/30
+
+aa
+bb
+cc
+
+ selected, checked, items
+ 
+            
+        由aspx產生HTML a  A                                       
+        ------        視覺化           
+        Panel1.BackColor      
+        Image1.Width......
+
+
+
+03/20
+         
+        internet OX game                        
+        --
+               
+  程式流程            
+  1.順序            
+  2.判斷            
+  3.迴圈
+
+              
+        副程式                      
+        
+
+
+03/28
+
+             
+          檔案
+          -------
+        試著解決碰到的問題 example 
+        [ctho@ntua.edu.tw]
+
+
+04/10
+          陣列 dim sc(100)
+迴圈 for
+
+
+04/17
+留言版
+1. init.aspx input.aspx
+         show.aspx data.txt 
+2. 最後留言在前
+      3. 加入屬性(心情影像)
+
+
+04/26
+產生 table's html
+尋人留言版 
+----
+ 留言者's ip Request.ServerVariables("REMOTE_ADDR") 
+      Upload file 貼圖區   
+檔名加上亂數Rnd( ) 
+        show you  app application 
+
+
+05/03
+成績單
+        ------
+      textbox6.visible = false        (只有5位同學）
+
+
+05/17
+傳資料到下一個aspx
+        ---鏈結
+        <a                        href='showtopic.aspx?id=16>....</a>
+        showcontain.aspx?id=18 --->   request("id")
+        a1.html-->a2.aspx...... 
+        --按鈕
+        response.redirect("next.aspx")
+        資料放在session("myname") 中
+      b1.aspx-->b2.aspx......
+
+
+05/24
+留言版-->討論區
+      blog    彎彎
+      --------
+        disinit.aspx
+        disnewtopic.aspx
+      disshowtopic.aspx-->disshowcontain.aspx-->disresponse.aspx
+      ---->(disshowcontain.aspx)
+
+
+05/31
+flash 
+
+
+06/07
+   
+          flash-->aspx         
+ Application("myx") =                                 
+          Request("varx")          
+ -----          
+        aspx-->flash           
+          Response.Write("varxx=" &                                 
+          Application("myx"))          
+          Response.Write("varxx=" &                                 
+          Application("myx") & "&" & "varyy="                                
+          & Application("myy"))                            
+ -----             
+          flash<--->aspx          
+           ------          
+           internet PP (1. 一人玩大家看)                         
+        
+
+
+06/14
+      06/21
+         
+          show your  internet  game application                             
+        
+        work11 共用記憶體作業        
+        work12 共用檔案作業
+work13
+網頁間資料傳輸作業
+
+
+
+　
+
+
+
+
+事件
+form_load 
+        button_click 
+        timer1_trick   [updatepanel-trigger-timer1]
+
+
+輸入           
+        輸出
+a=textbox1.text           
+        label1.text="200"
+
+
+date
+date.now           
+        date.now.second
+
+
+共用變數
+application("abc")           
+        session("def")
+
+
+                                                  
+        聊天室
+application("msg1")=application("msg2")           
+        application("msg2")=application("msg3")           
+        application("msg3")=textbox1.text
+
+
+條件判斷
+if a>300 then ....end if                                                                                    
+        if a>300 then ...else......end if
+
+
+條件判斷
+select  case score                                     
+        case score>=90                                     
+        ...         
+        case score>80 and score <90                                      
+        .....         
+        case else                                     
+        .....         
+        end select
+
+
+迴圈          
+ 
+
+for i =1 to 10                                     
+        ...         
+        next
+
+
+迴圈          
+ 
+
+do while not eof                                     
+        .....         
+        loop
+
+
+陣列           
+      
+dim sc(100) as string                
+        for i =1 to 10                                     
+         sc(i) = i*10                
+        next
+
+
+輸入           
+        輸出           
+        (屬性)
+Application("mind3") =                                                                                     
+        RadioButtonList1.SelectedValue           
+        If Application("mind3") = "unhappy" Then                                                                                    
+          Label2.ForeColor = Drawing.Color.Blue                                                                                    
+        end if
+
+
+副程式
+宣告 sub ck() .......end sub                                                                                    
+        呼叫 ck()
+
+
+亂數 
+Rnd( ) -->0.12356
+
+
+轉換成整數
+Cint(1.234) -->1
+
+
+FILE
+FileOpen(2,                                                                           
+        Server.MapPath("scdata.txt"), OpenMode.Output)                                                                          
+        for j = 1 to 10                                                                          
+          str = str & j & Chr(13)                                                                          
+        next           
+        Print(2, str)                                                                          
+        FileClose(2)           
+        ----------------           
+        FileOpen(1, Server.MapPath("scdata.txt"), OpenMode.Input)                                                                          
+        Do While Not EOF(1)                                                                          
+            str00 = str00 & LineInput(1) & "<br>"                                                                         
+         Loop           
+        FileClose(1)
+
+
+Upload
+FileUpload1.SaveAs(Server.MapPath("./")            
+        & FileUpload1.FileName)           
+        -----           
+        Dim str As String           
+        str = "a" & Int(Rnd(300) * 100) & FileUpload1.FileName           
+        FileUpload1.SaveAs(Server.MapPath("./") + str)
+
+
+交給下一個網頁
+shownews.aspx?id=18         
+        request("id")         
+        -----         
+        Server.Transform(test02.aspx)
+session("def")
+
+
+flash--aspx
+loadVariablesNum("ctrl1.asp", 0,            
+        "POST");           
+        <% application("ballxx")=request("ballx") %>           
+        <% response.write "ballx=" & application("ballxx")            
+        %>
+
+
+輸入文字註意(flash)
+1. 勿選取 "自動微調"                                                                     
+        2.向上下翻動  f_disp.scroll = f_disp.scroll-1;
+
+
+aspx<-->as30
+var lx = 172, ly=309 , rx=372, ry =309, bx=50,by=60;
+ 
+        addEventListener(Event.ENTER_FRAME,aa) 
+        function aa(e:Event):void{ 
+	if(mouseX>0 && mouseX<300){ 
+	itnl.x = mouseX 
+    lx=mouseX 
+	varlx.text =lx 
+	ly=mouseX 
+	varly.text =ly 
+ }
+
+ 
+        }
+ 
+        var a_URL:URLRequest= new URLRequest("l.aspx"); 
+        var send_data:URLVariables = new URLVariables() 
+        a_URL.method = URLRequestMethod.POST; 
+        a_URL.data = send_data;
+ 
+        var a_loader:URLLoader = new URLLoader; 
+        a_loader.dataFormat = URLLoaderDataFormat.VARIABLES;
+ 
+        a_loader.addEventListener(Event.COMPLETE,bb);
+ 
+        function bb(e:Event):void{ 
+        rx = a_loader.data.rx 
+        varrx.text=rx 
+        itnr.x=rx 
+        ry = a_loader.data.ry 
+        varry.text=ry 
+        itnr.y=ry 
+        bx = a_loader.data.bx 
+        varbx.text=bx 
+        itnb.x=bx 
+        by = a_loader.data.by 
+        varby.text=by 
+        itnb.y=by
+ 
+        send_data.lx = lx 
+        send_data.ly = ly 
+        }
+ 
+        setInterval(cc,1000) 
+        function cc(){ 
+        a_loader.load(a_URL) 
+        }
+
+
+
+
+
+asp.net mail
+ Dim Mail As New Net.Mail.MailMessage            
+        Mail.From = New Net.Mail.MailAddress("mm@mail.ntua.edu.tw", "mm")            
+        Mail.Subject = "1234567"           
+        Mail.IsBodyHtml = True            
+        Mail.BodyEncoding = System.Text.Encoding.UTF8            
+        Mail.SubjectEncoding = System.Text.Encoding.UTF8            
+        Mail.Body = "7654321"           
+        Mail.To.Add("dd@mail.ntua.edu.tw")          
+        Dim SMTPServer As New Net.Mail.SmtpClient            
+        SMTPServer.Host = "mail.ntua.edu.tw"           
+        SMTPServer.Port = "25"            
+        SMTPServer.DeliveryMethod = Net.Mail.SmtpDeliveryMethod.Network            
+        SMTPServer.Send(Mail)          
+        Label1.Text = "mail ok!"
+
+
+db
+<%@ Import NameSpace="System.Data.OleDb"          
+        %>         
+        -----
+(select)         
+        Dim Conn As New OleDbConnection()                 
+        Dim ConStr, QueryStr As String                 
+        Dim i, j As Short                 
+        ConStr = "Provider=Microsoft.Jet.OLEDB.4.0;"                 
+        ConStr += "Data Source=" & Server.MapPath("gsb.mdb")                 
+        QueryStr = "Select * From gsbdata where a_title='b' "                 
+        Conn.ConnectionString = ConStr                 
+        Conn.Open()
+         
+        Dim MyCommand As New OleDbCommand()                 
+        MyCommand.CommandText = QueryStr                 
+        MyCommand.Connection = Conn                 
+        Dim MyReader As OleDbDataReader                 
+        MyReader = MyCommand.ExecuteReader()                 
+        MyReader.Read()
+         
+        Label1.Text = " "
+         
+        Do
+         
+        Label1.Text = Label1.Text & MyReader.GetValue(1) &                  
+        "--" & MyReader.GetValue(2) & "--" &                  
+        MyReader.GetValue(3) & "<hr>"
+
+         
+        Loop While MyReader.Read
+         
+        MyCommand.Dispose()         
+        Conn.Close()         
+        -------         
+        (insert)(delete)(update)         
+        Dim ConStr, CmdStr, i                  
+        Dim Conn As New System.Data.OleDb.OleDbConnection()                  
+        ConStr="Provider=Microsoft.Jet.OLEDB.4.0;"         
+        ConStr+="Data Source=" & Server.MapPath("db2.mdb")                  
+        CmdStr = "INSERT INTO 通訊錄(姓名,電話) values ('王王','456')"                  
+        Conn.ConnectionString=ConStr         
+        Conn.Open()         
+        Dim Cmd As New System.Data.OleDb.OleDbCommand()                  
+        Cmd.CommandText=CmdStr         
+        Cmd.connection=conn         
+        i=cmd.ExecuteNonQuery()         
+        Cmd.Dispose()         
+        Conn.Close()         
+        ------         
+        (insert)INSERT INTO 通訊錄(姓名,電話) values ('王王','456')                  
+        (delete)Delete From 通訊錄Where 電話='456'                  
+        (update)update 通訊錄set 電話='123' Where 分類='同學'
+
+
+as3.0->aspx
+var send_data:URLVariables = new URLVariables();    
+        send_data.dataA = "ABC";    
+        send_data.dataB = 123;    
+        var a_URL:URLRequest = new URLRequest("sample.aspx");    
+        a_URL.method = URLRequestMethod.POST;    
+        a_URL.data = send_data;    
+        sendToURL(a_URL);
+-----   
+        <%
+Application("my1") =    
+        Request("dataA")   
+        Application("my2") = Request("dataB")   
+        %>
+
+
+aspx->as3.0
+aaa=變數A&bbb=變數B     
+        (<%    response.write("....") %>)   
+        ----   
+        var a_loader:URLLoader = new URLLoader();    
+        a_loader.dataFormat = URLLoaderDataFormat.VARIABLES;    
+        a_loader.addEventListener(Event.COMPLETE, doComplete);    
+        function doComplete(e:Event):void {    
+	trace(a_loader.data.aaa);    
+	trace(a_loader.data.bbb);    
+        }    
+        var a_URL:URLRequest = new URLRequest("data2.txt");    
+        a_loader.load(a_URL);
+
+
+
+
+
+
+　
+　
+　
+
+
+��h t m l   x m l n s : v = " u r n : s c h e m a s - m i c r o s o f t - c o m : v m l "  
+ x m l n s : o = " u r n : s c h e m a s - m i c r o s o f t - c o m : o f f i c e : o f f i c e "  
+ x m l n s : w = " u r n : s c h e m a s - m i c r o s o f t - c o m : o f f i c e : w o r d "  
+ x m l n s : m = " h t t p : / / s c h e m a s . m i c r o s o f t . c o m / o f f i c e / 2 0 0 4 / 1 2 / o m m l "  
+ x m l n s = " h t t p : / / w w w . w 3 . o r g / T R / R E C - h t m l 4 0 " >  
+  
+ h e a d >  
+ m e t a   h t t p - e q u i v = C o n t e n t - T y p e   c o n t e n t = " t e x t / h t m l ;   c h a r s e t = u n i c o d e " >  
+ m e t a   n a m e = P r o g I d   c o n t e n t = W o r d . D o c u m e n t >  
+ m e t a   n a m e = G e n e r a t o r   c o n t e n t = " M i c r o s o f t   W o r d   1 2 " >  
+ m e t a   n a m e = O r i g i n a t o r   c o n t e n t = " M i c r o s o f t   W o r d   1 2 " >  
+ l i n k   r e l = F i l e - L i s t   h r e f = " i l a b . f i l e s / f i l e l i s t . x m l " >  
+ l i n k   r e l = E d i t - T i m e - D a t a   h r e f = " i l a b . f i l e s / e d i t d a t a . m s o " >  
+ ! - - [ i f   ! m s o ] >  
+ s t y l e >  
+ v \ : *   { b e h a v i o r : u r l ( # d e f a u l t # V M L ) ; }  
+ o \ : *   { b e h a v i o r : u r l ( # d e f a u l t # V M L ) ; }  
+ w \ : *   { b e h a v i o r : u r l ( # d e f a u l t # V M L ) ; }  
+ . s h a p e   { b e h a v i o r : u r l ( # d e f a u l t # V M L ) ; }  
+ / s t y l e >  
+ ! [ e n d i f ] - - >  
+ t i t l e > �}���}��a(u�g�R�[W��[/ t i t l e >  
+ ! - - [ i f   g t e   m s o   9 ] > x m l >  
+   o : D o c u m e n t P r o p e r t i e s >  
+     o : A u t h o r > K e n / o : A u t h o r >  
+     o : T e m p l a t e > N o r m a l / o : T e m p l a t e >  
+     o : L a s t A u t h o r > K e n / o : L a s t A u t h o r >  
+     o : R e v i s i o n > 4 / o : R e v i s i o n >  
+     o : T o t a l T i m e > 2 / o : T o t a l T i m e >  
+     o : C r e a t e d > 2 0 1 0 - 0 4 - 2 0 T 1 0 : 5 8 : 0 0 Z / o : C r e a t e d >  
+     o : L a s t S a v e d > 2 0 1 0 - 0 4 - 2 0 T 1 1 : 0 0 : 0 0 Z / o : L a s t S a v e d >  
+     o : P a g e s > 3 / o : P a g e s >  
+     o : W o r d s > 5 8 0 / o : W o r d s >  
+     o : C h a r a c t e r s > 3 3 0 6 / o : C h a r a c t e r s >  
+     o : L i n e s > 2 7 / o : L i n e s >  
+     o : P a r a g r a p h s > 7 / o : P a r a g r a p h s >  
+     o : C h a r a c t e r s W i t h S p a c e s > 3 8 7 9 / o : C h a r a c t e r s W i t h S p a c e s >  
+     o : V e r s i o n > 1 2 . 0 0 / o : V e r s i o n >  
+   / o : D o c u m e n t P r o p e r t i e s >  
+ / x m l > ! [ e n d i f ] - - >  
+ l i n k   r e l = t h e m e D a t a   h r e f = " i l a b . f i l e s / t h e m e d a t a . t h m x " >  
+ l i n k   r e l = c o l o r S c h e m e M a p p i n g   h r e f = " i l a b . f i l e s / c o l o r s c h e m e m a p p i n g . x m l " >  
+ ! - - [ i f   g t e   m s o   9 ] > x m l >  
+   w : W o r d D o c u m e n t >  
+     w : Z o o m > 1 2 5 / w : Z o o m >  
+     w : T r a c k M o v e s > f a l s e / w : T r a c k M o v e s >  
+     w : T r a c k F o r m a t t i n g / >  
+     w : V a l i d a t e A g a i n s t S c h e m a s / >  
+     w : S a v e I f X M L I n v a l i d > f a l s e / w : S a v e I f X M L I n v a l i d >  
+     w : I g n o r e M i x e d C o n t e n t > f a l s e / w : I g n o r e M i x e d C o n t e n t >  
+     w : A l w a y s S h o w P l a c e h o l d e r T e x t > f a l s e / w : A l w a y s S h o w P l a c e h o l d e r T e x t >  
+     w : D o N o t P r o m o t e Q F / >  
+     w : L i d T h e m e O t h e r > E N - U S / w : L i d T h e m e O t h e r >  
+     w : L i d T h e m e A s i a n > Z H - T W / w : L i d T h e m e A s i a n >  
+     w : L i d T h e m e C o m p l e x S c r i p t > X - N O N E / w : L i d T h e m e C o m p l e x S c r i p t >  
+     w : C o m p a t i b i l i t y >  
+       w : B r e a k W r a p p e d T a b l e s / >  
+       w : S n a p T o G r i d I n C e l l / >  
+       w : W r a p T e x t W i t h P u n c t / >  
+       w : U s e A s i a n B r e a k R u l e s / >  
+       w : D o n t G r o w A u t o f i t / >  
+       w : S p l i t P g B r e a k A n d P a r a M a r k / >  
+       w : D o n t V e r t A l i g n C e l l W i t h S p / >  
+       w : D o n t B r e a k C o n s t r a i n e d F o r c e d T a b l e s / >  
+       w : D o n t V e r t A l i g n I n T x b x / >  
+       w : W o r d 1 1 K e r n i n g P a i r s / >  
+       w : C a c h e d C o l B a l a n c e / >  
+       w : U s e F E L a y o u t / >  
+     / w : C o m p a t i b i l i t y >  
+     w : B r o w s e r L e v e l > M i c r o s o f t I n t e r n e t E x p l o r e r 4 / w : B r o w s e r L e v e l >  
+     m : m a t h P r >  
+       m : m a t h F o n t   m : v a l = " C a m b r i a   M a t h " / >  
+       m : b r k B i n   m : v a l = " b e f o r e " / >  
+       m : b r k B i n S u b   m : v a l = " &# 4 5 ; - " / >  
+       m : s m a l l F r a c   m : v a l = " o f f " / >  
+       m : d i s p D e f / >  
+       m : l M a r g i n   m : v a l = " 0 " / >  
+       m : r M a r g i n   m : v a l = " 0 " / >  
+       m : d e f J c   m : v a l = " c e n t e r G r o u p " / >  
+       m : w r a p I n d e n t   m : v a l = " 1 4 4 0 " / >  
+       m : i n t L i m   m : v a l = " s u b S u p " / >  
+       m : n a r y L i m   m : v a l = " u n d O v r " / >  
+     / m : m a t h P r > / w : W o r d D o c u m e n t >  
+ / x m l > ! [ e n d i f ] - - > ! - - [ i f   g t e   m s o   9 ] > x m l >  
+   w : L a t e n t S t y l e s   D e f L o c k e d S t a t e = " f a l s e "   D e f U n h i d e W h e n U s e d = " t r u e "  
+     D e f S e m i H i d d e n = " t r u e "   D e f Q F o r m a t = " f a l s e "   D e f P r i o r i t y = " 9 9 "  
+     L a t e n t S t y l e C o u n t = " 2 6 7 " >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " N o r m a l " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " h e a d i n g   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 9 "   Q F o r m a t = " t r u e "   N a m e = " h e a d i n g   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 9 "   Q F o r m a t = " t r u e "   N a m e = " h e a d i n g   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 9 "   Q F o r m a t = " t r u e "   N a m e = " h e a d i n g   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 9 "   Q F o r m a t = " t r u e "   N a m e = " h e a d i n g   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 9 "   Q F o r m a t = " t r u e "   N a m e = " h e a d i n g   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 9 "   Q F o r m a t = " t r u e "   N a m e = " h e a d i n g   7 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 9 "   Q F o r m a t = " t r u e "   N a m e = " h e a d i n g   8 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 9 "   Q F o r m a t = " t r u e "   N a m e = " h e a d i n g   9 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   N a m e = " t o c   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   N a m e = " t o c   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   N a m e = " t o c   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   N a m e = " t o c   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   N a m e = " t o c   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   N a m e = " t o c   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   N a m e = " t o c   7 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   N a m e = " t o c   8 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   N a m e = " t o c   9 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 5 "   Q F o r m a t = " t r u e "   N a m e = " c a p t i o n " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 1 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " T i t l e " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 1 "   N a m e = " D e f a u l t   P a r a g r a p h   F o n t " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 1 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " S u b t i t l e " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 2 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " S t r o n g " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 2 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " E m p h a s i s " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 5 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " T a b l e   G r i d " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   U n h i d e W h e n U s e d = " f a l s e "   N a m e = " P l a c e h o l d e r   T e x t " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " N o   S p a c i n g " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   S h a d i n g " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   L i s t " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   G r i d " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 4 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 5 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 6 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 7 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 8 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " D a r k   L i s t " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   S h a d i n g " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   L i s t " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   G r i d " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   S h a d i n g   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   L i s t   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   G r i d   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   1   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 4 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   2   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 5 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   1   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   U n h i d e W h e n U s e d = " f a l s e "   N a m e = " R e v i s i o n " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 4 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " L i s t   P a r a g r a p h " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 2 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " Q u o t e " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " I n t e n s e   Q u o t e " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 6 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   2   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 7 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   1   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 8 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   2   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   3   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " D a r k   L i s t   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   S h a d i n g   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   L i s t   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   G r i d   A c c e n t   1 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   S h a d i n g   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   L i s t   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   G r i d   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   1   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 4 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   2   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 5 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   1   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 6 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   2   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 7 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   1   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 8 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   2   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   3   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " D a r k   L i s t   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   S h a d i n g   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   L i s t   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   G r i d   A c c e n t   2 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   S h a d i n g   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   L i s t   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   G r i d   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   1   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 4 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   2   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 5 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   1   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 6 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   2   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 7 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   1   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 8 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   2   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   3   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " D a r k   L i s t   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   S h a d i n g   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   L i s t   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   G r i d   A c c e n t   3 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   S h a d i n g   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   L i s t   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   G r i d   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   1   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 4 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   2   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 5 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   1   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 6 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   2   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 7 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   1   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 8 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   2   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   3   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " D a r k   L i s t   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   S h a d i n g   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   L i s t   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   G r i d   A c c e n t   4 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   S h a d i n g   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   L i s t   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   G r i d   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   1   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 4 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   2   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 5 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   1   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 6 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   2   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 7 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   1   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 8 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   2   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   3   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " D a r k   L i s t   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   S h a d i n g   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   L i s t   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   G r i d   A c c e n t   5 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   S h a d i n g   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   L i s t   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " L i g h t   G r i d   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   1   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 4 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   S h a d i n g   2   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 5 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   1   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 6 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   L i s t   2   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 7 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   1   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 8 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   2   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 6 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " M e d i u m   G r i d   3   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 0 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " D a r k   L i s t   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   S h a d i n g   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   L i s t   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 7 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   N a m e = " C o l o r f u l   G r i d   A c c e n t   6 " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 1 9 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " S u b t l e   E m p h a s i s " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 2 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " I n t e n s e   E m p h a s i s " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 1 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " S u b t l e   R e f e r e n c e " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 2 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " I n t e n s e   R e f e r e n c e " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 3 "   S e m i H i d d e n = " f a l s e "  
+       U n h i d e W h e n U s e d = " f a l s e "   Q F o r m a t = " t r u e "   N a m e = " B o o k   T i t l e " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 7 "   N a m e = " B i b l i o g r a p h y " / >  
+     w : L s d E x c e p t i o n   L o c k e d = " f a l s e "   P r i o r i t y = " 3 9 "   Q F o r m a t = " t r u e "   N a m e = " T O C   H e a d i n g " / >  
+   / w : L a t e n t S t y l e s >  
+ / x m l > ! [ e n d i f ] - - >  
+  
+ s t y l e >  
+ 	 t d   p . M s o N o r m a l : n t h - o f - t y p e ( n + 4 )   s p a n   {  
+ 	 	 f o n t - s i z e :   1 2 p t   ! i m p o r t a n t ;  
+ 	 }  
+ 	 t d   p . M s o N o r m a l : n t h - o f - t y p e ( n + 4 )   b   s p a n   {  
+ 	 	 f o n t - s i z e :   1 5 . 5 p t   ! i m p o r t a n t ;  
+ 	 }  
+ / s t y l e >  
+ s t y l e >  
+         ! - -  
+   / *   F o n t   D e f i n i t i o n s   * /  
+   @ f o n t - f a c e  
+ 	 { f o n t - f a m i l y : W i n g d i n g s ;  
+ 	 p a n o s e - 1 : 5   0   0   0   0   0   0   0   0   0 ;  
+ 	 m s o - f o n t - c h a r s e t : 2 ;  
+ 	 m s o - g e n e r i c - f o n t - f a m i l y : a u t o ;  
+ 	 m s o - f o n t - p i t c h : v a r i a b l e ;  
+ 	 m s o - f o n t - s i g n a t u r e : 0   2 6 8 4 3 5 4 5 6   0   0   - 2 1 4 7 4 8 3 6 4 8   0 ; }  
+ @ f o n t - f a c e  
+ 	 { f o n t - f a m i l y : �e0}fԚ;  
+ 	 p a n o s e - 1 : 2   2   5   0   0   0   0   0   0   0 ;  
+ 	 m s o - f o n t - a l t : P M i n g L i U ;  
+ 	 m s o - f o n t - c h a r s e t : 1 3 6 ;  
+ 	 m s o - g e n e r i c - f o n t - f a m i l y : r o m a n ;  
+ 	 m s o - f o n t - p i t c h : v a r i a b l e ;  
+ 	 m s o - f o n t - s i g n a t u r e : - 1 6 1 0 6 1 1 9 6 9   6 8 4 7 1 9 3 5 4   2 2   0   1 0 4 8 5 7 7   0 ; }  
+ @ f o n t - f a c e  
+ 	 { f o n t - f a m i l y : 0}fԚ;  
+ 	 p a n o s e - 1 : 2   2   5   9   0   0   0   0   0   0 ;  
+ 	 m s o - f o n t - a l t : M i n g L i U ;  
+ 	 m s o - f o n t - c h a r s e t : 1 3 6 ;  
+ 	 m s o - g e n e r i c - f o n t - f a m i l y : m o d e r n ;  
+ 	 m s o - f o n t - p i t c h : f i x e d ;  
+ 	 m s o - f o n t - s i g n a t u r e : - 1 6 1 0 6 1 1 9 6 9   6 8 4 7 1 9 3 5 4   2 2   0   1 0 4 8 5 7 7   0 ; }  
+ @ f o n t - f a c e  
+ 	 { f o n t - f a m i l y : " C a m b r i a   M a t h " ;  
+ 	 p a n o s e - 1 : 2   4   5   3   5   4   6   3   2   4 ;  
+ 	 m s o - f o n t - c h a r s e t : 1 ;  
+ 	 m s o - g e n e r i c - f o n t - f a m i l y : r o m a n ;  
+ 	 m s o - f o n t - f o r m a t : o t h e r ;  
+ 	 m s o - f o n t - p i t c h : v a r i a b l e ;  
+ 	 m s o - f o n t - s i g n a t u r e : 0   0   0   0   0   0 ; }  
+ @ f o n t - f a c e  
+ 	 { f o n t - f a m i l y : jwiԚ;  
+ 	 p a n o s e - 1 : 3   0   5   9   0   0   0   0   0   0 ;  
+ 	 m s o - f o n t - c h a r s e t : 1 3 6 ;  
+ 	 m s o - g e n e r i c - f o n t - f a m i l y : s c r i p t ;  
+ 	 m s o - f o n t - p i t c h : f i x e d ;  
+ 	 m s o - f o n t - s i g n a t u r e : 3   1 3 5 1 3 5 2 3 2   2 2   0   1 0 4 8 5 7 7   0 ; }  
+ @ f o n t - f a c e  
+ 	 { f o n t - f a m i l y : V e r d a n a ;  
+ 	 p a n o s e - 1 : 2   1 1   6   4   3   5   4   4   2   4 ;  
+ 	 m s o - f o n t - c h a r s e t : 0 ;  
+ 	 m s o - g e n e r i c - f o n t - f a m i l y : s w i s s ;  
+ 	 m s o - f o n t - p i t c h : v a r i a b l e ;  
+ 	 m s o - f o n t - s i g n a t u r e : - 1 5 9 3 8 3 3 7 2 9   1 0 7 3 7 5 0 1 0 7   1 6   0   4 1 5   0 ; }  
+ @ f o n t - f a c e  
+ 	 { f o n t - f a m i l y : " \ @ jwiԚ" ;  
+ 	 p a n o s e - 1 : 3   0   5   9   0   0   0   0   0   0 ;  
+ 	 m s o - f o n t - c h a r s e t : 1 3 6 ;  
+ 	 m s o - g e n e r i c - f o n t - f a m i l y : s c r i p t ;  
+ 	 m s o - f o n t - p i t c h : f i x e d ;  
+ 	 m s o - f o n t - s i g n a t u r e : 3   1 3 5 1 3 5 2 3 2   2 2   0   1 0 4 8 5 7 7   0 ; }  
+ @ f o n t - f a c e  
+ 	 { f o n t - f a m i l y : " \ @ �e0}fԚ" ;  
+ 	 p a n o s e - 1 : 2   2   5   0   0   0   0   0   0   0 ;  
+ 	 m s o - f o n t - c h a r s e t : 1 3 6 ;  
+ 	 m s o - g e n e r i c - f o n t - f a m i l y : r o m a n ;  
+ 	 m s o - f o n t - p i t c h : v a r i a b l e ;  
+ 	 m s o - f o n t - s i g n a t u r e : - 1 6 1 0 6 1 1 9 6 9   6 8 4 7 1 9 3 5 4   2 2   0   1 0 4 8 5 7 7   0 ; }  
+ @ f o n t - f a c e  
+ 	 { f o n t - f a m i l y : " \ @ 0}fԚ" ;  
+ 	 p a n o s e - 1 : 2   2   5   9   0   0   0   0   0   0 ;  
+ 	 m s o - f o n t - c h a r s e t : 1 3 6 ;  
+ 	 m s o - g e n e r i c - f o n t - f a m i l y : m o d e r n ;  
+ 	 m s o - f o n t - p i t c h : f i x e d ;  
+ 	 m s o - f o n t - s i g n a t u r e : - 1 6 1 0 6 1 1 9 6 9   6 8 4 7 1 9 3 5 4   2 2   0   1 0 4 8 5 7 7   0 ; }  
+   / *   S t y l e   D e f i n i t i o n s   * /  
+   p . M s o N o r m a l ,   l i . M s o N o r m a l ,   d i v . M s o N o r m a l  
+ 	 { m s o - s t y l e - u n h i d e : n o ;  
+ 	 m s o - s t y l e - q f o r m a t : y e s ;  
+ 	 m s o - s t y l e - p a r e n t : " " ;  
+ 	 m a r g i n - b o t t o m : . 0 0 0 1 p t ;  
+ 	 m s o - p a g i n a t i o n : w i d o w - o r p h a n ;  
+ 	 f o n t - s i z e : x - s m a l l ;  
+ 	 f o n t - f a m i l y : " T i m e s   N e w   R o m a n " , " s e r i f " ;  
+ 	 m s o - f a r e a s t - f o n t - f a m i l y : �e0}fԚ;  
+                 m a r g i n - l e f t :   0 c m ;  
+                 m a r g i n - r i g h t :   0 c m ;  
+                 m a r g i n - t o p :   0 c m ;  
+         }  
+ p . M s o H e a d e r ,   l i . M s o H e a d e r ,   d i v . M s o H e a d e r  
+ 	 { m s o - s t y l e - n o s h o w : y e s ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 m s o - s t y l e - l i n k : " ���  W[CQ" ;  
+ 	 m a r g i n : 0 c m ;  
+ 	 m a r g i n - b o t t o m : . 0 0 0 1 p t ;  
+ 	 m s o - p a g i n a t i o n : w i d o w - o r p h a n ;  
+ 	 t a b - s t o p s : c e n t e r   2 0 7 . 6 5 p t   r i g h t   4 1 5 . 3 p t ;  
+ 	 l a y o u t - g r i d - m o d e : c h a r ;  
+ 	 f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 f o n t - f a m i l y : " T i m e s   N e w   R o m a n " , " s e r i f " ;  
+ 	 m s o - f a r e a s t - f o n t - f a m i l y : �e0}fԚ; }  
+ p . M s o F o o t e r ,   l i . M s o F o o t e r ,   d i v . M s o F o o t e r  
+ 	 { m s o - s t y l e - n o s h o w : y e s ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 m s o - s t y l e - l i n k : " �>\  W[CQ" ;  
+ 	 m a r g i n : 0 c m ;  
+ 	 m a r g i n - b o t t o m : . 0 0 0 1 p t ;  
+ 	 m s o - p a g i n a t i o n : w i d o w - o r p h a n ;  
+ 	 t a b - s t o p s : c e n t e r   2 0 7 . 6 5 p t   r i g h t   4 1 5 . 3 p t ;  
+ 	 l a y o u t - g r i d - m o d e : c h a r ;  
+ 	 f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 f o n t - f a m i l y : " T i m e s   N e w   R o m a n " , " s e r i f " ;  
+ 	 m s o - f a r e a s t - f o n t - f a m i l y : �e0}fԚ; }  
+ a : l i n k ,   s p a n . M s o H y p e r l i n k  
+ 	 { m s o - s t y l e - n o s h o w : y e s ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 c o l o r : b l u e ;  
+ 	 t e x t - d e c o r a t i o n : u n d e r l i n e ;  
+ 	 t e x t - u n d e r l i n e : s i n g l e ; }  
+ a : v i s i t e d ,   s p a n . M s o H y p e r l i n k F o l l o w e d  
+ 	 { m s o - s t y l e - n o s h o w : y e s ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 c o l o r : p u r p l e ;  
+ 	 t e x t - d e c o r a t i o n : u n d e r l i n e ;  
+ 	 t e x t - u n d e r l i n e : s i n g l e ; }  
+ p  
+ 	 { m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 m s o - m a r g i n - t o p - a l t : a u t o ;  
+ 	 m a r g i n - r i g h t : 0 c m ;  
+ 	 m s o - m a r g i n - b o t t o m - a l t : a u t o ;  
+ 	 m a r g i n - l e f t : 0 c m ;  
+ 	 m s o - p a g i n a t i o n : w i d o w - o r p h a n ;  
+ 	 f o n t - s i z e : 1 2 . 0 p t ;  
+ 	 f o n t - f a m i l y : " �e0}fԚ" , " s e r i f " ;  
+ 	 m s o - b i d i - f o n t - f a m i l y : �e0}fԚ; }  
+ p . M s o A c e t a t e ,   l i . M s o A c e t a t e ,   d i v . M s o A c e t a t e  
+ 	 { m s o - s t y l e - n o s h o w : y e s ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 m s o - s t y l e - l i n k : " ;�㉹eJX�eW[  W[CQ" ;  
+ 	 m a r g i n : 0 c m ;  
+ 	 m a r g i n - b o t t o m : . 0 0 0 1 p t ;  
+ 	 m s o - p a g i n a t i o n : w i d o w - o r p h a n ;  
+ 	 f o n t - s i z e : 9 . 0 p t ;  
+ 	 f o n t - f a m i l y : " C a m b r i a " , " s e r i f " ;  
+ 	 m s o - a s c i i - f o n t - f a m i l y : C a m b r i a ;  
+ 	 m s o - a s c i i - t h e m e - f o n t : m a j o r - l a t i n ;  
+ 	 m s o - f a r e a s t - f o n t - f a m i l y : �e0}fԚ;  
+ 	 m s o - f a r e a s t - t h e m e - f o n t : m a j o r - f a r e a s t ;  
+ 	 m s o - h a n s i - f o n t - f a m i l y : C a m b r i a ;  
+ 	 m s o - h a n s i - t h e m e - f o n t : m a j o r - l a t i n ;  
+ 	 m s o - b i d i - f o n t - f a m i l y : " T i m e s   N e w   R o m a n " ;  
+ 	 m s o - b i d i - t h e m e - f o n t : m a j o r - b i d i ; }  
+ s p a n . a  
+ 	 { m s o - s t y l e - n a m e : " ���  W[CQ" ;  
+ 	 m s o - s t y l e - n o s h o w : y e s ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 m s o - s t y l e - u n h i d e : n o ;  
+ 	 m s o - s t y l e - l o c k e d : y e s ;  
+ 	 m s o - s t y l e - l i n k : ���;  
+ 	 f o n t - f a m i l y : " �e0}fԚ" , " s e r i f " ;  
+ 	 m s o - a s c i i - f o n t - f a m i l y : �e0}fԚ;  
+ 	 m s o - f a r e a s t - f o n t - f a m i l y : �e0}fԚ;  
+ 	 m s o - h a n s i - f o n t - f a m i l y : �e0}fԚ; }  
+ s p a n . a 0  
+ 	 { m s o - s t y l e - n a m e : " �>\  W[CQ" ;  
+ 	 m s o - s t y l e - n o s h o w : y e s ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 m s o - s t y l e - u n h i d e : n o ;  
+ 	 m s o - s t y l e - l o c k e d : y e s ;  
+ 	 m s o - s t y l e - l i n k : �>\;  
+ 	 f o n t - f a m i l y : " �e0}fԚ" , " s e r i f " ;  
+ 	 m s o - a s c i i - f o n t - f a m i l y : �e0}fԚ;  
+ 	 m s o - f a r e a s t - f o n t - f a m i l y : �e0}fԚ;  
+ 	 m s o - h a n s i - f o n t - f a m i l y : �e0}fԚ; }  
+ s p a n . a 1  
+ 	 { m s o - s t y l e - n a m e : " ;�㉹eJX�eW[  W[CQ" ;  
+ 	 m s o - s t y l e - n o s h o w : y e s ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 m s o - s t y l e - u n h i d e : n o ;  
+ 	 m s o - s t y l e - l o c k e d : y e s ;  
+ 	 m s o - s t y l e - l i n k : ;�㉹eJX�eW[;  
+ 	 m s o - a n s i - f o n t - s i z e : 9 . 0 p t ;  
+ 	 m s o - b i d i - f o n t - s i z e : 9 . 0 p t ;  
+ 	 f o n t - f a m i l y : " C a m b r i a " , " s e r i f " ;  
+ 	 m s o - a s c i i - f o n t - f a m i l y : C a m b r i a ;  
+ 	 m s o - a s c i i - t h e m e - f o n t : m a j o r - l a t i n ;  
+ 	 m s o - f a r e a s t - f o n t - f a m i l y : �e0}fԚ;  
+ 	 m s o - f a r e a s t - t h e m e - f o n t : m a j o r - f a r e a s t ;  
+ 	 m s o - h a n s i - f o n t - f a m i l y : C a m b r i a ;  
+ 	 m s o - h a n s i - t h e m e - f o n t : m a j o r - l a t i n ;  
+ 	 m s o - b i d i - f o n t - f a m i l y : " T i m e s   N e w   R o m a n " ;  
+ 	 m s o - b i d i - t h e m e - f o n t : m a j o r - b i d i ; }  
+ p . s t y l e 1 ,   l i . s t y l e 1 ,   d i v . s t y l e 1  
+ 	 { m s o - s t y l e - n a m e : s t y l e 1 ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 m s o - s t y l e - u n h i d e : n o ;  
+ 	 m s o - m a r g i n - t o p - a l t : a u t o ;  
+ 	 m a r g i n - r i g h t : 0 c m ;  
+ 	 m s o - m a r g i n - b o t t o m - a l t : a u t o ;  
+ 	 m a r g i n - l e f t : 0 c m ;  
+ 	 m s o - p a g i n a t i o n : w i d o w - o r p h a n ;  
+ 	 f o n t - s i z e : 1 2 . 0 p t ;  
+ 	 f o n t - f a m i l y : " �e0}fԚ" , " s e r i f " ;  
+ 	 m s o - b i d i - f o n t - f a m i l y : �e0}fԚ; }  
+ s p a n . s t y l e 1 1  
+ 	 { m s o - s t y l e - n a m e : s t y l e 1 1 ;  
+ 	 m s o - s t y l e - u n h i d e : n o ;  
+ 	 f o n t - f a m i l y : " �e0}fԚ" , " s e r i f " ;  
+ 	 m s o - a s c i i - f o n t - f a m i l y : �e0}fԚ;  
+ 	 m s o - f a r e a s t - f o n t - f a m i l y : �e0}fԚ;  
+ 	 m s o - h a n s i - f o n t - f a m i l y : �e0}fԚ; }  
+ . M s o C h p D e f a u l t  
+ 	 { m s o - s t y l e - t y p e : e x p o r t - o n l y ;  
+ 	 m s o - d e f a u l t - p r o p s : y e s ;  
+ 	 f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 m s o - a n s i - f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 m s o - b i d i - f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 m s o - a s c i i - f o n t - f a m i l y : " T i m e s   N e w   R o m a n " ;  
+ 	 m s o - h a n s i - f o n t - f a m i l y : " T i m e s   N e w   R o m a n " ;  
+ 	 m s o - f o n t - k e r n i n g : 0 p t ; }  
+   / *   P a g e   D e f i n i t i o n s   * /  
+   @ p a g e  
+ 	 { m s o - f o o t n o t e - s e p a r a t o r : u r l ( " i l a b . f i l e s / h e a d e r . h t m " )   f s ;  
+ 	 m s o - f o o t n o t e - c o n t i n u a t i o n - s e p a r a t o r : u r l ( " i l a b . f i l e s / h e a d e r . h t m " )   f c s ;  
+ 	 m s o - e n d n o t e - s e p a r a t o r : u r l ( " i l a b . f i l e s / h e a d e r . h t m " )   e s ;  
+ 	 m s o - e n d n o t e - c o n t i n u a t i o n - s e p a r a t o r : u r l ( " i l a b . f i l e s / h e a d e r . h t m " )   e c s ; }  
+ @ p a g e   S e c t i o n 1  
+ 	 { s i z e : 5 9 5 . 3 p t   8 4 1 . 9 p t ;  
+ 	 m a r g i n : 7 2 . 0 p t   9 0 . 0 p t   7 2 . 0 p t   9 0 . 0 p t ;  
+ 	 m s o - h e a d e r - m a r g i n : 4 2 . 5 5 p t ;  
+ 	 m s o - f o o t e r - m a r g i n : 4 9 . 6 p t ;  
+ 	 m s o - p a p e r - s o u r c e : 0 ; }  
+ d i v . S e c t i o n 1  
+ 	 { p a g e : S e c t i o n 1 ; }  
+   / *   L i s t   D e f i n i t i o n s   * /  
+   @ l i s t   l 0  
+ 	 { m s o - l i s t - i d : 1 9 9 9 7 5 8 9 3 ;  
+ 	 m s o - l i s t - t e m p l a t e - i d s : 1 5 8 0 8 8 7 5 4 0 ; }  
+ @ l i s t   l 0 : l e v e l 1  
+ 	 { m s o - l e v e l - n u m b e r - f o r m a t : b u l l e t ;  
+ 	 m s o - l e v e l - t e x t : ��;  
+ 	 m s o - l e v e l - t a b - s t o p : 3 6 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ;  
+ 	 m s o - a n s i - f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 f o n t - f a m i l y : W i n g d i n g s ; }  
+ @ l i s t   l 0 : l e v e l 2  
+ 	 { m s o - l e v e l - t a b - s t o p : 7 2 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 0 : l e v e l 3  
+ 	 { m s o - l e v e l - t a b - s t o p : 1 0 8 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 0 : l e v e l 4  
+ 	 { m s o - l e v e l - t a b - s t o p : 1 4 4 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 0 : l e v e l 5  
+ 	 { m s o - l e v e l - t a b - s t o p : 1 8 0 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 0 : l e v e l 6  
+ 	 { m s o - l e v e l - t a b - s t o p : 2 1 6 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 0 : l e v e l 7  
+ 	 { m s o - l e v e l - t a b - s t o p : 2 5 2 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 0 : l e v e l 8  
+ 	 { m s o - l e v e l - t a b - s t o p : 2 8 8 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 0 : l e v e l 9  
+ 	 { m s o - l e v e l - t a b - s t o p : 3 2 4 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 1  
+ 	 { m s o - l i s t - i d : 1 4 4 7 8 5 0 1 8 5 ;  
+ 	 m s o - l i s t - t e m p l a t e - i d s : 8 3 5 8 8 4 0 9 4 ; }  
+ @ l i s t   l 1 : l e v e l 1  
+ 	 { m s o - l e v e l - n u m b e r - f o r m a t : b u l l e t ;  
+ 	 m s o - l e v e l - t e x t : ��;  
+ 	 m s o - l e v e l - t a b - s t o p : 3 6 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ;  
+ 	 m s o - a n s i - f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 f o n t - f a m i l y : S y m b o l ; }  
+ @ l i s t   l 2  
+ 	 { m s o - l i s t - i d : 1 4 6 3 5 7 4 1 3 2 ;  
+ 	 m s o - l i s t - t e m p l a t e - i d s : - 1 6 9 9 3 6 9 2 8 ; }  
+ @ l i s t   l 2 : l e v e l 1  
+ 	 { m s o - l e v e l - n u m b e r - f o r m a t : b u l l e t ;  
+ 	 m s o - l e v e l - t e x t : ��;  
+ 	 m s o - l e v e l - t a b - s t o p : 3 6 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ;  
+ 	 m s o - a n s i - f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 f o n t - f a m i l y : S y m b o l ; }  
+ @ l i s t   l 2 : l e v e l 2  
+ 	 { m s o - l e v e l - t a b - s t o p : 7 2 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 2 : l e v e l 3  
+ 	 { m s o - l e v e l - t a b - s t o p : 1 0 8 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 2 : l e v e l 4  
+ 	 { m s o - l e v e l - t a b - s t o p : 1 4 4 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 2 : l e v e l 5  
+ 	 { m s o - l e v e l - t a b - s t o p : 1 8 0 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 2 : l e v e l 6  
+ 	 { m s o - l e v e l - t a b - s t o p : 2 1 6 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 2 : l e v e l 7  
+ 	 { m s o - l e v e l - t a b - s t o p : 2 5 2 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 2 : l e v e l 8  
+ 	 { m s o - l e v e l - t a b - s t o p : 2 8 8 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 2 : l e v e l 9  
+ 	 { m s o - l e v e l - t a b - s t o p : 3 2 4 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 3  
+ 	 { m s o - l i s t - i d : 1 7 2 1 8 5 6 6 3 3 ;  
+ 	 m s o - l i s t - t e m p l a t e - i d s : - 6 7 6 7 9 2 8 5 2 ; }  
+ @ l i s t   l 3 : l e v e l 1  
+ 	 { m s o - l e v e l - n u m b e r - f o r m a t : b u l l e t ;  
+ 	 m s o - l e v e l - t e x t : ��;  
+ 	 m s o - l e v e l - t a b - s t o p : 3 6 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ;  
+ 	 m s o - a n s i - f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 f o n t - f a m i l y : W i n g d i n g s ; }  
+ @ l i s t   l 3 : l e v e l 2  
+ 	 { m s o - l e v e l - t a b - s t o p : 7 2 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 3 : l e v e l 3  
+ 	 { m s o - l e v e l - t a b - s t o p : 1 0 8 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 3 : l e v e l 4  
+ 	 { m s o - l e v e l - t a b - s t o p : 1 4 4 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 3 : l e v e l 5  
+ 	 { m s o - l e v e l - t a b - s t o p : 1 8 0 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 3 : l e v e l 6  
+ 	 { m s o - l e v e l - t a b - s t o p : 2 1 6 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 3 : l e v e l 7  
+ 	 { m s o - l e v e l - t a b - s t o p : 2 5 2 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 3 : l e v e l 8  
+ 	 { m s o - l e v e l - t a b - s t o p : 2 8 8 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ @ l i s t   l 3 : l e v e l 9  
+ 	 { m s o - l e v e l - t a b - s t o p : 3 2 4 . 0 p t ;  
+ 	 m s o - l e v e l - n u m b e r - p o s i t i o n : l e f t ;  
+ 	 t e x t - i n d e n t : - 1 8 . 0 p t ; }  
+ o l  
+ 	 { m a r g i n - b o t t o m : 0 c m ; }  
+ u l  
+ 	 { m a r g i n - b o t t o m : 0 c m ; }  
+ - - >  
+ / s t y l e >  
+ ! - - [ i f   g t e   m s o   1 0 ] >  
+ s t y l e >  
+   / *   S t y l e   D e f i n i t i o n s   * /  
+   t a b l e . M s o N o r m a l T a b l e  
+ 	 { m s o - s t y l e - n a m e : h� 
+ 	 m s o - t s t y l e - r o w b a n d - s i z e : 0 ;  
+ 	 m s o - t s t y l e - c o l b a n d - s i z e : 0 ;  
+ 	 m s o - s t y l e - n o s h o w : y e s ;  
+ 	 m s o - s t y l e - p r i o r i t y : 9 9 ;  
+ 	 m s o - s t y l e - q f o r m a t : y e s ;  
+ 	 m s o - s t y l e - p a r e n t : " " ;  
+ 	 m s o - p a d d i n g - a l t : 0 c m   5 . 4 p t   0 c m   5 . 4 p t ;  
+ 	 m s o - p a r a - m a r g i n : 0 c m ;  
+ 	 m s o - p a r a - m a r g i n - b o t t o m : . 0 0 0 1 p t ;  
+ 	 m s o - p a g i n a t i o n : w i d o w - o r p h a n ;  
+ 	 f o n t - s i z e : 1 0 . 0 p t ;  
+ 	 f o n t - f a m i l y : " T i m e s   N e w   R o m a n " , " s e r i f " ; }  
+ 	  
+ / s t y l e >  
+ ! [ e n d i f ] - - > ! - - [ i f   g t e   m s o   9 ] > x m l >  
+   o : s h a p e d e f a u l t s   v : e x t = " e d i t "   s p i d m a x = " 5 1 2 2 " / >  
+ / x m l > ! [ e n d i f ] - - > ! - - [ i f   g t e   m s o   9 ] > x m l >  
+   o : s h a p e l a y o u t   v : e x t = " e d i t " >  
+     o : i d m a p   v : e x t = " e d i t "   d a t a = " 1 " / >  
+   / o : s h a p e l a y o u t > / x m l > ! [ e n d i f ] - - >  
+ / h e a d >  
+  
+ b o d y   l a n g = Z H - T W   l i n k = b l u e   v l i n k = p u r p l e   s t y l e = ' t a b - i n t e r v a l : 2 4 . 0 p t ' >  
+  
+ d i v   c l a s s = S e c t i o n 1 >  
+  
+ d i v   s t y l e = ' b o r d e r : s o l i d   w i n d o w t e x t   1 . 0 p t ; m s o - b o r d e r - a l t : s o l i d   w i n d o w t e x t   . 2 5 p t ;  
+ p a d d i n g : 1 . 0 p t   3 . 0 p t   1 . 0 p t   3 . 0 p t ' >  
+  
+ d i v   a l i g n = c e n t e r >  
+  
+ t a b l e   c l a s s = M s o N o r m a l T a b l e   b o r d e r = 1   c e l l s p a c i n g = 0   c e l l p a d d i n g = 0   w i d t h = 6 9 3  
+   s t y l e = ' w i d t h : 5 1 9 . 7 5 p t ; m s o - c e l l s p a c i n g : 0 c m ; b o r d e r : o u t s e t   b l a c k   1 . 0 p t ;  
+   m s o - b o r d e r - a l t : o u t s e t   b l a c k   . 7 5 p t ; m s o - y f t i - t b l l o o k : 1 1 8 4 ; m s o - p a d d i n g - a l t : 1 5 . 0 p t   1 5 . 0 p t   1 5 . 0 p t   1 5 . 0 p t ' >  
+   t r   s t y l e = ' m s o - y f t i - i r o w : 0 ; m s o - y f t i - f i r s t r o w : y e s ; m s o - y f t i - l a s t r o w : y e s ' >  
+     t d   s t y l e = ' b o r d e r : i n s e t   b l a c k   1 . 0 p t ; m s o - b o r d e r - a l t : i n s e t   b l a c k   . 7 5 p t ;  
+     p a d d i n g : 1 5 . 0 p t   1 5 . 0 p t   1 5 . 0 p t   1 5 . 0 p t ' >  
+     p   c l a s s = M s o N o r m a l   a l i g n = c e n t e r   s t y l e = ' t e x t - a l i g n : c e n t e r ; l i n e - h e i g h t : 1 8 . 0 p t ' > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 4 . 0 p t ; f o n t - f a m i l y : jwiԚ' > W�z��S�y�b'Yx[/ s p a n > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 4 . 0 p t ' > &n b s p ;   &n b s p ; &n b s p ; / s p a n > s p a n   s t y l e = ' f o n t - s i z e :  
+     1 4 . 0 p t ; f o n t - f a m i l y : jwiԚ' > ǌ
+��]z�|/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   a l i g n = c e n t e r   s t y l e = ' m a r g i n - t o p : 5 . 4 p t ; t e x t - a l i g n : c e n t e r ' > b > s p a n  
+     s t y l e = ' f o n t - s i z e : 2 2 . 0 p t ; f o n t - f a m i l y : jwiԚ' > �}���}��a(u�g�R�[W��[!|�N/ s p a n > / b > / p >  
+     p   a l i g n = c e n t e r   s t y l e = ' t e x t - a l i g n : c e n t e r ' > s p a n   l a n g = E N - U S > s p a n  
+     s t y l e = ' m s o - n o - p r o o f : y e s ' > i m g   w i d t h = 2 5 2   h e i g h t = 1 6 9   i d = " _ x 0 0 0 0 _ i 1 0 2 6 "  
+     s r c = " i m a g e s / i m a g e 0 0 2 . j p g " > / s p a n > / s p a n > / p >  
+      
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > b r >  
+     / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > TMOs p a n  
+     l a n g = E N - U S >   1 0 6   / s p a n > x[t^�^�n�x�XuP�  / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   s t y l e = ' f o n t - s i z e :  
+     1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > ��HQ�m`�yTMO(W�z-r�o�p�vxvz@b�f�-N+�Nz��Q�sS\U\���S N�kx[�wkz��N`Y�[\mi|vU\�Wy0�Y�g`O\�eNRxvz;NL��ma����akΏ`O�na�ReQ0�}���}��a(u�g�R�[W��[0�vxvzL�R� 
+     / s p a n > / p >  
+      
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 1 . / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ��z�a(u�|q}-���/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; J a v a   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �bS�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; J 2 E E   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ��|vs^�S/ s p a n > / p >  
+                 p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 1 0 5 . 0 p t ; t e x t - i n d e n t : - 2 4 . 0 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > -  
+                             S t r u t s   /   S p r i n g   /   H i b e r n a t e / s p a n > / p >  
+  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; A S P . N e t &n b s p ; M V C   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ��|vs^�S/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; G o o g l e &n b s p ; M a p   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �bS��a(u/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; W e b   S e r v i c e   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}�g�R��|vs^�S/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; E n t e r p r i s e   S e r v i c e  
+     B u s   ( E S B )   / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �|q}teT�bS�/ s p a n > / p >  
+    
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 2 . / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > L��R�a(u��|v�bS��/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; I o n i c   / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ����CQ�N�a(u/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; A n g u l a r J S   M V C   / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �a(u��|vFh�g/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; C o r d o v a   / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �s^�S�a(u��|vFh�g/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; S Q L i t e   / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > L��Rǌ�e�^�a(u/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; M Q T T   / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 
+�o`g�Rs^�S/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; W o r k L i g h t   / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > L��R�a(u��|vs^�S/ s p a n > / p >  
+  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 3 . / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ǌ
+��[hQ�bS�xvz�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > eQ�S�}�z�|q}�[hQs p a n   l a n g = E N - U S >   ( P o r t a l ) / s p a n > / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}�g�RCQ�N�[hQs p a n   l a n g = E N - U S >   ( W e b  
+     S e r v i c e s ) / s p a n > / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}�Amz�[hQs p a n   l a n g = E N - U S >   ( P r o c e s s ) / s p a n > / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > /SAm�c�[hQs p a n   l a n g = E N - U S >   ( S e r v i c e   B u s ) / s p a n > / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ǌ�e�^�[hQs p a n   l a n g = E N - U S >   ( D a t a b a s e ) / s p a n > / s p a n > / p >  
+      
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 4 . / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}��a(u�Sg�R�|q}��|v�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > lQqQ�����ku�xeMOGr�^�S�ZԚǌ
+��{t�|q}/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �y�b�\L��ku��a(u�e���OAmϑ�{tKNؚHe���]ϑǌ�eI�nteTs^�S-��/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �y�b�"ux[�ku�g�R\T�g�iN�vRce_s p a n   l a n g = E N - U S >  
+     O S G i   / s p a n > K��{s^�SKNxvz��^n/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}�o�x[Lu�y\�ku�ߎԚ�^�i�teT�bS�\eQxvz/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   s t y l e = ' f o n t - s i z e :  
+     1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > bP�]�}�p�Nt^�eu�n�P}YT�ߎ�aԚ-��P�SYe����}�ku�s�0}�YN�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > 1 .   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > lxԚ-��P�  / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �k�N N�s p a n   l a n g = E N - U S >   N o t e b o o k / s p a n > / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ��|vs p a n   l a n g = E N - U S >   i P h o n e   / s p a n > �a(u@b �KNs p a n  
+     l a n g = E N - U S >   i M a c   / s p a n > -��P/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}��S�[hQ�bS�xvz@b �KNؚHe��:OghV/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > 2 .   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > ߎԚ-��P�  / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; W e b   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > :OgߎԚ/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; W o r k f l o w   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > :OgߎԚ/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; P r o c e s s   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > :OgߎԚ/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; S e r v i c e   B u s   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > :OgߎԚ/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; W e b   S e r v i c e s   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > :OgߎԚ/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; I d e n t i t y   M a n a g e m e n t  
+     / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �Ss p a n   l a n g = E N - U S >  
+     A c c e s s   M a n a g e m e n t   / s p a n > :OgߎԚ/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > 3 .   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > 2�eQ�[W��[xvz���c��}�ku�  / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; J a v a   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �� ��i֊/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; J 2 E E   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �bS��g�i/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ir�N\Tz_-���St/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; S e r v l e t   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �Ss p a n   l a n g = E N - U S >   J S P   / s p a n > ��|v�bS�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; S t r u t s   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}�z��|vs^�S/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; J D B C   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ǌ�e�^�a(u�|q}-��/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; H i b e r n a t e   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ǌ�e�^�a(u��|vs^�S/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; E J B   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > Rce_�|q}��|v�bS�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; W e b   S e r v i c e   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}�g�R��|v�bS�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; J M S   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ^�Tek�a(u�|q}��|v�bS�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; A S P . N e t   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}�z��|v�bS�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; A S P . N e t   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �}�z�[hQ�bS�/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   s t y l e = ' f o n t - s i z e :  
+     1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > �Y�g`O\�e
+N��\mi	g7_�pOW�_�akΏ`Os p a n   l a n g = E N - U S > e m a i l / s p a n > f}s�� N�+^  s p a n  
+     l a n g = E N - U S > i c h e n @ n t u t . e d u . t w / s p a n > ��N�[�cb�Ǌ�S�[W��[�S*�Bf��0]y�y`Ox[��)R�s p a n   l a n g = E N - U S > o : p > / o : p > / s p a n > / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S > &n b s p ; / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l > b > s p a n   s t y l e = ' f o n t - s i z e : 1 3 . 5 p t ; f o n t - f a m i l y : jwiԚ;  
+     m s o - b i d i - f o n t - f a m i l y : �e0}fԚ' > 0xvz�eT0/ s p a n > / b > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - f a m i l y : " �e0}fԚ" , " s e r i f " ; m s o - b i d i - f o n t - f a m i l y : �e0}fԚ' > o : p > / o : p > / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 2 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   s t y l e = ' f o n t - s i z e :  
+     1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > �}���}��a(u�g�R�[W��[�ps p a n   l a n g = E N - U S >   I B M   / s p a n > (W�Scp0W@S
+��R�c�Oxvz-��P��}���v͑ޞ�[W��[KN N�8h�_xvz��W(W�e�a(u0ߎԚ�]z0x[t��zl�N0�}���}�g�R0�s p a n   l a n g = E N - U S > W e b   S e r v i c e s / s p a n > 	��p�WyKNǌ
+��|q}��|v@b �KNܕu��bS�0;N��xvz��L�S�b�/ s p a n > / p >  
+  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 1 . &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ߎԚ�]z�s p a n   l a n g = E N - U S > S o f t w a r e  
+     E n g i n e e r i n g / s p a n > 	��bS��/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 2 . 0 p t ; t e x t - i n d e n t : 2 3 . 1 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; W e b   S e r v i c e s - b a s e d  
+     S o f t w a r e   E n g i n e e r i n g / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 1 0 5 . 0 p t ; t e x t - i n d e n t : - 2 4 . 0 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > -  
+     M o d e l - d r i v e n   A r c h i t e c t u r e / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 1 0 5 . 0 p t ; t e x t - i n d e n t : - 2 4 . 0 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > -  
+     S e r v i c e - o r i e n t e d   A r c h i t e c t u r e / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 2 . 0 p t ; t e x t - i n d e n t : 2 3 . 1 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; A g e n t - b a s e d  
+     S o f t w a r e   E n g i n e e r i n g / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 1 0 5 . 0 p t ; t e x t - i n d e n t : - 2 4 . 0 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > -   S o f t w a r e  
+     E n g i n e e r i n g   f o r   E m b e d d e d   S y s t e m s / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 1 0 5 . 0 p t ; t e x t - i n d e n t : - 2 4 . 0 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > -   S o f t w a r e  
+     /   H a r d w a r e   C o - D e s i g n / s p a n > / p >      
+  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 2 .   / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > g�R\TK��{s p a n   l a n g = E N - U S >   ( S e r v i c e  
+     O r i e n t e d   C o m p u t i n g )   / s p a n > �bS��/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; S e r v i c e   C o m p o s i t i o n / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; D y n a m i c   S e r v i c e  
+     I n v o c a t i o n / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; S e r v i c e   M o n i t o r / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; S e r v i c e   S e c u r i t y / s p a n > / p >  
+      
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 3 . &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > L��R��{��a(u�s p a n   l a n g = E N - U S > M o b i l e  
+     C o m p u t i n g   a n d   A p p l i c a t i o n / s p a n > 	��/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; P e r v a s i v e   S e r v i c e  
+     C o m p u t i n g / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; M o b i l e  
+     C o m p u t i n g   A r c h i t e c t u r e / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; D e v i c e s   a n d  
+     S e r v i c e s   M a n a g e m e n t / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; H e a l t h   C a r e   a n d  
+     S m a r t   L i v i n g   S p a c e / s p a n > / p >  
+    
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 4 . &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ǌ
+��[hQs p a n   l a n g = E N - U S >   ( I n f o r m a t i o n  
+     S e c u r i t y )   / s p a n > �bS��/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; D i r e c t o r i e s / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; A c c e s s   C o n t r o l / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; I d e n t i t y   m a n a g e m e n t / s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - l e f t : 4 1 . 9 5 p t ; t e x t - i n d e n t : 2 2 . 9 5 p t ; l i n e - h e i g h t :  
+     1 6 . 0 p t ' > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 8 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ' > n / s p a n > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > &n b s p ; W e b   S e r v i c e s  
+     S e c u r i t y / s p a n > / p >    
+  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 2 . 6 p t ' > b > s p a n   s t y l e = ' f o n t - s i z e : 1 3 . 5 p t ;  
+     f o n t - f a m i l y : jwiԚ' > 0�[W��[;Nc�N0/ s p a n > / b > s p a n   l a n g = E N - U S > o : p > / o : p > / s p a n > / p >  
+  
+     i m g   b o r d e r = " 1 "   w i d t h = " 9 0 % "   i d = " _ x 0 0 0 0 _ i 1 0 2 5 "   s r c = " i m a g e s / i m a g e 0 0 9 . j p g "   a l t = " s�� N�+^"   s t y l e = " w i d t h :   1 5 5 p x ; m a r g i n - l e f t :   1 e m ; f l o a t :   r i g h t ; " >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 2 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+         0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+         i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 4 . 7 5 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   l a n g = E N - U S  
+         s t y l e = ' f o n t - f a m i l y : 0}fԚ' > s p a n  
+         l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   l a n g = E N - U S > s�� N  Ye�c/ s p a n > / s p a n > / s p a n > s p a n  
+         s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > �s p a n  
+         l a n g = E N - U S > 1 9 9 2   / s p a n > t^�Ws p a n   l a n g = E N - U S >   U n i v e r s i t y   o f   A r i z o n a   / s p a n > ��_j��f��]zZS�X�\�eg�R\T�bS�0ǌ
+��[hQ�bS�0L��RK��{�bS��SߎԚ�]zI{��WGW	g�o�S�vxvz���0xvzb�g�frs�s p a n  
+         l a n g = E N - U S >   A C M / I E E E   S I G D A - D A C T   / s p a n > Ns�&N�d	gAS��|vf\)R0s�ZS�XwQ�PP��[�vߎԚ"umi�[�R�}W���f�N-NBf��P[1X�bS�w�s p a n  
+         l a n g = E N - U S >   ( 2 0 0 0 - 2 0 0 1 ) / s p a n > ��vMR�d�NW�z��S�y�b'Yx[W�f(�(�w��&N|Q�N�ScpߎԚ�]zx[gt�N0/ s p a n > / p >      
+  
+  
+  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 2 . 6 p t ' > b > s p a n   s t y l e = ' f o n t - s i z e : 1 3 . 5 p t ;  
+     f o n t - f a m i l y : jwiԚ' > 0xvzb�g�Nh�0/ s p a n > / b > s p a n   l a n g = E N - U S > o : p > / o : p > / s p a n > / p >  
+      
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 2 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 1 8 . 0 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n   s t y l e = ' f o n t - s i z e :  
+     1 0 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ; f o n t - f a m i l y : 0}fԚ' > �}���}��a(u�g�R�[W��[�  1 9 9 2   t^w�#��~  2 3   t^(W0�y�b�ǌ
+�x[��0�WL��y�b�\L��ku��S	g�O�0Ye���"ux[T\O0�ku00�}�o萀bS�U�x[Lu�y\0�ku�Sl��Omi( "umiLu�Y�xvz�ku) I{YP��v�vxvz�}��/ec�яNt^qQ�rs�_xvz�}�� N�NN~v�,�CQxvzb�gS+T  1 6   �{s p a n   l a n g = E N - U S >   S C I   / s p a n > g
+R֊�e0�[PR%R�c�0ߎԚ�]z000�}��g�R000ǌ
+��[hQ000Rce_��{000xeMO�[�^0�0ߎԚ�S`��^0I{��W gMR�l�vxvz;NL�0TBf�xvzb�g_Nrs�_  1 4   �-N�lW|vf\)R�vQ-N	g  4   �\)R2�L��bS��yI��xvzb�go�}Y0/ s p a n > / p >  
+      
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 1 . &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > g�R\T�g�i�|q}KNxvz/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > g�R\T�g�iKNxvz/f�[W��[͑ޞ|vU\KNxvzp�L��dkxvzHh�-N����Oxvz@bT\O�K�(ug�R\T�bS��^�z�e N�N���O"umiKN�qK��{t�|q}0r�xvzk^�R-N����O�cؚ�|q}KNU�tHe�s�xvzb�g�]rs�_-N�lW|vf\)R( ,{  I 3 3 6 1 9 1   _�) &N|vh��es p a n   l a n g = E N - U S >   I B M   S y s t e m s   J o u r n a l   ( S C I ) / s p a n > W��g
+R0/ s p a n > / p >  
+  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 2 . &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > !q�}�}{t�|q}KNxvz/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ,gxvzKNgQ�[;N��(W|vU\!q�}�}{t�|q}�R%Rݑ\O(u�
+kP�0AmϑP�6R0-��PAmϑ�v�c��{tI{�&NNrs�_iQ�N-N�lW|vf\)R�R%R/f!q�}�}�O(u��{t�|q}( -N�lW|vf\)R,{  I 2 5 9 6 7 7   _�) �S!q�}�}{t�|q}( -N�lW|vf\)R,{  I 2 6 6 5 0 1   _�) 0/ s p a n > / p >  
+    
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 3 . 6 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 7 . 8 5 p t ' > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 3 . &n b s p ; / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > zfga�[�^�a(uKNxvz/ s p a n > / p >  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 . 8 p t ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m :  
+     0 c m ; m a r g i n - l e f t : 6 2 . 9 5 p t ; m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - a l i g n : j u s t i f y ; t e x t - j u s t i f y :  
+     i n t e r - i d e o g r a p h ; t e x t - i n d e n t : 2 7 . 0 p t ; l i n e - h e i g h t : 1 5 0 % ' > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ,gxvz�p�y�b�܈�RKN"ux[T\OxvzHh�)R(u�[(u��S�hVteTteTT.zNTa,nhV���R�c6R�bS���O(u��N��}_`��z�c6R�[-NT.z��hV݈nb/fK�(ua,nhVϑ,nKNǌ�e��R��te��hVKNK�\O�NT�0R�{��n�xKNHe�g�xvzb�g�]rs-N�lW\)R( ,{  I 3 2 3 5 8 3   _�) 0/ s p a n > / p >  
+  
+     p   c l a s s = M s o N o r m a l   s t y l e = ' m a r g i n - t o p : 1 2 . 6 p t ' > b > s p a n   s t y l e = ' f o n t - s i z e : 1 3 . 5 p t ;  
+     f o n t - f a m i l y : jwiԚ' > 0�[W��[ǌ
+�0/ s p a n > / b > / p >  
+     d i v   s t y l e = " t e x t - a l i g n : c e n t e r ; m a r g i n : 1 e m   0 " >  
+         i m g   b o r d e r = " 1 "   w i d t h = " 6 0 % "   i d = " _ x 0 0 0 0 _ i 1 0 2 5 "   s r c = " i m a g e s / i m a g e 0 0 7 . j p g "   a l t = " �}���}��a(u�g�R�[W��[" >  
+     / d i v >  
+  
+     d i v   s t y l e = ' m a r g i n - l e f t : 8 % ' >  
+     p   s t y l e = ' m a r g i n - t o p : 0 c m ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m : 0 c m ; m a r g i n - l e f t : 3 6 . 0 p t ;  
+     m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 8 . 0 p t ; l i n e - h e i g h t : 1 8 . 0 p t ; m s o - l i s t : l 0   l e v e l 1   l f o 7 ;  
+     t a b - s t o p s : l i s t   3 6 . 0 p t ' > ! [ i f   ! s u p p o r t L i s t s ] > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; m s o - b i d i - f o n t - s i z e : 1 2 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ;  
+     m s o - f a r e a s t - f o n t - f a m i l y : W i n g d i n g s ; m s o - b i d i - f o n t - f a m i l y : W i n g d i n g s ' > s p a n  
+     s t y l e = ' m s o - l i s t : I g n o r e ' > � s p a n   s t y l e = ' f o n t : 7 . 0 p t   " T i m e s   N e w   R o m a n " ' > &n b s p ;   / s p a n > / s p a n > / s p a n > ! [ e n d i f ] > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > c\Ye�c    s�� N�+^�/ s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > s p a n   l a n g = E N - U S > a  
+     h r e f = " m a i l t o : i c h e n @ n t u t . e d u . t w " > i c h e n @ n t u t . e d u . t w / a > / s p a n > / s p a n > s p a n >   �  / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > s p a n   l a n g = E N - U S > a  
+     h r e f = " h t t p : / / w w w . c c . n t u t . e d u . t w / ~ i c h e n / " > h t t p : / / w w w . c c . n t u t . e d u . t w / ~ i c h e n / / a > / s p a n > / s p a n > / p >  
+     p   s t y l e = ' m a r g i n - t o p : 0 c m ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m : 0 c m ; m a r g i n - l e f t : 3 6 . 0 p t ;  
+     m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 8 . 0 p t ; l i n e - h e i g h t : 1 8 . 0 p t ; m s o - l i s t : l 0   l e v e l 1   l f o 7 ;  
+     t a b - s t o p s : l i s t   3 6 . 0 p t ' > ! [ i f   ! s u p p o r t L i s t s ] > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; m s o - b i d i - f o n t - s i z e : 1 2 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ;  
+     m s o - f a r e a s t - f o n t - f a m i l y : W i n g d i n g s ; m s o - b i d i - f o n t - f a m i l y : W i n g d i n g s ' > s p a n  
+     s t y l e = ' m s o - l i s t : I g n o r e ' > � s p a n   s t y l e = ' f o n t : 7 . 0 p t   " T i m e s   N e w   R o m a n " ' > &n b s p ;   / s p a n > / s p a n > / s p a n > ! [ e n d i f ] > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �[W��[�}@W�s p a n   l a n g = E N - U S > a  
+     h r e f = " h t t p : / / w w w . c c . n t u t . e d u . t w / ~ i c h e n / i l a b i n f o . h t m " > h t t p : / / w w w . c c . n t u t . e d u . t w / ~ i c h e n / i l a b i n f o . h t m / a > / s p a n > / s p a n > / p >  
+     p   s t y l e = ' m a r g i n - t o p : 0 c m ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m : 0 c m ; m a r g i n - l e f t : 3 6 . 0 p t ;  
+     m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 8 . 0 p t ; l i n e - h e i g h t : 1 8 . 0 p t ; m s o - l i s t : l 0   l e v e l 1   l f o 7 ;  
+     t a b - s t o p s : l i s t   3 6 . 0 p t ' > ! [ i f   ! s u p p o r t L i s t s ] > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; m s o - b i d i - f o n t - s i z e : 1 2 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ;  
+     m s o - f a r e a s t - f o n t - f a m i l y : W i n g d i n g s ; m s o - b i d i - f o n t - f a m i l y : W i n g d i n g s ' > s p a n  
+     s t y l e = ' m s o - l i s t : I g n o r e ' > � s p a n   s t y l e = ' f o n t : 7 . 0 p t   " T i m e s   N e w   R o m a n " ' > &n b s p ;   / s p a n > / s p a n > / s p a n > ! [ e n d i f ] > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > 0W@W���S^s p a n   l a n g = E N - U S > 1 0 6 / s p a n > �_][qg�	N�k N_�s p a n  
+     l a n g = E N - U S > &n b s p ;   / s p a n > ��S�y�b'Yx[s p a n   l a n g = E N - U S > &n b s p ;   / s p a n > / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; m s o - a s c i i - f o n t - f a m i l y : V e r d a n a ; m s o - h a n s i - f o n t - f a m i l y :  
+     V e r d a n a ' > �y�b'Yj/ s p a n > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y :  
+     " V e r d a n a " , " s a n s - s e r i f " ' > 1 6 2 6 / s p a n > s p a n   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; m s o - a s c i i - f o n t - f a m i l y :  
+     V e r d a n a ; m s o - h a n s i - f o n t - f a m i l y : V e r d a n a ' > �[/ s p a n > / p >  
+     p   s t y l e = ' m a r g i n - t o p : 0 c m ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m : 0 c m ; m a r g i n - l e f t : 3 6 . 0 p t ;  
+     m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 8 . 0 p t ; l i n e - h e i g h t : 1 8 . 0 p t ; m s o - l i s t : l 0   l e v e l 1   l f o 7 ;  
+     t a b - s t o p s : l i s t   3 6 . 0 p t ' > ! [ i f   ! s u p p o r t L i s t s ] > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; m s o - b i d i - f o n t - s i z e : 1 2 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ;  
+     m s o - f a r e a s t - f o n t - f a m i l y : W i n g d i n g s ; m s o - b i d i - f o n t - f a m i l y : W i n g d i n g s ' > s p a n  
+     s t y l e = ' m s o - l i s t : I g n o r e ' > � s p a n   s t y l e = ' f o n t : 7 . 0 p t   " T i m e s   N e w   R o m a n " ' > &n b s p ;   / s p a n > / s p a n > / s p a n > ! [ e n d i f ] > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > ��q��s p a n   l a n g = E N - U S > ( 0 2 )   2 7 7 1 - 2 1 7 1   / s p a n > R_js p a n  
+     l a n g = E N - U S >   4 2 3 5 / s p a n > / s p a n > / p >  
+      
+     ! - -  
+     p   s t y l e = ' m a r g i n - t o p : 0 c m ; m a r g i n - r i g h t : 0 c m ; m a r g i n - b o t t o m : 0 c m ; m a r g i n - l e f t : 3 6 . 0 p t ;  
+     m a r g i n - b o t t o m : . 0 0 0 1 p t ; t e x t - i n d e n t : - 1 8 . 0 p t ; l i n e - h e i g h t : 1 8 . 0 p t ; m s o - l i s t : l 0   l e v e l 1   l f o 7 ;  
+     t a b - s t o p s : l i s t   3 6 . 0 p t ' > ! [ i f   ! s u p p o r t L i s t s ] > s p a n   l a n g = E N - U S  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; m s o - b i d i - f o n t - s i z e : 1 2 . 0 p t ; f o n t - f a m i l y : W i n g d i n g s ;  
+     m s o - f a r e a s t - f o n t - f a m i l y : W i n g d i n g s ; m s o - b i d i - f o n t - f a m i l y : W i n g d i n g s ' > s p a n  
+     s t y l e = ' m s o - l i s t : I g n o r e ' > � s p a n   s t y l e = ' f o n t : 7 . 0 p t   " T i m e s   N e w   R o m a n " ' > &n b s p ;   / s p a n > / s p a n > / s p a n > ! [ e n d i f ] > s p a n  
+     l a n g = E N - U S   s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > E m a i l / s p a n > s p a n  
+     s t y l e = ' f o n t - s i z e : 1 0 . 0 p t ; f o n t - f a m i l y : 0}fԚ' > �s p a n   l a n g = E N - U S > a  
+     h r e f = " m a i l t o : i c h e n @ n t u t . e d u . t w " > i c h e n @ n t u t . e d u . t w / a > / s p a n > / s p a n > / p >  
+     - - >  
+      
+             / t d >  
+   / t r >  
+ / t a b l e >  
+  
+ / d i v >  
+  
+ p   c l a s s = M s o N o r m a l > s p a n   l a n g = E N - U S   s t y l e = ' f o n t - f a m i l y : " �e0}fԚ" , " s e r i f " ;  
+ m s o - b i d i - f o n t - f a m i l y : �e0}fԚ' > o : p > &n b s p ; / o : p > / s p a n > / p >  
+  
+ / d i v >  
+  
+ / d i v >  
+  
+ / b o d y >  
+ / h t m l >  
+ 
+
+
+網際網路 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+網際網路
+
+維基百科，自由的百科全書
+< User:Hanteng
+
+					前往：					導覽，					搜尋
+
+
+
+「上網」重定向至此。關於一個網球及羽毛球的術語，詳見「上網 (球類運動)」。
+
+
+網際網路（英語：Internet），又音譯因特網或者英特網，在1990年代發展初期，因其跨國際性連接之特性，在台灣亦有人稱其為國際網路，或國際電腦網路。是指在ARPA網基礎上發展出的世界上最大的全球性網際網路。而網際網路（英語：interconnection network或internet），在香港和中國大陸常譯作互聯網，或稱互連網，即是「連接網絡的網絡」，可以是任何分離的實體網絡之集合，這些網絡以一組通用的協定相連，形成邏輯上的單一網絡。這種將計算機網絡互相聯接在一起的方法稱為「網絡互聯」。
+單獨提起網際網路，一般都是網際網路或接入其中的某網絡，有時將其簡稱為網或網絡（the Net）。對網際網路的使用人們稱之為「上網」、「衝浪」、「瀏覽」及「漫遊」，而使用網際網路的人則稱之為「網民」，網上朋友稱為「網友」
+
+
+
+目錄
+
+
+1 網際網路的歷史
+2 網際網路技術和協議
+
+2.1 網際網路相關協議
+2.2 接入技術
+2.3 網絡應用技術
+
+
+3 網際網路安全
+
+3.1 病毒
+3.2 惡意代碼
+3.3 惡意程序
+
+
+4 網絡文化
+
+4.1 網際網路普及率
+4.2 網絡文化
+4.3 網絡封鎖
+
+4.3.1 主要技術和形式
+4.3.2 主要對策
+
+
+4.4 網絡內容審查
+
+
+5 相關條目
+6 參考文獻
+7 外部鏈接
+
+
+
+網際網路的歷史[編輯]
+主條目：網際網路歷史
+在1950年代，通信研究者認識到需要允許在不同計算機用戶和通信網絡之間進行常規的通信。這促使了分散網絡、排隊論和封包交換的研究。1960年美國國防部國防前沿研究項目署（ARPA）出於冷戰地考慮建立的ARPA網引發了技術進步並使其成為網際網路發展的中心。1973年ARPA網擴展成網際網路，第一批接入的有英國和挪威計算機。
+1974年ARPA的鮑勃·凱恩和斯坦福的溫登·澤夫提出TCP/IP協議，定義了在電腦網路之間傳送報文的方法。1983年1月1日，ARPA網將其網絡核心協議由NCP改變為TCP/IP協議。
+1986年，美國國家科學基金會（National Science Foundation，NSF）建立了大學之間互聯的骨幹網絡NSFnet，這是因特網歷史上重要的一步。在1994年，NSFNET轉為商業運營。1995年隨著網絡開放予商業. 因特網中成功接入的比較重要的其他網絡包括Usenet、Bitnet和多種商用X.25網絡。
+1990年代，整個網絡向公眾開放。在1991年8月，在蒂姆·伯納斯-李（Tim Berners-Lee）在瑞士創立HTML、HTTP和歐洲粒子物理研究所]（CERN）的最初幾個網頁之後兩年，他開始宣揚其萬維網（World Wide Web）項目。在1993年，Mosaic網頁瀏覽器版本1.0被放出了，在1994年晚期，公共利益在前學術和技術的網際網路步增長。1996年，「Internet」（因特網）一詞被廣泛的流通，不過是指幾乎整個的萬維網。
+其間，經過一個十年，因特網成功地容納了原有的計算機網絡中的大多數（儘管像FidoNet的一些網絡仍然保持獨立）。這一快速發展要歸功於網際網路沒有中央控制，以及因特網協議非私有的特質，前者造成了因特網有機的生長，而後者則鼓勵了廠家之間的兼容，並防止了某一個公司在因特網上稱霸。
+因特網的成功，可從「Internet」這個術語的混淆窺知一二。最初，網際網路代表那些使用IP協定架設而成的網路，而今天，它則用來泛指各種類型的網路，不再侷限於IP網路。一個網際網路（internet，開頭的「i」是小寫字母）可以是任何分離的實體網路之集合，這些網路以一組通用的協定相連，形成邏輯上的單一網路。而因特網（Internet，開頭的「I」是大寫字母）專指美國的前身為ARPA網、使用IP協定將各種實體網路連結成此單一邏輯網路。「因特網」這個來自「Internet」的譯名，「Inter」音譯為「因特」，「Net」意譯為「網」。
+網際網路技術和協議[編輯]
+
+
+
+
+2006年4月統計的因特網用戶數量
+
+
+網際網路相關協議[編輯]
+有關網際網路的協議可以分為3層：
+
+最底層的是IP協議，是用於報文交換網絡的一種面向數據的協議，這一協議定義了數據包在網際傳送時的格式。目前使用最多的是IPv4版本，這一版本中用32位定義IP位址，儘管地址總數達到43億，但是仍然不能滿足現今全球網絡飛速發展的需求，因此IPv6版本應運而生。在IPv6版本中，IP位址共有128位，「幾乎可以為地球上每一粒沙子分配一個IPv6地址」。IPv6目前並沒有普及，許多因特網服務提供商並不支持IPv6協議的連接。但是，可以預見，將來在IPv6的幫助下，任何家用電器都有可能連入因特網。
+下一層是UDP協議和TCP協議，它們用於控制數據流的傳輸。UDP是一種不可靠的數據流傳輸協議，僅為網絡層和應用層之間提供簡單的接口。而TCP協議則具有高的可靠性，通過為數據報加入額外信息，並提供重發機制，它能夠保證數據不丟包、沒有冗餘包以及保證數據報的順序。對於一些需要高可靠性的應用，可以選擇TCP協議；而相反，對於性能優先考慮的應用如流媒體等，則可以選擇UDP協議。
+最頂層的是一些應用層協議，這些協議定義了一些用於通用應用的數據報結構，其中包括：
+
+DNS：域名服務；
+FTP：服務使用的是文件傳輸協議；
+HTTP：所有的Web頁面服務都是使用的超級文本傳輸協議；
+POP3：郵局協議；
+SMTP：簡單郵件傳輸協議；
+Telnet：遠程登陸等。
+
+
+
+接入技術[編輯]
+網路連接技術（Internet接入技術）是用戶與因特網間連接方式和結構的總稱。任何需要使用因特網的計算機必須通過某種方式與因特網進行連接。因特網接入技術的發展非常迅速：帶寬由最初的14.4K發展到目前的10M甚至100M帶寬；接入方式也由過去單一的電話撥號方式，發展成現在多樣的有線和無線接入方式；接入終端也開始朝向移動設備發展。並且更新更快的接入方式仍在繼續地被研究和開發。
+根據接入後數據傳輸的速度，Internet的接入方式可分為寬帶接入和窄頻接入。
+寬帶接入：
+
+ADSL（非對稱數字專線）接入，接入帶寬256K－8Mbps
+有線通（通過有限電視網絡）接入，接入帶寬 3-34Mbps
+光纖接入，接入帶寬10-100-1000Mbps
+無線（使用802.11協議）寬帶接入，1.5M－540Mbps
+衛星上網
+
+窄頻接入：
+
+窄頻ISDN接入，接入帶寬64/128Kbps
+電話撥號接入，接入帶寬9600-92Kbps
+GPRS手機上網，接入帶寬最大53KBps
+UMTS3G手機上網，384Kbps
+CDMA手機上網，CDMA95－1x150K，CDMA2000－1x 2MBps
+
+網絡應用技術[編輯]
+網絡應用技術在此指稱所有與網絡應用相關的技術。隨著網際網路的不斷發展，網絡應用的多樣化，以及硬體設施的飛速發展，網絡應用技術也向著更多樣、更複雜的方向發展。網絡應用技術可能可以概括為以下這些技術，這一概括可能並不準確，其主要目的在於羅列與網絡應用相關的技術。
+參考目錄：Category:網絡應用技術
+
+Web技術
+
+Web技術是最常用的網絡應用技術，它是用戶向服務器提交請求並獲得網頁頁面的技術總稱。這一技術可以分為兩個發展階段，俗稱Web1.0和Web2.0。第一階段多是屬於一些靜態應用，例如獲取HTML頁面，或者與服務進行簡單的交互，比如用戶登錄，查詢資料庫，提交數據等（這些應用也被稱為Web1.5）。第二階段更強調用戶與網絡服務器之間的互動性，甚至於網絡應用程序。事實上，Web2.0並不是一個技術標準，它可能使用已有的成熟技術，也可能使用最新的技術，但必須彰顯互動概念。
+
+網絡安全技術
+搜索技術
+資料庫技術
+傳輸技術
+流媒體技術
+商務應用相關的技術
+其它技術
+
+網際網路安全[編輯]
+經過多年的發展，網際網路已經在社會的各個層面為全人類提供便利。電子郵件、即時消息、視頻會議，網絡日誌（blog）、網上購物等已經成為越來越多人的一種生活方式；而基於B2B，B2C等平臺的電子商務，跨越洲際的商務會談以及電子政務等等為商業與政府辦公創造了更加安全，更加快捷的環境。但是隨之而來的不全是正面的影響，垃圾郵件、網絡蠕蟲病毒、惡意代碼、惡意程序等等也影響者人們的正常生活。
+病毒[編輯]
+網際網路給病毒傳播提供了非常快速迅捷的通道計算機感染病毒，病毒的破壞能力也因為網絡的四通八達大大的加強。最近幾年，特別是進入21世紀因為微軟公司視窗操作系統和瀏覽器Internet Explorer的安全漏洞，已經使全球多家公司蒙受巨額經濟損失和上億台計算機丟失數據。計算機病毒比上個世紀更具有偽裝性和感染能力，而且從被動傳播向主動進攻轉化。它們甚至具有了部分人工智慧，可以判斷目標計算機是否已經感染，是否有防病毒監控程序，甚至可以主動終止這些監控進程。
+惡意代碼[編輯]
+惡意代碼是嵌入到網頁的腳本，一般使用Javascript編寫，受影響的也是微軟視窗系統的IE瀏覽器。它們在未經瀏覽者同意的情況下自動打開廣告，開啟新頁面，嚴重影響瀏覽者的正常訪問。除此之外，它們還通過系統調用修改瀏覽器的默認主頁，修改註冊表，添加系統啟動程序，設置監視進程等。普通用戶對這些代碼基本束手無策，極端的辦法是重新安裝系統。
+惡意程序[編輯]
+惡意程序是從惡意代碼發展出來的一種基於插件技術的計算機程序，不同的是它們可能根本不需要可執行文件，只需要若干的動態鏈接庫文件（文件後綴是dll）就可以藉助windows系統正常工作。
+這類程序可能是用戶無意識安裝到系統中，也可能是自動被安裝的。它被安裝到系統中，隨操作系統啟動，一般這類程序除了工作進程還會有守護進程，如果發現主進程被刪除或者重命名，守護進程會自動生成一份新的拷貝，所以很難卸載，即使錶面上卸載掉了，下一次系統啟動還會重新出現。
+惡意程序從表現上看不算是病毒，因為它並沒有破壞性，不會危機系統，只是出於商業目的，屬於商業行為。但是它嚴重影響了計算機用戶的使用，而且如果編寫不當很容易導致系統運行變慢、性能下降，甚至給黑客留下後門。所以大部分軟體把他們當成病毒處理。
+網絡文化[編輯]
+網際網路普及率[編輯]
+截至2005年﹐網際網路普及率最高的國家為紐西蘭(76.3%)；第二至第五位分別是冰島(75.9%)，瑞典(74.9%)，丹麥(69.4%)及香港(69.2%)。[1]
+2006年時，經濟合作發展組織（OECD）調查顯示截至2005年底，寬帶上網(Broadband)普及率的前五名分別為冰島(26.7%)、韓國(25.4%)、荷蘭(25.3%)、丹麥(25.0%)，以及瑞士(23.1%)。而美國在所有工業化國家排名第12位。
+截至2007年3月，中國上網人數達到1.44億，其中寬帶上網人數為9700萬。
+
+
+
+
+2008年東亞網民分佈的面積統計比較地圖
+
+
+中國網際網路信息中心(CN-NIC)於2007年7月18日發布了《第20次中國網際網路發展狀況統計報告》，根據該報告，截至6月底，中國上網人數達到1.62億人，寬帶上網人數為1.22億人，手機上網人數有4430萬。網際網路的普及率達到了12.3%，上網電腦共6710萬台，比2006年末增長了770萬台。
+網絡文化[編輯]
+主條目：網絡文化
+網路文化是指在網路上發展出來的特有文化及行為。
+
+因網路發展而產生的新行為：
+
+瀏覽網站
+即時通訊（Instant Message；IM）：能將訊息立刻傳到另一方的技術。
+駭客（hacker）：找尋網站上的安全防護漏洞為樂的人。
+怪客（cracker）：破壞或癱瘓網站為樂的人。
+快閃族：利用在網路上張貼消息而使一群人在特定時間在特定地點作出特定的動作，大多數的快閃活動是沒有實質上的意義。
+網路遊戲農夫：以出售線上遊戲中的特定物品（金幣、特殊物品）來賺錢的人。
+
+
+
+
+原有的行為轉由網路作為媒介
+
+由使用傳統郵件轉成使用電子郵件。
+由在同人雜誌發表文章轉成利用網路發表文章。例如：網路作家。
+由筆友轉成網路交友。
+由電話性交轉成網路性交。
+由一般的電腦遊戲轉成線上遊戲。
+由郵購及直銷轉成網路購物。
+
+
+
+
+因網路應用而產生的新用字行為：
+
+註音文：為了快速打字而發展出來的特殊用字習慣，常以註音符號的子音部份來代替本字，此文體流行於台灣的網路論壇、網路聊天室及電子佈告欄上。
+顏文字：利用文字來組成圖形以表達心情等。常見例子有：XD、:)、orz
+火星文：主要以註音文及英文字母的發音來代替中文字以達到特殊的閱讀效果，但通常會造成閱讀上的困難，此文體亦流行於台灣的網路論壇、聊天室、BBS等處。
+縮寫：以英文為母語的網路使用者常利用字母來代表一段文字以節省打字時間。例如：BTW＝by the way、FYI＝for your information。
+
+
+
+網絡封鎖[編輯]
+主條目：網絡封鎖
+網絡封鎖是指個別政府或者機構處於政治或者經濟的原因，通過技術手段限制對某些網站或者服務的訪問。
+例如在一個公司裡，為了防止員工在上班時間訪問網站或使用如騰訊QQ、Windows Live Messenger等軟體進行聊天而導致勞動效率大幅度下降，公司的網絡管理員通常會使用硬體防火牆封閉來自目標服務器的80埠服務或僅封鎖部分網絡協議（如UDP），這樣幾乎所有的Web服務都會癱瘓或部分網絡聊天工具不能被正常連線，公司的員工就不能在上班時間訪問WEB頁面或僅可以訪問WEB頁面但不能使用聊天軟體。一方面降低公司網際網路接入的流量，另一方面可以讓員工安心工作。
+在某些國家，政府認為有些消息不能散佈到大眾中，所以他們通過技術手段封鎖國外一些站點的地址或者通過域名服務設置，使這些網站的域名得不到正確解析而返回錯誤信息，或者通過大型的核心交換設備過濾流經的信息。
+主要技術和形式[編輯]
+
+埠封鎖
+DNS域名劫持
+關鍵字報文過濾
+流量監控
+訪問策略
+
+主要對策[編輯]
+
+代理服務器（藉助國外主機轉發數據）
+數據加密（藉助加密軟體）
+使用安全連接(VPN或者HTTPS)
+分佈式訪問
+
+網絡內容審查[編輯]
+主條目：網絡內容審查和中國網絡審查
+網絡內容審查是一種對網絡承載的內容進行審查，並對部分內容進行過濾、刪除、關閉等行為，內容審查通常伴隨對相關人員與組織的行政處理。網絡審查主要針對危害國家安全、侵犯版權與個人隱私、通過網絡進行違法活動以及對不道德的行為進行宣傳和教唆等行為。許多國家都有相關立法，並且在政府設有相關部門進行監控和管理。在中國，公安部門、國安部門及新聞宣傳等部門聯合承擔相關行政權責，並輔以防火長城等技術手段對網絡活動進行嚴密監控。然而對網絡內容的審查在一定程度上限制了言論的自由，在何種程度上、採取何種手段進行網絡審查一直是爭議的話題。
+相關條目[編輯]
+
+Intranet
+網絡電話
+IM
+搜尋引擎
+信息技術
+計算機技術
+網絡語言
+網路友誼
+blog／博客／部落格
+網域名稱
+
+參考文獻[編輯]
+
+網絡化生存，喬崗，中國城市出版社，1997年 ISBN 7507409309
+Richard J.Smith, Mark Gibbs, Paul McFedries著，毛偉 張文濤譯，Internet漫遊指南，人民郵電出版社，1998年 ISBN 7115066639
+世界是平的，湯馬斯·佛裡曼著，2005年出版　ISBN 9868018099
+
+外部鏈接[編輯]
+
+
+
+維基共享資源中相關的多媒體資源：Hanteng/Internet tw
+
+
+
+（英文） World wide webcams
+（英文） World Wide Web Consortium (W3C)
+（英文） Asia Pacific Network Information Centre
+（中文） W3C China 中國萬維網聯盟
+（中文） 財團法人台灣網路資訊中心
+（中文） 中國網際網路信息中心
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=User:Hanteng/Internet_tw&oldid=26960174"					
+分類：網際網路隱藏分類：使用ISBN魔術連結的頁面 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+使用者頁面
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更使用者貢獻日誌檢視使用者群組上傳檔案特殊頁面可列印版靜態連結頁面資訊 
+
+
+
+其他語言
+
+
+AfrikaansአማርኛAragonésالعربيةAsturianuAzərbaycancaБашҡортсаBoarischŽemaitėškaБеларуская (тарашкевіца)‎БългарскиবাংলাBrezhonegBosanskiCatalàCebuanoČeštinaKaszëbscziСловѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟCymraegDanskDeutschZazakiDolnoserbskiΕλληνικάEmiliàn e rumagnòlEnglishEsperantoEspañolEestiEuskaraفارسیSuomiVõroFøroysktFrançaisFurlanFryskGaeilgeGàidhligGalegoעבריתहिन्दीHrvatskiHornjoserbsceKreyòl ayisyenMagyarՀայերենInterlinguaBahasa IndonesiaIgboIlokanoÍslenskaItalianoᐃᓄᒃᑎᑐᑦ/inuktitut日本語Basa JawaქართულიTaqbaylitҚазақшаಕನ್ನಡ한국어RipoarischKurdîКыргызчаLatinaLëtzebuergeschLimburgsLigureLumbaartລາວLietuviųLatviešuMalagasyМакедонскиമലയാളംМонголमराठीBahasa MelayuNāhuatlPlattdüütschNedersaksiesनेपाल भाषाNederlandsNorsk nynorskNorsk bokmålNouormandИронPangasinanPolskiپښتوPortuguêsRuna SimiRumantschRomânăРусскийसंस्कृतम्SicilianuSrpskohrvatski / српскохрватскиසිංහලSimple EnglishSlovenčinaSlovenščinaSoomaaligaShqipСрпски / srpskiBasa SundaSvenskaKiswahiliதமிழ்తెలుగుไทยTagalogTok PisinTürkçeТатарча/tatarçaУкраїнськаاردوOʻzbekcha/ўзбекчаVènetoTiếng ViệtWest-VlamsVolapükWalonWolofייִדישBân-lâm-gú粵語 
+
+
+
+
+
+
+ 本頁面最後修訂於2013年6月20日 (週四) 14:04。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+網際網路原理與應用(第三版)-金石堂網路書店
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+會員功能列
+
+ 
+
+
+加入會員
+登入
+
+
+
+
+您好
+登出
+
+
+會員專區
+客服中心
+查訂單
+
+
+ 
+（ 0 件）0 元
+結帳
+
+
+
+
+
+
+
+
+
+
+
+
+購物車
+（ 0 件）0 元
+結帳
+
+
+
+金石堂及銀行均不會請您操作ATM!  如接獲電話要求您前往ATM提款機，請不要聽從指示，以免受騙上當!
+    (詳情)
+
+
+
+
+網際網路原理與應用(第三版)－金石堂網路書店歡迎您加入博客和facebook 臉書粉絲團！The largest retail books store chains in Taiwan! 
+
+
+
+
+
+TOP關鍵字
+
+2017希望書包
+怪獸的產地
+七龍珠
+肆一 
+蠟筆小新套票
+抽EC
+
+
+
+
+
+
+全館搜尋
+中文書
+英文書
+
+雜誌
+MOOK
+文具
+玩具親子
+美妝配飾
+3C
+家電
+運動休閒
+居家生活
+動漫部屋
+日用清潔
+食品
+
+
+
+
+ 
+
+天花版bn
+
+12345678910
+
+
+
+
+
+購物目錄
+
+
+首頁
+3h快送
+中文書
+英文書
+
+雜誌
+MOOK
+文具
+美妝配飾
+玩具親子
+3C
+家電
+運動休閒
+居家生活
+日用清潔
+動漫精品
+食品
+
+
+
+
+
+
+商品次目錄
+
+
+新書
+預購書
+推薦書
+套書
+暢銷書排行榜
+書展 / 特惠
+讀者書評
+出版社專區
+香港出版品
+
+
+
+
+ 
+
+    您的位置：金石堂網路書店
+中文書
+電腦資訊
+網路／安全／概論
+網路技術
+商品詳情
+
+ 
+
+
+網際網路原理與應用(第三版)
+                        
+
+
+
+
+
+
+
+
+
+
+作者：陳惠貞，陳俊榮
+追蹤
+
+
+
+出版社：碁峰資訊  
+出版社追蹤
+
+
+出版日：2008/11/24
+
+ISBN：9789861815756
+語言：中文繁體
+適讀年齡：全齡適讀
+
+
+定價：500 元
+
+特價：85 折 425 元 (可得紅利4點)
+紅利優惠價：82 折 412 元 (折抵說明)紅利可抵：13 元 
+信用卡紅利：可折抵多家銀行 (扣抵說明)
+運送方式：全球配送　香港到店　國內宅配國內店取　
+
+
+
+
+
+
+
+
+
+
+
+
+<<
+
+
+
+>>
+
+
+https://cdn.kingstone.com.tw/book/images/product/20147/2014713107626/2014713107626b.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           購買後立即為您進貨!立即購買 預計出貨日：2017/7/27
+
+
+
+金石堂讀者好評
+ 
+0 個人說讚，看排行 >
+
+
+
+
+
+
+電腦資訊分類追蹤
+使用此功能請先登入金石堂網路書店正式會員。這是什麼？
+
+
+
+
+分享：
+                            
+                           	  
+
+
+
+
+
+
+
+
+
+
+書籍介紹
+其他讀者也買
+強力推薦
+讀者好評(0)
+下標籤
+團體專屬服務
+
+
+
+
+
+
+內容簡介目錄
+詳細資料
+
+
+
+
+
+
+內容簡介 top 
+《網際網路原理與應用(第三版)》
+                                Computer Networking and the Internet屬於生活與課堂的網際網路必修知識內容涵蓋電腦網路的原理與應用、Internet的原理與應用、資源設定、連線分享、WWW、E-mail、新聞群組、Telnet、BBS、FTP、P2P、即時通訊、網路電話、線上廣播、線上影視、自然人憑證、網路相簿、部落格、電子商務、資訊安全與隱私權、電腦病毒、HTML網頁設計…，掌握最新知識，實際上機操作，輕鬆悠遊網際網路的世界。內容特色生動解說+豐富圖片+應用實務+實用技巧「電腦網路」：內容涵蓋電腦網路的用途、類型 (LAN、WAN、MAN、Internet、無線網路)、主從式網路V.S. 對等式網路、網路作業系統、OSI參考模型、網路拓樸、網路傳輸媒介、常見的網路硬體設備及區域網路標準。「網際網路」：內容涵蓋Internet的用途、起源、實用的Internet資源、寬頻上網的方式 (ADSL、Cable Modem、FTTX光世代)、3.5G行動上網、TCP/IP參考模型、Internet命名規則。「連線設定」：實際示範如何設定ADSL寬頻上網、無線上網及3.5行動上網。「資源分享」：實際示範如何設定遠端管理及區域網路的資源分享，包括檔案、資料夾與印表機分享。「全球資訊網」：實際示範如何使用Internet Explorer瀏覽全球資訊網。「電子郵件」：實際示範如何使用Windows Mail收發電子郵件。「新聞群組」：實際示範如何使用Windows Mail收發新聞群組。「BBS與檔案傳輸」：實際示範如何使用Telnet、BBS、FTP、P2P，以及檔案下載回來後應該如何處理。「即時通訊」：實際示範如何使用Windows Live Messenger。「網路電話」：實際示範如何使用Skype。「Internet的生活應用」：實際示範如何使用線上遊戲、網路購物、網路競標、網路拍賣、線上廣播、線上影視、線上求職、網路銀行、自然人憑證、網路相簿、部落格等生活應用。「電子商務」：內容涵蓋電子商務的模式 (B2B、B2C、C2C、B2G)、行動商務、電子付款系統、線上交易的安全機制 (SSL、SET)、電子市集。「資訊安全與隱私權」：內容涵蓋危及資訊安全的因素、身分認證、資訊竊盜、軟體竊盜、硬體竊盜、加密/解密、數位簽章、備份與復原、Web安全、電腦犯罪的手法、類型、刑責、蒐證與起訴、資訊隱私權。「電腦病毒」：內容涵蓋電腦病毒/特洛依木馬/網路蠕蟲、間諜軟體/廣告軟體、網路釣魚、垃圾郵件等惡意程式及其防治之道。「HTML網頁設計」：以簡明扼要的範例為您講解HTML的語法，即使是沒有學過任何程式語言的讀者，也能以HTML設計網頁。
+                            
+
+
+目錄 top 
+網際網路原理與應用(第三版)－目錄導覽說明
+
+第1章 電腦網路第2章 網際網路(ADSL、CABLE、FTTX、無線網路上網、3.5G行動上網）第3章 連線設定 (含ADSL、無線網路、3.5G…)第4章 資源分享 (含遠端管理、傳真、壓縮…)第5章 全球資訊網(含釣魚網站篩選…)第6章 電子郵件第7章 新聞群組第8章 檔案傳輸與BBS第9章 即時通訊第10章 網路電話第11章 實用的Internet資源 (含網路相簿、Blog、YouTube、線上遊戲、網拍、自然人憑證…)第12章 電子商務第13章 資訊安全與隱私權第14章 電腦病毒第15章 HTML網頁設計(含網頁設計概念）
+                                
+
+
+
+
+
+詳細資料top 
+
+                               語言：中文繁體規格：平裝分級：普級開數：18開17*23cm頁數：480
+                               出版地：台灣
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網路技術相關書籍
+延伸閱讀推薦
+延伸推薦
+
+
+
+
+
+
+
+
+
+延伸推薦top 
+
+
+
+
+
+Cisco Ise for ...
+
+特價 3527元
+
+
+
+
+
+The Darkening ...
+
+特價 945元
+
+
+
+
+
+Ipv6 Fundament...
+
+特價 3023元
+
+
+
+
+
+Unsolved!...
+
+特價 1103元
+
+
+
+
+
+Minitel...
+
+特價 1764元
+
+
+
+
+
+
+
+
+
+
+
+
+共0篇好評top 
+寫書評去 >
+
+
+
+
+
+
+
+
+
+
+商品標籤 (什麼是標籤？)
+
+UML
+
+
+
+我的標籤新增
+
+
+
+
+
+
+
+
+
+團體專屬服務top
+
+團體專屬服務
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+訂購須知top 
+防治詐騙，提醒您!!金石堂及銀行均不會請您操作ATM! 如接獲電話要求您前往ATM提款機，請不要聽從指示，以免受騙上當! 
+
+商品運送說明：
+當商品送達金石堂門市或便利商店後，您會收到E-mail及APP出貨/到貨通知，您也可透過【訂單查詢】確認到貨情況。
+建議您可下載『金石堂APP』並開啟推撥設定，即可收到相關出貨/到貨通知訊息。
+並請您於指定期限內取貨付款，若逾期未取，您取貨的金石堂門市或便利商店將會辦理退貨作業。
+產品顏色可能會因網頁呈現與拍攝關係產生色差，圖片僅供參考，商品依實際供貨樣式為準。 
+
+退換貨說明：
+依據「消費者保護法」第19條及行政院消費者保護處公告之「通訊交易解除權合理例外情事適用準則」，以下商品購買後，除商品本身有瑕疵外，將不提供7天的猶豫期：
+
+                            1、 易於腐敗、保存期限較短或解約時即將逾期。（如：生鮮食品）
+                            2、 依消費者要求所為之客製化給付。（客製化商品）
+                            3、 報紙、期刊或雜誌。（含MOOK、外文雜誌）
+                            4、 經消費者拆封之影音商品或電腦軟體。
+                            5、 非以有形媒介提供之數位內容或一經提供即為完成之線上服務，經消費者事先同意始提供。（如：電子書、電子雜誌、下載版軟體、虛擬商品…等）
+                            6、 已拆封之個人衛生用品。（如：內衣褲、刮鬍刀、除毛刀…等）
+若非上列種類商品，商品均享有到貨7天的猶豫期（含例假日）。
+辦理退換貨時，商品（組合商品恕無法接受單獨退貨）必須是您收到商品時的原始狀態（包含商品本體、配件、贈品、保證書、所有附隨資料文件及原廠內外包裝…等），請勿直接使用原廠包裝寄送，或於原廠包裝上黏貼紙張或書寫文字。退回商品若無法回復原狀，將請您負擔回復原狀所需費用，嚴重時將影響您的退貨權益。
+
+
+
+
+
+
+
+
+
+
+中文書籍分類
+
+文學財經企管生活風格飲食料理心理勵志醫療保健旅遊宗教命理教育/親子教養童書羅曼史輕小說漫畫語言／字辭典藝術設計電腦資訊
+程式設計
+網頁設計
+繪圖／影音／多媒體
+辦公軟體／應用軟體
+作業系統
+資料庫
+3C數位生活
+APPLE專區
+認證考試
+網路／安全／概論
+網路技術
+雲端技術
+系統分析／設計
+計算機概論
+電腦專業辭典
+
+
+其他電腦資訊
+
+自然科普人文歷史社會哲思考試書／政府出版品參考書全部的分類 >>
+
+
+
+手機版
+網際網路原理與應用(第三版)
+
+
+
+
+相關商品
+
+
+雜誌
+
+
+
+PC DIY! 7月2017第245期
+數位狂潮DIGITREND 2017第44期
+PC HOME 電腦家庭 7月2017第258期
+MAXIMUM PC Spcl: BUILD IT:The Perfect PC Vol.2 2017
+PC DIY! 6月2017第244期
+
+
+
+
+
+
+
+
+
+外嵌連結
+網際網路原理與應用(第三版)
+
+
+
+在金石堂門市找此書
+                         選擇縣市：
+
+請選擇
+基隆市
+臺北市
+新北市
+桃園市
+新竹市
+新竹縣
+宜蘭縣
+苗慄市
+苗慄縣
+南投縣
+臺中市
+雲林縣
+彰化縣
+嘉義市
+臺南市
+高雄市
+屏東縣
+
+查詢
+
+
+
+
+
+
+
+
+
+
+
+
+↑回上方
+
+金石堂網路書店
+
+首頁
+關於金石堂網路書店
+人才招募
+客服中心
+異業合作
+出版情報
+手機版
+關於金石堂書店
+金石堂書店全台門市
+
+
+
+客服專線：02-2364-9989
+傳真：02-2364-4672
+客服時間：週一至週五 9：00∼12：30 及 13：30∼18：00（例假日除外）
+地址：100 台灣臺北市中正區汀州路三段 160 巷 3 號 2 樓
+Copyright©2016, Digital Kingstone Co., Ltd. 金石網絡股份有限公司
+
+
+
+
+
+
+瀏覽本站建議使用：Internet Explorer 8.0 以上或 FireFox、Google Chrome、Safari 等瀏覽器。
+本網站已依台灣網站內容分級規定處理且符合電子商務、安全交易
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+金石堂APP出/到貨提醒不漏接，讓您便利隨行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.15
+
+
+
+
+���ں�������
+
+
+
+
+
+�ҵ{�W���G���ں�������
+http://bit.kuas.edu.tw/~csshieh/teach/ia
+
+
+
+�½ұЮv�G�´ܦ�
+http://bit.kuas.edu.tw/~csshieh
+
+
+�ҵ{²���G
+
+���ں����O���ӾǲߡB�u�@�B�Υͬ��W���i�ίʪ��u��C�䤤���y��T
+������h�C��B�W�s���B��X�A�ȵ��S��A�N�������n�����q�C��C��
+�ҵ{���z�L�Ұ����ѡB��Ⱦާ@�B�H����T�B�Τ��ʦ���������k�A��
+�ǥͤ��к��ں����򥻷����B���y��T���򥻷����A�ѻ������W�U���A
+�ȶ��ؤΦU�غ����y���C�ҵ{���ñN���ЦU�������u��n��C�H���Ͼ�
+�ͦb�׽Ҥ����F�Ѻ��ں��������n�ʡB���x�B���Ψ�W�U���A�ȡA��
+��ƻs�@��������O�C
+
+
+�ҵ{�j���G
+
+�q�������򥻷���
+�s�u�n�w��]��
+���ں����A�Ȥ���
+���y��T���򥻷���
+
+HyperText Markup Language ���
+JavaScript / VBScript ²��
+Active Server Page / PHP: Hypertext Preprocessor ²��
+		Common Gateway Interface Programming ²��
+
+�����s��n��ά����u��n�餶��
+�������J
+�ѦҸ�Ƥά�������
+
+
+�׽ұ���G
+
+���������Ҩϥθg��̸��ΡA���D���n�C
+	�ǲ߰ʾ��ΰѻP�C
+	
+
+�����覡�G
+
+�@�~�G40%
+ú��M��
+�����ҡG30%
+	�����ҡG30%
+	�Ǵ����Z
+
+
+
+
+
+
+
+
+
+
+電腦在通訊上的應用
+
+
+
+電腦在通訊上的應用
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+未來的通訊產業是電腦結合通訊的產業，是實現人類整合寬頻網際網路與無線通訊的前瞻產業，也是廿一世紀電子資訊的新產業之一。因此電腦在通訊上的應用便成為新世紀時代的顯學，產、官、學無一不在此一主題上戮力以赴，以求國家經濟發展的新榮景。
+
+
+電腦在通訊上的應用與3C（資訊、通訊、視訊）技術密不可分，但本文著重於電腦在通訊上的應用。談到應用便與生活息息相關，而溝通訊息、傳遞訊息更是現代生活的重要事項。因此訊息是如何進行的？屬於技術層面，是專業技術人員的問題，本文引用電通所網頁上的資料加以闡述。電腦在通訊上的應用的產品有哪些？便與通訊的應用息息相關，也是本文的重點。
+
+
+
+訊息傳遞的技術
+
+
+寬頻網際網路與無線通訊，是新一代訊息傳遞的趨勢，透過寬頻網際網路可使任何訊息無遠弗屆的傳送，若再加上無限通訊的技術發展，訊息的進行將是更無所阻礙。台灣於民國七十九年成立電腦與通訊工業研究所（電通所），並選定無線通訊（Wireless  
+Communications）與寬頻網際網路（Broadband Internet）為發展主軸，集中資源並積極投入寬頻網際網路與傳輸技術的發展。
+
+
+在寬頻網際網路領域方面
+
+
+研究範圍包括：
+
+
+用戶終端與界接技術：包括多點控制視訊用戶終端設備、網際網路電信／有線電視用戶終端設備，通訊多媒體關鍵零組件技術。
+
+
+高速傳輸技術：著重於「用戶迴路傳輸設備」、「光纖、高速銅線傳輸」及相關關鍵性零組件技術，以利廠商承接技術及商品化。
+
+
+網路接取技術：全力研發新一代交換／路由器，並將傳統路由器及交換器之功能作有效結合，以增強資料接取效能。
+
+
+網際網路交換機：Internet  
+PBX將成為企業內必備的通信設備，透過LAN，提供電話與傳真服務，分機可直接連上LAN，成為網路電話。
+
+
+虛擬私有網路：使企業用戶使用公眾電信網路與網際網路的資源來建構企業網路，整合網路管理、資料安全、寬頻應用等相關技術，以降低通訊成本，建構高效率的企業通訊網路。
+
+
+電信網路管理：依據國際電信聯盟（ITU-T）所訂之電信網管標準，建立電信網路管理技術。
+
+
+網際網路電信閘道：連接公眾交換電話網路與Internet  
+，呈現多樣化的介面，提供各種通訊功能，達到最佳的網路資訊整合。
+
+
+電腦電話整合系統：研發開放且程式化的電腦電話整合語音交換系統以及相關的應用技術，提供嶄新和多樣化的通話服務。
+
+
+高密度電腦系統構裝技術：整合積層式多晶片模組(MCM-L)技術，以發展高密度電路模組，採用球腳或針腳格狀陣列塑膠封裝(PBGA或PPGA)方式，並建立增層基板應用技術、細間距PBGA封裝與組裝技術。
+
+
+Java處理機、資訊機：包括Java處理機（CPU）、資訊機及其系統晶片組、系統軟體設計，並整合智慧型語音處理、網路通訊及多媒體週邊裝置等技術。
+
+
+Java行動通訊：發展行動式網際網路接取技術、Java嵌入式中介軟體、及個人通訊器（PCA）系統整合。
+
+
+多媒體擷取：開發遠端擷取伺服器所需之相關技術，包含Internet資料擷取及Internet多媒體擷取技術。
+
+
+語音辨識與合成技術：開發高準確度中文連續及口語語音辨識，及合成自然中文語音之軟、硬體技術，作為高效率中文輸入和語音交談系統之核心。
+
+
+自然語言處理與對話系統：開發可以處理中文文件及口語資料的語言理解、對話處理及語言生成，讓使用者以自然交談的方式與電腦或機器互動。
+
+
+互動式視覺資訊處理：研發網際網路虛擬實境、智慧型影像／視訊檢索等技術，以提供整合影像、視訊與三度空間電腦繪圖之互動式多媒體內容。
+
+
+光學手寫辨識（OCR）：建立高可靠度手寫數字辨識技術，進行高效率超大規模OCR訪查網路作業，可處理數以百萬計之表單。
+
+
+電子商務：研發電子商務交易與安全技術，包括符合SET(Secure  
+Electronic Payment)標準之電子支付技術，網路銀行支付技術，網路商場軟體等。
+
+
+Windows  
+CE技術：建立Windows CE硬體平臺、軟體應用技術，並協助廠商開發智慧型產品。
+
+
+隨選視訊伺服器：開發高效能之隨選視訊伺服器，提供MPEG-I、MPEG-II高品質畫面，掌握磁碟串聯、階層式儲存及遠端監控等關鍵技術。
+
+
+ 
+
+
+在無線通訊領域方面
+
+
+研究範圍包括：
+
+
+多媒體行動通訊：開發高速寬頻無線傳輸基頻與多媒體行動通訊網路協定等技術。
+
+
+射頻(RF)次系統與關鍵零組件：開發輕薄短小、高性能具競爭性之多層電路射頻模組。
+
+
+無線家庭網路：基於HII(Home  
+Information Infrastructure)系統平臺，開發高速無線區域網路、多媒體家庭無線網路，並開發藍芽(Bluetooth)等系統及其關鍵零組件。
+
+
+無線晶片組：開發無線通訊基頻與高頻晶片組、個人行動通訊系統晶片組等。
+
+
+無線通訊協定及軟體：建立通訊協定軟體發展環境、設計流程及機制。
+
+
+無線網路服務：開發多院區之企業用個人行動通訊整合技術，及企業環境行動通訊管理器。
+
+
+個人行動通訊系統：開發個人行動通訊系統、第三代行動通訊系統(IMT-2000)及小型基地台技術。
+
+
+無線通訊模組構裝：
+
+
+發展無線通訊零組件構裝技術、功能內藏式基板設計組合，以及可攜式電子產品之智慧型電池管理模組。
+
+
+無線通訊陶瓷材料與製程：發展通訊元組件之多層模組化及R,L,C,被動元件嵌入低溫共燒陶瓷材料系統及製程技術(由工研院材料所執行)。
+
+
+數位廣播音訊及視訊產品：開發衛星、地面、及有線數位廣播音訊、視訊接收機與關鍵零組件。
+
+
+內嵌系統：發展以內嵌處理機(含中央處理器、控制器、數位信號處理器)為核心之應用系統技術。
+
+
+數位視訊傳輸：開發視訊傳輸調變/解調、糾錯碼編解碼，以及傳輸模組整合技術。
+
+
+數位視訊處理：開發MPEG-II高畫質視訊解碼技術。
+
+
+電通所並致力扶植國內新興的網路通訊產業，移轉技術包括用戶終端設備、高速傳輸技術、網路互連技術、數位訊號處理技術、遠端擷取器等多項技術給廠商，增強我國網路產業技術實力，從低層次的用戶終端產品提昇至局端設備或高階產品，例如數位載波機系統、ISDN用戶終端設備、網路交換器等；這些產品每年為我國通訊產業創造數百億的產值。在無線通訊技術方面，已開發完成數位無線電話（DECT）、無線區域網路、數位廣播接收機等系統與關鍵零組件，促進無線通訊產業在本土生根萌芽。
+
+
+ 
+
+
+ 
+
+
+電腦在通訊應用的產品
+
+
+「網際網路世紀」已經來臨，Internet進入我們的生活是不可抗拒的趨勢。未來幾年內，各種網際網路接取設備將順勢取代個人電腦(ＰＣ)成為上網的便利工具。網際網路接取設備是整合運算、通訊和消費性電子功能的產品，可以由電視、電話、機上盒(STB)等不同裝置結合Internet接取功能而成，較PC有更佳的效能。  
+以下介紹幾項代表性的產品：
+
+
+網際網路電子商務站
+
+
+新超科技公司運用工研院電通所開發的虛擬實境（Virtual  
+Reality）技術，已完成國內第一套「網路商城」產品，並宣佈與電通所繼續合作，發展國內首部「網際網路電子商務站」，在網際網路（Internet）盛行之際，讓消費者提早實現在家購物的夢想。
+
+
+ 
+
+
+工研院電通所與新超科技聯手合作，將發展國內首部「網際網路電子商務站」（Internet  
+Electronic Commerce Station），除了提供消費者完全中文化的購物環境之外，並可以在符合網路安全的條件下，直接在線上交易，使用智慧型IC卡（Smart  
+card）完成付款手續。這套產品將比一般的電視購物或郵購更加便利，也可能使原本深入家庭的第四台電視購物的模式面臨轉型。
+
+
+「網際網路電子商務站」（簡稱IEC）是順應潮流而發展出的一項國際化產品，廠商可透過網際網路來銷售商品，值此資訊大量流通的時代，可為消費者節省上街購物的時間。介於個人電腦（PC）和網路電視（Web  
+TV）之間的低成本新產品，可以取代PC，再與電視結合之後，不僅適合家用，也適合做社區型網路的連接。因此新超科技應用電通所虛擬實境（Virtual  
+Reality）技術完成的「網路商城」產品，再與網際網路結合發展成「網際網路電子商務站」，可讓消費者早日體驗在家購物的境界。
+
+
+兼具「數位化」與「網路化」，是消費性電子產業未來的發展方向，民眾的消費習慣也會受到這一波趨勢的影響。由於一般個人電腦仍然昂貴，功能較複雜，因此，電通所協助新超科技開發以消費為訴求的「家用化」網路電腦，鎖定不會用電腦，但又想透過網際網路汲取資訊的一般大眾，如此一來，即使是電腦的門外漢，也可以加入「網路一族」，輕鬆地上網購物。
+
+
+此類專用的「網路購物」產品，不需要使用很強的中央處理器（CPU），並可省略硬碟機配備，因此價格低廉，約為新台幣一萬五千元左右。美國已宣佈「網路貿易免稅」法令，新超科技以前瞻性眼光開發「網際網路電子商務站」，勢將帶動「網路貿易」的新風潮，進一步為其產品擴充網路貿易的功能舖路。
+
+
+數位化的視訊隨選系統
+
+
+隨選視訊（Video-on-Demand，簡稱VOD），是指使用者可隨意在電腦上點播影片或其他多媒體資料。隨選視訊與教學系統是絕佳的組合，用於中小學推動校園資訊化是最佳的方向。
+
+
+新竹科學園區實驗中學引進工研院電通所開發的先進技術，合作完成一套國內中小學首見的「網路隨選視訊互動教學系統」，不但提供互動式的視訊教學，更可運用網路上豐沛的教材資源，使教學課程更活潑、有趣，提高學生學習動機。
+
+
+數位化的視訊隨選系統，相較於傳統類比式影片(如錄影帶)輸出方式，不會產生磨損、失真、雜訊的狀況；在影片的保存與播放效果上，也遠高於傳統類比方式。「網路隨選視訊互動教學系統(VOD)」特色包括：可同時提供六十人點播隨選視訊(每秒1.5Mbps)，採用網頁做為使用者界面，提供基本的視訊播放控制(如暫停、搜尋等)，擁有支援階層式儲存設備及完善的物件管理，此外也可將視訊、音訊、影像及文字等多媒體資料存放在一個伺服器中，以供電腦播放多樣化的教學節目。
+
+
+由科技單位與教育單位聯手完成的網路隨選視訊互動教學系統，包含三項主要功能：隨選視訊教學、隨選視訊簡報與視訊教材管理。實驗中學國小部的教室內設置個人電腦與電視螢幕，利用電腦網路，主控室的主機可將教材資源隨時普及至每一間教室。不同教室可同時點選播放相同影片，老師亦可節省課前租借錄影帶的時間。
+
+
+除了數位影片隨你選擇點播之外，還可以做課程隨選、會議簡報，以及應用電子教材（如互動式光碟電子書）教學，並可利用電腦網路，開闢促進教學心得交流的電子討論區，更可讓「家庭聯絡簿」上網，促進老師與家長的雙向溝通，最終目的是把電腦變成輔助老師教學的萬用工具。
+
+
+網路電視
+
+
+　　「家庭用」的網際網路接取設備因數位化技術的進步而呈現多元化的面貌網路電視，以收發電子郵件，連上網路為訴求。預估在2002年，全球將有1300萬以上的家庭是透過電視接取Internet。  
+
+
+
+隨處行動通訊
+
+
+　　「個人用」的網際網路接取設備方面，據估計，2000年時，全球將有超過一億以上的行動工作者，面對這種「隨處行動通訊」時代(Mobile  
+Everywhere)的來臨，掌上型(Palmtop)、手持式(Handheld)、個人數位助理(PDA)及Notebook等行動運算產品都將快速成長。  
+
+
+
+網路電話
+
+
+ 由於網際網路盛行，催生出各種新興通訊產品，其中尤以網路電話的相關產品最為熱門。鑑於長途電話費用昂貴，以網際網路提供便宜電話服務的技術應運而生，在不改變使用習慣下，人們可以最經濟的方式撥接網際網路電話，傳送訊息。工研院電通所針對此應用，研發「網際網路電話閘道技術」(Internet  
+Telephony Gateway Technologies；ITG)，目前採用先期技轉方式，己廣獲許多家廠商響應。Internet的興起，人們可以利用電腦來溝通，但電話與傳真仍是不可少的工具，「網際網路電話閘道」扮演著將傳統電話接上Internet的角色，協助相距遙遠的企業兩端的電話系統相互連接，透過Internet，彼此互通電話，提供傳統電信之外的通話管道。專家預測，至2003年時，全球近30%的長途電話將經由Internet來傳遞。  
+
+
+
+　網際網路電信閘道技術可結合公眾交換電話網路PSTN  
+(Public Switch Telephone Network)與Internet的通訊，呈現多樣化的介面，應用方式有電話對電話(phone-to-phone)、電腦對電話(PC-to-phone)以及傳真對傳真(Fax-to-Fax)的各種通訊功能，除此之外，並可廣泛與視訊會議、話務中心之運作互相配合。如此不但可以達到最佳化的網路資源應用，並可享受許多好處，如：(１)降低長距離電話與傳真的費用；(２)整合各種通訊工具；(３)易於支援或擴充新的通訊應用。這項被多方看好的未來產品將隨國際標準的制訂更為完備，與法規的開放之後，更直接影響到每個人的電話通信。  
+
+
+
+ 
+
+
+數位音訊廣播接收機（DAB  
+Receiver）
+
+
+經常收聽AM/FM廣播的「開車族」，總是對忽強忽弱的雜訊乾擾，感到耳根發麻卻又無可奈何。在一項資訊展中揭示世界廣播發展主流的「數位音訊廣播接收機（DAB  
+Receiver）」的雛型，使收聽廣播也能享有雷射唱片(CD)般的優美音質，不再讓聽眾聞之掃興，未來更可以「暢行全島不需轉頻」。
+
+
+目前國內廠商主要生產類比式的AM/FM廣播系統，除了頻寬不足，且是針對固定的接收機而設計，如家用音響，故收音品質有其極限，尤其會因地形因素造成收訊不良，使行駛中的車內音響呈現跳動、雜訊或不清晰的音質。透過數位廣播，除了可以聆聽高品質的音樂，如果加裝顯示幕，更可以接收到多媒體的資訊服務，如氣象報告時可顯示天氣圖、路況報導時顯示地理位置圖以及金融證券行情等，發展為集通訊、資訊與休閒於一機的3C產品。
+
+
+經由「數位廣播」技術，電台可以向廣大聽眾（包括開車族）播送出CD音質的樂曲，使音響產品的附加價值大幅提高。由於數位廣播提供業者更簡單的單頻網路，享有充裕的頻寬，及更有彈性的節目型態，因此可為媒體及資訊通訊服務業帶來龐大的商機。
+
+
+「無限機會在無線」經濟部技術處與工研院電通所昨日聯袂展現「無線通訊技術發展計畫」五年科專的整體績效，推出歐規無線電話（DECT）與無線區域網路卡（Wireless  
+LAN Card）、數位音訊廣播接收系統（DAB Receiver）、高頻電路次系統及MLC/LTCC與元件等多項具體成果，並技轉給十多家廠商，帶動業者穩健成長。
+
+
+經濟部科技專案推動國內高科技發展，首重技術的掌握，有了技術自然會帶動業界資金投入。發展無線通訊技術對我國的國防安全與民生便利方面皆有重大意義，目前行政院已規劃國家型電信計畫，技術處也結合工研院、中科院的研究力量，並借重業界與之同步研發，期望無線通訊技術真正落實生根，成為我國廿一世紀實力派的明星產業。先進式數位無線電話（DECT）、無線數據進接系統(Wireless  
+Data Access)更是其中的代表。
+
+
+結語
+
+
+　　通訊技術具有無遠弗屆的魅力，被視為公元2000年的明星產業。工研院電通所積極著手研發「通訊電子技術」迄今，已移轉七十多項技術給二百家次以上的業者，去年（1996）國內通訊產業產值將近900億台幣，居全球第十一名，今年可望突破1000億台幣的規模。尤其網際網路（Internet）日益風行，全球電信自由化、台灣電信民營化的趨勢也已形成。
+
+
+ 
+
+　
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	電力監控與網際網路整合應用技術 - 技術移轉 - 產業服務 - 工研院中文版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        您的瀏覽器不支援JavaScript語法,但是並不影響您獲取本網站的內容。
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+工業技術研究院
+
+迴首頁網站導覽菁英招募出版品服務據點公告電子報專業連結FBYouTubei創科技EN
+
+
+
+
+
+
+
+
+
+
+關於工研院
+
+工研院簡介
+
+董監事會
+
+經營團隊介紹
+
+工研院院士
+
+綠色低碳院區
+
+社會公益
+
+獲獎榮耀
+
+工研院院友會
+
+安衛品質環境能源政策
+
+
+
+創新應用
+
+簡介
+
+智慧生活
+
+健康樂活
+
+永續環境
+
+
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+新聞室
+
+新聞資料庫
+
+新聞連絡
+
+精彩影音
+
+
+
+單位介紹
+
+總覽
+
+南分院
+
+中分院
+
+生醫與醫材研究所
+
+綠能與環境研究所
+
+材料與化工研究所
+
+機械與機電系統研究所
+
+資訊與通訊研究所
+
+電子與光電系統研究所
+
+量測技術發展中心
+
+影像顯示科技中心
+
+服務系統科技中心
+
+產業經濟與趨勢研究中心
+
+巨量資訊科技中心
+
+智慧機械科技中心
+
+智慧微系統科技中心
+
+雷射與積層製造科技中心
+
+產業學院
+
+技術移轉與法律中心
+
+產業服務中心
+
+國際中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+首頁
+產業服務
+技術移轉
+
+
+電力監控與網際網路整合應用技術
+
+
+
+
+
+
+                    技術移轉
+
+
+字級：
+小字級
+中字級
+大字級
+
+若您無法使用字級縮放功能，請改用鍵盤"Ctrl"+"加號鍵"或"Ctrl"+"減號鍵"，來放大或縮小字級
+
+技術名稱(中文)：電力監控與網際網路整合應用技術
+技術名稱(英文)：APPLICATION OF DEMAND CONTROL AND INTERNET INTEGRATION
+技術簡介整合電力監控、資料庫與網際網路技術，可有效掌握用電負載分佈，配合負載監控可抑低尖峰需量，降低用電費用及超約罰款。經由資料庫及網際網路整合可有效執行用電管理及推展節能措施。Abstractnone技術規格1.利用資通訊技術，完成自動讀表、網路斷線後之資料暫存與自動回補機制2.資料庫管理與資料探勘、專家系統、決策支援系統、機器學習、迴歸、雲端運算等加值應用3.系統功能模組化設計，提供快速安裝可能性 4.支援多種通訊協定5.行動裝置網路連結功能：可透過Android或iOS行動裝置App遠端讀取與控制。Technical Specificationnone技術特色整合系統具有電力需量控制、電力品質監視、用電即時及歷史資料記錄、分迴路自動抄表、資料庫系統及網際網路整合等功能應用範圍適用於工廠、學校及大樓等大電力用戶之電能管理與監控接受技術者具備基礎建議(設備)電力量測設備、PLC控制系統等接受技術者具備基礎建議(專業)電力量測設備安裝施工、PLC規劃與程式設計、電腦圖控規劃設計、資料庫系統及應用程式設計等
+
+
+技術分類
+
+                系統控制研究
+
+
+聯絡人
+
+                林政廷
+                智慧節能系統技術組（D）
+					
+03-591540403-5820061tim_lin@itri.org.tw
+
+
+
+
+
+
+
+
+
+
+友善列印
+
+
+若您無法使用字級縮放功能，請改用鍵盤"Ctrl"+"加號鍵"或"Ctrl"+"減號鍵"，來放大或縮小字級
+
+分享：
+Share to Twitter
+Share to Plurk
+Share to Facebook
+Share to Google Plus
+
+
+                                當SCRIPT關閉時,請點選以下連結.
+                                Facebook
+plurk
+twitter
+google plus
+
+
+
+
+
+TOP
+
+
+
+:::
+:::
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+關於創業育成中心
+
+新竹創業育成中心
+
+南臺灣創新園區
+
+南港IC設計育成中心
+
+
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+
+
+聯絡資訊
+請留下聯絡資訊，我們會有專人與您聯繫
+
+
+
+
+姓名：
+
+
+
+Email：
+
+
+
+電話：
+
+
+
+公司：
+
+
+想要瞭解哪一領域的可移轉技術?
+
+
+
+通訊與光電(資訊與通訊/電子與光電)
+
+機械與系統
+
+材料化工與奈米-材料與化工
+
+生醫與醫材
+
+綠能與環境
+
+材料化工與奈米-奈米科技
+
+
+留言：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於工研院
+
+工研院簡介
+
+董監事會
+
+經營團隊介紹
+
+工研院院士
+
+綠色低碳院區
+
+社會公益
+
+獲獎榮耀
+
+工研院院友會
+
+安衛品質環境能源政策
+
+
+
+創新應用
+
+簡介
+
+智慧生活
+
+健康樂活
+
+永續環境
+
+
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+新聞室
+
+新聞資料庫
+
+新聞連絡
+
+精彩影音
+
+
+
+單位介紹
+
+總覽
+
+南分院
+
+中分院
+
+生醫與醫材研究所
+
+綠能與環境研究所
+
+材料與化工研究所
+
+機械與機電系統研究所
+
+資訊與通訊研究所
+
+電子與光電系統研究所
+
+量測技術發展中心
+
+影像顯示科技中心
+
+服務系統科技中心
+
+產業經濟與趨勢研究中心
+
+巨量資訊科技中心
+
+智慧機械科技中心
+
+智慧微系統科技中心
+
+雷射與積層製造科技中心
+
+產業學院
+
+技術移轉與法律中心
+
+產業服務中心
+
+國際中心
+
+
+
+
+
+
+
+
+
+法律聲明智財聲明工研院圖書館服務專線 / 信箱採購資訊問答集本網站已通過A+等級無障礙網頁檢測
+
+版權所有© 2014工業技術研究院 ∣ 新竹縣竹東鎮中興路四段195號  (地圖) ∣ 總機：+886-3-582-0100 ∣ 客服專線：0800-45-8899 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	技術移轉 - 產業服務 - 工研院中文版
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        您的瀏覽器不支援JavaScript語法,但是並不影響您獲取本網站的內容。
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+工業技術研究院
+
+迴首頁網站導覽菁英招募出版品服務據點公告電子報專業連結FBYouTubei創科技EN
+
+
+
+
+
+
+
+
+
+
+關於工研院
+
+工研院簡介
+
+董監事會
+
+經營團隊介紹
+
+工研院院士
+
+綠色低碳院區
+
+社會公益
+
+獲獎榮耀
+
+工研院院友會
+
+安衛品質環境能源政策
+
+
+
+創新應用
+
+簡介
+
+智慧生活
+
+健康樂活
+
+永續環境
+
+
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+新聞室
+
+新聞資料庫
+
+新聞連絡
+
+精彩影音
+
+
+
+單位介紹
+
+總覽
+
+南分院
+
+中分院
+
+生醫與醫材研究所
+
+綠能與環境研究所
+
+材料與化工研究所
+
+機械與機電系統研究所
+
+資訊與通訊研究所
+
+電子與光電系統研究所
+
+量測技術發展中心
+
+影像顯示科技中心
+
+服務系統科技中心
+
+產業經濟與趨勢研究中心
+
+巨量資訊科技中心
+
+智慧機械科技中心
+
+智慧微系統科技中心
+
+雷射與積層製造科技中心
+
+產業學院
+
+技術移轉與法律中心
+
+產業服務中心
+
+國際中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+首頁
+產業服務
+
+
+技術移轉
+
+
+
+
+
+
+                    技術移轉
+
+
+字級：
+小字級
+中字級
+大字級
+
+若您無法使用字級縮放功能，請改用鍵盤"Ctrl"+"加號鍵"或"Ctrl"+"減號鍵"，來放大或縮小字級
+
+
+專利產業化  智財高值化
+工研院以「專利產業化」為核心，發展出產業化的專利應用模式，包括：
+
+將專利轉化為具有實質可行的產品製造技術後，再移轉給廠商或成立新創事業。
+依廠商指定需求，鑽研開發並申請相關專利。亦即接受廠商委託開發期望的專利組合，並直接將專利權歸屬廠商，以促使廠商及早擁有重要專利組合。
+
+經過實際運作，此二套模式已逐步顯現成果及價值，尤其對於已具商品化技術的專利組合，確實最受到廠商青睞。提升專利品質，除了加強研發，產出優質專利構想之外，更須強化專利提案、評審、申請等品質的把關。包括：提供專利地圖系統平臺、專利諮詢、輔導及訓練資源，並協助各研發計畫能在規畫階段便完成智財佈局分析，以導向規畫完善的提案申請之專利佈局。同時結合發明人、事務所及本院專利工程師等三方進行檢索與複核機制，以提高專利獲證率並維護專利權利範圍的前案檢索。再輔以美國專利說明書指引與推行專利品質提升計畫等作法，透過內部管理機制啟動，進行研發到專利申請過程的品質管控連結。
+連結專利與需求之策略佈局
+為促使研發成果符合產業需求，依據「智財戰略綱領」戰略重點，由工研院及國研院共同邀請產、官、學、研各界專家組成「重點專利佈局小組」。透過小組會議討論，找出國內產業專利佈局的機會點，進行專利佈局藍圖策略規劃。
+
+
+
+
+
+1.查詢技術
+                技術領域：
+                
+全部
+通訊與光電(資訊與通訊/電子與光電)
+機械與系統
+材料化工與奈米-材料與化工
+生醫與醫材
+綠能與環境
+材料化工與奈米-奈米科技
+
+
+                    單位：
+                
+全部
+量測中心
+資科中心
+南分院
+技轉法律中心
+電光所  
+資通所  
+機械所
+材化所
+綠能所
+生醫所
+中分院
+顯示中心  
+服科中心
+雲端中心
+巨資中心
+智慧機械
+微系統中心
+雷射中心
+
+
+
+
+
+2.關鍵詞搜尋
+                    任何查詢詞：
+
+
+
+
+
+
+
+
+
+通訊與光電(資訊與通訊/電子與光電)
+中文文字轉語音技術
+μP/DSP語音辨識技術
+嵌入式語音辨識技術
+
+更多
+
+
+
+機械與系統
+低應力薄膜製程技術
+矽晶深蝕刻製程技術
+厚膜光阻製程技術
+
+更多
+
+
+
+材料化工與奈米-材料與化工
+壓電陶瓷變壓器及轉換器
+彩色濾光板用彩色光阻
+積層晶片EMI濾波器製程技術
+
+更多
+
+
+
+生醫與醫材
+基因體重複序列分析及註解套件
+實驗室資訊管理系統-microarray
+藥材DNA鑑定技術及300種常用中藥材ITS鑑定序列資料庫
+
+更多
+
+
+
+綠能與環境
+鋰鈷圓筒型電池製程技術
+鋰鈷鎳方型電池技術
+微小型燃料電池技術
+
+更多
+
+
+
+材料化工與奈米-奈米科技
+小型化超音波系統
+循續漸近式類比數位轉換器(SAR ADC)技術
+寬頻可變增益放大器(VGA)技術
+
+更多
+
+
+
+
+
+
+
+
+
+友善列印
+
+
+若您無法使用字級縮放功能，請改用鍵盤"Ctrl"+"加號鍵"或"Ctrl"+"減號鍵"，來放大或縮小字級
+
+分享：
+Share to Twitter
+Share to Plurk
+Share to Facebook
+Share to Google Plus
+
+
+                                當SCRIPT關閉時,請點選以下連結.
+                                Facebook
+plurk
+twitter
+google plus
+
+
+
+
+
+TOP
+
+
+
+:::
+:::
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+關於創業育成中心
+
+新竹創業育成中心
+
+南臺灣創新園區
+
+南港IC設計育成中心
+
+
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+
+
+聯絡資訊
+請留下聯絡資訊，我們會有專人與您聯繫
+
+
+
+
+姓名：
+
+
+
+Email：
+
+
+
+電話：
+
+
+
+公司：
+
+
+想要瞭解哪一領域的可移轉技術?
+
+
+
+通訊與光電(資訊與通訊/電子與光電)
+
+機械與系統
+
+材料化工與奈米-材料與化工
+
+生醫與醫材
+
+綠能與環境
+
+材料化工與奈米-奈米科技
+
+
+留言：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+關於工研院
+
+工研院簡介
+
+董監事會
+
+經營團隊介紹
+
+工研院院士
+
+綠色低碳院區
+
+社會公益
+
+獲獎榮耀
+
+工研院院友會
+
+安衛品質環境能源政策
+
+
+
+創新應用
+
+簡介
+
+智慧生活
+
+健康樂活
+
+永續環境
+
+
+
+產業服務
+
+技術移轉
+
+檢測服務
+
+創業育成中心
+
+開放實驗室
+
+產業趨勢諮詢
+
+產業學習服務
+
+業界合作
+
+
+
+新聞室
+
+新聞資料庫
+
+新聞連絡
+
+精彩影音
+
+
+
+單位介紹
+
+總覽
+
+南分院
+
+中分院
+
+生醫與醫材研究所
+
+綠能與環境研究所
+
+材料與化工研究所
+
+機械與機電系統研究所
+
+資訊與通訊研究所
+
+電子與光電系統研究所
+
+量測技術發展中心
+
+影像顯示科技中心
+
+服務系統科技中心
+
+產業經濟與趨勢研究中心
+
+巨量資訊科技中心
+
+智慧機械科技中心
+
+智慧微系統科技中心
+
+雷射與積層製造科技中心
+
+產業學院
+
+技術移轉與法律中心
+
+產業服務中心
+
+國際中心
+
+
+
+
+
+
+
+
+
+法律聲明智財聲明工研院圖書館服務專線 / 信箱採購資訊問答集本網站已通過A+等級無障礙網頁檢測
+
+版權所有© 2014工業技術研究院 ∣ 新竹縣竹東鎮中興路四段195號  (地圖) ∣ 總機：+886-3-582-0100 ∣ 客服專線：0800-45-8899 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+天瓏網路書店-網際網路原理與應用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+天瓏網路書店
+全台最齊全
+中英文電腦書專賣店
+
+
+
+
+
+
+
+天瓏資訊圖書粉絲專頁
+
+
+
+
+搜尋
+
+
+資料科學
+簡體書
+Packt
+微服務
+工程師必讀經典
+英文書新到貨
+Python
+Tensorflow
+無瑕程式碼
+
+
+
+
+
+
+
+
+        網際網路原理與應用
+        
+
+
+        粘添壽
+        
+      
+
+
+
+
+ 
+
+
+出版商:
+全華
+
+
+出版日期:
+2007-01-11
+
+
+定價:
+$550
+
+
+售價:
+
+9.5 折
+          $523
+
+
+
+貴賓價:
+
+9.0 折
+            $495
+
+語言:
+繁體中文
+
+
+頁數:
+800
+
+
+ISBN:
+9572155679
+
+ISBN-13:
+9789572155677
+
+
+
+
+
+      立即出貨
+        (庫存 < 3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+買這商品的人也買了...
+
+
+
+
+
+
+
+ 
+$680
+              貴賓價: $578
+          
+Linux 認證專家 LPIC 應試教戰手冊
+
+
+
+
+
+ 
+$590
+              售價: $502
+          
+讓網路上的每個封包都無所遁形：精用 Wireshark
+
+
+
+
+
+ 
+$570
+              貴賓價: $542
+          
+網路規劃與管理實務, 3/e
+
+
+
+
+
+ 
+$320
+              貴賓價: $288
+          
+實用系統分析與設計 Systems Analysis and Design, 3/e
+
+
+
+
+
+ 
+              貴賓價: $274
+          
+樂高EV3機器人初級教程
+
+
+
+
+
+ 
+$450
+              貴賓價: $342
+          
+Web 2.0 駭客技術揭密
+
+
+
+
+
+ 
+$490
+              售價: $99
+          
+Google 御用網頁語言 Node.js：一流程式設計師養成精華
+
+
+
+
+
+ 
+$540
+              售價: $459
+          
+網路竟然這麼危險！阿裡巴巴首席安全專家交你全方位保護網站
+
+
+
+
+
+ 
+$400
+              貴賓價: $360
+          
+資訊安全實務─數位憑證技術與應用
+
+
+
+
+
+ 
+$380
+              售價: $300
+          
+Flash & ActionScript 3.0 絕對出色影音動畫與互動媒體設計
+
+
+
+
+
+ 
+$390
+              售價: $308
+          
+會做簡報就會製作跨平臺 App--Smart Apps Creator 超神開發術(附範例檔/試用版)
+
+
+
+
+
+ 
+              售價: $1,140
+          
+Maximum LEGO EV3: Building Robots with Java Brains (Paperback)
+
+
+
+
+
+ 
+$320
+              貴賓價: $256
+          
+Joe Nagata 的 LEGO MINDSTORMS NXT 步行機器人製作入門
+
+
+
+
+
+ 
+              售價: $1,050
+          
+Build and Program Your Own LEGO Mindstorms EV3 Robots Paperback
+
+
+
+
+
+ 
+              貴賓價: $792
+          
+The LEGO MINDSTORMS EV3 Idea Book: 181 Simple Machines and Clever Contraptions (Paperback)
+
+
+
+
+
+ 
+$480
+              售價: $408
+          
+EV3 實作大進擊
+
+
+
+
+
+ 
+$480
+              貴賓價: $384
+          
+機器人程式超簡單－LEGO MINDSTORMS EV3 動手作
+
+
+
+
+
+ 
+$550
+              售價: $435
+          
+樂高機器人 MINDSTORMS EV3 創作坊 (The LEGO MINDSTORMS EV3 Laboratory: Build, Program, and Experiment with Five Wicked Cool Robots!)
+
+
+
+
+
+ 
+$560
+              售價: $437
+          
+深入淺出 Node.js
+
+
+
+
+
+ 
+$680
+              貴賓價: $578
+          
+跟 Adobe 徹底研究 Premiere Pro CS6 (Adobe Premiere Pro CS6 Classroom in a Book)
+
+
+
+
+產品描述
+
+本書特色
+
+1 . 本書由區域網路、都會網路、廣域網路乃至國際性網路，介紹各種連結技術及相關通訊協定，貫穿整個網際網路架構與應用系統的運作原理。2 . 本書包含 
+  Ethernet、Fast Ethernet、Gigabit Ethernet、Frame Relay、ATM、HFC 與 ADSL 
+  等基礎網路架設。3 . 本書涵蓋 TCP/IP 網路的運作原理，包含 
+  TCP、IP、ICMP、IPv6、IGMP、RIP、OSPF、IGP、EIGP、BGP、CDIR 與 SNMP 等通訊協定。4 . 本書詳盡介紹撰寫 
+  Socket 和 RPC 網路程式介面，奠定網路應用系統的基本觀念。5 . 本書詳述網路應用系統的運作原理，並以 Linux 
+  為範例，介紹各種伺服器的安裝與管理，包含 DNS、FTP、Telnet、Web、SMTP 等；以及 Microsoft AD 
+  網路原理與設定。
+ 
+本書內容
+
+本書網際網路的架構、通訊協定、程式介面、乃至應用系統等四個構面，完整地介紹各種連結技術及相關通訊協定，貫穿整個網際網路架構與應用系統的運作原理。作者以Linux 
+  與 Windows 
+  系統為範例，實際演練網路基本設定、應用程式開發、系統管理、以及網路架設，達成原理與實務的結合。本書備有教學投影片和補充教材於教學網站，適合大學教授教學使用，以提高教學效益；或從事網路工作者自修參考，無論在研習網路技術或準備考試都有相當的助益。 
+  
+<目錄>
+第一篇 
+  網際網路架構                                
+  第 1 章  網際網路概論第 2 章  區域網路架構第 3 章  網路連結架構第 4 
+  章  都會與廣域網路架構第二篇 
+  網際網路協定                          
+  第 5 章  網際層協定第 6 章  路徑選擇協定第 7 章  傳輸層協定第 8 
+  章  簡易網路管理協定第三篇 
+  網際網路服務與程式介面               
+  第 9 章  網路組態設定與服務 – Linux第 10 章  低階應用程式介面 – Socket第 11 
+  章  高階應用程式介面 – RPC第四篇 
+  網際網路應用系統                    
+  第 12 章  網際網路應用系統簡介第 13 章  網路終端機系統 – Telnet第 14 章  
+  檔案傳輸系統 – Vsftpd第 15 章  網域名稱系統 – Bind第 16 章  電子郵件系統 – 
+  Sendmail第 17 章  全球資訊網系統 – Apache第 18 章  Microsoft 
+  網路原理與設定附錄 A 網路監視器安裝與使用附錄 B SMNP 擷取工具安裝附錄 C 中英文名詞對照索引附錄 D 
+  命令及設定檔案索引 
+
+
+
+
+
+
+
+
+中文書籍分類
+
+最新新書
+2016 年度暢銷排行
+暢銷排行 (2017/06)
+暢銷排行 (2017/05)
+暢銷排行 (2017/04)
+
+
+
+活動主題列表
+
+資料科學
+CRC好書上架
+簡體中文書最新到貨
+PACKT 最新到貨
+Effective 系列書
+微服務系列書
+Ruddy老師的敏捷教室
+程式設計必讀經典系列
+Springer好書上架
+英文書最新到貨
+資料視覺化系列書
+Python 系列書籍
+深度學習系列書籍
+無瑕的程式碼 超值合購
+Maker小天地
+
+
+
+特價書籍
+
+Bootstrap系列76折起
+松崗暢銷書展5折起
+
+
+
+
+
+
+
+
+
+網際網路應用(求助) | Yahoo奇摩知識+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+   ⌂首頁信箱新聞股市名人娛樂氣象運動App下載購物中心商城拍賣更多⋁知識+汽車機車電影字典遊戲旅遊理財房地產時尚美妝折扣城   Yahoo 奇摩知識+                        👤 登入    ✉ 信箱     ⚙ 服務說明    帳號資料 服務說明 意見回報        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yahoo奇摩知識+ 首頁
+
+
+
+
+
+
+
+
+
+
+
+所有分類
+ 
+健康
+ 
+商業與財經
+ 
+娛樂與音樂
+ 
+家居與園藝
+ 
+家庭與人際關係
+ 
+寵物
+ 
+懷孕與育兒
+ 
+政治與政府
+ 
+教育與參考
+ 
+新聞與活動
+ 
+旅遊
+ 
+汽車與交通
+ 
+消費電子產品
+ 
+環境
+ 
+社會科學
+ 
+社會與文化
+ 
+科學
+ 
+美容與造型
+ 
+藝術與人文
+ 
+遊戲與休閒活動
+ 
+運動
+ 
+電腦與網際網路
+ 
+食品與飲料
+ 
+餐廳與小吃
+ 
+
+
+
+
+
+世界Yahoo 
+
+
+
+
+
+
+
+
+阿根廷
+
+
+
+
+
+澳洲
+
+
+
+
+
+巴西
+
+
+
+
+
+加拿大
+
+
+
+
+
+法國
+
+
+
+
+
+德國
+
+
+
+
+
+印度
+
+
+
+
+
+印尼
+
+
+
+
+
+義大利
+
+
+
+
+
+馬來西亞
+
+
+
+
+
+墨西哥
+
+
+
+
+
+
+
+紐西蘭
+
+
+
+
+
+菲律賓
+
+
+
+
+
+魁北克
+
+
+
+
+
+新加坡
+
+
+
+
+
+香港
+
+
+
+
+
+西班牙
+
+
+
+
+
+泰國
+
+
+
+
+
+英國與愛爾蘭
+
+
+
+
+
+美國
+
+
+
+
+
+越南
+
+
+
+
+
+西班牙文
+
+
+
+
+
+
+
+關於
+
+
+
+
+
+關於 Yahoo奇摩知識+
+社群指南
+排行榜
+點數與等級
+部落格
+如何安全地使用 Yahoo奇摩
+
+ 
+
+
+
+
+
+
+
+
+ 電腦與網際網路
+
+ 網際網路
+
+ 其他：網際網路
+
+
+ 看另一則問題 
+
+
+
+
+
+
+
+
+
+
+            網際網路應用(求助)
+        
+
+
+1.網路利用通訊設備與通訊媒體，連接多台電腦。兩個基本功能?
+
+2.依照通訊網路的架設與規模，可將網路區分為哪三種型態?
+（中英皆要）
+
+3.常見的三種網路連結型態為?
+
+4.常見的三種網路資料交換技術為?
+
+5.在命令模式下輸入何指令，可以偵測自己正在使用的個人電腦通訊協定與網路卡是否正常運作？
+
+6.兩種常見的區域網路架構？
+
+７何謂網路拓墣？（簡要就好）
+８請說明數據機(MODEM)之功能為何?
+９在網路上負責IP位址與網域名稱之轉換的電腦為何？(中英名稱)
+10 何謂主從式網路?何謂對等式網路?其優缺點分別為?(簡單說明)
+
+以上10題 希望對網應有概念的大大 能提供一下解答
+ 顯示更多 
+ 1.網路利用通訊設備與通訊媒體，連接多台電腦。兩個基本功能? 
+
+2.依照通訊網路的架設與規模，可將網路區分為哪三種型態? 
+（中英皆要） 
+
+3.常見的三種網路連結型態為? 
+
+4.常見的三種網路資料交換技術為? 
+
+5.在命令模式下輸入何指令，可以偵測自己正在使用的個人電腦通訊協定與網路卡是否正常運作？ 
+
+6.兩種常見的區域網路架構？ 
+
+７何謂網路拓墣？（簡要就好） 
+８請說明數據機(MODEM)之功能為何? 
+９在網路上負責IP位址與網域名稱之轉換的電腦為何？(中英名稱) 
+10 何謂主從式網路?何謂對等式網路?其優缺點分別為?(簡單說明) 
+
+以上10題 希望對網應有概念的大大 能提供一下解答
+
+
+
+
+
+ 
+1 個人正在追蹤 
+
+
+ 
+ 1 個解答 
+1
+
+
+檢舉不當使用
+
+
+
+
+
+
+
+
+
+您確定要刪除此解答嗎？
+是
+否
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+抱歉，似乎發生一些問題。
+
+
+
+Trending Now
+
+
+
+
+
+ 
+
+解答
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最佳解答: 
+             1.資料的傳遞，訊息的傳達 
+2.區域網路(LAN)，都會網路(MAN)，廣域網路(WAN) 
+3.星狀、環狀、匯流排拓墣 
+4.非同步對稱(ATM)、分封交換、纜線數據機(Cable) 
+5.ipconfig -all 
+6.client/server和pear-to-pear 
+7.簡單的說一個區域內的電腦欲採用來上網的佈線方式 
+8.將資料做調變以及解調後來進行傳輸的機器。 
+9.DNS 網域名稱伺服器或網域名稱服務 
+10.對等式→每台電腦均能提供強大的服務，缺點資料凌亂不易管理。 
+主從式→資料可以集中在一臺電腦上方便管理維護，缺點由於主機需長時間啟動，故設備需比一般電腦要求高。 
+(P.S以上官方說法，現在server有的都用linux，員工個人電腦要求用到雙核心) 
+
+
+
+
+ 參考資料： 
+ 
+
+
+演算法的迷思
+ · 10 年前 
+
+
+
+
+
+0
+真讚
+
+
+
+0
+真遜
+
+
+
+
+
+檢舉不當使用
+
+
+意見
+
+
+
+
+
+ 
+
+
+
+
+新增意見
+
+
+
+
+
+
+
+
+
+
+
+送出
+
+
+
+
+
+
+
+
+
+
+
+
+ · 剛才不久
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  發問者的評分
+                
+
+
+
+
+
+
+
+ 
+
+檢舉不當使用
+
+ 我認為此問題違反社群指南 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此問題違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此解答違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此解答違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+
+檢舉不當使用
+
+ 我認為此意見違反社群規範 
+聊天或爭嚷、成人內容、垃圾信、侮辱其他成員、顯示更多
+我認為此意見違反服務條款
+對未成年兒童有害、帶有暴力或脅迫意味、騷擾或侵犯隱私權、假冒或不實陳述、欺詐或網路釣魚、 顯示更多
+
+其他詳細資料
+
+若您認為自己的智慧財產權受到侵害，並想提出申訴，請參閱我們的版權/智慧財產權政策
+
+檢舉不當使用
+
+
+取消
+
+
+
+ 
+
+你可能對以下搜尋感興趣：
+
+
+解決你的網頁設計問題
+
+揉捏按壓在家輕鬆舒緩疲勞
+
+最火熱線上遊戲
+
+暑假趴趴走輕鬆訂房出遊去
+
+
+
+
+
+
+
+
+
+
+
+
+發問問題
+通常可在幾分鐘內獲得解答！
+
+
+
+
+
+
+
+展開»
+
+
+
+
+
+
+詳細資料
+
+
+
+詳細資料
+
+
+
+
+
+
+現有問題
+
+
+
+
+更多
+
+
+
+
+
+請多詳述您的問題
+上傳處理中
+
+
+
+
+上傳失敗。 請上傳大於 100x100 像素的檔案
+目前發生問題，請再試一次。
+您只能上傳 PNG、JPG 或 JPEG 等類型的檔案。
+您只能上傳 3GP、3GPP、MP4、MOV、AVI、MPG、MPEG 或 RM 等類型的檔案。
+您只能上傳不超過 5 MB 的相片。
+您只能上傳不超過 600 MB 的影片。
+您只能上傳相片 (png, jpg, jpeg) 或影片 (3gp, 3gpp, mp4, mov, avi, mpg, mpeg, rm)。
+您只能上傳相片或影片。
+影片不應超過 <b>600mb/5 分鐘</b>
+相片不應超過 <b>5mb</b>
+影片不應超過 <b>600mb/5 分鐘</b>相片不應超過 <b>5mb</b>
+  
+
+
+
+
+
+
+
+解答問題
+
+
+不需付錢也可看的視訊聊天室-網路正妹?
+
+
+
+ 
+
+視訊聊天室聯盟視訊聊天室聯盟免費看-情趣用品推薦?
+
+
+
+ 
+
+免費加入的視訊聊天室有嗎-辣妹視訊?
+
+
+
+ 
+
+視訊聊天室聯盟超正巨乳學生妹哪裡看-按摩棒推薦?
+
+
+
+ 
+
+
+發燒問題
+
+
+
+
+景美有什麼迷你倉儲不錯的?萬隆景美附近的都可以喔~?
+
+                  5 個解答
+              
+
+ 
+
+PTT上最熱門討論的減肥產品是哪款阿?
+
+                  5 個解答
+              
+
+ 
+
+網路上可以買到壯陽產品嗎 到藥局買好丟臉?
+
+                  5 個解答
+              
+
+ 
+更多問題
+
+
+
+
+
+想要買台灣製的壯陽產品，有推薦的嗎?
+
+             5 個解答
+         
+
+ 
+
+PTT上鄉民狂推薦的壯陽方法是什麼?
+
+             5 個解答
+         
+
+ 
+
+情色視訊超正巨乳學生妹情色視訊哪裡看-寫真集?
+
+             4 個解答
+         
+
+ 
+
+  
+
+
+
+
+
+
+
+
+服務條款
+
+
+隱私權
+
+
+RSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網路技術 - MBA智庫百科
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+網路技術
+
+出自 MBA智庫百科(http://wiki.mbalib.com/)
+
+
+網格技術(Grid Technology)
+
+目錄
+
+1 什麼是網路技術
+2 網路技術的發展歷程[1]
+3 網路的關鍵技術[1]
+4 網路技術的研究現狀[1]
+5 網路技術的應用領域[1]
+6 網路技術與經濟發展[2]
+7 參考文獻
+
+
+[編輯]什麼是網路技術
+　　網路技術是指採取一定的通信協議,將分佈在不同地點上的多個獨立電腦系統,通過互聯通道(即通信線路)連接在一起,從而實現數據和服務共用的電腦技術,是現代電腦技術與通信技術相結合的產物。
+　　網路技術是從1990年代中期發展起來的新技術，它把互聯網上分散的資源融為有機整體，實現資源的全面共用和有機協作，使人們能夠透明地使用資源的整體能力並按需獲取信息。資源包括高性能電腦、存儲資源、數據資源、信息資源、知識資源、專家資源、大型資料庫、網路、感測器等。
+　　當前的互聯網只限於信息共用，網路則被認為是互聯網發展的第三階段。網路可以構造地區性的網路、企事業內部網路、區域網網路，甚至家庭網路和個人網路。網路的根本特征並不一定是它的規模，而是資源共用，消除資源孤島。
+　　網路技術具有很大的應用潛力，能同時調動數百萬台電腦完成某一個計算任務，能彙集數千科學家之力共同完成同一項科學試驗，還可以讓分佈在各地的人們在虛擬環境中實現面對面交流。
+
+[編輯]網路技術的發展歷程[1]
+　　網路研究起源於過去十年美國政府資助的高性能計算科研項目。這項研究的目標是將跨地域的多台高性能電腦、大型資料庫、大型的科研設備、通信設備、可視化設備和各種感測器等整合成一個巨大的超級電腦系統，以支持科學計算和科學研究。
+　　微軟公司把開發力量集中在數據網路上，關註使用網路共用信息，而不是網路的計算能力，這反映了學術和研究領域內的分歧。事實上，很多用於學術領域的網路技術都能夠成為商業應用。
+　　Globus是美國阿貢（Argonne）國家實驗室的網路技術研發項目，全美12所大學和研究機構參與了該項目。Globus對資源管理、安全、信息服務及數據管理等網路計算的關鍵理論進行研究，開發能在各種平臺上運行的網路計算工具軟體，幫助規劃和組建大型的網路試驗平臺，開發適合大型網路系統運行的大型應用程式。目前，Globus技術已在美國航天局網路、歐洲數據網路、美國國家技術網路等 8個項目中得到應用。2005年8月，美國國際商用機器公司（IBM）宣佈投入數十億美元研髮網絡計算，與Globus合作開發開放的網路計算標準，並宣稱網路的價值不僅僅限於科學計算，商業應用也有很好的前景。網路計算和Globus從開始幕後走到前臺，受到前所未有的關註。
+　　中國非常重視發展網路技術，由863計劃“高性能電腦及其核心軟體”重大專項支持建設的中國國家網路項目在高性能電腦、網路軟體、網路環境和應用等方面取得了創新性成果。具有18萬億次聚合計算能力、支持網路研究和網路應用的網路試驗床——中國國家網路，已於2005年12月21日正式開通運行。這意味著通過網路技術，中國已能有效整合全國範圍內大型電腦的計算資源，形成一個強大的計算平臺，幫助科研單位和科技工作者等實現計算資源共用、數據共用和協同合作。
+
+[編輯]網路的關鍵技術[1]
+　　網路的關鍵技術有網路結點、寬頻網路系統、資源管理和任務調度工具、應用層的可視化工具。網路結點是網路計算資源的提供者，包括高端伺服器、集群系統、MPP系統大型存儲設備、資料庫等。寬頻網路系統是在網路計算環境中，提供高性能通信的必要手段。資源管理和任務調度工具用來解決資源的描述、組織和管理等關鍵問題。任務調度工具根據當前系統的負載情況，對系統內的任務進行動態調度，提高系統的運行效率。網路計算主要是科學計算，它往往伴隨著海量數據。如果把計算結果轉換成直觀的圖形信息，就能幫助研究人員擺脫理解數據的困難。這需要開發能在網路計算中傳輸和讀取，並提供友好用戶界面的可視化工具。
+
+[編輯]網路技術的研究現狀[1]
+　　網路計算通常著眼於大型應用項目，按照Globus技術，大型應用項目應由許多組織協同完成，它們形成一個“虛擬組織”，各組織擁有的計算資源在虛擬組織里共用，協同完成項目。對於共用而言，有價值的不是設備本身而是實體的介面或界面。
+　　從技術角度看，共用是資源或實體間的互操作。Globus技術設定，網路環境下的互操作意味著需要開發一套通用協議，用於描述消息的格式和消息交換的規則。在協議之上則需要開發一系列服務，這與建立在TCP/IP（傳輸控制協議/網際協議）上的萬維網服務原理相同。在服務中先定義應用編程介面，基於這些介面再構建軟體開發工具。
+　　Globus網路計算協議建立在網際協議之上，以網際協議中的通信、路由、名字解析等功能為基礎。Globus協議分為構造層、連接層、資源層、彙集層和應用層五層。每層都有各自的服務、應用編程介面和軟體開發工具、上層協議調用下層協議的服務。網路內的全局應用都需通過協議提供的服務調用操作系統。
+　　構造層功能是向上提供網路中可供共用的資源，是物理或邏輯實體。常用的共用資源包括處理能力、存儲系統、目錄、網路資源、分散式文件系統、分散式計算機池、電腦集群等。連接層是網路中網路事務處理通信與授權控制的核心協議。構造層提交的各資源間的數據交換都在這一層控制下實現的。各資源間的授權驗證、安全控制也在此實現。資源層的作用是對單個資源實施控制，與可用資源進行安全握手、對資源做初始化、監測資源運行狀況、統計與付費有關的資源使用數據。彙集層的作用是將資源層提交的受控資源彙集在一起，供虛擬組織的應用程式共用、調用。為了對來自應用的共用進行管理和控制，彙集層提供目錄服務、資源分配、日程安排、資源代理、資源監測診斷、網路啟動、負荷控制、賬戶管理等多種功能。應用層是網路上用戶的應用程式，它先通過各層的應用編程介面調用相應的服務，再通過服務調用網路上的資源來完成任務。應用程式的開發涉及大量庫函數。為便於網路應用程式的開發，需要構建支持網路計算的庫函數。
+　　目前，Globus體繫結構已為一些大型網路所採用。研究人員已經在天氣預報、高能物理實驗、航空器研究等領域開發了一些基於Globus網路計算的應用程式。雖然這些應用仍屬試驗性質，但它證明瞭網路計算可以完成不少超級電腦難以勝任的大型應用任務。可以預見，網路技術將很快掀起下一波互聯網浪潮。面對即將到來的第三代互聯網應用，很多發達國家都投入了大量研究資金，希望能抓住機遇，掌握未來的命運。
+　　中國也加強了網路方面的投入。中科院計算所為自己的網路起名為“織女星網路”（Vega Grid），目標是具有大規模數據處理、高性能計算、資源共用和提高資源利用率的能力。與國內外其他網路研究項目相比，織女星網路的最大特點是“服務網路 ”。中國許多行業，如能源、交通、氣象、水利、農林、教育、環保等對高性能計算網路即信息網路的需求非常巨大。預計在最近兩三年內，就能看到更多的網路技術應用實例。
+
+[編輯]網路技術的應用領域[1]
+　　網路技術的應用領域很廣，主要有以下幾方面。
+　　分散式超級計算 分散式超級計算將分佈在不同地點的超級電腦用高速網路連接起來，並用網路中間件軟體“粘合”起來，形成比單台超級電腦強大得多的計算平臺。
+　　分散式儀器系統 分散式儀器系統使用網路管理分佈在各地的貴重儀器系統，提供遠程訪問儀器設備的手段，提高儀器的利用率，方便用戶的使用。
+　　數據密集型計算並行計算技術往往是由一些計算密集型應用推動的，特別是一些帶有巨大挑戰性質的應用，大大促進了對高性能並行體繫結構、編程環境、大規模可視化等領域的研究。數據密集型計算的應用比計算密集型的應用多得多，它對應的數據網路更側重於數據的存儲、傳輸和處理，計算網路則更側重於計算能力的提高。在這個領域獨占鰲頭的項目是歐洲核子中心開展的數據網路（DataGrid）項目，其目標是處理2005年建成的大型強子對撞機源源不斷產生的PB/s量級實驗數據。
+　　遠程沉浸這是一種特殊的網路化虛擬現實環境。它是對現實或歷史的逼真反映，對高性能計算結果或資料庫可視化。“沉浸”是指人可以完全融入其中：各地的參與者通過網路聚集在同一個虛擬空間里，既可以隨意漫游，又可以相互溝通，還可以與虛擬環境交互，使之發生改變。目前，已經開發出幾十個遠程沉浸應用，包括虛擬歷史博物館、協同學習環境等。遠程沉浸可以廣泛應用於互動式科學可視化、教育、訓練、藝術、娛樂、工業設計、信息可視化等許多領域。
+　　信息集成網路最初是以集成異構計算平臺的身份出現，接著進入分散式海量數據處理領域。信息網路通過統一的信息交換架構和大量的中間件，向用戶提供“信息隨手可得” 式的服務。網路信息集成將更多應用在商業上，分佈在世界各地的應用程式和各種信息通過網路能進行無縫融合和溝通，從而形成嶄新的商業機會。
+　　信息集成如信息網路、服務網路、知識網路等，是近幾年網路流行起來的應用方向。2002 年，Globus聯盟和IBM在全球網路論壇上發佈了開放性網路服務架構及其詳細規範，把Globus標準與支持商用的萬維網服務標準結合起來。2004 年，Globus聯盟、IBM和惠普（HP）等又聯合發佈了新的網路標準草案，把開放性網路服務架構詳細規範I轉換成6個用於擴展萬維網服務的規範，網路服務已與萬維網服務徹底融為一體，標志著網路商用化時代的來臨。
+　　網路技術的發展，標準是關鍵。就像TCP/IP協議是網際網路的核心一樣，構建網路計算也需要對核心——標準協議和服務進行定義。目前，一些標準化團體正在積極行動。迄今為止，網路計算雖還沒有正式的標準，但在核心技術上，相關機構與企業已達成一致，由美國阿貢國家實驗室與南加州大學信息科學學院合作開發的Globus 計算工具軟體已成為網路計算實際的標準，已有12家著名電腦和軟體廠商宣佈將採用Globus 計算工具軟體。作為一種開放架構和開放標準基礎設施，Globus 計算工具軟體提供了構建網路應用所需的很多基本服務，如安全、資源發現、資源管理、數據訪問等。目前所有重大的網路項目都是基於Globus 計算工具軟體提供的協議與服務的。
+　　除了標準以外，安全和可管理性、人才的缺乏也是網路計算亟待解決的一個問題，否則它將無法成為企業的商業架構。在真正實現商業應用之前，還需要解決許多問題。即便如此，構建全球網路的前景仍是無法抗拒的。 
+
+[編輯]網路技術與經濟發展[2]
+　　迅猛發展的網路技術造就網路經濟時代。網路經濟的實質是利用網路技術促進經濟和教育社會的發展。這也是科學技術是第一生產力的又一個註解。網路技術一方面能推動現有制度的變革；另一方面，也能實現制度的創新。網路技術對經濟活動基本功能主要是：
+　　一是網上交易可以大幅度地降低經濟活動成本。從三個方面實現：一方面它可以降低企業間的交易成本。與傳統的交易方式相比，網上交易的成本至少比原來減少 50％。第二方面是減少企業的信息成本。網路上的信息具有互動性、公開、免費的特點，企業利用這一特點可以自由地發佈自己的相關信息，並搜集自己所需要信息。這就可以大幅度地減少企業用於信息發佈和搜集、處理等方面的費用，減少企業在信息處理方面的重覆投資。第三方面是可以降低企業內部的經營成本，減少企業內部的決策環節，節約甚至於省略企業用於採購和推銷的費用。
+　　 二是網上交易具有價格發現的功能。不僅僅因為網上交易供需雙方的信息是充分的，還因為網路技術可把多家供方和需方同時集合在一起，形成集合競價的局面，從而發現一個市場能夠接受的價格。
+　　 三是網上交易具有風險規避功能。網路的虛擬性質使其不僅具有現實交易的功能，還具有預約交易的功能，並能把實物交易和合同交易結合起來，把交易和投資結合起來。網路經濟的興起已經對現代企業的研發、生產、經營和管理的各個環節產生了重大的影響。
+　　進入網路時代，人們正由穩定的商品供應壟斷者主宰的經濟轉變為臨時的商品供應壟斷者主宰的經濟，大批量製造和大批量銷售正在讓位於大批量定製。因此，網路經濟時代市場競爭的焦點不再集中於誰的科技更優良，誰的規模更強大，誰的資本最雄厚，而是要看誰最先發現最終消費者，並能最先滿足最終消費者的需求。誰最先順利地為消費者提供了其所需的商品或服務，誰就是成功者。這裡並不是說企業可以忽視發展科技，而是要把技術研發滿足消費者的需求才是目的。
+　　以網路化為基礎的電子商務將極大地改變傳統的企業經營方式，擺脫常規的交易模式和市場局限。這不僅要求交易雙方和服務部門的商業信用和支付的銀行信用高度成熟，而且要求保險機構、金融機構、供應商和客戶在電子網路交易系統中的高度整合與兼容，使網上市場成為交易參與者密切關聯和利益攸關的集合體，從而改變了傳統企業的經營方式和參與者之間的關係。
+　　信息技術與信息系統將會使企業內部機制和管理進一步電子化、信息化，促進企業經營管理技術的變革。基於信息和網路技術的一系列企業內部管理方法和手段不斷開發出來，使企業的內部機制和管理更為高效、協調和及時。通過網際網路實現企業內部的信息溝通，形成內部的高度整合是企業信息化的第一步。第二步是上網尋找客戶、擴大新的銷售渠道，形成新的管理職能。第三步是對價值鏈或供應鏈進行全面整合，實現電子化管理的高效運作，使企業內部機制和管理髮生實質性變化。最後是通過網上銷售擴大相關的服務範圍，使企業的經營管理進一步完善。
+　　 網路經濟使企業經營管理的手段得以創新，從而使管理具有更高的效率。運用信息化、網路化手段能夠提高企業的組織效率，使減少管理層次和管理職能部門成為企業改革與調整組織結構的新時尚。
+　　隨著信息技術的飛速發展，網路經濟還會繼續展示其巨大的變革力量。這也意味著企業運行方式和管理方式有著無限的創新空間。發展網路經濟已不單純是一個電子信息技術的運用或是商務模式的選擇問題，而是適應和順應國際潮流，在融入全球經濟發展中不斷增強競爭力的戰略性選擇
+
+[編輯]參考文獻
+
+↑ 1.0 1.1 1.2 1.3 南豐公益書院.網格技術深度概念
+↑ 徐水.網路技術與經濟發展《集團經濟研究》
+
+
+
+取自"http://wiki.mbalib.com/zh-tw/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF"
+
+本條目對我有幫助16  分享到：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   如果您認為本條目還有待完善，需要補充新內容或修改錯誤內容，請編輯條目。
+
+本條目相關文檔
+ 現代網路技術 386頁 網路技術發展趨勢 58頁 網路技術發展趨勢 1頁 有線電視網路技術 14頁 寬頻網路技術 54頁 網路技術基礎 54頁 FDDI網路技術概述 3頁 網路技術基礎講座 65頁 4G網路技術概述 34頁 6 網路技術 46頁更多相關文檔
+
+本條目相關資訊
+為何“合資”成外國科技公司搶灘中國最優選擇？ 2015年12月18日電信運營商能否在網路安全領域掘到金？ 2015年9月29日“濕”營銷 親愛的粉絲 你好！ 2009年9月7日
+本條目由以下用戶參與貢獻
+Cabbage,Dan,Zfj3000,Smileandblue,鱸魚,Yixi,泡芙小姐,連曉霧,HEHE林,方小莉,Mis銘,Lin,劉維燎,蘇青荇. 頁面分類: 互聯網 
+
+
+
+
+
+評論(共0條)提示:評論內容為網友針對條目"網路技術"展開的討論，與本站觀點立場無關。
+發表評論﻿請文明上網，理性發言並遵守有關規定。
+
+
+
+
+ 
+
+
+
+
+導航
+
+
+首頁
+文檔
+百科
+商學院
+資訊
+培訓
+幫幫
+
+
+
+
+個人工具
+
+
+用戶登錄創建新帳號 
+
+
+
+
+
+
+
+
+
+搜索
+
+
+
+ 
+ 
+
+全球最大的中文經管百科，由121,994位網友共同編寫而成，共計414,168個條目
+
+
+
+
+
+
+
+
+ 
+首頁
+ 
+管理
+ 
+營銷
+ 
+經濟
+ 
+金融
+ 
+人力資源
+ 
+咨詢
+ 
+財務
+ 
+品牌
+ 
+證券
+ 
+物流
+ 
+貿易
+ 
+商學院
+ 
+法律
+ 
+人物
+ 
+分類索引
+ 
+
+
+
+
+查看
+
+條目討論編輯簡體中文繁體中文 
+
+
+工具▼
+
+
+鏈入頁面
+鏈出更改
+上載文件 特殊頁面 可列印版
+永久鏈接 
+
+
+
+
+
+
+
+
+
+
+
+
+
+導航
+
+
+最新資訊
+最新評論
+最新推薦
+熱門推薦
+編輯實驗
+使用幫助
+創建條目
+隨便看看
+
+
+
+
+
+
+
+
+
+
+
+
+本周推薦
+最多推薦
+
+
+
+影響世界的100個經典管理定律垃圾人定律產品定位五步法MECE分析法吳曉波DISC個性測驗感性型人格巴納姆效應PPP模式管理百科 
+
+蘑菇管理定律猴子管理法則情緒ABC理論100個最流行的管理辭彙21天效應破窗效應懶螞蟻效應SWOT分析模型墨菲定律踢貓效應 
+
+以上內容根據網友推薦自動排序生成
+
+
+
+
+
+
+
+
+
+x
+
+
+
+	   最後更改10:49, 2016年10月26日.	  
+智庫首頁 - 
+百科首頁 - 
+關於百科 -
+	   客戶端 -
+	   人才招聘 -
+	   廣告合作 - 
+權利通知 -
+	   聯繫我們 -
+	   免責聲明
+ - 友情鏈接
+
+©2006-2017 MBAlib.com, All rights reserved. 
+
+
+ 
+
+
+

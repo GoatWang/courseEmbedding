@@ -1,0 +1,3078 @@
+
+
+
+編譯器 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+編譯器
+
+維基百科，自由的百科全書
+(已重新導向自 編譯)
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+
+
+
+編譯器（Compiler），是一種電腦程式，它會將用某種程式語言寫成的原始碼（原始語言），轉換成另一種程式語言（目標語言）。
+它主要的目的是將便於人編寫，閱讀，維護的高階電腦語言所寫作的原始碼程式，翻譯為電腦能解讀、執行的低階機器語言的程式，也就是執行檔。編譯器將原始程式（Source program）作為輸入，翻譯產生使用目標語言（Target language）的等價程式。原始碼一般為高階語言（High-level language），如Pascal、C、C++、C# 、Java等，而目標語言則是組合語言或目標機器的目的碼（Object code），有時也稱作機器碼（Machine code）。 一個現代編譯器的主要工作流程如下： 原始碼（source code）→ 預處理器（preprocessor）→ 編譯器（compiler）→ 組譯程式（assembler）→ 目的碼（object code）→ 連結器（Linker）→ 執行檔（executables）， 最後打包好的檔案就可以給電腦去判讀執行了。
+
+
+
+目錄
+
+
+1 歷史
+
+1.1 教學用的編譯器
+
+
+2 編譯器輸出
+3 參考文獻
+4 參見
+
+
+
+歷史[編輯]
+早期的電腦軟體都是用組合語言直接編寫的，這種狀況持續了數年。當人們發現為不同類型的CPU編寫可重用軟體的開銷要明顯高於編寫編譯器時，人們發明瞭高階程式語言。由於早期的電腦的記憶體很少，當大家實現編譯器時，遇到了許多技術難題。
+大約在20世紀50年代末期，與機器無關的程式語言被首次提出。隨後，人們開發了幾種實驗性質的編譯器。第一個編譯器是由美國女性電腦科學家葛麗絲·霍普（Grace Murray Hopper）於1952年為A-0系統編寫的。但是1957年由任職於IBM的美國電腦科學家約翰·巴科斯（John Warner Backus）領導的FORTRAN則是第一個被實作出具備完整功能的編譯器。1960年，COBOL成為一種較早的能在多種架構下被編譯的語言。
+高階語言在許多領域流行起來。由於新的程式語言支援的功能越來越多，電腦的架構越來越複雜，這使得編譯器也越來越複雜。
+早期的編譯器是用組合語言編寫的。首個能編譯自己源程式的編譯器是在1962年由麻省理工學院的Hart和Levin製作的。從20世紀70年代起，實現能編譯自己源程式的編譯器變得越來越可行，不過還是用Pascal和C語言來實現編譯器更加流行。製作某種語言的第一個能編譯器，要麼需要用其它語言來編寫，要麼就像Hart和Levin製作Lisp編譯器那樣，用直譯器來執行編譯器。
+教學用的編譯器[編輯]
+編譯器的構造與最佳化是電腦專業的大學課程，[1]課程名稱一般為「編譯原理」或「編譯器」。通常在課程中包含瞭如何實現一種教學用程式語言的編譯器。一個著名的例子是20世紀70年代，瑞士計算機科學家尼克勞斯·維爾特（Niklaus Emil Wirth）用於講解編譯器的構造時使用的PL/0（英語：PL/0）編譯器。儘管它很簡單，PL/0編譯器介紹了這個領域的幾個有影響的概念：
+
+逐步求精的程式開發（也是 1971年 Wirth 的論文的標題）[2]
+使用遞迴下降解析器
+使用EBNF指定語言的語法。
+代碼生成器產生便攜P-code
+在自舉問題的正式描述中使用T-diagram。
+
+編譯器輸出[編輯]
+編譯器的一種分類方式是按照生成代碼所執行的系統平臺劃分，這個平臺稱為目標平臺。
+有一些編譯器輸出的代碼，將執行於與編譯器所在相同類型的電腦和作業系統之上，這種編譯器叫做本地編譯器。輸出可以執行於不同的平臺之上的編譯器，叫做交叉編譯器。由於嵌入式系統通常沒有軟體開發環境，因此，為這類系統開發軟體時，通常需要使用交叉編譯器。
+編譯器所輸出於虛擬機器上執行之代碼，編譯器和編譯器輸出的執行平臺有可能相同，也有可能不同。因此，對於這類編譯器，不去區分它是本地編譯器還是交叉編譯器。
+參考文獻[編輯]
+
+
+^ Chakraborty, P., Saxena, P. C., Katti, C. P., Pahwa, G., Taneja, S. A new practicum in compiler construction. Computer Applications in Engineering Education, In Press. http://onlinelibrary.wiley.com/doi/10.1002/cae.20566/pdf
+^ The ACM Digital Library. 
+
+
+參見[編輯]
+
+連結器
+直譯器
+
+
+
+
+
+
+
+
+
+
+閱
+論
+編
+
+
+電腦科學
+
+
+
+
+
+
+數學基礎
+
+數理邏輯 · 集合論 · 數論 · 圖論 · 類型論 · 範疇論 · 數值分析 · 資訊理論
+
+
+
+
+
+
+計算理論
+
+自動機 · 可計算性理論 · 計算複雜性理論 · 量子計算 · 數值計算方法
+
+
+
+
+
+
+演算法和資料結構
+
+演算法分析 · 演算法設計 · 計算幾何
+
+
+
+
+
+
+程式語言和編譯器
+
+語法分析器 · 直譯器 · 編程典範（程序化編程 · 物件導向程式編程 · 函數語言程式設計 · 邏輯編程等）
+
+
+
+
+
+
+並行、並列和分散式系統
+
+多處理器 · 網格計算 · 並行控制
+
+
+
+
+
+
+軟體工程
+
+需求分析 · 軟體設計 · 程式設計 · 形式化方法 · 軟體測試 · 軟體開發過程
+
+
+
+
+
+
+系統架構
+
+電腦系統架構 · 微處理器體系結構 · 作業系統
+
+
+
+
+
+
+電信與網路
+
+路由 · 網路拓撲 · 密碼學
+
+
+
+
+
+
+資料庫
+
+資料庫管理系統 · 關聯式資料庫 · 結構化查詢語言 · NoSQL · 事務處理 · 資料庫索引 · 資料探勘
+
+
+
+
+
+
+人工智慧
+
+自動推理 · 計算語言學 · 電腦視覺 · 進化計算 · 專家系統 · 機器學習 · 自然語言處理 · 機器人學
+
+
+
+
+
+
+電腦圖形學
+
+視覺化 · 電腦動畫 · 圖像處理
+
+
+
+
+
+
+人機互動
+
+電腦輔助功能 · 使用者介面 · 可穿戴電腦 · 普適計算 · 虛擬現實 · 聊天機器人
+
+
+
+
+
+
+科學計算
+
+人工生命 · 生物資訊學 · 認知科學 · 計算化學 · 計算神經科學 · 計算物理學 · 數值演算法 · 符號計算
+
+
+
+
+
+
+
+註：電腦科學領域也可根據ACM-2012分類系統進行分類。
+
+
+
+
+
+
+
+
+
+
+
+權威控制
+
+
+
+LCCN: sh86007588
+GND: 4148248-7
+BNF: cb120631538（資料）
+NDL: 01191219
+BNE: XX532454
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=編譯器&oldid=45249566"					
+2 個分類：編譯器軟體程序設計工具隱藏分類：含有英語的條目含有德語的條目包含規範控制信息的維基百科條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+AfrikaansAragonésالعربيةAsturianuAzərbaycancaتۆرکجهБеларускаяБеларуская (тарашкевіца)‎БългарскиবাংলাBosanskiCatalàکوردیČeštinaDanskDeutschZazakiΕλληνικάEnglishEsperantoEspañolEestiEuskaraفارسیSuomiFrançaisGaeilgeGalegoעבריתहिन्दीHrvatskiHornjoserbsceMagyarՀայերենInterlinguaBahasa IndonesiaIlokanoÍslenskaItaliano日本語ქართულიҚазақша한국어КыргызчаLatinaLëtzebuergeschLietuviųLatviešuОлык марийМакедонскиമലയാളംBahasa MelayuMirandésမြန်မာဘာသာनेपालीNederlandsNorsk bokmålਪੰਜਾਬੀPolskiپنجابیPortuguêsRomânăРусскийScotsSrpskohrvatski / српскохрватскиSimple EnglishSlovenčinaSlovenščinaСрпски / srpskiSvenskaதமிழ்తెలుగుไทยTagalogTürkçeУкраїнськаاردوTiếng ViệtWinarayייִדישBân-lâm-gú 
+編輯連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年7月18日 (週二) 04:12。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {{offlineMessage}}
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+試用 Microsoft Edge
+專為 Windows 10 設計、快速且安全的瀏覽器
+
+
+不，謝謝
+開始使用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft
+
+
+
+
+
+
+
+
+
+0
+ 個項目在購物車中
+
+
+
+
+登入
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Javascript 已停用 
+ 請啟用 JavaScript，然後重新整理頁面 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Cookie 已停用 
+ 請啟用 Cookie，然後重新整理頁面 
+
+
+
+CV： {{ getCv() }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+編譯系統- 台灣Wiki 首頁百科圖片百科分類TwWiki台灣Wiki>百科分類>冶金術語>HOT>系統>網路遊戲>程序>編譯系統評論（0）分享到：分享到Facebook分享到Twitter分享到Google+分享到噗浪編譯系統 標籤： 暫無標籤 第二類編程環境稱為編譯系統,開發者根據語言的規定編寫源程序,然後進行編譯、連接,生成可執行軟體,例如DOS操作系統加各類高級語言,如FORTRAN、PASCLL、C語言等就屬於這種類型目錄1. 簡介2. MTK分散式編譯系統3. DM2預編譯系統4. 編譯系統CMake5. 反編譯系統6. Symbian編譯系統第二類編程環境稱為編譯系統,開發者根據語言的規定編寫源程序,然後進行編譯、連接,生成可執行軟體,例如DOS操作系統加各類高級語言,如FORTRAN、PASCLL、C語言等就屬於這種類型回目錄1 編譯系統 -簡介 介面平臺，用於提供編譯任務輸入介面以及處理狀態信息輸出介面，並根據輸入的編譯任務生成任務名；編譯服務器，用於解析所述任務名，獲得相應的源代碼，並進行編譯，同時產生所述編譯任務的處理狀態信息提供給編譯系統所述介面平臺。方法包括：接收輸入的編譯任務；根據所述編譯任務生成任務名；解析獲得所述任務名對應的源代碼；編譯所述源代碼，並輸出所述編譯任務的處理狀態信息。上述技術方案中，通過介面平臺接收編譯任務，由介面平臺以任務名形式發起編譯請求，進行編譯，簡化了編譯輸入操作；處理狀態信息，通過介面平臺實時提供給客戶端，簡化了編譯監控操作，大大節約了人力資源。回目錄2 編譯系統 -MTK分散式編譯系統 MTK分散式編譯系統眾所周知，MTK平臺使用ARM ADS進行編譯，一千多個源文件，單機需要四五十分鐘才能完成，如果機器開著殺毒軟體，速度會更慢。為了提高編譯速度，可以把殺毒軟體暫時停掉，但是效果不會太明顯。解決問題的根本做法是利用網內閑置的機器，搭建一個分散式系統，多台機器同時編譯，可以收到明顯效果。編譯系統本系統由註冊伺服器、編譯伺服器和客戶端組成。網內啟動一個註冊伺服器，多個編譯伺服器。在MTK6223平臺上，單機new一次需要50分鐘的項目，使用10個編譯伺服器同時編譯，new一次需要13分鐘。模塊編譯之前是在客戶端工作的，需要9分鐘，其中為了實現分散式編譯，壓縮源代碼佔用了2分鐘，文件下載到編譯伺服器需要2分鐘。從第一個模塊編譯到最後link之前，10台機器僅用4分鐘就完成了1200個c文件的編譯工作。最後的link是在本機進行的，幾十秒就完了。我曾經試過18台機器同時編譯，1200個c文件不到2分鐘就編譯完成了，當然下載時間需要3分鐘。對於開發人員來講，new一次不再是夢魘。當然，不能無限制地增加編譯伺服器，要考慮文件傳輸所消耗的時間。MTK平臺文件很多，需要由客戶端向伺服器分發。一般地，一個客戶端與十個伺服器聯合編譯可以達到理想效果。回目錄3 編譯系統 -DM2預編譯系統 預編譯系統是DM2系統的重要組成部分。它支持在C程序中嵌入使用SQL語言,充分發揮語言數據類型豐富、處理方便靈活的優勢,又以SQL語言彌補高級語言難以描述資料庫操作的不足,為用戶提供了建立大型管理信息系統和處理複雜事務所需要的工作環境。預編譯系統還支持互動式介面DM2-ISQL、應用開發工具集DM2-FORM、DM2-GRAPH、DM2-REPORT等工作環境。回目錄4 編譯系統 -編譯系統CMake CMake就像是我們在uni上使用的make一樣，是用來管理怎樣編譯一個project的。它的好處是：編譯系統1) 跨越多個操作系統平臺，包括當前應用最廣泛的windows,unix(包括Mac OS X).2) 採用BSD風格的協議開放源代碼。據我個人閱讀協議文件，沒發現協議與兩句BSD協議有什麽不同。3) 它可以支持具有非常複雜的路徑、庫依賴的程序的編譯。比如它支持編譯個程序：它依賴於很多的庫以及其它一些代碼文件，而每一個庫又有很多子目錄。。。4) 像很多Make一樣，它會對曾經編譯的文件做一些cache一遍加速以後的編譯。使用這個編譯系統的時候，需要每個目錄/子目錄創建一個名為CMakeLists.txt的文件。這個項目歷史也算是比較悠久了，從2000年就開始了。當前使用這個編譯系統的項目：llvm/clang。。。我就是從clang的源代碼里發現的，郵件列表裡有人推薦使用cmake,不要使用msvc的.sln文件回目錄5 編譯系統 -反編譯系統 高級語言源程序經過 編譯 變成可執行文件，反編譯就是逆過程。 但是通常不能把可執行文件變成高級語言源代碼，只能轉換成彙編程序。計算機軟體反向工程（Reversepengineering）也稱為計算機軟體還原工程，是指通過對他人軟體的目標程序（可執行程序）進行「逆向分析、研究」工作，以推導出他人的軟體產品所使用的思路、原理、結構、演算法、處理過程、運行方法等設計要素，作為自己開發軟體時的參考，或者直接用於自己的軟體產品中。反編譯是一個複雜的過程,所以越是高級語言,就越難於反編譯,但目前還是有許許多多的反編譯軟體:VB: VBExplorer ;只能反編譯界面圖像,好像代碼不能完全反編譯JAVA: JAD ;java的反編譯比較常見,所以反編譯比較完全　C++ : exescope 回目錄6 編譯系統 -Symbian編譯系統 所謂編譯，就是在編譯程序讀取源程序（字元流），對之進行詞法和語法的分析，將高級語言指令轉換為功能等效的編譯系統彙編代碼，再由彙編程序轉換為機器語言，並且按照操作系統對可執行文件格式的要求鏈接生成可執行程序。UNIX環境下的C編譯系統所遵循的也是這麼一個一般的過程。值得註意的是這個過程並不是有某個單個程序完成的，而是有多個分別完成某一方面工作的程序組合完成的。這一設計思想同我們最初提到的UNIX系統軟體功能專一的特點是相符的。歸納起來，可以將UNIX環境下C編譯系統的工作過程下圖所示。C源程序頭文件－－>預編譯處理（cpp)－－>編譯程序本身－－>優化程序－－>彙編程序－－>鏈接程序-->可執行文件一般我們用cc命令來完成對源程序的編譯工作。此cc命令並不是一個二進位的可執行程序，而是一個shell命令文件。它的工作就是依次調用我們上面所列出的各個完成某部分工作的具體程序，將指定的c源程序轉換成可執行的代碼。在UNIX系統中，實現C源程序到可執行文件的這一轉換過程的工具是cc。在大多數系統中cc實際上是一個shell命令文件。有些系統中的C編譯程序可能並不叫cc而是其它的一個什麼名稱，如Sun工作站上常用的gcc等等。但這些都無關緊要。大多數系統中C編譯命令的用法基本上都是類似的。我們這裡介紹的將以SVR4上的C編譯系統為基礎。參考資料CMake：http://www.cmake.org/UNIX開發編譯系統：http://hi.baidu.com/lord_wy/blog/item/7ce92b24f4742b2bd5074208.html上一篇[紐約尼克斯隊]    下一篇 [偽娘]相關評論同義詞：暫無同義詞收藏到：收藏到Facebook收藏到Twitter收藏到Google+收藏到噗浪詞條信息瀏覽次數: 55 次更新時間: 2013-07-13相關詞條精彩詞條More>弱鹼水馬勒第五交響曲彩色激光印表機何英華雲魔物《失去綠色》分享到分享到Facebook分享到Twitter分享到Google+分享到噗浪1簡介2MTK分散式編譯系統3DM2預編譯系統4編譯系統CMake5反編譯系統6Symbian編譯系統
+
+
+
+
+
+天瓏網路書店-自己動手構造編譯系統：編譯、彙編與鏈接
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+天瓏網路書店
+全台最齊全
+中英文電腦書專賣店
+
+
+
+
+
+
+
+天瓏資訊圖書粉絲專頁
+
+
+
+
+搜尋
+
+
+資料科學
+簡體書
+Packt
+微服務
+工程師必讀經典
+英文書新到貨
+Python
+Tensorflow
+無瑕程式碼
+
+
+
+
+
+
+
+
+        自己動手構造編譯系統：編譯、彙編與鏈接
+        自己動手構造編譯系統：編譯、彙編與鏈接 (自己動手系列)
+
+
+        範志東, 張瓊聲
+        
+      
+
+
+
+
+ 
+
+
+出版商:
+機械工業出版社
+
+
+出版日期:
+2016-07-01
+
+
+定價:
+CNY $69.00
+
+
+售價:
+
+$414
+
+
+
+貴賓價:
+
+9.5 折
+            $393
+
+語言:
+簡體中文
+
+
+頁數:
+290
+
+
+裝訂:
+Kindle電子書
+
+
+ISBN:
+7111543556
+
+ISBN-13:
+9787111543558
+
+
+
+
+
+      立即出貨
+    
+
+
+
+
+
+
+
+
+
+
+
+
+買這商品的人也買了...
+
+
+
+
+
+
+
+ 
+              貴賓價: $336
+          
+深入理解 BootLoader
+
+
+
+
+
+ 
+              貴賓價: $254
+          
+自己動手寫編譯器、鏈接器
+
+
+
+
+
+ 
+$450
+              售價: $356
+          
+Effective Debugging 中文版 | 軟體與系統除錯的 66 個具體作法 (Effective Debugging: 66 Specific Ways to Debug Software and Systems)
+
+
+
+
+
+ 
+$480
+              售價: $379
+          
+透視 C 語言指標－深度探索記憶體管理核心技術 (Understanding and Using C Pointers)
+
+
+
+
+
+ 
+$390
+              售價: $304
+          
+揭開設計模式的秘辛 ── 設計模式 第1 3/4版 『Pattern hatching : design patterns applied』
+
+
+
+
+
+ 
+$580
+              售價: $458
+          
+演算法技術手冊, 2/e (Algorithms in a Nutshell: A Practical Guide, 2/e)
+
+
+
+
+
+ 
+              貴賓價: $279
+          
+OpenCV 3 計算機視覺 : Python 語言實現 (原書第2版)(Learning OpenCV 3 Computer Vision with Python, 2/e)
+
+
+
+
+
+ 
+              貴賓價: $279
+          
+OpenCV影像處理
+
+
+
+
+
+ 
+              貴賓價: $331
+          
+貝葉斯方法：概率編程與貝葉斯推斷
+
+
+
+
+
+ 
+$860
+              售價: $679
+          
+王者歸來：和大師一起動手--撰寫一個完整的作業系統
+
+
+
+
+
+ 
+$580
+              貴賓價: $522
+          
+Debug Hacks 除錯駭客－極致除錯的技巧與工具
+
+
+
+
+
+ 
+              貴賓價: $205
+          
+彙編語言(第3版)
+
+
+
+
+
+ 
+              貴賓價: $2,228
+          
+Learning OpenCV 3: Computer Vision in C++ with the OpenCV Library (Paperback)
+
+
+
+
+
+ 
+              貴賓價: $564
+          
+自製編譯器
+
+
+
+
+
+ 
+$580
+              售價: $458
+          
+Effective Modern C++：提昇C++11與C++14技術的42個具體作法 (中文版)(Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14)
+
+
+
+
+
+ 
+$360
+              售價: $284
+          
+完整學會 Git, GitHub, Git Server 的24堂課
+
+
+
+
+
+ 
+$350
+              售價: $277
+          
+啊哈！圖解演算法必學基礎
+
+
+
+
+
+ 
+$680
+              售價: $537
+          
+精通 Linux 核心開發－設計與實作 Linux 核心的權威指南, 3/e (Linux Kernel Development, 3/e)
+
+
+
+
+
+ 
+$420
+              售價: $332
+          
+HTML5: 建置與執行 (HTML5: Up and Running )
+
+
+
+
+
+ 
+$560
+              售價: $442
+          
+MATLAB 程式設計－進階篇, 2/e
+
+
+
+
+產品描述
+
+<內容簡介>
+本書以作者實現的一個基於Intelx86指令集的編譯系統為例，結合程序代碼的主要部分詳細闡述了編譯系統的實現原理和過程。本書對編譯器、彙編器、鏈接器、編譯優化器涉及的關鍵算法、數據結構和程序實現流程，以及ELF文件的格式、Intel指令格式均作了詳細的說明，並結合大量的圖表，展示了編譯系統工作過程中代碼信息的流動和存儲格式的變化。是一本“手把手”教讀者實現編譯系統的貼心手冊。
+<章節目錄>
+目錄序前言第1章代碼背後1 從編程聊起1 歷史淵源2 GCC的工作流程3 1.3.1預編譯4 1.3.2編譯5 1.3.3彙編6 1.3.4鏈接7 設計自己的編譯系統8 本章小結9 第2章編譯系統設計11 2.1編譯程序的設計11 2.1.1詞法分析12 2.1.2語法分析13 2.1.3符號表管理14 2.1.4語義分析15 2.1.5代碼生成16 2.1.6編譯優化16 2.2 x86指令格式18 2.3 ELF文件格式19 2.4彙編程序的設計21 2.4.1彙編詞法、語法分析22 2.4.2表信息生成23 2.4.3指令生成24 2.5鏈接程序的設計25 2.5.1地址空間分配25 2.5.2符號解析26 2.5.3重定位27 2.6本章小結27 第3章編譯器構造29 3.1詞法分析29 3.1.1掃描器30 3.1.2詞法記號32 3.1.3有限自動機36 3.1 .4解析器40 3.1.5錯誤處理53 3.2語法分析55 3.2.1文法定義55 3.2.2遞歸下降子程序65 3.2.3錯誤處理70 3.3符號表管理74 3.3.1符號表數據結構75 3.3. 2作用域管理78 3.3.3變量管理82 3.3.4函數管理88 第4章編譯優化147 第5章二進製表示191 第6章彙編器構造219 第7章連接器構造263 參考文獻
+
+
+
+
+
+
+
+
+簡體書籍分類
+
+最新新書
+2016 年度暢銷排行
+暢銷排行 (2017/06)
+暢銷排行 (2017/05)
+暢銷排行 (2017/04)
+
+
+
+活動主題列表
+
+資料科學
+CRC好書上架
+簡體中文書最新到貨
+PACKT 最新到貨
+Effective 系列書
+微服務系列書
+Ruddy老師的敏捷教室
+程式設計必讀經典系列
+Springer好書上架
+英文書最新到貨
+資料視覺化系列書
+Python 系列書籍
+深度學習系列書籍
+無瑕的程式碼 超值合購
+Maker小天地
+
+
+
+特價書籍
+
+Bootstrap系列76折起
+松崗暢銷書展5折起
+
+
+
+
+
+
+
+
+
+
+
+
+
+天瓏網路書店-編譯系統透視：圖解編譯原理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+天瓏網路書店
+全台最齊全
+中英文電腦書專賣店
+
+
+
+
+
+
+
+天瓏資訊圖書粉絲專頁
+
+
+
+
+搜尋
+
+
+資料科學
+簡體書
+Packt
+微服務
+工程師必讀經典
+英文書新到貨
+Python
+Tensorflow
+無瑕程式碼
+
+
+
+
+
+
+
+
+        編譯系統透視：圖解編譯原理
+        編譯系統透視:圖解編譯原理
+
+
+        新設計團隊
+        
+      
+
+
+
+
+ 
+
+
+出版商:
+機械工業出版社
+
+
+出版日期:
+2016-03-01
+
+
+定價:
+CNY $169.00
+
+
+售價:
+
+$1,014
+
+
+
+貴賓價:
+
+9.5 折
+            $963
+
+語言:
+簡體中文
+
+
+頁數:
+1041
+
+
+裝訂:
+平裝
+
+
+ISBN:
+7111498585
+
+ISBN-13:
+9787111498582
+
+
+
+
+
+      下單後立即進貨
+        (4週~6週)
+
+
+
+
+
+
+
+
+
+
+
+
+
+買這商品的人也買了...
+
+
+
+
+
+
+
+ 
+              貴賓價: $254
+          
+自己動手寫編譯器、鏈接器
+
+
+
+
+
+ 
+              貴賓價: $450
+          
+自製編程語言
+
+
+
+
+
+ 
+              貴賓價: $564
+          
+自製編譯器
+
+
+
+
+
+ 
+$580
+              貴賓價: $522
+          
+Binary Hacks－駭客秘傳技巧一百招
+
+
+
+
+
+ 
+              貴賓價: $222
+          
+有趣的二進制(軟件安全與逆向分析)
+
+
+
+
+
+ 
+              貴賓價: $507
+          
+Linux設備驅動開發詳解:基於最新的Linux4.0內核
+
+
+
+
+
+ 
+              貴賓價: $336
+          
+兩周自製腳本語言
+
+
+
+
+
+ 
+$680
+              售價: $537
+          
+精通 Linux 核心開發－設計與實作 Linux 核心的權威指南, 3/e (Linux Kernel Development, 3/e)
+
+
+
+
+
+ 
+              貴賓價: $222
+          
+自製搜尋引擎
+
+
+
+
+
+ 
+$620
+              售價: $484
+          
+職業駭客的告白 : 軟體反組譯、木馬病毒與入侵翻牆竊密
+
+
+
+
+
+ 
+$580
+              售價: $458
+          
+程式設計師的自我修養－連結、載入、程式庫
+
+
+
+
+
+ 
+              貴賓價: $428
+          
+LLVM Cookbook中文版
+
+
+
+
+
+ 
+              貴賓價: $279
+          
+OpenCV 3 計算機視覺 : Python 語言實現 (原書第2版)(Learning OpenCV 3 Computer Vision with Python, 2/e)
+
+
+
+
+
+ 
+              貴賓價: $564
+          
+RootKit 系統灰色地帶的潛伏者(原書第2版) (The Rootkit Arsenal: Escape and Evasion in the Dark Corners of the System, 2/e)
+
+
+
+
+
+ 
+$880
+              售價: $695
+          
+測試驅動開發：使用 Python (Test-Driven Development with Python)
+
+
+
+
+
+ 
+              貴賓價: $279
+          
+C++程式設計剖析 問題 方案和設計準則
+
+
+
+
+
+ 
+              貴賓價: $2,052
+          
+Fundamental Proof Methods in Computer Science: A Computer-Based Approach (MIT Press)
+
+
+
+
+
+ 
+$450
+              售價: $356
+          
+Effective Debugging 中文版 | 軟體與系統除錯的 66 個具體作法 (Effective Debugging: 66 Specific Ways to Debug Software and Systems)
+
+
+
+
+
+ 
+$580
+              貴賓價: $522
+          
+Debug Hacks 除錯駭客－極致除錯的技巧與工具
+
+
+
+
+
+ 
+              貴賓價: $336
+          
+C++多線程編程實戰
+
+
+
+
+產品描述
+
+<內容介紹>  
+本書是編譯原理領域的鴻篇巨著，中文版尚未出版，英文版權已經輸出到了美國。本書的出版將在世界範圍內產生重要影響。從以下多個角度講，本書都具有重要的里程碑意義：    它第一次讓編譯原理不再像是一門高深晦澀的「數學課」，而是一個可以調試、可以接觸、可以真切感受的理論體系。本書用1140餘幅信息量巨大的運行時結構圖和視頻動畫取代了同類書中複雜枯燥的數學公式，更加立體和直觀，生動地將編譯後的執行程序在內存中的運行時結構圖展現了出來。    它第一次將GCC源代碼、編譯原理、運行時結構、編譯系統原理(包含彙編與鏈接)的內在關係、邏輯與原理梳理清楚了，並將它們結合成一個整體，真正能夠讓讀者透徹掌握編譯器如伺運行、如何設計，以及為什麼要這麼設計。    它是第一本系統解讀著名商用編澤器GCC核心源代碼的著作。GCC源代碼一共有600萬行，為了便於講解和閱讀．本書進行了取捨和裁剪，講解了與編譯本質相關的、最核心的60萬行代碼。    新設計團隊編著的《編譯系統透視(圖解編譯原理)》一共8章，具體內容和邏輯如下：    第1章以一個C程序(先簡單，後複雜)的運行時結構為依托，對程序編譯的整體過程做了宏觀講述，讓讀者對編譯有一個整體認識，這樣更容易理解後面的內容。    第2?6章通過實際的程序案例、結合GCC的源代碼，根據程序編譯的順序和流程，依次講解了詞法分析、語法分析、中間結構和目標代碼的生成，遵循了由易到難的原則，先是通過簡單程序講解清楚原理，然後通過複雜程序強化理解。    第7章講解了與編譯器緊密關聯的彙編器和鏈接器，讓讀者對可執行程序的最終生成有一個完整的瞭解。    第8章講解了預處理，就編譯器的執行順序而言，預處理器的執行比較靠前，之所以放在最後講，是因為它比較獨立，在讀者已經瞭解整個編譯過程之後再講解，讀者會更容易理解。
+<章節目錄>
+作者簡介前言第1章 運行時結構及編譯過程概述  1.1 一個簡單C程序的運行時結構  1.2 更為複雜C程序的運行時結構  1.3 編譯過程概述    1.3.1 詞法分析    1.3.2 語法分析  1.3 3從語法樹到中間代碼再到目標代碼第2章 詞法分析  2.1 詞法分析概要說明  2.2 詞法分析過程  2.3 狀態轉換圖    2.3.1 狀態轉換圖總體介紹    2.3.2 依托狀態轉換圖展現詞法分析過程  2.4 GCC實現詞法分析的源代碼    2.4.1 詞法分析源代碼總覽    2.4.2 結合GCC源代碼講解詞法分析過程    2.4.3 標識符、數字、字符和字符串的詳細分析過程第3章 語法分析  3.1 語法分析綜述  3.2 語法分析思路  3.3 產生式    3.3.1 什麼是產生式    3.3.2 產生式的具體示例  3.4 匹配產生式，消除左遞歸    3.4.1 用標準產生式做匹配，出現左遞歸    3.4.2 消除左遞歸    3.4.3 產生式的工作效率  3.5 提取左公因子，消除回溯    3.5.1 對「直接聲明符」的產生式提取左公因子  3.5 2用提取過左公因子的產生式再去匹配    3.5.3 對其他產生式都提取左公因子    3.5.4 函數聲明和定義兩部分產生式的合併  3.6 語法分析結果：語法樹  3.7 GCC關於語法分析的源代碼解析    3.7.1 GCC語法分析函數調用圖    3.7.2 全部語句的語法分析第4章 語法樹到目標代碼  4.1 總述語法樹到中間代碼的轉化過程  4.2 目標代碼到運行時結構的映射  4.3 語法樹轉高端gimple    4.3.1 語法樹到高端gimple的總體步驟及運行時    4.3.2 高端gimple的實際數據結構    4.3.3 語法樹轉高端gimple的GCC源代碼解析  4.4 高端gimple到低端gimple……第5章 語句拓展案例的編譯過程第6章 數據拓展案例的的編譯過程第7章 彙編與鏈接
+第8章 預處理附錄 RTX定義作者的話
+
+
+
+
+
+
+
+
+簡體書籍分類
+
+最新新書
+2016 年度暢銷排行
+暢銷排行 (2017/06)
+暢銷排行 (2017/05)
+暢銷排行 (2017/04)
+
+
+
+活動主題列表
+
+資料科學
+CRC好書上架
+簡體中文書最新到貨
+PACKT 最新到貨
+Effective 系列書
+微服務系列書
+Ruddy老師的敏捷教室
+程式設計必讀經典系列
+Springer好書上架
+英文書最新到貨
+資料視覺化系列書
+Python 系列書籍
+深度學習系列書籍
+無瑕的程式碼 超值合購
+Maker小天地
+
+
+
+特價書籍
+
+Bootstrap系列76折起
+松崗暢銷書展5折起
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 編譯 wandboard 的 Android 4.4.2 系統 | coldnew's blog 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+coldnew's blog
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          
+            
+              編譯 wandboard 的 Android 4.4.2 系統
+            
+          
+        
+
+
+          最後更新
+          
+            2015-09-07
+          
+
+
+              |  
+            
+
+
+
+
+
+
+
+
+使用 wandboard 兩年多了，我才決定想要紀錄一下如何編譯 wandboard 的 Android 4.4.2
+(kitkat) 。這塊板子使用了 Freescale i.MX6 作為 CPU，並且有 Solo (單核)、Dual
+(雙核)、Quad (四核) 幾個版本可以選擇，並支援 Yocto 、Android、FreeBSD 等系統，
+如果想學 Linux Driver、Android 移植等事情，這是一塊不錯的板子，畢竟 CPU 的
+datasheet 可以透過 Freescale 官方網站下載（相比之下，raspberry pi 提供的 cpu
+資訊不足，不適合用來學習 Linux Kernel driver 移植)。
+
+
+講完優點，當然要講一下缺點。wandboard 早期提供了 Android 原始碼可以讓你透過
+repo 命令去直接編譯你的 Android 系統，但是自 2013 年底他們的 Android source
+mirror 就爛掉了，並且至今尚未修復，以後大概也不會修復了。wandboard 官方網站雖然
+提供了 Android 原始碼，但是裡面不包含 .git 訊息，因此你也很難從中瞭解
+wandboard 團隊到底改了什麼。
+
+
+本文將提供一個指引，讓你透過 AOSP 原始碼加上 Freescale 提供的 patch，建立自己的
+wandboard Android 系統，而不是只是取得被閹掉 .git 資訊的原始碼來建立 Android。
+
+
+
+以個人的立場，我很討厭開發版/廠商使用了開放原始碼專案的程式碼，卻在提供程式碼時
+刻意閹掉 .git 訊息。
+
+
+(以此角度來看 wandboard 並非很好的 Android 開發版)
+
+
+
+安裝 repo 命令
+
+
+要取得 Android 原始碼，就必須先安裝 Android 用來管理專案用的工具 repo ，你可以透
+過以下命令將其存放到你的 ~/bin 目錄
+
+
+curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+
+
+
+安裝完成後，可以使用 which 命令來檢查是否可以找到 repo 命令
+
+
+coldnew@Rosia ~ $ which repo
+/home/coldnew/bin/repo
+
+
+如果找不到的話，記得將 ~/bin 加入到你的 PATH 中
+
+
+coldnew@Rosia ~ $ export PATH="~/bin:$PATH"
+
+
+
+
+
+取得 AOSP 4.4.2 原始碼
+
+
+首先先建立我們要用來存放 Android 原始碼的資料夾
+
+
+coldnew@Rosia ~ $ mkdir ~/aosp_imx-4.4.2_r1 && cd $_
+
+
+接著透過 repo 命令，初始化你的專案，這邊我們使用 android-4.4.2_r1 這個 branch
+
+
+coldnew@Rosia ~/aosp_imx-4.4.2_r1 $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.4.2_r1
+
+
+再來就要使用 repo sync 進行程式碼的取得，這裡可能會很花時間，所以可以趁這機會去泡杯咖啡~
+
+
+coldnew@Rosia ~/aosp_imx-4.4.2_r1 $ repo sync -j9
+
+
+
+
+下載 Freescale patches
+
+
+Freescale 針對其旗下的 i.MX6 CPU 提供了建立 Android 系統所需要的 patch，我們可以
+到 Freescale 官方網站去下載 Android 4.4.2 所需要的 BSP (Board Support Packages)。
+
+
+請點選 此處 到 Freescale 註冊並下載此篇文章所需要的 android_kk4.4.2_1.0.0-ga_core_source.tar.gz 檔案。
+
+
+下載完成後，我們進入到我們剛剛建立的 Android 4.4.2 專案，並將 android_kk4.4.2_1.0.0-ga_core_source.tar.gz 解壓，完成後你現在的目
+錄應該是這個樣子:
+
+
+coldnew@Rosia ~/aosp_imx-4.4.2_r1 $ ls
+Makefile  android_kk4.4.2_1.0.0-ga_core_source    bionic    build  dalvik      development
+docs      frameworks  libcore   ndk    packages   prebuilts  system
+abi       art         bootable  cts    developers device
+external  hardware    libnativehelper  out  pdk   sdk        tools
+
+
+接著使用以下命令將 patch 打上
+
+
+source android_kk4.4.2_1.0.0-ga_core_source/code/kk4.4.2_1.0.0-ga/and_patch.sh
+c_patch android_kk4.4.2_1.0.0-ga_core_source/code/kk4.4.2_1.0.0-ga imx_kk4.4.2_1.0.0-ga
+
+
+後面的 imx_kk4.4.2_1.0.0-ga 這個是說當 patch 打上以後，有被修改的部分都會切到
+imx_kk4.4.2_1.0.0-ga 這個 branch，方便對程式進行管理。
+
+
+
+
+下載 wandboard 的 device 設定與 kernel/u-boot
+
+
+除了打上 Freescale 的 patch 以外，我們還需要下載 wandboard 的 kernel/uboot 以及設定檔。
+
+
+
+device_fsl_wandboard
+
+
+在 wandboard 的 Android 程式碼中，他們強制修改了
+device/fsl 並加上 wandboard 設定，其實這是一個很討厭的作法，所以我將他切割出
+來並放置於 GitHub ，你可以使用 git 下載到 device/fsl/wandboard
+
+
+git clone https://github.com/coldnew/device_fsl_wandboard.git -b imx_kk4.4.2_1.0.0-ga device/fsl/wandboard
+
+
+kernel
+
+
+接著下載 wandboard 的 kernel 到 kernel_imx
+
+
+git clone https://github.com/wandboard-org/linux.git -b wandboard_imx_3.0.35_kk4.4.2_1.0.0-ga kernel_imx
+
+
+u-boot
+
+
+在 GitHub 上的 wandbord 的 uboot 是不含 Android 版本的， 你看 wandboard 多適合 Android 開發者啊 ，因此 u-boot 這邊我只好從 wandboard 提供的 Android 原始
+碼裡面提取 (該死的 first commit)，請使用我傳到 GitHub 的版本，下載到  bootable/bootloader/uboot-imx
+
+
+git clone https://github.com/coldnew/u-boot-fslc.git -b wandboard_imx_3.0.35_kk4.4.2_1.0.0-ga bootable/bootloader/uboot-imx
+
+
+
+
+
+進行一些小修正
+
+
+由於 wandboard 使用的 wifi driver 和 Freescale 提供的開發版 (sabresd …etc) 設
+定不太一樣，因此我們必須對 wifi 驅動進行修正，這樣才能避免編譯錯誤。造成這個問題
+的主因，是因為在 wandboard 的 BoardConfig.mk 中我們指定了 BOARD_WLAN_DEVICE
+的名稱，但是在 hardware/ 下麵卻無法有匹配的資訊，導致需要的 lib 沒有被編譯到。
+
+
+在我們的 BoardConfig.mk 是這樣設定的:
+
+
+BOARD_WLAN_DEVICE := brcmfmac
+
+
+
+因此有個地方要修改：
+
+
+
+hardware/realtek/wlan/Android.mk
+
+
+diff --git a/Android.mk b/Android.mk
+index ff0812e..7e77b6c 100755
+--- a/Android.mk
++++ b/Android.mk
+@@ -1,4 +1,4 @@
+-ifeq ($(BOARD_WLAN_DEVICE),$(filter $(BOARD_WLAN_DEVICE), REALTEK UNITE))
++ifeq ($(BOARD_WLAN_DEVICE),$(filter $(BOARD_WLAN_DEVICE), REALTEK UNITE brcmfmac))
+        include $(call all-subdir-makefiles)
+ endif
+
+
+
+hardware/qcom/wlan/qcwcn/Android.mk
+
+
+diff --git a/Android.mk b/Android.mk
+index b83e42b..44c9fe7 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -1,3 +1,3 @@
+-ifeq ($(BOARD_WLAN_DEVICE),$(filter $(BOARD_WLAN_DEVICE), qcwcn UNITE))
++ifeq ($(BOARD_WLAN_DEVICE),$(filter $(BOARD_WLAN_DEVICE), qcwcn UNITE brcmfmac))
+     include $(call all-subdir-makefiles)
+ endif
+
+
+
+
+
+
+加入 codec 支援
+
+
+除了前面提到的修正，我們也需要替 wandboard 加上 codec 的支援，這部分要設定在
+hardware/imx/alsa 裡面，由於 wandboard 使用的 codec IC 為 sgtl5000 ，因此我們
+先增加 config_sgtl5000.h 這個檔案，其內容如下
+
+
+/*
+ * Copyright (C) 2011 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* Copyright (C) 2012 Freescale Semiconductor, Inc. */
+
+#ifndef ANDROID_INCLUDE_IMX_CONFIG_SGTL5000_H
+#define ANDROID_INCLUDE_IMX_CONFIG_SGTL5000_H
+
+#include "audio_hardware.h"
+
+/* ALSA cards for IMX, these must be defined according different board / kernel config*/
+static struct audio_card  sgtl5000_card = {
+    .name = "sgtl5000-audio",
+    .driver_name = "sgtl5000-audio",
+    .supported_out_devices = (AUDIO_DEVICE_OUT_EARPIECE |
+            AUDIO_DEVICE_OUT_SPEAKER |
+            AUDIO_DEVICE_OUT_WIRED_HEADSET |
+            AUDIO_DEVICE_OUT_WIRED_HEADPHONE |
+            AUDIO_DEVICE_OUT_ANLG_DOCK_HEADSET |
+            AUDIO_DEVICE_OUT_DGTL_DOCK_HEADSET |
+            AUDIO_DEVICE_OUT_ALL_SCO |
+            AUDIO_DEVICE_OUT_DEFAULT),
+    .supported_in_devices = (
+            AUDIO_DEVICE_IN_COMMUNICATION |
+            AUDIO_DEVICE_IN_AMBIENT |
+            AUDIO_DEVICE_IN_BUILTIN_MIC |
+            AUDIO_DEVICE_IN_WIRED_HEADSET |
+            AUDIO_DEVICE_IN_BACK_MIC |
+            AUDIO_DEVICE_IN_ALL_SCO |
+            AUDIO_DEVICE_IN_DEFAULT),
+    .defaults            = NULL,
+    .bt_output           = NULL,
+    .speaker_output      = NULL,
+    .hs_output           = NULL,
+    .earpiece_output     = NULL,
+    .vx_hs_mic_input     = NULL,
+    .mm_main_mic_input   = NULL,
+    .vx_main_mic_input   = NULL,
+    .mm_hs_mic_input     = NULL,
+    .vx_bt_mic_input     = NULL,
+    .mm_bt_mic_input     = NULL,
+    .card                = 0,
+    .out_rate            = 0,
+    .out_channels        = 0,
+    .out_format          = 0,
+    .in_rate             = 0,
+    .in_channels         = 0,
+    .in_format           = 0,
+};
+
+#endif  /* ANDROID_INCLUDE_IMX_CONFIG_HDMI_H */
+
+
+
+接著依照以下 patch 修改 tinyalsa_hal.c 這個檔案，將我們的設定加入就完成囉 ~
+
+
+diff --git a/tinyalsa_hal.c b/tinyalsa_hal.c
+index 5084138..05a8e9f 100644
+--- a/tinyalsa_hal.c
++++ b/tinyalsa_hal.c
+@@ -46,6 +46,7 @@
+ #include "config_nullcard.h"
+ #include "config_spdif.h"
+ #include "config_cs42888.h"
++#include "config_sgtl5000.h"
+
+
+ /* ALSA ports for IMX */
+@@ -95,10 +96,11 @@
+
+ /*"null_card" must be in the end of this array*/
+ struct audio_card *audio_card_list[SUPPORT_CARD_NUM] = {
++    &usbaudio_card,
++    &sgtl5000_card,
++    &hdmi_card,
+     &wm8958_card,
+     &wm8962_card,
+-    &hdmi_card,
+-    &usbaudio_card,
+     &spdif_card,
+     &cs42888_card,
+     &null_card,
+
+
+
+
+
+編譯 Android
+
+
+上面的修改都完成後，我們就可以開始來編譯 Android, 首先要切換一下目前的 shell 環境
+
+
+coldnew@Rosia ~/aosp_imx-4.4.2_r1 $ source build/envsetup.sh
+including device/fsl/imx5x/vendorsetup.sh
+including device/fsl/imx6/vendorsetup.sh
+including device/fsl/wandboard/vendorsetup.sh
+including device/samsung/manta/vendorsetup.sh
+including device/asus/deb/vendorsetup.sh
+including device/asus/flo/vendorsetup.sh
+including device/asus/tilapia/vendorsetup.sh
+including device/asus/grouper/vendorsetup.sh
+including device/generic/mips/vendorsetup.sh
+including device/generic/x86/vendorsetup.sh
+including device/generic/armv7-a-neon/vendorsetup.sh
+including device/lge/hammerhead/vendorsetup.sh
+including device/lge/mako/vendorsetup.sh
+including sdk/bash_completion/adb.bash
+
+
+接著我們就可以使用 lunch 去選擇想要編譯的環境
+
+
+coldnew@Rosia ~/aosp_imx-4.4.2_r1 $ lunch
+You're building on Linux
+
+Lunch menu... pick a combo:
+....
+     17. hdmidongle_6dq-eng
+     18. hdmidongle_6dq-user
+     19. wandboard-eng
+     20. wandboard-user
+     21. aosp_manta-userdebug
+     22. aosp_deb-userdebug
+...
+Which would you like? [aosp_arm-eng] 20
+
+
+選擇好後就可以開始進行編譯
+
+
+coldnew@Rosia ~/aosp_imx-4.4.2_r1 $ m -j9
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=4.4.2
+TARGET_PRODUCT=wandboard
+TARGET_BUILD_VARIANT=user
+TARGET_BUILD_TYPE=release
+TARGET_BUILD_APPS=
+TARGET_ARCH=arm
+TARGET_ARCH_VARIANT=armv7-a-neon
+TARGET_CPU_VARIANT=cortex-a9
+HOST_ARCH=x86
+HOST_OS=linux
+HOST_OS_EXTRA=Linux-4.1.4-gentoo-x86_64-Intel-R-_Core-TM-_i5-5257U_CPU_@_2.70GHz-with-gentoo-2.2
+HOST_BUILD_TYPE=release
+BUILD_ID=1.0.0-rc3
+OUT_DIR=out
+============================================
+...
+
+
+假設一切都很順利的話，你就會在 out/target/product/wandboard/ 看到你編譯出來的檔案
+
+
+coldnew@Rosia ~/aosp_imx-4.4.2_r1 $ ls out/target/product/wandboard/
+android-info.txt  fake_packages        previous_build_config.mk  recovery.img  system.img
+boot.img          installed-files.txt  ramdisk.img               root          u-boot.bin
+clean_steps.mk    kernel               ramdisk-recovery.img      symbols       u-boot-wandboard_config.bin
+dex_bootjars      obj                  recovery                  system        uImage
+
+
+
+
+製作 SD 卡並安裝 Android
+
+
+Android 編譯完成後，就讓我們來製作 SD 卡吧，首先先將你的 SD Card 插入到電腦中，
+並確認其編號(這邊以 /dev/sdc 作為範例)
+
+
+
+確認 /dev/sdc* 沒有任何設備還在被掛載中
+
+
+coldnew@Rosia ~ $ sudo umount /dev/sdc*
+
+
+清空 SD 卡前 1MB 區塊
+
+
+Freescale i.MX6 會使用 SD 卡的 0x400 位址來開始讀取 bootloader，因此我們在此
+先將這塊區域清空。
+
+
+coldnew@Rosia ~ $ sudo dd if=/dev/zero of=/dev/sdc bs=1M count=1
+
+
+使用 wand_fsl_sdcard-part.sh 格式化 SD 卡
+
+
+這個腳本會將 SD 卡切割成很多區塊，來符合我們在 device/fsl/wandboard 裡面得設定
+
+
+coldnew@Rosia ~ $ sudo ./device/fsl/wandboard/tools/wand_fsl_sdcard-part.sh /dev/sdc
+
+
+寫入 u-boot SPL
+
+
+在 wandboard Android 版本的 u-boot 中，是使用 Second Program Loader (SPL) 來
+進行二階段開機，因此我們要先將 SPL 燒錄到 SD 卡的 0x400 位址
+
+
+coldnew@Rosia ~ $ sudo dd if=bootable/bootloader/uboot-imx/SPL of=/dev/sdc bs=1K seek=1
+
+
+掛載開機磁區
+
+
+coldnew@Rosia ~ $ sudo mkdir -p /tmp/imx6 && sudo mount -t vfat /dev/sdc1 /tmp/imx6
+
+
+複製 kernel、uboot 到開機區 (/dev/sdc1)
+
+
+sudo mkdir -p /tmp/imx6/boot
+sudo cp kernel_imx/arch/arm/boot/uImage /tmp/imx6/boot/
+sudo cp bootable/bootloader/uboot-imx/u-boot.img /tmp/imx6/boot/
+sudo cp bootable/bootloader/uboot-imx/wandboard.bmp.gz /tmp/imx6/boot/
+sudo cp bootable/bootloader/uboot-imx/uEnv.txt /tmp/imx6/boot/
+sudo mkimage -A arm -O linux -T ramdisk -C none -a 0x10800800 -n "Android Root Filesystem" -d out/target/product/wandboard/ramdisk.img /tmp/imx6/boot/uramdisk.img
+
+
+複製一些 u-boot 設定檔
+
+
+sudo cp -rf device/fsl/wandboard/settings /tmp/imx6/
+sudo cp /tmp/imx6/settings/uEnv_fairy_hdmi_720P.txt /tmp/imx6/boot/uEnv.txt
+
+
+如果你的是 wandboard Solo 的話，請再加上以下命令
+
+
+sudo cp /tmp/imx6/settings/uEnv_wand_solo_hdmi_720P.txt /tmp/imx6/boot/uEnv.txt
+
+
+解除掛載開機區
+
+
+coldnew@Rosia ~ $ sudo umount /tmp/imx6
+
+
+燒錄 system.img
+
+
+coldnew@Rosia ~ $ sudo dd if=out/target/product/wandboard/system.img of=/dev/sdc5 && sudo sync
+
+
+
+
+
+加入 Google Apps 支援
+
+
+我們從 AOSP 下載編譯出來的 Android 系統是不會包含 google-apps 的支援，正常要包含
+他的話必須通過 Google 的 Compatibility Test Suite (CTS) 認證 ，因此我們只能使用
+另外一種方式來安裝 google-apps 等套件。
+
+
+要安裝 Google Apps，首先先下載我們需要的檔案，你可以在 Cyanogenmod Wiki 上面找到
+下載連結，以 Android 4.4.2 為例，對應到的就是 CM11 ，因此我們可以選擇 CM11
+版本的 google-apps 來下載。
+
+
+下載 gapps-kk-20140606-signed.zip 後，由於 wandboard 預設沒有提供 recovery 模
+式，因此我們必須透過以下方式將其安裝到 SD 卡中。
+
+
+
+解壓 gapps-kk-20140606-signed.zip 到 /tmp/gapps
+
+
+coldnew@Rosia ~ $ unzip ~/Downloads/gapps-kk-20140606-signed.zip -d /tmp/gapps
+
+
+掛載 wandboard SD 卡 的 system 區塊 到 /tmp/system (以 /dev/sdc5 為例)
+
+
+coldnew@Rosia ~ $ mkdir -p /tmp/system && sudo mount /dev/sdc5 /tmp/system
+
+
+將 /tmp/gapps/system 裡面的資料複製到 wandboard SD 卡去
+
+
+coldnew@Rosia ~ $ sudo cp -a /tmp/gapps/system/* /tmp/system
+
+
+解除掛載 wandboard SD 卡 的 system 區塊
+
+
+coldnew@Rosia ~ $ sudo umount /tmp/system && sync
+
+
+
+這樣子在 wandboard 就可以使用 google play 等 Google 的程式囉。
+
+
+
+
+截圖
+
+
+下圖為 wandboard 打上了 Google Play 等程式，並搭配 給奇創造 的 GeChic On-Lap 1002
+觸碰式筆記型螢幕，我們將在下一篇文章來講如何讓你的 wandboard 可以使用 GeChic
+On-Lap 1002 的多點觸碰功能。
+
+
+
+
+
+
+
+
+
+
+延伸閱讀
+
+
+[1] i.MX6 Android kk4.4.2_1.0.0 BSP Documentation (REV KK4.4.2_1.0.0)
+
+
+[2] building android for wandboard on os x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please enable JavaScript to view the comments powered by Disqus.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            文章目錄
+          
+
+            本站概覽
+          
+
+
+
+
+Yen-Chin, Lee
+
+
+
+
+
+
+              RSS
+            
+
+
+
+github
+
+
+google+
+
+
+
+
+
+
+
+
+
+
+
+
+
+安裝 repo 命令取得 AOSP 4.4.2 原始碼下載 Freescale patches下載 wandboard 的 device 設定與 kernel/u-boot進行一些小修正加入 codec 支援編譯 Android製作 SD 卡並安裝 Android加入 Google Apps 支援截圖延伸閱讀
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+樹莓派 Raspberry Pi 編譯 Linux 核心（Kernel）步驟教學 - G. T. Wang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jazz 爵士樂
+Blogger 舊站
+關於
+ 
+
+Google+
+Facebook
+Flickr
+Search
+ 
+
+ 
+ 
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+物聯網
+網站架設
+程式設計
+統計
+素食
+特價優惠
+
+
+
+ 
+
+物聯網
+網站架設
+程式設計
+統計
+素食
+特價優惠
+ 
+ 
+
+
+
+
+
+樹莓派 Raspberry Pi 編譯 Linux 核心（Kernel）步驟教學
+
+2014/12/11 
+0 Comments 
+ 
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+這裡介紹如何自己編譯 Raspberry Pi 的 Linux 核心，打造自己所需要的系統。
+
+編譯 Raspberry Pi 的 Linux 核心
+要編譯 Raspberry Pi 用的 Linux 核心有兩種方式，一種是在 Raspberry Pi 中直接編譯，另外一種是在一般的個人電腦中交叉編譯（cross compilation），兩種方式各有利弊，以下分別是這兩種編譯方式的步驟教學。
+
+
+
+
+
+
+在個人電腦中交叉編譯
+在個人電腦中交叉編譯可以讓編譯的速度加快，一般我是建議使用這樣的方式，會節省很多時間。
+Step 1
+從 GitHub 下載最新的 Raspberry Pi Linux 核心原始碼：
+git clone --depth=1 https://github.com/raspberrypi/linux
+Step 2
+要進行編譯之前，先要安裝好一些交叉編譯所需要的編譯器：
+apt-get install gcc-arm-linux-gnueabihf
+因為每個人的系統會有些差異，如果您在編譯的過程缺少什麼工具的話，可以再利用 apt 來安裝。
+Step 3
+首先進入 linux 目錄
+cd linux
+進行編譯之前，要先設定編譯的各種選項，這裏我們使用預設的編譯設定：
+make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcmrpi_defconfig
+載入預設的設定之後，您可以再使用 menuconfig 來微調：
+make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
+
+在這個選單中，您可以自行依照需求新增或移除各種功能。
+Step 4
+進行編譯核心：
+make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
+編譯模組：
+make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- modules
+這裡的 -j4 是讓 make 可以同時執行 4 個 jobs，利用多核心的 CPU 來加速編譯，您可以依照您的 PC 的 CPU 核心數來調整這個值。
+Step 5
+因為我們是在另外一臺 PC 中編譯的，所以編譯完之後，要再把編譯好的核心複製到 Raspberry Pi 上面，您也可以直接將 Raspberry Pi 的 MicroSD 卡直接插在 PC 上，這樣就可以將新的核心直接安裝上去，我這裡是用手動複製的方式，兩種做法其實差不多。
+將編譯好的 Linux 核心複製出來：
+cp arch/arm/boot/Image ../kernel-new.img
+將模組安裝至一個暫時的目錄中（../modules）：
+make -j4 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=../modules modules_install
+切換至上一層目錄
+cd ..
+因為 Linux 的核心模組有點大，我先壓縮一下，方便等一下複製的動作：
+tar jcvf modules.tar.bz2 modules/
+這時候在目前的目錄中，我們應該已經有兩個檔案：
+
+一個編譯好的核心（kernel-new.img）
+一個核心模組的壓縮檔（modules.tar.bz2）
+
+這樣在 PC 上面的編譯工作就算完成了。
+Step 6
+接著把 kernel-new.img 與 modules.tar.bz2 複製到 Raspberry Pi 中，並且將 kernel-new.img 放進 /boot 中：
+sudo cp kernel-new.img /boot/
+將 modules.tar.bz2 解壓縮
+tar jxf modules.tar.bz2
+把 modules/lib/modules/ 裡面的東西複製到 /lib/modules/
+sudo -r cp modules/lib/modules/* /lib/modules/
+將 modules/lib/firmware/ 裡面的東西複製到 /lib/firmware/
+sudo -r cp modules/lib/firmware/* /lib/firmware/
+Step 7
+編輯 /boot/config.txt，加入一行
+kernel=kernel-new.img
+這行是用來指定系統要使用的核心，您可以透過這樣的方式同時在系統上放置多個不同的核心，以便隨時切換。
+這樣新編譯好的核心就安裝好了。
+
+
+
+在 Raspberry Pi 中編譯核心
+如果您想要在 Raspberry Pi 中直接編譯新的核心也是可以，不過這樣的方式會非常慢（通常都要好幾個小時以上），除非特殊情況，不然一般都不會用這樣的方式。
+Step 1
+在 Raspberry Pi 上編譯的步驟跟 PC 上差不多，首先下載 Linux 核心原始碼：
+git clone --depth=1 https://github.com/raspberrypi/linux
+Step 2
+安裝一些必要的工具：
+apt-get install bc libncurses5-dev
+Step 3
+進入 linux 目錄，開始進行編譯
+cd linux
+make bcmrpi_defconfig
+make menuconfig
+make
+make modules
+這個部分跟 PC 交叉編譯的都相同，因為是在 Raspberry Pi 中直接編譯，所以不需要指定交叉編譯的參數，指令比較簡單，但是因為 Raspberry Pi 的處理速度很慢（比起 PC 來說），因此編譯的過程會需要非常久的時間。
+Step 4
+接著安裝新編譯好的核心與模組：
+sudo make modules_install
+sudo cp arch/arm/boot/Image /boot/kernel-new.img
+Step 5
+編輯 /boot/config.txt，加入一行
+kernel=kernel-new.img
+這樣就完成了。
+
+更新韌體（Firmware）
+如果您原本的 Linux 核心版本跟新編譯的核心版本相差很多，就要連同韌體一起更新。
+Step 1
+最新的韌體可以從 GitHub 下載：
+git clone https://github.com/raspberrypi/firmware.git
+這部分由於檔案很多，而且也很大，所以下載的過程需要一段時間。
+Step 2
+下載下來後，將 firmware/boot 目錄中的 bootcode.bin、fixup.dat、start.elf 這三個檔案複製到 /boot 中：
+cp firmware/boot/bootcode.bin /boot/
+cp firmware/boot/fixup.dat /boot/
+cp firmware/boot/start.elf /boot/
+將 firmware/hardfp/opt/ 目錄中所有的東西複製到 /opt/
+cd firmware/hardfp/opt/* /opt/
+這樣就可以了。
+
+重新開機與測試
+安裝好新的核心之後，就可以重新開機測試了。重新開機進入系統之後，可以使用 uname 來查看目前的核心版本：
+uname -a
+正常的話應該可以看到剛剛編譯好的核心版本：
+Linux raspberrypi 3.12.34+ #1 PREEMPT Thu Dec 11 08:51:55 CST 2014 armv6l GNU/Linux
+
+如果您對於樹莓派的應用有興趣，建議您可以繼續閱讀物聯網的相關文章。
+參考資料：raspberrypi.org、elinux.org、coldnew’s blog、BrokenDragon’s Notes、sysprogs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+樹莓派, 物聯網 
+
+
+
+
+
+G. T. Wang
+個人使用 Linux 經驗長達十餘年，樂於分享各種自由軟體技術與實作文章。
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+ 
+Leave a Reply 取消回覆 
+
+Comment*
+
+
+Name*
+
+
+
+Email*
+
+
+
+Website
+
+
+ 
+
+ 
+
+ 
+ 
+
+廣告 
+
+
+
+
+
+
+推薦
+
+Udemy 線上教學課程
+
+
+分類Arduino (5)
+BeagleBone Black (1)
+DIY (15)
+Linux (208)
+Mac OS X (32)
+Octave (15)
+Perl (12)
+R (45)
+Windows (51)
+WordPress (14)
+個人 (8)
+免費 (32)
+兒童 (15)
+實用工具 (77)
+手機 (12)
+技巧 (45)
+有趣 (100)
+樹莓派 (52)
+物聯網 (52)
+玄學 (9)
+生活 (148)
+程式設計 (83)
+統計學 (8)
+網頁空間 (27)
+網頁開發 (118)
+虛擬化 (5)
+農業 (31)
+遊戲 (9)
+開箱 (67)
+雲端 (4)
+放鬆音樂 
+公益
+
+台灣世界展望會
+台灣公益資訊中心
+igiving 公益網
+Yahoo 奇摩公益
+智邦公益網
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+© 2017 G. T. Wang
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+在Raspberry Pi編譯與安裝最新版Node.js - 網昱多媒體
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+在Raspberry Pi編譯與安裝最新版Node.js
+
+ 2016/03/162016/03/16  cubie
+
+硬體與DIY 
+
+
+
+
+Node.js是一個獨立的JavaScript執行環境（亦即，不在瀏覽器中執行的JavaScript），可以讓我們使用JavaScript程式語言開發應用程式，直接在Windows, Mac OS X和Linux/Unix等系統上執行。 
+
+在Raspbian Wheezy系統使用apt-get命令安裝Node.js（例如：sudo apt-get install nodejs），將會安裝0.6版本，Raspbian Jessie系統內建的是0.10.29版，跟目前最新5.8.0版差距不小（註：在經過Node.js和io.js陣營鬧分家又合併事件之後，Node.js從0.12.x版直接躍升到4.x版）。 
+在Raspbian Jessie系統上編譯新版Node.js 
+在Jessie系統上編譯Node.js原始碼的步驟，跟其他Linux軟體一樣： 
+使用wget命令下載原始碼（壓縮檔） 
+解壓縮 
+切換到解壓縮檔案後的目錄 
+執行./configure設置編譯環境 
+執行make開始編譯 
+執行make install安裝編譯好的軟體 
+Node.js的所有版本都可以在https://nodejs.org/dist/路徑底下的各個子路徑取得，例如，v4.4.0版位在“latest-v4.x/”或“v4.4.0/ ”路徑底下： 
+
+此外，這個檔案路徑始終代表目前的最新版本： 
+https://nodejs.org/dist/node-latest.tar.gz
+Node.js官網目前建議大眾使用的版本是4.4.0，想嘗試新功能的人可安裝5.8.0版（具體的新增功能請參閱Node.js官網的What You Should Know about Node.js v5 and More）。 
+假設要編譯5.8.0版，請在終端機視窗中依序執行下列命令： 
+
+
+
+
+
+
+wget https://nodejs.org/dist/v5.8.0/node-v5.8.0.tar.gz
+tar -xvzf node-v5.8.0.tar.gz
+cd node-v5.8.0
+./configure
+make
+
+
+12345
+
+wget https://nodejs.org/dist/v5.8.0/node-v5.8.0.tar.gztar -xvzf node-v5.8.0.tar.gzcd node-v5.8.0./configuremake
+
+
+
+
+在樹莓派2代和3代，make命令後面可以附加-j 4參數，代表使用四核心進行編譯，加快編譯速度（但仍需花費數十分鐘）： 
+make -j 4 
+編譯完成之後，可用管理員身份執行make install命令安裝Node.js： 
+sudo make install
+或者，先把編譯完成的檔案封裝成一個套件包（.deb檔），再透過.deb檔安裝也行。安裝新版Node.js之前，你可能需要先執行底下的命令，刪除系統預先安裝的Node.js： 
+sudo apt-get remove nodejs 
+製作、下載與安裝Node.js的Debian套件包（.deb檔） 
+Debian是一種Linux作業系統發行版本，它的軟體安裝套件的檔案格式為.deb；Raspbian是基於Debian系統的樹莓派硬體最佳化版本，所以也能使用.deb檔案安裝軟體。 
+程式原始碼編譯完成（亦即，成功執行make命令）之後，若想要佈署在其他樹莓派或者分享給他人使用，可透過checkinstall工具程式建立.deb格式的套件包（詳細說明請參閱IBM 中國軟件開發中心的「Linux的源碼安裝工具CheckInstall」文章）。 
+請先安裝checkinstall： 
+sudo apt-get install checkinstall 
+接著，在上一節的node-v5.8.0路徑裡面，以管理員身份執行checkinstall命令（後面的參數代表封裝完畢後先不要安裝，以及設定此套件包的版本編號）： 
+sudo checkinstall --install=no --pkgversion 5.8.0 
+等待一段時間之後（註：進行封裝之前，它大概會詢問三個問題，直接按下Enter鍵採用預設值即可），它將在node-v5.8.0目錄當中建立一個node_5.8.0-1_armhf.deb檔，檔名裡的armhf代表它是一種ARM處理器的二進位檔（可執行檔）。 
+
+筆者把編譯好的node_4.4.0-1_armhf.deb和node_5.8.0-1_armhf.deb檔存放在Google雲端磁碟，不想花費數十分鐘編譯的朋友可直接下載到樹莓派，並在下載路徑中執行dpkg命令安裝Node.js： 
+sudo dpkg -i node_5.8.0-1_armhf.deb 
+測試Node.js 
+安裝完畢後，可先執行底下的命令查看Node.js和npm的版本： 
+
+用一個簡單的HTTP伺服器程式測試看看： 
+
+
+
+
+
+
+const http = require('http');
+const port = 8080;
+
+http.createServer((req, res) => {
+   res.writeHead(200, { 'Content-Type': 'text/html' });
+   res.end('<h1>Hello World</h1>');
+}).listen(port, () => {
+   console.log('本機網站伺服器在 ${port} 埠啟動了！');
+});
+
+
+123456789
+
+const http = require('http');const port = 8080; http.createServer((req, res) => {   res.writeHead(200, { 'Content-Type': 'text/html' });   res.end('<h1>Hello World</h1>');}).listen(port, () => {   console.log('本機網站伺服器在 ${port} 埠啟動了！');});
+
+
+
+
+確認能正常運作： 
+
+Raspbian Wheezy系統上安裝GCC 4.8 
+本節內容摘譯自Andy Felong先生的這篇貼文：Node.js v4 & v5 on Raspberry Pi 2。在Raspbian Wheezy系統上編譯新版的Node.js，需要將gcc/g++編譯器升級到4.8版。 
+先使用nano編輯軟體來源清單： 
+sudo nano /etc/apt/sources.list
+改成底下的內容： 
+
+
+
+
+
+
+deb http://mirrordirector.raspbian.org/raspbian/ wheezy main contrib non-free rpi
+deb http://archive.raspbian.org/raspbian wheezy main contrib non-free rpi
+# Source repository to add
+deb-src http://archive.raspbian.org/raspbian wheezy main contrib non-free rpi
+deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi
+deb http://archive.raspbian.org/raspbian jessie main contrib non-free rpi
+# Source repository to add
+deb-src http://archive.raspbian.org/raspbian jessie main contrib non-free rpi
+
+
+12345678
+
+deb http://mirrordirector.raspbian.org/raspbian/ wheezy main contrib non-free rpideb http://archive.raspbian.org/raspbian wheezy main contrib non-free rpi# Source repository to adddeb-src http://archive.raspbian.org/raspbian wheezy main contrib non-free rpideb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpideb http://archive.raspbian.org/raspbian jessie main contrib non-free rpi# Source repository to adddeb-src http://archive.raspbian.org/raspbian jessie main contrib non-free rpi
+
+
+
+
+新增偏好設定檔： 
+sudo nano /etc/apt/preferences 
+在其中輸入： 
+
+
+
+
+
+
+Package: *
+Pin: release n=wheezy
+Pin-Priority: 900
+Package: *
+Pin: release n=jessie
+Pin-Priority: 300
+Package: *
+Pin: release o=Raspbian
+Pin-Priority: -10
+
+
+123456789
+
+Package: *Pin: release n=wheezyPin-Priority: 900Package: *Pin: release n=jessiePin-Priority: 300Package: *Pin: release o=RaspbianPin-Priority: -10
+
+
+
+
+更新套件清單： 
+sudo apt-get update 
+從Jessie資源庫安裝gcc/g++ 4.8： 
+sudo apt-get install -t jessie gcc-4.8 g++-4.8 
+若要移除gcc/g++ 替代軟體設置（如果有的話，預設是沒有），請執行： 
+
+
+
+
+
+
+sudo update-alternatives --remove-all gcc
+sudo update-alternatives --remove-all g++
+
+
+12
+
+sudo update-alternatives --remove-all gccsudo update-alternatives --remove-all g++
+
+
+
+
+安裝替代軟體（alternatives）： 
+
+
+
+
+
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 20
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.6 20
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+
+
+1234
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 20sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.6 20sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+
+
+
+
+現在，4.8就變成預設的編譯器，你可以透過底下的命令確認： 
+sudo gcc --version 
+接著就可以嘗試編譯Node.js原始碼了。 
+假如要改變此設定，你可以執行： 
+
+
+
+
+
+
+sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+
+
+12
+
+sudo update-alternatives --config gccsudo update-alternatives --config g++
+
+
+
+
+
+
+
+
+
+
+			4 thoughts on “在Raspberry Pi編譯與安裝最新版Node.js”		
+
+
+
+
+
+node.js 有出三個 ARM的版本，測試後可以 Raspberry PI B/2B+/3 使用
+https://nodejs.org/en/download/current/
+直接解開來就可以用了~
+
+回覆 
+
+
+
+
+
+感謝告知！
+thanks,
+jeffrey
+
+
+
+
+
+
+
+
+
+老師請問一下
+我在輸入這邊的指令的時候
+sudo update-alternatives –install /usr/bin/gcc gcc /usr/bin/gcc-4.6 20
+sudo update-alternatives –install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+sudo update-alternatives –install /usr/bin/g++ g++ /usr/bin/g++-4.6 20
+sudo update-alternatives –install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+出現 update-alternatives :–install 要有
+use ‘ update-alternatives–help’ for program usage information
+在做上面的步驟都可以但是這邊發現問題
+我是使用pi3
+
+回覆 
+
+
+
+
+
+Node.js官網已經有提供事先編譯好的ARM版本，可直接給Raspberry Pi使用。例如，底下網址包含已編譯好的Node.js全部版本：
+https://nodejs.org/dist/
+例如，其中的”latest-v4.x”路徑代表「最新4.x版」，適用於Raspberry Pi的是檔名以armv71結尾的檔案。
+以下載、安裝4.7.2版為例，請在終端機視窗輸入下列命令（#號與後面的文字代表註解，不用輸入）：
+
+
+
+
+
+
+wget https://nodejs.org/dist/latest/node-v4.7.2-linux-armv7l.tar.gz    # 下載檔案
+tar -xvf node-v4.7.2-linux-armv7l.tar.gz        # 解壓縮
+cd node-v4.7.2-linux-armv7l    # 切換到目錄
+sudo cp -R * /usr/local/     # 複製所有檔案到 /usr/local/ 路徑
+
+
+
+
+1234
+
+wget https://nodejs.org/dist/latest/node-v4.7.2-linux-armv7l.tar.gz    # 下載檔案tar -xvf node-v4.7.2-linux-armv7l.tar.gz        # 解壓縮cd node-v4.7.2-linux-armv7l    # 切換到目錄sudo cp -R * /usr/local/     # 複製所有檔案到 /usr/local/ 路徑
+
+
+
+
+
+
+最後，重新啟動樹莓派。
+thanks,
+jeffrey
+
+
+
+
+
+
+
+發表迴響 取消回覆 
+你的電子郵件位址並不會被公開。 必要欄位標記為 *迴響 名稱 * 
+電子郵件 * 
+個人網站 
+
+ 
+
+
+Our anti-spam protection requires that you enable JavaScript in your browser to be able to comment!
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search for:
+
+
+
+
+
+最新回應 cubie on 在ESP8266的SPIFFS檔案系統存放網頁檔案（三）：Wi-Fi無線網路燈光控制與調光器: “大概是程式邏輯的問題吧。  thanks, jeffrey” 七月 21, 03:38 cubie on 建立Arduino的Socket即時通訊程式（二）: “Excel和VBA我完全外行。你的需求好像是要用Excel當前端，剛剛查了一下，Excel是可以透過VBA擷取Web資料，如微軟的Different Ways of Using Web Queries in Microsoft Office Excel 2003文件所示。如此看來，用HTTP通訊就能解決Excel和Node.js的溝通問題了。  thanks, jeffrey” 七月 21, 03:37 RS on 建立Arduino的Socket即時通訊程式（二）: “趙老師您好  最近在作個實驗是想用EXCEL讀取馬達所轉的圈數  並且由EXCEL傳送命令給馬達啟動,運轉至所指定圈數  ESP8266與NODE.JS以socket.io照您書上的範例+已經完成彼此間的溝通  問題卡在EXCEL能以甚麼方式與ESP8266或NODE.JS溝通?  (PS EXCEL的VBA我還可以  目前試過PLX-DAQ(須有線且一次只能一個COM不符合我的需求  我的需求將來至少須一次用到5個ESP8266作末端,且須由EXCEL作運算SERVER端)  苦惱中,想請問趙老師您有甚麼建議方向或思路嗎?  感謝” 七月 20, 22:16 白坤耿 on 在ESP8266的SPIFFS檔案系統存放網頁檔案（三）：Wi-Fi無線網路燈光控制與調光器: “您好，以這個範例來做改變，當我增加一組開關時就無法動作了，請問這樣是哪裡的問題呢??” 七月 20, 14:13 cubie on 《超圖解Arduino 互動設計入門》第三版內容更新說明: “DIY光劍這個話題在Arduino官方討論區挺熱門的，像這個討論串就有80多頁。發起討論的作者也公開他的光劍（USaber）原始碼。  在原始碼網頁有提到主要元件，除了Arduino和光劍本體之外，主要的感測器和電子元件包括：   振動和加速度感測器：例如SW-200D振動開關和MPU-6050加速度感測器。 聲音播放器：例如DFPlayer（MP3播放器）   另外，搜尋關鍵字Arduino Lightsaber也可以找到許多範例。  願原力與你同在！ jeffrey” 七月 19, 21:13 cubie on MQTT教學（六）：使用PubSubClient程式庫開發Arduino MQTT應用: “我測試使用MQTTLens發布和訂閱MQTT訊息都沒問題，話說回來，MQTTLens只是個測試工具，既然你的Arduino和伺服器程式都能運作無誤，那就沒問題啦～  thanks, jeffrey” 七月 19, 21:06 cubie on 超圖解物聯網IoT實作入門：使用JavaScript/Node.JS/Arduino/Raspberry Pi/ESP8266/Espruino: “如果沒有啟用二次驗證卻發生錯誤…根據Nodemailer官網的Using Gmail這篇文章說明，你需要啟用低安全性應用程式，請依照Google畫面的說明操作。  至於開啟Google的兩步驟驗證，請參閱Google的這個網頁說明和操作。  thanks, jeffrey” 七月 19, 21:04 蔡寶龍 on 《超圖解Arduino 互動設計入門》第三版內容更新說明: “老師你好                我是初學者,我購買了你的第三版超圖解ARDUINO互動設計 ! 因為我想如何利用…” 七月 19, 11:57廣告
+
+
+文章分類文章分類
+選擇分類
+Adobe  (22)
+Adobe ACA認證教材  (17)
+CSS樣式表  (8)
+Flash與ActionScript  (49)
+iPhone / iPod Touch  (4)
+Microsoft  (13)
+動態網頁製作  (22)
+哈玩意  (6)
+改造遊樂器  (27)
+教學文件  (64)
+數位相機與攝影機  (17)
+書籍堪誤  (18)
+桌面應用程式  (3)
+機器人  (15)
+生活雜趣  (17)
+硬體與DIY  (139)
+行動裝置  (46)
+課程資訊  (4)
+麥金塔歲月  (21)
+
+
+  最新文章 
+
+從Arduino IDE透過Wi-Fi無線網路上傳ESP8266程式檔（OTA更新）
+
+
+Mifare RFID-RC522模組實驗（四）：Mifare RFID的門禁系統實驗
+
+
+MQTT教學（七）：使用Node.js訂閱MQTT訊息
+
+
+MQTT教學（六）：使用PubSubClient程式庫開發Arduino MQTT應用
+
+
+MQTT教學（五）：「保留」發布訊息以及QoS品質設定
+
+
+MQTT教學（四）：使用MQTTLens訂閱與發布MQTT訊息
+
+
+MQTT教學（三）：安裝MQTT伺服器Mosquitto，macOS系統篇
+
+
+MQTT教學（二）：安裝MQTT伺服器Mosquitto，Windows系統篇
+
+
+MQTT教學（一）：認識MQTT
+
+
+從ESP8266連結Node.js並傳送JSON數據
+
+
+ 
+
+
+
+
+
+
+
+
+
+分頁 
+出版書籍
+新書介紹
+聯繫資訊
+課程資訊
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+

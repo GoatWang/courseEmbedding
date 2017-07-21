@@ -1,0 +1,1382 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+About me
+News
+Lab
+Courses
+Students
+Downloads
+Contact us
+Links
+
+
+
+
+
+
+
+
+
+
+歡迎來到慈濟大學 BioM3 實驗室
+Welcome to the BioM3 Lab! 
+
+
+
+
+
+
+
+Spring 2006 - Digital Signal Processing (DSP) Syllabus
+ ����訊號處理 
+Dr. Tsu-Wang Shen 
+E-mail: tshen@mail.tcu.edu.tw 
+Office hours: 
+
+本課重視生醫數位訊號、影像訊號處理及數位濾波器設計。培養同學處理心電圖、腦波、
+肌肉訊號、眼動波等生理訊號之的能力。
+ 
+
+ 
+
+
+
+
+Week 
+Date 
+Lecture Content 
+Note
+
+
+1 
+02/27
+Introduction and Review 
+(Signal, systems, Signal conversion, Fourier transform) 
+
+
+2 
+03/06
+Basic of Digtial Filtering 
+
+
+
+3 
+03/13
+Basic of Digtial Filtering 
+
+
+
+4 
+03/20
+FIR
+
+
+
+5 
+03/27
+FIR
+
+
+
+6 
+04/03
+IIR
+
+
+
+7 
+04/10
+Interger filters 
+
+
+
+8 
+04/17
+Signal averaging, Data coding
+
+
+
+9 
+04/24
+Midterm Exam 
+
+
+
+10 
+05/01
+Short-time Fourier transform
+
+
+
+11 
+05/08
+ Adaptive filters 
+
+
+
+12 
+05/15
+Wavelets
+
+
+13 
+05/22
+Wavelets
+
+
+
+14 
+05/29
+訊號實務
+
+
+
+15 
+06/05
+訊號實務
+
+
+
+16 
+06/12
+專題報告
+
+
+
+17 
+06/19
+ 端午節
+
+
+
+18 
+06/23
+Final Exam Week 
+
+
+
+Happy Winter Break!! 
+
+
+
+
+  Text books:
+Biomedical Signal and Image Processing 
+# Hardcover: 448 pages
+  # Publisher: CRC (December 21, 2005)
+  # Language: English
+  # ISBN-10: 0849320992
+  # ISBN-13: 978-0849320996
+Biomedical Signal Processing and Signal Modeling
+# Hardcover: 536 pages# Publisher: John Wiley & Sons; 1 edition (November 20, 2000)# Language: English# ISBN-10: 0471345407# ISBN-13: 978-0471345404
+
+
+Biomedical Digital Signal Processing: C Language Examples and Laboratory Experiments for the IBM PC
+•  Textbook Binding: 368 pages 
+•  Publisher: Prentice Hall; 1st edition (March 2, 1993) 
+•  Language: English 
+•  ISBN: 0130672165 
+•  Product Dimensions: 1.0 x 7.5 x 9.8 inches
+  Grading policy: midterm 25%;  project 20%; homework 30%; final 30%;
+
+
+
+
+
+
+ 
+ |
+        About me |
+        News |
+        Lab |
+        Courses |
+        Students 
+        | Downloads 
+    | Contact us | |links|
+
+
+
+
+© Copyright 2006All Rights Reserved
+Comments or problems? Please contact
+      biom3.lab@gmail.com
+
+
+
+
+ 
+ 
+
+
+
+
+生醫信號處理 - 維基百科，自由的百科全書
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+生醫信號處理
+
+維基百科，自由的百科全書
+
+
+					前往：					導覽，					搜尋
+
+
+
+
+
+
+本條目不符合維基百科的品質標準，需要完全重寫。（2015年12月14日） 
+請在討論頁中討論相關議題，並參考更優秀條目寫作指南。 
+
+
+生物醫學信號處理（biomedical signal processing）的主要任務是根據生物醫學信號（biomedical signal）的特點，應用資訊科學的基本理論和方法，並研究如何從被乾擾和雜訊淹沒的觀察記錄中，提取各種生物醫學信號中所攜帶的資訊，對它們進一步分析、解釋、分類、顯示、儲存和傳輸。
+
+
+
+目錄
+
+
+1 生物醫學信號處理
+
+1.1 心電圖(ECG)信號處理
+1.2 腦波圖(EEG)信號處理
+1.3 肌電圖(EMG)信號處理
+
+
+2 生物醫學信號的特性
+
+2.1 生物醫學信號的分類
+2.2 信號處理的觀念──選擇性地消除資訊
+2.3 在生物醫學信號處理中的幾個階段
+2.4 生物醫學信號的檢測方法
+2.5 生醫信號處理流程
+
+
+3 參考資料
+
+
+
+生物醫學信號處理[編輯]
+針對不同的生物醫學信號，如心電圖(ECG)、腦波圖(EEG)、肌電圖(EMG)，有不同的演算法設計，一方面提取出信號特徵，另一方面有效的消除信號雜訊。由於生物醫學信號通常是非穩態信號(non-stationary signal)、時變率高，較不適合使用傅立葉轉換分析，使用時頻分析方法或小波轉換較能精確描述每個時間點的頻率、波形變化。如小波轉換可保留接近原始信號成分的低頻訊號，以及分離出疑似雜訊的高頻訊號，對於即易受雜訊乾擾的生物醫學信號來說相當適合。
+心電圖(ECG)信號處理[編輯]
+心跳是重要生命跡象，而由心電圖可辨別出許多疾病徵兆，因此快而準確的心電圖信號分析對於病情診斷相當有幫助。 心電圖信號處理包含以下幾個部分：特徵萃取(feature extraction)、 特徵選取(feature detection)、資料壓縮、心律變異分析(heart rate variability,HRV)以及R波偵測(R-wave detection)。當中又以R波偵測為心電圖信號處理當中的重要步驟，相關演算法的第一個步驟幾乎都是找到R波波峰位置，再依照R波位置辨別出P、Q、T、S波之相對位置。而兩個相鄰R波波峰距離(RR Interval)與心率(Heart Rate)可用來進行心律變異分析，可由此分析判斷病人的健康狀況。
+
+R波偵測
+
+R波偵測演算法時作主要有三大類：時域、頻域與其他分析方法。在時域部分，通常是將R波看為一瞬間極大振幅變化，對時間域上的信號微分，比較一次微分和二次微分的結果，得到R波波峰位置，如So and Chan Algorithm。時域上的分析通常相當準確、快速，因此適合在即時監測時使用，但容易受雜訊乾擾。頻域分析通常使用小波轉換或希爾伯特黃轉換進行，通常可得到精確且不受雜訊乾擾的結果，然而頻域分析所需時間較長，不適合提供即時數據。其他分析方法則包含zero-crossing method、morphologic filtering、gene-based design……等方法。[1]
+
+心電圖資料壓縮
+
+為了有效分析心跳數據，ECG訊號通常是24小時監控，資料量相當龐大，所面臨的挑戰除了壓縮資料大小，也必須確保資料復原後的準確度。Walsh Transform(WHT)是一種類似傳統離散傅立葉轉換(DFT)的信號處理，除了與DFT相似的正交性，WHT由於振幅為1，皆為實數運算且不需任何乘法，因此具有快速演算法，可在短時間內進行頻譜分析。相關演算法包含：Cooley-Tukey、Manz’s Sequence Algorithm、John L. Shark’s Algorithm。[2]
+腦波圖(EEG)信號處理[編輯]
+腦波圖的紀錄可分為兩種：腦電波與腦磁波。前者測量大腦皮質的電流，後者則測量腦磁波。大腦皮質電流是由細胞群之間電位差所造成，為細胞外的電流。而在神經活化、產生電訊號的時候，會因法拉第第一定律產生磁場變化，磁場訊號變化大小即為腦磁波。通常會將EEG訊號標註刺激(stimulus)、自發動作(event)或反應(response)等基點，取固定的時間間距中的訊號，再配合PCA(Principle Component Analysis)及ICA(Independent Component Analysis)確認正確發出訊號的時間點、波頻和傳遞方向。 人腦中有許多不同頻率大小的功能區域性腦波律動(Brain Rhythm)，如：感覺運動區的Mu Rhythm頻率約在10~20Hz之間、枕葉視覺區的Alpha Rhythm約為10Hz。藉由判定特定區域腦波圖的訊號組成，可推測出該區域功能。
+肌電圖(EMG)信號處理[編輯]
+骨骼肌收縮時會產生一動作電位，收縮幅度越大、運動越大則該電位振幅越大，肌電圖即是紀錄骨骼肌動作電位變化。肌電圖可用來判別肌肉的疲憊程度，藉由時間域上的分析可監控可能狀況和周邊疲憊，而頻率域上的分析則可瞭解運動單元的激發率。目前在時域及頻域分析上已有多項指標可做為醫療運用參考。時域指標包含振幅均方根值(root mean square，RMS)、積分肌電圖(integral electromyography，IEMG)、經全波整流之肌電活動(Electrical Activity，EA)。而頻域則有平均功率頻率(mean power frequency，MPF)及中位頻率(median frequency，MDF)……等指標。[3]
+生物醫學信號的特性[編輯]
+信號是由一個或多個變量組成，攜帶有用資訊的函數。如果有一個信號，是從某個生命系統（生物）上記錄而得，並且能傳達有關該生命系統的狀態或行為的資訊，則我們稱此信號是生物醫學信號。例如，病人的體溫記錄、放置在頭皮上的電極的電壓記錄，以及X射線吸收從CT掃描獲得的空間圖案 皆是生物信號。
+信號可以是一維的，如果他們依賴於一個單一的變量，如時間，或多維如果他們取決於多個變量，如空間坐標生物醫學信號，是屬於強雜訊背景下的低頻微弱信號，它是由複雜的生命體發出的不穩定的自然信號，從信號本身特徵、檢測方式到處理技術，都不同於一般的信號。
+生物醫學信號的分類[編輯]
+
+從電的性質來講，可以分成電信號和非電信號，如心電、肌電、腦電等屬於電信號；其它如體溫、血壓、呼吸、血流量、脈搏、心音等屬於非電信號。
+
+非電信號又可分為：
+
+機械量，如振動（心音、脈搏、心衝擊、Korotkov音等）、壓力（血壓、氣血和消化道內壓等）、力（心肌張力等）；
+熱學量，如體溫；
+光學量，如光透射性（光電脈波、血氧飽和度等）；
+化學量，如血液的pH值、血氣、呼吸氣體等。
+
+如從處理的維數來看，可以分成一維信號和二維信號：
+
+一維信號；體溫、血壓、呼吸、血流量、脈搏、心音等；
+二維信號；腦電圖、心電圖、肌電圖、x光片、超聲圖片、CT圖片、核磁共振圖像等。
+
+信號處理的觀念──選擇性地消除資訊[編輯]
+信號處理的本質其實是選擇性地消除資訊，這原因往往不是因為信號傳達了與我們不相關的資訊，或是我們感興趣的資訊，而是信號中本就混雜了各種資訊。例如，腦電圖（EEG）的志願測試者，其頭皮的電生理活動記錄，也許就沾染了心電信號和無處不在的60Hz交流電力線信號。
+什麼構成了我們感興趣的資訊？取決於特定的應用。例如，語音信號包含語言資訊（這句話說了些什麼？）以及有關講者（誰說了這句話？）的資訊。對前者（語言資訊）有興趣的應用，很顯然在自動語音內容識別系統，而後者（講者資訊）將被講者識別系統所重視。
+信號處理是有目的地選擇，從信號中消除特定不相關的資訊，以便更容易接觸到人類觀察者或計算機系統所感興趣的資訊。
+在生物醫學信號處理中的幾個階段[編輯]
+在一個典型的生物醫學應用中，信號處理可包括四個階段：數據採集（data acquisition）、信號調理（signal conditioning）、特徵提取（Feature extraction）和決策（decision making）。
+數據採集的目的是捕獲信號，並以適合於計算機處理的形式進行編碼。在這個階段中，主要關心的是避免遺失有關的信號資訊。
+信號調節的目標是消除或減少所收集到信號的外來成分，如從該信號的雜訊（noise）。通常情況下，這個工作會利用線性濾波器，有時，會與非線性運算子組合使用。主要目標是如何設計濾波器能讓信號從雜訊中獨立出來的效果最好。
+特徵抽取的意思是分辨及量測少量的參數，或者在一個信號中，找出我們感興趣的資訊的部分的最好特徵。特徵提取和信號調節之間的區別主要是在維度的改變。鑑於調節的結果，通常與輸入信號具有相同的維度，而提取特徵集合應該具有比輸入信號低得多的維度，以促進儲存，處理和可視化。例如：Principal component analysis（PCA）。此外，特徵提取技術往往要考慮信號特性和特定於應用程序，而信號調節的方法則是非常普遍被使用於各種處理。
+決策是生物醫學信號處理的最後階段，又名假設檢驗（hypothesis testing）。在臨床應用中的行動方針尤其重要的，必須採取。它的目的是回答諸如「根據腦部掃描患者是否患有腫瘤？」或「根據心電圖顯示，病人的心臟跳動是否呈現一個具體的病理？」
+生物醫學信號的檢測方法[編輯]
+生物醫學信號檢測是對生物體中包含生命現象、狀態、性質、變數和成份等信息的信號進行檢測和量化的技術。生物醫學信號處理的研究，是根據生物醫學信號的特點，對所採集到的生物醫學信號進行分析、解釋、分類、顯示、儲存和傳輸，其研究目的一是對生物體系結構與功能的研究，二是協助對疾病進行診斷和治療。
+生物醫學信號檢測技術是生物醫學工程學科研究中的一個先導技術，由於研究者所站的立場、目的以及採用的檢測方法不同，使生物醫學信號的檢測技術的分類呈現多樣化，具體介紹如下：
+
+無創檢測、微創檢測、有創檢測；
+在體檢測、離體檢測；
+直接檢測、間接檢測；
+非接觸檢測、體表檢測、體內檢測；
+生物電檢測、生物非電量檢測；
+形態檢測、功能檢測；
+處於拘束狀態下的生物體檢測、處於自然狀態下的生物體檢測；
+透射法檢測、反射法檢測；
+一維信號檢測、多維信號檢測；
+遙感法檢測、多維信號檢測；
+一次量檢測、二次量分析檢測；
+分子級檢測、細胞級檢測、系統級檢測。
+
+生醫信號處理流程[編輯]
+
+生物醫學信號透過電極拾取或透過感測器轉換成電信號，
+經放大器及預處理器進行信號放大和預處理，
+然後經A/D轉換器進行採樣，將類比信號轉變為數位信號，
+輸入電腦，
+然後通過各種數位信號處理演算法進行信號分析處理，得到有意義的結果。
+
+參考資料[編輯]
+
+http://ocw.mit.edu/courses/health-sciences-and-technology/hst-582j-biomedical-signal-and-image-processing-spring-2007/
+http://ocw.mit.edu/courses/health-sciences-and-technology/hst-582j-biomedical-signal-and-image-processing-spring-2007/lecture-notes/l1_intro.pdf
+http://eshare.stust.edu.tw/EshareFile/2010_12/2010_12_5880ad16.pdf
+
+
+
+
+^ Template:Title=Time-Frequency Analysis for for ECG signals
+^ Template:Title=DSP for Electrocardiography Analysis
+^ Template:Title=EMG Signal Analysis
+
+
+
+
+
+ 
+						取自 "https://zh.wikipedia.org/w/index.php?title=生醫信號處理&oldid=42948888"					
+隱藏分類：自2015年12月維基百科需要重寫的條目含有英語的條目 
+
+
+
+導覽選單
+
+
+個人工具
+
+沒有登入對話貢獻建立帳號登入 
+
+
+
+命名空間
+
+條目
+討論
+
+
+
+
+台灣正體
+
+
+
+不轉換
+簡體
+繁體
+大陸簡體
+香港繁體
+澳門繁體
+馬新簡體
+台灣正體
+
+
+
+
+
+
+查看
+
+閱讀
+編輯
+檢視歷史
+
+
+
+更多
+
+
+
+
+
+
+
+搜尋
+
+
+
+ 
+
+
+
+
+
+
+
+導航
+
+
+首頁分類索引特色內容新聞動態近期變更隨機條目 
+
+
+
+說明
+
+
+說明維基社群方針與指引互助客棧知識問答字詞轉換IRC即時聊天聯絡我們關於維基百科資助維基百科 
+
+
+
+列印/匯出
+
+
+下載成 PDF 
+
+
+
+工具
+
+
+連結至此的頁面相關變更上傳檔案特殊頁面可列印版靜態連結頁面資訊維基數據 項目引用此頁面 
+
+
+
+其他語言
+
+
+
+新增連結 
+
+
+
+
+
+ 本頁面最後修訂於2017年1月24日 (週二) 18:00。
+本站的全部文字在創用CC 姓名標示-相同方式分享 3.0 協議之條款下提供，附加條款亦可能應用（請參閱使用條款）。
+Wikipedia®和維基百科標誌是維基媒體基金會的註冊商標；維基™是維基媒體基金會的商標。
+維基媒體基金會是在美國佛羅里達州登記的501(c)(3)免稅、非營利、慈善機構。
+
+
+隱私政策
+關於維基百科
+免責聲明
+開發人員
+Cookie 聲明
+手機版檢視
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+國立成功大學 - 課程地圖
+
+
+
+
+
+
+
+    
+ 
+
+
+ 首頁 
+
+
+
+
+
+
+
+ 通識教育課程地圖 
+
+
+
+
+
+
+ 院系所課程地圖 
+
+
+
+
+
+
+
+
+意見回饋 ｜ 
+  
+
+English ｜ 
+  
+
+
+
+
+ 1.
+        
+請選擇學院
+其他文學院理學院工學院管理學院醫學院社會科學院電機資訊學院規劃與設計學院生物科學與科技學院 
+        2. 
+        
+請選擇系所
+電機系          資訊系          電機所          多媒學程        資訊所          製造所          微電所          電通所          醫資所          奈積學程         
+
+
+
+ 3. 
+        
+選擇未來發展 - 升學
+
+						國內進修                                          
+
+						國外進修                                          
+
+
+選擇未來發展 - 就業
+
+						資訊產業                                          
+
+						生醫產業                                          
+
+						學術界                                            
+
+						公職                                              
+
+						其它                                              
+
+
+
+
+
+
+生醫訊號處理                            
+
+
+  	空白
+
+課程教育目標 
+
+A. 教育學生具備資訊專業研究與醫學知識應用之能力B. 教育學生具備醫學資訊整合、設計及創新之能力 
+課程基本素養與核心能力 
+
+[核心能力]畢業生應具備資訊專業知識與研究之能力
+畢業生應具備醫學資訊知識及應用之能力
+畢業生應具備醫學資訊領域獨立發掘問題、策劃實驗、解決問題之能力
+畢業生應具備應用資訊科技解決醫學資訊問題的能力
+ 
+近年開課資訊
+
+
+
+開課年度
+課程碼
+分班碼
+課程名稱(超連結為課程大綱)
+學分數
+英語授課
+授課教師
+
+
+
+0106/1
+P75C600
+ 
+ 
+		  	生醫訊號處理                            
+
+3.0
+N
+梁勝富
+
+
+
+0105/1
+P75C600
+ 
+ 
+		  	生醫訊號處理                            
+
+3.0
+N
+梁勝富
+
+
+
+0104/1
+P75C600
+ 
+ 
+		  	生醫訊號處理                            
+
+3.0
+N
+梁勝富
+
+
+
+0103/1
+P75C600
+ 
+ 
+		  	生醫訊號處理                            
+
+3.0
+N
+梁勝富
+
+
+
+0102/1
+P75C600
+ 
+ 
+		  	生醫訊號處理                            
+
+3.0
+N
+梁勝富
+
+
+
+0101/1
+P75C600
+ 
+ 
+		  	生醫訊號處理                            
+
+3.0
+N
+梁勝富
+
+
+
+0100/1
+P75C600
+ 
+ 
+		  	生醫訊號處理                            
+
+3.0
+N
+梁勝富
+
+
+
+0099/1
+P75C600
+ 
+ 
+		  	生醫訊號處理                            
+
+3.0
+N
+梁勝富
+
+
+
+0098/1
+P75C600
+ 
+ 
+		  	生醫訊號處理                            
+
+3.0
+N
+梁勝富
+
+
+
+
+
+
+
+ 國立成功大學 |  課程查詢  
+701臺南市大學路1號   TEL:  06-2757575#50158  意見回饋信箱: 教務處課務組 em50150@mail.ncku.edu.tw
+    國立成功大學 版權所有  © NCKU All Rights Reserved.  計網中心資訊系統發展組 製作
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+國立中山大學生醫影像實驗室
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Home
+News
+People
+Projects
+Courses
+Links
+English
+
+
+
+
+生醫感測器與信號處理 Biomedical Sensor and Signal Processing
+
+研究所課程，亦歡迎大四同學選修。
+課程內容：介紹各種生理訊號（尤其是生理電訊號）的來源與特性，並針對其性質設計適當的感測器，以及各種常見的生醫訊號處理方式。
+開課年度：982。
+98學年度第二學期課程大綱。
+Prerequisites: Electronics, Electric circuits, Signal and system, Digital signal processing (optional).
+Reference books 
+
+“VLSI Circuit for Biomedical applications”, Krzysztof  Iniewski, Artech House Publishers 2008 (1st Edition)
+“Design and Development of Medical Electronic  Instrumentation”, D. Prutchi and M. Norris, Wiley-Interscience 2004 (1st Edition)
+“Signals and Systems Analysis in Biomedical  Engineering”, Robert B. Northrop, CRC Press 2003 (1st Edition)
+“Medical Instrumentation: Application and Design”,  John G. Webster, Wiley 2009 (4th edition)
+
+
+Topics include
+
+Bioelectric phenomenon
+The origins of biopotential 
+Biomedical sensors
+Microneedles
+Biopotential amplifiers
+Biomedical instrumentation and safety
+Introduction to biomedical signals and systems
+Signal and noise
+Time-frequency analysis of biomedical signals
+
+
+Grading
+		  
+Lab 60%
+Term project 40%
+
+
+
+
+
+ BMI Lab @ NSYSU EE, since 2008
+	original design by tri-star web design
+
+
+
+
+
+
+
+
+
+生醫訊號與影像 - 國立交通大學資訊工程學系 NCTU Department of Computer Science
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+中文|English
+
+
+最新消息
+
+系所介紹 
+系所簡介
+歷史沿革
+系所組織
+研究所
+系計中
+軟硬體實驗室
+地理位置
+聯絡我們
+
+
+系所成員
+
+學術研究 
+研究焦點
+研究成果
+研究計畫
+研究中心
+
+
+教學與課程資訊
+榮譽事蹟
+入學資訊
+資工系友
+
+相關連結 
+表單下載
+網路資源
+程式檢定系統
+英文檢定系統
+Webmail
+登入系統
+
+
+
+
+
+
+
+
+
+
+生醫訊號與影像
+ ＞ 
+研究焦點
+ ＞ 
+學術研究
+ ＞ 
+首頁
+ 
+
+
+回上層
+演算法、計算機理論與科學計算
+程式語言、編譯器與軟體工程
+作業系統、分散式系統與即時系統
+嵌入式 系統、晶片系統、計算機結構
+電子設計自動化
+人工智慧、機器學習、智慧型計算
+物聯網通訊
+無線網路
+多媒體通訊
+寬頻通訊
+軟體定義網路
+電腦視覺、影像處理、圖形辨識
+多媒體資訊系統
+生醫訊號與影像
+人機互動、虛擬與擴增實境、穿戴式技術
+圖學、動畫、遊戲、數位學習
+智慧環境
+雲端計算
+巨量資料與資料探勘
+資訊與網路安全
+
+
+
+ 
+ 
+生醫訊號  Biomedical Signal
+生醫訊號研究領域，即應用訊號處理技術來解決重要生醫問題。例如，致力於腦功能造影領域的研究，開發腦磁波、腦電波訊號處理技術、活動源模型、與逆估算演算法，來計算腦神經活動源分佈與其動態，並進而探討腦部訊息處理機制。應用上有研究人類在進行人臉辨識時所活化的腦區，或比較憂鬱症病患與正常人之間在處理情緒控制時神經網路活動的不同。同時，亦應用腦電波分析技術在睡眠診斷和腦機介面（Brain Computer Interface）系統中，經由訊號特徵擷取與資料分類法，區分出不同的腦部活動狀態。
+另外，致力於自動運算模型輔助照護系統之研究，開發醫學資訊(Medical Informatics)所需要方法，例如，透過分析來萃取有效之生理資訊，讓系統有分析龐大複雜感測之生理資訊的能力，並實現居家照護系統。現階段，有透過非線性、非穩態、無失真之訊號分析法，分析呼吸、血壓、血氧、血流、心跳、二氧化碳等的時域、頻域、特徵域變化，探討與評估心血管循環系統、呼吸協同運動，並嘗試建構生心理(Somatic)運算模型，開發多維之分析法則。
+研究主軸
+生醫資訊、醫學影像、生物影像、生醫訊號分析、生醫科學與感測、生物晶片設計、生醫臨床應用
+研究人員
+王才沛、陳永昇、荊宇泰
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+崑山科技大學 - 正體中文 / 日間部 / 教學單位 / 工程學院 / 電子工程系 / 生醫訊號處理研究室(E3711)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::Languages
+網站地圖
+無障礙說明
+訪客／未來學生
+在校學生
+校友
+教師
+職員
+
+
+
+
+
+
+
+當SCRIPT關閉時,字級大小選擇,請參考：而IE7 IE8 或Firefox瀏覽器則可利用鍵盤 Ctrl + (+)放大 (-)縮小來改變字型大小。
+
+
+
+
+
+
+
+
+
+:::
+關於崑山
+教學單位
+行政單位
+其它單位
+相關連結
+登入．應用系統
+MY．KSU
+
+
+
+
+
+
+
+
+
+
+
+系統小提示
+此功能為網站全文搜尋！搜尋結果為Google提供，本網站不儲存任何搜尋結果！若要查詢應用系統請點選『資訊系統關鍵字搜尋』。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+電子工程系
+
+單位公告
+相關檔案及法規下載
+教師簡介／資歷展示
+
+
+招生訊息日間部進修部碩士班假日班轉學考100年度經濟部工業局委託崑山科技大學「半導體學院計畫-崑山製程工程師人才培訓班」系所簡介系所沿革師資介紹退休教師與曾經服務於本系的教職員系所現狀行政組織教學特色重點研究系所地圖系所聯絡資訊google 全校環景課程地圖與學習歷程(eportfolio)課程地圖與eportfolio崑山科技大學電子工程系學生本位課程設計學程介紹學程流程圖課程介紹日間部-(四年制)日間部-(研究所)進修部-(四年制)進修部-(研究所)崑山科技大學電子工程系課程設計日間部-太陽光電技術技優學程榮譽榜榮譽榜電子系新聞98學年度榜單99學年度榜單100學年度榜單101學年度榜單102學年度榜單103學年度榜單104學年度榜單105學年度榜單博士班98-1獲獎榮譽榜98-2獲獎榮譽榜99-1獲獎榮譽榜99-2獲獎榮譽榜100-1獲獎榮譽榜100-2獲獎榮譽榜101-1獲獎榮譽榜101-2獲獎榮譽榜102-1獲獎榮譽榜103-2獲獎榮譽榜104-1獲獎榮譽榜104-2獲獎榮譽榜105-1獲獎榮譽榜105-2獲獎榮譽榜跨院系學程工程學院跨系學程資訊科技院 跨院系學程-RFID應用學程電子工程系學生選修跨系學程表跨領域創意與創業學程崑山科技大學跨領域創意與創業學程台積電公司半導體製造及生產管理學學程課表查詢日間部進修部研究所特色實驗室高頻電路設計與佈局實驗室(E2600)嵌入系統與介面控制實驗室(E3301)乙級技術士證照訓練室(E3303)工業電子與基礎電路實驗室(E3401)數位信號處理暨電子電路實驗室(E3403)電腦網路實驗室(E3404)程式設計實驗室(E3405)超大積體電路實驗室(E3510)可編程數位晶片實驗室(E3511)基礎量測實驗室(E3710)實驗室清單特色實驗室與專題實驗室介紹專題實驗室應用積體電路設計與量測研究室(E2502) 生物情境感知研究室(E2503)智慧型儀器設計研究室(E2504)射頻電路設計研究室(磁性智慧科技實驗室)(E3402)矽智財設計研究室(E3711)生醫訊號處理研究室(E3711)電子陶瓷研究室(E3713)/電子陶瓷材料準備室(E3716)保健科技研發中心特色實驗室與專題實驗室介紹系學會電子系學會系會章程系學會幹部電子系學會的榮耀電子系學會網站崑山科技大學電子工程系學會組織及活動方法說明書家族表電子工程系家族表學生專題電子系專題實務流程圖104學年度畢業班專題102學年度畢業班專題99學年度畢業班專題學生證照統計99-1證照(技)99-2證照(技)100-1證照(技)100-2證照(技)校友區校友服務平臺崑山科技大學電子工程繫系友聯絡資料調查表系友會研發替代役專區2017崑山科技大學電子工程繫系友大會報名錶電子工程科,系,所歷年畢業生考古題大學部研究所流感認知認識H1N1流感認知(100.03.03來文)暑期夏令營手工創意製作創意電子製作校外實習崑山電子-104學生實習崑山電子-103學年度學生實習電子系校外實習yes123校園徵才專區1111人力銀行職場導航網頁電子系102-2校外實習流程圖東陽實業股份有限公司群創光電股份有限公司國立科學工藝博館實習群創光電產學合作專班說明會台積電2014年暑期實習計畫南茂實習生合作專案南茂集團上海工程師徵才工讀訊息奇美農場假日工讀生連結區崑山科技大學電子工程系FacebookFacebook|崑山科技大學電子工程繫系友臺灣高等教育師生問捲調查資料庫崑山網路大學崑山網路大學E-Portfolio技職風雲榜崑山租屋系統電子系教師上傳系統2011成功大學世界校友嘉年華會報名錶政府研究資訊系統(Government Research Bulletin)崑山-數位典藏系統電子系證照系統無主旨太陽能屋參訪20100521(內湖高中李主任參觀)20100701(創意手工皂專業師資培訓班參觀)20100902(高中職種子教師培訓營參觀)20100914(育德工商師生參觀)20100917(太陽能電子技術發展及與印刷科技之應用研習參觀)20100923(嘉義高工建築室設科參觀)20100924(99年度建構綠色能源產業專業育成網絡計畫會議參觀)20101019(通識課學生參觀)20101020(空間設計實務班)20101105(曾文農工參觀)20101118~19(創意節能減碳專題製作課程規劃與推廣)20101220(永原科學儀器有限公司參訪)20101220(曾文高級家事商業職業學校幼兒保育學程)20101222(大成高級商工)20101223(曾文高級家事商業職業學校幼兒保育學程)常識,知識Q&A身分證遺失該如何處理?食品添加劑&起雲劑違規油品一覽表失物招領失物招領IEET工程認證與活動專屬站區崑山科技大學電子工程系教育目標IEET工程教育認證EACIEET工程技術認證TAC崑山科技大學電子工程系IEET工程認證IEET工程認證問捲系統2013崑山科技大學電子工程系IEET工程教育認證自評報告書上傳崑山科技大學電子工程繫系友聯絡資料調查表教育部顧問室海洋教育先導型計畫2013崑山科技大學電子工程繫系友大會報名錶第九屆HOLTEK MCU 創意競賽高職聯盟-預修課程學生證照,競賽,職涯, 學術活動與計畫申請訊息電子工程系提升學生就業能力檢定證照資料專題演講,訓練課程與學術演討會資訊計畫申請資訊競賽相關資訊100學年度第一學期 業務工作崑山科技大學 演講網處處學英文(99-2)處處學英文(100-1)通識護照活動一覽表行事曆105學年度第1學期行事曆活動歷史區2017亞洲智慧型機器人大賽(106.07.01)特色典範計畫-青山綠水永流傳2012健康照護實務創意設計大賽教育部海洋教育先導型計畫-海洋巡旅盛群半導體儀器捐贈儀式(98.04.09)2015崑山電子盃自走車循跡全國邀請賽(104.12.26)盛群半導體儀器捐贈儀式(104.12.30)2016崑山電子盃全國高中職專題應用競賽(105.03.19)電子系63級畢業校友回娘家(105.04.24)太陽光電設置乙級技術士術科檢定研習營(105.12.16)2016崑大電子盃機器人嘉年華全國競技賽(105.12.24)
+
+
+
+
+
+
+
+
+
+
+:::
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+生醫訊號處理研究室(E3711)
+矽智財設計研究室(E3711)
+更新日期：2013年11月11日
+
+一、研究主題：
+　　　醫學電子。
+　　　生醫輔具。
+　　　系統整合。
+　　　機器人應用。
+二、教師研究群：林俊宏老師、葉蘭英老師
+三、開放時間：10:00~22:00。
+四、研究生：
+　　在學：
+　　　電子所碩二：林淮偉、單冠霖、陳昌廷、王義智
+　　　電子所碩一：李振榮、侯國偉、黃基城、洪於翔
+　　畢業：
+　　　2013年：(研)林琦閔、陳彥廷、曾耀陞、黃瑞霖、蔡福順、鄭詠聰
+　　　2012年：(研)王中成、廖紹傑
+　　　2011年：
+　　　2010年：(研)孫證禮、盧錦宏
+　　　2009年：
+　　　2008年：(研)林家慶、游宗憲
+　　　
+五、大學部專題生：
+　　在學：
+　　　大四：吳仲賢、吳重毅、李建佑、鍾凱傑、黃彥禎、柳君蓉、蘇柏安、林融駿、蔡志欣、黃駿騏、陳柏甫、林建宏、沈揚尉、陳彥銘
+　　　大三：關雅竹、陳奎伯、張鬱翊、徐國勝、劉宇倫、劉進福、張簡冠甫、溫哲偉、田伊右、陳俊穎、周秉毅、吳佳原、黃正佑
+　　畢業：
+　　　2013年：(大)李振榮、侯國偉、郭冠呈、楊玄德、楊孟哲
+　　　2012年：(大)林淮偉、林榆翔、林於迪、林建宏、李明傑、林煥宸、呂仁豪、 黃再沐、詹朝淵、魏文昌、陳昌廷、單冠霖、廖霆棫
+　　　2011年：(大)鄭詠聰、陳彥廷、許鈞逵、曾耀陞、劉凱維、侯昆亨、林俊逸 
+　　　2010年：(大)楊子明、李民章、徐松章、戴啟倫、方崑益、林承緯、王頂立、黃崑峻、廖紹傑、林世豪
+　　　2009年：(大)李翊齊、杜文寧、洪松牧、李育霖、蔡昱德、吳宗漢、沈銘彥、 王瑋辰
+　　　2008年：
+
+六、研究室成果（競賽）
+　　1.林淮偉, 沈揚尉, “數位化陀螺儀實驗教學平臺,” 第18屆全國大專校院資訊應用服務創新競賽(產學合作組), 經濟部工業局、教育部資訊及科技教育司、中華民國資訊管理學, 2013/11/09, 【佳作】
+　　2.周秉毅, 吳佳原, 林淮偉, “安全拐杖,” 2013年全國智慧型機器人大賽, 機器人創意競賽, 臺灣人形機器人學會, 2013/5/18, 【第二名】
+　　3.劉宇倫, 徐國勝, 陳彥廷, “防盜電風扇,” 2013年全國智慧型機器人大賽, 機器人創意競賽, 臺灣人形機器人學會, 2013/5/18, 【佳作】
+　　4.張簡冠甫, 張鬱翊, 陳昌廷, “A組-推球戰車,” 2013年全國智慧型機器人大賽, 自走車撞球比賽, 臺灣人形機器人學會, 2013/5/18, 【佳作】
+　　5.田伊右, 陳俊穎, 王義智, “A組-自走車撞球,” 2013年全國智慧型機器人大賽, 自走車撞球比賽, 臺灣人形機器人學會, 2013/5/18, 【佳作】
+　　6.林融駿, 李振榮, 黃駿騏, “大專組_安養院訊息監測系統,” 101年度全國微電腦應用系統設計製作競賽, 儀錶類, 教育部, 2012/12/1, 【第三名】
+　　7.楊孟哲, 楊玄德, 林建宏, “節能/家電控制組_遠端多點太陽能環境監控,” 第七屆盛群盃HOLTEK MCU創意大賽, 盛群半導體股份有限公司, 2012/11/17, 【佳作】
+　　8.蘇柏安, 李振榮, 郭冠呈, “智慧/車用控制組_消防出勤輔助系統,” 第七屆盛群盃HOLTEK MCU創意大賽, 盛群半導體股份有限公司, 2012/11/17, 【佳作】
+　　9.吳仲賢, 黃駿騏, 曾耀陞, “應用控制組_可攜式馬達自動化檢修器,” 第七屆盛群盃HOLTEK MCU創意大賽, 盛群半導體股份有限公司, 2012/11/17, 【佳作】
+　　10.鍾凱傑, 劉宇倫, 王義智, “節能/家電控制組_防盜監視家電,” 第七屆盛群盃HOLTEK MCU創意大賽, 盛群半導體股份有限公司, 2012/11/17, 【佳作】
+　　11.李建佑, 沈揚尉, 柳君蓉, “居家/健康應用組_舞出健康,” 第七屆盛群盃HOLTEK MCU創意大賽, 盛群半導體股份有限公司, 2012/11/17, 【佳作】
+　　12.鄭詠聰, 李振榮, 林融駿, “電機資訊類_加工機刀具非接觸檢測系統,” 萬潤2012創新創意競賽, 萬潤科技股份有限公司, 2012/09/19, 【佳作】
+　　13.郭冠呈, 李建佑, 鍾凱傑, 吳重毅, “週邊控制組_鬼隱者,” 第六屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2012/5/18, 【佳作】
+　　14.黃彥禎, 吳仲賢, 陳佳宏, 單冠霖, “週邊控制組_多功能登山腰包,” 第六屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2012/5/18, 【佳作】
+　　15.侯國偉, 李振榮, 劉庭邑, “指定主題組_綠能多媒體教學平臺,” 第六屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2012/5/18, 【佳作】
+　　16.楊玄德, 楊孟哲, 沈揚尉, “指定主題組_多功能行車安全偵測系統,” 第六屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2012/5/18, 【佳作】
+　　17.楊玄德, 沈揚尉, 黃駿騏, 林融駿, 郭乃綺, “預防心血管疾病照護系統,” 2012 全國大專院校健康照護實務創意設計大賽, 崑山科技大學, 2012/5/09, 【第三名】
+　　18.蘇柏安, 林建宏, 胡宗瑋, “行車距離感測與衝撞自動換檔裝置,” 2012 智慧電子創新應用與設計競賽, 車用電子創意組, 台灣科技大學 電機系, 2012/02/06, 【佳作】
+　　19.李明傑, 林淮偉, 林煥宸, 陳彥廷, 曾耀陞, 詹朝淵, “直流馬達驅動板之檢測平臺,” 2011 NI 第三屆產品設計創業競賽, 美商國家儀器台灣分公司, 2011/12/07, 【第三名】
+　　20.單冠霖, 沈揚尉, 陳柏甫, 林淮偉, “救護車路徑追蹤與醫護診斷紀錄,” 第六屆盛群盃HOLTEK MCU創意大賽, 家電車用控制組, 盛群半導體股份有限公司, 2011/11/19, 【第一名】
+　　21.鄭詠聰,“整合網路地圖之複合式自行車表,” 2011第一屆教學卓越計畫跨院系學生專題實務製作競賽暨成果展, 崑山科技大學, 2011/05/19, 【工程類組第三名】
+　　22.楊玄德, 楊孟哲, 李振榮, 劉凱維, 李俊毅, “建構老人癡獃患者使用之緊急通報系統,” 2011 全國大專院校健康照護實務創意設計大賽, 崑山科技大學, 2011/5/04, 【佳作獎】
+　　23.王義智, 單冠霖, 陳昌廷, 詹朝淵, 游雲喬, “病床跌落預警裝置,” 2011 全國大專院校健康照護實務創意設計大賽, 崑山科技大學, 2011/5/04, 【佳作獎】
+　　24.李明傑, 詹朝淵, 郭冠呈, “指定主題組_幼兒多媒體數位教學平臺,” 第五屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2011/4/29, 【優等獎】
+　　25.林淮偉, 林榆翔, 李振榮, “通訊應用組_消防車派遣與追蹤系統,” 第五屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2011/4/29, 【佳作】
+　　26.呂仁豪, 黃再沐, “通訊應用組_查案小幫手,” 第五屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2011/4/29, 【創意獎】
+　　27.林世豪, 廖紹傑, 詹朝淵, 魏文昌, 李明傑, 陳昌廷, “綠能暨環境監控系統,” 2010 NI 第二屆產品設計創業競賽, 美商國家儀器台灣分公司, 2010/12/15, 【第三名】
+　　28.李明傑, 魏文昌, 陳昌廷, 鄭詠聰, “具健康管理功能之自行車表,” 第五屆盛群盃HOLTEK MCU創意大賽, 家電車用控制組, 盛群半導體股份有限公司, 2010/11/13, 【第一名】
+　　29.鄭詠聰, 陳昌廷, 李明傑, 魏文昌, “整合網路地圖之複合式自行車表,” 99年度全國微電腦應用系統設計製作競賽, 儀錶類, 教育部, 2010/10/15, 【全國大專組第一名】
+　　30.鄭詠聰, 陳昌廷, 李明傑, 魏文昌, “週邊控制應用組_複合式自行車表,” 第四屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2010/5/7, 【優等獎】
+　　31.曾耀陞, 廖霆棫, 林淮偉, 詹朝淵, “通訊應用組_回家小幫手,” 第四屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2010/5/7, 【佳作】
+　　32.曾耀陞, 劉凱維, 林煥宸, 林世豪, “具坐墊壓力分佈偵測之安全即時通報系統,” 2010全國大專院校健康照護實務創意設計大賽, 崑山科技大學, 2010/5/5, 【優選獎】
+　　33.林俊逸, 許鈞逵, 陳彥廷, “虛擬守護者,” 2010全國大專院校健康照護實務創意設計大賽, 崑山科技大學, 2010/5/5, 【佳作】
+　　34.林世豪, 鄭詠聰, “具個人健康紀錄之運動用手套,” 九十八年度全國微電腦應用系統設計製作競賽_儀錶類, 教育部, 2009/10/16, 【第2名】
+　　35.鄭詠聰, 林世豪, 廖紹傑, 邱智仁, 彭國瑋, “老人養護中心之生理訊號與安全監控暨通報定位平臺之雛形設計,” 2009安養環境創意設計大賽, 崑山科技大學, 2009/5/27, 【第3名】 
+　　36.李民章, 王頂立, “居家老人鼾聲消除機制與呼吸暫止症監測裝置之設計與建置,” 2009安養環境創意設計大賽, 崑山科技大學, 2009/5/27, 【最佳發展潛力獎】
+　　37.洪連勝, 林世豪, 鄭詠聰, 曾耀陞, “週邊控制應用組_瞌睡蟲來了，叫我,” 第三屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2009/5/8, 【佳作】
+　　38.廖紹傑, 彭國瑋, 林琦閔, 劉凱維, “週邊控制應用組_智慧型節能電扇,” 第三屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2009/5/8, 【佳作】
+　　39.林世豪, 廖紹傑, 方崑益, 彭國瑋, “翱翔車”, 97學年度台灣區電腦化運動競技大賽-機器人創意設計, 中國工業職業教育學會,2008/12/13,【佳作】
+　　40.林世豪, 廖紹傑, 方崑益, 李育霖, “仿生模擬與控制系統”, 第四屆盛群盃Holtek MCU創意大賽-儀器儀表組, 盛群半導體股份有限公司, 2008/11/15, 【佳作】
+　　41.林琦閔, 邱智仁, 林承緯, 廖紹傑,“機器狗情緒辨識,” 2008年全國智慧型機器人大賽-機器人創意設計, 東南科技大學, 2008/5/24, 【第三名】
+　　42.林琦閔, 邱智仁, 林承緯, 廖紹傑,“互動式玩具與教學型機器人,” 第二屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司, 2008/5/9, 【佳作】
+　　43.盧錦宏, 林琦閔, 林承緯, 廖紹傑,“家庭娛樂應用組_建構新生兒血氧濃度安全監測與通報系統,” 第二屆凌陽盃系統晶片創意應用設計大賽, 凌陽科技股份有限公司,2008/5/9, 【完成獎】
+
+七、研究室成果（論文）：
+　　期刊論文
+　　1.建州, 林俊宏, 劉堂安, 林啟川, “運動產業研發-以輔助足球裁判判定足球比賽進球器材為例”, 運動健康休閒學報, 第四期: 44-53, 6月 2013, ISSN: 2218-0710
+　　2.William Chu, Yu-Chuan Tsuei, Pei-Hung Liao, Jiun-Hung Lin, Wen-Hsiang Chou, Woei Chyn Chu*, Shuenn-Tsong Young, “Decompressed Percutaneous Vertebroplasty: A Secured Bone Cement Delivery Procedure for Vertebral Augmentation in Osteoporotic Compression Fractures”, Injury, Volume 44:pp813-818, 2013【SCI】 1.975; ranking 6/24 (EMERGENCY MEDICINE)
+　　3.William Chu, Jiun-Hung Lin, Shih-Tsang Tang, Woei-Chyn Chu, Chia-Tai Chan, and Shuenn-Tsong Young*, “A Rapid and Convenient Method for Determining Limb Compartment Pressure”, Biomedical Engineering: Applications, Basis and Communications, Volume 23, No.6, pp1-10 Dec, 2011. 【SCI】 0.236; ranking 70/72 (ENGINEERING, BIOMEDICAL)；Times Cited: 0
+　　4.Ke-Feng Huang, Shih-Tsang Tang, Chih-Yuan Chuang, Wei-Ru Han, Jiun-Hung Lin, and Shuenn-Tsong Young*, “Different Patterns of Dynamic Variations on Electrical Conductances of Acupoints between Qi Vacuity and Qi Non-Vacuity after Glucose Ingestion,” Journal of Alternative and Complementary Medicine, Volume 17, Number 9, pp1-7 Aug, 2011. 【SCI】 1.585;ranking 10/22 (INTEGRATIVE & COMPLEMENTARY MEDICINE)；Times Cited: 0
+　　5.Tzu-Chien Hsiao*, Chia-Chi Chang, Chien-Sheng Liu, Chii-Wann Lin, Chih-Yu Wang, Jiun-Hung Lin, “Education System Integration in Cross-disciplinary with colleges-Virtual Biomedical Instrument(VBI) for example”, Biomedical Engineering: Applications, Basis and Communications. Volume 20, No.3,pp153-160 May, 2008. 【SCI】 0.236; ranking 70/72 (ENGINEERING, BIOMEDICAL)；Times Cited: 0
+　　6.Jiun-Hung Lin*, Shih-Tsang Tang, Wei-Ru Han, Chih-Yuan Chuang, Ping-Ting Liu, and Shuenn-Tsong Young, “Effect of an adaptive-feedback active noise cancellation headset on wideband noise and speech intelligibility in Mandarin,” Biomedical Engineering: Applications, Basis and Communications. Volume 20, No.2, pp.123-131April, 2008. 【SCI】 0.236; ranking 70/72 (ENGINEERING, BIOMEDICAL) ；Times Cited: 0
+
+　　國際研討會論文
+　　1.Po-Yi Lee, Pei-Yuan Hung, Jiun-Hung Lin, An-Jen Lee, and Shih-Tsang Tang*, “The HL7 CDA-Based Electronic Forms for Physical Examination,” Proceeding of the 2012 international Conference on Bioinformatics & Computational Biology (Worldcomp'12), pp.218-221, July 16-19, 2012, Monte Carlo Resort and Casino, Las Vegas, Nevada, USA.
+　　2.Yu-An Lin, Pei-Yu Huang, Wei-Te Wu, Jiun-Hung Lin, Chia-Hung Hsiao, and Shin-Tsang Tang*, “SpO2 Surveillance for Hiking,” IFMBE Proceedings—5th European Conference of the International Federation
+for Medical and Biological Engineering (EMBEC 2011), O-087, September14–18, 2011, Budapest Congress & World Trade Center, Budapest, Hungary. (EI)
+　　3.Wei-Te Wu, Yu-An Lin, Pei-Yu Huang, Jiun-Hung Lin, Ching-Chang Chuang, Hsin-Chang Lo, and Shin-Tsang Tang*, “A Portable Emotion Auxiliary Device,” IFMBE Proceedings—5th European Conference of the International Federation for Medical and Biological Engineering (EMBEC 2011), P-042, September 14–18, 2011, Budapest Congress & World Trade Center, Budapest, Hungary. (EI)
+　　4.Yung-Tsung Cheng, Jiun-Hung Lin*, Shih-Tsang Tang, Chun-Hao Lu and Cheng-Chi Tai, “The Application of Bicycles with Heart Rate Monitoring,” The 5th WACBE World Congress on Bioengineering (WACBE 2011), FPO.058, August 18–21, 2011, National Cheng Kung University, Tainan, TAIWAN.
+　　5.Jiun-Hung Lin*, Shih-Tsang Tang, Chun-Hao Lu and Cheng-Chi Tai, “Adaptive Feedforward Active Noise Cancellation Comparison of LMS and RLS Algorithms on Stable Snore,” The 5th WACBE World Congress on Bioengineering (WACBE 2011), FPO.057, August 18–21, 2011, National Cheng Kung University, Tainan, TAIWAN.
+　　6.Pei-Yu Huang, Wei-Te Wu, Yu-An Lin, Mei-Jung Chen, Wen-Li Lee, Koyin Chang, Jiun-Hung Lin, Shih-Tsang Tang*, “Ultrasonography Integration Structure for Telemedicine,” IEEE Proceedings—the 54th IEEE International Midwest Symposium on Circuit and Systems (MWSCAS 2011), Tp1C-5 09_1028, August 07–10, 2011, Yonsei University, Seoul, Korea. (EI Indexed)
+　　7.Ai-Chih Lin, Fan-Yun Yen, Mu-Hui Sun, Feng-Shuo Chang, Jiun-Hung Lin, and Shih-Tsang Tang*, “A Real-time Portable Analyzer for Anger Emotion,” IEEE Proceedings—2010 International Conference on Electronics and Information Engineering (ICEIE 2010), E057, August 1–3, 2010, Kyoto International Conference Center, Kyoto, Japan. (EI)
+　　8.Tzu Hao Yan, Hsing-Fang Tsai, Sih-Yin Lu, Ching-Shuen Chen, Jiun-Hung Lin and Shih-Tsang Tang*, “Portable Oximeter for Acute Mountain Sickness,” IEEE Proceedings—2010 International Conference on Electronics and Information Engineering (ICEIE 2010), E044, August 1–3, 2010, Kyoto International Conference Center, Kyoto, Japan. (EI)
+　　9.Ching-Yi Chen, Che-Chun Liu, Ya-Ling Chang, Chih-Yuan Wang, Jiun-Hung Lin, and Shih-Tsang Tang*, “A Biofeedback Portable System for Panic Disorder,” IEEE Proceedings—2010 International Conference on Electronics and Information Engineering (ICEIE 2010), E045, August 1–3, 2010, Kyoto International Conference Center, Kyoto, Japan. (EI)
+　　10.Jiun-Hung Lin, Kuo-Feng Chou, Yu-Hsiang Kuan, Shih-Tsang Tang*, “The Object-Oriented Nursing Management System,” Proceedings—IEEE REGION 8 International Conference on Computational Technologies in Electrical and Electronics Engineering—SIBIRCON 2010, July 11–15, 2010, Pribaikalskaya Hotel, Irkutsk Listvyanka, Russia. (EI)
+　　11.Shih-Tsang Tang, Tsung-Chieh Lee, Jiun-Hung Lin, Chia-Hung Hsiao, “eLearning Therapy Planning in Radiation Oncology,” IFMBE Proceedings 25/I—WC 2009, World Congress on Medical Physics and Biomedical Engineering, Vol. 25, Sep. 7–12, 2009, pp. 35–36, ICM - International Congress Center Munich, Munich, Germany. (EI)
+　　12.Ching-Shuen Chen, Mu-Hui Sun, Jiun-Hung Lin, Shih-Tsang Tang, “Development of a Panic Disorder Portable System for Physiological Signal Acquisition, Analysis, and Transmission,” IFMBE Proceedings 25/IV—WC 2009, World Congress on Medical Physics and Biomedical Engineering, Vol. 25, Sep. 7–12, 2009, pp. 2319–2322, ICM - International Congress Center Munich, Munich, Germany. (EI)
+　　13.Feng-Shuo Chang, Tsung-Min Yu, Jiun-Hung Lin, Shih-Tsang Tang, “An Alcohol Sensing System basing on HRV Analysis,” IFMBE Proceedings 25/VII—WC 2009, World Congress on Medical Physics and Biomedical Engineering, Vol. 25, Sep. 7–12, 2009, pp. 920–922, ICM - International Congress Center Munich, Munich, Germany. (EI)
+　　14.Yu-Ting Chang, Chih-Yuan Wang, Jia-Ju Lau, Jiun-Hung Lin, Shih-Tsang Tang, “A Microprocessor-based Biofeedback Emotion System,” IFMBE Proceedings 25/XII—WC 2009, World Congress on Medical Physics and Biomedical Engineering, Vol. 25, Sep. 7–12, 2009, pp. 401–403, ICM - International Congress Center Munich, Munich, Germany. (EI)
+　　15.Jiun-Hung Lin, Shih-Tsang Tang*, “The Advanced Design for Hearing Aids,” 2009 Symposium on Biomedical Technology & Healthcare Management (BTHM 2009)—Ming Chuan University’s 2009 International Academic Conference, Mar. 13, 2009, Ming Chuan University, Taoyuan, Taiwan.
+　　16.Shih-Tsang Tang, Jiun-Hung Lin*, “The Development of a Nurse-Oriented Administration System,” 2009 Symposium on Biomedical Technology & Healthcare Management (BTHM 2009)—Ming Chuan University’s 2009 International Academic Conference, Mar. 13, 2009, Ming Chuan University, Taoyuan, Taiwan.
+　　17.C.H. Lu, J.H. Lin, S.T. Tang, Z.X. You and C.C. Tai, “The Design of Oximeter in Sleep Monitoring,” The 13th International Conference on Biomedical Engineering (ICBME 2008), Proceedings 23, pp.582-585, Dec.3-Dec.6, 2008, SINGAPORE
+　　18.H.H. Lin, S.H. Change, Y.J. Chiou, J.H. Lin, T.C. Hsiao, “A Novel Multivariate Analysis Method for Bio-Signal Processing,” The 13th International Conference on Biomedical Engineering (ICBME 2008), Dec.3-Dec.6, 2008, SINGAPORE
+
+　　國內研討會論文
+　　1.鍾凱傑, 柳君蓉, 陳彥廷, 林俊宏*,“智慧型三百六十度追蹤監測防盜家電”, 2013年第七屆ISC智慧型系統工程應用研討會, B4-3, May. 30 2013, 臺南(遠東科技大學), Taiwan. [ISBN:978-986-5928-14-8]
+　　2.李建佑, 郭冠呈, 潘建州, 林俊宏*,“結合互動遊戲功能之坐姿壓力感測監視系統”, 2013年電子工程技術研討會(ETS2013), CP-31, May. 24 2013, 高雄(義守大學), Taiwan.
+　　3.吳仲賢, 黃駿騏, 陳昌廷, 湯士滄, 林俊宏*,“可攜式馬達自動化檢修系統之設計與實現”, 2013年電子工程技術研討會(ETS2013), CP-32, May. 24 2013, 高雄(義守大學), Taiwan.
+　　4.蔡志欣, 沈揚尉, 湯士滄, 林俊宏*,“整合室內外生理感測模組應用於居家銀髮族健康監視”, 2013年電子工程技術研討會(ETS2013), CP-33, May. 24 2013, 高雄(義守大學), Taiwan.
+　　5.陳彥銘, 林建宏, 湯士滄, 林俊宏*,“以 ZigBee技術實現無線病床週邊裝置監視系統”, 2013年電子工程技術研討會(ETS2013), CP-38, May. 24 2013, 高雄(義守大學), Taiwan.
+　　6.Jiun-Hung Lin*, Jhong-Cheng Wang, Yao-Sheng Tseng, Min-Chuan Lin, “STUDY ON COMPRESSION PARAMETER ADJUSTMENT IN HEARING-AID SIGNAL PROCESSION UNDER NOISY ENVIRONMENT”, 2013 Symposium on Engineering Medicine and Biology Applications (SEMBA), Feb. 1-3 2013, Tainan (Evergreen plaza hotel), Taiwan (Oral-Session_12-5 )
+　　7.Jiun-Hung Lin*, Shao-Chieh Liao, Yung-Tsung Cheng, Min-Chuan Lin, “ON THE HYPERTENSION DIGNOSYS BY COMBINING CHINESE PULSE DIAGNOSIS AND BLOOD PRESSURE MEASUREMENT”, 2013 Symposium on Engineering Medicine and Biology Applications (SEMBA), Feb. 1-3 2013, Tainan (Evergreen plaza hotel), Taiwan (Oral-Session_16-3 )
+　　8.陳彥廷, 王義智, 湯士滄, 朱唯廉, 林俊宏*,“智慧型行動虛擬暨復建式輪椅之設計”,2012生物醫學工程科技研討會, Nov. 17-18 2012, 桃園(中原大學), Taiwan.
+　　9.黃瑞霖, 單冠霖, 沈揚尉, 黃駿騏, 湯士滄, 周偉倪, 林俊宏*,“提供安養即時監視裝置於車載系統之應用”,2012生物醫學工程科技研討會, Nov. 17-18 2012, 桃園(中原大學), Taiwan.
+　　10.李柏毅, 洪珮媛, 郭欣怡, 周小盈, 冼祖怡, 李安仁, 林俊宏, 李宗傑, 湯士滄*,“將HL7 CDA應用於勞工體檢”,2012生物醫學工程科技研討會, Nov. 17-18 2012, 桃園(中原大學), Taiwan.
+　　11.王義智, 鄭詠聰, 湯士滄, 林俊宏*,“建置與設計具娛樂與防盜功能之家電設備”, 2012年第六屆優質家庭生活(u-Home)科技關鍵技術研討會(UHC 2012), ID13, Oct. 25 2012, 臺南(崑山科技大學), Taiwan.
+　　12.林淮偉, 曾耀陞, 潘建州, 湯士滄, 林俊宏*,“以微機電陀螺儀晶片進行系統開發與驗證於教學平臺”, 2012年第六屆優質家庭生活(u-Home)科技關鍵技術研討會(UHC 2012), ID10, Oct. 25 2012, 臺南(崑山科技大學), Taiwan.
+　　13.陳昌廷, 黃瑞霖, 湯士滄, 林俊宏*,“以嵌入式裝置實現雙溫度量測裝置於工業上的應用”, 2012年第六屆優質家庭生活(u-Home)科技關鍵技術研討會(UHC 2012), ID17, Oct. 25 2012, 臺南(崑山科技大學), Taiwan.
+　　14.單冠霖, 陳彥廷, 湯士滄, 林俊宏*, “提供即時路徑追蹤與及時醫護診斷之救護車安全輔助系統”, 2012年第六屆優質家庭生活(u-Home)科技關鍵技術研討會(UHC 2012), ID12, Oct. 25 2012, 臺南(崑山科技大學), Taiwan.
+　　15.楊孟哲, 曾耀陞, 鄭詠聰, 湯士滄, 林俊宏*, “太陽能發電無線監控系統開發與資料庫整合之應用”, 2012年第六屆優質家庭生活(u-Home)科技關鍵技術研討會(UHC 2012), IF10, Oct. 25 2012, 臺南(崑山科技大學), Taiwan.
+　　16.黃駿騏, 林建宏, 蘇柏安, 陳彥廷, 林俊宏*,“結合無線通報之多樣式防盜監視系統”, 2012航空科技與飛航安全學術研討會(ATFS2012), ATFS2012-220, Sep.21, 高雄(空軍航空技術學院), Taiwan.
+　　17.侯國偉, 李振榮, 陳彥廷, 黃瑞霖, 林俊宏*,“以嵌入式系統實現綠能多媒體教學平臺”, 2012航空科技與飛航安全學術研討會(ATFS2012), ATFS2012-221, Sep.21, 高雄(空軍航空技術學院), Taiwan.
+　　18.楊孟哲, 黃瑞霖, 湯士滄, 潘建州, 林俊宏*,“銀髮族戶外定位裝置與緊急通報系統之建構”, 2012年電子工程技術研討會(ETS2012), CO-08, June. 1 2012, 高雄(義守大學), Taiwan. (Oral)
+　　19.黃駿騏, 林融駿, 廖紹傑, 湯士滄, 林俊宏*,“太陽能板無線監控系統之傳輸穩定度測試”, 2012年電子工程技術研討會(ETS2012), CP-22, June. 1 2012, 高雄(義守大學), Taiwan.
+　　20.鄭詠聰, 湯士滄, 潘建州, 林俊宏*,“無線傳輸技術應用於傳送設備檢測平臺之開發”, 2012年電子工程技術研討會(ETS2012), CP-23, June. 1 2012, 高雄(義守大學), Taiwan.
+　　21.楊玄德, 陳彥廷, 湯士滄, 林俊宏*,“環境因素對於太陽能發電輸出功率之影響於雛形的測試”, 2012年電子工程技術研討會(ETS2012), CP-24, June. 1 2012, 高雄(義守大學), Taiwan.
+　　22.曾耀陞, 林俊宏*, 湯士滄,“互動型家電控制與居家監控裝置之設計”, 2012年電子工程技術研討會(ETS2012), CP-26, June. 1 2012, 高雄(義守大學), Taiwan.
+　　23.王中成, 林俊宏*, 湯士滄,“以噪音能量分佈進行助聽器交越頻率設定”, 101年度台灣復健醫學會學術研討會, Feb. 25-26 2012, 臺北(台灣中油公司國光廳), Taiwan.
+　　24.張敬忠*, 周偉倪, 許正澂, 林俊宏 , 陳彥廷,黃瑞霖,“膝退化性關節炎聲學訊號之分析”, 101年度台灣復健醫學會學術研討會, Feb. 25-26 2012, 臺北(台灣中油公司國光廳), Taiwan.
+　　25.陳昌廷, 廖紹傑, 湯士滄, 周偉倪, 林俊宏*, “手腳擺動感測之設計與製作應用於復健者跑步機運動”, 2011生物醫學工程科技研討會, Aug. 19-20 2011, 臺南(成功大學), Taiwan.
+　　26.林煥宸, 陳彥廷, 李明傑, 湯士滄, 周偉倪, 林俊宏*, “應用於視障者之簡便點餐系統”, 2011生物醫學工程科技研討會, Aug. 19-20 2011, 臺南(成功大學), Taiwan.
+　　27.詹朝淵, 湯士滄, 周偉倪, 李明傑、鄭詠聰, 林俊宏*, “結合無線傳輸技術之可攜式畢保德平臺設計”, 2011生物醫學工程科技研討會, Aug. 19-20 2011, 臺南(成功大學), Taiwan.
+　　28.廖霆棫, 王中成, 湯士滄, 林俊宏*, “適用在昏暗環境之自動安全警示裝置於輪椅上的應用”, 2011生物醫學工程科技研討會, Aug. 19-20 2011, 臺南(成功大學), Taiwan.
+　　29.廖紹傑, 湯士滄, 林俊宏*, “血壓量測於高血壓患者之研究與系統設計”, 2011生物醫學工程科技研討會, Aug. 19-20 2011, 臺南(成功大學), Taiwan.
+　　30.朱唯廉, 陳彥廷, 湯士滄, 林俊宏*, “簡易型註射幫浦平臺應用於椎體成型手術之設計”, 2011生物醫學工程科技研討會, Aug. 19-20 2011 2011, 臺南(成功大學), Taiwan.
+　　31.魏文昌、曾耀陞、潘建州、湯士滄, 林俊宏*, “新型光學感測機制應用於坐墊提醒裝置”, 2011生物醫學工程科技研討會, Aug. 19-20 2011 2011, 臺南(成功大學), Taiwan.
+　　32.林宥安, 黃珮榆, 吳威德, 李柏毅, 林俊宏, 蕭嘉宏, 湯士滄*, “休閒健行隨身血氧計”, 2011生物醫學工程科技研討會, Aug. 19-20 2011, 臺南(成功大學), Taiwan.
+　　33.吳威德, 林宥安, 黃珮榆, 洪珮媛,黃冠霖, 莊慶昌, 駱信昌, 林俊宏, 蕭嘉宏, 湯士滄*, “穿戴式心律變異度情緒分析儀”, 2011生物醫學工程科技研討會, Aug. 19-20 2011, 臺南(成功大學), Taiwan.
+　　34.黃珮榆, 吳威德, 林宥安, 陳玫蓉,李文立, 張可盈, 李宗傑, 林俊宏, 蘇經洲, 林仁得, 蕭嘉宏, 湯士滄*, “傳統醫學影像轉換為DICOM格式─以超音波為例”, 2011生物醫學工程科技研討會, Aug. 19-20 2011, 臺南(成功大學), Taiwan.
+　　35.林煥宸, 陳彥廷, 湯士滄, 林俊宏*, 李明傑, 鄭詠聰, “可替換式電子菜單之設計與系統驗證”, 2011年電子工程技術研討會(ETS2011), CO-05, June. 16 2011, 高雄(義守大學), Taiwan.
+　　36.廖霆棫, 王中成, 湯士滄, 林俊宏*, “提供行車安全之自行車方向指引系統建置”, 2011年電子工程技術研討會(ETS2011), DP-14, June. 16 2011, 高雄(義守大學), Taiwan.
+　　37.陳彥廷, 曾耀陞, 朱唯廉, 湯士滄, 林俊宏*, “以步進馬達1相激磁實現單一針筒式幫浦平臺於骨外科的應用”, 2011年電子工程技術研討會(ETS2011), CP-30, June. 16 2011, 高雄(義守大學), Taiwan.
+　　38.陳昌廷, 廖紹傑, 湯士滄, 林俊宏*, “結合音樂播放裝置與生理量測之跑步機平臺設計”, 2011年電子工程技術研討會(ETS2011), CP-31, June. 16 2011, 高雄(義守大學), Taiwan.
+　　39.魏文昌, 曾耀陞, 潘建州, 湯士滄, 林俊宏*, 詹朝淵, “光學感測於球類運動進球判定之感應裝置開發”, 2011年電子工程技術研討會(ETS2011), CP-32, June. 16 2011, 高雄(義守大學), Taiwan.
+　　40.曾耀陞, 廖紹傑, 林俊宏*, 湯士滄, 朱唯廉, “具坐墊壓力偵測之安全即時通報系統”, 2010生物醫學工程科技研討會, Dec. 10-11 2010, 高雄(義守大學), Taiwan.
+　　41.林琦閔, 林俊宏*, 湯士滄, 曾耀陞, 詹朝淵, 廖霆棫, “建構輪椅軌跡圖與即時通報系統”, 2010生物醫學工程科技研討會, Dec. 10-11 2010, 高雄(義守大學), Taiwan.
+　　42.鄭詠聰, 林俊宏*, 湯士滄, 朱唯廉, “風強度對於語音辨識的影響以凌陽晶片為例”, 2010生物醫學工程科技研討會, Dec. 10-11 2010, 高雄(義守大學), Taiwan.
+　　43.林俊宏*, 湯士滄, 朱唯廉, “適應性主動噪音消除技術在居家噪音的比較”, 2010生物醫學工程科技研討會, Dec. 10-11 2010, 高雄(義守大學), Taiwan.
+　　44.盧錦宏, 王中成, 林俊宏*, 湯士滄, 盧俊豪, 戴政祺, “聲音對於在跑步機平臺運動之生理影響”, 2010生物醫學工程科技研討會, Dec. 10-11 2010, 高雄(義守大學), Taiwan.
+　　45.侯昆亨, 林俊宏*, 湯士滄, 盧俊豪, 戴政祺, “鼾聲訊號監測應用於睡眠呼吸暫止症的判定”, 2010生物醫學工程科技研討會, Dec. 10-11 2010, 高雄(義守大學), Taiwan.
+　　46.林俊逸, 林俊宏*, 王瑋成, 湯士滄, 潘建州, “具備語音辨識功能與心跳偵測作為運動安全考量之跑步機”, 2010年第四屆優質家庭生活(u-Home)科技關鍵技術研討會(UHC 2010), IF4, Nov. 4 2010, 臺南(崑山科技大學), Taiwan.
+　　47.陳彥廷, 林俊宏*, 湯士滄, 王瑋成, “結合健康資訊與虛擬電子寵物的互動式計步器”, 2010年第四屆優質家庭生活(u-Home)科技關鍵技術研討會(UHC 2010), II2, Nov. 4 2010, 臺南(崑山科技大學), Taiwan.
+　　48.廖紹傑, 林俊宏*, 湯士滄, 王瑋成, 潘建州, 劉堂安, “心跳偵測與行動軌跡紀錄作為安全監測與健康管理之自行車車表”, 2010年第四屆優質家庭生活(u-Home)科技關鍵技術研討會(UHC 2010), CG4, Nov. 4 2010, 臺南(崑山科技大學), Taiwan.
+　　49.鄭詠聰, 林俊宏*, 湯士滄, “身心障礙生校園安全監控暨通報平臺之建構”, 2010 4B生醫工程研討會, Oct. 29 2010, 新竹(國立交通大學), Taiwan.
+　　50.鄭詠聰, 林俊宏*, 湯士滄, “具軌跡紀錄與健康管理功能之隨身計步器”, 2010年電子工程技術研討會(ETS2010), CP-39, June. 18 2010, 高雄(義守大學), Taiwan.
+　　51.林俊宏*, 廖紹傑, 曾耀陞, 湯士滄, “簡易型多重瞌睡偵測裝置之設計”, 2010年電子工程技術研討會(ETS2010) , CP-38, June. 18 2010, 高雄(義守大學), Taiwan.
+　　52.林筱涵, 林冠威, 徐如欣, 林俊宏, 蕭子健, “坐姿壓力測試-褥瘡之預防”, 2009生物醫學工程科技研討會, Dec. 11-12 2009, 臺北(陽明大學), Taiwan.
+　　53.王頂立, 李民章, 湯士滄, 李清池, 林俊宏*, “鼾聲監測的技術開發與研究”, 2009生物醫學工程科技研討會, Dec. 11-12 2009, 臺北(陽明大學), Taiwan.
+　　54.李民章, 王頂立, 湯士滄, 林俊宏*, “主動式辦公室噪音消除技術的開發”, 2009生物醫學工程科技研討會, Dec. 11-12 2009, 臺北(陽明大學), Taiwan.
+　　55.林世豪, 盧俊豪, 湯士滄, 盧錦宏, 戴政祺, 林俊宏*, “環形血氧濃度計之雛型設計”, 2009生物醫學工程科技研討會, Dec. 11-12 2009, 臺北(陽明大學), Taiwan.
+　　56.孫證禮, 湯士滄, 林琦閔, 林俊宏*, “應用於自行車運動之生理監控暨通報平臺”, 優質家庭生活科技之關鍵技術研討會(UHC2009), pp.184-187, Nov. 19 2009, 臺南(崑山科技大學), Taiwan.
+　　57.林世豪, 湯士滄, 林俊宏*, “仿生模擬與遠端控制系統之雛型設計”, 優質家庭生活科技之關鍵技術研討會(UHC2009), pp.188-191, Nov. 19 2009,臺南(崑山科技大學), Taiwan.
+　　58.廖紹傑, 林俊宏*, 湯士滄, 鄭詠聰, 彭國瑋, 林琦閔, “以人體紅外線與指向性麥克風建構全方位智慧型風扇”, 2009年電子工程技術研討會(ETS2009), CP-03, June. 19 2009, 高雄(義守大學), Taiwan.
+　　59.林俊宏*, 孫證禮, 盧錦宏, 鄭詠聰, 戴啟倫, 盧俊豪, 湯士滄, 楊順聰, “辦公室人員生理機能之安全量測與警示系統”, 2009智慧.優質.好生活聯合成果發表會, pp.39-42, Jan. 19-20 2009, 臺北(台灣大學), Taiwan.
+　　60.盧俊豪, 林俊宏*, 湯士滄, 呂明典, 王藝翔, 戴政祺, “可模式選擇負電位儀的設計”, 2008生物醫學工程科技研討會, Dec. 12-13 2008, 桃園(長庚大學), Taiwan.
+　　61.盧錦宏, 林俊宏*, 湯士滄, 邱智仁, 林承緯, 徐松章, 楊順聰, “網路化複合式即時生理監測平臺之設計”, 2008生物醫學工程科技研討會, Dec. 12-13 2008, 桃園(長庚大學), Taiwan.
+　　62.湯士滄, 蕭嘉宏, 林俊宏, 李宗傑, 鄒國鳳, 呂亞營, 陳彥伶, “建構頭頸部放射腫瘤學知識庫”, 2008生物醫學工程科技研討會, Dec. 12-13 2008, 桃園(長庚大學), Taiwan.
+
+
+E3711B生醫訊號處理專題研究室--介紹版_林俊宏
+E3711B生醫訊號處理專題研究室--作品版1_林俊宏
+E3711B生醫訊號處理專題研究室--作品版2_林俊宏
+E3711B生醫訊號處理專題研究室--論文版_林俊宏
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+現在位置:正體中文 / 日間部 / 教學單位 / 工程學院 / 電子工程系 / 生醫訊號處理研究室(E3711)
+
+
+
+Copyright © since 1998 by Kun Shan University. All rights reserved. Powered by Core Constructor team.
+校址：（71070）臺南市永康區崑大路 195 號 電話：（06）272-7175  
+校安中心24小時聯絡電話：（06）2050354 
+個人資料保護｜隱私權｜資訊安全｜意見溝通｜交通資訊｜on CCSA-W3-FARM-14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
