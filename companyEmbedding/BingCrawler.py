@@ -44,7 +44,7 @@ def companyEmbedding(Query):
         if not pdfFile and not docFile and not pptFile and not googleDoc and not yahooBid:  ##I can't get information from pdf and google doc
             try:
                 headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
-                print(url)
+                #print(url)
                 re = requests.get(url, headers=headers, timeout=5)
                 if len(re.content) > 600000:
                     continue
