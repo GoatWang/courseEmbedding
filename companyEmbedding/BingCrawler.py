@@ -11,8 +11,8 @@ def companyEmbedding(Query):
     #re.encoding = 'utf8'
     #html = re.text
     
-    driver = webdriver.Chrome()
-    #driver = webdriver.PhantomJS()
+    #driver = webdriver.Chrome()
+    driver = webdriver.PhantomJS()
     url = "https://www.bing.com/"
     driver.get(url)
     elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
