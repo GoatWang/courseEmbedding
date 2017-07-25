@@ -11,8 +11,8 @@ def companyEmbedding(Query):
     #re.encoding = 'utf8'
     #html = re.text
     
-    #driver = webdriver.Chrome()
-    driver = webdriver.PhantomJS()
+    driver = webdriver.Chrome()
+    #driver = webdriver.PhantomJS()
     url = "https://www.bing.com/"
     driver.get(url)
     elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
@@ -62,7 +62,7 @@ def companyEmbedding(Query):
                         break
 
                 re.encoding = charset
-                soup= BeautifulSoup(re.text,'lxml', from_encoding=charset)
+                soup= BeautifulSoup(re.text,'lxml')
 
                 [x.extract() for x in soup.findAll('script')]
                 [x.extract() for x in soup.findAll('style')]

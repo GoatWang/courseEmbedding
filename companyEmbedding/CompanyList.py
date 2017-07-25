@@ -26,14 +26,12 @@ def filenameGenerate(row):
     exclude = set(string.punctuation)
     companyName = ''.join(p for p in row['name'] if p not in exclude)
     companyName = companyName.replace(" ", "_").lower()
-    row['lowerName'] = companyName
-    if companyName in crawledCompanies:
-        row['crawled'] = True
-    else:
-        row['crawled'] = False
-    return row
+    if not companyName in crawledCompanies:
+        return str(row['name'])
 df = df.apply(filenameGenerate,axis=1)
-print("crawled:", len(df[df['crawled'] == True]))
-print("to be crawled:", len(df[df['crawled'] == False]))
+df = df[pd.notnull(df)]
+df = pd.DataFrame(df)
+#print(df)
 df.to_csv("crawledCompanyLi", index=False)
+
 
