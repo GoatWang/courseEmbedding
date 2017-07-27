@@ -1,0 +1,2425 @@
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Otto Product Classification Winner’s Interview: 2nd place, Alexander Guschin ¯\_(ツ)_/¯ | No Free Hunch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  No Free Hunch
+
+
+Navigation
+
+
+
+kaggle.com
+ 
+
+
+
+
+
+  Otto Product Classification Winner's Interview: 2nd place, Alexander Guschin ¯\_(ツ)_/¯
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+1 
+
+Otto Product Classification Winner's Interview: 2nd place, Alexander Guschin ¯\_(ツ)_/¯
+Kaggle Team|06.09.2015  
+ 
+
+The Otto Group Product Classification Challenge made Kaggle history as our most popular competition ever. Alexander Guschin finished in 2nd place ahead of 3,845 other data scientists. In this blog, Alexander shares his stacking centered approach and explains why you should never underestimate the nearest neighbours algorithm.
+3,848 players on 3,514 teams competed to classify items across Otto Group's product lines
+The Basics
+What was your background prior to entering this challenge?
+I have some theoretical understanding of machine learning thanks to my base institute (Moscow Institute of Physics and Technology) and our professor Konstantin Vorontsov, one of the top Russian machine learning specialists. As for my acquaintance with practical problems, another great Russian data scientist who once was Top-1 on Kaggle, Alexander D’yakonov, used to teach a course on practical machine learning every autumn which gave me very good basis. Kagglers may know this course as PZAD.
+Alexander's profile on Kaggle
+
+How did you get started competing on Kaggle?
+I got started in 2014’s autumn in “Forest Cover Type Prediction”. At that time I had no experience in solving machine learning problems. I found excellent benchmarks in “Titanic: Machine Learning from Disaster” which helped me a lot. After that I understand that machine learning is extremely interesting for me and just tried to participate in every competition I could.
+What made you decide to enter this competition?
+I wanted to check some ideas for my bachelor work. I liked that Otto competition has quite reliable dataset. You can check everything on cross-validation and changes on CV were close enough to leaderboard. Also, the spirit of competition is quite appropriate for checking ideas.
+Let's Get Technical
+What preprocessing and supervised learning methods did you use?
+My solution’s stacking schema
+The main idea of my solution is stacking. Stacking helps you to combine different methods’ predictions of Y (or labels when it comes to multiclass problems) as “metafeatures”. Basically, to obtain metafeature for train, you split your data into K folds, training K models on K-1 parts while making prediction for 1 part that was left aside for each K-1 group. To obtain metafeature for test, you can average predictions from these K models or make single prediction based on all train data. After that you train metaclassifier on features & metafeatures and average predictions if you have several metaclassifiers.
+In the beginning of working on the competition I found useful to split data in two groups : (1) train & test, (2) TF-IDF(train) & TF-IDF(test). Many parts of my solution use these two groups in parallel.
+Talking about supervised methods, I’ve found that Xgboost and neural networks both give good results on data. Thus I decided to use them as metaclassifiers in my ensemble.
+Nevertheless, KNN usually gives predictions that are very different from decision trees or neural networks, so I include them on the first level of ensemble as metafeatures. Random forest and xgboost also happened to be useful as metafeatures.
+What was your most important insight into the data?
+Probably the main insight was that KNN is capable of making very good metafeatures. Never underestimate nearest neighbours algorithm.
+Very important were to combine NN and XGB predictions on the second level. While my final second- level NN and XGB separately scored around .391 on private LB, the combination of them achieved .386, which is very significant improvement. Bagging on the second level helped a lot too.
+TSNE in 2 dimensions
+Beside this, TSNE in 2 dimensions looks very interesting. We can see on the plot that we have some examples which most likely will be misclassified by our algorithm. It does mean that it won’t be easy to find a way to post-process our predictions to improve logloss.
+Also, it seemed interesting that some classes were related closer than others, for example class 1 and class 2. It’s worth trying to distinguish these classes specially.
+Final model’s predictions for holdout’
+Were you surprised by any of your findings?
+Unfortunately, it appears that you won’t necessarily improve your model if you will make your metafeatures better. And when it comes to ensembling, all that you can count on is your understanding of algorithms (basically, the more diverse metafeatures you have, the better) and effort to try as many metafeatures as possible.
+The more diverse metafeatures you have, the better. Metafeature by Extratrees vs metafeature by Neural Network.
+Which tools did you use?
+I only used sklearn, xgboost, lasagne. These are perfect machine learning libraries and I would recommend them to anyone who is starting to compete on Kaggle. Relying on my past experience they are sufficient to try different methods and achieve great results in most Kaggle competitions.
+Words of Wisdom
+Do you have any advice for those just getting started in data science?
+I think that the most useful advice here is try not to stuck trying to fine-tune parameters or stuck using the same approaches every competition. Read through forums, understand winning solutions of past competitions and all of this will give you significant boost whatever your level is. In another words, my point is that reading past solutions is as important as solving competitions.
+Also, when you first starting to work on machine learning problems you could make some nasty mistakes which will cost you a lot of time and efforts. Thus it is great if you can work in a team with someone and ask him to check you code or try the same methods on his own. Besides always compare your performance with people on forums. When you see that you algorithm performs much worse than people report on forum, go and check benchmarks for this and other recent competitions and try to figure out the mistake.
+Bio
+Alexander Guschin is 4th year student in Moscow Institute of Physics and Technology. Currently, Alexander is finishing his bachelor diploma work about ensembling methods.
+
+
+
+
+
+
+
+
+
+
+
+
+Feng Li
+
+
+
+Hello, how many rounds have you taken for each level 2 models?
+
+
+
+
+
+
+
+
+
+
+
+The Official Blog of Kaggle.com 
+
+
+Search
+
+Categories 
+Data Science News (59)
+
+Kaggle News (129)
+
+Kernels (39)
+
+Tutorials (42)
+
+Winners' Interviews (210)
+
+
+Want to subscribe? 
+
+
+
+
+
+
+
+
+
+Email Address*
+
+
+
+First Name
+
+
+
+Last Name
+
+ 
+				* = required field			
+
+
+
+
+
+
+Popular Tags#1 Kaggler
+Annual Santa Competition
+binary classification
+community
+computer vision
+convolutional neural networks
+Dark Matter
+data visualization
+deep neural networks
+Deloitte
+diabetes
+Diabetic Retinopathy
+Draper Satellite Image Chronology
+EEG data
+Elo Chess Ratings Competition
+Eurovision Challenge
+feature engineering
+Flight Quest
+Heritage Health Prize
+How Much Did It Rain?
+image classification
+image processing
+Intel
+Kaggle InClass
+kagglers in careers
+Kernels
+logistic regression
+March Mania
+multiclass classification
+natural language processing
+open data
+open data spotlight
+Practice Fusion
+Product
+Product News
+Profiling Top Kagglers
+Recruiting
+regression problem
+scikit-learn
+scripts of the week
+Tourism Forecasting
+Tutorial
+video series
+Wikipedia Challenge
+XGBoost
+Archives Archives
+
+Select Month
+ July 2017 
+ June 2017 
+ May 2017 
+ April 2017 
+ March 2017 
+ February 2017 
+ January 2017 
+ December 2016 
+ November 2016 
+ October 2016 
+ September 2016 
+ August 2016 
+ July 2016 
+ June 2016 
+ May 2016 
+ April 2016 
+ March 2016 
+ February 2016 
+ January 2016 
+ December 2015 
+ November 2015 
+ October 2015 
+ September 2015 
+ August 2015 
+ July 2015 
+ June 2015 
+ May 2015 
+ April 2015 
+ March 2015 
+ February 2015 
+ January 2015 
+ December 2014 
+ November 2014 
+ September 2014 
+ August 2014 
+ July 2014 
+ June 2014 
+ May 2014 
+ April 2014 
+ March 2014 
+ February 2014 
+ January 2014 
+ December 2013 
+ November 2013 
+ September 2013 
+ August 2013 
+ July 2013 
+ June 2013 
+ May 2013 
+ April 2013 
+ March 2013 
+ February 2013 
+ January 2013 
+ December 2012 
+ November 2012 
+ October 2012 
+ September 2012 
+ August 2012 
+ July 2012 
+ June 2012 
+ May 2012 
+ April 2012 
+ March 2012 
+ February 2012 
+ January 2012 
+ December 2011 
+ November 2011 
+ October 2011 
+ September 2011 
+ August 2011 
+ July 2011 
+ June 2011 
+ May 2011 
+ April 2011 
+ March 2011 
+ February 2011 
+ January 2011 
+ December 2010 
+ November 2010 
+ October 2010 
+ September 2010 
+ August 2010 
+ July 2010 
+ June 2010 
+ May 2010 
+ April 2010 
+
+ 
+
+
+
+
+
+
+
+
+
+Toggle the Widgetbar
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+   Theodore Alexander Living Room Otto, Ottoman KENO4411WL - Bacons Furniture - Sarasota and Port Charlotte, FL  FacebookYouTubeTwitterPinterestInstagram Sarasota, FL Store: 941-924-7886 Port Charlotte, FL Store: 941-625-4493 Sarasota, FL Store Port Charlotte, FL Store Contact Us Sign InSign OutView AccountRegisterWishlistPromotionsSearchSearchLiving Room Furniture SofasSectionalsTablesChairsLoveseatsChaisesBarsDesksEntertainment CentersChests and DressersCabinetsBookcasesLiving Room SetsMirrorsAccessoriesSetteesBenchesOttomansStorage and CartsStoolsSlipcovers   CUSTOMIZE YOUR LIVING ROOM A living room is a place where you and everyone else should feel free... Shop Living Room Dining Room Furniture TablesChairsBakers RacksBarsEntertainment CentersChests and DressersCabinetsSetteesBenchesStorage and CartsStoolsSlipcoversKitchen Islands   CUSTOMIZE YOUR DINING ROOM A dining room is where people come together... Shop Dining Room Bedroom Furniture BedsTablesChairsMaster Bedroom SetsKids Bedroom SetsBeddingDesksChests and DressersCabinetsBookcasesMirrorsAccessoriesBenchesOttomansStools   CUSTOMIZE YOUR BEDROOM A bedroom is the place we go relax and reset from everyday stress... Shop Bedroom Entertainment Furniture TablesChairsEntertainment CentersChests and DressersCabinetsBookcasesBridgesOttomans   CUSTOMIZE YOUR ENTERTAINMENT Your home will surely be given an added spice if you have an entertainment room... Shop Entertainment Home Office Furniture TablesChairsDesksEntertainment CentersChests and DressersCabinetsBookcasesAccessoriesHome Office SetsStools   CUSTOMIZE YOUR HOME OFFICE Your home office needs to be functional, beautiful and efficient... Shop Home Office Outdoor/Patio Furniture SofasSectionalsBedsTablesChairsLoveseatsChaisesBarsCabinetsAccessoriesSetteesBenchesOttomansStorage and CartsStoolsUmbrellas   CUSTOMIZE YOUR OUTDOOR/PATIO The patio can become a defining element for any home... Shop Outdoor/Patio MattressesAccessories Furniture TablesBakers RacksBarsCabinetsBookcasesLightingMirrorsAccessoriesStorage and Carts   CUSTOMIZE YOUR SPACE Accessories add color, texture, shine and punch to a room... Shop Accessories Brands MenuLiving RoomDining RoomBedroomEntertainmentHome OfficeOutdoor/PatioMattressesAccessoriesBrands      {1}				##LOC[OK]## {1}				##LOC[OK]####LOC[Cancel]## {1}				##LOC[OK]####LOC[Cancel]##         Theodore Alexander Living Room Otto, Ottoman KENO4411WL at Bacons Furniture Ottoman. Ebonised Mahogany. Brass. Otto, Ottoman KENO4411WL Wellington Theodore Alexander                 Product DetailsThe Theodore Alexander Living Room Otto, Ottoman may be available in the Sarasota and Port Charlotte, FL area from Bacons Furniture. Please call store for availability.  12 Months Special Financing   In-Home Design Consultation       facebooktwittergoogle+pinterest Related Items(20)       GrooveKENO6107Keno Bros.Theodore Alexander        Techno, BuffetKENO6128Keno Bros.Theodore Alexander        The Curve IKENO7101Keno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024CKKeno Bros.Theodore Alexander        Arc Chair & OttomanKENO4108WHKeno Bros.Theodore Alexander        Stream IIKENO5308Keno Bros.Theodore Alexander        DoublesKENO5119Keno Bros.Theodore Alexander        X-S OttomanKENO4404SRKeno Bros.Theodore Alexander        X-S OttomanKENO4404DCKeno Bros.Theodore Alexander        SuspendKENO5018Keno Bros.Theodore Alexander        Dash IIIKENO5051Keno Bros.Theodore Alexander        Ritz, Games ChairKENO4217WLKeno Bros.Theodore Alexander        The RaindropKENO5010Keno Bros.Theodore Alexander        Otto, OttomanKENO4411RUKeno Bros.Theodore Alexander        Stream IKENO7106Keno Bros.Theodore Alexander        SmartKENO5052Keno Bros.Theodore Alexander        X-S OttomanKENO4404BEKeno Bros.Theodore Alexander        NetworkKENO6024Keno Bros.Theodore Alexander        DishedKENO5063Keno Bros.Theodore Alexander        Ocean IIKENO3120Keno Bros.Theodore Alexander     Product OverviewItem Description Product Description Ottoman. Ebonised Mahogany. Brass.  Dimensions Width 24"24INH Depth 18"18INH Height 18"18INH  Design Elements & Features Material Leather Style Modern/Contemporary Additional Information Upholstered in wellington leather. Trim: Welting.  Construction & Ergonomics Construction Style: Mid Century Modern. Materials: Mahogany, Brass.  Other Details Brand Theodore Alexander Category Living Room Collection Keno Bros. Color Wellington Description Otto, Ottoman SKU KENO4411WL Type Ottomans, Accent Ottomans    See an error on this page? Please report it so that we may correct it.    Provide feedback on the information shown on this page Your Email Address:      This item has been discontinued by the manufacturer, or please describe the issue:       Submit       Prices subject to home office audit & correction.  Our CompanyAbout UsServices OfferedCommunity FocusFinancingDeliveryPromotionsDesign CenterRoom PlannerClearanceBrandsFAQ'sEmployee SpotlightLegal StatementTrack Your OrderTestimonialsPolicies & ProceduresPrivacy PolicyContact UsShop With UsLiving RoomDining RoomBedroomEntertainmentHome OfficeOutdoor/PatioMattressesAccessoriesLocations & DirectionsBacon's Furniture and Outdoor Living17701 Murdock CirclePort Charlotte, FL 33948Phone: 941-625-4493Get DirectionsBacon's Furniture7522 South Tamiami TrailSarasota, FL 34231Phone: 941-924-7886Get DirectionsDon't Miss Out!Click here to register for exclusive email offers and promotionsFacebookYouTubeTwitterPinterestInstagramYou're special at Bacon'ssign up to receive inspirational design ideas, special offers and more©  Bacon's Furniture | Design and Development: MicroD, Inc.+ About Bacon's FurnitureBacon's Furniture features a large selection of quality living room, bedroom, dining room, home office, and entertainment furniture as well as mattresses, home decor and accessories. Bacon's Furniture has store locations in Port Charlotte, FL and Sarasota, FL. Bacon's Furniture serves the surrounding areas of Port Charlotte and Sarasota, FL. If you're looking for the perfect furniture to suit your needs as well as your lifestyle, stop by Bacon's Furniture in Port Charlotte and Sarasota, FL today!Back to Top   
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alexander Otto | Wealth-X
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ALREADY LOGGED IN
+
+
+
+
+
+
+Proceed to Sign in Here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products & ServicesIndustriesIntelligence CentreAllWealth-X ReportsWealth-X InsightsDaily NewsAboutContactFollow Us: 
+
+
+
+Client Login
+
+
+
+
+
+
+
+
+
+Wealth-X
+Billionaires
+Alexander Otto
+
+
+
+
+
+
+
+Alexander  OTTO
+
+
+
+
+Primary Position:
+CEO
+Primary Company:
+ECE Projektmanagement
+Estimated Net Worth:
+At least $5.6 billion
+Source of Wealth:
+Inheritance/Self-made
+Age:
+50
+
+
+
+
+Birthday:
+ 1967
+Religion:
+Unknown
+Nationality:
+Germany
+Hometown:
+Hamburg, Germany
+Marital Status:
+Married
+
+
+
+
+
+
+
+
+
+Biography
+German entrepreneur. In 1949, father, Werner, founded mail order company, the Otto Group, then known as Otto Versand, in Hamburg, Germany. The company first specialized in shoes and later expanded its product range; became a major player in the business and generated revenues of more than $270 million by 1970. In the 1960s, father also founded development, construction, and management firm ECE Projektmanagement, a sister company of the Otto Group. Werner Otto passed on the control of the company to his elder son ...
+Contact us to see more Biography
+Education History
+
+Institution Name:
+Harvard University 
+Qualification Name:
+Graduate Degree
+Education Type:
+Graduate
+Start Date:
+ 
+End Date:
+ 
+
+Contact us to see more Education History
+Interesting Facts
+Otto's father, Werner, reportedly was an active opponent to the Nazi regime; was arrested by the Gestapo, the secret police of Nazi Germany, in 1934.
+Contact us to see more Interesting Facts
+Interests, Passion, Hobbies
+
+Kind of Interests, Passion and Hobbies: Philanthropy
+Description: Reported to be a generous donor primarily supporting environmental, social and medical causes through private foundations and the Otto Group.
+
+
+Kind of Interests, Passion and Hobbies: Environment
+Description: Appears to be dedicated to environmental causes through the Otto Group.
+
+
+Kind of Interests, Passion and Hobbies: Art
+Description: Appears to be interested in Dutch and Flemish art; a generous donor of exhibitions and restoration of Dutch paintings.
+
+Contact us to see more Interests, Passion, Hobbies
+Philanthropy
+
+Giving Profile: Reported to be a generous philanthropist;  supports a wide range of medical, health, sport, cultural, art, environmental, and social causes through private foundations and the Otto Group. In addition, Otto, with his wife Dorit, is also a generous giver primarily to art, especially for the Hamburg Kunsthalle, promoting exhibitions and restoration of Dutch and Flemish artworks.  Founded and serves as the Chairman of various charity organizations such as the Urban Land Institute, and the Alexander Otto Sportstiftung. Through the Dorit and Alexander Otto Foundation supports in particular medical and cultural projects.
+
+Contact us to see more Philanthropy
+Clubs & Boards
+Clubs and Boards is only available in Wealth-X Professional
+Known Associates
+Known Associates is only available in Wealth-X Professional
+Family Details
+Family Details is only available in Wealth-X Professional
+
+
+
+Now Available: World Ultra Wealth Report 2017  
+ 
+
+
+
+The fifth edition of this flagship report analyses the state of the world’s ultra high net worth (UHNW) population, and this year revealed global growth of 3.5% among other surprising finds.  
+      Download Now 
+
+
+ 
+
+Daily Wealth IntelligenceSign up to receive daily wealth intelligence, news, and insight right in your inbox.Subscribe
+
+
+
+
+
+
+
+
+
+
+
+
+Learn More About Wealth-X Products and Services:
+
+
+Contact Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bizapedia.com - Human Validation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMPANIESPEOPLEPRODUCTS/SERVICESTRADEMARKSADDRESSESPHONE BOOK
+
+
+
+
+            Our system has detected a high number of page requests from your IP Address, please prove to us that you are a human to continue using our website.
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Please send me to the search subscription offer page after I successfully answer the word challenge.
+                        
+
+
+
+
+
+
+
+
+
+BIZAPEDIAPRO SEARCHPerform unlimited searches via ouradvanced search form withBizapedia Pro Search.FIND OUT MORE >BIZAPEDIAPRO DATABuild custom data listsfor one or many stateswith Bizapedia Pro Data.FIND OUT MORE >
+
+
+Copyright © 2012-2017 · Bizapedia.com · All rights reserved.BlogPro SearchPro APIContact UsTerms of UsePrivacy PolicySitemapDesktop Version
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Theodore Alexander Living Room Otto, Ottoman KENO4411SB - Brownlee's Furniture - Lawrenceville, GA  FacebookInstagramPhoneMap770-963-6435Contact UsAbout UsJoin EmailRoom PlannerGOSearchAccountLog InLog OutView AccountRegisterFavorites MenuLiving RoomDining RoomBedroomEntertainmentHome OfficeMattressesAccessoriesRoom PlannerContact Us      {1}				##LOC[OK]## {1}				##LOC[OK]####LOC[Cancel]## {1}				##LOC[OK]####LOC[Cancel]##         Theodore Alexander Living Room Otto, Ottoman KENO4411SB at Brownlee's Furniture Ottoman. Ebonised Mahogany. Brass. Otto, Ottoman KENO4411SB Sable Theodore Alexander                 Product DetailsThe Theodore Alexander Living Room Otto, Ottoman is available for purchase in the Lawrenceville, GA area from Brownlee's Furniture. Please contact us to see if this item is on-hand.
+Some color variation in photos of our furniture finishes, leathers and fabrics is possible due to lighting and differing resolution quality on computer devices.     Related Items(20)       SavileKENO1128Keno Bros.Theodore Alexander        Starlight Galaxy, CandlesticksKENO1301Keno Bros.Theodore Alexander        Branch IIKENO1303Keno Bros.Theodore Alexander        LumiereKENO2103Keno Bros.Theodore Alexander        ZebraKENO3101Keno Bros.Theodore Alexander        Peekaboo!KENO3201Keno Bros.Theodore Alexander        SnappyKENO4009CHKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024.1AFRKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024BBKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024BEKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024CKKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024DCKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024HMKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024RUKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024SBKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024SRKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024WLKeno Bros.Theodore Alexander        SlopeKENO4101Keno Bros.Theodore Alexander        Arc Chair & OttomanKENO4108CHKeno Bros.Theodore Alexander        Ocean IIKENO3120Keno Bros.Theodore Alexander     Product OverviewItem Description Product Description Ottoman. Ebonised Mahogany. Brass.  Dimensions Width 24"24INH Depth 18"18INH Height 18"18INH  Design Elements & Features Material Leather Style Modern/Contemporary Additional Information Upholstered in sable leather. Trim: Welting.  Construction & Ergonomics Construction Style: Mid Century Modern. Materials: Mahogany, Brass.  Other Details Brand Theodore Alexander Category Living Room Collection Keno Bros. Color Sable Description Otto, Ottoman SKU KENO4411SB Type Ottomans, Accent Ottomans    See an error on this page? Please report it so that we may correct it.    Provide feedback on the information shown on this page Your Email Address:      This item has been discontinued by the manufacturer, or please describe the issue:       Submit       Prices subject to home office audit & correction.  
+
+
+
+
+
+
+
+
+Alexander Otto Co's Reviews, Salaries, Interviews & Resumes | LiveCareer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+  Menu  Close 
+  LiveCareer  
+
+
+
+ For Employers
+ Contact Us
+ Live Chat
+ Log In
+ Log In
+
+
+
+Resume Builder 
+ Resumes
+
+
+
+
+Resume Examples
+Resume Templates
+Resume Samples
+Resume Tips
+Resume Services
+
+
+
+
+
+JOB INDUSTRIES
+
+
+
+Accounting & Finance
+Admin
+Business
+Customer Service
+Education
+
+
+
+
+Engineering
+Finance
+Human Resources
+IT
+Law
+
+
+
+
+Management
+Media & Entertainment
+Medical
+Sales
+Science
+
+
+
+
+Retail
+Marketing
+Construction
+Real Estate
+Automotive
+
+
+
+
+Production
+Social Services
+Transportation
+
+
+
+
+ View All Job Industries  
+
+
+
+
+
+JOB INDUSTRIES
+
+
+
+Accounting & Finance
+Business Templates
+Classic Template
+Computers Technology
+Contemporary
+
+
+
+
+Culinary Templates
+Engineering Templates
+Entry Level
+Experienced
+Management
+
+
+
+
+Media Entertainment
+Space Saver
+Standard Template
+Traditional
+Traditional Template
+
+
+
+
+IT
+Customer Service
+Sales
+Education
+Marketing
+
+
+
+
+Retail
+Medical
+Finance
+Microsoft Word
+HR
+
+
+
+
+ View All Job Industries  
+
+
+
+
+
+JOB INDUSTRIES
+
+
+
+Accountant
+Analyst
+Architect
+Art
+Bartender
+
+
+
+
+Bookkeeper
+Chef
+Computer Science
+Consultant
+Engineering
+
+
+
+
+Entry Level
+Executive
+Housekeeper
+IT (Information Technology)
+Manager
+
+
+
+
+Military
+Nursing
+Receptionist
+Resume Objectives
+Retail
+
+
+
+
+Sales
+Server
+Teacher
+Technical
+Resume Samples Guide
+
+
+
+
+ View All Job Industries  
+
+
+
+
+
+Featured Resume Tips
+
+
+
+
+
+How to Include Keywords In Your Resume
+Without strategically placing keywords in your resume, employers won't be able to find you.
+
+
+
+
+
+
+
+Your Top 6 Resume Questions
+See our customer's questions about how to write an effective, job-winning resume
+
+
+Read More Resume Tips  
+
+Resume Tips
+
+How to Write Your First Resume
+Best Resume Formats
+Including References on Resume
+Do's and Don'ts for Your Education Section
+How to Write Your Resume Work Experience Section
+
+View Other Resume Tips  
+
+
+
+More Tips
+
+
+
+  
+
+Professional Resume Writing
+Let us write it for you! Put the power of a professional resume writer on your side and get the job faster.
+
+
+
+  
+
+Resume Check
+Make sure your resume is 100% error free! Instant feedback + make your resume recruiter ready.
+
+
+
+
+
+  
+
+Have a Pro Review Your Resume
+Get an expert 2nd opinion with Resume Review. Professional advice will help you make your resume perfect so get you hired faster.
+
+
+
+  
+
+Professional Cover Letter Writing
+Make the ultimate first impression with employers. Stand out from the crowd with a professionally written cover letter to match your resume.
+
+
+
+
+
+ View Other Resume Services  
+
+
+
+
+
+
+
+ Cover Letters
+
+
+
+
+Cover Letter Builder
+Cover Letter Examples
+Letter Samples
+
+
+
+
+
+COVER LETTER BUILER
+
+  
+
+Get your foot in the door with a stand-out cover letter
+Your cover letter is your first change to impress potential employers. Cover Letter Builder gives you the tools to get noticed!
+Create a Cover Letter  
+
+
+
+COVER LETTER TIPS
+
+  
+
+Your Top 6 Resume Questions
+See our customer's questions about how to write an effective, job-winning resume
+Read Tips  
+
+
+
+
+
+Cover Letter Job Industries
+
+
+
+Education
+Accounting & Finance
+Customer Service
+Management
+Administrative
+
+
+
+
+Marketing
+Sales
+Business
+Medical
+Healthcare
+
+
+
+
+Media & Entertainment
+IT (Information & Technology)
+
+
+
+
+ See All Categories  
+
+
+
+
+
+Letter Sample Categories
+
+
+
+Cover Letters
+Resignation Letters
+Application Letters
+Permission Letters
+Termination Letters
+
+
+
+
+Leave Letters
+Appreciation Letters
+Recommendation Letters
+Thank You Letters
+Appointment Letters
+
+
+
+
+Reference Letters
+Apology Letters
+
+
+
+
+ See All Categories  
+
+
+
+
+
+
+
+ Interviews
+
+
+
+
+Interview Game Plan
+Interview Videos
+Interview Tips
+Interview Questions
+
+
+
+
+
+Interview Game Plan
+
+  
+
+Plan for Interview Success
+Our proven solution is backed by a decade of research and has helped thousands get a job!
+Learn more  
+
+
+
+Free Video
+
+  
+
+3 Techniques To Answer Any Interview Question
+Watch how you can answer any interview question and win the job!
+Watch free video now 
+
+
+
+
+
+
+
+Interview Videos
+
+  
+
+What's your greatest strength?
+Interviewers will ask similar questions and gauge your response
+
+
+
+  
+
+How do you stay organized?
+Hiring Managers want to learn how you get things done
+
+
+View All Interview Videos  
+
+
+
+Interview Categories
+
+Common Questions
+Good & Bad Answers
+Good Answers Only
+Bad Answers Only
+
+
+
+Industries
+
+Admin Support
+Healthcare
+Restaurant
+Retail
+
+
+
+View More Interview Preparations 
+
+
+
+
+
+
+
+Job Interview Tips
+
+  
+
+Your First Ever Job Interview
+10 tips that will help you have a successful first ever job interview.
+
+
+
+  
+
+What is your Biggest Failure?
+Read how to properly interpret and answer this seemingly tricky question.
+
+
+
+
+
+ View All Interview Tips  
+
+
+
+
+
+
+
+
+Featured Interview Questions:
+
+  
+
+Why Are You The Best Candidate For This Position?
+You want to make sure that you provide a clear and intelligible answer.
+
+
+
+  
+
+What Are Your Career Goals?
+Make sure your goals line up with what you would be doing in their company.
+
+
+
+
+
+ See All Interview Questions  
+
+
+
+
+
+
+
+ Jobs
+
+
+
+
+Search Jobs
+Job Tips
+
+
+
+
+
+
+
+Job Search Top Cities
+
+
+
+Austin
+Chicago
+Dallas
+Houston
+Jacksonville
+Los Angeles
+
+
+
+
+New York
+Philadelphia
+Phoenix
+San Antonio
+San Diego
+San Jose
+
+
+
+
+
+Job Search Top Industries
+
+
+
+Accounting And Finance
+Administrative Support
+Business
+Computers And Technology
+Construction
+Customer Service
+
+
+
+
+Education And Training
+Engineering
+Food And Beverage
+Healthcare
+Human Resources
+Sales
+
+
+
+
+
+Job Search Top Companies
+
+
+
+Amazon
+Coca Cola Company
+Costco
+Fedex
+Frito Lay
+Google
+
+
+
+
+Postmates
+Procter and Gamble
+Starbucks
+Uber
+Walgreens
+Walmart
+
+
+
+
+
+
+ View All Jobs  
+
+
+
+
+
+Job Tips
+
+
+
+  
+
+Career Tips
+You only get out of your career what you put into it.
+
+
+
+  
+
+Civic and Volunteer Activities Can Help You Get a Job
+It makes you more well-rounded and enhances your appearance through your resume
+
+
+
+
+
+  
+
+Soft Skills in Demand
+You may have skills that are high in demand and not even know it.
+
+
+
+
+
+ Read All Job Tips  
+
+
+
+
+
+
+
+ Companies
+
+
+
+
+Companies
+
+
+
+
+
+
+
+
+
+Amazon
+Apple
+Chevron Corp
+Citibank
+Coca Cola
+
+
+
+
+Comcast
+Costco
+Deloitte
+Fedex
+General Electric
+
+
+
+
+Google
+Hewlett Packard
+Hot Topic
+Ikea
+Kaiser Permanente
+
+
+
+
+Sears
+Mcafee
+Nike
+Nordstrom Rack
+Planned Parenthood
+
+
+
+
+Macy's
+Starbucks
+Uber
+Walgreens
+Walmart
+
+
+
+
+ View All Companies  
+
+
+
+
+
+
+
+ Resources
+
+
+
+
+Resume Directory
+Quintessential
+Job Descriptions
+
+
+
+
+
+Top Industries
+
+
+
+Architecture
+Community and Public Service
+Education and Training
+Government
+Green Jobs
+Healthcare
+
+
+
+
+Human Resources
+Management
+Performing Arts
+Science
+Skilled Trades
+Textile and Apparel
+
+
+
+
+ View All Industries  
+
+
+
+
+
+
+Quintessential by livecareer
+
+  
+
+What's your greatest strength?
+Your one-stop source for the latest career tools, job search tips, and expert advice.
+Read more 
+
+
+
+I Am A Student
+
+College Search
+College Majors
+College Planning
+Internships
+
+All Student Resources  
+
+I Am A Career Changer
+
+Career Assessment Tools
+Articles
+Find Your Career Passion
+Quizzes
+
+All Career Change Resources  
+
+I Am A Job Seeker
+
+Career Exploration
+Checklist
+Career Planning
+Blog
+
+All Job Seeker Resources  
+
+
+
+Top Job Descriptions
+
+
+
+Cashier Job Description
+Project Manager Job Description
+Accountant Job Description
+Administrative Assistant Job Description
+Operations Manager Job Description
+Account Manager Job Description
+
+
+
+
+Receptionist Job Description
+Office Manager Job Description
+Business Analyst Job Description
+Marketing Manager Job Description
+ Executive Assistant Job Description
+Sales Associate Job Description
+
+
+
+
+Sales Manager Job Description
+Customer Service Job Description
+ Sales Representative Job Description
+Graphic Designer Job Description
+Product Manager Job Description
+General Manager Job Description
+
+
+
+
+Data Analyst Job Description
+Bookkeeper Job Description
+
+
+
+
+ View All Job Descriptions  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ LiveCareer 
+ Company 
+Alexander Otto Co 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alexander Otto Co
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Overview
+
+
+
+ Reviews
+                                
+
+
+
+ Interviews
+                                
+
+
+
+ Compensation
+                                
+
+
+
+ Benefits
+                                
+
+
+Is This your Company?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alexander Otto Co Overview
+
+
+
+Website:
+
+N/A
+
+Locations:
+
+
+                                                             Grand Junction, CO 
+
+                                                
+
+Employees:
+N/A
+
+
+
+
+Founded:
+N/A
+Owner:
+Alexander Otto
+Industry:
+
+Nonclassifiable Establishments
+
+
+
+Revenue:
+N/A
+
+
+
+
+
+                                            Nonclassifiable establishment Alexander Otto Co is based at Grand Junction, CO. The company's Owner is Alexander Otto.
+                                        
+
+
+
+
+
+
+
+
+
+What’s your overall rating for Alexander Otto Co?
+Skip question 
+
+
+
+
+
+
+
+
+
+All reviews and ratings are completely anonymous
+
+
+
+Thank you! Please, type the name of that employer.
+
+
+
+
+Got it! 
+
+Now tell us more about your employer
+
+All reviews and ratings are completely anonymous
+
+You have already provided some feedback on this company! 
+
+
+
+Are you a current or former employee?
+Skip question 
+
+
+
+ Current
+                
+
+ Former
+                
+All reviews and ratings are completely anonymous
+
+
+
+
+Would you recommend Alexander Otto Co to a friend?
+Skip question 
+
+
+
+ Yes
+                
+
+ No
+                
+All reviews and ratings are completely anonymous
+
+
+
+
+How difficult was the interview at Alexander Otto Co?
+Skip question 
+
+
+Easy
+Hard
+
+5.0
+ 4.0
+ 3.0 
+2.0 
+1.0 
+
+Hard
+All reviews and ratings are completely anonymous
+
+
+
+
+Did you get an offer?
+Skip question 
+
+
+
+ Yes
+                
+
+ No
+                
+All reviews and ratings are completely anonymous
+
+
+
+
+What's your base salary?
+Skip question 
+
+
+
+$0-$29,999
+$30,000-$37,999
+$38,000-$49,999
+$50,000-$67,999
+$68,000+
+
+All reviews and ratings are completely anonymous
+
+
+
+
+How do you rate the benefits at Alexander Otto Co?
+Skip question 
+
+
+
+
+
+
+
+
+
+
+
+All reviews and ratings are completely anonymous
+
+
+
+GO TO FULL REVIEW
+
+
+
+GO TO FULL REVIEW
+Go to Company Overview
+
+
+
+
+Your review is looking great!
+Want to share more of your experience?
+
+General Review
+
+The Interview Process
+
+Your Compensation
+
+your Benefits
+
+
+GO TO FULL REVIEW
+
+
+
+
+Thanks for providing information about your experience with Alexander Otto Co
+
+
+
+
+
+
+
+
+Add a New Company
+
+Please fill out the information below about the company
+
+
+
+Company Name
+
+
+
+Company's Website
+
+
+
+Business Address
+
+
+
+Business Address (Optional)
+
+
+
+
+
+State
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Puerto Rico
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+
+
+
+
+
+
+City
+
+
+
+
+
+Zip
+
+
+
+
+
+
+
+                                        You agree to the Terms of Service and the Privacy Policy.
+                                    
+
+
+
+
+SUBMIT
+Cancel
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+Build your resume today for FREE
+Build your resume today
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alexander Otto Co Top Locations
+
+
+
+
+
+
+
+
+
+
+
+Popular Job Titles at Alexander Otto Co
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Build your resume for FREE and get the job you've always wanted.
+Build your resume today
+
+
+
+
+
+
+
+
+
+Upload your logo.
+
+
+
+
+
+
+
+
+
+
+
+
+Drop image here or click to  browse
+(Acceptable file types include JPEG, PNG and Size should be less than 50KB)
+
+
+
+File size 
+Type 
+Image dimension 
+
+
+
+Uploading…
+Error! . Try again!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in to your Account
+
+
+Email Address
+
+
+
+Password
+
+
+
+Log In
+
+
+Stay signed in
+                                        
+
+
+
+
+Log In
+Log In
+
+
+
+
+
+Forgot password?
+
+                                Don’t have an account? Sign up
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create a LiveCareer account
+
+
+First Name
+
+
+
+Last Name
+
+
+
+Email Address
+
+
+
+Password
+
+
+
+Sign up
+
+
+
+
+
+Already have an account?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Resume Tools
+
+Resume Builder
+Resume Tips
+CV Templates
+Resume Directory
+Resume Samples
+
+
+
+
+
+Cover Letter 
+
+Cover Letter Builder
+Cover Letter Tips
+Cover Letter Samples
+
+
+
+
+
+Mighty Recruiter 
+
+Job Sourcing
+Free Job Posting
+
+
+
+Company 
+
+Job Listings
+Company Directory
+
+
+
+
+
+Resources 
+
+Quintessential LiveCareer
+Education Opportunities
+
+
+
+
+
+About 
+
+Who We Are
+Work Here
+Affiliates
+Privacy Policy
+Terms of Use
+
+
+
+
+
+Help & Support 
+
+Customer Service/Billing
+Contact Us
+Frequently Asked Questions
+
+
+
+
+
+
+
+
+
+ Language 
+
+
+
+
+
+English
+English (UK)
+
+
+
+
+
+
+Español
+Français
+
+
+
+
+
+
+Italiano
+Deutsch
+
+
+
+
+
+
+Nederlands
+Português
+Polski
+
+
+
+
+
+
+
+Customer Service 
+ 
+customerservice@livecareer.com800-652-8430 Mon- Fri 8am - 8pm CST Sat 8am - 5pm CST, Sun 10am - 6pm CST
+				  
+
+Stay in touch with us
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017, Bold Limited. All rights reserved.
+
+
+Powered by  
+
+
+
+
+
+
+
+
+
+
+
+
+   Theodore Alexander Living Room Otto, Ottoman KENO4411BB | Hickory Furniture Mart | Hickory, NC Furniture Festival & Clearance Sale: July 28-30, 2017! MenuPhoneMap(800) 462-MART (6278)Monday - Saturday: 9am to 6pm ESTSearchSearchMy Account Log InLog OutView Account RegisterFavoritesDirectionsRequest A Quote(800) 462-MART (6278)Monday - Saturday: 9am to 6pm ESTFurniture StoresShop Products Living Room Bedroom Dining Room Home Office Home Entertainment Mattresses Accessories Lighting Rugs Outdoor / Sunroom FabricsManufacturersView All CatalogsView All ManufacturersPlan Your Visit Directions Events Hotel Shop & Stay Packages International VisitorsSpecial OffersCurrent OffersFuture OffersDesigner Appreciation ProgramMilitary Appreciation ProgramDisaster Relief ProgramMenu xVisitStoresManufacturersProductsDirections      {1}				##LOC[OK]## {1}				##LOC[OK]####LOC[Cancel]## {1}				##LOC[OK]####LOC[Cancel]##         Theodore Alexander Living Room Otto, Ottoman KENO4411BB at Hickory Furniture Mart and Nationwide The Otto, Ottoman (SKU:KENO4411BB) by Theodore Alexander is a simplistic and inviting piece that brings satisfaction to any home. It is found within the accent ottomans subgroup. The style of this piece of furniture falls into the modern/contemporary category. It is made from and built with leather. Otto, Ottoman KENO4411BB Antique Buffalo Brown Theodore Alexander         Color rendering may be approximate and depends upon your display settings.         Product DetailsThe Theodore Alexander Living Room Otto, Ottoman is available in Hickory, NC and nationwide from Hickory Furniture Mart.
+
+Contact each showroom directly for all customizable options available.  What Customers Say   What Others Say       facebooktwittergoogle+pinterest Related Items(20)       SavileKENO1128Keno Bros.Theodore Alexander        Starlight Galaxy, CandlesticksKENO1301Keno Bros.Theodore Alexander        Branch IIKENO1303Keno Bros.Theodore Alexander        LumiereKENO2103Keno Bros.Theodore Alexander        SnappyKENO4009CHKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024.1AFRKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024BBKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024BEKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024CKKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024DCKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024HMKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024RUKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024SBKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024SRKeno Bros.Theodore Alexander        Antelope, Dining ChairKENO4024WLKeno Bros.Theodore Alexander        Arc Chair & OttomanKENO4108CHKeno Bros.Theodore Alexander        Arc Chair & OttomanKENO4108WHKeno Bros.Theodore Alexander        Snappy ArmchairKENO4109CHKeno Bros.Theodore Alexander        Ritz, Games ChairKENO4217.2ACLKeno Bros.Theodore Alexander        Ocean IIKENO3120Keno Bros.Theodore Alexander     Product OverviewItem Description Product Description The Otto, Ottoman (SKU:KENO4411BB) by Theodore Alexander is a simplistic and inviting piece that brings satisfaction to any home. It is found within the accent ottomans subgroup. The style of this piece of furniture falls into the modern/contemporary category. It is made from and built with leather.  Dimensions Width 24"24INH Depth 18"18INH Height 18"18INH  Design Elements & Features Material Leather Style Modern-Contemporary  Other Details Brand Theodore Alexander Category Living Room Collection Keno Bros. Color Antique Buffalo Brown Description Otto, Ottoman SKU KENO4411BB Type Ottomans, Accent Ottomans    See an error on this page? Please report it so that we may correct it.    Provide feedback on the information shown on this page Your Email Address:      This item has been discontinued by the manufacturer, or please describe the issue:       Submit          Be the first to hear about special offers & industry news.Enter Your Email Click to Add/Read Google Reviews | Rated Click to Add/Review Trip Advisor Reviews | Certificate of Excellence from Trip Advisor Locations & DirectionsHickory Furniture Mart2220 Hwy 70 SEHickory, NC 28602(800) 462-MART (6278)GOOGLE DIRECTIONSFacebookTwitterPinterestYouTubeHouzzBlog©  Hickory Furniture MartCompany InformationAbout UsContact Us View BrochureHistory ManufacturersView All CatalogsView All ManufacturersFurniture StoresView All StoresView All Store VideosShop ProductsLiving RoomBedroomDining RoomHome OfficeHome EntertainmentMattressesAccessoriesLightingRugsOutdoor / SunroomFabricsDesign ServicesView Design Services Plan Your VisitDirectionsEventsHotel Shop & StayInternational VisitorsPurchasing InformationFAQsShopping TipsConsolidated Shipping InfoGift CertificatesPurchase Gift Certificates OnlineBuying GuideRequest A Free Buying Guide Special OffersCurrent OffersFuture OffersDesigner Appreciation ProgramMilitary Appreciation ProgramDisaster Relief ProgramResourcesBlogRoom PlannerDesign CenterGlossary of TermsFAQsFact SheetArea Children Activities  Locations & DirectionsHickory Furniture Mart2220 Hwy 70 SEHickory, NC 28602(800) 462-MART (6278)Monday - Saturday: 9am to 6pm ESTGET DIRECTIONS IN MAPSFacebookTwitterPinterestYouTubeHouzzBlog©  Hickory Furniture Mart×Newsletter SignupDesign your dream home at Hickory Furniture Mart!Join our email list now and you'll be included in our monthly drawing to win a $500 mart gift certificate! Plus be the first to receive special alerts on upcoming sales, promotions, and special showroom discounts.  
