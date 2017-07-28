@@ -1,18 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+import time
 
 def companyEmbedding(Query):
 
 
     #url = "https://www.bing.com/search?q=" + Query+"&setlang=en-us"
-    #headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
+    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
     #re = requests.get(url, headers=headers)
     #re.encoding = 'utf8'
     #html = re.text
     
-    #driver = webdriver.Chrome()
-    driver = webdriver.PhantomJS()
+    driver = webdriver.Chrome()
+    #driver = webdriver.PhantomJS()
     url = "https://www.bing.com/"
     driver.get(url)
     elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
@@ -20,7 +21,14 @@ def companyEmbedding(Query):
     elem = driver.find_element_by_xpath('//*[@id="sb_form_go"]')
     elem.submit()
     html = driver.page_source
+    #query = driver.current_url.split("?q=")[1].split("&")[0]
+    #print(query)
+    #url = driver.current_url+"&lf=1&qpvt="+query
+    #print(url)
+    #driver.get(url)
+    #time.sleep(20)
     driver.close()
+
 
     soup = BeautifulSoup(html, 'lxml')
     Links = soup.find_all('a')
