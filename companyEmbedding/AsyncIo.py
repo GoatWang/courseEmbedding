@@ -5,50 +5,77 @@ import async_timeout
 import os
 import time
 from bs4 import BeautifulSoup
- 
- 
-async def fetch_coroutine(client, url):
-    with async_timeout.timeout(10):
-        async with client.get(url) as response:
-            assert response.status == 200
-            html = await response.text()
-            soup = BeautifulSoup(html ,'lxml')
-            As = soup.find_all('a')
-            for a in As:
-                try:
-                    print(a)
-                except:
-                    print("----------------------------------Error------------------------------------")
-            return await response.release()
- 
- 
-async def main(loop):
+from selenium import webdriver
 
-    #urls = ['http://www.ntpu.edu.tw/chinese/',
-    #        'http://www.ntpu.edu.tw/chinese/',
-    #        'http://www.ntpu.edu.tw/chinese/',
-    #        'http://www.ntpu.edu.tw/chinese/',
-    #        'http://www.ntpu.edu.tw/chinese/']
+class CompanyCrawler:
 
-    urls = ['http://python.org',
-            'http://python.org',
-            'http://python.org',
-            'http://python.org',
-            'http://python.org']
+    def __init__(self, query):
+        self.query = query
+        self.companyInfo = ""
 
-    headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
+    async def fetch_coroutine(self, client, url):
+        with async_timeout.timeout(10):
+            try: 
+                async with client.get(url) as response:
+                    assert response.status == 200
+                    contentType = str(response.content_type)
+                    if 'html' in str(contentType).lower():
+                        html = await response.text()
+                        soup = BeautifulSoup(html ,'lxml')
+                        [x.extract() for x in soup.findAll('script')]
+                        [x.extract() for x in soup.findAll('style')]
+                        [x.extract() for x in soup.findAll('nav')]
+                        [x.extract() for x in soup.findAll('footer')]
+                        self.companyInfo += soup.text
+                        #print(soup.text)
+                    return await response.release()
+            except:
+                print(url + " Fail!")
  
-    async with aiohttp.ClientSession(loop=loop, headers=headers, conn_timeout=5 ) as client:
-        startTime = time.time()
-        tasks = [fetch_coroutine(client, url) for url in urls]
-        await asyncio.gather(*tasks)
-        finishTime = time.time()
-        print(finishTime - startTime)
+    async def main(self, loop):
+
+        driver = webdriver.Chrome()
+        #driver = webdriver.PhantomJS()
+        url = "https://www.bing.com/"
+        driver.get(url)
+        elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')
+        elem.send_keys(self.query)
+        elem = driver.find_element_by_xpath('//*[@id="sb_form_go"]')
+        elem.submit()
+        html = driver.page_source
+        driver.close()
+
+        soup = BeautifulSoup(html, 'lxml')
+        Links = soup.find_all('a')
+
+        Goodlinks = []
+        for link in Links:
+            linkstr = str(link)
+            if (('http' in linkstr) and ('href' in linkstr) and (not 'href="#"' in linkstr) and (not 'href="http://go.microsoft' in linkstr)and (not 'microsofttranslator' in linkstr)):
+                Goodlinks.append(link)
+
+        urls = [link['href'] for link in Goodlinks]
+        print(self.query, "Good links have been found!")
+
+        #urls = ['http://python.org',
+        #        'http://python.org',
+        #        'http://python.org',
+        #        'http://python.org',
+        #        'http://python.org']
+
+
+        headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'}
+ 
+        async with aiohttp.ClientSession(loop=loop, headers=headers, conn_timeout=5 ) as client:
+            tasks = [self.fetch_coroutine(client, url) for url in urls]
+            await asyncio.gather(*tasks)
  
  
-if __name__ == '__main__':
-    startTime = time.time()
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main(loop))
-    finishTime = time.time()
-    print(finishTime - startTime)
+    #if __name__ == '__main__':
+    #    loop = asyncio.get_event_loop()
+    #    loop.run_until_complete(main(loop, query))
+
+    def execute(self):
+        loop = asyncio.get_event_loop() 
+        loop.run_until_complete(self.main(loop))
+
