@@ -34,8 +34,8 @@ class CompanyCrawler:
  
     async def main(self, loop):
 
-        driver = webdriver.Chrome()
-        #driver = webdriver.PhantomJS()
+        #driver = webdriver.Chrome()
+        driver = webdriver.PhantomJS()
         url = "https://www.bing.com/"
         driver.get(url)
         elem = driver.find_element_by_xpath('//*[@id="sb_form_q"]')

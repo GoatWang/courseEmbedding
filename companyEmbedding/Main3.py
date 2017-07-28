@@ -9,6 +9,7 @@ print("to be crawled:", len(df))
 
 dfSort = df.sort_values(['0'])
 
+
 beforePart = dfSort[:len(dfSort)//2]
 afterPart = dfSort[len(dfSort)//2:]
 print("beforePart Length", len(beforePart))
@@ -29,14 +30,8 @@ for company in beforePart['0']:
     companyName = ''.join(p for p in company if p not in exclude)
     companyName = companyName.replace(" ", "_").lower()
 
-    file = open("Test/" + companyName, 'w', encoding='utf8')
+    #file = open("Test/" + companyName, 'w', encoding='utf8')
+    file = open("companyEmbedding/" + companyName, 'w', encoding='utf8')
     file.write(crawler.companyInfo)
     file.close()
 
-    #companyInfo = companyEmbedding(company+" product")
-    #exclude = set(string.punctuation)
-    #companyName = ''.join(p for p in company if p not in exclude)
-    #companyName = companyName.replace(" ", "_").lower()
-    #file = open("companyEmbedding/"+companyName, 'w', encoding='utf8')
-    #file.write(companyInfo)
-    #file.close()
