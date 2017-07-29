@@ -1,0 +1,3719 @@
+
+
+
+Stephen Kim's profile on Product Hunt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Product HuntThe best new products, every dayAsk●|Log InSign up Stephen Kim#415315@stephen_kim0Following0FollowersFollow1 UpvoteSendbirdThe simplest chat & messaging solution for your appTech+ 6 save 690 46Share this profile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stephen Kim - Product Development
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stephen Kim
+Product Development
+
+
+
+
+
+
+
+
+
+5 Qualities in Great Product Managers
+
+
+Leave a reply 
+
+
+People ask me all the time how to become a product manager or become a better one. Here are my quick thoughts on what makes an awesome product manager. If you already work in product, I’d be curious to hear your feedback.
+1. Customer empathy
+The biggest question I always ask when working on something new is, “who is the customer for this product?” Know everything about your customers, obsessively. If you can map out how a customer spends a typical workday, then you can start to think about their problems from their perspective, rather than from your product’s perspective. In addition to the qualitative, know the quantitative metrics as well. As a product manager, you need to understand the data about how users are interacting with your product, and what types of interactions are good for customer health.
+2. Resourcefulness
+As a product manager, everything begins and ends with you. Beyond the typical skills you might expect such as UX design, knowledge around specific technologies, data analysis, and general business acumen, you often need to go beyond your comfort level to get things done. That might mean helping to sell your product alongside salespeople. That might mean reading 100 pages of third-party API documentation to find that one endpoint that could make or break a feature. It might mean chasing down that one beta customer for the perfect testimonial on your website. Do whatever it takes.
+3. Humility
+Most product managers do not have direct reports, and for good reason. Your job is to help move an organization’s product forward using your best judgment, and you cannot do it alone. You must earn the trust and respect of others. An arrogant product manager can be absolutely toxic in an organization. When critiquing others’ ideas, assume good intent. When you fail, admit it openly and move on quickly to redeem yourself. Acknowledge the help you receive from others and make them feel rewarded. Never give the impression that the product will move in a certain direction only “because you said so”.
+4. Fortitude
+Part of the challenge of being a product manager is staying humble while staying true to a product vision at the same time. Although you want to be front and center whenever someone has a new idea, you also have to say “no” to a lot of people. Do not compromise all of the research and knowledge you have amassed because something new and shiny comes along. Learn how to stay the course and bring people along with you even if they disagree.
+5. Passion
+People will often rely on you for the energy required to take a bold stance when introducing something new to the market. You need to be a selling to the salespeople, instilling the belief in them that you have done your homework. If you are not passionate and excited about your product, assume that no one will feel that way.
+I hope that helps — comments are welcome!
+
+
+
+
+
+
+jQuery Slideshow Built in Minutes
+
+
+Leave a reply 
+
+
+I had to build a jQuery Slideshow (AKA an image carousel) that scrolls automatically, and I struggled to find the right plugin for the job on such short notice. I just hacked up something quick and dirty using jQuery UI. Here’s the demo for my jQuery Slideshow if you’re interested in jumping straight into the code: http://codepen.io/stephenkim/pen/pCGwE
+
+There are a few steps I had to go through to get this working nicely…
+The HTML
+I went for a super simple setup where I have three buttons at the top that serve as selectors for the different images that the user can view in the slideshow.
+
+<div class="rowOfCircles">
+    <div class="circle circle1 selectedCircle"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+</div>
+<div class="image image1"></div>
+<div class="image image2"></div>
+<div class="image image3"></div>
+It is meant to look like this image below, where the black dot denotes selection among the three possible images in the slideshow:
+
+
+The CSS
+The CSS for the sake of this example is drop-dead simple. I’m drawing some circles with CSS and just placing them on top of the slideshow:
+
+.rowOfCircles {
+    margin: 0 auto;
+    width: 60px;
+}
+.circle {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    float: left;
+    background: #ccc;
+    margin-left: 10px
+}
+.selectedCircle {
+    background: #000;
+}
+.image {
+    width: 90%;
+    height: 200px;
+    margin: 0 auto;
+    border: 1px solid #535353;
+    margin-top: 15px;
+    float: left;
+}
+.image1 {
+    background: #ccc;
+}
+.image2 {
+    background: #FF0000;
+}
+.image3 {
+    background: #3C8C3E;
+}
+
+The JavaScript for the jQuery Slideshow
+OK, now let’s get to the fun stuff. There were a few key components to the JS:
+
+Setup: So there are three images total in the jQuery Slideshow. The first thing I do on document ready is that I hide the second and third images.
+
+$('.image2, .image3').hide();
+
+
+Display selection: I had to create a click event for the circle-shaped markers, to clearly denote which one is selected and how the image switching works. There’s some jQuery UI fanciness here you might want to read about in the official docs: http://api.jqueryui.com/slide-effect/
+
+
+$('.circle').click(function(){
+    $('.circle').removeClass('selectedCircle');
+    $(this).addClass('selectedCircle');
+    if ($(this).hasClass('circle1')) {
+      $('.image').hide('slide', {direction: 'left'}, 500);
+      $('.image1').delay(500).show('slide', {direction: 'right'}, 500);
+    }
+    else if ($(this).hasClass('circle2')) {
+      $('.image').hide('slide', {direction: 'left'}, 500);                
+      $('.image2').delay(500).show('slide', {direction: 'right'}, 500);
+    }
+    else {
+      $('.image').hide('slide', {direction: 'left'}, 500);
+      $('.image3').delay(500).show('slide', {direction: 'right'}, 500); 
+    }
+});
+
+
+Automatic scroll: The feather in the cap here is a setTimeout function that calls back to itself at the end, so that it continues to rotate through the images interminably. Notice how I call changeImage() right before the end of the setTimeout.
+
+
+function changeImage() {
+    setTimeout(function () {
+        if ($('.selectedCircle').next().length < 1) {
+            $('.circle1').click();       
+        }
+	else {
+	    $('.selectedCircle').next().click();   
+        }
+        changeImage();
+	}, 3000)
+}
+changeImage();
+
+
+
+Here's the demo again if you're interested: http://codepen.io/stephenkim/pen/pCGwE
+
+Enjoy! Please comment and share!
+
+
+
+
+
+
+CSS Tabs Shaped like Trapezoids
+
+
+Leave a reply 
+
+
+So I was working on a project recently where I needed to create CSS tabs in the shape of trapezoid controls in a web application. I had some extra time on my hands, and I wanted to do this in CSS instead of using images.
+I searched around the web for a while trying to look for some nice examples of CSS tabs but couldn’t find anything that matched my spec exactly. However, I did find some solid inspiration from this article on CSS-Tricks. Using the basic concepts there, here’s what I came up with:
+
+View the demo here: http://jsfiddle.net/stephenkimster/q2ASL/
+If you look closely, I had to draw two separate shapes for the CSS tabs (one with the gradient fill and one with a solid fill to get the borders working correctly).
+Enjoy!
+
+
+
+
+
+
+
+
+Search for:
+
+
+
+Categories 
+CSS Tips
+
+jQuery
+
+Product Development
+
+
+ 
+
+
+
+
+
+
+
+    Kim Lefko | Weber-Stephen Products LLC | ZoomInfo.com
+
+
+
+
+
+
+
+
+
+
+Bankruptcy Attorneys Salinas - Monterey Bankruptcy Lawyer - Chapter 7 & 13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Bankruptcy Services
+
+What You Can Expect
+Chapter 7 Bankruptcy
+Chapter 13 Bankruptcy
+Eliminate Tax Debt
+Stop Repossession
+Stop Wage Garnishment
+Stop Creditor Lawsuits
+
+
+FAQs
+
+FAQs
+Questions to Ask
+Choosing the Right Attorney
+
+
+Reviews
+
+Read Our Reviews
+Video Reviews
+
+
+About
+Contact
+Blog
+En Español
+ 
+
+
+
+
+Call 1 (831) 221-5022 
+
+FacebookTwitterLinkedIn 
+
+
+
+
+
+
+
+Stephen Kim Home Page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Take Care of Yourself and Your Family.
+Welcome to our site.  Our goal is to give you a simple overview of what can sometimes feel like a very complicated process—Chapter 7 and Chapter 13 consumer bankruptcy.  No marketing hype or scare tactics here—just useful information.
+
+That said, reading websites is no substitute for having an experienced attorney review your specific situation to help you understand the available options so you can decide what’s best for your family. We know you have many choices for bankruptcy attorneys in Salinas and hope to have the opportunity to assist you.
+
+
+Your Email*
+
+Your Phone*First Name*Last Name*
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Take Care of Yourself and Your Family.
+
+Your Email*
+
+Your Phone*First Name*Last Name*
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+*We hate spam and will never share your info with anyone else - guaranteed.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Law Offices of Stephen H. Kim, Attorney at Law ProvidesSkilled Representation and Advice You Can Trust.
+
+
+
+
+
+Chapter 7
+The simplest and easiest form of consumer bankruptcy for those individuals who qualify.
+Read More
+
+
+
+
+Chapter 13
+Longer and more complicated than Chapter 7 bankruptcy, but offering distinct advantages for the right people.
+Read More
+
+
+
+
+FAQs
+Frequently Asked Questions about consumer bankruptcy, including Chapter 13 and Chapter 7.
+Read More
+
+
+
+
+En Español
+Si está siendo hostigado por agencias de cobranzas; si siente que se ahoga en un océano de deudas…
+Read More
+
+
+
+
+
+
+
+
+
+
+"Let Me Help You With Your Financial Situation" - Contact Stephen Kim Today
+
+
+
+
+Copyright ©2017 Stephen H. Kim. All Rights Reserved - Website by Social Media NinjasTerms of Use & Privacy Policy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[oLWXu.EBOOK] Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields KINDLE - Quicksilver Top Book
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quicksilver Top Book
+
+
+
+Yes We Can
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Monday, June 5, 2017
+
+
+
+
+
+
+
+
+[oLWXu.EBOOK] Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields KINDLE
+
+
+
+
+
+Read Online and Download PDF Ebook Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Get Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields PDF file from our online library. Have spare times? Read Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know. Need a terrific e-book? Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by Author, the most effective one! Wan na get it? Locate this excellent electronic book by here now. Download and install or read online is offered. Why we are the best site for downloading this Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know Of course, you can choose the book in different file kinds and media. Seek ppt, txt, pdf, word, rar, zip, and kindle? Why not? Get them right here, currently! Please follow instruction step by step until finish to get Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields for free. Have fun downloading and reading !!!
+
+
+
+[Book] Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know [D.O.C]
+Packed with step-by-step examples and illustrative case studies, and updated to reflect the latest changes in economic policy and the financial landscape, Finance and Accounting for Nonfinancial Managers is a nuts-and-bolts guide for managers, entrepreneurs, seasoned executives, teachers, and students alike. William G. Droms and Jay O. Wright's definitive guide to financial analysis and management is now revised throughout and features a new chapter on the Dodd-Frank Act and JOBS Act, bringing the book up to date for the post-recession economy while still covering all major aspects of financial management, including: • Reading a Balance Sheet • Mastering the Accounting Cycle • Making Long-term Investment Decisions • Conducting Breakeven Analysis for Profit Planning • Calculating the Cost of Capital • Evaluating Closely Held Companies and much more.
+How it works:1. Register a free 1 month Trial Account.2.  Get Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields and as many books as you like (Personal use)3.  Cancel the membership at any time if not satisfied.
+
+[oLWXu.D.o.w.n.l.o.a.d] Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields E.P.U.B
+
+Product Details
+
+Amazon Sales Rank: #391305 in Books
+
+Published on: 2015-06-02
+Released on: 2015-06-02
+Original language:
+      English
+Number of items: 1
+Dimensions: 9.25" h x
+  .88" w x
+  6.13" l, 
+  .0 pounds
+  
+Binding: Paperback
+336 pages
+
+[Download] Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know #46 by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields RAR
+
+
+About the Author
+
+William G. Droms is the John Powers Jr. Professor of Finance at the McDonough School of Business, Georgetown University. An internationally recognized corporate finance and investment management consultant, he has designed and delivered executive development programs to thousands of managers in a wide variety of trade and professional associations, corporations, and financial institutions.Jay O. Wright is an adjunct professor of finance at the McDonough School of Business, Georgetown University. After earning a JD from the University of Chicago, he worked on Wall Street as both a mergers and acquisitions attorney and investment banker. For the last decade, he has been an entrepreneur, founding and leading companies in the technology, telecommunications, software, real estate, and education industries while serving on a number of corporate and charitable boards.
+B.E.S.T Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know #0465078982 by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields TXT
+
+
+Customer Reviews
+Most helpful customer reviews
+0 of 0 people found the following review helpful.
+While that's fine for actual novels
+
+By Darin Schnoor
+For a subject that, at it's core, requires math and formulas, I was surprised to see that this book comes in more of a novel format. While that's fine for actual novels, it makes learning equations and tables far more difficult than if it were laid out in a textbook format. It's difficult to follow the application of a described concept when it's put in to use in a table with little to no supporting equations or explanations. While the second half of the book does include more detail on the computations and formulas, the first half is essentially void of them. There is also no use whatsoever of spreadsheet tools or functions, which is how all financials are recorded today (and have been for the past several decades).
+1 of 1 people found the following review helpful.
+Meh. It might be helpful, if you have a good instructor...
+
+By AmaLeachBeech
+But my instructor was really shoddy.I read this book twice, but some things just didn't click.And he was terrible at the whole 'teaching' thing. He said "most students fail their first time and then have to retake it, and end up doing well."Right. Whatever, maybe I just suck at business, but I consider myself pretty smart.This book definitely needs to be coupled with a competent professor.
+0 of 0 people found the following review helpful.
+Textbook for a class -- did the job
+
+By AdventureGirl01
+It's not fair to judge a book by its content if one doesn't like the topic.That said, its written in clear language and offers a broadbrush overview of basic finance.  I think it spends a bit too much time on stocks and other financial instruments for an actual businessperson -- I mean, who of us actually buys or sells these things for our company?The best part was the description of the financial ratios.  These you'll use everyday and I'll keep the book after the class is done for this reason.
+See all 17 customer reviews...
+
+E.b.o.o.k Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields W.O.R.D
+
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields PDF.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields ePub.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields DOC.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields RTF.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields WORD.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields PPT.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields TXT.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Ebook.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields iBooks.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Kindle.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Rar.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Zip.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Mobipocket.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Mobi Online.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Audiobook Online.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Review Online.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Read Online.
+Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know, by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields Download Online.
+[oLWXu.EBOOK] Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields [E.P.U.B]
+[oLWXu.DOWNLOAD] Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields EPUB
+[oLWXu.R.e.a.d] Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields EPUB
+[oLWXu.Read] Finance and Accounting for Nonfinancial Managers: All the Basics You Need to Know by William G. Droms, Jay O. Wright
+W. Chan Kim
+Stephen A. Ross
+Edward Fields [D.O.C]
+
+
+
+
+
+Posted by
+
+
+
+charlestorrenso
+
+
+
+
+at
+
+3:45 AM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Email ThisBlogThis!Share to TwitterShare to FacebookShare to Pinterest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No comments:
+
+
+
+
+
+
+
+Post a Comment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Newer Post
+
+
+Older Post
+
+Home
+
+
+
+
+Subscribe to:
+Post Comments (Atom)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Me
+
+
+
+
+charlestorrenso
+
+
+
+View my complete profile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Blog Archive
+
+
+
+
+
+
+
+
+        ▼ 
+      
+
+
+
+2017
+
+(160)
+
+
+
+
+
+        ► 
+      
+
+
+
+July
+
+(2)
+
+
+
+
+
+
+
+        ▼ 
+      
+
+
+
+June
+
+(36)
+
+[26xA7.D.O.W.N.L.O.A.D] McGraw-Hill's Math, Grade ...
+[wIdjC.BOOK] Mosby's Review Questions for the Spee...
+[1MMXZ.D.o.w.n.l.o.a.d] Basic Inorganic Chemistry,...
+[N3MX2.Read] The End of Overeating: Taking Control...
+[ZCqIp.Read] Become What You Are by Alan W. Watts
+...
+[RwQhL.B.E.S.T] CPT 2013 Standard Edition (Current...
+[5jAZH.F.r.e.e] Manufacturing, Engineering & Techn...
+[Z7Mef.DOWNLOAD] The Emotional Eating Workbook: A ...
+[Pr3nT.Best] IFRS Guidebook: 2014 Edition by Steve...
+[bbAUL.Read] Visual Guide to Lock Picking by Mark ...
+[HgzI0.BEST!] Financial & Management Accounting: A...
+[xsf5R.D.o.w.n.l.o.a.d] Webster's New World Italia...
+[Z9l8p.B.o.o.k] Careers: In Forensic Science by A....
+[3tEQR.B.O.O.K] Principles of CPT Coding by Americ...
+[LtFPK.DOWNLOAD] Medical Terminology: A Short Cour...
+[Ffyvb.B.O.O.K] Work, Consumerism and the New Poor...
+[ehF5J.READ] Plumb's Veterinary Drug Handbook: Poc...
+[QgWGu.READ] Annabel Karmel's New Complete Baby an...
+[Pr4WV.Read] Coding Companion for General Surgery/...
+[ZwUlZ.Read] How To Teach English (with DVD) by Je...
+[4cmp3.B.E.S.T] The Einstein Enigma: A Novel by Jo...
+[u6LNP.Best!] Client Education: Theory And Practic...
+[LuqGg.READ] ICD-10 Expert for Home Health and Hos...
+[kF0BL.Best!] Calculus: Concepts and Contexts (Ava...
+[IubkF.Free] Google AdWords For Dummies by Howie J...
+[NFq2H.BOOK] All-New Fire HD 8 Tablet with Alexa, ...
+[zE3Vo.BEST] Advanced Methods of Biomedical Signal...
+[l60Nk.E.b.o.o.k] Small Animal Bandaging, Casting,...
+[Uhs67.E.b.o.o.k] Platform Scale: How an emerging ...
+[IIdrM.B.o.o.k] Bookkeeping For Dummies by Lita Ep...
+[XG7Qt.F.R.E.E] Orofacial Pain: Guidelines for Ass...
+[pmUoh.F.R.E.E] The Image: A Guide to Pseudo-Event...
+[tDeEo.FREE] Joy of Cooking: All About Party Foods...
+[oLWXu.EBOOK] Finance and Accounting for Nonfinanc...
+[D01BM.DOWNLOAD] Local Anesthesia for the Dental H...
+[cLK7p.Ebook] Mastering Artisan Cheesemaking: The ...
+
+
+
+
+
+
+
+
+        ► 
+      
+
+
+
+May
+
+(22)
+
+
+
+
+
+
+
+        ► 
+      
+
+
+
+April
+
+(26)
+
+
+
+
+
+
+
+        ► 
+      
+
+
+
+March
+
+(20)
+
+
+
+
+
+
+
+        ► 
+      
+
+
+
+February
+
+(31)
+
+
+
+
+
+
+
+        ► 
+      
+
+
+
+January
+
+(23)
+
+
+
+
+
+
+
+
+
+        ► 
+      
+
+
+
+2016
+
+(1)
+
+
+
+
+
+        ► 
+      
+
+
+
+December
+
+(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Playboy magazine December 2007 Kim Kardashian Stephen King NEW SEALED | eBay
+
+
+
+
+
+
+
+
+
+
+
+
+ Skip to main contenteBayShop by categoryShop by categoryEnter your search keywordAll CategoriesAdvancedHi (Sign in to bid or buy) eBay Deals Sell Help & ContactCurrent language EnglishEnglishFrançais My eBayExpand My eBay Summary Bids/Offers Watch List Wish List All Lists Purchase History Selling My Collections Followed searches MessagesNotification   
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+Back to home page
+
+
+
+|Listed in category: 
+
+
+
+
+
+
+Books
+>
+Magazine Back Issues
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Picture Information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Image not available
+Photos not available for this variation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mouse over to Zoom-Click to enlarge
+
+
+
+
+
+
+
+
+
+
+
+
+
+X
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Have one to sell?
+
+
+Sell it yourself
+
+
+
+
+
+
+
+
+Get an immediate offer
+Up to
+
+
+
+
+
+
+Details about   Playboy magazine December 2007 Kim Kardashian Stephen King NEW SEALED
+
+
+
+
+
+
+
+		4.6
+average based on 8 product ratings
+
+
+
+
+
+
+
+5
+
+
+
+
+
+7
+
+
+
+
+
+
+
+4
+
+
+
+
+
+0
+
+
+
+
+
+
+
+3
+
+
+
+
+
+0
+
+
+
+
+
+
+
+2
+
+
+
+
+
+1
+
+
+
+
+
+
+
+1
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Would recommend
+
+
+
+
+
+
+
+
+
+
+
+
+Good value
+
+
+
+
+
+
+
+
+
+
+
+
+Compelling content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 8 product ratings
+
+
+
+
+
+
+
+Playboy magazine December 2007 Kim Kardashian Stephen King NEW SEALED
+
+
+
+
+
+
+
+
+
+
+
+
+|
+
+Add to watch list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Find out more about the Top-rated seller program - opens in a new window or tab
+
+
+
+ the_bricabrac_man
+
+	            (11962
+)
+
+
+
+
+100% Positive feedback
+
+
+
+Consistently receives highest buyers' ratings
+Ships items quickly
+Has earned a track record of excellent service
+
+
+
+
+
+
+
+
+
+Follow this seller
+
+
+
+See other items
+
+
+
+
+	Visit store: the_bricabrac_man
+
+
+
+
+
+
+
+
+Item Information
+
+
+
+
+		Item condition:
+Brand New
+
+
+
+
+
+
+
+
+
+
+
+
+Price:
+
+US $24.99
+
+
+
+
+
+Approximately C $31.25(including shipping)
+
+
+
+
+
+
+
+
+
+&nbsp
+&nbsp
+
+
+							Add to cart
+
+
+
+
+
+ 
+ 
+
+
+
+
+Add to watch list
+Remove from watch list
+
+
+
+
+Watch list is full
+
+
+
+
+
+
+Add to collection
+
+
+
+
+
+Free shipping
+Experienced seller
+30-day returns
+
+
+
+
+
+
+
+
+
+
+
+
+No additional import charges at delivery!
+
+						This item will be shipped through the Global Shipping Program and includes international tracking. Learn more- opens in a new window or tab
+
+
+
+
+Shipping:
+
+
+
+FREE
+
+
+				Standard Shipping
+
+ | 
+
+ See details 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+	Item location:
+Pennsylvania, United States
+
+
+
+
+
+
+ 
+
+
+
+Ships to: 
+
+
+			United States, Europe, Asia, Canada, Brazil, Australia
+
+
+
+
+
+
+
+Import charges:
+
+
+
+		
+				 (amount confirmed at checkout) 
+To be provided at checkout 
+
+ help icon for Shipping - opens a layer
+
+
+This amount includes applicable customs duties, taxes, brokerage and other fees. This amount is subject to change until you make payment. For additional information, see the Global Shipping Program terms and conditions- opens in a new window or tab
+This amount includes applicable customs duties, taxes, brokerage and other fees. This amount is subject to change until you make payment. If you reside in an EU member state besides UK, import VAT on this purchase is not recoverable. For additional information, see the Global Shipping Program terms and conditions- opens in a new window or tab
+
+
+
+
+
+Delivery:
+
+
+
+
+
+
+Estimated within 2-7 business days
+ help icon for Estimated delivery date - opens a layer
+
+
+Estimated delivery dates  - opens in a new window or tab include seller's handling time, origin Postal/ZIP Code, destination Postal/ZIP Code and time of acceptance and will depend on shipping service selected and receipt of cleared payment - opens in a new window or tab. Delivery times may vary, especially during peak periods.
+
+
+
+
+
+
+
+	Payments:
+
+
+
+
+
+
+
+
+
+Credit cards processed by PayPal
+
+
+See payment information
+
+
+
+International shipping and import charges paid to Pitney Bowes Inc. Learn More- opens in a new window or tab
+
+International shipping and import charges paid to Pitney Bowes Inc. Learn More- opens in a new window or tab
+Any international shipping and import charges are paid in part to Pitney Bowes Inc. Learn More- opens in a new window or tab
+International shipping paid to Pitney Bowes Inc. Learn More- opens in a new window or tab
+Any international shipping is paid in part to Pitney Bowes Inc. Learn More- opens in a new window or tab
+
+
+
+
+
+Returns:
+
+
+
+
+
+30 day money back, buyer pays return shipping
+									
+										 | 
+									 See details 
+
+
+
+
+
+
+
+
+Guarantee:
+
+
+
+
+Money Back Guarantee
+Covered by eBay Money Back Guarantee
+ | See details - opens in a new window or tab
+
+
+
+
+		        				Get the item you ordered or get your money back. 
+
+
+
+			        				Covers your purchase price and original shipping.
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Report item - opens in a new window or tab
+
+Description current
+Shipping and payments
+
+
+
+
+
+
+
+	eBay item number:302365878881
+
+
+	Seller assumes all responsibility for this listing.
+
+
+Item specifics
+
+
+
+									 			Condition:
+
+
+
+
+															
+															
+																Brand New: A new, unread, unused book in perfect condition with no missing or damaged pages. See the seller’s 
+
+																			listing for full details.
+																					See all condition definitions- opens in a new window or tab
+
+
+
+																			... Read moreabout the condition
+
+
+
+
+
+									 			Subject: 
+
+Men's Interest
+
+
+
+									 			Issue Type: 
+
+Monthly Issue
+
+									 			Publication Name: 
+
+Playboy
+
+
+
+									 			Language: 
+
+English
+
+
+
+
+
+
+
+
+
+
+
+the_bricabrac_man
+
+ the_bricabrac_man
+
+	            (11962
+)
+
+
+
+
+100%
+ 
+
+
+											Sign up for newsletter
+
+
+
+										Visit Store:  
+										the_bricabrac_man
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Categories
+
+
+records CDs magazines BLU-RAY & DVD video games books car catalogs - brochures catalogs dungeons & dragons board games RPG role playing games Other 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Questions and answers about this item
+
+
+
+		No questions or answers have been posted about this item.
+
+Ask a question - opens in a new window or tab
+
+
+
+
+
+
+
+
+
+
+
+	Seller assumes all responsibility for this listing.
+
+
+
+
+
+
+
+
+												Shipping and handling
+
+
+
+									This item will ship to  United States, but the seller has not specified shipping options. Contact the seller- opens in a new window or tab and request a shipping method to your location.
+
+
+									Shipping cost cannot be calculated. Please enter a valid Postal Code.
+
+
+
+ 
+
+Item location: Pennsylvania, United States
+
+
+
+			Shipping to: United States, Europe, Asia, Canada, Brazil, Australia
+
+
+
+
+
+
+
+
+
+
+Change country:
+
+-Select-
+Afghanistan
+Albania
+Andorra
+Armenia
+Australia
+Austria
+Azerbaijan Republic
+Bahrain
+Bangladesh
+Belarus
+Belgium
+Bhutan
+Bosnia and Herzegovina
+Brazil
+Brunei Darussalam
+Bulgaria
+Cambodia
+Canada
+China
+Croatia, Republic of
+Cyprus
+Czech Republic
+Denmark
+Estonia
+Finland
+France
+Georgia
+Germany
+Gibraltar
+Greece
+Guernsey
+Hong Kong
+Hungary
+Iceland
+India
+Indonesia
+Iraq
+Ireland
+Israel
+Italy
+Japan
+Jersey
+Jordan
+Kazakhstan
+Korea, South
+Kuwait
+Kyrgyzstan
+Laos
+Latvia
+Lebanon
+Liechtenstein
+Lithuania
+Luxembourg
+Macau
+Macedonia
+Malaysia
+Maldives
+Malta
+Moldova
+Monaco
+Mongolia
+Montenegro
+Nepal
+Netherlands
+Norway
+Oman
+Pakistan
+Philippines
+Poland
+Portugal
+Qatar
+Romania
+Russian Federation
+San Marino
+Saudi Arabia
+Serbia
+Singapore
+Slovakia
+Slovenia
+Spain
+Sri Lanka
+Sweden
+Switzerland
+Taiwan
+Tajikistan
+Thailand
+Turkey
+Turkmenistan
+Ukraine
+United Arab Emirates
+United Kingdom
+United States
+Uzbekistan
+Vatican City State
+Vietnam
+Yemen
+
+
+There are 1 items available. Please enter a number less than or equal to 1.
+Select a valid country.
+
+
+
+
+Postal Code:
+
+
+
+Please enter a valid Postal Code.
+Please enter 6 digits for the Postal Code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shipping and handling
+To
+Service
+Delivery*
+
+
+
+
+
+
+
+Free shipping
+
+
+
+
+
+United States
+
+
+
+
+														Standard Shipping
+
+
+
+
+
+
+Estimated within 2-7 business days
+
+
+
+
+
+
+
+
+	 				* Estimated delivery dates- opens in a new window or tab include seller's handling time, origin Postal Code, destination Postal Code and time of acceptance and will depend on shipping service selected and receipt of cleared payment- opens in a new window or tab. Delivery times may vary, especially during peak periods. 
+
+
+
+
+
+
+
+
+
+								Domestic handling time
+
+
+
+
+
+
+Will usually ship within 1 business day of receiving cleared payment - opens in a new window or tab.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				Return policy
+
+
+
+
+
+								Item must be returned within
+
+
+Refund will be given as
+
+
+
+
+
+								30 days after the buyer receives it
+
+
+
+											Money Back
+
+
+
+
+The buyer is responsible for return shipping costs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Payment details
+
+
+
+
+Payment method
+Preferred/Accepted
+ 
+
+
+
+
+
+
+
+
+
+
+
+																PayPal Preferred
+
+
+															 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+time left
+
+
+Current bid amount 
+
+
++
+
+
+Shipping amount 
+
+
+Bid Count 
+
+
+
+time left
+current bid
++
+shipping
+bids
+
+
+Approximately:
+Current bid amount Approximately:
++
+Shipping amount Approximately:
+
+
+
+Import charges:
+
+
+
+(estimated and based on current bid)
+To be provided at checkout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Import charges:
+
+
+(estimated and based on max bid)
+To be provided at checkout
+
+
+
+
+
+
+							Confirm
+
+Your bid amount
+
+
+
+Approximately:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Approximately:
+
+
+
+
+
+
+OR
+
+
+
+
+
+
+
+Your current max bid:
+
+
+(Approximately:)
+
+
+
+Increase your chances of winning by setting a higher bid now.
+
+
+Let eBay place automatic bids for you
+
+ This opens a help overlay dialogue about automatic bidding.
+
+
+
+
+																 How does automatic bidding work?
+
+										  						As other bids come in, eBay will automatically raise your bid in small amounts, up to your limit. Learn More. - opens in a new window or tab
+
+
+Close button. This closes the help overlay dialogue.
+
+
+, up to
+
+
+
+
+
+
+
+
+
+
+							Set automatic bid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+By submitting your bid, you'll be committing to buy this item from the seller if you are the winning bidder.
+By submitting your bid, you are committing to buy this item from the seller if you are the winning bidder. You have read and agree to the Global Shipping Program terms and conditions  - opens in a new window or tab. Import charges previously quoted are subject to change if you increase you maximum bid amount. 
+By clicking Confirm, you commit to buy this item from the seller if you are the winning bidder.
+By clicking Confirm, you are committing to buy this item from the seller if you are the winning bidder and have read and agree to the Global Shipping Program terms and conditions  - opens in a new window or tab. Import charges previously quoted are subject to change if you increase your maximum bid amount.
+
+
+
+Your feedback is submitted. Thank you for helping us improve!
+Tell us what you think 
+
+
+
+
+
+We've made a few changes to bidding.
+Were these helpful?
+
+
+
+Yes
+
+
+
+No
+
+
+
+
+Input comments here.
+
+
+Cancel
+
+							Submit
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+
+
+
+
+Bid layer is updating the contents.
+Resume bidding, if the page does not update immediately.
+
+
+
+d
+h
+m
+s
+day
+hour
+hours
+FREE shipping
+See item description
++ See item description for shipping
+Calculate
+Approximately:
+(Enter ##1## or more)
+(Enter more than ##1##)
+Your max bid:
+You've been outbid. Don't let it get away - place another bid.
+You've been outbid by an automatic bid placed earlier by another bidder.
+You're the highest bidder on this item!
+You're the first bidder on this item!
+You're the highest bidder on this item, but you're close to being outbid.
+This auction is almost over and you're currently the high bidder.
+You're the high bidder on this item, but the reserve price hasn't been met yet.
+You've been outbid by someone else.
+You can still win! Try bidding again.
+You've been outbid by someone else's max bid.
+You can still win! Try bidding again.
+You've been outbid by someone else.
+Try raising your max bid.
+You're the highest bidder!
+To increase your chances of winning, try raising your bid.
+You're the first bidder. Good Luck!
+You're still the highest bidder!
+You increased your max bid to 
+Please enter your bid again.
+Enter a valid amount for your bid.
+Enter a bid that is the minimum bid amount or higher.
+You have to bid at least 
+Sorry, you can't lower your maximum bid once it's placed.
+This seller requires the buyer to have a PayPal account to purchase this item. Get a PayPal account here .
+Your bid is the same as or more than the Buy It Now price. You can save time and money by buying it now.
+Place bid
+Review and confirm your bid
+Bid confirmation
+Increase max bid
+Enter a custom max bid more than ##2##
+Enter a custom max bid of ##2## or more
++ ##2## approximate import charges
+##2## (approximately)
+Please enter a higher amount than the current bid.
++ ##2## for shipping
++ FREE SHIPPING
+Bid ##3## now
+Bid ##3##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Time left:
+
+
+
+
+
+Current bid:
+
+
+(approximately ##1##)
+
+
+
+
+
+Your maximum bid:
+
+
+(approximately ##1##)
+
+
+
+
+
+Increase your maximum bid:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			By clicking 1 Click Bid, you commit to buy this item from the seller if you're the winning bidder. Learn moreabout 1-click bid  - opens in a new window or tab
+
+
+
+
+
+
+day
+hour
+min
+sec
+days
+hours
+mins
+secs
+(approximately ##1##)
+Winning bid:
+Starting bid:
+Close
+Congrats! The auction has ended and you're the winner.
+The auction has ended, but the reserve price was not met.
+Sorry, the auction has ended and you were outbid.
+Good news, you're the high bidder.
+Sorry, you've been outbid.
+You're the high bidder, but the reserve price is not met.
+Please enter a higher amount than the current bid.
+Maximum bids cannot be lowered once submitted.
+Please enter a valid number.
+
+
+
+
+
+
+
+
+
+
+Ratings and Reviews
+Write a review
+
+
+
+    4.6
+
+
+
+
+
+
+
+
+
+
+8 product ratings
+
+
+
+
+
+
+
+5
+
+
+
+
+
+7
+
+
+
+
+
+
+
+4
+
+
+
+
+
+0
+
+
+
+
+
+
+
+3
+
+
+
+
+
+0
+
+
+
+
+
+
+
+2
+
+
+
+
+
+1
+
+
+
+
+
+
+
+1
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Would recommend
+
+
+
+
+
+
+
+
+
+
+
+
+Good value
+
+
+
+
+
+
+
+
+
+
+
+
+Compelling content
+
+
+
+
+
+
+Most relevant reviews
+
+
+
+
+
+
+
+
+
+
+
+
+by
+badtrux
+Apr 12, 2017
+
+
+Kim looks fabulous
+This magazine is a must have for any Kardashian fan. Kim looks amazing and the photo shoot was done with class.
+
+X
+
+
+
+Previous image
+
+
+
+
+
+
+Next image
+
+
+
+
+
+
+
+
+
+
+
+
+
+Verified purchase:
+Yes
+ | 
+Condition:
+pre-owned
+ | 
+Sold by:
+cactusshow
+
+
+
+
+
+(0)
+
+
+
+
+
+(0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+by
+pfreemd4
+Jun 22, 2016
+
+
+Not as Advertised
+I did not receive this item in the condition it was advertised. The item was not bagged or bordered in the package, pages were damaged, plastic torn, and price sticker was visibly removed.
+
+X
+
+
+
+Previous image
+
+
+
+
+
+
+Next image
+
+
+
+
+
+
+
+
+
+
+
+
+
+Verified purchase:
+Yes
+ | 
+Condition:
+new
+ | 
+Sold by:
+samiboy01
+
+
+
+
+
+(0)
+
+
+
+
+
+(2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+by
+dannmatti
+Mar 29, 2016
+
+
+playboy kim
+great playboy issue, great shape, good condition. beautiful collecters piece.
+
+X
+
+
+
+Previous image
+
+
+
+
+
+
+Next image
+
+
+
+
+
+
+
+
+
+
+
+
+
+Verified purchase:
+Yes
+ | 
+Condition:
+pre-owned
+ | 
+Sold by:
+rgreer44
+
+
+
+
+
+(1)
+
+
+
+
+
+(0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Why is this review inappropriate?
+
+ It’s spam, or has links
+ There are copyright or trademark issues
+ It’s offensive or has profanity
+ It includes feedback about the seller
+ Something else
+
+
+Cancel
+
+
+
+
+
+
+
+
+
+
+We got your report
+We’ll take a look and remove the review if it doesn’t follow our guidelines.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Back to home page
+
+
+
+Return to top
+
+
+
+
+
+
+
+
+
+
+
+
+
+Books | eBay
+ Skip to main contenteBayShop by categoryShop by categoryEnter your search keywordBooksAll CategoriesAntiques Art Automotive Baby Books Business & Industrial Cameras & Photo Cell Phones & Accessories Clothing, Shoes & Accessories Coins & Paper Money Collectibles Computers/Tablets & Networking Consumer Electronics Crafts Dolls & Bears DVDs & Movies Entertainment Memorabilia Gift Cards & Coupons Health & Beauty Home & Garden Jewellery & Watches Music Musical Instruments & Gear Pet Supplies Pottery & Glass Real Estate Specialty Services Sporting Goods Sports Mem, Cards & Fan Shop Stamps Tickets & Experiences Toys & Hobbies Travel Video Games & Consoles Everything ElseAdvancedHi (Sign in to bid or buy) eBay Deals Sell Help & ContactCurrent language EnglishEnglishFrançais My eBayExpand My eBay Summary Bids/Offers Watch List Wish List All Lists Purchase History Selling My Collections Followed searches MessagesNotification   There seems to be a problem serving the request at this timeSkip to page navigationRefineBooksShop by CategoryShowing slide {CURRENT_SLIDE} of {TOTAL_SLIDES} - Shop by CategoryGo to previous slide - Shop by CategoryNonfictionAntiquarian & CollectibleTextbooks, EducationFiction & LiteratureMagazine Back IssuesChildren & Young AdultsOther BooksCookbooksAccessoriesAudiobooksGo to next slide - Shop by CategoryHot This WeekShowing slide {CURRENT_SLIDE} of {TOTAL_SLIDES} - Hot This WeekGo to previous slide - Hot This WeekCartoon Metal Magnetic Bookmarks Note Memo Stationery Book Mark Bookworm OfficeUS $0.797 leftTesting EmailUS $0.798 left1pcs Creative Cute Cat Paper Clips Bookmark Memo Clip Office School Stationery US $0.799 leftPortable Travel Reading Light Mini LED Leaning Book Folder Practical Lamp XICAUS $0.8322 sold10PCs Silver Tone Bookmark With Loop 85mmUS $0.8220 soldBear Korean Magnetic Metal Lucky Bookmarks Book Clip School Office Supplies HotUS $0.7917 soldSnowflake Reading Bookmark Note Pad Memo Stationery Book Marker Label PartyUS $1.1810 sold2Pcs Bookmark Creative 2016 Metal Clip Reading Book Magazine Mark Label GoldUS $0.809 soldGo to next slide - Hot This WeekAll ListingsAuctionBuy It NowSort:Best MatchBest MatchLowest Price + ShippingHighest Price + ShippingEnding SoonNewly ListedNearest FirstView:Gallery View1-25 of 22,063,159 ResultsWho's in Control? : The Polarization of American Politics and the Revival for...ISBN 0-684-81123-5 Copyright 1996 Please view Copyright page photo for specifics. The books I have listed are from my late husband’s collection. I have provided multiple pictures so that you are able to determine the quality of each book. I will provide more pictures upon request. Please inspect the pictures carefully as I feel they will answer most of your questions. Books have been kept in a climate controlled, smoke free, odor free environment. C $1.250 bidsEnding Today at 7:53 EDT1m 34sFrom United StatesThe Dark Crystal  A.C.H. Smith Paperback First EditionPre Owned The Dark Crystal a.c.h. Smith Paperback first printing has 8 color stills pages in book, shipping is Media mail $3.12 I accept PayPal only.C $1.881 bidEnding Today at 8:05 EDT13m 42sFrom United StatesCustoms services and international tracking providedBook - The Poems of George Eliot Complete Edition - Illustrated - 1884C $10.000 bidsEnding Today at 20:28 EDT12h 36mNew Jersey Wildlife Viewing Guide by Laurie Pettigrew Paperback Book (English)New Jersey Wildlife Viewing Guide by Laurie Pettigrew. Beaches, cliffs, forests and wetlands - New Jersey is called the Garden State for good reason, featuring some of the most beautiful and distinct landscapes in the country.C $6.240 bidsEnding Today at 8:37 EDT46m 2sTop Rated SellerFrom United StatesCustoms services and international tracking providedVampires in the Lemon Grove 1st Edition by Karen Russell 2013, Hardcover, NewC $1.240 bidsEnding Today at 9:11 EDT1h 19mFrom United StatesCustoms services and international tracking providedThe Shadow Tarot by Linda Falorio 2004 1st Pressing Paperback with cardsThe setian tunnels of the Qlipoth translated into a tarot spread. Each trump is explained with it's reciprocating "kalas" for those who follow Kenneth Grant/ Aleister Crowley, O.T.O, A.A. etc.C $18.761 bidEnding Today at 13:23 EDT5h 31mFrom United StatesCustoms services and international tracking providedExpository Notes on the Gospel of Mark by H.A. IronsideHas previous owners stamp inside covers. Tight Bindings and a couple of markings in text.C $2.490 bidsEnding Today at 11:45 EDT3h 54mFrom United StatesCustoms services and international tracking providedThe Book of Black Magic by A. E. Waite (1996, paperback edition)Quite possibly one of the most well known sources whether praised or hated none can deny A E Waite had made an impact. Excellent source for his version of the Honorius and other "Solomon" magick.C $8.330 bidsEnding Today at 10:42 EDT2h 50mFrom United StatesCustoms services and international tracking providedA Book Of Words by Rudyard Kipling, 1st Edition, Macmillan 1928, HardcoverC $34.00The Nightwalker by Thomas Tessier, Leisure Books 1st edition paperback, 2008Bobby had almost convinced himself that his lover's death was an accident. It wasn't his fault. Once the uncontrollable tingling began in his hands, he could only watch in horror as they killed her.C $3.740 bidsEnding Today at 16:27 EDT8h 35mTop Rated SellerFrom United StatesThe Big Book of Codewords by Parragon Books Paperback Book (English)The Big Book of Codewords. Short Title BBO CODEWORDS. by Parragon Books. Author Parragon Books. Publisher Parragon. Language English. Format Paperback. Media Book.C $13.23From United StatesThe Italian and Spanish Schools for 5 Voices by Paperback Book (English)The Italian and Spanish Schools for 5 Voices. Short Title ITALIAN & SPANISH SCHOOLS FOR. (Music Sales America). The volumes of this expanding series are devoted to a wide range of sacred renaissance motets with Latin texts, and contain a mixture of well known and unfamiliar pieces, some of which are published for the first time.C $15.51From United StatesTHE WORKS OF ANTON CHEKHOV Vintage Book 1929 1st EditionPages are tight, clean of writing, and readable. Makes great Library Décor. Book is Burgundy Red in Color with Gilt Gold. Minor wear to spine, covers, and page edges.C $12.49Top Rated SellerFrom United StatesCustoms services and international tracking providedErnest Hemingway The Old Man and the Sea First EditionErnest Hemingway. The Old Man and the Sea.C $218.85Top Rated SellerWas: Previous PriceC $437.69From United Statesor Best OfferMARYLAND Signed 1st Edition Historic ARCHITECTURE Homes of the Cavaliers MDHOMES OF THE CAVALIERS. "Homes of the Cavaliers" describes and pictures fifty houses in addition to White Hall (seen as most typical of Maryland's colonial homes). The historical background of each house is given in sketches of the builders, various occupants, and incidents that took place through history.C $12.490 bidsEnding Today at 20:07 EDT12h 15mTop Rated SellerFrom United StatesCommentary on the Book of Amos by Richard S. CrippsIt is a Reprint by Klock & Klock Publishers; Has previous owners stamp inside front cover. Tight Bindings and no markings in text.C $2.491 bidEnding Today at 11:29 EDT3h 37mFrom United StatesCustoms services and international tracking providedThe Principles and Practice of Embalming 5th Edition Hardcover BookThis book is in Good condition. The binding is a little loose, but the pages are nice and clean. There is no writing/ underlining on the pages. There is some minor wear to the edges and corners from being handled.C $49.96Top Rated SellerFrom United StatesThe Western Lands by William S. Burroughs (1987, Hardcover)ISBN 0-670-81352-4 Copyright  1987 Pages are stiff. Please view Copyright page photo for specifics. The books I have listed are from my late husband’s collection. I have provided multiple pictures so that you are able to determine the quality of each book. I will provide more pictures upon request. Please inspect the pictures carefully as I feel they will answer most of your questions. Books have been kept in a climate controlled, smoke free, odor free environment. C $1.250 bidsEnding Today at 8:36 EDT44m 27sFrom United StatesThe Southern Reach Trilogy: Annihilation 1 by Jeff Vandermeer (2014, Paperback)C $7.500 bidsEnding Today at 8:28 EDT36m 51sFrom United StatesCustoms services and international tracking providedThe Cook Book by “Oscar” of the Waldorf (1896), First EditionThis antique cookbook (in English), published in 1896 by the Werner Company, New York, is written by Oscar Tschirky, Maitre D’ Hotel at the Waldorf Hotel, New York City. It contains a collection of the best methods of preparing foods at the present day (1896), and is dedicated to the patrons of the Waldorf. The book is in overall good condition with no sign of use/wear/stains on any of the pages. No pages are torn. The spine is well intact. There is some wear primarily on the bottom of the cover (see photo).C $187.58From United Statesor Best OfferCustoms services and international tracking providedImaging of Acute Appendicitis in Adults and Children by Hardcover Book (English)Brand New with Free Shipping!C $298.74Top Rated SellerFrom United StatesVINTAGE BOOK -- 1942 EDITION OF ENGLISH CHILDREN BY SYLVIA LYNDC $5.00or Best OfferTHE WORK OF ATGET - Volume 1 - Old France - First Edition - NEW_______ THE WORK OF ATGET _______. THE WORK OF ATGET - Volume 1 - Old France - book in new condition with the following specifics Title: THE WORK OF ATGET - Volume 1 - Old France. 1st Edition / 1st Printing.C $61.90Top Rated SellerFrom United StatesThe Man Who Fell To Earth by Walter Tevis, Gold Medal Books 1st edition PB, 1963The Man Who Fell To Earth by Walter Tevis, Gold Medal Books 1st edition paperback, February 1963. He was human, but not, properly, a man. He stood six-and-a-half feet tall. His hair was as white as an albino's, yet his face was light tan and his eyes pale blue.C $4.691 bidEnding Today at 16:11 EDT8h 19mTop Rated SellerFrom United States1939 1st Ed. THE MEMOIRS OF A BOARDING KENNEL (DOGS) By JANET JOY HOLYOAKE w/DJBY JANET JOY HOLYOAKE. BOARDING KENNEL. THE MEMOIRS OF A. OF THE 1939 FIRST EDITION. STORIES YOU'LL LOVE TO READ AND ARTWORK THAT WILL WARM YOUR HEART. BY THE BEST AUTHORS AND ILLUSTRATORS. ONE OF THE MANY WONDERFUL.C $12.491 bidEnding Today at 19:42 EDT11h 50mTop Rated SellerFrom United StatesSide Refine PanelShop by CategoryAntique Books and ManuscriptsAudiobooksBook & Magazine Wholesale & Bulk LotsSee all in Book & Magazine Wholesale & Bulk LotsBook Wholesale LotsOther Book & Magazine Wholesale & Bulk LotsWholesale AudiobooksWholesale MagazinesBook AccessoriesSee all in Book AccessoriesAddress BooksBlank Diaries & JournalsBook CoversBook LightsBook PlatesBook Stands & HoldersBookendsBookmarksOther Book AccessoriesCatalogsSee all in CatalogsAgriculture CatalogsArt & Exhibitions CatalogsAuction CatalogsClothing & Fashion CatalogsDepartment Stores CatalogsMusic & Instruments CatalogsOther CatalogsOwner's Manuals CatalogsToys & Hobbies CatalogsChildren & Young Adult BooksSee all in Children & Young Adult BooksChildren & YA Non-Fiction BooksChildren's Fiction BooksChildren's Picture BooksOther Children & Young Adult BooksYoung Adult Fiction BooksCookbooksFiction & Literature BooksMagazine Back IssuesNonfiction BooksOther BooksTextbooks & Educational BooksSpecial Attributessee all1st EditionDust JacketEx-LibraryIllustratedPersonalizedConditionsee allBrand NewLike NewLike NewVery GoodGoodAcceptableNot SpecifiedPricePlease provide a valid price range$-$Buying Formatsee allAll ListingsAuctionBuy It NowItem Locationsee allDefaultWithindistance2 km5 km10 km15 km20 km50 km75 km100 km150 km200 km500 km750 km1000 km1500 km2000 kmofGoCanada OnlyNorth AmericaWorldwideDelivery Optionssee allFree ShippingFree In-store PickupShow onlysee allReturns AcceptedCompleted ItemsSold ItemsMore refinements...
+
+
+Magazine Back Issues | eBay
+ Skip to main contenteBayShop by categoryShop by categoryEnter your search keywordMagazine Back Issues└ BooksAll CategoriesAntiques Art Automotive Baby Books Business & Industrial Cameras & Photo Cell Phones & Accessories Clothing, Shoes & Accessories Coins & Paper Money Collectibles Computers/Tablets & Networking Consumer Electronics Crafts Dolls & Bears DVDs & Movies Entertainment Memorabilia Gift Cards & Coupons Health & Beauty Home & Garden Jewellery & Watches Music Musical Instruments & Gear Pet Supplies Pottery & Glass Real Estate Specialty Services Sporting Goods Sports Mem, Cards & Fan Shop Stamps Tickets & Experiences Toys & Hobbies Travel Video Games & Consoles Everything ElseAdvancedHi (Sign in to bid or buy) eBay Deals Sell Help & ContactCurrent language EnglishEnglishFrançais My eBayExpand My eBay Summary Bids/Offers Watch List Wish List All Lists Purchase History Selling My Collections Followed searches MessagesNotification   There seems to be a problem serving the request at this timeSkip to page navigationRefineMagazine Back IssuesShop by Publication NameShowing slide {CURRENT_SLIDE} of {TOTAL_SLIDES} - Shop by Publication NameGo to previous slide - Shop by Publication NameNational GeographicNintendo PowerLifeTimeRolling StoneLowRiderWeird TalesTV GuideVogueFangoriaSee AllGo to next slide - Shop by Publication NameShop by Publication YearShowing slide {CURRENT_SLIDE} of {TOTAL_SLIDES} - Shop by Publication YearGo to previous slide - Shop by Publication Year1940-19791900-19391980-19992000-NowGo to next slide - Shop by Publication YearHot This WeekShowing slide {CURRENT_SLIDE} of {TOTAL_SLIDES} - Hot This WeekGo to previous slide - Hot This WeekCineplex Movie Magazine -  GAL GADOT -Wonder Woman - Jun 2017US $1.60Almost goneSTARLOG Magazine issues 1-  224 on DVD Complete .cbr file format sci-fi movie TVUS $18.38Almost goneSTYLIST - MILEY CYRUS - COLLECTOR FRENCH MAGAZINEUS $6.79Almost goneGo to next slide - Hot This WeekAll ListingsAuctionBuy It NowSort:Best MatchBest MatchLowest Price + ShippingHighest Price + ShippingEnding SoonNewly ListedNearest FirstView:Gallery View1-25 of 1,731,499 ResultsAdult Magazine  Penthouse Letters Jan 2017 New SealedC $5.00Top Rated SellerAdult Magazine Penthouse Letters Sealed New November 2016C $2.00Top Rated Seller11 watchingSUMMER GIRLS°GALLERY SPECIAL<>MEN'S INTEREST°ADULT MAGAZINE<> VOL1 NO.2 (1986)C $29.00Top Rated SellerFree shippingMayfair Magazine (Vol 24, No 5) Vintage Men's MagazineC $19.95Mayfair Magazine (Vol 20, No 7) Vintage Men's MagazineC $24.95Stereo Review Magazine May 1978 Vintage IssueC $7.990 bidsEnding Today at 22:20 EDT14h 28mTop Rated SellerAdult Magazine Penthouse Sealed New Oct 2016C $4.99Top Rated SellerLot of The Beaver Magazines Back Issues Canada's History MagazineC $34.99Top Rated SellerMayfair Magazine (Vol 25, No 12) Vintage Men's MagazineC $19.95The girls of PENTHOUSE<>MEN'S INTEREST MAGAZINE<>MAY/JUNE 1987°PATTY MULLENC $34.00Top Rated SellerFree shippingNew ListingMayfair Magazine (Vol 17, No 1) Vintage Men's MagazineC $24.95Mayfair Magazine (Vol 24, No 7) Vintage Men's MagazineC $24.95Mayfair Magazine (Vol 24, No 1) Vintage Men's MagazineC $19.95National Geographic Magazine, 10 issues March - Dec 1940. Stories, ads, photos!!C $21.95PLAYBOY'S BLONDES,BRUNETTES & REDHEADS<>MEN'S INTEREST MAGAZINE<>MARCH 1986°C $16.00Top Rated SellerFree shippingVintage Video-Presse magazine revue Celine Dion SEPT. 1984 Quebec RAREC $5.950 bidsEnding Today at 17:03 EDT9h 11mThe Magazine of Fantasy & Science Fiction: Year Set 1955 (12 issues)C $60.00or Best OfferNational Geographic Magazine. April, 1961. Map Battlefields of the Civil War    C $10.01Top Rated SellerNational Geographic 1987; January, March, May, June, August, October & DecemberC $5.00Top Rated SellerStereo Review Magazine November 1978 Vintage IssueC $7.990 bidsEnding Today at 22:20 EDT14h 28mTop Rated SellerMayfair Magazine (Vol 21, No 12) Vintage Men's MagazineC $24.951986 The Ring Boxing Magazine 12 Issue Complete YEAR LOT First Mike Tyson CoverC $124.99Top Rated Selleror Best OfferMad Magazines from the 1970s - Lot of 22C $4.991 bidEnding Today at 15:21 EDT7h 29mVintage 1976 National Geographic Magazines Lot Of 11C $13.99Top Rated SellerWas: Previous PriceC $19.99National Geographic 1999 January, March, April, June, July, September & NovemberC $5.00Top Rated SellerSide Refine PanelShop by CategoryBooksMagazine Back IssuesBook AccessoriesAntique Books and ManuscriptsAudiobooksCatalogsChildren & Young Adult BooksCookbooksFiction & Literature BooksNonfiction BooksTextbooks & Educational BooksBook & Magazine Wholesale & Bulk LotsOther BooksSubjectsee allAutomobileMen's InterestMusicNews, General InterestSports & OutdoorsPublication Namesee allLifeNational GeographicRolling StoneSports IllustratedTimePublication Yearsee all2000-Now1980-19991940-19791900-19391850-1899Issue Typesee allLanguagesee allSpecial Attributessee allConditionsee allBrand NewLike NewLike NewVery GoodGoodAcceptableNot SpecifiedPricePlease provide a valid price range$-$Buying Formatsee allAll ListingsAuctionBuy It NowItem Locationsee allDefaultWithindistance2 km5 km10 km15 km20 km50 km75 km100 km150 km200 km500 km750 km1000 km1500 km2000 kmofGoCanada OnlyNorth AmericaWorldwideDelivery Optionssee allFree ShippingFree In-store PickupShow onlysee allReturns AcceptedCompleted ItemsSold ItemsMore refinements...
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Kim Stephen Found! | Check For Arrests, Warrants 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+ Kim Stephen Found!!  Check For Arrests, Warrants 
+    Show Me Kim's Records 
+
+
+
+
+
+ Please take into consideration that Kim Stephen's records can only be used for personal reasons. For example locating old friends and family or verifying if a person has criminal history and if they can be trusted, to name a few.
+
+You cannot use these records for consumer credit, tenant screening, employment, insurance qualifications or anything else that may be subjected to the Fair Credit Reporting Act, 15 USC 1681 et seq.
+Kim Stephen's records do not contain credit scores and reports. We and our partners are not a consumer reporting agency.
+Click here to continue.
+ 
+
+
+
+
+
+ Discover Everything You Ever Wanted to Know About Kim Stephen 
+
+
+ 
+
+Arrest Records, Warrants, DWI and MugshotsIf Kim’s ever had a run-in with the law then his records will show where, when and why.
+
+
+Addresses, Phone and EmailKim’s record will show current and past mailing addresses, phone numbers and any email addresses he’s had.
+
+
+Marriage, Divorce and Birth RecordsImportant events from Kim’s life have been compiled from state and local county.
+
+  
+
+Sex Offender RegistryFind out instantly if Kim is registered as a sex offender and if he is a threat.
+
+
+Hidden Online ProfilesFind out all of Kim’s online social media profiles and any hidden ones you’re not supposed to know about.
+
+
+Assets, Businesses and LicensesFind out if Kim is hiding any assets, owns any businesses and what licenses they are registered for.
+
+  Show Me Kim's Records 
+
+
+ Instant Access Anywhere and Anytime 
+
+
+ 
+
+100% Anonymous and Instant
+In a few minutes from now you'll get full access to Kim's background in the comforts of home.
+Kim will not know you are looking up their background and pulling records.
+With state of the art connection your search is also secure from prying eyes.
+
+
+ 
+
+
+ Look Up Anyone You Want 
+
+
+
+ Get Kim's Records + Unlimited Searches
+In addition to getting a full background on Kim Stephen, which includes contact info, arrest records, assets, bankruptcies and more, you'll also get full access to our database 24/7.
+Look up anyone else you want so long as they reside in the United States of America.
+Whether it's celebrities, family members or friends you're not restricted on your search.
+  Get Me Kim's Records and Unlimited Searches on Anyone I Want 
+     
+
+
+
+
+Copyright 2016 - 911arrests.com - All Rights Reserved 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5329 @@
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+Bizapedia.com - Human Validation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMPANIESPEOPLEPRODUCTS/SERVICESTRADEMARKSADDRESSESPHONE BOOK
+
+
+
+
+            Our system has detected a high number of page requests from your IP Address, please prove to us that you are a human to continue using our website.
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Please send me to the search subscription offer page after I successfully answer the word challenge.
+                        
+
+
+
+
+
+
+
+
+
+BIZAPEDIAPRO SEARCHPerform unlimited searches via ouradvanced search form withBizapedia Pro Search.FIND OUT MORE >BIZAPEDIAPRO DATABuild custom data listsfor one or many stateswith Bizapedia Pro Data.FIND OUT MORE >
+
+
+Copyright © 2012-2017 · Bizapedia.com · All rights reserved.BlogPro SearchPro APIContact UsTerms of UsePrivacy PolicySitemapDesktop Version
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alpha TPL Properties, LLC - Residential- Famuagun  FormDs.com - SEC filings of fundraisings and investments in hedge funds, private equity firms, startups, and growing companies 
+
+
+
+
+
+
+
+
+
+
+
+ FormDs.com 
+
+
+
+
+
+ Newest
+ Filter
+ Local
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Alpha TPL Properties, LLC
+
+      Industry: Residential
+      (See others in industry)
+
+Address:
+
+
+
+    322 North Shore Drive Building 1 B, Suite 200 
+    Pittsburgh, PA, 15212Phone: 4054768138 
+
+
+
+
+Filings
+
+
+
+Date
+FilingType
+Reported Sold
+Incremental Cash 
+Type
+Exemptions
+Link to Raw Filing
+
+
+
+
+	2016-12-29
+
+
+New
+
+
+$975,000
+
+
+$975,000
+
+
+Equity Only
+
+
+06c
+
+
+SEC link
+
+
+
+
+
+
+Directors and Executives (Current and Past)
+
+
+
+Name
+Role
+
+
+
+ Akinjide Famuagun 
+ Director 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1.6] Custom $product properties in product-list.tpl - Core developers - PrestaShop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Jump to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Forum
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+→
+International community (English)
+ 
+
+
+→
+PrestaShop Developers
+ 
+
+
+→
+Core developers
+ 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+Search section:
+
+
+This topic
+
+
+Forums
+Members
+Help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Javascript Disabled Detected
+You currently have javascript disabled. Several functions may not work. Please re-enable javascript to access full functionality.
+
+
+
+
+
+
+
+
+
+
+
+[1.6] Custom $product properties in product-list.tpl
+
+				 Started by Threef, May 05 2014 01:40 PM, 8 replies to this topic
+			
+Product php template smarty product-list.tpl properties category
+
+
+
+
+
+
+
+
+
+
+Please log in to reply
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					#1
+					
+
+
+
+Threef
+
+						Posted 05 May 2014 - 01:40 PM
+
+
+
+Threef
+
+PrestaShop Newbie
+
+
+
+
+
+
+				Members
+			
+
+
+
+
+				4 Active Posts
+			
+
+
+
+
+
+
+
+Hi everyone,
+I am currently using PrestaShop 1.6.0.5 at work, and because I'm newbie at PrestaShop it's not going too easy.
+I'm trying to show additional info about product in product-list.tpl file using Smarty, but I'm doing something wrong.
+Let's say, I want default category name under product name. So I added :
+
+<span class='custom_cat'>{$product.category_name|truncate:45:'...'|escape:'html':'UTF-8'}</span>
+under product name in product-list.tpl but of course category_name don't exists, so I tried to create this variable, and that's where I encountered problems. I'm not sure where I should do this.
+I tried in Product.php in __construct() function adding
+
+$this->category_name = 'test';
+
+but it didn't worked. Note: value doesn't matter. I just need to display it.
+I even defined category_name as public variable, and added it to $definition['fields'] but nothing helps.
+ 
+Next I tried ProductController.php in initContent() function:
+
+$this->context->smarty->assign(array(
+(...)
+'category_name' => 'test',
+(...)
+));
+
+It's 4 days and I'm stuck here. I tried much more things, and most of them too dumb to show. Where should I add my variables?
+I'm always working on override files.
+
+
+Edited by Threef, 05 May 2014 - 02:40 PM.
+
+
+
+
+
+rbalva01 likes this
+						
+
+
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					#2
+					
+
+
+
+vekia
+
+						Posted 05 May 2014 - 03:41 PM
+
+
+
+vekia
+
+PrestaShop Legend
+
+
+
+
+
+
+Ambassadors
+
+
+
+
+
+				53096 Active Posts
+			
+
+
+
+
+
+
+
+if you're creating variables in that way - you can use it as a variable "category_name"
+
+$this->context->smarty->assign(array(
+(...)
+'category_name' => 'test',
+(...)
+));
+
+{$category_name}
+ 
+$product variable is an array, and it's defined in different way, its a result of function which retrieve products from database
+
+
+
+
+
+
+
+
+
+
+free tutorials, free templates, free addons, responsive prestashop modules 
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					#3
+					
+
+
+
+Threef
+
+						Posted 06 May 2014 - 08:19 AM
+
+
+
+Threef
+
+PrestaShop Newbie
+
+
+
+
+
+
+				Members
+			
+
+
+
+
+				4 Active Posts
+			
+
+
+
+
+
+
+
+Thanks for answer, but this does not work.
+
+$product variable is an array, and it's defined in different way, its a result of function which retrieve products from database
+
+That's what I'm looking for. But is it an array or Smarty references directly to Product obiect? Do I always need to use $this->context->smarty->assign() to create Smarty vars?
+ 
+On product-list.tpl I can see:
+
+{foreach from=$products item=product name=products}
+
+And it iterates through the $products array, but that array comes from parent file. I'm searching whole PS for that array. Looking at SceneCore class right now.
+ 
+ 
+To ask more precisely: Where I can change and add values to $products array?
+
+
+
+
+
+
+
+
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					#4
+					
+
+
+
+vekia
+
+						Posted 06 May 2014 - 08:28 AM
+
+
+
+vekia
+
+PrestaShop Legend
+
+
+
+
+
+
+Ambassadors
+
+
+
+
+
+				53096 Active Posts
+			
+
+
+
+
+
+
+
+
+
+Thanks for answer, but this does not work.
+
+
+ 
+variable that you created (category_name) is a part of smarty array, and it's a individual variable. Not a part of products variable.
+This code (smarty assing command) will work only in hook where you want to display contents, so it just mean that you have to use it in function which displays contents.
+ 
+regarding to your question about products variable. In this case everything depends on what part of shop you're viewing.
+for example, product-list.tpl is used by several controllers, like category controller (to display products associated with categories), in best sales controller, new products controller, manufacturer controller, tags controller .... as you can see, a lot of things 
+ 
+to change (add,remove etc) fields from $product array you have to modify these controllers. Each controller in a bit different way.
+in this case, you need to specify about what part of shop you're talking
+
+
+
+
+
+Threef and rbalva01 like this
+						
+
+
+
+
+free tutorials, free templates, free addons, responsive prestashop modules 
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					#5
+					
+
+
+
+Threef
+
+						Posted 06 May 2014 - 08:37 AM
+
+
+
+Threef
+
+PrestaShop Newbie
+
+
+
+
+
+
+				Members
+			
+
+
+
+
+				4 Active Posts
+			
+
+
+
+
+
+
+
+Ok, that helps a lot.
+So all assigning to Smarty needs to go into individual controller of each element. I just made it into CategoryController and it works. 
+ 
+Thanks, and have a nice day.  
+
+
+
+
+
+
+
+
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					#6
+					
+
+
+
+vekia
+
+						Posted 06 May 2014 - 08:38 AM
+
+
+
+vekia
+
+PrestaShop Legend
+
+
+
+
+
+
+Ambassadors
+
+
+
+
+
+				53096 Active Posts
+			
+
+
+
+
+
+
+
+that's correct
+but you probably want to add additional variable to $product array, right? 
+or i missed something ?
+
+
+
+
+
+
+
+
+
+
+free tutorials, free templates, free addons, responsive prestashop modules 
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					#7
+					
+
+
+
+Threef
+
+						Posted 06 May 2014 - 12:21 PM
+
+
+
+Threef
+
+PrestaShop Newbie
+
+
+
+
+
+
+				Members
+			
+
+
+
+
+				4 Active Posts
+			
+
+
+
+
+
+
+
+Now everything works great. I'm adding my properties in getProductProperties() function in Product class. Then I can use them in my .tpl files (almost) wherever I'm working on products.
+
+
+
+
+
+
+
+
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					#8
+					
+
+
+
+vekia
+
+						Posted 06 May 2014 - 02:19 PM
+
+
+
+vekia
+
+PrestaShop Legend
+
+
+
+
+
+
+Ambassadors
+
+
+
+
+
+				53096 Active Posts
+			
+
+
+
+
+
+
+
+that's correct 
+so, my knowledge is useless at the moment, you can change almost everything now 
+
+
+
+
+
+
+
+
+
+
+free tutorials, free templates, free addons, responsive prestashop modules 
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+
+
+
+
+					
+					#9
+					
+
+
+
+calzadilla
+
+						Posted 30 May 2016 - 09:27 PM
+
+
+
+calzadilla
+
+PrestaShop Apprentice
+
+
+
+
+
+
+				Members
+			
+
+
+
+
+				39 Active Posts
+			
+
+
+
+
+
+
+
+Hola Vekia, siento escribirte por aquí... en este hilo quiero decir... ya que es en inglés.. si no lo ves correcto dímelo por favor. El tema es que quiero usar el id de la categoría en el product-list.tpl para poder difenciar por categorías.. valga la redundancia, y así mostrar un texto debajo del precio en los productos asignados a esa categoría... lo que pasa es que no se si tengo que pasarle la variable $category al tpl o en la variable $product está contenida alguna como $product.category que pueda usar. 
+ 
+Mil gracias de antemano. 
+ 
+Y lo dicho. Si no lo ves correcto dímelo y abro hilo o lo que sea.
+
+
+
+
+
+
+
+
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+
+
+Back to Core developers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Also tagged with one or more of these keywords: Product, php, template, smarty, product-list.tpl, properties, category
+
+
+
+
+
+
+ Answered
+Community Help and Support → 
+			
+
+				PrestaShop Download → 
+			
+
+				Configuring and using PrestaShop → 
+			
+		
+		
+		
+
+Category & Subcategory page redirecting to 404 after installing a module
+
+
+
+
+			Started by Jagotic, 23 Jul 2017
+			
+				   category, subcategory, page and 6 more...
+
+
+
+ 
+
+
+
+
+2 replies
+					
+
+59 views
+
+
+
+
+
+
+
+Jagotic
+
+
+					
+						24 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+International community (English) → 
+			
+
+				PrestaShop Developers → 
+			
+
+				Addons, modules and themes developers → 
+			
+		
+		
+		
+
+'Button' of choice of payment method in PrestaShop 1.6
+
+
+
+
+			Started by Kamil Szmit, 19 Jul 2017
+			
+				   1.6, module, payment module and 7 more...
+
+
+
+ 
+
+
+
+
+1 reply
+					
+
+66 views
+
+
+
+
+
+
+
+bestcoding.net
+
+
+					
+						20 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+Polskie forum → 
+			
+
+				Deweloperzy PrestaShop → 
+			
+		
+		
+		
+
+„Przycisk” wyboru metody płatności
+
+
+
+
+			Started by Kamil Szmit, 19 Jul 2017
+			
+				   1.6, moduł, moduł płatności and 7 more...
+
+
+
+ 
+
+
+
+
+1 reply
+					
+
+52 views
+
+
+
+
+
+
+
+bestcoding.net
+
+
+					
+						19 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+Community Help and Support → 
+			
+
+				PrestaShop Download → 
+			
+
+				Configuring and using PrestaShop → 
+			
+		
+		
+		
+
+Backoffice: sort products by date updated / date added
+
+
+
+
+			Started by Byte Webdesign, 16 Jul 2017
+			
+				   backoffice, product list, columns and 4 more...
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+50 views
+
+
+
+
+
+
+
+Byte Webdesign
+
+
+					
+						16 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+ Answered
+Community Help and Support → 
+			
+
+				PrestaShop Download → 
+			
+
+				Configuring and using PrestaShop → 
+			
+		
+		
+		
+
+BO - change default product quantity
+
+
+
+
+			Started by Byte Webdesign, 14 Jul 2017
+			
+				   back office, products, quantity and 3 more...
+
+
+
+ 
+
+
+
+
+7 replies
+					
+
+102 views
+
+
+
+
+
+
+
+musicmaster
+
+
+					
+						17 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+0 user(s) are reading this topic
+0 members, 0 guests, 0 anonymous users
+
+
+
+
+
+
+
+Reply to quoted posts     Clear    
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+ 
+
+
+
+Cookies help us deliver our services. By using our services, you agree to use our cookies.    
+				Learn more
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PrestaShop Developers - PrestaShop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Jump to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Forum
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+→
+International community (English)
+ 
+
+
+→
+PrestaShop Developers
+ 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+Search section:
+Forums
+Members
+Help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Javascript Disabled Detected
+You currently have javascript disabled. Several functions may not work. Please re-enable javascript to access full functionality.
+
+
+
+
+
+
+
+
+
+
+
+
+PrestaShop Developers
+
+				
+					Technical discussions about PrestaShop development, module and themes. Warning: experienced users ahead talking about serious stuff!
+				
+			
+
+
+
+
+
+
+
+
+Subforums
+
+
+
+
+
+
+
+
+
+Core developers
+
+Questions, informations and tutorial on Prestashop Core code and included modules.
+
+
+
+16933 topics
+50047 replies
+
+
+
+
+
+
+
+External PHP scripts with A...
+By jokerstar
+Yesterday, 07:21 PM
+
+
+
+
+
+
+
+
+
+Addons, modules and themes developers
+
+Adapting a module or a theme, creating one from scratch? This is a good place to talk to other developers.
+
+
+
+12813 topics
+43505 replies
+
+
+
+
+
+
+
+[TUTORIAL] Grid / list / mi...
+By امیر
+Yesterday, 09:57 PM
+
+
+
+
+
+
+
+
+
+Bug reports
+
+Discuss the possibility of a bug before posting it on http://forge.prestashop.com/ .
+
+
+
+937 topics
+1591 replies
+
+
+
+
+
+
+
+First provider change - now...
+By MZ-IT
+Yesterday, 06:31 PM
+
+
+
+
+
+
+
+
+
+Delete Topic
+
+
+Remove From View
+This option hides the post, but leaves it in the topic.
+Reason:  
+
+
+Delete From Forum
+This option completely removes the post from the topic.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+ 
+
+
+
+Cookies help us deliver our services. By using our services, you agree to use our cookies.    
+				Learn more
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Core developers - PrestaShop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Jump to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Forum
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+→
+International community (English)
+ 
+
+
+→
+PrestaShop Developers
+ 
+
+
+→
+Core developers
+ 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+Search section:
+
+
+This forum
+
+
+Forums
+Members
+Help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Javascript Disabled Detected
+You currently have javascript disabled. Several functions may not work. Please re-enable javascript to access full functionality.
+
+
+
+
+
+
+
+
+
+
+
+
+Core developers
+
+				
+					Questions, informations and tutorial on Prestashop Core code and included modules.
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page 1 of 339 
+
+
+1
+
+2
+
+
+3
+
+
+
+Next
+»
+
+
+
+Please log in to post a topic
+
+
+
+
+Recently Updated
+Start Date
+Most Replies
+Most Viewed
+Custom 
+
+
+Show topic type
+All Topics
+Open
+Hot
+Polls
+Locked
+Moved
+
+
+Sort by
+Last Post
+Last Poster
+Topic Title
+Topic Starter
+Topic Started
+Attachments
+Replies
+Views
+
+
+Sort direction
+Descending (Z-A)
+Ascending (A-Z)
+
+
+Time frame
+From Today
+Last 5 days
+Last 7 days
+Last 10 days
+Last 15 days
+Last 20 days
+Last 25 days
+Last 30 days
+Last 60 days
+Last 90 days
+Show All
+Since Last Visit
+
+
+ Remember filters
+
+
+
+
+
+
+Show un/answered 
+
+Show answered topics
+Show unanswered topics
+Show all topics
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Topic
+Started By
+Stats
+Last Post Info
+
+
+
+
+
+
+
+
+External PHP scripts with All pages SSL enabled
+
+
+
+
+			Started by xavibj, 03 Apr 2017
+
+
+
+ 
+
+
+
+
+5 replies
+					
+
+111 views
+
+
+
+
+
+
+
+jokerstar
+
+
+					
+						Yesterday, 07:21 PM
+					
+				
+
+
+
+
+
+
+
+
+
+
+ERR_TOO_MANY_REDIRECTS when active two languages in my store
+
+
+
+
+			Started by Alternativo, 23 Jul 2017
+
+
+
+ 
+
+
+
+
+2 replies
+					
+
+31 views
+
+
+
+
+
+
+
+Alternativo
+
+
+					
+						Yesterday, 07:16 PM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Associated categories in a product tab
+
+
+
+
+			Started by Anissneo, Yesterday, 03:04 PM
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+19 views
+
+
+
+
+
+
+
+Anissneo
+
+
+					
+						Yesterday, 03:04 PM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Import order script
+
+
+
+
+			Started by rahulmittal, Yesterday, 02:27 PM
+			
+				   order import, import order and 2 more...
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+20 views
+
+
+
+
+
+
+
+rahulmittal
+
+
+					
+						Yesterday, 02:27 PM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Smarty Debug Mode in PS 1.7.2
+
+
+
+
+			Started by BergThomas, Yesterday, 02:03 PM
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+14 views
+
+
+
+
+
+
+
+BergThomas
+
+
+					
+						Yesterday, 02:03 PM
+					
+				
+
+
+
+
+
+
+
+
+
+
+No link for virtual product in order history for guest
+
+
+
+
+			Started by Trampino, 07 Jul 2016
+
+
+
+ 
+
+
+
+
+9 replies
+					
+
+256 views
+
+
+
+
+
+
+
+paperM
+
+
+					
+						Yesterday, 01:49 PM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Disable minification
+
+
+
+
+			Started by Karakko, Yesterday, 01:35 PM
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+16 views
+
+
+
+
+
+
+
+Karakko
+
+
+					
+						Yesterday, 01:35 PM
+					
+				
+
+
+
+
+
+
+
+
+
+
+General questions on default theme & modulus
+
+
+
+
+			Started by northland, Yesterday, 01:29 PM
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+23 views
+
+
+
+
+
+
+
+northland
+
+
+					
+						Yesterday, 01:29 PM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Blog posts Meta Tags are empty
+
+
+
+
+			Started by Machine, Yesterday, 10:09 AM
+			
+				   blog, seo, meta, tags, 1.7
+
+
+
+ 
+
+
+
+
+1 reply
+					
+
+52 views
+
+
+
+
+
+
+
+Machine
+
+
+					
+						Yesterday, 11:29 AM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Problem with multilanguage/multistore SEO
+
+
+
+
+			Started by Frostyc, Yesterday, 11:22 AM
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+20 views
+
+
+
+
+
+
+
+Frostyc
+
+
+					
+						Yesterday, 11:22 AM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Google Analytics causing impossible to add to cart
+
+
+
+
+			Started by andrew.irpin, 10 May 2017
+
+
+
+ 
+
+
+
+
+1 reply
+					
+
+123 views
+
+
+
+
+
+
+
+Derres
+
+
+					
+						Yesterday, 05:32 AM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Google Analytics causing impossible to add to cart
+
+
+
+
+			Started by f8dev, 14 Sep 2015
+
+
+
+ 
+
+
+
+
+11 replies
+					
+
+1330 views
+
+
+
+
+
+
+
+Derres
+
+
+					
+						Yesterday, 05:16 AM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Big Bug Google Analityics unable to add to chart
+
+
+
+
+			Started by Derres, Yesterday, 04:30 AM
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+28 views
+
+
+
+
+
+
+
+Derres
+
+
+					
+						Yesterday, 04:30 AM
+					
+				
+
+
+
+
+
+
+
+
+
+
+How to create a modal, popup box, lightbox for pre registering
+
+
+
+
+			Started by edub9, 26 Jun 2013
+			
+				   modal, form, popup
+
+
+
+ 
+
+
+
+
+6 replies
+					
+
+4471 views
+
+
+
+
+
+
+
+The Collector
+
+
+					
+						Yesterday, 01:11 AM
+					
+				
+
+
+
+
+
+
+
+
+
+
+link two categories
+
+
+
+
+			Started by diecov, Yesterday, 12:23 AM
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+13 views
+
+
+
+
+
+
+
+diecov
+
+
+					
+						Yesterday, 12:23 AM
+					
+				
+
+
+
+
+
+
+
+
+
+
+Add A New Column With "status" Data In The Order Details
+
+
+
+
+			Started by Pierre-Antoine, 06 Jan 2016
+
+
+
+ 
+
+
+
+
+Hot
+15 replies
+					
+
+436 views
+
+
+
+
+
+
+
+Scully
+
+
+					
+						Yesterday, 12:05 AM
+					
+				
+
+
+
+
+
+
+
+
+
+
+How to add Datepicker to Order Confirmation Form
+
+
+
+
+			Started by OlsaPetr, 20 Jul 2017
+			
+				   datepicker, jquery, order
+
+
+
+ 
+
+
+
+
+3 replies
+					
+
+60 views
+
+
+
+
+
+
+
+Scully
+
+
+					
+						24 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+PS1.7 : Add admin link to installed modules
+
+
+
+
+			Started by Lorem Ipsum, 24 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+30 views
+
+
+
+
+
+
+
+Lorem Ipsum
+
+
+					
+						24 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Group Reduction restricted by DEFAULT GROUP in product
+
+
+
+
+			Started by mitzayapa, 24 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+47 views
+
+
+
+
+
+
+
+mitzayapa
+
+
+					
+						24 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+How to split jqueryautocomplete separate for front and for backend?
+
+
+
+
+			Started by PrestaShark, 24 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+30 views
+
+
+
+
+
+
+
+PrestaShark
+
+
+					
+						24 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Product Route Url Changes 404 Error : Seo
+
+
+
+
+			Started by laurent0071, 24 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+38 views
+
+
+
+
+
+
+
+laurent0071
+
+
+					
+						24 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Change Size Ean-13 And Upc With Special Caractères
+
+
+
+
+			Started by kiamaru, 03 Mar 2013
+
+
+
+ 
+
+
+
+
+3 replies
+					
+
+2026 views
+
+
+
+
+
+
+
+Wouter van der Horst
+
+
+					
+						23 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Big problem
+
+
+
+
+			Started by louis323, 23 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+70 views
+
+
+
+
+
+
+
+louis323
+
+
+					
+						23 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Change cart order summary steps UI from 1.7 to 1.6 or similalr tabbed view
+
+
+
+
+			Started by mkbb, 23 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+33 views
+
+
+
+
+
+
+
+mkbb
+
+
+					
+						23 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Very slow product load with atributes
+
+
+
+
+			Started by mariusvrv, 22 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+42 views
+
+
+
+
+
+
+
+mariusvrv
+
+
+					
+						22 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+ Answered
+
+
+How to make prestashop to not update product quantities after order validation
+
+
+
+
+			Started by a064855, 02 Jun 2015
+
+
+
+ 
+
+
+
+
+4 replies
+					
+
+1075 views
+
+
+
+
+
+
+
+octagonal elf
+
+
+					
+						22 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Password migration from 1.4 to 1.6
+
+
+
+
+			Started by mirroring, 03 Jul 2017
+
+
+
+ 
+
+
+
+
+Hot
+14 replies
+					
+
+188 views
+
+
+
+
+
+
+
+bellini13
+
+
+					
+						21 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Prestashop 1.7: edit the "add new product" view in admin
+
+
+
+
+			Started by aptivus, 04 Jul 2017
+
+
+
+ 
+
+
+
+
+1 reply
+					
+
+79 views
+
+
+
+
+
+
+
+jameseleyland
+
+
+					
+						21 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Clicking on 'More' adds product to cart?!?!
+
+
+
+
+			Started by genesiseffect, 18 Jul 2017
+
+
+
+ 
+
+
+
+
+3 replies
+					
+
+64 views
+
+
+
+
+
+
+
+genesiseffect
+
+
+					
+						21 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Combination price sort problem
+
+
+
+
+			Started by SVKpneux, 21 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+42 views
+
+
+
+
+
+
+
+SVKpneux
+
+
+					
+						21 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+SUGGESTION: Price ranges for product combinations
+
+
+
+
+			Started by icehome, 21 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+37 views
+
+
+
+
+
+
+
+icehome
+
+
+					
+						21 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Prestashop 1.7 Smarty global variables
+
+
+
+
+			Started by catalin.pop, 24 Nov 2016
+
+
+
+ 
+
+
+
+
+4 replies
+					
+
+701 views
+
+
+
+
+
+
+
+Pat_07
+
+
+					
+						21 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Prestashop 1.6.1.15 webservice for multistore
+
+
+
+
+			Started by nicoo77, 20 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+30 views
+
+
+
+
+
+
+
+nicoo77
+
+
+					
+						20 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+[SOLVED] Overrides not working anymore in 1.5.4?
+
+
+
+
+			Started by NemoPS, 08 Apr 2013
+			
+				   override, classes, controllers
+
+
+1
+2
+
+
+
+ 
+
+
+
+
+Hot
+32 replies
+					
+
+23257 views
+
+
+
+
+
+
+
+NemoPS
+
+
+					
+						20 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+How to combine two override?
+
+
+
+
+			Started by Wampas, 18 Jul 2017
+
+
+
+ 
+
+
+
+
+4 replies
+					
+
+106 views
+
+
+
+
+
+
+
+Scully
+
+
+					
+						20 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Add custom filterable column in Products Catalog Page (Prestashop 1.7)
+
+
+
+
+			Started by madballer, 06 Mar 2017
+
+
+
+ 
+
+
+
+
+3 replies
+					
+
+208 views
+
+
+
+
+
+
+
+matei.s
+
+
+					
+						20 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+After migration prestashop 1.6 not work css
+
+
+
+
+			Started by info@teridea.cz, 27 Jun 2017
+			
+				   css, link, migration, head
+
+
+
+ 
+
+
+
+
+1 reply
+					
+
+123 views
+
+
+
+
+
+
+
+vekia
+
+
+					
+						20 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Login to Back-Office with API or PHP
+
+
+
+
+			Started by JGonzalezI, 19 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+47 views
+
+
+
+
+
+
+
+JGonzalezI
+
+
+					
+						19 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Two column layout for home page
+
+
+
+
+			Started by sandeepan, 19 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+41 views
+
+
+
+
+
+
+
+sandeepan
+
+
+					
+						19 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Page layout settings gone after cache clear?
+
+
+
+
+			Started by Duboe, 19 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+36 views
+
+
+
+
+
+
+
+Duboe
+
+
+					
+						19 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+This doesn't seem to be a class name logger in PS 1.7
+
+
+
+
+			Started by shacker, 13 Feb 2017
+
+
+
+ 
+
+
+
+
+Hot
+15 replies
+					
+
+639 views
+
+
+
+
+
+
+
+jlquichimbo
+
+
+					
+						19 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+How to add an entry to back office menu ?
+
+
+
+
+			Started by Domi91, 18 Jun 2017
+
+
+
+ 
+
+
+
+
+1 reply
+					
+
+74 views
+
+
+
+
+
+
+
+bdesprez
+
+
+					
+						19 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Adding a custom field during the Checkout process
+
+
+
+
+			Started by Liyali, 21 Apr 2013
+			
+				   order, checkout, fields, custom
+
+
+
+ 
+
+
+
+
+Hot
+14 replies
+					
+
+16112 views
+
+
+
+
+
+
+
+Walidou123
+
+
+					
+						19 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Problem with PUT method
+
+
+
+
+			Started by VaricoKon, 19 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+49 views
+
+
+
+
+
+
+
+VaricoKon
+
+
+					
+						19 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Mail Alert not showing in out of stock (available to buy) products
+
+
+
+
+			Started by jvicente1971, 18 Jul 2017
+
+
+
+ 
+
+
+
+
+0 replies
+					
+
+28 views
+
+
+
+
+
+
+
+jvicente1971
+
+
+					
+						18 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Add extra fields on product page [PS 1.6]
+
+
+
+
+			Started by tom3k_21, 16 Sep 2014
+			
+				   field, php, product page
+
+
+
+ 
+
+
+
+
+5 replies
+					
+
+4193 views
+
+
+
+
+
+
+
+Astar86
+
+
+					
+						18 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+need help how to add custom price to cart and order
+
+
+
+
+			Started by jahyax, 14 Nov 2013
+			
+				   prices, custom price
+
+
+
+ 
+
+
+
+
+1 reply
+					
+
+1027 views
+
+
+
+
+
+
+
+softhightech
+
+
+					
+						18 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+ Answered
+
+
+[1.7] how to format products like $listings
+
+
+
+
+			Started by iomedia, 14 Jun 2017
+
+
+
+ 
+
+
+
+
+1 reply
+					
+
+56 views
+
+
+
+
+
+
+
+iomedia
+
+
+					
+						18 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+Disable "in_transit" email on 1.7
+
+
+
+
+			Started by jaimeweb, 13 Jul 2017
+
+
+
+ 
+
+
+
+
+3 replies
+					
+
+100 views
+
+
+
+
+
+
+
+jaimeweb
+
+
+					
+						18 Jul 2017
+					
+				
+
+
+
+
+
+
+
+
+
+
+[SOLVED] Add backoffice columns products list
+
+
+
+
+			Started by m3w, 17 Sep 2013
+			
+				   columns, product list, backoffice and 1 more...
+
+
+1
+2
+3
+6 →
+
+
+
+ 
+
+
+
+
+Hot
+118 replies
+					
+
+38472 views
+
+
+
+
+
+
+
+François38
+
+
+					
+						18 Jul 2017
+					
+				
+
+
+
+
+
+
+Load more topics
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page 1 of 339 
+
+
+1
+
+2
+
+
+3
+
+
+
+Next
+»
+
+
+
+Please log in to post a topic
+
+
+
+
+
+
+  This forum led by
+						
+							Community Moderators
+
+
+0 user(s) are browsing this forum
+0 members, 0 guests, 0 anonymous users
+
+
+
+
+
+
+
+
+Delete Topic
+
+
+Remove From View
+This option hides the post, but leaves it in the topic.
+Reason:  
+
+
+Delete From Forum
+This option completely removes the post from the topic.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+ 
+
+
+
+Cookies help us deliver our services. By using our services, you agree to use our cookies.    
+				Learn more
+OK
+
+
+
+
+
+
+
+
+
+ALPHA STREET PROPERTIES, LLC Credit report, products, contacts
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Florida
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+    ALPHA STREET PROPERTIES, LLC
+
+
+
+
+
+
+
+
+
+
+
+Company number L04000039499
+        
+
+Status Inactive
+        
+
+FEI number APPLIED FOR
+        
+
+Company Type Florida Limited Liability
+        
+
+Home State FL
+        
+
+Last activity date 9/15/2006
+        
+
+Date Of Incorporation 5/25/2004
+        
+
+Principal Address
+            601 MASTERS WAY, PALM BEACH GARDENS, FL, 33418
+            
+
+
+Mailing Address 601 MASTERS WAY, PALM BEACH GARDENS, FL, 33418
+        
+ALPHA STREET PROPERTIES, LLC Principals
+
+M, G, R, M
+                Braider Frank Joseph J
+                 
+
+
+Address
+                601 MASTERS WAY, PALM BEACH GARDENS, FL, 33418
+                 
+
+
+
+
+
+
+
+Last Annual Reports
+
+2005 10/4/2005
+            
+
+2005 10/4/2005
+            
+Registered Agent
+
+Agent Name BRAIDER             FRANK JOSEPH  J (p)
+        
+
+Agent Address
+                601 MASTERS WAY, PALM BEACH GARDENS, FL, 33418
+                
+
+ALPHA STREET PROPERTIES, LLC Events
+
+1 ADMIN DISSOLUTION   FOR ANNUAL REPORT
+            
+
+filedDate 9/16/2005
+            
+
+
+2 CANCEL ADM DISS/REV
+            
+
+filedDate 10/4/2005
+            
+
+
+3 ADMIN DISSOLUTION   FOR ANNUAL REPORT
+            
+
+filedDate 9/15/2006
+            
+
+Description
+ALPHA STREET PROPERTIES, LLC has been set up 5/25/2004 in state FL.  
+The current status of the business is Inactive. The ALPHA STREET PROPERTIES, LLC principal adress is 601 MASTERS WAY, PALM BEACH GARDENS, FL, 33418. 
+Meanwhile you can send your letters to 601 MASTERS WAY, PALM BEACH GARDENS, FL, 33418. 
+The company`s registered agent is BRAIDER             FRANK JOSEPH  J 601 MASTERS WAY, PALM BEACH GARDENS, FL, 33418.  
+The company`s management are M, G, R, M - Braider Frank Joseph J. The last significant event in the company history is ADMIN DISSOLUTION   FOR ANNUAL REPORT which is dated by 9/15/2006. This decision is take in action on unknown.  The company annual reports filed on Annual reports – 10/4/2005.
+
+
+
+
+
+
+Comprehensive Report about this company
+        
+
+
+
+
+
+(view sample)
+
+
+
+
+
+
+
+
+Similar Companies
+ALPHA STREET RESEARCH, LLC
+ALPHASTRIPES, LLC
+ALPHA STRUL, LLC
+ALPHA STUCCO SERVICES INC.
+ALPHA STUDIOS, LLC
+ALPHA STYLING SALON
+
+
+
+
+
+
+
+
+
+
+
+
+
+ALPHA MOTORS PROPERTIES, LLC Credit report, products, contacts
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Florida
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+    ALPHA MOTORS PROPERTIES, LLC
+
+
+
+
+
+
+
+
+
+
+
+Company number L16000163108
+        
+
+Status Active
+        
+
+FEI number
+
+
+Company Type Florida Limited Liability
+        
+
+Home State FL
+        
+
+Last activity date not available
+        
+
+Date Of Incorporation 8/29/2016
+        
+
+Principal Address
+            13250 NW 7TH AVE, NORTH MIAMI, 33168
+            
+
+
+Mailing Address 13250 NW 7TH AVE, NORTH MIAMI, FL, 33168
+        
+ALPHA MOTORS PROPERTIES, LLC Principals
+
+President
+                Pena Guillermo
+                 
+
+
+Address
+                13250 NW 7TH AVE, NORTH MIAMI, FL, 33168
+                 
+
+
+
+
+
+
+
+Registered Agent
+
+Agent Name ARELLANOS TAX SERVICE INC (c)
+        
+
+Agent Address
+                8972 TAFT ST, PEMBROKE PINES, FL, 33024
+                
+
+ALPHA MOTORS PROPERTIES, LLC Events
+
+1 LC STMNT CORR
+            
+
+filedDate 9/14/2016
+            
+
+Description
+ALPHA MOTORS PROPERTIES, LLC has been set up 8/29/2016 in state FL.  
+The current status of the business is Active. The ALPHA MOTORS PROPERTIES, LLC principal adress is 13250 NW 7TH AVE, NORTH MIAMI, 33168. 
+Meanwhile you can send your letters to 13250 NW 7TH AVE, NORTH MIAMI, FL, 33168. 
+The company`s registered agent is ARELLANOS TAX SERVICE INC 8972 TAFT ST, PEMBROKE PINES, FL, 33024.  
+The company`s management are President - Pena Guillermo. The last significant event in the company history is LC STMNT CORR which is dated by 9/14/2016. This decision is take in action on unknown. 
+
+
+
+
+
+
+Comprehensive Report about this company
+        
+
+
+
+
+
+(view sample)
+
+
+
+
+
+
+
+
+Similar Companies
+ALPHA MOTORS VEHICLES CORP.
+ALPHA MOUIL REPAIRS CORP.
+ALPHA MOVERS, LLC
+ALPHA MOVING AND STORAGE
+ALPHA MOVING AND STORAGE, LLC
+ALPHA MOVING N STORAGE OF FLORIDA
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English
+
+中文
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home/ Products
+
+
+
+
+
+
+Alpha Premier Line Rubber Testing Products
+
+
+
+As the world leader in design and manufacturing of instruments and software, Alpha delivers advanced precision rubber and polymer analysis for production optimization and product compliance solutions.
+
+
+
+
+
+RPA 2000
+The RPA 2000 Rubber Process Analyzer is a Dynamic Mechanical Rheological Tester, or DMRT, designed to test raw elastomers or mixed rubber. The first instrument capable of measuring rubber compounds before, during and after cure in a single test.
+Read More...
+
+Premier™ MDR
+The PREMIER  MDR introduces new technology delivering data with the highest consistency and long term stability of all moving die rheometers. Built for optimum performance in both laboratory and production environments, the PREMIER MDR’s stream-lined design includes an LED back-lit logo for test status indication, a wrap-around front cover and shield for ease of use and access, a touch-screen user interface, and a built-in storage drawer.
+Read More...
+
+Premier™ HC
+The Premier™ HC supports high volume production demands with advanced sample handling, increased testing capacity, and shortened test cycle time.
+
+Read More...
+
+Premier™ MV
+With an all-new compact design, the PREMIER™ MV , Mooney Viscometer, features multi-zone stress relaxation data analysis as well as up to a 45% reduction in die cooling time in comparison to previous models. These updates, along with the new user interface, keep the Premier™ MV at the forefront of viscometers on the market today.
+Read More...
+
+
+disperGRADER Alpha View
+A reflected light microscope designed for dispersion testing of carbon black in mixed rubber compounds. The system uses the shadows cast by agglomerates present in a freshly cut sample surface.
+Read More...
+
+
+Enterprise
+ Alpha Technologies’ Enterprise Quality Management Software package is a highly customizable LIMS solution providing precise analytics to help increase production, ensure consistency, and enable better decision making. 
+Read More...
+
+
+AT10
+The Alpha Technologies AT10 is an easy to use universal tensile tester for rubber, plastics, and additional materials. A table top model with a maximum load value of 10kN, the AT10 performs tension, compression, peel, tear, adhesion, O-ring and other tests for QC and R&D applications. New software allows for simple recalculation of results, and data can be stored on the instrument computer’s hard drive, or interface with your LIMS network.
+Read More...
+
+
+
+
+Pioneer™ MDR
+The PIONEER™ MDR is a moving die rheometer designed for simplicity and value providing cure testing for general rubber applications. Its smaller footprint means more effective use of bench space, while its LCD touch screen and user interface provide convenient stand-alone operation with data output to a PCL3-compatible USB printer or flash drive.
+
+Read More...
+
+ 
+D2020 Density
+The D2020 Density Tester offers fully automated density testing.
+
+Read More...
+
+D2020 Hardness
+The D2020 Hardness Tester offers fully automated hardness testing.
+Read More...
+FTFT
+Determines the fatigue life of elastomeric compounds in tension. Special specimens are stretched and released via a continuously rotating cam. Device records number of cycles applied to each specimen before sample is destroyed by fatigue.
+Read More...
+Cut and Chip Tester
+The Cut and Chip Tester is designed to measure the relative service life of off-the-road, farm and heavy duty treads that are subjected to the rigors of traveling on rocky surfaces. Also measures the chipping and tearing of the tread when subjected to off-the-road surfaces by reduction in sample weight due to chips.
+Read More...
+Arc 2020
+The ARC2020 is a capillary rheometer designed to test and collect information about viscosity and die swell of mixed rubber and thermoplastic elastomers at high shear rates. This information can be used to predict rubber behavior in processes with high shear rates such as injection molding. 
+Read More...
+Pioneer™ Density
+Automatic Density Measuring Instrument designed for rapid and accurate measurements of density. An American made product available worldwide with good performance at a reasonable cost.
+Read More...
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+Alpha Technologies
+3030 Gilchrist Rd.
+Akron, Ohio 44305, USA
+Tel No. +1 330 745 1641
+Fax No. +1 330 848 7326
+alphasales@alpha-technologies.com
+
+
+
+
+Menu
+
+
+
+Home
+
+
+About
+
+
+Support & Contact
+
+
+Resources
+
+
+Products
+
+
+Solutions
+
+
+Search Results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Alpha Technologies | A Roper Technologies Company  Privacy | Sitemap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Detail - Alpha Systems, LLC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOME
+OUR STORY
+MARKETS SERVED
+
+Residential Housing
+RVs / Utility Trailer
+Commercial / Industrial Roofing
+Marine
+Mobile / Modular
+
+
+TECHNICAL DATA
+
+Material Safety Data Sheets
+Technical Data Sheet
+
+
+PRODUCT CARE
+CONTACT US
+
+
+
+
+
+RV And Utility Trailer
+
+8010 - Modified Acrylic
+
+Product ID
+8010
+Description
+8010 is a high solids adhesive with a short drying time. It is used in the Recreational Vehicle and Commercial Roofing industries to adhere membranes to decking. It is ideal for applications where a quick dry time is dictated by production line speed or other variables. 8010 does not lose peel value over time, but remains flexible to allow for expansion and contraction of the membrane.
+Available Quantities
+
+1 Gallon Pail
+5 Gallon Pail
+55 Gallong Drum
+Colors
+
+Natural
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Web Site Design and Development
+                by Pinnacle
+
+
+
+
+
+
+
+
+Topsail Energy Marketing Group LLC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Registration Abstracts from throughout the Nation
+
+HOME
+BUSINESS NEWS
+CONTACT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Texas registration abstracts and local market statistics for Dallas. 
+Page 1 of 24888 pages listing 1,244,358 Texas businessesSelect a business to view the business registry abstract.TOPSAIL ENERGY MARKETING GROUP LLCtx.registryabstracts.com/topsail-energy-marketing-group-llcRegistered on 10/26/2016 by C T Corporation System in Dallas, TXHIT AND MISS INCtx.registryabstracts.com/hit-and-miss-incRegistered on 10/27/2016 by United States Corporation Agents Inc in Austin, TXGEORGE NIKOPOULOS M D PLLCtx.registryabstracts.com/george-nikopoulos-m-d-pllcRegistered on 10/26/2016 by George Nikopoulos M D in The Woodlands, TXALPHA TPL PROPERTIES LLCtx.registryabstracts.com/alpha-tpl-properties-llcRegistered on 10/26/2016 by National Corporate Research Ltd in Dallas, TXTOPSAIL ENERGY PROCESSING LLCtx.registryabstracts.com/topsail-energy-processing-llcRegistered on 10/26/2016 by C T Corporation System in Dallas, TX
+
+
+
+
+TEXAS HEALTH CARE 2 LLCtx.registryabstracts.com/texas-health-care-2-llcRegistered on 10/26/2016 by John Lawley in Fort Worth, TXDOUGLAS E BACON P Ctx.registryabstracts.com/douglas-e-bacon-p-cRegistered on 10/26/2016 by National Registered Agents Inc in Dallas, TXA P CLEANING COMPANY LLCtx.registryabstracts.com/a-p-cleaning-company-llcRegistered on 10/26/2016 by Shayla Day in Weatherford, TXPERRIN INSURANCE AGENCY LLCtx.registryabstracts.com/perrin-insurance-agency-llcRegistered on 10/27/2016 by Marianne Bonetati in Houston, TXFE PARTNERS I L Ptx.registryabstracts.com/fe-partners-i-l-pRegistered on 10/27/2016 by R Holt Lunsford in Addison, TXFE INVESTMENT SERIES LLCtx.registryabstracts.com/fe-investment-series-llcRegistered on 10/27/2016 by R Holt Lunsford in Addison, TXSURESIGN SOLUTIONS LLCtx.registryabstracts.com/suresign-solutions-llcRegistered on 10/27/2016 by Lacy Billeiter in Odessa, TXJAMDUNG ROCKING LLCtx.registryabstracts.com/jamdung-rocking-llcRegistered on 10/26/2016 by Brenton A Beecher in Houston, TXA E WISE SOLUTIONS LLCtx.registryabstracts.com/a-e-wise-solutions-llcRegistered on 10/26/2016 by Adel Yacoub in Pearland, TXRENERGY SOLAR LLCtx.registryabstracts.com/renergy-solar-llcRegistered on 10/26/2016 by Gary Gonzales in Boerne, TXFE INDUSTRIAL PARTNERS I GP LLCtx.registryabstracts.com/fe-industrial-partners-i-gp-llcRegistered on 10/27/2016 by R Holt Lunsford in Addison, TXTOPGOLF PAYROLL SERVICES LLCtx.registryabstracts.com/topgolf-payroll-services-llcRegistered on 10/26/2016 by C T Corporation System in Dallas, TXJ AUTENREITH COtx.registryabstracts.com/j-autenreith-coRegistered on 10/26/2016 by James Trippon Cpa in Houston, TXEMPLOYEEMAX CREDIT SOLUTIONS LLCtx.registryabstracts.com/employeemax-credit-solutions-llcRegistered on 10/26/2016 by National Registered Agents Inc in Dallas, TXJONATHAN ANDREW CONSTRUCTION LLCtx.registryabstracts.com/jonathan-andrew-construction-llcRegistered on 10/27/2016 by Jonathan Walsh in Richmond, TXK2 POWELL LLCtx.registryabstracts.com/k2-powell-llcRegistered on 10/27/2016 by Harry Powell in Euless, TXJENNIFER H RAAD DDS PLLCtx.registryabstracts.com/jennifer-h-raad-dds-pllcRegistered on 10/26/2016 by Jennifer H Raad Dds in Dallas, TXGHOSHAL LAW P L L Ctx.registryabstracts.com/ghoshal-law-p-l-l-cRegistered on 10/27/2016 by Snigdha Ghoshal in Austin, TXHIVES AND HONEY COMMERCIAL HOLDINGS LLCtx.registryabstracts.com/hives-and-honey-commercial-holdings-llcRegistered on 10/27/2016 by Kirk K Stares in Dallas, TX
+
+
+
+
+VIRGATA ONE LLCtx.registryabstracts.com/virgata-one-llcRegistered on 10/27/2016 by James E Peterson in Friendswood, TXWAXAHACHIE CRYSTAL LAKE LLCtx.registryabstracts.com/waxahachie-crystal-lake-llcRegistered on 10/28/2016 by Vici Lacy in Lakeway, TXALLISON JADE LLCtx.registryabstracts.com/allison-jade-llcRegistered on 10/27/2016 by Atap Infotek Consulting Inc in Spring, TXTRACY BELL LLCtx.registryabstracts.com/tracy-bell-llcRegistered on 10/27/2016 by Tracy Bell in Dallas, TXDAK CORROSION LLCtx.registryabstracts.com/dak-corrosion-llcRegistered on 10/27/2016 by Asif M Dakri in Houston, TXCHESKA CAPITAL LLCtx.registryabstracts.com/cheska-capital-llcRegistered on 10/27/2016 by Dakri Family 2012 Gst Trust For Asif M Dakri in Houston, TXGOOD FAITH IMPACT FUND INCtx.registryabstracts.com/good-faith-impact-fund-incRegistered on 10/29/2016 by Good Faith Energy Solutions Llc in Dallas, TXMAGOKORO INCtx.registryabstracts.com/magokoro-incRegistered on 10/27/2016 by Emiko Kawakami in Plano, TXPREMIER HOSPICE PALLIATIVE CARE LLCtx.registryabstracts.com/premier-hospice-palliative-care-llcRegistered on 10/27/2016 by Varfeeta Sirleaf in Houston, TXISLAND IN THE SKY PRODUCTIONS LLCtx.registryabstracts.com/island-in-the-sky-productions-llcRegistered on 10/27/2016 by John Martin Miller in Austin, TXGOLL S PHOENIX INCtx.registryabstracts.com/goll-s-phoenix-incRegistered on 10/26/2016 by Legalcorp Solutions Llc in Dallas, TXCHARLOUBEN LLCtx.registryabstracts.com/charlouben-llcRegistered on 10/29/2016 by Craig Baudier in Houston, TXUNIQUE WASHING SERVICES INCtx.registryabstracts.com/unique-washing-services-incRegistered on 10/27/2016 by Aroosha Ali in Sugar Land, TXTHINK AND PROSPER TWO LLCtx.registryabstracts.com/think-and-prosper-two-llcRegistered on 10/27/2016 by Truong Nguyen in Tomball, TXTEALWAY LLCtx.registryabstracts.com/tealway-llcRegistered on 10/26/2016 by Jeff Lanier in Houston, TXFOUNDATION FOR THE WOMEN S ENERGY NETWORKtx.registryabstracts.com/foundation-for-the-women-s-energy-networkRegistered on 10/26/2016 by National Corporate Research Ltd in Dallas, TXRITE MERCHANDISE LLCtx.registryabstracts.com/rite-merchandise-llcRegistered on 10/27/2016 by Rui Qu in Donna, TXPOWER DISCOVERY COACHING LLCtx.registryabstracts.com/power-discovery-coaching-llcRegistered on 10/27/2016 by Duyen Nguyen in Tomball, TXTHE MIDAS TOUCH LLCtx.registryabstracts.com/the-midas-touch-llcRegistered on 10/29/2016 by Tommy Hutton Ii in Euless, TXCRONAN INVESTMENTS LLCtx.registryabstracts.com/cronan-investments-llcRegistered on 10/26/2016 by Patrick Sean Cronan in Flower Mound, TXDNR PARTNERS CORPtx.registryabstracts.com/dnr-partners-corpRegistered on 10/27/2016 by Deependra Chhabra in Heath, TXJABES CAR SALES INCtx.registryabstracts.com/jabes-car-sales-incRegistered on 10/26/2016 by Jorge Diaz in Katy, TXJABES AUTO SERVICE TIRES INCtx.registryabstracts.com/jabes-auto-service-tires-incRegistered on 10/26/2016 by Jorge Diaz in Katy, TXJOSEPH E GARDNER CPA LLCtx.registryabstracts.com/joseph-e-gardner-cpa-llcRegistered on 10/27/2016 by Joseph E Gardner Jr in Alamo Heights, TX1 | 2 | 3 | 4 | 5  
+
+
+
+
+
+Topsail Energy Marketing Group LLC
+
+Corporate registration for TOPSAIL ENERGY MARKETING GROUP LLC by C T Corporation System of 1999 Bryan St Ste 900, Dallas, TX filed on Wed, Oct 26th, 2016 with Texas Secretary of State
+
+
+
+
+
+
+Filing date:10/26/2016
+Filing type:
+
+						CORPORATE					
+
+Source:
+TEXAS SECRETARY OF STATE
+
+Last updated:
+10/29/2016
+
+CONTACT / REGISTERED AGENT
+Name: 
+C T CORPORATION SYSTEM
+
+Street:
+1999 BRYAN ST STE 900
+
+City/State:
+DALLAS, TX  75201
+
+Lat/Lng 
+32.787629, -96.79941
+
+RELATED BUSINESSESThe following business entities may be related to Topsail Energy Marketing Group Llc based on various similarities appearing within the registration.GAMESTOP SERVICE COMPANY LLCLANDRY S MANAGEMENT INCMASTRO S RESTAURANTS LLCCOMMUNITY RESTORATION CORPORATIONNEW RAINTREE RESORTS INTERNATIONAL LLC
+
+
+Source: Texas Texas Secretary of State Corporations Section
+Corrections
+
+
+
+
+
+
+
+
+
+About Dallas, TXPopulation, 2010 2,368,139Households, 2012 849,874Veterans, 2012 109,460Median household income, 2012 $49,159Median home value, 2012 $129,100Total number of firms, 2007 228,604Private nonfarm establishments, 2012 1,290,410Women-owned firms, percent, 2007 28%Retail sales, 2007 ($1,000) $33,177,208Credit: U.S. Census Bureau
+
+
+
+
+
+
+
+IN THE NEWS
+
+
+
+
+Jared Kushner a Jewish-American paradox, traditional presidential family adviser
+
+
+
+MRI approved for young infants in intensive care
+
+
+
+Sears, J.C. Penney, Kmart, Macy's: These retailers are closing stores in 2017
+
+
+
+Image of the Day
+
+
+
+Netflix Spending Spree Spurs Subscriber Growth of 5 Million in Second Quarter
+
+
+
+Photo tour: Inside Oceania Cruises' Insignia
+
+
+
+
+
+
+
+
+
+
+
+HOME |
+	PRIVACY |
+	TERMS |
+	CONTACT
+
+
+
+
+
+
+
+
+
+
+
+
+Maverick Reign LLC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Registration Abstracts from throughout the Nation
+
+HOME
+BUSINESS NEWS
+CONTACT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Texas registration abstracts and local market statistics for Austin. 
+Page 1 of 24888 pages listing 1,244,366 Texas businessesSelect a business to view the business registry abstract.MAVERICK REIGN LLCtx.registryabstracts.com/maverick-reign-llcRegistered on 10/27/2016 by United States Corporation Agents Inc in Austin, TXCONSTRUCTION EQUIPMENT NORTH AMERICA LLCtx.registryabstracts.com/construction-equipment-north-america-llcRegistered on 10/26/2016 by C T Corporation System in Dallas, TXCLOVER PROVISION LLCtx.registryabstracts.com/clover-provision-llcRegistered on 10/29/2016 by Rhonda K Goodwin in Dallas, TXJITA DIGITAL PRINTING LLCtx.registryabstracts.com/jita-digital-printing-llcRegistered on 10/26/2016 by Jeffrey W Offutt in Houston, TXION HPC SERVICES INCtx.registryabstracts.com/ion-hpc-services-incRegistered on 10/26/2016 by C T Corporation System in Dallas, TX
+
+
+
+
+PAT HARPER PROPERTIES LLCtx.registryabstracts.com/pat-harper-properties-llcRegistered on 10/26/2016 by Pat Harper in Corsicana, TXTURNER HOLDINGS LLCtx.registryabstracts.com/turner-holdings-llcRegistered on 10/26/2016 by Corporation Service Company Dba Csc Lawyers Inco in Austin, TXTOPSAIL ENERGY MARKETING GROUP LLCtx.registryabstracts.com/topsail-energy-marketing-group-llcRegistered on 10/26/2016 by C T Corporation System in Dallas, TXHIT AND MISS INCtx.registryabstracts.com/hit-and-miss-incRegistered on 10/27/2016 by United States Corporation Agents Inc in Austin, TXGEORGE NIKOPOULOS M D PLLCtx.registryabstracts.com/george-nikopoulos-m-d-pllcRegistered on 10/26/2016 by George Nikopoulos M D in The Woodlands, TXALPHA TPL PROPERTIES LLCtx.registryabstracts.com/alpha-tpl-properties-llcRegistered on 10/26/2016 by National Corporate Research Ltd in Dallas, TXTOPSAIL ENERGY PROCESSING LLCtx.registryabstracts.com/topsail-energy-processing-llcRegistered on 10/26/2016 by C T Corporation System in Dallas, TXPINNACLE SENIOR LIVING MANAGEMENT LLCtx.registryabstracts.com/pinnacle-senior-living-management-llcRegistered on 10/26/2016 by J Michael Clowers in Longview, TXTEXAS HEALTH CARE 2 LLCtx.registryabstracts.com/texas-health-care-2-llcRegistered on 10/26/2016 by John Lawley in Fort Worth, TXDOUGLAS E BACON P Ctx.registryabstracts.com/douglas-e-bacon-p-cRegistered on 10/26/2016 by National Registered Agents Inc in Dallas, TXA P CLEANING COMPANY LLCtx.registryabstracts.com/a-p-cleaning-company-llcRegistered on 10/26/2016 by Shayla Day in Weatherford, TXPERRIN INSURANCE AGENCY LLCtx.registryabstracts.com/perrin-insurance-agency-llcRegistered on 10/27/2016 by Marianne Bonetati in Houston, TXFE PARTNERS I L Ptx.registryabstracts.com/fe-partners-i-l-pRegistered on 10/27/2016 by R Holt Lunsford in Addison, TXFE INVESTMENT SERIES LLCtx.registryabstracts.com/fe-investment-series-llcRegistered on 10/27/2016 by R Holt Lunsford in Addison, TXSURESIGN SOLUTIONS LLCtx.registryabstracts.com/suresign-solutions-llcRegistered on 10/27/2016 by Lacy Billeiter in Odessa, TXJAMDUNG ROCKING LLCtx.registryabstracts.com/jamdung-rocking-llcRegistered on 10/26/2016 by Brenton A Beecher in Houston, TXA E WISE SOLUTIONS LLCtx.registryabstracts.com/a-e-wise-solutions-llcRegistered on 10/26/2016 by Adel Yacoub in Pearland, TXRENERGY SOLAR LLCtx.registryabstracts.com/renergy-solar-llcRegistered on 10/26/2016 by Gary Gonzales in Boerne, TXFE INDUSTRIAL PARTNERS I GP LLCtx.registryabstracts.com/fe-industrial-partners-i-gp-llcRegistered on 10/27/2016 by R Holt Lunsford in Addison, TX
+
+
+
+
+J AUTENREITH COtx.registryabstracts.com/j-autenreith-coRegistered on 10/26/2016 by James Trippon Cpa in Houston, TXEMPLOYEEMAX CREDIT SOLUTIONS LLCtx.registryabstracts.com/employeemax-credit-solutions-llcRegistered on 10/26/2016 by National Registered Agents Inc in Dallas, TXJONATHAN ANDREW CONSTRUCTION LLCtx.registryabstracts.com/jonathan-andrew-construction-llcRegistered on 10/27/2016 by Jonathan Walsh in Richmond, TXK2 POWELL LLCtx.registryabstracts.com/k2-powell-llcRegistered on 10/27/2016 by Harry Powell in Euless, TXJENNIFER H RAAD DDS PLLCtx.registryabstracts.com/jennifer-h-raad-dds-pllcRegistered on 10/26/2016 by Jennifer H Raad Dds in Dallas, TXGHOSHAL LAW P L L Ctx.registryabstracts.com/ghoshal-law-p-l-l-cRegistered on 10/27/2016 by Snigdha Ghoshal in Austin, TXHIVES AND HONEY COMMERCIAL HOLDINGS LLCtx.registryabstracts.com/hives-and-honey-commercial-holdings-llcRegistered on 10/27/2016 by Kirk K Stares in Dallas, TXFOR HIS GLORY AND HOLINESS MINISTRIEStx.registryabstracts.com/for-his-glory-and-holiness-ministriesRegistered on 10/27/2016 by Sims Samuel Jones Sr in Mcallen, TXVIRGATA ONE LLCtx.registryabstracts.com/virgata-one-llcRegistered on 10/27/2016 by James E Peterson in Friendswood, TXWAXAHACHIE CRYSTAL LAKE LLCtx.registryabstracts.com/waxahachie-crystal-lake-llcRegistered on 10/28/2016 by Vici Lacy in Lakeway, TXALLISON JADE LLCtx.registryabstracts.com/allison-jade-llcRegistered on 10/27/2016 by Atap Infotek Consulting Inc in Spring, TXTRACY BELL LLCtx.registryabstracts.com/tracy-bell-llcRegistered on 10/27/2016 by Tracy Bell in Dallas, TXDAK CORROSION LLCtx.registryabstracts.com/dak-corrosion-llcRegistered on 10/27/2016 by Asif M Dakri in Houston, TXCHESKA CAPITAL LLCtx.registryabstracts.com/cheska-capital-llcRegistered on 10/27/2016 by Dakri Family 2012 Gst Trust For Asif M Dakri in Houston, TXGOOD FAITH IMPACT FUND INCtx.registryabstracts.com/good-faith-impact-fund-incRegistered on 10/29/2016 by Good Faith Energy Solutions Llc in Dallas, TXMAGOKORO INCtx.registryabstracts.com/magokoro-incRegistered on 10/27/2016 by Emiko Kawakami in Plano, TXPREMIER HOSPICE PALLIATIVE CARE LLCtx.registryabstracts.com/premier-hospice-palliative-care-llcRegistered on 10/27/2016 by Varfeeta Sirleaf in Houston, TXISLAND IN THE SKY PRODUCTIONS LLCtx.registryabstracts.com/island-in-the-sky-productions-llcRegistered on 10/27/2016 by John Martin Miller in Austin, TXGOLL S PHOENIX INCtx.registryabstracts.com/goll-s-phoenix-incRegistered on 10/26/2016 by Legalcorp Solutions Llc in Dallas, TXCHARLOUBEN LLCtx.registryabstracts.com/charlouben-llcRegistered on 10/29/2016 by Craig Baudier in Houston, TXUNIQUE WASHING SERVICES INCtx.registryabstracts.com/unique-washing-services-incRegistered on 10/27/2016 by Aroosha Ali in Sugar Land, TXTHINK AND PROSPER TWO LLCtx.registryabstracts.com/think-and-prosper-two-llcRegistered on 10/27/2016 by Truong Nguyen in Tomball, TXTEALWAY LLCtx.registryabstracts.com/tealway-llcRegistered on 10/26/2016 by Jeff Lanier in Houston, TXFOUNDATION FOR THE WOMEN S ENERGY NETWORKtx.registryabstracts.com/foundation-for-the-women-s-energy-networkRegistered on 10/26/2016 by National Corporate Research Ltd in Dallas, TX1 | 2 | 3 | 4 | 5  
+
+
+
+
+
+Maverick Reign LLC
+
+Corporate registration for MAVERICK REIGN LLC by United States Corporation Agents Inc of 9900 Spectrum Dr, Austin, TX filed on Thu, Oct 27th, 2016 with Texas Secretary of State
+
+
+
+
+
+
+Filing date:10/27/2016
+Filing type:
+
+						CORPORATE					
+
+Source:
+TEXAS SECRETARY OF STATE
+
+Last updated:
+10/29/2016
+
+CONTACT / REGISTERED AGENT
+Name: 
+UNITED STATES CORPORATION AGENTS INC
+
+Street:
+9900 SPECTRUM DR
+
+City/State:
+AUSTIN, TX  78717
+
+Lat/Lng 
+30.326374, -97.771258
+
+RELATED BUSINESSESThe following business entities may be related to Maverick Reign Llc based on various similarities appearing within the registration.FIREMEN OF TAMPA INCSHARKBAIT VENTURES LLCANEDEN CONSULTING INCLICKS HOLDING COMPANY LLCAMATEUR BASEBALL BROADCAST NETWORK LLC
+
+
+Source: Texas Texas Secretary of State Corporations Section
+Corrections
+
+
+
+
+
+
+
+
+
+About Austin, TXPopulation, 2010 1,024,266Households, 2012 405,406Veterans, 2012 54,371Median household income, 2012 $56,403Median home value, 2012 $215,900Total number of firms, 2007 103,385Private nonfarm establishments, 2012 490,647Women-owned firms, percent, 2007 28%Retail sales, 2007 ($1,000) $13,879,471Credit: U.S. Census Bureau
+
+
+
+
+
+
+
+IN THE NEWS
+
+
+
+
+Jared Kushner a Jewish-American paradox, traditional presidential family adviser
+
+
+
+MRI approved for young infants in intensive care
+
+
+
+Sears, J.C. Penney, Kmart, Macy's: These retailers are closing stores in 2017
+
+
+
+Image of the Day
+
+
+
+Netflix Spending Spree Spurs Subscriber Growth of 5 Million in Second Quarter
+
+
+
+Photo tour: Inside Oceania Cruises' Insignia
+
+
+
+
+
+
+
+
+
+
+
+HOME |
+	PRIVACY |
+	TERMS |
+	CONTACT
+
+
+
+
+
+
+
+
