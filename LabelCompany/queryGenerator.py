@@ -16,3 +16,4 @@ paramStr += "</parameters>"
 file = open("Indri/query.txt", 'w', encoding='utf8')
 file.write(paramStr)
 file.close()
+
