@@ -1,0 +1,9014 @@
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+Peter R. Fisher - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Peter R. Fisher
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+
+This article has multiple issues. Please help improve it or discuss these issues on the talk page. (Learn how and when to remove these template messages)
+
+
+
+
+
+
+This biography of a living person needs additional citations for verification. Please help by adding reliable sources. Contentious material about living persons that is unsourced or poorly sourced must be removed immediately, especially if potentially libelous or harmful. (January 2016) (Learn how and when to remove this template message)
+
+
+
+
+
+
+
+This biographical article is written like a résumé. Please help improve it by revising it to be neutral and encyclopedic. (January 2016)
+
+
+
+
+
+
+
+This article may be in need of reorganization to comply with Wikipedia's layout guidelines. Please help by editing the article to make improvements to the overall structure. (January 2016) (Learn how and when to remove this template message)
+
+
+
+
+(Learn how and when to remove this template message)
+
+
+Peter R. Fisher (born 1956, Washington D.C.) is a senior lecturer at the Tuck School of Business at Dartmouth College, and a senior fellow at the Tuck Center for Global Business and Government. He is also a former executive at BlackRock and a former senior official at the U.S. Treasury and the Federal Reserve.[citation needed]
+
+Early life[edit]
+Fisher is the son of Roger D. Fisher[1] and Caroline (Speer) Fisher and the brother of Elliott Fisher.[2] He is married and the father of two. He was born in Washington D.C. in 1956. His family moved to Cambridge, Massachusetts, in 1958 when his father first joined the faculty of Harvard Law School.[citation needed]
+Education[edit]
+Fisher was educated at the Shady Hill School (1960-1971) and Concord Academy (1971-1974) in Massachusetts. He graduated from Harvard College with a B.A. in history in 1980 and from the Harvard Law School with a J.D. in 1985.[citation needed]
+Career[edit]
+After law school, he joined the Federal Reserve Bank of New York legal department in 1985, where he served until 1989. From 1989 to 1990 Fisher was seconded to the Bank for International Settlements, in Basel, Switzerland, where he served as the secretary of the committee on inter-bank netting schemes of the Central Banks of the G-10 countries.[3]
+In 1990, he joined the foreign exchange department of the New York Fed. From 1995 to 2001, he served as executive vice president of the New York Fed and as manager of the system open market account, responsible to the federal open market committee of the Federal Reserve System for the conduct of domestic monetary and foreign currency operations.[4] In 1998, Fisher played a catalytic role in the resolution of the long-term capital management hedge fund.[5]
+From 2001 to 2003, he served as under secretary of the U.S. Treasury for domestic finance.[6] While at the Treasury, Fisher served a member of the board of the Securities Investor Protection Corporation (SIPC), on the Air Transportation Stabilization Board (ATSB), established by Congress after the events of September 11, 2001 and as the Treasury representative to the Pension Benefit Guaranty Corporation (PBGC).[citation needed]
+In 2004, Fisher joined the asset management firm BlackRock. From 2005 to 2007, he served as chairman of BlackRock Asia. In 2007, he became co-head, and in 2009 the head, of BlackRock’s Fixed Income Portfolio Management Group. In 2013, he stepped down as head of the fixed income and serves as a senior director of the BlackRock investment institute.[7]
+From 2007 to 2013, he served as non-executive director of the Financial Services Authority of the United Kingdom. He is a recipient of the distinguished service award from the Bond Market Association (2004), the Alexander Hamilton medal, U.S. Department of the Treasury (2003), and the Postmaster General’s partnership for progress award, United States Postal Service (2002).[citation needed]
+References[edit]
+
+
+
+Wikiquote has quotations related to: Peter R. Fisher
+
+
+
+^ Roger Fisher (academic)
+^ http://geiselmed.dartmouth.edu/faculty/facultydb/view.php?uid=61
+^ http://www.bis.org/publ/cpss04.htm
+^ http://search.newyorkfed.org/ny_public/search?search+submit.x=12&number=10&start=0&search_submit.y=11&application=ny_pub&text=remarks+of+executive+vice+president+peter+r.+fisher
+^ See Roger Lowenstein, When Genius Failed, Random House (2000, 2011), 186-201.
+^ See remarks and testimonies of Fisher at US Treasury: http://www.treasury.gov/Pages/search.aspx?k=peter+fisher&s=allsites
+^ http://www.blackrock.com/corporate/en-us/about-us/leadership/peter-fisher
+
+
+
+Government offices
+
+
+Preceded by
+Gary Gensler
+Under Secretary of the Treasury for Domestic Finance
+2001 – 2004
+Succeeded by
+Brian C. Roseboro
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Peter_R._Fisher&oldid=719821209"					
+Categories: Living peopleUnited States Department of the Treasury officialsHarvard Law School alumniHarvard University alumni1956 birthsHidden categories: BLP articles lacking sources from January 2016All BLP articles lacking sourcesArticles with a promotional tone from January 2016All articles with a promotional toneWikipedia articles needing reorganization from January 2016All articles with unsourced statementsArticles with unsourced statements from January 2016 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikiquote 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 12 May 2016, at 00:19.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Peter R. Fisher - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Peter R. Fisher
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+
+This article has multiple issues. Please help improve it or discuss these issues on the talk page. (Learn how and when to remove these template messages)
+
+
+
+
+
+
+This biography of a living person needs additional citations for verification. Please help by adding reliable sources. Contentious material about living persons that is unsourced or poorly sourced must be removed immediately, especially if potentially libelous or harmful. (January 2016) (Learn how and when to remove this template message)
+
+
+
+
+
+
+
+This biographical article is written like a résumé. Please help improve it by revising it to be neutral and encyclopedic. (January 2016)
+
+
+
+
+
+
+
+This article may be in need of reorganization to comply with Wikipedia's layout guidelines. Please help by editing the article to make improvements to the overall structure. (January 2016) (Learn how and when to remove this template message)
+
+
+
+
+(Learn how and when to remove this template message)
+
+
+Peter R. Fisher (born 1956, Washington D.C.) is a senior lecturer at the Tuck School of Business at Dartmouth College, and a senior fellow at the Tuck Center for Global Business and Government. He is also a former executive at BlackRock and a former senior official at the U.S. Treasury and the Federal Reserve.[citation needed]
+
+Early life[edit]
+Fisher is the son of Roger D. Fisher[1] and Caroline (Speer) Fisher and the brother of Elliott Fisher.[2] He is married and the father of two. He was born in Washington D.C. in 1956. His family moved to Cambridge, Massachusetts, in 1958 when his father first joined the faculty of Harvard Law School.[citation needed]
+Education[edit]
+Fisher was educated at the Shady Hill School (1960-1971) and Concord Academy (1971-1974) in Massachusetts. He graduated from Harvard College with a B.A. in history in 1980 and from the Harvard Law School with a J.D. in 1985.[citation needed]
+Career[edit]
+After law school, he joined the Federal Reserve Bank of New York legal department in 1985, where he served until 1989. From 1989 to 1990 Fisher was seconded to the Bank for International Settlements, in Basel, Switzerland, where he served as the secretary of the committee on inter-bank netting schemes of the Central Banks of the G-10 countries.[3]
+In 1990, he joined the foreign exchange department of the New York Fed. From 1995 to 2001, he served as executive vice president of the New York Fed and as manager of the system open market account, responsible to the federal open market committee of the Federal Reserve System for the conduct of domestic monetary and foreign currency operations.[4] In 1998, Fisher played a catalytic role in the resolution of the long-term capital management hedge fund.[5]
+From 2001 to 2003, he served as under secretary of the U.S. Treasury for domestic finance.[6] While at the Treasury, Fisher served a member of the board of the Securities Investor Protection Corporation (SIPC), on the Air Transportation Stabilization Board (ATSB), established by Congress after the events of September 11, 2001 and as the Treasury representative to the Pension Benefit Guaranty Corporation (PBGC).[citation needed]
+In 2004, Fisher joined the asset management firm BlackRock. From 2005 to 2007, he served as chairman of BlackRock Asia. In 2007, he became co-head, and in 2009 the head, of BlackRock’s Fixed Income Portfolio Management Group. In 2013, he stepped down as head of the fixed income and serves as a senior director of the BlackRock investment institute.[7]
+From 2007 to 2013, he served as non-executive director of the Financial Services Authority of the United Kingdom. He is a recipient of the distinguished service award from the Bond Market Association (2004), the Alexander Hamilton medal, U.S. Department of the Treasury (2003), and the Postmaster General’s partnership for progress award, United States Postal Service (2002).[citation needed]
+References[edit]
+
+
+
+Wikiquote has quotations related to: Peter R. Fisher
+
+
+
+^ Roger Fisher (academic)
+^ http://geiselmed.dartmouth.edu/faculty/facultydb/view.php?uid=61
+^ http://www.bis.org/publ/cpss04.htm
+^ http://search.newyorkfed.org/ny_public/search?search+submit.x=12&number=10&start=0&search_submit.y=11&application=ny_pub&text=remarks+of+executive+vice+president+peter+r.+fisher
+^ See Roger Lowenstein, When Genius Failed, Random House (2000, 2011), 186-201.
+^ See remarks and testimonies of Fisher at US Treasury: http://www.treasury.gov/Pages/search.aspx?k=peter+fisher&s=allsites
+^ http://www.blackrock.com/corporate/en-us/about-us/leadership/peter-fisher
+
+
+
+Government offices
+
+
+Preceded by
+Gary Gensler
+Under Secretary of the Treasury for Domestic Finance
+2001 – 2004
+Succeeded by
+Brian C. Roseboro
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Peter_R._Fisher&oldid=719821209"					
+Categories: Living peopleUnited States Department of the Treasury officialsHarvard Law School alumniHarvard University alumni1956 birthsHidden categories: BLP articles lacking sources from January 2016All BLP articles lacking sourcesArticles with a promotional tone from January 2016All articles with a promotional toneWikipedia articles needing reorganization from January 2016All articles with unsourced statementsArticles with unsourced statements from January 2016 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikiquote 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 12 May 2016, at 00:19.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Peter R. Fisher - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Peter R. Fisher
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+
+This article has multiple issues. Please help improve it or discuss these issues on the talk page. (Learn how and when to remove these template messages)
+
+
+
+
+
+
+This biography of a living person needs additional citations for verification. Please help by adding reliable sources. Contentious material about living persons that is unsourced or poorly sourced must be removed immediately, especially if potentially libelous or harmful. (January 2016) (Learn how and when to remove this template message)
+
+
+
+
+
+
+
+This biographical article is written like a résumé. Please help improve it by revising it to be neutral and encyclopedic. (January 2016)
+
+
+
+
+
+
+
+This article may be in need of reorganization to comply with Wikipedia's layout guidelines. Please help by editing the article to make improvements to the overall structure. (January 2016) (Learn how and when to remove this template message)
+
+
+
+
+(Learn how and when to remove this template message)
+
+
+Peter R. Fisher (born 1956, Washington D.C.) is a senior lecturer at the Tuck School of Business at Dartmouth College, and a senior fellow at the Tuck Center for Global Business and Government. He is also a former executive at BlackRock and a former senior official at the U.S. Treasury and the Federal Reserve.[citation needed]
+
+Early life[edit]
+Fisher is the son of Roger D. Fisher[1] and Caroline (Speer) Fisher and the brother of Elliott Fisher.[2] He is married and the father of two. He was born in Washington D.C. in 1956. His family moved to Cambridge, Massachusetts, in 1958 when his father first joined the faculty of Harvard Law School.[citation needed]
+Education[edit]
+Fisher was educated at the Shady Hill School (1960-1971) and Concord Academy (1971-1974) in Massachusetts. He graduated from Harvard College with a B.A. in history in 1980 and from the Harvard Law School with a J.D. in 1985.[citation needed]
+Career[edit]
+After law school, he joined the Federal Reserve Bank of New York legal department in 1985, where he served until 1989. From 1989 to 1990 Fisher was seconded to the Bank for International Settlements, in Basel, Switzerland, where he served as the secretary of the committee on inter-bank netting schemes of the Central Banks of the G-10 countries.[3]
+In 1990, he joined the foreign exchange department of the New York Fed. From 1995 to 2001, he served as executive vice president of the New York Fed and as manager of the system open market account, responsible to the federal open market committee of the Federal Reserve System for the conduct of domestic monetary and foreign currency operations.[4] In 1998, Fisher played a catalytic role in the resolution of the long-term capital management hedge fund.[5]
+From 2001 to 2003, he served as under secretary of the U.S. Treasury for domestic finance.[6] While at the Treasury, Fisher served a member of the board of the Securities Investor Protection Corporation (SIPC), on the Air Transportation Stabilization Board (ATSB), established by Congress after the events of September 11, 2001 and as the Treasury representative to the Pension Benefit Guaranty Corporation (PBGC).[citation needed]
+In 2004, Fisher joined the asset management firm BlackRock. From 2005 to 2007, he served as chairman of BlackRock Asia. In 2007, he became co-head, and in 2009 the head, of BlackRock’s Fixed Income Portfolio Management Group. In 2013, he stepped down as head of the fixed income and serves as a senior director of the BlackRock investment institute.[7]
+From 2007 to 2013, he served as non-executive director of the Financial Services Authority of the United Kingdom. He is a recipient of the distinguished service award from the Bond Market Association (2004), the Alexander Hamilton medal, U.S. Department of the Treasury (2003), and the Postmaster General’s partnership for progress award, United States Postal Service (2002).[citation needed]
+References[edit]
+
+
+
+Wikiquote has quotations related to: Peter R. Fisher
+
+
+
+^ Roger Fisher (academic)
+^ http://geiselmed.dartmouth.edu/faculty/facultydb/view.php?uid=61
+^ http://www.bis.org/publ/cpss04.htm
+^ http://search.newyorkfed.org/ny_public/search?search+submit.x=12&number=10&start=0&search_submit.y=11&application=ny_pub&text=remarks+of+executive+vice+president+peter+r.+fisher
+^ See Roger Lowenstein, When Genius Failed, Random House (2000, 2011), 186-201.
+^ See remarks and testimonies of Fisher at US Treasury: http://www.treasury.gov/Pages/search.aspx?k=peter+fisher&s=allsites
+^ http://www.blackrock.com/corporate/en-us/about-us/leadership/peter-fisher
+
+
+
+Government offices
+
+
+Preceded by
+Gary Gensler
+Under Secretary of the Treasury for Domestic Finance
+2001 – 2004
+Succeeded by
+Brian C. Roseboro
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Peter_R._Fisher&oldid=719821209"					
+Categories: Living peopleUnited States Department of the Treasury officialsHarvard Law School alumniHarvard University alumni1956 birthsHidden categories: BLP articles lacking sources from January 2016All BLP articles lacking sourcesArticles with a promotional tone from January 2016All articles with a promotional toneWikipedia articles needing reorganization from January 2016All articles with unsourced statementsArticles with unsourced statements from January 2016 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikiquote 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 12 May 2016, at 00:19.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Peter R. Fisher - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Peter R. Fisher
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+
+This article has multiple issues. Please help improve it or discuss these issues on the talk page. (Learn how and when to remove these template messages)
+
+
+
+
+
+
+This biography of a living person needs additional citations for verification. Please help by adding reliable sources. Contentious material about living persons that is unsourced or poorly sourced must be removed immediately, especially if potentially libelous or harmful. (January 2016) (Learn how and when to remove this template message)
+
+
+
+
+
+
+
+This biographical article is written like a résumé. Please help improve it by revising it to be neutral and encyclopedic. (January 2016)
+
+
+
+
+
+
+
+This article may be in need of reorganization to comply with Wikipedia's layout guidelines. Please help by editing the article to make improvements to the overall structure. (January 2016) (Learn how and when to remove this template message)
+
+
+
+
+(Learn how and when to remove this template message)
+
+
+Peter R. Fisher (born 1956, Washington D.C.) is a senior lecturer at the Tuck School of Business at Dartmouth College, and a senior fellow at the Tuck Center for Global Business and Government. He is also a former executive at BlackRock and a former senior official at the U.S. Treasury and the Federal Reserve.[citation needed]
+
+Early life[edit]
+Fisher is the son of Roger D. Fisher[1] and Caroline (Speer) Fisher and the brother of Elliott Fisher.[2] He is married and the father of two. He was born in Washington D.C. in 1956. His family moved to Cambridge, Massachusetts, in 1958 when his father first joined the faculty of Harvard Law School.[citation needed]
+Education[edit]
+Fisher was educated at the Shady Hill School (1960-1971) and Concord Academy (1971-1974) in Massachusetts. He graduated from Harvard College with a B.A. in history in 1980 and from the Harvard Law School with a J.D. in 1985.[citation needed]
+Career[edit]
+After law school, he joined the Federal Reserve Bank of New York legal department in 1985, where he served until 1989. From 1989 to 1990 Fisher was seconded to the Bank for International Settlements, in Basel, Switzerland, where he served as the secretary of the committee on inter-bank netting schemes of the Central Banks of the G-10 countries.[3]
+In 1990, he joined the foreign exchange department of the New York Fed. From 1995 to 2001, he served as executive vice president of the New York Fed and as manager of the system open market account, responsible to the federal open market committee of the Federal Reserve System for the conduct of domestic monetary and foreign currency operations.[4] In 1998, Fisher played a catalytic role in the resolution of the long-term capital management hedge fund.[5]
+From 2001 to 2003, he served as under secretary of the U.S. Treasury for domestic finance.[6] While at the Treasury, Fisher served a member of the board of the Securities Investor Protection Corporation (SIPC), on the Air Transportation Stabilization Board (ATSB), established by Congress after the events of September 11, 2001 and as the Treasury representative to the Pension Benefit Guaranty Corporation (PBGC).[citation needed]
+In 2004, Fisher joined the asset management firm BlackRock. From 2005 to 2007, he served as chairman of BlackRock Asia. In 2007, he became co-head, and in 2009 the head, of BlackRock’s Fixed Income Portfolio Management Group. In 2013, he stepped down as head of the fixed income and serves as a senior director of the BlackRock investment institute.[7]
+From 2007 to 2013, he served as non-executive director of the Financial Services Authority of the United Kingdom. He is a recipient of the distinguished service award from the Bond Market Association (2004), the Alexander Hamilton medal, U.S. Department of the Treasury (2003), and the Postmaster General’s partnership for progress award, United States Postal Service (2002).[citation needed]
+References[edit]
+
+
+
+Wikiquote has quotations related to: Peter R. Fisher
+
+
+
+^ Roger Fisher (academic)
+^ http://geiselmed.dartmouth.edu/faculty/facultydb/view.php?uid=61
+^ http://www.bis.org/publ/cpss04.htm
+^ http://search.newyorkfed.org/ny_public/search?search+submit.x=12&number=10&start=0&search_submit.y=11&application=ny_pub&text=remarks+of+executive+vice+president+peter+r.+fisher
+^ See Roger Lowenstein, When Genius Failed, Random House (2000, 2011), 186-201.
+^ See remarks and testimonies of Fisher at US Treasury: http://www.treasury.gov/Pages/search.aspx?k=peter+fisher&s=allsites
+^ http://www.blackrock.com/corporate/en-us/about-us/leadership/peter-fisher
+
+
+
+Government offices
+
+
+Preceded by
+Gary Gensler
+Under Secretary of the Treasury for Domestic Finance
+2001 – 2004
+Succeeded by
+Brian C. Roseboro
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Peter_R._Fisher&oldid=719821209"					
+Categories: Living peopleUnited States Department of the Treasury officialsHarvard Law School alumniHarvard University alumni1956 birthsHidden categories: BLP articles lacking sources from January 2016All BLP articles lacking sourcesArticles with a promotional tone from January 2016All articles with a promotional toneWikipedia articles needing reorganization from January 2016All articles with unsourced statementsArticles with unsourced statements from January 2016 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikiquote 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 12 May 2016, at 00:19.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Grant's Interest Rate Observer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Current Issue: July 28  //
+        	view pdf //
+view flash //
+                        
+Friday, July 28, 2017
+
+
+
+
+
+
+
+Help
+
+
+
+
+
+
+
+
+
+
+
+
+About
+
+About Grant's
+About the Editor
+Contact Us
+
+
+Archives
+
+Grant's Archives
+
+
+
+    Investment Ideas
+Jim in the Media
+
+Videos
+Books By Jim
+
+
+Resources
+
+Almost Daily Grants
+Podcasts
+Knowledge Center
+Highlight Reel
+Free Issues
+Definitions
+Grant's Cartoons
+Center Section
+Online Resources
+Additional Reading
+
+
+Conferences
+
+Oct 2017 Conference
+Watch On-Demand Webinars
+Past Conferences
+Past Speakers
+Books
+
+
+Sample Issues
+
+
+
+Subscribe
+Login
+
+
+
+
+
+
+
+
+
+
+
+
+Peter R. FisherTuck School of Business at Dartmouth
+    Peter R. Fisher is a Senior Fellow at the Center for Business, Government & Society at the Tuck School of Business at Dartmouth, where he is also a Senior Lecturer.  He is a member of the Board of Directors of AIG, of the Peterson Institute for International Economics and of the John F. Kennedy Library Foundation.
+
+Mr. Fisher worked at BlackRock from 2004 to 2016 in a number of roles, serving as Chairman of BlackRock Asia, then as head of BlackRock’s Fixed Income Portfolio Management Group and finally as a Senior Director of the BlackRock Investment Institute.  
+
+Prior to joining BlackRock, Mr. Fisher served as Under Secretary of the U.S. Treasury for Domestic Finance from 2001 to 2003.  He worked at the Federal Reserve Bank of New York from 1985 to 2001, concluding his service as Executive Vice President and Manager of the Federal Reserve System Open Market Account
+    
+    
+        Presentations:
+
+March 2017Undoing Extraordinary Monetary Policy Spring 2017 - March 15
+
+Conferences:
+
+Spring 2017 - March 15
+
+
+
+
+
+
+
+
+Past Conference Speakers
+
+
+					GO TO: 
+					                        A 
+B 
+C 
+D 
+E 
+F 
+G 
+H 
+I 
+J 
+K 
+L 
+M 
+N 
+O 
+P 
+R 
+S 
+T 
+V 
+W 
+X 
+Y 
+Z 
+
+
+A Back to Top
+
+Abrams, David - Abrams Capital, LLC
+                            
+
+Ackman, William A. - Pershing Square Capital
+                            
+
+Adams, John - Emeritus Professor of Geography, University College London
+                            
+
+Aitken, James - Aitken Advisors, LLP
+                            
+
+Akre, Chuck - Akre Capital Management
+                            
+
+Alexander, Seth - MIT Investment Management Company
+                            
+
+Anderson, Keith - Anderson Global Macro, LLC, Chairman and Chief Investment Officer
+                            
+
+Arnott, Rob - Research Affiliates, Chairman
+                            
+
+Aronson, Theodore - Aronson+Johnson+Ortiz
+                            
+
+Aronstein, Michael C. - Preservation Group, LLC
+                            
+
+Asness, Ph.D., Clifford S. - AQR Capital Management, LLC, Managing and Founding Principal
+                            
+
+Avery, Dennis T. - Author
+                            
+
+Ayer, James - Tiedemann/Ayer
+                            
+B Back to Top
+
+Banerji, Anirvan - Economic Cycle Research Institute
+                            
+
+Bass, Kyle - Hayman Capital Management, Managing Member
+                            
+
+Ben-Ur, David - Corbin Capital Partners
+                            
+
+Berg, Gilchrist - Water Street Capital
+                            
+
+Bernstein, William - Efficient Frontier Advisors
+                            
+
+Bessent, Scott - Key Square Group
+                            
+
+Bianco, James - Bianco Research, LLC
+                            
+
+Black, Conrad
+
+
+Bobrow, Barry - Wachovia Corp.
+                            
+
+Bogle, John C. - The Vanguard Group, Inc.
+                            
+
+Boland, John - Remnant Partners
+                            
+
+Bonderman, David - TPG Capital
+                            
+
+Bregman, Steven - Horizon Kinetics, President, Co-Founder
+                            
+
+Bronstein, Keith - TradeLink, LLC
+                            
+
+Brosens, Frank - Taconic Capital Partners
+                            
+
+Burkank, John - Passport Capital, LLC
+                            
+
+Burn, Christopher - Coxe Advisors, LLC
+                            
+
+Byrd, Frank - Fielder Capital Group, LLC
+                            
+
+Byrne, John J. (Jack) - White Mountains Insurance Group
+                            
+C Back to Top
+
+Cannell, J. Carlo - Cannell Capital Management
+                            
+
+Cantor, Mitch - Mountain Lake Investment Management
+                            
+
+Casares, Wences - Xapo
+                            
+
+Chancellor, Edward - GMO
+                            
+
+Chanos, James S. - Kynikos Associates, LP, Founder and Managing Partner
+                            
+
+Chilton, Jr., Richard L. - Chilton Investment Co.
+                            
+
+Chu, Charlene - Autonomous Research
+                            
+
+Cochrane, John H. - The University of Chicago Booth School of Business
+                            
+
+Cohen, Martin - Cohen & Steers Capital Management
+                            
+
+Cohodes, Marc - former managing partner of Copper River Management
+                            
+
+Cole, Christopher - Artemis Capital Management
+                            
+
+Cooperman, Leon - Omega Advisors, Inc.
+                            
+
+Coxe, Don - Coxe Advisors, LLC
+                            
+D Back to Top
+
+D'Alessandro, David - CMDTY Capital Management, LP
+                            
+
+Daniels, Francis - Anibok Investment Research Chambers
+                            
+
+Derman, Emanuel - Columbia University & Prisma Capital Partners
+                            
+
+Diamond, Bob - Atlas Merchant Capital, Founder and CEO
+                            
+
+Dimon, Jamie - JPMorgan Chase & Co.
+                            
+
+Divecha, Arjun - Grantham, Mayo, Van Otterloo & Co.
+                            
+
+Dizard, John - The Financial Times
+                            
+
+Doppstadt, Eric - Ford Foundation
+                            
+
+Doyle, Mark - Sterling Grace Municpal
+                            
+
+Druckenmiller, Stanley - Duquesne Family Office, LLC
+                            
+
+Duffy, Kevin - Bearing Asset Management
+                            
+
+Dunbar, Nicholas - Risk Magazine
+                            
+E Back to Top
+
+Egan, Sean - Egan-Jones Rating Co.
+                            
+
+Einhorn, David - Greenlight Capital, Inc.
+                            
+
+Eisman, Steven - FrontPoint Partners
+                            
+
+El-Erian, Mohamed - Harvard Management Co.
+                            
+
+Ely, Bert - Ely & Company, Inc.
+                            
+
+Eveillard, Jean-Marie - Arnhold & S. Bleichroeder Advisors, LLC - First Eagle Funds
+                            
+F Back to Top
+
+Falls, Amy - Rockefeller University
+                            
+
+Farrell, Michael - Annaly Mortgage Management
+                            
+
+Feldman, Robert C. - Weil, Gotshal & Manges
+                            
+
+Ferrari, Ph.D., Leonard A. - Naval Posgraduate School
+                            
+
+Fidalgo, Miguel - Triarii Capital Management, LP
+                            
+
+Fieler, Sean - Equinox Partners, LP
+                            
+
+Fisher, Peter R. - Tuck School of Business at Dartmouth
+                            
+
+Flatt, Bruce - Brookfield Asset Management
+                            
+
+Fleckenstein, William - Fleckenstein Capital, Inc.
+                            
+
+Flowers, J. Christopher - J.C. Flowers & Co.
+                            
+
+Frey, Felix - Options Consulting Group, LLC
+                            
+
+Fridson, CFA, Martin - Lehmann Livian Fridson Advisors LLC, CIO
+                            
+
+Friedman, Joshua - Canyon Partners, LLC
+                            
+
+Friend, Robert - Recon Capital, LLC
+                            
+
+Fuss, Daniel - Loomis, Sayles & Co.
+                            
+G Back to Top
+
+Galbraith, Steve - Herring Creek Capital Management, Managing Member
+                            
+
+Gallagher, Thomas - ISI Group, Inc.
+                            
+
+Gayner, Thomas - Markel Corp.
+                            
+
+Gelernter, David - Yale University
+                            
+
+Goehring, Leigh R. - Chilton Investment Co.
+                            
+
+Goldstone, Larry - Thornburg Mortgage
+                            
+
+Grant, James - Grant's Interest Rate Observer
+                            
+
+Grantham, Jeremy - Grantham, Mayo, Van Otterloo & Co.
+                            
+
+Gray, Jonathan - Blackstone Group
+                            
+
+Greenberg, Maurice - C.V. Starr and Company
+                            
+
+Greenig, Ph.D., Douglas - Greenwich Capital Markets
+                            
+
+Greenspan, Alan - Greenspan Associates
+                            
+
+Greenwald, Bruce - Columbia Business School
+                            
+
+Gross, Bill - Janus Capital
+                            
+
+Gundlach, Jeffrey E. - Doubleline, Chief Executive Officer & Chief Investment Officer
+                            
+
+Gutfreund, John H. - Gutfreund & Company
+                            
+H Back to Top
+
+Hague, Ian - Firebird Management
+                            
+
+Hall, Andrew - Phibro, Inc.
+                            
+
+Harkins, Michael - Levy, Harkins & Co.
+                            
+
+Hartnett, Michael - BofA Merrill Lynch Global Research
+                            
+
+Haskell, John - Explorador Capital Management
+                            
+
+Hathaway, John - Tocqueville Asset Management
+                            
+
+Hendry, Hugh - Eclectica Asset Management, CIO and Founder
+                            
+
+Hess, Lisa W. - SkyTop Capital Management
+                            
+
+Hill, Karl - Country Bank Co.
+                            
+
+Hill, Charles L. - Thomson Financial
+                            
+
+Hoisington, Van R. - Hoisington Investment Management
+                            
+
+Hughes, John - Quantum Capital Management, LLC
+                            
+
+Hunt, Lacy - Hoisington Investment Management Co.
+                            
+
+Hyman, Ed - Evercore ISI
+                            
+I Back to Top
+
+Isaac, Paul J. - Arbiter Partners Capital Management
+                            
+J Back to Top
+
+Jacobs, Sy - JAM Partners, LP
+                            
+K Back to Top
+
+Kasriel, Paul L. - The Northern Trust Company
+                            
+
+Katz, Michael - Glenrock Global Partners
+                            
+
+Kelly, Mitchell - Anaconda Capital Management
+                            
+
+Klarman, Seth - The Baupost Group, L.L.C., President and CEO
+                            
+
+Klody, CFA, Mathew T. - MCN Capital Management, LLC, Managing Partner
+                            
+
+Knapp, Robert - Ironsides Partners
+                            
+
+Kovner, Bruce - Caxton Alternative Management
+                            
+L Back to Top
+
+La Nasa, III, Joseph - Serengeti Asset Management, Managing Partner
+                            
+
+Lampert, Eddie - ESL Investments, Inc.
+                            
+
+Landis, Kevin - Firsthand Capital Management
+                            
+
+Langone, Ken - Invemed Associates
+                            
+
+Lassonde, Pierre - Franco-Nevada Corp., Chairman
+                            
+
+Lawler, M.D., Ph.D., Joseph - Merus Capital Partners
+                            
+
+Leder, Michelle - Footnoted.com
+                            
+
+Lehrman, Lewis E. - L.E. Lehrman & Co.
+                            
+
+Leibowitz, Martin - Morgan Stanley, Managing Director
+                            
+
+Levenson, Thomas - Massachusetts Institute of Technology, author of
+                            
+
+Levenson, Carol - Gimme Credit Publications
+                            
+
+Lewis, Hunter - Author
+                            
+
+Lewitt, Michael - Harch Capital Management
+                            
+
+Lipper, Steve - Royce & Associates
+                            
+
+Lipton, Martin - Wachtell, Lipton, Rosen & Katz
+                            
+
+Litinsky, James H. - JHL Capital Group LLC
+                            
+
+Lonski, John - Moody's Investors Service
+                            
+
+Lukacs, John - Author
+                            
+
+Lusman, Joel - Lusman Capital Management
+                            
+M Back to Top
+
+Marks, Howard S. - Oaktree Capital Management, LP
+                            
+
+Martin, R. Brad - RBM Venture Company
+                            
+
+Mayer, Martin - Author,
+                            
+
+McEwen, Robert - Goldcorp, Inc.
+                            
+
+Mikhailovich, Simon A. - Tocqueville Bullion Reserve
+                            
+
+Mikuni, Akio - Mikuni & Co., Ltd.
+                            
+
+Miller, William - Legg Mason Fund Adviser
+                            
+
+Miller, Steven - Standard and Poor's
+                            
+
+Millstein, Jim - Millstein & Co.
+                            
+
+Mindich, Eric - Eton Park Capital Management
+                            
+
+Mindich, Jeremy - Scopia Capital, LLC
+                            
+
+Montier, James - GMO
+                            
+N Back to Top
+
+Ney, Keith - Carmignac
+                            
+O Back to Top
+
+O'Connor, Jerry - O'Connor Capital Partners
+                            
+P Back to Top
+
+Pan, Vivian - Hamlin Capital Management
+                            
+
+Partnoy, Frank - University of San Diego
+                            
+
+Paulson, John - Paulson & Co.
+                            
+
+Peabody, Charles - Ventana Capital
+                            
+
+Pellegrini, Paolo - PSQR Management, LLC
+                            
+
+Pickens, T. Boone - BP Capital
+                            
+
+Porter, Alex - Porter Felleman, Inc.
+                            
+
+Price, Michael - MFP Investors
+                            
+R Back to Top
+
+Redleaf, Andy - Whitebox Advisors, LLC
+                            
+
+Reik, Trey - Bristol Investment Partners, CIO
+                            
+
+Richardson, Kennedy - Fidelity Investments
+                            
+
+Rickards, James - JAC Capital Advisors, Partner
+                            
+
+Robertson, Julian - Tiger Management Corp.
+                            
+
+Rocha, Bruno - Dynamo Capital, LP
+                            
+
+Rogers, James - Author
+                            
+
+Rohatyn, Felix - Lazard, Ltd.
+                            
+
+Rollert, Jeffery - ALM Advisors
+                            
+
+Rosenberg, David - Gluskin Sheff & Associates
+                            
+
+Rosenberg, Joe - Loews Corporation, Chief Investment Strategist
+                            
+
+Rosenwald, James - Rosenwald Capital Management
+                            
+
+Rowe, Frederick - Greenbrier Partners, Ltd.
+                            
+
+Royce, Charles - Royce & Associates
+                            
+S Back to Top
+
+Sandor, Ph.D., Richard - Environmental Financial Products
+                            
+
+Sarma, Karthik - SRS Investment Management
+                            
+
+Saul, Bob - GMO Renewable Resources, Director Domestic Forestry Investments
+                            
+
+Schiff, David - Schiff's Insurance Observer
+                            
+
+Schwarzman, Stephen A. - Blackstone Group, Chairman and CEO
+                            
+
+Senor, Dan - Elliott Management
+                            
+
+Sherman, David - Cohanzick Management
+                            
+
+Shilling, Ph.D., A. Gary - A. Gary Shilling & Co.
+                            
+
+Simon, Jr., William E. - William E. Simon & Sons
+                            
+
+Singer, Paul E. - Elliott Management Corp.
+                            
+
+Smith, Randy - Alden Global Capital
+                            
+
+Souza, Cristiano - Dynamo Capital, LP
+                            
+
+Sprayregan, James - Kirkland & Ellis, LLP
+                            
+
+Stahl, Murray - Horizon Asset Management, Inc.
+                            
+
+Stephens, Bret - The Wall Street Journal
+                            
+
+Stevenson-Yang, Anne - J Capital Research
+                            
+
+Stockman, David A. - Former Director of the Office of Management and Budget, 1981-85
+                            
+
+Succo, John - Alpha Investments of New York
+                            
+
+Suria, Ravi - Duquesne Capital Mangement
+                            
+
+Sussman, Donald - Paloma Partners
+                            
+
+Swensen, David - CIO, Yale University
+                            
+T Back to Top
+
+Taleb, Nassim Nicholas - Empirica, LLC
+                            
+
+Tarrant, Jeffrey - Protege Partners
+                            
+
+Thiel, Peter - Clarium Capital
+                            
+
+Thompson, Cullen - Bienville Capital Management
+                            
+
+Thorn, Jon - India Capital Management
+                            
+
+Tisch, James - Loews Corporation
+                            
+V Back to Top
+
+Volcker, Paul A. - Chariman Federal Reserve 1979 - 1987
+                            
+
+Volent, Paula - Bowdoin College
+                            
+W Back to Top
+
+Wachenheim, III, Ed - Greenhaven Associates
+                            
+
+Wadhwaney, Amit - Third Avenue Management
+                            
+
+Walsh, Timothy M. - Division of Investments, State of New Jersey, Director
+                            
+
+Walter, Carl E. - Author
+                            
+
+Warsh, Kevin - Hoover Institution
+                            
+
+Weiss, Adam - Scout Capital
+                            
+
+Werner, Mark - Pierpont Securities, LLC
+                            
+
+Whitman, Martin J. - Third Avenue Management
+                            
+
+Whitney, Meredith - Meredith Whitney Advisory Group, LLC
+                            
+
+Wien, Byron - The Blackstone Group
+                            
+
+Winters, David - Franklin Mutual Advisers, LLC
+                            
+
+Wolf, Martin - Financial Times
+                            
+X Back to Top
+
+Xiaosheng, Chen - SYWG Research & Consulting, Co.
+                            
+Y Back to Top
+
+Yoo, Simon - Green Visor Capital Management Company, LLC
+                            
+
+Yusko, Mark W. - Morgan Creek Capital Management, CEO and Chief Investment Officer
+                            
+Z Back to Top
+
+Zell, Sam - Equity Group Investments
+                            
+
+Zelman, Ivy - Zelman & Associates
+                            
+
+Zervos, David - Jefferies & Company
+                            
+
+
+
+
+
+
+
+Upcoming Conferences
+October 10, 2017 - New York
+April 10, 2018 - New York
+October 9, 2018 - New York
+
+
+
+
+	Past Conferences & Presentations
+
+View >
+
+
+
+
+	Past Speakers 
+
+View >
+
+
+
+Past Conference Books
+
+Common Stocks & Common Sense: The Strategies, Analyses, Decisions and Emotions of a Particularly Succesful Value InvestorBy Edgar Wachenheim III
+Read More >
+
+
+Heyday: The 1850s and the Dawn of the Global AgeBy Ben Wilson
+Read More >
+
+
+Whiplash: How to Survive Our Faster FutureBy Joi Ito & Jeff Howe
+Read More >
+
+
+The Grid:  The Fraying Wires Between Americas and Our Energy FutureBy Gretchen Bakke, Ph.D.
+Read More >
+
+
+Winning at Active Management: The Essential Roles of Culture, Philosophy, and TechnologyBy William W. Priest, Steven D. Bleiberg & Michael A. Wellhoelter
+Read More >
+
+
+More Past Conference Books >
+
+
+
+
+
+
+
+
+
+
+What You'll Get...
+
+Clear and unconventional thinking
+Analysis both micro and macro
+Ideas both long and short across a range of asset classes 
+33+ years of archived material --yours to browse for free
+Speculation about the future informed by knowledge of the past
+Writing you’d read for pleasure alone.
+
+
+
+
+
+
+
+
+
+	Follow Grant's
+
+You can now follow Grant's
+	on Twitter! @GrantsPub
+
+
+
+
+
+
+	Archives
+
+View the Grant's Archives
+
+	Browse 32 years of Grant’s archives by topic or article.
+
+
+
+Cartoons
+
+View All Cartoons >
+
+
+
+
+	Conferences
+
+Register Now >
+
+Grant’s hosts semiannual investment conferences in New York.
+
+
+
+
+	FileOpen & Adobe Reader
+
+Download FileOpen >
+
+Download Adobe Reader >
+
+
+
+Help?
+Get Answers Now >
+Questions/Problems with the site?
+Questions regarding your subscription?
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            Phone: 212-809-7994    |    Register    |    Contact Us    |    Terms & Conditions
+                |    Privacy Policy
+
+
+        GRANT'S Interest Rate Observer // Two Wall Street, New York, New York 10005
+		© 2017 Grant's Financial Publishing Inc. // All rights reserved.
+
+
+
+
+
+
+
+
+You must be a subscriber to access this content, please login or subscribe.
+
+
+
+
+
+
+Email*
+
+
+
+
+
+
+Password*
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+   Remember Me
+
+
+
+
+
+
+
+OR
+Register >
+OR
+Become a subscriber >
+
+
+
+
+
+
+
+You must be a subscriber to access this content, please login or subscribe.
+
+
+
+
+
+
+
+
+        Please be advised we are experiencing telephone problems and are unable to send or receive phone calls.
+		
+
+		Please send an email to
+		webmaster@grantspub.com
+		and we will get back to you as soon as possible.
+		
+
+		Thank you,
+		
+Grant’s Interest Rate observer
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Why Grant's?
+
+
+
+
+
+
+
+
+
+
+
+Grant's Fall Conference
+
+
+
+
+
+
+
+
+
+
+
+
+
+About
+
+About Grant's
+About the Editor
+Contact Us
+
+
+Archives
+
+Grant's Archives
+Knowledge Center
+
+
+
+    Investment Ideas
+Jim in the Media
+
+Videos
+Books By Jim
+
+
+Resources
+
+Overview
+Grant's Cartoons
+Definitions
+Center Section
+Online Resources
+Additional Reading
+
+
+Conferences
+
+Overview
+Past Speakers
+Books
+Past Conferences
+
+
+Sample Issues
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tuck School of Business | Peter R. Fisher
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tuck School of Business at Dartmouth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search Tuck
+
+
+
+About
+
+Why Tuck?
+Tuck Leadership
+Mission, Vision, & Strategy
+Meet the Dean
+Facts & Figures
+See Our Campus (Map)
+Staff Directory
+Diversity and Inclusion
+Dartmouth Collaborations
+Pilot Programs
+
+
+MBA
+
+Admissions
+Student Stories
+Alumni Stories
+Tuck 360: MBA Blog
+Academic Experience
+Life at Tuck
+Housing Options
+Partners and Families
+Clubs and Activities
+Career Advantage
+Finance Your Degree
+
+
+Business Bridge
+Faculty & Research
+
+How We Teach
+Faculty Directory
+Academic Groups
+Faculty Recruiting
+Research Centers and Initiatives
+Faculty Research
+Faculty in the News
+Research Highlights
+
+
+News
+
+All News
+School News
+Faculty Research
+In the Media
+Events
+MBA Program Rankings
+Social Media
+For Journalists
+
+
+
+
+Recruiting
+Executive Education
+myTUCK
+Master of Health Care Delivery Science
+
+
+
+
+About
+
+
+
+
+Why Tuck?
+
+Learn by Doing
+Be Challenged at Every Moment
+Lead Across Cultures
+Contribute to an Extraordinary Community
+Become Part of a Powerful Network
+Build Better Organizations
+Better the World
+
+
+
+
+
+
+Tuck Leadership
+
+Board of Overseers
+Asian Advisory Board
+Latin American Advisory Board
+European Advisory Board
+Tag Executive Committee
+MBA Advisory Board
+
+
+Mission, Vision, & Strategy
+Meet the Dean
+
+Meet Matthew J. Slaughter: Videos
+Bio & CV
+
+
+Facts & Figures
+
+History
+
+
+
+
+
+
+See Our Campus (Map)
+Staff Directory
+Diversity and Inclusion
+Dartmouth Collaborations
+Pilot Programs
+
+
+
+
+Join the TuckCommunity
+Apply Today
+Connect With Us
+
+
+
+
+
+MBA
+
+
+
+
+Student Stories
+Alumni Stories
+Tuck 360: MBA Blog
+Academic Experience
+
+Required Curriculum
+Elective Curriculum
+First-Year Project
+TuckGO
+Academic Calendar
+
+
+Life at Tuck
+
+Dartmouth College
+Women, Diversity, International
+Hanover and the Upper Valley
+
+
+Housing Options
+Partners and Families
+Clubs and Activities
+
+
+
+
+Admissions
+
+Applying to Tuck
+Class Profile
+Evaluation Criteria
+Important Dates
+How to Visit Tuck
+Attend an Event
+Online Events
+Admissions FAQs
+Tuck Connections
+
+
+Career Advantage
+
+Employment Statistics
+Meet Our Career Coaches
+Top Hiring Companies
+Industry Treks
+Recruit a Tuck Student
+
+
+
+
+
+
+Finance Your Degree
+
+Tuition and Costs
+Scholarships and Fellowships
+Loan Programs
+Online Resources
+Financial Aid Applications
+Financial Aid FAQs
+
+
+
+
+
+
+Join the TuckCommunity
+Apply Today
+Connect With Us
+
+
+
+
+
+Business Bridge
+Faculty & Research
+
+
+
+
+How We Teach
+Faculty Directory
+Faculty Recruiting
+
+
+
+
+Research Groups
+Emeriti
+Faculty in the News
+
+
+
+
+Research Centers and Initiatives
+Faculty Research
+Research Highlights
+
+
+
+
+Join the TuckCommunity
+Apply Today
+Connect With Us
+
+
+
+
+
+News
+
+
+
+
+All News
+School News
+Faculty Research
+In the Media
+
+
+
+
+Events
+MBA Program Rankings
+
+
+
+
+Social Media
+For Journalists
+
+
+
+
+Join the TuckCommunity
+Apply Today
+Connect With Us
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+Search Tuck
+
+
+
+Cancel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Faculty & Research
+
+
+How We TeachFaculty DirectoryResearch GroupsFaculty RecruitingCenters and InitiativesEmeritiWorking Papers and Selected PublicationsSelected PublicationsResearch Highlights
+
+
+
+
+
+
+
+
+Faculty Directory
+
+
+
+
+Peter R. Fisher
+Senior Fellow, Center for Business, Government & Society; Clinical Professor
+
+
+Email
+peter.r.fisher@tuck.dartmouth.edu
+Phone
+917-915-7536
+Degree
+JD, Harvard Law School, 1985; BA, Harvard, 1980
+Areas of Expertise
+Monetary policy, capital markets, public finance, fixed income investment management, financial institutions
+Courses
+The Arrhythmia of Finance
+
+
+
+
+
+
+
+
+
+
+
+Current Research Topics
+
+The costs and benefits of extraordinary monetary policies
+Effective leadership at the intersection of business and government
+
+
+Professional Activities
+Academic positions
+
+Senior Fellow and Clinical Professor, Tuck School of Business,  2017–present
+Senior Lecturer, Tuck School of Business, 2013–17
+
+Nonacademic positions
+
+Senior Director, BlackRock Investment Institute, 2013–2016
+Head of Fixed Income Portfolio Management, 2010–2013, Co-Head, 2008–09, BlackRock Financial Management
+Chairman, Black Rock Asia, 2005–07
+Under Secretary for Domestic Finance, United States Department of the Treasury, 2001–03
+Executive Vice President and Manager of the System Open Market Account, 1995–2001, Senior Vice President, Vice President, and Assistant Vice President, 1990–94, Counsel and Assistant Counsel, 1985–89, Federal Reserve Bank of New York
+Secretary, Committee on Inter-Bank Netting Schemes of the Central Banks of the G-10 Countries, Bank for International Settlements, 1989–90
+Analyst, Economics and Technology, Inc., 1980–82
+
+Board memberships and affiliations
+
+Member, The Systemic Risk Council, 2017–present
+Board of Directors, KCG Holdings, Inc., 2017–present
+Board of Directors, AIG, 2014–present
+Board of Directors, John F. Kennedy Library Foundation, 2014–present
+Board of Directors, Peterson Institute for International Economics. 2013-present
+Investment Advisory Committee, Google, 2012–present
+Advisory Committee on Systemic Resolution, Federal Deposit Insurance Corporation, 2011–present
+Non-Executive Director, Financial Services Authority (United Kingdom), 2007–13
+Strategic Advisory Committee, Agence France Tresor, 2006–13
+
+
+
+
+Awards
+
+Distinguished Service Award, The Bond Market Association, 2004
+The Alexander Hamilton Medal, United States Department of Treasury, 2003
+Postmaster General’s Partnership for Progress Award, United States Postal Service, 2002
+
+
+
+
+
+Selected Publications
+
+“The Many Lessons of the Man Who Knew,” book review of The Man Who Knew—The Life and Times of Alan Greenspan by Sebastian Mallaby, International Finance, Vol. 20.2, 2017
+“Undoing Extraordinary Monetary Policy,” remarks at Grants Interest Rate Observer, Spring 2017 Conference, March 15, 2017
+“What’s the matter with the Fed?”  remarks, Shadow Open Market Committee, Princeton Club, New York, New York, April 29, 2016
+“Financial Stability and the Hemianopsia of Monetary Policy,”  Business Economics (2016) 51, 68-70
+“We borrow too much from the future at our peril,” Financial Times, Market Insights, August 19, 2015
+“What is money and who says so?”  keynote remarks at SUERF/Bank of Finland Conference “Liquidity and market efficiency – alive and well?” Helsinki, July 3, 2015, SUERF Policy Note, Issue No. 1, September 2015
+“The Pathology of Finance,” keynote remarks, MIT Center for Finance and Policy, Inaugural Conference on Finance and Policy, September 12, 2014
+“Responding to Systemic Risk: Restoring the Balance”, co-author with John D. Dugan, Cantwell F. Muckenfuss III, Economic Policy Program, Financial Regulatory Reform Initiative, Bipartisan Policy Center, September 2014
+"Mistakes Made and Lessons (Being) Learned–Implications for the Fed's Mandate," in Across the Divide–New Perspectives on the Financial Crisis, eds. M.N. Baily and J.B. Taylor, Hoover Institution Press, 652, 2014
+“The Investment Challenge for Central Banks”, based on remarks given at The World Bank Reserve Advisory and Management Program, Executive Forum, Washington D.C., on April 22, 2013, as published by BlackRock as part of “In Search of a New Official Investment Paradigm – Rethinking “Safety, Liquidity and Return,” June 2013
+"Reflections on the Meaning of 'Risk Free'," in BIS Papers No. 72, Sovereign Risk: a World Without Risk-Free Assets?, Bank for International Settlements, July 2013
+Discussant Comments on “Global Safe Assets”, Pierre-Olivier Gourinchas and Olivier Jeanne, BIS Working Papers No. 399, Bank for International Settlements, December 2012
+“Bernanke Runs the Risk of Creating Liquidity Trap,” Financial Times, September 2012
+“Fed Risks Diminishing Returns with More QE,” Financial Times, June 2012
+“Thoughts on Debt Sustainability: Supply and Demand,” keynote remarks published in Is U.S. Government Debt Different?, Wharton Financial Institutions Center Press, 2012
+“A ‘Twist’ for our Economy,” The Washington Post, September 2011
+“Policymakers Need to Address Uncertainty Not Add it,” Financial Times, August 2011
+“Bringing Financial Literacy to Washington,” in Measuring and Managing Federal Financial Risk, National Bureau of Economic Research Conference Report, The University of Chicago Press, 2010
+“The Market View: Incentives Matter,” in The Road Ahead for the Fed, The Hoover Institution Press, 2009
+“Lending’s Blind Spot,” The Washington Post, September 2008
+“What Happened to Risk Dispersion,” Banque de France–Financial Stability Review, special issue on liquidity, February 2008
+ “Risky Business,” The Wall Street Journal, December 2004
+
+
+
+
+
+
+
+
+
+
+100 Tuck Hall
+			    	Hanover, NH 03755
+			    	USA
+
+
+
+Center for Corporate Governance
+Center for Digital Strategies
+Center for Business, Government & Society
+Center for Leadership
+Center for Private Equity and Entrepreneurship
+Revers Center for Energy
+Healthcare Initiative
+Tuck Initiative for Women
+
+
+
+
+
+Contact
+Request Information
+Directions
+Virtual Campus Map & Tour
+Area Lodging
+TuckStreams Intranet
+
+
+
+
+Give to Tuck
+
+
+Ways to Give
+Apply
+Financial Aid
+Application Deadlines
+Admissions FAQs
+MyTuck for Alumni
+TuckStuff Store
+
+
+
+
+
+
+Back to Top
+
+
+Facebook
+Twitter
+Instagram
+LinkedIn
+YouTube
+
+
+
+©, The Trustees of Dartmouth College. All rights reserved. | Privacy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PETER R FISHER - STOWE, VT - Company Information
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products
+Resources
+My Account
+
+
+
+
+
+
+
+
+
+
+
+
+Talk to a D&B Advisor 
+1-800-280-0780 
+
+
+
+
+Business Directory
+
+
+
+VT
+
+
+
+STOWE
+
+
+
+Business Services, Nec
+
+
+
+Business Services At Non-commercial Site
+
+
+
+                            PETER R FISHER
+                                    
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+P 
+
+
+PETER R FISHER
+CLAIM THIS BUSINESS
+
+
+
+745 EDSON HILL RD STOWE, VT 05672
+Get Directions
+
+
+
+(802) 253-8085
+
+
+
+
+
+Business Info
+
+
+
+ Founded 2004
+ Incorporated 
+ Annual Revenue $61,000.00
+ Employee Count 1
+ Industries Business Services At Non-commercial Site
+ Contacts PETER FISHER
+
+
+
+
+
+
+
+Contact Business
+
+
+
+
+
+
+
+Your Email Address
+
+Subject:
+
+
+Message
+
+
+Send Message
+
+
+
+
+
+Company Summary
+
+
+Since 2004 the company has been providing Business Services At Non-commercial Site. 
+
+
+
+
+
+
+
+
+
+VERIFIED Status:
+UNVERIFIED
+
+
+
+Address:
+UNVERIFIED
+
+
+
+
+
+LAST VERIFIED:
+
+                                    --
+                                
+
+
+
+Phone:
+
+                                    UNVERIFIED
+                                
+
+
+
+
+
+Payment Method:
+UNVERIFIED
+
+
+view full report
+
+
+
+
+
+Similar Businesses Nearby
+
+
+                                        Our similar businesses nearby shows similar businesses in their industry and region based on information found in their Dun & Bradstreet Credibility Review profile.                                        
+
+
+
+
+
+
+
+Competitive Landscape
+
+
+                                        Our competitive landscape shows how this business compares to similar businesses in their industry and region based on information found in their Dun & Bradstreet Credibility Review profile.                                        
+
+
+
+
+
+
+
+Payments Accepted
+
+NO DATA
+
+
+
+Hours
+
+
+
+                                        Sunday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Monday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Tuesday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Wednesday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Thursday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Friday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Saturday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+
+
+
+
+P
+
+VIEW ADDITIONAL DATA                        
+Select from over 115 networks below to view available data about this business. If this data is unavailable or inaccurate and you own or represent this business, click here for more information on how you may be able to correct it. 
+
+
+
+
+
+
+
+Credibility Review
+
+
+
+
+
+Google
+
+
+
+
+
+Facebook.com
+
+
+
+
+
+Yellowbook.com
+
+
+
+
+
+Bing.com
+
+
+
+
+
+Yellowpages.com
+
+
+
+
+
+MerchantCircle
+
+
+
+
+
+Tele Atlas (TomTom)
+
+
+
+
+
+Twitter.com
+
+
+
+
+
+AOL
+
+
+
+
+
+MapQuest
+
+
+
+
+
+Yahoo Local
+
+
+
+
+
+Apple/Siri
+
+
+
+
+
+Groupon
+
+
+
+
+
+Hotfrog.com
+
+
+
+
+
+Comcast.net Search
+
+
+
+
+
+ReachLocal
+
+
+
+
+
+Admedia
+
+
+
+
+
+Dealsplus
+
+
+
+
+
+Shoptopia.com
+
+
+
+
+
+Alteryx
+
+
+
+
+
+Dogtime Media
+
+
+
+
+
+KSL.com
+
+
+
+
+
+Sirtune
+
+
+
+
+
+AmericanTowns.com
+
+
+
+
+
+Driverside
+
+
+
+
+
+Kudzu.com
+
+
+
+
+
+SpecialsAgent.com
+
+
+
+
+
+Answers.com
+
+
+
+
+
+eGood
+
+
+
+
+
+LawInfo.com
+
+
+
+
+
+spotlikes.com
+
+
+
+
+
+anywho.com
+
+
+
+
+
+eGumball
+
+
+
+
+
+Likeness.com
+
+
+
+
+
+Spotzot
+
+
+
+
+
+eServiceLog
+
+
+
+
+
+MapMyRun
+
+
+
+
+
+TechnoCom
+
+
+
+
+
+apartmentguide.com
+
+
+
+
+
+ezlocal.com
+
+
+
+
+
+EZToUse.com
+
+
+
+
+
+Teleroute
+
+
+
+
+
+AroundMe.com
+
+
+
+
+
+metropolist.com
+
+
+
+
+
+Therapists.com
+
+
+
+
+
+Atlanta NewHomes
+
+
+
+
+
+FindLaw.com
+
+
+
+
+
+Time Out New York
+
+
+
+
+
+Avantar
+
+
+
+
+
+FindTheBest.com
+
+
+
+
+
+mojopages.com
+
+
+
+
+
+B2B Yellowpages
+
+
+
+
+
+Fivestar Software
+
+
+
+
+
+MyCityWay.com
+
+
+
+
+
+TripAdvisor
+
+
+
+
+
+bckyrd.com
+
+
+
+
+
+GiftCards.com
+
+
+
+
+
+MyCoupons.com
+
+
+
+
+
+beachcalifornia.com
+
+
+
+
+
+GoLocal247.com
+
+
+
+
+
+mymove.com
+
+
+
+
+
+UpMeSocial.com
+
+
+
+
+
+Belo
+
+
+
+
+
+GoodInfo
+
+
+
+
+
+News-Gazette
+
+
+
+
+
+Nokia
+
+
+
+
+
+usdirectory.com
+
+
+
+
+
+Cars.com
+
+
+
+
+
+Nomao
+
+
+
+
+
+Centzy.com
+
+
+
+
+
+hibu
+
+
+
+
+
+Openlist.com
+
+
+
+
+
+ChaCha Search
+
+
+
+
+
+Homeplate.com
+
+
+
+
+
+OwnLocal.com
+
+
+
+
+
+VisiKard
+
+
+
+
+
+challama.com
+
+
+
+
+
+Homestore
+
+
+
+
+
+patch.com
+
+
+
+
+
+Voltari
+
+
+
+
+
+CityBot
+
+
+
+
+
+Pelopidas
+
+
+
+
+
+Vouchd
+
+
+
+
+
+ClassifiedAds
+
+
+
+
+
+Hostway
+
+
+
+
+
+PlaceIQ
+
+
+
+
+
+WalkScore.com
+
+
+
+
+
+CloudMade
+
+
+
+
+
+Hoodoyou
+
+
+
+
+
+PlanetDiscover.com
+
+
+
+
+
+WeddingWire.com
+
+
+
+
+
+PowerProfiles
+
+
+
+
+
+Where Inc.
+
+
+
+
+
+Contractors.com
+
+
+
+
+
+iGoLocal.com
+
+
+
+
+
+Radiate Media
+
+
+
+
+
+Wikiocity
+
+
+
+
+
+CouponMap
+
+
+
+
+
+Indeed.com
+
+
+
+
+
+Wimgo.com
+
+
+
+
+
+CrowdSpot
+
+
+
+
+
+Innova Electronics
+
+
+
+
+
+Intellistrand
+
+
+
+
+
+realtor.com
+
+
+
+
+
+DataSphere
+
+
+
+
+
+InTheMO.com
+
+
+
+
+
+Reply.com
+
+
+
+
+
+Yellowbot.com
+
+
+
+
+
+JiWire
+
+
+
+
+
+Rocket Fuel
+
+
+
+
+
+YellowPageCity.com
+
+
+
+
+
+DMV.org
+
+
+
+
+
+Justclicklocal.com
+
+
+
+
+
+Dirxion
+
+
+
+
+
+Keen.com
+
+
+
+
+
+Zidster.com
+
+
+
+
+
+
+
+
+
+
+
+
+Photos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Credit Report
+Receive a one-time comprehensive credit report on this company.
+get full credit report
+
+
+Facebook
+
+
+
+
+
+
+
+
+Twitter
+
+
+
+
+
+
+
+
+Yelp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Call 1.800.280.0780 to speak with a D&B Advisor Today!
+
+
+
+
+
+
+
+Customer Resources
+Products
+Education Center
+Business Articles & Insights
+Glossary
+Contact Us
+Customer Support
+Communication Preferences
+Search for D&B D-U-N-S
+
+
+
+
+Our Company
+About Us
+Company History
+Business Credit History
+Careers
+Press Releases
+News
+Success Stories
+Hoovers
+
+
+
+
+Our Network
+Partners
+Affiliates
+Blog
+Access to Capital
+Entrepreneurial Initiative
+D&B International
+SupplierEdge
+
+
+
+
+Site Links
+Business Directory
+Site Map
+PIPEDA
+Privacy Policy
+Website Terms of Service
+Product License Agreement
+
+
+
+
+
+
+
+© Dun & Bradstreet, Inc. 2017. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	Testimony of Under Secretary for Domestic Finance Peter R. Fisher Before Senate Commerce Subcommittee on Consumer Affairs and Product Safety 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+Skip to footer site map
+
+
+
+
+
+
+This page location is:
+
+
+HomePress CenterPress ReleasesPagesjs166
+
+
+
+
+
+Sign In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us | Press Center | Blog | Accessibility |Google Privacy |Español |LanguagesTwitterFacebookFlickrYou Tube
+
+Enter search text here
+
+
+
+
+
+
+
+
+
+Advanced Search
+
+
+
+
+
+
+
+Treasury For
+
+
+The PublicGeneral PublicStudents and TeachersEn EspañolBusinessesAll BusinessesSmall BusinessesInternational BusinessesFinancial InstitutionsAll Financial InstitutionsGovernmentFederal GovernmentState/Local/Tribal CouncilsInternational GovernmentsGeneral PublicI want to... view auctions. find a form. get tax information at IRS.gov. see interest rate data. switch to electronic benefits. find currency and coin information. report a suspicious email or suspected fraud view budget, performance, and financial reports. have a lost or expired check reissuedCommon Questions How do I buy and manage Savings Bonds and Securities? Where is my tax refund? Direct Express® card - How do I enroll? Is my state part of the Hardest Hit Fund housing program and where can I find more info? What countries have sanctions? Where is the General Explanations of the Administration’s Revenue Proposals (Green Book) How can I find out if the government has unclaimed money or property belonging to me? Health Savings Accounts - Where can I find more info?Students and TeachersI want to... find lesson plans for my curriculum. find general information about Treasury. get answers to FAQs about Treasury. learn about Treasury for a school assignment. research a specific topic. learn about Savings Bonds and Treasury Securities.Common Questions How does the Treasury Department organize it's offices and bureaus? What initiatives is the Treasury Department currently working on? When was the Treasury Department established and how has it grown?En EspañolI want to... obtenga ayuda hipotecaria. visite el IRS en Espanol. obtener Estado de Reembolso IRS VideosCommon Questions Qué debo hacer para protegerme contra el robo de indentidad? Que es Directo a Su Cuenta?All BusinessesI want to... file Form 941, Employer's Quarterly Federal Tax Return. view corporate tax laws. find out about Treasury Department's Recovery Act programs. apply for an Employer Identification Number (EIN). see interest rates statistics. view government seized property.Common Questions How can I find out what contract opportunities will be coming up in the future? How can I engage the Treasury in a contract? How can my company apply for a Recovery Act grant? What Bureaus are part of the Department of Treasury? What countries are sanctioned by the U.S., and what are those sanctions? How can my company apply for grants, loans, or financial assistance?Small BusinessesI want to... Form 941, Employer's Quarterly Federal Tax Return get in touch with a contact for small businesses. apply for 1603 Program - Payments for Specified Energy Property in Lieu of Tax Credits find a lender participating in the Small Business Lending Fund.Common Questions What is the Small Business Lending Fund and how can it help me? What programs exist to assist small businesses? learn about the State Small Business Credit Initiative (SSBCI)? What materials are available to help my employees recognize counterfeit bills?International BusinessesI want to... get information related to working with or traveling to sanctioned countries. view the list of Specially Designated Nationals. apply for an Employer identification number (EIN)Common Questions What are the guidelines for companies to do business in sanctioned countries?All Financial InstitutionsI want to... view or search SDN list (Specially Designated Nationals) get Supplemental Reporting forms and instructions for Small Business Lending Fund participants learn more about Interest rates statistics learn more about Quarterly refunding information.Common Questions Where is monthly Treasury International Capital (TIC) Data? How does Wall Street Reform affect my company? What countries are sanctioned by the U.S., and what are those sanctions? Where can I get information about the Troubled Asset Relief Program?Federal GovernmentI want to... See the General Explanations of the Administration’s Revenue Proposals (Green Book) view the Financial Stability Oversight Council's annual report view the Treasury Department's recent congressional testimony view Treasury's performance and budget documentsCommon Questions How can I learn more about the services that the Bureau of Fiscal Service provides? How can I learn more about the HR Connect Program? Who should I get in touch with about legislative affairs?State/Local/Tribal CouncilsI want to... apply for a Recovery Act Build America Bonds grant. get more information about the Small Business Lending Fund. view the Treasury Department's recent congressional testimonyCommon Questions Where can I learn more about Tribal Consultation & Coordination policy? Who should I get in touch with about legislative affairs?International GovernmentsI want to... find out more about Treasury's engagement in the International Monetary Fund. get information on Treasury's participation in the G7& G20. understand how the US and China are working together on economic issues. view the list of Specially Designated Nationals.Common Questions How can I find what positions Treasury takes on Multilateral Development Banks' activities? How does Treasury sanction people or organizations? What countries are sanctioned by the U.S., and what are those sanctions?
+
+
+
+
+
+Home
+
+
+
+Treasury For...
+
+
+
+About
+
+
+
+Resource Center
+
+
+
+Empty
+
+
+
+Services
+
+
+
+Initiatives
+
+
+
+Careers
+
+
+
+Connect with Us
+
+
+
+
+
+
+
+
+Role of Treasury
+
+
+
+
+
+The Secretary
+
+
+
+
+
+Orders and Directives
+
+
+
+
+
+Organizational Structure
+
+
+
+
+
+Budget, Financial Reporting, Planning and Performance
+
+
+
+
+
+Education
+
+
+
+
+
+History
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consumer Policy
+
+
+
+
+
+Economic Policy
+
+
+
+
+
+Financial Markets, Financial Institutions, and Fiscal Service
+
+
+
+
+
+Financial Sanctions
+
+
+
+
+
+International
+
+
+
+
+
+Small Business Programs
+
+
+
+
+
+Tax Policy
+
+
+
+
+
+Terrorism and Illicit Finance
+
+
+
+
+
+Data and Charts Center
+
+
+
+
+
+FAQs
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auctions
+
+
+
+
+
+Bonds and Securities
+
+
+
+
+
+Forms
+
+
+
+
+
+Coins and Currency
+
+
+
+
+
+Foreign Transaction Licensing and Reporting
+
+
+
+
+
+Government Shared Services
+
+
+
+
+
+Grants, Loans, and Financial Assistance
+
+
+
+
+
+Kline-Miller Multiemployer Pension Reform Act 
+
+
+
+
+
+Report Fraud, Waste and Abuse 
+
+
+
+
+
+Restore Act
+
+
+
+
+
+Taxes
+
+
+
+
+
+Treasury Payments
+
+
+
+
+
+
+
+
+
+
+
+
+
+Core Principles Reports
+
+
+
+
+
+Debt Limit
+
+
+
+
+
+Financial Stability
+
+
+
+
+
+Housing Finance Reform
+
+
+
+
+
+Making Home Affordable
+
+
+
+
+
+Recovery Act
+
+
+
+
+
+U.S.-China Comprehensive Economic Dialogue 
+
+
+
+
+
+Financial Stability Oversight Council
+
+
+
+
+
+Federal Insurance Office
+
+
+
+
+
+myRA - My Retirement Account
+
+
+
+
+
+Joint Declaration
+
+
+
+
+
+Financial Inclusion
+
+
+
+
+
+
+
+
+
+
+
+
+
+Careers at Headquarters
+
+
+
+
+
+Careers at our Bureaus
+
+
+
+
+
+Imagine Yourself Here
+
+
+
+
+
+Working For Treasury
+
+
+
+
+
+Benefits
+
+
+
+
+
+Career Growth
+
+
+
+
+
+Diversity
+
+
+
+
+
+Veterans
+
+
+
+
+
+Pathways Programs
+
+
+
+
+
+How to Apply
+
+
+
+
+
+Search Jobs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Press ReleasesCurrently selectedNewsMedia Schedule and AdvisoriesVideo, Audio, and WebcastsPress Contacts
+
+
+
+
+
+
+
+
+
+Press Center
+
+
+Home
+			» Press Center
+			» Press Releases
+			» Testimony of Under Secretary for Domestic Finance Peter R. Fisher Before Senate Commerce Subcommittee on Consumer Affairs and Product Safety 
+
+
+
+
+		 Testimony of Under Secretary for Domestic Finance Peter R. Fisher Before Senate Commerce Subcommittee on Consumer Affairs and Product Safety 
+		
+
+	
+		
+		
+		4/8/2003
+		Page ContentFROM THE OFFICE OF PUBLIC AFFAIRS
+JS-166
+Hearing: Promoting Corporate Responsibility Through the Elimination of Dividend Tax
+Chairman Fitzgerald, Ranking Member Wyden, and distinguished members of the Subcommittee, I am honored to testify before you in support of the President’s proposal to eliminate the double taxation of dividends.
+This proposal would strengthen our economy and create jobs by improving corporate governance and re-targeting investment to its most productive ventures.  Corporate governance would improve because the proposal would better align executives’ interests with shareholders’ and encourage companies to disclose more clearly their cash earnings and taxes paid.  Investment efficiency would rise because the proposal would reduce tax distortions to fundamental corporate decisions such as whether to repay shareholders or how much debt to raise.  
+The result would be more investment, higher productivity, more new jobs and faster economic growth.  At a time when too many people who want jobs can’t find them, and when economic growth around the world is slower than we should accept, the President’s proposal would be a welcome shot in the arm.
+In the past year, under Chairman Oxley’s and Senator Sarbanes’ leadership, Congress took a major step toward improving corporate governance in America.  Investors have matched that with their own call for improved governance.  Corporate executives, directors, auditors, and lawyers are already hearing and heeding the call for greater accountability.  Better-run corporations make for more efficient capital markets and a healthier economy.
+But there is more to be done in encouraging the best conduct from corporate executives.  Think of the headlines of the past couple years.  Jobs destroyed by bankrupt firms that took on too much debt. 
+Executives that “managed” earnings, inflating their companies’ stock prices and pumping up the value of their own stock options.  “Corporate inversions” where companies moved to tax havens abroad.
+There are many forces responsible for these problems, but our tax code shares some of the blame.  By taxing dividends twice, our tax code encourages companies to retain earnings instead of paying them to shareholders; to raise excessive levels of debt; to repurchase shares, often on a one-off basis, instead of issuing dividend checks; to dedicate some of America’s leading minds to tax minimization instead of job creation.  There’s nothing wrong with debt or retained earnings or share repurchases.  But there’s no reason our tax code should favor them, either.
+Eliminating the double taxation of dividends would reduce these biases against investing and creating jobs.  A shareholder would no longer pay a second layer of taxes on dividends if the corporation had already paid tax on that income.  If the company retained that income and invested it again, the shareholder would get an equivalent credit.  
+ This is a ripe moment to improve corporate governance by removing the tax bias toward debt and retained earnings.  CEOs and capital markets are now acutely sensitive to the risks of managed earnings.  Yet today, because of double taxation, only half of non-financial firms pay dividends.  Without periodic dividends – unmistakable facts about cash flow – investors are basically left with earnings opinions.  As Secretary Snow says, you can fudge earnings, but you can’t fudge cash.  The President’s proposal would clear the barriers to companies that sought to mirror their earnings reports with dividend checks.
+The President’s proposal is bad news, too, for the attractiveness of corporate tax shelters, corporate inversions, and other tax minimization devices.  The rationale for creating these devices would lessen, because an investor could only claim an exclusion on a dollar of dividends if the company had paid full tax on that dollar.
+The proposal’s second benefit would be boosting investment efficiency and thus job creation.  Let’s be clear where jobs come from.  New jobs come from investment – the willingness of investors and entrepreneurs to put capital at risk in a business venture.  The President’s proposal is focused precisely on that point: at sharpening the incentives for investors and entrepreneurs to invest in the most productive ventures.  And higher productivity means higher wages and a stronger economy for everyone.
+Taxing dividends twice means that we tax investment more heavily than any other major industrial nation.  If investment is the blood of new jobs and growth, this is bad policy.
+The double taxation of dividends also distorts companies’ decision to retain funds versus returning capital to shareholders.  Even if shareholders have more promising investment opportunities elsewhere, the tax code locks those funds up inside the company.  That’s not good for shareholders, and it’s certainly not good for the economy.
+Each year American firms invest over $1 trillion in fresh capital and generate $700-800 billion in corporate profits.  Think of the gains in capital utilization and job creation for everyone if we accelerate and re-target this entire investment process.  The Council on Economic Advisors estimates that through 2004 the dividend tax cut alone would generate more than 400,000 new jobs, nearly a third of the total from the President’s Jobs and Growth Package.  The Business Roundtable says it’s even higher, closer to half.   
+Taxing dividends once and only once would convert directly into higher share prices.  Private sector economists estimate that the President’s proposal could boost stock prices by 5 to 15 percent, delivering immediate wealth to a confidence-short market.
+Last, some ask why the President has not proposed eliminating the corporate income tax instead.  The main reason is that doing so would violate the President’s principle that the government tax dividends once and only once.  If Congress eliminated corporate-level taxation, many billions in profits, headed to tax-free entities or abroad, would escape any taxation at all.  Much more revenue would be foregone.  And the way would be kept open for the same kind of tax minimization devices that today’s tax code fosters and which the President’s proposal would cut back.  
+On behalf of the Administration, I urge you to take this opportunity.  Thank you.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The current browser does not support Web pages that contain the IFRAME element. To use this Web Part, you must use a browser that supports this element, such as Internet Explorer 7.0 or later.
+
+
+
+
+
+
+
+
+
+
+Treasury Facts
+
+
+The Treasury is the oldest departmental building in Washington and at the time of its completion, it was one of the largest office buildings in the world.
+
+
+
+
+
+
+
+
+
+
+
+Featured Video
+
+
+
+
+
+
+
+
+
+Secretary Jack Lew's Currency Announcement at the National Archives
+
+
+Treasury Secretary Jacob J. Lew delivered remarks on currency redesign at the National Archives Thursday, June 18, 2015. Secretary Lew's remarks expanded on his decision to redesign the $10 note.
+
+
+
+Social media privacy 
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+Untitled 1
+
+
+
+
+
+
+
+
+
+
+
+
+Initiatives
+        
+Financial 
+            Stability
+Housing 
+            Finance Reform
+Making Home 
+            Affordable
+Recovery
+U.S. China 
+            Strategic and Economic Dialogue
+Wall 
+            Street Reform 
+
+
+
+
+Languages
+العربية 
+S中文
+Español
+한국어
+Tagalog
+TiếngViệt 
+
+
+
+
+
+
+Bureaus
+        
+The Alcohol and Tobacco Tax and 
+            Trade Bureau
+Bureau of Engraving and 
+            Printing
+Bureau of the Fiscal Service
+Community Development 
+            Financial Institutions Fund
+Financial Crimes Enforcement 
+            Network (FinCEN)
+Internal Revenue Service
+Office of the Comptroller of 
+            the Currency
+United States Mint 
+
+
+
+
+
+
+Inspector General 
+        Sites
+        
+Office 
+            of Inspector General (OIG)
+Treasury Inspector 
+            General for Tax Administration (TIGTA)
+Special Inspector General, 
+            Troubled Asset Relief Program (SIGTARP)
+Report, 
+            Fraud Waste & Abuse 
+
+
+
+
+Additional Resources
+        
+Privacy Act 
+Small Business Contacts
+Budget, Financial Reporting, Planning and Performance
+TreasuryDirect.gov 
+            Securities/Bonds
+Freedom of Information Act (FOIA)
+No FEAR Act 
+            Data 
+Whistleblower Protection 
+
+
+
+
+
+
+U.S. Government Shared Services
+        
+HR 
+            Connect Program Office
+Administrative 
+            Resource Center (ARC)- Bureau of the Fiscal Service
+Treasury 
+            Direct Services for Governments 
+
+
+
+
+Other Government Sites
+        
+USA.gov
+USAJOBS.gov
+OPM.gov
+MyMoney.gov
+Data.gov
+Forms.gov
+Regulations.gov
+PaymentAccuracy.gov
+Business.USA.gov
+my Social Security
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Required Plug-ins
+
+Adobe® Flash Player
+Adobe® Reader®
+MS Excel Viewer
+MS PowerPoint Viewer
+MS Word Viewer
+QuickTime Player
+Windows Media Player
+
+
+
+
+Privacy Policy |
+Google Privacy |
+Site Map |
+Site Policies and Notices |
+FAQs |
+Feedback |
+Careers |
+Contact Us
+
+
+Untitled 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+system text
+
+system text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	Press Releases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+Skip to footer site map
+
+
+
+
+
+
+This page location is:
+
+
+HomePress CenterPress ReleasesPagesdefault
+
+
+
+
+
+Sign In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us | Press Center | Blog | Accessibility |Google Privacy |Español |LanguagesTwitterFacebookFlickrYou Tube
+
+Enter search text here
+
+
+
+
+
+
+
+
+
+Advanced Search
+
+
+
+
+
+
+
+Treasury For
+
+
+The PublicGeneral PublicStudents and TeachersEn EspañolBusinessesAll BusinessesSmall BusinessesInternational BusinessesFinancial InstitutionsAll Financial InstitutionsGovernmentFederal GovernmentState/Local/Tribal CouncilsInternational GovernmentsGeneral PublicI want to... view auctions. find a form. get tax information at IRS.gov. see interest rate data. switch to electronic benefits. find currency and coin information. report a suspicious email or suspected fraud view budget, performance, and financial reports. have a lost or expired check reissuedCommon Questions How do I buy and manage Savings Bonds and Securities? Where is my tax refund? Direct Express® card - How do I enroll? Is my state part of the Hardest Hit Fund housing program and where can I find more info? What countries have sanctions? Where is the General Explanations of the Administration’s Revenue Proposals (Green Book) How can I find out if the government has unclaimed money or property belonging to me? Health Savings Accounts - Where can I find more info?Students and TeachersI want to... find lesson plans for my curriculum. find general information about Treasury. get answers to FAQs about Treasury. learn about Treasury for a school assignment. research a specific topic. learn about Savings Bonds and Treasury Securities.Common Questions How does the Treasury Department organize it's offices and bureaus? What initiatives is the Treasury Department currently working on? When was the Treasury Department established and how has it grown?En EspañolI want to... obtenga ayuda hipotecaria. visite el IRS en Espanol. obtener Estado de Reembolso IRS VideosCommon Questions Qué debo hacer para protegerme contra el robo de indentidad? Que es Directo a Su Cuenta?All BusinessesI want to... file Form 941, Employer's Quarterly Federal Tax Return. view corporate tax laws. find out about Treasury Department's Recovery Act programs. apply for an Employer Identification Number (EIN). see interest rates statistics. view government seized property.Common Questions How can I find out what contract opportunities will be coming up in the future? How can I engage the Treasury in a contract? How can my company apply for a Recovery Act grant? What Bureaus are part of the Department of Treasury? What countries are sanctioned by the U.S., and what are those sanctions? How can my company apply for grants, loans, or financial assistance?Small BusinessesI want to... Form 941, Employer's Quarterly Federal Tax Return get in touch with a contact for small businesses. apply for 1603 Program - Payments for Specified Energy Property in Lieu of Tax Credits find a lender participating in the Small Business Lending Fund.Common Questions What is the Small Business Lending Fund and how can it help me? What programs exist to assist small businesses? learn about the State Small Business Credit Initiative (SSBCI)? What materials are available to help my employees recognize counterfeit bills?International BusinessesI want to... get information related to working with or traveling to sanctioned countries. view the list of Specially Designated Nationals. apply for an Employer identification number (EIN)Common Questions What are the guidelines for companies to do business in sanctioned countries?All Financial InstitutionsI want to... view or search SDN list (Specially Designated Nationals) get Supplemental Reporting forms and instructions for Small Business Lending Fund participants learn more about Interest rates statistics learn more about Quarterly refunding information.Common Questions Where is monthly Treasury International Capital (TIC) Data? How does Wall Street Reform affect my company? What countries are sanctioned by the U.S., and what are those sanctions? Where can I get information about the Troubled Asset Relief Program?Federal GovernmentI want to... See the General Explanations of the Administration’s Revenue Proposals (Green Book) view the Financial Stability Oversight Council's annual report view the Treasury Department's recent congressional testimony view Treasury's performance and budget documentsCommon Questions How can I learn more about the services that the Bureau of Fiscal Service provides? How can I learn more about the HR Connect Program? Who should I get in touch with about legislative affairs?State/Local/Tribal CouncilsI want to... apply for a Recovery Act Build America Bonds grant. get more information about the Small Business Lending Fund. view the Treasury Department's recent congressional testimonyCommon Questions Where can I learn more about Tribal Consultation & Coordination policy? Who should I get in touch with about legislative affairs?International GovernmentsI want to... find out more about Treasury's engagement in the International Monetary Fund. get information on Treasury's participation in the G7& G20. understand how the US and China are working together on economic issues. view the list of Specially Designated Nationals.Common Questions How can I find what positions Treasury takes on Multilateral Development Banks' activities? How does Treasury sanction people or organizations? What countries are sanctioned by the U.S., and what are those sanctions?
+
+
+
+
+
+Home
+
+
+
+Treasury For...
+
+
+
+About
+
+
+
+Resource Center
+
+
+
+Empty
+
+
+
+Services
+
+
+
+Initiatives
+
+
+
+Careers
+
+
+
+Connect with Us
+
+
+
+
+
+
+
+
+Role of Treasury
+
+
+
+
+
+The Secretary
+
+
+
+
+
+Orders and Directives
+
+
+
+
+
+Organizational Structure
+
+
+
+
+
+Budget, Financial Reporting, Planning and Performance
+
+
+
+
+
+Education
+
+
+
+
+
+History
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consumer Policy
+
+
+
+
+
+Economic Policy
+
+
+
+
+
+Financial Markets, Financial Institutions, and Fiscal Service
+
+
+
+
+
+Financial Sanctions
+
+
+
+
+
+International
+
+
+
+
+
+Small Business Programs
+
+
+
+
+
+Tax Policy
+
+
+
+
+
+Terrorism and Illicit Finance
+
+
+
+
+
+Data and Charts Center
+
+
+
+
+
+FAQs
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auctions
+
+
+
+
+
+Bonds and Securities
+
+
+
+
+
+Forms
+
+
+
+
+
+Coins and Currency
+
+
+
+
+
+Foreign Transaction Licensing and Reporting
+
+
+
+
+
+Government Shared Services
+
+
+
+
+
+Grants, Loans, and Financial Assistance
+
+
+
+
+
+Kline-Miller Multiemployer Pension Reform Act 
+
+
+
+
+
+Report Fraud, Waste and Abuse 
+
+
+
+
+
+Restore Act
+
+
+
+
+
+Taxes
+
+
+
+
+
+Treasury Payments
+
+
+
+
+
+
+
+
+
+
+
+
+
+Core Principles Reports
+
+
+
+
+
+Debt Limit
+
+
+
+
+
+Financial Stability
+
+
+
+
+
+Housing Finance Reform
+
+
+
+
+
+Making Home Affordable
+
+
+
+
+
+Recovery Act
+
+
+
+
+
+U.S.-China Comprehensive Economic Dialogue 
+
+
+
+
+
+Financial Stability Oversight Council
+
+
+
+
+
+Federal Insurance Office
+
+
+
+
+
+myRA - My Retirement Account
+
+
+
+
+
+Joint Declaration
+
+
+
+
+
+Financial Inclusion
+
+
+
+
+
+
+
+
+
+
+
+
+
+Careers at Headquarters
+
+
+
+
+
+Careers at our Bureaus
+
+
+
+
+
+Imagine Yourself Here
+
+
+
+
+
+Working For Treasury
+
+
+
+
+
+Benefits
+
+
+
+
+
+Career Growth
+
+
+
+
+
+Diversity
+
+
+
+
+
+Veterans
+
+
+
+
+
+Pathways Programs
+
+
+
+
+
+How to Apply
+
+
+
+
+
+Search Jobs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Press ReleasesCurrently selectedNewsMedia Schedule and AdvisoriesVideo, Audio, and WebcastsPress Contacts
+
+
+
+
+
+
+
+
+
+Press Center
+
+
+Home
+			» Press Center
+			» Press Releases
+
+
+
+	
+	Press Releases
+
+Get updates to this content.
+
+		 
+
+
+Speeches
+
+
+Statements
+
+
+
+
+Op-eds
+
+
+Testimony
+
+
+
+
+
+				Start Date: 
+			
+
+
+				End Date: 
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page Content
+
+
+
+
+
+
+
+
+Date
+Category
+Press Release
+
+
+07/28/2017
+
+
+Treasury Sanctions Key Ballistic Missile Entities in Iran
+
+
+
+07/28/2017
+
+
+Treasury Announces Steps to Wind Down myRA Program 
+
+
+
+07/27/2017
+
+
+Joint Statement on Tax Reform
+
+
+
+07/27/2017
+
+
+Statement of Steven T. Mnuchin Secretary, United States Department of the Treasury before the Committee on Financial Services, United States House of Representatives
+
+
+
+07/26/2017
+
+
+Treasury Sanctions 13 Current and Former Senior Officials of the Government of Venezuela
+
+
+
+07/26/2017
+
+
+Statement of Secretary Steven T. Mnuchin United States Department of the Treasury Before the Committee on Appropriations Subcommittee on Financial Services and General Government United States Senate
+
+
+
+07/25/2017
+
+
+Readout from a Treasury Spokesperson on Secretary Mnuchin’s Meeting with Israeli Finance Minister Moshe Kahlon
+
+
+
+07/21/2017
+
+
+Treasury Sanctions ISIS Fighter
+
+
+
+07/19/2017
+
+
+Secretary Mnuchin’s opening remarks for the U.S. – China Comprehensive Economic Dialogue (as prepared)
+
+
+
+07/19/2017
+
+
+Statement from Secretary Mnuchin and Secretary Ross Following the U.S. – China Comprehensive Economic Dialogue
+
+
+
+07/18/2017
+
+
+Treasury International Capital Data For May
+
+
+
+07/18/2017
+
+
+Treasury Targets Persons Supporting Iranian Military and Iran’s Islamic Revolutionary Guard Corps 
+
+
+
+07/14/2017
+
+
+Treasury, USTR Notice of Intent to Sign 
+
+
+
+07/13/2017
+
+
+Prepared Remarks of Secretary Steven Mnuchin Spring 2017 Meeting of the Social Security and Medicare Board of Trustees
+
+
+
+07/13/2017
+
+
+Fact Sheet: Social Security And Medicare Trustees Report
+
+
+
+07/11/2017
+
+
+Readout of Secretary Mnuchin’s Meeting with Representatives of the National United Committee to Protect Pensions 
+
+
+
+07/11/2017
+
+
+Readout from a Treasury Spokesperson on Secretary Mnuchin’s Meeting with Tunisian Prime Minister Youssef Chahed
+
+
+
+06/29/2017
+
+
+Remarks by Treasury Secretary Steven T. Mnuchin on Actions Against the Government of North Korea
+
+
+
+06/29/2017
+
+
+Treasury Acts to Increase Economic Pressure on North Korea and Protect the U.S. Financial System
+
+
+
+06/22/2017
+
+
+Readout from a Treasury Spokesperson on Secretary Mnuchin’s Call with South Korean Deputy Prime Minister and Minister of Strategy and Finance Kim Dong-yeon
+
+
+
+1
+
+2
+
+
+3
+
+
+4
+
+
+5
+
+
+»
+
+
+»»
+
+
+
+
+
+
+​​​​​PDF Link 
+
+Page Image
+
+		Last Updated: 
+		12/5/2016 5:46 PM
+
+
+
+
+
+
+
+
+
+
+
+
+
+The current browser does not support Web pages that contain the IFRAME element. To use this Web Part, you must use a browser that supports this element, such as Internet Explorer 7.0 or later.
+
+
+
+
+
+
+
+
+
+
+Treasury Facts
+
+
+The Treasury is the oldest departmental building in Washington and at the time of its completion, it was one of the largest office buildings in the world.
+
+
+
+
+
+
+
+
+
+
+
+Featured Video
+
+
+
+
+
+
+
+
+
+Secretary Jack Lew's Currency Announcement at the National Archives
+
+
+Treasury Secretary Jacob J. Lew delivered remarks on currency redesign at the National Archives Thursday, June 18, 2015. Secretary Lew's remarks expanded on his decision to redesign the $10 note.
+
+
+
+Social media privacy 
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+Untitled 1
+
+
+
+
+
+
+
+
+
+
+
+
+Initiatives
+        
+Financial 
+            Stability
+Housing 
+            Finance Reform
+Making Home 
+            Affordable
+Recovery
+U.S. China 
+            Strategic and Economic Dialogue
+Wall 
+            Street Reform 
+
+
+
+
+Languages
+العربية 
+S中文
+Español
+한국어
+Tagalog
+TiếngViệt 
+
+
+
+
+
+
+Bureaus
+        
+The Alcohol and Tobacco Tax and 
+            Trade Bureau
+Bureau of Engraving and 
+            Printing
+Bureau of the Fiscal Service
+Community Development 
+            Financial Institutions Fund
+Financial Crimes Enforcement 
+            Network (FinCEN)
+Internal Revenue Service
+Office of the Comptroller of 
+            the Currency
+United States Mint 
+
+
+
+
+
+
+Inspector General 
+        Sites
+        
+Office 
+            of Inspector General (OIG)
+Treasury Inspector 
+            General for Tax Administration (TIGTA)
+Special Inspector General, 
+            Troubled Asset Relief Program (SIGTARP)
+Report, 
+            Fraud Waste & Abuse 
+
+
+
+
+Additional Resources
+        
+Privacy Act 
+Small Business Contacts
+Budget, Financial Reporting, Planning and Performance
+TreasuryDirect.gov 
+            Securities/Bonds
+Freedom of Information Act (FOIA)
+No FEAR Act 
+            Data 
+Whistleblower Protection 
+
+
+
+
+
+
+U.S. Government Shared Services
+        
+HR 
+            Connect Program Office
+Administrative 
+            Resource Center (ARC)- Bureau of the Fiscal Service
+Treasury 
+            Direct Services for Governments 
+
+
+
+
+Other Government Sites
+        
+USA.gov
+USAJOBS.gov
+OPM.gov
+MyMoney.gov
+Data.gov
+Forms.gov
+Regulations.gov
+PaymentAccuracy.gov
+Business.USA.gov
+my Social Security
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Required Plug-ins
+
+Adobe® Flash Player
+Adobe® Reader®
+MS Excel Viewer
+MS PowerPoint Viewer
+MS Word Viewer
+QuickTime Player
+Windows Media Player
+
+
+
+
+Privacy Policy |
+Google Privacy |
+Site Map |
+Site Policies and Notices |
+FAQs |
+Feedback |
+Careers |
+Contact Us
+
+
+Untitled 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+system text
+
+system text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	Press Releases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+Skip to footer site map
+
+
+
+
+
+
+This page location is:
+
+
+HomePress CenterPress ReleasesPagesdefault
+
+
+
+
+
+Sign In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us | Press Center | Blog | Accessibility |Google Privacy |Español |LanguagesTwitterFacebookFlickrYou Tube
+
+Enter search text here
+
+
+
+
+
+
+
+
+
+Advanced Search
+
+
+
+
+
+
+
+Treasury For
+
+
+The PublicGeneral PublicStudents and TeachersEn EspañolBusinessesAll BusinessesSmall BusinessesInternational BusinessesFinancial InstitutionsAll Financial InstitutionsGovernmentFederal GovernmentState/Local/Tribal CouncilsInternational GovernmentsGeneral PublicI want to... view auctions. find a form. get tax information at IRS.gov. see interest rate data. switch to electronic benefits. find currency and coin information. report a suspicious email or suspected fraud view budget, performance, and financial reports. have a lost or expired check reissuedCommon Questions How do I buy and manage Savings Bonds and Securities? Where is my tax refund? Direct Express® card - How do I enroll? Is my state part of the Hardest Hit Fund housing program and where can I find more info? What countries have sanctions? Where is the General Explanations of the Administration’s Revenue Proposals (Green Book) How can I find out if the government has unclaimed money or property belonging to me? Health Savings Accounts - Where can I find more info?Students and TeachersI want to... find lesson plans for my curriculum. find general information about Treasury. get answers to FAQs about Treasury. learn about Treasury for a school assignment. research a specific topic. learn about Savings Bonds and Treasury Securities.Common Questions How does the Treasury Department organize it's offices and bureaus? What initiatives is the Treasury Department currently working on? When was the Treasury Department established and how has it grown?En EspañolI want to... obtenga ayuda hipotecaria. visite el IRS en Espanol. obtener Estado de Reembolso IRS VideosCommon Questions Qué debo hacer para protegerme contra el robo de indentidad? Que es Directo a Su Cuenta?All BusinessesI want to... file Form 941, Employer's Quarterly Federal Tax Return. view corporate tax laws. find out about Treasury Department's Recovery Act programs. apply for an Employer Identification Number (EIN). see interest rates statistics. view government seized property.Common Questions How can I find out what contract opportunities will be coming up in the future? How can I engage the Treasury in a contract? How can my company apply for a Recovery Act grant? What Bureaus are part of the Department of Treasury? What countries are sanctioned by the U.S., and what are those sanctions? How can my company apply for grants, loans, or financial assistance?Small BusinessesI want to... Form 941, Employer's Quarterly Federal Tax Return get in touch with a contact for small businesses. apply for 1603 Program - Payments for Specified Energy Property in Lieu of Tax Credits find a lender participating in the Small Business Lending Fund.Common Questions What is the Small Business Lending Fund and how can it help me? What programs exist to assist small businesses? learn about the State Small Business Credit Initiative (SSBCI)? What materials are available to help my employees recognize counterfeit bills?International BusinessesI want to... get information related to working with or traveling to sanctioned countries. view the list of Specially Designated Nationals. apply for an Employer identification number (EIN)Common Questions What are the guidelines for companies to do business in sanctioned countries?All Financial InstitutionsI want to... view or search SDN list (Specially Designated Nationals) get Supplemental Reporting forms and instructions for Small Business Lending Fund participants learn more about Interest rates statistics learn more about Quarterly refunding information.Common Questions Where is monthly Treasury International Capital (TIC) Data? How does Wall Street Reform affect my company? What countries are sanctioned by the U.S., and what are those sanctions? Where can I get information about the Troubled Asset Relief Program?Federal GovernmentI want to... See the General Explanations of the Administration’s Revenue Proposals (Green Book) view the Financial Stability Oversight Council's annual report view the Treasury Department's recent congressional testimony view Treasury's performance and budget documentsCommon Questions How can I learn more about the services that the Bureau of Fiscal Service provides? How can I learn more about the HR Connect Program? Who should I get in touch with about legislative affairs?State/Local/Tribal CouncilsI want to... apply for a Recovery Act Build America Bonds grant. get more information about the Small Business Lending Fund. view the Treasury Department's recent congressional testimonyCommon Questions Where can I learn more about Tribal Consultation & Coordination policy? Who should I get in touch with about legislative affairs?International GovernmentsI want to... find out more about Treasury's engagement in the International Monetary Fund. get information on Treasury's participation in the G7& G20. understand how the US and China are working together on economic issues. view the list of Specially Designated Nationals.Common Questions How can I find what positions Treasury takes on Multilateral Development Banks' activities? How does Treasury sanction people or organizations? What countries are sanctioned by the U.S., and what are those sanctions?
+
+
+
+
+
+Home
+
+
+
+Treasury For...
+
+
+
+About
+
+
+
+Resource Center
+
+
+
+Empty
+
+
+
+Services
+
+
+
+Initiatives
+
+
+
+Careers
+
+
+
+Connect with Us
+
+
+
+
+
+
+
+
+Role of Treasury
+
+
+
+
+
+The Secretary
+
+
+
+
+
+Orders and Directives
+
+
+
+
+
+Organizational Structure
+
+
+
+
+
+Budget, Financial Reporting, Planning and Performance
+
+
+
+
+
+Education
+
+
+
+
+
+History
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consumer Policy
+
+
+
+
+
+Economic Policy
+
+
+
+
+
+Financial Markets, Financial Institutions, and Fiscal Service
+
+
+
+
+
+Financial Sanctions
+
+
+
+
+
+International
+
+
+
+
+
+Small Business Programs
+
+
+
+
+
+Tax Policy
+
+
+
+
+
+Terrorism and Illicit Finance
+
+
+
+
+
+Data and Charts Center
+
+
+
+
+
+FAQs
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auctions
+
+
+
+
+
+Bonds and Securities
+
+
+
+
+
+Forms
+
+
+
+
+
+Coins and Currency
+
+
+
+
+
+Foreign Transaction Licensing and Reporting
+
+
+
+
+
+Government Shared Services
+
+
+
+
+
+Grants, Loans, and Financial Assistance
+
+
+
+
+
+Kline-Miller Multiemployer Pension Reform Act 
+
+
+
+
+
+Report Fraud, Waste and Abuse 
+
+
+
+
+
+Restore Act
+
+
+
+
+
+Taxes
+
+
+
+
+
+Treasury Payments
+
+
+
+
+
+
+
+
+
+
+
+
+
+Core Principles Reports
+
+
+
+
+
+Debt Limit
+
+
+
+
+
+Financial Stability
+
+
+
+
+
+Housing Finance Reform
+
+
+
+
+
+Making Home Affordable
+
+
+
+
+
+Recovery Act
+
+
+
+
+
+U.S.-China Comprehensive Economic Dialogue 
+
+
+
+
+
+Financial Stability Oversight Council
+
+
+
+
+
+Federal Insurance Office
+
+
+
+
+
+myRA - My Retirement Account
+
+
+
+
+
+Joint Declaration
+
+
+
+
+
+Financial Inclusion
+
+
+
+
+
+
+
+
+
+
+
+
+
+Careers at Headquarters
+
+
+
+
+
+Careers at our Bureaus
+
+
+
+
+
+Imagine Yourself Here
+
+
+
+
+
+Working For Treasury
+
+
+
+
+
+Benefits
+
+
+
+
+
+Career Growth
+
+
+
+
+
+Diversity
+
+
+
+
+
+Veterans
+
+
+
+
+
+Pathways Programs
+
+
+
+
+
+How to Apply
+
+
+
+
+
+Search Jobs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Press ReleasesCurrently selectedNewsMedia Schedule and AdvisoriesVideo, Audio, and WebcastsPress Contacts
+
+
+
+
+
+
+
+
+
+Press Center
+
+
+Home
+			» Press Center
+			» Press Releases
+
+
+
+	
+	Press Releases
+
+Get updates to this content.
+
+		 
+
+
+Speeches
+
+
+Statements
+
+
+
+
+Op-eds
+
+
+Testimony
+
+
+
+
+
+				Start Date: 
+			
+
+
+				End Date: 
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page Content
+
+
+
+
+
+
+
+
+Date
+Category
+Press Release
+
+
+07/28/2017
+
+
+Treasury Sanctions Key Ballistic Missile Entities in Iran
+
+
+
+07/28/2017
+
+
+Treasury Announces Steps to Wind Down myRA Program 
+
+
+
+07/27/2017
+
+
+Joint Statement on Tax Reform
+
+
+
+07/27/2017
+
+
+Statement of Steven T. Mnuchin Secretary, United States Department of the Treasury before the Committee on Financial Services, United States House of Representatives
+
+
+
+07/26/2017
+
+
+Treasury Sanctions 13 Current and Former Senior Officials of the Government of Venezuela
+
+
+
+07/26/2017
+
+
+Statement of Secretary Steven T. Mnuchin United States Department of the Treasury Before the Committee on Appropriations Subcommittee on Financial Services and General Government United States Senate
+
+
+
+07/25/2017
+
+
+Readout from a Treasury Spokesperson on Secretary Mnuchin’s Meeting with Israeli Finance Minister Moshe Kahlon
+
+
+
+07/21/2017
+
+
+Treasury Sanctions ISIS Fighter
+
+
+
+07/19/2017
+
+
+Secretary Mnuchin’s opening remarks for the U.S. – China Comprehensive Economic Dialogue (as prepared)
+
+
+
+07/19/2017
+
+
+Statement from Secretary Mnuchin and Secretary Ross Following the U.S. – China Comprehensive Economic Dialogue
+
+
+
+07/18/2017
+
+
+Treasury International Capital Data For May
+
+
+
+07/18/2017
+
+
+Treasury Targets Persons Supporting Iranian Military and Iran’s Islamic Revolutionary Guard Corps 
+
+
+
+07/14/2017
+
+
+Treasury, USTR Notice of Intent to Sign 
+
+
+
+07/13/2017
+
+
+Prepared Remarks of Secretary Steven Mnuchin Spring 2017 Meeting of the Social Security and Medicare Board of Trustees
+
+
+
+07/13/2017
+
+
+Fact Sheet: Social Security And Medicare Trustees Report
+
+
+
+07/11/2017
+
+
+Readout of Secretary Mnuchin’s Meeting with Representatives of the National United Committee to Protect Pensions 
+
+
+
+07/11/2017
+
+
+Readout from a Treasury Spokesperson on Secretary Mnuchin’s Meeting with Tunisian Prime Minister Youssef Chahed
+
+
+
+06/29/2017
+
+
+Remarks by Treasury Secretary Steven T. Mnuchin on Actions Against the Government of North Korea
+
+
+
+06/29/2017
+
+
+Treasury Acts to Increase Economic Pressure on North Korea and Protect the U.S. Financial System
+
+
+
+06/22/2017
+
+
+Readout from a Treasury Spokesperson on Secretary Mnuchin’s Call with South Korean Deputy Prime Minister and Minister of Strategy and Finance Kim Dong-yeon
+
+
+
+1
+
+2
+
+
+3
+
+
+4
+
+
+5
+
+
+»
+
+
+»»
+
+
+
+
+
+
+​​​​​PDF Link 
+
+Page Image
+
+		Last Updated: 
+		12/5/2016 5:46 PM
+
+
+
+
+
+
+
+
+
+
+
+
+
+The current browser does not support Web pages that contain the IFRAME element. To use this Web Part, you must use a browser that supports this element, such as Internet Explorer 7.0 or later.
+
+
+
+
+
+
+
+
+
+
+Treasury Facts
+
+
+The Treasury is the oldest departmental building in Washington and at the time of its completion, it was one of the largest office buildings in the world.
+
+
+
+
+
+
+
+
+
+
+
+Featured Video
+
+
+
+
+
+
+
+
+
+Secretary Jack Lew's Currency Announcement at the National Archives
+
+
+Treasury Secretary Jacob J. Lew delivered remarks on currency redesign at the National Archives Thursday, June 18, 2015. Secretary Lew's remarks expanded on his decision to redesign the $10 note.
+
+
+
+Social media privacy 
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+Untitled 1
+
+
+
+
+
+
+
+
+
+
+
+
+Initiatives
+        
+Financial 
+            Stability
+Housing 
+            Finance Reform
+Making Home 
+            Affordable
+Recovery
+U.S. China 
+            Strategic and Economic Dialogue
+Wall 
+            Street Reform 
+
+
+
+
+Languages
+العربية 
+S中文
+Español
+한국어
+Tagalog
+TiếngViệt 
+
+
+
+
+
+
+Bureaus
+        
+The Alcohol and Tobacco Tax and 
+            Trade Bureau
+Bureau of Engraving and 
+            Printing
+Bureau of the Fiscal Service
+Community Development 
+            Financial Institutions Fund
+Financial Crimes Enforcement 
+            Network (FinCEN)
+Internal Revenue Service
+Office of the Comptroller of 
+            the Currency
+United States Mint 
+
+
+
+
+
+
+Inspector General 
+        Sites
+        
+Office 
+            of Inspector General (OIG)
+Treasury Inspector 
+            General for Tax Administration (TIGTA)
+Special Inspector General, 
+            Troubled Asset Relief Program (SIGTARP)
+Report, 
+            Fraud Waste & Abuse 
+
+
+
+
+Additional Resources
+        
+Privacy Act 
+Small Business Contacts
+Budget, Financial Reporting, Planning and Performance
+TreasuryDirect.gov 
+            Securities/Bonds
+Freedom of Information Act (FOIA)
+No FEAR Act 
+            Data 
+Whistleblower Protection 
+
+
+
+
+
+
+U.S. Government Shared Services
+        
+HR 
+            Connect Program Office
+Administrative 
+            Resource Center (ARC)- Bureau of the Fiscal Service
+Treasury 
+            Direct Services for Governments 
+
+
+
+
+Other Government Sites
+        
+USA.gov
+USAJOBS.gov
+OPM.gov
+MyMoney.gov
+Data.gov
+Forms.gov
+Regulations.gov
+PaymentAccuracy.gov
+Business.USA.gov
+my Social Security
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Required Plug-ins
+
+Adobe® Flash Player
+Adobe® Reader®
+MS Excel Viewer
+MS PowerPoint Viewer
+MS Word Viewer
+QuickTime Player
+Windows Media Player
+
+
+
+
+Privacy Policy |
+Google Privacy |
+Site Map |
+Site Policies and Notices |
+FAQs |
+Feedback |
+Careers |
+Contact Us
+
+
+Untitled 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+system text
+
+system text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	Press Center
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+Skip to footer site map
+
+
+
+
+
+
+This page location is:
+
+
+HomePress CenterPagesdefault
+
+
+
+
+
+Sign In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us | Press Center | Blog | Accessibility |Google Privacy |Español |LanguagesTwitterFacebookFlickrYou Tube
+
+Enter search text here
+
+
+
+
+
+
+
+
+
+Advanced Search
+
+
+
+
+
+
+
+Treasury For
+
+
+The PublicGeneral PublicStudents and TeachersEn EspañolBusinessesAll BusinessesSmall BusinessesInternational BusinessesFinancial InstitutionsAll Financial InstitutionsGovernmentFederal GovernmentState/Local/Tribal CouncilsInternational GovernmentsGeneral PublicI want to... view auctions. find a form. get tax information at IRS.gov. see interest rate data. switch to electronic benefits. find currency and coin information. report a suspicious email or suspected fraud view budget, performance, and financial reports. have a lost or expired check reissuedCommon Questions How do I buy and manage Savings Bonds and Securities? Where is my tax refund? Direct Express® card - How do I enroll? Is my state part of the Hardest Hit Fund housing program and where can I find more info? What countries have sanctions? Where is the General Explanations of the Administration’s Revenue Proposals (Green Book) How can I find out if the government has unclaimed money or property belonging to me? Health Savings Accounts - Where can I find more info?Students and TeachersI want to... find lesson plans for my curriculum. find general information about Treasury. get answers to FAQs about Treasury. learn about Treasury for a school assignment. research a specific topic. learn about Savings Bonds and Treasury Securities.Common Questions How does the Treasury Department organize it's offices and bureaus? What initiatives is the Treasury Department currently working on? When was the Treasury Department established and how has it grown?En EspañolI want to... obtenga ayuda hipotecaria. visite el IRS en Espanol. obtener Estado de Reembolso IRS VideosCommon Questions Qué debo hacer para protegerme contra el robo de indentidad? Que es Directo a Su Cuenta?All BusinessesI want to... file Form 941, Employer's Quarterly Federal Tax Return. view corporate tax laws. find out about Treasury Department's Recovery Act programs. apply for an Employer Identification Number (EIN). see interest rates statistics. view government seized property.Common Questions How can I find out what contract opportunities will be coming up in the future? How can I engage the Treasury in a contract? How can my company apply for a Recovery Act grant? What Bureaus are part of the Department of Treasury? What countries are sanctioned by the U.S., and what are those sanctions? How can my company apply for grants, loans, or financial assistance?Small BusinessesI want to... Form 941, Employer's Quarterly Federal Tax Return get in touch with a contact for small businesses. apply for 1603 Program - Payments for Specified Energy Property in Lieu of Tax Credits find a lender participating in the Small Business Lending Fund.Common Questions What is the Small Business Lending Fund and how can it help me? What programs exist to assist small businesses? learn about the State Small Business Credit Initiative (SSBCI)? What materials are available to help my employees recognize counterfeit bills?International BusinessesI want to... get information related to working with or traveling to sanctioned countries. view the list of Specially Designated Nationals. apply for an Employer identification number (EIN)Common Questions What are the guidelines for companies to do business in sanctioned countries?All Financial InstitutionsI want to... view or search SDN list (Specially Designated Nationals) get Supplemental Reporting forms and instructions for Small Business Lending Fund participants learn more about Interest rates statistics learn more about Quarterly refunding information.Common Questions Where is monthly Treasury International Capital (TIC) Data? How does Wall Street Reform affect my company? What countries are sanctioned by the U.S., and what are those sanctions? Where can I get information about the Troubled Asset Relief Program?Federal GovernmentI want to... See the General Explanations of the Administration’s Revenue Proposals (Green Book) view the Financial Stability Oversight Council's annual report view the Treasury Department's recent congressional testimony view Treasury's performance and budget documentsCommon Questions How can I learn more about the services that the Bureau of Fiscal Service provides? How can I learn more about the HR Connect Program? Who should I get in touch with about legislative affairs?State/Local/Tribal CouncilsI want to... apply for a Recovery Act Build America Bonds grant. get more information about the Small Business Lending Fund. view the Treasury Department's recent congressional testimonyCommon Questions Where can I learn more about Tribal Consultation & Coordination policy? Who should I get in touch with about legislative affairs?International GovernmentsI want to... find out more about Treasury's engagement in the International Monetary Fund. get information on Treasury's participation in the G7& G20. understand how the US and China are working together on economic issues. view the list of Specially Designated Nationals.Common Questions How can I find what positions Treasury takes on Multilateral Development Banks' activities? How does Treasury sanction people or organizations? What countries are sanctioned by the U.S., and what are those sanctions?
+
+
+
+
+
+Home
+
+
+
+Treasury For...
+
+
+
+About
+
+
+
+Resource Center
+
+
+
+Empty
+
+
+
+Services
+
+
+
+Initiatives
+
+
+
+Careers
+
+
+
+Connect with Us
+
+
+
+
+
+
+
+
+Role of Treasury
+
+
+
+
+
+The Secretary
+
+
+
+
+
+Orders and Directives
+
+
+
+
+
+Organizational Structure
+
+
+
+
+
+Budget, Financial Reporting, Planning and Performance
+
+
+
+
+
+Education
+
+
+
+
+
+History
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consumer Policy
+
+
+
+
+
+Economic Policy
+
+
+
+
+
+Financial Markets, Financial Institutions, and Fiscal Service
+
+
+
+
+
+Financial Sanctions
+
+
+
+
+
+International
+
+
+
+
+
+Small Business Programs
+
+
+
+
+
+Tax Policy
+
+
+
+
+
+Terrorism and Illicit Finance
+
+
+
+
+
+Data and Charts Center
+
+
+
+
+
+FAQs
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auctions
+
+
+
+
+
+Bonds and Securities
+
+
+
+
+
+Forms
+
+
+
+
+
+Coins and Currency
+
+
+
+
+
+Foreign Transaction Licensing and Reporting
+
+
+
+
+
+Government Shared Services
+
+
+
+
+
+Grants, Loans, and Financial Assistance
+
+
+
+
+
+Kline-Miller Multiemployer Pension Reform Act 
+
+
+
+
+
+Report Fraud, Waste and Abuse 
+
+
+
+
+
+Restore Act
+
+
+
+
+
+Taxes
+
+
+
+
+
+Treasury Payments
+
+
+
+
+
+
+
+
+
+
+
+
+
+Core Principles Reports
+
+
+
+
+
+Debt Limit
+
+
+
+
+
+Financial Stability
+
+
+
+
+
+Housing Finance Reform
+
+
+
+
+
+Making Home Affordable
+
+
+
+
+
+Recovery Act
+
+
+
+
+
+U.S.-China Comprehensive Economic Dialogue 
+
+
+
+
+
+Financial Stability Oversight Council
+
+
+
+
+
+Federal Insurance Office
+
+
+
+
+
+myRA - My Retirement Account
+
+
+
+
+
+Joint Declaration
+
+
+
+
+
+Financial Inclusion
+
+
+
+
+
+
+
+
+
+
+
+
+
+Careers at Headquarters
+
+
+
+
+
+Careers at our Bureaus
+
+
+
+
+
+Imagine Yourself Here
+
+
+
+
+
+Working For Treasury
+
+
+
+
+
+Benefits
+
+
+
+
+
+Career Growth
+
+
+
+
+
+Diversity
+
+
+
+
+
+Veterans
+
+
+
+
+
+Pathways Programs
+
+
+
+
+
+How to Apply
+
+
+
+
+
+Search Jobs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Press ReleasesNewsMedia Schedule and AdvisoriesVideo, Audio, and WebcastsPress Contacts
+
+
+
+
+
+
+
+
+
+Press Center
+
+
+Home
+			» Press Center
+
+ Press Center
+
+Get updates to this content.
+
+Page Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Latest Press Releases
+
+
+07/28/2017Treasury Sanctions Key Ballistic Missile Entities in Iran07/28/2017Treasury Announces Steps to Wind Down myRA Program 07/27/2017Joint Statement on Tax Reform07/27/2017Statement of Steven T. Mnuchin Secretary, United States Department of the Treasury before the Committee on Financial Se...
+
+
+
+
+
+
+
+
+
+
+
+
+Latest Photos
+
+
+
+
+
+
+
+
+
+
+Treasury Building
+
+
+
+
+
+
+
+
+
+
+
+
+
+U.S. Treasury Hosts the 2016 Freedman’s Bank Forum
+
+
+
+
+
+
+
+
+
+
+
+
+
+U.S. Treasury Hosts the 2016 Freedman’s Bank Forum
+
+
+
+
+
+
+
+
+	        		Social media privacy
+	        	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Daily Press Guidance
+
+
+TUESDAY, JANUARY 17, 2017Read more of this article
+
+
+
+
+
+
+
+
+
+
+The current browser does not support Web pages that contain the IFRAME element. To use this Web Part, you must use a browser that supports this element, such as Internet Explorer 7.0 or later.
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Last Updated :3/17/2017 2:22 PM
+
+
+
+
+
+
+
+
+
+
+The current browser does not support Web pages that contain the IFRAME element. To use this Web Part, you must use a browser that supports this element, such as Internet Explorer 7.0 or later.
+
+
+
+
+
+
+
+
+
+
+Treasury Facts
+
+
+The Treasury is the oldest departmental building in Washington and at the time of its completion, it was one of the largest office buildings in the world.
+
+
+
+
+
+
+
+
+
+
+
+Featured Video
+
+
+
+
+
+
+
+
+
+Secretary Jack Lew's Currency Announcement at the National Archives
+
+
+Treasury Secretary Jacob J. Lew delivered remarks on currency redesign at the National Archives Thursday, June 18, 2015. Secretary Lew's remarks expanded on his decision to redesign the $10 note.
+
+
+
+Social media privacy 
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+Untitled 1
+
+
+
+
+
+
+
+
+
+
+
+
+Initiatives
+        
+Financial 
+            Stability
+Housing 
+            Finance Reform
+Making Home 
+            Affordable
+Recovery
+U.S. China 
+            Strategic and Economic Dialogue
+Wall 
+            Street Reform 
+
+
+
+
+Languages
+العربية 
+S中文
+Español
+한국어
+Tagalog
+TiếngViệt 
+
+
+
+
+
+
+Bureaus
+        
+The Alcohol and Tobacco Tax and 
+            Trade Bureau
+Bureau of Engraving and 
+            Printing
+Bureau of the Fiscal Service
+Community Development 
+            Financial Institutions Fund
+Financial Crimes Enforcement 
+            Network (FinCEN)
+Internal Revenue Service
+Office of the Comptroller of 
+            the Currency
+United States Mint 
+
+
+
+
+
+
+Inspector General 
+        Sites
+        
+Office 
+            of Inspector General (OIG)
+Treasury Inspector 
+            General for Tax Administration (TIGTA)
+Special Inspector General, 
+            Troubled Asset Relief Program (SIGTARP)
+Report, 
+            Fraud Waste & Abuse 
+
+
+
+
+Additional Resources
+        
+Privacy Act 
+Small Business Contacts
+Budget, Financial Reporting, Planning and Performance
+TreasuryDirect.gov 
+            Securities/Bonds
+Freedom of Information Act (FOIA)
+No FEAR Act 
+            Data 
+Whistleblower Protection 
+
+
+
+
+
+
+U.S. Government Shared Services
+        
+HR 
+            Connect Program Office
+Administrative 
+            Resource Center (ARC)- Bureau of the Fiscal Service
+Treasury 
+            Direct Services for Governments 
+
+
+
+
+Other Government Sites
+        
+USA.gov
+USAJOBS.gov
+OPM.gov
+MyMoney.gov
+Data.gov
+Forms.gov
+Regulations.gov
+PaymentAccuracy.gov
+Business.USA.gov
+my Social Security
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Required Plug-ins
+
+Adobe® Flash Player
+Adobe® Reader®
+MS Excel Viewer
+MS PowerPoint Viewer
+MS Word Viewer
+QuickTime Player
+Windows Media Player
+
+
+
+
+Privacy Policy |
+Google Privacy |
+Site Map |
+Site Policies and Notices |
+FAQs |
+Feedback |
+Careers |
+Contact Us
+
+
+Untitled 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+system text
+
+system text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Peter R. Fisher
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   Quizzes | Lists | Trending  
+
+
+
+Sign up / Login  
+
+
+
+Feedback  
+
+
+    
+
+  Peter R. Fisher  Topics |  Videos |  Discussion |  Write-ups
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+  
+
+
+  
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Back to Top
+
+© Revolvy, LLC
+
+Mobile
+Terms
+Privacy
+Contact
+
+
+
+
+
+
+
+
+Paste Image Information Here:
+×
+
+
+Image:
+
+
+Source:
+
+
+
+Save changes
+
+
+
+
+
+
+
+
+
+×
+
+
+
+
+
+Cancel
+
+
+
+
+
+...
+×
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+Done
+Cancel
+By proceeding I agree to the Revolvy
+terms of service and
+     privacy policy.
+
+
+
+
+
+
+
+
+
+
+
+OK
+Cancel
+
+
+
+
+
+
+
+
+
+
+OK
+Cancel
+
+
+
+
+
+
+
+×
+
+
+
+OK
+Cancel
+
+
+
+
+
+
+
+
+×
+
+
+
+OK
+Cancel
+
+
+
+
+
+
+
+×
+
+
+
+OK
+Cancel
+
+
+
+
+
+
+
+×
+
+
+
+Save
+
+Cancel
+
+
+
+
+
+
+×
+
+
+
+OK
+Clear
+Cancel
+
+
+
+
+
+
+×
+
+
+
+OK
+Clear
+Cancel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Peter R. Fischer, Shareholder | Enenstein, Ribakoff, LaViña & Pham
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Peter R. Fischer, Shareholder
+Peter Fischer is a shareholder, and a member of the Firm’s corporate and real estate groups, as well as the head of the Firm’s entertainment practice.  Peter’s practice includes a wide range of general business, corporate, real estate and, other commercial law matters.
+Corporate/Entertainment
+Peter regularly acts as general and strategic counsel to privately held middle-market and emerging growth companies. Peter is integral in assisting with corporate formation and structuring needs, negotiating stock and asset acquisitions, structuring and documenting a wide range of financial transactions (including private placements, senior and subordinated loan agreements, leveraged buyouts and restructurings). He also routinely represents clients in connection with a diverse range of entertainment, media and intellectual property matters, including complex production, distribution and financing transactions, capital raising transactions for production and other entertainment companies.
+Real Estate
+Peter also represents clients in transactional real estate matters, including acquisition, syndication, fund formation, development, leasing, construction, and other financings.  He has represented developers, investors, borrowers, and lenders in all product types, including multi-family, senior care, retail, industrial, medical office and residential.
+Notable Transactions & Experience
+General Corporate Matters
+
+Acted as outside general counsel for an LED lighting company and took that company public through a reverse merger on the Frankfurt Stock Exchange.
+Represented an electric vehicle charging infrastructure company in connection with several joint ventures and licensing and development arrangements with charging companies.
+Represented a California skilled nursing care company in connection with the restructuring of the company’s outstanding equity and the negotiation of a first and second lien credit facility.
+Represented a manufacturer and worldwide supplier of mobile data capture and delivery equipment in connection with that company’s loan facility and its licensing arrangements.
+Represented a private equity fund in connection with the fund’s leveraged buyout with certain co-investors of a leading provider of auction and remarketing services in the power sports industry.
+Represented a real estate development company in the structuring of a Regulation D private placement of securities in connection with that company’s formation of a foreclosure fund in Memphis, Tennessee.
+Represented a mobile home park operator in California in connection with the negotiation and structuring of a debt restructuring and settlement agreement by and among the park operator, its mobile home broker-client and the broker’s inventory financier.
+
+Finance Matters
+
+Represented a major financial institution as agent for a group of lenders in the real estate financing of the L.A. Live complex in downtown Los Angeles.
+Represented a prominent Latin supermarket chain in the restructuring of that company’s $50,000,000 outstanding loan facility and negotiated a potential sale of that company.
+Represented a money-center bank as agent for a syndicate of financial institutions in the $1.9B senior secured revolving credit and multiple term loan facility for the financing of the design, development, construction, and operation of multiple casino and hotel projects in Macau by a major Las Vegas casino company.
+Represented a real estate development company in the establishment of a joint venture and the raising of financing with certain co-investors to invest in distressed trust deed assets.
+Entertainment and Intellectual Property Matters
+Represented a film development fund in connection with investments in two independent horror/thriller films.
+Represented a major independent production and distribution company in connection with that company’s acquisition of a specialty film division from a major studio.
+Represented a major entertainment lender in connection with the $67.5M production and P&A loan to an independent production company for a slate of six motion pictures.
+Represented a real estate-backed production company in connection with a $5.5M single-picture production loan for that company’s first motion picture.
+Represented an independent production company in connection with the restructuring of its existing debt and equity and the formation of its new holding company.
+Represented a well-known horror/thriller author and agent in the option and sale of multiple literary properties and the subsequent development and production of film projects based thereon.
+Represented a writer/director in the licensing of his projects for the television and Internet markets.
+Represented a new media production company in the licensing of multiple properties to a major studio for domestic and international development and production.
+Represented a startup new media company in connection with the formation of an Internet streaming music service.
+
+Prior Experience and Education
+Before joining Enenstein, Ribakoff, LaViña & Pham as a shareholder, Peter was an attorney with Loeb & Loeb in that firm’s transactional entertainment group as well as a former corporate attorney with Sheppard Mullin Richter & Hampton and Latham & Watkins.
+Peter earned his undergraduate degree from Union College and, after living and working in Osaka, Japan, for two years, received his law degree, from American University’s Washington College of Law in Washington D.C.
+ 
+
+
+
+
+
+Peter R. Fischer
+Shareholder
+
+Phone: (310) 899-2070
+Fax: (310) 496-1930
+Email Peter
+Download V-Card
+
+ 
+
+
+Practice Areas
+
+Corporate and Securities Law Entertainment and Media Intellectual Property Matters Real Estate 
+Education and Certifications
+
+American University Washington College of Law, J.D., cum laude, 1999
+Union College, B.A. Political Science and East Asian Studies; General and Departmental Honors; Honors Thesis, 1994
+ Professional Memberships
+
+State Bar of New York
+State Bar of California
+Beverly Hills Bar Association
+ProVisors
+American Bar Association
+Executive committee of the Beverly Hills Bar Real Estate Section
+ Admitted to Practice
+
+California, 2008
+New York, 2000
+
+
+
+
+
+Peter in the News
+
+
+
+April 24, 2017
+Peter Fischer to Moderate IMN Panel
+
+
+April 6, 2017
+Peter Fischer Joins Cashflow Connections’ Podcast
+
+
+February 26, 2016
+Peter Fischer to Speak on Strategies for Investing in Real Estate Passively
+
+
+January 20, 2016
+Peter Fischer to Speak at Tax and Legal Strategies for Real Estate Investing Seminar
+
+
+More News >
+
+
+
+ 
+
+ 
+
+
+
+
+

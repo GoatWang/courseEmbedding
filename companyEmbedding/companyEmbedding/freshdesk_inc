@@ -1,0 +1,6373 @@
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+
+Freshworks | Press releases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Freshdesk Inc. Is Now Freshworks Inc.
+New umbrella brand provides product clarity, enables future growth of feature-rich, easy-to-use and affordable business software suite.
+
+
+
+
+
+
+
+
+
+
+
+
+SAN BRUNO, CALIFORNIAJune 7, 2017
+
+Today Freshdesk announced the creation of Freshworks, a new umbrella brand that will bring together the company’s growing suite of business software. Following breakout growth of the company’s customer support software, and the introduction of new products for IT Service Management (ITSM), customer relationship management (CRM) and cloud-based call centers, Freshworks products are designed to help companies better engage and communicate with their customers and employees.
+Freshworks brings together a suite of products for businesses, including:
+
+ Freshdesk: a multichannel customer support helpdesk which allows organizations to collaborate and support their customers through email, phone, websites, forums and social media.
+ Freshservice: a cloud-based service desk and IT Service Management solution to address the growing complexity of teams’ IT support needs through a simple but powerful interface.
+ Freshsales: a full-featured CRM solution for  sales teams handling high-velocity leads.
+ Freshcaller: A fully functional call center on the cloud
+
+"In 2010, we started Freshdesk as a “fresh helpdesk” with a dream to make a dent in the world of customer support. While Freshdesk continued to grow exponentially, as a company, we moved beyond customer service by offering innovative products in the ITSM and CRM domains. As we expand our vision and build more exciting products, we felt that this was the right time to create a new brand that would allow us to tell our multi-product story better” said Girish Mathrubootham, CEO & Founder of Freshworks. “Today, I’m happy to announce that we are rebranding the company as Freshworks. We’re not in this just to change the way businesses do customer support, but to refresh the way they do business. Our goal is to build a company that is loved by employees, customers and shareholders alike.”
+Over the years, businesses have found themselves in a position where they had to use cumbersome software across the organization. These solutions were not only expensive, but also required long implementation cycles and were extremely difficult to use without expert training, neither of which could be afforded by growing companies. Enterprises are also tired of wasting time and resources on trying to make everything work together.
+According to Girish, Freshworks will bridge this gap by offering products that are ready-to-go, easy to setup and use and will be affordable for companies of all sizes. Adopted by over 100,000 companies in 145 countries, Freshworks’ mission is exactly this - to help companies better engage and communicate with their customers and employees with refreshing business software that is easy-to-use, feature-packed and accessible to businesses of all sizes. Whether you are a company looking to share customer data and insights across your sales and support teams or quickly onboard and set-up new employees, Freshworks’ integrated software products ensure all teams are all working together in sync.  In addition to being fully-featured, all of Freshworks’ products come with free support over email and phone, making them attractive for businesses looking for value against more expensive alternatives.
+"For us, integrating customer support, sales and IT is critical to providing the best customer experience possible,” said Amit Chaudhary, COO and Founder at Lenskart."We started using Freshdesk in 2015 and began using Freshsales last year, and it’s made a huge impact on how we communicate both with customers and internally. Companies like Freshworks are truly changing how businesses think about software, including enterprises"
+The stakes for providing a superior customer experience have never been higher. Data shows that 82% of customers stopped doing business with a company due to poor customer experience in 2016. At the same time, providing a seamless experience means looking at the full customer lifecycle, from sales to support. As internal teams become more integrated, these can no longer happen in silos. This is the problem that Freshworks has set out to solve.
+Now, precisely six years after launching Freshdesk, Freshworks has become a global, award-winning SaaS powerhouse with five offices in Chennai, San Bruno, London, Sydney and Berlin.
+
+About Freshworks
+Freshworks Inc. is the parent company behind the suite of products which includes Freshdesk, Freshservice, Freshsales and Freshcaller. The company’s suite of products is designed to work tightly together to increase collaboration and help teams better connect and communicate with their customers and co-workers. Founded in October 2010, Freshworks Inc. is backed by Accel, Tiger Global Management, CapitalG and Sequoia Capital India. Freshworks has its HQ in San Bruno, California and global offices in India, UK, Australia and Germany. The company's cloud-based suite of SaaS products is widely used by over 100,000 customers around the world including Honda, Bridgestone, Hugo Boss, University of Pennsylvania, Toshiba and Cisco.
+
+Contact
+Janani Dwarakanath, corporate@freshworks.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Freshdesk Integrations | Help Desk Software that integrates with Capsule CRM, Freshbooks, Harvest, JIRA for an All-in-one Customer Support
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+apps
+Freshdesk Apps
+Freshdesk integrates with your other critical systems so you have the information you need when and where you need it.
+
+
+
+
+
+
+All Apps
+
+
+All Apps
+chat
+CRM
+E-Commerce
+Email Marketing
+Google Apps
+Issue Tracking
+File Sharing and Collaboration
+Knowledge Management
+Reporting and Analytics
+Social Media
+Single Sign On
+Surveys and Feedback
+Telephony and SMS
+Time Tracking
+Workflow Automation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+Can't find the app you want? Build it yourself with the new Freshdesk SDK!
+
+start building an app
+
+
+
+
+
+
+
+
+Get a free Freshdesk demo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+SUBMIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+EMAIL ME
+
+
+CREATE A NEW ACCOUNT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Freshdesk Customer Support & Help desk Software | FREE Signup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Try Freshdesk free for 30 days
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.freshdesk.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+By signing up, you agree to our  T & C  and  privacy policy 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Online Ticketing System for Customer Support | Freshdesk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Everything you need toStart supporting customers
+
+Start Free Trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Everything you need toSupport customers across channels
+
+Start Free Trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Everything you need toMake agents happy and productive
+
+Start Free Trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Everything you need toHelp customers help themselves 
+
+Start Free Trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Everything you need toManage your support across the globe
+
+Start Free Trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Everything you need toRun a reliable helpdesk 
+
+Start Free Trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Everything you need toMeasure and improve efficiency
+
+Start Free Trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Everything you need toGet more out of Freshdesk
+
+Start Free Trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+Ticketing
+
+
+
+
+
+Multi channel
+
+
+
+
+
+Productivity
+
+
+
+
+
+Self Service
+
+
+
+
+
+Global Support
+
+
+
+
+
+Security
+
+
+
+
+
+Reporting
+
+
+
+
+
+Apps
+
+
+Sign Up
+
+
+   
+
+
+
+
+
+
+
+Make sure every issue gets resolved with powerful ticketing
+
+
+
+Know who else is working on your ticket with agent collision detection 
+
+
+
+See your ticket's status and when it is due
+
+
+
+Use private notes for internal communication
+
+
+
+Get contextual customer information from right inside your tickets
+
+
+
+Send well-formatted replies using the rich text editor
+
+
+
+View and manage ticket properties with just a few clicks
+
+
+
+
+
+
+
+
+
+
+
+
+Team Inbox
+Freshdesk’s shared inbox enables your team to collaborate and resolve issues without getting in each other’s way. Every request sent to your support email becomes a ticket in your helpdesk. You can easily categorize and prioritize tickets and assign them to the right people in your team. 
+And you don't have to worry about multiple agents responding to the same ticket anymore because everyone on your team can see who is working on what ticket and its status. It is so easy to set up and use that you’ll be able to start resolving tickets in minutes.
+
+Ensure tickets get resolved with the shared team inbox
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Service Level Agreements
+Set, manage, and meet customer expectations by setting up service level agreements (SLAs) for support. With Freshdesk, you can define ticket priorities and requirements for resolution times so your agents know exactly which issues to address first and how quickly the customer expects a response. Every ticket in Freshdesk follows your SLA policy and the ‘due by’ time is driven by their priority. And when a ticket becomes overdue, your helpdesk will make sure that the agent is notified of it. 
+You can also define your own business hours so that your customers know when to expect support, and your SLAs know when you're off. So, no matter how crowded your support inbox is, critical customer requests won’t get lost. 
+
+Meet or exceed customer expectations every time with SLAs
+
+
+
+
+
+
+
+
+Mobile Apps
+Carry your support desk with you wherever you go, with the free Freshdesk iPhone and Android apps. Reply to tickets, add notes and perform bulk actions on tickets even as you're taking a walk down the street or waiting for your order to arrive at a restaurant. All that and more, completely free.
+Freshdesk also has a mobile-ready web-based version that can be used to access your helpdesk from the browser on any device. 
+Learn more about supporting customers on the go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Getting things done faster
+
+
+
+
+Canned Responses
+
+Stop wasting time writing the same replies again and again. Ensure quick consistent responses to common questions by creating pre-formatted replies. 
+
+
+
+
+Suggested Solutions
+
+Freshdesk automatically provides you with smart suggestions of possible solutions right next to the ticket, based on keywords in the ticket's description. 
+
+
+
+
+Bulk Actions
+
+Need to assign multiple tickets to the same agent? With bulk actions, things like categorizing, assigning or deleting a hundred tickets just take a few clicks.
+
+
+
+
+
+
+Keyboard Shortcuts
+
+Freshdesk has a long list of useful keyboard shortcuts to help you navigate through your helpdesk, perform quick actions, and expedite dozens of common tasks. 
+
+
+
+
+Merge Tickets
+
+Ever have a customer report the same issue multiple times via different channels, causing confusion? No problem. Merge all of the related tickets together, and resolve it in one go. 
+
+
+
+
+Scenario Automations
+
+Scenario automations let you perform a series of tasks on a ticket. Mark a ticket as high priority, set its status as pending and assign it to the dev team with just a single click.
+
+
+
+
+
+
+
+
+
+
+
+					Freshdesk is simple to set-up. I particularly like the email messaging and the self service portal, both from the helpdesk and the customer’s side. I have looked at other similar products and in my view Freshdesk was the best value for money!
+				
+
+ Alec Farquharson, Product Manager 
+ Aviolinx Communications and Services 
+
+
+
+
+
+
+Previous Step
+
+
+
+
+Continue Tour 
+
+
+
+
+
+
+Get your support organized within minutes using Freshdesk
+
+Start free trial now
+
+
+
+
+
+
+
+
+
+
+Get a free Freshdesk demo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+SUBMIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+EMAIL ME
+
+
+CREATE A NEW ACCOUNT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Login to your Freshdesk Account
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          How to login to your Freshdesk account
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+Freshdesk Plans & Pricing | Freshdesk help desk software trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Simple, honest, affordable pricing
+
+What you see is what you pay 
+
+
+
+
+
+Monthly
+
+
+Yearly
+			Save up to 20%
+
+
+
+
+
+
+
+
+
+SPROUT
+To get you started
+
+
+
+FREE
+for unlimited agents
+
+
+
+Email Channel
+Standard Phone Channel
+Basic Social Channel
+Knowledge Base
+Access to App Gallery
+
+
+
+Start Trial
+
+
+
+View details
+
+
+
+
+
+
+
+BLOSSOM
+Perfect for small teams
+
+
+
+$19
+/agent/month
+
+
+Everything in Sprout and…
+
+Advanced Social Channel
+Satisfaction Surveys
+Custom Domain Mapping
+Custom Apps
+Time Tracking
+
+
+
+Start Trial
+
+
+
+View details
+
+
+
+
+
+
+
+GARDEN
+Ideal for growing teams
+
+
+
+$35
+/agent/month
+
+
+Everything in Blossom and…
+
+Multilingual Helpdesk
+Live Chat Channel
+Ticket Templates
+Community Forums
+Scheduled Reports
+
+
+
+Start Trial
+
+
+
+View details
+
+
+
+
+
+
+
+ESTATE
+Best value for large teams
+
+
+
+$49
+/agent/month
+
+
+Everything in Garden and…
+
+Multiple Products
+Portal Customization
+Shared Ownership
+Enterprise Reports
+Custom Agent Roles
+
+
+
+Start Trial
+
+
+
+View details
+
+
+
+
+
+
+
+FOREST
+Tailor made for enterprise
+
+
+
+$89
+/agent/month
+
+
+Everything in Estate and…
+
+IP Whitelisting
+Custom Email Servers
+EU Data Center
+Advanced Phone Channel
+
+
+
+Contact Us
+
+
+
+View details
+
+
+
+
+
+
+All prices mentioned are in USD.
+INR pricing is for online payments only. Pricing for offline payment varies.
+EU pricing is for online payments only. Pricing for offline payment varies.
+
+24 x 7 email support and 24 x 5 phone support included with all plans. 
+View detailed pricing
+
+
+
+Having trouble picking the right plan?
+Compare plans to see what's best for you! 
+
+
+
+
+Day Passes
+Need some extra hands on support?
+
+
+
+Seeing a spike in your support traffic or need someone's expertise on specific customer queries?  Day passes make it easy for you to add extra agents temporarily to your helpdesk when you need them. Purchase a few day passes, add your teammates as occasional agents and let them use one for each day they need to access your helpdesk.
+Learn more about Day Passes
+
+
+
+
+
+
+Frequently Asked Questions
+
+
+How does the 30-day free trial work?
+
+  				After you signup you get access to all the features in the Freshdesk Estate Plan for 30 days. We want to make sure that you can get Freshdesk working to your satisfaction before we ask you for your credit card.
+  			
+
+
+Do you have any contracts or cancellation fees?
+
+  				No. Freshdesk is a pay-as-you-go service. We do not have contracts or cancellation fees. You can cancel whenever you want. If you cancel, you’ll be billed for the current month, but you won’t be billed again.
+  			
+
+
+
+
+Can I upgrade or downgrade anytime?
+
+  				Yes. Freshdesk is a pay-as-you-go service and you can upgrade, downgrade or cancel at any time. Click on "Plans & Billing" in your Freshdesk account, to change your plan.
+  			
+
+
+Who owns my data?
+
+  				You do! It's your data after all! We want you to be with Freshdesk because you love using the product, not because your data is stuck in it. You can export all your information from Freshdesk any time you need, in any plan.
+  			
+
+
+
+
+Is my data safe?
+
+  				We take security seriously. Our Servers are hosted in a world class data center that is protected by biometric locks and 24-hour surveillance. We ensure that our application is always up to date with the latest security patches. Our data-center is EU safe harbor compliant and all Freshdesk plans include SSL encryption to keep your data safe.
+  			
+
+
+What types of payment do you accept?
+
+  				We accept Visa, Mastercard, Discover and American Express. We do not accept PayPal. At this time we only accept payments online so we will not be able to accept purchase orders or accept an order over the phone. All of our offline payments follow USD pricing.
+  			
+
+
+
+
+Have any other questions?
+
+  				If you have questions about Freshdesk or the signup process,
+  					Please email us at
+  				support@freshdesk.com
+  				and we will be glad to answer all your questions
+  			
+
+
+
+
+Get Freshdesk for iOS and Android
+Take your helpdesk with you anywhere
+
+
+
+
+          Freshdesk's mobile apps have been thoughtfully designed to help your team stay in touch with customers, even when they're not at desk. With the iOS and Android apps, your team can stay on top of incoming tickets, collaborate with other agents and even pick calls on-the-go from anywhere in the world.
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Whoa there!
+Looking for some fine-print stuff? You know, the kind where we talk about how much we’ll charge you for all the other teensy-weensy things you’ll need to add with us a la carte?
+Sorry, there isn’t really anything here!
+With Freshdesk, you pay for exactly what you sign up for and that’s that. No extras, no under-the-rug, no balderdash..
+
+
+
+
+
+
+
+
+
+
+
+Our enterprise team would like to get in touch with you
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+SUBMIT
+
+
+
+
+
+
+
+
+Get a free Freshdesk demo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+SUBMIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+EMAIL ME
+
+
+CREATE A NEW ACCOUNT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Customer Support Software & Ticketing System | Freshdesk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+NEWTeam Huddle: The easiest way to collaborate within your helpdesk
+Customer support is the support team’s|business.
+With Freshdesk, your teams can work together to resolve customer issues faster.
+
+Get Started for Free
+
+
+
+
+
+
+				&amp;amp;amp;amp;lt;input type='hidden' name='noscript' id='no_script' value='No Script Support'&amp;amp;amp;amp;gt; 
+
+
+
+
+
+
+
+
+
+
+By signing up, you agree to our  T & C  and  privacy policy 
+
+
+
+
+
+
+
+
+
+
+
+Bring your teams together to deliver exceptional customer support
+
+
+
+
+
+
+
+Streamline conversations
+Stay on top of all your requests coming in from different support channels
+
+
+
+
+
+
+Collaborate better
+Get help from the right people across internal teams by looping them into tickets
+
+
+
+
+
+
+Stay productive
+Make use of smart automations and game mechanics to get things done faster
+
+
+
+
+GET STARTED FOR FREE
+
+
+
+
+
+100,000 HAPPY CUSTOMERS
+Companies of all sizes choose Freshdesk for customer support
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Freshdesk gets featured in the Gartner Magic Quadrant for the 2nd consecutive year.
+View the report
+
+
+
+
+Sign up for a free trial today
+30 days. Unlimited agents. No strings attached. No credit card required.
+
+Get Started Now
+
+
+
+
+
+Get Started Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EMAIL ME DETAILS
+
+
+CREATE ANOTHER ACCOUNT
+
+
+
+
+
+
+
+
+Get a free Freshdesk demo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+SUBMIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+EMAIL ME
+
+
+CREATE A NEW ACCOUNT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Customer Support Software Features and Comparison | Freshdesk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Find a plan that works for you
+
+There's no fun like checking what's in the spread before you sit down for the buffet. Learn what features you get with each Freshdesk plan.
+
+
+Request Demo
+
+
+ 
+
+
+
+
+Feature list
+
+Sprout
+FREE
+unlimited agents
+
+
+Blossom
+
+$
+19
+
+/agent/month
+
+
+Garden
+
+$
+35
+
+/agent/month
+
+
+Estate
+
+$
+49
+
+/agent/month
+
+
+Forest
+
+$
+89
+
+/agent/month
+
+
+
+
+
+
+
+
+
+
+Ticket management
+
+
+
+
+
+
+
+Email ticketing
+
+
+
+
+
+
+
+Reusable replies with canned responses
+
+
+
+
+
+
+
+Dynamic placeholders 
+
+
+
+
+
+
+
+Automatic email notifications
+
+
+
+
+
+
+
+Custom ticket views
+
+
+
+
+
+
+
+Tags for tickets, solutions and contacts
+
+
+
+
+
+
+
+Merge tickets
+
+
+
+
+
+
+
+Split tickets
+
+
+
+
+
+
+
+Public and private notes in tickets
+
+
+
+
+
+
+
+Add watchers to a ticket
+
+
+
+
+
+
+
+Traffic cop
+
+
+
+
+
+
+
+Time tracking
+
+
+
+
+
+
+
+Ticket templates
+
+
+
+
+
+
+
+Customer satisfaction surveys
+
+
+
+
+
+
+
+Agent collision detection
+
+
+
+
+
+
+
+Assume identity of other agents
+
+
+
+
+
+
+
+Outbound email
+
+
+
+
+
+
+
+Ticket export
+
+
+
+
+
+
+
+Filtered Search
+
+
+
+
+
+
+
+Helpdesk automation
+
+
+
+
+
+
+
+Automatic ticket assignment using Dispatch'r
+
+
+
+
+
+
+
+Time-triggered automations using Supervisor
+
+
+
+
+
+
+
+
+										Event-triggered workflow automations with the Observer
+
+
+
+
+
+
+
+Multi-task workflows with one-touch Scenario automations
+
+
+
+
+
+
+
+Round robin ticket assignment
+
+
+
+
+
+
+
+Load balanced ticket assignment
+
+
+
+
+
+
+
+SLA management
+
+
+
+
+
+
+
+Business rules management through SLAs
+
+
+
+
+
+
+
+SLA reminders
+
+
+
+
+
+
+
+Escalation email for SLA violation
+
+
+
+
+
+
+
+Multiple SLA policies
+
+
+
+
+
+
+
+Product, group and company level SLAs
+
+
+
+
+
+
+
+Multi-Channel support
+
+
+
+
+
+
+
+Multiple incoming and outgoing mailboxes
+
+
+
+
+
+
+
+Standard Phone Channel
+
+
+
+
+
+
+
+Advanced Phone Channel
+
+
+
+
+
+
+
+Basic Twitter channel
+
+
+
+
+
+
+
+Advanced Twitter channel
+
+
+
+
+
+
+
+Standard Facebook channel
+
+
+
+
+
+
+
+Advanced Facebook channel
+
+
+
+
+
+
+
+Facebook in-sync app
+
+
+
+
+
+
+
+Live chat channel
+
+
+
+
+
+
+
+Embeddable help widget
+
+
+
+
+
+
+
+ADVANCED TICKETING
+
+
+
+
+
+
+
+Shared ownership of tickets
+
+
+
+
+
+
+
+Linked tickets
+
+
+
+
+
+
+
+Parent-child ticketing
+
+
+
+
+
+
+
+TICKET FORMS
+
+
+
+
+
+
+
+Customizable ticket forms
+
+
+
+
+
+
+
+Dependent fields in ticket forms
+
+
+
+
+
+
+
+Dynamic ticket forms
+
+
+
+
+
+
+
+Knowledge Base
+
+
+
+
+
+
+
+Private Knowledge Base 
+
+
+
+
+
+
+
+Email to Knowledge Base
+
+
+
+
+
+
+
+Auto suggest solutions
+
+
+
+
+
+
+
+Automatic Sitemap Generation
+
+
+
+
+
+
+
+COMMUNITY FORUMS
+
+
+
+
+
+
+
+GLOBAL SUPPORT
+
+
+
+
+
+
+
+Multilingual knowledge base
+
+
+
+
+
+
+
+Dynamic email notifications
+
+
+
+
+
+
+
+Multiple time zones
+
+
+
+
+
+
+
+Multiple business hours
+
+
+
+
+
+
+
+CUSTOMER MANAGEMENT
+
+
+
+
+
+
+
+Custom contact and company fields
+
+
+
+
+
+
+
+Merging contacts
+
+
+
+
+
+
+
+Link multiple companies to a single contact
+
+
+
+
+
+
+
+Identify contacts using external ID
+
+
+
+
+
+
+
+MULTI-PRODUCT
+
+
+
+
+
+
+
+Product level knowledge-base and community forums
+
+
+
+
+
+
+
+INTEGRATED GAME MECHANICS
+
+
+
+
+
+
+
+REPORTING
+
+
+
+
+
+
+
+Agent and group performance
+
+
+
+
+
+
+
+Helpdesk in-depth report
+
+
+
+
+
+
+
+Ticket drill down in reports
+
+
+
+
+
+
+
+Performance distribution
+
+
+
+
+
+
+
+Ticket volume trend
+
+
+
+
+
+
+
+Top customer analysis
+
+
+
+
+
+
+
+Export reports
+
+
+
+
+
+
+
+Save reports
+
+
+
+
+
+
+
+Schedule reports
+
+
+
+
+
+
+
+Role based dashboards
+
+
+
+
+
+
+
+CUSTOMIZATIONS
+
+
+
+
+
+
+
+Custom domain mapping
+
+
+
+
+
+
+
+Public customer portal customization
+
+
+
+
+
+
+
+Full CSS customization
+
+
+
+
+
+
+
+Complete layout customization
+
+
+
+
+
+
+
+Customizable agent roles
+
+
+
+
+
+
+
+Access to FreshThemes gallery
+
+
+
+
+
+
+
+Security
+
+
+
+
+
+
+
+Single Sign On
+
+
+
+
+
+
+
+Single Sign On with SAML
+
+
+
+
+
+
+
+Advanced password policy for agents and customers
+
+
+
+
+
+
+
+DKIM/DMARC
+1 domain
+2 domains
+2 domains
+unlimited
+unlimited
+
+
+Custom SSL certificates (default free)
+
+
+
+
+
+
+
+Helpdesk Restriction
+
+
+
+
+
+
+
+IP Whitelisting
+
+
+
+
+
+
+
+Custom Email Servers
+
+
+
+
+
+
+
+Data center location
+
+
+
+
+
+
+
+Apps
+
+
+
+
+
+
+
+Access to app gallery
+
+
+
+
+
+
+
+Email marketing and CRM apps
+
+
+
+
+
+
+
+Survey & feeedback apps
+
+
+
+
+
+
+
+Time tracking and invoicing tools
+
+
+
+
+
+
+
+Cloud telephony integration app
+
+
+
+
+
+
+
+Custom apps
+
+
+
+
+
+
+
+Mobile customer support
+
+
+
+
+
+
+
+Freshdesk for iOS
+
+
+
+
+
+
+
+Freshdesk for Android
+
+
+
+
+
+
+
+Mobile optimized HTML5 app
+
+
+
+
+
+
+
+OCCASIONAL AGENTS
+
+
+
+
+
+
+
+SUPPORT
+
+
+
+
+
+
+
+24x7 Email support
+
+
+
+
+
+
+
+24x5 Phone support
+
+
+
+
+
+
+
+
+Signup
+Signup
+Signup
+Signup
+Signup
+
+
+
+
+
+
+   
+
+
+
+
+Get a free Freshdesk demo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+SUBMIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+EMAIL ME
+
+
+CREATE A NEW ACCOUNT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Freshdesk - Company | Good Customer Service is Good Business
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Who we are
+
+
+
+
+
+
+
+   
+
+
+
+
+
+about
+
+
+
+
+
+history
+
+
+
+
+
+leadership
+
+
+
+
+
+investors
+
+
+
+
+
+teams
+
+
+design
+devops
+Apps
+marketing
+mobile
+Product Development
+product management
+qa
+sales
+support
+
+
+
+
+
+culture
+
+
+
+
+
+careers
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+Freshdesk is a cloud-based customer support platform that was founded with the mission of enabling companies of all sizes to provide great customer service.  Our goal is simple: make it easy for brands to talk to their customers and make it easy for users to get in touch with businesses
+The idea for our flagship product was the result of a bad customer experience thanks to a broken TV. The founders saw a need for a better customer support solution that could help provide better customer experience, and also scale as companies grow. So they started building one. Six months later, in June 2011, Freshdesk won the Microsoft BizSpark Startup Challenge and one hundred days after that we celebrated our 100th customer.
+In six years, we have grown exponentially. Today we have more than 900 passionate employees globally and Freshdesk helps over 100,000 businesses and organizations around the world offer better, more personal support to their customers. And of course, we use Freshdesk ourselves to keep our customers happy.
+
+
+
+
+
+
+
+Get a free Freshdesk demo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+SUBMIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+EMAIL ME
+
+
+CREATE A NEW ACCOUNT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Freshdesk Inc. Is Now Freshworks Inc. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRWeb
+Home
+News Center
+Blog
+
+
+
+United States
+United Kingdom
+France
+
+			Login
+		
+			Create a free account
+		
+
+
+
+
+RSS
+
+
+Email Newsletters
+
+
+Put PRWeb on your site
+
+
+
+
+Freshdesk Inc. Is Now Freshworks Inc.
+
+
+
+Share Article
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+New umbrella brand provides product clarity, enables future growth of feature-rich, easy-to-use and affordable business software suite
+
+
+
+
+
+
+
+Freshworks Family Logos
+
+As we expand our vision and build more exciting products, we believe this is the right time to create a new brand that allows us to tell our multi-product story better.
+
+
+San Bruno, California (PRWEB)
+June 07, 2017
+ Today Freshdesk announced the creation of Freshworks, a new umbrella brand that will bring together the company’s growing suite of business software. Following breakout growth of the company’s customer support software, and the introduction of new products for IT Service Management (“ITSM”), customer relationship management (“CRM”) and cloud-based call centers, Freshworks products are designed to help companies better engage and communicate with their customers and employees.
+Today, the Freshworks suite of products includes:
+Freshdesk: a multichannel customer support helpdesk which allows organizations to collaborate and support their customers through email, phone, websites, forums and social media
+Freshservice: a cloud-based service desk and IT Service Management solution to address the growing complexity of teams’ IT support needs through a simple but powerful interface
+Freshsales: a full-featured CRM solution for sales teams handling high-velocity leads
+Freshcaller: a fully functional call center on the cloud
+"In 2010, we started Freshdesk as a ‘fresh helpdesk’ with a dream to make a dent in the world of customer support. While Freshdesk continues to grow exponentially, as a company, we moved beyond customer service by offering innovative products in the ITSM, CRM and call center domains. As we expand our vision and build more exciting products, we believe this is the right time to create a new brand that allows us to tell our multi-product story better,” said Girish Mathrubootham, CEO & Founder of Freshworks. “Today, I’m happy to announce that we are rebranding the company as Freshworks. We’re not in this just to change the way businesses do customer support, but to refresh the way they do business. Our goal is to build a company that is loved by employees, customers and shareholders alike.”
+Until now, businesses have had few options for business software, turning to all-in-one, cumbersome legacy solutions across the organization. These solutions are not only expensive, but also require long implementation cycles and are extremely difficult to use without expert training, neither of which are afforded by growing companies. At the same time, enterprises are also tired of wasting time and resources on trying to make everything work together. Freshworks offers a product portfolio that is easily implemented and affordable for companies of all sizes. 
+"For us, integrating customer support, sales and IT is critical to providing the best customer experience possible,” said Amit Chaudhary, COO and Founder at Lenskart."We started using Freshdesk in 2015 and began using Freshsales last year, and it’s made a huge impact on how we communicate both with customers and internally. Companies like Freshworks are truly changing how businesses think about software, including enterprises"
+Adopted by over 100,000 companies in 145 countries, Freshworks’ mission is to help companies better engage and communicate with their customers and employees with refreshing business software. For companies looking to share customer data and insights across sales and support teams or quickly onboard and set-up new employees, Freshworks’ integrated software products ensure all teams are working together in sync. 
+To learn more or sign up, visit http://www.freshworks.com.
+About Freshworks
+Freshworks Inc. is the parent company behind the suite of products which includes Freshdesk, Freshservice, Freshsales and Freshcaller. Freshworks products are designed to work tightly together to increase collaboration and help teams better connect and communicate with their customers and co-workers. Founded in October 2010, Freshworks Inc. is backed by Accel, Tiger Global Management, CapitalG and Sequoia Capital India. Freshworks is headquartered in San Bruno, California with global offices in India, UK, Australia and Germany. Freshworks is widely used by over 100,000 customers around the world including Honda, Bridgestone, Hugo Boss, University of Pennsylvania, Toshiba and Cisco. 
+Contact
+SutherlandGold for Freshdesk
+Freshdesk(at)sutherlandgold.com
+
+
+
+Share article on social media or email:
+
+
+
+
+
+
+
+
+
+
+View article via:
+											Pdf
+										
+											Print
+										
+
+
+
+
+
+
+Contact Author
+
+Corporate Marketing
+Freshdesk Inc. +91 9840413654
+				Email >
+			
+@freshdesk
+				Follow >
+			
+Freshdesksince: 11/2010
+				Like >
+			
+Follow us on
+
+
+									Visit website
+								
+
+
+
+
+News Center
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+Freshdesk Inc: Company Profile - Bloomberg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+Feedback
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+freshdesk inc
+Private Company
+
+
+
+
+
+
+
+
+
+Company Profile
+Sector: Technology
+Industry: Software
+Sub-Industry: Application Software
+Freshdesk, Inc. provides a platform that enables small and medium-sized businesses to support customers through e-mail, phone, website, and social networks. The Company offers multi-product support, a knowledge base, self-service portal, community forums, and tools to leverage mainstream social media for customer support.
+
+
+
+
+Corporate Information
+Address:
+
+340 South Lemon Street, 7585
+Walnut, CA 91789
+United States
+
+
+Phone:
+1-925-399-1646
+
+
+Fax:
+-
+
+
+Web url:
+www.freshdesk.com
+
+
+
+
+
+Board Members
+
+
+
+
+Board Members
+Company
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From The Web
+
+
+
+
+
+
+
+
+
+
+
+
+Press Releases
+
+
+
+
+Ameyo Cloud Contact Center Solutions Integrate With Freshdesk to Foster New Customer Support Capabilities
+
+Apr 12, 2017
+
+
+
+Compare and Evaluate the Major Customer Self-Service Software Vendors Through MarketsandMarkets DIVE Report
+
+Mar 30, 2017
+
+
+
+
+
+
+Key Executives
+
+
+Girish Mathrubootham
+
+
+CEO/Founder
+
+
+
+
+Nishant Rao
+
+
+Chief Operating Officer
+
+
+
+
+Sts Prasad
+
+
+Senior VP:Engineering
+
+
+
+
+
+
+
+Sponsored Financial Commentaries
+
+
+
+
+
+
+
+More From The Web
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+
+
+News
+
+
+Top Headlines
+Most Popular
+Exclusive
+Law
+Entrepreneurs
+Leaders
+Economy
+Environment
+Science
+Sports
+Markets Magazine
+Pursuits Magazine
+Bloomberg Visual Data
+Bloomberg Best (and Worst)
+For comments or complaints about news coverage click here
+
+
+Regions
+U.S.
+China
+Europe
+Asia
+U.K. & Ireland
+Australia & New Zealand
+Canada
+India & Pakistan
+Japan
+Africa
+Eastern Europe
+Latin America
+Middle East
+Markets
+Commodities
+Currencies
+Bonds
+Stocks
+Energy Markets
+Municipal Bonds
+Emerging Markets
+Funds
+Islamic Finance
+Industries
+Energy
+Technology
+Real Estate
+Finance
+Health Care
+Transportation
+Insurance
+Retail
+Media
+Manufacturing
+
+
+
+
+Quick
+
+
+Market Data
+
+
+Stocks
+Stock Futures
+World Indexes
+Americas
+Europe, Middle East, & Africa
+Asia-Pacific
+Gainers & Losers
+Earnings Calendar
+Industry Leaders
+Currencies
+Americas
+Europe, Middle East, & Africa
+Asia-Pacific
+Foreign Exchange Cross Rates
+FX Fixings
+Currency Converter
+Forex Trading Videos
+Commodities
+Energy Prices
+Metals Prices
+Agricultural Prices
+
+
+Rates & Bonds
+US Treasuries
+UK Gilts
+Germany Bunds
+Japan Bonds
+Australia Bonds
+Bloomberg Bond Indexes
+Corporate Bonds
+Consumer Rates
+Economic Calendar
+Watchlist
+European Debt Crisis
+Symbol Search
+The Market Now
+
+
+
+
+Personal Finance
+
+
+Top Headlines
+Saving & Investing
+Real Estate
+Retirement Planning
+Financial Advisers
+Taxes
+Blog: Ventured & Gained
+Real Cost Of
+Money Gallery
+Calculators
+Watchlist (Portfolio Tracker)
+
+
+
+
+Tech
+
+
+Top Headlines
+Social Media
+Mobile & Wireless
+Web
+Enterprise Tech
+TV, Games & Movies
+Apple
+Tech Deals
+Global Tech
+Slideshows
+Videos
+
+
+
+
+U.S. Politics
+
+
+Sustainability
+
+
+Top Headlines
+Energy
+Corporate Sustainability
+Policy
+Natural Resources
+Health & Population
+Slideshows
+Videos
+Blog: The Grid
+
+
+
+
+Luxury
+
+
+Top Headlines
+Autos
+Billionaires
+Living
+Property
+Travel
+Well Spent
+Loot Blog
+Pursuits Magazine
+Videos
+
+
+
+
+TV
+
+
+Live TV
+Channel Finder
+Personalities
+Apple TV
+iPad App
+Schedule
+U.S.
+Asia
+Europe
+
+
+Shows
+Surveillance
+Market Makers
+Lunch Money
+Street Smart
+Bloomberg West
+Game Changers
+
+
+
+
+Video
+
+
+Must See
+Latest
+Live TV
+Shows
+Playlist
+
+
+
+
+Radio
+
+
+Live Radio
+Shows
+Schedule
+Personalities
+Podcasts
+Bloomberg Brief
+Featured Podcasts and New Shows
+Bloomberg View
+Masters in Business
+First Word
+Surveillance
+Bloomberg Advantage
+In the Loop
+Bloomberg Law
+Taking Stock
+Bloomberg Best
+More Podcasts
+
+
+
+
+Blogs
+
+
+Global Tech
+The Grid
+Loot
+The Market Now
+Political Capital
+Tech Deals
+Ventured and Gained
+
+
+
+
+Opinion
+
+
+
+
+My Saved
+
+
+
+Registration
+
+
+
+Sign In
+
+
+
+Bloomberg.com
+
+
+
+Businessweek.com
+
+
+
+Company
+
+
+
+About
+Blog
+Careers
+Diversity & Inclusion
+News Mission
+Philanthropy & Engagement
+Press Room
+Procurement
+Sustainability
+
+
+
+
+Products
+
+
+
+Financial Products
+Bloomberg Professional Service
+Bloomberg Anywhere
+Bloomberg Tradebook
+Bloomberg Briefs
+Bloomberg Indexes
+Bloomberg SEF
+Service Center
+Customer Support
+Enterprise Products
+Enterprise Solutions
+Trading Solutions
+Industry Products
+Bloomberg BNA
+Bloomberg Government
+Bloomberg Law
+Bloomberg Link
+Bloomberg New Energy Finance
+Bloomberg Sports
+Content Licensing
+
+
+
+
+Bloomberg Anywhere
+
+
+
+Mobile Apps
+
+
+
+Bloomberg Visual Data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+ 
+
+Freshdesk Inc. rebrands itself to Freshworks Inc., Offerings to remain the same - Briffly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Apps
+
+Android apps
+Computer apps
+iOS apps
+Web apps
+
+
+Companies
+Electronics
+
+Accessories
+Wearables
+
+
+Fintech
+Future tech
+
+Augmented Reality
+Bots
+Virtual Reality
+
+
+Services
+
+Food delivery
+
+
+Telecom
+ 
+
+ 
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Saturday, July 29, 2017
+
+
+Companies
+Events
+Stories
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Briffly
+
+
+Apps
+
+Android apps
+Computer apps
+iOS apps
+Web apps
+
+
+Companies
+Electronics
+
+Accessories
+Wearables
+
+
+Fintech
+Future tech
+
+Augmented Reality
+Bots
+Virtual Reality
+
+
+Services
+
+Food delivery
+
+
+Telecom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Internal ad, Triffly Media product
+ 
+
+
+
+
+Home  
+
+Companies    Freshdesk Inc. rebrands itself to Freshworks Inc., Offerings to remain the same
+
+
+
+
+
+Companies
+
+Freshdesk Inc. rebrands itself to Freshworks Inc., Offerings to remain the same
+
+By Arun Sathiya -   June 7, 2017 2 200 
+
+
+
+
+Share on Facebook
+Tweet on Twitter
+
+
+
+tweet 
+
+
+ 
+Freshdesk Inc. has rebranded itself to Freshworks Inc. The Chennai-based helpdesk software maker announced the news on June 6. The rebrand comes off the need to explain their story better. Freshdesk Inc. initially started as a customer support helpdesk software maker, but has fast expanded to making other products and acquired various other cloud-based business management related products.
+While the rebranding is effective immediately, Freshdesk Inc. will continue to offer its products under the same name. Freshdesk, Freshservice, Freshsales, Hotline, Freshchat, Freshcaller are few big names under its suite of business management products. These will to continue to be available under the same name.
+In 2010, Freshdesk started out as a customer support software. Since then, the company has forayed into a range of other domains including ITSM, CRM and mobile support management. In 2014, Freshservice was launched and clocked 1M dollars revenue mark in 10 months. That was Freshdesk’s big moment and noticably Freshdesk’s successful take at creating multiproducts venture.
+As of 2017, Freshworks Inc.’s products are trusted and used by over 100,000 businesses across the world. Some of the popular brands using Freshworks Inc.’s products include Avast, Quizup, Lenskart, Zoom, Zomato, Toshiba, TeamViewer amongst many others.
+Speaking about the rebrand, Freshworks’s CEO Girish Mathrubootham says,
+In 2010, we started Freshdesk as a “fresh” helpdesk with a dream to make a dent in the world of customer support. While Freshdesk continued to grow exponentially, we moved beyond customer service as a company by offering innovative products in the ITSM and CRM domains. As we expand our vision and build more exciting products, we felt that this was the right time to create a new brand that would allow us to tell our multi-story product story better. Today, I am happy to announce that we are rebranding the company as Freshworks.
+Our goal is to build a company that is loved by employees, customers and shareholders. With Freshworks, we reaffirm our commitment to building a global product company from India.
+This comes at a time when market players like Zoho from India, Zendesk, and Salesforce are fast expanding into new domains and looking to mature in newer markets. Freshdesk’s rebranding to Freshworks would give the company an even more powerful strategy to take on competitors with its huge suite of products.
+Freshworks is currently valued at $700M and has offices in Chennai, London, US, Australia and Berlin. Freshworks has acquired as much as 7 startups in the past 18 months to enhance its suite of offerings. Hotline, Airwoot, Frilp are few popular names bought by Freshworks. Freshworks counts Sequoia Capital, Tiger Global, Google Capital and Accel Partners as its investors.
+Disclaimer: The author worked as an intern with the Freshworks product marketing team a few months back. His stint at Freshworks has nothing to do with the reporting of this story.
+Share this:Click to share on Twitter (Opens in new window)Click to share on Facebook (Opens in new window)Click to share on Google+ (Opens in new window)
+
+Related
+ 
+
+
+RELATED ARTICLESMORE FROM AUTHOR
+
+
+
+
+ Companies 
+
+Apple’s first original series ‘Planet of the Apps’ takes off 
+
+
+
+
+
+ Apps 
+
+Twitter opens a range of DM API to over a chatbot experience, ahead of Facebook’s F8 
+
+
+
+
+
+ Companies 
+
+Yahoo and AOL to be merged as Oath, says Tim Amstrong 
+
+ 
+
+
+
+
+ Companies 
+
+Jelly officially shuts down, Download your Jelly answers 
+
+
+
+
+
+ Companies 
+
+Paytm expands operations to Canada, Offers Bill Payment Services ATM 
+
+
+
+
+
+ Companies 
+
+Pinterest acquires Jelly search to strengthen fort on human search results 
+
+  
+
+
+
+
+
+
+hemanth g
+
+
+
+its not *july 6*
+its june 6 and the disclaimer is funny by the way..!
+
+
+
+
+
+
+Arun Sathiya
+
+
+
+Thanks on bringing that to my notice. And, best mentioned in the open before someone comments at it. 🙂
+
+
+
+
+
+
+
+
+
+
+
+
+HOT NEWS
+
+
+
+ Services 
+Olacabs.com gets a facelift and supports cab bookings on the desktop...
+
+
+
+
+
+ Services 
+Firefox Buys Pocket 6 Months After Instapaper’s Purchase by Pinterest
+
+ 
+
+
+
+ Events 
+Messenger F8 Bot is a must-have if you are attending the...
+
+
+
+
+
+ Fintech 
+Paytm launches recurring payments collection system for businesses
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+Facebook
+
+
+
+
+
+Google+
+
+
+
+
+
+Twitter
+
+ 
+
+
+
+
+
+
+
+
+
+
+© Briffly. A Triffly Media product. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FRESHDESK INC. Reviews & Products | ITQlick.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FRESHDESK INC. - Software Vendor Review
+Save time and money. Let our software experts find top Help Desk recommendations for your business.
+
+
+
+Last updated: Jul 20, 2017
+
+
+
+
+
+
+
+
+
+
+
+Offer Changes
+
+
+
+
+
+
+FRESHDESK INC.
+
+88 reviews
+							
+
+
+
+
+Freshdesk was built ground-up to make your agents’ lives better. That is why you will find intelligent capabilities out-of-the-box, that automatically categorize, prioritize and dispatch your tickets, and even 
+PriceDemo
+
+
+Categories: Call MonitoringBanking CRMCall CenterCasino CRMComplaint Management
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expert Review
+Software Products (4)
+User Reviews (0)
+Additional Information
+
+
+
+Overview of FreshdeskUpdated: Jul 20, 2017Freshdesk OverviewFreshdesk is feature-packed web-based customer support solution that allows companies to provide service to their customers in many helpful ways. Freshdesk was released in June 2011 by a company with the same name that was founded by Girish Mathrubootham, an Indian national, and with his team.
+Ever since the release of Freshdesk, it has grown its customers because of its great performance. Their efforts were recognized through different awards and media attention. Today, they are used by companies from across the globe and are supported by investors, all because of an innovative and ambitious software product.
+
+Freshdesk Average Rating  - The average rating of Freshdesk is 5 stars. The rating is based on 88 aggregated online reviews.
+Freshdesk Typical CustomersFreshdesk works great for small to medium enterprises that think they need to rely on a cloud-based solution for their customer support. From the time it was open commercially, Freshdesk has been able to grow its long list of satisfied customers. In fact, it has a client in almost every country. Among these are Goodreads, Hugo Boss, Pearson, Truecaller and Stanford, to name a few. If you notice, these brands are from various industries, which only shows how versatile Freshdesk is.
+Freshdesk FeaturesEvery business needs customers for making a profit, implying that attracting, growing and retaining a robust customer base is a key necessity. These tasks are not easy and requires a dedicated team and the help of technology to systematically handle the same objectives. This could be in the form of a software solution that handles customer information through feedback and requests.
+Freshdesk is easy to use, and offers affordable pricing and full featured packages. Its main features include a helpdesk ticketing system, time tracking, customer support and knowledge base. Through a user-friendly program, customer management is made easy and strategic by Freshdesk. The time saved allows you to focus on other aspects of your business that are equally important.
+ 
+Key Features of Freshdesk:
+Simple, fast setup.
+Multi-channel support - email, phone, chat, social and more
+Self service portal to help your customers help themselves
+Community portal to engage your biggest fans
+Multiproduct support for your global company
+Multi-language & multi-time zone support
+Integration with Google Apps, Salesforce, SugarCRM, and more
+Surveys to measure customer satisfaction
+Smart automations to save your agents time
+Integrated game mechanics to motivate your agents
+Insights and powerful reports about your help desk
+
+Freshdesk 5 Pros Freshdesk is easy to use – upon set-up you can already work with it in just a couple of minutesWith this web-based customer support software, users can enjoy the convenience of not having to maintain a server and get constant updates of recent functionalitiesFreshdesk is highly customizable in terms of functionality and integration, allowing great flexibilityThe product offers great support from their technical team, which is very helpful if you are having problems with one or more functions.Freshdesk can store a vast amount of information, including FAQs, that can help new users resolve issues that were already encountered by others.
+Freshdesk 2 Cons For now, Freshdesk doesn’t have features on contract customers which could be helpful for some business since they can be warned if contracts are upOne of this solution's downsides, although minimal, is that emails can’t process first names easily 
+Freshdesk AlternativesZendesk and Zoho Support are two of the main competitors for Freshdesk.
+ 
+ZohoSupport is part of the Zoho application suite and addresses customer support needs of a business 
+
+with a cloud based solution. It incorporates workflow automation and can be easily customized to match 
+
+internal business process requirements. The product allows customers to contact on a variety of 
+
+channels including voice, chat, email & social media. There are also analytic tools to monitor service 
+
+performance with dashboards to view compliance with key support KPIs and metrics.
+ 
+Freshdesk in comparison provides some additional features for customer support such as its “suggested 
+
+solutions” which recommends resolutions based on an analysis of similar service issues. The product 
+
+also supports service level agreements to define support metrics to be achieved, and this is incentivized 
+
+for support agents through its gamification feature where they can compete to be rewarded for best 
+
+support rendered on various performance metrics.
+ 
+Zendesk on the other hand includes a knowledge base integrated with self service portals that 
+
+customers can use to solve commonly faces problems and thereby improve resolution times. 
+
+Additionally the product supports a community forum where discussions, posts and queries can be 
+
+addressed in collaborative framework. There is also an App library where additional tools can be 
+
+integrated to enhance the Zendesk product.
+ 
+Freshdesk while providing similar features also includes an “Observer” option to automatically trigger 
+
+events on tickets based on configured rules. In addition the product can integrate customer support in 
+
+different countries in one platform, as well as include multiple languages as needed.
+Freshdesk Pricing InformationFreshdesk is priced per support agent per month, and has 5 different plans:  Sprout - Free for Getting Started.Blossom - $19 per agent per month. Garden - $35 per agent per month. Estate - $49 per agent per month. Forest - $89 per agent per month.
+
+
+
+
+FRESHDESK INC. - 4 software products
+
+
+
+
+ 1. Freshdesk
+Software by  FRESHDESK INC., Updated: Jul 20, 2017
+
+Freshdesk is feature-packed web-based customer support solution that allows companies to provide service to their customers in many helpful ways. Freshdesk was released in June 2011 by a company with the same name that was founded by Girish Mathrubootham,
+PriceDemo 
+
+
+
+ 
+Categories: Call Monitoring, Banking CRM, Call Center, Casino CRM, Complaint Management. 
+
+
+
+
+
+
+
+
+
+ 2. Freshservice
+Software by  FRESHDESK INC., Updated: Jul 16, 2017
+
+Freshservice is an IT asset management solution for businesses of all sizes. It offers help in such 
+
+domains as compliance, service management, reporting, and asset management. The software 
+
+was designed and launched by Freshservice Inc headquartere
+PriceDemo 
+
+
+
+ 
+Categories: Dashboards & KPIs, Banking CRM, Casino CRM, Complaint Management, Customer Engagement. 
+
+
+
+
+
+
+
+
+
+ 3. Freshsales
+Software by  FRESHDESK INC., Updated: Jul 16, 2017
+
+Freshsales is a web-based CRM integrating several sales and marketing features that will help any businesses in achieving growth and success. The software gives complete view of the customers and the data gathered from it can be transformed to true sales.
+PriceDemo 
+
+
+
+ 
+Categories: Mobile CRM. 
+
+
+
+
+
+
+
+
+
+ 4. Freshservice ServiceDesk
+Software by  FRESHDESK INC., Updated: Jul 20, 2017
+
+Freshservice ServiceDesk is cloud-based IT service management software giving users all the IT support they need.
+ Compare Pricing
+
+
+
+ 
+Categories: Dashboards & KPIs, Customer Service, Help Desk, Self-Service Portal, Configuration management. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+													Company:
+												
+
+													FRESHDESK INC.
+												
+
+
+
+													Address
+												
+
+													Los Angeles, CA
+												
+
+
+
+													Vendor Type:
+												
+
+													ISV
+												
+
+
+
+													Proficiency:
+												
+
+Software Development
+
+
+
+
+													Employees:
+												
+
+													51-200
+												
+
+
+
+													Industry Focus:
+												
+
+													Information Technology and Services
+												
+
+
+
+
+
+
+
+
+
+
+
+Related Software Products
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+Learn more aboutFreshdesk 
+
+
+
+
+
+
+Freshdesk
+Help Desk
+
+PriceDemo
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+Learn more aboutFreshservice 
+
+
+
+
+
+
+Freshservice
+Help Desk
+
+PriceDemo
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+Learn more aboutFreshsales 
+
+
+
+
+
+
+Freshsales
+CRM
+
+PriceDemo
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+Learn more aboutFreshservice ServiceDesk 
+
+
+
+
+
+
+Freshservice
+IT Management
+
+Compare Pricing
+
+
+
+
+
+
+
+
+
+
+
+
+Compare Freshdesk
+
+
+
+
+
+
+
+
+with Zendesk
+
+
+
+
+Compare Zendesk vs Freshdesk
+
+
+
+
+
+
+
+
+
+
+with Samanage Help Desk
+
+
+
+
+Compare Samanage Help Desk vs Freshdesk
+
+
+
+
+
+
+
+
+
+
+with Spiceworks
+
+
+
+
+Compare Spiceworks vs Freshdesk
+
+
+
+
+
+
+
+
+
+
+with Desk.com
+
+
+
+
+Compare Desk.com vs Freshdesk
+
+
+
+
+
+
+
+
+
+
+with Mhelpdesk
+
+
+
+
+Compare Mhelpdesk vs Freshdesk
+
+
+
+
+
+
+
+
+
+
+with TeamSupport
+
+
+
+
+Compare TeamSupport vs Freshdesk
+
+
+
+
+
+
+
+
+
+
+with Zendesk Starter
+
+
+
+
+Compare Zendesk Starter vs Freshdesk
+
+
+Articles from ITQlick Blog
+
+
+
+
+
+
+
+Top CRM Software for SMBs
+	
+
+
+
+
+
+
+Best BI Software for Large Businesses
+	
+
+
+
+
+
+
+Top 5 Accounting & Finance Software for Startups
+	
+
+
+
+
+
+
+Best ERP Software for Large Businesses
+	
+
+
+
+
+
+
+Top 5 HR Software for SMBs
+	
+
+
+
+
+
+
+Top 5 Inventory Management Software for SMBs
+	
+
+
+
+
+
+
+Top 5 Supply Chain Software for SMBs
+	
+
+
+
+
+
+
+Best 5 Maintenance Software for SMBs
+	
+
+
+
+
+
+
+Best 5 Distribution Software for SMBs
+	
+
+
+
+
+
+
+Top 5 Retail /POS Software for SMBs
+	
+
+
+
+
+
+
+Top 5 Sales & Marketing Automation Software for SMBs
+	
+
+
+
+
+
+
+Top 5 Field Service Software for SMBs
+	
+
+
+
+
+
+
+Best 5 Project Management Software for SMBs
+	
+
+
+
+FREE Resource
+
+
+
+
+
+
+
+
+
+
+								 CRM software Pricing Guide
+								
+
+
+
+ Don't let price confusion keep you from selecting the best software! 
+
+FREE Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Questions about FRESHDESK INC.? Our experts can help. Compare Pricing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Support Multiple Products with Freshdesk - Freshdesk Blogs                  Support Multiple Products with FreshdeskWritten by Girish Mathrubootham on July 6, 2011Our latest refresh of Freshdesk happened yesterday with enhanced multi-product support. If you are supporting more than one product or brand then you need to check out the multi-product support feature in Freshdesk Examples – Product companies with more than one product, Managed Service providers offering outsourced support for  multiple customers or hotel management companies managing more than one property etc.Here is an overview of how this works –1. You can have a separate incoming / outgoing email address for each product. (support(at)ProductA.com, support(at)ProductB.com etc.) 2. A separate customer portal for each product – eg. help.ProductA.com and help.ProductB.com 3. A completely different brand experience for customers in each portal – Fully customizable with separate logos, colors etc. 4. A separate top level forums and Solutions Category for each product / brand to keep only relevant information in each portal. 5. Ability to automatically link each ticket to the appropriate Product and appropriate support group in the backend. How much does this cost ? Multi-Product support is available in the Premium plan along with a host of other features and costs $29 per agent per month.Disclaimer – Microsoft, XBox and MS-Office are trademarks of Microsoft and are used here for illustrative purposes only.Microsoft currently does not use Freshdesk for customer support.Related postsPublic Ticket Links: Why sign up when you can just jump right in?!Building apps together for the Freshdesk marketplace Girish Mathrubootham   Founder & CEO of FreshworksSubscribe for blog updates      neteffects As I dwell on your old post everyday, I am really amazed with the things that I discover regarding the system and products that you offer.  Having a system that supports multiple products is like having a octopus hands that can do multi tasking work all at the same time.Pingback: Tennis Info Products - Infertility In Female.com | Infertility In Female.com()                 

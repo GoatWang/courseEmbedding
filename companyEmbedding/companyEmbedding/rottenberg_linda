@@ -1,0 +1,9361 @@
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+Security Check Required
+
+
+
+
+FacebookJoin or Log Into Facebook   Email or PhonePasswordForgot account?Log InDo you want to join Facebook?Sign UpSign UpSecurity CheckPlease enter the text belowCan't read the text above?Try another text or an audio captchaText in the box:What's this?Security CheckThis is a standard security test that we use to prevent spammers from creating fake accounts and spamming users.SubmitEnglish (US)EspañolFrançais (France)中文(简体)العربيةPortuguês (Brasil)Italiano한국어Deutschहिन्दी日本語MessengerFacebook LitePeoplePlacesGamesLocationsCelebritiesMarketplaceGroupsRecipesMomentsInstagramAboutCreate AdCreate PageDevelopersCareersPrivacyCookiesAd ChoicesTermsSettingsActivity Log Facebook © 2017
+
+
+
+
+Linda Rottenberg, Endeavor Global Inc: Profile & Biography - Bloomberg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feedback
+
+
+
+
+
+Linda Rottenberg
+
+CEO/Co-Founder,
+Endeavor Global Inc
+
+
+
+
+
+
+Career History
+
+
+
+
+CEO/Co-Founder
+Endeavor, PRESENT
+
+
+CEO/Co-Founder
+Endeavor Global, PRESENT
+
+
+Co-Founder
+Endeavor Global, 1997-UNKNOWN
+
+
+
+
+
+
+
+Corporate Information
+Address:
+
+
+
+Phone:
+-
+
+
+Fax:
+-
+
+
+
+
+
+
+
+
+
+
+
+From The Web
+
+
+
+
+
+
+
+
+
+
+
+
+Personal Information
+
+
+
+Education
+
+
+
+Yale Law School
+Graduated
+
+
+President & Fellows of Harvard College
+Graduated
+
+
+
+
+
+
+
+
+Memberships
+
+
+
+Board Memberships
+
+
+
+
+Council on Foreign Relations/DC
+
+
+Board Member, PRESENT
+
+
+
+
+World Economic Forum
+
+
+Board Member, PRESENT
+
+
+
+
+Endeavor Global
+
+
+Board Member, PRESENT
+
+
+
+
+Olo
+
+
+Board Member, 12/2016-PRESENT
+
+
+
+
+Zayo Group Holdings Inc
+
+
+Board Member, 5/2014-PRESENT
+
+
+
+
+Zayo Group LLC
+
+
+Board Member, 5/2014-PRESENT
+
+
+
+
+Globant SA
+
+
+Board Member, 8/2013-UNKNOWN
+
+
+
+Show More
+
+
+
+
+
+Other Memberships
+
+
+
+
+Ypo
+
+
+Member
+
+
+
+
+
+
+
+
+
+Sponsored Financial Commentaries
+
+
+
+
+
+
+
+More From The Web
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+
+
+News
+
+
+Top Headlines
+Most Popular
+Exclusive
+Law
+Entrepreneurs
+Leaders
+Economy
+Environment
+Science
+Sports
+Markets Magazine
+Pursuits Magazine
+Bloomberg Visual Data
+Bloomberg Best (and Worst)
+For comments or complaints about news coverage click here
+
+
+Regions
+U.S.
+China
+Europe
+Asia
+U.K. & Ireland
+Australia & New Zealand
+Canada
+India & Pakistan
+Japan
+Africa
+Eastern Europe
+Latin America
+Middle East
+Markets
+Commodities
+Currencies
+Bonds
+Stocks
+Energy Markets
+Municipal Bonds
+Emerging Markets
+Funds
+Islamic Finance
+Industries
+Energy
+Technology
+Real Estate
+Finance
+Health Care
+Transportation
+Insurance
+Retail
+Media
+Manufacturing
+
+
+
+
+Quick
+
+
+Market Data
+
+
+Stocks
+Stock Futures
+World Indexes
+Americas
+Europe, Middle East, & Africa
+Asia-Pacific
+Gainers & Losers
+Earnings Calendar
+Industry Leaders
+Currencies
+Americas
+Europe, Middle East, & Africa
+Asia-Pacific
+Foreign Exchange Cross Rates
+FX Fixings
+Currency Converter
+Forex Trading Videos
+Commodities
+Energy Prices
+Metals Prices
+Agricultural Prices
+
+
+Rates & Bonds
+US Treasuries
+UK Gilts
+Germany Bunds
+Japan Bonds
+Australia Bonds
+Bloomberg Bond Indexes
+Corporate Bonds
+Consumer Rates
+Economic Calendar
+Watchlist
+European Debt Crisis
+Symbol Search
+The Market Now
+
+
+
+
+Personal Finance
+
+
+Top Headlines
+Saving & Investing
+Real Estate
+Retirement Planning
+Financial Advisers
+Taxes
+Blog: Ventured & Gained
+Real Cost Of
+Money Gallery
+Calculators
+Watchlist (Portfolio Tracker)
+
+
+
+
+Tech
+
+
+Top Headlines
+Social Media
+Mobile & Wireless
+Web
+Enterprise Tech
+TV, Games & Movies
+Apple
+Tech Deals
+Global Tech
+Slideshows
+Videos
+
+
+
+
+U.S. Politics
+
+
+Sustainability
+
+
+Top Headlines
+Energy
+Corporate Sustainability
+Policy
+Natural Resources
+Health & Population
+Slideshows
+Videos
+Blog: The Grid
+
+
+
+
+Luxury
+
+
+Top Headlines
+Autos
+Billionaires
+Living
+Property
+Travel
+Well Spent
+Loot Blog
+Pursuits Magazine
+Videos
+
+
+
+
+TV
+
+
+Live TV
+Channel Finder
+Personalities
+Apple TV
+iPad App
+Schedule
+U.S.
+Asia
+Europe
+
+
+Shows
+Surveillance
+Market Makers
+Lunch Money
+Street Smart
+Bloomberg West
+Game Changers
+
+
+
+
+Video
+
+
+Must See
+Latest
+Live TV
+Shows
+Playlist
+
+
+
+
+Radio
+
+
+Live Radio
+Shows
+Schedule
+Personalities
+Podcasts
+Bloomberg Brief
+Featured Podcasts and New Shows
+Bloomberg View
+Masters in Business
+First Word
+Surveillance
+Bloomberg Advantage
+In the Loop
+Bloomberg Law
+Taking Stock
+Bloomberg Best
+More Podcasts
+
+
+
+
+Blogs
+
+
+Global Tech
+The Grid
+Loot
+The Market Now
+Political Capital
+Tech Deals
+Ventured and Gained
+
+
+
+
+Opinion
+
+
+
+
+My Saved
+
+
+
+Registration
+
+
+
+Sign In
+
+
+
+Bloomberg.com
+
+
+
+Businessweek.com
+
+
+
+Company
+
+
+
+About
+Blog
+Careers
+Diversity & Inclusion
+News Mission
+Philanthropy & Engagement
+Press Room
+Procurement
+Sustainability
+
+
+
+
+Products
+
+
+
+Financial Products
+Bloomberg Professional Service
+Bloomberg Anywhere
+Bloomberg Tradebook
+Bloomberg Briefs
+Bloomberg Indexes
+Bloomberg SEF
+Service Center
+Customer Support
+Enterprise Products
+Enterprise Solutions
+Trading Solutions
+Industry Products
+Bloomberg BNA
+Bloomberg Government
+Bloomberg Law
+Bloomberg Link
+Bloomberg New Energy Finance
+Bloomberg Sports
+Content Licensing
+
+
+
+
+Bloomberg Anywhere
+
+
+
+Mobile Apps
+
+
+
+Bloomberg Visual Data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Linda Rottenberg
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+This biographical article is written like a résumé. Please help improve it by revising it to be neutral and encyclopedic. (June 2015)
+
+
+
+
+Linda Rottenberg
+
+
+
+Linda Rottenberg
+
+
+
+Alma mater
+Harvard College
+Yale Law School
+
+
+Occupation
+CEO & Co-founder of Endeavor
+
+
+Spouse(s)
+Bruce Feiler
+
+
+Children
+2
+
+
+Linda Rottenberg is an American businesswoman and New York Times bestselling author. She is the CEO and Co-founder of Endeavor, a non-profit organization that pioneered the field of high-impact entrepreneurship. Her New York Times best-selling book, Crazy Is a Compliment: The Power of Zigging When Everyone Else Zags, was published by Penguin Random House in October 2014.[1]
+Named one of “America’s Best Leaders” by U.S. News and one of TIME's 100 “Innovators for the 21st century,” Linda Rottenberg is considered among the world’s most dynamic experts on entrepreneurship, innovation, and leadership. A frequent lecturer at Fortune 500 companies, Rottenberg is the subject of four case studies by Harvard Business School and the Stanford Graduate School of Business. Her pioneering work also earned her a host of nicknames: ABC and NPR declared her “the entrepreneur whisperer,” journalist Thomas Friedman dubbed her the world’s “mentor capitalist,” Business Insider named her “Ms. Davos,” and for years she was known as “la chica loca”[2] (the crazy girl) for insisting that entrepreneurs existed not only in Silicon Valley but also in emerging markets around the world.
+She serves on the board of Zayo Group, a global provider of bandwidth infrastructure (NYSE: ZAYO). She is a member of the Council on Foreign Relations and Young Presidents Organization (YPO) and serves on the entrepreneurship steering committee of the World Economic Forum.
+
+
+
+Contents
+
+
+1 Early life and education
+2 Career
+3 Personal life
+4 Honors
+5 Notes
+6 References
+7 External links
+
+
+
+Early life and education[edit]
+Originally from Newton, Massachusetts,[3] Rottenberg received her J.D. from Yale Law School and B.A. magna cum laude in Social Studies from Harvard College.[4]
+Career[edit]
+Rottenberg co-founded Endeavor, the world’s leading organization supporting high-impact entrepreneurs, in 1997. Headquartered in New York with 50 offices across the globe, Endeavor identifies, mentors, and co-invests in individuals with the biggest ideas, the likeliest potential to build companies that matter, and the greatest ability to inspire others. Since 1997, Rottenberg’s network has screened over 40,000 candidates, handpicked more than 1,000 Endeavor Entrepreneurs, and helped them grow to provide 500,000 jobs and generate $8 billion annually.[5] After spawning entrepreneurship ecosystems around the world, in 2013 Endeavor brought its proven scaleup model to the U.S.
+Rottenberg has been profiled in the Wall Street Journal, Forbes, The Economist, Financial Times, USA Today, Strategy + Business, People, Glamour, and MORE, and has appeared on GMA, The Today Show, Morning Joe, Nightline, NPR, CNBC, CNN, Fox News, Fox Business, and Bloomberg News. Dell featured her in its “Take Your Own Path” ad campaign and Veuve Clicquot named her Businesswoman of the Year.
+Personal life[edit]
+Rottenberg lives in Brooklyn with her husband, author and New York Times columnist Bruce Feiler, and their identical twin daughters.[6]
+Honors[edit]
+
+Named to Forbes "Impact 30" – Forbes[7]
+"Take Your Own Path" campaign winner – Dell[8]
+2009 Asper Award for Global Entrepreneurship [9]
+One of America's Best Leaders 2008 – U.S. News & World Report[10]
+“Innovator for the 21st Century” – Time Magazine
+"Business Woman of the Year: 2008" – Veuve Clicquot
+One of the top 100 innovators in the world under the age of 35 – MIT Technology Review TR100[11][12]
+“Global Leader for Tomorrow” and “Young Global Leader” – World Economic Forum [13]
+The 1st female chair of the World Economic Forum on the Middle East (2007) [14]
+One of the World’s Top 40 Social Entrepreneurs – Schwab Foundation for Social Entrepreneurship (2001) [15]
+10 Women to Watch of 2008 – Running Start[16]
+Person of the Year – Organization of Women in International Trade (2007) [17]
+The Most Important Not-For-Profit Leader in Latin America – Poder–BCG Business
+Member, Inter-American Dialogue[18]
+
+Notes[edit]
+
+
+
+^ "Crazy Is a Compliment: The Power of Zigging When Everyone Else Zags". Retrieved 2014-07-18. 
+^ Marco della Cava (15 October 2014). "Change Agents: Rottenberg's 'crazy' world mission". usatoday.com. Retrieved 27 June 2016. 
+^ http://investors.zayo.com/corporate-governance/board-of-directors/linda-rottenberg
+^ "Linda Rottenberg". luminary-magazine.com. Retrieved 2016-06-24. 
+^ http://endeavor.org/impact/
+^ Bob Minzesheimer (14 February 2013). "Author uncovers 'secrets' of happy families". usatoday.com. Retrieved 27 June 2016. 
+^ "Linda Rottenberg, Forbes Impact 30". Retrieved 2012-11-19. 
+^ "Linda Rottenberg, Trailblazer". Retrieved 2009-11-02. 
+^ "2009 Asper Award". Archived from the original on May 28, 2010. Retrieved June 24, 2010. 
+^ "America's Best Leaders: Linda Rottenberg, Entrepreneur". Retrieved 2009-11-02. 
+^ "2003 Young Innovators Under 35". Technology Review. 2003. Retrieved August 16, 2011. 
+^ "2004 Young Innovator". Retrieved 2009-11-02. 
+^ "WEF - Linda Rottenberg". Retrieved 2009-11-02. 
+^ "Queen Urges Public-Private Partnerships to Create a Culture of Giving". Archived from the original on 2009-12-23. Retrieved 2009-11-02. 
+^ "Linda Rottenberg biography". Archived from the original on 2013-05-25. Retrieved 2009-11-02. 
+^ "Women to Watch Awards". Retrieved 2009-11-02. 
+^ "Woman of the Year". Retrieved 2009-11-02. 
+^ "Inter-American Dialogue | Linda Rottenberg". www.thedialogue.org. Retrieved 2017-04-13. 
+
+
+
+References[edit]
+
+Linda Rottenberg's February 2009 Keynote address at Harvard Business School's Social Entrepreneurship Conference [1]
+Harvard Business School case study (2009): "Endeavor: Creating a Global Movement for High-Impact Entrepreneurship" [2]
+Harvard Business School case study (2003): "Endeavor: Determining A Growth Strategy" [3]
+Stanford Graduate School of Business case study [4]
+"The Davos Awards: The 25 People And Companies Who Just Won The World's Most Prestigious Event" (Business Insider, January 2011) [5]
+
+External links[edit]
+
+Linda Rottenberg's Official Website
+Twitter Handle
+Good Morning America: Entrepreneur Whisperer Helps 3 Moms Scale Up Business (October 2014)
+MSNBC's The Cycle: Using Your Crazy to Success in Entrepreneurship (October 2014)
+MSNBC's Morning Joe: How Entrepreneurs Are Responding to the Economy (October 2014)
+CNBC's Squawk Box: Thinking and Acting Like An Entrepreneur (October 2014)
+Bloomberg TV: Entrepreneurs Are Risk Minimizers (October 2014)
+Bloomberg TV: Mentoring Entrepreneurs (October 2014)
+Fox News: Overcoming the Barriers to Entrepreneurship (July 2014)
+Video: Stanford University Entrepreneurial Thought Leaders Series (May 2014)
+Video: 2013 Endeavor Gala Speech (December 2013)
+Entrepreneur Magazine: Can Endeavor Help Struggling Entrepreneurs Abroad and in the U.S.? (November 2013)
+CNBC: Darwinian economics: Why downturns spark start-up booms (November 2013)
+Harvard Business School Case Study: Endeavor - Miami Heats Up (November 2013)
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Linda_Rottenberg&oldid=784966839"					
+Categories: Living peopleAmerican women chief executivesAmerican nonprofit chief executivesAmerican women in businessHarvard University alumniYale Law School alumniPeople from BrooklynPeople from Newton, MassachusettsHidden categories: Articles with a promotional tone from June 2015All articles with a promotional tonePages to import images to WikidataArticles with hCards 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+РусскийСаха тыла 
+Edit links 
+
+
+
+
+
+ This page was last edited on 10 June 2017, at 22:16.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg (@lindarottenberg) | Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+Home
+Home
+Home, current page.
+
+
+
+
+
+
+Moments
+Moments
+Moments, current page.
+
+
+
+
+
+
+Search query
+
+
+
+Search Twitter
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Language: English 
+
+
+
+ 
+
+
+
+Bahasa Indonesia
+Bahasa Melayu
+Català
+Čeština
+Dansk
+Deutsch
+English UK
+Español
+Filipino
+Français
+Hrvatski
+Italiano
+Magyar
+Nederlands
+Norsk
+Polski
+Português
+Română
+Slovenčina
+Suomi
+Svenska
+Tiếng Việt
+Türkçe
+Ελληνικά
+Български език
+Русский
+Српски
+Українська мова
+עִבְרִית
+العربية
+فارسی
+मराठी
+हिन्दी
+বাংলা
+ગુજરાતી
+தமிழ்
+ಕನ್ನಡ
+ภาษาไทย
+한국어
+日本語
+简体中文
+繁體中文
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Have an account?  Log in
+
+
+   
+
+Have an account?
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+New to Twitter?
+Sign up
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Linda Rottenberg
+
+
+
+@lindarottenberg
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+Tweets, current page.
+4,691
+            
+
+
+
+Following
+Following
+744
+
+
+
+Followers
+Followers
+12.2K
+
+
+
+Likes
+Likes
+3,997
+
+ 
+ 
+More 
+
+
+
+
+
+
+
+Likes
+
+
+
+
+
+
+Unmute @lindarottenberg
+
+Mute @lindarottenberg
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg
+
+
+
+@lindarottenberg
+
+
+Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+            www.endeavor.org
+
+      
+
+
+
+ 
+    lindarottenberg.com
+  
+
+
+
+
+Joined February 2010
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                199 Photos and videos
+            
+
+            Photos and videos
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+
+
+Tweets
+Tweets, current page.
+
+
+
+                  Tweets & replies
+                
+
+
+
+                  Media
+                
+
+
+
+
+
+You blocked @lindarottenberg
+Are you sure you want to view these Tweets? Viewing Tweets won't unblock @lindarottenberg
+Yes, view profile
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Linda Rottenberg followed
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Endeavor Lebanon‏ @EndeavorLB
+
+7h7 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Look out for the these billboards! The 73rd ISP puts Lebanon on the global entrepreneurship map- thanks to Tree Ad & #BeirutISP supporters.pic.twitter.com/69HWsf8QPr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Leap Ventures,
+    BLF Lebanon,
+    BLC Bank and
+    2 others
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Leap Ventures @LeapVC
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+BLF Lebanon @BLFlebanon
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+BLC Bank @BLCBank
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+BDD @BeirutDigitalD
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+SGBL @SGBLbank
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Rasha Manna‏ @RashaManna
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Couldn't b prouder of @ZeidHusban's selection into Endeavor network. He did #Jordan proud at #EndeavorISP 
+@EndeavorJo
+#onwards&upwardspic.twitter.com/y3HhTVReY7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Endeavor Greece‏ @EndeavorGr
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Endeavor Global co-founder & CEO @lindarottenberg welcoming our newest entrepreneurs, Gianna Tzika (Konva) and Alex Maniatopoulos (Yodiwo)!pic.twitter.com/xxnsyztYaR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+4 retweets
+
+
+
+
+11 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+11
+
+
+
+
+
+Liked
+
+
+11
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Rasha Manna‏ @RashaManna
+
+23h23 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+When an @EndeavorJo alum turned #VC shows love &support for both #Endeavor & our newest #entrepreneur in 1 email. Thank u  for the @laithzpic.twitter.com/BbZPCaUee8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Endeavor,
+    Linda Rottenberg and
+    Walid Tahabsem
+
+
+
+
+
+
+2 replies
+
+
+
+
+5 retweets
+
+
+
+
+15 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+2
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+15
+
+
+
+
+
+Liked
+
+
+15
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Rasha Manna‏ @RashaManna
+
+23h23 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+
+
+
+    
+      
+      Replying to @RashaManna @EndeavorJo and 4 others
+
+
+And we love the card! @endeavorjo and @PosrocketMENA are ready to take off. #Onwards&Upwardspic.twitter.com/UGqxbSNmZF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+2 retweets
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Endeavor Kenya‏ @EndeavorKenya
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Our first Endeavor Entrepreneur! Congratulations @KenNjorogeCG on becoming the first Endeavor Entrepreneur in Sub-Saharan Africa. #Endeavorpic.twitter.com/HUc5ZXg0IW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ken Njoroge,
+    Cellulant,
+    Sylvia Mulinge and
+    6 others
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Ken Njoroge @KenNjorogeCG
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Cellulant @Cellulant
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Sylvia Mulinge @sylmulinge
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Endeavor @endeavor_global
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+FIONA @monamungai
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Endeavor Lebanon @EndeavorLB
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Linda Rottenberg @lindarottenberg
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Darshan Chandaria @dchandaria
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+fernando fabre @fabref
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+
+6 replies
+
+
+
+
+21 retweets
+
+
+
+
+78 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+6
+
+
+
+
+
+
+
+Retweet
+
+
+21
+
+
+
+
+Retweeted
+
+
+21
+
+
+
+
+
+
+
+
+Like
+
+
+78
+
+
+
+
+
+Liked
+
+
+78
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Leap Ventures‏ @LeapVC
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+At @endeavor_global ISP:lots of energy from entrepreneurs coming from all over the world to #Lebanon thank you @EndeavorLB @lindarottenberg
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+20 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+20
+
+
+
+
+
+Liked
+
+
+20
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Endeavor Miami‏ @EndeavorMIA
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+What builds successful ecosystems? @ReidHoffman and @LindaRottenberg discuss on hit podcast #MastersofScale #Miami https://goo.gl/DHb1ip pic.twitter.com/6ORzHXoStQ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Daniela Terminel‏ @dterminel
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Learning about multiplying your impact from serial entrepreneur @kevinryan #EndeavorizeLebanon @endeavor_globalpic.twitter.com/GZjbDhFXgn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+6 retweets
+
+
+
+
+9 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+6
+
+
+
+
+Retweeted
+
+
+6
+
+
+
+
+
+
+
+
+Like
+
+
+9
+
+
+
+
+
+Liked
+
+
+9
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Endeavor‏ @endeavor_global
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+The 73rd International Selection Panel kicked off today in Beirut! Follow along, and join the conversation, with #EndeavorISP @EndeavorLBpic.twitter.com/A8EEF52dvu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+8 retweets
+
+
+
+
+24 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+8
+
+
+
+
+Retweeted
+
+
+8
+
+
+
+
+
+
+
+
+Like
+
+
+24
+
+
+
+
+
+Liked
+
+
+24
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Daniela Terminel‏ @dterminel
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+"Without access to markets, you'll never see a company scale" @fadig #EndeavorizeLebanon @endeavor_globalpic.twitter.com/6qQb4VqkGW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+13 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+13
+
+
+
+
+
+Liked
+
+
+13
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Endeavor Lebanon‏ @EndeavorLB
+
+Jul 23
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Behind the scenes of #EndeavorizeLebanon starting in less than an hour! Big thanks to our sponsors. @touchLebanon @ogerotelecom @LeapVCpic.twitter.com/lUheEhobog
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+touch,
+    Ogero Telecom and
+    Leap Ventures
+
+
+
+
+
+
+0 replies
+
+
+
+
+6 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+6
+
+
+
+
+Retweeted
+
+
+6
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Endeavor Lebanon‏ @EndeavorLB
+
+Jul 23
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Happening in parallel: preparations for the Beirut ISP kicking off in a few hours!pic.twitter.com/Uxj4iDE7qJ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BLF Lebanon,
+    BLC Bank,
+    BDD and
+    2 others
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+BLF Lebanon @BLFlebanon
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+BLC Bank @BLCBank
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+BDD @BeirutDigitalD
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+SGBL @SGBLbank
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Leap Ventures @LeapVC
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+7 retweets
+
+
+
+
+9 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+7
+
+
+
+
+Retweeted
+
+
+7
+
+
+
+
+
+
+
+
+Like
+
+
+9
+
+
+
+
+
+Liked
+
+
+9
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Reid Hoffman‏Verified account @reidhoffman
+
+Jul 14
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Alright, entrepreneurs, let's hear 'em: What’s your "kitchen table moment"?pic.twitter.com/GapIz71qVu
+
+
+
+
+
+
+
+
+
+Masters of Scale, Ep. 9: The Next Silicon Valley Is...?
+Linda Rottenberg on how every entrepreneur faces a "kitchen table moment"
+
+
+
+
+
+
+
+
+
+
+10 replies
+
+
+
+
+18 retweets
+
+
+
+
+61 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+10
+
+
+
+
+
+
+
+Retweet
+
+
+18
+
+
+
+
+Retweeted
+
+
+18
+
+
+
+
+
+
+
+
+Like
+
+
+61
+
+
+
+
+
+Liked
+
+
+61
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Omidyar Network‏Verified account @OmidyarNetwork
+
+Jul 18
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+“You can't have the same business model as the monopoly in the space” @ginab on building a successful #startup https://itunes.apple.com/us/podcast/founders-corner/id1167870406?mt=2 …pic.twitter.com/SY5kpD8Uvp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+7 retweets
+
+
+
+
+8 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+7
+
+
+
+
+Retweeted
+
+
+7
+
+
+
+
+
+
+
+
+Like
+
+
+8
+
+
+
+
+
+Liked
+
+
+8
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+above & beyond‏ @aandbtech
+
+Jul 17
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Congratulations to @kubofinanciero for being selected as one of the #FinTech #Startups that will connect to #4wrd.. Welcome to #FINCONECTA!!pic.twitter.com/kd8CVtSWZy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sogebank,
+    Banco Delta,
+    Pro Mujer and
+    3 others
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Sogebank @groupesogebank
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Banco Delta @BancoDelta
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Pro Mujer @promujer
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Banco Popular @bcopopularhn
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+BancoSol @BancoSol
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+Banco Guayaquil @BancoGuayaquil
+
+
+
+                Endeavor CEO and Co-Founder, high-impact entrepreneurship promoter, mom of identical twins. Author of Crazy Is A Compliment: http://amzn.to/1l9Uh21 
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+18 retweets
+
+
+
+
+18 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+18
+
+
+
+
+Retweeted
+
+
+18
+
+
+
+
+
+
+
+
+Like
+
+
+18
+
+
+
+
+
+Liked
+
+
+18
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg‏ @lindarottenberg
+
+Jul 17
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+Linda Rottenberg Retweeted Michael Robison
+
+That's fantastic @MichaelRobison - I'll watch that space! #TeamCrazyhttps://twitter.com/michaelrobison/status/887037694781607937 …
+
+Linda Rottenberg added,
+
+
+
+
+
+
+
+
+Michael Robison @MichaelRobison
+
+
+
+
+
+    
+      
+      Replying to @mastersofscale @GreylockVC and 3 others
+
+This was KILLER.... Loved every moment... We are hoping to be at the epicenter of Austin being the next SV. #fintech #startup #disrupt
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg‏ @lindarottenberg
+
+Jul 17
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+https://lnkd.in/dQ66Mbi 
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Cindy Gallop‏Verified account @cindygallop
+
+Jul 16
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Go Arya! Great opener @GameOfThrones! #GoT
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg Retweeted
+            
+
+
+
+
+
+
+
+Abhijit Bhaduri‏Verified account @AbhijitBhaduri
+
+Jul 15
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+In @mastersofscale @ReidHoffman & Endeavor's @lindarottenberg discuss the importance of paying it forward http://apple.co/2uXtgLO pic.twitter.com/1hGqrMqRcI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+12 retweets
+
+
+
+
+35 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+12
+
+
+
+
+Retweeted
+
+
+12
+
+
+
+
+
+
+
+
+Like
+
+
+35
+
+
+
+
+
+Liked
+
+
+35
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+          @lindarottenberg hasn't Tweeted yet.
+      
+Back to top ↑
+
+
+
+
+
+
+
+
+
+
+
+
+Loading seems to be taking a while.
+
+      Twitter may be over capacity or experiencing a momentary hiccup. Try again or visit Twitter Status for more information.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      New to Twitter?
+    
+
+
+    Sign up now to get your own personalized timeline!
+  
+
+Sign up
+
+
+
+
+You may also like
+    ·
+    Refresh
+
+
+
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Twitter
+About
+Help Center
+Terms
+Privacy policy
+Cookies
+Ads info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Choose a trend location
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dismiss
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+            Previous
+          
+
+
+
+
+
+
+
+            Next
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Go to a person's profile
+
+
+
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Promote this Tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Block
+
+
+
+
+
+
+Cancel
+Block
+
+
+
+
+
+
+
+
+
+
+
+
+Add a location to your Tweets
+
+        When you tweet with a location, Twitter stores that location. 
+        You can switch location on/off before each Tweet and always have the option to delete your location history.
+        Learn more
+
+
+Turn location on
+Not now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Share Location
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Results from 
+
+
+
+Send
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Your lists
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Create a new list
+
+
+
+
+List name
+
+
+
+
+Description
+
+Under 100 characters, optional
+
+
+
+Privacy
+
+
+
+Public · Anyone can follow this list
+      
+
+
+Private · Only you can access this list
+      
+
+
+
+
+Save list
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Copy link to Tweet
+
+
+
+
+Here's the URL for this Tweet. Copy it to easily share with friends.
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Embed this Tweet
+Embed this Video
+
+
+
+Add this Tweet to your website by copying the code below. Learn more
+Add this video to your website by copying the code below. Learn more
+
+
+
+
+Hmm, there was a problem reaching the server. Try again?
+
+
+
+
+
+
+            Include parent Tweet
+          
+
+
+
+
+            Include media
+          
+
+
+
+
+By embedding Twitter content in your website or app, you are agreeing to the Twitter Developer Agreement and Developer Policy.
+Preview
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Why you're seeing this ad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Log in to Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+
+        Don't have an account? Sign up »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Sign up for Twitter
+
+
+
+
+
+Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.
+
+
+Sign up
+
+
+
+
+        Have an account? Log in »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Two-way (sending and receiving) short codes:
+
+
+
+
+
+Country
+Code
+For customers of
+
+
+
+
+United States
+40404
+(any)
+
+
+Canada
+21212
+(any)
+
+
+United Kingdom
+86444
+Vodafone, Orange, 3, O2
+
+
+Brazil
+40404
+Nextel, TIM
+
+
+Haiti
+40404
+Digicel, Voila
+
+
+Ireland
+51210
+Vodafone, O2
+
+
+India
+53000
+Bharti Airtel, Videocon, Reliance
+
+
+Indonesia
+89887
+AXIS, 3, Telkomsel, Indosat, XL Axiata
+
+
+Italy
+4880804
+Wind
+
+
+3424486444
+Vodafone
+
+
+
+
+
+        » See SMS short codes for other countries
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Confirmation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Skip all
+          
+
+
+
+
+    Welcome home!
+  
+This timeline is where you’ll spend most of your time, getting instant updates about what matters to you.
+
+
+
+
+    Tweets not working for you?
+  
+
+    Hover over the profile pic and click the Following button to unfollow any account.
+  
+
+
+
+
+    Say a lot with a little
+  
+
+    When you see a Tweet you love, tap the heart — it lets  the person who wrote it know you shared the love.
+  
+
+
+
+
+    Spread the word
+  
+
+    The fastest way to share someone else’s Tweet with your followers is with a Retweet. Tap the icon to send it instantly.
+  
+
+
+
+
+    Join the conversation
+  
+
+    Add your thoughts about any Tweet with a Reply. Find a topic you’re passionate about, and jump right in.
+  
+
+
+
+
+    Learn the latest
+  
+
+    Get instant insight into what people are talking about now.
+  
+
+
+
+
+    Get more of what you love
+  
+
+    Follow more accounts to get instant updates about topics you care about.
+  
+
+
+
+
+    Find what's happening
+  
+
+    See the latest conversations about any topic instantly.
+  
+
+
+
+
+    Never miss a Moment
+  
+
+    Catch up instantly on the best stories happening as they unfold.
+  
+
+
+
+Back
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next Tweet from user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Linda Rottenberg
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+This biographical article is written like a résumé. Please help improve it by revising it to be neutral and encyclopedic. (June 2015)
+
+
+
+
+Linda Rottenberg
+
+
+
+Linda Rottenberg
+
+
+
+Alma mater
+Harvard College
+Yale Law School
+
+
+Occupation
+CEO & Co-founder of Endeavor
+
+
+Spouse(s)
+Bruce Feiler
+
+
+Children
+2
+
+
+Linda Rottenberg is an American businesswoman and New York Times bestselling author. She is the CEO and Co-founder of Endeavor, a non-profit organization that pioneered the field of high-impact entrepreneurship. Her New York Times best-selling book, Crazy Is a Compliment: The Power of Zigging When Everyone Else Zags, was published by Penguin Random House in October 2014.[1]
+Named one of “America’s Best Leaders” by U.S. News and one of TIME's 100 “Innovators for the 21st century,” Linda Rottenberg is considered among the world’s most dynamic experts on entrepreneurship, innovation, and leadership. A frequent lecturer at Fortune 500 companies, Rottenberg is the subject of four case studies by Harvard Business School and the Stanford Graduate School of Business. Her pioneering work also earned her a host of nicknames: ABC and NPR declared her “the entrepreneur whisperer,” journalist Thomas Friedman dubbed her the world’s “mentor capitalist,” Business Insider named her “Ms. Davos,” and for years she was known as “la chica loca”[2] (the crazy girl) for insisting that entrepreneurs existed not only in Silicon Valley but also in emerging markets around the world.
+She serves on the board of Zayo Group, a global provider of bandwidth infrastructure (NYSE: ZAYO). She is a member of the Council on Foreign Relations and Young Presidents Organization (YPO) and serves on the entrepreneurship steering committee of the World Economic Forum.
+
+
+
+Contents
+
+
+1 Early life and education
+2 Career
+3 Personal life
+4 Honors
+5 Notes
+6 References
+7 External links
+
+
+
+Early life and education[edit]
+Originally from Newton, Massachusetts,[3] Rottenberg received her J.D. from Yale Law School and B.A. magna cum laude in Social Studies from Harvard College.[4]
+Career[edit]
+Rottenberg co-founded Endeavor, the world’s leading organization supporting high-impact entrepreneurs, in 1997. Headquartered in New York with 50 offices across the globe, Endeavor identifies, mentors, and co-invests in individuals with the biggest ideas, the likeliest potential to build companies that matter, and the greatest ability to inspire others. Since 1997, Rottenberg’s network has screened over 40,000 candidates, handpicked more than 1,000 Endeavor Entrepreneurs, and helped them grow to provide 500,000 jobs and generate $8 billion annually.[5] After spawning entrepreneurship ecosystems around the world, in 2013 Endeavor brought its proven scaleup model to the U.S.
+Rottenberg has been profiled in the Wall Street Journal, Forbes, The Economist, Financial Times, USA Today, Strategy + Business, People, Glamour, and MORE, and has appeared on GMA, The Today Show, Morning Joe, Nightline, NPR, CNBC, CNN, Fox News, Fox Business, and Bloomberg News. Dell featured her in its “Take Your Own Path” ad campaign and Veuve Clicquot named her Businesswoman of the Year.
+Personal life[edit]
+Rottenberg lives in Brooklyn with her husband, author and New York Times columnist Bruce Feiler, and their identical twin daughters.[6]
+Honors[edit]
+
+Named to Forbes "Impact 30" – Forbes[7]
+"Take Your Own Path" campaign winner – Dell[8]
+2009 Asper Award for Global Entrepreneurship [9]
+One of America's Best Leaders 2008 – U.S. News & World Report[10]
+“Innovator for the 21st Century” – Time Magazine
+"Business Woman of the Year: 2008" – Veuve Clicquot
+One of the top 100 innovators in the world under the age of 35 – MIT Technology Review TR100[11][12]
+“Global Leader for Tomorrow” and “Young Global Leader” – World Economic Forum [13]
+The 1st female chair of the World Economic Forum on the Middle East (2007) [14]
+One of the World’s Top 40 Social Entrepreneurs – Schwab Foundation for Social Entrepreneurship (2001) [15]
+10 Women to Watch of 2008 – Running Start[16]
+Person of the Year – Organization of Women in International Trade (2007) [17]
+The Most Important Not-For-Profit Leader in Latin America – Poder–BCG Business
+Member, Inter-American Dialogue[18]
+
+Notes[edit]
+
+
+
+^ "Crazy Is a Compliment: The Power of Zigging When Everyone Else Zags". Retrieved 2014-07-18. 
+^ Marco della Cava (15 October 2014). "Change Agents: Rottenberg's 'crazy' world mission". usatoday.com. Retrieved 27 June 2016. 
+^ http://investors.zayo.com/corporate-governance/board-of-directors/linda-rottenberg
+^ "Linda Rottenberg". luminary-magazine.com. Retrieved 2016-06-24. 
+^ http://endeavor.org/impact/
+^ Bob Minzesheimer (14 February 2013). "Author uncovers 'secrets' of happy families". usatoday.com. Retrieved 27 June 2016. 
+^ "Linda Rottenberg, Forbes Impact 30". Retrieved 2012-11-19. 
+^ "Linda Rottenberg, Trailblazer". Retrieved 2009-11-02. 
+^ "2009 Asper Award". Archived from the original on May 28, 2010. Retrieved June 24, 2010. 
+^ "America's Best Leaders: Linda Rottenberg, Entrepreneur". Retrieved 2009-11-02. 
+^ "2003 Young Innovators Under 35". Technology Review. 2003. Retrieved August 16, 2011. 
+^ "2004 Young Innovator". Retrieved 2009-11-02. 
+^ "WEF - Linda Rottenberg". Retrieved 2009-11-02. 
+^ "Queen Urges Public-Private Partnerships to Create a Culture of Giving". Archived from the original on 2009-12-23. Retrieved 2009-11-02. 
+^ "Linda Rottenberg biography". Archived from the original on 2013-05-25. Retrieved 2009-11-02. 
+^ "Women to Watch Awards". Retrieved 2009-11-02. 
+^ "Woman of the Year". Retrieved 2009-11-02. 
+^ "Inter-American Dialogue | Linda Rottenberg". www.thedialogue.org. Retrieved 2017-04-13. 
+
+
+
+References[edit]
+
+Linda Rottenberg's February 2009 Keynote address at Harvard Business School's Social Entrepreneurship Conference [1]
+Harvard Business School case study (2009): "Endeavor: Creating a Global Movement for High-Impact Entrepreneurship" [2]
+Harvard Business School case study (2003): "Endeavor: Determining A Growth Strategy" [3]
+Stanford Graduate School of Business case study [4]
+"The Davos Awards: The 25 People And Companies Who Just Won The World's Most Prestigious Event" (Business Insider, January 2011) [5]
+
+External links[edit]
+
+Linda Rottenberg's Official Website
+Twitter Handle
+Good Morning America: Entrepreneur Whisperer Helps 3 Moms Scale Up Business (October 2014)
+MSNBC's The Cycle: Using Your Crazy to Success in Entrepreneurship (October 2014)
+MSNBC's Morning Joe: How Entrepreneurs Are Responding to the Economy (October 2014)
+CNBC's Squawk Box: Thinking and Acting Like An Entrepreneur (October 2014)
+Bloomberg TV: Entrepreneurs Are Risk Minimizers (October 2014)
+Bloomberg TV: Mentoring Entrepreneurs (October 2014)
+Fox News: Overcoming the Barriers to Entrepreneurship (July 2014)
+Video: Stanford University Entrepreneurial Thought Leaders Series (May 2014)
+Video: 2013 Endeavor Gala Speech (December 2013)
+Entrepreneur Magazine: Can Endeavor Help Struggling Entrepreneurs Abroad and in the U.S.? (November 2013)
+CNBC: Darwinian economics: Why downturns spark start-up booms (November 2013)
+Harvard Business School Case Study: Endeavor - Miami Heats Up (November 2013)
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Linda_Rottenberg&oldid=784966839"					
+Categories: Living peopleAmerican women chief executivesAmerican nonprofit chief executivesAmerican women in businessHarvard University alumniYale Law School alumniPeople from BrooklynPeople from Newton, MassachusettsHidden categories: Articles with a promotional tone from June 2015All articles with a promotional tonePages to import images to WikidataArticles with hCards 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+РусскийСаха тыла 
+Edit links 
+
+
+
+
+
+ This page was last edited on 10 June 2017, at 22:16.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Linda Rottenberg - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Linda Rottenberg
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+This biographical article is written like a résumé. Please help improve it by revising it to be neutral and encyclopedic. (June 2015)
+
+
+
+
+Linda Rottenberg
+
+
+
+Linda Rottenberg
+
+
+
+Alma mater
+Harvard College
+Yale Law School
+
+
+Occupation
+CEO & Co-founder of Endeavor
+
+
+Spouse(s)
+Bruce Feiler
+
+
+Children
+2
+
+
+Linda Rottenberg is an American businesswoman and New York Times bestselling author. She is the CEO and Co-founder of Endeavor, a non-profit organization that pioneered the field of high-impact entrepreneurship. Her New York Times best-selling book, Crazy Is a Compliment: The Power of Zigging When Everyone Else Zags, was published by Penguin Random House in October 2014.[1]
+Named one of “America’s Best Leaders” by U.S. News and one of TIME's 100 “Innovators for the 21st century,” Linda Rottenberg is considered among the world’s most dynamic experts on entrepreneurship, innovation, and leadership. A frequent lecturer at Fortune 500 companies, Rottenberg is the subject of four case studies by Harvard Business School and the Stanford Graduate School of Business. Her pioneering work also earned her a host of nicknames: ABC and NPR declared her “the entrepreneur whisperer,” journalist Thomas Friedman dubbed her the world’s “mentor capitalist,” Business Insider named her “Ms. Davos,” and for years she was known as “la chica loca”[2] (the crazy girl) for insisting that entrepreneurs existed not only in Silicon Valley but also in emerging markets around the world.
+She serves on the board of Zayo Group, a global provider of bandwidth infrastructure (NYSE: ZAYO). She is a member of the Council on Foreign Relations and Young Presidents Organization (YPO) and serves on the entrepreneurship steering committee of the World Economic Forum.
+
+
+
+Contents
+
+
+1 Early life and education
+2 Career
+3 Personal life
+4 Honors
+5 Notes
+6 References
+7 External links
+
+
+
+Early life and education[edit]
+Originally from Newton, Massachusetts,[3] Rottenberg received her J.D. from Yale Law School and B.A. magna cum laude in Social Studies from Harvard College.[4]
+Career[edit]
+Rottenberg co-founded Endeavor, the world’s leading organization supporting high-impact entrepreneurs, in 1997. Headquartered in New York with 50 offices across the globe, Endeavor identifies, mentors, and co-invests in individuals with the biggest ideas, the likeliest potential to build companies that matter, and the greatest ability to inspire others. Since 1997, Rottenberg’s network has screened over 40,000 candidates, handpicked more than 1,000 Endeavor Entrepreneurs, and helped them grow to provide 500,000 jobs and generate $8 billion annually.[5] After spawning entrepreneurship ecosystems around the world, in 2013 Endeavor brought its proven scaleup model to the U.S.
+Rottenberg has been profiled in the Wall Street Journal, Forbes, The Economist, Financial Times, USA Today, Strategy + Business, People, Glamour, and MORE, and has appeared on GMA, The Today Show, Morning Joe, Nightline, NPR, CNBC, CNN, Fox News, Fox Business, and Bloomberg News. Dell featured her in its “Take Your Own Path” ad campaign and Veuve Clicquot named her Businesswoman of the Year.
+Personal life[edit]
+Rottenberg lives in Brooklyn with her husband, author and New York Times columnist Bruce Feiler, and their identical twin daughters.[6]
+Honors[edit]
+
+Named to Forbes "Impact 30" – Forbes[7]
+"Take Your Own Path" campaign winner – Dell[8]
+2009 Asper Award for Global Entrepreneurship [9]
+One of America's Best Leaders 2008 – U.S. News & World Report[10]
+“Innovator for the 21st Century” – Time Magazine
+"Business Woman of the Year: 2008" – Veuve Clicquot
+One of the top 100 innovators in the world under the age of 35 – MIT Technology Review TR100[11][12]
+“Global Leader for Tomorrow” and “Young Global Leader” – World Economic Forum [13]
+The 1st female chair of the World Economic Forum on the Middle East (2007) [14]
+One of the World’s Top 40 Social Entrepreneurs – Schwab Foundation for Social Entrepreneurship (2001) [15]
+10 Women to Watch of 2008 – Running Start[16]
+Person of the Year – Organization of Women in International Trade (2007) [17]
+The Most Important Not-For-Profit Leader in Latin America – Poder–BCG Business
+Member, Inter-American Dialogue[18]
+
+Notes[edit]
+
+
+
+^ "Crazy Is a Compliment: The Power of Zigging When Everyone Else Zags". Retrieved 2014-07-18. 
+^ Marco della Cava (15 October 2014). "Change Agents: Rottenberg's 'crazy' world mission". usatoday.com. Retrieved 27 June 2016. 
+^ http://investors.zayo.com/corporate-governance/board-of-directors/linda-rottenberg
+^ "Linda Rottenberg". luminary-magazine.com. Retrieved 2016-06-24. 
+^ http://endeavor.org/impact/
+^ Bob Minzesheimer (14 February 2013). "Author uncovers 'secrets' of happy families". usatoday.com. Retrieved 27 June 2016. 
+^ "Linda Rottenberg, Forbes Impact 30". Retrieved 2012-11-19. 
+^ "Linda Rottenberg, Trailblazer". Retrieved 2009-11-02. 
+^ "2009 Asper Award". Archived from the original on May 28, 2010. Retrieved June 24, 2010. 
+^ "America's Best Leaders: Linda Rottenberg, Entrepreneur". Retrieved 2009-11-02. 
+^ "2003 Young Innovators Under 35". Technology Review. 2003. Retrieved August 16, 2011. 
+^ "2004 Young Innovator". Retrieved 2009-11-02. 
+^ "WEF - Linda Rottenberg". Retrieved 2009-11-02. 
+^ "Queen Urges Public-Private Partnerships to Create a Culture of Giving". Archived from the original on 2009-12-23. Retrieved 2009-11-02. 
+^ "Linda Rottenberg biography". Archived from the original on 2013-05-25. Retrieved 2009-11-02. 
+^ "Women to Watch Awards". Retrieved 2009-11-02. 
+^ "Woman of the Year". Retrieved 2009-11-02. 
+^ "Inter-American Dialogue | Linda Rottenberg". www.thedialogue.org. Retrieved 2017-04-13. 
+
+
+
+References[edit]
+
+Linda Rottenberg's February 2009 Keynote address at Harvard Business School's Social Entrepreneurship Conference [1]
+Harvard Business School case study (2009): "Endeavor: Creating a Global Movement for High-Impact Entrepreneurship" [2]
+Harvard Business School case study (2003): "Endeavor: Determining A Growth Strategy" [3]
+Stanford Graduate School of Business case study [4]
+"The Davos Awards: The 25 People And Companies Who Just Won The World's Most Prestigious Event" (Business Insider, January 2011) [5]
+
+External links[edit]
+
+Linda Rottenberg's Official Website
+Twitter Handle
+Good Morning America: Entrepreneur Whisperer Helps 3 Moms Scale Up Business (October 2014)
+MSNBC's The Cycle: Using Your Crazy to Success in Entrepreneurship (October 2014)
+MSNBC's Morning Joe: How Entrepreneurs Are Responding to the Economy (October 2014)
+CNBC's Squawk Box: Thinking and Acting Like An Entrepreneur (October 2014)
+Bloomberg TV: Entrepreneurs Are Risk Minimizers (October 2014)
+Bloomberg TV: Mentoring Entrepreneurs (October 2014)
+Fox News: Overcoming the Barriers to Entrepreneurship (July 2014)
+Video: Stanford University Entrepreneurial Thought Leaders Series (May 2014)
+Video: 2013 Endeavor Gala Speech (December 2013)
+Entrepreneur Magazine: Can Endeavor Help Struggling Entrepreneurs Abroad and in the U.S.? (November 2013)
+CNBC: Darwinian economics: Why downturns spark start-up booms (November 2013)
+Harvard Business School Case Study: Endeavor - Miami Heats Up (November 2013)
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Linda_Rottenberg&oldid=784966839"					
+Categories: Living peopleAmerican women chief executivesAmerican nonprofit chief executivesAmerican women in businessHarvard University alumniYale Law School alumniPeople from BrooklynPeople from Newton, MassachusettsHidden categories: Articles with a promotional tone from June 2015All articles with a promotional tonePages to import images to WikidataArticles with hCards 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+РусскийСаха тыла 
+Edit links 
+
+
+
+
+
+ This page was last edited on 10 June 2017, at 22:16.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+2013 Endeavor Gala: Linda Rottenberg's Opening Remarks - YouTube 
+
+
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+ 
+Skip navigation
+  
+ 
+
+ 
+Sign inSearch
+
+ 
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+ 
+
+
+Close
+
+ 
+
+
+ 
+
+ Yeah, keep it
+Undo
+Close
+ 
+
+
+
+
+              This video is unavailable.
+
+    
+
+
+
+
+
+
+
+Watch QueueQueueWatch QueueQueue 
+Remove allDisconnect
+
+
+
+
+
+
+
+The next video is startingstop 
+
+
+Loading...
+    
+
+ 
+
+
+
+ 
+
+Watch Queue
+    
+Queue
+
+__count__/__total__
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in to YouTube
+
+
+Sign in
+
+
+
+
+
+2013 Endeavor Gala
+
+
+
+Endeavor Global
+
+
+23 videos 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        1
+    
+
+
+
+
+
+
+
+
+
+
+
+          Magic of Endeavor
+      
+
+Endeavor Global
+
+
+
+
+
+
+        ▶
+    
+
+
+
+
+
+
+
+
+
+
+
+          2013 Endeavor Gala: Linda Rottenberg's Opening Remarks
+      
+
+Endeavor Global
+
+
+
+
+
+
+        3
+    
+
+
+
+
+
+
+
+
+
+
+
+          2013 Endeavor Gala: Sir Richard Branson & Edgar Bronfman, Jr.
+      
+
+Endeavor Global
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+Find out whyClose
+
+
+
+
+
+
+    2013 Endeavor Gala: Linda Rottenberg's Opening Remarks
+  
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+Endeavor Global
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+        Unsubscribe from Endeavor Global?
+      
+
+
+Cancel
+Unsubscribe
+
+
+
+
+
+
+
+
+
+
+        Working...
+    
+
+
+
+
+
+
+
+
+
+
+SubscribeSubscribedUnsubscribe5.5K 
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Working...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Add to
+
+Want to watch this again later?
+
+      Sign in to add this video to a playlist.
+    
+Sign in
+
+
+Share
+
+ More
+ 
+
+
+Report
+
+
+Need to report the video?
+
+      Sign in to report inappropriate content.
+    
+Sign in
+
+
+
+
+
+Transcript
+
+
+
+
+Statistics
+
+
+
+Add translations
+
+1,213 views
+
+
+
+
+
+
+
+4
+
+Like this video?
+
+      Sign in to make your opinion count.
+    
+Sign in
+
+
+
+5
+
+
+0
+
+Don't like this video?
+
+      Sign in to make your opinion count.
+    
+Sign in
+
+
+
+1
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+Transcript
+    
+
+
+
+
+
+The interactive transcript could not be loaded.
+      
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+Rating is available when the video has been rented.
+
+
+
+
+      This feature is not available right now. Please try again later.
+    
+
+
+
+
+Published on Nov 12, 2013Endeavor co-founder and CEO Linda Rottenberg discusses the magic of Endeavor and the organization's global impact at the 2013 Endeavor Gala in New York City. 
+
+
+
+      Category
+    
+
+Nonprofits & Activism
+
+
+
+
+      License
+    
+
+Standard YouTube License
+
+
+
+
+ Show more
+Show less
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    2013 Endeavor Gala: Sir Richard Branson & Edgar Bronfman, Jr.
+  
+
+     - Duration: 10:07.
+  
+Endeavor Global
+2,116 views
+
+
+
+10:07
+
+
+
+
+
+    Linda Rottenberg: For Entrepreneurs, "Crazy" Is A Compliment
+  
+
+     - Duration: 17:09.
+  
+99U
+6,250 views
+
+
+
+17:09
+
+
+
+
+
+    2014 Endeavor Gala: Linda Rottenberg's Remarks
+  
+
+     - Duration: 8:14.
+  
+Endeavor Global
+1,723 views
+
+
+
+8:14
+
+
+
+
+
+    Magic of Endeavor
+  
+
+     - Duration: 3:34.
+  
+Endeavor Global
+20,865 views
+
+
+
+3:34
+
+
+
+
+
+    Linda Rottenberg: Crazy is a Compliment [Entire Talk]
+  
+
+     - Duration: 59:26.
+  
+Stanford eCorner
+4,589 views
+
+
+
+59:26
+
+
+
+
+
+    The World We Design- Leila Janah & Linda Rottenberg Americas 2012
+  
+
+     - Duration: 18:48.
+  
+ZeitgeistMinds
+4,316 views
+
+
+
+18:48
+
+
+
+
+
+    Social Entrepreneurs Bootcamp -- Some Tips from the Dragons
+  
+
+     - Duration: 5:42.
+  
+Social Entrepreneurs Ireland
+962 views
+
+
+
+5:42
+
+
+
+
+
+    Linda Rottenberg, CEO & Co-Founder - Endeavor
+  
+
+     - Duration: 12:32.
+  
+OneWire
+1,659 views
+
+
+
+12:32
+
+
+
+
+
+    Day1 | Acredite no impossível - Romero Rodrigues [Buscapé]
+  
+
+     - Duration: 25:27.
+  
+Endeavor Brasil
+293,332 views
+
+
+
+25:27
+
+
+
+
+
+    Fadi Ghandour - Endeavor's 2011 High-Impact Entrepreneur of the Year
+  
+
+     - Duration: 9:53.
+  
+Endeavor Global
+1,694 views
+
+
+
+9:53
+
+
+
+
+
+    The Power of Entrepreneurship -- Fireside Chat with Linda Rottenberg and Reid Hoffman
+  
+
+     - Duration: 1:03:43.
+  
+Endeavor Global
+388 views
+
+
+
+1:03:43
+
+
+
+
+
+    Stanford Seminar - Entrepreneurial Thought Leaders: Linda Rottenberg of Endeavor Global
+  
+
+     - Duration: 59:35.
+  
+stanfordonline
+1,513 views
+
+
+
+59:35
+
+
+
+
+
+    2015 Endeavor Gala: Linda Rottenberg's Remarks
+  
+
+     - Duration: 9:10.
+  
+Endeavor Global
+647 views
+
+
+
+9:10
+
+
+
+
+
+    2016 Endeavor Gala: Linda Rottenberg
+  
+
+     - Duration: 12:22.
+  
+Endeavor Global
+346 views
+
+
+
+12:22
+
+
+
+
+
+    Josh Silverman Entrepreneur Spotlight: interviewed by Om Malik (2011 Endeavor Entrepreneur Summit)
+  
+
+     - Duration: 40:31.
+  
+Endeavor Global
+2,811 views
+
+
+
+40:31
+
+
+
+
+
+    Panel of High-Impact Entrepreneurs at the 2012 Endeavor Gala
+  
+
+     - Duration: 21:59.
+  
+Endeavor Global
+960 views
+
+
+
+21:59
+
+
+
+
+
+    Linda Rottenberg: "Crazy is a Compliment" | Talks at Google
+  
+
+     - Duration: 46:02.
+  
+Talks at Google
+3,310 views
+
+
+
+46:02
+
+
+
+
+
+    Linda Rottenberg Speaks at HBS (part 1)
+  
+
+     - Duration: 5:43.
+  
+Endeavor Global
+803 views
+
+
+
+5:43
+
+
+
+
+
+    Linda Rottenberg in Conversation with Reid Hoffman: Think Big
+  
+
+     - Duration: 1:07:52.
+  
+Commonwealth Club
+1,550 views
+
+
+
+1:07:52
+
+
+
+
+
+    Jutranje prebujenje
+  
+
+     - Duration: 11:07.
+  
+AgniyogaCenter
+23,800 views
+
+
+
+11:07
+
+
+
+
+Loading more suggestions...
+    
+
+Show more
+
+
+
+
+
+
+
+
+
+  
+
+ 
+Language:
+  
+  English
+
+
+
+ 
+Content location:
+  
+  United States
+
+
+
+ 
+Restricted Mode:
+  
+Off
+
+
+
+History Help
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+Loading...
+    
+
+
+ About
+Press
+Copyright
+Creators
+Advertise
+Developers
++YouTube
+ Terms
+Privacy
+
+Policy & Safety
+  
+Send feedback
+
+Test new features
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Working...
+    
+
+
+
+
+
+
+
+
+
+ 
+Sign in to add this to Watch Later
+
+    
+ 
+
+Add to
+    
+
+
+
+
+
+        Loading playlists...
+    
+
+
+ 
+
+
+ 
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Linda Rottenberg - Endeavor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg’s High-Impact Endeavor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 
+
+
+
+
+
+
+
+
+Subscribe to s+b
+Already a subscriber?
+ Click here to read the
+  digital edition »
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Published: February 28, 2012 / Spring 2012 / Issue 66 (originally published by Booz & Company)
+Global Perspective
+
+
+
+
+Linda Rottenberg’s High-Impact Endeavor
+
+This social entrepreneur pioneered a new model for mentoring startups in emerging markets. Now she’s replicating it around the world.by Paula Margulies
+
+
+
+ 123
+
+ 123
+
+ 123
+
+ 123
+
+ 
+
+ 
+
+PDF
+
+ 
+
+ 
+
+
+Growing up in one of Rio de Janeiro’s impoverished favelas, Heloísa Helena Assis realized that there was enormous demand for an affordable product that would tame Brazilian women’s unruly curls. In 1993, Assis and her partners — a former nanny, a cabdriver, and a McDonald’s employee — started a business called Beleza Natural (“Natural Beauty”) in the basement of a modest house in the suburbs of Rio de Janeiro. The company was an immediate success. Beleza Natural was soon scrambling to keep up with demand, unsure of how to pursue strategic growth with limited funding.
+
+
+Linda Rottenberg in New York, 2011. Photograph by Peter Gregoire
+
+In 2005, Assis turned to Endeavor Global Inc., a nonprofit organization headquartered in New York that promotes “high-impact entrepreneurship” in emerging markets. Endeavor accepted Assis into its entrepreneurs program, providing her with what Endeavor founder and CEO Linda Rottenberg describes as “venture capital without the capital” — training, mentoring, and support from a network of business leaders, finance and organizational experts, and successful entrepreneurs.
+With Endeavor’s help, Beleza Natural’s revenues have grown by 914 percent and its employment has increased by 214 percent since it joined the entrepreneur program in 2005. (Today, the company boasts 26 salons across Brazil, a full line of hair-care products, and a cosmetics research lab.) With US$30 million in yearly revenue and 1,300 employees, the company is a rags-to-riches Brazilian success story.
+And it is the sort of story that Endeavor has been helping to replicate in emerging markets across the globe over the past 15 years. In 2009 alone, the organization’s entrepreneurs — who have created 130,000 jobs in 11 countries — generated $3.5 billion in revenue and $92 million in equity capital. And whereas less than half of new firms in the U.S. survive their first four years of operations, 95 percent of Endeavor’s emerging-market companies still operate after eight years. Indeed, Pulitzer Prize–winning author Thomas Friedman has called Endeavor “the best antipoverty program of all.”
+An olive-skinned brunette with a wide smile, a Pilates-toned physique, and an intense gaze, Rottenberg, 41, has a personality as vibrant as the colorful Indian pillows in her office at Endeavor’s global headquarters in downtown New York City. On a busy day in March 2011, she leans back in her chair and stretches her legs out on her desk, the scuffed heels of her black boots visible to anyone walking by. Rottenberg is one of the world’s leading figures in social entrepreneurship — a field that she helped create. Her unswerving belief in the power of this field to effect profound change is the driving force behind Endeavor, whose unique social entrepreneurship model falls somewhere between capitalism and philanthropy. The organization’s mission, she says, is to “meritocracize wealth” in emerging markets, where entrepreneurs face daunting obstacles that include a lack of capital, a dearth of role models, and cultures that discourage risk. By providing entrepreneurs in these countries with access to the networks and support necessary to scale their businesses, she argues, Endeavor enables them to produce a high-impact ripple effect that can generate sustainable wealth and innovation.
+“Endeavor doesn’t create entrepreneurship,” she says. “It already exists, in every country. We just catalyze the conditions under which it can thrive.”
+In the years since Endeavor’s founding, Rottenberg has seen the idea of social entrepreneurship enter the mainstream. She believes that by bridging the gaps between the private, public, and nonprofit sectors, social entrepreneurship models like Endeavor’s are uniquely poised to tackle society’s most pressing challenges. The success of these models in aligning stakeholders’ values, she says, even in the face of difficult barriers, offers valuable lessons for both government and the private sector.
+Pioneering Social Entrepreneurship
+Rottenberg grew up in the leafy Boston suburb of Newton, Mass., the daughter of a lawyer and a homemaker. Her family was supportive and stable — she credits them with giving her “the confidence to be curious” — but Rottenberg realized early on that she itched for a less-conventional kind of life. She also developed a passion for social activism. “I was one of those crazy people who felt entrepreneurial, but with a social bent,” she says. “I never started the proverbial lemonade stand, but I started cause-related organizations.”
+At 18, she headed a few miles down the Charles River to Harvard, where she surrounded herself with expatriates and declared a concentration in social studies, a field she says taught her “to care about the world and think holistically about problems.” It was there that she discovered the work of Joseph Schumpeter, the Austrian economist who argued that a nation’s “fiery spirits,” or entrepreneurs, are its most powerful economic change agents, responsible for the “creative destruction” that generates long-term, sustainable growth. Rottenberg was riveted. She began to believe that she could be part of a “generation of innovation,” finding creative solutions to problems on both a local and a global scale.
+As the head of the ill-fated Harvard Students for Dukakis/Bentsen organization, she carried campaign signs and hosted debate-watching parties. She also became Harvard’s first campus recruiter for the nonprofit Teach for America, which trains college students to teach in low-income communities across the United States. Teach for America founder and CEO Wendy Kopp remembers Rottenberg — whom she today hails as a “role model in international social entrepreneurship” — as “a leader who inspired top students to channel their energy in this direction before anyone had ever heard of Teach for America.”
+As graduation approached, Rottenberg wondered how she could leverage her desire for creative destruction into a career. Viewing nonprofits as maddeningly inefficient and slow, she decided to go to law school, where she could study the legal framework for policy. “In retrospect, today I probably would have gone to business school,” she says. “At the time, though, there wasn’t much on entrepreneurship — it was the late 1980s, and it was Wall Street or bust.” Instead, she headed to Yale Law School, which had a reputation as an incubator of policy thinkers and leaders.
+Yet once she was there, Rottenberg, who had always thought of herself as someone who was “excited by everything,” felt uninspired. She concluded that she didn’t belong in law, or in corporate America. Like many people in their 20s, she was searching for direction and meaning.
+Eventually, she found that direction in one of her childhood passions. From an early age, Rottenberg had been captivated by Latin America. “My earliest pen pal was Uruguayan,” she recalls with a smile, “and everyone always thought I was Latina. Then I spent time in Chile, Argentina, and Brazil, and I just fell in love.”
+So after graduating from Yale Law in 1994, Rottenberg accepted a job managing the Yale–USAID interdisciplinary law program at Argentina’s Universidad de Palermo. Although the work was interesting, she yearned for something more entrepreneurial.
+Rottenberg found an outlet for her ideas in 1996 when she discovered Ashoka, a nonprofit organization that was pioneering a microfinance model in Brazil and Mexico. By leveraging the power of entrepreneurship to create a shift in the status quo, Ashoka pioneered the kind of approach that Rottenberg would eventually adopt with Endeavor. The organization made grants of $50 or $100 to poor people, who could use the money to buy a sewing machine or a calf and begin selling dresses or cheese. The proceeds from those sales may not have been huge, but they provided such basics as food, clothing, shelter, and medicine for the sellers — and slowly helped to lift communities out of poverty. Liking what she saw, Rottenberg began working to expand Ashoka’s reach in Latin America. Bill Drayton, Ashoka’s founder and CEO, remembers her as “one of the world’s truly original people — passionate and practical, focused on the globe and individuals, engaged in business and society.”
+Rottenberg realized that she’d found her niche. “I loved the fact that this field was raw territory. At the time, no one knew what this was. So there was something about feeling part of a new movement that was very exciting for me,” she recalls. Indeed, although social entrepreneurship was first used in the academic literature on social change in the 1960s and 1970s, the term was not yet in widespread use. By the 1990s, that had begun to change.
+As an increasingly interconnected world facilitated the spread of ideas, organizations like Ashoka were better able to gain a foothold, share best practices, and demonstrate the benefits of their models — and they did so at an opportune time. The gulf between the world’s rich and poor was rapidly expanding; there was a growing sense that neither government nor the private sector could solve all of the world’s problems. “Many services and sectors lay beyond companies’ visible self-interest. Harnessing markets to serve the world’s poor, or even to help grow a global middle class, simply did not factor into the bottom line,” Rottenberg told Harvard’s 2009 Social Enterprise Conference. “Social entrepreneurs rose up and attempted to bridge these gaps.…We calibrated and navigated a new balance between government and the private sector.”
+And although they often operated as nonprofits, social entrepreneurs saw themselves as distinct from traditional nonprofits. “Social entrepreneurs are problem solvers, not idealists. We’re driven by innovation, not by charity. And we don’t believe in handouts. We use entrepreneurial strategies to achieve social change,” Rottenberg has said.
+Game-Changing Wealth Creation
+Eager to gain insight into Latin America’s economic and social complexities, Rottenberg struck up conversations everywhere she went. One day, a taxi driver in Buenos Aires told her he had a Ph.D. in engineering. “What are you doing driving a cab?” she asked. He looked at her blankly in the rearview mirror. There were no jobs, he said. No opportunity. His Ph.D. was as useful as a flat tire. “So why don’t you become an entrepreneur?” Rottenberg asked. “What’s an entrepreneur?” he responded. Rottenberg was dismayed to learn that the words for entrepreneur and entrepreneurship were literally missing from the Spanish and Portuguese lexicon. “There was no sense of the possible,” she recalls. “There was all this talent, but there were no role models, no venture capital, no networks.” What’s more, the business culture stigmatized risk and failure.
+
+
+Linda Rottenberg at the 2011 London International Selection Panel.
+Photograph by Dan Massie, courtesy of Endeavor
+
+Rottenberg also came to realize that there was a yawning gap between the private-sector equity that bankers were funneling to a small group of the country’s elite and the kind of financing she was promoting at Ashoka for the poorest of the poor. “Microfinance and microcredit were doing great work in terms of poverty mitigation, but they weren’t really producing the kind of game-changing wealth creation that was necessary to build a middle class,” she says. Someone, she believed, needed to meritocracize wealth and make it possible for people with profitable, scalable business ideas to develop those ideas — even if they hadn’t been born into their country’s elite.
+The model for filling this gap in wealth creation took shape in early 1997, when Ashoka sent Rottenberg to Harvard on an MBA recruiting mission. While there, she ran into Yale classmate Peter Kellner, an investor in eastern Europe’s emerging markets. Over coffee in Harvard’s sleek Shad Hall, Rottenberg and Kellner discussed their shared belief that emerging markets were untapped sources of innovation, and that entrepreneurship was a powerful catalyst for wealth creation. As they talked, Rottenberg grabbed a napkin and began scribbling notes.
+Essentially, Rottenberg and Kellner saw themselves as venture capitalists: They intended to scour Latin America for early-stage, high-potential entrepreneurs who could generate impressive returns and create jobs. They agreed that the key to unleashing Latin America’s entrepreneurial strength was to create Silicon Valleys of sorts on local soil. Yet they were well aware that the financial and cultural structures that had been in place in the original Silicon Valley were largely nonexistent in Latin America. Years of corruption in Latin America’s emerging markets had led to rampant bribery, falsified financial statements, and other dirty dealings, resulting in a general mistrust of business.
+Surmounting these barriers would require both guaranteeing local ownership and fostering trust. Entrepreneurs needed to tap into local networks, experience, and wealth — which would be virtually impossible without the imprimatur of their country’s business leaders. Yet these leaders had little reason to trust a group of young upstarts with creative destruction in mind.
+Endeavor could succeed, Rottenberg believed, only as a neutral third party — a nonprofit. “We believed that neutrality would give us a competitive edge, since there was so little trust on the ground,” she says. “If we were investors, we’d lose that neutrality and jeopardize that trust.”
+Rottenberg coined the phrase high-impact entrepreneurship to signal the type of growth-oriented, scalable enterprises she hoped Endeavor would enable. “One of my pet peeves is that the nonprofit world does not do very good marketing,” she says. “Look at the word non-profit itself — it’s very negative. High-impact entrepreneurship sounded big, bold, and aspirational.” Semantics aside, Rottenberg resolved that Endeavor would be a new kind of nonprofit. Using the energy and tools of the private sector, it would not just produce results, but also rigorously measure their impact.
+By the time their coffee grew cold, Rottenberg and Kellner had sketched out the broad outlines of the Endeavor model. “It started with Latin America, but from the beginning we said this model could really apply to emerging markets around the world,” she recalls.
+A New Type of Benefactor
+In the next few months, Rottenberg left her job at Ashoka and focused her energy on launching Endeavor. Kellner agreed to assume an advisory role, and to provide seed money contingent on Rottenberg’s ability to find matching funds.
+She approached foundations, even though she knew that Endeavor’s chances were slim: At the time — the late 1990s — less than 1.3 percent of U.S. philanthropy went to international causes. Indeed, every foundation she approached turned her down or suggested that she change her focus. Resolving to stay the course on her own terms, Rottenberg approached the private sector, but her timing couldn’t have been worse. The Asian financial crisis of 1997 had raised fears of a global economic meltdown, and capital for new ventures in the developing world was scarce. “Everyone thought we were out of our minds,” Rottenberg says. (Today, she tells entrepreneurs that if people don’t think they’re crazy in the beginning, they may not be thinking big enough.)
+In mid-1997, she persuaded Stephan Schmidheiny, a Swiss industrialist and philanthropist with a keen interest in Latin America, to match Kellner’s investment. By the end of the year, Endeavor had a board of directors and enough capital to begin operations, based on what Rottenberg termed the country benefactor model.
+Under the model, Endeavor, whose global headquarters were Rottenberg’s New York living room, would recruit prominent business leaders within a country, tasking them with forming a board and raising funds before the organization would agree to set up a local office. Once established, these offices would be informed by local values and would be expected to achieve self-sufficiency within a few years.
+Endeavor’s board agreed that potential countries for their program should have a base level of high-potential entrepreneurs, a cadre of successful business leaders who would support Endeavor’s mission, a strong academic system, and political stability. “We look at countries transitioning from international aid to international investment,” Rottenberg says. “It’s about spotlighting the countries as well as the entrepreneurs. Our model actually isn’t right for countries at the most basic level of development.”
+The selection of entrepreneurs would be based on six essential characteristics: entrepreneurial initiative; potential for changing or improving their industry; ability to generate substantial revenue, wages, and jobs; integrity; role model potential; and “fit” with Endeavor. Once selected, these entrepreneurs would gain access to a targeted set of support services: strategic consulting, a customized 18-month assessment plan, access to mentors, on-site fellows from top business schools, entrée to venture capital road shows, and personalized introductions to investors.
+Entrepreneurs would ultimately be required to donate both time and money — in the form of either a percentage of equity or incremental profits — to those following in their footsteps. It was this virtuous circle, Rottenberg believed, that would create the ripple effects needed for ongoing innovation.
+Models of Empreendedorismo
+In January 1998, Endeavor opened its first country office in Chile; that August, an Argentine office followed. The Chilean office proved to be a false start — a lack of local buy-in forced it to close its doors until it could garner the necessary support to successfully relaunch, which it did in 2002 — but Endeavor Argentina flourished. Its first batch of entrepreneurs included Andy Freire and Santiago Bilinkis, the then 24-year-old founders of Officenet, a company aimed at revolutionizing Latin America’s fragmented and inefficient office supply industry.
+Neither Freire nor Bilinkis had access to capital, and the sole investor willing to give them money had demanded 100 percent ownership of the company. Whereas entrepreneurs in a more developed market would have turned down the Faustian bargain, Freire and Bilinkis felt resigned to accept it: In a country without a culture of venture capital or local role models, they saw no other option. They forged ahead and built up the company, but they knew they lacked the resources that would be necessary to expand — in addition to lacking even the smallest stake in their own company.
+Endeavor’s involvement quickly changed that. The organization’s network of venture capitalists helped Freire and Bilinkis renegotiate their ownership terms to 35 percent equity participation. In addition, Endeavor’s roster of mentors helped the two strengthen their finance, growth, and leadership models and connected them with a Brazilian private equity firm. Officenet expanded into Brazil, and soon became the largest and fastest-growing office supply business in Latin America — also becoming an example of what is possible for other entrepreneurs in developing nations.
+It is exactly this “role model effect” that Rottenberg argues has been critically absent in emerging markets. “Access to capital is important, but it’s not the ultimate barrier,” she says. “Entrepreneurs in these countries lack that sense of, ‘Hey, if he did it, I can do it, too.’” Endeavor’s network of entrepreneurs provides that sense of possibility, she believes.
+In fact, Rottenberg says, around 15 percent of Endeavor’s entrepreneurs are chosen precisely because they are considered “surefire successes.… We want to signify that we are results-oriented,” she says. “We expect our entrepreneurs to generate hundreds, if not thousands, of jobs and millions of dollars in revenue, and our top 10 percent to be the next $100 million companies. We make no bones about that. You’ve got to have real success stories if you want to inspire others.” Another 20 percent of the organization’s sponsored entrepreneurs are “fast learners” — intelligent businesspeople who have interesting ideas, but lack management experience and require intensive mentoring.
+Some 50 percent of Endeavor’s entrepreneurs are “local stars” who have developed a regional brand but find themselves at an inflection point where they need support to expand their brand nationally or regionally. “It’s actually not the startup that’s the trouble — people find crazy ways to launch new ideas,” says Rottenberg. “It’s at the point where they hit $1 million or $5 million in sales. That’s where they need to professionalize their management, fire their mother-in-law, or think beyond their borders and recalibrate their public franchising strategies.”
+The rest of the organization’s entrepreneurs, she says, are “diamonds in the rough” — young, talented individuals whose ideas might never get off the ground without external support. Wenceslao Casares, a 24-year-old Argentine entrepreneur selected in 1999, is an example. The son of a Patagonian sheep rancher, Casares founded Patagon.com, Argentina’s first online trading portal. Like many other young entrepreneurs in Latin America, he had made attempts to procure capital but was unsuccessful. Endeavor’s mentors provided him with strategic guidance and helped him negotiate a $4 million funding agreement with U.S. venture capital firm Flatiron Partners. Less than two years later, in a move that earned him almost mythic status among his peers, Casares sold a majority stake of Patagon to Banco Santander for $750 million.
+Endeavor’s entrepreneurs have shown that they can overcome other obstacles. In 1999, the Argentine economy crashed. Investor confidence plummeted; unemployment soared to 25 percent; Argentines began withdrawing large sums of money from banks, exchanging pesos for dollars. Protesters took to the streets of Buenos Aires, and a state of emergency was declared. Yet in the midst of this chaos, Endeavor Argentina’s entrepreneurs achieved substantial growth in revenues and employment.
+“It’s always at a time of crisis that the best entrepreneurial ideas crop up,” Rottenberg says, citing Argentina’s experience as a perfect example of how a culture of entrepreneurship can take root in challenging conditions. “Entrepreneurs can capture a larger market share, hire better talent, and tackle problems more swiftly than large firms.” A decade after the crash, the New York Times opined that Endeavor had been “a catalyst” for Argentina’s “evolving start-up culture…which is now entirely locally run.”
+Similarly, Alan Farcas, Endeavor Chile’s managing director, believes that since its successful relaunch in 2002, the organization has changed his country’s business culture. “Ten years ago, nobody in Chile spoke about entrepreneurship. It may sound strange, but in emerging markets, people don’t connect entrepreneurship with job creation and with making their country a better place to live, the way they do in the United States. Ten years ago, businesspeople were viewed as little more than thieves. We’ve helped change that perception — people now view entrepreneurship as a force of good, for both the economy and the country at large.” What’s more, Farcas says, high-impact entrepreneurship is now part of the lexicon.
+According to Endeavor’s metrics, 75 percent of new ventures in developing and emerging economies have two employees; Endeavor’s entrepreneurs, on the other hand, employ an average of 263. In addition, 95 percent of Endeavor’s companies provide more benefits than those required by law, and 69 percent of Endeavor’s entrepreneurs have created companies that are the first in their industry in the entrepreneur’s country.
+Rottenberg believes that the secret to Endeavor’s success is its built-in ripple effect. “We have told the entrepreneurs all along that they have to pay it forward,” she says. “We make it clear that now that they’re successful, they have to make sure that the environment is conducive to the next generation starting and scaling businesses. Our entrepreneurs understand that the top people in their country and on our global board did not put in money to make another few guys rich.” In addition, Endeavor has focused on creating partnerships with governments, universities, the media, and multilateral institutions. Since 1998, more than 13,000 people have attended Endeavor Argentina’s annual entrepreneurship conference. Endeavor Brazil — launched in 2000 — hosts weekly online seminars; they drew more than 1.5 million viewers in 2010 alone.
+Rottenberg says that her proudest moment was when the editor of a leading Brazilian dictionary told Endeavor Brazil that thanks to its efforts, the dictionary was incorporating the word empreendedorismo, or “entrepreneurship,” in its next edition.
+From “Charming” to “Important”
+By 2003, Endeavor had reached an inflection point of its own. Its four country affiliate offices had helped create 8,562 jobs at 97 companies across Latin America, with annual revenues totaling $332 million. Mass media coverage began to increase; a Harvard Business School case study followed.
+Intrigued, Warner Music Group chairman and CEO Edgar Bronfman Jr. joined Endeavor’s board. “When I witness the power of Endeavor’s model to pioneer entrepreneurship and to create opportunity, inspiration, and economic growth, I am convinced that Endeavor is instrumental in catapulting emerging markets out of international aid and firmly into international investment,” he says.
+Yet Bronfman was not without reservations. “I believe in the model,” he told Rottenberg, “but I think it’s charming. If I am going to commit to this organization and get other people involved, it needs to become important.” Rottenberg got the message. To become “important,” she believed, Endeavor would have to increase its rate of global expansion. Together with the board, she established a target of operating in 25 countries by 2015 — an exponential increase in the breadth of the organization. If the plan succeeded, it would put Endeavor on the map, both literally and figuratively.
+In June 2004, Endeavor opened an office in South Africa. Nearly a decade had passed since the end of apartheid, but its aftereffects could still be felt. Extreme differences existed between the incomes of whites and blacks, and only 10 percent of startups were created by black entrepreneurs. Unemployment was at 31 percent. Despite these challenges, Rottenberg believed that South Africa had the creativity, drive, and talent necessary to emerge as a global innovation hub.
+Malik Fal, Endeavor South Africa’s managing director, shared his goals in 2009 with a national newspaper: “We need to think about making entrepreneurship ‘cool’ and encourage young people not just to look for a job in the government or in a company where they will take a salary and that’s it,” he said. “It’s about creating a nobility of real entrepreneurship, not cronyism. It’s about finding a product, seeing an opportunity, building a business, employing people, and creating wealth in the true sense of the word — free of prejudice.”
+Over the next few years, Endeavor’s South African entrepreneurs created 6,000 jobs in a broad range of industries. Their companies, which grew at an average annual rate of 25 percent, were responsible for innovations that include a biometric security system designed to prevent fraud in African banks.
+Endeavor’s global expansion plans continued. By 2006, the organization had established offices in Colombia and Turkey; Egypt and Jordan followed. An Indian affiliate was established in 2008, but it failed to garner sufficient support and closed its doors a year later. “When it’s not getting pulled in locally, we know that it won’t work. We would rather pull out, and be pulled back in if and when it’s right, than push the model on [the region],” Rottenberg says.
+Looking Ahead
+Rottenberg views Endeavor’s expansion as part of a larger trend in which social entrepreneurship moves into the mainstream. In recent years, she argues, several high-profile individuals have helped create a tipping point of sorts for the concept.
+In 2006, U2 front man Bono morphed from musician to social entrepreneur with the launch of Product Red, a global campaign to fight AIDS in Africa. “In an instant, social entrepreneurship became cool,” Rottenberg says. Later that year, Muhammad Yunus’s Nobel Peace Prize for his work in the field of microcredit gave the movement a recognizable leader. In 2008, Bill Gates launched his vision for creative capitalism, “where business and nonprofits work together to create a market system that eases the world’s inequities.”
+“Gates really showed that whether entrepreneur or social entrepreneur, it’s the same type of person, the same mind-set, the same drive to solve problems,” says Rottenberg. “After all, the best entrepreneurs aren’t worried about money or exit strategies. They’re solving problems. And I think that some of the world’s greatest problems to be solved aren’t the next microprocessing chip, but rather what we do about economic development, healthcare, education, and the environment.”
+Rottenberg says that social entrepreneurs need to ask themselves three basic questions: What’s currently being overlooked by both the government and the private sector? Where’s the need, the gap, the pain point? Where’s the opportunity to bridge a gap? She believes that a major shift is occurring: Lines are becoming increasingly blurred between the sectors, and she envisions a growing number of sector-ambiguous, boundary-pushing entities that aim to combine the best of each sector and pursue the social good while discarding unwanted characteristics such as inefficiency, corruption, and a lack of accountability. “There’s a merger now between the real for-profit companies that are trying to integrate social purpose into their core, especially in areas like the environment and clean tech, and nonprofits that realize that they need to have revenue streams and sustainability built in from the get-go,” she says.
+Citing what she calls psychic equity — the benefits of being invested in and fulfilled by an undertaking — Rottenberg says that organizations in the private sector should consider whether they are motivating their employees beyond bonuses, aligning stakeholders’ values and interests, and measuring impact beyond the next fiscal quarter. In addition, she argues, “the private sector has to bring in multiple stakeholders and listen to constituents. It doesn’t work to just have a command-and-control relationship. You have to be much more partnership-oriented when you’re dealing with other countries.” Rottenberg also believes that social entrepreneurs “can help government deploy its resources more efficiently and effectively and track the impact of its social investments.”
+Rottenberg says that Endeavor is on track to meet — and possibly even surpass — its goal of “25 by 2015.” A Lebanese office opened in early 2011; scoping missions are on the ground in the United Arab Emirates, Saudi Arabia, Kenya, Indonesia, the Philippines, and Vietnam.
+But will all this activity have enough impact, in the end, to propel a social entrepreneur like Rottenberg from “charming” to “important”? Rottenberg quotes recent remarks made by former World Bank President James Wolfensohn: “Endeavor has played an instrumental role in promoting entrepreneurship as a tool for development. It is a model that should be replicated around the world.”
+That is exactly what she hopes to achieve. If social entrepreneurship succeeds on a global scale, it will be due in no small part to the efforts of Rottenberg, her colleagues, and other like-minded people. But in a larger sense, it will represent an affirmation of the conviction underlying those efforts: the conviction that the spirit of entrepreneurialism has always existed in all parts of the world — and that underdeveloped countries have only lacked the institutions and mechanisms needed to unlock its power. 
+Reprint No. 12106
+
+Author Profile:
+
+Paula Margulies is a writer specializing in the Middle East and international affairs.
+
+Resources
+
+Thomas Friedman, The World Is Flat: A Brief History of the Twenty-First Century (Farrar, Straus and Giroux, 2005): Bestseller that describes the context of globalization in which Endeavor emerged, including an account of Rottenberg’s work.
+C.K. Prahalad and Stuart L. Hart, “The Fortune at the Bottom of the Pyramid,” s+b, First Quarter 2002: Seminal article by the late globalization expert and management thinker on business opportunities in the developing world.
+Hernando de Soto, The Mystery of Capital: Why Capitalism Triumphs in the West and Fails Everywhere Else (Basic Books, 2000): A classic analysis of the cultural and institutional impediments to entrepreneurship in the developing world.
+Endeavor’s website: Features case studies, statistics, a blog, and more.
+For more thought leadership on this topic, see the s+b website at: strategy-business.com/global_perspective.
+
+
+
+...shares
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+PDF
+
+ 
+
+ 
+
+
+Topics: operations, banking, startups, finance, culture
+
+
+
+SELECT YOUR FAVORITE QUOTE AND SHARE IT!
+Simply highlight any text within this article and use the pop-up toolbar to share it via email or on social media.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Most Popular on s+b
+
+1.The Neuroscience of Strategic Leadership
+2.Finance and HR: The Executive Partnership That Transformed a Company
+3.The Next Big Technology Could Be Nanomaterials
+
+4.What Billy Joel Can Teach Us About AI
+5.Summer Reading: 10 Business Books – in Pictures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Elsewhere in s+b
+
+Are CEOs Less Ethical Than in the Past?
+by Per-Ola Karlsson, DeAnne Aguirre, and Kristin Rivera
+
+
+It’s All Cass Sunstein’s Default
+by Sally Helgesen
+
+
+10 Principles for Leading the Next Industrial Revolution
+by Norbert Schwieters and Bob Moritz
+
+
+A Strategist’s Guide to Blockchain
+by John Plansky, Tim O’Donnell, and Kimberly Richards 
+
+
+
+
+
+
+
+s+b Videos & Interactive Media
+
+VideoSix Questions to Increase Employee Engagement
+
+
+
+InteractiveHow Future-Proof Are You?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Recommended for You
+
+
+
+
+
+A Little Distance from Colleagues May Spike CreativityWhen You Keep Falling Short of Your MissionWhy Startups Have to Think Differently About Their Skills GapEconomic Cycles Cut Both WaysA Jobless Recovery in CoalIt’s All Cass Sunstein’s DefaultReality Check: Companies Need to Invest in Wages and TrainingHow to Lead When Global Trust Is PlummetingWhy Don’t We Anticipate Hockey Sticks?Common Purpose: Realigning Business, Economies, and SocietyThe New Ways to Win in Emerging MarketsYou May Be Part of a Global Supply Chain
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+		Comments
+
+		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+Saving
+Saving to your library.
+
+
+
+
+
+
+
+
+
+Content Saved
+The item has been saved. Click here to access your saved items, or click the “X” to go back to the article.
+
+
+Login Required
+
+            To access this feature, please SIGN IN or REGISTER.
+        
+
+
+There was an error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linda Rottenberg’s High-Impact Endeavor
+
+
+ 123
+
+ 123
+
+ 123
+
+ 123
+
+ 
+
+ 
+
+PDF
+
+ 
+
+ 
+
+
+
+
+
+

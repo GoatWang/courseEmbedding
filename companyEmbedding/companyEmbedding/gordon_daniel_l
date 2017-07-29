@@ -1,0 +1,3826 @@
+
+
+quantum mechanics - Klein-Gordon inner product - Physics Stack Exchange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+current community
+
+
+
+
+
+
+chat
+
+
+
+        Physics
+    
+
+
+
+
+
+
+
+        Physics Meta
+    
+
+
+
+
+
+your communities            
+
+
+
+Sign up or log in to customize your list.
+                
+
+
+more stack exchange communities
+
+company blog
+
+
+
+
+
+
+
+
+Stack Exchange
+
+
+Inbox
+
+
+
+Reputation and Badges
+
+
+
+
+
+
+
+sign up
+log in
+tour
+
+            help
+            
+
+
+
+
+
+
+                            Tour
+                            
+                                Start here for a quick overview of the site
+                            
+
+
+
+
+                        Help Center
+                        
+                            Detailed answers to any questions you might have
+                        
+
+
+
+
+                                Meta
+                                
+                                    Discuss the workings and policies of this site
+                                
+
+
+
+
+                                About Us
+                                
+                                    Learn more about Stack Overflow the company
+                                
+
+
+
+
+                                Business
+                                
+                                    Learn more about hiring developers or posting ads with us
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        Physics
+                    
+
+
+
+
+
+
+        Questions
+        
+
+
+
+        Tags
+        
+
+
+
+        Users
+        
+
+
+
+        Badges
+        
+
+
+
+        Unanswered
+        
+
+
+
+
+
+
+Ask Question
+
+
+
+
+
+
+
+
+
+
+_
+
+            Physics Stack Exchange is a question and answer site for active researchers, academics and students of physics. Join them; it only takes a minute:
+            
+
+Sign up
+
+
+Here's how it works:
+
+
+                    Anybody can ask a question
+                
+
+                    Anybody can answer
+                
+
+                    The best answers are voted up and rise to the top
+                
+
+
+
+
+ 
+
+Klein-Gordon inner product
+
+
+
+
+
+
+
+
+up vote
+6
+down vote
+favorite
+2
+
+
+
+
+
+Studying the scalar field and Klein-Gordon equation in quantum field theory I came across this definition for the inner product in the space of the solutions of the K.G. equation:
+$$\langle \Phi_1 | \Phi_2 \rangle = i\int \mathrm{d}\vec{x}(\Phi_1 ^* \overleftrightarrow{\partial_0}\Phi_2) = i\int \mathrm{d}\vec{x} (\Phi_1 ^* \partial_0\Phi_2 -  \Phi_2 \partial_0\Phi_1^*)  $$
+I see that this definition should be invariant under Poincaré transformations, but I couldn't prove it. Do you know some references about this?
+Moreover I couldn't find the reason why such a scalar product is introduced. Aren't there other possible scalar products? Why choose this one?
+
+
+quantum-mechanics quantum-field-theory specific-reference poincare-symmetry klein-gordon-equation
+
+
+
+
+share|cite|improve this question
+
+
+
+
+edited Mar 14 at 15:19
+
+
+
+
+
+user1620696
+
+7,44442874
+
+
+ 
+
+
+
+        asked Jan 16 '13 at 22:08
+
+
+
+
+
+justmyfault
+
+335
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5
+
+
+                                 
+                        
+
+
+
+
+
+
+Something to think about: consider the current $J_\mu = i\Phi_1^* \partial_\mu \Phi_2 - i\Phi_2 \partial_\mu \Phi_1^*$ and maybe set $\mu = 0$... What can you say about $J_\mu$?
+                    – Vibert
+Jan 16 '13 at 22:46
+
+
+
+
+
+
+
+
+
+
+                                  
+                        
+
+                                 
+                        
+
+
+
+
+
+
+For a thorough treatment of that expression, consider this paper.
+                    – Frederic Brünner
+Jan 17 '13 at 3:29
+
+
+
+
+
+
+
+add a comment | 
+
+
+
+ 
+
+
+
+
+
+
+								1 Answer
+                                1
+
+
+
+
+            active
+
+            oldest
+
+            votes
+
+
+
+
+
+
+
+
+
+
+
+up vote
+2
+down vote
+
+
+
+
+The Klein-Gordon inner product is a natural construction for functions defined on the mass hyperboloid $k^2=m^2$, because if you write your function in momentum space,
+$$
+\phi(x)\sim \int\widetilde{\mathrm dk}\ \mathrm e^{-ikx}a(k)+\text{h.c.}
+$$
+with $\widetilde{\mathrm dk}$ the measure on $k^2=m^2$, then the Fourier coefficients become (ref. 1, sec 3-1-2)
+$$
+a(k)=\langle\phi,\exp_k\rangle
+$$
+where $\exp_k(x)\equiv\mathrm e^{-ikx}$.
+The philosophy is the same as in the standard Fourier transform (or other integral transforms, i.e., changes of basis), where you can recover the function in momentum space by a suitable scalar product with the exponential function (or whichever basis you use in your space of functions). In general, the form of the inner product is dictated by the form of the integral transform.
+One should point out that, even if $\langle\cdot,\cdot\rangle$ is a natural construction, the real reason we define this particular integral is that it appears in the proof of the LSZ formula for scalars (ref. 1, sec 5-1-4).
+References
+
+Itzykson and Zuber, Quantum Field Theory.
+
+
+
+
+
+share|cite|improve this answer 
+
+
+
+        answered Mar 14 at 15:25
+
+
+
+
+
+AccidentalFourierTransform
+
+15.3k93574
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  
+                        
+
+                                 
+                        
+
+
+
+
+
+
+remark: there might me some signs wrong here.
+                    – AccidentalFourierTransform
+Mar 14 at 15:51
+
+
+
+
+
+
+
+add a comment | 
+
+
+
+ 
+
+
+
+
+
+
+Your Answer
+
+
+
+
+
+
+
+
+
+ 
+draft saved
+draft discarded
+
+
+
+
+
+
+
+
+
+
+
+Sign up or log in
+
+
+Sign up using Google
+
+
+Sign up using Facebook
+
+
+Sign up using Email and Password
+
+
+
+
+
+
+
+Post as a guest
+
+
+
+
+
+Name
+
+
+
+Email
+
+
+
+
+
+
+
+
+
+
+
+Post as a guest
+
+
+
+
+
+Name
+
+
+
+Email
+
+
+
+
+
+
+
+
+
+
+discard
+
+By posting your answer, you agree to the privacy policy and terms of service.
+ 
+
+
+Not the answer you're looking for?							Browse other questions tagged quantum-mechanics quantum-field-theory specific-reference poincare-symmetry klein-gordon-equation  or ask your own question.						
+
+
+
+
+
+
+
+asked
+
+
+4 years, 6 months ago
+
+
+
+
+viewed
+
+
+
+1,969 times
+
+
+
+
+
+active
+
+
+4 months ago
+
+
+
+
+
+
+
+Get the weekly newsletter! In it, you'll get:
+
+The week's top questions and answers
+Important community announcements
+Questions that need answers
+
+
+see an example newsletter
+
+
+By subscribing, you agree to the privacy policy and terms of service.
+
+
+
+
+
+Related
+
+1Klein-Gordon propagator integral1Regarding state of Klein-Gordon field3Probability density of Klein-Gordon equation0Complex Inner Product for Integral Expressions6SHO in QM and Klein Gordon field in 1+0D QFT8Interpreting the Klein-Gordon Annihilation Operator Expression2Klein-Gordon inner product: how to make it real0Klein Gordon inner product1Hamiltonian of Klein-Gordon Field0Klein Gordon time invariant form
+
+
+
+
+
+            Hot Network Questions
+        
+
+
+
+
+                    Is the Affordable Care Act safe after the Republicans failed to repeal it?
+                
+
+
+
+                    Is frequent opening of the fridge really so significant for the power consumption?
+                
+
+
+
+                    Making random spawn points fair?
+                
+
+
+
+                    Why is the ACA individual mandate the most lambasted part of the ACA when the ACA couldn't be funded without it?
+                
+
+
+
+                    Two pieces in to one?
+                
+
+
+
+                    Should I bother allowing images (headshots) for pen names?
+                
+
+
+
+                    In architecture, you {cut?} the corners of a building to keep it from featuring right-angles. What's the word I'm looking for?
+                
+
+
+
+                    Why did Morpheus tell Trinity to stay off the freeway?
+                
+
+
+
+                    How close can planes fly to each other over the ocean?
+                
+
+
+
+                    How Long Could an "Eternal" Fire Last?
+                
+
+
+
+                    What stops water from a moon pool from filling the inside of a submarine?
+                
+
+
+
+                    Does HTTP redirect to HTTPS automatically?
+                
+
+
+
+                    Are there any other male Gryffindors named in Harry's year, beyond the main five?
+                
+
+
+
+                    How come Maesters have not yet figured out what cured Shireen?
+                
+
+
+
+                    Short Story Identification about anarchy in a park
+                
+
+
+
+                    Looking at hash output – is Base64 encoding in any way better than HEX encoding?
+                
+
+
+
+                    Does the Martial Adept superiority dice scale up to match the Battlemaster's ability if you acquire the ability after the feat?
+                
+
+
+
+                    What's the English verb/phrase for going back on action when playing chess?
+                
+
+
+
+                    How do I deal with snarky comments about self-help/motivational books?
+                
+
+
+
+                    VFR - Keeping legal for landing in class Delta with low and few clouds
+                
+
+
+
+                    Why is 600 out of 1000 more convincing than 6 out of 10?
+                
+
+
+
+                    How Cloudy Is It?
+                
+
+
+
+                    Do you also lose the magical bonus of a magic buckler when two-weapon fighting?
+                
+
+
+
+                    What are the palindromes of my palindrome?
+                
+
+
+
+            more hot questions
+        
+
+
+
+
+
+question feed
+        
+
+ 
+
+
+
+
+
+
+
+
+Physics Stack Exchange works best with JavaScript enabled
+            
+
+
+
+
+
+
+
+
+quantum field theory - Klein Gordon inner product - Physics Stack Exchange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+current community
+
+
+
+
+
+
+chat
+
+
+
+        Physics
+    
+
+
+
+
+
+
+
+        Physics Meta
+    
+
+
+
+
+
+your communities            
+
+
+
+Sign up or log in to customize your list.
+                
+
+
+more stack exchange communities
+
+company blog
+
+
+
+
+
+
+
+
+Stack Exchange
+
+
+Inbox
+
+
+
+Reputation and Badges
+
+
+
+
+
+
+
+sign up
+log in
+tour
+
+            help
+            
+
+
+
+
+
+
+                            Tour
+                            
+                                Start here for a quick overview of the site
+                            
+
+
+
+
+                        Help Center
+                        
+                            Detailed answers to any questions you might have
+                        
+
+
+
+
+                                Meta
+                                
+                                    Discuss the workings and policies of this site
+                                
+
+
+
+
+                                About Us
+                                
+                                    Learn more about Stack Overflow the company
+                                
+
+
+
+
+                                Business
+                                
+                                    Learn more about hiring developers or posting ads with us
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        Physics
+                    
+
+
+
+
+
+
+        Questions
+        
+
+
+
+        Tags
+        
+
+
+
+        Users
+        
+
+
+
+        Badges
+        
+
+
+
+        Unanswered
+        
+
+
+
+
+
+
+Ask Question
+
+
+
+
+
+
+
+
+
+
+_
+
+            Physics Stack Exchange is a question and answer site for active researchers, academics and students of physics. Join them; it only takes a minute:
+            
+
+Sign up
+
+
+Here's how it works:
+
+
+                    Anybody can ask a question
+                
+
+                    Anybody can answer
+                
+
+                    The best answers are voted up and rise to the top
+                
+
+
+
+
+ 
+
+Klein Gordon inner product
+
+
+
+
+
+
+
+
+up vote
+0
+down vote
+favorite
+
+
+
+
+
+
+Define the Klein Gordon inner product as
+$$(\psi_1,\psi_2)_{KG} = i\int d^3x \, \psi_1^*\,\partial{t}\,(\psi_2) - \partial{t}\,(\psi_1^*)\,\psi_2 \, .$$
+It can be shown that for the one particle wavefunctions \begin{align}
+\psi_1(t,\vec{x}) &= \exp(-iE_{p_1}t + i\vec{p_1}\cdot\vec{x}) \\ \text{and} \quad \psi_2(t,\vec{x})&=\exp(-iE_{p_2}t + i\vec{p_2}\cdot\vec{x})
+\end{align}
+that
+$$(\psi_1^*,\psi_2)_{KG} = 0 \, .$$
+By superposition, I would expect this to imply that for any $\psi_1$ and $\psi_2$,
+$(\psi_1^*,\psi_2)_{KG} = 0$.
+However, I am sure that this cannot be the case, since with this you could show that the Klein-Gordon inner product for any two functions would be zero, i.e.
+$$(\psi_1,\psi_2)_{KG} = 0$$
+for all $\psi_1$ and $\psi_2$, since I could just pick $\psi_1$ to be the complex conjugate of some other function. Does anyone see a quick resolution to this?
+
+
+quantum-field-theory hilbert-space klein-gordon-equation
+
+
+
+
+share|cite|improve this question
+
+
+
+
+edited Mar 27 at 13:43
+
+
+
+
+
+Qmechanic♦
+
+78.8k11126469
+
+
+ 
+
+
+
+        asked Mar 27 at 9:34
+
+
+
+
+
+bittermania
+
+475
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  
+                        
+
+                                 
+                        
+
+
+
+
+
+
+Your product is missing a factor of $i$ that ensures sesquilinearity.
+                    – J.G.
+Mar 27 at 11:37
+
+
+
+
+
+
+
+add a comment | 
+
+
+
+ 
+
+
+
+
+
+
+								1 Answer
+                                1
+
+
+
+
+            active
+
+            oldest
+
+            votes
+
+
+
+
+
+
+
+
+
+
+
+up vote
+2
+down vote
+accepted
+
+
+
+
+The correct inner product is proportional to a Dirac delta, viz. $\left( \psi_1,\,\psi_2 \right)_{KG}=\left( 2\pi\right)^3 2E_{p_1}\delta^3\left( \mathbf{p}_1 - \mathbf{p}_2\right)$.
+You have only considered positive-energy wavefunctions; you may wish to look at what happens when one or both are negative-energy instead, since the most general solution of the KG equation superposes both energy sectors. You should find for example that $\left( \psi^\ast,\,\psi^\ast \right)_{KG}=-\left( \psi,\,\psi \right)_{KG}$ for any solution $\psi$.
+
+
+
+
+share|cite|improve this answer 
+
+
+
+edited Mar 27 at 12:22
+
+
+
+
+
+
+
+ 
+
+
+
+        answered Mar 27 at 11:20
+
+
+
+
+
+J.G.
+
+3,7421617
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  
+                        
+
+                                 
+                        
+
+
+
+
+
+
+Ah sorry the integration over time was an error
+                    – bittermania
+Mar 27 at 11:28
+
+
+
+
+
+
+
+
+
+                                  
+                        
+
+                                 
+                        
+
+
+
+
+
+
+I see now that the single particle wavefunctions which I have provided are only basis functions for the positive energy sector.  If I conjugate a function from the positive energy sector, I get a function in the negative energy sector.  Intuitively it makes sense that the "overlap" of a function in negative energy sector with a function in the positive energy sector is zero, which is exactly what is being calculate in the fourth expression.  Thanks for the input.
+                    – bittermania
+Mar 27 at 11:58
+
+
+
+
+
+
+
+
+add a comment | 
+
+
+
+ 
+
+
+
+
+
+
+Your Answer
+
+
+
+
+
+
+
+
+
+ 
+draft saved
+draft discarded
+
+
+
+
+
+
+
+
+
+
+
+Sign up or log in
+
+
+Sign up using Google
+
+
+Sign up using Facebook
+
+
+Sign up using Email and Password
+
+
+
+
+
+
+
+Post as a guest
+
+
+
+
+
+Name
+
+
+
+Email
+
+
+
+
+
+
+
+
+
+
+
+Post as a guest
+
+
+
+
+
+Name
+
+
+
+Email
+
+
+
+
+
+
+
+
+
+
+discard
+
+By posting your answer, you agree to the privacy policy and terms of service.
+ 
+
+
+Not the answer you're looking for?							Browse other questions tagged quantum-field-theory hilbert-space klein-gordon-equation  or ask your own question.						
+
+
+
+
+
+
+
+asked
+
+
+4 months ago
+
+
+
+
+viewed
+
+
+
+185 times
+
+
+
+
+
+active
+
+
+4 months ago
+
+
+
+
+
+
+
+Get the weekly newsletter! In it, you'll get:
+
+The week's top questions and answers
+Important community announcements
+Questions that need answers
+
+
+see an example newsletter
+
+
+By subscribing, you agree to the privacy policy and terms of service.
+
+
+
+
+
+Related
+
+10Schrodinger equation from Klein-Gordon?6Klein-Gordon inner product3Annihilation and creation operator - $\phi$ and $\pi$ for Klein-Gordon Field1Regarding state of Klein-Gordon field3Probability density of Klein-Gordon equation0Complex Inner Product for Integral Expressions8Interpreting the Klein-Gordon Annihilation Operator Expression2Klein-Gordon inner product: how to make it real0Free Field Klein-Gordon Equation9Can't the Negative Probabilities of Klein-Gordon Equation be Avoided?
+
+
+
+
+
+            Hot Network Questions
+        
+
+
+
+
+                    Can saving/investing 15% of your income starting age 25, likely make you a millionaire?
+                
+
+
+
+                    Do you also lose the magical bonus of a magic buckler when two-weapon fighting?
+                
+
+
+
+                    Equivalent of “collocate” but for time rather than space
+                
+
+
+
+                    SpaceX and propulsive landing on Mars -- what just happened? (and why?)
+                
+
+
+
+                    Printing a table as PNG?
+                
+
+
+
+                    Are there any other male Gryffindors named in Harry's year, beyond the main five?
+                
+
+
+
+                    Compute the Matrix-Vector
+                
+
+
+
+                    Girl goes over to the other site of her house and encounters her button-eyed "other parents"
+                
+
+
+
+                    How Long Could an "Eternal" Fire Last?
+                
+
+
+
+                    In architecture, you {cut?} the corners of a building to keep it from featuring right-angles. What's the word I'm looking for?
+                
+
+
+
+                    Skip like a rabbit!
+                
+
+
+
+                    Counting the number of page turns to arrive at some specified page
+                
+
+
+
+                    Are these identifiers equivalent?
+                
+
+
+
+                    Is frequent opening of the fridge really so significant for the power consumption?
+                
+
+
+
+                    Why is the determinant of this matrix zero?
+                
+
+
+
+                    When do you write the "real" code in TDD?
+                
+
+
+
+                    Postgres suggests "Truncate table ... at the same time"
+                
+
+
+
+                    ViewModels Mediator with multiple generic callbacks
+                
+
+
+
+                    Does HTTP redirect to HTTPS automatically?
+                
+
+
+
+                    Should I change my take-home exam policy because of one suspected cheater?
+                
+
+
+
+                    Is it obligatory to make small talk with your colleagues?
+                
+
+
+
+                    VFR - Keeping legal for landing in class Delta with low and few clouds
+                
+
+
+
+                    How to respond to request to use a first name?
+                
+
+
+
+                    What are the palindromes of my palindrome?
+                
+
+
+
+            more hot questions
+        
+
+
+
+
+
+question feed
+        
+
+ 
+
+
+
+
+
+
+
+
+Physics Stack Exchange works best with JavaScript enabled
+            
+
+
+
+
+
+
+ 
+
+Wholesale Bread - Dessert Distributor | Gordon Food Service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+Search
+Sign In
+ 
+
+
+
+
+
+
+
+
+
+Search 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search 
+
+
+
+
+ 
+
+
+
+
+
+
+
+Find Your Store 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Breads, Rolls, and Indulgent Desserts 
+
+
+
+
+
+You are hereHome » Products » Product Categories » Bakery 
+
+
+
+
+
+
+
+
+
+
+
+Offering you the quality and the choices you want, the moment you need them, you can explore our wide variety of wholesale bread, desserts, and bakery products. Selected to make running your food service operation simpler and smoother, we strive to continually provide consistent and reliable products to meet your needs. BreadsOur large assortment of finished, par-baked, and dough products include bagels, biscuits, Danishes, dinner rolls, donuts, flatbread, gourmet and artisan bread, hamburger, hot dog, and sub buns, muffins, pita pockets, pizza crust, dough balls, sandwich bread, tortillas, wraps, and much more. DessertWhat meal would be complete without dessert? Here's a large assortment to offer your customers: dessert bars, brownies, cheesecake, cobbler, coffee cake, cookies, cookie dough, layer and sheet cake, gourmet and specialty cake, mousse, petit fours, pies, tarts, tiramisu, torte, and more. Baking SuppliesAll your baking needs are covered with our baking cocoa, baking powder and soda, brownie and cake mixes, chocolate chips, corn starch, flavor extracts, flour, food coloring, frosting mixes and icing, honey, marshmallows, molasses, salt, sugar, yeast, pie and pastry shells, and more. 
+
+
+
+Take Your Business to the Next Level
+
+No matter your operation size or type, we can partner with you to help your business grow and succeed. 
+
+
+
+
+
+
+ 
+
+
+Distribution 
+
+
+You’ve set the framework, and we want to work with you to serve up the best to your own customers.Learn More About Delivery 
+
+
+
+
+
+
+
+
+ 
+
+
+Stores 
+
+
+Big or small, Gordon Food Service Stores are your one-stop shop for all of your food service needs.Find Out More About Stores 
+
+
+
+
+
+Explore Other Related ProductsWe offer a variety of the products you need to ensure your operation runs smoothly, and successfully. 
+
+
+
+
+
+
+ 
+
+  
+  
+                View our appetizer, soups, entrees, and sides products.        
+
+
+Appetizers 
+
+
+
+
+
+
+
+
+ 
+
+  
+  
+                View our disposable products.        
+
+
+Disposables 
+
+
+
+
+
+
+
+
+ 
+
+  
+  
+                View our dairy products.        
+
+
+Dairy 
+
+
+
+
+
+
+
+
+ 
+
+  
+  
+                View our grocery products.        
+
+
+Grocery 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Gordon Food Service Stores 
+
+
+Big or small, Gordon Food Service Stores are your one-stop shop for all of your food service needs.Find Your Store 
+
+
+
+
+
+
+
+
+ 
+
+
+Delivery Service Areas 
+
+
+We're excited to serve you, check out our constantly growing service area.View Our Delivery Map 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Product Index Page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Product Directory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please, click on the link buttonsfor associated product lines.
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+phone: +1 800. 315. 9233
+email: 
+sales@gordonproducts.com
+fax: +1 203. 775. 1162
+
+
+
+
+Š copyright 2009 Gordon Products Incorporated
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+ 
+
+
+Wire forms | Wire formed components manufacturer | Cheshire
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CNC Wire Forms and Metal Component Manufacturers
+
+
+Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wire Forms
+Gordon Products are manufacturers of CNC wire forms, wire components, wirework and all kinds of wire fabrications and wire assemblies in diameters from 1-12 mm. Whether you have a drawing, sketch, sample or just the beginnings of an idea for your wire forms, we offer the full range of manufacturing services.
+Read More
+
+Sheet Metal Components 
+Looking for a supplier of a sheet metal component to your specification?  Our CNC punch pressing and press braking capabilities can produce parts accurately and very cost-effectively.  These can then be combined by means of Mig, Tig, or spot welding to form assemblies, together with wire components, if required. 
+Read More
+
+Products
+Gordon Products manufactures a range of own-brand standard products for use in the construction, pre-cast concrete and insulation industries. Click here to find out more.                                                                                                                  
+Read More
+ 
+
+
+
+Gordon Products are specialist manufacturers of wire forms, wire products and sheet metal components for a wide range of industries.
+With state-of-the-art CNC wire bending machinery and CNC punching, pressing, and folding capabilities, we are ideally suited to the manufacture of small, medium, or large production volumes of wire components, wire forms, wirework and sheet metal components, including light fabrications and welded assemblies. We can provide cost-effective production of your existing parts, or offer design input, ideas and problem solving for new applications. So if you’re looking for a specialist manufacturer of wire forms, wire products or sheet metal components, get in touch.
+
+
+
+
+
+
+
+ 
+
+
+
+Since 1965, we have worked closely with a diverse range of industries.   Market sectors supplied include construction, insulation, furniture, healthcare, medical, marine, leisure and numerous other industrial and engineering applications.
+If you are looking for a sheet metal component, bespoke bracket or custom wire form, then look no further, our sales team will provide you with a rapid quotation for the part you have in mind.
+Call our sales team now on 01928 732158, or CLICK HERE to send us details of your requirements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Gordon Research Conferences - 2014 Meeting - Marine Natural Products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+			            Gordon Research Conferences  
+
+			        
+
+
+
+
+
+
+    Meeting Details
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+Home
+
+
+
+
+
+
+
+Conferences
+
+
+
+
+
+
+Current Meetings (2017)
+
+
+
+
+
+Upcoming Meetings (2018)
+
+
+
+
+
+Past Meetings
+
+
+
+
+
+Gordon Research Seminars
+
+
+
+
+
+Conference Portfolio
+
+
+
+
+
+Proposing a New Gordon Conference
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For Attendees
+
+
+
+
+
+
+Online Application
+
+
+
+
+
+Site, Travel & Poster Information
+
+
+
+
+
+Registration, Payment & Fee Information
+
+
+
+
+
+Guides for Attendees
+
+
+
+
+
+Minority Diversity Initiative
+
+
+
+
+
+Contact Chairs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The GRC Organization
+
+
+
+
+
+
+About GRC
+
+
+
+
+
+Governance
+
+
+
+
+
+Contact Information
+
+
+
+
+
+News and Events
+
+
+
+
+
+Supporting GRC
+
+
+
+
+
+Alexander M. Cruickshank Awards
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Current Meetings (2017)
+Upcoming Meetings (2018)
+Past Meetings
+Gordon Research Seminars
+Conference Portfolio
+Proposing a New Gordon Conference
+Online Application
+Site, Travel & Poster Information
+Registration, Payment & Fee Information
+Guides for Attendees
+Minority Diversity Initiative
+Contact Chairs
+About GRC
+Governance
+Contact Information
+News and Events
+Supporting GRC
+Alexander M. Cruickshank Awards
+
+
+
+
+
+Search:
+
+
+
+
+
+
+                     
+
+                
+
+GO
+
+
+
+
+
+
+            JavaScript must be enabled to use this feature. Please use the advanced search utility.
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+Marine Natural ProductsGordon Research Conference
+
+From Discovery to Human Health
+
+
+
+
+Dates
+
+                                    March 2-7, 2014
+
+                                    Location 
+
+                                    Four Points Sheraton / Holiday Inn ExpressVentura, CA
+
+                                
+
+Organizers
+
+                                    Chair: Bradley S. Moore
+
+Vice Chair: Julia  Kubanek
+
+
+
+
+
+
+
+
+
+
+
+
+Meeting Links
+
+
+
+
+
+
+Conference History
+
+
+
+
+
+Contact Chairs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Conference History
+Contact Chairs
+
+
+
+
+
+
+Follow us on Facebook
+
+
+
+
+
+
+
+
+
+
+
+Meeting Description
+The 2014 Gordon Research Conference on Marine Natural Products will highlight progressive research on the chemistry and biology of natural product chemicals from the marine environment. Featured topics will include advances in molecular characterization, biomedical applications, biotechnology, genomics, chemical ecology, molecular pharmacology, and chemical biology to reflect the ever-evolving breadth of this dynamic field. The conference will feature outstanding investigators from academia, industry and the government, and will provide opportunities for junior scientists and graduate students to present their work in poster format. Some poster presenters will be selected for short talks. One of the hallmarks of this biennial conference is its friendly and collegial atmosphere that facilitates the exchange of ideas with leaders in the field that often lead to cross-disciplinary collaborations. We look forward to your participation.
+
+
+
+Related Meeting
+
+This GRC was held in conjunction with the "Marine Natural Products" Gordon Research Seminar (GRS). Refer to the associated GRS program page for more information. 
+
+
+Contributors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      The conference also gratefully acknowledges a personal contribution from Violet Abraham.
+    
+
+
+
+
+
+Meeting Program
+
+SUNDAY
+4:00 pm - 8:00 pmArrival and Check-in (Office Closed 6:00 pm - 7:45 pm)
+6:00 pmDinner
+7:30 pm - 7:40 pmIntroductory Comments by GRC Site Staff / Welcome by the GRC Conference Chair
+7:40 pm - 9:30 pmMarine Sponges as Sources of New Drug Leads
+7:40 pm - 7:50 pmDiscussion Leader: Phil Crews (UC Santa Cruz)
+"Opening Remarks"
+7:50 pm - 8:15 pmAmy Wright (Harbor Branch Oceanographic Institute)
+"Investigation of Natural Products Effective Against Cancer and Infectious Disease"
+
+8:15 pm - 8:25 pmDiscussion
+8:25 pm - 9:05 pmJoern Piel (ETH-Zurich)
+"Microbial Dark Matter: A Metabolic Treasure Trove"
+
+9:05 pm - 9:20 pmDiscussion
+9:20 pm - 9:30 pmRecap of MNP GRS by Laura Sanchez and Peter Jordan (UC San Diego)
+MONDAY
+7:30 am - 8:30 amBreakfast
+8:30 amGroup Photo
+9:00 am - 12:30 pmNew Insights into Marine Peptide Chemical Biology
+Discussion Leader: Eric Schmidt (University of Utah)
+9:00 am - 9:35 amWilfred van der Donk (University of Illinois)
+"Lanthipeptide Biosynthesis in Marine Cyanobacteria"
+
+9:35 am - 9:50 amDiscussion
+9:50 am - 10:00 amPoster Talk: Marcy Balunas (University of Connecticut)
+"Lead Development of Santacruzamate A Analogs as Selective Histone Deacetylase Inhibitors"
+
+10:00 am - 10:05 amDiscussion
+10:05 amCoffee Break
+10:35 am - 11:10 amJanet Smith (University of Michigan)
+"Structural Biology of PKS Modules"
+
+11:10 am - 11:25 amDiscussion
+11:25 am - 11:35 amPoster Talk: Matthew Bertin (UC San Diego)
+"Novel Nucleosides from the Marine Sponge Tectitethya crypta and Its Microorganism Symbionts"
+
+11:35 am - 11:40 amDiscussion
+11:40 am - 12:15 pmBaldomero Olivera (University of Utah)
+"Conus Venom Peptides, Cabals and Constellation Pharmacology"
+
+12:15 pm - 12:30 pmDiscussion
+12:30 pmLunch
+1:30 pm - 4:00 pmFree Time
+4:00 pm - 6:00 pmPoster Session I
+6:00 pmDinner
+7:30 pm - 9:30 pmMarine Natural Products in Cancer
+7:30 pm - 7:40 pmDiscussion Leader: Frank Koehn (Pfizer)
+"Opening Remarks"
+7:40 pm - 8:20 pmPeter Senter (Seattle Genetics)
+"Antibodies Linked to Marine Derived Natural Products: From Early Stage Discovery to an Approved Drug"
+
+8:20 pm - 8:35 pmDiscussion
+8:35 pm - 9:15 pmCarmen Cuevas (PharmaMar)
+"Marine Natural Products at PharmaMar: New Clinical Compounds and New Development Strategies"
+
+9:15 pm - 9:30 pmDiscussion
+TUESDAY
+7:30 am - 8:30 amBreakfast
+9:00 am - 12:30 pmChemical and Biosynthetic Versatility of Marine Microbes
+Discussion Leader: David Rowley (University of Rhode Island)
+9:00 am - 9:35 amPaul Jensen (UC San Diego)
+"Genomic Insights into the Evolution of Secondary Metabolism in a Model Group of Marine Bacteria"
+
+9:35 am - 9:50 amDiscussion
+9:50 am - 10:00 amPoster Talk: Rajesh Viswanathan (Case Western Reserve University)
+"Characterization of the Hapalindole Gene Cluster from Four Distinct Strains of Group V Cyanobacteria"
+
+10:00 am - 10:05 amDiscussion
+10:05 amCoffee Break
+10:35 am - 11:10 amCarlos Jimenez (University of A Coruna)
+"Siderophores and Iron Uptake in Fish Aquaculture Pathogen Bacteria: Isolation, Structures, Synthesis and Applications"
+
+11:10 am - 11:25 amDiscussion
+11:25 am - 11:35 amPoster Talk: Vinayak Agarwal (UC San Diego)
+"Biosynthesis of Polybrominated Organic Compounds by Marine Bacteria"
+11:35 am - 11:40 amDiscussion
+11:40 am - 12:15 pmMargo Haygood (Oregon Health & Science University)
+"Bioactive Compounds from Bacterial Symbionts of Mollusks"
+
+12:15 pm - 12:30 pmDiscussion
+12:30 pmLunch
+1:30 pm - 4:00 pmFree Time
+4:00 pm - 6:00 pmPoster Session I
+6:00 pmDinner
+7:30 pm - 9:30 pmIlluminating the Biological Role of Natural Products in the Marine 
+Environment
+
+7:30 pm - 7:40 pmDiscussion Leader: Valerie Paul (Smithsonian Marine Station)
+"Opening Remarks"
+7:40 pm - 8:20 pmGeorg Pohnert (University of Jena)
+"Metabolomics Enabled Identification of Infochemicals from Marine Diatoms"
+
+8:20 pm - 8:35 pmDiscussion
+8:35 pm - 9:15 pmMark Hay (Georgia Institute of Technology)
+"Chemical Ecology Affects the Structure, Function, and Future of Coral Reefs: Recovery or a Continuing Biotic Death Spiral?"
+
+9:15 pm - 9:30 pmDiscussion
+WEDNESDAY
+7:30 am - 8:30 amBreakfast
+9:00 am - 12:30 pmModern Advances in Mass Spectrometry to Characterize Natural Products
+Discussion Leader: Tim Bugni (University of Wisconsin-Madison)
+9:00 am - 9:35 amPieter Dorrestein (UC San Diego)
+"A 'GoogleMAP'-Type Molecular View of Microbial Communities"
+
+9:35 am - 9:50 amDiscussion
+9:50 am - 10:00 amPoster Talk: Catherine Roullier (University of Nantes)
+"Targeting the Halogenated Metabolome of Marine-Derived Fungi Using LC-HRMS/MS Tools"
+
+10:00 am - 10:05 amDiscussion
+10:05 amCoffee Break
+10:35 am - 11:10 amAles Svatos (University of Jena)
+"Mass Spectrometric Imaging of Signal Molecules, New Tool for Chemical Ecology"
+
+11:10 am - 11:25 amDiscussion
+11:25 am - 11:35 amPoster Talk: Tanja Grkovic (Eskitis Institute, Griffith University)
+"Seeing the Invisible: Comprehensive NMR Fingerprint of the Drug-Like Natural Product Metabolome"
+
+11:35 am - 11:40 amDiscussion
+11:40 am - 12:15 pmGraham Cooks (Purdue University)
+"Ambient Mass Spectrometry Based Isolation and Characterization of Natural Products"
+
+12:15 pm - 12:30 pmDiscussion
+12:30 pmLunch
+1:30 pm - 4:00 pmFree Time
+4:00 pm - 6:00 pmPoster Session II
+6:00 pmDinner
+7:00 pm - 7:30 pmBusiness Meeting
+Nominations for the Next Vice Chair; Fill in Conference Evaluation Forms; Discuss Future Site and Scheduling Preferences; Election of the Next Vice Chair
+7:30 pm - 9:30 pmInspirational Advances in Making and Characterizing Complex Marine 
+Natural Products
+
+7:30 pm - 7:40 pmDiscussion Leader: Frank Schroeder (Cornell University)
+"Opening Remarks"
+7:40 pm - 8:20 pmPhil Baran (Scripps Research Institute)
+"Studies in Natural Product Synthesis"
+
+8:20 pm - 8:35 pmDiscussion
+8:35 pm - 9:15 pmMakoto Fujita (University of Tokyo)
+"Crystal-Free Crystallography for the Nano-to-Micro Gram Scale Structure Analysis: Principle, Applications, and Scope & Limitations"
+
+9:15 pm - 9:30 pmDiscussion
+THURSDAY
+7:30 am - 8:30 amBreakfast
+9:00 am - 12:30 pmNatural Product Library Screening and Target Identification
+Discussion Leader: Chambers Hughes (UC San Diego)
+9:00 am - 9:30 amHendrik Luesch (University of Florida)
+"Specific Targeting of Cancer Relevant Pathways for MNP Discovery"
+
+9:30 am - 9:45 amDiscussion
+9:45 am - 9:55 amPoster Talk: Daniela Trivella (Brazilian Biosciences National Laboratory)
+"Marine Natural Products as Human Protein Tyrosine Phosphatase Inhibitors"
+9:55 am - 10:00 amDiscussion
+10:00 amCoffee Break
+10:30 am - 11:00 amDong Chan Oh (Seoul National University)
+"Discovery of New Bioactive Peptides from Korean Marine Actinomycetes"
+
+11:00 am - 11:15 amDiscussion
+11:15 am - 11:25 amPoster Talk: Shinichi Nishimura (Kyoto University)
+"Mode of Action of Heronamides, Polyene Macrolactams from a Marine-Derived Streptomyces sp."
+
+11:25 am - 11:30 amDiscussion
+11:30 am - 12:10 pmJames Inglese (National Center for Advancing Translational Sciences, NIH)
+"Design of Assays and Screening Strategies for the Interrogation of Natural Product Extracts"
+
+12:10 pm - 12:30 pmDiscussion
+12:30 pmLunch
+1:30 pm - 4:00 pmFree Time
+4:00 pm - 6:00 pmPoster Session II
+6:00 pmDinner
+7:30 pm - 9:30 pmInnovations in Marine Natural Products Research
+Discussion Leader: Julia Kubanek (Georgia Institute of Technology)
+7:30 pm - 8:00 pmBrent Copp (University of Auckland)
+"The Fun Never Stops: (Biomimetic) Synthesis and SAR Studies of Ascidian Natural Products"
+
+8:00 pm - 8:10 pmDiscussion
+8:10 pm - 9:10 pmChris Ireland (University of Utah)
+"From Sea Hunt to Dean of Pharmacy - What a Strange and Wonderful Trip it's Been"
+
+9:10 pm - 9:30 pmDiscussion
+FRIDAY
+7:30 am - 8:30 amBreakfast
+9:00 amDeparture
+
+
+
+
+
+Back to Top
+
+
+
+
+
+
+
+
+
+                            
+                                © 2017 Gordon Research Conferences
+
+                            
+
+Search | 
+	                            Contact | 
+	                            Terms of Use | 
+	                            Privacy Policy 
+
+                                | Follow us: 
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+       DANIEL GORDON | 
+       
+       Photobooks and Art books Mörel
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mörel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Unavailable
+
+We're shipping world wide.
+
+
+DANIEL GORDON
+
+
+Out of stock
+
+
+Daniel Gordon approaches photography with the 
+sensibilities and concerns of an object maker, and the relationship 
+between sculptural and photographic forms is a major force at play in 
+his work. He calls our attention to the surface of the paper, 
+emphatically challenging the notion of a photograph as a window into the
+ world. The imperfections visible in his constructions are the 
+antithesis of the glossy perfection of so much photography today. 
+Instead he shares an affinity with painters or sculptors - those that 
+spend time making things in the studio.Text extract by Eva Respini Associate Curator Museum of Modern ArtCHOSEN BEST PHOTOBOOK OF 2013NY TIMES BLOGGUARDIAN
+
+
+
+
+
+Tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Return policy
+Terms & Conditions
+
+
+
+
+
+
+
+           Search
+         
+
+           Info
+         
+
+
+
+
+Search
+
+
+close
+
+
+
+
+ABOUTPublisher specialising in limited edition Photo and Art Books.We view the book as the final step in an artists process, and encourage the artist to engage in the conception, design and feel of the book.Having worked on the book closely with the artist we feel it is only right we also keep a close relationship with bookshops.Occasionally our books can be bought with special editions.CONTACTWe're happy to take submissions - but please don't mail us anything you expect us to return - alternatively just send us an email.Send us an email if you would like to visit us in London. info@morelbooks.com
+info@morelbooks.com
+
+close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gordon L Daniel | Arrest Files
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search all StatesArizonaFloridaGeorgiaIdahoNew JerseyNorth CarolinaTennessee
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gordon L Daniel 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fulton County Sheriff's
+
+Find more records on Gordon Daniel
+
+
+
+
+
+
+
+
+
+
+
+Gordon L Daniel
+
+
+
+
+
+
+
+
+
+Charge(s)
+CONTEMPT CT-AMC 
+
+
+Date Arrested
+12/05/2011 - approx. 5 years 33 weeks ago
+
+
+Booking ID
+1141480
+
+
+
+
+
+Georgia
+Fulton County
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Work Information|Reverse Phone|Email Search|Search by Address
+
+
+
+
+Name
+First Name:
+Last Name:
+
+
+Location
+State:
+Country:
+
+
+Search Criteria
+State Search
+Secure
+Private
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+More Information
+
+
+
+Name: Gordon L Daniel
+
+
+
+Booking ID: 1141480
+Date Arrested:12/05/2011
+
+
+Charge Description: CONTEMPT CT-AMC 
+Bond:  
+
+
+
+IMPORTANT NOTICE: 
+All persons listed on this site are innocent until proven guilty. This information does not constitute a criminal record/history, and may not be interpreted as such. Information provided herein may not be relied upon for any type of legal action. This information is provided as a convenience to the general public and therefore no warranty is expressed or implied as to the accuracy, reliability, completeness, or timeliness of any information obtained through the use of this service. 
+
+The information found here was current at or around the time of publishing. Any new information (i.e. new charges, dropped charges, etc.) please contact the appropriate State or County records department.
+
+AF ID: 15303
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Local Public Resources
+
+Cities/Communities/Towns in Fulton County
+
+
+Alpharetta
+Atlanta
+Chattahoochee Hills
+College Park
+East Point
+Fairburn
+Hapeville
+Johns Creek
+Milton
+Mountain Park
+Palmetto
+Roswell
+Sandy Springs
+Union City
+
+
+
+
+Jail Location(s) in Fulton County and Surrounding Areas
+
+Cobb County Jail - 1825 County Services Pkwy SW, Marietta, GA 30008
+DeKalb County Jail - 4415 Memorial Drive, Decatur, GA  30032
+Fulton County Jail - 901 Rice Street, NW, Atlanta, Georgia 30318
+
+
+Law Enforcement Public Information
+Fulton County Police Department - Police Reports
+"Records and Reports..."
+Address: 130 Peachtree Street, Atlanta, GA, 30303
+http://www.fultoncountyga.gov/police-reports
+Fulton County Inmate Search System
+"Data is Provided by The Fulton County Sheriff's Department...."
+http://inmates.fultonsheriff.net
+Fulton County Sheriff's Office
+"Visit the sheriff's department in Atlanta, Georgia, for criminal court proceedings in a central location for your convenience...."
+http://www.fultonsheriff.org/
+Fulton County Police Department
+"The mission of the Fulton County Police Department is to preserve life, protect property, and maintain order through a partnership between the department and the citizens....."
+http://www.fultonpolice.org/
+Atlanta Police Department
+"The mission of the Atlanta Police Department is to reduce crime and promote the quality of life, in partnership with our community...."
+http://www.atlantapd.org/
+Judicial Public Information
+Fulton County Courts Atlanta Georgia
+"Fulton County Courts in Georgia - An Easy way to find information about the Courts..."
+http://fultoncourt.org/
+Fulton County - Judicial Record Search
+"Judicial Record Search, This search engine makes it possible to view up coming court dates and civil docket summaries of cases dating back to 1980's..."
+http://www.fcclkjudicialsearch.org/
+Government Public Information
+Fulton County, Georgia - County Website
+County Website
+http://www.co.fulton.ga.us/
+City of Atlanta Website
+City of Atlanta Online...
+http://www.atlantaga.gov/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Background Check
+
+Input Name
+First Name:
+Last Name:
+Input Location
+State:
+Country:
+Select Search Criteria
+State Search
+Secure
+Private
+
+
+Submit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FAQ
+Resources
+Privacy
+Contact
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JUAN GORDON – PRODUCER – Morena Films
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESEN 
+PressContactOur companyOur filmsIn productionBlog 
+
+
+
+
+
+
+
+
+Our companyOur filmsIn productionBlog
+FacebookRssTwitterVimeoYoutubeLinkedinIMBd
+
+ 
+
+
+
+
+
+
+
+
+JUAN GORDON – PRODUCER
+
+
+
+
+
+
+
+
+			JUAN GORDON – PRODUCER		
+
+
+dnl 
+
+
+			2015-10-01T10:25:37+00:00		
+
+
+Juan is one of the founders of Morena Films (1999). After getting his law degree from the Universidad Complutense in Madrid and then an economics degree  from UNED, Juan left for the United States to do the prestigious Master offered by the Peter Stark  Producing Programme at the University of Southern California.
+In 1996 he returned to Spain to join producer and distributor ESICMA as General Manager where he produced his first feature length film Twice Upon a Yesterday, directed by Maria Ripoll.
+In his time at Morena, Juan has been in charge of the development and production of the following films: Invasor, directed by Daniel Calparsoro; White Elephant (Pablo Trapero); Even the Rain (Iciar Bollain), chosen by the Film Academy to represent Spain at the 2010 Oscar Awards; Cell 211 (Daniel Monzón), winner of eight Goya Awards in 2009; Neon Flesh, (Paco Cabezas); The Appeared (Paco Cabezas); El Juego de la Verdad (Álvaro Fernández Armero); Cargo (Clive Gordon); El Lápiz del Carpintero (Antón Reixa); The Best Is Yet to Come (David Blanco & José Semprún, 2002),  One of the Hollywood Ten (Karl Francis), In Darkness We Fall (Alfredo Montero), Sidetracked (Álvaro Fernández Armero), A Hundred Years of Forgiveness (Daniel Calparsoro) and The Olive Tree (Iciar Bollain).
+
+
+
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

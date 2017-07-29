@@ -1,0 +1,11854 @@
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+Instructure - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Instructure
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Instructure, Inc.
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: INST
+
+
+Industry
+Education
+Learning Management Systems
+MOOC
+
+
+Founded
+2008
+
+
+Headquarters
+Salt Lake City, Utah
+
+
+
+Key people
+
+Josh Coates, CEO
+
+
+Products
+Canvas, Canvas K-12, Canvas Network, Bridge
+
+
+Website
+http://www.instructure.com
+
+
+Instructure is an educational technology company based in Salt Lake City, Utah. It is the developer of the Canvas learning management system, which is a comprehensive cloud-native software package that competes with such systems as Blackboard Learning System, Moodle, D2L and Sakai Project. Instructure also developed Canvas Network,[1] a massive open online course (MOOC) platform.
+
+
+
+Contents
+
+
+1 History
+2 Products
+
+2.1 Canvas
+2.2 Canvas K-12
+2.3 Canvas Network
+2.4 Bridge
+
+
+3 See also
+4 References
+5 External links
+
+
+
+History[edit]
+Instructure was founded in 2008 by two BYU graduate students, Brian Whitmer and Devlin Daley,[2] with initial funding from Mozy founder Josh Coates (currently the CEO) and Epic Ventures.[3]
+In December 2010, the Utah Education Network (UEN), which represents a number of Utah colleges and universities, announced that Instructure would be replacing Blackboard as their preferred LMS.[4] By January, 2013, Instructure's LMS platform was in use by more than 300 colleges, universities and K-12 districts, and the company's customer base had increased to more than 425 halfway through 2013 and 9 million users by the end of 2013.[5][6]
+In February 2011, Instructure announced that they were making their flagship product, Canvas, freely available under an AGPL license as open source software. Instructure's announcement received coverage in the press.[7][8][9][10] In February 2012, the company launched Canvas K-12.[11]
+In November 2012, Instructure entered the massive open online course market by launching Canvas Network.[12]
+In June 2013, Instructure secured $30 Million in Series D Funding, bringing their lifetime funding total to $50M.[13] In February, 2015, Instructure raised another $40 Million in Series E Funding, raising their lifetime funding total to $90M. CEO Josh Coates described it as "a pre-IPO round."[14] On November 13, 2015, Instructure began trading as a publicly held company on the New York Stock Exchange (NYSE: INST).[15]
+Products[edit]
+Canvas[edit]
+Instructure Inc. was created in order to support the continued development of a new learning management system (LMS) originally named Instructure. Once incorporated, the founders changed the name of the software to Canvas. The Utah-based company tested the LMS at several local schools including Utah State University and Brigham Young University before officially launching Canvas.
+Canvas was built using Ruby on Rails as the web application framework backed by a PostgreSQL database. It incorporates JQuery, HTML5, and CSS3 to provide a modern user interface. OAuth is used to provide limited access to a user's information on certain social media sites like Facebook and Twitter to allow for collaboration between sites. Canvas operates as a software as a service using Amazon Web Services in the "Cloud".
+Canvas K-12[edit]
+In February 2012, Instructure launched Canvas K-12, an LMS platform designed for the specific needs of elementary and secondary schools.[16] The LMS enrolls parents with their students to provide greater visibility into their children's learning experience and provides actionable analytics to teachers and administrators.
+Canvas Network[edit]
+In November 2012, Instructure entered the massive open online course MOOC market by launching Canvas Network.[17] Instructure's approach to MOOC has been to facilitate experimentation with pedagogy and new ways to use multimedia environments to change cognition and enhance the learning process. One example is "Gender Through Comic Books," a MOOC taught by Ball State University's Christina Blanch on Canvas Network that used lessons from pop culture to explore evolving social norms and other anthropological ideals.[18]
+In July 2013, Instructure partnered with Qualtrics, a Utah-based company, to survey MOOC participants on Instructure's Canvas Network about their motivations for enrolling in and completing these courses.[19] The results suggested that educators rethink ways to fully leverage the online learning environment to make the educational experience more engaging and interesting.
+Bridge[edit]
+On February 18, 2015, Instructure officially launched Bridge,[20] their new cloud-based corporate LMS. This launch followed $40 million raised in Series E funding, led by Insight Venture Partners. EPIC Ventures and Bessemer Venture Partners also participated in the funding.[21] This round raised their total lifetime funding to close to $90 million. At launch, Bridge served six corporate clients, including Oregon State University, which had also been using Instructure's Canvas LMS for their students.[14]
+See also[edit]
+
+History of virtual learning environments
+Virtual learning environment
+
+References[edit]
+
+
+^ Canvas Network
+^ Sara Israelsen-Hartley (June 20, 2010). "BYU grads introduce education-savvy software". Deseret News. Retrieved February 23, 2011. 
+^ "Instructure CrunchBase Profile". CrunchBase. Interserve dba TechCrunch. Retrieved February 23, 2011. 
+^ "New Statewide Learning Management System Selected". UEN News. Utah Education Network. December 14, 2010. Retrieved June 14, 2017. 
+^ Empson, Rip. "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network". TechCrunch. 
+^ http://www.capterra.com/infographics/top-lms-software
+^ Dan Dzombak (February 2, 2011). "A Fiery New Competitor". The Motley Fool. The Motley Fool, LLC. Retrieved February 22, 2011. 
+^ Michael Arrington (January 31, 2011). "Instructure Launches To Root Blackboard Out Of Universities". TechCrunch.com. Interserve dba TechCrunch. Retrieved February 22, 2011. 
+^ Josh Keller (January 31, 2011). "Upstart Course-Management Provider Goes Open Source". Wired Campus. The Chronicle of Higher Education. Retrieved February 22, 2011. 
+^ Christopher Dawson (February 1, 2011). "There are alternatives to Blackboard and Moodle: Instructure Canvas goes open source". ZDNet Education. CBS Interactive. Retrieved February 22, 2011. 
+^ Canvas K-12: http://www.instructure.com/k-12
+^ Rip Empson (October 31, 2012). "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network - TechCrunch". TechCrunch. techcrunch.com.com. Retrieved September 7, 2014. 
+^ "Instructure Secures $30 Million in Series D Funding - MarketWatch". Market Watch. marketwatch.com. June 5, 2013. Retrieved September 7, 2014. 
+^ a b Locke, Charley (2015-02-24). "Instructure Plots Path to IPO, Corporate Customers After $40M Series E". Edsurge. 
+^ Schaffler, Rhonda (2015-11-13). "Instructure IPO Debuts on NYSE With Double-Digit Gain". TheStreet. 
+^ "Box spins Embed, OneCloud for educational use at K-12 schools, universities". ZDNET. 
+^ Nagel, David. "Instructure Creates Free 'Canvas Network' for Online Courses". Campus Technology. 
+^ Knox, Kelly. "New Online Course Explores Gender Through Comic Books". Wired. 
+^ F. Carr, David. "MOOC Students Attracted Most By Course Topics". Information Week. 
+^ Buhr, Sarah (2015-02-18). "On The Way To An IPO, Education Technology Startup Instructure Is Close To Raising A Big New Round". TechCrunch. 
+^ Marino, Jonathan (2015-02-18). "Education tech startup Instructure has raised $40 million". Business Insider. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Instructure&oldid=787475160"					
+Categories: Learning management systemsCompanies based in UtahFree educational software2008 establishments in UtahPrivately held companies based in UtahHidden categories: Pages using deprecated image syntax 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+Français 
+Edit links 
+
+
+
+
+
+ This page was last edited on 25 June 2017, at 16:44.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Instructure - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Instructure
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Instructure, Inc.
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: INST
+
+
+Industry
+Education
+Learning Management Systems
+MOOC
+
+
+Founded
+2008
+
+
+Headquarters
+Salt Lake City, Utah
+
+
+
+Key people
+
+Josh Coates, CEO
+
+
+Products
+Canvas, Canvas K-12, Canvas Network, Bridge
+
+
+Website
+http://www.instructure.com
+
+
+Instructure is an educational technology company based in Salt Lake City, Utah. It is the developer of the Canvas learning management system, which is a comprehensive cloud-native software package that competes with such systems as Blackboard Learning System, Moodle, D2L and Sakai Project. Instructure also developed Canvas Network,[1] a massive open online course (MOOC) platform.
+
+
+
+Contents
+
+
+1 History
+2 Products
+
+2.1 Canvas
+2.2 Canvas K-12
+2.3 Canvas Network
+2.4 Bridge
+
+
+3 See also
+4 References
+5 External links
+
+
+
+History[edit]
+Instructure was founded in 2008 by two BYU graduate students, Brian Whitmer and Devlin Daley,[2] with initial funding from Mozy founder Josh Coates (currently the CEO) and Epic Ventures.[3]
+In December 2010, the Utah Education Network (UEN), which represents a number of Utah colleges and universities, announced that Instructure would be replacing Blackboard as their preferred LMS.[4] By January, 2013, Instructure's LMS platform was in use by more than 300 colleges, universities and K-12 districts, and the company's customer base had increased to more than 425 halfway through 2013 and 9 million users by the end of 2013.[5][6]
+In February 2011, Instructure announced that they were making their flagship product, Canvas, freely available under an AGPL license as open source software. Instructure's announcement received coverage in the press.[7][8][9][10] In February 2012, the company launched Canvas K-12.[11]
+In November 2012, Instructure entered the massive open online course market by launching Canvas Network.[12]
+In June 2013, Instructure secured $30 Million in Series D Funding, bringing their lifetime funding total to $50M.[13] In February, 2015, Instructure raised another $40 Million in Series E Funding, raising their lifetime funding total to $90M. CEO Josh Coates described it as "a pre-IPO round."[14] On November 13, 2015, Instructure began trading as a publicly held company on the New York Stock Exchange (NYSE: INST).[15]
+Products[edit]
+Canvas[edit]
+Instructure Inc. was created in order to support the continued development of a new learning management system (LMS) originally named Instructure. Once incorporated, the founders changed the name of the software to Canvas. The Utah-based company tested the LMS at several local schools including Utah State University and Brigham Young University before officially launching Canvas.
+Canvas was built using Ruby on Rails as the web application framework backed by a PostgreSQL database. It incorporates JQuery, HTML5, and CSS3 to provide a modern user interface. OAuth is used to provide limited access to a user's information on certain social media sites like Facebook and Twitter to allow for collaboration between sites. Canvas operates as a software as a service using Amazon Web Services in the "Cloud".
+Canvas K-12[edit]
+In February 2012, Instructure launched Canvas K-12, an LMS platform designed for the specific needs of elementary and secondary schools.[16] The LMS enrolls parents with their students to provide greater visibility into their children's learning experience and provides actionable analytics to teachers and administrators.
+Canvas Network[edit]
+In November 2012, Instructure entered the massive open online course MOOC market by launching Canvas Network.[17] Instructure's approach to MOOC has been to facilitate experimentation with pedagogy and new ways to use multimedia environments to change cognition and enhance the learning process. One example is "Gender Through Comic Books," a MOOC taught by Ball State University's Christina Blanch on Canvas Network that used lessons from pop culture to explore evolving social norms and other anthropological ideals.[18]
+In July 2013, Instructure partnered with Qualtrics, a Utah-based company, to survey MOOC participants on Instructure's Canvas Network about their motivations for enrolling in and completing these courses.[19] The results suggested that educators rethink ways to fully leverage the online learning environment to make the educational experience more engaging and interesting.
+Bridge[edit]
+On February 18, 2015, Instructure officially launched Bridge,[20] their new cloud-based corporate LMS. This launch followed $40 million raised in Series E funding, led by Insight Venture Partners. EPIC Ventures and Bessemer Venture Partners also participated in the funding.[21] This round raised their total lifetime funding to close to $90 million. At launch, Bridge served six corporate clients, including Oregon State University, which had also been using Instructure's Canvas LMS for their students.[14]
+See also[edit]
+
+History of virtual learning environments
+Virtual learning environment
+
+References[edit]
+
+
+^ Canvas Network
+^ Sara Israelsen-Hartley (June 20, 2010). "BYU grads introduce education-savvy software". Deseret News. Retrieved February 23, 2011. 
+^ "Instructure CrunchBase Profile". CrunchBase. Interserve dba TechCrunch. Retrieved February 23, 2011. 
+^ "New Statewide Learning Management System Selected". UEN News. Utah Education Network. December 14, 2010. Retrieved June 14, 2017. 
+^ Empson, Rip. "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network". TechCrunch. 
+^ http://www.capterra.com/infographics/top-lms-software
+^ Dan Dzombak (February 2, 2011). "A Fiery New Competitor". The Motley Fool. The Motley Fool, LLC. Retrieved February 22, 2011. 
+^ Michael Arrington (January 31, 2011). "Instructure Launches To Root Blackboard Out Of Universities". TechCrunch.com. Interserve dba TechCrunch. Retrieved February 22, 2011. 
+^ Josh Keller (January 31, 2011). "Upstart Course-Management Provider Goes Open Source". Wired Campus. The Chronicle of Higher Education. Retrieved February 22, 2011. 
+^ Christopher Dawson (February 1, 2011). "There are alternatives to Blackboard and Moodle: Instructure Canvas goes open source". ZDNet Education. CBS Interactive. Retrieved February 22, 2011. 
+^ Canvas K-12: http://www.instructure.com/k-12
+^ Rip Empson (October 31, 2012). "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network - TechCrunch". TechCrunch. techcrunch.com.com. Retrieved September 7, 2014. 
+^ "Instructure Secures $30 Million in Series D Funding - MarketWatch". Market Watch. marketwatch.com. June 5, 2013. Retrieved September 7, 2014. 
+^ a b Locke, Charley (2015-02-24). "Instructure Plots Path to IPO, Corporate Customers After $40M Series E". Edsurge. 
+^ Schaffler, Rhonda (2015-11-13). "Instructure IPO Debuts on NYSE With Double-Digit Gain". TheStreet. 
+^ "Box spins Embed, OneCloud for educational use at K-12 schools, universities". ZDNET. 
+^ Nagel, David. "Instructure Creates Free 'Canvas Network' for Online Courses". Campus Technology. 
+^ Knox, Kelly. "New Online Course Explores Gender Through Comic Books". Wired. 
+^ F. Carr, David. "MOOC Students Attracted Most By Course Topics". Information Week. 
+^ Buhr, Sarah (2015-02-18). "On The Way To An IPO, Education Technology Startup Instructure Is Close To Raising A Big New Round". TechCrunch. 
+^ Marino, Jonathan (2015-02-18). "Education tech startup Instructure has raised $40 million". Business Insider. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Instructure&oldid=787475160"					
+Categories: Learning management systemsCompanies based in UtahFree educational software2008 establishments in UtahPrivately held companies based in UtahHidden categories: Pages using deprecated image syntax 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+Français 
+Edit links 
+
+
+
+
+
+ This page was last edited on 25 June 2017, at 16:44.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Instructure - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Instructure
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Instructure, Inc.
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: INST
+
+
+Industry
+Education
+Learning Management Systems
+MOOC
+
+
+Founded
+2008
+
+
+Headquarters
+Salt Lake City, Utah
+
+
+
+Key people
+
+Josh Coates, CEO
+
+
+Products
+Canvas, Canvas K-12, Canvas Network, Bridge
+
+
+Website
+http://www.instructure.com
+
+
+Instructure is an educational technology company based in Salt Lake City, Utah. It is the developer of the Canvas learning management system, which is a comprehensive cloud-native software package that competes with such systems as Blackboard Learning System, Moodle, D2L and Sakai Project. Instructure also developed Canvas Network,[1] a massive open online course (MOOC) platform.
+
+
+
+Contents
+
+
+1 History
+2 Products
+
+2.1 Canvas
+2.2 Canvas K-12
+2.3 Canvas Network
+2.4 Bridge
+
+
+3 See also
+4 References
+5 External links
+
+
+
+History[edit]
+Instructure was founded in 2008 by two BYU graduate students, Brian Whitmer and Devlin Daley,[2] with initial funding from Mozy founder Josh Coates (currently the CEO) and Epic Ventures.[3]
+In December 2010, the Utah Education Network (UEN), which represents a number of Utah colleges and universities, announced that Instructure would be replacing Blackboard as their preferred LMS.[4] By January, 2013, Instructure's LMS platform was in use by more than 300 colleges, universities and K-12 districts, and the company's customer base had increased to more than 425 halfway through 2013 and 9 million users by the end of 2013.[5][6]
+In February 2011, Instructure announced that they were making their flagship product, Canvas, freely available under an AGPL license as open source software. Instructure's announcement received coverage in the press.[7][8][9][10] In February 2012, the company launched Canvas K-12.[11]
+In November 2012, Instructure entered the massive open online course market by launching Canvas Network.[12]
+In June 2013, Instructure secured $30 Million in Series D Funding, bringing their lifetime funding total to $50M.[13] In February, 2015, Instructure raised another $40 Million in Series E Funding, raising their lifetime funding total to $90M. CEO Josh Coates described it as "a pre-IPO round."[14] On November 13, 2015, Instructure began trading as a publicly held company on the New York Stock Exchange (NYSE: INST).[15]
+Products[edit]
+Canvas[edit]
+Instructure Inc. was created in order to support the continued development of a new learning management system (LMS) originally named Instructure. Once incorporated, the founders changed the name of the software to Canvas. The Utah-based company tested the LMS at several local schools including Utah State University and Brigham Young University before officially launching Canvas.
+Canvas was built using Ruby on Rails as the web application framework backed by a PostgreSQL database. It incorporates JQuery, HTML5, and CSS3 to provide a modern user interface. OAuth is used to provide limited access to a user's information on certain social media sites like Facebook and Twitter to allow for collaboration between sites. Canvas operates as a software as a service using Amazon Web Services in the "Cloud".
+Canvas K-12[edit]
+In February 2012, Instructure launched Canvas K-12, an LMS platform designed for the specific needs of elementary and secondary schools.[16] The LMS enrolls parents with their students to provide greater visibility into their children's learning experience and provides actionable analytics to teachers and administrators.
+Canvas Network[edit]
+In November 2012, Instructure entered the massive open online course MOOC market by launching Canvas Network.[17] Instructure's approach to MOOC has been to facilitate experimentation with pedagogy and new ways to use multimedia environments to change cognition and enhance the learning process. One example is "Gender Through Comic Books," a MOOC taught by Ball State University's Christina Blanch on Canvas Network that used lessons from pop culture to explore evolving social norms and other anthropological ideals.[18]
+In July 2013, Instructure partnered with Qualtrics, a Utah-based company, to survey MOOC participants on Instructure's Canvas Network about their motivations for enrolling in and completing these courses.[19] The results suggested that educators rethink ways to fully leverage the online learning environment to make the educational experience more engaging and interesting.
+Bridge[edit]
+On February 18, 2015, Instructure officially launched Bridge,[20] their new cloud-based corporate LMS. This launch followed $40 million raised in Series E funding, led by Insight Venture Partners. EPIC Ventures and Bessemer Venture Partners also participated in the funding.[21] This round raised their total lifetime funding to close to $90 million. At launch, Bridge served six corporate clients, including Oregon State University, which had also been using Instructure's Canvas LMS for their students.[14]
+See also[edit]
+
+History of virtual learning environments
+Virtual learning environment
+
+References[edit]
+
+
+^ Canvas Network
+^ Sara Israelsen-Hartley (June 20, 2010). "BYU grads introduce education-savvy software". Deseret News. Retrieved February 23, 2011. 
+^ "Instructure CrunchBase Profile". CrunchBase. Interserve dba TechCrunch. Retrieved February 23, 2011. 
+^ "New Statewide Learning Management System Selected". UEN News. Utah Education Network. December 14, 2010. Retrieved June 14, 2017. 
+^ Empson, Rip. "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network". TechCrunch. 
+^ http://www.capterra.com/infographics/top-lms-software
+^ Dan Dzombak (February 2, 2011). "A Fiery New Competitor". The Motley Fool. The Motley Fool, LLC. Retrieved February 22, 2011. 
+^ Michael Arrington (January 31, 2011). "Instructure Launches To Root Blackboard Out Of Universities". TechCrunch.com. Interserve dba TechCrunch. Retrieved February 22, 2011. 
+^ Josh Keller (January 31, 2011). "Upstart Course-Management Provider Goes Open Source". Wired Campus. The Chronicle of Higher Education. Retrieved February 22, 2011. 
+^ Christopher Dawson (February 1, 2011). "There are alternatives to Blackboard and Moodle: Instructure Canvas goes open source". ZDNet Education. CBS Interactive. Retrieved February 22, 2011. 
+^ Canvas K-12: http://www.instructure.com/k-12
+^ Rip Empson (October 31, 2012). "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network - TechCrunch". TechCrunch. techcrunch.com.com. Retrieved September 7, 2014. 
+^ "Instructure Secures $30 Million in Series D Funding - MarketWatch". Market Watch. marketwatch.com. June 5, 2013. Retrieved September 7, 2014. 
+^ a b Locke, Charley (2015-02-24). "Instructure Plots Path to IPO, Corporate Customers After $40M Series E". Edsurge. 
+^ Schaffler, Rhonda (2015-11-13). "Instructure IPO Debuts on NYSE With Double-Digit Gain". TheStreet. 
+^ "Box spins Embed, OneCloud for educational use at K-12 schools, universities". ZDNET. 
+^ Nagel, David. "Instructure Creates Free 'Canvas Network' for Online Courses". Campus Technology. 
+^ Knox, Kelly. "New Online Course Explores Gender Through Comic Books". Wired. 
+^ F. Carr, David. "MOOC Students Attracted Most By Course Topics". Information Week. 
+^ Buhr, Sarah (2015-02-18). "On The Way To An IPO, Education Technology Startup Instructure Is Close To Raising A Big New Round". TechCrunch. 
+^ Marino, Jonathan (2015-02-18). "Education tech startup Instructure has raised $40 million". Business Insider. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Instructure&oldid=787475160"					
+Categories: Learning management systemsCompanies based in UtahFree educational software2008 establishments in UtahPrivately held companies based in UtahHidden categories: Pages using deprecated image syntax 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+Français 
+Edit links 
+
+
+
+
+
+ This page was last edited on 25 June 2017, at 16:44.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Instructure - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Instructure
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Instructure, Inc.
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: INST
+
+
+Industry
+Education
+Learning Management Systems
+MOOC
+
+
+Founded
+2008
+
+
+Headquarters
+Salt Lake City, Utah
+
+
+
+Key people
+
+Josh Coates, CEO
+
+
+Products
+Canvas, Canvas K-12, Canvas Network, Bridge
+
+
+Website
+http://www.instructure.com
+
+
+Instructure is an educational technology company based in Salt Lake City, Utah. It is the developer of the Canvas learning management system, which is a comprehensive cloud-native software package that competes with such systems as Blackboard Learning System, Moodle, D2L and Sakai Project. Instructure also developed Canvas Network,[1] a massive open online course (MOOC) platform.
+
+
+
+Contents
+
+
+1 History
+2 Products
+
+2.1 Canvas
+2.2 Canvas K-12
+2.3 Canvas Network
+2.4 Bridge
+
+
+3 See also
+4 References
+5 External links
+
+
+
+History[edit]
+Instructure was founded in 2008 by two BYU graduate students, Brian Whitmer and Devlin Daley,[2] with initial funding from Mozy founder Josh Coates (currently the CEO) and Epic Ventures.[3]
+In December 2010, the Utah Education Network (UEN), which represents a number of Utah colleges and universities, announced that Instructure would be replacing Blackboard as their preferred LMS.[4] By January, 2013, Instructure's LMS platform was in use by more than 300 colleges, universities and K-12 districts, and the company's customer base had increased to more than 425 halfway through 2013 and 9 million users by the end of 2013.[5][6]
+In February 2011, Instructure announced that they were making their flagship product, Canvas, freely available under an AGPL license as open source software. Instructure's announcement received coverage in the press.[7][8][9][10] In February 2012, the company launched Canvas K-12.[11]
+In November 2012, Instructure entered the massive open online course market by launching Canvas Network.[12]
+In June 2013, Instructure secured $30 Million in Series D Funding, bringing their lifetime funding total to $50M.[13] In February, 2015, Instructure raised another $40 Million in Series E Funding, raising their lifetime funding total to $90M. CEO Josh Coates described it as "a pre-IPO round."[14] On November 13, 2015, Instructure began trading as a publicly held company on the New York Stock Exchange (NYSE: INST).[15]
+Products[edit]
+Canvas[edit]
+Instructure Inc. was created in order to support the continued development of a new learning management system (LMS) originally named Instructure. Once incorporated, the founders changed the name of the software to Canvas. The Utah-based company tested the LMS at several local schools including Utah State University and Brigham Young University before officially launching Canvas.
+Canvas was built using Ruby on Rails as the web application framework backed by a PostgreSQL database. It incorporates JQuery, HTML5, and CSS3 to provide a modern user interface. OAuth is used to provide limited access to a user's information on certain social media sites like Facebook and Twitter to allow for collaboration between sites. Canvas operates as a software as a service using Amazon Web Services in the "Cloud".
+Canvas K-12[edit]
+In February 2012, Instructure launched Canvas K-12, an LMS platform designed for the specific needs of elementary and secondary schools.[16] The LMS enrolls parents with their students to provide greater visibility into their children's learning experience and provides actionable analytics to teachers and administrators.
+Canvas Network[edit]
+In November 2012, Instructure entered the massive open online course MOOC market by launching Canvas Network.[17] Instructure's approach to MOOC has been to facilitate experimentation with pedagogy and new ways to use multimedia environments to change cognition and enhance the learning process. One example is "Gender Through Comic Books," a MOOC taught by Ball State University's Christina Blanch on Canvas Network that used lessons from pop culture to explore evolving social norms and other anthropological ideals.[18]
+In July 2013, Instructure partnered with Qualtrics, a Utah-based company, to survey MOOC participants on Instructure's Canvas Network about their motivations for enrolling in and completing these courses.[19] The results suggested that educators rethink ways to fully leverage the online learning environment to make the educational experience more engaging and interesting.
+Bridge[edit]
+On February 18, 2015, Instructure officially launched Bridge,[20] their new cloud-based corporate LMS. This launch followed $40 million raised in Series E funding, led by Insight Venture Partners. EPIC Ventures and Bessemer Venture Partners also participated in the funding.[21] This round raised their total lifetime funding to close to $90 million. At launch, Bridge served six corporate clients, including Oregon State University, which had also been using Instructure's Canvas LMS for their students.[14]
+See also[edit]
+
+History of virtual learning environments
+Virtual learning environment
+
+References[edit]
+
+
+^ Canvas Network
+^ Sara Israelsen-Hartley (June 20, 2010). "BYU grads introduce education-savvy software". Deseret News. Retrieved February 23, 2011. 
+^ "Instructure CrunchBase Profile". CrunchBase. Interserve dba TechCrunch. Retrieved February 23, 2011. 
+^ "New Statewide Learning Management System Selected". UEN News. Utah Education Network. December 14, 2010. Retrieved June 14, 2017. 
+^ Empson, Rip. "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network". TechCrunch. 
+^ http://www.capterra.com/infographics/top-lms-software
+^ Dan Dzombak (February 2, 2011). "A Fiery New Competitor". The Motley Fool. The Motley Fool, LLC. Retrieved February 22, 2011. 
+^ Michael Arrington (January 31, 2011). "Instructure Launches To Root Blackboard Out Of Universities". TechCrunch.com. Interserve dba TechCrunch. Retrieved February 22, 2011. 
+^ Josh Keller (January 31, 2011). "Upstart Course-Management Provider Goes Open Source". Wired Campus. The Chronicle of Higher Education. Retrieved February 22, 2011. 
+^ Christopher Dawson (February 1, 2011). "There are alternatives to Blackboard and Moodle: Instructure Canvas goes open source". ZDNet Education. CBS Interactive. Retrieved February 22, 2011. 
+^ Canvas K-12: http://www.instructure.com/k-12
+^ Rip Empson (October 31, 2012). "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network - TechCrunch". TechCrunch. techcrunch.com.com. Retrieved September 7, 2014. 
+^ "Instructure Secures $30 Million in Series D Funding - MarketWatch". Market Watch. marketwatch.com. June 5, 2013. Retrieved September 7, 2014. 
+^ a b Locke, Charley (2015-02-24). "Instructure Plots Path to IPO, Corporate Customers After $40M Series E". Edsurge. 
+^ Schaffler, Rhonda (2015-11-13). "Instructure IPO Debuts on NYSE With Double-Digit Gain". TheStreet. 
+^ "Box spins Embed, OneCloud for educational use at K-12 schools, universities". ZDNET. 
+^ Nagel, David. "Instructure Creates Free 'Canvas Network' for Online Courses". Campus Technology. 
+^ Knox, Kelly. "New Online Course Explores Gender Through Comic Books". Wired. 
+^ F. Carr, David. "MOOC Students Attracted Most By Course Topics". Information Week. 
+^ Buhr, Sarah (2015-02-18). "On The Way To An IPO, Education Technology Startup Instructure Is Close To Raising A Big New Round". TechCrunch. 
+^ Marino, Jonathan (2015-02-18). "Education tech startup Instructure has raised $40 million". Business Insider. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Instructure&oldid=787475160"					
+Categories: Learning management systemsCompanies based in UtahFree educational software2008 establishments in UtahPrivately held companies based in UtahHidden categories: Pages using deprecated image syntax 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+Français 
+Edit links 
+
+
+
+
+
+ This page was last edited on 25 June 2017, at 16:44.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure (@Instructure) | Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+Home
+Home
+Home, current page.
+
+
+
+
+
+
+Moments
+Moments
+Moments, current page.
+
+
+
+
+
+
+Search query
+
+
+
+Search Twitter
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Language: English 
+
+
+
+ 
+
+
+
+Bahasa Indonesia
+Bahasa Melayu
+Català
+Čeština
+Dansk
+Deutsch
+English UK
+Español
+Filipino
+Français
+Hrvatski
+Italiano
+Magyar
+Nederlands
+Norsk
+Polski
+Português
+Română
+Slovenčina
+Suomi
+Svenska
+Tiếng Việt
+Türkçe
+Ελληνικά
+Български език
+Русский
+Српски
+Українська мова
+עִבְרִית
+العربية
+فارسی
+मराठी
+हिन्दी
+বাংলা
+ગુજરાતી
+தமிழ்
+ಕನ್ನಡ
+ภาษาไทย
+한국어
+日本語
+简体中文
+繁體中文
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Have an account?  Log in
+
+
+   
+
+Have an account?
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+New to Twitter?
+Sign up
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Instructure
+
+
+
+@Instructure
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+Tweets, current page.
+598
+            
+
+
+
+Following
+Following
+491
+
+
+
+Followers
+Followers
+3,933
+
+
+
+Likes
+Likes
+727
+
+
+
+Lists
+Lists
+1
+ 
+ 
+More 
+
+
+
+
+
+
+
+Likes
+Lists
+
+
+
+
+
+
+Unmute @Instructure
+
+Mute @Instructure
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure
+
+
+
+@Instructure
+
+
+Instructure makes software that makes people smarter. @CanvasLMS @GetBridge
+
+
+
+            SLC - Chicago - AUS - UK - HK
+
+      
+
+
+
+ 
+    instructure.com
+  
+
+
+
+
+Joined March 2014
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                55 Photos and videos
+            
+
+            Photos and videos
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+
+
+Tweets
+Tweets, current page.
+
+
+
+                  Tweets & replies
+                
+
+
+
+                  Media
+                
+
+
+
+
+
+You blocked @Instructure
+Are you sure you want to view these Tweets? Viewing Tweets won't unblock @Instructure
+Yes, view profile
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Instructure followed
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Canvas LMS‏Verified account @CanvasLMS
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We're live-streaming our final keynote from @jstein! Watch here: http://ow.ly/DcUZ30dY1Uw pic.twitter.com/xCNn0kyN4T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Dave Robinson‏ @d_rob
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+@Instructure is always innovating & committed to regular product enhancements and releases. Introducing Gauge from Instructure. #InstCon 17pic.twitter.com/4AYFkCw3OF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure‏ @Instructure
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+"On your journey, don’t look for instructions. Every day you have to wake up and work hard." Our CEO Josh Coates kicking off #InstCon!pic.twitter.com/LfL8bqw6hz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+13 retweets
+
+
+
+
+25 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+13
+
+
+
+
+Retweeted
+
+
+13
+
+
+
+
+
+
+
+
+Like
+
+
+25
+
+
+
+
+
+Liked
+
+
+25
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Wiley‏ @WileyGlobal
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Wiley and @Instructure  partner to build next generation of higher education courseware http://ow.ly/oL8L30dUi4N 
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure‏ @Instructure
+
+Jul 19
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Great article on eCampus News about using data to measure student engagement by our own Jared Stein.http://ow.ly/NPJC30dLz2z 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Suzanne Harrison‏ @MDsuz4utah
+
+Jul 13
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Thank you to @Instructure and @GirlsGoDigital for a great week of coding camp for girls. Fun to see the girls' coding projects.pic.twitter.com/57AfwqdzbP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Deanie Wimmer‏Verified account @DeanieWimmer
+
+Jul 13
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Girls Go Digital Summer camps.  A state announcement today shows why these camps are so important on @KSL5TV  at 10 @Instructurepic.twitter.com/AAnIX3Ec0b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure‏ @Instructure
+
+Jul 12
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We're hosting a @GirlsGoDigital camp this week and these girls are blowing us away! So smart, so motivated, so inspiring.pic.twitter.com/0L1IRVi7Hi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+4 retweets
+
+
+
+
+16 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+16
+
+
+
+
+
+Liked
+
+
+16
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+joshmkim‏ @joshmkim
+
+Jun 28
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+@jstein’s of @Instructure talks about his firm's @CanvasLMS and the business model for his #edtech company https://goo.gl/9ER7GS 
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure‏ @Instructure
+
+Jun 16
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Such a great afternoon hosting a #SheTech lunch discussion about women working in #STEM with @WomenTechCncl.pic.twitter.com/0KCvaT9u3H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+12 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+12
+
+
+
+
+
+Liked
+
+
+12
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Chi. Design Systems‏ @chidesignsystem
+
+Jun 15
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Our inaugural event is less than one month away. Join us at @Instructure July 12 for  and . RSVP athttps://www.meetup.com/ChicagoDesignSystems/events/240191700/ …
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+0 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+
+
+
+
+
+
+Liked
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure‏ @Instructure
+
+Jun 15
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+"Flexible work schedules are a huge part of our offering as a company." Everyone loves (& needs!) work-life balance.http://www.ksl.com/?sid=44632369&nid=1012&title=why-are-utah-women-underrepresented-in-high-paying-industries …
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure‏ @Instructure
+
+Jun 6
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We're hosting the next  Women in Business Luncheon! If you're in the #SLC area, be sure to check it out! http://ow.ly/pRD330cmugF pic.twitter.com/bPrVyqhVDO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+2 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Christi Wruck‏ @1wruckstar
+
+Jun 6
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Proud to speak at the @OgdenBusiness Disruptive Technology Seminar about @Instructure and technology-driven innovation in education.
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Tim Arnold‏ @arnoldtimw
+
+Jun 2
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Breakfast is ready compliments of @Instructure. Join us for day 2 of Mission: Possible at Dennis Intermediate. @wearrrichmond #RCSNextGenpic.twitter.com/s9vJMtD5k7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure‏ @Instructure
+
+May 16
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Stoked as ever to be a part of the #edtech industry growing and thriving in Utah!http://ow.ly/SNrH30bMdgo 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+4 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Envision Utah‏ @envisionutah
+
+May 16
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+"What would happen if you guys made a base salary of $100,000 a year for teachers? Food for thought." Josh Coates, @Instructure
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+12 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+12
+
+
+
+
+
+Liked
+
+
+12
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Michael M. Parker‏ @Mr_MikeParker
+
+May 16
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Josh Coates of @Instructure is killing it at @envisionutah breakfast. Love his disruptive energy as a business leader. #utpolpic.twitter.com/76fNVz1zWy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+9 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+9
+
+
+
+
+
+Liked
+
+
+9
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Skyler Bradsby‏ @Skylerbradsby
+
+May 9
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Kicking the robots off early! Introducing the Front Swagbot #FrontSLC17 #buildbetter @front @Instructurepic.twitter.com/EFq4gdG2KC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Instructure Retweeted
+            
+
+
+
+
+
+
+
+Front‏ @front
+
+May 9
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Today's hashtags are #UX, #prodmgmt, and #FrontSLC17 and are brought to you by @Instructure
+
+
+
+
+
+1 reply
+
+
+
+
+5 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+          @Instructure hasn't Tweeted yet.
+      
+Back to top ↑
+
+
+
+
+
+
+
+
+
+
+
+
+Loading seems to be taking a while.
+
+      Twitter may be over capacity or experiencing a momentary hiccup. Try again or visit Twitter Status for more information.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      New to Twitter?
+    
+
+
+    Sign up now to get your own personalized timeline!
+  
+
+Sign up
+
+
+
+
+You may also like
+    ·
+    Refresh
+
+
+
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Twitter
+About
+Help Center
+Terms
+Privacy policy
+Cookies
+Ads info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Choose a trend location
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dismiss
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+            Previous
+          
+
+
+
+
+
+
+
+            Next
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Go to a person's profile
+
+
+
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Promote this Tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Block
+
+
+
+
+
+
+Cancel
+Block
+
+
+
+
+
+
+
+
+
+
+
+
+Add a location to your Tweets
+
+        When you tweet with a location, Twitter stores that location. 
+        You can switch location on/off before each Tweet and always have the option to delete your location history.
+        Learn more
+
+
+Turn location on
+Not now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Share Location
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Results from 
+
+
+
+Send
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Your lists
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Create a new list
+
+
+
+
+List name
+
+
+
+
+Description
+
+Under 100 characters, optional
+
+
+
+Privacy
+
+
+
+Public · Anyone can follow this list
+      
+
+
+Private · Only you can access this list
+      
+
+
+
+
+Save list
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Copy link to Tweet
+
+
+
+
+Here's the URL for this Tweet. Copy it to easily share with friends.
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Embed this Tweet
+Embed this Video
+
+
+
+Add this Tweet to your website by copying the code below. Learn more
+Add this video to your website by copying the code below. Learn more
+
+
+
+
+Hmm, there was a problem reaching the server. Try again?
+
+
+
+
+
+
+            Include parent Tweet
+          
+
+
+
+
+            Include media
+          
+
+
+
+
+By embedding Twitter content in your website or app, you are agreeing to the Twitter Developer Agreement and Developer Policy.
+Preview
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Why you're seeing this ad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Log in to Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+
+        Don't have an account? Sign up »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Sign up for Twitter
+
+
+
+
+
+Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.
+
+
+Sign up
+
+
+
+
+        Have an account? Log in »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Two-way (sending and receiving) short codes:
+
+
+
+
+
+Country
+Code
+For customers of
+
+
+
+
+United States
+40404
+(any)
+
+
+Canada
+21212
+(any)
+
+
+United Kingdom
+86444
+Vodafone, Orange, 3, O2
+
+
+Brazil
+40404
+Nextel, TIM
+
+
+Haiti
+40404
+Digicel, Voila
+
+
+Ireland
+51210
+Vodafone, O2
+
+
+India
+53000
+Bharti Airtel, Videocon, Reliance
+
+
+Indonesia
+89887
+AXIS, 3, Telkomsel, Indosat, XL Axiata
+
+
+Italy
+4880804
+Wind
+
+
+3424486444
+Vodafone
+
+
+
+
+
+        » See SMS short codes for other countries
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Confirmation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Skip all
+          
+
+
+
+
+    Welcome home!
+  
+This timeline is where you’ll spend most of your time, getting instant updates about what matters to you.
+
+
+
+
+    Tweets not working for you?
+  
+
+    Hover over the profile pic and click the Following button to unfollow any account.
+  
+
+
+
+
+    Say a lot with a little
+  
+
+    When you see a Tweet you love, tap the heart — it lets  the person who wrote it know you shared the love.
+  
+
+
+
+
+    Spread the word
+  
+
+    The fastest way to share someone else’s Tweet with your followers is with a Retweet. Tap the icon to send it instantly.
+  
+
+
+
+
+    Join the conversation
+  
+
+    Add your thoughts about any Tweet with a Reply. Find a topic you’re passionate about, and jump right in.
+  
+
+
+
+
+    Learn the latest
+  
+
+    Get instant insight into what people are talking about now.
+  
+
+
+
+
+    Get more of what you love
+  
+
+    Follow more accounts to get instant updates about topics you care about.
+  
+
+
+
+
+    Find what's happening
+  
+
+    See the latest conversations about any topic instantly.
+  
+
+
+
+
+    Never miss a Moment
+  
+
+    Catch up instantly on the best stories happening as they unfold.
+  
+
+
+
+Back
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next Tweet from user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Instructure
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Instructure, Inc.
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: INST
+
+
+Industry
+Education
+Learning Management Systems
+MOOC
+
+
+Founded
+2008
+
+
+Headquarters
+Salt Lake City, Utah
+
+
+
+Key people
+
+Josh Coates, CEO
+
+
+Products
+Canvas, Canvas K-12, Canvas Network, Bridge
+
+
+Website
+http://www.instructure.com
+
+
+Instructure is an educational technology company based in Salt Lake City, Utah. It is the developer of the Canvas learning management system, which is a comprehensive cloud-native software package that competes with such systems as Blackboard Learning System, Moodle, D2L and Sakai Project. Instructure also developed Canvas Network,[1] a massive open online course (MOOC) platform.
+
+
+
+Contents
+
+
+1 History
+2 Products
+
+2.1 Canvas
+2.2 Canvas K-12
+2.3 Canvas Network
+2.4 Bridge
+
+
+3 See also
+4 References
+5 External links
+
+
+
+History[edit]
+Instructure was founded in 2008 by two BYU graduate students, Brian Whitmer and Devlin Daley,[2] with initial funding from Mozy founder Josh Coates (currently the CEO) and Epic Ventures.[3]
+In December 2010, the Utah Education Network (UEN), which represents a number of Utah colleges and universities, announced that Instructure would be replacing Blackboard as their preferred LMS.[4] By January, 2013, Instructure's LMS platform was in use by more than 300 colleges, universities and K-12 districts, and the company's customer base had increased to more than 425 halfway through 2013 and 9 million users by the end of 2013.[5][6]
+In February 2011, Instructure announced that they were making their flagship product, Canvas, freely available under an AGPL license as open source software. Instructure's announcement received coverage in the press.[7][8][9][10] In February 2012, the company launched Canvas K-12.[11]
+In November 2012, Instructure entered the massive open online course market by launching Canvas Network.[12]
+In June 2013, Instructure secured $30 Million in Series D Funding, bringing their lifetime funding total to $50M.[13] In February, 2015, Instructure raised another $40 Million in Series E Funding, raising their lifetime funding total to $90M. CEO Josh Coates described it as "a pre-IPO round."[14] On November 13, 2015, Instructure began trading as a publicly held company on the New York Stock Exchange (NYSE: INST).[15]
+Products[edit]
+Canvas[edit]
+Instructure Inc. was created in order to support the continued development of a new learning management system (LMS) originally named Instructure. Once incorporated, the founders changed the name of the software to Canvas. The Utah-based company tested the LMS at several local schools including Utah State University and Brigham Young University before officially launching Canvas.
+Canvas was built using Ruby on Rails as the web application framework backed by a PostgreSQL database. It incorporates JQuery, HTML5, and CSS3 to provide a modern user interface. OAuth is used to provide limited access to a user's information on certain social media sites like Facebook and Twitter to allow for collaboration between sites. Canvas operates as a software as a service using Amazon Web Services in the "Cloud".
+Canvas K-12[edit]
+In February 2012, Instructure launched Canvas K-12, an LMS platform designed for the specific needs of elementary and secondary schools.[16] The LMS enrolls parents with their students to provide greater visibility into their children's learning experience and provides actionable analytics to teachers and administrators.
+Canvas Network[edit]
+In November 2012, Instructure entered the massive open online course MOOC market by launching Canvas Network.[17] Instructure's approach to MOOC has been to facilitate experimentation with pedagogy and new ways to use multimedia environments to change cognition and enhance the learning process. One example is "Gender Through Comic Books," a MOOC taught by Ball State University's Christina Blanch on Canvas Network that used lessons from pop culture to explore evolving social norms and other anthropological ideals.[18]
+In July 2013, Instructure partnered with Qualtrics, a Utah-based company, to survey MOOC participants on Instructure's Canvas Network about their motivations for enrolling in and completing these courses.[19] The results suggested that educators rethink ways to fully leverage the online learning environment to make the educational experience more engaging and interesting.
+Bridge[edit]
+On February 18, 2015, Instructure officially launched Bridge,[20] their new cloud-based corporate LMS. This launch followed $40 million raised in Series E funding, led by Insight Venture Partners. EPIC Ventures and Bessemer Venture Partners also participated in the funding.[21] This round raised their total lifetime funding to close to $90 million. At launch, Bridge served six corporate clients, including Oregon State University, which had also been using Instructure's Canvas LMS for their students.[14]
+See also[edit]
+
+History of virtual learning environments
+Virtual learning environment
+
+References[edit]
+
+
+^ Canvas Network
+^ Sara Israelsen-Hartley (June 20, 2010). "BYU grads introduce education-savvy software". Deseret News. Retrieved February 23, 2011. 
+^ "Instructure CrunchBase Profile". CrunchBase. Interserve dba TechCrunch. Retrieved February 23, 2011. 
+^ "New Statewide Learning Management System Selected". UEN News. Utah Education Network. December 14, 2010. Retrieved June 14, 2017. 
+^ Empson, Rip. "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network". TechCrunch. 
+^ http://www.capterra.com/infographics/top-lms-software
+^ Dan Dzombak (February 2, 2011). "A Fiery New Competitor". The Motley Fool. The Motley Fool, LLC. Retrieved February 22, 2011. 
+^ Michael Arrington (January 31, 2011). "Instructure Launches To Root Blackboard Out Of Universities". TechCrunch.com. Interserve dba TechCrunch. Retrieved February 22, 2011. 
+^ Josh Keller (January 31, 2011). "Upstart Course-Management Provider Goes Open Source". Wired Campus. The Chronicle of Higher Education. Retrieved February 22, 2011. 
+^ Christopher Dawson (February 1, 2011). "There are alternatives to Blackboard and Moodle: Instructure Canvas goes open source". ZDNet Education. CBS Interactive. Retrieved February 22, 2011. 
+^ Canvas K-12: http://www.instructure.com/k-12
+^ Rip Empson (October 31, 2012). "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network - TechCrunch". TechCrunch. techcrunch.com.com. Retrieved September 7, 2014. 
+^ "Instructure Secures $30 Million in Series D Funding - MarketWatch". Market Watch. marketwatch.com. June 5, 2013. Retrieved September 7, 2014. 
+^ a b Locke, Charley (2015-02-24). "Instructure Plots Path to IPO, Corporate Customers After $40M Series E". Edsurge. 
+^ Schaffler, Rhonda (2015-11-13). "Instructure IPO Debuts on NYSE With Double-Digit Gain". TheStreet. 
+^ "Box spins Embed, OneCloud for educational use at K-12 schools, universities". ZDNET. 
+^ Nagel, David. "Instructure Creates Free 'Canvas Network' for Online Courses". Campus Technology. 
+^ Knox, Kelly. "New Online Course Explores Gender Through Comic Books". Wired. 
+^ F. Carr, David. "MOOC Students Attracted Most By Course Topics". Information Week. 
+^ Buhr, Sarah (2015-02-18). "On The Way To An IPO, Education Technology Startup Instructure Is Close To Raising A Big New Round". TechCrunch. 
+^ Marino, Jonathan (2015-02-18). "Education tech startup Instructure has raised $40 million". Business Insider. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Instructure&oldid=787475160"					
+Categories: Learning management systemsCompanies based in UtahFree educational software2008 establishments in UtahPrivately held companies based in UtahHidden categories: Pages using deprecated image syntax 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+Français 
+Edit links 
+
+
+
+
+
+ This page was last edited on 25 June 2017, at 16:44.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Instructure - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Instructure
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Instructure, Inc.
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: INST
+
+
+Industry
+Education
+Learning Management Systems
+MOOC
+
+
+Founded
+2008
+
+
+Headquarters
+Salt Lake City, Utah
+
+
+
+Key people
+
+Josh Coates, CEO
+
+
+Products
+Canvas, Canvas K-12, Canvas Network, Bridge
+
+
+Website
+http://www.instructure.com
+
+
+Instructure is an educational technology company based in Salt Lake City, Utah. It is the developer of the Canvas learning management system, which is a comprehensive cloud-native software package that competes with such systems as Blackboard Learning System, Moodle, D2L and Sakai Project. Instructure also developed Canvas Network,[1] a massive open online course (MOOC) platform.
+
+
+
+Contents
+
+
+1 History
+2 Products
+
+2.1 Canvas
+2.2 Canvas K-12
+2.3 Canvas Network
+2.4 Bridge
+
+
+3 See also
+4 References
+5 External links
+
+
+
+History[edit]
+Instructure was founded in 2008 by two BYU graduate students, Brian Whitmer and Devlin Daley,[2] with initial funding from Mozy founder Josh Coates (currently the CEO) and Epic Ventures.[3]
+In December 2010, the Utah Education Network (UEN), which represents a number of Utah colleges and universities, announced that Instructure would be replacing Blackboard as their preferred LMS.[4] By January, 2013, Instructure's LMS platform was in use by more than 300 colleges, universities and K-12 districts, and the company's customer base had increased to more than 425 halfway through 2013 and 9 million users by the end of 2013.[5][6]
+In February 2011, Instructure announced that they were making their flagship product, Canvas, freely available under an AGPL license as open source software. Instructure's announcement received coverage in the press.[7][8][9][10] In February 2012, the company launched Canvas K-12.[11]
+In November 2012, Instructure entered the massive open online course market by launching Canvas Network.[12]
+In June 2013, Instructure secured $30 Million in Series D Funding, bringing their lifetime funding total to $50M.[13] In February, 2015, Instructure raised another $40 Million in Series E Funding, raising their lifetime funding total to $90M. CEO Josh Coates described it as "a pre-IPO round."[14] On November 13, 2015, Instructure began trading as a publicly held company on the New York Stock Exchange (NYSE: INST).[15]
+Products[edit]
+Canvas[edit]
+Instructure Inc. was created in order to support the continued development of a new learning management system (LMS) originally named Instructure. Once incorporated, the founders changed the name of the software to Canvas. The Utah-based company tested the LMS at several local schools including Utah State University and Brigham Young University before officially launching Canvas.
+Canvas was built using Ruby on Rails as the web application framework backed by a PostgreSQL database. It incorporates JQuery, HTML5, and CSS3 to provide a modern user interface. OAuth is used to provide limited access to a user's information on certain social media sites like Facebook and Twitter to allow for collaboration between sites. Canvas operates as a software as a service using Amazon Web Services in the "Cloud".
+Canvas K-12[edit]
+In February 2012, Instructure launched Canvas K-12, an LMS platform designed for the specific needs of elementary and secondary schools.[16] The LMS enrolls parents with their students to provide greater visibility into their children's learning experience and provides actionable analytics to teachers and administrators.
+Canvas Network[edit]
+In November 2012, Instructure entered the massive open online course MOOC market by launching Canvas Network.[17] Instructure's approach to MOOC has been to facilitate experimentation with pedagogy and new ways to use multimedia environments to change cognition and enhance the learning process. One example is "Gender Through Comic Books," a MOOC taught by Ball State University's Christina Blanch on Canvas Network that used lessons from pop culture to explore evolving social norms and other anthropological ideals.[18]
+In July 2013, Instructure partnered with Qualtrics, a Utah-based company, to survey MOOC participants on Instructure's Canvas Network about their motivations for enrolling in and completing these courses.[19] The results suggested that educators rethink ways to fully leverage the online learning environment to make the educational experience more engaging and interesting.
+Bridge[edit]
+On February 18, 2015, Instructure officially launched Bridge,[20] their new cloud-based corporate LMS. This launch followed $40 million raised in Series E funding, led by Insight Venture Partners. EPIC Ventures and Bessemer Venture Partners also participated in the funding.[21] This round raised their total lifetime funding to close to $90 million. At launch, Bridge served six corporate clients, including Oregon State University, which had also been using Instructure's Canvas LMS for their students.[14]
+See also[edit]
+
+History of virtual learning environments
+Virtual learning environment
+
+References[edit]
+
+
+^ Canvas Network
+^ Sara Israelsen-Hartley (June 20, 2010). "BYU grads introduce education-savvy software". Deseret News. Retrieved February 23, 2011. 
+^ "Instructure CrunchBase Profile". CrunchBase. Interserve dba TechCrunch. Retrieved February 23, 2011. 
+^ "New Statewide Learning Management System Selected". UEN News. Utah Education Network. December 14, 2010. Retrieved June 14, 2017. 
+^ Empson, Rip. "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network". TechCrunch. 
+^ http://www.capterra.com/infographics/top-lms-software
+^ Dan Dzombak (February 2, 2011). "A Fiery New Competitor". The Motley Fool. The Motley Fool, LLC. Retrieved February 22, 2011. 
+^ Michael Arrington (January 31, 2011). "Instructure Launches To Root Blackboard Out Of Universities". TechCrunch.com. Interserve dba TechCrunch. Retrieved February 22, 2011. 
+^ Josh Keller (January 31, 2011). "Upstart Course-Management Provider Goes Open Source". Wired Campus. The Chronicle of Higher Education. Retrieved February 22, 2011. 
+^ Christopher Dawson (February 1, 2011). "There are alternatives to Blackboard and Moodle: Instructure Canvas goes open source". ZDNet Education. CBS Interactive. Retrieved February 22, 2011. 
+^ Canvas K-12: http://www.instructure.com/k-12
+^ Rip Empson (October 31, 2012). "With 4.5M Users, Instructure Takes On The Courseras & Udacities Of The World With Its Own Open Course Network - TechCrunch". TechCrunch. techcrunch.com.com. Retrieved September 7, 2014. 
+^ "Instructure Secures $30 Million in Series D Funding - MarketWatch". Market Watch. marketwatch.com. June 5, 2013. Retrieved September 7, 2014. 
+^ a b Locke, Charley (2015-02-24). "Instructure Plots Path to IPO, Corporate Customers After $40M Series E". Edsurge. 
+^ Schaffler, Rhonda (2015-11-13). "Instructure IPO Debuts on NYSE With Double-Digit Gain". TheStreet. 
+^ "Box spins Embed, OneCloud for educational use at K-12 schools, universities". ZDNET. 
+^ Nagel, David. "Instructure Creates Free 'Canvas Network' for Online Courses". Campus Technology. 
+^ Knox, Kelly. "New Online Course Explores Gender Through Comic Books". Wired. 
+^ F. Carr, David. "MOOC Students Attracted Most By Course Topics". Information Week. 
+^ Buhr, Sarah (2015-02-18). "On The Way To An IPO, Education Technology Startup Instructure Is Close To Raising A Big New Round". TechCrunch. 
+^ Marino, Jonathan (2015-02-18). "Education tech startup Instructure has raised $40 million". Business Insider. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Instructure&oldid=787475160"					
+Categories: Learning management systemsCompanies based in UtahFree educational software2008 establishments in UtahPrivately held companies based in UtahHidden categories: Pages using deprecated image syntax 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+Français 
+Edit links 
+
+
+
+
+
+ This page was last edited on 25 June 2017, at 16:44.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+  INST:New York Stock Quote - Instructure Inc - Bloomberg Markets                     
+
+
+
+     Error: Could not add to watchlist. X   + Watchlist  Instructure Inc   INST:US   New York        31.70USD   0.70   2.26%     As of 8:04 PM EDT 7/28/2017     Open   30.95    Day Range   30.93 - 31.90    Volume   393,005    Previous Close   31.00    52Wk Range   17.85 - 31.90    1 Yr Return   45.81%                   
+
+
+                Before it's here, it's on the Bloomberg Terminal.
+            
+
+                Learn More
+            
+
+         Open   30.95    Day Range   30.93 - 31.90    Volume   393,005    Previous Close   31.00    52Wk Range   17.85 - 31.90    1 Yr Return   45.81%    YTD Return   62.15%    Current P/E Ratio (TTM)   -    Earnings per Share (USD) (TTM)   -1.87    Market Cap (m USD)   916.692    Shares Outstanding  (m)   28.918    Price/Sales (TTM)   7.36    Dividend Indicated Gross Yield   -        Sector Information Technology   % Price Change -0.09%     Industry Software & Services   % Price Change +0.14%                    Related Videos  There are currently no related videos for this ticker. Please check back later.    Company News Press Releases    12/15/2016   Analysts' Actions -- General Mills, MasterCard, Visa, Valeant and More  - The Street    There are currently no news stories for this ticker. Please check back later.     7/17/2017   Instructure to Present at the KeyBanc / Pacific Crest Global Technology Leadership Forum     7/10/2017   Instructure Announces Second Quarter 2017 Earnings Conference Call     5/1/2017   Instructure Reports First Quarter 2017 Financial Results     4/19/2017   Instructure to Present at the Jefferies Technology Conference     4/10/2017   Instructure Announces First Quarter 2017 Earnings Conference Call     2/6/2017   Instructure Reports Fourth Quarter and Full Year 2016 Financial Results    There are currently no press releases for this ticker. Please check back later.      Profile   Instructure Inc. supplies online education technology. The Company offers products assisting in grading assignments, integrating calendars, and editing content, as well as offering communication notifications, a variety of teaching tools, group studies, online testing, assignment submission, chat, and student reporting tools. Instructure serves the education industry in the United States.    Address  6330 South 3000 EastSuite 700Salt Lake City, UT 84121United States   Phone  1-800-203-6755   Website   www.instructure.com     Executives Board Members    Joshua L Coates  Chairman/CEO    Steven B Kaminsky  Chief Financial Officer    Mitchell E Macfarlane  Chief Operating Officer    Zachary S Wily  Chief Architect    Marc T Maloy  Exec VP:Worldwide Sales     Show More         
+
+
+
+
+
+
+
+
+
+
+
+Instructure | Learning + Tech = Awesome
+
+ 
+
+
+
+
+
+
+
+Learning + Tech x
+			{
+				
+hustle
+
+}
+
+= AWESOME.
+
+
+
+
+
+
+
+
+
+
+
+INSTRUCTURE makes software thatmakes people smarter.
+
+
+
+
+
+
+
+
+
+
+Introducing
+
+
+						Video made smart, easy, and interactive.
+					
+Arc allows learners and instructors to actively collaborate for a more impactful learning experience.
+					
+
+learn more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				CAREERS
+			
+
+				BLOG
+			
+
+				PRESS RELEASES
+			
+
+				INVESTORS
+			
+
+				CONTACT
+
+					6330 South 3000 East, Suite 700
+					Salt Lake City, UT 84121
+info@instructure.com
+1.800.203.6755
+
+
+						Change Region
+					
+
+
+						Copyright © 2017, Instructure, Inc.All rights reserved.
+					
+
+
+
+
+
+
+
+
+
+Privacy Policy
+
+Terms of Use
+
+
+
+
+
+Canvas Regions
+×
+United States and Canada
+United Kingdom
+European Union
+Australia and New Zealand
+Hong Kong
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub - instructure/instructure-icons: Icon set for Instructure, Inc. products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This repository
+
+
+
+
+
+
+
+Sign in
+or
+Sign up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Watch
+  
+
+    16
+  
+
+
+
+
+    Star
+  
+
+      8
+    
+
+
+
+
+        Fork
+      
+
+      0
+    
+
+
+
+
+instructure/instructure-icons
+
+
+
+
+
+
+
+
+
+
+
+
+
+              Dismiss
+            
+
+Join GitHub today
+GitHub is home to over 20 million developers working together to host and review code, manage projects, and build software together.
+
+Sign up
+
+
+
+
+
+
+
+
+            Icon set for Instructure, Inc. products
+          
+http://instructure.github.io/instruct…
+
+
+
+
+
+
+
+
+
+
+
+                112
+              
+              commits
+          
+
+
+
+
+
+              2
+            
+            branches
+          
+
+
+
+
+
+              36
+            
+            releases
+          
+
+
+
+
+
+
+                Fetching contributors
+              
+ 
+
+
+
+                MIT
+            
+
+
+
+
+
+
+
+JavaScript
+77.5%
+
+
+
+
+
+HTML
+14.9%
+
+
+
+
+
+CSS
+4.6%
+
+
+
+
+
+Shell
+3.0%
+
+
+
+
+
+
+
+
+JavaScript
+HTML
+CSS
+Shell
+
+
+
+
+Clone or download
+
+
+
+
+
+          Clone with HTTPS
+          
+
+
+
+
+          Use Git or checkout with SVN using the web URL.
+        
+
+
+
+
+
+
+
+
+
+    Open in Desktop
+  
+
+  Download ZIP
+
+
+
+
+
+
+
+      Find file
+    
+
+
+
+Branch:
+master
+
+
+
+
+
+Switch branches/tags
+
+
+
+
+
+
+
+
+Branches
+
+
+Tags
+
+
+
+
+
+
+
+
+
+                gh-pages
+              
+
+
+
+
+                master
+              
+
+
+Nothing to show
+
+
+
+
+
+
+                v4.2.0
+              
+
+
+
+
+                v4.0.1
+              
+
+
+
+
+                v4.0.0
+              
+
+
+
+
+                v4.0.0-beta.2
+              
+
+
+
+
+                v4.0.0-beta.1
+              
+
+
+
+
+                v4.0.0-beta
+              
+
+
+
+
+                v3.0.0
+              
+
+
+
+
+                v2.3.0
+              
+
+
+
+
+                v2.2.0
+              
+
+
+
+
+                v2.1.0
+              
+
+
+
+
+                v2.0.1
+              
+
+
+
+
+                v2.0.0
+              
+
+
+
+
+                v1.3.0
+              
+
+
+
+
+                v1.2.2
+              
+
+
+
+
+                v1.2.1
+              
+
+
+
+
+                v1.2.0
+              
+
+
+
+
+                v1.1.2
+              
+
+
+
+
+                v1.1.1
+              
+
+
+
+
+                v1.1.0
+              
+
+
+
+
+                v1.0.0
+              
+
+
+
+
+                v0.3.0
+              
+
+
+
+
+                v0.2.0
+              
+
+
+
+
+                v0.1.0
+              
+
+
+
+
+                v0.0.14
+              
+
+
+
+
+                v0.0.13
+              
+
+
+
+
+                v0.0.12
+              
+
+
+
+
+                v0.0.11
+              
+
+
+
+
+                v0.0.10
+              
+
+
+
+
+                v0.0.9
+              
+
+
+
+
+                v0.0.8
+              
+
+
+
+
+                v0.0.7
+              
+
+
+
+
+                v0.0.6
+              
+
+
+
+
+                v0.0.5
+              
+
+
+
+
+                v0.0.4
+              
+
+
+
+
+                test2
+              
+
+
+
+
+                test
+              
+
+
+Nothing to show
+
+
+
+
+
+        New pull request
+      
+
+
+
+
+
+      Latest commit
+      
+        39aa846
+      
+Jul 27, 2017
+
+
+
+haridusenadeera
+        committed with junyper
+
+display react icon variants next to each other
+
+…
+
+fixes INSTICON-82
+
+Test Plan:
+- verify react icon variants are grouped properly
+
+Change-Id: Ia588742fe7f57caf5c1607a0d44b06f487b8c119
+Reviewed-on: https://gerrit.instructure.com/120735
+Reviewed-by: Jennifer Stern <jstern@instructure.com>
+Product-Review: Jennifer Stern <jstern@instructure.com>
+QA-Review: Jennifer Stern <jstern@instructure.com>
+Tested-by: Jennifer Stern <jstern@instructure.com>
+
+
+Permalink
+
+
+
+
+Failed to load latest commit information.
+
+
+
+
+
+
+
+gulpfile.babel.js
+
+
+
+display react icon variants next to each other
+
+
+
+Jul 27, 2017
+
+
+
+
+
+
+
+
+src
+
+
+
+display react icon variants next to each other
+
+
+
+Jul 27, 2017
+
+
+
+
+
+
+
+
+.babelrc
+
+
+
+Add an InlineSVG component
+
+
+
+Mar 29, 2017
+
+
+
+
+
+
+
+
+.editorconfig
+
+
+
+Initial commit
+
+
+
+May 24, 2016
+
+
+
+
+
+
+
+
+.eslintrc
+
+
+
+Add an InlineSVG component
+
+
+
+Mar 29, 2017
+
+
+
+
+
+
+
+
+.gitignore
+
+
+
+Add an InlineSVG component
+
+
+
+Mar 29, 2017
+
+
+
+
+
+
+
+
+.nvmrc
+
+
+
+Add an InlineSVG component
+
+
+
+Mar 29, 2017
+
+
+
+
+
+
+
+
+LICENSE.md
+
+
+
+Add MIT license
+
+
+
+Jul 6, 2017
+
+
+
+
+
+
+
+
+README.md
+
+
+
+Add MIT license
+
+
+
+Jul 6, 2017
+
+
+
+
+
+
+
+
+index.js
+
+
+
+Initial commit
+
+
+
+May 24, 2016
+
+
+
+
+
+
+
+
+install.sh
+
+
+
+Version Bump + Downgrade React
+
+
+
+Apr 14, 2017
+
+
+
+
+
+
+
+
+npm-shrinkwrap.json
+
+
+
+Upgrade React and related dependencies
+
+
+
+Jun 30, 2017
+
+
+
+
+
+
+
+
+package.json
+
+
+
+Version Bump
+
+
+
+Jul 6, 2017
+
+
+
+
+
+
+
+
+postcss.config.js
+
+
+
+Add an InlineSVG component
+
+
+
+Mar 29, 2017
+
+
+
+
+
+
+
+
+table-flip.sh
+
+
+
+Upgrade React and related dependencies
+
+
+
+Jun 30, 2017
+
+
+
+
+
+
+
+
+template.sketch
+
+
+
+Initial commit
+
+
+
+May 24, 2016
+
+
+
+
+
+
+
+
+webpack.config.js
+
+
+
+Initial commit
+
+
+
+May 24, 2016
+
+
+
+
+
+
+
+
+      README.md
+    
+Instructure Icons
+The official icon set for Instructure, Inc. products.
+Icon formats:
+
+SVG files, icon font and SVG sprite optimized for web
+SVG files with configurable bounding boxes/margins for Android
+PDF files with configurable bounding boxes/margins for iOS
+SVG sprites
+Accessible React components for each icon/variant
+
+Usage
+npm install instructure-icons
+
+To use the React components:
+import { IconAddLine } from 'instructure-icons'
+
+function MyComponent () {
+  return <IconAddLine />
+}
+Contributing
+The build scripts generate icon sets from the source Sketch files for multiple platforms (web, iOS, Android) and provide a local web application for testing the output. (see the demo page)
+Requirements
+
+Node v5.10.1
+Mac OSX
+Sketch
+
+Set Up
+
+In the console run ./install.sh to install dependencies.
+In the console run npm start to start the local server and watch for changes.
+
+How It Works
+
+
+In the .sketch files in /src/sketch there are 1920x1920 artboards for each icon set variant. The artboard name is the name of the icon (close, add, etc.) with a prefix of the variant, like solid/close and line/close.
+
+
+When you save in Sketch with the npm start script running, the artboards will be exported in SVG to the ./__build__ directory automatically via gulp-sketch, creating directories for each variant based on the artboard names.
+
+
+After exporting, the build will take the SVG files generated for each variant and resize, minify, and package them for various platforms (web, iOS, Android) as individual SVG files, SVG sprites, pdf documents and icon fonts. You can see the result in the /__build__ directory.
+
+
+Adding and Modifying Icons
+
+
+Start with the Sketch template provided. Open the template file and then save it as a template (File > Save as Template...). The next time you want to make an icon it will be available in your template list (File > New From Template) in the Sketch app.
+
+
+Save new icon files in the /src/sketch directory.
+
+
+Run npm start to start the local server and watch for changes to the sketch files and generate the various formats.
+
+
+Guidelines for Drawing Icons
+
+
+Use dashes in the name of the .sketch files (e.g calendar-month). Use the same name for artboards, but prefix with the variant, like solid/calendar-month and line/calendar-month.
+
+
+Draw your icons on the 1920 x 1920 artboards that are set up for you in the Sketch template.
+
+
+Before you flatten shapes or vectorize strokes as described below, make a hidden copy of the original paths off to the side so that you can more easily come back and make changes later.
+
+
+Flatten your shapes (Layer > Paths > Flatten).
+
+
+Export strokes to vector (Layer > Convert to Outlines).
+
+
+Don’t use borders on vectors, especially not inside/outside borders which aren’t supported in SVG.
+
+
+Make sure none of the paths go outside of the artboard. If so, the glyph in the icon font will be misaligned. Draw inside the lines.
+
+
+Fill the space edge-to-edge as much as possible. The build process will add margins as needed.
+
+
+Testing Your Changes
+There's a small web app for testing all the icons. You can see all the icons at once, in different sizes and formats.
+If you ran npm start, you're already running the web app. Just visit localhost:3002.
+Release Process
+
+To update the version number, run npm run bump-patch OR npm run bump-minor OR npm run bump-major depending on what type of release you'd like to do.
+Merge the version bump commit to master.
+Run npm run release to publish the release to npm.
+Run npm run deploy to update the docs and examples on gh-pages.
+
+Inspiration
+
+Originally forked from Trello's iconathon
+symbols-for-sketch
+react-icons
+
+License
+MIT
+
+
+
+
+
+
+
+
+
+
+
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
+
+
+
+
+
+© 2017 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+
+
+
+
+
+
+
+
+    You can't perform that action at this time.
+  
+
+
+
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Us | Instructure
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+Instructure makes software that makes smarter people. It all started with Canvas in 2011 and the goal to make teaching and learning a lot easier. In 2015, we launched Bridge, which aims to change the way you (and, more importantly, your employees) think about employee engagement and corporate training. Today, more than 2,000 universities, school districts and institutions around the world use (and love) our products. We’re out to make the world smarter with better software because we hate mediocre technology as much as you do. Probably more. OK, yeah, we hate it more. 
+
+
+
+
+
+
+Canvas isn’t just a product. It’s a breath of fresh air. It’s an educational revolution. It’s a powerful new way to–pardon our optimism–change the world. And, yes, there’s an industry-pushing learning management system used (and loved) by millions of passionate students and teachers in there too.
+
+
+
+
+
+Bridge is the rebuttal to lousy, boring corporate training. It’s the new key to employees' ability to learn and contribute more efficiently—simple, mobile, modern, and easy to implement, author, and use. It might even be a little fun (don’t tell HR). Let’s change the way we do corporate learning and training. Down with the yawn-inspiring, groan-inducing era. Up with the easy-to-use, effective era. The Bridge era.
+
+
+
+
+
+Arc is the end of passive video. The beginning of interactive, smart, easy, collaborative video. We wondered—why is learning technology evolving so quickly, but video still feels one-way, archaic, and just a step beyond slideshows and out-of-focus overhead projectors? So we created Arc to unmute learning and turn content into conversation, connection, and collaboration.
+
+
+ 
+
+
+
+
+
+
+Josh CoatesChief Executive Officer
+
+
+
+
+Steve KaminskyChief Financial Officer
+
+
+
+
+David BurggraafSVP Engineering
+
+
+
+
+Misty FrostSVP Marketing
+
+
+
+
+Matt KaminerSVP, General Counsel & Secretary
+
+
+
+
+Mitch MacfarlaneChief Operating Officer
+
+
+
+
+Marc MaloyEVP Worldwide Sales
+
+
+
+
+Jeff WeberSVP People & Places
+
+
+
+
+Zach WilyChief Architect
+
+
+
+
+
+
+
+
+Josh Coates
+CHIEF EXECUTIVE OFFICER
+Josh has built a career the way he builds a business—by reimagining the way things can be done (even if it requires doing some major surgery with an acetylene torch). After his start in distributed systems research at the University of California, Berkeley, and Microsoft’s Bay Area Research Center, he founded Scale Eight, which developed a new approach to scalable storage software and attracted customers like Microsoft, Viacom, and Fujitsu. Upon closing operations and selling Scale Eight’s intellectual property to Intel in 2003, Josh went on to found Berkeley Data Systems (Mozy.com) in 2005, which reshaped the world of data storage with a ubiquitous remote backup solution. Two years later, EMC Corp acquired Mozy for $76 million.
+Josh now brings this imagination to the LMS world with Instructure. After seeing the opportunity to disrupt the current landscape, and in doing so, facilitate a better educational experience, he became an early investor before joining the board and becoming CEO in 2010.
+
+
+
+
+
+
+
+Steve Kaminsky
+CHIEF FINANCIAL OFFICER
+A hardcore Deadhead in CFO’s clothing, Steve came to Instructure in 2012 to manage all of the company’s administrative operations, including accounting, finance, legal, IT, and daily Nerf gun wars. Since he began working with startups in 1995, Steve has been instrumental in raising more than $200 million in funding and building infrastructure for multiple successful acquisitions, which is all the more impressive when you consider he also attended more than 100 Grateful Dead concerts during the same time period.*
+Before shifting his expertise toward startups, Steve worked as a CPA for Ernst & Young, the McDonald’s Corporation, and TriZetto. He earned a B.S. in accounting from the University of Illinois at Urbana-Champaign and an M.B.A. from UCLA Anderson Graduate School of Management.
+* 150, if you count shows post-Jerry (RIP).
+
+
+
+
+
+
+
+David Burggraaf
+SVP ENGINEERING
+As a father of ten (10!) children and SVP Engineering for Instructure, David Burggraaf is an understandably busy guy. Fascinated by computers since his father gave him his first Timex Sinclair in 1980, David started programming at just 13 years old (there seems to be a theme of “staying busy”). Prior to coming to Instructure in 2014, he was the Sr. VP of Product Engineering at FamilySearch. Before that, he spent 12 years at Microsoft, leading the product development team responsible for the Visual C++ suite of tools (the foundation for much of Microsoft's revenue—as well as that of the software industry in general).
+Reflecting on what he loves about working for Instructure, David points to its incredible blend of purpose and technology. “Here’s an incredible group of technologists invested in one of the world's most meaningful endeavors, that of advancing education—you don’t find that anywhere else.” Are you surprised that a father of ten would be emotionally invested in education?
+
+
+
+
+
+
+
+Misty Frost
+SVP MARKETING
+After spending nearly eight years in the education space with Datamark (and a lifetime immersed in sci-fi books), Misty joined Instructure (and our army of geeks) in 2012. In her role as SVP for Marketing, she guides her team toward bringing things like pretty words and pictures together with pesky things like numbers—and getting them to play nice.
+Misty’s 20-year career in advertising and marketing has proven what’s possible when the relationship between a company and its customers is nurtured. Her work has driven results for companies like Hyatt Hotels, Disney, Intel, and more. Misty earned a B.S. in anthropology from the University of Utah and may or may not have a certification from The Jedi Academy.
+
+
+
+
+
+
+
+Matt Kaminer
+SVP, GENERAL COUNSEL & SECRETARY
+In May 2015, self-professed Disney fanatic Matt Kaminer joined Instructure as SVP, General Counsel & Secretary. Before coming to Instructure, Matt served as General Counsel and Secretary of Collective Inc., a video and mobile advertising company. And before that (take a deep breath), he served as General Counsel and Secretary of Epocrates, Inc., General Counsel for MediMedia USA, Inc., and Assistant General Counsel and Chief Privacy Officer at WebMD Health Corp. That’s a lot of counseling, generally.
+Matt holds a B.S. in computer science from Pennsylvania State University and a J.D. from George Washington University. And if you could get a degree in Finding HiddenMickeys, he’d definitely have earned that too.
+
+
+
+
+
+
+
+Mitch Macfarlane
+Chief Operating Officer
+In 2011, foodie and milkshake aficionado Mitch Macfarlane joined Instructure to help build the Customer Success team from just three employees to nearly 230 by the end of 2015. He also filled the role of VP of Product, driving the implementation of Scrum methodology and a design-first product process. Now, he’s thrilled to serve as Chief Operating Officer. Why is Mitch so excited? Because he gets to build the world’s greatest learning platforms for the world’s greatest customers.
+Mitch’s career path includes roles in customer and technical support, engineering, and project management. His love for working with Instructure clients to maximize their happiness is rivaled only by his insatiable appetite for milkshakes and chocolate chip cookies. Prior to joining Instructure, Mitch worked for companies including GE, Nu Skin, and Mozy.com, while also strengthening his lactose tolerance. He earned a B.S. and an M.B.A. from Brigham Young University.
+
+
+
+
+
+
+
+Marc Maloy
+EVP WORLDWIDE SALES
+How fitting is it that our EVP of Worldwide Sales is a serious fisherman, always looking for the next big catch? Marc joined Instructure in 2013 to lead the company’s fast-growing sales team. He’s super passionate about the intersection of technology and learning—and its awesome potential to make the world a smarter place. (Like all good Instructure employees, Marc understands that there’s no way to overuse the word “awesome” here.)
+Marc began his career in operations and spent several years in customer support roles before moving into sales. Most recently, he was head of sales for HireRight and played a big part in growing the business from a startup through a successful IPO. Marc earned a B.S in both HR and operations management from the Kelley School of Business at Indiana University.
+
+
+
+
+
+
+
+Jeff Weber
+SVP PEOPLE & PLACES
+In the spring of 2013, mountain-biking triathlete Jeff Weber became Instructure’s VP of People & Places, doggedly fixated on bringing even more awesome talent to Instructure. Previously, Jeff worked at Ancestry.com—the leading online network for connecting families and the largest provider of family history information with 2.7 million paying subscriptions—as SVP of People and Places. That meant around 1,300 people (employees) at 10 places (offices). Not bad for a business built around dead people.
+Jeff brings years of in-house HR and organizational development experience to Instructure, having worked for companies like Shell Oil Company, Amoco Oil, and Novell. Jeff holds an M.B.A. with an emphasis in organizational behavior from Brigham Young University. Not surprisingly, Jeff digs living in Utah, where outdoor sports enthusiasts go to get serious.
+
+
+
+
+
+
+
+Brian Whitmer
+CO-FOUNDER & BOARD MEMBER
+Before becoming one of Instructure’s founding fathers in 2008, Brian already knew he wanted to build a better learning management system. His first step was a “product validation tour” of 17 colleges and universities to find out what faculty and students really wanted in an LMS. He went like a modern day Paul Revere in a Geo Metro with no air conditioning, shouting, “An open, elegant, easy-to-use solution is coming!” This legendary tour laid the groundwork for the open, elegant, easy-to-use solution we know today as Canvas.
+While earning his B.S. and M.S. degrees in computer science at Brigham Young University, Brian did extensive research in technology usability, which has shaped his approach to building Canvas. Before dedicating his creative genius to opening education with technology, young Brian built and sold floppy disk versions of RPG video games by mail.
+
+
+
+
+
+
+
+Zach Wily
+CHIEF ARCHITECT
+As Chief Architect, Zach is responsible for the black and white decisions about how to best build Instructure’s powerful, user-centered learning platforms. When Zach joined Instructure in 2010, he was employee number nine. Not only did he bring more than a decade’s experience as a software developer, manager, and consultant, he also brought Instructure’s unofficial black and white mascot (though it’s less unofficial by the minute)—the panda.
+Zach has worked as a software developer for a number of companies, including Mozy and, it would seem, had a bit of a penchant for panda bears that’s still going strong today. He studied computer science at Brigham Young University.
+
+
+
+
+
+
+
+
+
+				CAREERS
+			
+
+				BLOG
+			
+
+				PRESS RELEASES
+			
+
+				INVESTORS
+			
+
+				CONTACT
+
+					6330 South 3000 East, Suite 700
+					Salt Lake City, UT 84121
+info@instructure.com
+1.800.203.6755
+
+
+						Change Region
+					
+
+
+						Copyright © 2017, Instructure, Inc.All rights reserved.
+					
+
+
+
+
+
+
+
+
+
+Privacy Policy
+
+Terms of Use
+
+
+
+
+
+Canvas Regions
+×
+United States and Canada
+United Kingdom
+European Union
+Australia and New Zealand
+Hong Kong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| blog.instructure.com
+
+
+
+
+
+
+
+
+
+
+      Skip to main content
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Props to My Fellow Women
+                
+          
+
+                            Mar 08, 2017
+                 
+          
+
+                            By Kelly Dean
+                
+          
+
+                        As a woman in the education technology industry, I find myself at an interesting intersection of workforces. As in most tech companies, when I’m…
+              
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Instructure Women Honored
+                
+          
+
+                            Oct 10, 2016
+                 
+          
+
+                            By Heather Erickson
+                
+          
+
+                        Every year the Women Tech Council holds the Women in Tech Awards - the awards recognize technology-focused women who drive innovation, influence…
+              
+          
+
+
+
+
+
+
+
+
+
+
+
+                            Celebrate the EdTechWomen Salt Lake Chapter with…
+                
+          
+
+                            Aug 18, 2016
+                 
+          
+
+                            By Melissa Loble
+                
+          
+
+                        EdTechWomen is a new networked community for women’s leadership in education technology. There are local chapters across the United States and as of…
+              
+          
+
+
+
+
+
+
+
+
+
+
+
+                            Instructure Hosts Girls Go Digital Camp
+                
+          
+
+                            Aug 17, 2016
+                 
+          
+
+                            By Heather Erickson
+                
+          
+
+                        Instructure was proud to host a Girls Go Digital Camp. For five days we had an opportunity to both teach and learn from some of the smartest and fun…
+              
+          
+
+
+
+
+
+
+
+
+
+
+
+                            Instructure Opens up About Diversity &…
+                
+          
+
+                            Jun 22, 2016
+                 
+          
+
+                            By Jeff Weber
+                
+          
+
+                        At Instructure, we’re a uniquely awesome group of people working to create awesome every day. From the code we build, to how we look, to our Spotify…
+              
+          
+
+
+
+
+
+
+
+
+
+
+
+                            Meet the Instructure Chicago Team
+                
+          
+
+                            Jun 14, 2016
+                 
+          
+
+                            By Jeff Weber
+                
+          
+
+                        Interested in joining our Instructure Chicago team? Check out our open positions! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+search posts
+
+
+
+Search
+
+
+
+
+
+
+
+subscribe to our blog
+ 
+
+
+
+
+
+
+
+
+
+follow us
+
+
+
+
+
+latest tweets
+Tweets by @instructure
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Log In to Canvas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You need to have JavaScript enabled in order to access this site.
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Need a Canvas Account?
+      
+
+        Click Here, It's Free!
+      
+
+
+                Browse courses
+              
+
+
+
+
+
+              Log In
+            
+
+
+Email
+
+
+
+Password
+
+
+
+
+
+Stay signed in
+
+Forgot Password?
+
+
+
+
+                  Log In
+                
+
+ 
+
+
+
+
+
+
+
+
+
+Login with Facebook
+
+
+
+
+
+
+
+
+
+Login with GitHub
+
+
+
+
+
+
+
+
+
+Login with Google
+
+
+
+
+
+
+
+
+
+Login with LinkedIn
+
+
+
+
+
+
+
+
+
+Login with Microsoft
+
+
+
+
+
+
+
+
+Login with Twitter
+
+
+
+
+ 
+
+              Enter your Email and we'll send you a link to change your password.
+            
+
+
+                Email
+              
+
+
+
+
+Back to Login
+
+                  Request Password
+                
+ 
+
+  
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+Equella is a shared content repository that organizations can use to easily track and reuse content.  This OER repository is a collection of free resources provided by Equella.
+
+
+
+    In order to create video or audio recordings your computer needs to be 
+    webcam-enabled.  If you don't have a webcam on your computer, you can still
+    record audio-only messages by first installing the Google Video Chat
+    plugin.
+  
+
+Install the Video Plugin
+
+
+Don't have a webcam?
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Careers | Instructure
+
+ 
+
+
+
+
+
+
+
+
+
+In the Beginning
+In Good Company
+In the News
+Invaluable
+Invested
+Inquire Within 
+
+				Get In
+				on the ground floor. Then take the elevator up to 7.
+
+
+
+
+				The Seventh Floor. That’s where you’ll find the HQ for Instructure HR, along with our assemblage of smart, creative, passionate people doing their part to create awesome. Together, we’re on a mission to make software that makes people smarter. If that sounds like your cup of tea (or iced vanilla soy latte, or diet soda, or tomato juice with celery—or whatever fills your working person’s thermos), we invite you to get in on all the awesome at Instructure.
+				
+Join Us
+
+Learn more, be social
+
+
+
+
+
+
+
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+						“When I asked my interviewers whether they liked their jobs here or not, they said it was the best job they’ve ever had and that’s all I needed to hear.”
+						Amber Taniuchi,QA Engineer
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+
+
+
+Creating Awesome
+In October 2014, 20 teams of developers competed in the Utah Tech Week Hackathon for a chance to win $10,000 and the title of best developers in the state. Needless to say, Team Instructure took home the gigantic check (and the bragging rights). So, yes, now we’re bragging.
+
+
+
+
+
+
+In the Beginning
+
+
+Instructure was founded in 2008 by two computer science grad students who got their start with a Geo Metro, a big idea, and an instructor / mentor / techpreneur who thought they might be on to something.
+That unassuming Geo Metro would set in motion the company’s legendary product validation tour, which was the catalyst for transforming that big idea into the Canvas learning management system (or LMS, if you speak edtech). And that instructor / mentor / techpreneur? He was (and still is) Josh Coates, Instructure’s first investor, its current CEO, and the founder of Berkeley Data Systems (a.k.a. Mozy).
+With only two dozen employees, Instructure formally launched Canvas in February 2011. An open-source software and the only true, cloud-native LMS, it set a new, open standard for education technology. Flash forward to 2015, and Instructure’s headcount had grown to more than 700, and the Canvas community had exploded to colleges, universities, and K-12 schools across the globe.
+Because learning doesn’t end after graduation (and because corporate learning was begging for some disruption of its own), Instructure launched Bridge, a cloud-based learning management system for corporate training that allows people to quickly learn the things they need to be more effective in their jobs and drive company results.
+To date, Instructure has connected more than 18 million teachers and learners at over 2,000 universities, school districts and institutions around the world.
+So here’s your chance to get in on something awesome. Join our team, bring your big ideas, and help write the next chapter of Instructure history.
+
+
+A human receptionist replaced the panda robot receptionist (or so HR claims)
+Employees implemented green shirt Friday (because formal Friday failed)
+The first fully stocked kitchen included OJ, popcorn, and intern-baked cookies
+
+
+
+
+2008
+					Instructure got its Inc. and progressed from big idea to real deal tech startup
+				
+
+2009
+					The legendary pre-Canvas product validation tour went Metro (Geo Metro, that is)
+				
+
+2010
+					Josh Coates came out of techpreneur retirement to serve as Instructure’s CEO
+				
+
+2011
+					Canvas formally launched and disrupted the LMS status quo for better and forever
+				
+
+2012
+					Canvas Network set out to offer open, online courses for everyone, everywhere
+				
+
+2013
+					Instructure moved its HQ to the Old Mill Corporate Center (and brought its flamethrower)
+				
+
+2014
+					Instructure went international with offices in London, Sydney, and Hong Kong
+				
+
+2015
+					Bridge formally launched as a solution to change the way companies train employees
+				
+
+2016
+					Arc launched as a next-gen video platform with collaborative and interactive video
+				
+
+
+
+
+
+In Good Company
+In the News
+
+
+
+
+
+				Invaluable
+				(as company values go)
+
+Cream colored ponies and crisp apple strudels. Doorbells and sleigh bells and schnitzel with noodles.
+				Yeah, we all have favorite things. At Instructure, these are ours.
+
+
+
+
+Play
+
+
+
+
+
+
+
+
+
+
+
+
+Trust
+We trust you to do your job and do it well. We hold you accountable and hope you hold us accountable.  We have a clear “tell us if we’re doing something stupid” policy.
+
+
+Excellence
+Achieving excellence isn’t easy. But it is simple. Instructure drives the leading edge of innovation in our technology, support, and business operations. We do this by hiring smart, creative, and passionate people and giving them opportunities to create awesome.
+
+
+Simplicity
+Canvas is designed to make teaching and learning easier. Everything we do—from designing the product to how we communicate—should reflect that. Keep it simple and easy to understand.
+
+
+
+
+
+
+
+
+Ownership
+Let’s treat Instructure like we have a vested interest in it. Because we do. Everyone’s an owner.
+
+
+Integrity
+Simply put, we say what we’re going to do and then we do it.
+
+
+Customer Experience
+We aspire to create an awesome customer experience in every interaction with our products and people.
+
+
+
+
+
+
+
+Openness
+Instructure is built on openness—it’s part of who we are. Open doors. Open office. Open source. Open is good, but TMI can be bad. Use discretion.
+
+
+
+
+
+
+
+
+
+
+Invested in Awesome
+What’s behind door number one? A veritable showcase of work/life benefits.* They’re so good, Instructure was named one of Utah’s Best Companies to Work For by Utah Business Magazine.
+
+
+Competitive salary, equity, and 401k
+Employee stock purchase plan
+Tuition reimbursement
+iMacs or Macbooks
+Gym memberships and reward-based fitness tracking
+
+
+HSA program, vision, voluntary life, and AD&D
+Fully-stocked kitchens and catered lunches
+100% paid medical, dental, disability, and life insurance
+Paid time off, 9 paid holidays, and flexible work schedules
+
+
+
+
+*Some Instructure benefits vary by location. Which benefits, you ask? Well, that’s a question for HR. But here’s a list of where they may vary.
+
+
+
+
+us-flag
+
+
+Instructure Salt Lake City
+(U.S. Headquarters)
+					6330 South 3000 East, Suite 700
+					Salt Lake City, UT 84121
+					United States
+Instructure Pleasant Grove
+2015 West Grove Parkway, Suite D&E
+					Pleasant Grove, UT 84062
+					United States
+Instructure Chicago
+130 E Randolph Street, Suite 1800
+					Chicago, IL 60601
+					United States
+Instructure Seattle
+Westlake Tower
+					1601 5th Avenue, Suite 12-121
+					Seattle, WA 98101
+					United States
+
+br-flag
+
+
+
+
+
+
+
+
+Instructure São Paulo
+Av. Brig. Faria Lima 1336
+					11º andar, cjs. 111 e 112
+					Pinheiros, São Paulo, SP
+					CEP 01451-001
+					Brazil
+
+
+
+uk-flag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure London 
+(International Headquarters)
+					2nd Floor, 25 Kingly Street
+					London W1B 5QB
+					United Kingdom
+
+hk-flag
+
+
+Instructure Hong Kong
+Room 1115, 11/F, Lee Garden One
+					33 Hysan Avenue, Causeway Bay
+					Hong Kong
+
+au-flag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure Sydney
+Level 22
+					161 Sussex Street
+					Sydney NSW 2000
+					Australia
+
+
+
+
+
+
+Inquire Within
+
+investment
+pastime
+endeavor
+hobby
+scene
+panda
+undertaking
+venture
+career
+profession
+trade
+calling 
+enterprise
+craft 
+gig
+handicraft
+niche
+pursuit
+vocation
+awesome
+business
+line of work
+occupation
+task
+production
+advancement
+hero
+project
+investment
+place
+engagement
+progress
+undertaking
+asset
+position 
+industry
+investment
+pastime
+endeavor
+hobby
+scene
+panda
+undertaking
+venture
+career
+profession
+trade
+calling 
+enterprise
+craft 
+gig
+handicraft
+niche
+pursuit
+vocation
+awesome
+business
+line of work
+occupation
+task
+production
+advancement
+hero
+project
+investment
+place
+engagement
+progress
+undertaking
+asset
+position 
+industry
+
+
+
+
+
+
+
+
+
+				CAREERS
+			
+
+				BLOG
+			
+
+				PRESS RELEASES
+			
+
+				INVESTORS
+			
+
+				CONTACT
+
+					6330 South 3000 East, Suite 700
+					Salt Lake City, UT 84121
+jobs@instructure.com
+1.800.203.6755
+
+
+						Change Region
+					
+
+
+						Copyright © 2017, Instructure, Inc.All rights reserved.
+					
+
+
+
+
+
+
+
+
+
+Privacy Policy
+
+Terms of Use
+
+
+
+
+
+Canvas Regions
+×
+United States and Canada
+United Kingdom
+European Union
+Australia and New Zealand
+Hong Kong
+
+
+
+
+
+
+
+
+
+
+
+
+ ×
+
+
+
+ ×
+
+
+
+ ×
+
+
+
+ ×
+
+
+
+ ×
+
+
+
+ ×
+
+
+
+ ×
+
+
+
+ ×
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Our Story | Canvas Learning Management System
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Our Team
+Our Partners
+ 
+
+
+
+Canvas isn’t just a product.
+It’s a breath of fresh air. It’s an educational revolution. It’s a powerful new way to–pardon our optimism–change the world. It’s a rapidly growing company with an industry-pushing platform, 900+ talented employees, and millions of passionate students and teachers. And, sure, there’s also a pretty incredible product in there, too.
+
+
+
+
+
+
+Awesometer
+
+
+
+
+
+x 900+
+
+
+
+
+
+18134283
+
+
+
+
+
+
+
+
+Play
+
+
+
+
+
+
+
+
+Instructure Quick Facts
+
+
+Founded in 2008
+Launched Canvas in 2011
+Launched Canvas Network in 2012
+900+ employees
+
+
+
+
+Used by more than 2,000 universities, school districts, and institutions around the world
+
+
+
+
+Selected by Cisco Networking Academy to power “the world’s largest classroom”
+
+
+
+
+
+© 2017 Instructure. All rights reserved.
+
+Canvas Regions
+×
+United States and Canada
+Latin America
+Brazil
+United Kingdom
+European Union
+Austria, Germany and Switzerland
+Hong Kong
+Australia and New Zealand
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Request More Info ×
+Give us your name, email and the organization that you represent and we'll get back to you to coordinate the evaluation of Canvas for your class or school.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure | Learning + Tech = Awesome
+
+ 
+
+
+
+
+
+
+
+Learning + Tech x
+			{
+				
+hustle
+
+}
+
+= AWESOME.
+
+
+
+
+
+
+
+
+
+
+
+INSTRUCTURE makes software thatmakes people smarter.
+
+
+
+
+
+
+
+
+
+
+Introducing
+
+
+						Video made smart, easy, and interactive.
+					
+Arc allows learners and instructors to actively collaborate for a more impactful learning experience.
+					
+
+learn more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				CAREERS
+			
+
+				BLOG
+			
+
+				PRESS RELEASES
+			
+
+				INVESTORS
+			
+
+				CONTACT
+
+					6330 South 3000 East, Suite 700
+					Salt Lake City, UT 84121
+info@instructure.com
+1.800.203.6755
+
+
+						Change Region
+					
+
+
+						Copyright © 2017, Instructure, Inc.All rights reserved.
+					
+
+
+
+
+
+
+
+
+
+Privacy Policy
+
+Terms of Use
+
+
+
+
+
+Canvas Regions
+×
+United States and Canada
+United Kingdom
+European Union
+Australia and New Zealand
+Hong Kong
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructure | Learning + Tech = Awesome
+
+ 
+
+
+
+
+
+
+
+Learning + Tech x
+			{
+				
+hustle
+
+}
+
+= AWESOME.
+
+
+
+
+
+
+
+
+
+
+
+INSTRUCTURE makes software thatmakes people smarter.
+
+
+
+
+
+
+
+
+
+
+Introducing
+
+
+						Video made smart, easy, and interactive.
+					
+Arc allows learners and instructors to actively collaborate for a more impactful learning experience.
+					
+
+learn more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				CAREERS
+			
+
+				BLOG
+			
+
+				PRESS RELEASES
+			
+
+				INVESTORS
+			
+
+				CONTACT
+
+					6330 South 3000 East, Suite 700
+					Salt Lake City, UT 84121
+info@instructure.com
+1.800.203.6755
+
+
+						Change Region
+					
+
+
+						Copyright © 2017, Instructure, Inc.All rights reserved.
+					
+
+
+
+
+
+
+
+
+
+Privacy Policy
+
+Terms of Use
+
+
+
+
+
+Canvas Regions
+×
+United States and Canada
+United Kingdom
+European Union
+Australia and New Zealand
+Hong Kong
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+Instructure Inc: Company Profile - Bloomberg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+Feedback
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+instructure inc
+Public Company
+
+
+
+
+
+
+
+
+
+Company Profile
+Sector: Technology
+Industry: Software
+Sub-Industry: Application Software
+Instructure Inc. supplies online education technology. The Company offers products assisting in grading assignments, integrating calendars, and editing content, as well as offering communication notifications, a variety of teaching tools, group studies, online testing, assignment submission, chat, and student reporting tools. Instructure serves the education industry in the United States.
+
+
+
+
+Corporate Information
+Address:
+
+6330 South 3000 East
+Suite 700
+Salt Lake City, UT 84121
+United States
+
+
+Phone:
+1-800-203-6755
+
+
+Fax:
+-
+
+
+Web url:
+www.instructure.com
+
+
+
+
+
+Board Members
+
+
+
+
+Chairman/CEO
+Company
+
+
+Joshua Coates
+Instructure Inc
+
+
+
+
+
+
+
+
+Board Members
+Company
+
+
+
+
+
+
+Kevin Thompson
+Solarwinds Inc
+
+
+James Steele
+Yext Inc
+
+
+
+
+
+
+
+
+Show More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From The Web
+
+
+
+
+
+
+
+
+
+
+
+
+Press Releases
+
+
+
+
+Instructure to Present at the KeyBanc / Pacific Crest Global Technology Leadership Forum
+
+Jul 17, 2017
+
+
+
+Instructure Announces Second Quarter 2017 Earnings Conference Call
+
+Jul 10, 2017
+
+
+
+Instructure Reports First Quarter 2017 Financial Results
+
+May 01, 2017
+
+
+
+Instructure to Present at the Jefferies Technology Conference
+
+Apr 19, 2017
+
+
+
+Instructure Announces First Quarter 2017 Earnings Conference Call
+
+Apr 10, 2017
+
+
+
+Instructure Reports Fourth Quarter and Full Year 2016 Financial Results
+
+Feb 06, 2017
+
+
+
+
+
+
+Key Executives
+
+
+Joshua L Coates
+
+
+Chairman/CEO
+
+
+
+
+Steven B Kaminsky
+
+
+Chief Financial Officer
+
+
+
+
+Mitchell E Macfarlane
+
+
+Chief Operating Officer
+
+
+
+
+Zachary S Wily
+
+
+Chief Architect
+
+
+
+
+Marc T Maloy
+
+
+Exec VP:Worldwide Sales
+
+
+
+
+Matthew A Kaminer
+
+
+Senior VP/Secy/General Counsel
+
+
+
+
+S David Burggraaf
+
+
+Senior VP:Engineering
+
+
+
+
+Misty D Frost
+
+
+Senior VP:Marketing
+
+
+
+
+Jeff E Weber
+
+
+Senior VP:People & Places
+
+
+
+Show More
+
+
+Show Less
+
+
+
+
+
+
+Sponsored Financial Commentaries
+
+
+
+
+
+
+
+More From The Web
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+
+
+News
+
+
+Top Headlines
+Most Popular
+Exclusive
+Law
+Entrepreneurs
+Leaders
+Economy
+Environment
+Science
+Sports
+Markets Magazine
+Pursuits Magazine
+Bloomberg Visual Data
+Bloomberg Best (and Worst)
+For comments or complaints about news coverage click here
+
+
+Regions
+U.S.
+China
+Europe
+Asia
+U.K. & Ireland
+Australia & New Zealand
+Canada
+India & Pakistan
+Japan
+Africa
+Eastern Europe
+Latin America
+Middle East
+Markets
+Commodities
+Currencies
+Bonds
+Stocks
+Energy Markets
+Municipal Bonds
+Emerging Markets
+Funds
+Islamic Finance
+Industries
+Energy
+Technology
+Real Estate
+Finance
+Health Care
+Transportation
+Insurance
+Retail
+Media
+Manufacturing
+
+
+
+
+Quick
+
+
+Market Data
+
+
+Stocks
+Stock Futures
+World Indexes
+Americas
+Europe, Middle East, & Africa
+Asia-Pacific
+Gainers & Losers
+Earnings Calendar
+Industry Leaders
+Currencies
+Americas
+Europe, Middle East, & Africa
+Asia-Pacific
+Foreign Exchange Cross Rates
+FX Fixings
+Currency Converter
+Forex Trading Videos
+Commodities
+Energy Prices
+Metals Prices
+Agricultural Prices
+
+
+Rates & Bonds
+US Treasuries
+UK Gilts
+Germany Bunds
+Japan Bonds
+Australia Bonds
+Bloomberg Bond Indexes
+Corporate Bonds
+Consumer Rates
+Economic Calendar
+Watchlist
+European Debt Crisis
+Symbol Search
+The Market Now
+
+
+
+
+Personal Finance
+
+
+Top Headlines
+Saving & Investing
+Real Estate
+Retirement Planning
+Financial Advisers
+Taxes
+Blog: Ventured & Gained
+Real Cost Of
+Money Gallery
+Calculators
+Watchlist (Portfolio Tracker)
+
+
+
+
+Tech
+
+
+Top Headlines
+Social Media
+Mobile & Wireless
+Web
+Enterprise Tech
+TV, Games & Movies
+Apple
+Tech Deals
+Global Tech
+Slideshows
+Videos
+
+
+
+
+U.S. Politics
+
+
+Sustainability
+
+
+Top Headlines
+Energy
+Corporate Sustainability
+Policy
+Natural Resources
+Health & Population
+Slideshows
+Videos
+Blog: The Grid
+
+
+
+
+Luxury
+
+
+Top Headlines
+Autos
+Billionaires
+Living
+Property
+Travel
+Well Spent
+Loot Blog
+Pursuits Magazine
+Videos
+
+
+
+
+TV
+
+
+Live TV
+Channel Finder
+Personalities
+Apple TV
+iPad App
+Schedule
+U.S.
+Asia
+Europe
+
+
+Shows
+Surveillance
+Market Makers
+Lunch Money
+Street Smart
+Bloomberg West
+Game Changers
+
+
+
+
+Video
+
+
+Must See
+Latest
+Live TV
+Shows
+Playlist
+
+
+
+
+Radio
+
+
+Live Radio
+Shows
+Schedule
+Personalities
+Podcasts
+Bloomberg Brief
+Featured Podcasts and New Shows
+Bloomberg View
+Masters in Business
+First Word
+Surveillance
+Bloomberg Advantage
+In the Loop
+Bloomberg Law
+Taking Stock
+Bloomberg Best
+More Podcasts
+
+
+
+
+Blogs
+
+
+Global Tech
+The Grid
+Loot
+The Market Now
+Political Capital
+Tech Deals
+Ventured and Gained
+
+
+
+
+Opinion
+
+
+
+
+My Saved
+
+
+
+Registration
+
+
+
+Sign In
+
+
+
+Bloomberg.com
+
+
+
+Businessweek.com
+
+
+
+Company
+
+
+
+About
+Blog
+Careers
+Diversity & Inclusion
+News Mission
+Philanthropy & Engagement
+Press Room
+Procurement
+Sustainability
+
+
+
+
+Products
+
+
+
+Financial Products
+Bloomberg Professional Service
+Bloomberg Anywhere
+Bloomberg Tradebook
+Bloomberg Briefs
+Bloomberg Indexes
+Bloomberg SEF
+Service Center
+Customer Support
+Enterprise Products
+Enterprise Solutions
+Trading Solutions
+Industry Products
+Bloomberg BNA
+Bloomberg Government
+Bloomberg Law
+Bloomberg Link
+Bloomberg New Energy Finance
+Bloomberg Sports
+Content Licensing
+
+
+
+
+Bloomberg Anywhere
+
+
+
+Mobile Apps
+
+
+
+Bloomberg Visual Data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Executive Team | Canvas Learning Management System
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Our Team
+Our Partners
+
+Executive Team
+
+
+
+
+
+Josh Coates,Chief Executive Officer
+Josh has built a career the way he builds a business—by reimagining the way things can be done (even if it requires doing some major surgery with an acetylene torch). After his start in distributed systems research at the University of California, Berkeley, and Microsoft’s Bay Area Research Center, he founded Scale Eight, which developed a new approach to scalable storage software and attracted customers like Microsoft, Viacom, and Fujitsu. Upon closing operations and selling Scale Eight’s intellectual property to Intel in 2003, Josh went on to found Berkeley Data Systems (Mozy.com) in 2005, which reshaped the world of data storage with a ubiquitous remote backup solution. Two years later, EMC Corp acquired Mozy for $76 million.
+Josh now brings this imagination to the LMS world with Instructure. After seeing the opportunity to disrupt the current landscape, and in doing so, facilitate a better educational experience, he became an early investor before joining the board and becoming CEO in 2010.
+
+
+
+
+
+
+
+
+
+Steve Kaminsky,Chief Financial Officer
+A hardcore Deadhead in CFO’s clothing, Steve came to Instructure in 2012 to manage all of the company’s administrative operations, including accounting, finance, legal, IT, and daily Nerf gun wars. Since he began working with startups in 1995, Steve has been instrumental in raising more than $200 million in funding and building infrastructure for multiple successful acquisitions, which is all the more impressive when you consider he also attended more than 100 Grateful Dead concerts during the same time period.*
+Before shifting his expertise toward startups, Steve worked as a CPA for Ernst & Young, the McDonald’s Corporation, and TriZetto. He earned a B.S. in accounting from the University of Illinois at Urbana-Champaign and an M.B.A. from UCLA Anderson Graduate School of Management.
+* 150, if you count shows post-Jerry (RIP).
+
+
+
+
+
+
+
+David Burggraaf,SVP Engineering
+As a father of ten (10!) children and SVP Engineering for Instructure, David Burggraaf is an understandably busy guy. Fascinated by computers since his father gave him his first Timex Sinclair in 1980, David started programming at just 13 years old (there seems to be a theme of “staying busy”). Prior to coming to Instructure in 2014, he was the Sr. VP of Product Engineering at FamilySearch. Before that, he spent 12 years at Microsoft, leading the product development team responsible for the Visual C++ suite of tools (the foundation for much of Microsoft's revenue—as well as that of the software industry in general).
+Reflecting on what he loves about working for Instructure, David points to its incredible blend of purpose and technology. “Here’s an incredible group of technologists invested in one of the world’s most meaningful endeavors, that of advancing education—you don’t find that anywhere else.” Are you surprised that a father of ten would be emotionally invested in education?
+
+
+
+
+
+
+
+
+
+Misty Frost,SVP Marketing
+After spending nearly eight years in the education space with Datamark (and a lifetime immersed in sci-fi books), Misty joined Instructure (and our army of geeks) in 2012. In her role as SVP for Marketing, she guides her team toward bringing things like pretty words and pictures together with pesky things like numbers—and getting them to play nice.
+Misty’s 20-year career in advertising and marketing has proven what’s possible when the relationship between a company and its customers is nurtured. Her work has driven results for companies like Hyatt Hotels, Disney, Intel, and more. Misty earned a B.S. in anthropology from the University of Utah and may or may not have a certification from The Jedi Academy.
+
+
+
+
+
+
+
+Matt Kaminer,SVP, General Counsel & Secretary
+In May 2015, self-professed Disney fanatic Matt Kaminer joined Instructure as SVP, General Counsel & Secretary. Before coming to Instructure, Matt served as General Counsel and Secretary of Collective Inc., a video and mobile advertising company. And before that (take a deep breath), he served as General Counsel and Secretary of Epocrates, Inc., General Counsel for MediMedia USA, Inc., and Assistant General Counsel and Chief Privacy Officer at WebMD Health Corp. That’s a lot of counseling, generally.
+Matt holds a B.S. in computer science from Pennsylvania State University and a J.D. from George Washington University. And if you could get a degree in Finding Hidden Mickeys, he’d definitely have earned that too.
+
+
+
+
+
+
+
+
+
+Mitch Macfarlane,Chief Operating Officer
+In 2011, foodie and milkshake aficionado Mitch Macfarlane joined Instructure to help build the Customer Success team from just three employees to nearly 230 by the end of 2016. He then filled the role of VP of Product, driving the implementation of Scrum methodology and a design-first product process. Now, he’s thrilled to serve as Chief Operating Officer. Why is Mitch so excited? Because he gets to build the world’s greatest learning platforms for the world’s greatest customers.
+Mitch’s career path includes roles in customer and technical support, engineering, and project management. His love for working with Instructure clients to maximize their happiness is rivaled only by his insatiable appetite for milkshakes and chocolate chip cookies. Prior to joining Instructure, Mitch worked for companies including GE, Nu Skin, and Mozy.com, while also strengthening his lactose tolerance. He earned a B.S. and an M.B.A. from Brigham Young University.
+
+
+
+
+
+
+
+Marc Maloy,EVP Worldwide Sales
+How fitting is it that our EVP of Worldwide Sales is a serious fisherman, always looking for the next big catch? Marc joined Instructure in 2013 to lead the company’s fast-growing sales team. He’s super passionate about the intersection of technology and learning—and its awesome potential to make the world a smarter place. (Like all good Instructure employees, Marc understands that there’s no way to overuse the word “awesome” here.)
+Marc began his career in operations and spent several years in customer support roles before moving into sales. Most recently, he was head of sales for HireRight and played a big part in growing the business from a startup through a successful IPO. Marc earned a B.S in both HR and operations management from the Kelley School of Business at Indiana University.
+
+
+
+
+
+
+
+
+
+Jeff Weber,SVP People & Places
+In the spring of 2013, mountain-biking triathlete Jeff Weber became Instructure’s VP of People & Places, doggedly fixated on bringing even more awesome talent to Instructure. Previously, Jeff worked at Ancestry.com—the leading online network for connecting families and the largest provider of family history information with 2.7 million paying subscriptions—as SVP of People and Places. That meant around 1,300 people (employees) at 10 places (offices). Not bad for a business built around dead people.
+Jeff brings years of in-house HR and organizational development experience to Instructure, having worked for companies like Shell Oil Company, Amoco Oil, and Novell. Jeff holds an M.B.A. with an emphasis in organizational behavior from Brigham Young University. Not surprisingly, Jeff digs living in Utah, where outdoor sports enthusiasts go to get serious.
+
+
+
+
+
+
+
+Zach Wily,Chief Architect
+As Chief Architect, Zach is responsible for the black and white decisions about how to best build Instructure’s powerful, user-centered learning platforms. When Zach joined Instructure in 2010, he was employee number nine. Not only did he bring more than a decade’s experience as a software developer, manager, and consultant, he also brought Instructure’s unofficial black and white mascot (though it’s less unofficial by the minute)—the panda.
+Zach has worked as a software developer for a number of companies, including Mozy and, it would seem, had a bit of a penchant for panda bears that’s still going strong today. He studied computer science at Brigham Young University.
+
+
+
+
+
+
+© 2017 Instructure. All rights reserved.
+
+Canvas Regions
+×
+United States and Canada
+Latin America
+Brazil
+United Kingdom
+European Union
+Austria, Germany and Switzerland
+Hong Kong
+Australia and New Zealand
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Request More Info ×
+Give us your name, email and the organization that you represent and we'll get back to you to coordinate the evaluation of Canvas for your class or school.
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSTRUCTURE INC. quote - Product overview - NYSE Stocks 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+Please click here if you are not redirected within a few seconds.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deutsch
+
+
+
+
+
+español
+
+
+
+
+
+suomi
+
+
+
+
+
+français
+
+
+
+
+
+italiano
+
+
+
+
+
+Nederlands
+
+
+
+
+
+português
+
+
+
+
+
+русский
+
+
+
+
+
+svenska
+
+
+
+
+
+中文
+
+
+
+
+
+
+
+
+
+Member's area
+
+
+
+Login
+Sign up
+FAQ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Stock exchange
+
+
+All Stocks
+
+
+Euronext Stocks
+
+
+US NASDAQ Stocks
+
+
+US NYSE Stocks
+
+
+US Tech 150
+
+
+US NonTech 200
+
+
+UK Stocks
+
+
+UK AIM
+
+
+UK 300
+
+
+UK 200
+
+
+ Indices
+
+
+All indices
+
+
+Europe Indices
+
+
+NASDAQ COMPOSITE
+
+
+DOW JONES INDUSTRIAL
+
+
+S&P500
+
+
+FTSE 100
+
+
+NIKKEI 225
+
+
+EURO STOXX 50
+
+
+CAC40
+
+
+DAX30
+
+
+IBEX 35
+
+
+FTSE MIB 40
+
+
+ Forex
+
+
+All currency pairs
+
+
+Forex (47 main pairs)
+
+
+Forex (128 currency pairs)
+
+
+AUD currency pairs
+
+
+CAD currency pairs
+
+
+CHF currency pairs
+
+
+EUR currency pairs
+
+
+GBP currency pairs
+
+
+JPY currency pairs
+
+
+NZD currency pairs
+
+
+USD currency pairs
+
+
+ Commodities
+
+
+All commodities
+
+
+Gold (XAUUSD)
+
+
+Silver (XAGUSD)
+
+
+BRENT & WTI CRUDE OIL
+
+
+Ranking
+
+
+Products ranking
+
+
+Traders ranking
+
+
+Need technical analysis?
+
+
+Technical analysis request
+
+
+All technical analysis
+
+
+
+
+
+
+
+ Stock exchange
+
+
+Euronext Stocks
+
+
+US NASDAQ Stocks
+
+
+US NYSE Stocks
+
+
+US NYSE Market 50
+
+
+US NonTech 200
+
+
+UK Stocks
+
+
+UK AIM
+
+
+UK 300
+
+
+UK 200
+
+
+ Indices
+
+
+Major stock indices
+
+
+Europe Indices
+
+
+Indices Futures
+
+
+Sector indices
+
+
+United States
+
+
+France
+
+
+Germany
+
+
+Spain
+
+
+Italy
+
+
+Netherlands
+
+
+ Forex
+
+
+128 currency pairs
+
+
+AUD currency pairs
+
+
+CAD currency pairs
+
+
+CHF currency pairs
+
+
+EUR currency pairs
+
+
+GBP currency pairs
+
+
+JPY currency pairs
+
+
+NZD currency pairs
+
+
+USD currency pairs
+
+
+ Commodities
+
+
+All commodities
+
+
+
+
+
+
+
+ Stock exchange
+
+
+All Stocks
+
+
+Euronext Stocks
+
+
+US NASDAQ Stocks
+
+
+US NYSE Stocks
+
+
+US Tech 150
+
+
+US NonTech 200
+
+
+UK Stocks
+
+
+UK AIM
+
+
+UK 300
+
+
+UK 200
+
+
+ Indices
+
+
+All indices
+
+
+Europe Indices
+
+
+NASDAQ COMPOSITE
+
+
+DOW JONES INDUSTRIAL
+
+
+S&P500
+
+
+FTSE 100
+
+
+NIKKEI 225
+
+
+EURO STOXX 50
+
+
+CAC40
+
+
+DAX30
+
+
+IBEX 35
+
+
+FTSE MIB 40
+
+
+ Forex
+
+
+All currency pairs
+
+
+Forex (47 main pairs)
+
+
+Forex (128 currency pairs)
+
+
+AUD currency pairs
+
+
+CAD currency pairs
+
+
+CHF currency pairs
+
+
+EUR currency pairs
+
+
+GBP currency pairs
+
+
+JPY currency pairs
+
+
+NZD currency pairs
+
+
+USD currency pairs
+
+
+EUR/USD
+
+
+USD/JPY
+
+
+ Commodities
+
+
+All commodities
+
+
+Other categories
+
+
+Economic news
+
+
+Political news
+
+
+Financial markets
+
+
+Global news
+
+
+
+
+
+
+
+ Groups
+
+
+Active Groups
+
+
+Popular groups
+
+
+New Groups
+
+
+Groups Forum
+
+
+ Forum
+
+
+Main Forum
+
+
+Stocks Forum
+
+
+Indices Forum
+
+
+Forex Forum
+
+
+Commodities Forum
+
+
+ Social Networks
+
+
+CentralCharts Twitter
+
+
+ Widgets & Services
+
+
+Centralcharts' widget
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+Number of analysis
+
+
+
+Number of traders
+
+
+
+Since last analysis
+
+
+ 
+Find a Product / Trader / Group :
+
+
+Narrow your search...
+
+Stocks
+Forex
+Indices
+Commodities
+
+Warrants
+Bonds
+ETF
+Futures
+
+
+Traders
+Groups
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+INSTRUCTURE INC. 
+
+
+
+
+
+OverviewQuotesChartNewsAnalysisWarrantsProfileWallForum 
+
+
+ 
+
+
+
+
+-
+ USD				
+(-)
+
+  15 min delay - NYSE Stocks 
+
+
+
+
+
+
+
+
+
+
+Open:
+-
+
+
+Change:
+-
+
+
+Volume:
+-
+
+
+
+
+
+
+
+
+
+
+Low:
+-
+
+
+High:
+-
+
+
+High / Low range:
+-
+
+
+
+
+
+
+
+
+Type:
+Stocks
+
+
+Ticker:
+INST
+
+
+ISIN:
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Overview
+
+
+Quotes
+
+
+Chart
+
+
+News
+
+
+Analysis
+
+
+Warrants
+
+
+Profile
+
+
+Wall
+
+
+Forum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+INSTRUCTURE INC. overview
+
+
+
+5 days quotes  15 min delay - NYSE Stocks
+
+
+
+07/24/201707/25/201707/26/201707/27/201707/28/2017
+ 
+
+
+Last31.2531.4531.2031.0031.70
+
+
+Change (%)+1.13%+0.64%-0.80%-0.64%+2.26%
+
+
+Volume194,033250,494152,665273,200393,005
+
+
+
+
+
+
+
+5 days change : +2.59%
+
+
+
+
+
+
+						INSTRUCTURE INC. - More quotes...
+Lastest analysis
+
+
+
+No technical analysis
+
+
+
+Lastest news
+
+
+
+Instructure to Present at the KeyBanc / Pacific Crest Global Technology Leadership Forum 
+
+
+
+Instructure Announces Second Quarter 2017 Earnings Conference Call 
+
+
+
+Instructure Reports First Quarter 2017 Financial Results 
+
+
+
+Instructure to Present at the Jefferies Technology Conference 
+
+
+
+Instructure Announces First Quarter 2017 Earnings Conference Call 
+
+
+
+
+
+
+
+
+
+
+			Software Company Instructure Rises in NYSE Debut on Friday        
+
+
+
+ 
+5
+
+0
+
+
+
+								INSTRUCTURE INC. - More news...
+
+Lastest discussions
+
+
+
+No discussion
+
+
+
+
+
+
+
+
+
+
+
+
+Follow this product
+
+
+
+Post an Analysis
+
+
+
+
+Request an analysis
+
+
+
+
+
+							Add to a list						
+
+
+Technical analysis requests
+
+No technical analysis requests
+See all analysis requests 
+
+
+
+Statistics
+
+
+Analysis							: 
+Follower(s) : 
+
+
+
+
+Currently on this Wall
+
+
+
+Join these members now
+
+
+
+				Activity on				INSTRUCTURE INC.			
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+	Instructure, Inc. - Investors - Investors Home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Canvas
+Bridge
+Arc
+News
+About Us
+Investors
+Careers
+
+
+
+
+Mobile QL+
+
+Canvas
+Bridge
+News
+About Us
+Investors
+Careers
+
+
+
+
+
+
+
+
+
+investor relations
+
+
+Company overview
+LEARN MORE
+Instructure is a leading software-as-a-service (SaaS) technology company that makes software that makes people smarter. With a vision to help maximize the potential of people through technology, Instructure created Canvas and Bridge, which enable organizations everywhere to easily develop, deliver, and manage engaging face-to-face and online learning experiences. To date, Instructure has connected millions of teachers and learners at more than 2,000 educational institutions and corporations throughout the world.  
+
+
+
+
+
+
+
+
+Normal
+
+Latest News
+
+
+
+
+
+
+
+
+
+July 26
+Instructure Introduces Gauge, a New Assessment Management Platform that Empowers School Districts to Effectively Measure and Improve Student Learning
+
+Read More
+
+
+
+
+July 17
+Instructure to Present at the KeyBanc / Pacific Crest Global Technology Leadership Forum
+
+Read More
+
+
+
+
+July 10
+Instructure Announces Second Quarter 2017 Earnings Conference Call
+
+Read More
+
+
+all news
+
+
+
+
+
+
+
+
+
+
+Latest Events
+
+
+
+
+
+
+Upcoming Events
+Past Events
+
+
+
+Date
+Event
+
+
+
+
+2017 Annual Meeting
+
+May 25, 2017
+10:00 AM MST
+Instructure Office - Utah
+
+
+
+
+
+Add to Apple Calendar
+
+
+
+
+Add to Google Calendar
+
+
+
+
+Add to Microsoft Outlook
+
+
+
+
+Add to iCalendar
+
+
+
+
+
+
+
+
+
+2016 Annual Report
+
+
+
+Financial Report
+
+10-K/Annual Report
+(
+                                                        PDF
+
+                                                    )
+
+
+
+
+Financial Report
+
+Proxy Statement
+(
+                                                        PDF
+
+                                                    )
+
+
+
+
+
+
+
+
+
+
+Instructure’s Q2 2017 Earnings Conference Call
+
+July 31, 2017
+03:00 PM MT
+
+
+
+Listen to webcast
+
+
+
+
+
+Add to Apple Calendar
+
+
+
+
+Add to Google Calendar
+
+
+
+
+Add to Microsoft Outlook
+
+
+
+
+Add to iCalendar
+
+
+
+
+
+
+
+
+
+
+KeyBanc / Pacific Crest Global Technology Leadership Forum
+
+August 7, 2017
+11:00 AM MT
+
+
+
+Listen to webcast
+
+
+
+
+
+Add to Apple Calendar
+
+
+
+
+Add to Google Calendar
+
+
+
+
+Add to Microsoft Outlook
+
+
+
+
+Add to iCalendar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quick Links
+
+Email Alerts
+RSS Feed
+Contact Us
+FAQ
+Investor Presentation
+
+
+
+
+
+
+
+Email Alerts
+
+
+
+Email Address
+
+
+*
+
+
+
+
+
+
+
+
+Mailing Lists
+*
+
+
+
+
+
+
+Press Release
+
+SEC Filing
+
+Presentation
+
+Event
+
+EOD Stock Quote
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Enter the code shown above.
+
+
+
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+Investor Contact
+
+
+6330 SOUTH 3000 EAST, SUITE 700
+SALT LAKE CITY, UT 84121
+INVESTORS@INSTRUCTURE.COM
+1-866-574-3127
+
+
+
+
+
+
+Careers
+Blog
+Press Releases
+Investors
+
+
+
+
+Contact
+
+
+6330 South 3000 East, Suite 700
+Salt Lake City, UT 84121
+info@instructure.com
+1.800.203.6755
+
+    Change Region
+
+
+
+    Copyright © 2017, Instructure, Inc.All rights reserved.
+
+
+
+
+
+
+
+
+
+
+Privacy Policy
+	
+Terms of Use
+
+
+
+
+
+Powered By Q4 Inc. 4.5.0.5
+
+
+
+
+
+
+
+
+Canvas Regions
+×
+United States and Canada
+United Kingdom
+European Union
+Australia and New Zealand
+Hong Kong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

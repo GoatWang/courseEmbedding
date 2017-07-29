@@ -1,0 +1,8282 @@
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+	
+        Compensation Information for Mark L. Reuss , Executive Vice President, Global Product Development, Purchasing and Supply Chain of GENERAL MOTORS CO | Salary.com
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Enterprise
+Small Business
+Personal
+
+
+
+
+Contact Us
+Log In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Salaries
+Jobs
+Education
+Advice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Mark L. Reuss 
+Executive Compensation
+As Executive Vice President, Global Product Development, Purchasing and Supply Chain at GENERAL MOTORS CO, Mark L. Reuss  made $8,277,884 in total compensation.  Of this total $1,200,000 was received as a salary, $2,905,000 was received as a bonus, $0 was received in stock options, $3,900,018 was awarded as stock and $272,866 came from other types of compensation. This information is according to proxy statements filed for the 2016 fiscal year. 
+
+
+ENTER AN EXECUTIVE OR COMPANY NAME
+New Search
+
+
+Go
+
+
+
+The chart on this page features a breakdown of the total annual pay for Mark L. Reuss ,  Executive Vice President, Global Product Development, Purchasing and Supply Chain at GENERAL MOTORS CO as reported in their proxy statements. 
+Total Cash Compensation information is comprised of yearly Base Pay and Bonuses. GENERAL MOTORS CO income statements for executive base pay and bonus are filed yearly with the SEC in the edgar filing system. GENERAL MOTORS CO annual reports of executive compensation and pay are most commonly found in the Def 14a documents.
+Total Equity aggregates grant date fair value of stock and option awards and long term incentives granted during the fiscal year.
+Other Compensation covers all compensation-like awards that don't fit in any of these other standard categories. Numbers reported do not include change in pension value and non-qualified deferred compensation earnings.
+
+
+
+Other Executives at this Company
+
+
+Daniel  Ammann 
+Mary T. Barra 
+Charles K. Stevens III
+Alan  Batey 
+
+
+
+
+
+
+
+Mark L. Reuss 
+
+
+Base Pay$1,200,000
+Bonus + Incentive Comp$2,905,000
+Total Cash Compensation$4,105,000
+
+
+Stock Award Value$3,900,018
+Option Award Value$0
+Total Equity$3,900,018
+
+
+
+Total Other$272,866
+
+
+
+Total Compensation$8,277,884
+
+
+
+
+Browse Executives by First Name
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+
+
+Browse Companies by Company Name
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+#
+
+
+
+This report is not for commercial use. Thorough reviews have been conducted to assure this data accurately reflects disclosures. However for a complete and definitive understanding of the pay practices of any company, users should refer directly to the actual, complete proxy statement. 
+Use of Data / Disclaimer
+The information shown here is a reporting of information included in the company's proxy statement. The proxy statement includes footnotes and explanations of this information plus other information that is pertinent in assessing the overall value and appropriateness of the compensation information. For those interested in conducting a detailed compensation analysis, we recommend that you review the entire proxy statement. You may retrieve the full proxy statement by going to the Securities and Exchange Commission (SEC) website at www.sec.gov and entering the company's name and then looking in the first column for an entry of "Form DEF 14A" (or any similar code). You may also find the annual proxy statement by going directly to the company's website.
+What is a proxy statement?
+A proxy statement (or "proxy") is a form that every publicly traded U.S. company is required to file with the U.S. Securities & Exchange Commission (SEC) within 120 days after the end of its fiscal year. The proxy must be sent to every shareholder in advance of the company's annual shareholders meeting. All proxy statements are public filings made available to the general public by the SEC.
+The proxy statement's main purpose is to alert shareholders to the annual meeting and provide them information about the issues that will be voted on during the annual meeting, including decisions such as electing directors, ratifying the selection of auditors, and other shareholder-related decisions, including shareholder-initiated initiatives. Also, proxies must disclose specific detailed information regarding the pay practices for certain executives.
+
+
+
+
+
+
+
+    
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+     
+
+privacy policy
+terms of use
+about us
+contact us
+
+©  Salary.com. All rights reserved.
+
+
+US Salaries
+Canadian Salaries
+Purchase a Salary Report
+Salaries by Category
+Salaries by Income
+Salaries by Industry
+Popular Salaries
+Negotiation Tips
+Benefits Calculator
+Search Job Openings
+Job Openings by State
+Job Openings by Category
+Education by Career
+Education by Level
+Education by Major
+Cost of Living Calculator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+Mark Reuss - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Mark Reuss
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+Mark L. Reuss is the current President of General Motors North America.[1] In 2001 he was appointed executive director of the Performance Division, then executive director of Global Vehicle Integration, Safety and Virtual Development in 2005.
+Later he served as chairman and managing director of Holden, the Australasian General Motors (GM) operation from February 1, 2008 until September 1, 2009, overseeing GM's Australasian operations and is a director on the GM Asia Pacific Strategy Board.[2][3]
+Reuss was the vehicle line executive in charge of the highly criticized and unsuccessful Pontiac Aztek and Buick Rendezvous. However, he was praised for his tenure in the early 2010s for leading product development.
+From September 1, 2009, Alan Batey took over his position as Reuss returned to the GM in the United States as a senior product development director.
+Mark's father was Lloyd E. Reuss, former president at GM from 1990 to 1992. He received an undergraduate degree from Vanderbilt University in 1986 and an MBA from Duke University's Fuqua School of Business in 1990.
+References[edit]
+
+
+
+^ Vlasic, Bill (December 4, 2009). "Days After Chief's Ouster, G.M. Shuffles Top Ranks". The New York Times. Retrieved December 24, 2009. 
+^ "Mark Reuss". General Motors. July 2008. Archived from the original on October 2, 2008. Retrieved February 27, 2009. 
+^ Martin, Terry (July 24, 2009). "Holden future looks secure as Batey takes helm". GoAuto. John Mellor. Retrieved August 2, 2009. 
+
+
+
+
+Mark Reuss profile at General Motors
+
+
+
+Business positions
+
+
+Preceded by
+Chris Gubbey
+Holden Chairman
+2008–2009
+Succeeded by
+Alan Batey
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Mark_Reuss&oldid=767320812"					
+Categories: Holden executivesGeneral Motors executivesLiving people 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 25 February 2017, at 05:50.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+Executive Profile | General Motors Company | Mark L. Reuss | Customer Intelligence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Home
+                  
+
+
+
+
+					About Us	
+                  
+
+
+
+					Contact	
+                  
+
+
+
+					Resources	
+                  
+
+
+
+					Blog	
+                  
+
+
+
+Log Out
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Mark L. Reuss 
+
+		
+		EVP, Global Product Development, Purchasing and Supply Chain, 
+
+	
+		 General Motors Company 	
+
+ 
+Last Updated: 01/12/2017 
+
+
+
+Executive Summary
+Like his father before him, who was president at GM before being ousted in 1992, Reuss is a GM lifer who has enjoyed a long and varied career with the company. He earned a degree as a mechanical engineer and began his career with GM as a student intern in 1983. Over the years his career at GM has evolved from fast cars to broad managem 
+Personal Attributes and Interests
+
+Reuss was born and raised in metro Detroit and is deeply committed to revitalizing the city via education, community and philanthropy.
+His name, Reuss, rhymes with "voice." 
+Current Focus
+
+Keep drivers alert with eye-tracking technology: According to a September 2016 WSJ article, future buyers of General Motors’s semiautonomous driving system will have to be comfortable with Big Brother sitting in t 
+Key Challenges
+
+Cautious on Super Cruise: In July 2016 Car and Driver reported, "It will be difficult—if not impossible—for motorists to relinquish an active role in driving cars equipped with the semi-autonomous Super 
+Biographical Highlights
+
+Born c. 1963
+Reuss holds a BE in Mechanical Engineering from Vanderbilt University (1986) and an MBA from Duke University (1990). 
+Other Boards and Organizations
+
+Former Member, Board of Directors, ITT Exelis
+Former Member, Board of Visitors, Vanderbilt University School of Engineering 
+ 
+
+
+
+
+
+These companies are using Boardroom Insiders to close bigger deals, faster:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Boardroom Insiders, Inc. All rights reserved. 
+All trademarks are the property of their respective owners.
+
+
+Privacy Policy
+Contact Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mark Reuss - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Mark Reuss
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+Mark L. Reuss is the current President of General Motors North America.[1] In 2001 he was appointed executive director of the Performance Division, then executive director of Global Vehicle Integration, Safety and Virtual Development in 2005.
+Later he served as chairman and managing director of Holden, the Australasian General Motors (GM) operation from February 1, 2008 until September 1, 2009, overseeing GM's Australasian operations and is a director on the GM Asia Pacific Strategy Board.[2][3]
+Reuss was the vehicle line executive in charge of the highly criticized and unsuccessful Pontiac Aztek and Buick Rendezvous. However, he was praised for his tenure in the early 2010s for leading product development.
+From September 1, 2009, Alan Batey took over his position as Reuss returned to the GM in the United States as a senior product development director.
+Mark's father was Lloyd E. Reuss, former president at GM from 1990 to 1992. He received an undergraduate degree from Vanderbilt University in 1986 and an MBA from Duke University's Fuqua School of Business in 1990.
+References[edit]
+
+
+
+^ Vlasic, Bill (December 4, 2009). "Days After Chief's Ouster, G.M. Shuffles Top Ranks". The New York Times. Retrieved December 24, 2009. 
+^ "Mark Reuss". General Motors. July 2008. Archived from the original on October 2, 2008. Retrieved February 27, 2009. 
+^ Martin, Terry (July 24, 2009). "Holden future looks secure as Batey takes helm". GoAuto. John Mellor. Retrieved August 2, 2009. 
+
+
+
+
+Mark Reuss profile at General Motors
+
+
+
+Business positions
+
+
+Preceded by
+Chris Gubbey
+Holden Chairman
+2008–2009
+Succeeded by
+Alan Batey
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Mark_Reuss&oldid=767320812"					
+Categories: Holden executivesGeneral Motors executivesLiving people 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 25 February 2017, at 05:50.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Mark Reuss - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Mark Reuss
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+Mark L. Reuss is the current President of General Motors North America.[1] In 2001 he was appointed executive director of the Performance Division, then executive director of Global Vehicle Integration, Safety and Virtual Development in 2005.
+Later he served as chairman and managing director of Holden, the Australasian General Motors (GM) operation from February 1, 2008 until September 1, 2009, overseeing GM's Australasian operations and is a director on the GM Asia Pacific Strategy Board.[2][3]
+Reuss was the vehicle line executive in charge of the highly criticized and unsuccessful Pontiac Aztek and Buick Rendezvous. However, he was praised for his tenure in the early 2010s for leading product development.
+From September 1, 2009, Alan Batey took over his position as Reuss returned to the GM in the United States as a senior product development director.
+Mark's father was Lloyd E. Reuss, former president at GM from 1990 to 1992. He received an undergraduate degree from Vanderbilt University in 1986 and an MBA from Duke University's Fuqua School of Business in 1990.
+References[edit]
+
+
+
+^ Vlasic, Bill (December 4, 2009). "Days After Chief's Ouster, G.M. Shuffles Top Ranks". The New York Times. Retrieved December 24, 2009. 
+^ "Mark Reuss". General Motors. July 2008. Archived from the original on October 2, 2008. Retrieved February 27, 2009. 
+^ Martin, Terry (July 24, 2009). "Holden future looks secure as Batey takes helm". GoAuto. John Mellor. Retrieved August 2, 2009. 
+
+
+
+
+Mark Reuss profile at General Motors
+
+
+
+Business positions
+
+
+Preceded by
+Chris Gubbey
+Holden Chairman
+2008–2009
+Succeeded by
+Alan Batey
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Mark_Reuss&oldid=767320812"					
+Categories: Holden executivesGeneral Motors executivesLiving people 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 25 February 2017, at 05:50.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+Mark Reuss, Executive Vice President for General Motors Company Joins The Henry Ford Board of Trustees 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRWeb
+Home
+News Center
+Blog
+
+
+
+United States
+United Kingdom
+France
+
+			Login
+		
+			Create a free account
+		
+
+
+
+
+RSS
+
+
+Email Newsletters
+
+
+Put PRWeb on your site
+
+
+
+
+Mark Reuss, Executive Vice President for General Motors Company Joins The Henry Ford Board of Trustees
+
+
+
+Share Article
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mark L. Reuss, Executive Vice President of Global Product Development, Purchasing and Supply Chain for General Motors Company has been elected to serve a three-year term as a member of the Board of Trustees at The Henry Ford.
+
+
+
+
+
+
+
+Mark Reuss, executive vice president for General Motors Company
+
+The Henry Ford tells America’s stories of innovation, resourcefulness and ingenuity. Mark has spent his whole career fully dedicated to fueling the innovative spirit within the automotive industry
+
+
+Dearborn, Mich. (PRWEB)
+February 15, 2016
+ Mark L. Reuss, Executive Vice President of Global Product Development, Purchasing and Supply Chain for General Motors Company has been elected to serve a three-year term as a member of the Board of Trustees at The Henry Ford. As a new board member, Reuss  joins 20 other business and civic leaders from national and global organizations.  
+“The Henry Ford tells America’s stories of innovation, resourcefulness and ingenuity. Mark has spent his whole career fully dedicated to fueling the innovative spirit within the automotive industry,” said Patricia E. Mooradian, president of The Henry Ford. “His passion and commitment for education are infectious and make him a natural fit for this institution. We look forward to working with him.”
+"As a lifelong Detroiter, I know exactly how important The Henry Ford is to our community, and beyond," said Reuss. "It's a national treasure. I couldn't be happier to join its Board of Trustees and do what I can to help it continue to preserve, archive and encourage American innovation."
+Reuss leads the design, engineering, safety, quality, research and development and program management of General Motors vehicles around the world. He also oversees GM’s Global Purchasing and Supply Chain organization, and is a member of the GM Executive Leadership Team, the Opel Supervisory Board and the board of Shanghai General Motors (SGM).
+From 2009-2013, Reuss was President of General Motors North America, responsible for GM’s performance, manufacturing, portfolio and dealer network. Under his watch, GM’s North America region produced consistent profits and improved margins during a product renaissance featuring a slate of award-winning vehicles.
+Previously, Reuss served briefly as GM’s vice president of global engineering after spending two years overseas as vice president and managing director of Australia and New Zealand. During this time, he was a member of the GM Asia Pacific Strategy Board.
+Reuss, a mechanical engineer and lifelong auto and motorsports enthusiast, started at GM as an intern in 1986. Over the years, he held numerous positions in architecture and systems engineering, vehicle integration and more. He also created and led GM’s Performance Division in 2001. He is a certified industry pool test driver on the North Course of the Nürburgring Motorsport Racetrack in Germany, and is licensed for Grand American Road Racing. His first car was a 1967 Chevrolet Camaro, which he bought and restored himself.
+Born and raised in metro Detroit, Reuss is deeply committed to revitalizing the city via education, community and philanthropy. In 2010, he spearheaded a $27.1 million grant to the United Way for Southeastern Michigan to improve graduation rates at seven Detroit-area high schools. In 2013, he championed the GM Student Corps, a summer internship and career development program for under-served youth. He also was instrumental in bringing the Chevrolet Belle Isle Detroit Grand Prix back to the city, which generates millions in economic impact for the region.
+Reuss is a member of the Skillman Foundation Board of Trustees, the University of Michigan Ross School Of Business Advisory Board, the Cranbrook Schools Board of Trustees and the Horizons Upward Bound Board. He also serves on the Detroit Workforce Development Board and is Vice Chairman of the GM Foundation.
+As a board member for The Henry Ford, Reuss joins Chairman of the Board S. Evan Weiner, Vice Chairman Gerard M. Anderson, Vice Chairman Sheila Ford Hamp, President and Secretary Patricia E. Mooradian, Treasurer Lisa A. Payne and Trustees Lynn Ford Alandt, Paul R. Dimond, Edsel B. Ford II, Henry Ford III, William Clay Ford, Jr., George F. Francis III, Ralph J. Gerson, Christopher F. Hamp, Steven K. Hamp, John W. Ingle III, Elizabeth Ford Kontulis, Richard A. Manoogian, Hau Thai-Tang, Alessandro F. Uzielli and Ambassador Ronald N. Weiser.
+About The Henry Ford
+The Henry Ford in Dearborn, Michigan is an internationally-recognized history destination that explores the American experience of innovation, resourcefulness and ingenuity that helped shape America. A national historic landmark with an unparalleled Archive of American Innovation, The Henry Ford is a force for sparking curiosity and inspiring tomorrow’s innovators. More than 1.7 million visitors annually experience its five attractions: Henry Ford Museum, Greenfield Village, The Ford Rouge Factory Tour, The Benson Ford Research Center and The Henry Ford Giant Screen Experience. A continually expanding array of content available online provides anytime, anywhere access. The Henry Ford is also home to Henry Ford Academy, a public charter high school which educates over 500 students a year on the institution’s campus. In 2014, The Henry Ford premiered its first-ever national television series, The Henry Ford’s Innovation Nation, showcasing present-day change-makers and The Henry Ford’s artifacts and unique visitor experiences. Hosted by news correspondent and humorist, Mo Rocca, this Emmy®-winning weekly half-hour show airs Saturday mornings on CBS. For more information please visit our website thehenryford.org.
+
+
+
+Share article on social media or email:
+
+
+
+
+
+
+
+
+
+
+View article via:
+											Pdf
+										
+											Print
+										
+
+
+
+
+
+
+Contact Author
+
+Melissa Foster
+The Henry Ford+1 (313) 982-6126
+				Email >
+			
+
+
+									Visit website
+								
+
+
+
+
+News Center
+
+
+
+
+
+Mark Reuss - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Mark Reuss
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+Mark L. Reuss is the current President of General Motors North America.[1] In 2001 he was appointed executive director of the Performance Division, then executive director of Global Vehicle Integration, Safety and Virtual Development in 2005.
+Later he served as chairman and managing director of Holden, the Australasian General Motors (GM) operation from February 1, 2008 until September 1, 2009, overseeing GM's Australasian operations and is a director on the GM Asia Pacific Strategy Board.[2][3]
+Reuss was the vehicle line executive in charge of the highly criticized and unsuccessful Pontiac Aztek and Buick Rendezvous. However, he was praised for his tenure in the early 2010s for leading product development.
+From September 1, 2009, Alan Batey took over his position as Reuss returned to the GM in the United States as a senior product development director.
+Mark's father was Lloyd E. Reuss, former president at GM from 1990 to 1992. He received an undergraduate degree from Vanderbilt University in 1986 and an MBA from Duke University's Fuqua School of Business in 1990.
+References[edit]
+
+
+
+^ Vlasic, Bill (December 4, 2009). "Days After Chief's Ouster, G.M. Shuffles Top Ranks". The New York Times. Retrieved December 24, 2009. 
+^ "Mark Reuss". General Motors. July 2008. Archived from the original on October 2, 2008. Retrieved February 27, 2009. 
+^ Martin, Terry (July 24, 2009). "Holden future looks secure as Batey takes helm". GoAuto. John Mellor. Retrieved August 2, 2009. 
+
+
+
+
+Mark Reuss profile at General Motors
+
+
+
+Business positions
+
+
+Preceded by
+Chris Gubbey
+Holden Chairman
+2008–2009
+Succeeded by
+Alan Batey
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Mark_Reuss&oldid=767320812"					
+Categories: Holden executivesGeneral Motors executivesLiving people 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 25 February 2017, at 05:50.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+Mark L. Reuss: Executive Profile & Biography - Bloomberg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+July 28, 2017 9:39 AM ET
+Automobiles
+
+Company Overview of General Motors Company
+
+
+
+SnapshotPeople 
+
+
+
+
+OverviewBoard MembersCommittees
+
+
+
+Executive Profile
+Mark L. Reuss  Executive Vice President of Global Product Development, Purchasing and Supply Chain, General Motors CompanyAgeTotal Calculated CompensationThis person is connected to 0 Board Members in 0 different organizations across 5 different industries.53$8,412,661As of Fiscal Year 2016
+Background
+
+		Mr. Mark L. Reuss has been an Executive Vice President of Global Product Development, Purchasing and Supply Chain at General Motors Company since January 15, 2014. Mr. Reuss serves as the President of North America Operations at General Motors de Mexico, S. de R. L. de C.V. He serves as Consultant of Beringea LLC. He served as the President of North America at General Motors Company from December 4, 2009 to January 15, 2014 and also served as its Executive Vice President ... until January 15, 2014. He served as the President of General Motors North America, Inc. from December 2009 to January 15, 2013. He served as Vice President at General Motors de Mexico, S. de R. L. de C.V since December 4, 2009. He has been with General Motors since 1983 as a university student intern with the Noise Vibration Laboratory at the Milford Proving Ground, where he developed valve trains for V6 engines. Mr. Reuss served as the Head of New Sales Division - US Brands at General Motors Company since March 2010. He served as Vice President of Global Vehicle Engineering of General Motors Company and its Vice President since December 4, 2009. He served as Vice President of Asia Operations of Motors Liquidation Company (formerly, General Motors Corporation) from January 2008 to July 2009. He served as the President of the Federal Chamber of Automotive Industries. He served as the President and Managing Director of GM Holden Ltd. from February 1, 2008 to July 2009 and managed GM's operations in Australia and New Zealand. He served as the Chairman of the Board and Chief Executive Officer of GM Holden Ltd. He has held numerous engineering and management positions across GM brands, including Chief Engineer roles in GM's large luxury car vehicles and manufacturing body shop tooling launches. He joined the former Flint Automotive Division in 1986 as an Associate Car Development Engineer for powertrain calibration and as a Project Engineer, developing the ride and handling for many GM luxury car programs. He was named Senior Project Engineer of Body Engineering, in 1990 and served as a Body Shop Product and Process Engineer on bodyside frame metal in the large front-drive plants, launching new body shops until 1994. He served as a Total Vehicle Engineer of the Oldsmobile Aurora and Buick Riviera and Total Vehicle Engineer positions on the Buick Park Avenue, Buick LeSabre, Oldsmobile Aurora and Pontiac Bonneville. He served as Vehicle Line Director for crossovers. Mr. Reuss served as an Executive Director of Architecture Engineering and General Motors Performance Division since June 2001 and served as an Executive Director of North America Vehicle Systems and Architecture since October 2005. He served on the General Motors Asia Pacific Strategy Board. He served as an Executive Director of GM's Global Vehicle Integration, Safety and Virtual Vehicle Development since 2006. He serves as Member of Business Leadership Council at InvestMichigan! Growth Capital Fund II. He is Member of the Horizon Upward Bound/Cranbrook Schools Board of Directors and a Member of the Vanderbilt University School of Engineering Board of Visitors. He also serves as General Motor's key executive for Penn State University. He served as a Director of Exelis Inc. since November 3, 2011 until May 29, 2015. He served as a Director of GM Holden Ltd. He is a certified industry pool test driver on the North Course of the famed Nürburgring motorsport race track in Nürburg, Germany and has earned his license for Grand American Road Racing. Mr. Reuss received a Bachelor of Engineering degree in Mechanical Engineering from Vanderbilt University in 1986 and a Master Degree in Business Administration from Duke University in 1990.Read Full Background
+
+
+
+
+Corporate Headquarters
+300 Renaissance CenterDetroit, Michigan 48265United StatesPhone: 313-556-5000Fax: --
+Board Members Memberships
+				There is no Board Members Memberships data available.
+				Education
+BE 1986Vanderbilt UniversityMBA 1990Duke University
+Other Affiliations
+Beringea LLCMotors Liquidation CompanyVanderbilt UniversityDuke UniversityGM Holden LtdGeneral Motors de Mexico, S. de R. L. de C.V.General Motors North America, Inc.Exelis Inc.Michigan Growth Capital Partners Fund II
+
+
+Annual Compensation
+Salary$1,200,000Total Annual Compensation$1,200,000
+Stocks Options
+Restricted Stock Awards$3,900,018All Other Compensation$272,866Unexercisable Options$331,888Unexercisable Options Value$1,168,246Total Value of Options$2,920,610Total Number of Options$829,719
+Total Compensation
+Total Annual Cash Compensation$4,377,866Total Short Term Compensation$1,200,000Other Long Term Compensation$4,172,884Total Calculated Compensation$8,412,661
+
+
+
+
+Request Profile Update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+The information and data displayed in this profile are created and managed by S&P Global Market Intelligence, a division of S&P Global. Bloomberg.com does not create or control the content. For inquiries, please contact S&P Global Market Intelligence directly by clicking 
+	here.
+
+
+
+
+Stock Quotes
+
+
+Market data is delayed at least 15 minutes.
+
+
+
+
+
+
+
+Company Lookup
+
+
+
+COMPETITOR COMPENSATIONNamePosition/CompanyCompensationJames Patrick Hackett CEO & PresidentFord Motor Company--Dieter E. Zetsche Chairman of Management Board, Chief Executive Officer and Head of Mercedes-Benz CarsDaimler AG$3.0MTakahiro  Hachigo CEO, President & Representative DirectorHonda Motor Co., Ltd.$150.0MMatthias  Müller Chairman of Management Board & CEO Volkswagen Aktiengesellschaft$2.9MHarald  Krüger Chairman of Management Board & CEO Bayerische Motoren Werke Aktiengesellschaft$7.4MCompensation as of Fiscal Year --.
+
+
+
+
+
+
+
+
+
+
+Sponsored Financial Commentaries
+
+Sponsored Links
+
+
+
+
+
+
+Browse Companies
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+ | 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+
+
+
+Request Profile Update
+
+						Only a company representative may request an update for the company profile. Documentation will be required.
+					  
+To contact General Motors Company, please visit .  Company data is provided by S&P Global Market Intelligence.  Please use this form to report any data issues.
+					  
+
+
+Information Missing - Please enter your information in the following field(s): 
+
+
+
+
+Company Name
+
+Your Name*
+
+Your E-Mail Address*
+
+Your Phone Number*
+
+Type of Data*
+
+
+Overview
+Executives
+Key developments
+Similar companies
+Transactions
+
+
+Update Needed*
+
+All data changes require verification from public sources.  Please include the correct value or values and a source where we can verify.
+
+
+Cancel
+
+
+Submit
+
+
+
+
+
+
+Your requested update has been submitted
+Our data partners will research the update request and update the information on this page if necessary. Research and follow-up could take several weeks. If you have questions, you can contact them at bwwebmaster@businessweek.com.
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mark L. Reuss - Executive Bio, Compensation History, and Contacts - Equilar Atlas
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Log in | Sign up
+
+
+
+
+
+
+
+
+x
+
+ 
+
+
+
+
+
+
+As Featured In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mark L. Reuss
+Executive Vice President, Global Product Development, Purchasing and Supply Chain at General Motors Company
+
+
+View Full Profile
+Are you Mark L. Reuss? Claim your profile
+
+
+ 
+
+
+Sign up for Equilar Atlas and view Mark L. Reuss's full profile. 
+With Equilar Atlas, you can:
+
+
+
+IDENTIFY corporate executives in Mark L. Reuss's  network and community.
+												FOLLOW changes in Mark L. Reuss's employment and money-in-motion.
+												CONNECT with Mark L. Reuss through your network of contacts.
+												
+
+
+
+
+
+
+
+
+Mark L. Reuss's Executive Work History
+
+
+Current
+
+
+Executive Vice President, Global Product Development, Purchasing and Supply Chain, 
+General Motors Company
+
+
+Past
+To view Mark L. Reuss's complete executive work history, sign up now
+Education
+
+
+														 Bachelor's, 
+															Vanderbilt University
+
+
+														 M.B.A., 
+															Duke University
+
+
+Age
+53
+
+ 
+ 
+
+
+Mark L. Reuss's Biography
+
+
+
+
+			Executive Vice President, Global Product Development, Purchasing & Supply Chain (2014) Executive Vice President & President, North America (2013)  GM Vice President & President, North America (2009)
+		
+Source: General Motors Company on 02/07/2017
+		
+	
+
+ 
+
+
+
+
+
+
+Sign up for Equilar Atlas and view Mark L. Reuss's full profile. 
+
+
+
+												By accessing Equilar Atlas, you can view bios, network, salary and wealth events
+												of industry-leading executives like Mark L. Reuss. More specifically, you'll be able to:
+												
+
+IDENTIFY corporate executives in Mark L. Reuss's  network and community.
+												FOLLOW changes in Mark L. Reuss's employment and money-in-motion.
+												CONNECT with Mark L. Reuss through your network of conections.
+												
+
+
+
+
+View Full Profile
+
+
+ 
+
+
+
+
+
+
+
+
+Search for over 360,000 executive profiles.
+
+
+
+
+
+/bio
+
+
+
+													Example: Mark L. Reuss
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mark L. Reuss's Connections (132)
+
+
+
+
+
+Sign up now to view Mark L. Reuss's 132 connections »
+
+
+
+
+
+
+
+
+
+Edward E. Whitacre
+Former Chairman & Chief Executive Officer, AT&T Inc.
+
+
+
+
+
+
+
+
+
+Gary L. Cowger
+Board Member, Delphi Automotive PLC
+
+
+
+
+
+
+
+
+
+Carol M. Stephenson
+Board Member, General Motors Company
+
+
+
+
+
+
+
+
+
+Erroll B. Davis
+Board Member, Union Pacific Corporation
+
+
+
+
+
+
+
+
+
+Thomas G. Stephens
+Former Vice Chairman and Global Chief Technology Officer, General Motors Company
+
+
+
+
+
+
+
+
+
+E. Neville Isdell
+Former Chairman of the Board and Chief Executive Officer, The Coca-Cola Company
+
+
+
+
+
+
+
+
+
+Jaime Ardila
+Board Member, Accenture plc
+
+
+
+
+
+
+
+
+
+Theodore M. Solso
+Lead Independent Director, Ball Corporation
+
+
+
+
+
+
+
+
+
+James J. Mulva
+Board Member, General Electric Company
+
+
+
+
+
+
+
+
+
+Randall D. Mott
+Board Member, The Dun & Bradstreet Corporation
+
+
+
+
+
+
+
+
+Popular Profiles
+
+
+
+
+
+
+														Sign up now to view more executive profiles »
+														
+
+
+
+
+
+
+
+
+
+Thomas J. Lynch
+Executive Chairman, TE Connectivity Ltd.
+
+
+
+
+
+
+
+
+
+John J. Kita
+EVP and CFO, A. O. Smith
+
+
+
+
+
+
+
+
+
+Carl G. Annessa
+EVP and COO, Hornbeck Offshore Services, Inc.
+
+
+
+
+
+
+
+
+
+Elon R. Musk
+CEO and Chairman, Tesla
+
+
+
+
+
+
+
+
+
+Michael C. Montgomery
+Board Member, NMI Holdings, Inc.
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+Claim Your Profile Coming Soon
+Interested in updating your biography and work history?
+We're working on making it happen.
+We'll email you when this feature is available.
+Please enter valid email address.
+
+Done
+
+
+Thank you for your interest.
+Ok
+
+
+
+
+
+
+			Browse executive profiles:
+			
+				 A
+			
+				 B
+			
+				 C
+			
+				 D
+			
+				 E
+			
+				 F
+			
+				 G
+			
+				 H
+			
+				 I
+			
+				 J
+			
+				 K
+			
+				 L
+			
+				 M
+			
+				 N
+			
+				 O
+			
+				 P
+			
+				 Q
+			
+				 R
+			
+				 S
+			
+				 T
+			
+				 U
+			
+				 V
+			
+				 W
+			
+				 X
+			
+				 Y
+			
+				 Z
+
+
+
+Equilar Homepage
+Equilar Atlas
+Equilar Insight
+Equilar BoardEdge
+Equilar Engage
+Research Services
+Knowledge Network
+About Us
+Login
+
+ï¿½ 2017 Equilar All Rights Reserved. Privacy Policy
+1100 Marshall Street, Redwood City, CA 94063 | Phone (650) 241-6600 | Fax (650) 701-0993
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mark Reuss | GM Corporate Officer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Leadership
+
+
+
+
+
+
+
+
+
+
+
+
+
+Back to Corporate Officers
+
+
+
+
+Mark Reuss
+Executive Vice President, Global Product Development, Purchasing and Supply Chain, General Motors Company
+
+
+
+
+
+Mark L. Reuss leads the design, engineering, safety, quality, research and development, advanced vehicle technology and program management of General Motors cars, trucks and crossovers around the world. He also oversees GM’s Global Purchasing and Supply Chain organization, and is a member of the GM Executive Leadership Team, the Opel Supervisory Board and the board of Shanghai General Motors (SGM).
+From 2009-2013, Reuss was President of General Motors North America, responsible for GM’s performance, manufacturing, portfolio and dealer network. Under his watch, GM’s North America region produced consistent profits and improved margins during a product renaissance featuring a slate of award-winning vehicles.
+Previously, Reuss served briefly as GM’s vice president of global engineering after spending two years overseas as vice president and managing director of Australia and New Zealand. During this time, he was a member of the GM Asia Pacific Strategy Board.
+Reuss is a mechanical engineer who began his GM career as a student intern in 1983. He has held numerous engineering and management positions, including chief engineer of GM’s large luxury vehicles and manufacturing body shop tooling launches.
+He also created and led the GM Performance Division in 2001 while serving as executive director of Architecture Engineering. In this role, he also was responsible for GM’s racing vehicles including the V-Series Cadillacs and SS Chevrolets. In 2005, he was appointed executive director of GM’s North America Vehicle Systems and Architecture, and one year later was named executive director of Global Vehicle Integration, Safety and Virtual Development.
+A lifelong auto enthusiast, Reuss is a certified industry pool test driver on the North Course of the Nürburgring Motorsport Racetrack in Germany, and is licensed for FIA C and IMSA Road Racing. His first car was a 1967 Chevrolet Camaro, which he bought and restored himself.
+Reuss was born and raised in metro Detroit and is deeply committed to revitalizing the city via education, community and philanthropy. In 2010, he spearheaded a $27.1 million grant to the United Way for Southeastern Michigan to improve graduation rates at seven Detroit-area high schools. In 2013, he championed the GM Student Corps, a summer internship and career development program for under-served youth. He also was instrumental in bringing the Chevrolet Belle Isle Detroit Grand Prix back to the city, which generates millions in economic impact for the region.
+He holds a bachelor of engineering degree from Vanderbilt University and a master of business administration from Duke University.
+Reuss is a member of the Skillman Foundation Board of Trustees, the Cranbrook Schools Board of Trustees and the Horizons Upward Bound Board. He is GM’s Key Executive at Duke University. He also serves on The Henry Ford Board of Trustees, the Detroit Workforce Development Board and is Vice Chairman of the GM Foundation.
+Revised: 01/17
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									Shop for a Vehicle
+								
+
+
+Shop GM Vehicles
+
+
+Our Brands
+
+
+Shop Chevrolet.com
+
+
+Shop Buick.com
+
+
+Shop GMC.com
+
+
+Shop Cadillac.com
+
+
+Dealer Locator
+
+
+Current Offers
+
+
+Fleet
+
+
+Certified Pre-Owned
+
+
+Factory Pre-Owned
+
+
+Future Vehicles
+
+
+
+
+
+									News and Stories
+								
+
+
+All News and Stories
+
+
+Most Recent
+
+
+Design
+
+
+Technology
+
+
+Sustainability
+
+
+Community
+
+
+Education
+
+
+Quality
+
+
+Safety
+
+
+
+
+
+									Our Company
+								
+
+
+Overview
+
+
+About GM
+
+
+Leadership
+
+
+Diversity
+
+
+History & Heritage
+
+
+Sustainability
+
+
+Careers
+
+
+Giving Back
+
+
+Social Hub
+
+
+Awards
+
+
+
+
+
+									Investors
+								
+
+
+Investors Home
+
+
+Investor News
+
+
+Earnings Releases
+
+
+Announcements & Events
+
+
+Sustainability Report
+
+
+Shareholder Information
+
+
+SEC Filings
+
+
+Sales
+
+
+Stock Information
+
+
+Analyst Coverage
+
+
+Historical Dividends
+
+
+Stock Repurchase Program
+
+
+Investor FAQ
+
+
+Investors Contacts
+
+
+Corporate Strategy
+
+
+Corporate Governance
+
+
+
+
+
+									Owner Assistance
+								
+
+
+All Brands
+
+
+Chevrolet
+
+
+Buick
+
+
+GMC
+
+
+Cadillac
+
+
+Pontiac
+
+
+Oldsmobile
+
+
+Saturn
+
+
+HUMMER
+
+
+
+
+
+									Site Help
+								
+
+
+Select a Country
+
+
+Contact Us
+
+
+Site Map
+
+
+FAQ
+
+
+Additional GM Sites
+
+
+Ignition Recall
+
+
+Takata Information
+
+
+Dealers & Suppliers
+
+
+
+
+
+
+
+
+
+
+
+Follow GM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 General Motors 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Motors Co. 2011 - DBusiness - January / February 2011 - Detroit, MI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sections
+
+Directory
+
+Contact
+
+
+
+
+
+
+
+
+Edit ModuleShow Tags
+
+
+
+
+
+
+
+
+
+
+
+
+
+Edit Module
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DBusiness / January-February 2011 / General Motors Co. 2011 
+
+
+
+General Motors Co. 2011 General Motors has recorded sizeable profits since exiting bankruptcy in July 2009. The company raised $23 billion from its IPO in November 2010 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Published: December 13, 2010
+
+(page 2 of 5)
+
+
+
+	#11. J. Christopher Preuss
+
+	President, OnStar LLC
+
+	Preuss was appointed March 1, 2010, and is responsible for OnStar’s worldwide infotainment and connectivity initiatives. Most recently, he was vice president, GM Communications, where he led all external and internal communication activities. Preuss also served as vice president, GM Europe Communications.
+
+	 
+
+	 
+
+
+
+	#12. David N. (Nick) Reilly*
+
+	President, GM Europe
+
+	Based in Rüsselsheim, Germany, Reilly is responsible for all Opel/Vauxhall operations worldwide and has oversight for other GM activities in Europe, including Chevrolet.
+	He had served as GM executive vice president and president of GM International Operations since July 2009.
+
+	 
+
+	 
+
+	 
+
+
+
+	#13. Mark L. Reuss*
+
+	President, GM North America
+
+	Reuss moved into this position in December 2009 after working as vice president of engineering. He had also served as president and managing director of GM’s Holden subsidiary in Australia. Reuss joined GM in 1983
+	as a student intern, and has worked in numerous vehicle development positions.
+
+	  
+
+	 
+
+	 
+
+#14. Karl Slym
+
+	President and Managing Director, GM India
+
+	Since March 1, 2010, Girsky has had overall responsibility for corporate strategy, business alliances, new business development, and other related areas. He has served on the General Motors board of directors since July 2009, and was senior adviser to the office of the chairman before being named vice chairman. Previously, Girsky was president of S.J. Girsky & Co., an independent advisory firm based in New York, where he worked with senior corporate and board executives, labor leaders, OEM leaders, suppliers, and dealers, as well as national and local policymakers. He also served as the lead director of Dana Holdings Corp. and as president of Centerbridge Industrial Partners, an affiliate of Centerbridge Partners LP, an investment fund with approximately $8 billion of assets under management. Girsky was special adviser to the CEO and CFO of General Motors Corp. from August 2005 to June 2006. He was also managing director at Morgan Stanley.
+
+	 
+
+
+
+	#15. Kevin E. Wale
+
+	President and Managing Director, GM China Group
+
+	Wale is responsible for the overall coordination of GM’s operations in China, Taiwan, and Hong Kong. Wale was vice president of General Motors Europe, and chairman and managing director of Vauxhall Motors Ltd. He began his GM career with Holden, the automaker’s Australian unit, in 1975, and is a Melbourne native. 
+
+	 
+
+	 
+
+
+
+	#16. Kevin W. Williams
+
+	President and Managing Director,  GM of Canada Ltd.
+
+	Appointed March 1, 2010, Williams has overall responsibility for GM’s operations in Canada. He had been vice president and general manager, Service and Parts Operations, since Dec. 1, 2008. Before that, Williams served as president, managing director, and assistant managing director of GM de Mexico.
+
+	 
+
+	 
+
+	 
+
+
+
+	#17. Mary T. Barra*
+
+	Vice President, Global Human Resources
+
+	Barra has held her current position since October 2009. She began her GM career in 1980 as a co-op student at Pontiac, and has served in a number of engineering, manufacturing, management, and communications positions. At one time, she was plant manager for the Detroit Hamtramck assembly center.
+
+	  
+
+	 
+
+	 
+
+
+
+	#18. Selim Bingol*
+
+	Vice President, Communications
+
+	Bingol was appointed to his position on March 8, 2010, and has global responsibility for GM’s communications activities — including products and brands, corporate, public policy, executive support, and internal communications. Before joining GM, Bingol was a senior vice president with Fleishman-Hillard, based in St. Louis.
+
+	 
+
+	 
+
+
+
+	#19. Stephen K. Carlisle*
+
+	Vice President, Global Product Planning
+
+	Appointed in June 2010. Carlisle had been GM vice president, U.S. Sales Operations, and was responsible for GM’s dealer network, retail sales support, and fleet and commercial operations. He recently returned to the U.S. from Thailand, where he was executive director, GM South East Asia Operations. 
+
+	 
+
+	 
+
+	 
+
+#20. Terry Kline*
+
+	Vice President, Information Technology
+	Chief Information Officer
+
+	Stephens assumed his position in April 2009, but in December 2009 he was given the added task of overseeing global purchasing. He had been executive vice president of GM’s global powertrain and global quality since March 2008, and continues to oversee GM’s global quality activity. Stephens began his GM career in 1969 as an hourly co-op employee at the Chevrolet engineering center in Warren. He progressed through numerous engineering and management positions at Cadillac, the Buick-Olds-Cadillac Group, and GM’s powertrain organization, until being named vice president and group director of engineering operations for the GM Truck Group in 1996 and group vice president, global powertrain and global quality, in 2007. In February 2007, Stephens was elected as a new member of the National Academy of Engineering for his leadership role in the development of automotive powertrains and related components. He is a graduate of the University of Michigan.
+
+
+«
+1
+2
+3
+4
+5
+»
+
+
+
+
+
+
+
+
+Edit Module
+
+
+
+Edit Module
+
+DBusiness Magazine
+
+
+
+
+ Subscribe
+ Purchase Issues
+ Advertise
+
+ e-Newsletters
+
+
+
+Edit Module
+
+
+
+Edit ModuleShow Tags
+
+Related Articles
+
+
+
+
+
+Financial Reservations
+The Westin Book Cadillac Detroit hotel downtown has been outperforming most of its national peers, but behind the scenes, the city and pension funds used for its redevelopment nearly 10 years ago may now take a huge loss. 
+
+
+
+
+Foreign Correspondent
+From Bloomfield Village to Tiananmen Square, ABC News’ Bob Woodruff covers the world. 
+
+
+
+
+From the Middle East to the Motor City
+More than 500,000 people of Middle Eastern descent live in metro Detroit, and, combined, they generated $36.4 billion in economic activity in 2015. While the road to self-reliance can take years due to language and cultural barriers, the influx of refugees has been a boon to the regional economy. 
+
+
+
+
+Open Our Arms and Trust, But Verify
+From an economist’s perspective, each legal immigrant holds the potential for augmenting “human capital,” the ultimate source of growth and prosperity for a region or nation.  
+
+
+
+
+2016 Champions of the New Economy
+For the seventh straight year, Junior Achievement of Southeastern Michigan, in partnership with DBusiness magazine and News/Talk 760 WJR, selected six regional executives who are driving growth in highly competitive industries. 
+
+
+
+
+Edit ModuleShow Tags
+Most Popular
+
+
+
+Eatori Market to Open in Detroit’s Capitol Park in August
+
+                Detroit-based design consultancy Kyle Evans Design (KED) was hired by chef Zak Yatim to design...
+                    
+
+5Qs With Founder and Executive Director of Fleece and Thank You
+
+                DBusiness Daily News interviewed Nicholas Kristock, founder and executive director of Fleece and...
+                    
+
+Iconic Real Estate Launches in Ford Building in Downtown Detroit
+
+                Iconic Real Estate today announced it has opened its headquarters in the historic Ford Building...
+                    
+
+Southfield-based Lear Corp. Announces Detroit Office Plans
+
+                Southfield-based automotive seating supplier Lear Corp. today announced renovation plans for the...
+                    
+
+Midtown Detroit Books 35 Artists for Dlectricity  
+
+                The festival will feature the work of 35 international, national, and local artists who have been...
+                    
+
+River Otters Move to Renovated Habitat at Detroit Zoo
+
+                The Detroit Zoo today announced that the North American river otters are moving into a...
+                    
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Corporate Officers | Leadership | GM.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Leadership
+
+
+
+
+
+
+
+
+
+Corporate Officers
+
+
+Board of Directors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mary T. Barra
+
+Chairman and Chief Executive Officer, General Motors Company
+
+
+Mary Barra is Chairman and Chief Executive Officer of General Motors Company. She was elected Chairman of the GM Board of Directors on January 4, 2016, and has served as CEO of GM since January 15, 2014.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dan Ammann
+
+President, General Motors Company
+
+
+Dan Ammann was named president of General Motors in January 2014. Ammann is responsible for managing the company’s business operations around the world, the global Chevrolet and Cadillac brand organizations, global product planning, new business development and GM Financial.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alan Batey
+
+Executive Vice President and President, North America
+
+
+Alan S. Batey was appointed executive vice president and president, North America, in January 2014. Batey also serves on the board of GM China’s joint venture, Shanghai General Motors Co., Ltd. (SGM), and the GM Foundation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Daniel E. Berce
+
+Senior Vice President & President and Chief Executive Officer, GM Financial
+
+
+Daniel E. Berce has been Senior Vice President & President and Chief Executive Officer, GM Financial since October 2010, when the company was purchased by General Motors. Previously, he served as President and Chief Executive Officer of AmeriCredit Corp. from August 2005 to September 2010, President from 2003 to 2005, and was Chief Financial Officer from 1990 to 2003.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alicia Boler Davis
+
+Executive Vice President, Global Manufacturing
+
+
+Alicia Boler Davis was named executive vice president, General Motors Global Manufacturing in June, 2016. Her responsibilities include manufacturing engineering and labor relations. She is a member of the GM Senior Leadership Team, the Opel Supervisory Board and the GM Korea Board of Directors. She reports to GM CEO and Chairman Mary Barra.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tony Cervone
+
+Senior Vice President, Global Communications
+
+
+Tony Cervone was named senior vice president, Global Communications, in May 2014.  As GM’s top communications executive, he is responsible for the company’s overall global communications strategy.  He is a member of the Executive Leadership Team and a senior advisor to CEO Mary Barra.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johan de Nysschen
+
+Executive Vice President & President, Cadillac
+
+
+Johan de Nysschen was appointed executive vice president & president, Cadillac in July 2014. de Nysschen is responsible for all aspects of Cadillac globally, including sales, pricing and network development; strategic brand development and marketing; product portfolio planning, including providing critical input for product engineering and design; and overall business results.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Barry Engle
+
+Executive Vice President and President, South America 
+
+
+Barry Engle joined GM as Executive Vice President and President, South America, responsible for the operations in Brazil, Argentina, Paraguay, Uruguay, Chile, Peru, Colombia, Ecuador and Venezuela, effective September 2015. He is also a member of the GM Executive Leadership Team.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Craig Glidden
+
+Executive Vice President & General Counsel, Legal and Public  Policy
+
+
+Craig B. Glidden is executive vice president & general counsel, legal and public policy of General Motors Co., a position he has held since he joined GM in March 2015. He leads a team of attorneys who are integrated into GM’s regional and functional teams in more than 30 countries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stefan Jacoby 
+
+GM Executive Vice President & President, GM International
+
+
+Stefan Jacoby is GM executive vice president and president, GM International. He has led the company’s operations in nearly 100 markets in Africa, Asia Pacific and the Middle East since August 2013.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Victoria McInnis
+
+Vice President, Chief Tax Officer & General Auditor
+
+
+Victoria McInnis was named vice president, chief tax officer & general auditor in March 2015. She is responsible for General Motors’ global audit, tax and customs strategy and operations. She leads a global team of more than 500 employees who handle GM’s internal audit services and GM’s tax and customs planning, compliance and controversy management.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Randall D. Mott
+
+Senior Vice President, Global Information Technology & Chief Information Officer
+
+
+Randy Mott was named senior vice president and chief information officer, Global Information Technology (IT) in February 2012, responsible for the company’s global IT strategy and all IT assets. He is a member of the Executive Leadership Team, reporting to CEO Mary Barra.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Karl-Thomas Neumann
+
+Executive Vice President & President, Europe Chairman, Management Board Opel Group GmbH
+
+
+Dr. Karl-Thomas Neumann has been at the helm of Opel since 2013. He was named chairman of the board of Adam Opel AG and president, Europe effective March 2013. Since July 2014, Dr. Neumann has been chairman of the Management Board of Opel Group GmbH, which is responsible for all General Motors operations in Europe.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+John J. Quattrone
+
+Senior Vice President, GM Global Human Resources
+
+
+John J. Quattrone is senior vice president, GM Global Human Resources, a position he has held since April 2014. He previously was vice president of Human Resources, Global Product Development & Global Purchasing & Supply Chain / Corporate Strategy, Business Development & Global Planning & Program organizations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mark Reuss
+
+Executive Vice President, Global Product Development, Purchasing and Supply Chain, General Motors Company
+
+
+Mark L. Reuss leads the design, engineering, safety, quality, research and development, advanced vehicle technology and program management of General Motors cars, trucks and crossovers around the world. He also oversees GM’s Global Purchasing and Supply Chain organization, and is a member of the GM Executive Leadership Team, the Opel Supervisory Board and the board of Shanghai General Motors (SGM).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chuck Stevens
+
+Executive Vice President and CFO, General Motors
+
+
+Chuck Stevens was named executive vice president and chief financial officer of General Motors effective Jan. 15, 2014. Stevens is responsible for leading the company’s financial and accounting operations on a global basis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jill Sutton
+
+Deputy General Counsel and Corporate Secretary
+
+
+Jill Sutton joined General Motors as deputy general counsel and corporate secretary, effective July 15, 2015. In this role, she is responsible for legal support for strategic transactions, debt and finance transactions, securities, treasury, tax, accounting and other corporate matters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jeffrey A. Taylor
+
+Deputy General Counsel and Chief Compliance Officer
+
+
+Jeffrey A. Taylor was named Deputy General Counsel and Chief Compliance Officer in April, 2016.  In his role, Taylor has overall responsibility for GM’s ethics and compliance program, and supports GM’s business operations and leadership team in driving business success through an organizational culture committed to integrity, ethical conduct, vehicle safety and compliance with the law and company policies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thomas S. Timko
+
+Vice President, Global Business Services, Controller and Chief Accounting Officer  General Motors Company
+
+
+Tom Timko was named vice president, global business services, on July 1, 2017. In this role he manages a global team charged with streamlining GM business processes to improve service quality, and reduce complexity and costs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Matt Tsien
+
+GM Executive Vice President and President, GM China
+
+
+Matthew (Matt) Tsien was appointed GM executive vice president and president of GM China in January 2014. Based in Shanghai, he oversees the day-to-day operations of GM’s business in China, including its 11 joint ventures.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rick Westenberg
+
+Vice President, Treasurer  General Motors Company
+
+
+Rick Westenberg was named vice president, treasurer, on July 1, 2017. Westenberg is responsible for leading the company’s global treasury operations, including capital planning, capital market and worldwide banking activities.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									Shop for a Vehicle
+								
+
+
+Shop GM Vehicles
+
+
+Our Brands
+
+
+Shop Chevrolet.com
+
+
+Shop Buick.com
+
+
+Shop GMC.com
+
+
+Shop Cadillac.com
+
+
+Dealer Locator
+
+
+Current Offers
+
+
+Fleet
+
+
+Certified Pre-Owned
+
+
+Factory Pre-Owned
+
+
+Future Vehicles
+
+
+
+
+
+									News and Stories
+								
+
+
+All News and Stories
+
+
+Most Recent
+
+
+Design
+
+
+Technology
+
+
+Sustainability
+
+
+Community
+
+
+Education
+
+
+Quality
+
+
+Safety
+
+
+
+
+
+									Our Company
+								
+
+
+Overview
+
+
+About GM
+
+
+Leadership
+
+
+Diversity
+
+
+History & Heritage
+
+
+Sustainability
+
+
+Careers
+
+
+Giving Back
+
+
+Social Hub
+
+
+Awards
+
+
+
+
+
+									Investors
+								
+
+
+Investors Home
+
+
+Investor News
+
+
+Earnings Releases
+
+
+Announcements & Events
+
+
+Sustainability Report
+
+
+Shareholder Information
+
+
+SEC Filings
+
+
+Sales
+
+
+Stock Information
+
+
+Analyst Coverage
+
+
+Historical Dividends
+
+
+Stock Repurchase Program
+
+
+Investor FAQ
+
+
+Investors Contacts
+
+
+Corporate Strategy
+
+
+Corporate Governance
+
+
+
+
+
+									Owner Assistance
+								
+
+
+All Brands
+
+
+Chevrolet
+
+
+Buick
+
+
+GMC
+
+
+Cadillac
+
+
+Pontiac
+
+
+Oldsmobile
+
+
+Saturn
+
+
+HUMMER
+
+
+
+
+
+									Site Help
+								
+
+
+Select a Country
+
+
+Contact Us
+
+
+Site Map
+
+
+FAQ
+
+
+Additional GM Sites
+
+
+Ignition Recall
+
+
+Takata Information
+
+
+Dealers & Suppliers
+
+
+
+
+
+
+
+
+
+
+
+Follow GM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 General Motors 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+
+
+
+
+
+
+
+
+
+GM Mark L. Reuss Insider Trades for General Motors Co.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bulletin
+
+
+
+
+
+
+Investor Alert
+
+
+
+
+
+
+
+New York Markets Close in:
+
+
+
+Market Snapshot
+Winners and Losers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expand
+Keep Open
+Close
+
+
+
+
+
+
+Expand
+Keep Open
+Close
+
+
+
+
+
+
+Expand
+Keep Open
+Close
+
+
+
+
+
+
+Expand
+Keep Open
+Close
+
+
+
+
+
+
+Expand
+Keep Open
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Motors Co.
+
+                  NYSE: GM
+          
+
+
+
+GO
+
+
+
+Set Alerts
+Find a Broker
+
+
+
+
+Join TD Ameritrade
+
+
+
+
+Market Index
+
+
+ 
+
+Overview
+      
+Profile
+      
+News
+      
+Charts
+      
+Financials
+      
+Historical Quotes
+      
+Analyst Estimates
+      
+Options
+      
+SEC Filings
+      
+Insiders
+      
+
+
+/marketstate/country/us
+
+General Motors Co.
+
+
+
+Market open
+ --Real time quotes
+Jul 28, 2017, 9:39 a.m.
+
+
+GM
+
+/quotes/zigman/1466682/composite
+
+
+$
+35.74
+
+
+
+
+Change
+
+-0.20
+-0.56%
+
+Volume
+Volume 131,933
+Real time quotes
+
+
+
+
+
+
+
+
+/quotes/zigman/1466682/composite
+Previous close
+
+$
+			35.62
+		
+
+
+$
+				35.74
+			
+Change
+
+-0.20
+-0.56%
+
+
+
+
+
+Day low
+Day high
+$35.66
+$35.85
+
+
+
+
+
+
+
+
+
+
+52 week low
+52 week high
+
+            $29.82
+        
+
+            $38.55
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Insider Activity
+
+
+Individual
+
+
+
+
+Mark L. Reuss
+
+
+
+Mr. Mark L. Reuss is EVP-Global Product Development & Purchasing at General Motors Co. He is on the Board of Directors at Adam Opel AG, Cranbrook Schools, Shanghai General Motors Co. Ltd., and General Motors Foundation, Inc.
+Mr. Reuss was previously employed as Independent Director by Exelis, Inc., President by General Motors North America, President & Managing Director by GM Holden Ltd., and President by Federal Chamber of Automotive Industries.
+He received his undergraduate degree from Vanderbilt University and an MBA from Duke University.
+
+
+
+Transactions
+
+
+Date
+Shares
+Transaction
+Value
+
+
+
+
+
+06/30/2017
+331,888
+
+
+ 
+Disposition at $35 per share.
+
+
+11,616,080
+
+
+06/30/2017
+331,888
+
+
+ 
+Derivative/Non-derivative trans. at $31.32 per share.
+
+
+10,394,732
+
+
+05/03/2017
+75,000
+
+
+ 
+Disposition at $33.35 per share.
+
+
+2,501,250
+
+
+02/13/2017
+72,722
+
+
+ 
+Derivative/Non-derivative trans. at $35.52 per share.
+
+
+2,583,086
+
+
+02/13/2017
+157,406
+
+
+ 
+Award at $0 per share.
+
+
+0
+
+
+02/13/2017
+4,144
+
+
+ 
+Derivative/Non-derivative trans. at $35.52 per share.
+
+
+147,195
+
+
+02/13/2017
+8,969
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+02/13/2017
+26,014
+
+
+ 
+Derivative/Non-derivative trans. at $35.36 per share.
+
+
+919,856
+
+
+02/13/2017
+57,160
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+02/13/2017
+5,117
+
+
+ 
+Derivative/Non-derivative trans. at $35.36 per share.
+
+
+180,938
+
+
+02/13/2017
+11,074
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+02/10/2017
+2,674
+
+
+ 
+Derivative/Non-derivative trans. at $35.17 per share.
+
+
+94,045
+
+
+02/10/2017
+8,462
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+02/10/2017
+3,707
+
+
+ 
+Derivative/Non-derivative trans. at $35.17 per share.
+
+
+130,376
+
+
+02/10/2017
+11,729
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2016
+1,736
+
+
+ 
+Derivative/Non-derivative trans. at $34.99 per share.
+
+
+60,743
+
+
+12/31/2016
+3,185
+
+
+ 
+
+
+
+111,444
+
+
+12/31/2016
+4,921
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2016
+2,580
+
+
+ 
+Derivative/Non-derivative trans. at $31.77 per share.
+
+
+81,967
+
+
+09/30/2016
+3,003
+
+
+ 
+
+
+
+95,406
+
+
+09/30/2016
+5,583
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+06/30/2016
+2,790
+
+
+ 
+Derivative/Non-derivative trans. at $28.68 per share.
+
+
+80,018
+
+
+06/30/2016
+3,248
+
+
+ 
+
+
+
+93,153
+
+
+06/30/2016
+6,038
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/31/2016
+3,271
+
+
+ 
+Derivative/Non-derivative trans. at $31.3 per share.
+
+
+102,383
+
+
+03/31/2016
+3,808
+
+
+ 
+
+
+
+119,191
+
+
+03/31/2016
+7,079
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/01/2016
+5,963
+
+
+ 
+Derivative/Non-derivative trans. at $29.58 per share.
+
+
+176,386
+
+
+03/01/2016
+12,905
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+02/13/2016
+4,144
+
+
+ 
+Derivative/Non-derivative trans. at $27.71 per share.
+
+
+114,831
+
+
+02/13/2016
+8,969
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+02/13/2016
+8,799
+
+
+ 
+Derivative/Non-derivative trans. at $27.4 per share.
+
+
+241,093
+
+
+02/13/2016
+22,150
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+02/11/2016
+2,674
+
+
+ 
+Derivative/Non-derivative trans. at $26.9 per share.
+
+
+71,931
+
+
+02/11/2016
+8,462
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2015
+2,166
+
+
+ 
+Derivative/Non-derivative trans. at $34.15 per share.
+
+
+73,969
+
+
+12/31/2015
+4,174
+
+
+ 
+
+
+
+142,960
+
+
+12/31/2015
+6,340
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2015
+1,556
+
+
+ 
+Derivative/Non-derivative trans. at $34.15 per share.
+
+
+53,138
+
+
+12/31/2015
+3,365
+
+
+ 
+
+
+
+114,915
+
+
+12/31/2015
+4,921
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2015
+3,613
+
+
+ 
+Derivative/Non-derivative trans. at $29.74 per share.
+
+
+107,451
+
+
+09/30/2015
+4,207
+
+
+ 
+
+
+
+125,117
+
+
+09/30/2015
+7,820
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2015
+2,580
+
+
+ 
+Derivative/Non-derivative trans. at $29.74 per share.
+
+
+76,730
+
+
+09/30/2015
+3,004
+
+
+ 
+
+
+
+89,339
+
+
+09/30/2015
+5,584
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+06/30/2015
+2,790
+
+
+ 
+Derivative/Non-derivative trans. at $33.32 per share.
+
+
+92,963
+
+
+06/30/2015
+3,248
+
+
+ 
+
+
+
+108,224
+
+
+06/30/2015
+6,038
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+06/30/2015
+4,219
+
+
+ 
+Derivative/Non-derivative trans. at $33.32 per share.
+
+
+140,578
+
+
+06/30/2015
+4,913
+
+
+ 
+
+
+
+163,702
+
+
+06/30/2015
+9,132
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/31/2015
+3,275
+
+
+ 
+Derivative/Non-derivative trans. at $37.75 per share.
+
+
+123,632
+
+
+03/31/2015
+3,806
+
+
+ 
+
+
+
+143,677
+
+
+03/31/2015
+7,081
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/31/2015
+3,509
+
+
+ 
+Derivative/Non-derivative trans. at $37.75 per share.
+
+
+132,465
+
+
+03/31/2015
+4,081
+
+
+ 
+
+
+
+154,058
+
+
+03/31/2015
+7,590
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/15/2015
+5,131
+
+
+ 
+Derivative/Non-derivative trans. at $38.06 per share.
+
+
+195,286
+
+
+03/15/2015
+11,104
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/01/2015
+11,926
+
+
+ 
+Derivative/Non-derivative trans. at $37.28 per share.
+
+
+444,602
+
+
+03/01/2015
+25,812
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+02/17/2015
+1,900
+
+
+ 
+Disposition at $37.35 per share.
+
+
+70,965
+
+
+02/17/2015
+4,800
+
+
+ 
+Disposition at $37.34 per share.
+
+
+179,232
+
+
+02/13/2015
+4,144
+
+
+ 
+Derivative/Non-derivative trans. at $37.62 per share.
+
+
+155,898
+
+
+02/13/2015
+8,969
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2014
+2,169
+
+
+ 
+Derivative/Non-derivative trans. at $35.17 per share.
+
+
+76,284
+
+
+12/31/2014
+4,366
+
+
+ 
+
+
+
+153,553
+
+
+12/31/2014
+6,535
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2014
+2,004
+
+
+ 
+Derivative/Non-derivative trans. at $35.17 per share.
+
+
+70,481
+
+
+12/31/2014
+4,336
+
+
+ 
+
+
+
+152,498
+
+
+12/31/2014
+6,340
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2014
+1,556
+
+
+ 
+Derivative/Non-derivative trans. at $35.17 per share.
+
+
+54,725
+
+
+12/31/2014
+3,366
+
+
+ 
+
+
+
+118,383
+
+
+12/31/2014
+4,922
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2014
+3,006
+
+
+ 
+Derivative/Non-derivative trans. at $32.11 per share.
+
+
+96,523
+
+
+09/30/2014
+3,500
+
+
+ 
+
+
+
+112,385
+
+
+09/30/2014
+6,506
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2014
+3,613
+
+
+ 
+Derivative/Non-derivative trans. at $32.11 per share.
+
+
+116,014
+
+
+09/30/2014
+4,208
+
+
+ 
+
+
+
+135,119
+
+
+09/30/2014
+7,821
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2014
+2,580
+
+
+ 
+Derivative/Non-derivative trans. at $32.11 per share.
+
+
+82,844
+
+
+09/30/2014
+3,004
+
+
+ 
+
+
+
+96,459
+
+
+09/30/2014
+5,584
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+06/30/2014
+2,008
+
+
+ 
+Derivative/Non-derivative trans. at $36.44 per share.
+
+
+73,172
+
+
+06/30/2014
+2,338
+
+
+ 
+
+
+
+85,197
+
+
+06/30/2014
+4,346
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+06/30/2014
+4,219
+
+
+ 
+Derivative/Non-derivative trans. at $36.44 per share.
+
+
+153,741
+
+
+06/30/2014
+4,913
+
+
+ 
+
+
+
+179,030
+
+
+06/30/2014
+9,132
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+06/30/2014
+2,790
+
+
+ 
+Derivative/Non-derivative trans. at $36.44 per share.
+
+
+101,668
+
+
+06/30/2014
+3,249
+
+
+ 
+
+
+
+118,394
+
+
+06/30/2014
+6,039
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/31/2014
+1,952
+
+
+ 
+Derivative/Non-derivative trans. at $34.37 per share.
+
+
+67,091
+
+
+03/31/2014
+2,270
+
+
+ 
+
+
+
+78,020
+
+
+03/31/2014
+4,222
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/31/2014
+3,509
+
+
+ 
+Derivative/Non-derivative trans. at $34.37 per share.
+
+
+120,605
+
+
+03/31/2014
+4,081
+
+
+ 
+
+
+
+140,264
+
+
+03/31/2014
+7,590
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/31/2014
+3,275
+
+
+ 
+Derivative/Non-derivative trans. at $34.37 per share.
+
+
+112,562
+
+
+03/31/2014
+3,806
+
+
+ 
+
+
+
+130,813
+
+
+03/31/2014
+7,081
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/15/2014
+10,260
+
+
+ 
+Derivative/Non-derivative trans. at $34.07 per share.
+
+
+349,559
+
+
+03/15/2014
+22,207
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+02/18/2014
+800
+
+
+ 
+Disposition at $36.41 per share.
+
+
+29,128
+
+
+02/18/2014
+1,500
+
+
+ 
+Disposition at $36.42 per share.
+
+
+54,630
+
+
+02/18/2014
+400
+
+
+ 
+Disposition at $36.43 per share.
+
+
+14,572
+
+
+02/18/2014
+1,000
+
+
+ 
+Disposition at $36.38 per share.
+
+
+36,380
+
+
+02/18/2014
+3,093
+
+
+ 
+Disposition at $36.4 per share.
+
+
+112,586
+
+
+02/10/2014
+6,005
+
+
+ 
+Derivative/Non-derivative trans. at $35.27 per share.
+
+
+211,797
+
+
+02/10/2014
+15,937
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2013
+795
+
+
+ 
+Derivative/Non-derivative trans. at $40.81 per share.
+
+
+32,444
+
+
+12/31/2013
+1,630
+
+
+ 
+
+
+
+66,521
+
+
+12/31/2013
+2,425
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2013
+2,237
+
+
+ 
+Derivative/Non-derivative trans. at $40.81 per share.
+
+
+91,292
+
+
+12/31/2013
+4,299
+
+
+ 
+
+
+
+175,443
+
+
+12/31/2013
+6,536
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2013
+2,080
+
+
+ 
+Derivative/Non-derivative trans. at $40.81 per share.
+
+
+84,885
+
+
+12/31/2013
+4,260
+
+
+ 
+
+
+
+173,851
+
+
+12/31/2013
+6,340
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+11/07/2013
+3,293
+
+
+ 
+Derivative/Non-derivative trans. at $36.33 per share.
+
+
+119,635
+
+
+11/07/2013
+6,947
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2013
+2,607
+
+
+ 
+Derivative/Non-derivative trans. at $35.97 per share.
+
+
+93,774
+
+
+09/30/2013
+2,349
+
+
+ 
+
+
+
+84,494
+
+
+09/30/2013
+4,956
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2013
+3,423
+
+
+ 
+Derivative/Non-derivative trans. at $35.97 per share.
+
+
+123,126
+
+
+09/30/2013
+3,084
+
+
+ 
+
+
+
+110,932
+
+
+09/30/2013
+6,507
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2013
+4,114
+
+
+ 
+Derivative/Non-derivative trans. at $35.97 per share.
+
+
+147,981
+
+
+09/30/2013
+3,707
+
+
+ 
+
+
+
+133,341
+
+
+09/30/2013
+7,821
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+06/30/2013
+2,606
+
+
+ 
+Derivative/Non-derivative trans. at $33.26 per share.
+
+
+86,676
+
+
+06/30/2013
+2,350
+
+
+ 
+
+
+
+78,161
+
+
+06/30/2013
+4,956
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+06/30/2013
+2,285
+
+
+ 
+Derivative/Non-derivative trans. at $33.26 per share.
+
+
+76,000
+
+
+06/30/2013
+2,061
+
+
+ 
+
+
+
+68,549
+
+
+06/30/2013
+4,346
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+06/30/2013
+4,803
+
+
+ 
+Derivative/Non-derivative trans. at $33.26 per share.
+
+
+159,748
+
+
+06/30/2013
+4,329
+
+
+ 
+
+
+
+143,983
+
+
+06/30/2013
+9,132
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+04/01/2013
+600
+
+
+ 
+Disposition at $27.94 per share.
+
+
+16,764
+
+
+04/01/2013
+897
+
+
+ 
+Disposition at $27.93 per share.
+
+
+25,054
+
+
+04/01/2013
+1,403
+
+
+ 
+Disposition at $27.92 per share.
+
+
+39,172
+
+
+04/01/2013
+700
+
+
+ 
+Disposition at $27.9 per share.
+
+
+19,530
+
+
+04/01/2013
+500
+
+
+ 
+Disposition at $27.89 per share.
+
+
+13,945
+
+
+04/01/2013
+200
+
+
+ 
+Disposition at $27.88 per share.
+
+
+5,576
+
+
+04/01/2013
+832
+
+
+ 
+Disposition at $27.87 per share.
+
+
+23,188
+
+
+04/01/2013
+1,268
+
+
+ 
+Disposition at $27.86 per share.
+
+
+35,327
+
+
+04/01/2013
+1,200
+
+
+ 
+Disposition at $27.85 per share.
+
+
+33,420
+
+
+04/01/2013
+1,500
+
+
+ 
+Disposition at $27.82 per share.
+
+
+41,730
+
+
+04/01/2013
+400
+
+
+ 
+Disposition at $27.26 per share.
+
+
+10,904
+
+
+04/01/2013
+30
+
+
+ 
+Disposition at $27.75 per share.
+
+
+833
+
+
+03/31/2013
+3,330
+
+
+ 
+Derivative/Non-derivative trans. at $27.87 per share.
+
+
+92,808
+
+
+03/31/2013
+1,626
+
+
+ 
+
+
+
+45,317
+
+
+03/31/2013
+4,956
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/31/2013
+2,837
+
+
+ 
+Derivative/Non-derivative trans. at $27.87 per share.
+
+
+79,068
+
+
+03/31/2013
+1,386
+
+
+ 
+
+
+
+38,628
+
+
+03/31/2013
+4,223
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/31/2013
+5,491
+
+
+ 
+Derivative/Non-derivative trans. at $27.87 per share.
+
+
+153,035
+
+
+03/31/2013
+2,099
+
+
+ 
+
+
+
+58,500
+
+
+03/31/2013
+7,590
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+03/15/2013
+4,565
+
+
+ 
+
+
+
+127,957
+
+
+03/15/2013
+13,895
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2012
+975
+
+
+ 
+Derivative/Non-derivative trans. at $28.26 per share.
+
+
+27,554
+
+
+12/31/2012
+1,992
+
+
+ 
+
+
+
+56,294
+
+
+12/31/2012
+2,967
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2012
+793
+
+
+ 
+Derivative/Non-derivative trans. at $28.26 per share.
+
+
+22,411
+
+
+12/31/2012
+1,633
+
+
+ 
+
+
+
+46,149
+
+
+12/31/2012
+2,426
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+12/31/2012
+2,089
+
+
+ 
+Derivative/Non-derivative trans. at $28.26 per share.
+
+
+59,036
+
+
+12/31/2012
+4,447
+
+
+ 
+
+
+
+125,673
+
+
+12/31/2012
+6,536
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2012
+948
+
+
+ 
+Derivative/Non-derivative trans. at $22.91 per share.
+
+
+21,719
+
+
+09/30/2012
+2,019
+
+
+ 
+
+
+
+46,256
+
+
+09/30/2012
+2,967
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2012
+1,584
+
+
+ 
+Derivative/Non-derivative trans. at $22.91 per share.
+
+
+36,290
+
+
+09/30/2012
+3,372
+
+
+ 
+
+
+
+77,253
+
+
+09/30/2012
+4,956
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+09/30/2012
+2,079
+
+
+ 
+Derivative/Non-derivative trans. at $22.91 per share.
+
+
+47,630
+
+
+09/30/2012
+4,428
+
+
+ 
+
+
+
+101,446
+
+
+09/30/2012
+6,507
+
+
+ 
+Derivative/Non-derivative trans. at $0 per share.
+
+
+0
+
+
+
+
+
+        Copyright 2017 FactSet Research Systems Inc. All rights reserved. Source FactSet Fundamentals.
+    
+
+
+
+
+
+
+
+
+
+
+
+            Officers and Executives
+        
+
+
+
+
+
+Ms. Mary Teresa Barra 
+Chairman & Chief Executive Officer
+
+
+
+
+Mr. Daniel  Ammann 
+President
+
+
+
+
+Mr. Charles K. Stevens 
+Chief Financial Officer & Executive Vice President
+
+
+
+
+Mr. Randall D. Mott 
+Chief Information Officer & Senior Vice President
+
+
+
+
+Mr. Daniel  Turton 
+Vice President-Federal & Administration Affairs
+
+
+
+
+Ms. Diana D. Tremblay 
+Vice President-Global Business Services
+
+
+
+
+Mr. Michael  Simcoe 
+Vice President-Global Design
+
+
+
+
+Mr. Tony  Francavilla 
+Vice President-Global Quality
+
+
+
+
+Ms. Alicia S. Boler-Davis 
+Executive Vice President-Global Manufacturing
+
+
+
+
+Mr. Luay  Al Shurafa 
+Managing Director-Saudi Arabia
+
+
+
+
+Mr. Stefan  Jacoby 
+Executive Vice President
+
+
+
+
+Mr. Carel Johan de Nysschen 
+Executive VP & President-Cadillac Division
+
+
+
+
+Mr. Mark L. Reuss 
+EVP-Global Product Development & Purchasing
+
+
+
+
+Mr. Alan S. Batey 
+Executive VP & President-North America Region
+
+
+
+
+Mr. Jeffrey A. Taylor 
+Chief Compliance Officer & Deputy General Counsel
+
+
+
+
+Mr. Michael  Ableson 
+VP-Strategy & Global Portfolio Planning
+
+
+
+
+Mr. David  Leone 
+Executive Chief Engineer
+
+
+
+
+Mr. Eric  Peterson 
+Vice President-Diversity Dealer Relations
+
+
+
+
+Mr. Kenneth J. Barrett 
+Chief Diversity Officer
+
+
+
+
+Mr. John  Stapleton 
+Vice President-Corporate Change
+
+
+
+
+Mr. Matthew  Tsien 
+Executive Vice President
+
+
+
+
+Mr. Brian  Leiter 
+Assistant Controller-Technical Accounting
+
+
+
+
+Ms. Niharika Taskar  Ramdev 
+CFO-International Operations
+
+
+
+
+Ms. Kimberly J. Brycz 
+Executive Director-Global Product Purchasing
+
+
+
+
+Mr. Wayne  McConnell 
+Director-Global Vehicle Performance
+
+
+
+
+Mr. Dan  Nicholson 
+Vice-President-Global Powertrain
+
+
+
+
+Mr. Kenneth  Kelzer 
+VP-Global Vehicle Components & Subsystems
+
+
+
+
+Mr. Kenneth  Morris 
+Vice President-Global Product Integrity Business
+
+
+
+
+Mr. Doug L. Parks 
+VP-Autonomous Technology & Vehicle Execution
+
+
+
+
+Mr. Barry L. Engle 
+President-South America & Executive VP
+
+
+
+
+Mr. Stephen K. Carlisle 
+Vice President-Global Product Planning
+
+
+
+
+Ms. Victoria  McInnis 
+Vice President-Tax & Audit
+
+
+
+
+Mr. Joseph J. Ashton 
+Director
+
+
+
+
+Ms. Dhivya  Suryadevara 
+Treasurer & Vice President-Finance
+
+
+
+
+Mr. Brian K. Sweeney 
+Vice President-Chevrolet Sales & Service
+
+
+
+
+Mr. Timothy J. Mahoney 
+Chief Marketing Officer-Chevrolet
+
+
+
+
+Mr. Thomas S. Timko 
+Chief Accounting Officer, VP & Controller
+
+
+
+
+Mr. Antonio B. Cervone 
+Senior Vice President-Global Communications
+
+
+
+
+Mr. John J. Quattrone 
+Senior Vice President & GM-Global Human Resources
+
+
+
+
+Ms. Jill E. Sutton 
+Secretary & Deputy General Counsel
+
+
+
+
+Mr. Craig B. Glidden 
+EVP-Legal & Public Policy, General Counsel
+
+
+
+
+Ms. Jane L. Mendillo 
+Independent Director
+
+
+
+
+Mr. Thomas M. Schoewe 
+Independent Director
+
+
+
+
+Mr. Joseph  Jimenez 
+Independent Director
+
+
+
+
+Ms. Linda R. Gooden 
+Independent Director
+
+
+
+
+Mr. Theodore M. Solso 
+Lead Independent Director
+
+
+
+
+Mr. James J. Mulva 
+Independent Director
+
+
+
+
+Ms. Patricia Fiorello Russo 
+Independent Director
+
+
+
+
+Ms. Carol M. Stephenson 
+Independent Director
+
+
+
+
+Mr. Michael Glenn Mullen 
+Independent Director
+
+
+
+
+
+
+
+
+
+Trending Tickers
+
+
+/quotes/zigman/17636479/composite VUZI+15.60%
+
+
+/quotes/zigman/237947/composite JCP-5.83%
+
+
+/quotes/zigman/59392505/composite NUGT-2.93%
+
+
+/quotes/zigman/59386294/composite JNUG-5.94%
+
+
+/quotes/zigman/65801738/composite TLT+1.11%
+
+
+X
+
+
+
+
+Powered by
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Log In
+
+
+
+
+9:39 AM EDT
+July 28, 2017
+
+
+/marketstate/country/us
+New York
+
+	Open
+
+
+/marketstate/country/uk
+London
+
+	Open
+
+
+/marketstate/country/jp
+Tokyo
+
+	Closed
+
+
+
+
+
+/marketstate/country/us
+ 
+
+
+/marketstate/country/uk
+ 
+
+
+/marketstate/country/jp
+ 
+
+
+
+
+
+
+
+
+
+
+
+View All
+
+
+
+Latest News
+
+/news/latest
+9:38aBREAKINGStock market opens lower as Wall Street resumes tech selling
+9:38aDestination Maternity plummets toward record low after merger deal terminated
+9:38aThis is how Congress could craft a bipartisan health-care bill
+9:36aMeet the ‘Hamilton’ actors who fly cross-country and play up to 18 roles in the hit show
+9:34aTrump’s time—and political capital—is quickly running out
+9:33aConsumer Discretionary Select Sector SPDR ETF falls 1% as Amazon.com sinks 4.1%
+9:31aDow Jones Industrial Average opens less than 0.1% lower
+9:31aS&P 500 opens down 0.2%
+9:31aNasdaq Composite Index opens down 0.6%
+9:30aU.S. stocks open lower as tech, consumer discretionary shares fall
+9:24aDollar turns lower for the week following GDP report
+9:18aGet ready for the less-profitable Amazon that you used to know 
+9:18a‘Skinny’ repeal of Obamacare fails to pass in late-night Senate vote
+9:17aGold turns higher as dollar holds loss after GDP report shows as-expected rebound
+9:14aScaramucci provides a shocking Bannon comparison that defies anatomy
+9:13aStock futures trim losses after GDP data; tech shares weigh on Nasdaq 
+9:12aMattel stock price target cut to $22 from $24 at D.A. Davidson
+9:11aStarbucks stock price target cut to $67 from $70 at Instinet
+9:11aMasterCard stock price target raised to $153 from $134 at Instinet
+9:11aCan Snap fall even more as lockups expire?
+Loading more headlines...
+
+
+
+
+dow
+
+/quotes/zigman/627449/realtime
+21,778.78
+
+-17.77
+-0.08%
+
+
+
+
+
+nasdaq
+
+/quotes/zigman/12633936/realtime
+6,355.05
+
+-27.14
+-0.43%
+
+
+
+
+
+s&p 500
+
+/quotes/zigman/3870025/realtime
+2,470.49
+
+-4.93
+-0.20%
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kiosk
+
+
+1352872800000
+1352872800000
+
+
+The RetireMentors
+
+
+
+
+
+
+				Retirement advice from our industry experts
+				Our team of financial professionals can help you plan and save 
+					for retirement, then 
+				live well in it.
+
+
+
+/conga/kiosk/retirementors.html
+361307
+
+
+
+
+1320411600000
+1320616500000
+
+
+Alerts
+
+
+
+/conga/kiosk/alerts.html
+310238
+
+
+
+
+1333717800000
+1333964100000
+
+
+Virtual Stock Exchange
+
+
+
+
+
+Our free stock-market game
+				• Trade your virtual portfolio in real time
+				• Talk strategies in group discussions
+				• Find or create a game that suits you
+				• Use our learning center to improve 
+
+
+
+/conga/kiosk/games.html
+310284
+
+
+
+
+1245657600000
+1277280000000
+
+
+Location Scouts
+
+
+
+
+Housing-market insights from our realty pros
+																																																							Plus the latest data from Realtor.com on 21 home markets across the U.S.
+• See our complete Real Estate site
+
+
+/conga/kiosk/real_estate.html
+357012
+
+
+
+
+1404799200000
+1404799200000
+
+
+Lazy Portfolios
+
+
+
+
+
+				Set it and forget it
+				Check out the returns on our 8 Lazy Portfolios that are made up 
+				of low-cost 
+				buy-and-hold index funds.
+
+				• How to create your own Lazy Portfolio
+
+
+/conga/kiosk/lazy_portfolio.html
+313134
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MarketWatch.com
+
+
+
+
+Site Index
+Topics
+Help
+Feedback
+Newsroom Roster
+
+                    Media Archive
+Premium Products
+Mobile
+
+
+Company Info
+Code of Conduct
+Corrections
+Advertising Media Kit
+Advertise Locally
+Reprints & Licensing
+Broker Center
+
+                    Your Ad Choices
+
+
+Follow MarketWatch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RSS
+Podcasts
+
+
+
+
+
+
+WSJ.com
+Barron's Online
+BigCharts
+Virtual Stock Exchange
+
+
+Financial News London
+WSJ.com Small Business
+realtor.com
+Mansion Global
+
+
+
+
+
+
+
+
+
+
+
+
+		Copyright © 2017 MarketWatch, Inc.  All rights reserved.
+		By using this site, you agree to the Terms of Service,
+        Privacy Policy and Cookie Policy.
+	
+
+
+
+            Intraday Data provided by SIX Financial Information and subject to terms of use. Historical and current end-of-day data provided by SIX Financial Information. All quotes are in local exchange time. Real-time last sale data for U.S. stock quotes reflect trades reported through Nasdaq only. Intraday data delayed at least 15 minutes or per exchange requirements.
+        
+
+
+
+
+
+
+MarketWatch Top Stories
+Link to MarketWatch's Slice.
+
+15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

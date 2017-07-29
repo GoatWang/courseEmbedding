@@ -1,0 +1,9188 @@
+
+
+
+
+Symetra — Retirement | Benefits | Life
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra® Retirement | Benefits | Life
+
+
+
+
+
+
+
+
+
+
+WATCH THE TV COMMERCIAL
+hint
+
+
+
+
+I JUST WANT TO FLY
+Since 1957, Symetra has been helping people reach higher and fly farther—with products designed to help protect and secure financial futures.
+
+
+
+
+
+
+REACH HIGHER, FLY FARTHER
+For over 50 years, we’ve helped our customers, distributors and employees thrive. Today, Symetra is soaring with new energy and a new identity. 
+
+VISIT SYMETRA.COM
+
+
+PRODUCTS
+Symetra offers annuities, employee benefits and life insurance to over 1.7 million customers nationwide. Products are distributed through independent advisors, brokers and insurance representatives.
+
+
+RETIREMENT
+
+Symetra has a 50-year history of helping people plan for a financially secure future.  See how we can help your retirement take flight.
+
+
+
+BENEFITS
+
+A comprehensive benefits program increases productivity and engages employees. That's why so many companies rely on Symetra.
+
+
+
+
+LIFE
+
+Our life insurance products help provide a financial safety net, tax-advantaged income and estate planning solutions.
+
+
+
+
+
+
+
+TAKING FLIGHT
+Symetra helps you plan for a secure tomorrow. That’s why we sponsor programs that celebrate people’s hopes and aspirations for the future.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RISING STARS
+
+As sponsor of the Sports Illustrated Rising Stars program, Symetra is recognizing the emerging men and women talents in amateur and professional athletics.  These up-and-comers will be profiled in SI’s print, digital and video properties throughout the coming year. See Rising Stars videos
+
+
+
+
+
+
+
+
+
+
+
+
+
+SYMETRA HEROES IN THE CLASSROOM®
+
+In partnership with the Chicago Bears and Seattle Seahawks, the Symetra Heroes in the Classroom® program honors outstanding teachers who lift up their students. Nominated by community members in these two markets, teacher Heroes receive a once-in-a-lifetime NFL game-day experience and a $1,000 classroom grant.  Learn more
+
+
+
+
+
+
+
+
+
+
+
+ROAD TO THE LPGA
+
+Tomorrow’s stars on the LPGA tour are honing their skills today on the Symetra Tour.  More than 500 alumnae of the Symetra Tour have earned LPGA membership, amassing some 365 LPGA victories through 2012. Learn more
+
+
+
+
+A COMPANY WITH HIGH PURPOSE
+In communities across the country, Symetra is making a difference. Nearly 500 employee volunteers donate their time to community projects during our annual Week of Service. Symetra supports our employee contributions of time and financial support with matching gifts. All told, we provide grants to more than 400 nonprofits nationwide.  Learn more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+Symetra - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Symetra
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Symetra
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: SYA
+
+
+Industry
+Insurance
+
+
+Founded
+Bellevue, Washington (2004)
+
+
+Headquarters
+Bellevue, Washington, United States
+
+
+
+Key people
+
+Randall Talbot Founder, Tom Marra (CEO), Margaret Meister CFO
+
+
+Products
+Retirement plans
+Employee benefits
+Annuities
+Life insurance
+
+
+Revenue
+US$ 2.1 billion (2012)
+
+
+
+Net income
+
+US$ 205.4 million (2012)
+
+
+Total assets
+US$ 29.5 billion (2012)
+
+
+
+Number of employees
+
+1,250
+
+
+Website
+www.symetra.com
+
+
+Symetra is a United States-based family of companies providing retirement plans, employee benefits, annuities and life insurance through independent distributors nationwide. The main headquarters of the company is located in Bellevue, Washington. Started in 1957, Symetra Financial began as a subsidiary of Safeco. In 1967, the total amount of insurance in force for Symetra surpassed the $1 billion mark. By 1995, the total assets had grown to $10 billion. In 2004, Safeco sold its life insurance business to an investor group led by White Mountains Insurance Group and Berkshire Hathaway.[1]
+Symetra Financial was eventually acquired by Japanese insurer Sumitomo Life for $3.8billion. The Japanese insurer was looking to expand its foothold on insurance especially with an aging Japanese market.[2]
+References[edit]
+
+
+
+^ Safeco's former investment unit renamed Symetra
+^ https://www.nytimes.com/2015/08/12/business/dealbook/sumitomo-life-insurance-symetra-financial-deal.html?_r=0
+
+
+
+
+
+
+
+This United States corporation or company article is a stub. You can help Wikipedia by expanding it.
+
+
+v
+t
+e
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Symetra&oldid=777819066"					
+Categories: Companies listed on the New York Stock ExchangeInsurance companies of the United StatesCompanies based in Washington (state)Sumitomo LifeUnited States company stubsHidden categories: All stub articles 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+Deutsch 
+Edit links 
+
+
+
+
+
+ This page was last edited on 29 April 2017, at 13:44.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Symetra - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Symetra
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Symetra
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: SYA
+
+
+Industry
+Insurance
+
+
+Founded
+Bellevue, Washington (2004)
+
+
+Headquarters
+Bellevue, Washington, United States
+
+
+
+Key people
+
+Randall Talbot Founder, Tom Marra (CEO), Margaret Meister CFO
+
+
+Products
+Retirement plans
+Employee benefits
+Annuities
+Life insurance
+
+
+Revenue
+US$ 2.1 billion (2012)
+
+
+
+Net income
+
+US$ 205.4 million (2012)
+
+
+Total assets
+US$ 29.5 billion (2012)
+
+
+
+Number of employees
+
+1,250
+
+
+Website
+www.symetra.com
+
+
+Symetra is a United States-based family of companies providing retirement plans, employee benefits, annuities and life insurance through independent distributors nationwide. The main headquarters of the company is located in Bellevue, Washington. Started in 1957, Symetra Financial began as a subsidiary of Safeco. In 1967, the total amount of insurance in force for Symetra surpassed the $1 billion mark. By 1995, the total assets had grown to $10 billion. In 2004, Safeco sold its life insurance business to an investor group led by White Mountains Insurance Group and Berkshire Hathaway.[1]
+Symetra Financial was eventually acquired by Japanese insurer Sumitomo Life for $3.8billion. The Japanese insurer was looking to expand its foothold on insurance especially with an aging Japanese market.[2]
+References[edit]
+
+
+
+^ Safeco's former investment unit renamed Symetra
+^ https://www.nytimes.com/2015/08/12/business/dealbook/sumitomo-life-insurance-symetra-financial-deal.html?_r=0
+
+
+
+
+
+
+
+This United States corporation or company article is a stub. You can help Wikipedia by expanding it.
+
+
+v
+t
+e
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Symetra&oldid=777819066"					
+Categories: Companies listed on the New York Stock ExchangeInsurance companies of the United StatesCompanies based in Washington (state)Sumitomo LifeUnited States company stubsHidden categories: All stub articles 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+Deutsch 
+Edit links 
+
+
+
+
+
+ This page was last edited on 29 April 2017, at 13:44.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Symetra
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Symetra
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: SYA
+
+
+Industry
+Insurance
+
+
+Founded
+Bellevue, Washington (2004)
+
+
+Headquarters
+Bellevue, Washington, United States
+
+
+
+Key people
+
+Randall Talbot Founder, Tom Marra (CEO), Margaret Meister CFO
+
+
+Products
+Retirement plans
+Employee benefits
+Annuities
+Life insurance
+
+
+Revenue
+US$ 2.1 billion (2012)
+
+
+
+Net income
+
+US$ 205.4 million (2012)
+
+
+Total assets
+US$ 29.5 billion (2012)
+
+
+
+Number of employees
+
+1,250
+
+
+Website
+www.symetra.com
+
+
+Symetra is a United States-based family of companies providing retirement plans, employee benefits, annuities and life insurance through independent distributors nationwide. The main headquarters of the company is located in Bellevue, Washington. Started in 1957, Symetra Financial began as a subsidiary of Safeco. In 1967, the total amount of insurance in force for Symetra surpassed the $1 billion mark. By 1995, the total assets had grown to $10 billion. In 2004, Safeco sold its life insurance business to an investor group led by White Mountains Insurance Group and Berkshire Hathaway.[1]
+Symetra Financial was eventually acquired by Japanese insurer Sumitomo Life for $3.8billion. The Japanese insurer was looking to expand its foothold on insurance especially with an aging Japanese market.[2]
+References[edit]
+
+
+
+^ Safeco's former investment unit renamed Symetra
+^ https://www.nytimes.com/2015/08/12/business/dealbook/sumitomo-life-insurance-symetra-financial-deal.html?_r=0
+
+
+
+
+
+
+
+This United States corporation or company article is a stub. You can help Wikipedia by expanding it.
+
+
+v
+t
+e
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Symetra&oldid=777819066"					
+Categories: Companies listed on the New York Stock ExchangeInsurance companies of the United StatesCompanies based in Washington (state)Sumitomo LifeUnited States company stubsHidden categories: All stub articles 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+Deutsch 
+Edit links 
+
+
+
+
+
+ This page was last edited on 29 April 2017, at 13:44.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Symetra Review & Complaints | Term, Whole & Unversal Life Insurance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip links Skip to content Skip to primary sidebar
+Expert Insurance ReviewsInsurance Company Reviews, Ratings and ComplaintsHeader Right
+Symetra Life Insurance Review
+By Eric Stauffer on July 5, 2017 2
+
+
+
+Premiums
+Claims
+Feedback
+Financial Strength
+
+
+
+
+
+
+
+Compare Insurance Quotes
+
+
+
+
+
+
+
+Select
+Auto
+Home
+Life
+Medicare
+Health
+
+
+GO
+
+
+
+Currently Insured?
+
+Yes
+No
+
+
+
+
+Credit Rating
+
+Excellent
+Good
+Average
+Below Average
+Poor
+
+
+
+
+Homeowner
+
+Yes
+No
+
+
+
+
+
+
+
+Symetra began as the investment unit for Safeco. Its life insurance branch was established in 1957 and headquartered in Bellevue, Washington, with additional products being added in ensuing years. It broke away in 2010 and now has $30 billion in assets as a publicly traded stock company.
+The company offers employee benefits and individual life insurance policies as well as some retirement planning products. Its products are brokered through individual distributors, altogether servicing about 1.7 million people through its multiple branches.
+Most states are serviced through its primary companies, with New York products being handled under its subsidiary First Symetra National Life Insurance Company of New York.
+
+
+
+
+Insurance Products
+Life Insurance
+Symetra offers both term and permanent life insurance products for individuals. Term life insurance is sold in 10, 15, 20 or 30 year terms with level premiums throughout that period. In other words, you pay the same amount each month for the entire term. If you pass away at any point during that term, the full value of the policy will be distributed to your beneficiaries.
+Symetra offers the ability for insureds to receive up to 75% of their policy’s value up-front if diagnosed with a terminal illness. Additionally, policyholders can convert a term policy to universal life at any period before the term ends as long as it’s before the policyholder’s 75th birthday.
+Several permanent life insurance policies are available, depending on your needs. The classic universal life policy has a guaranteed death benefit as long as regular premium payments are made. These policies have a cash value that can be borrowed against, but loans must be fully repaid for the full value of the policy to be distributed as a death benefit.
+The “Symetra Sul-G Survivorship” plan is similar to regular universal life, but it’s engineered specifically to act as an estate planning tool, with optional riders for charitable giving and estate preservation for added flexibility in planning.
+“Symetra Successor Single Premium” is exactly that, a plan with a single premium. You deposit a significant amount of money into the plan once, allowing you to hold it in a tax-free environment to streamline estate planning.
+Employee Benefits
+Symetra offers a variety of group plans for employers, including life, disability, critical illness, and stop-loss plans. These plans are available in groups with a minimum of 50 people.
+Life is available in a basic and supplemental version. Basic life insurance offers a single set of benefits with costs divided among the employer and employees. Supplemental allows individual employees to customize their plans, paying for the difference in premiums out of pocket.
+Disability benefits are offered in a cafeteria plan, with employees able to pick and choose among the coverages they want. Payments for both short and long-term disability are available.
+Symetra’s stop loss program is one of its more unique products, and it pioneered the product in 1976 before any other companies were offering it. Essentially, stop-loss polices act as supplements to other insurance plans, covering losses that are catastrophic in nature.
+Additional Products
+Aside from insurance, Symetra sells financial products for retirement planning, including annuities and retirement plans. Several types of annuities are offered, including deferred, indexed, and indexed, to offer better flexibility in planning.
+Symetra Rates
+According to our rate quote test, a 30 year old male living in California can receive $1 million in term life insurance coverage for $475 a year. That breaks down to a little more than $40 a month, and is almost 13% below the average compared to other companies we have tested.
+Claims
+Symetra does not offer an online claims reporting option. Instead, the company’s website directs you to call customer service at 800-796-3872 between 9am and 7:30pm Eastern Time.
+If filing a claim for an employee benefits plan, you will want to contact your employer first for instructions. These claims are usually handled by HR.
+For individual claims, you will want to call the customer service number listed above and verify what paperwork will need to be provided. In general, life insurance claims will require a death certificate for the insured and identifying information for the beneficiary filing the claim. Additional information may be required depending on the situation.
+Consumer Research and Complaints
+Although Symetra Life Insurance Company is not Better Business Bureau accredited, it does however have an “A+” rating. The site lists only two complaints against the company in the last three years, one of which has been closed in the last 12 months. Both complaints were in regards to product and service.
+Financial Strength
+
+
+
+Rating Company
+Grade
+Financial Outlook
+
+
+AM Best
+A
+Stable
+
+
+Fitch
+A
+Stable
+
+
+S&P
+A
+Stable
+
+
+
+For a list of companies that we recommend, visit our Best Insurance Companies page.
+
+
+
+
+
+
+Compare Insurance Quotes
+
+
+
+
+
+
+
+Select
+Auto
+Home
+Life
+Medicare
+Health
+
+
+GO
+
+
+
+Currently Insured?
+
+Yes
+No
+
+
+
+
+Credit Rating
+
+Excellent
+Good
+Average
+Below Average
+Poor
+
+
+
+
+Homeowner
+
+Yes
+No
+
+
+
+
+
+
+
+
+
+Review Information
+SummaryReviewer Eric StaufferReview Date 2017-07-05Reviewed SymetraAuthor Rating 3
+About Eric StaufferI am a former insurance agent and banker turned consumer advocate. My priority is to help educate individuals and families about the different types of insurance they need, and assist them in finding the best place to get it.
+Reader InteractionsComments
+
+
+
+
+Kenneth Light says 
+January 26, 2017 at 1:21 pm 
+
+I purchased supplemental spousal term life through my employer.  I was upfront and honest about my wife’s cancer (she was in remission at the time).  She died in December after having a year’s worth of consistently paid premiums.  I insured her for 40K.  Will my claim be denied?
+
+Reply
+
+
+
+
+
+
+Eric Stauffer says 
+February 2, 2017 at 9:29 am 
+
+Hi Kenneth,
+I am sorry to hear about your wife. 
+Your best bet would be to contact your insurance company directly. It would probably be beneficial to get any documents, including correspondences where you may have disclosed your wife’s health status, just in case they deny the claim. If your paperwork appears to back your position, you may want to contact a lawyer if your claim is denied.
+Best,
+Eric Stauffer
+
+Reply
+
+
+
+
+ 
+Leave a Reply Cancel reply 
+Your email address will not be published. Required fields are marked *Comment Name * 
+Email * 
+Website 
+
+
+
+
+
+
+
+
+
+
+
+
+ Notify me of followup comments via e-mail. 
+
+ 
+
+Primary SidebarWe Recommend
+
+
+Get a FREE Quote:
+
+AUTO
+HOME
+
+
+
+Featured Reviews
+
+
+
+
+Read Review
+Get a Quote
+
+
+
+
+
+
+Read Review
+Get a Quote
+
+
+
+
+
+Read Review
+Get a Quote
+
+
+
+
+
+Read Review
+Get a Quote
+
+
+
+
+ 
+
+
+Get Quotes
+· 1-800-299-4101
+
+
+
+Connect
+
+
+
+
+
+
+
+Resources
+
+Blog  ·  About  ·  Contact  ·  Privacy  ·  TOS  ·  Sitemap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your Browser's JavaScript is Disabled
+
+Symetra web applications require that JavaScript is enabled. Please adjust
+							your security settings to allow Symetra to execute JavaScript during this browser
+							session. Also be aware that Symetra requires cookies be enabled to provide
+							data security during your browser session. 
+
+See Privacy Policyfor details.  
+
+
+
+
+
+
+
+
+
+
+LOG IN TO YOUR ACCOUNT
+
+
+
+
+
+
+
+User Name
+*
+
+
+
+Enter a valid user name.
+Enter a valid user name.
+
+
+* Required
+
+
+Password
+*
+
+
+
+
+Enter a valid password.
+
+
+
+
+ 
+
+
+Forgot your User Name 
+									or Password?
+
+
+
+
+
+
+
+NEW USER
+Click the button below to self registeronline.
+
+
+
+SYMETRA TRUE VA ACCOUNTS
+Find information regarding a SymetraTrue VA policy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us
+  |  
+Privacy and Security
+
+
+Copyright © 2004 - 2017. All rights reserved. Symetra® is a registered service mark
+			 of Symetra Life Insurance Company.
+			Symetra Life Insurance Company, 777 108th Ave NE, Suite 1200, Bellevue, WA 98004.
+			First Symetra National Life Insurance Company of New York, New York, NY. Mailing address:
+			P.O. Box 34690, Seattle, WA 98124.
+			Symetra Life Insurance Company and First Symetra National Life Insurance Company of New York (collectively, 'Symetra') are subsidiaries of 
+			Symetra Financial Corporation. Symetra Life Insurance Company and Symetra Financial Corporation are not 
+			authorized to solicit business in the state of New York. Both subsidiaries are separately responsible for 
+			their own financial obligations.
+Customers may access their account information from this site. Other information in this site may be
+		   pending approval for use in states with website filing requirements.
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra (@Symetra) | Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+Home
+Home
+Home, current page.
+
+
+
+
+
+
+Moments
+Moments
+Moments, current page.
+
+
+
+
+
+
+Search query
+
+
+
+Search Twitter
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Language: English 
+
+
+
+ 
+
+
+
+Bahasa Indonesia
+Bahasa Melayu
+Català
+Čeština
+Dansk
+Deutsch
+English UK
+Español
+Filipino
+Français
+Hrvatski
+Italiano
+Magyar
+Nederlands
+Norsk
+Polski
+Português
+Română
+Slovenčina
+Suomi
+Svenska
+Tiếng Việt
+Türkçe
+Ελληνικά
+Български език
+Русский
+Српски
+Українська мова
+עִבְרִית
+العربية
+فارسی
+मराठी
+हिन्दी
+বাংলা
+ગુજરાતી
+தமிழ்
+ಕನ್ನಡ
+ภาษาไทย
+한국어
+日本語
+简体中文
+繁體中文
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Have an account?  Log in
+
+
+   
+
+Have an account?
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+New to Twitter?
+Sign up
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Symetra
+
+
+
+@Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+Tweets, current page.
+100
+            
+
+
+
+Following
+Following
+9
+
+
+
+Followers
+Followers
+269
+
+
+
+Likes
+Likes
+9
+
+ 
+ 
+More 
+
+
+
+
+
+
+
+Likes
+
+
+
+
+
+
+Unmute @Symetra
+
+Mute @Symetra
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra
+
+
+
+@Symetra
+
+
+Symetra elevates people's​ lives through retirement, employee benefits, and life insurance products that help provide security and confidence.
+
+
+
+            Bellevue, WA
+
+      
+
+
+
+ 
+    symetra.com
+  
+
+
+
+
+Joined January 2014
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                60 Photos and videos
+            
+
+            Photos and videos
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+
+
+Tweets
+Tweets, current page.
+
+
+
+                  Tweets & replies
+                
+
+
+
+                  Media
+                
+
+
+
+
+
+You blocked @Symetra
+Are you sure you want to view these Tweets? Viewing Tweets won't unblock @Symetra
+Yes, view profile
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Symetra followed
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+CEO Tom Marra: “I didn’t start out at 21 expecting to be CEO of anything. But I set a new goal for myself every four years.”pic.twitter.com/La6GSoILIH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+0 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+
+
+
+
+
+
+Liked
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We’re pleased to be named to the 2017 Ward’s 50 list of top-performing insurance companies named by Ward Group. http://ow.ly/tf4q30dUoag pic.twitter.com/Pkeblivoh3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 21
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Beneficiary.pic.twitter.com/ryneAwb66e
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 20
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+CFO Margaret Meister: "We have potential to build one of the best companies in the industry. And building a great company is a lot of fun."pic.twitter.com/PyhS6BbDyP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 19
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Where will the day take you?pic.twitter.com/YpHXR9cbhI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 14
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Play a key role in the creation and launch of innovative life insurance products! Apply here: http://ow.ly/H8Jl30d4zQ0 pic.twitter.com/tZw0goloV2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 10
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Give “over the hill” new meaning.pic.twitter.com/tOHNUlZmsF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 7
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+This is my rocking chair! #symetrapic.twitter.com/1XpMr4zczK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+0 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+
+
+
+
+
+
+Liked
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 6
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Adventure sandals, sunglasses and our “senior scooters!”pic.twitter.com/r8krWIsBNX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+0 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+
+
+
+
+
+
+Liked
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 5
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Since 1957, we’ve elevated people’s lives through our retirement, benefits and life insurance products.pic.twitter.com/HKN2sebAbo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 4
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Happy 4th of July from Symetra!pic.twitter.com/PECtAf9HIs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jul 3
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Do you have 5-7 years’ experience with high-profile life & disability accounts, and like travel? Join us! http://ow.ly/S9c630dfbAC pic.twitter.com/eQYDdKYOm2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jun 29
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We celebrate our individuality and diversity every day!pic.twitter.com/31tsOKx0k8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jun 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Hello to our 28 interns! Check back to see what we’ve lined up for them this summer.  Welcome to Symetra!pic.twitter.com/JE962JOzlJ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jun 23
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+“Believe you can and you’re halfway there.” –Theodore Rooseveltpic.twitter.com/y6pl6R5Wgh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jun 21
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+I’m not ashamed to say it. I’m a publicity hound. #NationalSelfieDaypic.twitter.com/xh9zLviYsm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jun 19
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Sunscreen, sunglasses, this blue floaty thing and beneficiary status. #symetrapic.twitter.com/ELE4S5QKKS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jun 14
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Employees from our Enfield, Conn., and Miami offices are really “digging” Symetra’s Week of Service. #SymetraCarespic.twitter.com/oHxtYfxihA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Symetra Retweeted
+            
+
+
+
+
+
+
+
+Bellevue Downtown‏ @BellevueDT
+
+Jun 12
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+BDA member @Symetra kicks of its Week of Service today! An incredible 700 employees will volunteer on behalf of 40 nonprofits! #SymetraCarespic.twitter.com/lpPCY60B9D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra‏ @Symetra
+
+Jun 12
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+It was great seeing everyone Saturday at the Volunteer Park Pride Festival! Next stop: @SeattlePride Parade!pic.twitter.com/aKMGouHOPW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+          @Symetra hasn't Tweeted yet.
+      
+Back to top ↑
+
+
+
+
+
+
+
+
+
+
+
+
+Loading seems to be taking a while.
+
+      Twitter may be over capacity or experiencing a momentary hiccup. Try again or visit Twitter Status for more information.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      New to Twitter?
+    
+
+
+    Sign up now to get your own personalized timeline!
+  
+
+Sign up
+
+
+
+
+You may also like
+    ·
+    Refresh
+
+
+
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Twitter
+About
+Help Center
+Terms
+Privacy policy
+Cookies
+Ads info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Choose a trend location
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dismiss
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+            Previous
+          
+
+
+
+
+
+
+
+            Next
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Go to a person's profile
+
+
+
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Promote this Tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Block
+
+
+
+
+
+
+Cancel
+Block
+
+
+
+
+
+
+
+
+
+
+
+
+Add a location to your Tweets
+
+        When you tweet with a location, Twitter stores that location. 
+        You can switch location on/off before each Tweet and always have the option to delete your location history.
+        Learn more
+
+
+Turn location on
+Not now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Share Location
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Results from 
+
+
+
+Send
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Your lists
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Create a new list
+
+
+
+
+List name
+
+
+
+
+Description
+
+Under 100 characters, optional
+
+
+
+Privacy
+
+
+
+Public · Anyone can follow this list
+      
+
+
+Private · Only you can access this list
+      
+
+
+
+
+Save list
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Copy link to Tweet
+
+
+
+
+Here's the URL for this Tweet. Copy it to easily share with friends.
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Embed this Tweet
+Embed this Video
+
+
+
+Add this Tweet to your website by copying the code below. Learn more
+Add this video to your website by copying the code below. Learn more
+
+
+
+
+Hmm, there was a problem reaching the server. Try again?
+
+
+
+
+
+
+            Include parent Tweet
+          
+
+
+
+
+            Include media
+          
+
+
+
+
+By embedding Twitter content in your website or app, you are agreeing to the Twitter Developer Agreement and Developer Policy.
+Preview
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Why you're seeing this ad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Log in to Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+
+        Don't have an account? Sign up »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Sign up for Twitter
+
+
+
+
+
+Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.
+
+
+Sign up
+
+
+
+
+        Have an account? Log in »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Two-way (sending and receiving) short codes:
+
+
+
+
+
+Country
+Code
+For customers of
+
+
+
+
+United States
+40404
+(any)
+
+
+Canada
+21212
+(any)
+
+
+United Kingdom
+86444
+Vodafone, Orange, 3, O2
+
+
+Brazil
+40404
+Nextel, TIM
+
+
+Haiti
+40404
+Digicel, Voila
+
+
+Ireland
+51210
+Vodafone, O2
+
+
+India
+53000
+Bharti Airtel, Videocon, Reliance
+
+
+Indonesia
+89887
+AXIS, 3, Telkomsel, Indosat, XL Axiata
+
+
+Italy
+4880804
+Wind
+
+
+3424486444
+Vodafone
+
+
+
+
+
+        » See SMS short codes for other countries
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Confirmation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Skip all
+          
+
+
+
+
+    Welcome home!
+  
+This timeline is where you’ll spend most of your time, getting instant updates about what matters to you.
+
+
+
+
+    Tweets not working for you?
+  
+
+    Hover over the profile pic and click the Following button to unfollow any account.
+  
+
+
+
+
+    Say a lot with a little
+  
+
+    When you see a Tweet you love, tap the heart — it lets  the person who wrote it know you shared the love.
+  
+
+
+
+
+    Spread the word
+  
+
+    The fastest way to share someone else’s Tweet with your followers is with a Retweet. Tap the icon to send it instantly.
+  
+
+
+
+
+    Join the conversation
+  
+
+    Add your thoughts about any Tweet with a Reply. Find a topic you’re passionate about, and jump right in.
+  
+
+
+
+
+    Learn the latest
+  
+
+    Get instant insight into what people are talking about now.
+  
+
+
+
+
+    Get more of what you love
+  
+
+    Follow more accounts to get instant updates about topics you care about.
+  
+
+
+
+
+    Find what's happening
+  
+
+    See the latest conversations about any topic instantly.
+  
+
+
+
+
+    Never miss a Moment
+  
+
+    Catch up instantly on the best stories happening as they unfold.
+  
+
+
+
+Back
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next Tweet from user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Annuities - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Annuities
+FIXED DEFERREDANNUITIES
+Fixed deferred annuities provide tax-deferred growth for your retirement savings while also minimizing risk.
+LEARN MOREFIXED INDEXED ANNUITIES
+With account options based on the performance of market indexes, fixed indexed annuities provide higher growth potential without downside risk.
+LEARN MORE
+ INCOME ANNUITIES
+If you're in or near retirement, income annuities can turn a portion of your savings into guaranteed income that lasts for a specified period of time or the rest of your life.
+LEARN MOREAnnuities are issued by Symetra Life Insurance Company, 777 108th Avenue NE, Suite 1200, Bellevue, WA 98004-5135 and are not available in all U.S. states or any U.S. territory.
+Withdrawals may be subject to federal income taxes and a 10% IRS early withdrawal tax penalty may also apply to amounts withdrawn prior to age 59 ½ Clients should consult their attorney or tax advisor for more information.
+Guarantees and benefits are subject to the claims-paying ability of Symetra Life Insurance Company.
+
+
+WHAT'S AN ANNUITY?
+An annuity is a contract between you and an insurance company. The product is designed to provide a regular stream of income, usually in retirement. 
+
+You put money in, either all at once or in payments.
+Your money grows tax-deferred, without market risk.
+You may choose to receive annuity payments for a specific period of time, or for your life or joint lives of you and another person.
+
+WHY SYMETRA ANNUITIES?
+Flexibility. A variety of options to fit your retirement needs.
+ 
+Growth. Your money grows tax-deferred.
+ 
+Income. Options to create income that lasts as long as you need it.
+VARIABLE PRODUCT PERFORMANCE & PROSPECTUS
+
+
+
+Select a Product
+
+-- Select a Product --
+Focus Variable Annuity
+Mainsail Variable Annuity
+Resource A Variable Annuity
+Resource B Variable Annuity
+Spinnaker Advisor Variable Annuity
+Spinnaker Choice Variable Annuity
+Spinnaker Plus Variable Annuity
+Spinnaker Variable Annuity
+Symetra Life Deferred (Cascade Variable Annuity)
+True Variable Annuity
+
+
+
+
+GO
+
+
+fixed PRODUCT CONTRACT SUMMARIES
+
+
+
+Select a Product
+
+-- Select a Product --
+Custom 5 Fixed Annuity
+Custom 7 Fixed Annuity
+Edge Fixed Indexed Annuity
+Edge GPS Fixed Indexed Annuity
+Edge Plus Fixed Indexed Annuity
+Edge Premier Fixed Indexed Annuity
+Edge Pro Fixed Indexed Annuity
+Income Edge Fixed Indexed Annuity
+LINK FIA - Series 1
+Select 5 Fixed Annuity
+Select 7 Fixed Annuity
+
+
+
+
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+60 years of earning
+your trust.
+
+OUR LEGACY
+
+
+
+
+
+
+
+
+
+Want to soar into
+your retirement years?
+
+View strategies to help
+
+
+
+
+
+
+
+
+
+He has high hopes.
+Help safeguard them.
+
+Learn about life insurance
+
+
+
+
+
+
+
+
+
+
+PRODUCTS
+
+
+
+Annuities
+Life Insurance
+
+
+Employee Benefits
+Stop Loss Insurance
+
+
+
+
+
+
+
+SOLUTIONS
+
+
+
+Spending in retirement
+Maximizing a legacy
+Getting married
+
+
+Capping employer risk
+Creating a benefits package for employees
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+60 years of earning
+your trust.
+
+OUR LEGACY
+
+
+
+
+
+
+
+
+
+Want to soar into
+your retirement years?
+
+View strategies to help
+
+
+
+
+
+
+
+
+
+He has high hopes.
+Help safeguard them.
+
+Learn about life insurance
+
+
+
+
+
+
+
+
+
+
+PRODUCTS
+
+
+
+Annuities
+Life Insurance
+
+
+Employee Benefits
+Stop Loss Insurance
+
+
+
+
+
+
+
+SOLUTIONS
+
+
+
+Spending in retirement
+Maximizing a legacy
+Getting married
+
+
+Capping employer risk
+Creating a benefits package for employees
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra Life Insurance | Request Free Symetra Insurance Quotes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is Life Insurance
+Life Insurance Overview
+Permanent Life Insurance
+Term Life Insurance
+Life Insurance Companies
+Life Insurance By State
+Best Important Questions
+
+
+
+ 
+
+
+Symetra Life Insurance
+
+The Symetra Life Insurance Company has a 50-year history.  The company as it is known today was formed in 2004, when the life insurance  and investments subsidiaries of a Seattle-based Fortune 500 insurance company  were purchased by an investor group led by White Mountains Insurance Group,  Ltd., and Berkshire Hathaway Inc. Together, these companies became the  privately held corporation now known as Symetra Financial.
+The Current President and CEO is Randall H. Talbot,
+The Company is headquartered in Bellevue, WA
+Last year (2008) the company reported total assets of $19.9  billion
+According To the Company
+
+Symetra Life Insurance Company prides itself on delivering  additional benefits beyond simple life insurance coverage to both individual  and Group Life Insurance policyholders. Such Value Added Services include:
+
+Living       Benefits – The Company wants policy holders to have access to       benefits they can use right now, such as financial and legal counseling.
+End       of Life Benefits – Symetra Life Insurance understands that end of       life issues are stressful. Policyholders and their caregivers/survivors       are offered help to manage end of life issues including Accelerated Life       Benefit options, and medical case management
+Beneficiary       Benefits – All Symetra Life Insurance beneficiaries are offered       family support such as bereavement counseling and legal advice
+
+These  added benefits are all part Symetra’s approach to life insurance which is a  philosophy based upon helping to manage benefit costs while adding value for  members. The company offers Term Life insurance, and Permanent Life insurance  products such as Whole Life, Universal and Variable Life. Symetra Life  Insurance also offers a unique life insurance product to businesses called Worksite. Worksite is a workplace  program that gives employees the option of purchasing life insurance through  the convenience of payroll deductions, and, because the policies are  individually owned, coverage stays with the employee if they leave their job.
+More information: www.symetra.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Affordable Life Insurance Rates
+Are Waiting For You!
+
+
+
+YOUR
+        ZIP CODE:
+
+
+
+
+
+
+
+
+
+
+Life Insurance Companies
+
+Aetna Life Insurance
+American Family Insurance
+Anthem Blue Cross Life and Health Insurance
+Assurity Life Insurance Company
+Federated Life Insurance
+Gerber Life Insurance
+Guardian Life Insurance
+Hartford Life Insurance
+Lincoln National Life Insurance
+Massachusetts Mutual Life Insurance
+Metropolitan Life Insurance
+Nationwide Life Insurance
+New York Life Insurance
+Northwestern Mutual Life Insurance
+Pacific Guardian Life Insurance
+Physicians Mutual Life Insurance
+RiverSource Life Insurance
+Sentry Life Insurance
+Standard Life Insurance
+State Farm Life Insurance
+Symetra Life Insurance
+Thrivent Financial Life Insurance
+Unum Life Insurance
+Western and Southern Life Insurance
+
+
+
+
+
+
+
+
+
+
+- State Selection -
+Alaska
+Alabama
+Arkansas
+Arizona
+California
+Colorado
+Connecticut
+District Of Columbia
+Delaware
+Florida
+Georgia
+Hawaii
+Iowa
+Idaho
+Illinois
+Indiana
+Kansas
+Kentucky
+Louisiana
+Massachusetts
+Maryland
+Maine
+Michigan
+Minnesota
+Missouri
+Mississippi
+Montana
+North Carolina
+North Dakota
+Nebraska
+New Hampshire
+New Jersey
+New Mexico
+Nevada
+New York
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Virginia
+Virgin Islands
+Vermont
+Washington
+Wisconsin
+West Virginia
+Wyoming
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Related Information
+
+
+
+
+Who Gets Benefits Under Joint Life Insurance?
+
+Under joint life insurance policies, you and your spouse can gain protection for an entire lifetime or for a specific term. Find the best plan for you.
+Read More
+
+
+
+Spouse Life Insurance Definition
+
+Spouse life insurance is simply the act of taking out a life insurance policy on behalf of your spouse. Learn about your options.
+Read More
+
+
+
+Reasons to Get Life Insurance With No Dependents
+
+You may not have any dependents, but you still should get life insurance. Here's how a policy can be beneficial for you.
+Read More
+
+
+
+
+
+
+
+Who Has the Greatest Need for Life Insurance?
+
+People with dependents have the greatest need for life insurance, but a life insurance policy can be a useful tool for anyone.
+Read More
+
+
+
+The Minimum Age for Life Insurance and Other Considerations
+
+Looking for a life insurance policy? Here's what you need to know, including the minimum age for life insurance.
+Read More
+
+
+
+What Is Life Insurance
+
+Life insurance is insurance that pays out a sum of money upon the death of the insured person. Common types include term life and whole life.
+Read More
+
+
+
+
+
+
+
+What is the Point Of Life Insurance?
+
+Life insurance can help you protect your loved ones financially in the event of your death. Learn more about why it matters.
+Read More
+
+
+
+Life Insurance Overview
+
+How much do you know about your life insurance coverage? Test your knowledge with this life insurance overview.
+Read More
+
+
+
+Supplemental Life Insurance
+
+Supplemental life insurance can be purchased in addition to your group life insurance policy to provide your loved ones with extra coverage.
+Read More
+
+
+
+
+
+
+
+
+Lifeinsurance.org | Contact Us | Terms and Conditions | Privacy Policy | Sitemap
+
+Copyright ©  TZ Insurance Solutions LLC. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Life Insurance - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Life Insurance
+TERM LIFE INSURANCE
+Term life insurance helps provide protection for a limited period of time. It's the most cost-efficient form of life insurance.
+LEARN MOREPERMANENT LIFE INSURANCE
+Permanent life insurance helps provide protection for your entire lifetime.
+LEARN MORE1 Symetra Life Insurance Company, Ward Group, Top 50 Life-Health Companies (July 2012).
+
+
+Performance and Prospectus
+
+
+
+Select a Product
+
+-- Select a Product --
+Active - Milestone VUL-G
+Service - Accumulation Life Variable UL
+Service - Complete Advisor Variable Life
+Service - Complete Variable Life
+Service - Enhanced Accumulation Life VUL
+Service - PREMIER Accumulation VUL
+
+
+
+
+Go
+
+
+INTEREST RATES
+View our fixed life insurance interest rates.
+
+VIEW RATES
+ FREQUENTLY ASKED QUESTIONS 
+Looking for Customer Service on your policy?
+GET YOUR QUESTIONS ANSWERED
+
+
+WHEN DO YOU NEED IT?
+
+
+Your family relies on your paycheck. 
+You’re a stay-at-home parent who provides child care and other valuable family support. 
+You’re an empty nester who wants to maintain your current lifestyle for your surviving spouse. 
+You want to leave a legacy to loved ones or charity. 
+You own a business and want to ensure its continuity or protect those employees most vital to your business.
+
+
+LEARN MORE ABOUT LIFE INSURANCE
+WHY SYMETRA LIFE INSURANCE?Flexibility: We offer a variety of coverage options to help meet your needs.
+Strength: With 60 years of experience, Symetra Life Insurance Company is recognized as one of the country’s top-performing insurance companies, based on admitted assets.1 HOW MUCH LIFE INSURANCE DO I NEED?You know life insurance is a good idea. But how much do you need?Our Life Insurance Planning Calculator gives you a clearer understanding, in about 10 minutes.
+LIFE INSURANCE PLANNING CALCULATOR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Forms - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+
+Download Forms
+
+
+
+Symetra makes it easy for you to manage your account by offering a complete set of forms.
+
+
+
+FORMS FOR NEW YORK RESIDENTS
+
+ 
+
+
+
+If you are unable to find what you need, please contact our customer service department at 1-800-SYMETRA.
+
+
+
+
+
+
+WHAT KIND OF PRODUCT DO YOU HAVE?
+
+
+
+
+
+
+
+
+WHAT TYPE?
+
+
+
+
+
+
+
+
+WHAT DO YOU NEED TO DO?
+
+
+
+
+
+
+
+HERE'S WHAT YOU NEED:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+60 years of earning
+your trust.
+
+OUR LEGACY
+
+
+
+
+
+
+
+
+
+Want to soar into
+your retirement years?
+
+View strategies to help
+
+
+
+
+
+
+
+
+
+He has high hopes.
+Help safeguard them.
+
+Learn about life insurance
+
+
+
+
+
+
+
+
+
+
+PRODUCTS
+
+
+
+Annuities
+Life Insurance
+
+
+Employee Benefits
+Stop Loss Insurance
+
+
+
+
+
+
+
+SOLUTIONS
+
+
+
+Spending in retirement
+Maximizing a legacy
+Getting married
+
+
+Capping employer risk
+Creating a benefits package for employees
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Careers - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Careers at Symetra
+
+There's never been a better time to join Symetra
+
+
+
+
+
+
+“Symetra has an engaged employee team, great distribution partnerships, creative product development and a strong financial foundation – all the elements of a winning enterprise.”– Tom Marra, Symetra President and CEO
+
+Why Work Here
+
+There are plenty of reasons to work at Symetra. Here are just a few.
+Why Symetra
+
+
+Working at Symetra
+
+See examples of where hard work and commitment to quality can take you at Symetra.
+WORKING AT SYMETRA
+
+
+Benefits
+
+At Symetra, our success starts with people. We provide the programs and resources employees need to lead a healthy, balanced life.
+BENEFITS
+
+
+Applicant Resources 
+
+As an applicant this is a place for you to get more insight into Symetra’s recruiting process, learn about our culture, and how you can try to join our team.
+APPLICANT RESOURCES
+
+
+COMMITTED TO DIVERSITY
+
+Symetra seeks to build a diverse, inclusive workforce.
+LEARN MORE
+
+Symetra is an Equal Opportunity Employer. We treat employees and candidates for employment with fairness and without regard to race, sex/gender, religion/creed, pregnancy, age, physical or mental disability, marital status, national origin, genetic information, gender identity and expression, military or Veterans status, sexual orientation or any other characteristic protected by federal, state, or local law. Symetra offers a drug free work environment where the possession, manufacture, transfer, offer, consumption or being under any influence of illegal drugs (under federal, state, or local law) or legal drugs (inconsistent with accepted frequency or dosage requirements) is prohibited. This applies while on the job or in any manner that may affect work performance or Symetra's interests or reputation. Symetra requires a criminal background investigation, employment, education and licensing verification, as applicable, as a condition of employment. Symetra participates in E-Verify. If you are a job seeker with a disability and require accessibility assistance or accommodation with the online application process, or require TTY/TDD assistance, please contact 1-800-796-3872. General inquiries about application status will not be addressed via this number. See more at Applicant FAQ's.
+
+
+JOB OPPORTUNITIES
+
+We offer an innovative and challenging place to work.
+SEARCH FOR JOBS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Symetra - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Contact Us
+FORM FOR INDIVIDUALS & FAMILIES
+
+Customer service and claims1-800-SYMETRA (796-3872)Monday through Friday 6 a.m. – 4:30 p.m. PT | 9 a.m. to 7:30 p.m. ET
+
+If you are a Financial Professional or from one of Financial Institutions needing assistance or are interested in our Employee Benefits, please use the contact forms provided to the right.
+
+ 
+Area of inquiry
+Life Insurance
+Life Insurance Billing
+Annuities
+Retirement Plans
+Individual Retirement Account (IRA)
+Structured Settlements / Immediate Annuities
+Employee Benefits
+Technical Support
+Other
+Corporate Giving
+ 
+
+Your name
+
+
+
+
+Your email address
+
+
+
+
+Your phone number
+
+
+
+
+Your message
+
+
+
+
+This email form is not secure. Do not use email to transmit financial information, account information, personal information, or balances. Please call us at 1-800-SYMETRA instead.
+
+
+
+
+
+
+Ethics / Fraud Alert Line
+1-888-280-0567 (independent line for anonymous reporting) rpteth@symetra.com (direct email reporting) Visit our Your Security page for more information about protecting yourself from fraud.
+
+
+
+
+
+Commercial Mortgage Loans
+(425) 256-8749
+
+
+
+
+
+FINANCIAL PROFESSIONALS & INSTITUTIONS
+Contact information for agents, advisors and financial institutions.
+Contact usEMPLOYEE BENEFITS
+Contact information for employees, employers, TPA's, and brokers and consultants.
+Contact usMAIN OFFICE
+Mailing AddressSymetra Life Insurance CompanyP.O. Box 34690Seattle, WA 98124 - 1690
+Street AddressSymetra Life Insurance Company777 108th Ave NE, Suite 1200Bellevue, WA 98004 - 5135
+Driving directionsNew York residents
+For individuals and families in New York.
+Contact us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Symetra Term Life Insurance - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+Symetra Term Life Insurance
+
+
+
+
+
+Term life insurance provides protection for a limited period of time. It’s one of the most cost-efficient forms of life insurance.
+
+
+
+symetra Term Life Insurance
+Choose a term that can help meet your needs—10-, 15-, 20- or 30-years.
+Learn More
+Life insurance is issued by Symetra Life Insurance Company, 777 108th Ave. NE, Suite 1200, Bellevue, WA 98004 and is not available in all U.S. states or any U.S. territory.
+ 
+Guarantees and benefits are subject to the claims-paying ability of Symetra Life Insurance Company.
+
+
+FREQUENTLY ASKED QUESTIONSLooking for Customer Service on your policy?GET YOUR QUESTIONS ANSWEREDHOW MUCH LIFE INSURANCE DO I NEED?You know life insurance is a good idea. But how much do you need?
+Our Life Insurance Planning Calculator can help give you a clearer understanding, in about 10 minutes.LIFE INSURANCE PLANNING CALCULATORCONTACT US 1-800-796-3872Monday through Friday 6 a.m. - 4:30 p.m., PTcsmail@symetra.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Permanent Life Insurance - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+Permanent Life Insurance
+
+
+
+
+
+Permanent life insurance has a guaranteed death benefit that ensures you’ll achieve your objective—whether it’s lifetime protection or passing money on to your beneficiaries.1
+
+
+SYMETRA UL-G UNIVERSAL LIFE INSURANCE
+Get guaranteed death benefit protection with customizable durations--either for a specific time period or your lifetime.
+Learn More
+
+
+
+SYMETRA CAUL UNIVERSAL LIFE INSURANCE
+Get lifetime protection that can be tailored to your objectives--whether that's lifetime protection or a focus on cash value accumulation.
+Learn More
+
+
+
+SYMETRA UNIVERSAL LIFE INSURANCE (2008)
+Get lifetime protection at a fixed cost to help ensure that your loved ones are financially secure after you’re gone.
+Learn More
+
+
+
+SYMETRA SUCCESSOR SINGLE PREMIUM LIFE INSURANCE
+Pass money on to your beneficiaries free of federal income tax, plus the value of your estate increases the minute you purchase the insurance.2
+Learn More
+Life insurance is issued by Symetra Life Insurance Company, 777 108th Ave NE, Suite 1200, Bellevue, WA 98004, and is not available in all U.S. states or any U.S. territory.
+Symetra UL-G is a flexible premium universal life insurance policy. Policy form number is ICC14_LC2 in most states. Symetra SUL-G is a flexible premium adjustable survivorship life insurance policy. Policy form number is ICC14_LC1 in most states.  Symetra CAUL is a flexible premium universal life insurance policy. Policy form number is ICC14_LC2 in most states.  Symetra Universal Life Insurance is a flexible premium universal life insurance policy. Policy form number is L-9994 10/07 in most states. Symetra Successor Single Premium Life Insurance is a modified single premium adjustable life insurance policy. Policy form number is ICC10_LC1 in most states.Life insurance policies contain exclusions, limitations, reductions of benefits and terms for keeping them in force. Please contact your insurance producer for complete details.
+Guarantees and benefits are subject to the claims-paying ability of Symetra Life Insurance Company.
+1 Death benefit is guaranteed, provided certain conditions are met.
+2 Although proceeds of life insurance are generally received income-tax-free by beneficiaries, estate and local taxes may apply. Consult your attorney or tax advisor for more information.
+
+
+Performance & Prospectus
+
+
+
+Select a Product
+
+-- Select a Product --
+Active - Milestone VUL-G
+Service - Accumulation Life Variable UL
+Service - Complete Advisor Variable Life
+Service - Complete Variable Life
+Service - Enhanced Accumulation Life VUL
+Service - PREMIER Accumulation VUL
+
+
+
+
+Go
+
+
+FREQUENTLY ASKED QUESTIONSLooking for Customer Service on your policy?GET YOUR QUESTIONS ANSWEREDHOW MUCH LIFE INSURANCE DO I NEED?You know life insurance is a good idea. But how much do you need?
+Our Life Insurance Planning Calculator can help give you a clearer understanding, in about 10 minutes.LIFE INSURANCE PLANNING CALCULATORCONTACT US 1-800-796-3872Monday through Friday 6 a.m. - 4:30 p.m., PTcsmail@symetra.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Life Insurance In A Nutshell - Symetra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your browser seems to be out of date.
+To get the best possible experience while using our website, we recommend upgrading to a newer version of another browser.  Links to the most recent versions of popular browsers can be found below.
+Internet Explorer
+Microsoft Edge
+Firefox
+Safari
+Chrome
+For more information about our browser support, please check out our browser standards and support page.
+X
+
+
+
+
+
+
+ 
+
+
+
+LOG IN TO MY ACCOUNT
+
+
+
+Search on Symetra.com
+
+Go
+
+
+
+
+
+
+ 
+
+
+
+Life Insurance In A Nutshell
+
+
+
+
+
+WHAT IS LIFE INSURANCE?
+In its basic form a life insurance policy is a contract between the policyowner and the insurance company which states that in exchange for timely payment of premiums, the company will pay a death benefit when the insured person dies. Benefits will be paid to the beneficiary(ies) named by the policyowner.
+WHAT TYPE OF LIFE INSURANCE IS AVAILABLE?
+There may seem to be a bewildering number of life insurance product choices out there, but there are four primary types of coverage available. They include:
+Group Life Insurance: Offered Through Employers
+If life insurance coverage is available through your employer, it is a good first step toward protecting your family; however, you may find the need to supplement it with individual coverage. 
+
+
+
+
+Group Life Advantages
+DisadvAntages
+
+
+Relatively Cost Effective.
+Maximum face amounts typically apply and may fall short of actual coverage needs
+
+
+Medical tests and underwriting may not be required.
+Coverage may end when employment is terminated.
+
+
+Accessible at the workplace.
+During employment, the employer may choose to discontinue coverage at any time.
+
+
+
+
+​Term Life Insurance:  Provides Coverage for a Specific Period of Time
+Term's cost-effectiveness makes it the most popular form of coverage, but for those who have a lifelong need for protection, permanent life insurance may be a better choice.
+
+
+
+
+Term Life Advantages
+Disadvantages
+
+
+Typically the most cost-effective form of coverage.
+Financial needs may extend beyond the specified term.
+
+
+Often can be renewed annually after the term code.
+Over time, the cost to renew coverage may continue to increase. 
+
+
+Many level term periods are available to meet short- and longer-term needs.
+There is typically no cash value available in the policy.
+
+
+
+
+​Whole Life Insurance: Provides Lifetime Coverage.
+Whole life insurance may be a good choice for those with lifetime financial responsibilities or those who wish to transfer wealth.
+
+
+
+
+Whole Life Advantages
+Disadvantages
+
+
+​​Designed to last a person's entire lifetime as long as premiums are paid.
+​Lack of flexibility offered with other types of permanent life insuranc​​e.
+
+
+​May build cash value, which can be accessed through loans or withdrawals.  
+Cash value may be negatively affected by low interest rates and inflation risk
+
+
+​May pay dividends.
+Typically higher premiums than term life and universal life insurance.
+
+
+
+
+Universal Life Insurance: Provides Lifetime coverage
+Universal life insurance may be a good choice of those with lifetime financial responsibilities or those who wish to transfer wealth, and for people who would like flexibility built into their policy. 
+
+
+
+Universal life  Advantages
+Disadvantages
+
+
+​Designed to last a person's entire lifetime as long as sufficient premiums are paid.
+Coverage may not last if interest rates are low.
+
+
+​May build cash value, which can be accessed through loans or withdrawals.             
+Cash value may be negatively affected by low interest rates and inflation risk.
+
+
+​Flexible premiums and death benefit.
+Typically higher premiums than term life insurance.
+
+
+
+ 
+Life insurance is issued by Symetra Life Insurance Company (SLIC) and is not available in all U.S. states or any U.S. territory. SSI and SLIC are affiliates and are both located at 777 108th Avenue NE, Suite 1200, Bellevue, WA 98004-5135.
+Guarantees and benefits are subject to the claims-paying ability of Symetra Life Insurance Company.
+Withdrawals​​ or loans on modified endowment contracts (MECs) may be subject to federal income tax and a 10% IRS penalty on amounts taken prior to age 59½.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Search Engine Marketing (SEM) - Bing Ads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+Sign upSign in
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You run your business. We'll help find your customers.
+Bing Ads can help build your business and drive your success. Spend $25 and get $100 in advertising credit.†
+
+†Offer details
+
+
+
+
+Get $100 in search advertising when you spend $25 in Bing Ads.
+
+
+
+
+
+
+
+Coupon code class
+
+First name:
+
+Last name:
+
+Email:
+
+Your website URL
+
+Business phone
+
+
+
+*Required
+Microsoft may contact you to provide updates and special offers about Bing Ads. You can unsubscribe at any time. To learn more you can read the privacy statement.
+Type the code from the image:
+
+Enter security code:
+
+
+
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+Get $100 in search advertising when you spend $25 in Bing Ads.
+
+
+†Offer Details: Offer expires December 31, 2017.  Valid only for new Bing Ads customers who are first party recipients of the offer email. A new Bing Ads customer is one that has not advertised on Bing Ads before. Enter promotional coupon code and spend $25 (applies to threshold and prepaid accounts) to receive $100 in Bing Ads credits. Limit one promotion code per new Bing Ads customer. Promotional code must be redeemed within thirty (30) days of Bing Ads new customer account creation. Ad campaign costs accrued before receiving a credit, as well as costs accrued after all credits are used, will be charged to the payment method associated with the Bing Ads account. If customer payment fails, the coupon amount will not be applied.  Ads will continue to run and accrue costs after any promotional credit has been used up. Any portion of the credit not used within ninety (90) days of credit redemption will expire and can't be carried over even if the Bing Ads Customer switches their payment method. Offer valid only to residents of the United States. In order for the offer to be valid, a form of payment must be entered into your account prior to redemption of the promotional code and prior to your account going live to take advantage of the credit. This offer may not be combined with any other offer, promotional code coupon or discount, separated, redeemed for cash, transferred, sold, or bartered. Microsoft, in its sole discretion, can close your account for any suspected coupon abuse. Refund of the $25 is not permitted.  See Bing Ads Terms and Conditions for more details at sign-up. Other terms and conditions may apply.  Microsoft reserves the right to cancel, change, or suspend this offer at any time without notice.
+
+
+
+
+
+
+
+
+
+See how Bing Ads works
+
+
+
+Customers search
+
+
+Customers see your ad
+
+
+Customers contact you
+
+
+Watch how Bing Ads works  
+ 
+
+
+
+
+
+
+
+
+×
+How Bing Ads works
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help more customers find you
+See how Bing can attract customers your Google AdWords campaigns can't.
+
+Reach 137 million searchers on the Bing Network.1
+Tap into 32.9% of the search marketplace.2
+Get in front of searchers who spend 16 percent more than the average internet searcher.2
+
+
+
+
+
+
+
+
+
+
+
+Powerful network. Powerful benefits.
+
+
+
+Reach across devicesConnect with customers looking for your business anytime, anywhere, on any device.
+
+
+Go global or localReach people in the Bing Network everywhere or focus on cities, counties and areas within a certain distance from your business.
+
+
+Easy to importIf you're already using another product like Google Adwords, it's easy to pull that campaign into Bing Ads.
+
+
+
+
+
+
+
+
+You control your costs
+
+ Free sign-upJoin Bing Ads for free and control your account at every step.
+
+
+ Only pay for clicksPay just when customers click on your ad. No click, no charge.
+
+
+ No minimum feeStart advertising with a budget that works best for your business.
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+The advantage we gain in cost per click gives us a great return on investment — more than 35 percent better than Google AdWords.
+Scott Redgate, search engine marketing manager — CJ Pony Parts
+By using Bing Ads features like Image Extensions and Sitelink Extensions, this auto parts retailer races to convert customers and beat its competition.
+
+ Read about driving more conversions
+
+
+
+
+
+
+
+ 
+
+
+
+We might not get as much of the volume as with Google AdWords, but the volume of the traffic that we get converts really well at a lower cost.
+Scott Schult, Executive Vice President of Marketing — Myrtle Beach Area Convention and Visitors Bureau
+The Myrtle Beach Area Convention and Visitors Bureau uses Bing Ads to drive site traffic and tourism at lower cost.
+
+ Read about getting better ROI
+
+
+
+
+
+
+
+
+Better results for less cost. That's as simple as I can make it. If I look at the quality of the traffic we get for the dollars we spend on Bing Ads, our ROI is fantastic.
+Alex Littlewood, CEO   Motoroso
+Motoroso, a market network for auto enthusiasts, gets better results for less cost and reaches a high-value audience with Bing Ads.
+
+ Read about attracting quality traffic
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Import your AdWords campaigns
+
+Save time by importing your Google AdWords campaigns into Bing Ads to get ads live quickly.
+
+
+Sign in with your Microsoft account (or create one) to get started on Bing Ads.
+
+
+From within the Bing Ads interface, select the Import from Google AdWords option.
+
+
+Enter your Google AdWords credentials and select the campaign you want to import.
+
+
+
+
+
+
+
+
+
+
+Preview your ad
+
+Get found online with search engine marketing. Make the most of your marketing dollars and drive customers to your business.
+See how Bing Ads can work for you
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Get started today
+Give us a few details about your business to create a Bing Ads account and get it up and running.
+
+
+  
+Sign up
+Get started with Bing Ads 
+Signing up is always free.
+
+
+
+
+
+
+
+
+
+
+
+
+
+FAQ
+
+
+Is Bing Ads right for me?
+
+Is Bing Ads right for my business?
+All types of businesses find value and success with Bing Ads. Whether you're focused on local calls and foot traffic, or want to drive traffic to your website from across the country or around the world. Bing Ads has solutions for you.
+I already appear in search results for free. Why should I pay for advertising?
+Your current customers may search for your business by name, aiming it easy to find you in search results. But customers you've yet to reach are more likely searching for general terms that wouldn't necessarily bring up your business in search results. Advertising next to relevant Bing search results puts your business front and center with interested customers you otherwise might not reach.
+What is the difference between SEO and SEM? Which one is right for me?
+Search engine optimization (SEO) is adjusting your website to improve your natural ranking in search results. You cannot pay to improve your website ranking on Bing or Yahoo, thus we often refer to these results and unpaid or "organic" search results.
+
+	Clicks from SEO are free. But SEO also requires technical expertise and involves some factors over which you have only limited control.
+
+	Search engine marketing (SEM) is paid advertising that appears next to or above unpaid (or "organic") search results. These paid ads are purchased through Bing Ads.
+
+	You pay for SEM clicks. But SEM gives you more control over when your website appears on results pages and you decide how much you want to pay. And you can measure which ads are working and quickly improve your results.
+
+	You don't have to choose between SEO and SEM. You can do both!
+If my time is limited, should I still try Bing ads?
+Yes! Call a Bing Ads specialist at 877-635-3561*and we’ll set up your first campaign for you for free. We’ll give you tips on getting the most out of your ads and set you up for success. We’re here to help.
+
+
+
+
+About Bing Ads
+
+Where does my ad appear?
+Your ads could appear on the top or to the right of Bing, Yahoo, and MSN search results. And you can choose to target your ads to different geographic regions, times or days of the week, and even demographics.
+What determines my ad position?
+Bing Ads is a pay-per-click (PPC) advertising system. You bid based on how much you are willing to pay per each click on your ad. Because webpages have a limited number of places to show ads, we auction those spaces. You are bidding against other advertisers to get your ads into the space you want. So if you bid on the keyword "shoe", you will have to beat the bids of the other advertisers who are also bidding on "shoe." You determine how much you are willing to bid.
+	Your ad position is based on several things, including:
+	
+How closely your ad and website fit with the terms that are searched (relevance).
+How your bid compares to other bids in the Bing Ads auction.
+How strongly your ad has performed in the past and how often it has been clicked (click-through rate).
+
+	The stronger you are in these areas, the better your chances of winning the top ad position.
+
+
+
+
+How to use Bing Ads
+
+How can I use Bing Ads to drive more people to my website?
+Here are some tips to get better results:
+	
+Review your budget and bid strategy. If your ad keeps pausing, your budget limit may be set too low. Competitive bids help your ad stay in a strong position to catch eyes and get more clicks to your website.
+Expand your targeting, both for location and for devices (computer, mobile and tablet).
+Make sure your ads and website are relevant to the keywords you bid on. Would someone searching your terms expect to see and ad for your business?
+
+
+How can I keep my costs down?
+While your first instinct may be to lower your budget, first try lowering your maximum bids. Yes, this could mean fewer customers visit your site. But if you increase your quality score and build ads with a strong performance history, you may be able to win a good ad position with a lower bid. That would lower your cost=per-click and help stretch your budget.
+How do I know if Bing Ads is working?
+View a wide range of performance trends in your account to quickly see key stats: ad clicks, the number of times your ad appeared (impressions), spend, average cost-per-click, click-through rate, average ad position, cost per acquisition, and conversions. You can also run performance reports to get insights into how well your campaigns are doing.
+Can I run more than one ad?
+Yes! In fact, we encourage it. Only one ad will show at a time but running multiple ads lets you test different approaches to see what's working best with your target customers. Frequently, businesses try out different ads for specific products or pages.
+
+
+
+
+Getting started with Bing Ads
+
+How do I get started?
+Sign up for Bing Ads
+Which keywords should I choose?
+You have a few options to help choose your keywords. First you'll want to think of the terms one of your customers might use to search for your products and offerings. Those search terms are a great starting point. Then you can use tools right in your account to find more keywords. Within Bing Ads, click Campaigns on the top of the page. Click the Keywords tab, and then click Add Keywords. This will let you:
+	
+Search for new keywords based on one you enter.
+Search a website for keywords.
+Search your destination URLs for keywords.
+
+
+How can I write a good ad?
+Here are a few tips that can help make your ad stand out.
+	
+Keep your ads relevant. One way to improve relevance is to use your customer's most popular search terms in your ad titles and txt.
+Describe what sets your product apart.
+Use your customers' language. Use words and writing tone that are likely to attract your typical customer.
+Be specific. This clearer and more specific your offering, the better. For example, rather than "big discount," specify and exact percentage, such as "50 percent off."
+Give customers a reason to click your ad right now. Offer a specific call to action, such as encouraging customers to request a brochure or consultation, download a free e-book, subscribe to a newsletter, or take advantage of a limited-time discount.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign up with Bing Ads to get started
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

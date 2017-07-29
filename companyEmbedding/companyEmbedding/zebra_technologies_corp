@@ -1,0 +1,14811 @@
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+Zebra Technologies Corporation: Private Company Information - Bloomberg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+July 29, 2017 4:30 AM ET
+Electronic Equipment, Instruments and Components
+
+Company Overview of Zebra Technologies Corporation
+
+
+
+Snapshot People
+
+
+
+
+Company Overview
+Zebra Technologies Corporation, together with its subsidiaries, designs, manufactures, sells, and supports direct thermal and thermal transfer label printers, radio frequency identification (RFID) printer/encoders, dye sublimation card printers, real-time locating solutions, related accessories, and support software worldwide. Its products are primarily used in automatic identification, data collection, and personal identification applications. The company also provides mobile computing and advanced data capture technologies and services, which include rugged and enterprise-grade mobile computers; laser, imaging, and radio frequency identification based data capture products; wireless LAN so...
+Zebra Technologies Corporation, together with its subsidiaries, designs, manufactures, sells, and supports direct thermal and thermal transfer label printers, radio frequency identification (RFID) printer/encoders, dye sublimation card printers, real-time locating solutions, related accessories, and support software worldwide. Its products are primarily used in automatic identification, data collection, and personal identification applications. The company also provides mobile computing and advanced data capture technologies and services, which include rugged and enterprise-grade mobile computers; laser, imaging, and radio frequency identification based data capture products; wireless LAN solutions and software; and applications that are associated with these products and services. In addition, it offers barcode scanners; specialty printers for barcode labeling and personal identification; real-time location systems; and related accessories and supplies, such as self-adhesive labels and other consumables, utilities, and application software. Further, the company provides maintenance, repair, product support, system installation and integration services, and other services. It serves retail, transportation and logistics, manufacturing, healthcare, and other end markets. The company sells its products through a network of resellers, distributors, and end users representing industrial, service, and government organizations. Zebra Technologies Corporation was founded in 1969 and is headquartered in Lincolnshire, Illinois.
+Detailed Description
+
+
+3 Overlook PointLincolnshire, IL 60069United StatesFounded in 19696,500 Employees
+
+
+
+Phone: 847-634-6700
+
+Fax: 847-913-8766
+
+www.zebra.com
+
+
+
+
+
+
+
+Key Executives for Zebra Technologies Corporation
+
+
+
+
+Mr. Anders Gustafsson
+
+
+      	Chief Executive Officer and Director
+      
+
+
+Age: 57
+        
+
+Total Annual Compensation: $900.0K
+
+
+
+
+
+
+
+
+Mr. Olivier C. Leonetti
+
+
+      	Chief Financial Officer
+      
+
+
+Age: 52
+        
+
+Total Annual Compensation: $80.8K
+
+
+
+
+
+
+
+
+Mr. William Burns
+
+
+      	Senior Vice President of Enterprise Visibility & Mobility Unit
+      
+
+
+Age: 49
+        
+
+Total Annual Compensation: $450.0K
+
+
+
+
+
+
+
+
+Mr. Hugh K. Gagnier
+
+
+      	Senior Vice President of Asset Intelligence and Tracking
+      
+
+
+Age: 61
+        
+
+Total Annual Compensation: $425.0K
+
+
+
+
+
+
+
+
+Mr. Joachim Heel
+
+
+      	Senior Vice President of Global Sales
+      
+
+
+Age: 51
+        
+
+Total Annual Compensation: $450.0K
+
+
+
+
+
+Compensation as of Fiscal Year 2016. 
+
+Zebra Technologies Corporation Key Developments
+
+Zebra Technologies Announces Comprehensive Debt Restructuring
+Jul 26 17
+Zebra Technologies Corporation announced the increases revolving credit facility capacity. The company reported a senior secured credit facility maturing July 2021, initially priced at LIBOR + 2.00%, with the opportunity for reduced pricing upon attainment of certain debt leverage levels. This facility includes a $687.5 million Term Loan A and a $500 million revolving credit facility (increased from $250 million), on which $105 million was drawn at closing. On Aug. 7, proceeds from the new facility will primarily be used to redeem $750 million of its 7.25% senior notes, maturing Oct. 2022 (notice was provided on July 6). The company plans to redeem the remaining $300 million of its 7.25% senior notes by the end of 2017 through lower-cost financing arrangements, including an accounts receivable securitization facility. The company also amended its $1.4 billion Term Loan B facility maturing Oct. 2021, reducing the interest rate by 50 basis points to LIBOR + 2.00% effective July 26, 2017, and, in conjunction, retired $75 million of the principal balance. As previously communicated, the company expects to continue to reduce the principal balance prior to the maturity date. As a result of the debt restructuring plan, the company expects to incur approximately $72 million of redemption costs and transaction fees, and approximately $18 million of non-cash accelerated amortization of debt issuance costs and discounts.
+
+
+Robbins Geller Rudman & Dowd LLP Files Class Action Suit against Zebra Technologies Corporation
+Jul 26 17
+Robbins Geller Rudman & Dowd LLP announced that a class action has been commenced by an institutional investor on behalf of purchasers of Zebra Technologies Corporation common stock during the period between March 17, 2015 and May 9, 2016. This action was filed in the United States District Court for the Eastern District of New York and is captioned City of Warren Police and Fire Retirement System v. Zebra Technologies Corp, et al., No. 2:17-cv-04412.
+
+
+Zebra Technologies Corporation Introduces the New ZT600 and ZT510 industrial printers
+Jul 18 17
+Zebra Technologies Corporation introduced the new ZT600 and ZT510 industrial printers designed to withstand the harshest environments while delivering superior print quality and uptime. Zebra also announced Printer Profile Manager Enterprise, a browser-based remote printer management solution for Zebra® Link-OS® enabled printers that greatly reduces cost and management time. The ZT610 and ZT620 maintain Zebra’s legacy of producing durable, reliable printers with fast print speeds that increases productivity in the retail, manufacturing, transportation and logistics and healthcare industries. Building on the success of the Xi4 series, the ZT600 printer series offers new user-friendly features like simplified media and ribbon loading, a highly visible color display that shares printer status and guided multi-media help that indicate errors to help users resolve issues quickly and increase printer uptime. The ZT600 series runs Link-OS applications designed to streamline device deployment, network connectivity, daily use, and routine maintenance to optimize productivity. Printer Profile Manager Enterprise enables IT staff to maintain Link-OS enabled printers with the most up-to-date security and makes it easy to remotely manage, troubleshoot and configure fleets of Zebra printers from a single location, reducing operational expenses. The company is also introducing the cost-effective ZT510 printer, ideal for applications that require a basic feature set, yet exceed expectations of high-quality printing and durability.
+
+
+Similar Private Companies By Industry
+
+
+
+Company Name
+Region
+
+
+
+ #1 Network, Inc. United States 10x Communications, Inc. United States 1450 Inc. United States 1st Choice Security Solutions, Inc. United States 20th Century Lites, Inc. United States
+
+
+
+
+Recent Private Companies Transactions
+
+
+
+TypeDate
+Target
+
+
+
+
+
+Merger/Acquisition
+
+			      December 5, 2016
+			    
+Gimbal, Inc.
+
+
+
+Merger/Acquisition
+
+			      September 14, 2016
+			    
+Zebra Technologies Corporation, Wireless LAN Business
+
+
+
+
+
+Request Profile Update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+The information and data displayed in this profile are created and managed by S&P Global Market Intelligence, a division of S&P Global. Bloomberg.com does not create or control the content. For inquiries, please contact S&P Global Market Intelligence directly by clicking 
+	here.
+
+
+
+
+Stock Quotes
+
+
+Market data is delayed at least 15 minutes.
+
+
+
+
+
+
+
+Company Lookup
+
+
+
+Most Searched Private Companies
+
+
+
+Company Name
+Geographic Region
+
+
+
+ Lawyers Committee for Civil Rights Under Law United States NYC2012, Inc. United States The Advertising Council, Inc. United States Bertelsmann AG Europe Rush University United States
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sponsored Financial Commentaries
+
+Sponsored Links
+
+
+
+
+
+
+Browse Companies
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+ | 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+
+
+
+Request Profile Update
+
+						Only a company representative may request an update for the company profile. Documentation will be required.
+					  
+To contact Zebra Technologies Corporation, please visit www.zebra.com.  Company data is provided by S&P Global Market Intelligence.  Please use this form to report any data issues.
+					  
+
+
+Information Missing - Please enter your information in the following field(s): 
+
+
+
+
+Company Name
+
+Your Name*
+
+Your E-Mail Address*
+
+Your Phone Number*
+
+Type of Data*
+
+
+Overview
+Executives
+Key developments
+Similar companies
+Transactions
+
+
+Update Needed*
+
+All data changes require verification from public sources.  Please include the correct value or values and a source where we can verify.
+
+
+Cancel
+
+
+Submit
+
+
+
+
+
+
+Your requested update has been submitted
+Our data partners will research the update request and update the information on this page if necessary. Research and follow-up could take several weeks. If you have questions, you can contact them at bwwebmaster@businessweek.com.
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Zebra Technologies
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Zebra Technologies
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NASDAQ: ZBRA
+S&P 400 Component
+
+
+Industry
+Computer hardware
+
+
+Founded
+1969[1]
+
+
+Founder
+Ed Kaplan
+Gerhard Cless
+
+
+Headquarters
+Lincolnshire, Illinois, USA
+
+
+
+Area served
+
+Worldwide
+
+
+
+Key people
+
+Michael A. Smith
+Chairman of the Board
+Anders Gustafsson
+CEO Director
+
+
+Products
+RFID printers/encoders, barcode printers, mobile printers, card imaging printers, kiosk printers, real-time locating systems, UWB and related supplies and services
+
+
+Revenue
+ $3.6 billion - 2016[2]
+
+
+
+Operating income
+
+ $80.0 million - 2016[2]
+
+
+
+Net income
+
+ -$137.0 million - 2016[2]
+
+
+Total assets
+ $4,632 million - 2016[3]
+
+
+Total equity
+ $792 million - 2016[3]
+
+
+
+Number of employees
+
+7,100 - Spring 2014
+
+
+Website
+www.zebra.com
+
+
+Zebra Technologies is a public company based in Lincolnshire, Illinois, USA, that manufactures and sells marking, tracking and computer printing technologies. Its products include thermal barcode label and receipt printers, RFID smart label printers/encoders/fixed & handheld readers/antennas, and card and kiosk printers that are used for barcode labeling, personal identification and specialty printing principally in the manufacturing supply chain, retail, healthcare and government sectors. In 2013, the company had sales of $1.038 billion and had a market capitalization of $3.6 billion.[2]
+The company has offices in 26 countries, channel partners in more than 100 countries and more than 7,000 employees worldwide. Zebra-brand printers are used by more than 90 percent of Fortune 500 companies.[4]
+History[edit]
+
+
+
+
+Zebra Technologies office in Heerenveen, The Netherlands.
+
+
+Zebra was incorporated in 1969 as "Data Specialties Incorporated", a manufacturer of high-speed electromechanical products. The company changed its focus to specialty on-demand labeling and ticketing systems in 1982 and// became "Zebra Technologies Corporation" in 1986. Zebra became a publicly traded company in 1991. Since 2008, Zebra has outsourced the majority of its printer manufacturing to Jabil Circuit in Guangzhou, China.[5]
+In 1998 Zebra Technologies merged with Eltron International, Inc.[6] In 2000 Comtec Information Systems was acquired,[7] followed in 2003 by the acquisition of Atlantek, Inc.[8]
+In 2004 the company expanded into RFID smart label manufacturing,[9] acquiring Retail Systems International, Inc. (RSI) the next year.[10] In the following years Swecoin,[11] WhereNet Corp,[12] Proveo AG,[13] and Navis Holdings, LLC (later divested in 2011)[14] were acquired.
+The company established the Enterprise Solutions Group (ESG) in 2008; renamed as Zebra Enterprise Solutions (ZES) in 2009. In the same year Multispectral Solutions, Inc. was acquired.[15] In 2012 the company acquired LaserBand, LLC[16] and StepOne Systems in a cash purchase price of $1.5 million.[17]
+2013 saw the acquisition of Hart Systems for $94 million in cash from the private equity firm Topspin Partners LBO.[18] In 2014, Motorola Solutions' Enterprise business was bought in a $3.45 billion transaction, providing mobile computing and advanced data capture communications technologies and services.[18]
+Locations[edit]
+Zebra Technologies has more than 80 offices worldwide,[19] with regional headquarters in Lincolnshire, Illinois, and Miramar, Florida, in the United States; Bourne End, Buckinghamshire in the United Kingdom; and Singapore.[citation needed]
+In April 2014 the company employed more than 2,500 people worldwide. Upon the closing of the Motorola Solutions' Enterprise business acquisition, Zebra’s workforce was expected to grow by 4,500 employees and its patent portfolio predicted to exceed 4,100 U.S. and international patents.[20]
+In its annual report for the year ended December 2015, the company said it provided products and services in over 170 countries, with approximately 120 facilities and 7,000 employees worldwide.[21]
+References[edit]
+
+
+^ Crain's Chicago Business
+^ a b c d Yahoo! Finance
+^ a b Yahoo! Finance Corporate Profile
+^ Medill Reports
+^ http://articles.chicagotribune.com/keyword/zebra/featured/5 Chicago Tribune: Manufacturing
+^ Chicago Tribune: Eltron
+^ Funding Universe
+^ Chicago Tribune: Atlantek
+^ Bloomberg
+^ Wikinvest
+^ Self Service World
+^ RFID Journal
+^ RFID Journal
+^ Chicago Business News
+^ Crunchbase
+^ St. Louis Business Journal
+^ Retail Touch Points
+^ a b ZD Net
+^ https://www.zebra.com/us/en/about-zebra/contact-us/global-locations.html
+^ Fox Business News
+^ "Zebra Technologies Corporation Annual Report December 2015" (PDF). Zebra Technologies Corporation. 2016-02-29. Retrieved 2017-01-25. 
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Zebra_Technologies&oldid=769910273"					
+Categories: Electronics companies of the United StatesRadio-frequency identification companiesCompanies based in Lake County, IllinoisLincolnshire, IllinoisElectronics companies established in 19691969 establishments in IllinoisCompanies listed on NASDAQHidden categories: Pages using deprecated image syntaxAll articles with unsourced statementsArticles with unsourced statements from February 2016 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+EspañolFrançaisNorsk bokmålPolskiPortuguêsРусский中文 
+Edit links 
+
+
+
+
+
+ This page was last edited on 12 March 2017, at 09:24.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Zebra Technologies - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Zebra Technologies
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Zebra Technologies
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NASDAQ: ZBRA
+S&P 400 Component
+
+
+Industry
+Computer hardware
+
+
+Founded
+1969[1]
+
+
+Founder
+Ed Kaplan
+Gerhard Cless
+
+
+Headquarters
+Lincolnshire, Illinois, USA
+
+
+
+Area served
+
+Worldwide
+
+
+
+Key people
+
+Michael A. Smith
+Chairman of the Board
+Anders Gustafsson
+CEO Director
+
+
+Products
+RFID printers/encoders, barcode printers, mobile printers, card imaging printers, kiosk printers, real-time locating systems, UWB and related supplies and services
+
+
+Revenue
+ $3.6 billion - 2016[2]
+
+
+
+Operating income
+
+ $80.0 million - 2016[2]
+
+
+
+Net income
+
+ -$137.0 million - 2016[2]
+
+
+Total assets
+ $4,632 million - 2016[3]
+
+
+Total equity
+ $792 million - 2016[3]
+
+
+
+Number of employees
+
+7,100 - Spring 2014
+
+
+Website
+www.zebra.com
+
+
+Zebra Technologies is a public company based in Lincolnshire, Illinois, USA, that manufactures and sells marking, tracking and computer printing technologies. Its products include thermal barcode label and receipt printers, RFID smart label printers/encoders/fixed & handheld readers/antennas, and card and kiosk printers that are used for barcode labeling, personal identification and specialty printing principally in the manufacturing supply chain, retail, healthcare and government sectors. In 2013, the company had sales of $1.038 billion and had a market capitalization of $3.6 billion.[2]
+The company has offices in 26 countries, channel partners in more than 100 countries and more than 7,000 employees worldwide. Zebra-brand printers are used by more than 90 percent of Fortune 500 companies.[4]
+History[edit]
+
+
+
+
+Zebra Technologies office in Heerenveen, The Netherlands.
+
+
+Zebra was incorporated in 1969 as "Data Specialties Incorporated", a manufacturer of high-speed electromechanical products. The company changed its focus to specialty on-demand labeling and ticketing systems in 1982 and// became "Zebra Technologies Corporation" in 1986. Zebra became a publicly traded company in 1991. Since 2008, Zebra has outsourced the majority of its printer manufacturing to Jabil Circuit in Guangzhou, China.[5]
+In 1998 Zebra Technologies merged with Eltron International, Inc.[6] In 2000 Comtec Information Systems was acquired,[7] followed in 2003 by the acquisition of Atlantek, Inc.[8]
+In 2004 the company expanded into RFID smart label manufacturing,[9] acquiring Retail Systems International, Inc. (RSI) the next year.[10] In the following years Swecoin,[11] WhereNet Corp,[12] Proveo AG,[13] and Navis Holdings, LLC (later divested in 2011)[14] were acquired.
+The company established the Enterprise Solutions Group (ESG) in 2008; renamed as Zebra Enterprise Solutions (ZES) in 2009. In the same year Multispectral Solutions, Inc. was acquired.[15] In 2012 the company acquired LaserBand, LLC[16] and StepOne Systems in a cash purchase price of $1.5 million.[17]
+2013 saw the acquisition of Hart Systems for $94 million in cash from the private equity firm Topspin Partners LBO.[18] In 2014, Motorola Solutions' Enterprise business was bought in a $3.45 billion transaction, providing mobile computing and advanced data capture communications technologies and services.[18]
+Locations[edit]
+Zebra Technologies has more than 80 offices worldwide,[19] with regional headquarters in Lincolnshire, Illinois, and Miramar, Florida, in the United States; Bourne End, Buckinghamshire in the United Kingdom; and Singapore.[citation needed]
+In April 2014 the company employed more than 2,500 people worldwide. Upon the closing of the Motorola Solutions' Enterprise business acquisition, Zebra’s workforce was expected to grow by 4,500 employees and its patent portfolio predicted to exceed 4,100 U.S. and international patents.[20]
+In its annual report for the year ended December 2015, the company said it provided products and services in over 170 countries, with approximately 120 facilities and 7,000 employees worldwide.[21]
+References[edit]
+
+
+^ Crain's Chicago Business
+^ a b c d Yahoo! Finance
+^ a b Yahoo! Finance Corporate Profile
+^ Medill Reports
+^ http://articles.chicagotribune.com/keyword/zebra/featured/5 Chicago Tribune: Manufacturing
+^ Chicago Tribune: Eltron
+^ Funding Universe
+^ Chicago Tribune: Atlantek
+^ Bloomberg
+^ Wikinvest
+^ Self Service World
+^ RFID Journal
+^ RFID Journal
+^ Chicago Business News
+^ Crunchbase
+^ St. Louis Business Journal
+^ Retail Touch Points
+^ a b ZD Net
+^ https://www.zebra.com/us/en/about-zebra/contact-us/global-locations.html
+^ Fox Business News
+^ "Zebra Technologies Corporation Annual Report December 2015" (PDF). Zebra Technologies Corporation. 2016-02-29. Retrieved 2017-01-25. 
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Zebra_Technologies&oldid=769910273"					
+Categories: Electronics companies of the United StatesRadio-frequency identification companiesCompanies based in Lake County, IllinoisLincolnshire, IllinoisElectronics companies established in 19691969 establishments in IllinoisCompanies listed on NASDAQHidden categories: Pages using deprecated image syntaxAll articles with unsourced statementsArticles with unsourced statements from February 2016 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+EspañolFrançaisNorsk bokmålPolskiPortuguêsРусский中文 
+Edit links 
+
+
+
+
+
+ This page was last edited on 12 March 2017, at 09:24.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Zebra Technologies - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Zebra Technologies
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Zebra Technologies
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NASDAQ: ZBRA
+S&P 400 Component
+
+
+Industry
+Computer hardware
+
+
+Founded
+1969[1]
+
+
+Founder
+Ed Kaplan
+Gerhard Cless
+
+
+Headquarters
+Lincolnshire, Illinois, USA
+
+
+
+Area served
+
+Worldwide
+
+
+
+Key people
+
+Michael A. Smith
+Chairman of the Board
+Anders Gustafsson
+CEO Director
+
+
+Products
+RFID printers/encoders, barcode printers, mobile printers, card imaging printers, kiosk printers, real-time locating systems, UWB and related supplies and services
+
+
+Revenue
+ $3.6 billion - 2016[2]
+
+
+
+Operating income
+
+ $80.0 million - 2016[2]
+
+
+
+Net income
+
+ -$137.0 million - 2016[2]
+
+
+Total assets
+ $4,632 million - 2016[3]
+
+
+Total equity
+ $792 million - 2016[3]
+
+
+
+Number of employees
+
+7,100 - Spring 2014
+
+
+Website
+www.zebra.com
+
+
+Zebra Technologies is a public company based in Lincolnshire, Illinois, USA, that manufactures and sells marking, tracking and computer printing technologies. Its products include thermal barcode label and receipt printers, RFID smart label printers/encoders/fixed & handheld readers/antennas, and card and kiosk printers that are used for barcode labeling, personal identification and specialty printing principally in the manufacturing supply chain, retail, healthcare and government sectors. In 2013, the company had sales of $1.038 billion and had a market capitalization of $3.6 billion.[2]
+The company has offices in 26 countries, channel partners in more than 100 countries and more than 7,000 employees worldwide. Zebra-brand printers are used by more than 90 percent of Fortune 500 companies.[4]
+History[edit]
+
+
+
+
+Zebra Technologies office in Heerenveen, The Netherlands.
+
+
+Zebra was incorporated in 1969 as "Data Specialties Incorporated", a manufacturer of high-speed electromechanical products. The company changed its focus to specialty on-demand labeling and ticketing systems in 1982 and// became "Zebra Technologies Corporation" in 1986. Zebra became a publicly traded company in 1991. Since 2008, Zebra has outsourced the majority of its printer manufacturing to Jabil Circuit in Guangzhou, China.[5]
+In 1998 Zebra Technologies merged with Eltron International, Inc.[6] In 2000 Comtec Information Systems was acquired,[7] followed in 2003 by the acquisition of Atlantek, Inc.[8]
+In 2004 the company expanded into RFID smart label manufacturing,[9] acquiring Retail Systems International, Inc. (RSI) the next year.[10] In the following years Swecoin,[11] WhereNet Corp,[12] Proveo AG,[13] and Navis Holdings, LLC (later divested in 2011)[14] were acquired.
+The company established the Enterprise Solutions Group (ESG) in 2008; renamed as Zebra Enterprise Solutions (ZES) in 2009. In the same year Multispectral Solutions, Inc. was acquired.[15] In 2012 the company acquired LaserBand, LLC[16] and StepOne Systems in a cash purchase price of $1.5 million.[17]
+2013 saw the acquisition of Hart Systems for $94 million in cash from the private equity firm Topspin Partners LBO.[18] In 2014, Motorola Solutions' Enterprise business was bought in a $3.45 billion transaction, providing mobile computing and advanced data capture communications technologies and services.[18]
+Locations[edit]
+Zebra Technologies has more than 80 offices worldwide,[19] with regional headquarters in Lincolnshire, Illinois, and Miramar, Florida, in the United States; Bourne End, Buckinghamshire in the United Kingdom; and Singapore.[citation needed]
+In April 2014 the company employed more than 2,500 people worldwide. Upon the closing of the Motorola Solutions' Enterprise business acquisition, Zebra’s workforce was expected to grow by 4,500 employees and its patent portfolio predicted to exceed 4,100 U.S. and international patents.[20]
+In its annual report for the year ended December 2015, the company said it provided products and services in over 170 countries, with approximately 120 facilities and 7,000 employees worldwide.[21]
+References[edit]
+
+
+^ Crain's Chicago Business
+^ a b c d Yahoo! Finance
+^ a b Yahoo! Finance Corporate Profile
+^ Medill Reports
+^ http://articles.chicagotribune.com/keyword/zebra/featured/5 Chicago Tribune: Manufacturing
+^ Chicago Tribune: Eltron
+^ Funding Universe
+^ Chicago Tribune: Atlantek
+^ Bloomberg
+^ Wikinvest
+^ Self Service World
+^ RFID Journal
+^ RFID Journal
+^ Chicago Business News
+^ Crunchbase
+^ St. Louis Business Journal
+^ Retail Touch Points
+^ a b ZD Net
+^ https://www.zebra.com/us/en/about-zebra/contact-us/global-locations.html
+^ Fox Business News
+^ "Zebra Technologies Corporation Annual Report December 2015" (PDF). Zebra Technologies Corporation. 2016-02-29. Retrieved 2017-01-25. 
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Zebra_Technologies&oldid=769910273"					
+Categories: Electronics companies of the United StatesRadio-frequency identification companiesCompanies based in Lake County, IllinoisLincolnshire, IllinoisElectronics companies established in 19691969 establishments in IllinoisCompanies listed on NASDAQHidden categories: Pages using deprecated image syntaxAll articles with unsourced statementsArticles with unsourced statements from February 2016 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+EspañolFrançaisNorsk bokmålPolskiPortuguêsРусский中文 
+Edit links 
+
+
+
+
+
+ This page was last edited on 12 March 2017, at 09:24.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Products | Printers, Barcode Scanners and More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Login
+
+
+
+Login
+Register
+
+
+
+My Zebra
+
+
+
+
+
+
+Logout
+
+
+
+
+
+
+us - English
+
+
+
+NORTH AMERICA
+
+
+us - English
+
+
+
+
+
+LATIN AMERICA
+
+
+br - Português
+
+
+la - Español
+
+
+
+
+
+ASIA
+
+
+ap - English
+
+
+cn - 普通话
+
+
+jp - 日本語
+
+
+kr - 한국어
+
+
+
+
+
+EUROPE AND MIDDLE EAST
+
+
+de - Deutsch
+
+
+es - Español
+
+
+fr - Français
+
+
+it - Italiano
+
+
+pl - Polski
+
+
+ru - Pусский
+
+
+tr - Türkçe
+
+
+uk - English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products
+
+Products
+
+
+
+
+
+
+
+
+
+Mobile Computers
+
+Handheld
+Vehicle Mounted
+Wearable
+RFID Handheld
+Narrowband Digital Wireless
+Discontinued
+ 
+
+
+
+
+
+
+
+
+
+
+Printers
+
+Desktop Printers
+Industrial Printers
+Card Printers
+Mobile Printers
+RFID Printers
+Kiosk Printers
+Print Engines
+Discontinued
+ 
+
+
+
+
+
+
+
+
+
+
+Barcode Scanners
+
+General Purpose
+Ultra-Rugged
+Rugged
+Multi-Plane
+Fixed Mount
+Healthcare
+Companion
+Discontinued
+ 
+
+
+
+
+
+
+
+
+
+
+RFID
+
+Handheld Readers
+Fixed Readers
+Reader Antennas
+Printers
+Discontinued
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SmartPack
+
+
+
+SmartPack Trailer
+
+
+
+
+
+
+
+
+
+
+
+Location Solutions
+
+WhereNet
+DartUWB
+RTLS Software
+MPact
+SmartLens for Retail
+ 
+
+
+
+
+
+
+
+
+
+
+Tablets
+
+ET50 / ET55 Tablet
+ 
+
+
+
+
+
+
+
+
+
+
+Accessories
+
+Mobile Computer
+Barcode Scanner
+Interactive Kiosk
+Micro Kiosk
+RFID
+Tablet
+Printer and Print Engine
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interactive Kiosks
+
+CC5000-10 Customer Concierge
+MK3100 Micro Kiosk
+MK4000 Micro Kiosk
+MK500 Micro Kiosk
+ 
+
+
+
+
+
+
+
+
+
+
+Software
+
+Barcode Printers
+Card Software
+Mobile Computers
+Scanning Systems
+Zebra Commerce
+WLAN Systems
+Software Partners
+Development Services
+Internet of Things
+Discontinued Products
+ 
+
+
+
+
+
+
+
+
+
+
+OEM
+
+OEM Scan Engines
+OEM Private Label
+ 
+
+
+
+
+
+
+
+
+
+
+Laser, Thermal and RFID Wristbands
+
+Laser Printable
+Thermal Printable
+Other Wristband Products
+RFID
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Printer Parts
+
+Industrial Printer Parts
+Desktop Printer Parts
+Kiosk Printer Parts
+Print Engine Parts
+Passive RFID Printer Parts
+ZXP Card Printer Parts
+ 
+
+
+
+
+
+
+
+
+
+
+Supplies
+
+Labels & Tags
+Receipt Paper
+Laser, Thermal and RFID Wristbands
+Ribbons
+Custom Supplies
+Cards
+Card Laminates & Overlays
+Card Printer Ribbons
+Card Printer Cleaning Supplies
+Quikcard Professional Photo ID Kit
+RFID Inlay Placement Guidelines
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Location Solutions
+Zebra's innovative location solutions provide state-of-the-art location infrastructure, tags and software to track and manage your resources.
+
+Need help choosing?
+
+
+
+Contact an Expert
+
+
+
+
+
+
+
+
+
+
+
+By Business Need
+
+Zebra MotionWorksTM
+Material Flow
+Asset Visibility
+Inventory Tracking
+Work In Process
+Yard Management
+Enabling Technologies
+
+
+
+
+
+
+
+
+
+
+Location Solutions Resources
+
+Location Solutions Brochure
+Contact a Location Solutions Expert
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Services
+Seeing is achieving. When you can see it all, you can do it all. And our end-to-end solutions are just the beginning. As a complete solutions provider, Zebra has the distinct capability to offer everything our customers need to round out their technology investments with complete solutions.
+
+
+
+Zebra's Services Brochure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Zebra | Zebra Technologies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Login
+
+
+
+Login
+Register
+
+
+
+My Zebra
+
+
+
+
+
+
+Logout
+
+
+
+
+
+
+us - English
+
+
+
+NORTH AMERICA
+
+
+us - English
+
+
+
+
+
+LATIN AMERICA
+
+
+br - Português
+
+
+la - Español
+
+
+
+
+
+ASIA
+
+
+ap - English
+
+
+cn - 普通话
+
+
+jp - 日本語
+
+
+kr - 한국어
+
+
+
+
+
+EUROPE AND MIDDLE EAST
+
+
+de - Deutsch
+
+
+es - Español
+
+
+fr - Français
+
+
+it - Italiano
+
+
+pl - Polski
+
+
+ru - Pусский
+
+
+tr - Türkçe
+
+
+uk - English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Zebra > Contact Zebra
+
+Contact Zebra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOW TO BUY
+Zebra sells primarily through its valued program partners. Our channel partners will help you identify solutions based on your specific needs.
+
+
+
+Connect With Our Partners
+
+
+
+
+
+
+
+TECH SUPPORT & REPAIR
+Zebra has global technical and repair resources to assist you with your Zebra devices.
+
+
+
+View Support & Repair Resources
+
+
+
+
+
+
+
+
+
+
+
+PRODUCT QUESTIONS
+Looking for more information about a product or service? Please contact one of our representatives in your area.
+
+
+
+Speak With A Representative
+
+
+
+
+
+
+
+General Information
+Looking for something else? Use our general contact form for additional information requests.
+
+
+
+Contact Zebra
+
+
+
+
+Subscribe/Unsubscribe from Mailing List
+
+
+
+
+
+
+
+
+
+
+
+Global Locations
+Investor Contacts
+
+
+
+
+
+
+
+
+UNITED STATES
+
+
+
+CORPORATE & INTERNATIONAL HEADQUARTERS
+
+
+
+
+Lincolnshire, IL (Corporate Office)
+3 Overlook Point
+Lincolnshire, Illinois 60069
+Google Map
+USA Phone: +1 847 634 6700
+Toll-free: +1 866 230 9494
+Fax: +1 847 913 8766
+
+
+
+
+
+MIDWEST
+
+
+
+
+Chicago, IL
+820 W. Jackson Blvd., Suite 700
+Chicago, IL 60607 USA
+Lincolnshire, IL
+475 Half Day Rd 500
+Lincolnshire, IL 60069 USA
+Hebron, KY
+3000 Kustom Dr.
+Hebron, KY 41048 USA
+Greenville, WI
+W6369 Levi Drive
+Greenville, WI 54942 USA
+
+
+
+
+NORTHEAST
+
+
+
+
+Germantown, MD
+20312-20314 Seneca Meadows Parkway
+Germantown, MD 20876 USA
+Rockville, MD
+7361 Calhoun Place, Suite 100
+Rockville, MD 20855 USA
+Hauppauge, NY
+60 Plant Ave.
+Hauppauge, NY 11788 USA
+Holtsville, NY
+1 Zebra Plaza
+Holtsville, NY 11742 USA
+Lincoln, RI
+1 Albion Rd., Suite 100
+Lincoln, RI 02865 USA
+
+
+
+
+SOUTH
+
+
+
+
+Bentonville, AR
+1201 S.E. 28th Street
+Bentonville, AR 72712 USA
+Miramar, FL
+Liberty Center
+3100 SW 145h Ave., 3rd Floor
+Miramar, FL 33207 USA
+Alpharetta, GA
+The Falls at Sanctuary Park
+1125 Sanctuary Parkway
+Alpharetta, GA 30009-7610 USA
+Flowery Branch, GA
+5322 Rafe Banks Drive, Suite C-H
+Flowery Branch, GA 30542 USA
+McAllen, TX
+2705 Ebony Avenue
+McAllen, TX 78501 USA
+
+
+
+
+WEST
+
+
+
+
+Agoura Hills, CA
+30601 West Agoura Road
+Agoura Hills, CA 91301 USA
+San Diego, CA
+1440 Innovative Drive A
+San Diego, California 92154 USA
+San Jose, CA
+2940 N. First Street
+San Jose, CA 95134-2021 USA
+
+
+
+
+LATIN AMERICA
+
+
+
+
+Sao Paulo, Brazil
+Cidade Jardim Corporate Center
+Avenida Magalhaes d Castro No. 4800
+Tower 3, Suites 72, 81 and 82
+7th and 8th Floors
+Sao Paulo 05676 Brazil
+Mexico City, Mexico (Office)
+José Vasconcelos 105, Piso 2
+Col. Hipódromo Condesa
+Delegación Cuauhtémoc, C.P. 06170, Mexico, D.F.
+Mexico City, Mexico (Repair Center)
+Calle Añil #571, Piso 4
+L-405 Col. Granjas de México
+Delegación Iztacalco, C.P. 08400, México, D.F.
+Reynosa, Mexico
+Avenida Industrial Rio San Juan
+Mz-9 L4 Parque Del Norte
+Reynosa CP88730 Mexico
+
+
+
+
+CANADA
+
+
+
+
+Mississauga, Ontario
+2100 Meadowvale Blvd
+Mississauga, ONT L5N 7J9 Canada
+
+
+
+
+
+
+
+EUROPE
+
+
+
+
+Vienna, Austria
+Albertgasse 35
+Vienna, Austria
+Phone: 43 (1) 3619959
+Antwerp, Belgium
+Regus Berchem
+Uitbredingstraat 84
+3rd Floor, 2600 Berchem
+Antwerp, Belgium
+Phone: 32 321 820 00
+Brno, Czech Republic
+Kolejni 1
+Brno, Czech Republic
+Phone: 420 533 336 060
+Brno, Czech Republic
+Purkyňova 646/107
+Brno-Medlánky
+Brno, Czech Republic 
+Phone: 420 533 336 060
+Prague, Czech Republic
+River Business Centre
+Strakonicka 1199/2d
+Praha 5
+Prague, Czech Republic
+Phone: 420 257 218 563
+Glostrup, Denmark
+Hummeltoftevej 49
+2830 Virum
+Glostrup, Denmark
+Phone: +45 88 73 77 20
+Helsinki, Finland
+6th Floor, Room #674
+Laajalahdentile 23
+Helsinki, Finland
+Phone: 420 533 336 123
+Aix-en-Provence, France
+Espace Copernic
+405 Avenue Galilee
+Aix-en-Provence, France
+Phone: 33 4 84 80 23 77
+St. Aubin, France
+Immeuble Les Thales
+Parc des Algorithmes
+St. Aubin, France
+Phone: 33 9 74 48 43 00
+Berlin, Germany
+Satellite Office UdL GmbH & Co. KG
+Unter den Linden 10
+Berlin, Germany
+Phone: 49 695 007 3865
+Ratingen Germany
+Ernst-Dietrich-Platz 2
+Ratingen, Germany
+Phone: 49 695 007 3865
+Budapest, Hungary
+Arpad Fejedelem utja 26-28, Suite 535
+Budapest, Hungary
+Phone: 36 1 888 0500
+Milano, Italy
+Via Giovanni Lorenzini, 4
+Milano, Italy
+Phone: 390282951530
+Rome, Italy
+Piazza Marconi, 15
+Rome, Italy
+Phone: 39 026 963 3565
+Arnhem, Netherlands
+Ondernemerscentrum Lorentz
+IJsselburcht 3, 6825 BS
+Arnhem, Netherlands
+Phone: 31 26 36 53 530
+Heerenveen, Netherlands
+Mercurius 12
+Heerenveen, Netherlands
+Phone: 31 513 612 200
+Utrecht, Netherlands
+Offices for You, Orteliuslaan 850
+Utrecht, Netherlands
+Phone: 31 (0) 202 015 081
+Oslo, Norway
+Rosenholmveien 25
+1414 Trollsen
+Oslo, Norway
+Phone: 420 533 336 123
+Warsaw, Poland
+Annopol 4a, Building G
+03-236 Warsaw
+Poland
+Phone: 48 22 380 19 00
+Lisbon, Portugal
+Edifício Dom Pedro I
+Rua dos Malhões
+Quinta da Fonte
+2770-071 Paço De Arcos
+Lisbon, Portugal
+Phone: 420 533 336 123
+Bucharest, Romania
+Green Gate
+22 Tudor Vladimirescu Blvd, Sector 5
+Bucharest, Romania
+Phone: 40 754 097 699
+Moscow, Russia
+7th Floor, CityDel Business Centre
+Zemlyanoy Val Street, Building 9
+Moscow, Russia
+Phone: 7 499 404 34 01
+Madrid, Spain
+Calle Martinez Villergas, 52
+Bloque C
+28027 Madrid
+Madrid, Spain
+Phone: 34911237350
+Malmo, Sweden
+Industrigatan 39
+Malmo, Sweden
+Phone: 46 40 94 46 02
+Danderyd, Sweden
+Svardvagen 7
+Danderyd, Sweden
+Phone: 46 8 623 45 60
+Istanbul, Turkey
+Barbaros Mah. Mor Sümbül Sok. No:1 
+Varyap Meridian Business I-Blok Kat:8 
+Daire:105 34746
+Ataşehir, İstanbul - Turkey
+Istanbul, Turkey
+Phone: 90 216 688 85 15
+Bourne End, United Kingdom
+Dukes Meadow
+Millboard Road
+Bourne End, United Kingdom
+Phone: 44 1628 556 000
+Canterbury, United Kingdom
+Unit 83, Canterbury Innovation Centre
+University Road
+Canterbury, United Kingdom
+Phone: 44 800 328 2424
+Preston, United Kingdom
+Pittman Way
+Fulwood
+Preston, United Kingdom
+Phone: 44 1772 797555
+
+
+
+
+MIDDLE EAST
+
+
+
+
+Dubai, United Arab Emirates
+LOB16, Office 414/5
+Jebel Ali Free Zone
+Dubai, United Arab Emirates
+Phone: 971 48111900
+Airport City, Israel
+Negev St. 2, Airport City
+Ben Gurion Airport
+Airport City, Israel
+Phone: 972 3728514
+Riyadh, Saudi Arabia
+King Fahad Highway
+Olaya District
+Riyadh, Saudi Arabia
+Phone: 420 533 336 123
+
+
+
+
+AFRICA
+
+
+
+
+Cape Town, South Africa
+First Floor, Willowbridge Centre
+39 Carl Cronje Drive
+Tyger Valley
+Cape Town, South Africa
+Phone: 420 533 336 123
+Johannesburg, South Africa
+33 Fricker Road
+Illovo Boulevard, Illovo
+Johannesburg, South Africa
+Phone: 27,110,696,200
+
+
+
+
+
+
+
+AUSTRALIA AND NEW ZEALAND
+
+
+
+
+Melbourne
+Brandon Office Park
+Building 5, L1, 540 Springvale Road
+Glen Waverley, VIC 3150 Australia
+Auckland
+Suite 115, Zone 23
+23 Edwin Street
+Mount Eden, Auckland New Zealand 1024
+
+
+
+
+CHINA, HONG KONG AND TAIWAN
+
+
+
+
+Shanghai
+Unit 2105, 21F, 
+Tower 3
+Jing An Kerry Centre
+No. 1228 Yan An Zhong Road
+Jin'an District, P.R. China
+Hong Kong
+Suite 712, 7th Floor
+Ocean Centre
+Harbour City, Kowloon, Hong Kong
+Beijing
+Unit D305-309
+Global Trade Center
+36 North 3rd Ring Road East
+Dongcheng District
+Beijing 100013, P.R. China
+Taipei
+13F, No. 9 Songgao Road
+Xinyi District
+Taipei City, Taiwan 110
+Guangzhou
+Unit 3412-3415
+34F Tower B Shine Plaza
+9 Linhe Xi Road
+Tianhe District
+Guangzhou 510610, P.R. China
+
+
+
+
+JAPAN AND SOUTH KOREA
+
+
+
+
+Tokyo
+14F, 1-5-2 Uchisaiwai-Cho Chiyoda-ku
+Uchisaiwai-Cho Heiwa Building
+Tokyo 100-0011, Japan
+Seoul
+21FL, Two IFC
+10 Gukjegeumyung-Ro, Youngdeungpo-Gu
+Seoul 07326, Korea
+Phone: 02-6137-6500
+
+
+
+
+SOUTHEAST ASIA
+
+
+
+
+                      Singapore (Regional HQ)                                       
+71 Robinson Road 
+#05-01/02/03
+Singapore 068895
+Kuala Lumpur
+Level 7-2, Level 7, Tower 3
+Avenue 3, Bangsar South 
+No. 8 Jalan Kerinchi
+Kuala Lumpur, Malaysia
+
+Bangkok
+Unit 911, 9th Floor Sathorn Square
+98 North Sathorn Road, Silom, Bangrak
+Bangkok 10500, Thailand
+Manila
+L29 Joy Nostalg Centre 17 ADB Avenue,
+Office Number 2947, Ortigas Center 
+Pasig City, Manila 1600, Philippines
+Jakarta
+CEO Suite Jakarta
+AXA Tower 45th Floor, Jl.
+Prof. Dr. Satrio Kav 18, 
+Jakarta 12940, Indonesia
+
+
+
+
+INDIA AND SUBCONTINENTS
+
+
+
+
+Noida
+B106, International Home Deco Park (IHDP)
+Plot No. 7, Sector 127, Taj Expressway,
+Uttar Pradesh- 201 301, India
+Colombo
+214 Nawala Road
+Rajagiriya, Sri Lanka 10107
+
+
+
+
+
+
+
+
+
+
+INVESTOR CONTACT
+
+
+
+
+
+
+Shawn Alcaraz
+Senior Analyst, Investor Relations
+Phone: +1 847 793 5592
+Email: InvestorRelations@zebra.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies (@ZebraTechnology) | Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+Home
+Home
+Home, current page.
+
+
+
+
+
+
+Moments
+Moments
+Moments, current page.
+
+
+
+
+
+
+Search query
+
+
+
+Search Twitter
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Language: English 
+
+
+
+ 
+
+
+
+Bahasa Indonesia
+Bahasa Melayu
+Català
+Čeština
+Dansk
+Deutsch
+English UK
+Español
+Filipino
+Français
+Hrvatski
+Italiano
+Magyar
+Nederlands
+Norsk
+Polski
+Português
+Română
+Slovenčina
+Suomi
+Svenska
+Tiếng Việt
+Türkçe
+Ελληνικά
+Български език
+Русский
+Српски
+Українська мова
+עִבְרִית
+العربية
+فارسی
+मराठी
+हिन्दी
+বাংলা
+ગુજરાતી
+தமிழ்
+ಕನ್ನಡ
+ภาษาไทย
+한국어
+日本語
+简体中文
+繁體中文
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Have an account?  Log in
+
+
+   
+
+Have an account?
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+New to Twitter?
+Sign up
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Zebra TechnologiesVerified account
+
+
+
+@ZebraTechnology
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+Tweets, current page.
+10K
+            
+
+
+
+Following
+Following
+2,324
+
+
+
+Followers
+Followers
+23.9K
+
+
+
+Likes
+Likes
+3,423
+
+
+
+Lists
+Lists
+14
+ 
+ 
+More 
+
+
+
+
+
+
+
+Likes
+Lists
+
+
+
+
+
+
+Unmute @ZebraTechnology
+
+Mute @ZebraTechnology
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra TechnologiesVerified account
+
+
+
+@ZebraTechnology
+
+
+Zebra delights customers with the ability to take smarter actions through innovative products and solutions that enable visibility.
+
+
+
+Lincolnshire, IL
+
+
+
+
+ 
+    zebra.com
+  
+
+
+
+
+Joined June 2009
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                932 Photos and videos
+            
+
+            Photos and videos
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+
+
+Tweets
+Tweets, current page.
+
+
+
+                  Tweets & replies
+                
+
+
+
+                  Media
+                
+
+
+
+
+
+You blocked @ZebraTechnology
+Are you sure you want to view these Tweets? Viewing Tweets won't unblock @ZebraTechnology
+Yes, view profile
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Zebra Technologies followed
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+15h15 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Get advanced management and monitoring capabilities with the new ZT510 Industrial Printer. See how. http://social.zebra.com/nM2o 
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+17h17 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Boost productivity and print labels in the most extreme work environments with our ZT600 Series printers. http://social.zebra.com/wE1C 
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Our Yard and Terminal Solutions allow you to reduce your wait times and increase throughput within your yard. http://social.zebra.com/te6x 
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Move people and cargo safely and efficiently with our enterprise Android mobile devices. Learn more. http://social.zebra.com/63su pic.twitter.com/GfWtiS6pPc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+8 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+8
+
+
+
+
+Retweeted
+
+
+8
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+.@bonton Stores Improve Customer Experience and Sales Efficiency with Zebra RFID Technology. http://social.zebra.com/he2r pic.twitter.com/GT9BVpW3WF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+4 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Get total visibility and control at all times with our new ZT600 RFID Series
+printers. See how. http://social.zebra.com/Eu37 
+
+
+
+
+
+0 replies
+
+
+
+
+11 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+11
+
+
+
+
+Retweeted
+
+
+11
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Our certified supplies help you reduce premature printhead wear. Learn more.http://social.zebra.com/tw1N 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Instantly capture every electronic and printed barcode with the help of our MP7000 Scanner Scale. Learn more. http://social.zebra.com/DP5J pic.twitter.com/2cDp80Sm2i
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+4 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We're connecting manufacturers to real-time enterprise asset intelligence with our Android devices. See how. http://social.zebra.com/9cW5 pic.twitter.com/aMxEj1wjKu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Know what's available, where it is, and exactly how much it costs with our inventory management solutions.http://social.zebra.com/rN7V 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Learn how our enterprise Android devices are built for demanding warehouse environments. http://social.zebra.com/TL4r pic.twitter.com/XP94zKRwIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Keep your workforce in constant communication with our rugged voice and data communication devices. See how.http://social.zebra.com/0gf4 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Protect sensitive data and comply with standard IT practices with our Printer Profile Manager Enterprise.http://social.zebra.com/ND3z 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Automate processes and simplify operations in the warehouse with our Android enterprise devices. http://social.zebra.com/vQ5e pic.twitter.com/3b1i60nic7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+7 retweets
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+7
+
+
+
+
+Retweeted
+
+
+7
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Our inventory management solution provides real-time inventory numbers you can count on. Learn more.http://social.zebra.com/za73 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 21
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+See how our enterprise Android devices help you build a consistent shopper experience in-store and online. http://social.zebra.com/cS7L pic.twitter.com/f643b58d8s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 20
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Learn more about our easy-to-use enterprise Android devices that help your staff provide better patient care. http://social.zebra.com/Au4l pic.twitter.com/AZFEZez6Xo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 20
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Bring real-time visibility to the location of customer's goods with our Fleet and Delivery Solutions. See how.http://social.zebra.com/BQ6I 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 19
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Our in-store mobile computing portfolio provides data capture in real-time for on-the-go productivity.http://social.zebra.com/Fr3B 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies‏Verified account @ZebraTechnology
+
+Jul 18
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We our innovating the fleet and delivery experience. Learn more about our solutions and how they can help you.http://social.zebra.com/DA87 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+12 retweets
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+12
+
+
+
+
+Retweeted
+
+
+12
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+          @ZebraTechnology hasn't Tweeted yet.
+      
+Back to top ↑
+
+
+
+
+
+
+
+
+
+
+
+
+Loading seems to be taking a while.
+
+      Twitter may be over capacity or experiencing a momentary hiccup. Try again or visit Twitter Status for more information.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      New to Twitter?
+    
+
+
+    Sign up now to get your own personalized timeline!
+  
+
+Sign up
+
+
+
+
+You may also like
+    ·
+    Refresh
+
+
+
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Twitter
+About
+Help Center
+Terms
+Privacy policy
+Cookies
+Ads info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Choose a trend location
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dismiss
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+            Previous
+          
+
+
+
+
+
+
+
+            Next
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Go to a person's profile
+
+
+
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Promote this Tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Block
+
+
+
+
+
+
+Cancel
+Block
+
+
+
+
+
+
+
+
+
+
+
+
+Add a location to your Tweets
+
+        When you tweet with a location, Twitter stores that location. 
+        You can switch location on/off before each Tweet and always have the option to delete your location history.
+        Learn more
+
+
+Turn location on
+Not now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Share Location
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Results from 
+
+
+
+Send
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Your lists
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Create a new list
+
+
+
+
+List name
+
+
+
+
+Description
+
+Under 100 characters, optional
+
+
+
+Privacy
+
+
+
+Public · Anyone can follow this list
+      
+
+
+Private · Only you can access this list
+      
+
+
+
+
+Save list
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Copy link to Tweet
+
+
+
+
+Here's the URL for this Tweet. Copy it to easily share with friends.
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Embed this Tweet
+Embed this Video
+
+
+
+Add this Tweet to your website by copying the code below. Learn more
+Add this video to your website by copying the code below. Learn more
+
+
+
+
+Hmm, there was a problem reaching the server. Try again?
+
+
+
+
+
+
+            Include parent Tweet
+          
+
+
+
+
+            Include media
+          
+
+
+
+
+By embedding Twitter content in your website or app, you are agreeing to the Twitter Developer Agreement and Developer Policy.
+Preview
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Why you're seeing this ad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Log in to Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+
+        Don't have an account? Sign up »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Sign up for Twitter
+
+
+
+
+
+Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.
+
+
+Sign up
+
+
+
+
+        Have an account? Log in »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Two-way (sending and receiving) short codes:
+
+
+
+
+
+Country
+Code
+For customers of
+
+
+
+
+United States
+40404
+(any)
+
+
+Canada
+21212
+(any)
+
+
+United Kingdom
+86444
+Vodafone, Orange, 3, O2
+
+
+Brazil
+40404
+Nextel, TIM
+
+
+Haiti
+40404
+Digicel, Voila
+
+
+Ireland
+51210
+Vodafone, O2
+
+
+India
+53000
+Bharti Airtel, Videocon, Reliance
+
+
+Indonesia
+89887
+AXIS, 3, Telkomsel, Indosat, XL Axiata
+
+
+Italy
+4880804
+Wind
+
+
+3424486444
+Vodafone
+
+
+
+
+
+        » See SMS short codes for other countries
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Confirmation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Skip all
+          
+
+
+
+
+    Welcome home!
+  
+This timeline is where you’ll spend most of your time, getting instant updates about what matters to you.
+
+
+
+
+    Tweets not working for you?
+  
+
+    Hover over the profile pic and click the Following button to unfollow any account.
+  
+
+
+
+
+    Say a lot with a little
+  
+
+    When you see a Tweet you love, tap the heart — it lets  the person who wrote it know you shared the love.
+  
+
+
+
+
+    Spread the word
+  
+
+    The fastest way to share someone else’s Tweet with your followers is with a Retweet. Tap the icon to send it instantly.
+  
+
+
+
+
+    Join the conversation
+  
+
+    Add your thoughts about any Tweet with a Reply. Find a topic you’re passionate about, and jump right in.
+  
+
+
+
+
+    Learn the latest
+  
+
+    Get instant insight into what people are talking about now.
+  
+
+
+
+
+    Get more of what you love
+  
+
+    Follow more accounts to get instant updates about topics you care about.
+  
+
+
+
+
+    Find what's happening
+  
+
+    See the latest conversations about any topic instantly.
+  
+
+
+
+
+    Never miss a Moment
+  
+
+    Catch up instantly on the best stories happening as they unfold.
+  
+
+
+
+Back
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next Tweet from user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Products | Printers, Barcode Scanners and More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Login
+
+
+
+Login
+Register
+
+
+
+My Zebra
+
+
+
+
+
+
+Logout
+
+
+
+
+
+
+us - English
+
+
+
+NORTH AMERICA
+
+
+us - English
+
+
+
+
+
+LATIN AMERICA
+
+
+br - Português
+
+
+la - Español
+
+
+
+
+
+ASIA
+
+
+ap - English
+
+
+cn - 普通话
+
+
+jp - 日本語
+
+
+kr - 한국어
+
+
+
+
+
+EUROPE AND MIDDLE EAST
+
+
+de - Deutsch
+
+
+es - Español
+
+
+fr - Français
+
+
+it - Italiano
+
+
+pl - Polski
+
+
+ru - Pусский
+
+
+tr - Türkçe
+
+
+uk - English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products
+
+Products
+
+
+
+
+
+
+
+
+
+Mobile Computers
+
+Handheld
+Vehicle Mounted
+Wearable
+RFID Handheld
+Narrowband Digital Wireless
+Discontinued
+ 
+
+
+
+
+
+
+
+
+
+
+Printers
+
+Desktop Printers
+Industrial Printers
+Card Printers
+Mobile Printers
+RFID Printers
+Kiosk Printers
+Print Engines
+Discontinued
+ 
+
+
+
+
+
+
+
+
+
+
+Barcode Scanners
+
+General Purpose
+Ultra-Rugged
+Rugged
+Multi-Plane
+Fixed Mount
+Healthcare
+Companion
+Discontinued
+ 
+
+
+
+
+
+
+
+
+
+
+RFID
+
+Handheld Readers
+Fixed Readers
+Reader Antennas
+Printers
+Discontinued
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SmartPack
+
+
+
+SmartPack Trailer
+
+
+
+
+
+
+
+
+
+
+
+Location Solutions
+
+WhereNet
+DartUWB
+RTLS Software
+MPact
+SmartLens for Retail
+ 
+
+
+
+
+
+
+
+
+
+
+Tablets
+
+ET50 / ET55 Tablet
+ 
+
+
+
+
+
+
+
+
+
+
+Accessories
+
+Mobile Computer
+Barcode Scanner
+Interactive Kiosk
+Micro Kiosk
+RFID
+Tablet
+Printer and Print Engine
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interactive Kiosks
+
+CC5000-10 Customer Concierge
+MK3100 Micro Kiosk
+MK4000 Micro Kiosk
+MK500 Micro Kiosk
+ 
+
+
+
+
+
+
+
+
+
+
+Software
+
+Barcode Printers
+Card Software
+Mobile Computers
+Scanning Systems
+Zebra Commerce
+WLAN Systems
+Software Partners
+Development Services
+Internet of Things
+Discontinued Products
+ 
+
+
+
+
+
+
+
+
+
+
+OEM
+
+OEM Scan Engines
+OEM Private Label
+ 
+
+
+
+
+
+
+
+
+
+
+Laser, Thermal and RFID Wristbands
+
+Laser Printable
+Thermal Printable
+Other Wristband Products
+RFID
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Printer Parts
+
+Industrial Printer Parts
+Desktop Printer Parts
+Kiosk Printer Parts
+Print Engine Parts
+Passive RFID Printer Parts
+ZXP Card Printer Parts
+ 
+
+
+
+
+
+
+
+
+
+
+Supplies
+
+Labels & Tags
+Receipt Paper
+Laser, Thermal and RFID Wristbands
+Ribbons
+Custom Supplies
+Cards
+Card Laminates & Overlays
+Card Printer Ribbons
+Card Printer Cleaning Supplies
+Quikcard Professional Photo ID Kit
+RFID Inlay Placement Guidelines
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Location Solutions
+Zebra's innovative location solutions provide state-of-the-art location infrastructure, tags and software to track and manage your resources.
+
+Need help choosing?
+
+
+
+Contact an Expert
+
+
+
+
+
+
+
+
+
+
+
+By Business Need
+
+Zebra MotionWorksTM
+Material Flow
+Asset Visibility
+Inventory Tracking
+Work In Process
+Yard Management
+Enabling Technologies
+
+
+
+
+
+
+
+
+
+
+Location Solutions Resources
+
+Location Solutions Brochure
+Contact a Location Solutions Expert
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Services
+Seeing is achieving. When you can see it all, you can do it all. And our end-to-end solutions are just the beginning. As a complete solutions provider, Zebra has the distinct capability to offer everything our customers need to round out their technology investments with complete solutions.
+
+
+
+Zebra's Services Brochure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies Corp. Company and Product Info from Supply & Demand Chain Executive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+				Channels			
+			
+
+
+
+
+
+Demand Mgmt
+
+
+
+
+
+WMS/Logistics
+
+
+
+
+
+Global SCM
+
+
+
+
+
+Integration/ERP
+
+
+
+
+
+Payment
+
+
+
+
+
+Sourcing/Procurement
+
+
+
+
+
+Risk Mgmt
+
+
+
+
+
+Industry Resources
+
+
+
+
+
+
+
+
+
+
+
+
+Go
+
+
+
+
+
+
+
+Menu
+
+
+
+Channels
+
+
+
+Demand Mgmt
+
+
+
+
+
+WMS/Logistics
+
+
+
+
+
+Global SCM
+
+
+
+
+
+Integration/ERP
+
+
+
+
+
+Payment
+
+
+
+
+
+Sourcing/Procurement
+
+
+
+
+
+Risk Mgmt
+
+
+
+
+
+Industry Resources
+
+
+Additional Resources
+
+
+Media Center
+
+
+
+
+Magazine
+
+
+
+
+Events
+
+
+
+
+Awards
+
+
+
+
+SDC Map
+
+
+
+
+Sponsored Research
+
+
+
+
+Webinars
+
+
+
+
+Blogs
+
+
+
+
+Supply Chain Learning Center
+
+
+
+
+Podcasts
+
+
+User
+Log Out
+Register
+Log In
+Privacy Policy
+Terms of Use
+Site Tools
+Contact Us
+Advertise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Industry Resources
+
+
+ Zebra Technologies Corp. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ | Share
+
+
+ | Share
+
+
+ | Share
+
+
+ | Share
+
+
+
+
+Company Details:
+									475 Half Day Rd.
+									
+																			Suite 500
+									
+																			Lincolnshire, IL 60069
+																												
+																	
+
+Phone: (847) 634-6700 Toll Free: (866) 230-9494 Fax: (847) 913-8766 http://www.zebra.com 
+Zebra Technologies is a global solutions and service provider in barcode printing and RTLS technology including printers, RFID, software and supplies.
+
+
+
+
+
+
+
+ Continue Reading
+
+
+
+
+
+
+
+
+
+
+				  Industry Resources
+			
+
+
+
+
+
+
+SEARCH
+
+
+
+
+
+            Customer Relationship Management
+            
+
+
+
+ Channel Management & Customer Analytics 
+
+
+ Content Management 
+
+
+ Reverse Logistics Material and-or Merchandise Returns 
+
+
+ Sales Force Automation 
+
+
+ Service Parts Logistics Field Service 
+
+
+ Warranty Chain Management 
+
+
+
+
+
+            Decision Support
+            
+
+
+
+ Analysis 
+
+
+ Business Process & Performance Management 
+
+
+ Enterprise Business Intelligence 
+
+
+ Information Sharing 
+
+
+ Inter-enterprise & Cross-functional Collaboration, Change Management, Staffing & Incentive Management 
+
+
+ Regulatory & Customer Mandate Compliance, Governance Issues, Supply Chain Risk Management, Supply Chain Relationship Managem 
+
+
+ Research, Advisory & Consulting 
+
+
+ Revenue, Price & Profit Management Automation 
+
+
+
+
+
+            Fulfillment Logistics
+            
+
+
+
+ Customized Build Assemble Order & Delivery Management 
+
+
+ Distribution Planning Distribution Requirements Planning 
+
+
+ Global Trade Management 
+
+
+ Inventory Management & Optimization 
+
+
+ Logistics Resource Management 
+
+
+ Manufacturing Execution Systems 
+
+
+ Order Management Inputs 
+
+
+ Outsourcing Services 
+
+
+ Service Parts Logistics 
+
+
+ Simultaneous Outbound & Inbound Management 
+
+
+ Supply Chain Event Management 
+
+
+ Supply Chain Execution 
+
+
+ Transportation Management & Optimization 
+
+
+ Vendor-Managed Inventory 
+
+
+ Warehouse Management Services 
+
+
+
+
+
+            Order Demand Capture
+            
+
+
+
+ Demand Planning Forecasting 
+
+
+ Order Demand Management 
+
+
+ Outsourced Manufacturing 
+
+
+ Supply & Demand Chain Network Design 
+
+
+ Supply Chain & Production Planning 
+
+
+ Supply Chain Coordination & Event Management 
+
+
+
+
+
+            Payment
+            
+
+
+
+ e-Credit 
+
+
+ e-Money 
+
+
+ Electronic Bill Presentment, e-Invoicing 
+
+
+ Electronic Funds Transfer & All Forms of e-Payment 
+
+
+ Financial Transaction Management 
+
+
+ Purchasing Cards 
+
+
+ Spend Data Management 
+
+
+
+
+
+            Procurement
+            
+
+
+
+ Content Management 
+
+
+ Contingent Workforce Management 
+
+
+ Group Purchasing Organizations Solutions 
+
+
+ Marketplaces 
+
+
+ Supplier Enablement 
+
+
+ Supplier Performance Measurement & Monitoring 
+
+
+ Supplier Relationship Management & Supplier Development Marketplaces 
+
+
+ Supplier Risk Management 
+
+
+
+
+
+            Product Lifecycle Management
+            
+
+
+
+ Collaborative Design 
+
+
+ New Product Introduction 
+
+
+ Outsourced Design Services 
+
+
+ Product Data Management 
+
+
+ Product Portfolio Management 
+
+
+ Request for Information 
+
+
+
+
+
+            Professional Development
+            
+
+
+
+ Certification 
+
+
+ Conferences - Educational 
+
+
+ Conferences - Exposition 
+
+
+ Education - Private Institution 
+
+
+ Education - University 
+
+
+ Professional Organizations & Assocations 
+
+
+ Training 
+
+
+
+
+
+            Sourcing
+            
+
+
+
+ Auctions 
+
+
+ Commodity Team & Supplier Collaboration 
+
+
+ Content Management 
+
+
+ Contract Management 
+
+
+ Outsourced Manufacturing 
+
+
+ Spend Analytics & Supply Strategy 
+
+
+ Trading Exchanges (public & private) 
+
+
+
+
+
+            Supply Chain Integration & Technology Infrastructure
+            
+
+
+
+ Auto-ID & Data Capture (RFID, barcode) 
+
+
+ B2B Connectivity Standards 
+
+
+ Contingency Planning 
+
+
+ Electronic Data Interchange (EDI) 
+
+
+ Enterprise Application Integration (EAI) 
+
+
+ Enterprise Asset Management (EAM) 
+
+
+ Enterprise Data Management & Data Synchronization 
+
+
+ Enterprise Resource Planning (ERP) 
+
+
+ Hardware Options 
+
+
+ Internal External Portals 
+
+
+ Network Infrastructure 
+
+
+ On-demand Hosted Applications 
+
+
+ Regulatory & Customer Mandate Compliance, Governance Issues 
+
+
+ Security 
+
+
+ Wireless Applications & Devices 
+
+
+
+
+
+
+
+
+
+Industry Resources
+
+
+
+ Zebra Technologies Corp. 
+
+
+
+
+
+Industry Resources
+
+
+
+ 
+
+
+
+ Warehouses Getting More Complex, Survey Says 
+
+
+
+
+
+Distribution Planning Distribution Requirements Planning
+
+
+
+ 
+
+
+
+ New Mobile Computer Revolutionizes Warehousing, Saving an Hour per Worker per Shift 
+
+
+
+
+
+Enterprise Business Intelligence
+
+
+
+ Customizable Tablets for Enterprise Asset Intelligence 
+
+
+
+
+
+Industry Resources
+
+
+
+ Smarter Operations: Manufacturing Industry Is Ready for the Internet of Things 
+
+
+
+
+
+Enterprise Asset Management (EAM)
+
+
+
+ Zebra Technologies Unveils a New Channel Program 
+
+
+
+
+
+Industry Resources
+
+
+
+ 
+
+
+
+ 'Tis the Season of Retail 
+
+
+
+
+
+
+
+
+
+
+Industry Resources
+
+
+
+ 
+
+
+
+ Warehouses Getting More Complex, Survey Says 
+
+
+April 27, 2016
+
+
+		New technologies are transforming warehouses, particularly those serving e-commerce, survey of logistics professionals finds
+	
+
+
+
+
+Distribution Planning Distribution Requirements Planning
+
+
+
+ 
+
+
+
+ New Mobile Computer Revolutionizes Warehousing, Saving an Hour per Worker per Shift 
+
+
+
+   From 
+   Zebra Technologies Corp.
+
+
+		The enterprise-class TC8000 mobile computer helps boost productivity and reduces worker fatigue
+	
+
+
+
+
+Enterprise Business Intelligence
+
+
+
+ Customizable Tablets for Enterprise Asset Intelligence 
+
+
+
+   From 
+   Zebra Technologies Corp.
+
+
+		ET50 and ET55 tablets cater to diverse mobile strategies with a choice of operating system and display size
+	
+
+
+
+
+Industry Resources
+
+
+
+ Smarter Operations: Manufacturing Industry Is Ready for the Internet of Things 
+
+
+August 10, 2015
+
+
+		97 percent in manufacturing believe that the Internet of Things is the most significant technology initiative of the decade
+	
+
+
+
+
+Enterprise Asset Management (EAM)
+
+
+
+ Zebra Technologies Unveils a New Channel Program 
+
+
+
+   From 
+   Zebra Technologies Corp.
+
+
+		The program enables and rewards growth for channel partners who invest in driving value for end-user customers
+	
+
+
+
+
+Industry Resources
+
+
+
+ 
+
+
+
+ 'Tis the Season of Retail 
+
+
+		Prepare your supply chain for the year’s ultimate shopping craze through careful planning, as well as maximizing visibility and flexibility
+	
+
+
+
+
+
+
+
+
+ 
+
+Loading
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Demand Mgmt
+
+
+
+
+
+WMS/Logistics
+
+
+
+
+
+Global SCM
+
+
+
+
+
+Integration/ERP
+
+
+
+
+
+Payment
+
+
+
+
+
+Sourcing/Procurement
+
+
+
+
+
+Risk Mgmt
+
+
+
+
+
+Industry Resources
+
+
+
+Log Out
+Register
+Log In
+Privacy Policy
+Terms of Use
+Contact Us
+Advertise
+Sitemap
+
+
+
+
+ 
+
+
+
+
+
+
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Financial Contrast: API Technologies Corp (ATNY) and Zebra Technologies Corporation (ZBRA) - Markets Daily
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Daily Ratings & News for API Technologies Corp
+        	Complete the form below to receive the latest headlines and analysts' recommendationsfor API Technologies Corp with our free daily email newsletter:
+
+
+
+ 
+
+
+
+
+
+Follow @TheMarketsDaily
+
+
+The Markets Daily
+
+
+
+
+
+
+
+
+
+Recent Posts
+
+Consort Medical plc (NASDAQ:CSRMY) Given Consensus Recommendation of “Strong Buy” by Brokerages
+Ironwood Pharmaceuticals, Inc. (NASDAQ:IRWD) Given Consensus Recommendation of “Hold” by Analysts
+Carnival Corporation (CCL) Given Consensus Recommendation of “Buy” by Analysts
+Comparing Electronic Arts (EA) and ANSYS (ANSS)
+Quest Diagnostics Incorporated (NYSE:DGX) Set to Announce Quarterly Earnings on Tuesday
+Head-To-Head Comparison: Tumi Holdings (NYSE:TUMI) versus Ralph Lauren Corporation (RL)
+Critical Survey: IMPINJ (PI) and SuperCom (SPCB)
+Public Employees Retirement System of Ohio Holds Stake in AGCO Corporation (AGCO)
+Fjarde AP Fonden Fourth Swedish National Pension Fund Has $11.97 Million Position in United Parcel Service, Inc. (NYSE:UPS)
+Northwestern Mutual Wealth Management Co. Sells 6,241 Shares of Costco Wholesale Corporation (NASDAQ:COST)
+Keybank National Association OH Has $65.71 Million Stake in Costco Wholesale Corporation (NASDAQ:COST)
+Sawtooth Solutions LLC Buys 1,375 Shares of Celgene Corporation (NASDAQ:CELG)
+Yorktown Management & Research Co Inc Maintains Stake in Bank of America Corporation (BAC)
+Gilead Sciences, Inc. (GILD) Shares Sold by Morris Capital Advisors LLC
+Sumitomo Life Insurance Co. Lowers Stake in General Electric Company (GE)
+McDonald’s Corporation (MCD) Shares Bought by Girard Partners LTD.
+Malaga Cove Capital LLC Has $1.48 Million Stake in J P Morgan Chase & Co (NYSE:JPM)
+Glenview State Bank Trust DEPT. Maintains Position in J P Morgan Chase & Co (JPM)
+Exxon Mobil Corporation (XOM) Shares Sold by Janney Capital Management LLC
+Verizon Communications Inc. (VZ) Shares Sold by First Midwest Bank Trust Division
+
+
+
+
+ 
+
+
+Financial Contrast: API Technologies Corp (ATNY) and Zebra Technologies Corporation (ZBRA)
+
+					Posted by Sarita Garza on Jul 24th, 2017 // No Comments 
+
+
+
+
+API Technologies Corp (NASDAQ: ATNY) and Zebra Technologies Corporation (NASDAQ:ZBRA) are both technology companies, but which is the superior business? We will contrast the two businesses based on the strength of their valuation, profitabiliy, institutional ownership, earnings, dividends, risk and analyst recommendations. 
+Institutional & Insider Ownership
+
+
+ Get API Technologies Corp alerts:
+
+
+
+94.2% of Zebra Technologies Corporation shares are held by institutional investors. 2.5% of Zebra Technologies Corporation shares are held by company insiders. Strong institutional ownership is an indication that large money managers, endowments and hedge funds believe a company is poised for long-term growth.
+
+
+
+
+Analyst Recommendations
+This is a breakdown of recent recommendations and price targets for API Technologies Corp and Zebra Technologies Corporation, as provided by MarketBeat. 
+
+
+
+Sell Ratings
+Hold Ratings
+Buy Ratings
+Strong Buy Ratings
+Rating Score
+
+
+API Technologies Corp
+0
+0
+0
+0
+N/A
+
+
+Zebra Technologies Corporation
+0
+4
+4
+0
+2.50
+
+
+Zebra Technologies Corporation has a consensus price target of $96.83, indicating a potential downside of 2.02%. Given Zebra Technologies Corporation’s  higher probable upside, analysts plainly believe Zebra Technologies Corporation is more favorable than API Technologies Corp.
+Profitability
+This table compares API Technologies Corp and Zebra Technologies Corporation’s net margins, return on equity and return on assets.
+
+
+
+Net Margins
+Return on Equity
+Return on Assets
+
+
+API Technologies Corp
+-11.81%
+-30.24%
+-7.58%
+
+
+Zebra Technologies Corporation
+-2.98%
+37.96%
+6.41%
+
+
+Earnings and Valuation
+This table compares API Technologies Corp and Zebra Technologies Corporation’s top-line revenue, earnings per share and valuation.
+
+
+
+Gross Revenue
+Price/Sales Ratio
+EBITDA
+Earnings Per Share
+Price/Earnings Ratio
+
+
+API Technologies Corp
+N/A
+N/A
+N/A
+N/A
+N/A
+
+
+Zebra Technologies Corporation
+$3.59 billion
+1.45
+$602.00 million
+($2.06)
+-47.98
+
+
+Zebra Technologies Corporation has higher revenue and earnings than API Technologies Corp. 
+Summary
+Zebra Technologies Corporation beats API Technologies Corp on 8 of the 8 factors compared between the two stocks.
+About API Technologies Corp
+API Technologies Corp. (API) is engaged in providing radio frequency (RF) microwave, microelectronic, power and security solutions. The Company offers a range of RF, microwave, millimeter wave and microelectronics products ranging from components to complete system solutions. The Company operates through three segments. The Systems, Subsystems & Components (SSC) segment’s products include RF, microwave and millimeter wave products; microcircuits and microelectronics; electromagnetic integrated solutions, and power solutions. The Electronic Manufacturing Services segment offers electronics manufacturing services (EMS) for defense, commercial and medical customers. The Secure Systems & Information Assurance (SSIA) segment develops and offers various secure network and hardware solutions, including TEMPEST and Emanation Security, ruggedized systems, secure access, information assurance products, as well as TEMPEST certification.
+About Zebra Technologies Corporation
+Zebra Technologies Corporation designs, manufactures and sells a range of automatic identification and data capture (AIDC) products. The Company’s AIDC products include mobile computers, barcode scanners, radio frequency identification (RFID) readers, wireless local area network (WLAN) products, specialty printers for barcode labeling and personal identification, real-time location systems (RTLS), related accessories and supplies, such as self-adhesive labels and other consumables, and utilities and application software. The Company operates through two segments: Enterprise, which comprises its mobile computing, data capture, RFID and WLAN products, and services, and Legacy Zebra, which comprises barcode and card printing, location solutions, supplies and services. The Company’s products are used in automatic identification (auto ID), data collection and personal identification applications.
+
+
+
+
+
+
+Receive News & Ratings for API Technologies Corp Daily - Enter your email address below to receive a concise daily summary of the latest news and analysts' ratings for API Technologies Corp and related companies with MarketBeat.com's FREE daily email newsletter.
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Latest News
+
+
+
+
+
+
+Leave a Reply
+
+Click here to cancel reply.
+
+
+
+
+Name  (Required) 
+
+
+
+Mail (will not be published)  (Required) 
+
+
+
+Website
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Discount DuraLabel Supplies | Vinyl Tape | Precision Label
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Loading... Please wait...
+
+
+
+
+
+
+Menu
+
+
+
+Compare (0 Item)
+
+
+My Account
+
+Gift Certificates
+
+Sign in or Create an account
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Shopping Cart
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+closeSidrBtn
+
+Categories
+
+
+
+Thermal Label Printers
+Vinyl Tape
+White
+Yellow
+Red
+Green
+Orange
+Blue
+Black
+Clear
+Non-Standard Colors
+Seven Year Bright Orange
+Arctic Blue
+Beige
+Brown
+Burgundy
+Cherry Red
+Cranberry
+Dark Green
+Dark Yellow
+Forest Green
+Gold
+Gray
+Kelly Green
+Lemon Yellow
+Midnight Blue
+Ocean Blue
+Pink
+Plum
+Purple
+Sapphire Blue
+Silver
+Sky Blue
+Teal
+
+
+Excel 9 Tape
+White
+Yellow
+Red
+Green
+Orange
+Blue
+Black
+Clear
+
+
+
+
+Specialty Tapes & Labels
+Fluorescent Tapes
+Hi-Tack Tapes
+Nine Year Vinyl Tapes
+Reflective Tapes
+Magnetic Tapes
+Repositionable Tapes
+Striped Vinyl Tapes
+Die-Cut Labels
+"Danger" Die-Cut Labels
+"Warning" Die-Cut Labels
+Striped Die-Cut Labels
+Blank Die-Cut Labels
+RTK
+NFPA
+
+
+
+
+Ribbon
+2.5 inch
+4.33 inch
+8.66 inch
+Colored Ribbon
+Specialty Ribbons
+
+
+Package Deals
+
+
+
+
+
+Quick Links
+
+
+DuraLabel Compatible
+ 
+Home
+ 
+About Us
+ 
+Tech Support
+ 
+Downloads
+ 
+Contact Us
+ 
+DuraLabel
+
+
+
+
+Mobile Navigation
+
+
+
+
+ 
+
+Shopping Cart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HomeHome
+
+
+Home
+
+
+Categories
+
+
+
+Thermal Label Printers
+Vinyl Tape
+White
+Yellow
+Red
+Green
+Orange
+Blue
+Black
+Clear
+Non-Standard Colors
+Seven Year Bright Orange
+Arctic Blue
+Beige
+Brown
+Burgundy
+Cherry Red
+Cranberry
+Dark Green
+Dark Yellow
+Forest Green
+Gold
+Gray
+Kelly Green
+Lemon Yellow
+Midnight Blue
+Ocean Blue
+Pink
+Plum
+Purple
+Sapphire Blue
+Silver
+Sky Blue
+Teal
+
+
+Excel 9 Tape
+White
+Yellow
+Red
+Green
+Orange
+Blue
+Black
+Clear
+
+
+
+
+Specialty Tapes & Labels
+Fluorescent Tapes
+Hi-Tack Tapes
+Nine Year Vinyl Tapes
+Reflective Tapes
+Magnetic Tapes
+Repositionable Tapes
+Striped Vinyl Tapes
+Die-Cut Labels
+"Danger" Die-Cut Labels
+"Warning" Die-Cut Labels
+Striped Die-Cut Labels
+Blank Die-Cut Labels
+RTK
+NFPA
+
+
+
+
+Ribbon
+2.5 inch
+4.33 inch
+8.66 inch
+Colored Ribbon
+Specialty Ribbons
+
+
+Package Deals
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pipe Marking
+
+
+ Arc Flash
+
+
+ 
+ HMIS Right to Know
+
+
+
+Same or Superior Quality at a Fraction of the Price!
+DuraLabel 4" x 150' vinyl = $257.99
+Precision 4" x 150' vinyl =  $74.95
+
+If you're a DuraLabel customer you owe it to yourself to give us a call and learn how we can save you money.  We've sold millions of dollars worth of extremely high quality vinyl tape and ribbon to the U.S. Army, U.S. Navy, Marine Corps and Air Force because of one simple reason:  We sell quality products  at fair prices.  Precision Label Products has been providing great products to great customers for over eight years.  But it's not all about lower pricing than DuraLabel, it's also about our great customer service and superior technical support.  Our label printers provide labeling solutions for any workplace. Our high quality Precision thermal transfer printers allow you to print professional labels with the durability to withstand harsh outdoor conditions.
+Our printers ship with BarTender UltraLite label software.  BarTender is the world's leading label software.  Precision printers are user friendly and also work with other common word processing programs such as Microsoft Word. 
+Labeling applications include OSHA compliant safety and warning labels, pipe marking and valve tags, arc flash, RTK color bar labels, 5s labels, wire and cable marking and identification, rack and bin labels, shrink tube, barcoding, control panel labels and much more.
+Precision Label Products offers quality thermal label printers and DuraLabel Compatible supplies at at great pricing.
+ 
+ 
+Also, enjoy one of our popular perks: 
+
+ 
+ 
+
+
+BuyVeteran.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign up for our newsletter
+
+
+
+
+
+
+Name
+
+
+
+Email
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quick Links
+
+
+DuraLabel Compatible
+ 
+Home
+ 
+About Us
+ 
+Tech Support
+ 
+Downloads
+ 
+Contact Us
+ 
+DuraLabel
+
+
+
+
+
+Categories
+
+
+Thermal Label Printers
+Vinyl Tape
+White
+Yellow
+Red
+Green
+Orange
+Blue
+Black
+Clear
+Non-Standard Colors
+Seven Year Bright Orange
+Arctic Blue
+Beige
+Brown
+Burgundy
+Cherry Red
+Cranberry
+Dark Green
+Dark Yellow
+Forest Green
+Gold
+Gray
+Kelly Green
+Lemon Yellow
+Midnight Blue
+Ocean Blue
+Pink
+Plum
+Purple
+Sapphire Blue
+Silver
+Sky Blue
+Teal
+
+
+Excel 9 Tape
+White
+Yellow
+Red
+Green
+Orange
+Blue
+Black
+Clear
+
+
+
+
+Specialty Tapes & Labels
+Fluorescent Tapes
+Hi-Tack Tapes
+Nine Year Vinyl Tapes
+Reflective Tapes
+Magnetic Tapes
+Repositionable Tapes
+Striped Vinyl Tapes
+Die-Cut Labels
+"Danger" Die-Cut Labels
+"Warning" Die-Cut Labels
+Striped Die-Cut Labels
+Blank Die-Cut Labels
+RTK
+NFPA
+
+
+
+
+Ribbon
+2.5 inch
+4.33 inch
+8.66 inch
+Colored Ribbon
+Specialty Ribbons
+
+
+Package Deals
+
+
+
+
+Brands
+
+
+Excel
+
+View all brands
+
+
+
+
+
+
+
+Scroll to Top
+
+Copyright 2017 Precision Label Products. All Rights Reserved.  DuraLabel is a registered trademark of Graphic Products.  All trademarks and registered trademarks are the property of their respective owners.| Sitemap | 
+                    All prices are in USD
+BigCommerce Premium Themes by PSDCenter
+                
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ZBRA:NASDAQ GS Stock Quote - Zebra Technologies Corp - Bloomberg Markets                     
+
+
+
+     Error: Could not add to watchlist. X   + Watchlist  Zebra Technologies Corp   ZBRA:US   NASDAQ GS        102.76USD   0.01   0.01%     As of 8:10 PM EDT 7/28/2017     Open   102.52    Day Range   101.45 - 103.69    Volume   388,113    Previous Close   102.77    52Wk Range   52.32 - 109.30    1 Yr Return   93.85%                   
+
+
+                Before it's here, it's on the Bloomberg Terminal.
+            
+
+                Learn More
+            
+
+         Open   102.52    Day Range   101.45 - 103.69    Volume   388,113    Previous Close   102.77    52Wk Range   52.32 - 109.30    1 Yr Return   93.85%    YTD Return   19.82%    Current P/E Ratio (TTM)   80.88    Earnings per Share (USD) (TTM)   1.27    Market Cap (b USD)   5.422    Shares Outstanding  (m)   52.764    Price/Sales (TTM)   1.48    Dividend Indicated Gross Yield   -        Sector Information Technology   % Price Change -0.09%     Industry Technology Hardware & Equipment   % Price Change -0.66%                    Related Videos  There are currently no related videos for this ticker. Please check back later.    Company News Press Releases    5/31/2017   Analysts' Actions -- Gogo, iRobot, Eli Lilly, VMware and More  - The Street    There are currently no news stories for this ticker. Please check back later.     7/28/2017   ZEBRA TECHNOLOGIES SHAREHOLDER ALERT BY FORMER LOUISIANA ATTORNEY GENERAL: KAHN SWICK & FOTI, LLC REMINDS INVESTORS WITH LOSSES     7/28/2017   IMPORTANT INVESTOR ALERT: Lundin Law PC Announces Securities Class Action Lawsuit against Zebra Technologies Corporation and     7/28/2017   INVESTOR ALERT: Levi & Korsinsky, LLP Reminds Investors of an Investigation Involving Possible Securities Fraud Violations by     7/28/2017   SHAREHOLDER ALERT: Goldberg Law PC Announces the Filing of a Securities Class Action Lawsuit against Zebra Technologies     7/28/2017   EQUITY ALERT: Rosen Law Firm Announces Filing of Securities Class Action Lawsuit Against Zebra Technologies Corporation     7/27/2017   IMPORTANT INVESTOR ALERT: Khang & Khang LLP Announces Securities Class Action Lawsuit against Zebra Technologies Corporation and     7/27/2017   Glancy Prongay & Murray Announces the Filing of a Securities Class Action on Behalf of Zebra Technologies Corporation Investors     7/27/2017   Bragar Eagel & Squire, P.C. Announces That a Class Action Lawsuit Has Been Filed Against Zebra Technologies Corporation (ZBRA)     7/27/2017   Federman & Sherwood Announces Filing of Securities Class Action Lawsuit Against Zebra Technologies Corporation     7/27/2017   IMPORTANT SHAREHOLDER ALERT: Lundin Law PC Announces Securities Class Action Lawsuit against Zebra Technologies Corporation and    There are currently no press releases for this ticker. Please check back later.      Profile   Zebra Technologies Corporation designs and manufactures enterprise mobile computers, advanced data capture devices, such as laser, 2D and RFID scanners and readers, and specialty printers for barcode labeling and personal identification. The Company also produces WLAN products, real-time location systems, related supplies, and application software.    Address  3 Overlook PointLincolnshire, IL 60069United States   Phone  1-847-634-6700   Website   www.zebra.com     Executives Board Members    Anders Gustafsson  Chief Executive Officer    Olivier C Leonetti  Chief Financial Officer    Michael H Terzich "Mike"  Chief Administrative Officer    Colleen M O'Sullivan  Chief Accounting Officer    Tom Bianculli  Chief Technology Officer     Show More         
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies Corp - NASDAQ:ZBRA - Stock Quote & News - TheStreet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Action Alerts PLUS
+
+Access AAPJim Cramer's Best Stocks for 2017Charitable Trust PortfolioMost Recent Trade Alert25 Investing Rules10 Trading Commandments
+
+Real Money
+
+Access RM25 Rules of InvestingJim Cramer's Best Stocks for 201710 CommandmentsStressed Out StocksCramer's Blog
+
+Cramer
+Mad Money
+ETFs
+Futures
+Markets
+Much More
+
+BanksBiotechRetailTechPersonal FinanceRetirementFinancial Advisor CenterHow to SpendOptionsFixed IncomeVideo
+
+
+
+
+
+
+
+
+
+
+Privacy Policy|Terms of Use© 1996- TheStreet Inc. All rights reserved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                DJIA
+                            
+
+
+
+
+
+
+
+                                NASDAQ
+                            
+
+
+
+
+
+
+
+                                S&P 500
+                            
+
+
+
+
+
+
+Market Data updated
+
+
+
+
+
+
+Sign In
+
+
+
+
+Your Membership(s)
+
+
+
+
+
+
+
+
+Your Account
+
+
+
+
+
+Account Preferences
+
+
+Alerts
+
+
+Newsletters
+
+
+
+
+
+
+
+Subscribe
+
+
+
+
+
+Logout
+
+
+
+Subscribe
+
+Access insights and guidance from our Wall Street pros. Find the product that's right for you.
+Action Alerts PLUS
+Action Alerts OPTIONS
+Daily Swing Trade
+Income Seeker
+Quant Ratings
+Real Money
+Real Money Pro
+Stocks Under $10
+Top Stocks
+Trifecta Stocks
+Real Money Pro Portfolio
+Chairman's Club
+Compare All 
+Chatter on the Street
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies Corp (ZBRA)
+Follow
+
+
+
+
+                                102.76
+                            
+
+
+
+
+
+
+
+                        NASDAQ : Industrial Goods
+                    
+
+Jul 28, 2017 4:00 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+Prev Close
+  102.77
+
+
+Day Low/High
+
+                                    101.45 /
+                                    103.69
+
+
+52 Wk Low/High
+
+                                    52.32 /
+                                    109.30
+                                
+
+
+Avg Volume 
+364.20K
+
+
+
+
+
+
+
+
+
+
+
+Exchange
+NASDAQ
+
+
+Shares Outstanding
+52.76M
+
+
+Market Cap
+5.42B
+
+
+EPS
+-2.60
+
+
+P/E Ratio
+
+                                        
+                                            N/A
+                                        
+                                    
+
+
+Div & Yield
+
+                                        
+                                            N.A. (N.A)
+                                        
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trade with Jim Cramer 14 Days FREE 
+
+
+
+
+
+
+
+
+
+Latest News
+
+
+
+
+
+
+
+
+
+INVESTOR ALERT: Levi & Korsinsky, LLP Reminds Investors Of An Investigation Involving Possible Securities Fraud Violations By The Board Of Directors Of Zebra Technologies Corporation
+
+
+
+
+
+
+
+
+
+
+
+SHAREHOLDER ALERT: Goldberg Law PC Announces The Filing Of A Securities Class Action Lawsuit Against Zebra Technologies Corporation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EQUITY ALERT: Rosen Law Firm Announces Filing Of Securities Class Action Lawsuit Against Zebra Technologies Corporation
+Rosen Law Firm, a global investor rights law firm, announces the filing of a class action lawsuit on behalf of purchasers of the securities of Zebra Technologies Corporation (NASDAQ:ZBRA) from March 17, 2015 through May 9,...
+
+Jul 28, 2017 12:00 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bragar Eagel & Squire, P.C. Announces That A Class Action Lawsuit Has Been Filed Against Zebra Technologies Corporation (ZBRA) And Encourages Investors To Contact The Firm
+Bragar Eagel & Squire, P.C.
+
+Jul 27, 2017 5:30 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Harwood Feffer LLP Announces Investigation Of Zebra Technologies Corporation
+
+
+Jul 27, 2017 1:23 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+SHAREHOLDER ALERT: Levi & Korsinsky, LLP Notifies Investors Of An Investigation Involving Possible Securities Fraud Violations By The Board Of Directors Of Zebra Technologies Corporation
+Levi & Korsinsky announces it has commenced an investigation of Zebra Technologies Corporation ("Zebra Technologies" or the "Company") (NASDAQ:ZBRA) concerning possible violations of federal securities laws.
+
+Jul 27, 2017 9:37 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bon-Ton Stores Improve Customer Experience And Sales Efficiency With Zebra RFID Technology
+Zebra Technologies Corporation (NASDAQ: ZBRA), the market leader in mobile computers, scanners and barcode printers enhanced with software and services to enable real-time enterprise visibility solutions, today...
+
+Jul 27, 2017 8:00 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+SHAREHOLDER ALERT: Bronstein, Gewirtz & Grossman, LLC Notifies Shareholders Of Class Action Against Zebra Technologies Corporation (ZBRA) & Lead Plaintiff Deadline: September 25, 2017
+
+
+Jul 26, 2017 7:08 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies Announces Comprehensive Debt Restructuring
+Zebra Technologies Corporation (NASDAQ: ZBRA), the market leader in rugged mobile computers, barcode scanners and barcode printers enhanced with software and services to enable real-time enterprise visibility, today...
+
+Jul 26, 2017 6:51 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies To Release Second-Quarter Results On Aug. 8
+Zebra Technologies Corporation (NASDAQ: ZBRA), the market leader in rugged mobile computers, barcode scanners and barcode printers enhanced with software and services to enable real-time enterprise visibility, will...
+
+Jul 26, 2017 4:00 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Unveils High-Performance Industrial Printers That Improve Operational Visibility And Productivity
+Zebra Technologies Corporation (NASDAQ: ZBRA), the market leader in rugged mobile computers, barcode scanners and barcode printers enhanced with software and services to enable real-time enterprise visibility,...
+
+Jul 18, 2017 8:00 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chicago Communications Community Recognizes Zebra Technologies For Intelligent Enterprise Campaign
+Zebra Technologies Corporation (NASDAQ: ZBRA), the market leader in rugged mobile computers, barcode scanners and barcode printers enhanced with software and services to enable real-time enterprise visibility,...
+
+Jul 14, 2017 6:02 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies' Next-Generation Scanner Scale Expedites Checkout Lines And Improves Shopper Experience
+Zebra Technologies Corporation (NASDAQ: ZBRA), the market leader in rugged mobile computers, barcode scanners and barcode printers enhanced with software and services to enable real-time enterprise visibility, today...
+
+Jun 29, 2017 8:00 AM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies' IFactr Platform Transitions To Open Source
+Zebra Technologies Corporation (NASDAQ: ZBRA), the market leader in rugged mobile computers, barcode scanners and barcode printers enhanced with software and services to enable real-time visibility, announced it is...
+
+Jun 27, 2017 8:00 AM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies' Ultra-Rugged Scanner Wins Good Design® Award For Outstanding Product Innovation
+Zebra Technologies Corporation (NASDAQ: ZBRA), the market leader in rugged mobile computers, barcode scanners and barcode printers enhanced with software and services to enable real-time enterprise visibility,...
+
+Jun 21, 2017 8:00 AM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies Reaches Analyst Target Price
+In recent trading, shares of Zebra Technologies Corp. have crossed above the average analyst 12-month target price of $107.28, changing hands for $108.03/share.
+
+Jun 9, 2017 10:05 AM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies To Present At The William Blair 2017 Growth Stock Conference
+Zebra Technologies Corporation (NASDAQ: ZBRA), the market leader in rugged mobile computers, barcode scanners and barcode printers enhanced with software and services to enable real-time enterprise visibility, today...
+
+Jun 8, 2017 3:44 PM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies' Innovative Solutions Recognized With Three Red Dot Awards 2017
+Zebra Technologies Corporation (NASDAQ: ZBRA), a global leader in providing solutions and services that give enterprises real-time visibility into their operations, announces that its TC5 Series touch computers,...
+
+Jun 1, 2017 8:00 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Analysts' Actions -- Gogo, iRobot, Eli Lilly, VMware and More
+Here are Wednesday's top research calls, including an upgrade for VMware, downgrades for iRobot and Molina, and new coverage of Gogo.
+
+May 31, 2017 8:44 AM EDT
+
+
+
+
+
+
+
+
+
+Zebra Sports Partners With Kinduct To Add Performance And Health Insights To Real-Time Player Tracking
+Zebra Technologies Corporation (NASDAQ:ZBRA), a global leader in providing solutions and services that give enterprises real-time visibility into their operations, announced the Zebra Sports practice system can now be...
+
+May 31, 2017 8:30 AM EDT
+
+
+
+
+
+
+
+
+
+Short Interest Drops 17.4% For ZBRA
+The most recent short interest data has been released for the 05/15/2017 settlement date, which shows a 355,082 share decrease in total short interest for Zebra Technologies Corp. , to 1,691,160, a decrease of 17.35% since 04/28/2017.
+
+May 25, 2017 2:44 PM EDT
+
+
+
+
+
+
+
+
+
+(Graphic: Business Wire)
+Zebra Technologies Corporation (NASDAQ: ZBRA), a global leader in providing solutions and services that give enterprises real-time visibility into their operations, has been named for the second consecutive year...
+
+May 24, 2017 8:00 AM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies To Present At The J. P. Morgan Technology, Media And Telecom Conference
+Zebra Technologies Corporation (NASDAQ: ZBRA), a global leader in providing solutions and services that give enterprises real-time visibility into their operations, today announced that the company will present at...
+
+May 18, 2017 9:54 AM EDT
+
+
+
+
+
+
+
+
+
+Dominium Dramatically Improves Operational Efficiency With Zebra Mobile Computing Solution
+Zebra Technologies Corporation (NASDAQ: ZBRA), a global leader in providing solutions and services that give enterprises real-time visibility into their operations, and Emkat Solutions, Inc.
+
+May 17, 2017 9:00 AM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies' Rita Koridek Recognized As One Of CRN's 2017 Women Of The Channel
+Zebra Technologies Corporation (NASDAQ: ZBRA), a global leader in providing solutions and services that give enterprises real-time visibility into their operations, today announced that CRN®, a brand of The...
+
+May 16, 2017 1:00 PM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies Redefines Large-Format Card Printing Industry
+Zebra Technologies Corporation (NASDAQ: ZBRA), a global leader in providing solutions and services that give enterprises real-time visibility into their operations, today announced the new ZC10L, Zebra's first...
+
+May 16, 2017 8:00 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies: Cramer's Top Takeaways
+Anders Gustafsson, CEO of Zebra Technologies, explains to Jim Cramer why e-commerce fulfillment centers need Zebra's technology.
+
+May 12, 2017 6:39 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Kids Are Taking Over the World: Cramer's 'Mad Money' Recap (Thursday 5/11/17)
+Jim Cramer says too many companies don't understand milliennials as a consumer group -- and it's killing traditional retail.
+
+May 11, 2017 10:47 PM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies Announces First-Quarter Results
+Zebra Technologies Corporation (NASDAQ: ZBRA), a global leader in providing solutions and services that give enterprises real-time visibility into their operations, today announced results for the first quarter ended...
+
+May 9, 2017 6:30 AM EDT
+
+
+
+
+
+
+
+
+
+Zebra Technologies Named To CRN's Mobility 100 List
+Zebra Technologies Corporation (NASDAQ: ZBRA), a global leader in providing solutions and services that give enterprises real-time visibility into their operations, today announced that CRN®, a brand of The...
+
+May 8, 2017 10:00 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next
+
+
+
+
+
+
+Load More
+
+
+
+
+
+
+
+
+
+Quant Rating on 4:00 PM EDT 7/28/2017
+
+
+C
+(Hold)
+
+
+
+
+
+
+Get the (ZBRA) Report Here 
+
+
+
+
+
+
+
+From Our Partners
+
+
+
+Zebra Technologies (ZBRA) Presents At The William Blair 2017 Growth Stock Conference - Slideshow
+
+SeekingAlpha
+
+
+
+Zebra Technologies downgraded to Equal Weight on valuation at Morgan Stanley
+
+The Fly
+
+
+
+Zebra Technologies downgraded to Equal Weight from Overweight at Morgan Stanley
+
+The Fly
+
+
+
+Zebra Technologies downgraded to Market Perform from Outperform at Wells Fargo
+
+The Fly
+
+
+
+Zebra Technologies Corporation 2017 Q1 - Results - Earnings Call Slides
+
+SeekingAlpha
+
+
+
+Zebra Technologies Sprints Ahead Of Q1 Views
+
+Investor's Business Daily
+
+
+
+Zebra Technologies beats by $0.07, beats on revenue
+
+SeekingAlpha
+
+
+
+Notable earnings before Tuesday’s open
+
+SeekingAlpha
+
+
+
+After-hours buzz: ZBRA, WEN & EOG
+
+CNBC
+
+
+
+Zebra Technologies set at Buy at Needham & Company
+
+SeekingAlpha
+
+
+
+Zebra Technologies initiated with a Buy at Needham
+
+The Fly
+
+
+
+Zebra Technologies Corporation 2016 Q4 - Results - Earnings Call Slides
+
+SeekingAlpha
+
+
+
+Zebra Technologies +2.65%; Q4 2016 results, Q1 outlook midpoints roughly in line
+
+SeekingAlpha
+
+
+
+Zebra Technologies beats by $0.20, beats on revenue
+
+SeekingAlpha
+
+
+
+Notable earnings before Thursday’s open
+
+SeekingAlpha
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TheStreet
+Quant Rating:
+
+C (Hold)
+
+
+
+Get the (ZBRA) Report Here 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Trending
+
+
+FTC Seen as Set to Block Rite Aid Deal
+
+
+The 12 Absolutely Cheapest Places to Buy a House in America
+
+
+It Would Be 'Crazy' to Clean House at Wells Fargo, CEO Says
+
+
+Tesla CEO Elon Musk: We Are Going to Be in Production Hell for 6 Months
+
+
+
+
+
+
+
+
+
+
+
+Advertising Partners
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+©1996-2017 TheStreet, Inc. All rights reserved.Action Alerts PLUS is a registered trademark of TheStreet, Inc.
+
+
+
+
+Compare Brokers
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies Corporation (ZBRA) Moves Lower on Volume Spike for July 25 | Equities.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BREAKING NEWS
+
+
+Previous
+
+
+Next
+
+
+
+
+
+
+                  Stocks End Mixed as Earnings Continue in Droves                
+
+
+
+
+
+                  How to Grow your New Business                
+
+
+
+
+
+                  ​Mark Dubowitz from the Foundation for Defense of Democracies on US Policy Toward Russia                
+
+
+
+
+
+                  ​Time for Convertible Securities?                
+
+
+
+
+
+                  ​Working with 9 Types of Global Influencers                
+
+
+
+
+
+
+
+
+
+
+
+US/Global
+Canada
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+News
+
+
+
+
+Log in
+
+
+
+
+
+
+Login to your account
+
+
+
+
+
+
+
+
+
+
+Log in
+
+
+
+
+  			Remember Me  		
+
+Forgot your password?
+
+Forgot your username?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Register
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			News		
+
+
+		Zebra Technologies Corporation (ZBRA) Moves Lower on Volume Spike for July 25	
+
+Equities Staff
+
+
+						Follow					
+											|
+				Tuesday, 25 July 2017 17:18 (EST)
+
+
+
+
+
+
+
+
+
+
+		Market Summary
+	
+ Follow 
+
+
+
+
+
+Zebra Technologies Corporation is a Manufactures and sells AIDC products
+
+
+
+
+Last Price
+					$ 102.76				
+
+Last Trade
+
+						Jul/28 - 16:00					
+
+
+
+
+Change
+					$ -0.01					
+
+Change Percent
+					-0.01 %
+				
+
+
+
+Open
+					$ 102.52				
+
+Prev Close
+					$ 102.77				
+
+
+
+High
+					$ 103.69				
+
+low
+					$ 101.45				
+
+
+
+52 Week High
+					$ 109.30				
+
+52 Week Low
+					$ 52.32				
+
+
+
+Market Cap
+					5,421,998,429				
+
+PE Ratio
+					6.82				
+
+
+
+Volume
+					388,113				
+
+Exchange
+					NGS				
+
+
+
+ZBRA - Market Data & News
+ZBRA - Stock Valuation Report
+ Trade 
+
+Zebra Technologies Corporation (ZBRA) traded on unusually high volume on Jul. 25, as the stock 
+lost 0.1% to close at $100.22. On the day, Zebra Technologies Corporation saw 581,556 shares trade hands on 4,929 trades. 
+Considering that the stock averages only a daily volume of 343,690 shares a day over the last month, this represents a pretty significant bump in volume over the norm.
+
+Generally speaking, when a stock experiences a sudden spike in trading volume, it may be seen as a bullish signal for investors. An increase in volume means more market awareness for the 
+company, potentially setting up a more meaningful move in stock price. The added volume also provides a level of support and stability for price advances.
+
+The stock has traded between $109.30 and $50.93 over the last 52-weeks, its 50-day SMA is now $102.72, and its 200-day SMA $87.83. Zebra Technologies Corporation 
+has a P/B ratio of 6.65.   
+
+
+Zebra Technologies Corp develops products for the automatic identification and data capture market. Its products find use in mobiles, computers, barcode scanners, RFID readers, specialty printers.
+
+Headquartered in Lincolnshire, IL, Zebra Technologies Corporation has 6,500 employees and is currently under the leadership of CEO Anders Gustafsson.
+
+
+For a complete fundamental analysis analysis of Zebra Technologies Corporation, check out Equities.com’s Stock Valuation Analysis report 
+for ZBRA.
+
+Want to invest with the experts? Subscribe to Equities Premium newsletters today! Visit http://www.equitiespremium.com/ to 
+learn more about Guild Investment’s Market Commentary  and Adam Sarhan’s 
+Find Leading Stocks  today. 
+
+
+To get more information on Zebra Technologies Corporation and to follow the company’s latest updates, you can visit the company’s profile page here:  
+ZBRA’s Profile. For more news on the financial markets and emerging growth companies, be sure to visit Equities.com’s 
+Newsdesk. Also, don’t forget to sign-up for our daily 
+email newsletter to ensure you don’t miss out on any of our best stories. 
+
+All data provided by QuoteMedia and was accurate as of 4:30PM ET. 
+
+  
+DISCLOSURE:
+					The views and opinions expressed in this article are those of the authors, and do not represent the views of equities.com. Readers should not consider statements made by the author as formal recommendations and should consult their financial advisor before making any investment decisions. To read our full disclosure, please go to: http://www.equities.com/disclaimer
+
+
+
+Comments
+
+
+
+
+
+
+You have to be logged in to leave a comment.
+Take me to log in
+Don't have an account?
+
+
+
+
+
+
+
+
+
+×
+You must log in first
+
+
+I'm sorry, but in order to complete what you're trying to do, you must be logged in.
+
+
+Take me to log in
+Don't have an account?
+I'm good for now
+
+
+
+
+
+
+
+ 
+More on Equities.com
+
+
+
+Student Loans Company criticised over 'penalty interest' on funds
+
+
+'It's Electric' -- and so is new school bus serving Lakeville students this fall
+
+
+Jessica Williams says it a 'great time' to be actor of color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trending Articles
+
+
+
+​PRO: The New Digital Currency Solves the Biggest Problem Bitcoin Can’t
+
+
+
+
+​MGX Minerals (XMG:CNX): Transforming Oil Wastewater to Power the Tech Future
+
+
+
+
+​NXT-ID’s Fit Pay Adding Secure Shine to New Token Smart Rings
+
+
+
+
+​Liberty One’s Pocitos West Project Positions It Perfectly for the Lithium Supercycle
+
+
+
+
+How Millennials are Changing the Housing Market
+
+
+
+
+​DynaCERT Brings Measurable Efficiency to a Global Auto Industry in Need of Reducing Carbon Emissions
+
+
+
+
+
+Emerging Growth
+
+
+Winston Gold Mining Corp.
+
+
+                Winston Gold Mining Corp is a mineral exploration and development company. The Company is engaged in acquiring, exploring, developing, and operating mining properties.            
+
+
+
+
+
+
+
+
+
+
+Private Markets 
+
+
+Quants Inc
+
+
+                Quants, Inc, a California Corporation, develops, markets and operates financial technology platforms and alternative investment products offering sophisticated risk management since 2010. The Company has primarily sharpened its focus with…            
+
+
+
+Voleo
+
+
+                Voleo is a free download that allows you to form investment clubs with 
+your friends, family, colleagues, classmates, teammates…basically anyone
+ you know and trust. Invest and manage a stock portfolio…            
+
+
+
+
+
+
+
+
+
+
+Corporate SitePremium ProductsAdvertisingRSS Feeds
+
+
+
+
+AboutContactSite MapTestimonials
+
+
+
+
+Privacy PolicyTerms and ConditionsDisclaimerConference
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Equities
+* All dates and time are being displayed in Eastern Standard Time (EST).
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+Follow companies mentioned in this article:
+
+ Follow 
+
+      Zebra Technologies Corporation    
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ZBRA - Stock quote for Zebra Technologies Corp - MSN Money
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+msn  back to msn home
+
+money
+
+
+
+
+
+
+
+
+
+
+web search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+Change language & content:
+
+América Latina (español)
+Argentina (español)
+Australia (English)
+België (Nederlands)
+Belgique (français)
+Brasil (português)
+Canada (English)
+Canada (français)
+Chile (español)
+Colombia (español)
+Danmark (Dansk)
+Deutschland (Deutsch)
+España (español)
+France (français)
+India (English)
+Indonesia (Bahasa Indonesia)
+Ireland (English)
+Italia (italiano)
+Malaysia (English)
+México (español)
+Nederland (Nederlands)
+New Zealand (English)
+Norge (norsk, bokmål)
+Österreich (Deutsch)
+Perú (español)
+Philippines (English)
+Polska (polski)
+Portugal (Português)
+Schweiz (Deutsch)
+Singapore (English)
+South Africa (English)
+Suisse (français)
+Suomi (suomi)
+Sverige (svenska)
+Türkiye (Türkçe)
+United Arab Emirates (English)
+United Kingdom (English)
+United States (English)
+United States (español)
+Venezuela (español)
+Việt Nam (Tiếng Việt)
+Ελλάδα (ελληνικά)
+Россия (Pусский)
+ישראל (עברית)‏
+الإمارات العربية المتحدة (العربية‏)
+المملكة العربية السعودية (العربية‏)
+مصر (العربية‏)
+ไทย (ไทย)
+한국 (한국어)
+中华人民共和国 (简体中文)
+台灣 (繁體中文)
+日本 (日本語)
+香港特别行政區 (繁體中文)
+
+
+
+Switch to Latino (Español)
+
+
+
+ Feedback
+
+
+
+Help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AdChoices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies Corp
+NASDAQ: ZBRA
+
+
+
+US Markets Closed
+
+
+
+
+
+
+
+
+
+
+AdChoices
+
+
+
+
+
+
+
+
+102.76
+
+
+▼
+
+
+-0.01
+-0.01%
+
+
+
+After Hours : 
+102.61
+-0.15
+-0.15%
+
+
+
+ July 28, 2017 6:20 PM EDT. Delayed 15 minutes; NASDAQ. Currency In USD                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Save
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Summary
+        
+
+
+
+            Financials
+        
+
+
+
+            Analysis
+        
+
+
+
+            Options
+        
+
+
+
+            Ownership
+        
+
+
+
+            Company
+        
+
+
+
+            History
+        
+
+
+
+            Related
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Open
+102.52
+
+
+Previous Close
+102.77
+
+
+Volume (Avg) 
+388.11k (363.74k)
+
+
+Day's Range
+101.45-103.69
+
+
+52Wk Range
+52.32-109.30
+
+
+Market Cap.
+5.42B
+
+
+Dividend Rate ( Yield)
+-
+
+
+Beta
+1.61
+
+
+Shares Outstanding
+52.76M
+
+
+P/E Ratio (EPS)
+-
+
+
+
+
+
+
+
+
+
+Recent News
+
+
+
+
+
+
+
+BRIEF-Zebra Technologies announces comprehensive debt restructuring
+
+                            
+                            Reuters
+                        
+2 days ago
+
+
+
+
+
+ 
+Amazon Food Ambitions Spur Little-Known Stock to Best IPO Return
+
+                            
+                            Bloomberg
+                        
+7/17/2017
+
+
+
+
+
+
+BRIEF-Zebra Technologies says on July 6, provided notice of conditional ...
+
+                            
+                            Reuters
+                        
+7/6/2017
+
+
+
+
+
+
+Zacks.com featured highlights: Principal Financial Group, Regeneron Pharmaceuticals, Zebra Technologies, United Technologies and T. Rowe Price Group
+
+                            
+                            NASDAQ
+                        
+6/30/2017
+
+
+
+
+
+
+ZEBRA TECHNOLOGIES SHAREHOLDER ALERT BY FORMER LOUISIANA ATTORNEY GENERAL: KAHN SWICK & FOTI, LLC REMINDS INVESTORS WITH LOSSES IN ...
+
+                            
+                            einpresswire.com
+                        
+4 hrs ago
+
+
+
+
+
+
+ZEBRA TECHNOLOGIES SHAREHOLDER ALERT BY FORMER LOUISIANA ATTORNEY GENERAL ...
+
+                            
+                            GlobeNewswire
+                        
+5 hrs ago
+
+
+
+
+
+
+
+
+IMPORTANT INVESTOR ALERT: Lundin Law PC Announces Securities Class Action Lawsuit against Zebra Technologies Corporation and Encourages Investors with Losses to Contact the Firm
+
+                            
+                            Business Wire
+                        
+10 hrs ago
+
+
+
+
+
+ 
+Global Ultra-WideBand Market 2022: By Application, Industry, Components, Top Vendors, Forecast
+
+                            
+                            News Maker
+                        
+15 hrs ago
+
+
+
+
+
+
+SHAREHOLDER ALERT: Goldberg Law PC Announces the Filing of a Securities Class Action Lawsuit against Zebra Technologies Corporation
+
+                            
+                            Business Wire
+                        
+15 hrs ago
+
+
+
+
+
+
+EQUITY ALERT: Rosen Law Firm Announces Filing of Securities Class Action Lawsuit Against Zebra Technologies Corporation
+
+                            
+                            enhancedonlinenews.com
+                        
+15 hrs ago
+
+
+
+
+
+
+Global Connected Logistics Market - Opportunities and Forecasts, 2016-2022
+
+                            
+                            sbwire.com
+                        
+16 hrs ago
+
+
+
+
+
+
+Rosen Law Firm Announces Filing of Securities Class Action Lawsuit Against Zebra Technologies Corporation
+
+                            
+                            4 Traders
+                        
+16 hrs ago
+
+
+
+
+
+
+
+
+Inventory Tags Market Is Expected To Grow At A CAGR Of 4% By 2022
+
+                            
+                            einpresswire.com
+                        
+17 hrs ago
+
+
+
+
+
+
+Gigabit Wi-Fi Access Point Market To Increase at Steady Growth Rate
+
+                            
+                            PR Inside
+                        
+19 hrs ago
+
+
+
+
+
+
+Real Time Location System (RTLS) Market Revenue and Value Chain 2015-2025
+
+                            
+                            PR Inside
+                        
+21 hrs ago
+
+
+
+
+
+ 
+Real-time location system (RTLS) industry forecast to 2022 made available by top research firm
+
+                            
+                            Whatech
+                        
+23 hrs ago
+
+
+
+
+
+ 
+Schaumburg's CellTrak gets $11M shot to boost home health care software
+
+                            
+                            BUSINESS LEDGER
+                        
+1 day ago
+
+
+
+
+
+
+Bragar Eagel & Squire, P.C.
+
+                            
+                            enhancedonlinenews.com
+                        
+1 day ago
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AdChoices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AdChoices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AdChoices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Markets
+
+
+
+
+
+
+
+
+
+
+
+DOW
+
+DOW
+
+
+
+▲
+
+21,830.31
+
+
++33.76
++0.15%
+
+
+
+
+
+
+
+
+
+
+
+
+
+Last updated time
+7/28/2017 4:38 PM EDT
+
+
+
+
+
+
+
+Markets
+
+
+
+
+
+NASDAQ
+
+NASDAQ
+
+
+
+▼
+
+6,374.68
+
+
+
+
+-7.51
+-0.12%
+
+
+
+
+
+
+
+
+
+
+FTSE 100
+
+FTSE 100
+
+
+
+▼
+
+7,368.37
+
+
+
+
+-74.64
+-1.00%
+
+
+
+
+
+
+
+
+
+
+NYSE Composite
+
+NYSE Composite
+
+
+
+▼
+
+11,954.69
+
+
+
+
+-8.54
+-0.07%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AdChoices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Feedback
+            
+
+
+
+
+
+
+
+Send Feedback
+Provide Feedback
+Report a Problem
+
+
+We appreciate your input!
+
+
+
+Select a category:
+
+I'm having problems with Top Destinations
+I'm having issues searching
+I'm having problems with Featured Apps
+I see an error in the content
+Other
+
+
+
+How we can improve?
+
+
+
+
+
+Please give an overall site rating:
+
+
+
+
+
+
+
+
+
+Submit
+Close
+
+
+Privacy Statement
+
+
+Help
+
+
+Help & Support
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Support and Downloads | Zebra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Login
+
+
+
+Login
+Register
+
+
+
+My Zebra
+
+
+
+
+
+
+Logout
+
+
+
+
+
+
+us - English
+
+
+
+NORTH AMERICA
+
+
+us - English
+
+
+
+
+
+LATIN AMERICA
+
+
+br - Português
+
+
+la - Español
+
+
+
+
+
+ASIA
+
+
+ap - English
+
+
+cn - 普通话
+
+
+jp - 日本語
+
+
+kr - 한국어
+
+
+
+
+
+EUROPE AND MIDDLE EAST
+
+
+de - Deutsch
+
+
+es - Español
+
+
+fr - Français
+
+
+it - Italiano
+
+
+pl - Polski
+
+
+ru - Pусский
+
+
+tr - Türkçe
+
+
+uk - English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Support and Downloads 
+
+Support and Downloads 
+
+
+
+Get the Support You Need
+Find manuals, firmware, drivers, utilities, software and knowledge articles for your product.
+Browse Zebra Product Support
+
+
+
+
+
+
+Mobile Computers
+
+
+
+
+
+
+
+Printers
+
+
+
+
+
+
+
+Barcode Scanners
+
+
+
+
+
+
+
+OEM
+
+
+
+
+
+
+
+RFID
+
+
+
+
+
+
+
+
+
+
+
+Tablets
+
+
+
+
+
+
+
+Interactive Kiosks
+
+
+
+
+
+
+
+Software
+
+
+
+
+
+
+
+Laser Wristbands
+
+
+
+
+
+
+
+
+
+
+
+
+ - OR -
+Enter your Product Name or Model Number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Repair
+Open a ticket or track an existing repair. See all of Zebra's repair portals.
+
+
+
+Find Repair Portal
+
+
+
+
+
+
+
+
+
+
+
+
+
+Case Management
+Submit and manage open cases with Zebra Technical Support online.
+
+
+
+See Online Cases
+
+
+
+
+
+
+
+
+
+
+
+
+
+Technical Support
+Contact our technical support with questions about your Zebra product.
+
+
+
+Contact Support
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Zebra
+Manage your interactions with Zebra in one location.
+
+
+
+Go to My Zebra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Plan Ahead With Zebra OneCare
+Zebra OneCare support service agreements allow you to plan and budget annual service needs, increase uptime, and realize a comprehensive offering of service options. Select the coverage plan that best suits the needs of your business.
+
+
+
+Explore Zebra OneCare
+
+
+
+
+
+
+
+
+
+
+
+
+
+Additional Resources
+
+
+
+
+
+
+
+Other Zebra Support Portals
+
+
+
+Locations Solutions Support
+
+
+
+
+Zatar Support
+
+
+
+
+
+
+
+Developer Tools
+Access development tools and collaborate with other application developers.
+
+
+
+Developer Portal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Printers | Desktop, Mobile, Industrial and more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Login
+
+
+
+Login
+Register
+
+
+
+My Zebra
+
+
+
+
+
+
+Logout
+
+
+
+
+
+
+us - English
+
+
+
+NORTH AMERICA
+
+
+us - English
+
+
+
+
+
+LATIN AMERICA
+
+
+br - Português
+
+
+la - Español
+
+
+
+
+
+ASIA
+
+
+ap - English
+
+
+cn - 普通话
+
+
+jp - 日本語
+
+
+kr - 한국어
+
+
+
+
+
+EUROPE AND MIDDLE EAST
+
+
+de - Deutsch
+
+
+es - Español
+
+
+fr - Français
+
+
+it - Italiano
+
+
+pl - Polski
+
+
+ru - Pусский
+
+
+tr - Türkçe
+
+
+uk - English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products > Printers
+
+Printers
+
+
+
+
+
+DO MORE AND SEE MORE 
+WITH OUR HIGH-PERFORMANCE PRINTERS
+
+
+
+
+
+
+Printing. Tagging. Tracking. Locating.
+
+
+
+
+
+
+Zebra’s extensive portfolio of products and solutions gives you smarter ways to track and manage your assets. With Zebra’s barcode and RFID printer solutions, you can produce labels, receipts, documents or cards on-demand. Today, customers around the world and across multiple industries use Zebra printers to know more about the assets and data that flow through their operations and make better decisions.
+
+
+
+
+
+
+ 
+Contact Zebra    Find a Partner
+
+
+
+
+
+
+
+
+Browse Printer Families
+
+
+
+
+
+
+
+
+
+
+Desktop Printers
+Keeping your operations running smoothly and efficiently is your top priority. You rely on printers and tools that are dependable, durable, easy to use and don’t require much space. Zebra’s desktop printers are compact, simple to operate, reliable and cost effective. And, they leverage our long history of innovation and industry-leading capabilities.
+
+
+
+
+
+
+
+
+
+
+Industrial Printers
+Zebra’s industrial printers meet your needs to help you do more with less. And, they easily integrate into your existing enterprise and keep pace with your evolving business challenges. See your entire supply chain in real time, increase efficiencies and leverage Internet of Things (IoT) technologies to gain a competitive advantage. Ideal for a wide variety of high- to mid-volume industrial applications in manufacturing, transportation and logistics, government, retail and healthcare. 
+
+
+
+
+
+
+
+
+
+
+Mobile Printers
+Zebra mobile printers provide portable printing for all your barcode needs. Price labeling, warehouse management and retail are just a small sample of application covered by Zebra mobile printers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Card Printers
+Card printers print secure ids, gift cards, financial cards and personnel badges and more. Personnel tracking is easy with single-sided or double-sided plastic card printing.
+
+
+
+
+
+
+
+
+
+
+RFID Printers
+A global leader in UHF RFID print and encode technologies, Zebra delivers innovative encoding solutions to meet tomorrow’s application needs today.  Developed on a globally recognized brand, Zebra leads the industry with a broad product portfolio that spreads across Industrial, Desktop and Card printers and supports wide ranging applications across a variety of markets.
+
+
+
+
+
+
+
+
+
+
+Kiosk Printers
+Zebra kiosk systems create an on demand printing location for personnel or customers. Self-service kiosks are ideal for increasing customer satisfaction with coupon, ticket and receipt printing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Print Engines
+Zebra print engines provide a barcode solution for high volume printing perfect for heavy duty industrial situations. PAX print engines are customizable to create a unique barcode system based on needs.
+
+
+
+
+
+
+
+
+
+
+Discontinued Products
+Find information on how to upgrade, replace or repair products that are no longer manufactured or available for sale.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zebra Technologies | Enterprise Visibility & Data Capture
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Login
+
+
+
+Login
+Register
+
+
+
+My Zebra
+
+
+
+
+
+
+Logout
+
+
+
+
+
+
+
+us - English
+
+
+
+
+NORTH AMERICA
+
+
+us - English
+
+
+
+
+
+
+LATIN AMERICA
+
+
+br - Português
+
+
+la - Español
+
+
+
+
+
+
+ASIA
+
+
+ap - English
+
+
+cn - 普通话
+
+
+jp - 日本語
+
+
+kr - 한국어
+
+
+
+
+
+
+EUROPE AND MIDDLE EAST
+
+
+de - Deutsch
+
+
+es - Español
+
+
+fr - Français
+
+
+it - Italiano
+
+
+pl - Polski
+
+
+ru - Pусский
+
+
+tr - Türkçe
+
+
+uk - English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Visibility That's Visionary
+With our mobile computers, printers, scanners and services, Zebra provides smart, visionary solutions that let you see the big picture. For unprecedented visibility into your enterprise, it's Zebra.
+
+
+
+See The Vision
+
+
+
+
+
+
+
+
+
+Visibility That's Visionary
+With our mobile computers, printers, scanners and services, Zebra provides smart, visionary solutions that let you see the big picture. For unprecedented visibility into your enterprise, it's Zebra.
+
+
+
+See The Vision
+
+
+
+
+
+
+
+
+
+Visibility That's Visionary
+With our mobile computers, printers, scanners and services, Zebra provides smart, visionary solutions that let you see the big picture. For unprecedented visibility into your enterprise, it's Zebra.
+
+
+
+See The Vision
+
+
+
+
+
+
+
+
+
+Visibility That's Visionary
+With our mobile computers, printers, scanners and services, Zebra provides smart, visionary solutions that let you see the big picture. For unprecedented visibility into your enterprise, it's Zebra.
+
+
+
+See the Vision
+
+
+
+
+
+
+
+
+
+Visibility That's Visionary
+With our mobile computers, printers, scanners and services, Zebra provides smart, visionary solutions that let you see the big picture. For unprecedented visibility into your enterprise, it's Zebra.
+
+
+
+See The Vision
+
+
+
+
+
+
+
+
+
+
+ Zebra makes businesses as smart and connected as the world we live in.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZT600 Series Printers Deliver Intelligence and Industrial Brawn
+Advancing the legacy of the their Xi Series predecessors, the ZT600 Series combines rugged durability and exceptional performance.
+
+
+
+See the New ZT600 Series
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Faster Transactions. Higher Satisfaction. Lower Costs.
+Zebra’s new MP7000 offers premier point-of-sale scanning performance.
+
+
+
+Learn about the MP7000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Voluntary Recall Notice Regarding Power Supplies for Certain Zebra Printers
+
+
+
+
+
+
+1
+
+
+
+See Details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INCREASE RELIABILITY WITH NETWORK CONNECT
+
+
+
+
+View Infographic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Taking Retail Automation to New Heights
+Zebra’s 2017 Retail Vision Study reveals the high-tech moves retailers across the globe are making to simplify, enliven and customize the shopper experience.
+
+
+
+Download the Study
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Warehouse 2020 Vision Report
+Zebra surveyed IT and operations professionals to share their insights and business plans over the next five years. Find out where they plan to invest and the driving factors for change.
+
+
+
+Download Vision Report
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

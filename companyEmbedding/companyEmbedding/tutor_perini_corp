@@ -1,0 +1,7713 @@
+
+Tutor Perini | Facebook
+
+
+
+FacebookEmail or PhonePasswordForgot account?Sign UpEnglish (US)EspañolFrançais (France)中文(简体)العربيةPortuguês (Brasil)Italiano한국어Deutschहिन्दी日本語MessengerFacebook LitePeoplePlacesGamesLocationsCelebritiesMarketplaceGroupsRecipesMomentsInstagramAboutCreate AdCreate PageDevelopersCareersPrivacyCookiesAd ChoicesTermsSettingsActivity Log Facebook © 2017
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Tutor Perini Building Company
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+General Contracting - Construction Management - Design Build
+
+
+
+
+
+
+
+
+Contact us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Recent News
+
+8/16/16 - Tutor Perini-led Team Sets Record in Philadelphia on the W/Element Hotel
+3/15/16 - Tutor Perini Awarded Contracts for Tower D and Retail Complex at Hudson Yards
+2/25/16 - Tutor Perini Building Corp. Awarded $285 Million Pechanga Resort and Casino
+2/9/16 - Tutor Perini Building Corp. Awarded Contract to Build the AquaBlu Development
+Read More
+
+
+
+ABOUT
+
+ Read the latestSecond Century Magazine!
+ Panorama Tower Mat Pour Time Lapse
+ W/Element Hotel Record-Setting Mat Pour Time Lapse 
+
+Tutor Perini Building Corp is a wholly owned subsidiary of Tutor Perini Corporation (NYSE: TPC).  We are strategically located throughout the United States in New York, NY; Philadelphia, PA; Henderson, NV, Phoenix, AZ and recently opened in Ft. Lauderdale, FL.  The addition of this South Florida location allows us to better serve our southeast clients.  As part of the Tutor Perini Building Group, we are consistently ranked by Engineering News-Record among the top builders in the country. 
+Our affiliated building companies include:
+
+Roy Anderson Corp
+Rudolph and Sletten 
+
+We have the capacity to self-perform much of our work, often partnering with qualified local subcontractors and Tutor Perini’s Specialty Contractor Group - experts in mechanical, electrical, HVAC, and plumbing disciplines, and Civil Group – experts in site development, excavation, and specialized foundations. 
+We believe our success results from our proven philosophy, “Building Relationships on Trust,” and our ability to manage large, complex projects with aggressive fast-track schedules, elaborate designs, and advanced systems while providing accurate budgeting and strict quality control.
+ 
+
+
+
+
+
+
+
+
+
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+Tutor Perini - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Tutor Perini
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (December 2011) (Learn how and when to remove this template message)
+
+
+
+Tutor Perini Corporation
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: TPC
+
+
+Industry
+construction
+
+
+Founded
+1894
+
+
+Headquarters
+Sylmar, California, United States
+
+
+
+Key people
+
+Ronald Tutor, CEO
+
+
+Revenue
+USD 4.2 billion (as of 2013[update])
+
+
+
+Net income
+
+USD 87 million (as of 2013[update])
+
+
+
+Number of employees
+
+approx. 10,000
+
+
+Website
+www.tutorperini.com
+
+
+Tutor Perini Corporation (formerly Perini Corporation) is one of the largest general contractors in the United States. At the end of 2013 it reported an annual revenue of approximately $4.2 billion. Tutor Perini is headquartered in Sylmar, California, and works on many construction projects throughout the United States and Canada. Specific areas of focus are civil infrastructure (bridges, highways, tunnels, airports, mass transit systems), building infrastructure (healthcare, education, municipal government, hospitality and gaming, multi-use, office towers, multi-unit residential towers, high-technology projects), and specialty contracting (electrical, mechanical, plumbing, heating, air conditioning and ventilation (HVAC), fire protection systems, concrete placement).
+
+
+
+Contents
+
+
+1 History
+2 Divisions
+3 References
+4 External links
+
+
+
+History[edit]
+Perini was founded in 1894 by a stonemason named Bonfiglio Perini. Under the direction of Bonfiglio's grandson, Lou Perini, the company moved into the real-estate business, developing 4,500 acres (1,800 ha) in Palm Beach County, Florida. Later real-estate ventures were less successful, leaving the company deeply in debt by the mid-1990s. In 1997, Perini recapitalized, passing control to a California-based investor group led by Los Angeles-based construction executive Ronald Tutor and investor Richard Blum.[1]
+Perini was listed on the NYSE on April 1, 2004. Later that year it acquired Cherry Hill Construction, a contractor in Maryland, and in 2003 it acquired Florida-based James A. Cummings and in 2005, California-based Rudolph & Sletten, Inc.. In January 2009, the corporation acquired Philadelphia-based building contractor Keating.
+While Perini maintained headquarters in Framingham, Massachusetts it commonly bid on many heavy construction projects in Massachusetts. The corporation is now headquartered in Sylmar, California. The company is heavily involved in civil infrastructure, as well as construction for the gaming and hospitality industries.
+In May 2009, Perini shareholders voted to change the company's name to Tutor Perini Corporation. Subsequent to its name change, Tutor Perini Corporation strengthened its focus towards expanding its geographical footprint throughout the United States. In order to facilitate this strategy, Tutor Perini issued $300 million of Senior Notes in October 2010. Tutor Perini proceeded to acquire six companies over the next nine months. These acquisitions include:
+
+
+
+
+
+This article is in a list format that may be better presented using prose. You can help by converting this article to prose, if appropriate. Editing help is available. (March 2014)
+
+
+November 1, 2010 - Superior Gunite, a structural concrete firm headquartered in Lakeview Terrace, CA.
+January 3, 2011 – Fisk Electric, a provider of electrical and technological services headquartered in Houston, TX
+April 4, 2011 – Anderson Companies, a general contractor headquartered in Gulfport, MS
+June 1, 2011 – Frontier-Kemper Constructors, a provider of numerous construction services including civil construction, mine development, drilling, tunneling, and electrical services headquartered in Evansville, IN
+July 1, 2011 – Lunda Construction Company, provider of various construction services such as the construction, rehabilitation, and maintenance of bridges, railroads, and other civil structures headquartered in Black River Falls, WI
+July 1, 2011 – GreenStar Services Corporation, an electrical and mechanical services provider that is composed of 3 operating entities: Five Star Electric Corporation, WDF, and Nagelbush
+March 17 2016 - After several smaller contracts at the Hudson Yards, Manhattan site, the company has been awarded contracts worth roughly $1.2 billion for the construction of Tower D and The Shops & Restaurants retail complex at the development.[2]
+Divisions[edit]
+
+Tutor-Saliba Corporation
+Perini Building Company
+Rudolph and Sletten, Inc.
+
+References[edit]
+
+
+
+^ Peter J. Howe (2007-05-23). "Cashing in". Globe 100. The Boston Globe. pp. 26–28. 
+^ "Tutor Perini Wins Whopper of a Contract at NYC’s Hudson Yards Project". 
+
+
+
+External links[edit]
+
+Tutor Perini Corporation
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Tutor_Perini&oldid=784560910"					
+Categories: Companies listed on the New York Stock ExchangeCompanies established in 1894Companies based in Los AngelesHidden categories: Articles needing additional references from December 2011All articles needing additional referencesPages using deprecated image syntaxArticles containing potentially dated statements from 2013All articles containing potentially dated statementsArticles needing cleanup from March 2014All pages needing cleanupArticles with sections that need to be turned into prose from March 2014 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 9 June 2017, at 00:02.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Tutor Perini - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Tutor Perini
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (December 2011) (Learn how and when to remove this template message)
+
+
+
+Tutor Perini Corporation
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: TPC
+
+
+Industry
+construction
+
+
+Founded
+1894
+
+
+Headquarters
+Sylmar, California, United States
+
+
+
+Key people
+
+Ronald Tutor, CEO
+
+
+Revenue
+USD 4.2 billion (as of 2013[update])
+
+
+
+Net income
+
+USD 87 million (as of 2013[update])
+
+
+
+Number of employees
+
+approx. 10,000
+
+
+Website
+www.tutorperini.com
+
+
+Tutor Perini Corporation (formerly Perini Corporation) is one of the largest general contractors in the United States. At the end of 2013 it reported an annual revenue of approximately $4.2 billion. Tutor Perini is headquartered in Sylmar, California, and works on many construction projects throughout the United States and Canada. Specific areas of focus are civil infrastructure (bridges, highways, tunnels, airports, mass transit systems), building infrastructure (healthcare, education, municipal government, hospitality and gaming, multi-use, office towers, multi-unit residential towers, high-technology projects), and specialty contracting (electrical, mechanical, plumbing, heating, air conditioning and ventilation (HVAC), fire protection systems, concrete placement).
+
+
+
+Contents
+
+
+1 History
+2 Divisions
+3 References
+4 External links
+
+
+
+History[edit]
+Perini was founded in 1894 by a stonemason named Bonfiglio Perini. Under the direction of Bonfiglio's grandson, Lou Perini, the company moved into the real-estate business, developing 4,500 acres (1,800 ha) in Palm Beach County, Florida. Later real-estate ventures were less successful, leaving the company deeply in debt by the mid-1990s. In 1997, Perini recapitalized, passing control to a California-based investor group led by Los Angeles-based construction executive Ronald Tutor and investor Richard Blum.[1]
+Perini was listed on the NYSE on April 1, 2004. Later that year it acquired Cherry Hill Construction, a contractor in Maryland, and in 2003 it acquired Florida-based James A. Cummings and in 2005, California-based Rudolph & Sletten, Inc.. In January 2009, the corporation acquired Philadelphia-based building contractor Keating.
+While Perini maintained headquarters in Framingham, Massachusetts it commonly bid on many heavy construction projects in Massachusetts. The corporation is now headquartered in Sylmar, California. The company is heavily involved in civil infrastructure, as well as construction for the gaming and hospitality industries.
+In May 2009, Perini shareholders voted to change the company's name to Tutor Perini Corporation. Subsequent to its name change, Tutor Perini Corporation strengthened its focus towards expanding its geographical footprint throughout the United States. In order to facilitate this strategy, Tutor Perini issued $300 million of Senior Notes in October 2010. Tutor Perini proceeded to acquire six companies over the next nine months. These acquisitions include:
+
+
+
+
+
+This article is in a list format that may be better presented using prose. You can help by converting this article to prose, if appropriate. Editing help is available. (March 2014)
+
+
+November 1, 2010 - Superior Gunite, a structural concrete firm headquartered in Lakeview Terrace, CA.
+January 3, 2011 – Fisk Electric, a provider of electrical and technological services headquartered in Houston, TX
+April 4, 2011 – Anderson Companies, a general contractor headquartered in Gulfport, MS
+June 1, 2011 – Frontier-Kemper Constructors, a provider of numerous construction services including civil construction, mine development, drilling, tunneling, and electrical services headquartered in Evansville, IN
+July 1, 2011 – Lunda Construction Company, provider of various construction services such as the construction, rehabilitation, and maintenance of bridges, railroads, and other civil structures headquartered in Black River Falls, WI
+July 1, 2011 – GreenStar Services Corporation, an electrical and mechanical services provider that is composed of 3 operating entities: Five Star Electric Corporation, WDF, and Nagelbush
+March 17 2016 - After several smaller contracts at the Hudson Yards, Manhattan site, the company has been awarded contracts worth roughly $1.2 billion for the construction of Tower D and The Shops & Restaurants retail complex at the development.[2]
+Divisions[edit]
+
+Tutor-Saliba Corporation
+Perini Building Company
+Rudolph and Sletten, Inc.
+
+References[edit]
+
+
+
+^ Peter J. Howe (2007-05-23). "Cashing in". Globe 100. The Boston Globe. pp. 26–28. 
+^ "Tutor Perini Wins Whopper of a Contract at NYC’s Hudson Yards Project". 
+
+
+
+External links[edit]
+
+Tutor Perini Corporation
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Tutor_Perini&oldid=784560910"					
+Categories: Companies listed on the New York Stock ExchangeCompanies established in 1894Companies based in Los AngelesHidden categories: Articles needing additional references from December 2011All articles needing additional referencesPages using deprecated image syntaxArticles containing potentially dated statements from 2013All articles containing potentially dated statementsArticles needing cleanup from March 2014All pages needing cleanupArticles with sections that need to be turned into prose from March 2014 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 9 June 2017, at 00:02.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Tutor Perini - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Tutor Perini
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+
+
+
+This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. (December 2011) (Learn how and when to remove this template message)
+
+
+
+Tutor Perini Corporation
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: TPC
+
+
+Industry
+construction
+
+
+Founded
+1894
+
+
+Headquarters
+Sylmar, California, United States
+
+
+
+Key people
+
+Ronald Tutor, CEO
+
+
+Revenue
+USD 4.2 billion (as of 2013[update])
+
+
+
+Net income
+
+USD 87 million (as of 2013[update])
+
+
+
+Number of employees
+
+approx. 10,000
+
+
+Website
+www.tutorperini.com
+
+
+Tutor Perini Corporation (formerly Perini Corporation) is one of the largest general contractors in the United States. At the end of 2013 it reported an annual revenue of approximately $4.2 billion. Tutor Perini is headquartered in Sylmar, California, and works on many construction projects throughout the United States and Canada. Specific areas of focus are civil infrastructure (bridges, highways, tunnels, airports, mass transit systems), building infrastructure (healthcare, education, municipal government, hospitality and gaming, multi-use, office towers, multi-unit residential towers, high-technology projects), and specialty contracting (electrical, mechanical, plumbing, heating, air conditioning and ventilation (HVAC), fire protection systems, concrete placement).
+
+
+
+Contents
+
+
+1 History
+2 Divisions
+3 References
+4 External links
+
+
+
+History[edit]
+Perini was founded in 1894 by a stonemason named Bonfiglio Perini. Under the direction of Bonfiglio's grandson, Lou Perini, the company moved into the real-estate business, developing 4,500 acres (1,800 ha) in Palm Beach County, Florida. Later real-estate ventures were less successful, leaving the company deeply in debt by the mid-1990s. In 1997, Perini recapitalized, passing control to a California-based investor group led by Los Angeles-based construction executive Ronald Tutor and investor Richard Blum.[1]
+Perini was listed on the NYSE on April 1, 2004. Later that year it acquired Cherry Hill Construction, a contractor in Maryland, and in 2003 it acquired Florida-based James A. Cummings and in 2005, California-based Rudolph & Sletten, Inc.. In January 2009, the corporation acquired Philadelphia-based building contractor Keating.
+While Perini maintained headquarters in Framingham, Massachusetts it commonly bid on many heavy construction projects in Massachusetts. The corporation is now headquartered in Sylmar, California. The company is heavily involved in civil infrastructure, as well as construction for the gaming and hospitality industries.
+In May 2009, Perini shareholders voted to change the company's name to Tutor Perini Corporation. Subsequent to its name change, Tutor Perini Corporation strengthened its focus towards expanding its geographical footprint throughout the United States. In order to facilitate this strategy, Tutor Perini issued $300 million of Senior Notes in October 2010. Tutor Perini proceeded to acquire six companies over the next nine months. These acquisitions include:
+
+
+
+
+
+This article is in a list format that may be better presented using prose. You can help by converting this article to prose, if appropriate. Editing help is available. (March 2014)
+
+
+November 1, 2010 - Superior Gunite, a structural concrete firm headquartered in Lakeview Terrace, CA.
+January 3, 2011 – Fisk Electric, a provider of electrical and technological services headquartered in Houston, TX
+April 4, 2011 – Anderson Companies, a general contractor headquartered in Gulfport, MS
+June 1, 2011 – Frontier-Kemper Constructors, a provider of numerous construction services including civil construction, mine development, drilling, tunneling, and electrical services headquartered in Evansville, IN
+July 1, 2011 – Lunda Construction Company, provider of various construction services such as the construction, rehabilitation, and maintenance of bridges, railroads, and other civil structures headquartered in Black River Falls, WI
+July 1, 2011 – GreenStar Services Corporation, an electrical and mechanical services provider that is composed of 3 operating entities: Five Star Electric Corporation, WDF, and Nagelbush
+March 17 2016 - After several smaller contracts at the Hudson Yards, Manhattan site, the company has been awarded contracts worth roughly $1.2 billion for the construction of Tower D and The Shops & Restaurants retail complex at the development.[2]
+Divisions[edit]
+
+Tutor-Saliba Corporation
+Perini Building Company
+Rudolph and Sletten, Inc.
+
+References[edit]
+
+
+
+^ Peter J. Howe (2007-05-23). "Cashing in". Globe 100. The Boston Globe. pp. 26–28. 
+^ "Tutor Perini Wins Whopper of a Contract at NYC’s Hudson Yards Project". 
+
+
+
+External links[edit]
+
+Tutor Perini Corporation
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Tutor_Perini&oldid=784560910"					
+Categories: Companies listed on the New York Stock ExchangeCompanies established in 1894Companies based in Los AngelesHidden categories: Articles needing additional references from December 2011All articles needing additional referencesPages using deprecated image syntaxArticles containing potentially dated statements from 2013All articles containing potentially dated statementsArticles needing cleanup from March 2014All pages needing cleanupArticles with sections that need to be turned into prose from March 2014 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 9 June 2017, at 00:02.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+BofA Pays $37M To End Tutor Perini Securities Row - Law360
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+Advanced Search
+
+Take a Free Trial | 
+					Sign In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Close
+
+
+Law360 In-Depth
+Law360 UK
+Adv. Search & Platform Tools
+Browse all sections 
+Banking
+Bankruptcy
+Class Action
+Competition
+Employment
+Energy
+Expert Analysis
+Insurance
+Intellectual Property
+Product Liability
+Securities
+Rankings
+Law360's MVPs
+Glass Ceiling Report
+Global 20
+Law360 400
+Diversity Snapshot
+Practice Group Partner Rankings
+Practice Groups of the Year
+Pro Bono Firms of the Year
+Rising Stars
+Trial Aces
+Site Menu
+Join the Law360 team
+Search legal jobs
+Learn more about Law360
+Read testimonials
+Contact Law360
+Sign up for our newsletters
+Site Map
+Help
+
+
+
+
+
+
+
+
+
+
+Make sure you don't miss any Law360 breaking news.
+Download our plug-in for Chrome to get customizable, real-time news alerts 
+
+
+
+
+
+BofA Pays $37M To End Tutor Perini Securities Row
+
+
+
+        By Kat Greene
+
+
+
+					Law360, Los Angeles (June 6, 2017,  9:38 PM EDT) -- A Bank of America Corp. unit paid $37 million to Tutor Perini Corp. to settle a suit alleging the bank’s securities unit sold the construction company auction-rate securities without warning the market was likely headed for a crash, according to filings in Massachusetts federal court Tuesday.Merrill Lynch Pierce Fenner & Smith Inc., the broker-dealer unit that took over Banc of America Securities LLC in the banks’ crisis-era merger, handed the cash payment to Tutor Perini on Tuesday after agreeing to the deal on May 31,...
+				
+To view the full article, register now.
+
+
+
+Try Law360 FREE for seven days
+Already a subscriber? Click here to login
+
+
+
+
+
+
+
+
+
+
+ Add to Briefcase
+
+ Printable Version
+ Rights/Reprints
+ Editorial Contacts
+
+Documents
+
+
+ Stipulation of Dismissal
+
+
+Related
+Sections
+
+
+
+Banking
+
+
+
+Commercial Contracts
+
+
+
+Securities
+
+
+Case Information
+Case Title
+
+
+Tutor Perini Corporation v. Banc of America Securities LLC et al
+
+
+Case Number
+
+1:11-cv-10895
+
+Court
+Massachusetts
+Nature of Suit
+Securities/Commodities
+Judge
+Nathaniel M. Gorton
+Date Filed
+May 18, 2011
+Law Firms
+
+ Boies Schiller
+ Morgan Lewis
+ O'Melveny & Myers
+
+Companies
+
+ Bank of America Corporation
+ Goldman Sachs Group Inc.
+ Tutor Perini Corporation
+
+Government Agencies
+
+ Securities and Exchange Commission
+
+
+
+
+
+
+
+			Check out Law360's new podcast, Pro Say, which offers a weekly recap of both the biggest stories and hidden gems from the world of law.
+		
+
+Listen To Our Latest
+
+
+
+Most Popular
+
+
+1
+NY High Court Judge's Death Ruled A Suicide
+
+
+2
+Linklaters Atty Denies Link To Husband's Alleged Fraud
+
+
+3
+How To Manage Health Care Costs And Keep Lawyers Happy
+
+
+4
+Apple Vs. Qualcomm Battle Heats Up: What You Need To Know
+
+
+5
+Dentons Scores 14-Atty Patent Team From MoFo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+Already have access? Click here to login
+
+
+
+Get instant access to the one-stop news source for business lawyers
+Register Now!
+
+
+
+
+Get instant access to the one-stop news source for business lawyers
+
+
+
+
+
+
+
+
+
+
+
+
+
+Email (Professional email required)
+
+
+
+
+
+
+First Name
+
+
+
+Last Name
+
+
+
+
+
+
+
+PLEASE NOTE: A verification email will be sent to your address before you can access your trial.
+
+
+Password (at least 6 characters required)
+
+
+
+Confirm Password
+
+
+
+
+
+
+
+Select at least one primary interest:
+
+
+ Banking
+											
+
+ Commercial Contracts
+											
+
+ Securities
+											
+
+ Show all interests
+
+
+ Aerospace & Defense
+													
+
+ Appellate
+													
+
+ Asset Management
+													
+
+ Automotive
+													
+
+ Bankruptcy
+													
+
+ California
+													
+
+ Capital Markets
+													
+
+ Class Action
+													
+
+ Competition
+													
+
+ Consumer Protection
+													
+
+ Corporate
+													
+
+ Cybersecurity & Privacy
+													
+
+ Delaware
+													
+
+ Employment
+													
+
+ Energy
+													
+
+ Environmental
+													
+
+ Financial Services Uk
+													
+
+ Florida
+													
+
+ Food & Beverage
+													
+
+ Government Contracts
+													
+
+ Health
+													
+
+ Hospitality
+													
+
+ Illinois
+													
+
+ Immigration
+													
+
+ Insurance
+													
+
+ Insurance Uk
+													
+
+ Intellectual Property
+													
+
+ International Arbitration
+													
+
+ International Trade
+													
+
+ Law360 In Depth
+													
+
+ Legal Ethics
+													
+
+ Life Sciences
+													
+
+ Media & Entertainment
+													
+
+ Medical Malpractice
+													
+
+ Mergers & Acquisitions
+													
+
+ Native American
+													
+
+ New Jersey
+													
+
+ New York
+													
+
+ Pennsylvania
+													
+
+ Private Equity
+													
+
+ Product Liability
+													
+
+ Project Finance
+													
+
+ Public Policy
+													
+
+ Real Estate
+													
+
+ Retail & E Commerce
+													
+
+ Sports
+													
+
+ Tax
+													
+
+ Technology
+													
+
+ Telecommunications
+													
+
+ Texas
+													
+
+ Transportation
+													
+
+ Trials
+													
+
+ White Collar
+													
+
+
+
+
+
+
+
+Register
+
+
+
+
+Already have access?
+
+
+
+
+Email:
+
+
+
+Password:
+
+Forgot your password?
+
+
+Remember login
+
+
+
+Sign In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+Sign up for our free Banking newsletter
+
+
+
+
+
+
+You must correct or enter the following before you can sign up:
+
+
+
+
+Please provide a professional email:
+
+
+
+ Select more newsletters to receive for free
+
+
+
+
+ Aerospace & Defense
+												
+
+
+
+ Appellate
+												
+
+
+
+ Asset Management
+												
+
+
+
+ Automotive
+												
+
+
+
+ Banking
+												
+
+
+
+ Bankruptcy
+												
+
+
+
+ California
+												
+
+
+
+ Capital Markets
+												
+
+
+
+ Class Action
+												
+
+
+
+ Commercial Contracts
+												
+
+
+
+ Competition
+												
+
+
+
+ Consumer Protection
+												
+
+
+
+ Corporate
+												
+
+
+
+ Cybersecurity & Privacy
+												
+
+
+
+ Delaware
+												
+
+
+
+ Employment
+												
+
+
+
+ Energy
+												
+
+
+
+ Environmental
+												
+
+
+
+ Florida
+												
+
+
+
+ Food & Beverage
+												
+
+
+
+ Government Contracts
+												
+
+
+
+ Health
+												
+
+
+
+ Hospitality
+												
+
+
+
+ Illinois
+												
+
+
+
+ Immigration
+												
+
+
+
+ Insurance
+												
+
+
+
+ Intellectual Property
+												
+
+
+
+ International Arbitration
+												
+
+
+
+
+
+ International Trade
+												
+
+
+
+ Law360 In-Depth
+												
+
+
+
+ Legal Ethics
+												
+
+
+
+ Legal Industry
+												
+
+
+
+ Life Sciences
+												
+
+
+
+ Media & Entertainment
+												
+
+
+
+ Medical Malpractice
+												
+
+
+
+ Mergers & Acquisitions
+												
+
+
+
+ Native American
+												
+
+
+
+ New Jersey
+												
+
+
+
+ New York
+												
+
+
+
+ Pennsylvania
+												
+
+
+
+ Private Equity
+												
+
+
+
+ Product Liability
+												
+
+
+
+ Project Finance
+												
+
+
+
+ Public Policy
+												
+
+
+
+ Real Estate
+												
+
+
+
+ Retail & E-Commerce
+												
+
+
+
+ Securities
+												
+
+
+
+ Sports
+												
+
+
+
+ Tax
+												
+
+
+
+ Technology
+												
+
+
+
+ Telecommunications
+												
+
+
+
+ Texas
+												
+
+
+
+ Transportation
+												
+
+
+
+ Trials
+												
+
+
+
+ White Collar
+												
+
+
+
+
+No Thanks
+Sign up now
+
+
+
+
+
+Thank You!
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+Tutor Perini - Case Study
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++44 (0)203 356 3714
+
+Log in
+
+
+
+
+
+
+
+
+
+Toggle navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini
+Success Story
+
+
+
+
+
+
+
+
+
+Now that I’m having people using Egnyte I’m receiving more requests from people saying ‘please set me up for the Egnyte app, I don’t need a local file server.’ We’re eliminating some of our distributed computing services. That’s going to make our IT operations even more efficient and cost effective in the future.
+Jim Puerner, CIO
+ Tutor Perini
+
+
+
+
+
+Company Overview
+Tutor Perini Corporation is a leading civil and building construction company offering diversified general contracting and design-build services to private clients and public agencies throughout the world. They have provided construction services since 1894 and have established a strong reputation globally by executing large complex projects on time and within budget, while adhering to strict quality control measures.
+            
+Download PDF
+
+
+
+
+A Legacy of Excellence
+Since 1894, Tutor Perini Corporation has executed large, complex projects both on time and on budget, while adhering to strict quality control measures. Today, the $5 billion, NYSE-traded, Los Angeles-based company has offices in the U.S., Canada, Guam and the Philippines, offering diversified general contracting and design-build services to private clients and public agencies.
+Construction firms generate enormous amounts of data and Tutor Perini is no exception. On-site project teams rely heavily on networked file shares for documents such as meeting minutes, daily inspections, change order requests, requests-for-information, AutoCAD files and large PDFs. In addition to file storage, the project teams and office staff collaborate and share internally among teams and externally with third parties such as contractors, architects and engineers.
+Looking for the Right Fit
+The reliance on what Puerner calls “document management by email” led Tutor Perini on a search for a solution that would give the company custodianship of their files, the ability to share files in the cloud and ensure that a single source of truth was replicated back to network file shares.
+“With the emergence of cloud technologies, we had employees using what were unauthorized services to meet their business needs. We didn’t have a viable enterprise solution to offer, so we consciously didn’t enforce our policy and block the use of these sites. There were many inherent problems with these services, most notably that they didn’t replicate to our network, therefore we didn’t have custodianship of our data. Additionally, the overall cost to the company for what were more than 400 one-off accounts had grown to unreasonable levels.”
+The Solution
+Puerner was diligent in selecting the right technology partner. He evaluated eight different solutions, including the most well known file sharing solutions. He says the choice to select Egnyte was all about the combined power of the Egnyte Connect Hybrid deployment (Storage Sync) and the ability for users at Tutor Perini headquarters, job sites and mobile workers to collaborate in a secure and efficient way.
+“Egnyte was unique compared to the competition. In particular, we liked that we didn’t have to buy a third party product to do the synchronization. Once we saw Egnyte and the synchronization tools it provided we were really excited as that’s a huge differentiator. Also the integration with active directory was a big win for us.”
+With the Egnyte Hybrid deployment (Egnyte Storage Sync), job site employees are now able to work on mission-critical documents in real-time and replicate changes back to the cloud without worrying about potential bandwidth restrictions associated with moving large files.
+ Content is downloaded onto a local instance of Egnyte Storage Sync running at the job site. The software handles the process of downloading and uploading changes to content to the local site and then back to the cloud – creating a seamless, secure, fast and reliable connection for everyone involved with a project.
+Egnyte also helped solve several other issues for Tutor Perini including:
+ Latency issuesAEC firms are faced with the dual-issue of working with large files such as blueprints and dealing with bandwidth constraints. Egnyte Storage Sync helped synchronize data and ensure that mission critical files were available instantly to remote users.
+Mobile access and sharingWith users across the globe, the ability for Tutor Perini users to access data is vital. With Egnyte Storage Sync, Tutor Perini now has 24/7 connectivity to business data regardless of project size or location. “Egnyte has become a staple in our job site operations now, from three guys working over mobile broadband, to over 200 people working on a multi-billion dollar project like Hudson Yards in New York.”
+ Centralized permission controlAlong with collaboration by email and sharing via an obsolete FTP server, Tutor Perini had a number of users sharing and storing with unauthorized external sharing accounts. Egnyte storage sync has enabled Folder and sub-folder access and permissions to be precisely enforced across cloud and local storage systems. Puerner says reigning in the unauthorized accounts through Egnyte “saved one business unit alone more than $6,000 a month.”
+The Rewards
+Deployed in every business unit, from the civil building groups to the specialty contractors group, Egnyte has become the standard for Tutor Perini.
+The project teams and operations groups can now access a file sharing and collaboration platform from anywhere, and the IT administrators are now able to monitor and secure sensitive information. In less than a year, Tutor Perini is already managing over 11 TB of data on Egnyte—and that number is growing.
+Puerner estimates more than $250,000 per year in savings to the enterprise from the cloud sharing/storage platform alone. Additionally, Egnyte Storage Sync allowed Tutor Perini to avoid the costs of farming data from end user devices for legal discovery. “In the past, if we received a legal hold order, we would have to collect PC’s, hard-drives and look for any other unique data that existed on a device or in an unauthorized cloud service. We don’t have to worry about that manual process anymore. It’s amounted to tens of thousands of dollars saved in legal discovery costs.”
+Free Trial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Corp - NYSE:TPC - Stock Quote & News - TheStreet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Action Alerts PLUS
+
+Access AAPJim Cramer's Best Stocks for 2017Charitable Trust PortfolioMost Recent Trade Alert25 Investing Rules10 Trading Commandments
+
+Real Money
+
+Access RM25 Rules of InvestingJim Cramer's Best Stocks for 201710 CommandmentsStressed Out StocksCramer's Blog
+
+Cramer
+Mad Money
+ETFs
+Futures
+Markets
+Much More
+
+BanksBiotechRetailTechPersonal FinanceRetirementFinancial Advisor CenterHow to SpendOptionsFixed IncomeVideo
+
+
+
+
+
+
+
+
+
+
+Privacy Policy|Terms of Use© 1996- TheStreet Inc. All rights reserved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                DJIA
+                            
+
+
+
+
+
+
+
+                                NASDAQ
+                            
+
+
+
+
+
+
+
+                                S&P 500
+                            
+
+
+
+
+
+
+Market Data updated
+
+
+
+
+
+
+Sign In
+
+
+
+
+Your Membership(s)
+
+
+
+
+
+
+
+
+Your Account
+
+
+
+
+
+Account Preferences
+
+
+Alerts
+
+
+Newsletters
+
+
+
+
+
+
+
+Subscribe
+
+
+
+
+
+Logout
+
+
+
+Subscribe
+
+Access insights and guidance from our Wall Street pros. Find the product that's right for you.
+Action Alerts PLUS
+Action Alerts OPTIONS
+Daily Swing Trade
+Income Seeker
+Quant Ratings
+Real Money
+Real Money Pro
+Stocks Under $10
+Top Stocks
+Trifecta Stocks
+Real Money Pro Portfolio
+Chairman's Club
+Compare All 
+Chatter on the Street
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Corp (TPC)
+Follow
+
+
+
+
+                                    26.85
+                                
+
+0.55
+2.01
+
+
+
+
+                        NYSE : Industrial Goods
+                    
+
+Jul 28, 2017 4:02 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+Prev Close
+  27.40
+
+
+Open
+27.30
+
+
+Day Low/High
+
+                                    26.70 /
+                                    27.45
+
+
+52 Wk Low/High
+
+                                    18.05 /
+                                    33.00
+                                
+
+
+Volume
+173.18K
+
+
+Avg Volume 
+318.60K
+
+
+
+
+
+
+
+
+
+
+
+Exchange
+NYSE
+
+
+Shares Outstanding
+49.70M
+
+
+Market Cap
+1.37B
+
+
+EPS
+1.90
+
+
+P/E Ratio
+
+                                        
+                                            14.68
+                                        
+                                    
+
+
+Div & Yield
+
+                                        
+                                            N.A. (N.A)
+                                        
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trade with Jim Cramer 14 Days FREE 
+
+
+
+
+
+
+
+
+
+Latest News
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Conference Call To Discuss Second Quarter Results
+
+
+
+
+
+
+Tutor Perini Appoints Leonard Rejcek To Lead Building Group
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+These Stocks Could Soar if and When Trump's Infrastructure Package Becomes a Reality
+The White House's renewed push on infrastructure stands to revive investors' hopes for portfolio-boosting legislation.
+
+Jun 5, 2017 12:17 PM EDT
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Favorable Legal Ruling And Confirms Award Of $323 Million I-74 Bridge Replacement Contract
+Tutor Perini Corporation (NYSE: TPC) (the "Company"), a leading civil and building construction company, today announced that the Company has prevailed in defending on appeal the judgment obtained by its subsidiary,...
+
+May 10, 2017 9:44 PM EDT
+
+
+
+
+
+
+
+
+
+Tutor Perini Reports First Quarter Results
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, today reported results for the three months ended March 31, 2017.
+
+May 3, 2017 4:15 PM EDT
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Four Civil Projects Valued At $774 Million
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, today announced four new civil projects collectively valued at approximately $774 million.
+
+May 2, 2017 6:00 AM EDT
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Conference Call To Discuss First Quarter Results
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, announced today that it will host a conference call at 2:00 PM Pacific Time on Wednesday, May 3, 2017, to discuss the Company's first...
+
+Apr 26, 2017 6:00 AM EDT
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Results Of Cash Tender Offer For Its Outstanding 7¿% Senior Notes Due 2018
+Tutor Perini Corporation (NYSE: TPC) (the "Company"), a leading civil and building construction company, today announced the results of its previously announced cash tender offer (the "Tender Offer") to purchase any...
+
+Apr 17, 2017 7:12 PM EDT
+
+
+
+
+
+
+
+
+
+Tutor Perini Prices $500 Million Of Senior Notes
+Tutor Perini Corporation (NYSE: TPC) (the "Company"), a leading civil and building construction company, today announced it has priced an offering of $500 million in aggregate principal amount of 6.
+
+Apr 12, 2017 4:48 PM EDT
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Senior Notes Offering
+Tutor Perini Corporation (NYSE: TPC) (the "Company"), a leading civil and building construction company, today announced it is offering $500 million in aggregate principal amount of Senior Notes due 2025 (the "notes")...
+
+Apr 10, 2017 7:59 AM EDT
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Cash Tender Offer For Its Outstanding 7¿% Senior Notes Due 2018
+Tutor Perini Corporation (NYSE: TPC) (the "Company"), a leading civil and building construction company, today announced that it has commenced a cash tender offer (the "Tender Offer") to purchase any and all of its...
+
+Apr 10, 2017 7:58 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Infrastructure Rally Was Overdone
+Any infrastructure spending won't happen until late in the year, so fade infrastructure plays.
+
+Mar 20, 2017 11:30 AM EDT
+
+
+
+
+
+
+
+
+
+Tutor Perini Reports Fourth Quarter And Full Year 2016 Results
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, today reported results for the fourth quarter and year ended December 31, 2016.
+
+Feb 23, 2017 4:05 PM EST
+
+
+
+
+
+
+
+
+
+Tutor Perini Receives Award Of $80 Million Khurais Electronic Warfare Range, Kingdom Of Saudi Arabia
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, today announced that it has been awarded a design-build contract by the U.
+
+Feb 22, 2017 6:00 AM EST
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Conference Call To Discuss Fourth Quarter And Fiscal Year 2016 Results
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, announced today that it will host a conference call at 2:00 PM Pacific Time on Thursday, February 23, 2017, to discuss the Company's...
+
+Feb 14, 2017 6:59 PM EST
+
+
+
+
+
+
+
+
+
+Tutor Perini Reaches Analyst Target Price
+In recent trading, shares of Tutor Perini Corp have crossed above the average analyst 12-month target price of $30.00, changing hands for $30.50/share. When a stock reaches the target an analyst has set, the analyst logically has two ways to react: downgrade on valuation, or, re-adjust their target price to a higher level.
+
+Feb 6, 2017 9:05 AM EST
+
+
+
+
+
+
+
+
+
+WDF Awarded Three Contracts Valued At $104 Million
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, today announced that its specialty contracting subsidiary, WDF Inc.
+
+Feb 2, 2017 6:00 AM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Receives Notice Of Intent To Award A $1.377 Billion Contract From Los Angeles County MTA For The Purple Line Extension Section 2
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, today announced that the Company has received a notice of intent to award a contract from the Los Angeles County Metropolitan...
+
+Jan 17, 2017 6:00 AM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rendering Of Metropica Tower One, Sunrise, FL (Graphic: Metropica Development, LLC)
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, today announced that its subsidiary, Tutor Perini Building Corp.
+
+Jan 9, 2017 6:00 AM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Reaches Analyst Target Price
+In recent trading, shares of Tutor Perini Corp have crossed above the average analyst 12-month target price of $29.40, changing hands for $29.60/share. When a stock reaches the target an analyst has set, the analyst logically has two ways to react: downgrade on valuation, or, re-adjust their target price to a higher level.
+
+Jan 5, 2017 9:40 AM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+This Infrastructure Rally Is Overblown
+Any boost in infrastructure spending is likely to hit in 2018 or even 2019, rather than next year.
+
+Dec 22, 2016 10:00 AM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+Black Construction Awarded $97 Million Guam International Airport Contract
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, today announced that its Guam-based subsidiary, Black Construction Corp.
+
+Dec 21, 2016 1:30 PM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+Buying Infrastructure Stocks Makes Little Sense, Valuation-Wise
+The stocks are trading as if the money will start flowing by the close of business today.
+
+Nov 21, 2016 1:00 PM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+How to Invest in Trump World
+Construction, banks and energy should be favored sectors.
+
+Nov 13, 2016 2:00 PM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+How to Invest in Trump World
+Construction, banks and energy should be favored sectors.
+
+Nov 11, 2016 9:00 AM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+Commit To Purchase Tutor Perini Corp At $15, Earn 8.9% Annualized Using Options
+Investors eyeing a purchase of Tutor Perini Corp stock, but cautious about paying the going market price of $19.80/share, might benefit from considering selling puts among the alternative strategies at their disposal. One interesting put contract in particular, is the April 2017 put at the $15 strike, which has a bid at the time of this writing of 60 cents.
+
+Nov 8, 2016 11:46 AM EST
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Postpones Senior Notes Offering
+Tutor Perini Corporation (NYSE: TPC) (the "Company"), a leading civil and building construction company, today announced that, as a result of adverse market conditions, it has postponed its planned private offering of...
+
+Nov 2, 2016 5:18 PM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Reports Third Quarter Results
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, today reported results for the three and nine months ended September 30, 2016.
+
+Nov 2, 2016 8:30 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Conference Call To Discuss Third Quarter Results
+Tutor Perini Corporation (NYSE: TPC), a leading civil and building construction company, announced today that it will host a conference call at 2:00 PM Pacific Time on Wednesday, November 2, 2016, to discuss the Company's...
+
+Oct 26, 2016 6:00 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Announces Senior Notes Offering
+Tutor Perini Corporation (NYSE: TPC) (the "Company"), a leading civil and building construction company, today announced it is offering $500 million in aggregate principal amount of Senior Notes due 2024 (the "notes")...
+
+Oct 24, 2016 7:24 AM EDT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next
+
+
+
+
+
+
+Load More
+
+
+
+
+
+
+
+
+
+Quant Rating on 4:02 PM EDT 7/28/2017
+
+
+C+
+(Hold)
+
+
+
+
+
+
+Get the (TPC) Report Here 
+
+
+
+
+
+
+
+From Our Partners
+
+
+
+Wall Street Breakfast: Markets Await U.S. GDP Report
+
+SeekingAlpha
+
+
+
+Border wall prototypes delayed
+
+SeekingAlpha
+
+
+
+Wall Street Breakfast: Fed's Stress Tests - Part 2
+
+SeekingAlpha
+
+
+
+Border wall prototypes coming soon
+
+SeekingAlpha
+
+
+
+BofA pays Tutor Perini $37M in fraud lawsuit settlement
+
+SeekingAlpha
+
+
+
+What If the US Economy Actually Grew at 4% a Year?
+
+Zacks
+
+
+
+Tutor Perini weakness a buying opportunity, says Canaccord
+
+The Fly
+
+
+
+Tutor Perini misses by $0.04, misses on revenue
+
+SeekingAlpha
+
+
+
+Notable earnings after Wednesday’s close
+
+SeekingAlpha
+
+
+
+Infrastructure stocks take a beating on concerns about Trump plan
+
+SeekingAlpha
+
+
+
+Trump Spending Pledge Gives Life to Builder's Junk-Bond Deal
+
+Bloomberg
+
+
+
+Address To Congress: Quick Picks
+
+SeekingAlpha
+
+
+
+Trump promises "big statement" on infrastructure spending
+
+SeekingAlpha
+
+
+
+Tutor Perini EPS in-line, misses on revenue
+
+SeekingAlpha
+
+
+
+Report: Trump to push infrastructure spending plan to 2018
+
+SeekingAlpha
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TheStreet
+Quant Rating:
+
+C+ (Hold)
+
+
+
+Get the (TPC) Report Here 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Trending
+
+
+Tesla Is a Cult Stock, Jim Cramer Says
+
+
+Amazon, Alphabet and a GOP Failure on Healthcare; Here's Where Wall Street Stands
+
+
+iPod Nano, Shuffle Are Dead; Here Are 8 Other Discontinued Apple Products
+
+
+Here's Why Snap's Stock Could Be In For Another Big Plunge on Monday
+
+
+Can Apple Show Amazon What Earnings Should Look Like?
+
+
+
+
+
+
+
+
+
+
+
+Advertising Partners
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+©1996-2017 TheStreet, Inc. All rights reserved.Action Alerts PLUS is a registered trademark of TheStreet, Inc.
+
+
+
+
+Compare Brokers
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Corporation - TPC - Stock Price Today - Zacks
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Free Gift
+	for Zacks.com visitors
+ 
+
+		TPC is down -2.01% today, but where's it headed in August?
+ 
+
+
+   
+
+ Privacy Policy
+
+		No cost, no obligation to buy anything ever.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Join
+
+Sign In
+
+
+
+
+Member Sign In
+
+
+ Keep Me Signed In 
+What does "Remember Me" do?
+Forgot Password
+
+
+Create a New Account
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+You are being directed to ZacksTrade, a division of LBMZ Securities and licensed broker-dealer. ZacksTrade and Zacks.com are separate companies. The web link between the two companies is not a solicitation or offer to invest in a particular security or type of security. ZacksTrade does not endorse or adopt any particular investment strategy, any analyst opinion/rating/report or any approach to evaluating indiv idual securities.
+If you wish to go to ZacksTrade, click OK. If you do not, click Cancel.
+OK Cancel
+
+
+
+
+
+
+
+
+Back to top
+
+
+
+
+
+
+
+
+more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Tutor Perini Corporation (TPC)
+(Delayed Data from NYSE)
+
+
+
+$26.85 USD
+26.85
+173,176
+
+
+                -0.55                (-2.01%)
+              
+
+Updated Jul 28, 2017 04:02 PM ET
+
+
+
+
+Add to portfolio
+ 
+
+
+
+
+
+Zacks Rank:
+
+
+
+                                                 3-Hold     3     
+
+
+
+
+Style Scores:
+
+
+
+A Value | C Growth | B Momentum | A VGM                
+
+
+The Style Scores are a complementary set of indicators to use alongside the Zacks Rank. It allows the user to better focus on the stocks that are the best fit for his or her personal trading style. 
+The scores are based on the trading styles of Value, Growth, and Momentum. There's also a VGM Score ('V' for Value, 'G' for Growth and 'M' for Momentum), which combines the weighted average of the individual style scores into one score.
+
+
+Value Score
+A
+
+
+Growth Score
+A
+
+
+Momentum Score
+A
+
+
+VGM Score
+A
+
+
+Within each Score, stocks are graded into five groups: A, B, C, D and F. As you might remember from your school days, an A, is better than a B; a B is better than a C; a C is better than a D; and a D is better than an F.
+As an investor, you want to buy stocks with the highest probability of success. That means you want to buy stocks with a Zacks Rank #1 or #2, Strong Buy or Buy, which also has a Score of an A or a B in your personal trading style.
+Zacks Style Scores Education - Learn more about the Zacks Style Scores
+
+
+
+
+
+Industry Rank:
+
+
+
+ Top 28%(73 out of 265) 
+Industry: Building Products - Heavy Construction
+
+
+
+
+View All Zacks #1 Ranked Stocks
+
+
+
+
+Trades from
+$1
+
+ 
+
+
+
+This is our short term rating system that serves as a timeliness indicator for stocks over the next 1 to 3 months. How good is it? See rankings and related performance below. 
+
+
+
+Zacks Rank
+Definition
+Annualized Return
+
+
+
+
+1
+Strong Buy
+25.71%
+
+
+2
+Buy
+18.12%
+
+
+3
+Hold
+9.91%
+
+
+4
+Sell
+5.49%
+
+
+5
+Strong Sell
+2.29%
+
+
+S&P
+500
+9.79%
+
+
+ Zacks Rank Education - Learn about the Zacks Rank
+Zacks Rank Home - Zacks Rank resources in one place
+Zacks Premium - The only way to fully access the Zacks Rank
+
+
+The Zacks Equity Research reports, or ZER for short, are our in-house, independently produced research reports.
+The ever popular one-page Snapshot reports are generated for virtually every single Zacks Ranked stock. It's packed with all of the company's key stats and salient decision making information. Including the Zacks Rank, Zacks Industry Rank, Style Scores, the Price, Consensus & Surprise chart, graphical estimate analysis and how a stocks stacks up to its peers.
+The detailed multi-page Analyst report does an even deeper dive on the company's vital statistics. In addition to all of the proprietary analysis in the Snapshot, the report also visually displays the four components of the Zacks Rank (Agreement, Magnitude, Upside and Surprise); provides a comprehensive overview of the company business drivers, complete with earnings and sales charts; a recap of their last earnings report; and a bulleted list of reasons to buy or sell the stock. It also includes an industry comparison table to see how your stock compares to its expanded industry, and the S&P 500.
+Researching stocks has never been so easy or insightful as with the ZER Analyst and Snapshot reports.
+Learn more about Zacks Equity Research reports
+See more Zacks Equity Research reports
+
+
+
+The Zacks Industry Rank assigns a rating to each of the 265 X (Expanded) Industries based on their average Zacks Rank.
+An industry with a larger percentage of Zacks Rank #1's and #2's will have a better average Zacks Rank than one with a larger percentage of Zacks Rank #4's and #5's.
+The industry with the best average Zacks Rank would be considered the top industry (1 out of 265), which would place it in the top 1% of Zacks Ranked Industries. The industry with the worst average Zacks Rank (265 out of 265) would place in the bottom 1%.
+        Zacks Rank Education -- Learn more about the Zacks Rank  
+Zacks Industry Rank Education -- Learn more about the Zacks Industry Rank
+        
+
+
+
+
+
+
+
+
+
+Quote Overview
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Activity
+
+
+
+Open
+27.30
+
+
+Day Low
+26.70
+
+
+Day High
+27.45
+
+
+52 Wk Low
+18.05
+
+
+52 Wk High
+33.00
+
+
+Avg. Volume
+236,000
+
+
+Market Cap
+1.36 B
+
+
+Dividend
+0.00 ( 0.00%)
+
+
+Beta
+2.44
+
+
+
+
+
+Key Earnings Data
+
+
+
+Earnings ESP 
+-14.04%
+
+
+Most Accurate Est
+0.49
+
+
+Current Qtr Est
+0.57
+
+
+Current Yr Est
+2.23
+
+
+Exp Earnings Date
+*AMC8/7/17
+
+
+Prior Year EPS
+1.92
+
+
+Exp EPS Growth (3-5yr)10.00%
+
+
+Forward PE
+12.27
+
+
+PEG Ratio
+1.23
+
+
+
+
+
+
+
+
+
+
+Construction » Building Products - Heavy Construction
+
+
+
+*BMO = Before Market Open *AMC = After Market Close
+
+
+Zacks Earnings ESP (Expected Surprise Prediction) looks to find companies that have recently seen positive earnings estimate revision activity. The idea is that more recent information is, generally speaking, more accurate and can be a better predictor of the future, which can give investors an advantage in earnings season.
+The technique has proven to be very useful for finding positive surprises. In fact, when combining a Zacks Rank #3 or better and a positive Earnings ESP, stocks produced a positive surprise 70% of the time, while they also saw 28.3% annual returns on average, according to our 10 year backtest.
+    
+Visit the Earnings ESP Center
+See the Full List of Stocks To Beat Earnings
+
+
+
+
+
+Research Report for TPC
+
+
+
+All Zacks’ Analyst Reports
+
+
+
+News for TPC
+
+Zacks News for TPC
+Other News for TPC
+
+
+
+What If the US Economy Actually Grew at 4% a Year?
+05/09/17-4:33PM EST  Zacks
+
+Tutor Perini (TPC) Wins U.S. Air Force Design-Build Contract
+02/23/17-9:07AM EST  Zacks
+
+TPC: What are Zacks experts saying now?
+
+Zacks Private Portfolio Services
+
+Top Stock Picks for Trumps Trillion Dollar Infrastructure Plan
+02/15/17-12:00AM EST  Zacks
+
+Tutor Perini Gets Notice for $1.4B LA County MTA Contract
+01/18/17-9:54AM EST  Zacks
+
+Jacobs (JEC) Q4 Earnings: Will the Stock Beat Estimates?
+11/18/16-3:15PM EST  Zacks
+
+
+More Zacks News for TPC
+
+
+
+
+Border wall prototypes delayed
+07/28/17-3:30AM EST  Seeking Alpha
+
+Tutor Perini Announces Conference Call to Discuss Second Quarter Results
+07/27/17-6:00AM EST  Business Wire
+
+TPC Makes Notable Cross Below Critical Moving Average
+07/24/17-10:15AM EST  Market News Video
+
+Wall Street Breakfast: Fed`s Stress Tests - Part 2
+06/28/17-6:16AM EST  Seeking Alpha
+
+Border wall prototypes coming soon
+06/28/17-3:00AM EST  Seeking Alpha
+
+
+More Other News for TPC
+
+
+
+
+
+Premium Research for TPC
+
+
+
+
+
+Zacks Rank
+
+
+ Hold 3
+
+
+
+Zacks Industry Rank
+ Top 28%(73 out of 265)
+
+
+Zacks Sector Rank
+ Top 13% (2  out of 16) 
+
+
+
+Style Scores
+
+A Value | C Growth | B Momentum | A VGM
+
+
+
+
+Earnings ESP
+
+
+-14.04%
+
+
+
+Research Report for TPC
+
+Snapshot
+
+
+
+
+
+This is our short term rating system that serves as a timeliness indicator for stocks over the next 1 to 3 months. How good is it? See rankings and related performance below. 
+
+
+
+Zacks Rank
+Definition
+Annualized Return
+
+
+
+
+1
+Strong Buy
+25.71%
+
+
+2
+Buy
+18.12%
+
+
+3
+Hold
+9.91%
+
+
+4
+Sell
+5.49%
+
+
+5
+Strong Sell
+2.29%
+
+
+S&P
+500
+9.79%
+
+
+
+Zacks Rank Education - Learn more about the Zacks Rank
+Zacks Rank Home - All Zacks Rank resources in one place
+Zacks Premium - The only way to get access to the Zacks Rank
+
+
+The Style Scores  are a complementary set of indicators to use alongside the Zacks Rank. It allows the user to better focus on the stocks that are the best fit for his or her personal trading style.
+The scores are based on the trading styles of Value, Growth, and Momentum. There's also a VGM Score ('V' for Value, 'G' for Growth and 'M' for Momentum), which combines the weighted average of the individual style scores into one score.
+
+
+
+Value Score
+A
+
+
+Growth Score
+A
+
+
+Momentum Score
+A
+
+
+VGM Score
+A
+
+
+
+Within each Score, stocks are graded into five groups: A, B, C, D and F. As you might remember from your school days, an A, is better than a B; a B is better than a C; a C is better than a D; and a D is better than an F.
+As an investor, you want to buy stocks with the highest probability of success. That means you want to buy stocks with a Zacks Rank #1 or #2, Strong Buy or Buy, which also has a Score of an A or a B in your personal trading style.
+Zacks Style Scores Education - Learn more about the Zacks Style Scores
+
+
+The Zacks Industry Rank assigns a rating to each of the 265 X (Expanded) Industries based on their average Zacks Rank.
+An industry with a larger percentage of Zacks Rank #1's and #2's will have a better average Zacks Rank than one with a larger percentage of Zacks Rank #4's and #5's.
+The industry with the best average Zacks Rank would be considered the top industry (1 out of 265), which would place it in the top 1% of Zacks Ranked Industries. The industry with the worst average Zacks Rank (265 out of 265) would place in the bottom 1%.
+Zacks Rank Education -- Learn more about the Zacks Rank  
+Zacks Industry Rank Education -- Learn more about the Zacks Industry Rank
+
+
+
+The Zacks Sector Rank assigns a rating to each of the 16 Sectors based on their average Zacks Rank.
+A sector with a larger percentage of Zacks Rank #1's and #2's will have a better average Zacks Rank than one with a larger percentage of Zacks Rank #4's and #5's.
+Zacks Sector Rank Education - Learn more about the Zacks Sector Rank 
+The sector with the best average Zacks Rank would be considered the top sector (1 out of 16), which would place it in the top 1% of Zacks Ranked Sectors. The sector with the worst average Zacks Rank (16 out of 16) would place in the bottom 1%.
+Zacks Rank Education -- Learn more about the Zacks Rank 
+Zacks Sector Rank Education -- Learn more about the Zacks Sector Rank
+
+
+
+The Zacks Equity Research reports, or ZER for short, are our in-house, independently produced research reports.
+The ever popular one-page Snapshot reports are generated for virtually every single Zacks Ranked stock. It's packed with all of the company's key stats and salient decision making information. Including the Zacks Rank, Zacks Industry Rank, Style Scores, the Price, Consensus & Surprise chart, graphical estimate analysis and how a stocks stacks up to its peers.
+The detailed multi-page Analyst report does an even deeper dive on the company's vital statistics. In addition to all of the proprietary analysis in the Snapshot, the report also visually displays the four components of the Zacks Rank (Agreement, Magnitude, Upside and Surprise); provides a comprehensive overview of the company business drivers, complete with earnings and sales charts; a recap of their last earnings report; and a bulleted list of reasons to buy or sell the stock. It also includes an industry comparison table to see how your stock compares to its expanded industry, and the S&P 500.
+Researching stocks has never been so easy or insightful as with the ZER Analyst and Snapshot reports.
+Learn more about Zacks Equity Research reports
+See more Zacks Equity Research reports
+
+
+Zacks Earnings ESP (Expected Surprise Prediction) looks to find companies that have recently seen positive earnings estimate revision activity. The idea is that more recent information is, generally speaking, more accurate and can be a better predictor of the future, which can give investors an advantage in earnings season.
+The technique has proven to be very useful for finding positive surprises. In fact, when combining a Zacks Rank #3 or better and a positive Earnings ESP, stocks produced a positive surprise 70% of the time, while they also saw 28.3% annual returns on average, according to our 10 year backtest.
+    
+Visit the Earnings ESP Center
+See the Full List of Stocks To Beat Earnings
+
+
+This is our short term rating system that serves as a timeliness indicator for stocks over the next 1 to 3 months. How good is it? See rankings and related performance below. 
+
+
+
+Zacks Rank
+Definition
+Annualized Return
+
+
+
+
+1
+Strong Buy
+25.71%
+
+
+2
+Buy
+18.12%
+
+
+3
+Hold
+9.91%
+
+
+4
+Sell
+5.49%
+
+
+5
+Strong Sell
+2.29%
+
+
+S&P
+500
+9.79%
+
+
+
+Zacks Rank Education - Learn more about the Zacks Rank
+Zacks Rank Home - All Zacks Rank resources in one place
+Zacks Premium - The only way to fully access the Zacks Rank
+
+
+The Zacks Industry Rank assigns a rating to each of the 265 X (Expanded) Industries based on their average Zacks Rank.
+An industry with a larger percentage of Zacks Rank #1's and #2's will have a better average Zacks Rank than one with a larger percentage of Zacks Rank #4's and #5's.
+The industry with the best average Zacks Rank would be considered the top industry (1 out of 265), which would place it in the top 1% of Zacks Ranked Industries. The industry with the worst average Zacks Rank (265 out of 265) would place in the bottom 1%.
+Zacks Rank Education -- Learn more about the Zacks Rank  
+Zacks Industry Rank Education -- Learn more about the Zacks Industry Rank
+
+
+
+The Zacks Sector Rank assigns a rating to each of the 16 Sectors based on their average Zacks Rank.
+A sector with a larger percentage of Zacks Rank #1's and #2's will have a better average Zacks Rank than one with a larger percentage of Zacks Rank #4's and #5's.
+Zacks Sector Rank Education - Learn more about the Zacks Sector Rank 
+The sector with the best average Zacks Rank would be considered the top sector (1 out of 16), which would place it in the top 1% of Zacks Ranked Sectors. The sector with the worst average Zacks Rank (16 out of 16) would place in the bottom 1%.
+Zacks Rank Education -- Learn more about the Zacks Rank 
+Zacks Sector Rank Education -- Learn more about the Zacks Sector Rank
+
+
+
+The Style Scores are a complementary set of indicators to use alongside the Zacks Rank. It allows the user to better focus on the stocks that are the best fit for his or her personal trading style. 
+The three scores are based on the trading styles of Growth, Value, and Momentum.
+
+
+Growth Score
+A
+
+
+Value Score
+A
+
+
+Momentum Score
+A
+
+
+Within each Score, stocks are graded into five groups: A, B, C, D and F. As you might remember from your school days, an A is better than a B; a B is better than a C; a C is better than a D; and a D is better than an F.
+As an investor, you want to buy stocks with the highest probability of success. That means you want to buy stocks with a Zacks Rank #1 or #2, Strong Buy or Buy, which also has a Score of an A or a B.
+Zacks Style Scores Education - Learn more about the Zacks Style Scores
+
+
+The Style Scores  are a complementary set of indicators to use alongside the Zacks Rank. It allows the user to better focus on the stocks that are the best fit for his or her personal trading style.
+The scores are based on the trading styles of Value, Growth, and Momentum. There's also a VGM Score ('V' for Value, 'G' for Growth and 'M' for Momentum), which combines the weighted average of the individual style scores into one score.
+
+
+
+Value Score
+A
+
+
+Growth Score
+A
+
+
+Momentum Score
+A
+
+
+VGM Score
+A
+
+
+
+Within each Score, stocks are graded into five groups: A, B, C, D and F. As you might remember from your school days, an A, is better than a B; a B is better than a C; a C is better than a D; and a D is better than an F.
+As an investor, you want to buy stocks with the highest probability of success. That means you want to buy stocks with a Zacks Rank #1 or #2, Strong Buy or Buy, which also has a Score of an A or a B in your personal trading style.
+Zacks Style Scores Education - Learn more about the Zacks Style Scores
+
+
+The Zacks Equity Research reports, or ZER for short, are our in-house, independently produced research reports.
+The ever popular one-page Snapshot reports are generated for virtually every single Zacks Ranked stock. It's packed with all of the company's key stats and salient decision making information. Including the Zacks Rank, Zacks Industry Rank, Style Scores, the Price, Consensus & Surprise chart, graphical estimate analysis and how a stocks stacks up to its peers.
+The detailed multi-page Analyst report does an even deeper dive on the company's vital statistics. In addition to all of the proprietary analysis in the Snapshot, the report also visually displays the four components of the Zacks Rank (Agreement, Magnitude, Upside and Surprise); provides a comprehensive overview of the company business drivers, complete with earnings and sales charts; a recap of their last earnings report; and a bulleted list of reasons to buy or sell the stock. It also includes an industry comparison table to see how your stock compares to its expanded industry, and the S&P 500.
+Researching stocks has never been so easy or insightful as with the ZER Analyst and Snapshot reports.
+Learn more about Zacks Equity Research reports
+See more Zacks Equity Research reports
+
+(  = Change in last 30 days) 
+View All Zacks Rank #1 Strong Buys
+
+
+
+
+
+Premium Research: Industry Analysis
+
+
+
+Top Peers
+Symbol
+Zacks Rank
+
+
+
+
+Tutor Perini Corporation
+TPC
+
+
+
+Jiangsu Expressway Co.
+JEXYY
+
+
+
+Zhejiang Expressway Co.
+ZHEXY
+
+
+
+Primoris Services Corporation
+PRIM
+
+
+
+China Communications Construction Co.
+CCCGY
+
+
+
+China Railway Construction Corp.
+CWYCY
+
+
+
+Dycom Industries, Inc.
+DY
+
+
+
+
+See all Building Products - Heavy Construction Peers
+
+
+ 
+
+
+
+
+
+
+
+
+Price and EPS Surprise Chart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 Month
+3 Months
+YTD
+
+
+
+
+
+Interactive Chart | Fundamental Chart
+
+
+
+Billion Dollar Secret
+
+
+
+Company Summary
+Tutor Perini Corporation provides diversified general contracting, construction management and design-build services to private clients and public agencies worldwide. The company operates in four segments: Civil, Building, Specialty Contractors, and Management Services. The Civil segment engages in public works construction activities and the repair, replacement, and reconstruction of infrastructure. The Building segment offers services in specialized building markets, including hospitality and gaming, transportation, healthcare, municipal offices, sports and entertainment, education, correctional facilities, biotech, pharmaceutical, industrial, and high technology. The Specialty Contractors segment provides plumbing, HVAC, electrical, mechanical, and concrete services for the industrial, commercial, hospitality and gaming, and transportation markets. The Management Services segment offers construction and design-build services to the U.S. military and government agencies, and multi-national corporations.   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Search This Site
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Market
+
+
+Aviation
+Bridges & Roads
+Commercial
+Education
+Government & Military
+Healthcare
+Hospitality & Gaming
+Justice
+Manufacturing & Industrial
+
+
+
+
+Mixed-Use & Retail
+Public Assembly & Entertainment
+Rail & Mass Transit
+Recovery / Restorations / Retrofits
+Residential
+Science & Technology
+Sports
+Tunnels / Mines / Underground
+Water
+
+
+
+
+
+
+Specialty
+
+
+Audio / Visual
+Boring & Drilling
+Cabling / Fiber
+Concrete
+Earth Retention
+Electrical
+Fire Protection
+Foundations
+Heavy Equipment
+
+
+
+
+Hoisting
+HVAC
+Plumbing
+Process Piping
+Secure Facilities
+Security Systems
+Sequential Excavation Method
+Shotcrete
+Underground Mine Development
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Corporation
+                                                                                                                                                   Los Angeles (Headquarters)15901 Olden Street Sylmar, CA 91342Phone: 818-362-8391
+
+
+Contact Us
+
+Becho, Inc.
+Black Construction Corporation
+Desert Mechanical, Inc.
+Fisk Electric Company
+Five Star Electric
+Frontier-Kemper Constructors, Inc.
+Lunda Construction Company
+Nagelbush Mechanical
+Perini Management Services, Inc.
+Roy Anderson Corp
+Rudolph and Sletten, Inc.
+Superior Gunite
+Tutor Perini Building Corp.
+Tutor Perini Civil
+WDF Inc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Corporation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Search This Site
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Market
+
+
+Aviation
+Bridges & Roads
+Commercial
+Education
+Government & Military
+Healthcare
+Hospitality & Gaming
+Justice
+Manufacturing & Industrial
+
+
+
+
+Mixed-Use & Retail
+Public Assembly & Entertainment
+Rail & Mass Transit
+Recovery / Restorations / Retrofits
+Residential
+Science & Technology
+Sports
+Tunnels / Mines / Underground
+Water
+
+
+
+
+
+
+Specialty
+
+
+Audio / Visual
+Boring & Drilling
+Cabling / Fiber
+Concrete
+Earth Retention
+Electrical
+Fire Protection
+Foundations
+Heavy Equipment
+
+
+
+
+Hoisting
+HVAC
+Plumbing
+Process Piping
+Secure Facilities
+Security Systems
+Sequential Excavation Method
+Shotcrete
+Underground Mine Development
+
+
+
+
+
+
+
+
+
+
+
+
+
+Extraordinary Projects Exceptional Performance℠
+
+
+
+
+
+
+SR 99 - Alaska Way Viaduct Replacement Tunnel - Seattle, WA - $1.4 Billion
+
+
+
+
+
+
+CityCenter - Las Vegas, NV - $6.4 Billion
+
+
+
+
+
+
+Third Street Light Rail Program Phase 2 - Central Subway - San Francisco, CA - $860 Million
+
+
+
+
+
+
+Saint Croix Crossing - Stillwater, MN - $340 Million
+
+
+
+
+
+
+Hudson Yards - Multiple Projects - New York, NY - $2.2 Billion
+
+
+
+
+
+
+San Diego Central Courthouse - San Diego, CA - $451 Million
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intelligence. Intensity. Integrity.
+
+Our clients share a world-building approach, with projects that transform industries and communities. Efforts of such stunning size and complexity don't intimidate us — they inspire us. Our firm is built to tackle projects like these.
+Extraordinary projects demand a strategic and intelligent approach, finely honed through more than a century of real-world experience. They demand the relentless intensity of people who know the stakes are incredibly high. And they demand a team that understands mutual trust and integrity are necessary to execute massive undertakings on near-impossible deadlines.
+Extraordinary projects need vision and precision to be exceptional. They need Tutor Perini.
+
+
+
+
+
+                                Civil
+                            
+
+
+
+
+
+
+                                Building
+                            
+
+
+
+
+
+
+                                Specialty
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Tutor Perini Corporation | Government Contractor
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+  edyqatwyesrfb
+
+
+
+
+
+
+					Government Contracts				
+
+					Federal Agencies				
+
+
+
+				More 
+
+
+
+
+
+ Search
+
+
+
+
+
+
+							Government Contractors							×
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Menu
+
+
+See All Government Contractors
+OverviewContractsCategoriesProducts/ServicesPlace of PerformanceVendor Details 
+
+
+
+
+
+
+
+
+					Tutor Perini Corporation				
+
+
+OverviewContractsCategoriesProducts/ServicesMorePlace of PerformanceVendor Details 
+
+
+
+
+
+
+
+
+Tutor Perini Corporation
+
+
+
+Overview
+
+
+
+
+Contracts
+
+
+
+
+Categories
+
+
+
+
+Products/Services
+
+
+
+
+Place of Performance
+
+
+
+
+Vendor Details
+
+
+
+
+References
+
+
+
+
+
+
+
+
+
+
+ See all Government Contractors				
+
+ Research Guide				
+
+
+
+
+Share
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Corporation Government Contractor in Sylmar, CA
+
+ 
+
+
+
+
+
+
+dollars obligated (Latest year)$67,003,091 United States dollarslatest fiscal year2016total dollars obligated (Since FY2007)$2,097,146,095 United States dollarsnumber of contracts (Since FY2007)181 
+
+ 
+
+See all Contracts for this Company See all Government Contractors 
+
+
+
+
+
+
+
+
+
+
+
+
+Advertisement
+
+
+ShareOverviewSummaryTutor Perini Corporation and its subsidiaries have worked on one hundred and eighty-one contracts worth $2.1 billion USD in obligations from the federal government since FY2007. In its latest active fiscal year (2016), the organization received a total of $67 million USD in obligations.The principal agencies it has contracted with are the Department of Defense, Department of Transportation, and Department of State.
+
+Principal Agencies
+Department of DefenseDepartment of TransportationDepartment of State
+
+
+Principal Category (NAICS)
+Commercial and Institutional Building Construction (236220)
+
+
+Principal Product or Service (PSC)
+Construction of Miscellaneous Buildings (Y199)
+
+
+Designations
+Other than Small Business, For Profit Organization, and Non-Tax Exempt Corporate Entity
+
+
+Organization Type
+Corporate Not Tax Exempt
+
+
+Website
+tutorperini.com 
+Contact
+
+Phone Number
+(818) 362-8391
+Location
+How does Tutor Perini Corporation compare to other vendors?A comparison of the amount of contract awards obligated to Tutor Perini Corporation since FY2007 with other vendors in its location.Awarded far higher than average compared to  65 vendors in Zip Code 91342, CA.Awarded far higher than average compared to  47,628 vendors in California.Awarded far higher than average compared to all  494,386 federal vendors.
+
+
+Comparison
+
+Vendor NameTotal Dollars Obligated (Since FY2007)ZipcodeIDIDColorTutor Perini Corporation$2.1 billion USDZip Code 91342, CAZip Code 91342, CA Federal Contractors$145,529 USDCalifornia Federal Contractors$42,240 USDAll Federal Contractors$36,884 USD
+
+
+
+
+ZipStateMoreZip
+
+
+
+See all vendors from Zip Code 91342, CA ›State
+
+
+
+See all vendors from California ›
+Subsidiary VendorsSubsidiary vendors are companies that are completely or partly owned by Tutor Perini Corporation. The total amount obligated to Tutor Perini Corporation ($2.1B) is an aggregation of obligation amounts from federal agencies to itself and its subsidiaries on contracts signed from FY2007 onward.
+
+
+
+
+
+VendorLocationTotal Dollars Obligated (Since FY2007)Vendor NamePrincipal Category (NAICS)Principal Product or Service (PSC)IDParent Vendor Name130854128Framingham, MA$367 million USDPerini Management Services, Inc.Commercial and Institutional Building Construction (236220)Construction of Office Buildings (Y111)7850530Gulfport, MS$298 million USDRoy Anderson CorpCommercial and Institutional Building Construction (236220)Maintenance, Repair or Alteration of Other Non-Building Facilities (Z299)22621759Jessup, MD$250 million USDCherry Hill Construction, Inc.Highway, Street, and Bridge Construction (237310)Construction of Highways, Roads, Streets, Bridges, and Railways (Includes Resurfacing) (Y222)779911312Harmon 96913, GU$152 million USDBlack Construction CorporationCommercial and Institutional Building Construction (236220)Construction of Other Airfield Structures (Y129)2845360Redwood City, CA$60.2 million USDRudolph And Sletten, Inc.Commercial and Institutional Building Construction (236220)Construction of Office Buildings (Y111)54229034Fort Lauderdale, FL$41.9 million USDJames A. Cummings, Inc.Commercial and Institutional Building Construction (236220)Construction of Hospitals and Infirmaries (Y141)84776343Philadelphia, PA$19 million USDDaniel J. Keating Construction CompanyCommercial and Institutional Building Construction (236220)Maintenance, Repair or Alteration of Office Buildings (Z111)5832613Black River Falls, WI$11.4 million USDLunda Construction CompanyOther Heavy and Civil Engineering Construction (237990)Maintenance, Repair or Alteration of Dams (Z211)8425084Houston, TX$120,317 USDFisk Electric CompanyCommercial and Institutional Building Construction (236220)Repair or Alteration of Office Buildings (Z2AA)
+
+See all Tutor Perini Corporation subsidiaries › 
+
+
+
+
+
+Advertisement
+
+
+ShareContractsBy Year
+
+The federal government obligated Tutor Perini Corporation a high of $519 million USD in FY2008 and low of $66.6 million USD in FY2009. On average, it received $165,786,000 United States dollars in contract obligations per fiscal year.* Dollars Obligated: The amount of money obligated towards a vendor by a federal agency or agencies to work on a contract.* Base and All Options (Ceiling): The maximum amount that can be awarded to a contract as mutually agreed upon by the vendor and agency.
+
+
+
+
+
+By Date Signed
+
+
+
+Contract SearchContracts that Tutor Perini Corporation signed from FY2007 onwards.Most RecentLargestMoreMost Recent
+
+ContractContract DescriptionProduct or Service (PSC)Signed DateCompletion DateAgencyDollars ObligatedPercent ObligatedIDParent Vendor NameFA890317D0044-FA890317F0046Type: Delivery Order (1 month)WORLDWIDE ENGINEERING AND CONSTRUCTIONConstruction of Miscellaneous Buildings (Y1JZ)3/3/174/24/17Department of Defense$3,000 USD100% obligatedFA890317D0044Type: Indefinite Delivery Contract (5 years)WORLDWIDE ENGINEERING AND CONSTRUCTIONConstruction of Miscellaneous Buildings (Y1JZ)2/28/172/28/22Department of Defense$3,000 USD100% obligatedFA300208D0011-FA890317F0047Type: Delivery Order (2 years)FFP/SATOC SAUDI ARABIA (FMS) F-15 MODERNIZAITON PROGRAM, KHURAIS ELECTRONIC WARFARE RANGE., PSAB 13-0004Construction of Administrative Facilities and Service Buildings (Y1AZ)2/2/172/2/19Department of Defense$79,974,600 USD100% obligatedFA300208D0011-FA890317F0086Type: Delivery Order (1 year)DESIGN-BID-BUILD RENOVATION OF BUILDING 401 AT SCHRIEVER AFB, CO; PROJECT GLEN140401Repair or Alteration of Restoration of Real Property (Public or Private) (Z2QA)1/13/174/3/18Department of Defense$7,180,420 USD100% obligatedW912DS16C0028Type: Definitive Contract (1 year)COMPLETION OF THE PROCESSING BUILDINGConstruction of Administrative Facilities and Service Buildings (Y1AZ)9/29/1610/14/17Department of Defense$10,025,400 USD100% obligatedSAQMMA16D0163Type: Indefinite Delivery Contract (5 years)UNCLASSIFIED CHU IDIQConstruction of Office Buildings (Y1AA)9/28/169/30/21Department of State$0 USD0% obligated of $2.5BFA300208D0011-TG03Type: Delivery Order (1 year)EUROPEAN ACTIVITY SET (EAS) SITE IMPROVEMENTS, NEW CONSTRUCTION, AND REHABILITATION, SKWIERZYNA, POLANDConstruction of Office Buildings (Y1AA)9/20/1610/30/17Department of Defense$6,684,930 USD100% obligatedHSCG4709D3EFK23-HSFLGL16J00327Type: Delivery Order (7 months)CONSTRUCTION TSA MODULAR BUILDINGSConstruction of Educational Buildings (Y1CZ)6/6/161/30/17Department of Homeland Security$10,554,700 USD100% obligatedFA300208D0011-5Z01Type: Delivery Order (1 year)REPAIR OVERHEAD ELECTRICAL LINES, MUNITIONS STORAGE AREARepair or Alteration of Utilities (Z2NZ)1/29/163/28/17Department of Defense$2,863,940 USD100% obligatedFA300208D0011-TG02Type: Delivery Order (3 years)- DESIGN-BID-BUILD TO RENOVATE BLDG 1700 AT SCOTT AFB, ILConstruction of Office Buildings (Y1AA)9/29/1511/22/18Department of Defense$17,948,500 USD100% obligated
+
+See all contracts for this vendor ›Largest
+
+ContractContract DescriptionProduct or Service (PSC)Signed DateCompletion DateAgencyDollars ObligatedPercent ObligatedIDParent Vendor NameW912ER04D0008Type: Indefinite Delivery Contract (1 year)MODIFICATION ADDS UPDATED DEFENSE BASE ACT INSURANCE COVERAGEConstruction of Miscellaneous Buildings (Y199)12/14/061/11/08Department of Defense$458,139,000 USD89% obligated of $512MFA300208D0011Type: Indefinite Delivery Contract (9 years)CONSTRUCTION SERVICESConstruction of Miscellaneous Buildings (Y199)7/16/085/8/18Department of Defense$269,053,000 USD100% obligatedW912ER04D0008-0018Type: Delivery Order (4 years)DESIGN/BUILD EMBASSY HOUSINGConstruction of Miscellaneous Buildings (Y199)9/29/083/31/13Department of Defense$157,188,000 USD92% obligated of $172MSAQMMA11D0023Type: Indefinite Delivery Contract (5 years)IDIQ CONTRACT FOR FUTURE TASK ORDERS.Construction of Office Buildings (Y111)1/11/117/6/16Department of State$151,403,000 USD100% obligatedSAQMMA11D0023-SAQMMA11F0951Type: Delivery Order (3 years)CONSTRUCTION OF A NEW BASRA, IRAQ CONSULATE GENERAL.Construction of Office Buildings (Y111)3/14/1111/5/14Department of State$125,914,000 USD100% obligatedN6274210D1312Type: Indefinite Delivery Contract (5 years)ALL WORK UNDER THE MACC WILL BE INITIATED BY TASK ORDERS THAT ARE COMPETED AMONGST ONLY THE MACC HOLDERS (FIRMS AWARDED ONE OF THE POTENTIAL CONTRACTS).  TASK ORDERS WILL EITHER BE DESIGN-BID-BUILD (100% DESIGN PROVIDED BY GOVERNMENT) OR DESIGN-BUILD (DESIGNS OF AT LEAST 15% LEVEL OF EFFORT).  WORK WILL INCLUDE NEW CONSTRUCTION, RENOVATION, AND ADDITIONS/UPGRADES TO A VARIETY OF FACILITY TYPES, INCLUDING BUT NOT LIMITED TO, BARRACKS/DORMITORIES, ADMINISTRATIVE FACILITIES, COMMUNICATION FACILITIES, EDUCATIONAL FACILITIES, MEDICAL/DENTAL/HOSPITAL FACILITIES, DINING FACILITIES, RECREATIONAL FACILITIES, RETAIL FACILITIES, INDUSTRIAL FACILITIES, WAREHOUSE FACILITIES, RANGES, OPERATIONAL/TRAINING FACILITIES, ROADS, STREETS, BRIDGES, SITE UTILITIES/INFRASTRUCTURE, WATERFRONT/MARINE FACILITIES, PIERS/WHARVES, DREDGING, AND AVIATION FACILITIES (INCLUDING HANGARS, RUNWAYS AND APRONS), AND OTHER BASE DEVELOPMENT FACILITIES. PROJECTS WILL REQUIRE INCORPORATION OF SUSTAINABLE FEATURES SUCH AS LEADERSHIP IN ENERGY AND ENVIRONMENTAL DESIGN (LEED) BUILDING STANDARDS.  THE MAJORITY OF THE WORK WILL BE PERFORMED IN THE TERRITORY OF GUAM BUT MAY INCLUDE OTHER AREAS UNDER THE COGNIZANCE OF THE NAVAL FACILITIES ENGINEERING COMMAND, PACIFIC.Construction of Highways, Roads, Streets, Bridges, and Railways (Includes Resurfacing) (Y222)5/10/105/9/15Department of Defense$122,742,000 USD100% obligatedDTFH7114C00012Type: Definitive Contract (4 years)THE I-564 INTERMODAL CONNECTOR LIMITS ARE LOCATED FROM EXISTING INTERSTATE 564 IN THE AREA OF TERMINAL BLVD ON THE EAST TO THE NAVAL STATION NORFOLK (SECOND STREET)AND NORFOLK INTERNATIONAL TERMINALS ON THE WEST, REPRESENTING APPROXIMATELY 2.82 MILES OF NEW FOUR-LANE LIMITED ACCESS HIGHWAY, AND A RECONFIGURED COMMERCIAL VEHICLE INSPECTION STATION FOR NAVAL STATION NORFOLK. PROPOSED IMPROVEMENTS INCLUDE, BUT ARE NOT LIMITED TO, CONSTRUCTION OF I-564 INTERCHANGE, BRIDGES AND LOCAL CONNECTORS, STORMWATER MANAGEMENT AREAS AND OTHER INFRASTRUCTURE ASSOCIATED WITH THE I-564 INTERMODAL CONNECTOR. IN ADDITION, THE PROJECT INCLUDES IMPROVEMENTS ON NAVAL STATION NORFOLK, NAVAL SUPPORT ACTIVITY HAMPTON ROADS AND NORFOLK INTERNATIONAL TERMINALS. ADJUSTMENTS AND TIE-INS WILL ALSO BE REQUIRED AT THE INTERFACE WITH NORFOLK INTERNATIONAL TERMINALS AND NORFOLK SOUTHERN RAILROAD.  COE: TIM BROWNConstruction of Highways, Roads, Streets, Bridges and Railways (Y1LB)2/10/1410/15/18Department of Transportationedyqatwyesrfb$114,902,000 USD100% obligatedDTFH7108C00030Type: Definitive Contract (4 years)DESIGN/BUILD A ROAD FROM US ROUTE 1 ON THE SOUTHERN TERMINUS AND STATE ROUTE 7.Construction of Highways, Roads, Streets, Bridges, and Railways (Includes Resurfacing) (Y222)9/26/086/1/13Department of Transportation$111,491,000 USD100% obligatedFA300208D0011-0005Type: Delivery Order (2 years)WEST RUNWAY - ANDREWS AFB, MDMaintenance, Repair or Alteration of Airport Runways (Z124)4/30/1010/8/12Department of Defense$81,518,600 USD100% obligatedHSCG4709D3EFK23Type: Indefinite Delivery Contract (7 years)INDEFINITE  QUANTITY INDEFINITE DELIVER DESIGN/BUILD NATIONAL MULTI AWARD CONSTRUCTION CONTRACT  FOR VARIOUS DHS FACILITIES THROUGHOUT THE UNITED STATES TERRITORY.   MACC CONTRACT ADVERTISEMENTConstruction of Miscellaneous Buildings (Y199)9/4/095/6/17Department of Homeland Security$80,070,000 USD100% obligated
+
+See all contracts for this vendor ›Related VendorsVendors with the same primary NAICS and PSC categorizations.
+
+Title FieldTotal Dollars Obligated (Since FY2007)IDVendor NameHensel Phelps Construction Co. in Greeley, CO Contracts$8.15 billion USDThe Whiting-Turner Contracting Company in Baltimore, MD Contracts$2.77 billion USDThe Walsh Group Ltd in Chicago, IL Contracts$2.77 billion USDKorte Construction Company in Saint Louis, MO Contracts$810 million USDR. C. Construction Co., Inc. in Greenwood, MS Contracts$344 million USDTutor Perini Corporation in Sylmar, CA Contracts$2.1 billion USDAcc Construction Co., Inc. in Augusta, GA Contracts$426 million USDStraub Construction, Inc. in Fallbrook, CA Contracts$457 million USDCarothers Construction, Inc. in Oxford, MS Contracts$719 million USDSolpac Construction, Inc. in San Diego, CA Contracts$553 million USD
+
+Help us Improve!
+
+
+
+
+Submit
+
+
+
+
+
+
+Submit
+
+ 
+
+
+
+
+
+Advertisement
+
+
+ShareCategories ProcuredWhen the Federal government intends to acquire goods or services, it identifies the NAICS code that describes the principal purpose of that procurement. NAICS is production oriented (not product oriented) and categorizes businesses with others that have similar methods of production.Since FY2007, Tutor Perini Corporation has been engaged in procurements with the following NAICS codes:
+
+
+
+
+
+Category (NAICS)Total Dollars ObligatedIDCommercial and Institutional Building Construction (236220)1,460,084,925Highway, Street, and Bridge Construction (237310)373,298,690Industrial Building Construction (236210)150,970,136Power and Communication Line and Related Structures Construction (237130)43,937,080Other Heavy and Civil Engineering Construction (237990)28,078,271Masonry Contractors (238140)17,689,663Water and Sewer Line and Related Structures Construction (237110)14,948,285Other Foundation, Structure, and Building Exterior Contractors (238190)8,970,460Electric Power Distribution (221122)1,320,000New Multifamily Housing Construction (except Operative Builders) (236116)1,092,295Poured Concrete Foundation and Structure Contractors (238110)1,041,974New Single-Family Housing Construction (except Operative Builders) (236115)40,343Concrete Block and Brick Manufacturing (327331)35,574Electrical Contractors (238210)21,486Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers (423450)13,610Security Systems Services (except Locksmiths) (561621)9,266Other Construction Material Merchant Wholesalers (423390)6,344
+
+DestinationThe dollars obligated to Tutor Perini Corporation to fulfill procurements by NAICS category, along with the federal agencies that procured them. Hover over the visualization for more detail.
+
+
+
+
+
+Category (NAICS)Total Dollars ObligatedIDCommercial and Institutional Building Construction (236220)1,024,954,696Highway, Street, and Bridge Construction (237310)250,330,524Commercial and Institutional Building Construction (236220)152,647,856Highway, Street, and Bridge Construction (237310)122,741,943Commercial and Institutional Building Construction (236220)122,387,628Industrial Building Construction (236210)109,489,193Commercial and Institutional Building Construction (236220)80,070,035Commercial and Institutional Building Construction (236220)60,106,119Power and Communication Line and Related Structures Construction (237130)43,937,080Other Heavy and Civil Engineering Construction (237990)27,913,490Commercial and Institutional Building Construction (236220)17,835,928Masonry Contractors (238140)17,689,663Industrial Building Construction (236210)16,520,028Water and Sewer Line and Related Structures Construction (237110)14,948,285Industrial Building Construction (236210)14,910,475Industrial Building Construction (236210)10,025,440Other Foundation, Structure, and Building Exterior Contractors (238190)8,970,460Commercial and Institutional Building Construction (236220)2,082,663Electric Power Distribution (221122)1,320,000New Multifamily Housing Construction (except Operative Builders) (236116)1,082,295Poured Concrete Foundation and Structure Contractors (238110)1,041,974Highway, Street, and Bridge Construction (237310)226,223Other Heavy and Civil Engineering Construction (237990)164,781New Single-Family Housing Construction (except Operative Builders) (236115)40,343Concrete Block and Brick Manufacturing (327331)35,574Industrial Building Construction (236210)25,000Electrical Contractors (238210)14,050Medical, Dental, and Hospital Equipment and Supplies Merchant Wholesalers (423450)13,610New Multifamily Housing Construction (except Operative Builders) (236116)10,000Security Systems Services (except Locksmiths) (561621)9,266Other Construction Material Merchant Wholesalers (423390)6,344Electrical Contractors (238210)3,960Electrical Contractors (238210)3,476
+
+Comparison
+
+
+
+Vendor NameDollars Obligated (Latest Year)IDIDColorTutor Perini Corporationedyqatwyesrfb$67 million USDAll Commercial and Institutional Building Construction (236220) Vendors in California$47,426 USDAll Commercial and Institutional Building Construction (236220) Vendors$41,868.50 USD
+
+
+
+
+Higher Than AverageThe principal NAICS category of Tutor Perini Corporation is Commercial and Institutional Building Construction (236220) as measured by the total amount obligated in contract awards to the vendor since FY2007.In its latest full year of contract work (FY2016), Tutor Perini Corporation was obligated a total of $67M, an amount that was far higher than the average vendor from California specializing in Commercial and Institutional Building Construction and far higher than all vendors in the U.S. classified by this NAICS category.
+Other Commercial and Institutional Building Construction Vendors in California
+
+Vendor NameLocationDollars Obligated (Latest Year)Principal Category (NAICS)Principal Product or Service (PSC)Latest Fiscal YearIDStateAtkinson/Clark A Joint VentureIrvine, CA$150 million USDCommercial and Institutional Building Construction (236220)Construction of Administrative Facilities and Service Buildings (Y1AZ)2016Harper Construction Company, Inc.San Diego, CA$141 million USDCommercial and Institutional Building Construction (236220)Construction of Troop Housing Facilities (Y163)2016S. J. Amoroso Construction Co., Inc.Redwood City, CA$120 million USDCommercial and Institutional Building Construction (236220)Construction of Hospital Buildings (Y1DZ)2016Rq Construction, LlcCarlsbad, CA$89.6 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y1JZ)2016Tutor Perini CorporationSylmar, CA$67 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Rore, Inc.San Diego, CA$55.1 million USDCommercial and Institutional Building Construction (236220)Repair or Alteration of Miscellaneous Buildings (Z2JZ)2016Herman Construction Group IncEscondido, CA$51.2 million USDCommercial and Institutional Building Construction (236220)Maintenance of Hospitals and Infirmaries (Z1DA)2016Straub Construction, Inc.Fallbrook, CA$49.7 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Solpac Construction, Inc.San Diego, CA$47.7 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Cox Construction Co.Vista, CA$42.9 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Stronghold Engineering IncRiverside, CA$40.5 million USDCommercial and Institutional Building Construction (236220)Maintenance of Hospitals and Infirmaries (Z1DA)2016Anderson Burton Construction, Inc.Arroyo Grande, CA$40.3 million USDCommercial and Institutional Building Construction (236220)Repair or Alteration of Miscellaneous Buildings (Z2JZ)2016Environmental Chemical CorporationBurlingame, CA$36.8 million USDCommercial and Institutional Building Construction (236220)Maintenance, Repair or Alteration of Office Buildings (Z111)2016Ptsi Managed Services IncPasadena, CA$31.7 million USDCommercial and Institutional Building Construction (236220)Repair or Alteration of Miscellaneous Buildings (Z2JZ)2016A&D Gc, Inc.Santee, CA$27.6 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y1JZ)2016Hal Hays Construction, Inc.Riverside, CA$27.3 million USDCommercial and Institutional Building Construction (236220)Maintenance, Repair or Alteration of Miscellaneous Buildings (Z199)2016Komada, LlcOrland, CA$26.9 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016R.A. Burch Construction Co., Inc.Ramona, CA$25.9 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Abide International, Inc.Sonoma, CA$25.9 million USDCommercial and Institutional Building Construction (236220)Repair or Alteration of Office Buildings (Z2AA)2016Sygnos, Inc.San Diego, CA$25.5 million USDCommercial and Institutional Building Construction (236220)Maintenance of Miscellaneous Buildings (Z1JZ)2016Patriot Construction, Inc.Stockton, CA$24.5 million USDCommercial and Institutional Building Construction (236220)Construction of Laboratories and Clinics (Y1DB)2016Ral Investment CorporationSan Diego, CA$23.1 million USDCommercial and Institutional Building Construction (236220)Office Furniture (7110)2016Vander Werff, Peter Construction, Inc.El Cajon, CA$22.4 million USDCommercial and Institutional Building Construction (236220)Repair or Alteration of Troop Housing Facilities (Z2FC)2016T. Simons Co., Inc.Nipomo, CA$20.5 million USDCommercial and Institutional Building Construction (236220)Repair or Alteration of Miscellaneous Buildings (Z2JZ)2016Patricia I Romero IncNational City, CA$20.2 million USDCommercial and Institutional Building Construction (236220)Construction of Administrative Facilities and Service Buildings (Y1AZ)2016
+
+See all Commercial and Institutional Building Construction (236220) Vendors in California › 
+
+ 
+
+
+InsideGov is a government research site that uses Graphiq’s semantic technology to deliver deep insights via data-driven articles, visualizations and research tools.
+
+
+										Deep insights from government data. Knowledge delivered. ›
+									
+
+
+
+
+
+
+
+
+
+ShareProducts/Services ProcuredProduct Service Codes (PSC) describe products, services, and research and development (R&D) purchased by the federal government. These codes indicate what was bought for each contract action reported in the Federal Procurement Data System (FPDS).Since FY2007, Tutor Perini Corporation has been engaged in procurements categorized by the following PSCs:
+
+
+
+
+
+Product or ServiceTotal Dollars ObligatedIDConstruction of Miscellaneous Buildings (Y199)458,418,641Construction of Office Buildings (Y111)187,322,222Construction of Highways, Roads, Streets, Bridges, and Railways (Includes Resurfacing) (Y222)126,121,711Construction of Highways, Roads, Streets, Bridges and Railways (Y1LB)124,083,813Construction of Administrative Facilities and Service Buildings (Y1AZ)90,015,000Construction of Restoration of Real Property (Public or Private). All Actions Necessary To Restore, Rehabilitate, or Reclaim Property. (Y300)85,742,855Maintenance, Repair or Alteration of Airport Runways (Z124)81,518,578Construction of Miscellaneous Buildings (Y1JZ)69,952,212Construction of Other Industrial Buildings (Y159)64,152,824Construction of Non-Building Facilities (Y1PZ)51,667,825Construction of Office Buildings (Y1AA)51,266,988Maintenance, Repair or Alteration of Highways, Roads, Streets, Bridges, and Railways (Includes Resurfacing) (Z222)51,004,670Construction of Other Airfield Structures (Y129)43,344,927Construction of Family Housing Facilities (Y161)43,223,326Construction of Hospitals and Infirmaries (Y1DA)42,845,047Construction of Hospitals and Infirmaries (Y141)41,942,036Repair or Alteration of Non-Building Facilities (Z2PZ)40,181,912Construction of Schools (Y1CA)38,820,092Construction of Hospital Buildings (Y1DZ)36,588,534Non-Food Items For Resale (9998)34,869,292Construction of Other Non-Building Facilities (Y299)29,895,250Architect and Engineering- Construction: Miscellaneous Buildings (C1JZ)26,257,236Construction of Conference Space and Facilities (Y112)25,547,886Repair or Alteration of Family Housing Facilities (Z2FA)23,845,961Maintenance of Family Housing Facilities (Z1FA)22,982,261Maintenance, Repair or Alteration of Office Buildings (Z111)21,653,702Construction of Family Housing Facilities (Y1FA)20,356,241Repair or Alteration of Restoration of Real Property (Public or Private) (Z2QA)20,194,829Repair or Alteration of Miscellaneous Buildings (Z2JZ)17,689,663Maintenance, Repair or Alteration of Other Non-Building Facilities (Z299)16,888,422Natural Resources and Conservation Services (F099)15,947,055Building Components, Prefabricated (5670)14,935,475Construction of Educational Buildings (Y1CZ)10,554,684Construction of Other Utilities (Y249)9,371,023Maintenance of Administrative Facilities and Service Buildings (Z1AZ)7,487,441Construction of Industrial Buildings (Y1EZ)7,293,325Electrical Control Equipment (6110)6,437,759Construction of Airport Runways (Y124)6,062,099Construction of Airfield Structures (Y1BZ)4,569,550Repair or Alteration of Office Buildings (Z2AA)3,814,127Construction of Electric Power Generating Facilities (Y1MZ)3,696,686Repair or Alteration of Utilities (Z2NZ)2,863,944Maintenance, Repair or Alteration of Other Administrative Facilities and Service Buildings (Z119)2,710,544Construction of Schools (Y131)2,520,638Construction of Utilities (Y1NZ)1,932,663Maintenance of Office Buildings (Z1AA)1,608,946Maintenance of Highways/Roads/Streets/Bridges/Railways (Z1LB)1,426,700Electric Services (S112)1,320,000Construction - Operational Systems Development (AD65)1,082,295Construction of Recreation Facilities (Non-Building) (Y291)1,041,974Architect and Engineering- Construction: Schools (C1CA)435,370Construction of Other Conservation and Development Facilities (Y219)372,215Construction - Advanced Development (AD63)260,008Maintenance, Repair or Alteration of Restoration of Real Property (Public or Private) (Z300)239,792Construction of Maintenance Buildings (Y152)185,483Miscellaneous Vehicular Components (2590)150,460Maintenance, Repair or Alteration of Dams (Z211)143,938Architect and Engineering- Construction: Parking Facilities (C1LZ)125,000Construction of Testing and Measurement Buildings (Y192)74,367Construction of Electronic and Communications Facilities (Y127)55,000Construction - Basic Research (AD61)35,574Installation of Equipment: Electrical and Electronic Equipment Components (N059)14,885A&E Production Engineering Services (C215)10,000Architect - Engineer Services (C211)10,000Electrical Hardware and Supplies (5975)9,850Communications Security Equipment and Components (5810)9,266Miscellaneous Construction Materials (5680)6,344Miscellaneous Electric Power and Distribution Equipment (6150)4,200Wire and Cable, Electrical (6145)3,476Construction of Other Administrative Facilities and Service Buildings (Y119)0Construction of EPG Facilities - Other, Including Transmission (Y239)-70,012
+
+DestinationThe dollars obligated to Tutor Perini Corporation to fulfill procurements by PSC, along with the federal agencies that procured them. Hover over the visualization for more detail.
+
+
+
+
+
+Product or ServiceTotal Dollars ObligatedIDConstruction of Miscellaneous Buildings (Y199)426,888,062Construction of Office Buildings (Y111)126,154,092Construction of Highways, Roads, Streets, Bridges, and Railways (Includes Resurfacing) (Y222)126,121,711Construction of Highways, Roads, Streets, Bridges and Railways (Y1LB)124,083,813Construction of Administrative Facilities and Service Buildings (Y1AZ)90,000,000Construction of Restoration of Real Property (Public or Private). All Actions Necessary To Restore, Rehabilitate, or Reclaim Property. (Y300)84,733,721Maintenance, Repair or Alteration of Airport Runways (Z124)81,518,578Construction of Office Buildings (Y111)60,106,119Construction of Other Industrial Buildings (Y159)56,569,012Construction of Non-Building Facilities (Y1PZ)51,667,825Maintenance, Repair or Alteration of Highways, Roads, Streets, Bridges, and Railways (Includes Resurfacing) (Z222)50,778,447Construction of Miscellaneous Buildings (Y1JZ)48,369,760Construction of Other Airfield Structures (Y129)43,344,927Construction of Family Housing Facilities (Y161)43,223,326Construction of Hospitals and Infirmaries (Y1DA)42,845,047Construction of Hospitals and Infirmaries (Y141)41,942,036Repair or Alteration of Non-Building Facilities (Z2PZ)40,181,912Construction of Schools (Y1CA)38,820,092Construction of Hospital Buildings (Y1DZ)36,588,534Non-Food Items For Resale (9998)34,869,292Construction of Other Non-Building Facilities (Y299)29,895,250Construction of Miscellaneous Buildings (Y199)29,025,823Construction of Office Buildings (Y1AA)26,633,545Construction of Conference Space and Facilities (Y112)25,547,886Construction of Office Buildings (Y1AA)24,633,443Repair or Alteration of Family Housing Facilities (Z2FA)23,845,961Maintenance of Family Housing Facilities (Z1FA)22,982,261Construction of Family Housing Facilities (Y1FA)20,356,241Repair or Alteration of Restoration of Real Property (Public or Private) (Z2QA)20,194,829Maintenance, Repair or Alteration of Office Buildings (Z111)17,745,348Repair or Alteration of Miscellaneous Buildings (Z2JZ)17,689,663Maintenance, Repair or Alteration of Other Non-Building Facilities (Z299)16,520,028Natural Resources and Conservation Services (F099)15,947,055Architect and Engineering- Construction: Miscellaneous Buildings (C1JZ)14,948,285Building Components, Prefabricated (5670)14,910,475Construction of Miscellaneous Buildings (Y1JZ)13,506,157Architect and Engineering- Construction: Miscellaneous Buildings (C1JZ)11,308,951Construction of Educational Buildings (Y1CZ)10,554,684Construction of Other Utilities (Y249)9,137,800Construction of Miscellaneous Buildings (Y1JZ)8,076,295Construction of Other Industrial Buildings (Y159)7,583,812Maintenance of Administrative Facilities and Service Buildings (Z1AZ)7,487,441Construction of Industrial Buildings (Y1EZ)7,293,325Electrical Control Equipment (6110)6,437,759Construction of Airport Runways (Y124)6,062,099Construction of Airfield Structures (Y1BZ)4,569,550Maintenance, Repair or Alteration of Office Buildings (Z111)3,908,353Repair or Alteration of Office Buildings (Z2AA)3,769,587Construction of Electric Power Generating Facilities (Y1MZ)3,696,686Repair or Alteration of Utilities (Z2NZ)2,863,944Maintenance, Repair or Alteration of Other Administrative Facilities and Service Buildings (Z119)2,710,544Construction of Schools (Y131)2,520,638Construction of Miscellaneous Buildings (Y199)2,504,756Construction of Utilities (Y1NZ)1,932,663Maintenance of Office Buildings (Z1AA)1,608,946Maintenance of Highways/Roads/Streets/Bridges/Railways (Z1LB)1,426,700Electric Services (S112)1,320,000Construction - Operational Systems Development (AD65)1,082,295Construction of Recreation Facilities (Non-Building) (Y291)1,041,974Construction of Office Buildings (Y111)1,012,011Construction of Restoration of Real Property (Public or Private). All Actions Necessary To Restore, Rehabilitate, or Reclaim Property. (Y300)1,009,134Architect and Engineering- Construction: Schools (C1CA)435,370Construction of Other Conservation and Development Facilities (Y219)372,215Maintenance, Repair or Alteration of Other Non-Building Facilities (Z299)323,866Construction - Advanced Development (AD63)260,008Maintenance, Repair or Alteration of Restoration of Real Property (Public or Private) (Z300)239,792Construction of Other Utilities (Y249)233,223Maintenance, Repair or Alteration of Highways, Roads, Streets, Bridges, and Railways (Includes Resurfacing) (Z222)226,223Miscellaneous Vehicular Components (2590)150,460Construction of Maintenance Buildings (Y152)150,000Maintenance, Repair or Alteration of Dams (Z211)143,938Architect and Engineering- Construction: Parking Facilities (C1LZ)125,000Construction of Testing and Measurement Buildings (Y192)74,367Construction of Electronic and Communications Facilities (Y127)55,000Construction of Office Buildings (Y111)50,000Repair or Alteration of Office Buildings (Z2AA)44,540Maintenance, Repair or Alteration of Other Non-Building Facilities (Z299)44,528Construction - Basic Research (AD61)35,574Construction of Maintenance Buildings (Y152)35,483Building Components, Prefabricated (5670)25,000Construction of Administrative Facilities and Service Buildings (Y1AZ)15,000Installation of Equipment: Electrical and Electronic Equipment Components (N059)14,885Architect - Engineer Services (C211)10,000A&E Production Engineering Services (C215)10,000Electrical Hardware and Supplies (5975)9,850Communications Security Equipment and Components (5810)9,266Miscellaneous Construction Materials (5680)6,344Miscellaneous Electric Power and Distribution Equipment (6150)4,200Wire and Cable, Electrical (6145)3,476Construction of Other Administrative Facilities and Service Buildings (Y119)0Construction of Other Administrative Facilities and Service Buildings (Y119)0Construction of Office Buildings (Y111)0Construction of Highways, Roads, Streets, Bridges, and Railways (Includes Resurfacing) (Y222)0Construction of EPG Facilities - Other, Including Transmission (Y239)-70,012
+
+Comparison
+
+
+
+Vendor NameDollars Obligated (Latest Year)IDIDColorTutor Perini Corporation$67 million USDAll Construction of Miscellaneous Buildings (Y199) Vendors in California$14,438 USDAll Construction of Miscellaneous Buildings (Y199) Vendors$20,715 USD
+
+
+
+
+Higher Than AverageThe principal Product or Service Code (PSC) of Tutor Perini Corporation is Construction of Miscellaneous Buildings (Y199) as measured by the total amount obligated in contract awards to the vendor since FY2007.In its latest full year of contract work (FY2016), Tutor Perini Corporation was obligated a total of $67M, an amount that was far higher than the average vendor from California specializing in Construction of Miscellaneous Buildings and far higher than all vendors in the U.S. classified by this PSC.
+Other Construction of Miscellaneous Buildings Vendors in California
+
+Vendor NameLocationDollars Obligated (Latest Year)Principal Category (NAICS)Principal Product or Service (PSC)Latest Fiscal YearIDStateThe Parsons CorporationPasadena, CA$811 million USDIndustrial Building Construction (236210)Construction of Miscellaneous Buildings (Y199)2016Tutor Perini CorporationSylmar, CA$67 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Straub Construction, Inc.Fallbrook, CA$49.7 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Solpac Construction, Inc.San Diego, CA$47.7 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Cox Construction Co.Vista, CA$42.9 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Komada, LlcOrland, CA$26.9 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016R.A. Burch Construction Co., Inc.Ramona, CA$25.9 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Sm Construction Inc.Clovis, CA$5.73 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016R Q Construction, IncCarlsbad, CA$1.02 million USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2015Construction Technology Specialists Inc.San Diego, CA$688,284 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2009K.O.O. Construction, Inc.West Sacramento, CA$681,187 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2016Cinary Construction Co IncCalabasas Hills, CA$252,126 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2007C.W. Crosser Construction, Inc.Anaheim, CA$250,000 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2015Cal Dual Builders IncCarmichael, CA$247,500 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2008Wiley Construction Co Inc.Oceanside, CA$198,595 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2010Valenzuela Engineering IncSanta Maria, CA$190,447 USDConstruction of Miscellaneous Buildings (Y199)2007H&S ConstructionRancho Cucamonga, CA$81,958 USDIndustrial Building Construction (236210)Construction of Miscellaneous Buildings (Y199)2008Joseph Murphy Construction, Inc.Livermore, CA$81,025 USDRoofing Contractors (238160)Construction of Miscellaneous Buildings (Y199)2015Ecc International Constructors, LlcBurlingame, CA$73,983 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2014Blast/Coat Systems Inc.Rancho Cucamonga, CA$63,627 USDIndustrial Building Construction (236210)Construction of Miscellaneous Buildings (Y199)2016Syska Hennessy Group, IncLos Angeles, CA$62,268 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2011Petersen-Dean, Inc.Fremont, CA$55,100 USDConstruction and Mining (except Oil Well) Machinery and Equipment Merchant Wholesalers (423810)Construction of Miscellaneous Buildings (Y199)2011Rmj, Inc.Temecula, CA$43,538 USDElectrical Contractors (238210)Construction of Miscellaneous Buildings (Y199)2012L H Engineering Co., Inc.Anaheim, CA$41,839 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2011Kisaq-Rq 2 JVCarlsbad, CA$35,641 USDCommercial and Institutional Building Construction (236220)Construction of Miscellaneous Buildings (Y199)2013
+
+See all Construction of Miscellaneous Buildings (Y199) Vendors in California › 
+
+
+
+
+
+Advertisement
+
+
+SharePlace of Performance
+The locations of the principal plant or place of business where Tutor Perini Corporation in Sylmar, CA has had their items produced, supplied from stock, or services performed since FY2007.
+
+
+StateCountryMoreState
+
+
+
+Country
+
+
+
+
+
+
+Zipcodes
+
+
+									Zip Code 91342, CA, Zip Code 33125, FL, Zip Code 75062, TX, Zip Code 84074, UT, Zip Code 20001, DC,
+									…More
+
+Zip Code 91342, CA, Zip Code 33125, FL, Zip Code 75062, TX, Zip Code 84074, UT, Zip Code 20001, DC, Zip Code 20120, VA, Zip Code 78209, TX, Zip Code 18702, PA, Zip Code 01702, MA, Zip Code 92037, CA, Zip Code 88220, NM, Zip Code 48105, MI, and 57 more
+Congressional Districts
+
+
+									Montana's at-large congressional district, South Dakota's at-large congressional district, Idaho's
+									…More
+
+Montana's at-large congressional district, South Dakota's at-large congressional district, Idaho's 2nd congressional district, Virginia's 10th congressional district, Louisiana's 2nd congressional district, Oklahoma's 4th congressional district, Virginia's 8th congressional district, Virginia's 11th congressional district, Oklahoma's 3rd congressional district, Florida's 9th congressional district, Massachusetts's 7th congressional district, Virginia's 1st congressional district, and 48 more
+States
+
+
+									California, Texas, New York, Florida, Pennsylvania, Georgia, Michigan, New Jersey, Virginia,
+									…More
+
+California, Texas, New York, Florida, Pennsylvania, Georgia, Michigan, New Jersey, Virginia, Massachusetts, Arizona, Indiana, and 18 more
+Countries
+
+
+									United States, Pakistan, Egypt, United Kingdom, Poland, Iraq, Afghanistan, Saudi Arabia, Chad,
+									…More
+
+United States, Pakistan, Egypt, United Kingdom, Poland, Iraq, Afghanistan, Saudi Arabia, Chad, Haiti, Austria, Lebanon, and 3 more
+
+ 
+
+ 
+
+
+
+
+
+
+
+ShareVendor DetailsVisit the full company profile of Tutor Perini Corporation.Tutor Perini Corporation (Tutor Perini Corp)OverviewStockRevenueMoreOverview
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Industry
+Commercial and Institutional Building Construction Companies
+
+
+Employees
+11,603
+
+
+Revenue
+$4.97 billion USD
+
+
+Net Income
+$95.8 million USD
+
+
+Market Cap
+$1.36 billion USD
+
+Stock
+
+Observation DatePriceIDTicker SymbolJuly 28, 201726.85July 27, 201727.4July 26, 201727.6July 25, 201728July 24, 201727.8July 21, 201727.95July 20, 201728.3July 19, 201728.15July 18, 201727.8July 17, 201728.65July 14, 201728.65July 13, 201728.8July 12, 201729.05July 11, 201728.8July 10, 201728.95
+
+Revenue
+
+Fiscal PeriodRevenueYearIDTicker SymbolFY '03$810 million USD2003FY '05$826 million USD2005FY '09$5.15 billion USD2009FY '10$3.2 billion USD2010FY '11$3.72 billion USD2011FY '12$4.11 billion USD2012FY '13$4.18 billion USD2013FY '14$4.49 billion USD2014FY '15$4.92 billion USD2015FY '16$4.97 billion USD2016
+
+
+
+PriceMarket CapFwd P/EDiv. YieldEPSROEMorePrice1-Year Percent Change vs. Close Peers
+
+
+
+Market Cap
+
+TPC vs. Peers
+
+Market CapTicker SymbolCompanyIDIDColor$1.36 billion USDedyqatwyesrfbTPCTutor Perini Corp$470 million USDSmall Cap Construction-Building Services Median$856 million USDAll Stocks Median
+
+
+
+
+TPC vs. Peers With Highest Market Cap.
+
+Ticker SymbolMarket CapCompanyIDIDColorCBI$1.84 billion USDChicago Bridge & Iron Company NVMDC$1.79 billion USDMDC Holdings IncMTH$1.68 billion USDMeritage Homes CorpTPC$1.36 billion USDTutor Perini CorpPRIM$1.28 billion USDPrimoris Services Corp
+
+
+Fwd P/E
+
+TPC vs. Peers
+
+Ticker SymbolForward P/E RatioCompanyIDIDColorTPC12.83xTutor Perini CorpSmall Cap Construction-Building Services Median14.11xAll Stocks Median19.15x
+
+
+
+
+TPC vs. Peers With Highest Fwd. P/E
+
+Forward P/E RatioTicker SymbolCompanyIDIDColor37.18xSTRLSterling Construction Inc28.7xWLDNWilldan Group Inc22.63xPRIMPrimoris Services Corp18.14xORNOrion Group Holdings Inc12.83xTPCTutor Perini Corp
+
+
+Div. Yield
+
+TPC vs. Peers
+
+Ticker SymbolDividend YieldCompanyIDIDColorTPC0 percentTutor Perini CorpSmall Cap Construction-Building Services Median0 percentAll Stocks Median0 percent
+
+
+
+
+TPC vs. Peers With Highest Div. Yield
+
+Ticker SymbolDividend YieldCompanyIDIDColorCBI1.6 percentChicago Bridge & Iron Company NVWGO1.1 percentWinnebago Industries IncPRIM0.9 percentPrimoris Services CorpVSEC0.6 percentVSE CorpTPC0 percentTutor Perini Corp
+
+
+EPSEPS vs. Close Peers
+
+
+
+ROEROE vs. Close Peers
+
+YearTutor Perini CorpMDC Holdings IncMeritage Homes CorpChicago Bridge & Iron Company NVZhejiang Expressway Co LtdID'08-6.6 percent-35.21 percent-53.65 percent-55.37 percent-2.6 percent'0623.82 percent'07-29.65 percent'0910.64 percent2.3 percent-24.64 percent-13.69 percent20.03 percent'107.88 percent-6.58 percent-14.37 percent1.43 percent19.52 percent'116.15 percent-11.33 percent-6.17 percent-4.32 percent21.33 percent11.11 percent'12-23.2 percent7.12 percent8.06 percent15.15 percent22.71 percent8.87 percent'137 percent25.91 percent41.03 percent14.79 percent20.44 percent9.7 percent'147.9 percent5.14 percent16 percent12.82 percent22.12 percent13.49 percent'153.19 percent5.24 percent10.23 percent-19.87 percent18.32 percent'166.17 percent7.82 percent10.52 percent-15.36 percent15.42 percent
+
+
+
+Stock PriceMarket CapCompanyForward P/E RatioReturn on Equity52 Week Percent ChangeEPSPer End DateTicker SymbolDividend YieldID$18.54 USD$1.84 billion USDChicago Bridge & Iron Company NV6.91x-19.9 percent-46.12 percent-$3.05 USDDecember 31, 2016CBI1.6 percent$34.68 USD$1.79 billion USDMDC Holdings Inc14.11x5.2 percent34.17 percent$2.00 USDDecember 31, 2016MDC0 percent$41.20 USD$1.68 billion USDMeritage Homes Corp11.53x10.2 percent9.75 percent$3.55 USDDecember 31, 2016MTH0 percent$26.85 USD$1.36 billion USDTutor Perini Corp12.83x3.2 percent4.84 percent$1.92 USDDecember 31, 2016TPC0 percent$24.83 USD$1.28 billion USDPrimoris Services Corp22.63x7.7 percent37.94 percent$0.51 USDDecember 31, 2016PRIM0.9 percent$127.80 USD$1.16 billion USDCavco Industries Inc8.1 percent27.29 percent$4.17 USDMarch 31, 2017CVCO0 percent$36.35 USD$1.16 billion USDWinnebago Industries Inc15.79x17 percent56.55 percent$1.68 USDAugust 31, 2016WGO1.1 percent$23.02 USD$657 million USDWilliam Lyon Homes Inc11.12x9 percent28.39 percent$1.55 USDDecember 31, 2016WLH0 percent$25.95 USD$651 million USDM/I Homes Inc9.1x9.4 percent12.78 percent$1.84 USDDecember 31, 2016MHO0 percent$25.80 USD$571 million USDCentury Communities Inc9.32x9.7 percent40.75 percent$2.33 USDDecember 31, 2016CCS0 percent$48.31 USD$483 million USDVSE Corp10.9 percent36.95 percent$2.47 USDDecember 31, 2016VSEC0.6 percent$13.49 USD$458 million USDBeazer Homes USA Inc17.71x55 percent41.7 percent$0.15 USDSeptember 30, 2016BZH0 percent$12.92 USD$356 million USDSterling Construction Inc37.18x-17.9 percent124.31 percent-$0.40 USDDecember 31, 2016STRL0 percent$2.29 USD$339 million USDHovnanian Enterprises Inc6.1 percent22.46 percent-$0.02 USDOctober 31, 2016HOV0 percent$34.21 USD$287 million USDWilldan Group Inc28.7x11.3 percent216.76 percent$0.97 USDDecember 31, 2016WLDN0 percent$3.95 USD$248 million USDGreat Lakes Dredge & Dock Corp-2.5 percent-11.24 percent-$0.13 USDDecember 31, 2016GLDD0 percent$10.53 USD$207 million USDLayne Christensen Co-41.1 percent31.3 percent-$2.64 USDJanuary 31, 2017LAYN0 percent$7.05 USD$199 million USDOrion Group Holdings Inc18.14x-3.5 percent23.25 percent-$0.13 USDDecember 31, 2016ORN0 percent$5.15 USD$134 million USDGoldfield Corp13.7 percent52.37 percent$0.51 USDDecember 31, 2016GV0 percent$7.42 USD$62.3 million USDSkyline Corp7.5 percent-19.44 percent-$1.24 USDMay 31, 2016SKY0 percent$1.58 USD$49.8 million USD180 Degree Capital Corp1.28 percentDecember 31, 2016TURN0 percent$1.27 USD$33.4 million USDENGlobal Corp26.3 percent-16.28 percent-$0.08 USDDecember 31, 2016ENG0 percent
+
+
+
+ 
+
+
+
+
+
+Advertisement
+
+
+
+
+
+×
+
+
+
+
+
+
+References
+
+
+
+
+Sources: Zacks Investment Research, FinancialContent, USASpending.gov, Rob J Hyndman, D&B, and Localeze. Show details  Hide details  
+
+
+
+
+
+
+
+Was this page helpful?
+
+Yes
+No
+
+
+ 
+
+BlkHol Email
+
+
+Welcome to 
+Hi! We see you would like to submit a rating. Please login or create an account to do so. Thank you!
+
+
+Sign In With
+
+
+
+
+Login with Google
+
+
+
+
+Login with Facebook
+ We'll never post without your permission.
+
+
+
+Don't have an account?
+Sign Up Now
+
+
+
+
+Privacy
+Terms & Conditions
+
+
+
+
+
+
+
+
+
+						© 2017 Graphiq Inc. All Rights Reserved.
+						
+Support
+Terms
+Privacy
+Ad Choices and Cookie Policy
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Tutor Perini Corp (TPC) Advertising 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+
+
+
+
+ Homepage
+
+
+ Membership Levels
+
+
+ Membership Data Coverage
+
+
+ Complete Stock List
+
+
+ Founder's Message
+
+
+ The Book
+
+
+ FREE Trial
+
+
+
+
+
+
+Screeners
+
+
+Value Screens 
+
+
+ All-In-One Screener
+
+
+ Industry Overview
+
+
+ Ben Graham Net-Net
+
+
+ Undervalued Predictable
+
+
+ Buffett-Munger Screener
+
+
+ Magic Formula (Greenblatt)
+
+
+ Historical Low P/S List
+
+
+ Historical Low P/B List
+
+
+ Peter Lynch Screen
+
+
+ High Short Interest
+
+
+ 52-Week/3Y/5Y Lows
+
+
+ 52-Week/3Y/5Y Highs
+
+
+ Predictable Companies
+
+
+ S&P 500 Grid
+
+
+ Dividend Stocks
+
+
+ Spin Off List
+
+
+
+
+Downloads | Tools
+
+
+  Excel Add-In GURUF
+
+
+ Manual of Stocks™
+
+
+ Download Financial Data
+
+
+ Download Guru Portfolios
+
+
+ Download Stock PDFs
+
+
+ Download Insider Data
+
+
+  API
+
+
+ Mobile App
+
+
+
+
+Strategies
+
+
+ Performances
+
+
+ Buffett-Munger
+
+
+ Undervalued Predictable
+
+
+ Low P/S
+
+
+ Low P/B
+
+
+ Broadest Owned
+
+
+ Most Weighted
+
+
+
+
+
+
+Gurus
+
+
+
+
+ Latest Guru Picks
+
+
+ Real Time Picks
+
+
+ List of Gurus (Personalize)
+
+
+ Gurus Portfolios
+
+
+ Scoreboard
+
+
+ Top 10 Holdings View
+
+
+ Sector Picks
+
+
+ International Picks
+
+
+ Aggregated Portfolio
+
+
+ Consensus Picks
+
+
+ Guru Bargains
+
+
+ Hot Picks
+
+
+ Industry Trends
+
+
+ Geographic Trend
+
+
+ ETFs
+
+
+ Options
+
+
+ European Shorting
+
+
+
+
+
+
+Insiders
+
+
+
+
+ All Insiders
+
+
+ CEO Buys/Sales
+
+
+ CFO Buys/Sales
+
+
+ Insider Cluster
+
+
+ Guru+Insider Double Buys
+
+
+ Triple Buys/Sales
+
+
+ Insider Trends
+
+
+ Canadian Insider
+
+
+ Dutch Insider
+
+
+
+
+
+
+Market
+
+
+Market Valuation
+
+
+ Economic Data
+
+
+ Industry Overview
+
+
+ Market-Cap/GDP Valuation
+
+
+ Global Market Valuation
+
+
+ Shiller P/E
+
+
+ Shiller P/E By Sectors
+
+
+ Buffett Assets Allocation
+
+
+
+
+By Country
+
+
+ USA
+
+
+ Australia
+
+
+ Canada
+
+
+ China
+
+
+ Germany
+
+
+ India
+
+
+ Japan
+
+
+ UK
+
+
+ More...
+
+
+
+
+
+
+Articles
+
+
+Articles
+
+
+ Editor's Picks
+
+
+ GuruFocus Research
+
+
+ Value Ideas
+
+
+ Interviews with Gurus
+
+
+ Top Ranked
+
+
+ Value Idea Contest
+
+
+ Videos
+
+
+ Following Authors
+
+
+
+
+Submit Articles
+
+
+ Writers Wanted
+
+
+ Value Contest Winners
+
+
+ Submit Articles Online
+
+
+ My Articles
+
+
+
+
+
+
+Conference
+
+
+
+
+ Value Conference
+
+
+ Speakers
+
+
+ Location/Venue
+
+
+ Register
+
+
+ After Conference Gathering (Free Drinks)
+
+
+
+
+
+
+Tutorials
+
+
+
+
+ Tutorials & Webinars
+
+
+ FAQ
+
+
+ Contact Us
+
+
+
+
+
+
+Log In
+
+
+
+
+ Free Sign-up
+
+
+ Log In
+
+
+ 7-Day Free Trial 
+
+
+
+
+
+
+Subscribe
+
+
+
+
+ Free Trial ($399/Year)
+
+
+ Refer a Friend & Earn $50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+Compare
+
+Search ▾
+
+
+
+
+
+
+
+
+
+
+Get 7-Day Free Trial
+
+
+
+My Portfolios▾
+                        
+Portfolios Overview
+Create New Portfolio
+Portfolio Contest
+
+
+My Gurus▾
+                        
+Quick Browse
+Personalize
+
+My Gurus
+
+Premium Gurus 
+Premium Plus Investors 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ TPC- NYSE (USA) Also traded in: GermanyTutor Perini Corp
+
+
+
+
+Currently 1/5
+
+
+
+Business Predictability Rank: 1-Star Back Testing Results:Average gain of all 1-Star stocks: 1.1% per year.% of Stocks that are in still loss if held for 10yrs: 45%.Read more: What is Predictability Rank?Performances of real portfolio
+Top Ranked Predictable Companies
+ 
+$26.85     0.55(2.01%) Volume: 173,176  4:02PM EDTAvg Vol (1m): 316,499
+Warning! GuruFocus has detected 2 Severe Warning Signs with TPC. Click here to check it out.  
+
+
+
+
+
+
+
+Market Cap : 
+			1.33 B
+Enterprise Value : 
+			2.01 B
+P/E(TTM) : 
+			14.35
+P/B : 
+			0.87
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$26.85 (1y: +7%)
+
+
+
++ Add to Portfolio
+Email Alerts
+Stock PDFRSSWebsite FilingsDownloadBatch DownloadManual of Stocks™ Web APPManual of Stocks™Sorry. Only PremiumPlus Member can access this feature.Free Trial
+
+
+
+
+
+This feature is only available for Premium Members, please sign up for
+GuruFocus Premium Membership
+
+7-Day Free Trial Now
+
+
+
+
+
+TPC has been successfully added to your Stock Email Alerts list.
+You can manage your stock email alerts here.
+
+
+
+
+TPC has been removed from your Stock Email Alerts list.
+
+
+
+Please enter Portfolio Name for new portfolio.
+
+
+SummaryGuru Trades30-Y FinancialsAnalysisDCFInteractive ChartDividendInsiderOwnershipHeadlinesCompareChecklistDefinitions
+
+
+
+
+
+
+Switch to:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fundamental
+
+ Altman Z-Score Beneish M-Score Book Value per Share Dividends per Share E10 Earnings per Share (Diluted) EBITDA per Share Enterprise Value EPS without NRI FFO per Share Financial Strength Float Percentage Of Total Shares Outstanding Free Cash Flow per Share Insider Ownership Institutional Ownership Market Cap (M) Net Cash per Share Net Current Asset Value Net-Net Working Capital Operating Cash Flow per Share Owner Earnings per Share (TTM) Piotroski F-Score Predictability Rank Profitability Revenue per Share Scaled Net Operating Assets Short Interest Short Percentage of Float Tangible Book per Share Total Debt per Share 
+
+
+Valuation Ratio
+
+ 3-Year Average Share Buyback Ratio Asset Turnover Cash Conversion Cycle Cash-to-Debt COGS-to-Revenue Current Ratio Days Inventory Days Payable Days Sales Outstanding Debt-to-Asset Debt-to-Equity Earnings Yield % Earnings Yield (Joel Greenblatt) % Effective Interest Rate on Debt % Equity-to-Asset EV-to-EBIT EV-to-EBITDA EV-to-Revenue Forward PE Ratio Forward Rate of Return (Yacktman) % Goodwill-to-Asset Gross-Profit-to-Asset % Interest Coverage Inventory Turnover Inventory-to-Revenue LT-Debt-to-Total-Asset PB Ratio PE Ratio PE Ratio PE Ratio without NRI PEG Ratio Price-to-Free-Cash-Flow Price-to-Operating-Cash-Flow Price-to-Owner-Earnings Price-to-Tangible-Book PS Ratio Quick Ratio Return-on-Tangible-Asset Return-on-Tangible-Equity ROA % ROC % ROC (Joel Greenblatt) % ROE % ROIC % Shiller PE Ratio Short Ratio Sloan Ratio % WACC % 
+
+
+Profitability
+
+ FCF Margin % Gross Margin % Net Interest Margin (Bank Only) % Net Margin % Operating Margin % 
+
+
+Price
+
+ Earnings Power Value (EPV) Graham Number Intrinsic Value: DCF (Earnings Based) Intrinsic Value: DCF (FCF Based) Intrinsic Value: Projected FCF Margin of Safty % (DCF Earnings Based) Median PS Value Net Cash per Share Peter Lynch Fair Value 
+
+
+Dividends
+
+ 3-Year Dividend Growth Rate 5-Year Dividend Growth Rate 5-Year Yield-on-Cost % Dividend Payout Ratio Dividend Yield % Dividend-Payout-to-FFO Forward Dividend Yield % 
+
+
+Income Statement
+
+ Advertising Cost of Goods Sold Credit Losses Provision Depreciation, Depletion and Amortization EBIT EBITDA EPS (Basic) EPS (Diluted) Fees and Other Income Gross Profit Interest Expense Interest Income Net Income Net Income (Continuing Operations) Net Income (Discontinued Operations) Net Interest Income Net Investment Income Net Policyholder Benefits/Claims Non Interest Income Non-Recurring Items Operating Income Other Income (Expense) Other Noninterest Expense Other Operating Expense Policy Acquisition Expense Pre-Tax Income Preferred Dividends Research & Development Revenue Selling, General, & Admin. Expense Shares Outstanding (Diluted Average) SpecialCharges Tax Expense Tax Provision Total Premiums Earned 
+
+
+Balance Sheet
+
+ Accounts Payable & Accrued Expense Accounts Receivable Accumulated Depreciation Additional Paid-In Capital Buildings And Improvements Capital Lease Obligation Capital Surplus Cash And Cash Equivalents Cash and cash equivalents Cash, Cash Equivalents, Marketable Securities Common Stock Construction In Progress Current Portion of Long-Term Debt Deferred Policy Acquisition Costs Equity Investments Fixed Maturity Investment Future Policy Benefits Goodwill Gross Property, Plant and Equipment Intangible Assets Inventories, Finished Goods Inventories, Other Inventories, Raw Materials & Components Inventories, Work In Process Land And Improvements Long-Term Debt & Capital Lease Obligation Marketable Securities Money Market Investments Net Loan Other Assets for Banks Other Current Assets Other Current Liabilities Other Liabilities for Banks Other Long Term Assets Other Long-Term Liabilities Paid-In Capital Policyholder Funds Preferred Stock Property, Plant and Equipment Retained Earnings Securities & Investments Shares Outstanding (EOP) Short-term investments Total Assets Total Current Assets Total Current Liabilities Total Deposits Total Equity Total Inventories Total Liabilities Treasury Stock Unearned Premiums Unpaid Loss & Loss Reserve 
+
+
+Cashflow statement
+
+ Capital Expenditure Cash Flow for Dividends Cash Flow from Discontinued Operations Cash Flow from Financing Cash Flow from Investing Cash Flow from Operations Cash Flow from Others Cash From Discontinued Investing Activities Cash From Other Investing Activities Change In Inventory Change In Receivables Change In Working Capital Cumulative Effect Of Accounting Change Depreciation, Depletion and Amortization FFO Free Cash Flow Net Change in Cash Net Foreign Currency Exchange Gain Net Income From Continuing Operations Net Intangibles Purchase And Sale Net Issuance of Debt Net Issuance of Preferred Stock Net Issuance of Stock Purchase Of Business Purchase Of Investment Purchase Of Property, Plant, Equipment Sale Of Business Sale Of Investment Sale Of Property, Plant, Equipment Stock Based Compensation 
+
+
+
+
+
+
+
+
+
+
+                        GuruFocus has detected 3 Warning Signs with Tutor Perini Corp $TPC.                    
+
+                        More than 500,000 people have already joined GuruFocus to track the stocks they follow and exchange investment ideas.
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Corp (NYSE:TPC)
+Advertising
+=GURUF("TPC","Advertising")
+
+$0 Mil (As of Mar. 2017)
+Tutor Perini Corp's promotion and advertising for the quarter that ended in Mar. 2017 was $0 Mil.
+
+Definition
+This is the expense the company spent on promoting an industry, entity, brand, product name, or specific products or services in order to stimulate a desire to buy the entity's products or services.
+
+Historical Data
+* All numbers are in millions except for per share data and ratio. All numbers are in their local exchange's currency.
+Tutor Perini Corp Annual Data
+
+
+
+Dec07Dec08Dec09Dec10Dec11Dec12Dec13Dec14Dec15Dec16
+
+PromotionAndAdvertising
+0000000000
+
+Tutor Perini Corp Quarterly Data
+
+
+
+Dec14Mar15Jun15Sep15Dec15Mar16Jun16Sep16Dec16Mar17
+
+PromotionAndAdvertising
+0000000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+Get WordPress Plugins for easy affiliate links on Stock Tickers and Guru Names
+                    | Earn affiliate commissions by embedding GuruFocus Charts
+
+                                                GuruFocus Affiliate Program: Earn up to $400 per referral.  ( Learn More) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home  About   Jobs    Advertise    Site Map    Term of Use    Privacy Policy     RSS    Mobile App     Email Alerts    Referral Program    Affiliate Program    FAQ    Contact Us
+                               
+
+                © 2004-2017                GuruFocus.com, LLC. All Rights Reserved.
+            
+
+
+                    Disclaimers: GuruFocus.com is not operated by a broker, a dealer, or a registered investment adviser. Under no circumstances does any information posted on GuruFocus.com represent a recommendation to buy or sell a security. The information on this site, and in its related newsletters, is not intended to be, nor does it constitute, investment advice or recommendations. The gurus may buy and sell securities before and after any particular article and report and information herein is published, with respect to the securities discussed in any article and report posted herein. In no event shall GuruFocus.com be liable to any member, guest or third party for any damages of any kind arising out of the use of any content or other material published or available on GuruFocus.com, or relating to the use of, or inability to use, GuruFocus.com or any content, including, without limitation, any investment losses, lost profits, lost opportunity, special, incidental, indirect, consequential or punitive damages. Past performance is a poor indicator of future performance. The information on this site, and in its related newsletters, is not intended to be, nor does it constitute, investment advice or recommendations. The information on this site is in no way guaranteed for completeness, accuracy or in any other way. The gurus listed in this website are not affiliated with GuruFocus.com, LLC.
+
+
+
+                    Stock quotes provided by InterActive Data. Fundamental company data provided by Morningstar, updated daily.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GF Chat {{numOfNotice}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+Manage BookMarks
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+FEEDBACK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Corporation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Search This Site
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Market
+
+
+Aviation
+Bridges & Roads
+Commercial
+Education
+Government & Military
+Healthcare
+Hospitality & Gaming
+Justice
+Manufacturing & Industrial
+
+
+
+
+Mixed-Use & Retail
+Public Assembly & Entertainment
+Rail & Mass Transit
+Recovery / Restorations / Retrofits
+Residential
+Science & Technology
+Sports
+Tunnels / Mines / Underground
+Water
+
+
+
+
+
+
+Specialty
+
+
+Audio / Visual
+Boring & Drilling
+Cabling / Fiber
+Concrete
+Earth Retention
+Electrical
+Fire Protection
+Foundations
+Heavy Equipment
+
+
+
+
+Hoisting
+HVAC
+Plumbing
+Process Piping
+Secure Facilities
+Security Systems
+Sequential Excavation Method
+Shotcrete
+Underground Mine Development
+
+
+
+
+
+
+
+
+
+
+
+
+
+Extraordinary Projects Exceptional Performance℠
+
+
+
+
+
+
+SR 99 - Alaska Way Viaduct Replacement Tunnel - Seattle, WA - $1.4 Billion
+
+
+
+
+
+
+CityCenter - Las Vegas, NV - $6.4 Billion
+
+
+
+
+
+
+Third Street Light Rail Program Phase 2 - Central Subway - San Francisco, CA - $860 Million
+
+
+
+
+
+
+Saint Croix Crossing - Stillwater, MN - $340 Million
+
+
+
+
+
+
+Hudson Yards - Multiple Projects - New York, NY - $2.2 Billion
+
+
+
+
+
+
+San Diego Central Courthouse - San Diego, CA - $451 Million
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intelligence. Intensity. Integrity.
+
+Our clients share a world-building approach, with projects that transform industries and communities. Efforts of such stunning size and complexity don't intimidate us — they inspire us. Our firm is built to tackle projects like these.
+Extraordinary projects demand a strategic and intelligent approach, finely honed through more than a century of real-world experience. They demand the relentless intensity of people who know the stakes are incredibly high. And they demand a team that understands mutual trust and integrity are necessary to execute massive undertakings on near-impossible deadlines.
+Extraordinary projects need vision and precision to be exceptional. They need Tutor Perini.
+
+
+
+
+
+                                Civil
+                            
+
+
+
+
+
+
+                                Building
+                            
+
+
+
+
+
+
+                                Specialty
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tutor Perini Corporation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Search This Site
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Market
+
+
+Aviation
+Bridges & Roads
+Commercial
+Education
+Government & Military
+Healthcare
+Hospitality & Gaming
+Justice
+Manufacturing & Industrial
+
+
+
+
+Mixed-Use & Retail
+Public Assembly & Entertainment
+Rail & Mass Transit
+Recovery / Restorations / Retrofits
+Residential
+Science & Technology
+Sports
+Tunnels / Mines / Underground
+Water
+
+
+
+
+
+
+Specialty
+
+
+Audio / Visual
+Boring & Drilling
+Cabling / Fiber
+Concrete
+Earth Retention
+Electrical
+Fire Protection
+Foundations
+Heavy Equipment
+
+
+
+
+Hoisting
+HVAC
+Plumbing
+Process Piping
+Secure Facilities
+Security Systems
+Sequential Excavation Method
+Shotcrete
+Underground Mine Development
+
+
+
+
+
+
+
+
+
+
+
+
+
+Extraordinary Projects Exceptional Performance℠
+
+
+
+
+
+
+SR 99 - Alaska Way Viaduct Replacement Tunnel - Seattle, WA - $1.4 Billion
+
+
+
+
+
+
+CityCenter - Las Vegas, NV - $6.4 Billion
+
+
+
+
+
+
+Third Street Light Rail Program Phase 2 - Central Subway - San Francisco, CA - $860 Million
+
+
+
+
+
+
+Saint Croix Crossing - Stillwater, MN - $340 Million
+
+
+
+
+
+
+Hudson Yards - Multiple Projects - New York, NY - $2.2 Billion
+
+
+
+
+
+
+San Diego Central Courthouse - San Diego, CA - $451 Million
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intelligence. Intensity. Integrity.
+
+Our clients share a world-building approach, with projects that transform industries and communities. Efforts of such stunning size and complexity don't intimidate us — they inspire us. Our firm is built to tackle projects like these.
+Extraordinary projects demand a strategic and intelligent approach, finely honed through more than a century of real-world experience. They demand the relentless intensity of people who know the stakes are incredibly high. And they demand a team that understands mutual trust and integrity are necessary to execute massive undertakings on near-impossible deadlines.
+Extraordinary projects need vision and precision to be exceptional. They need Tutor Perini.
+
+
+
+
+
+                                Civil
+                            
+
+
+
+
+
+
+                                Building
+                            
+
+
+
+
+
+
+                                Specialty
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Tutor Perini Corporation - Investors
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Employees
+
+
+ Subcontractors
+
+
+ Contact Us
+
+
+ News
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Quote 
+
+
+26.85
+NYSE: TPC
+
+
+
+
+-0.55
+                    
+
+-2.01%
+                    
+
+Volume: 
+173,176
+Minimum 20 minutes delay  
+07/28/2017  04:02 PM
+
+
+
+
+
+Verrazano-Narrows Bridge Deck Replacement - New York, NY - $244 Million
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Print
+
+
+E-mail
+
+
+Share
+
+
+
+
+
+
+
+Home
+»
+                    
+                    Investor Overview
+                
+        
+
+
+
+
+
+
+
+
+
+Investor Overview
+ TUTOR PERINI CORPORATION is a leading civil, building and specialty construction company offering diversified general contracting and design-build services to private clients and public agencies throughout the world. We have provided construction services since 1894 and have established a strong reputation within our markets by executing large, complex projects on time and within budget while adhering to strict quality control measures. 	Read More
+
+
+
+
+
+
+Normal
+
+
+
+
+
+
+Date
+Presentation
+
+
+
+
+
+
+
+
+
+June 14, 2017
+
+
+Investor Presentation - June 2017
+
+
+
+
+
+
+
+
+
+
+View this Presentation
+PDF Format Download (opens in new window)
+PDF 3.15 MB
+
+
+
+Listen to this Presentation
+Audio Format Download (opens in new window)
+
+
+
+
+Watch this Presentation
+Video Format Download (opens in new window)
+
+
+
+
+View this Presentation
+PDF Format Download (opens in new window)
+
+
+
+
+
+
+
+
+
+
+
+May 3, 2017
+
+
+TPC Investor Report   (Q1 2017)
+
+
+
+
+
+
+
+
+
+
+View this Presentation
+PDF Format Download (opens in new window)
+PDF 94 KB
+
+
+
+Listen to this Presentation
+Audio Format Download (opens in new window)
+
+
+
+
+Watch this Presentation
+Video Format Download (opens in new window)
+
+
+
+
+View this Presentation
+PDF Format Download (opens in new window)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Latest News & Announcements
+
+
+
+
+
+Press Releases
+
+
+View All
+RSS
+
+
+
+
+
+
+
+Events
+
+
+View All
+RSS
+
+
+
+
+
+
+
+
+
+
+
+To view our latest proxy materials, please visit Proxy Voting page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stay Informed
+
+To receive notifications via email, enter your email address and select at least one subscription below. After submitting your information, you will receive an email. You must click the link in the email to activate your subscription. You can sign up for additional subscriptions at any time.* Required
+
+
+
+
+
+Email Address
+*
+
+
+
+
+
+
+
+
+
+Mailing Lists
+*
+
+
+
+
+
+
+Press Releases
+
+SEC Filings
+
+Presentations
+
+Events
+
+Financial Reports
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Enter the code shown above.
+
+
+
+*
+
+
+
+
+
+
+
+
+
+
+
+
+Email Alert Sign Up Confirmation
+
+
+
+
+
+Connect with us
+
+
+
+
+
+Los Angeles (Headquarters)
+15901 Olden Street
+Sylmar, CA 91342
+(818) 362-8391
+Contact
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ © 2017 Tutor Perini Corporation 
+
+
+We are an Equal Opportunity Employer (EOE AA M/F/Vet/Disability)
+
+
+
+
+
+
+
+
+
+Powered By Q4 Inc.
+4.5.0.5
+(opens in new window)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

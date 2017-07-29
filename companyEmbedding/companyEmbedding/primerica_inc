@@ -1,0 +1,965 @@
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+Primerica - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Primerica
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Primerica, Inc.
+
+
+"Help families earn more income and become properly protected, debt free and financially independent."
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: PRI
+S&P 400 Component
+
+
+Industry
+Financial services
+
+
+Founded
+February 10, 1977; 40 years ago (February 10, 1977)
+
+
+Headquarters
+Duluth, Georgia
+
+
+
+Key people
+
+Glenn Williams (CEO)[1]
+Peter Schneider (President)[1]
+John A. Addison Jr. (Chairman of Distribution)
+D. Richard Williams (Chairman)
+Alison S. Rand (CFO)
+Gregory C. Pitts (COO)
+
+
+Products
+
+
+
+Term life insurance[2]
+Mutual funds
+Segregated funds
+Annuities
+Managed accounts
+Long term care insurance
+Legal services
+Auto insurance
+Homeowners insurance
+Credit monitoring
+Debt management plans
+
+
+
+
+
+Revenue
+ US$1.52B (2016)[3]
+
+
+
+Net income
+
+ US$219.41 million (2016)[3]
+
+
+Total equity
+US$1.22 billion (2014)[4]
+
+
+Website
+www.primerica.com
+
+
+Primerica, Inc. is a United States-based insurance and financial services company, which uses a hybrid model of direct selling, franchising and distribution.[2][5][6] As of 2016, it reported 116,827 independent representatives.[7] Primerica is headquartered in Duluth, Georgia and conducts business mainly in the United States, Canada and Puerto Rico.
+
+
+
+Contents
+
+
+1 Business model
+2 History
+
+2.1 Origin of Primerica name
+2.2 Acquisition by Commercial Credit
+2.3 Travelers and Citigroup era
+2.4 Separation from Citi
+2.5 Initial public offering
+
+
+3 Awards
+4 See also
+5 References
+6 Sources
+7 External links
+
+
+
+Business model
+Primerica, Inc. is an insurance and financial services company that uses multi-level marketing[8] to sell financial products and services.
+Headquartered in unincorporated Gwinnett County, Georgia,[9][10] Primerica spun off from its former parent company Citi through an initial public offering on April 1, 2010. It is a financial services marketing organization in North America with approximately 116,827 independent representatives,[11][7] including 22,000 Financial Industry Regulatory Authority (FINRA) Series 6 licensed[2] through Primerica's securities broker-dealer affiliate PFS Investments, Inc. in the United States, and through PFSL Investments Canada Ltd. in Canada. The company focuses on the sale of term life insurance,[2] as well as providing other financial products and services including mutual funds, annuities, segregated funds, managed accounts, long-term care insurance, pre-paid legal services, auto insurance, home insurance, credit monitoring and debt management plans. The company has more than 4.3 million life insurance clients and over 2 million client investment accounts.[11]
+History
+Founded in 1977 by Arthur L. Williams Jr. as A.L. Williams & Associates (A.L. Williams), the company established its base by mass-marketing the concept of "Buy Term and Invest the Difference."[5] With "BTID" the company illustrated how its mostly middle-income client base could purchase sufficient protection with term life insurance and systematically save and invest in separate investment vehicles, such as mutual fund Individual Retirement Accounts.[2] A.L. Williams was initially established as a privately held general agency, at first selling term life insurance policies underwritten by Financial Assurance, Inc. (FAI).
+The company expanded, outgrowing the capacity of FAI to process its business. In 1980, A.L. Williams entered into a contract with Boston-based Massachusetts Indemnity and Life Insurance Company (MILICO), a larger underwriter of life insurance, whose parent was PennCorp Financial Services based in Santa Monica. To support A.L. Williams headquartered in Atlanta, MILICO established a regional office in that city. In 1981, the company established First American National Corporation (later renamed The A.L. Williams Corporation) as a holding company for First American Life Insurance (later renamed A.L. Williams Life Insurance Company) and First American National Securities (later renamed PFS Investments, Inc). In 1982, The A.L. Williams Corporation (ALWC) underwrote a public stock offering, listed in the Over the Counter (OTC) market under the symbol ALWC. In 1983, the company became listed on the NASDAQ exchange under the same symbol.
+Origin of Primerica name
+PennCorp's growth due to MILICO's underwriting caught the attention of Bill Woodside, Chairman & CEO of American Can Company, a former Dow Jones 30 blue chip can and container producing company based in Greenwich, Connecticut founded in 1901.[12] Due to the growing rise of plastic as a replacement for aluminum cans, the company looked to acquire financial services providers and move away from the dying manufacturing industry, having acquired life insurance holding company Associated Madison from Gerry Tsai Jr in 1982. With this acquisition Woodside created a new financial services division for American Can and hired Tsai, who succeeded him as Chairman & CEO, as the new head.
+In September 1982, American Can and PennCorp signed a merger agreement.
+In 1983, the merger was finalized, making American Can the parent company of PennCorp and MILICO, signing a new contract with ALWC through the year 2000. In 1986 Nelson Peltz's Triangle Industries bought American Can's packaging division, along with rights to the name of the company. Therefore, on March 6, 1987 American Can announced that it would change its 86-year-old name to Primerica Corporation,[13] hence giving birth to the new and currently recognized name "Primerica."
+Acquisition by Commercial Credit
+The newly named Primerica Corporation targeted Smith Barney as the first significant purchase that moved the company completely into financial services with the May 1987 announcement of its intent to buy the Wall Street brokerage for $750 million,[14] which would later end up as Primerica's sister company under Citigroup in 1998.[15]
+In 1985, ALWC began the procedure to open business in Canada. After encountering legal and cultural roadblocks to expanding outside the United States, ALWC began selling insurance products of Pennsylvania Life Insurance Company, a Primerica subsidiary, in Canada in 1986.
+On November 30, 1988, ALWC acquired MILICO from Primerica Corporation through a stock merger acquisition for 44.58 million shares of ALWC stock, making Primerica Corporation the majority shareholder of ALWC. In December 1988, Sanford Weill's Commercial Credit acquired Primerica Corporation for $1.54 billion, retaining the Primerica name. At this time, the major businesses under Primerica Corporation were A.L. Williams, Smith Barney and Commercial Credit. On February 6, 1989, Primerica Corporation began trading on the New York Stock Exchange.
+Travelers and Citigroup era
+In November 1989, Primerica purchased the remaining 30% of ALWC that it did not previously own and the privately held General Agent, A.L. Williams, Inc. In 1991, Primerica Corporation changed the name of A.L. Williams to Primerica Financial Services. The following year MILICO, Primerica's life insurance underwriter, changed its name to Primerica Life Insurance Company, and its broker-dealer FANS changed to PFS Investments, Inc.[15]
+In December 1993, Primerica acquired the remaining 73% of Travelers Insurance Corporation and adopted the name Travelers Inc., which was changed to Travelers Group the following year.[15] Travelers Group included Primerica Financial Services, Smith Barney, Travelers Life and Annuity, Travelers Property/Casualty, Commercial Credit and other financial businesses.
+Joe Plumeri was Chairman and CEO of Primerica Financial Services from 1995 to 1999.[16][17][18] In 1998, Primerica had net income of $398 million on net sales of $1.65 billion, compared to a 1994 $209 million net income on net sales of $1.28 billion.[19]
+In December 1997, Primerica announced it was going to begin offering pre-paid legal through Pre-Paid Legal Services, Inc., at the time both subsidiaries of Travelers Group, Inc.[20]
+In 1998, the U.S. Securities and Exchange Commission (SEC) censured and fined PFS Investments Inc., the securities arm for Primerica, for failure to properly supervise a group of registered representatives in Dearborn, Michigan. The SEC found that PFS Investments Inc. had failed to have in place effective policies and procedures to follow up adequately on three complaints received about the Dearborn registered representatives, "selling away" activities. Prior to the SEC's ruling, PFS Investments Inc. hired an independent consultant to review its supervisory and compliance policies and procedures to prevent and detect violations of the federal securities laws. By the date of the ruling, PFS Investments reported it had complied with the final recommendations made by the independent consultant.[21]
+In 1998, Travelers Group and banking giant Citicorp merged creating Citigroup (NYSE: C). Primerica and its affiliates continued to operate as subsidiaries of Citigroup, although the Travelers insurance business was spun off in 2002. Along with Primerica, other major brand names under Citigroup included Citibank, CitiFinancial, Citicorp Trust Bank, Smith Barney, and Banamex.
+Long-time veteran executives John Addison and Rick Williams, whom Art Williams quoted in his book Coach as "two true sons of A.L. Williams",[22] were hired as co-CEOs in 2000, with Glen Williams promoted to President in 2005.
+Separation from Citi
+Citigroup attempted to sell Primerica in 2008,[23] having received several bids from life insurance companies and private equity firms interested in buying.[24][25] At the time the market value of the company was estimated to be $7 billion, roughly 15 times its annual earnings[26] and Citi was trying to match various bidders in groups that could bid for the unit together. Initially, a sale to JC Flowers & Co. LLC and Protective Life Corp was underway until the deal was canceled last minute for publicly undisclosed reasons.[27]
+In May 2009 the Primerica executive team led by co-CEOs John Addison and Rick Williams approached private equity firm J.C. Flowers & Co. yet again, as well as Blackstone Group LP and TPG Inc [23] in a new attempt to have the company bought, a plan which Citigroup did not endorse.[28]
+Initial public offering
+On November 5, 2009 Citi announced that it intended to spin off Primerica through an initial public offering.[29] The Primerica executive and legal team filed an S-1 with the U.S. Securities and Exchange Commission (SEC),[30] having officially publicly announced the intention of becoming a public company. Citi would claim all profit from the primary offering, as well as continue to receive income from a significant portion of existing Primerica business,[31] with Citi Holdings CEO Michael Corbit claiming the move to be "the best separation alternative for this franchise.[29]
+Primerica filed[32] a final amended S-1 and preliminary prospectus with the SEC on March 17, 2010, indicating that it will offer 18 million shares[33] to the public through the IPO, with underwriters having the option to purchase an additional 2.7 million shares. The first trading occurred on April 1, 2010. Initially, the expected share price was in the $12 – $14 range, having ended up being priced $15 a share on March 31, 2010,[34] resulting in Citi raising 27 percent or $30 million more than $290 million projected through the IPO by selling 3.36 million more shares than the anticipated 18 million.[35] The first day of trading saw the stock surge 31 percent to end up closing at $19.65 a share.[36] In a separate offering, Private equity firm Warburg Pincus has bought 17.2 million shares, resulting in a 23 percent stake in Primerica, and up to 33 percent if Warburg decides to exercise warrants to purchase an additional 4.3 million shares from Citi. Following the IPO, Citi's stake was between 32 percent and 46 percent and expected to divest its interest in Primerica "as soon as possible"[37] to fulfill its original goal of raising cash by shedding assets to improve financial performance.
+On December 19, 2011, Citigroup sold its remaining equity stake in Primerica (approximately 8 million shares of Primerica's common stock), completing the separation from Citi.[38]
+Awards
+Primerica Life Insurance Company, and its New York subsidiary, National Benefit Life, have received several awards from A. M. Best, Standard & Poor's and the Insurance Marketplace Standards Association (IMSA) for their financial strength, high standards and quality business.[39][40][41]
+Primerica has also received awards for Customer Service.[42][43][44]
+See also
+
+Brokerage firm
+Financial institution
+
+References
+
+
+^ a b Seward, Christopher (January 5, 2015). "Primerica names Glenn Williams as CEO". Atlanta Journal Constitution. Retrieved February 3, 2015. 
+^ a b c d e "Company Overview"
+^ a b "Primerica Reports Fourth Quarter 2016 Results". Business Wire. February 8, 2017. Retrieved March 16, 2017. 
+^ "PRI – Research and Analysis for Primerica Inc". MSN Money. Retrieved March 16, 2017. 
+^ a b "Primerica IPO: Citigroup unwinds its far-flung empire". BloggingStocks. 2009-11-06. Retrieved 2010-06-24. 
+^ Peter Schneider; et al. (2008-05-27). "COMMENT of PRIMERICA FINANCIAL SERVICES, INC. on the REVISED NOTICE OF PROPOSED RULEMAKING on the BUSINESS OPPORTUNITY RULE R511993" (PDF). Federal Trade Commission. Archived from the original (PDF) on 2010-05-29. Retrieved 2010-11-22. 
+^ a b "Primerica Reports Fourth Quarter 2016 Results". BusinessWire. February 8, 2016. Retrieved March 16, 2017. 
+^ Primerica Financial Services, Inc. (May 27, 2008). "COMMENT of PRIMERICA FINANCIAL SERVICES, INC. on the REVISED NOTICE OF PROPOSED RULEMAKING on the BUSINESS OPPORTUNITY RULE R511993" (PDF). Federal Trade Commission: Protecting America's Consumers. pp. 3–4. Retrieved January 18, 2016. Primerica suggests three modifications to the RPBOR, to better assure that the regulatory language actually achieves the clear intent of the Revised Notice that the Rule exclude multi-level marketing opportunities like those offered by Primerica and by many members of the Direct Selling Association. 
+^ "Duluth city, Georgia." U.S. Census Bureau. Retrieved on July 6, 2011.
+^ "Contact Us." Primerica. Retrieved on March 16, 2017. "Corporate Address Primerica, Inc. #1 Primerica Parkway, Duluth, GA 30099 United States"
+^ a b Primerica's History, http://www.primerica.com/public/our-history.html
+^ American Can Company - International Business Group
+^ "American Can Picks a Name". The New York Times. 1987-03-07. Retrieved 2008-01-26. 
+^ Perlman, Merrill (1987-05-31). "Week in business; primerica sharpens its financial focus". The New York Times. Retrieved 2008-06-29. 
+^ a b c "Primerica Financial Services". Archived from the original on April 29, 2009. Retrieved 2009-11-17. 
+^ "Plumeri next Willis CEO; Former Citigroup executive to succeed Reeve". Business Insurance. October 2, 2000. Retrieved July 15, 2010. 
+^ "Willis chief discusses changes in financial services.(Willis Group Ltd. CEO Joseph J. Plumeri)(Interview)". Business Insurance. January 15, 2001. Retrieved July 15, 2010. 
+^ "Joseph J. Plumeri Profile". Forbes. Archived from the original on October 31, 2010. Retrieved July 15, 2010. 
+^ Nash, Jeff (April 19, 1999). "The Chief Preacher: Joe Plumeri – Citibank Finds Sales Religion". Investment News. Retrieved July 16, 2010. 
+^ "Primerica Financial Services to Offer Legal Plans Through Pre-paid Legal Services, Inc". Business Wire. 1997-12-19. Retrieved 2007-08-20. 
+^ SEC Release No.40269 - July 28, 1998
+^ Williams, Art; Karen Kassel Hutto (June 2006). Coach. Atlanta, Georgia: Art Williams Productions. ISBN 0-9786266-0-5. 
+^ a b Fineman, Josh (2009-01-15). "Primerica Said to Drop Citigroup References on Cards, Brochures". Bloomberg. Retrieved 2009-01-18. 
+^ Bansal, Paritosh (2008-06-06). "Citi gets initial bids for Primerica unit: sources". Reuters UK. Retrieved 2008-06-15. 
+^ "Primerica prepares to be taken off Citi's map". TheDeal.com. 2008-06-06. Retrieved 2008-06-15. [permanent dead link]
+^ Wahba, Phil (2008-09-05). "Citi could sell Primerica, Texas business: Ladenburg's Bove". Reuters. Retrieved 2010-10-26. 
+^ Magpily, Gerald (2008-12-11). "Primerica sale is a bust for Citi". TheDeal.com. Archived from the original on May 3, 2009. Retrieved 2009-01-03. 
+^ "Citi's Primerica seeks bids for marketing arm: report". Yahoo!. 2009-05-13. Retrieved 2009-05-19. [dead link]
+^ a b Barr, Alistair (2009-11-05). "Citigroup files for IPO of Primerica unit". MarketWatch. Retrieved 2009-11-15. 
+^ Kulikowski, Laurie (2009-11-09). "Citi's Primerica IPO Points to Strategy Shift". TheStreet.com. Retrieved 2009-11-17. 
+^ "Citi Announces Filing of Registration Statement for Primerica IPO". Citi. 2009-11-05. Retrieved 2009-11-17. 
+^ "Amendment No. 4 to Form S-1". www.sec.gov. March 17, 2010. Retrieved 2017-06-09. 
+^ Moore, Michael (2010-03-17). "Primerica to Raise as Much as $290 Million in IPO (Update2)". BusinessWeek. Archived from the original on March 22, 2010. Retrieved 2010-03-21. 
+^ Sweet, Ken (2010-04-01). "Primerca's IPO Prices at $15/Share; Stock Surging". Fox Business Network. Archived from the original on April 3, 2010. Retrieved 2010-04-01. 
+^ Tsang, Michael (2010-03-31). "Primerica Raises $320 Million in IPO Selling Shares Above Range". Bloomberg. Retrieved 2010-04-01. 
+^ Tsang, Michael (2010-04-01). "Primerica Jumps on First Day After $320 Million IPO (Update3)". BusinessWeek. Archived from the original on April 3, 2010. Retrieved 2010-04-01. 
+^ "Citigroup To Sell Stake In Primerica". BusinessWeek. 2010-03-17. Retrieved 2010-04-01. 
+^ "Primerica Announces "Refounding" IPO Process is Complete". Barron's Online. Retrieved 4 January 2012. 
+^ "A.M. Best Revises Outlook to Stable for Ratings of Primerica, Inc. and Its Subsidiaries". A. M. Best. 2011-06-24. Archived from the original on 2011-10-05. Retrieved 2011-06-27. 
+^ Primerica Life Standard & Poor's Rating
+^ "Primerica Life, National Benefit Life Renew Qualification in IMSA, Ethical Standards Organization". NewsBlaze.com. March 2007. Archived from the original on 2012-07-14. Retrieved 2007-08-20. 
+^ DALBAR Inc. (5 December 2013). "DALBAR Announces Its 2013 Mutual Fund Service Award Winners in Financial Services". Yahoo Finance. Globe Newswire (Press release). Archived from the original on 16 December 2013. Retrieved 12 December 2013. 
+^ "PHOTO GALLERY: Cynthia Mitchell, Executive Vice President of Primerica Shareholder Services, accepts the 2011 NOVA Awards Innovation in Customer Experience Gold Award.". Money Management Executive. Retrieved 28 October 2012. 
+^ "Primerica - Investments". Primerica. Retrieved 28 October 2012. 
+
+
+Sources
+
+Primerica Primerica, viewed July 7, 2012
+New Georgia Encyclopedia NGE, viewed November 7, 2006
+
+External links
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Primerica&oldid=788510248"					
+Categories: PrimericaCompanies listed on the New York Stock ExchangeFormer components of the Dow Jones Industrial AverageMulti-level marketing companiesInsurance companies of the United StatesInvestment companies of the United StatesFinancial services companies of CanadaFinancial services companies of Puerto RicoFinancial services companies of the United States2010 initial public offeringsHidden categories: All articles with dead external linksArticles with dead external links from November 2016Articles with permanently dead external linksArticles with dead external links from August 2011Wikipedia indefinitely semi-protected pagesUse mdy dates from February 2017Use American English from February 2017All Wikipedia articles written in American English 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+View source
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikimedia Commons 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 1 July 2017, at 21:01.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

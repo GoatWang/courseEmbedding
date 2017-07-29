@@ -1,0 +1,6415 @@
+    Michael Saxon | Amtrust Financial Services, Inc. | ZoomInfo.com
+
+The SAXON XSLT and XQuery Processor
+
+
+SAXON
+The XSLT and XQuery Processor
+
+
+
+Contact Information: see 
+http://www.saxonica.com/about/contact.xml
+
+This is the home page for the Open Source SAXON XSLT processor developed by 
+    Saxonica Limited. It also provides information about commercial versions of the Saxon product
+    available from Saxonica.
+See also the project page for Saxon.
+Documentation for the current release of Saxon is available online at http://www.saxonica.com/documentation.
+The latest version of Saxon is version 9.8, first released on 8 June 2017 (the same day as the XSLT 3.0 Recommendation).
+The most stable version is version 9.7, first released on 27 November 2015, and regularly updated with maintenance releases.
+There are several editions of Saxon currently maintained:
+
+Saxon-HE (home edition) is an open source product available under the Mozilla Public License version 2.0.
+    It provides implementations of XSLT (3.0), XQuery (3.1), and XPath (2.0 and 3.1) at the basic level of conformance
+defined by W3C. It is available for Java and .NET.
+Saxon-PE (professional edition) is a commercial product available at modest prices from
+         Saxonica Limited. It adds a number of features to Saxon-HE,
+         including support for Saxon extensions and extensibility mechanisms, support for optional features defined
+         in XSLT 3.0 and XQuery 3.1 including higher-order functions, integration with the ICU-J library to provide localization for different languages,
+         and support for external object models such as JDOM2, XOM, DOM4J, and AXIOM. 
+         It is available for Java and .NET.
+Saxon-EE (enterprise edition) is the fully-featured commercial product.
+        Saxon-EE 9.8 offers a complete implementation of the XSLT 3.0 Recommendation published on 8 June 2017.
+        As well as a fully conformant XSD 1.0 and XSD 1.1 schema processor, and support for schema-aware XSLT and XQuery 
+        processing, it offers many other features including streaming in XSLT and XQuery, support for XQuery
+        updates, an advanced query optimizer, compilation of XQuery and XSLT code to Java bytecode, multi-threaded execution,
+        and much more.
+        For full details, see the Saxonica web site. 
+        It is available for Java and .NET.
+Saxon-JS (JavaScript edition) provides XSLT 3.0 running in the browser. Stylesheets
+        are compiled into Stylesheet Export Files using Saxon-EE, and can then be executed in the browser. It runs in all modern 
+        browsers with Javascript enabled.
+Saxon/C is currently at version 1.0: it offers the same core functionality as the Saxon-HE product,
+    but cross-compiled into a native executable library (.dll on Windows, .so on Linux) with a C-compatible API, plus a PHP
+    extension enabling it to be invoked from PHP applications. 
+    Details can be found on the project page.
+
+Saxon 9.8 on Java requires Java 6 (also known as JDK 1.6) or later. It is not supported on Java 5 (JDK 1.5).
+Saxon 9.8 on .NET requires .NET framework 3.5 or later. Users have reported that it also works on Mono, but we do
+not run tests on this platform.
+
+A comparison of the features available in different editions 
+    of the Saxon product is available.
+A detailed history of changes in successive releases
+is available.
+
+Current releases
+Saxon-EE 9.8
+The commercial Enterprise Edition from Saxonica, supporting XSLT 3.0, XPath 2.0 and 3.1,
+ XQuery 3.1, XML Schema 1.0 and 1.1, and
+ XQuery Update 1.0.
+ 
+
+All current releases are listed on the Saxonica download page.
+Source code for Saxon-EE is not available (except to Saxonica development partners).
+Saxon-PE 9.8
+The commercial Professional Edition from Saxonica, supporting XSLT 3.0, XPath 2.0 and 3.1,
+ and XQuery 3.1. It omits support for some
+ optional features of these specifications, notably schema awareness and (in the case of XSLT 3.0) streaming.
+
+All current releases are listed on the Saxonica download page.
+Source code for Saxon-PE is not available (except to Saxonica development partners).
+Saxon-HE 9.8
+The open-source implementation of XSLT 3.0, XPath 2.0 and 3.1,
+ and XQuery 3.1. This provides the "basic" conformance level of these languages; it also
+supports some optional features of the specifications such as serialization and support for XQuery modules.
+Not included in the Home Edition are: schema processing and schema aware XSLT and XQuery; 
+    support for higher-order functions; support for XPath 1.0 (and XSLT 1.0) backwards compatibility mode, 
+    numerous Saxon extensions; calling out to 
+Java methods; XQuery Update support; various optimizations including join optimization, streamed processing,
+multi-threaded execution, and byte code generation.
+
+There are four files available:
+a ZIP file containing executable code for the Java platform; a .EXE installer for the
+.NET platform; a resources file containing documentation and sample applications applicable
+to both platforms; and a ZIP archive of the source code for both platforms.
+ (Documentation is also available online)
+Download for Java (4.9 Mbytes)
+Download for .NET (5.8 Mbytes)
+Download documentation and samples) (31.1 Mbytes) (available shortly)
+Source code for Saxon-HE (3.8 Mbytes)
+Recent Saxon-HE releases can also be downloaded from Maven: 
+see Maven Repository.
+At the time of writing, Saxon 9.7 is more stable and mature than Saxon 9.8, so users who do not require
+the new features of 9.7 may prefer to stick with 9.7 for a few months longer. The current maintenance
+release on the 9.7 branch is 9.7.0.18.
+Since Saxon 9.4, the Subversion repository for source code is no longer maintained in SourceForge, but
+    on the Saxonica site at https://dev.saxonica.com/repos/archive/opensource.
+    The repository does not contain the development branch of the code, only versions that have been released; it
+    is the best way of obtaining bug fixes quickly if you are prepared to build the product from source (which is not for the faint-hearted).
+
+
+Note that bug fixes are typically made available in Subversion as soon as they are available, and are then consolidated
+    periodically into a maintenance release. Source code under development is not held in Subversion, and is not available
+    until a tested release is issued. Sometimes prereleases of new facility releases are made available for testing; these
+are announced on the saxon-help mailing list but will not generally be advertised here.
+Older releases of Saxon-HE remain available from SourceForge: see the 
+    SourceForge download page for details. If you require a release that
+is no longer listed, please ask: we can't offer to support it, but in general we don't mind you using it at your own risk.
+Saxon-JS 1.0
+Saxon-JS is the Javascript edition of Saxon, offering XSLT 3.0 running in the browser. It supersedes the earlier
+    Saxon-CE product. For information
+about the product, see the Saxon-JS home page. 
+Bugs, Forums and Discussion Lists
+The bug tracker for all versions of Saxon is a Redmine database hosted
+at saxonica.plan.io. You are free to enter new bugs here directly,
+or if bugs are raised by other routes (such as the mailing list) we will register them there if they need
+to be tracked.
+The Redmine database also offers discussion forums and these are the best way to raise technical issues
+or questions that need an answer from the Saxonica development team.
+The SourceForge project hosts a mailing list, saxon-help, which provides a good way of reaching other
+Saxon users. Since SourceForge is dedicated to open source, we don't encourage use of this list for issues
+specific to the commercial versions of the product.
+If you need help using the underlying languages (XSLT, XQuery, XSD etc) and the problem is not specific
+to Saxon, it's better to use a general forum rather than a Saxon community resource. The
+StackOverflow site is the best place to get a 
+good answer to straight coding questions, while the xsl-list
+(also known as the Mulberry list) is the place for deeper discussions about the nature of XSLT as a language.
+To search the history of previous questions and answers on these lists, the database maintained 
+at MarkMail is the most comprehensive and most readily searchable.
+Please try to avoid contacting Saxonica developers by personal email; while we love to help, it's much easier
+to manage the correspondence through an archived forum.
+Older Products
+Saxon-B
+Saxon-HE does not offer all the capabilities that were present in Saxon-B. Most notably, support for Saxon
+        extension functions and other extensions was dropped, as was the capability for writing extension functions
+        that rely on dynamic loading of Java or .NET code (a new facility for "integrated extension functions" is
+        however available). Users whose code relies on these features of Saxon-B should either purchase the Professional Edition product
+        or stick with Saxon-B: the latest release of Saxon-B is 9.1.0.8, and although there are no plans to develop
+        it further or maintain it, it will remain available indefinitely.
+Saxon-B version 9.1.0.8 is a complete
+and conformant implementation of the XSLT 2.0, XQuery 1.0, and XPath 2.0 
+Recommendations published on 23 January 2007 by W3C.
+Saxon-B 9.1.0.8 is available
+on both the Java and .NET platforms.
+For the bug fixes
+in each successive maintenance release, see the Release Notes and Change Notes for the release
+on the SourceForge downloads page.
+It can be downloaded from:
+
+Download for Java (1.9 Mbytes)
+Download for .NET (13.7 Mbytes)
+Download source code for 9.1.0.7 (2.9 Mbytes)
+Download documentation and samples (11.9 Mbytes).
+     (Note, this file was first issued with Saxon-B 9.1.0.1 and the URL reflects this. The source code present in this file is the source of 9.1.0.1)
+
+Saxon 6.5.5
+The Saxon XSLT 1.0 processor remains available. The latest version is 6.5.5.
+        However, even if your stylesheets only require XSLT 1.0, it is probably better to run them under Saxon 9.x
+This product is mature and stable, and further developments are very unlikely.
+The download includes documentation, source
+code, Java executables, and sample code.
+Known limitations of this release are listed here. This page
+will be updated with information about any new bugs that come to light.
+
+Information
+Limitations (up-to-date list of known bugs)
+Download (3265 Kbytes)
+
+Saxon 6.5.3
+The previous release of Saxon's implementation of XSLT 1.0. This product remains available because
+it runs in some environments that are not supported by Saxon 6.5.5, notably under JDK 1.1.
+The download includes documentation, source
+code, Java executables, and sample code.
+Known limitations of this release are listed here.
+No further updates will be made to this page.
+
+Information
+Download (3046 Kbytes)
+
+Instant Saxon 6.5.3
+The most recent version of the Instant Saxon product. Instant Saxon was built using
+the same source code as Saxon 6.5.3, but was packaged for ease of installation when using
+the Microsoft Java VM. Since the Microsoft Java VM has long ceased to be a standard component of the
+Windows platform, this release has outlived its usefulness, but it remains available
+for download for those of an antiquarian disposition.
+
+Information
+Download (401 Kbytes)
+
+Old products
+Ant Task for Saxon
+There is a custom Ant task for invoking Saxon XSLT transformations. This was previously issued as part
+    of the Saxon product but has now been separated into a separate package under the Saxon SourceForge project.
+    It is no longer actively developed and is not recommended (there are a number of bugs, and it is difficult
+    to improve the quality because of an absence of test material). The download is
+here.
+Ælfred
+The Ælfred XML Parser that was bundled with Saxon versions
+up to version 7.1 is available as a separate download. It is of historic interest only.
+DTDGenerator
+Also available on this site is the DTDGenerator program. This was formerly
+produced as a Saxon demonstration application, but has since been adapted to work as a pure
+SAX application, with no dependencies on the Saxon software.
+Documentation for earlier releases remains present on the SourceForge web site:
+6.4.2, 
+6.4.3,
+6.5,
+6.5.1,
+6.5.2,
+6.5.3,
+6.5.4,
+6.5.5,
+7.0,
+7.1,
+7.2,
+7.3,
+7.3.1,
+7.4,
+7.5,
+7.5.1,
+7.6,
+7.7,
+7.8,
+7.9,
+7.9.1
+For releases from 8.0 onwards, the documentation is not available directly
+on the web site, but can be obtained by downloading the software.
+
+
+Michael H. Kay 
+13 June 2017
+
+
+
+
+
+
+Robot Check
+
+
+
+
+
+
+
+
+
+
+
+
+
+Enter the characters you see below
+Sorry, we just need to make sure you're not a robot. For best results, please make sure your browser is accepting cookies.
+
+
+
+
+
+
+
+
+
+
+Type the characters you see in this image:
+
+
+
+
+
+
+
+
+Try different image
+
+
+
+
+
+
+
+
+
+
+
+Continue shopping
+
+
+
+
+
+
+
+
+
+
+
+Conditions of Use
+
+
+
+
+Privacy Policy
+
+
+          © 1996-2014, Amazon.com, Inc. or its affiliates
+          
+
+
+
+
+
+
+
+
+
+	SAXON Trademark of EMONT S.A.. Serial Number: 73671980 :: Trademarkia Trademarks
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apply Online!
+Attorneys
+
+Services 
+
+U.S. Trademark Registration Service 
+International Trademark Registration Service 
+Trademark Office Action Response 
+Trademark Statement of Use 
+Trademark Renewal 
+Trademark Assignment 
+Trademark Watch 
+Trademark Cease & Desist  
+Trademark Comprehensive Search  
+Copyright Registration 
+Patent Services 
+Incorporation Services 
+Business Page Creation 
+ More Services... 
+
+
+Help
+Contact Us
+
+
+Login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trademark Search 
+Trademark Category
+Leather Products (not including cloth...
+SAXON
+
+
+
+
+
+
+
+
+
+
+ 
+Get FREE email alerts
+
+
+
+
+
+
+
+
+
+
+
+
+
+SAXON  Trademark Information
+ EMONT S.A.
+LEATHER AND IMITATION LEATHER TRUNKS AND TRAVELING BAGS; ANIMAL SKINS AND HIDES
+FURNITURE, MIRRORS, AND PICTURE FRAMES
+
+
+
+
+Perfect for these industries
+
+Leather Products (not including clothing)
+Furniture Products
+
+
+
+
+
+Words that describe this mark
+leather   imitation   leather   trunks   traveling   bags   animal   skins   hides    
+                                    
+
+
+
+
+This is a brand page for the SAXON trademark by EMONT S.A. 
+                                in PORRENTRUY, , .
+Write a review about a product or service associated with this SAXON trademark.    
+                                Or, contact the owner EMONT S.A. of the SAXON trademark by filing a request to communicate with    
+                                the Legal Correspondent for licensing, use, and/or questions related to the SAXON trademark.
+                           
+
+
+
+
+
+
+On Thursday, July 09, 1987,  a U.S. federal trademark registration was filed for 
+                        SAXON by 
+                        EMONT S.A., PORRENTRUY.
+                        The USPTO has given the SAXON 
+                        trademark serial  number of  73671980.  
+                        The current federal status of this trademark filing is CONTINUED USE NOT FILED WITHIN GRACE PERIOD, UN-REVIVABLE.
+                        The correspondent listed for SAXON is 
+                        
+                        
+                                            MICHAEL J. STRIKER of 
+                                            360 LEXINGTON AVENUE,  NEW YORK, NY  10017,  
+                                .
+                            The SAXON trademark is filed in the category of 
+                            
+                                    Leather Products (not including clothing)
+                                , 
+                                    Furniture Products
+                                . 
+                            The description provided to the USPTO for SAXON 
+                            is LEATHER AND IMITATION LEATHER TRUNKS AND TRAVELING BAGS; ANIMAL SKINS AND HIDES. 
+                            
+
+
+
+
+
+Word mark:
+ SAXON
+
+
+  Status/Status Date:  
+
+
+CONTINUED USE NOT FILED WITHIN GRACE PERIOD, UN-REVIVABLE
+
+11/27/1995
+
+
+
+  Serial Number:  
+73671980
+
+
+  Filing Date:  
+7/9/1987
+
+
+ Registration Number:  
+1540482 
+
+
+ Registration Date:  
+5/23/1989
+
+
+ Goods and Services: 
+LEATHER AND IMITATION LEATHER TRUNKS AND TRAVELING BAGS; ANIMAL SKINS AND HIDES
+
+
+ Mark Description: 
+NOT AVAILABLE
+
+
+ Type Of Mark: 
+TradeMark
+
+
+ Published For Opposition Date: 
+2/28/1989
+
+
+Last Applicant/Owner:
+
+EMONT S.A.PORRENTRUY
+Why is this contact information displayed?  
+
+Why is this contact information displayed? [Close]
+The USPTO makes this data available for search by the public so that individuals can locate ownership information for intellectual property, much the same way a county might make real estate property ownership information available.
+Since our website is synchronized with the USPTO data, we recommend making any data changes with the USPTO directly. Our website will auto-update when the USPTO data is updated.
+You may also contact Trademarkia to make a request for the removal of your personally identifiable information or trademark data.  Such requests must be made in writing and will be subject to verification of ownership.  This policy allows verified trademark owners to specify: (A) that their identifiable information be masked, or (B) that their trademark pages permanently deleted from Trademarkia.com.  
+                                                Requests may be made directly to customer.service@trademarkia.com and every effort will be made to honor them within 48 hours. 
+Click here for further details.
+[Close]
+
+
+
+
+ Mark Drawing Code:  
+Drawing/Design + Words(75% Reduction of drawing size)
+
+
+ Design Search: 
+See Similar Logos >>
+
+
+
+                                                    Shields or crests with letters, punctuation or inscriptions contained therein or superimposed thereon (Heraldry, flags, crowns, crosses, arrows and symbols   -  Shields, crests) see more design...
+
+
+                                                    Crowns closed at the top (Heraldry, flags, crowns, crosses, arrows and symbols   -  Crowns) see more design...
+
+
+
+
+Register Type:  
+Principal
+
+
+ Disclaimer:
+ (NOT AVAILABLE)
+
+
+ Correspondent:
+
+
+MICHAEL J. STRIKER
+360 LEXINGTON AVENUE
+NEW YORK, NY  10017
+
+
+
+
+
+
+
+ Use in Commerce Trademark - Applicant has provided proof of use of this mark in commerce to USPTO.
+
+
+
+
+
+Classification Information
+
+
+
+Primary Class: 
+ Class (018) - Leather and imitations of leather, and goods made of these materials and not included in other classes; animal skins, hides; trunks and travelling bags; umbrellas, parasols and walking sticks; whips, harness and saddlery. 
+
+
+First Use Anywhere: 
+Not provided
+
+
+First Use In Commerce: 
+Not provided
+
+
+
+
+Primary Class: 
+ Class (020) - Furniture, mirrors, picture frames; goods (not included in other classes) of wood, cork, reed, cane, wicker, horn, bone, ivory, whalebone, shell, amber, mother-of-pearl, meerschaum and substitutes for all these materials, or of plastics. 
+
+
+First Use Anywhere: 
+Not provided
+
+
+First Use In Commerce: 
+Not provided
+
+
+
+
+
+Trademarkia is the largest search engine for U.S. trademarks.  Each month hundreds of trademarks around the world are filed by licensed attorneys in the LegalForce/Trademarkia network! You can register your trademark in 170+ countries in the world through LegalForce Network.
+ LegalForce Network can help you incorporate a business around your SAXON trademark in less than 5 minutes.  Trademarkia makes the process easy and convenient, so start now!
+ Trademarkia.com is a free search engine of publicly available government records.  Trademarkia.com is not a law firm and does not represent owners & correspondents listed on this page.
+Trademark Document Retrieval >>
+
+
+
+
+
+
+
+Trademark - Apply Online!
+
+
+100% Satisfaction Guarantee protect your valuable brand now.
+
+
+
+How it works?
+What you get?
+
+
+
+
+
+
+1. Legalforce RAPC - #1 U.S. Trademark Filing from 2010 to now.
+2. Describe how your business or product is being used. Register your mark in 176+ countries. Just $199 + govt fees! Start here >>
+
+
+
+
+
+
+1. Top Global IP Attorneys - Credibility and Experience!
+2. All processes will be performed in a timely manner. You will be informed periodically about the process.
+
+
+
+
+
+
+Keep Track of this Brand.
+
+ Trademark Watch Services
+Keep track of how your trademark is being used. Available in the United States and in more than 176 countries. Round-the-clock monitoring. Monthly report on potential infringement.
+                                
+
+Watch this Trademark 
+
+Trademark Watch Services read more...
+
+Current Trademark Status:
+
+11/27/1995
+CONTINUED USE NOT FILED WITHIN GRACE PERIOD, UN-REVIVABLE
+
+
+Free Trademark Search:
+
+
+
+
+
+
+Correspondent Search:
+
+
+
+MICHAEL J. STRIKER
+
+
+                                             
+                                         is a correspondent of SAXON trademark. 
+                            	    
+
+
+Current Overall Rating:
+
+ (0 review)
+                            
+What You Can Do:
+
+
+
+
+Start Your Business
+
+
+
+FREE Logo Creator
+
+
+
+Add to Favorites
+
+
+
+View Documents
+
+
+
+FREE Trademark Search
+
+
+
+Start Trademark Filing Process
+
+
+
+Protect this Mark Internationally
+
+
+
+Custom Logo Design $159
+
+
+
+Search saxon on popular social networks
+
+
+
+
+
+
+                                Trademarkia lets you see how your 
+                                personal name, product name, 
+                                trademark name or username is being used on any of 530+ new 
+                                and popular social networks.  
+                                Be the first to reserve your name  and get help stopping others from using it - all in one place!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trademark Oppose Service
+
+
+You can request for Extension of Time to Oppose this mark or Oppose it now.
+
+
+
+                 - If you are new to LegalForce/Trademarkia, please just enter your contact email and create a password;
+                 
+
+                 - If you already have a LegalForce/Trademarkia account, please enter your account's email and password.
+                
+
+
+* Email Address: 
+
+
+ Please enter your email address
+
+
+
+* Enter Password: 
+
+
+ Please enter your password
+
+
+
+* 
+
+
+
+ Please enter the value
+
+
+
+
+ 
+
+  
+                             
+
+
+
+ 
+
+
+
+
+
+
+
+Status Update Alerts
+
+Status Update Alerts are email updates of the latest trademark status change. Please make sure you provide the correct email. 
+
+
+                 - If you are new to LegalForce/Trademarkia, please just enter your contact email and create a password;
+                 
+
+                 - If you already have a LegalForce/Trademarkia account, please enter your account's email and password.
+                
+
+
+* Email Address: 
+
+
+ Please enter your email address
+
+
+
+* Enter Password: 
+
+
+ Please enter your password
+
+
+
+* 
+
+
+
+ Please enter the value
+
+
+
+
+ 
+
+  
+                             
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Review & Rating
+
+Please Rate and Review for SAXON 
+
+
+
+
+SAXON is providing LEATHER AND IMITATION LEATHER TRUNKS AND TRAVELING BAGS; ANIMAL SKINS AND HIDES.
+                
+
+
+                 - If you are new to LegalForce/Trademarkia, please just enter your contact email and create a password to be associated with your review.
+                 
+
+                 If you already have a LegalForce/Trademarkia account, please enter your account's email and password before posting your review.
+                 
+
+
+* Please Rate: 
+
+
+     
+
+
+
+
+* Your Review: 
+
+
+
+ Please enter your review.
+
+
+
+* Email Address: 
+
+
+ Please enter your email address
+
+
+
+* Enter Password: 
+
+
+ Please enter your password
+
+
+
+ 
+
+  
+                             
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Michael Saxon's Phone & Address | PeopleByName
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Contact
+Login
+
+
+
+
+
+
+
+
+
+
+ Home
+People Alphabetically
+S
+Saxon Michael
+
+Michael Saxon
+
+
+
+
+People directory with over 600,000,000 names!
+
+
+Record ID: 323969009Michael J Saxon524 DudleyWestfield, NJ 07090Age 46 (Born 1971)(908) 654-3325Background Check - Available
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+1,379,043,021 total records available
+
+
+
+
+Tweet
+
+
+
+
+
+  Testimonials Read testimonials from real customers who already used our services. Read More
+
+  Webmasters Earn 75% commission on every sale you drive to our website. Weekly payouts! Read More
+
+   Mobile Version Visit us from your smart phone anywhere you are. Read More
+
+   Recent Lookups Check out the most recent reverse phone lookups on PeopleByName.com Read More
+
+ 
+
+
+
+ Home Mobile Version Phone Directory People Directory Remove information
+ Terms of Service Privacy Policy Affiliate Program About Us 
+ Member Login Frequently Asked Questions Contact Us Testimonials 
+ Careers Product & Services Volume Discounts Site Map 
+
+
+
+
+© PeopleByName All Rights Reserved. 2010-2017
+
+
+
+
+
+
+
+Michael J Saxon - Marietta, GA | Intelius
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign In
+
+
+
+We found Michael J Saxon in Marietta, GA
+
+
+Michael J Saxon
+
+                                                                           Intelius found that Michael J Saxon  is  a male between 90 and 100 years old from Marietta, GA.  We have connected them to
+                6 addresses,
+                4 phones,
+                and 0 relatives or associates.
+         
+
+
+
+
+
+Also Known As
+
+Mike  Saxon
+
+
+Get Report Now
+
+Age
+
+Michael J Saxon is in his 90s
+
+Michael Has Lived In
+
+Marietta, GA
+Roswell, GA
+Atlanta, GA
+
+
+
+
+
+
+
+Michael J Saxon
+
+
+
+Zodiac SignVirgo
+
+
+
+GenderMale
+
+
+
+Professional Status
+Senior Vice President, Media Optimization at TNS
+
+
+
+Get Report Now
+
+
+
+
+
+
+
+
+
+
+Want to know more about Michael? Get a comprehensive background report, find full phone numbers, and other contact information when available, all from billions of available public records.
+            Continue below for more details about Michael, or use our people search engine to find others.
+Get Background Check on Michael J Saxon
+Get a Criminal Check on Michael J Saxon
+Get a Public Record Report on Michael J Saxon
+Get a People Search Report on Michael J Saxon
+
+
+Michael J Saxon's Contact Information
+Known Cities Lived In
+Find out where Michael J Saxon has lived as well as Michael J Saxon's phone numbers and email addresses.
+
+
+
+
+Michael J Saxon Has Lived in 3 States
+Georgia Address for Michael J Saxon
+
+
+5043 W***** E****** D* 
+
+Marietta, GA
+
+
+Has Lived In
+
+Marietta, GA
+Roswell, GA
+
+
+Get Full Address Report
+
+
+
+
+
+
+
+
+
+
+Phone Numbers Associated with Michael J Saxon
+
+(212) ***-**** - New York, NY 
+(201) ***-**** - Teaneck, NJ 
+(770) ***-**** - Atlanta, GA 
+
+
+Get Full Phone Report
+
+
+
+Email Addresses Associated with Michael J Saxon
+
+m********n@***.com
+m****n@***.com
+m********n@***.com
+
+
+Get Email Report
+
+
+
+
+Michael J Saxon's Professional Information
+Information regarding Michael J Saxon's professional history.  Find out previous places Michael J Saxon has worked as well as dates employed.
+            The following data is not guaranteed for accuracy and should not be used for employment, insurance, credit eligibility, or for any other purpose covered under the Fair Credit Reporting Act.
+
+
+Michael J Saxon Has Worked at 3 Places
+Company: TNS
+               Title: Senior Vice President, Media Optimization
+Company: Cpcu Society
+               Title: Chief Operating Officer
+Michael J Saxon's Experience
+Title: Senior Vice President, Media Optimization
+               Company: TNS
+Job Details
+               Company Size: $10 mil to less than $25 mil - Employee Range: 100 to less than 500
+Title: Chief Operating Officer
+               Company: Cpcu Society
+Job Details
+               Company Size: $25 mil to less than $50 mil - Employee Range: 100 to less than 500
+Additional Professional Information on Michael J Saxon
+
+ See Michael J Saxon's LinkedIn Profile
+
+
+
+Michael J Saxon's Social Network and Potential Email Matches
+Find out potential social network profiles and potential email usernamed for Michael J Saxon
+
+
+Michael J Saxon's known Social Networks And Potential Email Matches
+
+Find all of Michael J Saxon's Social Network Profiles
+
+Get Full Report
+
+Search Social Networks
+Including Facebook, LinkedIn, MySpace, Google, Twitter, Yahoo, Jigsaw, ZoomInfo and more
+
+
+
+Potential Email Matches
+Michael Saxon
+Username Matches
+
+                  MichaelSaxon
+                  SaxonMichael
+                  Michael.Saxon
+                  Saxon.Michael
+                  Michael_Saxon
+                  Saxon_Michael
+                  Michael-Saxon
+                  Saxon-Michael
+                  MSaxon
+               
+
+
+Popular Email Services
+
+@gmail.com
+@aol.com
+@yahoo.com
+@comcast.net
+@hotmail.com
+@msn.com
+@rocketmail.com
+@att.net
+@sbcglobal.net
+@ymail.com
+@facebook.com
+@mail.com
+@bellsouth.net
+@live.com
+@earthlink.net
+@cox.net
+@prodigy.net
+@me.com
+@peoplepc.com
+@juno.com
+@rediffmail.com
+@mindspring.com
+@comcast.com
+@charter.net
+@outlook.com
+
+
+
+
+All trademarks, product names, company names or logos on this page are the property of their respective owners.
+Related People Searches
+M Saxon
+
+
+
+
+
+
+
+         Intelius is a leading provider of public data about people and their connections to others. Intelius does not provide consumer reports and is not a consumer reporting agency as defined by the Fair Credit Reporting Act (FCRA). This site should not be used to determine an individual’s eligibility for credit, insurance, employment, housing or any other purpose covered by the FCRA. For employment or tenant screening services, please visit our partner Talentwise.
+      
+
+About Us
+Site Map
+About Our Reports
+Blog
+Help
+Contact Us
+
+© 2003 – 2017 PeopleConnect, Inc. d/b/a Intelius. All Rights Reserved.
+         Privacy Policy - UPDATED
+Terms of Service - UPDATED
+
+
+
+
+
+
+What is the FCRA?
+The Fair Credit Reporting Act ("FCRA") is a federal law that promotes the accuracy, fairness and privacy of information in the files of consumer reporting agencies.
+Intelius does not provide consumer reports and is not a consumer reporting agency as defined by the FCRA. Intelius reports cannot be used for background checks related to consumer credit, insurance, employment, housing or any other purpose
+                  prohibited under the FCRA.
+You may not use any information obtained from Intelius for any purpose covered by the FCRA.
+Find out more about the FCRA here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		Form  4          Amtrust Financial Servic  For: Apr 04  Filed by: Saxon Michael J
+	
+	
+
+
+
+
+
+
+
+
+
+		Research: Stocks: News Story
+	
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to Main Content.
+Site navigation
+Fidelity.com Home
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+Search Fidelity.com
+
+
+
+
+ 
+
+ 
+
+
+
+Accounts & Trade
+
+
+
+PortfolioLog In Required
+
+
+Account PositionsLog In Required
+
+
+TradeLog In Required
+
+
+Active Trader ProLog In Required
+
+
+TransferLog In Required
+
+
+Cash ManagementLog In Required
+
+
+BillPayLog In Required
+
+
+Full ViewLog In Required
+
+
+ProfileLog In Required
+
+
+Account FeaturesLog In Required
+
+
+StatementsLog In Required
+
+Tax Information
+
+Retirement DistributionsLog In Required
+
+
+
+OFFER See our featured trading offer. Learn more.
+
+
+
+Planning & Advice
+
+
+What We Offer
+Financial Basics
+Building Savings
+Managing & Growing Wealth
+Retirement
+Life Events
+
+
+
+News & Research
+
+
+News
+Watch ListLog In Required
+Quotes
+AlertsLog In Required
+Mutual Funds
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Markets & Sectors
+IPOs
+Annuities
+Learning Center
+Notebook
+Notebook
+
+
+
+Investment Products
+
+
+Mutual Funds
+Retirement & IRAs
+Trading
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Sector Investing
+Cash Management & Credit Cards
+Managed Accounts
+Fidelity Go
+529 College Savings
+Annuities
+Life Insurance & Long Term Care
+
+
+
+Why Fidelity
+
+
+The Fidelity Advantage
+Planning & Advice
+Trading
+Straightforward Pricing
+Insights & Tools
+Security & Protection
+
+
+ 
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+			Content and data provided by various third parties and Fidelity − Terms of Use
+
+
+
+
+Research >
+Stocks >
+
+
+				
+					
+					
+						News & Events
+					
+				
+				 >
+			
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Details
+
+Enter Company or Symbol. Press down arrow for suggestions, or Escape to return to entry field.
+
+
+
+
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Adv Chart & Technical..
+News & Events
+Compare
+Analyst Opinions
+Research Reports
+Key Statistics
+Earnings
+Dividends
+Ownership & Insiders
+Financial Statements
+SEC Filings
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Advanced Chart
+News
+Analyst Reports
+
+
+
+Find Symbol. Opens in new window.
+
+
+
+
+
+
+
+Snapshot
+Detailed Quote
+Advanced Chart & Technical Analysis 
+News & Events
+Compare
+Analyst Opinions
+Research Reports
+Key Statistics
+Earnings
+Dividends
+Ownership & Insiders
+Financial Statements
+SEC Filings
+
+
+
+
+
+RELATED RESOURCES
+
+Stock Research Overview
+Stock Screeners
+Markets & Sectors
+Fidelity Learning Center 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Print Format
+
+
+Change Text Size:
+
+
+Default text sizeA
+
+
+Larger text sizeA
+
+
+Largest text sizeA
+
+
+
+
+
+
+
+
+
+Form  4          Amtrust Financial Servic  For: Apr 04  Filed by: Saxon Michael J
+BY 10K Wizard— 4:32 PM ET 04/04/2017
+
+
+http://archive.fast-edgar.com/20170404/ADK4D22CZ22292Z2222S22ZP5BQRZY225292
+
+Filed on: April 4, 2017
+
+
+
+
+
+More AFSI News
+
+
+
+AmTrust Financial Services, Inc. Completes Annual Financial Restatements With Filing of Form 10-K
+
+						GlobeNewswire -
+						
+
+
+
+
+6:20 AM ET 04/04/2017
+
+
+					
+
+
+
+AmTrust Financial Services, Inc. Receives Anticipated Nasdaq and NYSE Notices Due to Previously Announced Delay in 10-K Filing
+
+						GlobeNewswire -
+						
+
+
+
+
+5:00 PM ET 03/23/2017
+
+
+					
+
+
+
+AmTrust Financial Services, Inc. Provides Update on 10-K Filing
+
+						GlobeNewswire -
+						
+
+
+
+
+4:30 PM ET 03/16/2017
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Copyright
+1998–2017 FMR LLC. 
+All rights reserved. 
+
+Terms of Use|
+Privacy|
+Security|
+Site Map 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Michael J. Saxon - Executive Bio, Compensation History, and Contacts - Equilar Atlas
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Log in | Sign up
+
+
+
+
+
+
+
+
+x
+
+ 
+
+
+
+
+
+
+As Featured In
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Michael J. Saxon
+Executive Vice President, U.S. Commercial Lines at AmTrust Financial Services, Inc.
+
+
+View Full Profile
+Are you Michael J. Saxon? Claim your profile
+
+
+ 
+
+
+Sign up for Equilar Atlas and view Michael J. Saxon's full profile. 
+With Equilar Atlas, you can:
+
+
+
+IDENTIFY corporate executives in Michael J. Saxon's  network and community.
+												FOLLOW changes in Michael J. Saxon's employment and money-in-motion.
+												CONNECT with Michael J. Saxon through your network of contacts.
+												
+
+
+
+
+
+
+
+
+Michael J. Saxon's Executive Work History
+
+
+Current
+
+
+Executive Vice President, U.S. Commercial Lines, 
+AmTrust Financial Services, Inc.
+
+
+Past
+To view Michael J. Saxon's complete executive work history, sign up now
+Age
+58
+
+ 
+ 
+
+
+
+
+
+
+Sign up for Equilar Atlas and view Michael J. Saxon's full profile. 
+
+
+
+												By accessing Equilar Atlas, you can view bios, network, salary and wealth events
+												of industry-leading executives like Michael J. Saxon. More specifically, you'll be able to:
+												
+
+IDENTIFY corporate executives in Michael J. Saxon's  network and community.
+												FOLLOW changes in Michael J. Saxon's employment and money-in-motion.
+												CONNECT with Michael J. Saxon through your network of conections.
+												
+
+
+
+
+View Full Profile
+
+
+ 
+
+
+
+
+
+
+
+
+Search for over 360,000 executive profiles.
+
+
+
+
+
+/bio
+
+
+
+													Example: Michael J. Saxon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Michael J. Saxon's Connections (16)
+
+
+
+
+
+Sign up now to view Michael J. Saxon's 16 connections »
+
+
+
+
+
+
+
+
+
+Abraham Gulkowitz
+Board Member, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+
+Donald T. DeCarlo
+Board Member, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+
+Adam Karkowsky
+Former Executive Vice President, Chief Financial Officer and Principal Accounting Officer, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+
+Barry D. Zyskind
+Chairman of the Board, Chief Executive Officer and President, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+
+Leah Karfunkel
+Board Member, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+
+Max G. Caviet
+President, AmTrust International Insurance Limited and Chief Executive Officer, AmTrust International Limited, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+
+Ronald E. Pipoly
+Employee, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+
+Christopher M. Longo
+Executive Vice President, Chief Operating Officer and Chief Information Officer, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+
+David Saks
+Executive Vice President and Chief Legal Officer, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+
+Susan C. Fisch
+Board Member, AmTrust Financial Services, Inc.
+
+
+
+
+
+
+
+
+Popular Profiles
+
+
+
+
+
+
+														Sign up now to view more executive profiles »
+														
+
+
+
+
+
+
+
+
+
+Thomas J. Lynch
+Executive Chairman, TE Connectivity Ltd.
+
+
+
+
+
+
+
+
+
+John J. Kita
+EVP and CFO, A. O. Smith
+
+
+
+
+
+
+
+
+
+Carl G. Annessa
+EVP and COO, Hornbeck Offshore Services, Inc.
+
+
+
+
+
+
+
+
+
+Elon R. Musk
+CEO and Chairman, Tesla
+
+
+
+
+
+
+
+
+
+Michael C. Montgomery
+Board Member, NMI Holdings, Inc.
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+Claim Your Profile Coming Soon
+Interested in updating your biography and work history?
+We're working on making it happen.
+We'll email you when this feature is available.
+Please enter valid email address.
+
+Done
+
+
+Thank you for your interest.
+Ok
+
+
+
+
+
+
+			Browse executive profiles:
+			
+				 A
+			
+				 B
+			
+				 C
+			
+				 D
+			
+				 E
+			
+				 F
+			
+				 G
+			
+				 H
+			
+				 I
+			
+				 J
+			
+				 K
+			
+				 L
+			
+				 M
+			
+				 N
+			
+				 O
+			
+				 P
+			
+				 Q
+			
+				 R
+			
+				 S
+			
+				 T
+			
+				 U
+			
+				 V
+			
+				 W
+			
+				 X
+			
+				 Y
+			
+				 Z
+
+
+
+Equilar Homepage
+Equilar Atlas
+Equilar Insight
+Equilar BoardEdge
+Equilar Engage
+Research Services
+Knowledge Network
+About Us
+Login
+
+ï¿½ 2017 Equilar All Rights Reserved. Privacy Policy
+1100 Marshall Street, Redwood City, CA 94063 | Phone (650) 241-6600 | Fax (650) 701-0993
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J SAXON MICHAEL - LAGRANGE, GA - Company Information
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products
+Resources
+My Account
+
+
+
+
+
+
+
+
+
+
+
+
+Talk to a D&B Advisor 
+1-800-280-0780 
+
+
+
+
+Business Directory
+
+
+
+GA
+
+
+
+LAGRANGE
+
+
+
+Business Services, Nec
+
+
+
+Business Services At Non-commercial Site
+
+
+
+                            J SAXON MICHAEL
+                                    
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J 
+
+
+J SAXON MICHAEL
+CLAIM THIS BUSINESS
+
+
+
+1012 NEW HTCHNSON MILL RD LAGRANGE, GA 30240
+Get Directions
+
+
+
+
+
+
+
+
+Business Info
+
+
+
+ Founded 2001
+ Incorporated 
+ Annual Revenue $75,000.00
+ Employee Count 1
+ Industries Business Services At Non-commercial Site
+ Contacts MICHAEL J SAXON
+
+
+
+
+
+
+
+Contact Business
+
+
+
+
+
+
+
+Your Email Address
+
+Subject:
+
+
+Message
+
+
+Send Message
+
+
+
+
+
+Company Summary
+
+
+Since 2001 the company has been providing Business Services At Non-commercial Site. 
+
+
+
+
+
+
+
+
+
+VERIFIED Status:
+UNVERIFIED
+
+
+
+Address:
+UNVERIFIED
+
+
+
+
+
+LAST VERIFIED:
+
+                                    --
+                                
+
+
+
+Phone:
+
+                                    UNVERIFIED
+                                
+
+
+
+
+
+Payment Method:
+UNVERIFIED
+
+
+view full report
+
+
+
+
+
+Similar Businesses Nearby
+
+
+                                        Our similar businesses nearby shows similar businesses in their industry and region based on information found in their Dun & Bradstreet Credibility Review profile.                                        
+
+
+
+
+
+
+
+Competitive Landscape
+
+
+                                        Our competitive landscape shows how this business compares to similar businesses in their industry and region based on information found in their Dun & Bradstreet Credibility Review profile.                                        
+
+
+
+
+
+
+
+Payments Accepted
+
+NO DATA
+
+
+
+Hours
+
+
+
+                                        Sunday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Monday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Tuesday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Wednesday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Thursday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Friday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Saturday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+
+
+
+
+J
+
+VIEW ADDITIONAL DATA                        
+Select from over 115 networks below to view available data about this business. If this data is unavailable or inaccurate and you own or represent this business, click here for more information on how you may be able to correct it. 
+
+
+
+
+
+
+
+Credibility Review
+
+
+
+
+
+Google
+
+
+
+
+
+Facebook.com
+
+
+
+
+
+Yellowbook.com
+
+
+
+
+
+Bing.com
+
+
+
+
+
+Yellowpages.com
+
+
+
+
+
+MerchantCircle
+
+
+
+
+
+Tele Atlas (TomTom)
+
+
+
+
+
+Twitter.com
+
+
+
+
+
+AOL
+
+
+
+
+
+MapQuest
+
+
+
+
+
+Yahoo Local
+
+
+
+
+
+Apple/Siri
+
+
+
+
+
+Groupon
+
+
+
+
+
+Hotfrog.com
+
+
+
+
+
+Comcast.net Search
+
+
+
+
+
+ReachLocal
+
+
+
+
+
+Admedia
+
+
+
+
+
+Dealsplus
+
+
+
+
+
+Shoptopia.com
+
+
+
+
+
+Alteryx
+
+
+
+
+
+Dogtime Media
+
+
+
+
+
+KSL.com
+
+
+
+
+
+Sirtune
+
+
+
+
+
+AmericanTowns.com
+
+
+
+
+
+Driverside
+
+
+
+
+
+Kudzu.com
+
+
+
+
+
+SpecialsAgent.com
+
+
+
+
+
+Answers.com
+
+
+
+
+
+eGood
+
+
+
+
+
+LawInfo.com
+
+
+
+
+
+spotlikes.com
+
+
+
+
+
+anywho.com
+
+
+
+
+
+eGumball
+
+
+
+
+
+Likeness.com
+
+
+
+
+
+Spotzot
+
+
+
+
+
+eServiceLog
+
+
+
+
+
+MapMyRun
+
+
+
+
+
+TechnoCom
+
+
+
+
+
+apartmentguide.com
+
+
+
+
+
+ezlocal.com
+
+
+
+
+
+EZToUse.com
+
+
+
+
+
+Teleroute
+
+
+
+
+
+AroundMe.com
+
+
+
+
+
+metropolist.com
+
+
+
+
+
+Therapists.com
+
+
+
+
+
+Atlanta NewHomes
+
+
+
+
+
+FindLaw.com
+
+
+
+
+
+Time Out New York
+
+
+
+
+
+Avantar
+
+
+
+
+
+FindTheBest.com
+
+
+
+
+
+mojopages.com
+
+
+
+
+
+B2B Yellowpages
+
+
+
+
+
+Fivestar Software
+
+
+
+
+
+MyCityWay.com
+
+
+
+
+
+TripAdvisor
+
+
+
+
+
+bckyrd.com
+
+
+
+
+
+GiftCards.com
+
+
+
+
+
+MyCoupons.com
+
+
+
+
+
+beachcalifornia.com
+
+
+
+
+
+GoLocal247.com
+
+
+
+
+
+mymove.com
+
+
+
+
+
+UpMeSocial.com
+
+
+
+
+
+Belo
+
+
+
+
+
+GoodInfo
+
+
+
+
+
+News-Gazette
+
+
+
+
+
+Nokia
+
+
+
+
+
+usdirectory.com
+
+
+
+
+
+Cars.com
+
+
+
+
+
+Nomao
+
+
+
+
+
+Centzy.com
+
+
+
+
+
+hibu
+
+
+
+
+
+Openlist.com
+
+
+
+
+
+ChaCha Search
+
+
+
+
+
+Homeplate.com
+
+
+
+
+
+OwnLocal.com
+
+
+
+
+
+VisiKard
+
+
+
+
+
+challama.com
+
+
+
+
+
+Homestore
+
+
+
+
+
+patch.com
+
+
+
+
+
+Voltari
+
+
+
+
+
+CityBot
+
+
+
+
+
+Pelopidas
+
+
+
+
+
+Vouchd
+
+
+
+
+
+ClassifiedAds
+
+
+
+
+
+Hostway
+
+
+
+
+
+PlaceIQ
+
+
+
+
+
+WalkScore.com
+
+
+
+
+
+CloudMade
+
+
+
+
+
+Hoodoyou
+
+
+
+
+
+PlanetDiscover.com
+
+
+
+
+
+WeddingWire.com
+
+
+
+
+
+PowerProfiles
+
+
+
+
+
+Where Inc.
+
+
+
+
+
+Contractors.com
+
+
+
+
+
+iGoLocal.com
+
+
+
+
+
+Radiate Media
+
+
+
+
+
+Wikiocity
+
+
+
+
+
+CouponMap
+
+
+
+
+
+Indeed.com
+
+
+
+
+
+Wimgo.com
+
+
+
+
+
+CrowdSpot
+
+
+
+
+
+Innova Electronics
+
+
+
+
+
+Intellistrand
+
+
+
+
+
+realtor.com
+
+
+
+
+
+DataSphere
+
+
+
+
+
+InTheMO.com
+
+
+
+
+
+Reply.com
+
+
+
+
+
+Yellowbot.com
+
+
+
+
+
+JiWire
+
+
+
+
+
+Rocket Fuel
+
+
+
+
+
+YellowPageCity.com
+
+
+
+
+
+DMV.org
+
+
+
+
+
+Justclicklocal.com
+
+
+
+
+
+Dirxion
+
+
+
+
+
+Keen.com
+
+
+
+
+
+Zidster.com
+
+
+
+
+
+
+
+
+
+
+
+
+Photos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Credit Report
+Receive a one-time comprehensive credit report on this company.
+get full credit report
+
+
+Facebook
+
+
+
+
+
+
+
+
+Twitter
+
+
+
+
+
+
+
+
+Yelp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Call 1.800.280.0780 to speak with a D&B Advisor Today!
+
+
+
+
+
+
+
+Customer Resources
+Products
+Education Center
+Business Articles & Insights
+Glossary
+Contact Us
+Customer Support
+Communication Preferences
+Search for D&B D-U-N-S
+
+
+
+
+Our Company
+About Us
+Company History
+Business Credit History
+Careers
+Press Releases
+News
+Success Stories
+Hoovers
+
+
+
+
+Our Network
+Partners
+Affiliates
+Blog
+Access to Capital
+Entrepreneurial Initiative
+D&B International
+SupplierEdge
+
+
+
+
+Site Links
+Business Directory
+Site Map
+PIPEDA
+Privacy Policy
+Website Terms of Service
+Product License Agreement
+
+
+
+
+
+
+
+© Dun & Bradstreet, Inc. 2017. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		Stock Market Research: Top Stocks, Quotes & News - Fidelity Investments
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to Main Content.
+Site navigation
+Fidelity.com Home
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+Search Fidelity.com
+
+
+
+
+ 
+
+ 
+
+
+
+Accounts & Trade
+
+
+
+PortfolioLog In Required
+
+
+Account PositionsLog In Required
+
+
+TradeLog In Required
+
+
+Active Trader ProLog In Required
+
+
+TransferLog In Required
+
+
+Cash ManagementLog In Required
+
+
+BillPayLog In Required
+
+
+Full ViewLog In Required
+
+
+ProfileLog In Required
+
+
+Account FeaturesLog In Required
+
+
+StatementsLog In Required
+
+Tax Information
+
+Retirement DistributionsLog In Required
+
+
+
+OFFER See our featured trading offer. Learn more.
+
+
+
+Planning & Advice
+
+
+What We Offer
+Financial Basics
+Building Savings
+Managing & Growing Wealth
+Retirement
+Life Events
+
+
+
+News & Research
+
+
+News
+Watch ListLog In Required
+Quotes
+AlertsLog In Required
+Mutual Funds
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Markets & Sectors
+IPOs
+Annuities
+Learning Center
+Notebook
+Notebook
+
+
+
+Investment Products
+
+
+Mutual Funds
+Retirement & IRAs
+Trading
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Sector Investing
+Cash Management & Credit Cards
+Managed Accounts
+Fidelity Go
+529 College Savings
+Annuities
+Life Insurance & Long Term Care
+
+
+
+Why Fidelity
+
+
+The Fidelity Advantage
+Planning & Advice
+Trading
+Straightforward Pricing
+Insights & Tools
+Security & Protection
+
+
+ 
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+			Content and data provided by various third parties and Fidelity − Terms of Use
+
+
+
+
+Research >
+Stocks >
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Details
+
+
+Enter Company or Symbol. Press down arrow for suggestions, or Escape to return to entry field.
+
+
+
+
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Adv Chart & Technical..
+News & Events
+Compare
+Analyst Opinions
+Research Reports
+Key Statistics
+Earnings
+Dividends
+Ownership & Insiders
+Financial Statements
+SEC Filings
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Advanced Chart
+News
+Analyst Reports
+
+
+
+Find Symbol. Opens in new window.
+
+
+
+
+
+
+Stock Research & Ideas
+
+
+
+You are here: Stock Research Center
+
+
+		
+		
+		
+		My Research 
+
+Screen & Filter
+
+Stock Screeners
+Preset Expert Strategies
+
+News & Insights
+
+Events Calendar
+Upgrades / Downgrades
+
+Explore Firm Research
+
+Research Firms
+Research Firm Scorecards
+Reports Search
+
+
+
+
+
+RELATED RESOURCES
+
+Fidelity Learning Center 
+U.S. Markets
+Global Markets
+Sectors & Industries
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Research Center
+
+ Not a Fidelity Customer?
+    No problem! Try our research for FREE without opening an account.
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trending Stocks
+
+
+
+Market Movers
+Top Rated by Sector
+Orders by Fidelity Customers
+
+
+
+
+
+
+Filters:
+
+
+Refresh
+Equity Summary Score
+
+
+Provided by Starmine
+
+
+
+
+
+
+
+
+
+
+
+
+Investing Insights
+
+
+
+Technical Events
+PROVIDED BY Recognia AS OF 07/28/2017
+Methodology
+RECOGNIA METHODOLOGY
+Bullish and Bearish Events of the Day provide long/short trading ideas by identifying U.S. stocks that have recently formed a bullish or bearish classic chart pattern. Patterns must have taken at least 35 days to form, which draws out the more significant patterns for intermediate or long-term trend direction. The list is then filtered to include stocks with a minimum $3.00 for bullish and $5.00 for bearish close price; and, a minimum 50,000 trading volume. Most recent patterns are listed first. Patterns on the same date are sorted using Recognia's proprietary quantitative algorithm to draw strong companies to the top, and if further sorting is required (for stocks with the same quantitative analysis result) it is done by trading volume to draw highest volume stocks to the top.
+
+
+
+
+
+VZ
+Log in for Events
+
+
+URBN
+
+
+URBN
+
+
+SYNA
+
+
+LL
+
+
+
+
+
+
+
+
+HP
+Log in for Events
+
+
+ALKS
+
+
+CVRR
+
+
+CVRR
+
+
+ESND
+
+
+
+
+Find out how to use fundamental analysis and technical analysis when evaluating stocks, with the help of the Fidelity Learning Center.
+
+
+
+
+
+
+My Research – 
+Organize and track your favorite securities.
+
+
+				
+				
+				
+				Get started 
+
+
+
+
+
+Today's Events
+AS OF 1:52 PM ET 07/28/2017
+
+
+
+
+
+
+
+Earnings (99)
+Dividends (40)
+Splits (12)
+
+
+Upgrades (158)
+Downgrades (154)
+Economic (3)
+
+
+
+
+
+
+
+
+
+
+Upcoming Webinar Events
+Visit the Learning Center Events page for a full list of upcoming webinars.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Equity Summary Score is provided for informational purposes only, does not constitute advice or guidance, and is not an endorsement or recommendation for any particular security or trading strategy. The Equity Summary Score is provided by Thomson Reuters StarMine, an independent company not affiliated with Fidelity Investments.*GICS® (Global Industry Classification Standards) is an industry classification system developed by Standard & Poor's in collaboration with Morgan Stanley Capital International (MSCI). S&P uses GICS to determine the market segment to which a company is assigned.News, commentary (including "Related Symbols") and events are from third-party sources unaffiliated with Fidelity. Fidelity does not endorse or adopt their content. Fidelity makes no guarantees that information supplied is accurate, complete, or timely, and does not provide any warranties regarding results obtained from their use.Stock markets, especially foreign markets, are volatile and can decline significantly in response to adverse issuer, political, regulatory, market, or economic developments. Sector funds can be more volatile because of their narrow concentration in a specific industry.System availability and response times may be subject to market conditions.The Fidelity Screeners are research tools provided to help self-directed investors evaluate securities. The criteria and inputs entered are at the sole discretion of the user, and all screens or strategies with preselected criteria are solely for the convenience of the user. Information supplied or obtained from the Screeners is for informational purposes only and should not be considered investment advice or guidance, an offer of or a solicitation of an offer to buy or sell securities, or a recommendation or endorsement by Fidelity of any security or investment strategy. Fidelity does not endorse or adopt any particular investment strategy or approach to screening or evaluating stocks, preferred securities, exchange traded products or closed end funds. Fidelity makes no guarantees that information supplied is accurate, complete, or timely, and does not provide any warranties regarding results obtained from their use. Determine which securities are right for you based on your investment objectives, risk tolerance, financial situation and other individual factors and re-evaluate them on a periodic basis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Copyright
+1998–2017 FMR LLC. 
+All rights reserved. 
+
+Terms of Use|
+Privacy|
+Security|
+Site Map 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		AFSI Stock News - Fidelity
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to Main Content.
+Site navigation
+Fidelity.com Home
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+Search Fidelity.com
+
+
+
+
+ 
+
+ 
+
+
+
+Accounts & Trade
+
+
+
+PortfolioLog In Required
+
+
+Account PositionsLog In Required
+
+
+TradeLog In Required
+
+
+Active Trader ProLog In Required
+
+
+TransferLog In Required
+
+
+Cash ManagementLog In Required
+
+
+BillPayLog In Required
+
+
+Full ViewLog In Required
+
+
+ProfileLog In Required
+
+
+Account FeaturesLog In Required
+
+
+StatementsLog In Required
+
+Tax Information
+
+Retirement DistributionsLog In Required
+
+
+
+OFFER See our featured trading offer. Learn more.
+
+
+
+Planning & Advice
+
+
+What We Offer
+Financial Basics
+Building Savings
+Managing & Growing Wealth
+Retirement
+Life Events
+
+
+
+News & Research
+
+
+News
+Watch ListLog In Required
+Quotes
+AlertsLog In Required
+Mutual Funds
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Markets & Sectors
+IPOs
+Annuities
+Learning Center
+Notebook
+Notebook
+
+
+
+Investment Products
+
+
+Mutual Funds
+Retirement & IRAs
+Trading
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Sector Investing
+Cash Management & Credit Cards
+Managed Accounts
+Fidelity Go
+529 College Savings
+Annuities
+Life Insurance & Long Term Care
+
+
+
+Why Fidelity
+
+
+The Fidelity Advantage
+Planning & Advice
+Trading
+Straightforward Pricing
+Insights & Tools
+Security & Protection
+
+
+ 
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Content and data provided by various third parties and Fidelity − Terms of Use
+
+
+
+
+Research >
+Stocks >
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Details
+
+Enter Company or Symbol. Press down arrow for suggestions, or Escape to return to entry field.
+
+
+
+
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Adv Chart & Technical..
+News & Events
+Compare
+Analyst Opinions
+Research Reports
+Key Statistics
+Earnings
+Dividends
+Ownership & Insiders
+Financial Statements
+SEC Filings
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Advanced Chart
+News
+Analyst Reports
+
+
+
+Find Symbol. Opens in new window.
+
+
+
+
+
+
+
+Snapshot
+Detailed Quote
+Advanced Chart & Technical Analysis 
+News & Events
+Compare
+Analyst Opinions
+Research Reports
+Key Statistics
+Earnings
+Dividends
+Ownership & Insiders
+Financial Statements
+SEC Filings
+
+
+
+
+
+RELATED RESOURCES
+
+Stock Research Overview
+Stock Screeners
+Markets & Sectors
+Fidelity Learning Center 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Print
+|
+Help/Glossary
+
+
+
+
+Help/Glossary
+
+
+
+
+
+
+
+
+News & Events:AFSI
+
+AMTRUST FINANCIAL SERVICES INC
+
+15.74 -0.08 (-0.51 %)as of 1:50:38pm ET 07/28/2017
+
+
+
+			
+				Quotes delayed at least 15 min.
+				
+				
+					
+					
+					
+					
+					Log in for real time quote.
+
+
+
+
+
+Add to Watch List
+Set Alert
+Hypothetical Trade
+Option Chain
+
+
+Price History 
+
+Download to CSV file
+Download to Excel file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Log in for more news
+
+Expand all| Collapse all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. Appoints J. Daniel Hickey as New EVP, Business Strategy and Business Development
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    5:30 PM ET 07/18/2017
+                                                
+
+
+AmTrust Financial Services, Inc. (AFSI) today announced that J. Daniel Hickey, a senior insurance industry executive, has joined AmTrust as Executive Vice President, Business Strategy and Business Development.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. to Announce Second Quarter 2017 Results on Tuesday, August 8, 2017
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    5:00 PM ET 07/17/2017
+                                                
+
+
+AmTrust Financial Services, Inc. (AFSI) announced today that it plans to release its second quarter 2017 results after the market closes on Tuesday, August 8, 2017. Toll-free Dial-in: 755-7421. Toll Dial-in: 200-3087. Conference I.D.: 53196671.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    A.M. Best Comments on Credit Ratings of AmTrust Financial Services, Inc. Following Announcement of Reinsurance Agreement
+                                                
+
+
+                                                    Business Wire – 
+                                                    5:06 PM ET 07/06/2017
+                                                
+
+
+A.M. Best has commented that the Long-Term Issuer Credit Rating of bbb of AmTrust Financial Services, Inc. (AFSI) [NASDAQ:AFSI] and all Long-Term Issue Credit Ratings assigned to AFSI-issued securities are unchanged by todays announcement that the company has entered into a reinsurance agreement with Premia Holdings, Ltd., which will cover loss reserve development up to $400 million over AFSIs sta...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    BRIEF-Amtrust Financial partners with Premia Holdings on reinsurance agreement
+                                                
+
+
+                                                    Reuters – 
+                                                    4:40 PM ET 07/06/2017
+                                                
+
+
+Amtrust Financial Services Inc (AFSI). * Amtrust Financial Services (AFSI), Inc. Partners with premia holdings ltd. On reinsurance agreement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. Partners with Premia Holdings Ltd. on Reinsurance Agreement
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    4:30 PM ET 07/06/2017
+                                                
+
+
+Agreement covers loss development of up to $400 million in excess of stated reserves as of March 31, 2017, increasing certainty around AmTrusts net reserve positionAgreement consistent with commitment to strong and stable long-term financial performanceAmTrust maintains control of claims handling and continues focus on customer care.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Stocks Under Scanner in the Property and Casualty Insurance Space -- AmTrust Financial Services, Hartford Financial Services, MBIA, and Warrior Met Coal
+                                                
+
+
+                                                    PR Newswire – 
+                                                    7:00 AM ET 06/23/2017
+                                                
+
+
+NEW YORK, June 23, 2017 If you want a Stock Review on AFSI, HIG, MBI or HCC then come over to http://dailystocktracker.com/register/ and sign up for your free customized report today. AmTrust Financial Services . On Thursday, shares in New York-based AmTrust Financial Services Inc. (AFSI) recorded a trading volume of 1.88 million shares.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    BRIEF-Amtrust Financial enters agreements to sell shares in National General Holdings
+                                                
+
+
+                                                    Reuters – 
+                                                    8:34 AM ET 06/09/2017
+                                                
+
+
+Amtrust Financial Services Inc (AFSI). * Amtrust Financial Services, inc. Enters agreements to sell shares in national general holdings corp. * Amtrust Financial Services Inc (AFSI) - deal for approximately $211.7 million.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. Enters Agreements to Sell Shares in National General Holdings Corp.
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    8:30 AM ET 06/09/2017
+                                                
+
+
+AmTrust Financial Services, Inc. (AFSI) announced today that it has entered into agreements to sell 10,586,000 shares it owns in National General Holdings Corp. (NGHC) for approximately $211.7 million. AmTrust has agreed to sell 10,586,000 common shares of NGHC at a price of $20.00 per share through separate, privately negotiated purchase agreements with unaffiliated third parties.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. Earns Distinction as Fortune 500 Company Following Record Year of Revenue
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    8:40 AM ET 06/07/2017
+                                                
+
+
+AmTrust Financial Services, Inc. (AFSI) today announced that the Company has been named to the prestigious Fortune 500 list for the first time. This achievement is a recognition of AmTrusts financial strength and stability and follows a year of record revenue for the company.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    BRIEF-AmTrust Financial Services appoints Adam Karkowsky as new CFO
+                                                
+
+
+                                                    Reuters – 
+                                                    10:08 AM ET 06/05/2017
+                                                
+
+
+AmTrust Financial Services Inc (AFSI): * AmTrust Financial Services, Inc. (AFSI) appoints Adam Karkowsky as new chief financial officer. * Adam Karkowsky is succeeding Ronald Pipoly Source text for Eikon: Further company coverage:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. Appoints Adam Karkowsky as New Chief Financial Officer
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    8:30 AM ET 06/05/2017
+                                                
+
+
+AmTrust Financial Services, Inc. (AFSI) today announced that Adam Karkowsky, a seasoned finance executive and most recently AmTrusts Executive Vice President, Strategic Development and Mergers & Acquisitions, has been appointed Executive Vice President and Chief Financial Officer, succeeding Ronald Pipoly, Jr.  Mr. Karkowskys appointment follows a comprehensive search process, which included intern...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. Announces Closing of $300 Million Private Placement
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    4:30 PM ET 05/26/2017
+                                                
+
+
+AmTrust Financial Services, Inc. (AFSI) announced today that it has closed its previously announced private placement of 24,096,384 shares of common stock at a price of $12.45 per share, resulting in gross proceeds to the Company of US$300 million.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    A.M. Best Comments on Credit Ratings of AmTrust Financial Services, Inc. and Subsidiaries Following Common Equity Raise
+                                                
+
+
+                                                    Business Wire – 
+                                                    5:52 PM ET 05/25/2017
+                                                
+
+
+A.M. Best has commented that the Long-Term Issuer Credit Rating of bbb of AmTrust Financial Services, Inc. (AFSI) [NASDAQ:AFSI] and all Long-Term Issue Credit Ratings assigned to AFSI-issued securities are unchanged by todays announcement of AFSIs issuance of $300 million in common equity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    BRIEF-Amtrust Financial Services raises $300 mln of common equity capital
+                                                
+
+
+                                                    Reuters – 
+                                                    5:35 PM ET 05/25/2017
+                                                
+
+
+Amtrust Financial Services Inc (AFSI). * Amtrust financial services, inc. To receive proceeds of $300 million of common equity capital from private placement. * Amtrust Financial Services Inc (AFSI) - intends to direct proceeds from private placement to company's insurance subsidiaries Source text for Eikon: Further company coverage:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. to Receive Proceeds of $300 million of Common Equity Capital From Private Placement
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    5:30 PM ET 05/25/2017
+                                                
+
+
+Capital Contribution to Further Enhance Balance Sheet and Capital BaseProceeds to Be Put Directly into Insurance Operations to Support Organic Growth Opportunities. AmTrust Financial Services, Inc. (AFSI) announced today that it will issue common equity to raise gross proceeds of US$300 million through a private placement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. Announces Quarterly Cash Dividend on Common Stock
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    8:00 AM ET 05/15/2017
+                                                
+
+
+AmTrust Financial Services, Inc. (AFSI) announced today that its Board of Directors approved a quarterly cash dividend of $0.17 per share.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. Announces Quarterly Cash Dividends on Preferred Stock
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    8:00 AM ET 05/15/2017
+                                                
+
+
+AmTrust Financial Services, Inc. (AFSI) announced today that its Board of Directors approved a cash dividend per share on the following series of non-cumulative preferred stock: The preferred dividends will be payable June 15, 2017 to stockholders of record on June 1, 2017.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    BRIEF-Amtrust Financial Services Q1 earnings per share $0.13
+                                                
+
+
+                                                    Reuters – 
+                                                    5:16 PM ET 05/08/2017
+                                                
+
+
+Amtrust Financial Services Inc (AFSI). * Amtrust Financial Services Inc (AFSI) reports first quarter 2017 net income per diluted share of $0.13 and operating earnings per diluted share of $0.32, including catastrophe losses of $0.10 per diluted share. * Q1 operating earnings per share $0.32. * Q1 earnings per share $0.13. * Q1 earnings per share view $0.60 -- Thomson Reuters I/B/E/S. * Q1 revenue $1.4 billion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. Reports First Quarter 2017 Net Income Per Diluted Share of $0.13 and Operating Earnings Per Diluted Share(1) of $0.32, Including Catastrophe Losses of $0.10 Per Diluted Share
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    4:30 PM ET 05/08/2017
+                                                
+
+
+Book Value Per Common Share of $13.91, Up 0.7% Since December 31, 2016First Quarter Annualized Return on Common Equity and Annualized Operating Return on Common Equity of 3.8% and 9.4%, Respectively First Quarter 2017 Highlights NEW YORK, May 08, 2017 -- AmTrust Financial Services, Inc. (AFSI) today announced first quarter 2017 net income attributable to common stockholders of $22.6 million, or $0.13 ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    AmTrust Financial Services, Inc. to Announce First Quarter 2017 Results on Monday, May 8, 2017
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    9:00 AM ET 04/21/2017
+                                                
+
+
+AmTrust Financial Services, Inc. (AFSI) announced today that it plans to release its first quarter 2017 results after the market closes on Monday, May 8, 2017. Toll-free Dial-in: 755-7421. Toll Dial-in: 200-3087. Conference I.D.: 12271541.
+
+
+
+
+
+
+
+
+
+
+
+
+Page: 
+
+
+Page 1
+|
+Next >
+
+
+
+
+
+
+Today's and Upcoming Events
+
+
+
+
+Aug
+8
+
+
+AFSI to announce Q2 earnings After Market (Confirmed)
+
+
+
+
+
+
+
+
+Aug
+8
+
+
+AFSI Earnings Conference Call at 5:30 PM
+        Listen
+
+
+
+
+
+
+
+
+
+Past Events (last 90 days)
+
+
+
+
+Jun
+29
+
+
+AFSI ex-Dividend for $0.17 on 6/29/2017
+
+
+Announce Date: 5/15/2017
+Record Date: 7/3/2017
+Pay Date: 7/17/2017
+
+
+
+
+
+
+
+
+Data provided by Wall Street Horizon, Inc. © 2017
+
+Technical Events
+
+Classic Patterns (past 90 days)
+PROVIDED BY RECOGNIA, INC.
+
+Log in for trading events
+
+View All Technical Analysis in Advanced Chart 
+
+
+
+Technical Analysis
+PROVIDED BY TRADING CENTRAL
+
+Log in for trading events
+
+
+
+
+
+
+
+
+
+
+
+
+As with all your investments through Fidelity, you must make your own determination whether an investment is appropriate for you.  Fidelity is not recommending or endorsing this security by making it available to customers.  You should conduct research and perform a thorough investigation as to the characteristics of any securities you intend to purchase.  Before investing, you should read the prospectus, offering circular, indenture, or similar document carefully for a full description of the product, including its features and risks, to determine whether it is an appropriate investment for your investment objectives, risk tolerance, financial situation and other individual factors, and be sure to re-evaluate those factors on a periodic basis.Performance data shown represents past performance, which is no guarantee of future results. Current performance may be higher or lower than the performance data quoted.  Yield and return will vary, therefore, you may have a gain or loss when you sell your shares.Stock markets are volatile and can decline significantly in response to adverse issuer, political, regulatory, market, or economic developments.  Growth stocks can be more volatile than other types of stocks.  Value stocks can continue to be undervalued by the market for long periods of time.  Foreign securities are subject to interest-rate, currency-exchange-rate, economic, and political risks, all of which are magnified in emerging markets.  Illiquidity is an inherent risk associated with investing in real estate and REITs.  There is no guarantee the issuer of a REIT will maintain the secondary market for its shares and redemptions may be at a price which is more or less than the original price paid.  Closed-end funds can trade at a discount to their NAV.  Shareholders of Master Limited Partnerships may be treated as partners for tax purposes.  Partnerships issue a Schedule K-1 (Form 1065) rather than a Form 1099 form for tax purposes. It lists the partner's share of income, deductions, credits, etc.  Speak with your tax advisor to determine how this may affect you.  A royalty trust is a type of corporation, mostly in the United States or Canada, usually involved in oil and gas production or mining.  Royalty trusts may have special tax treatment, so you should consult a tax advisor on the potential tax consequences of investing in them.News, commentary and events are from third-party sources unaffiliated with Fidelity. Fidelity does not endorse or adopt their content.  Fidelity makes no guarantees that information supplied is accurate, complete, or timely, and does not provide any warranties regarding results obtained from their use.Any data, charts and other information provided on this page are intended for research purposes to help self-directed investors evaluate many types of securities including, but not limited to common stocks, American Depository Receipts, Master Limited Partnerships, real estate investment trusts. traditional preferred stock, trust preferred securities, third-party trust certificates, convertible securities, mandatory convertible securities and other exchange-traded equity and/or debt securities.  Criteria and inputs entered, including the choice to make security comparisons, are at the sole discretion of the user and are solely for the convenience of the user.  Analyst opinions, ratings and reports are provided by third-parties unaffiliated with Fidelity.  All information supplied or obtained from this page is for informational purposes only and should not be considered investment advice or guidance, an offer of or a solicitation of an offer to buy or sell a security, or a recommendation or endorsement by Fidelity of any security or investment strategy.  Fidelity does not endorse or adopt any particular investment strategy, any analyst opinion/rating/report or any approach to evaluating individual securities. Fidelity makes no guarantees that information supplied is accurate, complete, or timely, and does not provide any warranties regarding results obtained from its use.462499.6.0
+
+
+
+
+
+
+
+
+ Copyright
+1998–2017 FMR LLC. 
+All rights reserved. 
+
+Terms of Use|
+Privacy|
+Security|
+Site Map 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+See the Latest Features
+
+
+
+
+
+PersonalizedGet relevant information about your holdings right when you need it.See Your Performance Click the portfolio icon to get information about stocks you own without leaving the research page.Faster Access to Positions A shortcut to view the full list of positions in your portfolio? Yes, please! Use the ticker search box.Add Your Own Notes Use Notebook to save your investment ideas in one convenient, private, and secure place.
+
+
+
+
+
+Convenient For YouResearch that's clear, accessible, and all in one place makes for a better experience.One-Stop Shop See everything you need to make investment decisions right in the dashboard.Access Anywhere No matter where you are, use the Stock Research experience across multiple devices.New Ideas, On the Ready Find new ideas using quick links to the Stock Screener.
+
+
+
+
+
+New Ways to ResearchDiscover new tools to add or diversify your existing research strategy.StockTwits Read live tweets from the financial and investing community about the stock you're interested in.Fundamental Analysis Save time on research by getting an overall assessment of a company's valuation, quality, growth stability, and financial health.Recognia Technical Analysis Perfect for the technical trader—this indicator captures a stock's technical events and converts them into short, medium, and long-term sentiment.Top Competitors See how a stock measures up by instantly comparing it to the industry average and its top four competitors.Social Sentiment Get a sense of people's overall feelings towards a company in social media with this summary tool.Earnings Data Monitor earnings expectations over the past three quarters and model a stock's price based on its P/E.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Saxon Michael J | Glen Rose TX | Read Reviews + Get a Bid | BuildZoom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+
+
+Want a quote from
+Saxon, Michael J?
+
+
+We recommend getting 3 quotes
+for any construction project. 
+Use our
+free bidding system
+to get a quote from Saxon, Michael J
++ 2 more of the best.
+
+
+
+Tell us about your project
+
+
+
+
+
+
+
+
+
+Is this your business? Claim now >
+
+
+
+
+
+
+S
+
+
+
+
+
+
+
+BZ Score:
+90
+
+
+
+
+
+
+
+License # 9512, 36276
+
+
+
+
+Glen Rose, TX
+
+
+
+
+
+
+
+
+
+Saxon, Michael J
+
+
+
+
+this is my business
+
+
+
+Contact us
+
+
+
+
+
+
+BZ Score:
+90
+
+
+
+
+
+
+
+WRITE A REVIEW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Summary
+
+this is my business
+request a quote
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+
+ 
+/
+
+
+Search
+
+ 
+/
+
+
+ best HVAC Contractors in Glen Rose 
+
+ 
+
+
+
+Updated: Jan 22, 2016
+
+
+
+
+
+Overview
+
+Saxon, Michael J in Glen Rose, TX holds a Hvac A/C Technician (Registered)  license (9512, 36276) according to the Texas license board. Their BuildZoom score of 90 indicates that they are licensed or registered but we do not have additional information about them.BuildZoom has not verified this license since its expiration date. If you are thinking of hiring Saxon, Michael J, we recommend double-checking their license status with the license board and using our bidding system to get competitive quotes. 
+
+
+
+
+Where Saxon, Michael J Works
+
+
+Google
+
+
+
+
+
+Project Types Offered
+
+
+
+HVAC
+Sheet Metal Work
+
+
+
+
+
+
+Contact
+
+
+
+
+Street Address: 1109 Sunset Trl, Glen Rose, TX 76043 
+
+Edit
+
+
+
+
+
+Do you work for this business?
+Unlock this free profile
+to update company info and see who's viewing your profile.
+
+
+
+
+
+
+Similar Contractors
+See more
+
+
+
+
+
+
+
+
+
+702 Northmeadow Drive, TX
+
+
+
+Walker HVAC
+
+
+
+
+License # MECH2698032
+
+
+TX
+
+
+
+
+
+
+
+107
+
+BZ Score
+
+
+$7.4K
+Avg Project 
+
+
+78
+Projects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2645 Verde Court, Burleson, TX 76028
+
+
+Environmental HVAC
+
+
+
+
+License # TACLB00010738E
+
+
+Burleson, TX
+
+
+
+
+
+
+
+95
+
+BZ Score
+
+
+-
+Avg Project 
+
+
+2
+Projects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+128 Coin St, Ft Worth, TX 76140
+
+
+
+Two J's HVAC/Ac Services
+
+
+
+
+License # 12793
+
+
+Fort Worth, TX
+
+
+
+
+
+
+
+110
+
+BZ Score
+
+
+$164K
+Avg Project 
+
+
+75
+Projects
+
+
+
+
+
+
+
+
+
+
+
+
+
+Saxon, Michael J Reviews
+
+
+
+BuildZoom hasn't received any reviews for Saxon, Michael J. Click here to be alerted when reviews are posted about them.
+
+
+
+Please write a review about Saxon, Michael J
+
+
+
+
+
+
+
+
+
+
+1
+Rate this contractor
+
+
+
+
+
+
+
+Click stars to rate
+
+
+
+
+2
+Provide a detailed review of this contractor.
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Recent Buildzoom Projects
+
+
+View all
+
+
+
+
+
+
+
+
+Custom Home Build
+
+
+
+
+
+
+
+
+
+
+Restaurant Buildout
+
+
+
+
+
+
+
+
+
+
+Swimming Pool Project
+
+
+
+
+
+
+
+
+
+
+Kitchen Remodel
+
+
+
+
+
+
+
+
+
+
+Bathroom Remodel
+
+
+
+
+
+
+
+
+Request a Quote
+
+
+
+
+
+Explore BuildZoom
+
+If you are considering hiring Saxon, Michael J,
+we recommend double-checking their license status with the license board
+and using our
+bidding system
+to get competitive quotes.
+
+
+
+
+Hiring a contractor?
+
+
+
+
+
+
+Get bids from BuildZoom's best contractors within 5 mins during regular business hours by filling out this form
+
+
+
+
+I need help with...
+
+
+
+
+
+Zip Code
+
+
+
+
+
+Request Quotes From
+
+
+
+
+
+90
+
+
+Saxon, Michael J
+
+
+
+
+
+
+
+
+107
+
+
+Walker HVAC
+
+
+
+
+
+
+
+95
+
+
+Environmental HVAC
+
+
+
+
+
+
+
+110
+
+
+Two J's HVAC/Ac Services
+
+
+
+
+
+
+Request a Quote
+
+
+
+
+
+
+
+License info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+License Not Verified
+
+
+License #9512, 36276StatusActiveStateTexasTypeHVAC A/C Technician (Registered)
+
+
+When BuildZoom last verified this license, it had an expiration date of June, 2014. Check the current license status of Saxon, Michael J with the Texas Department of Licensing and Regulation
+
+
+
+
+
+
+
+
+
+
+
+
+90
+
+
+
+
+BuildZoom Score
+
+
+How the BuildZoom Score works
+
+
+
+
+
+
+
+
+Follow this contractor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Before you Hire
+
+Here are some rules, regulations, and laws governing general contractors
+in Texas:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Does Saxon, Michael J carry a valid contracting license?
+
+
+
+Only certain types of specialty contractors (e.g. HVAC, electrical) need to be licensed in Texas. There are no licensing requirements when it comes to hiring for a construction or major remodeling project.
+Saxon, Michael J currently holds license 9512, 36276 (Hvac A/C Technician (Registered)), which was Active when we last checked. 
+
+
+
+
+
+
+
+
+
+
+
+How important is contractor licensing in Texas?
+
+
+
+The Texas Department of Licensing and Regulation (TDLR) regulates HVAC and electrical contractors. You should verify their license status on the TDLR Website before hiring. General contractors and home builders are not licensed so you should do additional research before hiring one.
+
+
+
+
+
+
+
+
+
+
+
+Your liability risk when hiring Saxon, Michael J
+
+
+
+Although it isn't a regulatory requirement, you can ask your general contractor to provide evidence of workers' compensation and general liability insurance prior to hiring them. 
+
+
+
+
+
+
+
+
+
+
+
+Financial recourse when hiring Saxon, Michael J
+
+
+
+The Texas Department of Licensing Regulation does not require general contractors to carry a surety bond nor is there a state recovery fund.
+
+
+
+
+
+
+
+
+
+
+
+What else should I know before hiring Saxon, Michael J
+
+
+
+There is no financial or criminal background check performed on general contractors by the TDLR. The State's Department of Public Safety does maintain a publicly accessible database so you can run your own background check prior to hiring. 
+
+
+
+
+
+
+
+
+
+
+
+How is the BuildZoom score calculated?
+
+
+
+The BuildZoom score is based on a number of factors including the contractor's license status, insurance status, verified work history, standing with local consumer interest groups, verified reviews from other BuildZoom users and self-reported feedback from the contractor.
+
+
+
+
+
+
+
+
+
+
+
+Why you should hire through BuildZoom
+
+
+
+The information on BuildZoom is made available as a public service and should not be considered advertising. We collect client feedback and verify contractors' permitted history with dozens of local building departments in Texas, which saves you time and helps minimize your risk when hiring. 
+
+
+
+
+
+
+
+
+
+
+
+You should get several bids before hiring a contractor
+
+
+
+The Texas Attorney General's office recommends getting several bids before hiring a contractor. Do not automatically accept the lowest bid - an abnormally low bid may indicate the contractor made a mistake and is not including the same work quoted by their competitors. We've made the bid collection process extremely simple (and free). 
+
+
+
+
+
+
+
+
+
+About BuildZoom
+
+
+
+
+
+
+BuildZoom has one simple purpose: To help you find the perfect contractor
+for any job, commercial or residential.
+
+
+BuildZoom is a database of every licensed contractor in the United States.
+We work hard to figure out who the great contractors are, and who the bad
+contractors are.
+
+more...
+
+
+
+
+
+BuildZoom combines license information on 3.5 million contractors with
+110 million building permits, and over 80,000
+reviews from property owners.If you are looking for a specific
+contractor and you can’t find them on BuildZoom, it’s likely that they do
+not have a license - please
+contact us
+and we’ll try to help!
+
+
+
+Finding a Contractor through BuildZoom
+
+
+
+The best way to use BuildZoom is to let us recommend contractors for
+your remodeling projects.
+
+
+Homeowners who
+
+hire through BuildZoom's free bidding system
+ report high rates of satisfaction, and homeowners who research
+contractors online are twice as likely to be happy at the end of their
+project.
+
+
+If you hire a contractor through BuildZoom, that contractor is
+accountable to us. We can enforce standards of behavior, mediate
+disputes, and guarantee satisfaction.
+
+
+
+Read more about why hiring through BuildZoom is so effective.
+ 
+less...
+
+
+
+
+
+
+
+
+
+Press Coverage
+
+
+
+
+
+BuildZoom’s database now contains every licensed contractor across the U.S. - over 2.5 million of them... Categorized contractor profiles are enriched using government data from state licensing boards, Better Business Bureau ratings, and more…
+
+
+BuildZoom jumped into the fray by announcing that it raised $10.6 million in a round led by Formation 8. ...the Y combinator-backed startup said it will be focused on remodeling projects, where the median budget is around $19,000…
+
+
+A new index compiled by BuildZoom — which identifies contractors for projects — found that renovations are
+running 2.8 percent above their 2005 level…
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+Contact Saxon, Michael J
+We will attempt to deliver your message to Saxon, Michael J. We'll notify you when it is delivered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Your Name
+
+Your Email
+
+Your Phone (optional)
+
+Your Message
+
+I'm interested in speaking with you about a project. Are you available to chat today?
+
+ 
+
+
+
+
+
+
+
+
+
+‹
+›
+×
+
+
+
+
+×
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+How the BuildZoom Score Works
+Read more about the BuildZoom scoring algorithm here.
+
+
+A Licensed Contractor Starts with 90 Points.
+
+
+Their score will increase or decrease based on these variables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Positive Client Feedback
+
+
+
+
+
+Verified License + Insurance
+
+
+
+
+
+Project History
+
+
+
+
+
+Community Participation
+
+
+
+
+
+Profile Page Content
+
+
+Employee Info
+Years in Business
+Contact Info
+Project Photos
+
+
+
+
+
+
+
+
+
+Suspended or Inactive License
+
+
+
+
+
+Negative Client Feedback
+
+
+
+
+
+Limited Work History
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Browse remodeling photos
+If you are looking for remodeling ideas, you can browse hundreds of beautiful photos of work performed by our general contractors.
+
+
+
+
+
+
+Browse building permits
+You can use our building permit search to see the contractors who are active in your neighborhood and the projects currently taking place.
+
+
+
+
+
+
+Get a cost estimate
+Use our remodeling calculator to get a ballpark estimate for your project. If you're ready to hire, use our bidding system to get actual quotes from local contractors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
