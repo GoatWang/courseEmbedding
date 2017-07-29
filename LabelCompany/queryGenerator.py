@@ -1,5 +1,7 @@
 from os import listdir
 import re
+from nltk import word_tokenize
+from nltk.corpus import stopwords
 #files = listdir("companyEmbedding") 
 file = open("companyEmbedding/china_auto_logistics_inc", 'r', encoding='utf8')
 
@@ -27,6 +29,9 @@ while i < 10:
 for word in queryStr.split():
     if b"\xa0" in word.encode() or b'\xee' in word.encode() or "/" in word:
         queryStr = queryStr.replace(word, "")
+
+stops = set(stopwords.words('english'))
+queryStr = " ".join([i for i in word_tokenize(queryStr.lower()) if i not in stops])
 
 
 paramStr =""
