@@ -48,8 +48,6 @@ paramStr += "<baseline>method:tfidf</baseline>\n"
 
 paramStr += "</query>\n"
 paramStr += "<count>1000</count>\n"
-paramStr += "</query>\n"
-
 
 paramStr += "</parameters>"
 
