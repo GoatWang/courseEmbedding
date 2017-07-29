@@ -1,0 +1,12712 @@
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+
+
+Equipment |  Business | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power - A Southern Company
+
+Main Menu
+
+
+
+
+
+
+ | Register
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+Log In to My account
+
+
+Save Money & Energy
+
+
+
+
+Select Your Facility Type:
+
+General Business
+Congregations
+Data Centers
+Education
+Fast Food
+Fine Dining
+Grocery
+Healthcare
+Hotels/Lodging
+Manufacturing
+Office Buildings
+Personal Services
+Restaurant
+Retail
+Warehouse
+
+ 
+
+
+Home
+Overview
+Equipment
+Rebates & Incentives
+Energy Tips
+Expert Q&A
+  
+
+
+
+
+Tools & ResourcesGlossary
+Energy Planning
+Customer ResourceCenter
+Case Studies
+Products/ProgramsEnergy Efficiency
+
+Find a Contractor
+Trade Ally
+
+
+Heat Pumps
+Electric Cooking
+Electric Water Heaters
+Marathon Water Heater
+Energy Audit
+EnergyDirect
+Outdoor Lighting
+Electric Vehicles
+Electric  Forklifts
+Electric Irrigation
+HVAC Service Program
+Prices & RatesCommercial Rates
+ACH Payments
+EDI Guidelines
+ 
+ 
+
+Home:
+Business:
+Equipment
+
+
+
+
+
+
+
+ 
+Equipment
+
+
+
+
+
+ 
+REBATES & INCENTIVES
+Strip Curtains
+See All Rebates & Incentives
+
+ Energy Saving Newsletter
+Sign up to receive a monthly newsletter filled with energy tips and energy saving trends that will help you reduce your energy consumption and save your business money.
+Sign Up Now
+
+
+
+
+
+
+
+
+
+
+
+Chiller Systems
+
+
+
+Commercial Cooking
+
+
+
+Cooking Equipment
+
+
+
+Dehumidification Systems
+
+
+
+HVAC Systems
+
+
+
+Lighting
+
+
+
+Motor Driven Equipment
+
+
+
+Ozone Technologies
+
+
+
+Space Cooling Systems
+
+
+
+Space Heating Systems
+
+
+
+Transformer Pad Specifications
+
+
+
+Water Heating Systems
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+ 
+ 
+
+
+
+
+
+
+Contact Us | 
+            FAQs | 
+            Full Site
+
+
+Mobile Safety
+
+© 2015 Southern Company. All Rights Reserved.https://customerservice.southerncompany.com/
+
+Privacy policy
+and
+terms of use.
+
+
+
+
+
+
+
+Click Here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+Messenger
+
+
+
+
+
+
+
+
+
+
+MessengerSign in with Facebook to get started.ContinueKeep me signed inNot on Facebook?|Forgot Password|Privacy Policy|Terms|Cookie Policy| © Facebook 2017
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Georgia Power
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Georgia Power
+
+
+
+
+
+
+
+
+
+Type
+
+Subsidiary
+
+
+Industry
+Utilities
+
+
+Founded
+1945
+
+
+Headquarters
+Atlanta, Georgia, USA
+
+
+
+Key people
+
+Paul Bowers (President & CEO)[1]
+
+
+
+Number of employees
+
+8,310 [2]
+
+
+Website
+www.GeorgiaPower.com
+
+
+Georgia Power is an electric utility headquartered in Atlanta, Georgia, United States. It was established as the Georgia Railway and Power Company[3] and began operations in 1902 running streetcars in Atlanta as a successor to the Atlanta Consolidated Street Railway Company.
+Georgia Power is the largest of the four electric utilities that are owned and operated by Southern Company. Georgia Power is an investor-owned, tax-paying public utility that serves more than 2.4 million customers in all but four of Georgia's 159 counties.[4] It employs approximately 9,000 workers throughout the state. The Georgia Power Building, its primary corporate office building, is located at 241 Ralph McGill Boulevard in downtown Atlanta.
+In 2006 the Savannah Electric & Power Company, a separate subsidiary of Southern Company, was merged into Georgia Power.
+
+
+
+Contents
+
+
+1 History
+2 Coal power
+
+2.1 Transmission system
+2.2 Transition to renewables
+
+
+3 Generating facilities
+
+3.1 Hydroelectric dams
+3.2 Fossil fuel power plants
+3.3 Nuclear power plants
+
+
+4 Notes
+5 References
+6 External links
+
+
+
+History[edit]
+Originally the Georgia Railway and Power Company, it began in 1902 as a company running the streetcars in Atlanta, and was the successor to the Atlanta Consolidated Street Railway Company. In the 1930s, the company published a free newsletter called Two Bells which was distributed on its streetcars; Two Bells was still distributed into the 1960s on the buses of successor Atlanta Transit Company (ATC). [5] From 1937 until 1950, Georgia Power also operated trolleybuses in Atlanta, and in 1950 its network of 31 electric bus routes was the largest trolley bus system in the United States.[6] After the Atlanta transit strike of 1950, the Atlanta Transit Company took over operations. Atlanta Streetcar was formed in the 2000s to establish a new streetcar service along Peachtree Street.
+The company built several dams, including the Morgan Falls Dam just north of the city, and some as far away as the Tallulah River in the northeast Georgia mountains. These hydroelectric dams form Lake Burton, Lake Seed, Lake Rabun, Lake Tallulah Falls, Lake Tugalo, and Lake Yonah, the last two of which straddle the Georgia – South Carolina border on the Tugaloo River.
+The 2016 Delta Air Lines power outage is an event that occurred in the United States[7] in which hundreds of Delta Air Lines flights were delayed or cancelled.[8] Though it was initially suspected that the company was at fault, it was later determined that this was indeed not the case.[9]
+Coal power[edit]
+Main article: Plant Scherer
+Georgia Power operates the Robert W. Scherer Power Plant, also known as "Plant Scherer," in Monroe County, Georgia. According to Natural History Magazine, as of 2006[update] Plant Scherer is the largest single point-source for carbon dioxide emissions in the United States.[10] It was also ranked the 20th in the world in terms of carbon dioxide emissions by the Center for Global Development on its list of global power plants in November 2007. It was the only power plant in the United States that was listed in the world's top 25 Carbon Dioxide producers.[11]
+Transmission system[edit]
+Georgia Power utilizes transmission lines carrying 115,000 volts, 230,000 volts and 500,000 volts. Georgia Power has interconnections with the Tennessee Valley Authority to the north, sister company Alabama Power to the west, South Carolina Electric and Gas and Duke Energy to the east, and Gulf Power (another sister company), Florida Power & Light, Progress Energy Florida and the city of Tallahassee, Florida to the south.
+Transition to renewables[edit]
+Main article: Coal phase out
+Georgia Power asked the state's public service commission for approval to convert the coal-fired Plant Mitchell to run on wood fuel. If approved, the retrofit would have begun in 2011 and the biomass plant would have started operating in mid-2012. The 96 MW (129,000 hp) biomass plant would have run on surplus wood from suppliers within a 100 mi (160 km) radius of the plant, which is located near Albany, Georgia. However, in 2014, the company announced it was decertifying the plant and intended to close its operations by April 2015.
+Generating facilities[edit]
+Georgia Power owns and operates a total of 46 generating plants which include hydroelectric dams, fossil fueled generating plants and nuclear power plants, which provide electricity to more than 2.4 million customers in all but four of Georgia's counties.[12]
+Hydroelectric dams[edit]
+Georgia Power Hydro incorporates 19 hydro electric generating units to produce a generation capacity of 1,087,536 kilowatts (KW). Georgia Power Hydro facilities also provide more than 45,985 acres (18,609 ha) of water and more than 1,057 mi (1,701 km) of shoreline for habitat and recreational use.
+
+
+Plant
+Nearest City
+Capacity
+
+
+Barnett Shoals Hydroelectric Generating Plant
+Athens, Georgia
+2,800 kW
+
+
+Bartletts Ferry Hydroelectric Generating Plant
+Columbus, Georgia
+173,000 kW
+
+
+Burton Hydroelectric Generating Plant
+Clayton, Georgia
+6,120 kW
+
+
+Estatoah Hydroelectric Generating Plant
+Mountain City, Georgia
+240 kW
+
+
+Flint River Hydroelectric Generating Plant
+Albany, Georgia
+5,400 kW
+
+
+Goat Rock Hydroelectric Generating Plant
+Columbus, Georgia
+38,600 kW
+
+
+Langdale Hydroelectric Generating Plant
+West Point, Georgia
+1,040 kW
+
+
+Lloyd Shoals Hydroelectric Generating Plant
+Jackson, Georgia
+14,400 kW
+
+
+Morgan Falls Hydroelectric Generating Plant
+Sandy Springs, Georgia
+16,800 kW
+
+
+Nacoochee Hydroelectric Generating Plant
+Clayton, Georgia
+4,800 kW
+
+
+North Highlands Hydroelectric Generating Plant
+Columbus, Georgia
+29,600 kW
+
+
+Oliver Dam Hydroelectric Generating Plant
+Columbus, Georgia
+60,000 kW
+
+
+Riverview Hydroelectric Generating Plant
+West Point, Georgia
+480 kW
+
+
+Rocky Mountain Hydroelectric Generating Plant
+Rome, Georgia
+215,256 kW
+
+
+Sinclair Dam Hydroelectric Generating Plant
+Eatonton, Georgia
+45,000 kW
+
+
+Tallulah Falls Hydroelectric Generating Plant
+Tallulah Falls, Georgia
+72,000 kW
+
+
+Terrora Hydroelectric Generating Plant
+Tallulah Falls, Georgia
+16,000 kW
+
+
+Tugalo Hydroelectric Generating Plant
+Lakemont, Georgia
+45,000 kW
+
+
+Wallace Dam Hydroelectric Generating Plant
+Eatonton, Georgia
+321,300 kW
+
+
+Yonah Hydroelectric Generating Plant
+Lakemont, Georgia
+22,500 kW
+
+
+Fossil fuel power plants[edit]
+
+
+Plant
+Nearest City
+Number of Units
+Capacity
+
+
+Bowen Steam-Electric Generating Plant (Plant Bowen)
+Cartersville, Georgia
+4
+3,160,000 kW
+
+
+Harllee Branch Jr. Steam-Electric Generating Plant (Plant Branch) (CLOSED)
+Eatonton, Georgia
+4
+1,539,700 kW
+
+
+William P. Hammond Steam-Electric Generating Plant
+Rome, Georgia
+4
+800,000 kW
+
+
+Kraft Steam-Electric Generating Plant
+Savannah, Georgia
+4
+281,136 kW
+
+
+John J. McDonough Steam-Electric Generating Plant
+Smyrna, Georgia
+2
+490,000 kW
+
+
+McIntosh Steam-Electric Generating Plant
+Savannah, Georgia
+9
+810,000 kW
+
+
+McIntosh Combined Cycle Plant
+Rincon, Georgia
+2
+1,240,000 kW
+
+
+Clifford Braswall McManus Steam-Electric Generating Plant
+Brunswick, Georgia
+2
+596,000 kW
+
+
+W. E. Mitchell Steam-Electric Generating Plant (31°26'41.13"N, 84°8'2.34"W)
+Albany, Georgia
+4
+243,000 kW
+
+
+Robins Steam-Electric Generating Plant
+Warner Robins, Georgia
+2
+166,000 kW
+
+
+Robert W. Scherer Steam-Electric Generating Plant (Plant Scherer)
+Juliette, Georgia
+4
+3,272,000 kW
+
+
+Wansley Steam-Electric Generating Plant (Plant Wansley)
+Carrollton, Georgia
+2
+951,872 kW
+
+
+Allen B. Wilson Combustion Turbine Plant
+Waynesboro, Georgia
+
+354,100 kW
+
+
+Eugene A. Yates Steam-Electric Generating Plant
+Newnan, Georgia
+7
+1,250,000 kW
+
+
+Nuclear power plants[edit]
+
+
+Plant
+Nearest City
+Number of Units
+Capacity
+
+
+Alvin W. Vogtle Electric Generating Plant
+Waynesboro, Georgia
+2
+2,430,000 kW
+
+
+Edwin I. Hatch Nuclear Power Plant
+Baxley, Georgia
+2
+1,726,000 kW
+
+
+Notes[edit]
+
+
+
+^ "Archived copy". Archived from the original on 2008-12-17. Retrieved 2008-11-24. 
+^ "SEC Filings - Southern Company" (Press release). Southern Company. 
+^ See generally Carson, O. E. "The Trolley Titans" (Interurban Special No. 76)(Glendale, 1981)(0916374467).
+^ "Archived copy". Archived from the original on 2008-12-17. Retrieved 2008-11-24. 
+^ Kurtz, p.69
+^ Sebree, Mac; and Ward, Paul (1974). The Trolley Coach in North America, pp. 14–19. Los Angeles: Interurbans. LCCN 74-20367.
+^ Jamieson, Alastair (1970-01-01). "Delta Warns of Chaos After Power Outage, Worldwide System Failure". NBC News. Retrieved 2016-08-11. 
+^ Isidore, Chris. "Delta still digging out on Day 3 - Aug. 10, 2016". Money.cnn.com. Retrieved 2016-08-11. 
+^ http://www.dallasnews.com/business/airline-industry/20160809-delta-power-outage-wasn-t-the-cause-of-its-global-computer-disruption.ece
+^ "Archived copy". Archived from the original on 2008-12-01. Retrieved 2008-09-02. 
+^ "CGD ranks CO2 emissions from power plants worldwide | EurekAlert! Science News". Eurekalert.org. 2007-11-14. Retrieved 2016-08-11. 
+^ "Archived copy". Archived from the original on 2008-12-04. Retrieved 2008-11-24. 
+
+
+
+References[edit]
+
+Kurtz, Wilber, "Technical Advisor: The Making of Gone With The Wind. The Hollywood Journals", Atlanta Historical Journal, Vol. XXII, No.2, Summer, 1978.
+
+External links[edit]
+
+Georgia Power Official Site
+Southern Company
+Georgia Power historical marker
+Georgia Railway and Power Company Trolley Waiting Station historical marker
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Georgia Power
+
+
+
+
+
+
+Georgia Power Company Corporate Headquarters
+Morgan Falls Dam
+Plant Bowen
+Plant Scherer
+Plant Vogtle
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Atlanta companies
+
+
+
+
+
+
+Aaron's, Inc.
+AGCO (Duluth)
+American Megatrends (Gwinnett County)
+Arby's (Sandy Springs)
+AT&T Mobility
+Atlanta Bread Company (Smyrna)
+Atlanta Gas Light
+BellSouth
+Chick-fil-A (College Park)
+Church's Chicken (Sandy Springs)
+Coca-Cola
+Cox Enterprises
+Delta Air Lines
+EarthLink
+Equifax
+ExpressJet (College Park)
+Georgia Natural Gas
+Georgia-Pacific
+Georgia Power
+Holiday Inn
+Holiday Inn Express
+The Home Depot (Cobb County)
+Hooters
+Intercontinental Exchange
+Krystal
+Kool Smiles (Marietta)
+Merial (Duluth)
+NCR Corporation (Gwinnett County)
+Newell Brands
+Popeyes (Sandy Springs)
+RaceTrac
+Rheem
+Scientific Atlanta (Lawrenceville)
+Simmons Bedding Company
+Southern Company
+SunTrust Banks
+Turner Broadcasting System
+United Parcel Service (Sandy Springs)
+Waffle House (Gwinnett County)
+The Weather Channel (Cobb County)
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Georgia_Power&oldid=768664456"					
+Categories: Georgia PowerPower companies of the United StatesEnergy infrastructure in Georgia (U.S. state)Hydroelectric power companies of the United StatesNuclear power companies of the United StatesCompanies based in AtlantaEnergy companies established in 1945Non-renewable resource companies established in 19451945 establishments in Georgia (U.S. state)Companies listed on the New York Stock ExchangeSouthern CompanyHidden categories: Pages using deprecated image syntaxArticles containing potentially dated statements from 2006All articles containing potentially dated statements 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+日本語 
+Edit links 
+
+
+
+
+
+ This page was last edited on 5 March 2017, at 02:40.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power (@GeorgiaPower) | Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+Home
+Home
+Home, current page.
+
+
+
+
+
+
+Moments
+Moments
+Moments, current page.
+
+
+
+
+
+
+Search query
+
+
+
+Search Twitter
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Language: English 
+
+
+
+ 
+
+
+
+Bahasa Indonesia
+Bahasa Melayu
+Català
+Čeština
+Dansk
+Deutsch
+English UK
+Español
+Filipino
+Français
+Hrvatski
+Italiano
+Magyar
+Nederlands
+Norsk
+Polski
+Português
+Română
+Slovenčina
+Suomi
+Svenska
+Tiếng Việt
+Türkçe
+Ελληνικά
+Български език
+Русский
+Српски
+Українська мова
+עִבְרִית
+العربية
+فارسی
+मराठी
+हिन्दी
+বাংলা
+ગુજરાતી
+தமிழ்
+ಕನ್ನಡ
+ภาษาไทย
+한국어
+日本語
+简体中文
+繁體中文
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Have an account?  Log in
+
+
+   
+
+Have an account?
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+New to Twitter?
+Sign up
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Georgia PowerVerified account
+
+
+
+@GeorgiaPower
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+Tweets, current page.
+19.6K
+            
+
+
+
+Following
+Following
+1,053
+
+
+
+Followers
+Followers
+41.9K
+
+
+
+Likes
+Likes
+3,815
+
+
+
+Lists
+Lists
+1
+ 
+ 
+More 
+
+
+
+
+
+
+
+Likes
+Lists
+
+
+
+
+
+
+Unmute @GeorgiaPower
+
+Mute @GeorgiaPower
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia PowerVerified account
+
+
+
+@GeorgiaPower
+
+
+Georgia Power serves 2.5 million electric customers in Ga. Cust. Serv.: 888-660-5890 Outages: 888-891-0938. Customer Service available here 7am–7pm Mon-Fri.
+
+
+
+            Atlanta, Ga.
+
+      
+
+
+
+ 
+    georgiapower.com
+  
+
+
+
+
+Joined June 2009
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                1,154 Photos and videos
+            
+
+            Photos and videos
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+
+
+Tweets
+Tweets, current page.
+
+
+
+                  Tweets & replies
+                
+
+
+
+                  Media
+                
+
+
+
+
+
+You blocked @GeorgiaPower
+Are you sure you want to view these Tweets? Viewing Tweets won't unblock @GeorgiaPower
+Yes, view profile
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Georgia Power followed
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pinned Tweet
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+9h9 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+Georgia Power Retweeted NWS Atlanta
+
+It's expected to be a stormy day. If you experience a power outage please report it at http://outagemap.georgiapower.com . Be safe & enjoy your Friday!https://twitter.com/NWSAtlanta/status/890899953387569152 …
+
+Georgia Power added,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NWS AtlantaVerified account @NWSAtlanta
+
+Isolated to scattered severe storms are possible this afternoon/evening across north GA ahead of strong cold front. #gawx pic.twitter.com/YNOvxzybrv
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+8h8 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Helping you get your daily charge at over 500 locations. Learn more at http://georgiapower.com/ev  #EV #ETpic.twitter.com/gLm85YsAo5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+9h9 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We are storm ready. Are you? Set outage alerts and report outages at http://georgiapower.com/storm pic.twitter.com/9tf3HeZhAd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+22h22 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Keep the night bright! Report outdoor lighting outages at http://gapwr.co/reportalight pic.twitter.com/rGZd8kyJ7X
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+SCAM Alert – Federal Reserve Bank routing numbers cannot be used for Georgia Power bills http://bit.ly/2v3q8Bf pic.twitter.com/27E5PAIyFr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+#TBT - Since the early days electric cooking has been the smart choice for the energy efficient kitchen. Learn why http://gapwr.co/cooking pic.twitter.com/RJo0xlA8fl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Georgia Power Retweeted
+            
+
+
+
+
+
+
+
+Agnes Scott College‏ @agnesscott
+
+Jul 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+@GeorgiaPower recently presented Agnes Scott w/a $100,020 rebate check in recognition of the college's energy efficiency upgrades.pic.twitter.com/DXB63ivbiO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+6 retweets
+
+
+
+
+13 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+6
+
+
+
+
+Retweeted
+
+
+6
+
+
+
+
+
+
+
+
+Like
+
+
+13
+
+
+
+
+
+Liked
+
+
+13
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Our employees do a lot to enrich the communities in which they work and live. Learn more here http://gapwr.co/employeevolunteers …pic.twitter.com/SZFdYHn5t9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+4 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+Georgia Power Retweeted MyPittsburghATL
+
+Great tip! Staying efficient in the summer certainly helps keep cost down.https://twitter.com/MyPittsburghATL/status/890173639148150784 …
+
+Georgia Power added,
+
+
+
+
+
+
+
+
+MyPittsburghATL @MyPittsburghATL
+
+Avoid adding heat to homes during hottest part of the day by running appliances after sunset. @GeorgiaPower http://bit.ly/2cnnJHm 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Coach Lu embodies our mission to be a "Citizen Wherever We Serve". Your vote helps him bring home the win. https://mlsworkscmvp.com/?r=MLS  @atlutdpic.twitter.com/5IP7kVDybW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+11 retweets
+
+
+
+
+23 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+11
+
+
+
+
+Retweeted
+
+
+11
+
+
+
+
+
+
+
+
+Like
+
+
+23
+
+
+
+
+
+Liked
+
+
+23
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Our mission is to provide reliable, affordable energy and we are building the future of energy for you. Learn more http://gapwr.co/energysources pic.twitter.com/I4PDxHhpcI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+As severe storms pass through the state, stay up to date and report any outages using our outage map. http://Outagemap.georgiapower.com  #GAwx #stormpic.twitter.com/rtYSxqMdon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+Georgia Power Retweeted NWS Atlanta
+
+Severe storms are popping up across GA. Please report any outages to http://outagemap.georgiapower.com https://twitter.com/NWSAtlanta/status/889937004938612736 …
+
+Georgia Power added,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NWS AtlantaVerified account @NWSAtlanta
+
+Severe Thunderstorm Warning including Atlanta GA, North Atlanta GA, Tucker GA until 4:45 PM EDT pic.twitter.com/PlnLp8klSM
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+SPLASH Water Safety Tip: P is for Prevention – Wear personal flotation devices, install fencing around pools, and use drain covers. #Safetypic.twitter.com/MAOzxkTiaD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+If the path be beautiful, let us not ask where it leads. - Anatole France 
+#MondayMotivation http://georgiapowerlakes.com pic.twitter.com/imxprbxZHe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Great having @FocusAtlanta in the @GeorgiaPower Social Media Center today!pic.twitter.com/vaOruqWqlj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+2 retweets
+
+
+
+
+8 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+8
+
+
+
+
+
+Liked
+
+
+8
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+It's expected to be a stormy day. If you experience a power outage please report it at http://outagemap.georgiapower.com pic.twitter.com/INv6pVkfDY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+4 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 21
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Congrats @GeorgiaTech for earning $500K as part of our Commercial #EnergyEfficiency program, our largest rebate ever http://gapwr.co/ebate pic.twitter.com/5TVPP5Vved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 21
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Friday is the perfect day to say yes to new adventures. Visit http://gapwr.co/camping  for our outdoor weekend getaway ideas #FridayFeelingpic.twitter.com/kU9wjMlv8m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+5 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+5
+
+
+
+
+
+Liked
+
+
+5
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power‏Verified account @GeorgiaPower
+
+Jul 20
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+How improved maintenance strategy and excellent planning turned our #PlantScherer into a  2017 top performer. http://bit.ly/2vtKh0i pic.twitter.com/uCWjIKHpaX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+          @GeorgiaPower hasn't Tweeted yet.
+      
+Back to top ↑
+
+
+
+
+
+
+
+
+
+
+
+
+Loading seems to be taking a while.
+
+      Twitter may be over capacity or experiencing a momentary hiccup. Try again or visit Twitter Status for more information.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      New to Twitter?
+    
+
+
+    Sign up now to get your own personalized timeline!
+  
+
+Sign up
+
+
+
+
+You may also like
+    ·
+    Refresh
+
+
+
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Twitter
+About
+Help Center
+Terms
+Privacy policy
+Cookies
+Ads info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Choose a trend location
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dismiss
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+            Previous
+          
+
+
+
+
+
+
+
+            Next
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Go to a person's profile
+
+
+
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Promote this Tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Block
+
+
+
+
+
+
+Cancel
+Block
+
+
+
+
+
+
+
+
+
+
+
+
+Add a location to your Tweets
+
+        When you tweet with a location, Twitter stores that location. 
+        You can switch location on/off before each Tweet and always have the option to delete your location history.
+        Learn more
+
+
+Turn location on
+Not now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Share Location
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Results from 
+
+
+
+Send
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Your lists
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Create a new list
+
+
+
+
+List name
+
+
+
+
+Description
+
+Under 100 characters, optional
+
+
+
+Privacy
+
+
+
+Public · Anyone can follow this list
+      
+
+
+Private · Only you can access this list
+      
+
+
+
+
+Save list
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Copy link to Tweet
+
+
+
+
+Here's the URL for this Tweet. Copy it to easily share with friends.
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Embed this Tweet
+Embed this Video
+
+
+
+Add this Tweet to your website by copying the code below. Learn more
+Add this video to your website by copying the code below. Learn more
+
+
+
+
+Hmm, there was a problem reaching the server. Try again?
+
+
+
+
+
+
+            Include parent Tweet
+          
+
+
+
+
+            Include media
+          
+
+
+
+
+By embedding Twitter content in your website or app, you are agreeing to the Twitter Developer Agreement and Developer Policy.
+Preview
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Why you're seeing this ad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Log in to Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+
+        Don't have an account? Sign up »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Sign up for Twitter
+
+
+
+
+
+Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.
+
+
+Sign up
+
+
+
+
+        Have an account? Log in »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Two-way (sending and receiving) short codes:
+
+
+
+
+
+Country
+Code
+For customers of
+
+
+
+
+United States
+40404
+(any)
+
+
+Canada
+21212
+(any)
+
+
+United Kingdom
+86444
+Vodafone, Orange, 3, O2
+
+
+Brazil
+40404
+Nextel, TIM
+
+
+Haiti
+40404
+Digicel, Voila
+
+
+Ireland
+51210
+Vodafone, O2
+
+
+India
+53000
+Bharti Airtel, Videocon, Reliance
+
+
+Indonesia
+89887
+AXIS, 3, Telkomsel, Indosat, XL Axiata
+
+
+Italy
+4880804
+Wind
+
+
+3424486444
+Vodafone
+
+
+
+
+
+        » See SMS short codes for other countries
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Confirmation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Skip all
+          
+
+
+
+
+    Welcome home!
+  
+This timeline is where you’ll spend most of your time, getting instant updates about what matters to you.
+
+
+
+
+    Tweets not working for you?
+  
+
+    Hover over the profile pic and click the Following button to unfollow any account.
+  
+
+
+
+
+    Say a lot with a little
+  
+
+    When you see a Tweet you love, tap the heart — it lets  the person who wrote it know you shared the love.
+  
+
+
+
+
+    Spread the word
+  
+
+    The fastest way to share someone else’s Tweet with your followers is with a Retweet. Tap the icon to send it instantly.
+  
+
+
+
+
+    Join the conversation
+  
+
+    Add your thoughts about any Tweet with a Reply. Find a topic you’re passionate about, and jump right in.
+  
+
+
+
+
+    Learn the latest
+  
+
+    Get instant insight into what people are talking about now.
+  
+
+
+
+
+    Get more of what you love
+  
+
+    Follow more accounts to get instant updates about topics you care about.
+  
+
+
+
+
+    Find what's happening
+  
+
+    See the latest conversations about any topic instantly.
+  
+
+
+
+
+    Never miss a Moment
+  
+
+    Catch up instantly on the best stories happening as they unfold.
+  
+
+
+
+Back
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next Tweet from user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products | Georgia Power Co Athens, GA 30607 - YP.comStart your search by typing in the business name below.
+What do you want to find?
+
+Where?My current locationSearchHomeSolar Energy Equipment & Systems-Dealers near Athens, GAGeorgia Power CoProductsGeorgia Power Co205 Dairy Pak Rd, Athens, GA 30607(888) 660-5890View Business DetailsProducts"Fish and Chips" found in 1 dishElectricians Renewable EnergySolar PanelsLearn the basics of solar energy and see if it's right for you. Plus, see how Georgia Power is utilizing this renewable energy resource today.Lighting and FansLandscape LightingSecurity LightingYour FlatBill amount is based on the average electricity usage for the designated service address over the past 12 to 36 months, as adjusted to reflect normal weather conditions and usage growth. The monthly FlatBill amount also includes a charge to cover financial, weather, and other risks. The above described adjustments and charges are subject to regulatory limitations, but may otherwise be increased or decreased by Georgia Power for any new contract period. Also, your FlatBill offer does not include sales tax for your specific area, nor does it include Georgia Power security lights, should you have any. Sales tax and security lighting will show as additional items on your bill.WiringUnderground WiringOne of the most potentially hazardous electrical situations in industrial plants and on construction sites is accidental contact with overhead or underground wiring. The Georgia State Legislature has enacted two laws to help prevent electrical contact accidents: the Georgia High Voltage Safety Act and the Call Before You Dig Law. Failure to comply with these laws can result in electrical injuries to workers, fines, and extensive liability exposure.GeneralSurge ProtectionNew enrollments for Premium Surge are no longer available, we have rolled out a new surge protection program, SurgeDefender™.Send to PhoneGeorgia Power Co205 Dairy Pak Rd, Athens, GA 30607(888) 660-5890Send this business listing as a text message to a mobile phone.I agree to the Terms and ConditionsCancelSendYour text message was sent.To opt out at anytime, send the word STOP to YP411.To get a help message, send the word HELP to YP411.There was an error sending your text.Please try again.E-MailGeorgia Power Co205 Dairy Pak Rd, Athens, GA 30607(888) 660-5890Send this business details to yourself or up to 5 friends.Up to 5 email addresses, separate addresses with a commaSend Yourself a CopyCancelSend 
+We just redesigned yp.com! Do you like it?×            LikeNot a Fan×            Thank You!Feedback
+
+
+
+Georgia Power - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Georgia Power
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Georgia Power
+
+
+
+
+
+
+
+
+
+Type
+
+Subsidiary
+
+
+Industry
+Utilities
+
+
+Founded
+1945
+
+
+Headquarters
+Atlanta, Georgia, USA
+
+
+
+Key people
+
+Paul Bowers (President & CEO)[1]
+
+
+
+Number of employees
+
+8,310 [2]
+
+
+Website
+www.GeorgiaPower.com
+
+
+Georgia Power is an electric utility headquartered in Atlanta, Georgia, United States. It was established as the Georgia Railway and Power Company[3] and began operations in 1902 running streetcars in Atlanta as a successor to the Atlanta Consolidated Street Railway Company.
+Georgia Power is the largest of the four electric utilities that are owned and operated by Southern Company. Georgia Power is an investor-owned, tax-paying public utility that serves more than 2.4 million customers in all but four of Georgia's 159 counties.[4] It employs approximately 9,000 workers throughout the state. The Georgia Power Building, its primary corporate office building, is located at 241 Ralph McGill Boulevard in downtown Atlanta.
+In 2006 the Savannah Electric & Power Company, a separate subsidiary of Southern Company, was merged into Georgia Power.
+
+
+
+Contents
+
+
+1 History
+2 Coal power
+
+2.1 Transmission system
+2.2 Transition to renewables
+
+
+3 Generating facilities
+
+3.1 Hydroelectric dams
+3.2 Fossil fuel power plants
+3.3 Nuclear power plants
+
+
+4 Notes
+5 References
+6 External links
+
+
+
+History[edit]
+Originally the Georgia Railway and Power Company, it began in 1902 as a company running the streetcars in Atlanta, and was the successor to the Atlanta Consolidated Street Railway Company. In the 1930s, the company published a free newsletter called Two Bells which was distributed on its streetcars; Two Bells was still distributed into the 1960s on the buses of successor Atlanta Transit Company (ATC). [5] From 1937 until 1950, Georgia Power also operated trolleybuses in Atlanta, and in 1950 its network of 31 electric bus routes was the largest trolley bus system in the United States.[6] After the Atlanta transit strike of 1950, the Atlanta Transit Company took over operations. Atlanta Streetcar was formed in the 2000s to establish a new streetcar service along Peachtree Street.
+The company built several dams, including the Morgan Falls Dam just north of the city, and some as far away as the Tallulah River in the northeast Georgia mountains. These hydroelectric dams form Lake Burton, Lake Seed, Lake Rabun, Lake Tallulah Falls, Lake Tugalo, and Lake Yonah, the last two of which straddle the Georgia – South Carolina border on the Tugaloo River.
+The 2016 Delta Air Lines power outage is an event that occurred in the United States[7] in which hundreds of Delta Air Lines flights were delayed or cancelled.[8] Though it was initially suspected that the company was at fault, it was later determined that this was indeed not the case.[9]
+Coal power[edit]
+Main article: Plant Scherer
+Georgia Power operates the Robert W. Scherer Power Plant, also known as "Plant Scherer," in Monroe County, Georgia. According to Natural History Magazine, as of 2006[update] Plant Scherer is the largest single point-source for carbon dioxide emissions in the United States.[10] It was also ranked the 20th in the world in terms of carbon dioxide emissions by the Center for Global Development on its list of global power plants in November 2007. It was the only power plant in the United States that was listed in the world's top 25 Carbon Dioxide producers.[11]
+Transmission system[edit]
+Georgia Power utilizes transmission lines carrying 115,000 volts, 230,000 volts and 500,000 volts. Georgia Power has interconnections with the Tennessee Valley Authority to the north, sister company Alabama Power to the west, South Carolina Electric and Gas and Duke Energy to the east, and Gulf Power (another sister company), Florida Power & Light, Progress Energy Florida and the city of Tallahassee, Florida to the south.
+Transition to renewables[edit]
+Main article: Coal phase out
+Georgia Power asked the state's public service commission for approval to convert the coal-fired Plant Mitchell to run on wood fuel. If approved, the retrofit would have begun in 2011 and the biomass plant would have started operating in mid-2012. The 96 MW (129,000 hp) biomass plant would have run on surplus wood from suppliers within a 100 mi (160 km) radius of the plant, which is located near Albany, Georgia. However, in 2014, the company announced it was decertifying the plant and intended to close its operations by April 2015.
+Generating facilities[edit]
+Georgia Power owns and operates a total of 46 generating plants which include hydroelectric dams, fossil fueled generating plants and nuclear power plants, which provide electricity to more than 2.4 million customers in all but four of Georgia's counties.[12]
+Hydroelectric dams[edit]
+Georgia Power Hydro incorporates 19 hydro electric generating units to produce a generation capacity of 1,087,536 kilowatts (KW). Georgia Power Hydro facilities also provide more than 45,985 acres (18,609 ha) of water and more than 1,057 mi (1,701 km) of shoreline for habitat and recreational use.
+
+
+Plant
+Nearest City
+Capacity
+
+
+Barnett Shoals Hydroelectric Generating Plant
+Athens, Georgia
+2,800 kW
+
+
+Bartletts Ferry Hydroelectric Generating Plant
+Columbus, Georgia
+173,000 kW
+
+
+Burton Hydroelectric Generating Plant
+Clayton, Georgia
+6,120 kW
+
+
+Estatoah Hydroelectric Generating Plant
+Mountain City, Georgia
+240 kW
+
+
+Flint River Hydroelectric Generating Plant
+Albany, Georgia
+5,400 kW
+
+
+Goat Rock Hydroelectric Generating Plant
+Columbus, Georgia
+38,600 kW
+
+
+Langdale Hydroelectric Generating Plant
+West Point, Georgia
+1,040 kW
+
+
+Lloyd Shoals Hydroelectric Generating Plant
+Jackson, Georgia
+14,400 kW
+
+
+Morgan Falls Hydroelectric Generating Plant
+Sandy Springs, Georgia
+16,800 kW
+
+
+Nacoochee Hydroelectric Generating Plant
+Clayton, Georgia
+4,800 kW
+
+
+North Highlands Hydroelectric Generating Plant
+Columbus, Georgia
+29,600 kW
+
+
+Oliver Dam Hydroelectric Generating Plant
+Columbus, Georgia
+60,000 kW
+
+
+Riverview Hydroelectric Generating Plant
+West Point, Georgia
+480 kW
+
+
+Rocky Mountain Hydroelectric Generating Plant
+Rome, Georgia
+215,256 kW
+
+
+Sinclair Dam Hydroelectric Generating Plant
+Eatonton, Georgia
+45,000 kW
+
+
+Tallulah Falls Hydroelectric Generating Plant
+Tallulah Falls, Georgia
+72,000 kW
+
+
+Terrora Hydroelectric Generating Plant
+Tallulah Falls, Georgia
+16,000 kW
+
+
+Tugalo Hydroelectric Generating Plant
+Lakemont, Georgia
+45,000 kW
+
+
+Wallace Dam Hydroelectric Generating Plant
+Eatonton, Georgia
+321,300 kW
+
+
+Yonah Hydroelectric Generating Plant
+Lakemont, Georgia
+22,500 kW
+
+
+Fossil fuel power plants[edit]
+
+
+Plant
+Nearest City
+Number of Units
+Capacity
+
+
+Bowen Steam-Electric Generating Plant (Plant Bowen)
+Cartersville, Georgia
+4
+3,160,000 kW
+
+
+Harllee Branch Jr. Steam-Electric Generating Plant (Plant Branch) (CLOSED)
+Eatonton, Georgia
+4
+1,539,700 kW
+
+
+William P. Hammond Steam-Electric Generating Plant
+Rome, Georgia
+4
+800,000 kW
+
+
+Kraft Steam-Electric Generating Plant
+Savannah, Georgia
+4
+281,136 kW
+
+
+John J. McDonough Steam-Electric Generating Plant
+Smyrna, Georgia
+2
+490,000 kW
+
+
+McIntosh Steam-Electric Generating Plant
+Savannah, Georgia
+9
+810,000 kW
+
+
+McIntosh Combined Cycle Plant
+Rincon, Georgia
+2
+1,240,000 kW
+
+
+Clifford Braswall McManus Steam-Electric Generating Plant
+Brunswick, Georgia
+2
+596,000 kW
+
+
+W. E. Mitchell Steam-Electric Generating Plant (31°26'41.13"N, 84°8'2.34"W)
+Albany, Georgia
+4
+243,000 kW
+
+
+Robins Steam-Electric Generating Plant
+Warner Robins, Georgia
+2
+166,000 kW
+
+
+Robert W. Scherer Steam-Electric Generating Plant (Plant Scherer)
+Juliette, Georgia
+4
+3,272,000 kW
+
+
+Wansley Steam-Electric Generating Plant (Plant Wansley)
+Carrollton, Georgia
+2
+951,872 kW
+
+
+Allen B. Wilson Combustion Turbine Plant
+Waynesboro, Georgia
+
+354,100 kW
+
+
+Eugene A. Yates Steam-Electric Generating Plant
+Newnan, Georgia
+7
+1,250,000 kW
+
+
+Nuclear power plants[edit]
+
+
+Plant
+Nearest City
+Number of Units
+Capacity
+
+
+Alvin W. Vogtle Electric Generating Plant
+Waynesboro, Georgia
+2
+2,430,000 kW
+
+
+Edwin I. Hatch Nuclear Power Plant
+Baxley, Georgia
+2
+1,726,000 kW
+
+
+Notes[edit]
+
+
+
+^ "Archived copy". Archived from the original on 2008-12-17. Retrieved 2008-11-24. 
+^ "SEC Filings - Southern Company" (Press release). Southern Company. 
+^ See generally Carson, O. E. "The Trolley Titans" (Interurban Special No. 76)(Glendale, 1981)(0916374467).
+^ "Archived copy". Archived from the original on 2008-12-17. Retrieved 2008-11-24. 
+^ Kurtz, p.69
+^ Sebree, Mac; and Ward, Paul (1974). The Trolley Coach in North America, pp. 14–19. Los Angeles: Interurbans. LCCN 74-20367.
+^ Jamieson, Alastair (1970-01-01). "Delta Warns of Chaos After Power Outage, Worldwide System Failure". NBC News. Retrieved 2016-08-11. 
+^ Isidore, Chris. "Delta still digging out on Day 3 - Aug. 10, 2016". Money.cnn.com. Retrieved 2016-08-11. 
+^ http://www.dallasnews.com/business/airline-industry/20160809-delta-power-outage-wasn-t-the-cause-of-its-global-computer-disruption.ece
+^ "Archived copy". Archived from the original on 2008-12-01. Retrieved 2008-09-02. 
+^ "CGD ranks CO2 emissions from power plants worldwide | EurekAlert! Science News". Eurekalert.org. 2007-11-14. Retrieved 2016-08-11. 
+^ "Archived copy". Archived from the original on 2008-12-04. Retrieved 2008-11-24. 
+
+
+
+References[edit]
+
+Kurtz, Wilber, "Technical Advisor: The Making of Gone With The Wind. The Hollywood Journals", Atlanta Historical Journal, Vol. XXII, No.2, Summer, 1978.
+
+External links[edit]
+
+Georgia Power Official Site
+Southern Company
+Georgia Power historical marker
+Georgia Railway and Power Company Trolley Waiting Station historical marker
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Georgia Power
+
+
+
+
+
+
+Georgia Power Company Corporate Headquarters
+Morgan Falls Dam
+Plant Bowen
+Plant Scherer
+Plant Vogtle
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Atlanta companies
+
+
+
+
+
+
+Aaron's, Inc.
+AGCO (Duluth)
+American Megatrends (Gwinnett County)
+Arby's (Sandy Springs)
+AT&T Mobility
+Atlanta Bread Company (Smyrna)
+Atlanta Gas Light
+BellSouth
+Chick-fil-A (College Park)
+Church's Chicken (Sandy Springs)
+Coca-Cola
+Cox Enterprises
+Delta Air Lines
+EarthLink
+Equifax
+ExpressJet (College Park)
+Georgia Natural Gas
+Georgia-Pacific
+Georgia Power
+Holiday Inn
+Holiday Inn Express
+The Home Depot (Cobb County)
+Hooters
+Intercontinental Exchange
+Krystal
+Kool Smiles (Marietta)
+Merial (Duluth)
+NCR Corporation (Gwinnett County)
+Newell Brands
+Popeyes (Sandy Springs)
+RaceTrac
+Rheem
+Scientific Atlanta (Lawrenceville)
+Simmons Bedding Company
+Southern Company
+SunTrust Banks
+Turner Broadcasting System
+United Parcel Service (Sandy Springs)
+Waffle House (Gwinnett County)
+The Weather Channel (Cobb County)
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Georgia_Power&oldid=768664456"					
+Categories: Georgia PowerPower companies of the United StatesEnergy infrastructure in Georgia (U.S. state)Hydroelectric power companies of the United StatesNuclear power companies of the United StatesCompanies based in AtlantaEnergy companies established in 1945Non-renewable resource companies established in 19451945 establishments in Georgia (U.S. state)Companies listed on the New York Stock ExchangeSouthern CompanyHidden categories: Pages using deprecated image syntaxArticles containing potentially dated statements from 2006All articles containing potentially dated statements 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+日本語 
+Edit links 
+
+
+
+
+
+ This page was last edited on 5 March 2017, at 02:40.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Georgia Power - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Georgia Power
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Georgia Power
+
+
+
+
+
+
+
+
+
+Type
+
+Subsidiary
+
+
+Industry
+Utilities
+
+
+Founded
+1945
+
+
+Headquarters
+Atlanta, Georgia, USA
+
+
+
+Key people
+
+Paul Bowers (President & CEO)[1]
+
+
+
+Number of employees
+
+8,310 [2]
+
+
+Website
+www.GeorgiaPower.com
+
+
+Georgia Power is an electric utility headquartered in Atlanta, Georgia, United States. It was established as the Georgia Railway and Power Company[3] and began operations in 1902 running streetcars in Atlanta as a successor to the Atlanta Consolidated Street Railway Company.
+Georgia Power is the largest of the four electric utilities that are owned and operated by Southern Company. Georgia Power is an investor-owned, tax-paying public utility that serves more than 2.4 million customers in all but four of Georgia's 159 counties.[4] It employs approximately 9,000 workers throughout the state. The Georgia Power Building, its primary corporate office building, is located at 241 Ralph McGill Boulevard in downtown Atlanta.
+In 2006 the Savannah Electric & Power Company, a separate subsidiary of Southern Company, was merged into Georgia Power.
+
+
+
+Contents
+
+
+1 History
+2 Coal power
+
+2.1 Transmission system
+2.2 Transition to renewables
+
+
+3 Generating facilities
+
+3.1 Hydroelectric dams
+3.2 Fossil fuel power plants
+3.3 Nuclear power plants
+
+
+4 Notes
+5 References
+6 External links
+
+
+
+History[edit]
+Originally the Georgia Railway and Power Company, it began in 1902 as a company running the streetcars in Atlanta, and was the successor to the Atlanta Consolidated Street Railway Company. In the 1930s, the company published a free newsletter called Two Bells which was distributed on its streetcars; Two Bells was still distributed into the 1960s on the buses of successor Atlanta Transit Company (ATC). [5] From 1937 until 1950, Georgia Power also operated trolleybuses in Atlanta, and in 1950 its network of 31 electric bus routes was the largest trolley bus system in the United States.[6] After the Atlanta transit strike of 1950, the Atlanta Transit Company took over operations. Atlanta Streetcar was formed in the 2000s to establish a new streetcar service along Peachtree Street.
+The company built several dams, including the Morgan Falls Dam just north of the city, and some as far away as the Tallulah River in the northeast Georgia mountains. These hydroelectric dams form Lake Burton, Lake Seed, Lake Rabun, Lake Tallulah Falls, Lake Tugalo, and Lake Yonah, the last two of which straddle the Georgia – South Carolina border on the Tugaloo River.
+The 2016 Delta Air Lines power outage is an event that occurred in the United States[7] in which hundreds of Delta Air Lines flights were delayed or cancelled.[8] Though it was initially suspected that the company was at fault, it was later determined that this was indeed not the case.[9]
+Coal power[edit]
+Main article: Plant Scherer
+Georgia Power operates the Robert W. Scherer Power Plant, also known as "Plant Scherer," in Monroe County, Georgia. According to Natural History Magazine, as of 2006[update] Plant Scherer is the largest single point-source for carbon dioxide emissions in the United States.[10] It was also ranked the 20th in the world in terms of carbon dioxide emissions by the Center for Global Development on its list of global power plants in November 2007. It was the only power plant in the United States that was listed in the world's top 25 Carbon Dioxide producers.[11]
+Transmission system[edit]
+Georgia Power utilizes transmission lines carrying 115,000 volts, 230,000 volts and 500,000 volts. Georgia Power has interconnections with the Tennessee Valley Authority to the north, sister company Alabama Power to the west, South Carolina Electric and Gas and Duke Energy to the east, and Gulf Power (another sister company), Florida Power & Light, Progress Energy Florida and the city of Tallahassee, Florida to the south.
+Transition to renewables[edit]
+Main article: Coal phase out
+Georgia Power asked the state's public service commission for approval to convert the coal-fired Plant Mitchell to run on wood fuel. If approved, the retrofit would have begun in 2011 and the biomass plant would have started operating in mid-2012. The 96 MW (129,000 hp) biomass plant would have run on surplus wood from suppliers within a 100 mi (160 km) radius of the plant, which is located near Albany, Georgia. However, in 2014, the company announced it was decertifying the plant and intended to close its operations by April 2015.
+Generating facilities[edit]
+Georgia Power owns and operates a total of 46 generating plants which include hydroelectric dams, fossil fueled generating plants and nuclear power plants, which provide electricity to more than 2.4 million customers in all but four of Georgia's counties.[12]
+Hydroelectric dams[edit]
+Georgia Power Hydro incorporates 19 hydro electric generating units to produce a generation capacity of 1,087,536 kilowatts (KW). Georgia Power Hydro facilities also provide more than 45,985 acres (18,609 ha) of water and more than 1,057 mi (1,701 km) of shoreline for habitat and recreational use.
+
+
+Plant
+Nearest City
+Capacity
+
+
+Barnett Shoals Hydroelectric Generating Plant
+Athens, Georgia
+2,800 kW
+
+
+Bartletts Ferry Hydroelectric Generating Plant
+Columbus, Georgia
+173,000 kW
+
+
+Burton Hydroelectric Generating Plant
+Clayton, Georgia
+6,120 kW
+
+
+Estatoah Hydroelectric Generating Plant
+Mountain City, Georgia
+240 kW
+
+
+Flint River Hydroelectric Generating Plant
+Albany, Georgia
+5,400 kW
+
+
+Goat Rock Hydroelectric Generating Plant
+Columbus, Georgia
+38,600 kW
+
+
+Langdale Hydroelectric Generating Plant
+West Point, Georgia
+1,040 kW
+
+
+Lloyd Shoals Hydroelectric Generating Plant
+Jackson, Georgia
+14,400 kW
+
+
+Morgan Falls Hydroelectric Generating Plant
+Sandy Springs, Georgia
+16,800 kW
+
+
+Nacoochee Hydroelectric Generating Plant
+Clayton, Georgia
+4,800 kW
+
+
+North Highlands Hydroelectric Generating Plant
+Columbus, Georgia
+29,600 kW
+
+
+Oliver Dam Hydroelectric Generating Plant
+Columbus, Georgia
+60,000 kW
+
+
+Riverview Hydroelectric Generating Plant
+West Point, Georgia
+480 kW
+
+
+Rocky Mountain Hydroelectric Generating Plant
+Rome, Georgia
+215,256 kW
+
+
+Sinclair Dam Hydroelectric Generating Plant
+Eatonton, Georgia
+45,000 kW
+
+
+Tallulah Falls Hydroelectric Generating Plant
+Tallulah Falls, Georgia
+72,000 kW
+
+
+Terrora Hydroelectric Generating Plant
+Tallulah Falls, Georgia
+16,000 kW
+
+
+Tugalo Hydroelectric Generating Plant
+Lakemont, Georgia
+45,000 kW
+
+
+Wallace Dam Hydroelectric Generating Plant
+Eatonton, Georgia
+321,300 kW
+
+
+Yonah Hydroelectric Generating Plant
+Lakemont, Georgia
+22,500 kW
+
+
+Fossil fuel power plants[edit]
+
+
+Plant
+Nearest City
+Number of Units
+Capacity
+
+
+Bowen Steam-Electric Generating Plant (Plant Bowen)
+Cartersville, Georgia
+4
+3,160,000 kW
+
+
+Harllee Branch Jr. Steam-Electric Generating Plant (Plant Branch) (CLOSED)
+Eatonton, Georgia
+4
+1,539,700 kW
+
+
+William P. Hammond Steam-Electric Generating Plant
+Rome, Georgia
+4
+800,000 kW
+
+
+Kraft Steam-Electric Generating Plant
+Savannah, Georgia
+4
+281,136 kW
+
+
+John J. McDonough Steam-Electric Generating Plant
+Smyrna, Georgia
+2
+490,000 kW
+
+
+McIntosh Steam-Electric Generating Plant
+Savannah, Georgia
+9
+810,000 kW
+
+
+McIntosh Combined Cycle Plant
+Rincon, Georgia
+2
+1,240,000 kW
+
+
+Clifford Braswall McManus Steam-Electric Generating Plant
+Brunswick, Georgia
+2
+596,000 kW
+
+
+W. E. Mitchell Steam-Electric Generating Plant (31°26'41.13"N, 84°8'2.34"W)
+Albany, Georgia
+4
+243,000 kW
+
+
+Robins Steam-Electric Generating Plant
+Warner Robins, Georgia
+2
+166,000 kW
+
+
+Robert W. Scherer Steam-Electric Generating Plant (Plant Scherer)
+Juliette, Georgia
+4
+3,272,000 kW
+
+
+Wansley Steam-Electric Generating Plant (Plant Wansley)
+Carrollton, Georgia
+2
+951,872 kW
+
+
+Allen B. Wilson Combustion Turbine Plant
+Waynesboro, Georgia
+
+354,100 kW
+
+
+Eugene A. Yates Steam-Electric Generating Plant
+Newnan, Georgia
+7
+1,250,000 kW
+
+
+Nuclear power plants[edit]
+
+
+Plant
+Nearest City
+Number of Units
+Capacity
+
+
+Alvin W. Vogtle Electric Generating Plant
+Waynesboro, Georgia
+2
+2,430,000 kW
+
+
+Edwin I. Hatch Nuclear Power Plant
+Baxley, Georgia
+2
+1,726,000 kW
+
+
+Notes[edit]
+
+
+
+^ "Archived copy". Archived from the original on 2008-12-17. Retrieved 2008-11-24. 
+^ "SEC Filings - Southern Company" (Press release). Southern Company. 
+^ See generally Carson, O. E. "The Trolley Titans" (Interurban Special No. 76)(Glendale, 1981)(0916374467).
+^ "Archived copy". Archived from the original on 2008-12-17. Retrieved 2008-11-24. 
+^ Kurtz, p.69
+^ Sebree, Mac; and Ward, Paul (1974). The Trolley Coach in North America, pp. 14–19. Los Angeles: Interurbans. LCCN 74-20367.
+^ Jamieson, Alastair (1970-01-01). "Delta Warns of Chaos After Power Outage, Worldwide System Failure". NBC News. Retrieved 2016-08-11. 
+^ Isidore, Chris. "Delta still digging out on Day 3 - Aug. 10, 2016". Money.cnn.com. Retrieved 2016-08-11. 
+^ http://www.dallasnews.com/business/airline-industry/20160809-delta-power-outage-wasn-t-the-cause-of-its-global-computer-disruption.ece
+^ "Archived copy". Archived from the original on 2008-12-01. Retrieved 2008-09-02. 
+^ "CGD ranks CO2 emissions from power plants worldwide | EurekAlert! Science News". Eurekalert.org. 2007-11-14. Retrieved 2016-08-11. 
+^ "Archived copy". Archived from the original on 2008-12-04. Retrieved 2008-11-24. 
+
+
+
+References[edit]
+
+Kurtz, Wilber, "Technical Advisor: The Making of Gone With The Wind. The Hollywood Journals", Atlanta Historical Journal, Vol. XXII, No.2, Summer, 1978.
+
+External links[edit]
+
+Georgia Power Official Site
+Southern Company
+Georgia Power historical marker
+Georgia Railway and Power Company Trolley Waiting Station historical marker
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Georgia Power
+
+
+
+
+
+
+Georgia Power Company Corporate Headquarters
+Morgan Falls Dam
+Plant Bowen
+Plant Scherer
+Plant Vogtle
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Atlanta companies
+
+
+
+
+
+
+Aaron's, Inc.
+AGCO (Duluth)
+American Megatrends (Gwinnett County)
+Arby's (Sandy Springs)
+AT&T Mobility
+Atlanta Bread Company (Smyrna)
+Atlanta Gas Light
+BellSouth
+Chick-fil-A (College Park)
+Church's Chicken (Sandy Springs)
+Coca-Cola
+Cox Enterprises
+Delta Air Lines
+EarthLink
+Equifax
+ExpressJet (College Park)
+Georgia Natural Gas
+Georgia-Pacific
+Georgia Power
+Holiday Inn
+Holiday Inn Express
+The Home Depot (Cobb County)
+Hooters
+Intercontinental Exchange
+Krystal
+Kool Smiles (Marietta)
+Merial (Duluth)
+NCR Corporation (Gwinnett County)
+Newell Brands
+Popeyes (Sandy Springs)
+RaceTrac
+Rheem
+Scientific Atlanta (Lawrenceville)
+Simmons Bedding Company
+Southern Company
+SunTrust Banks
+Turner Broadcasting System
+United Parcel Service (Sandy Springs)
+Waffle House (Gwinnett County)
+The Weather Channel (Cobb County)
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Georgia_Power&oldid=768664456"					
+Categories: Georgia PowerPower companies of the United StatesEnergy infrastructure in Georgia (U.S. state)Hydroelectric power companies of the United StatesNuclear power companies of the United StatesCompanies based in AtlantaEnergy companies established in 1945Non-renewable resource companies established in 19451945 establishments in Georgia (U.S. state)Companies listed on the New York Stock ExchangeSouthern CompanyHidden categories: Pages using deprecated image syntaxArticles containing potentially dated statements from 2006All articles containing potentially dated statements 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+日本語 
+Edit links 
+
+
+
+
+
+ This page was last edited on 5 March 2017, at 02:40.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home | Energy saving tips, paperless billing, outdoor lighting, EnergyDirect and property management tools and SelectGeorgia business relocation help. | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+                 | 
+                
+Register
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+For My Home
+For My Business
+Power Outages
+
+
+Collapse Menu
+My Alerts
+Pay Bill
+My Power Usage
+Report An Outage
+Office Locations
+Log Out
+
+
+
+Collapse Menu
+Pay Bill
+Turn On/Off Power
+Rebates
+Payment Options
+Pricing & Rates
+Energy-Saving Tips
+
+
+
+Collapse Menu
+
+Save Money & Energy
+Products & Programs
+Pricing & Rates
+Payment Options
+
+
+
+Collapse Menu
+Report an Outage
+Outage & Storm Center
+View Outage Map
+Set Outage Alerts
+Check Outage Status
+Storm Safety
+
+
+
+
+
+
+
+
+Connect With Us
+
+
+
+
+
+
+
+
+
+Recommended for You
+Popular topics and the latest news from Georgia Power.
+
+
+SurgeDefender™ Protection
+For just $9.95 per month, we can help protect major appliances in your home.
+Enroll Today
+
+
+Want to support Solar?
+Support solar energy by enrolling in Simple Solar. Solar panels are not required.
+Learn More
+
+
+Avoid changes in your bill with FlatBill®
+Have you been our customer for at least a year? Keep your bill the same each month with FlatBill.
+Learn More
+
+
+A Smarter Way to Save Energy
+Take control of your energy bill with our Smart Usage rate.
+Learn More
+
+
+
+
+
+
+
+Ways to Save
+Simple ideas to help you save time, money and energy.
+
+
+
+
+Time for a Check-up
+
+
+Online Energy Audit
+Use our easy online energy audit to learn more about your energy usage habits and how to save!
+Start Now
+
+
+
+
+
+Get up to $450
+
+
+Heat Pump
+Switch now to an energy- efficient heat pump.
+Learn More
+
+
+
+
+
+Cool Gadgets at Marketplace
+
+
+Save Big
+From programmable thermostats to water-efficient showerheads, take a look at the many ways you can reduce energy consumption in your home or business.
+Shop Now
+
+
+
+
+
+
+
+
+Knowledge Is Power
+Put our programs and services to work for you.
+
+
+
+
+Helping Senior Citizens Save Money and Energy
+Georgia Power wants to help you understand what you can do to save money and energy by offering information based on your needs.
+Learn more about Energy-Saving Tips and the options available to you.
+Download PDF
+
+
+
+
+
+
+One Step Ahead
+
+
+Outage & Storm Center
+At the Georgia Power Storm Center, we're ready to respond and get the lights back on.
+Watch Video
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Energy Expert®
+We help make your home or business more energy-efficient.
+
+
+
+
+Danielle & Peter Smith Athens, GA
+They are newlyweds expecting their first child. With their bundle of joy arriving in a few months, they are preparing themselves and their home for the changes ahead. With Georgia Power's help, they want to find the best programs and budget for their growing family.
+
+
+
+
+Goals
+
+
+
+Look at the different rates that are currently available.
+Set up an in-home energy audit with a Georgia Power energy specialist.
+Manage their account and energy usage in order to stay on budget.
+
+
+
+
+
+Methods
+
+
+
+Visits georgiapower.com and reviews the different rate plans.
+Goes to georgiapower.com and signs up for an in-home energy audit.
+Registers with My Power Usage in order to monitor their account.
+
+
+
+
+
+Results
+
+
+
+Discovers the Flat Bill plan is the right plan for their growing family.
+Finds out the areas in their home where they need to make some energy efficiency upgrades.
+Stay on top of their monthly power usage as well as how much they spend so they can stay on budget.
+
+
+
+
+
+
+Georgia Power Marketplace
+
+
+Save Money and Energy Today
+Make your home more efficient with LED lightbulbs.
+Shop Now
+
+
+
+
+
+
+
+
+Latest News and Updates from Georgia Power
+See how we're doing our part to help secure America's energy future.
+
+
+Driving electric more convenient than ever in 2017
+Dozens of new public charging stations now in place across the state.
+Read More
+
+
+Vogtle 3 & 4 Progress Update
+Georgia Power's 16th Vogtle Construction Monitoring (VCM) Report highlights progress at nuclear expansion in the second half of 2016.
+Read the Report
+
+
+Georgia Power Simple Solar now available
+Learn more about our newest voluntary option for Georgians who want to support solar energy.
+Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products and Programs | For My Home | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ | Register
+
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+Pay Bill
+Register
+Turn On/Off Power
+Report/Check an Outage
+
+
+
+For My Home
+Managing Your Account
+Understanding Your Bill
+Billing Options
+Payment Options
+Pricing & Rates
+Products & Programs
+Save Money & Energy
+Rebate Center
+Power Safety
+
+
+
+
+Rebates & Incentives
+
+Expert Q&A
+Testimonials
+
+
+
+Specialty Links
+
+New Construction
+Property Managers
+Residential Tariffs
+Electric Vehicles
+
+
+
+Have Questions? We're Here to Help
+
+Chakoa, Customer Service Team Lead
+Have a question, or can't find what you're looking for? Our service specialists can help.
+1-888-660-5890 24 hours a day, 7 days a week
+Email Us
+
+
+
+
+
+Products & Programs
+
+Georgia Power is committed to helping you save money on your energy bill. That's why we offer a variety of products and programs that make your home energy-efficient, while keeping you comfortable.
+
+
+
+
+
+Heat Pumps
+Learn about the most advanced heating and air conditioning for your home.
+Find out More About Heat Pumps
+
+
+
+
+
+SurgeDefender™
+For just a few cents a day you can protect motor-driven appliances like your refrigerator, washer and dryer from damaging surges.
+More About Surge Protection
+
+
+
+
+
+
+
+
+HERS Index
+How do you know which house is more energy efficient and can save you money? 
+Find out about the HERS index rating.
+
+
+
+
+
+
+
+
+
+
+Marathon® Water Heater
+Get a $525 rebate by replacing your gas water heater with a Marathon water heater.
+More on Marathon Water Heaters
+
+
+
+
+
+Water Heater
+Save money and energy by choosing an electric water heater.
+More on Water Heaters
+
+
+
+
+
+
+
+
+
+
+Power Credit
+Sign up and get a $20 credit on your bill.
+Sign Up for Power Credit
+
+
+
+
+
+My Power Usage
+See a projected bill before it gets to your mailbox and view your daily energy usage with My Power Usage.
+More About My Power Usage
+
+
+
+
+
+
+
+Solar Energy
+Georgia Power is leading the way in making our state a national leader in solar energy.
+Discover the Power of Solar Energy
+
+
+
+
+
+College Students
+Online customer care for college and university students.
+College Students
+
+
+
+
+
+
+
+Home Energy Improvements
+Get personalized energy improvement recommendations for your home.
+Find Home Energy Improvements
+
+
+
+
+
+EarthCents® New Home
+
+EarthCents® homes are a better value for your family and the environment.
+View EarthCents® New Home
+
+
+
+
+
+
+
+
+
+
+Instant Online Rebates!
+Get instant savings on energy-efficient lighting, thermostats and more at the all-new Georgia Power Marketplace.
+Visit Georgia Power Marketplace Now
+
+
+
+Energy-Efficient Equipment
+Upgrade equipment and save.
+SELECT A PRODUCT CATEGORY:
+
+
+
+Heat Pumps
+Indoor Lighting
+Insulation & Air Sealing
+Outdoor Lighting
+Water Heaters
+
+Go
+
+
+
+Trending Rebates and Money Savers
+
+
+
+1
+Purchase a Heat Pump
+
+
+
+
+Find Out the Most Common Causes of High Bills
+
+
+
+
+
+Energy Audit
+Start here for personalized tips to help you save money by lowering your energy bill.
+Schedule an Energy Audit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home | Energy saving tips, paperless billing, outdoor lighting, EnergyDirect and property management tools and SelectGeorgia business relocation help. | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+                 | 
+                
+Register
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+For My Home
+For My Business
+Power Outages
+
+
+Collapse Menu
+My Alerts
+Pay Bill
+My Power Usage
+Report An Outage
+Office Locations
+Log Out
+
+
+
+Collapse Menu
+Pay Bill
+Turn On/Off Power
+Rebates
+Payment Options
+Pricing & Rates
+Energy-Saving Tips
+
+
+
+Collapse Menu
+
+Save Money & Energy
+Products & Programs
+Pricing & Rates
+Payment Options
+
+
+
+Collapse Menu
+Report an Outage
+Outage & Storm Center
+View Outage Map
+Set Outage Alerts
+Check Outage Status
+Storm Safety
+
+
+
+
+
+
+
+
+Connect With Us
+
+
+
+
+
+
+
+
+
+Recommended for You
+Popular topics and the latest news from Georgia Power.
+
+
+SurgeDefender™ Protection
+For just $9.95 per month, we can help protect major appliances in your home.
+Enroll Today
+
+
+Want to support Solar?
+Support solar energy by enrolling in Simple Solar. Solar panels are not required.
+Learn More
+
+
+Avoid changes in your bill with FlatBill®
+Have you been our customer for at least a year? Keep your bill the same each month with FlatBill.
+Learn More
+
+
+A Smarter Way to Save Energy
+Take control of your energy bill with our Smart Usage rate.
+Learn More
+
+
+
+
+
+
+
+Ways to Save
+Simple ideas to help you save time, money and energy.
+
+
+
+
+Time for a Check-up
+
+
+Online Energy Audit
+Use our easy online energy audit to learn more about your energy usage habits and how to save!
+Start Now
+
+
+
+
+
+Get up to $450
+
+
+Heat Pump
+Switch now to an energy- efficient heat pump.
+Learn More
+
+
+
+
+
+Cool Gadgets at Marketplace
+
+
+Save Big
+From programmable thermostats to water-efficient showerheads, take a look at the many ways you can reduce energy consumption in your home or business.
+Shop Now
+
+
+
+
+
+
+
+
+Knowledge Is Power
+Put our programs and services to work for you.
+
+
+
+
+Helping Senior Citizens Save Money and Energy
+Georgia Power wants to help you understand what you can do to save money and energy by offering information based on your needs.
+Learn more about Energy-Saving Tips and the options available to you.
+Download PDF
+
+
+
+
+
+
+One Step Ahead
+
+
+Outage & Storm Center
+At the Georgia Power Storm Center, we're ready to respond and get the lights back on.
+Watch Video
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Energy Expert®
+We help make your home or business more energy-efficient.
+
+
+
+
+Danielle & Peter Smith Athens, GA
+They are newlyweds expecting their first child. With their bundle of joy arriving in a few months, they are preparing themselves and their home for the changes ahead. With Georgia Power's help, they want to find the best programs and budget for their growing family.
+
+
+
+
+Goals
+
+
+
+Look at the different rates that are currently available.
+Set up an in-home energy audit with a Georgia Power energy specialist.
+Manage their account and energy usage in order to stay on budget.
+
+
+
+
+
+Methods
+
+
+
+Visits georgiapower.com and reviews the different rate plans.
+Goes to georgiapower.com and signs up for an in-home energy audit.
+Registers with My Power Usage in order to monitor their account.
+
+
+
+
+
+Results
+
+
+
+Discovers the Flat Bill plan is the right plan for their growing family.
+Finds out the areas in their home where they need to make some energy efficiency upgrades.
+Stay on top of their monthly power usage as well as how much they spend so they can stay on budget.
+
+
+
+
+
+
+Georgia Power Marketplace
+
+
+Save Money and Energy Today
+Make your home more efficient with LED lightbulbs.
+Shop Now
+
+
+
+
+
+
+
+
+Latest News and Updates from Georgia Power
+See how we're doing our part to help secure America's energy future.
+
+
+Driving electric more convenient than ever in 2017
+Dozens of new public charging stations now in place across the state.
+Read More
+
+
+Vogtle 3 & 4 Progress Update
+Georgia Power's 16th Vogtle Construction Monitoring (VCM) Report highlights progress at nuclear expansion in the second half of 2016.
+Read the Report
+
+
+Georgia Power Simple Solar now available
+Learn more about our newest voluntary option for Georgians who want to support solar energy.
+Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home | Energy saving tips, paperless billing, outdoor lighting, EnergyDirect and property management tools and SelectGeorgia business relocation help. | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+                 | 
+                
+Register
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+For My Home
+For My Business
+Power Outages
+
+
+Collapse Menu
+My Alerts
+Pay Bill
+My Power Usage
+Report An Outage
+Office Locations
+Log Out
+
+
+
+Collapse Menu
+Pay Bill
+Turn On/Off Power
+Rebates
+Payment Options
+Pricing & Rates
+Energy-Saving Tips
+
+
+
+Collapse Menu
+
+Save Money & Energy
+Products & Programs
+Pricing & Rates
+Payment Options
+
+
+
+Collapse Menu
+Report an Outage
+Outage & Storm Center
+View Outage Map
+Set Outage Alerts
+Check Outage Status
+Storm Safety
+
+
+
+
+
+
+
+
+Connect With Us
+
+
+
+
+
+
+
+
+
+Recommended for You
+Popular topics and the latest news from Georgia Power.
+
+
+SurgeDefender™ Protection
+For just $9.95 per month, we can help protect major appliances in your home.
+Enroll Today
+
+
+Want to support Solar?
+Support solar energy by enrolling in Simple Solar. Solar panels are not required.
+Learn More
+
+
+Avoid changes in your bill with FlatBill®
+Have you been our customer for at least a year? Keep your bill the same each month with FlatBill.
+Learn More
+
+
+A Smarter Way to Save Energy
+Take control of your energy bill with our Smart Usage rate.
+Learn More
+
+
+
+
+
+
+
+Ways to Save
+Simple ideas to help you save time, money and energy.
+
+
+
+
+Time for a Check-up
+
+
+Online Energy Audit
+Use our easy online energy audit to learn more about your energy usage habits and how to save!
+Start Now
+
+
+
+
+
+Get up to $450
+
+
+Heat Pump
+Switch now to an energy- efficient heat pump.
+Learn More
+
+
+
+
+
+Cool Gadgets at Marketplace
+
+
+Save Big
+From programmable thermostats to water-efficient showerheads, take a look at the many ways you can reduce energy consumption in your home or business.
+Shop Now
+
+
+
+
+
+
+
+
+Knowledge Is Power
+Put our programs and services to work for you.
+
+
+
+
+Helping Senior Citizens Save Money and Energy
+Georgia Power wants to help you understand what you can do to save money and energy by offering information based on your needs.
+Learn more about Energy-Saving Tips and the options available to you.
+Download PDF
+
+
+
+
+
+
+One Step Ahead
+
+
+Outage & Storm Center
+At the Georgia Power Storm Center, we're ready to respond and get the lights back on.
+Watch Video
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Energy Expert®
+We help make your home or business more energy-efficient.
+
+
+
+
+Danielle & Peter Smith Athens, GA
+They are newlyweds expecting their first child. With their bundle of joy arriving in a few months, they are preparing themselves and their home for the changes ahead. With Georgia Power's help, they want to find the best programs and budget for their growing family.
+
+
+
+
+Goals
+
+
+
+Look at the different rates that are currently available.
+Set up an in-home energy audit with a Georgia Power energy specialist.
+Manage their account and energy usage in order to stay on budget.
+
+
+
+
+
+Methods
+
+
+
+Visits georgiapower.com and reviews the different rate plans.
+Goes to georgiapower.com and signs up for an in-home energy audit.
+Registers with My Power Usage in order to monitor their account.
+
+
+
+
+
+Results
+
+
+
+Discovers the Flat Bill plan is the right plan for their growing family.
+Finds out the areas in their home where they need to make some energy efficiency upgrades.
+Stay on top of their monthly power usage as well as how much they spend so they can stay on budget.
+
+
+
+
+
+
+Georgia Power Marketplace
+
+
+Save Money and Energy Today
+Make your home more efficient with LED lightbulbs.
+Shop Now
+
+
+
+
+
+
+
+
+Latest News and Updates from Georgia Power
+See how we're doing our part to help secure America's energy future.
+
+
+Driving electric more convenient than ever in 2017
+Dozens of new public charging stations now in place across the state.
+Read More
+
+
+Vogtle 3 & 4 Progress Update
+Georgia Power's 16th Vogtle Construction Monitoring (VCM) Report highlights progress at nuclear expansion in the second half of 2016.
+Read the Report
+
+
+Georgia Power Simple Solar now available
+Learn more about our newest voluntary option for Georgians who want to support solar energy.
+Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home | Energy saving tips, paperless billing, outdoor lighting, EnergyDirect and property management tools and SelectGeorgia business relocation help. | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+                 | 
+                
+Register
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+For My Home
+For My Business
+Power Outages
+
+
+Collapse Menu
+My Alerts
+Pay Bill
+My Power Usage
+Report An Outage
+Office Locations
+Log Out
+
+
+
+Collapse Menu
+Pay Bill
+Turn On/Off Power
+Rebates
+Payment Options
+Pricing & Rates
+Energy-Saving Tips
+
+
+
+Collapse Menu
+
+Save Money & Energy
+Products & Programs
+Pricing & Rates
+Payment Options
+
+
+
+Collapse Menu
+Report an Outage
+Outage & Storm Center
+View Outage Map
+Set Outage Alerts
+Check Outage Status
+Storm Safety
+
+
+
+
+
+
+
+
+Connect With Us
+
+
+
+
+
+
+
+
+
+Recommended for You
+Popular topics and the latest news from Georgia Power.
+
+
+SurgeDefender™ Protection
+For just $9.95 per month, we can help protect major appliances in your home.
+Enroll Today
+
+
+Want to support Solar?
+Support solar energy by enrolling in Simple Solar. Solar panels are not required.
+Learn More
+
+
+Avoid changes in your bill with FlatBill®
+Have you been our customer for at least a year? Keep your bill the same each month with FlatBill.
+Learn More
+
+
+A Smarter Way to Save Energy
+Take control of your energy bill with our Smart Usage rate.
+Learn More
+
+
+
+
+
+
+
+Ways to Save
+Simple ideas to help you save time, money and energy.
+
+
+
+
+Time for a Check-up
+
+
+Online Energy Audit
+Use our easy online energy audit to learn more about your energy usage habits and how to save!
+Start Now
+
+
+
+
+
+Get up to $450
+
+
+Heat Pump
+Switch now to an energy- efficient heat pump.
+Learn More
+
+
+
+
+
+Cool Gadgets at Marketplace
+
+
+Save Big
+From programmable thermostats to water-efficient showerheads, take a look at the many ways you can reduce energy consumption in your home or business.
+Shop Now
+
+
+
+
+
+
+
+
+Knowledge Is Power
+Put our programs and services to work for you.
+
+
+
+
+Helping Senior Citizens Save Money and Energy
+Georgia Power wants to help you understand what you can do to save money and energy by offering information based on your needs.
+Learn more about Energy-Saving Tips and the options available to you.
+Download PDF
+
+
+
+
+
+
+One Step Ahead
+
+
+Outage & Storm Center
+At the Georgia Power Storm Center, we're ready to respond and get the lights back on.
+Watch Video
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Energy Expert®
+We help make your home or business more energy-efficient.
+
+
+
+
+Danielle & Peter Smith Athens, GA
+They are newlyweds expecting their first child. With their bundle of joy arriving in a few months, they are preparing themselves and their home for the changes ahead. With Georgia Power's help, they want to find the best programs and budget for their growing family.
+
+
+
+
+Goals
+
+
+
+Look at the different rates that are currently available.
+Set up an in-home energy audit with a Georgia Power energy specialist.
+Manage their account and energy usage in order to stay on budget.
+
+
+
+
+
+Methods
+
+
+
+Visits georgiapower.com and reviews the different rate plans.
+Goes to georgiapower.com and signs up for an in-home energy audit.
+Registers with My Power Usage in order to monitor their account.
+
+
+
+
+
+Results
+
+
+
+Discovers the Flat Bill plan is the right plan for their growing family.
+Finds out the areas in their home where they need to make some energy efficiency upgrades.
+Stay on top of their monthly power usage as well as how much they spend so they can stay on budget.
+
+
+
+
+
+
+Georgia Power Marketplace
+
+
+Save Money and Energy Today
+Make your home more efficient with LED lightbulbs.
+Shop Now
+
+
+
+
+
+
+
+
+Latest News and Updates from Georgia Power
+See how we're doing our part to help secure America's energy future.
+
+
+Driving electric more convenient than ever in 2017
+Dozens of new public charging stations now in place across the state.
+Read More
+
+
+Vogtle 3 & 4 Progress Update
+Georgia Power's 16th Vogtle Construction Monitoring (VCM) Report highlights progress at nuclear expansion in the second half of 2016.
+Read the Report
+
+
+Georgia Power Simple Solar now available
+Learn more about our newest voluntary option for Georgians who want to support solar energy.
+Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Payment Options | For My Home | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ | Register
+
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+Pay Bill
+Register
+Turn On/Off Power
+Report/Check an Outage
+
+
+
+For My Home
+Managing Your Account
+Understanding Your Bill
+Billing Options
+Payment Options
+Pricing & Rates
+Products & Programs
+Save Money & Energy
+Rebate Center
+Power Safety
+
+
+Specialty Links
+
+New Construction
+Property Managers
+Residential Tariffs
+Electric Vehicles
+
+
+
+Have Questions? We're Here to Help
+
+Chakoa, Customer Service Team Lead
+Have a question, or can't find what you're looking for? Our service specialists can help.
+1-888-660-5890 24 hours a day, 7 days a week
+Email Us
+
+
+
+
+
+Payment Options
+
+You can choose from a variety of payment options to fit your lifestyle.  Payment options allow you to choose where you want to pay and how. All payment options are safe and secure.
+
+Online Payment Options
+
+
+
+
+Checking/Savings Account
+Pay your bill online. Just click the "Pay Bill" link below. Logging in  gives the ability to store your banking information. If you choose to pay without logging in, you will need your account number and your access code from your bill.
+Pay bill
+
+
+
+
+
+Debit Card Payments
+Pay no transaction fee when using your debit card. As a valued customer, you can now make your payments online using your debit card completely free of charge when you login to your account.
+Pay bill
+
+
+
+
+
+
+Georgia Power CheckOut
+Georgia Power CheckOut is an easy and convenient way to pay your bill where you shop. Obtain your barcode on our website, and take it to a participating retail location near you to pay your Georgia Power bill.
+Obtain a Barcode
+
+Traditional Payment Options
+
+
+
+Authorized Payment Locations
+We make it easy to do business with us. We've added more than 2,600 Authorized Payment Locations so you can choose a time and place that is convenient for you to make a payment. You can pay when you shop at retailers such as Kroger, Walmart, Publix and Kmart.
+Find out more about Authorized Payment Locations.
+
+
+Credit Card
+
+You can make credit card payments for a convenience fee of $2.25. Credit card payments are processed through BillMatrix, a separate company not affiliated with Georgia Power, which adds a convenience fee of $2.25 per transaction. You will need to have your account number available. 
+Go to BillMatrix
+
+
+Local Office
+Visit your local office and make a payment at no charge. Debit and credit cards are now accepted at your local office with no transaction fee. Find a local office near you.
+
+
+Mail Payments
+Mail payments to:
+			Georgia Power Payments
+			96 Annex
+			Atlanta, Georgia 30396
+NOTE: Please be sure to include your account number with your mailed-in payment. Mailing your payment may take between 3 to 5 business days to process and post to your account.
+
+
+Pay By Phone
+You may submit your payment by phone 24 hours a day, seven days a week. Call 1-800-672-2402 to be directed to the Georgia Power Payment System by BillMatrix. You will need your Georgia Power account number. There is a fee of $2.25 to make a payment using your checking/savings account, debit or credit card.
+
+
+Auto Pay
+Auto Pay takes the hassle out of paying your power bill. You can authorize your bill amount to be automatically debited from your checking or savings account. There is no fee for this service. With Auto Pay, we will continue to read your meter and calculate your bill each month. You will continue to receive your bill as normal, but instead of "Please Pay By" on the bill, you will see the date when your bank account will be drafted for the amount of your bill.
+Sign up for Auto Pay
+
+
+
+
+
+Bill Payment Assistance
+
+
+
+
+
+Project SHARE
+
+
+
+
+More Resources
+
+
+
+
+Power Credit
+
+
+
+
+
+Simple Solar
+
+
+
+
+
+Senior Citizen Discount
+
+
+
+
+
+
+
+
+
+
+
+
+
+Residential Rate Advisor
+
+
+
+
+We need to make sure this is the right advisor for you. Is this a residential property that is for personal use rather than business use?
+
+
+
+
+
+
+
+Yes
+
+
+
+No
+
+
+*Rate advisor is only intended to assist your decision making process. You should check all rates and cross reference your energy use with recommended rate schedules before committing to a rate. Your choice is important because you
+					must stay on the chosen or assigned rate for at least 12 months.
+
+
+ 
+To get advice on business rates, please visit the business section of our site. Where do you want to go?
+Return to Residential
+Go to Business Rates
+
+
+
+
+
+
+Have you been in your home for more than 12 months?
+
+Yes
+
+No
+
+
+
+
+
+
+Are you willing to shift when you use electricity away from peak demand times in order to reduce your bill?
+Yes
+No
+
+
+
+
+
+Are you willing to monitor and limit the use of multiple appliances at the same time?
+Yes
+No
+
+
+
+
+
+How important is consistency in your bill?
+Very Important
+Less Important
+
+
+
+
+
+How important are renewable Energy sources to you?
+Very Important
+Less Important
+
+
+
+
+
+Budget Bill
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A rate that is designed to encourage customers to use less electricity during on-peak hours and shift that usage to off-peak periods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Standard Service: The basic rate plan. This plan is ideal for customers who are comfortable with fluctuations in their monthly electric bill.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+With FlatBill there are no surprises because your bill is the same month after month for the entire year.
+
+
+
+
+
+
+
+
+
+For customers who can avoid the use of major appliances at the same time.
+
+
+
+
+
+Learn More
+Learn More
+Learn More
+Learn More
+Learn More
+
+
+
+
+
+
+
+
+Previous
+NEXT
+Next
+
+
+
+
+
+
+
+Budget Bill
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+Not Available
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Managing Your Bills and Payments
+See how to access your account history, set up convenient one-time payments and set up recurring automatic payments.
+Watch Video
+
+
+
+
+
+
+
+
+
+Paperless Billing
+Go paperless for secure access to your bill anytime, helpful payment reminders and the ability to save documents as PDFs to reduce clutter.
+
+
+
+Monitor Your Daily Power Usage
+View your daily energy usage, set usage alerts and see your projected bill before it arrives with My Power Usage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home | For My Home | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ | Register
+
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+Pay Bill
+Register
+Turn On/Off Power
+Report/Check an Outage
+
+
+
+For My Home
+Managing Your Account
+Understanding Your Bill
+Billing Options
+Payment Options
+Pricing & Rates
+Products & Programs
+Save Money & Energy
+Rebate Center
+Power Safety
+
+
+Specialty Links
+
+New Construction
+Property Managers
+Residential Tariffs
+Electric Vehicles
+
+
+
+Have Questions? We're Here to Help
+
+Chakoa, Customer Service Team Lead
+Have a question, or can't find what you're looking for? Our service specialists can help.
+1-888-660-5890 24 hours a day, 7 days a week
+Email Us
+
+
+
+
+
+For My Home
+
+At Georgia Power, our goal is to help you save money and use energy wisely. That's how we deliver more customer value, and it's what makes it easy to do business with us. It's simple: let us be your trusted partner for saving money and energy.
+
+
+From the Georgia Power Marketplace to other incentives, Georgia Power offers a variety of 
+                    	ways to help you save money and energy.
+
+Rebate Center
+
+
+
+
+3 Ways to Lower Your Bill
+There are ways to save energy in virtually every room of your house. That's why we provide a variety of energy-saving tips with the way you live in mind.
+See More Ways to Save Money and Energy
+
+
+
+
+
+
+Energy-Saving Tips
+
+
+
+
+
+Energy Audit
+
+
+
+
+
+My Power Usage
+
+
+
+
+
+
+Billing and Payment Information
+Rate Plans - Are you on the right rate plan? Our interactive rate advisor can help you find out.
+Billing Options - You can choose from several billing options including paperless billing and budget billing. There are also billing options that provide opportunities to help others in need.
+
+
+
+Videos: Are You on the Right Rate?
+Choosing the right rate plan for your family is simple. Check out these videos to learn more.
+
+
+
+
+
+
+
+Standard Rate Plan
+
+
+
+
+
+
+
+
+
+Budget Bill
+
+
+
+
+
+
+
+
+
+FlatBill
+
+
+
+
+
+
+
+
+
+Nights & Weekends
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+More Resources
+
+
+Residential Services
+Outage & Storm Center
+My Power Usage
+
+
+Online Services
+Manage Your Account Online
+Create a Login/Register
+
+
+My Bill
+Understanding Your Bill
+Payment Options
+Common Causes of High Bills
+
+
+
+
+
+
+
+
+
+Instant Online Rebates!
+Get instant savings on energy-efficient lighting, thermostats and more at the all-new Georgia Power Marketplace.
+Visit Georgia Power Marketplace Now
+
+
+Featured Rebates and Money Savers
+
+
+
+
+View the Most Common Causes of High Bills
+
+
+
+
+
+Outage Alerts
+Sign up to receive free alerts  (by text, phone or email) about outages that affect your home.
+
+
+
+Paperless Billing
+Go paperless for secure access to your bill anytime, helpful payment reminders and the ability to save documents as PDFs to reduce clutter.
+
+
+
+Life Events
+Whenever you find yourself on the move, Georgia Power is ready to assist you.
+
+Moving
+College Students
+Building a New Home
+Renovating a Home
+
+
+
+
+Lakes and Recreation
+Georgia Power's 15 lakes and nearby nature preserves offer visitors boating fun, hiking trails, picnic areas and campgrounds. Plan Your Next Outing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home | For My Home | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ | Register
+
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+Pay Bill
+Register
+Turn On/Off Power
+Report/Check an Outage
+
+
+
+For My Home
+Managing Your Account
+Understanding Your Bill
+Billing Options
+Payment Options
+Pricing & Rates
+Products & Programs
+Save Money & Energy
+Rebate Center
+Power Safety
+
+
+Specialty Links
+
+New Construction
+Property Managers
+Residential Tariffs
+Electric Vehicles
+
+
+
+Have Questions? We're Here to Help
+
+Chakoa, Customer Service Team Lead
+Have a question, or can't find what you're looking for? Our service specialists can help.
+1-888-660-5890 24 hours a day, 7 days a week
+Email Us
+
+
+
+
+
+For My Home
+
+At Georgia Power, our goal is to help you save money and use energy wisely. That's how we deliver more customer value, and it's what makes it easy to do business with us. It's simple: let us be your trusted partner for saving money and energy.
+
+
+From the Georgia Power Marketplace to other incentives, Georgia Power offers a variety of 
+                    	ways to help you save money and energy.
+
+Rebate Center
+
+
+
+
+3 Ways to Lower Your Bill
+There are ways to save energy in virtually every room of your house. That's why we provide a variety of energy-saving tips with the way you live in mind.
+See More Ways to Save Money and Energy
+
+
+
+
+
+
+Energy-Saving Tips
+
+
+
+
+
+Energy Audit
+
+
+
+
+
+My Power Usage
+
+
+
+
+
+
+Billing and Payment Information
+Rate Plans - Are you on the right rate plan? Our interactive rate advisor can help you find out.
+Billing Options - You can choose from several billing options including paperless billing and budget billing. There are also billing options that provide opportunities to help others in need.
+
+
+
+Videos: Are You on the Right Rate?
+Choosing the right rate plan for your family is simple. Check out these videos to learn more.
+
+
+
+
+
+
+
+Standard Rate Plan
+
+
+
+
+
+
+
+
+
+Budget Bill
+
+
+
+
+
+
+
+
+
+FlatBill
+
+
+
+
+
+
+
+
+
+Nights & Weekends
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+More Resources
+
+
+Residential Services
+Outage & Storm Center
+My Power Usage
+
+
+Online Services
+Manage Your Account Online
+Create a Login/Register
+
+
+My Bill
+Understanding Your Bill
+Payment Options
+Common Causes of High Bills
+
+
+
+
+
+
+
+
+
+Instant Online Rebates!
+Get instant savings on energy-efficient lighting, thermostats and more at the all-new Georgia Power Marketplace.
+Visit Georgia Power Marketplace Now
+
+
+Featured Rebates and Money Savers
+
+
+
+
+View the Most Common Causes of High Bills
+
+
+
+
+
+Outage Alerts
+Sign up to receive free alerts  (by text, phone or email) about outages that affect your home.
+
+
+
+Paperless Billing
+Go paperless for secure access to your bill anytime, helpful payment reminders and the ability to save documents as PDFs to reduce clutter.
+
+
+
+Life Events
+Whenever you find yourself on the move, Georgia Power is ready to assist you.
+
+Moving
+College Students
+Building a New Home
+Renovating a Home
+
+
+
+
+Lakes and Recreation
+Georgia Power's 15 lakes and nearby nature preserves offer visitors boating fun, hiking trails, picnic areas and campgrounds. Plan Your Next Outing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power Company - Pearson, GA - Company Information
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products
+Resources
+My Account
+
+
+
+
+
+
+
+
+
+
+
+
+Talk to a D&B Advisor 
+1-800-280-0780 
+
+
+
+
+Business Directory
+
+
+
+GA
+
+
+
+Pearson
+
+
+
+Electric Services
+
+
+
+Distribution, Electric Power
+
+
+
+                            Georgia Power Company
+                                    
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+G 
+
+
+Georgia Power Company
+CLAIM THIS BUSINESS
+
+
+
+113 MAIN ST S PEARSON, GA 31642
+Get Directions
+
+
+
+(912) 422-3280
+www.georgiapower.com
+
+
+
+
+
+Business Info
+
+
+
+ Founded --
+ Incorporated 
+ Annual Revenue --
+ Employee Count 2
+ Industries Distribution, Electric Power
+ Contacts Paul C McRae
+
+
+
+
+
+
+
+Contact Business
+
+
+
+
+
+
+
+Your Email Address
+
+Subject:
+
+
+Message
+
+
+Send Message
+
+
+
+
+
+
+
+
+
+
+VERIFIED Status:
+UNVERIFIED
+
+
+
+Address:
+UNVERIFIED
+
+
+
+
+
+LAST VERIFIED:
+
+                                    --
+                                
+
+
+
+Phone:
+
+                                    UNVERIFIED
+                                
+
+
+
+
+
+Payment Method:
+UNVERIFIED
+
+
+view full report
+
+
+
+
+
+Similar Businesses Nearby
+
+
+                                        Our similar businesses nearby shows similar businesses in their industry and region based on information found in their Dun & Bradstreet Credibility Review profile.                                        
+
+
+
+
+
+
+
+Competitive Landscape
+
+
+                                        Our competitive landscape shows how this business compares to similar businesses in their industry and region based on information found in their Dun & Bradstreet Credibility Review profile.                                        
+
+
+
+
+
+
+
+Payments Accepted
+
+NO DATA
+
+
+
+Hours
+
+
+
+                                        Sunday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Monday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Tuesday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Wednesday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Thursday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Friday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Saturday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+
+
+
+
+G
+
+VIEW ADDITIONAL DATA                        
+Select from over 115 networks below to view available data about this business. If this data is unavailable or inaccurate and you own or represent this business, click here for more information on how you may be able to correct it. 
+
+
+
+
+
+
+
+Credibility Review
+
+
+
+
+
+Google
+
+
+
+
+
+Facebook.com
+
+
+
+
+
+Yellowbook.com
+
+
+
+
+
+Bing.com
+
+
+
+
+
+Yellowpages.com
+
+
+
+
+
+MerchantCircle
+
+
+
+
+
+Tele Atlas (TomTom)
+
+
+
+
+
+Twitter.com
+
+
+
+
+
+AOL
+
+
+
+
+
+MapQuest
+
+
+
+
+
+Yahoo Local
+
+
+
+
+
+Apple/Siri
+
+
+
+
+
+Groupon
+
+
+
+
+
+Hotfrog.com
+
+
+
+
+
+Comcast.net Search
+
+
+
+
+
+ReachLocal
+
+
+
+
+
+Admedia
+
+
+
+
+
+Dealsplus
+
+
+
+
+
+Shoptopia.com
+
+
+
+
+
+Alteryx
+
+
+
+
+
+Dogtime Media
+
+
+
+
+
+KSL.com
+
+
+
+
+
+Sirtune
+
+
+
+
+
+AmericanTowns.com
+
+
+
+
+
+Driverside
+
+
+
+
+
+Kudzu.com
+
+
+
+
+
+SpecialsAgent.com
+
+
+
+
+
+Answers.com
+
+
+
+
+
+eGood
+
+
+
+
+
+LawInfo.com
+
+
+
+
+
+spotlikes.com
+
+
+
+
+
+anywho.com
+
+
+
+
+
+eGumball
+
+
+
+
+
+Likeness.com
+
+
+
+
+
+Spotzot
+
+
+
+
+
+eServiceLog
+
+
+
+
+
+MapMyRun
+
+
+
+
+
+TechnoCom
+
+
+
+
+
+apartmentguide.com
+
+
+
+
+
+ezlocal.com
+
+
+
+
+
+EZToUse.com
+
+
+
+
+
+Teleroute
+
+
+
+
+
+AroundMe.com
+
+
+
+
+
+metropolist.com
+
+
+
+
+
+Therapists.com
+
+
+
+
+
+Atlanta NewHomes
+
+
+
+
+
+FindLaw.com
+
+
+
+
+
+Time Out New York
+
+
+
+
+
+Avantar
+
+
+
+
+
+FindTheBest.com
+
+
+
+
+
+mojopages.com
+
+
+
+
+
+B2B Yellowpages
+
+
+
+
+
+Fivestar Software
+
+
+
+
+
+MyCityWay.com
+
+
+
+
+
+TripAdvisor
+
+
+
+
+
+bckyrd.com
+
+
+
+
+
+GiftCards.com
+
+
+
+
+
+MyCoupons.com
+
+
+
+
+
+beachcalifornia.com
+
+
+
+
+
+GoLocal247.com
+
+
+
+
+
+mymove.com
+
+
+
+
+
+UpMeSocial.com
+
+
+
+
+
+Belo
+
+
+
+
+
+GoodInfo
+
+
+
+
+
+News-Gazette
+
+
+
+
+
+Nokia
+
+
+
+
+
+usdirectory.com
+
+
+
+
+
+Cars.com
+
+
+
+
+
+Nomao
+
+
+
+
+
+Centzy.com
+
+
+
+
+
+hibu
+
+
+
+
+
+Openlist.com
+
+
+
+
+
+ChaCha Search
+
+
+
+
+
+Homeplate.com
+
+
+
+
+
+OwnLocal.com
+
+
+
+
+
+VisiKard
+
+
+
+
+
+challama.com
+
+
+
+
+
+Homestore
+
+
+
+
+
+patch.com
+
+
+
+
+
+Voltari
+
+
+
+
+
+CityBot
+
+
+
+
+
+Pelopidas
+
+
+
+
+
+Vouchd
+
+
+
+
+
+ClassifiedAds
+
+
+
+
+
+Hostway
+
+
+
+
+
+PlaceIQ
+
+
+
+
+
+WalkScore.com
+
+
+
+
+
+CloudMade
+
+
+
+
+
+Hoodoyou
+
+
+
+
+
+PlanetDiscover.com
+
+
+
+
+
+WeddingWire.com
+
+
+
+
+
+PowerProfiles
+
+
+
+
+
+Where Inc.
+
+
+
+
+
+Contractors.com
+
+
+
+
+
+iGoLocal.com
+
+
+
+
+
+Radiate Media
+
+
+
+
+
+Wikiocity
+
+
+
+
+
+CouponMap
+
+
+
+
+
+Indeed.com
+
+
+
+
+
+Wimgo.com
+
+
+
+
+
+CrowdSpot
+
+
+
+
+
+Innova Electronics
+
+
+
+
+
+Intellistrand
+
+
+
+
+
+realtor.com
+
+
+
+
+
+DataSphere
+
+
+
+
+
+InTheMO.com
+
+
+
+
+
+Reply.com
+
+
+
+
+
+Yellowbot.com
+
+
+
+
+
+JiWire
+
+
+
+
+
+Rocket Fuel
+
+
+
+
+
+YellowPageCity.com
+
+
+
+
+
+DMV.org
+
+
+
+
+
+Justclicklocal.com
+
+
+
+
+
+Dirxion
+
+
+
+
+
+Keen.com
+
+
+
+
+
+Zidster.com
+
+
+
+
+
+
+
+
+
+
+
+
+Photos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Credit Report
+Receive a one-time comprehensive credit report on this company.
+get full credit report
+
+
+Facebook
+
+
+
+
+
+
+
+
+Twitter
+
+
+
+
+
+
+
+
+Yelp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Call 1.800.280.0780 to speak with a D&B Advisor Today!
+
+
+
+
+
+
+
+Customer Resources
+Products
+Education Center
+Business Articles & Insights
+Glossary
+Contact Us
+Customer Support
+Communication Preferences
+Search for D&B D-U-N-S
+
+
+
+
+Our Company
+About Us
+Company History
+Business Credit History
+Careers
+Press Releases
+News
+Success Stories
+Hoovers
+
+
+
+
+Our Network
+Partners
+Affiliates
+Blog
+Access to Capital
+Entrepreneurial Initiative
+D&B International
+SupplierEdge
+
+
+
+
+Site Links
+Business Directory
+Site Map
+PIPEDA
+Privacy Policy
+Website Terms of Service
+Product License Agreement
+
+
+
+
+
+
+
+© Dun & Bradstreet, Inc. 2017. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Georgia Power Company | Government Contractor
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+  ayrqarrycbfaazazuaswtxb
+
+
+
+
+
+
+					Government Contracts				
+
+					Federal Agencies				
+
+
+
+				More 
+
+
+
+
+
+ Search
+
+
+
+
+
+
+							Government Contractors							×
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Menu
+
+
+See All Government Contractors
+OverviewContractsCategoriesProducts/ServicesPlace of PerformanceVendor Details 
+
+
+
+
+
+
+
+
+					Georgia Power Company				
+
+
+OverviewContractsCategoriesProducts/ServicesMorePlace of PerformanceVendor Details 
+
+
+
+
+
+
+
+
+Georgia Power Company
+
+
+
+Overview
+
+
+
+
+Contracts
+
+
+
+
+Categories
+
+
+
+
+Products/Services
+
+
+
+
+Place of Performance
+
+
+
+
+Vendor Details
+
+
+
+
+References
+
+
+
+
+
+
+
+
+
+
+ See all Government Contractors				
+
+ Research Guide				
+
+
+
+
+Share
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Georgia Power Company Government Contractor in Atlanta, GA
+
+ 
+
+
+
+
+
+
+dollars obligated (Latest year)$16,478,592 United States dollarslatest fiscal year2016total dollars obligated (Since FY2007)$448,238,149 United States dollarsnumber of contracts (Since FY2007)249 
+
+ 
+
+See all Contracts for this Company See all Government Contractors 
+
+
+
+
+
+
+
+
+
+
+
+
+Advertisement
+
+
+ShareOverviewSummaryGeorgia Power Company has worked on two hundred and forty-nine contracts worth $448 million USD in obligations from the federal government since FY2007. In its latest active fiscal year (2016), the organization received a total of $16.5 million USD in obligations.The principal agencies it has contracted with are the Department of Justice, Department of Defense, and General Services Administration.
+
+Parent Vendor
+The Southern Company in Atlanta, GA
+
+
+Principal Agencies
+Department of JusticeDepartment of DefenseGeneral Services Administration
+
+
+Principal Category (NAICS)
+Electric Power Distribution (221122)
+
+
+Principal Product or Service (PSC)
+Electric Services (S112)
+
+
+Designations
+Other than Small Business, For Profit Organization, and Non-Tax Exempt Corporate Entity
+
+
+Organization Type
+Corporate Not Tax Exempt
+
+
+Website
+cateringinstitute.com 
+Contact
+
+Phone Number
+(404) 506-6526
+
+
+Fax Number
+(404) 506-0456
+Location
+How does Georgia Power Company compare to other vendors?A comparison of the amount of contract awards obligated to Georgia Power Company since FY2007 with other vendors in its location.Awarded far higher than average compared to  75 vendors in Zip Code 30308, GA.Awarded far higher than average compared to  1,366 vendors in Georgia's 5th congressional district.Awarded far higher than average compared to  12,846 vendors in Georgia.Awarded far higher than average compared to all  494,386 federal vendors.
+
+
+Comparison
+
+Vendor NameTotal Dollars Obligated (Since FY2007)ZipcodeIDIDColorGeorgia Power Company$448 million USDZip Code 30308, GAZip Code 30308, GA Federal Contractors$62,836 USDGeorgia's 5th congressional district Federal Contractors$59,964.50 USDGeorgia Federal Contractors$36,172 USDAll Federal Contractors$36,884 USD
+
+
+
+
+ZipCongressional DistrictStateMoreZip
+
+
+
+See all vendors from Zip Code 30308, GA ›Congressional District
+
+
+
+See all vendors from Georgia's 5th congressional district ›State
+
+
+
+See all vendors from Georgia ›
+Parent VendorGeorgia Power Company in Atlanta, GA is a subsidiary company of The Southern Company in Atlanta, GA. Explore the contracting profile of the parent company by visiting its linked page or navigating through the tabs below.The Southern Company in Atlanta, GAMainAwardsSubsidiariesAgenciesEquipmentCategoriesProducts/ServicesContractsMoreMain
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dollars obligated (Latest year)$41,931,567 United States dollarstotal dollars obligated (Since FY2007)$774,946,470 United States dollars
+
+Latest Fiscal Year
+2016
+
+
+
+
+
+Location
+Atlanta, GA
+
+
+Principal Agencies
+Department of Veterans AffairsDepartment of DefenseNational Aeronautics and Space Administration
+
+
+Principal Category (NAICS)
+Electric Power Distribution (221122)
+
+
+Principal Product or Service (PSC)
+Electric Services (S112)
+
+Awards
+
+
+
+
+
+
+
+* Dollars Obligated: The amount of money obligated towards a vendor by a federal agency or agencies to work on a contract.
+
+* Base and All Options (Ceiling): The maximum amount that can be awarded to a contract as mutually agreed upon by the vendor and agency.SubsidiariesCompanies that are completely or partly owned by The Southern Company.
+
+
+
+AgenciesFederal agencies that have contracted with The Southern Company since FY2007.
+
+
+
+Total Dollars ObligatedID423,065,68078,180,37364,498,84138,447,39334,017,21131,425,94130,753,37526,646,49115,582,7346,824,9786,521,0354,973,5863,753,7382,914,6291,935,9441,576,0581,427,3141,302,7031,111,595104,41385,42177,62449,64346,48544,00015,40813,82911,3242,2505170-1,740-462,323
+
+
+
+EquipmentSystem Equipment Codes identify the program and weapons systems or equipment being supported by the Department of Defense as part of the DoD Acquisition Program.
+
+
+
+
+
+
+
+CategoriesWhen the government intends to acquire goods or services, it identifies the NAICS code that describes the principal purpose of that procurement. NAICS is production oriented (not product oriented) and categorizes businesses with others that have similar methods of production.
+
+
+
+
+
+
+
+Products/ServicesProduct and Service Codes (PSC) describe products, services, and research and development purchased by the federal government.
+
+
+
+
+
+
+
+Contracts
+
+
+
+ContractContract DescriptionProduct or Service (PSC)Signed DateCompletion DateAgencyDollars ObligatedPercent ObligatedIDParent Vendor NameGS00P06BSD0472-W9124906F0207Type: Delivery Order (9 years)ELECTRICITY USAGE FOR NOVEMBER 2006Electric Services (S112)12/4/068/31/16Department of Defense$89,939,800 USD72% obligated of $125MW9124M08C0008Type: Definitive Contract (10 years)PROVIDE ELECTRICITY FOR MAIN POST HUNTER ARMY AIRFIED GAElectric Services (S112)3/27/0812/31/18Department of Defense$23,416,200 USD100% obligatedW911SF14V8503Type: Purchase Order (1 year)ELECTRIC POWER DISTRIBUTION FOR FORT BENNING, GA (GS-00P-06-BSD-0472) FOR THE PERIOD 1 SEP 13 THROUGH 30 SEP 14.  CAR IS ISSUED FOR REPORTING PURPOSES ONLY.Electric Services (S112)9/30/148/25/16Department of Defense$22,547,600 USD100% obligatedN6246788F1862Type: Definitive Contract (9 years)ELECTRIC HARDENINGElectric Services (S112)4/30/078/25/16Department of Defense$21,048,000 USD100% obligatedGS00P15BSD1134Type: Indefinite Delivery Contract (10 years)Electric Services (S112)12/16/1412/15/24General Services Administration$15,891,600 USD3% obligated of $572MGS00P06BSD0474-NNS08AA30TType: Delivery Order (2 years)NORTH TRANSMISSION LINE BUILDElectric Services (S112)3/13/083/15/10National Aeronautics and Space Administration$12,200,000 USD100% obligatedGS00P06BSD0474-NNS09AA50TType: Delivery Order (3 years)SUBSTATION CONSTRUCTIONElectric Services (S112)5/28/098/1/12National Aeronautics and Space Administration$11,467,500 USD100% obligatedGS00P06BSD0471-W911KF09F0001Type: Delivery Order (7 years)UTILITIES FOR AUGUST 08Electric Services (S112)11/5/088/24/16Department of Defense$10,706,100 USD100% obligatedGS00P06BSD0471-W911KF10F0009Type: Delivery Order (8 months)UTILITIES, ELECTRICElectric Services (S112)1/11/109/30/10Department of Defense$10,424,000 USD100% obligatedN6945014G0012-0001Type: Delivery Order (3 years)UESC WHITING FIELD PREFEASIBILITY AUDITUtilities (S119)8/25/1412/26/17Department of Defense$9,804,300 USD100% obligated
+
+See all contracts for this vendor ›
+
+ 
+
+
+
+
+
+Advertisement
+
+
+ShareContractsBy Year
+
+The federal government obligated Georgia Power Company a high of $67 million USD in FY2010 and low of $5.51 million USD in FY2015. On average, it received $48,306,400 United States dollars in contract obligations per fiscal year.* Dollars Obligated: The amount of money obligated towards a vendor by a federal agency or agencies to work on a contract.* Base and All Options (Ceiling): The maximum amount that can be awarded to a contract as mutually agreed upon by the vendor and agency.
+
+
+
+Fiscal YearTotal Dollars ObligatedTotal Base & All Options (Ceiling)ID201067,000,822156,550,489201162,353,78445,204,018201260,604,49455,376,638200953,059,37340,668,778201350,132,31037,031,812200746,480,56755,636,827200838,979,67752,771,943201436,328,71138,245,353201616,478,593278,012,491201711,308,02326,011,64920155,511,796298,506,791
+
+By Date Signed
+
+
+
+Contract SearchContracts that Georgia Power Company signed from FY2007 onwards.Most RecentLargestMoreMost Recent
+
+ContractContract DescriptionProduct or Service (PSC)Signed DateCompletion DateAgencyDollars ObligatedPercent ObligatedIDVendor NameGS00P15BSD1134-HHSD2002017F94144ayrqarrycbfaazazuaswtxbType: Delivery Order (11 months):: PERIMETER POLE LIGHTINGElectric Services (S112)6/1/175/30/18Department of Health and Human Services$0 USD0% obligated of $0GS00P15BSD1134-HSFLGL17F00031Type: Delivery Order (1 month)CONNECT ELECTRICAL POWER SUPPLY FROM GEORGIA POWER DMD FABRIC STRUCTURE TVS2Electric Services (S112)3/20/174/20/17Department of Homeland Security$10,200 USD100% obligatedGS00P15BSD1134-HSFLGL17J00195Type: Delivery Order (4 weeks)ELECTRICITY SERVICES FOR THE FEDERAL LAW ENFORCEMENT TRAINING CENTER, GLYNCO, GA FOR BUILDING 147 TO UPGRADE THE TRANSFORMER AND RELOCATE THE SERVICE ENTRANCE.Electric Services (S112)3/16/174/15/17Department of Homeland Security$9,300 USD100% obligatedGS00P15BSD1134-W912HN17F0002Type: Delivery Order (1 month)- POWER DISTRIBUTION RAW WATER STORAGEElectric Services (S112)3/14/174/14/17Department of Defense$338,357 USD100% obligatedGS00P15BSD1134-W9127817F0007Type: Delivery Order (10 years)ELECTRIC UTILITY SERVICEElectric Services (S112)2/27/172/28/27Department of Defense$7,500 USD5% obligated of $160,800GS00P15BSD1134-N4008517F1111Type: Delivery Order (1 year)MCLB ALBANY TORNADO RECOVERY REPAIRSElectric Services (S112)2/23/173/31/18Department of Defense$6,000,000 USD28% obligated of $21.5MGS00P15BSD1134-HSFLGL17F00011Type: Delivery Order (4 weeks)ELECTRIC SERVICE, TSA MODULARS, FLETC, GLYNCO, GAElectric Services (S112)1/6/172/5/17Department of Homeland Security$54,998 USD100% obligatedGS00P15BSD1134-DJBP0307SP430002Type: Delivery Order (10 months)OTHER FUNCTIONS ELECTRICITY SERVICES FOR FCI/FSL/FPC JESUP, GEORGIA FOR OCTOBER 1, 2016 THROUGH SEPTEMBER 30, 2017.Electric Services (S112)11/9/169/30/17Department of Justice$1,161,640 USD100% obligatedGS00P06BSD0472-DJBP0301SP460016Type: Delivery Order (11 months)221122 - ELECTRICITY (UTILITY) FOR INSTITUTION.Electric Services (S112)10/22/169/30/17Department of Justice$1,389,000 USD100% obligatedGS00P06BSD0472-DJBP0301SP430017Type: Delivery Order (11 months)" 221122 - ELECTRICITY (UTILITY) FOR INSTITUTION.Electric Services (S112)10/22/169/30/17Department of Justice$175,000 USD100% obligated
+
+See all contracts for this vendor ›Largest
+
+ContractContract DescriptionProduct or Service (PSC)Signed DateCompletion DateAgencyDollars ObligatedPercent ObligatedIDVendor NameGS00P06BSD0472-W9124906F0207Type: Delivery Order (9 years)ELECTRICITY USAGE FOR NOVEMBER 2006Electric Services (S112)12/4/068/31/16Department of Defense$89,939,800 USD72% obligated of $125MW9124M08C0008Type: Definitive Contract (10 years)PROVIDE ELECTRICITY FOR MAIN POST HUNTER ARMY AIRFIED GAElectric Services (S112)3/27/0812/31/18Department of Defense$23,416,200 USD100% obligatedW911SF14V8503Type: Purchase Order (1 year)ELECTRIC POWER DISTRIBUTION FOR FORT BENNING, GA (GS-00P-06-BSD-0472) FOR THE PERIOD 1 SEP 13 THROUGH 30 SEP 14.  CAR IS ISSUED FOR REPORTING PURPOSES ONLY.Electric Services (S112)9/30/148/25/16Department of Defenseayrqarrycbfaazazuaswtxb$22,547,600 USD100% obligatedGS00P15BSD1134Type: Indefinite Delivery Contract (10 years)Electric Services (S112)12/16/1412/15/24General Services Administration$15,891,600 USD3% obligated of $572MW911SF12V8503Type: Purchase OrderELECTRICAL SERVICES FOR FORT BENNING FROM DECEMBER 2011 THRU 30 JUNE 2012.  CAR IS FOR REPORTING PURPOSES ONLY.Electric Services (S112)7/20/127/20/12Department of Defense$7,098,340 USD100% obligatedGS00P15BSD1134-GSP0416BV7093Type: Delivery Order (10 years)NEW AWARD FOR ELECTRIC SERVICELOCATED AT 355 E HANCOCK, AVE., ATHENS, GA 30601, GA0138ZZ, LOCATED AT 355 E HANCOCK AVE., ATHENS, GA 30601 GA0005ZZ, LOCATED AT 115 E. HANCOCK AVE, ATHENS, GA 30601, GA0009ZZ, LOCATED AT 500 FORD ST., AUGUSTA, GA 30901,GA0103ZZ, LOCATED AT 805 GLOUCESTER ST., BRUNSWICK GA 31520, GA0103ZZ, LOCATED AT 805 GLOUCESTER ST., BRUNSWICK, GA 31520 GA0025ZZ, LOCATED AT 12TH&2ND AVE, COLUMBUS, GA 31902 GA0036ZZ, LOCATED AT 100 N. FRANKLIN ST., DUBLIN, GA 31021, GA0057ZZ, LOCATED AT 475 MULBERRY ST., MACON, GA 31201, GA2637ZZ, LOCATED AT 1 WOODLAND DR. PLAINS, GA 31780, GA0076ZZ, LOCATED AT 1 E BAY ST., SAVANNAH, GA 31401, GA0077AC, LOCATED AT 100 W OLGETHROPE, SAVANNAH, GA 31401, GA0078ZZ, LOCATED AT 125 BULL ST., SAVANNAH, GA 31402, GA0114ZZ, LOCATED AT 52 N. MAIN ST., STATESBORO, GA 30458, GA0134ZZ, LOCATED AT 401 N. PATTERSON ST., AND VALDOSTA, GA 31601. EFFECTIVE DATES ARE 8/2/2016 THROUGH 8/1/2026.Electric Services (S112)8/1/169/1/26General Services Administration$6,481,780 USD10% obligated of $65.9MGS00P15BSD1134-N4008517F1111Type: Delivery Order (1 year)MCLB ALBANY TORNADO RECOVERY REPAIRSElectric Services (S112)2/23/173/31/18Department of Defense$6,000,000 USD28% obligated of $21.5MW911SF11V8503Type: Purchase OrderELECTRICAL SERVICE FOR FORT BENNING FOR SEPTEMBER, OCTOBER, NOVEMBER AND DECEMBER, 2010.  CAR REPORTING PURPOSES ONLY.Electric Services (S112)1/11/111/11/11Department of Defense$5,960,000 USD100% obligatedW911SF12V8504Type: Purchase OrderELECTRICAL SERVICES FOR FORT BENNING FROM 1 JUNE 2012 THRU 31 JULY 2012.  CAR IS FOR REPORTING PURPOSED ONLYElectric Services (S112)8/28/128/28/12Department of Defense$5,588,200 USD100% obligatedN6246703G1886-7A04Type: Delivery Order (16 years)UESC ECMS SOLAR AERATORS AND MTHWEngineering and Technical Services (R425)9/9/084/1/25Department of Defense$4,289,990 USD100% obligated
+
+See all contracts for this vendor ›Related VendorsVendors with the same primary NAICS and PSC categorizations.
+
+Title FieldTotal Dollars Obligated (Since FY2007)IDVendor NamePepco Holdings Llc in Washington, DC Contracts$1.55 billion USDKorea Electric Power Corporation in Naju, South Korea Contracts$310 million USDThe Southern Company in Atlanta, GA Contracts$775 million USDHawaiian Electric Company Inc in Honolulu, HI Contracts$197 million USDFirstenergy Corp. in Akron, OH Contracts$333 million USDKeenan Ft Detrick Energy Llc in Columbia, SC Contracts$153 million USDCity Light & Power, Inc. in Greenwood Village, CO Contracts$104 million USDSho-Me Power Electric Cooperative in Marshfield, MO Contracts$205 million USDDuke Energy Corporation in Charlotte, NC Contracts$249 million USDDominion Privatization Texas, Llc in Richmond, VA Contracts$14.9 million USD
+
+Help us Improve!
+
+
+
+
+Submit
+
+
+
+
+
+
+Submit
+
+ 
+
+
+
+
+
+Advertisement
+
+
+ShareCategories ProcuredWhen the Federal government intends to acquire goods or services, it identifies the NAICS code that describes the principal purpose of that procurement. NAICS is production oriented (not product oriented) and categorizes businesses with others that have similar methods of production.Since FY2007, Georgia Power Company has been engaged in procurements with the following NAICS codes:
+
+
+
+
+
+Category (NAICS)Total Dollars ObligatedIDElectric Power Distribution (221122)358,230,589Engineering Services (541330)5,649,988Regulation and Administration of Communications, Electric, Gas, and Other Utilities (926130)5,638,531Hydroelectric Power Generation (221111)2,782,385Fossil Fuel Electric Power Generation (221112)1,054,665Other Electric Power Generation (221119)490,295Other Electric Power Generation (221118)22,000Power, Distribution, and Specialty Transformer Manufacturing (335311)21,500Electric Bulk Power Transmission and Control (221121)6,500Water Supply and Irrigation Systems (221310)0
+
+DestinationThe dollars obligated to Georgia Power Company to fulfill procurements by NAICS category, along with the federal agencies that procured them. Hover over the visualization for more detail.
+
+
+
+
+
+Category (NAICS)Total Dollars ObligatedIDElectric Power Distribution (221122)316,986,667Electric Power Distribution (221122)12,437,217Electric Power Distribution (221122)11,333,835Electric Power Distribution (221122)6,540,123Electric Power Distribution (221122)6,025,361Engineering Services (541330)5,649,988Regulation and Administration of Communications, Electric, Gas, and Other Utilities (926130)5,640,271Hydroelectric Power Generation (221111)2,720,689Electric Power Distribution (221122)2,583,103Electric Power Distribution (221122)1,351,889Fossil Fuel Electric Power Generation (221112)1,054,665Electric Power Distribution (221122)768,352Other Electric Power Generation (221119)486,795Electric Power Distribution (221122)137,209Electric Power Distribution (221122)59,473Hydroelectric Power Generation (221111)39,696Other Electric Power Generation (221118)22,000Hydroelectric Power Generation (221111)22,000Power, Distribution, and Specialty Transformer Manufacturing (335311)21,500Electric Power Distribution (221122)7,360Electric Bulk Power Transmission and Control (221121)6,500Other Electric Power Generation (221119)3,500Electric Power Distribution (221122)0Water Supply and Irrigation Systems (221310)0Regulation and Administration of Communications, Electric, Gas, and Other Utilities (926130)-1,740
+
+Comparison
+
+
+
+Vendor NameDollars Obligated (Latest Year)IDIDColorGeorgia Power Company$16.5 million USDAll Electric Power Distribution (221122) Vendors in Georgia$7,628 USDAll Electric Power Distribution (221122) Vendors$25,000 USD
+
+
+
+
+Higher Than AverageThe principal NAICS category of Georgia Power Company is Electric Power Distribution (221122) as measured by the total amount obligated in contract awards to the vendor since FY2007.In its latest full year of contract work (FY2016), Georgia Power Company was obligated a total of $16.5M, an amount that was far higher than the average vendor from Georgia specializing in Electric Power Distribution and far higher than all vendors in the U.S. classified by this NAICS category.
+Other Electric Power Distribution Vendors in Georgia
+
+Vendor NameLocationDollars Obligated (Latest Year)Principal Category (NAICS)Principal Product or Service (PSC)Latest Fiscal YearIDStateThe Southern CompanyAtlanta, GA$41.9 million USDElectric Power Distribution (221122)Electric Services (S112)2016Flint Electric Membership CorporationReynolds, GA$9.14 million USDElectric Power Distribution (221122)Electric Services (S112)2016Canoochee Electric Membership CorporationReidsville, GA$8.91 million USDElectric Power Distribution (221122)Construction of Other Utilities (Y249)2016Entel-Audits, Inc.Martinez, GA$275,900 USDElectric Power Distribution (221122)Professional Services (R499)2016Diverse Power Incorporated, An Electric Membership CorporationLagrange, GA$260,000 USDElectric Power Distribution (221122)Electric Services (S112)2016Amicalola Electric Membership CorporationJasper, GA$86,100 USDElectric Power Distribution (221122)Electric Services (S112)2016Sawnee Electric Membership CorporationCumming, GA$83,853 USDElectric Power Distribution (221122)Electric Services (S112)2016City Of ThomasvilleThomasville, GA$71,820 USDElectric Power Distribution (221122)Electric Services (S112)2016Grady Electric Membership CorpCairo, GA$55,542 USDElectric Power Distribution (221122)Electric Services (S112)2016Andsmith Commercial, LlcElberton, GA$22,796 USDElectric Power Distribution (221122)Electric Services (S112)2014Allied Corrosion Industries, Inc.Marietta, GA$22,560 USDElectric Power Distribution (221122)Electrical and Electronic Properties Measuring and Testing Instruments (6625)2007Building Assessment Group IncWarner Robins, GA$8,155 USDElectric Power Distribution (221122)Maintenance, Repair and Rebuilding of Equipment: Electrical and Electronic Equipment Components (J059)2007Water Gas & Light CommissionAlbany, GA$8,000 USDElectric Power Distribution (221122)Electric Services (S112)2016Jefferson Energy CooperativeWrens, GA$7,256 USDElectric Power Distribution (221122)Electric Services (S112)2016Vinson Industrial Products, Inc.Buford, GA$7,120 USDElectric Power Distribution (221122)Miscellaneous Electric Power and Distribution Equipment (6150)2015Three Notch Electric Membership CorporationDonalsonville, GA$4,000 USDElectric Power Distribution (221122)Electric Services (S112)2016Tls Electrical Company, IncSmyrna, GA$1,375 USDElectric Power Distribution (221122)Electrical Hardware and Supplies (5975)2007The Carroll Electric Membership CorporationCarrollton, GA$1,075 USDElectric Power Distribution (221122)Electric Services (S112)2016Pgim, Inc.Atlanta, GA$909 USDElectric Power Distribution (221122)Lease/Rental of Office Buildings (X111)2012Coastal Electric Membership CorpMidway, GA$433 USDElectric Power Distribution (221122)Electric Services (S112)2014Satilla Rural Electric Membership CorporationAlma, GA$137 USDElectric Power Distribution (221122)Electric Services (S112)2010North Georgia Electric Membership Foundation, Inc.Dalton, GA$75 USDElectric Power Distribution (221122)Electric Services (S112)2011Pataula Electric Membership CorpCuthbert, GA-$76 USDElectric Power Distribution (221122)Utilities (C124)2013Cip Ii/Jos Centennial Tower LlcAtlanta, GA-$99 USDElectric Power Distribution (221122)Electric Services (S112)2015Board Of Lights And WaterMarietta, GA-$243 USDElectric Power Distribution (221122)Electric Services (S112)2010
+
+See all Electric Power Distribution (221122) Vendors in Georgia › 
+
+ 
+
+
+InsideGov is a government research site that uses Graphiq’s semantic technology to deliver deep insights via data-driven articles, visualizations and research tools.
+
+
+										Deep insights from government data. Knowledge delivered. ›
+									
+
+
+
+
+
+
+
+
+
+ShareProducts/Services ProcuredProduct Service Codes (PSC) describe products, services, and research and development (R&D) purchased by the federal government. These codes indicate what was bought for each contract action reported in the Federal Procurement Data System (FPDS).Since FY2007, Georgia Power Company has been engaged in procurements categorized by the following PSCs:
+
+
+
+
+
+Product or ServiceTotal Dollars ObligatedIDElectric Services (S112)431,599,149Engineering and Technical Services (R425)4,289,988Installation of Equipment: Lighting Fixtures and Lamps (N062)3,847,132Utilities (S119)2,710,209Facilities Operations Support Services (S216)1,360,000Maintenance, Repair or Alteration of Office Buildings (Z111)1,045,887Circuit Breakers (5925)863,977Construction of Other Utilities (Y249)649,905Maintenance, Repair and Rebuilding of Equipment: Electric Wire and Power and Distribution Equipment (J061)485,000Utilities (C124)484,171Energy Studies (B543)334,381Construction of Other Non-Building Facilities (Y299)128,848Energy - Basic Research (AG91)126,373Miscellaneous Electric Power and Distribution Equipment (6150)104,308Lease/Rental of Other Utilities (X249)68,980Inspection and Laboratory Services (Except Medical/Dental): Electric Wire and Power and Distribution Equipment (H361)43,750Electric Power Generation (EPG) (C123)31,323Transformers: Distribution and Power Station (6120)27,500Maintenance, Repair or Alteration of Hospitals and Infirmaries (Z141)18,346Cable, Cord and Wire Assemblies: Communication Equipment (5995)10,000Telephone and/or Communications Services (Includes Telegraph, Telex, and Cablevision Services) (S113)5,200Installation of Equipment: Electrical and Electronic Equipment Components (N059)3,723Maintenance, Repair and Rebuilding of Equipment: Miscellaneous (J099)0Water Services (S114)0
+
+DestinationThe dollars obligated to Georgia Power Company to fulfill procurements by PSC, along with the federal agencies that procured them. Hover over the visualization for more detail.
+
+
+
+
+
+Product or ServiceTotal Dollars ObligatedIDElectric Services (S112)387,179,492Electric Services (S112)13,852,304Electric Services (S112)8,479,823Electric Services (S112)7,152,322Electric Services (S112)6,514,027Electric Services (S112)6,025,361Engineering and Technical Services (R425)4,289,988Installation of Equipment: Lighting Fixtures and Lamps (N062)3,847,132Utilities (S119)1,743,415Electric Services (S112)1,493,467Facilities Operations Support Services (S216)1,360,000Maintenance, Repair or Alteration of Office Buildings (Z111)1,045,887Circuit Breakers (5925)863,977Electric Services (S112)837,260Utilities (S119)768,352Construction of Other Utilities (Y249)649,905Maintenance, Repair and Rebuilding of Equipment: Electric Wire and Power and Distribution Equipment (J061)485,000Utilities (C124)428,075Energy Studies (B543)334,381Construction of Other Non-Building Facilities (Y299)128,848Energy - Basic Research (AG91)126,373Utilities (S119)114,747Miscellaneous Electric Power and Distribution Equipment (6150)104,308Lease/Rental of Other Utilities (X249)68,980Electric Services (S112)59,473Utilities (S119)44,000Inspection and Laboratory Services (Except Medical/Dental): Electric Wire and Power and Distribution Equipment (H361)43,750Utilities (S119)39,696Electric Power Generation (EPG) (C123)31,323Transformers: Distribution and Power Station (6120)27,500Utilities (C124)26,096Utilities (C124)20,000Maintenance, Repair or Alteration of Hospitals and Infirmaries (Z141)18,346Utilities (C124)10,000Cable, Cord and Wire Assemblies: Communication Equipment (5995)10,000Electric Services (S112)7,360Telephone and/or Communications Services (Includes Telegraph, Telex, and Cablevision Services) (S113)5,200Installation of Equipment: Electrical and Electronic Equipment Components (N059)3,723Maintenance, Repair and Rebuilding of Equipment: Miscellaneous (J099)0Water Services (S114)0Electric Services (S112)-1,740
+
+Comparison
+
+
+
+Vendor NameDollars Obligated (Latest Year)IDIDColorGeorgia Power Company$16.5 million USDAll Electric Services (S112) Vendors in Georgia$22,796 USDAll Electric Services (S112) Vendors$18,700 USD
+
+
+
+
+Higher Than AverageThe principal Product or Service Code (PSC) of Georgia Power Company is Electric Services (S112) as measured by the total amount obligated in contract awards to the vendor since FY2007.In its latest full year of contract work (FY2016), Georgia Power Company was obligated a total of $16.5M, an amount that was far higher than the average vendor from Georgia specializing in Electric Services and far higher than all vendors in the U.S. classified by this PSC.
+Other Electric Services Vendors in Georgia
+
+Vendor NameLocationDollars Obligated (Latest Year)Principal Category (NAICS)Principal Product or Service (PSC)Latest Fiscal YearIDStateThe Southern CompanyAtlanta, GA$41.9 million USDElectric Power Distribution (221122)Electric Services (S112)2016Flint Electric Membership CorporationReynolds, GA$9.14 million USDElectric Power Distribution (221122)Electric Services (S112)2016Georgia Power Company (Inc)Atlanta, GA$1.14 million USDElectric Services (S112)2009Diverse Power Incorporated, An Electric Membership CorporationLagrange, GA$260,000 USDElectric Power Distribution (221122)Electric Services (S112)2016Crisp County Power Commission IncCordele, GA$194,640 USDHydroelectric Power Generation (221111)Electric Services (S112)2008Jackson Electric Membership CorporationJefferson, GA$88,632 USDOther Electric Power Generation (221119)Electric Services (S112)2016Amicalola Electric Membership CorporationJasper, GA$86,100 USDElectric Power Distribution (221122)Electric Services (S112)2016Sawnee Electric Membership CorporationCumming, GA$83,853 USDElectric Power Distribution (221122)Electric Services (S112)2016City Of ThomasvilleThomasville, GA$71,820 USDElectric Power Distribution (221122)Electric Services (S112)2016Grady Electric Membership CorpCairo, GA$55,542 USDElectric Power Distribution (221122)Electric Services (S112)2016Walton Monroe Investments LlcBishop, GA$39,224 USDElectrical Contractors (238210)Electric Services (S112)2016City Of WinderWinder, GA$29,880 USDFossil Fuel Electric Power Generation (221112)Electric Services (S112)2008Andsmith Commercial, LlcElberton, GA$22,796 USDElectric Power Distribution (221122)Electric Services (S112)2014Mitchell Electric Membership CorporationCamilla, GA$10,200 USDFossil Fuel Electric Power Generation (221112)Electric Services (S112)2011Water Gas & Light CommissionAlbany, GA$8,000 USDElectric Power Distribution (221122)Electric Services (S112)2016Jefferson Energy CooperativeWrens, GA$7,256 USDElectric Power Distribution (221122)Electric Services (S112)2016Three Notch Electric Membership CorporationDonalsonville, GA$4,000 USDElectric Power Distribution (221122)Electric Services (S112)2016The Carroll Electric Membership CorporationCarrollton, GA$1,075 USDElectric Power Distribution (221122)Electric Services (S112)2016Coastal Electric Membership CorpMidway, GA$433 USDElectric Power Distribution (221122)Electric Services (S112)2014Satilla Rural Electric Membership CorporationAlma, GA$137 USDElectric Power Distribution (221122)Electric Services (S112)2010North Georgia Electric Membership Foundation, Inc.Dalton, GA$75 USDElectric Power Distribution (221122)Electric Services (S112)2011Cip Ii/Jos Centennial Tower LlcAtlanta, GA-$99 USDElectric Power Distribution (221122)Electric Services (S112)2015Board Of Lights And WaterMarietta, GA-$243 USDElectric Power Distribution (221122)Electric Services (S112)2010Grove Street Partners, LlcAtlanta, GA-$650 USDElectric Power Distribution (221122)Electric Services (S112)2014Marietta Board Of Lights And WMarietta, GA-$2,556 USDElectric Power Distribution (221122)Electric Services (S112)2008
+
+See all Electric Services (S112) Vendors in Georgia › 
+
+
+
+
+
+Advertisement
+
+
+SharePlace of Performance
+The locations of the principal plant or place of business where Georgia Power Company in Atlanta, GA has had their items produced, supplied from stock, or services performed since FY2007.
+
+
+State
+
+
+
+
+
+
+Zipcodes
+
+
+									Zip Code 30032, GA, Zip Code 30518, GA, Zip Code 30909, GA, Zip Code 30680, GA, Zip Code 30120, GA,
+									…More
+
+Zip Code 30032, GA, Zip Code 30518, GA, Zip Code 30909, GA, Zip Code 30680, GA, Zip Code 30120, GA, Zip Code 30350, GA, Zip Code 30117, GA, Zip Code 30705, GA, Zip Code 30315, GA, Zip Code 30341, GA, Zip Code 30033, GA, Zip Code 30340, GA, and 31 more
+Congressional Districts
+
+
+									Georgia's 7th congressional district, Georgia's 5th congressional district, Maryland's 7th
+									…More
+
+Georgia's 7th congressional district, Georgia's 5th congressional district, Maryland's 7th congressional district, Georgia's 6th congressional district, Georgia's 4th congressional district, Georgia's 11th congressional district, Georgia's 13th congressional district, Florida's 5th congressional district, Georgia's 1st congressional district, Georgia's 10th congressional district, Florida's 2nd congressional district, Georgia's 9th congressional district, and 7 more
+StatesFlorida, Georgia, Maryland, Alabama, and South Carolina
+ 
+
+ 
+
+
+
+
+
+
+
+ShareVendor DetailsVisit the full company profile of Georgia Power Companyayrqarrycbfaazazuaswtxb.
+
+CEO
+Mr.. James H Miller III
+
+
+Location
+Atlanta, GA
+
+
+Year Founded
+1930
+
+
+Industry
+Electric Power Generation Companies
+
+
+Total Employees
+5,001-10,000
+
+
+Sales Volume
+$1B-10B
+ 
+
+
+
+
+
+Advertisement
+
+
+
+
+
+×
+
+
+
+
+
+
+References
+
+
+
+
+Sources: USASpending.gov, Rob J Hyndman, D&B, and Localeze. Show details  Hide details  
+
+
+
+
+
+
+
+Was this page helpful?
+
+Yes
+No
+
+
+ 
+
+BlkHol Email
+
+
+Welcome to 
+Hi! We see you would like to submit a rating. Please login or create an account to do so. Thank you!
+
+
+Sign In With
+
+
+
+
+Login with Google
+
+
+
+
+Login with Facebook
+ We'll never post without your permission.
+
+
+
+Don't have an account?
+Sign Up Now
+
+
+
+
+Privacy
+Terms & Conditions
+
+
+
+
+
+
+
+
+
+						© 2017 Graphiq Inc. All Rights Reserved.
+						
+Support
+Terms
+Privacy
+Ad Choices and Cookie Policy
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Home | Energy saving tips, paperless billing, outdoor lighting, EnergyDirect and property management tools and SelectGeorgia business relocation help. | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+                 | 
+                
+Register
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+For My Home
+For My Business
+Power Outages
+
+
+Collapse Menu
+My Alerts
+Pay Bill
+My Power Usage
+Report An Outage
+Office Locations
+Log Out
+
+
+
+Collapse Menu
+Pay Bill
+Turn On/Off Power
+Rebates
+Payment Options
+Pricing & Rates
+Energy-Saving Tips
+
+
+
+Collapse Menu
+
+Save Money & Energy
+Products & Programs
+Pricing & Rates
+Payment Options
+
+
+
+Collapse Menu
+Report an Outage
+Outage & Storm Center
+View Outage Map
+Set Outage Alerts
+Check Outage Status
+Storm Safety
+
+
+
+
+
+
+
+
+Connect With Us
+
+
+
+
+
+
+
+
+
+Recommended for You
+Popular topics and the latest news from Georgia Power.
+
+
+SurgeDefender™ Protection
+For just $9.95 per month, we can help protect major appliances in your home.
+Enroll Today
+
+
+Want to support Solar?
+Support solar energy by enrolling in Simple Solar. Solar panels are not required.
+Learn More
+
+
+Avoid changes in your bill with FlatBill®
+Have you been our customer for at least a year? Keep your bill the same each month with FlatBill.
+Learn More
+
+
+A Smarter Way to Save Energy
+Take control of your energy bill with our Smart Usage rate.
+Learn More
+
+
+
+
+
+
+
+Ways to Save
+Simple ideas to help you save time, money and energy.
+
+
+
+
+Time for a Check-up
+
+
+Online Energy Audit
+Use our easy online energy audit to learn more about your energy usage habits and how to save!
+Start Now
+
+
+
+
+
+Get up to $450
+
+
+Heat Pump
+Switch now to an energy- efficient heat pump.
+Learn More
+
+
+
+
+
+Cool Gadgets at Marketplace
+
+
+Save Big
+From programmable thermostats to water-efficient showerheads, take a look at the many ways you can reduce energy consumption in your home or business.
+Shop Now
+
+
+
+
+
+
+
+
+Knowledge Is Power
+Put our programs and services to work for you.
+
+
+
+
+Helping Senior Citizens Save Money and Energy
+Georgia Power wants to help you understand what you can do to save money and energy by offering information based on your needs.
+Learn more about Energy-Saving Tips and the options available to you.
+Download PDF
+
+
+
+
+
+
+One Step Ahead
+
+
+Outage & Storm Center
+At the Georgia Power Storm Center, we're ready to respond and get the lights back on.
+Watch Video
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Energy Expert®
+We help make your home or business more energy-efficient.
+
+
+
+
+Danielle & Peter Smith Athens, GA
+They are newlyweds expecting their first child. With their bundle of joy arriving in a few months, they are preparing themselves and their home for the changes ahead. With Georgia Power's help, they want to find the best programs and budget for their growing family.
+
+
+
+
+Goals
+
+
+
+Look at the different rates that are currently available.
+Set up an in-home energy audit with a Georgia Power energy specialist.
+Manage their account and energy usage in order to stay on budget.
+
+
+
+
+
+Methods
+
+
+
+Visits georgiapower.com and reviews the different rate plans.
+Goes to georgiapower.com and signs up for an in-home energy audit.
+Registers with My Power Usage in order to monitor their account.
+
+
+
+
+
+Results
+
+
+
+Discovers the Flat Bill plan is the right plan for their growing family.
+Finds out the areas in their home where they need to make some energy efficiency upgrades.
+Stay on top of their monthly power usage as well as how much they spend so they can stay on budget.
+
+
+
+
+
+
+Georgia Power Marketplace
+
+
+Save Money and Energy Today
+Make your home more efficient with LED lightbulbs.
+Shop Now
+
+
+
+
+
+
+
+
+Latest News and Updates from Georgia Power
+See how we're doing our part to help secure America's energy future.
+
+
+Driving electric more convenient than ever in 2017
+Dozens of new public charging stations now in place across the state.
+Read More
+
+
+Vogtle 3 & 4 Progress Update
+Georgia Power's 16th Vogtle Construction Monitoring (VCM) Report highlights progress at nuclear expansion in the second half of 2016.
+Read the Report
+
+
+Georgia Power Simple Solar now available
+Learn more about our newest voluntary option for Georgians who want to support solar energy.
+Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bill Payment Assistance | For My Home | Georgia Power
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ | Register
+
+
+
+
+
+
+
+
+
+
+
+
+
+For My Home
+For My Business
+Our Community
+Environment
+Energy
+About Us
+Contact
+
+
+
+
+
+
+
+
+
+
+
+ Shop Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Account Login
+Pay Bill
+Register
+Turn On/Off Power
+Report/Check an Outage
+
+
+
+For My Home
+Managing Your Account
+Understanding Your Bill
+Billing Options
+Payment Options
+Pricing & Rates
+Products & Programs
+Save Money & Energy
+Rebate Center
+Power Safety
+
+
+Specialty Links
+
+New Construction
+Property Managers
+Residential Tariffs
+Electric Vehicles
+
+
+
+Have Questions? We're Here to Help
+
+Chakoa, Customer Service Team Lead
+Have a question, or can't find what you're looking for? Our service specialists can help.
+1-888-660-5890 24 hours a day, 7 days a week
+Email Us
+
+
+
+
+
+Bill Payment Assistance
+
+Georgia Power understands that sometimes you need a helping hand. For those times when you need help paying your bill, we have payment arrangements to help keep your power on and maintain your credit.
+Learn how you can benefit from payment arrangements, and learn more about agencies that offer assistance. Your payment assistance options include:
+
+Payment Arrangements
+If you are experiencing financial hardship, it may be possible to extend your payment date beyond the current due date. Log in to see if you are eligible to make an arrangement.
+
+To log in, you will need your:
+Account Number
+Account Access Code
+
+
+
+
+Agency Assistance
+
+United Way provides information about agencies who may be able to offer assistance. For more information:
+
+Visit United Way's Utility Assistance website
+Call your local 2-1-1
+
+
+
+
+
+
+
+Residential Rate Advisor
+
+
+
+
+We need to make sure this is the right advisor for you. Is this a residential property that is for personal use rather than business use?
+
+
+
+
+
+
+
+Yes
+
+
+
+No
+
+
+*Rate advisor is only intended to assist your decision making process. You should check all rates and cross reference your energy use with recommended rate schedules before committing to a rate. Your choice is important because you
+					must stay on the chosen or assigned rate for at least 12 months.
+
+
+ 
+To get advice on business rates, please visit the business section of our site. Where do you want to go?
+Return to Residential
+Go to Business Rates
+
+
+
+
+
+
+Have you been in your home for more than 12 months?
+
+Yes
+
+No
+
+
+
+
+
+
+Are you willing to shift when you use electricity away from peak demand times in order to reduce your bill?
+Yes
+No
+
+
+
+
+
+Are you willing to monitor and limit the use of multiple appliances at the same time?
+Yes
+No
+
+
+
+
+
+How important is consistency in your bill?
+Very Important
+Less Important
+
+
+
+
+
+How important are renewable Energy sources to you?
+Very Important
+Less Important
+
+
+
+
+
+Budget Bill
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A rate that is designed to encourage customers to use less electricity during on-peak hours and shift that usage to off-peak periods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Standard Service: The basic rate plan. This plan is ideal for customers who are comfortable with fluctuations in their monthly electric bill.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+With FlatBill there are no surprises because your bill is the same month after month for the entire year.
+
+
+
+
+
+
+
+
+
+For customers who can avoid the use of major appliances at the same time.
+
+
+
+
+
+Learn More
+Learn More
+Learn More
+Learn More
+Learn More
+
+
+
+
+
+
+
+
+Previous
+NEXT
+Next
+
+
+
+
+
+
+
+Budget Bill
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+Not Available
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Power Credit
+Shift the time when power is used by your home's air conditioner and get a $20 credit.
+
+
+
+Authorized Payment Locations 
+We've added more than 4,000 convenient payment locations. You can pay when you shop at retailers such as Kroger, Walmart, Publix and Kmart.
+
+
+
+Rate Advisor
+Find out which rate is right for you with our interactive rate advisor!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

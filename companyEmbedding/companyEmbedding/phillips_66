@@ -1,0 +1,15458 @@
+
+Security Check Required
+
+
+
+
+FacebookJoin or Log Into Facebook   Email or PhonePasswordForgot account?Log InDo you want to join Facebook?Sign UpSign UpSecurity CheckPlease enter the text belowCan't read the text above?Try another text or an audio captchaText in the box:What's this?Security CheckThis is a standard security test that we use to prevent spammers from creating fake accounts and spamming users.SubmitEnglish (US)EspañolFrançais (France)中文(简体)العربيةPortuguês (Brasil)Italiano한국어Deutschहिन्दी日本語MessengerFacebook LitePeoplePlacesGamesLocationsCelebritiesMarketplaceGroupsRecipesMomentsInstagramAboutCreate AdCreate PageDevelopersCareersPrivacyCookiesAd ChoicesTermsSettingsActivity Log Facebook © 2017
+
+
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+	
+	Products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: Products
+
+
+
+
+
+
+
+
+
+		  >
+             
+
+
+
+
+
+Solvents > English > Products
+Printer Friendly
+
+
+
+
+
+
+Solvents HomeAbout SolventsProductsPentanesHexanesHeptanesIsoparaffinsHealth, Safety, & EnvironmentTerms and ConditionsLogistics & DistributionPackage TypeMarine ProvisionsInternet LinksTeam MembersContact Us
+
+
+
+
+
+
+
+
+
+
+
+							Products
+Page Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SPECIALTY SOLVENTS PRODUCTS
+
+
+
+
+Pentanes
+
+
+
+Hexanes
+
+
+
+Heptanes
+
+
+
+Isoparaffins
+
+
+
+  
+
+
+
+
+
+
+Product Typicals 
+
+
+
+Quality Program    
+
+
+
+
+
+ 
+
+If you are having trouble viewing these documents, please disable your pop-up blocker or accept pop-ups from this web site.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Acrobat Reader
+
+Some of these documents are in Acrobat PDF format. If you do not have Adobe Acrobat you can download that here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        © Phillips 66 Company. All rights reserved.
+                        
+                        Legal Terms and 
+                        Privacy Statement. | Contact
+                        Us | 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+	
+	Products and Services for Consumers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: Consumer
+
+
+
+
+
+
+
+About
+
+
+ 
+
+Phillips 66 brings with it a proud and successful heritage, one developed and enriched by our predecessor companies throughout more than a century of operations.read more >>
+Company Overview
+Our Businesses
+Our History
+Board of Directors
+Executive Leadership Team
+Publications
+Sustainability
+
+
+ 
+
+At Phillips 66, we are committed to safety and we conduct our business with care for the environment and engagement with communities where we operate.read more >>
+Our Approach
+Operational
+Economic
+Social
+Environmental
+Our Performance
+Investors
+
+
+ 
+
+Welcome to the Phillips 66 Investors site. This site is designed to give institutional and individual investors 24-hour access to relevant financial and operating information about our company.read more >>
+Events &Presentations
+Shareholder Services
+Governance
+Stock Information
+Financial &Operating Information
+FAQs
+Newsroom
+
+
+ 
+
+Welcome to the Phillips 66 Newsroom. This site is designed to give media professionals 24-hour access to relevant information about our company.read more >>
+News Releases
+Image Gallery
+Request a Logo
+Media Contact Form
+Operations Center
+Careers
+
+
+ 
+
+Our talented, motivated employees afford our company the drive and diversity of thought needed to compete and win in the future.read more >>
+Phillips 66 Careers
+University Recruitment
+Products & Services
+
+
+ 
+
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions.read more >>
+Consumer
+Businesses
+Accounts PayableVendor Relations
+Real Estate
+SDS
+Unclaimed Property
+Interest Owners
+Contact Us
+
+
+
+
+
+
+
+
+Phillips66 > English > Products and Services > Consumer
+Printer Friendly
+
+
+
+
+
+
+BusinessesAccounts Payable Vendor RelationsReal EstateSDSConsumerBrands - InternationalBrands - U.S.LubricantsInterest Owners
+
+
+
+
+
+
+
+
+
+
+
+							Products and Services for Consumers
+Page Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66 offers numerous products and services designed specifically for the consumer. The company markets fuels in the U.S. and Europe, primarily under the brands Phillips 66,® Conoco,® 76,® and JET.® In addition to branded fuels, Phillips 66 also offers consumers a variety of high-quality lubricants, including 76 Lubricants, Conoco Lubricants, Phillips 66 Lubricants, and Kendall Motor Oil. The lubricants are supplied from the company’s five proprietary blending facilities to all 50 U.S states and more than 50 countries. Learn about the company’s global products and services for consumers by selecting from the categories below: 
+
+Brands – International
+Brands – U.S. 
+Lubricants
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© Phillips 66 Company. All rights reserved. 
+                  Terms and Conditions and 
+                  Privacy Statement (UPDATED). 
+                  
+
+California Transparency in Supply Chains Disclosure.
+ | 
+                  Contact Us
+
+
+
+
+
+
+
+
+
+	
+	Products and Services for Businesses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: Businesses
+
+
+
+
+
+
+
+About
+
+
+ 
+
+Phillips 66 brings with it a proud and successful heritage, one developed and enriched by our predecessor companies throughout more than a century of operations.read more >>
+Company Overview
+Our Businesses
+Our History
+Board of Directors
+Executive Leadership Team
+Publications
+Sustainability
+
+
+ 
+
+At Phillips 66, we are committed to safety and we conduct our business with care for the environment and engagement with communities where we operate.read more >>
+Our Approach
+Operational
+Economic
+Social
+Environmental
+Our Performance
+Investors
+
+
+ 
+
+Welcome to the Phillips 66 Investors site. This site is designed to give institutional and individual investors 24-hour access to relevant financial and operating information about our company.read more >>
+Events &Presentations
+Shareholder Services
+Governance
+Stock Information
+Financial &Operating Information
+FAQs
+Newsroom
+
+
+ 
+
+Welcome to the Phillips 66 Newsroom. This site is designed to give media professionals 24-hour access to relevant information about our company.read more >>
+News Releases
+Image Gallery
+Request a Logo
+Media Contact Form
+Operations Center
+Careers
+
+
+ 
+
+Our talented, motivated employees afford our company the drive and diversity of thought needed to compete and win in the future.read more >>
+Phillips 66 Careers
+University Recruitment
+Products & Services
+
+
+ 
+
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions.read more >>
+Consumer
+Businesses
+Accounts PayableVendor Relations
+Real Estate
+SDS
+Unclaimed Property
+Interest Owners
+Contact Us
+
+
+
+
+
+
+
+
+Phillips66 > English > Products and Services > Businesses
+Printer Friendly
+
+
+
+
+
+
+BusinessesAsphaltAviationChemicals and PlasticsCrude OilFuelsLubricantsMidstreamPetroleum Fuel CokeSpecialty ProductsAccounts Payable Vendor RelationsReal EstateSDSConsumerInterest Owners
+
+
+
+
+
+
+
+
+
+
+
+							Products and Services for Businesses
+Page Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66 provides businesses worldwide with superior and reliable products and services. The company’s fuels, lubricants, specialty products and chemicals support commercial, industrial and retail operations globally and allow businesses to focus on their core strengths. 
+
+Businesses can optimize their processes by using the company’s specialty products or solutions. Phillips 66 Specialty Products Inc., a wholly owned subsidiary of Phillips 66, is the global leader in the science of drag reduction and specializes in maximizing the flow potential of pipelines. 
+
+As one of the company’s many services, Phillips 66 Pipe Line Company operates more than 11,000 pipelines and 60 storage terminals in the United States and transports both raw and finished petroleum products. 
+
+Learn about the company’s products and services by selecting from the categories below: 
+
+
+
+
+Asphalt 
+
+Aviation
+
+Chemicals and Plastics 
+
+Crude Oil  
+
+Fuels 
+
+Lubricants
+
+Midstream
+
+Petroleum Fuel Coke 
+
+Specialty Products 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© Phillips 66 Company. All rights reserved. 
+                  Terms and Conditions and 
+                  Privacy Statement (UPDATED). 
+                  
+
+California Transparency in Supply Chains Disclosure.
+ | 
+                  Contact Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66 (@Phillips66Co) | Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+Home
+Home
+Home, current page.
+
+
+
+
+
+
+Moments
+Moments
+Moments, current page.
+
+
+
+
+
+
+Search query
+
+
+
+Search Twitter
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Language: English 
+
+
+
+ 
+
+
+
+Bahasa Indonesia
+Bahasa Melayu
+Català
+Čeština
+Dansk
+Deutsch
+English UK
+Español
+Filipino
+Français
+Hrvatski
+Italiano
+Magyar
+Nederlands
+Norsk
+Polski
+Português
+Română
+Slovenčina
+Suomi
+Svenska
+Tiếng Việt
+Türkçe
+Ελληνικά
+Български език
+Русский
+Српски
+Українська мова
+עִבְרִית
+العربية
+فارسی
+मराठी
+हिन्दी
+বাংলা
+ગુજરાતી
+தமிழ்
+ಕನ್ನಡ
+ภาษาไทย
+한국어
+日本語
+简体中文
+繁體中文
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Have an account?  Log in
+
+
+   
+
+Have an account?
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+New to Twitter?
+Sign up
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Phillips 66Verified account
+
+
+
+@Phillips66Co
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+Tweets, current page.
+783
+            
+
+
+
+Following
+Following
+96
+
+
+
+Followers
+Followers
+7,142
+
+
+
+Likes
+Likes
+299
+
+ 
+ 
+More 
+
+
+
+
+
+
+
+Likes
+
+
+
+
+
+
+Unmute @Phillips66Co
+
+Mute @Phillips66Co
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66Verified account
+
+
+
+@Phillips66Co
+
+
+Official Twitter account of Phillips 66.
+
+
+
+            Houston, Texas
+
+      
+
+
+
+ 
+    phillips66.com
+  
+
+
+
+
+Joined November 2011
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                223 Photos and videos
+            
+
+            Photos and videos
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+
+
+Tweets
+Tweets, current page.
+
+
+
+                  Tweets & replies
+                
+
+
+
+                  Media
+                
+
+
+
+
+
+You blocked @Phillips66Co
+Are you sure you want to view these Tweets? Viewing Tweets won't unblock @Phillips66Co
+Yes, view profile
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Phillips 66 followed
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+Jul 19
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+For Bonnie Burks, fighting cancer is personal. That’s why she leads her local @RelayForLife team.pic.twitter.com/gpYZQEqIBV
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+Jul 4
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Happy Birthday, America. #4thofJulypic.twitter.com/7LLURYQOhb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+6 retweets
+
+
+
+
+18 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+6
+
+
+
+
+Retweeted
+
+
+6
+
+
+
+
+
+
+
+
+Like
+
+
+18
+
+
+
+
+
+Liked
+
+
+18
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Phillips 66 Retweeted
+            
+
+
+
+
+
+
+
+USA Swimming‏Verified account @USASwimming
+
+Jun 29
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Tonight @Phillips66Co is helping us celebrate the @SwimFoundation with free bubbles, t-shirt and a bonus $10 gas card!  #Phillips66Natspic.twitter.com/UTJ2JHtQ89 – at IUPUI:  The IU Natatorium (The Nat) (PE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USA Swim Foundation and
+    Phillips 66
+
+
+
+
+
+
+0 replies
+
+
+
+
+8 retweets
+
+
+
+
+35 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+8
+
+
+
+
+Retweeted
+
+
+8
+
+
+
+
+
+
+
+
+Like
+
+
+35
+
+
+
+
+
+Liked
+
+
+35
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+Jun 28
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Demonstrating our commitment to the environment, the Phillips 66 Los Angeles Refinery has reduced their emissions by 95 percent. #airqualitypic.twitter.com/uKNlRXkHlh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+7 retweets
+
+
+
+
+24 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+7
+
+
+
+
+Retweeted
+
+
+7
+
+
+
+
+
+
+
+
+Like
+
+
+24
+
+
+
+
+
+Liked
+
+
+24
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Phillips 66 Retweeted
+            
+
+
+
+
+
+
+
+USA Swimming‏Verified account @USASwimming
+
+Jun 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+BONUS: @Phillips66Co is giving $10 gas cards every night at #Phillips66Nats! pic.twitter.com/X6cLwjibCM – at IUPUI:  The IU Natatorium (The Nat) (PE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66
+
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+20 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+20
+
+
+
+
+
+Liked
+
+
+20
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+Jun 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Meet another member of our uniquely diverse Phillips 66 family!
+#greatplacetowork #greatemployees #ProvidingEnergy #ImprovingLivespic.twitter.com/5DbzLgmH21
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+4 retweets
+
+
+
+
+6 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+6
+
+
+
+
+
+Liked
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+Jun 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We'll be at tonight's Houston #Pride Parade® in support of the local LGBT community. #greatplacetoworkpic.twitter.com/Ajq1EtGwQT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+10 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+10
+
+
+
+
+
+Liked
+
+
+10
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+Jun 20
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Kudos to our @AFPMOnline Elite Silver Safety Award-winning refineries: Bayway, Billings, San Francisco Rodeo & Santa Maria plants, Sweeny.pic.twitter.com/wXegvJ0I0c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+Jun 6
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Safety is one of our core values. It's a great honor for our Lake Charles Manufacturing Complex to win the @AFPM Distinguished Safety Award.pic.twitter.com/85yNjXfN9H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+11 retweets
+
+
+
+
+23 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+11
+
+
+
+
+Retweeted
+
+
+11
+
+
+
+
+
+
+
+
+Like
+
+
+23
+
+
+
+
+
+Liked
+
+
+23
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+Jun 3
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+We'll be at tonight's Tulsa #PRIDE parade in support of the local LGBT community. #greatplacetoworkpic.twitter.com/nYxbJduPxc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+6 retweets
+
+
+
+
+18 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+6
+
+
+
+
+Retweeted
+
+
+6
+
+
+
+
+
+
+
+
+Like
+
+
+18
+
+
+
+
+
+Liked
+
+
+18
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+Jun 1
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+New pipeline is in service transporting U.S. crude from the Bakken/Three Forks area in North Dakota. http://phillips66.ly/60108YeGA 
+
+
+
+
+
+0 replies
+
+
+
+
+8 retweets
+
+
+
+
+12 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+8
+
+
+
+
+Retweeted
+
+
+8
+
+
+
+
+
+
+
+
+Like
+
+
+12
+
+
+
+
+
+Liked
+
+
+12
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+May 29
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+This Memorial Day, take time to honor the men and women who gave all to protect our country.pic.twitter.com/npCmKVluEr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+May 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Our #organicsolar cells hold the world record in organic solar cell conversion efficiency. Where will this new tech take us? #renewablespic.twitter.com/2tQNc8IZOX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+4 retweets
+
+
+
+
+10 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+10
+
+
+
+
+
+Liked
+
+
+10
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+May 17
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Join us Saturday for the 9th Annual Walk of Honor for Our Veterans in Crockett, California. http://phillips66.ly/601889hCm pic.twitter.com/ECVdUxENsT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+8 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+8
+
+
+
+
+
+Liked
+
+
+8
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Phillips 66 Retweeted
+            
+
+
+
+
+
+
+
+USA Swim Foundation‏ @SwimFoundation
+
+May 12
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+A sea of learn-to-swim promises from parents & children that will forever change their lives. #MakeASplashHouston by @Phillips66Co!pic.twitter.com/NiF9qZDXQD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USA Swim Foundation and
+    Phillips 66
+
+
+
+
+
+
+0 replies
+
+
+
+
+11 retweets
+
+
+
+
+34 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+11
+
+
+
+
+Retweeted
+
+
+11
+
+
+
+
+
+
+
+
+Like
+
+
+34
+
+
+
+
+
+Liked
+
+
+34
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+May 12
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+Phillips 66 Retweeted Sylvester Turner
+
+We’re committed to @SwimFoundation and its efforts to teach kids to swim. Thanks, Mayor Turner.https://twitter.com/SylvesterTurner/status/863050818454532096 …
+
+Phillips 66 added,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sylvester TurnerVerified account @SylvesterTurner
+
+Drownings are preventable. We can teach any child to swim. Thanks @Phillips66Co,USA @SwimFoundation for raising awareness  pic.twitter.com/1SFRSdj8V2
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+May 10
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+As we celebrate our 5th birthday this month, hear what makes our employees proud to be part of Phillips 66. #ProvidingEnergyImprovingLivespic.twitter.com/UePT2y0rff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+9 retweets
+
+
+
+
+14 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+9
+
+
+
+
+Retweeted
+
+
+9
+
+
+
+
+
+
+
+
+Like
+
+
+14
+
+
+
+
+
+Liked
+
+
+14
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+May 9
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+Our #solar cells are made in an environmentally friendly manner for use as wearable electronics and on windows and rooftops. #renewablespic.twitter.com/YCoUoUlOeI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+10 retweets
+
+
+
+
+9 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+10
+
+
+
+
+Retweeted
+
+
+10
+
+
+
+
+
+
+
+
+Like
+
+
+9
+
+
+
+
+
+Liked
+
+
+9
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+May 3
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Phillips 66 ($PSX) announces increase in quarterly dividend: http://phillips66.ly/601085fFY pic.twitter.com/XfA8AKTFLf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+6 retweets
+
+
+
+
+9 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+6
+
+
+
+
+Retweeted
+
+
+6
+
+
+
+
+
+
+
+
+Like
+
+
+9
+
+
+
+
+
+Liked
+
+
+9
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66‏Verified account @Phillips66Co
+
+May 2
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+All forms of #energy are needed for the future. See what we’re doing to develop organic #solar cells for affordable #renewable energy.pic.twitter.com/LPWiuL6ODW
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+13 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+13
+
+
+
+
+
+Liked
+
+
+13
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+          @Phillips66Co hasn't Tweeted yet.
+      
+Back to top ↑
+
+
+
+
+
+
+
+
+
+
+
+
+Loading seems to be taking a while.
+
+      Twitter may be over capacity or experiencing a momentary hiccup. Try again or visit Twitter Status for more information.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      New to Twitter?
+    
+
+
+    Sign up now to get your own personalized timeline!
+  
+
+Sign up
+
+
+
+
+You may also like
+    ·
+    Refresh
+
+
+
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Twitter
+About
+Help Center
+Terms
+Privacy policy
+Cookies
+Ads info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Choose a trend location
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dismiss
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+            Previous
+          
+
+
+
+
+
+
+
+            Next
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Go to a person's profile
+
+
+
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Promote this Tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Block
+
+
+
+
+
+
+Cancel
+Block
+
+
+
+
+
+
+
+
+
+
+
+
+Add a location to your Tweets
+
+        When you tweet with a location, Twitter stores that location. 
+        You can switch location on/off before each Tweet and always have the option to delete your location history.
+        Learn more
+
+
+Turn location on
+Not now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Share Location
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Results from 
+
+
+
+Send
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Your lists
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Create a new list
+
+
+
+
+List name
+
+
+
+
+Description
+
+Under 100 characters, optional
+
+
+
+Privacy
+
+
+
+Public · Anyone can follow this list
+      
+
+
+Private · Only you can access this list
+      
+
+
+
+
+Save list
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Copy link to Tweet
+
+
+
+
+Here's the URL for this Tweet. Copy it to easily share with friends.
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Embed this Tweet
+Embed this Video
+
+
+
+Add this Tweet to your website by copying the code below. Learn more
+Add this video to your website by copying the code below. Learn more
+
+
+
+
+Hmm, there was a problem reaching the server. Try again?
+
+
+
+
+
+
+            Include parent Tweet
+          
+
+
+
+
+            Include media
+          
+
+
+
+
+By embedding Twitter content in your website or app, you are agreeing to the Twitter Developer Agreement and Developer Policy.
+Preview
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Why you're seeing this ad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Log in to Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+
+        Don't have an account? Sign up »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Sign up for Twitter
+
+
+
+
+
+Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.
+
+
+Sign up
+
+
+
+
+        Have an account? Log in »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Two-way (sending and receiving) short codes:
+
+
+
+
+
+Country
+Code
+For customers of
+
+
+
+
+United States
+40404
+(any)
+
+
+Canada
+21212
+(any)
+
+
+United Kingdom
+86444
+Vodafone, Orange, 3, O2
+
+
+Brazil
+40404
+Nextel, TIM
+
+
+Haiti
+40404
+Digicel, Voila
+
+
+Ireland
+51210
+Vodafone, O2
+
+
+India
+53000
+Bharti Airtel, Videocon, Reliance
+
+
+Indonesia
+89887
+AXIS, 3, Telkomsel, Indosat, XL Axiata
+
+
+Italy
+4880804
+Wind
+
+
+3424486444
+Vodafone
+
+
+
+
+
+        » See SMS short codes for other countries
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Confirmation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Skip all
+          
+
+
+
+
+    Welcome home!
+  
+This timeline is where you’ll spend most of your time, getting instant updates about what matters to you.
+
+
+
+
+    Tweets not working for you?
+  
+
+    Hover over the profile pic and click the Following button to unfollow any account.
+  
+
+
+
+
+    Say a lot with a little
+  
+
+    When you see a Tweet you love, tap the heart — it lets  the person who wrote it know you shared the love.
+  
+
+
+
+
+    Spread the word
+  
+
+    The fastest way to share someone else’s Tweet with your followers is with a Retweet. Tap the icon to send it instantly.
+  
+
+
+
+
+    Join the conversation
+  
+
+    Add your thoughts about any Tweet with a Reply. Find a topic you’re passionate about, and jump right in.
+  
+
+
+
+
+    Learn the latest
+  
+
+    Get instant insight into what people are talking about now.
+  
+
+
+
+
+    Get more of what you love
+  
+
+    Follow more accounts to get instant updates about topics you care about.
+  
+
+
+
+
+    Find what's happening
+  
+
+    See the latest conversations about any topic instantly.
+  
+
+
+
+
+    Never miss a Moment
+  
+
+    Catch up instantly on the best stories happening as they unfold.
+  
+
+
+
+Back
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next Tweet from user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+	
+	Products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: Products
+
+
+
+
+
+
+EnglishStandard Lead Time
+
+
+		  >
+             
+
+
+
+
+
+
+
+
+
+EnglishBase Oils HomePoliciesProductsGroup II Base OilsGroup III Base OilsLogisticsSafety Data SheetsTechnical & Regulatory InformationLoading RequirementsStandard Lead TimeContact Us
+
+
+
+
+
+
+
+Page Content
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Phillips 66 offers exceptionally pure Group II and Group III base oils, a complete solution to meet all of your formulation needs. 
+
+
+
+Pure Performance® Group II
+
+Refined by an advanced hydrocracking and catalytic dewaxing process in our state-of-the-art manufacturing facility, these base oils are highly saturated and free of impurities. 
+
+ 
+Ultra-S® Group III
+
+Produced using an advanced hydrocracking and hydroisomerization process, these base oils are fully saturated and extremely pure, with very low volatility and a high viscosity index.
+
+
+Service and support
+
+We ship our base oils by truck, rail, barge and vessel, offering our customers access to an extensive and reliable transportation network. Seasoned professionals manage your order every step of the way. Need technical support? Our lubrication scientists are ready whenever the need arises. 
+
+Call 800.527.3236 or 888.877.3170 today for complete information.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        © Phillips 66 Company. All rights reserved.
+                        
+                        Legal Terms and 
+                        Privacy Statement. | Contact
+                        Us | 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+	
+	California
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: California
+
+
+
+
+
+
+
+About
+
+
+ 
+
+Phillips 66 brings with it a proud and successful heritage, one developed and enriched by our predecessor companies throughout more than a century of operations.read more >>
+Company Overview
+Our Businesses
+Our History
+Board of Directors
+Executive Leadership Team
+Publications
+Sustainability
+
+
+ 
+
+At Phillips 66, we are committed to safety and we conduct our business with care for the environment and engagement with communities where we operate.read more >>
+Our Approach
+Operational
+Economic
+Social
+Environmental
+Our Performance
+Investors
+
+
+ 
+
+Welcome to the Phillips 66 Investors site. This site is designed to give institutional and individual investors 24-hour access to relevant financial and operating information about our company.read more >>
+Events &Presentations
+Shareholder Services
+Governance
+Stock Information
+Financial &Operating Information
+FAQs
+Newsroom
+
+
+ 
+
+Welcome to the Phillips 66 Newsroom. This site is designed to give media professionals 24-hour access to relevant information about our company.read more >>
+News Releases
+Image Gallery
+Request a Logo
+Media Contact Form
+Operations Center
+Careers
+
+
+ 
+
+Our talented, motivated employees afford our company the drive and diversity of thought needed to compete and win in the future.read more >>
+Phillips 66 Careers
+University Recruitment
+Products & Services
+
+
+ 
+
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions.read more >>
+Consumer
+Businesses
+Accounts PayableVendor Relations
+Real Estate
+SDS
+Unclaimed Property
+Interest Owners
+Contact Us
+
+
+
+
+
+
+
+
+Phillips66 > English > Products and Services > Real Estate > California
+Printer Friendly
+
+
+
+
+
+
+BusinessesAccounts Payable Vendor RelationsReal EstateReal Estate MapCaliforniaOregonSDSConsumerInterest Owners
+
+
+
+
+
+
+
+
+
+
+
+							California
+Page Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following Phillips 66 properties are available for sale or lease in the state of California. Select from the list below for further details or scroll down the page to see all properties available. Questions or comments can be directed to the agent listed under each property.
+Fresno, CA
+
+
+Status: Active
+
+Location: 101 Roosevelt St., Fresno, CA
+
+Description: Former bulk plant location. 45,150 sq. ft. of land, fenced with no improvements.
+
+Current Price: $130,000
+
+Contact: Kristin Finefrock, Phillips 66 Real Estate Advisor, 805-226-2652
+
+Last Update: 06-28-2017
+
+Greenfield, CA
+
+
+Status: Active
+
+Location: 845 Walnut Ave., Greenfield, CA
+
+Description: Active bulk plant with 15,625 sq. ft. land and warehouse and miscellaneous improvements.
+
+Current Price: $150,000
+
+Contact: Kristin Finefrock, Phillips 66 Real Estate Advisor, 805-226-2652
+
+Last Update: 06-28-2017
+
+Watsonville, CA
+
+
+Status: Active
+
+Location: 103 Lee Rd., Watsonville, CA
+
+Description: Active bulk oil and distribution plant with 38,685 sq. ft. land and bulk oil and distribution plant-related buildings.
+
+Current Price: $325,000
+
+Contact: Kristin Finefrock, Phillips 66 Real Estate Advisor, 805-226-2652
+
+Last Update: 06-28-2017
+
+Woodland, CA
+
+
+Status: Active
+
+Location: 1152 Cross St., Woodland, CA
+
+Description: Former bulk plant location. 34,065 sq. ft. land, fenced with no improvements.
+
+Current Price: $100,000
+
+Contact: Kristin Finefrock, Phillips 66 Real Estate Advisor, 805-226-2652
+
+Last Update: 06-28-2017
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© Phillips 66 Company. All rights reserved. 
+                  Terms and Conditions and 
+                  Privacy Statement (UPDATED). 
+                  
+
+California Transparency in Supply Chains Disclosure.
+ | 
+                  Contact Us
+
+
+
+
+
+
+
+
+
+
+Phillips 66 - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Phillips 66
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Phillips 66 Company
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: PSX
+S&P 500 Component
+
+
+Industry
+Oil and gas
+
+
+Predecessor
+Phillips Petroleum Company
+ConocoPhillips
+
+
+Founded
+Ponca City, Oklahoma Bartlesville, Oklahoma 1917; 100 years ago (1917)
+Houston, Texas 2012; 5 years ago (2012)
+
+
+Founder
+L.E. Phillips and Frank Phillips
+
+
+Headquarters
+Westchase, Houston, Texas
+
+
+
+Area served
+
+Worldwide
+
+
+
+Key people
+
+Greg Garland
+(Chairman and CEO)
+Tim Taylor
+(President)
+
+
+Products
+Natural gas
+Petrochemicals
+Aviation Fuels
+Motor fuels
+Lubricants
+
+
+Services
+Oil refining
+Service Stations
+
+
+Revenue
+ US$ 87.2 billion (2016)[1]
+
+
+
+Operating income
+
+ US$ 4.23 billion (2015)[1]
+
+
+
+Net income
+
+ US$ 4.28 billion (2015)[1]
+
+
+Total assets
+ US$ 48.6 billion (2016)[1]
+
+
+Total equity
+ US$ 23.1 billion (2015)[1]
+
+
+
+Number of employees
+
+14,000 (2014)[1]
+
+
+Website
+www.phillips66.com
+
+
+The Phillips 66 Company (NYSE: PSX) is an American multinational energy company headquartered in Westchase, Houston, Texas. It debuted as an independent energy company when ConocoPhillips executed a spin-off of its downstream and midstream assets. Taking its name from the 1927 "Phillips 66" trademark of ConocoPhillips predecessor Phillips Petroleum Company, Phillips 66 began trading on the New York Stock Exchange on May 1, 2012, under the ticker PSX. The company is engaged in producing natural gas liquids (NGL) and petrochemicals. The company has approximately 14,000 employees worldwide and is active in more than 65 countries.[2] Phillips 66 is ranked No. 30 on the Fortune 500 list and No. 74 on the Fortune Global 500 list as of 2016[update].[3][4]
+
+
+
+Contents
+
+
+1 History
+
+1.1 Beginning
+1.2 Logo
+1.3 Motor oil
+1.4 Gas stations
+1.5 Mergers
+1.6 Marketing
+1.7 Spin-off
+1.8 Berkshire Hathaway trade
+1.9 Spin-off of natural gas pipelines
+
+
+2 Operations
+
+2.1 Refineries
+
+
+3 Corporate affairs
+4 References
+5 External links
+
+
+
+History[edit]
+Beginning[edit]
+Founded by Lee Eldas "L.E." Phillips and Frank Phillips of Bartlesville, Oklahoma, Phillips Petroleum Co. was incorporated on June 13, 1917. The new company had assets of $3 million, 27 employees and land throughout Oklahoma and Kansas. After discovery of Texas's huge Panhandle gas field in 1918 and the Hugoton Field to its north in Kansas, Phillips became increasingly involved in the rapidly developing natural gas industry. In particular, the company specialized in extracting liquids from natural gas and by 1925 was the nation's largest producer of natural gas liquids. In 1927, the company's gasoline was being tested on U.S. Highway 66 in Oklahoma, and when it turned out that the car was going 66 mph (106 km/h), which was fast at the time, the company decided to name the new fuel Phillips 66.[5]
+The first Phillips 66 service station opened November 19, 1927 at 805 E. Central in Wichita, Kansas.[6] This station has been preserved by the local historical society.
+Logo[edit]
+The Phillips 66 shield logo, created for its link to the famous highway of the same number, was introduced in 1930 in a black and orange color scheme that would last nearly 30 years. In 1959, Phillips introduced a revised version of the shield in red, white and black, a color scheme still used by Phillips 66 Co. for the brand.
+
+
+
+
+Old-fashioned Phillips 66 station in Bassett, Nebraska
+
+
+From the late 1930s until the 1960s, Phillips employed registered nurses as "highway hostesses," who made periodic and random visits to Phillips 66 stations within their regions. The women inspected station restroom facilities to ensure they were well cleaned and stocked. The highway hostesses also served as ambassadors for the company by directing motorists to suitable dining and lodging facilities. Union 76 employed similar hostesses, called the "Sparkle Corps."
+Motor oil[edit]
+Phillips was among the first oil companies to introduce a multi-grade motor oil, TropArtic, in 1954. Such motor oils were designed to be used year-round in automobile engines, as opposed to single grades for which different grades of motor oils were recommended to meet weather variances.
+Gas stations[edit]
+Phillips also had gasoline stations in Canada's western provinces of Alberta, British Columbia, Manitoba, and Saskatchewan under the name Pacific 66 until the late 1970s. In 1932, the 76 brand, long familiar in the western U.S., was created by Union Oil Company of California (later Unocal). In 1946, Phillips purchased the Utah-based Wasatch Oil Co., bringing the Phillips 66 brand to the northern Rocky Mountain states and the far eastern portions of Oregon and Washington. In 1966, Phillips entered the West Coast market by purchasing Tidewater Oil Co.'s refining and marketing properties in that region and rebranding all Flying A distributorships and service stations to Phillips 66.
+In 1967, Phillips became the nation's second oil company, after Texaco, to sell and market gasoline in all 50 states, by opening a Phillips 66 station in Anchorage, Alaska. However, Phillips' experiment in 50-state marketing was short-lived. The company withdrew from gasoline marketing in the northeastern U.S. in 1972 (although it has been returning; for example, there is a Phillips 66 in Westport, Connecticut, Newington, Connecticut, Hadley, Massachusetts, and Exeter, New Hampshire, and the Phillips 66 owned 76 gas brand appearing in New Jersey, New York, and Pennsylvania), and sold the former Tidewater properties on the West Coast to The Oil & Shale Corporation (Tosco) in 1976. Today, Phillips 66 primarily operates in the Midwest and Southwest.
+Mergers[edit]
+Phillips 66 created a joint venture with Chevron Corporation's chemicals and plastics division in 2000, as well as, acquired ARCO Alaska Inc. from British Petroleum. It purchased Tosco, which included Circle K convenience stores and Union 76 gasoline, in 2001. The 76 brand, long familiar in the western and southern U.S., was created by Union Oil Company of California (later Unocal) in 1932.
+In 2002, Phillips 66 merged with Conoco to form ConocoPhillips. The merged company continued marketing gasoline and other products under the Phillips 66, Conoco, and 76 brands. However, Phillips 66 Co. licenses the Phillips 66 brand to Suncor Energy for its Phillips 66 branded stations in Colorado.[7]
+Marketing[edit]
+
+
+
+
+Winged version of logo, used for airplane fuel stations in the U.S., this example being in Hillsboro, Oregon
+
+
+The advertising slogan from circa 1973 until the ConocoPhillips merger was "The Performance Company," promoting not only the performance of Phillips 66 gasoline and other petroleum products, but also innovations with asphaltic materials, fertilizers and other non-automotive products. Other slogans through the years have included: "Go first-class... go Phillips 66", "The gasoline that won the West", "Good things for cars and the people who drive them", "Hard working gas", and "At Phillips 66, it's performance that counts". Their current slogan (July 2015) is "Proud To Be Here". The 2016 slogan will be "The Power of 2" after consolidation of the family of brands to just Phillips 66 and Kendall.
+Phillips 66 also was a long-time supporter of PBS programming for most of the 1980s. It provided funding for shows such as A.M. Weather, The Search for Solutions, and Onstage with Judith Somogi.
+Spin-off[edit]
+In 2012, Phillips 66 was spun off from ConocoPhillips.
+Berkshire Hathaway trade[edit]
+On December 30, 2013, it was announced that Berkshire Hathaway would trade more than 19 million of its 27.2 million shares in Phillips 66 to acquire a business that makes additives that help crude oil flow through pipelines. The final number of shares will be determined when the deal actually closes.[8]
+Spin-off of natural gas pipelines[edit]
+On February 17, 2015, Phillips 66 sold two natural gas pipeline systems to its affiliate, Phillips 66 Partners for $1.01 billion in cash and stock.[9]
+Operations[edit]
+In the United States, the company operates Conoco, Phillips 66 and 76 stations. In Europe, Phillips 66 operates Jet filling stations in Austria, Denmark, Germany, Sweden and the United Kingdom. It sold its Jet stations in Belgium, the Czech Republic, Finland, Hungary, Poland and Slovakia to its Russian affiliate, Lukoil. It uses the COOP identity in Switzerland. The company is the fourth largest finished lubricants supplier in the United States.
+Phillips 66 owns 15 refineries with a net crude oil capacity of 2.2 million barrels per day (350×10^3 m3/d), 10,000 branded marketing outlets, and 15,000 miles (24,000 km) of pipelines. It has 50 percent stake in DCP Midstream, LLC, a natural gas gatherers and processors with 7.2 billion cubic feet per day (200×10^6 m3/d) of processing capacity. It also owns 50 percent stake in Chevron Phillips Chemical Co.
+Phillips 66 also owns a one-quarter share in the controversial Dakota Access Pipeline.[10]
+Refineries[edit]
+
+
+Country
+Name
+Location
+Nelson Complexity Factor
+Crude Oil Processing Capacity (MBD)
+
+
+
+Wood River Refinery*
+Roxana, IL
+9.8
+305
+
+
+
+Alliance Refinery
+Belle Chasse, LA
+12.0
+247
+
+
+
+Sweeny Refinery
+Old Ocean, TX
+13.2
+247
+
+
+
+Bayway Refinery
+Linden, NJ
+8.5
+238
+
+
+
+Lake Charles Refinery
+Westlake, LA
+10.2
+239
+
+
+
+Ponca City Refinery
+Ponca City, OK
+9.8
+210
+
+
+
+Borger Refinery*
+Borger, TX
+12.3
+146
+
+
+
+Los Angeles Refinery
+Carson, CA/Wilmington, CA
+14.1
+139
+
+
+
+San Francisco Refinery
+Rodeo, CA/Arroyo Grande, CA
+13.6
+120
+
+
+
+Ferndale Refinery
+Ferndale, WA
+7.4
+100
+
+
+
+Billings Refinery
+Billings, MT
+14.3
+58
+
+
+
+Humber Refinery
+North Lincolnshire
+11.6
+221
+
+
+
+MIRO Refinery*
+Karlsruhe
+7.9
+58
+
+
+* Denotes joint ventures. Crude capacity reflects that proportion.
+Sources (Mar 31, 2011)[11][12][13]
+Phillips 66's Los Angeles (CA), Lake Charles (LA), San Francisco (CA), and Sweeney (TX) refineries receive and process crude oil from the Amazon River Basin of South America. In 2015, the Los Angeles refinery was processing 21,512 barrels per day of Amazonian oil.
+Corporate affairs[edit]
+In 2012, after Phillips 66 split from ConocoPhillips, it moved its operations from the ConocoPhillips headquarters to the Pinnacle Westchase building,[14] a nine-story Class A office building located on 8.4 acres (3.4 ha) of land in Westchase, Houston.[15] This was a temporary headquarters location.[14]
+In July 2016, Phillips 66 completed their move to a new permanent headquarters on a 14-acre (5.7 ha) plot of land in Westchase. The new headquarters is between Westheimer Road and Briar Forest, in close proximity to the Sam Houston Tollway. Phillips 66 purchased the land from a subsidiary of Thomas Properties Group. The architect of record is HOK.[16] The official groundbreaking was in November 2013, and the opening was completed on schedule. The 1.1 million square foot headquarters includes conference spaces, medical facilities, food service facilities, outdoor recreational space, a gymnasium with full-size basketball court, and training facilities. Irrigation of the outdoor landscaping is via a reclaimed water system. The new campus houses 2,200 workers who were spread among six different Houston locations, including the ConocoPhillips headquarters, where several hundred Phillips 66 workers had remained post spin-off.[14][17][18]
+On 4 August 2015 it was announced that the company had formed a "long-term partnership" with English non-league association football club Leamington F.C.. The deal involved, amongst other things, the renaming of the club's ground from "The New Windmill Ground" to "The Phillips 66 Community Stadium."[19]
+References[edit]
+
+
+
+^ a b c d e f "2013 Phillips 66 Summary Annual Report". Phillips 66. Retrieved 10 January 2014. 
+^ "Conoco says refining co will be Phillips 66". "Conoco says refining co will be named Phillips 66". Reuters. November 10, 2011. Retrieved November 10, 2011. 
+^ "Fortune 500 List". Time Inc. Retrieved December 7, 2016. 
+^ "Global 500 List". Time Inc. Retrieved December 7, 2016. 
+^ Aaseng, Nathan (2000). Business Builders in Oil. The Oliver Press, Inc. ISBN 1-881508-56-0.  P. 104.
+^ "Phillips 66". historicpreservationalliance.com. Retrieved 6 October 2015. 
+^ "Shell and Phillips 66 - Suncor". suncor.com. Retrieved 6 October 2015. 
+^ url=http://www.usatoday.com/story/money/business/2013/12/30/warren-buffetts-firm-phillips-66-unit/4255665
+^ Olabi, Nora (17 February 2015). "Phillips 66 Partners makes $1 billion midstream acquisition". Houston Business Journal. Retrieved 31 May 2015. 
+^ "Trump's Stock in Dakota Access Pipeline Company Raises Concern". 
+^ ConocoPhillips (Mar 31, 2011). "Refining". ConocoPhillips. ConocoPhillips. Retrieved Aug 6, 2011. 
+^ ConocoPhillips (Mar 31, 2011). "Europe". ConocoPhillips. ConocoPhillips. Retrieved Aug 6, 2011. 
+^ ConocoPhillips (Mar 31, 2011). "Asia Pacific". ConocoPhillips. ConocoPhillips. Retrieved Aug 6, 2011. 
+^ a b c Sebastian, Simone. "Phillips 66 to build global headquarters in West Houston." FuelFix (Houston Chronicle). September 12, 2012. Retrieved on September 13, 2012.
+^ "Location." (Archive) Pinnacle Westchase. Retrieved on September 13, 2012.
+^ HOK. "Phillips 66 Breaks Ground on New Corporate Campus". www.hok.com. Retrieved 2016-06-29. 
+^ "Phillips 66 breaks ground on new Houston headquarters". FuelFix (Houston Chronicle). 2013-11-23. Retrieved 2016-06-29. 
+^ "Phillips 66 offers a look at its new headquarters". FuelFix (Houston Chronicle). 2016-06-27. Retrieved 2016-06-29. 
+^ "Location." ([1]) Article on the partnership on the Leamington FC website. Retrieved on 4 August 2015.
+
+
+
+External links[edit]
+
+
+Houston portal
+Companies portal
+Energy portal
+
+
+
+
+
+Wikimedia Commons has media related to Phillips 66.
+
+
+
+Phillips 66 Official Web Site
+
+
+
+Business data for Phillips 66: Google Finance
+Yahoo! Finance
+Reuters
+SEC filings
+
+
+
+Investor Update with Phillips 66 Business Prospects April, 2012
+Independent Business Analysis of Phillips 66
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Phillips 66
+
+
+
+Companies / Divisions
+
+
+
+
+
+Current
+
+
+
+
+76
+Chevron Phillips Chemical
+Jet
+
+
+
+
+
+
+Former
+
+
+
+
+Conoco
+Marland Oil Company
+Phillips Petroleum Company
+ProJET
+Tidewater Petroleum
+Tosco Corporation
+
+
+
+
+
+
+
+
+Facilities
+
+
+
+
+
+Current
+
+
+
+
+Bayway Refinery
+Billings Refinery
+Humber Refinery
+Rockies Express Pipeline
+Rodeo San Francisco Refinery
+Wood River Refinery
+
+
+
+
+
+
+Former
+
+
+
+
+Immingham Power Station
+
+
+
+
+
+
+
+
+Industrial disasters
+
+
+
+1989 Phillips disaster
+1999 Phillips explosion
+2000 Phillips explosion
+2001 Humber Refinery explosion
+
+
+
+
+
+Related topics
+
+
+
+ConocoPhillips
+Phillips 66ers
+Phillips Petroleum Process
+Phillips, Texas
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Phillips_66&oldid=788504252"					
+Categories: Automotive fuel brandsBartlesville, OklahomaCompanies based in HoustonCompanies based in OklahomaCompanies listed on the New York Stock ExchangeEconomy of the Midwestern United StatesEconomy of the Southwestern United StatesGas stations in the United StatesNatural gas pipeline companiesOil companies of the United StatesU.S. Route 66Phillips 66Corporate spin-offsHidden categories: Pages using deprecated image syntaxArticles containing potentially dated statements from 2016All articles containing potentially dated statements 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikimedia Commons 
+
+
+
+Languages
+
+
+DeutschEspañolفارسیFrançaisBahasa Indonesia日本語PolskiSvenska 
+Edit links 
+
+
+
+
+
+ This page was last edited on 1 July 2017, at 20:16.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Phillips 66 - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Phillips 66
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Phillips 66 Company
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: PSX
+S&P 500 Component
+
+
+Industry
+Oil and gas
+
+
+Predecessor
+Phillips Petroleum Company
+ConocoPhillips
+
+
+Founded
+Ponca City, Oklahoma Bartlesville, Oklahoma 1917; 100 years ago (1917)
+Houston, Texas 2012; 5 years ago (2012)
+
+
+Founder
+L.E. Phillips and Frank Phillips
+
+
+Headquarters
+Westchase, Houston, Texas
+
+
+
+Area served
+
+Worldwide
+
+
+
+Key people
+
+Greg Garland
+(Chairman and CEO)
+Tim Taylor
+(President)
+
+
+Products
+Natural gas
+Petrochemicals
+Aviation Fuels
+Motor fuels
+Lubricants
+
+
+Services
+Oil refining
+Service Stations
+
+
+Revenue
+ US$ 87.2 billion (2016)[1]
+
+
+
+Operating income
+
+ US$ 4.23 billion (2015)[1]
+
+
+
+Net income
+
+ US$ 4.28 billion (2015)[1]
+
+
+Total assets
+ US$ 48.6 billion (2016)[1]
+
+
+Total equity
+ US$ 23.1 billion (2015)[1]
+
+
+
+Number of employees
+
+14,000 (2014)[1]
+
+
+Website
+www.phillips66.com
+
+
+The Phillips 66 Company (NYSE: PSX) is an American multinational energy company headquartered in Westchase, Houston, Texas. It debuted as an independent energy company when ConocoPhillips executed a spin-off of its downstream and midstream assets. Taking its name from the 1927 "Phillips 66" trademark of ConocoPhillips predecessor Phillips Petroleum Company, Phillips 66 began trading on the New York Stock Exchange on May 1, 2012, under the ticker PSX. The company is engaged in producing natural gas liquids (NGL) and petrochemicals. The company has approximately 14,000 employees worldwide and is active in more than 65 countries.[2] Phillips 66 is ranked No. 30 on the Fortune 500 list and No. 74 on the Fortune Global 500 list as of 2016[update].[3][4]
+
+
+
+Contents
+
+
+1 History
+
+1.1 Beginning
+1.2 Logo
+1.3 Motor oil
+1.4 Gas stations
+1.5 Mergers
+1.6 Marketing
+1.7 Spin-off
+1.8 Berkshire Hathaway trade
+1.9 Spin-off of natural gas pipelines
+
+
+2 Operations
+
+2.1 Refineries
+
+
+3 Corporate affairs
+4 References
+5 External links
+
+
+
+History[edit]
+Beginning[edit]
+Founded by Lee Eldas "L.E." Phillips and Frank Phillips of Bartlesville, Oklahoma, Phillips Petroleum Co. was incorporated on June 13, 1917. The new company had assets of $3 million, 27 employees and land throughout Oklahoma and Kansas. After discovery of Texas's huge Panhandle gas field in 1918 and the Hugoton Field to its north in Kansas, Phillips became increasingly involved in the rapidly developing natural gas industry. In particular, the company specialized in extracting liquids from natural gas and by 1925 was the nation's largest producer of natural gas liquids. In 1927, the company's gasoline was being tested on U.S. Highway 66 in Oklahoma, and when it turned out that the car was going 66 mph (106 km/h), which was fast at the time, the company decided to name the new fuel Phillips 66.[5]
+The first Phillips 66 service station opened November 19, 1927 at 805 E. Central in Wichita, Kansas.[6] This station has been preserved by the local historical society.
+Logo[edit]
+The Phillips 66 shield logo, created for its link to the famous highway of the same number, was introduced in 1930 in a black and orange color scheme that would last nearly 30 years. In 1959, Phillips introduced a revised version of the shield in red, white and black, a color scheme still used by Phillips 66 Co. for the brand.
+
+
+
+
+Old-fashioned Phillips 66 station in Bassett, Nebraska
+
+
+From the late 1930s until the 1960s, Phillips employed registered nurses as "highway hostesses," who made periodic and random visits to Phillips 66 stations within their regions. The women inspected station restroom facilities to ensure they were well cleaned and stocked. The highway hostesses also served as ambassadors for the company by directing motorists to suitable dining and lodging facilities. Union 76 employed similar hostesses, called the "Sparkle Corps."
+Motor oil[edit]
+Phillips was among the first oil companies to introduce a multi-grade motor oil, TropArtic, in 1954. Such motor oils were designed to be used year-round in automobile engines, as opposed to single grades for which different grades of motor oils were recommended to meet weather variances.
+Gas stations[edit]
+Phillips also had gasoline stations in Canada's western provinces of Alberta, British Columbia, Manitoba, and Saskatchewan under the name Pacific 66 until the late 1970s. In 1932, the 76 brand, long familiar in the western U.S., was created by Union Oil Company of California (later Unocal). In 1946, Phillips purchased the Utah-based Wasatch Oil Co., bringing the Phillips 66 brand to the northern Rocky Mountain states and the far eastern portions of Oregon and Washington. In 1966, Phillips entered the West Coast market by purchasing Tidewater Oil Co.'s refining and marketing properties in that region and rebranding all Flying A distributorships and service stations to Phillips 66.
+In 1967, Phillips became the nation's second oil company, after Texaco, to sell and market gasoline in all 50 states, by opening a Phillips 66 station in Anchorage, Alaska. However, Phillips' experiment in 50-state marketing was short-lived. The company withdrew from gasoline marketing in the northeastern U.S. in 1972 (although it has been returning; for example, there is a Phillips 66 in Westport, Connecticut, Newington, Connecticut, Hadley, Massachusetts, and Exeter, New Hampshire, and the Phillips 66 owned 76 gas brand appearing in New Jersey, New York, and Pennsylvania), and sold the former Tidewater properties on the West Coast to The Oil & Shale Corporation (Tosco) in 1976. Today, Phillips 66 primarily operates in the Midwest and Southwest.
+Mergers[edit]
+Phillips 66 created a joint venture with Chevron Corporation's chemicals and plastics division in 2000, as well as, acquired ARCO Alaska Inc. from British Petroleum. It purchased Tosco, which included Circle K convenience stores and Union 76 gasoline, in 2001. The 76 brand, long familiar in the western and southern U.S., was created by Union Oil Company of California (later Unocal) in 1932.
+In 2002, Phillips 66 merged with Conoco to form ConocoPhillips. The merged company continued marketing gasoline and other products under the Phillips 66, Conoco, and 76 brands. However, Phillips 66 Co. licenses the Phillips 66 brand to Suncor Energy for its Phillips 66 branded stations in Colorado.[7]
+Marketing[edit]
+
+
+
+
+Winged version of logo, used for airplane fuel stations in the U.S., this example being in Hillsboro, Oregon
+
+
+The advertising slogan from circa 1973 until the ConocoPhillips merger was "The Performance Company," promoting not only the performance of Phillips 66 gasoline and other petroleum products, but also innovations with asphaltic materials, fertilizers and other non-automotive products. Other slogans through the years have included: "Go first-class... go Phillips 66", "The gasoline that won the West", "Good things for cars and the people who drive them", "Hard working gas", and "At Phillips 66, it's performance that counts". Their current slogan (July 2015) is "Proud To Be Here". The 2016 slogan will be "The Power of 2" after consolidation of the family of brands to just Phillips 66 and Kendall.
+Phillips 66 also was a long-time supporter of PBS programming for most of the 1980s. It provided funding for shows such as A.M. Weather, The Search for Solutions, and Onstage with Judith Somogi.
+Spin-off[edit]
+In 2012, Phillips 66 was spun off from ConocoPhillips.
+Berkshire Hathaway trade[edit]
+On December 30, 2013, it was announced that Berkshire Hathaway would trade more than 19 million of its 27.2 million shares in Phillips 66 to acquire a business that makes additives that help crude oil flow through pipelines. The final number of shares will be determined when the deal actually closes.[8]
+Spin-off of natural gas pipelines[edit]
+On February 17, 2015, Phillips 66 sold two natural gas pipeline systems to its affiliate, Phillips 66 Partners for $1.01 billion in cash and stock.[9]
+Operations[edit]
+In the United States, the company operates Conoco, Phillips 66 and 76 stations. In Europe, Phillips 66 operates Jet filling stations in Austria, Denmark, Germany, Sweden and the United Kingdom. It sold its Jet stations in Belgium, the Czech Republic, Finland, Hungary, Poland and Slovakia to its Russian affiliate, Lukoil. It uses the COOP identity in Switzerland. The company is the fourth largest finished lubricants supplier in the United States.
+Phillips 66 owns 15 refineries with a net crude oil capacity of 2.2 million barrels per day (350×10^3 m3/d), 10,000 branded marketing outlets, and 15,000 miles (24,000 km) of pipelines. It has 50 percent stake in DCP Midstream, LLC, a natural gas gatherers and processors with 7.2 billion cubic feet per day (200×10^6 m3/d) of processing capacity. It also owns 50 percent stake in Chevron Phillips Chemical Co.
+Phillips 66 also owns a one-quarter share in the controversial Dakota Access Pipeline.[10]
+Refineries[edit]
+
+
+Country
+Name
+Location
+Nelson Complexity Factor
+Crude Oil Processing Capacity (MBD)
+
+
+
+Wood River Refinery*
+Roxana, IL
+9.8
+305
+
+
+
+Alliance Refinery
+Belle Chasse, LA
+12.0
+247
+
+
+
+Sweeny Refinery
+Old Ocean, TX
+13.2
+247
+
+
+
+Bayway Refinery
+Linden, NJ
+8.5
+238
+
+
+
+Lake Charles Refinery
+Westlake, LA
+10.2
+239
+
+
+
+Ponca City Refinery
+Ponca City, OK
+9.8
+210
+
+
+
+Borger Refinery*
+Borger, TX
+12.3
+146
+
+
+
+Los Angeles Refinery
+Carson, CA/Wilmington, CA
+14.1
+139
+
+
+
+San Francisco Refinery
+Rodeo, CA/Arroyo Grande, CA
+13.6
+120
+
+
+
+Ferndale Refinery
+Ferndale, WA
+7.4
+100
+
+
+
+Billings Refinery
+Billings, MT
+14.3
+58
+
+
+
+Humber Refinery
+North Lincolnshire
+11.6
+221
+
+
+
+MIRO Refinery*
+Karlsruhe
+7.9
+58
+
+
+* Denotes joint ventures. Crude capacity reflects that proportion.
+Sources (Mar 31, 2011)[11][12][13]
+Phillips 66's Los Angeles (CA), Lake Charles (LA), San Francisco (CA), and Sweeney (TX) refineries receive and process crude oil from the Amazon River Basin of South America. In 2015, the Los Angeles refinery was processing 21,512 barrels per day of Amazonian oil.
+Corporate affairs[edit]
+In 2012, after Phillips 66 split from ConocoPhillips, it moved its operations from the ConocoPhillips headquarters to the Pinnacle Westchase building,[14] a nine-story Class A office building located on 8.4 acres (3.4 ha) of land in Westchase, Houston.[15] This was a temporary headquarters location.[14]
+In July 2016, Phillips 66 completed their move to a new permanent headquarters on a 14-acre (5.7 ha) plot of land in Westchase. The new headquarters is between Westheimer Road and Briar Forest, in close proximity to the Sam Houston Tollway. Phillips 66 purchased the land from a subsidiary of Thomas Properties Group. The architect of record is HOK.[16] The official groundbreaking was in November 2013, and the opening was completed on schedule. The 1.1 million square foot headquarters includes conference spaces, medical facilities, food service facilities, outdoor recreational space, a gymnasium with full-size basketball court, and training facilities. Irrigation of the outdoor landscaping is via a reclaimed water system. The new campus houses 2,200 workers who were spread among six different Houston locations, including the ConocoPhillips headquarters, where several hundred Phillips 66 workers had remained post spin-off.[14][17][18]
+On 4 August 2015 it was announced that the company had formed a "long-term partnership" with English non-league association football club Leamington F.C.. The deal involved, amongst other things, the renaming of the club's ground from "The New Windmill Ground" to "The Phillips 66 Community Stadium."[19]
+References[edit]
+
+
+
+^ a b c d e f "2013 Phillips 66 Summary Annual Report". Phillips 66. Retrieved 10 January 2014. 
+^ "Conoco says refining co will be Phillips 66". "Conoco says refining co will be named Phillips 66". Reuters. November 10, 2011. Retrieved November 10, 2011. 
+^ "Fortune 500 List". Time Inc. Retrieved December 7, 2016. 
+^ "Global 500 List". Time Inc. Retrieved December 7, 2016. 
+^ Aaseng, Nathan (2000). Business Builders in Oil. The Oliver Press, Inc. ISBN 1-881508-56-0.  P. 104.
+^ "Phillips 66". historicpreservationalliance.com. Retrieved 6 October 2015. 
+^ "Shell and Phillips 66 - Suncor". suncor.com. Retrieved 6 October 2015. 
+^ url=http://www.usatoday.com/story/money/business/2013/12/30/warren-buffetts-firm-phillips-66-unit/4255665
+^ Olabi, Nora (17 February 2015). "Phillips 66 Partners makes $1 billion midstream acquisition". Houston Business Journal. Retrieved 31 May 2015. 
+^ "Trump's Stock in Dakota Access Pipeline Company Raises Concern". 
+^ ConocoPhillips (Mar 31, 2011). "Refining". ConocoPhillips. ConocoPhillips. Retrieved Aug 6, 2011. 
+^ ConocoPhillips (Mar 31, 2011). "Europe". ConocoPhillips. ConocoPhillips. Retrieved Aug 6, 2011. 
+^ ConocoPhillips (Mar 31, 2011). "Asia Pacific". ConocoPhillips. ConocoPhillips. Retrieved Aug 6, 2011. 
+^ a b c Sebastian, Simone. "Phillips 66 to build global headquarters in West Houston." FuelFix (Houston Chronicle). September 12, 2012. Retrieved on September 13, 2012.
+^ "Location." (Archive) Pinnacle Westchase. Retrieved on September 13, 2012.
+^ HOK. "Phillips 66 Breaks Ground on New Corporate Campus". www.hok.com. Retrieved 2016-06-29. 
+^ "Phillips 66 breaks ground on new Houston headquarters". FuelFix (Houston Chronicle). 2013-11-23. Retrieved 2016-06-29. 
+^ "Phillips 66 offers a look at its new headquarters". FuelFix (Houston Chronicle). 2016-06-27. Retrieved 2016-06-29. 
+^ "Location." ([1]) Article on the partnership on the Leamington FC website. Retrieved on 4 August 2015.
+
+
+
+External links[edit]
+
+
+Houston portal
+Companies portal
+Energy portal
+
+
+
+
+
+Wikimedia Commons has media related to Phillips 66.
+
+
+
+Phillips 66 Official Web Site
+
+
+
+Business data for Phillips 66: Google Finance
+Yahoo! Finance
+Reuters
+SEC filings
+
+
+
+Investor Update with Phillips 66 Business Prospects April, 2012
+Independent Business Analysis of Phillips 66
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Phillips 66
+
+
+
+Companies / Divisions
+
+
+
+
+
+Current
+
+
+
+
+76
+Chevron Phillips Chemical
+Jet
+
+
+
+
+
+
+Former
+
+
+
+
+Conoco
+Marland Oil Company
+Phillips Petroleum Company
+ProJET
+Tidewater Petroleum
+Tosco Corporation
+
+
+
+
+
+
+
+
+Facilities
+
+
+
+
+
+Current
+
+
+
+
+Bayway Refinery
+Billings Refinery
+Humber Refinery
+Rockies Express Pipeline
+Rodeo San Francisco Refinery
+Wood River Refinery
+
+
+
+
+
+
+Former
+
+
+
+
+Immingham Power Station
+
+
+
+
+
+
+
+
+Industrial disasters
+
+
+
+1989 Phillips disaster
+1999 Phillips explosion
+2000 Phillips explosion
+2001 Humber Refinery explosion
+
+
+
+
+
+Related topics
+
+
+
+ConocoPhillips
+Phillips 66ers
+Phillips Petroleum Process
+Phillips, Texas
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Phillips_66&oldid=788504252"					
+Categories: Automotive fuel brandsBartlesville, OklahomaCompanies based in HoustonCompanies based in OklahomaCompanies listed on the New York Stock ExchangeEconomy of the Midwestern United StatesEconomy of the Southwestern United StatesGas stations in the United StatesNatural gas pipeline companiesOil companies of the United StatesU.S. Route 66Phillips 66Corporate spin-offsHidden categories: Pages using deprecated image syntaxArticles containing potentially dated statements from 2016All articles containing potentially dated statements 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikimedia Commons 
+
+
+
+Languages
+
+
+DeutschEspañolفارسیFrançaisBahasa Indonesia日本語PolskiSvenska 
+Edit links 
+
+
+
+
+
+ This page was last edited on 1 July 2017, at 20:16.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Phillips 66 - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Phillips 66
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Phillips 66 Company
+
+
+
+
+
+Type
+
+Public
+
+
+Traded as
+NYSE: PSX
+S&P 500 Component
+
+
+Industry
+Oil and gas
+
+
+Predecessor
+Phillips Petroleum Company
+ConocoPhillips
+
+
+Founded
+Ponca City, Oklahoma Bartlesville, Oklahoma 1917; 100 years ago (1917)
+Houston, Texas 2012; 5 years ago (2012)
+
+
+Founder
+L.E. Phillips and Frank Phillips
+
+
+Headquarters
+Westchase, Houston, Texas
+
+
+
+Area served
+
+Worldwide
+
+
+
+Key people
+
+Greg Garland
+(Chairman and CEO)
+Tim Taylor
+(President)
+
+
+Products
+Natural gas
+Petrochemicals
+Aviation Fuels
+Motor fuels
+Lubricants
+
+
+Services
+Oil refining
+Service Stations
+
+
+Revenue
+ US$ 87.2 billion (2016)[1]
+
+
+
+Operating income
+
+ US$ 4.23 billion (2015)[1]
+
+
+
+Net income
+
+ US$ 4.28 billion (2015)[1]
+
+
+Total assets
+ US$ 48.6 billion (2016)[1]
+
+
+Total equity
+ US$ 23.1 billion (2015)[1]
+
+
+
+Number of employees
+
+14,000 (2014)[1]
+
+
+Website
+www.phillips66.com
+
+
+The Phillips 66 Company (NYSE: PSX) is an American multinational energy company headquartered in Westchase, Houston, Texas. It debuted as an independent energy company when ConocoPhillips executed a spin-off of its downstream and midstream assets. Taking its name from the 1927 "Phillips 66" trademark of ConocoPhillips predecessor Phillips Petroleum Company, Phillips 66 began trading on the New York Stock Exchange on May 1, 2012, under the ticker PSX. The company is engaged in producing natural gas liquids (NGL) and petrochemicals. The company has approximately 14,000 employees worldwide and is active in more than 65 countries.[2] Phillips 66 is ranked No. 30 on the Fortune 500 list and No. 74 on the Fortune Global 500 list as of 2016[update].[3][4]
+
+
+
+Contents
+
+
+1 History
+
+1.1 Beginning
+1.2 Logo
+1.3 Motor oil
+1.4 Gas stations
+1.5 Mergers
+1.6 Marketing
+1.7 Spin-off
+1.8 Berkshire Hathaway trade
+1.9 Spin-off of natural gas pipelines
+
+
+2 Operations
+
+2.1 Refineries
+
+
+3 Corporate affairs
+4 References
+5 External links
+
+
+
+History[edit]
+Beginning[edit]
+Founded by Lee Eldas "L.E." Phillips and Frank Phillips of Bartlesville, Oklahoma, Phillips Petroleum Co. was incorporated on June 13, 1917. The new company had assets of $3 million, 27 employees and land throughout Oklahoma and Kansas. After discovery of Texas's huge Panhandle gas field in 1918 and the Hugoton Field to its north in Kansas, Phillips became increasingly involved in the rapidly developing natural gas industry. In particular, the company specialized in extracting liquids from natural gas and by 1925 was the nation's largest producer of natural gas liquids. In 1927, the company's gasoline was being tested on U.S. Highway 66 in Oklahoma, and when it turned out that the car was going 66 mph (106 km/h), which was fast at the time, the company decided to name the new fuel Phillips 66.[5]
+The first Phillips 66 service station opened November 19, 1927 at 805 E. Central in Wichita, Kansas.[6] This station has been preserved by the local historical society.
+Logo[edit]
+The Phillips 66 shield logo, created for its link to the famous highway of the same number, was introduced in 1930 in a black and orange color scheme that would last nearly 30 years. In 1959, Phillips introduced a revised version of the shield in red, white and black, a color scheme still used by Phillips 66 Co. for the brand.
+
+
+
+
+Old-fashioned Phillips 66 station in Bassett, Nebraska
+
+
+From the late 1930s until the 1960s, Phillips employed registered nurses as "highway hostesses," who made periodic and random visits to Phillips 66 stations within their regions. The women inspected station restroom facilities to ensure they were well cleaned and stocked. The highway hostesses also served as ambassadors for the company by directing motorists to suitable dining and lodging facilities. Union 76 employed similar hostesses, called the "Sparkle Corps."
+Motor oil[edit]
+Phillips was among the first oil companies to introduce a multi-grade motor oil, TropArtic, in 1954. Such motor oils were designed to be used year-round in automobile engines, as opposed to single grades for which different grades of motor oils were recommended to meet weather variances.
+Gas stations[edit]
+Phillips also had gasoline stations in Canada's western provinces of Alberta, British Columbia, Manitoba, and Saskatchewan under the name Pacific 66 until the late 1970s. In 1932, the 76 brand, long familiar in the western U.S., was created by Union Oil Company of California (later Unocal). In 1946, Phillips purchased the Utah-based Wasatch Oil Co., bringing the Phillips 66 brand to the northern Rocky Mountain states and the far eastern portions of Oregon and Washington. In 1966, Phillips entered the West Coast market by purchasing Tidewater Oil Co.'s refining and marketing properties in that region and rebranding all Flying A distributorships and service stations to Phillips 66.
+In 1967, Phillips became the nation's second oil company, after Texaco, to sell and market gasoline in all 50 states, by opening a Phillips 66 station in Anchorage, Alaska. However, Phillips' experiment in 50-state marketing was short-lived. The company withdrew from gasoline marketing in the northeastern U.S. in 1972 (although it has been returning; for example, there is a Phillips 66 in Westport, Connecticut, Newington, Connecticut, Hadley, Massachusetts, and Exeter, New Hampshire, and the Phillips 66 owned 76 gas brand appearing in New Jersey, New York, and Pennsylvania), and sold the former Tidewater properties on the West Coast to The Oil & Shale Corporation (Tosco) in 1976. Today, Phillips 66 primarily operates in the Midwest and Southwest.
+Mergers[edit]
+Phillips 66 created a joint venture with Chevron Corporation's chemicals and plastics division in 2000, as well as, acquired ARCO Alaska Inc. from British Petroleum. It purchased Tosco, which included Circle K convenience stores and Union 76 gasoline, in 2001. The 76 brand, long familiar in the western and southern U.S., was created by Union Oil Company of California (later Unocal) in 1932.
+In 2002, Phillips 66 merged with Conoco to form ConocoPhillips. The merged company continued marketing gasoline and other products under the Phillips 66, Conoco, and 76 brands. However, Phillips 66 Co. licenses the Phillips 66 brand to Suncor Energy for its Phillips 66 branded stations in Colorado.[7]
+Marketing[edit]
+
+
+
+
+Winged version of logo, used for airplane fuel stations in the U.S., this example being in Hillsboro, Oregon
+
+
+The advertising slogan from circa 1973 until the ConocoPhillips merger was "The Performance Company," promoting not only the performance of Phillips 66 gasoline and other petroleum products, but also innovations with asphaltic materials, fertilizers and other non-automotive products. Other slogans through the years have included: "Go first-class... go Phillips 66", "The gasoline that won the West", "Good things for cars and the people who drive them", "Hard working gas", and "At Phillips 66, it's performance that counts". Their current slogan (July 2015) is "Proud To Be Here". The 2016 slogan will be "The Power of 2" after consolidation of the family of brands to just Phillips 66 and Kendall.
+Phillips 66 also was a long-time supporter of PBS programming for most of the 1980s. It provided funding for shows such as A.M. Weather, The Search for Solutions, and Onstage with Judith Somogi.
+Spin-off[edit]
+In 2012, Phillips 66 was spun off from ConocoPhillips.
+Berkshire Hathaway trade[edit]
+On December 30, 2013, it was announced that Berkshire Hathaway would trade more than 19 million of its 27.2 million shares in Phillips 66 to acquire a business that makes additives that help crude oil flow through pipelines. The final number of shares will be determined when the deal actually closes.[8]
+Spin-off of natural gas pipelines[edit]
+On February 17, 2015, Phillips 66 sold two natural gas pipeline systems to its affiliate, Phillips 66 Partners for $1.01 billion in cash and stock.[9]
+Operations[edit]
+In the United States, the company operates Conoco, Phillips 66 and 76 stations. In Europe, Phillips 66 operates Jet filling stations in Austria, Denmark, Germany, Sweden and the United Kingdom. It sold its Jet stations in Belgium, the Czech Republic, Finland, Hungary, Poland and Slovakia to its Russian affiliate, Lukoil. It uses the COOP identity in Switzerland. The company is the fourth largest finished lubricants supplier in the United States.
+Phillips 66 owns 15 refineries with a net crude oil capacity of 2.2 million barrels per day (350×10^3 m3/d), 10,000 branded marketing outlets, and 15,000 miles (24,000 km) of pipelines. It has 50 percent stake in DCP Midstream, LLC, a natural gas gatherers and processors with 7.2 billion cubic feet per day (200×10^6 m3/d) of processing capacity. It also owns 50 percent stake in Chevron Phillips Chemical Co.
+Phillips 66 also owns a one-quarter share in the controversial Dakota Access Pipeline.[10]
+Refineries[edit]
+
+
+Country
+Name
+Location
+Nelson Complexity Factor
+Crude Oil Processing Capacity (MBD)
+
+
+
+Wood River Refinery*
+Roxana, IL
+9.8
+305
+
+
+
+Alliance Refinery
+Belle Chasse, LA
+12.0
+247
+
+
+
+Sweeny Refinery
+Old Ocean, TX
+13.2
+247
+
+
+
+Bayway Refinery
+Linden, NJ
+8.5
+238
+
+
+
+Lake Charles Refinery
+Westlake, LA
+10.2
+239
+
+
+
+Ponca City Refinery
+Ponca City, OK
+9.8
+210
+
+
+
+Borger Refinery*
+Borger, TX
+12.3
+146
+
+
+
+Los Angeles Refinery
+Carson, CA/Wilmington, CA
+14.1
+139
+
+
+
+San Francisco Refinery
+Rodeo, CA/Arroyo Grande, CA
+13.6
+120
+
+
+
+Ferndale Refinery
+Ferndale, WA
+7.4
+100
+
+
+
+Billings Refinery
+Billings, MT
+14.3
+58
+
+
+
+Humber Refinery
+North Lincolnshire
+11.6
+221
+
+
+
+MIRO Refinery*
+Karlsruhe
+7.9
+58
+
+
+* Denotes joint ventures. Crude capacity reflects that proportion.
+Sources (Mar 31, 2011)[11][12][13]
+Phillips 66's Los Angeles (CA), Lake Charles (LA), San Francisco (CA), and Sweeney (TX) refineries receive and process crude oil from the Amazon River Basin of South America. In 2015, the Los Angeles refinery was processing 21,512 barrels per day of Amazonian oil.
+Corporate affairs[edit]
+In 2012, after Phillips 66 split from ConocoPhillips, it moved its operations from the ConocoPhillips headquarters to the Pinnacle Westchase building,[14] a nine-story Class A office building located on 8.4 acres (3.4 ha) of land in Westchase, Houston.[15] This was a temporary headquarters location.[14]
+In July 2016, Phillips 66 completed their move to a new permanent headquarters on a 14-acre (5.7 ha) plot of land in Westchase. The new headquarters is between Westheimer Road and Briar Forest, in close proximity to the Sam Houston Tollway. Phillips 66 purchased the land from a subsidiary of Thomas Properties Group. The architect of record is HOK.[16] The official groundbreaking was in November 2013, and the opening was completed on schedule. The 1.1 million square foot headquarters includes conference spaces, medical facilities, food service facilities, outdoor recreational space, a gymnasium with full-size basketball court, and training facilities. Irrigation of the outdoor landscaping is via a reclaimed water system. The new campus houses 2,200 workers who were spread among six different Houston locations, including the ConocoPhillips headquarters, where several hundred Phillips 66 workers had remained post spin-off.[14][17][18]
+On 4 August 2015 it was announced that the company had formed a "long-term partnership" with English non-league association football club Leamington F.C.. The deal involved, amongst other things, the renaming of the club's ground from "The New Windmill Ground" to "The Phillips 66 Community Stadium."[19]
+References[edit]
+
+
+
+^ a b c d e f "2013 Phillips 66 Summary Annual Report". Phillips 66. Retrieved 10 January 2014. 
+^ "Conoco says refining co will be Phillips 66". "Conoco says refining co will be named Phillips 66". Reuters. November 10, 2011. Retrieved November 10, 2011. 
+^ "Fortune 500 List". Time Inc. Retrieved December 7, 2016. 
+^ "Global 500 List". Time Inc. Retrieved December 7, 2016. 
+^ Aaseng, Nathan (2000). Business Builders in Oil. The Oliver Press, Inc. ISBN 1-881508-56-0.  P. 104.
+^ "Phillips 66". historicpreservationalliance.com. Retrieved 6 October 2015. 
+^ "Shell and Phillips 66 - Suncor". suncor.com. Retrieved 6 October 2015. 
+^ url=http://www.usatoday.com/story/money/business/2013/12/30/warren-buffetts-firm-phillips-66-unit/4255665
+^ Olabi, Nora (17 February 2015). "Phillips 66 Partners makes $1 billion midstream acquisition". Houston Business Journal. Retrieved 31 May 2015. 
+^ "Trump's Stock in Dakota Access Pipeline Company Raises Concern". 
+^ ConocoPhillips (Mar 31, 2011). "Refining". ConocoPhillips. ConocoPhillips. Retrieved Aug 6, 2011. 
+^ ConocoPhillips (Mar 31, 2011). "Europe". ConocoPhillips. ConocoPhillips. Retrieved Aug 6, 2011. 
+^ ConocoPhillips (Mar 31, 2011). "Asia Pacific". ConocoPhillips. ConocoPhillips. Retrieved Aug 6, 2011. 
+^ a b c Sebastian, Simone. "Phillips 66 to build global headquarters in West Houston." FuelFix (Houston Chronicle). September 12, 2012. Retrieved on September 13, 2012.
+^ "Location." (Archive) Pinnacle Westchase. Retrieved on September 13, 2012.
+^ HOK. "Phillips 66 Breaks Ground on New Corporate Campus". www.hok.com. Retrieved 2016-06-29. 
+^ "Phillips 66 breaks ground on new Houston headquarters". FuelFix (Houston Chronicle). 2013-11-23. Retrieved 2016-06-29. 
+^ "Phillips 66 offers a look at its new headquarters". FuelFix (Houston Chronicle). 2016-06-27. Retrieved 2016-06-29. 
+^ "Location." ([1]) Article on the partnership on the Leamington FC website. Retrieved on 4 August 2015.
+
+
+
+External links[edit]
+
+
+Houston portal
+Companies portal
+Energy portal
+
+
+
+
+
+Wikimedia Commons has media related to Phillips 66.
+
+
+
+Phillips 66 Official Web Site
+
+
+
+Business data for Phillips 66: Google Finance
+Yahoo! Finance
+Reuters
+SEC filings
+
+
+
+Investor Update with Phillips 66 Business Prospects April, 2012
+Independent Business Analysis of Phillips 66
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Phillips 66
+
+
+
+Companies / Divisions
+
+
+
+
+
+Current
+
+
+
+
+76
+Chevron Phillips Chemical
+Jet
+
+
+
+
+
+
+Former
+
+
+
+
+Conoco
+Marland Oil Company
+Phillips Petroleum Company
+ProJET
+Tidewater Petroleum
+Tosco Corporation
+
+
+
+
+
+
+
+
+Facilities
+
+
+
+
+
+Current
+
+
+
+
+Bayway Refinery
+Billings Refinery
+Humber Refinery
+Rockies Express Pipeline
+Rodeo San Francisco Refinery
+Wood River Refinery
+
+
+
+
+
+
+Former
+
+
+
+
+Immingham Power Station
+
+
+
+
+
+
+
+
+Industrial disasters
+
+
+
+1989 Phillips disaster
+1999 Phillips explosion
+2000 Phillips explosion
+2001 Humber Refinery explosion
+
+
+
+
+
+Related topics
+
+
+
+ConocoPhillips
+Phillips 66ers
+Phillips Petroleum Process
+Phillips, Texas
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Phillips_66&oldid=788504252"					
+Categories: Automotive fuel brandsBartlesville, OklahomaCompanies based in HoustonCompanies based in OklahomaCompanies listed on the New York Stock ExchangeEconomy of the Midwestern United StatesEconomy of the Southwestern United StatesGas stations in the United StatesNatural gas pipeline companiesOil companies of the United StatesU.S. Route 66Phillips 66Corporate spin-offsHidden categories: Pages using deprecated image syntaxArticles containing potentially dated statements from 2016All articles containing potentially dated statements 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+In other projects
+
+
+Wikimedia Commons 
+
+
+
+Languages
+
+
+DeutschEspañolفارسیFrançaisBahasa Indonesia日本語PolskiSvenska 
+Edit links 
+
+
+
+
+
+ This page was last edited on 1 July 2017, at 20:16.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+	
+	Aviation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: Aviation
+
+
+
+
+
+
+
+About
+
+
+ 
+
+Phillips 66 brings with it a proud and successful heritage, one developed and enriched by our predecessor companies throughout more than a century of operations.read more >>
+Company Overview
+Our Businesses
+Our History
+Board of Directors
+Executive Leadership Team
+Publications
+Sustainability
+
+
+ 
+
+At Phillips 66, we are committed to safety and we conduct our business with care for the environment and engagement with communities where we operate.read more >>
+Our Approach
+Operational
+Economic
+Social
+Environmental
+Our Performance
+Investors
+
+
+ 
+
+Welcome to the Phillips 66 Investors site. This site is designed to give institutional and individual investors 24-hour access to relevant financial and operating information about our company.read more >>
+Events &Presentations
+Shareholder Services
+Governance
+Stock Information
+Financial &Operating Information
+FAQs
+Newsroom
+
+
+ 
+
+Welcome to the Phillips 66 Newsroom. This site is designed to give media professionals 24-hour access to relevant information about our company.read more >>
+News Releases
+Image Gallery
+Request a Logo
+Media Contact Form
+Operations Center
+Careers
+
+
+ 
+
+Our talented, motivated employees afford our company the drive and diversity of thought needed to compete and win in the future.read more >>
+Phillips 66 Careers
+University Recruitment
+Products & Services
+
+
+ 
+
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions.read more >>
+Consumer
+Businesses
+Accounts PayableVendor Relations
+Real Estate
+SDS
+Unclaimed Property
+Interest Owners
+Contact Us
+
+
+
+
+
+
+
+
+Phillips66 > English > Products and Services > Businesses > Aviation
+Printer Friendly
+
+
+
+
+
+
+BusinessesAsphaltAviationChemicals and PlasticsCrude OilFuelsLubricantsMidstreamPetroleum Fuel CokeSpecialty ProductsAccounts Payable Vendor RelationsReal EstateSDSConsumerInterest Owners
+
+
+
+
+
+
+
+
+
+
+
+							Aviation
+Page Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66 is among the largest refiners in the United States and a major supplier of jet fuels and avgas to general, commercial and military aviation. Our extensive network of refineries, pipelines and supply terminals are strategically located to provide reliable and cost-effective supply across the country. For you, this translates into secure supply now and in the future.
+Pilots and FBOs have been relying on Phillips 66 Aviation for more than 85 years as their source for the highest quality jet and aviation gasoline fuels. Our stature in aviation stretches back to WWII, when we developed 100-octane fuel. Later, we developed anti-icing additives for jet fuel and made technology improvements such as the controllable-pitch propeller, the first refueling truck, and the drag chute. At Phillips 66 Aviation, our dedication to innovation continues today. We remain an industry leader, providing forward-thinking programs and quality fuel for both the flying community and our vast network of high-quality FBOs.This site contains information about Phillips 66 Aviation, its programs and its lubricants, as well as links to additional aviation resources. 
+
+Enter the Aviation Site  
+Go directly to the Phillips 66 Aviation Fuels and FBO Locator. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© Phillips 66 Company. All rights reserved. 
+                  Terms and Conditions and 
+                  Privacy Statement (UPDATED). 
+                  
+
+California Transparency in Supply Chains Disclosure.
+ | 
+                  Contact Us
+
+
+
+
+
+
+
+
+
+	
+	Chemicals and Plastics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: Chemicals and Plastics
+
+
+
+
+
+
+
+About
+
+
+ 
+
+Phillips 66 brings with it a proud and successful heritage, one developed and enriched by our predecessor companies throughout more than a century of operations.read more >>
+Company Overview
+Our Businesses
+Our History
+Board of Directors
+Executive Leadership Team
+Publications
+Sustainability
+
+
+ 
+
+At Phillips 66, we are committed to safety and we conduct our business with care for the environment and engagement with communities where we operate.read more >>
+Our Approach
+Operational
+Economic
+Social
+Environmental
+Our Performance
+Investors
+
+
+ 
+
+Welcome to the Phillips 66 Investors site. This site is designed to give institutional and individual investors 24-hour access to relevant financial and operating information about our company.read more >>
+Events &Presentations
+Shareholder Services
+Governance
+Stock Information
+Financial &Operating Information
+FAQs
+Newsroom
+
+
+ 
+
+Welcome to the Phillips 66 Newsroom. This site is designed to give media professionals 24-hour access to relevant information about our company.read more >>
+News Releases
+Image Gallery
+Request a Logo
+Media Contact Form
+Operations Center
+Careers
+
+
+ 
+
+Our talented, motivated employees afford our company the drive and diversity of thought needed to compete and win in the future.read more >>
+Phillips 66 Careers
+University Recruitment
+Products & Services
+
+
+ 
+
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions.read more >>
+Consumer
+Businesses
+Accounts PayableVendor Relations
+Real Estate
+SDS
+Unclaimed Property
+Interest Owners
+Contact Us
+
+
+
+
+
+
+
+
+Phillips66 > English > Products and Services > Businesses > Chemicals and Plastics
+Printer Friendly
+
+
+
+
+
+
+BusinessesAsphaltAviationChemicals and PlasticsCrude OilFuelsLubricantsMidstreamPetroleum Fuel CokeSpecialty ProductsAccounts Payable Vendor RelationsReal EstateSDSConsumerInterest Owners
+
+
+
+
+
+
+
+
+
+
+
+							Chemicals and Plastics
+Page Content
+Phillips 66 provides chemicals and plastics through several operations. The company participates in the chemicals sector through its 50 percent ownership of Chevron Phillips Chemical Company LLC (CPChem), a joint venture with Chevron Corporation. Major business segments are Olefins and Polyolefins; Aromatics and Styrenics; and Specialty Products.
+Phillips 66 also manufactures a full suite of polypropylene grades from its Bayway Refinery in Linden, New Jersey. From homopolymers to impact copolymers, Phillips 66 is able to offer high quality polypropylene for a variety of industrial and consumer applications.
+
+
+Enter the Site:
+
+Chevron Phillips Chemical Company LLC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© Phillips 66 Company. All rights reserved. 
+                  Terms and Conditions and 
+                  Privacy Statement (UPDATED). 
+                  
+
+California Transparency in Supply Chains Disclosure.
+ | 
+                  Contact Us
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+	
+	Products and Services
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: Products and Services
+
+
+
+
+
+
+
+About
+
+
+ 
+
+Phillips 66 brings with it a proud and successful heritage, one developed and enriched by our predecessor companies throughout more than a century of operations.read more >>
+Company Overview
+Our Businesses
+Our History
+Board of Directors
+Executive Leadership Team
+Publications
+Sustainability
+
+
+ 
+
+At Phillips 66, we are committed to safety and we conduct our business with care for the environment and engagement with communities where we operate.read more >>
+Our Approach
+Operational
+Economic
+Social
+Environmental
+Our Performance
+Investors
+
+
+ 
+
+Welcome to the Phillips 66 Investors site. This site is designed to give institutional and individual investors 24-hour access to relevant financial and operating information about our company.read more >>
+Events &Presentations
+Shareholder Services
+Governance
+Stock Information
+Financial &Operating Information
+FAQs
+Newsroom
+
+
+ 
+
+Welcome to the Phillips 66 Newsroom. This site is designed to give media professionals 24-hour access to relevant information about our company.read more >>
+News Releases
+Image Gallery
+Request a Logo
+Media Contact Form
+Operations Center
+Careers
+
+
+ 
+
+Our talented, motivated employees afford our company the drive and diversity of thought needed to compete and win in the future.read more >>
+Phillips 66 Careers
+University Recruitment
+Products & Services
+
+
+ 
+
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions.read more >>
+Consumer
+Businesses
+Accounts PayableVendor Relations
+Real Estate
+SDS
+Unclaimed Property
+Interest Owners
+Contact Us
+
+
+
+
+
+
+
+
+
+
+
+
+BusinessesAccounts Payable Vendor RelationsReal EstateSDSConsumerInterest Owners
+
+
+
+
+
+
+
+Page Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consumer
+Serving the consumer is a top priority for Phillips 66. The company's domestic and international brands reinforce Phillips 66's commitment to consumers by offering superior quality products at service stations and retail outlets. Like all of Phillips 66's brands, the company's lubricants are designed to keep consumers' products operating at optimal levels of performance. 
+               
+
+
+Brands – U.S. 
+
+Brands – International 
+
+Lubricants 
+
+ 
+
+
+
+
+
+Business
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions. Phillips 66 Pipe Line Company operates more than 11,000 miles of pipelines and more than 60 storage terminals in the United States and transports both raw and finished petroleum products 
+               
+
+
+
+Asphalt
+
+Aviation
+
+Branded Products
+
+Chemicals and Plastics 
+
+Crude Oil Pricing 
+
+FuelsSpecialty Products
+ 
+
+
+
+Vendor Relations
+Phillips 66 places high value on the company's relationships with vendors and suppliers and strives to ensure that all of its vendors receive accurate, prompt payment and quality service. 
+               
+
+Access the 
+                  Vendor Relations Web site. 
+Go directly to 
+                  Invoice/Payment Status (VIS). 
+
+Contact Vendor Relations 
+
+ 
+
+
+
+
+
+Interest Owners
+Phillips 66 values its relationship with oil and gas interest owners. The company's Owner Relations Unit works to efficiently provide revenue and to answer all questions in a prompt and informative manner. 
+               
+
+Access the 
+                  Interest Owners Web site. 
+Obtain 
+                  oil and gas payment information. 
+
+Contact the Owner Relations Unit
+
+
+
+
+
+Real Estate
+
+Phillips 66 has a number of real estate properties available for purchase or lease in the United States. Properties are currently available in the following states: 
+
+
+California 
+
+Louisiana 
+
+Oklahoma 
+
+Oregon 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© Phillips 66 Company. All rights reserved. 
+                  Terms and Conditions and 
+                  Privacy Statement (UPDATED). 
+                  
+
+California Transparency in Supply Chains Disclosure.
+ | 
+                  Contact Us
+
+
+
+
+
+
+
+
+
+	
+	Asphalt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: Asphalt
+
+
+
+
+
+
+
+About
+
+
+ 
+
+Phillips 66 brings with it a proud and successful heritage, one developed and enriched by our predecessor companies throughout more than a century of operations.read more >>
+Company Overview
+Our Businesses
+Our History
+Board of Directors
+Executive Leadership Team
+Publications
+Sustainability
+
+
+ 
+
+At Phillips 66, we are committed to safety and we conduct our business with care for the environment and engagement with communities where we operate.read more >>
+Our Approach
+Operational
+Economic
+Social
+Environmental
+Our Performance
+Investors
+
+
+ 
+
+Welcome to the Phillips 66 Investors site. This site is designed to give institutional and individual investors 24-hour access to relevant financial and operating information about our company.read more >>
+Events &Presentations
+Shareholder Services
+Governance
+Stock Information
+Financial &Operating Information
+FAQs
+Newsroom
+
+
+ 
+
+Welcome to the Phillips 66 Newsroom. This site is designed to give media professionals 24-hour access to relevant information about our company.read more >>
+News Releases
+Image Gallery
+Request a Logo
+Media Contact Form
+Operations Center
+Careers
+
+
+ 
+
+Our talented, motivated employees afford our company the drive and diversity of thought needed to compete and win in the future.read more >>
+Phillips 66 Careers
+University Recruitment
+Products & Services
+
+
+ 
+
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions.read more >>
+Consumer
+Businesses
+Accounts PayableVendor Relations
+Real Estate
+SDS
+Unclaimed Property
+Interest Owners
+Contact Us
+
+
+
+
+
+
+
+
+Phillips66 > English > Products and Services > Businesses > Asphalt
+Printer Friendly
+
+
+
+
+
+
+BusinessesAsphaltMap of TerminalsProduct ListMSDSContact UsAsphalt LinksAviationChemicals and PlasticsCrude OilFuelsLubricantsMidstreamPetroleum Fuel CokeSpecialty ProductsAccounts Payable Vendor RelationsReal EstateSDSConsumerInterest Owners
+
+
+
+
+
+
+
+
+
+
+
+							Asphalt
+Page Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Phillips 66 produces asphalt at its Wood River refinery in Roxana, Illinois. Consistent production of high quality asphalt is essential to the operation of the refinery and great care is taken to ensure that the optimum blend of crude feed for quality asphalt production is obtained. Finished products are distributed throughout the Midwest by barge, truck and rail. Product is available directly from the refinery or through the company’s network of asphalt terminals. This site offers a list of the company’s asphalt products, as well as locations and contact information, and links for additional research. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+© Phillips 66 Company. All rights reserved. 
+                  Terms and Conditions and 
+                  Privacy Statement (UPDATED). 
+                  
+
+California Transparency in Supply Chains Disclosure.
+ | 
+                  Contact Us
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+|
+Automotive
+|
+Motor Oil
+|
+Full Synthetic
+|
+Shield® Valor
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shield® Valor
+
+
+
+Premium Full Synthetic Passenger Car Engine Oil;  Approved for GM dexos1™ Gen2
+
+
+
+
+
+
+
+
+Product Data Sheet
+
+
+
+
+Safety Data Sheet
+
+
+Warranty Information
+
+
+
+
+Phillips 66® Shield Valor Full Synthetic Motor Oils are an ultra-premium quality automotive engine oil specially designed to meet the performance requirements of the GM dexos1 Gen2 specification for gasoline-fueled GM vehicles. They also exceed ISLAC GF-5 warranty requirements for use in other vehicles.
+
+
+
+Features & Benefits
+
+
+
+Exceeds ILSAC GF-5 requirements for new cars under warranty
+Reduces the occurance of low speed preignition
+Outstanding resistance to viscosity and thermal breakdown at high temperatures
+Excellent low-temperature pumpability for protection during cold starts
+Protects against sludge and varnish formation
+Protects against turbocharger deposits
+Protects against rust and bearing corrosion
+Low volatility for reduced oil consumption
+Highly resistant to aeration and foaming
+Formulated to protect turbochargers and emission control system catalysts
+Formulated for use in vehicles operating on ethanol-containing fuels up to E85
+
+
+
+
+
+Applications
+
+
+
+GM vehicles where a dexos1 Gen2 oil is specified
+Gasoline-fueled and flex-fuel passenger cars, light trucks and sport utility vehicles, including gasoline-electric hybrids, where the OEM specifies SAE 0W-20 or SAE 5W-30 engine oil
+Four-stroke cycle gasoline engines in other mobile or stationary equipment
+
+
+
+
+
+
+
+
+
+
+Product Data Sheet
+
+
+
+
+Safety Data Sheet
+
+
+Warranty Information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Technical Details
+
+
+
+
+
+
+0W-20
+
+
+5W-30
+
+
+
+
+
+
+Licenses & Approvals
+
+Shield Valor Full Synthetic is licensed or OEM-certified for:
+ILSAC GF-5
+API Service SN with Resource Conserving
+GM dexos1 Gen2
+Shield Valor Full Synthetic meets or exceeds the requirements of:
+Chrysler MS-6395
+Ford WSS-M2C947-A
+GM4718M, GM6094M (obsolete specifications)
+Honda HT-06
+
+
+
+
+Additional Details
+
+
+
+SAE Grade
+
+
+0W-20
+
+
+5W-30
+
+
+
+
+Specific Gravity @ 60°F
+
+
+0.846
+
+
+0.851
+
+
+
+
+Density, lbs/gal @ 60°F
+
+
+7.04
+
+
+7.08
+
+
+
+
+Color, ASTM D1500
+
+
+3
+
+
+3
+
+
+
+
+Flash Point (COC), °C (°F)
+
+
+226 (438)
+
+
+220 (428)
+
+
+
+
+Pour Point, °C (°F)
+
+
+-40 (-40)
+
+
+-40 (-40)
+
+
+
+
+Viscosity, Kinematic
+
+
+
+
+
+
+
+
+cSt @ 40°C
+
+
+45
+
+
+64
+
+
+
+
+cSt @ 100°C
+
+
+8.5
+
+
+11
+
+
+
+
+Viscosity Index
+
+
+169
+
+
+165
+
+
+
+
+Cold Cranking Viscosity, cP
+
+
+5700
+
+
+5000
+
+
+
+
+°C
+
+
+(-35)
+
+
+(-30)
+
+
+
+
+High-Temp/High-Shear Viscosity, cP @ 150°C
+
+
+2.7
+
+
+3.2
+
+
+
+
+Sulfated Ash, ASTM D874, wt %
+
+
+0.9
+
+
+0.9
+
+
+
+
+Total Base Number (TBN), ASTM D2896
+
+
+8.7
+
+
+8.7
+
+
+
+
+Phosphorus, wt %
+
+
+0.77
+
+
+0.077
+
+
+
+
+Zinc, wt %
+
+
+0.085
+
+
+0.085
+
+
+
+
+
+
+
+
+
+
+
+
+
+0W-20
+
+
+
+
+
+
+
+Licenses & Approvals
+
+Shield Valor Full Synthetic is licensed or OEM-certified for:
+ILSAC GF-5
+API Service SN with Resource Conserving
+GM dexos1 Gen2
+Shield Valor Full Synthetic meets or exceeds the requirements of:
+Chrysler MS-6395
+Ford WSS-M2C947-A
+GM4718M, GM6094M (obsolete specifications)
+Honda HT-06
+
+
+
+
+Additional Details
+
+
+
+SAE Grade
+
+
+0W-20
+
+
+5W-30
+
+
+
+
+Specific Gravity @ 60°F
+
+
+0.846
+
+
+0.851
+
+
+
+
+Density, lbs/gal @ 60°F
+
+
+7.04
+
+
+7.08
+
+
+
+
+Color, ASTM D1500
+
+
+3
+
+
+3
+
+
+
+
+Flash Point (COC), °C (°F)
+
+
+226 (438)
+
+
+220 (428)
+
+
+
+
+Pour Point, °C (°F)
+
+
+-40 (-40)
+
+
+-40 (-40)
+
+
+
+
+Viscosity, Kinematic
+
+
+
+
+
+
+
+
+cSt @ 40°C
+
+
+45
+
+
+64
+
+
+
+
+cSt @ 100°C
+
+
+8.5
+
+
+11
+
+
+
+
+Viscosity Index
+
+
+169
+
+
+165
+
+
+
+
+Cold Cranking Viscosity, cP
+
+
+5700
+
+
+5000
+
+
+
+
+°C
+
+
+(-35)
+
+
+(-30)
+
+
+
+
+High-Temp/High-Shear Viscosity, cP @ 150°C
+
+
+2.7
+
+
+3.2
+
+
+
+
+Sulfated Ash, ASTM D874, wt %
+
+
+0.9
+
+
+0.9
+
+
+
+
+Total Base Number (TBN), ASTM D2896
+
+
+8.7
+
+
+8.7
+
+
+
+
+Phosphorus, wt %
+
+
+0.77
+
+
+0.077
+
+
+
+
+Zinc, wt %
+
+
+0.085
+
+
+0.085
+
+
+
+
+
+
+
+
+
+
+
+
+5W-30
+
+
+
+
+
+
+
+Licenses & Approvals
+
+Shield Valor Full Synthetic is licensed or OEM-certified for:
+ILSAC GF-5
+API Service SN with Resource Conserving
+GM dexos1 Gen2
+Shield Valor Full Synthetic meets or exceeds the requirements of:
+Chrysler MS-6395
+Ford WSS-M2C947-A
+GM4718M, GM6094M (obsolete specifications)
+Honda HT-06
+
+
+
+
+Additional Details
+
+
+
+SAE Grade
+
+
+0W-20
+
+
+5W-30
+
+
+
+
+Specific Gravity @ 60°F
+
+
+0.846
+
+
+0.851
+
+
+
+
+Density, lbs/gal @ 60°F
+
+
+7.04
+
+
+7.08
+
+
+
+
+Color, ASTM D1500
+
+
+3
+
+
+3
+
+
+
+
+Flash Point (COC), °C (°F)
+
+
+226 (438)
+
+
+220 (428)
+
+
+
+
+Pour Point, °C (°F)
+
+
+-40 (-40)
+
+
+-40 (-40)
+
+
+
+
+Viscosity, Kinematic
+
+
+
+
+
+
+
+
+cSt @ 40°C
+
+
+45
+
+
+64
+
+
+
+
+cSt @ 100°C
+
+
+8.5
+
+
+11
+
+
+
+
+Viscosity Index
+
+
+169
+
+
+165
+
+
+
+
+Cold Cranking Viscosity, cP
+
+
+5700
+
+
+5000
+
+
+
+
+°C
+
+
+(-35)
+
+
+(-30)
+
+
+
+
+High-Temp/High-Shear Viscosity, cP @ 150°C
+
+
+2.7
+
+
+3.2
+
+
+
+
+Sulfated Ash, ASTM D874, wt %
+
+
+0.9
+
+
+0.9
+
+
+
+
+Total Base Number (TBN), ASTM D2896
+
+
+8.7
+
+
+8.7
+
+
+
+
+Phosphorus, wt %
+
+
+0.77
+
+
+0.077
+
+
+
+
+Zinc, wt %
+
+
+0.085
+
+
+0.085
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automotive
+
+
+Trucking
+
+
+Products by Segment
+
+
+Promotions
+
+
+Why Phillips 66
+
+
+About Us
+
+
+
+
+
+
+Contact
+
+
+Careers
+
+
+Privacy
+
+
+Phillips66Lubricants.com
+
+
+Lubestream
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Find the
+
+Right Oil
+
+
+
+
+Find a
+
+Distributor
+
+
+
+Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quick Links
+
+
+Find the Right Oil
+
+
+Motor Oil
+
+
+Find a Distributor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automotive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Our Automotive Products
+
+
+
+
+
+
+If it has two or more wheels, we have it covered—from the engine to the transmission and anything that needs lubrication in-between. No one knows automotive like Phillips 66.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Motor Oil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Transmission Fluid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Grease
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gear Oil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trucking
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OUR TRUCKING PRODUCTS
+
+
+
+
+
+
+Bumper-to-bumper protection. That’s what we deliver for heavy-duty, on-road and off-road vehicles. Protect your investments with products that are engineered to keep them running smoothly while the mile markers and trees keep passing by.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Engine Oil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Transmission Fluid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Grease
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gear Oil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hydraulic Fluid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products by Segment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Our Products by Segment
+
+
+
+
+
+
+
+
+
+
+
+
+
+Agriculture
+
+
+
+
+
+
+
+
+
+
+
+
+
+Construction & Earth Moving
+
+
+
+
+
+
+
+
+
+
+
+
+
+Industrial
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aviation
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mining
+
+
+
+
+
+
+
+
+
+
+
+
+
+Power Generation
+
+
+
+
+
+
+
+
+
+
+
+
+
+Railroad
+
+
+
+
+
+
+
+
+
+
+
+
+
+Small Engine
+
+
+
+
+
+
+
+
+
+
+
+
+
+Automotive
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trucking
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Terms & Conditions
+
+
+
+
+
+
+
+
+
+
+
+Keeping the World Running Smoothly
+
+
+
+
+
+
+
+
+
+
+
+Commitment to Health and Safety
+
+
+
+
+
+
+
+
+
+
+
+
+
+Product Quality Guarantee
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Why Phillips 66
+
+
+
+
+
+
+
+
+
+Terms & Conditions
+
+
+
+
+
+
+
+
+
+Keeping the World Running Smoothly
+
+
+
+
+
+
+
+
+
+
+
+Commitment to Health and Safety
+
+
+
+
+
+
+
+
+
+Product Quality Guarantee
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+Our Company
+
+
+
+
+A long history of innovation with an even brighter future.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Newsroom
+
+
+
+
+
+
+
+
+
+
+
+Careers
+
+
+
+
+
+
+
+
+
+
+
+
+
+Find A Distributor
+
+
+
+
+
+
+
+
+
+
+
+Become A Distributor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Our Company
+
+
+
+
+
+
+
+
+
+Newsroom
+
+
+
+
+
+
+
+
+
+
+
+Careers
+
+
+
+
+
+
+
+
+
+Find A Distributor
+
+
+
+
+
+
+
+
+
+
+
+Become A Distributor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66 Products - AUSTIN, TX - Company Information
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Products
+Resources
+My Account
+
+
+
+
+
+
+
+
+
+
+
+
+Talk to a D&B Advisor 
+1-800-280-0780 
+
+
+
+
+Business Directory
+
+
+
+TX
+
+
+
+AUSTIN
+
+
+
+Gasoline Service Stations
+
+
+
+Retail - Filling Stations, Gasoline
+
+
+
+                            Phillips 66 Products
+                                    
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+P 
+
+
+Phillips 66 Products
+CLAIM THIS BUSINESS
+
+
+
+2407 LAKE AUSTIN BLVD AUSTIN, TX 78703
+Get Directions
+
+
+
+(512) 398-2386
+
+
+
+
+
+Business Info
+
+
+
+ Founded 2011
+ Incorporated 
+ Annual Revenue $200,000.00
+ Employee Count 3
+ Industries Retail - Filling Stations, Gasoline
+ Contacts Ernest Gonzales
+
+
+
+
+
+
+
+Contact Business
+
+
+
+
+
+
+
+Your Email Address
+
+Subject:
+
+
+Message
+
+
+Send Message
+
+
+
+
+
+Company Summary
+
+
+Phillips 66 Products is located at 2407 Lake Austin Blvd in Austin and has been in the business of Retail - Filling Stations, Gasoline since 2011. 
+
+
+
+
+
+
+
+
+
+VERIFIED Status:
+UNVERIFIED
+
+
+
+Address:
+UNVERIFIED
+
+
+
+
+
+LAST VERIFIED:
+
+                                    --
+                                
+
+
+
+Phone:
+
+                                    UNVERIFIED
+                                
+
+
+
+
+
+Payment Method:
+UNVERIFIED
+
+
+view full report
+
+
+
+
+
+Similar Businesses Nearby
+
+
+                                        Our similar businesses nearby shows similar businesses in their industry and region based on information found in their Dun & Bradstreet Credibility Review profile.                                        
+
+
+
+
+
+
+
+Competitive Landscape
+
+
+                                        Our competitive landscape shows how this business compares to similar businesses in their industry and region based on information found in their Dun & Bradstreet Credibility Review profile.                                        
+
+
+
+
+
+
+
+Payments Accepted
+
+NO DATA
+
+
+
+Hours
+
+
+
+                                        Sunday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Monday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Tuesday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Wednesday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Thursday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Friday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+                                        Saturday 
+
+                                        
+
+                                                                                            --
+                                            
+                                        
+
+
+
+
+
+
+
+P
+
+VIEW ADDITIONAL DATA                        
+Select from over 115 networks below to view available data about this business. If this data is unavailable or inaccurate and you own or represent this business, click here for more information on how you may be able to correct it. 
+
+
+
+
+
+
+
+Credibility Review
+
+
+
+
+
+Google
+
+
+
+
+
+Facebook.com
+
+
+
+
+
+Yellowbook.com
+
+
+
+
+
+Bing.com
+
+
+
+
+
+Yellowpages.com
+
+
+
+
+
+MerchantCircle
+
+
+
+
+
+Tele Atlas (TomTom)
+
+
+
+
+
+Twitter.com
+
+
+
+
+
+AOL
+
+
+
+
+
+MapQuest
+
+
+
+
+
+Yahoo Local
+
+
+
+
+
+Apple/Siri
+
+
+
+
+
+Groupon
+
+
+
+
+
+Hotfrog.com
+
+
+
+
+
+Comcast.net Search
+
+
+
+
+
+ReachLocal
+
+
+
+
+
+Admedia
+
+
+
+
+
+Dealsplus
+
+
+
+
+
+Shoptopia.com
+
+
+
+
+
+Alteryx
+
+
+
+
+
+Dogtime Media
+
+
+
+
+
+KSL.com
+
+
+
+
+
+Sirtune
+
+
+
+
+
+AmericanTowns.com
+
+
+
+
+
+Driverside
+
+
+
+
+
+Kudzu.com
+
+
+
+
+
+SpecialsAgent.com
+
+
+
+
+
+Answers.com
+
+
+
+
+
+eGood
+
+
+
+
+
+LawInfo.com
+
+
+
+
+
+spotlikes.com
+
+
+
+
+
+anywho.com
+
+
+
+
+
+eGumball
+
+
+
+
+
+Likeness.com
+
+
+
+
+
+Spotzot
+
+
+
+
+
+eServiceLog
+
+
+
+
+
+MapMyRun
+
+
+
+
+
+TechnoCom
+
+
+
+
+
+apartmentguide.com
+
+
+
+
+
+ezlocal.com
+
+
+
+
+
+EZToUse.com
+
+
+
+
+
+Teleroute
+
+
+
+
+
+AroundMe.com
+
+
+
+
+
+metropolist.com
+
+
+
+
+
+Therapists.com
+
+
+
+
+
+Atlanta NewHomes
+
+
+
+
+
+FindLaw.com
+
+
+
+
+
+Time Out New York
+
+
+
+
+
+Avantar
+
+
+
+
+
+FindTheBest.com
+
+
+
+
+
+mojopages.com
+
+
+
+
+
+B2B Yellowpages
+
+
+
+
+
+Fivestar Software
+
+
+
+
+
+MyCityWay.com
+
+
+
+
+
+TripAdvisor
+
+
+
+
+
+bckyrd.com
+
+
+
+
+
+GiftCards.com
+
+
+
+
+
+MyCoupons.com
+
+
+
+
+
+beachcalifornia.com
+
+
+
+
+
+GoLocal247.com
+
+
+
+
+
+mymove.com
+
+
+
+
+
+UpMeSocial.com
+
+
+
+
+
+Belo
+
+
+
+
+
+GoodInfo
+
+
+
+
+
+News-Gazette
+
+
+
+
+
+Nokia
+
+
+
+
+
+usdirectory.com
+
+
+
+
+
+Cars.com
+
+
+
+
+
+Nomao
+
+
+
+
+
+Centzy.com
+
+
+
+
+
+hibu
+
+
+
+
+
+Openlist.com
+
+
+
+
+
+ChaCha Search
+
+
+
+
+
+Homeplate.com
+
+
+
+
+
+OwnLocal.com
+
+
+
+
+
+VisiKard
+
+
+
+
+
+challama.com
+
+
+
+
+
+Homestore
+
+
+
+
+
+patch.com
+
+
+
+
+
+Voltari
+
+
+
+
+
+CityBot
+
+
+
+
+
+Pelopidas
+
+
+
+
+
+Vouchd
+
+
+
+
+
+ClassifiedAds
+
+
+
+
+
+Hostway
+
+
+
+
+
+PlaceIQ
+
+
+
+
+
+WalkScore.com
+
+
+
+
+
+CloudMade
+
+
+
+
+
+Hoodoyou
+
+
+
+
+
+PlanetDiscover.com
+
+
+
+
+
+WeddingWire.com
+
+
+
+
+
+PowerProfiles
+
+
+
+
+
+Where Inc.
+
+
+
+
+
+Contractors.com
+
+
+
+
+
+iGoLocal.com
+
+
+
+
+
+Radiate Media
+
+
+
+
+
+Wikiocity
+
+
+
+
+
+CouponMap
+
+
+
+
+
+Indeed.com
+
+
+
+
+
+Wimgo.com
+
+
+
+
+
+CrowdSpot
+
+
+
+
+
+Innova Electronics
+
+
+
+
+
+Intellistrand
+
+
+
+
+
+realtor.com
+
+
+
+
+
+DataSphere
+
+
+
+
+
+InTheMO.com
+
+
+
+
+
+Reply.com
+
+
+
+
+
+Yellowbot.com
+
+
+
+
+
+JiWire
+
+
+
+
+
+Rocket Fuel
+
+
+
+
+
+YellowPageCity.com
+
+
+
+
+
+DMV.org
+
+
+
+
+
+Justclicklocal.com
+
+
+
+
+
+Dirxion
+
+
+
+
+
+Keen.com
+
+
+
+
+
+Zidster.com
+
+
+
+
+
+
+
+
+
+
+
+
+Photos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Credit Report
+Receive a one-time comprehensive credit report on this company.
+get full credit report
+
+
+Facebook
+
+
+
+
+
+
+
+
+Twitter
+
+
+
+
+
+
+
+
+Yelp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Call 1.800.280.0780 to speak with a D&B Advisor Today!
+
+
+
+
+
+
+
+Customer Resources
+Products
+Education Center
+Business Articles & Insights
+Glossary
+Contact Us
+Customer Support
+Communication Preferences
+Search for D&B D-U-N-S
+
+
+
+
+Our Company
+About Us
+Company History
+Business Credit History
+Careers
+Press Releases
+News
+Success Stories
+Hoovers
+
+
+
+
+Our Network
+Partners
+Affiliates
+Blog
+Access to Capital
+Entrepreneurial Initiative
+D&B International
+SupplierEdge
+
+
+
+
+Site Links
+Business Directory
+Site Map
+PIPEDA
+Privacy Policy
+Website Terms of Service
+Product License Agreement
+
+
+
+
+
+
+
+© Dun & Bradstreet, Inc. 2017. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	Phillips 66
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: English
+
+
+
+
+
+
+
+About
+
+
+ 
+
+Phillips 66 brings with it a proud and successful heritage, one developed and enriched by our predecessor companies throughout more than a century of operations.read more >>
+Company Overview
+Our Businesses
+Our History
+Board of Directors
+Executive Leadership Team
+Publications
+Sustainability
+
+
+ 
+
+At Phillips 66, we are committed to safety and we conduct our business with care for the environment and engagement with communities where we operate.read more >>
+Our Approach
+Operational
+Economic
+Social
+Environmental
+Our Performance
+Investors
+
+
+ 
+
+Welcome to the Phillips 66 Investors site. This site is designed to give institutional and individual investors 24-hour access to relevant financial and operating information about our company.read more >>
+Events &Presentations
+Shareholder Services
+Governance
+Stock Information
+Financial &Operating Information
+FAQs
+Newsroom
+
+
+ 
+
+Welcome to the Phillips 66 Newsroom. This site is designed to give media professionals 24-hour access to relevant information about our company.read more >>
+News Releases
+Image Gallery
+Request a Logo
+Media Contact Form
+Operations Center
+Careers
+
+
+ 
+
+Our talented, motivated employees afford our company the drive and diversity of thought needed to compete and win in the future.read more >>
+Phillips 66 Careers
+University Recruitment
+Products & Services
+
+
+ 
+
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions.read more >>
+Consumer
+Businesses
+Accounts PayableVendor Relations
+Real Estate
+SDS
+Unclaimed Property
+Interest Owners
+Contact Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Price
+
+
+
+
+
+
+
+PSX84.510.00
+
+July 28
+
+
+
+
+
+
+
+
+
+
+
+PSXP49.900.00
+
+July 28
+
+
+
+
+
+
+
+​
+
+
+
+
+
+
+
+
+
+News Releases
+
+more releases »
+
+
+
+
+
+
+
+07-12-2017
+
+
+Phillips 66 Announces Quarterly Dividend 
+
+
+
+06-22-2017
+
+
+Phillips 66 to Announce Second-Quarter Financial Results 
+
+
+
+05-03-2017
+
+
+Phillips 66 Announces Increase in Quarterly Dividend 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Events
+
+
+
+
+Phillips 66 Second-QuarterEarnings Conference CallAug. 1 at 12 p.m. ESTRegister for Webcast
+
+
+
+
+
+Fact Book
+
+
+
+
+
+
+
+
+ANNUAL REPORT
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consumers:
+
+
+
+
+
+
+
+
+
+
+
+© Phillips 66 Company. All rights reserved. 
+                  Terms and Conditions and 
+                  Privacy Statement (UPDATED). 
+                  
+
+California Transparency in Supply Chains Disclosure.
+
+
+
+
+
+
+
+	| 
+                  Contact Us
+
+
+
+
+
+
+
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 | Aviation Oil Outlet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67
+
+
+
+SHOP BY CATEGORY BELOW
+
+
+
+Aviation Lubricants By Application
+Aviation Piston Engine Oils
+Straight Grade Mineral Oil for Engine Break-in
+Straight Grade Ashless Engine Oil for Normal Use
+Multi-Viscosity Mineral Oil for Engine Break-in
+Multi-Viscosity Ashless Engine Oil for Normal Use
+Aviation Oil with Lycoming LW 16702 Additives
+
+
+Aviation Turbine Oil
+Mobil Jet Oil II
+Mobil Jet Oil 254
+Aeroshell Turbine Oil 500
+Aeroshell Turbine Oil 555
+AeroShell Turbine Oil 560
+
+
+Aviation Hydraulic Oil
+Phillips 66 X/C 5606A Aviation Hydraulic Fluid
+Phillips 66 X/C 5606H Aviation Hydraulic Fluid
+Mobil Aero HFA 5606 Hydraulic Oil
+AeroShell Fluid 41
+AeroShell Fluid 31
+AeroShell Fluid 4
+
+
+Aerobatic Smoke Oil
+AeroShell Smoke Oil
+
+
+Aviation Greases
+Mobilgrease 28
+
+
+
+
+Aviation Lubricants By Weight
+Aviation Grade 65, SAE 30
+Straight 65 Grade Mineral, Break-In Oil
+
+
+Aviation Grade 80, SAE 40
+Straight 80 Grade Mineral, Break-In Oil
+Straight 80 Grade, Normal Operation Ashless
+
+
+Aviation Grade 100, SAE 50
+Straight 100 Grade Mineral, Break-In Oil
+Straight 100 Grade, Normal Operation Ashless
+Multi-Grade 20w-50 Break-In Oil
+Multi-Grade, Normal Operation Ashless
+Grade 100 with Lycoming LW 16702 Additives
+
+
+Aviation Grade 120, SAE 60
+Grade 120 Mineral, Break-in Oil
+Grade 120 Ashless for Normal Operation
+Multi-Grade Break-In Oil
+Multi-Grade Ashless for Normal Operation
+
+
+
+
+OUR PRODUCTS
+
+
+
+
+
+Brands
+
+
+AeroShellPhillips 66 X/C AviationMobil
+View all brands
+
+
+
+
+
+Additional Information
+
+
+Home
+
+
+
+HOME
+ 
+OUR PRODUCTS
+ 
+OUR MISSION
+ 
+CUSTOMER SERVICE
+ 
+Video
+ 
+BLOG
+
+
+
+
+
+Site Information
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Loading... Please wait...
+            
+
+
+Free Shipping on orders $75+ (Click for details)
+
+
+
+
+
+
+Facebook
+Twitter
+Instagram
+
+
+1-855-215-2914
+
+
+
+LOGIN |
+        QUOTE REQUEST |
+        CREDIT APP |
+        CONTACT US
+
+ VIEW CART 
+
+
+
+
+
+Call us on 1-855-899-7467
+
+
+
+
+My Account
+
+Gift Certificates
+
+Wish Lists
+
+
+Sign in or Create an account
+
+
+
+All prices are in USD
+
+
+
+
+
+
+
+
+
+
+                    Menu
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOME
+ 
+OUR PRODUCTS
+ 
+OUR MISSION
+ 
+CUSTOMER SERVICE
+ 
+Video
+ 
+BLOG
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+SHOP BY CATEGORY BELOW
+
+
+
+Aviation Lubricants By Application
+Aviation Piston Engine Oils
+Straight Grade Mineral Oil for Engine Break-in
+Straight Grade Ashless Engine Oil for Normal Use
+Multi-Viscosity Mineral Oil for Engine Break-in
+Multi-Viscosity Ashless Engine Oil for Normal Use
+Aviation Oil with Lycoming LW 16702 Additives
+
+
+Aviation Turbine Oil
+Mobil Jet Oil II
+Mobil Jet Oil 254
+Aeroshell Turbine Oil 500
+Aeroshell Turbine Oil 555
+AeroShell Turbine Oil 560
+
+
+Aviation Hydraulic Oil
+Phillips 66 X/C 5606A Aviation Hydraulic Fluid
+Phillips 66 X/C 5606H Aviation Hydraulic Fluid
+Mobil Aero HFA 5606 Hydraulic Oil
+AeroShell Fluid 41
+AeroShell Fluid 31
+AeroShell Fluid 4
+
+
+Aerobatic Smoke Oil
+AeroShell Smoke Oil
+
+
+Aviation Greases
+Mobilgrease 28
+
+
+
+
+Aviation Lubricants By Weight
+Aviation Grade 65, SAE 30
+Straight 65 Grade Mineral, Break-In Oil
+
+
+Aviation Grade 80, SAE 40
+Straight 80 Grade Mineral, Break-In Oil
+Straight 80 Grade, Normal Operation Ashless
+
+
+Aviation Grade 100, SAE 50
+Straight 100 Grade Mineral, Break-In Oil
+Straight 100 Grade, Normal Operation Ashless
+Multi-Grade 20w-50 Break-In Oil
+Multi-Grade, Normal Operation Ashless
+Grade 100 with Lycoming LW 16702 Additives
+
+
+Aviation Grade 120, SAE 60
+Grade 120 Mineral, Break-in Oil
+Grade 120 Ashless for Normal Operation
+Multi-Grade Break-In Oil
+Multi-Grade Ashless for Normal Operation
+
+
+
+
+OUR PRODUCTS
+
+
+
+
+
+Brands
+
+
+AeroShellPhillips 66 X/C AviationMobil
+View all brands
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 
+
+
+HomeAviation Lubricants By ApplicationAviation Piston Engine OilsMulti-Viscosity Mineral Oil for Engine Break-inPhillips 66 Type M Aviation Oil 20w-50 
+
+
+
+Phillips 66 Type M Aviation Oil 20W-50 is an ashless, nondispersant, multigrade engine oil recommended for use in aircraft piston engines where the operator prefers a mineral oil-based engine oil that does not contain dispersant additives. It provides easier starting and quicker oil circulation at low temperatures compared with single-grade mineral oils, while maintaining high film strength at high temperatures and under high loads for protection against wear and piston scuffing.
+Phillips 66 Type M Aviation Oil 20W-50 typically is used as break-in oil for newly overhauled engines where all-mineral type oils are recommended. The multigrade formulation helps reduce cylinder glazing tendency during break-in. Break-in normally is accomplished in less than 25 hours of engine operation.
+Phillips 66 Type M Aviation Oil 20W-50 Benefits
+
+Easier starting and quicker oil circulation at low temperatures compared with single-grade oils
+High film strength for protection against wear and piston scuffing, even under high-load conditions, such as takeoff, and at elevated operating temperatures
+Reduces cylinder glazing tendency during break-in, compared with single-grade oils
+
+Phillips 66 Type M Aviation Oil 20W-50 Application
+
+Aircraft piston engines where the operator prefers a nondispersant engine oil
+Break-in oil for newly overhauled aircraft engines
+
+
+PDS:
+  
+SDS:
+  
+
+//cdn3.bigcommerce.com/s-qm2r4/product_images/uploaded_images/phillips-logo.jpg
+
+
+
+Select sub-category
+
+
+
+
+
+
+
+Product Sizes
+
+
+
+
+
+
+
+
+
+
++ View more
+
+
+
+Add To Cart
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 - 1 Quart Bottle
+
+$9.92
+
+
+
+
+
+
+ Compare 
+
+
+
+
+
+
+
+
+
++ View more
+
+
+
+Add To Cart
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 - 12/1 Quart Case
+
+$56.52
+
+
+
+
+
+
+ Compare 
+
+
+
+
+
+
+
+
+
++ View more
+
+
+
+Add To Cart
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 - 55 Gallon Drum
+
+$1,034.22
+
+
+
+
+
+
+ Compare 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Add to Cart
+Add to Cart
+
+
+
+
+
+
+Description
+Additional Information
+
+
+
+
+
+
+View Cart
+Checkout
+
+
+Browse Equivalent Alternatives
+
+
+
+Product Name
+$0.00
+
+
+
+Product Name
+$0.00
+
+
+
+Product Name
+$0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aviation Oil Outlet
+
+                            454 South Main Street | Wilkes-Barre, PA 18703 
+
+
+
+INFORMATION
+
+About Us
+FAQ
+Shipping Information
+Terms of Use
+Privacy Policy
+Terms & Conditions of Online Sales
+Online Shopping Security
+
+
+
+CUSTOMER SERVICE
+
+Contact
+Returns
+Credit Application
+Quote Request
+Site Map
+
+
+
+EXTRAS
+
+Brands
+Gift Vouchers
+
+
+
+ACCOUNT
+
+Account
+Order History
+Newsletter Signup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aviation Oil Outlet
+© 2017 Aviation Oil Outlet All rights reserved.
+                        
+
+Powered by BigCommerce
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 | Aviation Oil Outlet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67
+
+
+
+SHOP BY CATEGORY BELOW
+
+
+
+Aviation Lubricants By Application
+Aviation Piston Engine Oils
+Straight Grade Mineral Oil for Engine Break-in
+Straight Grade Ashless Engine Oil for Normal Use
+Multi-Viscosity Mineral Oil for Engine Break-in
+Multi-Viscosity Ashless Engine Oil for Normal Use
+Aviation Oil with Lycoming LW 16702 Additives
+
+
+Aviation Turbine Oil
+Mobil Jet Oil II
+Mobil Jet Oil 254
+Aeroshell Turbine Oil 500
+Aeroshell Turbine Oil 555
+AeroShell Turbine Oil 560
+
+
+Aviation Hydraulic Oil
+Phillips 66 X/C 5606A Aviation Hydraulic Fluid
+Phillips 66 X/C 5606H Aviation Hydraulic Fluid
+Mobil Aero HFA 5606 Hydraulic Oil
+AeroShell Fluid 41
+AeroShell Fluid 31
+AeroShell Fluid 4
+
+
+Aerobatic Smoke Oil
+AeroShell Smoke Oil
+
+
+Aviation Greases
+Mobilgrease 28
+
+
+
+
+Aviation Lubricants By Weight
+Aviation Grade 65, SAE 30
+Straight 65 Grade Mineral, Break-In Oil
+
+
+Aviation Grade 80, SAE 40
+Straight 80 Grade Mineral, Break-In Oil
+Straight 80 Grade, Normal Operation Ashless
+
+
+Aviation Grade 100, SAE 50
+Straight 100 Grade Mineral, Break-In Oil
+Straight 100 Grade, Normal Operation Ashless
+Multi-Grade 20w-50 Break-In Oil
+Multi-Grade, Normal Operation Ashless
+Grade 100 with Lycoming LW 16702 Additives
+
+
+Aviation Grade 120, SAE 60
+Grade 120 Mineral, Break-in Oil
+Grade 120 Ashless for Normal Operation
+Multi-Grade Break-In Oil
+Multi-Grade Ashless for Normal Operation
+
+
+
+
+OUR PRODUCTS
+
+
+
+
+
+Brands
+
+
+AeroShellPhillips 66 X/C AviationMobil
+View all brands
+
+
+
+
+
+Additional Information
+
+
+Home
+
+
+
+HOME
+ 
+OUR PRODUCTS
+ 
+OUR MISSION
+ 
+CUSTOMER SERVICE
+ 
+Video
+ 
+BLOG
+
+
+
+
+
+Site Information
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Loading... Please wait...
+            
+
+
+Free Shipping on orders $75+ (Click for details)
+
+
+
+
+
+
+Facebook
+Twitter
+Instagram
+
+
+1-855-215-2914
+
+
+
+LOGIN |
+        QUOTE REQUEST |
+        CREDIT APP |
+        CONTACT US
+
+ VIEW CART 
+
+
+
+
+
+Call us on 1-855-899-7467
+
+
+
+
+My Account
+
+Gift Certificates
+
+Wish Lists
+
+
+Sign in or Create an account
+
+
+
+All prices are in USD
+
+
+
+
+
+
+
+
+
+
+                    Menu
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOME
+ 
+OUR PRODUCTS
+ 
+OUR MISSION
+ 
+CUSTOMER SERVICE
+ 
+Video
+ 
+BLOG
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+SHOP BY CATEGORY BELOW
+
+
+
+Aviation Lubricants By Application
+Aviation Piston Engine Oils
+Straight Grade Mineral Oil for Engine Break-in
+Straight Grade Ashless Engine Oil for Normal Use
+Multi-Viscosity Mineral Oil for Engine Break-in
+Multi-Viscosity Ashless Engine Oil for Normal Use
+Aviation Oil with Lycoming LW 16702 Additives
+
+
+Aviation Turbine Oil
+Mobil Jet Oil II
+Mobil Jet Oil 254
+Aeroshell Turbine Oil 500
+Aeroshell Turbine Oil 555
+AeroShell Turbine Oil 560
+
+
+Aviation Hydraulic Oil
+Phillips 66 X/C 5606A Aviation Hydraulic Fluid
+Phillips 66 X/C 5606H Aviation Hydraulic Fluid
+Mobil Aero HFA 5606 Hydraulic Oil
+AeroShell Fluid 41
+AeroShell Fluid 31
+AeroShell Fluid 4
+
+
+Aerobatic Smoke Oil
+AeroShell Smoke Oil
+
+
+Aviation Greases
+Mobilgrease 28
+
+
+
+
+Aviation Lubricants By Weight
+Aviation Grade 65, SAE 30
+Straight 65 Grade Mineral, Break-In Oil
+
+
+Aviation Grade 80, SAE 40
+Straight 80 Grade Mineral, Break-In Oil
+Straight 80 Grade, Normal Operation Ashless
+
+
+Aviation Grade 100, SAE 50
+Straight 100 Grade Mineral, Break-In Oil
+Straight 100 Grade, Normal Operation Ashless
+Multi-Grade 20w-50 Break-In Oil
+Multi-Grade, Normal Operation Ashless
+Grade 100 with Lycoming LW 16702 Additives
+
+
+Aviation Grade 120, SAE 60
+Grade 120 Mineral, Break-in Oil
+Grade 120 Ashless for Normal Operation
+Multi-Grade Break-In Oil
+Multi-Grade Ashless for Normal Operation
+
+
+
+
+OUR PRODUCTS
+
+
+
+
+
+Brands
+
+
+AeroShellPhillips 66 X/C AviationMobil
+View all brands
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 
+
+
+HomeAviation Lubricants By ApplicationAviation Piston Engine OilsMulti-Viscosity Mineral Oil for Engine Break-inPhillips 66 Type M Aviation Oil 20w-50 
+
+
+
+Phillips 66 Type M Aviation Oil 20W-50 is an ashless, nondispersant, multigrade engine oil recommended for use in aircraft piston engines where the operator prefers a mineral oil-based engine oil that does not contain dispersant additives. It provides easier starting and quicker oil circulation at low temperatures compared with single-grade mineral oils, while maintaining high film strength at high temperatures and under high loads for protection against wear and piston scuffing.
+Phillips 66 Type M Aviation Oil 20W-50 typically is used as break-in oil for newly overhauled engines where all-mineral type oils are recommended. The multigrade formulation helps reduce cylinder glazing tendency during break-in. Break-in normally is accomplished in less than 25 hours of engine operation.
+Phillips 66 Type M Aviation Oil 20W-50 Benefits
+
+Easier starting and quicker oil circulation at low temperatures compared with single-grade oils
+High film strength for protection against wear and piston scuffing, even under high-load conditions, such as takeoff, and at elevated operating temperatures
+Reduces cylinder glazing tendency during break-in, compared with single-grade oils
+
+Phillips 66 Type M Aviation Oil 20W-50 Application
+
+Aircraft piston engines where the operator prefers a nondispersant engine oil
+Break-in oil for newly overhauled aircraft engines
+
+
+PDS:
+  
+SDS:
+  
+
+//cdn3.bigcommerce.com/s-qm2r4/product_images/uploaded_images/phillips-logo.jpg
+
+
+
+Select sub-category
+
+
+
+
+
+
+
+Product Sizes
+
+
+
+
+
+
+
+
+
+
++ View more
+
+
+
+Add To Cart
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 - 1 Quart Bottle
+
+$9.92
+
+
+
+
+
+
+ Compare 
+
+
+
+
+
+
+
+
+
++ View more
+
+
+
+Add To Cart
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 - 12/1 Quart Case
+
+$56.52
+
+
+
+
+
+
+ Compare 
+
+
+
+
+
+
+
+
+
++ View more
+
+
+
+Add To Cart
+
+
+
+Phillips 66 Type M Aviation Oil 20w-50 - 55 Gallon Drum
+
+$1,034.22
+
+
+
+
+
+
+ Compare 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Add to Cart
+Add to Cart
+
+
+
+
+
+
+Description
+Additional Information
+
+
+
+
+
+
+View Cart
+Checkout
+
+
+Browse Equivalent Alternatives
+
+
+
+Product Name
+$0.00
+
+
+
+Product Name
+$0.00
+
+
+
+Product Name
+$0.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aviation Oil Outlet
+
+                            454 South Main Street | Wilkes-Barre, PA 18703 
+
+
+
+INFORMATION
+
+About Us
+FAQ
+Shipping Information
+Terms of Use
+Privacy Policy
+Terms & Conditions of Online Sales
+Online Shopping Security
+
+
+
+CUSTOMER SERVICE
+
+Contact
+Returns
+Credit Application
+Quote Request
+Site Map
+
+
+
+EXTRAS
+
+Brands
+Gift Vouchers
+
+
+
+ACCOUNT
+
+Account
+Order History
+Newsletter Signup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aviation Oil Outlet
+© 2017 Aviation Oil Outlet All rights reserved.
+                        
+
+Powered by BigCommerce
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	Phillips 66
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: English
+
+
+
+
+
+
+
+About
+
+
+ 
+
+Phillips 66 brings with it a proud and successful heritage, one developed and enriched by our predecessor companies throughout more than a century of operations.read more >>
+Company Overview
+Our Businesses
+Our History
+Board of Directors
+Executive Leadership Team
+Publications
+Sustainability
+
+
+ 
+
+At Phillips 66, we are committed to safety and we conduct our business with care for the environment and engagement with communities where we operate.read more >>
+Our Approach
+Operational
+Economic
+Social
+Environmental
+Our Performance
+Investors
+
+
+ 
+
+Welcome to the Phillips 66 Investors site. This site is designed to give institutional and individual investors 24-hour access to relevant financial and operating information about our company.read more >>
+Events &Presentations
+Shareholder Services
+Governance
+Stock Information
+Financial &Operating Information
+FAQs
+Newsroom
+
+
+ 
+
+Welcome to the Phillips 66 Newsroom. This site is designed to give media professionals 24-hour access to relevant information about our company.read more >>
+News Releases
+Image Gallery
+Request a Logo
+Media Contact Form
+Operations Center
+Careers
+
+
+ 
+
+Our talented, motivated employees afford our company the drive and diversity of thought needed to compete and win in the future.read more >>
+Phillips 66 Careers
+University Recruitment
+Products & Services
+
+
+ 
+
+Phillips 66 offers several products and services that provide businesses with high quality fuels, lubricants, chemicals, specialty products and other solutions.read more >>
+Consumer
+Businesses
+Accounts PayableVendor Relations
+Real Estate
+SDS
+Unclaimed Property
+Interest Owners
+Contact Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Price
+
+
+
+
+
+
+
+PSX84.510.00
+
+July 28
+
+
+
+
+
+
+
+
+
+
+
+PSXP49.900.00
+
+July 28
+
+
+
+
+
+
+
+​
+
+
+
+
+
+
+
+
+
+News Releases
+
+more releases »
+
+
+
+
+
+
+
+07-12-2017
+
+
+Phillips 66 Announces Quarterly Dividend 
+
+
+
+06-22-2017
+
+
+Phillips 66 to Announce Second-Quarter Financial Results 
+
+
+
+05-03-2017
+
+
+Phillips 66 Announces Increase in Quarterly Dividend 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Events
+
+
+
+
+Phillips 66 Second-QuarterEarnings Conference CallAug. 1 at 12 p.m. ESTRegister for Webcast
+
+
+
+
+
+Fact Book
+
+
+
+
+
+
+
+
+ANNUAL REPORT
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Consumers:
+
+
+
+
+
+
+
+
+
+
+
+© Phillips 66 Company. All rights reserved. 
+                  Terms and Conditions and 
+                  Privacy Statement (UPDATED). 
+                  
+
+California Transparency in Supply Chains Disclosure.
+
+
+
+
+
+
+
+	| 
+                  Contact Us
+
+
+
+
+
+
+
+
+
+	
+	Product Datasheets
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOMESITE MAPCONTACT US
+
+
+                    Phillips 66
+
+
+
+
+ 
+
+
+
+This Site: Product Datasheets
+
+
+
+
+
+
+
+
+
+		  >
+             
+
+
+
+
+
+Copylene > English > Product Datasheets
+Printer Friendly
+
+
+
+
+
+
+Product DatasheetsProduct Stewardship Information SheetsGADSL StatementConflict Minerals StatementCertificate of OriginMaterial Safety Datasheets (MSDS)QualityAuthorized DistributorsProcessing SetupContact Us
+
+
+
+
+
+
+
+
+
+
+
+							Product Datasheets
+Page Content
+   Click on a product grade name to open individual product datasheets.     
+ RANDOM COPOLYMERS
+
+
+COPYLENE® Product Grade
+
+Key Features
+
+Melt Flow Rate
+
+Flexural Modulus, psi
+
+Tensile Strength at Yield, psi
+
+Tensile Elongation at Yield, %
+
+Notched Izod Impact, ft-lb/in
+
+DTUL at 66 psi 
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+oC
+
+
+
+
+
+
+
+
+CR020CL
+Extrusion blowmolding
+2.0
+160,000
+4,100
+14
+6.5
+80
+
+
+
+
+CR020N
+Random Copolymer
+2.0
+140,000
+3,850
+
+13.5
+8.0
+90
+
+
+
+
+CR120CL-01
+Clarified
+12
+145,000
+3,950
+14
+1.5
+75
+
+
+
+
+CR120LN
+Nucleated antistat, injection molding 
+12
+
+150,000
+
+4,000
+
+12.9
+
+1.2
+
+83.7
+
+
+
+
+
+
+
+
+CR300CL-01Clarified, "NX-8000" based, Rx grade
+30
+160,000
+4,150
+
+12.8
+
+1.2
+84
+
+
+
+
+
+
+CR350CL-02
+Clarified, NX8000 based
+35
+145,000
+4,000
+
+13.6
+1.3
+
+76.5
+
+
+
+
+
+
+CR350CS-01Injection molding, NX8000 based
+35
+155,000
+4,250
+13.5
+1.0
+74
+
+
+CR350LN
+Nucleated, antistat, injection molding 
+35
+
+160,000
+4,000
+12.5
+1.1
+
+88
+
+
+CR750CL-02
+NX-8000 based, clarified, anstistat
+75
+150,000
+4,000
+13
+1.0
+
+85
+
+
+
+
+CR750CLSInjection molding, NX8000 based 
+75
+150,000
+4,000
+13
+1.0
+77
+
+
+
+HOMOPOLYMERS
+
+
+COPYLENE™ Product Grade
+
+Key Features
+
+Melt Flow Rate
+
+Flexural Modulus, psi
+
+Tensile Strength at Yield, psi
+
+Tensile Elongation at Yield, %
+
+Notched Izod Impact, ft-lb/in
+
+DTUL at 66 psi 
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+oC
+
+CH005
+Nets
+0.5
+235,000
+5,100
+11
+1.3
+95
+
+CH014
+Extrusion, strapping
+1.4
+200,000
+4,800
+12
+1.1
+93
+
+
+
+CH020-01
+BOPP
+2.00
+206,000
+4,850
+
+11.8
+0.9
+86CH040​Injection molding and film​4​210,000​4,800​11​0.9​89
+
+CH120
+Injection molding, barefoot
+12
+210,000
+5,000
+10
+0.6
+98
+
+
+CH120LN
+Injection molding, antistat/lube
+12
+255,000
+5,450
+7
+0.8
+119
+
+
+CH200L
+CR, antistat, injection molding
+20
+210,000
+
+5,000
+
+9
+0.6
+
+103
+
+
+CH200LN
+CR, antistat, nucleated injection molding
+20
+265,000
+5,500
+7
+0.7
+122
+
+CH200LN-02
+Rx grade, nucleated, lube, injection molding
+20
+250,000
+5,500
+7.5
+0.6
+124
+
+
+
+
+CH350
+Injection molding
+35
+215,000
+5,100
+9.2
+0.5
+101
+
+
+CH350LN
+High flow, nucleated, lube, injection molding
+35
+255,000
+5,450
+726.6
+119
+
+
+
+IMPACT COPOLYMERS
+
+
+COPYLENE™ Product Grade
+
+Key Features
+
+Melt Flow Rate
+
+Flexural Modulus, psi
+
+Tensile Strength at Yield, psi
+
+Tensile Elongation at Yield, %
+
+Notched Izod Impact, ft-lb/in
+
+DTUL at 66 psi 
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+oC
+
+
+
+
+
+
+
+
+CM005
+Extrusion processes
+ .5
+175,000
+3,760
+11
+ No break
+80
+​CM010G​Extrusion ​0.9​150,000​3,500​13​No break​77​​CM015G​​Injection molding​1.5​155000​3450​10​No break​77​CM090L​Injection molding​9​170,000​3,300​7.4​3.0​87
+
+
+CM120LN
+
+Injection molding
+12
+165,000
+3,250
+6.7
+
+
+No break
+95
+
+CM200LN-02
+high impact, injection molding
+20
+185,000
+3,450
+5.1
+2.3
+105
+
+CM350LN
+Medium impact, nucleated, antistat, injection molding
+35
+175,000
+3,300
+6
+2.0
+107
+
+
+CM500LN
+High flow, medium impact, nucleated, lube, injection molding
+50
+180,000
+3,500
+6
+2.0  
+108 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        © Phillips 66 Company. All rights reserved.
+                        
+                        Legal Terms and 
+                        Privacy Statement. | Contact
+                        Us | 
+ 
+ 
+
+
+
+
+
+
+
+

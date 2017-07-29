@@ -1,0 +1,9547 @@
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Perella Weinberg Partners - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Perella Weinberg Partners
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Perella Weinberg Partners
+
+
+
+
+
+Type
+
+Private
+
+
+Industry
+Financial Services
+
+
+Founded
+2006; 11 years ago (2006)
+
+
+Founders
+Joseph R. Perella
+Peter Weinberg
+
+
+Headquarters
+General Motors Building
+New York, New York, United States
+
+
+
+Key people
+
+Robert K. Steel (CEO)
+
+
+Products
+Financial Advisory, Asset Management
+
+
+Total assets
+$13.7 billion[1]
+
+
+
+Number of employees
+
+650 (2016)[2]
+
+
+Website
+www.pwpartners.com
+
+
+Perella Weinberg Partners L.P. is an independent, privately owned, global financial services firm providing corporate advisory and asset management services to clients around the world. Founded in 2006 by Joseph R. Perella, Peter Weinberg, Terry Meguid and several other partners from financial institutions, the firm is a private partnership with approximately 650 employees.[2] It is headquartered in New York City with offices in London, Abu Dhabi, Dubai, Denver, San Francisco, Calgary, and Houston.
+Perella Weinberg's Corporate Advisory business advises its clients on mergers and acquisitions, financial restructuring, private placements and other strategic transactions. The Asset Management business comprises outsourced CIO, institutional asset management and private equity investing.
+
+
+
+Contents
+
+
+1 History
+2 Business units
+
+2.1 Corporate Advisory
+2.2 Asset Management
+
+
+3 References
+4 External links
+
+
+
+History[edit]
+Perella Weinberg Partners was launched on June 15, 2006.[3]
+To help establish the firm’s operations and to seed investment initiatives, Perella Weinberg Partners raised over US $1.2 billion from a group of investors,[4] including leading financial institutions and family investor groups from the Americas, Europe, Japan, and the Middle East.
+During its first year of operation, Perella Weinberg Partners established an Advisory Council. Its members include Walter Isaacson, President and CEO of the Aspen Institute; Daniel Yergin, Chairman of IHS Cambridge Energy Research Associates; and Ivan Seidenberg, former Chief Executive Officer of Verizon Communications.[5]
+In 2016, Perella Weinberg acquired the Houston-based energy investment banking firm Tudor, Pickering, Holt & Co.[2]
+Business units[edit]
+Perella Weinberg Partners has two business units: Corporate Advisory, providing services to decision makers in business and government, and Asset Management, which consists of investment vehicles catering to institutional investors.
+Corporate Advisory[edit]
+Corporate Advisory is divided into practices: Mergers & Acquisitions, Financial Restructuring, Private Capital Raising, Pension Advisory services, Special Committee Advisory services, Government Advisory services and Energy Advisory services. The Corporate Advisory Business provides independent advice and transaction execution, including mergers and acquisitions, exclusive sales, defense advisory, financial restructuring, and special committee advisory. The Corporate Advisory group focuses on advising public and private companies, global institutions and investors.
+Asset Management[edit]
+The global asset management business comprises a suite of alternative investment strategies as well as outsourced CIO services. Investments made through this business include most major asset classes on a global basis, including equities, fixed income, asset based investments, distressed securities, private investments, real estate, and energy investments. The firm counts pension funds, endowments, foundations, sovereign wealth funds, family offices, high-net-worth individuals and fund of funds as its clients, and, including affiliates, has capital commitments and managed assets of approximately $12.6 billion as of January 1, 2017.[1] Perella Weinberg Partners' Agility Fund was named Outsourced CIO of the Year by Institutional Investor in 2015[6] and 2014[7] and by Foundation & Endowment Intelligence in 2013.[8]
+References[edit]
+
+
+
+^ a b "Perella Weinberg Asset Management", Retrieved on 4 April 2017.
+^ a b c Stynes, Tess. "Perella Weinberg to Combine With Tudor, Pickering, Holt", Wall Street Journal.
+^ "Perella Weinberg Partners Who We Are"
+^ Sorkin, Andrew Ross. “The Pressure of Great Expectations”, The New York Times, 27 April 2007.
+^ "Perella Weinberg Board Members"
+^ "Perella Weinberg Partners' Agility Fund Names "Outsourced CIO of the Year" by Institutional Investor 2015"
+^ "Perella Weinberg Partners' Agility Fund Names "Outsourced CIO of the Year" by Institutional Investor 2015"
+^ "Perella Weinberg Partners' Agility Named "Outsourced CIO of the Year" by Institutional Investor's Foundation & Endowment Intelligence Magazine"
+
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Investment banks
+
+
+
+
+Bank
+
+
+
+Divisions of
+universal banks
+
+
+
+
+
+Bulge bracket
+
+
+
+
+Bank of America Merrill Lynch
+Barclays
+Citi Institutional Clients Group
+Credit Suisse
+Deutsche Bank Corporate and Investment Bank
+J.P. Morgan & Co. (J.P. Morgan Cazenove)
+UBS Investment Bank
+
+
+
+
+
+
+Other
+
+
+
+
+Berenberg Bank
+BMO Capital Markets
+BOC International
+BNP Paribas Corporate & Institutional Banking
+Brown Shipley
+CIBC World Markets
+CITIC Securities (CLSA)
+Commerzbank Corporates & Markets
+Crédit Agricole Corporate and Investment Bank
+Daiwa Securities Capital Markets
+EverBank World Markets
+Harris Williams & Co.
+HSBC Global Banking and Markets
+ING Commercial Banking
+Is Investment
+KBC Bank
+Korea Development Bank (Daewoo Securities)
+Lloyds Bank Corporate Markets
+Mitsubishi UFJ Securities
+Mizuho Corporate Bank
+Natixis
+Nomura Securities
+RBC Capital Markets
+RBS Markets & International Banking
+Sberbank CIB
+Société Générale Corporate & Investment Bank
+Standard Chartered
+TD Securities
+UniCredit Corporate & Investment Banking
+VTB Capital
+Wells Fargo Securities
+
+
+
+
+
+
+
+
+Independents
+
+
+
+
+
+Bulge bracket
+
+
+
+
+Goldman Sachs
+Morgan Stanley
+
+
+
+
+
+
+Other
+
+
+
+
+Allen & Company
+Blackstone Group
+Brewin Dolphin
+BTG Pactual
+Centerview Partners
+China International Capital Corporation
+Close Brothers Group
+China Everbright Group
+
+China Everbright Limited
+Everbright Securities
+
+
+Evercore Partners
+FBR Capital Markets
+Galaxy
+Greenhill & Co.
+Guosen Securities
+Haitong Securities
+Houlihan Lokey
+Investec
+Jefferies
+Keefe, Bruyette & Woods
+Lazard
+Lincoln International
+Macquarie Group
+Mediobanca
+Moelis & Company
+N M Rothschild & Sons
+Oppenheimer & Co.
+Perella Weinberg Partners
+Piper Jaffray
+Raymond James Financial
+Renaissance Capital
+ROTH Capital Partners
+Salam Investment Ltd.
+Sandler O'Neill and Partners
+Stifel Nicolaus
+Stone Key Partners
+William Blair & Company
+
+
+
+
+
+
+
+
+
+
+
+ Category
+ List
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Perella_Weinberg_Partners&oldid=773907062"					
+Categories: Banks based in New York CityInvestment banksBanks established in 2006Hidden categories: Pages using deprecated image syntax 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 5 April 2017, at 03:46.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+Bizapedia.com - Human Validation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMPANIESPEOPLEPRODUCTS/SERVICESTRADEMARKSADDRESSESPHONE BOOK
+
+
+
+
+            Our system has detected a high number of page requests from your IP Address, please prove to us that you are a human to continue using our website.
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Please send me to the search subscription offer page after I successfully answer the word challenge.
+                        
+
+
+
+
+
+
+
+
+
+BIZAPEDIAPRO SEARCHPerform unlimited searches via ouradvanced search form withBizapedia Pro Search.FIND OUT MORE >BIZAPEDIAPRO DATABuild custom data listsfor one or many stateswith Bizapedia Pro Data.FIND OUT MORE >
+
+
+Copyright © 2012-2017 · Bizapedia.com · All rights reserved.BlogPro SearchPro APIContact UsTerms of UsePrivacy PolicySitemapDesktop Version
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Perella Weinberg Partners Asset Based Value Delaware Intermediate Fund Iii Llc: Private Company Information - Bloomberg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+July 28, 2017 5:21 AM ET
+
+Company Overview of Perella Weinberg Partners Asset Based Value Delaware Intermediate Fund Iii Llc
+
+
+
+Snapshot People
+
+
+
+
+Company Overview
+
+
+
+C/O Corporation Service Company2711 Centerville RoadSuite 400Wilmington, DE 19808United States
+
+
+
+
+
+
+
+
+
+
+Key Executives for Perella Weinberg Partners Asset Based Value Delaware Intermediate Fund Iii Llc
+
+
+Perella Weinberg Partners Asset Based Value Delaware Intermediate Fund Iii Llc does not have any Key Executives recorded. 
+
+
+
+
+
+Similar Private Companies By Industry
+
+
+
+Company Name
+Region
+
+
+
+ 	Aryzta Us Holdings I Corp. United States 	Michael Anthony Hernandez, A Professional Corp United States !SOLUTIONS! Group United States "Atlantic Tele-Satellite, Inc. United States "D" Construction, Inc. United States
+
+
+
+
+Recent Private Companies Transactions
+
+
+
+TypeDate
+Target
+
+
+
+No transactions available in the past 12 months.
+
+
+
+
+Request Profile Update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+The information and data displayed in this profile are created and managed by S&P Global Market Intelligence, a division of S&P Global. Bloomberg.com does not create or control the content. For inquiries, please contact S&P Global Market Intelligence directly by clicking 
+	here.
+
+
+
+
+Stock Quotes
+
+
+Market data is delayed at least 15 minutes.
+
+
+
+
+
+
+
+Company Lookup
+
+
+
+Most Searched Private Companies
+
+
+
+Company Name
+Geographic Region
+
+
+
+ Lawyers Committee for Civil Rights Under Law United States NYC2012, Inc. United States The Advertising Council, Inc. United States Bertelsmann AG Europe Rush University United States
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sponsored Financial Commentaries
+
+Sponsored Links
+
+
+
+
+
+
+Browse Companies
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+ | 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+
+
+
+Request Profile Update
+
+						Only a company representative may request an update for the company profile. Documentation will be required.
+					  
+To contact Perella Weinberg Partners Asset Based Value Delaware Intermediate Fund Iii Llc, please visit --.  Company data is provided by S&P Global Market Intelligence.  Please use this form to report any data issues.
+					  
+
+
+Information Missing - Please enter your information in the following field(s): 
+
+
+
+
+Company Name
+
+Your Name*
+
+Your E-Mail Address*
+
+Your Phone Number*
+
+Type of Data*
+
+
+Overview
+Executives
+Key developments
+Similar companies
+Transactions
+
+
+Update Needed*
+
+All data changes require verification from public sources.  Please include the correct value or values and a source where we can verify.
+
+
+Cancel
+
+
+Submit
+
+
+
+
+
+
+Your requested update has been submitted
+Our data partners will research the update request and update the information on this page if necessary. Research and follow-up could take several weeks. If you have questions, you can contact them at bwwebmaster@businessweek.com.
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+Perella Weinberg Partners - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Perella Weinberg Partners
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Perella Weinberg Partners
+
+
+
+
+
+Type
+
+Private
+
+
+Industry
+Financial Services
+
+
+Founded
+2006; 11 years ago (2006)
+
+
+Founders
+Joseph R. Perella
+Peter Weinberg
+
+
+Headquarters
+General Motors Building
+New York, New York, United States
+
+
+
+Key people
+
+Robert K. Steel (CEO)
+
+
+Products
+Financial Advisory, Asset Management
+
+
+Total assets
+$13.7 billion[1]
+
+
+
+Number of employees
+
+650 (2016)[2]
+
+
+Website
+www.pwpartners.com
+
+
+Perella Weinberg Partners L.P. is an independent, privately owned, global financial services firm providing corporate advisory and asset management services to clients around the world. Founded in 2006 by Joseph R. Perella, Peter Weinberg, Terry Meguid and several other partners from financial institutions, the firm is a private partnership with approximately 650 employees.[2] It is headquartered in New York City with offices in London, Abu Dhabi, Dubai, Denver, San Francisco, Calgary, and Houston.
+Perella Weinberg's Corporate Advisory business advises its clients on mergers and acquisitions, financial restructuring, private placements and other strategic transactions. The Asset Management business comprises outsourced CIO, institutional asset management and private equity investing.
+
+
+
+Contents
+
+
+1 History
+2 Business units
+
+2.1 Corporate Advisory
+2.2 Asset Management
+
+
+3 References
+4 External links
+
+
+
+History[edit]
+Perella Weinberg Partners was launched on June 15, 2006.[3]
+To help establish the firm’s operations and to seed investment initiatives, Perella Weinberg Partners raised over US $1.2 billion from a group of investors,[4] including leading financial institutions and family investor groups from the Americas, Europe, Japan, and the Middle East.
+During its first year of operation, Perella Weinberg Partners established an Advisory Council. Its members include Walter Isaacson, President and CEO of the Aspen Institute; Daniel Yergin, Chairman of IHS Cambridge Energy Research Associates; and Ivan Seidenberg, former Chief Executive Officer of Verizon Communications.[5]
+In 2016, Perella Weinberg acquired the Houston-based energy investment banking firm Tudor, Pickering, Holt & Co.[2]
+Business units[edit]
+Perella Weinberg Partners has two business units: Corporate Advisory, providing services to decision makers in business and government, and Asset Management, which consists of investment vehicles catering to institutional investors.
+Corporate Advisory[edit]
+Corporate Advisory is divided into practices: Mergers & Acquisitions, Financial Restructuring, Private Capital Raising, Pension Advisory services, Special Committee Advisory services, Government Advisory services and Energy Advisory services. The Corporate Advisory Business provides independent advice and transaction execution, including mergers and acquisitions, exclusive sales, defense advisory, financial restructuring, and special committee advisory. The Corporate Advisory group focuses on advising public and private companies, global institutions and investors.
+Asset Management[edit]
+The global asset management business comprises a suite of alternative investment strategies as well as outsourced CIO services. Investments made through this business include most major asset classes on a global basis, including equities, fixed income, asset based investments, distressed securities, private investments, real estate, and energy investments. The firm counts pension funds, endowments, foundations, sovereign wealth funds, family offices, high-net-worth individuals and fund of funds as its clients, and, including affiliates, has capital commitments and managed assets of approximately $12.6 billion as of January 1, 2017.[1] Perella Weinberg Partners' Agility Fund was named Outsourced CIO of the Year by Institutional Investor in 2015[6] and 2014[7] and by Foundation & Endowment Intelligence in 2013.[8]
+References[edit]
+
+
+
+^ a b "Perella Weinberg Asset Management", Retrieved on 4 April 2017.
+^ a b c Stynes, Tess. "Perella Weinberg to Combine With Tudor, Pickering, Holt", Wall Street Journal.
+^ "Perella Weinberg Partners Who We Are"
+^ Sorkin, Andrew Ross. “The Pressure of Great Expectations”, The New York Times, 27 April 2007.
+^ "Perella Weinberg Board Members"
+^ "Perella Weinberg Partners' Agility Fund Names "Outsourced CIO of the Year" by Institutional Investor 2015"
+^ "Perella Weinberg Partners' Agility Fund Names "Outsourced CIO of the Year" by Institutional Investor 2015"
+^ "Perella Weinberg Partners' Agility Named "Outsourced CIO of the Year" by Institutional Investor's Foundation & Endowment Intelligence Magazine"
+
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Investment banks
+
+
+
+
+Bank
+
+
+
+Divisions of
+universal banks
+
+
+
+
+
+Bulge bracket
+
+
+
+
+Bank of America Merrill Lynch
+Barclays
+Citi Institutional Clients Group
+Credit Suisse
+Deutsche Bank Corporate and Investment Bank
+J.P. Morgan & Co. (J.P. Morgan Cazenove)
+UBS Investment Bank
+
+
+
+
+
+
+Other
+
+
+
+
+Berenberg Bank
+BMO Capital Markets
+BOC International
+BNP Paribas Corporate & Institutional Banking
+Brown Shipley
+CIBC World Markets
+CITIC Securities (CLSA)
+Commerzbank Corporates & Markets
+Crédit Agricole Corporate and Investment Bank
+Daiwa Securities Capital Markets
+EverBank World Markets
+Harris Williams & Co.
+HSBC Global Banking and Markets
+ING Commercial Banking
+Is Investment
+KBC Bank
+Korea Development Bank (Daewoo Securities)
+Lloyds Bank Corporate Markets
+Mitsubishi UFJ Securities
+Mizuho Corporate Bank
+Natixis
+Nomura Securities
+RBC Capital Markets
+RBS Markets & International Banking
+Sberbank CIB
+Société Générale Corporate & Investment Bank
+Standard Chartered
+TD Securities
+UniCredit Corporate & Investment Banking
+VTB Capital
+Wells Fargo Securities
+
+
+
+
+
+
+
+
+Independents
+
+
+
+
+
+Bulge bracket
+
+
+
+
+Goldman Sachs
+Morgan Stanley
+
+
+
+
+
+
+Other
+
+
+
+
+Allen & Company
+Blackstone Group
+Brewin Dolphin
+BTG Pactual
+Centerview Partners
+China International Capital Corporation
+Close Brothers Group
+China Everbright Group
+
+China Everbright Limited
+Everbright Securities
+
+
+Evercore Partners
+FBR Capital Markets
+Galaxy
+Greenhill & Co.
+Guosen Securities
+Haitong Securities
+Houlihan Lokey
+Investec
+Jefferies
+Keefe, Bruyette & Woods
+Lazard
+Lincoln International
+Macquarie Group
+Mediobanca
+Moelis & Company
+N M Rothschild & Sons
+Oppenheimer & Co.
+Perella Weinberg Partners
+Piper Jaffray
+Raymond James Financial
+Renaissance Capital
+ROTH Capital Partners
+Salam Investment Ltd.
+Sandler O'Neill and Partners
+Stifel Nicolaus
+Stone Key Partners
+William Blair & Company
+
+
+
+
+
+
+
+
+
+
+
+ Category
+ List
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Perella_Weinberg_Partners&oldid=773907062"					
+Categories: Banks based in New York CityInvestment banksBanks established in 2006Hidden categories: Pages using deprecated image syntax 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 5 April 2017, at 03:46.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Perella Weinberg Partners Group Research Report - Revenue - Market Share - Competition - Growth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     Target new business; track competition.
+    
+
+
+Subscribe
+Log In
+
+
+
+
+
+
+
+
+
+
+
+Solutions for: 
+Investment BankingMarket ResearchPrivate EquityExecutivesConsultantsReporters & Journalists
+ 
+
+
+
+
+
+✕
+Log In
+
+Email Address
+ 
+Password
+ 
+
+
+
+
+
+
+✕
+Subscribe
+
+Email Address
+ 
+Password
+ 
+
+
+
+
+
+
+
+PERELLA WEINBERG PARTNERS GROUP
+
+
+Premium Company Report
+
+
+
+
+
+
+
+
+The Premium Perella Weinberg Partners Group Company Report contains critical information including:
+		Revenue from previous years (2010-2015)
+		Growth rate
+		Estimated financials and profit margin
+		Funding from Venture Capital and Private Equity firms
+		Latest trademark applications
+		Additional industries in which the company operates
+		
+
+		$199.99
+
+
+View subscription options
+
+
+
+
+
+
+
+DBA Perella Weinberg Partners ABV Opportunity Fund III LPDBA PERELLA WEINBERG PARTNERS ASSET BASED VALUE FUND LPDBA Perella Weinberg Partners Oasis Fund LPDBA Perella Weinberg Partners Sustainable Resources Fund LPDBA Perella Weinberg Partners Sustainable Resources Offshore Fund Ltd.DBA PERELLA WEINBERG PARTNERS XERION FUND LP767 Fifth Avenue New York, NY 10153 
+
+Company Awards
+
+Big Fish
+
+
+VC / Private Equity
+
+
+
+Company Profile & Financial Information for Perella Weinberg Partners Group
+Perella Weinberg Partners Group's revenue, profitability, growth rate by year. Trademarks and applications show Perella Weinberg Partners Group's marketing strategy.
+	Precise revenue figures by year, number of employees, and trademarks indicate Perella Weinberg Partners Group's strengths. 
+Perella Weinberg Partners Group operates in the Investment Banking & Securities Dealing industry. 	A list of fastest growing competitors, and info on recession risks show Perella Weinberg Partners Group's weaknesses relative to its competitors. 
+
+	
+Access the complete profile.
+
+
+Fast Facts
+
+RevenueOver $100 million    Exact Revenue in Premium ReportEmployees100 - 1,000Exact Employee Count Available in Premium ReportPrimary Industry52311 Investment Banking & Securities DealingAdditional NAICS Codes523 Securities, Commodity Contracts & Other Financial Investments
+
+
+Note: Revenues are statistical evaluations.
+
+	Perella Weinberg Partners Group's Business Operations Profile shows critical firmographic facts:
+		What is the company's size? (Revenue and employees)
+			What industry is the company in?
+		
+
+Perella Weinberg Partners Group Revenue and Growth Rate
+
+Perella Weinberg Partners Group
+Revenue ($ MM)Growth Rate (%)# Employees
+2015Details in Premium Report
+2014
+2013
+2012
+
+
+
+1-Year Growth Rate:3-Year Growth Rate (CAGR):
+
+
+Investor Activity
+		Perella Weinberg Partners Group has actively raised capital from investors. These investors may include private investors, venture capital firms, or other investment vehicles.
+
+Date
+Investors
+Percent Raised
+Target Size
+
+October 17, 2016
+88
+INF%
+$0 MM
+
+Complete list of funding rounds and total amounts in the Company Report
+Income Statement (Industry Averages)
+Perella Weinberg Partners Group's income statement based on industry averages: 
+
+$ Millions(Industry Average)
+Total Revenue
+
+
+Operating Revenue
+Cost of Goods Sold
+Gross Profit
+Operating Expenses
+Pension, profit sharing plans, stock, annuity
+Repairs
+Rent paid on business property
+Charitable Contributions
+Depletion
+Domestic production activities deduction
+Advertising
+Compensation of officers
+Salaries and wages
+Employee benefit programs
+Taxes and Licenses
+Bad Debts
+Depreciation
+Amortization
+Other Operating Expenses
+Total Operating Expenses
+Operating Income
+Non-Operating Income
+EBITDA
+EBIT (Earnings Before Interest and Taxes)
+Interest Expense
+Earnings Before Taxes
+Income Tax
+Net Profit
+ 
+
+Trademark Applications
+	Trademark applications, moreso than trademark registrations, show the products and services that are developing and being actively marketed.
+	Companies that don't have any trademark applications are more likely to be stable, maintaining their existing business lines.
+	Companies that are applying for new trademarks are likely to be investing in R&D and marketing, attempting to expand more rapidly or pivoting to reach strategic markets.
+	Trademarks may include brand names, product names, logos and slogans. 
+	
+
+
+Trademark
+Date
+
+A-RATIOFinancial advisory services 01/05/2015 See all trademarks in the Full Report. 
+Recession Risk
+	IncFact analyzed data from the last recession to determine whether Perella Weinberg Partners Group grew or shrank over that period. We also looked at other companies in the industry
+	 to compare how recession-proof Perella Weinberg Partners Group is relative to the industry. While a new recession may strike a particular industry, measuring the
+	 industry and company's robustness during the last recession estimates its ability to weather future recessions.
+
+	
+Market Share of Competition: Perella Weinberg Partners Group vs. Largest Competitors
+		A competitive analysis shows these companies are in the same general field as Perella Weinberg Partners Group, even though they may not compete head-to-head. 
+		These are the largest companies by revenue. However, they may not have the largest market share in this industry if they have diversified into other business lines. 
+		The "Competition" section of a business plan or investment memorandum would start by analyzing the information about these companies.
+		Competitive advantage comes from offering better pricing or superior products/service.
+		
+Company
+HeadquartersRevenue ($ MM)MERRILL LYNCH PIERCE FENNER & SMITHPennington, NJ100 CREDIT SUISSE SECURITIES USANew York, NY81 MERRILL LYNCHNew York, NY56 RAYMOND JAMES TAX CREDIT FUND 44St. Petersburg, FL52 STIFEL NICOLAUSSt. Louis, MO37 Nearby CompetitionInfo on companies that are located in close proximity to Perella Weinberg Partners Group, operating in similar markets. 
+		While some companies, particularly retail, compete with neighboring businesses for customers, other companies may compete to attract skilled employees. 
+	
+
+Perella Weinberg Partners Group's CompetitorsRevenue ($ MM)
+
+
+
+
+
+Fastest Growing CompetitorsThese companies are in the same general field as Perella Weinberg Partners Group and are rapidly expanding. Companies may grow organically or through acquisition. In some cases apparently high growth rates may be caused by data that weren't available in previous years.
+	
+
+CompanyRevenue ($ MM)
+
+
+
+
+
+
+
+
+
+
+
+   
+Discover @ IncFact
+Contact Us
+Press & Media
+Terms of Use
+Privacy Policy
+(0.0051 s)
+© 2017 IncFact.com. All Rights Reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Experienced Recruitment - Perella Weinberg Partners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+Experienced Hire Recruitment
+We seek high caliber individuals who share an uncompromising commitment to excellence to join our growing platform.
+
+
+
+
+
+
+
+Perella Weinberg Partners Recruits
+When it’s time to take that next big step in your career, PWP provides an environment where you can harness your skills, heighten your expertise, and excel.
+At PWP, we are committed to hiring passionate, driven, and high-achieving individuals. Our professionals are encouraged to explore, collaborate, and leverage their talents to serve the best interests of our clients.
+Work With Us
+Are you ready to make an impact? Join our team of exceptional professionals.
+Browse our current  US Jobs or International Jobs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Perella Weinberg Partners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+Thriving in Complexity
+Your world is complex.  Perella Weinberg Partners can help you find the right solutions for your most difficult strategic issues.
+We deliver expert perspectives from the brightest and most experienced minds in the industry to help you make critical strategic and alternative investment decisions with confidence.
+Read More
+
+
+
+
+
+
+
+
+
+
+
+
+Advisory
+As global markets shift and become more complex, PWP provides comprehensive independent advisory services for your most pressing strategic issues. With decades of experience, we help you navigate complex situations by delivering novel insights, tailored solutions and unparalleled access to the brightest minds. We help you act decisively and achieve your strategic objectives.
+Learn More
+
+
+
+
+
+
+
+
+
+Asset Management
+Perella Weinberg Partners is a leading alternative asset manager with an unwavering focus on investors’ needs. We provide an “investment edge” by harnessing the brightest investment minds. With approximately $13.1 billion in assets, our investors gain access to public and private instruments, spanning equity, credit, and real asset investments, both through our direct alternatives and our outsourced CIO capabilities.
+Learn More
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Tudor, Pickering, Holt & Co.  All Energy. All the time.
+TPH is Perella Weinberg Partners’ energy practice, providing high-quality advice and services to the energy industry. It offers financial advisory, asset management services and securities underwriting services, as well as sales and trading, underwriting and research coverage on approximately 140 issuers worldwide.
+Learn More
+
+
+
+
+
+
+
+
+Firm Highlights
+
+
+
+
+
+
+
+
+
+
+
+Kate Spade
+
+											05/08/2017										/
+											$2.4 Billion																Financial advisor to Kate Spade on its sale to Coach
+
+Learn more
+
+
+
+
+
+
+
+Becton, Dickinson and Company
+
+											04/23/2017										/
+											$24 Billion																Financial advisor to Becton, Dickinson and Company on its acquisition of C.R. Bard, Inc.
+
+Learn more
+
+
+
+
+
+
+
+Linde AG
+
+											12/20/2016										/
+											$67.2 Billion																Financial advisor to Linde AG in connection with its all-share merger of equals with Praxair Inc. 
+
+Learn more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PWP Global Citizenship
+Our Global Citizenship program conveys the values central to PWP’s principles and culture. Promoting corporate giving and employee engagement form the core of this effort.
+Learn More
+
+
+
+
+
+
+
+
+
+Careers
+At PWP, we seek exceptional talent with the drive and desire to address big challenges on behalf of our clients.
+Learn More
+
+
+
+
+ 
+
+
+
+
+Our Team
+Meet the rest of the team
+
+
+
+
+
+
+
+
+
+
+
+
+Alexandra Pruner
+																										Partner & CFO /											Firm Administration																					Houston
+
+Learn more
+
+
+
+
+
+
+
+
+David Azéma
+																										Partner /											Advisory																					London
+
+Learn more
+
+
+
+
+
+
+
+
+David Baker
+																										Partner /											Asset Management																					New York
+
+Learn more
+
+
+
+
+
+
+
+
+
+
+
+News
+
+7.14.2017
+Geraldine Murphy Joins Tudor, Pickering, Holt & Co. as Managing Director
+
+    Tudor, Pickering, Holt & Co. named Geraldine Murphy a Managing Director in its Investment Banking…  
+
+
+Read more
+See More News
+
+
+
+
+
+
+
+Insights
+
+7.25.2017
+How Well Are the European Banking Regulations Working? Evidence from Recent Events in Spain and Italy
+
+In an April 2016 PWP Global Macro Insights paper on Eurozone banks, Dr. Maria Vassalou and Dr. Thomas Cooley discussed the vulnerabilities of the European Banks and the overhauled Eurozone Banking System whose Single Resolution Mechanism (SRM) went into full effect…
+
+
+
+Read more
+See More Insights
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Who We Are - Perella Weinberg Partners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+Solving the Unsolvable
+PWP has an unmatched appetite for challenge – we thrive on solving the unsolvable. Our unique ability to see what others do not and connect disparate information creates novel insights that lead to optimal outcomes.
+
+
+
+
+
+
+
+PWP, a leading independent global financial services firm, was established in 2006 to address the need for expertise and advice in financial services.
+We provide clients with expert perspectives to help them make critical strategic and alternative investment decisions with confidence. We take a multi-dimensional approach to problem-solving and formulate effective solutions to address your needs and build highly effective solutions that help you create value.
+
+
+
+
+Firm Highlights
+
+
+
+
+June
+2006
+
+Perella Weinberg Partners is founded. Launches with offices in New York and London.
+
+
+
+
+
+July
+2007
+
+Launches first asset management vehicle.
+
+
+
+
+
+2008
+
+Helped steer the industry through the financial crisis by advising Wachovia in connection with the Wells Fargo merger and later advising the FDIC.
+
+
+
+
+
+September
+2010
+
+Opens Abu Dhabi office, marking the firm’s expansion into the Middle East and first international office opening since its founding.
+
+
+
+
+
+December
+2012
+
+Named “European Boutique Financial Advisor of the Year” by the Financial Times & Mergermarket.
+
+
+
+
+
+August
+2013
+
+Launches Global Macro Strategy led by Dr. Maria Vassalou.
+
+
+
+
+
+May
+2014
+
+Robert K. Steel named Chief Executive Officer of PWP.
+
+
+
+
+
+June
+2014
+
+Advises Medtronic in connection with its acquisition of Covidien for $42.9 billion.
+
+
+
+
+
+June
+2015
+
+Agility named “Outsourced CIO of the Year” by Institutional Investor.
+
+
+
+
+
+October
+2015
+
+Announces formation of Strategic Advisory Board.
+
+
+
+
+
+March
+2016
+
+Surpasses $1 trillion in executed advisory transactions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Our Team of Experts
+At PWP, we pride ourselves on talent and intellect. We tap the brightest minds from around the globe to address your needs and build highly effective solutions that help you succeed.
+Meet the full team
+
+
+
+
+
+
+
+
+Advisory Board
+Meet the rest of the board
+
+
+
+
+
+
+
+
+
+
+
+
+Walter Isaacson
+															President & CEO, Aspen Institute																		
+			
+Learn more
+
+
+
+
+
+
+
+
+Jorma Ollila
+															Former Chairman & CEO, Nokia																		
+			
+Learn more
+
+
+
+
+
+
+
+
+Robert Pozen
+															Former Chairman, MFS Investment Management																		
+			
+Learn more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ivan Seidenberg
+															Former Chairman & CEO, Verizon Communications Inc.																		
+			
+Learn more
+
+
+
+
+
+
+
+
+Jane C. Sherburne
+															Principal, Sherburne PLLC																		
+			
+Learn more
+
+
+
+
+
+
+
+
+Daniel Yergin
+															Chairman, IHS Cambridge Energy Research Associates																		
+			
+Learn more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PWP Global Citizenship
+We are committed to supporting the communities in which we operate by investing to improve their futures. Our commitment to giving back can be found in cities around the world. Strengthening communities through a variety of outlets form the core of PWP’s Global Citizenship program. Through our people and our resources, we promote projects, organizations and causes that improve people’s lives.
+Corporate Giving
+PWP makes contributions in areas that are important to the success and development of future generations. We seek opportunities to support projects that keep people and communities strong and empowered.
+Employee Engagement
+We encourage our employees who want to volunteer in their communities and actively sponsor initiatives. By engaging in these activities, we promote a shared commitment to stewardship.
+
+
+
+
+
+
+
+
+
+
+
+Newsroom
+
+							See more news
+						
+
+
+
+7.14.2017
+Geraldine Murphy Joins Tudor, Pickering, Holt & Co. as Managing Director
+
+    Tudor, Pickering, Holt & Co. named Geraldine Murphy a Managing Director in its Investment Banking…  
+
+
+Read more
+See More News
+
+
+
+
+
+
+6.22.2017
+Perella Weinberg Partners Agility Named “Outsourced CIO of the Year” by Institutional Investor
+
+    Agility, the Outsourced Chief Investment Officer business of Perella Weinberg Partners (PWP), was recognized by…  
+
+
+Read more
+See More News
+
+
+
+
+
+
+6.01.2017
+Joseph R. Perella Named Japan Society Chairman
+
+    Joseph R. Perella, Chairman and Founding Partner of Perella Weinberg Partners, has been elected Chairman…  
+
+
+Read more
+See More News
+
+
+
+
+
+
+
+
+
+
+
+
+Our Principles
+We are devoted to providing unmatched advisory and asset management services to clients based on high quality independent, financial expertise. Our Business Principles are our values and articulate the Firm’s culture and how we engage with clients. Our entire culture is predicated on trust and experience. Our professionals share an uncompromised dedication to excellence and integrity worldwide.
+
+Business Principles
+
+Clients are everything to us. When we engage with an advisory or investing client, we agree not only to represent them, but to fight for them if the circumstances require it.
+We are an entrepreneurial and nimble Firm, unencumbered by bureaucracy and politics. We should use this advantage in every way possible, both internally and externally.
+Transparency is vital to our identity, our culture and our success. Complex problems are a prominent feature of our industry and are best solved by early warning, open discussion and a sharing of ideas.
+We embrace diversity, not merely because it’s right, but because it creates the most interesting, vibrant and commercial environment.
+“I trust you” is the highest compliment we can receive from an advisory client, an investor or a colleague. We should aspire to be the most trusted Firm in our industry.
+It takes a special kind of person to enjoy and prosper in our Firm. Our people succeed through their wits, their experience, their relationships and their creativity; without the benefit of armies of people or a huge balance sheet.
+While our business model hinges on having experienced senior people with exceptional reputations, our more junior people are the lifeblood of the Firm. We cannot be successful without fully developing the next generation to take the place of the current partners.
+Our partnership extends beyond our partners. Every person in the Firm should be devoted, first and foremost, to the Firm’s reputation and well-being. Self-centered or “silo” behavior is antithetical to who we are.
+At our Firm, personal ambition and teamwork go hand in hand. Let’s always venerate individual creativity and drive, mindful that each of us, and therefore the Firm, performs most effectively when we operate in a collegial manner.
+Every day, we have an obligation to protect, uphold and enhance our reputation.
+
+
+
+
+
+
+
+
+
+
+Perella Weinberg Partners
+767 5th Ave, New York, NY, United States
+
+
+
+New York
+767 Fifth Avenue
+New York, NY 10153
+Phone: 212.287.3200
+Fax: 212.287.3201
+
+
+
+
+
+Perella Weinberg Partners
+1111 Bagby Street, Houston, Texas 77002, United States
+
+
+
+Houston
+1111 Bagby Street, Suite 4900
+Houston, Texas 77002
+Phone: 713.333.7100
+Fax: 713.333.7120
+
+
+
+
+
+Perella Weinberg Partners
+20 Grafton Street, London, United Kingdom
+
+
+
+London
+20 Grafton Street
+London W1S 4DZ
+Phone: +44 (0) 20 7268 2800
+Fax: +44 (0) 20 7268 2900
+
+
+
+
+
+Perella Weinberg Partners
+Al Sila Tower - Sowwah Square - Al Maryah Island - Abu Dhabi - United Arab Emirates
+
+
+
+Abu Dhabi
+Abu Dhabi Global Markets
+Al Sila Tower, 8th Floor
+P.O. Box 111075
+Abu Dhabi, UAE
+Phone: +971 (0) 2 694 1001
+Fax: +971 (0) 2 694 1020
+
+
+
+
+
+Perella Weinberg Partners
+7979 East Tufts Avenue, Denver, CO, United States
+
+
+
+Denver – PWP Agility
+7979 East Tufts Avenue, Suite 700
+Denver, CO 80237
+
+Phone: 303.813.7913
+Fax: 303.379.7788
+
+
+
+
+
+Perella Weinberg Partners
+1623 Blake Street, Denver, Colorado 80202, United States
+
+
+
+Denver – TPH
+1623 Blake Street, Suite 200
+Denver, Colorado 80202
+Phone: 303.300.1900
+Fax: 303.300.1910
+
+
+
+
+
+Perella Weinberg Partners
+Dubai International Financial Centre - Trade Centre - Dubai - United Arab Emirates
+
+
+
+Dubai
+Dubai International Financial Centre
+Gate Village Building 1, Level 3
+Office No. 304, P.O. Box 506582
+Dubai, UAE
+Phone: +971 (4) 378 1401
+Fax: +971 (4) 378 1424
+
+
+
+
+
+Perella Weinberg Partners
+1 California Street, San Francisco, CA, United States
+
+
+
+San Francisco
+1 California Street, Suite 2250
+San Francisco, CA 94111
+Phone: 415.671.4532
+Fax: 415.671.4503
+
+
+
+
+
+Perella Weinberg Partners
+Bow Valley Square, Calgary, Alberta, Canada
+
+
+
+Calgary
+Bow Valley Square IV
+Suite 2110, 250 6th Avenue SW
+Calgary, Alberta T2P 3H7
+Phone: 403.705.7830
+
+
+
+
+
+Perella Weinberg Partners
+2029 Century Park East, Los Angeles, CA, United States
+
+
+
+Los Angeles
+2029 Century Park East, 9th Floor
+Los Angeles, CA 90067
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Asset Management Archives - Page 2 of 10 - Perella Weinberg Partners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+Businesses: Asset Management 
+
+
+How Well Are the European Banking Regulations Working? Evidence from Recent Events in Spain and Italy 
+
+In an April 2016 PWP Global Macro Insights paper on Eurozone banks, Dr. Maria Vassalou and Dr. Thomas Cooley discussed the vulnerabilities of the European Banks and the overhauled Eurozone Banking System whose Single Resolution Mechanism (SRM) went into full effect in January 2016. At that time, the regulatory framework was incomplete and untested. A year and a half later, it remains incomplete, but no longer untested, warranting a close look at the evidence that has emerged.
+
+
+
+
+
+Regulating the Financial Industry: No Free Lunch! 
+
+In this paper, Dr. Maria Vassalou and Dr. Thomas Cooley provide a brief overview of the main merits and pitfalls of the Dodd-Frank Act, as well as of the two alternative proposals that have emerged over the past year: the Financial CHOICE Act and the Minneapolis Plan.
+
+
+
+
+
+Marie-Hélène S. McAndrew Joins Perella Weinberg Partners as Managing  Director 
+
+Perella Weinberg Partners today announced that Marie-Hélène S. McAndrew has joined the Firm as a Managing Director in its Asset Management business. Based in New York, Ms. McAndrew will work with the Marketing and Client Services Team as a Product Specialist for the PWP Global Macro strategy. PWP…
+
+
+
+
+
+Megan Gorman 
+
+Ms. Gorman is a Director at Perella Weinberg Partners and leads the client service efforts for Agility.  Prior to joining the firm, Ms. Gorman was the Investment Operations Manager at Carleton College where she led all operational activities for the investment office and was responsible for managing the college’s $750 million endowment portfolio.  Before that, Ms. Gorman held various positions with RBC Wealth Management including Director, Mutual Fund and Retirement Solutions, Senior Product Manager, Retirement Solutions and Product Manager, Alternative Investments.  Prior to that, Ms. Gorman was an Analyst and Investment Consultant for Jeffrey Slocum & Associates.
+Ms. Gorman received a Bachelor’s degree in Finance from University of Northern Iowa where she was a presidential scholar.  Ms. Gorman holds the Chartered Financial Analyst (CFA) designation and is a SIFMA Securities Industry Graduate from the Wharton School.
+
+
+
+
+
+Tamara Larsen 
+
+Ms. Larsen is a Director at PWP and co-leads the Impact Investment efforts of the firm. Prior to joining the firm, Ms. Larsen was Head of Private Markets Research at Russell Investments. In this role, Tamara was responsible for leading the investment selection and due diligence for various private capital investment strategies, including energy, infrastructure, and real estate, as well as a socially responsible mandate focused on the healthcare, climate change mitigation, and financial inclusion sectors. In this capacity she was a voting member of the Alternatives Subcommittee which governed all client investment recommendations for hedge funds, private markets and listed real assets. Before joining Russell, Tamara was a Senior Vice President at Centerline Capital Group, where she was a portfolio manager and acquisitions officer for a real estate investment joint venture with California Public Employees’ Retirement System (“CalPERS”). Previously, Tamara held acquisitions roles at Lehman Brothers and boutique real estate investment manager Thor Equities.
+Tamara is a member of the United Nations Principles for Responsible Investment (UNPRI) Private Equity Working Group and the Pension Real Estate Association (PREA) Green Affinity Group. She is a recipient of the Robert A. Toigo Foundation and the Heather Smith Memorial Fellowships, and has been conferred the Toigo Foundation’s Top 40 Under 40 Award. She has authored and co-authored papers and research pieces on private infrastructure, market trends and benchmarking in private real estate, and implementation of ESG and impact investing.
+Ms. Larsen holds an M.S. in Real Estate Development from the Massachusetts Institute of Technology and a B.A. in Economics from Smith College.
+
+
+
+
+
+Perella Weinberg Partners’ Agility Named “Outsourced CIO of the Year” by  Institutional Investor 
+
+Perella Weinberg Partners today announced that Agility, its outsourced chief investment officer (CIO) service, has been named “Outsourced CIO of the Year” by Institutional Investor. The award recognizes organizations which “stood out for their performance innovation, achievements and…
+
+
+
+
+
+How Digital Technology is Displacing both Labor and Capital 
+
+In this paper, we use industry-level data from the U.S. to discuss the transformational effects that technology is having on the structure of the economy and its implications, not only for the demand for and return on labor, but also for those on capital, a topic that has not garnered much attention thus far.
+
+
+
+
+
+The Global Macro Outlook Following the British Referendum 
+
+The British decision to exit the European Union (EU) has cast a veil of uncertainty on the European continent and roiled the financial markets worldwide on its announcement. The result of the referendum has triggered a major political process that is likely to unfold over a prolonged period of time and have significant global economic implications.
+
+
+
+
+
+Perella Weinberg Partners Asset Based Value Strategy and Madison Marquette Announce Sale of the Center Building to Vornado Realty Trust 
+
+Perella Weinberg Partners Asset Based Value Strategy, a leading alternative asset management strategy and a unit of Perella Weinberg Partners, and Madison Marquette, a leading commercial real estate investment and operating company, today announced the sale of the Center Building, a 440,000…
+
+
+
+
+
+Perella Weinberg Partners Asset Based Value Strategy Announces  Merger of its Two Auto Finance Platforms 
+
+Perella Weinberg Partners Asset Based Value Strategy (“ABV”), a leading alternative asset management strategy and a unit of Perella Weinberg Partners, today announced that it will merge its two auto loan origination and servicing platforms, Flagship Credit Acceptance (“Flagship”) and CarFinance…
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Asset Management - Perella Weinberg Partners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+From Insight, Opportunity
+Sophisticated investors turn to Perella Weinberg Partners for distinct alternative investment solutions.
+
+
+
+
+
+
+
+PWP is a leading global institutional asset manager with an unwavering focus on investors’ needs.
+We derive an “investment edge” through harnessing the brightest investment minds around the globe. Across investment strategies, we achieve our objectives of producing attractive risk-adjusted returns in a variety of market environments because of our experience, expertise, and disciplined investment approach. Our investors benefit from this edge across public and private instruments, spanning equity, credit, and real asset investments, both through our direct alternatives and our outsourced CIO capabilities. Today PWP oversees approximately $13.1 billion in assets under management.
+
+
+
+
+
+Agility / Your Outsourced Investment Solution
+Overview
+PWP created the Agility platform to provide your organization an Outsourced Investment Team with comprehensive capabilities that can offer customized programs to meet your individual investment requirements. Our team of professionals has decades of experience and executes a proven and disciplined due diligence process to identify and invest with top managers across asset classes.
+Value Proposition
+Today, the investment landscape is global and more complex than ever. At many institutions, investment management is often under-resourced, and attracting and retaining specialized in-house investment talent is both difficult and expensive. To be an effective fiduciary now requires an institutional approach involving investment, risk management, legal, compliance, and operational expertise. With Agility, PWP can serve as an extension of your staff or volunteer board and offer customized investment programs designed to complement the remainder of your portfolio.
+Approach
+The Agility platform’s success is ultimately built upon a close, strategic partnership between you and the Agility Investment Team. With a long-term horizon, we construct diversified portfolios by investing across geographies, asset classes, managers, and positions. We use a detailed, proprietary methodology as well as internal and external tools to measure and manage risk in your portfolio. Combined with the support of experienced legal, compliance, risk management, trading and operational teams, we create a customized investment program to complement and enhance your portfolio.
+Awards
+Agility Named “Outsourced CIO of the Year” by Institutional Investor
+
+
+
+
+
+
+Portfolio Manager
+Chris Bittman
+
+    Meet Chris  
+
+
+
+
+
+
+
+Asset Based Opportunities
+Investment Philosophy
+This strategy emphasizes capital preservation and cash flow generation from assets purchased at attractive current cash yields and equity-like upside optionality.
+Strategy Overview
+Our Asset Based Opportunities strategy seeks to uncover mispriced asset based investment opportunities through fundamental analysis and in-depth understanding of asset valuation.
+Current market dislocation, including illiquidity, repricing of assets, deleveraging, and regulatory changes, create compelling asset based investment opportunities.
+Assets targeted for investment are real assets, including rail cars, aircrafts, vessels, working interests in oil and gas, and commercial real estate and financial assets, including auto loans, credit card loans, franchise loans and equipment lending, small business loans, and other consumer assets.
+
+
+
+
+Diversified Equities
+Investment Philosophy
+This strategy represents a combination of tactical long/short equity investing and event-driven equity investing within the context of a diversified, low-net portfolio of mid and large cap equities.
+Strategy Overview
+In the short to medium term the fundamental drivers of stocks can often be diluted or even overridden by other influencers of stock prices such as technicals, macro/thematic factors and behavioral sentiment. As a result, PWP has developed an iterative ‘multiple-lens’ approach that takes into account all of these considerations in developing portfolio construction and managing risk.
+To achieve its objective, the strategy invests in both select long and short equity opportunities and event-driven opportunities with a hard catalyst. The strategy leverages significant knowledge synergies between the two strategies and maintains a flexible investment mandate across such strategies in order to take advantage of opportunities presented by the market.
+
+
+
+
+
+
+Portfolio Manager
+David Baker
+
+    Meet David  
+
+
+
+
+
+
+
+Global Macro
+Investment Philosophy
+This strategy is highly liquid, investing in equity indices, currencies, sovereign debt, credit, and commodities with a strong focus on risk management in an effort to limit the frequency and severity of drawdowns.
+Strategy Overview
+The investment strategy is based on fundamental macro-economic research to establish predictive relationships between macro-economic factors and asset returns. These principles are implemented in a rigorous, systematic investment framework. The goal of the strategy is to estimate the dynamics of risk premia across all liquid assets globally in order to identify opportunities to deploy risk to maximize reward. The investment approach incorporates analysis of the current economic environment as well as prediction of the evolution of the business cycle across multiple regions.
+
+
+
+
+
+
+Portfolio Manager
+Maria Vassalou
+
+    Meet Maria  
+
+
+
+
+
+
+
+Growth Equity
+Investment Philosophy
+PWP Growth Equity is a private equity group focused on growth-oriented, lower middle market companies across the consumer/retail, services and industrial sectors, primarily in the United States.
+Strategy Overview
+The Growth Equity team partners with existing business owners and management teams, delivering capital in tailored and flexible structures to help companies execute on their growth objectives and plans for value creation.  The Growth Equity team seeks to invest in businesses that have strong and differentiated competitive positions and, under the leadership of strong management teams, offer the potential for significant continued growth.
+For more information on PWP Growth Equity, please visit: www.pwpgrowthequity.com
+
+
+
+
+
+
+Portfolio Manager
+David Ferguson
+
+    Meet David  
+
+
+
+
+
+
+
+Portfolio Manager
+Chip Baird
+
+    Meet Chip  
+
+
+
+
+
+
+
+TPH Energy Equities Opportunities
+Investment Philosophy
+This long-only diversified equity strategy focuses on concentrated positions in publicly traded energy equities predominately in North America.
+Strategy Overview
+The strategy was first deployed in early 2015 to take advantage of one of the most severe corrections in the energy markets since the 1980s. It is a fundamentally-driven, concentrated, long-only equity strategy focused on the “best energy ideas” of the Portfolio Manager. The strategy invests in a concentrated portfolio of public equities focused primarily on the upstream and oilfield service subsectors.
+
+
+
+Portfolio Manager
+Dan Pickering
+
+    Meet Dan  
+
+
+
+
+
+
+
+TPH MLP
+Investment Philosophy
+This is a diversified long-only strategy focused on midstream energy equities and Master Limited Partnerships.
+Strategy Overview
+The TPH MLP strategy seeks to generate long-term returns in the form of capital appreciation and income.  The strategy predominately invests in North American opportunities with minimal exposure in developed energy economies outside of the U.S.
+The strategy’s unique process and coverage of the entire energy infrastructure spectrum, leads to differentiated stock selection with minimal overlap with leading peer funds.  The strategy leverages TPH’s deep technical energy expertise (e.g., engineers, geologists, and energy professionals) that encompasses the full energy value chain.
+
+
+
+Portfolio Manager
+Diego Kuschnir
+
+    Meet Diego  
+
+
+
+
+
+
+
+TPH Energy Infrastructure
+Investment Philosophy
+This long/short equity strategy is focused exclusively on energy infrastructure subsectors, such as pipelines, utilities, storage, transmission and water, among others.
+Strategy Overview
+This strategy is in a small universe of hedged, liquid strategies that invests in the energy infrastructure space. The strategy employs an actively managed portfolio with alpha longs and shorts and proactive hedging to isolate desired exposures and reduce broader energy sector, market, and macro risks.
+The strategy seeks to exploit opportunities in the North American energy sector, with a focus on the energy infrastructure spectrum (i.e., midstream/MLP, pipelines, electric and gas utilities, water, transmission, commodity storage, gathering and processing), through investments in liquid, publicly traded securities.
+The strategy leverages TPH’s deep technical energy expertise (e.g., engineers, geologists and energy industry professionals) that encompasses the full energy value chain from wellhead to burner tip.
+
+
+
+Portfolio Manager
+Diego Kuschnir
+
+    Meet Diego  
+
+
+
+
+
+
+
+TPH Private Energy Opportunities
+Investment Philosophy
+This strategy is a merchant-banking style private equity strategy that makes primarily minority stake, non-control investments in companies across the energy industry.
+Strategy Overview
+This strategy invests in opportunities that provide capital solutions to companies with attractive risk / return profiles during the current energy correction.  Seeded by one of the largest pension funds in the US, the strategy taps into the proprietary deal flow generated across the TPH platform (Advisory, Capital Markets. and Asset Management) to source attractive investment opportunities. The strategy has three targeted investment scenarios in which it seeks to deploy capital: trough-cycle investment opportunities, development opportunities, and structured opportunities.  The strategy’s opportunistic mandate provides a tactical allocation to energy private equity during the most difficult energy environment since the 1980s.
+
+
+
+Investment Committee: Dan Pickering, Chansoo Joung, Bobby Tudor
+
+
+
+
+
+
+
+TPH Midstream Opportunities
+Investment Philosophy
+This long-only equity strategy focuses on concentrated positions in publicly traded midstream equities, energy infrastructure equities, and Master Limited Partnerships (MLPs).
+Strategy Overview
+This is a tactical strategy intended to take advantage of the current energy correction.  The strategy is focused on holding limited, concentrated positions predominately in North American midstream equities, energy infrastructure equities, and Master Limited Partnerships (MLPs).
+
+
+
+Portfolio Manager
+Diego Kuschnir
+
+    Meet Diego  
+
+
+
+
+
+
+
+
+
+Our Asset Management Team
+Meet the rest of the team
+
+
+
+
+
+
+
+
+
+
+
+
+Darren L. Myers
+																										Partner /											Asset Management																					Denver
+
+Learn more
+
+
+
+
+
+
+
+
+Melanie Paddon
+																										Managing Director /											Asset Management																					New York
+
+Learn more
+
+
+
+
+
+
+
+
+Sig Heller
+																										Partner /											Asset Management																					New York
+
+Learn more
+
+
+
+
+
+
+
+
+
+
+Insights
+
+7.25.2017
+How Well Are the European Banking Regulations Working? Evidence from Recent Events in Spain and Italy
+
+In an April 2016 PWP Global Macro Insights paper on Eurozone banks, Dr. Maria Vassalou and Dr. Thomas Cooley discussed the vulnerabilities of the European Banks and the overhauled Eurozone Banking System whose Single Resolution Mechanism (SRM) went into full effect…
+
+
+
+Read more
+See More Insights
+
+
+
+
+
+
+
+
+
+Newsroom
+
+							See more news
+						
+
+
+
+6.22.2017
+Perella Weinberg Partners Agility Named “Outsourced CIO of the Year” by Institutional Investor
+
+    Agility, the Outsourced Chief Investment Officer business of Perella Weinberg Partners (PWP), was recognized by…  
+
+
+Read more
+See More News
+
+
+
+
+
+
+6.19.2017
+Perella Weinberg Partners Agility Forms Strategic Advisory Board
+
+    Agility, the Outsourced Chief Investment Officer business of Perella Weinberg Partners (PWP), announced that it…  
+
+
+Read more
+See More News
+
+
+
+
+
+
+5.22.2017
+PWP Growth Equity Completes $750 Million Fundraise
+
+    PWP Growth Equity announced that it has completed fundraising for PWP Growth Equity Fund II. …  
+
+
+Read more
+See More News
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Perella Weinberg Partners - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Perella Weinberg Partners
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Perella Weinberg Partners
+
+
+
+
+
+Type
+
+Private
+
+
+Industry
+Financial Services
+
+
+Founded
+2006; 11 years ago (2006)
+
+
+Founders
+Joseph R. Perella
+Peter Weinberg
+
+
+Headquarters
+General Motors Building
+New York, New York, United States
+
+
+
+Key people
+
+Robert K. Steel (CEO)
+
+
+Products
+Financial Advisory, Asset Management
+
+
+Total assets
+$13.7 billion[1]
+
+
+
+Number of employees
+
+650 (2016)[2]
+
+
+Website
+www.pwpartners.com
+
+
+Perella Weinberg Partners L.P. is an independent, privately owned, global financial services firm providing corporate advisory and asset management services to clients around the world. Founded in 2006 by Joseph R. Perella, Peter Weinberg, Terry Meguid and several other partners from financial institutions, the firm is a private partnership with approximately 650 employees.[2] It is headquartered in New York City with offices in London, Abu Dhabi, Dubai, Denver, San Francisco, Calgary, and Houston.
+Perella Weinberg's Corporate Advisory business advises its clients on mergers and acquisitions, financial restructuring, private placements and other strategic transactions. The Asset Management business comprises outsourced CIO, institutional asset management and private equity investing.
+
+
+
+Contents
+
+
+1 History
+2 Business units
+
+2.1 Corporate Advisory
+2.2 Asset Management
+
+
+3 References
+4 External links
+
+
+
+History[edit]
+Perella Weinberg Partners was launched on June 15, 2006.[3]
+To help establish the firm’s operations and to seed investment initiatives, Perella Weinberg Partners raised over US $1.2 billion from a group of investors,[4] including leading financial institutions and family investor groups from the Americas, Europe, Japan, and the Middle East.
+During its first year of operation, Perella Weinberg Partners established an Advisory Council. Its members include Walter Isaacson, President and CEO of the Aspen Institute; Daniel Yergin, Chairman of IHS Cambridge Energy Research Associates; and Ivan Seidenberg, former Chief Executive Officer of Verizon Communications.[5]
+In 2016, Perella Weinberg acquired the Houston-based energy investment banking firm Tudor, Pickering, Holt & Co.[2]
+Business units[edit]
+Perella Weinberg Partners has two business units: Corporate Advisory, providing services to decision makers in business and government, and Asset Management, which consists of investment vehicles catering to institutional investors.
+Corporate Advisory[edit]
+Corporate Advisory is divided into practices: Mergers & Acquisitions, Financial Restructuring, Private Capital Raising, Pension Advisory services, Special Committee Advisory services, Government Advisory services and Energy Advisory services. The Corporate Advisory Business provides independent advice and transaction execution, including mergers and acquisitions, exclusive sales, defense advisory, financial restructuring, and special committee advisory. The Corporate Advisory group focuses on advising public and private companies, global institutions and investors.
+Asset Management[edit]
+The global asset management business comprises a suite of alternative investment strategies as well as outsourced CIO services. Investments made through this business include most major asset classes on a global basis, including equities, fixed income, asset based investments, distressed securities, private investments, real estate, and energy investments. The firm counts pension funds, endowments, foundations, sovereign wealth funds, family offices, high-net-worth individuals and fund of funds as its clients, and, including affiliates, has capital commitments and managed assets of approximately $12.6 billion as of January 1, 2017.[1] Perella Weinberg Partners' Agility Fund was named Outsourced CIO of the Year by Institutional Investor in 2015[6] and 2014[7] and by Foundation & Endowment Intelligence in 2013.[8]
+References[edit]
+
+
+
+^ a b "Perella Weinberg Asset Management", Retrieved on 4 April 2017.
+^ a b c Stynes, Tess. "Perella Weinberg to Combine With Tudor, Pickering, Holt", Wall Street Journal.
+^ "Perella Weinberg Partners Who We Are"
+^ Sorkin, Andrew Ross. “The Pressure of Great Expectations”, The New York Times, 27 April 2007.
+^ "Perella Weinberg Board Members"
+^ "Perella Weinberg Partners' Agility Fund Names "Outsourced CIO of the Year" by Institutional Investor 2015"
+^ "Perella Weinberg Partners' Agility Fund Names "Outsourced CIO of the Year" by Institutional Investor 2015"
+^ "Perella Weinberg Partners' Agility Named "Outsourced CIO of the Year" by Institutional Investor's Foundation & Endowment Intelligence Magazine"
+
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Investment banks
+
+
+
+
+Bank
+
+
+
+Divisions of
+universal banks
+
+
+
+
+
+Bulge bracket
+
+
+
+
+Bank of America Merrill Lynch
+Barclays
+Citi Institutional Clients Group
+Credit Suisse
+Deutsche Bank Corporate and Investment Bank
+J.P. Morgan & Co. (J.P. Morgan Cazenove)
+UBS Investment Bank
+
+
+
+
+
+
+Other
+
+
+
+
+Berenberg Bank
+BMO Capital Markets
+BOC International
+BNP Paribas Corporate & Institutional Banking
+Brown Shipley
+CIBC World Markets
+CITIC Securities (CLSA)
+Commerzbank Corporates & Markets
+Crédit Agricole Corporate and Investment Bank
+Daiwa Securities Capital Markets
+EverBank World Markets
+Harris Williams & Co.
+HSBC Global Banking and Markets
+ING Commercial Banking
+Is Investment
+KBC Bank
+Korea Development Bank (Daewoo Securities)
+Lloyds Bank Corporate Markets
+Mitsubishi UFJ Securities
+Mizuho Corporate Bank
+Natixis
+Nomura Securities
+RBC Capital Markets
+RBS Markets & International Banking
+Sberbank CIB
+Société Générale Corporate & Investment Bank
+Standard Chartered
+TD Securities
+UniCredit Corporate & Investment Banking
+VTB Capital
+Wells Fargo Securities
+
+
+
+
+
+
+
+
+Independents
+
+
+
+
+
+Bulge bracket
+
+
+
+
+Goldman Sachs
+Morgan Stanley
+
+
+
+
+
+
+Other
+
+
+
+
+Allen & Company
+Blackstone Group
+Brewin Dolphin
+BTG Pactual
+Centerview Partners
+China International Capital Corporation
+Close Brothers Group
+China Everbright Group
+
+China Everbright Limited
+Everbright Securities
+
+
+Evercore Partners
+FBR Capital Markets
+Galaxy
+Greenhill & Co.
+Guosen Securities
+Haitong Securities
+Houlihan Lokey
+Investec
+Jefferies
+Keefe, Bruyette & Woods
+Lazard
+Lincoln International
+Macquarie Group
+Mediobanca
+Moelis & Company
+N M Rothschild & Sons
+Oppenheimer & Co.
+Perella Weinberg Partners
+Piper Jaffray
+Raymond James Financial
+Renaissance Capital
+ROTH Capital Partners
+Salam Investment Ltd.
+Sandler O'Neill and Partners
+Stifel Nicolaus
+Stone Key Partners
+William Blair & Company
+
+
+
+
+
+
+
+
+
+
+
+ Category
+ List
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Perella_Weinberg_Partners&oldid=773907062"					
+Categories: Banks based in New York CityInvestment banksBanks established in 2006Hidden categories: Pages using deprecated image syntax 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 5 April 2017, at 03:46.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Perella Weinberg Partners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+Thriving in Complexity
+Your world is complex.  Perella Weinberg Partners can help you find the right solutions for your most difficult strategic issues.
+We deliver expert perspectives from the brightest and most experienced minds in the industry to help you make critical strategic and alternative investment decisions with confidence.
+Read More
+
+
+
+
+
+
+
+
+
+
+
+
+Advisory
+As global markets shift and become more complex, PWP provides comprehensive independent advisory services for your most pressing strategic issues. With decades of experience, we help you navigate complex situations by delivering novel insights, tailored solutions and unparalleled access to the brightest minds. We help you act decisively and achieve your strategic objectives.
+Learn More
+
+
+
+
+
+
+
+
+
+Asset Management
+Perella Weinberg Partners is a leading alternative asset manager with an unwavering focus on investors’ needs. We provide an “investment edge” by harnessing the brightest investment minds. With approximately $13.1 billion in assets, our investors gain access to public and private instruments, spanning equity, credit, and real asset investments, both through our direct alternatives and our outsourced CIO capabilities.
+Learn More
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Tudor, Pickering, Holt & Co.  All Energy. All the time.
+TPH is Perella Weinberg Partners’ energy practice, providing high-quality advice and services to the energy industry. It offers financial advisory, asset management services and securities underwriting services, as well as sales and trading, underwriting and research coverage on approximately 140 issuers worldwide.
+Learn More
+
+
+
+
+
+
+
+
+Firm Highlights
+
+
+
+
+
+
+
+
+
+
+
+Kate Spade
+
+											05/08/2017										/
+											$2.4 Billion																Financial advisor to Kate Spade on its sale to Coach
+
+Learn more
+
+
+
+
+
+
+
+Becton, Dickinson and Company
+
+											04/23/2017										/
+											$24 Billion																Financial advisor to Becton, Dickinson and Company on its acquisition of C.R. Bard, Inc.
+
+Learn more
+
+
+
+
+
+
+
+Linde AG
+
+											12/20/2016										/
+											$67.2 Billion																Financial advisor to Linde AG in connection with its all-share merger of equals with Praxair Inc. 
+
+Learn more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PWP Global Citizenship
+Our Global Citizenship program conveys the values central to PWP’s principles and culture. Promoting corporate giving and employee engagement form the core of this effort.
+Learn More
+
+
+
+
+
+
+
+
+
+Careers
+At PWP, we seek exceptional talent with the drive and desire to address big challenges on behalf of our clients.
+Learn More
+
+
+
+
+ 
+
+
+
+
+Our Team
+Meet the rest of the team
+
+
+
+
+
+
+
+
+
+
+
+
+Alexandra Pruner
+																										Partner & CFO /											Firm Administration																					Houston
+
+Learn more
+
+
+
+
+
+
+
+
+David Azéma
+																										Partner /											Advisory																					London
+
+Learn more
+
+
+
+
+
+
+
+
+David Baker
+																										Partner /											Asset Management																					New York
+
+Learn more
+
+
+
+
+
+
+
+
+
+
+
+News
+
+7.14.2017
+Geraldine Murphy Joins Tudor, Pickering, Holt & Co. as Managing Director
+
+    Tudor, Pickering, Holt & Co. named Geraldine Murphy a Managing Director in its Investment Banking…  
+
+
+Read more
+See More News
+
+
+
+
+
+
+
+Insights
+
+7.25.2017
+How Well Are the European Banking Regulations Working? Evidence from Recent Events in Spain and Italy
+
+In an April 2016 PWP Global Macro Insights paper on Eurozone banks, Dr. Maria Vassalou and Dr. Thomas Cooley discussed the vulnerabilities of the European Banks and the overhauled Eurozone Banking System whose Single Resolution Mechanism (SRM) went into full effect…
+
+
+
+Read more
+See More Insights
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Team - Perella Weinberg Partners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+Our team
+At PWP, we have a team of partners and professionals who bring leadership, influence, and experience across a wide range of industries.
+
+
+
+
+
+
+
+
+						Filter Team Members					
+
+View:
+
+
+								Tiles							
+
+
+
+								List							
+
+
+
+
+							Title						
+
+
+								All							
+Partners
+Managing Directors
+Directors
+Board Members
+
+
+
+
+							Business:						
+
+
+								All							
+Securities
+Advisory
+Asset Management
+Firm Administration
+
+
+
+
+							Location:						
+
+
+								All							
+Los Angeles
+Calgary
+Houston
+Abu Dhabi
+Austin
+Denver
+Dubai
+London
+New York
+San Francisco
+
+
+
+
+
+
+-
+			Partners		
+
+
+
+
+
+
+
+Tarek Abdel-Meguid
+
+
+																					Founding Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Jameel Akhrass
+
+
+																					Partner																															 / Advisory																			
+Abu Dhabi
+
+
+
+
+
+
+
+
+
+
+David Azéma
+
+
+																					Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+
+Chip Baird
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+David Baker
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Gary Barancik
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Dietrich Becker
+
+
+																					Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Andrew Bednar
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Riccardo Benedetti
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Chris Bittman
+
+
+																					Partner																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+Aaron Blomquist
+
+
+																					Partner																															 / Advisory																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Chi Chow
+
+
+																					Partner																															 / Securities																			
+Denver
+
+
+
+
+
+
+
+
+
+
+
+Kevin M. Cofsky
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Arnaud Dassy
+
+
+																					Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+David Ferguson
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Joseph D. Gatto
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Bernard Gault
+
+
+																					Senior Advisor																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Michael J. Grace
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Stefan Green
+
+
+																					Partner																															 / Advisory																			
+San Francisco
+
+
+
+
+
+
+
+
+
+
+Thomas Haines
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Sig Heller
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Maynard Holt
+
+
+																					Partner & CEO, TPH																															 / Advisory																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Aaron Hood
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Stefan Jentzsch
+
+
+																					Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+
+Nick Johnston
+
+
+																					Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Cem Koray
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Chip Krotee
+
+
+																					Partner																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Diego Kuschnir
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Joe Lacovara
+
+
+																					Partner																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Nabil F. Lahham
+
+
+																					Partner																															 / Advisory																			
+Dubai
+
+
+
+
+
+
+
+
+
+
+
+David Landman
+
+
+																					Senior Advisor																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Titus W. Leung
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Richard Matthews
+
+
+																					Partner																															 / Advisory 																			
+Calgary
+
+
+
+
+
+
+
+
+
+
+
+Philippe McAuliffe
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Christopher Mead
+
+
+																					Partner																															 / Advisory																			
+Los Angeles
+
+
+
+
+
+
+
+
+
+
+Bruce Mendelsohn
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+W. Mark Meyer
+
+
+																					Partner																															 / Securities																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Chad Michael
+
+
+																					Partner																															 / Advisory																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Walker Moody
+
+
+																					Partner																															 / Asset Management 																			
+Houston
+
+
+
+
+
+
+
+
+
+
+
+Kent E. Muckel
+
+
+																					Partner																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+Geraldine Murphy
+
+
+																					Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Darren L. Myers
+
+
+																					Partner																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+
+Frances Ni
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Travis Nichols
+
+
+																					Partner																															 / Advisory																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Nik Nunes
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Christopher O’Connor
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Paul Perea
+
+
+																					Partner																															 / Advisory 																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Paulo C. Pereira
+
+
+																					Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+
+Joseph R. Perella
+
+
+																					Founding Partner and Chairman																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Dan Pickering
+
+
+																					Partner & President, TPH																															 / Asset Management																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Byron Pope
+
+
+																					Partner																															 / Securities																			
+Houston
+
+
+
+
+
+
+
+
+
+
+
+Matthew Portillo
+
+
+																					Partner																															 / Securities																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Jonathan Prather
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Alexandra Pruner
+
+
+																					Partner & CFO																															 / Firm Administration																			
+Houston
+
+
+
+
+
+
+
+
+
+
+
+David Pursell
+
+
+																					Partner																															 / Securities																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Wolfgang Reitzle*
+
+
+																					Advisory Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Vladimir Shendelman
+
+
+																					Partner & General Counsel																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Andrew N. Siegel
+
+
+																					Partner																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Brian Silver
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Robert K. Steel
+
+
+																					Partner & CEO																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Trey Thompson
+
+
+																					Partner																															 / Asset Management																			
+Austin
+
+
+
+
+
+
+
+
+
+
+Jeff Tillery
+
+
+																					Partner																															 / Securities 																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Bobby Tudor
+
+
+																					Partner																															 / Advisory																			
+Houston
+
+
+
+
+
+
+
+
+
+
+
+Maria Vassalou
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Peter A. Weinberg
+
+
+																					Founding Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Paul Weisenfeld
+
+
+																					Partner																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Derek Wheatley
+
+
+																					Partner																															 / Advisory 																			
+Calgary
+
+
+
+
+
+
+
+
+
+
+Christopher Williams
+
+
+																					Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Philip Yates
+
+
+																					Partner																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+
+Woody Young
+
+
+																					Partner																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+-
+			Managing Directors		
+
+
+
+
+
+
+
+Jack Alfandary
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Philip W. Alfonsin
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Hesham H. Ali
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+M.K. Alisdairi
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Tarek Anabtawi
+
+
+																					Managing Director																															 / Advisory																			
+Dubai
+
+
+
+
+
+
+
+
+
+
+Alex Andreichuk
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+
+Celine Anthoine
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Fredrik Arneborn
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Timo Bauschke
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+
+Pier-Olivier Calestagne
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Ming Cen
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+John Cesarz
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Jackie Chan
+
+
+																					Managing Director																															 / Advisory																			
+San Francisco
+
+
+
+
+
+
+
+
+
+
+Adam Cohen
+
+
+																					Managing Director																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+James Dunham
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Kara Findlay
+
+
+																					Managing Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Jason Forschler
+
+
+																					Managing Director																															 / Advisory																			
+San Francisco
+
+
+
+
+
+
+
+
+
+
+Vito Giallorenzo
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Anthony Giuliano
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Alexandra Gottschalk
+
+
+																					Controller																															 / Firm Administration																			
+Houston
+
+
+
+
+
+
+
+
+
+
+Anne Hamilton
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Charlie Hannigan
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+David Heimer
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Dr. Thomas Hewett
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Karim Jallad
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Afsheen Khosrowjerdi
+
+
+																					Managing Director 																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Oren Knishinsky
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Jonathan Koen
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Jonathan Lanken
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Joseph Lovell
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Monique Mahl
+
+
+																					Managing Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Todd May
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Marie-Hélène McAndrew
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Jillian McCarthy
+
+
+																					Managing Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Douglas McGovern
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+John McKee
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Serena Menaguale
+
+
+																					Managing Director																															 / Asset Management																			
+London
+
+
+
+
+
+
+
+
+
+
+Nikhil Menon
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Melissa Miller
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Brendan Morrow
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Michael O’Leary
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Melanie Paddon
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Avi Raval
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Tanguy Riviere
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+David da Rosa
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+
+Mauro Rossi
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Magnus Scaddan
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Peter Schwaikert
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Matthew A. Scogin
+
+
+																					Managing Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Jaime Sebel
+
+
+																					Managing Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Kyle Sugarman
+
+
+																					Managing Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Despina Symeonides
+
+
+																					Managing Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Christian Teixidor
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Alexander Tracy
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+James Triggs
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Troy Wagner
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+James Wappler
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Ben Wilcox
+
+
+																					Managing Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Klaus Wülfing
+
+
+																					Managing Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+John C. Zimmermann
+
+
+																					Managing Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Christopher Ziotas
+
+
+																					Managing Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+-
+			Directors		
+
+
+
+
+
+
+
+Howard Abrahams
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Michele Abrams
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Ayman Anwar
+
+
+																					Director																															 / Advisory																			
+Dubai
+
+
+
+
+
+
+
+
+
+
+
+Delina Arroyo
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Nicholas Bazos
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Robert Blumenfeld
+
+
+																					Director																															 / Firm Administration 																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+James Buckley
+
+
+																					Director																															 / Advisory																			
+San Francisco
+
+
+
+
+
+
+
+
+
+
+Simon Clarke
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Jeffrey Curtis
+
+
+																					Director																															 / Asset Management																			
+Austin
+
+
+
+
+
+
+
+
+
+
+
+Jacob J. Czarnick
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Shari Dreisiger
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Bradley Edson
+
+
+																					Director																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+
+Konstantin Eisenreich
+
+
+																					Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Yousry ElMallah
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Stephen Fedder
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Shealon Fingall
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Stephen J. Fleischer
+
+
+																					Associate General Counsel																															 / Firm Administration																			
+Denver
+
+
+
+
+
+
+
+
+
+
+Alexander Foster
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Katy Foster
+
+
+																					Associate General Counsel																															 / Firm Administration																			
+London
+
+
+
+
+
+
+
+
+
+
+Nathaniel Fraser
+
+
+																					Director																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+Tulika Garg
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Lauren Garner
+
+
+																					Director																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+William Glass
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Fran Gong
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Megan Gorman
+
+
+																					Director																															 / Asset Management 																			
+Denver
+
+
+
+
+
+
+
+
+
+
+Pierre Gravier
+
+
+																					Director																															 / Advisory																			
+San Francisco
+
+
+
+
+
+
+
+
+
+
+Stefan Grimbacher
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Aron Grodinsky
+
+
+																					Director																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+Eric Hanchar
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Henry Heinerscheid
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Scott Kaldenberg
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Matt Katz
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Jonathan Kitchen
+
+
+																					Counsel																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Christopher Kraft
+
+
+																					Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Peter Krasuski
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Tamara Larsen
+
+
+																					Director																															 / Asset Management 																			
+Denver
+
+
+
+
+
+
+
+
+
+
+
+Mathieu Laurens
+
+
+																					Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Benedetto Lorenzon
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Adam Lubart
+
+
+																					Director																															 / Advisory 																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Jeffrey Mast
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Nicholas McMordie
+
+
+																					Director																															 / Firm Administration																			
+Denver
+
+
+
+
+
+
+
+
+
+
+Steven Meyer
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Jakub Mleczko
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Rob Nadler
+
+
+																					Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+Jason Nagy
+
+
+																					Director																															 / Firm Administration 																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Matthew T. Navarro
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Santiago Núñez
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Jan Olszewski
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Jameela Pedicini
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Lena Podolsky
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Dustin Price
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Renee Putman
+
+
+																					Director																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+Kelly Queally
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Roseanne Ramanand
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Alex Richardson
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Ellen Rosenberg
+
+
+																					Associate General Counsel																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Hesham Sbayteh
+
+
+																					Director																															 / Advisory																			
+Dubai
+
+
+
+
+
+
+
+
+
+
+
+Adel Senoussi
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Georgina Sforza
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+Allison Shaw
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Jody Shechtman
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Aaron Solomon
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Lauren Spyrou
+
+
+																					Director																															 / Firm Administration																			
+London
+
+
+
+
+
+
+
+
+
+
+
+Mark Su
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Alexander Svoyskiy
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Daniel Syndikus
+
+
+																					Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+
+
+
+
+Andy Tam
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Sam Tanzer
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Henry Tong
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+William Ullmer
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Jake Vachal
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+Wilson Wong
+
+
+																					Director																															 / Firm Administration																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Kevin Yew
+
+
+																					Director																															 / Asset Management																			
+Denver
+
+
+
+
+
+
+
+
+
+
+Bonnie Yu
+
+
+																					Director																															 / Asset Management																			
+New York
+
+
+
+
+
+
+
+
+
+
+Derek Zacarias
+
+
+																					Director																															 / Advisory																			
+New York
+
+
+
+
+
+
+
+
+
+
+
+Yue Zhou
+
+
+																					Director																															 / Advisory																			
+London
+
+
+
+
+
+
+
+-
+			Board Members		
+
+
+
+
+
+
+
+Walter Isaacson
+
+
+																					President & CEO, Aspen Institute																													
+
+
+
+
+
+
+
+
+
+
+Jorma Ollila
+
+
+																					Former Chairman & CEO, Nokia																													
+
+
+
+
+
+
+
+
+
+
+Robert Pozen
+
+
+																					Former Chairman, MFS Investment Management																													
+
+
+
+
+
+
+
+
+
+
+
+Susan C. Schwab
+
+
+																					Professor,  University of Maryland, School of Public Policy 																													
+
+
+
+
+
+
+
+
+
+
+Ivan Seidenberg
+
+
+																					Former Chairman & CEO, Verizon Communications Inc.																													
+
+
+
+
+
+
+
+
+
+
+Jane C. Sherburne
+
+
+																					Principal, Sherburne PLLC																													
+
+
+
+
+
+
+
+
+
+
+
+Robert K. Steel
+
+
+																					Partner & CEO, Perella Weinberg Partners																													
+
+
+
+
+
+
+
+
+
+
+Daniel Yergin
+
+
+																					Chairman, IHS Cambridge Energy Research Associates																													
+
+
+
+
+
+
+
+
+				*Advisory mandate currently inactive (since June 2016).
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Search Engine Marketing (SEM) - Bing Ads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+
+
+Sign upSign in
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You run your business. We'll help find your customers.
+Bing Ads can help build your business and drive your success. Spend $25 and get $100 in advertising credit.†
+
+†Offer details
+
+
+
+
+Get $100 in search advertising when you spend $25 in Bing Ads.
+
+
+
+
+
+
+
+Coupon code class
+
+First name:
+
+Last name:
+
+Email:
+
+Your website URL
+
+Business phone
+
+
+
+*Required
+Microsoft may contact you to provide updates and special offers about Bing Ads. You can unsubscribe at any time. To learn more you can read the privacy statement.
+Type the code from the image:
+
+Enter security code:
+
+
+
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+Get $100 in search advertising when you spend $25 in Bing Ads.
+
+
+†Offer Details: Offer expires December 31, 2017.  Valid only for new Bing Ads customers who are first party recipients of the offer email. A new Bing Ads customer is one that has not advertised on Bing Ads before. Enter promotional coupon code and spend $25 (applies to threshold and prepaid accounts) to receive $100 in Bing Ads credits. Limit one promotion code per new Bing Ads customer. Promotional code must be redeemed within thirty (30) days of Bing Ads new customer account creation. Ad campaign costs accrued before receiving a credit, as well as costs accrued after all credits are used, will be charged to the payment method associated with the Bing Ads account. If customer payment fails, the coupon amount will not be applied.  Ads will continue to run and accrue costs after any promotional credit has been used up. Any portion of the credit not used within ninety (90) days of credit redemption will expire and can't be carried over even if the Bing Ads Customer switches their payment method. Offer valid only to residents of the United States. In order for the offer to be valid, a form of payment must be entered into your account prior to redemption of the promotional code and prior to your account going live to take advantage of the credit. This offer may not be combined with any other offer, promotional code coupon or discount, separated, redeemed for cash, transferred, sold, or bartered. Microsoft, in its sole discretion, can close your account for any suspected coupon abuse. Refund of the $25 is not permitted.  See Bing Ads Terms and Conditions for more details at sign-up. Other terms and conditions may apply.  Microsoft reserves the right to cancel, change, or suspend this offer at any time without notice.
+
+
+
+
+
+
+
+
+
+See how Bing Ads works
+
+
+
+Customers search
+
+
+Customers see your ad
+
+
+Customers contact you
+
+
+Watch how Bing Ads works  
+ 
+
+
+
+
+
+
+
+
+×
+How Bing Ads works
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help more customers find you
+See how Bing can attract customers your Google AdWords campaigns can't.
+
+Reach 137 million searchers on the Bing Network.1
+Tap into 32.9% of the search marketplace.2
+Get in front of searchers who spend 16 percent more than the average internet searcher.2
+
+
+
+
+
+
+
+
+
+
+
+Powerful network. Powerful benefits.
+
+
+
+Reach across devicesConnect with customers looking for your business anytime, anywhere, on any device.
+
+
+Go global or localReach people in the Bing Network everywhere or focus on cities, counties and areas within a certain distance from your business.
+
+
+Easy to importIf you're already using another product like Google Adwords, it's easy to pull that campaign into Bing Ads.
+
+
+
+
+
+
+
+
+You control your costs
+
+ Free sign-upJoin Bing Ads for free and control your account at every step.
+
+
+ Only pay for clicksPay just when customers click on your ad. No click, no charge.
+
+
+ No minimum feeStart advertising with a budget that works best for your business.
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+The advantage we gain in cost per click gives us a great return on investment — more than 35 percent better than Google AdWords.
+Scott Redgate, search engine marketing manager — CJ Pony Parts
+By using Bing Ads features like Image Extensions and Sitelink Extensions, this auto parts retailer races to convert customers and beat its competition.
+
+ Read about driving more conversions
+
+
+
+
+
+
+
+ 
+
+
+
+We might not get as much of the volume as with Google AdWords, but the volume of the traffic that we get converts really well at a lower cost.
+Scott Schult, Executive Vice President of Marketing — Myrtle Beach Area Convention and Visitors Bureau
+The Myrtle Beach Area Convention and Visitors Bureau uses Bing Ads to drive site traffic and tourism at lower cost.
+
+ Read about getting better ROI
+
+
+
+
+
+
+
+
+Better results for less cost. That's as simple as I can make it. If I look at the quality of the traffic we get for the dollars we spend on Bing Ads, our ROI is fantastic.
+Alex Littlewood, CEO   Motoroso
+Motoroso, a market network for auto enthusiasts, gets better results for less cost and reaches a high-value audience with Bing Ads.
+
+ Read about attracting quality traffic
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Import your AdWords campaigns
+
+Save time by importing your Google AdWords campaigns into Bing Ads to get ads live quickly.
+
+
+Sign in with your Microsoft account (or create one) to get started on Bing Ads.
+
+
+From within the Bing Ads interface, select the Import from Google AdWords option.
+
+
+Enter your Google AdWords credentials and select the campaign you want to import.
+
+
+
+
+
+
+
+
+
+
+Preview your ad
+
+Get found online with search engine marketing. Make the most of your marketing dollars and drive customers to your business.
+See how Bing Ads can work for you
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Get started today
+Give us a few details about your business to create a Bing Ads account and get it up and running.
+
+
+  
+Sign up
+Get started with Bing Ads 
+Signing up is always free.
+
+
+
+
+
+
+
+
+
+
+
+
+
+FAQ
+
+
+Is Bing Ads right for me?
+
+Is Bing Ads right for my business?
+All types of businesses find value and success with Bing Ads. Whether you're focused on local calls and foot traffic, or want to drive traffic to your website from across the country or around the world. Bing Ads has solutions for you.
+I already appear in search results for free. Why should I pay for advertising?
+Your current customers may search for your business by name, aiming it easy to find you in search results. But customers you've yet to reach are more likely searching for general terms that wouldn't necessarily bring up your business in search results. Advertising next to relevant Bing search results puts your business front and center with interested customers you otherwise might not reach.
+What is the difference between SEO and SEM? Which one is right for me?
+Search engine optimization (SEO) is adjusting your website to improve your natural ranking in search results. You cannot pay to improve your website ranking on Bing or Yahoo, thus we often refer to these results and unpaid or "organic" search results.
+
+	Clicks from SEO are free. But SEO also requires technical expertise and involves some factors over which you have only limited control.
+
+	Search engine marketing (SEM) is paid advertising that appears next to or above unpaid (or "organic") search results. These paid ads are purchased through Bing Ads.
+
+	You pay for SEM clicks. But SEM gives you more control over when your website appears on results pages and you decide how much you want to pay. And you can measure which ads are working and quickly improve your results.
+
+	You don't have to choose between SEO and SEM. You can do both!
+If my time is limited, should I still try Bing ads?
+Yes! Call a Bing Ads specialist at 877-635-3561*and we’ll set up your first campaign for you for free. We’ll give you tips on getting the most out of your ads and set you up for success. We’re here to help.
+
+
+
+
+About Bing Ads
+
+Where does my ad appear?
+Your ads could appear on the top or to the right of Bing, Yahoo, and MSN search results. And you can choose to target your ads to different geographic regions, times or days of the week, and even demographics.
+What determines my ad position?
+Bing Ads is a pay-per-click (PPC) advertising system. You bid based on how much you are willing to pay per each click on your ad. Because webpages have a limited number of places to show ads, we auction those spaces. You are bidding against other advertisers to get your ads into the space you want. So if you bid on the keyword "shoe", you will have to beat the bids of the other advertisers who are also bidding on "shoe." You determine how much you are willing to bid.
+	Your ad position is based on several things, including:
+	
+How closely your ad and website fit with the terms that are searched (relevance).
+How your bid compares to other bids in the Bing Ads auction.
+How strongly your ad has performed in the past and how often it has been clicked (click-through rate).
+
+	The stronger you are in these areas, the better your chances of winning the top ad position.
+
+
+
+
+How to use Bing Ads
+
+How can I use Bing Ads to drive more people to my website?
+Here are some tips to get better results:
+	
+Review your budget and bid strategy. If your ad keeps pausing, your budget limit may be set too low. Competitive bids help your ad stay in a strong position to catch eyes and get more clicks to your website.
+Expand your targeting, both for location and for devices (computer, mobile and tablet).
+Make sure your ads and website are relevant to the keywords you bid on. Would someone searching your terms expect to see and ad for your business?
+
+
+How can I keep my costs down?
+While your first instinct may be to lower your budget, first try lowering your maximum bids. Yes, this could mean fewer customers visit your site. But if you increase your quality score and build ads with a strong performance history, you may be able to win a good ad position with a lower bid. That would lower your cost=per-click and help stretch your budget.
+How do I know if Bing Ads is working?
+View a wide range of performance trends in your account to quickly see key stats: ad clicks, the number of times your ad appeared (impressions), spend, average cost-per-click, click-through rate, average ad position, cost per acquisition, and conversions. You can also run performance reports to get insights into how well your campaigns are doing.
+Can I run more than one ad?
+Yes! In fact, we encourage it. Only one ad will show at a time but running multiple ads lets you test different approaches to see what's working best with your target customers. Frequently, businesses try out different ads for specific products or pages.
+
+
+
+
+Getting started with Bing Ads
+
+How do I get started?
+Sign up for Bing Ads
+Which keywords should I choose?
+You have a few options to help choose your keywords. First you'll want to think of the terms one of your customers might use to search for your products and offerings. Those search terms are a great starting point. Then you can use tools right in your account to find more keywords. Within Bing Ads, click Campaigns on the top of the page. Click the Keywords tab, and then click Add Keywords. This will let you:
+	
+Search for new keywords based on one you enter.
+Search a website for keywords.
+Search your destination URLs for keywords.
+
+
+How can I write a good ad?
+Here are a few tips that can help make your ad stand out.
+	
+Keep your ads relevant. One way to improve relevance is to use your customer's most popular search terms in your ad titles and txt.
+Describe what sets your product apart.
+Use your customers' language. Use words and writing tone that are likely to attract your typical customer.
+Be specific. This clearer and more specific your offering, the better. For example, rather than "big discount," specify and exact percentage, such as "50 percent off."
+Give customers a reason to click your ad right now. Offer a specific call to action, such as encouraging customers to request a brochure or consultation, download a free e-book, subscribe to a newsletter, or take advantage of a limited-time discount.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign up with Bing Ads to get started
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Perella Weinberg Partners Asset Based Value Fund Lp - Funding history, company info, news ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Want to see more?Want to find out who got funded, and who’s funding the next big thing? in real time? all across the world? tailored to your specific areas of focus?100+ deals per dayGet access to the most exhaustive worldwide funding watch on the web!Comprehensive funding informationKnow about who invested in a company, which sites covered the event, the funding history, etc.Exclusive insightsView original analytics such as most dynamic industries, most active investors, and more!Stay aware!Get emailed when deals critical to your business happen. Filter by region, industry and topics of interest.As seen onHave a login?Sign inRegister now!It's free!Use your social accountOr fill in the quick form:Register nowpromise we won't spamSign invia your social account:via your existing WGF account:Remember meRegister, it's freeForgot your password?SIGN INForgot your password?Enter your e-mail and we will send you your new password.reset passwordThe world's largest funding base/companies/171710-perella-weinberg-partners-asset-based-value-fund-lpsection=companies&subsection=detail&id=171710  
+
+
+
+
+			Search deals by company name, industry, location, investors...			
+			
+
+
+
+
+SEARCH
+
+
+Perella Weinberg Partners Asset Based Value Fund LpCompany DetailsGet alertedif Perella Weinberg Partners Asset Based Value Fund Lp gets funded!Perella Weinberg Partners Asset Based Value Fund LpFunding history Key peopleCountry:State:City:United StatesNew YorkNew York CityIndustry:Finance Funding history DateDeal sizeInvestors October 15th, 2014$685,002,483-View DealCreate alertManage your alerts in accountWant to know when Perella Weinberg Partners Asset Based Value Fund Lp gets funded?Key people- Perella Weinberg Partners Asset Based Value Fund GP L.P.Executive Officer- Perella Weinberg Partners Asset Based Value GP LLCExecutive OfficerPlease note that all data is automatically extracted and errors can occur.The WhoGotFunded team has not necessarily reviewed the information in this page and has not determined if it is accurate and complete.Inaccurate Data? Help us improve WhoGotFunded: post a comment!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Perella Weinberg Partners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+Thriving in Complexity
+Your world is complex.  Perella Weinberg Partners can help you find the right solutions for your most difficult strategic issues.
+We deliver expert perspectives from the brightest and most experienced minds in the industry to help you make critical strategic and alternative investment decisions with confidence.
+Read More
+
+
+
+
+
+
+
+
+
+
+
+
+Advisory
+As global markets shift and become more complex, PWP provides comprehensive independent advisory services for your most pressing strategic issues. With decades of experience, we help you navigate complex situations by delivering novel insights, tailored solutions and unparalleled access to the brightest minds. We help you act decisively and achieve your strategic objectives.
+Learn More
+
+
+
+
+
+
+
+
+
+Asset Management
+Perella Weinberg Partners is a leading alternative asset manager with an unwavering focus on investors’ needs. We provide an “investment edge” by harnessing the brightest investment minds. With approximately $13.1 billion in assets, our investors gain access to public and private instruments, spanning equity, credit, and real asset investments, both through our direct alternatives and our outsourced CIO capabilities.
+Learn More
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Tudor, Pickering, Holt & Co.  All Energy. All the time.
+TPH is Perella Weinberg Partners’ energy practice, providing high-quality advice and services to the energy industry. It offers financial advisory, asset management services and securities underwriting services, as well as sales and trading, underwriting and research coverage on approximately 140 issuers worldwide.
+Learn More
+
+
+
+
+
+
+
+
+Firm Highlights
+
+
+
+
+
+
+
+
+
+
+
+Kate Spade
+
+											05/08/2017										/
+											$2.4 Billion																Financial advisor to Kate Spade on its sale to Coach
+
+Learn more
+
+
+
+
+
+
+
+Becton, Dickinson and Company
+
+											04/23/2017										/
+											$24 Billion																Financial advisor to Becton, Dickinson and Company on its acquisition of C.R. Bard, Inc.
+
+Learn more
+
+
+
+
+
+
+
+Linde AG
+
+											12/20/2016										/
+											$67.2 Billion																Financial advisor to Linde AG in connection with its all-share merger of equals with Praxair Inc. 
+
+Learn more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PWP Global Citizenship
+Our Global Citizenship program conveys the values central to PWP’s principles and culture. Promoting corporate giving and employee engagement form the core of this effort.
+Learn More
+
+
+
+
+
+
+
+
+
+Careers
+At PWP, we seek exceptional talent with the drive and desire to address big challenges on behalf of our clients.
+Learn More
+
+
+
+
+ 
+
+
+
+
+Our Team
+Meet the rest of the team
+
+
+
+
+
+
+
+
+
+
+
+
+Alexandra Pruner
+																										Partner & CFO /											Firm Administration																					Houston
+
+Learn more
+
+
+
+
+
+
+
+
+David Azéma
+																										Partner /											Advisory																					London
+
+Learn more
+
+
+
+
+
+
+
+
+David Baker
+																										Partner /											Asset Management																					New York
+
+Learn more
+
+
+
+
+
+
+
+
+
+
+
+News
+
+7.14.2017
+Geraldine Murphy Joins Tudor, Pickering, Holt & Co. as Managing Director
+
+    Tudor, Pickering, Holt & Co. named Geraldine Murphy a Managing Director in its Investment Banking…  
+
+
+Read more
+See More News
+
+
+
+
+
+
+
+Insights
+
+7.25.2017
+How Well Are the European Banking Regulations Working? Evidence from Recent Events in Spain and Italy
+
+In an April 2016 PWP Global Macro Insights paper on Eurozone banks, Dr. Maria Vassalou and Dr. Thomas Cooley discussed the vulnerabilities of the European Banks and the overhauled Eurozone Banking System whose Single Resolution Mechanism (SRM) went into full effect…
+
+
+
+Read more
+See More Insights
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HedgeZ Fund Profile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Perella Weinberg Partners
+Asset Based Value Fund LP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fund Investment Objectives
+
+
+
+
+
+
+
+
+
+
+
+                                        The investment objective of the Fund is to seek to achieve strong risk-adjusted returns with low volatility and low correlation to the equity and fixed income capital markets. The Fund seeks to achieve this objective by investing in assets that are priced below their intrinsic value due to:  market conditions, asset-specific cyclicality,  proprietary sourcing, and/or owner distress. Identifying such assets involves a combination of:  an assessment of opportunities based on the Investment Team's macro views of a variety of industry sectors and asset classes, sourcing via the Firm's long-standing and broad network of relationships, leveraging the Investment Team's investment experience and access to industry participants to properly value assets, and an exhaustive due diligence process to validate pricing and investment assumptions inherent in each transaction. The Fund compares the risk/return profile of each investment opportunity to other potential investments available across a wide range of asset classes to further maintain its price discipline. The Fund seeks to have a low volatility by making investments that incorporate a margin of safety through a combination of price discipline, asset liquidity, hedging, third party equity and other negotiated structural enhancements. Additionally, many of the assets are likely to have high current income and may have a secondary market (or one may develop) which provides additional loss protection.  The Fund seeks to further protect the portfolio against loss through diversification by transaction and asset class and, in certain situations, transactions that  involve multiple obligors or individual assets. 
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

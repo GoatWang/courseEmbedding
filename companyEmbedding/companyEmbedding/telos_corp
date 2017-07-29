@@ -1,0 +1,10603 @@
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+Telos (company) - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Telos (company)
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Telos Corporation
+
+
+
+
+
+Type
+
+Private
+
+
+Traded as
+OTC Pink: TLSRP
+
+
+Industry
+Consulting
+Government contractor
+
+
+Founded
+1971
+
+
+Headquarters
+Ashburn, Virginia, USA
+
+
+
+Key people
+
+John B. Wood, President and CEO
+
+
+
+Number of employees
+
+560[1]
+
+
+Website
+www.telos.com
+
+
+
+
+
+
+Telos' Ashburn headquarters
+
+
+Telos Corporation is an information technology (IT) consulting company located in Ashburn, Virginia. The company’s name is derived from the Greek word for “purpose” or “goal". Telos primarily serves government and enterprise clients, receiving a large number of its contracts from the United States Department of Defense (DoD).
+
+
+
+Contents
+
+
+1 Company
+2 Operations and Infrastructure
+3 References
+4 External links
+
+
+
+Company[edit]
+Telos was founded in 1968, and incorporated in Maryland in 1971.[2] From 1975 Telos developed and supported ground based telemetry systems for the Jet Propulsion Laboratory. Starting in 1976, the company provided software engineering services for the U.S. Army's tactical fire support systems. It was originally named C3, Incorporated, but in 1992 acquired Telos Corporation of California as a subsidiary (from Contel Federal Systems which was part of GTE) for $32 million and adopted its name. In 1994, the company attempted to recapitalize its debt by issuing a series of notes and preferred stock shares, after accumulated losses. A disagreement between former chairman Fred Knoll and John R.C. Porter, the majority shareholder at the time, was settled for $1 million. At the end of 1995 it had 1,658 employees and had headquarters in Herndon, Virginia.[2]
+The company provides security in four major areas:[3]
+
+Secure wired and wireless networks for DoD and federal agencies.
+Software products and consulting services to automate, streamline, and enforce IT security and risk management processes. They offer information assurance consulting services and Xacta brand governance, risk, and compliance.
+Their Automated Message Handling System offers secure, automated, web-based software for distributing and managing messages formatted for the Defense Messaging System.
+Identity management logical and physical network security.
+
+Operations and Infrastructure[edit]
+On July 19, 2002, the Santa Monica, California operations were sold to L-3 Communications for $22.3 million.[4] On October 17, 2005, shareholder Costa Brava Partnership filed a lawsuit against the company for failing to issue its required dividends. The plaintiff was joined in 2006 by Wynnefield Small Cap Value. Counter-claims followed through 2008. The company had preferred stock traded on the OTC Bulletin Board until July 13, 2007, and the on Pink Sheets with symbol TLSRP.[5]
+Telos was one of eight prime contractors for a program of the United States Air Force for network-centric and information technology products and services known as NETCENTS. The first NETCENTS contract started in 2004 and ran through 2009. Telos recorded $230 million in sales for NETCENTS in 2008.[6]
+In April 2008, Telos won a $43.5 million US Army contract to manufacture the Combat Service Support Automated Information System Interface (CAISI), a secure, wireless local area network that connects soldiers in both the training and operational environment to their logistics networks.[7] John B. Wood, who joined in 1992 and became president and chief executive in 1994, received an estimated $1.38 million in compensation in 2008, including allowances for a car, health club, and golf club membership.[3] The company's largest shareholder was Toxford Corporation of Geneva, Switzerland.[3]
+In January 2009, the U.S. Army awarded Telos one of 12 contracts to provide the biometrics services, supplies, and related hardware and software required to assist the Biometrics Task Force, an Army executive agency..[8] On March 19, 2009 Telos announced that it will sit on the Open Compliance and Ethics Group’s Technology Council.[9] In October 2009 Telos won Government Security News’ 1st Annual Homeland Security Awards competition in the category of Best Security Compliance, Auditing, Vulnerability Management Solution in the IT Security category for its Xacta IA Manager solution.[10] In November 2009, Telos was awarded a SmartBuy/Enterprise Software Initiative (ESI) blanket purchase agreement with DoD for Xacta IA Manager and Automated Message Handling System (AMHS).[11]
+In February 2011, Telos won a contract to modernize wireless networks for ten sites of the Air National Guard.[12] In July 2011, Telos acquired the assets of IT Logistics, Incorporated.[1] The Telos NETCENTS contract was extended through 2013.[13][14] At the end of 2012, the company reported 560 employees.[1]
+References[edit]
+
+
+^ a b c Telos Corporation (March 23, 2013). "Annual Report for the fiscal year ended December 31, 2012". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b Telos Corporation (March 29, 1996). "Annual Report for the fiscal year ended December 31, 1995". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b c Telos Corporation (March 31, 2010). "Annual Report for the fiscal year ended December 31, 2009". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ L-3 Communications (June 24, 2003). "Prospectus". SEC. Retrieved October 2, 2013. 
+^ Telos Corporation (December 16, 2008). "Annual Report for the fiscal year ended December 31, 2008". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ Peter Buxbaum (December 19, 2008). "Contract Watch: Telos leads NETCENTS integrators in 2008 buys". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (May 26, 2008). "Wireless supply line". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (February 3, 2009). "Biometrics Task Force awards 12 contracts". Defense Systems. Retrieved October 2, 2013. 
+^ "Telos to Fill Seat on Open Compliance and Ethics Group’s Technology Council". Press release. Telos. March 12, 2009. Archived from the original on May 18, 2010. Retrieved October 2, 2013. 
+^ http://www.gsnmagazine.com/videos/19830/telos_corporation_winner_%E2%80%93_best_it_security_compli
+^ http://www.defenseprocurementnews.com/2009/11/17/dod-awards-gsa-smartbuy-dod-enterprise-software-initiative-bpa-to-telos-press-release/
+^ Nick Wakeman (February 3, 2011). "Telos to modernize Air National Guard wireless infrastructure: Work will take place at 10 sites". Washington Technology. Retrieved October 2, 2013. 
+^ "Award / Contract" (PDF). US Air Force. May 31, 2013. 
+^ Nick Wakeman (June 28, 2012). "NetCents gets another extension". Washington Technology. Retrieved October 2, 2013. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Telos_(company)&oldid=754701624"					
+Categories: Defense companies of the United StatesAmerican companies established in 1971Consulting firms established in 1971Consulting firms of the United States 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 14 December 2016, at 01:30.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Telos (company) - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Telos (company)
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Telos Corporation
+
+
+
+
+
+Type
+
+Private
+
+
+Traded as
+OTC Pink: TLSRP
+
+
+Industry
+Consulting
+Government contractor
+
+
+Founded
+1971
+
+
+Headquarters
+Ashburn, Virginia, USA
+
+
+
+Key people
+
+John B. Wood, President and CEO
+
+
+
+Number of employees
+
+560[1]
+
+
+Website
+www.telos.com
+
+
+
+
+
+
+Telos' Ashburn headquarters
+
+
+Telos Corporation is an information technology (IT) consulting company located in Ashburn, Virginia. The company’s name is derived from the Greek word for “purpose” or “goal". Telos primarily serves government and enterprise clients, receiving a large number of its contracts from the United States Department of Defense (DoD).
+
+
+
+Contents
+
+
+1 Company
+2 Operations and Infrastructure
+3 References
+4 External links
+
+
+
+Company[edit]
+Telos was founded in 1968, and incorporated in Maryland in 1971.[2] From 1975 Telos developed and supported ground based telemetry systems for the Jet Propulsion Laboratory. Starting in 1976, the company provided software engineering services for the U.S. Army's tactical fire support systems. It was originally named C3, Incorporated, but in 1992 acquired Telos Corporation of California as a subsidiary (from Contel Federal Systems which was part of GTE) for $32 million and adopted its name. In 1994, the company attempted to recapitalize its debt by issuing a series of notes and preferred stock shares, after accumulated losses. A disagreement between former chairman Fred Knoll and John R.C. Porter, the majority shareholder at the time, was settled for $1 million. At the end of 1995 it had 1,658 employees and had headquarters in Herndon, Virginia.[2]
+The company provides security in four major areas:[3]
+
+Secure wired and wireless networks for DoD and federal agencies.
+Software products and consulting services to automate, streamline, and enforce IT security and risk management processes. They offer information assurance consulting services and Xacta brand governance, risk, and compliance.
+Their Automated Message Handling System offers secure, automated, web-based software for distributing and managing messages formatted for the Defense Messaging System.
+Identity management logical and physical network security.
+
+Operations and Infrastructure[edit]
+On July 19, 2002, the Santa Monica, California operations were sold to L-3 Communications for $22.3 million.[4] On October 17, 2005, shareholder Costa Brava Partnership filed a lawsuit against the company for failing to issue its required dividends. The plaintiff was joined in 2006 by Wynnefield Small Cap Value. Counter-claims followed through 2008. The company had preferred stock traded on the OTC Bulletin Board until July 13, 2007, and the on Pink Sheets with symbol TLSRP.[5]
+Telos was one of eight prime contractors for a program of the United States Air Force for network-centric and information technology products and services known as NETCENTS. The first NETCENTS contract started in 2004 and ran through 2009. Telos recorded $230 million in sales for NETCENTS in 2008.[6]
+In April 2008, Telos won a $43.5 million US Army contract to manufacture the Combat Service Support Automated Information System Interface (CAISI), a secure, wireless local area network that connects soldiers in both the training and operational environment to their logistics networks.[7] John B. Wood, who joined in 1992 and became president and chief executive in 1994, received an estimated $1.38 million in compensation in 2008, including allowances for a car, health club, and golf club membership.[3] The company's largest shareholder was Toxford Corporation of Geneva, Switzerland.[3]
+In January 2009, the U.S. Army awarded Telos one of 12 contracts to provide the biometrics services, supplies, and related hardware and software required to assist the Biometrics Task Force, an Army executive agency..[8] On March 19, 2009 Telos announced that it will sit on the Open Compliance and Ethics Group’s Technology Council.[9] In October 2009 Telos won Government Security News’ 1st Annual Homeland Security Awards competition in the category of Best Security Compliance, Auditing, Vulnerability Management Solution in the IT Security category for its Xacta IA Manager solution.[10] In November 2009, Telos was awarded a SmartBuy/Enterprise Software Initiative (ESI) blanket purchase agreement with DoD for Xacta IA Manager and Automated Message Handling System (AMHS).[11]
+In February 2011, Telos won a contract to modernize wireless networks for ten sites of the Air National Guard.[12] In July 2011, Telos acquired the assets of IT Logistics, Incorporated.[1] The Telos NETCENTS contract was extended through 2013.[13][14] At the end of 2012, the company reported 560 employees.[1]
+References[edit]
+
+
+^ a b c Telos Corporation (March 23, 2013). "Annual Report for the fiscal year ended December 31, 2012". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b Telos Corporation (March 29, 1996). "Annual Report for the fiscal year ended December 31, 1995". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b c Telos Corporation (March 31, 2010). "Annual Report for the fiscal year ended December 31, 2009". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ L-3 Communications (June 24, 2003). "Prospectus". SEC. Retrieved October 2, 2013. 
+^ Telos Corporation (December 16, 2008). "Annual Report for the fiscal year ended December 31, 2008". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ Peter Buxbaum (December 19, 2008). "Contract Watch: Telos leads NETCENTS integrators in 2008 buys". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (May 26, 2008). "Wireless supply line". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (February 3, 2009). "Biometrics Task Force awards 12 contracts". Defense Systems. Retrieved October 2, 2013. 
+^ "Telos to Fill Seat on Open Compliance and Ethics Group’s Technology Council". Press release. Telos. March 12, 2009. Archived from the original on May 18, 2010. Retrieved October 2, 2013. 
+^ http://www.gsnmagazine.com/videos/19830/telos_corporation_winner_%E2%80%93_best_it_security_compli
+^ http://www.defenseprocurementnews.com/2009/11/17/dod-awards-gsa-smartbuy-dod-enterprise-software-initiative-bpa-to-telos-press-release/
+^ Nick Wakeman (February 3, 2011). "Telos to modernize Air National Guard wireless infrastructure: Work will take place at 10 sites". Washington Technology. Retrieved October 2, 2013. 
+^ "Award / Contract" (PDF). US Air Force. May 31, 2013. 
+^ Nick Wakeman (June 28, 2012). "NetCents gets another extension". Washington Technology. Retrieved October 2, 2013. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Telos_(company)&oldid=754701624"					
+Categories: Defense companies of the United StatesAmerican companies established in 1971Consulting firms established in 1971Consulting firms of the United States 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 14 December 2016, at 01:30.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Telos (company) - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Telos (company)
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Telos Corporation
+
+
+
+
+
+Type
+
+Private
+
+
+Traded as
+OTC Pink: TLSRP
+
+
+Industry
+Consulting
+Government contractor
+
+
+Founded
+1971
+
+
+Headquarters
+Ashburn, Virginia, USA
+
+
+
+Key people
+
+John B. Wood, President and CEO
+
+
+
+Number of employees
+
+560[1]
+
+
+Website
+www.telos.com
+
+
+
+
+
+
+Telos' Ashburn headquarters
+
+
+Telos Corporation is an information technology (IT) consulting company located in Ashburn, Virginia. The company’s name is derived from the Greek word for “purpose” or “goal". Telos primarily serves government and enterprise clients, receiving a large number of its contracts from the United States Department of Defense (DoD).
+
+
+
+Contents
+
+
+1 Company
+2 Operations and Infrastructure
+3 References
+4 External links
+
+
+
+Company[edit]
+Telos was founded in 1968, and incorporated in Maryland in 1971.[2] From 1975 Telos developed and supported ground based telemetry systems for the Jet Propulsion Laboratory. Starting in 1976, the company provided software engineering services for the U.S. Army's tactical fire support systems. It was originally named C3, Incorporated, but in 1992 acquired Telos Corporation of California as a subsidiary (from Contel Federal Systems which was part of GTE) for $32 million and adopted its name. In 1994, the company attempted to recapitalize its debt by issuing a series of notes and preferred stock shares, after accumulated losses. A disagreement between former chairman Fred Knoll and John R.C. Porter, the majority shareholder at the time, was settled for $1 million. At the end of 1995 it had 1,658 employees and had headquarters in Herndon, Virginia.[2]
+The company provides security in four major areas:[3]
+
+Secure wired and wireless networks for DoD and federal agencies.
+Software products and consulting services to automate, streamline, and enforce IT security and risk management processes. They offer information assurance consulting services and Xacta brand governance, risk, and compliance.
+Their Automated Message Handling System offers secure, automated, web-based software for distributing and managing messages formatted for the Defense Messaging System.
+Identity management logical and physical network security.
+
+Operations and Infrastructure[edit]
+On July 19, 2002, the Santa Monica, California operations were sold to L-3 Communications for $22.3 million.[4] On October 17, 2005, shareholder Costa Brava Partnership filed a lawsuit against the company for failing to issue its required dividends. The plaintiff was joined in 2006 by Wynnefield Small Cap Value. Counter-claims followed through 2008. The company had preferred stock traded on the OTC Bulletin Board until July 13, 2007, and the on Pink Sheets with symbol TLSRP.[5]
+Telos was one of eight prime contractors for a program of the United States Air Force for network-centric and information technology products and services known as NETCENTS. The first NETCENTS contract started in 2004 and ran through 2009. Telos recorded $230 million in sales for NETCENTS in 2008.[6]
+In April 2008, Telos won a $43.5 million US Army contract to manufacture the Combat Service Support Automated Information System Interface (CAISI), a secure, wireless local area network that connects soldiers in both the training and operational environment to their logistics networks.[7] John B. Wood, who joined in 1992 and became president and chief executive in 1994, received an estimated $1.38 million in compensation in 2008, including allowances for a car, health club, and golf club membership.[3] The company's largest shareholder was Toxford Corporation of Geneva, Switzerland.[3]
+In January 2009, the U.S. Army awarded Telos one of 12 contracts to provide the biometrics services, supplies, and related hardware and software required to assist the Biometrics Task Force, an Army executive agency..[8] On March 19, 2009 Telos announced that it will sit on the Open Compliance and Ethics Group’s Technology Council.[9] In October 2009 Telos won Government Security News’ 1st Annual Homeland Security Awards competition in the category of Best Security Compliance, Auditing, Vulnerability Management Solution in the IT Security category for its Xacta IA Manager solution.[10] In November 2009, Telos was awarded a SmartBuy/Enterprise Software Initiative (ESI) blanket purchase agreement with DoD for Xacta IA Manager and Automated Message Handling System (AMHS).[11]
+In February 2011, Telos won a contract to modernize wireless networks for ten sites of the Air National Guard.[12] In July 2011, Telos acquired the assets of IT Logistics, Incorporated.[1] The Telos NETCENTS contract was extended through 2013.[13][14] At the end of 2012, the company reported 560 employees.[1]
+References[edit]
+
+
+^ a b c Telos Corporation (March 23, 2013). "Annual Report for the fiscal year ended December 31, 2012". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b Telos Corporation (March 29, 1996). "Annual Report for the fiscal year ended December 31, 1995". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b c Telos Corporation (March 31, 2010). "Annual Report for the fiscal year ended December 31, 2009". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ L-3 Communications (June 24, 2003). "Prospectus". SEC. Retrieved October 2, 2013. 
+^ Telos Corporation (December 16, 2008). "Annual Report for the fiscal year ended December 31, 2008". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ Peter Buxbaum (December 19, 2008). "Contract Watch: Telos leads NETCENTS integrators in 2008 buys". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (May 26, 2008). "Wireless supply line". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (February 3, 2009). "Biometrics Task Force awards 12 contracts". Defense Systems. Retrieved October 2, 2013. 
+^ "Telos to Fill Seat on Open Compliance and Ethics Group’s Technology Council". Press release. Telos. March 12, 2009. Archived from the original on May 18, 2010. Retrieved October 2, 2013. 
+^ http://www.gsnmagazine.com/videos/19830/telos_corporation_winner_%E2%80%93_best_it_security_compli
+^ http://www.defenseprocurementnews.com/2009/11/17/dod-awards-gsa-smartbuy-dod-enterprise-software-initiative-bpa-to-telos-press-release/
+^ Nick Wakeman (February 3, 2011). "Telos to modernize Air National Guard wireless infrastructure: Work will take place at 10 sites". Washington Technology. Retrieved October 2, 2013. 
+^ "Award / Contract" (PDF). US Air Force. May 31, 2013. 
+^ Nick Wakeman (June 28, 2012). "NetCents gets another extension". Washington Technology. Retrieved October 2, 2013. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Telos_(company)&oldid=754701624"					
+Categories: Defense companies of the United StatesAmerican companies established in 1971Consulting firms established in 1971Consulting firms of the United States 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 14 December 2016, at 01:30.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Telos (company) - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Telos (company)
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Telos Corporation
+
+
+
+
+
+Type
+
+Private
+
+
+Traded as
+OTC Pink: TLSRP
+
+
+Industry
+Consulting
+Government contractor
+
+
+Founded
+1971
+
+
+Headquarters
+Ashburn, Virginia, USA
+
+
+
+Key people
+
+John B. Wood, President and CEO
+
+
+
+Number of employees
+
+560[1]
+
+
+Website
+www.telos.com
+
+
+
+
+
+
+Telos' Ashburn headquarters
+
+
+Telos Corporation is an information technology (IT) consulting company located in Ashburn, Virginia. The company’s name is derived from the Greek word for “purpose” or “goal". Telos primarily serves government and enterprise clients, receiving a large number of its contracts from the United States Department of Defense (DoD).
+
+
+
+Contents
+
+
+1 Company
+2 Operations and Infrastructure
+3 References
+4 External links
+
+
+
+Company[edit]
+Telos was founded in 1968, and incorporated in Maryland in 1971.[2] From 1975 Telos developed and supported ground based telemetry systems for the Jet Propulsion Laboratory. Starting in 1976, the company provided software engineering services for the U.S. Army's tactical fire support systems. It was originally named C3, Incorporated, but in 1992 acquired Telos Corporation of California as a subsidiary (from Contel Federal Systems which was part of GTE) for $32 million and adopted its name. In 1994, the company attempted to recapitalize its debt by issuing a series of notes and preferred stock shares, after accumulated losses. A disagreement between former chairman Fred Knoll and John R.C. Porter, the majority shareholder at the time, was settled for $1 million. At the end of 1995 it had 1,658 employees and had headquarters in Herndon, Virginia.[2]
+The company provides security in four major areas:[3]
+
+Secure wired and wireless networks for DoD and federal agencies.
+Software products and consulting services to automate, streamline, and enforce IT security and risk management processes. They offer information assurance consulting services and Xacta brand governance, risk, and compliance.
+Their Automated Message Handling System offers secure, automated, web-based software for distributing and managing messages formatted for the Defense Messaging System.
+Identity management logical and physical network security.
+
+Operations and Infrastructure[edit]
+On July 19, 2002, the Santa Monica, California operations were sold to L-3 Communications for $22.3 million.[4] On October 17, 2005, shareholder Costa Brava Partnership filed a lawsuit against the company for failing to issue its required dividends. The plaintiff was joined in 2006 by Wynnefield Small Cap Value. Counter-claims followed through 2008. The company had preferred stock traded on the OTC Bulletin Board until July 13, 2007, and the on Pink Sheets with symbol TLSRP.[5]
+Telos was one of eight prime contractors for a program of the United States Air Force for network-centric and information technology products and services known as NETCENTS. The first NETCENTS contract started in 2004 and ran through 2009. Telos recorded $230 million in sales for NETCENTS in 2008.[6]
+In April 2008, Telos won a $43.5 million US Army contract to manufacture the Combat Service Support Automated Information System Interface (CAISI), a secure, wireless local area network that connects soldiers in both the training and operational environment to their logistics networks.[7] John B. Wood, who joined in 1992 and became president and chief executive in 1994, received an estimated $1.38 million in compensation in 2008, including allowances for a car, health club, and golf club membership.[3] The company's largest shareholder was Toxford Corporation of Geneva, Switzerland.[3]
+In January 2009, the U.S. Army awarded Telos one of 12 contracts to provide the biometrics services, supplies, and related hardware and software required to assist the Biometrics Task Force, an Army executive agency..[8] On March 19, 2009 Telos announced that it will sit on the Open Compliance and Ethics Group’s Technology Council.[9] In October 2009 Telos won Government Security News’ 1st Annual Homeland Security Awards competition in the category of Best Security Compliance, Auditing, Vulnerability Management Solution in the IT Security category for its Xacta IA Manager solution.[10] In November 2009, Telos was awarded a SmartBuy/Enterprise Software Initiative (ESI) blanket purchase agreement with DoD for Xacta IA Manager and Automated Message Handling System (AMHS).[11]
+In February 2011, Telos won a contract to modernize wireless networks for ten sites of the Air National Guard.[12] In July 2011, Telos acquired the assets of IT Logistics, Incorporated.[1] The Telos NETCENTS contract was extended through 2013.[13][14] At the end of 2012, the company reported 560 employees.[1]
+References[edit]
+
+
+^ a b c Telos Corporation (March 23, 2013). "Annual Report for the fiscal year ended December 31, 2012". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b Telos Corporation (March 29, 1996). "Annual Report for the fiscal year ended December 31, 1995". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b c Telos Corporation (March 31, 2010). "Annual Report for the fiscal year ended December 31, 2009". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ L-3 Communications (June 24, 2003). "Prospectus". SEC. Retrieved October 2, 2013. 
+^ Telos Corporation (December 16, 2008). "Annual Report for the fiscal year ended December 31, 2008". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ Peter Buxbaum (December 19, 2008). "Contract Watch: Telos leads NETCENTS integrators in 2008 buys". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (May 26, 2008). "Wireless supply line". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (February 3, 2009). "Biometrics Task Force awards 12 contracts". Defense Systems. Retrieved October 2, 2013. 
+^ "Telos to Fill Seat on Open Compliance and Ethics Group’s Technology Council". Press release. Telos. March 12, 2009. Archived from the original on May 18, 2010. Retrieved October 2, 2013. 
+^ http://www.gsnmagazine.com/videos/19830/telos_corporation_winner_%E2%80%93_best_it_security_compli
+^ http://www.defenseprocurementnews.com/2009/11/17/dod-awards-gsa-smartbuy-dod-enterprise-software-initiative-bpa-to-telos-press-release/
+^ Nick Wakeman (February 3, 2011). "Telos to modernize Air National Guard wireless infrastructure: Work will take place at 10 sites". Washington Technology. Retrieved October 2, 2013. 
+^ "Award / Contract" (PDF). US Air Force. May 31, 2013. 
+^ Nick Wakeman (June 28, 2012). "NetCents gets another extension". Washington Technology. Retrieved October 2, 2013. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Telos_(company)&oldid=754701624"					
+Categories: Defense companies of the United StatesAmerican companies established in 1971Consulting firms established in 1971Consulting firms of the United States 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 14 December 2016, at 01:30.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Telos (company) - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Telos (company)
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Telos Corporation
+
+
+
+
+
+Type
+
+Private
+
+
+Traded as
+OTC Pink: TLSRP
+
+
+Industry
+Consulting
+Government contractor
+
+
+Founded
+1971
+
+
+Headquarters
+Ashburn, Virginia, USA
+
+
+
+Key people
+
+John B. Wood, President and CEO
+
+
+
+Number of employees
+
+560[1]
+
+
+Website
+www.telos.com
+
+
+
+
+
+
+Telos' Ashburn headquarters
+
+
+Telos Corporation is an information technology (IT) consulting company located in Ashburn, Virginia. The company’s name is derived from the Greek word for “purpose” or “goal". Telos primarily serves government and enterprise clients, receiving a large number of its contracts from the United States Department of Defense (DoD).
+
+
+
+Contents
+
+
+1 Company
+2 Operations and Infrastructure
+3 References
+4 External links
+
+
+
+Company[edit]
+Telos was founded in 1968, and incorporated in Maryland in 1971.[2] From 1975 Telos developed and supported ground based telemetry systems for the Jet Propulsion Laboratory. Starting in 1976, the company provided software engineering services for the U.S. Army's tactical fire support systems. It was originally named C3, Incorporated, but in 1992 acquired Telos Corporation of California as a subsidiary (from Contel Federal Systems which was part of GTE) for $32 million and adopted its name. In 1994, the company attempted to recapitalize its debt by issuing a series of notes and preferred stock shares, after accumulated losses. A disagreement between former chairman Fred Knoll and John R.C. Porter, the majority shareholder at the time, was settled for $1 million. At the end of 1995 it had 1,658 employees and had headquarters in Herndon, Virginia.[2]
+The company provides security in four major areas:[3]
+
+Secure wired and wireless networks for DoD and federal agencies.
+Software products and consulting services to automate, streamline, and enforce IT security and risk management processes. They offer information assurance consulting services and Xacta brand governance, risk, and compliance.
+Their Automated Message Handling System offers secure, automated, web-based software for distributing and managing messages formatted for the Defense Messaging System.
+Identity management logical and physical network security.
+
+Operations and Infrastructure[edit]
+On July 19, 2002, the Santa Monica, California operations were sold to L-3 Communications for $22.3 million.[4] On October 17, 2005, shareholder Costa Brava Partnership filed a lawsuit against the company for failing to issue its required dividends. The plaintiff was joined in 2006 by Wynnefield Small Cap Value. Counter-claims followed through 2008. The company had preferred stock traded on the OTC Bulletin Board until July 13, 2007, and the on Pink Sheets with symbol TLSRP.[5]
+Telos was one of eight prime contractors for a program of the United States Air Force for network-centric and information technology products and services known as NETCENTS. The first NETCENTS contract started in 2004 and ran through 2009. Telos recorded $230 million in sales for NETCENTS in 2008.[6]
+In April 2008, Telos won a $43.5 million US Army contract to manufacture the Combat Service Support Automated Information System Interface (CAISI), a secure, wireless local area network that connects soldiers in both the training and operational environment to their logistics networks.[7] John B. Wood, who joined in 1992 and became president and chief executive in 1994, received an estimated $1.38 million in compensation in 2008, including allowances for a car, health club, and golf club membership.[3] The company's largest shareholder was Toxford Corporation of Geneva, Switzerland.[3]
+In January 2009, the U.S. Army awarded Telos one of 12 contracts to provide the biometrics services, supplies, and related hardware and software required to assist the Biometrics Task Force, an Army executive agency..[8] On March 19, 2009 Telos announced that it will sit on the Open Compliance and Ethics Group’s Technology Council.[9] In October 2009 Telos won Government Security News’ 1st Annual Homeland Security Awards competition in the category of Best Security Compliance, Auditing, Vulnerability Management Solution in the IT Security category for its Xacta IA Manager solution.[10] In November 2009, Telos was awarded a SmartBuy/Enterprise Software Initiative (ESI) blanket purchase agreement with DoD for Xacta IA Manager and Automated Message Handling System (AMHS).[11]
+In February 2011, Telos won a contract to modernize wireless networks for ten sites of the Air National Guard.[12] In July 2011, Telos acquired the assets of IT Logistics, Incorporated.[1] The Telos NETCENTS contract was extended through 2013.[13][14] At the end of 2012, the company reported 560 employees.[1]
+References[edit]
+
+
+^ a b c Telos Corporation (March 23, 2013). "Annual Report for the fiscal year ended December 31, 2012". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b Telos Corporation (March 29, 1996). "Annual Report for the fiscal year ended December 31, 1995". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b c Telos Corporation (March 31, 2010). "Annual Report for the fiscal year ended December 31, 2009". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ L-3 Communications (June 24, 2003). "Prospectus". SEC. Retrieved October 2, 2013. 
+^ Telos Corporation (December 16, 2008). "Annual Report for the fiscal year ended December 31, 2008". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ Peter Buxbaum (December 19, 2008). "Contract Watch: Telos leads NETCENTS integrators in 2008 buys". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (May 26, 2008). "Wireless supply line". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (February 3, 2009). "Biometrics Task Force awards 12 contracts". Defense Systems. Retrieved October 2, 2013. 
+^ "Telos to Fill Seat on Open Compliance and Ethics Group’s Technology Council". Press release. Telos. March 12, 2009. Archived from the original on May 18, 2010. Retrieved October 2, 2013. 
+^ http://www.gsnmagazine.com/videos/19830/telos_corporation_winner_%E2%80%93_best_it_security_compli
+^ http://www.defenseprocurementnews.com/2009/11/17/dod-awards-gsa-smartbuy-dod-enterprise-software-initiative-bpa-to-telos-press-release/
+^ Nick Wakeman (February 3, 2011). "Telos to modernize Air National Guard wireless infrastructure: Work will take place at 10 sites". Washington Technology. Retrieved October 2, 2013. 
+^ "Award / Contract" (PDF). US Air Force. May 31, 2013. 
+^ Nick Wakeman (June 28, 2012). "NetCents gets another extension". Washington Technology. Retrieved October 2, 2013. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Telos_(company)&oldid=754701624"					
+Categories: Defense companies of the United StatesAmerican companies established in 1971Consulting firms established in 1971Consulting firms of the United States 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 14 December 2016, at 01:30.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Telos (company) - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Telos (company)
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+Telos Corporation
+
+
+
+
+
+Type
+
+Private
+
+
+Traded as
+OTC Pink: TLSRP
+
+
+Industry
+Consulting
+Government contractor
+
+
+Founded
+1971
+
+
+Headquarters
+Ashburn, Virginia, USA
+
+
+
+Key people
+
+John B. Wood, President and CEO
+
+
+
+Number of employees
+
+560[1]
+
+
+Website
+www.telos.com
+
+
+
+
+
+
+Telos' Ashburn headquarters
+
+
+Telos Corporation is an information technology (IT) consulting company located in Ashburn, Virginia. The company’s name is derived from the Greek word for “purpose” or “goal". Telos primarily serves government and enterprise clients, receiving a large number of its contracts from the United States Department of Defense (DoD).
+
+
+
+Contents
+
+
+1 Company
+2 Operations and Infrastructure
+3 References
+4 External links
+
+
+
+Company[edit]
+Telos was founded in 1968, and incorporated in Maryland in 1971.[2] From 1975 Telos developed and supported ground based telemetry systems for the Jet Propulsion Laboratory. Starting in 1976, the company provided software engineering services for the U.S. Army's tactical fire support systems. It was originally named C3, Incorporated, but in 1992 acquired Telos Corporation of California as a subsidiary (from Contel Federal Systems which was part of GTE) for $32 million and adopted its name. In 1994, the company attempted to recapitalize its debt by issuing a series of notes and preferred stock shares, after accumulated losses. A disagreement between former chairman Fred Knoll and John R.C. Porter, the majority shareholder at the time, was settled for $1 million. At the end of 1995 it had 1,658 employees and had headquarters in Herndon, Virginia.[2]
+The company provides security in four major areas:[3]
+
+Secure wired and wireless networks for DoD and federal agencies.
+Software products and consulting services to automate, streamline, and enforce IT security and risk management processes. They offer information assurance consulting services and Xacta brand governance, risk, and compliance.
+Their Automated Message Handling System offers secure, automated, web-based software for distributing and managing messages formatted for the Defense Messaging System.
+Identity management logical and physical network security.
+
+Operations and Infrastructure[edit]
+On July 19, 2002, the Santa Monica, California operations were sold to L-3 Communications for $22.3 million.[4] On October 17, 2005, shareholder Costa Brava Partnership filed a lawsuit against the company for failing to issue its required dividends. The plaintiff was joined in 2006 by Wynnefield Small Cap Value. Counter-claims followed through 2008. The company had preferred stock traded on the OTC Bulletin Board until July 13, 2007, and the on Pink Sheets with symbol TLSRP.[5]
+Telos was one of eight prime contractors for a program of the United States Air Force for network-centric and information technology products and services known as NETCENTS. The first NETCENTS contract started in 2004 and ran through 2009. Telos recorded $230 million in sales for NETCENTS in 2008.[6]
+In April 2008, Telos won a $43.5 million US Army contract to manufacture the Combat Service Support Automated Information System Interface (CAISI), a secure, wireless local area network that connects soldiers in both the training and operational environment to their logistics networks.[7] John B. Wood, who joined in 1992 and became president and chief executive in 1994, received an estimated $1.38 million in compensation in 2008, including allowances for a car, health club, and golf club membership.[3] The company's largest shareholder was Toxford Corporation of Geneva, Switzerland.[3]
+In January 2009, the U.S. Army awarded Telos one of 12 contracts to provide the biometrics services, supplies, and related hardware and software required to assist the Biometrics Task Force, an Army executive agency..[8] On March 19, 2009 Telos announced that it will sit on the Open Compliance and Ethics Group’s Technology Council.[9] In October 2009 Telos won Government Security News’ 1st Annual Homeland Security Awards competition in the category of Best Security Compliance, Auditing, Vulnerability Management Solution in the IT Security category for its Xacta IA Manager solution.[10] In November 2009, Telos was awarded a SmartBuy/Enterprise Software Initiative (ESI) blanket purchase agreement with DoD for Xacta IA Manager and Automated Message Handling System (AMHS).[11]
+In February 2011, Telos won a contract to modernize wireless networks for ten sites of the Air National Guard.[12] In July 2011, Telos acquired the assets of IT Logistics, Incorporated.[1] The Telos NETCENTS contract was extended through 2013.[13][14] At the end of 2012, the company reported 560 employees.[1]
+References[edit]
+
+
+^ a b c Telos Corporation (March 23, 2013). "Annual Report for the fiscal year ended December 31, 2012". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b Telos Corporation (March 29, 1996). "Annual Report for the fiscal year ended December 31, 1995". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ a b c Telos Corporation (March 31, 2010). "Annual Report for the fiscal year ended December 31, 2009". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ L-3 Communications (June 24, 2003). "Prospectus". SEC. Retrieved October 2, 2013. 
+^ Telos Corporation (December 16, 2008). "Annual Report for the fiscal year ended December 31, 2008". Form 10-K. SEC. Retrieved October 2, 2013. 
+^ Peter Buxbaum (December 19, 2008). "Contract Watch: Telos leads NETCENTS integrators in 2008 buys". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (May 26, 2008). "Wireless supply line". Defense Systems. Retrieved October 2, 2013. 
+^ David Perera (February 3, 2009). "Biometrics Task Force awards 12 contracts". Defense Systems. Retrieved October 2, 2013. 
+^ "Telos to Fill Seat on Open Compliance and Ethics Group’s Technology Council". Press release. Telos. March 12, 2009. Archived from the original on May 18, 2010. Retrieved October 2, 2013. 
+^ http://www.gsnmagazine.com/videos/19830/telos_corporation_winner_%E2%80%93_best_it_security_compli
+^ http://www.defenseprocurementnews.com/2009/11/17/dod-awards-gsa-smartbuy-dod-enterprise-software-initiative-bpa-to-telos-press-release/
+^ Nick Wakeman (February 3, 2011). "Telos to modernize Air National Guard wireless infrastructure: Work will take place at 10 sites". Washington Technology. Retrieved October 2, 2013. 
+^ "Award / Contract" (PDF). US Air Force. May 31, 2013. 
+^ Nick Wakeman (June 28, 2012). "NetCents gets another extension". Washington Technology. Retrieved October 2, 2013. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Telos_(company)&oldid=754701624"					
+Categories: Defense companies of the United StatesAmerican companies established in 1971Consulting firms established in 1971Consulting firms of the United States 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 14 December 2016, at 01:30.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Telos Alliance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Broadcast Telephone Systems
+Audio Codecs & Transceivers
+Streaming Audio Processing + Encoding 
+See More...
+
+
+
+
+
+
+
+
+Audio Processing
+Streaming Audio Processing + Encoding 
+Microphone Processing
+See More...
+
+
+
+
+
+
+
+
+Networked Radio Consoles
+Audio Interfaces & Routing Control
+Approved Ethernet Switches
+See More...
+
+
+
+
+
+
+
+
+AoIP for Video
+TV Loudness Control
+Metering & Monitoring
+See More...
+
+
+
+
+
+
+
+
+Watermark Monitoring + Processing 
+Audio Delays
+Legacy Products
+
+
+
+
+
+
+
+
+Audio Automation for Enterprise
+Encoding & Decoding
+Loudness & Workflows
+See More...
+
+
+
+
+
+
+
+
+Streaming Audio Processing + Encoding 
+AoIP for Video 
+Audio Interfaces & Routing Control 
+
+
+
+
+
+
+
+
+
+Factory Refurbished Sale
+Looking for some great gently used Telos Alliance gear? You've come to the right place. Here you'll find all our B stock refurbished gear, from returns to show models, at a discounted price. All B stock comes with a two-year warranty so you're completely covered! More 
+
+
+
+
+
+Talkin' Telos with Talk Productions
+Sean Martin is Managing Director at Talk Productions in the UK, owner of a small online radio station with goals to hit the terrestrial airwaves as a community radio station in southwest England... More 
+
+
+
+
+
+AoIP is the Way to Be for RMG
+Ken Tankel gives us an inside look at a facility-wide Audio over IP implementation at Russian radio and TV conglomerate RMG in this profile... More 
+
+
+
+
+Tweets by TelosAlliance 
+
+
+
+
+
+
+
+
+Get the AoIP eBook!
+Everything you need to know to transition to an IP Studio from the folks who invented AoIP for broadcast.
+Learn how to choose the right protocol, the distinction between AES67 compatibility and AES67 compliance, and all about Audio and Video over IP for TV. More 
+
+
+
+
+
+
+Get the AoIP eBook!
+Everything you need to know to transition to an IP Studio from the folks who invented AoIP for broadcast.
+Learn how to choose the right protocol, the distinction between AES67 compatibility and AES67 compliance, and all about Audio and Video over IP for TV. More
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Systems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Previous
+
+
+
+Next
+
+
+
+
+
+
+
+Home Telos Systems 
+
+
+
+Telos Systems—part of the Telos Alliance—was founded in 1985 by Steve Church, a talk show radio host and engineer who was dissatisfied with the poor quality of the on-air telephone calls on his shows. He was also an Engineer determined to do something about it. The resulting Telos 10 telephone interface system was a great success, inspiring Steve to build a business to make and sell the systems. Telos Systems has since become the industry leader in broadcast telephone systems and IP and ISDN codecs. The breakthrough Telos Zephyr audio codec, for example, is one of the most successful digital broadcast products in history, with more than 21,000 in use worldwide. Telos telephone hybrids and on-air talk show systems set the performance benchmark for the industry, and we continue to pioneer groundbreaking technology that pushes boundaries and gives broadcasters the telephony solutions they need for reliability, efficiency, and the best possible sound quality. 
+
+
+
+
+
+Broadcast Telephone Systems
+
+
+
+
+
+
+
+
+VX Broadcast VoIP
+VX is the world's first VoIP (Voice over IP) talkshow system - a SIP-based broadcast phone system so powerful it can run all of the on-air phones for your entire plant, but economical enough for stations with just two or three studios. 
+More 
+
+
+
+
+
+
+
+
+
+
+VX Broadcast VoIP
+VX is the world's first VoIP (Voice over IP) talkshow system - a SIP-based broadcast phone system so powerful it can run all of the on-air phones for your entire plant, but economical enough for stations with just two or three studios. 
+More 
+
+
+
+
+
+
+
+
+
+
+VX Prime Broadcast VoIP
+VX Prime is the little brother to the full VX Broadcast Talkshow system, offering the same level of high performance to smaller facilities with two to four studios—all on an IP backbone that sounds better and costs less.
+More 
+
+
+
+
+
+
+
+
+
+
+VX Prime Broadcast VoIP
+VX Prime is the little brother to the full VX Broadcast Talkshow system, offering the same level of high performance to smaller facilities with two to four studios—all on an IP backbone that sounds better and costs less.
+More 
+
+
+
+
+
+
+
+
+
+
+Hx6 Six-Line Talkshow System 
+Hx6 is the six-line, dual-hybrid broadcast phone system that makes your on-air phones sound great, at a price that's startlingly affordable. An Hx6 in your studio is like an instant audio upgrade for POTS phone lines.
+More 
+
+
+
+
+
+
+
+
+
+
+Hx6 Six-Line Talkshow System 
+Hx6 is the six-line, dual-hybrid broadcast phone system that makes your on-air phones sound great, at a price that's startlingly affordable. An Hx6 in your studio is like an instant audio upgrade for POTS phone lines.
+More 
+
+
+
+
+
+
+
+
+
+
+Telos VSet
+With decades of experience designing broadcast phone systems, it’s no wonder broadcasters agree that Telos Systems makes the industry’s most powerful, intuitive and flexible system controllers, known as Telos VSets.
+More 
+
+
+
+
+
+
+
+
+
+
+Telos VSet
+With decades of experience designing broadcast phone systems, it’s no wonder broadcasters agree that Telos Systems makes the industry’s most powerful, intuitive and flexible system controllers, known as Telos VSets.
+More 
+
+
+
+
+
+
+
+
+
+
+iQ6 Six-Line Telco Gateway 
+A multi-line phone system that connects to your console with just one cable? Meet iQ6, the no-hassle Telco gateway for Axia Audio mixing consoles. iQ6 plugs right into Livewire AoIP network networks, saving money and time.
+More 
+
+
+
+
+
+
+
+
+
+
+iQ6 Six-Line Telco Gateway 
+A multi-line phone system that connects to your console with just one cable? Meet iQ6, the no-hassle Telco gateway for Axia Audio mixing consoles. iQ6 plugs right into Livewire AoIP network networks, saving money and time.
+More 
+
+
+
+
+
+
+
+
+
+
+Hx1 & Hx2 Digital Hybrids 
+Telos pioneered the very first digital adaptive telephone hybrid. These third-generation POTS hybrids have earned a worldwide reputation for extracting clean, clear caller audio from even the most difficult calls. POTS phones never sounded so good! 
+More 
+
+
+
+
+
+
+
+
+
+
+Hx1 & Hx2 Digital Hybrids 
+Telos pioneered the very first digital adaptive telephone hybrid. These third-generation POTS hybrids have earned a worldwide reputation for extracting clean, clear caller audio from even the most difficult calls. POTS phones never sounded so good! 
+More 
+
+
+
+Back to top    
+
+
+Audio Codecs & Transceivers
+
+
+
+
+
+
+
+
+Z/IP ONE IP Broadcast Codec
+Z/IP ONE, the award-winning IP codec from Telos, helps you get the best possible quality from public IP networks and mobile data services; even from connections behind NATs and firewalls. It's the IP codec that drops jaws -- not audio.
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IP ONE IP Broadcast Codec
+Z/IP ONE, the award-winning IP codec from Telos, helps you get the best possible quality from public IP networks and mobile data services; even from connections behind NATs and firewalls. It's the IP codec that drops jaws -- not audio.
+More 
+
+
+
+
+
+
+
+
+
+
+Zephyr iPort PLUS Multi-Codec Gateway
+Zephyr iPort PLUS is a Livewire-to-MPEG/AAC/aptX gateway that transports multiple channels of stereo audio across any QoS-enabled IP network -- perfect for large-scale distribution of audio to single or multiple locations.
+More 
+
+
+
+
+
+
+
+
+
+
+Zephyr iPort PLUS Multi-Codec Gateway
+Zephyr iPort PLUS is a Livewire-to-MPEG/AAC/aptX gateway that transports multiple channels of stereo audio across any QoS-enabled IP network -- perfect for large-scale distribution of audio to single or multiple locations.
+More 
+
+
+
+
+
+
+
+
+
+
+Zephyr Xstream ISDN Codec
+Zephyr pioneered the concept of the ISDN codec -- which is why you'll find more Zephyrs in studios and remote kits around the world than any other codec.
+More 
+
+
+
+
+
+
+
+
+
+
+Zephyr Xstream ISDN Codec
+Zephyr pioneered the concept of the ISDN codec -- which is why you'll find more Zephyrs in studios and remote kits around the world than any other codec.
+More 
+
+
+
+Back to top    
+
+
+Streaming Audio Processing + Encoding 
+
+
+
+
+
+
+
+
+Z/IPStream X/2
+The Future is Streaming. The Future is Here. High-quality adaptive streaming encoding.
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream X/2
+The Future is Streaming. The Future is Here. High-quality adaptive streaming encoding.
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream 9X/2
+Includes all of the revolutionary features found in Z/IPStream X/2, and exclusive Omnia.9 tools from Leif Claesson.
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream 9X/2
+Includes all of the revolutionary features found in Z/IPStream X/2, and exclusive Omnia.9 tools from Leif Claesson.
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream R/1
+The professional, one-box streaming appliance
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream R/1
+The professional, one-box streaming appliance
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream R/2
+The best-sounding streams...from the smallest box.
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream R/2
+The best-sounding streams...from the smallest box.
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream A/XE
+Budget priced streaming/encoding, featuring genuine Omnia processing.
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream A/XE
+Budget priced streaming/encoding, featuring genuine Omnia processing.
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream F/XE
+Processing/encoding software for file-based material
+More 
+
+
+
+
+
+
+
+
+
+
+Z/IPStream F/XE
+Processing/encoding software for file-based material
+More 
+
+
+
+Back to top    
+
+
+Audio Interfaces & Routing Control
+
+
+
+
+
+
+
+
+Telos Alliance xSwitch
+The Zero-Configuration Network Switch Built for IP-Audio.
+More 
+
+
+
+
+
+
+
+
+
+
+Telos Alliance xSwitch
+The Zero-Configuration Network Switch Built for IP-Audio.
+More 
+
+
+
+
+
+
+
+
+
+
+Telos Alliance xNodes 
+The most advanced AoIP interfaces on the planet.
+More 
+
+
+
+
+
+
+
+
+
+
+Telos Alliance xNodes 
+The most advanced AoIP interfaces on the planet.
+More 
+
+
+
+Back to top    
+
+
+Legacy Products
+
+
+
+
+
+
+
+
+Telos Legacy Products 
+
+More 
+
+
+
+
+
+
+
+
+
+
+Telos Legacy Products 
+
+More 
+
+
+
+Back to top    
+
+
+
+
+
+
+
+Jump To
+
+
+
+
+Broadcast Telephone Systems
+
+
+Audio Codecs & Transceivers
+
+
+Streaming Audio Processing + Encoding 
+
+
+Audio Interfaces & Routing Control
+
+
+Legacy Products
+
+
+
+
+
+
+
+            Videos          
+
+
+
+
+
+                          Telephone ROI: Save Significantly Every Month with New IP Phone Tech                        
+
+
+
+                          Z/IPStream 9X/2 Video                        
+
+
+
+                          Z/IPStream R/2 Video                        
+
+
+
+                          Z/IPStream X/2 Video                        
+
+
+
+                          Zephyr iPort at Southern Cross Austereo (NAB 2015)                        
+
+
+
+                          Broadcast Depot NAB 2015 Video #1 [presented in Spanish]                        
+
+
+
+                          Broadcast Depot NAB 2015 Video #2 [presented in Spanish]                        
+
+
+
+                          Steve Church - Celebration of Life                        
+
+
+
+                          Frank Foti on Audio Processing and The Telos Alliance                        
+
+
+
+                          IP-Audio Integrity: 3 Keys to Great Audio Over the Internet                        
+
+
+
+                          Broadcast Audio Fanatics All Frequencies Tour 2013-14                        
+
+
+
+                          ACM Awards - Radio Row IP-Audio Technology                        
+
+
+
+                          Z/IP ONE STL Connection Methods                        
+
+
+
+                          Telos and Axia at Cumulus NASH Studios                        
+
+
+
+                          Telos Systems founder Steve Church on the Zephyr's 10th Anniversary                        
+
+
+
+                          Helping Broadcasters Keep Their Eye on the Shifting Broadcast Universe                        
+
+                            Tim Carroll and Mike Richardson discuss in this video how to help Broadcasters stay up to date with the changes in the world of broadcast.                           
+
+
+
+                          Interview with Skip Pizzi on Broadcast Engineering for Non-Engineers                        
+
+                            Telos Alliance interview with Skip Pizzi, Co-Author of A Broadcast Engineering Tutorial for Non-Engineers, 4th Edition.                          
+
+Show More
+
+
+
+
+
+
+            Awards          
+
+
+
+
+
+                          Telos Alliance Awards Page                         
+
+
+
+
+
+
+
+            FAQs          
+
+
+
+
+
+                          POTS vs SIP FAQs                         
+
+
+
+                          VX Systems ROI FAQs                        
+
+
+
+                          Telos Z/IP ONE w/AES FAQs                        
+
+
+
+                          Telos Z/IP ONE FAQs                        
+
+
+
+
+
+
+
+            White Papers          
+
+
+
+
+
+                          Updating Television Broadcast Communication Using SIP, VoIP, and AoIP                         
+
+
+
+                          Broadcast VoIP Telephone ROI eBook                        
+
+
+
+                          MP3 And AAC Explained                        
+
+
+
+                          New MPEG-4 High-efficiency AAC Audio- Enabling new applications                        
+
+
+
+                          A closer look into MPEG-4 High Efficiency AAC                        
+
+
+
+                          Multi-Channel Splitting Algorithm for AACand AAC-LD Encoded Audio                        
+
+                            This paper covers the method used by the Zephyr Xstream for transmitting and receiving AAC or AAC-LD encoded audio across multiple ISDN B channels or Dual Port V.35 channels.                          
+
+
+
+                          Telephone Network Interfacing                        
+
+                            This will explore all of the ways to integrate the ubiquitous telephone network into broadcast operations.                          
+
+
+
+                          aacPlus, SBR, MPEG AAC in the Zephyr Xport                        
+
+                            The Telos Zephyr Xport has been developed specifically to help broadcasters take advantage of any telephone line found in the field -- whether analog or digital -- for high-quality remotes.                          
+
+
+
+                          So What's The Big Deal About aacPlus                        
+
+                            To best understand what makes SBR such a major advance in coding efficiency requires that one understand how previous bit rate reduction techniques work.                          
+
+
+
+                          MPEG AAC                         
+
+                            The Best Codec Ever?                          
+
+
+
+                          An introduction to MPEG AAC (Advanced Audio Coding)                        
+
+                            The Telos Zephyr Xstream takes advantage of the newest, most efficient coding method yet devised, MPEG2 AAC (Advanced Audio Coding).                          
+
+
+
+                          An introduction to ISO/MPEG Layer 3 and Layer 2 coding                        
+
+                            Portions of the following text were written by our founder, Steve Church for the NAB Engineering Handbook; we thank the NAB for their use here.                          
+
+
+
+                          Telephone Technology In The Digital Age                        
+
+                            A Tutorial for Broadcasters                          
+
+
+
+                          ISDN for Studio Call-in Talk Systems                        
+
+                            Broadcasters have discovered that ISDN service offers valuable digital access to the dial-up telephone network.                           
+
+
+
+                          Using T1, ISDN and DSL Telco Lines In Consolidated Radio Facilities                        
+
+                            This article outlines the available digital telephone connection scenarios and describes requirements for a system that will capably serve today?s multi-studio facilities.                          
+
+
+
+                          On Beer and Audio Coding:                        
+
+                            Why Something Called AAC is Cooler Than a Pilsner, and How It Got To Be That Way                          
+
+
+
+                          Troubleshooting The Public Switched Telephone Network                        
+
+                            How do you tell the Telco the problem is in their network?                          
+
+
+
+                          Ethernet for Studio Audio Systems                         
+
+
+
+                          What HD Radio Needs to WOW Today's Radio Listeners                        
+
+                            Look around, and you will see plenty of action in the surround audio sphere.                          
+
+
+
+                          5.1 Surround: For Real on Radio?                        
+
+                            The entire media world is moving to digital, a trend that started in the eighties with CDs and continues with today's MP3s, satellite radio, DVD disks and more.                          
+
+
+
+                          Studio Structures for Surround Broadcasting                         
+
+                            There is growing interest among broadcasters to deliver a surround listening experience to their audiences. Surround is clearly the hot topic at audio, consumer electronics, and computer shops.                          
+
+
+
+                          The Killer App for FM: 5.1 Surround Sound                        
+
+                            Now for the first time since 1961, when FM implemented stereo, we have technology that will keep FM radio competitive with other existing mediums. The ability to broadcast distinct 5.1 multichannel audio.                          
+
+
+
+                          Understanding Clipper Induced Intermod Distortion                        
+
+                            Quality, Clarity, and Competitive On-Air Processing                          
+
+
+
+                          ISDN vs. DSL Revisited                        
+
+                            What does it take for IP to work for remotes?                           
+
+
+
+                          VoIP in the Broadcast Studio                        
+
+                            Without much doubt, VoIP (Voice over Internet Protocol telephony) is coming to broadcast facilities                          
+
+
+
+                          Advanced Tech for IP Remotes                         
+
+                            In some parts of the USA and in other countries, ISDN service is being discontinued or has become difficult to get. IP networks are becoming the new way to get broadcast audio to here from there.                          
+
+
+
+                          VoIP in the Real World                         
+
+                            How I Quit Worrying And Learned To Live Without POTS                          
+
+
+
+                          Wire in the Broadcast Plant                         
+
+                            Less Wire Means You're Doing It Right                          
+
+
+
+                          IP-Audio Connection Tests                        
+
+                            While a speed test is a good place to start, there's more to characterizing an IP connection than simply measuring upload and download speed. Packet jitter, especially over some time, is critical to know.                          
+
+
+
+                          Audio Reliability over the Public Internet                        
+
+                            Audio Reliability over the Public Internet:Designing Robust IP-Streaming for Outside Broadcasts, STL, and Program Distribution                          
+
+Show More
+
+
+
+
+
+
+            Application Notes          
+
+
+
+
+
+                          Telos VX Broadcast VoIP Facility Wide Digital Telephony Solutions                        
+
+
+
+
+
+
+
+            Tech Tips          
+
+
+
+
+
+                          So Long ISDN eBook                        
+
+
+
+                          Telos VSet Headset Recommendations                        
+
+
+
+                          System Selection Guide                        
+
+                            Comparison guide for the capabilities of the different Telos Systems.                           
+
+
+
+                          Call Management Software Guide                        
+
+
+
+                          How to Get the Best Service from the Manufacturer                        
+
+                            How you go about accessing, and using that help can make the difference between getting out of trouble quickly or making the situation worse.                          
+
+
+
+                          Getting the best from analog telephone lines                        
+
+                            The following questions have been culled from those asked most often over the years. Most are from broadcasters, but we feel that the answers are also relevant to similar problems encountered in teleconferencing, distance learning, and other applications                          
+
+
+
+                          Mix-Minus Demystified                        
+
+                            This is a brief primer on mix-minus to help you avoid frustrations during your next installation.                          
+
+
+
+                          A plain-English explanation of ISDN                        
+
+                            ISDN outlined and explained.                          
+
+
+
+                          How Can I Call An ISDN Codec With A POTS Phone Line?                        
+
+                            ISDN makes for great sounding remotes, but you can't always get ISDN where and when you want it.                          
+
+
+
+                          Ordering ISDN For Use With Telos Zephyr Products                        
+
+                            Before ordering ISDN, we strongly suggest you read this information                          
+
+
+
+                          Ordering ISDN BRI For Use With Telos Talkshow Systems                        
+
+                            Before ordering ISDN, we strongly suggest you read this information                          
+
+
+
+                          Ordering ISDN PRI For Use With Telos Talkshow Systems                        
+
+                            Before ordering ISDN, we strongly suggest you read this information.                          
+
+
+
+                          Telephone Q&A                        
+
+                            1989 Edition of the Telos Telephone Q&A                          
+
+
+
+                          Zephyr Compatible Codecs                         
+
+                            Need to connect your Telos Zephyr to another brand of codec?                          
+
+
+
+                          The Ins and Outs of Surge Suppresion                        
+
+                            Here you'll find some tips compiled by the Telos engineers to help keep your station running smoothly.                          
+
+Show More
+
+
+
+
+
+
+            Visio Libraries          
+
+
+
+
+
+                          The Telos Alliance Visio Shape Files Master List                        
+
+
+
+                          Telos Visio Shape Files                         
+
+
+
+
+
+
+
+            Press Clippings          
+
+
+
+
+
+                          Tech Guy Praises Telos VX                        
+
+
+
+                          Still Zephyr After All these Years                        
+
+
+
+
+
+
+
+            Configuration          
+
+
+
+
+
+                          Zephyr Test Numbers                        
+
+
+
+
+
+
+
+            What Clients are Saying          
+
+
+
+
+
+                          Zephyr Does Double Duty for Radio Skonto by Ivo Bankovs                        
+
+
+
+
+
+
+
+            Articles          
+
+
+
+
+
+                          Tweaking the Stream With Z/IPStream 9X/2 by Frédéric Vélu                        
+
+
+
+                          Tech Support is a Team Effort                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation (@telosnews) | Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+Home
+Home
+Home, current page.
+
+
+
+
+
+
+Moments
+Moments
+Moments, current page.
+
+
+
+
+
+
+Search query
+
+
+
+Search Twitter
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Language: English 
+
+
+
+ 
+
+
+
+Bahasa Indonesia
+Bahasa Melayu
+Català
+Čeština
+Dansk
+Deutsch
+English UK
+Español
+Filipino
+Français
+Hrvatski
+Italiano
+Magyar
+Nederlands
+Norsk
+Polski
+Português
+Română
+Slovenčina
+Suomi
+Svenska
+Tiếng Việt
+Türkçe
+Ελληνικά
+Български език
+Русский
+Српски
+Українська мова
+עִבְרִית
+العربية
+فارسی
+मराठी
+हिन्दी
+বাংলা
+ગુજરાતી
+தமிழ்
+ಕನ್ನಡ
+ภาษาไทย
+한국어
+日本語
+简体中文
+繁體中文
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Have an account?  Log in
+
+
+   
+
+Have an account?
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+New to Twitter?
+Sign up
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Telos Corporation
+
+
+
+@telosnews
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+Tweets, current page.
+6,438
+            
+
+
+
+Following
+Following
+488
+
+
+
+Followers
+Followers
+1,048
+
+
+
+Likes
+Likes
+1,472
+
+ 
+ 
+More 
+
+
+
+
+
+
+
+Likes
+
+
+
+
+
+
+Unmute @telosnews
+
+Mute @telosnews
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation
+
+
+
+@telosnews
+
+
+Telos provides solutions that empower and protect the world's most security-conscious enterprises.
+
+
+
+Ashburn, VA
+
+
+
+
+ 
+    telos.com
+  
+
+
+
+
+Joined July 2009
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                4,195 Photos and videos
+            
+
+            Photos and videos
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+
+
+Tweets
+Tweets, current page.
+
+
+
+                  Tweets & replies
+                
+
+
+
+                  Media
+                
+
+
+
+
+
+You blocked @telosnews
+Are you sure you want to view these Tweets? Viewing Tweets won't unblock @telosnews
+Yes, view profile
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Telos Corporation followed
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation‏ @telosnews
+
+4h4 hours ago
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Head into the weekend with a wrap-up of the week's #infosec and #cybersecurity news: http://ow.ly/xLv730dZLLT pic.twitter.com/NC2iq7sjG7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+0 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+
+
+
+
+
+
+Liked
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+Steve Morgan‏ @CybersecuritySF
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+The enterprise risk management approach to cybersecurity -- FCW https://fcw.com/articles/2017/07/25/cio-perspective-erm-cyber-spires.aspx … via @FCWnow
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation‏ @telosnews
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Partnerships with academia are important to our company, and to the economic development of our community. https://biz.loudoun.gov/2017/07/20/benefits-business-higher-education/ …pic.twitter.com/ZlgJCgvCfm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GW Virginia,
+    Loudoun Biz and
+    NOVA
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation‏ @telosnews
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+The move to cloud: It's easier than you think https://gcn.com/articles/2017/07/14/cloud-security.aspx … #compliancepic.twitter.com/Q9M1N2n3Pe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GCN and
+    Steve Horvath
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation‏ @telosnews
+
+Jul 24
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+Embed Video
+
+
+
+
+
+
+
+RT @iflymia: Give me a break! @telosnews & @RossBaruzzin, thanks for the morning pick me up @FLairports #MiamiFAC.pic.twitter.com/QgtRLf5OEe
+
+
+
+
+
+
+
+
+
+Miami Int'l Airport
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+0 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+
+
+
+
+
+
+Liked
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+rick tracy‏ @rick_tracy
+
+Jul 20
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+rick tracy Retweeted Paul Misner
+
+Underscores importance of continuously validating all security controls associated with workloads. #Xacta360https://twitter.com/paulmisnercyber/status/888024357649489921 …
+
+rick tracy added,
+
+
+
+
+
+
+
+
+Paul Misner @paulmisnercyber
+
+Another AWS cloud data leakage due to misconfiguration http://sco.lt/5b9N57 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+Kathleen Murphy‏Verified account @kmurphyva
+
+Jul 19
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+#VA is participating in cyber-security training with SANS Institute, a free online tool for students! Learn more: https://www.sans.org/CyberStartUS 
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+WashingtonBizJournal‏ @WBJonline
+
+Jul 18
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+At any given time, @telosnews has about 50 IT job openings. But filling those jobs is getting trickier.http://bizj.us/1p8vft 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+rick tracy‏ @rick_tracy
+
+Jul 18
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+#Cybersecurity training & awareness is an area that's ripe for innovation/disruption. Current methods are time consuming & not effective.
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation‏ @telosnews
+
+Jul 18
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+Telos Corporation Retweeted NVRC
+
+Proud that Telos ID VP Lisa Kimball @LisaMaxKimball was on the@NoVARegion  @NOVAChamber panel on #cybersecurity.https://twitter.com/NoVARegion/status/887281504765845504 …
+
+Telos Corporation added,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NVRC @NoVARegion
+
+Pleased to be able to work with colleagues at the #NorthernVirginia Chamber & our schools on cybersecurity issues. Important to our region. pic.twitter.com/yMaZEcWdec
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+WashingtonBizJournal‏ @WBJonline
+
+Jul 17
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Northern Virginia tech leaders find way to tackle cybersecurity skills gaphttp://bizj.us/1p8vft 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation‏ @telosnews
+
+Jul 18
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Northern Virginia tech leaders find way to tackle #cybersecurity skills gap; Telos CEO @john_b_wood. http://ow.ly/RRlN30dII88  @WBJonlinepic.twitter.com/bkBd3MWEML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+7 retweets
+
+
+
+
+13 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+7
+
+
+
+
+Retweeted
+
+
+7
+
+
+
+
+
+
+
+
+Like
+
+
+13
+
+
+
+
+
+Liked
+
+
+13
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+Jason Heki‏ @JaseRace
+
+Jul 17
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Last chance RSVP for lunch (Free!) and learn about #secure #mobility from @telosnews & @ArubaNetworks! #CyberSec #DC http://sites.ziftsolutions.com/hp.ziftsolutions.com/ff8081815c858baf015c8849fa8000a2 …
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+GCN‏ @GCNtech
+
+Jul 14
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+The move to cloud: It's easier than you think http://ow.ly/HyDy50cOhn5 
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation‏ @telosnews
+
+Jul 17
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Telos VP Steve Horvath: #Compliance automation makes it easier to move to the #cloud. http://ow.ly/8ecY30dGuEM  @GCNtech @bigdogstevepic.twitter.com/MShlqLmlkr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+3 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+3
+
+
+
+
+
+Liked
+
+
+3
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+Jason Heki‏ @JaseRace
+
+Jul 12
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+With @Telos_Cronin in #DC. We sponsored @awscloud automating security event. So many awesome people to meet here! @telosnews #nist #cloudpic.twitter.com/baNiSm1tIa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+2 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+2
+
+
+
+
+Retweeted
+
+
+2
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation‏ @telosnews
+
+Jul 11
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Join us for lunch and a Secure Enterprise Mobility Briefing on July 19. Plus, @Newseum passes on us! http://sites.ziftsolutions.com/hp.ziftsolutions.com/ff8081815c858baf015c8849fa8000a2 … #securemobilitypic.twitter.com/a0s8Qs63hR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation and
+    Aruba Networks
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+The CyberWire‏ @thecyberwire
+
+Jul 9
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Sponsored: With @telosnews' Xacta 360, learn to manage IT #risk and validate compliance up to 50% faster. #infosechttp://bit.ly/WTWtelos 
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+5 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+5
+
+
+
+
+Retweeted
+
+
+5
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+Telos Corporation Retweeted
+            
+
+
+
+
+
+
+
+John B. Wood‏ @john_b_wood
+
+Jul 4
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Ensuring our security; celebrating our freedomhttps://multimedia.telos.com/ceo-blog/ensuring-security-celebrating-freedom/ …
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+1 retweet
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+1
+
+
+
+
+Retweeted
+
+
+1
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporation‏ @telosnews
+
+Jul 3
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Telos CEO @john_b_wood: "Ensuring our #security; celebrating our freedom." http://ow.ly/8TvM30dhHSC  #aViewfromtheWoodpic.twitter.com/1HQI3DEIdj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+1 like
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+1
+
+
+
+
+
+Liked
+
+
+1
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+          @telosnews hasn't Tweeted yet.
+      
+Back to top ↑
+
+
+
+
+
+
+
+
+
+
+
+
+Loading seems to be taking a while.
+
+      Twitter may be over capacity or experiencing a momentary hiccup. Try again or visit Twitter Status for more information.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      New to Twitter?
+    
+
+
+    Sign up now to get your own personalized timeline!
+  
+
+Sign up
+
+
+
+
+You may also like
+    ·
+    Refresh
+
+
+
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Twitter
+About
+Help Center
+Terms
+Privacy policy
+Cookies
+Ads info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Choose a trend location
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dismiss
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+            Previous
+          
+
+
+
+
+
+
+
+            Next
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Go to a person's profile
+
+
+
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Promote this Tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Block
+
+
+
+
+
+
+Cancel
+Block
+
+
+
+
+
+
+
+
+
+
+
+
+Add a location to your Tweets
+
+        When you tweet with a location, Twitter stores that location. 
+        You can switch location on/off before each Tweet and always have the option to delete your location history.
+        Learn more
+
+
+Turn location on
+Not now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Share Location
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Results from 
+
+
+
+Send
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Your lists
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Create a new list
+
+
+
+
+List name
+
+
+
+
+Description
+
+Under 100 characters, optional
+
+
+
+Privacy
+
+
+
+Public · Anyone can follow this list
+      
+
+
+Private · Only you can access this list
+      
+
+
+
+
+Save list
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Copy link to Tweet
+
+
+
+
+Here's the URL for this Tweet. Copy it to easily share with friends.
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Embed this Tweet
+Embed this Video
+
+
+
+Add this Tweet to your website by copying the code below. Learn more
+Add this video to your website by copying the code below. Learn more
+
+
+
+
+Hmm, there was a problem reaching the server. Try again?
+
+
+
+
+
+
+            Include parent Tweet
+          
+
+
+
+
+            Include media
+          
+
+
+
+
+By embedding Twitter content in your website or app, you are agreeing to the Twitter Developer Agreement and Developer Policy.
+Preview
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Why you're seeing this ad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Log in to Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+
+        Don't have an account? Sign up »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Sign up for Twitter
+
+
+
+
+
+Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.
+
+
+Sign up
+
+
+
+
+        Have an account? Log in »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Two-way (sending and receiving) short codes:
+
+
+
+
+
+Country
+Code
+For customers of
+
+
+
+
+United States
+40404
+(any)
+
+
+Canada
+21212
+(any)
+
+
+United Kingdom
+86444
+Vodafone, Orange, 3, O2
+
+
+Brazil
+40404
+Nextel, TIM
+
+
+Haiti
+40404
+Digicel, Voila
+
+
+Ireland
+51210
+Vodafone, O2
+
+
+India
+53000
+Bharti Airtel, Videocon, Reliance
+
+
+Indonesia
+89887
+AXIS, 3, Telkomsel, Indosat, XL Axiata
+
+
+Italy
+4880804
+Wind
+
+
+3424486444
+Vodafone
+
+
+
+
+
+        » See SMS short codes for other countries
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Confirmation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Skip all
+          
+
+
+
+
+    Welcome home!
+  
+This timeline is where you’ll spend most of your time, getting instant updates about what matters to you.
+
+
+
+
+    Tweets not working for you?
+  
+
+    Hover over the profile pic and click the Following button to unfollow any account.
+  
+
+
+
+
+    Say a lot with a little
+  
+
+    When you see a Tweet you love, tap the heart — it lets  the person who wrote it know you shared the love.
+  
+
+
+
+
+    Spread the word
+  
+
+    The fastest way to share someone else’s Tweet with your followers is with a Retweet. Tap the icon to send it instantly.
+  
+
+
+
+
+    Join the conversation
+  
+
+    Add your thoughts about any Tweet with a Reply. Find a topic you’re passionate about, and jump right in.
+  
+
+
+
+
+    Learn the latest
+  
+
+    Get instant insight into what people are talking about now.
+  
+
+
+
+
+    Get more of what you love
+  
+
+    Follow more accounts to get instant updates about topics you care about.
+  
+
+
+
+
+    Find what's happening
+  
+
+    See the latest conversations about any topic instantly.
+  
+
+
+
+
+    Never miss a Moment
+  
+
+    Catch up instantly on the best stories happening as they unfold.
+  
+
+
+
+Back
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next Tweet from user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos eCatalog Website
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				Catalog
+			
+
+				My Account
+			
+Sign In
+
+
+				Currently Not Signed In
+			
+
+
+
+
+Request Assistance
+View Quotes
+View Orders
+Contact Us
+
+
+
+
+
+
+
+Part Number:
+
+Description:
+
+OEM:
+
+
+ACTIVCARD, INC.
+ADC TELECOMMUNICATIONS
+ADDONICS
+ADTRAN
+AETHRA
+AF COMM SUPPLY
+ALCATEL USA
+ALLIED TELESIS
+AMAZON
+APC
+APPLIED INNOVATIONS, INC.
+APPSPACE
+APRICORN
+ARUBA
+ATLAS
+ATLONA
+AVAYA
+AVOCENT
+AXIOM
+AXIS
+BELDEN
+BELKIN
+BERK-TEK
+BLUECOAT
+BROCADE
+BUFFALO
+CABLESTOGO
+CARLON
+CHATSWORTH
+CISCO
+CMB
+COMMSCOPE
+CORNING
+CPI
+CRUCIAL
+CYBER POWER SYSTEMS
+DAEWOO
+DELL
+EATON UPS
+EMC
+ENTERASYS
+EPSON
+ERICO
+EXTREME TECHNOLOGIES
+EXTRON
+F5 NETWORKS, INC.
+FLUKE
+FUJITSU COMMUNICATIONS
+GAI-TRONICS
+GD
+GEIST
+GENERAL CABLE
+GLOBAL KNOWLEDGE
+GREAT LAKES
+HELLERMANN TYTON
+HIGHPOINT
+HITACHI
+HOLOCOM
+HP
+HUBBELL
+HYUNDAI
+INFOCUS
+INTEL CORPORATION
+INTERMEC
+ISS
+JBL
+JUNIPER
+KINGSTON TECHNOLOGY
+KRAMER
+KYOCERA
+LEVITON
+LEXMARK
+LIEBERT
+LSI
+LUCENT TECHNOLOGIES
+LYNN ELECTRONICS
+MELLANOX
+MICRON
+MIDDLE ATLANTIC PRODUCTS
+MOHAWK
+MOLEX
+NEC
+NETAPP
+NETIQ
+NETWORK ASSOCIATES, INC.
+NVIDIA
+OBERON
+OCC
+OPTI UPS
+ORTRONICS
+OVERLAND STORAGE
+PANDUIT
+PERFORMANCE TECHNOLOGIES
+PLANTRONICS
+PLP
+POLYCOM
+PROVANTAGE
+PYRAMID
+QUANTUM
+QUIKTRON
+RARITAN
+RITTAL
+SAMSUNG
+SCM
+SCM MICROSYSTEMS
+SEAGATE
+SIEMON
+SIGNAMAX
+STAR TECH
+STI
+STORAGE TEK
+SUPERIOR
+SUPERIOR ESSEX
+SYMBOL
+SYNOLOGY
+SYSTIMAX
+TELOS
+TEST
+TIPPINGPOINT TECHNOLOGIES
+TRIPP LITE
+V2 TECHNOLOGIES
+VERACITY
+VERBATUM
+VIEWSONIC
+VISIONEER
+WESTERN DIGITAL
+
+Category:
+
+
+Workstations/Desktop
+Notebooks
+Rugged Notebooks
+Thin Clients
+Printers/Scanners
+Displays / Projectors
+Network Switches
+Network Routers
+Networking Equipment
+UNIX Servers
+Servers
+Storage Systems
+Video Conferencing Equipment
+Uninterruptable Power Supply (UPS)
+Cables, Connectors and Accessories
+Equipment Racks
+Biometric Devices
+Transit Cases
+Software
+Services/Training
+Telephony
+Wireless Systems
+
+ 
+
+					   
+					
+
+
+
+
+
+
+
+Telos eCatalog: Search Catalog
+
+
+
+
+
+Online Catalog Search
+
+
+
+				Select an Item
+			
+
+
+
+Part Number:
+
+
+
+Description:
+
+
+
+OEM:
+
+
+ACTIVCARD, INC.
+ADC TELECOMMUNICATIONS
+ADDONICS
+ADTRAN
+AETHRA
+AF COMM SUPPLY
+ALCATEL USA
+ALLIED TELESIS
+AMAZON
+APC
+APPLIED INNOVATIONS, INC.
+APPSPACE
+APRICORN
+ARUBA
+ATLAS
+ATLONA
+AVAYA
+AVOCENT
+AXIOM
+AXIS
+BELDEN
+BELKIN
+BERK-TEK
+BLUECOAT
+BROCADE
+BUFFALO
+CABLESTOGO
+CARLON
+CHATSWORTH
+CISCO
+CMB
+COMMSCOPE
+CORNING
+CPI
+CRUCIAL
+CYBER POWER SYSTEMS
+DAEWOO
+DELL
+EATON UPS
+EMC
+ENTERASYS
+EPSON
+ERICO
+EXTREME TECHNOLOGIES
+EXTRON
+F5 NETWORKS, INC.
+FLUKE
+FUJITSU COMMUNICATIONS
+GAI-TRONICS
+GD
+GEIST
+GENERAL CABLE
+GLOBAL KNOWLEDGE
+GREAT LAKES
+HELLERMANN TYTON
+HIGHPOINT
+HITACHI
+HOLOCOM
+HP
+HUBBELL
+HYUNDAI
+INFOCUS
+INTEL CORPORATION
+INTERMEC
+ISS
+JBL
+JUNIPER
+KINGSTON TECHNOLOGY
+KRAMER
+KYOCERA
+LEVITON
+LEXMARK
+LIEBERT
+LSI
+LUCENT TECHNOLOGIES
+LYNN ELECTRONICS
+MELLANOX
+MICRON
+MIDDLE ATLANTIC PRODUCTS
+MOHAWK
+MOLEX
+NEC
+NETAPP
+NETIQ
+NETWORK ASSOCIATES, INC.
+NVIDIA
+OBERON
+OCC
+OPTI UPS
+ORTRONICS
+OVERLAND STORAGE
+PANDUIT
+PERFORMANCE TECHNOLOGIES
+PLANTRONICS
+PLP
+POLYCOM
+PROVANTAGE
+PYRAMID
+QUANTUM
+QUIKTRON
+RARITAN
+RITTAL
+SAMSUNG
+SCM
+SCM MICROSYSTEMS
+SEAGATE
+SIEMON
+SIGNAMAX
+STAR TECH
+STI
+STORAGE TEK
+SUPERIOR
+SUPERIOR ESSEX
+SYMBOL
+SYNOLOGY
+SYSTIMAX
+TELOS
+TEST
+TIPPINGPOINT TECHNOLOGIES
+TRIPP LITE
+V2 TECHNOLOGIES
+VERACITY
+VERBATUM
+VIEWSONIC
+VISIONEER
+WESTERN DIGITAL
+
+
+
+Category:
+
+
+Workstations/Desktop
+Notebooks
+Rugged Notebooks
+Thin Clients
+Printers/Scanners
+Displays / Projectors
+Network Switches
+Network Routers
+Networking Equipment
+UNIX Servers
+Servers
+Storage Systems
+Video Conferencing Equipment
+Uninterruptable Power Supply (UPS)
+Cables, Connectors and Accessories
+Equipment Racks
+Biometric Devices
+Transit Cases
+Software
+Services/Training
+Telephony
+Wireless Systems
+
+
+
+
+
+
+Can't read? Reload
+
+
+Security Code:
+
+
+
+
+
+
+
+
+NOTE: part number and description searches will accept partial entries
+
+
+
+
+
+
+
+
+
+
+
+		© 2017 Telos Corporation, All Rights Reserved.Use of this website signifies your agreement to the Online Privacy Policy.
+	
+
+
+Telos Corp. Executives, Organizational Chart, Company Profile Information, Contacts | Headquarters, Locations, News   
+
+
+
+
+
+
+
+
+
+
+
+
+Submit
+
+ContactCareersLogin
+
+MENUtoggle
+Our Difference Research Client SuccessWho We Serve Sales Professionals Marketing Professionals Executives Recruiting/Staffing ProfessionalsSolutions [Column]  ABM & ABS Actionable Intelligence Competitive Intelligence Customer Success & Retention  [Column]  Data Quality & Management Data Sets Integrations Lead Generation  [Column]  Predictive Analytics Sales & Marketing Alignment Targeting & Ranking Knowledge Hub Blog Case Studies Insights FAQsAbout Careers News Pricing
+
+Menu
+
+HomeOur Difference Research Client SuccessWho We Serve Sales Professionals Marketing Professionals Executives Recruiting/Staffing ProfessionalsSolutions ABM & ABS Actionable Intelligence Competitive Intelligence Customer Success & Retention Data Quality & Management Data Sets Integrations Lead Generation Predictive Analytics Sales & Marketing Alignment Targeting & RankingKnowledge Hub Blog Case Studies Insights FAQsAbout Careers News PricingGet a Free ProfileSchedule a DemoRequest PricingContact UsLogin
+Home / Companies / Telos Corp.
+
+
+Telos Corp.
+
+19886 Ashburn Rd 
+Ashburn VA 20147 United States
+Phone: +1 703-___-____
+Fax: +1 703-___-____
+http://www.telos.com
+
+
+
+
+
+19
+Managers
+
+
+
+
+16
+IT employees
+
+
+
+
+$3.6MEST.
+IT Budget
+
+
+
+
+Telos Corporation, headquartered in Ashburn, VA, is a systems integration and services company, providing information technology solutions for the United States Government customers. The company's operations are comprised of two operating segments, Managed Solutions (previously known as IT Solutions Group)… MoreTelos Corporation, headquartered in Ashburn, VA, is a systems integration and services company, providing information technology solutions for the United States Government customers. The company's operations are comprised of two operating segments, Managed Solutions (previously known as IT Solutions Group) and Xacta. 
+
+Managed Solutions develops, markets and sells integration services, which address a range of government information technology (IT) requirements. 
+
+Xacta develops, markets and sells government-validated secure enterprise solutions to the United States Government and financial institutions.
+Telos Corporation, headquartered in Ashburn, VA, is a systems integration and services company, providing information technology solutions for the United States Government customers. The company's operations are comprised of two operating segments, Managed Solutions (previously known as IT Solutions Group)… MoreTelos Corporation, headquartered in Ashburn, VA, is a systems integration and services company, providing information technology solutions for the United States Government customers. The company's operations are comprised of two operating segments, Managed Solutions (previously known as IT Solutions Group) and Xacta. 
+
+Managed Solutions develops, markets and sells integration services, which address a range of government information technology (IT) requirements. 
+
+Xacta develops, markets and sells government-validated secure enterprise solutions to the United States Government and financial institutions.
+
+
+
+At Telos Corporation, a systems integration and services company, the Chief Technology Officer (CTO) leads a cross-functional team that handles both corporate IT and product development efforts. The CTO also serves as the Chief Security officer (CSO).
+
+The Information Technology department concentrates primarily on developing and maintaining information systems and information security. Staff members use a variety of programming and development tools, including digital software tools by Adobe and SQL-based solutions. The company also relies on a variety of security products, including Cisco, eEye and Juniper.
+
+
+
+
+
+Sector (Industry)
+Services (Government Contractors)
+Technology (Computer Services)
+
+
+Employees
+502
+
+
+Revenue
+$134.9M
+
+
+FYE
+12/31
+
+
+
+
+Breaking news on investment signals
+
+
+
+
+Date
+Type
+Inside Scoop
+
+
+
+
+2017-06-28
+Staffing
+Topic: Staffing, Staffing
+Company: Telos Corp., Ashburn, VA
+Opportunity: Seeking a Senior Developer Analyst - THPS (Montreal, QC, H2L).
+
+
+
+
+2017-06-27
+Staffing
+Topic: Staffing, Help Desk
+Company: Telos Corp., Ashburn, VA
+Opportunity: Seeking an AV Pipeline Operations Specialist/Technology Consultant (AB, Edmonton, T5J).
+
+
+
+
+2017-06-27
+Staffing
+Topic: Staffing, Help Desk
+Company: Telos Corp., Ashburn, VA
+Opportunity: Seeking a Technology Specialist (IT Executive Support) (Vancouver, BC, V5Y).
+
+
+
+
+
+
+
+Want full access to this profile and more?
+RainKing's clients have access to over 1,500 new investment signals published daily, which provide insights on spending initiatives, pain points, management changes and more from companies around the globe. Interested in becoming a client?
+Request a demo
+Request a quote
+
+
+
+
+Technologies currently being used
+
+IT
+Marketing
+
+
+Data Analytics/ Databases
+
+Big Data/NoSQL
+ClouderaHadoop
+
+Business Intelligence
+IBM CognosIBM SPSSLogiXML (Logi Analytics)Microsoft SSASMS SQL Reporting Services (SSRS)SAP Crystal Reports
+
+Data Tools
+InterSystemsSQL*Plus
+Data Infrastructure
+
+Cloud Systems
+cPanel
+
+Desktop Virtualization
+WorkstationWSUS
+
+Email Hosting
+Cogent Communications (mail server)CYREN (Formerly known as Commtouch)SMTP Server (inhouse)Yahoo (mail server)
+Data Storage
+
+Data Backup
+CA ARCserveCommVaultEMC AvamarSymantec Backup ExecSymantec Norton GhostSyncsort
+
+Enterprise Storage
+NetApp Storage Systems
+
+Storage Management
+EMC CenteraEMC ControlCenter
+Enterprise/ ERP
+
+CRM
+MhelpdeskSalesForce
+
+Enterprise Resource Planning (ERP)
+DeltekSage ERP X3
+
+Enterprise Systems Support
+Verity
+Information Mgmt
+
+Collaboration
+Blackboard ServerIBM Lotus DominoIBM Lotus Notes
+
+Content Management
+Adobe RoboHelpCommonSpotDisqusLexisNexisPaperThin CMSWordPressYouTube
+
+Enterprise Learning
+Adobe Macromedia Captivate
+This is just a subset of the full Technolgies being used by this company.
+Advertising/ Search
+
+Search Marketing
+Media6Degrees
+Analytics
+
+Business Intelligence
+IBM HardwareIBM SPSSPythonSAP Crystal Reports
+
+Marketing Data Management
+ClouderaHadoopMicrosoft SQL ServerMySQLPostgreSQL
+
+Social Analytics
+Adobe Macromedia DreamweaverPHP
+Creative/ Content
+
+Customer Experience Management
+
+Mobile Design
+Telerik
+
+User Experience
+eCommerce
+
+Online Retailing
+Apache ServerVMWareWordPress
+Product/ Brand Mgmt
+
+Marketing Portfolio Management
+CommonSpotDisqus
+
+Mobile Application and Content Services
+Apple iOSBlackBerryFiberlink
+This is just a subset of the full Technolgies being used by this company.
+
+
+
+Become a RainKing power-user today!
+RainKing's rich data provides clients with a deeper understanding of who will be making – and what will be driving – upcoming investments in IT. Know what your prospects are planning before your competition does, and beat them to the negotiating table.
+Request a demo
+Request a quote
+
+
+
+
+Org chart of IT decision makers
+
+
+
+
+Renate Neely
+Director, Marketing
+___@telos.com
++1 703-___-____
+
+
+
+
+
+
+Allison Wallace
+Manager, Public Relations and Engagement
+___@telos.com
++1 703-___-____
+
+
+
+
+
+
+
+
+
+Jim Neaverth
+Product Management, Senior Hardware Engineer
+
++1 703-___-____
+
+
+
+
+
+
+
+Joseph Chung
+Business System Analyst
+___@telos.com
++1 703-___-____
+
+
+
+This is just a subset of the full Org Chart for this company.
+
+
+Want access to this and more? Become a client today!
+RainKing clients get access to all 615 decision makers in this company's org chart.
+Request a demo
+Request a quote
+
+
+
+
+
+
+
+
+Want full access to this profile and more?
+RainKing's clients have access to over 1,500 new investment signals published daily, which provide insights on spending initiatives, pain points, management changes and more from companies around the globe. Interested in becoming a client?
+Request a demo
+Request a quote
+
+
+
+
+
+
+
+
+
+To receive a FREE PDF of this company, simply fill out the form below
+
+
+
+
+
+
+
+
+
+
+Get your free company profile
+
+
+
+
+Search
+
+
+
+
+
+Subscribe to our newsletter
+
+
+
+Connect with Us
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+7700 Old Georgetown Road
+Bethesda, MD 20814-6100
+1.866.592.7122
+contactus@rainkingonline.com
+
+
+ Sitemap Terms of Use Privacy Policy 
+
+
+©2017 RainKing
+
+
+
+
+
+Telos ADMC-2 Website
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				Catalog
+			
+
+				My Account
+			
+Sign In
+
+
+				Currently Not Signed In
+			
+
+
+
+
+Contract Information
+Request Assistance
+View Quotes
+View Orders
+Contact Us
+
+
+
+
+
+
+					  
+					    SLIN:
+
+Description:
+
+OEM:
+
+
+Itronix
+Intermec
+Samsung
+Cyber Power Systems
+Buffalo
+Symbol Technologies
+Dell
+Lexmark
+Microsoft
+
+Category:
+
+
+PC/Workstations
+Notebooks
+Rugged Notebooks
+Printers
+Displays
+External Storage
+Power Supplies
+
+ 
+
+					   
+					
+
+
+
+
+
+
+
+Telos ADMC-2: Product Detail
+
+
+
+
+
+
+
+
+
+
+
+
+Dell Optiplex 3050 SFF, Intel i5-7500 (4 cores / 4 threads), 3.4 GHz, 8-GB RAM, 500GB HDD, Loaded w/64 BIT Win-10 AGM w/Credential Guard Preconfigured, EPA Energy Star Qualified, EPEAT registered, Support NIST SP800-147, TPM 2.0, CAC Reader, 3 year CONUS Warranty
+
+
+
+Product Detail
+Item Price: $1,021.28
+
+
+Need Help With This Product?Email This Page Print This Page View Image
+
+
+
+
+CLIN:
+
+								Not Available
+							
+
+
+
+
+SLIN:
+1723AA
+
+
+
+
+Description:
+Dell Optiplex 3050 SFF, Intel i5-7500 (4 cores / 4 threads), 3.4 GHz, 8-GB RAM, 500GB HDD, Loaded w/64 BIT Win-10 AGM w/Credential Guard Preconfigured, EPA Energy Star Qualified, EPEAT registered, Support NIST SP800-147, TPM 2.0, CAC Reader, 3 year CONUS Warranty
+
+
+
+
+
+Detail:
+NULL
+
+
+
+
+Category:
+PC/Workstations
+
+
+
+
+Part Number(s):
+DE823597893
+
+
+
+
+ADMC-2 Price:
+$570.10
+
+
+
+
+Add Item:
+
+
+
+
+
+
+
+Warranty:
+NULL
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Options/Accessories
+Specifications
+
+
+
+
+ 
+SLIN
+Description
+ADMC-2 Price
+
+
+ 
+1723AD
+Processor Upgrade Intel i7-7700 (4 Cores / 8 Threads)
+$92.63
+
+
+ 
+1723AE
+Memory Upgrade 16-GB (2 DIMM), PC4-19200, DDR4-2400
+$98.95
+
+
+ 
+1723AF
+HDD Upgrade, 1-TB HDD for use w/BitLocker Drive Encyprtion, SATA 3.0 (6 Gbits/sec), 32 MB Cache, Supports SMART, 7200 RPM
+$21.05
+
+
+ 
+1723AG
+Self Encrypting Drive Upgrade, 500GB SSD HW Based Full Disk Encryption, Opal Compliant, SATA 3.0 (6 Gbits/sec), 16 MB Cache, Supports Smart, 7200 RPM, Two Passwords, FIPS Opal SED
+$40.00
+
+
+ 
+1723AH
+Multimedia Spakers, 2 Piece Speaker Set, USB Audio
+$9.15
+
+
+ 
+1723AJ
+Dual Port Video Card, AMD Radeon R5 430 (2 GB)
+$70.53
+
+
+ 
+1723AK
+One Year Extended CONUS Warranty (Total 4 Years)
+$51.58
+
+
+ 
+1723AM
+Two Year Extended CONUS Warranty (Total 5 Years)
+$71.58
+
+
+
+
+
+
+
+There are no specifications for this product currently in the system.
+
+
+
+
+
+
+
+
+
+
+
+		© 2017 Telos Corporation, All Rights Reserved.Use of this website signifies your agreement to the Online Privacy Policy.
+	
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Telos | Solutions that Empower and Protect the Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos
+Solutions that Empower and Protect the Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cyber Security
+Protect information and IT systems for business and government.
+
+
+
+
+
+
+IT Risk Management and Compliance
+Manage IT risk and compliance: on premises, in the cloud, hybrid.
+
+
+
+
+
+
+Secure Mobility
+Work without concern across and beyond the enterprise.
+
+
+
+
+
+
+Identity Management
+Establish trusted identities and continuously monitor for insider threats.
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Manage  
+		
+
+the security risks of doing business in a globally connected world. 
+		
+
+
+
+
+
+
+
+
+
+
+Reduce 
+		
+
+your legal and financial exposure in today’s digital business environment. 
+		
+
+
+
+
+
+
+
+
+
+
+Ensure 
+		
+
+that your customers and partners feel safe doing business with you. 
+		
+
+
+
+
+
+
+
+
+
+
+Know 
+		
+
+that your personnel can work securely no matter where their mission takes them. 
+		
+
+
+
+
+
+
+
+
+
+
+Trust 
+		
+
+the identity and integrity of the people who work for you and with you. 
+		
+
+
+
+
+ 
+
+
+
+
+
+Cyber Security
+
+
+IT Risk Management and Compliance
+
+
+Secure Mobility
+
+
+Identity Management
+
+
+
+
+
+Telos Launches Xacta 360, a Robust Risk Management Platform that Automates Security Compliance Validation for AWS Environments
+Xacta 360 enables risk management and compliance of cloud-based, on premises, and hybrid systems with substantially less effort.
+More ...
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+IT Industry Says of the Cloud: Look What We Can Do, Securely.
+My perspective on the cloud has shifted.  I have admiration and respect for organizations like AWS that have defined a market by making the incredible achievable – not by selling a solution, but by promoting the idea that individuals can invent incredible things, and giving them the platform to do so.
+More ...
+
+
+
+
+
+9/11 and Today’s Aviation Security Infrastructure
+After 9/11, the federal government improved our nation’s aviation security infrastructure by increasing efforts to vet the backgrounds of aviation workers.
+More ...
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Careers with Telos Corporation | EOE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos
+Solutions that Empower and Protect the Enterprise
+
+
+
+
+
+
+
+
+
+
+CareersYou are here:HomeCareers
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Working with Telos
+The Telos work environment encourages creativity, embraces change, and rewards the individual and collective contributions of our employees. At Telos, we realize that our success as a company stems directly from our success as an employer. That is why we are committed to finding, attracting, and keeping the best talent available. We reward expertise with professional growth and opportunity, an excellent salary, and an extensive benefits package. If this appeals to you, we invite you to put Telos on your career path.
+Headquartered in Ashburn, VA, outside the Washington, D.C. metropolitan area, Telos Corporation is located in the heart of the Dulles technology corridor. We have grown into a worldwide operation of professionals who are world-renowned for their software development, security, integration, and systems management expertise.
+Interviewing with Telos
+Telos is looking for employees who share our core values and want more than just a job.  We offer a business casual environment, and the opportunity to make a name for yourself as you contribute to our continued success.  Please feel free to browse our career search engine to see if we have any openings that might be of interest to you. We look forward to working with you in your next career move.
+Telos is committed to the success of every employee, and that commitment begins with our first meeting. Be prepared to discuss how you can contribute to our organization, as you will meet with team members and senior managers. We will make every effort to find out if there is a good fit between your experience, career goals and our opportunities.
+All resumes must be submitted through our career center to be considered for a specific available position.
+Do you need assistance?
+If you are an individual with a disability and require a reasonable accommodation to apply for a position at Telos, please contact the Human Resources Department at 1-800-283-1911.  If you require relay service assistance, please click on the following link to review information on your state’s relay service: http://transition.fcc.gov/cgb/dro/trsphonebk.html
+Telos Corporation is an EEO/AA employer. Telos is an equal opportunity employer and does not discriminate or allow discrimination on the basis of race, color, religion, gender, age, national origin, citizenship, disability, veteran status or any other classification protected by federal, state, or local law.  Telos promotes affirmative action for minorities, women, disabled persons, and veterans.
+
+
+
+
+
+
+Featured Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Core Values
+Learn about Telos Core Values
+
+
+
+
+
+
+
+
+
+Corporate Citizenship
+Align your future with a company that shares your values.
+
+
+
+
+
+
+
+
+
+Telos stands behind those who are called to serve.
+
+
+
+
+
+
+
+
++
+
+Featured Content
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Core Values
+Learn about Telos Core Values
+
+
+
+
+
+
+
+
+
+Corporate Citizenship
+Align your future with a company that shares your values.
+
+
+
+
+
+
+
+
+
+Telos stands behind those who are called to serve.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Career Search Engine
+
+
+
+
+ 
+Learn More
+
+Learn more about Telos products, services, and solutions.
+
+
+
+
+
+
+ 
+
+
+
+
+
+Download the Telos Recruiting Slick for more information about careers at Telos Corporation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Contact Us | Directions | Telos Corporation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos
+Solutions that Empower and Protect the Enterprise
+
+
+
+
+
+
+
+
+
+
+Contact UsYou are here:HomeContact Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contacting Telos Corporation
+Corporate Headquarters
+Telos Corporation
+19886 Ashburn Road
+Ashburn, Virginia 20147
+1-800-444-9628
+1-703-724-3800
+Customer Service (24/7):
+1-800-999-9987
+support@telos.com
+Sales:
+1-800-70-TELOS (800-708-3567)
+info@telos.com
+Press inquiries:
+Renate.Neely@telos.com
+1-703-724-3780
+Business Hours
+8:30 am – 5:30 pm EST
+Monday through Friday
+Visiting Telos
+Telos Headquarters is located in Ashburn, VA, which is 30 miles west of Washington, DC. Airports serving the area include BWI Thurgood Marshall, Dulles International, and Reagan National. Numerous hotel accommodations are available nearby.
+Telos Offices
+Revmont Park North, 1151 Broad Street, Ste 301, Shrewsbury, NJ 07702
+3655 Alamo St., Suite 300, Simi Valley CA 93063
+8161 Maple Lawn Blvd, Suite 201, Fulton, MD 20759
+360 Command View, Colorado Springs, CO 80915
+10777 West Twain, Suite 230, Las Vegas NV 89135
+
+
+
+
+
+
+Featured Content
+
+
+
+
+
+
+
+
+
+
+Downloads
+
+
+
+
+
+
+
+
+
+
+Telos Job Opportunities
+Find out more about current openings and careers at Telos.
+
+
+
+
+
+
+
+
+
+Telos Corporate Brochure
+Download
+
+
+
+
+
+
+
+
++
+
+Featured Content
+
+
+
+
+
+
+
+
+
+Telos Job Opportunities
+Find out more about current openings and careers at Telos.
+
+
+
+
+
++
+
+Downloads
+
+
+
+
+
+
+
+
+
+
+
+
+Telos Corporate Brochure
+Download
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Directions
+Hotels
+
+
+
+
+
+ 
+Job Opportunities
+
+Are you an experienced cyber security or IA professional?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Telos | Solutions that Empower and Protect the Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos
+Solutions that Empower and Protect the Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cyber Security
+Protect information and IT systems for business and government.
+
+
+
+
+
+
+IT Risk Management and Compliance
+Manage IT risk and compliance: on premises, in the cloud, hybrid.
+
+
+
+
+
+
+Secure Mobility
+Work without concern across and beyond the enterprise.
+
+
+
+
+
+
+Identity Management
+Establish trusted identities and continuously monitor for insider threats.
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Manage  
+		
+
+the security risks of doing business in a globally connected world. 
+		
+
+
+
+
+
+
+
+
+
+
+Reduce 
+		
+
+your legal and financial exposure in today’s digital business environment. 
+		
+
+
+
+
+
+
+
+
+
+
+Ensure 
+		
+
+that your customers and partners feel safe doing business with you. 
+		
+
+
+
+
+
+
+
+
+
+
+Know 
+		
+
+that your personnel can work securely no matter where their mission takes them. 
+		
+
+
+
+
+
+
+
+
+
+
+Trust 
+		
+
+the identity and integrity of the people who work for you and with you. 
+		
+
+
+
+
+ 
+
+
+
+
+
+Cyber Security
+
+
+IT Risk Management and Compliance
+
+
+Secure Mobility
+
+
+Identity Management
+
+
+
+
+
+Telos Launches Xacta 360, a Robust Risk Management Platform that Automates Security Compliance Validation for AWS Environments
+Xacta 360 enables risk management and compliance of cloud-based, on premises, and hybrid systems with substantially less effort.
+More ...
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+IT Industry Says of the Cloud: Look What We Can Do, Securely.
+My perspective on the cloud has shifted.  I have admiration and respect for organizations like AWS that have defined a market by making the incredible achievable – not by selling a solution, but by promoting the idea that individuals can invent incredible things, and giving them the platform to do so.
+More ...
+
+
+
+
+
+9/11 and Today’s Aviation Security Infrastructure
+After 9/11, the federal government improved our nation’s aviation security infrastructure by increasing efforts to vet the backgrounds of aviation workers.
+More ...
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Telos | Solutions that Empower and Protect the Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Telos
+Solutions that Empower and Protect the Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cyber Security
+Protect information and IT systems for business and government.
+
+
+
+
+
+
+IT Risk Management and Compliance
+Manage IT risk and compliance: on premises, in the cloud, hybrid.
+
+
+
+
+
+
+Secure Mobility
+Work without concern across and beyond the enterprise.
+
+
+
+
+
+
+Identity Management
+Establish trusted identities and continuously monitor for insider threats.
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Manage  
+		
+
+the security risks of doing business in a globally connected world. 
+		
+
+
+
+
+
+
+
+
+
+
+Reduce 
+		
+
+your legal and financial exposure in today’s digital business environment. 
+		
+
+
+
+
+
+
+
+
+
+
+Ensure 
+		
+
+that your customers and partners feel safe doing business with you. 
+		
+
+
+
+
+
+
+
+
+
+
+Know 
+		
+
+that your personnel can work securely no matter where their mission takes them. 
+		
+
+
+
+
+
+
+
+
+
+
+Trust 
+		
+
+the identity and integrity of the people who work for you and with you. 
+		
+
+
+
+
+ 
+
+
+
+
+
+Cyber Security
+
+
+IT Risk Management and Compliance
+
+
+Secure Mobility
+
+
+Identity Management
+
+
+
+
+
+Telos Launches Xacta 360, a Robust Risk Management Platform that Automates Security Compliance Validation for AWS Environments
+Xacta 360 enables risk management and compliance of cloud-based, on premises, and hybrid systems with substantially less effort.
+More ...
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+IT Industry Says of the Cloud: Look What We Can Do, Securely.
+My perspective on the cloud has shifted.  I have admiration and respect for organizations like AWS that have defined a market by making the incredible achievable – not by selling a solution, but by promoting the idea that individuals can invent incredible things, and giving them the platform to do so.
+More ...
+
+
+
+
+
+9/11 and Today’s Aviation Security Infrastructure
+After 9/11, the federal government improved our nation’s aviation security infrastructure by increasing efforts to vet the backgrounds of aviation workers.
+More ...
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home About Us 
+About Us
+
+
+For three decades, the brands of the Telos Alliance have revolutionized radio and television by pioneering disruptive, cutting-edge audio technology with the goal of helping global networks and local stations produce better programming, improve audience engagement, and bolster ratings. The Telos Alliance is made up of six brands—Telos® Systems, Omnia® Audio, Axia® Audio, Linear Acoustic®, 25-Seven® Systems, and Minnetonka™ Audio. Distinctly and collectively, these brands raise the bar for support, performance, and innovation in the radio and television industries.
+Just look at our pedigree to see the evidence: Axia Audio invented Audio over IP for broadcast and contributed time and resources to the effort that led to the AES67 standard. Telos Systems was the first to create a broadcast audio phone system that included DSP processing to dramatically improve the quality of on-air phone calls. From an audio processing standpoint, Omnia Audio created the first: all-digital FM audio processor, DSP-based broadcast audio processor, broadcast processor to have AES composite output, Single Side Band (SSB) for FM Stereo, and Audio over IP. 25-Seven is the creator of Voltair, the first manufacturer to challenge the status quo in the ratings watermarking arena. On the TV side, Minnetonka created the first professional-level graphical audio editing software for PC platform and multi-track surround sound editor. Meanwhile, Linear Acoustic has received a Technical Emmy® for “Pioneering Development of an Audio/Metadata Processor for Conforming Audio to the ATSC Standard,” among other honors. 
+In 2016, Telos Alliance formed the TV Solutions Group, a new division to focus on the expanding needs of the TV and broadcast markets, providing solutions that aid broadcasters in the transition to the latest TV industry technology, including AES67. Headquartered in Cleveland, Ohio, USA, the Telos Alliance is a truly international company with offices and dealers around the world.
+
+
+
+
+
+                
+ Meet the Leaders
+
+
+ 
+
+Telos Alliance Cleveland Headquarters Tour
+
+
+ 
+
+Telos Alliance Awards
+
+
+
+
+
+ 
+Telos Systems—part of the Telos Alliance—was founded in 1985 by Steve Church, a talk show radio host and engineer who was dissatisfied with the poor quality of the on-air telephone calls on his shows. He was also an Engineer determined to do something about it. The resulting Telos 10 telephone interface system was a great success, inspiring Steve to build a business to make and sell the systems. Telos Systems has since become the industry leader in broadcast telephone systems and IP and ISDN codecs. The breakthrough Telos Zephyr audio codec, for example, is one of the most successful digital broadcast products in history, with more than 21,000 in use worldwide. Telos telephone hybrids and on-air talk show systems set the performance benchmark for the industry, and we continue to pioneer groundbreaking technology that pushes boundaries and gives broadcasters the telephony solutions they need for reliability, efficiency, and the best possible sound quality.
+
+ 
+Way back in 2003, Axia Audio, the studio audio division of the Telos Alliance, invented Audio over IP for Broadcast. We did what no one had ever done before—create professional radio gear that networks using standard Ethernet, for use in digital audio routing, mixing, and distribution systems for Broadcast and other Pro Audio applications. The foundational technology in all Axia products is Livewire plus AES67—we call it Livewire+—an AoIP protocol that enables high-reliability, low-delay uncompressed digital audio over Ethernet, including audio, logic, control, and program associated data (PAD). Devices connect together using standard Ethernet cables; audio and control routing is accomplished with off-the-shelf Ethernet switches. Axia Livewire+ has built-in compliance with the AES67 standard. That's because Axia and the Telos Alliance are committed proponents of AoIP interoperability—first as charter, supporting members of the X192 Working Group that defined AES67, and now as founding members of the Media Networking Alliance, a group of prominent equipment manufacturers formed to actively promote the adoption and implementation of the AES67 standard.
+Today, Axia mixing consoles, digital audio routers, broadcast intercom systems, and routing control software—along with other Telos brands and 85+ partners—are powering broadcast studios around the globe, with more than 7,000 mixing consoles and 70,000 networked audio devices
+
+ 
+Omnia Audio—part of the Telos Alliance—was founded by Frank Foti, who used audio engineering/processing to enable stations to craft a unique ‘signature sound’ that was louder than anything else on the air, yet with clear sound and no distortion. This processing is at the core of Omnia products, allowing stations to stand out among the competition on a crowded dial. Omnia has continued to innovate with leading-edge and solutions-oriented broadcast audio technology and numerous accolades and awards under its belt. In fact, Omnia is now the brand leader in Audio Processing, Processing/Encoding for Streaming Audio, Voice Processing, Analysis Tools, and Studio Audio Processing. Its products are the choice of the majority of the Top 100 rated stations in America, and are used at most major stations worldwide. Omnia continues to push the envelope to give broadcasters the tools they need to amplify, customize, and perfect sound signatures.
+
+ 
+Founded in 2003, 25-Seven Systems —a part of the Telos Alliance—began with the idea to marry ultra-complex time compression algorithms that would allow radio stations more effective and efficient broadcast time. The resulting product—Audio Time Manager—became radio’s preeminent solution for real-time compression and time-shifting, and has been used at some of the biggest talk stations in the world. Always on the bleeding edge, 25-Seven then reinvented the profanity delay with Program Delay Manager, adding the unprecedented capability to capture objectionable live content for future review. Now, 25-Seven Systems specializes in audio technologies and products that address unique problems in the industry. Most recently, 25-Seven has produced one of the most disruptive technologies in broadcast history—the Voltair line of water-marking enhancement products, which became one of the hottest and most game-changing products in the industry.
+
+ 
+Linear Acoustic was founded in 2001 by Tim Carroll. The first Linear Acoustic product was the OCTiMAX 5.1 audio processor. With the onset of digital television came myriad problems involving loudness and digital audio control. Linear Acoustic turned their attentions to solving these problems at every stage of the digital audio chain and soon developed a product range that made digital broadcast sound work as it should. Audio over IP (AoIP) has been embraced by the radio side of broadcasting for many years where the myriad advantages of networked audio via the Livewire+/AES67 standard is well known.
+ Now, AoIP is available for television audio thanks to Linear Acoustic AERO.soft™. The Linear Acoustic SDI xNode de-embeds two separate HD/SD-SDI inputs, converts it to up to 16 channels of Livewire+/AES67 audio, makes it available for processing, upmixing, and encoding in the brand-new AERO.soft Processing Engine, and then re-embeds the audio into two independent SDI outputs. This provides unmatched flexibility, scalability and channel density. 
+In 2010, Linear received a Technical Emmy® for "The Pioneering Development of an Audio/Metadata Processor for Conforming Audio to the ATSC Standard," and has provided upmixing, loudness metering, encoding products, and technical support for NBC’s coverage of the 2008 Bejing Summer Games, the 2010 Vancouver Winter Games, the London 2012 Summer Games, the 2014 Sochi Winter Games, and most recently, the 2016 Summer games in Rio.
+
+ 
+Founded by John Schur, Minnetonka Audio Software, Inc. (MASI) was formally incorporated in 1998 with the charter to produce professional quality digital audio editing products. As the technology evolved, MASI maintained a position as a technology leader, and was the first to produce a multi-track surround sound editor, Mx51. The discWelder series of products, for authoring DVD-Audio discs, continued the company’s lead in supporting high-resolution and surround audio formats. MASI continues its industry leadership with the development of the SurCode series of audio encoding products to support industry-standard formats including Dolby E, Dolby Digital, Dolby Digital Plus, Dolby Pro Logic II, DTS and DTS-HD. SurCode is known in the industry as the “go to” brand of ready to use, surround sound as plug-ins for major DAW’s, NLE’s and OEM. In 2011 MASI introduced a first of its kind: an audio only asset management and automation platform, called AudioTools Server. It has quickly become the standard for major broadcasters because of the encapsulated audio expertise required for tasks, such as loudness control, in a file-based environment. Expanding on the success of AudioTools Server, AudioTools CLOUD was introduced in 2015 as the first Amazon AWS “application” to offer audio specific workflow tools for broadcasters, post houses and more, allowing businesses to only pay for what they need, when they need it.
+
+Memberships
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+​
+
+
+
+
+
+
+

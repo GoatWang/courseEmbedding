@@ -1,0 +1,6458 @@
+
+
+Business 2.0: 50 People Who Matter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Security Check Required
+
+
+
+
+FacebookJoin or Log Into Facebook   Email or PhonePasswordForgot account?Log InDo you want to join Facebook?Sign UpSign UpSecurity CheckPlease enter the text belowCan't read the text above?Try another text or an audio captchaText in the box:What's this?Security CheckThis is a standard security test that we use to prevent spammers from creating fake accounts and spamming users.SubmitEnglish (US)EspañolFrançais (France)中文(简体)العربيةPortuguês (Brasil)Italiano한국어Deutschहिन्दी日本語MessengerFacebook LitePeoplePlacesGamesLocationsCelebritiesMarketplaceGroupsRecipesMomentsInstagramAboutCreate AdCreate PageDevelopersCareersPrivacyCookiesAd ChoicesTermsSettingsActivity Log Facebook © 2017
+
+
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+
+      50 Most Powerful Women - Susan Desmond-Hellmann (13) - FORTUNE
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50 Most Powerful Women
+
+
+
+
+
+
+
+13 of 50
+
+
+
+
+
+
+                  13. Susan Desmond-Hellmann
+                
+
+
+
+
+
+
+
+
+President, Product DevelopmentGenentech (DNA)
+
+2007 rank: 21Age: 51
+                Desmond-Hellmann has presided over a remarkable era of cancer-fighting drugs at Genentech since ascending to management in 1999. Last year marked Genentech's tenth straight year of
+                double-digit revenue growth, to $11.7 billion, while its stock climbed 15%. One wrinkle: Big shareholder Roche is attempting a takeover.NEXT: Ginni Rometty
+
+
+
+
+
+
+
+
+                      Indra Nooyi
+
+
+
+                      Irene Ros...
+
+
+
+                      Pat Woertz
+
+
+
+                      Anne Mulc...
+
+
+
+                      Angela Br...
+
+
+
+                      Andrea Jung
+
+
+
+                      Susan Arn...
+
+
+
+                      Oprah Win...
+
+
+
+                      Brenda Ba...
+
+
+
+                      Ursula Bu...
+
+
+
+                      Ann Liver...
+
+
+
+                      Anne Swee...
+
+
+
+                      Susan Des...
+
+
+
+                      Ginni Rom...
+
+
+
+                      Ellen Kul...
+
+
+
+                      Safra Catz
+
+
+
+                      Heidi Mil...
+
+
+
+                      Judy McGr...
+
+
+
+                      Carol Mey...
+
+
+
+                      Ann Moore
+
+
+
+                      Christina...
+
+
+
+                      Amy Brink...
+
+
+
+                      Susan Ivey
+
+
+
+                      Colleen G...
+
+
+
+                      Susan Cha...
+
+
+
+                      Charlene ...
+
+
+
+                      Barbara D...
+
+
+
+                      Abigail J...
+
+
+
+                      Pamela Ni...
+
+
+
+                      Liz Smith
+
+
+
+                      Joanne Ma...
+
+
+
+                      Carrie Cox
+
+
+
+                      Cece Sutton
+
+
+
+                      Sheryl Sa...
+
+
+
+                      Meredith ...
+
+
+
+                      Jan Fields
+
+
+
+                      Melanie H...
+
+
+
+                      Lisa Weber
+
+
+
+                      Sue Decker
+
+
+
+                      Claire Ba...
+
+
+
+                      Kathleen ...
+
+
+
+                      Deirdre C...
+
+
+
+                      Nancy Per...
+
+
+
+                      Sherilyn ...
+
+
+
+                      Gail Boud...
+
+
+
+                      Lorrie No...
+
+
+
+                      Terri Dial
+
+
+
+                      Lynn Else...
+
+
+
+                      Cathie Bl...
+
+
+
+                      Marissa M...
+
+
+
+
+
+
+
+                  Last updated October 16 2008: 10:16 AM ET
+                
+
+
+Email | Print | Digg this
+story | RSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50 Most Powerful Women
+
+
+
+
+25 Highest-paid women
+Freeport McMoRan's Kathleen Quirk took home $16M last year. Which corporate women raked in even more? More
+
+
+
+
+25 Best-paid men
+See how the highest-compensated male executives' paychecks compare to the 25 best-paid women. More
+
+
+
+
+12 list dropouts
+A few familiar (and not so familiar) faces dropped off this year's 50 Most Powerful Women list. More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+Susan Desmond-Hellmann - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Susan Desmond-Hellmann
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+Susan Desmond-Hellmann
+
+
+
+
+
+Occupation
+CEO of Bill & Melinda Gates Foundation
+
+
+Known for
+Role in development of cancer drugs; Chancellorship of University of California, San Francisco
+
+
+Board member of
+Facebook[1]
+
+
+Susan Desmond-Hellmann, MD, MPH, is an oncologist and biotechnology leader who is the Chief Executive Officer of the Bill & Melinda Gates Foundation. She was previously Chancellor of the University of California, San Francisco (UCSF), the first woman to hold the position, and Arthur and Toni Rembe Rock Distinguished Professor, and before that president of product development at Genentech, where she played a role in the development of the first gene-targeted cancer drugs, Avastin and Herceptin.
+
+
+
+Contents
+
+
+1 Early life and education
+2 Career
+3 Honors
+4 Personal life
+5 References
+6 External links
+
+
+
+Early life and education[edit]
+Desmond-Hellmann grew up in Reno, Nevada, as one of seven children. Her father worked as a pharmacist and her mother was an English teacher.[2] She earned her bachelor of science degree in pre-medicine and her medical degree from the University of Nevada, Reno and received her residency training at UCSF, where she served as chief resident. She is board-certified in internal medicine and medical oncology, and also holds a master's degree in public health from the University of California, Berkeley School of Public Health.[3]
+Career[edit]
+Desmond-Hellmann was an associate adjunct professor of epidemiology and biostatistics At UCSF. She joined the UCSF medical faculty at the time of the HIV/AIDS epidemic in San Francisco, and therefore worked on Kaposi's sarcoma. Beginning in 1989 both she and her husband, an infectious disease doctor, spent two years as visiting faculty at the Uganda Cancer Institute, studying and treating patients with infectious diseases and Kaposi’s sarcoma in a project funded by the Rockefeller Foundation.[3][2] She then spent two years in private practice.
+Returning to clinical research, Desmond-Hellmann became associate director of clinical cancer research at Bristol-Myers Squibb Pharmaceutical Research Institute. While there, she was the project team leader for Taxol.
+In 1995 she joined Genentech as a clinical scientist; she was named chief medical officer the following year, and in 1999 became executive vice president of development and product operations. From March 2004 through April 2009 she was chief of product development, playing a role in the development of two of the first gene-targeted therapies for cancer, Avastin and Herceptin.[2][3][4] She left when the company was bought out.[2][5]
+From 2005 to 2008, Desmond-Hellmann served a three-year term as a member of the American Association for Cancer Research board of directors, and from 2001 to 2009, she served on the executive committee of the board of directors of the Biotechnology Industry Organization. She was elected a trustee of the Howard Hughes Medical Institute in 2012.[6] In July 2008, she was appointed to the California Academy of Sciences Board of Trustees. She also served a three-year term on the Economic Advisory Council of the Federal Reserve Bank of San Francisco beginning in January 2009.[3] She served on the corporate board of Affymetrix from 2004 to 2009[3] and on the board of Procter & Gamble in 2012–13,[7] and in 2013 was appointed to the board of Facebook.[8]
+After being invited to apply, on August 3, 2009, Desmond-Hellmann became Chancellor of UCSF, the first woman to hold the position and the first drawn from outside academia.[2] She served until March 2014, holding the Arthur and Toni Rembe Rock Distinguished Professorship during her tenure.[3]
+In June 2010, one day after being questioned by The New York Times, Desmond-Hellmann sold her stock in the Altria Group, which owns Phillip Morris USA and other tobacco companies, and subsequently donated $134,000 to the tobacco control center at UCSF. She said that many of her holdings had been purchased on her behalf by her stockbroker and that she was too busy to oversee all her investments, although she had written the stock on her financial disclosure statement.[9][10]
+In January 2012 Desmond-Hellmann proposed to change the relationship between UCSF, a health sciences university, and the University of California as a whole.[11] She proposed creating partnerships between UCSF and private pharmaceutical corporations and other sources of funding, in order to increase its revenues and solve its projected financial difficulties.[2][5][12][13]
+In 2011, Desmond-Hellmann co-chaired a National Academy of Sciences committee that recommended creating a Google maps-like data network aimed at developing more diagnostics and treatments tailored to individual patients — a concept known as "precision medicine".[14] The so-called "knowledge network" would integrate the wealth of data emerging on the molecular basis of disease with information on environmental factors and patients’ electronic medical records and would allow scientists to share emerging research findings faster, thereby accelerating the development of tailored treatments. It also would allow clinicians to make more informed decisions about treatments, reduce health care costs and ultimately improve care.[15] The NAS report, titled "Toward Precision Medicine: Building a Knowledge Network for Biomedical Research and a New Taxonomy of Disease", was described by Keith Yamamoto, Vice Chancellor for Research at UCSF, as "the most important National Academy of Sciences Framework Analysis since that advisory body recommended that the United States go forward with the Human Genome Project".[16]
+On December 17, 2013, The Bill & Melinda Gates Foundation announced that it had selected Desmond-Hellmann as its next chief executive officer.[14][4] She assumed her role on May 1, 2014, the first head of the foundation to be neither a former Microsoft executive nor a personal friend of the Gates', and the first physician.[17]
+Honors[edit]
+Desmond-Hellmann was named Healthcare Businesswomen’s Association Woman of the Year for 2006 and named to the Biotech Hall of Fame in 2007. She was listed among Fortune magazine’s Top 50 Most Powerful Women in Business in 2001 and from 2003 to 2008. From 2004 to 2006, the Wall Street Journal listed Desmond-Hellmann as one of its Women to Watch.
+In October 2010, Desmond-Hellmann was elected a member of the Institute of Medicine and inducted into the American Academy of Arts and Sciences.
+In April 2012, she was honored with the Commonwealth Club of California’s 2012 Distinguished Citizen Award for her leadership at UCSF and Genentech.
+Personal life[edit]
+Desmond-Hellmann married Nicholas Hellmann in 1987.[2]
+References[edit]
+
+
+^ "Investor Relations: Board of Directors". Facebook, Inc. Retrieved March 17, 2016. 
+^ a b c d e f g Grady, Denise (October 10, 2011). "Profiles in Science: An Innovator Shapes an Empire". The New York Times. 
+^ a b c d e f "UCSF profiles: Susan Desmond-Hellmann". University of California, San Francisco. Retrieved March 17, 2016. 
+^ a b Ravelo, Jenny Lei (December 23, 2013). "Susan Desmond-Hellmann: A passionate innovator to lead the Gates Foundation". Devex. 
+^ a b "Susan Desmond-Hellmann - The 25 most influential people in biopharma today". FierceBiotech. February 8, 2012. Retrieved March 17, 2016. 
+^ "Susan Desmond-Hellmann Elected as Trustee of the Howard Hughes Medical Institute". Howard Hughes Medical Institute. November 7, 2012. 
+^ Lambert, Diana; Koseff, Alexei (March 4, 2016). "UC Davis chancellor apologizes, will donate textbook stock to student scholarships". Sacramento Bee. 
+^ Taylor, Colleen (March 6, 2013). "UCSF Chancellor Susan Desmond-Hellmann Joins Facebook’s Board, Adding Another Woman Alongside Sandberg". TechCrunch. 
+^ Wilson, Duff (June 30, 2010). "Chancellor’s Slip Benefits Tobacco Research". The New York Times. Retrieved September 16, 2011. 
+^ Wilson, Duff (June 29, 2010). "University Chief Is Selling Tobacco Holdings". The New York Times. Retrieved September 16, 2011. 
+^ Asimov, Nanette (January 20, 2012). "UCSF seeks to ease ties with UC". San Francisco Chronicle. Retrieved January 26, 2012. 
+^ Cisneros, Lisa. "Chancellor Proposes New Approach to Secure UCSF’s Financial Future". University of California, San Francisco. Retrieved January 26, 2012. 
+^ Krasny, Michael. "UCSF May Step Away From UC System". KQED Radio. Retrieved January 26, 2012. 
+^ a b O'Brien, Jennifer (December 17, 2013). "UCSF Chancellor Susan Desmond-Hellmann to Step Down". University of California, San Francisco. 
+^ O'Brien, Jennifer (November 18, 2011). "NAS Report Calls for Building Biomedical Knowledge Network to Drive Precision Medicine". University of California, San Francisco. 
+^ O'Brien, Jennifer (April 11, 2012). "UCSF Chancellor Issues Call-To-Arms to Patient Advocates". University of California, San Francisco. 
+^ Doughton, Sandi (June 29, 2014). "Tough bosses no problem for Gates Foundation’s new CEO". Seattle Times. 
+
+
+External links[edit]
+
+Gates Foundation CEO Sue Desmond-Hellmann
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Facebook
+
+
+
+Website
+
+
+
+Features
+Beacon
+Graph Search
+EdgeRank
+Platform
+Payments
+Facebook like button
+Facebookcorewwwi.onion
+Facebook Live
+Facebook Zero
+Facebook Stories
+
+
+
+
+
+Other
+products
+
+
+
+
+Current
+
+
+
+Instagram
+
+followed users
+liked pictures
+
+
+Messenger
+M (virtual assistant)
+MSQRD
+Oculus Rift
+WhatsApp
+Workplace
+
+
+
+
+
+Former
+
+
+
+Camera
+FriendFeed
+Home
+
+HTC First
+
+
+Paper
+Poke (app)
+Riff
+Slingshot
+Wirehog
+
+
+
+
+
+
+
+
+People
+
+
+
+
+Founders
+
+
+
+Mark Zuckerberg (28% equity)
+Dustin Moskovitz (7%)
+Eduardo Saverin (5%, formerly)
+Chris Hughes (1%, formerly)
+Andrew McCollum
+
+
+
+
+
+Board
+
+
+
+Mark Zuckerberg
+Jim Breyer (11%)
+Peter Thiel (2%)
+Sheryl Sandberg
+Marc Andreessen
+Erskine Bowles
+Susan Desmond-Hellmann
+Donald E. Graham
+Reed Hastings
+
+
+
+
+
+Executive
+officers
+
+
+
+
+Current
+
+
+
+Mark Zuckerberg (Chairman and CEO)
+Sheryl Sandberg (COO)
+David Wehner (CFO)
+Mike Schroepfer (CTO)
+
+
+
+
+
+Former
+
+
+
+Sean Parker (4%, formerly)
+Owen Van Natta
+Gideon Yu
+Adam D'Angelo
+Chris Kelly
+Bret Taylor
+David Ebersman
+
+
+
+
+
+
+
+
+Notable
+employees
+
+
+
+
+Current
+
+
+
+Chris Cox (VP of Product)
+Elliot Schrage (VP of Global Communications, Marketing and Public Policy)
+Lars Rasmussen (Graph Search director)
+John Carmack (CTO of Oculus VR)
+Hugo Barra (VP of Oculus VR)
+Naomi Gleit (VP of social good)
+
+
+
+
+
+Former
+
+
+
+Blake Ross (Director of Product)
+Ted Ullyot (VP, General Counsel, and Secretary)
+Matt Cohler
+Charlie Cheever
+Randi Zuckerberg
+Yishan Wong
+George Hotz
+Joe Lockhart
+Andrei Alexandrescu (research scientist)
+
+
+
+
+
+
+
+
+
+
+
+Open source
+
+
+
+Apache Cassandra
+Apache Hive
+Apache Thrift
+FQL
+Hack
+HipHop for PHP
+Phabricator
+React
+Scribe
+Open Compute Project
+
+
+
+
+
+Mass media
+
+
+
+The Facebook Effect
+The Accidental Billionaires
+The Social Network
+
+
+
+
+
+Concepts
+
+
+
+Activity stream
+Social graph
+Friending and following
+Reblogging
+Fan-gating
+Facebook diplomacy
+Facebook like button
+
+
+
+
+
+Business
+
+
+
+History
+Timeline
+Acquisitions
+f8 conference
+IPO
+Censorship
+Criticism
+Litigation
+
+
+
+
+
+Divisions
+
+
+
+Facebook AI Research
+Facebook Creative Labs
+
+
+
+
+
+Related
+
+
+
+Priscilla Chan (wife of Mark Zuckerberg)
+Chan Zuckerberg Initiative
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Chancellors of the University of California, San Francisco
+
+
+
+
+
+
+John Bertrand deCusance Morant Saunders (1964–1966)
+Willard Fleming (1966–1969)
+Philip Randolph Lee (1969–1972)
+Francis A. Sooy (1972–1982)
+Julius R. Krevans (1982–1993)
+Joseph B. Martin (1993–1997)
+Haile Debas (1997–1998)
+J. Michael Bishop (1998–2009)
+Susan Desmond-Hellmann (2009–2014)
+Sam Hawgood (2014–present)
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Susan_Desmond-Hellmann&oldid=792738215"					
+Categories: American university and college presidentsLiving peoplePeople from Reno, NevadaUniversity of California, San Francisco alumniGenentech peopleUniversity of Nevada, Reno alumniUniversity of California, Berkeley School of Public Health alumniAmerican women chief executivesFellows of the AACR AcademyHidden categories: Pages to import images to WikidataArticles with hCards 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 28 July 2017, at 10:24.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Susan Desmond-Hellmann - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Susan Desmond-Hellmann
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+Susan Desmond-Hellmann
+
+
+
+
+
+Occupation
+CEO of Bill & Melinda Gates Foundation
+
+
+Known for
+Role in development of cancer drugs; Chancellorship of University of California, San Francisco
+
+
+Board member of
+Facebook[1]
+
+
+Susan Desmond-Hellmann, MD, MPH, is an oncologist and biotechnology leader who is the Chief Executive Officer of the Bill & Melinda Gates Foundation. She was previously Chancellor of the University of California, San Francisco (UCSF), the first woman to hold the position, and Arthur and Toni Rembe Rock Distinguished Professor, and before that president of product development at Genentech, where she played a role in the development of the first gene-targeted cancer drugs, Avastin and Herceptin.
+
+
+
+Contents
+
+
+1 Early life and education
+2 Career
+3 Honors
+4 Personal life
+5 References
+6 External links
+
+
+
+Early life and education[edit]
+Desmond-Hellmann grew up in Reno, Nevada, as one of seven children. Her father worked as a pharmacist and her mother was an English teacher.[2] She earned her bachelor of science degree in pre-medicine and her medical degree from the University of Nevada, Reno and received her residency training at UCSF, where she served as chief resident. She is board-certified in internal medicine and medical oncology, and also holds a master's degree in public health from the University of California, Berkeley School of Public Health.[3]
+Career[edit]
+Desmond-Hellmann was an associate adjunct professor of epidemiology and biostatistics At UCSF. She joined the UCSF medical faculty at the time of the HIV/AIDS epidemic in San Francisco, and therefore worked on Kaposi's sarcoma. Beginning in 1989 both she and her husband, an infectious disease doctor, spent two years as visiting faculty at the Uganda Cancer Institute, studying and treating patients with infectious diseases and Kaposi’s sarcoma in a project funded by the Rockefeller Foundation.[3][2] She then spent two years in private practice.
+Returning to clinical research, Desmond-Hellmann became associate director of clinical cancer research at Bristol-Myers Squibb Pharmaceutical Research Institute. While there, she was the project team leader for Taxol.
+In 1995 she joined Genentech as a clinical scientist; she was named chief medical officer the following year, and in 1999 became executive vice president of development and product operations. From March 2004 through April 2009 she was chief of product development, playing a role in the development of two of the first gene-targeted therapies for cancer, Avastin and Herceptin.[2][3][4] She left when the company was bought out.[2][5]
+From 2005 to 2008, Desmond-Hellmann served a three-year term as a member of the American Association for Cancer Research board of directors, and from 2001 to 2009, she served on the executive committee of the board of directors of the Biotechnology Industry Organization. She was elected a trustee of the Howard Hughes Medical Institute in 2012.[6] In July 2008, she was appointed to the California Academy of Sciences Board of Trustees. She also served a three-year term on the Economic Advisory Council of the Federal Reserve Bank of San Francisco beginning in January 2009.[3] She served on the corporate board of Affymetrix from 2004 to 2009[3] and on the board of Procter & Gamble in 2012–13,[7] and in 2013 was appointed to the board of Facebook.[8]
+After being invited to apply, on August 3, 2009, Desmond-Hellmann became Chancellor of UCSF, the first woman to hold the position and the first drawn from outside academia.[2] She served until March 2014, holding the Arthur and Toni Rembe Rock Distinguished Professorship during her tenure.[3]
+In June 2010, one day after being questioned by The New York Times, Desmond-Hellmann sold her stock in the Altria Group, which owns Phillip Morris USA and other tobacco companies, and subsequently donated $134,000 to the tobacco control center at UCSF. She said that many of her holdings had been purchased on her behalf by her stockbroker and that she was too busy to oversee all her investments, although she had written the stock on her financial disclosure statement.[9][10]
+In January 2012 Desmond-Hellmann proposed to change the relationship between UCSF, a health sciences university, and the University of California as a whole.[11] She proposed creating partnerships between UCSF and private pharmaceutical corporations and other sources of funding, in order to increase its revenues and solve its projected financial difficulties.[2][5][12][13]
+In 2011, Desmond-Hellmann co-chaired a National Academy of Sciences committee that recommended creating a Google maps-like data network aimed at developing more diagnostics and treatments tailored to individual patients — a concept known as "precision medicine".[14] The so-called "knowledge network" would integrate the wealth of data emerging on the molecular basis of disease with information on environmental factors and patients’ electronic medical records and would allow scientists to share emerging research findings faster, thereby accelerating the development of tailored treatments. It also would allow clinicians to make more informed decisions about treatments, reduce health care costs and ultimately improve care.[15] The NAS report, titled "Toward Precision Medicine: Building a Knowledge Network for Biomedical Research and a New Taxonomy of Disease", was described by Keith Yamamoto, Vice Chancellor for Research at UCSF, as "the most important National Academy of Sciences Framework Analysis since that advisory body recommended that the United States go forward with the Human Genome Project".[16]
+On December 17, 2013, The Bill & Melinda Gates Foundation announced that it had selected Desmond-Hellmann as its next chief executive officer.[14][4] She assumed her role on May 1, 2014, the first head of the foundation to be neither a former Microsoft executive nor a personal friend of the Gates', and the first physician.[17]
+Honors[edit]
+Desmond-Hellmann was named Healthcare Businesswomen’s Association Woman of the Year for 2006 and named to the Biotech Hall of Fame in 2007. She was listed among Fortune magazine’s Top 50 Most Powerful Women in Business in 2001 and from 2003 to 2008. From 2004 to 2006, the Wall Street Journal listed Desmond-Hellmann as one of its Women to Watch.
+In October 2010, Desmond-Hellmann was elected a member of the Institute of Medicine and inducted into the American Academy of Arts and Sciences.
+In April 2012, she was honored with the Commonwealth Club of California’s 2012 Distinguished Citizen Award for her leadership at UCSF and Genentech.
+Personal life[edit]
+Desmond-Hellmann married Nicholas Hellmann in 1987.[2]
+References[edit]
+
+
+^ "Investor Relations: Board of Directors". Facebook, Inc. Retrieved March 17, 2016. 
+^ a b c d e f g Grady, Denise (October 10, 2011). "Profiles in Science: An Innovator Shapes an Empire". The New York Times. 
+^ a b c d e f "UCSF profiles: Susan Desmond-Hellmann". University of California, San Francisco. Retrieved March 17, 2016. 
+^ a b Ravelo, Jenny Lei (December 23, 2013). "Susan Desmond-Hellmann: A passionate innovator to lead the Gates Foundation". Devex. 
+^ a b "Susan Desmond-Hellmann - The 25 most influential people in biopharma today". FierceBiotech. February 8, 2012. Retrieved March 17, 2016. 
+^ "Susan Desmond-Hellmann Elected as Trustee of the Howard Hughes Medical Institute". Howard Hughes Medical Institute. November 7, 2012. 
+^ Lambert, Diana; Koseff, Alexei (March 4, 2016). "UC Davis chancellor apologizes, will donate textbook stock to student scholarships". Sacramento Bee. 
+^ Taylor, Colleen (March 6, 2013). "UCSF Chancellor Susan Desmond-Hellmann Joins Facebook’s Board, Adding Another Woman Alongside Sandberg". TechCrunch. 
+^ Wilson, Duff (June 30, 2010). "Chancellor’s Slip Benefits Tobacco Research". The New York Times. Retrieved September 16, 2011. 
+^ Wilson, Duff (June 29, 2010). "University Chief Is Selling Tobacco Holdings". The New York Times. Retrieved September 16, 2011. 
+^ Asimov, Nanette (January 20, 2012). "UCSF seeks to ease ties with UC". San Francisco Chronicle. Retrieved January 26, 2012. 
+^ Cisneros, Lisa. "Chancellor Proposes New Approach to Secure UCSF’s Financial Future". University of California, San Francisco. Retrieved January 26, 2012. 
+^ Krasny, Michael. "UCSF May Step Away From UC System". KQED Radio. Retrieved January 26, 2012. 
+^ a b O'Brien, Jennifer (December 17, 2013). "UCSF Chancellor Susan Desmond-Hellmann to Step Down". University of California, San Francisco. 
+^ O'Brien, Jennifer (November 18, 2011). "NAS Report Calls for Building Biomedical Knowledge Network to Drive Precision Medicine". University of California, San Francisco. 
+^ O'Brien, Jennifer (April 11, 2012). "UCSF Chancellor Issues Call-To-Arms to Patient Advocates". University of California, San Francisco. 
+^ Doughton, Sandi (June 29, 2014). "Tough bosses no problem for Gates Foundation’s new CEO". Seattle Times. 
+
+
+External links[edit]
+
+Gates Foundation CEO Sue Desmond-Hellmann
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Facebook
+
+
+
+Website
+
+
+
+Features
+Beacon
+Graph Search
+EdgeRank
+Platform
+Payments
+Facebook like button
+Facebookcorewwwi.onion
+Facebook Live
+Facebook Zero
+Facebook Stories
+
+
+
+
+
+Other
+products
+
+
+
+
+Current
+
+
+
+Instagram
+
+followed users
+liked pictures
+
+
+Messenger
+M (virtual assistant)
+MSQRD
+Oculus Rift
+WhatsApp
+Workplace
+
+
+
+
+
+Former
+
+
+
+Camera
+FriendFeed
+Home
+
+HTC First
+
+
+Paper
+Poke (app)
+Riff
+Slingshot
+Wirehog
+
+
+
+
+
+
+
+
+People
+
+
+
+
+Founders
+
+
+
+Mark Zuckerberg (28% equity)
+Dustin Moskovitz (7%)
+Eduardo Saverin (5%, formerly)
+Chris Hughes (1%, formerly)
+Andrew McCollum
+
+
+
+
+
+Board
+
+
+
+Mark Zuckerberg
+Jim Breyer (11%)
+Peter Thiel (2%)
+Sheryl Sandberg
+Marc Andreessen
+Erskine Bowles
+Susan Desmond-Hellmann
+Donald E. Graham
+Reed Hastings
+
+
+
+
+
+Executive
+officers
+
+
+
+
+Current
+
+
+
+Mark Zuckerberg (Chairman and CEO)
+Sheryl Sandberg (COO)
+David Wehner (CFO)
+Mike Schroepfer (CTO)
+
+
+
+
+
+Former
+
+
+
+Sean Parker (4%, formerly)
+Owen Van Natta
+Gideon Yu
+Adam D'Angelo
+Chris Kelly
+Bret Taylor
+David Ebersman
+
+
+
+
+
+
+
+
+Notable
+employees
+
+
+
+
+Current
+
+
+
+Chris Cox (VP of Product)
+Elliot Schrage (VP of Global Communications, Marketing and Public Policy)
+Lars Rasmussen (Graph Search director)
+John Carmack (CTO of Oculus VR)
+Hugo Barra (VP of Oculus VR)
+Naomi Gleit (VP of social good)
+
+
+
+
+
+Former
+
+
+
+Blake Ross (Director of Product)
+Ted Ullyot (VP, General Counsel, and Secretary)
+Matt Cohler
+Charlie Cheever
+Randi Zuckerberg
+Yishan Wong
+George Hotz
+Joe Lockhart
+Andrei Alexandrescu (research scientist)
+
+
+
+
+
+
+
+
+
+
+
+Open source
+
+
+
+Apache Cassandra
+Apache Hive
+Apache Thrift
+FQL
+Hack
+HipHop for PHP
+Phabricator
+React
+Scribe
+Open Compute Project
+
+
+
+
+
+Mass media
+
+
+
+The Facebook Effect
+The Accidental Billionaires
+The Social Network
+
+
+
+
+
+Concepts
+
+
+
+Activity stream
+Social graph
+Friending and following
+Reblogging
+Fan-gating
+Facebook diplomacy
+Facebook like button
+
+
+
+
+
+Business
+
+
+
+History
+Timeline
+Acquisitions
+f8 conference
+IPO
+Censorship
+Criticism
+Litigation
+
+
+
+
+
+Divisions
+
+
+
+Facebook AI Research
+Facebook Creative Labs
+
+
+
+
+
+Related
+
+
+
+Priscilla Chan (wife of Mark Zuckerberg)
+Chan Zuckerberg Initiative
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Chancellors of the University of California, San Francisco
+
+
+
+
+
+
+John Bertrand deCusance Morant Saunders (1964–1966)
+Willard Fleming (1966–1969)
+Philip Randolph Lee (1969–1972)
+Francis A. Sooy (1972–1982)
+Julius R. Krevans (1982–1993)
+Joseph B. Martin (1993–1997)
+Haile Debas (1997–1998)
+J. Michael Bishop (1998–2009)
+Susan Desmond-Hellmann (2009–2014)
+Sam Hawgood (2014–present)
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Susan_Desmond-Hellmann&oldid=792738215"					
+Categories: American university and college presidentsLiving peoplePeople from Reno, NevadaUniversity of California, San Francisco alumniGenentech peopleUniversity of Nevada, Reno alumniUniversity of California, Berkeley School of Public Health alumniAmerican women chief executivesFellows of the AACR AcademyHidden categories: Pages to import images to WikidataArticles with hCards 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 28 July 2017, at 10:24.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Susan Desmond-Hellmann - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Susan Desmond-Hellmann
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+Susan Desmond-Hellmann
+
+
+
+
+
+Occupation
+CEO of Bill & Melinda Gates Foundation
+
+
+Known for
+Role in development of cancer drugs; Chancellorship of University of California, San Francisco
+
+
+Board member of
+Facebook[1]
+
+
+Susan Desmond-Hellmann, MD, MPH, is an oncologist and biotechnology leader who is the Chief Executive Officer of the Bill & Melinda Gates Foundation. She was previously Chancellor of the University of California, San Francisco (UCSF), the first woman to hold the position, and Arthur and Toni Rembe Rock Distinguished Professor, and before that president of product development at Genentech, where she played a role in the development of the first gene-targeted cancer drugs, Avastin and Herceptin.
+
+
+
+Contents
+
+
+1 Early life and education
+2 Career
+3 Honors
+4 Personal life
+5 References
+6 External links
+
+
+
+Early life and education[edit]
+Desmond-Hellmann grew up in Reno, Nevada, as one of seven children. Her father worked as a pharmacist and her mother was an English teacher.[2] She earned her bachelor of science degree in pre-medicine and her medical degree from the University of Nevada, Reno and received her residency training at UCSF, where she served as chief resident. She is board-certified in internal medicine and medical oncology, and also holds a master's degree in public health from the University of California, Berkeley School of Public Health.[3]
+Career[edit]
+Desmond-Hellmann was an associate adjunct professor of epidemiology and biostatistics At UCSF. She joined the UCSF medical faculty at the time of the HIV/AIDS epidemic in San Francisco, and therefore worked on Kaposi's sarcoma. Beginning in 1989 both she and her husband, an infectious disease doctor, spent two years as visiting faculty at the Uganda Cancer Institute, studying and treating patients with infectious diseases and Kaposi’s sarcoma in a project funded by the Rockefeller Foundation.[3][2] She then spent two years in private practice.
+Returning to clinical research, Desmond-Hellmann became associate director of clinical cancer research at Bristol-Myers Squibb Pharmaceutical Research Institute. While there, she was the project team leader for Taxol.
+In 1995 she joined Genentech as a clinical scientist; she was named chief medical officer the following year, and in 1999 became executive vice president of development and product operations. From March 2004 through April 2009 she was chief of product development, playing a role in the development of two of the first gene-targeted therapies for cancer, Avastin and Herceptin.[2][3][4] She left when the company was bought out.[2][5]
+From 2005 to 2008, Desmond-Hellmann served a three-year term as a member of the American Association for Cancer Research board of directors, and from 2001 to 2009, she served on the executive committee of the board of directors of the Biotechnology Industry Organization. She was elected a trustee of the Howard Hughes Medical Institute in 2012.[6] In July 2008, she was appointed to the California Academy of Sciences Board of Trustees. She also served a three-year term on the Economic Advisory Council of the Federal Reserve Bank of San Francisco beginning in January 2009.[3] She served on the corporate board of Affymetrix from 2004 to 2009[3] and on the board of Procter & Gamble in 2012–13,[7] and in 2013 was appointed to the board of Facebook.[8]
+After being invited to apply, on August 3, 2009, Desmond-Hellmann became Chancellor of UCSF, the first woman to hold the position and the first drawn from outside academia.[2] She served until March 2014, holding the Arthur and Toni Rembe Rock Distinguished Professorship during her tenure.[3]
+In June 2010, one day after being questioned by The New York Times, Desmond-Hellmann sold her stock in the Altria Group, which owns Phillip Morris USA and other tobacco companies, and subsequently donated $134,000 to the tobacco control center at UCSF. She said that many of her holdings had been purchased on her behalf by her stockbroker and that she was too busy to oversee all her investments, although she had written the stock on her financial disclosure statement.[9][10]
+In January 2012 Desmond-Hellmann proposed to change the relationship between UCSF, a health sciences university, and the University of California as a whole.[11] She proposed creating partnerships between UCSF and private pharmaceutical corporations and other sources of funding, in order to increase its revenues and solve its projected financial difficulties.[2][5][12][13]
+In 2011, Desmond-Hellmann co-chaired a National Academy of Sciences committee that recommended creating a Google maps-like data network aimed at developing more diagnostics and treatments tailored to individual patients — a concept known as "precision medicine".[14] The so-called "knowledge network" would integrate the wealth of data emerging on the molecular basis of disease with information on environmental factors and patients’ electronic medical records and would allow scientists to share emerging research findings faster, thereby accelerating the development of tailored treatments. It also would allow clinicians to make more informed decisions about treatments, reduce health care costs and ultimately improve care.[15] The NAS report, titled "Toward Precision Medicine: Building a Knowledge Network for Biomedical Research and a New Taxonomy of Disease", was described by Keith Yamamoto, Vice Chancellor for Research at UCSF, as "the most important National Academy of Sciences Framework Analysis since that advisory body recommended that the United States go forward with the Human Genome Project".[16]
+On December 17, 2013, The Bill & Melinda Gates Foundation announced that it had selected Desmond-Hellmann as its next chief executive officer.[14][4] She assumed her role on May 1, 2014, the first head of the foundation to be neither a former Microsoft executive nor a personal friend of the Gates', and the first physician.[17]
+Honors[edit]
+Desmond-Hellmann was named Healthcare Businesswomen’s Association Woman of the Year for 2006 and named to the Biotech Hall of Fame in 2007. She was listed among Fortune magazine’s Top 50 Most Powerful Women in Business in 2001 and from 2003 to 2008. From 2004 to 2006, the Wall Street Journal listed Desmond-Hellmann as one of its Women to Watch.
+In October 2010, Desmond-Hellmann was elected a member of the Institute of Medicine and inducted into the American Academy of Arts and Sciences.
+In April 2012, she was honored with the Commonwealth Club of California’s 2012 Distinguished Citizen Award for her leadership at UCSF and Genentech.
+Personal life[edit]
+Desmond-Hellmann married Nicholas Hellmann in 1987.[2]
+References[edit]
+
+
+^ "Investor Relations: Board of Directors". Facebook, Inc. Retrieved March 17, 2016. 
+^ a b c d e f g Grady, Denise (October 10, 2011). "Profiles in Science: An Innovator Shapes an Empire". The New York Times. 
+^ a b c d e f "UCSF profiles: Susan Desmond-Hellmann". University of California, San Francisco. Retrieved March 17, 2016. 
+^ a b Ravelo, Jenny Lei (December 23, 2013). "Susan Desmond-Hellmann: A passionate innovator to lead the Gates Foundation". Devex. 
+^ a b "Susan Desmond-Hellmann - The 25 most influential people in biopharma today". FierceBiotech. February 8, 2012. Retrieved March 17, 2016. 
+^ "Susan Desmond-Hellmann Elected as Trustee of the Howard Hughes Medical Institute". Howard Hughes Medical Institute. November 7, 2012. 
+^ Lambert, Diana; Koseff, Alexei (March 4, 2016). "UC Davis chancellor apologizes, will donate textbook stock to student scholarships". Sacramento Bee. 
+^ Taylor, Colleen (March 6, 2013). "UCSF Chancellor Susan Desmond-Hellmann Joins Facebook’s Board, Adding Another Woman Alongside Sandberg". TechCrunch. 
+^ Wilson, Duff (June 30, 2010). "Chancellor’s Slip Benefits Tobacco Research". The New York Times. Retrieved September 16, 2011. 
+^ Wilson, Duff (June 29, 2010). "University Chief Is Selling Tobacco Holdings". The New York Times. Retrieved September 16, 2011. 
+^ Asimov, Nanette (January 20, 2012). "UCSF seeks to ease ties with UC". San Francisco Chronicle. Retrieved January 26, 2012. 
+^ Cisneros, Lisa. "Chancellor Proposes New Approach to Secure UCSF’s Financial Future". University of California, San Francisco. Retrieved January 26, 2012. 
+^ Krasny, Michael. "UCSF May Step Away From UC System". KQED Radio. Retrieved January 26, 2012. 
+^ a b O'Brien, Jennifer (December 17, 2013). "UCSF Chancellor Susan Desmond-Hellmann to Step Down". University of California, San Francisco. 
+^ O'Brien, Jennifer (November 18, 2011). "NAS Report Calls for Building Biomedical Knowledge Network to Drive Precision Medicine". University of California, San Francisco. 
+^ O'Brien, Jennifer (April 11, 2012). "UCSF Chancellor Issues Call-To-Arms to Patient Advocates". University of California, San Francisco. 
+^ Doughton, Sandi (June 29, 2014). "Tough bosses no problem for Gates Foundation’s new CEO". Seattle Times. 
+
+
+External links[edit]
+
+Gates Foundation CEO Sue Desmond-Hellmann
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Facebook
+
+
+
+Website
+
+
+
+Features
+Beacon
+Graph Search
+EdgeRank
+Platform
+Payments
+Facebook like button
+Facebookcorewwwi.onion
+Facebook Live
+Facebook Zero
+Facebook Stories
+
+
+
+
+
+Other
+products
+
+
+
+
+Current
+
+
+
+Instagram
+
+followed users
+liked pictures
+
+
+Messenger
+M (virtual assistant)
+MSQRD
+Oculus Rift
+WhatsApp
+Workplace
+
+
+
+
+
+Former
+
+
+
+Camera
+FriendFeed
+Home
+
+HTC First
+
+
+Paper
+Poke (app)
+Riff
+Slingshot
+Wirehog
+
+
+
+
+
+
+
+
+People
+
+
+
+
+Founders
+
+
+
+Mark Zuckerberg (28% equity)
+Dustin Moskovitz (7%)
+Eduardo Saverin (5%, formerly)
+Chris Hughes (1%, formerly)
+Andrew McCollum
+
+
+
+
+
+Board
+
+
+
+Mark Zuckerberg
+Jim Breyer (11%)
+Peter Thiel (2%)
+Sheryl Sandberg
+Marc Andreessen
+Erskine Bowles
+Susan Desmond-Hellmann
+Donald E. Graham
+Reed Hastings
+
+
+
+
+
+Executive
+officers
+
+
+
+
+Current
+
+
+
+Mark Zuckerberg (Chairman and CEO)
+Sheryl Sandberg (COO)
+David Wehner (CFO)
+Mike Schroepfer (CTO)
+
+
+
+
+
+Former
+
+
+
+Sean Parker (4%, formerly)
+Owen Van Natta
+Gideon Yu
+Adam D'Angelo
+Chris Kelly
+Bret Taylor
+David Ebersman
+
+
+
+
+
+
+
+
+Notable
+employees
+
+
+
+
+Current
+
+
+
+Chris Cox (VP of Product)
+Elliot Schrage (VP of Global Communications, Marketing and Public Policy)
+Lars Rasmussen (Graph Search director)
+John Carmack (CTO of Oculus VR)
+Hugo Barra (VP of Oculus VR)
+Naomi Gleit (VP of social good)
+
+
+
+
+
+Former
+
+
+
+Blake Ross (Director of Product)
+Ted Ullyot (VP, General Counsel, and Secretary)
+Matt Cohler
+Charlie Cheever
+Randi Zuckerberg
+Yishan Wong
+George Hotz
+Joe Lockhart
+Andrei Alexandrescu (research scientist)
+
+
+
+
+
+
+
+
+
+
+
+Open source
+
+
+
+Apache Cassandra
+Apache Hive
+Apache Thrift
+FQL
+Hack
+HipHop for PHP
+Phabricator
+React
+Scribe
+Open Compute Project
+
+
+
+
+
+Mass media
+
+
+
+The Facebook Effect
+The Accidental Billionaires
+The Social Network
+
+
+
+
+
+Concepts
+
+
+
+Activity stream
+Social graph
+Friending and following
+Reblogging
+Fan-gating
+Facebook diplomacy
+Facebook like button
+
+
+
+
+
+Business
+
+
+
+History
+Timeline
+Acquisitions
+f8 conference
+IPO
+Censorship
+Criticism
+Litigation
+
+
+
+
+
+Divisions
+
+
+
+Facebook AI Research
+Facebook Creative Labs
+
+
+
+
+
+Related
+
+
+
+Priscilla Chan (wife of Mark Zuckerberg)
+Chan Zuckerberg Initiative
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Chancellors of the University of California, San Francisco
+
+
+
+
+
+
+John Bertrand deCusance Morant Saunders (1964–1966)
+Willard Fleming (1966–1969)
+Philip Randolph Lee (1969–1972)
+Francis A. Sooy (1972–1982)
+Julius R. Krevans (1982–1993)
+Joseph B. Martin (1993–1997)
+Haile Debas (1997–1998)
+J. Michael Bishop (1998–2009)
+Susan Desmond-Hellmann (2009–2014)
+Sam Hawgood (2014–present)
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Susan_Desmond-Hellmann&oldid=792738215"					
+Categories: American university and college presidentsLiving peoplePeople from Reno, NevadaUniversity of California, San Francisco alumniGenentech peopleUniversity of Nevada, Reno alumniUniversity of California, Berkeley School of Public Health alumniAmerican women chief executivesFellows of the AACR AcademyHidden categories: Pages to import images to WikidataArticles with hCards 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 28 July 2017, at 10:24.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Susan Desmond-Hellmann - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Susan Desmond-Hellmann
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+Susan Desmond-Hellmann
+
+
+
+
+
+Occupation
+CEO of Bill & Melinda Gates Foundation
+
+
+Known for
+Role in development of cancer drugs; Chancellorship of University of California, San Francisco
+
+
+Board member of
+Facebook[1]
+
+
+Susan Desmond-Hellmann, MD, MPH, is an oncologist and biotechnology leader who is the Chief Executive Officer of the Bill & Melinda Gates Foundation. She was previously Chancellor of the University of California, San Francisco (UCSF), the first woman to hold the position, and Arthur and Toni Rembe Rock Distinguished Professor, and before that president of product development at Genentech, where she played a role in the development of the first gene-targeted cancer drugs, Avastin and Herceptin.
+
+
+
+Contents
+
+
+1 Early life and education
+2 Career
+3 Honors
+4 Personal life
+5 References
+6 External links
+
+
+
+Early life and education[edit]
+Desmond-Hellmann grew up in Reno, Nevada, as one of seven children. Her father worked as a pharmacist and her mother was an English teacher.[2] She earned her bachelor of science degree in pre-medicine and her medical degree from the University of Nevada, Reno and received her residency training at UCSF, where she served as chief resident. She is board-certified in internal medicine and medical oncology, and also holds a master's degree in public health from the University of California, Berkeley School of Public Health.[3]
+Career[edit]
+Desmond-Hellmann was an associate adjunct professor of epidemiology and biostatistics At UCSF. She joined the UCSF medical faculty at the time of the HIV/AIDS epidemic in San Francisco, and therefore worked on Kaposi's sarcoma. Beginning in 1989 both she and her husband, an infectious disease doctor, spent two years as visiting faculty at the Uganda Cancer Institute, studying and treating patients with infectious diseases and Kaposi’s sarcoma in a project funded by the Rockefeller Foundation.[3][2] She then spent two years in private practice.
+Returning to clinical research, Desmond-Hellmann became associate director of clinical cancer research at Bristol-Myers Squibb Pharmaceutical Research Institute. While there, she was the project team leader for Taxol.
+In 1995 she joined Genentech as a clinical scientist; she was named chief medical officer the following year, and in 1999 became executive vice president of development and product operations. From March 2004 through April 2009 she was chief of product development, playing a role in the development of two of the first gene-targeted therapies for cancer, Avastin and Herceptin.[2][3][4] She left when the company was bought out.[2][5]
+From 2005 to 2008, Desmond-Hellmann served a three-year term as a member of the American Association for Cancer Research board of directors, and from 2001 to 2009, she served on the executive committee of the board of directors of the Biotechnology Industry Organization. She was elected a trustee of the Howard Hughes Medical Institute in 2012.[6] In July 2008, she was appointed to the California Academy of Sciences Board of Trustees. She also served a three-year term on the Economic Advisory Council of the Federal Reserve Bank of San Francisco beginning in January 2009.[3] She served on the corporate board of Affymetrix from 2004 to 2009[3] and on the board of Procter & Gamble in 2012–13,[7] and in 2013 was appointed to the board of Facebook.[8]
+After being invited to apply, on August 3, 2009, Desmond-Hellmann became Chancellor of UCSF, the first woman to hold the position and the first drawn from outside academia.[2] She served until March 2014, holding the Arthur and Toni Rembe Rock Distinguished Professorship during her tenure.[3]
+In June 2010, one day after being questioned by The New York Times, Desmond-Hellmann sold her stock in the Altria Group, which owns Phillip Morris USA and other tobacco companies, and subsequently donated $134,000 to the tobacco control center at UCSF. She said that many of her holdings had been purchased on her behalf by her stockbroker and that she was too busy to oversee all her investments, although she had written the stock on her financial disclosure statement.[9][10]
+In January 2012 Desmond-Hellmann proposed to change the relationship between UCSF, a health sciences university, and the University of California as a whole.[11] She proposed creating partnerships between UCSF and private pharmaceutical corporations and other sources of funding, in order to increase its revenues and solve its projected financial difficulties.[2][5][12][13]
+In 2011, Desmond-Hellmann co-chaired a National Academy of Sciences committee that recommended creating a Google maps-like data network aimed at developing more diagnostics and treatments tailored to individual patients — a concept known as "precision medicine".[14] The so-called "knowledge network" would integrate the wealth of data emerging on the molecular basis of disease with information on environmental factors and patients’ electronic medical records and would allow scientists to share emerging research findings faster, thereby accelerating the development of tailored treatments. It also would allow clinicians to make more informed decisions about treatments, reduce health care costs and ultimately improve care.[15] The NAS report, titled "Toward Precision Medicine: Building a Knowledge Network for Biomedical Research and a New Taxonomy of Disease", was described by Keith Yamamoto, Vice Chancellor for Research at UCSF, as "the most important National Academy of Sciences Framework Analysis since that advisory body recommended that the United States go forward with the Human Genome Project".[16]
+On December 17, 2013, The Bill & Melinda Gates Foundation announced that it had selected Desmond-Hellmann as its next chief executive officer.[14][4] She assumed her role on May 1, 2014, the first head of the foundation to be neither a former Microsoft executive nor a personal friend of the Gates', and the first physician.[17]
+Honors[edit]
+Desmond-Hellmann was named Healthcare Businesswomen’s Association Woman of the Year for 2006 and named to the Biotech Hall of Fame in 2007. She was listed among Fortune magazine’s Top 50 Most Powerful Women in Business in 2001 and from 2003 to 2008. From 2004 to 2006, the Wall Street Journal listed Desmond-Hellmann as one of its Women to Watch.
+In October 2010, Desmond-Hellmann was elected a member of the Institute of Medicine and inducted into the American Academy of Arts and Sciences.
+In April 2012, she was honored with the Commonwealth Club of California’s 2012 Distinguished Citizen Award for her leadership at UCSF and Genentech.
+Personal life[edit]
+Desmond-Hellmann married Nicholas Hellmann in 1987.[2]
+References[edit]
+
+
+^ "Investor Relations: Board of Directors". Facebook, Inc. Retrieved March 17, 2016. 
+^ a b c d e f g Grady, Denise (October 10, 2011). "Profiles in Science: An Innovator Shapes an Empire". The New York Times. 
+^ a b c d e f "UCSF profiles: Susan Desmond-Hellmann". University of California, San Francisco. Retrieved March 17, 2016. 
+^ a b Ravelo, Jenny Lei (December 23, 2013). "Susan Desmond-Hellmann: A passionate innovator to lead the Gates Foundation". Devex. 
+^ a b "Susan Desmond-Hellmann - The 25 most influential people in biopharma today". FierceBiotech. February 8, 2012. Retrieved March 17, 2016. 
+^ "Susan Desmond-Hellmann Elected as Trustee of the Howard Hughes Medical Institute". Howard Hughes Medical Institute. November 7, 2012. 
+^ Lambert, Diana; Koseff, Alexei (March 4, 2016). "UC Davis chancellor apologizes, will donate textbook stock to student scholarships". Sacramento Bee. 
+^ Taylor, Colleen (March 6, 2013). "UCSF Chancellor Susan Desmond-Hellmann Joins Facebook’s Board, Adding Another Woman Alongside Sandberg". TechCrunch. 
+^ Wilson, Duff (June 30, 2010). "Chancellor’s Slip Benefits Tobacco Research". The New York Times. Retrieved September 16, 2011. 
+^ Wilson, Duff (June 29, 2010). "University Chief Is Selling Tobacco Holdings". The New York Times. Retrieved September 16, 2011. 
+^ Asimov, Nanette (January 20, 2012). "UCSF seeks to ease ties with UC". San Francisco Chronicle. Retrieved January 26, 2012. 
+^ Cisneros, Lisa. "Chancellor Proposes New Approach to Secure UCSF’s Financial Future". University of California, San Francisco. Retrieved January 26, 2012. 
+^ Krasny, Michael. "UCSF May Step Away From UC System". KQED Radio. Retrieved January 26, 2012. 
+^ a b O'Brien, Jennifer (December 17, 2013). "UCSF Chancellor Susan Desmond-Hellmann to Step Down". University of California, San Francisco. 
+^ O'Brien, Jennifer (November 18, 2011). "NAS Report Calls for Building Biomedical Knowledge Network to Drive Precision Medicine". University of California, San Francisco. 
+^ O'Brien, Jennifer (April 11, 2012). "UCSF Chancellor Issues Call-To-Arms to Patient Advocates". University of California, San Francisco. 
+^ Doughton, Sandi (June 29, 2014). "Tough bosses no problem for Gates Foundation’s new CEO". Seattle Times. 
+
+
+External links[edit]
+
+Gates Foundation CEO Sue Desmond-Hellmann
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Facebook
+
+
+
+Website
+
+
+
+Features
+Beacon
+Graph Search
+EdgeRank
+Platform
+Payments
+Facebook like button
+Facebookcorewwwi.onion
+Facebook Live
+Facebook Zero
+Facebook Stories
+
+
+
+
+
+Other
+products
+
+
+
+
+Current
+
+
+
+Instagram
+
+followed users
+liked pictures
+
+
+Messenger
+M (virtual assistant)
+MSQRD
+Oculus Rift
+WhatsApp
+Workplace
+
+
+
+
+
+Former
+
+
+
+Camera
+FriendFeed
+Home
+
+HTC First
+
+
+Paper
+Poke (app)
+Riff
+Slingshot
+Wirehog
+
+
+
+
+
+
+
+
+People
+
+
+
+
+Founders
+
+
+
+Mark Zuckerberg (28% equity)
+Dustin Moskovitz (7%)
+Eduardo Saverin (5%, formerly)
+Chris Hughes (1%, formerly)
+Andrew McCollum
+
+
+
+
+
+Board
+
+
+
+Mark Zuckerberg
+Jim Breyer (11%)
+Peter Thiel (2%)
+Sheryl Sandberg
+Marc Andreessen
+Erskine Bowles
+Susan Desmond-Hellmann
+Donald E. Graham
+Reed Hastings
+
+
+
+
+
+Executive
+officers
+
+
+
+
+Current
+
+
+
+Mark Zuckerberg (Chairman and CEO)
+Sheryl Sandberg (COO)
+David Wehner (CFO)
+Mike Schroepfer (CTO)
+
+
+
+
+
+Former
+
+
+
+Sean Parker (4%, formerly)
+Owen Van Natta
+Gideon Yu
+Adam D'Angelo
+Chris Kelly
+Bret Taylor
+David Ebersman
+
+
+
+
+
+
+
+
+Notable
+employees
+
+
+
+
+Current
+
+
+
+Chris Cox (VP of Product)
+Elliot Schrage (VP of Global Communications, Marketing and Public Policy)
+Lars Rasmussen (Graph Search director)
+John Carmack (CTO of Oculus VR)
+Hugo Barra (VP of Oculus VR)
+Naomi Gleit (VP of social good)
+
+
+
+
+
+Former
+
+
+
+Blake Ross (Director of Product)
+Ted Ullyot (VP, General Counsel, and Secretary)
+Matt Cohler
+Charlie Cheever
+Randi Zuckerberg
+Yishan Wong
+George Hotz
+Joe Lockhart
+Andrei Alexandrescu (research scientist)
+
+
+
+
+
+
+
+
+
+
+
+Open source
+
+
+
+Apache Cassandra
+Apache Hive
+Apache Thrift
+FQL
+Hack
+HipHop for PHP
+Phabricator
+React
+Scribe
+Open Compute Project
+
+
+
+
+
+Mass media
+
+
+
+The Facebook Effect
+The Accidental Billionaires
+The Social Network
+
+
+
+
+
+Concepts
+
+
+
+Activity stream
+Social graph
+Friending and following
+Reblogging
+Fan-gating
+Facebook diplomacy
+Facebook like button
+
+
+
+
+
+Business
+
+
+
+History
+Timeline
+Acquisitions
+f8 conference
+IPO
+Censorship
+Criticism
+Litigation
+
+
+
+
+
+Divisions
+
+
+
+Facebook AI Research
+Facebook Creative Labs
+
+
+
+
+
+Related
+
+
+
+Priscilla Chan (wife of Mark Zuckerberg)
+Chan Zuckerberg Initiative
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Chancellors of the University of California, San Francisco
+
+
+
+
+
+
+John Bertrand deCusance Morant Saunders (1964–1966)
+Willard Fleming (1966–1969)
+Philip Randolph Lee (1969–1972)
+Francis A. Sooy (1972–1982)
+Julius R. Krevans (1982–1993)
+Joseph B. Martin (1993–1997)
+Haile Debas (1997–1998)
+J. Michael Bishop (1998–2009)
+Susan Desmond-Hellmann (2009–2014)
+Sam Hawgood (2014–present)
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Susan_Desmond-Hellmann&oldid=792738215"					
+Categories: American university and college presidentsLiving peoplePeople from Reno, NevadaUniversity of California, San Francisco alumniGenentech peopleUniversity of Nevada, Reno alumniUniversity of California, Berkeley School of Public Health alumniAmerican women chief executivesFellows of the AACR AcademyHidden categories: Pages to import images to WikidataArticles with hCards 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+
+Add links 
+
+
+
+
+
+ This page was last edited on 28 July 2017, at 10:24.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+News Center | UC San Francisco
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content
+
+
+
+
+
+University of California San Francisco
+
+
+Advanced
+
+
+
+
+
+
+
+
+
+
+
+Go
+
+
+
+All UCSF
+
+UCSF News
+
+People
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Facebook
+Twitter
+YouTube
+
+
+
+
+
+
+
+AboutUCSF Overview
+Mission & Values
+UCSF History
+UCSF in the Community
+Facts & FiguresAchievements
+Budget
+Economic Impact
+UCSF Fact Sheet
+
+Diversity & Outreach
+Chancellor
+Visiting UCSF
+
+Patient CarePatient Care Overview
+UCSF Medical Center
+UCSF Benioff Children's HospitalsChildren's Hospital San Francisco
+Children's Hospital Oakland
+
+UCSF Dental Center
+Langley Porter Psychiatric Hospital & Clinics
+Northern California Specialty Clinics
+Clinical Trials
+
+ResearchResearch Overview
+Research Partnerships
+Clinical Trials
+Research ResourcesClinical & Translational Science Institute (CTSI) 
+Core Services & Facilities
+Office of Ethics & Compliance 
+Office of Research
+UCSF Innovation, Technology & Alliances
+UCSF Library
+UCSF Office of Sponsored Research
+
+Postdoctoral ScholarsPostdoc Office
+Postdoctoral Scholars Association
+
+
+EducationEducation Overview
+Admissions
+Schools & ProgramsSchool of Dentistry
+School of Medicine
+School of Pharmacy
+School of Nursing
+Graduate Division
+Global Health Sciences
+
+Student ResourcesAcademic Calendar
+Career Resources
+International Students & Scholars Office
+Learning Resource Services
+Office of the Registrar
+Student Financial Aid
+Student Success Guide
+
+
+News & MediaUCSF News Center
+Pulse of UCSF (Faculty & Staff Hub)
+UCSF in the News
+Resources for Journalists
+Media Resources for Faculty
+
+Support UCSFGive to UCSF
+Volunteer at UCSF Medical Center
+UCSF Benioff Children's Hospitals Foundation
+
+
+
+
+
+
+
+
+
+About
+
+
+
+
+
+
+Leading the Way
+At UC San Francisco, we are driven by the idea that when the best research, the best teaching and the best patient care converge, we can deliver breakthroughs that help heal the world.
+
+
+
+
+
+
+
+
+
+
+
+
+Patient Care
+
+
+
+
+
+
+From Bench to Bedside
+At UC San Francisco, we don’t just treat diseases, we treat individuals. We put our patients’ priorities at the center of our care, and strive for breakthrough discoveries so that we can improve people’s lives.
+
+
+
+
+
+
+
+
+
+
+
+
+Research
+
+
+
+
+
+
+Collaboration and Innovation
+UC San Francisco is leading revolutions in health – and those revolutions often start in the lab. From basic science to clinical research, we are constantly pushing scientific boundaries and earning worldwide recognition for our discoveries.
+
+
+
+
+
+
+
+
+
+
+
+
+Education
+
+
+
+
+
+
+Educating Health Sciences Professionals
+At UC San Francisco, we encourage our students to approach health care issues with critical thinking and a spirit of inquiry. As tomorrow’s health and science leaders in training, UCSF students embody our passion for improving the human condition and pushing health care forward.
+
+
+
+
+
+
+
+
+
+
+
+
+News & Media
+
+
+
+
+
+
+
+UCSF News Office
+UCSF News tells stories about the extraordinary work being done here every day and about the dedicated, passionate people behind it. Explore news stories and press releases, or access media resources.
+
+
+
+
+
+
+
+
+
+
+
+
+Support UCSF
+
+
+
+
+
+
+
+Headline for Support UCSF Section
+As the leading university focused exclusively on health, UC San Francisco is advancing health worldwide. Whether you contribute your time or your money, you are helping to progress knowledge in medicine and drive scientific breakthroughs to create a healthier world.
+
+
+
+
+
+
+
+
+
+
+
+You are hereHome > News Center 
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+Research
+ Traveling to Mars Will Wreak Havoc on Our Bodies – Can We Prevent It?  
+
+  
+Research
+ Drug Reverses Memory Failure Caused by Traumatic Brain Injury  
+
+  
+Patient Care
+ Feinstein Urges Safeguarding Medicaid on Visit to UCSF Benioff Children’s Hospital  
+
+  
+Research
+ Dazed and Confused: Marijuana Legalization Raises the Need for More Research  
+
+  
+Research
+ Sowing Stem Cells: Lab-Grown Organoids Hold Promise for Patient Treatments  
+
+  
+Campus News
+ Born in the Summer of Love: The Haight Ashbury Free Clinic Transformed Drug Addiction Treatment  
+
+  
+Education
+ UCSF’s Class of 2017 on Lessons Learned Inside, Outside of Classroom  
+
+  
+Campus News
+ ‘Stand Up For Science’ Teach-In, Rally Highlight Importance of Public Support, Diversity in Science  
+
+  
+Research
+ New Multiple Sclerosis Drug, Backed by 40 Years of Research, Could Halt Disease  
+
+  
+Research
+ UCSF Is Top Public Recipient of NIH Research Funding for 6th Consecutive Year  
+
+
+
+  
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+ 
+
+
+
+
+
+Most Popular 
+
+ Drug Reverses Memory Failure Caused by Traumatic Brain Injury  
+
+ Biological Basis Found for Sensory Processing Disorders in Kids  
+
+ Go Easy on the Avocado Toast: ‘Good Fat’ Can Still Be Bad for You, Research Shows  
+
+ Brain’s Immune Cells May Drive Overeating and Weight Gain  
+
+ UCSF Benioff Children’s Hospitals Shine Among Finest in 9 Pediatric Specialties Nationwide  
+
+
+
+
+
+UCSF in the News » 
+
+ Tobacco Gets More Screen Time in Blockbuster Movies, Study Shows 
+ July 11, 2017 | The New York Times  
+
+ Protein tangles behind Alzheimer's disease may be critical for human reproduction 
+ July 11, 2017 | Science  
+
+ New drug restores memories in brain-damaged mice 
+ July 10, 2017 | The Washington Post  
+
+ Brain's Immune Cells May Make You Fat: Study 
+ July 5, 2017 | Newsweek  
+
+ Tumor Test Helps Identify Which Breast Cancers Don't Require Extra Treatment 
+ June 29, 2017 | NPR  
+
+ Brain-Invading Tapeworm That Eluded Doctors Spotted by New DNA Test 
+ June 22, 2017 | Scientific American  
+
+
+
+YouTube » Subscribe
+
+
+
+
+
+
+
+          01:49        
+
+
+
+          ISRIB Reverses Memory Failure from Traumatic Brain Injury        
+
+
+        1436 views | 2 weeks ago      
+
+
+
+
+
+
+
+          38:05        
+
+
+
+          Sen. Dianne Feinstein Press Conference at UCSF Benioff Children's Hospital        
+
+
+        356 views | 2 weeks ago      
+
+
+
+
+
+
+Twitter » Follow 
+
+ 
+
+8 hours 2 min ago  
+
+
+@UCSF
+
+
+
+    Our @SEP_UCSF program today celebrated high school interns who undertook massive research projects. Check out threa… https://t.co/gVDZFd89To 
+
+Reply
+Retweet
+Favorite
+
+
+  
+
+ 
+
+15 hours 50 min ago  
+
+
+@UCSF
+
+
+
+    All are welcome here. #UCSFStandsUp https://t.co/rwmP6k0QLq 
+
+Reply
+Retweet
+Favorite
+
+
+  
+
+ 
+
+15 hours 52 min ago  
+
+
+@UCSF
+
+
+
+@SCHeadley We're pretty stoked to have you.  
+
+Reply
+Retweet
+Favorite
+
+
+  
+
+
+
+
+
+  Latest News from UCSF
+  Latest News Feed
+Filter
+ 
+  
+
+  
+Research
+
+July 27, 2017
+A New Insight into Parkinson’s Disease Protein
+
+ 
+
+
+  
+Campus News
+
+July 26, 2017
+New Teen Internship Program Builds Awareness of Key Public Health Issues
+
+ 
+
+
+  
+Research
+
+July 26, 2017
+Research Aims to Shape More Precise Treatments for Depression in Women
+
+ 
+
+
+  
+Education
+
+July 24, 2017
+Tackling Childbirth-Related Mortality in the World’s Poorest Place
+
+ 
+
+
+  
+Research
+
+July 24, 2017
+The Science of Sleep: A Q&A With Neurology Professor Ying-Hui Fu
+
+ 
+
+
+  
+Patient Care
+
+July 24, 2017
+MEDIA ADVISORY: Stomper Welcomes Patients at Build-A-Bear Workshop
+
+ 
+
+
+  
+Campus News
+
+July 24, 2017
+UCSF Advances Mount Sutro Plan to Address Drought Damage, Restore Health of Reserve
+
+ 
+
+
+  
+Research
+
+July 21, 2017
+Traveling to Mars Will Wreak Havoc on Our Bodies – Can We Prevent It?
+
+ 
+
+
+  
+Campus News
+
+July 21, 2017
+Kirsten Bibbins-Domingo Appointed as Inaugural Vice Dean for Population Health and Health Equity
+
+ 
+
+
+  
+Research
+
+July 20, 2017
+Stress Worsens Effects of Toxic Chemicals in Pregnant Women
+
+ 
+
+
+  
+Research
+
+July 20, 2017
+Immune-Cell Numbers Predict Response to Combination Immunotherapy in Melanoma
+
+ 
+
+
+  
+Research
+
+July 19, 2017
+Physical Therapy Can Help Straighten a Hunched Back for Older People
+
+ 
+
+
+  
+Campus News
+
+July 17, 2017
+Amid Backdrop of Health Care Debate, UCSF Raises Funds at AIDS Walk San Francisco
+
+ 
+
+
+  
+Campus News
+
+July 13, 2017
+San Francisco’s Flavored Tobacco Law Rooted in Years of Research, Advocacy Work
+
+ 
+
+
+  
+Patient Care
+
+July 13, 2017
+Next-Gen Precision Diagnostics Now Available at UCSF
+
+ 
+
+Pages1
+2
+3
+4
+5
+6
+7
+8
+9
+…
+next ›
+last »
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Susan Desmond-Hellmann Named Chief Executive Officer of the Bill & Melinda Gates Foundation - Bill & Melinda Gates Foundation
+
+
+
+
+
+Who We Are
+▼
+
+
+
+                                            General Information
+                                        
+
+
+Letter from Bill and Melinda Gates
+
+
+Leadership
+
+
+History
+
+
+Foundation Fact Sheet
+
+
+Financials
+
+
+Contact Us
+
+
+Regional Offices
+
+
+
+                                            Resources & Media
+                                        
+
+
+Annual Letters
+
+
+Annual Reports
+
+
+Press Room
+
+
+
+                                            Quick Links
+                                        
+
+
+Visitor Center
+
+
+Jobs
+
+
+
+
+
+
+What We Do
+▼
+
+
+
+                                            Global Health
+                                        
+
+
+Discovery & Translational Sciences
+
+
+Enteric and Diarrheal Diseases
+
+
+HIV
+
+
+Malaria
+
+
+Neglected Tropical Diseases
+
+
+Pneumonia
+
+
+Tuberculosis
+
+
+
+                                            Global Development
+                                        
+
+
+Agricultural Development
+
+
+Emergency Response
+
+
+Family Planning
+
+
+Financial Services for the Poor
+
+
+Global Libraries
+
+
+Integrated Delivery
+
+
+Maternal, Newborn & Child Health
+
+
+Nutrition
+
+
+Polio
+
+
+Vaccine Delivery
+
+
+Water, Sanitation & Hygiene
+
+
+
+                                            U.S. Program
+                                        
+
+
+K-12 Education
+
+
+Postsecondary Success
+
+
+Washington State
+
+
+
+                                            Global Policy & Advocacy
+                                        
+
+
+Tobacco Control
+
+
+Development Policy and Finance
+
+
+Philanthropic Partnerships
+
+
+G20 Report
+
+
+Vaccine Summit
+
+
+
+
+
+
+How We Work
+▼
+
+
+
+                                            General Information
+                                        
+
+
+How We Make Grants
+
+
+How We Develop Strategy
+
+
+Information Sharing Approach
+
+
+Open Access Policy
+
+
+Our Approach to Measurement and Evaluation
+
+
+Grantseeker FAQ
+
+
+Grant Opportunities
+
+
+Grant Seeking Resources
+
+
+What We Do Not Fund
+
+
+
+                                            Resources for Grantees
+                                        
+
+
+Our Commitment to Grantees
+
+
+Grantee Profiles
+
+
+Grantee & Partner Survey Report
+
+
+
+                                            Quick Links
+                                        
+
+
+Awarded Grants
+
+
+Contact Us
+
+
+Program Related Investments
+
+
+
+
+
+
+Where We Work
+▼
+
+
+
+
+Africa
+
+
+
+
+China
+
+
+
+
+Europe
+
+
+
+
+India
+
+
+
+
+Middle East
+
+
+
+
+
+
+Get Involved
+▼
+
+
+
+
+Foundation Cares
+
+
+
+
+Gates Philanthropy Partners
+
+
+
+
+
+
+Visitor Center
+▼
+
+
+
+
+About
+
+
+
+
+Upcoming Programs
+
+
+
+
+Our Galleries
+
+
+
+
+Photos
+
+
+
+
+Location and Parking
+
+
+
+
+Book a Free Group Tour
+
+
+
+
+For Educators
+
+
+
+
+FAQ
+
+
+
+
+
+
+Contact Us
+Search gatesfoundation.org
+
+
+
+Facebook
+		
+
+
+
+
+
+Impatient Optimists
+		
+
+
+
+
+
+twitter
+		
+
+
+
+
+
+youtube
+		
+
+
+
+
+
+
+
+
+
+
+
+≡
+The Bill & Melinda Gates Foundation
+
+    Language
+
+
+Language
+
+English
+
+
+Deutsch
+
+
+Français
+
+
+Español
+
+
+中文
+
+
+हिंदी
+
+
+
+
+Search gatesfoundation.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Press Releases and Statements
+		
+Close
+
+
+
+
+
+Press Releases and Statements
+
+
+Speeches
+
+ 
+
+
+
+
+
+
+		Press Room
+	
+
+		Press Releases and Statements
+	
+
+
+
+
+
+
+Back
+	
+
+Print
+
+Susan Desmond-Hellmann Named Chief Executive Officer of the Bill & Melinda Gates Foundation
+
+
+
+
+
+				Bill & Melinda Gates Foundation
+			
+				206-709-3400
+			
+media@gatesfoundation.org
+
+				follow @gatesfoundation
+
+
+
+
+
+
+				Bill & Melinda Gates Foundation
+			
+				206-709-3400
+			
+media@gatesfoundation.org
+
+				follow @gatesfoundation
+
+
+
+
+SEATTLE (December 17, 2013) — The Bill & Melinda Gates Foundation has selected Susan Desmond-Hellmann, M.D., M.P.H., as its next chief executive officer. Currently the chancellor of the University of California, San Francisco (UCSF), Desmond-Hellmann will assume her role on May 1, 2014. 
+"We chose Sue because of her scientific knowledge and deep technical expertise on the foundation’s issues, as well as the organizational and leadership skills required to lead a large, growing and dynamic global organization. Sue shares our commitment and passion to create a more equitable world," said Melinda Gates, co-chair of the foundation. 
+ “I am honored by the opportunity that Bill and Melinda have extended to me. I’m excited to join such a dynamic and ambitious organization, with such a clear and focused mission—improving the lives of the world’s most vulnerable,” said Desmond-Hellmann.
+"Sue’s background in public health policy, research and development, and higher education, make her an exceptional fit for this role. She impressed us as an innovator and an outstanding leader and manager," said Bill Gates, co-chair of the foundation. 
+An oncologist by training, Desmond-Hellmann is a recognized leader on issues of higher education, public health, drug development, regulatory innovation and health policy. She has led UCSF since August 2009, when she became the first woman to serve as the university’s chancellor, overseeing all aspects of the university and medical center’s strategy, academic programs and operations. She has extensive experience in product development, and a deep understanding of how to bridge applied research to delivery of product. Prior to her tenure at UCSF, she was President of Product Development at Genentech, where she led the development and introduction of two of the first gene-targeted therapies for cancer, Avastin and Herceptin. 
+Desmond-Hellmann also served as a member of Genentech’s executive committee, beginning in 1996. She sits on the boards of directors of Procter and Gamble and Facebook, and was previously a member of the Federal Reserve Bank of San Francisco’s Economic Advisory Council. 
+Desmond-Hellmann will take over from Jeff Raikes, who announced his retirement from the foundation in September 2013 after five years at the helm. He was the foundation's second CEO, and served after a long and successful career as a senior executive at Microsoft. 
+About the Bill & Melinda Gates Foundation
+Guided by the belief that every life has equal value, the Bill & Melinda Gates Foundation works to help all people lead healthy, productive lives. In developing countries, it focuses on improving people’s health and giving them the chance to lift themselves out of hunger and extreme poverty. In the United States, it seeks to ensure that all people—especially those with the fewest resources—have access to the opportunities they need to succeed in school and life. Based in Seattle, Washington, the foundation is led by CEO Sue Desmond-Hellmann and Co-chair William H. Gates Sr., under the direction of Bill and Melinda Gates and Warren Buffett.
+###
+
+
+
+
+Visit Our Blog
+
+
+
+
+
+
+
+                    VISITOR CENTER
+                
+
+At the Bill & Melinda Gates Foundation Visitor Center, you’ll find stories of work that is improving lives, from Seattle to South Africa.
+
+
+Plan a Visit
+
+
+
+                        440 5th Ave N.
+Seattle, WA 98109
+(206) 709-3100  ext.7100
+
+
+                        Open: Tues - Sat
+10 a.m. – 6 p.m.
+Admission: Free
+
+
+
+
+
+
+
+Sign Up to Receive Updates from the Gates Foundation
+
+
+
+
+
+
+
+Facebook
+
+
+
+
+twitter
+
+
+
+
+youtube
+
+
+
+                    Impatient Optimists Blog →
+
+
+
+
+                © 1999-2017 Bill & Melinda Gates Foundation. All Rights Reserved.
+            
+
+Contact Us
+Privacy Policy
+Terms of Service
+京ICP备16015611号
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Susan Desmond-Hellmann | UCSF Profiles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+University of California, San Francisco
+
+
+About UCSF
+
+
+Search UCSF
+
+
+UCSF Medical Center
+
+
+
+
+
+
+
+search, discover, network
+
+
+
+Powered by CTSI
+
+
+New Features: Learn more  ❯
+
+
+
+
+
+
+Search
+About
+Use our Data
+Help / Contact Us
+
+
+
+
+
+
+Sign in
+                        to see private stats on your profile page — or add photo, interests, videos, mentoring, etc.
+
+
+
+
+
+
+
+
+
+Menu
+
+Find PeopleFind EverythingAbout This SiteLogin to Profiles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Susan Desmond-Hellmann
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TitleProfessorSchoolUCSF School of MedicineDepartmentMedicineAddressvCardDownload vCard
+
+
+
+
+
+Other PositionsTitleProfessor, School of Medicine
+ Biography  Education and TrainingUniversity of California, San FranciscoClinical Fellowship Internal MedicineUniversity of California, San Francisco	Residency School of Medicine
+ Overview  OverviewSusan Desmond-Hellmann, M.D., M.P.H., was chancellor of the University of California, San Francisco. She assumed the post August 3, 2009 and recently departed in March of 2014.UCSF is a leading university dedicated to promoting health worldwide through advanced biomedical research, graduate-level education in the life sciences and health professions, and excellence in patient care. UCSF is the only campus in the 10-campus UC system devoted exclusively to the health sciences.At UCSF, Desmond-Hellmann also holds appointment as Arthur and Toni Rembe Rock Distinguished Professor.Before joining UCSF, she served as president of product development at Genentech, a position she held from March 2004 through April 30, 2009. In this role, she was responsible for Genentech’s pre-clinical and clinical development, process research and development, business development and product portfolio management. She also served as a member of Genentech’s executive committee, beginning in 1996. She joined Genentech in 1995 as a clinical scientist, and she was named chief medical officer in 1996. In 1999, she was named executive vice president of development and product operations. During her time at Genentech, several of the company’s patient therapeutics (Lucentis, Avastin, Herceptin, Tarceva, Rituxan and Xolair) were approved by the U.S. Food and Drug Administration, and the company became the nation’s No. 1 producer of anti-cancer drug treatments.In November 2009, Forbes magazine named Desmond-Hellmann as one of the world's seven most "powerful innovators," calling her "a hero to legions of cancer patients." The seven were lauded for their curiosity, empathy and leadership.She completed her clinical training at UCSF and is board-certified in internal medicine and medical oncology. She holds a bachelor of science degree in pre-medicine and a medical degree from the University of Nevada, Reno, and a master’s degree in public health from the University of California, Berkeley.Prior to joining Genentech, Desmond-Hellmann was associate director of clinical cancer research at Bristol-Myers Squibb Pharmaceutical Research Institute. While at Bristol-Myers Squibb, she was the project team leader for the cancer-fighting drug Taxol.Desmond-Hellmann also has served as associate adjunct professor of epidemiology and biostatistics at UCSF. During her tenure at UCSF, she spent two years as visiting faculty at the Uganda Cancer Institute, studying HIV/AIDS and cancer. She also spent two years in private practice as a medical oncologist before returning to clinical research.In January 2009, Desmond-Hellmann joined the Federal Reserve Bank of San Francisco’s Economic Advisory Council for a three-year term. In July 2008, she was appointed to the California Academy of Sciences board of trustees.Desmond-Hellmann was named to the Biotech Hall of Fame in 2007 and as the Healthcare Businesswomen’s Association Woman of the Year for 2006. She was listed among Fortune magazine’s “top 50 most powerful women in business” in 2001 and from 2003 to 2008. In 2005 and 2006, the Wall Street Journal listed Desmond-Hellmann as one of its “women to watch.”From 2005 to 2008, Desmond-Hellmann served a three-year term as a member of the American Association for Cancer Research board of directors, and from 2001 to 2009, she served on the executive committee of the board of directors of the Biotechnology Industry Organization. She served on the corporate board of Affymetrix from 2004-2009. ORNG Applications  Websites
+ Twitter
+ Featured Videos
+ Bibliographic  Publications
+
+
+		Publications listed below are automatically derived from MEDLINE/PubMed and other sources, which might result in incorrect or missing publications. 
+		Researchers can login to make corrections and additions, or contact us for help.  
+	
+
+List All 
+		  |   
+		Timeline
+
+		
+		Publications by year:
+		
+View visualization as text
+
+
+
+
+
+
+
+Johnston SC, Desmond-Hellmann S, Hauser S, Vermillion E, Mia N. Predictors of negotiated NIH indirect rates at US institutions. PLoS One. 2015; 10(3):e0121273. PMID: 25794011; PMCID: PMC4368188.
+
+
+						View in: PubMed, PubMed Central
+
+
+
+
+Desmond-Hellmann S. Improving health with partnerships between academia and industry. JAMA Intern Med. 2013 Jun 24; 173(12):1051-2. PMID: 23609423.
+
+
+						View in: PubMed
+
+
+
+
+Desmond-Hellmann S. Toward precision medicine: a new social contract? Sci Transl Med. 2012 Apr 11; 4(129):129ed3. PMID: 22496543.
+
+
+						View in: PubMed
+
+
+
+
+Williams RS, Desmond-Hellmann S. Making translation work. Science. 2011 Jun 17; 332(6036):1359. PMID: 21680815.
+
+
+						View in: PubMed
+
+
+
+
+Johnston SC, Hauser SL, Desmond-Hellmann S. Enhancing ties between academia and industry to improve health. Nat Med. 2011 Apr; 17(4):434-6. PMID: 21475239.
+
+
+						View in: PubMed
+
+
+
+
+Desmond-Hellmann S. An audience with... Susan Desmond-Hellmann. Interview by... Asher Mullard. Nat Rev Drug Discov. 2011 Mar; 10(3):170. PMID: 21358729.
+
+
+						View in: PubMed
+
+
+
+
+Desmond-Hellmann S. 2010: awards show what translation can accomplish. Sci Transl Med. 2010 Dec 22; 2(63):63ed9. PMID: 21178131.
+
+
+						View in: PubMed
+
+
+
+
+Abrams JS, Vena DA, Baltz J, Adams J, Montello M, Christian M, Onetto N, Desmond-Hellmann S, Canetta R, Friedman MA. Paclitaxel activity in heavily pretreated breast cancer: a National Cancer Institute Treatment Referral Center trial. J Clin Oncol. 1995 Aug; 13(8):2056-65. PMID: 7543562.
+
+
+						View in: PubMed
+
+
+
+
+Hellmann NS, Nsubuga PS, Baingana-Baingi DJ, Desmond-Hellmann SD, Mbidde EK, Granowitz CB, Sande MA. Single-dose ampicillin/sulbactam versus ceftriaxone as treatment for uncomplicated gonorrhoea in a Ugandan STD clinic population with a high prevalence of PPNG infection. J Trop Med Hyg. 1995 Apr; 98(2):95-100. PMID: 7714943.
+
+
+						View in: PubMed
+
+
+
+
+Basler GA, Desmond-Hellmann S, Florczyk AP. Paclitaxel-induced "recall" soft tissue injury. J Clin Oncol. 1995 Feb; 13(2):531. PMID: 7844614.
+
+
+						View in: PubMed
+
+
+
+
+Desmond-Hellmann SD, Mbidde EK, Kizito A, Hellmann NS, Ziegler JL. The value of a clinical definition for epidemic KS in predicting HIV seropositivity in Africa. J Acquir Immune Defic Syndr. 1991; 4(7):647-51. PMID: 2051304.
+
+
+						View in: PubMed
+
+
+
+
+Desmond-Hellmann SD, Katongole-Mbidde E. Kaposi's sarcoma: recent developments. AIDS. 1991; 5 Suppl 1:S135-42. PMID: 1669910.
+
+
+						View in: PubMed
+
+
+
+
+
+
+
+View timeline visualization
+YearPublications19912199532010120113201212013120151
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Susan's Networks
+
+
+
+
+Concepts Derived automatically from this person's publications.Translational Medical ResearchPublic-Private Sector PartnershipsDrug IndustryBiotechnologyAcademic Medical CentersSee all (66) concept(s)_
+Co-Authors People in Profiles who have published with this person.Williams, R. SandersHauser, StephenSee all (2) people_
+
+Related Authors People who share related concepts with this person.Bero, LisaLo, BernardSteinman, MichaelRedberg, RitaButte, AtulSee all (60) people_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                UCSF Profiles is managed by the UCSF 
+                                Clinical and Translational Science Institute (CTSI), 
+                                part of the Clinical and Translational Science Award program funded by the National Center for Advancing 
+                                Translational Sciences (Grant Number UL1 TR000004) at the National Institutes of Health (NIH). This site is running Profiles RNS version v2.10.0-410-g1c0064ed on PROD1-PROFILES.
+                            
+
+
+
+Home
+Contact us
+
+
+
+
+                                Copyright © The Regents of the University of California. 
+                                All Rights Reserved.
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Biography of Susan Desmond-Hellmann | UC San Francisco
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content
+
+
+
+
+
+University of California San Francisco
+
+
+Advanced
+
+
+
+
+
+
+
+
+
+
+
+Go
+
+
+
+All UCSF
+
+UCSF News
+
+People
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Facebook
+Twitter
+YouTube
+
+
+
+
+
+
+
+AboutUCSF Overview
+Mission & Values
+UCSF History
+UCSF in the Community
+Facts & FiguresAchievements
+Budget
+Economic Impact
+UCSF Fact Sheet
+
+Diversity & Outreach
+Chancellor
+Visiting UCSF
+
+Patient CarePatient Care Overview
+UCSF Medical Center
+UCSF Benioff Children's HospitalsChildren's Hospital San Francisco
+Children's Hospital Oakland
+
+UCSF Dental Center
+Langley Porter Psychiatric Hospital & Clinics
+Northern California Specialty Clinics
+Clinical Trials
+
+ResearchResearch Overview
+Research Partnerships
+Clinical Trials
+Research ResourcesClinical & Translational Science Institute (CTSI) 
+Core Services & Facilities
+Office of Ethics & Compliance 
+Office of Research
+UCSF Innovation, Technology & Alliances
+UCSF Library
+UCSF Office of Sponsored Research
+
+Postdoctoral ScholarsPostdoc Office
+Postdoctoral Scholars Association
+
+
+EducationEducation Overview
+Admissions
+Schools & ProgramsSchool of Dentistry
+School of Medicine
+School of Pharmacy
+School of Nursing
+Graduate Division
+Global Health Sciences
+
+Student ResourcesAcademic Calendar
+Career Resources
+International Students & Scholars Office
+Learning Resource Services
+Office of the Registrar
+Student Financial Aid
+Student Success Guide
+
+
+News & MediaUCSF News Center
+Pulse of UCSF (Faculty & Staff Hub)
+UCSF in the News
+Resources for Journalists
+Media Resources for Faculty
+
+Support UCSFGive to UCSF
+Volunteer at UCSF Medical Center
+UCSF Benioff Children's Hospitals Foundation
+
+
+
+
+
+
+
+
+
+About
+
+
+
+
+
+
+Leading the Way
+At UC San Francisco, we are driven by the idea that when the best research, the best teaching and the best patient care converge, we can deliver breakthroughs that help heal the world.
+
+
+
+
+
+
+
+
+
+
+
+
+Patient Care
+
+
+
+
+
+
+From Bench to Bedside
+At UC San Francisco, we don’t just treat diseases, we treat individuals. We put our patients’ priorities at the center of our care, and strive for breakthrough discoveries so that we can improve people’s lives.
+
+
+
+
+
+
+
+
+
+
+
+
+Research
+
+
+
+
+
+
+Collaboration and Innovation
+UC San Francisco is leading revolutions in health – and those revolutions often start in the lab. From basic science to clinical research, we are constantly pushing scientific boundaries and earning worldwide recognition for our discoveries.
+
+
+
+
+
+
+
+
+
+
+
+
+Education
+
+
+
+
+
+
+Educating Health Sciences Professionals
+At UC San Francisco, we encourage our students to approach health care issues with critical thinking and a spirit of inquiry. As tomorrow’s health and science leaders in training, UCSF students embody our passion for improving the human condition and pushing health care forward.
+
+
+
+
+
+
+
+
+
+
+
+
+News & Media
+
+
+
+
+
+
+
+UCSF News Office
+UCSF News tells stories about the extraordinary work being done here every day and about the dedicated, passionate people behind it. Explore news stories and press releases, or access media resources.
+
+
+
+
+
+
+
+
+
+
+
+
+Support UCSF
+
+
+
+
+
+
+
+Headline for Support UCSF Section
+As the leading university focused exclusively on health, UC San Francisco is advancing health worldwide. Whether you contribute your time or your money, you are helping to progress knowledge in medicine and drive scientific breakthroughs to create a healthier world.
+
+
+
+
+
+
+
+
+
+
+
+You are hereHome > UCSF News Center > Biography of Susan Desmond-Hellmann 
+
+
+
+Biography of Susan Desmond-Hellmann
+
+
+
+
+
+November 08, 2009
+
+
+UCSF Chancellor Susan Desmond-Hellmann
+Susan Desmond-Hellmann, MD, MPH, is chancellor of the University of California, San Francisco. She assumed the post August 3, 2009.
+UCSF is a leading university dedicated to promoting health worldwide through advanced biomedical research, graduate-level education in the life sciences and health professions, and excellence in patient care.  UCSF is the only campus in the 10-campus UC system devoted exclusively to the health sciences.
+Desmond-Hellmann previously served as president of product development at Genentech, a position she held from March 2004 through April 30, 2009. In this role, she was responsible for Genentech’s pre-clinical and clinical development, process research and development, business development and product portfolio management. She also served as a member of Genentech’s executive committee, beginning in 1996.  She joined Genentech in 1995 as a clinical scientist, and she was named chief medical officer in 1996. In 1999, she was named executive vice president of development and product operations.  During her time at Genentech, several of the company’s patient therapeutics (Lucentis, Avastin, Herceptin, Tarceva, Rituxan and Xolair) were approved by the U.S. Food and Drug Administration, and the company became the nation’s No. 1 producer of anti-cancer drug treatments.
+In November 2009, Forbes magazine named Desmond-Hellmann as one of the world’s seven most “powerful innovators,” calling her “a hero to legions of cancer patients.”  The seven were lauded for their curiosity, empathy and leadership.
+She completed her clinical training at UCSF and is board-certified in internal medicine and medical oncology. She holds a bachelor of science degree in pre-medicine and a medical degree from the University of Nevada, Reno, and a master’s degree in public health from the University of California, Berkeley.
+Prior to joining Genentech, Desmond-Hellmann was associate director of clinical cancer research at Bristol-Myers Squibb Pharmaceutical Research Institute. While at Bristol-Myers Squibb, she was the project team leader for the cancer-fighting drug Taxol.
+Desmond-Hellmann also has served as associate adjunct professor of epidemiology and biostatistics at UCSF. During her tenure at UCSF, she spent two years as visiting faculty at the Uganda Cancer Institute, studying HIV/AIDS and cancer. She also spent two years in private practice as a medical oncologist before returning to clinical research.
+In January 2009, Desmond-Hellmann joined the Federal Reserve Bank of San Francisco’s Economic Advisory Council for a three-year term. In July 2008, she was appointed to the California Academy of Sciences board of trustees.
+Desmond-Hellmann was named to the Biotech Hall of Fame in 2007 and as the Healthcare Businesswomen’s Association Woman of the Year for 2006. She was listed among Fortune magazine’s “top 50 most powerful women in business” in 2001 and from 2003 to 2008. In 2005 and 2006, the Wall Street Journal listed Desmond-Hellmann as one of its “women to watch.”
+From 2005 to 2008, Desmond-Hellmann served a three-year term as a member of the American Association for Cancer Research board of directors, and from 2001 to 2009, she served on the executive committee of the board of directors of the Biotechnology Industry Organization. She served on the corporate board of Affymetrix from 2004-2009.
+
+
+
+
+
+
+
+
+
+
+
+Latest News »  
+  
+Mark Zuckerberg, Priscilla Chan Donate $10M to Advance Health Using Big Data
+July 28, 2017 
+
+A New Insight into Parkinson’s Disease Protein
+July 27, 2017 
+
+New Teen Internship Program Builds Awareness of Key Public Health Issues
+July 26, 2017 
+
+Research Aims to Shape More Precise Treatments for Depression in Women
+July 26, 2017 
+
+UCSF Advances Mount Sutro Plan to Address Drought Damage, Restore Health of Reserve
+July 24, 2017 
+
+
+See more in News Center 
+
+
+
+
+
+
+
+
+
+
+
+  Explore Other UCSF News
+  See More
+ 
+  
+
+  
+Research
+
+June 22, 2017
+Toxic Exposure: Chemicals Are in Our Water, Food, Air and Furniture
+
+ 
+
+
+  
+Research
+
+May 25, 2017
+New Hair Growth Mechanism Discovered
+
+ 
+
+
+  
+Campus News
+
+May 9, 2017
+UCSF Medical Center Ranked as One of 2017 America’s Best Employers by Forbes
+
+ 
+
+
+  
+Campus News
+
+April 24, 2017
+‘Stand Up For Science’ Teach-In, Rally Highlight Importance of Public Support, Diversity in Science
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+drug discovery@nature.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nature.com
+
+about npg
+
+news@nature.com
+
+naturejobs
+
+natureevents
+
+help
+
+site index
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+my account
+
+
+Submit Manuscript
+
+
+subscribe
+
+register
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SEARCH
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Friday 28 July 2017
+
+
+
+
+
+
+
+
+
+
+
+Home
+
+
+News
+
+
+
+
+Research highlights
+
+
+
+
+Research & reviews
+
+
+Naturejobs drug discovery
+
+
+Market analysis
+
+
+Technology features
+
+
+About this site
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Resources
+
+
+
+
+
+
+
+
+
+
+
+
+Nature Reviews 
+      Drug Discovery
+
+
+
+
+
+Nature
+
+
+
+
+
+Nature 
+      Biotechnology 
+
+
+
+
+
+Nature 
+      Chemical Biology
+
+
+
+
+
+Nature 
+      Medicine
+
+
+
+
+
+Nature 
+      Structural & Molecular Biology
+
+
+
+
+
+Nature 
+      Methods
+
+
+
+
+
+The 
+      Pharmacogenomics Journal
+
+
+
+
+
+Bioentrepreneur
+
+
+
+
+
+Neuropsycho-
+      pharmacology
+
+
+
+
+
+
+
+
+ 
+Molecular 
+      Psychiatry
+
+
+
+
+
+ 
+Clinical Pharmacology & Therapeutics
+
+
+
+
+
+
+ 
+
+
+ 
+Susan Desmond-Hellmann
+from Nature Reviews Drug Discovery
+
+
+From Uganda to San Francisco, the president of Product Development at Genentech describes her 'chaotic' career
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+By her own admission, Susan Desmond-Hellmann has had a "chaotic" career path, but she believes that the skills and experience she has amassed along the way have allowed her to do what's really important to her  to get better drugs to cancer patients. It is clear that she has tremendous respect and regard for cancer sufferers and, as President of Product Development at Genentech, she really is making an impact on their treatment. Since joining the company in 1995 she has been credited by Genentech colleagues and outsiders alike as the key force behind the development of several innovative new anticancer drugs.
+As an intern at the University of California in San Francisco (UCSF), USA, Desmond-Hellmann became interested in cancer research and undertook a fellowship in oncology. But unlike many of her peers who went into the lab, she chose to do her research project in the clinic, and obtained a Masters degree in Public Health, focusing on epidemiology and biostatistics. Around the same time, there was a rise in HIV-associated malignancies in San Francisco and so she chose to investigate the epidemiological aspects of Kaposi's sarcoma. On her return to the UCSF faculty, the Rockefeller Foundation asked Desmond-Hellmann and her husband, an infectious diseases doctor at UCSF, to move to Uganda to study heterosexual transmission of HIV. They jumped at the opportunity, and spent 2 years researching and teaching at Makere University in Kampala. "It was a fantastic experience," she says. "It was challenging, but there's a wonderful medical community in Uganda and we felt the work was important and meaningful."
+Arriving back at UCSF, however, Desmond-Hellmann says things had changed. "We didn't have much of a career left, truth be told!" Feeling overwhelmed by starting from scratch with little mentorship or support at the university, she and her husband moved to Kentucky to do private practice. But Desmond-Hellmann soon became frustrated at the lack of treatment options for her cancer patients and was driven to do something about it. "I loved my patients but did not enjoy private practice. I thought it was the wrong job for me. We needed better weapons against cancer and I wanted to be a part of that." So when Bristol-Myers Squibb (BMS) recruited her husband to work on one of their HIV drugs, Desmond-Hellmann joined the company's oncology team to work on the development of Taxol for breast cancer.
+There, she felt she had finally found her true vocation. "I absolutely loved it! It was a great fit for my skills. I was working with Marcel Rozencweig, Renzo Canetta and Steve Carter, who, in my mind, were the architects of the chemotherapy I had been using in the clinic. They really knew how to develop drugs and conduct clinical trials to get a cancer drug approved."
+After 2 years of what she admits was a steep learning curve at BMS, Desmond-Hellmann got the call from Genentech. "Fred Desauvage and Dan Eaton had just identified thrombopoietin as a key mediator of making platelets, and I was asked to take it into the clinic," she recalls. "I was so struck by the beautiful research and how science-driven Genentech was  and, frankly, it was also a chance to come back home." So in 1995 she and her husband moved back to California, where she took up a clinical scientist position.
+Desmond-Hellmann thrived in the 'start-up' atmosphere of Genentech and quickly worked her way up the executive ladder via several senior clinical positions before taking on her current role in March 2004. She thinks her 'try anything' attitude and passion for helping cancer patients are the reason for her success. "When I did a rotation in oncology I was struck by how wonderful and brave cancer patients are. It's a life-changing moment for someone to be told they have cancer. So I feel this incredible commitment to being part of something that can help them."
+What advice would she give to others wanting to follow her career path? "Do something you're passionate about and that challenges you. Ask yourself 'What will I learn from this?' Every day I learn something new at Genentech, and even though I didn't have a very well laid out career path, I think I've learned and benefited from everything I did."
+Desmond-Hellmann has been nominated as a 'Woman to Watch' by The Wall Street Journal and one of the 'Most Powerful Women in Business' by Fortune magazine. Does the frequent mention of being a woman in science become an irritation? "A fellow female vice president and I were often asked to have panel discussions of what it's like to be a female scientist, and we just dreaded them!" she says. "It just seemed silly and contrived. But my feelings about it have evolved over the past several years, and I'm now more willing to have people point out that it's unusual to be a female senior executive in R&D." This willingness to be more visible comes from women telling her that they lacked female role models to aspire to. "I realized that 1520 years ago when I was starting out, there was no one for me to look up to." Instead she took inspiration from her parents: her father, a pharmacist, encouraged her interest in science and medicine, and she credits her mother, a former English teacher, with teaching her about leadership and the importance of good communication.
+Desmond-Hellmann says the only low point of her career was the 'heartbreaking' decision to leave private practice. "But I promised my patients I would try my hardest to do my best for many, many cancer patients instead." She has certainly kept that promise, but she's not done yet. "The sense that we have to do better hasn't changed," she says, "because we have to improve things for cancer sufferers."
+
+
+
+
+
+
+
+
+
+
+
+Home
+| News | Research
+highlights | Research & reviews
+| Naturejobs drug discovery
+Market analysis | About this site
+
+
+© 
+2011 Nature Publishing Group
+
+
+Privacy Policy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+KOL Interviews | Pharma Strategy Blog
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pharma Strategy Blog
+Commentary on Pharma & Biotech Oncology / Hematology New Product Development  
+
+
+
+
+
+
+
+E
+
+ 
+A leap of faith – AB Science and masitinib in pancreatic cancer
+Interview with Alain Moussy, CEO of AB Science, an emerging French biotechnology company.
+October 26, 2009
+
+
+
+ 
+
+
+E
+
+ 
+The future of Oncology
+Interview with Dr. Susan Desmond-Hellmann, formerly Head of R&D at Genentech and now Chancellor at UCSF.
+March 17, 2010
+
+
+
+ 
+
+
+E
+
+ 
+Crizotinib and ALK rearrangements in lung cancer: an interview with Dr Ross Camidge
+An interview with Dr Ross Camidge about crizotinib (Xalkori) and ALK rearrangements in lung cancer
+November 30, 2010
+
+
+
+ 
+
+
+E
+
+ 
+Making a difference to the lives of cancer patients: An interview with Dr Charles Sawyers
+Interview with Charles L. Sawyers, MD is Chair of the Human Oncology and Pathogenesis Program at the Memorial Sloan-Kettering Cancer Center (MSKCC), and an Investigator with the Howard Hughes Medical Institute.
+May 3, 2011
+
+
+
+ 
+
+
+E
+
+ 
+Making a Difference: an interview with Dr Gordon Mills
+Video interview at EMCC 2011 in Stockholm with Dr Gordon B. MIlls, chairman of the Department of Systems Biology, Chief of the Section of Molecular Therapeutics, Professor of Medicine and Immunology, and Anne Rife Cox Chair in Gynecology at the MD Anderson Cancer Center.
+October 4, 2011
+
+
+
+ 
+
+
+E
+
+ 
+New research demonstrates the link between inflammation and early development of colon cancer
+Interview with Dr Ray DuBois, Provost & Executive Vice President, The University of Texas MD Anderson Cancer Center, on the potential role of inflammation and silencing of tumour suppressor genes in early colorectal cancer.
+January 23, 2012
+
+
+
+ 
+
+
+E
+
+ 
+Update on Medivation’s MDV3100 in advanced prostate cancer
+Interview with Dr David Hung, CEO of Medivation
+January 31, 2012
+
+
+
+ 
+
+
+E
+
+ 
+Raised platelets reduce survival in ovarian cancer
+Interview with Dr. Anil K. Sood who is Professor and Director of the Blanton-Davis Ovarian Cancer Research Program in the Departments of Gynecologic Oncology and Cancer Biology at the M. D. Anderson Cancer Center.
+February 15, 2012
+
+
+
+ 
+
+
+E
+
+ 
+Cancer Clinical Trials: Companion Diagnostics or Gene Sequencing?
+Interview with Dr Razelle Kurzrock, who heads up the Department of Investigational Cancer Therapeutics group at the MD Anderson Cancer Center.
+February 21, 2012
+
+
+
+ 
+
+
+E
+
+ 
+Update on advanced prostate cancer including enzalutamide (MDV3100) and abiraterone
+Interview with Dr Neal Shore, one of the AFFIRM trialists about his perspective of the impact of enzalutamide on his patients.  
+May 25, 2012
+
+
+
+ 
+
+
+E
+
+ 
+Making a difference in pancreatic cancer – an interview with Dr Hedy Lee Kindler
+Interview with Dr Hedy Lee Kindler on new developments in advanced pancreatic cancer at ASCO GI
+February 12, 2013
+
+
+
+ 
+
+
+E
+
+ 
+Making a difference in Advanced Prostate Cancer – an interview with Bertrand Tombal
+Interview with Prof Bertrand Tombal on enzalutamide in advanced hormone sensitive prostate cancer at ASCO GU
+February 15, 2013
+
+
+
+ 
+
+
+E
+
+ 
+Exciting times in CLL: an ASCO 2013 interview with Dr Susan O’Brien
+Video interview at ASCO 2013 with Dr Susan O'Brien, Ashbel Smith Professor in the Department of Leukemia at the University of Texas, MD Anderson Cancer Center in Houston, in which she discusses many of the exciting new targeted therapies that are set to change the treatment of chronic lymphocytic leukemia (CLL).
+June 10, 2013
+
+
+
+ 
+
+
+E
+
+ 
+Making a difference in NHL and CLL: an interview with Dr Carol Gallagher
+Dr Carol Gallagher is the former CEO of Calistoga before it was acquired by Gilead.  CAL-101, a PI3K-delta inhibitor is now known as idelalisib and in phase 3 development for CLL and indolent NHL.
+This is a great example of a successful R&D strategy for a targeted therapy that is making a difference to patients lives.
+January 10, 2014
+
+
+
+ 
+
+
+
+error: Content is protected !!
+
+
+
+
+
+
+
+
+Susan Desmond-Hellman - Biography - A History of UCSF
+
+
+
+
+
+
+
+
+
+
+
+
+University of California San Francisco
+
+
+
+
+About UCSF
+Search UCSF
+UCSF Medical Center
+
+
+
+
+A History of UCSF
+
+
+
+People
+SUSAN DESMOND-HELLMAN (1958-)
+
+Susan Desmond-Hellmann, MD, MPH, was born in Napa, California. Her father, a pharmacist, and mother, a teacher, raised the family of seven children in Reno, Nevada.
+
+
+Desmond-Hellmann earned a Bachelor of Science degree at the University of Nevada, Reno in 1978 where she majored in pre-medicine. She continued on at UNR to earn her medical degree, graduating in 1982. Desmond-Hellmann later earned a master's degree in public health from UC Berkeley.
+
+
+Desmond-Hellmann first came to UCSF in 1982 as an intern—an experience she says "transformed her" — and later served as chief resident. After completing her clinical training, she joined the UCSF faculty as associate adjunct professor of epidemiology and biostatistics and served two years as visiting faculty at the Uganda Cancer Institute, studying HIV/AIDS and cancer. Desmond-Hellmann then spent two years as a medical oncologist in private practice and afterward returned to clinical research.
+
+
+Desmond-Hellmann worked for Genentech from 1995-2009, first as a clinical scientist. She was named chief medical officer in 1996 and executive vice president of development and product operations in 1999. Desmond-Hellmann served as president of product development at Genentech from March 2004-2009 and was responsible for preclinical and clinical development, process research and development, business development and product portfolio management.
+
+
+In August of 2009, Desmond-Hellmann was named UCSF's ninth chancellor and became the first woman to hold the post. As chancellor, Desmond-Hellmann was actively involved in shaping biomedical policy and served as a member of the National Institutes of Health's advisory committee on the National Center for Advancing Translational Science. She also championed the new field of precision medicine, putting it on the roadmap for UCSF and the nation. To that end, in 2011 Desmond-Hellmann co-chaired a National Academy of Sciences (NAS) committee that produced the report, "Toward Precision Medicine: Building a Knowledge Network for Biomedical Research and a New Taxonomy of Disease." 
+
+
+She led the OME Precision Medicine Summit at UCSF Mission Bay in May 2013, a first-of-its-kind conference, which drew 170 of the world's foremost thinkers, creators and innovators in detailed discussions on how to medicine more proactive, preventive and precise.
+
+
+Under her leadership and guidance, UCSF's excellence in patient care, research and education, and its public mission grew along with its size.  UCSF's Mission Bay campus continued to thrive, adding the $1.5 billion state-of-the-art UCSF Medical Center at Mission Bay, which allowed for expansion of patient care services for women, children and cancer patients. "Mission Bay gives us new space and new opportunities for programs and to bring in new faculty," said Desmond-Hellmann. "It has allowed us to execute our mission of advancing health worldwide™ in ways that had been constrained. It's a huge uplift for everything we care about."
+
+
+Desmond-Hellmann stepped down from chancellor of UCSF in March of 2014 to become the chief executive officer of the Bill & Melinda Gates Foundation. Praising Desmond-Hellmann's contributions to UCSF, UC President Janet Napolitano said: "With acrobatic precision, the Chancellor developed and executed an ambitious and creative vision for the campus, while navigating it through one of the worst fiscal crises in UC's history. She has been a champion of diversity, transparency and public service. Development of the [UCSF] Benioff Children's Hospital and her innovations in health care delivery are but two examples of her impact, not just on UCSF but also on the community it serves and within the broader realm of global health."
+
+
+Desmond-Hellmann has garnered many distinctions. She was listed in Fortune magazine's "Top 50 Most Powerful Women in Business" in 2001 and from 2003-2008, listed as a "Woman to Watch" by the Wall Street Journal from 2004-2006, Healthcare Businesswomen's Association 2006 "Woman of the Year," named to the Biotech Hall of Fame in 2007, was inducted into the American Academy of Arts and Sciences and elected to the Institute of Medicine in 2010, and awarded an honorary Doctor of Science degree by Princeton University in 2011.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE STORY
+
+SPECIAL TOPICS
+
+PEOPLE
+
+PHOTOS
+
+BUILDINGS
+
+HOME
+
+
+
+
+
+
+CONTACT USABOUTRELATED LINKS
+
+© The Regents of the University of California
+
+
+
+
+
+
+
+
+
+TEDMED - Speaker: Susan Desmond-Hellmann
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Susan Desmond-Hellmann
+
+
+            Susan Desmond-Hellmann, MD, MPH became the ninth Chancellor of the University of California, San Francisco (UCSF) in August 2009. An oncologist and renowned biotechnology leader, Desmond-Hellmann holds the Arthur and Toni Rembe Rock Distinguished Professor appointment at UCSF. In her role as Chancellor, she oversees all aspects of the university and medical center’s strategy and operations.In her first three years as Chancellor, Desmond-Hellmann has overseen an in-depth review of the University’s business model, developed a three-year plan with associated goals, supported the creation of research partnerships with industry leaders such as Pfizer and Bayer, and appointed UCSF’s first Vice Chancellor of Diversity and Outreach.  She also has been actively involved in shaping biomedical policy. In 2011, Desmond-Hellmann co-chaired a National Academies committee that produced the report, “Toward Precision Medicine: Building a Knowledge Network for Biomedical Research and a New Taxonomy of Disease.” She also served as a member of the National Institutes of Health’s advisory committee on the National Center for Advancing Translational Science (NCATS). Prior to joining UCSF, Desmond-Hellmann spent 14 years at Genentech. From 2004-2009, she served as President, Product Development. In this role, she was responsible for Genentech’s pre-clinical and clinical development, process research and development, business development and product portfolio management. During her tenure, Desmond-Hellmann led efforts to bring a number of breakthrough cancer medicines to the marketplace. BayBio honored her with a biotechnology lifetime achievement award in 2009. Desmond-Hellmann is the recipient of numerous honors and awards. In November 2009, Forbes magazine named her one of the world's seven most "powerful innovators," calling her "a hero to legions of cancer patients." She was listed among Fortune magazine’s “top 50 most powerful women in business” for seven years and, in 2010, was inducted into the American Academy of Arts and Sciences and elected to the Institute of Medicine. In June 2011, Princeton University awarded her an honorary Doctor of Science degree.In December 2010, Desmond-Hellmann was appointed to the board of directors of Procter & Gamble (P&G). She also serves on the California Academy of Sciences board of trustees and the Albert and Mary Lasker Foundation’s board of directors.Desmond-Hellmann completed her clinical training at UCSF and is board-certified in internal medicine and medical oncology. She holds a master’s degree in public health from the University of California, Berkeley. During her training at UCSF, she spent two years as a visiting faculty member at the Uganda Cancer Institute, studying HIV/AIDS and cancer. She later worked two years in private practice as a medical oncologist before returning to clinical research.
+        
+
+
+Talks
+
+
+
+
+
+
+
+16:26
+
+Attention stressed-out docs: Can the consumer be the "cavalry" that rescues you?
+
+                                
+                                Susan Desmond-Hellmann
+                                
+                            
+
+
+
+
+
+                                    2013
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CEO, Bill & Melinda Gates Foundation.
+
+
+Share
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+120
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Related Talks
+
+
+
+
+
+07:44
+
+Don't take life tutu seriously
+Bob Carey
+
+
+
+
+
+
+
+11:59
+
+One more reason to get a good night’s sleep
+Jeffrey Iliff
+
+
+
+
+
+
+
+21:50
+
+How did I 'Stand Up to Cancer'?
+Laura Ziskin
+
+
+
+
+
+
+
+28:04
+
+What will the unveiling of a full Osbourne genome reveal?
+Ozzy & Sharon Osbourne and Nathaniel Pearson
+
+
+
+
+
+
+
+17:21
+
+What happens when the data of health is inspired by the poetry of care?
+Sekou Andrews
+
+
+
+
+
+
+
+03:24
+
+Are you nuts for prevention?
+Zubin Damania
+
+
+
+
+
+Tags
+
+Fun
+
+Keywords
+
+Healthcare
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+×Close
+
+
+
+
+
+ 

@@ -1,0 +1,15429 @@
+Data Dumps  |  Freebase API (Deprecated)
+       |  Google Developers
+    
+    
+      
+        Freebase API (Deprecated)
+      
+    
+    
+    All Products
+  
+  Sign in
+
+  
+  Send feedback
+  
+
+
+
+
+
+            Hey there! Are you maybe looking for Firebase instead?
+
+            
+
+
+
+
+
+
+
+    Data Dumps
+  
+
+
+The Freebase API will be completely shut-down on Aug 31 2016. This page provides access to the last available data dump. Read more.
+Data Dumps are a downloadable version of the data in Freebase. They constitute a snapshot of the data stored in Freebase and the Schema that structures it, and are provided under the same CC-BY license. The Freebase/Wikidata mappings are provided under the CC0 license.
+
+Freebase Triples
+Freebase Deleted Triples
+Freebase/Wikidata Mappings
+License
+Citing
+
+Freebase Triples
+
+
+This dataset contains every fact currently in Freebase.
+
+Total triples: 1.9 billion
+Updated: Weekly
+Data Format: N-Triples RDF
+License: CC-BY
+
+22 GB gzip250 GB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/g.11vjz1ynm> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.date> "2001-02"^^<http://www.w3.org/2001/XMLSchema#gYearMonth>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.source> <http://rdf.freebase.com/ns/g.11x1gf2m6>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/type.object.type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://rdf.freebase.com/ns/measurement_unit.dated_percentage.rate> 4.5 .
+<http://rdf.freebase.com/ns/g.11vjz1ynm>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://rdf.freebase.com/ns/measurement_unit.dated_percentage>  .
+
+
+If you're writing your own code to parse the RDF dumps its often more efficient to read directly from GZip file rather than extracting the data first and then processing the uncompressed data.
+<subject>  <predicate>  <object> .
+Note: In Freebase, objects have MIDs that look like /m/012rkqx. In RDF those MIDs become m.012rkqx. Likewise, Freebase schema like /common/topic are written as common.topic.
+The subject is the ID of a Freebase object. It can be a Freebase MID (ex. m.012rkqx) for topics and CVTs or a human-readable ID (ex. common.topic) for schema.
+The predicate is always a human-readable ID for a Freebase property or a property from a standard RDF vocabulary like RDFS. Freebase foreign key namespaces are also used as predicates to make it easier to look up keys by namespace.
+The object field may contain a Freebase MID for an object or a human-readable ID for schema from Freebase or other RDF vocabularies. It may also include literal values like strings, booleans and numeric values.
+Topic descriptions often contain newlines. In order to make each triple fit on one line, we have escaped newlines with "\n".
+Freebase Deleted Triples
+We also provide a dump of triples that have been deleted from Freebase over time. This is a one-time dump through March 2013. In the future, we might consider providing periodic updates of recently deleted triples, but at the moment we have no specific timeframe for doing so, and are only providing this one-time dump. 
+
+The dump is distributed as a .tar.gz file (2.1Gb compressed, 7.7Gb uncompressed). It contains 63,036,271 deleted triples in 20 files (there is no particular meaning to the individual files, it is just easier to manipulate several smaller files than one huge file).
+
+
+Thanks to Chun How Tan and John Giannandrea for making this data release possible.
+
+
+
+
+Total triples: 63 million
+Updated: June 9, 2013
+Data Format: CSV
+License: CC-BY
+
+2 GB gzip8 GB uncompressed
+
+Download
+
+
+
+The data format is essentially CSV with one important caveat. The object field may contain any characters, including commas (as well as any other reasonable delimiters you could think of). However, all the other fields are guaranteed not to contain commas, so the data can still be parsed unambiguously.
+
+The columns in the dataset are defined as:
+
+creation_timestamp (Unix epoch time in milliseconds)
+creator
+deletion_timestamp (Unix epoch time in milliseconds)
+deletor
+subject (MID)
+predicate (MID)
+object (MID/Literal)
+language_code
+
+
+
+CSV
+1352854086000,/user/mwcl_wikipedia_en,1352855856000,/user/mwcl_wikipedia_en,/m/03r90,/type/object/key,/wikipedia/en/$B816,en
+1355171076000,/user/mwcl_musicbrainz,1364258198000,/user/turtlewax_bot,/m/0nncp9z,/music/recording/artist,/m/01vbfm4,en
+1176630380000,/user/mwcl_images,1335928144000,/user/gardening_bot,/m/029w57m,/common/image/size,/m/0kly56,en
+1292854917000,/user/mwcl_musicbrainz,1364823418001,/user/mbz_pipeline_merge_bot,/m/0fv1vl8,/type/object/type,/common/topic,en
+1205530905000,/user/mwcl_images,1336022041000,/user/gardening_bot,/m/01x5scz,/common/licensed_object/license,/m/02x6b,en
+1302391361000,/user/content_administrator,1336190973000,/user/gardening_bot,/m/0gkb45y,/type/object/type,/type/content,en
+1176728962002,/user/mwcl_images,1335954186000,/user/gardening_bot,/m/08430h,/common/topic/image,/m/02cs147,en
+1172002568007,/user/mwcl_chefmoz,1283588560000,/user/delete_bot,/m/01z4c1z,/type/object/name,La Casa Rosa Mexican Restaurant,en
+
+
+Freebase/Wikidata Mappings
+
+
+The data has been created based on the Wikidata-Dump of October 28, 2013, and contains only those links that have at least two common Wikipedia-Links and not a single disagreeing Wikipedia-Link. Furthermore, the lines are sorted by the number of common Wikipedia-Links (although in Turtle this does not really matter).
+
+Total triples: 2.1M
+Updated: October 28, 2013
+Data Format: N-Triples RDF
+License: CC0
+
+21.2 MB gzip242.9 MB uncompressed
+
+Download
+
+
+
+The RDF data is serialized using the N-Triples format, encoded as UTF-8 text and compressed with Gzip.
+
+
+RDF
+<http://rdf.freebase.com/ns/m.0695j>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q6718> .
+<http://rdf.freebase.com/ns/m.05nrg>  <http://www.w3.org/2002/07/owl#sameAs7>  <http://www.wikidata.org/entity/Q538> .
+<http://rdf.freebase.com/ns/m.0jgd>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q414> .
+<http://rdf.freebase.com/ns/m.0d_23>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q2537> .
+<http://rdf.freebase.com/ns/m.04g7d>  <http://www.w3.org/2002/07/owl#sameAs>  <http://www.wikidata.org/entity/Q315> .
+
+
+License
+Freebase Data Dumps are provided free of charge for any purpose with regular updates by Google. They are distributed, like Freebase itself, under the Creative Commons Attribution (aka CC-BY) and use is subject to the Terms of Service.
+The Freebase/Wikidata ID mappings are provided under CC0 and can be used without restrictions.
+Citing
+If you'd like to cite these data dumps in a publication, you may use:
+
+Google, Freebase Data Dumps, https://developers.google.com/freebase/data, <month> <day>, <year>
+
+Or as BibTeX:
+
+
+BibTex
+
+@misc{freebase:datadumps,
+  title = "Freebase Data Dumps"
+  author = "Google",
+  howpublished = "\url{https://developers.google.com/freebase/data}",
+  edition = "<month> <day>, <year>",
+  year = "<year>"
+}
+
+
+
+
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License, and code samples are licensed under the Apache 2.0 License. For details, see our Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated February 10, 2017.
+    
+
+
+
+
+Send feedback about...
+          
+          This page
+        
+            
+            Documentation feedback
+          
+        Freebase API (Deprecated)
+        
+            
+            Product feedback
+          
+        
+        Cancel
+      
+
+
+
+Insider Trading - Union Square Ventures 2008 Lp - Form 4 SEC Filings
+
+
+
+
+
+
+
+
+
+
+
+
+Home |
+Archives |
+Products |
+About |
+Contact |
+FAQ |
+
+
+
+New User?
+Sign Up | 
+Sign In
+
+
+
+
+
+
+
+
+
+Form 4 Filings
+
+
+Insider Buys
+
+
+Significant Buys
+
+
+Penny StocksInsider Buying
+
+
+Insider Sales
+
+
+
+
+Insider Buy Sell Ratios
+
+
+Stock Options
+
+
+Insider TradingStock Screener
+
+
+Insider TradingGraph View
+
+
+Insider Watch
+
+
+
+
+
+Sec Filings Insider Trading - Union Square Ventures 2008 Lp
+
+
+
+
+
+Select Time period: 
+1 Month
+2 Months
+3 Months
+6 Months
+1 Year
+2 Years
+3 Years
+4 Years
+All Data
+ 
+
+     
+
+
+
+google
+
+   
+
+
+
+yahoo!
+
+
+
+Send this page to:  
+
+Blog
+  
+
+
+
+Digg
+
+  
+
+
+
+Reddit
+
+  
+
+
+
+Facebook
+
+  
+
+
+
+Stumble
+
+  
+
+
+
+del.icio.us
+
+
+
+
+
+
+
+
+Enter Stock Ticker Symbol or Cik:
+
+
+
+
+Cik Lookup...
+
+
+
+
+
+
+Search By Company or Insider Name:
+
+
+
+
+
+
+
+"Insiders might sell their shares for any number of reasons, but they buy them for only one:
+they think the price will rise"
+- Peter Lynch ==>>
+
+What is insider trading>>
+
+
+
+Email a friend >>...
+
+
+
+
+
+
+
+Historical filings delayed by 6 months. New user?
+Sign Up for real time data.
+Existing user?
+Sign In
+
+Stock options: Exercise, Award, Grant, Conversion
+
+
+
+TransactionDate
+ReportedDate
+ExercisableExpiration
+Company
+Symnbol
+InsiderRelationship
+SharesTraded
+ConversionPrice
+SharesOwned
+Filing
+
+
+
+
+2016-12-20Other
+2016-12-224:04 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+9,068,262
+$0
+750,000(Direct)
+View
+
+
+2016-10-14Conversion
+2016-12-125:27 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+9,818,262
+$0
+9,818,262(Direct)
+View
+
+
+2016-10-14Conversion
+2016-12-125:27 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+9,818,262
+$0
+9,818,262(Direct)
+View
+
+
+2016-06-28Conversion
+2016-06-287:25 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+7,122,508
+$0
+9,818,262(Direct)
+View
+
+
+2016-06-28Conversion
+2016-06-287:25 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+1,607,762
+$0
+9,818,262(Direct)
+View
+
+
+2016-06-28Conversion
+2016-06-287:25 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+1,087,992
+$0
+9,818,262(Direct)
+View
+
+
+2016-06-28Other
+2016-06-287:25 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+9,818,262
+$0
+9,818,262(Direct)
+View
+
+
+2016-06-28Conversion
+2016-06-287:25 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+7,122,508
+$0
+9,818,262(Direct)
+View
+
+
+2016-06-28Conversion
+2016-06-287:25 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+1,607,762
+$0
+9,818,262(Direct)
+View
+
+
+2016-06-28Conversion
+2016-06-287:25 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+1,087,992
+$0
+9,818,262(Direct)
+View
+
+
+2016-06-28Other
+2016-06-287:25 pm
+N/AN/A
+Twilio Inc
+TWLO
+Union Square Ventures 2008 Lp10% Owner
+9,818,262
+$0
+9,818,262(Direct)
+View
+
+
+
+
+
+
+
+
+
+    © 2005-2017 SecForm4.Com All rights reserved.
+    Archives:
+    2017 2016 2015 2014 2013 2012 ... 
+    Fri, 28 Jul 2017 21:37:31 -0500
+  
+
+    SEC is the U.S. Securities and Exchange Commission. EDGAR is a trademark of the SEC.
+    SecForm4.Com is not affiliated with or approved by the U.S. Securities and Exchange Commission (SEC).
+Terms of Use |
+    Privacy Statement |
+  
+
+
+
+
+
+
+
+
+
+
+UNION SQUARE VENTURES 2008 LP - CEO, founder, businessman - profile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+directorpedia.net - List of CEOs, founders, board members and company directors
+
+
+
+
+
+
+
+
+
+
+
+UNION SQUARE VENTURES 2008 LP
+Check out list of companies and businesses related to UNION SQUARE VENTURES 2008 LP. Find out UNION SQUARE VENTURES 2008 LP address and contact details. View other people related to UNION SQUARE VENTURES 2008 LP - coworkers, colleagues, companions, etc.
+Address:   
+
+915 BROADWAY, 19TH FLOOR  NEW YORK 10010 NY
+
+
+
+
+Companies related to UNION SQUARE VENTURES 2008 LP
+CIKCompany NamePositionCompany Address0001447669TWILIO INC10% Owner 375 BEALE ST SUITE 300 San Francisco 94105
+
+
+
+
+UNION SQUARE VENTURES 2008 LP on the Web
+Persons related to UNION SQUARE VENTURES 2008 LP - TWILIO INCNamePositionCity15 Angels LLCNEW YORKWenger  AlbertSan FranciscoWenger  AlbertSan FranciscoBessemer Venture Partners VII Institutional L.P.LARCHMONTBessemer Venture Partners VII L.P.10% Owner LARCHMONTBVP VII SPECIAL OPPORTUNITY FUND LPLARCHMONTDeeter  ByronSan FranciscoRICHARD L  DALZELLDirector SEATTLEMcClure  DaveSan FranciscoDeer VII & Co. L.P.LARCHMONTDeer VII & Co. Ltd.LARCHMONTByron B  DeeterDirector LARCHMONTELENA A.  DONIODirector REDMONDJEFFREY E  EPSTEINDirector NORWALKCooke  EvanSan FranciscoCooke  EvanSan FranciscoLawson  JeffSan FranciscoLawson  JeffSan FranciscoMcGeever  JimSan FranciscoWolthuis  JohnSan FranciscoSmith  KarynSan FranciscoLee  KirkpatrickChief Financial Officer SAN FRANCISCOJeff  LawsonChief Executive Officer SAN FRANCISCOKirkpatrick  LeeSan FranciscoJames  McGeeverDirector SAN MATEORoy  NgChief Operating Officer SAN FRANCISCOScott Campbell  RaneyDirector MENLO PARKDalzell  RickSan FranciscoERIKA  ROTTENBERGDirector MOUNTAIN VIEWNg  RoySan FranciscoRaney  ScottSan FranciscoKaryn  SmithGeneral Counsel and Secretary SAN FRANCISCO
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Union Square Ventures Is Raising A New $200 Million Opportunity Fund  |  TechCrunch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+Menu
+
+
+Search
+
+
+
+
+Follow Us
+Facebook
+
+Instagram
+
+Twitter
+
+Youtube
+
+Flipboard
+
+LinkedIn
+
+Google+
+
+RSS
+
+
+More
+
+
+Youtube
+
+Flipboard
+
+LinkedIn
+
+Google+
+
+RSS
+
+
+
+
+
+
+								Got a tip? Let us know.
+
+
+
+
+
+
+
+
+
+Message Us
+
+
+
+
+Search TechCrunch
+Search TechCrunch
+
+
+
+Search
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+
+
+
+
+
+
+Hi!
+
+		You are about to activate our Facebook Messenger news bot. Once subscribed, the bot will send you a digest of trending stories once a day. You can also customize the types of stories it sends you.
+	
+
+		Click on the button below to subscribe and wait for a new Facebook message from the TC Messenger news bot.
+	
+
+		Thanks,
+		TC Team
+	
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Disrupt SFDiscover the frontiers of security and privacy at Disrupt SF 2017								
+																			And save $1000 on tickets																												
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Union Square Ventures
+
+
+
+
+
+
+
+The “Instagram for doctors” just raised a fresh $10 million
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chat app Kik takes on Facebook with developer ecosystem built on the blockchain
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A year after its launch, Tech:NYC has become a force in New York politics
+
+
+
+
+
+
+
+
+
+
+
+
+
+Browse more...
+
+
+
+
+
+
+
+
+
+Union Square Ventures Is Raising A New $200 Million Opportunity Fund
+
+
+	Posted Dec 28, 2010 by Erick Schonfeld (@erickschonfeld)
+
+
+
+
+0
+SHARES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next Story
+
+Hey, Look, Asus EEE Pad Teaser Pics
+
+
+
+
+
+
+
+
+
+
+
+
+Update 1/15/11: Union Square ended up raising $165 million for this fund.  More info here.
+Union Square Ventures is raising $200 million for a new fund called the Union Square Ventures Opportunity Fund LP. According to an SEC filing, the VC firm already raised $135 million for the fund from 19 investors.  The last time Union Square raised money was for its $156 million Union Square Ventures 2008 LP fund.
+Union Square Ventures is the leading early stage VC firm in New York City led by Fred Wilson, Brad Burnham, and Albert Wenger.  The filing also lists a new partner, John Buttrick.  Its portfolio includes Twitter, Foursquare, Zynga, Tumblr, Boxee, Disqus, Etsy, Clickable, and Indeed.
+Partner Fred Wilson is well known for betting on startups right out of the gate before most other VCs will touch them, and is also highly-visible because of his popular blog, A VC.  He recently raised concerns about too many venture investors chasing returns, wanting to invest in venture startups without really understanding their business.  But in that same post he also wrote:
+The venture capital business is showing good returns for the first time in a decade. The sectors that are performing best are web services and early stage/seed investing. These are sectors we have been investing in for over fifteen years. We’ve seen these sectors boom and bust before and we’ll probably see it again. We are committed to these sectors and have no plans to leave them.
+Union Square’s new Opportunity Fund will presumably focus on the same sorts of early stage Internet startups Union Square is so good at sniffing out.  Although the name is different its previous funds, which are differentiated by date.  So it is possible that the Opportunity fund will focus on a different set of opportunities.  I have an email out to Union Square about this and will update when I hear back.
+Update: Fred Wilson says: “We cannot comment at this time because we’re still in the process of raising the fund.  We look forward to giving you a full report when that process concludes, which is expected later in January”
+
+
+
+
+
+0
+SHARES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Advertisement		
+
+
+
+
+
+
+
+
+
+
+
+
+			Advertisement		
+
+
+
+ 
+
+
+
+	Newsletter Subscriptions
+
+
+
+
+
+
+
+
+
+The Daily Crunch
+Get the top tech stories of the day delivered to your inbox
+
+
+
+
+
+
+TC Weekly Roundup
+Get a weekly recap of the biggest tech stories
+
+
+
+
+
+
+Crunchbase Daily
+The latest startup funding announcements
+
+
+
+
+
+Enter Address
+
+Subscribe
+
+
+SEE ALL NEWSLETTERS »
+			
+
+
+ 
+
+
+		Latest Crunch Report 
+
+
+
+
+
+
+
+Jeff Bezos Becomes World's Richest Person | Crunch Report
+
+
+
+
+
+Watch More Episodes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							Union Square Ventures						
+
+
+
+Popular Posts
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Featured Stories
+
+
+
+
+
+ 
+
+Dear Floyd Mayweather, you’re why the SEC exists
+6 hours ago | John Mannes
+
+
+
+
+
+
+ 
+
+Anonymous app Whisper lays off 20% of staff to survive
+7 hours ago | Josh Constine
+
+
+
+
+
+
+ 
+
+Foxconn’s long con
+7 hours ago | John Biggs
+
+
+
+
+
+
+ 
+
+What to expect from Tesla as the Model 3 hits the road
+9 hours ago | Darrell Etherington
+
+
+
+
+
+
+
+
+
+Latest From TechCrunch
+
+
+
+
+
+ 
+
+PayPal co-founder Luke Nosek leaving Founders Fund, reportedly for SpaceX-focused fund
+37 minutes ago | Katie Roof
+
+
+
+
+
+
+ 
+
+Sprint could sell pieces to Comcast and Charter before attempting T-Mobile merger
+1 hour ago | Devin Coldewey
+
+
+
+
+
+
+ 
+
+CRISPR’d human embryos doesn’t mean designer babies are around the corner
+2 hours ago | Sarah Buhr
+
+
+
+
+
+
+ 
+
+Dear Floyd Mayweather, you’re why the SEC exists
+6 hours ago | John Mannes
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+blog comments powered by Disqus
+
+
+
+
+
+
+
+
+
+
+
+
+
+Up Next
+Hey, Look, Asus EEE Pad Teaser Pics
+
+	Posted Dec 28, 2010  
+
+
+
+CrunchBoard
+
+Job Listings
+
+
+
+Software Engineer - Java (Contract) at Motorola Solutions (Seattle, WA, United States)
+
+
+
+
+Senior Android and IOS Developer (Contract) at Motorola Solutions (Seattle, WA, United States)
+
+
+
+
+Sr Software Engineer (Back End) at Etleap (San Francisco, CA, United States)
+
+
+
+
+Data Engineer at Etleap (San Francisco, CA, United States)
+
+
+
+
+Full Stack Developer at Laborocity (Radnor, PA, United States)
+
+
+
+
+More from CrunchBoard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Advertisement		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+News
+
+
+
+
+Startups
+Mobile
+Gadgets
+Enterprise
+Social
+Europe
+Asia
+Crunch Network
+Unicorn Leaderboard
+Gift Guides
+All GalleriesAll Timelines 
+
+
+
+
+Videos
+
+
+
+
+Apps
+Bullish
+Crunch Report
+Disrupt NY 2017
+Judah vs the Machines
+All ShowsAll Videos 
+
+
+
+
+Events
+
+
+
+
+Disrupt
+Startup Battlefield
+Battlefield Africa
+Battlefield Australia
+Crunchies
+Meetups
+International City Events
+Hackathon
+Sessions
+Include
+TechCrunch Store
+All Events 
+
+
+Crunchbase
+
+
+
+
+
+
+
+
+
+
+
+
+
+				Message Us			
+
+
+
+
+
+
+
+
+
+
+Most Popular
+
+
+
+
+
+								PayPal co-founder Luke Nosek leaving Founders Fund, reportedly for SpaceX-focused fund							
+
+								37 minutes ago by Katie Roof							
+
+
+
+								Sprint could sell pieces to Comcast and Charter before attempting T-Mobile merger							
+
+								1 hour ago by Devin Coldewey							
+
+
+
+								CRISPR’d human embryos doesn’t mean designer babies are around the corner							
+
+								2 hours ago by Sarah Buhr							
+
+
+
+								Dear Floyd Mayweather, you’re why the SEC exists							
+
+								6 hours ago by John Mannes							
+
+
+
+								Redfin soars 45% after IPO; CEO calls it ‘Amazon of real estate’							
+
+								6 hours ago by Katie Roof							
+
+
+
+								Using eye smiles to predict the state of your whole face in VR							
+
+								6 hours ago by Devin Coldewey							
+
+
+
+								Gas pump card skimmer now phones home							
+
+								6 hours ago by John Biggs							
+
+
+
+								iRobot’s CEO says the company never planned to sell Roomba home mapping data							
+
+								7 hours ago by Brian Heater							
+
+
+
+								Anonymous app Whisper lays off 20% of staff to survive							
+
+								7 hours ago by Josh Constine							
+
+
+
+								Amazon reportedly acquired GameSparks for $10M to build out its gaming muscle							
+
+								7 hours ago by Ingrid Lunden							
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Union Square Ventures - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Union Square Ventures
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+Type of business
+Private
+
+
+Founded
+2003
+
+
+Headquarters
+New York City, New York, U.S.
+
+
+Key people
+Fred Wilson, Managing Partner
+Brad Burnham, Managing Partner
+Albert Wenger, Managing Partner
+John Buttrick, Partner
+Andy Weissman, Managing Partner
+
+
+Website
+www.usv.com
+
+
+Union Square Ventures (USV), is an American New York-based venture capital firm, that manages assets totaling $1 billion as of March 2016.[1] The firm is one of the top returning venture capital funds in the world, its 2004 fund returning 13.91 times cash-on-cash with an IRR of 67.0%.[2] The firm has had a billion dollar exit every year since 2011 including Zynga ’11 at 7.7B, Indeed ’12 at 1.4B, Tumblr ’13 1.1B, Twitter ’13 at 14.2 B, Lending Club ’14 at 5.42B, Etsy ’15 at 1.78B and Twilio ’16 at 1.23B.[3] Additionally, the firm's founder Fred Wilson, who is well recognized as one of the best venture capitalists in the world,[4] has acquired a celebrity status in the tech world stemming in part to his blog AVC.com[5][6][7][8]
+
+
+
+Contents
+
+
+1 Firm
+2 Portfolio
+3 References
+4 External links
+
+
+
+Firm[edit]
+Union Square Ventures was founded in 2003 by Fred Wilson (a former partner of Flatiron Partners) and Brad Burnham (a former Executor in Residence with AT&T Ventures). The two men created USV with the intent of investing in and fostering the development of early-stage companies.[9] Their investments are “mostly U.S.-based Internet and mobile companies considered to be ‘disruptive’”.[10]
+In 2007, Albert Wenger, the former president of del.icio.us, joined the firm as a partner. The team was rounded out by the subsequent additions of John Buttrick and Betaworks founder Andy Weissman.
+USV is one of a handful of firms that regularly included in Red Herring’s lists of top venture capital firms.[11]
+In 2011, USV was deemed as being the best performing VC in the US based on investment return rate.[12]
+Portfolio[edit]
+Among USV’s notable early-stage investments are:
+
+
+Behance[13]
+Boxee[14]
+Casetext[15]
+Clarifai[15]
+Coinbase[16]
+Clue (mobile app)[15]
+CrowdRise[17]
+Del.icio.us[18]
+Disqus[19]
+Dronebase[15]
+DuckDuckGo
+Duolingo[20]
+Etsy[21]
+eShares[15]
+FeedBurner[22]
+Figure 1[23]
+Flurry[24]
+Foursquare[25]
+Funding Circle[26]
+goTenna[27]
+Indeed[28]
+Kickstarter[29]
+Koko [15]
+La Ruche[15]
+Meetup[30]
+MongoDB[31]
+OB1[15]
+Quizlet[15]
+Radionomy[32]
+SimScale[15]
+Shippo[33]
+Twitter[34]
+Work Market[35]
+Yieldmo[36]
+Zynga[37]
+
+
+References[edit]
+
+
+^ Union Square Ventures Site,"About Page" Mar 17, 2016
+^ [1]
+^ [2]
+^ [3]
+^ Moz "Rise of the Celebrity Investor" Nov 07, 2010
+^ TechCrunch "The Top 20 VC Power Bloggers of 2010" Jan 19, 2011
+^ "TechStars""Fred Wilson Bio" Jan 18, 2014
+^ "Ad Age""NYC's Top VC Fred Wilson is Rich…and Grumpy" Apr 17, 2011
+^ "New York Times"A New Kind of Venture Capitalist Makes Small Bets on Young Firms" Sept 22, 2008
+^ Wall Street Journal,"Union Square Ventures Rides Twitter and Tumblr Exits on Fundraising Trail" Nov 21, 2013
+^ Red Herring "Maximizing Venture Capital Investments" May 1, 2012
+^ Business Insider "It's Official: Union Square Ventures Is The Top VC in the World" April 9, 2011
+^ TechCrunch, "After 5 Years of Bootstrapping, Behance Nabs $6.5M From US, Jeff Bezos, Dave Morin & More" May 14, 2012.
+^ Variety, "Samsung Buys Internet Set-Top Startup Boxee" July 03, 2013.
+^ a b c d e f g h i j "Union Square Ventures Portfolio". Retrieved 18 December 2015. 
+^ Business Insider, "Fred Wilson- Here’s Why I’m Investing in Bitcoin" May 09, 2013.
+^ Weiss, Geoff. "CrowdRise, Ed Norton's Charitable Social Network, Raises $23 Million". Entrepreneur Media, Inc. Retrieved 24 April 2014. 
+^ Business Insider, "This Was The First Defining Investment We Ever Made" May 23, 2011.
+^ Shontell, Alyson (4 May 2011). "Disqus Raises A $10 Million Round And Closes In On 500 Million Monthly Uniques". Business Insider. Retrieved 1 October 2014. 
+^ Forbes, "Duolingo Gets $15 Million To Translate The World’s Text Through Online Learning" Sept 17, 2012.
+^ PE Hub, "Etsy Raises $40M From Index, Union Square, Burda" May 09, 2012.
+^ Mark Evans Tech, "FeedBurner Taps Union Square" Feb 07 2006. Archived February 1, 2014, at the Wayback Machine.
+^ The National Post, "How a Tweet Led to Toronto Medical Photo App Figure 1 Getting Backing from Union Square Ventures" Aug 26, 2014
+^ Gigaom, "Flurry Rides the Mobile Boom, Raises $25M with Eye Toward IPO" November 02, 2012.
+^ Business Insider, "Foursquare Raises $1.35 Million, Led By Union Square Ventures" Sept 04, 2009
+^ Venture Beat, "UK-based Funding Circle raises $37M to fund American small businesses" Oct 23, 2013
+^ TechCrunch, "goTenna Series B fuels vision to make local communication possible anywhere on the planet" April 13, 2017.
+^ Business Insider, "Indeed, An Almost Entirely Bootstrapped Job Search Giant, Gets A Monster Exit" Sept 25, 2012.
+^ All Things D, "Kickstarter Fesses Up: The Crowdsourced Funding Startup Has Funding, Too" Mar 17, 2011.
+^ Venture Beat, "Meetup Raises Undislosed sum From Union Square Ventures" July 24, 2008.
+^ Bloomberg Business Week, "MongoDB Now King of NYC Startups With $1.2 Billion Valuation" Archived February 22, 2014, at the Wayback Machine. Oct 04, 2013.
+^ "Vivendi Buys Majority Stake In Winamp, Shoutcast Owner Radionomy". Variety. Retrieved 18 December 2015. 
+^ "Shippo raises $7 million to further its goal of being Twilio for shipping". VentureBeat. Retrieved 2016-10-10. 
+^ PERLROTH, NICOLE. "Many Win in Offering, but Some Are Off List". NY Times. Retrieved 3 August 2015. 
+^ Venture Beat, Square Ventures, Spark Capital Invest in Work Market," June 14, 2010.
+^ AllThingsD, "Google Ventures Bets on Mobile Ad Startup YieldMo"," December 5, 2013.
+^ Beta Beat, "Zynga’s IPO is a Fund Maker for Union Square Ventures" July 01, 2011.
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Private equity and venture capital
+
+
+
+Basic investment types
+
+
+
+Buyout
+Venture
+Mezzanine
+Growth
+Secondaries
+Equity co-investment
+
+
+
+
+
+
+
+
+History
+
+
+
+History of private equity and venture capital
+Early history of private equity
+Private equity in the 1980s
+Private equity in the 1990s
+Private equity in the 2000s
+
+
+
+
+
+Terms and concepts
+
+
+
+
+
+Buyout
+
+
+
+
+Financial sponsor
+Management buyout
+Divisional buyout
+Buy–sell agreement
+Leveraged recapitalization
+Dividend recapitalization
+
+
+
+
+
+
+Venture
+
+
+
+
+Angel investor
+Business incubator
+Post-money valuation
+Pre-money valuation
+Seed money
+Startup company
+Venture capital financing
+Venture debt
+Venture round
+
+
+
+
+
+
+Structure
+
+
+
+
+Private equity firms and funds
+Limited partnership
+Limited liability company
+Carried interest
+Management fee
+Publicly traded private equity
+
+Business Development Company
+Venture capital trust
+
+
+Private investment in public equity (PIPE)
+Pledge fund
+
+
+
+
+
+
+
+
+Investors
+
+
+
+Corporations
+Institutional investors
+Pension funds
+Insurance companies
+Fund of funds
+Endowments
+Foundations
+Investment banks
+Merchant banks
+Commercial banks
+High-net-worth individuals
+Family offices
+Sovereign wealth funds
+Crowdfunding
+
+
+
+
+
+Related financial terms
+
+
+
+AUM
+Cap table
+Capital call
+Capital commitment
+Capital structure
+Distribution waterfall
+EBITDA
+Envy ratio
+High-yield debt
+IPO
+IRR
+Leverage
+Liquidation preference
+M&A
+PME
+Taxation of private equity and hedge funds
+Undercapitalization
+Vintage year
+
+
+
+
+
+
+
+
+Private equity and venture capital investors
+Private equity firms
+Venture capital firms
+Angel investors
+Portfolio companies
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Union_Square_Ventures&oldid=787531239"					
+Categories: Private equity firms of the United StatesCompanies based in New York CityCompanies established in 2003Venture capital firms of the United StatesHidden categories: Webarchive template wayback links 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+فارسیItalianoSuomi 
+Edit links 
+
+
+
+
+
+ This page was last edited on 25 June 2017, at 22:41.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+Union Square Ventures  |  TechCrunch | 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+Menu
+
+
+Search
+
+
+
+
+Follow Us
+Facebook
+
+Instagram
+
+Twitter
+
+Youtube
+
+Flipboard
+
+LinkedIn
+
+Google+
+
+RSS
+
+
+More
+
+
+Youtube
+
+Flipboard
+
+LinkedIn
+
+Google+
+
+RSS
+
+
+
+
+
+
+								Got a tip? Let us know.
+
+
+
+
+
+
+
+
+
+Message Us
+
+
+
+
+Search TechCrunch
+Search TechCrunch
+
+
+
+Search
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+
+
+
+
+
+
+Hi!
+
+		You are about to activate our Facebook Messenger news bot. Once subscribed, the bot will send you a digest of trending stories once a day. You can also customize the types of stories it sends you.
+	
+
+		Click on the button below to subscribe and wait for a new Facebook message from the TC Messenger news bot.
+	
+
+		Thanks,
+		TC Team
+	
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Disrupt SFDiscover the frontiers of security and privacy at Disrupt SF 2017								
+																			And save $1000 on tickets																												
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Union Square Ventures
+
+
+
+
+
+
+
+Europe
+
+
+
+
+
+A Cold, Dark, East London Cinema Witnesses Techstars London Demo Day
+
+
+					Feb 20, 2015				
+				 
+					by Mike Butcher 
+Techstars has had a fast 3 years in Europe. After Techstars London, led by the departing Jon Bradford, had been set up, it opened a further three programmes: in Berlin, the Techstars Metro Accelerator (around retail) and a fintec accelerator sponsored by Barclays Bank.
+Techstars London Demo Day today saw over 1,000 people signed up (the majority of whom actually turned up to a rented East… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal Tech Startup Casetext Raises $7 Million Series A Round Led By Union Square Ventures
+
+Feb 3, 2015 by Frederic Lardinois 
+
+
+
+
+
+
+Startups
+
+
+
+
+
+Fred Wilson On The New York Startup Scene And Why Too Much Money Is “The Root Of All Evil”
+
+
+					May 5, 2014				
+				 
+					by Anthony Ha 
+When Union Square Ventures’ Fred Wilson took the stage today at TechCrunch’s Disrupt New York conference, he elaborated on a recent blog post about “the valuation trap” and argued that “too much money is the root of all evil.”
+Wilson’s post was actually a response to an article in TechCrunch about the challenges Square and Box seem to be facing. Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Play Video
+
+
+
+
+VC Fred Wilson: By 2020 Apple Won’t Be A Top-3 Tech Company, Google And Facebook Will
+
+
+					May 5, 2014				
+				 
+					by Ingrid Lunden 
+Fred Wilson of New York’s Union Square Ventures, one of the top tech investors around, believes that by 2020, the biggest tech company in the world — Apple — will cease to be the most important, and won’t even be in the top three. Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fundings & Exits
+
+
+
+
+
+CloudFlare Reveals $50M Round From Union Square Ventures
+
+
+					Dec 17, 2013				
+				 
+					by Jordan Crook 
+In what is quite possibly a move to bolster valuation ahead of raising a new round,CloudFlare has revealed that it raised a $50 million Series C in December of 2012, according to CEO and co-founder Matthew Prince. 
+In case you’re unfamiliar with CloudFlare, it’s a service for website owners that offers protection from online threats, speeds up page load time, and optimizes… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apps
+
+
+
+
+
+The Football App Scores $7M Led By Union Square Ventures As It Preps For World Cup 2014
+
+
+					Oct 24, 2013				
+				 
+					by Steve O'Hear 
+There’s big money in football (or “soccer” as some TC readers like to say). And so it follows that there’s money to be made in corresponding apps that let fans engross themselves with the beautiful game.
+To that end, Berlin-headquartered The Football App has raised a further round of funding: $7 million led by New York-based Union Square Ventures (previous backer of… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Union Square Ventures Adds Hacker News-Like Link Sharing Community To Newly Designed Site
+
+
+					Oct 22, 2013				
+				 
+					by Leena Rao 
+Union Square Ventures, the New York-based VC firm that has backed Twitter, Foursquare, Etsy, Zynga and many others, has debuted a newly redesigned website today. A VC firm launching a new site isn’t usually big news, but in this case, USV has added an interesting new sharing community that draws comparisons to Y Combinator’s Hacker News. Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Startups
+
+
+
+
+
+CircleUp, An Investment Platform For Non-Techie Consumer Startups, Raises $7.5M Led By Union Square
+
+
+					May 7, 2013				
+				 
+					by Anthony Ha 
+CircleUp, a startup that connects investors with retail and consumer companies that wouldn’t attract traditional venture funding, has raised a $7.5 million Series A.
+The round was led by Union Square Ventures. New backer Google Ventures also participated, as did previous investors Rose Park Advisors, Maveron, and David Topper. Union Square’s Andy Weissman is joining the CircleUp… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Startups
+
+
+
+
+
+Union Square Ventures, Others Invest In Alternative Search Engine DuckDuckGo
+
+
+					Oct 13, 2011				
+				 
+					by Robin Wauters 
+In a blog post, Union Square Ventures‘ Brad Burnham just announced that the firm has invested in DuckDuckGo, a startup building a nifty search engine with less clutter and more privacy.
+Scott Banister, Jim Young, Jeff Miller, Joshua Schachter, Kal Vepuri, Joshua Stylman and Peter Hershberg also invested in the round, writes founder and CEO Gabriel Weinberg. Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+More news
+
+
+
+
+
+
+
+
+			Advertisement		
+
+
+
+ 
+
+
+
+
+
+		Latest Crunch Report 
+
+
+
+
+
+
+
+Jeff Bezos Becomes World's Richest Person | Crunch Report
+
+
+
+
+
+Watch More Episodes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sequoia, Accel, And Union Square Top SecondMarket’s New VC Scoreboard
+
+
+					Jul 26, 2011				
+				 
+					by Erick Schonfeld 
+Demand for private company shares declined in the second quarter versus the first quarter but was up sharply year-over-year, according to a new report released today by SecondMarket. The market for private company stock saw $112 million in transactions last quarter, versus $156 million in the first quarter, or down 39 percent sequentially.  On an annual basis, however, it was up 120 percent… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fred Wilson More Or Less Confirms Twitter Stock Sale, Says Secondary Sales Often "Prudent"
+
+
+					May 23, 2011				
+				 
+					by Leena Rao 
+To kick off TechCrunch Disrupt today in New York, Erick Schonfeld took the stage to interview investor Fred Wilson, of Union Square Ventures. For background, Wilson was early investor in Twitter, Zynga, Foursquare, Tumblr, and Etsy and is also a prolific blogger.
+Wilson sort of revealed that Union Square Ventures has sold some of its stock in Twitter. When Schonfeld  asked if he sold stock… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Is Late Stage the New Early? Behind the Staggering Return of the $1B Venture Fund
+
+
+					Mar 20, 2011				
+				 
+					by Sarah Lacy 
+In Silicon Valley it’s not just who you invest in that matters– it’s also when you invest in them. The earlier the investment, the riskier the bet. But the more jawdropping the returns if the company hits it big. It’s so lopsided, that typically just 5% of those unsure early bets create some 95% of the entire venture industry’s returns. Miss one of them, and it… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Video
+
+
+
+
+
+ 
+
+Play Video
+
+
+
+
+(Founder Stories) Fred Wilson, The Full Interview
+
+
+					Feb 19, 2011				
+				 
+					by Erick Schonfeld 
+What was the best business decision VC Fred Wilson ever made?  What was the worst? What part of his job does he dislike the most?  The answers might surprise you.  In the video above, Wilson answers some rapid fire questions (delivered in a not-so-rapid fashion) from Founder Stories host Chris Dixon.
+The clip is an outtake from the interviews segments we ran a week ago, in which Wilson talks… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Video
+
+
+
+
+
+ 
+
+Play Video
+
+
+
+
+(Founder Stories) Fred Wilson Explains Why He Wouldn't Invest In Groupon Or Pandora
+
+
+					Feb 12, 2011				
+				 
+					by Erick Schonfeld 
+Few VCs have a hotter hand right now than Fred Wilson.  His firm, Union Square Ventures, is an investor in Twitter, Zynga, Foursquare, Tumblr, Etsy, Clickable, and more .  In this episode of Founder Stories, he talks to host Chris Dixon about Union Square’s investment thesis has changed from going after all web apps to companies that are “building a large networks of engaged… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Video
+
+
+
+
+
+ 
+
+Play Video
+
+
+
+
+(Founder Stories) Fred Wilson On Frothy Valuations
+
+
+					Feb 10, 2011				
+				 
+					by Erick Schonfeld 
+With acquisition feelers out to Twitter for a reported $8 billion to $10 billion, bubble talk is once again the topic of discussion.  It’s a recurring theme, and on this episode of Founder Stories venture capitalist Fred Wilson talks to Chris Dixon about the frothy valuations in Techland.  Wilson is careful not to use the word “bubble,” but this is familiar ground for him.  He… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Union Square's New $165 Million Fund Is All About Growing With The Network
+
+
+					Jan 15, 2011				
+				 
+					by Erick Schonfeld 
+Back in December, we spotted an SEC filing indicating that Union Square Ventures was raising between $135 million and $200 million for a new “Opportunity Fund.”  The offering wasn’t complete and the firm could not discuss it, but today partner Fred Wilson explains in a post what the new fund (which ended up being a $165 million fund) is all about.
+The fund is not about… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Union Square Ventures Is Raising A New $200 Million Opportunity Fund
+
+
+					Dec 28, 2010				
+				 
+					by Erick Schonfeld 
+Union Square Ventures is raising $200 million for a new fund called the Union Square Ventures Opportunity Fund LP. According to an SEC filing, the VC firm already raised $135 million for the fund from 19 investors.  The last time Union Square raised money was for its $156 million Union Square Ventures 2008 LP fund.
+Union Square Ventures is the leading early stage VC firm in New York City led… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zemanta Raises $3 Million From Union Square, Eden, To Help You "Blog Smarter"
+
+
+					Nov 18, 2010				
+				 
+					by Robin Wauters 
+Exclusive – Zemanta, which assists bloggers by providing tips, suggesting content and helping them promote their contributions to the world, has recently secured its largest venture capital round to date. Previous investors Union Square Ventures and Eden Ventures have injected another $3 million into the European startup, bringing its total of capital raised since its inception to roughly… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index Ventures Buys Into Etsy, Triples Valuation To Nearly $300 Million
+
+
+					Aug 26, 2010				
+				 
+					by Erick Schonfeld 
+Crafty commerce site Etsy just raised another $20 million in its fifth venture round (that would be the Series E).  Index Ventures is the new investor leading the round, with partner Danny Rimer getting an observer’s seat on the board.   (The board is made up of founder Rob Kalin, Caterina Fake, Accel partner Jim Breyer and Union Square Ventures partner Fred Wilson).  Previous… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Patent Trolling Doesn't Pay: Intellectual Ventures Shows A Negative 73 Percent Return
+
+
+					Jul 28, 2010				
+				 
+					by Erick Schonfeld 
+You can always count on Hunch founder Chris Dixon for interesting Tweets.  He just sent out this one:
+turns out patent trolling might not pay. Intellectual Ventures has negative 78% return.http://bit.ly/bSfamC
+The link is a PDf download of a document from the University of Texas Management Company listing all of its private investments in venture funds and private equity funds, along with… Read More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Prev123Next 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+News
+
+
+
+
+Startups
+Mobile
+Gadgets
+Enterprise
+Social
+Europe
+Asia
+Crunch Network
+Unicorn Leaderboard
+Gift Guides
+All GalleriesAll Timelines 
+
+
+
+
+Videos
+
+
+
+
+Apps
+Bullish
+Crunch Report
+Disrupt NY 2017
+Judah vs the Machines
+All ShowsAll Videos 
+
+
+
+
+Events
+
+
+
+
+Disrupt
+Startup Battlefield
+Battlefield Africa
+Battlefield Australia
+Crunchies
+Meetups
+International City Events
+Hackathon
+Sessions
+Include
+TechCrunch Store
+All Events 
+
+
+Crunchbase
+
+
+
+
+
+
+
+
+
+
+
+
+
+				Message Us			
+
+
+
+
+
+
+
+
+
+
+Most Popular
+
+
+
+
+
+								PayPal co-founder Luke Nosek leaving Founders Fund, reportedly for SpaceX-focused fund							
+
+								37 minutes ago by Katie Roof							
+
+
+
+								Sprint could sell pieces to Comcast and Charter before attempting T-Mobile merger							
+
+								1 hour ago by Devin Coldewey							
+
+
+
+								CRISPR’d human embryos doesn’t mean designer babies are around the corner							
+
+								2 hours ago by Sarah Buhr							
+
+
+
+								Dear Floyd Mayweather, you’re why the SEC exists							
+
+								6 hours ago by John Mannes							
+
+
+
+								Redfin soars 45% after IPO; CEO calls it ‘Amazon of real estate’							
+
+								6 hours ago by Katie Roof							
+
+
+
+								Using eye smiles to predict the state of your whole face in VR							
+
+								6 hours ago by Devin Coldewey							
+
+
+
+								Gas pump card skimmer now phones home							
+
+								6 hours ago by John Biggs							
+
+
+
+								iRobot’s CEO says the company never planned to sell Roomba home mapping data							
+
+								7 hours ago by Brian Heater							
+
+
+
+								Anonymous app Whisper lays off 20% of staff to survive							
+
+								7 hours ago by Josh Constine							
+
+
+
+								Amazon reportedly acquired GameSparks for $10M to build out its gaming muscle							
+
+								7 hours ago by Ingrid Lunden							
+
+
+
+
+
+
+
+
+
+
+
+
+Union Square Ventures - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Union Square Ventures
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+Type of business
+Private
+
+
+Founded
+2003
+
+
+Headquarters
+New York City, New York, U.S.
+
+
+Key people
+Fred Wilson, Managing Partner
+Brad Burnham, Managing Partner
+Albert Wenger, Managing Partner
+John Buttrick, Partner
+Andy Weissman, Managing Partner
+
+
+Website
+www.usv.com
+
+
+Union Square Ventures (USV), is an American New York-based venture capital firm, that manages assets totaling $1 billion as of March 2016.[1] The firm is one of the top returning venture capital funds in the world, its 2004 fund returning 13.91 times cash-on-cash with an IRR of 67.0%.[2] The firm has had a billion dollar exit every year since 2011 including Zynga ’11 at 7.7B, Indeed ’12 at 1.4B, Tumblr ’13 1.1B, Twitter ’13 at 14.2 B, Lending Club ’14 at 5.42B, Etsy ’15 at 1.78B and Twilio ’16 at 1.23B.[3] Additionally, the firm's founder Fred Wilson, who is well recognized as one of the best venture capitalists in the world,[4] has acquired a celebrity status in the tech world stemming in part to his blog AVC.com[5][6][7][8]
+
+
+
+Contents
+
+
+1 Firm
+2 Portfolio
+3 References
+4 External links
+
+
+
+Firm[edit]
+Union Square Ventures was founded in 2003 by Fred Wilson (a former partner of Flatiron Partners) and Brad Burnham (a former Executor in Residence with AT&T Ventures). The two men created USV with the intent of investing in and fostering the development of early-stage companies.[9] Their investments are “mostly U.S.-based Internet and mobile companies considered to be ‘disruptive’”.[10]
+In 2007, Albert Wenger, the former president of del.icio.us, joined the firm as a partner. The team was rounded out by the subsequent additions of John Buttrick and Betaworks founder Andy Weissman.
+USV is one of a handful of firms that regularly included in Red Herring’s lists of top venture capital firms.[11]
+In 2011, USV was deemed as being the best performing VC in the US based on investment return rate.[12]
+Portfolio[edit]
+Among USV’s notable early-stage investments are:
+
+
+Behance[13]
+Boxee[14]
+Casetext[15]
+Clarifai[15]
+Coinbase[16]
+Clue (mobile app)[15]
+CrowdRise[17]
+Del.icio.us[18]
+Disqus[19]
+Dronebase[15]
+DuckDuckGo
+Duolingo[20]
+Etsy[21]
+eShares[15]
+FeedBurner[22]
+Figure 1[23]
+Flurry[24]
+Foursquare[25]
+Funding Circle[26]
+goTenna[27]
+Indeed[28]
+Kickstarter[29]
+Koko [15]
+La Ruche[15]
+Meetup[30]
+MongoDB[31]
+OB1[15]
+Quizlet[15]
+Radionomy[32]
+SimScale[15]
+Shippo[33]
+Twitter[34]
+Work Market[35]
+Yieldmo[36]
+Zynga[37]
+
+
+References[edit]
+
+
+^ Union Square Ventures Site,"About Page" Mar 17, 2016
+^ [1]
+^ [2]
+^ [3]
+^ Moz "Rise of the Celebrity Investor" Nov 07, 2010
+^ TechCrunch "The Top 20 VC Power Bloggers of 2010" Jan 19, 2011
+^ "TechStars""Fred Wilson Bio" Jan 18, 2014
+^ "Ad Age""NYC's Top VC Fred Wilson is Rich…and Grumpy" Apr 17, 2011
+^ "New York Times"A New Kind of Venture Capitalist Makes Small Bets on Young Firms" Sept 22, 2008
+^ Wall Street Journal,"Union Square Ventures Rides Twitter and Tumblr Exits on Fundraising Trail" Nov 21, 2013
+^ Red Herring "Maximizing Venture Capital Investments" May 1, 2012
+^ Business Insider "It's Official: Union Square Ventures Is The Top VC in the World" April 9, 2011
+^ TechCrunch, "After 5 Years of Bootstrapping, Behance Nabs $6.5M From US, Jeff Bezos, Dave Morin & More" May 14, 2012.
+^ Variety, "Samsung Buys Internet Set-Top Startup Boxee" July 03, 2013.
+^ a b c d e f g h i j "Union Square Ventures Portfolio". Retrieved 18 December 2015. 
+^ Business Insider, "Fred Wilson- Here’s Why I’m Investing in Bitcoin" May 09, 2013.
+^ Weiss, Geoff. "CrowdRise, Ed Norton's Charitable Social Network, Raises $23 Million". Entrepreneur Media, Inc. Retrieved 24 April 2014. 
+^ Business Insider, "This Was The First Defining Investment We Ever Made" May 23, 2011.
+^ Shontell, Alyson (4 May 2011). "Disqus Raises A $10 Million Round And Closes In On 500 Million Monthly Uniques". Business Insider. Retrieved 1 October 2014. 
+^ Forbes, "Duolingo Gets $15 Million To Translate The World’s Text Through Online Learning" Sept 17, 2012.
+^ PE Hub, "Etsy Raises $40M From Index, Union Square, Burda" May 09, 2012.
+^ Mark Evans Tech, "FeedBurner Taps Union Square" Feb 07 2006. Archived February 1, 2014, at the Wayback Machine.
+^ The National Post, "How a Tweet Led to Toronto Medical Photo App Figure 1 Getting Backing from Union Square Ventures" Aug 26, 2014
+^ Gigaom, "Flurry Rides the Mobile Boom, Raises $25M with Eye Toward IPO" November 02, 2012.
+^ Business Insider, "Foursquare Raises $1.35 Million, Led By Union Square Ventures" Sept 04, 2009
+^ Venture Beat, "UK-based Funding Circle raises $37M to fund American small businesses" Oct 23, 2013
+^ TechCrunch, "goTenna Series B fuels vision to make local communication possible anywhere on the planet" April 13, 2017.
+^ Business Insider, "Indeed, An Almost Entirely Bootstrapped Job Search Giant, Gets A Monster Exit" Sept 25, 2012.
+^ All Things D, "Kickstarter Fesses Up: The Crowdsourced Funding Startup Has Funding, Too" Mar 17, 2011.
+^ Venture Beat, "Meetup Raises Undislosed sum From Union Square Ventures" July 24, 2008.
+^ Bloomberg Business Week, "MongoDB Now King of NYC Startups With $1.2 Billion Valuation" Archived February 22, 2014, at the Wayback Machine. Oct 04, 2013.
+^ "Vivendi Buys Majority Stake In Winamp, Shoutcast Owner Radionomy". Variety. Retrieved 18 December 2015. 
+^ "Shippo raises $7 million to further its goal of being Twilio for shipping". VentureBeat. Retrieved 2016-10-10. 
+^ PERLROTH, NICOLE. "Many Win in Offering, but Some Are Off List". NY Times. Retrieved 3 August 2015. 
+^ Venture Beat, Square Ventures, Spark Capital Invest in Work Market," June 14, 2010.
+^ AllThingsD, "Google Ventures Bets on Mobile Ad Startup YieldMo"," December 5, 2013.
+^ Beta Beat, "Zynga’s IPO is a Fund Maker for Union Square Ventures" July 01, 2011.
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Private equity and venture capital
+
+
+
+Basic investment types
+
+
+
+Buyout
+Venture
+Mezzanine
+Growth
+Secondaries
+Equity co-investment
+
+
+
+
+
+
+
+
+History
+
+
+
+History of private equity and venture capital
+Early history of private equity
+Private equity in the 1980s
+Private equity in the 1990s
+Private equity in the 2000s
+
+
+
+
+
+Terms and concepts
+
+
+
+
+
+Buyout
+
+
+
+
+Financial sponsor
+Management buyout
+Divisional buyout
+Buy–sell agreement
+Leveraged recapitalization
+Dividend recapitalization
+
+
+
+
+
+
+Venture
+
+
+
+
+Angel investor
+Business incubator
+Post-money valuation
+Pre-money valuation
+Seed money
+Startup company
+Venture capital financing
+Venture debt
+Venture round
+
+
+
+
+
+
+Structure
+
+
+
+
+Private equity firms and funds
+Limited partnership
+Limited liability company
+Carried interest
+Management fee
+Publicly traded private equity
+
+Business Development Company
+Venture capital trust
+
+
+Private investment in public equity (PIPE)
+Pledge fund
+
+
+
+
+
+
+
+
+Investors
+
+
+
+Corporations
+Institutional investors
+Pension funds
+Insurance companies
+Fund of funds
+Endowments
+Foundations
+Investment banks
+Merchant banks
+Commercial banks
+High-net-worth individuals
+Family offices
+Sovereign wealth funds
+Crowdfunding
+
+
+
+
+
+Related financial terms
+
+
+
+AUM
+Cap table
+Capital call
+Capital commitment
+Capital structure
+Distribution waterfall
+EBITDA
+Envy ratio
+High-yield debt
+IPO
+IRR
+Leverage
+Liquidation preference
+M&A
+PME
+Taxation of private equity and hedge funds
+Undercapitalization
+Vintage year
+
+
+
+
+
+
+
+
+Private equity and venture capital investors
+Private equity firms
+Venture capital firms
+Angel investors
+Portfolio companies
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Union_Square_Ventures&oldid=787531239"					
+Categories: Private equity firms of the United StatesCompanies based in New York CityCompanies established in 2003Venture capital firms of the United StatesHidden categories: Webarchive template wayback links 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+فارسیItalianoSuomi 
+Edit links 
+
+
+
+
+
+ This page was last edited on 25 June 2017, at 22:41.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+Union Square Ventures - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Union Square Ventures
+
+From Wikipedia, the free encyclopedia
+
+
+					Jump to:					navigation, 					search
+
+
+
+Type of business
+Private
+
+
+Founded
+2003
+
+
+Headquarters
+New York City, New York, U.S.
+
+
+Key people
+Fred Wilson, Managing Partner
+Brad Burnham, Managing Partner
+Albert Wenger, Managing Partner
+John Buttrick, Partner
+Andy Weissman, Managing Partner
+
+
+Website
+www.usv.com
+
+
+Union Square Ventures (USV), is an American New York-based venture capital firm, that manages assets totaling $1 billion as of March 2016.[1] The firm is one of the top returning venture capital funds in the world, its 2004 fund returning 13.91 times cash-on-cash with an IRR of 67.0%.[2] The firm has had a billion dollar exit every year since 2011 including Zynga ’11 at 7.7B, Indeed ’12 at 1.4B, Tumblr ’13 1.1B, Twitter ’13 at 14.2 B, Lending Club ’14 at 5.42B, Etsy ’15 at 1.78B and Twilio ’16 at 1.23B.[3] Additionally, the firm's founder Fred Wilson, who is well recognized as one of the best venture capitalists in the world,[4] has acquired a celebrity status in the tech world stemming in part to his blog AVC.com[5][6][7][8]
+
+
+
+Contents
+
+
+1 Firm
+2 Portfolio
+3 References
+4 External links
+
+
+
+Firm[edit]
+Union Square Ventures was founded in 2003 by Fred Wilson (a former partner of Flatiron Partners) and Brad Burnham (a former Executor in Residence with AT&T Ventures). The two men created USV with the intent of investing in and fostering the development of early-stage companies.[9] Their investments are “mostly U.S.-based Internet and mobile companies considered to be ‘disruptive’”.[10]
+In 2007, Albert Wenger, the former president of del.icio.us, joined the firm as a partner. The team was rounded out by the subsequent additions of John Buttrick and Betaworks founder Andy Weissman.
+USV is one of a handful of firms that regularly included in Red Herring’s lists of top venture capital firms.[11]
+In 2011, USV was deemed as being the best performing VC in the US based on investment return rate.[12]
+Portfolio[edit]
+Among USV’s notable early-stage investments are:
+
+
+Behance[13]
+Boxee[14]
+Casetext[15]
+Clarifai[15]
+Coinbase[16]
+Clue (mobile app)[15]
+CrowdRise[17]
+Del.icio.us[18]
+Disqus[19]
+Dronebase[15]
+DuckDuckGo
+Duolingo[20]
+Etsy[21]
+eShares[15]
+FeedBurner[22]
+Figure 1[23]
+Flurry[24]
+Foursquare[25]
+Funding Circle[26]
+goTenna[27]
+Indeed[28]
+Kickstarter[29]
+Koko [15]
+La Ruche[15]
+Meetup[30]
+MongoDB[31]
+OB1[15]
+Quizlet[15]
+Radionomy[32]
+SimScale[15]
+Shippo[33]
+Twitter[34]
+Work Market[35]
+Yieldmo[36]
+Zynga[37]
+
+
+References[edit]
+
+
+^ Union Square Ventures Site,"About Page" Mar 17, 2016
+^ [1]
+^ [2]
+^ [3]
+^ Moz "Rise of the Celebrity Investor" Nov 07, 2010
+^ TechCrunch "The Top 20 VC Power Bloggers of 2010" Jan 19, 2011
+^ "TechStars""Fred Wilson Bio" Jan 18, 2014
+^ "Ad Age""NYC's Top VC Fred Wilson is Rich…and Grumpy" Apr 17, 2011
+^ "New York Times"A New Kind of Venture Capitalist Makes Small Bets on Young Firms" Sept 22, 2008
+^ Wall Street Journal,"Union Square Ventures Rides Twitter and Tumblr Exits on Fundraising Trail" Nov 21, 2013
+^ Red Herring "Maximizing Venture Capital Investments" May 1, 2012
+^ Business Insider "It's Official: Union Square Ventures Is The Top VC in the World" April 9, 2011
+^ TechCrunch, "After 5 Years of Bootstrapping, Behance Nabs $6.5M From US, Jeff Bezos, Dave Morin & More" May 14, 2012.
+^ Variety, "Samsung Buys Internet Set-Top Startup Boxee" July 03, 2013.
+^ a b c d e f g h i j "Union Square Ventures Portfolio". Retrieved 18 December 2015. 
+^ Business Insider, "Fred Wilson- Here’s Why I’m Investing in Bitcoin" May 09, 2013.
+^ Weiss, Geoff. "CrowdRise, Ed Norton's Charitable Social Network, Raises $23 Million". Entrepreneur Media, Inc. Retrieved 24 April 2014. 
+^ Business Insider, "This Was The First Defining Investment We Ever Made" May 23, 2011.
+^ Shontell, Alyson (4 May 2011). "Disqus Raises A $10 Million Round And Closes In On 500 Million Monthly Uniques". Business Insider. Retrieved 1 October 2014. 
+^ Forbes, "Duolingo Gets $15 Million To Translate The World’s Text Through Online Learning" Sept 17, 2012.
+^ PE Hub, "Etsy Raises $40M From Index, Union Square, Burda" May 09, 2012.
+^ Mark Evans Tech, "FeedBurner Taps Union Square" Feb 07 2006. Archived February 1, 2014, at the Wayback Machine.
+^ The National Post, "How a Tweet Led to Toronto Medical Photo App Figure 1 Getting Backing from Union Square Ventures" Aug 26, 2014
+^ Gigaom, "Flurry Rides the Mobile Boom, Raises $25M with Eye Toward IPO" November 02, 2012.
+^ Business Insider, "Foursquare Raises $1.35 Million, Led By Union Square Ventures" Sept 04, 2009
+^ Venture Beat, "UK-based Funding Circle raises $37M to fund American small businesses" Oct 23, 2013
+^ TechCrunch, "goTenna Series B fuels vision to make local communication possible anywhere on the planet" April 13, 2017.
+^ Business Insider, "Indeed, An Almost Entirely Bootstrapped Job Search Giant, Gets A Monster Exit" Sept 25, 2012.
+^ All Things D, "Kickstarter Fesses Up: The Crowdsourced Funding Startup Has Funding, Too" Mar 17, 2011.
+^ Venture Beat, "Meetup Raises Undislosed sum From Union Square Ventures" July 24, 2008.
+^ Bloomberg Business Week, "MongoDB Now King of NYC Startups With $1.2 Billion Valuation" Archived February 22, 2014, at the Wayback Machine. Oct 04, 2013.
+^ "Vivendi Buys Majority Stake In Winamp, Shoutcast Owner Radionomy". Variety. Retrieved 18 December 2015. 
+^ "Shippo raises $7 million to further its goal of being Twilio for shipping". VentureBeat. Retrieved 2016-10-10. 
+^ PERLROTH, NICOLE. "Many Win in Offering, but Some Are Off List". NY Times. Retrieved 3 August 2015. 
+^ Venture Beat, Square Ventures, Spark Capital Invest in Work Market," June 14, 2010.
+^ AllThingsD, "Google Ventures Bets on Mobile Ad Startup YieldMo"," December 5, 2013.
+^ Beta Beat, "Zynga’s IPO is a Fund Maker for Union Square Ventures" July 01, 2011.
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Private equity and venture capital
+
+
+
+Basic investment types
+
+
+
+Buyout
+Venture
+Mezzanine
+Growth
+Secondaries
+Equity co-investment
+
+
+
+
+
+
+
+
+History
+
+
+
+History of private equity and venture capital
+Early history of private equity
+Private equity in the 1980s
+Private equity in the 1990s
+Private equity in the 2000s
+
+
+
+
+
+Terms and concepts
+
+
+
+
+
+Buyout
+
+
+
+
+Financial sponsor
+Management buyout
+Divisional buyout
+Buy–sell agreement
+Leveraged recapitalization
+Dividend recapitalization
+
+
+
+
+
+
+Venture
+
+
+
+
+Angel investor
+Business incubator
+Post-money valuation
+Pre-money valuation
+Seed money
+Startup company
+Venture capital financing
+Venture debt
+Venture round
+
+
+
+
+
+
+Structure
+
+
+
+
+Private equity firms and funds
+Limited partnership
+Limited liability company
+Carried interest
+Management fee
+Publicly traded private equity
+
+Business Development Company
+Venture capital trust
+
+
+Private investment in public equity (PIPE)
+Pledge fund
+
+
+
+
+
+
+
+
+Investors
+
+
+
+Corporations
+Institutional investors
+Pension funds
+Insurance companies
+Fund of funds
+Endowments
+Foundations
+Investment banks
+Merchant banks
+Commercial banks
+High-net-worth individuals
+Family offices
+Sovereign wealth funds
+Crowdfunding
+
+
+
+
+
+Related financial terms
+
+
+
+AUM
+Cap table
+Capital call
+Capital commitment
+Capital structure
+Distribution waterfall
+EBITDA
+Envy ratio
+High-yield debt
+IPO
+IRR
+Leverage
+Liquidation preference
+M&A
+PME
+Taxation of private equity and hedge funds
+Undercapitalization
+Vintage year
+
+
+
+
+
+
+
+
+Private equity and venture capital investors
+Private equity firms
+Venture capital firms
+Angel investors
+Portfolio companies
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=Union_Square_Ventures&oldid=787531239"					
+Categories: Private equity firms of the United StatesCompanies based in New York CityCompanies established in 2003Venture capital firms of the United StatesHidden categories: Webarchive template wayback links 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+فارسیItalianoSuomi 
+Edit links 
+
+
+
+
+
+ This page was last edited on 25 June 2017, at 22:41.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+Creative Commons — Attribution-ShareAlike 3.0 Unported
+— CC BY-SA 3.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+ Menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Help us build a vibrant, collaborative global commons
+Donate Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creative Commons
+
+
+Creative Commons License Deed
+
+
+
+
+
+
+
+Attribution-ShareAlike 3.0 Unported
+
+(CC BY-SA 3.0)
+
+
+
+
+
+
+
+
+This is a human-readable summary of (and not a substitute for) the license.
+
+
+Disclaimer.
+
+
+
+
+
+
+You are free to:
+
+
+Share — copy and redistribute the material in any medium or format
+
+
+Adapt — remix, transform, and build upon the material
+
+
+for any purpose, even commercially.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+
+
+
+Under the following terms:
+
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+
+
+
+Attribute this work:
+
+
+
+
+
+
+
+
+
+
+
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+
+
+
+
+
+
+
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+
+Notices:
+
+
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+
+
+
+
+
+
+
+Learn more about CC licensing, or use the license for your own material.
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+Make a Donation
+
+
+
+
+
+
+This page is available in the following languages:
+
+
+Castellano
+Castellano (España)
+Català
+Dansk
+Deutsch
+English
+Esperanto
+français
+Galego
+hrvatski
+Indonesia
+Italiano
+Latviski
+Lietuvių
+Melayu
+Nederlands
+Norsk
+polski
+Português
+Português (BR)
+română
+Slovenščina
+Suomeksi
+svenska
+Türkçe
+íslenska
+česky
+Ελληνικά
+Беларуская
+русский
+українська
+العربية
+پارسی
+中文
+日本語
+華語 (台灣)
+한국어
+
+
+
+
+
+
+This content is freely available under simple legal terms because of Creative Commons, a non-profit that survives on donations. If you love this content, and love that it's free for everyone, please consider a donation to support our work.
+When you share, everyone wins.
+
+
+
+
+
+Contribute today to Creative Commons
+
+
+
+
+$100
+
+
+
+$50
+
+
+
+$25
+
+
+
+$5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disclaimer
+
+This deed highlights only some of the key features and terms of the actual license. It is not a license and has no legal value. You should carefully review all of the terms and conditions of the actual license before using the licensed material.
+Creative Commons is not a law firm and does not provide legal services. Distributing, displaying, or linking to this deed or the license that it summarizes does not create a lawyer-client or any other relationship.
+
+
+
+
+What does "Attribute this work" mean?
+
+
+The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.
+
+
+
+
+The applicable mediation rules will be designated in the copyright notice published with the work, or if none then in the request for mediation. Unless otherwise designated in a copyright notice attached to the work, the UNCITRAL Arbitration Rules apply to any arbitration.
+More info.
+
+
+
+
+If supplied, you must provide the name of the creator and attribution parties, a copyright notice, a license notice, a disclaimer notice, and a link to the material. CC licenses prior to Version 4.0 also require you to provide the title of the material if supplied, and may have other slight differences.
+More info.
+
+
+
+
+In 4.0, you must indicate if you modified the material and retain an indication of previous modifications. In 3.0 and earlier license versions, the indication of changes is only required if you create a derivative.
+Marking guide.
+More info.
+
+
+
+
+You may also use a license listed as compatible at https://creativecommons.org/compatiblelicenses
+More info.
+
+
+
+
+A commercial use is one primarily intended for commercial advantage or monetary compensation.
+More info.
+
+
+
+
+Merely changing the format never creates a derivative.
+More info.
+
+
+
+
+The license prohibits application of effective technological measures, defined with reference to Article 11 of the WIPO Copyright Treaty.
+More info.
+
+
+
+
+The rights of users under exceptions and limitations, such as fair use and fair dealing, are not affected by the CC licenses.
+More info.
+
+
+
+
+You may need to get additional permissions before using the material as you intend.
+More info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USV (@usv) | Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+Home
+Home
+Home, current page.
+
+
+
+
+
+
+Moments
+Moments
+Moments, current page.
+
+
+
+
+
+
+Search query
+
+
+
+Search Twitter
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Language: English 
+
+
+
+ 
+
+
+
+Bahasa Indonesia
+Bahasa Melayu
+Català
+Čeština
+Dansk
+Deutsch
+English UK
+Español
+Filipino
+Français
+Hrvatski
+Italiano
+Magyar
+Nederlands
+Norsk
+Polski
+Português
+Română
+Slovenčina
+Suomi
+Svenska
+Tiếng Việt
+Türkçe
+Ελληνικά
+Български език
+Русский
+Српски
+Українська мова
+עִבְרִית
+العربية
+فارسی
+मराठी
+हिन्दी
+বাংলা
+ગુજરાતી
+தமிழ்
+ಕನ್ನಡ
+ภาษาไทย
+한국어
+日本語
+简体中文
+繁體中文
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Have an account?  Log in
+
+
+   
+
+Have an account?
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+New to Twitter?
+Sign up
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      USVVerified account
+
+
+
+@usv
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+Tweets, current page.
+604
+            
+
+
+
+Following
+Following
+184
+
+
+
+Followers
+Followers
+55.3K
+
+
+
+Likes
+Likes
+189
+
+
+
+Lists
+Lists
+3
+ 
+ 
+More 
+
+
+
+
+
+
+
+Likes
+Lists
+
+
+
+
+
+
+Unmute @usv
+
+Mute @usv
+
+
+
+Follow
+
+
+    Following
+  
+
+    Unfollow
+  
+
+    Blocked
+  
+
+    Unblock
+  
+
+    Pending
+  
+
+    Cancel
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USVVerified account
+
+
+
+@usv
+
+
+Union Square Ventures is a venture capital firm based in New York City.
+
+
+
+            New York, NY
+
+      
+
+
+
+ 
+    usv.com
+  
+
+
+
+
+Joined May 2008
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                2 Photos and videos
+            
+
+            Photos and videos
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tweets
+
+
+Tweets
+Tweets, current page.
+
+
+
+                  Tweets & replies
+                
+
+
+
+                  Media
+                
+
+
+
+
+
+You blocked @usv
+Are you sure you want to view these Tweets? Viewing Tweets won't unblock @usv
+Yes, view profile
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            USV followed
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Fred Wilson‏Verified account @fredwilson
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Zemanta – From SeedCamp to Outbrain http://avc.com/2017/07/zemanta-from-seedcamp-to-outbrain/ …
+
+
+
+
+
+3 replies
+
+
+
+
+22 retweets
+
+
+
+
+61 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+3
+
+
+
+
+
+
+
+Retweet
+
+
+22
+
+
+
+
+Retweeted
+
+
+22
+
+
+
+
+
+
+
+
+Like
+
+
+61
+
+
+
+
+
+Liked
+
+
+61
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Nick Grossman‏ @nickgrossman
+
+Jul 25
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Looking for a top-shelf Boston or NYC-based web dev firm to do some work for us at @USV. JS, python, mongodb, api wrangling, data viz. Recs?
+
+
+
+
+
+11 replies
+
+
+
+
+4 retweets
+
+
+
+
+8 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+11
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+8
+
+
+
+
+
+Liked
+
+
+8
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Jonathan Libov‏ @libovness
+
+Jul 19
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Hello Coindexter, a collaborative library for long-term investors in decentralized, blockchain networks:https://coindexter.io/ 
+
+
+
+
+
+
+
+
+
+6 replies
+
+
+
+
+25 retweets
+
+
+
+
+80 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+6
+
+
+
+
+
+
+
+Retweet
+
+
+25
+
+
+
+
+Retweeted
+
+
+25
+
+
+
+
+
+
+
+
+Like
+
+
+80
+
+
+
+
+
+Liked
+
+
+80
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Nick Grossman‏ @nickgrossman
+
+Jul 19
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Getting Helphttps://www.nickgrossman.is/2017/getting-help/ …
+
+
+
+
+
+
+
+
+
+3 replies
+
+
+
+
+4 retweets
+
+
+
+
+33 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+3
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+33
+
+
+
+
+
+Liked
+
+
+33
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Clarifai‏Verified account @clarifai
+
+Jul 14
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+New Mobile SDK is the FIRST on-device machine learning bringing AI everywhere  http://ow.ly/z4ZE30dBQjs  @VentureBeatpic.twitter.com/Der3XgwX5c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2 replies
+
+
+
+
+3 retweets
+
+
+
+
+10 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+2
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+10
+
+
+
+
+
+Liked
+
+
+10
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Fred Wilson‏Verified account @fredwilson
+
+Jul 14
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+"SoundCloud is not going away. Not in 50 days, not in 80 days, or in the foreseeable future. Your music is safe." https://blog.soundcloud.com/2017/07/14/soundcloud-is-here-to-stay/ …
+
+
+
+
+
+14 replies
+
+
+
+
+82 retweets
+
+
+
+
+227 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+14
+
+
+
+
+
+
+
+Retweet
+
+
+82
+
+
+
+
+Retweeted
+
+
+82
+
+
+
+
+
+
+
+
+Like
+
+
+227
+
+
+
+
+
+Liked
+
+
+227
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Matt Zeiler‏ @mattzeiler
+
+Jul 12
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+So proud of the team at @Clarifai! Clarifai launches SDK for training AI on your iPhone https://venturebeat.com/2017/07/12/clarifai-launches-sdk-for-running-ai-on-your-iphone/ … via @VentureBeat
+
+
+
+
+
+
+
+
+
+3 replies
+
+
+
+
+40 retweets
+
+
+
+
+123 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+3
+
+
+
+
+
+
+
+Retweet
+
+
+40
+
+
+
+
+Retweeted
+
+
+40
+
+
+
+
+
+
+
+
+Like
+
+
+123
+
+
+
+
+
+Liked
+
+
+123
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Matthew Prince‏Verified account @eastdakota
+
+Jul 9
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+.@Cloudflare is helping our users participate in the Network Neutrality Day of Action on Wednesday with a click.https://blog.cloudflare.com/net-neutrality-day-of-action/ …
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+78 retweets
+
+
+
+
+62 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+78
+
+
+
+
+Retweeted
+
+
+78
+
+
+
+
+
+
+
+
+Like
+
+
+62
+
+
+
+
+
+Liked
+
+
+62
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Cloudflare‏Verified account @Cloudflare
+
+Jun 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Announcing the New Cloudflare Appshttp://cfl.re/2udoKIC 
+
+
+
+
+
+
+
+
+
+1 reply
+
+
+
+
+21 retweets
+
+
+
+
+28 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+1
+
+
+
+
+
+
+
+Retweet
+
+
+21
+
+
+
+
+Retweeted
+
+
+21
+
+
+
+
+
+
+
+
+Like
+
+
+28
+
+
+
+
+
+Liked
+
+
+28
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+USV‏Verified account @usv
+
+Jun 27
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Announcing our Series Seed investment in @flipyourlease http://www.usv.com/blog/flip 
+
+
+
+
+
+2 replies
+
+
+
+
+9 retweets
+
+
+
+
+22 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+2
+
+
+
+
+
+
+
+Retweet
+
+
+9
+
+
+
+
+Retweeted
+
+
+9
+
+
+
+
+
+
+
+
+Like
+
+
+22
+
+
+
+
+
+Liked
+
+
+22
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Numerai‏Verified account @numerai
+
+Jun 21
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+The Numeraire Ethereum token is now live.https://medium.com/@Numerai/an-ai-hedge-fund-goes-live-on-ethereum-a80470c6b681 …
+
+
+
+
+
+
+
+
+
+12 replies
+
+
+
+
+132 retweets
+
+
+
+
+238 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+12
+
+
+
+
+
+
+
+Retweet
+
+
+132
+
+
+
+
+Retweeted
+
+
+132
+
+
+
+
+
+
+
+
+Like
+
+
+238
+
+
+
+
+
+Liked
+
+
+238
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+USV‏Verified account @usv
+
+Jun 22
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+USV Retweeted Albert Wenger
+
+Don't miss the @codeclimate Summit on July 19 in NYC: https://codeclimate.com/summit/  Early bird ticket sales end today!https://twitter.com/albertwenger/status/877181930122485760 …
+
+USV added,
+
+
+
+
+
+
+
+
+Albert WengerVerified account @albertwenger
+
+Get your tickets before Thursday when the price goes up -- great line up of speakers for the @codeclimate Summit for engineering leaders https://twitter.com/codeclimate/status/876901689592340480 …
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+3 retweets
+
+
+
+
+4 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+3
+
+
+
+
+Retweeted
+
+
+3
+
+
+
+
+
+
+
+
+Like
+
+
+4
+
+
+
+
+
+Liked
+
+
+4
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Clue‏Verified account @clue
+
+Jun 15
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Get the latest reproductive health information and news. 
+
+Sign up for our newsletter: http://bit.ly/cluenews 
+
+
+
+
+
+0 replies
+
+
+
+
+4 retweets
+
+
+
+
+8 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+4
+
+
+
+
+Retweeted
+
+
+4
+
+
+
+
+
+
+
+
+Like
+
+
+8
+
+
+
+
+
+Liked
+
+
+8
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+DroneBase‏ @dronebase
+
+Jun 14
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Announcing DroneBase’s Exclusive Global Content Partnership with Getty Images http://blog.dronebase.com/2017/06/14/announcing-dronebases-exclusive-global-content-partnership-with-getty-images/ …pic.twitter.com/RW64BUF1m4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+9 retweets
+
+
+
+
+15 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+9
+
+
+
+
+Retweeted
+
+
+9
+
+
+
+
+
+
+
+
+Like
+
+
+15
+
+
+
+
+
+Liked
+
+
+15
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+USV‏Verified account @usv
+
+Jun 14
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+MongoDB World is one week away! Join in Chicago - use the code USV & get 25% off tickets http://spr.ly/60088jvZs  #MDBW17 @MongoDB
+
+
+
+
+
+0 replies
+
+
+
+
+0 retweets
+
+
+
+
+2 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+
+
+
+
+
+Retweeted
+
+
+
+
+
+
+
+
+
+
+
+Like
+
+
+2
+
+
+
+
+
+Liked
+
+
+2
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+USV‏Verified account @usv
+
+Jun 9
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+.@MongoDB is offering startups complimentary access to their database as a service, Atlas: https://www.mongodb.com/startup-accelerator …
+
+
+
+
+
+0 replies
+
+
+
+
+7 retweets
+
+
+
+
+10 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+7
+
+
+
+
+Retweeted
+
+
+7
+
+
+
+
+
+
+
+
+Like
+
+
+10
+
+
+
+
+
+Liked
+
+
+10
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Nick Grossman‏ @nickgrossman
+
+Jun 7
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+My talk from @TheNextWeb conference​ on aligning Purpose, Mission and Strategy: http://www.nickgrossman.is/2017/my-talk-from-the-next-web-conference-purpose-mission-strategy/ … #TNW2017
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+7 retweets
+
+
+
+
+7 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+7
+
+
+
+
+Retweeted
+
+
+7
+
+
+
+
+
+
+
+
+Like
+
+
+7
+
+
+
+
+
+Liked
+
+
+7
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Albert Wenger‏Verified account @albertwenger
+
+May 30
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+#BasicIncome: The Potential of Cryptocurrency - In my book World After Capital ...https://tmblr.co/Z1T9by2MAhSJY 
+
+
+
+
+
+
+
+
+
+4 replies
+
+
+
+
+35 retweets
+
+
+
+
+58 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+4
+
+
+
+
+
+
+
+Retweet
+
+
+35
+
+
+
+
+Retweeted
+
+
+35
+
+
+
+
+
+
+
+
+Like
+
+
+58
+
+
+
+
+
+Liked
+
+
+58
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Nick Grossman‏ @nickgrossman
+
+May 30
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Open blockchains have all kinds of startup innovators excited. | Coin Centerhttps://coincenter.org/link/open-blockchains-have-all-kinds-of-startup-innovators-excited …
+
+
+
+
+
+
+
+
+
+0 replies
+
+
+
+
+6 retweets
+
+
+
+
+9 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+
+
+
+
+
+
+
+
+Retweet
+
+
+6
+
+
+
+
+Retweeted
+
+
+6
+
+
+
+
+
+
+
+
+Like
+
+
+9
+
+
+
+
+
+Liked
+
+
+9
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+USV Retweeted
+            
+
+
+
+
+
+
+
+Albert Wenger‏Verified account @albertwenger
+
+May 26
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Copy link to Tweet
+
+
+Embed Tweet
+
+
+
+
+
+
+
+Some Lessons I Learned from the Dotcom Bubble for the Coming Crypto Bubble - I spent a bunch of time at ...https://tmblr.co/Z1T9by2M1oMAb 
+
+
+
+
+
+
+
+
+
+16 replies
+
+
+
+
+187 retweets
+
+
+
+
+415 likes
+
+
+
+
+
+
+
+
+Reply
+
+
+16
+
+
+
+
+
+
+
+Retweet
+
+
+187
+
+
+
+
+Retweeted
+
+
+187
+
+
+
+
+
+
+
+
+Like
+
+
+415
+
+
+
+
+
+Liked
+
+
+415
+
+
+
+
+
+
+
+
+
+
+Thanks. Twitter will use this to make your timeline better. Undo
+
+
+
+
+
+
+
+
+
+
+
+
+          @usv hasn't Tweeted yet.
+      
+Back to top ↑
+
+
+
+
+
+
+
+
+
+
+
+
+Loading seems to be taking a while.
+
+      Twitter may be over capacity or experiencing a momentary hiccup. Try again or visit Twitter Status for more information.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      New to Twitter?
+    
+
+
+    Sign up now to get your own personalized timeline!
+  
+
+Sign up
+
+
+
+
+You may also like
+    ·
+    Refresh
+
+
+
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+
+
+
+© 2017 Twitter
+About
+Help Center
+Terms
+Privacy policy
+Cookies
+Ads info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+            
+            Choose a trend location
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dismiss
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+            Previous
+          
+
+
+
+
+
+
+
+            Next
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Go to a person's profile
+
+
+
+
+
+
+
+
+
+
+
+
+Saved searches
+
+
+Remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this conversation
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+    Suggested users
+  
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+Verified accountProtected Tweets @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Promote this Tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Block
+
+
+
+
+
+
+Cancel
+Block
+
+
+
+
+
+
+
+
+
+
+
+
+Add a location to your Tweets
+
+        When you tweet with a location, Twitter stores that location. 
+        You can switch location on/off before each Tweet and always have the option to delete your location history.
+        Learn more
+
+
+Turn location on
+Not now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Share Location
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Results from 
+
+
+
+Send
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Your lists
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Create a new list
+
+
+
+
+List name
+
+
+
+
+Description
+
+Under 100 characters, optional
+
+
+
+Privacy
+
+
+
+Public · Anyone can follow this list
+      
+
+
+Private · Only you can access this list
+      
+
+
+
+
+Save list
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Copy link to Tweet
+
+
+
+
+Here's the URL for this Tweet. Copy it to easily share with friends.
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Embed this Tweet
+Embed this Video
+
+
+
+Add this Tweet to your website by copying the code below. Learn more
+Add this video to your website by copying the code below. Learn more
+
+
+
+
+Hmm, there was a problem reaching the server. Try again?
+
+
+
+
+
+
+            Include parent Tweet
+          
+
+
+
+
+            Include media
+          
+
+
+
+
+By embedding Twitter content in your website or app, you are agreeing to the Twitter Developer Agreement and Developer Policy.
+Preview
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Why you're seeing this ad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Log in to Twitter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+·
+Forgot password?
+
+
+
+
+
+
+
+
+
+
+
+
+        Don't have an account? Sign up »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Sign up for Twitter
+
+
+
+
+
+Not on Twitter? Sign up, tune into the things you care about, and get updates as they happen.
+
+
+Sign up
+
+
+
+
+        Have an account? Log in »
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Two-way (sending and receiving) short codes:
+
+
+
+
+
+Country
+Code
+For customers of
+
+
+
+
+United States
+40404
+(any)
+
+
+Canada
+21212
+(any)
+
+
+United Kingdom
+86444
+Vodafone, Orange, 3, O2
+
+
+Brazil
+40404
+Nextel, TIM
+
+
+Haiti
+40404
+Digicel, Voila
+
+
+Ireland
+51210
+Vodafone, O2
+
+
+India
+53000
+Bharti Airtel, Videocon, Reliance
+
+
+Indonesia
+89887
+AXIS, 3, Telkomsel, Indosat, XL Axiata
+
+
+Italy
+4880804
+Wind
+
+
+3424486444
+Vodafone
+
+
+
+
+
+        » See SMS short codes for other countries
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+Confirmation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Skip all
+          
+
+
+
+
+    Welcome home!
+  
+This timeline is where you’ll spend most of your time, getting instant updates about what matters to you.
+
+
+
+
+    Tweets not working for you?
+  
+
+    Hover over the profile pic and click the Following button to unfollow any account.
+  
+
+
+
+
+    Say a lot with a little
+  
+
+    When you see a Tweet you love, tap the heart — it lets  the person who wrote it know you shared the love.
+  
+
+
+
+
+    Spread the word
+  
+
+    The fastest way to share someone else’s Tweet with your followers is with a Retweet. Tap the icon to send it instantly.
+  
+
+
+
+
+    Join the conversation
+  
+
+    Add your thoughts about any Tweet with a Reply. Find a topic you’re passionate about, and jump right in.
+  
+
+
+
+
+    Learn the latest
+  
+
+    Get instant insight into what people are talking about now.
+  
+
+
+
+
+    Get more of what you love
+  
+
+    Follow more accounts to get instant updates about topics you care about.
+  
+
+
+
+
+    Find what's happening
+  
+
+    See the latest conversations about any topic instantly.
+  
+
+
+
+
+    Never miss a Moment
+  
+
+    Catch up instantly on the best stories happening as they unfold.
+  
+
+
+
+Back
+Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Next Tweet from user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+About
+ | 
+Union Square Ventures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Threads
+Blog
+Portfolio
+About
+Jobs
+
+
+
+
+
+
+
+
+
+
+ We are a small collegial partnership that manages over $1B across seven funds. Our portfolio companies create services that have the potential to fundamentally transform important markets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Albert Wenger
+Partner
+
+@albertwenger
+continuations.com
+
+More
+
+
+
+
+
+
+
+
+
+
+Andy Weissman
+Partner
+
+@aweissman
+blog.aweissman.com
+
+More
+
+
+
+
+
+
+
+
+
+
+Anne Mui
+Executive Assistant 
+
+@A_Mui1001
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+Bethany Crystal
+GM, USV Network
+
+@bethanymarz
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+Brad Burnham
+Partner
+
+@BradUSV
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+Christine Briganti
+Bookkeeper
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+Fred Wilson
+Partner
+
+@fredwilson
+avc.com
+
+More
+
+
+
+
+
+
+
+
+
+
+Gillian Arca
+Executive Assistant
+
+@gillianarca
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+Jacqueline Garavente
+Analyst
+
+@JacqGaravente
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+Jennifer Campbell
+Analyst
+
+@jml_campbell
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+John Buttrick
+Partner
+
+@johnbuttrick
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+Kerri Rachlin
+Director of Finance & LP Relations
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+Kristina Rogers
+Executive Assistant
+ 
+
+More
+
+
+
+
+
+
+
+
+
+
+Lauren Young
+Events Manager, USV Network
+
+@lauren_maz
+[email protected]_young
+
+More
+
+
+
+
+
+
+
+
+
+
+Nick Grossman
+General Manager
+
+@nickgrossman
+nickgrossman.is
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UNION SQUARE VENTURES 2008 LP Insider Insider Trades - NASDAQ.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hot Topics:
+ETFs |
+Smart Portfolio |
+Currencies |
+Online Broker Center
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home > 
+    Quotes > 
+    Ownership & Insider Trades > 
+    Individual Insiders
+
+
+
+
+
+
+Insider Trades of UNION SQUARE VENTURES 2008 LP
+
+
+
+
+
+Click on the column header to resort ascending (▲) or descending (▼).
+
+
+
+Individual Insider Trades
+
+
+
+Company
+
+
+Relation
+
+
+Last Date ▼
+
+
+Type
+
+
+Tran
+
+
+OwnerType
+
+
+Shares Traded
+
+
+Last Price
+
+
+Shares Held
+
+
+
+TWILIO INC
+Beneficial Owner (10%)
+12/20/2016
+Form 4
+Disposition (Non Open Market)
+direct
+9,068,262
+0
+750,000
+
+
+TWILIO INC
+Beneficial Owner (10%)
+10/14/2016
+Form 4
+Acquisition (Non Open Market)
+direct
+9,818,262
+0
+9,818,262
+
+
+TWILIO INC
+Beneficial Owner (10%)
+06/28/2016
+Form 4
+Acquisition (Non Open Market)
+direct
+9,818,262
+0
+9,818,262
+
+
+TWILIO INC
+Beneficial Owner (10%)
+06/28/2016
+Form 4
+Disposition (Non Open Market)
+direct
+9,818,262
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Highest Rated Articles of Last Week
+
+
+
+Shareholders Approve Major Structural Change to Top Performing...
+Yatra Attains Leadership Position in Corporate Travel With the...
+Mitel To Acquire ShoreTel - Quick Facts
+Miller Heiman Group Selects CallidusCloud Datahug for Pipeline...
+Tractor Supply Company Reports Second Quarter Results
+
+
+
+
+
+View All Highest Rated
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Most Rated Stocks of Last Week
+Rated stocks for NASDAQ, NYSE and AMEX
+
+Symbol  /  Ratings Consensus
+
+AAPL
+
+86% bullish
+                    of
+                    2913
+                    ratings
+Rate It
+
+
+FB
+
+76% bullish
+                    of
+                    1328
+                    ratings
+Rate It
+
+
+TSLA
+
+78% bullish
+                    of
+                    588
+                    ratings
+Rate It
+
+
+MSFT
+
+84% bullish
+                    of
+                    649
+                    ratings
+Rate It
+
+
+GOOG
+
+91% bullish
+                    of
+                    128
+                    ratings
+Rate It
+
+
+JPM
+
+70% bullish
+                    of
+                    88
+                    ratings
+Rate It
+
+
+GM
+
+68% bullish
+                    of
+                    80
+                    ratings
+Rate It
+
+
+BAC
+
+75% bullish
+                    of
+                    475
+                    ratings
+Rate It
+
+
+NFLX
+
+68% bullish
+                    of
+                    325
+                    ratings
+Rate It
+
+
+INTC
+
+83% bullish
+                    of
+                    266
+                    ratings
+Rate It
+
+
+More Most Rated Stocks
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CLOSEX
+
+Edit Favorites
+
+Enter up to 25 symbols separated by commas or spaces in the text box below. These symbols will be available during your session for use on applicable pages.
+
+
+
+
+
+
+Update
+
+Clear List
+
+
+
+
+
+
+
+CLOSEX
+Customize your NASDAQ.com experience
+Background Color Selector
+
+Select the background color of your choice:
+
+
+
+
+
+ Black
+							
+
+
+
+
+
+ Slate Gray
+							
+
+
+
+
+
+
+ Light Gray
+							
+
+
+
+
+
+ Gray Blue
+							
+
+
+
+
+
+
+Quote Search
+
+Select a default target page for your quote search:
+
+
+
+						 Real-Time
+
+						 After Hours
+
+						 Pre-Market
+ News
+					
+
+
+						 Flash Quote
+
+						 Summary Quote
+
+						 Interactive Charts
+
+						 Default Setting
+
+
+
+
+					Please note that once you make your selection, it will apply to all future visits to NASDAQ.com.
+					If, at any time, you are interested in reverting to our default settings, please select Default Setting above.
+					
+					If you have any questions or encounter any issues in changing your default settings, please email isfeedback@nasdaq.com.
+				
+
+
+
+
+
+CLOSEX
+Please confirm your selection:
+
+					You have selected to change your default setting for the Quote Search. This will now be your default target page;
+					unless you change your configuration again, or you delete your
+					cookies. Are you sure you want to change your settings?
+
+
+YES
+NO
+
+
+
+
+
+
+
+
+
+
+
+
+
+CLOSEX
+
+
+Please disable your ad blocker (or update your settings to ensure that javascript and cookies are enabled), so that we can continue to provide you with the first-rate market news and data you've come to expect from us.
+
+
+
+
+
+CLOSEX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Union Square Closing in on $200M New Fund - PE Hub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SUBSCRIBE TO PE HUB WIRE
+Join over 60,000 of your peers
+Get the must-read email for PE/VC professionals delivered to your inbox daily
+        — for free!
+
+
+
+
+
+
+
+US Edition (daily)
+
+
+
+Canada Edition (weekly)
+
+
+We will not send you spam, and we don't share your email address with 3rd parties.
+
+
+I accept the Terms and Conditions
+
+
+
+
+SUBSCRIBE YES! No
+
+
+
+
+
+
+RegisterSign in
+
+
+
+A Community for Professionals in Private Capital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Union Square Closing in on $200M New Fund
+
+
+December 29, 2010
+
+
+
+
+Print
+Email
+
+
+
+
+
+Share via email
+
+
+Separate multiple email addresses with commas
+
+Share
+Send me a copy
+
+
+
+Email preview
+
+To: 
+From: 
+Subject: Look at this story on PE HUB
+Union Square Closing in on $200M New Fund
+
+Continue reading on PE HUB
+ writes: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Early stage venture capital firm Union Square Ventures has closed on about $135 million of a new fund, Union Square Ventures Opportunity Fund LP, which could end up with as much as $200 million, according to an S.E.C. filing.
+According to the filing, Union Square is also adding John Buttrick as a partner on the fund. The addition of Buttrick, a lawyer and former partner with private equity firm LiveWire Ventures, has fueled speculation that Union Square’s new fund will focus on later-stage companies. 
+Details of the filing were first reported by Fortune, which cited a source confirming the fund would focus on later-stage investments.
+As far as Union Square Ventures goes, Principal Fred Wilson has commented on the filing, without actually commenting on fund:
+
+“There are ways to keep a financing quiet and avoid these filings and we have been involved in financings where that was done successfully. But unless you specifically request that your lawyers keep the financing quiet, you are most likely going to have your fundraising effort in the public record. 
+“And this can catch you off guard. If you want to control the message and announce the financing to your employees first so they don’t read about it in the tech blogs, you need to be aware that the clock is ticking and you need to get the word out fairly promptly.”
+Wilson said on his blog that “due to legal issues” he “can’t comment on it until next month sometime.”
+New York-based Union Square raised its debut fund of $125 million in 2004, and is known for its early bets on Internet companies such as Twitter and Zynga. Its second fund, Union Square Ventures 2008 LP, closed four years later with $156 million. 
+The firm’s exits include Tacoda, which sold to AOL in 2007 for about $300 million; Feedburner, acquired by Google in 2007 for a reported $100 million; and Del.icio.us, sold to Yahoo in 2005 for roughly $30 million.
+ 
+
+
+
+
+
+Print
+Email
+
+
+
+
+
+Share via email
+
+
+Separate multiple email addresses with commas
+
+Share
+Send me a copy
+
+
+
+Email preview
+
+To: 
+From: 
+Subject: Look at this story on PE HUB
+Union Square Closing in on $200M New Fund
+
+Continue reading on PE HUB
+ writes: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Find new deal opportunities, super-charge your fundraising efforts and track top managers with VCJ. Get your FREE trial! Or subscribe now! DON'T MISS OUT! Meet new and diverse managers in private equity, venture capital and real estate at the third Emerging Manager Connect East at New York City's Harvard Club. CLICK HERE FOR DETAILS!  
+
+
+
+
+
+
+
+
+
+Sign up to our Newsletter
+
+Receive updates from our PE HUB Wire and Top Stories of the Week newsletters:
+
+
+First Name:
+
+
+
+Last Name:
+
+
+
+Email Address:
+
+
+
+
+US Edition (daily)
+
+
+
+Canada Edition (weekly)
+
+
+We will not send you spam, and we don't share your email address with 3rd parties.
+
+
+I accept the Terms and Conditions
+
+
+
+
+
+
+
+
+
+You are now subscribed to the PEHub Wire and Top Stories of the Week newsletters. 
+
+
+
+
+Buyouts Insider/Argosy Group LLC produces several free newsletters that are sent directly to the email you provide at registration (namely, PE Hub Wire, PE Hub Canada Wire, PE Hub Wire Top Story of the Week, Buyouts Daily, and VCJ Alert). To enable us to keep providing these services free of charge, we reserve the right to contact you with special invitations to sample or purchase private equity-related products. 
+By submitting this free subscription request for any of these products, you are also consenting to this communication. Should you ever wish to unsubscribe from a particular communication you may activate the unsubscribe mechanism at the bottom of the email. This will discontinue both the special invitations mentioned previously, as well as your subscription to the weekly newsletter. The information you provide will be safeguarded by Argosy Group LLC/Buyouts Insider. The company’s subsidiaries may use it to keep you informed of relevant products and services. We occasionally allow reputable companies outside of the company to mail details of products which may be of interest to you. As an international group, we may transfer your data on a global basis for the purposes indicated above. 
+WE WILL NEVER SHARE YOUR EMAIL OR CONTACT DETAILS WITH ANY OUTSIDE COMPANY HOWEVER.
+
+			    Should you have any questions please do not hesitate to contact us: [email protected].
+	    	
+
+ 
+
+
+
+
+Top Posts KKR to buy Nature’s Bounty from Carlyle
+by Luisa Beltran
+
+BlackRock leads funding round for fintech platform iCapital
+by Iris Dorbian
+
+Platinum Equity to buy United Site Services
+by Luisa Beltran
+
+The PE HUB Podcast, Episode Two
+by Staff Report
+
+Private Equity Jobs of the Week: Priceline, KPMG, NovaQuest are hiring
+by Eamon Murphy
+
+Raymond James expands team with new hire
+by Iris Dorbian
+
+The carve-out curveball
+by peHUBlogger Network
+
+Private Equity Jobs of the Week: Cambridge Associates, Bank of America, UBS are hiring
+by Eamon Murphy
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Summer Fashion 2017 – Best Dresses & Outfits for Summer | eBay
+Skip to main contenteBayShop by categoryShop by categoryEnter your search keywordAll CategoriesAdvancedHi (Sign in to bid or buy) Daily Deals Gift Cards Help & Contact Sell My eBayExpand My eBay Summary Bids/Offers Watch list Wish list All lists Purchase history Selling My Collections Followed searches MessagesNotificationFashion
+Shop By CategoryWomen's ClothingShop Women's ClothingDressesWomen's ClothingTops & BlousesWomen's ClothingAthletic ApparelWomen's ClothingT-ShirtsWomen's ClothingJeansWomen's ClothingPantsWomen's ClothingSwimwearWomen's ClothingCoats & JacketsWomen's ClothingMen's ClothingShop Men's ClothingT-ShirtsMen's ClothingJeansMen's ClothingCasual ShirtsMen's ClothingAthletic ApparelMen's ClothingCoats & JacketsMen's ClothingShoesShop ShoesWomen's ShoesShoesMen's ShoesShoesCollectible SneakersShoesGirls' ShoesShoesBoys' ShoesShoesBaby & Toddler ShoesShoesJewelryShop JewelryFashion Necklaces & PendantsJewelryFine Necklaces & PendantsJewelryFashion EarringsJewelryFine EarringsJewelryFashion BraceletsJewelryFine BraceletsJewelryFashion RingsJewelryFine RingsJewelryEngagement & WeddingJewelryVintage & Antique JewelryJewelryMen’s JewelryJewelryWatches, Parts & AccessoriesShop Watches, Parts & AccessoriesLuxury WatchesWatches, Parts & AccessoriesMen's WatchesWatches, Parts & AccessoriesWomen's WatchesWatches, Parts & AccessoriesHandbags & AccessoriesShop Handbags & AccessoriesLuxury HandbagsHandbags & AccessoriesWomen's AccessoriesHandbags & AccessoriesMen's AccessoriesHandbags & AccessoriesBeautyShop BeautyMakeupBeautyFragrancesBeautySkin CareBeautyBath & BodyBeautyNail Care, Manicure & PedicureBeautyHair Care & StylingBeautySalon & Spa EquipmentBeautyShaving & Hair RemovalBeautyHealthShop HealthMassageHealthMedical, Mobility & DisabilityHealthNatural & Alternative RemediesHealthOral CareHealthSexual WellnessHealthVision CareHealthVitamins & Dietary SupplementsHealthWeight ManagementHealthVintageShop VintageWomen's Vintage ClothingVintageMen's Vintage ClothingVintageChildren's Vintage ClothingVintageVintage AccessoriesVintageWomen's Vintage ShoesVintageMen's Vintage ShoesVintageKids & BabyShop Kids & BabyGirls' Clothing (Newborn-5T)Kids & BabyGirls' Clothing (Sizes 4 & Up)Kids & BabyBoys' Clothing (Newborn-5T)Kids & BabyBoys' Clothing (Sizes 4 & Up)Kids & BabyTop BrandsadidasShop adidasWomen's ShoesadidasMen's ShoesadidasWomen's AppareladidasMen's AppareladidasAir JordanTop BrandsAnthropologieTop BrandsCalvin KleinShop Calvin KleinPerfume & CologneCalvin KleinWomen's ShoesCalvin KleinMen's ShoesCalvin KleinWomen's ApparelCalvin KleinMen's ApparelCalvin KleinChanelShop ChanelHandbags & AccessoriesChanelShoesChanelPerfume & CologneChanelMakeupChanelSkin CareChanelCoachShop CoachHandbagsCoachAccessories & WalletsCoachWatchesCoachShoesCoachPerfume & CologneCoachDavid YurmanTop BrandsDolce VidaTop BrandsGucciTop BrandsInvictaTop BrandsJ.CrewTop BrandsLevi'sTop BrandsLouis VuittonTop BrandsMadewellTop BrandsMichael KorsShop Michael KorsHandbags & PursesMichael KorsWomen's AccessoriesMichael KorsWatchesMichael KorsShoesMichael KorsPerfume & CologneMichael KorsNikeShop NikeWomen's ShoesNikeMen's ShoesNikeWomen's ApparelNikeMen's ApparelNikeOmegaTop BrandsRalph LaurenShop Ralph LaurenWomen's ShoesRalph LaurenMen's ShoesRalph LaurenWomen's ApparelRalph LaurenMen's ApparelRalph LaurenPerfume & CologneRalph LaurenRay-BanTop BrandsRolexTop BrandsTory BurchTop BrandsUnder ArmourTop BrandsVictoria's SecretShop Victoria's SecretWomen's ClothingVictoria's SecretBath & BodyVictoria's SecretSales & EventsFashion Sales & EventsSales & EventsFashion Daily DealsSales & EventsSubscribe to Fashion DealsSales & EventsFashion TrendsGinghamFashion TrendsAviatorsFashion TrendsMetallic ShoesFashion TrendsSlogan TeesFashion TrendsOff the ShoulderFashion TrendsStreet SneakersFashion TrendsListings We LoveFashion TrendsStyle StoriesFashion TrendsSell on eBayConsign ItemsSell on eBaySell DirectSell on eBay
+
+Save up to 60% on Athletic StylesWork it out in adidas, Nike, and more.Your Summer Look for LessDresses, tanks, and more from $9.99Summer Style, Now on SalePolos, shorts, and more from $9.99Louis Vuitton x SupremeShop the season's hottest collaborationTop Uniform Styles From $4.99Shop Cat & Jack, Old Navy, and moreShop By CategoryWomen's ClothingDresses - Women's Clothing | Tops & Blouses - Women's Clothing | Jeans - Women's Clothing | Women's ShoesSandals - Women's Shoes | Flats & Oxfords - Women's Shoes | Heels - Women's Shoes | HandbagsContemporary Bags - Handbags | Luxury Bags - Handbags | Women's JewelryFashion - Women's Jewelry | Fine - Women's Jewelry | Kids' ClothingGirls' - Kids' Clothing | Boys' - Kids' Clothing | BeautyMakeup - Beauty | Fragrance - Beauty | Skincare - Beauty | Men's ClothingT-Shirts - Men's Clothing | Athletic Apparel - Men's Clothing | Jeans - Men's Clothing | WatchesMen's  - Watches | Women's  - Watches | Men's ShoesCasuals - Men's Shoes | Athletic - Men's Shoes | Collectible Sneakers - Men's Shoes | Shop the Look: Our New TV CommercialSee More LooksHover over their outfit to get the look
+		Shop Top Fashion DealsShop Allaeropostale mens a87 solid jersey polo shirt 
+		$13.00$26.50(50% off)PUMA evoSPEED 5.5 Men's Indoor Soccer Shoes 
+		$24.99$55.00(54% off)Ray-Ban Women's Gradient Erika RB4171-865/13-54 Brown Round Sunglasses 
+		$87.99$140.00(37% off)Call It Spring 8258 Womens Terryn Pink Gladiator Sandals 7.5 Medium (B,M) BHFO 
+		$19.99$24.99(20% off)Shop By BrandFree PeopleMadewellLululemonRalph LaurenNikeJ.CrewCool, Go-To Looks From $7.99Shop Gap, Gymboree, and moreHit the Ground RunningMen's athletic shoes from $24.99Jump Into ActionWomen's athletic shoes from $24.99Shop By TrendGinghamAviatorsMetallic ShoesSlogan TeesOff the ShoulderStreet Sneakers
+        Featured Videos
+    
+Dress to ImpressDress to impress and make the best of every day no matter what it has in store. With fashion's hottest must haves and accessories, you can find what you've been looking for on eBay.Fashionably PerfectThe stylish range of men's and women's clothing and shoes sizzle from head to toe, no matter the season. It's easier than ever to browse handbags, watches, and special occasion outfits by style, brand, or price. Search on eBay for women's fashion, men's fashion, clothes, shoes, handbags, jewelry, watches, jackets and more.Top Fashion BrandsIf brands are your thing, you can surf eBay to find handbags by Vera Bradley, watches by Rolex, athletic apparel by Nike, shoes form Nine West, jackets from Michael Kors, and shoes from Puma. It's all here in the eBay Fashion Department.Men's FashionDon't skimp when it comes to menswear that looks sharp and stylish. Beef up your closet with fashionable jeans, sweaters, and suits. eBay has a selection of accessories to fit your fancy, including hats, ties, wallets, and sunglasses. Grab a new briefcase for work or find the perfect backpack that holds all of your hiking supplies.Women's FashionBrowse the wide selection of style pieces on eBay, and unearth a world of trendy treasures for women and girls. Check out boots, heels, sandals, and athletic footwear that will keep you and your entire family moving year round. You can find sales that include top picks for fashionistas, or discover daily deals that add oomph to your closet without breaking the bank.Shopping is Fun!Take the strain out of shopping with eBay. Find great deals on classy clothing, stylish shoes, haute handbags, and jazzy jewelry. There are fashions and accessories for men, women, children, and babies so start shopping now.
+
+Daily Deals on eBay | Best deals and Free Shipping Skip to main contenteBayShop by categoryShop by categoryEnter your search keywordAll CategoriesAll DealsAdvancedHi (Sign in to bid or buy) Daily Deals Gift Cards Help & Contact Sell My eBayExpand My eBay Summary Bids/Offers Watch list Wish list All lists Purchase history Selling My Collections Followed searches MessagesNotification   Deals
+
+
+
+Spotlight DealEmoji Charm Bracelet - 18K Yellow Gold Plated Beads - 10 Charms$14.99$50.99 | 70% offFree shippingFeatured DealsHP - 23.8" Touch-Screen All-In-One - AMD A8-Series - 4GB Memory - 1TB Hard Dr...$429.99Free shippingPUMA G. Vilas 2 Core Men's Sneakers$39.99$75.00 | 46% offFree shippingMore optionsDyson SV04 V6 Absolute Cordless Vacuum | Fuchsia | Refurbished$220.00$599.99 | 63% offFree shippingFactory-Renewed Bose QuietComfort 35 Wireless Headphones$259.95$349.95 | 25% offFree shippingMore optionsWG924.4 WORX 32V MaxLithium Combo: 3-in-1Grass Trimmer + Blower w/2 Batteries$139.99$299.99 | 53% offFree shippingHanes 5 Pack Men's Underwear TAGLESS Boxer Briefs with Comfort Flex Waistband$13.70$23.00 | 40% offFree shippingMore optionsSunex 13pc 3/8" SAE 6pt Point Semi Deep Impact Sockets Set Tools Drive INCH 3327$31.45$92.99 | 66% offFree shipping$50 Bed Bath & Beyond Gift Card-Extra 10% OFF When you spend $100 or more- Email$50.00Free shippingEtude ETR-100 Series Student Bb Trumpet Lacquer$119.99$179.99 | 33% offFree shippingInvicta Pro Diver Men's 43mm Gold Watch with Quartz Movement$44.99$395.00 | 88% offFree shippingMore optionsGarmin fenix 3 Multisport Training GPS Watch in Gray with Heart Rate MonitorSee details$549.99 Free shippingSamsung Galaxy S5 G900V 16GB Verizon + GSM (AT&T T-Mobile UNLOCKED SmartPhone SR$89.99$304.99 | 70% offFree shippingMore optionsAlmost goneNikon D3300 DSLR Camera +18-55mm VR NIKKOR Lens + 30 Piece Accessory Bundle$459.95Free shippingAlmost goneThe Original Best Bamboo Rayon from Bamboo Memory Foam Pillow$18.99$79.99 | 76% offFree shippingMore options2017 Full Body Massage Chair 3yr Warranty! Recliner Shiatsu Heat Zero Gravity$539.99$2,500.00 | 78% offFree shippingMore optionsETERNITY * CK Calvin Klein * Perfume for Women * EDP * 3.4 oz * BRAND NEW TESTER$21.99$78.00 | 71% offFree shippingAlmost goneLenovo Ideapad 310 15.6" Laptop AMD A10-9600P 2.4GHz 8GB 1TB Win10$319.99$499.99 | 36% offFree shippingSamsung Galaxy S8 S8 Plus Caseology® [PARALLAX] Shockproof TPU Armor Case Cover$10.99$27.99 | 60% offFree shippingMore options2017 1 oz Silver American Eagle Coins BU (Lot, Roll, Tube of 20)$388.60$499.00 | 22% offFree shippingAlmost goneRazor Hovertrax 1.0 Hoverboard Electric Hover Smart Board, Red$299.00$699.99 | 57% offFree shippingApple iPad Pro 9.7" Retina Display 128GB MLMV2LL/A Space Gray$469.99$749.00 | 37% offFree shippingAlmost goneSamsung HW-KM45C 2.1 Channel 300W Bluetooth Soundbar w/ Wireless Subwoofer$99.99$299.99 | 66% offFree shippingDJI Phantom 4 Quadcopter - 4K Camera, 28 Minute Battery Life$829.00$1,199.00 | 30% offFree shippingBrand New Apple iPad 2017 32GB LATEST MODEL 9.7" WiFi + 4G LTE Tablet$389.99$699.99 | 44% offFree shippingMore optionsTrending DealsSee all trending dealsAdidas NEW Mens Original Crewneck Graphic Tee Trefoil T-Shirt $30$13.99$30.00 | 53% offFree shippingMore optionsSee all trending dealsCrocs Mens Santa Cruz 2 Luxe Loafer$24.99$54.99 | 54% offFree shippingMore optionsSee all trending deals$50 Southwest Airlines Gift Card-Extra 10% OFF When you spend $100 or more-Email$50.00Free shippingSee all trending deals1 oz Gold South African Krugerrand Coin Random Year - SKU #85815$1,290.59$1,445.00 | 10% offFree shippingAlmost goneSee all trending deals2017 1 oz Canadian Gold Maple Leaf Coin (BU)$1,293.00$1,396.99 | 7% offFree shippingSee all trending deals$100 Cabela's Gift Card For Only $82! - FREE Mail Delivery$82.00$100.00 | 18% offFree shippingSee all trending dealsASUS K550 15.6" Full HD Notebook Intel Quad-Core i7-6700HQ 2.6GHz 8GB 256GB SSD$619.99$899.00 | 31% offFree shippingSee all trending deals10000Lumens XM-L T6 Zoomable Tactical military LED 18650 Flashlight Torch Lamp$4.98Free shippingSee all trending dealsNew Sony Playstation 4 Slim 1TB Limited Edition Gold Console$269.99$479.99 | 43% offFree shippingSee all trending dealsApple 13.3" MacBook Pro with Retina Display MF839LL/A$1,029.99$1,499.00 | 31% offFree shippingSee all trending dealsNew Samsung Galaxy Note 5 SM-N920T 32GB Smartphone for T-Mobile$259.99$789.99 | 67% offFree shippingMore optionsAlmost goneSee all trending deals$50 American Gold Eagle 1 oz Random Year Brilliant Uncirculated$1,298.40$1,528.35 | 15% offFree shippingAlmost goneSee all trending dealsON SALE! 1 oz RMC Gold Bar (New w/ Assay)$1,283.00$1,417.50 | 9% offFree shippingSee all trending dealsRandom Date 1 Oz  .9999 Fine Gold Buffalo $50 BU Coin SKU40538$1,304.25$1,444.00 | 9% offFree shippingSee all trending dealsGoPro Hero Session Refurbished$99.99$349.99 | 71% offFree shippingAlmost goneSee all trending dealsSamsung Galaxy S7 Edge SM-G935A 32GB Smartphone for AT&T$274.99$789.99 | 65% offFree shippingMore optionsAlmost goneSee all trending dealsCanon PIXMA TS5020 Wireless Color Photo Printer with Scanner & Copier (Black)$39.99$129.99 | 69% offFree shippingSee all trending deals1 oz Gold Maple Leaf | Random Dated Canadian Gold Coin$1,290.22$1,389.20 | 7% offFree shippingSee all trending dealsRoyal Canadian Mint (RCM) 10 Troy Oz .9999 Fine Silver Bar SKU32137$179.10$195.89 | 8% offFree shippingAlmost goneSee all trending dealsFila Men's Memory Maranello 4 Running Shoe$21.99$75.00 | 70% offFree shippingMore optionsAlmost goneSee all trending deals2017 1 oz Platinum American Eagle MS-69 PCGS (FS, Flag) - eBay - SKU #152210$1,033.99$1,141.00 | 9% offFree shippingSee all trending deals5M 300 LED RGB Strip Light 3528 5050 SMD Flexible 44key Remote 12V Power US$5.49$13.99 | 60% offFree shippingMore optionsSee all trending dealsHP #61 2pack Combo Ink Cartridges 61 Black and Color NEW GENUINE$22.99$37.99 | 39% offFree shippingSee all trending dealsSamsung Galaxy S8 SM-G950FD Dual Sim (FACTORY UNLOCKED) Black Gold Gray Blue$584.99$809.99 | 27% offFree shippingMore optionsAlmost goneSee all trending dealsSolid Distressed Vintage Cotton Polo Style Baseball Ball Cap Hat 100% Cotton NEW$9.99Free shippingMore optionsSee all trending dealsNike Park III PINK Soccer Socks Over Calf Cushioned Men's 6-8 Women's 6-10 Elite$6.99Free shippingAlmost goneSee all trending dealsFashion Handmade Genuine Leather Bracelets for Men Punk Surfer Braided Bracelets$1.70Free shippingMore optionsAlmost goneSee all trending dealsGalaxy by Harvic Men's Cotton Blend Collar 3-Button Pique Sport Polo Golf Shirt$8.99$39.99 | 77% offFree shippingMore optionsSee all trending dealsBucket Hat Boonie Hunting Fishing Outdoor Men Cap Washed Cotton NEW W/ STRINGS$4.99$19.99 | 75% offFree shippingMore optionsSee all trending dealsOil Rubbed Bronze Knobs Pulls Kitchen Cabinet Handles Hardware  Pantry Dresser$0.99Free shippingMore optionsSee all trending deals
+
+
+
+Best Deals Of The WeekSamsonite Leather Dowel Flapover Business Case$59.99$280.00 | 78% offFree shippingMore optionsFila Men's Memory Maranello 4 Running Shoe$21.99$75.00 | 70% offFree shippingMore optionsAlmost goneApple iPhone 5S- 16 32 64GB GSM "Factory Unlocked" Smartphone Gold Gray Silver c$119.95Free shippingMore optionsAlmost gone10000Lumens XM-L T6 Zoomable Tactical military LED 18650 Flashlight Torch Lamp$4.98Free shippingShow75moreBest Deals Of The WeekDeals on your Back to College NeedsCommercial 82"x48"x18" 6 Tier Layer Shelf Adjustable Wire Metal Shelving Rack 76$59.99$64.99 | 7% offFree shippingMore optionsUS Traveler Saratoga 2pc Carry-on Expandable Spinner Duffel Luggage Suitcase Set$54.99$99.99 | 45% offFree shippingMore optionsDiamondback 2017 Trace Mountain Bike Blue$249.99$599.99 | 58% offFree shippingMore optionsCanon PIXMA PRO-10 Color Professional Inkjet Photo Printer - 6227B002$329.00Free shippingShow70moreDeals on your Back to College NeedsMissed A Great Deal?2 Pack: Women's Solid & Pattern Summer Sundresses by RC Collection$7.99$59.99 | 86% offFree shippingMore optionsLG LW1216ER - 12,000 BTU 110V Window A/C: Remote & Window Accessories Included$239.99$488.18 | 50% offFree shippingLG LW8016HR - 8,000 BTU 110V Window A/C w/ Heat: Remote & Window Vent Kit Incl.$209.00$384.00 | 45% offFree shippingHaier 2-Speed Portable 32-Pint Mechanical Air Dehumidifier with Drain | DM32M$99.99$164.99 | 39% offFree shippingAlmost goneShow80moreMissed A Great Deal?Tech It Out this SummerTP-Link Accessory HS100 N150 Wireless Smart Plug 150Mbps 2.4GHz Wall Mount$26.99$29.98 | 9% offFree shippingSamsung Galaxy S7 Edge SM-G935A 32GB Smartphone for AT&T$274.99$789.99 | 65% offFree shippingMore optionsAlmost goneInsignia Flex 8.9" WiFi Windows 10 Tablet Intel Quad Core 2GB 32GB - NS-P89W6100$64.95$199.99 | 67% offFree shippingMicrosoft Office Home and Student 2016 Windows English PC Key Card - 79G-04589$99.99$129.95 | 23% offFree shippingShow85moreTech It Out this SummerBest of Home and GardenGotham Steel Ceramic and Titanium Nonstick 3-Quart Pot with Lid - BRAND NEW -$25.99$79.99 | 67% offFree shippingAlmost goneCool Living AC 10,000 BTU Energy Star Window Mount Air Conditioner A/C + Remote$229.99$349.99 | 34% offFree shippingAlmost goneHanging Chaise Lounger Chair Arc Stand Air Porch Swing Hammock Chair Canopy$129.99$399.99 | 67% offFree shippingCool Living AC 8000 BTU Home/Office Energy Star Window Mount Air Conditioner A/C$159.99$289.99 | 44% offFree shippingAlmost goneShow85moreBest of Home and GardenDIY With Refurbished Power ToolsUp to 40% off DEWALT and moreSave up to 70% off Top Fashion Deals for HimU.S. Polo Assn. Men's Premium Foot-bed Slide Sandal Flip Flop Comfort Fit NWT$9.99$28.00 | 64% offFree shippingMore optionsJockey Mens No-Fly Stretch Boxer Brief 3 Pack Underwear Trunks cotton blends$10.99$29.50 | 62% offFree shippingMore optionsPUMA Cell Riaze Paintbrush Women’s Running Shoes$49.99$80.00 | 37% offFree shippingMore optionsInvicta S1 Rally Chronopgraph Black Dial Mens Watch - Choose color$64.99$795.00 | 91% offFree shippingMore optionsShow85moreSave up to 70% off Top Fashion Deals for HimBest of Sporting GoodsGarmin Vivosmart HR+ Activity Tracker Regular Fit, Black$69.99$143.99 | 51% offFree shippingMoultrie A-5 5 MP Low Glow Infrared Trail Game Camera (Certified Refurbished)$44.99$109.99 | 59% offFree shippingAlmost goneGarmin Forerunner 230 GPS Fitness Running Smart Watch w/ Built-In Accelerometer$127.99$249.99 | 48% offFree shippingMore optionsNew 2016 Cobra King F6 + Plus Driver Matrix Black Tie - Pick Your Color!$169.99$399.99 | 57% offFree shippingMore optionsShow85moreBest of Sporting GoodsSummer Cycling SaleUnbeatable prices | Free shipping10% Off Back to College Tech Deals: PCOLLEGE10Samsung Galaxy S7 SM-G930V 32GB Smartphone for Verizon$299.99$670.00 | 55% offFree shippingMore optionsAlmost goneApple Macbook 12'' 512GB Intel Core M Dual-Core Laptop - Gold/Silver/Space Gray$919.99$1,299.99 | 29% offFree shippingMore optionsApple iPad 3rd Gen 16GB, Wi-Fi, Retina, 9.7" - Black - (MC705LL/A)$135.97$193.74 | 29% offFree shippingSamsung Galaxy S7 SM-G930A 32GB for AT&T$239.99$670.00 | 64% offFree shippingMore optionsShow85more10% Off Back to College Tech Deals: PCOLLEGE10Up to 40% off Home IndoorHoover Cruise Cordless Ultra-Light Stick Vacuum, BH52210$149.99$179.99 | 16% offFree shippingDyson SV06 V6 Fluffy Hard-Floor Cordless Vacuum Cleaner | Blue | New$249.99$499.99 | 50% offFree shippingIntex Queen Raised Downy Inflatable Camping Air Mattress Bed With Built-In Pump$41.99$89.99 | 53% offFree shippingKitchenAid Rkp26M1x Refurb Of KP26M1X Pro 600 Stand Mixer 6-qt Large Capacity$209.99$349.99 | 40% offFree shippingMore optionsShow75moreUp to 40% off Home IndoorPet Supplies Best-SellersBlack 48" 2 Door Pet Cage Folding Dog w/Divider Cat Crate Cage Kennel w/Tray LC$34.99$107.99 | 67% offFree shippingAll Color 73" Cat Tree Scratcher Play House Condo Furniture Bed Post Pet House$49.99$144.99 | 65% offFree shippingMore optionsDurability Trouble-Free Outdoor Dog Pet Drinking Doggie Water Fountain 41" Hose$20.69$49.99 | 58% offFree shippingNew BestPet Black 32" 8 Panel Heavy Duty Pet Playpen Dog Exercise Pen Cat Fence$69.99$174.99 | 60% offFree shippingAlmost goneShow85morePet Supplies Best-SellersBest Deals for Baby up to 40% off Graco&#174; Solano 4-in-1 Convertible Crib with Bonus Mattress$129.99Free shippingMore optionsiBaby M6T HD Wi-Fi Wireless Digital Video Baby Monitor Temp & Humidity Sensor$114.72$179.95 | 36% offFree shippingMotorola MBP36S Remote Wireless Video Baby Monitor 3.5" Full Color LCD + Camera$99.99$199.99 | 50% offFree shippingSafety 1st Alpha Omega Elite Convertible 3-in-1 Baby Car Seat - Arlington$89.99$179.99 | 50% offFree shippingAlmost goneShow85moreBest Deals for Baby up to 40% off Backpacks and more 50% offBeverly Hills Country Club Newport 3pc Expandable Spinner Luggage Suitcase Set$159.99$229.99 | 30% offFree shippingMore optionsHigh Sierra Loop Backpack 44 Colors Everyday Backpack NEW$29.99$70.00 | 57% offFree shippingMore optionsHigh Sierra Swerve Backpack$29.99$100.00 | 70% offFree shippingMore options2Pc 12" 16" Kids Girls Luggage Set Suitcase Backpack School Travel Trolley ABS$32.99$55.99 | 41% offFree shippingShow80moreBackpacks and more 50% offBest of Motors12V 15000mAh Multi-Function Car Jump Starter Battery Charger Power Bank Booster$31.49$89.99 | 65% offFree shippingHID Xenon LED Headlight Conversion KIT H1 H3 H4 H7 H10 9005 9006 880 881 9004/7$16.99$37.98 | 55% offFree shippingMore optionsAlmost goneCar Seat Covers Gray Black 17pc Set for Auto w/Steering Wheel/Belt Pad/Head Rest$24.95$89.95 | 72% offFree shippingCar Floor Mats for All Weather Rubber 3pc Set Semi Custom Fit Heavy Duty Black$16.95$129.95 | 86% offFree shippingAlmost goneShow85moreBest of MotorsBest of VehiclesTop inventory from trusted dealers.Save up to 70% off Top Fashion Deals for Heradidas Women's Derby Tank Athletic Racerback Stretchy Tank Top Tee All Col. & Sz$10.99$22.00 | 50% offFree shippingMore optionsAlmost goneCaravelle New York Watch Women's 43L186 Quartz Chronograph Crystal Accents Watch$33.99$135.00 | 74% offFree shippingadidas Pure Boost X ATR Shoes Women's Black$65.00$130.00 | 50% offFree shippingMore optionsAlmost goneFallon & Royce Womens  Rose All Day Canvas Makeup Bag, Beige$13.99$38.00 | 63% offFree shippingShow85moreSave up to 70% off Top Fashion Deals for HerBest Bullion for New Investors2017 Canada 1 oz Silver Maple Leaf BU (Lot, Roll, Tube of 25) - SKU #117256$500.00Free shipping2017 Canada Platinum Maple Leaf - 1 oz - $50 - BU$1,034.59Free shippingAlmost gone1 oz. Platinum Bar - Valcambi Suisse - 999.5 Fine in Assay$1,008.78$1,160.00 | 13% offFree shippingAlmost goneUS Gold $20 Saint-Gaudens Double Eagle - NGC MS63 - 1908 No Motto$1,391.16$1,490.00 | 6% offFree shippingShow70moreBest Bullion for New InvestorsHealth & Beauty Top PicksEssie Nail Polish Choose Your Color Full Size Lacquer 0.46 oz$3.99$11.99 | 66% offFree shippingMore optionstruewhite 2-Person Advanced Plus Teeth Whitening Kit (up to 25 treatments)$11.99$199.00 | 93% offFree shippingAlmost goneFLOWERBOMB Viktor & Rolf women perfume edp 3.4 oz 3.3 NEW$79.88$123.99 | 35% offFree shippingElectric Full Body Shiatsu Massage Chair Recliner w/Heat Stretched Foot Rest 06C$649.99$1,899.99 | 65% offFree shippingMore optionsAlmost goneShow85moreHealth & Beauty Top PicksSave on Latest Laptops and TabletsAsus MeMO Pad 7 ME375CL 16GB Wi-Fi GSM 4G LTE Unlocked AT&T T-Mobile Tablet LN$64.99$449.99 | 85% offFree shippingDell 13.3" 2-in-1 Laptop i3 2.3GHz 4GB 1TB Windows 10 (i5368-1692GRY)$382.69$629.84 | 39% offFree shippingMotorola Droid Xyboard 10.1" 32GB, Wi-Fi + 4G Verizon 10.1in - Black MZ617$54.99$529.99 | 89% offFree shippingAlmost goneApple MacBook Air 13" 1.4 GHz Intel Core i5, 128GB SSD, 4GB RAM - MD760LL/B$549.99$999.99 | 45% offFree shippingShow75moreSave on Latest Laptops and TabletsRC, Drones & Ride Ons 20-70% OffGo Kart 4 Wheel Kids Ride on Car Stealth Pedal Powered Outdoor Racer Blk/Yellow$74.95$149.95 | 50% offFree shippingAlmost gone6V Electric Kids Ride On Motorcycle Dirt Bike W/ Training Wheels- Green$84.95$199.99 | 57% offFree shippingRazor Pocket Mod Miniature Euro 24 Volt 250 Watt  Electric Retro Scooter, Pink$264.99$349.99 | 24% offFree shippingAlmost goneKids 12V Ride On XL ATV Quad 4 Wheel Suspension MP3 Player Storage Basket Green$199.94$499.99 | 60% offFree shippingShow85moreRC, Drones & Ride Ons 20-70% OffAccesorize Your TechLogitech G602 Lag-Free Wireless Gaming Mouse with 11 Programmable Buttons$36.99$79.99 | 53% offFree shippingLogitech Z200 Multimedia Desktop Stereo Speakers with 3.5mm Line In/Out - 10w$17.99$29.99 | 40% offFree shippingPencil by Fifty Three 53 Bluetooth Smart Stylus for iPad Pro, iPhone 6s Plus$29.99$49.95 | 39% offFree shippingMore optionsNEW Pebble SmartWatch Bluetooth For Apple Android Water Resistant Rechargeable$39.99$99.99 | 60% offFree shippingMore optionsShow80moreAccesorize Your TechTech Must-Haves Up to 60% OffApple iPhone 6 Plus 64GB "Factory Unlocked" 4G LTE 8MP Camera Smartphone$367.95$849.00 | 56% offFree shippingMore optionsAlmost goneFunlux 1080P 4CH NVR 4 720p HD Outdoor Video Network Home Security Camera System$99.99$149.99 | 33% offFree shippingAlmost goneNikon D5300 Digital SLR Camera + 3 Lens Kit 18-55mm + 32GB Amazing Value Bundle$539.95Free shippingSamsung G900 Galaxy S5 Verizon Wireless 4G LTE 16GB Android Smartphone$97.95$800.00 | 87% offFree shippingMore optionsAlmost goneShow85moreTech Must-Haves Up to 60% OffDeals & Events NewsletterDiscover the secrets of all savvy shoppers.Sign upPlease enter valid email addressSuccess!Thanks for signing up.About eBay DealsShop from trusted sellers offering deep discounts and free shipping.Read more
+
+Stock Screener - Yahoo FinanceHomeMailFlickrTumblrNewsSportsFinanceCelebrityAnswersGroupsMobileMoreYahooSearchSearch0U.S. Markets closedS&P 5002,472.10-3.32 (-0.13%)Dow 3021,830.31+33.76 (+0.15%)LISTENWho is the face of pro baseball?Yahoo Finance's Dan Roberts and Myles Udland debate the business of baseballInsider TransactionsDefault CriteriaInsider & Restricted Shareholder Transactions1-4 of 4 resultsResults were generated a few mins ago. Pricing data is updated frequently. Currency in USDSymbolDateSharesProceedsTransaction DetailsTWLO2016-12-199.068MN/ADisposition (Non Open Market) at $0.00 per share.TWLO2016-10-139.818MN/AAcquisition (Non Open Market) at $0.00 per share.TWLO2016-06-279.818MN/AAcquisition (Non Open Market) at $0.00 per share.TWLO2016-06-279.818MN/ADisposition (Non Open Market) at $0.00 per share.The 'two pizza rule' is a secret to productive meetings that helped Amazon CEO Jeff Bezos become one of the world's richest menBusiness InsiderEngineer Finds Pattern; Makes Millions in StocksMoney MorningSponsoredTrump to cops: 'Please don't be too nice' while arresting 'thugs,' and don't worry about their heads when you toss them in the 'paddy wagon'Business InsiderYahoo Small BusinessData DisclaimerHelpSuggestionsPrivacyAbout Our AdsTerms (Updated)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UNION SQUARE VENTURES 2008 LP - Twilio Inc Insider Transactions | TipRanks   
+
+
+
+
+
+Go ProLogin / Sign Up Follow✓Get Real Time TransactionsInsider DetailsUNION SQUARE VENTURES 2008 LPTwilio Inc (TWLO)Ten Percent Owner Not RankedUNION SQUARE VENTURES 2008 LP's PerformanceUNION SQUARE VENTURES 2008 LP has not reported any informative transactions and therefore cannot be ranked.How are Insiders Ranked? Insider Holdings 100.0% Twilio Inc (TWLO)$316MSee the Top Stocks by Insiders > Insider RolesTwilio Inc (TWLO): Ten Percent OwnerSee the Top 25 Corporate Insiders > UNION SQUARE VENTURES 2008 LP's Trading Historybased on Form 4 Follow✓Get Real Time TransactionsCompany NameInsider PositionHolding ValueLast TransactionLast Transaction  AmountLast Transaction DateTWLOTwilio IncTen Percent Owner$315,947,908Uninformative Sell$0Dec 22, 2016UNION SQUARE VENTURES 2008 LP has not reported any informative transactions for TWLO, therefore, performance cannot be measured. Track Record DateTransactionAmountNo. of SharesPrice per ShareProfitForm 4 Dec 22, 2016 Uninformative Sell $0 9,068,262 $31.71 N/A  Dec 12, 2016 Uninformative Buy $0 9,818,262 $29.27 N/A See All Insider Trading from Today >You May Also LikeMeet our Smart Portfolio. See what top analysts say about your stocks.Get a breakdown of the different strategies based on detected insider trading activity.Find the best performing Analyst in each sector. Follow them so you never miss a recommendation.Related LinksHow can I benefit from Insider Trading? >See the Top 25 Corporate Insiders >Go to Hot Stocks by Insiders >Find which stocks Insiders traded today >Become a TipRanks MemberGet the best Investing Tips & Hacks straight to your emailFree MembershipSubmitInsider Trading Daily NewsletterProfessional day-trading strategy based on predictive insider transactionsAnnual Return: +85.42%Learn More >Powered by
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Portfolio 
+ | 
+Union Square Ventures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Threads
+Blog
+Portfolio
+About
+Jobs
+
+
+
+
+
+
+
+
+
+
+Since 2004, we have invested in over 100 companies, spanning sectors and geographies.
+
+
+
+
+
+
+
+
+Current Investments
+
+
+
+
+
+
+
+
+
+Flip is the easiest way to sublet, get out of, or find a lease. Find thousands of flexible sublets in New York, Los Angeles, and San Francisco.
+
+
+
+
+Seed, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+goTenna creates devices & cognitive networking protocols that power scalable, decentralized connectivity.
+
+
+
+
+Series B, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Top Hat’s interactive, cloud-based teaching platform enables professors to engage students inside and outside the classroom with compelling content, tools and activities.
+
+
+
+
+Series C, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tucows creates simple, powerful services that unlock the power of the Internet.
+
+
+
+
+
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Upgrade is an online credit platform combining consumer loans with credit monitoring and credit education tools.
+
+
+
+
+Series A, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Code Climate is the most advanced, open and extensible platform for source code analytics
+
+
+
+
+Series A, 
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CoverWallet is commercial insurance for small business
+
+
+
+
+Series A, 
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jobbatical is building a borderless world through jobs
+
+
+
+
+Seed, 
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Numerai is a new kind of hedge fund, built by a network of data scientists.
+
+
+
+
+
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nurx is your medication prescribed and delivered
+
+
+
+
+Series A, 
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Payjoy is consumer finance for the next billion
+
+
+
+
+Series A, 
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Polychain Capital is the world's premier blockchain asset hedge fund
+
+
+
+
+
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Protocol Labs is a research, development, and deployment lab for network protocols
+
+
+
+
+
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tech-enabled real estate marketplace giving investors access to pre-vetted deals and companies.
+
+
+
+
+Series B, 
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shippo is an API that powers shipping for businesses
+
+
+
+
+Series A, 
+
+2016
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bringing a world-class visual recognition system to everyone
+
+
+
+
+Series A, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Clue is a cycle tracking app that gives personal insights into female health.
+
+
+
+
+Series A, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nationwide drone services for aerial imagery, video, and data.
+
+
+
+
+Seed, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Koko is a social network that actually calms your mind
+
+
+
+
+Seed, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+La Ruche connects farmers with people who want farm fresh food
+
+
+
+
+Series B, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mediachain is an open, universal media library
+
+
+
+
+Seed, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OB1 is making trade free for everyone, everywhere
+
+
+
+
+Seed, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pilot is a new kind of ISP.
+
+
+
+
+Seed, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quizlet builds simple tools that let you study anything, anywhere
+
+
+
+
+Series A, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Simscale is a web-based engineering simulation (CAE) platform
+
+
+
+
+Series A, 
+
+2015
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Amino is a mobile platform for passionate, niche communities.
+
+
+
+
+Series A, 
+
+2014
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Blockstack is a new decentralized internet where you own your data and your apps run locally without remote servers.
+
+
+
+
+Seed, 
+
+2014
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Casetext is a collaborative information-sharing network for lawyers and legal experts
+
+
+
+
+Series A, 
+
+2014
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Beautiful Cap Table Management
+
+
+
+
+Series A, 
+
+2014
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure1 is a network of healthcare professionals sharing images and other content.
+
+
+
+
+Series A, 
+
+2014
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Veniam delivers the networking fabric for the Internet of Moving Things.
+
+
+
+
+Seed, 
+
+2014
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CircleUp provides capital and resources for innovative early-stage consumer brands
+
+
+
+
+Series A, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cloudflare is helping to build a better Internet
+
+
+
+
+Series C, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Coinbase is creating an open financial system for the world.
+
+
+
+
+Series A, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Human Dx enables and supports the development of the Human Diagnosis Project.
+
+
+
+
+Series A, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Onefootball is the most comprehensive football app for your smartphone.
+
+
+
+
+Series A, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Science Exchange is an online marketplace for scientific services.
+
+
+
+
+Series A, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SigFig is an investment management platform that helps investors better optimize their portfolio.
+
+
+
+
+Series B, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Splice is a technology platform for musicians to better create, collaborate and share their work.
+
+
+
+
+Seed, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auxmoney is Germany's largest platform for consumer peer-to-peer lending.
+
+
+
+
+Series B, 
+
+2012
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C2FO is a global marketplace for working capital transactions.
+
+
+
+
+Series B, 
+
+2012
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dwolla provides an ACH API for businesses and platforms to leverage a powerful bank transfer platform
+
+
+
+
+Series B, 
+
+2012
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Funding Circle is a marketplace for small business loans.
+
+
+
+
+Series B, 
+
+2012
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mytaxi is a mobile application for taxi e-hailing.
+
+
+
+
+Series B, 
+
+2012
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sift Science detects and prevents online fraud and abuse
+
+
+
+
+Series A, 
+
+2012
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+YouNow is a live video social network.
+
+
+
+
+Series A, 
+
+2012
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Codecademy is an interactive curriculum for learning how to code.
+
+
+
+
+Series A, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DuckDuckGo is a search engine with instant answers, real privacy, and less clutter.
+
+
+
+
+Series A, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Duolingo is a platform to learn languages while simultaneously translating the web.
+
+
+
+
+Series A, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kik is a real-time mobile messaging application.
+
+
+
+
+Series A, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skillshare is an online learning community with over 15,000 classes to help you further your career and your passions. 
+
+
+
+
+Series A, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wattpad is the global, multiplatform entertainment company for original stories
+
+
+
+
+Series A, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Edmodo is a social learning network for teachers, students, schools, and districts.
+
+
+
+
+Series A, 
+
+2010
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shapeways is an online marketplace for 3D printed goods.
+
+
+
+
+Series A, 
+
+2010
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SoundCloud an online platform for sharing audio.
+
+
+
+
+Series B, 
+
+2010
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stack Overflow is the world's largest online developer community.
+
+
+
+
+Series A, 
+
+2010
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Work Market’s cloud-based software automates work so that companies can scale a flexible workforce to transform their business.
+
+
+
+
+Series A, 
+
+2010
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Foursquare is a technology company that uses location intelligence to build meaningful consumer experiences and business solutions.
+
+
+
+
+Seed, 
+
+2009
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kickstarter is the world's largest funding platform for creative projects.
+
+
+
+
+Series A, 
+
+2009
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Simulmedia is the leading provider of data-driven television solutions for national advertisers.
+
+
+
+
+Seed, 
+
+2009
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Meetup brings people together in thousands of cities to do what they want to do in life
+
+
+
+
+Series D, 
+
+2008
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MongoDB is the database for giant ideas
+
+
+
+
+Series A, 
+
+2008
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Return Path is building email intelligence products and services.
+
+
+
+
+Series E, 
+
+2008
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yieldmo is a mobile advertising technology platform.
+
+
+
+
+Series A, 
+
+2008
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zemanta is a Content DSP.
+
+
+
+
+Series A, 
+
+2008
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Disqus builds interconnected communities around online comment discussion.
+
+
+
+
+Seed, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Stripe is a commerce & payments platform used by hundreds of thousands of businesses globally.
+
+
+
+
+
+
+
+More
+
+
+
+
+
+
+
+
+Exited Investments
+
+
+
+
+
+
+
+
+
+Assembly is a community platform for building and running software products.
+
+
+
+
+Series A, 
+
+2014
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CrowdRise is a crowdfunding platform for charitable giving.
+
+
+
+
+Series A, 
+
+2014
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Firebase is a scalable real-time backend.
+
+
+
+
+Series A, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kitchensurfing is a marketplace of private chefs.
+
+
+
+
+Series A, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sidecar is a marketplace for people to give and get rides from their mobile phone.
+
+
+
+
+Series B, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VHX is a video distribution platform.
+
+
+
+
+Series A, 
+
+2013
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Behance is an online platform to showcase and discover creative work.
+
+
+
+
+Series A, 
+
+2012
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Brewster is an address book for the twenty-first century.
+
+
+
+
+Seed, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Canvas is a community platform for drawing.
+
+
+
+
+Series A, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lending Club is an online marketplace for creditworthy borrowers and savvy investors.
+
+
+
+
+Series D, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Turntable creates social music experiences on the web.
+
+
+
+
+Series A, 
+
+2011
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tasty Labs built social software.
+
+
+
+
+Seed, 
+
+2010
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Heyzap is a mobile ad network for discovering new mobile apps.
+
+
+
+
+Seed, 
+
+2009
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Twilio is an API for businesses building scalable communications applications.
+
+
+
+
+Series A, 
+
+2009
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Amee helps companies understand and minimize supply chain risk.
+
+
+
+
+Series A, 
+
+2008
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Boxee is a platform for video consumption on connected devices.
+
+
+
+
+Series A, 
+
+2008
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Covestor is an online investment management platform.
+
+
+
+
+Series A, 
+
+2008
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Flurry is a suite of tools and services for mobile application developers.
+
+
+
+
+Seed, 
+
+2008
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Clickable is the all-in-one solution for online advertising.
+
+
+
+
+Series A, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Etsy is an online marketplace for creative products made and sold by artisanal businesses.
+
+
+
+
+Seed, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GetGlue is a social network for entertainment.
+
+
+
+
+Series A, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Outside.in was a platform for local neighborhoods to share and discover information.
+
+
+
+
+Seed, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Targetspot is an internet audio advertising network.
+
+
+
+
+Seed, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tumblr is a network of blogs for people to share the things they do, love, think and create.
+
+
+
+
+Seed, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Twitter is a real-time information network.
+
+
+
+
+Series A, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wesabe was a web-based tool that gave members a better understanding of how they spend money.
+
+
+
+
+Series B, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zynga is a game studio for online and mobile social games.
+
+
+
+
+Series A, 
+
+2007
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Buglabs is the creator of an open source hardware and software platform.
+
+
+
+
+Seed, 
+
+2006
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feedburner is a feed management service.
+
+
+
+
+Series B, 
+
+2006
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oddcast was a viral marketing platform for agencies and brands.
+
+
+
+
+Series D, 
+
+2006
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Delicious is the world's leading social bookmarking service.
+
+
+
+
+Seed, 
+
+2005
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Indeed is a vertical search engine for jobs.
+
+
+
+
+Series A, 
+
+2005
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Info(N)Gen is a content discovery engine for business.
+
+
+
+
+Seed, 
+
+2005
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tacoda provided behaviorally targeted online advertising services.
+
+
+
+
+Series B, 
+
+2004
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+We're hiring
+ | 
+Union Square Ventures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Threads
+Blog
+Portfolio
+About
+Jobs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+We're hiring
+Sep 28, 2011
+
+“
+
+Union Square Ventures has a long history - in internet time at least - of hiring off this blog (posts here, here, and here.) A fundamental assumption of the way we've hired is that we're able to get to know great people through their "web presence" - the trail of online communities, projects, and services with which they've engaged. Just as we invest in the transformative power of the internet, we're also looking to build our organization off the internet - plus, we've met some really impressive folks through this blog. And so, in this vein, I'm excited to announce that USV is hiring an investment analyst.The analyst position at Union Square Ventures is a two-year role designed for someone who doesn't have an MBA. As an analyst at USV, you'll learn what the venture capital business is about, and you'll get insight into a handful of fascinating startups too. We hope that, after working with us, this person will move on to a startup or another venture firm or pursue an advanced degree.The primary responsibility of the analyst is to help manage the day-to-day activities of the firm, including: 
+
+Meeting with entrepreneurs who have started businesses in which USV may be interested in investing
+Performing market research and due diligence for potential investments, which could entail financial or web-analytics modeling, interviewing customers/users or potential customers/users, or testing products and services
+Reporting for our investors, which includes helping to set companies' valuations, writing quarterly updates, and packaging the material for our LPs
+Working with USV portfolio companies, including helping out with hiring, events-planning, and research and attending board meetings
+Designing and executing projects of your own direction that help USV and/or our portfolio companies
+We're looking for someone who demonstrates:
+
+Deep understanding of the ecosystem of web and mobile services
+Strong written and oral communication skills - well-defended opinions are a necessity
+Familiarity with web technologies - you know the difference between the LAMP stack and a stack of lamps
+Strong interpersonal skills - you'll often be talking to entrepreneurs and other investors on behalf of USV
+Comfort modeling in Excel
+Ideally, prior design or programming experience or work in an investment or internet-related position
+Our office is in New York's Flatiron neighborhood, and the job starts immediately. We're a small team, and we'll be looking for someone who fits our culture. Culture's a tricky thing to describe well, so we encourage you to check out our web presences.If you're interested in the position, please reach out:First, we're looking to see links that will help us get to know you. This could be anything from a Twitter account to a blog or Tumblr to a project you hacked together - whatever represents you best. We expect your web presence to represent who you are, not who you think an employer wishes you were, so please don't waste time sanitizing your web presence before sending us there. We get it.Second, we'd also like to hear from you, so we're asking each applicant to record two short videos answering these questions: "Why are you interested in the analyst role at Union Square Ventures?" (up to a 90-second response) and "Which web or mobile services most inspire you?" (up to a 120-second response) We're using Take The Interview to collect the video responses securely.To apply, visit Take The Interview. None of the information you submit will be shared outside of USV. We'll be accepting applicants until 6pm Eastern time on Thursday, October 13.If you have questions, please leave them in the comments below. Otherwise, we're looking forward to hearing about what you find compelling, what you've made, how you think, and why you're into what we do.
+
+”
+
+
+
+
+
+
+Christina Cacioppo
+
+
+
+
+
+
+
+Please enable JavaScript to view the comments powered by Disqus.
+comments powered by Disqus
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+eBay Motors Blog | The official blog of eBay Motors
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main contenteBayShop by categoryShop by categoryEnter your search keywordAll CategoriesAdvancedHi (Sign in to bid or buy)
+		Daily Deals
+		Gift Cards
+		Help & Contact
+		Sell
+		My eBayExpand My eBay
+		Summary
+		Bids/Offers
+		Watch list
+		Wish list
+		All lists
+		Purchase history
+		Selling
+		My Collections
+		Followed searches
+		MessagesNotification
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The official blog of eBay Motors | Go to ebay.com/motors
+
+Search for:
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+Menu
+
+Home
+Classics
+
+American
+Asian
+European
+
+
+Culture
+
+Builders
+Concept Cars
+Movies & Television
+
+
+DIY
+Events
+Performance
+
+Sports Cars
+Motorsports
+
+
+Motorcycles & ATVs
+
+Motorcycles
+ATVs & UTVs
+
+
+Shop Motors
+
+
+  
+    Parts and Tools
+    
+Car & Truck Parts
+Motorcycle Parts
+Tools & Supplies
+  
+  
+    Vehicles
+    
+Cars & Trucks
+Classics & Exotics
+eBay Frontline Vehicles
+  
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What We Learned about the eBay Motors ’67 Mustang from Its VIN
+By Daniel Gray 0
+
+
+
+ Pause
+ Resume
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Builders
+
+
+
+ By Mark BachJul 270
+
+
+
+Listed on eBay Motors: The Fantastic Fiberglass Manta Ray by Noel Bangert
+
+
+
+After a brief career as an auto stylist, Noel Bangert became the executive producer of the 1973 horror hit, “The Exorcist.”
+
+Read more
+
+
+
+
+
+
+
+American
+
+
+
+ By Daniel GrayJul 26
+
+
+
+What We Learned about the eBay Motors ’67 Mustang from Its VIN
+
+
+
+The VIN reveals a breakdown of the Mustang’s origins, including the plant where it was built and its original engine specs.
+
+
+Read more
+
+
+
+
+
+
+
+Classics
+
+
+
+ By Jim MotavalliJul 25
+
+
+
+Listed on eBay Motors: The Tiniest Car Ever Made
+
+
+
+The Peel is 54 inches long and 39 wide. The car’s ability to fit in an elevator was tested in 1963.
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Classics
+
+It’s a 1967 Volvo Amazon with a Roaring BMW V-8
+The Volvo is being offered on eBay with a more street-worthy tune of merely 747 horsepower. 
+July 13
+By Jim Motavalli
+
+
+
+
+
+
+
+ 
+
+Classics
+
+Shine That Chrome: July 14 is Collector Car Appreciation Day
+Enthusiasts are planning open houses, car cruises, club gatherings and educational events to commemorate the day.
+July 7
+By Jim Motavalli
+
+
+
+
+
+
+
+
+
+
+
+
+Culture
+
+
+
+ By Nina RussinJul 24
+
+
+
+Turn Your SUV into a Portable Campsite
+
+
+
+Bigger vehicles have enough room to set up sleeping bags. Also consider a tent-trailer or rooftop tent.
+
+Read more
+
+
+
+
+
+
+
+Culture
+
+
+
+ By Daniel GrayJul 21
+
+
+
+Listed on eBay Motors: 1989 Surveillance Van (Shh!)
+
+
+
+The van was commissioned by the feds to accommodate extended stretches of stakeout work.
+
+Read more
+
+
+
+
+
+
+
+Builders
+
+
+
+ By Gary LieberJul 21
+
+
+
+Maker of Teeth and Fangs Rebuilds ‘51 Ford Coupe Racer
+
+
+
+The 1951 Ford two-door chop-top coupe can hit 150 miles per hour.
+
+Read more
+
+
+
+
+
+
+
+
+Builders
+
+
+
+ By Benjamin HuntingJul 20
+
+
+
+Maxlider Brothers Customs: A Business Built on Passion for Ford Broncos
+
+
+
+The brothers have been obsessed with Broncos since the late 1980s.
+
+Read more
+
+
+
+
+
+
+
+Builders
+
+
+
+ By Daniel GrayJul 19
+
+
+
+eBay Motors Installs a Classic Intake on ’67 Mustang’s 427 Cobra Jet V8
+
+
+
+The team’s goal is to have the car running for its appearance at the Woodward Dream Cruise in Michigan on Aug. 19.
+
+Read more
+
+
+
+
+
+
+
+News
+
+
+
+ By Mark BachJul 18
+
+
+
+Now in Its Tenth Generation, Honda Accord Proves the Test of Time
+
+
+
+Not many carmakers have retained the same nameplate for more than 40 years. 
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About
+Comment Policy
+User Agreement
+Privacy
+ 
+
+© Copyright 2017. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Union Square Ventures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Threads
+Blog
+Portfolio
+About
+Jobs
+
+
+
+
+
+
+
+
+
+
+We are a thesis-driven venture capital firm
+We invest in networks, infrastructure for the new economy, and enablers of open, decentralized data
+
+
+
+
+
+
+
+Latest
+
+
+
+
+
+Jun 27, 2017
+Andy Weissman 
+
+
+
+
+
+
+
+Flip
+
+A Google search for “apartment lease” returns 86 million results. Which makes sense. One of the constants in life is finding a place to live, and signing a long-term contract for that living place. That constant — that lease — remains in force even though changes in our lives may not line up neatly with that one- or two-year period. Many things happen to us while we are stuck with a long-term house or apartment lease: new job opportunities, new roommates or relationships, new family members, and so much more.
+Read more
+
+
+
+
+
+
+
+
+
+What we're thinking about
+
+
+
+USV Investment Thesis
+
+
+
+
+
+
+The core ideas driving USV's investment decisions
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+Digital Healthcare
+
+
+
+
+
+
+How can the internet improve healthcare?
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+The Blockchain App Stack
+
+
+
+
+
+
+An emerging architecture for decentralized applications on the blockchain's shared data layer
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+Creative A.I.
+
+
+
+
+
+
+Machines that produce art and creative work
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+The Nomad Stack
+
+
+
+
+
+
+Tools for global living.
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+Union 2.0 / Benefits 2.0
+
+
+
+
+
+
+The right to be represented by a bot: will tomorrow's union be less like an org and more like a data platform?
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+Command Line Interfaces
+
+User interfaces in which you simply type what you want
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+Policy & Politics
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+Universal Basic Income
+
+Unconditional basic income as a way to embrace automation and simplify benefits delivery
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+Where protocols come from
+
+How do tech giants agree on when & where to interoperate openly?
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+More of the ideas and topics we're thinking about
+
+More threads
+
+
+
+
+
+
+
+Recent investments
+
+
+
+
+
+
+
+
+
+
+Flip is the easiest way to sublet, get out of, or find a lease. Find thousands of flexible sublets in New York, Los Angeles, and San Francisco.
+
+
+
+
+Seed, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+goTenna creates devices & cognitive networking protocols that power scalable, decentralized connectivity.
+
+
+
+
+Series B, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Top Hat’s interactive, cloud-based teaching platform enables professors to engage students inside and outside the classroom with compelling content, tools and activities.
+
+
+
+
+Series C, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tucows creates simple, powerful services that unlock the power of the Internet.
+
+
+
+
+
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Since 2004, USV has invested in 80+ companies 
+
+View our full portfolio
+
+
+
+
+
+
+Videos and talks
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nick Grossman - Regulating with Data
+
+
+
+
+
+Personal Democracy Forum, 2016
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Albert Wenger - 10 Things You've Always Wanted to Know About the Future of Work
+
+
+
+
+
+DLD, Munich, 2016
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fireside Chat with USV's Andy Weissman
+
+
+
+
+
+with Figure1, Toronto, 2016
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+Quizlet
+ | 
+Union Square Ventures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Threads
+Blog
+Portfolio
+About
+Jobs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quizlet
+Nov 23, 2015
+
+“
+There are some investments that take years to make. They are often our best investments. Quizlet took something like five years to go from a company we got interested in to a USV investment.
+In March 2009, we hosted an event we called Hacking Education. That was the official start of our focus on education. From that event came a thesis on how we would approach investing in education. We would invest in lightweight services and networks that allowed anyone to learn anything. We would not invest in services sold top down to the existing K-12 and higher education system. We wanted to obliterate, not automate.
+We started hunting around for services and networks that fit our thesis. One that caught our attention was Quizlet, the leading web and mobile studying tool. We got an intro through Christina. Eventually Andy got a meeting. We found out that Quizlet had been bootstrapped, was profitable, and was not interested in raising outside capital. But Andy did not take no for an answer. He kept calling on them. He brought me to meet the two Quizlet leaders, Andrew and Dave, in September 2012. We got the same story in that meeting but we did make an impression. We started inviting them to our events in SF and they usually would come. So we kept doing that and kept stoping by to say hi when we were in SF.
+Earlier this year Dave called me to say that they were going to raise outside capital. He and Andrew had concluded that the opportunity to build and develop peer to peer learning and studying tools for web and mobile was so large that they could not continue to bootstrap. So we jumped onto the opportunity and threw ourselves at it. That process had a number of fits and starts but we hung in there and eventually the financing came together the way Andrew and Dave wanted it to and we joined our friends at Costanoa, Altos, and Owl in a $12mm Series A round for a ten year old company. Just writing those last few words makes me happy. You don't see many Series A rounds for ten year old companies. But when you do, they are generally good ones to do.
+So what is Quizlet? Well if you have kids in middle, high school, or college, they probably use it. Quizlet is a studying/learning tool written by Andrew Sutherland for his own use ten years ago when he was studying for a french test. He put it out on the web a bit later. He was joined by Dave Margulius who helped him turn Quizlet into a business by implementing an elegant freemium business model. Quizlet is free for anyone to use. But if you want to do certain higher value things, you can pay a small amount every month for access to them.
+Quizlet lets anyone create a study set and practice it online and on mobile. And it also allows anyone to use someone else's study set. Quizlet is peer to peer learning. Over 100mm study sets have been created by users and over 1bn study sessions have been done on Quizlet. Quizlet has been a top ten education app in the mobile app stores for years, a fact I was constantly reminded of every time I went to look at the education category in the years we were chasing this investment.
+Here are some examples I just found by searching around:
+
+a sine/cosine study set
+35 essential french verbs
+aerobic and anaerobic respiration
+forklift test prep
+
+Just imagine a massively open database of 100mm study sets like that which is growing by the day. And you get why we have been and continue to be so interested in Quizlet.
+There are over 7bn learners on planet earth. Within a decade, the vast majority of them will have a mobile device connected to this massively open database of study set which is available for free. These 7bn learners will be able to contribute and consume these study sets. And in the process the world will become more educated and more literate. That is hacking education and that is why USV is so excited to, finally, be an investor in Quizlet.
+”
+
+
+
+
+
+
+Fred Wilson
+
+
+
+
+
+
+
+Please enable JavaScript to view the comments powered by Disqus.
+comments powered by Disqus
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Union Square Ventures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Threads
+Blog
+Portfolio
+About
+Jobs
+
+
+
+
+
+
+
+
+
+
+We are a thesis-driven venture capital firm
+We invest in networks, infrastructure for the new economy, and enablers of open, decentralized data
+
+
+
+
+
+
+
+Latest
+
+
+
+
+
+Jun 27, 2017
+Andy Weissman 
+
+
+
+
+
+
+
+Flip
+
+A Google search for “apartment lease” returns 86 million results. Which makes sense. One of the constants in life is finding a place to live, and signing a long-term contract for that living place. That constant — that lease — remains in force even though changes in our lives may not line up neatly with that one- or two-year period. Many things happen to us while we are stuck with a long-term house or apartment lease: new job opportunities, new roommates or relationships, new family members, and so much more.
+Read more
+
+
+
+
+
+
+
+
+
+What we're thinking about
+
+
+
+USV Investment Thesis
+
+
+
+
+
+
+The core ideas driving USV's investment decisions
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+Digital Healthcare
+
+
+
+
+
+
+How can the internet improve healthcare?
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+The Blockchain App Stack
+
+
+
+
+
+
+An emerging architecture for decentralized applications on the blockchain's shared data layer
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+Creative A.I.
+
+
+
+
+
+
+Machines that produce art and creative work
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+The Nomad Stack
+
+
+
+
+
+
+Tools for global living.
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+Union 2.0 / Benefits 2.0
+
+
+
+
+
+
+The right to be represented by a bot: will tomorrow's union be less like an org and more like a data platform?
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+Command Line Interfaces
+
+User interfaces in which you simply type what you want
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+Policy & Politics
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+Universal Basic Income
+
+Unconditional basic income as a way to embrace automation and simplify benefits delivery
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+
+
+Where protocols come from
+
+How do tech giants agree on when & where to interoperate openly?
+
+
+
+
+
+
+
+Read more
+
+
+
+
+
+
+
+
+
+
+More of the ideas and topics we're thinking about
+
+More threads
+
+
+
+
+
+
+
+Recent investments
+
+
+
+
+
+
+
+
+
+
+Flip is the easiest way to sublet, get out of, or find a lease. Find thousands of flexible sublets in New York, Los Angeles, and San Francisco.
+
+
+
+
+Seed, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+goTenna creates devices & cognitive networking protocols that power scalable, decentralized connectivity.
+
+
+
+
+Series B, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Top Hat’s interactive, cloud-based teaching platform enables professors to engage students inside and outside the classroom with compelling content, tools and activities.
+
+
+
+
+Series C, 
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tucows creates simple, powerful services that unlock the power of the Internet.
+
+
+
+
+
+
+2017
+
+
+
+
+More
+
+
+
+
+
+
+
+
+
+Since 2004, USV has invested in 80+ companies 
+
+View our full portfolio
+
+
+
+
+
+
+Videos and talks
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nick Grossman - Regulating with Data
+
+
+
+
+
+Personal Democracy Forum, 2016
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Albert Wenger - 10 Things You've Always Wanted to Know About the Future of Work
+
+
+
+
+
+DLD, Munich, 2016
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fireside Chat with USV's Andy Weissman
+
+
+
+
+
+with Figure1, Toronto, 2016
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+New Fund - Same Focus
+ | 
+Union Square Ventures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Threads
+Blog
+Portfolio
+About
+Jobs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+New Fund - Same Focus
+Mar 05, 2008
+
+“
+
+We closed on Union Square Ventures 2008 LP last week.  Our new fund, at $156mm in capital ments, is large enough for us to be able to act on our conviction and to support our portfolio, but small enough to enable us to flexibly build positions in attractive, capital efficient, Web services.The investment focus of Union Square Ventures 2008 LP remains the same. We are convinced that the information technology enabled transformation of the global economy has only begun. The environment, however, is quite different today than it was when we closed our first fund four years ago. Then, the economy was just emerging from the collapse of the dot com bubble, and the opportunity for Web services like del.icio.us and Feedburner was not yet broadly understood. Today, the global economy seems to be headed into a recession and the market for lightweight Web services is arguably over populated and over invested. So even though we have not changed where we invest, we continue to evolve how we invest to adapt to the changing market. Today, new Web services are popping up every day. Unfortunately, users only have so much time. Services targeted at Web savvy early adopters, will increasingly need to displace time spent with existing services to gain meaningful traction.  On the other hand, more people all over the world are Web literate creating opportunity for new services designed to appeal to new, untapped, groups of users at work and at home. The potential value of the available audience is also poised to explode as the generation that grew up not knowing a world without the Web is moving out of the back bedroom (and off the dole) into the workforce. All of this means that you will see subtle changes in the way we invest our new fund. We will be even more selective about the early stage Web services we back, looking for compelling differentiation, a discrete market focus, and clear evidence of sustainable user growth. You will also see us invest selectively in later stage opportunities that we believe are poised to grow as more users become more dependent on the Web to manage their daily lives. Perhaps the biggest change is that there will be new faces around the office.  Albert Wenger, who has been working closely with us for several years, will be joining us as a partner. Andrew Parker has made himself so essential to the operation of our business that we broke the rules on our two year analyst program and asked him to stay on as an Associate.  We are recruiting a new analyst to take over Andrew’s duties in that area. We are fortunate that we have been able to add to our team without changing the feel of our firm. Albert and Andrew share our passion for start-ups, and our conviction that the Web will continue to be a disruptive force in the global economy.  They also fit well into our collegial culture, where we do our own work, support the entire portfolio, and share the credit and the blame for the outcome.We are pleased that the closing of Union Square Ventures 2008 LP will enable us to continue doing the work we love. We have a tremendous group of supportive institutional limited partners in our first fund and are thrilled that every one of them is participating in Union Square Ventures 2008 LP. We look forward to continuing the dialogue with all of you in the coming years.
+
+
+”
+
+
+
+
+
+
+Brad Burnham
+
+
+
+
+
+
+
+Please enable JavaScript to view the comments powered by Disqus.
+comments powered by Disqus
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4936 @@
+
+
+More on Interfaces
+
+
+More on Interfaces
+The following is adapted from a MSDN page:
+
+If a class implements two interfaces that contain a member with the same 
+   signature, then implementing that member on the class will cause both 
+   interfaces to use that member as their implementation. In the following 
+   example, all the calls to Paint invoke the same method.
+
+     class Test 
+     {
+      static void Main()
+      {
+       SampleClass SC = new SampleClass();
+       IControl Ctrl = (IControl) SC;   // Ctrl has access only to members of IControl
+       ISurface Srfc = (ISurface) SC;   // Srfc has access only to members of ISurface
+
+       // The following lines all call the same method.
+       SC.Paint();
+       ctrl.Paint();
+       srfc.Paint();
+      }
+     }
+
+     interface IControl
+     {
+      void Paint();
+     }
+
+     interface ISurface
+     {
+      void Paint();
+     } 
+
+     class SampleClass : IControl, ISurface
+     {
+      // Both ISurface.Paint and IControl.Paint call this method. 
+      public void Paint()
+      {
+       Console.WriteLine("Paint method in SampleClass");
+      }
+     }
+When this is run, the output is:
+
+     Paint method in SampleClass
+     Paint method in SampleClass
+     Paint method in SampleClass
+If the two interface members do not perform the same function, however, this 
+   can lead to an incorrect implementation of one or both of the interfaces. It 
+   is possible to implement an interface member explicitly, creating a class 
+   member that is only called through the interface, and is specific to that 
+   interface. This is accomplished by naming the class member with the name of 
+   the interface and a period. For example:
+
+
+     public class SampleClass : IControl, ISurface
+     {
+      void IControl.Paint()
+      {
+       System.Console.WriteLine("IControl.Paint");
+      }
+
+      void ISurface.Paint()
+      {
+       System.Console.WriteLine("ISurface.Paint");
+      }
+     }
+The class member IControl.Paint is only available through the IControl interface, and 
+   ISurface.Paint is only available through ISurface. Both method implementations are 
+   separate, and neither is available directly on the class. For example:
+
+     // Call the Paint methods from Main.
+     SampleClass Obj = new SampleClass();
+     //Obj.Paint();  // Compiler error.
+
+     IControl C = (IControl)Obj;        // C has access only to members of IControl  
+     C.Paint();  // Calls IControl.Paint on SampleClass.
+
+     ISurface S = (ISurface)Obj;        // S has access only to members of ISurface
+     S.Paint(); // Calls ISurface.Paint on SampleClass.
+When this is run, the output is:
+
+     IControl.Paint
+     ISurface.Paint
+
+-------------------------------------------------------------------------------
+
+Multiple Inheritance of Interfaces
+While C# does not allow multiple inheritance of classes, it does allow this 
+   for interfaces.  An interface may have several base interfaces.  An interface 
+   inherits all members of its base interfaces, and a class which implements
+   must implement all the members of all the interfaces involved.
+
+The following example is adapted from the C# Language Specification.
+
+     interface IControl
+     {
+      void Print();
+     }
+     
+     interface IIdentify: IControl
+     {
+      void PrintID();
+     }
+
+     interface ITellAll: IControl
+     {
+      void DumpAll();
+     }
+
+     interface IDisclose: IIdentify, ITellAll 
+     {
+     }
+The base interfaces of IDisclose are IControl, IIdentify, and ITellAll.
+   In other words, the IDisclose interface above inherits members PrintID
+   and DumpAll as well as Print.  (Of course, each of these could have
+   other members as well, and they would accumulate.)
+
+If I have classes whose headings are:
+
+     public class ABC : IControl
+     
+     public class DEF : IIdentify
+
+     public class GHI : ITellAll
+
+     public class JKL : IDisclose
+then:
+
+class ABC must implement the Print method
+ class DEF must implement the Print and PrintID methods
+ class GHI must implement the Print and DumpAll methods
+ class JKL must implement the Print, PrintID and DumpAll methods
+
+
+
+ 
+
+
+
+Reckner Facilities
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+market research
+& test facilities
+
+
+
+
+Passionate about your research
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+iDisclose Form C Demo - YouTube 
+
+
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+ 
+Skip navigation
+  
+ 
+
+ 
+Sign inSearch
+
+ 
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+ 
+
+
+Close
+
+ 
+
+
+ 
+
+ Yeah, keep it
+Undo
+Close
+ 
+
+
+
+
+              This video is unavailable.
+
+    
+
+
+
+
+
+
+
+Watch QueueQueueWatch QueueQueue 
+Remove allDisconnect
+
+
+
+
+
+
+
+The next video is startingstop 
+
+
+Loading...
+    
+
+ 
+
+
+
+ 
+
+Watch Queue
+    
+Queue
+
+__count__/__total__
+    
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+Find out whyClose
+
+
+
+
+
+
+    iDisclose Form C Demo
+  
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+Georgia Quinn
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+        Unsubscribe from Georgia Quinn?
+      
+
+
+Cancel
+Unsubscribe
+
+
+
+
+
+
+
+
+
+
+        Working...
+    
+
+
+
+
+
+
+
+
+
+
+SubscribeSubscribedUnsubscribe2 
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Working...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Add to
+
+Want to watch this again later?
+
+      Sign in to add this video to a playlist.
+    
+Sign in
+
+
+Share
+
+ More
+ 
+
+
+Report
+
+
+Need to report the video?
+
+      Sign in to report inappropriate content.
+    
+Sign in
+
+
+
+
+
+Transcript
+
+
+
+
+Statistics
+
+
+
+Add translations
+
+443 views
+
+
+
+
+
+
+
+2
+
+Like this video?
+
+      Sign in to make your opinion count.
+    
+Sign in
+
+
+
+3
+
+
+0
+
+Don't like this video?
+
+      Sign in to make your opinion count.
+    
+Sign in
+
+
+
+1
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+Transcript
+    
+
+
+
+
+
+The interactive transcript could not be loaded.
+      
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+Rating is available when the video has been rented.
+
+
+
+
+      This feature is not available right now. Please try again later.
+    
+
+
+
+
+Published on Apr 2, 2016iDisclose has developed an online app to help you prepare the Crowdfunding Form C to be filed with the SEC. This video demonstrates how the application works and how it can help you raise money for your business. 
+
+
+
+      Category
+    
+
+People & Blogs
+
+
+
+
+      License
+    
+
+Standard YouTube License
+
+
+
+
+ Show more
+Show less
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Autoplay
+
+
+When autoplay is enabled, a suggested video will automatically play next. 
+
+ 
+
+
+        Up next
+      
+
+
+
+
+
+
+    TEDxVictoria - Victoria Westcott: Crowdfunding 101
+  
+
+     - Duration: 8:03.
+  
+TEDx Talks
+44,158 views
+
+
+
+8:03
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    iDisclose CEO Georgia Quinn on Using Technology to Empower Entrepreneurs
+  
+
+     - Duration: 3:08.
+  
+Equities.com
+87 views
+
+
+
+3:08
+
+
+
+
+
+    Crowdfunding  online document filling -Jobs Act title III by, Georgia Quinn  www.idisclose.com
+  
+
+     - Duration: 18:49.
+  
+CrowdFunding News Beat & Conference
+226 views
+
+
+
+18:49
+
+
+
+
+
+    ONLINE FORM FILLING DEMO VIDEO
+  
+
+     - Duration: 19:50.
+  
+subhash mane
+129,725 views
+
+
+
+19:50
+
+
+
+
+
+    Form c in sale tax
+  
+
+     - Duration: 4:22.
+  
+Tax Sigma
+6,905 views
+
+
+
+4:22
+
+
+
+
+
+    EK ONG KAR SAT NAM SIRI WHAHE GURU - Krishna Kaur
+  
+
+     - Duration: 13:22.
+  
+Dharam Singh
+9,224 views
+
+
+
+13:22
+
+
+
+
+
+    Autour de la psyché : ITW #1, 05/03/2016, Mireille, la psychiatrie - Part 1/2 [Fr + Engl. Subs]
+  
+
+     - Duration: 53:38.
+  
+Collectif l'Humain visible
+766 views
+
+
+
+53:38
+
+
+
+
+
+    Section 2: Cooperation--Leveraging Persuasion and Establishing Trust
+  
+
+     - Duration: 1:01:03.
+  
+CLHB Homeland Security Symposium Series
+40 views
+
+
+
+1:01:03
+
+
+
+
+
+    Board of Trustees 2011-03-02
+  
+
+     - Duration: 2:38:15.
+  
+Pasadena City College
+4,374 views
+
+
+
+2:38:15
+
+
+
+
+
+    180th Knowledge Seekers Workshop, Thursday, July 13, 2017
+  
+
+     - Duration: 2:30:48.
+  
+Keshe Foundation Spaceship Institute
+2,654 views
+
+
+
+2:30:48
+
+
+
+
+
+    iDisclose CEO Georgia Quinn on the Inspiration Behind iDisclose
+  
+
+     - Duration: 0:24.
+  
+Equities.com
+88 views
+
+
+
+0:24
+
+
+
+
+
+    35 - Changes to Sellers Disclosure Form (Form 17)
+  
+
+     - Duration: 27:11.
+  
+Jim Reppond
+50 views
+
+
+
+27:11
+
+
+
+
+
+
+
+
+
+
+
+  
+
+ 
+Language:
+  
+  English
+
+
+
+ 
+Content location:
+  
+  United States
+
+
+
+ 
+Restricted Mode:
+  
+Off
+
+
+
+History Help
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+Loading...
+    
+
+
+ About
+Press
+Copyright
+Creators
+Advertise
+Developers
++YouTube
+ Terms
+Privacy
+
+Policy & Safety
+  
+Send feedback
+
+Test new features
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Working...
+    
+
+
+
+
+
+
+
+
+
+ 
+Sign in to add this to Watch Later
+
+    
+ 
+
+Add to
+    
+
+
+
+
+
+        Loading playlists...
+    
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+iDisclose: Applications of Privacy Management Theory  to Children, Adolescents, and Emerging Adults | Stephen Cory  Robinson - Academia.edu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Log InSign Upmore&nbspJob BoardAboutPressBlogPeoplePapersTermsPrivacyCopyright We're Hiring! Help Centerless&nbspLog InSign Up
+
+
+pdfiDisclose: Applications of Privacy Management Theory  to Children, Adolescents, and Emerging Adults20 PagesiDisclose: Applications of Privacy Management Theory  to Children, Adolescents, and Emerging AdultsUploaded byS. Robinson  connect to downloadGet pdfiDisclose: Applications of Privacy Management Theory  to Children, Adolescents, and Emerging AdultsDownloadiDisclose: Applications of Privacy Management Theory  to Children, Adolescents, and Emerging AdultsUploaded byS. RobinsonLoading PreviewSorry, preview is currently unavailable. You can download the paper by clicking the button above.READ PAPERGET pdf
+
+×CloseLog InLog In with FacebookLog In with GoogleorEmail:Password:Remember me on this computeror reset passwordEnter the email address you signed up with and we'll email you a reset link.Need an account? Click here to sign up
+
+
+AboutBlogPeoplePapersJob BoardAdvertise We're Hiring! Help Center
+Find new research papers in:PhysicsChemistryBiologyHealth SciencesEcologyEarth SciencesCognitive ScienceMathematicsComputer Science
+
+
+TermsPrivacyCopyrightAcademia ©2017
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Reckner Facilities | new york city msa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				new york city msa			
+
+
+
+
+The region's premier sensory research & product testing facility!
+
+
+
+
+
+
+					The area's best-equipped and most-experienced sensory research and product testing center.  Features sink booths and food/beverage booths, a test kitchen, focus group room and multi-purpose room.
+				
+Location
+
+20 minutes from Westchester County Airport
+30 minutes from LaGuardia Airport
+45 minutes from Kennedy Airport and Manhattan
+Many hotels & restaurants within 5 minutes' drive
+
+Features
+
+Personal & Home Care Booths (12).  Features sink, outlets, sconce lighting with pass-through to product prep area.
+Food & Beverage Booths (23).  Designed for food/beverage evaluations with pass-through to product prep area.
+Multi-Purpose Room (23' x 36').  A totally flexible space, with seating for up to 40 classroom style.
+Test Kitchen & Lab (18' x 30').  Walk-in cooler, freezer, three electric ovens, ten microwaves, counter space and more.
+Focus Group Room (23' x 36').  Comfortable seating for 15.
+Client Lounge. Spacious accommodations with viewing via CCTV.
+
+
+
+
+Reckner Harrison
+
+						450 Mamaroneck Avenue
+						Harrison, NY 10528
+					
+Tel. 914 696 5150
+Contact:  Peter Grubb, Executive Director
+
+pgrubb@reckner.com
+
+
+
+spec sheets
+
+
+floor plan
+
+
+accommodations
+
+
+directions
+
+
+zip codes
+
+
+demographics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Reckner Facilities | milwaukee
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				milwaukee			
+
+
+
+
+The region's best-equipped, totally-flexible facility!
+
+
+
+
+
+
+					The area's premier product testing and focus group facility.  Features SEVEN product evaluation rooms, a fully-equipped, commercial test kitchen, highly-flexible, multipurpose room & luxurious focus group suite.  Just minutes from Milwaukee's Mitchel Field Airport, this facility was designed to satisfy all consumer product testing methodologies!
+				
+Location
+
+10 minutes from Milwaukee's Mitchell Field Airport 
+75 minutes from Chicago's O'Hare International Airport 
+Many hotels & restaurants within a 10 mile radius
+
+Features
+
+Product Evaluation Rooms (7).  Each room has completely washable surfaces and is equipped with a sink, mirror, counter, toilet, appliance outlet, washer and dryer.
+Commercial Kitchen (38' x 22'). Fully-equipped with 90 cu.ft. of refrigeration/freezer space, five residential electric ovens, four commercial gas ovens, one 45-lb 2-basket commercial fryer, quick-connect gas connections, abundant counter space and more.
+Multi-Purpose Room (38' x 22').  A totally flexible space, with seating for up to 50 classroom style.
+Focus Group Suite.  Tiered client viewing for 15 and focus group seating for 12.
+
+
+
+
+Reckner Milwaukee
+
+						9833 South 13th Street
+						Oak Creek, WI 53154
+					
+Tel. 414 768 6040
+Fax. 414 768 6048
+Contact: Angela Tingwald, Manager
+
+atingwald@reckner.com
+
+
+
+spec sheets
+
+
+floor plan
+
+
+accommodations
+
+
+directions
+
+
+zip codes
+
+
+demographics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+iDisclose Brings Offering Document Prep Into the 21st Century - YouTube 
+
+
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+ 
+Skip navigation
+  
+ 
+
+ 
+Sign inSearch
+
+ 
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+ 
+
+
+Close
+
+ 
+
+
+ 
+
+ Yeah, keep it
+Undo
+Close
+ 
+
+
+
+
+              This video is unavailable.
+
+    
+
+
+
+
+
+
+
+Watch QueueQueueWatch QueueQueue 
+Remove allDisconnect
+
+
+
+
+
+
+
+The next video is startingstop 
+
+
+Loading...
+    
+
+ 
+
+
+
+ 
+
+Watch Queue
+    
+Queue
+
+__count__/__total__
+    
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+Find out whyClose
+
+
+
+
+
+
+    iDisclose Brings Offering Document Prep Into the 21st Century
+  
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+Devin Thorpe
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+        Unsubscribe from Devin Thorpe?
+      
+
+
+Cancel
+Unsubscribe
+
+
+
+
+
+
+
+
+
+
+        Working...
+    
+
+
+
+
+
+
+
+
+
+
+SubscribeSubscribedUnsubscribe763 
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Working...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Add to
+
+Want to watch this again later?
+
+      Sign in to add this video to a playlist.
+    
+Sign in
+
+
+Share
+
+ More
+ 
+
+
+Report
+
+
+Need to report the video?
+
+      Sign in to report inappropriate content.
+    
+Sign in
+
+
+
+
+
+Transcript
+
+
+
+
+Statistics
+
+
+
+Add translations
+
+64 views
+
+
+
+
+
+
+
+1
+
+Like this video?
+
+      Sign in to make your opinion count.
+    
+Sign in
+
+
+
+2
+
+
+1
+
+Don't like this video?
+
+      Sign in to make your opinion count.
+    
+Sign in
+
+
+
+2
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+Transcript
+    
+
+
+
+
+
+The interactive transcript could not be loaded.
+      
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+Rating is available when the video has been rented.
+
+
+
+
+      This feature is not available right now. Please try again later.
+    
+
+
+
+
+Streamed live on Oct 1, 2015Read the full GoodCrowdinfo article and watch the interview here: http://bit.ly/1LQ0hi5.iDisclose is a new business providing private placement memorandum (PPM) preparation services through a web-based application for enterprises raising money, especially through (broadly defined) crowdfunding sites. In other words, iDisclose is bringing the offering memorandum into the 21st century.Co-Founder Doug Ellenoff is one of the industry’s leading legal voices. The iDisclose platform is designed for all the different players in the entrepreneurial capital raising marketplace: the entrepreneurs or issuers, the investors, the platforms and the lawyers.Doug explains, “iDisclose places the job of disclosure back into the hands of the entrepreneur (who is in the best position to provide all of the necessary details). Rather than provide un-contextualized information about a business to a lawyer, and then relying on the lawyer to prepare the first draft, the entrepreneur responds to an interactive online dialogue to identify the relevant disclosure issues and organizes the information into a legal document that requires limited attorney review.”Of course, investors are the consumers of the product. Doug notes that if investors are reviewing multiple PPMs, the standardized format provides investors with easier “apples to apples comparison.”For the platforms, he says, “iDisclose allows platforms to offer a value-added service to their users and standardizes the disclosure format across the entire platform. This allows the platform to create a vibrant marketplace of lowering the cost of capital for businesses, reducing risks to investors, and protecting the businesses seeking capital.”Finally, Doug says, the lawyers have an easier time of it as well, allowing them to spend more time providing valuable legal advice and review and less time with tedious drafting. 
+
+
+
+      Category
+    
+
+Entertainment
+
+
+
+
+      License
+    
+
+Standard YouTube License
+
+
+
+
+ Show more
+Show less
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+Advertisement
+      
+
+
+
+
+
+
+
+
+Autoplay
+
+
+When autoplay is enabled, a suggested video will automatically play next. 
+
+ 
+
+
+        Up next
+      
+
+
+
+
+
+
+    Successful Syndication and Private Placements
+  
+
+     - Duration: 28:30.
+  
+The Real Deal in Real Estate
+516 views
+
+
+
+28:30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    New Player In Living Walls Brings Outside Inside
+  
+
+     - Duration: 20:44.
+  
+Devin Thorpe
+9 viewsNew
+
+
+
+20:44
+
+
+
+
+
+    Private Placement Memorandum - What Is A PPM?
+  
+
+     - Duration: 2:07.
+  
+The PPM Attorney
+3,133 views
+
+
+
+2:07
+
+
+
+
+
+    Private Placement Funding PPM by Doyle H  Roberts
+  
+
+     - Duration: 41:23.
+  
+Doyle Roberts
+1,259 views
+
+
+
+41:23
+
+
+
+
+
+    The Depository Trust Company and DTC Eligibility Requirements
+  
+
+     - Duration: 4:53.
+  
+Legal & Compliance, LLC
+4,092 views
+
+
+
+4:53
+
+
+
+
+
+    Journalist Virtually Resurrects Homeless Man
+  
+
+     - Duration: 25:01.
+  
+Devin Thorpe
+40 views
+
+
+
+25:01
+
+
+
+
+
+    What is equity?
+  
+
+     - Duration: 7:55.
+  
+FounderMachine
+263,068 views
+
+
+
+7:55
+
+
+
+
+
+    It Shouldn't Be Easier To Find Your Mate Than To Find A Co-Investor Online
+  
+
+     - Duration: 16:32.
+  
+Devin Thorpe
+48 views
+
+
+
+16:32
+
+
+
+
+
+    How A Costume Party For 120,000 Really Makes A Difference In The Community
+  
+
+     - Duration: 24:19.
+  
+Devin Thorpe
+128 views
+
+
+
+24:19
+
+
+
+
+
+    Super 8-K Filing Requirements
+  
+
+     - Duration: 5:03.
+  
+Legal & Compliance, LLC
+441 views
+
+
+
+5:03
+
+
+
+
+
+    How Do You Offset 6 Million Tons of Carbon? One At A Time
+  
+
+     - Duration: 24:02.
+  
+Devin Thorpe
+85 views
+
+
+
+24:02
+
+
+
+
+
+    20 Years In The Making, A Personal Quest Led To A New Venture
+  
+
+     - Duration: 24:34.
+  
+Devin Thorpe
+156 views
+
+
+
+24:34
+
+
+
+
+
+    Nonprofit Crowdfunding Explained
+  
+
+     - Duration: 18:25.
+  
+Devin Thorpe
+84 views
+
+
+
+18:25
+
+
+
+
+
+    Report Asks Investors To Respect Human Rights On Clean Energy Projects
+  
+
+     - Duration: 22:35.
+  
+Devin Thorpe
+71 views
+
+
+
+22:35
+
+
+
+
+
+    How This New Innovation Could Be The Sliced Bread Of Solar Industry
+  
+
+     - Duration: 17:49.
+  
+Devin Thorpe
+205 views
+
+
+
+17:49
+
+
+
+
+
+    How Seeing The Nonprofit As A Business Helps Smile Train Grow
+  
+
+     - Duration: 16:31.
+  
+Devin Thorpe
+88 views
+
+
+
+16:31
+
+
+
+
+
+    Crowdfunding  online document filling -Jobs Act title III by, Georgia Quinn  www.idisclose.com
+  
+
+     - Duration: 18:49.
+  
+CrowdFunding News Beat & Conference
+226 views
+
+
+
+18:49
+
+
+
+
+
+    How Impact Investors Are 'Starting In The Wrong Place'
+  
+
+     - Duration: 23:09.
+  
+Devin Thorpe
+247 views
+
+
+
+23:09
+
+
+
+
+
+    iDisclose CEO Georgia Quinn on Using Technology to Empower Entrepreneurs
+  
+
+     - Duration: 3:08.
+  
+Equities.com
+87 views
+
+
+
+3:08
+
+
+
+
+
+    Expert: Now is the Time to Get Solar on Your Business
+  
+
+     - Duration: 25:38.
+  
+Devin Thorpe
+24 views
+
+
+
+25:38
+
+
+
+
+Loading more suggestions...
+    
+
+Show more
+
+
+
+
+
+
+
+
+
+  
+
+ 
+Language:
+  
+  English
+
+
+
+ 
+Content location:
+  
+  United States
+
+
+
+ 
+Restricted Mode:
+  
+Off
+
+
+
+History Help
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+Loading...
+    
+
+
+ About
+Press
+Copyright
+Creators
+Advertise
+Developers
++YouTube
+ Terms
+Privacy
+
+Policy & Safety
+  
+Send feedback
+
+Test new features
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Working...
+    
+
+
+
+
+
+
+
+
+
+ 
+Sign in to add this to Watch Later
+
+    
+ 
+
+Add to
+    
+
+
+
+
+
+        Loading playlists...
+    
+
+
+ 
+
+
+ 
+
+
+
+Conflict Of Interest - iDisclose - iDisclose Web Application - VPR IT Confluence
+
+
+
+
+
+
+
+
+ 
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+Skip to breadcrumbs
+Skip to header menu
+Skip to action menu
+Skip to quick search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+iDisclose Web ApplicationPagesBlogChild pagesPagesConflict Of Interest - iDiscloseBrowse pagesConfigureSpace tools
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+                        Attachments (0)
+         
+
+
+
+
+                        Page History
+         
+
+
+
+
+
+
+
+
+                        Page Information
+         
+
+
+
+
+                        Resolved comments
+         
+
+
+
+
+                        Link to this Page…
+         
+
+
+
+
+                        View in Hierarchy
+         
+
+
+
+
+                        View Source
+         
+
+
+
+
+                        Export to PDF
+         
+
+
+
+
+                        Export to Word
+         
+
+
+
+
+                        Export to Word
+         
+
+
+
+
+
+
+
+
+
+
+
+Pages
+
+
+Skip to end of banner
+
+JIRA links
+Go to start of banner
+
+
+Conflict Of Interest - iDisclose
+
+
+
+
+
+
+
+
+
+
+
+Skip to end of metadata
+
+
+
+
+                
+        
+    
+        
+    
+        
+            
+            Created by  Nijland, Mark J, last modified on Jun 12, 2015
+
+
+
+Go to start of metadata
+
+
+
+
+
+
+Fast Facts
+
+
+
+
+
+ContactVPR IT Team (site)Mark Nijland (nijland at uthscsa dot edu)LocationDevelopment / Test: vprdev1 (v87)~mark/coiweb~mark/iDiscloseProduction: vpr (v87) https://vpr.uthscsa.edu/iDisclose (v1.0)
+
+
+
+Development EnvironmentServer:Ubuntu Linux 12.04 (site)Apache 2.2.22 (site)MySQL 5.5.29 (site)Zend Server CE 5.6.1 (site)Languages, Frameworks and Libraries:PHP 5.3.14 (site)CakePHP 2.3.1 (site)Javascript:jQuery 1.8.3 (site)Twitter Bootstrap 2.3.1 (site)Bootbox (3.2.0) (site)Bootstrap Modal (2.2.0) (site)FuelUX 2.3.1 (site)Select2 3.3.1 (site)Modernizr (2.6.1) (site)Target Platforms:Google Chrome 8+Firefox 3.5+Safari 3+Internet Explorer 8+Opera 10.6+  
+
+
+
+
+
+Project Status:  GREEN
+
+
+
+
+
+
+
+
+
+
+            No labels
+        
+
+
+
+
+
+
+
+
+Overview
+Content Tools
+
+
+
+
+
+Powered by Atlassian Confluence 6.1.2
+Printed by Atlassian Confluence 6.1.2
+Report a bug
+Atlassian News
+
+Atlassian
+
+
+
+
+
+{"serverDuration": 421, "requestCorrelationId": "ada919a76c272808"}
+
+
+
+ 
+
+
+Reckner Facilities | philadelphia msa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				philadelphia msa			
+
+
+
+
+Suburban Philadelphia's focus group and product testing facility in historic Bucks County!
+
+
+
+
+
+
+					Located in historic and beautiful Bucks County, the facility features flexible product testing space, focus group suite and spacious client lounge.  With an average tenure of 15 years, the staff executes product tests flawlessly.  Less than one hour from the Philadelphia International Airport with an abundance of shopping, accommodations and dining options.
+				
+Location
+
+Represents the Northeastern portion of the Philadelphia MSA
+60 minutes from Philadelphia International Airport
+Many hotels, restaurants and shopping within a 5-mile radius
+
+Features
+
+Large Multi-Purpose Room (15'x56').  Equipped with 40 cu. ft. of commercial refrigeration.  Ample residential refrigerator and freezer space, power for up to 10 microwaves, abundant counter space and more. 
+High Speed internet service
+WiFi throughout facility
+Free Video Streaming
+Focus Group Room (13.5 x 27).  Comfortable seating for 12.
+Client Lounge.  Spacious accommodations with viewing via CCTV.
+
+
+
+
+Reckner Philadelphia MSA
+
+						1600 Manor Drive
+						Chalfont, PA 18914
+					
+Tel. 215 822 6220
+Fax. 215 997 1652
+Contact:  Peter Grubb, Executive Director
+
+pgrubb@reckner.com
+
+
+
+spec sheets
+
+
+
+
+accommodations
+
+
+directions
+
+
+zip codes
+
+
+demographics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Reckner Facilities | contact
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				contact			
+
+
+
+
+join panel
+
+
+request a bid
+
+
+Reckner Philadelphia MSA
+
+					1600 Manor Drive
+					Chalfont, PA 18914
+				
+215.822.6220
+
+pgrubb@reckner.com
+
+
+
+
+Reckner Milwaukee
+
+					9833 South 13th Street
+					Oak Creek, WI 54154
+				
+414.768.6040
+Angela Tingwald, Manager
+
+atingwald@reckner.com
+
+
+
+Reckner New York City MSA
+
+					450 Mamaroneck Drive, 
+					Suite 410
+					Harrison, NY 10528
+				
+914.696.5150
+Peter Grubb, Executive Director
+
+pgrubb@reckner.com
+
+
+
+
+
+
+
+
+
+
+
+
+KoreConX and iDisclose Partner to Make It Easier for Companies Raising CapitalHomeMailFlickrTumblrNewsSportsFinanceCelebrityAnswersGroupsMobileMoreTry Yahoo Finance on Firefox »YahooSearchSearchSign inU.S. Markets closedS&P 5002,472.10-3.32 (-0.13%)Dow 3021,830.31+33.76 (+0.15%)Nasdaq6,374.68-7.51 (-0.12%)LISTENWho is the face of pro baseball?Yahoo Finance's Dan Roberts and Myles Udland debate the business of baseballKoreConX and iDisclose Partner to Make It Easier for Companies Raising CapitalMarketwiredMay 3, 2016ReblogShareTweetShareTORONTO, ON--(Marketwired - May 03, 2016) -   KoreConX  and iDisclose are partnering to make disclosure easier for companies seeking funding and their stakeholders. Companies can now use the KoreConX system to "make their own counsel" according to iDisclose, and save thousands in fees.KoreConX and iDisclose are working together to minimize the cost and the burden of raising capital, so companies don't spend all their money raising money.iDisclose is an online application that helps you prepare the legal documents you need to crowdfund your company. Like Turbo Tax, you simply fill out an adaptive questionnaire and iDisclose builds the legal document. After a quick legal review (which iDisclose or your own attorney can provide), you can simply click "file now" to file the documents with the SEC and begin raising money. iDisclose helps you raise money for a fraction of the time and cost of hiring and attorney, so you can get back to your business. Check them out at iDisclose.com.iDisclose founders Georgia Quinn and Douglas Ellenoff are recognized as experts in compliance and equity crowdfunding, and KoreConX is pleased to be partnered with the iDisclose thought leaders to make compliance and due diligence both easier and more rigorous, allowing companies to complete a risk factor analysis, full Private Placement Memorandum, or Title III Crowdfunding Form C using the KoreConX platform."We founded iDisclose with the goal of reducing legal fees and the cost of compliance for entrepreneurs and companies, and empowering them. Our partnership with KoreConX helps further this goal by making the process of preparing to raise money seamless and easier for companies," said Georgia Quinn."We're working to tie together all of the members of the equity crowdfunding ecosystem to ensure that companies can access capital with ease and at low cost, and our partnership with Fintech Legal industry leader iDisclose means that companies can complete the legal documents required with no pain," said Oscar Jofre, KoreConX founder, President, and CEO.About iDiscloseWith the passage of the JOBS Act and the many new avenues for accessing capital, such as crowdfunding (including Title III crowdfunding) and other online platforms, disclosure is more important than ever. iDisclose helps protect the company raising money, and those assisting with the offering, against investor suits and SEC actions and provides the necessary information to investors. iDisclose allows business owners to "make their own counsel", saving them thousands of dollars in fees as they draft their own, highly-accurate and comprehensive PPM and Form C documents in collaboration with their own team and attorney.About KoreConXKoreConX is a free all-in-one solution that helps companies navigate the process of raising equity capital, and simplifies shareholder communications to reduce risk. The KoreConX eco-system empowers stakeholders (regulated crowdfunding portals, shareholders, board directors, CEO, CFO, corporate secretary, lawyers, auditors, investor relations, members and 3rd party providers) to manage corporate information from a Single Point of Entry within a secure, hosted application that results in efficient and transparent corporate governance. More information is available at www.KoreConX.com.ReblogShareTweetShareRecently ViewedYour list is empty.What to Read NextAnthony Scaramucci's wife reportedly filed for divorce because he was 'hell-bent' on joining TrumpBusiness InsiderThis Will Be In Everyone's Household By 2020Banyan HillSponsoredMainstream Model 3 holds promise _ and peril _ for TeslaAssociated PressThe 'two pizza rule' is a secret to productive meetings that helped Amazon CEO Jeff Bezos become one of the world's richest menBusiness InsiderChevron and Exxon Mobil have a tough path ahead: NYSE traderYahoo Finance VideoEngineer Finds Pattern; Makes Millions in StocksMoney MorningSponsoredStocks mixed after heavy earnings weekThe real reason overseas manufacturing is coming to AmericaYahoo FinanceHere are the US targets North Korea most likely wants to nukeBusiness InsiderDiscover it: 4.8 out of 5 avg. by 24K+ customersDiscover CardSponsoredTrump to cops: 'Please don't be too nice' while arresting 'thugs,' and don't worry about their heads when you toss them in the 'paddy wagon'Business InsiderMy bullish view on stocks hasn't changed one iota: NYSE traderYahoo Finance VideoBlue Apron: Bullish calls not all they're cooked up to beCardiologist: 3 Foods You Should Quit ImmediatelyGundry MDSponsoredAPNewsBreak: Yellowstone park cracks down on sex harassmentAssociated PressWells Fargo faces angry questions after new sales abuses uncoveredReutersRepublicans' bid to repeal Obamacare ends with a surpriseOH-ME/OH-MY: Term limits for Congress needed.Join the Conversation1 / 539
+
+
+
+
+
+
+
+
+iDisclose Teams up With New Regulation Crowdfunding Funding Portals to Prepare Form C DisclosureHomeMailNewsSportsFinanceCelebrityStyleMoviesWeatherAnswersFlickrMobileYahooSearchSearchSign inCanadian Markets closedS&P/TSX15,128.65-62.71 (-0.41%)S&P 5002,472.10-3.32 (-0.13%)DOW21,830.31+33.76 (+0.15%)iDisclose Teams up With New Regulation Crowdfunding Funding Portals to Prepare Form C DisclosureMarketwiredMay 13, 2016ReblogShareTweetShareGeorgia Quinn, CEO iDiscloseClick here for high-resolution versionMoreNEW YORK, NY--(Marketwired - May 13, 2016) -  iDisclose, announced today that several of the leading new Title III Crowdfunding funding portals at various stages in the SEC and FINRA approval process will be using iDisclose either on an exclusive basis or as a tool they can offer to assist issuers on their portals. Funding portals committed to compliance are choosing iDisclose as a low cost high quality legal solution. Condensing the 686 pages of SEC rules in Regulation Crowdfunding into one streamlined application was no small feat, but it was essential to iDisclose to assist entrepreneurs through the regulatory process and ensure funding platforms comply with the new regulations. iDisclose is looking forward to working with Republic.co, the new AngelList spin-off currently making its way through the SEC and FINRA application process; Funding Wonder, a Title III platform candidate with a unique focus on small business loans and SeedInvest, an experienced Title II and Title IV platform now entering the retail crowdfunding space.Former Chief of the Office of Small Business Policy at the SEC, securities regulation consultant and iDisclose advisory board member Gerald Laporte said, "as excited as we are for the launch of investment Crowdfunding and the promise that it holds for entrepreneurs to more efficiently raise capital online, as a securities lawyer, I am mindful of the required securities disclosure that is not only required by the new rules but the practical need to properly advise potential investors both as to the opportunity and all of the risks, that is where iDisclose comes in."Co-founder and CEO Georgia Quinn stated that "at iDisclose, we are empowering entrepreneurs to actually comply with the lengthy and detailed regulations set forth by Regulation Crowdfunding. We, like this new industry, are an example of how technology can overcome traditional challenges faced by small and startup businesses when it comes to raising money. I love what we are doing because we protect both the issuer and the investor -- there are no losers here."Co-founder and CEO of Republic and AngelList alum Kendrick Nguyen said, "few people understand this space better than Georgia. Republic's collaboration with iDisclose has been important to our development of a product that meets regulatory best practices and is also manageable and affordable to issuers."Funding Wonder co-founder and CEO Michael Mildenberger stated, "Title III offers an exciting new way for small businesses to secure debt financing from non-accredited investors but the process must be as frictionless as possible. iDisclose is our secret sauce to easily and efficiently generate required documentation."iDisclose has also partnered with Priori Legal and Legal Hero, two leading on-demand curated legal marketplaces, to allow users to purchase an "attorney upgrade" and work with an experienced attorney to help them through the process and provide a final legal review. The use of these two providers also ensures an ultimately scalable solution as the industry grows. All services are at transparent flat rates, so entrepreneurs know what to expect and can budget accordingly. iDisclose provides an end to end legal solution, including the attorney upgrade, for businesses conducting a Title III crowdfunding for $3,500 or less."There's so much excitement among entrepreneurs about these new regulations," said Legal Hero's co-founder and CEO Annie Webber. "Crowdfunding is a great way to raise funds but it is not foolproof and the legal issues are complicated. iDisclose has created a product that will absolutely be the leader in the market and we're thrilled to be a partner.""We're pleased to partner with another New York-based legal tech company," said Parsa Pezeshki, Priori Legal's Head of Business Development and Market Strategy. "This is an advantageous opportunity for all parties involved: entrepreneurs, crowdfunding portals, iDisclose, and for us, at Priori Legal, where we're excited to be sharing access to our pre-vetted platform attorneys at exceptional price-points."Tom Glocer, former CEO of Thomson Reuters, founder and managing partner of Angelic Ventures, LP and advisory board member of iDisclose explained that, "the introduction of the new crowdfunding rules has created a unique opportunity for early stage growth companies to tap the capital markets. iDisclose allows issuers and their advisors to automate much of this process and I can't think of a better way to balance legal compliance with a cost-effective and streamlined process that will appeal to tech-enabled issuers."Read MoreiDisclose's Form C application is being released contemporaneously with the May 16th effectiveness in the U.S. of the SEC's new Title III Regulation Crowdfunding rules and is available at idisclose.com or through its partner funding portals."Equity crowdfunding has the potential to become the standard way that early-stage startups and small businesses raise capital, but only with the development of scalable tools that continue to bring down the cost and complexity," said SeedInvest CEO Ryan Feit. "At the end of the day, speed and simplicity is what will drive entrepreneurs to utilize equity crowdfunding over slower, more traditional avenues for raising capital."Built by some of the brightest minds in securities law, iDisclose fuses cutting-edge technology with legal know-how to significantly reduce the time, money and effort traditionally exerted on the disclosure process."We join in celebration with the entire new securities-based Crowdfunding industry as the U.S. welcomes the opening to all investors the opportunity to invest in exciting new and established private companies this May 16" said Douglas Ellenoff, Co-Founder and Chairman of iDisclose and founder of New York law firm Ellenoff, Grossman & Schole.In September, iDisclose announced its first application release for the comprehensive use in creating a full private placement memorandum (PPM) for offerings under Regulation D of the Securities Act of 1933 and has partnerships with Title II funding platforms such as RealtyXE and Sprowtt.com.In addition to entering into agreements with funding platforms, iDisclose has also released a white label solution for lawyers and law firms to offer both the PPM and the Form C application to their clients.iDisclose puts the job of disclosure back into the hands of the entrepreneur, eliminating the inefficiencies of the traditional method and substantial time to comply with the rules and saving thousands of dollars as well. Rather than provide un-contextualized information about a business to a lawyer, and then relying on the lawyer to prepare the first draft, the entrepreneur responds to an online dialogue to draw out the relevant disclosure issues and the platform organizes the information into a legal document. Throughout the entire process, the entrepreneur is able to collaborate with their own team and attorney as needed, and to send their attorney their document drafts for final review and sign-off.iDisclose also generates a Red Flag report of key issues that must be addressed, which can also be shared with an attorney for further advice and counsel. In addition, the platform creates a list of Risks Factors that are seamlessly organized within the document for easy review by investors. Target groups that benefit from iDisclose include: For Businesses: The platform allows you to create your own legal documents at a reduced time and cost. For Investors: iDisclose provides fulsome disclosure in an easy to evaluate format.  For Fundraising Platforms: iDisclose allows platforms to offer a value-added service to their users and standardizes the disclosure format across the entire platform.  For Lawyers: It eliminates much of the drafting drudgery required with the disclosure process, and allows lawyers to focus on the true aspects of being a lawyer (offering real legal counsel, guidance and reviews).iDisclose was developed by Douglas Ellenoff and Georgia Quinn of Ellenoff, Grossman & Schole, who are both award-winning, NY-based corporate attorneys and globally-recognized figures in the alternative finance space. Having both facilitated hundreds of corporate financings over the course of their careers, the founders harness a deep understanding of the disclosure process, as well as the issues businesses face when raising capital.Image Available: http://www.marketwire.com/library/MwGo/2016/5/13/11G098163/Images/iDisclose_CEO-d185f8748aa49cee8e7f8a2346dd222c.jpgReblogShareTweetShareRecently ViewedYour list is empty.What to Read Next200-sq-ft downtown Vancouver apartment listed for $1,450 a monthYahoo Finance Canada3 Must-Own Stocks in 2017Banyan HillSponsoredTim Hortons announces ‘slight’ price increase from August 2Yahoo Finance CanadaFast food chains are coping with their labor cost problemYahoo FinancePearson ground crew workers reject offer, begin strikeThe Canadian PressDiscover it: 4.8 out of 5 avg. by 24K+ customersDiscover CardSponsoredCanada May Walk Away From Trump’s NAFTA Talks Over A Single IssueHuffPost CAIn China, scientists want to turn plastic into fuelCNBCWoman gets surprising email from boss after taking time off for mental healthThis Cabinet Company Is Saving Homeowners $1000'sCliqStudiosSponsoredWhat a $1 million home looks like in Canada this week - Jul. 27 editionSri Lanka, China sign long-delayed $1.5 billion port dealThe Canadian PressU.S. sanctions on Venezuela create short-term gains for Canadian oil producersYahoo Finance CanadaSwitch and save!Progressive InsuranceSponsoredThis is who really loses out when Justin Bieber cancels a showHow our moat ratings have performed
+
+
+
+
+
+
+
+
+
+
+
+
+
+  iDisclose Launches a Free “SEC Scrubber” Tool for Crowdfunding Issuers | News, Information and References for CrowdfundingCrowdFund Beat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+sponsored ad
+
+
+HOME
+Crowdfunder
+
+Animal Rescue
+Art
+Cinema
+Education
+Energy
+Environment
+Games
+Health
+Media
+Music
+Platform
+Real Estate
+Science
+Social Entrepreneurs
+Social Networks
+Software
+Startup
+Statistics
+Theater
+Technology
+
+
+Opinion
+
+SEC
+Opinion  Archives
+
+
+World
+
+CFB Canadian  Edition
+CFB  UK
+CFB  Holland
+CFB Germany
+CFB  Italy
+CFB  France
+
+
+Marketplace
+Lists
+
+Complete List & Reference
+TOP 100 Platforms
+Top 10 Real Estate CrowdFunding
+Top Ranking CF Website
+TOP 5 Renewable Energy Crowdfunding Platforms
+Who’s Who of CrowdFunding Professionals
+Top 100 Kickstarter Project Now!
+Crowdfunding Search Engine
+Kickstarter most funded projects
+Top 100 CF Campaigns chart
+Top 1% of Angel Investors
+Top CrowdFunding & VC-Funded
+Funding Rounds for Platforms
+| Research | Education | Videos
+Peer-to-Peer Report
+CrowdFunding 2020 Vision
+Research – Publications
+White Label Crowdfunding Software
+
+
+DATA
+
+Complete Data & Index
+Crowdlanding Analytics
+Top 10 Realtime CrowdFunding projects
+Funding Rounds for Platforms
+P2P Report
+Top 1% of Angel Investors
+Top Ranking  CF Industry Websites
+CrowdFunding 2020 Vision
+CrowdFunding Report
+SEC & Accredited Investors
+FINRA & CrowdFunding
+CF Education Videos
+
+
+P 2 P
+TV . Videos
+
+Live CrowdFunding.TV
+Watch Conference Videos
+
+
+Conference
+
+FinTech World 2017
+
+
+Events
+
+Events  Calendar
+
+
+Fintech World
+About
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ CFB Video Library
+
+Commentary & Opinion Happy Birthday Regulation CF (shame about the compliance failures)
+
+BY SARA HANKS , CrowdFundBeat  Sr.contributing Guest Editor  CEO/Founder,Crowd check.Inc. So, one year ago today, Regulation CF went into effect. Small…Read more » 
+Open Letter to Real Estate Sponsors : Investors Deserve Better Quarterly Reports
+
+By Mark Robertson CrowdFundBeat  Sr. Contributing Editor. President at CrowdDD, LLC, This is an open letter to all real estate sponsors.  Investors want better reporting. …Read more » 
+Political Crowdfunding: Building a Community Instead of a Campaign
+
+By Anum Yoon, Crowdfund Beat Media Guest Editor, Throughout the past few years, crowdfunding has become a source of fundraising…Read more » 
+The Battle to Launch a Next-Generation Retirement Product & Control $14 Trillion in Investment Direction
+
+By Dara Albright,CrowdFunding Beat Guest Editor, FinTechREVOLUTION.tv  , Dara Albright Media, In the Fall of 2016, I penned an article entitled, “Modernizing the…Read more » 
+Crowdfunding- The Good, The Bad & The (really) Ugly
+
+By Shane Liddell is the CEO and chief Crowdfundologist at Smart Crowdfunding LLC,. Crowdfund Beat Guest post, Part 3 –The…Read more » 
+Crowdfunding Platforms Expand Financing to Regions That Suffer From Venture Capital Drought
+
+By Anum Yoon, Crowdfund Beat Media Guest post, Venture capitalists tend to back entrepreneurial firms that reflect their own ideas…Read more » 
+SEC Metrics on Reg A+
+
+On 12/31 the SEC published a report on Reg A activity as of Q3 that has some eye-opening bullets. Here…Read more » 
+ . Opinion Archive . Search
+
+
+
+
+ 
+
+Archives Archives
+
+Select Month
+ July 2017 
+ May 2017 
+ April 2017 
+ March 2017 
+ February 2017 
+ January 2017 
+ December 2016 
+ November 2016 
+ October 2016 
+ September 2016 
+ August 2016 
+ July 2016 
+ June 2016 
+ May 2016 
+ April 2016 
+ March 2016 
+ February 2016 
+ January 2016 
+ December 2015 
+ November 2015 
+ October 2015 
+ September 2015 
+ August 2015 
+ July 2015 
+ June 2015 
+ May 2015 
+ April 2015 
+ March 2015 
+ February 2015 
+ January 2015 
+ December 2014 
+ November 2014 
+ October 2014 
+ September 2014 
+ August 2014 
+ July 2014 
+ June 2014 
+ May 2014 
+ April 2014 
+ March 2014 
+ February 2014 
+ January 2014 
+ December 2013 
+ November 2013 
+ October 2013 
+ September 2013 
+ August 2013 
+ July 2013 
+ June 2013 
+ May 2013 
+ April 2013 
+ March 2013 
+ February 2013 
+ January 2013 
+ December 2011 
+
+ CrowdFund Beat Exclusive Interviews 
+ 
+
+CFB UK’s Edition 
+Canadian Edition 
+
+Holland Edition 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+CrowdFunding Books 
+
+ 
+
+ 
+
+Podcast 
+...listen to more podcast
+
+
+
+ 
+
+iDisclose Launches a Free “SEC Scrubber” Tool for Crowdfunding Issuers
+
+
+
+
+
+
+
+
+iDisclose Announces Free Online Tool to Conform Documents to SEC Acceptable Format
+
+NEW YORK, NY–(Marketwired – August 17, 2016) – iDisclose announced today that it is offering a free online service to help issuers and their counsel submit the required crowdfunding documents to the Securities and Exchange Commission.
+iDisclose CEO Georgia Quinn explained that “we have noticed a lot of people are having trouble uploading the required documents to the SEC’s online system known as EDGAR. This is due to the finicky nature of the system and somewhat archaic technology it uses. Several issuers’ uploads were getting bounced and the error messages were indecipherable.”
+Many times, documents are bounced when people attempt to upload them to the SEC’s Electronic Data Gathering, Analysis, and Retrieval system or “EDGAR” system because the actual file does not meet certain technical specifications or contains certain “tags” that EDGAR rejects. iDisclose’s new SEC Scrubber “cleans,” so to speak, the documents of any tags or unacceptable formatting without altering any of the content, so they are able to be filed.
+When asked why iDisclose is offering this service for free, Quinn stated, “We are doing this because we believe in the power of crowdfunding and we want to see this industry succeed. This has been a silly stumbling block for hard-working and well prepared issuers, and we want to remove it.”
+A beta-version of the SEC Scrubber is being released to the public today and iDisclose is taking comments and feedback to improve the tool in its next release.
+iDisclose is an online application that helps entrepreneurs prepare their own legal crowdfunding documents significantly reducing the amount of money paid to attorneys and law firms. iDisclose puts the job of disclosure back into the hands of the entrepreneur, eliminating the inefficiencies of the traditional method, substantially reducing time to comply with the rules and saving thousands of dollars. Rather than provide un-contextualized information about a business to a lawyer, and then relying on the lawyer to prepare the first draft, the entrepreneur responds to an online dialogue to draw out the relevant disclosure issues and the platform organizes the information into a legal document. Throughout the entire process, the entrepreneur is able to collaborate with his or her own team and attorney as needed, and to send their attorney their document drafts for final review and sign-off.
+iDisclose also generates a Red Flag report of key issues that must be addressed, which can also be shared with an attorney for further advice and counsel. In addition, the platform creates a list of Risks Factors that are seamlessly organized within the document for easy review by investors.
+iDisclose helps:
+
+Businesses: The platform allows you to create your own legal documents at a reduced time and cost.
+Investors: iDisclose provides fulsome disclosure in an easy to evaluate format.
+Fundraising Platforms: iDisclose allows platforms to offer a value-added service to their users and standardizes the disclosure format across the entire platform.
+Lawyers: It eliminates much of the drafting drudgery required with the disclosure process, and allows lawyers to focus on the true aspects of being a lawyer (offering real legal counsel, guidance and reviews).
+
+iDisclose was developed by Douglas Ellenoff and Georgia Quinn of Ellenoff, Grossman & Schole, who are both award-winning, NY-based corporate attorneys and globally-recognized figures in the alternative finance space. Having both facilitated hundreds of corporate financings over the course of their careers, the founders harness a deep understanding of the disclosure process, as well as the issues businesses face when raising capital.
+iDisclose Partners With Crowdfund Beat Media on Its Title III Crowdfunding and helps to promote what iDisclose is trying to do, which is assist small businesses, who have historically lacked access, receive the capital they deserve. CrowdFund Beat Media International is an online source of news, information, events and resources for crowdfunding.
+
+
+
+
+
+
+CONTACT INFORMATION
+
+
+
+Media Contact
+Georgia Quinn
+gquinn@idisclose.com
+Douglas Ellenoff
+ellenoff@egsllp.com
+
+
+
+
+
+
+
+
+We think you'd like...
+
+
+“Idisclose” is Crowdfunding New Legal Platform
+
+What is a PPM Infographic
+
+What “Solicit” Means Under Title III
+
+5 Reasons to be Optimistic About Regulation A+
+
+iDisclose Teams up With New Regulation Crowdfunding Funding Portals
+
+CrowdEngine First to Offer Regulation CF Crowdfunding Software
+
+New CrowdFunding Rules are a Game Changer
+
+REPORT: Is Marketplace lending A temporary phenomenon?
+
+Crowdfunding with Self Directed IRA?
+
+4 Crowdfunding Tips for Women Entrepreneurs
+
+iDisclose Partners With Republic on Its Title III Crowdfunding
+
+Improving Legal Documents in Crowdfunding: Get Rid of the State Legends!
+
+
+Tags: crowdfunding platform, David Drake, director, documentary, equity crowdfunding, indiegogo, investment, Josef Holm, Kickstarter, P2P, PAUL NIEDERER, Platform, Real Estate, Realty Mogul, Regulation A, Richard Swart, SEC, Silicon Valley
+
+
+
+
+
+
+ 
+ 
+HEADLINE NEWS
+
+
+
+Church kicks off crowdfunding campaign to save historic spires - Curbed Detroit27 July 2017Curbed DetroitChurch kicks off crowdfunding campaign to save historic spiresCurbed DetroitIt's been quite a month for the steeples at the Sweetest Heart of Mary church. The Mother of Divine Mercy church council went to the Historic District Commission earlier this month with the [...]
+Children are crowdfunding, and using the money they collect to do good - Hindustan Times28 July 2017Hindustan TimesChildren are crowdfunding, and using the money they collect to do goodHindustan TimesThe crowdfunding pages of teenagers Crish Chengappa, Sathvik Vudumula, Ishnoor Singh, Varun Jhunjhunwalla, Aryaman Shaan and Meher Kaur Rikhy. They are among hundreds of children across [...]
+SEC ICO Decision Signals Crowdfunding, Investors Shift From US to Asia - CoinTelegraph28 July 2017CoinTelegraphSEC ICO Decision Signals Crowdfunding, Investors Shift From US to AsiaCoinTelegraphThe recent move by US Securities and Exchange Commission to potentially regulate ICOs has excited many ICO investors and companies in the Asian region, as the hot Blockchain-based investing [...]
+Crowdfunding Regulation Part 2: Guidance for CSF Intermediaries - The National Law Review28 July 2017The National Law ReviewCrowdfunding Regulation Part 2: Guidance for CSF IntermediariesThe National Law ReviewThe Australian Securities and Investments Commission (ASIC) has published Consultation Paper 289 Crowd-sourced funding: Guide for intermediaries. CP 289 includes a draft Regula [...]
+Snopes seeks crowdfunding in ownership battle - TechCrunch24 July 2017TechCrunchSnopes seeks crowdfunding in ownership battleTechCrunchHow many times have you heard some urban legend, chain letter or misleading bit of news repeated and immediately found a thorough, fact-based debunking on Snopes? Like every damn day for the last 20 years or so, right? S [...]
+Real estate crowdfunding platform RealtyShares buys rival Acquire Real Estate - HousingWire27 July 2017HousingWireReal estate crowdfunding platform RealtyShares buys rival Acquire Real EstateHousingWireRealtyShares, which bills itself as the “leading online marketplace for real estate investing,” announced Thursday that it bought Acquire Real Estate, which the company calls an “innovat [...]
+Crowdfunding isn't about buying but about donating - Redding Record Searchlight26 July 2017Redding Record SearchlightCrowdfunding isn't about buying but about donatingRedding Record SearchlightImagine you're an innovator with a big idea but not a lot of cash to bring the idea to fruition. You spend some of your own money up front to design a cool demo, and then yo [...]
+Liverpool school crowdfunding to 'revolutionise' maths - Click Liverpool28 July 2017Click LiverpoolLiverpool school crowdfunding to 'revolutionise' mathsClick LiverpoolSt Francis Xavier's College in Woolton have so far raised over £1,500 in a bid to help change the way students study the current curriculum. Teacher Kenny Glover began the project on fun [...]
+Georgie's Cornish Kitchen in line to win Crowdfunding competition - Cornwall Live28 July 2017Cornwall LiveGeorgie's Cornish Kitchen in line to win Crowdfunding competitionCornwall LiveA Cornish food and drink company is in the running to win a new business competition set up by online fundraisers Crowdfunder. Georgie's Cornish Kitchen, who produce Limoncello-inspire [...]
+Women are better than men at crowdfunding, according to a new study - Mashable25 July 2017MashableWomen are better than men at crowdfunding, according to a new studyMashableMale investors often don't fully understand the value of ideas women entrepreneurs pitch them. They throw capital at food delivery service after food delivery service, but ignore ideas that cater t [...]
+
+
+
+
+CFB Finance  SymlLst Val+/- Val+/- %ONDK4.35-0.02-0.46%LC5.22+0.03+0.58%
+Marketwired
+
+
+Crowdfunding Crowdfund Peer to Peer Lending FinTech Reg A+ Reg CF Crowdfunding USA
+CORRECTION: Capitalia unaudited interim consolidated financial statements for Q2, 2017
+Capitalia unaudited interim consolidated financial statements for Q2, 2017
+MobileCause Announces Q2 2017 Product Release to Advance Hub for Nonprofit Fundraising and Donor Engagement
+Ellenoff Grossman & Schole LLP to Ring The Nasdaq Stock Market Opening Bell
+Complete Teardown Analysis of Consumer Physics's SCIO Spectrometer with a Detailed Focus on the Spectrometer Head
+Nouvelle reconnaissance pour Findynamics  
+
+
+
+PhotoShelter and Blurb Partner to Release The Photographer's Guide to Publishing Photo Books
+Kickfurther & NSR Invest Form Strategic Partnership to Enhance Data-Driven Investing
+Kickfurther to Present @ LendIt USA 2016
+Kickfurther Finances More Than $5 Million of Inventory for 187 Product Companies
+Labor SMART, Inc. to Crowdfund Next Phase of Expansion
+Securities and Exchange Commission Votes 3-1 to Approve Title III of the JOBS Act
+
+
+
+Patriot Names Bank President Richard Muskus, Jr. to Company’s Board of Directors
+Eagle Bancorp, Inc. Announces Another Quarter of Record Earnings With Second Quarter 2017 Net Income up 15% Over 2016
+Taaleri raises its profit forecast
+The Future of Lending is Now with Latest TransUnion Prama Offerings
+Joseph D. Perillo Appointed Executive Vice President & Chief Financial Officer of Patriot National Bancorp, Inc.
+THL Credit Awarded “Best US CLO” at CreditFlux Manager Awards 2017
+
+
+
+Capital United、Greystone和NES Financial启动EB-5重新部署项目
+FRONTEO and Member Banks of TSUBASA Alliance Begin Proof of Concept Trial Aimed at Implementation of Document Analysis Technology Using KIBIT Artificial Intelligence
+Broadridge Schedules Webcast and Investor Conference Call to Review Fourth Quarter and Fiscal Year 2017 Results on August 10, 2017
+HiPay Group  : 2017 H1 Revenue: €12M, + 28 % Transaction volume: €951M, + 58 %
+HiPay Group  : Chiffre d'affaires S1 2017 : 12 M€ + 28 % Flux monétique : 951 M€ + 58 %
+Digiliti Money to Speak on Mobile Banking, Small Business and Prepaid Card Program Trends at MDC Event, August 3, 2017
+
+
+
+Copper Fox Announces the Closing of Private Placement
+Maroc Telecom : Résultats consolidés du 1er semestre 2017
+Immucor, Inc. Announces Results of Exchange Offer
+Hudson Resources Announces Completion of Arrangement for US$22.5 Million Debt Financing for the White Mountain Project
+Madalena Announces the Issuance of Warrants to Hispania Petroleum S.A.
+Macarthur Minerals Private Placement for Up to $2.5 Million
+
+
+
+Lice Clinics of America Announces Equity Crowdfunding Campaign
+Share repurchase programme
+Share repurchase programme
+Share repurchase programme
+Share repurchase programme
+MAJOR SHAREHOLDER ANNOUNCEMENT REGARDING EXIQON A/S
+
+
+
+Sitting Healthy: New Chair Design, That Breaks With 5,000-Year-Old Tradition and Delivers Health and Productivity Benefits
+Kimbia completes comprehensive review of Give Local America(R) 2016 event; resolves technology issues and implements corporate reorganization
+C5 Smart Helmet Breaks the Stereotype on Airwheel — Conclusive Evidence of Its R&D Capability
+Canyon Gold Corp. Engages the Services of  Trilogy Marketing Strategies
+Kickfurther & NSR Invest Form Strategic Partnership to Enhance Data-Driven Investing
+Gannett Partners with Kimbia's Give Local America to Raise Millions for Nonprofits Across the Nation
+
+
+
+
+Press Release
+
+							We proudly invite you to  4th Annual Crowdfunding USA on May 4-5, 2017  National Press Club Washington, DC.							
+
+
+
+							Political Crowdfunding: Building a Community Instead of a Campaign 
+
+
+
+							Setting Up an Efficient Crowdfunding Platform							
+
+
+
+							The Battle to Launch a Next-Generation Retirement Product & Control $14 Trillion in Investment Direction 
+
+
+
+
+
+
+
+27 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding #fintchworld
+#bitcoin #bitshares #cryptocurrency #blockchain #fintech #ICO #ito #tokensales ow.ly/z3yV30dWGM8
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+27 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding #fintchworld
+#bitcoin #bitshares #cryptocurrency #blockchain #fintech #ICO #ito #tokensales ow.ly/z3yV30dWGM8
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+19 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+FinTech Next Generation fb.me/BcUrlIm8
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+19 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+FinTech Next Generation lnkd.in/g82NRER
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+17 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding
+crowdfundbeat.com/2017/05/18/… fb.me/8ZgwRlFLH
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+13 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+@douglasellenoff Grossman & Schole LLP to Ring The Nasdaq Stock Market Opening Bell July 14th ow.ly/hTzR30dCkMz
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+13 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+@douglasellenoff Grossman & Schole LLP to Ring The Nasdaq Stock Market Opening Bell July 14th 
+nasdaq.com/press-release/…
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+3 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/eH3xPWi
+#fintech #CRYPTOCURRENCY
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+2 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/ePSG6hq
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/ePSG6hq
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+30 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+@CrowdCapAdvisor #crowdfunding @crowdfundingusa lnkd.in/eVSFPkK
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+26 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/dyjHA8W
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+25 Jun
+Tim Draper
+@TimDraper
+
+First pitch at the A's game last night with Draper University  team.... fb.me/145p3wtwy
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+25 Jun
+Crowdfunding Fever
+@CFFever
+
+Unpacking Initial Coin Offerings (ICO) and Token Sales dlvr.it/PPlvcf
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+24 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+Trump changes cuba policy lnkd.in/dEYRWq8
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+22 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/dGWGWbr . #paris #startups #emmanuelmacron
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+20 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/dyjHA8W
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+20 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/gcNQiNP
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+20 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+An Unofficial Chat with Ron Suber, the Tom Brokaw of Fintech lnkd.in/dwr88Us
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+16 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+fb.me/7cgBXRdib
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+15 Jun
+Sydney Armani
+@Sydney_Armani
+
+Just finished the interview with Bloomberg Europe  on #fintech World 
+@ #paris VIva technology 2017 pic.twitter.com/hUIlMBP4wC
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+15 Jun
+Mark Roderick
+@CrowdfundAttny
+
+#Crowdfunding MUST read! Filing Financial Statements & Other Reports Under Regulation A crowdfundattny.com/2017/06/14… pic.twitter.com/HKnHqoTncF
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+15 Jun
+Reg Crowdfunding
+@woodien
+
+IMPORTANT INFO: Regulation #Crowdfunding ISSUERS Do NOT BE OUT OF COMPLIANCE with SEC, FILE Form C-A to UPDATE your FUNDING DEADLINE
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+2 Jun
+Elon Musk
+@elonmusk
+
+Am departing presidential councils. Climate change is real. Leaving Paris is not good for America or the world.
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+@SaraCrowdCheck @frutkinlaw @CrowdfundAttny @Brian_Korn #crowdfunding #fintch lnkd.in/gjW7HYc
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+Brian Korn
+@Brian_Korn
+
+Here's my latest update on fintech and P2P from The National Press Club. lnkd.in/gY4h82z
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding #fintech @Brian_Korn ow.ly/LxGD30cejHG
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding #video ow.ly/Ix4P30cegSv
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+crowdfundbeat.com/video/
+#crowdfunding  Beat Video – Library
+| #news | Conference | Interview | Webinar | Campaig pic.twitter.com/FE6eh3FcLx
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+crowdfundbeat.com/video/
+#crowdfunding  Beat Video – Library
+| #news | Conference | Interview | Webinar | Campaig pic.twitter.com/FE6eh3FcLx
+Expand
+ reply
+ retweet
+ favorite
+
+Follow @crowdfundbeatFollow Us! 
+
+ 
+ 
+
+
+
+
+Readers Favorites
+
+Report: Global Crowdfunding Market 2016-2020 
+15 Crowdfunding Platforms To Effectively Fund Apps 
+2017 Real Estate Crowdfunding: Surveying the Landscape 
+CrowdFunding Lists, Data, Analytics, Research, Statistics, Reports, Infographic 
+2017 Real Estate Crowdfunding Sites 
+ Financing Your Next Car with CrowdFunding 
+
+
+
+Live Crowdfunding .tvWhat's Next Step in Regulation A+ JOBS ACTS Title IIII :L Interview : Steve Cinelli with Brian Korn Securities and Crowdfunding/Peer-to-Peer Lending Lawyer,  Watch more video library | Conference | Interview | Campaign Showcase | Research | Education | 
+
+
+
+    CrowdFundBeat.com[USA] Mailing Address: 71 Stevenson Street, suite 400, San Francisco, California 94105 USA | Email Address: news@crowdfundbeat.com | Phone:  1 888 580 6610[UK] Mailing Address: 10/11 Charterhouse Square, London, EC1M 6EH | Phone: 020 3301 8017[CA] Mailing Address: 1235 Bay St #400, Toronto, ON M5R 3K4, Canada | Phone: 1 888 580 6610 | Email Address: news@crowdfundbeat.ca
+Themes by bavotasan.  WordPress.
+Copyright © 2017 CrowdFund Beat. All Rights Reserved.Google+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  iDisclose Teams up With New Regulation Crowdfunding Funding Portals | News, Information and References for CrowdfundingCrowdFund Beat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+sponsored ad
+
+
+HOME
+Crowdfunder
+
+Animal Rescue
+Art
+Cinema
+Education
+Energy
+Environment
+Games
+Health
+Media
+Music
+Platform
+Real Estate
+Science
+Social Entrepreneurs
+Social Networks
+Software
+Startup
+Statistics
+Theater
+Technology
+
+
+Opinion
+
+SEC
+Opinion  Archives
+
+
+World
+
+CFB Canadian  Edition
+CFB  UK
+CFB  Holland
+CFB Germany
+CFB  Italy
+CFB  France
+
+
+Marketplace
+Lists
+
+Complete List & Reference
+TOP 100 Platforms
+Top 10 Real Estate CrowdFunding
+Top Ranking CF Website
+TOP 5 Renewable Energy Crowdfunding Platforms
+Who’s Who of CrowdFunding Professionals
+Top 100 Kickstarter Project Now!
+Crowdfunding Search Engine
+Kickstarter most funded projects
+Top 100 CF Campaigns chart
+Top 1% of Angel Investors
+Top CrowdFunding & VC-Funded
+Funding Rounds for Platforms
+| Research | Education | Videos
+Peer-to-Peer Report
+CrowdFunding 2020 Vision
+Research – Publications
+White Label Crowdfunding Software
+
+
+DATA
+
+Complete Data & Index
+Crowdlanding Analytics
+Top 10 Realtime CrowdFunding projects
+Funding Rounds for Platforms
+P2P Report
+Top 1% of Angel Investors
+Top Ranking  CF Industry Websites
+CrowdFunding 2020 Vision
+CrowdFunding Report
+SEC & Accredited Investors
+FINRA & CrowdFunding
+CF Education Videos
+
+
+P 2 P
+TV . Videos
+
+Live CrowdFunding.TV
+Watch Conference Videos
+
+
+Conference
+
+FinTech World 2017
+
+
+Events
+
+Events  Calendar
+
+
+Fintech World
+About
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ CFB Video Library
+
+Commentary & Opinion Happy Birthday Regulation CF (shame about the compliance failures)
+
+BY SARA HANKS , CrowdFundBeat  Sr.contributing Guest Editor  CEO/Founder,Crowd check.Inc. So, one year ago today, Regulation CF went into effect. Small…Read more » 
+Open Letter to Real Estate Sponsors : Investors Deserve Better Quarterly Reports
+
+By Mark Robertson CrowdFundBeat  Sr. Contributing Editor. President at CrowdDD, LLC, This is an open letter to all real estate sponsors.  Investors want better reporting. …Read more » 
+Political Crowdfunding: Building a Community Instead of a Campaign
+
+By Anum Yoon, Crowdfund Beat Media Guest Editor, Throughout the past few years, crowdfunding has become a source of fundraising…Read more » 
+The Battle to Launch a Next-Generation Retirement Product & Control $14 Trillion in Investment Direction
+
+By Dara Albright,CrowdFunding Beat Guest Editor, FinTechREVOLUTION.tv  , Dara Albright Media, In the Fall of 2016, I penned an article entitled, “Modernizing the…Read more » 
+Crowdfunding- The Good, The Bad & The (really) Ugly
+
+By Shane Liddell is the CEO and chief Crowdfundologist at Smart Crowdfunding LLC,. Crowdfund Beat Guest post, Part 3 –The…Read more » 
+Crowdfunding Platforms Expand Financing to Regions That Suffer From Venture Capital Drought
+
+By Anum Yoon, Crowdfund Beat Media Guest post, Venture capitalists tend to back entrepreneurial firms that reflect their own ideas…Read more » 
+SEC Metrics on Reg A+
+
+On 12/31 the SEC published a report on Reg A activity as of Q3 that has some eye-opening bullets. Here…Read more » 
+ . Opinion Archive . Search
+
+
+
+
+ 
+
+Archives Archives
+
+Select Month
+ July 2017 
+ May 2017 
+ April 2017 
+ March 2017 
+ February 2017 
+ January 2017 
+ December 2016 
+ November 2016 
+ October 2016 
+ September 2016 
+ August 2016 
+ July 2016 
+ June 2016 
+ May 2016 
+ April 2016 
+ March 2016 
+ February 2016 
+ January 2016 
+ December 2015 
+ November 2015 
+ October 2015 
+ September 2015 
+ August 2015 
+ July 2015 
+ June 2015 
+ May 2015 
+ April 2015 
+ March 2015 
+ February 2015 
+ January 2015 
+ December 2014 
+ November 2014 
+ October 2014 
+ September 2014 
+ August 2014 
+ July 2014 
+ June 2014 
+ May 2014 
+ April 2014 
+ March 2014 
+ February 2014 
+ January 2014 
+ December 2013 
+ November 2013 
+ October 2013 
+ September 2013 
+ August 2013 
+ July 2013 
+ June 2013 
+ May 2013 
+ April 2013 
+ March 2013 
+ February 2013 
+ January 2013 
+ December 2011 
+
+ CrowdFund Beat Exclusive Interviews 
+ 
+
+CFB UK’s Edition 
+Canadian Edition 
+
+Holland Edition 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+CrowdFunding Books 
+
+ 
+
+ 
+
+Podcast 
+...listen to more podcast
+
+
+
+ 
+
+iDisclose Teams up With New Regulation Crowdfunding Funding Portals
+
+
+
+
+
+
+
+
+The Solution Eases the Burden and Helps Entrepreneurs Create and File Their Own Form C Securities Disclosure With the SEC, Which Is Mandated Under the Agency’s New Crowdfunding Rules
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+NEW YORK, NY–(Marketwired – May 13, 2016) – iDisclose, announced today that several of the leading new Title III Crowdfunding funding portals at various stages in the SEC and FINRA approval process will be using iDisclose either on an exclusive basis or as a tool they can offer to assist issuers on their portals. Funding portals committed to compliance are choosing iDisclose as a low cost high quality legal solution. Condensing the 686 pages of SEC rules in Regulation Crowdfunding into one streamlined application was no small feat, but it was essential to iDisclose to assist entrepreneurs through the regulatory process and ensure funding platforms comply with the new regulations. iDisclose is looking forward to working with Republic.co, the new AngelList spin-off currently making its way through the SEC and FINRA application process; Funding Wonder, a Title III platform candidate with a unique focus on small business loans and SeedInvest, an experienced Title II and Title IV platform now entering the retail crowdfunding space.
+Former Chief of the Office of Small Business Policy at the SEC, securities regulation consultant and iDisclose advisory board member Gerald Laporte said, “as excited as we are for the launch of investment Crowdfunding and the promise that it holds for entrepreneurs to more efficiently raise capital online, as a securities lawyer, I am mindful of the required securities disclosure that is not only required by the new rules but the practical need to properly advise potential investors both as to the opportunity and all of the risks, that is where iDisclose comes in.”
+
+
+
+Co-founder and CEO Georgia Quinn stated that “at iDisclose, we are empowering entrepreneurs to actually comply with the lengthy and detailed regulations set forth by Regulation Crowdfunding. We, like this new industry, are an example of how technology can overcome traditional challenges faced by small and startup businesses when it comes to raising money. I love what we are doing because we protect both the issuer and the investor — there are no losers here.”
+Co-founder and CEO of Republic and AngelList alum Kendrick Nguyen said, “few people understand this space better than Georgia. Republic’s collaboration with iDisclose has been important to our development of a product that meets regulatory best practices and is also manageable and affordable to issuers.”
+Funding Wonder co-founder and CEO Michael Mildenberger stated, “Title III offers an exciting new way for small businesses to secure debt financing from non-accredited investors but the process must be as frictionless as possible. iDisclose is our secret sauce to easily and efficiently generate required documentation.”
+iDisclose has also partnered with Priori Legal and Legal Hero, two leading on-demand curated legal marketplaces, to allow users to purchase an “attorney upgrade” and work with an experienced attorney to help them through the process and provide a final legal review. The use of these two providers also ensures an ultimately scalable solution as the industry grows. All services are at transparent flat rates, so entrepreneurs know what to expect and can budget accordingly. iDisclose provides an end to end legal solution, including the attorney upgrade, for businesses conducting a Title III crowdfunding for $3,500 or less.
+“There’s so much excitement among entrepreneurs about these new regulations,” said Legal Hero’s co-founder and CEO Annie Webber. “Crowdfunding is a great way to raise funds but it is not foolproof and the legal issues are complicated. iDisclose has created a product that will absolutely be the leader in the market and we’re thrilled to be a partner.”
+“We’re pleased to partner with another New York-based legal tech company,” said Parsa Pezeshki, Priori Legal’s Head of Business Development and Market Strategy. “This is an advantageous opportunity for all parties involved: entrepreneurs, crowdfunding portals, iDisclose, and for us, at Priori Legal, where we’re excited to be sharing access to our pre-vetted platform attorneys at exceptional price-points.”
+Tom Glocer, former CEO of Thomson Reuters, founder and managing partner of Angelic Ventures, LP and advisory board member of iDisclose explained that, “the introduction of the new crowdfunding rules has created a unique opportunity for early stage growth companies to tap the capital markets. iDisclose allows issuers and their advisors to automate much of this process and I can’t think of a better way to balance legal compliance with a cost-effective and streamlined process that will appeal to tech-enabled issuers.”
+iDisclose’s Form C application is being released contemporaneously with the May 16theffectiveness in the U.S. of the SEC’s new Title III Regulation Crowdfunding rules and is available at idisclose.com or through its partner funding portals.
+“Equity crowdfunding has the potential to become the standard way that early-stage startups and small businesses raise capital, but only with the development of scalable tools that continue to bring down the cost and complexity,” said SeedInvest CEO Ryan Feit. “At the end of the day, speed and simplicity is what will drive entrepreneurs to utilize equity crowdfunding over slower, more traditional avenues for raising capital.”
+Built by some of the brightest minds in securities law, iDisclose fuses cutting-edge technology with legal know-how to significantly reduce the time, money and effort traditionally exerted on the disclosure process.
+“We join in celebration with the entire new securities-based Crowdfunding industry as the U.S. welcomes the opening to all investors the opportunity to invest in exciting new and established private companies this May 16” said Douglas Ellenoff, Co-Founder and Chairman of iDisclose and founder of New York law firm Ellenoff, Grossman & Schole.
+In September, iDisclose announced its first application release for the comprehensive use in creating a full private placement memorandum (PPM) for offerings under Regulation D of the Securities Act of 1933 and has partnerships with Title II funding platforms such as RealtyXE and Sprowtt.com.
+In addition to entering into agreements with funding platforms, iDisclose has also released a white label solution for lawyers and law firms to offer both the PPM and the Form C application to their clients.
+iDisclose puts the job of disclosure back into the hands of the entrepreneur, eliminating the inefficiencies of the traditional method and substantial time to comply with the rules and saving thousands of dollars as well. Rather than provide un-contextualized information about a business to a lawyer, and then relying on the lawyer to prepare the first draft, the entrepreneur responds to an online dialogue to draw out the relevant disclosure issues and the platform organizes the information into a legal document. Throughout the entire process, the entrepreneur is able to collaborate with their own team and attorney as needed, and to send their attorney their document drafts for final review and sign-off.
+iDisclose also generates a Red Flag report of key issues that must be addressed, which can also be shared with an attorney for further advice and counsel. In addition, the platform creates a list of Risks Factors that are seamlessly organized within the document for easy review by investors. Target groups that benefit from iDisclose include:
+
+For Businesses: The platform allows you to create your own legal documents at a reduced time and cost.
+For Investors: iDisclose provides fulsome disclosure in an easy to evaluate format.
+For Fundraising Platforms: iDisclose allows platforms to offer a value-added service to their users and standardizes the disclosure format across the entire platform.
+For Lawyers: It eliminates much of the drafting drudgery required with the disclosure process, and allows lawyers to focus on the true aspects of being a lawyer (offering real legal counsel, guidance and reviews).
+
+iDisclose was developed by Douglas Ellenoff and Georgia Quinn of Ellenoff, Grossman & Schole, who are both award-winning, NY-based corporate attorneys and globally-recognized figures in the alternative finance space. Having both facilitated hundreds of corporate financings over the course of their careers, the founders harness a deep understanding of the disclosure process, as well as the issues businesses face when raising capital.
+Image Available:http://www.marketwire.com/library/MwGo/2016/5/13/11G098163/Images/iDisclose_CEO-d185f8748aa49cee8e7f8a2346dd222c.jpg
+
+
+
+
+
+CONTACT INFORMATION
+
+
+
+Media Contact 
+Georgia Quinn
+gquinn@idisclose.com
+https://twitter.com/idisclose
+Douglas Ellenoff
+ellenoff@egsllp.com
+Eric Von der Osten
+eosten@egsllp.com
+
+
+
+
+
+
+
+We think you'd like...
+
+
+CrowdFunding Site, Lists, Data, Analytics, Research, Statistics, Reports, Infographic
+
+“Idisclose” is Crowdfunding New Legal Platform
+
+Crowdfunding & Investment Banking
+
+FINLAW:  Time to Apply to Become a FINRA Funding Portal
+
+$250m credit facility announced by Patch of Land
+
+What “Solicit” Means Under Title III
+
+5 Tips When Meeting With An Investment Bank
+
+REG A+ Elio Motors: The company now has a $1B market value at OTCQX
+
+Guide to Investment Crowdfunding and the JOBS Act
+
+5 Reasons to be Optimistic About Regulation A+
+
+Regulation A+: Legal Considerations & Policy Recommendations
+
+Marketing for Crowdfunding
+
+
+Tags: Community, Crowdfunding, crowdfunding platform, equity crowdfunding, Funding, iDisclose, indiegogo, investment, Kickstarter, Real Estate, Richard Swart, SEC
+
+
+
+
+
+
+ 
+ 
+HEADLINE NEWS
+
+
+
+Church kicks off crowdfunding campaign to save historic spires - Curbed Detroit27 July 2017Curbed DetroitChurch kicks off crowdfunding campaign to save historic spiresCurbed DetroitIt's been quite a month for the steeples at the Sweetest Heart of Mary church. The Mother of Divine Mercy church council went to the Historic District Commission earlier this month with the [...]
+Children are crowdfunding, and using the money they collect to do good - Hindustan Times28 July 2017Hindustan TimesChildren are crowdfunding, and using the money they collect to do goodHindustan TimesThe crowdfunding pages of teenagers Crish Chengappa, Sathvik Vudumula, Ishnoor Singh, Varun Jhunjhunwalla, Aryaman Shaan and Meher Kaur Rikhy. They are among hundreds of children across [...]
+SEC ICO Decision Signals Crowdfunding, Investors Shift From US to Asia - CoinTelegraph28 July 2017CoinTelegraphSEC ICO Decision Signals Crowdfunding, Investors Shift From US to AsiaCoinTelegraphThe recent move by US Securities and Exchange Commission to potentially regulate ICOs has excited many ICO investors and companies in the Asian region, as the hot Blockchain-based investing [...]
+Crowdfunding Regulation Part 2: Guidance for CSF Intermediaries - The National Law Review28 July 2017The National Law ReviewCrowdfunding Regulation Part 2: Guidance for CSF IntermediariesThe National Law ReviewThe Australian Securities and Investments Commission (ASIC) has published Consultation Paper 289 Crowd-sourced funding: Guide for intermediaries. CP 289 includes a draft Regula [...]
+Snopes seeks crowdfunding in ownership battle - TechCrunch24 July 2017TechCrunchSnopes seeks crowdfunding in ownership battleTechCrunchHow many times have you heard some urban legend, chain letter or misleading bit of news repeated and immediately found a thorough, fact-based debunking on Snopes? Like every damn day for the last 20 years or so, right? S [...]
+Real estate crowdfunding platform RealtyShares buys rival Acquire Real Estate - HousingWire27 July 2017HousingWireReal estate crowdfunding platform RealtyShares buys rival Acquire Real EstateHousingWireRealtyShares, which bills itself as the “leading online marketplace for real estate investing,” announced Thursday that it bought Acquire Real Estate, which the company calls an “innovat [...]
+Crowdfunding isn't about buying but about donating - Redding Record Searchlight26 July 2017Redding Record SearchlightCrowdfunding isn't about buying but about donatingRedding Record SearchlightImagine you're an innovator with a big idea but not a lot of cash to bring the idea to fruition. You spend some of your own money up front to design a cool demo, and then yo [...]
+Liverpool school crowdfunding to 'revolutionise' maths - Click Liverpool28 July 2017Click LiverpoolLiverpool school crowdfunding to 'revolutionise' mathsClick LiverpoolSt Francis Xavier's College in Woolton have so far raised over £1,500 in a bid to help change the way students study the current curriculum. Teacher Kenny Glover began the project on fun [...]
+Georgie's Cornish Kitchen in line to win Crowdfunding competition - Cornwall Live28 July 2017Cornwall LiveGeorgie's Cornish Kitchen in line to win Crowdfunding competitionCornwall LiveA Cornish food and drink company is in the running to win a new business competition set up by online fundraisers Crowdfunder. Georgie's Cornish Kitchen, who produce Limoncello-inspire [...]
+Women are better than men at crowdfunding, according to a new study - Mashable25 July 2017MashableWomen are better than men at crowdfunding, according to a new studyMashableMale investors often don't fully understand the value of ideas women entrepreneurs pitch them. They throw capital at food delivery service after food delivery service, but ignore ideas that cater t [...]
+
+
+
+
+CFB Finance  SymlLst Val+/- Val+/- %ONDK4.35-0.02-0.46%LC5.22+0.03+0.58%
+Marketwired
+
+
+Crowdfunding Crowdfund Peer to Peer Lending FinTech Reg A+ Reg CF Crowdfunding USA
+CORRECTION: Capitalia unaudited interim consolidated financial statements for Q2, 2017
+Capitalia unaudited interim consolidated financial statements for Q2, 2017
+MobileCause Announces Q2 2017 Product Release to Advance Hub for Nonprofit Fundraising and Donor Engagement
+Ellenoff Grossman & Schole LLP to Ring The Nasdaq Stock Market Opening Bell
+Complete Teardown Analysis of Consumer Physics's SCIO Spectrometer with a Detailed Focus on the Spectrometer Head
+Nouvelle reconnaissance pour Findynamics  
+
+
+
+PhotoShelter and Blurb Partner to Release The Photographer's Guide to Publishing Photo Books
+Kickfurther & NSR Invest Form Strategic Partnership to Enhance Data-Driven Investing
+Kickfurther to Present @ LendIt USA 2016
+Kickfurther Finances More Than $5 Million of Inventory for 187 Product Companies
+Labor SMART, Inc. to Crowdfund Next Phase of Expansion
+Securities and Exchange Commission Votes 3-1 to Approve Title III of the JOBS Act
+
+
+
+Patriot Names Bank President Richard Muskus, Jr. to Company’s Board of Directors
+Eagle Bancorp, Inc. Announces Another Quarter of Record Earnings With Second Quarter 2017 Net Income up 15% Over 2016
+Taaleri raises its profit forecast
+The Future of Lending is Now with Latest TransUnion Prama Offerings
+Joseph D. Perillo Appointed Executive Vice President & Chief Financial Officer of Patriot National Bancorp, Inc.
+THL Credit Awarded “Best US CLO” at CreditFlux Manager Awards 2017
+
+
+
+Capital United、Greystone和NES Financial启动EB-5重新部署项目
+FRONTEO and Member Banks of TSUBASA Alliance Begin Proof of Concept Trial Aimed at Implementation of Document Analysis Technology Using KIBIT Artificial Intelligence
+Broadridge Schedules Webcast and Investor Conference Call to Review Fourth Quarter and Fiscal Year 2017 Results on August 10, 2017
+HiPay Group  : 2017 H1 Revenue: €12M, + 28 % Transaction volume: €951M, + 58 %
+HiPay Group  : Chiffre d'affaires S1 2017 : 12 M€ + 28 % Flux monétique : 951 M€ + 58 %
+Digiliti Money to Speak on Mobile Banking, Small Business and Prepaid Card Program Trends at MDC Event, August 3, 2017
+
+
+
+Copper Fox Announces the Closing of Private Placement
+Maroc Telecom : Résultats consolidés du 1er semestre 2017
+Immucor, Inc. Announces Results of Exchange Offer
+Hudson Resources Announces Completion of Arrangement for US$22.5 Million Debt Financing for the White Mountain Project
+Madalena Announces the Issuance of Warrants to Hispania Petroleum S.A.
+Macarthur Minerals Private Placement for Up to $2.5 Million
+
+
+
+Lice Clinics of America Announces Equity Crowdfunding Campaign
+Share repurchase programme
+Share repurchase programme
+Share repurchase programme
+Share repurchase programme
+MAJOR SHAREHOLDER ANNOUNCEMENT REGARDING EXIQON A/S
+
+
+
+Sitting Healthy: New Chair Design, That Breaks With 5,000-Year-Old Tradition and Delivers Health and Productivity Benefits
+Kimbia completes comprehensive review of Give Local America(R) 2016 event; resolves technology issues and implements corporate reorganization
+C5 Smart Helmet Breaks the Stereotype on Airwheel — Conclusive Evidence of Its R&D Capability
+Canyon Gold Corp. Engages the Services of  Trilogy Marketing Strategies
+Kickfurther & NSR Invest Form Strategic Partnership to Enhance Data-Driven Investing
+Gannett Partners with Kimbia's Give Local America to Raise Millions for Nonprofits Across the Nation
+
+
+
+
+Press Release
+
+							We proudly invite you to  4th Annual Crowdfunding USA on May 4-5, 2017  National Press Club Washington, DC.							
+
+
+
+							Political Crowdfunding: Building a Community Instead of a Campaign 
+
+
+
+							Setting Up an Efficient Crowdfunding Platform							
+
+
+
+							The Battle to Launch a Next-Generation Retirement Product & Control $14 Trillion in Investment Direction 
+
+
+
+
+
+
+
+27 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding #fintchworld
+#bitcoin #bitshares #cryptocurrency #blockchain #fintech #ICO #ito #tokensales ow.ly/z3yV30dWGM8
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+27 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding #fintchworld
+#bitcoin #bitshares #cryptocurrency #blockchain #fintech #ICO #ito #tokensales ow.ly/z3yV30dWGM8
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+19 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+FinTech Next Generation fb.me/BcUrlIm8
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+19 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+FinTech Next Generation lnkd.in/g82NRER
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+17 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding
+crowdfundbeat.com/2017/05/18/… fb.me/8ZgwRlFLH
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+13 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+@douglasellenoff Grossman & Schole LLP to Ring The Nasdaq Stock Market Opening Bell July 14th ow.ly/hTzR30dCkMz
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+13 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+@douglasellenoff Grossman & Schole LLP to Ring The Nasdaq Stock Market Opening Bell July 14th 
+nasdaq.com/press-release/…
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+3 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/eH3xPWi
+#fintech #CRYPTOCURRENCY
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+2 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/ePSG6hq
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jul
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/ePSG6hq
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+30 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+@CrowdCapAdvisor #crowdfunding @crowdfundingusa lnkd.in/eVSFPkK
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+26 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/dyjHA8W
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+25 Jun
+Tim Draper
+@TimDraper
+
+First pitch at the A's game last night with Draper University  team.... fb.me/145p3wtwy
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+25 Jun
+Crowdfunding Fever
+@CFFever
+
+Unpacking Initial Coin Offerings (ICO) and Token Sales dlvr.it/PPlvcf
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+24 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+Trump changes cuba policy lnkd.in/dEYRWq8
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+22 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/dGWGWbr . #paris #startups #emmanuelmacron
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+20 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/dyjHA8W
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+20 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+lnkd.in/gcNQiNP
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+20 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+An Unofficial Chat with Ron Suber, the Tom Brokaw of Fintech lnkd.in/dwr88Us
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+16 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+fb.me/7cgBXRdib
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+15 Jun
+Sydney Armani
+@Sydney_Armani
+
+Just finished the interview with Bloomberg Europe  on #fintech World 
+@ #paris VIva technology 2017 pic.twitter.com/hUIlMBP4wC
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+15 Jun
+Mark Roderick
+@CrowdfundAttny
+
+#Crowdfunding MUST read! Filing Financial Statements & Other Reports Under Regulation A crowdfundattny.com/2017/06/14… pic.twitter.com/HKnHqoTncF
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+15 Jun
+Reg Crowdfunding
+@woodien
+
+IMPORTANT INFO: Regulation #Crowdfunding ISSUERS Do NOT BE OUT OF COMPLIANCE with SEC, FILE Form C-A to UPDATE your FUNDING DEADLINE
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+2 Jun
+Elon Musk
+@elonmusk
+
+Am departing presidential councils. Climate change is real. Leaving Paris is not good for America or the world.
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+@SaraCrowdCheck @frutkinlaw @CrowdfundAttny @Brian_Korn #crowdfunding #fintch lnkd.in/gjW7HYc
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+Brian Korn
+@Brian_Korn
+
+Here's my latest update on fintech and P2P from The National Press Club. lnkd.in/gY4h82z
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding #fintech @Brian_Korn ow.ly/LxGD30cejHG
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+#crowdfunding #video ow.ly/Ix4P30cegSv
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+crowdfundbeat.com/video/
+#crowdfunding  Beat Video – Library
+| #news | Conference | Interview | Webinar | Campaig pic.twitter.com/FE6eh3FcLx
+Retweeted by CrowdFund Beat Media
+Expand
+ reply
+ retweet
+ favorite
+
+
+
+
+1 Jun
+CrowdFund Beat Media
+@CrowdFundBeat
+
+crowdfundbeat.com/video/
+#crowdfunding  Beat Video – Library
+| #news | Conference | Interview | Webinar | Campaig pic.twitter.com/FE6eh3FcLx
+Expand
+ reply
+ retweet
+ favorite
+
+Follow @crowdfundbeatFollow Us! 
+
+ 
+ 
+
+
+
+
+Readers Favorites
+
+Report: Global Crowdfunding Market 2016-2020 
+15 Crowdfunding Platforms To Effectively Fund Apps 
+2017 Real Estate Crowdfunding: Surveying the Landscape 
+CrowdFunding Lists, Data, Analytics, Research, Statistics, Reports, Infographic 
+2017 Real Estate Crowdfunding Sites 
+ Financing Your Next Car with CrowdFunding 
+
+
+
+Live Crowdfunding .tvWhat's Next Step in Regulation A+ JOBS ACTS Title IIII :L Interview : Steve Cinelli with Brian Korn Securities and Crowdfunding/Peer-to-Peer Lending Lawyer,  Watch more video library | Conference | Interview | Campaign Showcase | Research | Education | 
+
+
+
+    CrowdFundBeat.com[USA] Mailing Address: 71 Stevenson Street, suite 400, San Francisco, California 94105 USA | Email Address: news@crowdfundbeat.com | Phone:  1 888 580 6610[UK] Mailing Address: 10/11 Charterhouse Square, London, EC1M 6EH | Phone: 020 3301 8017[CA] Mailing Address: 1235 Bay St #400, Toronto, ON M5R 3K4, Canada | Phone: 1 888 580 6610 | Email Address: news@crowdfundbeat.ca
+Themes by bavotasan.  WordPress.
+Copyright © 2017 CrowdFund Beat. All Rights Reserved.Google+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

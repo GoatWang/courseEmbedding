@@ -1,0 +1,2763 @@
+
+
+Kui Tang
+
+
+
+
+
+
+Kui Tang
+Machine Teacher
+
+When you are perfectly free to feel stuck or not stuck, then you're unstuck.
+Alan Watts
+
+
+[Papers]
+[Talks]
+[Code]
+[Expository]
+
+[CV]
+[Resume]
+
+
+
+
+
+I have worked on machine learning research for nearly five years. I had the privilege to work with Prof. Tony Jebara while I was an undergrad at Columbia University and then to continue my PhD program there under Prof. David Blei as well. My academic work has included approximate inference in graphical models of both directed and undirected varieties, convex optimization, probabilistic word vector embeddings, and probabilistic models for matchings, permutations, and graph structures. After receiving my M.S., I left in order to focus on real-world applications of machine learning.
+Machine learning will grow increasingly fundamental to technology and society as the quantity and complexity of our data, and our ambition to make use thereof, increase without bound. The field requires algorithms that scale to big data, are practical and easy to use outside the academy, and are grounded in firm mathematical principles, so that their accuracy and speed can be depended upon for mission-critical applications.
+
+Papers
+
+K. Tang, N. Ruozzi, D. Belanger, T. Jebara. "Bethe Learning of Conditional Random Fields via MAP Decoding". Artificial Intelligence and Statistics (AISTATS) 2016. [pdf] [bib] [code]
+A. Weller, K. Tang, D. Sontag, T. Jebara. "Approximating the Bethe Partition Functions". Uncertainty in Artificial Intelligence (UAI) 2014. [pdf] [code] [bib]
+M. Kambadur, K. Tang, M. Kim. "ParaShares: Finding the Important Basic Blocks in Multithreaded Programs." Euro-Par 2014. [pdf] [bib]
+K. Tang, A. Weller and T. Jebara. "Network Ranking with Bethe Pseudomarginals". NIPS Workshop on Discrete Optimization in Machine Learning 2013. [pdf] [bib]
+K. Choromanski, T. Jebara and K. Tang. "Adaptive Anonymity via b-Matching". Neural Information Processing Systems (NIPS) 2013. [pdf] [supp] [code] [bib]
+M. Kambadur, K. Tang, J. Lopez, and M. Kim. "Parallel scaling properties from a basic block view". International Conference on Measurement and Modeling of Computer Systems (SIGMETRICS) 2013. [pdf] [bib]
+M. Kambadur, K. Tang, and M. Kim. "Parallel Block Vectors: Collection, Analysis, and Uses". IEEE Micro, 33(3):86-94, 2013. [pdf] [code] [bib]
+M. Kambadur, K. Tang, and M. Kim. "Harmony: Collection and Analysis of Parallel Block Vectors". International Symposium for Computer Architecture (ISCA), Jun. 2012. [pdf] [code] [bib]
+
+Invited Talks
+
+Bethe Learning of Conditional Random Fields via MAP Decoding.
+(Cambridge University Engineering Department, May 2016) [slides]
+
+
+Machine Learning: Lesson for Emerging Scholars Program
+(Columbia University, November 2015) An introductory lesson to machine learning, covering supervised and unsupervised learning, as well as distributed computation. Interactive discussion and problem-solving prompts included. Designed for first- and second-year undergraduates with no prior background. [slides]
+
+
+Adaptive Anonymity via b-Matching
+(UMass Amherst Machine Learning and Friends Lunch, February 2014) [slides]
+
+
+Statistical Machine Learning with Bayesian Networks
+(Columbia Data Science Society, November 2013; hackNY Masters, New York University, September 2013.) I teach the fundamentals of Bayesian networks, MCMC inference, and probabilistic programming to undergraduates and masters students with little previous exposure to statistics or machine learning. [IPython notebook] [github] 
+
+
+The Computational Complexity of Probabilistic Inference Using Bayesian Belief Networks
+(Machine Learning Reading Group, Columbia University, June 2012.) I walk through the proof by G.F. Cooper that posterior inference in Bayesian networks is NP-hard. The proof reduces from 3SAT using an elegant gadget graph. [slides]
+
+Code
+  See also my GitHub page for projects not listed here.
+  
+mexcpp: Easier MATLAB and C++ Integration
+This library makes it easier to write MEX extensions by providing a natural C++ syntax to read and write MATLAB structures with no runtime penalty thanks to template metaprogramming. Arays, cells, and structures are all supported. [github]
+
+Polynomial Time Inference of Bethe Partition Function and Marginals
+Code to minimize the Bethe free energy up to additive error via discrete optimization, as well as continuous methods to minimize the Bethe free energy over various polytopes (but with no guarantees). See our UAI 2014 paper. [tarball]
+
+
+Adaptive Anonymity via b-Matching
+Safely release a sensitive database for analysis by censoring selected entries. We compute the censored entries by b-matching, which results in more released data compared to the state of the art, while maintaining the same privacy guarantee. See our NIPS 2013 paper. [tarball] [instructions] [b-match solver documentation]
+
+
+Harmony
+Profile multithreaded programs: measure the number of times each line of code was run and how many threads ran it at the same time. This can be used to detect concurrency bottlenecks and analyze global program efficiency. See our ISCA and Micro papers. [homepage]
+
+Expository
+Below are notes on various mathematical topics, course projects, and unpublished manuscripts.
+
+
+Review Notes
+To review for finals, I like to condense the content of a course into 10-20 pages of notes. The following may be useful references:
+    
+Stochastic Processes, taught by Hongzhong Zhang, Columbia, Spring 2013.
+Computational Learning Theory, taught by Rocco Servedio, Columbia, Fall 2012.
+
+
+
+
+Quasi Monte Carlo Inference for Log Gaussian Cox Processes
+(With Jessica Forde and Liam Paninski, 2013) We give a self-contained introduction to quasi Monte Carlo, a deterministic substitute to Monte Carlo, and then use it for a Bayesian inference for a computationally difficult problem, including embedding quasi Monte Carlo samples into a Metropolis-Adjusted Langevin algorithm. Encouraging convergence rate speedup results are presented. [paper] [slides]
+
+Inferring Direct and Indirect Functional Connectivity Between Neurons From Multiple Neural Spike Train Data
+(With Ben Shababo and Frank Wood, 2012) We aim to model the functional connectivity of neural microcircuits by accounting for (1) unobserved neurons and (2) long-run connections, two problems not yet adequately addressed in the literature. Encouraging simulation and lab-data results are analyzed. [paper]
+
+
+Personalized Emotion Classification with Latent Dirichlet Allocation
+(2012) Work on sentiment analysis of text has focused on scalar values of sentiment. We instead represent emotions multidimensionally as topic vectors and learn a personalized emotion lexicon. We take a semi-supervised approach with latent Dirichlet allocation (LDA) and a derivative, SubjLDA, initializing our model with a psychologically validated seed corpus. We demonstrate significant improvements to the baseline. [paper]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+Kui Tang: Executive Profile & Biography - Bloomberg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+July 28, 2017 8:22 PM ET
+Capital Markets
+
+Company Overview of FountainVest Partners
+
+
+
+SnapshotPeople 
+
+
+
+
+OverviewBoard MembersCommittees
+
+
+
+Executive Profile
+Kui   Tang  Founding Partner, Chief Executive Officer, Managing Partner and Managing Director, FountainVest PartnersAgeTotal Calculated CompensationThis person is connected to 4 Board Members in 4 different organizations across 4 different industries.See Board Relationships49--
+Background
+
+		Mr. Kui Tang, also known as Frank, is the Founding Partner, Chief Executive Officer, Managing Partner and Managing Director at FountainVest Partners. Mr. Tang co-founded FountainVest Partners in 2007. He served as Senior Managing Director and Head of China Investments at Temasek Holdings (Private) Limited from 2005 to 2007. Mr. Tang joined the firm on May 2005. He served as the President at Temasek Holdings (Hong Kong) Limited. He worked as the Managing Director in the ... Investment Banking Division at The Goldman Sachs Group, Inc. principal investments group from 1994 to 2005. He served as a Managing Director and Head of the Telecom, Media and Technology investment banking effort in Asia ex-Japan for Goldman Sachs. He served as an Executive Director at Principal Investments Group of Goldman Sachs from 2000 to 2002. He joined Goldman Sachs in 1994. He has been an Independent Director of Accenture plc since May 9, 2014. He has been an Independent Director of Weibo Corporation since April 2014. He served as a Non Executive Director of CITIC Resources Holdings Ltd. from August 21, 2007 to April 1, 2008. He serves as a Board Governor of the China Venture Capital and Private Equity Association, Vice Chairman of the Beijing Private Equity Association and Vice Chairman of the Shanghai Private Equity Association. Mr. Tang holds an M.B.A. degree from Columbia Business School, Columbia University and Bachelor’s Degree from Donghua College.Read Full Background
+
+
+
+
+Corporate Headquarters
+Suite 705-8Central, -- --Hong KongPhone: 852 3972 3900Fax: 852 3107 2490
+Board Members Memberships
+Board GovernorChina Venture Capital and Private Equity Association2014-PresentIndependent DirectorAccenture plc2014-PresentIndependent DirectorWeibo Corporation
+Education
+MBA Columbia Business SchoolBachelor's Degree Donghua University
+Other Affiliations
+Temasek Holdings (Private) LimitedThe Goldman Sachs Group, Inc.Accenture plcColumbia Business SchoolCITIC Resources Holdings LimitedDonghua UniversityFountainVest China Growth Capital Fund, L.P.China Venture Capital and Private Equity AssociationBeijing Private Equity AssociationFountainvest China Growth Capital Fund II, L.P.Weibo Corporation
+
+
+Annual Compensation
+				There is no Annual Compensation data available.
+				Stocks Options
+				There is no Stock Options data available.
+				Total Compensation
+				There is no Total Compensation data available.
+			
+
+
+
+Request Profile Update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+The information and data displayed in this profile are created and managed by S&P Global Market Intelligence, a division of S&P Global. Bloomberg.com does not create or control the content. For inquiries, please contact S&P Global Market Intelligence directly by clicking 
+	here.
+
+
+
+
+Stock Quotes
+
+
+Market data is delayed at least 15 minutes.
+
+
+
+
+
+
+
+Company Lookup
+
+
+
+COMPETITOR COMPENSATIONThere is no Competitor Compensation data available.
+
+
+
+
+
+
+
+
+
+
+Sponsored Financial Commentaries
+
+Sponsored Links
+
+
+
+
+
+
+Browse Companies
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+ | 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+
+
+
+Request Profile Update
+
+						Only a company representative may request an update for the company profile. Documentation will be required.
+					  
+To contact FountainVest Partners, please visit .  Company data is provided by S&P Global Market Intelligence.  Please use this form to report any data issues.
+					  
+
+
+Information Missing - Please enter your information in the following field(s): 
+
+
+
+
+Company Name
+
+Your Name*
+
+Your E-Mail Address*
+
+Your Phone Number*
+
+Type of Data*
+
+
+Overview
+Executives
+Key developments
+Similar companies
+Transactions
+
+
+Update Needed*
+
+All data changes require verification from public sources.  Please include the correct value or values and a source where we can verify.
+
+
+Cancel
+
+
+Submit
+
+
+
+
+
+
+Your requested update has been submitted
+Our data partners will research the update request and update the information on this page if necessary. Research and follow-up could take several weeks. If you have questions, you can contact them at bwwebmaster@businessweek.com.
+
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Insider Trading - Tang Frank Kui - Form 4 SEC Filings
+
+
+
+
+
+
+
+
+
+
+
+
+Home |
+Archives |
+Products |
+About |
+Contact |
+FAQ |
+
+
+
+New User?
+Sign Up | 
+Sign In
+
+
+
+
+
+
+
+
+
+Form 4 Filings
+
+
+Insider Buys
+
+
+Significant Buys
+
+
+Penny StocksInsider Buying
+
+
+Insider Sales
+
+
+
+
+Insider Buy Sell Ratios
+
+
+Stock Options
+
+
+Insider TradingStock Screener
+
+
+Insider TradingGraph View
+
+
+Insider Watch
+
+
+
+
+
+Sec Filings Insider Trading - Tang Frank Kui
+
+
+
+
+
+Select Time period: 
+1 Month
+2 Months
+3 Months
+6 Months
+1 Year
+2 Years
+3 Years
+4 Years
+All Data
+ 
+
+     
+
+
+
+google
+
+   
+
+
+
+yahoo!
+
+
+
+Send this page to:  
+
+Blog
+  
+
+
+
+Digg
+
+  
+
+
+
+Reddit
+
+  
+
+
+
+Facebook
+
+  
+
+
+
+Stumble
+
+  
+
+
+
+del.icio.us
+
+
+
+
+
+
+
+
+Enter Stock Ticker Symbol or Cik:
+
+
+
+
+Cik Lookup...
+
+
+
+
+
+
+Search By Company or Insider Name:
+
+
+
+
+
+
+
+"Insiders might sell their shares for any number of reasons, but they buy them for only one:
+they think the price will rise"
+- Peter Lynch ==>>
+
+What is insider trading>>
+
+
+
+Email a friend >>...
+
+
+
+
+
+
+
+Historical filings delayed by 6 months. New user?
+Sign Up for real time data.
+Existing user?
+Sign In
+
+Stock options: Exercise, Award, Grant, Conversion
+
+
+
+TransactionDate
+ReportedDate
+ExercisableExpiration
+Company
+Symnbol
+InsiderRelationship
+SharesTraded
+ConversionPrice
+SharesOwned
+Filing
+
+
+
+
+2016-11-15Option Award
+2016-11-1709:21 am
+N/AN/A
+Accenture Plc
+ACN
+Tang Frank KuiDirector
+30
+$0
+5,959(Direct)
+View
+
+
+2016-05-13Option Award
+2016-05-165:41 pm
+N/AN/A
+Accenture Plc
+ACN
+Tang Frank KuiDirector
+28
+$0
+5,929(Direct)
+View
+
+
+2016-02-04Tax Withholding
+2016-02-084:29 pm
+N/AN/A
+Accenture Plc
+ACN
+Tang Frank KuiDirector
+1,831
+$102.2
+5,901(Direct)
+View
+
+
+2016-02-03Option Award
+2016-02-055:45 pm
+N/AN/A
+Accenture Plc
+ACN
+Tang Frank KuiDirector
+2,849
+$0
+7,732(Direct)
+View
+
+
+2015-11-13Option Award
+2015-11-174:16 pm
+N/AN/A
+Accenture Plc
+ACN
+Tang Frank KuiDirector
+35
+$0
+4,883(Direct)
+View
+
+
+2015-06-01Tax Withholding
+2015-06-034:15 pm
+N/AN/A
+Accenture Plc
+ACN
+Tang Frank KuiDirector
+1,581
+$96.11
+4,848(Direct)
+View
+
+
+2015-05-15Option Award
+2015-05-194:48 pm
+N/AN/A
+Accenture Plc
+ACN
+Tang Frank KuiDirector
+68
+$0
+6,429(Direct)
+View
+
+
+2015-02-04Option Award
+2015-02-064:11 pm
+N/AN/A
+Accenture Plc
+ACN
+Tang Frank KuiDirector
+3,175
+$0
+6,361(Direct)
+View
+
+
+
+
+
+
+
+
+
+    © 2005-2017 SecForm4.Com All rights reserved.
+    Archives:
+    2017 2016 2015 2014 2013 2012 ... 
+    Fri, 28 Jul 2017 19:22:55 -0500
+  
+
+    SEC is the U.S. Securities and Exchange Commission. EDGAR is a trademark of the SEC.
+    SecForm4.Com is not affiliated with or approved by the U.S. Securities and Exchange Commission (SEC).
+Terms of Use |
+    Privacy Statement |
+  
+
+
+
+
+
+
+
+
+
+
+Frank Kui  Tang - CEO, founder, businessman - profile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+directorpedia.net - List of CEOs, founders, board members and company directors
+
+
+
+
+
+
+
+
+
+
+
+Frank Kui  Tang
+Check out list of companies and businesses related to Frank Kui  Tang. Find out Frank Kui  Tang address and contact details. View other people related to Frank Kui  Tang - coworkers, colleagues, companions, etc.
+Address:   
+
+C/O ACCENTURE 161 N. CLARK STREET CHICAGO 60601 IL
+
+
+
+
+Companies related to Frank Kui  Tang
+CIKCompany NamePositionCompany Address0001143908ACCENTURE SCA46A, AVENUE J.F. KENNEDY  L-1855 LUXEMBOURG 000000001467373Accenture plcDirector 1 GRAND CANAL SQUARE GRAND CANAL HARBOUR DUBLIN D2
+
+
+
+
+Frank Kui  Tang on the Web
+Persons related to Frank Kui  Tang - ACCENTURE SCANamePositionCityJaime  ArdilaCHICAGOR TIMOTHY S  BREENEGrp Chf Exe-Bus Cons &Strat Of IRVINGGianfranco  CasatiIRVINGGianfranco  Casati IRVINGGianfranco  Casati IRVINGGianfranco  Casati CHICAGORICHARD P  CLARKCHICAGOMartin I  ColeGrp Chf Exe-Government IRVINGMartin I  Cole IRVINGMartin I  Cole IRVINGMartin I  Cole IRVINGMartin I  Cole CHICAGOShawn  CollinsonCHICAGOJOELLIN  COMERFORDGrp Chief Exec-Outsource & BPO IRVINGWILLIAM C  COPACINOGrp Chf Exe-Bus Cons IRVINGAnthony G  CoughlanPrincipal Accounting Officer IRVINGAnthony G  Coughlan IRVINGAnthony G  Coughlan CHICAGOPAMELA  CRAIGSenior Vice President- Finance IRVINGPAMELA  CRAIGIRVINGPAMELA  CRAIG IRVINGPAMELA  CRAIG IRVINGPamela J.  Craig CHICAGOJohan  DeblaereCHICAGOJuan  DomenechCHICAGOJOE W  FOREHANDDirector IRVINGRobert N  Frerichs IRVINGRobert N  Frerichs IRVINGRobert N  Frerichs CHCIAGOJOEL P  FRIEDMANDirector IRVINGCharles H  GiancarloMENLO PARKWILLIAM D  GREENCEO IRVINGWILLIAM D  GREENCEO IRVINGWILLIAM D  GREEN IRVINGWILLIAM D  GREEN CHICAGODENNIS F  HIGHTOWERWASHINGTONDENNIS F  HIGHTOWERCHICAGONOBUYUKI  IDEI141-0001 JAPANSTEPHAN A  JAMESCOO - Capabilities IRVINGChad T  JerdeeCHICAGOWILLIAM L  KIMSEYSANTA BARBARAAdrian J  LajthaIRVINGDANIEL T  LONDONCHICAGORichard  LumbCHICAGOMARJORIE  MAGNERNEW YORKJOSE LUIS  MANZANARESGrp Dir.- Client Services Opr IRVINGLisa M  Mascolo IRVINGLisa M  Mascolo IRVINGMICHAEL G  MCGRATHChief Financial Officer IRVINGPierre  NantermeIRVINGPierre  Nanterme IRVINGJean-Marc  OllagnierCHICAGOJeffrey D  OsborneCHICAGOGilles  PELISSONCHICAGOThomas  PikeCHICAGOPaula A  PriceCHICAGOSTEPHEN J  ROHLEDERChief Operating Officer IRVINGSTEPHEN J  ROHLEDERChief Operating Officer IRVINGSTEPHEN J  ROHLEDER IRVINGSTEPHEN J  ROHLEDER IRVINGSTEPHEN J  ROHLEDER IRVINGSTEPHEN J  ROHLEDER CHICAGODAVID  ROWLANDCHICAGOMICHAEL J  SALVINOCHICAGODOUGLAS G  SCRIVNERGeneral Counsel & Sec. IRVINGDOUGLAS G  SCRIVNER IRVINGDOUGLAS G  SCRIVNER IRVINGDOUGLAS G  SCRIVNER IRVINGDOUGLAS G  SCRIVNER CHICAGORobert E  Sell CHICAGOEllyn  ShookCHICAGOJill  Smart CHICAGOJulie Spellman  SweetCHICAGOFrank Kui  TangCHICAGO't Noordende Alexander M  vanIRVINGCARLOS  VIDALDirector IRVINGDIEGO  VISCONTIGrp Chf Exe-Com & High Tech IRVINGJACKSON L  WILSON JRChf Exe-Bus Process Outsourcin IRVINGPersons related to Frank Kui  Tang - Accenture plcNamePositionCityJaime  ArdilaDirector DETROITJaime  ArdilaDirector CHICAGOKEVIN M  CAMPBELLGroup Chief Exec-Technology IRVINGKEVIN M  CAMPBELLGroup Chief Exec- Technology IRVINGKEVIN M  CAMPBELLGroup Chief Exec-Technology IRVINGKEVIN M  CAMPBELLGroup Chief Exec-Technology CHICAGOGianfranco  CasatiGroup Chief Exec-Growth Mkts IRVINGGianfranco  CasatiGroup Chief Executive-Products IRVINGGianfranco  CasatiGroup Chief Exec-Growth Mkts CHICAGORICHARD P  CLARKChief Accounting Officer CHICAGOMartin I  ColeGrp Chief Exec-Comm & HighTech IRVINGMartin I  ColeGrp Chief Exec-Comm & High Tec IRVINGMartin I  ColeGroup Chief Exec - Technology CHICAGOShawn  CollinsonChief Strategy Officer CHICAGOAnthony G  CoughlanPrincipal Accounting Officer IRVINGAnthony G  CoughlanPrincipal Accounting Officer CHICAGOPAMELA  CRAIGChief Financial Officer IRVINGPAMELA  CRAIGChief Financial Officer IRVINGPamela J.  CraigChief Financial Officer CHICAGOJohan  DeblaereChief Operating Officer CHICAGOJohan  DeblaereChief Operating Officer CHICAGODINA  DUBLONDirector DINA  DUBLONDirector BEDFORD HILLSDINA  DUBLONDirector CHICAGOKARL HEINZ  FLOTHERChief Strtgy & Corp Dev Officr IRVINGKARL HEINZ  FLOTHERChief Strtgy & Corp Dev Officr IRVINGKARL HEINZ  FLOTHERChief Strtgy & Corp Dev Officr CHICAGOMARK  FOSTERGrp Chief Exec-Mgmt Consulting IRVINGMARK  FOSTERGrp Chief Exec-Mgmt Consulting CHICAGORobert N  FrerichsGroup Chief Exec-United States IRVINGRobert N  FrerichsGrp Chief Exec.- North America CHCIAGORobert N  FrerichsGroup Chief Exec-North America CHICAGOCharles H  GiancarloDirector LOS GATOSCharles H  GiancarloDirector MENLO PARKWILLIAM D  GREENChairman and CEO IRVINGWILLIAM D  GREENChairman & CEO IRVINGWILLIAM D  GREENExecutive Chairman CHICAGOHerbert  HainerDirector CHICAGODENNIS F  HIGHTOWERDirector CHICAGONOBUYUKI  IDEIDirector JAPANNOBUYUKI  IDEIDirector MINATO-KU TOKYO JAPANChad T  JerdeeGeneral Counsel and CCO CHICAGOWILLIAM L  KIMSEYDirector SANTA BARBARAWILLIAM L  KIMSEYDirector SANTA BARBARAROBERT I  LIPPDirector GREENWICHDANIEL T  LONDONGroup Chief Exec - Health & PS CHICAGORichard  LumbGroup Chief Executive-Fin Serv CHICAGOMARJORIE  MAGNERDirector MARJORIE  MAGNERDirector NEW YORKBLYTHE J  MCGARVIEDirector BLYTHE J  MCGARVIEDirector WILLIAMSBURGNancy  McKinstryDirector NEW YORKMARK  MOODYSTUARTDirector LONDON, UK E1W 2NL X0MARK  MOODYSTUARTDirector LONDON, UKPierre  NantermeChairman & CEO IRVINGPierre  NantermeGroup Chief Exec-Fin Services IRVINGPierre  NantermeChairman & CEO CHICAGOJean-Marc  OllagnierGroup Chief Exec-Resources CHICAGOJeffrey D  OsborneChief Performance Officer CHICAGOGilles  PELISSONDirector CHICAGOThomas  PikeCHICAGOThomas  PikeChief Risk Officer CHICAGOPaula A  PriceDirector WOONSOCKETPaula A  PriceDirector CHICAGOSTEPHEN J  ROHLEDERGroup Chief Exec-North America IRVINGSTEPHEN J  ROHLEDERGroup Chief Exec-Health & PS IRVINGSTEPHEN J  ROHLEDERGroup Chief Exec-Health & PS IRVINGSTEPHEN J  ROHLEDERGroup Chief Exec-North America CHICAGODAVID  ROWLANDChief Financial Officer CHICAGOMICHAEL J  SALVINOGroup Chief Exec-Operations CHICAGOARUN  SARINDirector PLEASANTONWULF VON  SCHIMMELMANNDirector BONN GERMANYWULF VON  SCHIMMELMANNDirector 1050 BRUXELLESWULF VON  SCHIMMELMANNDirector 82377 PENZBERGWULF VON  SCHIMMELMANNDirector PENZBERGDOUGLAS G  SCRIVNERGeneral Counsel & Sec IRVINGDOUGLAS G  SCRIVNERExec-Office of CEO IRVINGDOUGLAS G  SCRIVNERExecutive-Office of the CEO CHICAGORobert E  SellGrp Chief Exec-Com, Med & Tech CHICAGOEllyn  ShookChief Leadership & HR Officer CHICAGOJill  SmartChief Human Resources Officer CHICAGOJulie Spellman  SweetGroup Chief Exec-North America CHICAGOFrank Kui  TangDirector CHICAGOTRACEY THOMAS  TRAVISHUDSON't Noordende Alexander M  vanGroup Chief Exec-Products IRVING't Noordende Alexander M  vanGroup Chief Exec-Resources IRVING't Noordende Alexander M  vanGroup Chief Exec-Products CHICAGO
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Frank Kui Tang | World Economic Forum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Agenda
+
+
+Initiatives
+
+
+Reports
+
+
+Events
+
+
+
+
+            About
+          
+
+            About
+          
+
+
+
+
+Our Mission
+
+
+Leadership and Governance
+
+
+Our Members and Partners
+
+
+Communities
+
+
+History
+
+
+Klaus Schwab
+
+
+Media
+
+
+Careers
+
+
+Contact Us
+
+
+Code of Conduct
+
+
+World Economic Forum LLC
+
+
+Center for the Fourth Industrial Revolution
+
+
+Sustainability
+
+
+Privacy and Terms of Use
+
+
+日本事務所
+
+
+
+
+
+
+Español
+中文
+日本語
+
+
+
+          Login to TopLink
+        
+ 
+
+
+
+
+
+
+
+We are using cookies to give you the best experience on our site. By continuing to use our site, you are agreeing to our use of cookies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Agenda
+
+
+Initiatives
+
+
+Reports
+
+
+Events
+
+
+About
+
+
+
+
+
+
+              TopLink login
+            
+
+
+
+中文
+
+
+Español
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Frank Kui Tang
+Managing Partner and Chief Executive Officer, FountainVest Partners (Asia) Limited
+
+
+MBA, Columbia Business School. Formerly: almost 11 years as Managing Director, Goldman Sachs; Senior Managing Director, Temasek Holdings, and 2005-07, headed its China investments. Vice-Chairman, Shanghai Private Equity Association. Governor, China Venture Capital and Private Equity Association. Expertise: China, private equity investments, investment banking.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		Form  4          Accenture plc             For: May 15  Filed by: Tang Frank Kui
+	
+	
+
+
+
+
+
+
+
+
+
+		Research: Stocks: News Story
+	
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to Main Content.
+Site navigation
+Fidelity.com Home
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+Search Fidelity.com
+
+
+
+
+ 
+
+ 
+
+
+
+Accounts & Trade
+
+
+
+PortfolioLog In Required
+
+
+Account PositionsLog In Required
+
+
+TradeLog In Required
+
+
+Active Trader ProLog In Required
+
+
+TransferLog In Required
+
+
+Cash ManagementLog In Required
+
+
+BillPayLog In Required
+
+
+Full ViewLog In Required
+
+
+ProfileLog In Required
+
+
+Account FeaturesLog In Required
+
+
+StatementsLog In Required
+
+Tax Information
+
+Retirement DistributionsLog In Required
+
+
+
+OFFER See our featured trading offer. Learn more.
+
+
+
+Planning & Advice
+
+
+What We Offer
+Financial Basics
+Building Savings
+Managing & Growing Wealth
+Retirement
+Life Events
+
+
+
+News & Research
+
+
+News
+Watch ListLog In Required
+Quotes
+AlertsLog In Required
+Mutual Funds
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Markets & Sectors
+IPOs
+Annuities
+Learning Center
+Notebook
+Notebook
+
+
+
+Investment Products
+
+
+Mutual Funds
+Retirement & IRAs
+Trading
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Sector Investing
+Cash Management & Credit Cards
+Managed Accounts
+Fidelity Go
+529 College Savings
+Annuities
+Life Insurance & Long Term Care
+
+
+
+Why Fidelity
+
+
+The Fidelity Advantage
+Planning & Advice
+Trading
+Straightforward Pricing
+Insights & Tools
+Security & Protection
+
+
+ 
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+			Content and data provided by various third parties and Fidelity − Terms of Use
+
+
+
+
+Research >
+Stocks >
+
+
+				
+					
+					
+						News & Events
+					
+				
+				 >
+			
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Details
+
+Enter Company or Symbol. Press down arrow for suggestions, or Escape to return to entry field.
+
+
+
+
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Adv Chart & Technical..
+News & Events
+Compare
+Analyst Opinions
+Research Reports
+Key Statistics
+Earnings
+Dividends
+Ownership & Insiders
+Financial Statements
+SEC Filings
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Advanced Chart
+News
+Analyst Reports
+
+
+
+Find Symbol. Opens in new window.
+
+
+
+
+
+
+
+Snapshot
+Detailed Quote
+Advanced Chart & Technical Analysis 
+News & Events
+Compare
+Analyst Opinions
+Research Reports
+Key Statistics
+Earnings
+Dividends
+Ownership & Insiders
+Financial Statements
+SEC Filings
+
+
+
+
+
+RELATED RESOURCES
+
+Stock Research Overview
+Stock Screeners
+Markets & Sectors
+Fidelity Learning Center 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Print Format
+
+
+Change Text Size:
+
+
+Default text sizeA
+
+
+Larger text sizeA
+
+
+Largest text sizeA
+
+
+
+
+
+
+
+
+
+Form  4          Accenture plc             For: May 15  Filed by: Tang Frank Kui
+BY 10K Wizard— 4:17 PM ET 05/16/2017
+
+
+http://archive.fast-edgar.com/20170516/A9Z6C22CZ222P2Z2222R2MZ4ROINZW276292
+
+Filed on: May 16, 2017
+
+
+
+
+
+More ACN News
+
+
+
+BRIEF-Accenture says acquires Media Hive
+
+						Reuters -
+						
+
+
+
+
+12:40 PM ET 05/15/2017
+
+
+					
+
+
+
+Accenture Acquires Media Hive to Expand Its Commerce Capabilities
+
+						Business Wire -
+						
+
+
+
+
+12:29 PM ET 05/15/2017
+
+
+					
+
+
+
+Accenture Again Named Technology Advisory House of the Year by Energy Risk Magazine
+
+						Business Wire -
+						
+
+
+
+
+7:59 AM ET 05/15/2017
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Copyright
+1998–2017 FMR LLC. 
+All rights reserved. 
+
+Terms of Use|
+Privacy|
+Security|
+Site Map 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		ACN Stock News - Fidelity
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to Main Content.
+Site navigation
+Fidelity.com Home
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+Search Fidelity.com
+
+
+
+
+ 
+
+ 
+
+
+
+Accounts & Trade
+
+
+
+PortfolioLog In Required
+
+
+Account PositionsLog In Required
+
+
+TradeLog In Required
+
+
+Active Trader ProLog In Required
+
+
+TransferLog In Required
+
+
+Cash ManagementLog In Required
+
+
+BillPayLog In Required
+
+
+Full ViewLog In Required
+
+
+ProfileLog In Required
+
+
+Account FeaturesLog In Required
+
+
+StatementsLog In Required
+
+Tax Information
+
+Retirement DistributionsLog In Required
+
+
+
+OFFER See our featured trading offer. Learn more.
+
+
+
+Planning & Advice
+
+
+What We Offer
+Financial Basics
+Building Savings
+Managing & Growing Wealth
+Retirement
+Life Events
+
+
+
+News & Research
+
+
+News
+Watch ListLog In Required
+Quotes
+AlertsLog In Required
+Mutual Funds
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Markets & Sectors
+IPOs
+Annuities
+Learning Center
+Notebook
+Notebook
+
+
+
+Investment Products
+
+
+Mutual Funds
+Retirement & IRAs
+Trading
+Stocks
+Fixed Income, Bonds & CDs
+ETFs
+Options
+Sector Investing
+Cash Management & Credit Cards
+Managed Accounts
+Fidelity Go
+529 College Savings
+Annuities
+Life Insurance & Long Term Care
+
+
+
+Why Fidelity
+
+
+The Fidelity Advantage
+Planning & Advice
+Trading
+Straightforward Pricing
+Insights & Tools
+Security & Protection
+
+
+ 
+
+
+Customer Service
+Open An Account
+Refer A Friend
+Log In
+
+Customer Service
+Open An Account
+Refer A Friend
+Log Out
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Content and data provided by various third parties and Fidelity − Terms of Use
+
+
+
+
+Research >
+Stocks >
+
+
+
+
+
+
+
+
+
+
+
+
+Stock Details
+
+Enter Company or Symbol. Press down arrow for suggestions, or Escape to return to entry field.
+
+
+
+
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Adv Chart & Technical..
+News & Events
+Compare
+Analyst Opinions
+Research Reports
+Key Statistics
+Earnings
+Dividends
+Ownership & Insiders
+Financial Statements
+SEC Filings
+
+
+
+View this information for the company or symbol
+
+Snapshot
+Detailed Quote
+Advanced Chart
+News
+Analyst Reports
+
+
+
+Find Symbol. Opens in new window.
+
+
+
+
+
+
+
+Snapshot
+Detailed Quote
+Advanced Chart & Technical Analysis 
+News & Events
+Compare
+Analyst Opinions
+Research Reports
+Key Statistics
+Earnings
+Dividends
+Ownership & Insiders
+Financial Statements
+SEC Filings
+
+
+
+
+
+RELATED RESOURCES
+
+Stock Research Overview
+Stock Screeners
+Markets & Sectors
+Fidelity Learning Center 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Print
+|
+Help/Glossary
+
+
+
+
+Help/Glossary
+
+
+
+
+
+
+
+
+News & Events:ACN
+
+ACCENTURE PLC
+
+128.40 0.24 (0.19 %)as of 4:00:28pm ET 07/28/2017
+
+
+
+			
+				Quotes delayed at least 15 min.
+				
+				
+					
+					
+					
+					
+					Log in for real time quote.
+
+
+
+
+
+Add to Watch List
+Set Alert
+Hypothetical Trade
+Option Chain
+
+
+Price History 
+
+Download to CSV file
+Download to Excel file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Log in for more news
+
+Expand all| Collapse all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Develops Artificial Intelligence-Powered Solution to Help Improve How Visually Impaired People Live and Work
+                                                
+
+
+                                                    Business Wire – 
+                                                    4:59 AM ET 07/28/2017
+                                                
+
+
+Accenture (ACN) has developed a new artificial intelligence --powered solution to help the visually impaired improve the way they experience the world around them and enhance their productivity in the workplace. This Smart News Release features multimedia.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    ADDING MULTIMEDIA Internships Turn into Careers for City Colleges of Chicago IT Students
+                                                
+
+
+                                                    Business Wire – 
+                                                    11:00 AM ET 07/27/2017
+                                                
+
+
+City Colleges Expands Information Technology Internship Program with Accenture (ACN). In 2016, Danica Lohja was one of the first City Colleges of Chicago  graduates to participate in an innovative program at Accenture , where she gained and utilized valuable skills in information technology. This Smart News Release features multimedia.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Recognized as a Leader in the IDC MarketScape: Worldwide Finance and Accounting BPO Services
+                                                
+
+
+                                                    Business Wire – 
+                                                    7:59 AM ET 07/27/2017
+                                                
+
+
+Accenture has been positioned as a Leader in the IDC MarketScape: Worldwide Finance and Accounting BPO Services 2017 Vendor Assessment. The IDC MarketScape credited Accentures market leadership to positive client feedback and its ability to continuously grow and improve its F&A offering.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Launches Hands-On Apprenticeship Program with Community Partners in San Antonio to Develop Workforce of the Future
+                                                
+
+
+                                                    Business Wire – 
+                                                    6:53 AM ET 07/27/2017
+                                                
+
+
+Accenture Federal Services has launched an innovative public-private partnership with the City of San Antonio and Bexar County, Texas, targeting the Eastside Promise Zone in San Antonio, that will provide up to 50 paid apprenticeships this year as a pilot for students and adults from the Eastside Education and Training Center, Sam Houston High School, and St. Philips College.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Opens Groundbreaking Innovation Hub in Bengaluru
+                                                
+
+
+                                                    Business Wire – 
+                                                    12:30 AM ET 07/27/2017
+                                                
+
+
+Dynamic new location combines the best of Accentures technology capabilities and industry expertise to drive client-centric innovation at scale.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture to Transform Diabetic Patient Care Using Data-driven Analytics Platform
+                                                
+
+
+                                                    Business Wire – 
+                                                    9:35 AM ET 07/26/2017
+                                                
+
+
+Accenture (ACN) is collaborating with Roche to improve how diabetes care is managed and delivered through the development of a data-driven core analytics platform for Roches digital diabetes ecosystem.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Named Leader in IDC MarketScape for Worldwide Digital Transformation Consulting and Systems Integration Services
+                                                
+
+
+                                                    Business Wire – 
+                                                    8:29 AM ET 07/26/2017
+                                                
+
+
+Accenture (ACN) has been positioned as a Leader in the recently published IDC MarketScape, Worldwide Digital Transformation Consulting and Systems Integration Services 2017 Vendor Assessment*. Accenture (ACN) was the only services provider to remain a Leader from the previous report published in 2015. This Smart News Release features multimedia.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Security Report Identifies Top Cyber Threats of 2017
+                                                
+
+
+                                                    Business Wire – 
+                                                    8:59 AM ET 07/25/2017
+                                                
+
+
+Destructive ransomware, alternative crypto-currencies and increased use of deception tactics among threats driving even more lucrative criminal marketplace.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    BECU Selects Mortgage Cadence’s Enterprise Lending Center as Its New Loan-Origination System
+                                                
+
+
+                                                    Business Wire – 
+                                                    7:59 AM ET 07/25/2017
+                                                
+
+
+Agreement extends 14-year relationship between the two organizations. BECU, a Tukwila, Washington-based credit union, has selected the Enterprise Lending Center from Mortgage Cadence, an Accenture (ACN) company, as its new loan-origination system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Unilever to Enhance Trade and Sales Activities By Moving to Accenture Cloud Solutions for Consumer Goods Built on the Salesforce Platform
+                                                
+
+
+                                                    Business Wire – 
+                                                    2:59 AM ET 07/25/2017
+                                                
+
+
+Agreement with Accenture (ACN) and Salesforce includes single system for distributor management using Accenture NewsPage. Unilever, a global consumer goods company, has signed a deal with Accenture (ACN) to implement Accenture Cloud Trade Promotion Management and Accenture Cloud Retail Execution to create a single system for trade and marketing operations. This Smart News Release features multimedia.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Names Michelle Gadsden-Williams to Lead Inclusion and Diversity in North America
+                                                
+
+
+                                                    Business Wire – 
+                                                    4:01 PM ET 07/24/2017
+                                                
+
+
+Accenture (ACN) has hired Michelle Gadsden-Williams to lead inclusion and diversity in North America. The need for innovation to grow, compete, and transform has never been greater  and we believe diversity is essential to driving this innovation, said Julie Sweet, Accentures CEO for North America.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Positioned Furthest and Highest in Everest Group PEAK Matrix™ Report for Procurement Outsourcing 2017
+                                                
+
+
+                                                    Business Wire – 
+                                                    7:59 AM ET 07/21/2017
+                                                
+
+
+For the second consecutive year, Accenture has been recognized as the overall Leader and Star Performer in the Everest Group Procurement Outsourcing  Service Provider Landscape with PEAK Matrix Assessment 2017.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    BRIEF-Accenture appoints Tracey Travis to board of directors
+                                                
+
+
+                                                    Reuters – 
+                                                    4:14 PM ET 07/20/2017
+                                                
+
+
+Accenture Plc (ACN). * Accenture (ACN) appoints Tracey T. Travis, CFO of the Estée Lauder companies, to board of directors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Appoints Tracey T. Travis, CFO of The Estée Lauder Companies, to Board of Directors
+                                                
+
+
+                                                    Business Wire – 
+                                                    4:01 PM ET 07/20/2017
+                                                
+
+
+Accenture (ACN) announced today that Tracey T. Travis has been appointed to the companys Board of Directors, effective today. Ms. Travis will be subject to re-appointment at the next Accenture (ACN) plc annual general meeting of shareholders.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Completes Acquisition of LabAnswer, Expands Ability to Improve the Discovery of New Products through Accenture Scientific Laboratory Informatics
+                                                
+
+
+                                                    Business Wire – 
+                                                    11:29 AM ET 07/20/2017
+                                                
+
+
+In a move to provide organizations with more comprehensive scientific informatics capabilities, Accenture (ACN) has completed its acquisition of LabAnswer, a leading U.S.-based research and laboratory informatics technology consulting firm.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Publicis reports underlying sales growth in Q2, beating expectations
+                                                
+
+
+                                                    Reuters – 
+                                                    1:30 AM ET 07/20/2017
+                                                
+
+
+France's Publicis said on Thursday it regained a little traction in the second quarter, driven by a surge in revenue in its biggest regional market, North America. The world's third-largest advertising group said its underlying sales grew by 0.8 percent to 2.52 billion euros in the second-quarter from a drop of 1.2 percent a quarter earlier.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Pegasystems and Accenture Team to Offer Communications Service Providers (CSPs) Intelligent Customer Decisioning as a Service to Improve Customer Engagement
+                                                
+
+
+                                                    GlobeNewswire – 
+                                                    12:00 PM ET 07/19/2017
+                                                
+
+
+Pegasystems Inc. (PEGA), the software company empowering customer engagement at the worlds leading enterprises, and Accenture (ACN), a leading global professional services company, today launched Intelligent Customer Decisioning as a Service, a cloud-based solution designed to advance marketing strategies for telecommunications providers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Launches Liquid Studio in Johannesburg to Help Clients Accelerate Digital Business Transformation
+                                                
+
+
+                                                    Business Wire – 
+                                                    11:16 AM ET 07/19/2017
+                                                
+
+
+Accenture (ACN) has launched a new Liquid Studio in Johannesburg as part of the companys accelerated investment in innovation in South Africa. This Smart News Release features multimedia. The Liquid Studio is the first of several new Accenture (ACN) initiatives in South Africa which include expanded investments in training, hiring and strategic relationships in an effort to drive innovation locally.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Positioned as a Leader in Everest Group 2017 Supply Chain Management Report
+                                                
+
+
+                                                    Business Wire – 
+                                                    8:03 AM ET 07/18/2017
+                                                
+
+
+Accenture (ACN) is positioned as a Leader in Everest Groups Supply Chain Management PEAK Matrix report and is placed ahead of all competitors in Delivery Capability, which assesses the ability to successfully deliver services to clients. This Smart News Release features multimedia.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    Accenture Positioned as a Leader by Gartner in the 2017 Magic Quadrant for North America Life Insurance Policy Administration Systems
+                                                
+
+
+                                                    Business Wire – 
+                                                    7:59 AM ET 07/18/2017
+                                                
+
+
+The report marks the fourth consecutive mention for Accenture Life Insurance & Annuity Platform as a leader; evaluation based on completeness of vision and ability to execute. Accenture (ACN) has been positioned for the fourth consecutive time as a Leader in Gartners June 2017 Magic Quadrant for Life Insurance Policy Administration Systems, North America* report.
+
+
+
+
+
+
+
+
+
+
+
+
+Page: 
+
+
+Page 1
+|
+Next >
+
+
+
+
+
+
+Today's and Upcoming Events
+
+
+
+
+Sep
+28
+
+
+ACN to announce Q4 earnings Before Market (Unconfirmed)
+
+
+
+
+
+
+
+
+
+Past Events (last 90 days)
+
+
+
+
+Apr
+11
+
+
+ACN ex-Dividend for $1.21 on 4/11/2017
+
+
+Announce Date: 3/23/2017
+Record Date: 4/13/2017
+Pay Date: 5/15/2017
+
+
+
+
+
+
+
+
+Data provided by Wall Street Horizon, Inc. © 2017
+
+Technical Events
+
+Classic Patterns (past 90 days)
+PROVIDED BY RECOGNIA, INC.
+
+Log in for trading events
+
+View All Technical Analysis in Advanced Chart 
+
+
+
+Technical Analysis
+PROVIDED BY TRADING CENTRAL
+
+Log in for trading events
+
+
+
+
+
+
+
+
+
+
+
+
+As with all your investments through Fidelity, you must make your own determination whether an investment is appropriate for you.  Fidelity is not recommending or endorsing this security by making it available to customers.  You should conduct research and perform a thorough investigation as to the characteristics of any securities you intend to purchase.  Before investing, you should read the prospectus, offering circular, indenture, or similar document carefully for a full description of the product, including its features and risks, to determine whether it is an appropriate investment for your investment objectives, risk tolerance, financial situation and other individual factors, and be sure to re-evaluate those factors on a periodic basis.Performance data shown represents past performance, which is no guarantee of future results. Current performance may be higher or lower than the performance data quoted.  Yield and return will vary, therefore, you may have a gain or loss when you sell your shares.Stock markets are volatile and can decline significantly in response to adverse issuer, political, regulatory, market, or economic developments.  Growth stocks can be more volatile than other types of stocks.  Value stocks can continue to be undervalued by the market for long periods of time.  Foreign securities are subject to interest-rate, currency-exchange-rate, economic, and political risks, all of which are magnified in emerging markets.  Illiquidity is an inherent risk associated with investing in real estate and REITs.  There is no guarantee the issuer of a REIT will maintain the secondary market for its shares and redemptions may be at a price which is more or less than the original price paid.  Closed-end funds can trade at a discount to their NAV.  Shareholders of Master Limited Partnerships may be treated as partners for tax purposes.  Partnerships issue a Schedule K-1 (Form 1065) rather than a Form 1099 form for tax purposes. It lists the partner's share of income, deductions, credits, etc.  Speak with your tax advisor to determine how this may affect you.  A royalty trust is a type of corporation, mostly in the United States or Canada, usually involved in oil and gas production or mining.  Royalty trusts may have special tax treatment, so you should consult a tax advisor on the potential tax consequences of investing in them.News, commentary and events are from third-party sources unaffiliated with Fidelity. Fidelity does not endorse or adopt their content.  Fidelity makes no guarantees that information supplied is accurate, complete, or timely, and does not provide any warranties regarding results obtained from their use.Any data, charts and other information provided on this page are intended for research purposes to help self-directed investors evaluate many types of securities including, but not limited to common stocks, American Depository Receipts, Master Limited Partnerships, real estate investment trusts. traditional preferred stock, trust preferred securities, third-party trust certificates, convertible securities, mandatory convertible securities and other exchange-traded equity and/or debt securities.  Criteria and inputs entered, including the choice to make security comparisons, are at the sole discretion of the user and are solely for the convenience of the user.  Analyst opinions, ratings and reports are provided by third-parties unaffiliated with Fidelity.  All information supplied or obtained from this page is for informational purposes only and should not be considered investment advice or guidance, an offer of or a solicitation of an offer to buy or sell a security, or a recommendation or endorsement by Fidelity of any security or investment strategy.  Fidelity does not endorse or adopt any particular investment strategy, any analyst opinion/rating/report or any approach to evaluating individual securities. Fidelity makes no guarantees that information supplied is accurate, complete, or timely, and does not provide any warranties regarding results obtained from its use.462499.6.0
+
+
+
+
+
+
+
+
+ Copyright
+1998–2017 FMR LLC. 
+All rights reserved. 
+
+Terms of Use|
+Privacy|
+Security|
+Site Map 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+See the Latest Features
+
+
+
+
+
+PersonalizedGet relevant information about your holdings right when you need it.See Your Performance Click the portfolio icon to get information about stocks you own without leaving the research page.Faster Access to Positions A shortcut to view the full list of positions in your portfolio? Yes, please! Use the ticker search box.Add Your Own Notes Use Notebook to save your investment ideas in one convenient, private, and secure place.
+
+
+
+
+
+Convenient For YouResearch that's clear, accessible, and all in one place makes for a better experience.One-Stop Shop See everything you need to make investment decisions right in the dashboard.Access Anywhere No matter where you are, use the Stock Research experience across multiple devices.New Ideas, On the Ready Find new ideas using quick links to the Stock Screener.
+
+
+
+
+
+New Ways to ResearchDiscover new tools to add or diversify your existing research strategy.StockTwits Read live tweets from the financial and investing community about the stock you're interested in.Fundamental Analysis Save time on research by getting an overall assessment of a company's valuation, quality, growth stability, and financial health.Recognia Technical Analysis Perfect for the technical trader—this indicator captures a stock's technical events and converts them into short, medium, and long-term sentiment.Top Competitors See how a stock measures up by instantly comparing it to the industry average and its top four competitors.Social Sentiment Get a sense of people's overall feelings towards a company in social media with this summary tool.Earnings Data Monitor earnings expectations over the past three quarters and model a stock's price based on its P/E.
+
+
+
+
+
+
+

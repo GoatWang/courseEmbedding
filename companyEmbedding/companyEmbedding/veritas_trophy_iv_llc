@@ -1,0 +1,5082 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Veritas InfoScale™ 7.1 Installation Guide - Solaris
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+SUPPORT
+
+
+
+
+Menu
+
+Close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+support by product
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please enter search query
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Veritas InfoScale™ 7.1 Installation Guide - Solaris
+
+Modified Date:2016-08-01
+Article ID:000108321
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign In
+
+
+
+
+
+
+
+
+
+
+
+Remember me
+
+Forgot Password?
+
+
+
+
+
+
+
+
+
+
+				Don't have a Veritas Account?
+				
+Create a Veritas Account now!
+
+
+
+
+
+
+Welcome
+First Last
+Your Profile
+Logout
+
+
+
+
+
+
+
+
+
+
+Sign in to Subscribe
+
+
+						Please sign in to set up your subscription.
+					
+
+
+
+					Close
+					
+
+					Sign In
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Download Attachments
+
+
+
+
+
+Print Article
+
+
+
+
+
+Products
+
+
+
+
+
+Article Languages
+
+
+
+
+
+Subscribe to this Article
+
+
+
+
+
+Manage your Subscriptions
+
+
+
+
+
+Description
+
+
+Veritas InfoScale™ 7.1 Installation Guide - Solaris
+
+
+Contents
+
+I. Introduction to Veritas InfoScale
+1. Introducing Veritas InfoScale
+About the Veritas InfoScale product suite
+About Veritas InfoScale Foundation
+About Veritas InfoScale Storage
+About Veritas InfoScale Availability
+About Veritas InfoScale Enterprise
+Components of the Veritas InfoScale product suite
+2. Licensing Veritas InfoScale
+About Veritas InfoScale product licensing
+Registering Veritas InfoScale using product license keys
+Registering Veritas InfoScale product using keyless licensing
+Updating your product licenses
+Using the vxlicinstupgrade utility
+About the VRTSvlic package
+II. Planning and preparation
+3. System requirements
+Important release information
+Disk space requirements
+Hardware requirements
+Supported operating systems and database versions
+Veritas File System requirements
+Number of nodes supported
+4. Preparing to install
+Mounting the ISO image
+Setting up ssh or rsh for inter-system communications
+Obtaining installer patches
+Disabling external network connection attempts
+Verifying the systems before installation
+Setting up the private network
+Setting up shared storage
+Synchronizing time settings on cluster nodes
+Creating a root user
+Configuring LLT interconnects to use Jumbo Frames
+Creating the /opt directory
+Planning the installation setup for SF Oracle RAC and SF Sybase CE systems
+Making the IPS publisher accessible
+Preparing zone environments
+III. Installation of Veritas InfoScale
+5. Installing Veritas InfoScale using the installer
+Installing Veritas InfoScale using the installer
+Installing language packages
+6. Installing Veritas InfoScale using response files
+About response files
+Installing Veritas InfoScale using response files
+Response file variables to install Veritas InfoScale
+Sample response file for Veritas InfoScale installation
+7. Installing Veritas Infoscale using operating system-specific methods
+About installing Veritas InfoScale using operating system-specific methods
+Installing Veritas InfoScale on Solaris 11 using Automated Installer
+Installing Veritas InfoScale on Solaris 10 using JumpStart
+Manually installing Veritas InfoScale using the system command
+Manually installing packages on solaris10 brand zones
+IV. Post-installation tasks
+8. Verifying the Veritas InfoScale installation
+Verifying product installation
+Installation log files
+Setting environment variables
+Disabling the abort sequence on SPARC systems
+Checking installed product versions and downloading maintenance releases and patches
+9. After Installation
+Next steps after installation
+V. Uninstallation of Veritas InfoScale
+10. Uninstalling Veritas InfoScale using the installer
+About removing Veritas InfoScale
+Removing the Replicated Data Set
+Uninstalling Veritas InfoScale packages using the product installer
+Uninstalling Veritas InfoScale using the pkgrm or pkg uninstall command
+Manually uninstalling Veritas InfoScale packages on non-global zones on Solaris 11
+Removing the Storage Foundation for Databases (SFDB) repository
+11. Uninstalling Veritas InfoScale using response files
+Uninstalling Veritas InfoScale using response files
+Response file variables to uninstall Veritas InfoScale
+Sample response file for Veritas InfoScale uninstallation
+VI. Installation reference
+A. Installation scripts
+Installation script options
+B. Tunable files for installation
+About setting tunable parameters using the installer or a response file
+Setting tunables for an installation, configuration, or upgrade
+Setting tunables with no other installer-related operations
+Setting tunables with an un-integrated response file
+Preparing the tunables file
+Setting parameters for the tunables file
+Tunables value parameter definitions
+C. Troubleshooting installation issues
+Restarting the installer after a failed network connection
+About the VRTSspt package troubleshooting tools
+Incorrect permissions for root on remote system
+Inaccessible system
+
+
+
+
+Terms of use for this information are found in Legal Notices.
+
+
+
+
+
+
+
+Related Articles
+
+
+
+
+
+
+
+
+
+
+
+
+Article Languages
+
+
+
+
+
+
+
+
+
+
+
+
+						x
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Translated Content
+
+Please note that this document is a translation from English, and may have been machine-translated. It is possible that updates have been made to the original version after this document was translated and published. Veritas does not guarantee the accuracy regarding the completeness of the translation. You may also refer to the English Version of this knowledge base article for up-to-date information. 
+
+
+
+
+
+
+
+
+
+
+
+Attachment
+
+
+
+
+
+
+
+
+
+
+
+
+Products
+
+
+
+
+
+
+
+
+
+
+
+
+Subscribe to Article
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Survey
+
+
+
+					Did this article answer your question or resolve your issue?
+				
+
+
+
+No
+
+
+
+Yes
+
+
+
+
+
+					Did this article save you the trouble of contacting technical support?
+				
+
+
+
+No
+
+
+
+Yes
+
+
+
+
+
+					How can we make this article more helpful?
+				
+
+
+
+
+
+
+					Email Address (Optional)
+				
+
+
+
+
+
+
+
+
+
+
+Your feedback has been submitted successfully! Thank You!
+
+
+Sorry, we couldn't post your feedback right now, please try again later.
+
+
+
+
+
+
+
+
+
+Create/Manage Case
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Set default language
+
+
+							Do you wish to save this as your future site?
+						
+
+
+
+							No
+						
+
+							Yes
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Directories by State
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Locations
+
+            Top States:
+
+                Florida
+- (7,668,567 Businesses)
+California
+- (7,998,710 Businesses)
+Texas
+- (4,844,128 Businesses)
+New York
+- (4,451,438 Businesses)
+Pennsylvania
+- (1,273,348 Businesses)
+
+Advertisements
+
+
+
+
+
+
+
+
+
+States
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        Alabama
+                                                    
+
+
+
+
+                                                        424,733 Companies Found
+                                                    
+
+
+                                                        529,179 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Alaska
+                                                    
+
+
+
+
+                                                        90,124 Companies Found
+                                                    
+
+
+                                                        119,266 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Arizona
+                                                    
+
+
+
+
+                                                        757,577 Companies Found
+                                                    
+
+
+                                                        800,057 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Arkansas
+                                                    
+
+
+
+
+                                                        263,265 Companies Found
+                                                    
+
+
+                                                        325,844 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        California
+                                                    
+
+
+
+
+                                                        7,998,710 Companies Found
+                                                    
+
+
+                                                        7,373,821 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Colorado
+                                                    
+
+
+
+
+                                                        810,965 Companies Found
+                                                    
+
+
+                                                        814,457 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Connecticut
+                                                    
+
+
+
+
+                                                        468,528 Companies Found
+                                                    
+
+
+                                                        572,167 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Delaware
+                                                    
+
+
+
+
+                                                        132,203 Companies Found
+                                                    
+
+
+                                                        114,760 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        District Of Columbia
+                                                    
+
+
+
+
+                                                        101,098 Companies Found
+                                                    
+
+
+                                                        225,569 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Florida
+                                                    
+
+
+
+
+                                                        7,668,567 Companies Found
+                                                    
+
+
+                                                        10,379,297 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Georgia
+                                                    
+
+
+
+
+                                                        1,255,912 Companies Found
+                                                    
+
+
+                                                        1,396,340 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Hawaii
+                                                    
+
+
+
+
+                                                        129,778 Companies Found
+                                                    
+
+
+                                                        152,776 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Idaho
+                                                    
+
+
+
+
+                                                        172,946 Companies Found
+                                                    
+
+
+                                                        201,511 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Illinois
+                                                    
+
+
+
+
+                                                        1,181,775 Companies Found
+                                                    
+
+
+                                                        1,483,850 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Indiana
+                                                    
+
+
+
+
+                                                        578,336 Companies Found
+                                                    
+
+
+                                                        719,895 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Iowa
+                                                    
+
+
+
+
+                                                        329,478 Companies Found
+                                                    
+
+
+                                                        460,060 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Kansas
+                                                    
+
+
+
+
+                                                        282,167 Companies Found
+                                                    
+
+
+                                                        348,203 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Kentucky
+                                                    
+
+
+
+
+                                                        405,363 Companies Found
+                                                    
+
+
+                                                        504,609 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Louisiana
+                                                    
+
+
+
+
+                                                        633,706 Companies Found
+                                                    
+
+
+                                                        615,567 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Maine
+                                                    
+
+
+
+
+                                                        130,772 Companies Found
+                                                    
+
+
+                                                        174,828 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Maryland
+                                                    
+
+
+
+
+                                                        674,762 Companies Found
+                                                    
+
+
+                                                        710,572 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Massachusetts
+                                                    
+
+
+
+
+                                                        726,390 Companies Found
+                                                    
+
+
+                                                        1,027,523 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Michigan
+                                                    
+
+
+
+
+                                                        934,309 Companies Found
+                                                    
+
+
+                                                        1,131,011 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Minnesota
+                                                    
+
+
+
+
+                                                        592,078 Companies Found
+                                                    
+
+
+                                                        758,209 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Mississippi
+                                                    
+
+
+
+
+                                                        261,251 Companies Found
+                                                    
+
+
+                                                        322,667 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Missouri
+                                                    
+
+
+
+
+                                                        597,997 Companies Found
+                                                    
+
+
+                                                        706,322 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        Montana
+                                                    
+
+
+
+
+                                                        130,347 Companies Found
+                                                    
+
+
+                                                        158,428 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Nebraska
+                                                    
+
+
+
+
+                                                        191,594 Companies Found
+                                                    
+
+
+                                                        279,673 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Nevada
+                                                    
+
+
+
+
+                                                        1,037,013 Companies Found
+                                                    
+
+
+                                                        1,194,142 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        New Hampshire
+                                                    
+
+
+
+
+                                                        154,616 Companies Found
+                                                    
+
+
+                                                        193,717 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        New Jersey
+                                                    
+
+
+
+
+                                                        974,361 Companies Found
+                                                    
+
+
+                                                        1,091,903 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        New Mexico
+                                                    
+
+
+
+
+                                                        178,355 Companies Found
+                                                    
+
+
+                                                        231,696 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        New York
+                                                    
+
+
+
+
+                                                        4,451,438 Companies Found
+                                                    
+
+
+                                                        2,890,348 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        North Carolina
+                                                    
+
+
+
+
+                                                        989,345 Companies Found
+                                                    
+
+
+                                                        1,123,726 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        North Dakota
+                                                    
+
+
+
+
+                                                        81,418 Companies Found
+                                                    
+
+
+                                                        101,993 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Ohio
+                                                    
+
+
+
+
+                                                        1,062,591 Companies Found
+                                                    
+
+
+                                                        1,335,493 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Oklahoma
+                                                    
+
+
+
+
+                                                        379,566 Companies Found
+                                                    
+
+
+                                                        422,307 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Oregon
+                                                    
+
+
+
+
+                                                        510,731 Companies Found
+                                                    
+
+
+                                                        621,776 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Pennsylvania
+                                                    
+
+
+
+
+                                                        1,273,348 Companies Found
+                                                    
+
+
+                                                        1,546,221 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Puerto Rico
+                                                    
+
+
+
+
+                                                        55,527 Companies Found
+                                                    
+
+
+                                                        60,845 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Rhode Island
+                                                    
+
+
+
+
+                                                        111,772 Companies Found
+                                                    
+
+
+                                                        132,878 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        South Carolina
+                                                    
+
+
+
+
+                                                        406,911 Companies Found
+                                                    
+
+
+                                                        483,894 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        South Dakota
+                                                    
+
+
+
+
+                                                        92,785 Companies Found
+                                                    
+
+
+                                                        126,265 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Tennessee
+                                                    
+
+
+
+
+                                                        620,250 Companies Found
+                                                    
+
+
+                                                        751,954 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Texas
+                                                    
+
+
+
+
+                                                        4,844,128 Companies Found
+                                                    
+
+
+                                                        5,747,622 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Utah
+                                                    
+
+
+
+
+                                                        363,011 Companies Found
+                                                    
+
+
+                                                        377,419 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Vermont
+                                                    
+
+
+
+
+                                                        81,906 Companies Found
+                                                    
+
+
+                                                        106,956 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Virginia
+                                                    
+
+
+
+
+                                                        911,909 Companies Found
+                                                    
+
+
+                                                        1,016,492 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Washington
+                                                    
+
+
+
+
+                                                        830,492 Companies Found
+                                                    
+
+
+                                                        864,073 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        West Virginia
+                                                    
+
+
+
+
+                                                        136,960 Companies Found
+                                                    
+
+
+                                                        185,319 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Wisconsin
+                                                    
+
+
+
+
+                                                        486,944 Companies Found
+                                                    
+
+
+                                                        707,971 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Wyoming
+                                                    
+
+
+
+
+                                                        77,247 Companies Found
+                                                    
+
+
+                                                        90,781 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Company Directory:
+            
+            Browse directory by company name:
+            
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+(more)
+
+
+
+
+
+
+
+People Directory: 
+
+            Names starting with letters:
+
+            
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Use the PDF button on the web page
+The only way to print is to view or download the PDF.
+
+Accessed by nilsacenteno@yahoo.com on 7/28/2017 10:16:39 AM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Business Directories by State
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Locations
+
+            Top States:
+
+                Florida
+- (7,668,568 Businesses)
+California
+- (7,998,707 Businesses)
+Texas
+- (4,844,123 Businesses)
+New York
+- (4,451,436 Businesses)
+Pennsylvania
+- (1,273,348 Businesses)
+
+Advertisements
+
+
+
+
+
+
+
+
+
+States
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        Alabama
+                                                    
+
+
+
+
+                                                        424,733 Companies Found
+                                                    
+
+
+                                                        529,179 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Alaska
+                                                    
+
+
+
+
+                                                        90,124 Companies Found
+                                                    
+
+
+                                                        119,266 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Arizona
+                                                    
+
+
+
+
+                                                        757,577 Companies Found
+                                                    
+
+
+                                                        800,059 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Arkansas
+                                                    
+
+
+
+
+                                                        263,265 Companies Found
+                                                    
+
+
+                                                        325,843 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        California
+                                                    
+
+
+
+
+                                                        7,998,707 Companies Found
+                                                    
+
+
+                                                        7,373,819 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Colorado
+                                                    
+
+
+
+
+                                                        810,965 Companies Found
+                                                    
+
+
+                                                        814,457 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Connecticut
+                                                    
+
+
+
+
+                                                        468,528 Companies Found
+                                                    
+
+
+                                                        572,166 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Delaware
+                                                    
+
+
+
+
+                                                        132,203 Companies Found
+                                                    
+
+
+                                                        114,760 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        District Of Columbia
+                                                    
+
+
+
+
+                                                        101,098 Companies Found
+                                                    
+
+
+                                                        225,569 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Florida
+                                                    
+
+
+
+
+                                                        7,668,568 Companies Found
+                                                    
+
+
+                                                        10,379,295 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Georgia
+                                                    
+
+
+
+
+                                                        1,255,913 Companies Found
+                                                    
+
+
+                                                        1,396,340 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Hawaii
+                                                    
+
+
+
+
+                                                        129,778 Companies Found
+                                                    
+
+
+                                                        152,776 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Idaho
+                                                    
+
+
+
+
+                                                        172,946 Companies Found
+                                                    
+
+
+                                                        201,511 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Illinois
+                                                    
+
+
+
+
+                                                        1,181,775 Companies Found
+                                                    
+
+
+                                                        1,483,850 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Indiana
+                                                    
+
+
+
+
+                                                        578,336 Companies Found
+                                                    
+
+
+                                                        719,895 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Iowa
+                                                    
+
+
+
+
+                                                        329,478 Companies Found
+                                                    
+
+
+                                                        460,060 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Kansas
+                                                    
+
+
+
+
+                                                        282,167 Companies Found
+                                                    
+
+
+                                                        348,203 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Kentucky
+                                                    
+
+
+
+
+                                                        405,363 Companies Found
+                                                    
+
+
+                                                        504,608 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Louisiana
+                                                    
+
+
+
+
+                                                        633,706 Companies Found
+                                                    
+
+
+                                                        615,567 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Maine
+                                                    
+
+
+
+
+                                                        130,772 Companies Found
+                                                    
+
+
+                                                        174,828 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Maryland
+                                                    
+
+
+
+
+                                                        674,761 Companies Found
+                                                    
+
+
+                                                        710,572 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Massachusetts
+                                                    
+
+
+
+
+                                                        726,390 Companies Found
+                                                    
+
+
+                                                        1,027,523 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Michigan
+                                                    
+
+
+
+
+                                                        934,309 Companies Found
+                                                    
+
+
+                                                        1,131,010 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Minnesota
+                                                    
+
+
+
+
+                                                        592,078 Companies Found
+                                                    
+
+
+                                                        758,209 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Mississippi
+                                                    
+
+
+
+
+                                                        261,250 Companies Found
+                                                    
+
+
+                                                        322,667 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Missouri
+                                                    
+
+
+
+
+                                                        597,997 Companies Found
+                                                    
+
+
+                                                        706,322 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        Montana
+                                                    
+
+
+
+
+                                                        130,347 Companies Found
+                                                    
+
+
+                                                        158,428 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Nebraska
+                                                    
+
+
+
+
+                                                        191,594 Companies Found
+                                                    
+
+
+                                                        279,673 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Nevada
+                                                    
+
+
+
+
+                                                        1,037,013 Companies Found
+                                                    
+
+
+                                                        1,194,143 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        New Hampshire
+                                                    
+
+
+
+
+                                                        154,616 Companies Found
+                                                    
+
+
+                                                        193,717 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        New Jersey
+                                                    
+
+
+
+
+                                                        974,360 Companies Found
+                                                    
+
+
+                                                        1,091,903 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        New Mexico
+                                                    
+
+
+
+
+                                                        178,355 Companies Found
+                                                    
+
+
+                                                        231,695 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        New York
+                                                    
+
+
+
+
+                                                        4,451,436 Companies Found
+                                                    
+
+
+                                                        2,890,348 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        North Carolina
+                                                    
+
+
+
+
+                                                        989,345 Companies Found
+                                                    
+
+
+                                                        1,123,726 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        North Dakota
+                                                    
+
+
+
+
+                                                        81,418 Companies Found
+                                                    
+
+
+                                                        101,993 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Ohio
+                                                    
+
+
+
+
+                                                        1,062,591 Companies Found
+                                                    
+
+
+                                                        1,335,491 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Oklahoma
+                                                    
+
+
+
+
+                                                        379,567 Companies Found
+                                                    
+
+
+                                                        422,307 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Oregon
+                                                    
+
+
+
+
+                                                        510,730 Companies Found
+                                                    
+
+
+                                                        621,776 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Pennsylvania
+                                                    
+
+
+
+
+                                                        1,273,348 Companies Found
+                                                    
+
+
+                                                        1,546,221 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Puerto Rico
+                                                    
+
+
+
+
+                                                        55,527 Companies Found
+                                                    
+
+
+                                                        60,845 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Rhode Island
+                                                    
+
+
+
+
+                                                        111,772 Companies Found
+                                                    
+
+
+                                                        132,878 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        South Carolina
+                                                    
+
+
+
+
+                                                        406,911 Companies Found
+                                                    
+
+
+                                                        483,894 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        South Dakota
+                                                    
+
+
+
+
+                                                        92,785 Companies Found
+                                                    
+
+
+                                                        126,265 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Tennessee
+                                                    
+
+
+
+
+                                                        620,250 Companies Found
+                                                    
+
+
+                                                        751,954 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Texas
+                                                    
+
+
+
+
+                                                        4,844,123 Companies Found
+                                                    
+
+
+                                                        5,747,622 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Utah
+                                                    
+
+
+
+
+                                                        363,011 Companies Found
+                                                    
+
+
+                                                        377,419 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Vermont
+                                                    
+
+
+
+
+                                                        81,906 Companies Found
+                                                    
+
+
+                                                        106,956 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Virginia
+                                                    
+
+
+
+
+                                                        911,909 Companies Found
+                                                    
+
+
+                                                        1,016,490 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Washington
+                                                    
+
+
+
+
+                                                        830,492 Companies Found
+                                                    
+
+
+                                                        864,073 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        West Virginia
+                                                    
+
+
+
+
+                                                        136,960 Companies Found
+                                                    
+
+
+                                                        185,319 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Wisconsin
+                                                    
+
+
+
+
+                                                        486,943 Companies Found
+                                                    
+
+
+                                                        707,971 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+                                                        Wyoming
+                                                    
+
+
+
+
+                                                        77,247 Companies Found
+                                                    
+
+
+                                                        90,781 People Found
+                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Company Directory:
+            
+            Browse directory by company name:
+            
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+(more)
+
+
+
+
+
+
+
+People Directory: 
+
+            Names starting with letters:
+
+            
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You must be signed in to print.
+Once signed in, look for the PDF button.
+
+
+
+
+
+
+
+
+
+
+
+
+
+VERITAS ENERGY LLC, BizPedia.xyz - We monitor changes in companies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BizPedia.xyz  - We monitor changes in companies
+ 
+
+
+
+
+
+
+VERITAS ENERGY LLC
+
+
+FREE EMAIL WATCHDOG
+Get free email notifications about news in VERITAS ENERGY LLC.
+
+
+
+
+
+
+
+
+
+
+The service is free and you can unsubscribe at any time.
+
+General | Filings (1)
+CIK Number: 0001172715
+
+VERITAS ENERGY LLC address13523 ORCHARD RIDGE DRSAN ANTONIO 78231
+Earliest known filing
+April 2002
+Latest known filing
+April 2002
+
+
+
+
+Company filings
+SEC filings are a great source of information for companies including investments, company events, and all sorts of other information. 
+VERITAS ENERGY LLC has 1 filings. View VERITAS ENERGY LLC filings.
+Similar companiesVeritaseum, Inc., Veritas Village, LLC, Veritas Trophy V, LLC, Veritas Trophy IV, LLC, Veritas Trophy III, LLC, Veritas Title Partners L P, VERITAS SOLUTIONS INC, VERITAS SOFTWARE TECHNOLOGY CORP, VERITAS SOFTWARE CORP /DE/, VERITAS SOFTWARE CORP, VERITAS SECURITIES GROUP, INC, VERITAS SECURITIES CORP., VERITAS MUSIC ENTERTAINMENT INC, Veritas Legal Fund,LLC, Veritas Investments Inc., Veritas Investment Management LLP, Veritas Investment Management (UK) Ltd, VERITAS INDEPENDENT PARTNERS, LLC, Veritas High Yield Fund LLC, VERITAS HIGH YIELD ARBITRAGE FUND LLC, Veritas Growth Fund, Ltd., Veritas Growth Fund, L.P., Veritas Geophysical CORP, Veritas Geophysical (Mexico) LLC, Veritas Genetics International Ltd., Veritas Fund B-2, LLC, Veritas Fund B-1, LLC, Veritas Energy Management, LLC, VERITAS ENERGY FUND, LP, Veritas DGC Land Inc., Veritas DGC Asia Pacific Ltd., VERITAS CREDIT OPPORTUNITIES FUND LLC, Veritas Collaborative Holdings, LLC, Veritas Capital Partners IV, L.L.C., VERITAS CAPITAL MANAGEMENT LLC, Veritas Capital Fund VI, L.P., Veritas Capital Fund V, L.P., VERITAS CAPITAL FUND LP, Veritas Capital Fund IV, L.P., VERITAS CAPITAL FUND III L P, VERITAS CAPITAL ADVISORS LLC, Veritas Asset Management LLP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BizPedia.xyz collect news, financial information, SEC filings, stock information, contact information, personal information, information about investments, etc. about VERITAS ENERGY LLC. 
+
+
+
+
+
+
+
+Veritas Genetics International Ltd. - Who is raising money? | SEC filings of fundraisings and investments in hedge funds, startups and private equity companies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Who is raising money?
+
+
+
+
+
+
+
+
+
+
+
+Veritas Genetics International Ltd.  Funding details
+
+
+Veritas Genetics International Ltd. Industry: Other TechnologyCIK Number: 0001687249IRS Number: 981244653Address: 99 CONIFER HILL DRIVE  DANVERS 01923Phone number: 781-325-4821
+
+
+
+Latest news
+Veritas Genetics International Ltd. raised $23,947,359 from 5 investors on 2016-10-17.
+
+
+
+Veritas Genetics International Ltd. Filings
+
+DateFiling TypeOfferedSoldRemainingMin. investmentInvest. countExemption / Exlusions
+2016-10-17New Form D$24,999,990$23,947,359$1,052,631$0506b[SEC Filing]
+Veritas Genetics International Ltd. raised $23,947,359 in total.
+
+
+
+Directors and Executives of Veritas Genetics International Ltd.
+Key People in Veritas Genetics International Ltd.:
+
+Mirza CifricJudith LiPeter ParkerChristopher WilfongDouglas FloodJulie Sharkey
+Similar companiesVERITAS ENERGY FUND, LP, Veritas Capital Fund IV, L.P., Veritas Growth Fund, L.P., Veritas Growth Fund, Ltd., Veritas High Yield Fund LLC, Veritas Energy Management, LLC, Veritaseum, Inc., Veritas Capital Fund V, L.P., Veritas Village, LLC, Veritas Legal Fund,LLC, Veritas Collaborative Holdings, LLC, Veritas Trophy III, LLC
+
+
+
+
+
+
+
+
+Last visited companies: GMO Special Opportunities SPC Ltd., PineBridge Structured Capital Partners Offshore III-A, L.P., LabStyle Innovations Corp., Indus Markor Master Fund, L.P., PineBridge Structured Capital Partners III, L.P.
+
+								© whoisraisingmoney.com
+Daily updated news about investment into startups, hedge funds and private equity companies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Veritas Trophy IV, LLC - Residential- Au  FormDs.com - SEC filings of fundraisings and investments in hedge funds, private equity firms, startups, and growing companies 
+
+
+
+
+
+
+
+
+
+
+
+ FormDs.com 
+
+
+
+
+
+ Newest
+ Filter
+ Local
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Veritas Trophy IV, LLC
+
+      Industry: Residential
+      (See others in industry)
+
+Address:
+
+
+
+    600 California Street 20 Th Floor 
+    San Francisco, CA, 94108Phone: 415-578-7610 
+
+
+
+
+Filings
+
+
+
+Date
+FilingType
+Reported Sold
+Incremental Cash 
+Type
+Exemptions
+Link to Raw Filing
+
+
+
+
+	2016-10-12
+
+
+New
+
+
+$15,300,000
+
+
+$15,300,000
+
+
+Equity Only
+
+
+06b
+
+
+SEC link
+
+
+
+
+
+
+Directors and Executives (Current and Past)
+
+
+
+Name
+Role
+
+
+
+ Yat Pang Au 
+ Director, Executive, Promoter 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Vino Veritas
+
+
+
+
+
+
+
+
+
+
+
+
+© 2014 In Vino Veritas Design, LLC  Winters, CA.  All Rights ReservedHome | Index | Contact UsHOME  |  ABOUT US  |  PRODUCTS  | TESTIMONIALS |  CONTACT US
+
+
+
+
+
+
+
+
+
+
+
+Bizapedia.com - Human Validation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMPANIESPEOPLEPRODUCTS/SERVICESTRADEMARKSADDRESSESPHONE BOOK
+
+
+
+
+            Our system has detected a high number of page requests from your IP Address, please prove to us that you are a human to continue using our website.
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Please send me to the search subscription offer page after I successfully answer the word challenge.
+                        
+
+
+
+
+
+
+
+
+
+BIZAPEDIAPRO SEARCHPerform unlimited searches via ouradvanced search form withBizapedia Pro Search.FIND OUT MORE >BIZAPEDIAPRO DATABuild custom data listsfor one or many stateswith Bizapedia Pro Data.FIND OUT MORE >
+
+
+Copyright © 2012-2017 · Bizapedia.com · All rights reserved.BlogPro SearchPro APIContact UsTerms of UsePrivacy PolicySitemapDesktop Version
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Veritas Capital - Portfolio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOME
+
+
+ABOUT
+
+
+PORTFOLIO
+
+
+TEAM
+
+
+INVESTOR LOGIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Current
+
+
+Selected Realized
+
+
+
+
+
+
+
+
+
+
+				Selected Realized
+			
+
+
+
+
+
+
+						Aeroflex Holding Corp.
+
+						Aeroflex Incorporated is a global provider of radio frequency (“RF”), and microwave integrated circuits, components and systems used in the design, development and maintenance of technically demanding, high-performance wireless communication systems for the global aerospace, defense and communications markets.
+					
+Learn more
+
+
+
+
+
+
+
+						Athena Innovative Solutions, Inc.
+
+						
+						Athena Innovative Solutions, Inc. provides an array of services to the national security community including, but not limited to, training, analytical support, operations support, campaign planning and investigative support.
+			   
+					
+Learn more
+
+
+
+
+
+
+
+						Continental Electronics Corporation
+
+						
+						Continental Electronics Corporation develops, manufactures and markets radio frequency (“RF”) transmitters for high power broadcasting, digital commercial broadcasting, scientific laboratories and the U.S. Government.	
+			   
+					
+Learn more
+
+
+
+
+
+
+
+						DynCorp International Inc.
+
+						
+						DynCorp International Inc. is a leading provider of specialized mission-critical outsourced technical services to civilian and military government services, including the DoD and the Department of State.
+			   
+					
+Learn more
+
+
+
+
+
+
+
+						Enterprise Electronics Corporation
+
+						
+						Enterprise Electronics Corporation is a leading worldwide supplier of weather radar systems, focused on providing solutions to the international government, U.S. Government and domestic TV markets. 	
+			   
+					
+Learn more
+
+
+
+
+
+
+
+						Global Tel*Link Corporation
+
+						
+					Global Tel*Link Corporation is a provider of telecom, software and technology products and services to inmates, investigators and administrators in the corrections industry. 
+				   
+					
+Learn more
+
+
+
+
+
+
+
+						Integrated Defense Technologies, Inc.
+
+						
+						Integrated Defense Technologies, Inc. is a leading developer and manufacturer of advanced electronics and technology products for defense and intelligence applications. 
+				   
+					
+Learn more
+
+
+
+
+
+
+
+						McNeil Technologies, Inc.
+
+						
+						McNeil Technologies, Inc. is a leading provider of mission-critical language, translation, intelligence, security and other professional services to U.S. Federal Government agencies. 	
+				   
+					
+Learn more
+
+
+
+
+
+
+
+						Salient CRGT, Inc.*
+
+*Veritas Capital retains a minority equity interest in the company
+Salient CRGT, Inc. is a provider of agile application development, Big Data analytics, geospatial and business intelligence, enterprise integration, network management, enterprise mobility solutions and cyber security solutions to Federal Government agencies.
+					
+Learn more
+
+
+
+
+
+
+
+						TRAK Communications, Inc.
+
+						
+						TRAK Communications, Inc. is a leading designer, developer and manufacturer of microwave components and related subsystems that were used in a wide variety of mission-critical environments. 
+				   
+					
+Learn more
+
+
+
+
+
+
+
+						Truven Health Analytics Inc.
+
+						Truven Health Analytics Inc. improves the quality and decreases the cost of healthcare through the use of analytics and data services.
+					
+Learn more
+
+
+
+
+
+
+
+						Vangent, Inc.
+
+						
+						Vangent, Inc. is a leading provider of information management and strategic business process outsourcing services to government agencies, including the U.S. Department of Health and Human Services, Department of Education, Department of Labor, and Fortune 500 companies. 
+				   
+					
+Learn more
+
+
+
+
+
+
+
+						Vertex Aerospace LLC
+
+						
+						Veritas created Vertex Aerospace LLC through the acquisition of Raytheon Aerospace in June 2001 and the follow-on acquisition of Flight International, Inc. in December 2002. 
+				   
+					
+Learn more
+
+
+
+
+
+
+
+
+
+
+                                  Veritas Capital Fund Management, L.L.C. is a registered investment adviser.                        
+                                  For additional information concerning Veritas Capital, please review Veritas Capital Fund Management, L.L.C.’s
+                                  Form ADV Part 1 and Part 2A.
+                                  © 2017 – Veritas Capital Fund Management, L.L.C.  All rights reserved.                                         	
+								  User Agreement
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft personalized ad preferences
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+To opt out of personalized ads in this browser, your browser history must allow first-party and third-party cookies and you must have your browsing experience set to NOT delete browsing history on exit. Instructions for enabling cookies and configuring your browsing history may be available in your browsers settings, privacy, or help documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sign in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Hold on… We’re sorry but this didn’t work.                  You can’t turn off personalized ads right now because your browser is currently blocking third-party cookies. We can help you fix this issue.                Let’s get started:  Depending on what browser you use, open Options or Settings.                  Make sure that third-party cookies are not blocked anymore. To find out how, search your browser’s Help.                                 Revisit http://choice.microsoft.com/opt-out, and then on the “Personalized ads in this browser” tile, click Off.                 ext74081 
+
+
+
+
+  About Our Ads To create a more customized online experience, some of the ads you may receive on Microsoft websites and apps are tailored to your previous activities, searches and site visits. You're in control and here's where you can make the advertising choice that's right for you. ext74075 
+
+
+
+
+  Where Can I Learn More about Advertising on Microsoft Websites and Apps? Microsoft partners with Oath, AppNexus and other third party service providers to help present customized content and display advertisements on MSN, Outlook.com and other websites and apps. Microsoft also delivers search ads to Bing and our search syndication partners. Learn more about Microsoft’s privacy practices here. You can learn more about interest-based ads from Oath and AppNexus in their privacy statements: Oath and AppNexus. What Choices Do I Have About Interest-Based Advertising? On this page, you can opt out of receiving interest based advertising from Microsoft. You can also opt out of receiving interest-based advertising from all self-regulatory members, including Microsoft, Oath, AppNexus and other third party ad networks, at the following sites:  In the US: Digital Advertising Alliance (DAA) In Europe: European Interactive Digital Advertising Alliance (EDAA) In Canada: Ad Choices: Digital Advertising Alliance of Canada (DAAC)  You can control interest-based advertising in Windows apps by turning off the advertising ID in Windows Settings.  More choices  Do you want personalized ads from other companies?  Questions? If you have a privacy question or a question for the Chief Privacy Officer of Microsoft, please contact us by using our web form. We will respond to questions within 30 days. ext74076 
+
+
+
+
+       Personalized ads in this browser     OFF    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting for this web browser.  Learn more           If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.          ext74078 
+
+
+
+
+       Personalized ads wherever I use my Microsoft account     OFF   Sign in to change...    Opt-out is currently unavailable, please try again later.  Control the "personalized ads" setting that applies when you are signed in on any computer or device with your Microsoft account, including Windows, Windows phone, Xbox and other devices.  Learn more                    If you want Microsoft to show ads that might be relevant to you, click On. To show “generic” ads, click Off.         If you choose “generic” ads and use a browser, your choice applies to everyone when using that browser as long as you do not clear your cookies.          ext74079 
+
+
+
+
+       Personalized ads in Windows         In your Windows Settings, you can turn off personalized ads that appear in apps on this device. You’ll still see ads, but they won’t be personalized anymore.     If you have Windows 8.1:            Access the charms by touching or moving your pointer to the right edge of the screen.                 Click or tap Settings, and then click or tap Change PC Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have Windows 10:            Click or tap the Start button.                 Click or tap Settings.                 Click or tap Privacy, and then turn off Let apps use my advertising ID for experiences across apps.          If you have a Windows mobile device:            Go to Settings.                 Tap on Privacy.                 Tap on Advertising ID, and then turn off Let apps use my advertising ID for experiences across apps.                If you want to turn off personalized ads from Microsoft wherever you use your Microsoft account including apps on Windows, Windows Phone, Xbox and other devices, you can do so by selecting the Microsoft account option above.    ext74080 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Legal
+Privacy & Cookies
+© 2017 Microsoft
+
+
+
+
+
+
+
+
+
+
+
+Our Locations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bureau Veritas CPS
+Country Websites
+
+
+
+
+
+
+
+
+
+
+
+
+
+					Find a solution
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Us
+
+ 
+Your Industry
+
+ 
+Your Activity
+
+ 
+Resources
+
+ 
+Our Services
+
+ 
+Whats New
+
+ 
+Contact Us
+
+
+ 
+
+
+
+
+CPS Division
+
+
+Accreditations & Credentials
+
+
+Acquisitions
+
+
+Our Subsidiaries
+
+
+Terms & Conditions
+
+
+Our Value Proposition
+
+ 
+
+
+Electrical & Electronics
+
+
+Wireless/Smartworld
+
+
+Automotive
+
+
+Softline & Accessories
+
+
+Toys & Juvenile Products
+
+
+Hardlines
+
+
+Food
+
+
+Health Beauty & Household
+
+
+Building
+
+
+Renewable Energies
+
+
+Medical
+
+ 
+
+
+Chemical Producer
+
+
+Finished Product Supplier
+
+
+Finished Product Manufacturer
+
+
+Trading Company
+
+
+Brand & Retail
+
+
+Hospitality
+
+
+Consultancy
+
+
+Government Standard Bodies
+
+
+Industry Association
+
+
+Test Industry
+
+
+Service Provider
+
+ 
+
+
+Videos
+
+
+White Papers
+
+
+Test Request Forms
+
+
+FAQs
+
+
+Brochures
+
+ 
+
+
+Chemical Discharge Management Services
+
+
+Supply Chain Solutions
+
+
+Testing
+
+
+Inspections
+
+
+CSR Services
+
+
+Factory Assessments
+
+
+Certification
+
+
+Sustainability Solutions
+
+
+Market Access Solutions
+
+
+Information Services Tools
+
+
+Consulting / Advisory
+
+
+A To Z Of CPS Services
+
+ 
+
+
+Bulletins
+
+
+Events
+
+
+Newsletters
+
+
+Press Releases
+
+
+Announcement
+
+ 
+
+
+Ethics Hotline
+
+
+Subscribe
+
+
+Our Locations
+
+
+Request a Quote
+
+ 
+
+
+
+
+
+
+
+
+
+Home
+
+
+»
+
+About Us
+
+
+»
+
+Businesses
+
+
+»
+
+CPS
+
+
+»
+
+Contact Us
+
+
+» Our Locations
+
+
+
+Our Locations
+
+Americas
+Argentina Net Connection International S.R.L. S(Electrical & Electronic Products, Smartworld)540 Tucuman St, Floor 15th Dept E – City of Buenos Aires (C1049AAL) ArgentinaTel: +54 11 4325 1774 Email: info@nccrc.com.ar
+ 
+Brazil NCC Certificações do Brasil Ltda L(Electrical & Electronic Products, Smartworld)Rua Conceição n° 233 – 25° andar – sala 2511, CEP 13.010-050, Campinas, SP, BrazilTel: +55 19 2517 9600 Email: info@ncc.com.br
+ 
+Guatemala Bureau Veritas Consumer Products Services Guatemala S.A.L OO(Softlines, Inspections, Audits & Assessments)Boulevard Rafael Landívar 10-05 Paseo Cayalá zona 16 Edificio P-2 nivel 3, GuatemalaTel: +502 2300 9000 / Fax: +502 2385 3748Testing contact: Miguel SantacruzEmail: miguel.santacruz@gt.bureauveritas.comInspections contact: Patricia Smith / Ricardo OrantesEmail: booking_cpsigt@gt.bureauveritas.com
+ 
+MexicoBureau Veritas Consumer Products ServicesMexico, SA DE CV. L OO(Softlines, Hardlines,Toys, Automotive)Circuito del Sol #3905-1, Colonia, Nuevo, Amanecer, Puebla, Pue. Mexico CP 72400Tel: +52 222 266 0561 / Fax: +52 222 266 0563Contact: Carlos J. LozanoEmail: carlos.lozano@mx.bureauveritas.com(Inspections, Audits & Assessments)Tel: +52 222-2660561 Ext 0059Contact: German Limon 
+United StatesCaliforniaBureau Veritas Consumer Products Services, Inc.S OO(Inspections, Audits & Assessments)425 East Colorado Street, Suite 660, Glendale, California 91205, USATel: +1 716 505 3791 Email: mari.miller@us.bureauveritas.com
+ 
+7layers, a Bureau Veritas Group Company L(Smartworld, Automotive)15 Musick, Irvine, California 92618, USATel: +1 949 716 6512Email: info.us@7layers.com
+ 
+7layers, a Bureau Veritas Group Company L(Smartworld)1293 Anvilwood Ave, Sunnyvale, California 94089, USATel: +1 669 600 5293 / +1 408 215 9932Email: info@7layers.com
+ 
+SIEMIC Inc., a Bureau Veritas Group Company L(Electrical & Electronic Products, Smartworld, Automotive)775 Montague Expressway, Milpitas, CA, 95035Tel: +1 408 526 1188Email: info@SIEMIC.com
+ 
+MassachusettsCurtis-Straus, LLC, a Bureau Veritas Group Company   L
+(Electrical & Electronic Products, Smartworld, Automotive)Littleton Distribution Center, One Distribution Center Circle, Suite #1, Littleton, MA 01460, USATel Toll free: +1 877 277 8880 or +1 978 486 8880Fax:  +1 978 486 8828Email: cssales@us.bureauveritas.com
+ 
+New YorkBureau Veritas Consumer Products Services, Inc. L OO(Softlines, Footwear, Hardlines, Toys, Electrical & Electronic Products, Automotive, Hospitality, Food, Health & Beauty, Inspections, Audits & Assessments)100 Northpointe Parkway, Buffalo, New York 14228, USATel: (Toll-free) +1 800 277 3300 or +1 716 505 3300Fax: +1 716 505 3301Email: info@us.bureauveritas.com
+ 
+Bureau Veritas Consumer Products Services, Inc. S247 West 37th Street, Suite 1201, New York, New York 10018, USATel: +1 212 849 8414Email: info@us.bureauveritas.com
+ 
+Europe, Middle East & Africa Czech Republic Bureau Veritas Czech Republic, spol. s.r.o. OO(Inspections, Audits & Assessments)Olbrachtova 1, Prague 140 02Tel: +420 210 088 219 / Fax: +420 210 088 291Email: contactfrbvcpsmail@fr.bureauveritas.com
+ 
+DenmarkBureau Veritas Denmark S OO(Inspections, Audits & Assessments)Oldenborggade 1B, 7000 Fredericia, DenmarkTel: +45 77311000Contact: Thomas RatheEmail: cps-hamburg@de.bureauveritas.com
+ 
+EgyptBureau Veritas Consumer Products ServicesCooperation Partner Textile Consolidation Fund of Egypt L OO(Softlines, Inspections, Audits & Assessments)Gamila Bouhraid Street, El-Siouf, Alexandria, EgyptTel: +20 3505 1683Email: sm@bvcps.com.tr
+ 
+FranceFontenay-aux-Roses (Main Office)LCIE Bureau Veritas L(Electrical & Electronic Products, Smartworld, Automotive)33, avenue du General Leclerc, 92260 Fontenay-aux-RosesTel: +33 1 40 95 60 60 / Fax: +33 1 40 95 86 56Email: contact@lcie.fr
+EcuellesLCIE Bureau Veritas L(Electrical & Electronic Products, Automotive)Chemin des Hautes Peines – Ecuelles, 77250 Moret-sur-LoingEmail: contact@lcie.fr
+ 
+MoiransLCIE Bureau Veritas L(Electrical & Electronic Products)ZI Centr‘alp, 170 rue de Chatagnon, 38430 MoiransTel: +33 4 76 07 36 36 / Fax: +33 4 76 55 90 88Email: contact@lcie.fr
+ 
+Bureau Veritas CODDE L(Eco-design)170 rue de Chatagnon, 38430 MoiransTel: +33 4 76 07 36 46 / Fax: +33 4 76 37 44 30Email: codde@fr.bureauveritas.com
+ 
+Paris7layers, a Bureau Veritas Group Company S(Smartworld)MMV Consulting, 28, Av Mozart, 75016 Paris, FranceTel: +33 612 717 783 / +33 1 5301 2774Email: info@7layers.com
+ 
+PulversheimLCIE Bureau Veritas L(Electrical & Electronic Products, Automotive)Aire de la Thur, 68840 PulversheimTel: +33 3 89 28 33 70 / Fax: +33 3 89 28 33 80Email: contact@lcie.fr
+ 
+VillebonLCIE Bureau Veritas L(Electrical & Electronic Products, Automotive)4, Av. de la Baltique - Bâtiment B, 91962 CourtaboeufTel: +33 1 69 07 87 78 / Fax: +33 1 69 28 81 44Email: contact@lcie.fr
+ 
+Villeneuve d’AscqBureau Veritas Consumer Products Services L OO(Softlines, Footwear, Hardlines, Toys, Inspections, Audits & Assessments)Rue John Hadley, BP 20431, 59658 Villeneuve d’Ascq cedex, FranceTel: +33 3 20 46 34 56 / Fax: +33 3 20 46 99 06Email: contact.bvcpsfrance@fr.bureauveritas.com
+ 
+GermanyHamburgBureau Veritas Consumer Products Services Germany GmbH L OO(Softlines, Footwear, Hardlines, Toys, Electrical & Electronic Products , Inspections, Audits & Assessments)Oehleckerring 40, 22419 Hamburg, GermanyTel: +49 40 74041–0   Email: cps-hamburg@de.bureauveritas.com
+ 
+NürnbergBureau Veritas Consumer Products Services Germany GmbH  - European Compliance Laboratory (ECL) L(Electrical & Electronic Products, Automotive)Thurn-und-Taxis-Str. 18, 90411 Nürnberg, GermanyTel: +49 40 74041–0Email: cps-nuernberg@de.bureauveritas.com
+ 
+Ratingen7layers, a Bureau Veritas Group Company L(Smartworld)Borsigstrasse 11, 40880 Ratingen, GermanyTel: +49 2102 749 0 / +49 2102 749 350Email: info@7layers.com
+ 
+SchwerinBureau Veritas Consumer Products Services Germany GmbH L(Softlines, Footwear, Hardlines, Toys, Health & Beauty)Wilhelm-Hennemann-Str. 8, 19061 Schwerin, GermanyTel:  +49 40 74041–0Email: cps-schwerin@de.bureauveritas.com
+ 
+TürkheimBureau Veritas Consumer Products Services Germany GmbH L(Electrical & Electronic Products)Businesspark A96, 86842 Türkheim, GermanyTel:  +49 40 74041–0   Email: cps-tuerkheim@de.bureauveritas.com
+ 
+GreeceBureau Veritas Greece OO(Inspections, Audits & Assessments)Etolikou 23, Piraeus 18545Tel: +30 2 10 40 63 000 / Fax: +30 2 10 40 63 012Email: contact.cps@pl.bureauveritas.com
+ 
+HungaryBureau Veritas Hungary OO(Inspections, Audits & Assessments)South Buda Business Park, Budafoki út 56., Budapest 1117Tel: +36 1 802 69 00 / Fax: +36 1 206 19 99Email: contact.cps@pl.bureauveritas.com
+ 
+ItalyBureau Veritas Certest L OO(Softlines, Footwear, Accessories, Leather, Analytical)Via Risorgimento, 16.  loc.  Ponte a Egola - 56024 San Miniato (PI), ItalyTel. +39 0571 49626Email: info@certest.it 
+ 
+LithuaniaBureau Veritas Lithuania OO(Inspections, Audits & Assessments)Turgaus sq.23, KlaipedaTel: +370 46 43 1059  / Fax: +370 46 43 1058Email: klaipeda@lt.bureauveritas.com
+ 
+MauritiusBureau Veritas Mauritius OO(Inspections, Audits & Assessments)505, St. James Court, St. Denis Street, Port Louis, MauritiusTel: +230 211 7384 / Fax: +230 211 2431Email: contact.bvcps@it.bureauveritas.com
+ 
+MoroccoBureau Veritas Consumer Products Services OO(Inspections, Audits & Assessments)Residance Dalal, 7 Rue Asilah, 20050 Casablanca, MoroccoTel: + 212 522 20 08 57 or 522 26 85 62Fax: + 212 522 20 29 17
+ 
+NetherlandsBureau Veritas Netherlands S OO(Inspections, Audits & Assessments)Computerweg 2, 3821AB Amersfoort, Netherlands+31 (0) 88 450 55 00 / Mobile: +31 (0) 6 21 52 66 44Email: contact.bvcps@nl.bureauveritas.com
+ 
+PolandBureau Veritas Polska Sp. z o.o. S OO(Inspections, Audits & Assessments)Migdałowa 4, 02-796 Warszawa, PolandTel: +48 22 549 04 00Email: contact.cps@pl.bureauveritas.com
+ 
+PortugalBureau Veritas Consumer Products Services Portugal S OO(Inspections, Audits & Assessments)Pólo Tecnológico de Lisboa, LT21, LISBOA 1600-485Tel: + 351 217 100 988Email: contact.bvcpsportugal@pt.bureauveritas.com  
+ 
+RomaniaBureau Veritas Romania Controle International S.R.L. OO(Inspections, Audits & Assessments)52, Tudor Vladimirescu  Str., 900690, Constanta, RomaniaTel: +40 241 581079 / 738065 / 738067Email: contactfrbvcpsmail@fr.bureauveritas.com
+ 
+RussiaBureau Veritas Consumer Products Services Russia S OO(Inspections, Audits & Assessments)Offices 3-5, 3-7, 15/2, Akademika Tupoleva Emb. 15 korp. 2 "Tupolev Plaza"  Moscow, 105005Tel. +7 495 937 57 77 / Fax: +7 495 937 57 58Email: contact.bvcpsrussia@ru.bureauveritas.com
+ 
+Saudi ArabiaJeddahBureau Veritas Saudi Arabia Testing Services Co. -  BV SATS L(Softlines, Electrical & Electronic Products)King Faisal Road  Main Street - Opposite Naval Headquarter,Al Khomra, Storage Area – Jeddah 22524-2369  K.S.A.Tel: +966 12 6374145 / Fax: +966 12 6374175(Softlines) Email: lex.bondad@ae.bureauveritas.com(E&E)Email: ali.dhaoui@ae.bureauveritas.com 
+DammamBureau Veritas Saudi Arabia Testing Services Co. -  Dammam Electrical Laboratory L(Electrical & Electronic Products)BVSATS Bldg. - King Abdulaziz Sea Port street,Near King Abdulaziz Sea Port - Dammam  Kingdom of Saudi ArabiaTel:  +966-3-8084894  / +966 -5-00129172Email: anan.mustafa@ae.bureauveitas.com
+ 
+SpainMadridBureau Veritas Consumer Products Services Spain S OO(Inspections, Audits & Assessments)Pol. Ind. La Granja - Edif. La Granja, C/ Valportillo Primera, 22-24, 28108 Alcobendas, MadridTel. +34 91 270 22 00 / Fax: (34) 91 270 22 98Email: cpdespMail@es.bureauveritas.comBilbao7layers, a Bureau Veritas Group Company S(Smartworld)Smartm2msolutions, S.L. Carretera Sangróniz, 6, 48150 Sondika, SpainTel: +34 946 554 426 (Office) / +34 6345 07296 (Mobile)Email: info@7layers.com
+ 
+TurkeyBureau Veritas Consumer Products Services Turkey Ltd. L OO(Softlines, Footwear, Hardlines, Toys, Analytical, Inspections, Audits & Assessments)Yalcin Kores caddesi: no 22, Erdinc Binalari A Blok. 1. Kule Kat:1 Gunesli, Bagcilar, 34212 Istanbul, TurkeyTel: +90 212 494 35 35 / Fax: +90 212 494 35 60Email: sm@bvcps.com.tr
+ 
+UkraineBureau Veritas Ukraine Ltd. OO(Inspections, Audits & Assessments)DB ""Stolichnyy"", 28, Kominterna Str., Kiev, 01032, UkraineTel: +380 44 490 2979 / Fax: +380 44 490 2979Email: bvsales@uk.bureaveritas.com
+ 
+United KingdomBureau Veritas Consumer Products Services UK Ltd. L OO(Softlines, Footwear, Hardlines, Toys, Electrical & Electronic Products, Inspections, Audits & Assessments)31 Kingsland Grange, Woolston, Warrington, Cheshire, WA1 4RW United KingdomTel: +44 1925 854360 / Fax: +44 1925 851654Email: bvsales@uk.bureaveritas.com
+ 
+Asia – Greater ChinaHong KongBureau Veritas Hong Kong Limited S OO(Head Office) (Inspections, Audits & Assessments)7th Floor, Octa Tower, 8 Lam Chak Street, Kowloon Bay, Kowloon, Hong KongTel: +852 2418 1222 / Fax: +852 2480 6666
+ 
+Bureau Veritas Hong Kong Limited L(Softlines, Footwear, Hardlines, Toys, Food, Health & Beauty)1st Floor, Pacific Trade Centre, 2 Kai Hing Road, Kowloon Bay, Kowloon, Hong KongTel: +852 2331 0888 / Fax: +852 2331 0889Sample Pick-up: +852 2331 0333(Softlines, Footwear)Email: bvcps.softline@hk.bureauveritas.com(Hardlines)Email: bvcps.hardline@hk.bureauveritas.com(Toys)Email: bvcps.toy@hk.bureauveritas.com(Food)Email: bvcpsfood.hk@hk.bureauveritas.com(Health & Beauty)Email: hbhf.cps.hk@hk.bureauveritas.com(Inspections, Audits and Assessments)Email: bvcps.inspection@hk.bureauveritas.com
+ 
+Bureau Veritas Hong Kong Limited L(Electrical & Electronic Products)Unit 1302-03, Vanta Industrial Centre,21-33 Tai Lin Pai Road, Kwai Chung, N.T., Hong KongTel: +852 2494 5895 / Fax: +852 2426 0613Email: bvcps.electrical@hk.bureauveritas.com
+ 
+ChinaBeijing7layers, A Bureau Veritas Group Company L(Smartworld)Yue Tan Nan Str.11. Xi Cheng District, 100045 Beijing, ChinaTel: +86 10 6805 0368Fax: +86 10 6805 0370 / +86 10 6802 2951-130Email: info@7layers.com
+ 
+SIEMIC Beijing Branch, a Bureau Veritas Group Company S(Electrical & Electronic Products, Smartworld, Automotive)BUPT. No. 10 XiTuCheng Street, Haidian District, Beijing, China 100876Tel: +86 10 6804 9809
+ 
+CixiBureau Veritas Consumer Products Services S(Electrical & Electronic Products)  No.99 Xingjian Road, Cixi, Zhejiang, China.Tel: +86 574 63032389Fax: +86 574 63032358Email: contact@cn.bureauveritas.com
+ 
+DongguanBureau Veritas Consumer Products Services L OONo. 34, Chenwulu Section, Guantai Road, Houjie Town, Dongguan, Guangdong, China(Toys)Tel: +86 769 85935656 – 8037 / 769 88982098 - 8037Email: EEToy.SC@cn.bureauveritas.com(Electrical & Electronic Products and Smartworld- Safety and Related Testing)Tel: +86 769 89982098Email: smartworld-asia@hk.bureauveritas.com(Electrical & Electronic Products and Smartworld- Analytical Testing)Tel: +86 769 89982098 (8813)Email: EEchemical.SC@cn.bureauveritas.com (Inspections, Audits & Assessments)Tel: +86 769 8998 2098 / Fax: +86 769 8589 5313Email: bvcps.inspection-sz@cn.bureauveritas.com 
+
+ 
+FuzhouBureau Veritas Consumer Products Services S OO(Inspections, Audits & Assessments)No.1412-1413 Floor 14, Tower A2, WanDa Plaza, No.8, AoJiang Road, TaiJiang District, FuZhou City, Fujian Province, ChinaTel: +86 591 8357 7185 / Fax: +86 591 8337 7391Email: bvcps.inspection-sz@cn.bureauveritas.com
+ 
+GuangzhouBureau Veritas Consumer Products Services L OO(Softlines, Footwear, Hardlines, Toys, Electrical & Electronic Products, Automotive, Inspections, Audits and Assessments)No. 183, Shi Nan Road, Mei Lin Plaza Block B, Dong Chong, Pan Yu, Guangzhou, ChinaTel: +86 20 2290 2088 / Fax: +86 20 3490 9303Email: bvcps_pyinfo@cn.bureauveritas.com
+ 
+Bureau Veritas CPS (Guangzhou) Co.,Ltd. Science City Branch L(Electrical & Electronic Products, Automotive)Rm.101,G5 Building, NO.31 Kefeng Rd, Guangzhou Science City, Guangzhou, 510663 ChinaTel: +86 20 87148500 / Fax: +86 20 87148528Email: EESCmarketing@cn.bureauveritas.com
+ 
+Bureau Veritas Shenzhen Company Limited OO(Inspections, Audits and Assessments)Rm# 301, 3/F, South Tower, HuaLe Building, No. 55-57, HuaLe Road, YueXiu District, Guangzhou City, China (Post Code 510030)Tel: +86 20 8714 8500 / Fax: +86 20 8381 0762Email: eescmarketing@cn.bureauveritas.com(Inspections, Audits and Assessments)Tel: +86 20 8383 1795 / Fax: +86 20 8383 1790E-mail: bvcps.inspection-sz@cn.bureauveritas.com
+ 
+CTS, a Bureau Veritas Group Company L (Softlines, Hardlines, Toys, Electrical & Electronic Products) Building A, No.65 Zhuji Highway, Jishan cun, Tianhe District, Guangzhou, China.Tel：+86 20 8554 3113 / Fax：+86 20 3878 0406E-mail: cts@cts-lab.com.cn 
+Hangzhou
+Bureau Veritas Consumer Products Services Shanghai Co., Ltd. OO(Inspections, Audits & Assessments)Rm 802, S5 Building, Herui International Technology Plaza, No. 475 Changhe Road, Binjiang District, Hangzhou, Zhejiang, China 310052Tel: +86 571 8724 4623 / Fax: +86 571 8724 0530Email: bvcps_sh_bd@cn.bureauveritas.com
+ 
+HefeiBureau Veritas Consumer Products Services L(Electrical & Electronic Products)NO.13.Yan'an Road,Baohe Industrial Park,Hefei ,Anhui,ChinaTel: +86 551 63356309Fax: +86 551 63499510Email: contact@cn.bureauveritas.com
+ 
+JiangyinBureau Veritas Consumer Products Services L JV OO(Softlines, Hardlines, Toys, Electrical & Electronic Products, Wireless)10#, No.201, Jinshan Road, Jiangyin, Jiangsu, China 214400Tel: +86 510 8693 8511 / Fax: +86 510 8693 8500Email: bvcpssoftline.jy@cn.bureauveritas.com
+LiuyangBureau Veritas Shenzhen Company Limited  OO(Firework Inspection Services)12F, Baijian Building, Liuyang Avenue, Liuyang City, Hunan Province, China 410300Tel: +86 731 8383 6805Email: bvcps.inspection-sz@cn.bureauveritas.com 
+NanjingBureau Veritas Consumer Products Services L JV OO(Softlines, Toys)F6, Block C, Ascendas iHub Center, No.55 Jiangjun Avenue Jiangning, Nanjing, China, 211100Tel: +86 25 5207 6132  / Fax: +86 25 5207 6122         Email: bvcpsinfor.nj@cn.bureauveritas.com(Inspections, Audits & Assessments)F6 Block B#, Win-world Innovation Park, No. 55 Jiangjun Avenue, Jiangning, Nanjing, China, 211100 Tel: +86 25 5207 6178 / Fax: +86 25 5207 6183Email: bvcpsinfor.nj@cn.bureauveritas.com
+SIEMIC Nanjing Branch, a Bureau Veritas Group Company L(Electrical & Electronic Products, Smartworld, Automotive)No.21, Longcang Boulevard, Yuhua Economic Development Area, Nanjing, ChinaTel: +86 25 86730128/29/38/27
+ 
+NingboBureau Veritas Consumer Products Services L S OO(Softlines, Toys)  Room 608 , EXTRASTAR Building  No. 76 Jinghua Road., Hi-Tech Zone, Ningbo, Zhejiang, ChinaTel: +86 574 8797 1036 / Fax: +86 574 8797 1038Email: contact@cn.bureauveritas.com (Electrical & Electronic Products, Inspections, Audits & Assessments)6 Floor Building B No.66 QingYi Road, Hi-Tech Zone, Ningbo, Zhejiang, ChinaTel: +86 574 8709 1028 / Fax: +86 574 8756 0191Email: contact@cn.bureauveritas.com
+
+ 
+CTS, a Bureau Veritas Group Company L (Softlines, Toys, Electrical & Electronic Products)Floor 2, South Huoju Building, No.181, Canghai Rd., Ningbo High-tech Park, Ningbo, Zhejiang, China.Tel：+86 574 8791 2121 / Fax：+86 574 8790 7993E-mail: cts@cts-lab.com 
+ 
+PutianBureau Veritas Consumer Products Services SNO.308, 3Floor, Putian Shoes & Clothing City, Huangshi Town, Licheng District, Putian, Fujian, China Tel: +86 594 2183936 / Fax: +86 592 2964 366Email: bvcps_xminfo@cn.bureauveritas.com
+ 
+QuanzhouBureau Veritas Consumer Products Services L OOSoftlines, Footwear, Electrical & Electronic Products)Level4&5. Block C.Sanfran Town , #577 Jitai Street, Quanzhou Economic Development Zone,Fujian Province, PRC 362000Tel: +86 595 3661 5788Email: bvcps_xminfo@cn.bureauveritas.com(Inspections, Audits & Assessments)Tel: +86 595 3661 5781Email: bvcps.inspection-sz@cn.bureauveritas.com
+ 
+QingdaoBureau Veritas Consumer Products Services L JV OO(Softlines, Hardlines, Inspections, Audits & Assessments)No.3 building, GNDC Tech Base, No.192 Zhuzhou Road, Laoshan District, Qindao, China, 266101Tel: +86 532 5882 7999 / Fax: +86 532 8870 6839Email: bvcpsinfor.qd@cn.bureauveritas.com(Electrical & Electronic Products) Tel: +86 186 6972 1120 / Fax: +86 532 8870 6839Email: contact@cn.bureauveritas.com(Inspections, Audits & Assessments)Tel: +86 532 5882 7887 / Fax: +86 532 5882 7881 Email: bvcpsinfor.qd@cn.bureauveritas.com 
+ 
+ShanghaiBureau Veritas Consumer Products Services L JV(Softlines/Footwear)No.168, Guanghua Road, Zhuanqiao Town, Minhang, Shanghai, China, 201108Tel: +86 21 2408 1888 / Fax: +86 21 6489 0042Email: bvcps_sh_bd@cn.bureauveritas.com
+ 
+Bureau Veritas Consumer Products Services L JV OONo. 368, Guangzhong Road, Zhuanqiao Town, Minhang, Shanghai, China, 201108(Hardlines, Toys, Food, Automotive)  Tel: +86 21 2416 6888Email: bvcps_sh_bd@cn.bureauveritas.com(Inspections, Audits and Assessments)Tel: +86 21 2416 6910 / Fax: +86 21 6489 1427Email: bvcps.inspection-sh@cn.bureauveritas.com
+ 
+Bureau Veritas Consumer Products Services L OO(Electrical & Electronic Products - Safety & Photovoltaic & Auto)Building 4, No. 518, Xin Zhuan Road, CaoHejing Songjiang, High-Tech Park, Shanghai, China, 201612Tel: +86 21 6195 7000 / Fax: +86 21 6195 7001Email: contact@cn.bureauveritas.com
+ 
+Bureau Veritas Consumer Products Services L(Electrical & Electronic Products - EMC & Auto)2F, Building C, No. 1618 Yishan Road, Shanghai, ChinaTel: +86 21 6465 9091 / Fax: +86 21 6465 9092Email: contact@cn.bureauveritas.com
+ 
+Bureau Veritas Consumer Products Services (Shanghai) L(Electrical & Electronic Products, Automotive)T20-2, N.o 258 Jingzang Road, Pudong District, Shanghai, ChinaTel: +86 21 5032 3488 / Fax: +86 21 5032 5799Email: contact@cn.bureauveritas.com
+ 
+SIEMIC Shanghai Branch, a Bureau Veritas Group Company S(Electrical & Electronic Products, Smartworld, Automotive)Unit 1518 ,Yongsheng Tower, No.2025 West Zhongshan Road, Xuhui District ,Shanghai 200235, ChinaTel: +86 21 64812901/18
+ 
+ShantouBureau Veritas Shenzhen Company Limited OO(Inspections, Audits & Assessments)Room 504, 5F Xinwei Building, No. 6 Keji East Road, Longhu District, Shantou City, China 515041Tel: +86 754 8817 4790 / Fax: +86 754 8817 4791Email: bvcps.inspection-sz@cn.bureauveritas.com
+ 
+ShaoxingBureau Veritas Consumer Products Services L(Softlines)3rd Floor, International Logistics Center, No. 1906 Jingshui Road, Shaoxing, Zhejiang,ChinaTel: +86 575 8862 0526 / Fax: +86 575 8862 0525Email: bvcps_sh_bd@cn.bureauveritas.com
+ 
+ShenzhenBureau Veritas Consumer Products ServicesBureau Veritas Shenzhen Co., Ltd. L JV1/F, Block A, Minlida Industrial Building, 4th Zone of Honghualing Industrial Park, Liu Xian Road, Xili Town, Nanshan District, Shenzhen, Guangdong. China, 518055(General Office)Tel: +86 755 3304 6555 / Fax: +86 755 8600 0912(Hardlines)Tel: +86 755 8600 0151 / Fax: +86 755 8600 0159E-mail: bvcps_szhardlines@cn.bureauveritas.com(Toys)Tel: +86 755 8618 5200 / Fax: +86 755 8618 5206Email: bvcpstoy.sz@cn.bureauveritas.com(Food)Tel: +86 755 8613 5578 / Fax: +86 755 8618 5206Email: bvcpsfood.sz@cn.bureauveritas.com (Health & Beauty)Tel: +86 755 3304 6561 / Fax: +86 755 8600 0912Email: BVCPSCosmetic.china@cn.bureauveritas.com4 & 5/F, Block B, Minlida Industrial Building, 4th Zone of Honghualing Industrial Park, Liu Xian Road, Xili Town, Nanshan District, Shenzhen, Guangdong. China, 518055(Electrical & Electronic Products - Safety and Related Testing)Tel: +86 755 83433073 / Fax: +86 755 86000912Email: EESCmarketing@cn.bureauveritas.com (Electrical & Electronic Products - Analytical Testing)Tel: +86 755 21534690 / Fax: +86 755 83439100Email: eechemical.sc@cn.bureauveritas.com 
+ 
+Bureau Veritas Consumer Products Services S OO(Inspections, Audits and Assessments)F5/6 Tower D2, Dong Nan Industry-Trade Building, Dong Jiao Tou, Hou Hai Avenue, Shekou, Nanshan District, Shenzhen, China, 518067Tel: +86 755 8343 3378 / Fax: +86 755 8343 3078Email: bvcps.inspection-sz@cn.bureauveritas.com
+ 
+Bureau Veritas 7layers Communications Technology (Shenzhen) Co., Limited L
+(Smartworld)No. B102, Dazu Chuangxin Mansion, North of Beihuan Avenue, North Area, Hi-Tech Industrial Park, Nanshan District, Shenzhen China 518057Tel: +86 755 8869 6566 / Fax: +86 755 8869 6577
+Email: smartworld-asia@hk.bureauveritas.com
+ 
+SIEMIC Shenzhen Branch, a Bureau Veritas Group Company L(Electrical & Electronic Products, Smartworld, Automotive)Zone A, Floor 1, Building 2, Wanyelong Sci-Tech. Park, South of Zhoushi Road, Shiyan Sub-district, Bao’an District, ShenzhenTel: +86 755-26014629/953 & 27629948/8616
+ 
+TianjinBureau Veritas Consumer Products Services L(Automotive)3rd Floors ,No.1 Building C Zone, No 225 Jinger Rd, Airport Economic Area, Tianjin  300300Tel: +86 22 6082 1223Email: contact@cn.bureauveritas.com
+ 
+Bureau Veritas Consumer Products Services Shanghai Co., Ltd. OO(Inspections, Audits & Assessments)Unit 3-2, Dida DongGu International NO. 22 ErWei Road,DongLi Economic Development Area, TianJin, China Tel: +86 22 5828 8660 / Fax: +86 22 5828 8663Email: bvcps.inspection-sh@cn.bureauveritas.com
+ 
+WenzhouBureau Veritas Consumer Products Services L JV(Softlines, Footwear)No.30 Cifeng West Road, Ouhai, Wenzhou, Zhejiang, ChinaTel: (86) 577 8836 7300 / Fax: (86) 577 8837 7035Email: bvcpsinfor.wz@cn.bureauveritas.com
+ 
+Bureau Veritas Consumer Products Services L(Electrical & Electronic Products)  Room 402, Inspection & Quarantine Mansion, Jingang Avenue, Liushi, Yueqing, Wenzhou, China, 325604Tel: +86 577 57150715Email: contact@cn.bureauveritas.com
+ 
+XiamenBureau Veritas Consumer Products Services S OORoom D, 16 Floor, Jinshan Building, No. 862, Xiahe Road, Xiamen, Fujian, China, 361000(Electrical & Electronic Products)Tel: +86 592-5063 780 / Fax: +86 592 2964 366Email: contact@cn.bureauveritas.com(Softlines/Footwear)Tel: +86 592 2964 166 / Fax: +86 592 2964 366Email: bvcps_xminfo@cn.bureauveritas.com(Electrical & Electronic Products)Tel: +86 592 2964 266 / Fax: +86 592 2964 366Email: contact@cn.bureauveritas.com(Inspections, Audits & Assessments)Room B, 16 Floor, Jinshan Building, No. 862, Xiahe Road, Xiamen, Fujian, China, 361000 Tel: +86 592 5565 751 / Fax: +86 592 5565 076Email: mailto:bvcps_xminfo@cn.bureauveritas.com
+ 
+YongkangBureau Veritas Consumer Products Services S(Electrical & Electronic Products)Room A1206, Nanlong Building,Yongkang, Zhejiang, ChinaTel: +86 579 8711 9082 / Fax: +86 579 8711 9081Email: contact@cn.bureauveritas.com
+ 
+ZiboBureau Veritas Consumer Products Services L(Hardlines, Automotive)24F, Block B, Polimar Innovation industriall Park, No . 51, Lutai Avenue, High-Tech Zone, Zibo, Shandong, ChinaTel: +86 533 7868188 / Fax: +86 533 7868189Email:Zi.bo@cn.bureauveritas.com
+TaiwanBeitouBureau Veritas Consumer Products Services Taiwan Branch L OONo. 37, Sec. 2, Zhongyang S. Road, Beitou, Taipei 112, Taiwan R.O.C.Tel:  +886 2 2895 3666 / Fax: +886 2 2895 6999(Softlines, Footwear, Health & Beauty)Email: general@tw.bureauveritas.com(Hardlines, Toys)Email: hl.enquirymail@tw.bureauveritas.com(Analytical / Chemical)Email: chemical.inquiry@tw.bureauveritas.com(Inspections, Audits & Assessments)Tel: +886 2 2890 5229 / Fax: +886 2 2895 5977Email: general@tw.bureauveritas.com
+ 
+Hwaya Bureau Veritas Consumer Products Services Hwa Ya L   (Electrical & Electronic Products -Smartworld)  No. 19, Hwa Ya 2nd Rd., Kweishan Township, Taoyuan County 33383, Taiwan R.O.C.Tel: +886 3 318 3232 / Fax: +886 3 211 5834Email: service.adt@tw.bureauveritas.com
+ 
+TaoyuanSIEMIC Taiwan Branch, a Bureau Veritas Group Company S(Electrical & Electronic Products, Smartworld, Automotive)1/F, No.55, Lane 260, Ren′ai Road(Section 3), Luzhu Township, Taoyuan County, Taiwan R.O.C.Tel: +886 3 212 1075
+ 
+LinkouBureau Veritas Consumer Products Services Linkou L(Electrical & Electronic Products and Smartworld)  Testing BuildingNo. 47-2, 14th Neighborhood, Chiapau Vil., Linkou District, New Taipei City 244, Taiwan R.O.C.Tel: +886 2 2605 2180 / Fax: +886 2 2605 2943Email: service.adt@tw.bureauveritas.com
+LabNo. 47, 14th Neighborhood, Baodoucuokeng, Chiapau Vil., Linkou Dist., New Taipei City 244, Taiwan  R.O.CTel. : +886-(0)2-2605-2181 / Fax : +886-(0)2-2605-1145Email: service.adt@tw.bureauveritas.com
+ 
+HsinchuBureau Veritas Consumer Products Services Hsinchu L(Electrical & Electronic Products and Smartworld)BranchE-2, No.1, Li Hsin 1st Road, Hsinchu Science Park, Hsinchu City, Taiwan (R.O.C.)Tel: +886 3 666 8565 / Fax: +886 3 666 8323Email: service.adt@tw.bureauveritas.comLab 1No. 81-1, Lu Liao Keng, 9th Neighborhood, Wu Lung Vil., Chiung Lin Township, Hsinchu Country 307, Taiwan R.O.C.Tel: +886 3 593 5343 / Fax: +886 3 593 5342Email: service.adt@tw.bureauveritas.com
+Lab 2No. 49, Lane 206, Wende Road, Chiung Lin Township, Hsinchu Country 307, Taiwan R.O.C.Tel: +886 3 512 0595 / Fax: +886 3 512 0568Email: service.adt@tw.bureauveritas.com
+Lab 3E2, No. 1, Lixing 1st Rd., East Dist., Hsinchu City 300, TaiwanTel: +886 3 666 8565 / Fax: +886 3 666 8323Email: service.adt@tw.bureauveritas.com
+ 
+HsindianBureau Veritas Consumer Products Services Hsindian L(Electrical & Electronic Products and Smartworld)B2, No. 215, Sec. 3, Beihsin Rd., Hsindian District, New Taipei City 23143, Taiwan R.O.C.Email: service.adt@tw.bureauveritas.com
+ 
+Asia – South AsiaBangladeshChittagongBureau Veritas Consumer Products Services (Chittagong) Ltd. L OO(Softlines, Inspections, Audits & Assessments)Central Store Area, Karnaphuli Export Processing Zone (KEPZ), North Patenga, Chittagong, BangladeshTel: +880 31 250 2241-2 / Hotline: 01730337948-9Fax: +880 31 250 2242E-mail: bvcps.ctgcustomerservice@bd.bureauveritas.com
+ 
+DhakaBureau Veritas Consumer Products Services (BD) Ltd. L(Softlines/Footwear)Plot - 130, Dhaka Export Processing Zone (DEPZ) Extension area, Ganakbari, Savar, Dhaka, BangladeshTel: +880 2 778 9464-6 / 7789465 / 7790212Hotline: 01730337941-7Fax: +880 2 778 9462-3Email: bvcps.customerservice@bd.bureauveritas.com
+ 
+Bureau Veritas Consumer Products Services (BD) Ltd. S OO House No. 94, Road No. 23, Block-A, Banani, Dhaka 1213, BangladeshTel: +880 2 988 5362 / 883 6020 / 883 6122 Ext. 219Hotline: 01730337941-7Fax: +880 2 882 5962     Email: bvcps.customerservice@bd.bureauveritas.com
+ 
+IndiaBangaloreBureau Veritas Consumer Products Services (I) Pvt. Ltd. L OO(Softlines, Electrical & Electronic Products, Footwear, Inspections, Audits & Assessments)AKR Tech Park, Ground floor, C Block, Survey no 112, Krishna Reddy Ind. Area, 7th Mile Hosur Road, Bangalore - 560068, IndiaTel: +91 80 4070 1600 / Fax: +91 80 4070 1654Email: cps@in.bureauveritas.com
+ 
+GurgaonBureau Veritas Consumer Products Services (I) Pvt. Ltd. L(Softlines)212, Phase IV, Gurgaon, Haryana, IndiaTel: +91 120 4548100  /  Fax: +91124 2340 807Email: cps@in.bureauveritas.com
+ 
+KolkataBureau Veritas Consumer Products Services (I) Pvt. Ltd. S OO(Inspections, Audits & Assessments)Poonam Building (3C,3rd Floor), 5/2 Russel Street, Kolkata - 700071Tel: +91 33 4027 0222 / Fax: +91 33 4027 0299Email: cps@in.bureauveritas.com(Inspections, Audits & Assessments)Tel: +91 33 4027 0200 / Fax: +91 33 4027 0299Email: cps@in.bureauveritas.com
+ 
+MoradabadBureau Veritas Consumer Products Services (I) Pvt. Ltd.(Collection center for hardgoods testing)G-10, Ground Floor, Parsvanath Plaza - 1, Delhi Road, MoradabadMobile: +91 9837006663 / +91 8800990919
+ 
+MumbaiBureau Veritas Consumer Products Services (I) Pvt. Ltd. OO(Inspections, Audits & Assessments)309, C-1, Twins Arcade, Military Road, Marol Maroshi, Andheri East, Mumbai-400069Tel: +91 22 2920 2335Email: cps@in.bureauveritas.com(Inspections, Audits & Assessments)2nd Floor, Imperium Bldg, Marol-Maroshi RoadOpp.Police Camp, Vijay Nagar ,Andheri (E)Mumbai-400059Tel: +91 22 6120 1629Email: cps@in.bureauveritas.com 
+ 
+NoidaBureau Veritas Consumer Products Services (I) Pvt. Ltd. L OO(Softlines, Footwear, Hardlines, Toys, Electrical & Electronic Products, Inspections, Audits & Assessments)C-19, Sector 7, Noida - 201 301, Uttar Pradesh, IndiaTel: +91 120 4368 100 / Fax: +91 120 2424 880Email: cps@in.bureauveritas.com(Inspections, Audits & Assessments)B-13/14, Sector - 6, Noida - 201301, Uttar Pradesh, IndiaTel: +91 120 4000 819 / Fax: +91 120 2424 880Email: cps@in.bureauveritas.com PuneBureau Veritas Consumer Products Services (I) Pvt. Ltd L(Automotive)Plot NO-E-3/1,Block EChakan Industrial Area, Phase III-MIDCVillage Nighoje, Tal-Khed Pune-410501, IndiaTel: + 91 2135 6228901Email: bvcpsauto.pun@in.bureauveritas.com 
+TirupurBureau Veritas Consumer Products Services (I) Pvt. Ltd. L OO(Softlines, Inspections, Audits & Assessments)79/51, MRD Complex, P.N. Road, Nesavalar Colony,Tirupur- 641602, IndiaTel: +91 421 4308 100 / Fax: +91 421 4308 106Email: cps@in.bureauveritas.com
+ 
+PakistanKarachiBureau Veritas Consumer Products Services (Pakistan) Pvt. Ltd. OO(Inspections, Audits & Assessments)House No 305, Street no 16, Block 3, First Floor. BahadurAbad ,Karachi, PakistanTel: +92 21 3492 3291-93 / Fax: +92 21 3492 3292Email: cpsiaainfo.lh@pk.bureauveritas.com
+ 
+LahoreBureau Veritas Consumer Products Services (Pakistan) Pvt. Ltd. L OO(Softlines, Footwear, Inspections, Audits & Assessments)191-S, Quaid-i-Azam Industrial Area, Kot Lakpath, Lahore, PakistanTel: +92 42 3521 5779-83 / Fax: +92 42 3521 5787Email: cpsiaainfo.lh@pk.bureauveritas.com
+ 
+Sri LankaBureau Veritas Consumer Products Services (Lanka) Pvt. Ltd. L OO(Softlines, Toys, Food, Health & Beauty, Inspections, Audits & Assessments), Environmental testing570, Galle Road, Katubedda, Sri LankaTel: +94 11 2350 111 – 115 / Fax: +94 112622198 & 199Email: bvcps.lanka@lk.bureauveritas.com
+ 
+Asia – South East AsiaCambodiaBureau Veritas (Cambodia) Co., Ltd L OO(Softlines, Inspections, Audits & Assessments)Building 1186, Road 371, Sangkat Stueng Meanchey, Khan Meanchey, Phnom Penh, CambodiaTel: (855)23 962 271Email: bvcps_info@vn.bureauveritas.com
+ 
+IndonesiaPT. Bureau Veritas Consumer Products Services Indonesia L OO(Softlines, Footwear, Smartworld, RS, Hardlines, Inspections, Audits & Assessments)Gedung KKM Lt. 2 - 5, Jl. Cideng Timur No. 38, Jakarta Pusat 10130, IndonesiaTel: +62 21 634 8877 / Fax: +62 21 634 8838Email: bvcps_jkt_general_inquiries@id.bureauveritas.com  / mkt-bvcpsjkt@id.bureauveritas.com
+(Hardlines, Toys)Pergudangan Era Prima Blok H-11Jl. Daan Mogot Km. 21 No.1, Tangerang 15122Tel: +62 21 2951-6217Email: bvcps_jkt_general_inquiries@id.bureauveritas.com  / mkt-bvcpsjkt@id.bureauveritas.com
+ 
+MalaysiaBureau Veritas Consumer Products Services Sdn. Bhd.L OO(Hardlines, Inspections, Audits & Assessments)No.7, Jalan Laman Setia 7/3, Taman Laman Setia, 81550 Johor Bahru, MalaysiaTel: +60 7 5587266 / Fax: +60 7 5589266E-mail: CustomerEnq.bvcpsMYHL@sg.bureauveritas.com
+ 
+MyanmarMyanmar Bureau Veritas Limited OORoom 410, 4th Floor, Hledan CentreCorner of Pyay Road & Hledan RoadKamayut T/S, Yangon.  Union of MyanmarTel: +95 (0) 1 2307802 Email: bvcpsmyanmar.bkk@th.bureauveritas.com
+ 
+PhilippinesBureau Veritas OO(Inspections, Audits & Assessments)8th Floor, Ramon Magsaysay Bldg., 1680 Roxas Blvd Corner J. Quintos St., Ermita, Manila, Philippines 1000Tel: +63 2 5211068/ Fax: +63 2 5255225Email: customer.enquiry@sg.bureauveritas.com
+ 
+SingaporeBureau Veritas Consumer Products Services (Pte) Ltd. L OO(Softlines, Footwear, Hardlines, Inspections, Audits & Assessments)37A Tampines Street 92, #06-01, Singapore 528886Tel: +65 6283 8366 / Fax: +65 6283 8966Email: customer.enquiry@sg.bureauveritas.com
+ 
+ThailandBureau Veritas Consumer Products Services (Thailand) Ltd S OO383 4th floor Soi.Soonvijai 4 (Rama 9 Soi 13) Rama 9 Rd, Bangkapi, Huai Khwang, Bangkok 10310 ThailandTel: +662 017 0650 / Fax: +662 017 0699(Softlines)Email: mailto:customer.enquiry@sg.bureauveritas.com(Hardlines, Toys)Email: CustomerEnq.bvcpsMYHL@sg.bureauveritas.com (Inspections, Audits and Assessments)Email: bvcpsthailand@th.bureauveritas.com
+ 
+VietnamHanoiBureau Veritas CPS Vietnam Ltd, Hanoi Branch L OO(Softlines, Hardlines, Analytical, Inspections, Audits & Assessments)Dai Tu IZ, 386 Nguyen Van Linh Str., Phuc Dong, Long Bien Dist., Ha Noi, VietnamTel: +84 4 36 741 366 / Fax: +84 4 36 741 367Email: bvcps_info@vn.bureauveritas.com
+ 
+Ho Chi Minh CityBureau Veritas Consumer Products Services Vietnam Limited L OO(Softlines, Footwear, Hardlines, Toys, Food, Inspections, Audits & Assessments)Lot C7-C9, Conurbation 2, Cat Lai Industrial Zone,Thanh My Loi Ward, District 2, Ho Chi Minh City, VietnamTel: +84 8 3742 1604 / Fax: +84 8 3742 1603Email: bvcps_info@vn.bureauveritas.com
+ 
+Asia – North AsiaJapan  YokohamaBureau Veritas Consumer Products Services OO(Inspections, Audits & Assessments)Nihon Odori 7 Building 8F, 7 Nihon Odori, Naka-ku, Yokohama 231-0021 JapanTel: +81 45 641 6032 / Fax: +81 45 641 8491Email: cpssales.yok@jp.bureauveritas.com
+ 
+7layers, a Bureau Veritas Group Company L(Smartworld, Automotive)Shin Yokohama IK Bldg. #504, 2-12-12 Shin Yokohama, Kohoku, Yokohama 222-0033, JapanTel: +81 45 472 9907 / Fax: +81 45 472 9917Email: info@7layers.com
+ 
+OsakaKAKEN TEST CENTER L(Softlines, Footwear, Hardlines))2-5-19, Edobori, Nishi-Ku, Osaka 550-0002, JapanEmail: cpssales.yok@jp.bureauveritas.com
+ 
+KoreaAnyang-siBV Korea CPS L S OO(Softines, RS, Health & Beauty, Inspections, Audits & Assessments)RM 812, 8F, O-Biz Tower, 126, Beolmal-ro,Dongan-gu, Anyang-si, Gyeonggi-do, 14057, South KoreaTel: +82 31 688 8000 / Fax: +82 31 360 0276Email: raqany@kr.bureauveritas.comSeoulBureau Veritas Korea (Seoul Office) OO(Inspections, Audits & Assessments)Room 1103, Keungil Tower 677-25, Yoeksam-Dong, Kangnam-Ku, Seoul 135-914, KoreaTel: +82 2 555 8753Email: eunsun.kim@kr.bureauveritas.com
+ 
+KCL L(Hardlines, Softlines)459-28 Gasan-Dong, Gumcheon-Gu , Seoul, KoreaTel: + 82 2 2102 2553Email: bvkorea_hl@kcl.re.kr
+ 
+Suwon-siBV CPS ADT Korea Ltd. L (Smartworld)No.2-106 Yeongtong Innoplex, 552 Woncheon-dong, Yeongtong-gu, Suwon-si, Gyeonggi-do, KoreaTel: +82 31 8002 3050 / Fax: +82 31 8002 3061Email: sungmi.choi@kr.bureauveritas.com
+ 
+7layers, a Bureau Veritas Group Company  L(Smartworld)305, 400 Hyowon-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do, 443-370, South KoreaTel: +82 70 8853 2301 / Fax: +82 31 217 1134Email: info@7layers.com
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Download  
+ List of CPS Locations
+
+
+Contact Us
+ 
+
+Consumer Products Services
+Send an e-mail
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ About Us
+CPS Division
+
+
+Accreditations & Credentials
+
+
+Acquisitions
+
+
+Our Subsidiaries
+
+
+Terms & Conditions
+
+
+Our Value Proposition
+
+ 
+ Your Industry
+Electrical & Electronics
+
+
+Wireless/Smartworld
+
+
+Automotive
+
+
+Softline & Accessories
+
+
+Toys & Juvenile Products
+
+
+Hardlines
+
+
+Food
+
+
+Health Beauty & Household
+
+
+Building
+
+
+Renewable Energies
+
+
+Medical
+
+ 
+
+
+ Your Activity
+Chemical Producer
+
+
+Finished Product Supplier
+
+
+Finished Product Manufacturer
+
+
+Trading Company
+
+
+Brand & Retail
+
+
+Hospitality
+
+
+Consultancy
+
+
+Government Standard Bodies
+
+
+Industry Association
+
+
+Test Industry
+
+
+Service Provider
+
+ 
+ Resources
+Videos
+
+
+White Papers
+
+
+Test Request Forms
+
+
+FAQs
+
+
+Brochures
+
+ 
+
+
+ Our Services
+Chemical Discharge Management Services
+
+
+Supply Chain Solutions
+
+
+Testing
+
+
+Inspections
+
+
+CSR Services
+
+
+Factory Assessments
+
+
+Certification
+
+
+Sustainability Solutions
+
+
+Market Access Solutions
+
+
+Information Services Tools
+
+
+Consulting / Advisory
+
+
+A To Z Of CPS Services
+
+ 
+
+
+ Whats New
+Bulletins
+
+
+Events
+
+
+Newsletters
+
+
+Press Releases
+
+
+Announcement
+
+ 
+ Contact Us
+Ethics Hotline
+
+
+Subscribe
+
+
+Our Locations
+
+
+Request a Quote
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+WORLDWIDE LOCATIONSChoose a countryAlgeriaAngolaArgentinaAustraliaAustriaAzerbaijanBahamasBahrainBangladeshBarbadosBelarusBelgiumBeninBermudaBoliviaBosnia and HerzegovinaBotswanaBrazilBruneiBulgariaBurkina-FasoBurundiCambodiaCameroonCanadaCape Verde IslandsCentral African RepublicChadChileChinaColombiaCongoCongo (Democratic Republic of the)Costa RicaCote d'IvoireCroatiaCubaCuracaoCzech RepublicDenmarkDjiboutiDominican RepublicEcuadorEgyptEl SalvadorEquatorial GuineaEritreaEstoniaEthiopiaFidjiFinlandFranceFrench West IndiesGabonGeorgiaGermanyGhanaGibraltarGreeceGreenlandGuatemalaGuineaGuinea BissauHondurasHungaryIcelandIndiaIndonesiaIranIraqIsraelItalyJapanJordanKazakhstanKenyaKorea (South)KuwaitLatviaLebanonLiberiaLibyaLithuaniaLuxembourgMadagascarMalawiMalaysiaMaliMaltaMauritaniaMexicoMontenegroMoroccoMozambiqueMyanmarNamibiaNetherlandsNetherlands AntillesNew ZealandNicaraguaNigerNigeriaNorwayOmanPakistanPanamaParaguayPeruPhilippinesPolandPortugalPuerto RicoQatarRomaniaRussiaRwandaSaint- Pierre & MiquelonSaudi ArabiaSenegalSerbiaSeychellesSierra LeoneSingaporeSlovakiaSloveniaSomaliaSouth Africa (Rep.)SpainSri LankaSurinameSwedenSwitzerlandSyriaTaiwanTanzania (United Republic of)ThailandTogoTrinidad & TobagoTunisiaTurkeyTurkmenistanUgandaUkraineUnited Arab EmiratesUnited KingdomUnited States of AmericaUruguayUzbekistanVenezuelaVietnamYemenZambiaZimbabweCONTACT US
+
+
+FOLLOW US ON
+
+
+
+
+
+
+
+
+
+
+
+
+Contact Us
+
+ /
+Cookie Policy
+
+ /
+Site Map
+
+ /
+Help
+
+ /
+Terms of Use
+
+
+
+
+
+
+
+
+
+
+
+
+
+AlgeriaAngolaArgentinaAustraliaAustriaAzerbaijanBahamasBahrainBangladeshBarbadosBelarusBelgiumBeninBermudaBoliviaBosnia and HerzegovinaBotswanaBrazilBruneiBulgariaBurkina-FasoBurundiCambodiaCameroonCanadaCape Verde IslandsCentral African RepublicChadChileChinaColombiaCongoCongo (Democratic Republic of the)Costa RicaCote d'IvoireCroatiaCubaCuracaoCzech RepublicDenmarkDjiboutiDominican RepublicEcuadorEgyptEl SalvadorEquatorial GuineaEritreaEstoniaEthiopiaFidjiFinlandFranceFrench West IndiesGabonGeorgiaGermanyGhanaGibraltarGreeceGreenlandGuatemalaGuineaGuinea BissauHondurasHungaryIcelandIndiaIndonesiaIranIraqIsraelItalyJapanJordanKazakhstanKenyaKorea (South)KuwaitLatviaLebanonLiberiaLibyaLithuaniaLuxembourgMadagascarMalawiMalaysiaMaliMaltaMauritaniaMexicoMontenegroMoroccoMozambiqueMyanmarNamibiaNetherlandsNetherlands AntillesNew ZealandNicaraguaNigerNigeriaNorwayOmanPakistanPanamaParaguayPeruPhilippinesPolandPortugalPuerto RicoQatarRomaniaRussiaRwandaSaint- Pierre & MiquelonSaudi ArabiaSenegalSerbiaSeychellesSierra LeoneSingaporeSlovakiaSloveniaSomaliaSouth Africa (Rep.)SpainSri LankaSurinameSwedenSwitzerlandSyriaTaiwanTanzania (United Republic of)ThailandTogoTrinidad & TobagoTunisiaTurkeyTurkmenistanUgandaUkraineUnited Arab EmiratesUnited KingdomUnited States of AmericaUruguayUzbekistanVenezuelaVietnamYemenZambiaZimbabweOther WebsitesAfricaGLOBAL WEBSITEMiddle EastSouth East Asia
+
+
+
+
+
+
+
+
+
+
+Choose your industry, asset and / or service need
+Your IndustryAerospaceAutomotiveConstruction and Real EstateConsumer ProductsElectrical and ElectronicsFoodForestry & Wood ProductsGovernments and Public OrganizationsIndustrial EquipmentMaritime IndustryOil and GasPower and UtilitiesProcess Industries and MiningRetailServicesTransport and Infrastructures
+Your AssetAircraftsBuildings (non industrial)Civil infrastructuresConsumer productsContainers & Tank wagonsEnvironmental SystemsEquipment & machineryHealth & Safety SystemsIndustrial and manufacturing facilitiesIndustrial productsInformation SystemsIntegrated Management SystemsLandNatural resourcesOffshore installationsQuality systemsRail vehiclesRoad vehiclesShipsSocial Responsibility SystemsSupply Chain / Trade FlowUtilities (energy, fluids, telecom)
+Our ServicesAsset ManagementCertificationClassificationConsultingInspection AuditsTesting and AnalysisTraining
+
+
+
+
+
+
+
+
+Hide and keep your solutions search
+
+
+
+
+
+
+
+
+
+Hide and keep your solutions search
+
+
+
+
+
+
+
+
+
+
