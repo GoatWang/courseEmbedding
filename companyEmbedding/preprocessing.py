@@ -63,9 +63,6 @@ if __name__ == '__main__':
     for num, filename in enumerate(filenames):
         if not filename in existFilenames:
             statinfo = stat("companyEmbedding/"+filename)
-            print(statinfo.st_size)
-            print(filename)
-
             file = open("companyEmbedding/"+filename, 'r', encoding='utf8')
             fileStr = file.read()
             file.close()
@@ -76,6 +73,8 @@ if __name__ == '__main__':
         if num%100 == 0 :
             print(num)
             print('progress: ', num/fileLength)
+            print(statinfo.st_size)
+            print(filename)
         
 
 
