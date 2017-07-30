@@ -68,7 +68,7 @@ if __name__ == '__main__':
         file.close()
         if num%500 == 0 :
             print(num)
-            print('progress', num/fileLength)
+            print('progress: ', num/fileLength)
         
 
 
