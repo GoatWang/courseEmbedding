@@ -51,7 +51,7 @@ def preprocessing(companyStr):
     return companyStr
 
 if __name__ == '__main__': 
-    filenames = listdir("companyEmbedding")[:20]
+    filenames = listdir("companyEmbedding")
     for filename in filenames:
         file = open("companyEmbedding/"+filename, 'r', encoding='utf8')
         fileStr = file.read()
