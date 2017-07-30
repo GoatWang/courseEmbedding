@@ -1,3 +1,8 @@
+import nltk
+nltk.download('stopwords')
+nltk.download('wordnet')
+print('download nltk data success')
+
 import re
 from nltk import word_tokenize
 from nltk.corpus import stopwords
@@ -52,7 +57,8 @@ def preprocessing(companyStr):
 
 if __name__ == '__main__': 
     filenames = listdir("companyEmbedding")
-    for filename in filenames:
+    fileLength = len(filenames)
+    for num, filename in enumerate(filenames):
         file = open("companyEmbedding/"+filename, 'r', encoding='utf8')
         fileStr = file.read()
         file.close()
@@ -60,5 +66,9 @@ if __name__ == '__main__':
         file = open("../LabelCompany/ProcessedCompanyEmbedding/"+filename, 'w', encoding='utf8')
         file.write(processedfileStr)
         file.close()
+        if num%500 == 0 :
+            print(num)
+            print('progress', num/fileLength)
+        
 
 
