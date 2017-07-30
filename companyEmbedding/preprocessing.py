@@ -8,7 +8,7 @@ from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import string
-from os import listdir
+from os import listdir, stat
 
 def preprocessing(companyStr):
 
@@ -58,15 +58,22 @@ def preprocessing(companyStr):
 if __name__ == '__main__': 
     filenames = listdir("companyEmbedding")
     fileLength = len(filenames)
+    existFilenames = listdir("../LabelCompany/ProcessedCompanyEmbedding/")
+
     for num, filename in enumerate(filenames):
-        file = open("companyEmbedding/"+filename, 'r', encoding='utf8')
-        fileStr = file.read()
-        file.close()
-        processedfileStr = preprocessing(fileStr)
-        file = open("../LabelCompany/ProcessedCompanyEmbedding/"+filename, 'w', encoding='utf8')
-        file.write(processedfileStr)
-        file.close()
-        if num%500 == 0 :
+        if not filename in existFilenames:
+            statinfo = stat("companyEmbedding/"+filename)
+            print(statinfo.st_size)
+            print(filename)
+
+            file = open("companyEmbedding/"+filename, 'r', encoding='utf8')
+            fileStr = file.read()
+            file.close()
+            processedfileStr = preprocessing(fileStr)
+            file = open("../LabelCompany/ProcessedCompanyEmbedding/"+filename, 'w', encoding='utf8')
+            file.write(processedfileStr)
+            file.close()
+        if num%100 == 0 :
             print(num)
             print('progress: ', num/fileLength)
         
